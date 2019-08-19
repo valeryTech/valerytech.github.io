@@ -13,6 +13,15 @@ This website showcases the options for the Bulma Clean theme. The theme is avail
 [![Gem Version](https://badge.fury.io/rb/bulma-clean-theme.svg)](https://badge.fury.io/rb/bulma-clean-theme)
 ![Gem](https://img.shields.io/gem/dt/bulma-clean-theme.svg)
 
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
+
 ## GitHub Pages
 
 The theme can be used with GitHub Pages bu setting the `remote_theme` in your Jekyll sites `_config.yml`
