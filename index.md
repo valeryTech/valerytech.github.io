@@ -6,43 +6,11 @@ callouts: home_callouts
 show_sidebar: true
 ---
 
-# Bulma Clean Theme demo website
+# Distributed systems basic website
 
-This website showcases the options for the Bulma Clean theme. The theme is available as a ruby gem or can be used with GitHub pages. 
+This site contains some of my experience and thoughts about programming, maintaning complex
 
-[![Gem Version](https://badge.fury.io/rb/bulma-clean-theme.svg)](https://badge.fury.io/rb/bulma-clean-theme)
-![Gem](https://img.shields.io/gem/dt/bulma-clean-theme.svg)
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
-
-## GitHub Pages
-
-The theme can be used with GitHub Pages bu setting the `remote_theme` in your Jekyll sites `_config.yml`
-
-```yml
-remote_theme: chrisrhymes/bulma-clean-theme
-```
-
-## Instructions
-
-For full instructions, please see the Readme at the GitHub repo:
-[https://github.com/chrisrhymes/bulma-clean-theme/blob/master/README.md](https://github.com/chrisrhymes/bulma-clean-theme/blob/master/README.md)
-
-## Page Layouts
-
-This demo site showcases the available page layout options.
-
-* Page With Sidebar
-* Page Without Sidebar
-* Page With Menubar
-* Page With Tabs
-* Landing Page With Callouts
-* Blog
-* Post
+* distributed systems
+* concurrency problems
+* bigdata and data intensive systems
+* functional programming
