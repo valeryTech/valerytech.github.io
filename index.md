@@ -1,9 +1,9 @@
 --
 title: Backend Tech Blog
 subtitle: This is the site for the various backend issues
-layout: page
+layout: post
 callouts: home_callouts
-show_sidebar: true
+show_sidebar: false
 ---
 
 # Distributed systems basic website
