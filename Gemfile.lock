@@ -297,6 +297,7 @@ DEPENDENCIES
   jekyll-algolia
   jekyll-feed
   jekyll-gist
+  jekyll-github-metadata
   jekyll-include-cache
   jekyll-paginate
   jekyll-remote-theme
