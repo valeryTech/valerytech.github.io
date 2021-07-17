@@ -5,3 +5,9 @@
 layout: home
 author_profile: true
 ---
+
+
+Paste here text about this site and me. 
+
+Link here to CV and post here several words about CV format and where to find it. 
+You can [get my CV in pdf]({{ site.url }}/assets/docs/gemotest_results.pdf) from here directly.
