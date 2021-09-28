@@ -155,8 +155,6 @@ GEM
       octokit (~> 4.0, != 4.4.0)
     jekyll-include-cache (0.2.1)
       jekyll (>= 3.7, < 5.0)
-    jekyll-jupyter-notebook (0.0.4)
-      jekyll
     jekyll-mentions (1.6.0)
       html-pipeline (~> 2.3)
       jekyll (>= 3.7, < 5.0)
@@ -245,7 +243,9 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.4)
     multipart-post (2.1.1)
-    nokogiri (1.11.7-x86_64-darwin)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
@@ -293,6 +293,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   github-pages
@@ -301,7 +302,6 @@ DEPENDENCIES
   jekyll-gist
   jekyll-github-metadata
   jekyll-include-cache
-  jekyll-jupyter-notebook
   jekyll-paginate
   jekyll-remote-theme
   jekyll-sitemap
