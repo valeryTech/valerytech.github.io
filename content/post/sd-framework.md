@@ -2,7 +2,7 @@
 title = 'System Design Framework (V0.1)'
 date = 2025-02-15T13:11:24-03:00
 draft = false
-tags: ["system design", "frameworks"]
+tags = ["system design", "frameworks"]
 categories = ["tech", "architecture"]
 +++
 
@@ -19,7 +19,7 @@ While a firm structure to your approach is important and your interviewer is not
 
 The goal of the requirements section is to get a clear understanding of the system that you are being asked to design. To do this, we suggest you break your requirements into two sections.
 
-### 1) Functional Requirements
+### Functional Requirements
 
 Functional requirements are your "Users/Clients should be able to..." statements. These are the *core* features of your system and should be the first thing you discuss with your interviewer. Oftentimes this is a back and fourth with your interviewer. Ask targeted questions as if you were talking to a client, customer, or product manager ("does the system need to do X?", "what would happen if Y?") to arrive at a *prioritized* list of core features.
 
@@ -38,7 +38,7 @@ A cache meanwhile might have requirements like:
 >[!warning] Keep your requirements targeted!
 >The main objective in the remaining part of the interview is to develop a system that meets the requirements you've identified -- so it's crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it's your job to identify and *prioritize the top 3*. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.
 
-### 2) Non-functional Requirements
+### Non-functional Requirements
 
 Non-functional requirements are statements about the system qualities that are **important to your users**. These can be phrased as "The system should be able to..." or "The system should be..." statements.
 
@@ -64,7 +64,7 @@ Coming up with non-functional requirements can be challenging, especially if you
 7. **Fault Tolerance**: How well does the system need to handle failures? Consider redundancy, failover, and recovery mechanisms.
 8. **Compliance**: Are there legal or regulatory requirements the system needs to meet? Consider industry standards, data protection laws, and other regulations.
 
-## 3 Capacity Estimation
+## Capacity Estimation
 
 Many guides you've read will suggest doing back-of-the-envelope calculations at this stage. We believe this is *often* unnecessary. Instead, perform calculations only if they will directly influence your design. In most scenarios, you're dealing with a large, distributed system – and it's reasonable to assume as much. Many candidates will calculate storage, DAU, and QPS, only to conclude, "ok, so it's a lot. Got it." As interviewers, we gain nothing from this except that you can perform basic arithmetic.
 
