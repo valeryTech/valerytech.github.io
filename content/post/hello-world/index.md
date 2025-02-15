@@ -1,5 +1,5 @@
 ---
-title: Helllo World
+title: Hello World
 description: Welcome to Hugo Theme Stack
 slug: hello-world
 date: 2021-03-06 00:00:00+0000
