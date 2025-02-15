@@ -1,0 +1,14 @@
+/* Basic callout styling */
+.callout {
+    border-left: 4px solid #007acc;  /* Blue border */
+    background-color: #f3f6fc;  /* Light background */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Different colors for different callout types */
+.callout-info { border-left-color: #007acc; background-color: #e7f3ff; }
+.callout-warning { border-left-color: #ff9800; background-color: #fff3e0; }
+.callout-danger { border-left-color: #f44336; background-color: #ffebee; }
+.callout-success { border-left-color: #4caf50; background-color: #e8f5e9; }

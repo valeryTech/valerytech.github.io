@@ -148,3 +148,5 @@ clientSecret = ""
 [comments.cusdis]
 host = ""
 id = ""
+
+customCSS = ["css/custom.css"]

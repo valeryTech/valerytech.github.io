@@ -26,19 +26,24 @@
         </item>
         <item>
         <title>System Design Framework (V0.1)</title>
-        <link>http://localhost:1313/posts/sd-framework/</link>
+        <link>http://localhost:1313/p/system-design-framework-v0.1/</link>
         <pubDate>Sat, 15 Feb 2025 13:11:24 -0300</pubDate>
         
-        <guid>http://localhost:1313/posts/sd-framework/</guid>
+        <guid>http://localhost:1313/p/system-design-framework-v0.1/</guid>
         <description>&lt;h2 id=&#34;system-design-delivery-framework&#34;&gt;System Design Delivery Framework
 &lt;/h2&gt;&lt;p&gt;Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you&amp;rsquo;ll stay focused on the bits that are most important to your interviewer. An added benefit is that you&amp;rsquo;ll have a clear path to fall back if you&amp;rsquo;re overwhelmed. Many candidates are (understandably!) nervous in their interview. It&amp;rsquo;s easy to get lost if you aren&amp;rsquo;t building up a solution in a linear way.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!info]
-While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &amp;ldquo;communication&amp;rdquo;), in practice we&amp;rsquo;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;div class=&#34;callout callout-info&#34;&gt;
+    &lt;strong&gt;This is a note&lt;/strong&gt;
+    &lt;div&gt;
+
+While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &#34;communication&#34;), in practice we&#39;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.
+
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;requirements-5-minutes&#34;&gt;Requirements (~5 minutes)
 &lt;/h2&gt;&lt;p&gt;The goal of the requirements section is to get a clear understanding of the system that you are being asked to design. To do this, we suggest you break your requirements into two sections.&lt;/p&gt;
-&lt;h3 id=&#34;1-functional-requirements&#34;&gt;1) Functional Requirements
+&lt;h3 id=&#34;functional-requirements&#34;&gt;Functional Requirements
 &lt;/h3&gt;&lt;p&gt;Functional requirements are your &amp;ldquo;Users/Clients should be able to&amp;hellip;&amp;rdquo; statements. These are the &lt;em&gt;core&lt;/em&gt; features of your system and should be the first thing you discuss with your interviewer. Oftentimes this is a back and fourth with your interviewer. Ask targeted questions as if you were talking to a client, customer, or product manager (&amp;ldquo;does the system need to do X?&amp;rdquo;, &amp;ldquo;what would happen if Y?&amp;rdquo;) to arrive at a &lt;em&gt;prioritized&lt;/em&gt; list of core features.&lt;/p&gt;
 &lt;p&gt;For example, if you were designing a system like Twitter, you might have the following functional requirements:&lt;/p&gt;
 &lt;ul&gt;
@@ -56,7 +61,7 @@ While a firm structure to your approach is important and your interviewer is not
 &lt;p&gt;[!warning] Keep your requirements targeted!
 The main objective in the remaining part of the interview is to develop a system that meets the requirements you&amp;rsquo;ve identified &amp;ndash; so it&amp;rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&amp;rsquo;s your job to identify and &lt;em&gt;prioritize the top 3&lt;/em&gt;. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;2-non-functional-requirements&#34;&gt;2) Non-functional Requirements
+&lt;h3 id=&#34;non-functional-requirements&#34;&gt;Non-functional Requirements
 &lt;/h3&gt;&lt;p&gt;Non-functional requirements are statements about the system qualities that are &lt;strong&gt;important to your users&lt;/strong&gt;. These can be phrased as &amp;ldquo;The system should be able to&amp;hellip;&amp;rdquo; or &amp;ldquo;The system should be&amp;hellip;&amp;rdquo; statements.&lt;/p&gt;
 &lt;p&gt;For example, if you were designing a system like Twitter, you might have the following non-functional requirements:&lt;/p&gt;
 &lt;ul&gt;
@@ -80,7 +85,7 @@ It&amp;rsquo;s important that non-functional requirements are put in the context
 &lt;li&gt;&lt;strong&gt;Fault Tolerance&lt;/strong&gt;: How well does the system need to handle failures? Consider redundancy, failover, and recovery mechanisms.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Compliance&lt;/strong&gt;: Are there legal or regulatory requirements the system needs to meet? Consider industry standards, data protection laws, and other regulations.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;3-capacity-estimation&#34;&gt;3 Capacity Estimation
+&lt;h2 id=&#34;capacity-estimation&#34;&gt;Capacity Estimation
 &lt;/h2&gt;&lt;p&gt;Many guides you&amp;rsquo;ve read will suggest doing back-of-the-envelope calculations at this stage. We believe this is &lt;em&gt;often&lt;/em&gt; unnecessary. Instead, perform calculations only if they will directly influence your design. In most scenarios, you&amp;rsquo;re dealing with a large, distributed system – and it&amp;rsquo;s reasonable to assume as much. Many candidates will calculate storage, DAU, and QPS, only to conclude, &amp;ldquo;ok, so it&amp;rsquo;s a lot. Got it.&amp;rdquo; As interviewers, we gain nothing from this except that you can perform basic arithmetic.&lt;/p&gt;
 &lt;p&gt;Our suggestion is to explain to the interviewer that you would like to skip on estimations upfront and that you will do math while designing when/if necessary. When would it be necessary? Imagine you are designing a TopK system for trending topics in FB posts. You would want to estimate the number of topics you would expect to see, as this will influence whether you can use a single instance of a data structure like a min-heap or if you need to shard it across multiple instances, which will have a big impact on your design.&lt;/p&gt;
 &lt;blockquote&gt;
