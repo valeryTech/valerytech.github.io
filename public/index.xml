@@ -12,7 +12,19 @@
         <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/hello-world/</guid>
-        <description>&lt;img src="http://localhost:1313/p/hello-world/cover.jpg" alt="Featured image of post Hello World" /&gt;&lt;p&gt;Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/hello-world/cover.jpg" alt="Featured image of post Hello World" /&gt;&lt;div class=&#34;callout callout-info&#34;&gt;
+    &lt;strong&gt;Important Note&lt;/strong&gt;
+    &lt;div&gt;&lt;p&gt;This is a &lt;strong&gt;bold&lt;/strong&gt; test.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Click here&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!&lt;/p&gt;
 &lt;p&gt;For more information about this theme, check the documentation: &lt;a class=&#34;link&#34; href=&#34;https://stack.jimmycai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://stack.jimmycai.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Want a site like this? Check out &lt;a class=&#34;link&#34; href=&#34;https://github.com/CaiJimmy/hugo-theme-stack-starter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -20,8 +32,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Photo by &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/@pawel_czerwinski&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pawel Czerwinski&lt;/a&gt; on &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -32,13 +43,9 @@
         <guid>http://localhost:1313/p/system-design-framework-v0.1/</guid>
         <description>&lt;h2 id=&#34;system-design-delivery-framework&#34;&gt;System Design Delivery Framework
 &lt;/h2&gt;&lt;p&gt;Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you&amp;rsquo;ll stay focused on the bits that are most important to your interviewer. An added benefit is that you&amp;rsquo;ll have a clear path to fall back if you&amp;rsquo;re overwhelmed. Many candidates are (understandably!) nervous in their interview. It&amp;rsquo;s easy to get lost if you aren&amp;rsquo;t building up a solution in a linear way.&lt;/p&gt;
-&lt;div class=&#34;callout callout-info&#34;&gt;
-    &lt;strong&gt;This is a note&lt;/strong&gt;
-    &lt;div&gt;
-
-While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &#34;communication&#34;), in practice we&#39;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.
-
-&lt;/div&gt;
+&lt;div class=&#34;callout callout-warning&#34;&gt;
+    &lt;strong&gt;Firm Structure&lt;/strong&gt;
+    &lt;div&gt;While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &amp;ldquo;communication&amp;rdquo;), in practice we&amp;rsquo;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;requirements-5-minutes&#34;&gt;Requirements (~5 minutes)
@@ -59,8 +66,7 @@ While a firm structure to your approach is important and your interviewer is not
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!warning] Keep your requirements targeted!
-The main objective in the remaining part of the interview is to develop a system that meets the requirements you&amp;rsquo;ve identified &amp;ndash; so it&amp;rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&amp;rsquo;s your job to identify and &lt;em&gt;prioritize the top 3&lt;/em&gt;. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.&lt;/p&gt;
-&lt;/blockquote&gt;
+The main objective in the remaining part of the interview is to develop a system that meets the requirements you&amp;rsquo;ve identified &amp;ndash; so it&amp;rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&amp;rsquo;s your job to identify and &lt;em&gt;prioritize the top 3&lt;/em&gt;. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;non-functional-requirements&#34;&gt;Non-functional Requirements
 &lt;/h3&gt;&lt;p&gt;Non-functional requirements are statements about the system qualities that are &lt;strong&gt;important to your users&lt;/strong&gt;. These can be phrased as &amp;ldquo;The system should be able to&amp;hellip;&amp;rdquo; or &amp;ldquo;The system should be&amp;hellip;&amp;rdquo; statements.&lt;/p&gt;
 &lt;p&gt;For example, if you were designing a system like Twitter, you might have the following non-functional requirements:&lt;/p&gt;
@@ -72,8 +78,7 @@ The main objective in the remaining part of the interview is to develop a system
 &lt;blockquote&gt;
 &lt;p&gt;[!note] Quantification
 It&amp;rsquo;s important that non-functional requirements are put in the context of the system and, where possible, are quantified. For example, &amp;ldquo;the system should be low latency&amp;rdquo; is obvious and not very meaningful—nearly all systems should be low latency.&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;The system should have low latency search, &amp;lt; 500ms,&amp;rdquo; is much more useful as it identifies the part of the system that most needs to be low latency and provides a target.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;The system should have low latency search, &amp;lt; 500ms,&amp;rdquo; is much more useful as it identifies the part of the system that most needs to be low latency and provides a target.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Coming up with non-functional requirements can be challenging, especially if you&amp;rsquo;re not familiar with the domain. Here is a checklist of things to consider that might help you identify the most important non-functional requirements for your system. You&amp;rsquo;ll want to identify the top 3-5 that are most relevant to your system.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;CAP Theorem&lt;/strong&gt;: Should your system prioritize consistency or availability? Note, partition tolerance is a given in distributed systems.&lt;/li&gt;
@@ -90,8 +95,7 @@ It&amp;rsquo;s important that non-functional requirements are put in the context
 &lt;p&gt;Our suggestion is to explain to the interviewer that you would like to skip on estimations upfront and that you will do math while designing when/if necessary. When would it be necessary? Imagine you are designing a TopK system for trending topics in FB posts. You would want to estimate the number of topics you would expect to see, as this will influence whether you can use a single instance of a data structure like a min-heap or if you need to shard it across multiple instances, which will have a big impact on your design.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Regardless of how you end up using it in the interview, &lt;a class=&#34;link&#34; href=&#34;https://www.hellointerview.com/blog/mastering-estimation&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;learning to estimate relevant quantities quickly&lt;/a&gt; will help you &lt;em&gt;quick reason through design trade-offs in your design&lt;/em&gt;. Don&amp;rsquo;t worry if you&amp;rsquo;re not good at mental arithmetic under pressure, most people aren&amp;rsquo;t.&lt;/p&gt;
-&lt;/blockquote&gt;
+    &gt;learning to estimate relevant quantities quickly&lt;/a&gt; will help you &lt;em&gt;quick reason through design trade-offs in your design&lt;/em&gt;. Don&amp;rsquo;t worry if you&amp;rsquo;re not good at mental arithmetic under pressure, most people aren&amp;rsquo;t.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;core-entities-2-minutes&#34;&gt;Core Entities (~2 minutes)
 &lt;/h2&gt;&lt;p&gt;Next you should take a moment to identify and list the core entities of you system. This helps you to define terms, understand the data central to your design, and gives you a foundation to build on. These are the core entities that your API will exchange and that your system will persist in a Data Model. In the actual interview, this is as simple as jotting down a bulleted list and explaining this is your first draft to the interviewer.&lt;/p&gt;
 &lt;p&gt;Why not list the entire data model at this point? Because you don&amp;rsquo;t know what you don&amp;rsquo;t know. As you design your system, you&amp;rsquo;ll discover new entities and relationships that you didn&amp;rsquo;t anticipate. By starting with a small list, you can quickly iterate and add to it as you go. Once you get into the high level design and have a clearer sense of exactly what state needs to update upon each request you can start to build out the list of relevant columns/fields for each entity.&lt;/p&gt;
@@ -106,8 +110,7 @@ It&amp;rsquo;s important that non-functional requirements are put in the context
 &lt;ul&gt;
 &lt;li&gt;Who are the actors in the system? Are they overlapping?&lt;/li&gt;
 &lt;li&gt;What are the nouns or resources necessary to satisfy the functional requirements?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
 &lt;p&gt;Aim to choose good names for your entities. While most problems are small enough that you could probably sub in foo and bar for any entity in your system, some interviewers use this as an opportunity to see whether you&amp;rsquo;re any good at one of the &lt;a class=&#34;link&#34; href=&#34;https://www.martinfowler.com/bliki/TwoHardThings.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;hardest problems in computer science&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;api-or-system-interface-5-minutes&#34;&gt;API or System Interface (~5 minutes)
@@ -121,8 +124,7 @@ It&amp;rsquo;s important that non-functional requirements are put in the context
 &lt;p&gt;&lt;code&gt;POST /v1/tweet body: {   &amp;quot;text&amp;quot;: string } GET /v1/tweet/:tweetId -&amp;gt; Tweet POST /v1/follow/:userId GET /v1/feed -&amp;gt; Tweet[]&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!danger]
-Notice how there is no userId in the POST /v1/tweet endpoint? This is because we will get the id of the user initiating the request from the authentication token in the request header. Putting sensitive information like user ids in the request body is a security risk and a mistake that many candidates make. Don&amp;rsquo;t be one of them!&lt;/p&gt;
-&lt;/blockquote&gt;
+Notice how there is no userId in the POST /v1/tweet endpoint? This is because we will get the id of the user initiating the request from the authentication token in the request header. Putting sensitive information like user ids in the request body is a security risk and a mistake that many candidates make. Don&amp;rsquo;t be one of them!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;optional-data-flow-5-minutes&#34;&gt;[Optional] Data Flow (~5 minutes)
 &lt;/h2&gt;&lt;p&gt;For some backend systems, especially data-processing systems, it can be helpful to describe the high level sequence of actions or processes that the system performs on the inputs to produce the desired outputs. If your system doesn&amp;rsquo;t involve a long sequence of actions, skip this!&lt;/p&gt;
 &lt;p&gt;We usually define the data flow via a simple list. You&amp;rsquo;ll use this flow to inform your high-level design in the next section.&lt;/p&gt;
@@ -141,13 +143,11 @@ Notice how there is no userId in the POST /v1/tweet endpoint? This is because we
 &lt;p&gt;Don&amp;rsquo;t over think this! Your primary goal is to design an architecture that satisfies the API you&amp;rsquo;ve designed and, thus, the requirements you&amp;rsquo;ve identified. In most cases, you can even go one-by-one through your API endpoints and build up your design sequentially to satisfy each one.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!danger] Stay focused!
-It&amp;rsquo;s incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It&amp;rsquo;s natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.&lt;/p&gt;
-&lt;/blockquote&gt;
+It&amp;rsquo;s incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It&amp;rsquo;s natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;As you&amp;rsquo;re drawing your design, you should be talking through your thought process with your interviewer. Be explicit about how data flows through the system and what state (either in databases, caches, message queues, etc.) changes with each request, starting from API requests and ending with the response. When your request reaches your database or persistence layer, it&amp;rsquo;s a great time to start documenting the relevant columns/fields for each entity. You can do this directly next to your database visually. This helps keep it close to the relevant components and makes it easy to evolve as you iterate on your design. No need to worry too much about types here, your interviewer can infer and they&amp;rsquo;ll only slow you down.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!danger]  Focus on relevant
-Don&amp;rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&amp;rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.&lt;/p&gt;
-&lt;/blockquote&gt;
+Don&amp;rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&amp;rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;For our simple Twitter example, here is how you might build up your design, one endpoint at a time:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://d248djf5mc6iku.cloudfront.net/excalidraw/446dc33f64ebc27e977d6302b6532c1e&#34;
 	
@@ -161,13 +161,11 @@ Don&amp;rsquo;t waste your time documenting every column/field in your schema. F
 &lt;/h2&gt;&lt;p&gt;Astute readers probably noticed that our simple, high-level design of Twitter is going to be woefully inefficient when it comes to fetching user&amp;rsquo;s feeds. No problem! That&amp;rsquo;s exactly the sort of thing you&amp;rsquo;ll iterate on in the deep dives section. Now that you have a high-level design in place you&amp;rsquo;re going to use the remaining 10 or so minutes of the interview to harden your design by (a) ensuring it meets all of your non-functional requirements (b) addressing edge cases (c) identifying and adressing issues and bottlenecks and (d) improving the design based on probes from your interviewer.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!info]
-The degree in which you&amp;rsquo;re proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.&lt;/p&gt;
-&lt;/blockquote&gt;
+The degree in which you&amp;rsquo;re proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;So for example, one of our non-functional requirements for Twitter was that our system needs to scale to &amp;gt;100M DAU. We could then lead a discussion oriented around horizontal scaling, the introduction of caches, and database sharding &amp;ndash; updating our design as we go. Another was that feeds need to be fetched with low latency. In the case of Twitter, this is actually the most interesting problem. We&amp;rsquo;d lead a discussion about fanout-on-read vs fanout-on-write and the use of caches.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!danger]  Mistake
-A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it&amp;rsquo;s a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you&amp;rsquo;re going to miss it if you&amp;rsquo;re too busy talking. Plus, you&amp;rsquo;ll hurt your evaluation on communication and collaboration.&lt;/p&gt;
-&lt;/blockquote&gt;
+A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it&amp;rsquo;s a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you&amp;rsquo;re going to miss it if you&amp;rsquo;re too busy talking. Plus, you&amp;rsquo;ll hurt your evaluation on communication and collaboration.&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -193,71 +191,69 @@ A common mistake candidates make is that they try to talk over their interviewer
 &lt;h3 id=&#34;blockquote-without-attribution&#34;&gt;Blockquote without attribution
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;strong&gt;Note&lt;/strong&gt; that you can use &lt;em&gt;Markdown syntax&lt;/em&gt; within a blockquote.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;blockquote-with-attribution&#34;&gt;Blockquote with attribution
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br&gt;
-— &lt;cite&gt;Rob Pike&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+— &lt;cite&gt;Rob Pike&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;tables&#34;&gt;Tables
 &lt;/h2&gt;&lt;p&gt;Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Age&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Bob&lt;/td&gt;
-&lt;td&gt;27&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Alice&lt;/td&gt;
-&lt;td&gt;23&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Age&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Bob&lt;/td&gt;
+          &lt;td&gt;27&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Alice&lt;/td&gt;
+          &lt;td&gt;23&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;inline-markdown-within-tables&#34;&gt;Inline Markdown within tables
 &lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Italics&lt;/th&gt;
-&lt;th&gt;Bold&lt;/th&gt;
-&lt;th&gt;Code&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Italics&lt;/th&gt;
+          &lt;th&gt;Bold&lt;/th&gt;
+          &lt;th&gt;Code&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;A&lt;/th&gt;
-&lt;th&gt;B&lt;/th&gt;
-&lt;th&gt;C&lt;/th&gt;
-&lt;th&gt;D&lt;/th&gt;
-&lt;th&gt;E&lt;/th&gt;
-&lt;th&gt;F&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
-&lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
-&lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
-&lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
-&lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
-&lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;A&lt;/th&gt;
+          &lt;th&gt;B&lt;/th&gt;
+          &lt;th&gt;C&lt;/th&gt;
+          &lt;th&gt;D&lt;/th&gt;
+          &lt;th&gt;E&lt;/th&gt;
+          &lt;th&gt;F&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
+          &lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
+          &lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
+          &lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
+          &lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
+          &lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;code-blocks&#34;&gt;Code Blocks
 &lt;/h2&gt;&lt;h3 id=&#34;code-block-with-backticks&#34;&gt;Code block with backticks
@@ -393,7 +389,7 @@ A common mistake candidates make is that they try to talk over their interviewer
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/image-gallery/1.jpg&#34;
 	width=&#34;2000&#34;
 	height=&#34;1400&#34;
-	srcset=&#34;http://localhost:1313/p/image-gallery/1_hudd2e8259c20ed0dcaa856c253552e90f_14625_480x0_resize_q75_box.jpg 480w, http://localhost:1313/p/image-gallery/1_hudd2e8259c20ed0dcaa856c253552e90f_14625_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/image-gallery/1_hu_811b671457ffff1f.jpg 480w, http://localhost:1313/p/image-gallery/1_hu_c74af69dd7c1dcda.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Image 1&#34;
@@ -406,7 +402,7 @@ A common mistake candidates make is that they try to talk over their interviewer
 &gt; &lt;img src=&#34;http://localhost:1313/p/image-gallery/2.jpg&#34;
 	width=&#34;1500&#34;
 	height=&#34;2250&#34;
-	srcset=&#34;http://localhost:1313/p/image-gallery/2_hubce42636ecacc1a380b462f3110efcec_37455_480x0_resize_q75_box.jpg 480w, http://localhost:1313/p/image-gallery/2_hubce42636ecacc1a380b462f3110efcec_37455_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/image-gallery/2_hu_42f6436cb1637265.jpg 480w, http://localhost:1313/p/image-gallery/2_hu_27862a49608da0d9.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Image 2&#34;
@@ -421,8 +417,7 @@ A common mistake candidates make is that they try to talk over their interviewer
 &lt;p&gt;Photo by &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/@mymind&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;mymind&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/@lukechesser&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Luke Chesser&lt;/a&gt; on &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -504,8 +499,7 @@ A common mistake candidates make is that they try to talk over their interviewer
 &lt;blockquote&gt;
 &lt;p&gt;Photo by &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/@codioful&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Codioful&lt;/a&gt; on &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/photos/WDSN62Qdxuk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -530,8 +524,7 @@ A common mistake candidates make is that they try to talk over their interviewer
 &lt;/div&gt;&lt;h2 id=&#34;block-math&#34;&gt;Block math
 &lt;/h2&gt;$$
     \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
-$$
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+$$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -545,8 +538,7 @@ $$
 &lt;/div&gt;
 &lt;/div&gt;$$
     f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-$$
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+$$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
