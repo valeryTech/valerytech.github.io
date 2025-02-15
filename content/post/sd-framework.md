@@ -2,6 +2,8 @@
 title = 'System Design Framework (V0.1)'
 date = 2025-02-15T13:11:24-03:00
 draft = false
+tags: ["system design", "frameworks"]
+categories = ["tech", "architecture"]
 +++
 
 
@@ -9,8 +11,9 @@ draft = false
 
 Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you'll stay focused on the bits that are most important to your interviewer. An added benefit is that you'll have a clear path to fall back if you're overwhelmed. Many candidates are (understandably!) nervous in their interview. It's easy to get lost if you aren't building up a solution in a linear way.
 
->[!info]
->While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into "communication"), in practice we've seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.
+{{< callout info "This is a note" >}}
+While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into "communication"), in practice we've seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.
+{{< /callout >}}
 
 ## Requirements (~5 minutes)
 
