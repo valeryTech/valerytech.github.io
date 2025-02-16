@@ -149,4 +149,4 @@ clientSecret = ""
 host = ""
 id = ""
 
-# customCSS = ["scss/custom.scss"]
+customCSS = ["css/custom.css"]

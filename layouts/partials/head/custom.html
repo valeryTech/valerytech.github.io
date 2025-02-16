@@ -1,0 +1,36 @@
+<style>
+    :root {
+        --callout-border-color: #007acc;
+        --callout-bg-color: #f3f6fc;
+        --callout-text-color: #222;
+    }
+
+    /* Dark Mode (Fix: Use `data-scheme` instead of `data-theme`) */
+    html[data-scheme="dark"] {
+        --callout-border-color: #00bcd4;
+        --callout-bg-color: #222b36;
+        --callout-text-color: #ffffff;
+    }
+
+    /* Apply the variables */
+    .callout {
+        border-left: 5px solid var(--callout-border-color);
+        background-color: var(--callout-bg-color);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        font-family: Arial, sans-serif;
+        color: var(--callout-text-color);
+    }
+
+    /* Specific Callout Types */
+    .callout-info { border-left-color: var(--callout-border-color); }
+    .callout-warning { border-left-color: #ff9800; background-color: #fff3e0; }
+    .callout-danger { border-left-color: #f44336; background-color: #ffebee; }
+    .callout-success { border-left-color: #4caf50; background-color: #e8f5e9; }
+
+    /* Fix Dark Mode Callout Variants */
+    html[data-scheme="dark"] .callout-warning { border-left-color: #ff9800; background-color: #2c241a; }
+    html[data-scheme="dark"] .callout-danger { border-left-color: #f44336; background-color: #3a2022; }
+    html[data-scheme="dark"] .callout-success { border-left-color: #4caf50; background-color: #1b3321; }
+</style>
