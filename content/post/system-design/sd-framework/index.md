@@ -1,6 +1,8 @@
 +++
-title = 'System Design Framework (V0.1)'
-date = 2025-02-15T13:11:24-03:00
+title = 'System Design Framework'
+slug = 'system-design/system-design-framework'
+date = 2025-02-16T01:06:10Z
+image = 'cover.jpg'
 draft = false
 tags = ["system design", "frameworks"]
 categories = ["tech", "architecture"]
