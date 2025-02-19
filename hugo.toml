@@ -1,4 +1,0 @@
-baseURL = 'https://valery.tech/'
-languageCode = 'en-us'
-title = 'Machine Learning & AI'
-theme = 'hugo-theme-stack'
