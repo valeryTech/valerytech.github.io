@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design</title>
-    <link>http://localhost:1313/system-design/</link>
+    <link>http://localhost:46023/system-design/</link>
     <description>Recent content on System Design</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Tue, 27 Feb 2024 09:30:56 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:46023/system-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design Common Page</title>
-      <link>http://localhost:1313/system-design/about/</link>
+      <link>http://localhost:46023/system-design/about/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/system-design/about/</guid>
-      <description>Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.</description>
+      <guid>http://localhost:46023/system-design/about/</guid>
+      <description>courses&#xA;order: smarchok 2 courses + https://www.youtube.com/@SystemDesignInterview/videos algoexpert 2 courses (fundamentals and examples) zerotomastery &amp;ldquo;# Master the Coding Interview: System Design + Architecture (Part 1)&amp;rdquo; hellointerview examples + youtube channel + (maybe) premium https://interviewing.</description>
     </item>
     <item>
       <title>Framework</title>
-      <link>http://localhost:1313/system-design/framework/</link>
+      <link>http://localhost:46023/system-design/framework/</link>
       <pubDate>Tue, 27 Feb 2024 09:30:56 +0100</pubDate>
-      <guid>http://localhost:1313/system-design/framework/</guid>
+      <guid>http://localhost:46023/system-design/framework/</guid>
       <description>Link to valuable, relevant resources.</description>
     </item>
   </channel>

@@ -1,8 +1,8 @@
 {
   "name": "valery-tech",
-  "version": "0.0.0",
-  "description": "Doks theme",
-  "author": "Thulite",
+  "version": "0.0.1",
+  "description": "System Design Knowledge Base",
+  "author": "Valery Judah",
   "license": "MIT",
   "scripts": {
     "create": "hugo new",
