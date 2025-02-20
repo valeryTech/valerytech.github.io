@@ -1,48 +1,83 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to Doks on My Docs</title>
-    <link>https://valery.tech/</link>
-    <description>Recent content in Welcome to Doks on My Docs</description>
+    <title>System Design and Software Architecture on System Design</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in System Design and Software Architecture on System Design</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
-    <lastBuildDate>Tue, 27 Feb 2024 09:30:56 +0100</lastBuildDate>
-    <atom:link href="https://valery.tech/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright (c) 2014-2023</copyright>
+    <lastBuildDate>Sun, 26 Jan 2025 11:22:15 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Example Post</title>
-      <link>https://valery.tech/blog/example-post/</link>
+      <link>http://localhost:1313/blog/example-post/</link>
       <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
-      <guid>https://valery.tech/blog/example-post/</guid>
+      <guid>http://localhost:1313/blog/example-post/</guid>
       <description>You can use blog posts for announcing product updates and features.</description>
     </item>
     <item>
       <title>Example Guide</title>
-      <link>https://valery.tech/docs/guides/example-guide/</link>
+      <link>http://localhost:1313/docs/guides/example-guide/</link>
       <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>https://valery.tech/docs/guides/example-guide/</guid>
+      <guid>http://localhost:1313/docs/guides/example-guide/</guid>
+      <description>Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.</description>
+    </item>
+    <item>
+      <title>Load Balancer</title>
+      <link>http://localhost:1313/system-design/elements/load-balancer/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/system-design/elements/load-balancer/</guid>
+      <description>Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.</description>
+    </item>
+    <item>
+      <title>System Design Common Page</title>
+      <link>http://localhost:1313/system-design/about/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/system-design/about/</guid>
       <description>Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.</description>
     </item>
     <item>
       <title>Example Reference</title>
-      <link>https://valery.tech/docs/reference/example-reference/</link>
+      <link>http://localhost:1313/docs/reference/example-reference/</link>
       <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
-      <guid>https://valery.tech/docs/reference/example-reference/</guid>
+      <guid>http://localhost:1313/docs/reference/example-reference/</guid>
       <description>Reference pages are ideal for outlining how things work in terse and clear terms. Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what your documenting.</description>
     </item>
     <item>
-      <title>Resources</title>
-      <link>https://valery.tech/docs/resources/</link>
+      <title>Guide How to</title>
+      <link>http://localhost:1313/system-design/interview/example/</link>
+      <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
+      <guid>http://localhost:1313/system-design/interview/example/</guid>
+      <description>Reference pages are ideal for outlining how things work in terse and clear terms. Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what your documenting.</description>
+    </item>
+    <item>
+      <title>Faq</title>
+      <link>http://localhost:1313/docs/guides/faq/</link>
+      <pubDate>Sun, 26 Jan 2025 11:22:15 -0300</pubDate>
+      <guid>http://localhost:1313/docs/guides/faq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Faq</title>
+      <link>http://localhost:1313/system-design/elements/faq/</link>
+      <pubDate>Sun, 26 Jan 2025 11:22:15 -0300</pubDate>
+      <guid>http://localhost:1313/system-design/elements/faq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Framework</title>
+      <link>http://localhost:1313/system-design/framework/</link>
       <pubDate>Tue, 27 Feb 2024 09:30:56 +0100</pubDate>
-      <guid>https://valery.tech/docs/resources/</guid>
+      <guid>http://localhost:1313/system-design/framework/</guid>
       <description>Link to valuable, relevant resources.</description>
     </item>
     <item>
-      <title>Privacy Policy</title>
-      <link>https://valery.tech/privacy/</link>
-      <pubDate>Thu, 07 Sep 2023 17:19:07 +0200</pubDate>
-      <guid>https://valery.tech/privacy/</guid>
-      <description></description>
+      <title>Resources</title>
+      <link>http://localhost:1313/docs/resources/</link>
+      <pubDate>Tue, 27 Feb 2024 09:30:56 +0100</pubDate>
+      <guid>http://localhost:1313/docs/resources/</guid>
+      <description>Link to valuable, relevant resources.</description>
     </item>
   </channel>
 </rss>

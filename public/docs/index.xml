@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docs on My Docs</title>
-    <link>https://valery.tech/docs/</link>
-    <description>Recent content in Docs on My Docs</description>
+    <title>Docs on System Design</title>
+    <link>http://localhost:1313/docs/</link>
+    <description>Recent content in Docs on System Design</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
+    <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Tue, 27 Feb 2024 09:30:56 +0100</lastBuildDate>
-    <atom:link href="https://valery.tech/docs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Resources</title>
-      <link>https://valery.tech/docs/resources/</link>
+      <link>http://localhost:1313/docs/resources/</link>
       <pubDate>Tue, 27 Feb 2024 09:30:56 +0100</pubDate>
-      <guid>https://valery.tech/docs/resources/</guid>
+      <guid>http://localhost:1313/docs/resources/</guid>
       <description>Link to valuable, relevant resources.</description>
     </item>
   </channel>
