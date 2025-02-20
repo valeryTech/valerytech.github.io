@@ -84,3 +84,7 @@ copyRight = "Copyright (c) 2014-2023"
   hint = "photo"
   quality = 85
   resampleFilter = "Lanczos"
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-XF1V06CDS3'
