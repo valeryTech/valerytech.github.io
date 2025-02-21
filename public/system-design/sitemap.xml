@@ -3,295 +3,295 @@
   
     <url>
       <loc>http://localhost:1313/system-design/elements/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/system-design/frameworks/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/system-design/interview/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/system-design/nfr/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/system-design/projects/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/system-design/about/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/system-design/topics/</loc>
-      <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+      <lastmod>2025-02-21T18:43:34+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
         <loc>http://localhost:1313/system-design/elements/api_gateway/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/elements/elements/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/frameworks/framework_hi/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/frameworks/framework_iv/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/interview/interview/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/interview/interview_phrases/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/nfr/consistency/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/nfr/reliability--availability/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/nfr/scalability/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/_themes/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/chat-room/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/code_deployment/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/events/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/instagram/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/interviewing.io/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/interviewing.io_example/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/job-scheduler/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/key-value-store/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/live-commenting/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/online-file-storage/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/rate_limiter/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/sd_reviews/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/spotify/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/tik_tok/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/projects/whatsapp/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/api/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/caching/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/communication/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/db-1/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/distributed-systems/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/envelope_estimations/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/hashing/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/microservices/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/partitioning/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/queues/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/replication/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/security/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/stream_processing/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/streaming/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/trade-offs/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/transactions/</loc>
-        <lastmod>2025-02-21T17:37:47+00:00</lastmod>
+        <lastmod>2025-02-21T18:43:34+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>

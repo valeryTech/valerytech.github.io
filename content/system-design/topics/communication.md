@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T17:37:47.886192
+date: 2025-02-21T18:43:34.172004
 description: Default Description
 draft: false
-lastmod: 2025-02-21T17:37:47.886192
+lastmod: 2025-02-21T18:43:34.172004
 summary: ''
 title: Communication
 toc: true

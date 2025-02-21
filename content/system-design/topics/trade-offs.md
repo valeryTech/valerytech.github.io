@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T17:37:47.883905
+date: 2025-02-21T18:43:34.169927
 description: Default Description
 draft: false
-lastmod: 2025-02-21T17:37:47.883905
+lastmod: 2025-02-21T18:43:34.169927
 summary: ''
 title: Trade Offs
 toc: true

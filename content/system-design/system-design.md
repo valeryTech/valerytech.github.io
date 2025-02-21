@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T17:37:47.879945
+date: 2025-02-21T18:43:34.165894
 description: Default Description
 draft: false
-lastmod: 2025-02-21T17:37:47.879945
+lastmod: 2025-02-21T18:43:34.165894
 summary: ''
 tags:
 - system-design
@@ -15,7 +15,18 @@ url: /system-design/about
 weight: 810
 ---
 
-courses
+## Courses
+
+ > 
+ > test
+
+ > 
+ > \[!info\] infomation
+ > this is information
+
+ > 
+ > \[!danger\] be aware
+ > of these things
 
 order:
 smarchok 2 courses + https://www.youtube.com/@SystemDesignInterview/videos

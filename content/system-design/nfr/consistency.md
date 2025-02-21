@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T17:37:47.892292
+date: 2025-02-21T18:43:34.177464
 description: Default Description
 draft: false
-lastmod: 2025-02-21T17:37:47.892292
+lastmod: 2025-02-21T18:43:34.177464
 summary: ''
 title: Consistency
 toc: true

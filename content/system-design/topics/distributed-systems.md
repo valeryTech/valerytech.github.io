@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T17:37:47.881324
+date: 2025-02-21T18:43:34.167265
 description: Default Description
 draft: false
-lastmod: 2025-02-21T17:37:47.881324
+lastmod: 2025-02-21T18:43:34.167265
 summary: ''
 title: Distributed Systems
 toc: true

@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T17:37:47.890790
+date: 2025-02-21T18:43:34.175988
 description: Default Description
 draft: false
-lastmod: 2025-02-21T17:37:47.890790
+lastmod: 2025-02-21T18:43:34.175988
 summary: ''
 title: Frameworks
 toc: true
