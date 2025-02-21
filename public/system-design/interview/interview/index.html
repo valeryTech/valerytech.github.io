@@ -1,0 +1,1278 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/interview/interview/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/interview/interview/">
+
+
+<title>Interview  |  System Design</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/interview/interview/">
+  <meta property="og:site_name" content="System Design">
+  <meta property="og:title" content="Interview">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="article:modified_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Interview">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "System Design and Software Architecture 1",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/interview/",
+       "name": "Interview",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Interview",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+    
+  
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">System Design</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">System Design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about">System Design</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#there-is-not-one-single-best-solution">There is not one single best solution</a></li>
+    <li><a href="#creation-lens">Creation Lens</a></li>
+    <li><a href="#lean-towards-your-strengths">Lean towards your strengths</a></li>
+    <li><a href="#two-types-of-interviewers">Two Types of Interviewers</a></li>
+    <li><a href="#theres-no-right-way-to-design-a-system">There’s no right way to design a system</a></li>
+    <li><a href="#interviewer-behavior">Interviewer behavior</a>
+      <ul>
+        <li><a href="#prior-experience-affects-both-sides">Prior experience affects both sides</a></li>
+      </ul>
+    </li>
+    <li><a href="#time-management">Time management</a></li>
+    <li><a href="#approaching-the-problem">Approaching the problem</a></li>
+    <li><a href="#design-is-an-iterative-process">Design is an iterative process</a></li>
+    <li><a href="#immutability-trick">Immutability Trick</a></li>
+    <li><a href="#other">Other</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#product-design">Product Design</a></li>
+    <li><a href="#infrastructure-design">Infrastructure Design</a></li>
+    <li><a href="#object-oriented-design">Object Oriented Design</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#problem-navigation">Problem Navigation</a></li>
+    <li><a href="#high-level-design">High-Level Design</a></li>
+    <li><a href="#technical-excellence">Technical Excellence</a></li>
+    <li><a href="#communication-and-collaboration">Communication and Collaboration</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#understanding-fundamentals">Understanding Fundamentals</a></li>
+    <li><a href="#problem-navigation-1">Problem Navigation</a></li>
+    <li><a href="#ironclad-certainty">Ironclad Certainty</a></li>
+    <li><a href="#choose-your-own-adventure">Choose your Own Adventure</a></li>
+    <li><a href="#holistic-view">Holistic View</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#red-flag-1">Red Flag #1</a></li>
+    <li><a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t</a></li>
+    <li><a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback</a></li>
+    <li><a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer</a></li>
+    <li><a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns</a></li>
+    <li><a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview</a></li>
+    <li><a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview</a></li>
+    <li><a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board</a></li>
+    <li><a href="#make-a-decision">Make a decision</a></li>
+    <li><a href="#brand-names">Brand Names</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#red-overengineering">Red: Overengineering</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-systems-users-end-users">The System’s Users (End-Users)</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Interview</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#there-is-not-one-single-best-solution">There is not one single best solution</a></li>
+    <li><a href="#creation-lens">Creation Lens</a></li>
+    <li><a href="#lean-towards-your-strengths">Lean towards your strengths</a></li>
+    <li><a href="#two-types-of-interviewers">Two Types of Interviewers</a></li>
+    <li><a href="#theres-no-right-way-to-design-a-system">There’s no right way to design a system</a></li>
+    <li><a href="#interviewer-behavior">Interviewer behavior</a>
+      <ul>
+        <li><a href="#prior-experience-affects-both-sides">Prior experience affects both sides</a></li>
+      </ul>
+    </li>
+    <li><a href="#time-management">Time management</a></li>
+    <li><a href="#approaching-the-problem">Approaching the problem</a></li>
+    <li><a href="#design-is-an-iterative-process">Design is an iterative process</a></li>
+    <li><a href="#immutability-trick">Immutability Trick</a></li>
+    <li><a href="#other">Other</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#product-design">Product Design</a></li>
+    <li><a href="#infrastructure-design">Infrastructure Design</a></li>
+    <li><a href="#object-oriented-design">Object Oriented Design</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#problem-navigation">Problem Navigation</a></li>
+    <li><a href="#high-level-design">High-Level Design</a></li>
+    <li><a href="#technical-excellence">Technical Excellence</a></li>
+    <li><a href="#communication-and-collaboration">Communication and Collaboration</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#understanding-fundamentals">Understanding Fundamentals</a></li>
+    <li><a href="#problem-navigation-1">Problem Navigation</a></li>
+    <li><a href="#ironclad-certainty">Ironclad Certainty</a></li>
+    <li><a href="#choose-your-own-adventure">Choose your Own Adventure</a></li>
+    <li><a href="#holistic-view">Holistic View</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#red-flag-1">Red Flag #1</a></li>
+    <li><a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t</a></li>
+    <li><a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback</a></li>
+    <li><a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer</a></li>
+    <li><a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns</a></li>
+    <li><a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview</a></li>
+    <li><a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview</a></li>
+    <li><a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board</a></li>
+    <li><a href="#make-a-decision">Make a decision</a></li>
+    <li><a href="#brand-names">Brand Names</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#red-overengineering">Red: Overengineering</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#the-systems-users-end-users">The System’s Users (End-Users)</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h1 id="checklist">Checklist</h1>
+<p>paper with checklist</p>
+<p>(tool)
+Ask your recruiter what software you&rsquo;ll be using for your interview and practice with it ahead of time. You don&rsquo;t want to be fumbling with the software during your interview.</p>
+<h1 id="advices--principles--tricks">Advices | Principles | Tricks</h1>
+<p>(beginning)
+What it’s like to walk into a system design interview
+When beginning an interview, try to imagine what the interviewer is looking for. What are their goals for the session? How can you help them achieve those goals in a way that persuades them that you’ll be a strong hire?</p>
+<p>Put simply, the interviewer&rsquo;s goal is to find enough data to hire you. Given the limited time available to them, an interviewer has to try to get enough positive signal about your ability so they can justify giving you a “hire” rating. In one hour you have to show your interviewer that you understand the fundamentals of a system (end to end). You also should be able to name and explain (at least at a high level) each part of the system, describe the tradeoffs you make, and find a solution.</p>
+<blockquote>
+<p>The best way to accomplish this is to imagine that you’re explaining a design doc to a group of more junior engineers. They will ask you questions about your decisions and want to know what you’re trying to solve. Anticipating these questions and your responses will set you up for success in the interview.</p>
+</blockquote>
+<h1 id="proactivity">Proactivity</h1>
+<p>Being proactive in a system design (SD) interview is essential to demonstrate leadership, structured thinking, and problem-solving skills. A proactive candidate does not wait for the interviewer to lead the discussion but instead takes charge, guiding the conversation effectively while remaining open to feedback.</p>
+<p>✔ <strong>Guide the Interview</strong>: Set a clear structure and lead the discussion.<br>
+✔ <strong>Be Adaptable</strong>: Accept feedback and modify your approach.<br>
+✔ <strong>Engage the Interviewer</strong>: Continually check in to align on priorities.<br>
+✔ <strong>Explain Trade-offs</strong>: Justify decisions with pros and cons.<br>
+✔ <strong>Communicate Clearly</strong>: Structure your thoughts and articulate them effectively.</p>
+<p><strong>Define a High-Level System Approach</strong></p>
+<ul>
+<li><strong>Set a Roadmap</strong>: Before diving into details, outline a step-by-step process:
+<ul>
+<li>&ldquo;I&rsquo;ll start with high-level architecture, then discuss data storage, API design, scaling, and trade-offs. Does that sound good?&rdquo;</li>
+</ul>
+</li>
+<li><strong>Propose an Initial Architecture</strong>: Start with a simple design that meets core requirements.
+<ul>
+<li>Example: &ldquo;I’ll begin with a monolithic service since the initial scale is low, but I’ll discuss how we can migrate to a microservices-based architecture as traffic grows.&rdquo;</li>
+</ul>
+</li>
+<li><strong>Encourage Feedback</strong>: Keep the interviewer engaged by asking:
+<ul>
+<li>&ldquo;Does this approach align with what you had in mind?&rdquo;</li>
+<li>&ldquo;Would you like me to explore alternative solutions at this stage?&rdquo;</li>
+</ul>
+</li>
+</ul>
+<p>Asking High-Impact, Non-Trivial Questions</p>
+<h2 id="there-is-not-one-single-best-solution">There is not one single best solution<a href="#there-is-not-one-single-best-solution" class="anchor" aria-hidden="true">#</a> </h2>
+<blockquote>
+<p>Always consider trade-offs especially in SD interview</p>
+</blockquote>
+<p>In system design, there isn&rsquo;t a single &ldquo;best&rdquo; solution; instead, multiple viable
+approaches exist, each with its own set of trade-offs. This is because system design problems are often complex and multifaceted.</p>
+<p>For engineers new to system design, this complexity can be daunting. A common pitfall is approaching design challenges as if they have one correct answer, similar to solving a well-defined engineering problem. However, system design requires a different mindset—<em>one that embraces ambiguity and focuses on evaluating different options based on their trade-offs</em>.</p>
+<p>Trade-off analysis is central to effective system design. It involves systematically comparing different design alternatives to understand their advantages and disadvantages in the context of specific requirements and constraints. By conducting a thorough trade-off analysis, engineers can make informed decisions that align with the project&rsquo;s goals and constraints.</p>
+<h2 id="creation-lens">Creation Lens<a href="#creation-lens" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Instead of finding (or “retrieving”) a solution, you are creating a solution. In this way, coding is akin to a science, while system design is more like an art.</p>
+<p>(Mental Way)
+Here’s another way to think about it. You aren’t solving a problem—you’re creating a map to help someone else find the solution. Instead of coloring inside some lines, you’ll need to draw the lines for someone else to color in. In a system design interview, there are no correct answers—though there are certainly incorrect ones—so there is nothing to solve. Instead, you’ll ask questions, make stuff, and explain how and why the stuff you made was reasonable.</p>
+<blockquote>
+<p>“Pretend it’s 1999, so a lot of the stuff we have access to today simply doesn’t exist. You and a group of your schoolmates are in your garage, hoping to make something. You&rsquo;re the most senior one there. You will design it and your friends will code it up, and the thing is: the Minimum Viable Product has to be completed by tomorrow. So, there’s no time to prep and no need to worry about the intricacies of system architecture that you don’t know. Just answer this: How would you design this system so your friends could code it up today, right now? <strong>It doesn’t have to be pretty. It doesn’t have to be complicated. It doesn’t have to impress anyone. It just has to get done</strong>.”</p>
+</blockquote>
+<p>To succeed in a system design interview, you <em>want to collaborate with your interviewer</em>, try crazy stuff, and try more crazy stuff until the design “feels right.”</p>
+<h2 id="lean-towards-your-strengths">Lean towards your strengths<a href="#lean-towards-your-strengths" class="anchor" aria-hidden="true">#</a> </h2>
+<p>What if your measurement of success in an interview isn’t what you say, but instead it’s what you get the interviewer to say? Imagine you say something that engages the interviewer’s curiosity so much that they have no choice but to follow up with a “tell me more about that.” If the areas you get them to dig into the deepest, are things you’re good at: congratulations you are doing the Jedi mind trick.</p>
+<p>A candidate doing a system design interview will usually experience confusion. The interview format is so open-ended, you cannot know about everything they&rsquo;ll ask you. However, there will be opportunities to strut your stuff. There will be moments when they ask you about something you know very well, and when this happens put your shoulders back and flex your muscles on this topic.</p>
+<h2 id="two-types-of-interviewers">Two Types of Interviewers<a href="#two-types-of-interviewers" class="anchor" aria-hidden="true">#</a> </h2>
+<p>We need to act differently with cold and warm interviewers (take strategies from interviewing.io website).</p>
+<h2 id="theres-no-right-way-to-design-a-system">There’s no right way to design a system<a href="#theres-no-right-way-to-design-a-system" class="anchor" aria-hidden="true">#</a> </h2>
+<p>By now you’ve heard (or read) that &rsquo;there’s no right way to design a system,&quot; and you might think it’s true. But how do you know for sure?</p>
+<p>Watch this video of two experts designing the same system side by side. By the time you’re done, you’ll have a practical example that proves “there’s no right way to design a system”. Pay attention, and you’ll notice how effective it is when you guide the interview toward your strengths and when you’re open about gaps in your understanding. The video is split into two parts.</p>
+<blockquote>
+<p>This is one of the most important lessons!</p>
+</blockquote>
+<p>We have “rules of thumb” scattered throughout this guide. In those cases, they apply directly to the material. But in this instance, these rules of thumb don’t fit anywhere, because they apply to, well, everything.</p>
+<h2 id="interviewer-behavior">Interviewer behavior<a href="#interviewer-behavior" class="anchor" aria-hidden="true">#</a> </h2>
+<p>As an interviewer, it’s hard to tell the difference between a bad candidate and a good candidate who is stuck.</p>
+<blockquote>
+<p>If the interviewer interrupts you, it&rsquo;s probably because you’re going off track.</p>
+</blockquote>
+<p>If your interviewer interrupts you to suggest that you explore another avenue, then most likely you&rsquo;re designing the system in contradiction to what the interviewer expects. In this case, let the interviewer explain what they expect, and then you should ask clarifying questions to ensure you understand the new direction before moving on.</p>
+<p>It’s fine if the interviewer asks you questions, but it’s a bad sign if the interviewer starts telling you how to do things. This is a negative signal because the interviewer feels that you need help to move forward, and this will lower your score.</p>
+<h3 id="prior-experience-affects-both-sides">Prior experience affects both sides<a href="#prior-experience-affects-both-sides" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In a system design interview, you may encounter two different situations:</p>
+<ol>
+<li>
+<p>The interviewer has read your resume and wants to see you demonstrate your experience in building something you’re familiar with. This should be easy because you can apply your knowledge from your current/previous position.</p>
+</li>
+<li>
+<p>The interviewer has read your resume and decides to purposely challenge you by asking you to design something you have not worked on. In this case, don’t worry—just remember that “there is no right way to design a system.” Use your best judgment and industry knowledge to come up with something reasonable. Also, be honest about gaps in your knowledge and don’t be afraid to ask questions. Demonstrate that you are curious and willing to learn.</p>
+<p>When the interviewer decides to challenge you with something new, it may be a topic that is based on their own particular expertise or skill set.</p>
+</li>
+</ol>
+<blockquote>
+<p>[!tip]
+If you know a little about your interviewer’s background, you should have a hint about what to expect, which can allow you to prepare a little ahead of time.</p>
+</blockquote>
+<h2 id="time-management">Time management<a href="#time-management" class="anchor" aria-hidden="true">#</a> </h2>
+<p>It&rsquo;s more important to cover everything broadly than it is to explain every small thing in detail.</p>
+<p>By the end of the interview, the interviewer is inherently asking themselves “Could this person get an MVP off the ground?” If the answer is “no”, then you’ve drastically reduced your chances of passing the interview.</p>
+<h2 id="approaching-the-problem">Approaching the problem<a href="#approaching-the-problem" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Whatever decision you make, explain <strong>why</strong>. In a system design interview, <strong>why</strong> is more important than <strong>what</strong>. For anything you say, be prepared to explain <strong>why</strong>.</p>
+<blockquote>
+<p>[!important]
+Your interviewer cares less about whether your design is good in itself, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions.</p>
+</blockquote>
+<p>Keep it simple. The first rule of distributed systems is that you should avoid them if you don’t need them! Always consider maintenance costs. People don’t build distributed systems for fun. If all of Google could run on just one machine, you can bet they would do it.</p>
+<p>In other words, if there is a simple way to do things and a complex way to do things, aim for the simple path. Not because the simple way is more likely to be correct, but because you have to make more assumptions for more complicated explanations to be true.</p>
+<p>Accept that there are some things that you will not know, and be ready to admit this to your interviewer. In the third core concept (below), we will teach you exactly how to say this without losing points in the interview.</p>
+<h2 id="design-is-an-iterative-process">Design is an iterative process<a href="#design-is-an-iterative-process" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Iterative process: Systems, in reality, improve over iterations. We often start with something simple, but when bottlenecks arise in one or more of the system’s parts, a new design becomes necessary. In some design problems, we make one design, identify bottlenecks, and improve on it.</p>
+<p>Working under time constraints might not permit iterations on the design. However, we still recommend two iterations—first, where we do our best to come up with a design (that takes about 80 percent of our time), and a second iteration for improvements. Another choice is to change things as we figure out new insights. Inevitably, we discover new details as we spend more time working with a problem.</p>
+<blockquote>
+<p>Start with simple solution and evolve it during the interview to the MVP</p>
+</blockquote>
+<p>At the risk of oversimplifying, we suggest that you <em>start small</em>. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it.</p>
+<p>name it <strong>First Pass</strong>, Naive Design, Baseline Solution</p>
+<p>collect only main features
+components prioritization
+draw only critical components</p>
+<p>no premature optimization - follow the steps in this interview SD framework</p>
+<p>prioritization of the components to further process</p>
+<h2 id="immutability-trick">Immutability Trick<a href="#immutability-trick" class="anchor" aria-hidden="true">#</a> </h2>
+<p>tip 1. Here is one way to get unstuck during a system design interview: consider the immutable case. This is a practical way to dumb the problem down. Tackle the dumber problem, and then add in complexity after that. Considering the immutable case also helps with identifying bottlenecks, as well as with capacity planning.</p>
+<h2 id="other">Other<a href="#other" class="anchor" aria-hidden="true">#</a> </h2>
+<p>(invention point of view)
+“When you have a desired outcome (a truly portable laptop computer) but no clear solution in sight, that’s when you brainstorm, try crazy stuff, improvise, and keep ‘building your way forward’ until you come up with something that works. You know it when you see it. A great design comes together in a way that can’t be solved with equations and spreadsheets and data analysis. It has a look and feel all of its own - a beautiful aesthetic that speaks to you.”</p>
+<p>The less code you write in a system design interview, the better.</p>
+<p>Be prepared to adapt. Be flexible and ready to adjust your design based on feedback from the interviewer.</p>
+<h1 id="types-of-sd-interviews">Types of SD Interviews</h1>
+<p>Each company (and sometimes, each interviewer) will conduct a system design interview a little differently. Often, the differences are not important and you can prepare for all of them with the same material. But some interview types require different preparation.</p>
+<h2 id="product-design">Product Design<a href="#product-design" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Product design interviews (sometimes called &ldquo;Product Architecture&rdquo; interviews, or ambiguously &ldquo;System Design&rdquo; interviews) are the most common type of system design interview. In these interviews, you&rsquo;ll be asked to design a system behind a product. For example, you might be asked to design the backend for a chat application, or the backend for a ride sharing application. Often these interviews are described in terms of a &ldquo;use case&rdquo; - for example, &ldquo;design the backend for a chat application that supports 1:1 and group chats&rdquo; and frequently referred to by the most noteworthy company that uses that use case. For example, &ldquo;design the backend for a chat application like Slack&rdquo;.</p>
+<h2 id="infrastructure-design">Infrastructure Design<a href="#infrastructure-design" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Infrastructure design interviews are less common than product design interviews, but still relatively common. In these interviews, you&rsquo;ll be asked to design a system that supports a particular infrastructure use case. For example, you might be asked to design a message broker or a rate limiter. Since these interviews are deeper in the stack, your interviewer will be looking for more emphasis on system-level mastery (e.g. consensus algorithms, durability considerations) than high-level design.</p>
+<p>This guide <strong>will</strong> be useful for Infrastructure Design interviews, with a stronger emphasis on the Concepts section.</p>
+<h2 id="object-oriented-design">Object Oriented Design<a href="#object-oriented-design" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Object oriented design (sometimes called &ldquo;Low Level Design&rdquo;) interviews are less common than product design interviews, but still occur at particularly at companies that use an object-oriented language like Java (Amazon is notable for these interviews). In these interviews, you&rsquo;ll be asked to design a system that supports a particular use-case, but the emphasis on the interview is assembling the correct class structure, adhering to <a href="https://en.wikipedia.org/wiki/SOLID">SOLID principles</a>, coming up with a sensible entity design, etc. For example, you might be asked to design a Parking Lot reservation system or a Vending Machine, but rather than breaking this problem down into services and describing the backend database you&rsquo;re instead asked to describe the class structure of a solution.</p>
+<p>This guide is <strong>not</strong> as useful for an Object Oriented Design interview. We instead recommend (until we get to it!) <a href="https://www.educative.io/courses/grokking-the-low-level-design-interview-using-ood-principles">Grokking the Low Level Design Interview</a>.</p>
+<h1 id="interview-assessment">Interview Assessment</h1>
+<p>At the senior level, system design interviews are common.</p>
+<p>The difference in levelling is most frequently the depth of the solution and your knowledge. While all candidates are expected to complete a full design satisfying the requirements, a mid-level engineer might only do this with 80% breadth and 20% depth, while a senior engineer might do this with 60% breadth and 40% depth.</p>
+<blockquote>
+<p>Remember that the top-level goal for your interview is to give your interviewer <em>sufficient confidence</em> to advocate for a hire decision. While the mechanics of your interview are important, they are ultimately in service of signaling to your interviewer that you are a strong candidate.</p>
+</blockquote>
+<blockquote>
+<p>[!warning] Remember
+The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery">Delivery</a> section.</p>
+</blockquote>
+<h2 id="problem-navigation">Problem Navigation<a href="#problem-navigation" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Your interviewer is looking to assess your ability to navigate a complex problem. This means that you should be able to break down the problem into smaller, more manageable pieces, prioritize the most important ones, and then navigate through those pieces to a solution. This is often the most important part of the interview, and the part that most candidates (especially those new to system design) struggle with.</p>
+<p>The most common ways that candidates fail with this competency are:</p>
+<ul>
+<li>Insufficiently exploring the problem and gathering requirements.</li>
+<li>Focusing on uninteresting/trivial aspects of the problem vs the most important ones.</li>
+<li>Getting stuck on a particular piece of the problem and not being able to move forward.</li>
+</ul>
+<h2 id="high-level-design">High-Level Design<a href="#high-level-design" class="anchor" aria-hidden="true">#</a> </h2>
+<p>With a problem broken down, your interviewer wants to see how you can solve each of the constituent pieces. This is where your knowledge of the <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts">Core Concepts</a> comes into play. You should be able to describe how you would solve each piece of the problem, and how those pieces fit together into a cohesive whole.</p>
+<p>The most common ways that candidates fail with this competency are:</p>
+<ul>
+<li>Not having a strong enough understanding of the core concepts to solve the problem.</li>
+<li>Ignoring scaling and performance considerations.</li>
+<li>&ldquo;Spaghetti design&rdquo; - a solution that is not well-structured and difficult to understand.</li>
+</ul>
+<h2 id="technical-excellence">Technical Excellence<a href="#technical-excellence" class="anchor" aria-hidden="true">#</a> </h2>
+<p>To be able to design a great system, you&rsquo;ll need to know about best practices, current technologies, and how to apply them. This is where your knowledge of the <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/key-technologies">Key Technologies</a> is important. You should be able to describe how you would use current technologies, with well-recognized patterns, to solve the problems.</p>
+<p>The most common ways that candidates fail with this competency are:</p>
+<ul>
+<li>Not knowing about available technologies.</li>
+<li>Not knowing how to apply those technologies to the problem at hand.</li>
+<li>Not recognizing common patterns and best practices.</li>
+</ul>
+<h2 id="communication-and-collaboration">Communication and Collaboration<a href="#communication-and-collaboration" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Technical interviews are also a way to get to know what it would be like to work with you as a colleague. Interviews are frequently collaborative, and your interviewer will be looking to see <em>how you work with them to solve the problem</em>. This will include your ability to communicate complex concepts, respond to feedback and questions, and in some cases work together with the interviewer to solve the problem.</p>
+<p>The most common ways that candidates fail with this competency are:</p>
+<ul>
+<li>Not being able to communicate complex concepts clearly.</li>
+<li>Being defensive or argumentative when receiving feedback.</li>
+<li>Getting lost in the weeds and not being able to work with the interviewer to solve the problem.</li>
+</ul>
+<p>(interviewing.io point of view)
+With that said, sometimes you’ll have an interviewer who is cold or not very collaborative. Dealing with these interviewers requires practice. The more senior you become, the more important it is to learn how to adjust your communication style to match your audience. We recommend completing mock interviews with a variety of interviewers to help you become a seasoned, fearless veteran of system design interviews.</p>
+<h1 id="interview-assessment-other">Interview Assessment (Other)</h1>
+<p>What your interviewer looks for, and what they don&rsquo;t</p>
+<p>With this basic model in mind, let&rsquo;s consider the main elements that system design interviewers look for, and the elements that don’t matter.</p>
+<p>What your interviewer wants to see</p>
+<ol>
+<li>a broad, base-level understanding of system design fundamentals.</li>
+<li>back-and-forth about problem constraints and parameters.</li>
+<li>well-reasoned, qualified decisions based on engineering trade-offs.</li>
+<li>the unique direction your experience and decisions take them.</li>
+<li>a holistic view of a system and its users.</li>
+</ol>
+<p>What your interviewer is not looking for</p>
+<ol>
+<li>deep expertise in the given problem domain.</li>
+<li>assumptions about the prompt.</li>
+<li>specific answers with ironclad certainty.</li>
+<li>a predefined path from the beginning to end of the problem.</li>
+<li>strictly technical considerations.</li>
+</ol>
+<h2 id="understanding-fundamentals">Understanding Fundamentals<a href="#understanding-fundamentals" class="anchor" aria-hidden="true">#</a> </h2>
+<p>You do not need to display deep expertise in the given problem domain. Interviewers want to see that you have a broad, base-level understanding of system design fundamentals.</p>
+<p>Your interviewer will expect you to have knowledge of a wide range of basic topics, but they won&rsquo;t expect you to be an expert in any of them. For instance, you should understand the difference between SQL and NoSQL databases, their broad performance characteristics, and the types of applications each might be useful for (which we’ll teach you later in this guide). But you would not need to know how the internals of either type of database work at any kind of detailed level.</p>
+<p>In spite of this, you still might be asked to design those internals! Keep in mind, though, that your answer doesn&rsquo;t need to be optimal or reflect real-world implementations. For example, if an interviewer asks you to design a database/SQL query engine, they&rsquo;re not trying to discern if you&rsquo;re familiar with the academic literature on query engines or discover how much time you&rsquo;ve spent working on database internals.</p>
+<p>Instead, they want to see how you would approach the problem based on what you do know, starting from first principles and collaborating with them. Your answer will probably not be anywhere near optimal, and that&rsquo;s OK! The interviewer will focus on the process, not the result.</p>
+<h2 id="problem-navigation-1">Problem Navigation<a href="#problem-navigation-1" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Interviewers want to engage you in a back-and-forth conversation about problem constraints and parameters, so avoid making assumptions about the prompt.
+Initial prompts to system design problems tend to be intentionally light on detail. Many candidates make a mistake by extrapolating details from the initial prompt and crafting a solution based on those assumptions.</p>
+<p>For example, imagine that the interviewer instructs you to design a &ldquo;photo sharing service&rdquo; with some minimally defined capabilities. This may cause some candidates to imagine that they&rsquo;re rebuilding Instagram and start designing around the assumption that all images will be relatively small, not examined closely, and that extensive compression to save storage and bandwidth is acceptable.</p>
+<p>But the interviewer didn’t tell you to rebuild Instagram, so you’ll need to keep in mind that there are many different types of photo sharing services. The interviewer may have had in mind something like Imgur or Photobucket, sites that cater more to basic image hosting for the web. Or they could be thinking about something like Flickr or 500px, services built for photographers to show off their work in high resolution.</p>
+<p>So how do you figure out what type of service the interviewer wants you to build? Ask them! A basic prompt leaves room for you to start a conversation with your interviewer about the system you&rsquo;re designing—what type of users does it serve, what type of traffic can it expect, what limits will it have? Demonstrating that you can think critically about the parameters of your service is the first step in any system design interview.</p>
+<h2 id="ironclad-certainty">Ironclad Certainty<a href="#ironclad-certainty" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Interviewers are not looking for specific answers with ironclad certainty. They want to see well-reasoned, qualified decisions based on engineering trade-offs.</p>
+<p>Be very careful any time you find yourself responding immediately to a prompt in a system design interview. Even aspects of your design that seem insignificant need at least cursory consideration. Let’s use IDs as an example.</p>
+<p>A candidate will often start a discussion of a data model with a statement like, &ldquo;I&rsquo;ll use auto incrementing IDs,&rdquo; or &ldquo;I&rsquo;ll use GUID here&rdquo; as kind of a default approach to assigning IDs to data. In many applications, however, the type of ID you assign to your data has practical consequences.</p>
+<p>Is this ID going to be exposed to users? If so, how long does it need to be to avoid collisions? If we auto-increment it, are we worried about the visibility that will give third parties into our traffic patterns or the possibilities of users guessing the IDs to each others&rsquo; data? If it&rsquo;s intended to be shared, is it convenient to type? If you print it on a business card or a flier, does it contain characters that you could confuse for each other (e.g., “1” and “I”, “0” and “O”)?</p>
+<p>You don&rsquo;t need to hold an inquiry for every minor detail, but always be sure to give some justification for the decisions you make and let your interviewer know how your decisions would change in different circumstances. System design problems don&rsquo;t have a single definitive answer, so interviewers just want to see that you can justify your answers.</p>
+<h2 id="choose-your-own-adventure">Choose your Own Adventure<a href="#choose-your-own-adventure" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Interviewers are not looking for a predefined path from the beginning to end of the problem. They want to see the unique direction your experience and decisions take them.
+Coding problems usually have an expected path. Typically you&rsquo;ll begin with an obvious but inefficient solution, and then the interviewer will prompt you for a series of improvements. Those improvements lead you to increasingly efficient solutions until you finally arrive at the optimal implementation.</p>
+<p>System design problems, on the other hand, resemble a Choose Your Own Adventure book rather than a linear novel. A complex system contains a multitude of sub-components, each one of which could serve as a design problem on its own. After you&rsquo;ve sketched the overall layout of your system, an interviewer may decide to keep your focus on the big picture or dive into a deeper examination of one particular component.</p>
+<p>The path your interview takes will be steered by your interviewer, but they&rsquo;re likely to take cues from the sub-problems in which you display interest or aptitude. In some cases they may explicitly ask you which part of the problem you&rsquo;d prefer to focus on.</p>
+<blockquote>
+<p>Even if you&rsquo;re not choosing directly, you can still influence an interview&rsquo;s direction. As you talk your way through a solution, it’s OK to specifically note the parts that you have experience in and explain when you&rsquo;re making educated guesses. Your interviewer won&rsquo;t expect you to know everything, but giving them a better idea of what you do know will help them steer the interview in ways that reveal your strengths and problem-solving ability.</p>
+</blockquote>
+<h2 id="holistic-view">Holistic View<a href="#holistic-view" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Interviewers seek a holistic view of a system and its users.</p>
+<p>When faced with a choice in a design interview, it&rsquo;s easy to focus on the technical details, but remember that computer systems serve human users, so you’ll want to anchor your technical decisions to the user experience they enable.</p>
+<p>Suppose, for instance, that the image sharing service you&rsquo;re designing will require users to log in before uploading an image. In technical terms, you might want to avoid login to keep the database schema simpler, or you could introduce login to gather better metrics. An anonymous experience may be best for a public image-hosting site intended for quick turnaround and low interaction, while a logged-in experience offers the possibility of community features like commenting and sharing, personalized metrics, and the ability to restrict an upload to authorized viewers. You may want to take either approach or even both, allowing a limited anonymous experience with extra features for logged-in users.</p>
+<blockquote>
+<p>[!Important] User Experience
+The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.</p>
+</blockquote>
+<h1 id="flags">Flags</h1>
+<p>Think of red and green flags as signposts you can use to orient yourself in the interview. Green flags indicate that things are going well, that you&rsquo;re engaging with the interviewer and making a positive impression. Red flags warn you that you may be going astray and should try to get the interview back on track.</p>
+<h2 id="red-flag-1">Red Flag #1<a href="#red-flag-1" class="anchor" aria-hidden="true">#</a> </h2>
+<p>You believe that to pass a system design interview, you should just “play the game, keep talking, and make sure nobody explodes.”</p>
+<p>Following this quote’s advice has steered many interviewees in the wrong direction. There is no game, and talking for the sake of talking is one way to hang yourself with the rope the interviewer gives you. Also, if the goal is to not explode, well, you’re wasting your and your interviewer’s time.</p>
+<h2 id="green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t<a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont" class="anchor" aria-hidden="true">#</a> </h2>
+<p>As we mentioned earlier, this guide will teach you the basic information that you’ll be asked about in 80% of system design interviews. Although these are great odds, you still may encounter a scenario that’s beyond your level of understanding. If this happens to you, don’t worry! Just engage in an honest dialogue with your interviewer, explaining when you lack certain knowledge or have gaps in your understanding. When you do have a sense of how to proceed, but you’re uncertain, you should communicate from first principles. Later in this guide, we will explain how to overcome that uncertainty and still score points with your interviewer.</p>
+<h2 id="red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback<a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Keep in mind that your interviewers use the same problems over and over again, and they frequently see candidates make the same mistakes. If they try to divert you from a course of action, it&rsquo;s likely because they&rsquo;ve seen others flounder when using the same approach. You may be the one candidate in a hundred who finds a unique and better solution—we&rsquo;ve had this happen before!—but carefully consider the odds before proceeding with a solution against the interviewer&rsquo;s advice.</p>
+<p>With that said, there is an art to pushing back against your interviewer when the situation calls for it, and later in this guide we’ll teach you how and when to employ this strategy .</p>
+<h2 id="green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer<a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer" class="anchor" aria-hidden="true">#</a> </h2>
+<p>When the interviewer offers feedback, you integrate it into your design. You ask probing questions and receive useful answers about the system you&rsquo;re designing, its users, and its traffic. <strong>Try to establish a tone as if you were working through a problem with a coworker rather than proving yourself to an interviewer.</strong> In the real world, when you’re assigned a project, you’ll have to ask a variety of people several questions to ensure that you fully understand the problem before making decisions. That’s what interviewers want to see.</p>
+<h2 id="red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns<a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns" class="anchor" aria-hidden="true">#</a> </h2>
+<p>It&rsquo;s OK to not know things—no one will have every answer—but it&rsquo;s better to admit that to your interviewer than to avoid the questions altogether. Your interviewer may be able to offer you a hint or help you reason about alternatives if they know you&rsquo;re struggling, but if you skip right ahead you&rsquo;ll miss the opportunity to provide them with any positive signal from that portion.</p>
+<h2 id="green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview<a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview" class="anchor" aria-hidden="true">#</a> </h2>
+<p>If you’re looking for a mid-level position or below, your interviewer should determine the direction and speed of the interview. Given an initial overview of your design, they may ask you for clarification on some aspects of it. They may ask you to produce a more detailed design for one or more components. And they may also change the requirements and ask how you could adapt your solution to accommodate this new view of the world. Wherever they take the interview, follow along and focus on the areas they direct you to.</p>
+<p>If you’re applying for a senior role (or above), it’s a good sign if you direct more of the interview. In junior system design interviews, the interviewer expects to drive the interview, but as you reach senior levels the expectation shifts to the interviewee.</p>
+<blockquote>
+<p>[!Anecdote from a seasoned interviewer]
+​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.</p>
+</blockquote>
+<p>If your goal is to maximize a mid-level offer, not improve your &ldquo;average passing rate&rdquo; (i.e., if you are comfortable sacrificing some senior-plus chances to increase your mid-level chances), then you might be better off consciously &ldquo;giving control away&rdquo; to your interviewer.</p>
+<blockquote>
+</blockquote>
+<p>Simply put, at the above-senior level an awkward pause will be held against you—that’s basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.</p>
+<blockquote>
+</blockquote>
+<p>Another way to think of it: when you are not leading the conversation, you signal that you’re not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)</p>
+<p>The saying, ‘Better to remain silent and be thought a fool than to speak out and remove all doubt’ can be true for mid-level interviews but not for seniors or above-senior.”</p>
+<h2 id="red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview<a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview" class="anchor" aria-hidden="true">#</a> </h2>
+<p>If you&rsquo;re struggling to provide an answer, give yourself a little bit of time to come up with something. If you&rsquo;re truly stuck, however, you should ask your interviewer for help. They can&rsquo;t tell that you&rsquo;re at an impasse unless you tell them, and you may waste valuable interview time while they debate whether it&rsquo;s been long enough to interrupt you.</p>
+<h2 id="green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board<a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board" class="anchor" aria-hidden="true">#</a> </h2>
+<p>An interview doesn&rsquo;t need to be a continuous stream of consciousness, and it never hurts to sanity check your ideas before verbalizing them.</p>
+<h2 id="make-a-decision">Make a decision<a href="#make-a-decision" class="anchor" aria-hidden="true">#</a> </h2>
+<p>A common failure point occurs when candidates don’t make decisions</p>
+<p>Often, candidates will say things like: “we could use this type of DB, or this other, or that other, and these are some pros and cons…” and then they move on to another component. It’s a good practice to talk about benefits and tradeoffs, but then you have to make a decision. In the real world you have to make decisions—the same thing applies to the interview. If the interviewer challenges you with some questions, it’s totally fine to change your mind and alter the component (if you think there are better choices).</p>
+<p>Don’t say.  We could use this type of DB, or this other, or that other, and these are some pros and cons…
+Do say.  &ldquo;We could use this type of DB, or this other, or that other, and these are some pros and cons… <strong>And based on all these tradeoffs, I’ll use THAT type of DB.</strong>&rdquo;</p>
+<h2 id="brand-names">Brand Names<a href="#brand-names" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Interviewers want to identify “impostors”: people who just learned a few words and try to pass the interview.</p>
+<p><em>Don’t say things because you think you’re supposed to say them.</em> This often occurs when candidates name specific brands of technologies (e.g., “Kafka” or “Cassandra”). Not being familiar with specific databases or other components is fine. Be smart and don’t say brand names just for the sake of saying them.</p>
+<p>Don’t say
+Thumbs down icon
+I’m going to use Cassandra&hellip;” unless you are VERY familiar with that, because the next question will be: “Why Cassandra and not some_other_db?</p>
+<p>Do say
+I’m going to use a NoSQL db because of [insert brief rationale].</p>
+<p>Don’t say
+I will use Kafka…” unless you’re prepared to explain how Kafka works. Don’t say “I will use Kafka” unless you are prepared to talk about other types of queues, because they may ask you: “Oh, Kafka, interesting choice. Why that instead of [some other queue]?</p>
+<p>Do say
+I will use a queue because of [insert brief rationale].</p>
+<blockquote>
+<p>[!info] Remember
+Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say &ldquo;a queue&rdquo;.</p>
+</blockquote>
+<h1 id="technical-kind-of-flags">Technical (kind of) Flags</h1>
+<h2 id="red-overengineering">Red: Overengineering<a href="#red-overengineering" class="anchor" aria-hidden="true">#</a> </h2>
+<p>A good interviewer also looks for red flags. Over-engineering is a real disease of many engineers as they delight in design purity and ignore tradeoffs. They are often unaware of the compounding costs of over-engineered systems, and many companies pay a high price for that ignorance. You certainly do not want to demonstrate this tendency in a system design interview. Other red flags include narrow mindedness, stubbornness, etc.
+#todo and other engineering / architect practices and methods</p>
+<p>Over-engineering or making rigid design choices.</p>
+<h1 id="model">Model</h1>
+<p>blueprint evaluation</p>
+<p>Candidate Evaludation
+Code, Solve, Communicate</p>
+<p>introduce real-world constraints, UX practices, working backward, time consideration (change of FR, NFR after time), user expectations, system dynamic (what can we do in future if there will be more users, changes in traffic, geopositions)
+product approach</p>
+<p>how can we be sure that this system does work?
+system evaluation</p>
+<h2 id="the-systems-users-end-users">The System’s Users (End-Users)<a href="#the-systems-users-end-users" class="anchor" aria-hidden="true">#</a> </h2>
+<p><strong>Role:</strong> The <strong>consumers of the system</strong> who interact with the product.</p>
+<p>🔹 <strong>Key Considerations:</strong></p>
+<ul>
+<li>Who are the primary <strong>users</strong>? (e.g., general consumers, enterprise clients, developers via APIs)</li>
+<li>What are their <strong>key expectations</strong>? (low latency, reliability, security, ease of use)</li>
+<li>How does user behavior <strong>impact system design</strong>? (e.g., peak traffic patterns, read vs. write ratios)</li>
+</ul>
+<h1 id="back-of-the-envelope-estimations">back-of-the-envelope estimations</h1>
+<p>You should check with your interviewer to see if they want to see you do some math or if they’d rather go into design.</p>
+<blockquote>
+<p>Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”</p>
+</blockquote>
+<p>If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.</p>
+<p>link to envelope estimations</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/projects/instagram/" class="stretched-link text-reset text-decoration-none">Instagram</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/interview/interview_phrases/" class="stretched-link text-reset text-decoration-none">Interview Phrases</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
+  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

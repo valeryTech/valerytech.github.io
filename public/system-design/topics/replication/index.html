@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/topics/replication/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/topics/replication/">
+
+
+<title>Replication  |  System Design</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/topics/replication/">
+  <meta property="og:site_name" content="System Design">
+  <meta property="og:title" content="Replication">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="article:modified_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Replication">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "System Design and Software Architecture 1",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/topics/",
+       "name": "Topics",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Replication",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+    
+  
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">System Design</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">System Design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about">System Design</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#sync--async-replication">sync / async replication</a></li>
+    <li><a href="#semi-synchronous">semi-synchronous</a></li>
+    <li><a href="#chain-replication">chain replication</a></li>
+    <li><a href="#reasoning">reasoning</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#reading-your-own-writes">Reading Your Own Writes</a></li>
+    <li><a href="#monotonic-reads">Monotonic Reads</a></li>
+    <li><a href="#consistent-prefix-reads">Consistent Prefix Reads</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Replication</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sync--async-replication">sync / async replication</a></li>
+    <li><a href="#semi-synchronous">semi-synchronous</a></li>
+    <li><a href="#chain-replication">chain replication</a></li>
+    <li><a href="#reasoning">reasoning</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#reading-your-own-writes">Reading Your Own Writes</a></li>
+    <li><a href="#monotonic-reads">Monotonic Reads</a></li>
+    <li><a href="#consistent-prefix-reads">Consistent Prefix Reads</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>Database replication</p>
+<p>Replication means keeping a copy of the same data on multiple machines that are connected via a network.</p>
+<h1 id="benefits">benefits</h1>
+<p>There are several reasons why you might want to replicate data:
+~ To keep data geographically close to your users (and thus reduce latency)
+~ To allow the system to continue working even if some of its parts have failed (and thus increase availability)
+~ To scale out the number of machines that can serve read queries (and thus increase read throughput)</p>
+<h1 id="problem">problem</h1>
+<p>Each node that stores a copy of the database is called a replica. With multiple replicas, a <em>question</em> inevitably arises: how do we ensure that all the data ends up on all the replicas?</p>
+<p>Every write to the database needs to be processed by every replica; otherwise, the replicas would no longer contain the same data. The most common solution for this is called <em>leader-based replication</em> (also known as active/passive or master–slave replication). It works as follows:</p>
+<ol>
+<li>One of the replicas is designated the <em>leader</em> (also known as master or primary). When clients want to write to the database, they must send their requests to the leader, which first writes the new data to its local storage.</li>
+<li>The other replicas are known as <em>followers</em> (read replicas, slaves, secondaries, or hot standbys).Whenever the leader writes new data to its local storage, it also sends the data change to all of its followers as part of a <em>replication log</em> or <em>change stream</em>. Each follower takes the log from the leader and updates its local copy of the database accordingly, by applying all writes in the same order as they were processed on the leader.</li>
+<li>When a client wants to read from the database, it can query either the leader or any of the followers. However, writes are only accepted on the leader (the followers are read-only from the client’s point of view).</li>
+</ol>
+<h1 id="regime">regime</h1>
+<p>An important detail of a replicated system is whether the replication happens <strong>synchronously or asynchronously</strong>. (In relational databases, this is often a configurable option; other systems are often hardcoded to be either one or the other.)</p>
+<h2 id="sync--async-replication">sync / async replication<a href="#sync--async-replication" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="semi-synchronous">semi-synchronous<a href="#semi-synchronous" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="chain-replication">chain replication<a href="#chain-replication" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="reasoning">reasoning<a href="#reasoning" class="anchor" aria-hidden="true">#</a> </h2>
+<p>reasoning example from DDIA</p>
+<p><em>pros/cons</em>: The advantage of synchronous replication is that the follower is guaranteed to have an up-to-date copy of the data that is consistent with the leader. If the leader suddenly fails, we can be sure that the data is still available on the follower. The disadvantage is that if the synchronous follower doesn’t respond (because it has crashed, or there is a network fault, or for any other reason), the write cannot be processed. The leader must block all writes and wait until the synchronous replica is available again.</p>
+<p>reasoning: For that reason, it is impractical for all followers to be synchronous: any one node outage would cause the whole system to grind to a halt. In practice, if you enable synchronous replication on a database, it usually means that one of the followers is synchronous, and the others are asynchronous. If the synchronous follower becomes unavailable or slow, one of the asynchronous followers is made synchronous. This guarantees that you have an up-to-date copy of the data on at least two nodes: the leader and one synchronous follower. This configuration is sometimes also called semi-synchronous.</p>
+<p>Often, leader-based replication is configured to be completely asynchronous. In this case, if the leader fails and is not recoverable, any writes that have not yet been replicated to followers are lost. This means that a write is not guaranteed to be durable, even if it has been confirmed to the client. However, a fully asynchronous configuration has the advantage that the leader can continue processing writes, even if all of its followers have fallen behind.</p>
+<p>Weakening durability may sound like a bad trade-off, but asynchronous replication is nevertheless widely used, especially if there are many followers or if they are geographically distributed.</p>
+<p>We will discuss three popular algorithms for replicating changes between nodes: single-leader, multi-leader, and leaderless replication.</p>
+<h1 id="replication-log">replication log</h1>
+<p>How does leader-based replication work under the hood? Several different replication methods are used in practice, so let’s look at each one briefly.</p>
+<h1 id="replication-lag-problems">replication lag problems</h1>
+<p>Unfortunately, if an application reads from an asynchronous follower, it may see out‐
+dated information if the follower has fallen behind. This leads to apparent inconsis‐
+tencies in the database: if you run the same query on the leader and a follower at the
+same time, you may get different results, because not all writes have been reflected in
+the follower. This inconsistency is just a temporary state—if you stop writing to the
+database and wait a while, the followers will eventually catch up and become consis‐
+tent with the leader. For that reason, this effect is known as eventual consistency</p>
+<p>When the lag is so large, the inconsistencies it introduces are not just a theoretical
+issue but a real problem for applications. In this section we will highlight three exam‐
+ples of problems that are likely to occur when there is replication lag and outline
+some approaches to solving them.</p>
+<p>We looked at some strange effects that can be caused by replication lag, and we dis‐
+cussed a few consistency models which are helpful for deciding how an application
+should behave under replication lag:</p>
+<h2 id="reading-your-own-writes">Reading Your Own Writes<a href="#reading-your-own-writes" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Users should always see data that they submitted themselves.</p>
+<p>problem roots, formulation and consiquences. -&gt; we need <em>read-after-write consistency</em>, also known as read-your-writes consistency</p>
+<p>How can we implement read-after-write consistency in a system with leader-based replication? There are various possible techniques. To mention a few:</p>
+<h2 id="monotonic-reads">Monotonic Reads<a href="#monotonic-reads" class="anchor" aria-hidden="true">#</a> </h2>
+<p>After users have seen the data at one point in time, they shouldn’t later see the
+data from some earlier point in time.</p>
+<p>Our second example of an anomaly that can occur when reading from asynchronous followers is that it’s possible for a user to see things moving backward in time.</p>
+<p>This can happen if a user makes several reads from different replicas.</p>
+<h2 id="consistent-prefix-reads">Consistent Prefix Reads<a href="#consistent-prefix-reads" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Users should see the data in a state that makes causal sense: for example, seeing a
+question and its reply in the correct order.</p>
+<p>Preventing this kind of anomaly requires another type of guarantee: consistent prefix
+reads. This guarantee says that if a sequence of writes happens in a certain order,
+then anyone reading those writes will see them appear in the same order.</p>
+<h1 id="solutions-for-replication-lag">Solutions for Replication Lag</h1>
+<p>how to think about this?</p>
+<p>When working with an eventually consistent system, it is worth thinking about how the application behaves if the replication lag increases to several minutes or even hours. If the answer is “no problem,” that’s great. However, if the result is a bad experience for users, it’s important to design the system to provide a stronger guarantee, such as read-after-write.</p>
+<p>As discussed earlier, there are ways in which an application can provide a stronger guarantee than the underlying database—for example, by performing certain kinds of reads on the leader. However, dealing with these issues in application code is complex and easy to get wrong.</p>
+<blockquote>
+<p>It would be better if application developers didn’t have to worry about subtle replication issues and could just trust their databases to “do the right thing.” This is why transactions exist: they are a way for a database to provide stronger guarantees so that the application can be simpler.</p>
+</blockquote>
+<p>Also, the replication itself should be transparent to an external user.</p>
+<p>Single-node transactions have existed for a long time. However, in the move to dis‐
+tributed (replicated and partitioned) databases, many systems have abandoned them,
+claiming that transactions are too expensive in terms of performance and availability,
+and asserting that eventual consistency is inevitable in a scalable system. There is
+some truth in that statement, but it is overly simplistic, and we will develop a more
+nuanced view</p>
+<h1 id="multi-leader-replication">multi-leader replication</h1>
+<p>As multi-leader replication is a somewhat retrofitted feature in many databases, there
+are often subtle configuration pitfalls and surprising interactions with other database
+features. For example, autoincrementing keys, triggers, and integrity constraints can
+be problematic. For this reason, multi-leader replication is often considered danger‐
+ous territory that should be avoided if possible [28].</p>
+<p>crdt
+https://ably.com/blog/crdts-distributed-data-consistency-challenges</p>
+<p>what is the conflict?</p>
+<p>scalable approaches for detecting and resolving conflicts in a replicated system.</p>
+<h1 id="trade-offs">trade-offs</h1>
+<p>There are many trade-offs to consider with replication: for example, whether to use
+synchronous or asynchronous replication, and how to handle failed replicas. Those
+are often configuration options in databases, and although the details vary by data‐
+base, the general principles are similar across many different implementations. We
+will discuss the consequences of such choices in this chapter.</p>
+<h1 id="choosing-the-right-replication-strategy">Choosing the Right Replication Strategy</h1>
+<p>Factors:</p>
+<p>sources:
+ddia,</p>
+<h1 id="replication">replication</h1>
+<p>Replication is done to achieve one or more of the following goals:</p>
+<ol>
+<li>To avoid a single point of failure and increase availability when machines go down.</li>
+<li>To better serve the global users by organizing copies by distinct geological locations in order to serve users from copies that are close by.</li>
+<li>To increase throughput. With more machines, more requests can be served.</li>
+</ol>
+<p>language:
+replica, leader, follower</p>
+<p>sync and async replication, semy-sinc.
+pros, cons;</p>
+<p>common types of replication:</p>
+<p><strong>single leader</strong>
+In system design, a single machine acts as a leader, and all write requests (or updates to the data store) go through that machine. All the other machines are used to cater to the read requests. This was previously known as “master-slave” replication, but it’s currently known as “primary-standby” or “active-passive” replication.</p>
+<p>The leader also needs to pass down the information about all the writes to the follower nodes to keep them up to date. In case the leader goes down, one of the follower nodes (mostly with the most up-to-date data) is promoted to be the leader. This is called failover.</p>
+<p><strong>multi leader</strong>
+In system design, this means that more than one machine can take the write requests. This makes the system more reliable in case a leader goes down. This also means that every machine (including leaders) needs to catch up with the writes that happen over other machines.</p>
+<p>?? Conflict resolution for concurrent writes: #todo</p>
+<ol>
+<li>Keeping the update with the largest client timestamp.</li>
+<li>Sticky routing—writes from same client/index go to the same leader.</li>
+<li>Keeping and returning all the updates.</li>
+</ol>
+<p><strong>leaderless replication</strong></p>
+<p>In such a system, all machines can cater to write and read requests. In some cases, the client directly writes to all the machines, and requests are read from all the machines based on quorum. Quorum refers to the minimum number of acknowledgements (for writes) and consistent data values (for reads) for the action to be valid. In other cases, the client request reaches the coordinator that broadcasts the request to all the nodes.</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/nfr/reliability--availability/" class="stretched-link text-reset text-decoration-none">Reliability &amp; Availability</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/nfr/scalability/" class="stretched-link text-reset text-decoration-none">Scalability</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
+  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

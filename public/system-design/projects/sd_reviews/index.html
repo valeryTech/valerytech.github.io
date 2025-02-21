@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/projects/sd_reviews/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/projects/sd_reviews/">
+
+
+<title>Sd Reviews  |  System Design</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/projects/sd_reviews/">
+  <meta property="og:site_name" content="System Design">
+  <meta property="og:title" content="Sd Reviews">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="article:modified_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Sd Reviews">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "System Design and Software Architecture 1",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/projects/",
+       "name": "Projects",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Sd Reviews",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+    
+  
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">System Design</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">System Design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about">System Design</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#static-locations">Static Locations</a></li>
+    <li><a href="#dynamic-locations">dynamic locations</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Sd Reviews</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#static-locations">Static Locations</a></li>
+    <li><a href="#dynamic-locations">dynamic locations</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h1 id="tiny-url">tiny url</h1>
+<p>offline key generation.
+We can have a standalone Key Generation Service (KGS) that generates random six letter strings <em>beforehand</em> and <em>stores</em> them in a database (let’s call it key-DB). Whenever we want to shorten a URL, we will just take one of the already-generated keys and use it.
+This approach will make things quite simple and fast. Not only are we not encoding the URL, but we won’t have to worry about duplications or collisions. [trade-offs]
+Concurrency problems.
+Can concurrency cause problems? As soon as a key is used, it should be marked
+in the database to ensure it doesn’t get used again. If there are multiple servers
+reading keys concurrently, we might get a scenario where two or more servers try to
+read the same key from the database. How can we solve this concurrency problem?
+Servers can use KGS to read/mark keys in the database. KGS can use two tables to
+store keys: one for keys that are not used yet, and one for all the used keys. As soon
+as KGS gives keys to one of the servers, it can move them to the used keys table.</p>
+<p>KGS can always keep some keys in memory so that it can quickly provide them whenever a server needs them.</p>
+<p>For simplicity, as soon as KGS loads some keys in memory, it can move them to the
+used keys table. This ensures each server gets unique keys. If KGS dies before
+assigning all the loaded keys to some server, we will be wasting those keys–which is
+acceptable, given the huge number of keys we have.
+KGS also has to make sure not to give the same key to multiple servers. For that, it
+must synchronize (or get a lock on) the data structure holding the keys before
+removing keys from it and giving them to a server</p>
+<p>scheme with commiting?</p>
+<h1 id="dropbox">dropbox</h1>
+<p>Internally, files can be stored in small parts or chunks (say 4MB); this can
+provide a lot of benefits i.e. all failed operations shall only be retried for
+smaller parts of a file. If a user fails to upload a file, then only the failing chunk
+will be retried.</p>
+<p>We can reduce the amount of data exchange by transferring updated chunks
+only.
+By removing duplicate chunks, we can save storage space and bandwidth
+usage.
+Keeping a local copy of the metadata (file name, size, etc.) with the client can
+save us a lot of round trips to the server.
+For small changes, clients can intelligently upload the diffs instead of the
+whole chunk.</p>
+<p>How can clients <strong>efficiently listen to changes</strong> happening with other clients?
+One solution could be that the clients periodically check with the server if there are
+any changes. The problem with this approach is that we will have a delay in
+reflecting changes locally as clients will be checking for changes periodically
+compared to a server notifying whenever there is some change. If the client
+frequently checks the server for changes, it will not only be wasting bandwidth, as
+the server has to return an empty response most of the time, but will also be keeping
+the server busy. Pulling information in this manner is not scalable.
+A solution to the above problem could be to use HTTP long polling. With long
+polling the client requests information from the server with the expectation that the
+server may not respond immediately. If the server has no new data for the client
+when the poll is received, instead of sending an empty response, the server holds the
+request open and waits for response information to become available. Once it does
+have new information, the server immediately sends an HTTP/S response to the
+client, completing the open HTTP/S Request. Upon receipt of the server response,
+the client can immediately issue another server request for future updates.</p>
+<p><strong>differences</strong>
+The Synchronization Service should be designed in such a way that it transmits less
+data between clients and the Cloud Storage to achieve a better response time. To
+meet this design goal, the Synchronization Service can employ a differencing
+algorithm to reduce the amount of the data that needs to be synchronized. Instead of
+transmitting entire files from clients to the server or vice versa, we can just transmit
+the difference between two versions of a file. Therefore, only the part of the file that
+has been changed is transmitted. This also decreases bandwidth consumption and
+cloud data storage for the end user.
+As described above, we will be dividing our files into 4MB chunks and will be transferring modified chunks only. Server and clients can calculate a hash (e.g., SHA-256) to see whether to update the local copy of a 54chunk or not. On the server, if we already have a chunk with a similar hash (even from another user), we don’t need to create another copy, we can use the same chunk. This is discussed in detail later under Data Deduplication.</p>
+<p>To be able to provide an efficient and scalable synchronization protocol we can
+consider using a communication middleware between clients and the
+Synchronization Service. The messaging middleware should provide scalable
+message queuing and change notifications to support a high number of clients using
+pull or push strategies. This way, multiple Synchronization Service instances can
+receive requests from a global request Queue, and the communication middleware
+will be able to balance its load.</p>
+<p><strong>data deduplication</strong>
+We can implement deduplication in two ways in our system:
+a. Post-process deduplication
+With post-process deduplication, new chunks are first stored on the storage device
+and later some process analyzes the data looking for duplication. The benefit is that
+clients will not need to wait for the hash calculation or lookup to complete before
+storing the data, thereby ensuring that there is no degradation in storage
+performance. Drawbacks of this approach are 1) We will unnecessarily be storing
+duplicate data, though for a short time, 2) Duplicate data will be transferred
+consuming bandwidth.
+b. In-line deduplication
+Alternatively, deduplication hash calculations can be done in real-time as the clients
+are entering data on their device. If our system identifies a chunk that it has already
+stored, only a reference to the existing chunk will be added in the metadata, rather
+than a full copy of the chunk. This approach will give us optimal network and storage
+usage.</p>
+<h1 id="facebook-messenger">facebook messenger</h1>
+<p>At a high-level, we will need a chat server that will be the central piece, orchestrating
+all the communications between users. When a user wants to send a message to
+another user, they will connect to the chat server and send the message to the server;
+the server then passes that message to the other user and also stores it in the
+database.</p>
+<p><strong>Messages Handling</strong>
+How would we efficiently send/receive messages? To send messages, a user
+needs to connect to the server and post messages for the other users. To get a
+message from the server, the user has two options:</p>
+<ol>
+<li>Pull model: Users can periodically ask the server if there are any new
+messages for them.</li>
+<li>Push model: Users can keep a connection open with the server and can
+depend upon the server to notify them whenever there are new messages.
+If we go with our first approach, then the server needs to keep track of messages that
+are still waiting to be delivered, and as soon as the receiving user connects to the
+server to ask for any new message, the server can return all the pending messages.
+To minimize latency for the user, they have to check the server quite frequently, and
+most of the time they will be getting an empty response if there are no pending
+message. This will waste a lot of resources and does not look like an efficient
+solution.</li>
+</ol>
+<p>If we go with our second approach, where all the active users keep a connection open
+with the server, then as soon as the server receives a message it can immediately
+pass the message to the intended user. This way, the server does not need to keep
+track of the pending messages, and we will have minimum latency, as the messages
+are delivered instantly on the opened connection.</p>
+<p><strong>How will clients maintain an open connection with the server?</strong>
+We can use HTTP Long Polling or WebSockets. In long polling, clients can request information from the server with the expectation that the server may not respond immediately. If the server has no new data for the client when the poll is received, instead of sending an empty response, the server holds the request open and waits for responseinformation to become available. Once it does have new information, the server immediately sends the response to the client, completing the open request. Upon receipt of the server response, the client can immediately issue another server request for future updates. This gives a lot of improvements in latencies, throughputs, and performance. The long polling request can timeout or can receive a disconnect from the server, in that case, the client has to open a new request.</p>
+<p><strong>How can the server keep track of all the opened connection</strong>* to redirect messages to the users efficiently?</p>
+<p>The server can maintain a hash table, where
+“key” would be the UserID and “value” would be the connection object. So whenever
+the server receives a message for a user, it looks up that user in the hash table to find
+the connection object and sends the message on the open request.
+What will happen when the server receives a message for a user who has
+gone offline? If the receiver has disconnected, the server can notify the sender
+about the delivery failure. If it is a temporary disconnect, e.g., the receiver’s long-poll
+request just timed out, then we should expect a reconnect from the user. In that
+case, we can ask the sender to retry sending the message. This retry could be
+embedded in the client’s logic so that users don’t have to retype the message. The
+server can also</p>
+<p><strong>Managing user’s status</strong>
+We need to keep track of user’s online/offline status and notify all the relevant users
+whenever a status change happens. Since we are maintaining a connection object on
+the server for all active users, we can easily figure out the user’s current status from
+this. With 500M active users at any time, if we have to broadcast each status change
+to all the relevant active users, it will consume a lot of resources. We can do the
+following optimization around this:</p>
+<ol>
+<li>Whenever a client starts the app, it can pull the current status of all users in
+their friends’ list.</li>
+<li>Whenever a user sends a message to another user that has gone offline, we can
+send a failure to the sender and update the status on the client.</li>
+<li>Whenever a user comes online, the server can always broadcast that status
+with a delay of a few seconds to see if the user does not go offline immediately.</li>
+<li>Client’s can pull the status from the server about those users that are being
+shown on the user’s viewport. This should not be a frequent operation, as the
+server is broadcasting the online status of users and we can live with the stale
+offline status of users for a while.</li>
+<li>Whenever the client starts a new chat with another user, we can pull the status
+at that time.</li>
+</ol>
+<h1 id="twitter">twitter</h1>
+<p>sharding
+<strong>Sharding based on UserID:</strong> We can try storing all the data of a user on one server.
+While storing, we can pass the UserID to our hash function that will map the user to
+a database server where we will store all of the user’s tweets, favorites, follows, etc.
+While querying for tweets/follows/favorites of a user, we can ask our hash function
+where can we find the data of a user and then read it from there. This approach has a
+couple of <em>issues</em>:</p>
+<ol>
+<li>What if a user becomes hot? There could be a lot of queries on the server
+holding the user. This high load will affect the performance of our service.</li>
+<li><em>Over time</em> some users can end up storing a lot of tweets or having a lot of
+follows compared to others. <em>Maintaining a uniform distribution</em> of growing
+user data is quite difficult.
+To recover from these situations either we have to repartition/redistribute our data
+or use consistent hashing.</li>
+</ol>
+<p>We can further improve our performance by introducing cache to store hot tweets in
+front of the database servers.</p>
+<p>caching</p>
+<h1 id="youtube">youtube</h1>
+<p>Consistency can take a hit (in the interest of availability); if a user doesn’t see a video for a while, it should be fine.</p>
+<p><strong>How should we efficiently manage read traffic?</strong>
+We should segregate our read
+traffic from write traffic. Since we will have multiple copies of each video, we can
+distribute our read traffic on different servers. For metadata, we can have master-
+slave configurations where writes will go to master first and then gets applied at all
+the slaves. Such configurations can cause some staleness in data, e.g., when a new
+video is added, its metadata would be inserted in the master first and before it gets
+applied at the slave our slaves would not be able to see it; and therefore it will be
+returning stale results to the user. This staleness might be acceptable in our system
+as it would be very short-lived and the user would be able to see the new videos after
+a few milliseconds.</p>
+<p>We have many options to shard our
+data. Let’s go through different strategies of sharding this data one by one:</p>
+<p>Sharding based on UserID: We can try storing all the data for a particular user on
+one server. While storing, we can pass the UserID to our hash function which will
+map the user to a database server where we will store all the metadata for that user’s
+videos. While querying for videos of a user, we can ask our hash function to find the
+server holding the user’s data and then read it from there. To search videos by titles
+we will have to query all servers and each server will return a set of videos. A
+centralized server will then aggregate and rank these results before returning them
+to the user.
+This approach has a couple of issues:</p>
+<ol>
+<li>What if a user becomes popular? There could be a lot of queries on the server
+holding that user; this could create a performance bottleneck. This will also
+affect the overall performance of our service.</li>
+<li>Over time, some users can end up storing a lot of videos compared to others.
+Maintaining a uniform distribution of growing user data is quite tricky.
+To recover from these situations either we have to repartition/redistribute our data
+or used consistent hashing to balance the load between servers.</li>
+</ol>
+<h1 id="rate-limiter">rate-limiter</h1>
+<p>Our system can get huge benefits from caching recent active users. Application
+servers can quickly check if the cache has the desired record before hitting backend
+servers. Our rate limiter can significantly benefit from the Write-back cache by
+updating all counters and timestamps in cache only. The write to the permanent
+storage can be done at fixed intervals. This way we can ensure minimum latency
+added to the user’s requests by the rate limiter. The reads can always hit the cache
+first; which will be extremely useful once the user has hit their maximum limit and
+the rate limiter will only be reading data without any updates.</p>
+<h1 id="twitter-search">twitter search</h1>
+<p>To deal with hot tweets we can introduce a cache in front of our database. We can
+use Memcached, which can store all such hot tweets in memory. Application servers,
+before hitting the backend database, can quickly check if the cache has that tweet.
+Based on clients’ usage patterns, we can adjust how many cache servers we need.</p>
+<h1 id="things">things</h1>
+<p>sd language: trade-off, compromise; estimation, estimate, assumption; guess, valuate
+api gw
+it it not obvious if caching is a win.
+We estimated earlier that the dataset for the business table with 200M businesses is in the terabyte range. The dataset size is on the borderline where sharding might have make sense. For this table the update rate is low, and it&rsquo;s read-heavy we should be able to get away without sharding if we put cache in front of it. This cache would take most of the read load of the frequency accessed businesses.</p>
+<p>If read performance is the bottlenech we can add read replicas to help.</p>
+<h1 id="payments">payments</h1>
+<p>https://www.youtube.com/watch?v=olfaBgJrUBI
+https://www.youtube.com/watch?v=zsD4R_aQctw
+https://www.youtube.com/watch?v=shipSEFMzHs
+https://www.youtube.com/watch?v=g8XqFuDkga0
+https://newsletter.pragmaticengineer.com/p/designing-a-payment-system
+https://hackernoon.com/system-design-interview-designing-payment-systems-follow-up-questions-and-probable-issues
+https://hiringfor.tech/2020/05/11/system-design-practice-designing-a-payment-system.html
+https://devoxsoftware.com/blog/the-2022-manual-to-payment-system-architecture/
+https://www.cockroachlabs.com/blog/cockroachdb-payments-system-architecture/</p>
+<h1 id="file-storage">file storage</h1>
+<p>why four-nines? not five nines? alternatives -&gt; high availability in common as a AC (nfr)
+how to reason about read/write heavy property?
+in terms of latency: &ldquo;very low latency&rdquo;?</p>
+<p>batch vs stream. cdc.</p>
+<p>tbd: the ac gived a hint: 20,000 rps. They gived this hint intentionally. Why? What do they want?
+there are 4 stages in meta: scoping, designing for scale, communication</p>
+<h1 id="finding-nearby-friends">finding nearby friends</h1>
+<p>+tc clarified definition of &rsquo;nearby'
++tc clarified number of friends to show
++tc shared an assumption that is out of scope for this discussion
+-he ask a question &ldquo;how to interact with feature&rdquo; -&gt; instead you should get several options
++tc asked average number of interaction from a user to this feature
++tc clarified how much delay is acceptable in terms of real-time location of the user</p>
+<h1 id="proximity-servers">proximity servers</h1>
+<h2 id="static-locations">Static Locations<a href="#static-locations" class="anchor" aria-hidden="true">#</a> </h2>
+<p>my notes:
+This service&rsquo;s fundamental operation is searching. User should be able to search all nearby friends within a specified radius for any particular location.
+phrase: Given a user&rsquo;s location, return top X points of interest near the user</p>
+<p>! static locations
+pipeline: design iteration (Naive Approach) -&gt;</p>
+<p><em>first iteration</em>
+lat, lon</p>
+<p><em>second iteration</em>
+geohashing algorithms and proximity servers, geohash4, geohash5, and geohash6 &hellip; find neighbours and query <code>select .. like 'asdfn%'</code>
+index on geohash</p>
+<p><em>third iteration</em>
+problems: <code>LIKE</code> can be slow; every request still makes a DB query which can be a bottleneck; diffucult to scale</p>
+<p>solution: introduce 4, 5, 6 prefixes(and index these columns) and denormalizing
+solution 2: add business cache and 3 leveled caches (return ids of bussinesses with this geohash)</p>
+<p>write flow: introduce CDC in Kafka - cdc from mysql to kafka and then to &lsquo;business post processing&rsquo; service to write changes to caches</p>
+<p>language: first pass</p>
+<p>https://www.youtube.com/watch?v=UCaVJsyq8ac</p>
+<h2 id="dynamic-locations">dynamic locations<a href="#dynamic-locations" class="anchor" aria-hidden="true">#</a> </h2>
+<hr>
+<h1 id="other">Other</h1>
+<p>problem: global counter.
+https://www.youtube.com/watch?v=V1HlNh4IhUo
+https://systemdesign.one/distributed-counter-system-design/</p>
+<p>ac analyzing signals:</p>
+<ul>
+<li>clarified strategy of burger assignment -&gt; E6 kind of signal</li>
+<li>reasoning about single region vs cross region is good</li>
+<li>mentioned bloom filter at an early stage -&gt; low-level detail -&gt; he want to use Bloom filter instead of designing a proper solution</li>
+<li>you should involve interviewer more. don&rsquo;t do decision on behalf of customers. So you can identify trade-offs, then describe pros and cons and then ask a mention of ac. &ldquo;what do you think it&rsquo;s important for our problem?&rdquo;</li>
+<li>tc slightly release on of the requirements: counter could be less than 6M -&gt; good signal for E6 (why?)</li>
+<li>tc <em>didn&rsquo;t handle</em> the critical part of the system which is the race conditions and how the things would be handled</li>
+</ul>
+<p>23.12.23</p>
+<p>&ndash;
+communication: tc iterated on the fact that marketing compain is the <em>key feature</em> of the design
+tc <em>stated their assumption</em> that each user has one account
+tc clarified if they should focus on tracking the order infrastructure</p>
+<p>user experience when post promo code</p>
+<p>phrase. tc also identified the trade-off that they can have the API as sync and async. TC also identified the pros and cons in terms of technical simplicity and user experience.</p>
+<p>technical. tc talked about the rate-limiting to avoid the abusing the system.</p>
+<p>sync/async
+<strong>red</strong> flag: tc could have involved the interviewer while making the decision about sync vs async.</p>
+<p>most common trade-offs: api, sql/nosql, caching, scaling, core problem, push/pull, sync/async</p>
+<p>not all numbers are important. qps is always important. storage numbers usually important.
+interview: get several solutions, and explicitly say about trade-offs
+make several deep-dive moments (db choises, db sizes, connection with)</p>
+<p>ac(nfr) -&gt; what is the implications? for example, why latency p95 200 ms? why 3.2GB/day
+explain for an ac it&rsquo;s meaning
+example. 40x10^7 -&gt; horizontal scaling?
+connect you discussion with numbers and acs(nfr)</p>
+<p>get feedback on milestones
+write down your discussion</p>
+<p>efficiency play:</p>
+<blockquote>
+<p>you can explain api, schema etc in a flow
+&ldquo;I&rsquo;m going to explain thing end to end. You know, I&rsquo;m going to explain API while I&rsquo;m talking about the flow.&rdquo;</p>
+</blockquote>
+<p>core puzzle
+what is the core puzzle. for example, for live comments this is a push vs pull trade-off
+examples: push/pull in live commenting, save/process photos on instagram surfing, algorithm connecting rider and driver</p>
+<p>spikes</p>
+<p>push/pull and dt, frequency, numbers considerations. (example - I cannot use pull - dt &lt; 100 ms)</p>
+<p>fan-out</p>
+<p>coordination
+communication</p>
+<p>ranking algorithms?
+feed construction
+CUCKOO vs BLOOM filter</p>
+<p>eventual consistency patterns
+consistensy model
+https://www.scylladb.com/glossary/consistency-models/</p>
+<hr>
+<p>21.12.23</p>
+<p>It’s a good practice to include a brief point about cache invalidation during system design interviews.</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/nfr/scalability/" class="stretched-link text-reset text-decoration-none">Scalability</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/topics/security/" class="stretched-link text-reset text-decoration-none">Security</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
+  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

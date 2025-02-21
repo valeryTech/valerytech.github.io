@@ -1,17 +1,13 @@
 ---
-title: "Interview"
-description: ""
-summary: ""
-date: 2023-09-07T16:12:37+02:00
-lastmod: 2023-09-07T16:12:37+02:00
+contributors: []
+date: 2025-02-21T15:53:28.150915
+description: Default Description
 draft: false
-weight: 900
+lastmod: 2025-02-21T15:53:28.150915
+summary: ''
+title: Interview
 toc: true
-sidebar:
-  collapsed: true
-seo:
-  title: "" # custom title (optional)
-  description: "" # custom description (recommended)
-  canonical: "" # custom canonical URL (optional)
-  robots: "" # custom robot tags (optional)
+weight: 810
 ---
+
+

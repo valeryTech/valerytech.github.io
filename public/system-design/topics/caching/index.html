@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/topics/caching/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/topics/caching/">
+
+
+<title>Caching  |  System Design</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/topics/caching/">
+  <meta property="og:site_name" content="System Design">
+  <meta property="og:title" content="Caching">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="article:modified_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Caching">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "System Design and Software Architecture 1",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/topics/",
+       "name": "Topics",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Caching",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+    
+  
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">System Design</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">System Design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about">System Design</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#cache-aside">cache-aside</a></li>
+    <li><a href="#write-through">write-through</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Caching</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cache-aside">cache-aside</a></li>
+    <li><a href="#write-through">write-through</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h1 id="ontology">ontology</h1>
+<p>Cache definitions:</p>
+<ol>
+<li>
+<p>Caching is a commonly used <em>performance optimization</em> (&lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.</p>
+</li>
+<li>
+<p>In computing, a cache is a component that stores data so that future requests for that data can be served faster; the data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.</p>
+</li>
+<li>
+<p>Structurally, cache can be viewed as a high-speed storage layer that sits between the application and the original source of the data, such as a database, a file system, or a remote web service.</p>
+</li>
+</ol>
+<p><em>As locigal layer:</em> in computing, a cache is a high-speed data storage layer which stores a subset of data, typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data&rsquo;s primary storage location.</p>
+<h1 id="common">common</h1>
+<p>In computing, a cache is a component that stores data so that future requests for that data can be served faster; the data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.</p>
+<p>Cache can be viewed as a high-speed storage layer that sits between the application and the original source of the data, such as a database, a file system, or a remote web service.</p>
+<p>Caches can store the results of simple lookups, as in this example, but really they <em>can store any piece of data</em>, such as the result of a complex calculation. We can cache to help improve the performance of our system as part of helping reduce latency, to scale our application, and in some cases even to improve the robustness of our system.</p>
+<blockquote>
+<p>[!tip] Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
+</blockquote>
+<blockquote>
+<p>[!tip] Generally, caching is used only in cases where the external <em>data doesn&rsquo;t change often</em> or you can replicate all the data on your systems. Also if you don&rsquo;t care about data consistency then cache is really useful.</p>
+</blockquote>
+<blockquote>
+<p>[!Rule of thumb]
+Generally, caching is used for <em>read-heavy systems</em>. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.</p>
+</blockquote>
+<p>another rule</p>
+<p>The 80/20 rule: You want to store 80% of read requests in 20% of storage (or memory). Generally, these are the most popular requests.</p>
+<p>For example, if there is a tweet from a very popular person on twitter you would cache it everywhere (on a device, on a CDN, on the application) so that whenever that tweet is finished you can fetch it very quickly and serve it up to your users.</p>
+<p>A CDN (content delivery network) is something that&rsquo;s commonly used to deliver cached data.</p>
+<hr>
+<p>To maintain coherence of the external data, you should apply a periodic refresh strategy to the cache so it doesn&rsquo;t become outdated.</p>
+<p>Updating cache: cache-aside, write-through, write-behind, refresh-ahead.</p>
+<h1 id="purposes">purposes</h1>
+<p>A cache can reduce load on system which data it holds. A primary reason to set up caching outside of your database is to reduce load within your database engine.</p>
+<p>Cases: when you want to speed up a system
+=&gt; When you douing a lot of network requests
+=&gt; Very computationaly long computations
+=&gt; Don&rsquo;t want to send an identical request from multiple clients to DB (for example, star instargam profile)</p>
+<p><strong>For Performance.</strong></p>
+<p>With microservices, we are often concerned about the adverse impact of network latency and about the cost of needing to interact with multiple microservices to get some data. Fetching data from a cache can help greatly here, as we avoid the need for network calls to be made, which also has the impact of reducing load on downstream microservices. Aside from avoiding network hops, it reduces the need to create the data on each request.</p>
+<p><strong>For Scale.</strong></p>
+<p>If you can divert reads to caches, you can <em>avoid contention on parts of your system</em> to allow it to better scale. An example of this that we&rsquo;ve already covered in this chapter is the use of database read replicas. The read traffic is served by the read replicas, reducing the load on the primary database node and allowing reads to be scaled effectively. The reads on a replica are done against data that might be stale. The read replica will eventually get updated by the replication from primary to replica node—this form of cache invalidation is handled automatically by the database technology.
+More broadly, caching for scale is useful in any situation in which the origin is a point of contention. Putting caches between clients and the origin can reduce the load on the origin, better allowing it to scale.</p>
+<p><strong>For Robustness.</strong></p>
+<p>If you have an entire set of data available to you in a local cache, you have the potential to operate even if the origin is unavailable—this in turn could improve the robustness of your system.</p>
+<h1 id="parameters">parameters</h1>
+<p>side of a cache: client/server</p>
+<h1 id="where-to-cache">Where to Cache</h1>
+<p>As we have covered multiple times, microservices give you options. And this is absolutely the case with caching. We have <em>lots of different places</em> where we could cache. The different cache locations I&rsquo;ll outline here have different trade-offs, and what sort of optimization you&rsquo;re trying to make will likely point you toward the cache location that makes the most sense for you.</p>
+<p><strong>Client-side</strong>. With client-side caching, the data is cached outside the scope of the origin. In our example, this could be done as simply as holding an in-memory hashtable.</p>
+<p>In general, client-side caches tend to be pretty effective, as they avoid the network call to the downstream microservice. This makes them suitable not only for caching for improved latency but also for caching for robustness.</p>
+<p>It&rsquo;s important to note that our client cache could decide to cache <em>only some of the information</em> we get from the microservice.</p>
+<p>Client-side caching has a few downsides, though. Firstly, you tend to be more restricted in your options around invalidation mechanisms. Secondly, when there&rsquo;s a lot of client-side caching going on, you can see a degree of inconsistency between clients. This means that you could see a different view of the cached data in each of those clients at the same time. The more clients you have, the more problematic this is likely to be. Techniques such as notification-based invalidation, which we&rsquo;ll look at shortly, can help reduce this problem, but they won&rsquo;t eliminate it.</p>
+<p>Another mitigation for this is to have a <em>shared client-side cache</em>, perhaps making use of a dedicated caching tool like Redis or memcached, as we see in Figure 13-11. Here, we avoid the problem of inconsistency between the different clients. This can also be more efficient in terms of resource use, as we are reducing the number of copies of this data we need to manage (caches often end up being in memory, and memory is often one of the biggest infrastructural constraints). The flip side is that our clients now need to make a round trip to the shared cache.</p>
+<p>Another thing to consider here is who is responsible for this shared cache. Depending on who owns it and how it is implemented, a shared cache like this can blur the lines between client-side caching and server-side caching, which we explore next.</p>
+<p><strong>Server-side.</strong> A server itself maintains a cache on behalf of his consumers. Here, the Catalog microservice has full responsibility for managing the cache. Due to the nature of how these caches are typically implemented—such as an in-memory data structure, or a local dedicated caching node—it&rsquo;s easier to implement more sophisticated cache invalidation mechanisms. Write-through caches, for example (which we&rsquo;ll look at shortly), would be much simpler to implement in this situation. Having a server-side cache also makes it easier to avoid the issue with different consumers seeing different cached values that can occur with client-side caching.</p>
+<p>The major issue with this form of caching is that it has reduced scope for optimizing for latency, as a round trip by consumers to the microservice is still needed. This also reduces the effectiveness of this form of caching for any form of robustness.</p>
+<p>This might make this form of caching seem less useful, but there is huge value to transparently improving performance for all consumers of a microservice just by making a decision to implement caching internally. A microservice that is widely used across an organization may benefit hugely by implementing some form of internal caching, helping perhaps to improve response times for a number of consumers while also allowing the microservice to scale more effectively.</p>
+<h1 id="request-cache">Request cache</h1>
+<p>With a request cache, we store a cached answer for the original request. So in Figure 13-13 for example, we store the actual top ten entries. Subsequent requests for the top ten best sellers result in the cached result being returned. No lookups in the Sales data needed, no round trips to Catalog—this is far and away the most effective cache in terms of optimizing for speed.
+The benefits here are obvious. This is super efficient, for one thing. However, we need to recognize that this form of caching is highly specific.</p>
+<h1 id="cache-invalidation">cache invalidation</h1>
+<p>Data eviction rules (policies). We need to know when to delete stale data or redundant data.
+Policies: LRU, LFU, combined, etc.</p>
+<p>Invalidation is the process by which we evict data from our cache. It&rsquo;s an idea that is simple in concept but complex in execution, if for no other reason than there are a wealth of options in terms of how to implement it, and numerous trade-offs to consider in terms of making use of data that might be out of date. Fundamentally, though, it comes down to deciding in which situations a piece of cached data should be removed from your cache.Sometimes this happens because we are told a new version of a piece of data is available; at other times it might require us to assume our cached copy is stale and fetch a new copy from the origin.</p>
+<p><strong>TTL</strong>
+This is one of the simplest mechanisms to use for cache invalidation. Each entry in the cache is assumed to be valid for only a certain duration in time. After that time has passed, the data is invalidated, and we fetch a new copy. But the simplicity of implementation needs to be balanced against how much tolerance you have around operating on out-of-date data.
+Even if you&rsquo;re not using HTTP, the idea of the origin giving hints to the client as to how (and if) data should be cached is a <em>really powerful concept</em>. This means you don&rsquo;t have to guess about these things on the client side; you can actually make an informed choice about how to handle a piece of data.</p>
+<p><strong>Notification-based</strong>
+With notification-based invalidation, we use events to help subscribers know if their local cache entries need to be invalidated. To my mind, this is <em>the most elegant mechanism for invalidation</em>, though that is balanced by its relative complexity with respect to TTL-based invalidation.
+The main benefit of this mechanism is that it reduces the potential window wherein the cache is serving stale data. The window in which a cache might now be serving stale data is limited to the time taken for the notification to be sent and processed.</p>
+<p>Conditional GETS</p>
+<p>LRU</p>
+<p>For most systems 20% of the data accounts for 80% of the reads. So using LRU will result in fewer cache misses. Because of the 80/20 rule, we want to give special treatment to the most popular data! That’s why we use LRU. As a result, we can throw stuff in the cache (and not miss), which reduces latency for 80% of your requests.</p>
+<h1 id="writing-to-cache">Writing to cache</h1>
+<p><strong>Write-through</strong></p>
+<p>With a write-through cache, the cache is updated at the same time as the state in the origin. &ldquo;At the same time&rdquo; is where write-through caches get tricky, of course. Implementing a write-through mechanism on a server-side cache is somewhat straightforward, as you could update a database and an in-memory cache within the same transaction without too much difficulty. If the cache is elsewhere, it&rsquo;s more difficult to reason about what &ldquo;at the same time&rdquo; means in terms of these entries being updated.</p>
+<p>Due to this difficulty, you’d typically see write-through caching being used in a microservice architecture on the server side. The benefits are pretty clear—the win‐ dow in which a client might see stale data could be practically eliminated. This is bal‐ anced against the fact that server-side caches may well be less generally useful, limiting the circumstances in which a write-through cache would be effective in microservices.</p>
+<p><strong>Write-behind</strong> (write-back)</p>
+<p>With a write-behind cache, the cache itself is updated first, and then the origin is updated. Conceptually, you can think of the cache as a buffer. Writing into the cache is faster than updating the origin. So we write the result into the cache, allowing faster subsequent reads, and trust that the origin will be updated afterward. The main concern around write-behind caches is going to be the potential for data loss. If the cache itself isn&rsquo;t durable, we could lose the data before the data is written to the origin. Additionally, we&rsquo;re now in an interesting spot—what is the origin in this context? We&rsquo;d expect the origin to be the microservice where this data is sourced from—but if we update the cache first, is that really the origin?</p>
+<h1 id="freshness-versus-optimization">Freshness Versus Optimization</h1>
+<p>Coming back to our example of TTL-based invalidation, I explained earlier that if we request a fresh copy of the data that has a five-minute TTL, and a second later the data at the origin changes, then our cache will be operating on out-of-date data for the remaining four minutes and 59 seconds. If this is unacceptable, one solution would be to reduce the TTL, thereby reducing the duration in which we could operate on stale data. So perhaps we reduce the TTL to one minute. This means that our window of staleness is reduced to one-fifth of what it was, but we&rsquo;ve made five times as many calls to the origin, so we have to consider the associated latency and load impact.</p>
+<p>Balancing these forces is going to come down to understanding the requirements of the end user and of the wider system. Users will obviously always want to operate on the freshest data, but not if that means the system falls down under load. Likewise, <em>sometimes the safest thing to do is to turn off features if a cache fails</em>, in order to avoid an overload on the origin causing more serious issues. When it comes to finetuning what, where, and how to cache, you&rsquo;ll often find yourself having to balance along a number of axes. This is just another reason to try to keep things as simple as possible—the fewer the caches, the easier it can be to reason about the system. #principle #architecture/tip</p>
+<h1 id="the-golden-rule-of-caching">The Golden Rule of Caching</h1>
+<blockquote>
+<p>[!tip] Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
+</blockquote>
+<p>Be careful about caching in too many places! The more caches between you and the source of fresh data, the more stale the data can be, and the harder it can be to determine the freshness of the data that a client eventually sees. It can also be more difficult to reason about where data needs to be invalidated. The trade-off around caching—balancing freshness of data against optimization of your system for load or latency—is a delicate one, and if you cannot easily reason about how fresh (or not) data might be, this becomes difficult.</p>
+<p>Coming back to the famous quote from Knuth earlier, premature optimization can cause issues. Caching adds complexity, and we want to add as little complexity as possible. The ideal number of places to cache is zero. Anything else should be an optimization you have to make—but be aware of the complexity it can bring.</p>
+<h1 id="patterns">patterns</h1>
+<h2 id="cache-aside">cache-aside<a href="#cache-aside" class="anchor" aria-hidden="true">#</a> </h2>
+<p>This is the most popular cache pattern. In this pattern, we have an application which will try to fetch data from the cache, and if the data is not found (also known as a “cache miss”) it will fetch data from the database. Or it will do an expensive computation. And then it will put that data back to the cache before returning the query back to the user.</p>
+<p>In this pattern we only cache the data that we need, which is advantageous. One disadvantage of this pattern is that the data can become stale if there are lots of updates to the database. This disadvantage can be mitigated by having a “Time To Live” (or any other expiry pattern)—this is a concept we can skip for now since we’ll return to it later.</p>
+<p>Another disadvantage to this pattern: If there are a lot of cache misses in our application, then the application has to do a lot more work than in the regular flow of just fetching data solely from the database. In this case, the application will first go to the cache, then there will be a cache miss, then it will go back to the database, and then write that data back to the cache before going back to the user.</p>
+<p>If there are a lot of cache misses, then this cache is causing more problems than it’s worth.</p>
+<h2 id="write-through">write-through<a href="#write-through" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In these patterns, the application directly writes the data to the cache. And then the cache synchronously (or asynchronously) writes the data to the database. When we write it synchronously it’s called “write-through,” and when we write it asynchronously it’s called “write-back” (or “write-behind”). In the asynchronous example, we put the data in a queue, which writes the data back to the database and improves the latency of writes on your application.</p>
+<blockquote>
+<p>[!fix]
+If you’re experiencing slow writes, a quick fix is async writes to the database.</p>
+</blockquote>
+<p>In both of these patterns, there is an obvious disadvantage. Here we are writing all the data to the cache, which might not even be read. Hence, we are overloading the cache (or cache memory) with expensive calls that might not even be required. For example, there are some accounts on Twitter that are not followed by many people. If we put every tweet in the cache from these unpopular accounts, it will take up expensive memory. Also, if the database goes down before the data is written to the database, this causes inconsistency.</p>
+<p>https://redisson.org/glossary/write-through-and-write-behind-caching.html
+https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/</p>
+<h1 id="in-memory-type">in-memory type</h1>
+<p>As example of this solution we can pick Redis.</p>
+<h1 id="policies">Policies</h1>
+<p>While the LFU method may seem like an intuitive approach to memory management it is not without faults. Consider an item in memory which is referenced repeatedly for a short period of time and is not accessed again for an extended period of time. Due to how rapidly it was just accessed its counter has increased drastically even though it will not be used again for a decent amount of time. This leaves other blocks which may actually be used more frequently susceptible to purging simply because they were accessed through a different method.<a href="https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-3">3</a></p>
+<p>Moreover, new items that just entered the cache are subject to being removed very soon again, because they start with a low counter, even though they might be used very frequently after that. Due to major issues like these, an explicit LFU system is fairly uncommon; instead, there are hybrids that utilize LFU concepts. https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-4</p>
+<p>Processes when working with cache</p>
+<p>Cache efficiency</p>
+<p>Problems
+Cache Breakdown (Thundering herd problem). A cache breakdown increases the load on the database dramatically especially when lots of hot keys expire at the same time.</p>
+<h1 id="sharding-consistent-hashing">sharding (consistent hashing)</h1>
+<p>Cache warming</p>
+<p>Links
+https://levelup.gitconnected.com/3-caching-problems-every-developer-should-know-1449f07e9166
+https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/
+https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/elements/api_gateway/" class="stretched-link text-reset text-decoration-none">Api Gateway</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/projects/chat-room/" class="stretched-link text-reset text-decoration-none">Chat Room</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
+  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

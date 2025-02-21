@@ -1,15 +1,13 @@
 ---
-title: "Elements"
-description: ""
-summary: ""
-date: 2023-09-07T16:06:50+02:00
-lastmod: 2023-09-07T16:06:50+02:00
+contributors: []
+date: 2025-02-21T15:53:28.153519
+description: Default Description
 draft: false
-weight: 800
+lastmod: 2025-02-21T15:53:28.153519
+summary: ''
+title: Elements
 toc: true
-seo:
-  title: "" # custom title (optional)
-  description: "" # custom description (recommended)
-  canonical: "" # custom canonical URL (optional)
-  robots: "" # custom robot tags (optional)
+weight: 810
 ---
+
+

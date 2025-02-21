@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/frameworks/framework_iv/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/frameworks/framework_iv/">
+
+
+<title>Framework Iv  |  System Design</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/frameworks/framework_iv/">
+  <meta property="og:site_name" content="System Design">
+  <meta property="og:title" content="Framework Iv">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="article:modified_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Framework Iv">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "System Design and Software Architecture 1",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/frameworks/",
+       "name": "Frameworks",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Framework Iv",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+    
+  
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">System Design</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">System Design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about">System Design</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#fundamentals-of-this-framework">Fundamentals of this framework</a></li>
+    <li><a href="#how-to-use-this-framework">How to use this framework</a></li>
+    <li><a href="#limitations">Limitations</a></li>
+    <li><a href="#overview-of-the-3-steps">Overview of the 3 steps</a>
+      <ul>
+        <li><a href="#step-1-requirements">Step 1: Requirements</a></li>
+        <li><a href="#step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale</a></li>
+        <li><a href="#step-3-design">Step 3: Design</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations</a></li>
+    <li><a href="#think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects</a></li>
+    <li><a href="#consider-mutability">Consider mutability</a></li>
+    <li><a href="#remember-functional-requirements">Remember: Functional Requirements</a></li>
+    <li><a href="#example-1-design-tiktok">Example 1: Design TikTok</a></li>
+    <li><a href="#example-2-design-a-code-deployment-system">Example 2: Design a code deployment system</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#performance">Performance</a></li>
+    <li><a href="#availability">Availability</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#remember-non-functional-requirements">Remember: Non-Functional Requirements</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
+    <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
+    <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
+      <ul>
+        <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#so-what-is-design">So what is “design”?</a></li>
+    <li><a href="#31-data-storage">3.1 Data storage</a>
+      <ul>
+        <li><a href="#blob-storage">Blob storage</a></li>
+        <li><a href="#database">Database</a></li>
+        <li><a href="#311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational</a></li>
+        <li><a href="#entities-to-store">Entities to store</a></li>
+      </ul>
+    </li>
+    <li><a href="#32-microservices">3.2 Microservices</a>
+      <ul>
+        <li><a href="#caching">Caching</a></li>
+        <li><a href="#load-balancing">Load balancing</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#step-1-requirements-1">Step 1: Requirements</a></li>
+    <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+    <li><a href="#step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale</a>
+      <ul>
+        <li></li>
+        <li><a href="#rule-of-thumb">Rule of thumb</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-design-2">Step 3: Design</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Framework Iv</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fundamentals-of-this-framework">Fundamentals of this framework</a></li>
+    <li><a href="#how-to-use-this-framework">How to use this framework</a></li>
+    <li><a href="#limitations">Limitations</a></li>
+    <li><a href="#overview-of-the-3-steps">Overview of the 3 steps</a>
+      <ul>
+        <li><a href="#step-1-requirements">Step 1: Requirements</a></li>
+        <li><a href="#step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale</a></li>
+        <li><a href="#step-3-design">Step 3: Design</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations</a></li>
+    <li><a href="#think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects</a></li>
+    <li><a href="#consider-mutability">Consider mutability</a></li>
+    <li><a href="#remember-functional-requirements">Remember: Functional Requirements</a></li>
+    <li><a href="#example-1-design-tiktok">Example 1: Design TikTok</a></li>
+    <li><a href="#example-2-design-a-code-deployment-system">Example 2: Design a code deployment system</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#performance">Performance</a></li>
+    <li><a href="#availability">Availability</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#remember-non-functional-requirements">Remember: Non-Functional Requirements</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
+    <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
+    <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
+      <ul>
+        <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#so-what-is-design">So what is “design”?</a></li>
+    <li><a href="#31-data-storage">3.1 Data storage</a>
+      <ul>
+        <li><a href="#blob-storage">Blob storage</a></li>
+        <li><a href="#database">Database</a></li>
+        <li><a href="#311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational</a></li>
+        <li><a href="#entities-to-store">Entities to store</a></li>
+      </ul>
+    </li>
+    <li><a href="#32-microservices">3.2 Microservices</a>
+      <ul>
+        <li><a href="#caching">Caching</a></li>
+        <li><a href="#load-balancing">Load balancing</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#step-1-requirements-1">Step 1: Requirements</a></li>
+    <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+    <li><a href="#step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale</a>
+      <ul>
+        <li></li>
+        <li><a href="#rule-of-thumb">Rule of thumb</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-design-2">Step 3: Design</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h2 id="fundamentals-of-this-framework">Fundamentals of this framework<a href="#fundamentals-of-this-framework" class="anchor" aria-hidden="true">#</a> </h2>
+<p>This framework is predicated on the following fundamentals:</p>
+<ol>
+<li>We propose an opinionated method that can be applied to reason over most system design interviews. The less you have to think about the process, the more you can focus on the problems at hand.</li>
+<li>Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.</li>
+<li>We’re teaching you a process. This means you’ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You’ll come across as a systematic problem solver who’s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you’ll encounter.</li>
+</ol>
+<h2 id="how-to-use-this-framework">How to use this framework<a href="#how-to-use-this-framework" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In order to use this framework effectively, each step needs to be practiced separately. The three steps are:</p>
+<ol>
+<li>Requirements</li>
+<li>Data types, access patterns, and scale</li>
+<li>Design</li>
+</ol>
+<p>Each step has its inputs and outputs at the start of the chapter. There are exercises at the end. Focus on understanding the process. The idea is that once you’ve learned the process, you can work on improving each of these separately.</p>
+<h2 id="limitations">Limitations<a href="#limitations" class="anchor" aria-hidden="true">#</a> </h2>
+<p>This is a prescriptive method. As such, the approach might not fit 100% of the system design questions that you encounter. We designed this method to help mid-level / senior engineers get started with system design interviews by using a systematic approach and developing a framework to tackle these questions effectively. You should take this and adapt it so it works best for you.</p>
+<p>We intentionally do not tell you how much time to take in each step because we believe that would be an ineffective way to learn a new behavior. If you’re told that something takes 5 minutes, and as a beginner you lack 5 minutes of content, you’ll end up getting good at “wasting 5 minutes of time.” But if you focus on the task instead of the time, you’ll get good at doing the thing. This may seem counterintuitive, but it’s better for you in the long run. Thank us later.</p>
+<h2 id="overview-of-the-3-steps">Overview of the 3 steps<a href="#overview-of-the-3-steps" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Don’t worry, we’ll go through each of these one-by-one in detail. And by the end of this chapter, we’ll run entire problems through the whole 3-step framework so you can understand how it works holistically. In the meantime, here’s a high-level overview of the 3 steps and their inputs and outputs so you can get a rough idea of the process.</p>
+<h3 id="step-1-requirements">Step 1: Requirements<a href="#step-1-requirements" class="anchor" aria-hidden="true">#</a> </h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs</td>
+<td>Problem statement given by your interviewer.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>List of functional and non-functional requirements.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale<a href="#step-2-data-types-api-and-scale" class="anchor" aria-hidden="true">#</a> </h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs</td>
+<td>- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>- List of Data Types we need to store.  <br>- Access patterns for these data types.  <br>- Scale of the data and requests the system needs to serve.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-3-design">Step 3: Design<a href="#step-3-design" class="anchor" aria-hidden="true">#</a> </h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs</td>
+<td>- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.  <br>- List of Data Types we need to store.  <br>- Access patterns for these data types (API).  <br>- Scale of the data and requests the system needs to serve.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>- Data storage.  <br>- Microservices.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="11-functional-requirements">1.1 Functional Requirements</h1>
+<p>You should start with the functional requirements first—that is, the core product features and use cases that the system needs to support.</p>
+<p>Go ahead and type out “Functional requirements” and start asking clarification questions to your interviewer. The number of questions you should ask will vary depending on how underspecified the given problem statement is. Your goal is to ask just enough questions to gather all use cases for the system.</p>
+<p>Treat the system as a black box. No thinking about design, implementation, or pretty much anything technical. The sole goal of this first step is to specify what needs to be built. Not how. Not the scale. Focus on the “what.”</p>
+<p>For example, if you were asked to design Twitter, what clarification questions would you ask in order to scope out functional requirements?</p>
+<p>Here are a few steps to guide your requirement gathering:</p>
+<h2 id="identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations<a href="#identify-the-main-business-objects-and-their-relations" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Start by identifying the main business objects and their relations. For example, in the case of Twitter there are two main objects of interest: (1) Accounts and (2) Tweets.</p>
+<p>Now think about clarifying the relation between these objects. What’s the relation between accounts and tweets? What’s the relation between two accounts? What’s the relation between two tweets? You want to think about the cross product between objects to come up with ideas for use cases and ask relevant questions. For example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Account</th>
+<th>Tweet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Account</td>
+<td>Can follow</td>
+<td>Can publish Can like  Can retweet</td>
+</tr>
+<tr>
+<td>Tweet</td>
+<td></td>
+<td>Can reference (retweet)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>An account can follow other accounts (Account x Account)</li>
+<li>An account can publish a tweet (Account x Tweet)</li>
+<li>A tweet can reference another tweet, i.e., be a “retweet”. (Tweet x Tweet)</li>
+</ul>
+<p>Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?</p>
+<blockquote>
+<p>Tip. Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.</p>
+</blockquote>
+<h2 id="think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects<a href="#think-about-the-possible-access-patterns-for-these-objects" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Access patterns are probably the single most influential part of design because they determine how data will be stored.</p>
+<p>Let&rsquo;s think about the cross product of our objects again. This time we want to identify how data will be retrieved from the system.</p>
+<p>The general shape of an access pattern requirement is:</p>
+<ul>
+<li>Given [object A], get all related [object B]</li>
+</ul>
+<p>So, applying this idea to our Twitter example, we might end up with the following access patterns:</p>
+<ul>
+<li>
+<p>Given an account:</p>
+<ul>
+<li>Get all of its followers. (Account → Account)</li>
+<li>Get all the other accounts they follow. (Account → Account)</li>
+<li>Get all of its tweets. (Account → Tweet)</li>
+<li>Get a curated feed of tweets for accounts they follow. (Account → Tweet)</li>
+</ul>
+</li>
+<li>
+<p>Given a tweet:</p>
+<ul>
+<li>Get all accounts that liked it. (Tweet → Account)</li>
+<li>Get all accounts that retweeted it. (Tweet → Account)</li>
+</ul>
+</li>
+</ul>
+<p>We’re not suggesting you blindly implement all of these, but rather that you consider them as possible access patterns for your clarification questions. For example, should we be able to get all accounts that liked a tweet? Or would the number be enough?</p>
+<p>Also, bear in mind that when we say “get all,” we don’t necessarily mean that there will be a single endpoint that returns all of them in one go. It could be a paged endpoint, but that’s an implementation detail and falls out of scope for step 1. We want to focus on identifying the desired access patterns, not how they will be implemented.</p>
+<p>For these access patterns, you should also consider ranking. Are there any access patterns that require ranking the object? In this example, “creating a curated feed of tweets” will require further clarification. Strive for simplicity first. Can you return them sorted by chronological time? Identify these access patterns of interest, like the curated feed, and get a feel for what your interviewer is looking for: do they want you to suggest an algorithm for a feed?</p>
+<h2 id="consider-mutability">Consider mutability<a href="#consider-mutability" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Finally, as we do throughout this guide, you should always consider mutability. Can the objects the system holds be mutated? Or can they be assumed to be immutable?</p>
+<p>For example: Can tweets be edited after they’re published?</p>
+<p>Another flavor of mutability is deletion. Can these business objects be deleted? What would the consequences be?</p>
+<p>For example: Can tweets be deleted? Can accounts be deleted? What happens to tweets when an account is deleted?</p>
+<p>It might sound like a small detail at first, but mutability can limit our ability to use caching in our design (more on this in step 3).</p>
+<h2 id="remember-functional-requirements">Remember: Functional Requirements<a href="#remember-functional-requirements" class="anchor" aria-hidden="true">#</a> </h2>
+<ol>
+<li>Identify the main objects and their relations.</li>
+<li>What information do these objects hold? Are they mutable?</li>
+<li>Think about access patterns. “Given object X, return all related objects Y.” Consider the cross product of all related objects.</li>
+<li>List all the requirements you’ve identified and validate with your interviewer.</li>
+</ol>
+<h2 id="example-1-design-tiktok">Example 1: Design TikTok<a href="#example-1-design-tiktok" class="anchor" aria-hidden="true">#</a> </h2>
+<p><a href="../projects/tik_tok.md">tik_tok</a></p>
+<h2 id="example-2-design-a-code-deployment-system">Example 2: Design a code deployment system<a href="#example-2-design-a-code-deployment-system" class="anchor" aria-hidden="true">#</a> </h2>
+<p>aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</p>
+<p>Let’s start by identifying the main objects. In this case it looks like the only thing the service will need to store is code artifacts. What properties might we store? Feel free to discuss with your interviewer. For the sake of this example, let’s say we want to store:</p>
+<p>Artifact: (product name, version, commit hash)</p>
+<p>You might also ask: “Can artifacts be mutated after being published?” Your interviewer might say the artifacts will be immutable (as in “not able to be mutated after publishing).</p>
+<p>What are the access patterns? In this case we just have one object, so it’s probably going to be pretty straightforward:}</p>
+<p>Trigger a release: publishes a code artifact and deploys it to all servers.</p>
+<p>This is actually a pretty good example of how some problems might be less intensive on the requirements side than others. The definition the interviewer gave us was pretty clear. Therefore, we can extract requirements with just a few questions.</p>
+<blockquote>
+<p>Extra points: Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips</p>
+</blockquote>
+<p>For example, you might want to ask about the possibility to recall a release. Do they want a page to see all releases and the deployment status? Should we alert them about failures? #sd/tips</p>
+<p>This is what we mean when we say that it can be as easy or as hard as you want to make it. Try to get a feel for what the interviewer is looking for, and make sure to check back with them and ensure you both are on the same page.</p>
+<h1 id="12-non-functional-requirements">1.2 Non-Functional Requirements</h1>
+<p>Once functional requirements have been laid out, you should move onto non-functional requirements (NFRs). These are quality attributes that specify how the system should perform a certain function.</p>
+<p>The most common non-functional requirements you should consider in a system design interview are:</p>
+<ul>
+<li>Performance</li>
+<li>Availability</li>
+<li>Security</li>
+</ul>
+<blockquote>
+<p>Note</p>
+<p>You may be wondering why we chose “security” and not “consistency.” We think there are already enough resources out there that will tell you about consistency in NFRs. Again, this is our opinionated approach, and after much debate we decided this would be the most valuable way to teach it. As always in system design interviews: your interviewer cares less about your decisions, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions. Therefore, if you wanted to, there are many NFRs that could make a shortlist.</p>
+</blockquote>
+<p>NFRs will strongly influence our design. They define what we should be optimizing for. Bear in mind that you cannot optimize for everything, and you should not overcomplicate your solution. This is a game of trade-offs.</p>
+<blockquote>
+<p>[!info] Rule of thumb
+Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”</p>
+</blockquote>
+<p>Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as “We don’t need to focus on [Insert requirement, such as “consistency”] as much in this case because [Insert reason, such as “it’s okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users”].”</p>
+<p>If NFRs are over-specified, the solution may be too expensive to be practical; if they are under-specified, the system will not be suitable for its intended purpose. Use your common sense, and ask the right questions to land on a set of non-functional requirements that make sense for the system you are designing.</p>
+<p>Let’s explore each of the quality attributes that make up non-functional requirements and see some examples of when to optimize for them.</p>
+<h2 id="performance">Performance<a href="#performance" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Performance is pretty straightforward. It’s the system’s ability to respond quickly to user requests. While speed is always welcome, it might not be the right thing to optimize for in every system. Better performance may come at the cost of consistency or just an overall more complex solution.</p>
+<p>So when does it make sense to optimize for performance?</p>
+<blockquote>
+<p>[!Rule of thumb]
+It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.</p>
+</blockquote>
+<p>Take a look at the access patterns you identified in your functional requirements. Which ones are user-facing, expected to happen synchronously, and accessed frequently? Let’s use our Twitter example: Is there any access pattern that we might want to optimize for performance?</p>
+<p>The user feed feature stands out as a good candidate for a performant access pattern. It’s synchronous, meaning that users expect an immediate response, and it’s likely to be a hot path for users because it’s the landing page of the app.</p>
+<h2 id="availability">Availability<a href="#availability" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Availability refers to how much downtime the service can tolerate. Just like with performance, we might not always want to optimize for availability. A good question to guide this decision is: What’s the cost of downtime? This is as easy as it sounds. If taking downtime will result in financial losses or correctness issues, we might want to put some thought into making the system highly available.</p>
+<p>In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.</p>
+<blockquote>
+<p>[!Aware] Anecdote from an interviewer
+Don’t make your interview harder than it has to be.</p>
+</blockquote>
+<p>In an actual interview, if a candidate says, “Do we want 4 nines? 5 nines? 6 nines?” My first follow-up question will be, “What’s going to change in your system?” And they don’t know what to answer (obviously) because the system they’ll design won’t change at all whether it’s 4 nines or 5 nines or 6 nines.</p>
+<blockquote>
+</blockquote>
+<p>So what I mean is that talking about availability is good, but talking about “we want 6 nines” in an actual interview can be a signal that this person is behaving like an imposter. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn’t said anything about the “number of nines” in the first place!</p>
+<p>An example of a problem where we might be fine with taking a hit on availability is one where consistency is very important. Think, for example, about a banking system. One of the most important mandates of the system would be consistency. Operations need to be transactional. In this case, it might be acceptable if our system is unavailable/stale for small periods of time, as long as it is consistent. However, with Twitter, we’d rather have it be inconsistent than unavailable. When in doubt about what to prioritize, ask your interviewer whether consistency is preferred over availability.</p>
+<blockquote>
+<p>[!Question]
+What’s an example of a system you can think of where high availability might not be essential?</p>
+</blockquote>
+<h2 id="security">Security<a href="#security" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Security can be tricky. No one wants to design an insecure system, and there’s a baseline level of security that can be expected of any modern architecture (HTTPS, OAuth, password/data encryption). But that’s not what we are trying to figure out in this step.</p>
+<p>We want to learn if there’s some workflow that might require a special design to account for security. For example, imagine you were designing LeetCode, an online judge for coding questions. One security constraint that would come to mind is that user-submitted code should be run in isolation. User submissions should run in some sort of sandbox where they get limited resources and are guaranteed not to affect or see other submissions.</p>
+<blockquote>
+<p>[!Tip]
+Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.</p>
+</blockquote>
+<h2 id="remember-non-functional-requirements">Remember: Non-Functional Requirements<a href="#remember-non-functional-requirements" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Consider the three main non-functional requirements: performance, availability, and security.</p>
+<ol>
+<li>Performance: Which access patterns, if any, require good performance?</li>
+<li>Availability: What’s the cost of downtime for this system?</li>
+<li>Security: Is there any workflow that requires special security considerations (e.g., code execution)?</li>
+</ol>
+<p>Example of Non-Functional Requirement gathering</p>
+<p>Example 2: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</p>
+<p><strong>Performance:</strong> After asking your interviewer, you learn that code artifacts should be deployed within 1 hour after being published.</p>
+<p><strong>Availability:</strong> The system should be highly available as it would block the company from rolling out new releases. Some downtime here and there might be tolerated (especially if during weekends).</p>
+<p><strong>Security:</strong> Since there’s code involved, it might be worth asking if the code is assumed to be trusted or not. In this case, since it’s a code deployment service for a company, let’s say that we can assume the code will be high-trust, so there are no special security constraints.</p>
+<h1 id="step-2-data-types-api-and-scale-1">Step 2: Data Types, API and Scale</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs</td>
+<td>- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>- List of Data Types we need to store.  <br>- Access patterns for these data types.  <br>- Scale of the data and requests the system needs to serve.</td>
+</tr>
+</tbody>
+</table>
+<p>We’ve gathered functional and non-functional requirements. At this point we understand what the system is supposed to do as a black box. It’s now time to take our first steps toward designing it.</p>
+<p>However, you should not begin drawing boxes and discussing implementation right away. There’s a bit of pre-work needed before we can start thinking about a concrete design. We need to answer the following three questions:</p>
+<ol start="4">
+<li>What data types does the system need to store?</li>
+<li>What does the API look like?</li>
+<li>What volume of requests do we need to support?</li>
+</ol>
+<p>These can be answered pretty quickly from your requirements. In fact, you can probably answer these in just a few minutes. Let’s walk through how we might answer each of these questions for our Twitter example:</p>
+<h2 id="21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?<a href="#21-what-data-types-does-the-system-need-to-store" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Think about the objects the system needs to hold and their data type. There are largely two types of data we might need to store:</p>
+<ul>
+<li><strong>Structured data.</strong> Think business objects, like accounts, tweets, likes.</li>
+<li><strong>Media and blobs.</strong> Think images, videos, or any type of large binary data such as TAR or ZIP files.</li>
+</ul>
+<p>For our Twitter example, we will store:</p>
+<ul>
+<li>
+<p><strong>Structured data</strong></p>
+</li>
+<li>
+<p>Accounts</p>
+</li>
+<li>
+<p>Tweets</p>
+</li>
+<li>
+<p><strong>Media</strong></p>
+</li>
+<li>
+<p>Images or videos in Tweets</p>
+</li>
+</ul>
+<h2 id="22-what-does-the-api-look-like">2.2 What does the API look like?<a href="#22-what-does-the-api-look-like" class="anchor" aria-hidden="true">#</a> </h2>
+<blockquote>
+<p>[!Rule of thumb]
+More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.</p>
+</blockquote>
+<p><strong>Footnote:</strong> If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions. But even in these rare cases, it helps to start thinking about the API in terms of HTTPS requests.</p>
+<p>Look at the access patterns you defined in the functional requirements to write your API. For example:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>1
+2  getTweets:
+3    GET /{accountId}/tweets?nextPageToken={token}
+4    returns: Paged list of tweets sorted by creation time desc.
+5
+6  getFeed:
+7    GET /{accountId}/feed?nextPageToken={token}
+8    returns: Paged list of tweets for the given users feed.
+9
+10  putTweet:
+11    PUT /{accountId}/tweets
+12    body: content of the tweet.
+13
+14  retweet:
+15    POST /{accountId}/retweet
+16    body: id of the tweet that is retweeted.
+17</code></pre>
+  </figure>
+</div>
+<h2 id="23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?<a href="#23-what-volume-of-requests-do-we-need-to-support" class="anchor" aria-hidden="true">#</a> </h2>
+<blockquote>
+<p>[!Tip]
+Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”</p>
+</blockquote>
+<p>If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.</p>
+<p>See more in <a href="../topics/envelope_estimations.md">envelope_estimations</a></p>
+<blockquote>
+<p>[!Outlaw Idea]
+We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.</p>
+</blockquote>
+<p>Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher—it’s called <strong>margin of safety</strong>. For our Twitter example we can go for these numbers:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>2  Reads/minute: 100k
+3  Writes/minute: 1k</code></pre>
+  </figure>
+</div>
+<p>Finally, what’s the volume of data we need to store? Go back to your “data types” (section 2.1) and think about how big these can get and multiply that by the number of writes/minute to get how much data you need to store per minute.</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>1
+2  Structured data (tweets, accounts): 100 KB each
+3  Media (images, videos): 10MB each
+4
+5  Average size of a write: 1MB (just a guess!)
+6</code></pre>
+  </figure>
+</div>
+<p>Again, it does not matter at all if you get these numbers right as long as you are in the ballpark. Please don’t spend too much time on this. Just use powers of ten, and when in doubt, pick the higher number. This makes our final math super easy:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>2  1k writes/minute with an average size of 1MB each = 1k * 1MB = 1000MB = 1GB/m</code></pre>
+  </figure>
+</div>
+<p>So we’ll need to store around a gigabyte of data per minute.</p>
+<blockquote>
+<p>[!Remember] Data Types, Scale, and Access patterns
+Once you know your requirements, it’s time to get specific.</p>
+</blockquote>
+<p><strong>Data Types:</strong> Start by identifying the main business objects that you need to store.
+<strong>API:</strong> How are these going to be accessed?
+<strong>Scale:</strong> Is the system read-heavy or write-heavy?</p>
+<h3 id="example-code-deployment-system">Example. Code Deployment System.<a href="#example-code-deployment-system" class="anchor" aria-hidden="true">#</a> </h3>
+<p>See more in <a href="../projects/code_deployment.md">code_deployment</a></p>
+<h1 id="step-3-design-1">Step 3: Design</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs</td>
+<td>- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.  <br>- List of Data Types we need to store.  <br>- Access patterns for these data types (API).  <br>- Scale of the data and requests the system needs to serve.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>- Data storage.  <br>- Microservices.</td>
+</tr>
+</tbody>
+</table>
+<p>The time has come. We’ve got all the information we need to start drawing boxes and calling this a “system.” Yay!</p>
+<p>There are several reasons that we spent considerable time in steps 1 and 2. Too often people dive straight into design and fail in spectacular ways. It’s easy to make that mistake—isn’t this interview called “system design” after all? No one told these candidates that good design is 70%+ requirements and planning.</p>
+<p>In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage! 💪</p>
+<p>Once we know our use cases and what to optimize for, it comes down to knowing a few rules of thumb. Want speed? Use a cache. Want availability? Put in some redundancy. It’s really that simple. That’s the beauty of systems design. It can be as simple or as complicated as we want to make it.</p>
+<p>At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.</p>
+<blockquote>
+<p>[!Tip] (Tell your interviewer)
+&ldquo;I’m going to start drawing some boxes. I&rsquo;m just thinking out loud for now, so don&rsquo;t hold me to any of this. We can come back to it later.&rdquo;</p>
+</blockquote>
+<p>This is basically giving you a free pass to flush your brain and be wrong. Which is exactly what you want when there’s a clean slate in front of you. Again, design is an iterative process. Expecting that you’ll go from clean slate to perfect design in one go is just… foolish.</p>
+<h2 id="so-what-is-design">So what is “design”?<a href="#so-what-is-design" class="anchor" aria-hidden="true">#</a> </h2>
+<p>We should first align on our outputs. Design simply means two components:</p>
+<ol>
+<li><strong>Data storage.</strong> We already know from previous steps “what” we are storing. Now the question is where are we storing it?</li>
+<li><strong>Microservices.</strong> How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.</li>
+</ol>
+<p>We know the <strong>what</strong> (steps 1 and 2), so now we focus on the <strong>where</strong> and the <strong>how</strong>. We will start with designing the data storage layer first and then think about the microservices that access this data.</p>
+<p>
+
+<img
+  src="/microservice-design_10207812800882679553_huda800464800bbda0284d4ead8b80c568_19522_1440x1088_resize_q85_h2_lanczos_3.webp"
+  width="1440"
+  height="1088"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Microservice design diagram with storage layer and api layer"id="h-rh-i-0"
+/></p>
+<p>On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?</p>
+<h2 id="31-data-storage">3.1 Data storage<a href="#31-data-storage" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="blob-storage">Blob storage<a href="#blob-storage" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Let’s get some of the more obvious components out of the way first. Did you identify any type of media or blobs in step 2.1? If so, these are great candidates to store in blob storage. A blob (Binary Large Object) is basically just binary data. We store and retrieve these as a single item. For example, ZIP files or other binaries.</p>
+<p>Some popular blob stores are Amazon S3 and Azure Blob storage. In general, you don’t need to worry too much about the specific brand you’d be using. Just tell your interviewer that these images/blobs you identified are good candidates to store in some blob storage, and then draw a “blob” box.</p>
+<p>Going back to our Twitter example, we’ll want to store media from tweets in some kind of blob storage.</p>
+<blockquote>
+<p>[!Rule of thumb]
+Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don’t say the specific brand. Instead, say “some kind of blob storage.” Because if you say, “we should use S3 here,” the next question out of your interviewer’s mouth will be, “why not Azure blob instead of S3?”</p>
+</blockquote>
+<p>There’s a chance you might want to couple the blob storage with a CDN, but that’s something we’ll look into in step 3.2. <em>This step is all about identifying how to store content, not how to distribute it.</em></p>
+<h3 id="database">Database<a href="#database" class="anchor" aria-hidden="true">#</a> </h3>
+<p>There are a few considerations for this step:</p>
+<ol start="3">
+<li>Relational vs. Non-Relational</li>
+<li>Entities to store</li>
+</ol>
+<h3 id="311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational<a href="#311-relational-vs-non-relational" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Relational vs. Non-Relational, sometimes referred to as SQL vs. NoSQL, is one of the foundational decisions of database design. There are many trade-offs involved when it comes to picking one or the other. In many interview questions, an argument can be made for any choice you make. <em>It’s important that you don’t succumb to paralysis through over-analysis.</em> Just pick one, and make your rationale clear for why you chose it. Score extra brownie points if you include a drawback of making the pick you made.</p>
+<blockquote>
+<p>[!Remember]
+There’s no right or wrong answer—it’s all about how to justify your picks.</p>
+</blockquote>
+<p>Don’t oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you’re being unrealistic, you probably won’t change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you’re too fixated on being right, you’ll miss the opportunity.</p>
+<p>Therefore, we’re giving you two very powerful tools: (1) A rule of thumb to pick Relational (SQL) vs. Non-Relational (NoSQL), and (2) A list of trade-offs that you should mention to your interviewer after stating your decision.</p>
+<h3 id="entities-to-store">Entities to store<a href="#entities-to-store" class="anchor" aria-hidden="true">#</a> </h3>
+<p>It’s time to look at the data and access patterns we defined in step 2 and design our database schema. This will look like a list of tables/documents, and a description of the queries that you’ll use to access them.</p>
+<p>A good starting point is to sketch out a table for each entity you identified, and then go over the access patterns. Think about how they will be fulfilled. Then you can adapt your tables to better fit these access patterns. <strong>Repeat after me: design is an iterative process.</strong></p>
+<p>Think about these iterations as small cycles where you identify the requirement, implement a solution, assess its limitation, and then improve it.</p>
+<p>
+
+<img
+  src="/one-iteration-design_16581315748304896912_hucbb715d02bc88387031fbbe2e5afe222_14263_1440x880_resize_q85_h2_lanczos_3.webp"
+  width="1440"
+  height="880"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="One iteration of the design process"id="h-rh-i-1"
+/></p>
+<p>Rinse and repeat until you have a solution that accommodates your requirements from step 1. When you zoom out, you are just going through several of these cycles:</p>
+<p>
+
+<img
+  src="/multiple-iteration-design_5808134603802935382_hu8eeb955557b88c7dce51b73dd3e619d7_16045_1440x816_resize_q85_h2_lanczos_3.webp"
+  width="1440"
+  height="816"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="One iteration of the design process"id="h-rh-i-2"
+/></p>
+<p>Let’s see what this might look like through the lens of our Twitter example.</p>
+<p>We identified two entities in step 2.1: (1) Accounts, and (2) Tweets. Therefore, we’ll start out nice and simple with two tables:</p>
+<ul>
+<li>Accounts: id, name, surname.</li>
+<li>Tweets: id, content, author_id, media_url.</li>
+</ul>
+<p>Note that each of these has an id. This id is immutable and uniquely identifies each object so that we can easily change any of the object’s metadata without the need to update other records. Also, the media_url would point to the address of the blob storage bucket containing the tweet’s media, if any.</p>
+<p>Now look at the access patterns and make some adjustments. We identified two access patterns in step 2:</p>
+<ul>
+<li><code>getTweets</code> gets all the tweets for a given user.</li>
+<li><code>getFeed</code> gets the feed for a given user.</li>
+</ul>
+<p><code>getTweets</code> should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.</p>
+<blockquote>
+<p>[!Tip] (Tell your interviewer)
+Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.</p>
+</blockquote>
+<p>Now onto <code>getFeed</code>. Let’s define feed to be a list of tweets of all the accounts the given account follows, sorted chronologically. There’s one thing we are missing here already: the information about who follows whom. Let’s say we add that relation in some new table:</p>
+<ul>
+<li>Followers: account_id, follower_id</li>
+</ul>
+<p>We can again have indexes to speed up certain access patterns, such as getting all followers for a given account_id. This is totally fine. You can add tables/indexes as you realize they are needed. Remember: Identify → Implement → Assess → Improve.</p>
+<p>Computing the feed for a given user would require us to get all the accounts they follow and then get all their recent tweets. We have an implementation—time to assess it. Is this solution acceptable for our requirements?</p>
+<p>Given the fact that we identified the system to be read-heavy and <code>getFeed</code> is expected to be called quite frequently, the computation can become prohibitive. Consider that each account might follow thousands of users, and those might have hundreds of tweets. Computing the feed seems like quite a compute-intensive process.</p>
+<p>However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.</p>
+<blockquote>
+<p>[!Tip] Tell your interviewer
+“Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”</p>
+</blockquote>
+<p>Assess your current solution, provide your opinion, and then ask your interviewer for their thoughts. This is the best way to iterate on system design. You don’t want to rely solely on your interviewer without expressing your thoughts because it may convey a lack of criticality/independence.</p>
+<blockquote>
+</blockquote>
+<p>You also don’t want to move forward without any input from your interviewer because it may be perceived as poor collaboration. We find that <strong>stating your rationale followed by a subtle “what do you think?” or “let me know if you think I’m approaching this the wrong way” is the perfect balance between being independent but also collaborative.</strong></p>
+<p>For the sake of learning, let’s say that our interviewer agrees with us and wants to move forward with optimizing this. Whenever you are looking to optimize runtime, trading it off with memory should be your first go-to.</p>
+<blockquote>
+<p>[!Rule of thumb]
+When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.</p>
+</blockquote>
+<p>In this example, we might want to store the user feeds in a table and keep that up to date as new tweets come up. That way, we have an instant mapping from user to its feed, making <code>getFeed</code> fast at the cost of using more memory and the added complexity of having to maintain feeds up to date.</p>
+<p>You can also get creative as well. Do you need to keep the feeds for all users up to date? Maybe we can prioritize users who log in frequently. For users who rarely log into the app, we can compute the feed on-demand. These kinds of ideas are worth mentioning. They don’t really influence the design that much, but they show thoughtfulness around usage patterns.</p>
+<h2 id="32-microservices">3.2 Microservices<a href="#32-microservices" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Once we have our storage layer somewhat defined, the last step is connecting our API to the storage layer. There are a few decisions that often arise at this stage:</p>
+<ul>
+<li>Caching</li>
+<li>Load balancing</li>
+<li>Queuing systems</li>
+</ul>
+<h3 id="caching">Caching<a href="#caching" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Ask yourself: Are there any access patterns that would benefit from caching the results in-memory? Candidates sometimes add caching to their solution just because. This is often a mistake.</p>
+<blockquote>
+<p>[!Warning]
+Not all systems designed in system design interviews require caching.</p>
+</blockquote>
+<p>Remember that every decision you make has some trade-off. There’s no such thing as a free lunch in system design. Therefore, we urge you to consider the downsides of your design decisions and mention them during the interview.</p>
+<blockquote>
+<p>[!Rule of thumb]</p>
+</blockquote>
+<p>Consider using caching when all three of these are true:</p>
+<blockquote>
+<ul>
+<li>Computing the result is costly</li>
+<li>Once computed, the result tends to not change very often (or at all)</li>
+<li>The objects we are caching are read often</li>
+</ul>
+</blockquote>
+<p>A common technology used when caching is needed is Redis. If you are not familiar with it, all you need to know is that it is a way for you to cache parts of your database in memory such that it’s faster to access them.</p>
+<blockquote>
+<p>[!Remember]
+If you haven’t used Redis, don’t say, “Let’s use Redis here” in the interview; instead, say “Let’s add a cache here.” Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, “Why Redis and not Memcached?”</p>
+</blockquote>
+<p>What are some of the downsides of caching, you may ask? To begin with, it introduces two replicas of the same data. Even though our source of truth remains to be persistent storage (our database), it is now possible to get the result from the cache as well. This might introduce inconsistencies if the cache is out of date from the source of truth. This is why it’s wiser to cache objects that don’t usually change too often. It’s also costly to maintain and adds complexity to the system. Now every time we want to update our logic, we’ll need to consider the caching layer as well.</p>
+<h3 id="load-balancing">Load balancing<a href="#load-balancing" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Load balancing helps us scale horizontally and maintain high availability. While horizontal scaling is desired in most systems, it is again advisable to consider whether it is strictly necessary given the requirements you’ve identified.</p>
+<p>Load balancing is easier when our API servers are stateless because requests can be routed to any node. In our Twitter example, we’d probably want to load balance incoming traffic into several replicas of our stateless API servers which will just hold the logic to access the database.</p>
+<p>As mentioned, this will give us two key benefits:</p>
+<ol start="5">
+<li><strong>Horizontal scaling.</strong> We can add more API servers to handle more load.</li>
+<li><strong>High Availability.</strong> Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.</li>
+</ol>
+<p>There are different strategies for deciding how to balance load across a set of servers, but most of the time you’ll be dealing with round robin.</p>
+<h1 id="end-to-end-example-of-the-process">End-to-end example of the process</h1>
+<p>Design interviewing.io: A website where people can schedule anonymous technical interviews with other engineers.</p>
+<h2 id="step-1-requirements-1">Step 1: Requirements<a href="#step-1-requirements-1" class="anchor" aria-hidden="true">#</a> </h2>
+<p>The following simulates a conversation you could have with your interviewer and a final result of the requirements you agree on. While the areas the interviewer wants to focus on might vary, this should give you a good overview of what to consider and how to ask relevant questions.</p>
+<p>Let’s start with business objects first.</p>
+<p><strong>Candidate:</strong> I identify two business objects right off the bat: users and interviews. Let me start with interviews—do we need to save the video recording of the interview?</p>
+<p><strong>Interviewer:</strong> Yes. There is also a showcase feature, where if both parties agree, the interview will be displayed in our “showcase” for others to see.</p>
+<p><strong>Candidate:</strong> I see. Are there any other properties about interviews that I should be aware of?</p>
+<p><strong>Interviewer:</strong> Well, generally, interviews are done in one programming language. We want to keep track of that so that users can then filter to only “Java” interviews, for example.</p>
+<p><strong>Candidate:</strong> Got it. And what about matching interviewers and interviewees? How is that done?</p>
+<p><strong>Interviewer:</strong> Users set up an availability where they are able to interview or be interviewed, and then they get matched with their counterpart.</p>
+<p>So far it seems like we need to track information about:</p>
+<ul>
+<li>User (name, surname, pseudonym, availability)</li>
+<li>Interview (interviewer, interviewee, video recording, programming language)</li>
+<li>Booking (time, interviewer, interviewee)</li>
+</ul>
+<p>Looks like we’ve got a good idea of the business objects involved in this system and a rough sense of the properties they’ll hold. Next, we should chat about different access patterns and agree on the functional requirements. Remember, you’ll want to think about the cross product of these entities to come up with ideas of possible access patterns that relate these objects.</p>
+<ul>
+<li><strong>Given a user, get all of the interviews they took part in.</strong></li>
+<li><strong>See showcased interviews.</strong></li>
+<li><strong>Set availability.</strong></li>
+<li><strong>Book interview.</strong></li>
+<li><strong>Join interview.</strong></li>
+</ul>
+<h2 id="non-functional-requirements">Non-functional requirements<a href="#non-functional-requirements" class="anchor" aria-hidden="true">#</a> </h2>
+<p><strong>Availability</strong> seems like the obvious thing to optimize for since the platform needs to be up for candidates to be able to interview.</p>
+<p>There’s nothing notable in terms of performance here that warrants taking a note. Most likely, the thing we’ll care the most about will be audio quality during the interview. There’s also writing and running code during the interview.</p>
+<p>We probably want to note <strong>good audio quality</strong> during the interview as a non-functional requirement. This could as well fall into availability. If the connection is flaky, that’s pretty much downtime.</p>
+<p>Finally, for code execution, we’d probably want to execute the code in isolation. Candidate submissions are low-trust and should have no side effects on the system. For example, you cannot DOS the system with code submissions.</p>
+<h2 id="step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale<a href="#step-2-data-types-api-and-scale-2" class="anchor" aria-hidden="true">#</a> </h2>
+<h5 id="data-types">Data Types:<a href="#data-types" class="anchor" aria-hidden="true">#</a> </h5>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>1
+2  User: id, name, surname, pseduonym, availability. (Structured data)
+3  Interview: id, interviewer_id, interviewee_id, video_recording_id, programming_lang, (Structured data)
+4  Booking: id, interviewer_id, interviewee_id, time. (Structured data).
+5
+6  Recording: video (media).
+7</code></pre>
+  </figure>
+</div>
+<h5 id="rest-api">REST API:<a href="#rest-api" class="anchor" aria-hidden="true">#</a> </h5>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <pre tabindex="0"><code>1
+2  putAvailability:
+3    POST /users/{userId}/availability
+4  getInterviews:
+5    GET /users/{userId}/interviews
+6    returns: interview_id
+7  getInterview:
+8    GET /interviews/{interview_id}
+9    returns: streaming interview
+10  getShowcase:
+11    GET /showcase
+12    returns: list of interview ids and metadata.
+13  bookInterview:
+14    PUT /users/{userId}/bookings
+15    returns: booking_id
+16  getBookings:
+17    GET /users/{userId}/bookings
+18    returns: list of booking_ids
+19  joinInterview:
+20    POST /interview/{booking_id}
+21    returns: link to coder pad.
+22</code></pre>
+  </figure>
+</div>
+<h3 id="rule-of-thumb">Rule of thumb<a href="#rule-of-thumb" class="anchor" aria-hidden="true">#</a> </h3>
+<p>In an interview, the less you code you write, the more you seem like a senior engineer. And the opposite is true as well: The more code you write in a system design interview, the more you seem like you’re below the senior level. Writing this much code for your API would probably be too much if you’re aiming for senior or senior plus roles. But if you’re a mid-level candidate trying to secure your mid-level position, this is the perfect amount of code to write.</p>
+<h4 id="scale">Scale:<a href="#scale" class="anchor" aria-hidden="true">#</a> </h4>
+<p><strong>Candidate:</strong> How many interviews are we expecting?</p>
+<p><strong>Interviewer:</strong> In the order of thousands per day.</p>
+<p><strong>Candidate:</strong> How long does one interview last?</p>
+<p><strong>Interviewer:</strong> About an hour.</p>
+<p><strong>Candidate:</strong> What do we need to store as part of the recording?</p>
+<p><strong>Interviewer:</strong> Just the audio and coder pad.</p>
+<p>Based on these items, if our interviewer wants us to do some back-of-the-envelope math, we could assume:</p>
+<p>100MB per interview x 1000 interviews per day = ~100GB of data per day</p>
+<h2 id="step-3-design-2">Step 3: Design<a href="#step-3-design-2" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Let’s start with data— where shall we store it and how? If we go back to the data types, we’ve identified mainly two of them: interview recordings and metadata (users, interviews, bookings).</p>
+<p>As for the interview recordings, since they are videos, a blob store would be a decent choice. We can have a table where each interview holds the link back to its recording. Furthermore, we can index them by things like programming language, allowing us to filter down by certain properties. One would imagine that any modern database should be capable of efficiently indexing the volume of records we are expecting (~1000 a day). In order to improve user experience, we would probably make the <code>getShowcase</code> endpoint a paged endpoint, and return paginated results for matching interviews.</p>
+<p>When considering which database to use to store metadata, it’s not immediately clear that any one technology would be a better fit. We’d probably go for a relational database like MySQL because schemas are quite well defined and entities are tightly related to each other. We’d also probably want to update bookings transactionally so we make sure we are not double booking interviewers. <strong>Having said that, an argument can be made for pretty much any modern database.</strong> We’d mention to the interviewer that our schemas might be a bit more rigid and we’ll likely have to prefer vertical scaling.</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/frameworks/framework_hi/" class="stretched-link text-reset text-decoration-none">Framework Hi</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/topics/hashing/" class="stretched-link text-reset text-decoration-none">Hashing</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
+  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

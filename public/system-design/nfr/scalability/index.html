@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/nfr/scalability/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/nfr/scalability/">
+
+
+<title>Scalability  |  System Design</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/nfr/scalability/">
+  <meta property="og:site_name" content="System Design">
+  <meta property="og:title" content="Scalability">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="article:modified_time" content="2025-02-21T15:53:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Scalability">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "System Design and Software Architecture 1",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/nfr/",
+       "name": "Nfr",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Scalability",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+    
+  
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">System Design</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">System Design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about">System Design</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/db-1/">Db 1</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#horizontal-partitioning-sharding">Horizontal partitioning (sharding)</a></li>
+    <li><a href="#vertical-partitioning">Vertical partitioning</a></li>
+    <li><a href="#benefits-and-limitations">Benefits and Limitations</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#queue-based-load-leveling-pattern">Queue-Based Load leveling pattern</a></li>
+    <li><a href="#priority-queue">Priority queue</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#performance-vs-scalability">Performance vs Scalability</a></li>
+    <li><a href="#latency-vs-throughput">Latency vs Throughput</a></li>
+    <li><a href="#availability-vs-consistency">Availability vs Consistency</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Scalability</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#horizontal-partitioning-sharding">Horizontal partitioning (sharding)</a></li>
+    <li><a href="#vertical-partitioning">Vertical partitioning</a></li>
+    <li><a href="#benefits-and-limitations">Benefits and Limitations</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#queue-based-load-leveling-pattern">Queue-Based Load leveling pattern</a></li>
+    <li><a href="#priority-queue">Priority queue</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#performance-vs-scalability">Performance vs Scalability</a></li>
+    <li><a href="#latency-vs-throughput">Latency vs Throughput</a></li>
+    <li><a href="#availability-vs-consistency">Availability vs Consistency</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>Why scalability problems start with organizations and people, not technology, and what to do about it.</p>
+<h1 id="ontology">Ontology</h1>
+<h1 id="definitions">Definitions</h1>
+<p>Definition. What is it that we really mean by scalability? A service is said to be scalable if when we increase the resources in a system, it results in increased performance in a manner <em>proportional</em> to resources added. Increasing performance in general means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.</p>
+<p>Our review of the literature showed two main uses of the term scalability:
+Definition 1. Scalability is the ability to handle increased workload (without adding resources to a system).
+Definition 2. Scalability by extension. Scalability is the ability to handle increased workload by repeatedly applying a costeffective strategy for extending a system’s capacity.</p>
+<p>Capacity.</p>
+<h1 id="sources">Sources</h1>
+<p>highscalability.com
+https://systemdesignprimer.netlify.app/getting-started
+Designing Fine-Grained Microservices Book
+https://www.lecloud.net/tagged/scalability/chrono
+some slides - https://www.slideshare.net/jboner/scalability-availability-stability-patterns
+http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html
+https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf</p>
+<p>https://github.com/binhnguyennus/awesome-scalability</p>
+<h1 id="common">Common</h1>
+<p>There isn&rsquo;t one right way to scale a system, as the technique used will depend on the type of constraint you might have. We have a number of different types of scaling we can bring to bear to help with performance, robustness, or perhaps both:</p>
+<ul>
+<li>Vertical scaling. In a nutshell, this means getting a bigger machine.</li>
+<li>Horizontal duplication. Having multiple things capable of doing the same work.</li>
+<li>Data partitioning. Dividing work based on some attribute of the data, e.g., customer group.</li>
+<li>Functional decomposition. Separation of work based on the type, e.g., microservice decomposition.</li>
+</ul>
+<p>Understanding what combination of these scaling techniques is most appropriate will fundamentally come down to the nature of the scaling issue you are facing.</p>
+<h1 id="combining-models">Combining Models</h1>
+<p>One of the main drivers behind the original Scale Cube was to stop us from thinking narrowly in terms of one type of scaling, and to help us understand that it often makes sense to scale our application along multiple axes, depending on our need.</p>
+<p>It’s worth noting that by scaling along one axis, other axes might be easier to make use of. For example, the functional decomposition of Order enables us to then spin up multiple duplicates of the Order microservice, and also to partition the load on order processing. Without that initial functional decomposition, we’d be limited to applying those techniques on the monolith as a whole.</p>
+<p>The goal when scaling isn’t necessarily to scale along all axes, but we should be aware that we have these different mechanisms at our disposal. Given this choice, it’s important we understand the pros and cons of each mechanism to work out which ones make the most sense.</p>
+<h1 id="vertical-scaling">Vertical Scaling</h1>
+<p>Benefits.
+It is fast. On virtualized infrastructure, especially on a public cloud provider, implementing this form of scaling will be fast.
+Benefits for other types. It’s also worth noting that vertical scaling can make it easier to perform other types of scaling.
+Transparency. Your code or database is unlikely to need any changes to make use of the larger underlying infrastructure, assuming the operating system and chipsets remain the same. Even if changes are needed to your application to make use of the change of hardware, they might be limited to things like increasing the amount of memory available to your runtime through runtime flags.</p>
+<h1 id="horizontal-duplication">Horizontal Duplication</h1>
+<p>With horizontal duplication, you duplicate part of your system to handle more workloads. The exact mechanisms vary—we&rsquo;ll look at implementations shortly—but fundamentally horizontal duplication requires you to have a way of <em>distributing the work</em> across these duplicates.</p>
+<p>As with vertical scaling, this type of scaling is on the simpler end of the spectrum and is often one of the things I’ll try early on. If your monolithic system can’t handle the load, spin up multiple copies of it and see if that helps!</p>
+<ul>
+<li><em>Load Balancer.</em> Probably the most obvious form of horizontal duplication that comes to mind is making use of a load balancer to distribute requests across multiple copies of your functionality. Load balancer capabilities differ, but you&rsquo;d expect them all to have some mechanism to distribute load across the nodes, and to detect when a node is unavailable and remove it from the load balancer pool. #pattern/lb</li>
+<li><em>Queue</em>. Another example of horizontal duplication could be the competing consumer pattern.</li>
+<li>Making use of <em>read replicas</em> to scale read traffic. In the case of FoodCo, a form of horizontal duplication has been used to reduce the read load on the primary database through the use of read replicas. This has reduced read load on the primary database node, freeing up resources to handle writes, and has worked very effectively, as a lot of the load on the main system was read-heavy. These reads could easily be redirected to these read replicas, and it&rsquo;s common to use a load balancer over multiple read replicas.</li>
+</ul>
+<h1 id="data-partitioning">Data Partitioning</h1>
+<p>Data partitioning requires that we distribute load based on some aspect of data—perhaps distributing load based on the user, for example.
+More often than not, partitioning will be done by the subsystem you rely on. For example, Cassandra uses partitions to distribute both reads and writes across the nodes in a given &ldquo;ring,&rdquo; and Kafka supports distributing messages across partitioned topics.
+Source:
+https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning
+https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding</p>
+<h2 id="horizontal-partitioning-sharding">Horizontal partitioning (sharding)<a href="#horizontal-partitioning-sharding" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this strategy, each partition is a separate data store, but all partitions have the same schema. Each partition is known as a <em>shard</em> and holds a specific subset of the data, such as all the orders for a specific set of customers.
+The most important factor is the choice of a sharding key. It can be difficult to change the key after the system is in operation. The key must ensure that data is partitioned to spread the workload as evenly as possible across the shards.</p>
+<p>sharding
+https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6
+facebook shard manager paper
+https://kousiknath.medium.com/all-things-sharding-techniques-and-real-life-examples-in-nosql-data-storage-systems-3e8beb98830a
+https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/</p>
+<h2 id="vertical-partitioning">Vertical partitioning<a href="#vertical-partitioning" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this strategy, each partition holds a subset of the fields for items in the data store. The fields are divided according to their pattern of use. For example, frequently accessed fields might be placed in one vertical partition and less frequently accessed fields in another.</p>
+<h2 id="benefits-and-limitations">Benefits and Limitations<a href="#benefits-and-limitations" class="anchor" aria-hidden="true">#</a> </h2>
+<p>It&rsquo;s worth pointing out that data partitioning has limited utility in terms of improving system robustness. This is why, as outlined earlier, it is common to combine data partitioning with a technique like horizontal duplication to improve the robustness of a given partition.</p>
+<h1 id="functional-decomposition">Functional Decomposition</h1>
+<p>With functional decomposition, you extract functionality and allow it to be scaled independently. Extracting functionality from an existing system and creating a new microservice is almost the canonical example of functional decomposition.
+By itself, functional decomposition isn&rsquo;t going to make our system more robust, but it at least opens up the opportunity for us to build a system that can tolerate a partial failure of functionality, something we explored in more detail in Chapter 12.</p>
+<h1 id="scalability-patterns">Scalability patterns</h1>
+<h2 id="queue-based-load-leveling-pattern">Queue-Based Load leveling pattern<a href="#queue-based-load-leveling-pattern" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Use a queue that acts as a buffer between a task and a service it invokes in order to smooth intermittent heavy loads that can cause the service to fail or the task to time out. This can help to minimize the impact of peaks in demand on availability and responsiveness for both the task and the service.</p>
+<p>A service might experience peaks in demand that cause it to overload and be unable to respond to requests in a timely manner. Flooding a service with a large number of concurrent requests can also result in the service failing if it&rsquo;s unable to handle the contention these requests cause.</p>
+<p>Refactor the solution and introduce a queue between the task and the service. The task and the service run asynchronously.</p>
+<p>The queue decouples the tasks from the service, and the service can handle the messages at its own pace regardless of the volume of requests from concurrent tasks. Additionally, there&rsquo;s no delay to a task if the service isn&rsquo;t available at the time it posts a message to the queue.</p>
+<p>This pattern provides the following benefits:</p>
+<p>It can help to maximize availability because delays arising in services won&rsquo;t have an immediate and direct impact on the application, which can continue to post messages to the queue even when the service isn&rsquo;t available or isn&rsquo;t currently processing messages.</p>
+<p>It can help to maximize scalability because both the number of queues and the number of services can be varied to meet demand.</p>
+<p>It can help to control costs because the number of service instances deployed only have to be adequate to meet average load rather than the peak load.</p>
+<p>link: https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling</p>
+<h2 id="priority-queue">Priority queue<a href="#priority-queue" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Prioritize requests sent to services so that requests with a higher priority are received and processed more quickly than those with a lower priority. This pattern is useful in applications that offer different service level guarantees to individual clients.</p>
+<p>Using a priority-queuing mechanism can provide the following advantages:</p>
+<p>It allows applications to meet business requirements that require the prioritization of availability or performance, such as offering different levels of service to different groups of customers.</p>
+<p>The multiple message queue approach can help maximize application performance and scalability by partitioning messages based on processing requirements. For example, you can prioritize critical tasks so that they&rsquo;re handled by receivers that run immediately, and less important background tasks can be handled by receivers that are scheduled to run at times that are less busy.</p>
+<p>link: https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue</p>
+<h1 id="caching">Caching</h1>
+<p>You can use cache to reduce load on a target system (which data cache holds). Thus allowing another parts of the system to be scaled effectively. <a href="../topics/caching.md">caching</a></p>
+<h1 id="cqrs">CQRS</h1>
+<p>The Command Query Responsibility Segregation (CQRS) pattern refers to an alter‐
+nate model for storing and querying information. Rather than our having a single
+model for how we both manipulate and retrieve data, as is common, responsibilities
+for reads and writes are instead handled by separate models. These separate read and
+write models, implemented in code, could be deployed as separate units, giving us the
+ability to scale reads and writes independently. CQRS is often, though not always,
+used in conjunction with event sourcing, where—rather than storing the current state
+of an entity as a single record—we instead project the state of an entity by looking at
+the history of events related to that entity.
+Arguably, CQRS is doing something very similar in our application tier to what read
+replicas can do in the data tier, although due to the large number of different ways
+CQRS can be implemented, this is a simplification.
+Personally, although I see value in the CQRS pattern in some situations, it’s a com‐
+plex pattern to execute well. I’ve spoken to very smart people who have hit not insig‐
+nificant issues in making CQRS work. As such, if you are considering CQRS as a way
+to help scale your application, regard it as one of the harder forms of scaling you’d
+need to implement, and perhaps try some of the easier stuff first.</p>
+<p>One final note on CQRS and event sourcing: from the point of view of a microservice
+architecture, the decision to use or not use these techniques is an internal implemen‐
+tation detail of a microservice. If you’ve decided to implement a microservice by split‐
+ting responsibility for reads and writes across different processes and models, for
+example, this should be invisible to consumers of the microservice. If inbound
+requests need to be redirected to the appropriate model based on the request being
+made, make this the responsibility of the microservice implementing CQRS. Keeping
+these implementation details hidden from consumers gives you a lot of flexibility to
+change your mind later, or to change how you are using these patterns.</p>
+<h1 id="communications-and-asynchronism">Communications and Asynchronism</h1>
+<p>We can see communication style as enabler to scalability.
+You can use asyncronism to parallelization of workload of service.</p>
+<h1 id="queues">Queues</h1>
+<p><strong>Patterns.</strong>
+Idempotency. Asynchronism. Map-Reduce. Space-based Architectures. Stateless services.</p>
+<p>stateless services and idempotent API as a key to scalability</p>
+<p>stateless services and idempotent API as a key to scalability what is about: common things, links and my thoughts on SD*</p>
+<h1 id="stateless-services">Stateless services</h1>
+<p>Steve should always get the same results of his request back, independent what server he  &ldquo;landed on&rdquo;. That leads to the <em>first golden rule for scalability</em>: every server contains exactly the same codebase and does not store any user-related data, like sessions or profile pictures, on local disc or memory.</p>
+<p>Sessions need to be stored in a centralized data store which is accessible to all your application servers. It can be an external database or an external persistent cache, like Redis. An external persistent cache will have better performance than an external database. By external I mean that the data store does not reside on the application servers. Instead, it is somewhere in or near the data center of your application servers.</p>
+<h1 id="path-or-instruction">Path or Instruction</h1>
+<ol>
+<li>Choose database: SQL or NoSQL for appropriate functionality after first vertical and horizontal duplication.</li>
+<li>Start Small</li>
+<li>Define scalability axes chain</li>
+</ol>
+<p>The architecture that gets you started may not be the architecture that keeps you
+going when your system has to handle very different volumes of load. As we’ve
+already seen, there are some forms of scaling that can have extremely limited impact
+on the architecture of your system—vertical scaling and horizontal duplication, for
+example. At certain points, though, you need to do something pretty radical to
+change the architecture of your system to support the next level of growth.
+A redesign may mean splitting apart an existing monolith, as it did for Gilt. Or it
+might mean picking new data stores that can handle the load better. It could also
+mean adopting new techniques, such as moving from synchronous request-response
+to event-based systems, adopting new deployment platforms, changing whole tech‐
+nology stacks, or everything in between.
+There is a danger that people will see the need to rearchitect when certain scaling
+thresholds are reached as a reason to build for massive scale from the beginning. This
+can be disastrous. At the start of a new project, we often don’t know exactly what we
+want to build, nor do we know if it will be successful. We need to be able to rapidly
+experiment and understand what capabilities we need to build. If we tried building
+for massive scale up front, we’d end up front-loading a huge amount of work to pre‐
+pare for load that may never come, while diverting effort away from more important
+activities, like understanding if anyone will actually want to use our product. Eric
+Ries tells the story of spending six months building a product that no one ever down‐
+loaded. He reflected that he could have put up a link on a web page that 404’d when
+people clicked on it to see if there was any demand, spent six months on the beach
+instead, and learned just as much!</p>
+<h1 id="autoscaling">Autoscaling</h1>
+<p>A news site is a great example of a type of business in which you may want a mix of
+predictive and reactive scaling. On the last news site I worked on, we saw very clear
+daily trends, with views climbing from the morning to lunchtime and then starting to
+decline. This pattern was repeated day in and day out, with traffic generally lower on
+the weekend. That gave us a fairly clear trend that could drive proactive scaling of
+resources, whether up or down. On the other hand, a big news story would cause an
+unexpected spike, requiring more capacity and often at short notice.</p>
+<h1 id="high-level-trade-offs">High-Level Trade-Offs</h1>
+<h2 id="performance-vs-scalability">Performance vs Scalability<a href="#performance-vs-scalability" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Another way to look at performance vs scalability:</p>
+<ul>
+<li>If you have a <strong>performance</strong> problem, your system is slow for a single user.</li>
+<li>If you have a <strong>scalability</strong> problem, your system is fast for a single user but slow under heavy load.</li>
+</ul>
+<p>And we have another considerations: firstly you have to build performant system, and after it you should brind scalability to your system.</p>
+<p>Scalability problem may lead to performance problem.  #scalability</p>
+<h2 id="latency-vs-throughput">Latency vs Throughput<a href="#latency-vs-throughput" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Latency and throughput are the two most important measures of the performance of a system.</p>
+<p><strong>Latency</strong> is the time to perform some action or to produce some result.
+<strong>Throughput</strong> is the number of such actions or results per unit of time.</p>
+<p>Generally, you should aim for <strong>maximal throughput</strong> with <strong>acceptable latency</strong>.</p>
+<h2 id="availability-vs-consistency">Availability vs Consistency<a href="#availability-vs-consistency" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Here should be analysis of CAP theorem</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/topics/replication/" class="stretched-link text-reset text-decoration-none">Replication</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/projects/sd_reviews/" class="stretched-link text-reset text-decoration-none">Sd Reviews</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
+  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

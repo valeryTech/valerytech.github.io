@@ -1,57 +1,68 @@
 ---
-title: "System Design Common Page"
-description: "Guides lead a user through a specific task they want to accomplish, often with a sequence of steps."
-summary: ""
-url: /system-design/about
-date: 2023-09-07T16:04:48+02:00
-lastmod: 2023-09-07T16:04:48+02:00
+contributors: []
+date: 2025-02-21T15:53:28.142072
+description: Default Description
 draft: false
-weight: 810
+lastmod: 2025-02-21T15:53:28.142072
+summary: ''
+tags:
+- system-design
+- architecture
+- advice
+title: System Design
 toc: true
+url: /system-design/about
+weight: 810
 ---
-
 
 courses
 
 order:
-smarchok 2 courses + <https://www.youtube.com/@SystemDesignInterview/videos>
-algoexpert 2 courses (fundamentals and examples)
-zerotomastery "# Master the Coding Interview: System Design + Architecture (Part 1)"
-hellointerview  examples + youtube channel + (maybe) premium
-<https://interviewing.io/guides/system-design-interview/part-four#chapter-one>
-? algoexpert "# Systems Design Interview Tips"
-<https://github.com/Sairyss/system-design-patterns> cool cirriculim with examples
+smarchok 2 courses + https://www.youtube.com/@SystemDesignInterview/videos
 
-designgurus ? <https://www.designgurus.io/path/system-design-interview-playbook>
+algoexpert 2 courses (fundamentals and examples)
+
+zerotomastery "# Master the Coding Interview: System Design + Architecture (Part 1)"
+
+hellointerview  examples + youtube channel + (maybe) premium
+https://interviewing.io/guides/system-design-interview/part-four#chapter-one
+
+? algoexpert "# Systems Design Interview Tips"
+
+https://github.com/Sairyss/system-design-patterns cool cirriculim with examples
+
+designgurus ? https://www.designgurus.io/path/system-design-interview-playbook
+
 bytebytego ?
+
 tryexponent courses ?
 
 # SD Framework
 
 steps, checklists
 
-<https://interviewing.io/guides/system-design-interview/part-three>
+https://interviewing.io/guides/system-design-interview/part-three
 
-## Common / Preparation Guides
+## Common / Preparation Guides:
 
 interviewing.io guides
-<https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/>
-<https://github.com/Sairyss/system-design-patterns>
+https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/
+https://github.com/Sairyss/system-design-patterns
 
 interview process guides
 interview guide +
 interviewing.io
-<https://www.tryexponent.com/blog/system-design-interview-guide>
+https://www.tryexponent.com/blog/system-design-interview-guide
 
-watch, analyze and reflect mock interviews [[#mock_interviews]]
+watch, analyze and reflect mock interviews [mock_interviews](system-design.md#mock-interviews)
 
-maybe see channels with useful videos [[#useful_videos]]
+maybe see channels with useful videos [useful_videos](system-design.md#useful-videos)
 
 # Other
 
 codemia.io (?)
 
-reflect and analyze papers [[#Papers]]
+reflect and analyze papers [Papers](system-design.md#papers)
 
 blogs on system design; technical blogs; conferences
 
@@ -62,28 +73,30 @@ Start by developing a toolbox (Version 1) to address the time-consuming nature o
 ## Action Plan Structure
 
 1. Develop a Starter Toolbox (Version 1):
-    - Create a collection of foundational tools, frameworks, and design patterns to streamline the decision-making process.
-    - Focus on essential concepts like scalability, reliability, and modularity to build a versatile starting point.
-
+   
+   * Create a collection of foundational tools, frameworks, and design patterns to streamline the decision-making process.
+   * Focus on essential concepts like scalability, reliability, and modularity to build a versatile starting point.
 1. Apply the Toolbox to Real-World Challenges:
-    - Use your toolbox to design solutions for practical scenarios, such as building scalable APIs, designing a database schema, or implementing caching layers.
-    - Select diverse problems to cover a range of system design principles.
-
-3. Iterate and Refine:
-    - Continuously evaluate your toolbox based on the challenges you solve.
-    - Identify gaps or inefficiencies and incorporate new tools, techniques, or patterns as you gain experience.
-
-4. Practice Collaborative Design:
-    - Simulate interview-style system design discussions with peers or mentors to enhance your ability to explain and adapt your toolbox in real-time.
-
-5. Document Lessons Learned:
-    - Keep a log of the systems you design, the tools you use, and the trade-offs you encounter.
-    - Use these reflections to improve your problem-solving and prepare for interviews.
+   
+   * Use your toolbox to design solutions for practical scenarios, such as building scalable APIs, designing a database schema, or implementing caching layers.
+   * Select diverse problems to cover a range of system design principles.
+1. Iterate and Refine:
+   
+   * Continuously evaluate your toolbox based on the challenges you solve.
+   * Identify gaps or inefficiencies and incorporate new tools, techniques, or patterns as you gain experience.
+1. Practice Collaborative Design:
+   
+   * Simulate interview-style system design discussions with peers or mentors to enhance your ability to explain and adapt your toolbox in real-time.
+1. Document Lessons Learned:
+   
+   * Keep a log of the systems you design, the tools you use, and the trade-offs you encounter.
+   * Use these reflections to improve your problem-solving and prepare for interviews.
 
 # Learning (SD Interview)
 
->[!advice]
-> Use [[learning]] principles and practices!
+ > 
+ > \[!advice\]
+ > Use learning principles and practices!
 
 At a high level, preparing for system design interviews is really about assembling the *right* pieces: you'll need to know some core concepts, key technologies, and common patterns. On this base, you'll establish a strategy or delivery framework for executing the interview. And finally, you'll need to *practice* to ensure you're comfortable the day of your actual interview.
 
@@ -98,10 +111,10 @@ Common Problems Practicing
 Once you have the foundation in place, it's time to practice. Passively consuming content is good, but you'll retain 10x more information by actually doing.
 
 1. Choose a question: Select a question from the list of common questions below.
-2. Read the requirements: Understand the requirements of the system you'll need to design.
-3. Try to answer on your own: Either practice with our [Guided Practices](https://www.hellointerview.com/premium) (below) or on a virtual whiteboard like [Excalidraw](https://excalidraw.com/).
-4. Read the answer key: Only after you have tried to answer the question, read the answer key to see how your answer compares.
-5. Put your knowledge to the test: Once you've done a few questions and are feeling comfortable, put your knowledge to the test by [scheduling a mock interview](https://www.hellointerview.com/mock/schedule) with an interviewer from your target company.
+1. Read the requirements: Understand the requirements of the system you'll need to design.
+1. Try to answer on your own: Either practice with our [Guided Practices](https://www.hellointerview.com/premium) (below) or on a virtual whiteboard like [Excalidraw](https://excalidraw.com/).
+1. Read the answer key: Only after you have tried to answer the question, read the answer key to see how your answer compares.
+1. Put your knowledge to the test: Once you've done a few questions and are feeling comfortable, put your knowledge to the test by [scheduling a mock interview](https://www.hellointerview.com/mock/schedule) with an interviewer from your target company.
 
 ## Interviewing.io
 
@@ -111,21 +124,21 @@ Professional experience with distributed systems isn’t needed to pass system d
 
 # mock_interviews
 
-interviewing.io videos from youtube <https://www.youtube.com/watch?v=mQgKAK7y11s>
+interviewing.io videos from youtube https://www.youtube.com/watch?v=mQgKAK7y11s
 
-tryexponent mock videos <https://www.youtube.com/watch?v=iyLqwyFL0Zc>
+tryexponent mock videos https://www.youtube.com/watch?v=iyLqwyFL0Zc
 
-hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really cool!
-<https://www.hellointerview.com/>
+hello interview https://www.youtube.com/watch?v=tgSe27eoBG0 really cool!
+https://www.hellointerview.com/
 
-<http://youtube.com/watch?v=PI0yGBT9LHo>
+http://youtube.com/watch?v=PI0yGBT9LHo
 
 ^^ analyze them:
 
-- find out errors, try it yourself first, how would you resolve this errors?
-- technical depth? alternative solutions?
-- communication aspect, leadership skills, proactivity,
-- interview structure.
+* find out errors, try it yourself first, how would you resolve this errors?
+* technical depth? alternative solutions?
+* communication aspect, leadership skills, proactivity,
+* interview structure.
 
 ## Advices
 
@@ -133,23 +146,23 @@ It’s vital to master the Basic Principles first.
 
 The best candidates trying by doing LOTS of mock interviews, with peers
 
-Use enigneering principles and practices. ? [link]
+Use enigneering principles and practices. ? \[link\]
 
 # Interview Process
 
-[[interview]]
+[interview](interview/interview.md)
 
 # What to Learn
 
-[[elements]]
+[elements](elements/elements.md)
 
 Areas (from algoexpert):
 
-- foundational SD knowledge
-- key characteristics of systems
-- actual components of the system like LB, caches, proxies, leader election
-- actual tuck; real-life tools, existing products to use in SD to build your system
-- system design patterns
+* foundational SD knowledge
+* key characteristics of systems
+* actual components of the system like LB, caches, proxies, leader election
+* actual tuck; real-life tools, existing products to use in SD to build your system
+* system design patterns
 
 (refactor)
 Topics to research and grok:
@@ -157,14 +170,14 @@ building blocks (systems approach?)
 nfu reasoning
 trade-offs:
 
-- commong trade-off reasoning
-- make a list of these in one place and refine them after you get more and more practice
-async patterns, communication, protocols,
-distributed coordination, transactions and sagas..
-common technical problems
-data and databases
-api construction
-fundamental things: vector clocks
+* commong trade-off reasoning
+* make a list of these in one place and refine them after you get more and more practice
+  async patterns, communication, protocols,
+  distributed coordination, transactions and sagas..
+  common technical problems
+  data and databases
+  api construction
+  fundamental things: vector clocks
 
 (hellointerview) classification
 
@@ -185,13 +198,13 @@ l. Consistent hashing
 
 # Projects & Examples
 
-first in [[_themes]] file, also we have a big amount of mock interviews
+first in themes file, also we have a big amount of mock interviews
 algoexpert videos
 hellointerview
 smarchok
 etc
-+this one <https://interviewing.io/guides/system-design-interview/part-four>
-from [[distributed_systems]] (? some examples)
++this one https://interviewing.io/guides/system-design-interview/part-four
+from distributed-systems (link) (? some examples)
 
 # Community
 
@@ -199,58 +212,58 @@ discord servers!
 forums
 meet ups
 
-<https://launchpass.com/pminterview>
+https://launchpass.com/pminterview
 
 you can discuss some project on leetcode, for example
 
 # Fundamentals & Distributed Systems
 
-[[distributed_systems]]
+[distributed-systems](topics/distributed-systems.md)
 
 # Microservices
 
-[[microservices]]
+[microservices](topics/microservices.md)
 
 # Sources
 
-<https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode>
+https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode
 
-example how to organize your SD public Result: <https://github.com/Sairyss/system-design-patterns> -> todo add projects here (public learning)
+example how to organize your SD public Result: https://github.com/Sairyss/system-design-patterns -> todo add projects here (public learning)
 
 ## Other
 
-<https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2>
-Scaling Instagram Infrastructure - <https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s>
-Scaling Facebook Live Videos to a Billion Users - <https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s>
-Building Real Time Infrastructure at Facebook - Facebook - SRECon2017 - <https://www.youtube.com/watch?v=ODkEWsO5I30>
-USENIX ATC '13 - TAO: Facebook's Distributed Data Store for the Social Graph - <https://www.youtube.com/watch?v=sNIvHttFjdI>
+https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2
+Scaling Instagram Infrastructure - https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s
+Scaling Facebook Live Videos to a Billion Users - https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s
+Building Real Time Infrastructure at Facebook - Facebook - SRECon2017 - https://www.youtube.com/watch?v=ODkEWsO5I30
+USENIX ATC '13 - TAO: Facebook's Distributed Data Store for the Social Graph - https://www.youtube.com/watch?v=sNIvHttFjdI
 
-<https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html>
+https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html
 
 ## useful_videos
 
 common overview
-<https://www.youtube.com/watch?v=F2FmTdLtb_4>
+https://www.youtube.com/watch?v=F2FmTdLtb_4
 
 channels with useful videos:
-<https://www.youtube.com/@hello_interview> staff engineer
-<https://www.youtube.com/@irtizahafiz>
-<https://www.youtube.com/@interviewpen> ??
-<https://www.youtube.com/@ByteByteGo>
+https://www.youtube.com/@hello_interview staff engineer
+https://www.youtube.com/@irtizahafiz
+https://www.youtube.com/@interviewpen ??
+https://www.youtube.com/@ByteByteGo
 
 ## Papers
 
-<https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/>
-<https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be>
+https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/
+https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be
 
-sla, slo and other: <https://sre.google/sre-book/service-level-objectives/>
+sla, slo and other: https://sre.google/sre-book/service-level-objectives/
 
 papers:
-• Amazon - Dynamo paper
-• Google - Map-reduce paper
-• Google - GFS paper
-• Facebook - TAO paper
-• Jeff Dean's talk at Stanford: /watch?v=modXC5IWTJI
-• Building Billion user Load Balancer at Facebook: /watch?v=bxhYNfFeVF4
-• Netflix Guide to Microservices: /watch?v=CZ3wIuvmHeM
-• Amazon DynamoDB deep dive: /watch?v=HaEPXoXVf2k
+•	Amazon - Dynamo paper
+•	Google - Map-reduce paper
+•	Google - GFS paper
+•	Facebook - TAO paper
+•	Jeff Dean's talk at Stanford: /watch?v=modXC5IWTJI
+•	Building Billion user Load Balancer at Facebook: /watch?v=bxhYNfFeVF4
+•	Netflix Guide to Microservices: /watch?v=CZ3wIuvmHeM
+•	Amazon DynamoDB deep dive: /watch?v=HaEPXoXVf2k

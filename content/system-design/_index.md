@@ -1,15 +1,13 @@
 ---
-title: "System Design"
-description: ""
-summary: ""
-date: 2023-09-07T16:12:03+02:00
-lastmod: 2023-09-07T16:12:03+02:00
+contributors: []
+date: 2025-02-21T15:53:28.142958
+description: Default Description
 draft: false
-weight: 999
+lastmod: 2025-02-21T15:53:28.142958
+summary: ''
+title: System Design
 toc: true
-seo:
-  title: "" # custom title (optional)
-  description: "" # custom description (recommended)
-  canonical: "" # custom canonical URL (optional)
-  robots: "" # custom robot tags (optional)
+weight: 810
 ---
+
+

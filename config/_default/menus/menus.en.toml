@@ -16,27 +16,10 @@
 #   identifier = "lorem"
 #   url = "/docs/lorem/"
 
-[[guide]]
-  name = "Lorem"
-  weight = 10
-  identifier = "lorem"
-  url = "/guide/lorem/"
-
-[[tutorial]]
-  name = "Lorem"
-  weight = 10
-  identifier = "lorem"
-  url = "/tutorial/lorem/"
 
 [[main]]
-  name = "Docs"
-  url = "/docs/guides/example-guide/"
-# url = "/docs/1.0/prologue/introduction/"
-  weight = 10
-
-[[main]]
-  identifier = "system-design"
   name = "System Design"
+  identifier = "system-design"
   url = "/system-design/about"
   weight = 20
 
@@ -52,20 +35,20 @@
   post = "v0.1.0"
   weight = 30
 
-# [[sidebar_docs]]
-#   name = "Guides"
-#   pageRef = "/docs/guides"
-#   weight = 10
-#
-# [[sidebar_docs]]
-#   name = "Reference"
-#   pageRef = "/docs/reference"
-#   weight = 20
-#
-# [[sidebar_docs]]
-#   name = "Resources"
-#   pageRef = "/docs/resources"
-#   weight = 30
+[[sidebar_docs]]
+  name = "Guides"
+  pageRef = "/docs/guides"
+  weight = 10
+
+[[sidebar_docs]]
+  name = "Reference"
+  pageRef = "/docs/reference"
+  weight = 20
+
+[[sidebar_docs]]
+  name = "Resources"
+  pageRef = "/docs/resources"
+  weight = 30
 
 [[footer]]
   name = "Privacy Policy"

@@ -2,19 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interview on System Design</title>
-    <link>http://localhost:46023/system-design/interview/</link>
+    <link>http://localhost:1313/system-design/interview/</link>
     <description>Recent content in Interview on System Design</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Thu, 07 Sep 2023 16:13:18 +0200</lastBuildDate>
-    <atom:link href="http://localhost:46023/system-design/interview/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Feb 2025 15:53:28 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/system-design/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Guide How to</title>
-      <link>http://localhost:46023/system-design/interview/example/</link>
-      <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
-      <guid>http://localhost:46023/system-design/interview/example/</guid>
-      <description>Reference pages are ideal for outlining how things work in terse and clear terms. Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what your documenting.</description>
+      <title>Interview</title>
+      <link>http://localhost:1313/system-design/interview/interview/</link>
+      <pubDate>Fri, 21 Feb 2025 15:53:28 +0000</pubDate>
+      <guid>http://localhost:1313/system-design/interview/interview/</guid>
+      <description>Checklist paper with checklist&#xA;(tool) Ask your recruiter what software you&amp;rsquo;ll be using for your interview and practice with it ahead of time.</description>
+    </item>
+    <item>
+      <title>Interview Phrases</title>
+      <link>http://localhost:1313/system-design/interview/interview_phrases/</link>
+      <pubDate>Fri, 21 Feb 2025 15:53:28 +0000</pubDate>
+      <guid>http://localhost:1313/system-design/interview/interview_phrases/</guid>
+      <description>How to push back against your interviewer in a helpful way Example of a candidate pushing back:&#xA;Interviewer: &amp;ldquo;I wouldn&amp;rsquo;t use a cache here in my opinion&amp;rdquo; Interviewee: &amp;ldquo;Sure we can take out the cache, though the reason I think a cache might be useful here is [insert technical reasoning here].</description>
     </item>
   </channel>
 </rss>
