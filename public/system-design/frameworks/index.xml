@@ -7,19 +7,19 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 15:53:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 16:55:53 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/frameworks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Framework Hi</title>
       <link>http://localhost:1313/system-design/frameworks/framework_hi/</link>
-      <pubDate>Fri, 21 Feb 2025 15:53:28 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
       <guid>http://localhost:1313/system-design/frameworks/framework_hi/</guid>
       <description>Delivery Framework Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you&amp;rsquo;ll stay focused on the bits that are most important to your interviewer.</description>
     </item>
     <item>
       <title>Framework Iv</title>
       <link>http://localhost:1313/system-design/frameworks/framework_iv/</link>
-      <pubDate>Fri, 21 Feb 2025 15:53:28 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
       <guid>http://localhost:1313/system-design/frameworks/framework_iv/</guid>
       <description>Fundamentals of this framework This framework is predicated on the following fundamentals:&#xA;We propose an opinionated method that can be applied to reason over most system design interviews.</description>
     </item>

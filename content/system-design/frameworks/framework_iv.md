@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T15:53:28.151814
+date: 2025-02-21T16:55:53.182289
 description: Default Description
 draft: false
-lastmod: 2025-02-21T15:53:28.151814
+lastmod: 2025-02-21T16:55:53.182289
 summary: ''
 title: Framework Iv
 toc: true
@@ -141,7 +141,7 @@ It might sound like a small detail at first, but mutability can limit our abilit
 
 ## Example 1: Design TikTok
 
-[tik_tok](../projects/tik_tok.md)
+[tik_tok](https://valery.tech/../projects/tik_tok/)
 
 ## Example 2: Design a code deployment system
 
@@ -331,7 +331,7 @@ Look at the access patterns you defined in the functional requirements to write 
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 
-See more in [envelope_estimations](../topics/envelope_estimations.md)
+See more in [envelope_estimations](https://valery.tech/../topics/envelope_estimations/)
 
  > 
  > \[!Outlaw Idea\]
@@ -373,7 +373,7 @@ So we’ll need to store around a gigabyte of data per minute.
 
 ### Example. Code Deployment System.
 
-See more in [code_deployment](../projects/code_deployment.md)
+See more in [code_deployment](https://valery.tech/../projects/code_deployment/)
 
 # Step 3: Design
 

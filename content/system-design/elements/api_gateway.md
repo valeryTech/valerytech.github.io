@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T15:53:28.153128
+date: 2025-02-21T16:55:53.183560
 description: Default Description
 draft: false
-lastmod: 2025-02-21T15:53:28.153128
+lastmod: 2025-02-21T16:55:53.183560
 summary: ''
 title: Api Gateway
 toc: true

@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T15:53:28.154421
+date: 2025-02-21T16:55:53.184648
 description: Default Description
 draft: false
-lastmod: 2025-02-21T15:53:28.154421
+lastmod: 2025-02-21T16:55:53.184648
 summary: ''
 title: Scalability
 toc: true
@@ -140,7 +140,7 @@ link: https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-que
 
 # Caching
 
-You can use cache to reduce load on a target system (which data cache holds). Thus allowing another parts of the system to be scaled effectively. [caching](../topics/caching.md)
+You can use cache to reduce load on a target system (which data cache holds). Thus allowing another parts of the system to be scaled effectively. [caching](https://valery.tech/../topics/caching/)
 
 # CQRS
 

@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T15:53:28.142958
+date: 2025-02-21T16:55:53.173542
 description: Default Description
 draft: false
-lastmod: 2025-02-21T15:53:28.142958
+lastmod: 2025-02-21T16:55:53.173542
 summary: ''
 title: System Design
 toc: true

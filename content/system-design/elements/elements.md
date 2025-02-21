@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T15:53:28.152776
+date: 2025-02-21T16:55:53.183222
 description: Default Description
 draft: false
-lastmod: 2025-02-21T15:53:28.152776
+lastmod: 2025-02-21T16:55:53.183222
 summary: ''
 title: Elements
 toc: true
@@ -69,7 +69,7 @@ Proxy runs on behalf of client where is RP is running on behalf of server. Can d
 
 # API Gateway
 
-[api_gateway](api_gateway.md)
+[api_gateway](https://valery.tech/api_gateway/)
 
 trade-offs
 
@@ -82,7 +82,7 @@ todo: refactor to messaging
 # asynchronism
 
 message queues, task queues
-[queues](../topics/queues.md)
+[queues](https://valery.tech/../topics/queues/)
 
 # sidecar pattern
 

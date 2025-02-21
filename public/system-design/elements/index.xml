@@ -7,19 +7,19 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 15:53:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 16:55:53 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/elements/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api Gateway</title>
       <link>http://localhost:1313/system-design/elements/api_gateway/</link>
-      <pubDate>Fri, 21 Feb 2025 15:53:28 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/api_gateway/</guid>
       <description>important things: define core responsiblities and how to introduce it to design maybe add problem based lens&#xA;microsoft: In a microservices architecture, a client might interact with more than one front-end service.</description>
     </item>
     <item>
       <title>Elements</title>
       <link>http://localhost:1313/system-design/elements/elements/</link>
-      <pubDate>Fri, 21 Feb 2025 15:53:28 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/elements/</guid>
       <description>syn: element, pattern, high-level strategy&#xA;From https://docs.microsoft.com/en-us/azure/architecture/patterns/ interviewing.io system-design-primer&#xA;Distributed computing with MapReduce Consistent hashing Scatter gather stateless services and idempotent API as a key to scalability pattern description blueprint: a definition of a pattern; which problems this patterns solves; specific algorithm(s) of work and {scenario}/{case};</description>
     </item>
