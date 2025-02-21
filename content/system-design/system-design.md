@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T16:55:53.172667
+date: 2025-02-21T17:37:47.879945
 description: Default Description
 draft: false
-lastmod: 2025-02-21T16:55:53.172667
+lastmod: 2025-02-21T17:37:47.879945
 summary: ''
 tags:
 - system-design
@@ -150,11 +150,11 @@ Use enigneering principles and practices. ? \[link\]
 
 # Interview Process
 
-[interview](https://valery.tech/interview/interview/)
+[interview](interview/interview.md)
 
 # What to Learn
 
-[elements](https://valery.tech/elements/elements/)
+[elements](elements/elements.md)
 
 Areas (from algoexpert):
 
@@ -218,11 +218,11 @@ you can discuss some project on leetcode, for example
 
 # Fundamentals & Distributed Systems
 
-[distributed-systems](https://valery.tech/topics/distributed-systems/)
+[distributed-systems](topics/distributed-systems.md)
 
 # Microservices
 
-[microservices](https://valery.tech/topics/microservices/)
+[microservices](topics/microservices.md)
 
 # Sources
 

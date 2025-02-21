@@ -7,26 +7,26 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 16:55:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 17:37:47 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/nfr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Consistency</title>
       <link>http://localhost:1313/system-design/nfr/consistency/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/consistency/</guid>
       <description>https://www.alexdebrie.com/posts/database-consistency/&#xA;consistency definition, models, etc&#xA;consistency patterns&#xA;sources: understanding distributes systems DDIA&#xA;https://en.wikipedia.org/wiki/Consistency_model https://en.wikipedia.org/wiki/Sequential_consistency&#xA;https://systemdesign.one/consistency-patterns/ https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems</description>
     </item>
     <item>
       <title>Reliability &amp; Availability</title>
       <link>http://localhost:1313/system-design/nfr/reliability--availability/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/reliability--availability/</guid>
       <description>reliability &amp;amp; availability patterns There are two complementary patterns to support high availability: fail-over and replication. Active-Passive and Active-Active are two types of redundancy configurations that enable high availability in the event of systems failure.</description>
     </item>
     <item>
       <title>Scalability</title>
       <link>http://localhost:1313/system-design/nfr/scalability/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/scalability/</guid>
       <description>Why scalability problems start with organizations and people, not technology, and what to do about it.&#xA;Ontology Definitions Definition. What is it that we really mean by scalability?</description>
     </item>

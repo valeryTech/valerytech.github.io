@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T16:55:53.191514
+date: 2025-02-21T17:37:47.899544
 description: Default Description
 draft: false
-lastmod: 2025-02-21T16:55:53.191514
+lastmod: 2025-02-21T17:37:47.899544
 summary: ''
 title: Projects
 toc: true

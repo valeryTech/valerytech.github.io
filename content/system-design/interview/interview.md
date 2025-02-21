@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T16:55:53.180854
+date: 2025-02-21T17:37:47.888266
 description: Default Description
 draft: false
-lastmod: 2025-02-21T16:55:53.180854
+lastmod: 2025-02-21T17:37:47.888266
 summary: ''
 title: Interview
 toc: true

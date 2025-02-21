@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T16:55:53.177470
+date: 2025-02-21T17:37:47.884719
 description: Default Description
 draft: false
-lastmod: 2025-02-21T16:55:53.177470
+lastmod: 2025-02-21T17:37:47.884719
 summary: ''
 title: Partitioning
 toc: true

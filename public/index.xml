@@ -7,75 +7,75 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 16:55:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 17:37:47 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> Themes</title>
       <link>http://localhost:1313/system-design/projects/_themes/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/_themes/</guid>
       <description>Facebook system design interview questions&#xA;Design an online collaborative editing tool Design a distributed botnet How would you use a load balancer for memcache servers?</description>
     </item>
     <item>
       <title>Api</title>
       <link>http://localhost:1313/system-design/topics/api/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/api/</guid>
       <description>find out info about:&#xA;API Design principles, API evolution, its usage as interface of a system&#xA;what is API (fringe, interface, algebra etc) #sd #todo</description>
     </item>
     <item>
       <title>Api Gateway</title>
       <link>http://localhost:1313/system-design/elements/api_gateway/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/api_gateway/</guid>
       <description>important things: define core responsiblities and how to introduce it to design maybe add problem based lens&#xA;microsoft: In a microservices architecture, a client might interact with more than one front-end service.</description>
     </item>
     <item>
       <title>Caching</title>
       <link>http://localhost:1313/system-design/topics/caching/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/caching/</guid>
       <description>ontology Cache definitions:&#xA;Caching is a commonly used performance optimization (&amp;lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.</description>
     </item>
     <item>
       <title>Chat Room</title>
       <link>http://localhost:1313/system-design/projects/chat-room/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/chat-room/</guid>
       <description>I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms.</description>
     </item>
     <item>
       <title>Code Deployment</title>
       <link>http://localhost:1313/system-design/projects/code_deployment/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/code_deployment/</guid>
       <description>Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</description>
     </item>
     <item>
       <title>Communication</title>
       <link>http://localhost:1313/system-design/topics/communication/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/communication/</guid>
       <description>Getting communication between microservices right is problematic for many due in great part, I feel, to the fact that people gravitate toward a chosen technological approach without first considering the different types of communication they might want.</description>
     </item>
     <item>
       <title>Consistency</title>
       <link>http://localhost:1313/system-design/nfr/consistency/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/consistency/</guid>
       <description>https://www.alexdebrie.com/posts/database-consistency/&#xA;consistency definition, models, etc&#xA;consistency patterns&#xA;sources: understanding distributes systems DDIA&#xA;https://en.wikipedia.org/wiki/Consistency_model https://en.wikipedia.org/wiki/Sequential_consistency&#xA;https://systemdesign.one/consistency-patterns/ https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems</description>
     </item>
     <item>
       <title>Db 1</title>
       <link>http://localhost:1313/system-design/topics/db-1/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/db-1/</guid>
       <description>data access pattern&#xA;Types: SQL, Key-Value Stores, Blob Stores (S3, GCS), Timelines DB, Graph(Neo4j), Spatial (QuadTree)&#xA;sql Pros: ACID transactions, imposing very strict structure =&amp;gt; querying capabilities, DB indexing, Data Normalization.</description>
     </item>
     <item>
       <title>Distributed Systems</title>
       <link>http://localhost:1313/system-design/topics/distributed-systems/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/distributed-systems/</guid>
       <description>distributed: book &amp;ldquo;thinking in distributed systems&amp;rdquo; book &amp;ldquo;understanding distributed systems&amp;rdquo;&#xA;Martin Kleppman course videos: https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB + pdf lecture notes&#xA;DDiA by Kleppman</description>
     </item>

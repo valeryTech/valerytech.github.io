@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T16:55:53.183959
+date: 2025-02-21T17:37:47.891926
 description: Default Description
 draft: false
-lastmod: 2025-02-21T16:55:53.183959
+lastmod: 2025-02-21T17:37:47.891926
 summary: ''
 title: Elements
 toc: true

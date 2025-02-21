@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-21T16:55:53+00:00">
-    <meta property="article:modified_time" content="2025-02-21T16:55:53+00:00">
+    <meta property="article:published_time" content="2025-02-21T17:37:47+00:00">
+    <meta property="article:modified_time" content="2025-02-21T17:37:47+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -1054,7 +1054,7 @@
 <li>List all the requirements you’ve identified and validate with your interviewer.</li>
 </ol>
 <h2 id="example-1-design-tiktok">Example 1: Design TikTok<a href="#example-1-design-tiktok" class="anchor" aria-hidden="true">#</a> </h2>
-<p><a href="https://valery.tech/../projects/tik_tok/">tik_tok</a></p>
+<p><a href="/system-design/projects/tik_tok/">tik_tok</a></p>
 <h2 id="example-2-design-a-code-deployment-system">Example 2: Design a code deployment system<a href="#example-2-design-a-code-deployment-system" class="anchor" aria-hidden="true">#</a> </h2>
 <p>aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</p>
 <p>Let’s start by identifying the main objects. In this case it looks like the only thing the service will need to store is code artifacts. What properties might we store? Feel free to discuss with your interviewer. For the sake of this example, let’s say we want to store:</p>
@@ -1223,7 +1223,7 @@ More than 90% of the time, users will interact with the system through HTTPS, an
 Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”</p>
 </blockquote>
 <p>If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.</p>
-<p>See more in <a href="https://valery.tech/../topics/envelope_estimations/">envelope_estimations</a></p>
+<p>See more in <a href="/system-design/topics/envelope_estimations/">envelope_estimations</a></p>
 <blockquote>
 <p>[!Outlaw Idea]
 We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.</p>
@@ -1279,7 +1279,7 @@ Once you know your requirements, it’s time to get specific.</p>
 <strong>API:</strong> How are these going to be accessed?
 <strong>Scale:</strong> Is the system read-heavy or write-heavy?</p>
 <h3 id="example-code-deployment-system">Example. Code Deployment System.<a href="#example-code-deployment-system" class="anchor" aria-hidden="true">#</a> </h3>
-<p>See more in <a href="https://valery.tech/../projects/code_deployment/">code_deployment</a></p>
+<p>See more in <a href="/system-design/projects/code_deployment/">code_deployment</a></p>
 <h1 id="step-3-design-1">Step 3: Design</h1>
 <table>
 <thead>
@@ -1316,17 +1316,7 @@ Once you know your requirements, it’s time to get specific.</p>
 <li><strong>Microservices.</strong> How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.</li>
 </ol>
 <p>We know the <strong>what</strong> (steps 1 and 2), so now we focus on the <strong>where</strong> and the <strong>how</strong>. We will start with designing the data storage layer first and then think about the microservices that access this data.</p>
-<p>
-
-<img
-  src="/microservice-design_10207812800882679553_huda800464800bbda0284d4ead8b80c568_19522_1440x1088_resize_q85_h2_lanczos_3.webp"
-  width="1440"
-  height="1088"
-  decoding="async"
-  fetchpriority="auto"
-  loading="lazy"
-  alt="Microservice design diagram with storage layer and api layer"id="h-rh-i-0"
-/></p>
+<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmicroservice-design.f88cac33.png&amp;w=3840&amp;q=75" alt="Microservice design diagram with storage layer and api layer"/></p>
 <p>On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?</p>
 <h2 id="31-data-storage">3.1 Data storage<a href="#31-data-storage" class="anchor" aria-hidden="true">#</a> </h2>
 <h3 id="blob-storage">Blob storage<a href="#blob-storage" class="anchor" aria-hidden="true">#</a> </h3>
@@ -1356,29 +1346,9 @@ There’s no right or wrong answer—it’s all about how to justify your picks.
 <p>It’s time to look at the data and access patterns we defined in step 2 and design our database schema. This will look like a list of tables/documents, and a description of the queries that you’ll use to access them.</p>
 <p>A good starting point is to sketch out a table for each entity you identified, and then go over the access patterns. Think about how they will be fulfilled. Then you can adapt your tables to better fit these access patterns. <strong>Repeat after me: design is an iterative process.</strong></p>
 <p>Think about these iterations as small cycles where you identify the requirement, implement a solution, assess its limitation, and then improve it.</p>
-<p>
-
-<img
-  src="/one-iteration-design_16581315748304896912_hucbb715d02bc88387031fbbe2e5afe222_14263_1440x880_resize_q85_h2_lanczos_3.webp"
-  width="1440"
-  height="880"
-  decoding="async"
-  fetchpriority="auto"
-  loading="lazy"
-  alt="One iteration of the design process"id="h-rh-i-1"
-/></p>
+<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fone-iteration-design.c9aa61be.png&amp;w=3840&amp;q=75" alt="One iteration of the design process"/></p>
 <p>Rinse and repeat until you have a solution that accommodates your requirements from step 1. When you zoom out, you are just going through several of these cycles:</p>
-<p>
-
-<img
-  src="/multiple-iteration-design_5808134603802935382_hu8eeb955557b88c7dce51b73dd3e619d7_16045_1440x816_resize_q85_h2_lanczos_3.webp"
-  width="1440"
-  height="816"
-  decoding="async"
-  fetchpriority="auto"
-  loading="lazy"
-  alt="One iteration of the design process"id="h-rh-i-2"
-/></p>
+<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmultiple-iteration-design.4e8cbabd.png&amp;w=3840&amp;q=75" alt="One iteration of the design process"/></p>
 <p>Let’s see what this might look like through the lens of our Twitter example.</p>
 <p>We identified two entities in step 2.1: (1) Accounts, and (2) Tweets. Therefore, we’ll start out nice and simple with two tables:</p>
 <ul>

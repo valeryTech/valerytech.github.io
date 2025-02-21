@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T16:55:53.178165
+date: 2025-02-21T17:37:47.885437
 description: Default Description
 draft: false
-lastmod: 2025-02-21T16:55:53.178165
+lastmod: 2025-02-21T17:37:47.885437
 summary: ''
 title: Microservices
 toc: true

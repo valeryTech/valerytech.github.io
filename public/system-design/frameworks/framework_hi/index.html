@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-21T16:55:53+00:00">
-    <meta property="article:modified_time" content="2025-02-21T16:55:53+00:00">
+    <meta property="article:published_time" content="2025-02-21T17:37:47+00:00">
+    <meta property="article:modified_time" content="2025-02-21T17:37:47+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -897,17 +897,7 @@ It&rsquo;s incredibly common for candidates to start layering on complexity too 
 Don&rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.</p>
 </blockquote>
 <p>For our simple Twitter example, here is how you might build up your design, one endpoint at a time:</p>
-<p>
-
-<img
-  src="/446dc33f64ebc27e977d6302b6532c1e_8167366211935042953_hu45bf869fc15e66b9079904fceff96d05_342653_2440x1097_resize_q85_h2_lanczos_3.webp"
-  width="2440"
-  height="1097"
-  decoding="async"
-  fetchpriority="auto"
-  loading="lazy"
-  alt=""id="h-rh-i-0"
-/></p>
+<p><img src="https://d248djf5mc6iku.cloudfront.net/excalidraw/446dc33f64ebc27e977d6302b6532c1e"/></p>
 <h2 id="deep-dives-10-minutes">Deep Dives (~10 minutes)<a href="#deep-dives-10-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Astute readers probably noticed that our simple, high-level design of Twitter is going to be woefully inefficient when it comes to fetching user&rsquo;s feeds. No problem! That&rsquo;s exactly the sort of thing you&rsquo;ll iterate on in the deep dives section. Now that you have a high-level design in place you&rsquo;re going to use the remaining 10 or so minutes of the interview to harden your design by (a) ensuring it meets all of your non-functional requirements (b) addressing edge cases (c) identifying and adressing issues and bottlenecks and (d) improving the design based on probes from your interviewer.</p>
 <blockquote>

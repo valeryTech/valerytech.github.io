@@ -7,19 +7,19 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 16:55:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 17:37:47 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interview</title>
       <link>http://localhost:1313/system-design/interview/interview/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/interview/interview/</guid>
       <description>Checklist paper with checklist&#xA;(tool) Ask your recruiter what software you&amp;rsquo;ll be using for your interview and practice with it ahead of time.</description>
     </item>
     <item>
       <title>Interview Phrases</title>
       <link>http://localhost:1313/system-design/interview/interview_phrases/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/interview/interview_phrases/</guid>
       <description>How to push back against your interviewer in a helpful way Example of a candidate pushing back:&#xA;Interviewer: &amp;ldquo;I wouldn&amp;rsquo;t use a cache here in my opinion&amp;rdquo; Interviewee: &amp;ldquo;Sure we can take out the cache, though the reason I think a cache might be useful here is [insert technical reasoning here].</description>
     </item>

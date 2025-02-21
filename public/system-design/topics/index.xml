@@ -7,75 +7,75 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 16:55:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 17:37:47 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api</title>
       <link>http://localhost:1313/system-design/topics/api/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/api/</guid>
       <description>find out info about:&#xA;API Design principles, API evolution, its usage as interface of a system&#xA;what is API (fringe, interface, algebra etc) #sd #todo</description>
     </item>
     <item>
       <title>Caching</title>
       <link>http://localhost:1313/system-design/topics/caching/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/caching/</guid>
       <description>ontology Cache definitions:&#xA;Caching is a commonly used performance optimization (&amp;lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.</description>
     </item>
     <item>
       <title>Communication</title>
       <link>http://localhost:1313/system-design/topics/communication/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/communication/</guid>
       <description>Getting communication between microservices right is problematic for many due in great part, I feel, to the fact that people gravitate toward a chosen technological approach without first considering the different types of communication they might want.</description>
     </item>
     <item>
       <title>Db 1</title>
       <link>http://localhost:1313/system-design/topics/db-1/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/db-1/</guid>
       <description>data access pattern&#xA;Types: SQL, Key-Value Stores, Blob Stores (S3, GCS), Timelines DB, Graph(Neo4j), Spatial (QuadTree)&#xA;sql Pros: ACID transactions, imposing very strict structure =&amp;gt; querying capabilities, DB indexing, Data Normalization.</description>
     </item>
     <item>
       <title>Distributed Systems</title>
       <link>http://localhost:1313/system-design/topics/distributed-systems/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/distributed-systems/</guid>
       <description>distributed: book &amp;ldquo;thinking in distributed systems&amp;rdquo; book &amp;ldquo;understanding distributed systems&amp;rdquo;&#xA;Martin Kleppman course videos: https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB + pdf lecture notes&#xA;DDiA by Kleppman</description>
     </item>
     <item>
       <title>Envelope Estimations</title>
       <link>http://localhost:1313/system-design/topics/envelope_estimations/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/envelope_estimations/</guid>
       <description>https://www.hellointerview.com/blog/mastering-estimation #todo&#xA;According to Jeff Dean, Google Senior Fellow, &amp;ldquo;back-of-the-envelope calculations are estimates you create using a combination of thought experiments and common performance numbers to get a good feel for which designs will meet your requirements&amp;rdquo; Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, number of servers, etc.</description>
     </item>
     <item>
       <title>Hashing</title>
       <link>http://localhost:1313/system-design/topics/hashing/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/hashing/</guid>
       <description>Hasning strategies:&#xA;rendezvous hashing https://randorithms.com/2020/12/26/rendezvous-hashing.html Rendezvous hashing - rank server set.&#xA;consistent hashing&#xA;Consistent hashing is a way to effectively distribute the keys in any distributed storage system—cache, database, or otherwise—to a large number of nodes or servers while allowing us to add or remove nodes without incurring a large performance hit.</description>
     </item>
     <item>
       <title>Microservices</title>
       <link>http://localhost:1313/system-design/topics/microservices/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/microservices/</guid>
       <description>https://www.youtube.com/watch?v=LcJKxPXYudE good video and comments&#xA;https://martinfowler.com/articles/microservices.html&#xA;https://www.martinfowler.com/articles/distributed-objects-microservices.html&#xA;https://microservices.io/patterns/index.html https://eventuate.io/exampleapps.html</description>
     </item>
     <item>
       <title>Partitioning</title>
       <link>http://localhost:1313/system-design/topics/partitioning/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/partitioning/</guid>
       <description>For very large datasets, or very high query throughput, that is not sufficient: we need to break the data up into partitions, also known as sharding.</description>
     </item>
     <item>
       <title>Queues</title>
       <link>http://localhost:1313/system-design/topics/queues/</link>
-      <pubDate>Fri, 21 Feb 2025 16:55:53 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 17:37:47 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/queues/</guid>
       <description>message queues&#xA;Advantages:&#xA;buffering traffic spikes If a message has to be processed by some very expensive code, you may also hold them in a queue while previous messages are being processed so you don&amp;rsquo;t overload (and potentially kill) servers.</description>
     </item>
