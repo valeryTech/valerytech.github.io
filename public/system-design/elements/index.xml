@@ -7,21 +7,28 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Sat, 22 Feb 2025 08:51:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/elements/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api Gateway</title>
       <link>http://localhost:1313/system-design/elements/api_gateway/</link>
-      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/api_gateway/</guid>
       <description>&lt;p&gt;important things: define core responsiblities and how to introduce it to design&#xA;maybe add problem based lens&lt;/p&gt;&#xA;&lt;p&gt;microsoft:&#xA;In a microservices architecture, a client might interact with more than one front-end service. Given this fact, how does a client know what endpoints to call? What happens when new services are introduced, or existing services are refactored? How do services handle SSL termination, authentication, and other concerns? An &lt;em&gt;API gateway&lt;/em&gt; can help to address these challenges.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Elements</title>
       <link>http://localhost:1313/system-design/elements/elements/</link>
-      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/elements/</guid>
       <description>&lt;p&gt;syn: element, pattern, high-level strategy&lt;/p&gt;&#xA;&lt;p&gt;From&#xA;https://docs.microsoft.com/en-us/azure/architecture/patterns/&#xA;interviewing.io&#xA;system-design-primer&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Distributed computing with MapReduce&lt;/li&gt;&#xA;&lt;li&gt;Consistent hashing&lt;/li&gt;&#xA;&lt;li&gt;Scatter gather&#xA;stateless services and idempotent API as a key to scalability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;pattern description blueprint:&lt;/strong&gt;&#xA;a definition of a pattern;&#xA;which problems this patterns solves;&#xA;specific algorithm(s) of work and {scenario}/{case};&lt;br&gt;&#xA;trade-offs and analogues;&#xA;specific implementations / solutions { s }&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test Page</title>
+      <link>http://localhost:1313/system-design/elements/test_page/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>http://localhost:1313/system-design/elements/test_page/</guid>
+      <description>&lt;h2 id=&#34;callouts&#34;&gt;Callouts&lt;/h2&gt;&#xA;&lt;div class=&#34;callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3&#34;&gt;&#xD;&#xA;  &lt;svg&#xA;  xmlns=&#34;http://www.w3.org/2000/svg&#34;&#xA;  width=&#34;24&#34;&#xA;  height=&#34;24&#34;&#xA;  viewBox=&#34;0 0 24 24&#34;&#xA;  fill=&#34;none&#34;&#xA;  stroke=&#34;currentColor&#34;&#xA;  stroke-width=&#34;2&#34;&#xA;  stroke-linecap=&#34;round&#34;&#xA;  stroke-linejoin=&#34;round&#34;&#xA; &#xA; class=&#34;outline/info-circle svg-inline callout-icon me-2 mb-3&#34; id=&#34;svg-info-circle&#34; role=&#34;img&#34;&gt;&#xA;  &lt;path stroke=&#34;none&#34; d=&#34;M0 0h24v24H0z&#34; fill=&#34;none&#34;/&gt;&#xA;  &lt;path d=&#34;M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0&#34; /&gt;&#xA;  &lt;path d=&#34;M12 9h.01&#34; /&gt;&#xA;  &lt;path d=&#34;M11 12h1v4h1&#34; /&gt;&#xA;&lt;/svg&gt;&#xD;&#xA;  &lt;div class=&#34;callout-content&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;callout-title&#34;&gt;&#xD;&#xA;        &lt;p&gt;information&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

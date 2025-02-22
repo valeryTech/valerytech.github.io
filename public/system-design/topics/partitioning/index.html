@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,8 +115,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -180,6 +178,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -529,6 +531,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -740,8 +746,16 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#by-key-range">by key range</a></li>
-    <li><a href="#hash-partitioning">hash partitioning</a></li>
+    <li><a href="#partitioning-of-key-value-data">Partitioning of Key-Value Data</a>
+      <ul>
+        <li><a href="#by-key-range">by key range</a></li>
+        <li><a href="#hash-partitioning">hash partitioning</a></li>
+      </ul>
+    </li>
+    <li><a href="#skewed-workloads">skewed workloads</a></li>
+    <li><a href="#partitioning-and-secondary-indexes">Partitioning and Secondary Indexes</a></li>
+    <li><a href="#rebalancing-partitions">Rebalancing Partitions</a></li>
+    <li><a href="#request-routing">request routing</a></li>
   </ul>
 </nav>
 </div>
@@ -757,8 +771,16 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#by-key-range">by key range</a></li>
-    <li><a href="#hash-partitioning">hash partitioning</a></li>
+    <li><a href="#partitioning-of-key-value-data">Partitioning of Key-Value Data</a>
+      <ul>
+        <li><a href="#by-key-range">by key range</a></li>
+        <li><a href="#hash-partitioning">hash partitioning</a></li>
+      </ul>
+    </li>
+    <li><a href="#skewed-workloads">skewed workloads</a></li>
+    <li><a href="#partitioning-and-secondary-indexes">Partitioning and Secondary Indexes</a></li>
+    <li><a href="#rebalancing-partitions">Rebalancing Partitions</a></li>
+    <li><a href="#request-routing">request routing</a></li>
   </ul>
 </nav>
     </div>

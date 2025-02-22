@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-22T08:51:50.964880'
+date: '2025-02-22T09:02:28.392283'
 description: Default Description
 draft: false
-lastmod: '2025-02-22T08:51:50.964880'
+lastmod: '2025-02-22T09:02:28.392283'
 summary: ''
 title: Understanding
 toc: true

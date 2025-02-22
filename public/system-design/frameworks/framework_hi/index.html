@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,8 +115,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -180,6 +178,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -529,6 +531,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -740,18 +746,22 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#requirements-5-minutes">Requirements (~5 minutes)</a>
+    <li><a href="#delivery-framework">Delivery Framework</a>
       <ul>
-        <li><a href="#1-functional-requirements">1) Functional Requirements</a></li>
-        <li><a href="#2-non-functional-requirements">2) Non-functional Requirements</a></li>
+        <li><a href="#requirements-5-minutes">Requirements (~5 minutes)</a>
+          <ul>
+            <li><a href="#1-functional-requirements">1) Functional Requirements</a></li>
+            <li><a href="#2-non-functional-requirements">2) Non-functional Requirements</a></li>
+          </ul>
+        </li>
+        <li><a href="#capacity-estimation">Capacity Estimation</a></li>
+        <li><a href="#core-entities-2-minutes">Core Entities (~2 minutes)</a></li>
+        <li><a href="#api-or-system-interface-5-minutes">API or System Interface (~5 minutes)</a></li>
+        <li><a href="#optional-data-flow-5-minutes">[Optional] Data Flow (~5 minutes)</a></li>
+        <li><a href="#high-level-design-10-15-minutes">High Level Design (~10-15 minutes)</a></li>
+        <li><a href="#deep-dives-10-minutes">Deep Dives (~10 minutes)</a></li>
       </ul>
     </li>
-    <li><a href="#capacity-estimation">Capacity Estimation</a></li>
-    <li><a href="#core-entities-2-minutes">Core Entities (~2 minutes)</a></li>
-    <li><a href="#api-or-system-interface-5-minutes">API or System Interface (~5 minutes)</a></li>
-    <li><a href="#optional-data-flow-5-minutes">[Optional] Data Flow (~5 minutes)</a></li>
-    <li><a href="#high-level-design-10-15-minutes">High Level Design (~10-15 minutes)</a></li>
-    <li><a href="#deep-dives-10-minutes">Deep Dives (~10 minutes)</a></li>
   </ul>
 </nav>
 </div>
@@ -767,18 +777,22 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#requirements-5-minutes">Requirements (~5 minutes)</a>
+    <li><a href="#delivery-framework">Delivery Framework</a>
       <ul>
-        <li><a href="#1-functional-requirements">1) Functional Requirements</a></li>
-        <li><a href="#2-non-functional-requirements">2) Non-functional Requirements</a></li>
+        <li><a href="#requirements-5-minutes">Requirements (~5 minutes)</a>
+          <ul>
+            <li><a href="#1-functional-requirements">1) Functional Requirements</a></li>
+            <li><a href="#2-non-functional-requirements">2) Non-functional Requirements</a></li>
+          </ul>
+        </li>
+        <li><a href="#capacity-estimation">Capacity Estimation</a></li>
+        <li><a href="#core-entities-2-minutes">Core Entities (~2 minutes)</a></li>
+        <li><a href="#api-or-system-interface-5-minutes">API or System Interface (~5 minutes)</a></li>
+        <li><a href="#optional-data-flow-5-minutes">[Optional] Data Flow (~5 minutes)</a></li>
+        <li><a href="#high-level-design-10-15-minutes">High Level Design (~10-15 minutes)</a></li>
+        <li><a href="#deep-dives-10-minutes">Deep Dives (~10 minutes)</a></li>
       </ul>
     </li>
-    <li><a href="#capacity-estimation">Capacity Estimation</a></li>
-    <li><a href="#core-entities-2-minutes">Core Entities (~2 minutes)</a></li>
-    <li><a href="#api-or-system-interface-5-minutes">API or System Interface (~5 minutes)</a></li>
-    <li><a href="#optional-data-flow-5-minutes">[Optional] Data Flow (~5 minutes)</a></li>
-    <li><a href="#high-level-design-10-15-minutes">High Level Design (~10-15 minutes)</a></li>
-    <li><a href="#deep-dives-10-minutes">Deep Dives (~10 minutes)</a></li>
   </ul>
 </nav>
     </div>
@@ -787,9 +801,34 @@
 			</nav>
 			<h1 id="delivery-framework">Delivery Framework</h1>
 <p>Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you&rsquo;ll stay focused on the bits that are most important to your interviewer. An added benefit is that you&rsquo;ll have a clear path to fall back if you&rsquo;re overwhelmed. Many candidates are (understandably!) nervous in their interview. It&rsquo;s easy to get lost if you aren&rsquo;t building up a solution in a linear way.</p>
-<div class="callout callout-info">
-  <strong> Follow a Structure </strong>
-  <div>While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &ldquo;communication&rdquo;), in practice we&rsquo;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.</div>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Follow a Structure</p>
+
+      </div>
+    <div class="callout-body">
+      <p>While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &ldquo;communication&rdquo;), in practice we&rsquo;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.</p>
+
+    </div>
+  </div>
 </div>
 
 <h2 id="requirements-5-minutes">Requirements (~5 minutes)<a href="#requirements-5-minutes" class="anchor" aria-hidden="true">#</a> </h2>
@@ -808,9 +847,18 @@
 <li>Clients should be able to set expirations</li>
 <li>Clients should be able to read items</li>
 </ul>
-<div class="callout callout-warning">
-  <strong>Keep your requirements targeted! </strong>
-  <div>The main objective in the remaining part of the interview is to develop a system that meets the requirements you&rsquo;ve identified &ndash; so it&rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&rsquo;s your job to identify and <em>prioritize the top 3</em>. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.</div>
+<div class="callout callout-warning d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Keep your requirements targeted!</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The main objective in the remaining part of the interview is to develop a system that meets the requirements you&rsquo;ve identified &ndash; so it&rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&rsquo;s your job to identify and <em>prioritize the top 3</em>. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.</p>
+
+    </div>
+  </div>
 </div>
 
 <h3 id="2-non-functional-requirements">2) Non-functional Requirements<a href="#2-non-functional-requirements" class="anchor" aria-hidden="true">#</a> </h3>
@@ -821,11 +869,35 @@
 <li>The system should be able to scale to support 100M+ DAUs</li>
 <li>The system should be low latency, rendering feeds in under 200ms</li>
 </ul>
-<div class="callout callout-note">
-  <strong>Quantification </strong>
-  <div><p>It&rsquo;s important that non-functional requirements are put in the context of the system and, where possible, are quantified. For example, &ldquo;the system should be low latency&rdquo; is obvious and not very meaningful—nearly all systems should be low latency.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Quantification</p>
+
+      </div>
+    <div class="callout-body">
+      <p>It&rsquo;s important that non-functional requirements are put in the context of the system and, where possible, are quantified. For example, &ldquo;the system should be low latency&rdquo; is obvious and not very meaningful—nearly all systems should be low latency.</p>
 <p>&ldquo;The system should have low latency search, &lt; 500ms,&rdquo; is much more useful as it identifies the part of the system that most needs to be low latency and provides a target.</p>
-</div>
+
+    </div>
+  </div>
 </div>
 
 <p>Coming up with non-functional requirements can be challenging, especially if you&rsquo;re not familiar with the domain. Here is a checklist of things to consider that might help you identify the most important non-functional requirements for your system. You&rsquo;ll want to identify the top 3-5 that are most relevant to your system.</p>
@@ -886,15 +958,65 @@ Notice how there is no userId in the POST /v1/tweet endpoint? This is because we
 <h2 id="high-level-design-10-15-minutes">High Level Design (~10-15 minutes)<a href="#high-level-design-10-15-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now that you have a clear understanding of the requirements, entities, and API of your system, you can start to design the high-level architecture. This consists of drawing boxes and arrows to represent the different components of your system and how they interact. Components are basic building blocks like servers, databases, caches, etc. This can be done either in person on a whiteboard or virtually using whiteboarding software like <a href="https://excalidraw.com/">Excalidraw</a>. The <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery#key-technologies">Key Technologies</a> section below will give you a good sense of the most common components you&rsquo;ll need to know.</p>
 <p>Don&rsquo;t over think this! Your primary goal is to design an architecture that satisfies the API you&rsquo;ve designed and, thus, the requirements you&rsquo;ve identified. In most cases, you can even go one-by-one through your API endpoints and build up your design sequentially to satisfy each one.</p>
-<div class="callout callout-danger">
-  <strong>Stay focused! </strong>
-  <div>It&rsquo;s incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It&rsquo;s natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.</div>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Stay focused!</p>
+
+      </div>
+    <div class="callout-body">
+      <p>It&rsquo;s incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It&rsquo;s natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.</p>
+
+    </div>
+  </div>
 </div>
 
 <p>As you&rsquo;re drawing your design, you should be talking through your thought process with your interviewer. Be explicit about how data flows through the system and what state (either in databases, caches, message queues, etc.) changes with each request, starting from API requests and ending with the response. When your request reaches your database or persistence layer, it&rsquo;s a great time to start documenting the relevant columns/fields for each entity. You can do this directly next to your database visually. This helps keep it close to the relevant components and makes it easy to evolve as you iterate on your design. No need to worry too much about types here, your interviewer can infer and they&rsquo;ll only slow you down.</p>
-<div class="callout callout-danger">
-  <strong> Focus on relevant</strong>
-  <div>Don&rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.</div>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Focus on relevant</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Don&rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.</p>
+
+    </div>
+  </div>
 </div>
 
 <p>For our simple Twitter example, here is how you might build up your design, one endpoint at a time:</p>
@@ -905,9 +1027,34 @@ Notice how there is no userId in the POST /v1/tweet endpoint? This is because we
 <p>[!info]
 The degree in which you&rsquo;re proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.</p></blockquote>
 <p>So for example, one of our non-functional requirements for Twitter was that our system needs to scale to &gt;100M DAU. We could then lead a discussion oriented around horizontal scaling, the introduction of caches, and database sharding &ndash; updating our design as we go. Another was that feeds need to be fetched with low latency. In the case of Twitter, this is actually the most interesting problem. We&rsquo;d lead a discussion about fanout-on-read vs fanout-on-write and the use of caches.</p>
-<div class="callout callout-danger">
-  <strong> Mistake</strong>
-  <div>A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it&rsquo;s a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you&rsquo;re going to miss it if you&rsquo;re too busy talking. Plus, you&rsquo;ll hurt your evaluation on communication and collaboration.</div>
+<div class="callout callout-danger d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-octagon svg-inline callout-icon me-2 mb-3" id="svg-alert-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Mistake</p>
+
+      </div>
+    <div class="callout-body">
+      <p>A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it&rsquo;s a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you&rsquo;re going to miss it if you&rsquo;re too busy talking. Plus, you&rsquo;ll hurt your evaluation on communication and collaboration.</p>
+
+    </div>
+  </div>
 </div>
 
 

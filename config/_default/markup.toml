@@ -3,6 +3,7 @@ defaultMarkdownHandler = "goldmark"
 [goldmark]
   [goldmark.extensions]
     linkify = false
+    typographer = true
   [goldmark.parser]
     autoHeadingID = true
     autoHeadingIDType = "github"
@@ -26,8 +27,9 @@ defaultMarkdownHandler = "goldmark"
   noHl = false
   style = 'monokai'
   tabWidth = 2
+  wrapperClasses = 'highlight'
 
 [tableOfContents]
-  endLevel = 3
+  endLevel = 4
   ordered = false
-  startLevel = 2
+  startLevel = 1

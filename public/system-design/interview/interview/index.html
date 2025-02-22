@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,8 +115,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -180,6 +178,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -529,6 +531,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -740,63 +746,76 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#there-is-not-one-single-best-solution">There is not one single best solution</a></li>
-    <li><a href="#creation-lens">Creation Lens</a></li>
-    <li><a href="#lean-towards-your-strengths">Lean towards your strengths</a></li>
-    <li><a href="#two-types-of-interviewers">Two Types of Interviewers</a></li>
-    <li><a href="#theres-no-right-way-to-design-a-system">There’s no right way to design a system</a></li>
-    <li><a href="#interviewer-behavior">Interviewer behavior</a>
+    <li><a href="#checklist">Checklist</a></li>
+    <li><a href="#advices--principles--tricks">Advices | Principles | Tricks</a></li>
+    <li><a href="#proactivity">Proactivity</a>
       <ul>
-        <li><a href="#prior-experience-affects-both-sides">Prior experience affects both sides</a></li>
+        <li><a href="#there-is-not-one-single-best-solution">There is not one single best solution</a></li>
+        <li><a href="#creation-lens">Creation Lens</a></li>
+        <li><a href="#lean-towards-your-strengths">Lean towards your strengths</a></li>
+        <li><a href="#two-types-of-interviewers">Two Types of Interviewers</a></li>
+        <li><a href="#theres-no-right-way-to-design-a-system">There’s no right way to design a system</a></li>
+        <li><a href="#interviewer-behavior">Interviewer behavior</a>
+          <ul>
+            <li><a href="#prior-experience-affects-both-sides">Prior experience affects both sides</a></li>
+          </ul>
+        </li>
+        <li><a href="#time-management">Time management</a></li>
+        <li><a href="#approaching-the-problem">Approaching the problem</a></li>
+        <li><a href="#design-is-an-iterative-process">Design is an iterative process</a></li>
+        <li><a href="#immutability-trick">Immutability Trick</a></li>
+        <li><a href="#other">Other</a></li>
       </ul>
     </li>
-    <li><a href="#time-management">Time management</a></li>
-    <li><a href="#approaching-the-problem">Approaching the problem</a></li>
-    <li><a href="#design-is-an-iterative-process">Design is an iterative process</a></li>
-    <li><a href="#immutability-trick">Immutability Trick</a></li>
-    <li><a href="#other">Other</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#product-design">Product Design</a></li>
-    <li><a href="#infrastructure-design">Infrastructure Design</a></li>
-    <li><a href="#object-oriented-design">Object Oriented Design</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#problem-navigation">Problem Navigation</a></li>
-    <li><a href="#high-level-design">High-Level Design</a></li>
-    <li><a href="#technical-excellence">Technical Excellence</a></li>
-    <li><a href="#communication-and-collaboration">Communication and Collaboration</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#understanding-fundamentals">Understanding Fundamentals</a></li>
-    <li><a href="#problem-navigation-1">Problem Navigation</a></li>
-    <li><a href="#ironclad-certainty">Ironclad Certainty</a></li>
-    <li><a href="#choose-your-own-adventure">Choose your Own Adventure</a></li>
-    <li><a href="#holistic-view">Holistic View</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#red-flag-1">Red Flag #1</a></li>
-    <li><a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t</a></li>
-    <li><a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback</a></li>
-    <li><a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer</a></li>
-    <li><a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns</a></li>
-    <li><a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview</a></li>
-    <li><a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview</a></li>
-    <li><a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board</a></li>
-    <li><a href="#make-a-decision">Make a decision</a></li>
-    <li><a href="#brand-names">Brand Names</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#red-overengineering">Red: Overengineering</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-systems-users-end-users">The System’s Users (End-Users)</a></li>
+    <li><a href="#types-of-sd-interviews">Types of SD Interviews</a>
+      <ul>
+        <li><a href="#product-design">Product Design</a></li>
+        <li><a href="#infrastructure-design">Infrastructure Design</a></li>
+        <li><a href="#object-oriented-design">Object Oriented Design</a></li>
+      </ul>
+    </li>
+    <li><a href="#interview-assessment">Interview Assessment</a>
+      <ul>
+        <li><a href="#problem-navigation">Problem Navigation</a></li>
+        <li><a href="#high-level-design">High-Level Design</a></li>
+        <li><a href="#technical-excellence">Technical Excellence</a></li>
+        <li><a href="#communication-and-collaboration">Communication and Collaboration</a></li>
+      </ul>
+    </li>
+    <li><a href="#interview-assessment-other">Interview Assessment (Other)</a>
+      <ul>
+        <li><a href="#understanding-fundamentals">Understanding Fundamentals</a></li>
+        <li><a href="#problem-navigation-1">Problem Navigation</a></li>
+        <li><a href="#ironclad-certainty">Ironclad Certainty</a></li>
+        <li><a href="#choose-your-own-adventure">Choose your Own Adventure</a></li>
+        <li><a href="#holistic-view">Holistic View</a></li>
+      </ul>
+    </li>
+    <li><a href="#flags">Flags</a>
+      <ul>
+        <li><a href="#red-flag-1">Red Flag #1</a></li>
+        <li><a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t</a></li>
+        <li><a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback</a></li>
+        <li><a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer</a></li>
+        <li><a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns</a></li>
+        <li><a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview</a></li>
+        <li><a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview</a></li>
+        <li><a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board</a></li>
+        <li><a href="#make-a-decision">Make a decision</a></li>
+        <li><a href="#brand-names">Brand Names</a></li>
+      </ul>
+    </li>
+    <li><a href="#technical-kind-of-flags">Technical (kind of) Flags</a>
+      <ul>
+        <li><a href="#red-overengineering">Red: Overengineering</a></li>
+      </ul>
+    </li>
+    <li><a href="#model">Model</a>
+      <ul>
+        <li><a href="#the-systems-users-end-users">The System’s Users (End-Users)</a></li>
+      </ul>
+    </li>
+    <li><a href="#back-of-the-envelope-estimations">back-of-the-envelope estimations</a></li>
   </ul>
 </nav>
 </div>
@@ -812,63 +831,76 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#there-is-not-one-single-best-solution">There is not one single best solution</a></li>
-    <li><a href="#creation-lens">Creation Lens</a></li>
-    <li><a href="#lean-towards-your-strengths">Lean towards your strengths</a></li>
-    <li><a href="#two-types-of-interviewers">Two Types of Interviewers</a></li>
-    <li><a href="#theres-no-right-way-to-design-a-system">There’s no right way to design a system</a></li>
-    <li><a href="#interviewer-behavior">Interviewer behavior</a>
+    <li><a href="#checklist">Checklist</a></li>
+    <li><a href="#advices--principles--tricks">Advices | Principles | Tricks</a></li>
+    <li><a href="#proactivity">Proactivity</a>
       <ul>
-        <li><a href="#prior-experience-affects-both-sides">Prior experience affects both sides</a></li>
+        <li><a href="#there-is-not-one-single-best-solution">There is not one single best solution</a></li>
+        <li><a href="#creation-lens">Creation Lens</a></li>
+        <li><a href="#lean-towards-your-strengths">Lean towards your strengths</a></li>
+        <li><a href="#two-types-of-interviewers">Two Types of Interviewers</a></li>
+        <li><a href="#theres-no-right-way-to-design-a-system">There’s no right way to design a system</a></li>
+        <li><a href="#interviewer-behavior">Interviewer behavior</a>
+          <ul>
+            <li><a href="#prior-experience-affects-both-sides">Prior experience affects both sides</a></li>
+          </ul>
+        </li>
+        <li><a href="#time-management">Time management</a></li>
+        <li><a href="#approaching-the-problem">Approaching the problem</a></li>
+        <li><a href="#design-is-an-iterative-process">Design is an iterative process</a></li>
+        <li><a href="#immutability-trick">Immutability Trick</a></li>
+        <li><a href="#other">Other</a></li>
       </ul>
     </li>
-    <li><a href="#time-management">Time management</a></li>
-    <li><a href="#approaching-the-problem">Approaching the problem</a></li>
-    <li><a href="#design-is-an-iterative-process">Design is an iterative process</a></li>
-    <li><a href="#immutability-trick">Immutability Trick</a></li>
-    <li><a href="#other">Other</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#product-design">Product Design</a></li>
-    <li><a href="#infrastructure-design">Infrastructure Design</a></li>
-    <li><a href="#object-oriented-design">Object Oriented Design</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#problem-navigation">Problem Navigation</a></li>
-    <li><a href="#high-level-design">High-Level Design</a></li>
-    <li><a href="#technical-excellence">Technical Excellence</a></li>
-    <li><a href="#communication-and-collaboration">Communication and Collaboration</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#understanding-fundamentals">Understanding Fundamentals</a></li>
-    <li><a href="#problem-navigation-1">Problem Navigation</a></li>
-    <li><a href="#ironclad-certainty">Ironclad Certainty</a></li>
-    <li><a href="#choose-your-own-adventure">Choose your Own Adventure</a></li>
-    <li><a href="#holistic-view">Holistic View</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#red-flag-1">Red Flag #1</a></li>
-    <li><a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t</a></li>
-    <li><a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback</a></li>
-    <li><a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer</a></li>
-    <li><a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns</a></li>
-    <li><a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview</a></li>
-    <li><a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview</a></li>
-    <li><a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board</a></li>
-    <li><a href="#make-a-decision">Make a decision</a></li>
-    <li><a href="#brand-names">Brand Names</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#red-overengineering">Red: Overengineering</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#the-systems-users-end-users">The System’s Users (End-Users)</a></li>
+    <li><a href="#types-of-sd-interviews">Types of SD Interviews</a>
+      <ul>
+        <li><a href="#product-design">Product Design</a></li>
+        <li><a href="#infrastructure-design">Infrastructure Design</a></li>
+        <li><a href="#object-oriented-design">Object Oriented Design</a></li>
+      </ul>
+    </li>
+    <li><a href="#interview-assessment">Interview Assessment</a>
+      <ul>
+        <li><a href="#problem-navigation">Problem Navigation</a></li>
+        <li><a href="#high-level-design">High-Level Design</a></li>
+        <li><a href="#technical-excellence">Technical Excellence</a></li>
+        <li><a href="#communication-and-collaboration">Communication and Collaboration</a></li>
+      </ul>
+    </li>
+    <li><a href="#interview-assessment-other">Interview Assessment (Other)</a>
+      <ul>
+        <li><a href="#understanding-fundamentals">Understanding Fundamentals</a></li>
+        <li><a href="#problem-navigation-1">Problem Navigation</a></li>
+        <li><a href="#ironclad-certainty">Ironclad Certainty</a></li>
+        <li><a href="#choose-your-own-adventure">Choose your Own Adventure</a></li>
+        <li><a href="#holistic-view">Holistic View</a></li>
+      </ul>
+    </li>
+    <li><a href="#flags">Flags</a>
+      <ul>
+        <li><a href="#red-flag-1">Red Flag #1</a></li>
+        <li><a href="#green-flag-1-you-communicate-honestly-about-what-you-know-and-what-you-dont">Green Flag #1 You communicate honestly about what you know and what you don’t</a></li>
+        <li><a href="#red-flag-2-you-find-yourself-pushing-against-interviewer-feedback">Red Flag #2: You find yourself pushing against interviewer feedback</a></li>
+        <li><a href="#green-flag-2-the-interview-feels-like-a-collaboration-between-you-and-the-interviewer">Green Flag #2: The interview feels like a collaboration between you and the interviewer</a></li>
+        <li><a href="#red-flag-3-you-skip-over-questions-and-ignore-interviewer-prompts-trying-to-move-the-interview-ahead-without-addressing-their-concerns">Red Flag #3: You skip over questions and ignore interviewer prompts, trying to move the interview ahead without addressing their concerns</a></li>
+        <li><a href="#green-flag-3-your-role-determines-who-should-drive-the-focus-and-pace-of-the-interview">Green Flag #3: Your role determines who should drive the focus and pace of the interview</a></li>
+        <li><a href="#red-flag-4-you-leave-long-stretches-several-minutes-of-silence-multiple-times-throughout-the-interview">Red Flag #4: You leave long stretches (several minutes) of silence multiple times throughout the interview</a></li>
+        <li><a href="#green-flag-4-you-take-time-to-collect-your-thoughts-and-refine-solutions-before-offering-them-up-out-loudon-the-board">Green Flag #4: You take time to collect your thoughts and refine solutions before offering them up out loud/on the board</a></li>
+        <li><a href="#make-a-decision">Make a decision</a></li>
+        <li><a href="#brand-names">Brand Names</a></li>
+      </ul>
+    </li>
+    <li><a href="#technical-kind-of-flags">Technical (kind of) Flags</a>
+      <ul>
+        <li><a href="#red-overengineering">Red: Overengineering</a></li>
+      </ul>
+    </li>
+    <li><a href="#model">Model</a>
+      <ul>
+        <li><a href="#the-systems-users-end-users">The System’s Users (End-Users)</a></li>
+      </ul>
+    </li>
+    <li><a href="#back-of-the-envelope-estimations">back-of-the-envelope estimations</a></li>
   </ul>
 </nav>
     </div>
@@ -1003,9 +1035,18 @@ draw only critical components</p>
 <p>The difference in levelling is most frequently the depth of the solution and your knowledge. While all candidates are expected to complete a full design satisfying the requirements, a mid-level engineer might only do this with 80% breadth and 20% depth, while a senior engineer might do this with 60% breadth and 40% depth.</p>
 <blockquote>
 <p>Remember that the top-level goal for your interview is to give your interviewer <em>sufficient confidence</em> to advocate for a hire decision. While the mechanics of your interview are important, they are ultimately in service of signaling to your interviewer that you are a strong candidate.</p></blockquote>
-<div class="callout callout-warning">
-  <strong>Remember</strong>
-  <div>The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery">Delivery</a> section.</div>
+<div class="callout callout-warning d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Remember</p>
+
+      </div>
+    <div class="callout-body">
+      <p>The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery">Delivery</a> section.</p>
+
+    </div>
+  </div>
 </div>
 
 <h2 id="problem-navigation">Problem Navigation<a href="#problem-navigation" class="anchor" aria-hidden="true">#</a> </h2>
@@ -1089,9 +1130,33 @@ Coding problems usually have an expected path. Typically you&rsquo;ll begin with
 <p>Interviewers seek a holistic view of a system and its users.</p>
 <p>When faced with a choice in a design interview, it&rsquo;s easy to focus on the technical details, but remember that computer systems serve human users, so you’ll want to anchor your technical decisions to the user experience they enable.</p>
 <p>Suppose, for instance, that the image sharing service you&rsquo;re designing will require users to log in before uploading an image. In technical terms, you might want to avoid login to keep the database schema simpler, or you could introduce login to gather better metrics. An anonymous experience may be best for a public image-hosting site intended for quick turnaround and low interaction, while a logged-in experience offers the possibility of community features like commenting and sharing, personalized metrics, and the ability to restrict an upload to authorized viewers. You may want to take either approach or even both, allowing a limited anonymous experience with extra features for logged-in users.</p>
-<p><div class="callout callout-note">
-  <strong>User Experience</strong>
-  <div></div>
+<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>User Experience</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.</p>
@@ -1144,9 +1209,33 @@ I’m going to use a NoSQL db because of [insert brief rationale].</p>
 I will use Kafka…” unless you’re prepared to explain how Kafka works. Don’t say “I will use Kafka” unless you are prepared to talk about other types of queues, because they may ask you: “Oh, Kafka, interesting choice. Why that instead of [some other queue]?</p>
 <p>Do say
 I will use a queue because of [insert brief rationale].</p>
-<p><div class="callout callout-info">
-  <strong>Remember</strong>
-  <div></div>
+<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Remember</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say &ldquo;a queue&rdquo;.</p>

@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-22T08:51:50.971720'
+date: '2025-02-22T09:02:28.392283'
 description: Default Description
 draft: false
-lastmod: '2025-02-22T08:51:50.971720'
+lastmod: '2025-02-22T09:02:28.392283'
 summary: ''
 title: Caching
 toc: true
@@ -34,11 +34,11 @@ Cache can be viewed as a high-speed storage layer that sits between the applicat
 
 Caches can store the results of simple lookups, as in this example, but really they *can store any piece of data*, such as the result of a complex calculation. We can cache to help improve the performance of our system as part of helping reduce latency, to scale our application, and in some cases even to improve the robustness of our system. 
 
-{{< callout tip "Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data." >}}
+{{< callout context="tip" title="Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data." icon="outline/rocket" >}}
 
 {{< /callout >}}
 
-{{< callout tip "Generally, caching is used only in cases where the external *data doesn't change often* or you can replicate all the data on your systems. Also if you don't care about data consistency then cache is really useful. " >}}
+{{< callout context="tip" title="Generally, caching is used only in cases where the external *data doesn't change often* or you can replicate all the data on your systems. Also if you don't care about data consistency then cache is really useful. " icon="outline/rocket" >}}
 
 {{< /callout >}}
 
@@ -154,7 +154,7 @@ Balancing these forces is going to come down to understanding the requirements o
 
 # The Golden Rule of Caching
 
-{{< callout tip "Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data." >}}
+{{< callout context="tip" title="Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data." icon="outline/rocket" >}}
 
 {{< /callout >}}
 

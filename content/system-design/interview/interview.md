@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-22T08:51:50.975500'
+date: '2025-02-22T09:02:28.392283'
 description: Default Description
 draft: false
-lastmod: '2025-02-22T08:51:50.975500'
+lastmod: '2025-02-22T09:02:28.392283'
 summary: ''
 title: Interview
 toc: true
@@ -196,7 +196,7 @@ The difference in levelling is most frequently the depth of the solution and you
 
 > Remember that the top-level goal for your interview is to give your interviewer *sufficient confidence* to advocate for a hire decision. While the mechanics of your interview are important, they are ultimately in service of signaling to your interviewer that you are a strong candidate.
 
-{{< callout warning "Remember" >}}
+{{< callout context="warning" title="Remember" icon="outline/exclamation-triangle" >}}
 The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the [Delivery](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) section.
 {{< /callout >}}
 
@@ -311,7 +311,7 @@ When faced with a choice in a design interview, it's easy to focus on the techni
 
 Suppose, for instance, that the image sharing service you're designing will require users to log in before uploading an image. In technical terms, you might want to avoid login to keep the database schema simpler, or you could introduce login to gather better metrics. An anonymous experience may be best for a public image-hosting site intended for quick turnaround and low interaction, while a logged-in experience offers the possibility of community features like commenting and sharing, personalized metrics, and the ability to restrict an upload to authorized viewers. You may want to take either approach or even both, allowing a limited anonymous experience with extra features for logged-in users.
 
-{{< callout note "User Experience" >}}
+{{< callout context="note" title="User Experience" icon="outline/info-circle" >}}
 
 {{< /callout >}}
 The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.
@@ -397,7 +397,7 @@ I will use Kafka…” unless you’re prepared to explain how Kafka works. Don�
 Do say
 I will use a queue because of [insert brief rationale].
 
-{{< callout info "Remember" >}}
+{{< callout context="note" title="Remember" icon="outline/info-circle" >}}
 
 {{< /callout >}}
 Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say "a queue".

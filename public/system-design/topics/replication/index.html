@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,8 +115,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -180,6 +178,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -529,6 +531,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -740,16 +746,29 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#sync--async-replication">sync / async replication</a></li>
-    <li><a href="#semi-synchronous">semi-synchronous</a></li>
-    <li><a href="#chain-replication">chain replication</a></li>
-    <li><a href="#reasoning">reasoning</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reading-your-own-writes">Reading Your Own Writes</a></li>
-    <li><a href="#monotonic-reads">Monotonic Reads</a></li>
-    <li><a href="#consistent-prefix-reads">Consistent Prefix Reads</a></li>
+    <li><a href="#benefits">benefits</a></li>
+    <li><a href="#problem">problem</a></li>
+    <li><a href="#regime">regime</a>
+      <ul>
+        <li><a href="#sync--async-replication">sync / async replication</a></li>
+        <li><a href="#semi-synchronous">semi-synchronous</a></li>
+        <li><a href="#chain-replication">chain replication</a></li>
+        <li><a href="#reasoning">reasoning</a></li>
+      </ul>
+    </li>
+    <li><a href="#replication-log">replication log</a></li>
+    <li><a href="#replication-lag-problems">replication lag problems</a>
+      <ul>
+        <li><a href="#reading-your-own-writes">Reading Your Own Writes</a></li>
+        <li><a href="#monotonic-reads">Monotonic Reads</a></li>
+        <li><a href="#consistent-prefix-reads">Consistent Prefix Reads</a></li>
+      </ul>
+    </li>
+    <li><a href="#solutions-for-replication-lag">Solutions for Replication Lag</a></li>
+    <li><a href="#multi-leader-replication">multi-leader replication</a></li>
+    <li><a href="#trade-offs">trade-offs</a></li>
+    <li><a href="#choosing-the-right-replication-strategy">Choosing the Right Replication Strategy</a></li>
+    <li><a href="#replication">replication</a></li>
   </ul>
 </nav>
 </div>
@@ -765,16 +784,29 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#sync--async-replication">sync / async replication</a></li>
-    <li><a href="#semi-synchronous">semi-synchronous</a></li>
-    <li><a href="#chain-replication">chain replication</a></li>
-    <li><a href="#reasoning">reasoning</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#reading-your-own-writes">Reading Your Own Writes</a></li>
-    <li><a href="#monotonic-reads">Monotonic Reads</a></li>
-    <li><a href="#consistent-prefix-reads">Consistent Prefix Reads</a></li>
+    <li><a href="#benefits">benefits</a></li>
+    <li><a href="#problem">problem</a></li>
+    <li><a href="#regime">regime</a>
+      <ul>
+        <li><a href="#sync--async-replication">sync / async replication</a></li>
+        <li><a href="#semi-synchronous">semi-synchronous</a></li>
+        <li><a href="#chain-replication">chain replication</a></li>
+        <li><a href="#reasoning">reasoning</a></li>
+      </ul>
+    </li>
+    <li><a href="#replication-log">replication log</a></li>
+    <li><a href="#replication-lag-problems">replication lag problems</a>
+      <ul>
+        <li><a href="#reading-your-own-writes">Reading Your Own Writes</a></li>
+        <li><a href="#monotonic-reads">Monotonic Reads</a></li>
+        <li><a href="#consistent-prefix-reads">Consistent Prefix Reads</a></li>
+      </ul>
+    </li>
+    <li><a href="#solutions-for-replication-lag">Solutions for Replication Lag</a></li>
+    <li><a href="#multi-leader-replication">multi-leader replication</a></li>
+    <li><a href="#trade-offs">trade-offs</a></li>
+    <li><a href="#choosing-the-right-replication-strategy">Choosing the Right Replication Strategy</a></li>
+    <li><a href="#replication">replication</a></li>
   </ul>
 </nav>
     </div>

@@ -7,14 +7,14 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Sat, 22 Feb 2025 08:51:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/advice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design</title>
       <link>http://localhost:1313/system-design/about/</link>
-      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/about/</guid>
-      <description>&lt;p&gt;Test link to learning&#xA;&lt;a href=&#34;http://localhost:1313/projects/learning/&#34;&gt;Learning&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/system-design/elements/elements/&#34;&gt;Elements&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;link to heading in current document&#xA;&lt;a href=&#34;#courses&#34;&gt;Courses&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;link to heading in other document&#xA;&lt;a href=&#34;http://localhost:1313/system-design/elements/elements/#cdn&#34;&gt;CDN Service&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;courses&#34;&gt;Courses&lt;/h2&gt;&#xA;&lt;p&gt;order:&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;courses&#34;&gt;Courses&lt;/h1&gt;&#xA;&lt;p&gt;order:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;smarchok 2 courses + &lt;a href=&#34;https://www.youtube.com/@SystemDesignInterview/videos&#34;&gt;https://www.youtube.com/@SystemDesignInterview/videos&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;algoexpert 2 courses (fundamentals and examples)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;zerotomastery &amp;ldquo;# Master the Coding Interview: System Design + Architecture (Part 1)&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

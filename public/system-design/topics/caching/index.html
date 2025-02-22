@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,8 +115,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -180,6 +178,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -529,6 +531,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -740,8 +746,25 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#cache-aside">cache-aside</a></li>
-    <li><a href="#write-through">write-through</a></li>
+    <li><a href="#ontology">ontology</a></li>
+    <li><a href="#common">common</a></li>
+    <li><a href="#purposes">purposes</a></li>
+    <li><a href="#parameters">parameters</a></li>
+    <li><a href="#where-to-cache">Where to Cache</a></li>
+    <li><a href="#request-cache">Request cache</a></li>
+    <li><a href="#cache-invalidation">cache invalidation</a></li>
+    <li><a href="#writing-to-cache">Writing to cache</a></li>
+    <li><a href="#freshness-versus-optimization">Freshness Versus Optimization</a></li>
+    <li><a href="#the-golden-rule-of-caching">The Golden Rule of Caching</a></li>
+    <li><a href="#patterns">patterns</a>
+      <ul>
+        <li><a href="#cache-aside">cache-aside</a></li>
+        <li><a href="#write-through">write-through</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-memory-type">in-memory type</a></li>
+    <li><a href="#policies">Policies</a></li>
+    <li><a href="#sharding-consistent-hashing">sharding (consistent hashing)</a></li>
   </ul>
 </nav>
 </div>
@@ -757,8 +780,25 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#cache-aside">cache-aside</a></li>
-    <li><a href="#write-through">write-through</a></li>
+    <li><a href="#ontology">ontology</a></li>
+    <li><a href="#common">common</a></li>
+    <li><a href="#purposes">purposes</a></li>
+    <li><a href="#parameters">parameters</a></li>
+    <li><a href="#where-to-cache">Where to Cache</a></li>
+    <li><a href="#request-cache">Request cache</a></li>
+    <li><a href="#cache-invalidation">cache invalidation</a></li>
+    <li><a href="#writing-to-cache">Writing to cache</a></li>
+    <li><a href="#freshness-versus-optimization">Freshness Versus Optimization</a></li>
+    <li><a href="#the-golden-rule-of-caching">The Golden Rule of Caching</a></li>
+    <li><a href="#patterns">patterns</a>
+      <ul>
+        <li><a href="#cache-aside">cache-aside</a></li>
+        <li><a href="#write-through">write-through</a></li>
+      </ul>
+    </li>
+    <li><a href="#in-memory-type">in-memory type</a></li>
+    <li><a href="#policies">Policies</a></li>
+    <li><a href="#sharding-consistent-hashing">sharding (consistent hashing)</a></li>
   </ul>
 </nav>
     </div>
@@ -783,14 +823,62 @@
 <p>In computing, a cache is a component that stores data so that future requests for that data can be served faster; the data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.</p>
 <p>Cache can be viewed as a high-speed storage layer that sits between the application and the original source of the data, such as a database, a file system, or a remote web service.</p>
 <p>Caches can store the results of simple lookups, as in this example, but really they <em>can store any piece of data</em>, such as the result of a complex calculation. We can cache to help improve the performance of our system as part of helping reduce latency, to scale our application, and in some cases even to improve the robustness of our system.</p>
-<div class="callout callout-tip">
-  <strong>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</strong>
-  <div></div>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
-<div class="callout callout-tip">
-  <strong>Generally, caching is used only in cases where the external *data doesn&#39;t change often* or you can replicate all the data on your systems. Also if you don&#39;t care about data consistency then cache is really useful. </strong>
-  <div></div>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Generally, caching is used only in cases where the external <em>data doesn&rsquo;t change often</em> or you can replicate all the data on your systems. Also if you don&rsquo;t care about data consistency then cache is really useful.</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 <blockquote>
@@ -855,9 +943,33 @@ The main benefit of this mechanism is that it reduces the potential window where
 <p>Coming back to our example of TTL-based invalidation, I explained earlier that if we request a fresh copy of the data that has a five-minute TTL, and a second later the data at the origin changes, then our cache will be operating on out-of-date data for the remaining four minutes and 59 seconds. If this is unacceptable, one solution would be to reduce the TTL, thereby reducing the duration in which we could operate on stale data. So perhaps we reduce the TTL to one minute. This means that our window of staleness is reduced to one-fifth of what it was, but we&rsquo;ve made five times as many calls to the origin, so we have to consider the associated latency and load impact.</p>
 <p>Balancing these forces is going to come down to understanding the requirements of the end user and of the wider system. Users will obviously always want to operate on the freshest data, but not if that means the system falls down under load. Likewise, <em>sometimes the safest thing to do is to turn off features if a cache fails</em>, in order to avoid an overload on the origin causing more serious issues. When it comes to finetuning what, where, and how to cache, you&rsquo;ll often find yourself having to balance along a number of axes. This is just another reason to try to keep things as simple as possible—the fewer the caches, the easier it can be to reason about the system. #principle #architecture/tip</p>
 <h1 id="the-golden-rule-of-caching">The Golden Rule of Caching</h1>
-<div class="callout callout-tip">
-  <strong>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</strong>
-  <div></div>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 <p>Be careful about caching in too many places! The more caches between you and the source of fresh data, the more stale the data can be, and the harder it can be to determine the freshness of the data that a client eventually sees. It can also be more difficult to reason about where data needs to be invalidated. The trade-off around caching—balancing freshness of data against optimization of your system for load or latency—is a delicate one, and if you cannot easily reason about how fresh (or not) data might be, this becomes difficult.</p>

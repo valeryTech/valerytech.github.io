@@ -3,85 +3,88 @@
   
     <url>
       <loc>http://localhost:1313/projects/chatbots_practice/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/projects/collaborative_learning_ts-and-js/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/projects/critical_thinking/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/projects/hypothesis/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
-      <loc>http://localhost:1313/projects/improvements/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <loc>http://localhost:1313/projects/common/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/learning/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/about/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/questions/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/reflective_practice/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/remote_server/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/speech_improver/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
       <loc>http://localhost:1313/projects/understanding/</loc>
-      <lastmod>2025-02-22T08:51:50+00:00</lastmod>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
-    </urlset>
+    <url>
+        <loc>http://localhost:1313/projects/common/collaborative_learning_ts-and-js/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/projects/common/critical_thinking/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/projects/common/hypothesis/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/projects/common/improvements/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      </urlset>

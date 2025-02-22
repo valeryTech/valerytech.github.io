@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-22T08:51:50.963219'
+date: '2025-02-22T09:02:28.392283'
 description: Default Description
 draft: false
-lastmod: '2025-02-22T08:51:50.963219'
+lastmod: '2025-02-22T09:02:28.392283'
 menus:
 - main
 - footer
@@ -15,6 +15,14 @@ weight: 810
 ---
 
 
-This is a page about different useful topics. 
+This is a page about different useful topics.
 
 [Learning]({{< ref "projects/learning" >}}) here you find out how to learn, best practices
+
+## Heading 2
+
+### Heading 3
+
+text
+
+## Heading 2

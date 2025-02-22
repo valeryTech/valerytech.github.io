@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -115,8 +115,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -180,6 +178,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -529,6 +531,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -740,72 +746,89 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li><a href="#fundamentals-of-this-framework">Fundamentals of this framework</a></li>
-    <li><a href="#how-to-use-this-framework">How to use this framework</a></li>
-    <li><a href="#limitations">Limitations</a></li>
-    <li><a href="#overview-of-the-3-steps">Overview of the 3 steps</a>
+    <li>
       <ul>
-        <li><a href="#step-1-requirements">Step 1: Requirements</a></li>
-        <li><a href="#step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale</a></li>
-        <li><a href="#step-3-design">Step 3: Design</a></li>
+        <li><a href="#fundamentals-of-this-framework">Fundamentals of this framework</a></li>
+        <li><a href="#how-to-use-this-framework">How to use this framework</a></li>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#overview-of-the-3-steps">Overview of the 3 steps</a>
+          <ul>
+            <li><a href="#step-1-requirements">Step 1: Requirements</a></li>
+            <li><a href="#step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale</a></li>
+            <li><a href="#step-3-design">Step 3: Design</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations</a></li>
-    <li><a href="#think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects</a></li>
-    <li><a href="#consider-mutability">Consider mutability</a></li>
-    <li><a href="#remember-functional-requirements">Remember: Functional Requirements</a></li>
-    <li><a href="#example-1-design-tiktok">Example 1: Design TikTok</a></li>
-    <li><a href="#example-2-design-a-code-deployment-system">Example 2: Design a code deployment system</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#performance">Performance</a></li>
-    <li><a href="#availability">Availability</a></li>
-    <li><a href="#security">Security</a></li>
-    <li><a href="#remember-non-functional-requirements">Remember: Non-Functional Requirements</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
-    <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
-    <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
+    <li><a href="#11-functional-requirements">1.1 Functional Requirements</a>
       <ul>
-        <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
+        <li><a href="#identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations</a></li>
+        <li><a href="#think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects</a></li>
+        <li><a href="#consider-mutability">Consider mutability</a></li>
+        <li><a href="#remember-functional-requirements">Remember: Functional Requirements</a></li>
+        <li><a href="#example-1-design-tiktok">Example 1: Design TikTok</a></li>
+        <li><a href="#example-2-design-a-code-deployment-system">Example 2: Design a code deployment system</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#so-what-is-design">So what is “design”?</a></li>
-    <li><a href="#31-data-storage">3.1 Data storage</a>
+    <li><a href="#12-non-functional-requirements">1.2 Non-Functional Requirements</a>
       <ul>
-        <li><a href="#blob-storage">Blob storage</a></li>
-        <li><a href="#database">Database</a></li>
-        <li><a href="#311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational</a></li>
-        <li><a href="#entities-to-store">Entities to store</a></li>
+        <li><a href="#performance">Performance</a></li>
+        <li><a href="#availability">Availability</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#remember-non-functional-requirements">Remember: Non-Functional Requirements</a></li>
       </ul>
     </li>
-    <li><a href="#32-microservices">3.2 Microservices</a>
+    <li><a href="#step-2-data-types-api-and-scale-1">Step 2: Data Types, API and Scale</a>
       <ul>
-        <li><a href="#caching">Caching</a></li>
-        <li><a href="#load-balancing">Load balancing</a></li>
+        <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
+        <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
+        <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
+          <ul>
+            <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#step-1-requirements-1">Step 1: Requirements</a></li>
-    <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
-    <li><a href="#step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale</a>
+    <li><a href="#step-3-design-1">Step 3: Design</a>
       <ul>
-        <li></li>
-        <li><a href="#rule-of-thumb">Rule of thumb</a></li>
+        <li><a href="#so-what-is-design">So what is “design”?</a></li>
+        <li><a href="#31-data-storage">3.1 Data storage</a>
+          <ul>
+            <li><a href="#blob-storage">Blob storage</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational</a></li>
+            <li><a href="#entities-to-store">Entities to store</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-microservices">3.2 Microservices</a>
+          <ul>
+            <li><a href="#caching">Caching</a></li>
+            <li><a href="#load-balancing">Load balancing</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#step-3-design-2">Step 3: Design</a></li>
+    <li><a href="#end-to-end-example-of-the-process">End-to-end example of the process</a>
+      <ul>
+        <li><a href="#step-1-requirements-1">Step 1: Requirements</a></li>
+        <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+        <li><a href="#step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale</a>
+          <ul>
+            <li>
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+            <li><a href="#rule-of-thumb">Rule of thumb</a>
+              <ul>
+                <li><a href="#scale">Scale:</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#step-3-design-2">Step 3: Design</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -821,72 +844,89 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#fundamentals-of-this-framework">Fundamentals of this framework</a></li>
-    <li><a href="#how-to-use-this-framework">How to use this framework</a></li>
-    <li><a href="#limitations">Limitations</a></li>
-    <li><a href="#overview-of-the-3-steps">Overview of the 3 steps</a>
+    <li>
       <ul>
-        <li><a href="#step-1-requirements">Step 1: Requirements</a></li>
-        <li><a href="#step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale</a></li>
-        <li><a href="#step-3-design">Step 3: Design</a></li>
+        <li><a href="#fundamentals-of-this-framework">Fundamentals of this framework</a></li>
+        <li><a href="#how-to-use-this-framework">How to use this framework</a></li>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#overview-of-the-3-steps">Overview of the 3 steps</a>
+          <ul>
+            <li><a href="#step-1-requirements">Step 1: Requirements</a></li>
+            <li><a href="#step-2-data-types-api-and-scale">Step 2: Data Types, API and Scale</a></li>
+            <li><a href="#step-3-design">Step 3: Design</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations</a></li>
-    <li><a href="#think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects</a></li>
-    <li><a href="#consider-mutability">Consider mutability</a></li>
-    <li><a href="#remember-functional-requirements">Remember: Functional Requirements</a></li>
-    <li><a href="#example-1-design-tiktok">Example 1: Design TikTok</a></li>
-    <li><a href="#example-2-design-a-code-deployment-system">Example 2: Design a code deployment system</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#performance">Performance</a></li>
-    <li><a href="#availability">Availability</a></li>
-    <li><a href="#security">Security</a></li>
-    <li><a href="#remember-non-functional-requirements">Remember: Non-Functional Requirements</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
-    <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
-    <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
+    <li><a href="#11-functional-requirements">1.1 Functional Requirements</a>
       <ul>
-        <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
+        <li><a href="#identify-the-main-business-objects-and-their-relations">Identify the main business objects and their relations</a></li>
+        <li><a href="#think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects</a></li>
+        <li><a href="#consider-mutability">Consider mutability</a></li>
+        <li><a href="#remember-functional-requirements">Remember: Functional Requirements</a></li>
+        <li><a href="#example-1-design-tiktok">Example 1: Design TikTok</a></li>
+        <li><a href="#example-2-design-a-code-deployment-system">Example 2: Design a code deployment system</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#so-what-is-design">So what is “design”?</a></li>
-    <li><a href="#31-data-storage">3.1 Data storage</a>
+    <li><a href="#12-non-functional-requirements">1.2 Non-Functional Requirements</a>
       <ul>
-        <li><a href="#blob-storage">Blob storage</a></li>
-        <li><a href="#database">Database</a></li>
-        <li><a href="#311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational</a></li>
-        <li><a href="#entities-to-store">Entities to store</a></li>
+        <li><a href="#performance">Performance</a></li>
+        <li><a href="#availability">Availability</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#remember-non-functional-requirements">Remember: Non-Functional Requirements</a></li>
       </ul>
     </li>
-    <li><a href="#32-microservices">3.2 Microservices</a>
+    <li><a href="#step-2-data-types-api-and-scale-1">Step 2: Data Types, API and Scale</a>
       <ul>
-        <li><a href="#caching">Caching</a></li>
-        <li><a href="#load-balancing">Load balancing</a></li>
+        <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
+        <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
+        <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
+          <ul>
+            <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#step-1-requirements-1">Step 1: Requirements</a></li>
-    <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
-    <li><a href="#step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale</a>
+    <li><a href="#step-3-design-1">Step 3: Design</a>
       <ul>
-        <li></li>
-        <li><a href="#rule-of-thumb">Rule of thumb</a></li>
+        <li><a href="#so-what-is-design">So what is “design”?</a></li>
+        <li><a href="#31-data-storage">3.1 Data storage</a>
+          <ul>
+            <li><a href="#blob-storage">Blob storage</a></li>
+            <li><a href="#database">Database</a></li>
+            <li><a href="#311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational</a></li>
+            <li><a href="#entities-to-store">Entities to store</a></li>
+          </ul>
+        </li>
+        <li><a href="#32-microservices">3.2 Microservices</a>
+          <ul>
+            <li><a href="#caching">Caching</a></li>
+            <li><a href="#load-balancing">Load balancing</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#step-3-design-2">Step 3: Design</a></li>
+    <li><a href="#end-to-end-example-of-the-process">End-to-end example of the process</a>
+      <ul>
+        <li><a href="#step-1-requirements-1">Step 1: Requirements</a></li>
+        <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+        <li><a href="#step-2-data-types-api-and-scale-2">Step 2: Data Types, API and Scale</a>
+          <ul>
+            <li>
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+            <li><a href="#rule-of-thumb">Rule of thumb</a>
+              <ul>
+                <li><a href="#scale">Scale:</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#step-3-design-2">Step 3: Design</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1076,9 +1116,33 @@
 <p>Note</p>
 <p>You may be wondering why we chose “security” and not “consistency.” We think there are already enough resources out there that will tell you about consistency in NFRs. Again, this is our opinionated approach, and after much debate we decided this would be the most valuable way to teach it. As always in system design interviews: your interviewer cares less about your decisions, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions. Therefore, if you wanted to, there are many NFRs that could make a shortlist.</p></blockquote>
 <p>NFRs will strongly influence our design. They define what we should be optimizing for. Bear in mind that you cannot optimize for everything, and you should not overcomplicate your solution. This is a game of trade-offs.</p>
-<p><div class="callout callout-info">
-  <strong>Rule of thumb</strong>
-  <div></div>
+<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Rule of thumb</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”</p>
@@ -1096,9 +1160,33 @@ It makes the most sense when we have synchronous user-facing workflows. That is,
 <h2 id="availability">Availability<a href="#availability" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Availability refers to how much downtime the service can tolerate. Just like with performance, we might not always want to optimize for availability. A good question to guide this decision is: What’s the cost of downtime? This is as easy as it sounds. If taking downtime will result in financial losses or correctness issues, we might want to put some thought into making the system highly available.</p>
 <p>In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.</p>
-<p><div class="callout callout-note">
-  <strong>Anecdote from an interviewer</strong>
-  <div></div>
+<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Anecdote from an interviewer</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 Don’t make your interview harder than it has to be.</p>
@@ -1266,9 +1354,33 @@ We’ve seen online resources that spend so much time showing you how to calcula
   </figure>
 </div>
 <p>So we’ll need to store around a gigabyte of data per minute.</p>
-<p><div class="callout callout-note">
-  <strong>Data Types, Scale, and Access patterns</strong>
-  <div></div>
+<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Data Types, Scale, and Access patterns</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 Once you know your requirements, it’s time to get specific.</p>
@@ -1303,9 +1415,33 @@ Once you know your requirements, it’s time to get specific.</p>
 <p>In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage! 💪</p>
 <p>Once we know our use cases and what to optimize for, it comes down to knowing a few rules of thumb. Want speed? Use a cache. Want availability? Put in some redundancy. It’s really that simple. That’s the beauty of systems design. It can be as simple or as complicated as we want to make it.</p>
 <p>At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.</p>
-<p><div class="callout callout-tip">
-  <strong>(Tell your interviewer)</strong>
-  <div></div>
+<p><div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>(Tell your interviewer)</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 &ldquo;I’m going to start drawing some boxes. I&rsquo;m just thinking out loud for now, so don&rsquo;t hold me to any of this. We can come back to it later.&rdquo;</p>
@@ -1361,9 +1497,33 @@ There’s no right or wrong answer—it’s all about how to justify your picks.
 <li><code>getFeed</code> gets the feed for a given user.</li>
 </ul>
 <p><code>getTweets</code> should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.</p>
-<p><div class="callout callout-tip">
-  <strong>(Tell your interviewer)</strong>
-  <div></div>
+<p><div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>(Tell your interviewer)</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.</p>
@@ -1375,9 +1535,33 @@ Be mindful of any “get all” access patterns. These usually need to be guarde
 <p>Computing the feed for a given user would require us to get all the accounts they follow and then get all their recent tweets. We have an implementation—time to assess it. Is this solution acceptable for our requirements?</p>
 <p>Given the fact that we identified the system to be read-heavy and <code>getFeed</code> is expected to be called quite frequently, the computation can become prohibitive. Consider that each account might follow thousands of users, and those might have hundreds of tweets. Computing the feed seems like quite a compute-intensive process.</p>
 <p>However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.</p>
-<p><div class="callout callout-tip">
-  <strong>Tell your interviewer</strong>
-  <div></div>
+<p><div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Tell your interviewer</p>
+
+      </div>
+    <div class="callout-body">
+      
+    </div>
+  </div>
 </div>
 
 “Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”</p>

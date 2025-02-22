@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-22T08:51:50+00:00">
-    <meta property="article:modified_time" content="2025-02-22T08:51:50+00:00">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
     <meta property="article:tag" content="System-Design">
     <meta property="article:tag" content="Architecture">
     <meta property="article:tag" content="Advice">
@@ -111,8 +111,6 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-
-<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -176,6 +174,10 @@
 
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
   </li>
       </ul>
     </details>
@@ -525,6 +527,10 @@
   <li>
       <a href="/system-design/elements/elements/">Elements</a>
   </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -737,29 +743,41 @@
     <nav id="toc">
   <ul>
     <li><a href="#courses">Courses</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#common--preparation-guides">Common / Preparation Guides:</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#action-plan-structure">Action Plan Structure</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#practice-practice-practice">Practice Practice Practice</a></li>
-    <li><a href="#interviewingio">Interviewing.io</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#advices">Advices</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#other-1">Other</a></li>
-    <li><a href="#useful_videos">useful_videos</a></li>
-    <li><a href="#papers">Papers</a></li>
+    <li><a href="#sd-framework">SD Framework</a>
+      <ul>
+        <li><a href="#common--preparation-guides">Common / Preparation Guides</a></li>
+      </ul>
+    </li>
+    <li><a href="#other">Other</a></li>
+    <li><a href="#plan">Plan</a>
+      <ul>
+        <li><a href="#action-plan-structure">Action Plan Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#learning-sd-interview">Learning (SD Interview)</a>
+      <ul>
+        <li><a href="#practice-practice-practice">Practice Practice Practice</a></li>
+        <li><a href="#interviewingio">Interviewing.io</a></li>
+      </ul>
+    </li>
+    <li><a href="#mock_interviews">mock_interviews</a>
+      <ul>
+        <li><a href="#advices">Advices</a></li>
+      </ul>
+    </li>
+    <li><a href="#interview-process">Interview Process</a></li>
+    <li><a href="#what-to-learn">What to Learn</a></li>
+    <li><a href="#projects--examples">Projects &amp; Examples</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#fundamentals--distributed-systems">Fundamentals &amp; Distributed Systems</a></li>
+    <li><a href="#microservices">Microservices</a></li>
+    <li><a href="#sources">Sources</a>
+      <ul>
+        <li><a href="#other-1">Other</a></li>
+        <li><a href="#useful_videos">useful_videos</a></li>
+        <li><a href="#papers">Papers</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -776,47 +794,52 @@
       <nav id="TableOfContents">
   <ul>
     <li><a href="#courses">Courses</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#common--preparation-guides">Common / Preparation Guides:</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#action-plan-structure">Action Plan Structure</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#practice-practice-practice">Practice Practice Practice</a></li>
-    <li><a href="#interviewingio">Interviewing.io</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#advices">Advices</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#other-1">Other</a></li>
-    <li><a href="#useful_videos">useful_videos</a></li>
-    <li><a href="#papers">Papers</a></li>
+    <li><a href="#sd-framework">SD Framework</a>
+      <ul>
+        <li><a href="#common--preparation-guides">Common / Preparation Guides</a></li>
+      </ul>
+    </li>
+    <li><a href="#other">Other</a></li>
+    <li><a href="#plan">Plan</a>
+      <ul>
+        <li><a href="#action-plan-structure">Action Plan Structure</a></li>
+      </ul>
+    </li>
+    <li><a href="#learning-sd-interview">Learning (SD Interview)</a>
+      <ul>
+        <li><a href="#practice-practice-practice">Practice Practice Practice</a></li>
+        <li><a href="#interviewingio">Interviewing.io</a></li>
+      </ul>
+    </li>
+    <li><a href="#mock_interviews">mock_interviews</a>
+      <ul>
+        <li><a href="#advices">Advices</a></li>
+      </ul>
+    </li>
+    <li><a href="#interview-process">Interview Process</a></li>
+    <li><a href="#what-to-learn">What to Learn</a></li>
+    <li><a href="#projects--examples">Projects &amp; Examples</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#fundamentals--distributed-systems">Fundamentals &amp; Distributed Systems</a></li>
+    <li><a href="#microservices">Microservices</a></li>
+    <li><a href="#sources">Sources</a>
+      <ul>
+        <li><a href="#other-1">Other</a></li>
+        <li><a href="#useful_videos">useful_videos</a></li>
+        <li><a href="#papers">Papers</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<p>Test link to learning
-<a href="http://localhost:1313/projects/learning/">Learning</a></p>
-<p><a href="http://localhost:1313/system-design/elements/elements/">Elements</a></p>
-<p>link to heading in current document
-<a href="#courses">Courses</a></p>
-<p>link to heading in other document
-<a href="http://localhost:1313/system-design/elements/elements/#cdn">CDN Service</a></p>
-<h2 id="courses">Courses<a href="#courses" class="anchor" aria-hidden="true">#</a> </h2>
+			<h1 id="courses">Courses</h1>
 <p>order:</p>
 <ol>
 <li>
-<p>smarchok 2 courses + https://www.youtube.com/@SystemDesignInterview/videos</p>
+<p>smarchok 2 courses + <a href="https://www.youtube.com/@SystemDesignInterview/videos">https://www.youtube.com/@SystemDesignInterview/videos</a></p>
 </li>
 <li>
 <p>algoexpert 2 courses (fundamentals and examples)</p>
@@ -826,27 +849,27 @@
 </li>
 <li>
 <p>hellointerview  examples + youtube channel + (maybe) premium
-https://interviewing.io/guides/system-design-interview/part-four#chapter-one</p>
+<a href="https://interviewing.io/guides/system-design-interview/part-four#chapter-one">https://interviewing.io/guides/system-design-interview/part-four#chapter-one</a></p>
 </li>
 </ol>
 <ul>
 <li>(?) algoexpert &ldquo;# Systems Design Interview Tips&rdquo;</li>
 </ul>
-<p>https://github.com/Sairyss/system-design-patterns cool cirriculim with examples</p>
-<p>designgurus ? https://www.designgurus.io/path/system-design-interview-playbook</p>
+<p><a href="https://github.com/Sairyss/system-design-patterns">https://github.com/Sairyss/system-design-patterns</a> cool cirriculim with examples</p>
+<p>designgurus ? <a href="https://www.designgurus.io/path/system-design-interview-playbook">https://www.designgurus.io/path/system-design-interview-playbook</a></p>
 <p>bytebytego ?</p>
 <p>tryexponent courses ?</p>
 <h1 id="sd-framework">SD Framework</h1>
 <p>steps, checklists</p>
-<p>https://interviewing.io/guides/system-design-interview/part-three</p>
-<h2 id="common--preparation-guides">Common / Preparation Guides:<a href="#common--preparation-guides" class="anchor" aria-hidden="true">#</a> </h2>
+<p><a href="https://interviewing.io/guides/system-design-interview/part-three">https://interviewing.io/guides/system-design-interview/part-three</a></p>
+<h2 id="common--preparation-guides">Common / Preparation Guides<a href="#common--preparation-guides" class="anchor" aria-hidden="true">#</a> </h2>
 <p>interviewing.io guides
-https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/
-https://github.com/Sairyss/system-design-patterns</p>
+<a href="https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/">https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/</a>
+<a href="https://github.com/Sairyss/system-design-patterns">https://github.com/Sairyss/system-design-patterns</a></p>
 <p>interview process guides
 interview guide +
 interviewing.io
-https://www.tryexponent.com/blog/system-design-interview-guide</p>
+<a href="https://www.tryexponent.com/blog/system-design-interview-guide">https://www.tryexponent.com/blog/system-design-interview-guide</a></p>
 <p>watch, analyze and reflect mock interviews <a href="#mock_interviews">Mock interviews</a></p>
 <p>maybe see channels with useful videos <a href="#useful_videos">Useful videos</a></p>
 <h1 id="other">Other</h1>
@@ -893,9 +916,36 @@ https://www.tryexponent.com/blog/system-design-interview-guide</p>
 </li>
 </ol>
 <h1 id="learning-sd-interview">Learning (SD Interview)</h1>
-<blockquote>
-<p>[!advice]
-Use learning principles and practices!</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Advice</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Use <a href="http://localhost:1313/projects/learning/">Learning</a> principles and practices!</p>
+
+    </div>
+  </div>
+</div>
+
 <p>At a high level, preparing for system design interviews is really about assembling the <em>right</em> pieces: you&rsquo;ll need to know some core concepts, key technologies, and common patterns. On this base, you&rsquo;ll establish a strategy or delivery framework for executing the interview. And finally, you&rsquo;ll need to <em>practice</em> to ensure you&rsquo;re comfortable the day of your actual interview.</p>
 <p>HelloInterview structured learning process into these blocks:
 Core Concepts =&gt;
@@ -915,11 +965,11 @@ Common Problems Practicing</p>
 <p>Candidates often get overwhelmed with system design. We don’t blame them. There are literally hundreds of topics you can study when preparing for an interview. But does that mean that you should drop everything and go study all of them? Absolutely not. It’s vital to master the basic principles first.</p>
 <p>Professional experience with distributed systems isn’t needed to pass system design interviews. And even if you do have that experience, keep in mind that many talented distributed systems engineers still struggle with the system design interview format. How you perform in an interview is not a measure of your worth as a software engineer &ndash; it is a measure of <em>your ability to do system design interviews</em>. The two are related but not equal; being a good programmer has a surprisingly small role in passing interviews.</p>
 <h1 id="mock_interviews">mock_interviews</h1>
-<p>interviewing.io videos from youtube https://www.youtube.com/watch?v=mQgKAK7y11s</p>
-<p>tryexponent mock videos https://www.youtube.com/watch?v=iyLqwyFL0Zc</p>
-<p>hello interview https://www.youtube.com/watch?v=tgSe27eoBG0 really cool!
-https://www.hellointerview.com/</p>
-<p>http://youtube.com/watch?v=PI0yGBT9LHo</p>
+<p>interviewing.io videos from youtube <a href="https://www.youtube.com/watch?v=mQgKAK7y11s">https://www.youtube.com/watch?v=mQgKAK7y11s</a></p>
+<p>tryexponent mock videos <a href="https://www.youtube.com/watch?v=iyLqwyFL0Zc">https://www.youtube.com/watch?v=iyLqwyFL0Zc</a></p>
+<p>hello interview <a href="https://www.youtube.com/watch?v=tgSe27eoBG0">https://www.youtube.com/watch?v=tgSe27eoBG0</a> really cool!
+<a href="https://www.hellointerview.com/">https://www.hellointerview.com/</a></p>
+<p><a href="http://youtube.com/watch?v=PI0yGBT9LHo">http://youtube.com/watch?v=PI0yGBT9LHo</a></p>
 <p>^^ analyze them:</p>
 <ul>
 <li>find out errors, try it yourself first, how would you resolve this errors?</li>
@@ -979,49 +1029,49 @@ algoexpert videos
 hellointerview
 smarchok
 etc
-+this one https://interviewing.io/guides/system-design-interview/part-four
++this one <a href="https://interviewing.io/guides/system-design-interview/part-four">https://interviewing.io/guides/system-design-interview/part-four</a>
 from distributed-systems (link) (? some examples)</p>
 <h1 id="community">Community</h1>
 <p>discord servers!
 forums
 meet ups</p>
-<p>https://launchpass.com/pminterview</p>
+<p><a href="https://launchpass.com/pminterview">https://launchpass.com/pminterview</a></p>
 <p>you can discuss some project on leetcode, for example</p>
 <h1 id="fundamentals--distributed-systems">Fundamentals &amp; Distributed Systems</h1>
 <p><a href="http://localhost:1313/system-design/topics/distributed-systems/">Distributed-systems</a></p>
 <h1 id="microservices">Microservices</h1>
 <p><a href="http://localhost:1313/system-design/topics/microservices/">Microservices</a></p>
 <h1 id="sources">Sources</h1>
-<p>https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode</p>
-<p>example how to organize your SD public Result: https://github.com/Sairyss/system-design-patterns -&gt; todo add projects here (public learning)</p>
+<p><a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode">https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode</a></p>
+<p>example how to organize your SD public Result: <a href="https://github.com/Sairyss/system-design-patterns">https://github.com/Sairyss/system-design-patterns</a> -&gt; todo add projects here (public learning)</p>
 <h2 id="other-1">Other<a href="#other-1" class="anchor" aria-hidden="true">#</a> </h2>
-<p>https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2
-Scaling Instagram Infrastructure - https://www.youtube.com/watch?v=hnpzNAPiC0E&amp;t=669s
-Scaling Facebook Live Videos to a Billion Users - https://www.youtube.com/watch?v=IO4teCbHvZw&amp;t=1692s
-Building Real Time Infrastructure at Facebook - Facebook - SRECon2017 - https://www.youtube.com/watch?v=ODkEWsO5I30
-USENIX ATC &lsquo;13 - TAO: Facebook&rsquo;s Distributed Data Store for the Social Graph - https://www.youtube.com/watch?v=sNIvHttFjdI</p>
-<p>https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html</p>
+<p><a href="https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2">https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2</a>
+Scaling Instagram Infrastructure - <a href="https://www.youtube.com/watch?v=hnpzNAPiC0E&amp;t=669s">https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s</a>
+Scaling Facebook Live Videos to a Billion Users - <a href="https://www.youtube.com/watch?v=IO4teCbHvZw&amp;t=1692s">https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s</a>
+Building Real Time Infrastructure at Facebook - Facebook - SRECon2017 - <a href="https://www.youtube.com/watch?v=ODkEWsO5I30">https://www.youtube.com/watch?v=ODkEWsO5I30</a>
+USENIX ATC &lsquo;13 - TAO: Facebook&rsquo;s Distributed Data Store for the Social Graph - <a href="https://www.youtube.com/watch?v=sNIvHttFjdI">https://www.youtube.com/watch?v=sNIvHttFjdI</a></p>
+<p><a href="https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html">https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html</a></p>
 <h2 id="useful_videos">useful_videos<a href="#useful_videos" class="anchor" aria-hidden="true">#</a> </h2>
 <p>common overview
-https://www.youtube.com/watch?v=F2FmTdLtb_4</p>
+<a href="https://www.youtube.com/watch?v=F2FmTdLtb_4">https://www.youtube.com/watch?v=F2FmTdLtb_4</a></p>
 <p>channels with useful videos:
-https://www.youtube.com/@hello_interview staff engineer
-https://www.youtube.com/@irtizahafiz
-https://www.youtube.com/@interviewpen ??
-https://www.youtube.com/@ByteByteGo</p>
+<a href="https://www.youtube.com/@hello_interview">https://www.youtube.com/@hello_interview</a> staff engineer
+<a href="https://www.youtube.com/@irtizahafiz">https://www.youtube.com/@irtizahafiz</a>
+<a href="https://www.youtube.com/@interviewpen">https://www.youtube.com/@interviewpen</a> ??
+<a href="https://www.youtube.com/@ByteByteGo">https://www.youtube.com/@ByteByteGo</a></p>
 <h2 id="papers">Papers<a href="#papers" class="anchor" aria-hidden="true">#</a> </h2>
-<p>https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/
-https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be</p>
-<p>sla, slo and other: https://sre.google/sre-book/service-level-objectives/</p>
+<p><a href="https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/">https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/</a>
+<a href="https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be">https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be</a></p>
+<p>sla, slo and other: <a href="https://sre.google/sre-book/service-level-objectives/">https://sre.google/sre-book/service-level-objectives/</a></p>
 <p>papers:
-•	Amazon - Dynamo paper
-•	Google - Map-reduce paper
-•	Google - GFS paper
-•	Facebook - TAO paper
-•	Jeff Dean&rsquo;s talk at Stanford: /watch?v=modXC5IWTJI
-•	Building Billion user Load Balancer at Facebook: /watch?v=bxhYNfFeVF4
-•	Netflix Guide to Microservices: /watch?v=CZ3wIuvmHeM
-•	Amazon DynamoDB deep dive: /watch?v=HaEPXoXVf2k</p>
+• Amazon - Dynamo paper
+• Google - Map-reduce paper
+• Google - GFS paper
+• Facebook - TAO paper
+• Jeff Dean&rsquo;s talk at Stanford: /watch?v=modXC5IWTJI
+• Building Billion user Load Balancer at Facebook: /watch?v=bxhYNfFeVF4
+• Netflix Guide to Microservices: /watch?v=CZ3wIuvmHeM
+• Amazon DynamoDB deep dive: /watch?v=HaEPXoXVf2k</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -1048,7 +1098,7 @@ https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-pee
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Next</div>
-					<a href="/system-design/projects/tik_tok/" class="stretched-link text-reset text-decoration-none">Tik Tok</a>
+					<a href="/system-design/elements/test_page/" class="stretched-link text-reset text-decoration-none">Test Page</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

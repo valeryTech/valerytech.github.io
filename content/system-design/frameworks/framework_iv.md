@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-22T08:51:50.976951'
+date: '2025-02-22T09:02:28.392283'
 description: Default Description
 draft: false
-lastmod: '2025-02-22T08:51:50.976951'
+lastmod: '2025-02-22T09:02:28.392283'
 summary: ''
 title: Framework Iv
 toc: true
@@ -181,7 +181,7 @@ The most common non-functional requirements you should consider in a system desi
 
 NFRs will strongly influence our design. They define what we should be optimizing for. Bear in mind that you cannot optimize for everything, and you should not overcomplicate your solution. This is a game of trade-offs.
 
-{{< callout info "Rule of thumb" >}}
+{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 
 {{< /callout >}}
 Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”
@@ -211,7 +211,7 @@ Availability refers to how much downtime the service can tolerate. Just like wit
 
 In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.
 
-{{< callout note "Anecdote from an interviewer" >}}
+{{< callout context="note" title="Anecdote from an interviewer" icon="outline/info-circle" >}}
 
 {{< /callout >}}
 Don’t make your interview harder than it has to be.
@@ -352,7 +352,7 @@ Again, it does not matter at all if you get these numbers right as long as you a
 
 So we’ll need to store around a gigabyte of data per minute.
 
-{{< callout note "Data Types, Scale, and Access patterns" >}}
+{{< callout context="note" title="Data Types, Scale, and Access patterns" icon="outline/info-circle" >}}
 
 {{< /callout >}}
 Once you know your requirements, it’s time to get specific.
@@ -381,7 +381,7 @@ Once we know our use cases and what to optimize for, it comes down to knowing a 
 
 At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.
 
-{{< callout tip "(Tell your interviewer)" >}}
+{{< callout context="tip" title="(Tell your interviewer)" icon="outline/rocket" >}}
 
 {{< /callout >}}
 "I’m going to start drawing some boxes. I'm just thinking out loud for now, so don't hold me to any of this. We can come back to it later."
@@ -462,7 +462,7 @@ Now look at the access patterns and make some adjustments. We identified two acc
 
 `getTweets` should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.
 
-{{< callout tip "(Tell your interviewer)" >}}
+{{< callout context="tip" title="(Tell your interviewer)" icon="outline/rocket" >}}
 
 {{< /callout >}}
 Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.
@@ -479,7 +479,7 @@ Given the fact that we identified the system to be read-heavy and `getFeed` is e
 
 However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.
 
-{{< callout tip "Tell your interviewer" >}}
+{{< callout context="tip" title="Tell your interviewer" icon="outline/rocket" >}}
 
 {{< /callout >}}
 “Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”

@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-22T08:51:50.976487'
+date: '2025-02-22T09:02:28.392283'
 description: Default Description
 draft: false
-lastmod: '2025-02-22T08:51:50.976487'
+lastmod: '2025-02-22T09:02:28.392283'
 summary: ''
 title: Framework Hi
 toc: true
@@ -15,7 +15,7 @@ weight: 810
 
 Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you'll stay focused on the bits that are most important to your interviewer. An added benefit is that you'll have a clear path to fall back if you're overwhelmed. Many candidates are (understandably!) nervous in their interview. It's easy to get lost if you aren't building up a solution in a linear way.
 
-{{< callout info " Follow a Structure " >}}
+{{< callout context="note" title=" Follow a Structure " icon="outline/info-circle" >}}
 While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into "communication"), in practice we've seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.
 {{< /callout >}}
 
@@ -37,7 +37,7 @@ A cache meanwhile might have requirements like:
 - Clients should be able to set expirations
 - Clients should be able to read items
 
-{{< callout warning "Keep your requirements targeted! " >}}
+{{< callout context="warning" title="Keep your requirements targeted! " icon="outline/exclamation-triangle" >}}
 The main objective in the remaining part of the interview is to develop a system that meets the requirements you've identified -- so it's crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it's your job to identify and *prioritize the top 3*. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.
 {{< /callout >}}
 
@@ -50,7 +50,7 @@ For example, if you were designing a system like Twitter, you might have the fol
 - The system should be able to scale to support 100M+ DAUs
 - The system should be low latency, rendering feeds in under 200ms
 
-{{< callout note "Quantification " >}}
+{{< callout context="note" title="Quantification " icon="outline/info-circle" >}}
 It's important that non-functional requirements are put in the context of the system and, where possible, are quantified. For example, "the system should be low latency" is obvious and not very meaningful—nearly all systems should be low latency.
 
 "The system should have low latency search, < 500ms," is much more useful as it identifies the part of the system that most needs to be low latency and provides a target.
@@ -132,13 +132,13 @@ Now that you have a clear understanding of the requirements, entities, and API o
 
 Don't over think this! Your primary goal is to design an architecture that satisfies the API you've designed and, thus, the requirements you've identified. In most cases, you can even go one-by-one through your API endpoints and build up your design sequentially to satisfy each one.
 
-{{< callout danger "Stay focused! " >}}
+{{< callout context="danger" title="Stay focused! " icon="outline/alert-octagon" >}}
 It's incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It's natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.
 {{< /callout >}}
 
 As you're drawing your design, you should be talking through your thought process with your interviewer. Be explicit about how data flows through the system and what state (either in databases, caches, message queues, etc.) changes with each request, starting from API requests and ending with the response. When your request reaches your database or persistence layer, it's a great time to start documenting the relevant columns/fields for each entity. You can do this directly next to your database visually. This helps keep it close to the relevant components and makes it easy to evolve as you iterate on your design. No need to worry too much about types here, your interviewer can infer and they'll only slow you down.
 
-{{< callout danger " Focus on relevant" >}}
+{{< callout context="danger" title=" Focus on relevant" icon="outline/alert-octagon" >}}
 Don't waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don't need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.
 {{< /callout >}}
 
@@ -155,6 +155,6 @@ Astute readers probably noticed that our simple, high-level design of Twitter is
 
 So for example, one of our non-functional requirements for Twitter was that our system needs to scale to >100M DAU. We could then lead a discussion oriented around horizontal scaling, the introduction of caches, and database sharding -- updating our design as we go. Another was that feeds need to be fetched with low latency. In the case of Twitter, this is actually the most interesting problem. We'd lead a discussion about fanout-on-read vs fanout-on-write and the use of caches.
 
-{{< callout danger " Mistake" >}}
+{{< callout context="danger" title=" Mistake" icon="outline/alert-octagon" >}}
 A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it's a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you're going to miss it if you're too busy talking. Plus, you'll hurt your evaluation on communication and collaboration.
 {{< /callout >}}
