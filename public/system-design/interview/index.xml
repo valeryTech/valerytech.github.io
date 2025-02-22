@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Interview on System Design</title>
+    <title>Interview on Thought Foundations</title>
     <link>http://localhost:1313/system-design/interview/</link>
-    <description>Recent content in Interview on System Design</description>
+    <description>Recent content in Interview on Thought Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
