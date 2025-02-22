@@ -9,7 +9,13 @@ title: Test Page
 toc: true
 weight: 810
 ---
+# Emojis tes
 
+:thumbs_up: emoji
+
+:joy: emoji
+
+🥮 
 ## Callouts
 
 {{< callout context="note" title="information" icon="outline/info-circle" >}}

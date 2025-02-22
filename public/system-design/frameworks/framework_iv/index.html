@@ -1030,9 +1030,36 @@
 <li>A tweet can reference another tweet, i.e., be a “retweet”. (Tweet x Tweet)</li>
 </ul>
 <p>Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?</p>
-<blockquote>
-<p>[!tip] Media
-Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Consider Media</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.</p>
+
+    </div>
+  </div>
+</div>
+
 <h2 id="think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects<a href="#think-about-the-possible-access-patterns-for-these-objects" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Access patterns are probably the single most influential part of design because they determine how data will be stored.</p>
 <p>Let&rsquo;s think about the cross product of our objects again. This time we want to identify how data will be retrieved from the system.</p>
@@ -1085,8 +1112,36 @@ Media is a common part of system design. Always ask yourself whether any of the 
 <p>What are the access patterns? In this case we just have one object, so it’s probably going to be pretty straightforward:}</p>
 <p>Trigger a release: publishes a code artifact and deploys it to all servers.</p>
 <p>This is actually a pretty good example of how some problems might be less intensive on the requirements side than others. The definition the interviewer gave us was pretty clear. Therefore, we can extract requirements with just a few questions.</p>
-<blockquote>
-<p>Extra points: Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips</p></blockquote>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Extra points</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips</p>
+
+    </div>
+  </div>
+</div>
+
 <p>For example, you might want to ask about the possibility to recall a release. Do they want a page to see all releases and the deployment status? Should we alert them about failures? #sd/tips</p>
 <p>This is what we mean when we say that it can be as easy or as hard as you want to make it. Try to get a feel for what the interviewer is looking for, and make sure to check back with them and ensure you both are on the same page.</p>
 <h1 id="12-non-functional-requirements">1.2 Non-Functional Requirements</h1>
@@ -1101,7 +1156,7 @@ Media is a common part of system design. Always ask yourself whether any of the 
 <p>Note</p>
 <p>You may be wondering why we chose “security” and not “consistency.” We think there are already enough resources out there that will tell you about consistency in NFRs. Again, this is our opinionated approach, and after much debate we decided this would be the most valuable way to teach it. As always in system design interviews: your interviewer cares less about your decisions, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions. Therefore, if you wanted to, there are many NFRs that could make a shortlist.</p></blockquote>
 <p>NFRs will strongly influence our design. They define what we should be optimizing for. Bear in mind that you cannot optimize for everything, and you should not overcomplicate your solution. This is a game of trade-offs.</p>
-<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -1125,27 +1180,19 @@ Media is a common part of system design. Always ask yourself whether any of the 
 
       </div>
     <div class="callout-body">
-      
+      <p>Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”</p>
+
     </div>
   </div>
 </div>
 
-Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”</p>
 <p>Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as “We don’t need to focus on [Insert requirement, such as “consistency”] as much in this case because [Insert reason, such as “it’s okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users”].”</p>
 <p>If NFRs are over-specified, the solution may be too expensive to be practical; if they are under-specified, the system will not be suitable for its intended purpose. Use your common sense, and ask the right questions to land on a set of non-functional requirements that make sense for the system you are designing.</p>
 <p>Let’s explore each of the quality attributes that make up non-functional requirements and see some examples of when to optimize for them.</p>
 <h2 id="performance">Performance<a href="#performance" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Performance is pretty straightforward. It’s the system’s ability to respond quickly to user requests. While speed is always welcome, it might not be the right thing to optimize for in every system. Better performance may come at the cost of consistency or just an overall more complex solution.</p>
 <p>So when does it make sense to optimize for performance?</p>
-<blockquote>
-<p>[!Rule of thumb]
-It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.</p></blockquote>
-<p>Take a look at the access patterns you identified in your functional requirements. Which ones are user-facing, expected to happen synchronously, and accessed frequently? Let’s use our Twitter example: Is there any access pattern that we might want to optimize for performance?</p>
-<p>The user feed feature stands out as a good candidate for a performant access pattern. It’s synchronous, meaning that users expect an immediate response, and it’s likely to be a hot path for users because it’s the landing page of the app.</p>
-<h2 id="availability">Availability<a href="#availability" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Availability refers to how much downtime the service can tolerate. Just like with performance, we might not always want to optimize for availability. A good question to guide this decision is: What’s the cost of downtime? This is as easy as it sounds. If taking downtime will result in financial losses or correctness issues, we might want to put some thought into making the system highly available.</p>
-<p>In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.</p>
-<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -1165,32 +1212,117 @@ It makes the most sense when we have synchronous user-facing workflows. That is,
 </svg>
   <div class="callout-content">
     <div class="callout-title">
-        <p>Anecdote from an interviewer</p>
+        <p>Rule of thumb</p>
 
       </div>
     <div class="callout-body">
-      
+      <p>It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.</p>
+
     </div>
   </div>
 </div>
 
-Don’t make your interview harder than it has to be.</p>
-<blockquote>
-</blockquote>
+<p>Take a look at the access patterns you identified in your functional requirements. Which ones are user-facing, expected to happen synchronously, and accessed frequently? Let’s use our Twitter example: Is there any access pattern that we might want to optimize for performance?</p>
+<p>The user feed feature stands out as a good candidate for a performant access pattern. It’s synchronous, meaning that users expect an immediate response, and it’s likely to be a hot path for users because it’s the landing page of the app.</p>
+<h2 id="availability">Availability<a href="#availability" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Availability refers to how much downtime the service can tolerate. Just like with performance, we might not always want to optimize for availability. A good question to guide this decision is: What’s the cost of downtime? This is as easy as it sounds. If taking downtime will result in financial losses or correctness issues, we might want to put some thought into making the system highly available.</p>
+<p>In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.</p>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Anecdote from an interviewer</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Don’t make your interview harder than it has to be.</p>
 <p>In an actual interview, if a candidate says, “Do we want 4 nines? 5 nines? 6 nines?” My first follow-up question will be, “What’s going to change in your system?” And they don’t know what to answer (obviously) because the system they’ll design won’t change at all whether it’s 4 nines or 5 nines or 6 nines.</p>
-<blockquote>
-</blockquote>
-<p>So what I mean is that talking about availability is good, but talking about “we want 6 nines” in an actual interview can be a signal that this person is behaving like an imposter. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn’t said anything about the “number of nines” in the first place!</p>
+<p>So what I mean is that talking about availability is good, but talking about “we want 6 nines” in an actual interview can be a signal that this person is behaving <strong>like an imposter</strong>. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn’t said anything about the “number of nines” in the first place!</p>
+
+    </div>
+  </div>
+</div>
+
 <p>An example of a problem where we might be fine with taking a hit on availability is one where consistency is very important. Think, for example, about a banking system. One of the most important mandates of the system would be consistency. Operations need to be transactional. In this case, it might be acceptable if our system is unavailable/stale for small periods of time, as long as it is consistent. However, with Twitter, we’d rather have it be inconsistent than unavailable. When in doubt about what to prioritize, ask your interviewer whether consistency is preferred over availability.</p>
-<blockquote>
-<p>[!Question]
-What’s an example of a system you can think of where high availability might not be essential?</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/help-octagon svg-inline callout-icon me-2 mb-3" id="svg-help-octagon" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
+  <path d="M12 16v.01" />
+  <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Ask yourself</p>
+
+      </div>
+    <div class="callout-body">
+      <p>What’s an example of a system you can think of where high availability might not be essential?</p>
+
+    </div>
+  </div>
+</div>
+
 <h2 id="security">Security<a href="#security" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Security can be tricky. No one wants to design an insecure system, and there’s a baseline level of security that can be expected of any modern architecture (HTTPS, OAuth, password/data encryption). But that’s not what we are trying to figure out in this step.</p>
 <p>We want to learn if there’s some workflow that might require a special design to account for security. For example, imagine you were designing LeetCode, an online judge for coding questions. One security constraint that would come to mind is that user-submitted code should be run in isolation. User submissions should run in some sort of sandbox where they get limited resources and are guaranteed not to affect or see other submissions.</p>
-<blockquote>
-<p>[!Tip]
-Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Isolation</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.</p>
+
+    </div>
+  </div>
+</div>
+
 <h2 id="remember-non-functional-requirements">Remember: Non-Functional Requirements<a href="#remember-non-functional-requirements" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Consider the three main non-functional requirements: performance, availability, and security.</p>
 <ol>
@@ -1224,7 +1356,7 @@ Whenever there is user-generated code execution involved (aka low trust code), r
 </table>
 <p>We’ve gathered functional and non-functional requirements. At this point we understand what the system is supposed to do as a black box. It’s now time to take our first steps toward designing it.</p>
 <p>However, you should not begin drawing boxes and discussing implementation right away. There’s a bit of pre-work needed before we can start thinking about a concrete design. We need to answer the following three questions:</p>
-<ol start="4">
+<ol>
 <li>What data types does the system need to store?</li>
 <li>What does the API look like?</li>
 <li>What volume of requests do we need to support?</li>
@@ -1236,29 +1368,47 @@ Whenever there is user-generated code execution involved (aka low trust code), r
 <li><strong>Structured data.</strong> Think business objects, like accounts, tweets, likes.</li>
 <li><strong>Media and blobs.</strong> Think images, videos, or any type of large binary data such as TAR or ZIP files.</li>
 </ul>
-<p>For our Twitter example, we will store:</p>
+<p>For our Twitter example, we will store:
+<strong>Structured data</strong></p>
 <ul>
-<li>
-<p><strong>Structured data</strong></p>
-</li>
-<li>
-<p>Accounts</p>
-</li>
-<li>
-<p>Tweets</p>
-</li>
-<li>
-<p><strong>Media</strong></p>
-</li>
-<li>
-<p>Images or videos in Tweets</p>
-</li>
+<li>Accounts</li>
+<li>Tweets
+<strong>Media</strong></li>
+<li>Images or videos in Tweets</li>
 </ul>
 <h2 id="22-what-does-the-api-look-like">2.2 What does the API look like?<a href="#22-what-does-the-api-look-like" class="anchor" aria-hidden="true">#</a> </h2>
-<blockquote>
-<p>[!Rule of thumb]
-More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.</p></blockquote>
-<p><strong>Footnote:</strong> If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions. But even in these rare cases, it helps to start thinking about the API in terms of HTTPS requests.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Rule of thumb</p>
+
+      </div>
+    <div class="callout-body">
+      <p>More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions.</p>
+<p>But even in these rare cases, <em>it helps to start thinking</em> about the API in terms of HTTPS requests.</p>
 <p>Look at the access patterns you defined in the functional requirements to write your API. For example:</p>
 
 
@@ -1450,7 +1600,7 @@ See more in <a href="http://localhost:1313/system-design/projects/code_deploymen
 </table>
 <p>The time has come. We’ve got all the information we need to start drawing boxes and calling this a “system.” Yay!</p>
 <p>There are several reasons that we spent considerable time in steps 1 and 2. Too often people dive straight into design and fail in spectacular ways. It’s easy to make that mistake—isn’t this interview called “system design” after all? No one told these candidates that good design is 70%+ requirements and planning.</p>
-<p>In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage! 💪</p>
+<p>In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage!</p>
 <p>Once we know our use cases and what to optimize for, it comes down to knowing a few rules of thumb. Want speed? Use a cache. Want availability? Put in some redundancy. It’s really that simple. That’s the beauty of systems design. It can be as simple or as complicated as we want to make it.</p>
 <p>At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.</p>
 <div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
@@ -1888,7 +2038,7 @@ See more in <a href="http://localhost:1313/system-design/projects/code_deploymen
 22</code></pre>
   </figure>
 </div>
-<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -1900,11 +2050,11 @@ See more in <a href="http://localhost:1313/system-design/projects/code_deploymen
   stroke-linecap="round"
   stroke-linejoin="round"
  
- class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-  <path d="M12 9h.01" />
-  <path d="M11 12h1v4h1" />
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
 </svg>
   <div class="callout-content">
     <div class="callout-title">

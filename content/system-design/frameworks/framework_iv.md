@@ -90,8 +90,9 @@ Now think about clarifying the relation between these objects. What’s the rela
 
 Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?
 
-> [!tip] Media 
-> Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
+{{< callout context="note" title="Consider Media " icon="outline/info-circle" >}}
+Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
+{{< /callout >}}
 
 ## Think about the possible access patterns for these objects
 
@@ -160,7 +161,9 @@ Trigger a release: publishes a code artifact and deploys it to all servers.
 
 This is actually a pretty good example of how some problems might be less intensive on the requirements side than others. The definition the interviewer gave us was pretty clear. Therefore, we can extract requirements with just a few questions.
 
-> Extra points: Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips
+{{< callout context="tip" title="Extra points " icon="outline/rocket" >}}
+Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips
+{{< /callout >}}
 
 For example, you might want to ask about the possibility to recall a release. Do they want a page to see all releases and the deployment status? Should we alert them about failures? #sd/tips
 
@@ -183,9 +186,8 @@ The most common non-functional requirements you should consider in a system desi
 NFRs will strongly influence our design. They define what we should be optimizing for. Bear in mind that you cannot optimize for everything, and you should not overcomplicate your solution. This is a game of trade-offs.
 
 {{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
-
-{{< /callout >}}
 Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”
+{{< /callout >}}
 
 Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as “We don’t need to focus on [Insert requirement, such as “consistency”] as much in this case because [Insert reason, such as “it’s okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users”].”
 
@@ -199,8 +201,9 @@ Performance is pretty straightforward. It’s the system’s ability to respond 
 
 So when does it make sense to optimize for performance?
 
->[!Rule of thumb] 
->It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.
+{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
+It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.
+{{< /callout >}}
 
 Take a look at the access patterns you identified in your functional requirements. Which ones are user-facing, expected to happen synchronously, and accessed frequently? Let’s use our Twitter example: Is there any access pattern that we might want to optimize for performance?
 
@@ -212,19 +215,19 @@ Availability refers to how much downtime the service can tolerate. Just like wit
 
 In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.
 
-{{< callout context="note" title="Anecdote from an interviewer" icon="outline/info-circle" >}}
-
-{{< /callout >}}
+{{< callout context="caution" title="Anecdote from an interviewer" icon="outline/alert-triangle" >}}
 Don’t make your interview harder than it has to be.
->
+
 In an actual interview, if a candidate says, “Do we want 4 nines? 5 nines? 6 nines?” My first follow-up question will be, “What’s going to change in your system?” And they don’t know what to answer (obviously) because the system they’ll design won’t change at all whether it’s 4 nines or 5 nines or 6 nines.
->
-So what I mean is that talking about availability is good, but talking about “we want 6 nines” in an actual interview can be a signal that this person is behaving like an imposter. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn’t said anything about the “number of nines” in the first place!
+
+So what I mean is that talking about availability is good, but talking about “we want 6 nines” in an actual interview can be a signal that this person is behaving **like an imposter**. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn’t said anything about the “number of nines” in the first place!
+{{< /callout >}}
 
 An example of a problem where we might be fine with taking a hit on availability is one where consistency is very important. Think, for example, about a banking system. One of the most important mandates of the system would be consistency. Operations need to be transactional. In this case, it might be acceptable if our system is unavailable/stale for small periods of time, as long as it is consistent. However, with Twitter, we’d rather have it be inconsistent than unavailable. When in doubt about what to prioritize, ask your interviewer whether consistency is preferred over availability.
 
->[!Question]
+{{< callout context="note" title="Ask yourself" icon="outline/help-octagon" >}}
 What’s an example of a system you can think of where high availability might not be essential?
+{{< /callout >}}
 
 ## Security
 
@@ -232,8 +235,9 @@ Security can be tricky. No one wants to design an insecure system, and there’s
 
 We want to learn if there’s some workflow that might require a special design to account for security. For example, imagine you were designing LeetCode, an online judge for coding questions. One security constraint that would come to mind is that user-submitted code should be run in isolation. User submissions should run in some sort of sandbox where they get limited resources and are guaranteed not to affect or see other submissions.
 
->[!Tip]
+{{< callout context="note" title="Isolation " icon="outline/info-circle" >}}
 Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.
+{{< /callout >}}
 
 ## Remember: Non-Functional Requirements
 
@@ -264,9 +268,9 @@ We’ve gathered functional and non-functional requirements. At this point we un
 
 However, you should not begin drawing boxes and discussing implementation right away. There’s a bit of pre-work needed before we can start thinking about a concrete design. We need to answer the following three questions:
 
-4. What data types does the system need to store?
-5. What does the API look like?
-6. What volume of requests do we need to support?
+1. What data types does the system need to store?
+2. What does the API look like?
+3. What volume of requests do we need to support?
 
 These can be answered pretty quickly from your requirements. In fact, you can probably answer these in just a few minutes. Let’s walk through how we might answer each of these questions for our Twitter example:
 
@@ -278,20 +282,21 @@ Think about the objects the system needs to hold and their data type. There are 
 - **Media and blobs.** Think images, videos, or any type of large binary data such as TAR or ZIP files.
 
 For our Twitter example, we will store:
-
-- **Structured data**
+**Structured data**
 - Accounts
 - Tweets
-
-- **Media**
+**Media**
 - Images or videos in Tweets
 
 ## 2.2 What does the API look like?
 
->[!Rule of thumb]
+{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.
+{{< /callout >}}
 
-**Footnote:** If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions. But even in these rare cases, it helps to start thinking about the API in terms of HTTPS requests.
+If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions. 
+
+But even in these rare cases, *it helps to start thinking* about the API in terms of HTTPS requests.
 
 Look at the access patterns you defined in the functional requirements to write your API. For example:
 
@@ -377,7 +382,7 @@ The time has come. We’ve got all the information we need to start drawing boxe
 
 There are several reasons that we spent considerable time in steps 1 and 2. Too often people dive straight into design and fail in spectacular ways. It’s easy to make that mistake—isn’t this interview called “system design” after all? No one told these candidates that good design is 70%+ requirements and planning.
 
-In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage! 💪
+In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage! 
 
 Once we know our use cases and what to optimize for, it comes down to knowing a few rules of thumb. Want speed? Use a cache. Want availability? Put in some redundancy. It’s really that simple. That’s the beauty of systems design. It can be as simple or as complicated as we want to make it.
 
@@ -632,7 +637,7 @@ Finally, for code execution, we’d probably want to execute the code in isolati
 22
 ```
 
-{{< callout context="note" title="No Code" icon="outline/info-circle" >}}
+{{< callout context="caution" title="No Code" icon="outline/alert-triangle" >}}
 In an interview, the less you code you write, the more you seem like a senior engineer. And the opposite is true as well: The more code you write in a system design interview, the more you seem like you’re below the senior level. Writing this much code for your API would probably be too much if you’re aiming for senior or senior plus roles. But if you’re a mid-level candidate trying to secure your mid-level position, this is the perfect amount of code to write.
 {{< /callout >}}
 

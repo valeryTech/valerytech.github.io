@@ -31,14 +31,16 @@ Example of a candidate pushing back:
 
 No one can design a real-world system in 40-60 minutes. You can only design partial non-usable systems in that amount of time. As a result, you won’t be able to cover everything in depth.
 
->[!Remember]
-> It's more important to cover everything broadly than it is to explain every small thing in detail.
+{{< callout context="note" title="Remember" icon="outline/info-circle" >}}
+It's more important to cover everything broadly than it is to explain every small thing in detail.
+{{< /callout >}}
 
->[!Anecdote]
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
 It is common for interviewers to ask a candidate to “design Gmail.” There are so many different dimensions to the product we know as “Gmail,” so no candidate can actually design Gmail in the amount of time they have in an interview. Whenever people tell you to ‘design gmail’ that is to scare you.”
+{{< /callout >}}
 
->[!tip]
-Handwaving stuff is a smart time-management choice. It’s also a tactic to avoid getting derailed.
+>[!note]
+> Handwaving stuff is a smart time-management choice. It’s also a tactic to avoid getting derailed.
 
 When we say “handwave stuff,” this means that you can say, “I’m going to skip going into [detailed thing] for now, but if we want, we can come back to it later.” If you dive deeply into the details of every single thing, you’ll fall down too many rabbit holes to be productive. But if you notice and address this so your interviewer understands, by saying something like, “Hey, here is a rabbit hole we could go down, but let’s skip it for now,” you’re killing a few birds with one stone. You're demonstrating your knowledge by calling it out, and simultaneously you’re keeping the interview on track, because in an open-ended situation like this, it’s just as important to know where you’re not going as it is to know where you are going.
 
