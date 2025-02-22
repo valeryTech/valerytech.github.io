@@ -1,34 +1,36 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.167969
+date: '2025-02-21T23:36:39.642514'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.167969
+lastmod: '2025-02-21T23:36:39.642514'
 summary: ''
 title: Envelope Estimations
 toc: true
 weight: 810
 ---
 
+
+
 https://www.hellointerview.com/blog/mastering-estimation #todo
 
 According to Jeff Dean, Google Senior Fellow, "back-of-the-envelope calculations are estimates you create using a combination of thought experiments and common performance numbers to get a good feel for which designs will meet your requirements"
-Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, number of servers, etc. You can practice these calculations when preparing for an interview. Practice makes perfect.
+Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, number of servers, etc. You can practice these calculations when preparing for an interview. Practice makes perfect. 
 
-* Throughput of each layer
-* Latency caused between each layer
-* Overall latency justification
+- Throughput of each layer
+- Latency caused between each layer
+- Overall latency justification
 
 char: rps, volumes, etc
 
 When in doubt, just guess higher—it’s called *margin of safety*. For our Twitter example we can go for these numbers:
-Reads/minute: 100k
-Writes/minute: 1k
+  Reads/minute: 100k
+  Writes/minute: 1k
 
 https://www.reddit.com/r/ExperiencedDevs/comments/19e19jn/what_is_the_point_of_back_of_the_envelope/
 
 DAU (daily active users), QPS (query per seconds)
-Strategy??
+Strategy?? 
 First, we need to recognize a limited resource in our system, then approximate the actual usage. For example, our servers are capped by 2GHz CPUs, and we would like to know if we can serve all user requests using a single server.
 So how to approximate the actual usage? We need to break down the usage to its constituting factors, make a rough estimate of those factors (if needed, further breaking them down), and combining them.
 For example, we might expect to have 1K active users, each issuing 15 requests per day. That's 15K requests per day, or 15K/86400 requests per second.
@@ -60,20 +62,19 @@ Different use-cases will likely need very different shapes of resources. For exa
 Such differences indicate those features should be split to different services, hosted on independent sets of machines.
 
 It's always a good idea to estimate the scale of the system you're going to design. This would also help later when you'll be focusing on scaling, partitioning, load balancing and caching.
-
-1. What scale is expected from the system (e.g., number of new tweets, number of tweet views, how many timeline generations per sec., etc.)
-1. How much storage would we need? This will depend on whether users can upload photos and videos in their tweets?
-1. What network bandwidth usage are we expecting? This would be crucial in deciding how would we manage traffic and balance load between servers.
-   Enumerate typical use-cases of the system and determine the most critical resources they need.
-   ..
-   I have seen 2 approaches taken when calculating the back of the envelope calculations.
-   The first approach as you have listed out in the bullet points starts with an overall picture of the system and calculations move to a single server and memory requirements. That is if there are 330 million active users and 5700 tweets a second, how do I get to what specs will be required for a single server and thereby calculating how many servers/DBs are needed, etc.
-   Under the interview pressure, I always felt this process to be a bit difficult when performing larger divisions. To quote your example "... So we need 60000 * 0.95 / 320 = 178 servers". There is no way I can do this calculation on the whiteboard in live interview without sweating myself.
-   The second approach, which I always preferred is to start small and grow bigger with quite a few approximations. After all, the back of the envelope calculation is supposed to be a T-shift level "estimation". I also often start with a small number of variables preferably one.
-   For example, instead of managing 2 variables like "Number of active users" and "Number of tweets", I start at the server level and ask myself a question, what factor affects my server the most? a number of active users coming to the server or number of tweets coming to the server. If my server gets 10 tweets per second, does it matter in terms of memory and threads requirements if 10 active users send 1 tweet/sec or 1 active user sends 10 tweets/sec? If it does not matter then I, for now, I will ignore the number of active users and focus on how many tweets the server receives per second. My 2 variables are down to 1.
-   I also make sure, I never talk on the specifics of the functionality and instead talk/focus on the raw/common server requirements. That is instead of saying, the server receives 10 tweets per second, I will say the server receives 10 "requests" per second. Converting tweets to requests helps me memorize the same logic across twitter design where the server receives tweets and facebook design where the server receives photo upload and comments requests. Everything is incoming request no differentiation.
-   Example.
-   Ok so focusing on the twitter calculations, I would start something like this.
+1.	What scale is expected from the system (e.g., number of new tweets, number of tweet views, how many timeline generations per sec., etc.)
+2.	How much storage would we need? This will depend on whether users can upload photos and videos in their tweets?
+3.	What network bandwidth usage are we expecting? This would be crucial in deciding how would we manage traffic and balance load between servers.
+Enumerate typical use-cases of the system and determine the most critical resources they need.
+..
+I have seen 2 approaches taken when calculating the back of the envelope calculations.
+The first approach as you have listed out in the bullet points starts with an overall picture of the system and calculations move to a single server and memory requirements. That is if there are 330 million active users and 5700 tweets a second, how do I get to what specs will be required for a single server and thereby calculating how many servers/DBs are needed, etc.
+Under the interview pressure, I always felt this process to be a bit difficult when performing larger divisions. To quote your example "... So we need 60000 * 0.95 / 320 = 178 servers". There is no way I can do this calculation on the whiteboard in live interview without sweating myself.
+The second approach, which I always preferred is to start small and grow bigger with quite a few approximations. After all, the back of the envelope calculation is supposed to be a T-shift level "estimation". I also often start with a small number of variables preferably one.
+For example, instead of managing 2 variables like "Number of active users" and "Number of tweets", I start at the server level and ask myself a question, what factor affects my server the most? a number of active users coming to the server or number of tweets coming to the server. If my server gets 10 tweets per second, does it matter in terms of memory and threads requirements if 10 active users send 1 tweet/sec or 1 active user sends 10 tweets/sec? If it does not matter then I, for now, I will ignore the number of active users and focus on how many tweets the server receives per second. My 2 variables are down to 1.
+I also make sure, I never talk on the specifics of the functionality and instead talk/focus on the raw/common server requirements. That is instead of saying, the server receives 10 tweets per second, I will say the server receives 10 "requests" per second. Converting tweets to requests helps me memorize the same logic across twitter design where the server receives tweets and facebook design where the server receives photo upload and comments requests. Everything is incoming request no differentiation.
+Example. 
+Ok so focusing on the twitter calculations, I would start something like this.
 
 I will start saying, I will at minimum calculate servers, memory, and storage requirements
 
@@ -107,3 +108,4 @@ Summary
 Start with a single variable and translate specific design requirement into raw server requirements like requests/sec (instead of tweets/sec or photos/server)
 Start from a single server requirement instead of trying to divide total tweets or total storage by servers.
 Remember to get all the calculations done in 5 mins. Unless the interviewer wants to focus on the specifics calcuations. Remember these contents are high-level estimates.
+

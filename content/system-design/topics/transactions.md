@@ -1,14 +1,15 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.172328
+date: '2025-02-21T23:36:39.646760'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.172328
+lastmod: '2025-02-21T23:36:39.646760'
 summary: ''
 title: Transactions
 toc: true
 weight: 810
 ---
+
 
 scheme
 transaction -> guarantees
@@ -33,11 +34,13 @@ The ability to abort a transaction on error and have all writes from that transa
 
 ## Durability
 
+
+
 isolation levels: read commited and serializable
 
 Implementing read committed
 Read committed is a very popular isolation level. It is the default setting in Oracle
-11g, PostgreSQL, SQL Server 2012, MemSQL, and many other databases \[8\].
+11g, PostgreSQL, SQL Server 2012, MemSQL, and many other databases [8].
 Most commonly, databases prevent dirty writes by using row-level locks: when a
 transaction wants to modify a particular object (row or document), it must first
 acquire a lock on that object. It must then hold that lock until the transaction is com‐
@@ -66,6 +69,8 @@ lock. While the transaction is ongoing, any other transactions that read the obj
 simply given the old value. Only when the new value is committed do transactions
 switch over to reading the new value.
 
+
+
 Snapshot Isolation and Repeatable Read
 If you look superficially at read committed isolation, you could be forgiven for think‐
 ing that it does everything that a transaction needs to do: it allows aborts (required
@@ -74,7 +79,7 @@ vents concurrent writes from getting intermingled. Indeed, those are useful feat
 and much stronger guarantees than you can get from a system that has no transac‐
 tions.
 
-implementing
+implementing 
 
 Like read committed isolation, implementations of snapshot isolation typically use
 write locks to prevent dirty writes (see “Implementing read committed” on page 236),
@@ -91,4 +96,39 @@ actions may need to see the state of the database at different points in time. B
 maintains several versions of an object side by side, this technique is known as multi-
 version concurrency control (MVCC).
 
+
 https://www.postgresql.org/docs/7.2/mvcc.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,15 +1,14 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.182937
+date: '2025-02-21T23:36:39.658102'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.182937
+lastmod: '2025-02-21T23:36:39.658102'
 summary: ''
 title: Code Deployment
 toc: true
 weight: 810
 ---
-
 Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.
 
 **Artifact:** (product name, version, commit hash)  
@@ -21,12 +20,10 @@ Example: Design a code deployment system aimed for developers at a company. They
 ##### Data Types:
 
 Ask your interviewer about the type of these artifacts that we are building.
-
-* Code Artifacts. Type: blobs (ZIP, TAR, bz2, etc.)
-
+- Code Artifacts. Type: blobs (ZIP, TAR, bz2, etc.)
 ##### API
 
-````
+```
 1
 2  putRelease:
 3    POST release/{productId}/{commitId}
@@ -36,7 +33,7 @@ Ask your interviewer about the type of these artifacts that we are building.
 7    GET deployment/{deploymentId}
 8    returns: status # PENDING, DEPLOYED
 9
-````
+```
 
 ##### Scale
 

@@ -7,75 +7,75 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 18:43:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 23:36:39 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> Themes</title>
       <link>http://localhost:1313/system-design/projects/_themes/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/_themes/</guid>
-      <description>Facebook system design interview questions&#xA;Design an online collaborative editing tool Design a distributed botnet How would you use a load balancer for memcache servers?</description>
+      <description>&lt;p&gt;&lt;strong&gt;Facebook system design interview questions&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design an online collaborative editing tool&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed botnet&lt;/li&gt;&#xA;&lt;li&gt;How would you use a load balancer for memcache servers?&lt;/li&gt;&#xA;&lt;li&gt;How would you architect the Facebook newsfeed?&lt;/li&gt;&#xA;&lt;li&gt;Implement a typeahead feature&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Google system design interview questions&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chat Room</title>
       <link>http://localhost:1313/system-design/projects/chat-room/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/chat-room/</guid>
-      <description>I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms.</description>
+      <description>&lt;p&gt;I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms. Each chat room can have several 1000s of users at any time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Code Deployment</title>
       <link>http://localhost:1313/system-design/projects/code_deployment/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/code_deployment/</guid>
-      <description>Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</description>
+      <description>&lt;p&gt;Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Events</title>
       <link>http://localhost:1313/system-design/projects/events/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/events/</guid>
-      <description>Sources https://microservices.io/patterns/data/saga.html coursehunter https://www.youtube.com/watch?v=SbL3a9YOW7s https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html https://www.youtube.com/watch?v=gA2-eqDVSng https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/ https://aws.amazon.com/messaging/ https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/ https://aws.amazon.com/event-driven-architecture/ https://www.youtube.com/watch?v=28B4L1fnnGM https://www.youtube.com/@CodeOpinion/&#xA;https://www.youtube.com/watch?v=A_mstzRGfIE https://www.developertoarchitect.com/lessons/lesson165.html&#xA;https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47&#xA;event tips: https://www.youtube.com/watch?v=9r9WDzzTcr0 https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures https://www.</description>
+      <description>&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;&#xA;&lt;p&gt;https://microservices.io/patterns/data/saga.html&#xA;coursehunter&#xA;https://www.youtube.com/watch?v=SbL3a9YOW7s&#xA;https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html&#xA;https://www.youtube.com/watch?v=gA2-eqDVSng&#xA;https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/&#xA;https://aws.amazon.com/messaging/&#xA;https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/&#xA;https://aws.amazon.com/event-driven-architecture/&#xA;https://www.youtube.com/watch?v=28B4L1fnnGM&#xA;https://www.youtube.com/@CodeOpinion/&lt;/p&gt;&#xA;&lt;p&gt;https://www.youtube.com/watch?v=A_mstzRGfIE&#xA;https://www.developertoarchitect.com/lessons/lesson165.html&lt;/p&gt;&#xA;&lt;p&gt;https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47&lt;/p&gt;&#xA;&lt;p&gt;event tips:&#xA;https://www.youtube.com/watch?v=9r9WDzzTcr0&#xA;https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures&#xA;https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures&#xA;https://www.infoq.com/presentations/event-driven-arch-challenges/&#xA;https://www.equalexperts.com/blog/tech-focus/event-driven-architecture-the-good-the-bad-and-the-ugly/&#xA;https://serverlessland.com/event-driven-architecture/visuals/common-issued-with-eda&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instagram</title>
       <link>http://localhost:1313/system-design/projects/instagram/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/instagram/</guid>
-      <description>Design common cloud client service as Instagram&#xA;todo next: see data sharding (Twitter, Grokking) see News Feed generation (Facebook, Grokking) see CDN and load balancers make blueprints of HLD</description>
+      <description>&lt;p&gt;Design common cloud client service as Instagram&lt;/p&gt;&#xA;&lt;p&gt;todo next:&#xA;see data sharding (Twitter, Grokking)&#xA;see News Feed generation (Facebook, Grokking)&#xA;see CDN and load balancers&#xA;make blueprints of HLD&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interviewing.Io</title>
       <link>http://localhost:1313/system-design/projects/interviewing.io/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/interviewing.io/</guid>
       <description></description>
     </item>
     <item>
       <title>Interviewing.Io Example</title>
       <link>http://localhost:1313/system-design/projects/interviewing.io_example/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/interviewing.io_example/</guid>
-      <description>https://interviewing.io/guides/system-design-interview/part-four</description>
+      <description>&lt;p&gt;https://interviewing.io/guides/system-design-interview/part-four&lt;/p&gt;</description>
     </item>
     <item>
       <title>Job Scheduler</title>
       <link>http://localhost:1313/system-design/projects/job-scheduler/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/job-scheduler/</guid>
-      <description>my&#xA;actors: user, job, schedule&#xA;user can upload job user can start job manually or by schedule&#xA;job set up flow: upload job, start manually or establish schedule view and notifications/alerts?</description>
+      <description>&lt;p&gt;my&lt;/p&gt;&#xA;&lt;p&gt;actors: user, job, schedule&lt;/p&gt;&#xA;&lt;p&gt;user can upload job&#xA;user can start job manually or by schedule&lt;/p&gt;&#xA;&lt;p&gt;job set up flow: upload job, start manually or establish schedule&#xA;view and notifications/alerts?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Key Value Store</title>
       <link>http://localhost:1313/system-design/projects/key-value-store/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/key-value-store/</guid>
-      <description>There is no perfect design. Each design archieves a specific balance regarding the tradeoffs of the read, write and memory considerations.</description>
+      <description>&lt;p&gt;There is no perfect design. Each design archieves a specific balance regarding the tradeoffs of the read, write and memory considerations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Live Commenting</title>
       <link>http://localhost:1313/system-design/projects/live-commenting/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/live-commenting/</guid>
       <description></description>
     </item>

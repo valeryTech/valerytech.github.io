@@ -1,14 +1,18 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.181669
+date: '2025-02-21T23:36:39.656160'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.181669
+lastmod: '2025-02-21T23:36:39.656160'
 summary: ''
 title: Tik Tok
 toc: true
 weight: 810
 ---
+
+
+
+
 
 Let's say you are not familiar with TikTok. What do you do next? Probably ask your interviewer, right? Even if you know the platform well, it’s wise to start by clarifying rather than assuming. The flow might go something like this:
 
@@ -26,24 +30,22 @@ If this is still not clear to you, or you think your interviewer is still withho
 
 It appears there will be primarily two objects of interest: accounts and videos. What are their relations?
 
-* Account -> Video
+- Account -> Video
 
-* Can post
+- Can post
+- Can like
+- Can comment
 
-* Can like
+- Account -> Account
 
-* Can comment
-
-* Account -> Account
-
-* Can follow
+- Can follow
 
 ###### 2. What information do these objects hold?
 
 Check with your interviewer, but we can have some basic information like:
 
-* Account: username, description
-* Video: description
+- Account: username, description
+- Video: description
 
 Are they mutable? Good question for your interviewer.
 
@@ -55,16 +57,16 @@ Are they mutable? Good question for your interviewer.
 
 Remember, we are looking for statements of the form “Given object X, return all related objects Y.” Check with your interviewer to learn what different access patterns are needed here. Example:
 
-* Given a user, get all videos they’ve posted.
-* Given a user, get their feed (videos posted by people they follow).
-* Given a video, get likes/comments.
+- Given a user, get all videos they’ve posted.
+- Given a user, get their feed (videos posted by people they follow).
+- Given a video, get likes/comments.
 
 Then add the writes:
 
-* Post a video.
-* Follow an account.
-* Like/comment on a video.
+- Post a video.
+- Follow an account.
+- Like/comment on a video.
+
 
 # Non-Functional Requirements
-
 Discuss with your interviewer, but you probably want to optimize for performance and availability because of reasons that are similar to our Twitter example.

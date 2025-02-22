@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>System Design and Software Architecture 1 on System Design</title>
+    <title> Index on System Design</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in System Design and Software Architecture 1 on System Design</description>
+    <description>Recent content in  Index on System Design</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 18:43:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 23:36:39 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> Themes</title>
       <link>http://localhost:1313/system-design/projects/_themes/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/_themes/</guid>
-      <description>Facebook system design interview questions&#xA;Design an online collaborative editing tool Design a distributed botnet How would you use a load balancer for memcache servers?</description>
+      <description>&lt;p&gt;&lt;strong&gt;Facebook system design interview questions&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design an online collaborative editing tool&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed botnet&lt;/li&gt;&#xA;&lt;li&gt;How would you use a load balancer for memcache servers?&lt;/li&gt;&#xA;&lt;li&gt;How would you architect the Facebook newsfeed?&lt;/li&gt;&#xA;&lt;li&gt;Implement a typeahead feature&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Google system design interview questions&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Api</title>
       <link>http://localhost:1313/system-design/topics/api/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/api/</guid>
-      <description>find out info about:&#xA;API Design principles, API evolution, its usage as interface of a system&#xA;what is API (fringe, interface, algebra etc) #sd #todo</description>
+      <description>&lt;p&gt;find out info about:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;API Design principles, API evolution, its usage as interface of a system&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;what is API (fringe, interface, algebra etc) #sd #todo&lt;/p&gt;</description>
     </item>
     <item>
       <title>Api Gateway</title>
       <link>http://localhost:1313/system-design/elements/api_gateway/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/api_gateway/</guid>
-      <description>important things: define core responsiblities and how to introduce it to design maybe add problem based lens&#xA;microsoft: In a microservices architecture, a client might interact with more than one front-end service.</description>
+      <description>&lt;p&gt;important things: define core responsiblities and how to introduce it to design&#xA;maybe add problem based lens&lt;/p&gt;&#xA;&lt;p&gt;microsoft:&#xA;In a microservices architecture, a client might interact with more than one front-end service. Given this fact, how does a client know what endpoints to call? What happens when new services are introduced, or existing services are refactored? How do services handle SSL termination, authentication, and other concerns? An &lt;em&gt;API gateway&lt;/em&gt; can help to address these challenges.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Caching</title>
       <link>http://localhost:1313/system-design/topics/caching/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/caching/</guid>
-      <description>ontology Cache definitions:&#xA;Caching is a commonly used performance optimization (&amp;lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.</description>
+      <description>&lt;h1 id=&#34;ontology&#34;&gt;ontology&lt;/h1&gt;&#xA;&lt;p&gt;Cache definitions:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Caching is a commonly used &lt;em&gt;performance optimization&lt;/em&gt; (&amp;lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chat Room</title>
       <link>http://localhost:1313/system-design/projects/chat-room/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/chat-room/</guid>
-      <description>I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms.</description>
+      <description>&lt;p&gt;I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms. Each chat room can have several 1000s of users at any time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Code Deployment</title>
       <link>http://localhost:1313/system-design/projects/code_deployment/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/code_deployment/</guid>
-      <description>Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</description>
+      <description>&lt;p&gt;Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Communication</title>
       <link>http://localhost:1313/system-design/topics/communication/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/communication/</guid>
-      <description>Getting communication between microservices right is problematic for many due in great part, I feel, to the fact that people gravitate toward a chosen technological approach without first considering the different types of communication they might want.</description>
+      <description>&lt;p&gt;Getting communication between microservices right is problematic for many due in great part, I feel, to the fact that people gravitate toward a chosen technological approach without first considering the different types of communication they might want. In this chapter, I’ll try and tease apart the different styles of communication to help you understand the pros and cons of each, as well as which approach will best fit your problem space.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Consistency</title>
       <link>http://localhost:1313/system-design/nfr/consistency/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/consistency/</guid>
-      <description>https://www.alexdebrie.com/posts/database-consistency/&#xA;consistency definition, models, etc&#xA;consistency patterns&#xA;sources: understanding distributes systems DDIA&#xA;https://en.wikipedia.org/wiki/Consistency_model https://en.wikipedia.org/wiki/Sequential_consistency&#xA;https://systemdesign.one/consistency-patterns/ https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems</description>
+      <description>&lt;p&gt;https://www.alexdebrie.com/posts/database-consistency/&lt;/p&gt;&#xA;&lt;h1 id=&#34;consistency&#34;&gt;consistency&lt;/h1&gt;&#xA;&lt;p&gt;definition, models, etc&lt;/p&gt;&#xA;&lt;p&gt;consistency patterns&lt;/p&gt;&#xA;&lt;p&gt;sources:&#xA;understanding distributes systems&#xA;DDIA&lt;/p&gt;&#xA;&lt;p&gt;https://en.wikipedia.org/wiki/Consistency_model&#xA;https://en.wikipedia.org/wiki/Sequential_consistency&lt;/p&gt;&#xA;&lt;p&gt;https://systemdesign.one/consistency-patterns/&#xA;https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems&lt;/p&gt;</description>
     </item>
     <item>
       <title>Db 1</title>
       <link>http://localhost:1313/system-design/topics/db-1/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/db-1/</guid>
-      <description>data access pattern&#xA;Types: SQL, Key-Value Stores, Blob Stores (S3, GCS), Timelines DB, Graph(Neo4j), Spatial (QuadTree)&#xA;sql Pros: ACID transactions, imposing very strict structure =&amp;gt; querying capabilities, DB indexing, Data Normalization.</description>
+      <description>&lt;p&gt;data access pattern&lt;/p&gt;&#xA;&lt;p&gt;Types: SQL, Key-Value Stores, Blob Stores (S3, GCS), Timelines DB, Graph(Neo4j), Spatial (QuadTree)&lt;/p&gt;&#xA;&lt;h1 id=&#34;sql&#34;&gt;sql&lt;/h1&gt;&#xA;&lt;p&gt;Pros: ACID transactions, imposing very strict structure =&amp;gt; querying capabilities, DB indexing, Data Normalization.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Distributed Systems</title>
       <link>http://localhost:1313/system-design/topics/distributed-systems/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/topics/distributed-systems/</guid>
-      <description>distributed: book &amp;ldquo;thinking in distributed systems&amp;rdquo; book &amp;ldquo;understanding distributed systems&amp;rdquo;&#xA;Martin Kleppman course videos: https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB + pdf lecture notes&#xA;DDiA by Kleppman</description>
+      <description>&lt;p&gt;distributed:&#xA;book &amp;ldquo;thinking in distributed systems&amp;rdquo;&#xA;book &amp;ldquo;understanding distributed systems&amp;rdquo;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Martin Kleppman course videos: https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB + pdf lecture notes&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

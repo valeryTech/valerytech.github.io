@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/frameworks/framework_hi/">
 
@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-21T18:43:34+00:00">
-    <meta property="article:modified_time" content="2025-02-21T18:43:34+00:00">
+    <meta property="article:published_time" content="2025-02-21T23:36:39+00:00">
+    <meta property="article:modified_time" content="2025-02-21T23:36:39+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -74,7 +74,7 @@
      {
        "@type": "ListItem",
        "item": "http://localhost:1313/",
-       "name": "System Design and Software Architecture 1",
+       "name": "Index",
        "position": 1
      },
      {
@@ -101,8 +101,6 @@
 
 
 
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
       <script>
         var doNotTrack = false;
@@ -117,8 +115,8 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-    
-  
+
+<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -791,8 +789,7 @@
 <p>Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you&rsquo;ll stay focused on the bits that are most important to your interviewer. An added benefit is that you&rsquo;ll have a clear path to fall back if you&rsquo;re overwhelmed. Many candidates are (understandably!) nervous in their interview. It&rsquo;s easy to get lost if you aren&rsquo;t building up a solution in a linear way.</p>
 <blockquote>
 <p>[!info]
-While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &ldquo;communication&rdquo;), in practice we&rsquo;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.</p>
-</blockquote>
+While a firm structure to your approach is important and your interviewer is not trained specifically to assess you on your delivery (often this gets bucketed into &ldquo;communication&rdquo;), in practice we&rsquo;ve seen many candidates that perform significantly better by following a structure which both keeps them from getting stuck and ensures they deliver a working system.</p></blockquote>
 <h2 id="requirements-5-minutes">Requirements (~5 minutes)<a href="#requirements-5-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>The goal of the requirements section is to get a clear understanding of the system that you are being asked to design. To do this, we suggest you break your requirements into two sections.</p>
 <h3 id="1-functional-requirements">1) Functional Requirements<a href="#1-functional-requirements" class="anchor" aria-hidden="true">#</a> </h3>
@@ -809,10 +806,11 @@ While a firm structure to your approach is important and your interviewer is not
 <li>Clients should be able to set expirations</li>
 <li>Clients should be able to read items</li>
 </ul>
-<blockquote>
-<p>[!warning] Keep your requirements targeted!
-The main objective in the remaining part of the interview is to develop a system that meets the requirements you&rsquo;ve identified &ndash; so it&rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&rsquo;s your job to identify and <em>prioritize the top 3</em>. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.</p>
-</blockquote>
+<div class="callout callout-warning">
+  <strong>Keep your requirements targeted! </strong>
+  <div>The main objective in the remaining part of the interview is to develop a system that meets the requirements you&rsquo;ve identified &ndash; so it&rsquo;s crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it&rsquo;s your job to identify and <em>prioritize the top 3</em>. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.</div>
+</div>
+
 <h3 id="2-non-functional-requirements">2) Non-functional Requirements<a href="#2-non-functional-requirements" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Non-functional requirements are statements about the system qualities that are <strong>important to your users</strong>. These can be phrased as &ldquo;The system should be able to&hellip;&rdquo; or &ldquo;The system should be&hellip;&rdquo; statements.</p>
 <p>For example, if you were designing a system like Twitter, you might have the following non-functional requirements:</p>
@@ -821,11 +819,13 @@ The main objective in the remaining part of the interview is to develop a system
 <li>The system should be able to scale to support 100M+ DAUs</li>
 <li>The system should be low latency, rendering feeds in under 200ms</li>
 </ul>
-<blockquote>
-<p>[!note] Quantification
-It&rsquo;s important that non-functional requirements are put in the context of the system and, where possible, are quantified. For example, &ldquo;the system should be low latency&rdquo; is obvious and not very meaningful—nearly all systems should be low latency.</p>
+<div class="callout callout-note">
+  <strong>Quantification </strong>
+  <div><p>It&rsquo;s important that non-functional requirements are put in the context of the system and, where possible, are quantified. For example, &ldquo;the system should be low latency&rdquo; is obvious and not very meaningful—nearly all systems should be low latency.</p>
 <p>&ldquo;The system should have low latency search, &lt; 500ms,&rdquo; is much more useful as it identifies the part of the system that most needs to be low latency and provides a target.</p>
-</blockquote>
+</div>
+</div>
+
 <p>Coming up with non-functional requirements can be challenging, especially if you&rsquo;re not familiar with the domain. Here is a checklist of things to consider that might help you identify the most important non-functional requirements for your system. You&rsquo;ll want to identify the top 3-5 that are most relevant to your system.</p>
 <ol>
 <li><strong>CAP Theorem</strong>: Should your system prioritize consistency or availability? Note, partition tolerance is a given in distributed systems.</li>
@@ -841,8 +841,7 @@ It&rsquo;s important that non-functional requirements are put in the context of 
 <p>Many guides you&rsquo;ve read will suggest doing back-of-the-envelope calculations at this stage. We believe this is <em>often</em> unnecessary. Instead, perform calculations only if they will directly influence your design. In most scenarios, you&rsquo;re dealing with a large, distributed system – and it&rsquo;s reasonable to assume as much. Many candidates will calculate storage, DAU, and QPS, only to conclude, &ldquo;ok, so it&rsquo;s a lot. Got it.&rdquo; As interviewers, we gain nothing from this except that you can perform basic arithmetic.</p>
 <p>Our suggestion is to explain to the interviewer that you would like to skip on estimations upfront and that you will do math while designing when/if necessary. When would it be necessary? Imagine you are designing a TopK system for trending topics in FB posts. You would want to estimate the number of topics you would expect to see, as this will influence whether you can use a single instance of a data structure like a min-heap or if you need to shard it across multiple instances, which will have a big impact on your design.</p>
 <blockquote>
-<p>Regardless of how you end up using it in the interview, <a href="https://www.hellointerview.com/blog/mastering-estimation">learning to estimate relevant quantities quickly</a> will help you <em>quick reason through design trade-offs in your design</em>. Don&rsquo;t worry if you&rsquo;re not good at mental arithmetic under pressure, most people aren&rsquo;t.</p>
-</blockquote>
+<p>Regardless of how you end up using it in the interview, <a href="https://www.hellointerview.com/blog/mastering-estimation">learning to estimate relevant quantities quickly</a> will help you <em>quick reason through design trade-offs in your design</em>. Don&rsquo;t worry if you&rsquo;re not good at mental arithmetic under pressure, most people aren&rsquo;t.</p></blockquote>
 <h2 id="core-entities-2-minutes">Core Entities (~2 minutes)<a href="#core-entities-2-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Next you should take a moment to identify and list the core entities of you system. This helps you to define terms, understand the data central to your design, and gives you a foundation to build on. These are the core entities that your API will exchange and that your system will persist in a Data Model. In the actual interview, this is as simple as jotting down a bulleted list and explaining this is your first draft to the interviewer.</p>
 <p>Why not list the entire data model at this point? Because you don&rsquo;t know what you don&rsquo;t know. As you design your system, you&rsquo;ll discover new entities and relationships that you didn&rsquo;t anticipate. By starting with a small list, you can quickly iterate and add to it as you go. Once you get into the high level design and have a clearer sense of exactly what state needs to update upon each request you can start to build out the list of relevant columns/fields for each entity.</p>
@@ -857,8 +856,7 @@ It&rsquo;s important that non-functional requirements are put in the context of 
 <ul>
 <li>Who are the actors in the system? Are they overlapping?</li>
 <li>What are the nouns or resources necessary to satisfy the functional requirements?</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>Aim to choose good names for your entities. While most problems are small enough that you could probably sub in foo and bar for any entity in your system, some interviewers use this as an opportunity to see whether you&rsquo;re any good at one of the <a href="https://www.martinfowler.com/bliki/TwoHardThings.html">hardest problems in computer science</a>.</p>
 <h2 id="api-or-system-interface-5-minutes">API or System Interface (~5 minutes)<a href="#api-or-system-interface-5-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Before you get into the high-level design, you&rsquo;ll want to define the contract between your system and its users. Oftentimes, especially for full product style interviews, this maps directly to the functional requirements you&rsquo;ve already identified (but not always!). You will use this contract to guide your high-level design and to ensure that you&rsquo;re meeting the requirements you&rsquo;ve identified.</p>
@@ -871,8 +869,7 @@ It&rsquo;s important that non-functional requirements are put in the context of 
 <p><code>POST /v1/tweet body: {   &quot;text&quot;: string } GET /v1/tweet/:tweetId -&gt; Tweet POST /v1/follow/:userId GET /v1/feed -&gt; Tweet[]</code></p>
 <blockquote>
 <p>[!danger]
-Notice how there is no userId in the POST /v1/tweet endpoint? This is because we will get the id of the user initiating the request from the authentication token in the request header. Putting sensitive information like user ids in the request body is a security risk and a mistake that many candidates make. Don&rsquo;t be one of them!</p>
-</blockquote>
+Notice how there is no userId in the POST /v1/tweet endpoint? This is because we will get the id of the user initiating the request from the authentication token in the request header. Putting sensitive information like user ids in the request body is a security risk and a mistake that many candidates make. Don&rsquo;t be one of them!</p></blockquote>
 <h2 id="optional-data-flow-5-minutes">[Optional] Data Flow (~5 minutes)<a href="#optional-data-flow-5-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>For some backend systems, especially data-processing systems, it can be helpful to describe the high level sequence of actions or processes that the system performs on the inputs to produce the desired outputs. If your system doesn&rsquo;t involve a long sequence of actions, skip this!</p>
 <p>We usually define the data flow via a simple list. You&rsquo;ll use this flow to inform your high-level design in the next section.</p>
@@ -887,28 +884,30 @@ Notice how there is no userId in the POST /v1/tweet endpoint? This is because we
 <h2 id="high-level-design-10-15-minutes">High Level Design (~10-15 minutes)<a href="#high-level-design-10-15-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Now that you have a clear understanding of the requirements, entities, and API of your system, you can start to design the high-level architecture. This consists of drawing boxes and arrows to represent the different components of your system and how they interact. Components are basic building blocks like servers, databases, caches, etc. This can be done either in person on a whiteboard or virtually using whiteboarding software like <a href="https://excalidraw.com/">Excalidraw</a>. The <a href="https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery#key-technologies">Key Technologies</a> section below will give you a good sense of the most common components you&rsquo;ll need to know.</p>
 <p>Don&rsquo;t over think this! Your primary goal is to design an architecture that satisfies the API you&rsquo;ve designed and, thus, the requirements you&rsquo;ve identified. In most cases, you can even go one-by-one through your API endpoints and build up your design sequentially to satisfy each one.</p>
-<blockquote>
-<p>[!danger] Stay focused!
-It&rsquo;s incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It&rsquo;s natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.</p>
-</blockquote>
+<div class="callout callout-danger">
+  <strong>Stay focused! </strong>
+  <div>It&rsquo;s incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It&rsquo;s natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.</div>
+</div>
+
 <p>As you&rsquo;re drawing your design, you should be talking through your thought process with your interviewer. Be explicit about how data flows through the system and what state (either in databases, caches, message queues, etc.) changes with each request, starting from API requests and ending with the response. When your request reaches your database or persistence layer, it&rsquo;s a great time to start documenting the relevant columns/fields for each entity. You can do this directly next to your database visually. This helps keep it close to the relevant components and makes it easy to evolve as you iterate on your design. No need to worry too much about types here, your interviewer can infer and they&rsquo;ll only slow you down.</p>
-<blockquote>
-<p>[!danger]  Focus on relevant
-Don&rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.</p>
-</blockquote>
+<div class="callout callout-danger">
+  <strong> Focus on relevant</strong>
+  <div>Don&rsquo;t waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don&rsquo;t need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.</div>
+</div>
+
 <p>For our simple Twitter example, here is how you might build up your design, one endpoint at a time:</p>
 <p><img src="https://d248djf5mc6iku.cloudfront.net/excalidraw/446dc33f64ebc27e977d6302b6532c1e"/></p>
 <h2 id="deep-dives-10-minutes">Deep Dives (~10 minutes)<a href="#deep-dives-10-minutes" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Astute readers probably noticed that our simple, high-level design of Twitter is going to be woefully inefficient when it comes to fetching user&rsquo;s feeds. No problem! That&rsquo;s exactly the sort of thing you&rsquo;ll iterate on in the deep dives section. Now that you have a high-level design in place you&rsquo;re going to use the remaining 10 or so minutes of the interview to harden your design by (a) ensuring it meets all of your non-functional requirements (b) addressing edge cases (c) identifying and adressing issues and bottlenecks and (d) improving the design based on probes from your interviewer.</p>
 <blockquote>
 <p>[!info]
-The degree in which you&rsquo;re proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.</p>
-</blockquote>
+The degree in which you&rsquo;re proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.</p></blockquote>
 <p>So for example, one of our non-functional requirements for Twitter was that our system needs to scale to &gt;100M DAU. We could then lead a discussion oriented around horizontal scaling, the introduction of caches, and database sharding &ndash; updating our design as we go. Another was that feeds need to be fetched with low latency. In the case of Twitter, this is actually the most interesting problem. We&rsquo;d lead a discussion about fanout-on-read vs fanout-on-write and the use of caches.</p>
-<blockquote>
-<p>[!danger]  Mistake
-A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it&rsquo;s a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you&rsquo;re going to miss it if you&rsquo;re too busy talking. Plus, you&rsquo;ll hurt your evaluation on communication and collaboration.</p>
-</blockquote>
+<div class="callout callout-danger">
+  <strong> Mistake</strong>
+  <div>A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it&rsquo;s a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you&rsquo;re going to miss it if you&rsquo;re too busy talking. Plus, you&rsquo;ll hurt your evaluation on communication and collaboration.</div>
+</div>
+
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -979,8 +978,8 @@ A common mistake candidates make is that they try to talk over their interviewer
     
 
 <script async
-  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
-  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+  src="/js/app.8f1a3f7e136a1cb292637dee201e31e084ff02b6c24da0dc5a45e020a73afb88.js"
+  integrity="sha256-jxo/fhNqHLKSY33uIB4x4IT/ArbCTaDcWkXgIKc6&#43;4g=">
 </script>
 
 
@@ -988,12 +987,12 @@ A common mistake candidates make is that they try to talk over their interviewer
 
 
 <script async
-  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
-  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
 </script>
 <script async
-  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
-  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
 </script>
 
     

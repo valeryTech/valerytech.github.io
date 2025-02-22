@@ -12,7 +12,7 @@
 </script>
 
 
-<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+<link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
 
 <noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/topics/caching/">
 
@@ -54,8 +54,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="system-design">
-    <meta property="article:published_time" content="2025-02-21T18:43:34+00:00">
-    <meta property="article:modified_time" content="2025-02-21T18:43:34+00:00">
+    <meta property="article:published_time" content="2025-02-21T23:36:39+00:00">
+    <meta property="article:modified_time" content="2025-02-21T23:36:39+00:00">
     <meta property="og:image" content="http://localhost:1313/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -74,7 +74,7 @@
      {
        "@type": "ListItem",
        "item": "http://localhost:1313/",
-       "name": "System Design and Software Architecture 1",
+       "name": "Index",
        "position": 1
      },
      {
@@ -101,8 +101,6 @@
 
 
 
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
       <script>
         var doNotTrack = false;
@@ -117,8 +115,8 @@
           gtag('config', 'G-XF1V06CDS3');
         }
       </script>
-    
-  
+
+<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -785,16 +783,19 @@
 <p>In computing, a cache is a component that stores data so that future requests for that data can be served faster; the data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.</p>
 <p>Cache can be viewed as a high-speed storage layer that sits between the application and the original source of the data, such as a database, a file system, or a remote web service.</p>
 <p>Caches can store the results of simple lookups, as in this example, but really they <em>can store any piece of data</em>, such as the result of a complex calculation. We can cache to help improve the performance of our system as part of helping reduce latency, to scale our application, and in some cases even to improve the robustness of our system.</p>
-<blockquote>
-<p>[!tip] Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
-</blockquote>
-<blockquote>
-<p>[!tip] Generally, caching is used only in cases where the external <em>data doesn&rsquo;t change often</em> or you can replicate all the data on your systems. Also if you don&rsquo;t care about data consistency then cache is really useful.</p>
-</blockquote>
+<div class="callout callout-tip">
+  <strong>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</strong>
+  <div></div>
+</div>
+
+<div class="callout callout-tip">
+  <strong>Generally, caching is used only in cases where the external *data doesn&#39;t change often* or you can replicate all the data on your systems. Also if you don&#39;t care about data consistency then cache is really useful. </strong>
+  <div></div>
+</div>
+
 <blockquote>
 <p>[!Rule of thumb]
-Generally, caching is used for <em>read-heavy systems</em>. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.</p>
-</blockquote>
+Generally, caching is used for <em>read-heavy systems</em>. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.</p></blockquote>
 <p>another rule</p>
 <p>The 80/20 rule: You want to store 80% of read requests in 20% of storage (or memory). Generally, these are the most popular requests.</p>
 <p>For example, if there is a tweet from a very popular person on twitter you would cache it everywhere (on a device, on a CDN, on the application) so that whenever that tweet is finished you can fetch it very quickly and serve it up to your users.</p>
@@ -854,9 +855,11 @@ The main benefit of this mechanism is that it reduces the potential window where
 <p>Coming back to our example of TTL-based invalidation, I explained earlier that if we request a fresh copy of the data that has a five-minute TTL, and a second later the data at the origin changes, then our cache will be operating on out-of-date data for the remaining four minutes and 59 seconds. If this is unacceptable, one solution would be to reduce the TTL, thereby reducing the duration in which we could operate on stale data. So perhaps we reduce the TTL to one minute. This means that our window of staleness is reduced to one-fifth of what it was, but we&rsquo;ve made five times as many calls to the origin, so we have to consider the associated latency and load impact.</p>
 <p>Balancing these forces is going to come down to understanding the requirements of the end user and of the wider system. Users will obviously always want to operate on the freshest data, but not if that means the system falls down under load. Likewise, <em>sometimes the safest thing to do is to turn off features if a cache fails</em>, in order to avoid an overload on the origin causing more serious issues. When it comes to finetuning what, where, and how to cache, you&rsquo;ll often find yourself having to balance along a number of axes. This is just another reason to try to keep things as simple as possible—the fewer the caches, the easier it can be to reason about the system. #principle #architecture/tip</p>
 <h1 id="the-golden-rule-of-caching">The Golden Rule of Caching</h1>
-<blockquote>
-<p>[!tip] Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
-</blockquote>
+<div class="callout callout-tip">
+  <strong>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</strong>
+  <div></div>
+</div>
+
 <p>Be careful about caching in too many places! The more caches between you and the source of fresh data, the more stale the data can be, and the harder it can be to determine the freshness of the data that a client eventually sees. It can also be more difficult to reason about where data needs to be invalidated. The trade-off around caching—balancing freshness of data against optimization of your system for load or latency—is a delicate one, and if you cannot easily reason about how fresh (or not) data might be, this becomes difficult.</p>
 <p>Coming back to the famous quote from Knuth earlier, premature optimization can cause issues. Caching adds complexity, and we want to add as little complexity as possible. The ideal number of places to cache is zero. Anything else should be an optimization you have to make—but be aware of the complexity it can bring.</p>
 <h1 id="patterns">patterns</h1>
@@ -869,8 +872,7 @@ The main benefit of this mechanism is that it reduces the potential window where
 <p>In these patterns, the application directly writes the data to the cache. And then the cache synchronously (or asynchronously) writes the data to the database. When we write it synchronously it’s called “write-through,” and when we write it asynchronously it’s called “write-back” (or “write-behind”). In the asynchronous example, we put the data in a queue, which writes the data back to the database and improves the latency of writes on your application.</p>
 <blockquote>
 <p>[!fix]
-If you’re experiencing slow writes, a quick fix is async writes to the database.</p>
-</blockquote>
+If you’re experiencing slow writes, a quick fix is async writes to the database.</p></blockquote>
 <p>In both of these patterns, there is an obvious disadvantage. Here we are writing all the data to the cache, which might not even be read. Hence, we are overloading the cache (or cache memory) with expensive calls that might not even be required. For example, there are some accounts on Twitter that are not followed by many people. If we put every tweet in the cache from these unpopular accounts, it will take up expensive memory. Also, if the database goes down before the data is written to the database, this causes inconsistency.</p>
 <p>https://redisson.org/glossary/write-through-and-write-behind-caching.html
 https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/</p>
@@ -959,8 +961,8 @@ https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da
     
 
 <script async
-  src="/js/app.342099c10d1a06642e2779fba06362135a7d6a6cad5b489601040270bae5f10e.js"
-  integrity="sha256-NCCZwQ0aBmQuJ3n7oGNiE1p9amytW0iWAQQCcLrl8Q4=">
+  src="/js/app.8f1a3f7e136a1cb292637dee201e31e084ff02b6c24da0dc5a45e020a73afb88.js"
+  integrity="sha256-jxo/fhNqHLKSY33uIB4x4IT/ArbCTaDcWkXgIKc6&#43;4g=">
 </script>
 
 
@@ -968,12 +970,12 @@ https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da
 
 
 <script async
-  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
-  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
 </script>
 <script async
-  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
-  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
 </script>
 
     

@@ -7,21 +7,21 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 18:43:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 23:36:39 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interview</title>
       <link>http://localhost:1313/system-design/interview/interview/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/interview/interview/</guid>
-      <description>Checklist paper with checklist&#xA;(tool) Ask your recruiter what software you&amp;rsquo;ll be using for your interview and practice with it ahead of time.</description>
+      <description>&lt;h1 id=&#34;checklist&#34;&gt;Checklist&lt;/h1&gt;&#xA;&lt;p&gt;paper with checklist&lt;/p&gt;&#xA;&lt;p&gt;(tool)&#xA;Ask your recruiter what software you&amp;rsquo;ll be using for your interview and practice with it ahead of time. You don&amp;rsquo;t want to be fumbling with the software during your interview.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interview Phrases</title>
       <link>http://localhost:1313/system-design/interview/interview_phrases/</link>
-      <pubDate>Fri, 21 Feb 2025 18:43:34 +0000</pubDate>
+      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
       <guid>http://localhost:1313/system-design/interview/interview_phrases/</guid>
-      <description>How to push back against your interviewer in a helpful way Example of a candidate pushing back:&#xA;Interviewer: &amp;ldquo;I wouldn&amp;rsquo;t use a cache here in my opinion&amp;rdquo; Interviewee: &amp;ldquo;Sure we can take out the cache, though the reason I think a cache might be useful here is [insert technical reasoning here].</description>
+      <description>&lt;h3 id=&#34;how-to-push-back-against-your-interviewer-in-a-helpful-way&#34;&gt;How to push back against your interviewer in a helpful way&lt;/h3&gt;&#xA;&lt;p&gt;Example of a candidate pushing back:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Interviewer:&lt;/strong&gt; &amp;ldquo;I wouldn&amp;rsquo;t use a cache here in my opinion&amp;rdquo;&#xA;&lt;strong&gt;Interviewee:&lt;/strong&gt; &amp;ldquo;Sure we can take out the cache, though the reason I think a cache might be useful here is [insert technical reasoning here]. Do you think there might be a better way we can approach this?&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

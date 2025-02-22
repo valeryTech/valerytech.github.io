@@ -1,28 +1,30 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.180633
+date: '2025-02-21T23:36:39.655043'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.180633
+lastmod: '2025-02-21T23:36:39.655043'
 summary: ''
 title: Sd Reviews
 toc: true
 weight: 810
 ---
 
+
+
 # tiny url
 
-offline key generation.
-We can have a standalone Key Generation Service (KGS) that generates random six letter strings *beforehand* and *stores* them in a database (let’s call it key-DB). Whenever we want to shorten a URL, we will just take one of the already-generated keys and use it.
-This approach will make things quite simple and fast. Not only are we not encoding the URL, but we won’t have to worry about duplications or collisions. \[trade-offs\]
-Concurrency problems.
+offline key generation. 
+We can have a standalone Key Generation Service (KGS) that generates random six letter strings *beforehand* and *stores* them in a database (let’s call it key-DB). Whenever we want to shorten a URL, we will just take one of the already-generated keys and use it. 
+This approach will make things quite simple and fast. Not only are we not encoding the URL, but we won’t have to worry about duplications or collisions. [trade-offs]
+Concurrency problems. 
 Can concurrency cause problems? As soon as a key is used, it should be marked
 in the database to ensure it doesn’t get used again. If there are multiple servers
 reading keys concurrently, we might get a scenario where two or more servers try to
 read the same key from the database. How can we solve this concurrency problem?
 Servers can use KGS to read/mark keys in the database. KGS can use two tables to
 store keys: one for keys that are not used yet, and one for all the used keys. As soon
-as KGS gives keys to one of the servers, it can move them to the used keys table.
+as KGS gives keys to one of the servers, it can move them to the used keys table. 
 
 KGS can always keep some keys in memory so that it can quickly provide them whenever a server needs them.
 
@@ -117,18 +119,17 @@ database.
 How would we efficiently send/receive messages? To send messages, a user
 needs to connect to the server and post messages for the other users. To get a
 message from the server, the user has two options:
-
 1. Pull model: Users can periodically ask the server if there are any new
-   messages for them.
-1. Push model: Users can keep a connection open with the server and can
-   depend upon the server to notify them whenever there are new messages.
-   If we go with our first approach, then the server needs to keep track of messages that
-   are still waiting to be delivered, and as soon as the receiving user connects to the
-   server to ask for any new message, the server can return all the pending messages.
-   To minimize latency for the user, they have to check the server quite frequently, and
-   most of the time they will be getting an empty response if there are no pending
-   message. This will waste a lot of resources and does not look like an efficient
-   solution.
+messages for them.
+2. Push model: Users can keep a connection open with the server and can
+depend upon the server to notify them whenever there are new messages.
+If we go with our first approach, then the server needs to keep track of messages that
+are still waiting to be delivered, and as soon as the receiving user connects to the
+server to ask for any new message, the server can return all the pending messages.
+To minimize latency for the user, they have to check the server quite frequently, and
+most of the time they will be getting an empty response if there are no pending
+message. This will waste a lot of resources and does not look like an efficient
+solution.
 
 If we go with our second approach, where all the active users keep a connection open
 with the server, then as soon as the server receives a message it can immediately
@@ -136,10 +137,10 @@ pass the message to the intended user. This way, the server does not need to kee
 track of the pending messages, and we will have minimum latency, as the messages
 are delivered instantly on the opened connection.
 
-**How will clients maintain an open connection with the server?**
+**How will clients maintain an open connection with the server?** 
 We can use HTTP Long Polling or WebSockets. In long polling, clients can request information from the server with the expectation that the server may not respond immediately. If the server has no new data for the client when the poll is received, instead of sending an empty response, the server holds the request open and waits for responseinformation to become available. Once it does have new information, the server immediately sends the response to the client, completing the open request. Upon receipt of the server response, the client can immediately issue another server request for future updates. This gives a lot of improvements in latencies, throughputs, and performance. The long polling request can timeout or can receive a disconnect from the server, in that case, the client has to open a new request.
 
-**How can the server keep track of all the opened connection**\* to redirect messages to the users efficiently?
+**How can the server keep track of all the opened connection*** to redirect messages to the users efficiently? 
 
 The server can maintain a hash table, where
 “key” would be the UserID and “value” would be the connection object. So whenever
@@ -160,19 +161,18 @@ the server for all active users, we can easily figure out the user’s current s
 this. With 500M active users at any time, if we have to broadcast each status change
 to all the relevant active users, it will consume a lot of resources. We can do the
 following optimization around this:
-
 1. Whenever a client starts the app, it can pull the current status of all users in
-   their friends’ list.
-1. Whenever a user sends a message to another user that has gone offline, we can
-   send a failure to the sender and update the status on the client.
-1. Whenever a user comes online, the server can always broadcast that status
-   with a delay of a few seconds to see if the user does not go offline immediately.
-1. Client’s can pull the status from the server about those users that are being
-   shown on the user’s viewport. This should not be a frequent operation, as the
-   server is broadcasting the online status of users and we can live with the stale
-   offline status of users for a while.
-1. Whenever the client starts a new chat with another user, we can pull the status
-   at that time.
+their friends’ list.
+2. Whenever a user sends a message to another user that has gone offline, we can
+send a failure to the sender and update the status on the client.
+3. Whenever a user comes online, the server can always broadcast that status
+with a delay of a few seconds to see if the user does not go offline immediately.
+4. Client’s can pull the status from the server about those users that are being
+shown on the user’s viewport. This should not be a frequent operation, as the
+server is broadcasting the online status of users and we can live with the stale
+offline status of users for a while.
+5. Whenever the client starts a new chat with another user, we can pull the status
+at that time.
 
 # twitter
 
@@ -183,25 +183,24 @@ a database server where we will store all of the user’s tweets, favorites, fol
 While querying for tweets/follows/favorites of a user, we can ask our hash function
 where can we find the data of a user and then read it from there. This approach has a
 couple of *issues*:
-
 1. What if a user becomes hot? There could be a lot of queries on the server
-   holding the user. This high load will affect the performance of our service.
-1. *Over time* some users can end up storing a lot of tweets or having a lot of
-   follows compared to others. *Maintaining a uniform distribution* of growing
-   user data is quite difficult.
-   To recover from these situations either we have to repartition/redistribute our data
-   or use consistent hashing.
+holding the user. This high load will affect the performance of our service.
+2. *Over time* some users can end up storing a lot of tweets or having a lot of
+follows compared to others. *Maintaining a uniform distribution* of growing
+user data is quite difficult.
+To recover from these situations either we have to repartition/redistribute our data
+or use consistent hashing.
 
 We can further improve our performance by introducing cache to store hot tweets in
 front of the database servers.
 
-caching
+caching 
 
 # youtube
 
 Consistency can take a hit (in the interest of availability); if a user doesn’t see a video for a while, it should be fine.
 
-**How should we efficiently manage read traffic?**
+**How should we efficiently manage read traffic?** 
 We should segregate our read
 traffic from write traffic. Since we will have multiple copies of each video, we can
 distribute our read traffic on different servers. For metadata, we can have master-
@@ -225,14 +224,13 @@ we will have to query all servers and each server will return a set of videos. A
 centralized server will then aggregate and rank these results before returning them
 to the user.
 This approach has a couple of issues:
-
 1. What if a user becomes popular? There could be a lot of queries on the server
-   holding that user; this could create a performance bottleneck. This will also
-   affect the overall performance of our service.
-1. Over time, some users can end up storing a lot of videos compared to others.
-   Maintaining a uniform distribution of growing user data is quite tricky.
-   To recover from these situations either we have to repartition/redistribute our data
-   or used consistent hashing to balance the load between servers.
+holding that user; this could create a performance bottleneck. This will also
+affect the overall performance of our service.
+2. Over time, some users can end up storing a lot of videos compared to others.
+Maintaining a uniform distribution of growing user data is quite tricky.
+To recover from these situations either we have to repartition/redistribute our data
+or used consistent hashing to balance the load between servers.
 
 # rate-limiter
 
@@ -254,12 +252,15 @@ Based on clients’ usage patterns, we can adjust how many cache servers we need
 
 # things
 
+
+
 sd language: trade-off, compromise; estimation, estimate, assumption; guess, valuate
 api gw
-it it not obvious if caching is a win.
-We estimated earlier that the dataset for the business table with 200M businesses is in the terabyte range. The dataset size is on the borderline where sharding might have make sense. For this table the update rate is low, and it's read-heavy we should be able to get away without sharding if we put cache in front of it. This cache would take most of the read load of the frequency accessed businesses.
+it it not obvious if caching is a win. 
+We estimated earlier that the dataset for the business table with 200M businesses is in the terabyte range. The dataset size is on the borderline where sharding might have make sense. For this table the update rate is low, and it's read-heavy we should be able to get away without sharding if we put cache in front of it. This cache would take most of the read load of the frequency accessed businesses. 
 
 If read performance is the bottlenech we can add read replicas to help.
+
 
 # payments
 
@@ -277,9 +278,9 @@ https://www.cockroachlabs.com/blog/cockroachdb-payments-system-architecture/
 
 why four-nines? not five nines? alternatives -> high availability in common as a AC (nfr)
 how to reason about read/write heavy property?
-in terms of latency: "very low latency"?
+in terms of latency: "very low latency"? 
 
-batch vs stream. cdc.
+batch vs stream. cdc. 
 
 tbd: the ac gived a hint: 20,000 rps. They gived this hint intentionally. Why? What do they want?
 there are 4 stages in meta: scoping, designing for scale, communication
@@ -297,12 +298,12 @@ there are 4 stages in meta: scoping, designing for scale, communication
 
 ## Static Locations
 
-my notes:
-This service's fundamental operation is searching. User should be able to search all nearby friends within a specified radius for any particular location.
+my notes: 
+This service's fundamental operation is searching. User should be able to search all nearby friends within a specified radius for any particular location. 
 phrase: Given a user's location, return top X points of interest near the user
 
 ! static locations
-pipeline: design iteration (Naive Approach) ->
+pipeline: design iteration (Naive Approach) -> 
 
 *first iteration*
 lat, lon
@@ -325,6 +326,8 @@ https://www.youtube.com/watch?v=UCaVJsyq8ac
 
 ## dynamic locations
 
+
+
 ---
 
 # Other
@@ -333,14 +336,17 @@ problem: global counter.
 https://www.youtube.com/watch?v=V1HlNh4IhUo
 https://systemdesign.one/distributed-counter-system-design/
 
-ac analyzing signals:
 
-* clarified strategy of burger assignment -> E6 kind of signal
-* reasoning about single region vs cross region is good
-* mentioned bloom filter at an early stage -> low-level detail -> he want to use Bloom filter instead of designing a proper solution
-* you should involve interviewer more. don't do decision on behalf of customers. So you can identify trade-offs, then describe pros and cons and then ask a mention of ac. "what do you think it's important for our problem?"
-* tc slightly release on of the requirements: counter could be less than 6M -> good signal for E6 (why?)
-* tc *didn't handle* the critical part of the system which is the race conditions and how the things would be handled
+ac analyzing signals:
+- clarified strategy of burger assignment -> E6 kind of signal
+- reasoning about single region vs cross region is good
+- mentioned bloom filter at an early stage -> low-level detail -> he want to use Bloom filter instead of designing a proper solution
+- you should involve interviewer more. don't do decision on behalf of customers. So you can identify trade-offs, then describe pros and cons and then ask a mention of ac. "what do you think it's important for our problem?"
+- tc slightly release on of the requirements: counter could be less than 6M -> good signal for E6 (why?)
+- tc *didn't handle* the critical part of the system which is the race conditions and how the things would be handled
+
+
+
 
 23.12.23
 
@@ -351,12 +357,14 @@ tc clarified if they should focus on tracking the order infrastructure
 
 user experience when post promo code
 
-phrase. tc also identified the trade-off that they can have the API as sync and async. TC also identified the pros and cons in terms of technical simplicity and user experience.
+phrase. tc also identified the trade-off that they can have the API as sync and async. TC also identified the pros and cons in terms of technical simplicity and user experience. 
 
 technical. tc talked about the rate-limiting to avoid the abusing the system.
 
 sync/async
 **red** flag: tc could have involved the interviewer while making the decision about sync vs async.
+
+
 
 most common trade-offs: api, sql/nosql, caching, scaling, core problem, push/pull, sync/async
 
@@ -369,22 +377,22 @@ explain for an ac it's meaning
 example. 40x10^7 -> horizontal scaling?
 connect you discussion with numbers and acs(nfr)
 
+
 get feedback on milestones
 write down your discussion
 
 efficiency play:
-
- > 
- > you can explain api, schema etc in a flow
- > "I'm going to explain thing end to end. You know, I'm going to explain API while I'm talking about the flow."
+> you can explain api, schema etc in a flow
+> "I'm going to explain thing end to end. You know, I'm going to explain API while I'm talking about the flow."
 
 core puzzle
 what is the core puzzle. for example, for live comments this is a push vs pull trade-off
 examples: push/pull in live commenting, save/process photos on instagram surfing, algorithm connecting rider and driver
 
+
 spikes
 
-push/pull and dt, frequency, numbers considerations. (example - I cannot use pull - dt \< 100 ms)
+push/pull and dt, frequency, numbers considerations. (example - I cannot use pull - dt < 100 ms)
 
 fan-out
 
@@ -399,8 +407,9 @@ eventual consistency patterns
 consistensy model
 https://www.scylladb.com/glossary/consistency-models/
 
----
 
+---
 21.12.23
 
 It’s a good practice to include a brief point about cache invalidation during system design interviews.
+

@@ -1,30 +1,31 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.175410
+date: '2025-02-21T23:36:39.649749'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.175410
+lastmod: '2025-02-21T23:36:39.649749'
 summary: ''
 title: Framework Iv
 toc: true
 weight: 810
 ---
 
+
 ## Fundamentals of this framework
 
 This framework is predicated on the following fundamentals:
 
 1. We propose an opinionated method that can be applied to reason over most system design interviews. The less you have to think about the process, the more you can focus on the problems at hand.
-1. Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.
-1. We’re teaching you a process. This means you’ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You’ll come across as a systematic problem solver who’s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you’ll encounter.
+2. Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.
+3. We’re teaching you a process. This means you’ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You’ll come across as a systematic problem solver who’s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you’ll encounter.
 
 ## How to use this framework
 
 In order to use this framework effectively, each step needs to be practiced separately. The three steps are:
 
 1. Requirements
-1. Data types, access patterns, and scale
-1. Design
+2. Data types, access patterns, and scale
+3. Design
 
 Each step has its inputs and outputs at the start of the chapter. There are exercises at the end. Focus on understanding the process. The idea is that once you’ve learned the process, you can work on improving each of these separately.
 
@@ -40,24 +41,25 @@ Don’t worry, we’ll go through each of these one-by-one in detail. And by the
 
 ### Step 1: Requirements
 
-|||
-|-|-|
-|Inputs|Problem statement given by your interviewer.|
-|Outputs|List of functional and non-functional requirements.|
+|         |                                                     |
+| ------- | --------------------------------------------------- |
+| Inputs  | Problem statement given by your interviewer.        |
+| Outputs | List of functional and non-functional requirements. |
 
 ### Step 2: Data Types, API and Scale
 
-|||
-|-|-|
-|Inputs|- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.|
-|Outputs|- List of Data Types we need to store.  <br>- Access patterns for these data types.  <br>- Scale of the data and requests the system needs to serve.|
+|         |                                                                                                                                                      |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Inputs  | - Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.                                                    |
+| Outputs | - List of Data Types we need to store.  <br>- Access patterns for these data types.  <br>- Scale of the data and requests the system needs to serve. |
 
 ### Step 3: Design
 
-|||
-|-|-|
-|Inputs|- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.  <br>- List of Data Types we need to store.  <br>- Access patterns for these data types (API).  <br>- Scale of the data and requests the system needs to serve.|
-|Outputs|- Data storage.  <br>- Microservices.|
+|         |                                                                                                                                                                                                                                                                   |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Inputs  | - Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.  <br>- List of Data Types we need to store.  <br>- Access patterns for these data types (API).  <br>- Scale of the data and requests the system needs to serve. |
+| Outputs | - Data storage.  <br>- Microservices.                                                                                                                                                                                                                             |
+
 
 # 1.1 Functional Requirements
 
@@ -77,19 +79,18 @@ Start by identifying the main business objects and their relations. For example,
 
 Now think about clarifying the relation between these objects. What’s the relation between accounts and tweets? What’s the relation between two accounts? What’s the relation between two tweets? You want to think about the cross product between objects to come up with ideas for use cases and ask relevant questions. For example:
 
-||Account|Tweet|
-|-|-------|-----|
-|Account|Can follow|Can publish Can like  Can retweet|
-|Tweet||Can reference (retweet)|
+|         | Account    | Tweet                             |
+| ------- | ---------- | --------------------------------- |
+| Account | Can follow | Can publish Can like  Can retweet |
+| Tweet   |            | Can reference (retweet)           |
 
-* An account can follow other accounts (Account x Account)
-* An account can publish a tweet (Account x Tweet)
-* A tweet can reference another tweet, i.e., be a “retweet”. (Tweet x Tweet)
+- An account can follow other accounts (Account x Account)
+- An account can publish a tweet (Account x Tweet)
+- A tweet can reference another tweet, i.e., be a “retweet”. (Tweet x Tweet)
 
 Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?
 
- > 
- > Tip. Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
+> Tip. Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
 
 ## Think about the possible access patterns for these objects
 
@@ -99,20 +100,19 @@ Let's think about the cross product of our objects again. This time we want to i
 
 The general shape of an access pattern requirement is:
 
-* Given \[object A\], get all related \[object B\]
+- Given [object A], get all related [object B]
 
 So, applying this idea to our Twitter example, we might end up with the following access patterns:
 
-* Given an account:
-  
-  * Get all of its followers. (Account → Account)
-  * Get all the other accounts they follow. (Account → Account)
-  * Get all of its tweets. (Account → Tweet)
-  * Get a curated feed of tweets for accounts they follow. (Account → Tweet)
-* Given a tweet:
-  
-  * Get all accounts that liked it. (Tweet → Account)
-  * Get all accounts that retweeted it. (Tweet → Account)
+- Given an account:
+	- Get all of its followers. (Account → Account)
+	- Get all the other accounts they follow. (Account → Account)
+	- Get all of its tweets. (Account → Tweet)
+	- Get a curated feed of tweets for accounts they follow. (Account → Tweet)
+
+- Given a tweet:
+	- Get all accounts that liked it. (Tweet → Account)
+	- Get all accounts that retweeted it. (Tweet → Account)
 
 We’re not suggesting you blindly implement all of these, but rather that you consider them as possible access patterns for your clarification questions. For example, should we be able to get all accounts that liked a tweet? Or would the number be enough?
 
@@ -135,15 +135,15 @@ It might sound like a small detail at first, but mutability can limit our abilit
 ## Remember: Functional Requirements
 
 1. Identify the main objects and their relations.
-1. What information do these objects hold? Are they mutable?
-1. Think about access patterns. “Given object X, return all related objects Y.” Consider the cross product of all related objects.
-1. List all the requirements you’ve identified and validate with your interviewer.
+2. What information do these objects hold? Are they mutable?
+3. Think about access patterns. “Given object X, return all related objects Y.” Consider the cross product of all related objects.
+4. List all the requirements you’ve identified and validate with your interviewer.
 
 ## Example 1: Design TikTok
 
-[tik_tok](../projects/tik_tok.md)
+[tik_tok](system-design/projects/tik_tok.md)
 
-## Example 2: Design a code deployment system
+## Example 2: Design a code deployment system 
 
 aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.
 
@@ -159,35 +159,34 @@ Trigger a release: publishes a code artifact and deploys it to all servers.
 
 This is actually a pretty good example of how some problems might be less intensive on the requirements side than others. The definition the interviewer gave us was pretty clear. Therefore, we can extract requirements with just a few questions.
 
- > 
- > Extra points: Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips
+> Extra points: Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips
 
 For example, you might want to ask about the possibility to recall a release. Do they want a page to see all releases and the deployment status? Should we alert them about failures? #sd/tips
 
 This is what we mean when we say that it can be as easy or as hard as you want to make it. Try to get a feel for what the interviewer is looking for, and make sure to check back with them and ensure you both are on the same page.
+
 
 # 1.2 Non-Functional Requirements
 
 Once functional requirements have been laid out, you should move onto non-functional requirements (NFRs). These are quality attributes that specify how the system should perform a certain function.
 
 The most common non-functional requirements you should consider in a system design interview are:
+- Performance
+- Availability
+- Security
 
-* Performance
-* Availability
-* Security
-
- > 
- > Note
- > 
- > You may be wondering why we chose “security” and not “consistency.” We think there are already enough resources out there that will tell you about consistency in NFRs. Again, this is our opinionated approach, and after much debate we decided this would be the most valuable way to teach it. As always in system design interviews: your interviewer cares less about your decisions, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions. Therefore, if you wanted to, there are many NFRs that could make a shortlist.
+> Note
+>
+> You may be wondering why we chose “security” and not “consistency.” We think there are already enough resources out there that will tell you about consistency in NFRs. Again, this is our opinionated approach, and after much debate we decided this would be the most valuable way to teach it. As always in system design interviews: your interviewer cares less about your decisions, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions. Therefore, if you wanted to, there are many NFRs that could make a shortlist.
 
 NFRs will strongly influence our design. They define what we should be optimizing for. Bear in mind that you cannot optimize for everything, and you should not overcomplicate your solution. This is a game of trade-offs.
 
- > 
- > \[!info\] Rule of thumb
- > Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”
+{{< callout info "Rule of thumb" >}}
 
-Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as “We don’t need to focus on \[Insert requirement, such as “consistency”\] as much in this case because \[Insert reason, such as “it’s okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users”\].”
+{{< /callout >}}
+Non-functional requirements can feel like platitudes. Who doesn’t want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it’s a trap to say, “Non-functional requirements are always the same.”
+
+Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as “We don’t need to focus on [Insert requirement, such as “consistency”] as much in this case because [Insert reason, such as “it’s okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users”].”
 
 If NFRs are over-specified, the solution may be too expensive to be practical; if they are under-specified, the system will not be suitable for its intended purpose. Use your common sense, and ask the right questions to land on a set of non-functional requirements that make sense for the system you are designing.
 
@@ -199,9 +198,8 @@ Performance is pretty straightforward. It’s the system’s ability to respond 
 
 So when does it make sense to optimize for performance?
 
- > 
- > \[!Rule of thumb\]
- > It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.
+>[!Rule of thumb] 
+>It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.
 
 Take a look at the access patterns you identified in your functional requirements. Which ones are user-facing, expected to happen synchronously, and accessed frequently? Let’s use our Twitter example: Is there any access pattern that we might want to optimize for performance?
 
@@ -213,21 +211,19 @@ Availability refers to how much downtime the service can tolerate. Just like wit
 
 In the case of Twitter, the need for high availability is pretty obvious. The system should ideally not take any downtime. We measure availability by the percentage of the time the system is up and running. A common goal is to aim for five nines, i.e., 99.999% availability—that’s less than 6 minutes of downtime a year.
 
- > 
- > \[!Aware\] Anecdote from an interviewer
- > Don’t make your interview harder than it has to be.
+{{< callout note "Anecdote from an interviewer" >}}
 
+{{< /callout >}}
+Don’t make your interview harder than it has to be.
+>
 In an actual interview, if a candidate says, “Do we want 4 nines? 5 nines? 6 nines?” My first follow-up question will be, “What’s going to change in your system?” And they don’t know what to answer (obviously) because the system they’ll design won’t change at all whether it’s 4 nines or 5 nines or 6 nines.
-
- > 
-
+>
 So what I mean is that talking about availability is good, but talking about “we want 6 nines” in an actual interview can be a signal that this person is behaving like an imposter. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn’t said anything about the “number of nines” in the first place!
 
 An example of a problem where we might be fine with taking a hit on availability is one where consistency is very important. Think, for example, about a banking system. One of the most important mandates of the system would be consistency. Operations need to be transactional. In this case, it might be acceptable if our system is unavailable/stale for small periods of time, as long as it is consistent. However, with Twitter, we’d rather have it be inconsistent than unavailable. When in doubt about what to prioritize, ask your interviewer whether consistency is preferred over availability.
 
- > 
- > \[!Question\]
- > What’s an example of a system you can think of where high availability might not be essential?
+>[!Question]
+What’s an example of a system you can think of where high availability might not be essential?
 
 ## Security
 
@@ -235,17 +231,16 @@ Security can be tricky. No one wants to design an insecure system, and there’s
 
 We want to learn if there’s some workflow that might require a special design to account for security. For example, imagine you were designing LeetCode, an online judge for coding questions. One security constraint that would come to mind is that user-submitted code should be run in isolation. User submissions should run in some sort of sandbox where they get limited resources and are guaranteed not to affect or see other submissions.
 
- > 
- > \[!Tip\]
- > Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.
+>[!Tip]
+Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.
 
 ## Remember: Non-Functional Requirements
 
 Consider the three main non-functional requirements: performance, availability, and security.
 
 1. Performance: Which access patterns, if any, require good performance?
-1. Availability: What’s the cost of downtime for this system?
-1. Security: Is there any workflow that requires special security considerations (e.g., code execution)?
+2. Availability: What’s the cost of downtime for this system?
+3. Security: Is there any workflow that requires special security considerations (e.g., code execution)?
 
 Example of Non-Functional Requirement gathering
 
@@ -259,8 +254,8 @@ Example 2: Design a code deployment system aimed for developers at a company. Th
 
 # Step 2: Data Types, API and Scale
 
-|||
-|-|-|
+|   |   |
+|---|---|
 |Inputs|- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.|
 |Outputs|- List of Data Types we need to store.  <br>- Access patterns for these data types.  <br>- Scale of the data and requests the system needs to serve.|
 
@@ -269,8 +264,8 @@ We’ve gathered functional and non-functional requirements. At this point we un
 However, you should not begin drawing boxes and discussing implementation right away. There’s a bit of pre-work needed before we can start thinking about a concrete design. We need to answer the following three questions:
 
 4. What data types does the system need to store?
-4. What does the API look like?
-4. What volume of requests do we need to support?
+5. What does the API look like?
+6. What volume of requests do we need to support?
 
 These can be answered pretty quickly from your requirements. In fact, you can probably answer these in just a few minutes. Let’s walk through how we might answer each of these questions for our Twitter example:
 
@@ -278,32 +273,28 @@ These can be answered pretty quickly from your requirements. In fact, you can pr
 
 Think about the objects the system needs to hold and their data type. There are largely two types of data we might need to store:
 
-* **Structured data.** Think business objects, like accounts, tweets, likes.
-* **Media and blobs.** Think images, videos, or any type of large binary data such as TAR or ZIP files.
+- **Structured data.** Think business objects, like accounts, tweets, likes.
+- **Media and blobs.** Think images, videos, or any type of large binary data such as TAR or ZIP files.
 
 For our Twitter example, we will store:
 
-* **Structured data**
+- **Structured data**
+- Accounts
+- Tweets
 
-* Accounts
-
-* Tweets
-
-* **Media**
-
-* Images or videos in Tweets
+- **Media**
+- Images or videos in Tweets
 
 ## 2.2 What does the API look like?
 
- > 
- > \[!Rule of thumb\]
- > More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.
+>[!Rule of thumb]
+More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.
 
 **Footnote:** If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions. But even in these rare cases, it helps to start thinking about the API in terms of HTTPS requests.
 
 Look at the access patterns you defined in the functional requirements to write your API. For example:
 
-````
+```
 1
 2  getTweets:
 3    GET /{accountId}/tweets?nextPageToken={token}
@@ -321,64 +312,62 @@ Look at the access patterns you defined in the functional requirements to write 
 15    POST /{accountId}/retweet
 16    body: id of the tweet that is retweeted.
 17
-````
+```
 
 ## 2.3 What volume of requests do we need to support?
 
- > 
- > \[!Tip\]
- > Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
+>[!Tip]
+Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 
-See more in [envelope_estimations](../topics/envelope_estimations.md)
+See more in [envelope_estimations](system-design/topics/envelope_estimations.md)
 
- > 
- > \[!Outlaw Idea\]
- > We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.
+>[!Outlaw Idea]
+We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.
 
 Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher—it’s called **margin of safety**. For our Twitter example we can go for these numbers:
 
-````
+```
 2  Reads/minute: 100k
 3  Writes/minute: 1k
-````
+```
 
 Finally, what’s the volume of data we need to store? Go back to your “data types” (section 2.1) and think about how big these can get and multiply that by the number of writes/minute to get how much data you need to store per minute.
 
-````
+```
 1
 2  Structured data (tweets, accounts): 100 KB each
 3  Media (images, videos): 10MB each
 4
 5  Average size of a write: 1MB (just a guess!)
 6
-````
+```
 
 Again, it does not matter at all if you get these numbers right as long as you are in the ballpark. Please don’t spend too much time on this. Just use powers of ten, and when in doubt, pick the higher number. This makes our final math super easy:
 
-````
+```
 2  1k writes/minute with an average size of 1MB each = 1k * 1MB = 1000MB = 1GB/m
-````
+```
 
 So we’ll need to store around a gigabyte of data per minute.
 
- > 
- > \[!Remember\] Data Types, Scale, and Access patterns
- > Once you know your requirements, it’s time to get specific.
+{{< callout note "Data Types, Scale, and Access patterns" >}}
 
+{{< /callout >}}
+Once you know your requirements, it’s time to get specific.
+>
 **Data Types:** Start by identifying the main business objects that you need to store.
 **API:** How are these going to be accessed?
 **Scale:** Is the system read-heavy or write-heavy?
 
-### Example. Code Deployment System.
-
-See more in [code_deployment](../projects/code_deployment.md)
+### Example. Code Deployment System. 
+See more in [code_deployment](system-design/projects/code_deployment.md)
 
 # Step 3: Design
 
-|||
-|-|-|
+|   |   |
+|---|---|
 |Inputs|- Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.  <br>- List of Data Types we need to store.  <br>- Access patterns for these data types (API).  <br>- Scale of the data and requests the system needs to serve.|
 |Outputs|- Data storage.  <br>- Microservices.|
 
@@ -392,18 +381,18 @@ Once we know our use cases and what to optimize for, it comes down to knowing a 
 
 At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.
 
- > 
- > \[!Tip\] (Tell your interviewer)
- > "I’m going to start drawing some boxes. I'm just thinking out loud for now, so don't hold me to any of this. We can come back to it later."
+{{< callout tip "(Tell your interviewer)" >}}
+
+{{< /callout >}}
+"I’m going to start drawing some boxes. I'm just thinking out loud for now, so don't hold me to any of this. We can come back to it later."
 
 This is basically giving you a free pass to flush your brain and be wrong. Which is exactly what you want when there’s a clean slate in front of you. Again, design is an iterative process. Expecting that you’ll go from clean slate to perfect design in one go is just… foolish.
 
 ## So what is “design”?
 
 We should first align on our outputs. Design simply means two components:
-
 1. **Data storage.** We already know from previous steps “what” we are storing. Now the question is where are we storing it?
-1. **Microservices.** How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.
+2. **Microservices.** How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.
 
 We know the **what** (steps 1 and 2), so now we focus on the **where** and the **how**. We will start with designing the data storage layer first and then think about the microservices that access this data.
 
@@ -421,9 +410,8 @@ Some popular blob stores are Amazon S3 and Azure Blob storage. In general, you d
 
 Going back to our Twitter example, we’ll want to store media from tweets in some kind of blob storage.
 
- > 
- > \[!Rule of thumb\]
- > Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don’t say the specific brand. Instead, say “some kind of blob storage.” Because if you say, “we should use S3 here,” the next question out of your interviewer’s mouth will be, “why not Azure blob instead of S3?”
+>[!Rule of thumb]
+Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don’t say the specific brand. Instead, say “some kind of blob storage.” Because if you say, “we should use S3 here,” the next question out of your interviewer’s mouth will be, “why not Azure blob instead of S3?”
 
 There’s a chance you might want to couple the blob storage with a CDN, but that’s something we’ll look into in step 3.2. *This step is all about identifying how to store content, not how to distribute it.*
 
@@ -432,20 +420,18 @@ There’s a chance you might want to couple the blob storage with a CDN, but tha
 There are a few considerations for this step:
 
 3. Relational vs. Non-Relational
-3. Entities to store
+4. Entities to store
 
 ### 3.1.1 Relational vs. Non-Relational
 
 Relational vs. Non-Relational, sometimes referred to as SQL vs. NoSQL, is one of the foundational decisions of database design. There are many trade-offs involved when it comes to picking one or the other. In many interview questions, an argument can be made for any choice you make. *It’s important that you don’t succumb to paralysis through over-analysis.* Just pick one, and make your rationale clear for why you chose it. Score extra brownie points if you include a drawback of making the pick you made.
 
- > 
- > \[!Remember\]
- > There’s no right or wrong answer—it’s all about how to justify your picks.
+>[!Remember]
+There’s no right or wrong answer—it’s all about how to justify your picks.
 
 Don’t oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you’re being unrealistic, you probably won’t change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you’re too fixated on being right, you’ll miss the opportunity.
 
 Therefore, we’re giving you two very powerful tools: (1) A rule of thumb to pick Relational (SQL) vs. Non-Relational (NoSQL), and (2) A list of trade-offs that you should mention to your interviewer after stating your decision.
-
 ### Entities to store
 
 It’s time to look at the data and access patterns we defined in step 2 and design our database schema. This will look like a list of tables/documents, and a description of the queries that you’ll use to access them.
@@ -464,25 +450,26 @@ Let’s see what this might look like through the lens of our Twitter example.
 
 We identified two entities in step 2.1: (1) Accounts, and (2) Tweets. Therefore, we’ll start out nice and simple with two tables:
 
-* Accounts: id, name, surname.
-* Tweets: id, content, author_id, media_url.
+- Accounts: id, name, surname.
+- Tweets: id, content, author_id, media_url.
 
 Note that each of these has an id. This id is immutable and uniquely identifies each object so that we can easily change any of the object’s metadata without the need to update other records. Also, the media_url would point to the address of the blob storage bucket containing the tweet’s media, if any.
 
 Now look at the access patterns and make some adjustments. We identified two access patterns in step 2:
 
-* `getTweets` gets all the tweets for a given user.
-* `getFeed` gets the feed for a given user.
+- `getTweets` gets all the tweets for a given user.
+- `getFeed` gets the feed for a given user.
 
 `getTweets` should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.
 
- > 
- > \[!Tip\] (Tell your interviewer)
- > Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.
+{{< callout tip "(Tell your interviewer)" >}}
+
+{{< /callout >}}
+Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.
 
 Now onto `getFeed`. Let’s define feed to be a list of tweets of all the accounts the given account follows, sorted chronologically. There’s one thing we are missing here already: the information about who follows whom. Let’s say we add that relation in some new table:
 
-* Followers: account_id, follower_id
+- Followers: account_id, follower_id
 
 We can again have indexes to speed up certain access patterns, such as getting all followers for a given account_id. This is totally fine. You can add tables/indexes as you realize they are needed. Remember: Identify → Implement → Assess → Improve.
 
@@ -492,21 +479,19 @@ Given the fact that we identified the system to be read-heavy and `getFeed` is e
 
 However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.
 
- > 
- > \[!Tip\] Tell your interviewer
- > “Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”
+{{< callout tip "Tell your interviewer" >}}
 
+{{< /callout >}}
+“Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”
+>
 Assess your current solution, provide your opinion, and then ask your interviewer for their thoughts. This is the best way to iterate on system design. You don’t want to rely solely on your interviewer without expressing your thoughts because it may convey a lack of criticality/independence.
-
- > 
-
+>
 You also don’t want to move forward without any input from your interviewer because it may be perceived as poor collaboration. We find that **stating your rationale followed by a subtle “what do you think?” or “let me know if you think I’m approaching this the wrong way” is the perfect balance between being independent but also collaborative.**
 
 For the sake of learning, let’s say that our interviewer agrees with us and wants to move forward with optimizing this. Whenever you are looking to optimize runtime, trading it off with memory should be your first go-to.
 
- > 
- > \[!Rule of thumb\]
- > When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.
+>[!Rule of thumb]
+When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.
 
 In this example, we might want to store the user feeds in a table and keep that up to date as new tweets come up. That way, we have an instant mapping from user to its feed, making `getFeed` fast at the cost of using more memory and the added complexity of having to maintain feeds up to date.
 
@@ -516,35 +501,30 @@ You can also get creative as well. Do you need to keep the feeds for all users u
 
 Once we have our storage layer somewhat defined, the last step is connecting our API to the storage layer. There are a few decisions that often arise at this stage:
 
-* Caching
-* Load balancing
-* Queuing systems
+- Caching
+- Load balancing
+- Queuing systems
 
 ### Caching
 
 Ask yourself: Are there any access patterns that would benefit from caching the results in-memory? Candidates sometimes add caching to their solution just because. This is often a mistake.
 
- > 
- > \[!Warning\]
- > Not all systems designed in system design interviews require caching.
+>[!Warning]
+Not all systems designed in system design interviews require caching.
 
 Remember that every decision you make has some trade-off. There’s no such thing as a free lunch in system design. Therefore, we urge you to consider the downsides of your design decisions and mention them during the interview.
 
- > 
- > \[!Rule of thumb\]
-
+>[!Rule of thumb]
+>
 Consider using caching when all three of these are true:
-
- > 
- > * Computing the result is costly
- > * Once computed, the result tends to not change very often (or at all)
- > * The objects we are caching are read often
+>- Computing the result is costly
+>- Once computed, the result tends to not change very often (or at all)
+>- The objects we are caching are read often
 
 A common technology used when caching is needed is Redis. If you are not familiar with it, all you need to know is that it is a way for you to cache parts of your database in memory such that it’s faster to access them.
 
- > 
- > \[!Remember\]
- > If you haven’t used Redis, don’t say, “Let’s use Redis here” in the interview; instead, say “Let’s add a cache here.” Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, “Why Redis and not Memcached?”
+>[!Remember]
+If you haven’t used Redis, don’t say, “Let’s use Redis here” in the interview; instead, say “Let’s add a cache here.” Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, “Why Redis and not Memcached?”
 
 What are some of the downsides of caching, you may ask? To begin with, it introduces two replicas of the same data. Even though our source of truth remains to be persistent storage (our database), it is now possible to get the result from the cache as well. This might introduce inconsistencies if the cache is out of date from the source of truth. This is why it’s wiser to cache objects that don’t usually change too often. It’s also costly to maintain and adds complexity to the system. Now every time we want to update our logic, we’ll need to consider the caching layer as well.
 
@@ -557,7 +537,7 @@ Load balancing is easier when our API servers are stateless because requests can
 As mentioned, this will give us two key benefits:
 
 5. **Horizontal scaling.** We can add more API servers to handle more load.
-5. **High Availability.** Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.
+6. **High Availability.** Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.
 
 There are different strategies for deciding how to balance load across a set of servers, but most of the time you’ll be dealing with round robin.
 
@@ -585,17 +565,17 @@ Let’s start with business objects first.
 
 So far it seems like we need to track information about:
 
-* User (name, surname, pseudonym, availability)
-* Interview (interviewer, interviewee, video recording, programming language)
-* Booking (time, interviewer, interviewee)
+- User (name, surname, pseudonym, availability)
+- Interview (interviewer, interviewee, video recording, programming language)
+- Booking (time, interviewer, interviewee)
 
 Looks like we’ve got a good idea of the business objects involved in this system and a rough sense of the properties they’ll hold. Next, we should chat about different access patterns and agree on the functional requirements. Remember, you’ll want to think about the cross product of these entities to come up with ideas of possible access patterns that relate these objects.
 
-* **Given a user, get all of the interviews they took part in.**
-* **See showcased interviews.**
-* **Set availability.**
-* **Book interview.**
-* **Join interview.**
+- **Given a user, get all of the interviews they took part in.**
+- **See showcased interviews.**
+- **Set availability.**
+- **Book interview.**
+- **Join interview.**
 
 ## Non-functional requirements
 
@@ -611,7 +591,7 @@ Finally, for code execution, we’d probably want to execute the code in isolati
 
 ##### Data Types:
 
-````
+```
 1
 2  User: id, name, surname, pseduonym, availability. (Structured data)
 3  Interview: id, interviewer_id, interviewee_id, video_recording_id, programming_lang, (Structured data)
@@ -619,11 +599,11 @@ Finally, for code execution, we’d probably want to execute the code in isolati
 5
 6  Recording: video (media).
 7
-````
+```
 
 ##### REST API:
 
-````
+```
 1
 2  putAvailability:
 3    POST /users/{userId}/availability
@@ -646,7 +626,7 @@ Finally, for code execution, we’d probably want to execute the code in isolati
 20    POST /interview/{booking_id}
 21    returns: link to coder pad.
 22
-````
+```
 
 ### Rule of thumb
 

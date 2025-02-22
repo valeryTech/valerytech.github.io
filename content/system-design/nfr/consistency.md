@@ -1,26 +1,32 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.177464
+date: '2025-02-21T23:36:39.651970'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.177464
+lastmod: '2025-02-21T23:36:39.651970'
 summary: ''
 title: Consistency
 toc: true
 weight: 810
 ---
 
+
 https://www.alexdebrie.com/posts/database-consistency/
+
+
 
 # consistency
 
 definition, models, etc
+
+
 
 consistency patterns
 
 sources:
 understanding distributes systems
 DDIA
+
 
 https://en.wikipedia.org/wiki/Consistency_model
 https://en.wikipedia.org/wiki/Sequential_consistency

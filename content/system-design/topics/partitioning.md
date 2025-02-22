@@ -1,16 +1,18 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.170651
+date: '2025-02-21T23:36:39.645100'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.170651
+lastmod: '2025-02-21T23:36:39.645100'
 summary: ''
 title: Partitioning
 toc: true
 weight: 810
 ---
 
+
 For very large datasets, or very high query throughput, that is not sufficient: we need to break the data up into partitions, also known as sharding.
+
 
 # Partitioning of Key-Value Data
 
@@ -27,7 +29,7 @@ knowing which node it is on, so you have to query all nodes in parallel.
 
 ## by key range
 
-One way of partitioning is to assign a continuous range of keys (from some minimum to some maximum) to each partition.
+One way of partitioning is to assign a continuous range of keys (from some minimum to some maximum) to each partition. 
 
 ## hash partitioning
 
@@ -46,7 +48,7 @@ This technique is good at distributing keys fairly among the partitions. The par
 boundaries can be evenly spaced, or they can be chosen pseudorandomly (in which
 case the technique is sometimes known as consistent hashing).
 
-consistent hashing. this particular approach actually doesn’t work very well for databases \[8\], so it is rarely used in practice (the documentation of some databases still refers to consistent hashing, but it is often inaccurate). Because this is so confusing, it’s best to avoid the term consistent hashing and just call it hash partitioning instead.
+consistent hashing. this particular approach actually doesn’t work very well for databases [8], so it is rarely used in practice (the documentation of some databases still refers to consistent hashing, but it is often inaccurate). Because this is so confusing, it’s best to avoid the term consistent hashing and just call it hash partitioning instead.
 
 Unfortunately however, by using the hash of the key for partitioning we lose a nice
 property of key-range partitioning: the ability to do efficient range queries.
@@ -56,6 +58,7 @@ property of key-range partitioning: the ability to do efficient range queries.
 and relieving hot-spots
 
 # Partitioning and Secondary Indexes
+
 
 # Rebalancing Partitions
 
@@ -73,6 +76,8 @@ No matter which partitioning scheme is used, rebalancing is usually expected to 
 • While rebalancing is happening, the database should continue accepting reads and writes.
 • No more data than necessary should be moved between nodes, to make rebalancing fast and to minimize the network and disk I/O load.
 
+
+
 # request routing
 
 We have now partitioned our dataset across multiple nodes running on multiple
@@ -86,23 +91,22 @@ limited to just databases. Any piece of software that is accessible over a netwo
 this problem, especially if it is aiming for high availability (running in a redundant
 configuration on multiple machines). Many companies have written their own in-
 house service discovery tools, and many of these have been released as open source
-\[30\].
+[30].
 On a high level, there are a few different approaches to this problem (illustrated in
 Figure 6-7):
-
 1. Allow clients to contact any node (e.g., via a round-robin load balancer). If that
-   node coincidentally owns the partition to which the request applies, it can handle
-   the request directly; otherwise, it forwards the request to the appropriate node,
-   receives the reply, and passes the reply along to the client.
-1. Send all requests from clients to a routing tier first, which determines the node
-   that should handle each request and forwards it accordingly. This *routing tier*
-   does not itself handle any requests; it only acts as a *partition-aware load balancer*.
-1. Require that clients *be aware of the partitioning* and *the assignment of partitions*
-   to nodes. In this case, a client can connect directly to the appropriate node,
-   without any intermediary.
-   In all cases, the key problem is: how does the component making the routing decision
-   (which may be one of the nodes, or the routing tier, or the client) *learn about changes*
-   in the assignment of partitions to nodes?
+node coincidentally owns the partition to which the request applies, it can handle
+the request directly; otherwise, it forwards the request to the appropriate node,
+receives the reply, and passes the reply along to the client.
+2. Send all requests from clients to a routing tier first, which determines the node
+that should handle each request and forwards it accordingly. This *routing tier*
+does not itself handle any requests; it only acts as a *partition-aware load balancer*.
+3. Require that clients *be aware of the partitioning* and *the assignment of partitions*
+to nodes. In this case, a client can connect directly to the appropriate node,
+without any intermediary.
+In all cases, the key problem is: how does the component making the routing decision
+(which may be one of the nodes, or the routing tier, or the client) *learn about changes*
+in the assignment of partitions to nodes?
 
 This is a challenging problem, because it is important that *all participants agree*—
 otherwise requests would be sent to the wrong nodes and not handled correctly.
@@ -117,7 +121,7 @@ client, can subscribe to this information in ZooKeeper. Whenever a partition cha
 ownership, or a node is added or removed, ZooKeeper notifies the routing tier so that
 it can keep its routing information up to date.
 
-For example, LinkedIn’s Espresso uses Helix \[31\] for cluster management (which in
+For example, LinkedIn’s Espresso uses Helix [31] for cluster management (which in
 turn relies on ZooKeeper), implementing a routing tier as shown in Figure 6-8.
 HBase, SolrCloud, and Kafka also use ZooKeeper to track partition assignment.
 MongoDB has a similar architecture, but it relies on its own config server implemen‐
@@ -129,7 +133,17 @@ and that node forwards them to the appropriate node for the requested partition
 but avoids the dependency on an external coordination service such as ZooKeeper.
 Couchbase does not rebalance automatically, which simplifies the design. Normally it
 is configured with a routing tier called moxi, which learns about routing changes
-from the cluster nodes \[32\].
+from the cluster nodes [32].
 When using a routing tier or when sending requests to a random node, clients still
 need to find the IP addresses to connect to. These are not as fast-changing as the
 assignment of partitions to nodes, so it is often sufficient to use DNS for this purpose.
+
+
+
+
+
+
+
+
+
+

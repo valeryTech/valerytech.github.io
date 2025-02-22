@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.173899
+date: '2025-02-21T23:36:39.648300'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.173899
+lastmod: '2025-02-21T23:36:39.648300'
 summary: ''
 title: Interview
 toc: true
@@ -25,8 +25,7 @@ When beginning an interview, try to imagine what the interviewer is looking for.
 
 Put simply, the interviewer's goal is to find enough data to hire you. Given the limited time available to them, an interviewer has to try to get enough positive signal about your ability so they can justify giving you a “hire” rating. In one hour you have to show your interviewer that you understand the fundamentals of a system (end to end). You also should be able to name and explain (at least at a high level) each part of the system, describe the tradeoffs you make, and find a solution.
 
- > 
- > The best way to accomplish this is to imagine that you’re explaining a design doc to a group of more junior engineers. They will ask you questions about your decisions and want to know what you’re trying to solve. Anticipating these questions and your responses will set you up for success in the interview.
+>The best way to accomplish this is to imagine that you’re explaining a design doc to a group of more junior engineers. They will ask you questions about your decisions and want to know what you’re trying to solve. Anticipating these questions and your responses will set you up for success in the interview.
 
 # Proactivity
 
@@ -39,21 +38,20 @@ Being proactive in a system design (SD) interview is essential to demonstrate le
 ✔ **Communicate Clearly**: Structure your thoughts and articulate them effectively.
 
 **Define a High-Level System Approach**
+- **Set a Roadmap**: Before diving into details, outline a step-by-step process:
+    - "I'll start with high-level architecture, then discuss data storage, API design, scaling, and trade-offs. Does that sound good?"
+- **Propose an Initial Architecture**: Start with a simple design that meets core requirements.
+    - Example: "I’ll begin with a monolithic service since the initial scale is low, but I’ll discuss how we can migrate to a microservices-based architecture as traffic grows."
+- **Encourage Feedback**: Keep the interviewer engaged by asking:
+    - "Does this approach align with what you had in mind?"
+    - "Would you like me to explore alternative solutions at this stage?"
 
-* **Set a Roadmap**: Before diving into details, outline a step-by-step process:
-  * "I'll start with high-level architecture, then discuss data storage, API design, scaling, and trade-offs. Does that sound good?"
-* **Propose an Initial Architecture**: Start with a simple design that meets core requirements.
-  * Example: "I’ll begin with a monolithic service since the initial scale is low, but I’ll discuss how we can migrate to a microservices-based architecture as traffic grows."
-* **Encourage Feedback**: Keep the interviewer engaged by asking:
-  * "Does this approach align with what you had in mind?"
-  * "Would you like me to explore alternative solutions at this stage?"
+ Asking High-Impact, Non-Trivial Questions
 
-Asking High-Impact, Non-Trivial Questions
 
 ## There is not one single best solution
 
- > 
- > Always consider trade-offs especially in SD interview
+> Always consider trade-offs especially in SD interview
 
 In system design, there isn't a single "best" solution; instead, multiple viable
 approaches exist, each with its own set of trade-offs. This is because system design problems are often complex and multifaceted.
@@ -69,8 +67,7 @@ Instead of finding (or “retrieving”) a solution, you are creating a solution
 (Mental Way)
 Here’s another way to think about it. You aren’t solving a problem—you’re creating a map to help someone else find the solution. Instead of coloring inside some lines, you’ll need to draw the lines for someone else to color in. In a system design interview, there are no correct answers—though there are certainly incorrect ones—so there is nothing to solve. Instead, you’ll ask questions, make stuff, and explain how and why the stuff you made was reasonable.
 
- > 
- > “Pretend it’s 1999, so a lot of the stuff we have access to today simply doesn’t exist. You and a group of your schoolmates are in your garage, hoping to make something. You're the most senior one there. You will design it and your friends will code it up, and the thing is: the Minimum Viable Product has to be completed by tomorrow. So, there’s no time to prep and no need to worry about the intricacies of system architecture that you don’t know. Just answer this: How would you design this system so your friends could code it up today, right now? **It doesn’t have to be pretty. It doesn’t have to be complicated. It doesn’t have to impress anyone. It just has to get done**.”
+>“Pretend it’s 1999, so a lot of the stuff we have access to today simply doesn’t exist. You and a group of your schoolmates are in your garage, hoping to make something. You're the most senior one there. You will design it and your friends will code it up, and the thing is: the Minimum Viable Product has to be completed by tomorrow. So, there’s no time to prep and no need to worry about the intricacies of system architecture that you don’t know. Just answer this: How would you design this system so your friends could code it up today, right now? **It doesn’t have to be pretty. It doesn’t have to be complicated. It doesn’t have to impress anyone. It just has to get done**.”
 
 To succeed in a system design interview, you *want to collaborate with your interviewer*, try crazy stuff, and try more crazy stuff until the design “feels right.”
 
@@ -84,14 +81,15 @@ A candidate doing a system design interview will usually experience confusion. T
 
 We need to act differently with cold and warm interviewers (take strategies from interviewing.io website).
 
+
 ## There’s no right way to design a system
 
 By now you’ve heard (or read) that 'there’s no right way to design a system," and you might think it’s true. But how do you know for sure?
 
 Watch this video of two experts designing the same system side by side. By the time you’re done, you’ll have a practical example that proves “there’s no right way to design a system”. Pay attention, and you’ll notice how effective it is when you guide the interview toward your strengths and when you’re open about gaps in your understanding. The video is split into two parts.
 
- > 
- > This is one of the most important lessons!
+> This is one of the most important lessons!
+
 
 We have “rules of thumb” scattered throughout this guide. In those cases, they apply directly to the material. But in this instance, these rules of thumb don’t fit anywhere, because they apply to, well, everything.
 
@@ -99,8 +97,7 @@ We have “rules of thumb” scattered throughout this guide. In those cases, th
 
 As an interviewer, it’s hard to tell the difference between a bad candidate and a good candidate who is stuck.
 
- > 
- > If the interviewer interrupts you, it's probably because you’re going off track.
+> If the interviewer interrupts you, it's probably because you’re going off track.
 
 If your interviewer interrupts you to suggest that you explore another avenue, then most likely you're designing the system in contradiction to what the interviewer expects. In this case, let the interviewer explain what they expect, and then you should ask clarifying questions to ensure you understand the new direction before moving on.
 
@@ -111,14 +108,12 @@ It’s fine if the interviewer asks you questions, but it’s a bad sign if the 
 In a system design interview, you may encounter two different situations:
 
 1. The interviewer has read your resume and wants to see you demonstrate your experience in building something you’re familiar with. This should be easy because you can apply your knowledge from your current/previous position.
+2. The interviewer has read your resume and decides to purposely challenge you by asking you to design something you have not worked on. In this case, don’t worry—just remember that “there is no right way to design a system.” Use your best judgment and industry knowledge to come up with something reasonable. Also, be honest about gaps in your knowledge and don’t be afraid to ask questions. Demonstrate that you are curious and willing to learn.  
 
-1. The interviewer has read your resume and decides to purposely challenge you by asking you to design something you have not worked on. In this case, don’t worry—just remember that “there is no right way to design a system.” Use your best judgment and industry knowledge to come up with something reasonable. Also, be honest about gaps in your knowledge and don’t be afraid to ask questions. Demonstrate that you are curious and willing to learn.
-   
-   When the interviewer decides to challenge you with something new, it may be a topic that is based on their own particular expertise or skill set.
+    When the interviewer decides to challenge you with something new, it may be a topic that is based on their own particular expertise or skill set.
 
- > 
- > \[!tip\]
- > If you know a little about your interviewer’s background, you should have a hint about what to expect, which can allow you to prepare a little ahead of time.
+>[!tip]
+If you know a little about your interviewer’s background, you should have a hint about what to expect, which can allow you to prepare a little ahead of time.
 
 ## Time management
 
@@ -130,9 +125,8 @@ By the end of the interview, the interviewer is inherently asking themselves “
 
 Whatever decision you make, explain **why**. In a system design interview, **why** is more important than **what**. For anything you say, be prepared to explain **why**.
 
- > 
- > \[!important\]
- > Your interviewer cares less about whether your design is good in itself, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions.
+>[!important]
+>Your interviewer cares less about whether your design is good in itself, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions.
 
 Keep it simple. The first rule of distributed systems is that you should avoid them if you don’t need them! Always consider maintenance costs. People don’t build distributed systems for fun. If all of Google could run on just one machine, you can bet they would do it.
 
@@ -146,12 +140,12 @@ Iterative process: Systems, in reality, improve over iterations. We often start 
 
 Working under time constraints might not permit iterations on the design. However, we still recommend two iterations—first, where we do our best to come up with a design (that takes about 80 percent of our time), and a second iteration for improvements. Another choice is to change things as we figure out new insights. Inevitably, we discover new details as we spend more time working with a problem.
 
- > 
- > Start with simple solution and evolve it during the interview to the MVP
+> Start with simple solution and evolve it during the interview to the MVP
 
 At the risk of oversimplifying, we suggest that you *start small*. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it.
 
 name it **First Pass**, Naive Design, Baseline Solution
+
 
 collect only main features
 components prioritization
@@ -200,52 +194,47 @@ At the senior level, system design interviews are common.
 
 The difference in levelling is most frequently the depth of the solution and your knowledge. While all candidates are expected to complete a full design satisfying the requirements, a mid-level engineer might only do this with 80% breadth and 20% depth, while a senior engineer might do this with 60% breadth and 40% depth.
 
- > 
- > Remember that the top-level goal for your interview is to give your interviewer *sufficient confidence* to advocate for a hire decision. While the mechanics of your interview are important, they are ultimately in service of signaling to your interviewer that you are a strong candidate.
+> Remember that the top-level goal for your interview is to give your interviewer *sufficient confidence* to advocate for a hire decision. While the mechanics of your interview are important, they are ultimately in service of signaling to your interviewer that you are a strong candidate.
 
- > 
- > \[!warning\] Remember
- > The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the [Delivery](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) section.
+{{< callout warning "Remember" >}}
+The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the [Delivery](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) section.
+{{< /callout >}}
 
 ## Problem Navigation
 
 Your interviewer is looking to assess your ability to navigate a complex problem. This means that you should be able to break down the problem into smaller, more manageable pieces, prioritize the most important ones, and then navigate through those pieces to a solution. This is often the most important part of the interview, and the part that most candidates (especially those new to system design) struggle with.
 
 The most common ways that candidates fail with this competency are:
-
-* Insufficiently exploring the problem and gathering requirements.
-* Focusing on uninteresting/trivial aspects of the problem vs the most important ones.
-* Getting stuck on a particular piece of the problem and not being able to move forward.
+- Insufficiently exploring the problem and gathering requirements.
+- Focusing on uninteresting/trivial aspects of the problem vs the most important ones.
+- Getting stuck on a particular piece of the problem and not being able to move forward.
 
 ## High-Level Design
 
 With a problem broken down, your interviewer wants to see how you can solve each of the constituent pieces. This is where your knowledge of the [Core Concepts](https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts) comes into play. You should be able to describe how you would solve each piece of the problem, and how those pieces fit together into a cohesive whole.
 
 The most common ways that candidates fail with this competency are:
-
-* Not having a strong enough understanding of the core concepts to solve the problem.
-* Ignoring scaling and performance considerations.
-* "Spaghetti design" - a solution that is not well-structured and difficult to understand.
+- Not having a strong enough understanding of the core concepts to solve the problem.
+- Ignoring scaling and performance considerations.
+- "Spaghetti design" - a solution that is not well-structured and difficult to understand.
 
 ## Technical Excellence
 
 To be able to design a great system, you'll need to know about best practices, current technologies, and how to apply them. This is where your knowledge of the [Key Technologies](https://www.hellointerview.com/learn/system-design/in-a-hurry/key-technologies) is important. You should be able to describe how you would use current technologies, with well-recognized patterns, to solve the problems.
 
 The most common ways that candidates fail with this competency are:
-
-* Not knowing about available technologies.
-* Not knowing how to apply those technologies to the problem at hand.
-* Not recognizing common patterns and best practices.
+- Not knowing about available technologies.
+- Not knowing how to apply those technologies to the problem at hand.
+- Not recognizing common patterns and best practices.
 
 ## Communication and Collaboration
 
 Technical interviews are also a way to get to know what it would be like to work with you as a colleague. Interviews are frequently collaborative, and your interviewer will be looking to see *how you work with them to solve the problem*. This will include your ability to communicate complex concepts, respond to feedback and questions, and in some cases work together with the interviewer to solve the problem.
 
 The most common ways that candidates fail with this competency are:
-
-* Not being able to communicate complex concepts clearly.
-* Being defensive or argumentative when receiving feedback.
-* Getting lost in the weeds and not being able to work with the interviewer to solve the problem.
+- Not being able to communicate complex concepts clearly.
+- Being defensive or argumentative when receiving feedback.
+- Getting lost in the weeds and not being able to work with the interviewer to solve the problem.
 
 (interviewing.io point of view)
 With that said, sometimes you’ll have an interviewer who is cold or not very collaborative. Dealing with these interviewers requires practice. The more senior you become, the more important it is to learn how to adjust your communication style to match your audience. We recommend completing mock interviews with a variety of interviewers to help you become a seasoned, fearless veteran of system design interviews.
@@ -257,20 +246,18 @@ What your interviewer looks for, and what they don't
 With this basic model in mind, let's consider the main elements that system design interviewers look for, and the elements that don’t matter.
 
 What your interviewer wants to see
-
 1. a broad, base-level understanding of system design fundamentals.
-1. back-and-forth about problem constraints and parameters.
-1. well-reasoned, qualified decisions based on engineering trade-offs.
-1. the unique direction your experience and decisions take them.
-1. a holistic view of a system and its users.
+2. back-and-forth about problem constraints and parameters.
+3. well-reasoned, qualified decisions based on engineering trade-offs.
+4. the unique direction your experience and decisions take them.
+5. a holistic view of a system and its users.
 
 What your interviewer is not looking for
-
 1. deep expertise in the given problem domain.
-1. assumptions about the prompt.
-1. specific answers with ironclad certainty.
-1. a predefined path from the beginning to end of the problem.
-1. strictly technical considerations.
+2. assumptions about the prompt.
+3. specific answers with ironclad certainty.
+4. a predefined path from the beginning to end of the problem.
+5. strictly technical considerations.
 
 ## Understanding Fundamentals
 
@@ -314,8 +301,7 @@ System design problems, on the other hand, resemble a Choose Your Own Adventure 
 
 The path your interview takes will be steered by your interviewer, but they're likely to take cues from the sub-problems in which you display interest or aptitude. In some cases they may explicitly ask you which part of the problem you'd prefer to focus on.
 
- > 
- > Even if you're not choosing directly, you can still influence an interview's direction. As you talk your way through a solution, it’s OK to specifically note the parts that you have experience in and explain when you're making educated guesses. Your interviewer won't expect you to know everything, but giving them a better idea of what you do know will help them steer the interview in ways that reveal your strengths and problem-solving ability.
+> Even if you're not choosing directly, you can still influence an interview's direction. As you talk your way through a solution, it’s OK to specifically note the parts that you have experience in and explain when you're making educated guesses. Your interviewer won't expect you to know everything, but giving them a better idea of what you do know will help them steer the interview in ways that reveal your strengths and problem-solving ability.
 
 ## Holistic View
 
@@ -325,9 +311,10 @@ When faced with a choice in a design interview, it's easy to focus on the techni
 
 Suppose, for instance, that the image sharing service you're designing will require users to log in before uploading an image. In technical terms, you might want to avoid login to keep the database schema simpler, or you could introduce login to gather better metrics. An anonymous experience may be best for a public image-hosting site intended for quick turnaround and low interaction, while a logged-in experience offers the possibility of community features like commenting and sharing, personalized metrics, and the ability to restrict an upload to authorized viewers. You may want to take either approach or even both, allowing a limited anonymous experience with extra features for logged-in users.
 
- > 
- > \[!Important\] User Experience
- > The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.
+{{< callout note "User Experience" >}}
+
+{{< /callout >}}
+The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.
 
 # Flags
 
@@ -363,18 +350,13 @@ If you’re looking for a mid-level position or below, your interviewer should d
 
 If you’re applying for a senior role (or above), it’s a good sign if you direct more of the interview. In junior system design interviews, the interviewer expects to drive the interview, but as you reach senior levels the expectation shifts to the interviewee.
 
- > 
- > \[!Anecdote from a seasoned interviewer\]
- > ​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.
-
+>[!Anecdote from a seasoned interviewer]
+​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.
+>
 If your goal is to maximize a mid-level offer, not improve your "average passing rate" (i.e., if you are comfortable sacrificing some senior-plus chances to increase your mid-level chances), then you might be better off consciously "giving control away" to your interviewer.
-
- > 
-
+>
 Simply put, at the above-senior level an awkward pause will be held against you—that’s basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.
-
- > 
-
+>
 Another way to think of it: when you are not leading the conversation, you signal that you’re not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)
 
 The saying, ‘Better to remain silent and be thought a fool than to speak out and remove all doubt’ can be true for mid-level interviews but not for seniors or above-senior.”
@@ -407,24 +389,25 @@ Thumbs down icon
 I’m going to use Cassandra...” unless you are VERY familiar with that, because the next question will be: “Why Cassandra and not some_other_db?
 
 Do say
-I’m going to use a NoSQL db because of \[insert brief rationale\].
+I’m going to use a NoSQL db because of [insert brief rationale].
 
 Don’t say
-I will use Kafka…” unless you’re prepared to explain how Kafka works. Don’t say “I will use Kafka” unless you are prepared to talk about other types of queues, because they may ask you: “Oh, Kafka, interesting choice. Why that instead of \[some other queue\]?
+I will use Kafka…” unless you’re prepared to explain how Kafka works. Don’t say “I will use Kafka” unless you are prepared to talk about other types of queues, because they may ask you: “Oh, Kafka, interesting choice. Why that instead of [some other queue]?
 
 Do say
-I will use a queue because of \[insert brief rationale\].
+I will use a queue because of [insert brief rationale].
 
- > 
- > \[!info\] Remember
- > Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say "a queue".
+{{< callout info "Remember" >}}
+
+{{< /callout >}}
+Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say "a queue".
 
 # Technical (kind of) Flags
 
 ## Red: Overengineering
 
 A good interviewer also looks for red flags. Over-engineering is a real disease of many engineers as they delight in design purity and ignore tradeoffs. They are often unaware of the compounding costs of over-engineered systems, and many companies pay a high price for that ignorance. You certainly do not want to demonstrate this tendency in a system design interview. Other red flags include narrow mindedness, stubbornness, etc.
-\#todo and other engineering / architect practices and methods
+#todo and other engineering / architect practices and methods
 
 Over-engineering or making rigid design choices.
 
@@ -446,17 +429,15 @@ system evaluation
 **Role:** The **consumers of the system** who interact with the product.
 
 🔹 **Key Considerations:**
-
-* Who are the primary **users**? (e.g., general consumers, enterprise clients, developers via APIs)
-* What are their **key expectations**? (low latency, reliability, security, ease of use)
-* How does user behavior **impact system design**? (e.g., peak traffic patterns, read vs. write ratios)
+- Who are the primary **users**? (e.g., general consumers, enterprise clients, developers via APIs)
+- What are their **key expectations**? (low latency, reliability, security, ease of use)
+- How does user behavior **impact system design**? (e.g., peak traffic patterns, read vs. write ratios)
 
 # back-of-the-envelope estimations
 
 You should check with your interviewer to see if they want to see you do some math or if they’d rather go into design.
 
- > 
- > Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
+>Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 

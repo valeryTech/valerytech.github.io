@@ -1,22 +1,22 @@
 ---
 contributors: []
-date: 2025-02-21T18:43:34.169227
+date: '2025-02-21T23:36:39.643727'
 description: Default Description
 draft: false
-lastmod: 2025-02-21T18:43:34.169227
+lastmod: '2025-02-21T23:36:39.643727'
 summary: ''
 title: Hashing
 toc: true
 weight: 810
 ---
+Hasning strategies: 
 
-Hasning strategies:
-
-**rendezvous hashing**
+**rendezvous hashing** 
 https://randorithms.com/2020/12/26/rendezvous-hashing.html
-Rendezvous hashing - rank server set.
+Rendezvous hashing - rank server set. 
 
-**consistent hashing**
+
+**consistent hashing** 
 
 Consistent hashing is a way to effectively distribute the keys in any distributed storage system—cache, database, or otherwise—to a large number of nodes or servers while allowing us to add or remove nodes without incurring a large performance hit.
 
@@ -26,6 +26,6 @@ interviewing.io
 
 xxx
 
-You should use good hashing function.
+You should use good hashing function. 
 
-In both of these stategies we have some form of consistency in mapping (for example  between clients and servers).
+In both of these stategies we have some form of consistency in mapping (for example  between clients and servers). 
