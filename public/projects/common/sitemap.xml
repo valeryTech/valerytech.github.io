@@ -2,6 +2,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>http://localhost:1313/projects/common/chatbots_practice/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
       <loc>http://localhost:1313/projects/common/collaborative_learning_ts-and-js/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
@@ -24,6 +31,13 @@
     
     <url>
       <loc>http://localhost:1313/projects/common/improvements/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>http://localhost:1313/projects/common/speech_improver/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>

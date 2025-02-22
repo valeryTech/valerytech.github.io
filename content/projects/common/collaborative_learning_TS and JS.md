@@ -10,25 +10,14 @@ toc: true
 weight: 810
 ---
 
-
-
 patterns
-
-
 
 most important points
 
-
-
 resources
-
-
-
 
 best practices
 
-
 problems:
 
-where (collaborate on it). knowledge platform. 
-
+where (collaborate on it). knowledge platform.

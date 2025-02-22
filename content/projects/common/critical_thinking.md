@@ -10,9 +10,7 @@ toc: true
 weight: 810
 ---
 
+<https://en.wikipedia.org/wiki/Critical_thinking>
 
-https://en.wikipedia.org/wiki/Critical_thinking
-
-
-#todo make a diff / comparison with [Reflective_practice]({{< ref "projects/reflective_practice" >}})
-first assumption: reflective practice is focused on past actions whereby critical thinking is about 
+#todo make a diff / comparison with [Reflective_practice]({{< ref "projects/foundations/reflective_practice" >}})
+first assumption: reflective practice is focused on past actions whereby critical thinking is about

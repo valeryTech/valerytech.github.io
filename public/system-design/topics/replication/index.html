@@ -19,7 +19,7 @@
   <link rel="canonical" href="http://localhost:1313/system-design/topics/replication/">
 
 
-<title>Replication  |  Thought Foundations</title>
+<title>Replication  |  Tech Foundations</title>
 <meta name="description" content="Default Description">
 
     
@@ -48,7 +48,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 
 <meta property="og:url" content="http://localhost:1313/system-design/topics/replication/">
-  <meta property="og:site_name" content="Thought Foundations">
+  <meta property="og:site_name" content="Tech Foundations">
   <meta property="og:title" content="Replication">
   <meta property="og:description" content="Default Description">
   <meta property="og:locale" content="en">
@@ -127,7 +127,7 @@
 <header class="navbar navbar-expand-lg">
   <div class="container-lg">
   
-    <a class="navbar-brand me-auto me-lg-3" href="/">Thought Foundations</a>
+    <a class="navbar-brand me-auto me-lg-3" href="/">Tech Foundations</a>
 
     
     
@@ -214,6 +214,10 @@
 
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
   </li>
       </ul>
     </details>
@@ -312,6 +316,30 @@
   </li>
 
   <li>
+    <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
     <details open open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
@@ -326,10 +354,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -403,7 +427,7 @@
     
     <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Thought Foundations</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Tech Foundations</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -415,6 +439,9 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/engineering/engineering-guide/">Engineering Guide</a>
+              </li>
+            <li class="nav-item">
                 <a class="nav-link" href="http://localhost:1313/projects/about/">Projects</a>
               </li>
             <li class="nav-item">
@@ -567,6 +594,10 @@
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
   </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -664,6 +695,30 @@
   </li>
 
   <li>
+    <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
     <details open open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
@@ -678,10 +733,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -746,6 +797,7 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
+    <li><a href="#types">Types</a></li>
     <li><a href="#benefits">benefits</a></li>
     <li><a href="#problem">problem</a></li>
     <li><a href="#regime">regime</a>
@@ -769,6 +821,7 @@
     <li><a href="#trade-offs">trade-offs</a></li>
     <li><a href="#choosing-the-right-replication-strategy">Choosing the Right Replication Strategy</a></li>
     <li><a href="#replication">replication</a></li>
+    <li><a href="#leaderless-replication">Leaderless Replication</a></li>
   </ul>
 </nav>
 </div>
@@ -776,6 +829,15 @@
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/system-design/">System design</a></li>
+<li class="breadcrumb-item"><a href="/system-design/topics/">Topics</a></li>
+<li class="breadcrumb-item active" aria-current="page">Replication</li>
+					</ol>
+				</nav>
+			
 			<h1>Replication</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
@@ -784,6 +846,7 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#types">Types</a></li>
     <li><a href="#benefits">benefits</a></li>
     <li><a href="#problem">problem</a></li>
     <li><a href="#regime">regime</a>
@@ -807,13 +870,15 @@
     <li><a href="#trade-offs">trade-offs</a></li>
     <li><a href="#choosing-the-right-replication-strategy">Choosing the Right Replication Strategy</a></li>
     <li><a href="#replication">replication</a></li>
+    <li><a href="#leaderless-replication">Leaderless Replication</a></li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<p>Database replication</p>
+			<h1 id="types">Types</h1>
+<p>Database replication</p>
 <p>Replication means keeping a copy of the same data on multiple machines that are connected via a network.</p>
 <h1 id="benefits">benefits</h1>
 <p>There are several reasons why you might want to replicate data:
@@ -826,7 +891,7 @@
 <ol>
 <li>One of the replicas is designated the <em>leader</em> (also known as master or primary). When clients want to write to the database, they must send their requests to the leader, which first writes the new data to its local storage.</li>
 <li>The other replicas are known as <em>followers</em> (read replicas, slaves, secondaries, or hot standbys).Whenever the leader writes new data to its local storage, it also sends the data change to all of its followers as part of a <em>replication log</em> or <em>change stream</em>. Each follower takes the log from the leader and updates its local copy of the database accordingly, by applying all writes in the same order as they were processed on the leader.</li>
-<li>When a client wants to read from the database, it can query either the leader or any of the followers. However, writes are only accepted on the leader (the followers are read-only from the client’s point of view).</li>
+<li>When a client wants to read from the database, it can query either the leader or any of the followers. However, writes are only accepted on the leader (the followers are read-only from the client&rsquo;s point of view).</li>
 </ol>
 <h1 id="regime">regime</h1>
 <p>An important detail of a replicated system is whether the replication happens <strong>synchronously or asynchronously</strong>. (In relational databases, this is often a configurable option; other systems are often hardcoded to be either one or the other.)</p>
@@ -835,13 +900,13 @@
 <h2 id="chain-replication">chain replication<a href="#chain-replication" class="anchor" aria-hidden="true">#</a> </h2>
 <h2 id="reasoning">reasoning<a href="#reasoning" class="anchor" aria-hidden="true">#</a> </h2>
 <p>reasoning example from DDIA</p>
-<p><em>pros/cons</em>: The advantage of synchronous replication is that the follower is guaranteed to have an up-to-date copy of the data that is consistent with the leader. If the leader suddenly fails, we can be sure that the data is still available on the follower. The disadvantage is that if the synchronous follower doesn’t respond (because it has crashed, or there is a network fault, or for any other reason), the write cannot be processed. The leader must block all writes and wait until the synchronous replica is available again.</p>
+<p><em>pros/cons</em>: The advantage of synchronous replication is that the follower is guaranteed to have an up-to-date copy of the data that is consistent with the leader. If the leader suddenly fails, we can be sure that the data is still available on the follower. The disadvantage is that if the synchronous follower doesn&rsquo;t respond (because it has crashed, or there is a network fault, or for any other reason), the write cannot be processed. The leader must block all writes and wait until the synchronous replica is available again.</p>
 <p>reasoning: For that reason, it is impractical for all followers to be synchronous: any one node outage would cause the whole system to grind to a halt. In practice, if you enable synchronous replication on a database, it usually means that one of the followers is synchronous, and the others are asynchronous. If the synchronous follower becomes unavailable or slow, one of the asynchronous followers is made synchronous. This guarantees that you have an up-to-date copy of the data on at least two nodes: the leader and one synchronous follower. This configuration is sometimes also called semi-synchronous.</p>
 <p>Often, leader-based replication is configured to be completely asynchronous. In this case, if the leader fails and is not recoverable, any writes that have not yet been replicated to followers are lost. This means that a write is not guaranteed to be durable, even if it has been confirmed to the client. However, a fully asynchronous configuration has the advantage that the leader can continue processing writes, even if all of its followers have fallen behind.</p>
 <p>Weakening durability may sound like a bad trade-off, but asynchronous replication is nevertheless widely used, especially if there are many followers or if they are geographically distributed.</p>
 <p>We will discuss three popular algorithms for replicating changes between nodes: single-leader, multi-leader, and leaderless replication.</p>
 <h1 id="replication-log">replication log</h1>
-<p>How does leader-based replication work under the hood? Several different replication methods are used in practice, so let’s look at each one briefly.</p>
+<p>How does leader-based replication work under the hood? Several different replication methods are used in practice, so let&rsquo;s look at each one briefly.</p>
 <h1 id="replication-lag-problems">replication lag problems</h1>
 <p>Unfortunately, if an application reads from an asynchronous follower, it may see out‐
 dated information if the follower has fallen behind. This leads to apparent inconsis‐
@@ -862,9 +927,9 @@ should behave under replication lag:</p>
 <p>problem roots, formulation and consiquences. -&gt; we need <em>read-after-write consistency</em>, also known as read-your-writes consistency</p>
 <p>How can we implement read-after-write consistency in a system with leader-based replication? There are various possible techniques. To mention a few:</p>
 <h2 id="monotonic-reads">Monotonic Reads<a href="#monotonic-reads" class="anchor" aria-hidden="true">#</a> </h2>
-<p>After users have seen the data at one point in time, they shouldn’t later see the
+<p>After users have seen the data at one point in time, they shouldn&rsquo;t later see the
 data from some earlier point in time.</p>
-<p>Our second example of an anomaly that can occur when reading from asynchronous followers is that it’s possible for a user to see things moving backward in time.</p>
+<p>Our second example of an anomaly that can occur when reading from asynchronous followers is that it&rsquo;s possible for a user to see things moving backward in time.</p>
 <p>This can happen if a user makes several reads from different replicas.</p>
 <h2 id="consistent-prefix-reads">Consistent Prefix Reads<a href="#consistent-prefix-reads" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Users should see the data in a state that makes causal sense: for example, seeing a
@@ -874,10 +939,10 @@ reads. This guarantee says that if a sequence of writes happens in a certain ord
 then anyone reading those writes will see them appear in the same order.</p>
 <h1 id="solutions-for-replication-lag">Solutions for Replication Lag</h1>
 <p>how to think about this?</p>
-<p>When working with an eventually consistent system, it is worth thinking about how the application behaves if the replication lag increases to several minutes or even hours. If the answer is “no problem,” that’s great. However, if the result is a bad experience for users, it’s important to design the system to provide a stronger guarantee, such as read-after-write.</p>
+<p>When working with an eventually consistent system, it is worth thinking about how the application behaves if the replication lag increases to several minutes or even hours. If the answer is &ldquo;no problem,&rdquo; that&rsquo;s great. However, if the result is a bad experience for users, it&rsquo;s important to design the system to provide a stronger guarantee, such as read-after-write.</p>
 <p>As discussed earlier, there are ways in which an application can provide a stronger guarantee than the underlying database—for example, by performing certain kinds of reads on the leader. However, dealing with these issues in application code is complex and easy to get wrong.</p>
 <blockquote>
-<p>It would be better if application developers didn’t have to worry about subtle replication issues and could just trust their databases to “do the right thing.” This is why transactions exist: they are a way for a database to provide stronger guarantees so that the application can be simpler.</p></blockquote>
+<p>It would be better if application developers didn&rsquo;t have to worry about subtle replication issues and could just trust their databases to &ldquo;do the right thing.&rdquo; This is why transactions exist: they are a way for a database to provide stronger guarantees so that the application can be simpler.</p></blockquote>
 <p>Also, the replication itself should be transparent to an external user.</p>
 <p>Single-node transactions have existed for a long time. However, in the move to dis‐
 tributed (replicated and partitioned) databases, many systems have abandoned them,
@@ -892,7 +957,7 @@ features. For example, autoincrementing keys, triggers, and integrity constraint
 be problematic. For this reason, multi-leader replication is often considered danger‐
 ous territory that should be avoided if possible [28].</p>
 <p>crdt
-https://ably.com/blog/crdts-distributed-data-consistency-challenges</p>
+<a href="https://ably.com/blog/crdts-distributed-data-consistency-challenges">https://ably.com/blog/crdts-distributed-data-consistency-challenges</a></p>
 <p>what is the conflict?</p>
 <p>scalable approaches for detecting and resolving conflicts in a replicated system.</p>
 <h1 id="trade-offs">trade-offs</h1>
@@ -918,7 +983,7 @@ replica, leader, follower</p>
 pros, cons;</p>
 <p>common types of replication:</p>
 <p><strong>single leader</strong>
-In system design, a single machine acts as a leader, and all write requests (or updates to the data store) go through that machine. All the other machines are used to cater to the read requests. This was previously known as “master-slave” replication, but it’s currently known as “primary-standby” or “active-passive” replication.</p>
+In system design, a single machine acts as a leader, and all write requests (or updates to the data store) go through that machine. All the other machines are used to cater to the read requests. This was previously known as &ldquo;master-slave&rdquo; replication, but it&rsquo;s currently known as &ldquo;primary-standby&rdquo; or &ldquo;active-passive&rdquo; replication.</p>
 <p>The leader also needs to pass down the information about all the writes to the follower nodes to keep them up to date. In case the leader goes down, one of the follower nodes (mostly with the most up-to-date data) is promoted to be the leader. This is called failover.</p>
 <p><strong>multi leader</strong>
 In system design, this means that more than one machine can take the write requests. This makes the system more reliable in case a leader goes down. This also means that every machine (including leaders) needs to catch up with the writes that happen over other machines.</p>
@@ -928,7 +993,7 @@ In system design, this means that more than one machine can take the write reque
 <li>Sticky routing—writes from same client/index go to the same leader.</li>
 <li>Keeping and returning all the updates.</li>
 </ol>
-<p><strong>leaderless replication</strong></p>
+<h1 id="leaderless-replication">Leaderless Replication</h1>
 <p>In such a system, all machines can cater to write and read requests. In some cases, the client directly writes to all the machines, and requests are read from all the machines based on quorum. Quorum refers to the minimum number of acknowledgements (for writes) and consistent data values (for reads) for the action to be valid. In other cases, the client request reaches the coordinator that broadcasts the request to all the nodes.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
@@ -985,7 +1050,7 @@ In system design, this means that more than one machine can take the write reque
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/engineering/engineering-guide/">Engineering Guide</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">
@@ -1016,6 +1081,10 @@ In system design, this means that more than one machine can take the write reque
   src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
   integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
 </script>
+
+    <div class="d-inline-flex fixed-bottom-right pb-4 pe-4">
+  <button id="toTop" type="button" class="btn btn-primary rounded-circle ms-auto p-2"><span class="visually-hidden">Top</span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 15l6 -6l6 6"></path></svg></button>
+</div>
 
     
   </body>

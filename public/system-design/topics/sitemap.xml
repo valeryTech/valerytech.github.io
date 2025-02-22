@@ -23,13 +23,6 @@
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/db-1/</loc>
-      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-    <url>
       <loc>http://localhost:1313/system-design/topics/distributed-systems/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>

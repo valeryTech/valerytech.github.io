@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nfr on Thought Foundations</title>
+    <title>Nfr on Tech Foundations</title>
     <link>http://localhost:1313/system-design/nfr/</link>
-    <description>Recent content in Nfr on Thought Foundations</description>
+    <description>Recent content in Nfr on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
@@ -14,7 +14,7 @@
       <link>http://localhost:1313/system-design/nfr/consistency/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/consistency/</guid>
-      <description>&lt;p&gt;https://www.alexdebrie.com/posts/database-consistency/&lt;/p&gt;&#xA;&lt;h1 id=&#34;consistency&#34;&gt;consistency&lt;/h1&gt;&#xA;&lt;p&gt;definition, models, etc&lt;/p&gt;&#xA;&lt;p&gt;consistency patterns&lt;/p&gt;&#xA;&lt;p&gt;sources:&#xA;understanding distributes systems&#xA;DDIA&lt;/p&gt;&#xA;&lt;p&gt;https://en.wikipedia.org/wiki/Consistency_model&#xA;https://en.wikipedia.org/wiki/Sequential_consistency&lt;/p&gt;&#xA;&lt;p&gt;https://systemdesign.one/consistency-patterns/&#xA;https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.alexdebrie.com/posts/database-consistency/&#34;&gt;https://www.alexdebrie.com/posts/database-consistency/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;consistency&#34;&gt;consistency&lt;/h1&gt;&#xA;&lt;p&gt;definition, models, etc&lt;/p&gt;&#xA;&lt;p&gt;consistency patterns&lt;/p&gt;&#xA;&lt;p&gt;sources:&#xA;understanding distributes systems&#xA;DDIA&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Consistency_model&#34;&gt;https://en.wikipedia.org/wiki/Consistency_model&lt;/a&gt;&#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Sequential_consistency&#34;&gt;https://en.wikipedia.org/wiki/Sequential_consistency&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://systemdesign.one/consistency-patterns/&#34;&gt;https://systemdesign.one/consistency-patterns/&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems&#34;&gt;https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reliability &amp; Availability</title>

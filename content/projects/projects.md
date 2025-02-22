@@ -17,7 +17,7 @@ weight: 810
 
 This is a page about different useful topics.
 
-[Learning]({{< ref "projects/learning" >}}) here you find out how to learn, best practices
+[Learning]({{< ref "projects/foundations/learning" >}}) here you find out how to learn, best practices
 
 ## Heading 2
 
@@ -25,4 +25,3 @@ This is a page about different useful topics.
 
 text
 
-## Heading 2

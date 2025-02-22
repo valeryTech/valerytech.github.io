@@ -9,6 +9,3 @@ title: Spotify
 toc: true
 weight: 810
 ---
-Design Spotify
-
-

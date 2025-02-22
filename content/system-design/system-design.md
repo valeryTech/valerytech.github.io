@@ -76,29 +76,29 @@ Start by developing a toolbox (Version 1) to address the time-consuming nature o
 
 ## Action Plan Structure
 
-1. Develop a Starter Toolbox (Version 1):
+1.Develop a Starter Toolbox (Version 1):
     - Create a collection of foundational tools, frameworks, and design patterns to streamline the decision-making process.
     - Focus on essential concepts like scalability, reliability, and modularity to build a versatile starting point.
 
-1. Apply the Toolbox to Real-World Challenges:
+2.Apply the Toolbox to Real-World Challenges:
     - Use your toolbox to design solutions for practical scenarios, such as building scalable APIs, designing a database schema, or implementing caching layers.
     - Select diverse problems to cover a range of system design principles.
 
-3. Iterate and Refine:
+3.Iterate and Refine:
     - Continuously evaluate your toolbox based on the challenges you solve.
     - Identify gaps or inefficiencies and incorporate new tools, techniques, or patterns as you gain experience.
 
-4. Practice Collaborative Design:
+4.Practice Collaborative Design:
     - Simulate interview-style system design discussions with peers or mentors to enhance your ability to explain and adapt your toolbox in real-time.
 
-5. Document Lessons Learned:
+5.Document Lessons Learned:
     - Keep a log of the systems you design, the tools you use, and the trade-offs you encounter.
     - Use these reflections to improve your problem-solving and prepare for interviews.
 
 # Learning (SD Interview)
 
 {{< callout context="note" title="Advice" icon="outline/info-circle" >}}
-Use [Learning]({{< ref "projects/learning" >}}) principles and practices!
+Use [Learning]({{< ref "projects/foundations/learning" >}}) principles and practices!
 {{< /callout >}}
 
 At a high level, preparing for system design interviews is really about assembling the *right* pieces: you'll need to know some core concepts, key technologies, and common patterns. On this base, you'll establish a strategy or delivery framework for executing the interview. And finally, you'll need to *practice* to ensure you're comfortable the day of your actual interview.
@@ -121,9 +121,9 @@ Once you have the foundation in place, it's time to practice. Passively consumin
 
 ## Interviewing.io
 
-Candidates often get overwhelmed with system design. We don’t blame them. There are literally hundreds of topics you can study when preparing for an interview. But does that mean that you should drop everything and go study all of them? Absolutely not. It’s vital to master the basic principles first.
+Candidates often get overwhelmed with system design. We don't blame them. There are literally hundreds of topics you can study when preparing for an interview. But does that mean that you should drop everything and go study all of them? Absolutely not. It's vital to master the basic principles first.
 
-Professional experience with distributed systems isn’t needed to pass system design interviews. And even if you do have that experience, keep in mind that many talented distributed systems engineers still struggle with the system design interview format. How you perform in an interview is not a measure of your worth as a software engineer -- it is a measure of *your ability to do system design interviews*. The two are related but not equal; being a good programmer has a surprisingly small role in passing interviews.
+Professional experience with distributed systems isn't needed to pass system design interviews. And even if you do have that experience, keep in mind that many talented distributed systems engineers still struggle with the system design interview format. How you perform in an interview is not a measure of your worth as a software engineer -- it is a measure of *your ability to do system design interviews*. The two are related but not equal; being a good programmer has a surprisingly small role in passing interviews.
 
 # mock_interviews
 
@@ -143,9 +143,9 @@ hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really cool!
 - communication aspect, leadership skills, proactivity,
 - interview structure.
 
-## Advices
+# Advices
 
-It’s vital to master the Basic Principles first.
+It's vital to master the Basic Principles first.
 
 The best candidates trying by doing LOTS of mock interviews, with peers
 
@@ -185,7 +185,7 @@ fundamental things: vector clocks
 (hellointerview) classification
 
 (interviewing.io)
-12 fundamental (technical) system design concepts
+12 fundamental (technical) system design concepts:
 a. APIs
 b. Databases (SQL vs NoSQL)
 c. Scaling

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Common on Thought Foundations</title>
+    <title>Common on Tech Foundations</title>
     <link>http://localhost:1313/projects/common/</link>
-    <description>Recent content in Common on Thought Foundations</description>
+    <description>Recent content in Common on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/common/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chatbots Practice</title>
+      <link>http://localhost:1313/projects/common/chatbots_practice/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>http://localhost:1313/projects/common/chatbots_practice/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Collaborative Learning Ts And Js</title>
       <link>http://localhost:1313/projects/common/collaborative_learning_ts-and-js/</link>
@@ -21,7 +28,7 @@
       <link>http://localhost:1313/projects/common/critical_thinking/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/projects/common/critical_thinking/</guid>
-      <description>&lt;p&gt;https://en.wikipedia.org/wiki/Critical_thinking&lt;/p&gt;&#xA;&lt;p&gt;#todo make a diff / comparison with &lt;a href=&#34;http://localhost:1313/projects/reflective_practice/&#34;&gt;Reflective_practice&lt;/a&gt;&#xA;first assumption: reflective practice is focused on past actions whereby critical thinking is about&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Critical_thinking&#34;&gt;https://en.wikipedia.org/wiki/Critical_thinking&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;#todo make a diff / comparison with &lt;a href=&#34;http://localhost:1313/projects/foundations/reflective_practice/&#34;&gt;Reflective_practice&lt;/a&gt;&#xA;first assumption: reflective practice is focused on past actions whereby critical thinking is about&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hypothesis</title>
@@ -36,6 +43,13 @@
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/projects/common/improvements/</guid>
       <description>&lt;p&gt;you need to develop long-term vision. Why? 1. As a motivation.. 2. Identification.. 3. Organizational factor (define). &amp;hellip; This could be a non-useful approach, when you&amp;rsquo;ve decide what to use instead of solving problems and other more priority things.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Speech Improver</title>
+      <link>http://localhost:1313/projects/common/speech_improver/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>http://localhost:1313/projects/common/speech_improver/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

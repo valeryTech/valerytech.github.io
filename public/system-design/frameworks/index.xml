@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Frameworks on Thought Foundations</title>
+    <title>Frameworks on Tech Foundations</title>
     <link>http://localhost:1313/system-design/frameworks/</link>
-    <description>Recent content in Frameworks on Thought Foundations</description>
+    <description>Recent content in Frameworks on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
@@ -21,7 +21,7 @@
       <link>http://localhost:1313/system-design/frameworks/framework_iv/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/frameworks/framework_iv/</guid>
-      <description>&lt;h2 id=&#34;fundamentals-of-this-framework&#34;&gt;Fundamentals of this framework&lt;/h2&gt;&#xA;&lt;p&gt;This framework is predicated on the following fundamentals:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We propose an opinionated method that can be applied to reason over most system design interviews. The less you have to think about the process, the more you can focus on the problems at hand.&lt;/li&gt;&#xA;&lt;li&gt;Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.&lt;/li&gt;&#xA;&lt;li&gt;We’re teaching you a process. This means you’ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You’ll come across as a systematic problem solver who’s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you’ll encounter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;how-to-use-this-framework&#34;&gt;How to use this framework&lt;/h2&gt;&#xA;&lt;p&gt;In order to use this framework effectively, each step needs to be practiced separately. The three steps are:&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;fundamentals-of-this-framework&#34;&gt;Fundamentals of this framework&lt;/h2&gt;&#xA;&lt;p&gt;This framework is predicated on the following fundamentals:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We propose an opinionated method that can be applied to reason over most system design interviews. The less you have to think about the process, the more you can focus on the problems at hand.&lt;/li&gt;&#xA;&lt;li&gt;Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.&lt;/li&gt;&#xA;&lt;li&gt;We&amp;rsquo;re teaching you a process. This means you&amp;rsquo;ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You&amp;rsquo;ll come across as a systematic problem solver who&amp;rsquo;s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you&amp;rsquo;ll encounter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;how-to-use-this-framework&#34;&gt;How to use this framework&lt;/h2&gt;&#xA;&lt;p&gt;In order to use this framework effectively, each step needs to be practiced separately. The three steps are:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

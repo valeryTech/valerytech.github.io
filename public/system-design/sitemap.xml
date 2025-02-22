@@ -44,6 +44,13 @@
     </url>
     
     <url>
+      <loc>http://localhost:1313/system-design/to_sort/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
       <loc>http://localhost:1313/system-design/topics/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
@@ -87,6 +94,12 @@
       </url>
       <url>
         <loc>http://localhost:1313/system-design/interview/interview_phrases/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/system-design/interview/phrases/</loc>
         <lastmod>2025-02-22T09:02:28+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -206,6 +219,30 @@
         <priority>0.5</priority>
       </url>
       <url>
+        <loc>http://localhost:1313/system-design/to_sort/sd_algo_interviewing.io/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/system-design/to_sort/sd_algorithm/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/system-design/to_sort/sd_framework_old/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
+        <loc>http://localhost:1313/system-design/to_sort/sd_to_sort/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
         <loc>http://localhost:1313/system-design/topics/api/</loc>
         <lastmod>2025-02-22T09:02:28+00:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -219,12 +256,6 @@
       </url>
       <url>
         <loc>http://localhost:1313/system-design/topics/communication/</loc>
-        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-      </url>
-      <url>
-        <loc>http://localhost:1313/system-design/topics/db-1/</loc>
         <lastmod>2025-02-22T09:02:28+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>

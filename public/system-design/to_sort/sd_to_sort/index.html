@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.dc2f5458ab98613899cfadbb551e078821f7645691e4dfc57bb48d7697fe7be6885b7aea93d9ab15c53a25e38128c09220a1b4dcab934e04d1a7b374499b9872.css" integrity="sha512-3C9UWKuYYTiZz627VR4HiCH3ZFaR5N/Fe7SNdpf&#43;e&#43;aIW3rqk9mrFcU6JeOBKMCSIKG03KuTTgTRp7N0SZuYcg==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/system-design/to_sort/sd_to_sort/">
+
+  <link rel="canonical" href="http://localhost:1313/system-design/to_sort/sd_to_sort/">
+
+
+<title>Sd To Sort  |  Tech Foundations</title>
+<meta name="description" content="Default Description">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/system-design/to_sort/sd_to_sort/">
+  <meta property="og:site_name" content="Tech Foundations">
+  <meta property="og:title" content="Sd To Sort">
+  <meta property="og:description" content="Default Description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="system-design">
+    <meta property="article:published_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="article:modified_time" content="2025-02-22T09:02:28+00:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Sd To Sort">
+  <meta name="twitter:description" content="Default Description">
+      <meta name="twitter:site" content="@tecvalery">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Knowledge Base",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/",
+       "name": "System Design",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/system-design/to_sort/",
+       "name": "To Sort",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Sd to Sort",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF1V06CDS3"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XF1V06CDS3');
+        }
+      </script>
+
+
+
+
+</head>
+
+  
+  <body class="single section system-design" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">Tech Foundations</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">System design</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Tech Foundations</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/engineering/engineering-guide/">Engineering Guide</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/projects/about/">Projects</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/system-design/about/">System Design</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/valeryTech"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+  
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details open>
+      <summary>Elements</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/elements/api_gateway/">Api Gateway</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/elements/">Elements</a>
+  </li>
+
+  <li>
+      <a href="/system-design/elements/test_page/">Test Page</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Frameworks</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/frameworks/framework_hi/">Framework Hi</a>
+  </li>
+
+  <li>
+      <a href="/system-design/frameworks/framework_iv/">Framework Iv</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Interview</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/interview/interview/">Interview</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Nfr</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/nfr/consistency/">Consistency</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/reliability--availability/">Reliability &amp; Availability</a>
+  </li>
+
+  <li>
+      <a href="/system-design/nfr/scalability/">Scalability</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Projects</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/projects/_themes/"> Themes</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/chat-room/">Chat Room</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/code_deployment/">Code Deployment</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/events/">Events</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/instagram/">Instagram</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io/">Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/interviewing.io_example/">Interviewing.Io Example</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/job-scheduler/">Job Scheduler</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/key-value-store/">Key Value Store</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/live-commenting/">Live Commenting</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/online-file-storage/">Online File Storage</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/rate_limiter/">Rate Limiter</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/sd_reviews/">Sd Reviews</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/spotify/">Spotify</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/tik_tok/">Tik Tok</a>
+  </li>
+
+  <li>
+      <a href="/system-design/projects/whatsapp/">Whatsapp</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li class="active" >
+      <a aria-current="page" href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
+      <summary>Topics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/topics/api/">Api</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/caching/">Caching</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/communication/">Communication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/distributed-systems/">Distributed Systems</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/envelope_estimations/">Envelope Estimations</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/hashing/">Hashing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/microservices/">Microservices</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/partitioning/">Partitioning</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/queues/">Queues</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/replication/">Replication</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/security/">Security</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/stream_processing/">Stream Processing</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/streaming/">Streaming</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/trade-offs/">Trade Offs</a>
+  </li>
+
+  <li>
+      <a href="/system-design/topics/transactions/">Transactions</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+  
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#various">Various</a></li>
+    <li><a href="#fundamentals-of-sa--sa-hard-parts">Fundamentals of SA &amp; SA Hard Parts</a>
+      <ul>
+        <li><a href="#other">Other</a></li>
+        <li><a href="#laws">Laws</a></li>
+        <li><a href="#architectural-characteristics">Architectural characteristics</a>
+          <ul>
+            <li><a href="#trade-offs-and-least-worst-architecture">Trade-Offs and Least Worst Architecture</a></li>
+          </ul>
+        </li>
+        <li><a href="#processes-of-sd">Processes of SD</a></li>
+        <li><a href="#trade-offs-analysis">Trade-offs Analysis</a>
+          <ul>
+            <li><a href="#architectural-characteristics-1">Architectural Characteristics</a></li>
+            <li><a href="#component-design">Component Design</a></li>
+            <li><a href="#choose-architecture-style">Choose architecture style</a></li>
+            <li><a href="#analysing-architecture-risks">Analysing architecture risks</a></li>
+          </ul>
+        </li>
+        <li><a href="#other-distributed-considerations">Other Distributed Considerations</a></li>
+        <li><a href="#styles">Styles</a></li>
+        <li><a href="#data-architecture-concerns">Data architecture concerns</a></li>
+      </ul>
+    </li>
+    <li><a href="#understanding-distributed-systems">Understanding Distributed Systems</a>
+      <ul>
+        <li><a href="#failure-detection">Failure detection</a></li>
+        <li><a href="#time">Time</a></li>
+        <li><a href="#leader-election">Leader election</a></li>
+        <li><a href="#flow-control">Flow control</a></li>
+      </ul>
+    </li>
+    <li><a href="#ddia">DDIA</a>
+      <ul>
+        <li><a href="#part-ii">Part II</a></li>
+      </ul>
+    </li>
+    <li><a href="#hopre---architect">Hopre - Architect</a></li>
+    <li><a href="#designing-fine-grained-microservices">Designing fine-grained microservices</a>
+      <ul>
+        <li><a href="#key-concepts-of-microservices">Key Concepts of Microservices</a></li>
+        <li><a href="#ci">CI</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/system-design/">System design</a></li>
+<li class="breadcrumb-item"><a href="/system-design/to_sort/">To Sort</a></li>
+<li class="breadcrumb-item active" aria-current="page">Sd To Sort</li>
+					</ol>
+				</nav>
+			
+			<h1>Sd To Sort</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#various">Various</a></li>
+    <li><a href="#fundamentals-of-sa--sa-hard-parts">Fundamentals of SA &amp; SA Hard Parts</a>
+      <ul>
+        <li><a href="#other">Other</a></li>
+        <li><a href="#laws">Laws</a></li>
+        <li><a href="#architectural-characteristics">Architectural characteristics</a>
+          <ul>
+            <li><a href="#trade-offs-and-least-worst-architecture">Trade-Offs and Least Worst Architecture</a></li>
+          </ul>
+        </li>
+        <li><a href="#processes-of-sd">Processes of SD</a></li>
+        <li><a href="#trade-offs-analysis">Trade-offs Analysis</a>
+          <ul>
+            <li><a href="#architectural-characteristics-1">Architectural Characteristics</a></li>
+            <li><a href="#component-design">Component Design</a></li>
+            <li><a href="#choose-architecture-style">Choose architecture style</a></li>
+            <li><a href="#analysing-architecture-risks">Analysing architecture risks</a></li>
+          </ul>
+        </li>
+        <li><a href="#other-distributed-considerations">Other Distributed Considerations</a></li>
+        <li><a href="#styles">Styles</a></li>
+        <li><a href="#data-architecture-concerns">Data architecture concerns</a></li>
+      </ul>
+    </li>
+    <li><a href="#understanding-distributed-systems">Understanding Distributed Systems</a>
+      <ul>
+        <li><a href="#failure-detection">Failure detection</a></li>
+        <li><a href="#time">Time</a></li>
+        <li><a href="#leader-election">Leader election</a></li>
+        <li><a href="#flow-control">Flow control</a></li>
+      </ul>
+    </li>
+    <li><a href="#ddia">DDIA</a>
+      <ul>
+        <li><a href="#part-ii">Part II</a></li>
+      </ul>
+    </li>
+    <li><a href="#hopre---architect">Hopre - Architect</a></li>
+    <li><a href="#designing-fine-grained-microservices">Designing fine-grained microservices</a>
+      <ul>
+        <li><a href="#key-concepts-of-microservices">Key Concepts of Microservices</a></li>
+        <li><a href="#ci">CI</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<h1 id="various">Various</h1>
+<p>Think Big - Start Small</p>
+<p>Fake it until you can make it</p>
+<p>The ivory-tower architect most enjoys an end-state vision of ringing crystal perfection, but the pragmatic architect constantly thinks about the <strong>dynamics of change</strong>.</p>
+<p>A new architect will focus on the boxes; an experienced one is more interested in the arrows.</p>
+<p>Thus, the set of architectural structures is neither fixed nor limited. What is architectural depends on what is useful to reason about in your context for your system. This means that architecture <em>specically and intentionally omits certain information</em> about elements that is not useful for reasoning about the system.</p>
+<p>There is a reasoning behind the design of Kafka and Samza, which allow complex applications to be built by composing a small number of simple primitives – replicated logs and stream operators. #architecture</p>
+<p>Picking the right architecture = Picking the right battles + Managing trade-offs</p>
+<p>Robustness principle. Be conservative in what you do, be liberal in what you accept from others. #engineering</p>
+<p>This also makes testing useful as a design tool #engineering</p>
+<h1 id="fundamentals-of-sa--sa-hard-parts">Fundamentals of SA &amp; SA Hard Parts</h1>
+<p>Because virtually every problem presents novel challenges, the real job of an architect lies in their ability to objectively determine and assess the set of trade-offs on either side of a consequential decision to resolve it as well as possible.</p>
+<h2 id="other">Other<a href="#other" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Meilir Page-Jones made the astute observation that coupling in architecture may be split into static and dynamic coupling. <em>Static coupling</em> refers to the way architectural parts (classes, components, services, and so on) are wired together: dependencies, coupling degree, connection points, and so on. <em>Dynamic couplin</em>g refers to how architecture parts call one another: what kind of communication, what information is passed, strictness of contracts, and so on.</p>
+<p>ATAM process</p>
+<p>Architectural modularity: increased scalability is only one benefit of architectural modularity. Another important benefit is agility, the ability to respond quickly to change.</p>
+<p>Modularity Drivers
+Architects shouldn&rsquo;t break a system into smaller parts unless clear business drivers exist. The primary business drivers for breaking applications into smaller parts include <em>speed-to-market</em> (sometimes called time-to-market) and achieving a level of competitive advantage in the marketplace.</p>
+<p>Elasticity relies on services having a very small mean time to startup (MTTS), which is achieved  architecturally by having very small, fine-grained services.</p>
+<h2 id="laws">Laws<a href="#laws" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Why is more important than how
+Everything in software architecture is a trade-off.</p>
+<h2 id="architectural-characteristics">Architectural characteristics<a href="#architectural-characteristics" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Architects may collaborate on defining the domain or business requirements, but one key responsibility entails defining, discovering, and otherwise analyzing all the things the software must do that isn&rsquo;t directly related to the domain functionality: architectural characteristics (AC).</p>
+<p>When designing an application, the requirements specify what the application should do; architecture characteristics specify operational and design criteria for success, concerning how to implement the requirements and why certain choices were made. For example, a common important architecture characteristic specifies a certain level of performance for the application, which often doesn&rsquo;t appear in a requirements document. Even more pertinent: no requirements document states &ldquo;prevent technical debt,&rdquo; but it is a common design consideration for archi‐ tects and developers.</p>
+<p><em>Main goal:</em>
+Thus, a critical job for architects lies in choosing <em>the fewest</em> architecture characteristics rather than the most possible.</p>
+<h3 id="trade-offs-and-least-worst-architecture">Trade-Offs and Least Worst Architecture<a href="#trade-offs-and-least-worst-architecture" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Applications can only support a few of the architecture characteristics we&rsquo;ve listed for a variety of reasons. First, each of the supported characteristics requires design effort and perhaps structural support. Second, the bigger problem lies with the fact that each architecture characteristic often has an impact on others. For example, if an architect wants to improve security, it will almost certainly negatively impact performance. More often, the decisions come down to trade-offs between several competing concerns.</p>
+<p>Our goal is to investigate how to do trade-off analysis in distributed architectures; to do that, we must pull the moving pieces apart so that we can discuss them in isolation to understand them fully before putting them back together.</p>
+<p>Distributed architectures like microservices are difficult, especially if architects cannot untangle all the forces at play. What we need is an approach or framework that helps us figure out the hard problems in our architecture</p>
+<p>Problem with decoupling:
+Architects design fine-grained microservices to achieve decoupling, but then orchestration, transactionality, and asynchronicity become huge problems. Until now, architects lacked the correct perspective and terminology to allow a careful analysis that could determine the best (or least worst) set of trade-offs on a case-by-case basis.</p>
+<h2 id="processes-of-sd">Processes of SD<a href="#processes-of-sd" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="trade-offs-analysis">Trade-offs Analysis<a href="#trade-offs-analysis" class="anchor" aria-hidden="true">#</a> </h2>
+<p>To analyze trade-offs, an architect must first determine what forces need to trade off with each other.</p>
+<h3 id="architectural-characteristics-1">Architectural Characteristics<a href="#architectural-characteristics-1" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Identifying the driving architectural characteristics is one of the first steps in creating an architecture or determining the validity of an existing architecture.</p>
+<p>Understanding the key domain goals and domain situation allows an architect to translate those domain concerns to &ldquo;-ilities,&rdquo; which then forms the basis for correct and justifiable architecture decisions.</p>
+<p>One tip when collaborating with domain stakeholders to define the driving architecture characteristics is to work hard to keep the final list <em>as short as possible</em>. A common anti-pattern in architecture entails trying to design <em>a generic architecture</em>, one that supports all the architecture characteristics. Each architecture characteristic the architecture supports complicates the overall system design; supporting too many architecture characteristics leads to greater and greater complexity before the architect and developers have even started addressing the problem domain, the original motivation for writing the software. Don&rsquo;t obsess over the number of charateristics, but rather the motivation to keep design simple.</p>
+<p>A better approach is to have the domain stakeholders select the top three most important characteristics from the final list (in any order).</p>
+<h3 id="component-design">Component Design<a href="#component-design" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Components form the fundamental modular building block in architecture, making them a critical consideration for architects. In fact, one of the primary decisions an architect must make concerns the top-level partitioning of components in the architecture.</p>
+<p>Architects, often in collaboration with other roles such as developers, business analysts, and subject matter experts, create an initial component design based on general knowledge of the system and how they choose to decompose it, based on technical or domain partitioning. The team goal is an initial design that partitions the problem space into coarse chunks that take into account differing architecture characteristics.</p>
+<p>Approaches:</p>
+<ul>
+<li>actors/actions approach.</li>
+<li>event storming</li>
+<li>workflow approach</li>
+</ul>
+<h3 id="choose-architecture-style">Choose architecture style<a href="#choose-architecture-style" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Choosing an architecture style represents the culmination of analysis and thought about tradeoffs for architecture characteristics, domain considerations, strategic goals, and a host of other things.</p>
+<h3 id="analysing-architecture-risks">Analysing architecture risks<a href="#analysing-architecture-risks" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Analyzing architecture risk is one of the key activities of architecture.</p>
+<ul>
+<li>4+1 architecture model</li>
+<li>To successfully design, analyze, and evolve software, developers must consider all the coupling points that could break.</li>
+</ul>
+<h2 id="other-distributed-considerations">Other Distributed Considerations<a href="#other-distributed-considerations" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In addition to the eight fallacies of distributed computing previously described, there are other <em>issues and challenges</em> facing distributed architecture that aren&rsquo;t present in monolithic architectures:</p>
+<ul>
+<li>distributed logging</li>
+<li>distributed transactions</li>
+<li>contract maintenance and versioning</li>
+</ul>
+<h2 id="styles">Styles<a href="#styles" class="anchor" aria-hidden="true">#</a> </h2>
+<h2 id="data-architecture-concerns">Data architecture concerns<a href="#data-architecture-concerns" class="anchor" aria-hidden="true">#</a> </h2>
+<p>There is separation between separation between operational versus analytical data.</p>
+<h1 id="understanding-distributed-systems">Understanding Distributed Systems</h1>
+<p>Building reliable abstractions on top of unreliable ones is a common pattern we will encounter again in the rest of the book.
+For example, this protocol could be TCP. TCP&rsquo;s reliability and stability come at the price of lower bandwidth and higher latencies than the underlying network can deliver</p>
+<h2 id="failure-detection">Failure detection<a href="#failure-detection" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Pings and heartbeats are generally used for processes that interact with each other frequently, in situations where an action needs to be taken as soon as one of them is no longer reachable. In other circumstances, detecting failures just at communication time is good enough.</p>
+<h2 id="time">Time<a href="#time" class="anchor" aria-hidden="true">#</a> </h2>
+<p>But in a distributed system, there is no shared global clock that all processes agree on that can be used to order operations. And, to make matters worse, processes can run concurrently.</p>
+<p>This happened-before relationship creates a causal bond between the two operations, since the one that happens first can have side-effects that affect the operation that comes after it. We can use this intuition to build a different type of clock that isn&rsquo;t tied to the physical concept of time but rather captures the causal relationship between operations: <strong>a logical clock</strong>.</p>
+<p>A <strong>vector clock</strong> is a logical clock that guarantees that if a logical timestamp is less than another, then the former must have happened-before the latter. A vector clock is implemented with an array of counters, one for each process in the system. And, as with Lamport clocks, each process has its local copy.</p>
+<h2 id="leader-election">Leader election<a href="#leader-election" class="anchor" aria-hidden="true">#</a> </h2>
+<p>There are times when a single process in the system needs to have special powers, like accessing a shared resource or assigning work to others. To grant a process these powers, the system needs to elect a leader among a set of candidate processes, which remains in charge until it relinquishes its role or becomes otherwise unavailable. When that happens, the remaining processes can elect a new leader among themselves.</p>
+<p>A leader election algorithm needs to guarantee that there is at most one leader at any given time and that an election eventually completes even in the presence of failures. These two properties are also referred to as safety and liveness, respectively, and they are general properties of distributed algorithms. Informally, safety guarantees that nothing bad happens and liveness that something good eventually does happen.</p>
+<p>Although having a leader can simplify the design of a system as it eliminates concurrency, it can also become a scalability bottleneck if the number of operations performed by it increases to the point where it can no longer keep up. Also, a leader is a single point of failure with a large blast radius; if the election process stops working or the leader isn&rsquo;t working as expected, it can bring down the entire system with it. We can mitigate some of these downsides by introducing partitions and assigning a different leader per partition, but that comes with additional complexity. This is the solution many distributed data stores use since they need to use partitioning anyway to store data that doesn&rsquo;t fit in a single node.</p>
+<h2 id="flow-control">Flow control<a href="#flow-control" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Flow control is a <em>backoff mechanism</em> that TCP implements to prevent the sender from overwhelming the receiver. The receiver stores incoming TCP segments waiting to be processed by the application into a receive buffer. Assuming <em>it&rsquo;s respecting the protocol</em>, the sender avoids sending more data than can fit in the receiver&rsquo;s buffer.</p>
+<h1 id="ddia">DDIA</h1>
+<p>But the basic idea is still the same: each layer <strong>hides the complexity of the layers below it</strong> by providing a clean data model (27)</p>
+<p>Other databases at that time forced application developers to think a lot about the internal representation of the data in the database. The goal of the relational model was to <strong>hide that implementation detail behind a cleaner interface</strong>.</p>
+<p>(NoSQL) They embrace schemaless data, run on clusters, and have the ability <strong>to trade off traditional consistency for other useful properties</strong>. (Martin Fowler cite)</p>
+<p>The JSON representation <strong>has better locality</strong> than the multi-table schema (32). It&rsquo;s worth pointing out that the idea of grouping related data together for locality is not limited to the document model (41).</p>
+<p>Evolution of a data model: moreover, even if the initial version of an application fits well in a join-free document model, data has a tendency of becoming more interconnected as features are added to applications.</p>
+<p>The ease of changes to be made to an application&rsquo;s data model. &lt;- data models comparison</p>
+<ul>
+<li>?? schema changes and migrations</li>
+<li>?? joins in Document DBs</li>
+</ul>
+<h2 id="part-ii">Part II<a href="#part-ii" class="anchor" aria-hidden="true">#</a> </h2>
+<p>&hellip;
+In this part of the book, we focus on shared-nothing architectures—not because they are necessarily the best choice for every use case, but rather because they require the most caution from you, the application developer. If your data is distributed across multiple nodes, you need to be aware of the constraints and trade-offs that occur in such a distributed system—the database cannot magically hide these from you.</p>
+<p>With an understanding of those concepts, we can discuss the difficult trade-offs that you need to make in a distributed system.</p>
+<p>However, you do need to know how your software reacts to network problems and ensure that the system can recover from them.</p>
+<p>We will now continue along the same lines, and seek abstractions that can allow an application to ignore some of the problems with distributed systems. For example, one of the most important abstractions for distributed systems is consensus: that is, getting all of the nodes to agree on something.</p>
+<h1 id="hopre---architect">Hopre - Architect</h1>
+<p>As our world is becoming more complex and difficult to understand, telling stories is one of the best ways to engage and teach.</p>
+<p>An architect shouldn&rsquo;t ignore production issues, which provide valuable feedback into possible architectural weaknesses.</p>
+<p>Making decisions is important, but I also believe in Martin Fowler&rsquo;s conclusion that &ldquo;one of an architect&rsquo;s most important tasks is to eliminate irreversibility in software designs, avoiding the &ldquo;big&rdquo; decisions that cannot be easily reversed.</p>
+<p>When asked to characterize the seniority of an architect, I resort to <em>a simple framework that I believe applies to most high-end professions</em></p>
+<p>As I converse with colleagues about what distinguishes a great architect, we often identify rational and disciplined decision-making as a key factor in translating skill into impact.</p>
+<h1 id="designing-fine-grained-microservices">Designing fine-grained microservices</h1>
+<h2 id="key-concepts-of-microservices">Key Concepts of Microservices<a href="#key-concepts-of-microservices" class="anchor" aria-hidden="true">#</a> </h2>
+<ul>
+<li><em>Independent Deployability.</em> Independent deployability is the idea that we can make a change to a microservice, deploy it, and release that change to our users, without having to deploy any other microservices. More important, it&rsquo;s not just the fact that we can do this; it&rsquo;s that this is actually how you manage deployments in your system. It&rsquo;s a discipline you adopt as your default release approach.</li>
+<li><em>Modeled Around a Business Domain.</em> Rolling out a feature that requires changes to more than one microservice is expensive. You need to coordinate the work across each service (and potentially across sep‐ arate teams) and carefully manage the order in which the new versions of these services are deployed. That takes a lot more work than making the same change inside a single service (or inside a monolith, for that matter). It therefore follows that we want to find ways to make cross-service changes as infrequent as possible.</li>
+<li><em>Owning Their Own State.</em> If a microservice wants to access data held by another microservice, it should go and ask that second microservice for the data. This gives the microservices the ability to decide what is shared and what is hidden, which allows us to clearly separate functionality that can change freely (our internal implementation) from the functionality that we want to change infrequently (the external contract that the consumers use).</li>
+<li>Microservices embrace the concept of information hiding.  Information hiding means hiding as much information as possible inside a component and exposing as little as possible via external interfaces. This allows for clear separation between what can change easily and what is more difficult to change. Implementation that is hidden from external parties can be changed freely as long as the networked interfaces the microservice exposes don&rsquo;t change in a backward-incompatible fashion. C</li>
+</ul>
+<h2 id="ci">CI<a href="#ci" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Integrate early, and integrate often. Avoid the use of long-lived branches for feature development, and consider trunk-based devel‐ opment instead. If you really have to use branches, keep them short!</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/system-design/projects/sd_reviews/" class="stretched-link text-reset text-decoration-none">Sd Reviews</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/system-design/topics/security/" class="stretched-link text-reset text-decoration-none">Security</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/engineering/engineering-guide/">Engineering Guide</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by Valery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.8f1a3f7e136a1cb292637dee201e31e084ff02b6c24da0dc5a45e020a73afb88.js"
+  integrity="sha256-jxo/fhNqHLKSY33uIB4x4IT/ArbCTaDcWkXgIKc6&#43;4g=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.8350d2f520e131f8552ed57c1eadd05c50eccf0427267781442dd8ddf8fdcdf7.js"
+  integrity="sha256-g1DS9SDhMfhVLtV8Hq3QXFDszwQnJneBRC3Y3fj9zfc=">
+</script>
+<script async
+  src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
+  integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
+</script>
+
+    <div class="d-inline-flex fixed-bottom-right pb-4 pe-4">
+  <button id="toTop" type="button" class="btn btn-primary rounded-circle ms-auto p-2"><span class="visually-hidden">Top</span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 15l6 -6l6 6"></path></svg></button>
+</div>
+
+    
+  </body>
+</html>

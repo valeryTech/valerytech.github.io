@@ -19,7 +19,7 @@
   <link rel="canonical" href="http://localhost:1313/system-design/topics/caching/">
 
 
-<title>Caching  |  Thought Foundations</title>
+<title>Caching  |  Tech Foundations</title>
 <meta name="description" content="Default Description">
 
     
@@ -48,7 +48,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 
 <meta property="og:url" content="http://localhost:1313/system-design/topics/caching/">
-  <meta property="og:site_name" content="Thought Foundations">
+  <meta property="og:site_name" content="Tech Foundations">
   <meta property="og:title" content="Caching">
   <meta property="og:description" content="Default Description">
   <meta property="og:locale" content="en">
@@ -127,7 +127,7 @@
 <header class="navbar navbar-expand-lg">
   <div class="container-lg">
   
-    <a class="navbar-brand me-auto me-lg-3" href="/">Thought Foundations</a>
+    <a class="navbar-brand me-auto me-lg-3" href="/">Tech Foundations</a>
 
     
     
@@ -214,6 +214,10 @@
 
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
   </li>
       </ul>
     </details>
@@ -312,6 +316,30 @@
   </li>
 
   <li>
+    <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
     <details open open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
@@ -326,10 +354,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -403,7 +427,7 @@
     
     <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Thought Foundations</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Tech Foundations</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -415,6 +439,9 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/engineering/engineering-guide/">Engineering Guide</a>
+              </li>
+            <li class="nav-item">
                 <a class="nav-link" href="http://localhost:1313/projects/about/">Projects</a>
               </li>
             <li class="nav-item">
@@ -567,6 +594,10 @@
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
   </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -664,6 +695,30 @@
   </li>
 
   <li>
+    <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
     <details open open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
@@ -678,10 +733,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -748,18 +799,23 @@
   <ul>
     <li><a href="#ontology">ontology</a></li>
     <li><a href="#common">common</a></li>
-    <li><a href="#purposes">purposes</a></li>
-    <li><a href="#parameters">parameters</a></li>
+    <li><a href="#targets">Targets</a></li>
+    <li><a href="#parameters">Parameters</a></li>
     <li><a href="#where-to-cache">Where to Cache</a></li>
     <li><a href="#request-cache">Request cache</a></li>
     <li><a href="#cache-invalidation">cache invalidation</a></li>
-    <li><a href="#writing-to-cache">Writing to cache</a></li>
+    <li><a href="#writing-to-cache">Writing to cache</a>
+      <ul>
+        <li><a href="#write-through">Write-through</a></li>
+        <li><a href="#write-behind-write-back">Write-behind (write-back)</a></li>
+      </ul>
+    </li>
     <li><a href="#freshness-versus-optimization">Freshness Versus Optimization</a></li>
     <li><a href="#the-golden-rule-of-caching">The Golden Rule of Caching</a></li>
-    <li><a href="#patterns">patterns</a>
+    <li><a href="#patterns">Patterns</a>
       <ul>
         <li><a href="#cache-aside">cache-aside</a></li>
-        <li><a href="#write-through">write-through</a></li>
+        <li><a href="#write-through-1">write-through</a></li>
       </ul>
     </li>
     <li><a href="#in-memory-type">in-memory type</a></li>
@@ -772,6 +828,15 @@
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/system-design/">System design</a></li>
+<li class="breadcrumb-item"><a href="/system-design/topics/">Topics</a></li>
+<li class="breadcrumb-item active" aria-current="page">Caching</li>
+					</ol>
+				</nav>
+			
 			<h1>Caching</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
@@ -782,18 +847,23 @@
   <ul>
     <li><a href="#ontology">ontology</a></li>
     <li><a href="#common">common</a></li>
-    <li><a href="#purposes">purposes</a></li>
-    <li><a href="#parameters">parameters</a></li>
+    <li><a href="#targets">Targets</a></li>
+    <li><a href="#parameters">Parameters</a></li>
     <li><a href="#where-to-cache">Where to Cache</a></li>
     <li><a href="#request-cache">Request cache</a></li>
     <li><a href="#cache-invalidation">cache invalidation</a></li>
-    <li><a href="#writing-to-cache">Writing to cache</a></li>
+    <li><a href="#writing-to-cache">Writing to cache</a>
+      <ul>
+        <li><a href="#write-through">Write-through</a></li>
+        <li><a href="#write-behind-write-back">Write-behind (write-back)</a></li>
+      </ul>
+    </li>
     <li><a href="#freshness-versus-optimization">Freshness Versus Optimization</a></li>
     <li><a href="#the-golden-rule-of-caching">The Golden Rule of Caching</a></li>
-    <li><a href="#patterns">patterns</a>
+    <li><a href="#patterns">Patterns</a>
       <ul>
         <li><a href="#cache-aside">cache-aside</a></li>
-        <li><a href="#write-through">write-through</a></li>
+        <li><a href="#write-through-1">write-through</a></li>
       </ul>
     </li>
     <li><a href="#in-memory-type">in-memory type</a></li>
@@ -823,7 +893,7 @@
 <p>In computing, a cache is a component that stores data so that future requests for that data can be served faster; the data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.</p>
 <p>Cache can be viewed as a high-speed storage layer that sits between the application and the original source of the data, such as a database, a file system, or a remote web service.</p>
 <p>Caches can store the results of simple lookups, as in this example, but really they <em>can store any piece of data</em>, such as the result of a complex calculation. We can cache to help improve the performance of our system as part of helping reduce latency, to scale our application, and in some cases even to improve the robustness of our system.</p>
-<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -835,24 +905,25 @@
   stroke-linecap="round"
   stroke-linejoin="round"
  
- class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
-  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
-  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
 </svg>
   <div class="callout-content">
     <div class="callout-title">
-        <p>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
+        <p>Caching as optimization</p>
 
       </div>
     <div class="callout-body">
-      
+      <p>Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.</p>
+
     </div>
   </div>
 </div>
 
-<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -864,34 +935,61 @@
   stroke-linecap="round"
   stroke-linejoin="round"
  
- class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
-  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
-  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
 </svg>
   <div class="callout-content">
     <div class="callout-title">
-        <p>Generally, caching is used only in cases where the external <em>data doesn&rsquo;t change often</em> or you can replicate all the data on your systems. Also if you don&rsquo;t care about data consistency then cache is really useful.</p>
+        <p>Data change frequency</p>
 
       </div>
     <div class="callout-body">
-      
+      <p>Generally, caching is used only in cases where the external <em>data doesn&rsquo;t change often</em> or you can replicate all the data on your systems. Also if you don&rsquo;t care about data consistency then cache is really useful.</p>
+
     </div>
   </div>
 </div>
 
-<blockquote>
-<p>[!Rule of thumb]
-Generally, caching is used for <em>read-heavy systems</em>. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Rule of Thumb</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Generally, caching is used for <em>read-heavy systems</em>. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>another rule</p>
 <p>The 80/20 rule: You want to store 80% of read requests in 20% of storage (or memory). Generally, these are the most popular requests.</p>
 <p>For example, if there is a tweet from a very popular person on twitter you would cache it everywhere (on a device, on a CDN, on the application) so that whenever that tweet is finished you can fetch it very quickly and serve it up to your users.</p>
 <p>A CDN (content delivery network) is something that&rsquo;s commonly used to deliver cached data.</p>
-<hr>
 <p>To maintain coherence of the external data, you should apply a periodic refresh strategy to the cache so it doesn&rsquo;t become outdated.</p>
 <p>Updating cache: cache-aside, write-through, write-behind, refresh-ahead.</p>
-<h1 id="purposes">purposes</h1>
+<h1 id="targets">Targets</h1>
 <p>A cache can reduce load on system which data it holds. A primary reason to set up caching outside of your database is to reduce load within your database engine.</p>
 <p>Cases: when you want to speed up a system
 =&gt; When you douing a lot of network requests
@@ -904,7 +1002,7 @@ Generally, caching is used for <em>read-heavy systems</em>. Popular read-heavy s
 More broadly, caching for scale is useful in any situation in which the origin is a point of contention. Putting caches between clients and the origin can reduce the load on the origin, better allowing it to scale.</p>
 <p><strong>For Robustness.</strong></p>
 <p>If you have an entire set of data available to you in a local cache, you have the potential to operate even if the origin is unavailable—this in turn could improve the robustness of your system.</p>
-<h1 id="parameters">parameters</h1>
+<h1 id="parameters">Parameters</h1>
 <p>side of a cache: client/server</p>
 <h1 id="where-to-cache">Where to Cache</h1>
 <p>As we have covered multiple times, microservices give you options. And this is absolutely the case with caching. We have <em>lots of different places</em> where we could cache. The different cache locations I&rsquo;ll outline here have different trade-offs, and what sort of optimization you&rsquo;re trying to make will likely point you toward the cache location that makes the most sense for you.</p>
@@ -932,12 +1030,12 @@ With notification-based invalidation, we use events to help subscribers know if 
 The main benefit of this mechanism is that it reduces the potential window wherein the cache is serving stale data. The window in which a cache might now be serving stale data is limited to the time taken for the notification to be sent and processed.</p>
 <p>Conditional GETS</p>
 <p>LRU</p>
-<p>For most systems 20% of the data accounts for 80% of the reads. So using LRU will result in fewer cache misses. Because of the 80/20 rule, we want to give special treatment to the most popular data! That’s why we use LRU. As a result, we can throw stuff in the cache (and not miss), which reduces latency for 80% of your requests.</p>
+<p>For most systems 20% of the data accounts for 80% of the reads. So using LRU will result in fewer cache misses. Because of the 80/20 rule, we want to give special treatment to the most popular data! That&rsquo;s why we use LRU. As a result, we can throw stuff in the cache (and not miss), which reduces latency for 80% of your requests.</p>
 <h1 id="writing-to-cache">Writing to cache</h1>
-<p><strong>Write-through</strong></p>
+<h2 id="write-through">Write-through<a href="#write-through" class="anchor" aria-hidden="true">#</a> </h2>
 <p>With a write-through cache, the cache is updated at the same time as the state in the origin. &ldquo;At the same time&rdquo; is where write-through caches get tricky, of course. Implementing a write-through mechanism on a server-side cache is somewhat straightforward, as you could update a database and an in-memory cache within the same transaction without too much difficulty. If the cache is elsewhere, it&rsquo;s more difficult to reason about what &ldquo;at the same time&rdquo; means in terms of these entries being updated.</p>
-<p>Due to this difficulty, you’d typically see write-through caching being used in a microservice architecture on the server side. The benefits are pretty clear—the win‐ dow in which a client might see stale data could be practically eliminated. This is bal‐ anced against the fact that server-side caches may well be less generally useful, limiting the circumstances in which a write-through cache would be effective in microservices.</p>
-<p><strong>Write-behind</strong> (write-back)</p>
+<p>Due to this difficulty, you&rsquo;d typically see write-through caching being used in a microservice architecture on the server side. The benefits are pretty clear—the win‐ dow in which a client might see stale data could be practically eliminated. This is bal‐ anced against the fact that server-side caches may well be less generally useful, limiting the circumstances in which a write-through cache would be effective in microservices.</p>
+<h2 id="write-behind-write-back">Write-behind (write-back)<a href="#write-behind-write-back" class="anchor" aria-hidden="true">#</a> </h2>
 <p>With a write-behind cache, the cache itself is updated first, and then the origin is updated. Conceptually, you can think of the cache as a buffer. Writing into the cache is faster than updating the origin. So we write the result into the cache, allowing faster subsequent reads, and trust that the origin will be updated afterward. The main concern around write-behind caches is going to be the potential for data loss. If the cache itself isn&rsquo;t durable, we could lose the data before the data is written to the origin. Additionally, we&rsquo;re now in an interesting spot—what is the origin in this context? We&rsquo;d expect the origin to be the microservice where this data is sourced from—but if we update the cache first, is that really the origin?</p>
 <h1 id="freshness-versus-optimization">Freshness Versus Optimization</h1>
 <p>Coming back to our example of TTL-based invalidation, I explained earlier that if we request a fresh copy of the data that has a five-minute TTL, and a second later the data at the origin changes, then our cache will be operating on out-of-date data for the remaining four minutes and 59 seconds. If this is unacceptable, one solution would be to reduce the TTL, thereby reducing the duration in which we could operate on stale data. So perhaps we reduce the TTL to one minute. This means that our window of staleness is reduced to one-fifth of what it was, but we&rsquo;ve made five times as many calls to the origin, so we have to consider the associated latency and load impact.</p>
@@ -974,25 +1072,52 @@ The main benefit of this mechanism is that it reduces the potential window where
 
 <p>Be careful about caching in too many places! The more caches between you and the source of fresh data, the more stale the data can be, and the harder it can be to determine the freshness of the data that a client eventually sees. It can also be more difficult to reason about where data needs to be invalidated. The trade-off around caching—balancing freshness of data against optimization of your system for load or latency—is a delicate one, and if you cannot easily reason about how fresh (or not) data might be, this becomes difficult.</p>
 <p>Coming back to the famous quote from Knuth earlier, premature optimization can cause issues. Caching adds complexity, and we want to add as little complexity as possible. The ideal number of places to cache is zero. Anything else should be an optimization you have to make—but be aware of the complexity it can bring.</p>
-<h1 id="patterns">patterns</h1>
+<h1 id="patterns">Patterns</h1>
 <h2 id="cache-aside">cache-aside<a href="#cache-aside" class="anchor" aria-hidden="true">#</a> </h2>
-<p>This is the most popular cache pattern. In this pattern, we have an application which will try to fetch data from the cache, and if the data is not found (also known as a “cache miss”) it will fetch data from the database. Or it will do an expensive computation. And then it will put that data back to the cache before returning the query back to the user.</p>
-<p>In this pattern we only cache the data that we need, which is advantageous. One disadvantage of this pattern is that the data can become stale if there are lots of updates to the database. This disadvantage can be mitigated by having a “Time To Live” (or any other expiry pattern)—this is a concept we can skip for now since we’ll return to it later.</p>
+<p>This is the most popular cache pattern. In this pattern, we have an application which will try to fetch data from the cache, and if the data is not found (also known as a &ldquo;cache miss&rdquo;) it will fetch data from the database. Or it will do an expensive computation. And then it will put that data back to the cache before returning the query back to the user.</p>
+<p>In this pattern we only cache the data that we need, which is advantageous. One disadvantage of this pattern is that the data can become stale if there are lots of updates to the database. This disadvantage can be mitigated by having a &ldquo;Time To Live&rdquo; (or any other expiry pattern)—this is a concept we can skip for now since we&rsquo;ll return to it later.</p>
 <p>Another disadvantage to this pattern: If there are a lot of cache misses in our application, then the application has to do a lot more work than in the regular flow of just fetching data solely from the database. In this case, the application will first go to the cache, then there will be a cache miss, then it will go back to the database, and then write that data back to the cache before going back to the user.</p>
-<p>If there are a lot of cache misses, then this cache is causing more problems than it’s worth.</p>
-<h2 id="write-through">write-through<a href="#write-through" class="anchor" aria-hidden="true">#</a> </h2>
-<p>In these patterns, the application directly writes the data to the cache. And then the cache synchronously (or asynchronously) writes the data to the database. When we write it synchronously it’s called “write-through,” and when we write it asynchronously it’s called “write-back” (or “write-behind”). In the asynchronous example, we put the data in a queue, which writes the data back to the database and improves the latency of writes on your application.</p>
-<blockquote>
-<p>[!fix]
-If you’re experiencing slow writes, a quick fix is async writes to the database.</p></blockquote>
+<p>If there are a lot of cache misses, then this cache is causing more problems than it&rsquo;s worth.</p>
+<h2 id="write-through-1">write-through<a href="#write-through-1" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In these patterns, the application directly writes the data to the cache. And then the cache synchronously (or asynchronously) writes the data to the database. When we write it synchronously it&rsquo;s called &ldquo;write-through,&rdquo; and when we write it asynchronously it&rsquo;s called &ldquo;write-back&rdquo; (or &ldquo;write-behind&rdquo;). In the asynchronous example, we put the data in a queue, which writes the data back to the database and improves the latency of writes on your application.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Know</p>
+
+      </div>
+    <div class="callout-body">
+      <p>If you&rsquo;re experiencing slow writes, a quick fix is async writes to the database.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>In both of these patterns, there is an obvious disadvantage. Here we are writing all the data to the cache, which might not even be read. Hence, we are overloading the cache (or cache memory) with expensive calls that might not even be required. For example, there are some accounts on Twitter that are not followed by many people. If we put every tweet in the cache from these unpopular accounts, it will take up expensive memory. Also, if the database goes down before the data is written to the database, this causes inconsistency.</p>
-<p>https://redisson.org/glossary/write-through-and-write-behind-caching.html
-https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/</p>
+<p><a href="https://redisson.org/glossary/write-through-and-write-behind-caching.html">https://redisson.org/glossary/write-through-and-write-behind-caching.html</a>
+<a href="https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/">https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/</a></p>
 <h1 id="in-memory-type">in-memory type</h1>
 <p>As example of this solution we can pick Redis.</p>
 <h1 id="policies">Policies</h1>
 <p>While the LFU method may seem like an intuitive approach to memory management it is not without faults. Consider an item in memory which is referenced repeatedly for a short period of time and is not accessed again for an extended period of time. Due to how rapidly it was just accessed its counter has increased drastically even though it will not be used again for a decent amount of time. This leaves other blocks which may actually be used more frequently susceptible to purging simply because they were accessed through a different method.<a href="https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-3">3</a></p>
-<p>Moreover, new items that just entered the cache are subject to being removed very soon again, because they start with a low counter, even though they might be used very frequently after that. Due to major issues like these, an explicit LFU system is fairly uncommon; instead, there are hybrids that utilize LFU concepts. https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-4</p>
+<p>Moreover, new items that just entered the cache are subject to being removed very soon again, because they start with a low counter, even though they might be used very frequently after that. Due to major issues like these, an explicit LFU system is fairly uncommon; instead, there are hybrids that utilize LFU concepts. <a href="https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-4">https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-4</a></p>
 <p>Processes when working with cache</p>
 <p>Cache efficiency</p>
 <p>Problems
@@ -1000,9 +1125,9 @@ Cache Breakdown (Thundering herd problem). A cache breakdown increases the load 
 <h1 id="sharding-consistent-hashing">sharding (consistent hashing)</h1>
 <p>Cache warming</p>
 <p>Links
-https://levelup.gitconnected.com/3-caching-problems-every-developer-should-know-1449f07e9166
-https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/
-https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642</p>
+<a href="https://levelup.gitconnected.com/3-caching-problems-every-developer-should-know-1449f07e9166">https://levelup.gitconnected.com/3-caching-problems-every-developer-should-know-1449f07e9166</a>
+<a href="https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/">https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/</a>
+<a href="https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642">https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642</a></p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -1058,7 +1183,7 @@ https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/engineering/engineering-guide/">Engineering Guide</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">
@@ -1089,6 +1214,10 @@ https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da
   src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
   integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
 </script>
+
+    <div class="d-inline-flex fixed-bottom-right pb-4 pe-4">
+  <button id="toTop" type="button" class="btn btn-primary rounded-circle ms-auto p-2"><span class="visually-hidden">Top</span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 15l6 -6l6 6"></path></svg></button>
+</div>
 
     
   </body>

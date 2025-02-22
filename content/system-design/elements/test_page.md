@@ -62,7 +62,7 @@ def convert_callout(match):
 ```
 
 Test link to learning
-[Learning]({{< ref "projects/learning" >}})
+[Learning]({{< ref "projects/foundations/learning" >}})
 
 [Elements]({{< ref "system-design/elements/elements" >}})
 

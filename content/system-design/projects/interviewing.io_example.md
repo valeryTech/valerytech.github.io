@@ -10,7 +10,6 @@ toc: true
 weight: 810
 ---
 
+# Sources
 
-https://interviewing.io/guides/system-design-interview/part-four
-
-
+<https://interviewing.io/guides/system-design-interview/part-four>

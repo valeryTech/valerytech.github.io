@@ -9,6 +9,7 @@ title: Chat Room
 toc: true
 weight: 810
 ---
+
 I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms. Each chat room can have several 1000s of users at any time.  
   
 After laying out reqts-read heavy, where async delays are acceptable, immutable msgs with append only wide columns as a persistent store sharded on chat_room_id.  

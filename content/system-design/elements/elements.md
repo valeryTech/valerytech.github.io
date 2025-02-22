@@ -117,7 +117,7 @@ processes: authentication (figuring out who are you talking to) and authorizatio
 sources: sam newmans book, interviewing.io sd section, 
 
 
-That way you can rely on two factors to authenticate who’s at the door: looking through the peephole and asking for the password to authenticate.
+That way you can rely on two factors to authenticate who's at the door: looking through the peephole and asking for the password to authenticate.
 
 hashing (store the hashes of passwords in a db)
 salting, rainbow tables

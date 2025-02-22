@@ -19,7 +19,7 @@
   <link rel="canonical" href="http://localhost:1313/system-design/projects/code_deployment/">
 
 
-<title>Code Deployment  |  Thought Foundations</title>
+<title>Code Deployment  |  Tech Foundations</title>
 <meta name="description" content="Default Description">
 
     
@@ -48,7 +48,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 
 <meta property="og:url" content="http://localhost:1313/system-design/projects/code_deployment/">
-  <meta property="og:site_name" content="Thought Foundations">
+  <meta property="og:site_name" content="Tech Foundations">
   <meta property="og:title" content="Code Deployment">
   <meta property="og:description" content="Default Description">
   <meta property="og:locale" content="en">
@@ -127,7 +127,7 @@
 <header class="navbar navbar-expand-lg">
   <div class="container-lg">
   
-    <a class="navbar-brand me-auto me-lg-3" href="/">Thought Foundations</a>
+    <a class="navbar-brand me-auto me-lg-3" href="/">Tech Foundations</a>
 
     
     
@@ -214,6 +214,10 @@
 
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
   </li>
       </ul>
     </details>
@@ -313,6 +317,30 @@
 
   <li>
     <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
 
@@ -326,10 +354,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -403,7 +427,7 @@
     
     <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Thought Foundations</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Tech Foundations</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -415,6 +439,9 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/engineering/engineering-guide/">Engineering Guide</a>
+              </li>
+            <li class="nav-item">
                 <a class="nav-link" href="http://localhost:1313/projects/about/">Projects</a>
               </li>
             <li class="nav-item">
@@ -567,6 +594,10 @@
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
   </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -665,6 +696,30 @@
 
   <li>
     <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
 
@@ -678,10 +733,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -746,19 +797,10 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li>
-              <ul>
-                <li></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#data-types">Data Types</a></li>
+    <li><a href="#api">API</a></li>
+    <li><a href="#scale">Scale</a></li>
   </ul>
 </nav>
 </div>
@@ -766,6 +808,15 @@
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/system-design/">System design</a></li>
+<li class="breadcrumb-item"><a href="/system-design/projects/">Projects</a></li>
+<li class="breadcrumb-item active" aria-current="page">Code Deployment</li>
+					</ol>
+				</nav>
+			
 			<h1>Code Deployment</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
@@ -774,36 +825,28 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li>
-              <ul>
-                <li></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#data-types">Data Types</a></li>
+    <li><a href="#api">API</a></li>
+    <li><a href="#scale">Scale</a></li>
   </ul>
 </nav>
     </div>
   </details>
 
 			</nav>
-			<p>Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</p>
+			<h1 id="requirements">Requirements</h1>
+<p>Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.</p>
 <p><strong>Artifact:</strong> (product name, version, commit hash)<br>
 <strong>Trigger a release:</strong> publishes a code artifact and deploys it to all servers.</p>
 <p><strong>Performance:</strong> 1 hour from release triggered to servers.<br>
 <strong>Availability:</strong> Can tolerate some downtime: 99.9% availability.</p>
-<h5 id="data-types">Data Types:<a href="#data-types" class="anchor" aria-hidden="true">#</a> </h5>
+<h1 id="data-types">Data Types</h1>
 <p>Ask your interviewer about the type of these artifacts that we are building.</p>
 <ul>
 <li>Code Artifacts. Type: blobs (ZIP, TAR, bz2, etc.)</li>
 </ul>
-<h5 id="api">API<a href="#api" class="anchor" aria-hidden="true">#</a> </h5>
+<h1 id="api">API</h1>
 
 
 
@@ -812,21 +855,21 @@
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <pre tabindex="0"><code>1
-2  putRelease:
-3    POST release/{productId}/{commitId}
-4    returns: deploymentId # Id to check the status of the deployment
-5
-6  getDeploymentStatus:
-7    GET deployment/{deploymentId}
-8    returns: status # PENDING, DEPLOYED
-9</code></pre>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">2  putRelease:
+</span></span><span class="line"><span class="cl">3    POST release/{productId}/{commitId}
+</span></span><span class="line"><span class="cl">4    returns: deploymentId # Id to check the status of the deployment
+</span></span><span class="line"><span class="cl">5
+</span></span><span class="line"><span class="cl">6  getDeploymentStatus:
+</span></span><span class="line"><span class="cl">7    GET deployment/{deploymentId}
+</span></span><span class="line"><span class="cl">8    returns: status # PENDING, DEPLOYED
+</span></span><span class="line"><span class="cl">9</span></span></code></pre></div>
   </figure>
 </div>
-<h5 id="scale">Scale<a href="#scale" class="anchor" aria-hidden="true">#</a> </h5>
-<p>Ask your interviewer about the scale of these deployments. Here are examples of some good questions to ask (and an interviewer’s possible replies):</p>
-<p><strong>Candidate:</strong> What’s the average size of the artifacts that we need to package?</p>
-<p><strong>Interviewer:</strong> We’ll say 1 to 10GB.</p>
+<h1 id="scale">Scale</h1>
+<p>Ask your interviewer about the scale of these deployments. Here are examples of some good questions to ask (and an interviewer&rsquo;s possible replies):</p>
+<p><strong>Candidate:</strong> What&rsquo;s the average size of the artifacts that we need to package?</p>
+<p><strong>Interviewer:</strong> We&rsquo;ll say 1 to 10GB.</p>
 <p><strong>Candidate:</strong> How many artifacts do we expect to deploy daily?</p>
 <p><strong>Interviewer:</strong> In the order of thousands.</p>
 <p><strong>Candidate:</strong> How many machines do we need to deploy to?</p>
@@ -886,7 +929,7 @@
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/engineering/engineering-guide/">Engineering Guide</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">
@@ -917,6 +960,10 @@
   src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
   integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
 </script>
+
+    <div class="d-inline-flex fixed-bottom-right pb-4 pe-4">
+  <button id="toTop" type="button" class="btn btn-primary rounded-circle ms-auto p-2"><span class="visually-hidden">Top</span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 15l6 -6l6 6"></path></svg></button>
+</div>
 
     
   </body>

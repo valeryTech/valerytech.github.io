@@ -19,7 +19,7 @@
   <link rel="canonical" href="http://localhost:1313/system-design/nfr/scalability/">
 
 
-<title>Scalability  |  Thought Foundations</title>
+<title>Scalability  |  Tech Foundations</title>
 <meta name="description" content="Default Description">
 
     
@@ -48,7 +48,7 @@
 <link rel="manifest" href="/manifest.webmanifest">
 
 <meta property="og:url" content="http://localhost:1313/system-design/nfr/scalability/">
-  <meta property="og:site_name" content="Thought Foundations">
+  <meta property="og:site_name" content="Tech Foundations">
   <meta property="og:title" content="Scalability">
   <meta property="og:description" content="Default Description">
   <meta property="og:locale" content="en">
@@ -127,7 +127,7 @@
 <header class="navbar navbar-expand-lg">
   <div class="container-lg">
   
-    <a class="navbar-brand me-auto me-lg-3" href="/">Thought Foundations</a>
+    <a class="navbar-brand me-auto me-lg-3" href="/">Tech Foundations</a>
 
     
     
@@ -214,6 +214,10 @@
 
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
+  </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
   </li>
       </ul>
     </details>
@@ -313,6 +317,30 @@
 
   <li>
     <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
 
@@ -326,10 +354,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -403,7 +427,7 @@
     
     <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Thought Foundations</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Tech Foundations</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -415,6 +439,9 @@
       
       <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
         <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/engineering/engineering-guide/">Engineering Guide</a>
+              </li>
+            <li class="nav-item">
                 <a class="nav-link" href="http://localhost:1313/projects/about/">Projects</a>
               </li>
             <li class="nav-item">
@@ -567,6 +594,10 @@
   <li>
       <a href="/system-design/interview/interview_phrases/">Interview Phrases</a>
   </li>
+
+  <li>
+      <a href="/system-design/interview/phrases/">Phrases</a>
+  </li>
       </ul>
     </details>
   </li>
@@ -665,6 +696,30 @@
 
   <li>
     <details open>
+      <summary>To Sort</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/system-design/to_sort/sd_algo_interviewing.io/">Sd Algo Interviewing.Io</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_algorithm/">Sd Algorithm</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_framework_old/">Sd Framework Old</a>
+  </li>
+
+  <li>
+      <a href="/system-design/to_sort/sd_to_sort/">Sd To Sort</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details open>
       <summary>Topics</summary>
       <ul class="list-unstyled list-nested">
 
@@ -678,10 +733,6 @@
 
   <li>
       <a href="/system-design/topics/communication/">Communication</a>
-  </li>
-
-  <li>
-      <a href="/system-design/topics/db-1/">Db 1</a>
   </li>
 
   <li>
@@ -788,6 +839,15 @@
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item"><a href="/system-design/">System design</a></li>
+<li class="breadcrumb-item"><a href="/system-design/nfr/">Nfr</a></li>
+<li class="breadcrumb-item active" aria-current="page">Scalability</li>
+					</ol>
+				</nav>
+			
 			<h1>Scalability</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
@@ -843,17 +903,17 @@
 <p>Definition. What is it that we really mean by scalability? A service is said to be scalable if when we increase the resources in a system, it results in increased performance in a manner <em>proportional</em> to resources added. Increasing performance in general means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.</p>
 <p>Our review of the literature showed two main uses of the term scalability:
 Definition 1. Scalability is the ability to handle increased workload (without adding resources to a system).
-Definition 2. Scalability by extension. Scalability is the ability to handle increased workload by repeatedly applying a costeffective strategy for extending a system’s capacity.</p>
+Definition 2. Scalability by extension. Scalability is the ability to handle increased workload by repeatedly applying a costeffective strategy for extending a system&rsquo;s capacity.</p>
 <p>Capacity.</p>
 <h1 id="sources">Sources</h1>
 <p>highscalability.com
-https://systemdesignprimer.netlify.app/getting-started
+<a href="https://systemdesignprimer.netlify.app/getting-started">https://systemdesignprimer.netlify.app/getting-started</a>
 Designing Fine-Grained Microservices Book
-https://www.lecloud.net/tagged/scalability/chrono
-some slides - https://www.slideshare.net/jboner/scalability-availability-stability-patterns
-http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html
-https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf</p>
-<p>https://github.com/binhnguyennus/awesome-scalability</p>
+<a href="https://www.lecloud.net/tagged/scalability/chrono">https://www.lecloud.net/tagged/scalability/chrono</a>
+some slides - <a href="https://www.slideshare.net/jboner/scalability-availability-stability-patterns">https://www.slideshare.net/jboner/scalability-availability-stability-patterns</a>
+<a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html</a>
+<a href="https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf">https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf</a></p>
+<p><a href="https://github.com/binhnguyennus/awesome-scalability">https://github.com/binhnguyennus/awesome-scalability</a></p>
 <h1 id="common">Common</h1>
 <p>There isn&rsquo;t one right way to scale a system, as the technique used will depend on the type of constraint you might have. We have a number of different types of scaling we can bring to bear to help with performance, robustness, or perhaps both:</p>
 <ul>
@@ -865,16 +925,16 @@ https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf</
 <p>Understanding what combination of these scaling techniques is most appropriate will fundamentally come down to the nature of the scaling issue you are facing.</p>
 <h1 id="combining-models">Combining Models</h1>
 <p>One of the main drivers behind the original Scale Cube was to stop us from thinking narrowly in terms of one type of scaling, and to help us understand that it often makes sense to scale our application along multiple axes, depending on our need.</p>
-<p>It’s worth noting that by scaling along one axis, other axes might be easier to make use of. For example, the functional decomposition of Order enables us to then spin up multiple duplicates of the Order microservice, and also to partition the load on order processing. Without that initial functional decomposition, we’d be limited to applying those techniques on the monolith as a whole.</p>
-<p>The goal when scaling isn’t necessarily to scale along all axes, but we should be aware that we have these different mechanisms at our disposal. Given this choice, it’s important we understand the pros and cons of each mechanism to work out which ones make the most sense.</p>
+<p>It&rsquo;s worth noting that by scaling along one axis, other axes might be easier to make use of. For example, the functional decomposition of Order enables us to then spin up multiple duplicates of the Order microservice, and also to partition the load on order processing. Without that initial functional decomposition, we&rsquo;d be limited to applying those techniques on the monolith as a whole.</p>
+<p>The goal when scaling isn&rsquo;t necessarily to scale along all axes, but we should be aware that we have these different mechanisms at our disposal. Given this choice, it&rsquo;s important we understand the pros and cons of each mechanism to work out which ones make the most sense.</p>
 <h1 id="vertical-scaling">Vertical Scaling</h1>
 <p>Benefits.
 It is fast. On virtualized infrastructure, especially on a public cloud provider, implementing this form of scaling will be fast.
-Benefits for other types. It’s also worth noting that vertical scaling can make it easier to perform other types of scaling.
+Benefits for other types. It&rsquo;s also worth noting that vertical scaling can make it easier to perform other types of scaling.
 Transparency. Your code or database is unlikely to need any changes to make use of the larger underlying infrastructure, assuming the operating system and chipsets remain the same. Even if changes are needed to your application to make use of the change of hardware, they might be limited to things like increasing the amount of memory available to your runtime through runtime flags.</p>
 <h1 id="horizontal-duplication">Horizontal Duplication</h1>
 <p>With horizontal duplication, you duplicate part of your system to handle more workloads. The exact mechanisms vary—we&rsquo;ll look at implementations shortly—but fundamentally horizontal duplication requires you to have a way of <em>distributing the work</em> across these duplicates.</p>
-<p>As with vertical scaling, this type of scaling is on the simpler end of the spectrum and is often one of the things I’ll try early on. If your monolithic system can’t handle the load, spin up multiple copies of it and see if that helps!</p>
+<p>As with vertical scaling, this type of scaling is on the simpler end of the spectrum and is often one of the things I&rsquo;ll try early on. If your monolithic system can&rsquo;t handle the load, spin up multiple copies of it and see if that helps!</p>
 <ul>
 <li><em>Load Balancer.</em> Probably the most obvious form of horizontal duplication that comes to mind is making use of a load balancer to distribute requests across multiple copies of your functionality. Load balancer capabilities differ, but you&rsquo;d expect them all to have some mechanism to distribute load across the nodes, and to detect when a node is unavailable and remove it from the load balancer pool. #pattern/lb</li>
 <li><em>Queue</em>. Another example of horizontal duplication could be the competing consumer pattern.</li>
@@ -884,16 +944,16 @@ Transparency. Your code or database is unlikely to need any changes to make use 
 <p>Data partitioning requires that we distribute load based on some aspect of data—perhaps distributing load based on the user, for example.
 More often than not, partitioning will be done by the subsystem you rely on. For example, Cassandra uses partitions to distribute both reads and writes across the nodes in a given &ldquo;ring,&rdquo; and Kafka supports distributing messages across partitioned topics.
 Source:
-https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning
-https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding</p>
+<a href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning">https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning</a>
+<a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding">https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding</a></p>
 <h2 id="horizontal-partitioning-sharding">Horizontal partitioning (sharding)<a href="#horizontal-partitioning-sharding" class="anchor" aria-hidden="true">#</a> </h2>
 <p>In this strategy, each partition is a separate data store, but all partitions have the same schema. Each partition is known as a <em>shard</em> and holds a specific subset of the data, such as all the orders for a specific set of customers.
 The most important factor is the choice of a sharding key. It can be difficult to change the key after the system is in operation. The key must ensure that data is partitioned to spread the workload as evenly as possible across the shards.</p>
 <p>sharding
-https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6
+<a href="https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6">https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6</a>
 facebook shard manager paper
-https://kousiknath.medium.com/all-things-sharding-techniques-and-real-life-examples-in-nosql-data-storage-systems-3e8beb98830a
-https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/</p>
+<a href="https://kousiknath.medium.com/all-things-sharding-techniques-and-real-life-examples-in-nosql-data-storage-systems-3e8beb98830a">https://kousiknath.medium.com/all-things-sharding-techniques-and-real-life-examples-in-nosql-data-storage-systems-3e8beb98830a</a>
+<a href="https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/">https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/</a></p>
 <h2 id="vertical-partitioning">Vertical partitioning<a href="#vertical-partitioning" class="anchor" aria-hidden="true">#</a> </h2>
 <p>In this strategy, each partition holds a subset of the fields for items in the data store. The fields are divided according to their pattern of use. For example, frequently accessed fields might be placed in one vertical partition and less frequently accessed fields in another.</p>
 <h2 id="benefits-and-limitations">Benefits and Limitations<a href="#benefits-and-limitations" class="anchor" aria-hidden="true">#</a> </h2>
@@ -911,13 +971,13 @@ By itself, functional decomposition isn&rsquo;t going to make our system more ro
 <p>It can help to maximize availability because delays arising in services won&rsquo;t have an immediate and direct impact on the application, which can continue to post messages to the queue even when the service isn&rsquo;t available or isn&rsquo;t currently processing messages.</p>
 <p>It can help to maximize scalability because both the number of queues and the number of services can be varied to meet demand.</p>
 <p>It can help to control costs because the number of service instances deployed only have to be adequate to meet average load rather than the peak load.</p>
-<p>link: https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling</p>
+<p>link: <a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling">https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling</a></p>
 <h2 id="priority-queue">Priority queue<a href="#priority-queue" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Prioritize requests sent to services so that requests with a higher priority are received and processed more quickly than those with a lower priority. This pattern is useful in applications that offer different service level guarantees to individual clients.</p>
 <p>Using a priority-queuing mechanism can provide the following advantages:</p>
 <p>It allows applications to meet business requirements that require the prioritization of availability or performance, such as offering different levels of service to different groups of customers.</p>
 <p>The multiple message queue approach can help maximize application performance and scalability by partitioning messages based on processing requirements. For example, you can prioritize critical tasks so that they&rsquo;re handled by receivers that run immediately, and less important background tasks can be handled by receivers that are scheduled to run at times that are less busy.</p>
-<p>link: https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue</p>
+<p>link: <a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue">https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue</a></p>
 <h1 id="caching">Caching</h1>
 <p>You can use cache to reduce load on a target system (which data cache holds). Thus allowing another parts of the system to be scaled effectively. <a href="http://localhost:1313/system-design/topics/caching/">Caching</a></p>
 <h1 id="cqrs">CQRS</h1>
@@ -933,14 +993,14 @@ the history of events related to that entity.
 Arguably, CQRS is doing something very similar in our application tier to what read
 replicas can do in the data tier, although due to the large number of different ways
 CQRS can be implemented, this is a simplification.
-Personally, although I see value in the CQRS pattern in some situations, it’s a com‐
-plex pattern to execute well. I’ve spoken to very smart people who have hit not insig‐
+Personally, although I see value in the CQRS pattern in some situations, it&rsquo;s a com‐
+plex pattern to execute well. I&rsquo;ve spoken to very smart people who have hit not insig‐
 nificant issues in making CQRS work. As such, if you are considering CQRS as a way
-to help scale your application, regard it as one of the harder forms of scaling you’d
+to help scale your application, regard it as one of the harder forms of scaling you&rsquo;d
 need to implement, and perhaps try some of the easier stuff first.</p>
 <p>One final note on CQRS and event sourcing: from the point of view of a microservice
 architecture, the decision to use or not use these techniques is an internal implemen‐
-tation detail of a microservice. If you’ve decided to implement a microservice by split‐
+tation detail of a microservice. If you&rsquo;ve decided to implement a microservice by split‐
 ting responsibility for reads and writes across different processes and models, for
 example, this should be invisible to consumers of the microservice. If inbound
 requests need to be redirected to the appropriate model based on the request being
@@ -965,7 +1025,7 @@ Idempotency. Asynchronism. Map-Reduce. Space-based Architectures. Stateless serv
 <li>Define scalability axes chain</li>
 </ol>
 <p>The architecture that gets you started may not be the architecture that keeps you
-going when your system has to handle very different volumes of load. As we’ve
+going when your system has to handle very different volumes of load. As we&rsquo;ve
 already seen, there are some forms of scaling that can have extremely limited impact
 on the architecture of your system—vertical scaling and horizontal duplication, for
 example. At certain points, though, you need to do something pretty radical to
@@ -977,14 +1037,14 @@ to event-based systems, adopting new deployment platforms, changing whole tech�
 nology stacks, or everything in between.
 There is a danger that people will see the need to rearchitect when certain scaling
 thresholds are reached as a reason to build for massive scale from the beginning. This
-can be disastrous. At the start of a new project, we often don’t know exactly what we
+can be disastrous. At the start of a new project, we often don&rsquo;t know exactly what we
 want to build, nor do we know if it will be successful. We need to be able to rapidly
 experiment and understand what capabilities we need to build. If we tried building
-for massive scale up front, we’d end up front-loading a huge amount of work to pre‐
+for massive scale up front, we&rsquo;d end up front-loading a huge amount of work to pre‐
 pare for load that may never come, while diverting effort away from more important
 activities, like understanding if anyone will actually want to use our product. Eric
 Ries tells the story of spending six months building a product that no one ever down‐
-loaded. He reflected that he could have put up a link on a web page that 404’d when
+loaded. He reflected that he could have put up a link on a web page that 404&rsquo;d when
 people clicked on it to see if there was any demand, spent six months on the beach
 instead, and learned just as much!</p>
 <h1 id="autoscaling">Autoscaling</h1>
@@ -1037,7 +1097,7 @@ unexpected spike, requiring more capacity and often at short notice.</p>
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Next</div>
-					<a href="/system-design/projects/sd_reviews/" class="stretched-link text-reset text-decoration-none">Sd Reviews</a>
+					<a href="/system-design/to_sort/sd_algo_interviewing.io/" class="stretched-link text-reset text-decoration-none">Sd Algo Interviewing.Io</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -1066,7 +1126,7 @@ unexpected spike, requiring more capacity and often at short notice.</p>
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
-          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li><li class="list-inline-item"><a class="text-muted" href="/engineering/engineering-guide/">Engineering Guide</a></li><li class="list-inline-item"><a class="text-muted" href="/projects/about/">Projects</a></li><li class="list-inline-item"><a class="text-muted" href="/system-design/about/">System Design</a></li>
         </ul>
       </div>
       <div class="col-lg-8 text-center text-lg-end">
@@ -1097,6 +1157,10 @@ unexpected spike, requiring more capacity and often at short notice.</p>
   src="/js/search-modal.877cece5b6bc789456f89fa1955ccfcd8a5acdb2179e7882e292a6caa49efe68.js"
   integrity="sha256-h3zs5ba8eJRW&#43;J&#43;hlVzPzYpazbIXnniC4pKmyqSe/mg=">
 </script>
+
+    <div class="d-inline-flex fixed-bottom-right pb-4 pe-4">
+  <button id="toTop" type="button" class="btn btn-primary rounded-circle ms-auto p-2"><span class="visually-hidden">Top</span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6 15l6 -6l6 6"></path></svg></button>
+</div>
 
     
   </body>

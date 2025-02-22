@@ -10,12 +10,14 @@ toc: true
 weight: 810
 ---
 
+# Sources
 
+<https://www.hellointerview.com/blog/mastering-estimation> #todo
 
-https://www.hellointerview.com/blog/mastering-estimation #todo
+# How to do it
 
 According to Jeff Dean, Google Senior Fellow, "back-of-the-envelope calculations are estimates you create using a combination of thought experiments and common performance numbers to get a good feel for which designs will meet your requirements"
-Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, number of servers, etc. You can practice these calculations when preparing for an interview. Practice makes perfect. 
+Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, number of servers, etc. You can practice these calculations when preparing for an interview. Practice makes perfect.
 
 - Throughput of each layer
 - Latency caused between each layer
@@ -23,14 +25,14 @@ Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, 
 
 char: rps, volumes, etc
 
-When in doubt, just guess higher—it’s called *margin of safety*. For our Twitter example we can go for these numbers:
+When in doubt, just guess higher—it's called *margin of safety*. For our Twitter example we can go for these numbers:
   Reads/minute: 100k
   Writes/minute: 1k
 
-https://www.reddit.com/r/ExperiencedDevs/comments/19e19jn/what_is_the_point_of_back_of_the_envelope/
+<https://www.reddit.com/r/ExperiencedDevs/comments/19e19jn/what_is_the_point_of_back_of_the_envelope/>
 
 DAU (daily active users), QPS (query per seconds)
-Strategy?? 
+Strategy??
 First, we need to recognize a limited resource in our system, then approximate the actual usage. For example, our servers are capped by 2GHz CPUs, and we would like to know if we can serve all user requests using a single server.
 So how to approximate the actual usage? We need to break down the usage to its constituting factors, make a rough estimate of those factors (if needed, further breaking them down), and combining them.
 For example, we might expect to have 1K active users, each issuing 15 requests per day. That's 15K requests per day, or 15K/86400 requests per second.
@@ -62,9 +64,10 @@ Different use-cases will likely need very different shapes of resources. For exa
 Such differences indicate those features should be split to different services, hosted on independent sets of machines.
 
 It's always a good idea to estimate the scale of the system you're going to design. This would also help later when you'll be focusing on scaling, partitioning, load balancing and caching.
-1.	What scale is expected from the system (e.g., number of new tweets, number of tweet views, how many timeline generations per sec., etc.)
-2.	How much storage would we need? This will depend on whether users can upload photos and videos in their tweets?
-3.	What network bandwidth usage are we expecting? This would be crucial in deciding how would we manage traffic and balance load between servers.
+
+1. What scale is expected from the system (e.g., number of new tweets, number of tweet views, how many timeline generations per sec., etc.)
+2. How much storage would we need? This will depend on whether users can upload photos and videos in their tweets?
+3. What network bandwidth usage are we expecting? This would be crucial in deciding how would we manage traffic and balance load between servers.
 Enumerate typical use-cases of the system and determine the most critical resources they need.
 ..
 I have seen 2 approaches taken when calculating the back of the envelope calculations.
@@ -73,7 +76,7 @@ Under the interview pressure, I always felt this process to be a bit difficult w
 The second approach, which I always preferred is to start small and grow bigger with quite a few approximations. After all, the back of the envelope calculation is supposed to be a T-shift level "estimation". I also often start with a small number of variables preferably one.
 For example, instead of managing 2 variables like "Number of active users" and "Number of tweets", I start at the server level and ask myself a question, what factor affects my server the most? a number of active users coming to the server or number of tweets coming to the server. If my server gets 10 tweets per second, does it matter in terms of memory and threads requirements if 10 active users send 1 tweet/sec or 1 active user sends 10 tweets/sec? If it does not matter then I, for now, I will ignore the number of active users and focus on how many tweets the server receives per second. My 2 variables are down to 1.
 I also make sure, I never talk on the specifics of the functionality and instead talk/focus on the raw/common server requirements. That is instead of saying, the server receives 10 tweets per second, I will say the server receives 10 "requests" per second. Converting tweets to requests helps me memorize the same logic across twitter design where the server receives tweets and facebook design where the server receives photo upload and comments requests. Everything is incoming request no differentiation.
-Example. 
+Example.
 Ok so focusing on the twitter calculations, I would start something like this.
 
 I will start saying, I will at minimum calculate servers, memory, and storage requirements
@@ -81,10 +84,10 @@ I will start saying, I will at minimum calculate servers, memory, and storage re
 Starting small, I will say, assuming, the application gets 1000 requests per second, (1000 is an easy nice number for any calculation and we can scale up or down easily depending on the requirement. The real twitter number would be much higher)
 
 1000 requests/sec
-3600 seconds per hour, it will be 1000 * 4000 (approximating 3600 to nearest whole number 4000 as multiplication by 4K is much easier orally than 3.6K) => we get 4 million requests/hr
-4M requests/hr translates to 4M * 30 hours (instead of 24 hours in a day as its much easier to multiply by 30 than 24) => 120 million requests/day
-120 million requests/day translates to 120M * 400 days (instead of 365) = 50 billion requests/year (instead of 48B)
-Assuming the capacity planning estimates are for 5 years, we get 50B * 5 = 250 Billion request data is what we may end up storing in our system.
+3600 seconds per hour, it will be 1000 *4000 (approximating 3600 to nearest whole number 4000 as multiplication by 4K is much easier orally than 3.6K) => we get 4 million requests/hr
+4M requests/hr translates to 4M* 30 hours (instead of 24 hours in a day as its much easier to multiply by 30 than 24) => 120 million requests/day
+120 million requests/day translates to 120M *400 days (instead of 365) = 50 billion requests/year (instead of 48B)
+Assuming the capacity planning estimates are for 5 years, we get 50B* 5 = 250 Billion request data is what we may end up storing in our system.
 Now to calculate the number of servers, From the experience of running applications in production, I know say a tomcat/jetty server running Spring boot application at a minimum will have 100 worker thread (200 default) to handle HTTP requests
 
 The server will handle tweets, photos, video uploads
@@ -99,13 +102,12 @@ For Storage requirement, assuming we need to store data for 5 years
 
 As previously calculated, 250 Billion request data to store for 5 years, assuming 10% to be for videos (50MB avg), 20% for photos (1MB avg) and 70% for tweets (200KB avg) we need
 -- Note, usual conversions are (1000 translates to KB storage, 1 million translates to 1 MB of storage, 1 billion translates to 1 GB of stroage)
-10% Video: 250 Billion request data (that is 250 GB) * 10% => 25 GB * 50MB ~~ 25000MB * 50MB ~~ 1250000 MB => 1250 GB => 1.2TB
-20% Photos: 250 Billion request data * 20 % => 50 GB * 1MB => 50000 MB * 1MB => 50000 MB => 50GB
-70% Tweets: 250 Billion request data * 70% ~~ 200 GB * 200 bytes => 200000MB * 0.002MB => 400MB
+10% Video: 250 Billion request data (that is 250 GB) *10% => 25 GB* 50MB ~~ 25000MB *50MB ~~ 1250000 MB => 1250 GB => 1.2TB
+20% Photos: 250 Billion request data* 20 % => 50 GB *1MB => 50000 MB* 1MB => 50000 MB => 50GB
+70% Tweets: 250 Billion request data *70% ~~ 200 GB* 200 bytes => 200000MB * 0.002MB => 400MB
 Total (1.2TB + 50 GB + 400 MB) ~~ 1.2TB (in reality this capacity will be much higher as video/photo storage size requirements will be much higher but I hope reader gets the point)
 Summary
 
 Start with a single variable and translate specific design requirement into raw server requirements like requests/sec (instead of tweets/sec or photos/server)
 Start from a single server requirement instead of trying to divide total tweets or total storage by servers.
 Remember to get all the calculations done in 5 mins. Unless the interviewer wants to focus on the specifics calcuations. Remember these contents are high-level estimates.
-

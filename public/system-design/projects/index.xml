@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Thought Foundations</title>
+    <title>Projects on Tech Foundations</title>
     <link>http://localhost:1313/system-design/projects/</link>
-    <description>Recent content in Projects on Thought Foundations</description>
+    <description>Recent content in Projects on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
@@ -14,7 +14,7 @@
       <link>http://localhost:1313/system-design/projects/_themes/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/_themes/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Facebook system design interview questions&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design an online collaborative editing tool&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed botnet&lt;/li&gt;&#xA;&lt;li&gt;How would you use a load balancer for memcache servers?&lt;/li&gt;&#xA;&lt;li&gt;How would you architect the Facebook newsfeed?&lt;/li&gt;&#xA;&lt;li&gt;Implement a typeahead feature&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Google system design interview questions&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;facebook-system-design-interview-questions&#34;&gt;&lt;strong&gt;Facebook system design interview questions&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design an online collaborative editing tool&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed botnet&lt;/li&gt;&#xA;&lt;li&gt;How would you use a load balancer for memcache servers?&lt;/li&gt;&#xA;&lt;li&gt;How would you architect the Facebook newsfeed?&lt;/li&gt;&#xA;&lt;li&gt;Implement a typeahead feature&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;google-system-design-interview-questions&#34;&gt;&lt;strong&gt;Google system design interview questions&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design and implement statistics for a calendar&lt;/li&gt;&#xA;&lt;li&gt;Design a task scheduling feature&lt;/li&gt;&#xA;&lt;li&gt;Design a ticketing platform&lt;/li&gt;&#xA;&lt;li&gt;Design an elevator&lt;/li&gt;&#xA;&lt;li&gt;Design a boggle server&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed ID generation system&lt;/li&gt;&#xA;&lt;li&gt;How would you deploy a solution for cloud computing to build in redundancy for the compute cluster?&lt;/li&gt;&#xA;&lt;li&gt;Design the server infrastructure for GMail&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Amazon&lt;/strong&gt; &lt;strong&gt;system design interview questions&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chat Room</title>
@@ -28,14 +28,14 @@
       <link>http://localhost:1313/system-design/projects/code_deployment/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/code_deployment/</guid>
-      <description>&lt;p&gt;Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;&#xA;&lt;p&gt;Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Events</title>
       <link>http://localhost:1313/system-design/projects/events/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/events/</guid>
-      <description>&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;&#xA;&lt;p&gt;https://microservices.io/patterns/data/saga.html&#xA;coursehunter&#xA;https://www.youtube.com/watch?v=SbL3a9YOW7s&#xA;https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html&#xA;https://www.youtube.com/watch?v=gA2-eqDVSng&#xA;https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/&#xA;https://aws.amazon.com/messaging/&#xA;https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/&#xA;https://aws.amazon.com/event-driven-architecture/&#xA;https://www.youtube.com/watch?v=28B4L1fnnGM&#xA;https://www.youtube.com/@CodeOpinion/&lt;/p&gt;&#xA;&lt;p&gt;https://www.youtube.com/watch?v=A_mstzRGfIE&#xA;https://www.developertoarchitect.com/lessons/lesson165.html&lt;/p&gt;&#xA;&lt;p&gt;https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47&lt;/p&gt;&#xA;&lt;p&gt;event tips:&#xA;https://www.youtube.com/watch?v=9r9WDzzTcr0&#xA;https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures&#xA;https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures&#xA;https://www.infoq.com/presentations/event-driven-arch-challenges/&#xA;https://www.equalexperts.com/blog/tech-focus/event-driven-architecture-the-good-the-bad-and-the-ugly/&#xA;https://serverlessland.com/event-driven-architecture/visuals/common-issued-with-eda&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://microservices.io/patterns/data/saga.html&#34;&gt;https://microservices.io/patterns/data/saga.html&lt;/a&gt;&#xA;coursehunter&#xA;&lt;a href=&#34;https://www.youtube.com/watch?v=SbL3a9YOW7s&#34;&gt;https://www.youtube.com/watch?v=SbL3a9YOW7s&lt;/a&gt;&#xA;&lt;a href=&#34;https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html&#34;&gt;https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.youtube.com/watch?v=gA2-eqDVSng&#34;&gt;https://www.youtube.com/watch?v=gA2-eqDVSng&lt;/a&gt;&#xA;&lt;a href=&#34;https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/&#34;&gt;https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/&lt;/a&gt;&#xA;&lt;a href=&#34;https://aws.amazon.com/messaging/&#34;&gt;https://aws.amazon.com/messaging/&lt;/a&gt;&#xA;&lt;a href=&#34;https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/&#34;&gt;https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/&lt;/a&gt;&#xA;&lt;a href=&#34;https://aws.amazon.com/event-driven-architecture/&#34;&gt;https://aws.amazon.com/event-driven-architecture/&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.youtube.com/watch?v=28B4L1fnnGM&#34;&gt;https://www.youtube.com/watch?v=28B4L1fnnGM&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.youtube.com/@CodeOpinion/&#34;&gt;https://www.youtube.com/@CodeOpinion/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=A_mstzRGfIE&#34;&gt;https://www.youtube.com/watch?v=A_mstzRGfIE&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.developertoarchitect.com/lessons/lesson165.html&#34;&gt;https://www.developertoarchitect.com/lessons/lesson165.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47&#34;&gt;https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;event tips:&#xA;&lt;a href=&#34;https://www.youtube.com/watch?v=9r9WDzzTcr0&#34;&gt;https://www.youtube.com/watch?v=9r9WDzzTcr0&lt;/a&gt;&#xA;&lt;a href=&#34;https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures&#34;&gt;https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures&#34;&gt;https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.infoq.com/presentations/event-driven-arch-challenges/&#34;&gt;https://www.infoq.com/presentations/event-driven-arch-challenges/&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.equalexperts.com/blog/tech-focus/event-driven-architecture-the-good-the-bad-and-the-ugly/&#34;&gt;https://www.equalexperts.com/blog/tech-focus/event-driven-architecture-the-good-the-bad-and-the-ugly/&lt;/a&gt;&#xA;&lt;a href=&#34;https://serverlessland.com/event-driven-architecture/visuals/common-issued-with-eda&#34;&gt;https://serverlessland.com/event-driven-architecture/visuals/common-issued-with-eda&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;common &lt;a href=&#34;https://www.developertoarchitect.com/resources.html&#34;&gt;https://www.developertoarchitect.com/resources.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;topics:&#xA;tools: Kafka, RabbitMQ, SQS, SNS, EventBridge&#xA;models: pub/sub, &amp;hellip;&#xA;managing distributed models&#xA;frameworks:&#xA;&lt;a href=&#34;https://eventuate.io/&#34;&gt;https://eventuate.io/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instagram</title>
@@ -56,14 +56,14 @@
       <link>http://localhost:1313/system-design/projects/interviewing.io_example/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/interviewing.io_example/</guid>
-      <description>&lt;p&gt;https://interviewing.io/guides/system-design-interview/part-four&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://interviewing.io/guides/system-design-interview/part-four&#34;&gt;https://interviewing.io/guides/system-design-interview/part-four&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Job Scheduler</title>
       <link>http://localhost:1313/system-design/projects/job-scheduler/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>http://localhost:1313/system-design/projects/job-scheduler/</guid>
-      <description>&lt;p&gt;my&lt;/p&gt;&#xA;&lt;p&gt;actors: user, job, schedule&lt;/p&gt;&#xA;&lt;p&gt;user can upload job&#xA;user can start job manually or by schedule&lt;/p&gt;&#xA;&lt;p&gt;job set up flow: upload job, start manually or establish schedule&#xA;view and notifications/alerts?&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;&#xA;&lt;p&gt;actors: user, job, schedule&lt;/p&gt;&#xA;&lt;p&gt;user can upload job&#xA;user can start job manually or by schedule&lt;/p&gt;&#xA;&lt;p&gt;job set up flow: upload job, start manually or establish schedule&#xA;view and notifications/alerts?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Key Value Store</title>
