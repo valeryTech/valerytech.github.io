@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.653749'
+date: '2025-02-22T08:51:50.980798'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.653749'
+lastmod: '2025-02-22T08:51:50.980798'
 summary: ''
 title: Key Value Store
 toc: true
@@ -18,4 +18,4 @@ Write-through: data is written in cache & DB; I/O completion is confirmed only w
 
 terms: <- should be in the paper
 
-consistent hashing: [[system-design#hashing]]
+consistent hashing: [Hashing]({{< ref "system-design/system-design" >}}#hashing)

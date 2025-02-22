@@ -1,9 +1,12 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.640345'
+date: '2025-02-22T08:51:50.967858'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.640345'
+lastmod: '2025-02-22T08:51:50.967858'
+menus:
+- main
+- footer
 summary: ''
 tags:
 - system-design
@@ -14,6 +17,17 @@ toc: true
 url: /system-design/about
 weight: 810
 ---
+Test link to learning
+[Learning]({{< ref "projects/learning" >}})
+
+[Elements]({{< ref "system-design/elements/elements" >}})
+
+link to heading in current document
+[Courses](#courses)
+
+link to heading in other document
+[CDN Service]({{< ref "system-design/elements/elements" >}}#cdn)
+
 
 ## Courses
 
@@ -56,15 +70,15 @@ interview guide +
 interviewing.io
 https://www.tryexponent.com/blog/system-design-interview-guide
 
-watch, analyze and reflect mock interviews [[#mock_interviews]]
+watch, analyze and reflect mock interviews [Mock interviews](#mock_interviews)
 
-maybe see channels with useful videos [[#useful_videos]]
+maybe see channels with useful videos [Useful videos](#useful_videos)
 
 # Other
 
 codemia.io (?)
 
-reflect and analyze papers [[#Papers]]
+reflect and analyze papers [Papers](#papers)
 
 blogs on system design; technical blogs; conferences
 
@@ -148,11 +162,11 @@ Use enigneering principles and practices. ? [link]
 
 # Interview Process
 
-[interview](system-design/interview/interview.md)
+[Interview]({{< ref "system-design/interview/interview" >}})
 
 # What to Learn
 
-[elements](system-design/elements/elements.md) 
+[Elements]({{< ref "system-design/elements/elements" >}}) 
 
 
 Areas (from algoexpert):
@@ -215,10 +229,10 @@ you can discuss some project on leetcode, for example
 
 
 # Fundamentals & Distributed Systems
-[distributed-systems](system-design/topics/distributed-systems.md)
+[Distributed-systems]({{< ref "system-design/topics/distributed-systems" >}})
 
 # Microservices
-[microservices](system-design/topics/microservices.md)
+[Microservices]({{< ref "system-design/topics/microservices" >}})
 
 
 # Sources

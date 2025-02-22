@@ -7,19 +7,19 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 23:36:39 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 08:51:50 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/frameworks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Framework Hi</title>
       <link>http://localhost:1313/system-design/frameworks/framework_hi/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/frameworks/framework_hi/</guid>
       <description>&lt;h1 id=&#34;delivery-framework&#34;&gt;Delivery Framework&lt;/h1&gt;&#xA;&lt;p&gt;Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you&amp;rsquo;ll stay focused on the bits that are most important to your interviewer. An added benefit is that you&amp;rsquo;ll have a clear path to fall back if you&amp;rsquo;re overwhelmed. Many candidates are (understandably!) nervous in their interview. It&amp;rsquo;s easy to get lost if you aren&amp;rsquo;t building up a solution in a linear way.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Framework Iv</title>
       <link>http://localhost:1313/system-design/frameworks/framework_iv/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/frameworks/framework_iv/</guid>
       <description>&lt;h2 id=&#34;fundamentals-of-this-framework&#34;&gt;Fundamentals of this framework&lt;/h2&gt;&#xA;&lt;p&gt;This framework is predicated on the following fundamentals:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We propose an opinionated method that can be applied to reason over most system design interviews. The less you have to think about the process, the more you can focus on the problems at hand.&lt;/li&gt;&#xA;&lt;li&gt;Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.&lt;/li&gt;&#xA;&lt;li&gt;We’re teaching you a process. This means you’ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You’ll come across as a systematic problem solver who’s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you’ll encounter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;how-to-use-this-framework&#34;&gt;How to use this framework&lt;/h2&gt;&#xA;&lt;p&gt;In order to use this framework effectively, each step needs to be practiced separately. The three steps are:&lt;/p&gt;</description>
     </item>

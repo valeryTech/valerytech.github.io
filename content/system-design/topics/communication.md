@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.646426'
+date: '2025-02-22T08:51:50.973405'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.646426'
+lastmod: '2025-02-22T08:51:50.973405'
 summary: ''
 title: Communication
 toc: true
@@ -37,5 +37,5 @@ API Gateway
 
 An API gateway is an API management tool that sits between a client and a collection of backend services. API gateway is a fully managed service that supports rate limiting, SSL termination, authentication, IP whitelisting, servicing static content, etc.
 
-[api_gateway](system-design/elements/api_gateway.md)
+[Api_gateway]({{< ref "system-design/elements/api_gateway" >}})
 

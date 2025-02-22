@@ -7,7 +7,77 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 08:51:50 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chatbots Practice</title>
+      <link>http://localhost:1313/projects/chatbots_practice/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/chatbots_practice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collaborative Learning Ts And Js</title>
+      <link>http://localhost:1313/projects/collaborative_learning_ts-and-js/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/collaborative_learning_ts-and-js/</guid>
+      <description>&lt;p&gt;patterns&lt;/p&gt;&#xA;&lt;p&gt;most important points&lt;/p&gt;&#xA;&lt;p&gt;resources&lt;/p&gt;&#xA;&lt;p&gt;best practices&lt;/p&gt;&#xA;&lt;p&gt;problems:&lt;/p&gt;&#xA;&lt;p&gt;where (collaborate on it). knowledge platform.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Critical Thinking</title>
+      <link>http://localhost:1313/projects/critical_thinking/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/critical_thinking/</guid>
+      <description>&lt;p&gt;https://en.wikipedia.org/wiki/Critical_thinking&lt;/p&gt;&#xA;&lt;p&gt;#todo make a diff / comparison with &lt;a href=&#34;http://localhost:1313/projects/reflective_practice/&#34;&gt;Reflective_practice&lt;/a&gt;&#xA;first assumption: reflective practice is focused on past actions whereby critical thinking is about&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hypothesis</title>
+      <link>http://localhost:1313/projects/hypothesis/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/hypothesis/</guid>
+      <description>&lt;p&gt;The concept of a hypothesis can be used in many different context, frameworks, and processes. The &lt;em&gt;hypothesis-driven approach&lt;/em&gt; helps ensure that decisions and innovations are based on evidence (and continuous learning?), [cons]-&amp;gt; making it valuable in any field that requires informed, data-backed decisions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Improvements</title>
+      <link>http://localhost:1313/projects/improvements/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/improvements/</guid>
+      <description>&lt;p&gt;you need to develop long-term vision. Why? 1. As a motivation.. 2. Identification.. 3. Organizational factor (define). &amp;hellip; This could be a non-useful approach, when you&amp;rsquo;ve decide what to use instead of solving problems and other more priority things.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:1313/projects/learning/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/learning/</guid>
+      <description>&lt;h1 id=&#34;advices-best-practices-principles&#34;&gt;Advices, Best Practices, Principles&lt;/h1&gt;&#xA;&lt;p&gt;Learn in Public&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Continuously seek feedback and be open to learning&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate your value through action and collaboration.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Advice: Build things from the ground up&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:1313/projects/about/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/about/</guid>
+      <description>&lt;p&gt;This is a page about different useful topics.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/projects/learning/&#34;&gt;Learning&lt;/a&gt; here you find out how to learn, best practices&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Questions</title>
+      <link>http://localhost:1313/projects/questions/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/questions/</guid>
+      <description>&lt;p&gt;questions from the &amp;lsquo;asking the great questions&amp;rsquo; article&lt;/p&gt;&#xA;&lt;p&gt;Stakeholder communication will be a critical component to your success. Be prepared to provide compelling answers to questions such as:&#xA;• Why are we doing this?&#xA;• Why does it have to be done now?&#xA;• What will happen if we don’t do it?&#xA;• How does it impact me? How will I benefit?&#xA;• How will this benefit the organization?&#xA;• When will it go into effect?&#xA;• Why are we doing a slow integration rather than all at once?&#xA;• How does this affect my job? My pay?&#xA;• How much additional time will this add when it comes to hiring employees, performance reviews, talent reviews, etc.?&#xA;• How will we know if this is successful?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reflective Practice</title>
+      <link>http://localhost:1313/projects/reflective_practice/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/reflective_practice/</guid>
+      <description>&lt;h1 id=&#34;definitions&#34;&gt;Definitions&lt;/h1&gt;&#xA;&lt;p&gt;Reflection involves examining experiences to gain insights and improve future actions.&lt;/p&gt;&#xA;&lt;p&gt;Reflection is a concept that spans multiple disciplines, each offering a unique perspective on its nature, purpose, and mechanisms.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Remote Server</title>
+      <link>http://localhost:1313/projects/remote_server/</link>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
+      <guid>http://localhost:1313/projects/remote_server/</guid>
+      <description>&lt;p&gt;requirements:&#xA;I want to make a server to remove develop&lt;/p&gt;&#xA;&lt;h2 id=&#34;remote-development&#34;&gt;remote development&lt;/h2&gt;&#xA;&lt;h2 id=&#34;remote-filesystem&#34;&gt;remote filesystem&lt;/h2&gt;&#xA;&lt;p&gt;requirements:&#xA;mount remote filesystem&#xA;&amp;lt;- why?&#xA;to use local obsidian - no you can use your local&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

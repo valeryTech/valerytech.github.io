@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.659251'
+date: '2025-02-22T08:51:50.985517'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.659251'
+lastmod: '2025-02-22T08:51:50.985517'
 summary: ''
 title: Whatsapp
 toc: true

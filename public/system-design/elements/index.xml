@@ -7,19 +7,19 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 23:36:39 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 08:51:50 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/elements/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api Gateway</title>
       <link>http://localhost:1313/system-design/elements/api_gateway/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/api_gateway/</guid>
       <description>&lt;p&gt;important things: define core responsiblities and how to introduce it to design&#xA;maybe add problem based lens&lt;/p&gt;&#xA;&lt;p&gt;microsoft:&#xA;In a microservices architecture, a client might interact with more than one front-end service. Given this fact, how does a client know what endpoints to call? What happens when new services are introduced, or existing services are refactored? How do services handle SSL termination, authentication, and other concerns? An &lt;em&gt;API gateway&lt;/em&gt; can help to address these challenges.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Elements</title>
       <link>http://localhost:1313/system-design/elements/elements/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/elements/elements/</guid>
       <description>&lt;p&gt;syn: element, pattern, high-level strategy&lt;/p&gt;&#xA;&lt;p&gt;From&#xA;https://docs.microsoft.com/en-us/azure/architecture/patterns/&#xA;interviewing.io&#xA;system-design-primer&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Distributed computing with MapReduce&lt;/li&gt;&#xA;&lt;li&gt;Consistent hashing&lt;/li&gt;&#xA;&lt;li&gt;Scatter gather&#xA;stateless services and idempotent API as a key to scalability&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;pattern description blueprint:&lt;/strong&gt;&#xA;a definition of a pattern;&#xA;which problems this patterns solves;&#xA;specific algorithm(s) of work and {scenario}/{case};&lt;br&gt;&#xA;trade-offs and analogues;&#xA;specific implementations / solutions { s }&lt;/p&gt;</description>
     </item>

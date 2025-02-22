@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.650866'
+date: '2025-02-22T08:51:50.977856'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.650866'
+lastmod: '2025-02-22T08:51:50.977856'
 summary: ''
 title: Elements
 toc: true
@@ -71,7 +71,7 @@ Proxy runs on behalf of client where is RP is running on behalf of server. Can d
 
 # API Gateway
 
-[api_gateway](system-design/elements/api_gateway.md)
+[Api_gateway]({{< ref "system-design/elements/api_gateway" >}})
 
 trade-offs
 
@@ -84,7 +84,7 @@ todo: refactor to messaging
 
 # asynchronism
 message queues, task queues
-[queues](system-design/topics/queues.md)
+[Queues]({{< ref "system-design/topics/queues" >}})
 
 
 # sidecar pattern

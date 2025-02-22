@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.654391'
+date: '2025-02-22T08:51:50.981478'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.654391'
+lastmod: '2025-02-22T08:51:50.981478'
 summary: ''
 title: Spotify
 toc: true

@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.641297'
+date: '2025-02-22T08:51:50.968454'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.641297'
+lastmod: '2025-02-22T08:51:50.968454'
 summary: ''
 title: System Design
 toc: true

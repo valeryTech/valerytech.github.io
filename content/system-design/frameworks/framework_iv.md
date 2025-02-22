@@ -1,9 +1,9 @@
 ---
 contributors: []
-date: '2025-02-21T23:36:39.649749'
+date: '2025-02-22T08:51:50.976951'
 description: Default Description
 draft: false
-lastmod: '2025-02-21T23:36:39.649749'
+lastmod: '2025-02-22T08:51:50.976951'
 summary: ''
 title: Framework Iv
 toc: true
@@ -141,7 +141,7 @@ It might sound like a small detail at first, but mutability can limit our abilit
 
 ## Example 1: Design TikTok
 
-[tik_tok](system-design/projects/tik_tok.md)
+[Tik_tok]({{< ref "system-design/projects/tik_tok" >}})
 
 ## Example 2: Design a code deployment system 
 
@@ -321,7 +321,7 @@ Tell your interviewer: ”It seems like we’ve identified the main requirements
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 
-See more in [envelope_estimations](system-design/topics/envelope_estimations.md)
+See more in [Envelope_estimations]({{< ref "system-design/topics/envelope_estimations" >}})
 
 >[!Outlaw Idea]
 We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.
@@ -362,7 +362,7 @@ Once you know your requirements, it’s time to get specific.
 **Scale:** Is the system read-heavy or write-heavy?
 
 ### Example. Code Deployment System. 
-See more in [code_deployment](system-design/projects/code_deployment.md)
+See more in [Code_deployment]({{< ref "system-design/projects/code_deployment" >}})
 
 # Step 3: Design
 

@@ -7,26 +7,26 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 23:36:39 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 08:51:50 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/system-design/nfr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Consistency</title>
       <link>http://localhost:1313/system-design/nfr/consistency/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/consistency/</guid>
       <description>&lt;p&gt;https://www.alexdebrie.com/posts/database-consistency/&lt;/p&gt;&#xA;&lt;h1 id=&#34;consistency&#34;&gt;consistency&lt;/h1&gt;&#xA;&lt;p&gt;definition, models, etc&lt;/p&gt;&#xA;&lt;p&gt;consistency patterns&lt;/p&gt;&#xA;&lt;p&gt;sources:&#xA;understanding distributes systems&#xA;DDIA&lt;/p&gt;&#xA;&lt;p&gt;https://en.wikipedia.org/wiki/Consistency_model&#xA;https://en.wikipedia.org/wiki/Sequential_consistency&lt;/p&gt;&#xA;&lt;p&gt;https://systemdesign.one/consistency-patterns/&#xA;https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reliability &amp; Availability</title>
       <link>http://localhost:1313/system-design/nfr/reliability--availability/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/reliability--availability/</guid>
       <description>&lt;h1 id=&#34;reliability--availability&#34;&gt;reliability &amp;amp; availability&lt;/h1&gt;&#xA;&lt;h2 id=&#34;patterns&#34;&gt;patterns&lt;/h2&gt;&#xA;&lt;p&gt;There are two complementary patterns to support high availability: &lt;strong&gt;fail-over&lt;/strong&gt; and &lt;strong&gt;replication&lt;/strong&gt;. Active-Passive and Active-Active are two types of redundancy configurations that enable high availability in the event of systems failure.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scalability</title>
       <link>http://localhost:1313/system-design/nfr/scalability/</link>
-      <pubDate>Fri, 21 Feb 2025 23:36:39 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 08:51:50 +0000</pubDate>
       <guid>http://localhost:1313/system-design/nfr/scalability/</guid>
       <description>&lt;p&gt;Why scalability problems start with organizations and people, not technology, and what to do about it.&lt;/p&gt;&#xA;&lt;h1 id=&#34;ontology&#34;&gt;Ontology&lt;/h1&gt;&#xA;&lt;h1 id=&#34;definitions&#34;&gt;Definitions&lt;/h1&gt;&#xA;&lt;p&gt;Definition. What is it that we really mean by scalability? A service is said to be scalable if when we increase the resources in a system, it results in increased performance in a manner &lt;em&gt;proportional&lt;/em&gt; to resources added. Increasing performance in general means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.&lt;/p&gt;</description>
     </item>
