@@ -14,6 +14,7 @@ weight: 810
 
 {{< callout context="note" title="information" icon="outline/info-circle" >}}
 here we come
+other line
 {{< /callout >}}
 
 {{< callout context="tip" title="use it" icon="outline/rocket" >}}
@@ -22,23 +23,22 @@ other
 
 {{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
 If you're
-
 - one
 - second
-
 ```python
 callout_pattern = re.compile()
 ```
-
 {{< /callout >}}
 
-{{< callout context="danger" title="Be aware" icon="outline/alert-octagon" >}}
+ 
+
+{{< callout context="danger" title="be awsre" icon="outline/alert-octagon" >}}
 of these things
 {{< /callout >}}
 
 code block example
 
-```python {title="Installing dependencies…"}
+```python
 def convert_callout(match):
     """Convert an Obsidian callout to a Hugo Doks callout format."""
     callout_type = match.group(2).lower()  # Extract callout type (e.g., "info")
@@ -52,10 +52,10 @@ def convert_callout(match):
     # Get Doks callout properties or fallback to "note"
     doks_data = doks_callout_mapping.get(callout_type, {"context": "note", "icon": "outline/info-circle"})
 
+
 ```
 
-# Test link to learning
-
+Test link to learning
 [Learning]({{< ref "projects/learning" >}})
 
 [Elements]({{< ref "system-design/elements/elements" >}})

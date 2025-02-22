@@ -751,7 +751,6 @@
         <li><a href="#callouts">Callouts</a></li>
       </ul>
     </li>
-    <li><a href="#test-link-to-learning">Test link to learning</a></li>
   </ul>
 </nav>
 </div>
@@ -772,7 +771,6 @@
         <li><a href="#callouts">Callouts</a></li>
       </ul>
     </li>
-    <li><a href="#test-link-to-learning">Test link to learning</a></li>
   </ul>
 </nav>
     </div>
@@ -804,7 +802,8 @@
 
       </div>
     <div class="callout-body">
-      <p>here we come</p>
+      <p>here we come
+other line</p>
 
     </div>
   </div>
@@ -905,7 +904,7 @@
 </svg>
   <div class="callout-content">
     <div class="callout-title">
-        <p>Be aware</p>
+        <p>be awsre</p>
 
       </div>
     <div class="callout-body">
@@ -920,11 +919,11 @@
 
 
 <div class="expressive-code">
-  <figure class="frame has-title not-content">
+  <figure class="frame not-content">
   <figcaption class="header">
-    <span class="title">Installing dependencies…</span>
+    <span class="title"></span>
   </figcaption>
-  <div class="highlight" title="Installing dependencies…"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">convert_callout</span><span class="p">(</span><span class="k">match</span><span class="p">):</span>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">convert_callout</span><span class="p">(</span><span class="k">match</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Convert an Obsidian callout to a Hugo Doks callout format.&#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">callout_type</span> <span class="o">=</span> <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Extract callout type (e.g., &#34;info&#34;)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">title</span> <span class="o">=</span> <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Extract callout title</span>
@@ -938,8 +937,8 @@
 </span></span><span class="line"><span class="cl">    <span class="n">doks_data</span> <span class="o">=</span> <span class="n">doks_callout_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">callout_type</span><span class="p">,</span> <span class="p">{</span><span class="s2">&#34;context&#34;</span><span class="p">:</span> <span class="s2">&#34;note&#34;</span><span class="p">,</span> <span class="s2">&#34;icon&#34;</span><span class="p">:</span> <span class="s2">&#34;outline/info-circle&#34;</span><span class="p">})</span></span></span></code></pre></div>
   </figure>
 </div>
-<h1 id="test-link-to-learning">Test link to learning</h1>
-<p><a href="http://localhost:1313/projects/learning/">Learning</a></p>
+<p>Test link to learning
+<a href="http://localhost:1313/projects/learning/">Learning</a></p>
 <p><a href="http://localhost:1313/system-design/elements/elements/">Elements</a></p>
 <p>link to heading in current document
 <a href="#courses">Courses</a></p>

@@ -90,7 +90,8 @@ Now think about clarifying the relation between these objects. What’s the rela
 
 Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?
 
-> Tip. Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
+> [!tip] Media 
+> Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
 
 ## Think about the possible access patterns for these objects
 
@@ -316,21 +317,23 @@ Look at the access patterns you defined in the functional requirements to write 
 
 ## 2.3 What volume of requests do we need to support?
 
->[!Tip]
-Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
+{{< callout context="tip" title="Tell your interviewer" icon="outline/rocket" >}}
+It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
+{{< /callout >}}
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 
 See more in [Envelope_estimations]({{< ref "system-design/topics/envelope_estimations" >}})
 
->[!Outlaw Idea]
+{{< callout context="tip" title="Outlaw Idea" icon="outline/rocket" >}}
 We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.
+{{< /callout >}}
 
 Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher—it’s called **margin of safety**. For our Twitter example we can go for these numbers:
 
 ```
-2  Reads/minute: 100k
-3  Writes/minute: 1k
+Reads/minute: 100k
+Writes/minute: 1k
 ```
 
 Finally, what’s the volume of data we need to store? Go back to your “data types” (section 2.1) and think about how big these can get and multiply that by the number of writes/minute to get how much data you need to store per minute.
@@ -353,15 +356,14 @@ Again, it does not matter at all if you get these numbers right as long as you a
 So we’ll need to store around a gigabyte of data per minute.
 
 {{< callout context="note" title="Data Types, Scale, and Access patterns" icon="outline/info-circle" >}}
-
-{{< /callout >}}
 Once you know your requirements, it’s time to get specific.
->
+
 **Data Types:** Start by identifying the main business objects that you need to store.
 **API:** How are these going to be accessed?
 **Scale:** Is the system read-heavy or write-heavy?
+{{< /callout >}}
 
-### Example. Code Deployment System. 
+> Example. Code Deployment System. 
 See more in [Code_deployment]({{< ref "system-design/projects/code_deployment" >}})
 
 # Step 3: Design
@@ -381,14 +383,13 @@ Once we know our use cases and what to optimize for, it comes down to knowing a 
 
 At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.
 
-{{< callout context="tip" title="(Tell your interviewer)" icon="outline/rocket" >}}
-
+{{< callout context="tip" title="Tell your interviewer" icon="outline/rocket" >}}
+I’m going to start drawing some boxes. I'm just thinking out loud for now, so don't hold me to any of this. We can come back to it later.
 {{< /callout >}}
-"I’m going to start drawing some boxes. I'm just thinking out loud for now, so don't hold me to any of this. We can come back to it later."
 
 This is basically giving you a free pass to flush your brain and be wrong. Which is exactly what you want when there’s a clean slate in front of you. Again, design is an iterative process. Expecting that you’ll go from clean slate to perfect design in one go is just… foolish.
 
-## So what is “design”?
+## So what is "Design"?
 
 We should first align on our outputs. Design simply means two components:
 1. **Data storage.** We already know from previous steps “what” we are storing. Now the question is where are we storing it?
@@ -410,8 +411,9 @@ Some popular blob stores are Amazon S3 and Azure Blob storage. In general, you d
 
 Going back to our Twitter example, we’ll want to store media from tweets in some kind of blob storage.
 
->[!Rule of thumb]
+{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don’t say the specific brand. Instead, say “some kind of blob storage.” Because if you say, “we should use S3 here,” the next question out of your interviewer’s mouth will be, “why not Azure blob instead of S3?”
+{{< /callout >}}
 
 There’s a chance you might want to couple the blob storage with a CDN, but that’s something we’ll look into in step 3.2. *This step is all about identifying how to store content, not how to distribute it.*
 
@@ -426,8 +428,9 @@ There are a few considerations for this step:
 
 Relational vs. Non-Relational, sometimes referred to as SQL vs. NoSQL, is one of the foundational decisions of database design. There are many trade-offs involved when it comes to picking one or the other. In many interview questions, an argument can be made for any choice you make. *It’s important that you don’t succumb to paralysis through over-analysis.* Just pick one, and make your rationale clear for why you chose it. Score extra brownie points if you include a drawback of making the pick you made.
 
->[!Remember]
+{{< callout context="caution" title="Remember" icon="outline/alert-triangle" >}}
 There’s no right or wrong answer—it’s all about how to justify your picks.
+{{< /callout >}}
 
 Don’t oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you’re being unrealistic, you probably won’t change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you’re too fixated on being right, you’ll miss the opportunity.
 
@@ -462,10 +465,9 @@ Now look at the access patterns and make some adjustments. We identified two acc
 
 `getTweets` should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.
 
-{{< callout context="tip" title="(Tell your interviewer)" icon="outline/rocket" >}}
-
-{{< /callout >}}
+{{< callout context="tip" title="Tell your interviewer" icon="outline/rocket" >}}
 Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.
+{{< /callout >}}
 
 Now onto `getFeed`. Let’s define feed to be a list of tweets of all the accounts the given account follows, sorted chronologically. There’s one thing we are missing here already: the information about who follows whom. Let’s say we add that relation in some new table:
 
@@ -480,18 +482,18 @@ Given the fact that we identified the system to be read-heavy and `getFeed` is e
 However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.
 
 {{< callout context="tip" title="Tell your interviewer" icon="outline/rocket" >}}
-
-{{< /callout >}}
 “Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”
->
+{{< /callout >}}
+
 Assess your current solution, provide your opinion, and then ask your interviewer for their thoughts. This is the best way to iterate on system design. You don’t want to rely solely on your interviewer without expressing your thoughts because it may convey a lack of criticality/independence.
->
+
 You also don’t want to move forward without any input from your interviewer because it may be perceived as poor collaboration. We find that **stating your rationale followed by a subtle “what do you think?” or “let me know if you think I’m approaching this the wrong way” is the perfect balance between being independent but also collaborative.**
 
 For the sake of learning, let’s say that our interviewer agrees with us and wants to move forward with optimizing this. Whenever you are looking to optimize runtime, trading it off with memory should be your first go-to.
 
->[!Rule of thumb]
+{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.
+{{< /callout >}}
 
 In this example, we might want to store the user feeds in a table and keep that up to date as new tweets come up. That way, we have an instant mapping from user to its feed, making `getFeed` fast at the cost of using more memory and the added complexity of having to maintain feeds up to date.
 
@@ -509,22 +511,24 @@ Once we have our storage layer somewhat defined, the last step is connecting our
 
 Ask yourself: Are there any access patterns that would benefit from caching the results in-memory? Candidates sometimes add caching to their solution just because. This is often a mistake.
 
->[!Warning]
+{{< callout context="caution" title="Not Always Use Cache" icon="outline/alert-triangle" >}}
 Not all systems designed in system design interviews require caching.
+{{< /callout >}}
 
 Remember that every decision you make has some trade-off. There’s no such thing as a free lunch in system design. Therefore, we urge you to consider the downsides of your design decisions and mention them during the interview.
 
->[!Rule of thumb]
->
+{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 Consider using caching when all three of these are true:
->- Computing the result is costly
->- Once computed, the result tends to not change very often (or at all)
->- The objects we are caching are read often
+- Computing the result is costly
+- Once computed, the result tends to not change very often (or at all)
+- The objects we are caching are read often
+{{< /callout >}}
 
 A common technology used when caching is needed is Redis. If you are not familiar with it, all you need to know is that it is a way for you to cache parts of your database in memory such that it’s faster to access them.
 
->[!Remember]
+{{< callout context="caution" title="Remember" icon="outline/alert-triangle" >}}
 If you haven’t used Redis, don’t say, “Let’s use Redis here” in the interview; instead, say “Let’s add a cache here.” Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, “Why Redis and not Memcached?”
+{{< /callout >}}
 
 What are some of the downsides of caching, you may ask? To begin with, it introduces two replicas of the same data. Even though our source of truth remains to be persistent storage (our database), it is now possible to get the result from the cache as well. This might introduce inconsistencies if the cache is out of date from the source of truth. This is why it’s wiser to cache objects that don’t usually change too often. It’s also costly to maintain and adds complexity to the system. Now every time we want to update our logic, we’ll need to consider the caching layer as well.
 
@@ -536,8 +540,8 @@ Load balancing is easier when our API servers are stateless because requests can
 
 As mentioned, this will give us two key benefits:
 
-5. **Horizontal scaling.** We can add more API servers to handle more load.
-6. **High Availability.** Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.
+**Horizontal scaling.** We can add more API servers to handle more load.
+**High Availability.** Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.
 
 There are different strategies for deciding how to balance load across a set of servers, but most of the time you’ll be dealing with round robin.
 
@@ -628,9 +632,9 @@ Finally, for code execution, we’d probably want to execute the code in isolati
 22
 ```
 
-### Rule of thumb
-
+{{< callout context="note" title="No Code" icon="outline/info-circle" >}}
 In an interview, the less you code you write, the more you seem like a senior engineer. And the opposite is true as well: The more code you write in a system design interview, the more you seem like you’re below the senior level. Writing this much code for your API would probably be too much if you’re aiming for senior or senior plus roles. But if you’re a mid-level candidate trying to secure your mid-level position, this is the perfect amount of code to write.
+{{< /callout >}}
 
 #### Scale:
 

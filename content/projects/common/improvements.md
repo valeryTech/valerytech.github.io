@@ -33,8 +33,6 @@ Goals:
 ◦ measure and take outside feedback, socialize
 ◦ teach what you know
 
-больше гулять
-4 часа на развитие в день! 
 
 
 # PDSA

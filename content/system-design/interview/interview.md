@@ -12,10 +12,12 @@ weight: 810
 
 # Checklist
 
-paper with checklist
+You should create a paper with checklist items to do during the interview, like main steps, inputs-outputs, what not to forget, etc. 
 
-(tool)
-Ask your recruiter what software you'll be using for your interview and practice with it ahead of time. You don't want to be fumbling with the software during your interview.
+Preparation to some interview:
+- (tool) Ask your recruiter what software you'll be using for your interview and practice with it ahead of time. You don't want to be fumbling with the software during your interview.
+
+
 
 # Advices | Principles | Tricks
 
@@ -27,7 +29,11 @@ Put simply, the interviewer's goal is to find enough data to hire you. Given the
 
 >The best way to accomplish this is to imagine that you’re explaining a design doc to a group of more junior engineers. They will ask you questions about your decisions and want to know what you’re trying to solve. Anticipating these questions and your responses will set you up for success in the interview.
 
-# Proactivity
+(your output format)
+The less code you write in a system design interview, the better.
+Structured. Detailed. ...
+
+## Proactivity
 
 Being proactive in a system design (SD) interview is essential to demonstrate leadership, structured thinking, and problem-solving skills. A proactive candidate does not wait for the interviewer to lead the discussion but instead takes charge, guiding the conversation effectively while remaining open to feedback.
 
@@ -46,12 +52,14 @@ Being proactive in a system design (SD) interview is essential to demonstrate le
     - "Does this approach align with what you had in mind?"
     - "Would you like me to explore alternative solutions at this stage?"
 
- Asking High-Impact, Non-Trivial Questions
+ > Asking High-Impact, Non-Trivial Questions (#todo)
 
 
 ## There is not one single best solution
 
-> Always consider trade-offs especially in SD interview
+{{< callout context="tip" title="Trade-Offs" icon="outline/rocket" >}}
+Always consider trade-offs especially in SD interview
+{{< /callout >}}
 
 In system design, there isn't a single "best" solution; instead, multiple viable
 approaches exist, each with its own set of trade-offs. This is because system design problems are often complex and multifaceted.
@@ -112,7 +120,9 @@ In a system design interview, you may encounter two different situations:
 
     When the interviewer decides to challenge you with something new, it may be a topic that is based on their own particular expertise or skill set.
 
->[!tip]
+{{< callout context="note" title="Know an Interviever" icon="outline/info-circle" >}}
+
+{{< /callout >}}
 If you know a little about your interviewer’s background, you should have a hint about what to expect, which can allow you to prepare a little ahead of time.
 
 ## Time management
@@ -125,12 +135,15 @@ By the end of the interview, the interviewer is inherently asking themselves “
 
 Whatever decision you make, explain **why**. In a system design interview, **why** is more important than **what**. For anything you say, be prepared to explain **why**.
 
->[!important]
->Your interviewer cares less about whether your design is good in itself, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions.
+{{< callout context="caution" title="Reasoning your design" icon="outline/alert-triangle" >}}
+Your interviewer cares less about whether your design is good in itself, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions.
+{{< /callout >}}
 
-Keep it simple. The first rule of distributed systems is that you should avoid them if you don’t need them! Always consider maintenance costs. People don’t build distributed systems for fun. If all of Google could run on just one machine, you can bet they would do it.
+{{< callout context="tip" title="Keep it simple. " icon="outline/rocket" >}}
+The first rule of distributed systems is that you should avoid them if you don’t need them! Always **consider maintenance costs**. People don’t build distributed systems for fun. If all of Google could run on just one machine, you can bet they would do it.
+{{< /callout >}}
 
-In other words, if there is a simple way to do things and a complex way to do things, aim for the simple path. Not because the simple way is more likely to be correct, but because you have to make more assumptions for more complicated explanations to be true.
+In other words, if there is a simple way to do things and a complex way to do things, **aim for the simple path**. Not because the simple way is more likely to be correct, but because you have to make more assumptions for more complicated explanations to be true.
 
 Accept that there are some things that you will not know, and be ready to admit this to your interviewer. In the third core concept (below), we will teach you exactly how to say this without losing points in the interview.
 
@@ -140,16 +153,18 @@ Iterative process: Systems, in reality, improve over iterations. We often start 
 
 Working under time constraints might not permit iterations on the design. However, we still recommend two iterations—first, where we do our best to come up with a design (that takes about 80 percent of our time), and a second iteration for improvements. Another choice is to change things as we figure out new insights. Inevitably, we discover new details as we spend more time working with a problem.
 
-> Start with simple solution and evolve it during the interview to the MVP
-
+{{< callout context="tip" title="Start with simple solution and evolve it during the interview to the MVP" icon="outline/rocket" >}}
 At the risk of oversimplifying, we suggest that you *start small*. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it.
+{{< /callout >}}
 
-name it **First Pass**, Naive Design, Baseline Solution
+You can name it as First Pass, as well as Naive Design, or Baseline Solution
 
+> collect only main features
+> components prioritization
 
-collect only main features
-components prioritization
-draw only critical components
+{{< callout context="note" title="Drawing" icon="outline/info-circle" >}}
+Draw only critical components.
+{{< /callout >}}
 
 no premature optimization - follow the steps in this interview SD framework
 
@@ -157,14 +172,16 @@ prioritization of the components to further process
 
 ## Immutability Trick
 
-tip 1. Here is one way to get unstuck during a system design interview: consider the immutable case. This is a practical way to dumb the problem down. Tackle the dumber problem, and then add in complexity after that. Considering the immutable case also helps with identifying bottlenecks, as well as with capacity planning.
+{{< callout context="tip" title="First Going Immutable" icon="outline/rocket" >}}
+
+{{< /callout >}}
+
+Here is one way to get unstuck during a system design interview: consider the immutable case. This is a practical way to dumb the problem down. Tackle the dumber problem, and then add in complexity after that. Considering the immutable case also helps with identifying bottlenecks, as well as with capacity planning.
 
 ## Other
 
 (invention point of view)
 “When you have a desired outcome (a truly portable laptop computer) but no clear solution in sight, that’s when you brainstorm, try crazy stuff, improvise, and keep ‘building your way forward’ until you come up with something that works. You know it when you see it. A great design comes together in a way that can’t be solved with equations and spreadsheets and data analysis. It has a look and feel all of its own - a beautiful aesthetic that speaks to you.”
-
-The less code you write in a system design interview, the better.
 
 Be prepared to adapt. Be flexible and ready to adjust your design based on feedback from the interviewer.
 
@@ -196,7 +213,7 @@ The difference in levelling is most frequently the depth of the solution and you
 
 > Remember that the top-level goal for your interview is to give your interviewer *sufficient confidence* to advocate for a hire decision. While the mechanics of your interview are important, they are ultimately in service of signaling to your interviewer that you are a strong candidate.
 
-{{< callout context="warning" title="Remember" icon="outline/exclamation-triangle" >}}
+{{< callout context="caution" title="Remember" icon="outline/alert-triangle" >}}
 The most common reason for a candidate to fail a system design interview is not delivering a working system. This is often due to a lack of structure in their approach. We recommend following the structure outlined in the [Delivery](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) section.
 {{< /callout >}}
 
@@ -350,13 +367,14 @@ If you’re looking for a mid-level position or below, your interviewer should d
 
 If you’re applying for a senior role (or above), it’s a good sign if you direct more of the interview. In junior system design interviews, the interviewer expects to drive the interview, but as you reach senior levels the expectation shifts to the interviewee.
 
->[!Anecdote from a seasoned interviewer]
+{{< callout context="note" title="Anecdote from a seasoned interviewer" icon="outline/info-circle" >}}
 ​​Being overly confident and talking too much might count against a mid-level candidate. Some interviewers (especially off-script ones) love giving candidates more rope to hang themselves with, and then they ask specific questions that focus on what the candidate struggles with.
->
+
 If your goal is to maximize a mid-level offer, not improve your "average passing rate" (i.e., if you are comfortable sacrificing some senior-plus chances to increase your mid-level chances), then you might be better off consciously "giving control away" to your interviewer.
->
+
 Simply put, at the above-senior level an awkward pause will be held against you—that’s basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.
->
+{{< /callout >}}
+
 Another way to think of it: when you are not leading the conversation, you signal that you’re not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)
 
 The saying, ‘Better to remain silent and be thought a fool than to speak out and remove all doubt’ can be true for mid-level interviews but not for seniors or above-senior.”
@@ -384,23 +402,26 @@ Interviewers want to identify “impostors”: people who just learned a few wor
 
 *Don’t say things because you think you’re supposed to say them.* This often occurs when candidates name specific brands of technologies (e.g., “Kafka” or “Cassandra”). Not being familiar with specific databases or other components is fine. Be smart and don’t say brand names just for the sake of saying them.
 
-Don’t say
-Thumbs down icon
+
+{{< callout context="caution" title="Don’t say" icon="outline/thumb-down" >}}
 I’m going to use Cassandra...” unless you are VERY familiar with that, because the next question will be: “Why Cassandra and not some_other_db?
+{{< /callout >}}
 
-Do say
+{{< callout context="note" title="Do say" icon="outline/thumb-up" >}}
 I’m going to use a NoSQL db because of [insert brief rationale].
+{{< /callout >}}
 
-Don’t say
+{{< callout context="note" title="Don’t say" icon="outline/info-circle" >}}
 I will use Kafka…” unless you’re prepared to explain how Kafka works. Don’t say “I will use Kafka” unless you are prepared to talk about other types of queues, because they may ask you: “Oh, Kafka, interesting choice. Why that instead of [some other queue]?
+{{< /callout >}}
 
-Do say
+{{< callout context="note" title="Do say" icon="outline/thumb-up" >}}
 I will use a queue because of [insert brief rationale].
+{{< /callout >}}
 
 {{< callout context="note" title="Remember" icon="outline/info-circle" >}}
-
-{{< /callout >}}
 Say the generic name of the component, not the brand name unless you are very familiar with it. Don’t say Kafka. Instead, say "a queue".
+{{< /callout >}}
 
 # Technical (kind of) Flags
 
@@ -437,7 +458,9 @@ system evaluation
 
 You should check with your interviewer to see if they want to see you do some math or if they’d rather go into design.
 
->Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”
+{{< callout context="note" title="Tell your interviewer: " icon="outline/info-circle" >}}
+It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?
+{{< /callout >}}
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 

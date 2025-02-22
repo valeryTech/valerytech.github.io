@@ -23,7 +23,7 @@ While a firm structure to your approach is important and your interviewer is not
 
 The goal of the requirements section is to get a clear understanding of the system that you are being asked to design. To do this, we suggest you break your requirements into two sections.
 
-### 1) Functional Requirements
+### Functional Requirements
 
 Functional requirements are your "Users/Clients should be able to..." statements. These are the *core* features of your system and should be the first thing you discuss with your interviewer. Oftentimes this is a back and fourth with your interviewer. Ask targeted questions as if you were talking to a client, customer, or product manager ("does the system need to do X?", "what would happen if Y?") to arrive at a *prioritized* list of core features.
 
@@ -37,11 +37,11 @@ A cache meanwhile might have requirements like:
 - Clients should be able to set expirations
 - Clients should be able to read items
 
-{{< callout context="warning" title="Keep your requirements targeted! " icon="outline/exclamation-triangle" >}}
+{{< callout context="caution" title="Keep your requirements targeted! " icon="outline/alert-triangle" >}}
 The main objective in the remaining part of the interview is to develop a system that meets the requirements you've identified -- so it's crucial to be strategic in your prioritization. Many of these systems have hundreds of features, but it's your job to identify and *prioritize the top 3*. Having a long list of requirements will hurt you more than it will help you and many top FAANGs directly evaluate you on your ability to focus on what matters.
 {{< /callout >}}
 
-### 2) Non-functional Requirements
+### Non-functional Requirements
 
 Non-functional requirements are statements about the system qualities that are **important to your users**. These can be phrased as "The system should be able to..." or "The system should be..." statements.
 
@@ -150,11 +150,12 @@ For our simple Twitter example, here is how you might build up your design, one 
 
 Astute readers probably noticed that our simple, high-level design of Twitter is going to be woefully inefficient when it comes to fetching user's feeds. No problem! That's exactly the sort of thing you'll iterate on in the deep dives section. Now that you have a high-level design in place you're going to use the remaining 10 or so minutes of the interview to harden your design by (a) ensuring it meets all of your non-functional requirements (b) addressing edge cases (c) identifying and adressing issues and bottlenecks and (d) improving the design based on probes from your interviewer.
 
->[!info] 
->The degree in which you're proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.
+{{< callout context="note" title="Be Proactive " icon="outline/info-circle" >}}
+The degree in which you're proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.
+{{< /callout >}}
 
 So for example, one of our non-functional requirements for Twitter was that our system needs to scale to >100M DAU. We could then lead a discussion oriented around horizontal scaling, the introduction of caches, and database sharding -- updating our design as we go. Another was that feeds need to be fetched with low latency. In the case of Twitter, this is actually the most interesting problem. We'd lead a discussion about fanout-on-read vs fanout-on-write and the use of caches.
 
-{{< callout context="danger" title=" Mistake" icon="outline/alert-octagon" >}}
+{{< callout context="danger" title=" Mistake: don't talk very much" icon="outline/alert-octagon" >}}
 A common mistake candidates make is that they try to talk over their interviewer here. There is a lot to talk about, sure, and for senior candidates being proactive is important, however, it's a balance. Make sure you give your interviewer room to ask questions and probe your design. Chances are they have signal they want to get from you and you're going to miss it if you're too busy talking. Plus, you'll hurt your evaluation on communication and collaboration.
 {{< /callout >}}

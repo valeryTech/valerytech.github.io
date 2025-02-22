@@ -782,16 +782,12 @@
       <ul>
         <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
         <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
-        <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
-          <ul>
-            <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
-          </ul>
-        </li>
+        <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a></li>
       </ul>
     </li>
     <li><a href="#step-3-design-1">Step 3: Design</a>
       <ul>
-        <li><a href="#so-what-is-design">So what is “design”?</a></li>
+        <li><a href="#so-what-is-design">So what is &ldquo;Design&rdquo;?</a></li>
         <li><a href="#31-data-storage">3.1 Data storage</a>
           <ul>
             <li><a href="#blob-storage">Blob storage</a></li>
@@ -817,10 +813,6 @@
             <li>
               <ul>
                 <li></li>
-              </ul>
-            </li>
-            <li><a href="#rule-of-thumb">Rule of thumb</a>
-              <ul>
                 <li><a href="#scale">Scale:</a></li>
               </ul>
             </li>
@@ -880,16 +872,12 @@
       <ul>
         <li><a href="#21-what-data-types-does-the-system-need-to-store">2.1 What data types does the system need to store?</a></li>
         <li><a href="#22-what-does-the-api-look-like">2.2 What does the API look like?</a></li>
-        <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a>
-          <ul>
-            <li><a href="#example-code-deployment-system">Example. Code Deployment System.</a></li>
-          </ul>
-        </li>
+        <li><a href="#23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?</a></li>
       </ul>
     </li>
     <li><a href="#step-3-design-1">Step 3: Design</a>
       <ul>
-        <li><a href="#so-what-is-design">So what is “design”?</a></li>
+        <li><a href="#so-what-is-design">So what is &ldquo;Design&rdquo;?</a></li>
         <li><a href="#31-data-storage">3.1 Data storage</a>
           <ul>
             <li><a href="#blob-storage">Blob storage</a></li>
@@ -915,10 +903,6 @@
             <li>
               <ul>
                 <li></li>
-              </ul>
-            </li>
-            <li><a href="#rule-of-thumb">Rule of thumb</a>
-              <ul>
                 <li><a href="#scale">Scale:</a></li>
               </ul>
             </li>
@@ -1047,7 +1031,8 @@
 </ul>
 <p>Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?</p>
 <blockquote>
-<p>Tip. Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.</p></blockquote>
+<p>[!tip] Media
+Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.</p></blockquote>
 <h2 id="think-about-the-possible-access-patterns-for-these-objects">Think about the possible access patterns for these objects<a href="#think-about-the-possible-access-patterns-for-these-objects" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Access patterns are probably the single most influential part of design because they determine how data will be stored.</p>
 <p>Let&rsquo;s think about the cross product of our objects again. This time we want to identify how data will be retrieved from the system.</p>
@@ -1303,14 +1288,68 @@ More than 90% of the time, users will interact with the system through HTTPS, an
   </figure>
 </div>
 <h2 id="23-what-volume-of-requests-do-we-need-to-support">2.3 What volume of requests do we need to support?<a href="#23-what-volume-of-requests-do-we-need-to-support" class="anchor" aria-hidden="true">#</a> </h2>
-<blockquote>
-<p>[!Tip]
-Tell your interviewer: ”It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”</p></blockquote>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Tell your interviewer</p>
+
+      </div>
+    <div class="callout-body">
+      <p>It seems like we’ve identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I’d probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?”</p>
+
+    </div>
+  </div>
+</div>
+
 <p>If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you’ll most likely be wrong. Believe me, your interviewer doesn’t care. We just want to agree on some numbers so we can do some back-of-the-envelope math.</p>
 <p>See more in <a href="http://localhost:1313/system-design/topics/envelope_estimations/">Envelope_estimations</a></p>
-<blockquote>
-<p>[!Outlaw Idea]
-We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.</p></blockquote>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Outlaw Idea</p>
+
+      </div>
+    <div class="callout-body">
+      <p>We’ve seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: “Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes…” But for 90% of problems… who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it’s irrelevant as long as you are in the ballpark and have something to work with.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher—it’s called <strong>margin of safety</strong>. For our Twitter example we can go for these numbers:</p>
 
 
@@ -1320,8 +1359,8 @@ We’ve seen online resources that spend so much time showing you how to calcula
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <pre tabindex="0"><code>2  Reads/minute: 100k
-3  Writes/minute: 1k</code></pre>
+  <pre tabindex="0"><code>Reads/minute: 100k
+Writes/minute: 1k</code></pre>
   </figure>
 </div>
 <p>Finally, what’s the volume of data we need to store? Go back to your “data types” (section 2.1) and think about how big these can get and multiply that by the number of writes/minute to get how much data you need to store per minute.</p>
@@ -1354,7 +1393,7 @@ We’ve seen online resources that spend so much time showing you how to calcula
   </figure>
 </div>
 <p>So we’ll need to store around a gigabyte of data per minute.</p>
-<p><div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -1378,19 +1417,18 @@ We’ve seen online resources that spend so much time showing you how to calcula
 
       </div>
     <div class="callout-body">
-      
+      <p>Once you know your requirements, it’s time to get specific.</p>
+<p><strong>Data Types:</strong> Start by identifying the main business objects that you need to store.
+<strong>API:</strong> How are these going to be accessed?
+<strong>Scale:</strong> Is the system read-heavy or write-heavy?</p>
+
     </div>
   </div>
 </div>
 
-Once you know your requirements, it’s time to get specific.</p>
 <blockquote>
-</blockquote>
-<p><strong>Data Types:</strong> Start by identifying the main business objects that you need to store.
-<strong>API:</strong> How are these going to be accessed?
-<strong>Scale:</strong> Is the system read-heavy or write-heavy?</p>
-<h3 id="example-code-deployment-system">Example. Code Deployment System.<a href="#example-code-deployment-system" class="anchor" aria-hidden="true">#</a> </h3>
-<p>See more in <a href="http://localhost:1313/system-design/projects/code_deployment/">Code_deployment</a></p>
+<p>Example. Code Deployment System.
+See more in <a href="http://localhost:1313/system-design/projects/code_deployment/">Code_deployment</a></p></blockquote>
 <h1 id="step-3-design-1">Step 3: Design</h1>
 <table>
   <thead>
@@ -1415,127 +1453,7 @@ Once you know your requirements, it’s time to get specific.</p>
 <p>In fact, we can go as far as saying that if you’ve executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don’t have one single correct answer. Let’s use this to our advantage! 💪</p>
 <p>Once we know our use cases and what to optimize for, it comes down to knowing a few rules of thumb. Want speed? Use a cache. Want availability? Put in some redundancy. It’s really that simple. That’s the beauty of systems design. It can be as simple or as complicated as we want to make it.</p>
 <p>At the risk of oversimplifying, we suggest that you start small. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you’ll get a decent design. Then you can use the remaining time to iterate on it. Design is an iterative process.</p>
-<p><div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
-  <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
- 
- class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
-  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
-  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-</svg>
-  <div class="callout-content">
-    <div class="callout-title">
-        <p>(Tell your interviewer)</p>
-
-      </div>
-    <div class="callout-body">
-      
-    </div>
-  </div>
-</div>
-
-&ldquo;I’m going to start drawing some boxes. I&rsquo;m just thinking out loud for now, so don&rsquo;t hold me to any of this. We can come back to it later.&rdquo;</p>
-<p>This is basically giving you a free pass to flush your brain and be wrong. Which is exactly what you want when there’s a clean slate in front of you. Again, design is an iterative process. Expecting that you’ll go from clean slate to perfect design in one go is just… foolish.</p>
-<h2 id="so-what-is-design">So what is “design”?<a href="#so-what-is-design" class="anchor" aria-hidden="true">#</a> </h2>
-<p>We should first align on our outputs. Design simply means two components:</p>
-<ol>
-<li><strong>Data storage.</strong> We already know from previous steps “what” we are storing. Now the question is where are we storing it?</li>
-<li><strong>Microservices.</strong> How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.</li>
-</ol>
-<p>We know the <strong>what</strong> (steps 1 and 2), so now we focus on the <strong>where</strong> and the <strong>how</strong>. We will start with designing the data storage layer first and then think about the microservices that access this data.</p>
-<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmicroservice-design.f88cac33.png&amp;w=3840&amp;q=75" alt="Microservice design diagram with storage layer and api layer"/></p>
-<p>On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?</p>
-<h2 id="31-data-storage">3.1 Data storage<a href="#31-data-storage" class="anchor" aria-hidden="true">#</a> </h2>
-<h3 id="blob-storage">Blob storage<a href="#blob-storage" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Let’s get some of the more obvious components out of the way first. Did you identify any type of media or blobs in step 2.1? If so, these are great candidates to store in blob storage. A blob (Binary Large Object) is basically just binary data. We store and retrieve these as a single item. For example, ZIP files or other binaries.</p>
-<p>Some popular blob stores are Amazon S3 and Azure Blob storage. In general, you don’t need to worry too much about the specific brand you’d be using. Just tell your interviewer that these images/blobs you identified are good candidates to store in some blob storage, and then draw a “blob” box.</p>
-<p>Going back to our Twitter example, we’ll want to store media from tweets in some kind of blob storage.</p>
-<blockquote>
-<p>[!Rule of thumb]
-Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don’t say the specific brand. Instead, say “some kind of blob storage.” Because if you say, “we should use S3 here,” the next question out of your interviewer’s mouth will be, “why not Azure blob instead of S3?”</p></blockquote>
-<p>There’s a chance you might want to couple the blob storage with a CDN, but that’s something we’ll look into in step 3.2. <em>This step is all about identifying how to store content, not how to distribute it.</em></p>
-<h3 id="database">Database<a href="#database" class="anchor" aria-hidden="true">#</a> </h3>
-<p>There are a few considerations for this step:</p>
-<ol start="3">
-<li>Relational vs. Non-Relational</li>
-<li>Entities to store</li>
-</ol>
-<h3 id="311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational<a href="#311-relational-vs-non-relational" class="anchor" aria-hidden="true">#</a> </h3>
-<p>Relational vs. Non-Relational, sometimes referred to as SQL vs. NoSQL, is one of the foundational decisions of database design. There are many trade-offs involved when it comes to picking one or the other. In many interview questions, an argument can be made for any choice you make. <em>It’s important that you don’t succumb to paralysis through over-analysis.</em> Just pick one, and make your rationale clear for why you chose it. Score extra brownie points if you include a drawback of making the pick you made.</p>
-<blockquote>
-<p>[!Remember]
-There’s no right or wrong answer—it’s all about how to justify your picks.</p></blockquote>
-<p>Don’t oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you’re being unrealistic, you probably won’t change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you’re too fixated on being right, you’ll miss the opportunity.</p>
-<p>Therefore, we’re giving you two very powerful tools: (1) A rule of thumb to pick Relational (SQL) vs. Non-Relational (NoSQL), and (2) A list of trade-offs that you should mention to your interviewer after stating your decision.</p>
-<h3 id="entities-to-store">Entities to store<a href="#entities-to-store" class="anchor" aria-hidden="true">#</a> </h3>
-<p>It’s time to look at the data and access patterns we defined in step 2 and design our database schema. This will look like a list of tables/documents, and a description of the queries that you’ll use to access them.</p>
-<p>A good starting point is to sketch out a table for each entity you identified, and then go over the access patterns. Think about how they will be fulfilled. Then you can adapt your tables to better fit these access patterns. <strong>Repeat after me: design is an iterative process.</strong></p>
-<p>Think about these iterations as small cycles where you identify the requirement, implement a solution, assess its limitation, and then improve it.</p>
-<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fone-iteration-design.c9aa61be.png&amp;w=3840&amp;q=75" alt="One iteration of the design process"/></p>
-<p>Rinse and repeat until you have a solution that accommodates your requirements from step 1. When you zoom out, you are just going through several of these cycles:</p>
-<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmultiple-iteration-design.4e8cbabd.png&amp;w=3840&amp;q=75" alt="One iteration of the design process"/></p>
-<p>Let’s see what this might look like through the lens of our Twitter example.</p>
-<p>We identified two entities in step 2.1: (1) Accounts, and (2) Tweets. Therefore, we’ll start out nice and simple with two tables:</p>
-<ul>
-<li>Accounts: id, name, surname.</li>
-<li>Tweets: id, content, author_id, media_url.</li>
-</ul>
-<p>Note that each of these has an id. This id is immutable and uniquely identifies each object so that we can easily change any of the object’s metadata without the need to update other records. Also, the media_url would point to the address of the blob storage bucket containing the tweet’s media, if any.</p>
-<p>Now look at the access patterns and make some adjustments. We identified two access patterns in step 2:</p>
-<ul>
-<li><code>getTweets</code> gets all the tweets for a given user.</li>
-<li><code>getFeed</code> gets the feed for a given user.</li>
-</ul>
-<p><code>getTweets</code> should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.</p>
-<p><div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
-  <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
- 
- class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
-  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
-  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-</svg>
-  <div class="callout-content">
-    <div class="callout-title">
-        <p>(Tell your interviewer)</p>
-
-      </div>
-    <div class="callout-body">
-      
-    </div>
-  </div>
-</div>
-
-Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.</p>
-<p>Now onto <code>getFeed</code>. Let’s define feed to be a list of tweets of all the accounts the given account follows, sorted chronologically. There’s one thing we are missing here already: the information about who follows whom. Let’s say we add that relation in some new table:</p>
-<ul>
-<li>Followers: account_id, follower_id</li>
-</ul>
-<p>We can again have indexes to speed up certain access patterns, such as getting all followers for a given account_id. This is totally fine. You can add tables/indexes as you realize they are needed. Remember: Identify → Implement → Assess → Improve.</p>
-<p>Computing the feed for a given user would require us to get all the accounts they follow and then get all their recent tweets. We have an implementation—time to assess it. Is this solution acceptable for our requirements?</p>
-<p>Given the fact that we identified the system to be read-heavy and <code>getFeed</code> is expected to be called quite frequently, the computation can become prohibitive. Consider that each account might follow thousands of users, and those might have hundreds of tweets. Computing the feed seems like quite a compute-intensive process.</p>
-<p>However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.</p>
-<p><div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -1559,22 +1477,219 @@ Be mindful of any “get all” access patterns. These usually need to be guarde
 
       </div>
     <div class="callout-body">
-      
+      <p>I’m going to start drawing some boxes. I&rsquo;m just thinking out loud for now, so don&rsquo;t hold me to any of this. We can come back to it later.</p>
+
     </div>
   </div>
 </div>
 
-“Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”</p>
-<blockquote>
-</blockquote>
+<p>This is basically giving you a free pass to flush your brain and be wrong. Which is exactly what you want when there’s a clean slate in front of you. Again, design is an iterative process. Expecting that you’ll go from clean slate to perfect design in one go is just… foolish.</p>
+<h2 id="so-what-is-design">So what is &ldquo;Design&rdquo;?<a href="#so-what-is-design" class="anchor" aria-hidden="true">#</a> </h2>
+<p>We should first align on our outputs. Design simply means two components:</p>
+<ol>
+<li><strong>Data storage.</strong> We already know from previous steps “what” we are storing. Now the question is where are we storing it?</li>
+<li><strong>Microservices.</strong> How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.</li>
+</ol>
+<p>We know the <strong>what</strong> (steps 1 and 2), so now we focus on the <strong>where</strong> and the <strong>how</strong>. We will start with designing the data storage layer first and then think about the microservices that access this data.</p>
+<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmicroservice-design.f88cac33.png&amp;w=3840&amp;q=75" alt="Microservice design diagram with storage layer and api layer"/></p>
+<p>On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?</p>
+<h2 id="31-data-storage">3.1 Data storage<a href="#31-data-storage" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="blob-storage">Blob storage<a href="#blob-storage" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Let’s get some of the more obvious components out of the way first. Did you identify any type of media or blobs in step 2.1? If so, these are great candidates to store in blob storage. A blob (Binary Large Object) is basically just binary data. We store and retrieve these as a single item. For example, ZIP files or other binaries.</p>
+<p>Some popular blob stores are Amazon S3 and Azure Blob storage. In general, you don’t need to worry too much about the specific brand you’d be using. Just tell your interviewer that these images/blobs you identified are good candidates to store in some blob storage, and then draw a “blob” box.</p>
+<p>Going back to our Twitter example, we’ll want to store media from tweets in some kind of blob storage.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Rule of thumb</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don’t say the specific brand. Instead, say “some kind of blob storage.” Because if you say, “we should use S3 here,” the next question out of your interviewer’s mouth will be, “why not Azure blob instead of S3?”</p>
+
+    </div>
+  </div>
+</div>
+
+<p>There’s a chance you might want to couple the blob storage with a CDN, but that’s something we’ll look into in step 3.2. <em>This step is all about identifying how to store content, not how to distribute it.</em></p>
+<h3 id="database">Database<a href="#database" class="anchor" aria-hidden="true">#</a> </h3>
+<p>There are a few considerations for this step:</p>
+<ol start="3">
+<li>Relational vs. Non-Relational</li>
+<li>Entities to store</li>
+</ol>
+<h3 id="311-relational-vs-non-relational">3.1.1 Relational vs. Non-Relational<a href="#311-relational-vs-non-relational" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Relational vs. Non-Relational, sometimes referred to as SQL vs. NoSQL, is one of the foundational decisions of database design. There are many trade-offs involved when it comes to picking one or the other. In many interview questions, an argument can be made for any choice you make. <em>It’s important that you don’t succumb to paralysis through over-analysis.</em> Just pick one, and make your rationale clear for why you chose it. Score extra brownie points if you include a drawback of making the pick you made.</p>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Remember</p>
+
+      </div>
+    <div class="callout-body">
+      <p>There’s no right or wrong answer—it’s all about how to justify your picks.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>Don’t oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you’re being unrealistic, you probably won’t change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you’re too fixated on being right, you’ll miss the opportunity.</p>
+<p>Therefore, we’re giving you two very powerful tools: (1) A rule of thumb to pick Relational (SQL) vs. Non-Relational (NoSQL), and (2) A list of trade-offs that you should mention to your interviewer after stating your decision.</p>
+<h3 id="entities-to-store">Entities to store<a href="#entities-to-store" class="anchor" aria-hidden="true">#</a> </h3>
+<p>It’s time to look at the data and access patterns we defined in step 2 and design our database schema. This will look like a list of tables/documents, and a description of the queries that you’ll use to access them.</p>
+<p>A good starting point is to sketch out a table for each entity you identified, and then go over the access patterns. Think about how they will be fulfilled. Then you can adapt your tables to better fit these access patterns. <strong>Repeat after me: design is an iterative process.</strong></p>
+<p>Think about these iterations as small cycles where you identify the requirement, implement a solution, assess its limitation, and then improve it.</p>
+<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fone-iteration-design.c9aa61be.png&amp;w=3840&amp;q=75" alt="One iteration of the design process"/></p>
+<p>Rinse and repeat until you have a solution that accommodates your requirements from step 1. When you zoom out, you are just going through several of these cycles:</p>
+<p><img src="https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmultiple-iteration-design.4e8cbabd.png&amp;w=3840&amp;q=75" alt="One iteration of the design process"/></p>
+<p>Let’s see what this might look like through the lens of our Twitter example.</p>
+<p>We identified two entities in step 2.1: (1) Accounts, and (2) Tweets. Therefore, we’ll start out nice and simple with two tables:</p>
+<ul>
+<li>Accounts: id, name, surname.</li>
+<li>Tweets: id, content, author_id, media_url.</li>
+</ul>
+<p>Note that each of these has an id. This id is immutable and uniquely identifies each object so that we can easily change any of the object’s metadata without the need to update other records. Also, the media_url would point to the address of the blob storage bucket containing the tweet’s media, if any.</p>
+<p>Now look at the access patterns and make some adjustments. We identified two access patterns in step 2:</p>
+<ul>
+<li><code>getTweets</code> gets all the tweets for a given user.</li>
+<li><code>getFeed</code> gets the feed for a given user.</li>
+</ul>
+<p><code>getTweets</code> should be pretty straightforward given the tweets table. We’d just need to select all tweets with a given author_id. Databases usually support the concept of an index, which provides faster access to entities given a property (called the index). Indexing tweets by their author seems like a sensible choice to fulfill this access pattern.</p>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Tell your interviewer</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Be mindful of any “get all” access patterns. These usually need to be guarded by paging. You don’t want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That’s why Twitter will load pages of tweets, even if it seems like an “infinite scroll” in the UI.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>Now onto <code>getFeed</code>. Let’s define feed to be a list of tweets of all the accounts the given account follows, sorted chronologically. There’s one thing we are missing here already: the information about who follows whom. Let’s say we add that relation in some new table:</p>
+<ul>
+<li>Followers: account_id, follower_id</li>
+</ul>
+<p>We can again have indexes to speed up certain access patterns, such as getting all followers for a given account_id. This is totally fine. You can add tables/indexes as you realize they are needed. Remember: Identify → Implement → Assess → Improve.</p>
+<p>Computing the feed for a given user would require us to get all the accounts they follow and then get all their recent tweets. We have an implementation—time to assess it. Is this solution acceptable for our requirements?</p>
+<p>Given the fact that we identified the system to be read-heavy and <code>getFeed</code> is expected to be called quite frequently, the computation can become prohibitive. Consider that each account might follow thousands of users, and those might have hundreds of tweets. Computing the feed seems like quite a compute-intensive process.</p>
+<p>However, don’t fall into the common pitfall of prematurely optimizing your system. Your interviewer might not even care about this problem. After you assess the limitations of your solution, check back with your interviewer before continuing to improve the solution.</p>
+<div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Tell your interviewer</p>
+
+      </div>
+    <div class="callout-body">
+      <p>“Although this would work from a functional perspective, I’m afraid it might not fulfill our non-functional requirements. Concretely speaking, we’ve identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we’d like to optimize it—what do you think?”</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Assess your current solution, provide your opinion, and then ask your interviewer for their thoughts. This is the best way to iterate on system design. You don’t want to rely solely on your interviewer without expressing your thoughts because it may convey a lack of criticality/independence.</p>
-<blockquote>
-</blockquote>
 <p>You also don’t want to move forward without any input from your interviewer because it may be perceived as poor collaboration. We find that <strong>stating your rationale followed by a subtle “what do you think?” or “let me know if you think I’m approaching this the wrong way” is the perfect balance between being independent but also collaborative.</strong></p>
 <p>For the sake of learning, let’s say that our interviewer agrees with us and wants to move forward with optimizing this. Whenever you are looking to optimize runtime, trading it off with memory should be your first go-to.</p>
-<blockquote>
-<p>[!Rule of thumb]
-When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.</p></blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Rule of thumb</p>
+
+      </div>
+    <div class="callout-body">
+      <p>When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>In this example, we might want to store the user feeds in a table and keep that up to date as new tweets come up. That way, we have an instant mapping from user to its feed, making <code>getFeed</code> fast at the cost of using more memory and the added complexity of having to maintain feeds up to date.</p>
 <p>You can also get creative as well. Do you need to keep the feeds for all users up to date? Maybe we can prioritize users who log in frequently. For users who rarely log into the app, we can compute the feed on-demand. These kinds of ideas are worth mentioning. They don’t really influence the design that much, but they show thoughtfulness around usage patterns.</p>
 <h2 id="32-microservices">3.2 Microservices<a href="#32-microservices" class="anchor" aria-hidden="true">#</a> </h2>
@@ -1586,32 +1701,110 @@ When looking to optimize performance for a read-heavy access pattern that requir
 </ul>
 <h3 id="caching">Caching<a href="#caching" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Ask yourself: Are there any access patterns that would benefit from caching the results in-memory? Candidates sometimes add caching to their solution just because. This is often a mistake.</p>
-<blockquote>
-<p>[!Warning]
-Not all systems designed in system design interviews require caching.</p></blockquote>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Not Always Use Cache</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Not all systems designed in system design interviews require caching.</p>
+
+    </div>
+  </div>
+</div>
+
 <p>Remember that every decision you make has some trade-off. There’s no such thing as a free lunch in system design. Therefore, we urge you to consider the downsides of your design decisions and mention them during the interview.</p>
-<blockquote>
-<p>[!Rule of thumb]</p></blockquote>
-<p>Consider using caching when all three of these are true:</p>
-<blockquote>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Rule of thumb</p>
+
+      </div>
+    <div class="callout-body">
+      <p>Consider using caching when all three of these are true:</p>
 <ul>
 <li>Computing the result is costly</li>
 <li>Once computed, the result tends to not change very often (or at all)</li>
 <li>The objects we are caching are read often</li>
-</ul></blockquote>
+</ul>
+
+    </div>
+  </div>
+</div>
+
 <p>A common technology used when caching is needed is Redis. If you are not familiar with it, all you need to know is that it is a way for you to cache parts of your database in memory such that it’s faster to access them.</p>
-<blockquote>
-<p>[!Remember]
-If you haven’t used Redis, don’t say, “Let’s use Redis here” in the interview; instead, say “Let’s add a cache here.” Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, “Why Redis and not Memcached?”</p></blockquote>
+<div class="callout callout-caution d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/alert-triangle svg-inline callout-icon me-2 mb-3" id="svg-alert-triangle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" />
+  <path d="M12 16h.01" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>Remember</p>
+
+      </div>
+    <div class="callout-body">
+      <p>If you haven’t used Redis, don’t say, “Let’s use Redis here” in the interview; instead, say “Let’s add a cache here.” Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, “Why Redis and not Memcached?”</p>
+
+    </div>
+  </div>
+</div>
+
 <p>What are some of the downsides of caching, you may ask? To begin with, it introduces two replicas of the same data. Even though our source of truth remains to be persistent storage (our database), it is now possible to get the result from the cache as well. This might introduce inconsistencies if the cache is out of date from the source of truth. This is why it’s wiser to cache objects that don’t usually change too often. It’s also costly to maintain and adds complexity to the system. Now every time we want to update our logic, we’ll need to consider the caching layer as well.</p>
 <h3 id="load-balancing">Load balancing<a href="#load-balancing" class="anchor" aria-hidden="true">#</a> </h3>
 <p>Load balancing helps us scale horizontally and maintain high availability. While horizontal scaling is desired in most systems, it is again advisable to consider whether it is strictly necessary given the requirements you’ve identified.</p>
 <p>Load balancing is easier when our API servers are stateless because requests can be routed to any node. In our Twitter example, we’d probably want to load balance incoming traffic into several replicas of our stateless API servers which will just hold the logic to access the database.</p>
 <p>As mentioned, this will give us two key benefits:</p>
-<ol start="5">
-<li><strong>Horizontal scaling.</strong> We can add more API servers to handle more load.</li>
-<li><strong>High Availability.</strong> Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.</li>
-</ol>
+<p><strong>Horizontal scaling.</strong> We can add more API servers to handle more load.
+<strong>High Availability.</strong> Whenever we need to upgrade or restart our API servers, we can perform a rolling restart. This means that only one node would go down at a time, while others continue to serve requests. That’s how you normally are able to upgrade logic in these systems without taking downtime.</p>
 <p>There are different strategies for deciding how to balance load across a set of servers, but most of the time you’ll be dealing with round robin.</p>
 <h1 id="end-to-end-example-of-the-process">End-to-end example of the process</h1>
 <p>Design interviewing.io: A website where people can schedule anonymous technical interviews with other engineers.</p>
@@ -1695,8 +1888,36 @@ If you haven’t used Redis, don’t say, “Let’s use Redis here” in the in
 22</code></pre>
   </figure>
 </div>
-<h3 id="rule-of-thumb">Rule of thumb<a href="#rule-of-thumb" class="anchor" aria-hidden="true">#</a> </h3>
-<p>In an interview, the less you code you write, the more you seem like a senior engineer. And the opposite is true as well: The more code you write in a system design interview, the more you seem like you’re below the senior level. Writing this much code for your API would probably be too much if you’re aiming for senior or senior plus roles. But if you’re a mid-level candidate trying to secure your mid-level position, this is the perfect amount of code to write.</p>
+<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ 
+ class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+  <div class="callout-content">
+    <div class="callout-title">
+        <p>No Code</p>
+
+      </div>
+    <div class="callout-body">
+      <p>In an interview, the less you code you write, the more you seem like a senior engineer. And the opposite is true as well: The more code you write in a system design interview, the more you seem like you’re below the senior level. Writing this much code for your API would probably be too much if you’re aiming for senior or senior plus roles. But if you’re a mid-level candidate trying to secure your mid-level position, this is the perfect amount of code to write.</p>
+
+    </div>
+  </div>
+</div>
+
 <h4 id="scale">Scale:<a href="#scale" class="anchor" aria-hidden="true">#</a> </h4>
 <p><strong>Candidate:</strong> How many interviews are we expecting?</p>
 <p><strong>Interviewer:</strong> In the order of thousands per day.</p>
