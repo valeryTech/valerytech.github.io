@@ -402,8 +402,6 @@ We should first align on our outputs. Design simply means two components:
 
 We know the **what** (steps 1 and 2), so now we focus on the **where** and the **how**. We will start with designing the data storage layer first and then think about the microservices that access this data.
 
-![Microservice design diagram with storage layer and api layer](https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmicroservice-design.f88cac33.png&w=3840&q=75)
-
 On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?
 
 ## 3.1 Data storage
@@ -448,11 +446,10 @@ A good starting point is to sketch out a table for each entity you identified, a
 
 Think about these iterations as small cycles where you identify the requirement, implement a solution, assess its limitation, and then improve it.
 
-![One iteration of the design process](https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fone-iteration-design.c9aa61be.png&w=3840&q=75)
 
 Rinse and repeat until you have a solution that accommodates your requirements from step 1. When you zoom out, you are just going through several of these cycles:
 
-![One iteration of the design process](https://interviewing.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmultiple-iteration-design.4e8cbabd.png&w=3840&q=75)
+(paste image with cyclic design)
 
 Let's see what this might look like through the lens of our Twitter example.
 

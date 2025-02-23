@@ -4,9 +4,8 @@
     <div class="col-lg-12 text-center">
       <h1>{{ .Title }}</h1>
     </div>
-    <div class="col-lg-9 col-xl-8 text-center">
+    <div class="col-lg-9 col-xl-8 text-left">
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/system-design/about/" role="button">System Design</a>
       {{ .Content }}
     </div>
   </div>
@@ -27,20 +26,18 @@
           <h2 class="h4">Read more about System Design</h2>
           <p>Learn more about system design and how to build scalable systems.</p>
           <p>
-            <a href="/system-design/about/" class="btn btn-primary">Learn More</a>
+            <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/system-design/about/" role="button">System Design</a>
           </p>
         </div>
         <div class="col-lg-5">
-          <h2 class="h4">Add new content</h2>
-          <p>Add Markdown files to <code>content</code> to create new pages.</p>
+          <h2 class="h4">Read more about Enigneering</h2>
+          <p>Learn more about engineering practices and software architecture.</p>
+          <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/engineering/about/" role="button">Engineering</a>
         </div>
         <div class="col-lg-5">
-          <h2 class="h4">Configure your site</h2>
-          <p>Edit your config in <code>config/_default/params.toml</code>.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Read the docs</h2>
-          <p>Learn more in the <a href="https://getdoks.org/">Docs</a>.</p>
+          <h2 class="h4">Read more about Foundations</h2>
+          <p>Learn more about foundational frameworks you can use to create new systems.</p>
+          <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/projects/about/" role="button">Foundations</a>
         </div>
       </div>
     </div>
