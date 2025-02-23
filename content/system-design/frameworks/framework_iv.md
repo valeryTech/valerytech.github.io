@@ -402,6 +402,8 @@ We should first align on our outputs. Design simply means two components:
 
 We know the **what** (steps 1 and 2), so now we focus on the **where** and the **how**. We will start with designing the data storage layer first and then think about the microservices that access this data.
 
+{{< figure src="microservice-design.webp" alt="Alternative description" caption="Design Steps" process="fit 700x1000" >}}
+
 On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?
 
 ## 3.1 Data storage
