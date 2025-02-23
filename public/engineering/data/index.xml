@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data on Tech Foundations</title>
-    <link>https://valery.tech/engineering/data/</link>
+    <link>http://localhost:1313/engineering/data/</link>
     <description>Recent content in Data on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="https://valery.tech/engineering/data/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/engineering/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Databases</title>
-      <link>https://valery.tech/engineering/data/databases/</link>
+      <link>http://localhost:1313/engineering/data/databases/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/engineering/data/databases/</guid>
+      <guid>http://localhost:1313/engineering/data/databases/</guid>
       <description>&lt;p&gt;data access pattern&lt;/p&gt;&#xA;&lt;p&gt;Types: SQL, Key-Value Stores, Blob Stores (S3, GCS), Timelines DB, Graph(Neo4j), Spatial (QuadTree)&lt;/p&gt;&#xA;&lt;h1 id=&#34;sql&#34;&gt;sql&lt;/h1&gt;&#xA;&lt;p&gt;Pros: ACID transactions, imposing very strict structure =&amp;gt; querying capabilities, DB indexing, Data Normalization.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Trade Off Db</title>
-      <link>https://valery.tech/engineering/data/trade-off-db/</link>
+      <link>http://localhost:1313/engineering/data/trade-off-db/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/engineering/data/trade-off-db/</guid>
+      <guid>http://localhost:1313/engineering/data/trade-off-db/</guid>
       <description>&lt;h1 id=&#34;relational-vs-nosql&#34;&gt;relational-vs-nosql&lt;/h1&gt;&#xA;&lt;p&gt;Don&amp;rsquo;t oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you&amp;rsquo;re being unrealistic, you probably won&amp;rsquo;t change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you&amp;rsquo;re too fixated on being right, you&amp;rsquo;ll miss the opportunity.&lt;/p&gt;</description>
     </item>
   </channel>

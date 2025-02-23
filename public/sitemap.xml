@@ -2,451 +2,461 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://valery.tech/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2023-09-07T16:21:44+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/_themes/</loc>
+    <loc>http://localhost:1313/system-design/projects/_themes/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/api/</loc>
+    <loc>http://localhost:1313/system-design/topics/api/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/elements/api_gateway/</loc>
+    <loc>http://localhost:1313/system-design/elements/api_gateway/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/architecture/</loc>
+    <loc>http://localhost:1313/engineering/architecture/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/architecture/architecture/</loc>
+    <loc>http://localhost:1313/engineering/architecture/architecture/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/caching/</loc>
+    <loc>http://localhost:1313/system-design/elements/background/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/chat-room/</loc>
+    <loc>http://localhost:1313/system-design/topics/caching/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/chatbots_practice/</loc>
+    <loc>http://localhost:1313/system-design/projects/chat-room/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/code_deployment/</loc>
+    <loc>http://localhost:1313/projects/common/chatbots_practice/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/collaborative_learning_ts-and-js/</loc>
+    <loc>http://localhost:1313/system-design/projects/code_deployment/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/</loc>
+    <loc>http://localhost:1313/projects/common/collaborative_learning_ts-and-js/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/communication/</loc>
+    <loc>http://localhost:1313/projects/common/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/nfr/consistency/</loc>
+    <loc>http://localhost:1313/system-design/topics/communication/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/critical_thinking/</loc>
+    <loc>http://localhost:1313/system-design/nfr/consistency/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/data/</loc>
+    <loc>http://localhost:1313/projects/common/critical_thinking/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/data/databases/</loc>
+    <loc>http://localhost:1313/engineering/data/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/distributed-systems/</loc>
+    <loc>http://localhost:1313/engineering/data/databases/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/elements/</loc>
+    <loc>http://localhost:1313/system-design/topics/distributed-systems/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/elements/elements/</loc>
+    <loc>http://localhost:1313/system-design/elements/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/</loc>
+    <loc>http://localhost:1313/system-design/elements/elements/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/engineering-guide/</loc>
+    <loc>http://localhost:1313/engineering/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/envelope_estimations/</loc>
+    <loc>http://localhost:1313/engineering/engineering-guide/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/events/</loc>
+    <loc>http://localhost:1313/system-design/topics/envelope_estimations/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/foundations/</loc>
+    <loc>http://localhost:1313/system-design/elements/background/events/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/frameworks/framework_hi/</loc>
+    <loc>http://localhost:1313/system-design/projects/events/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/frameworks/framework_iv/</loc>
+    <loc>http://localhost:1313/projects/foundations/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/frameworks/</loc>
+    <loc>http://localhost:1313/system-design/frameworks/framework_hi/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/hashing/</loc>
+    <loc>http://localhost:1313/system-design/frameworks/framework_iv/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/hypothesis/</loc>
+    <loc>http://localhost:1313/system-design/frameworks/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/improvements/</loc>
+    <loc>http://localhost:1313/system-design/topics/hashing/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/instagram/</loc>
+    <loc>http://localhost:1313/projects/common/hypothesis/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/interview/</loc>
+    <loc>http://localhost:1313/projects/common/improvements/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/interview/interview/</loc>
+    <loc>http://localhost:1313/system-design/projects/instagram/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/interview/interview_phrases/</loc>
+    <loc>http://localhost:1313/system-design/interview/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/interviewing.io/</loc>
+    <loc>http://localhost:1313/system-design/interview/interview/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/interviewing.io_example/</loc>
+    <loc>http://localhost:1313/system-design/interview/interview_phrases/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/job-scheduler/</loc>
+    <loc>http://localhost:1313/system-design/projects/interviewing.io/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/key-value-store/</loc>
+    <loc>http://localhost:1313/system-design/projects/interviewing.io_example/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/foundations/learning/</loc>
+    <loc>http://localhost:1313/system-design/projects/job-scheduler/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/live-commenting/</loc>
+    <loc>http://localhost:1313/system-design/projects/key-value-store/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/microservices/</loc>
+    <loc>http://localhost:1313/projects/foundations/learning/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/nfr/</loc>
+    <loc>http://localhost:1313/system-design/projects/live-commenting/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/online-file-storage/</loc>
+    <loc>http://localhost:1313/system-design/topics/microservices/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/partitioning/</loc>
+    <loc>http://localhost:1313/system-design/nfr/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/interview/phrases/</loc>
+    <loc>http://localhost:1313/system-design/projects/online-file-storage/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/</loc>
+    <loc>http://localhost:1313/system-design/topics/partitioning/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/about/</loc>
+    <loc>http://localhost:1313/system-design/interview/phrases/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/foundations/questions/</loc>
+    <loc>http://localhost:1313/projects/about/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/queues/</loc>
+    <loc>http://localhost:1313/system-design/projects/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/rate_limiter/</loc>
+    <loc>http://localhost:1313/projects/foundations/questions/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/foundations/reflective_practice/</loc>
+    <loc>http://localhost:1313/system-design/topics/queues/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/nfr/reliability--availability/</loc>
+    <loc>http://localhost:1313/system-design/projects/rate_limiter/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/remote_server/</loc>
+    <loc>http://localhost:1313/projects/foundations/reflective_practice/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/replication/</loc>
+    <loc>http://localhost:1313/system-design/nfr/reliability--availability/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/foundations/research/</loc>
+    <loc>http://localhost:1313/projects/remote_server/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/nfr/scalability/</loc>
+    <loc>http://localhost:1313/system-design/topics/replication/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/to_sort/sd_algo_interviewing.io/</loc>
+    <loc>http://localhost:1313/projects/foundations/research/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/to_sort/sd_algorithm/</loc>
+    <loc>http://localhost:1313/system-design/nfr/scalability/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/to_sort/sd_framework_old/</loc>
+    <loc>http://localhost:1313/system-design/to_sort/sd_algo_interviewing.io/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/sd_reviews/</loc>
+    <loc>http://localhost:1313/system-design/to_sort/sd_algorithm/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/to_sort/sd_to_sort/</loc>
+    <loc>http://localhost:1313/system-design/to_sort/sd_framework_old/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/security/</loc>
+    <loc>http://localhost:1313/system-design/projects/sd_reviews/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/common/speech_improver/</loc>
+    <loc>http://localhost:1313/system-design/to_sort/sd_to_sort/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/spotify/</loc>
+    <loc>http://localhost:1313/system-design/topics/security/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/stream_processing/</loc>
+    <loc>http://localhost:1313/projects/common/speech_improver/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/streaming/</loc>
+    <loc>http://localhost:1313/system-design/projects/spotify/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/</loc>
+    <loc>http://localhost:1313/system-design/topics/stream_processing/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/about/</loc>
+    <loc>http://localhost:1313/system-design/topics/streaming/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/elements/test_page/</loc>
+    <loc>http://localhost:1313/system-design/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/tik_tok/</loc>
+    <loc>http://localhost:1313/system-design/about/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/to_sort/</loc>
+    <loc>http://localhost:1313/system-design/elements/test_page/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/</loc>
+    <loc>http://localhost:1313/system-design/projects/tik_tok/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/engineering/data/trade-off-db/</loc>
+    <loc>http://localhost:1313/system-design/to_sort/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/trade-offs/</loc>
+    <loc>http://localhost:1313/system-design/topics/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/topics/transactions/</loc>
+    <loc>http://localhost:1313/engineering/data/trade-off-db/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/projects/foundations/understanding/</loc>
+    <loc>http://localhost:1313/system-design/topics/trade-offs/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/whatsapp/</loc>
+    <loc>http://localhost:1313/system-design/topics/transactions/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/blog/example/</loc>
+    <loc>http://localhost:1313/projects/foundations/understanding/</loc>
+    <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/system-design/projects/whatsapp/</loc>
+    <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/blog/example/</loc>
     <lastmod>2025-02-21T12:33:15+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/english/</loc>
+    <loc>http://localhost:1313/english/</loc>
     <lastmod>2025-02-21T12:15:20+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/topics/</loc>
+    <loc>http://localhost:1313/topics/</loc>
     <lastmod>2025-02-21T12:15:20+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/</loc>
-    <lastmod>2023-09-07T16:33:54+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://valery.tech/tags/advice/</loc>
+    <loc>http://localhost:1313/tags/advice/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/tags/architecture/</loc>
+    <loc>http://localhost:1313/tags/architecture/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/tags/system-design/</loc>
+    <loc>http://localhost:1313/tags/system-design/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/privacy/</loc>
+    <loc>http://localhost:1313/privacy/</loc>
     <lastmod>2023-09-07T17:19:07+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/categories/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-09-07T16:33:54+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/contributors/</loc>
+    <loc>http://localhost:1313/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/contributors/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

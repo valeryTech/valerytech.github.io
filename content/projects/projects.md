@@ -13,7 +13,7 @@ toc: 'true'
 url: /projects/about
 weight: 810
 ---
-
+[Events]({{< ref "system-design/elements/background/events" >}})
 
 This is a page about different useful topics.
 

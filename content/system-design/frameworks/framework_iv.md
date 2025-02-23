@@ -10,8 +10,7 @@ toc: true
 weight: 810
 ---
 
-
-## Fundamentals of this framework
+# Fundamentals of this framework
 
 This framework is predicated on the following fundamentals:
 
@@ -60,7 +59,6 @@ Don't worry, we'll go through each of these one-by-one in detail. And by the end
 | Inputs  | - Functional and non-functional requirements.  <br>- Problem statement given by your interviewer.  <br>- List of Data Types we need to store.  <br>- Access patterns for these data types (API).  <br>- Scale of the data and requests the system needs to serve. |
 | Outputs | - Data storage.  <br>- Microservices.                                                                                                                                                                                                                             |
 
-
 # 1.1 Functional Requirements
 
 You should start with the functional requirements first—that is, the core product features and use cases that the system needs to support.
@@ -90,7 +88,7 @@ Now think about clarifying the relation between these objects. What's the relati
 
 Then dive deeper into each of the objects of interest. For example, what makes up a tweet? Can it contain media?
 
-{{< callout context="note" title="Consider Media " icon="outline/info-circle" >}}
+{{< callout context="note" title="Consider Media" icon="outline/info-circle" >}}
 Media is a common part of system design. Always ask yourself whether any of the business objects you identified can hold media.
 {{< /callout >}}
 
@@ -107,14 +105,14 @@ The general shape of an access pattern requirement is:
 So, applying this idea to our Twitter example, we might end up with the following access patterns:
 
 - Given an account:
-	- Get all of its followers. (Account → Account)
-	- Get all the other accounts they follow. (Account → Account)
-	- Get all of its tweets. (Account → Tweet)
-	- Get a curated feed of tweets for accounts they follow. (Account → Tweet)
+  - Get all of its followers. (Account → Account)
+  - Get all the other accounts they follow. (Account → Account)
+  - Get all of its tweets. (Account → Tweet)
+  - Get a curated feed of tweets for accounts they follow. (Account → Tweet)
 
 - Given a tweet:
-	- Get all accounts that liked it. (Tweet → Account)
-	- Get all accounts that retweeted it. (Tweet → Account)
+  - Get all accounts that liked it. (Tweet → Account)
+  - Get all accounts that retweeted it. (Tweet → Account)
 
 We're not suggesting you blindly implement all of these, but rather that you consider them as possible access patterns for your clarification questions. For example, should we be able to get all accounts that liked a tweet? Or would the number be enough?
 
@@ -145,7 +143,7 @@ It might sound like a small detail at first, but mutability can limit our abilit
 
 [Tik_tok]({{< ref "system-design/projects/tik_tok" >}})
 
-## Example 2: Design a code deployment system 
+## Example 2: Design a code deployment system
 
 aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.
 
@@ -161,7 +159,7 @@ Trigger a release: publishes a code artifact and deploys it to all servers.
 
 This is actually a pretty good example of how some problems might be less intensive on the requirements side than others. The definition the interviewer gave us was pretty clear. Therefore, we can extract requirements with just a few questions.
 
-{{< callout context="tip" title="Extra points " icon="outline/rocket" >}}
+{{< callout context="tip" title="Extra points" icon="outline/rocket" >}}
 Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips
 {{< /callout >}}
 
@@ -169,12 +167,12 @@ For example, you might want to ask about the possibility to recall a release. Do
 
 This is what we mean when we say that it can be as easy or as hard as you want to make it. Try to get a feel for what the interviewer is looking for, and make sure to check back with them and ensure you both are on the same page.
 
-
 # 1.2 Non-Functional Requirements
 
 Once functional requirements have been laid out, you should move onto non-functional requirements (NFRs). These are quality attributes that specify how the system should perform a certain function.
 
 The most common non-functional requirements you should consider in a system design interview are:
+
 - Performance
 - Availability
 - Security
@@ -235,7 +233,7 @@ Security can be tricky. No one wants to design an insecure system, and there's a
 
 We want to learn if there's some workflow that might require a special design to account for security. For example, imagine you were designing LeetCode, an online judge for coding questions. One security constraint that would come to mind is that user-submitted code should be run in isolation. User submissions should run in some sort of sandbox where they get limited resources and are guaranteed not to affect or see other submissions.
 
-{{< callout context="note" title="Isolation " icon="outline/info-circle" >}}
+{{< callout context="note" title="Isolation" icon="outline/info-circle" >}}
 Whenever there is user-generated code execution involved (aka low trust code), running it in isolation should be a non-functional security requirement.
 {{< /callout >}}
 
@@ -283,6 +281,7 @@ Think about the objects the system needs to hold and their data type. There are 
 
 For our Twitter example, we will store:
 **Structured data**
+
 - Accounts
 - Tweets
 **Media**
@@ -294,13 +293,13 @@ For our Twitter example, we will store:
 More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.
 {{< /callout >}}
 
-If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions. 
+If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions.
 
 But even in these rare cases, *it helps to start thinking* about the API in terms of HTTPS requests.
 
 Look at the access patterns you defined in the functional requirements to write your API. For example:
 
-```
+```txt
 1
 2  getTweets:
 3    GET /{accountId}/tweets?nextPageToken={token}
@@ -336,14 +335,14 @@ We've seen online resources that spend so much time showing you how to calculate
 
 Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher—it's called **margin of safety**. For our Twitter example we can go for these numbers:
 
-```
+```txt
 Reads/minute: 100k
 Writes/minute: 1k
 ```
 
 Finally, what's the volume of data we need to store? Go back to your "data types" (section 2.1) and think about how big these can get and multiply that by the number of writes/minute to get how much data you need to store per minute.
 
-```
+```txt
 1
 2  Structured data (tweets, accounts): 100 KB each
 3  Media (images, videos): 10MB each
@@ -354,7 +353,7 @@ Finally, what's the volume of data we need to store? Go back to your "data types
 
 Again, it does not matter at all if you get these numbers right as long as you are in the ballpark. Please don't spend too much time on this. Just use powers of ten, and when in doubt, pick the higher number. This makes our final math super easy:
 
-```
+```txt
 2  1k writes/minute with an average size of 1MB each = 1k * 1MB = 1000MB = 1GB/m
 ```
 
@@ -368,7 +367,7 @@ Once you know your requirements, it's time to get specific.
 **Scale:** Is the system read-heavy or write-heavy?
 {{< /callout >}}
 
-> Example. Code Deployment System. 
+> Example. Code Deployment System.
 See more in [Code_deployment]({{< ref "system-design/projects/code_deployment" >}})
 
 # Step 3: Design
@@ -382,7 +381,7 @@ The time has come. We've got all the information we need to start drawing boxes 
 
 There are several reasons that we spent considerable time in steps 1 and 2. Too often people dive straight into design and fail in spectacular ways. It's easy to make that mistake—isn't this interview called "system design" after all? No one told these candidates that good design is 70%+ requirements and planning.
 
-In fact, we can go as far as saying that if you've executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don't have one single correct answer. Let's use this to our advantage! 
+In fact, we can go as far as saying that if you've executed the last two steps correctly, design should be pretty systematic. This is because system design questions are usually open ended and don't have one single correct answer. Let's use this to our advantage!
 
 Once we know our use cases and what to optimize for, it comes down to knowing a few rules of thumb. Want speed? Use a cache. Want availability? Put in some redundancy. It's really that simple. That's the beauty of systems design. It can be as simple or as complicated as we want to make it.
 
@@ -397,6 +396,7 @@ This is basically giving you a free pass to flush your brain and be wrong. Which
 ## So what is "Design"?
 
 We should first align on our outputs. Design simply means two components:
+
 1. **Data storage.** We already know from previous steps "what" we are storing. Now the question is where are we storing it?
 2. **Microservices.** How do we store our data? How do we retrieve it to the API? Think of these as the middlemen between storage and the API.
 
@@ -440,6 +440,7 @@ There's no right or wrong answer—it's all about how to justify your picks.
 Don't oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you're being unrealistic, you probably won't change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you're too fixated on being right, you'll miss the opportunity.
 
 Therefore, we're giving you two very powerful tools: (1) A rule of thumb to pick Relational (SQL) vs. Non-Relational (NoSQL), and (2) A list of trade-offs that you should mention to your interviewer after stating your decision.
+
 ### Entities to store
 
 It's time to look at the data and access patterns we defined in step 2 and design our database schema. This will look like a list of tables/documents, and a description of the queries that you'll use to access them.
@@ -447,7 +448,6 @@ It's time to look at the data and access patterns we defined in step 2 and desig
 A good starting point is to sketch out a table for each entity you identified, and then go over the access patterns. Think about how they will be fulfilled. Then you can adapt your tables to better fit these access patterns. **Repeat after me: design is an iterative process.**
 
 Think about these iterations as small cycles where you identify the requirement, implement a solution, assess its limitation, and then improve it.
-
 
 Rinse and repeat until you have a solution that accommodates your requirements from step 1. When you zoom out, you are just going through several of these cycles:
 
@@ -523,6 +523,7 @@ Remember that every decision you make has some trade-off. There's no such thing 
 
 {{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 Consider using caching when all three of these are true:
+
 - Computing the result is costly
 - Once computed, the result tends to not change very often (or at all)
 - The objects we are caching are read often
@@ -597,7 +598,7 @@ Finally, for code execution, we'd probably want to execute the code in isolation
 
 ## Step 2: Data Types, API and Scale
 
-##### Data Types:
+##### Data Types
 
 ```
 1
@@ -609,7 +610,7 @@ Finally, for code execution, we'd probably want to execute the code in isolation
 7
 ```
 
-##### REST API:
+##### REST API
 
 ```
 1
@@ -640,7 +641,7 @@ Finally, for code execution, we'd probably want to execute the code in isolation
 In an interview, the less you code you write, the more you seem like a senior engineer. And the opposite is true as well: The more code you write in a system design interview, the more you seem like you're below the senior level. Writing this much code for your API would probably be too much if you're aiming for senior or senior plus roles. But if you're a mid-level candidate trying to secure your mid-level position, this is the perfect amount of code to write.
 {{< /callout >}}
 
-#### Scale:
+#### Scale
 
 **Candidate:** How many interviews are we expecting?
 

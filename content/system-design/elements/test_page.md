@@ -9,13 +9,7 @@ title: Test Page
 toc: true
 weight: 810
 ---
-# Emojis tes
 
-:thumbs_up: emoji
-
-:joy: emoji
-
-🥮 
 ## Callouts
 
 {{< callout context="note" title="information" icon="outline/info-circle" >}}
@@ -71,3 +65,8 @@ link to heading in current document
 
 link to heading in other document
 [CDN Service]({{< ref "system-design/elements/elements" >}}#cdn)
+
+
+# Courses
+
+courses text

@@ -2,23 +2,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://valery.tech/system-design/elements/api_gateway/</loc>
+      <loc>http://localhost:1313/system-design/elements/api_gateway/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>https://valery.tech/system-design/elements/elements/</loc>
+      <loc>http://localhost:1313/system-design/elements/background/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>https://valery.tech/system-design/elements/test_page/</loc>
+      <loc>http://localhost:1313/system-design/elements/elements/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
-    </urlset>
+    
+    <url>
+      <loc>http://localhost:1313/system-design/elements/test_page/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://localhost:1313/system-design/elements/background/events/</loc>
+        <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      </urlset>

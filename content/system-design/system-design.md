@@ -17,23 +17,26 @@ toc: true
 url: /system-design/about
 weight: 810
 ---
+# Common Guide
+
+There are numerous sources available for learning System Design (SD). To help avoid "tutorial hell," this selection focuses on core tutorials, videos and courses that provide a structured learning path.
 
 # Courses
 
-order:
+- ["System Design for Interviews and Beyond"](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) course and [youtube videos](<https://www.youtube.com/@SystemDesignInterview/videos>) with examples. 
 
-1. smarchok 2 courses + <https://www.youtube.com/@SystemDesignInterview/videos>
+"In this video-based course, we will take you on a journey to learn the *fundamental concepts* of system design. ... In addition to the knowledge and understanding of system design concepts, this course will teach you *the thought process behind system design*. We will discuss the questions you should ask yourself when designing a system and how to evaluate available options. ... "
 
-2. algoexpert 2 courses (fundamentals and examples)
+- Algoexpert 2 courses (fundamentals and examples)
 
-3. zerotomastery "# Master the Coding Interview: System Design + Architecture (Part 1)"
+1. Zerotomastery "# Master the Coding Interview: System Design + Architecture (Part 1)"
 
-4. hellointerview  examples + youtube channel + (maybe) premium
+2. Hellointerview  examples + youtube channel + (maybe) premium
 <https://interviewing.io/guides/system-design-interview/part-four#chapter-one>
 
 - (?) algoexpert "# Systems Design Interview Tips"
 
-<https://github.com/Sairyss/system-design-patterns> cool cirriculim with examples
+<https://github.com/Sairyss/system-design-patterns> interesting cirriculim with examples
 
 designgurus ? <https://www.designgurus.io/path/system-design-interview-playbook>
 

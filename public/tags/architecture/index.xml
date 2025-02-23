@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Architecture on Tech Foundations</title>
-    <link>https://valery.tech/tags/architecture/</link>
+    <link>http://localhost:1313/tags/architecture/</link>
     <description>Recent content in Architecture on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="https://valery.tech/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design</title>
-      <link>https://valery.tech/system-design/about/</link>
+      <link>http://localhost:1313/system-design/about/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/system-design/about/</guid>
-      <description>&lt;h1 id=&#34;courses&#34;&gt;Courses&lt;/h1&gt;&#xA;&lt;p&gt;order:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;smarchok 2 courses + &lt;a href=&#34;https://www.youtube.com/@SystemDesignInterview/videos&#34;&gt;https://www.youtube.com/@SystemDesignInterview/videos&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;algoexpert 2 courses (fundamentals and examples)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;zerotomastery &amp;ldquo;# Master the Coding Interview: System Design + Architecture (Part 1)&amp;rdquo;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/system-design/about/</guid>
+      <description>&lt;h1 id=&#34;common-guide&#34;&gt;Common Guide&lt;/h1&gt;&#xA;&lt;p&gt;There are numerous sources available for learning System Design (SD). To help avoid &amp;ldquo;tutorial hell,&amp;rdquo; this selection focuses on core tutorials, videos and courses that provide a structured learning path.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

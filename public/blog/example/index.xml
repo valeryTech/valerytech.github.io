@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Example on Tech Foundations</title>
-    <link>https://valery.tech/blog/example/</link>
+    <link>http://localhost:1313/blog/example/</link>
     <description>Recent content in Example on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://valery.tech/blog/example/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/example/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

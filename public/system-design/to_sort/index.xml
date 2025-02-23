@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>To Sort on Tech Foundations</title>
-    <link>https://valery.tech/system-design/to_sort/</link>
+    <link>http://localhost:1313/system-design/to_sort/</link>
     <description>Recent content in To Sort on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="https://valery.tech/system-design/to_sort/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/system-design/to_sort/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sd Algo Interviewing.Io</title>
-      <link>https://valery.tech/system-design/to_sort/sd_algo_interviewing.io/</link>
+      <link>http://localhost:1313/system-design/to_sort/sd_algo_interviewing.io/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/system-design/to_sort/sd_algo_interviewing.io/</guid>
+      <guid>http://localhost:1313/system-design/to_sort/sd_algo_interviewing.io/</guid>
       <description>&lt;h1 id=&#34;framework-io&#34;&gt;Framework IO&lt;/h1&gt;&#xA;&lt;p&gt;Framework for SD interviews from interviewing.io consists of three steps:&lt;/p&gt;&#xA;&lt;p&gt;Requirements -&amp;gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;List of functional requirements and architectural characteristics&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Data Types, API and Scale -&amp;gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sd Algorithm</title>
-      <link>https://valery.tech/system-design/to_sort/sd_algorithm/</link>
+      <link>http://localhost:1313/system-design/to_sort/sd_algorithm/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/system-design/to_sort/sd_algorithm/</guid>
+      <guid>http://localhost:1313/system-design/to_sort/sd_algorithm/</guid>
       <description>&lt;h1 id=&#34;sd-algorithm&#34;&gt;SD algorithm&lt;/h1&gt;&#xA;&lt;p&gt;This document describes step-by-step framework on how to tackle a system design question&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-understand-the-problem-and-establish-design-scope&#34;&gt;1. Understand the problem and establish Design Scope&lt;/h2&gt;&#xA;&lt;p&gt;What you need to collect and define:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sd Framework Old</title>
-      <link>https://valery.tech/system-design/to_sort/sd_framework_old/</link>
+      <link>http://localhost:1313/system-design/to_sort/sd_framework_old/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/system-design/to_sort/sd_framework_old/</guid>
+      <guid>http://localhost:1313/system-design/to_sort/sd_framework_old/</guid>
       <description>&lt;h1 id=&#34;to-refactor&#34;&gt;To Refactor&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Gg318hR5JY0&#34;&gt;https://www.youtube.com/watch?v=Gg318hR5JY0&lt;/a&gt;&#xA;analyze this video from google&lt;/p&gt;&#xA;&lt;p&gt;how candidate reason about scalability and availability?&#xA;frame an interviewer that you understand that your system would need to be distributed (in some scenarios)&#xA;design the system to be scalable&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sd To Sort</title>
-      <link>https://valery.tech/system-design/to_sort/sd_to_sort/</link>
+      <link>http://localhost:1313/system-design/to_sort/sd_to_sort/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/system-design/to_sort/sd_to_sort/</guid>
+      <guid>http://localhost:1313/system-design/to_sort/sd_to_sort/</guid>
       <description>&lt;h1 id=&#34;various&#34;&gt;Various&lt;/h1&gt;&#xA;&lt;p&gt;Think Big - Start Small&lt;/p&gt;&#xA;&lt;p&gt;Fake it until you can make it&lt;/p&gt;&#xA;&lt;p&gt;The ivory-tower architect most enjoys an end-state vision of ringing crystal perfection, but the pragmatic architect constantly thinks about the &lt;strong&gt;dynamics of change&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

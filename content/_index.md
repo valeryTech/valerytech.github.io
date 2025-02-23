@@ -1,19 +1,14 @@
 ---
-canonical: ''
-contributors: []
-date: 2023-09-07 16:33:54+02:00
+title: System Design and Architecture
 description: simple description
-draft: false
-lastmod: 2023-09-07 16:33:54+02:00
 lead: Welcome to the Knowledge Base for System Design, Engineering and Architecture!
-robots: ''
-seo: null
-summary: ''
-title: 'Knowledge Base'
-toc: true
-weight: 810
+date: 2023-09-07T16:33:54+02:00
+lastmod: 2023-09-07T16:33:54+02:00
+draft: false
+seo: 
+canonical: ""
+robots: ""
 ---
+I’m putting together this knowledge base on system design, backend engineering, and software architecture with a clear aim: it’s not just about building systems that scale, run smoothly, and don’t crash—it’s also about making them solve real problems and deliver value, with no fluff attached.
 
-This knowledge base is a practical guide to system design, engineering, and architecture, helping you build scalable, efficient, and reliable systems. It goes beyond just technical concepts—focusing on real-world problem-solving, trade-offs, and structured decision-making.
-
-You’ll find insights on scalability, performance, cost, security, and maintainability, all explained with clear principles and actionable examples. Whether you're designing distributed systems, optimizing cloud infrastructure, or improving DevOps workflows, the goal is to help you think systematically and make informed engineering choices. Instead of just showing how things work, it dives into why certain approaches are best and how to apply them effectively.
+I’m not here to drone on about technical details for the sake of it. I want to dig into trade-off analysis, structured decision-making, and seeing the whole picture. Instead of just showing how things work, I want to focus on why certain choices are better than others and how to use them to get things done that actually matter.
