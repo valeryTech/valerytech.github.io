@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interview on Tech Foundations</title>
-    <link>http://localhost:1313/system-design/interview/</link>
+    <link>https://valery.tech/system-design/interview/</link>
     <description>Recent content in Interview on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/system-design/interview/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://valery.tech/system-design/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interview</title>
-      <link>http://localhost:1313/system-design/interview/interview/</link>
+      <link>https://valery.tech/system-design/interview/interview/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/interview/interview/</guid>
+      <guid>https://valery.tech/system-design/interview/interview/</guid>
       <description>&lt;h1 id=&#34;checklist&#34;&gt;Checklist&lt;/h1&gt;&#xA;&lt;p&gt;You should create a paper with checklist items to do during the interview, like main steps, inputs-outputs, what not to forget, etc.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interview Phrases</title>
-      <link>http://localhost:1313/system-design/interview/interview_phrases/</link>
+      <link>https://valery.tech/system-design/interview/interview_phrases/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/interview/interview_phrases/</guid>
+      <guid>https://valery.tech/system-design/interview/interview_phrases/</guid>
       <description>&lt;h1 id=&#34;how-to-push-back-against-your-interviewer-in-a-helpful-way&#34;&gt;How to push back against your interviewer in a helpful way&lt;/h1&gt;&#xA;&lt;p&gt;Example of a candidate pushing back:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Interviewer:&lt;/strong&gt; &amp;ldquo;I wouldn&amp;rsquo;t use a cache here in my opinion&amp;rdquo;&#xA;&lt;strong&gt;Interviewee:&lt;/strong&gt; &amp;ldquo;Sure we can take out the cache, though the reason I think a cache might be useful here is [insert technical reasoning here]. Do you think there might be a better way we can approach this?&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Phrases</title>
-      <link>http://localhost:1313/system-design/interview/phrases/</link>
+      <link>https://valery.tech/system-design/interview/phrases/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/interview/phrases/</guid>
+      <guid>https://valery.tech/system-design/interview/phrases/</guid>
       <description>&lt;p&gt;Your mentioned also that we should retrieve interviews&#xA;I&amp;rsquo;m thinking about that actual interviewing.io&lt;/p&gt;&#xA;&lt;h1 id=&#34;exactly-what-words-to-say-in-specific-scenarios&#34;&gt;Exactly what words to say in specific scenarios&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-to-say-when-you-dont-know-what-to-do&#34;&gt;What to say when you don&amp;rsquo;t know what to do&lt;/h2&gt;&#xA;&lt;p&gt;Weak interview candidates are scared to ever utter the phrase &amp;ldquo;I don&amp;rsquo;t know.&amp;rdquo; Stronger interview candidates say &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; more often and then strengthen this with a buffer—the words you put around your uncertainty. A naked &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; is a dead end, so your interviewer has nowhere to go. Adding a buffer gives your interviewer several paths they can take to move the conversation forward.&lt;/p&gt;</description>
     </item>
   </channel>

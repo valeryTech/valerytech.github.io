@@ -2,105 +2,105 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://localhost:1313/system-design/topics/api/</loc>
+      <loc>https://valery.tech/system-design/topics/api/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/caching/</loc>
+      <loc>https://valery.tech/system-design/topics/caching/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/communication/</loc>
+      <loc>https://valery.tech/system-design/topics/communication/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/distributed-systems/</loc>
+      <loc>https://valery.tech/system-design/topics/distributed-systems/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/envelope_estimations/</loc>
+      <loc>https://valery.tech/system-design/topics/envelope_estimations/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/hashing/</loc>
+      <loc>https://valery.tech/system-design/topics/hashing/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/microservices/</loc>
+      <loc>https://valery.tech/system-design/topics/microservices/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/partitioning/</loc>
+      <loc>https://valery.tech/system-design/topics/partitioning/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/queues/</loc>
+      <loc>https://valery.tech/system-design/topics/queues/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/replication/</loc>
+      <loc>https://valery.tech/system-design/topics/replication/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/security/</loc>
+      <loc>https://valery.tech/system-design/topics/security/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/stream_processing/</loc>
+      <loc>https://valery.tech/system-design/topics/stream_processing/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/streaming/</loc>
+      <loc>https://valery.tech/system-design/topics/streaming/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/trade-offs/</loc>
+      <loc>https://valery.tech/system-design/topics/trade-offs/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/system-design/topics/transactions/</loc>
+      <loc>https://valery.tech/system-design/topics/transactions/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>

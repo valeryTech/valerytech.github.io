@@ -2,81 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design and Architecture on Tech Foundations</title>
-    <link>http://localhost:1313/</link>
+    <link>https://valery.tech/</link>
     <description>Recent content in System Design and Architecture on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://valery.tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> Themes</title>
-      <link>http://localhost:1313/system-design/projects/_themes/</link>
+      <link>https://valery.tech/system-design/projects/_themes/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/projects/_themes/</guid>
+      <guid>https://valery.tech/system-design/projects/_themes/</guid>
       <description>&lt;h1 id=&#34;facebook-system-design-interview-questions&#34;&gt;&lt;strong&gt;Facebook system design interview questions&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design an online collaborative editing tool&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed botnet&lt;/li&gt;&#xA;&lt;li&gt;How would you use a load balancer for memcache servers?&lt;/li&gt;&#xA;&lt;li&gt;How would you architect the Facebook newsfeed?&lt;/li&gt;&#xA;&lt;li&gt;Implement a typeahead feature&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;google-system-design-interview-questions&#34;&gt;&lt;strong&gt;Google system design interview questions&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Design and implement statistics for a calendar&lt;/li&gt;&#xA;&lt;li&gt;Design a task scheduling feature&lt;/li&gt;&#xA;&lt;li&gt;Design a ticketing platform&lt;/li&gt;&#xA;&lt;li&gt;Design an elevator&lt;/li&gt;&#xA;&lt;li&gt;Design a boggle server&lt;/li&gt;&#xA;&lt;li&gt;Design a distributed ID generation system&lt;/li&gt;&#xA;&lt;li&gt;How would you deploy a solution for cloud computing to build in redundancy for the compute cluster?&lt;/li&gt;&#xA;&lt;li&gt;Design the server infrastructure for GMail&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Amazon&lt;/strong&gt; &lt;strong&gt;system design interview questions&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Api</title>
-      <link>http://localhost:1313/system-design/topics/api/</link>
+      <link>https://valery.tech/system-design/topics/api/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/api/</guid>
+      <guid>https://valery.tech/system-design/topics/api/</guid>
       <description>&lt;h1 id=&#34;actions&#34;&gt;Actions&lt;/h1&gt;&#xA;&lt;p&gt;find out info about:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;API Design principles, API evolution, its usage as interface of a system&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;what is API (fringe, interface, algebra etc) #sd #todo&lt;/p&gt;</description>
     </item>
     <item>
       <title>Api Gateway</title>
-      <link>http://localhost:1313/system-design/elements/api_gateway/</link>
+      <link>https://valery.tech/system-design/elements/api_gateway/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/elements/api_gateway/</guid>
+      <guid>https://valery.tech/system-design/elements/api_gateway/</guid>
       <description>&lt;p&gt;important things: define core responsiblities and how to introduce it to design&#xA;maybe add problem based lens&lt;/p&gt;&#xA;&lt;p&gt;microsoft:&#xA;In a microservices architecture, a client might interact with more than one front-end service. Given this fact, how does a client know what endpoints to call? What happens when new services are introduced, or existing services are refactored? How do services handle SSL termination, authentication, and other concerns? An &lt;em&gt;API gateway&lt;/em&gt; can help to address these challenges.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Architecture</title>
-      <link>http://localhost:1313/engineering/architecture/architecture/</link>
+      <link>https://valery.tech/engineering/architecture/architecture/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/engineering/architecture/architecture/</guid>
+      <guid>https://valery.tech/engineering/architecture/architecture/</guid>
       <description>&lt;h1 id=&#34;what-software-architects-do-that-programmers-dont&#34;&gt;What Software Architects Do That Programmers DON&amp;rsquo;T&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=IwrvE-wHm84&#34;&gt;https://www.youtube.com/watch?v=IwrvE-wHm84&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; download book &amp;ldquo;# Fundamentals of Software Architecture: A Modern Engineering Approach&amp;rdquo; Fundamentals of Software Architecture, 2nd Edition by Mark Richards, Neal Ford;  Released March 2025&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/&#34;&gt;https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Caching</title>
-      <link>http://localhost:1313/system-design/topics/caching/</link>
+      <link>https://valery.tech/system-design/topics/caching/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/caching/</guid>
+      <guid>https://valery.tech/system-design/topics/caching/</guid>
       <description>&lt;h1 id=&#34;ontology&#34;&gt;ontology&lt;/h1&gt;&#xA;&lt;p&gt;Cache definitions:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Caching is a commonly used &lt;em&gt;performance optimization&lt;/em&gt; (&amp;lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chat Room</title>
-      <link>http://localhost:1313/system-design/projects/chat-room/</link>
+      <link>https://valery.tech/system-design/projects/chat-room/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/projects/chat-room/</guid>
+      <guid>https://valery.tech/system-design/projects/chat-room/</guid>
       <description>&lt;p&gt;I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms. Each chat room can have several 1000s of users at any time.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chatbots Practice</title>
-      <link>http://localhost:1313/projects/common/chatbots_practice/</link>
+      <link>https://valery.tech/projects/common/chatbots_practice/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/projects/common/chatbots_practice/</guid>
+      <guid>https://valery.tech/projects/common/chatbots_practice/</guid>
       <description></description>
     </item>
     <item>
       <title>Code Deployment</title>
-      <link>http://localhost:1313/system-design/projects/code_deployment/</link>
+      <link>https://valery.tech/system-design/projects/code_deployment/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/projects/code_deployment/</guid>
+      <guid>https://valery.tech/system-design/projects/code_deployment/</guid>
       <description>&lt;h1 id=&#34;requirements&#34;&gt;Requirements&lt;/h1&gt;&#xA;&lt;p&gt;Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Collaborative Learning Ts And Js</title>
-      <link>http://localhost:1313/projects/common/collaborative_learning_ts-and-js/</link>
+      <link>https://valery.tech/projects/common/collaborative_learning_ts-and-js/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/projects/common/collaborative_learning_ts-and-js/</guid>
+      <guid>https://valery.tech/projects/common/collaborative_learning_ts-and-js/</guid>
       <description>&lt;p&gt;patterns&lt;/p&gt;&#xA;&lt;p&gt;most important points&lt;/p&gt;&#xA;&lt;p&gt;resources&lt;/p&gt;&#xA;&lt;p&gt;best practices&lt;/p&gt;&#xA;&lt;p&gt;problems:&lt;/p&gt;&#xA;&lt;p&gt;where (collaborate on it). knowledge platform.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Communication</title>
-      <link>http://localhost:1313/system-design/topics/communication/</link>
+      <link>https://valery.tech/system-design/topics/communication/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/communication/</guid>
+      <guid>https://valery.tech/system-design/topics/communication/</guid>
       <description>&lt;h1 id=&#34;common&#34;&gt;Common&lt;/h1&gt;&#xA;&lt;p&gt;Getting communication between microservices right is problematic for many due in great part, I feel, to the fact that people gravitate toward a chosen technological approach without first considering the different types of communication they might want. In this chapter, I&amp;rsquo;ll try and tease apart the different styles of communication to help you understand the pros and cons of each, as well as which approach will best fit your problem space.&lt;/p&gt;</description>
     </item>
   </channel>

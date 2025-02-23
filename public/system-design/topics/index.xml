@@ -2,81 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topics on Tech Foundations</title>
-    <link>http://localhost:1313/system-design/topics/</link>
+    <link>https://valery.tech/system-design/topics/</link>
     <description>Recent content in Topics on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/system-design/topics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://valery.tech/system-design/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Api</title>
-      <link>http://localhost:1313/system-design/topics/api/</link>
+      <link>https://valery.tech/system-design/topics/api/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/api/</guid>
+      <guid>https://valery.tech/system-design/topics/api/</guid>
       <description>&lt;h1 id=&#34;actions&#34;&gt;Actions&lt;/h1&gt;&#xA;&lt;p&gt;find out info about:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;API Design principles, API evolution, its usage as interface of a system&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;what is API (fringe, interface, algebra etc) #sd #todo&lt;/p&gt;</description>
     </item>
     <item>
       <title>Caching</title>
-      <link>http://localhost:1313/system-design/topics/caching/</link>
+      <link>https://valery.tech/system-design/topics/caching/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/caching/</guid>
+      <guid>https://valery.tech/system-design/topics/caching/</guid>
       <description>&lt;h1 id=&#34;ontology&#34;&gt;ontology&lt;/h1&gt;&#xA;&lt;p&gt;Cache definitions:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Caching is a commonly used &lt;em&gt;performance optimization&lt;/em&gt; (&amp;lt;= really important that it is an optimization) whereby the previous result of some operation is stored so that subsequent requests can use this stored value rather than spending time and resources recalculating the value.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Communication</title>
-      <link>http://localhost:1313/system-design/topics/communication/</link>
+      <link>https://valery.tech/system-design/topics/communication/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/communication/</guid>
+      <guid>https://valery.tech/system-design/topics/communication/</guid>
       <description>&lt;h1 id=&#34;common&#34;&gt;Common&lt;/h1&gt;&#xA;&lt;p&gt;Getting communication between microservices right is problematic for many due in great part, I feel, to the fact that people gravitate toward a chosen technological approach without first considering the different types of communication they might want. In this chapter, I&amp;rsquo;ll try and tease apart the different styles of communication to help you understand the pros and cons of each, as well as which approach will best fit your problem space.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Distributed Systems</title>
-      <link>http://localhost:1313/system-design/topics/distributed-systems/</link>
+      <link>https://valery.tech/system-design/topics/distributed-systems/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/distributed-systems/</guid>
+      <guid>https://valery.tech/system-design/topics/distributed-systems/</guid>
       <description>&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;&#xA;&lt;p&gt;distributed:&#xA;book &amp;ldquo;thinking in distributed systems&amp;rdquo;&#xA;book &amp;ldquo;understanding distributed systems&amp;rdquo;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Martin Kleppman course videos: &lt;a href=&#34;https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB&#34;&gt;https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB&lt;/a&gt; + pdf lecture notes&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;DDiA by Kleppman&lt;/p&gt;</description>
     </item>
     <item>
       <title>Envelope Estimations</title>
-      <link>http://localhost:1313/system-design/topics/envelope_estimations/</link>
+      <link>https://valery.tech/system-design/topics/envelope_estimations/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/envelope_estimations/</guid>
+      <guid>https://valery.tech/system-design/topics/envelope_estimations/</guid>
       <description>&lt;h1 id=&#34;sources&#34;&gt;Sources&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.hellointerview.com/blog/mastering-estimation&#34;&gt;https://www.hellointerview.com/blog/mastering-estimation&lt;/a&gt; #todo&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-to-do-it&#34;&gt;How to do it&lt;/h1&gt;&#xA;&lt;p&gt;According to Jeff Dean, Google Senior Fellow, &amp;ldquo;back-of-the-envelope calculations are estimates you create using a combination of thought experiments and common performance numbers to get a good feel for which designs will meet your requirements&amp;rdquo;&#xA;Commonly asked back-of-the-envelope estimations: QPS, peak QPS, storage, cache, number of servers, etc. You can practice these calculations when preparing for an interview. Practice makes perfect.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hashing</title>
-      <link>http://localhost:1313/system-design/topics/hashing/</link>
+      <link>https://valery.tech/system-design/topics/hashing/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/hashing/</guid>
+      <guid>https://valery.tech/system-design/topics/hashing/</guid>
       <description>&lt;h1 id=&#34;hasning-strategies&#34;&gt;Hasning strategies&lt;/h1&gt;&#xA;&lt;h2 id=&#34;rendezvous-hashing&#34;&gt;Rendezvous Hashing&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://randorithms.com/2020/12/26/rendezvous-hashing.html&#34;&gt;https://randorithms.com/2020/12/26/rendezvous-hashing.html&lt;/a&gt;&#xA;Rendezvous hashing - rank server set.&lt;/p&gt;&#xA;&lt;h2 id=&#34;consistent-hashing&#34;&gt;Consistent Hashing&lt;/h2&gt;&#xA;&lt;p&gt;Consistent hashing is a way to effectively distribute the keys in any distributed storage system—cache, database, or otherwise—to a large number of nodes or servers while allowing us to add or remove nodes without incurring a large performance hit.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Microservices</title>
-      <link>http://localhost:1313/system-design/topics/microservices/</link>
+      <link>https://valery.tech/system-design/topics/microservices/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/microservices/</guid>
+      <guid>https://valery.tech/system-design/topics/microservices/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=LcJKxPXYudE&#34;&gt;https://www.youtube.com/watch?v=LcJKxPXYudE&lt;/a&gt;&#xA;good video and comments&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://martinfowler.com/articles/microservices.html&#34;&gt;https://martinfowler.com/articles/microservices.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.martinfowler.com/articles/distributed-objects-microservices.html&#34;&gt;https://www.martinfowler.com/articles/distributed-objects-microservices.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://microservices.io/patterns/index.html&#34;&gt;https://microservices.io/patterns/index.html&lt;/a&gt;&#xA;&lt;a href=&#34;https://eventuate.io/exampleapps.html&#34;&gt;https://eventuate.io/exampleapps.html&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Partitioning</title>
-      <link>http://localhost:1313/system-design/topics/partitioning/</link>
+      <link>https://valery.tech/system-design/topics/partitioning/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/partitioning/</guid>
+      <guid>https://valery.tech/system-design/topics/partitioning/</guid>
       <description>&lt;h1 id=&#34;why-do-we-need-to-partition&#34;&gt;Why do we need to partition&lt;/h1&gt;&#xA;&lt;p&gt;For very large datasets, or very high query throughput, that is not sufficient: we need to break the data up into partitions, also known as sharding.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Queues</title>
-      <link>http://localhost:1313/system-design/topics/queues/</link>
+      <link>https://valery.tech/system-design/topics/queues/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/queues/</guid>
+      <guid>https://valery.tech/system-design/topics/queues/</guid>
       <description>&lt;h1 id=&#34;types&#34;&gt;Types&lt;/h1&gt;&#xA;&lt;p&gt;message queues&lt;/p&gt;&#xA;&lt;h1 id=&#34;advantages&#34;&gt;Advantages&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;buffering traffic spikes&lt;/li&gt;&#xA;&lt;li&gt;If a message has to be processed by some very expensive code, you may also hold them in a queue while previous messages are being processed so you don&amp;rsquo;t overload (and potentially kill) servers.&lt;/li&gt;&#xA;&lt;li&gt;Queues can deliver messages to multiple systems, instead of the client having to send them to all the required systems.&lt;/li&gt;&#xA;&lt;li&gt;Queues decouple the client from the server by eliminating the need to know the server address.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Based on the different implementations of message queues, there can be different combinations of the following properties:&#xA;~ Guaranteed delivery.&#xA;~ No duplicate messages are delivered.&#xA;~ Ensure that the order of messages is maintained.&#xA;~ At least once delivery with idempotent consumers.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Replication</title>
-      <link>http://localhost:1313/system-design/topics/replication/</link>
+      <link>https://valery.tech/system-design/topics/replication/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/system-design/topics/replication/</guid>
+      <guid>https://valery.tech/system-design/topics/replication/</guid>
       <description>&lt;h1 id=&#34;types&#34;&gt;Types&lt;/h1&gt;&#xA;&lt;p&gt;Database replication&lt;/p&gt;&#xA;&lt;p&gt;Replication means keeping a copy of the same data on multiple machines that are connected via a network.&lt;/p&gt;</description>
     </item>
   </channel>

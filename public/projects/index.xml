@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Tech Foundations</title>
-    <link>http://localhost:1313/projects/</link>
+    <link>https://valery.tech/projects/</link>
     <description>Recent content in Projects on Tech Foundations</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2014-2023</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 09:02:28 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://valery.tech/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/projects/about/</link>
+      <link>https://valery.tech/projects/about/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/projects/about/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/system-design/elements/background/events/&#34;&gt;Events&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a page about different useful topics.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/projects/foundations/learning/&#34;&gt;Learning&lt;/a&gt; here you find out how to learn, best practices&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;&#xA;&lt;p&gt;text&lt;/p&gt;</description>
+      <guid>https://valery.tech/projects/about/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://valery.tech/system-design/elements/background/events/&#34;&gt;Events&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a page about different useful topics.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://valery.tech/projects/foundations/learning/&#34;&gt;Learning&lt;/a&gt; here you find out how to learn, best practices&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;&#xA;&lt;p&gt;text&lt;/p&gt;</description>
     </item>
     <item>
       <title>Remote Server</title>
-      <link>http://localhost:1313/projects/remote_server/</link>
+      <link>https://valery.tech/projects/remote_server/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>http://localhost:1313/projects/remote_server/</guid>
+      <guid>https://valery.tech/projects/remote_server/</guid>
       <description>&lt;p&gt;requirements:&#xA;I want to make a server to remove develop&lt;/p&gt;&#xA;&lt;h2 id=&#34;remote-development&#34;&gt;remote development&lt;/h2&gt;&#xA;&lt;h2 id=&#34;remote-filesystem&#34;&gt;remote filesystem&lt;/h2&gt;&#xA;&lt;p&gt;requirements:&#xA;mount remote filesystem&#xA;&amp;lt;- why?&#xA;to use local obsidian - no you can use your local&lt;/p&gt;</description>
     </item>
   </channel>
