@@ -2,39 +2,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://localhost:1313/engineering/architecture/</loc>
+      <loc>https://valery.tech/engineering/architecture/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/engineering/data/</loc>
+      <loc>https://valery.tech/engineering/data/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>http://localhost:1313/engineering/engineering-guide/</loc>
+      <loc>https://valery.tech/engineering/engineering-guide/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
-        <loc>http://localhost:1313/engineering/architecture/architecture/</loc>
+        <loc>https://valery.tech/engineering/architecture/architecture/</loc>
         <lastmod>2025-02-22T09:02:28+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/engineering/data/databases/</loc>
+        <loc>https://valery.tech/engineering/data/databases/</loc>
         <lastmod>2025-02-22T09:02:28+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
       </url>
       <url>
-        <loc>http://localhost:1313/engineering/data/trade-off-db/</loc>
+        <loc>https://valery.tech/engineering/data/trade-off-db/</loc>
         <lastmod>2025-02-22T09:02:28+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
