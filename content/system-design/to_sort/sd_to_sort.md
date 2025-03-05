@@ -48,10 +48,6 @@ Architects shouldn't break a system into smaller parts unless clear business dri
 
 Elasticity relies on services having a very small mean time to startup (MTTS), which is achieved  architecturally by having very small, fine-grained services.
 
-## Laws
-
-Why is more important than how
-Everything in software architecture is a trade-off.
 
 ## Architectural characteristics
 

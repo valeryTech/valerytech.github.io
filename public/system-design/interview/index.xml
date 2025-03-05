@@ -30,5 +30,12 @@
       <guid>https://valery.tech/system-design/interview/phrases/</guid>
       <description>&lt;p&gt;Your mentioned also that we should retrieve interviews&#xA;I&amp;rsquo;m thinking about that actual interviewing.io&lt;/p&gt;&#xA;&lt;h1 id=&#34;exactly-what-words-to-say-in-specific-scenarios&#34;&gt;Exactly what words to say in specific scenarios&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what-to-say-when-you-dont-know-what-to-do&#34;&gt;What to say when you don&amp;rsquo;t know what to do&lt;/h2&gt;&#xA;&lt;p&gt;Weak interview candidates are scared to ever utter the phrase &amp;ldquo;I don&amp;rsquo;t know.&amp;rdquo; Stronger interview candidates say &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; more often and then strengthen this with a buffer—the words you put around your uncertainty. A naked &amp;ldquo;I don&amp;rsquo;t know&amp;rdquo; is a dead end, so your interviewer has nowhere to go. Adding a buffer gives your interviewer several paths they can take to move the conversation forward.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Problem Solving Approach</title>
+      <link>https://valery.tech/system-design/interview/problem_solving_approach/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>https://valery.tech/system-design/interview/problem_solving_approach/</guid>
+      <description>&lt;p&gt;I want to create here a &lt;strong&gt;structured&lt;/strong&gt; approach to breaking down complex problems.&#xA;I think I can modify the common problem-solving framework to use it during system design.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

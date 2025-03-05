@@ -21,4 +21,11 @@
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
     </url>
+    
+    <url>
+      <loc>https://valery.tech/system-design/interview/problem_solving_approach/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
     </urlset>

@@ -23,5 +23,12 @@
       <guid>https://valery.tech/system-design/frameworks/framework_iv/</guid>
       <description>&lt;h1 id=&#34;fundamentals-of-this-framework&#34;&gt;Fundamentals of this framework&lt;/h1&gt;&#xA;&lt;p&gt;This framework is predicated on the following fundamentals:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;We propose an opinionated method that can be applied to reason over most system design interviews. The less you have to think about the process, the more you can focus on the problems at hand.&lt;/li&gt;&#xA;&lt;li&gt;Our method is broken down into 3 steps. Each of these steps can be seen as functions. They take inputs and have one output. As such, they can be practiced in isolation.&lt;/li&gt;&#xA;&lt;li&gt;We&amp;rsquo;re teaching you a process. This means you&amp;rsquo;ll be ahead of most people who might be very knowledgeable in a few topics but lack a process. You&amp;rsquo;ll come across as a systematic problem solver who&amp;rsquo;s able to decompose a problem and come up with a reasonable architecture in 30 minutes. Again, you only have to understand 20% of the concepts to address 80% of problems you&amp;rsquo;ll encounter.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;how-to-use-this-framework&#34;&gt;How to use this framework&lt;/h2&gt;&#xA;&lt;p&gt;In order to use this framework effectively, each step needs to be practiced separately. The three steps are:&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Framework Sd</title>
+      <link>https://valery.tech/system-design/frameworks/framework_sd/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>https://valery.tech/system-design/frameworks/framework_sd/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

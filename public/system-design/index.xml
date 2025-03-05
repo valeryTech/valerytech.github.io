@@ -14,7 +14,7 @@
       <link>https://valery.tech/system-design/about/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>https://valery.tech/system-design/about/</guid>
-      <description>&lt;h1 id=&#34;common-guide&#34;&gt;Common Guide&lt;/h1&gt;&#xA;&lt;p&gt;There are numerous sources available for learning System Design (SD). To help avoid &amp;ldquo;tutorial hell,&amp;rdquo; this selection focuses on core tutorials, videos and courses that provide a structured learning path.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;common-guide&#34;&gt;Common Guide&lt;/h1&gt;&#xA;&lt;p&gt;Difference between SD and architecture, software design&lt;/p&gt;&#xA;&lt;p&gt;The output of the SD interview is a blueprint of the system. High-level - you have only 1-hour, short term (without changes in the future), without a detailed or any plan how to implement this system&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

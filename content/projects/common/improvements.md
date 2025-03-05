@@ -30,3 +30,5 @@ Goals:
 
 also we have <https://en.wikipedia.org/wiki/Decision_cycle> - more common term
 A **decision cycle** or **decision loop** is a sequence of steps used by an entity on a repeated basis to [reach and implement decisions](https://en.wikipedia.org/wiki/Decision_making "Decision making") and to learn from the results. The "decision cycle" phrase has a history of use to broadly categorize various methods of making decisions, going upstream to the need, downstream to the outcomes, and cycling around to connect the outcomes to the needs.
+
+https://en.wikipedia.org/wiki/Decision_cycle

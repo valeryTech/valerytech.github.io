@@ -117,6 +117,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://valery.tech/engineering/architecture/engineering-principles/</loc>
+    <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://valery.tech/system-design/topics/envelope_estimations/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -143,6 +148,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://valery.tech/system-design/frameworks/framework_iv/</loc>
+    <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://valery.tech/system-design/frameworks/framework_sd/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -192,7 +202,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://valery.tech/system-design/projects/interviewing.io_example/</loc>
+    <loc>https://valery.tech/system-design/projects/iv4_example/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -238,6 +248,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://valery.tech/system-design/interview/phrases/</loc>
+    <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://valery.tech/system-design/interview/problem_solving_approach/</loc>
     <lastmod>2025-02-22T09:02:28+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

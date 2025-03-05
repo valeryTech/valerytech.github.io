@@ -19,30 +19,29 @@ weight: 810
 ---
 # Common Guide
 
-There are numerous sources available for learning System Design (SD). To help avoid "tutorial hell," this selection focuses on core tutorials, videos and courses that provide a structured learning path.
+
+
+Difference between SD and architecture, software design
+
+The output of the SD interview is a blueprint of the system. High-level - you have only 1-hour, short term (without changes in the future), without a detailed or any plan how to implement this system
+
+Hypothesis to check: some of the principles of common software engineering could not be useful here, another have more importance
 
 # Courses
 
-- ["System Design for Interviews and Beyond"](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) course and [youtube videos](<https://www.youtube.com/@SystemDesignInterview/videos>) with examples. 
+There are numerous sources available for learning System Design (SD). To help avoid "tutorial hell," this selection focuses on core tutorials, videos and courses that provide a structured learning path.
+
+- ["System Design for Interviews and Beyond"](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) course and [youtube videos](<https://www.youtube.com/@SystemDesignInterview/videos>) video serie containing examples. 
 
 "In this video-based course, we will take you on a journey to learn the *fundamental concepts* of system design. ... In addition to the knowledge and understanding of system design concepts, this course will teach you *the thought process behind system design*. We will discuss the questions you should ask yourself when designing a system and how to evaluate available options. ... "
 
 - Algoexpert 2 courses (fundamentals and examples)
 
-1. Zerotomastery "# Master the Coding Interview: System Design + Architecture (Part 1)"
+- Zerotomastery "Master the Coding Interview: System Design + Architecture (Part 1)"
 
-2. Hellointerview  examples + youtube channel + (maybe) premium
+- HelloInterview  examples + youtube channel + premium subscription
 <https://interviewing.io/guides/system-design-interview/part-four#chapter-one>
 
-- (?) algoexpert "# Systems Design Interview Tips"
-
-<https://github.com/Sairyss/system-design-patterns> interesting cirriculim with examples
-
-designgurus ? <https://www.designgurus.io/path/system-design-interview-playbook>
-
-bytebytego ?
-
-tryexponent courses ?
 
 # SD Framework
 
@@ -50,7 +49,7 @@ steps, checklists
 
 <https://interviewing.io/guides/system-design-interview/part-three>
 
-## Common / Preparation Guides
+## Common / Preparations
 
 interviewing.io guides
 <https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/>
@@ -60,6 +59,11 @@ interview process guides
 interview guide +
 interviewing.io
 <https://www.tryexponent.com/blog/system-design-interview-guide>
+
+Fightclub Guide
+<https://github.com/systemdesignfightclub/SDFC/tree/main>
+and videos: https://www.youtube.com/@SDFC/videos
+Stopped 1 year ago. 
 
 watch, analyze and reflect mock interviews [Mock interviews](#mock_interviews)
 
@@ -98,7 +102,7 @@ Start by developing a toolbox (Version 1) to address the time-consuming nature o
     - Keep a log of the systems you design, the tools you use, and the trade-offs you encounter.
     - Use these reflections to improve your problem-solving and prepare for interviews.
 
-# Learning (SD Interview)
+# SD Interview
 
 {{< callout context="note" title="Advice" icon="outline/info-circle" >}}
 Use [Learning]({{< ref "projects/foundations/learning" >}}) principles and practices!
@@ -112,7 +116,7 @@ Core Concepts =>
 Delivery Framework =>
 Common Problems Practicing
 
-## Practice Practice Practice
+## Practice 
 
 Once you have the foundation in place, it's time to practice. Passively consuming content is good, but you'll retain 10x more information by actually doing.
 
@@ -128,13 +132,13 @@ Candidates often get overwhelmed with system design. We don't blame them. There 
 
 Professional experience with distributed systems isn't needed to pass system design interviews. And even if you do have that experience, keep in mind that many talented distributed systems engineers still struggle with the system design interview format. How you perform in an interview is not a measure of your worth as a software engineer -- it is a measure of *your ability to do system design interviews*. The two are related but not equal; being a good programmer has a surprisingly small role in passing interviews.
 
-# mock_interviews
+# Mock Interview Examples
 
 interviewing.io videos from youtube <https://www.youtube.com/watch?v=mQgKAK7y11s>
 
 tryexponent mock videos <https://www.youtube.com/watch?v=iyLqwyFL0Zc>
 
-hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really cool!
+hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really interesting
 <https://www.hellointerview.com/>
 
 <http://youtube.com/watch?v=PI0yGBT9LHo>
@@ -152,7 +156,7 @@ It's vital to master the Basic Principles first.
 
 The best candidates trying by doing LOTS of mock interviews, with peers
 
-Use enigneering principles and practices. ? [link]
+Use engineering principles. ? [link]
 
 # Interview Process
 
@@ -234,7 +238,13 @@ you can discuss some project on leetcode, for example
 
 <https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode>
 
-example how to organize your SD public Result: <https://github.com/Sairyss/system-design-patterns> -> todo add projects here (public learning)
+Also there are another materials:
+- "Systems Design Interview Tips" by Algoexpert.
+- [System Design Patterns](<https://github.com/Sairyss/system-design-patterns>) project has interesting cirriculim with examples.
+- Designgurus website has a set of SD [courses playbook](https://www.designgurus.io/path/system-design-interview-playbook).
+- Bytebytego has many useful materials
+
+tryexponent courses ?
 
 ## Other
 

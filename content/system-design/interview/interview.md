@@ -224,6 +224,8 @@ The most common ways that candidates fail with this competency are:
 - Focusing on uninteresting/trivial aspects of the problem vs the most important ones.
 - Getting stuck on a particular piece of the problem and not being able to move forward.
 
+#todo implement and use in practice a structured approach to breaking down complex problems [Approach]({{< ref "system-design/interview/problem_solving_approach" >}})
+
 ## High-Level Design
 
 With a problem broken down, your interviewer wants to see how you can solve each of the constituent pieces. This is where your knowledge of the [Core Concepts](https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts) comes into play. You should be able to describe how you would solve each piece of the problem, and how those pieces fit together into a cohesive whole.
