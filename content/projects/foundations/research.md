@@ -61,3 +61,16 @@ concepts, idea,
 
 operationalization
 <https://en.wikipedia.org/wiki/Operationalization>
+
+
+
+scientific method
+https://en.wikipedia.org/wiki/Scientific_method
+https://en.wikipedia.org/wiki/Scientific_reasoning
+https://en.wikipedia.org/wiki/Research
+
+
+https://en.wikipedia.org/wiki/Epistemology
+unknown unknown concept, epistemology 
+how to learn something: research methodologies, 
+

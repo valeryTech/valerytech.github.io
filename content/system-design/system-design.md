@@ -23,7 +23,7 @@ weight: 810
 
 Difference between SD and architecture, software design
 
-The output of the SD interview is a blueprint of the system. High-level - you have only 1-hour, short term (without changes in the future), without a detailed or any plan how to implement this system
+The output of the SD interview is a blueprint of the system to deliver. High-level - you have only 1-hour, short term (without changes in the future), without a detailed or any plan how to implement this system
 
 Hypothesis to check: some of the principles of common software engineering could not be useful here, another have more importance
 
@@ -142,6 +142,10 @@ hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really interesting
 <https://www.hellointerview.com/>
 
 <http://youtube.com/watch?v=PI0yGBT9LHo>
+
+vsevolodovich:
+- https://www.youtube.com/watch?v=JWc8L2cCnJI
+- 
 
 ^^ analyze them:
 

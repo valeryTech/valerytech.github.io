@@ -13,6 +13,8 @@ weight: 810
 <https://www.youtube.com/watch?v=LcJKxPXYudE>
 good video and comments
 
+a chapter from FoSA
+
 <https://martinfowler.com/articles/microservices.html>
 
 <https://www.martinfowler.com/articles/distributed-objects-microservices.html>
