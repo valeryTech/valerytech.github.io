@@ -120,7 +120,7 @@ In addition to the eight fallacies of distributed computing previously described
 
 ## Data architecture concerns
 
-There is separation between separation between operational versus analytical data.
+There is separation between operational versus analytical data.
 
 # Understanding Distributed Systems
 
@@ -157,7 +157,7 @@ But the basic idea is still the same: each layer **hides the complexity of the l
 
 Other databases at that time forced application developers to think a lot about the internal representation of the data in the database. The goal of the relational model was to **hide that implementation detail behind a cleaner interface**.
 
-(NoSQL) They embrace schemaless data, run on clusters, and have the ability **to trade off traditional consistency for other useful properties**. (Martin Fowler cite)
+(NoSQL) They embrace schemaless data, run on clusters, and have the ability **to trade off traditional consistency for other useful properties**. (Martin Fowler)
 
 The JSON representation **has better locality** than the multi-table schema (32). It's worth pointing out that the idea of grouping related data together for locality is not limited to the document model (41).
 

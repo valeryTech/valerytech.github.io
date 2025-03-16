@@ -13,11 +13,18 @@ toc: 'true'
 url: /engineering/engineering-guide
 weight: 810
 ---
+[draft]
+
+ [Architecture]({{< ref "engineering/architecture/architecture" >}}) is in progress at the moment. 
 
 # Common Description
 
 In this section we are dealing with various engineering intricancises.
 
+
+
 # Persons
 
 Kent Beck
+
+

@@ -11,23 +11,63 @@ weight: 810
 ---
 
 
-<https://www.youtube.com/watch?v=_ZvwRJnSsQ4>
+(filler, in progress)
 
-- "What Software Architects Do That Programmers DON'T" <https://www.youtube.com/watch?v=IwrvE-wHm84>
+**TL;DR:** This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture. 
 
-- [ ] read the book "# Fundamentals of Software Architecture: A Modern Engineering Approach" 2nd Edition by Mark Richards, Neal Ford
+# Practicality Lens
 
-interesting
+Different authors ans scholars highlight numerous diverse concepts for building software systems. There is a wide range of concept types: (best) practices, approaches, methods, laws, principles, theories, heuristics, and more. 
+
+However, what matters most to me is the ability to adapt and employ this variety as a **practical toolbox** for creating effective systems. 
+
+> Looking ahead, my key focus will be to develop a **holistic set** of tools, clearly structured and integrated, for practical use in software architecture and design.
+
+# Toolbox
+
+One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Laws]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
+
+.. (insert additional tools here) ..
+
+Additionally, I could include concepts such as the definition of software architecture itself or definitions of architectural characteristics. Why include them? Because these definitions help us build clearer models and enhance our understanding of software systems. However, in my opinion, these definitions represent a broader and more general set of instruments or conceptual foundations that engineers or architects rely upon. While you genuinely use them, I've decided not to explicitly categorize them as part of the toolbox—but it's essential to recognize their implicit role in architectural practice.
+
+Concepts such as the definition of software architecture or architectural characteristics could also fit into this toolbox, as they guide our understanding and modeling of software systems. However, I've chosen not to explicitly include these foundational definitions as part of the toolbox, viewing them instead as general conceptual instruments that underlie our practical work. Nevertheless, keep in mind their implicit importance and usage.
+
+I also considered adding fundamental concepts like the definition of software architecture and architectural characteristics. Although we constantly use these definitions to form clear mental models, I view them as broader instruments or conceptual foundations rather than specific tools. Thus, I’ve decided not to explicitly list them within the toolbox, but it's important to remember that these foundational ideas are always in practical use.
+
+# Architectural Characteristics
+
+
+
+# Personalies
+
+Ralph Johnson, Martin Fowler
+# Sources
+
 <https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
 
+the book "# Fundamentals of Software Architecture: A Modern Engineering Approach" 2nd Edition by Mark Richards, Neal Ford
+
+interesting
+"What Software Architects Do That Programmers DON'T" <https://www.youtube.com/watch?v=IwrvE-wHm84>
+
+
+https://www.reddit.com/r/architecture/comments/16crcsv/architecture_vs_software_engineering/
+
 <https://www.youtube.com/watch?v=wQYRl--58zM>
+
+<https://www.youtube.com/watch?v=_ZvwRJnSsQ4>
+
 
 <https://www.youtube.com/watch?v=0tEBv2kAuNY>
 
 <https://www.youtube.com/watch?v=n6G5qtJHmgw>
 
 <https://www.youtube.com/watch?v=W7Krz__jJUg>
-<https://www.youtube.com/watch?v=W7Krz__jJUg>
+
+<https://www.youtube.com/watch?v=v_nhv6aY1Kg>
+
+<https://www.youtube.com/watch?v=9Az0q2XHtH8>
 
 <https://www.cloudwaydigital.com/>
 
@@ -80,32 +120,3 @@ and blog <https://blog.vvsevolodovich.dev/>
 book "Cloud Native Spring in Action" contains in its first chapters good material about cloud native and what does it mean
 
 <https://www.thoughtworks.com/insights/blog/architecture/software-architecture-decisions-andrew-harmel-law>
-
-# Laws
-
-(they added reflection)
-As your two authors set out to write the first edition of this book, we had an ambitious goal: we hoped to find things that seemed universally true about software architecture and codify them as “laws” of software architecture. As we wrote, we kept our eyes peeled for things we could capture; we had hoped to find maybe 10 or 15. To our surprise, we ended up identifying just two laws in the first edition, and uncovered one more while writing the second. True to our original intent, these three laws seem pretty universal and inform many important perspectives for working software architects.
-
-Just about every example in this book has illustrated these laws, which points to their origin story. When we wrote the first edition, we hoped to find numerous things that seemed universally true about software architecture and codify them as _laws_. To our surprise, we ended up identifying just two laws in the first edition, then uncovered one more while writing the second. True to our original intent, these three laws seem pretty universal and inform many important perspectives for working software architects.
-
-{{< callout context="note" title="First Law " icon="outline/info-circle" >}}
-Everything in software architecture is a trade-off.
-{{< /callout >}}
-
-Corollary 1
-If an architect thinks they have discovered something that isn’t a trade-off, more likely they just haven’t identified the trade-off yet.
-
-Corollary 2
-You can't do trade-off analysis just once; it's a continuous process because things change.
-
-{{< callout context="note" title="Second Law " icon="outline/info-circle" >}}
-WHY is more important than HOW.
-{{< /callout >}}
-
-We define software architecture in terms beyond structural scaffolding, incorporating principles, characteristics, and so on. Architecture is broader than just the combination of structural elements.
-
-why? examples?
-
-{{< callout context="note" title="Third Law " icon="outline/info-circle" >}}
-Most architectral decisions aren't binary but rather exist on a spectrum between extremes.
-{{< /callout >}}

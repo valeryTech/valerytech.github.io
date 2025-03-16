@@ -68,6 +68,8 @@ top down vs botton-up approach
 
 <https://en.wikipedia.org/wiki/Corrective_feedback>
 
+<https://www.youtube.com/watch?v=ddq8JIMhz7c>
+
 High-Impact Practices
 George D. Kuh identified High-Impact practices (HIPs) as " a Specific set of practices that tended to lead to meaningful experiences for students."
 

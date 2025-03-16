@@ -1017,7 +1017,7 @@ Architects design fine-grained microservices to achieve decoupling, but then orc
 </ul>
 <h2 id="styles">Styles<a href="#styles" class="anchor" aria-hidden="true">#</a> </h2>
 <h2 id="data-architecture-concerns">Data architecture concerns<a href="#data-architecture-concerns" class="anchor" aria-hidden="true">#</a> </h2>
-<p>There is separation between separation between operational versus analytical data.</p>
+<p>There is separation between operational versus analytical data.</p>
 <h1 id="understanding-distributed-systems">Understanding Distributed Systems</h1>
 <p>Building reliable abstractions on top of unreliable ones is a common pattern we will encounter again in the rest of the book.
 For example, this protocol could be TCP. TCP&rsquo;s reliability and stability come at the price of lower bandwidth and higher latencies than the underlying network can deliver</p>
@@ -1036,7 +1036,7 @@ For example, this protocol could be TCP. TCP&rsquo;s reliability and stability c
 <h1 id="ddia">DDIA</h1>
 <p>But the basic idea is still the same: each layer <strong>hides the complexity of the layers below it</strong> by providing a clean data model (27)</p>
 <p>Other databases at that time forced application developers to think a lot about the internal representation of the data in the database. The goal of the relational model was to <strong>hide that implementation detail behind a cleaner interface</strong>.</p>
-<p>(NoSQL) They embrace schemaless data, run on clusters, and have the ability <strong>to trade off traditional consistency for other useful properties</strong>. (Martin Fowler cite)</p>
+<p>(NoSQL) They embrace schemaless data, run on clusters, and have the ability <strong>to trade off traditional consistency for other useful properties</strong>. (Martin Fowler)</p>
 <p>The JSON representation <strong>has better locality</strong> than the multi-table schema (32). It&rsquo;s worth pointing out that the idea of grouping related data together for locality is not limited to the document model (41).</p>
 <p>Evolution of a data model: moreover, even if the initial version of an application fits well in a join-free document model, data has a tendency of becoming more interconnected as features are added to applications.</p>
 <p>The ease of changes to be made to an application&rsquo;s data model. &lt;- data models comparison</p>

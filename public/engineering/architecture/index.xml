@@ -14,14 +14,14 @@
       <link>https://valery.tech/engineering/architecture/architecture/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>https://valery.tech/engineering/architecture/architecture/</guid>
-      <description>&lt;p&gt;https://www.youtube.com/watch?v=_ZvwRJnSsQ4&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&amp;ldquo;What Software Architects Do That Programmers DON&amp;rsquo;T&amp;rdquo; &lt;a href=&#34;https://www.youtube.com/watch?v=IwrvE-wHm84&#34;&gt;https://www.youtube.com/watch?v=IwrvE-wHm84&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; read the book &amp;ldquo;# Fundamentals of Software Architecture: A Modern Engineering Approach&amp;rdquo; 2nd Edition by Mark Richards, Neal Ford&lt;/p&gt;</description>
+      <description>&lt;p&gt;(filler, in progress)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Engineering Principles</title>
-      <link>https://valery.tech/engineering/architecture/engineering-principles/</link>
+      <title>Toolbox</title>
+      <link>https://valery.tech/engineering/architecture/toolbox/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
-      <guid>https://valery.tech/engineering/architecture/engineering-principles/</guid>
-      <description></description>
+      <guid>https://valery.tech/engineering/architecture/toolbox/</guid>
+      <description>&lt;h1 id=&#34;laws&#34;&gt;Laws&lt;/h1&gt;&#xA;&lt;p&gt;Things that seemed universally true about software architecture. These three laws seem pretty universal and inform many important perspectives for working software architects.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
