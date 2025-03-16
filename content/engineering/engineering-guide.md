@@ -18,10 +18,6 @@ weight: 810
 
 In this section we are dealing with various engineering intricancises.
 
-
-
-Persons
+# Persons
 
 Kent Beck
-
-
