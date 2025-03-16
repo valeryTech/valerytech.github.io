@@ -15,6 +15,10 @@ weight: 810
 
 **TL;DR:** This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture. 
 
+# Definition
+
+definitions list ans comparing
+
 # Practicality Lens
 
 Different authors ans scholars highlight numerous diverse concepts for building software systems. There is a wide range of concept types: (best) practices, approaches, methods, laws, principles, theories, heuristics, and more. 
@@ -23,30 +27,40 @@ However, what matters most to me is the ability to adapt and employ this variety
 
 > Looking ahead, my key focus will be to develop a **holistic set** of tools, clearly structured and integrated, for practical use in software architecture and design.
 
+A key challenge in this pursuit is that principles can sometimes conflict and contradict each other. The real question is not just which principles to follow but *how to balance and apply them effectively* to the problem at hand.
+
 # Toolbox
 
 One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Laws]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
 
-.. (insert additional tools here) ..
-
-Additionally, I could include concepts such as the definition of software architecture itself or definitions of architectural characteristics. Why include them? Because these definitions help us build clearer models and enhance our understanding of software systems. However, in my opinion, these definitions represent a broader and more general set of instruments or conceptual foundations that engineers or architects rely upon. While you genuinely use them, I've decided not to explicitly categorize them as part of the toolbox—but it's essential to recognize their implicit role in architectural practice.
+.. (insert other tools here) ..
 
 Concepts such as the definition of software architecture or architectural characteristics could also fit into this toolbox, as they guide our understanding and modeling of software systems. However, I've chosen not to explicitly include these foundational definitions as part of the toolbox, viewing them instead as general conceptual instruments that underlie our practical work. Nevertheless, keep in mind their implicit importance and usage.
 
-I also considered adding fundamental concepts like the definition of software architecture and architectural characteristics. Although we constantly use these definitions to form clear mental models, I view them as broader instruments or conceptual foundations rather than specific tools. Thus, I’ve decided not to explicitly list them within the toolbox, but it's important to remember that these foundational ideas are always in practical use.
-
 # Architectural Characteristics
 
+list of characteristics, applicability, mapping to the parts of the system, definitions, how to specify them
 
+# Decisions
+
+Software architects must understand and analyze software systems deeply, in all their complexity, and must make important trade-off decisions, sometimes with incomplete information (analyze). Software architects make exactly the kinds of decisions that AI cannot, evaluating trade-offs within complex, changing contexts. 
+
+Architecture, like much art, can only be understood in context. Architects base their decisions on the realities of their environment.
+
+add link to decision making framework
+
+decisions withing a more broad context of businness discource
 
 # Personalies
 
 Ralph Johnson, Martin Fowler
+Neal Ford, Mark Richards
+
 # Sources
 
 <https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
 
-the book "# Fundamentals of Software Architecture: A Modern Engineering Approach" 2nd Edition by Mark Richards, Neal Ford
+"# Fundamentals of Software Architecture: A Modern Engineering Approach" 2nd Edition by Mark Richards, Neal Ford
 
 interesting
 "What Software Architects Do That Programmers DON'T" <https://www.youtube.com/watch?v=IwrvE-wHm84>
