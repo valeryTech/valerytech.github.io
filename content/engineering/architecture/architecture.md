@@ -17,7 +17,14 @@ weight: 810
 
 # Definition
 
-definitions list ans comparing
+definitions list and comparing
+
+# Ontology
+
+key components, terminology
+key elements
+basic concepts
+
 
 # Practicality Lens
 
@@ -43,6 +50,8 @@ list of characteristics, applicability, mapping to the parts of the system, defi
 
 # Decisions
 
+paper "Decision-Making Techniques for Software Architecture Design: A Comparative Survey" 
+
 Software architects must understand and analyze software systems deeply, in all their complexity, and must make important trade-off decisions, sometimes with incomplete information (analyze). Software architects make exactly the kinds of decisions that AI cannot, evaluating trade-offs within complex, changing contexts. 
 
 Architecture, like much art, can only be understood in context. Architects base their decisions on the realities of their environment.
@@ -51,12 +60,23 @@ add link to decision making framework
 
 decisions withing a more broad context of businness discource
 
+<https://www.reddit.com/r/softwarearchitecture/comments/1ad40ia/how_can_i_become_better_in_architectural_decision/>
+
+<https://en.wikipedia.org/wiki/Architectural_decision>
+<https://adr.github.io/>
+<https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file>
+
+## ADRs
+
+
 # Personalies
 
 Ralph Johnson, Martin Fowler
 Neal Ford, Mark Richards
 
 # Sources
+
+<https://martinfowler.com/architecture/>
 
 <https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
 
@@ -84,6 +104,11 @@ https://www.reddit.com/r/architecture/comments/16crcsv/architecture_vs_software_
 <https://www.youtube.com/watch?v=9Az0q2XHtH8>
 
 <https://www.cloudwaydigital.com/>
+
+<https://www.youtube.com/watch?v=_CXPDDRn6to> agility and architecture
+<https://www.youtube.com/watch?v=CXCkDKM0OX0> hopre and farley
+<https://www.youtube.com/watch?v=aCiejroMUmc>
+paper "Agility and Architecture" by Babel
 
 <https://levelup.gitconnected.com/from-software-developer-to-software-architect-roadmap-to-success-695951521d9b>
 

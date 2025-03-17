@@ -12,26 +12,6 @@ weight: 810
 
 # Sources and Links
 
-<https://trueaccord.atlassian.net/wiki/spaces/DS/pages/815105668/Data+Streaming+overview>
-
-<https://drive.google.com/file/d/1wyP1aUBAwhLLonENwIJjVXxXWyUfJ5nN/view>
-<https://drive.google.com/file/d/1QeIte_uFbKYlPr4bIVuBVQCx1vWSb0l_/edit>
-<https://trueaccord.atlassian.net/wiki/spaces/DS/pages/815105668/Data+Streaming+overview>
-
-<https://trueaccord.atlassian.net/wiki/spaces/DS/pages/815727051/Glossary>
-
-old. Streaming Platform overview [link](https://trueaccord.atlassian.net/wiki/x/jAHvNg)
-
-local repos?
-streaming/platform...
-
-Sources:
-"Data Streaming" space
-slack channel
-
-<https://trueaccord.atlassian.net/wiki/x/_QRmbg>
-<https://trueaccord.atlassian.net/wiki/spaces/DS/settings/home>
-
 <https://systemdesignschool.io/fundamentals/stream-processing>
 <https://aws.amazon.com/what-is/batch-processing/>
 <https://www.youtube.com/watch?v=1xgBQTF24mU>
