@@ -10,27 +10,29 @@ toc: true
 weight: 810
 ---
 
+[Draft]
 
-(filler, in progress)
+Why you need to understand what is Software Architecture and how to use it concepts?
 
-**TL;DR:** This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture. 
+**TL;DR:** This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture.
 
 # Definition
 
-definitions list and comparing
+definitions list and it's analysis
 
 # Ontology
 
 key components, terminology
-key elements
-basic concepts
 
+key elements
+
+basic concepts
 
 # Practicality Lens
 
-Different authors ans scholars highlight numerous diverse concepts for building software systems. There is a wide range of concept types: (best) practices, approaches, methods, laws, principles, theories, heuristics, and more. 
+Different authors ans scholars highlight numerous diverse concepts for building software systems. There is a wide range of concept types: (best) practices, approaches, methods, laws, principles, theories, heuristics, and more.
 
-However, what matters most to me is the ability to adapt and employ this variety as a **practical toolbox** for creating effective systems. 
+However, what matters most to me is the ability to adapt and employ this variety as a **practical toolbox** for creating effective systems.
 
 > Looking ahead, my key focus will be to develop a **holistic set** of tools, clearly structured and integrated, for practical use in software architecture and design.
 
@@ -39,6 +41,8 @@ A key challenge in this pursuit is that principles can sometimes conflict and co
 # Toolbox
 
 One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Laws]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
+
+engineering principles, like
 
 .. (insert other tools here) ..
 
@@ -50,9 +54,9 @@ list of characteristics, applicability, mapping to the parts of the system, defi
 
 # Decisions
 
-paper "Decision-Making Techniques for Software Architecture Design: A Comparative Survey" 
+paper "Decision-Making Techniques for Software Architecture Design: A Comparative Survey"
 
-Software architects must understand and analyze software systems deeply, in all their complexity, and must make important trade-off decisions, sometimes with incomplete information (analyze). Software architects make exactly the kinds of decisions that AI cannot, evaluating trade-offs within complex, changing contexts. 
+Software architects must understand and analyze software systems deeply, in all their complexity, and must make important trade-off decisions, sometimes with incomplete information (analyze). Software architects make exactly the kinds of decisions that AI cannot, evaluating trade-offs within complex, changing contexts.
 
 Architecture, like much art, can only be understood in context. Architects base their decisions on the realities of their environment.
 
@@ -68,30 +72,49 @@ decisions withing a more broad context of businness discource
 
 ## ADRs
 
+# Resources
 
 # Personalies
 
 Ralph Johnson, Martin Fowler
 Neal Ford, Mark Richards
 
+Barry O'reilly and residual theory
+
+(?) Derek Comartin and Code Opinion youtube channel
+
 # Sources
 
 <https://martinfowler.com/architecture/>
+<https://www.youtube.com/watch?v=DngAZyWMGR0>
+<https://www.youtube.com/watch?v=u_LnubpBDCA>
+<https://www.youtube.com/watch?v=lurbDAEU0KM>
+<https://www.youtube.com/watch?v=0TwoubGSXpc>
+<https://www.youtube.com/watch?v=CjCJ76oZXTE>
+<https://www.youtube.com/watch?v=MZnrxjw602E>
+
+<https://www.youtube.com/watch?v=LcJKxPXYudE>
+war stories, reflections
 
 <https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
 
 "# Fundamentals of Software Architecture: A Modern Engineering Approach" 2nd Edition by Mark Richards, Neal Ford
 
+<https://www.youtube.com/watch?v=bmSAYlu0NcY>
+
 interesting
 "What Software Architects Do That Programmers DON'T" <https://www.youtube.com/watch?v=IwrvE-wHm84>
 
+Barry
+<https://www.youtube.com/watch?v=H8ZOp8ayluU>
 
-https://www.reddit.com/r/architecture/comments/16crcsv/architecture_vs_software_engineering/
+<https://www.youtube.com/watch?v=36I_eW8K1EY> interesting advices and reflections
+
+<https://www.reddit.com/r/architecture/comments/16crcsv/architecture_vs_software_engineering/>
 
 <https://www.youtube.com/watch?v=wQYRl--58zM>
 
 <https://www.youtube.com/watch?v=_ZvwRJnSsQ4>
-
 
 <https://www.youtube.com/watch?v=0tEBv2kAuNY>
 

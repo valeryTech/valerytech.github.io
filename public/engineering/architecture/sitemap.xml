@@ -9,7 +9,21 @@
     </url>
     
     <url>
+      <loc>https://valery.tech/engineering/architecture/changeability/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
       <loc>https://valery.tech/engineering/architecture/toolbox/</loc>
+      <lastmod>2025-02-22T09:02:28+00:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>https://valery.tech/engineering/architecture/yagni/</loc>
       <lastmod>2025-02-22T09:02:28+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>

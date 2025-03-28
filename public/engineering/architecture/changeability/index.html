@@ -14,12 +14,12 @@
 
 <link rel="stylesheet" href="/main.e3786d949071a2400272a19145c6b32bc9b4624a8e914774843dbb567c67772716909e8da875047d8dfc39894e344f3aacde011689c74399dda300ed9df31700.css" integrity="sha512-43htlJBxokACcqGRRcazK8m0YkqOkUd0hD27VnxndycWkJ6NqHUEfY38OYlONE86rN4BFonHQ5ndowDtnfMXAA==" crossorigin="anonymous">
 
-<noscript><style>img.lazyload { display: none; }</style></noscript><base href="https://valery.tech/engineering/architecture/toolbox/">
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="https://valery.tech/engineering/architecture/changeability/">
 
-  <link rel="canonical" href="https://valery.tech/engineering/architecture/toolbox/">
+  <link rel="canonical" href="https://valery.tech/engineering/architecture/changeability/">
 
 
-<title>Toolbox  |  Tech Foundations</title>
+<title>Changeability  |  Tech Foundations</title>
 <meta name="description" content="Default Description">
 
     
@@ -47,9 +47,9 @@
       >
 <link rel="manifest" href="/manifest.webmanifest">
 
-<meta property="og:url" content="https://valery.tech/engineering/architecture/toolbox/">
+<meta property="og:url" content="https://valery.tech/engineering/architecture/changeability/">
   <meta property="og:site_name" content="Tech Foundations">
-  <meta property="og:title" content="Toolbox">
+  <meta property="og:title" content="Changeability">
   <meta property="og:description" content="Default Description">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
@@ -60,7 +60,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://valery.tech/cover.png">
-  <meta name="twitter:title" content="Toolbox">
+  <meta name="twitter:title" content="Changeability">
   <meta name="twitter:description" content="Default Description">
       <meta name="twitter:site" content="@tecvalery">
 
@@ -91,7 +91,7 @@
      },
      {
        "@type": "ListItem",
-       "name": "Toolbox",
+       "name": "Changeability",
        "position": 4
      }
    ]
@@ -176,12 +176,12 @@
       <a href="/engineering/architecture/architecture/">Architecture</a>
   </li>
 
-  <li>
-      <a href="/engineering/architecture/changeability/">Changeability</a>
+  <li class="active" >
+      <a aria-current="page" href="/engineering/architecture/changeability/">Changeability</a>
   </li>
 
-  <li class="active" >
-      <a aria-current="page" href="/engineering/architecture/toolbox/">Toolbox</a>
+  <li>
+      <a href="/engineering/architecture/toolbox/">Toolbox</a>
   </li>
 
   <li>
@@ -355,12 +355,12 @@
       <a href="/engineering/architecture/architecture/">Architecture</a>
   </li>
 
-  <li>
-      <a href="/engineering/architecture/changeability/">Changeability</a>
+  <li class="active" >
+      <a aria-current="page" href="/engineering/architecture/changeability/">Changeability</a>
   </li>
 
-  <li class="active" >
-      <a aria-current="page" href="/engineering/architecture/toolbox/">Toolbox</a>
+  <li>
+      <a href="/engineering/architecture/toolbox/">Toolbox</a>
   </li>
 
   <li>
@@ -394,20 +394,7 @@
 		
 		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
 			<div class="page-links">
-  <h3>On this page</h3>
-    <nav id="toc">
-  <ul>
-    <li><a href="#laws">Laws</a></li>
-    <li><a href="#yagni">YAGNI</a></li>
-    <li><a href="#the-essence-of-good-design">The Essence of Good Design</a></li>
-    <li><a href="#one-rule-to-rule-them-all">One Rule to Rule Them All</a></li>
-    <li><a href="#various-to-sort">Various (to sort)</a></li>
-    <li><a href="#simple-design">Simple Design</a></li>
-    <li><a href="#simple-thing-">Simple Thing (?)</a></li>
-    <li><a href="#how-to-use-it">How to use it</a></li>
-    <li><a href="#reflection-and-improvements">Reflection and Improvements</a></li>
-  </ul>
-</nav>
+  
 </div>
 
 		</nav>
@@ -418,154 +405,16 @@
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 <li class="breadcrumb-item"><a href="/engineering/">Engineering</a></li>
 <li class="breadcrumb-item"><a href="/engineering/architecture/">Architecture</a></li>
-<li class="breadcrumb-item active" aria-current="page">Toolbox</li>
+<li class="breadcrumb-item active" aria-current="page">Changeability</li>
 					</ol>
 				</nav>
 			
-			<h1>Toolbox</h1>
+			<h1>Changeability</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
-				<details>
-    <summary>On this page</summary>
-    <div class="page-links">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#laws">Laws</a></li>
-    <li><a href="#yagni">YAGNI</a></li>
-    <li><a href="#the-essence-of-good-design">The Essence of Good Design</a></li>
-    <li><a href="#one-rule-to-rule-them-all">One Rule to Rule Them All</a></li>
-    <li><a href="#various-to-sort">Various (to sort)</a></li>
-    <li><a href="#simple-design">Simple Design</a></li>
-    <li><a href="#simple-thing-">Simple Thing (?)</a></li>
-    <li><a href="#how-to-use-it">How to use it</a></li>
-    <li><a href="#reflection-and-improvements">Reflection and Improvements</a></li>
-  </ul>
-</nav>
-    </div>
-  </details>
-
+				
 			</nav>
-			<h1 id="laws">Laws</h1>
-<p>Things that seemed universally true about software architecture. These three laws seem pretty universal and inform many important perspectives for working software architects.</p>
-<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
-  <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
- 
- class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-  <path d="M12 9h.01" />
-  <path d="M11 12h1v4h1" />
-</svg>
-  <div class="callout-content">
-    <div class="callout-title">
-        <p>First Law</p>
-
-      </div>
-    <div class="callout-body">
-      <p>Everything in software architecture is a trade-off.</p>
-
-    </div>
-  </div>
-</div>
-
-<p>Corollary 1
-If an architect thinks they have discovered something that isn’t a trade-off, more likely they just haven’t identified the trade-off yet.</p>
-<p>Corollary 2
-You can&rsquo;t do trade-off analysis just once; it&rsquo;s a continuous process because things change.</p>
-<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
-  <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
- 
- class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-  <path d="M12 9h.01" />
-  <path d="M11 12h1v4h1" />
-</svg>
-  <div class="callout-content">
-    <div class="callout-title">
-        <p>Second Law</p>
-
-      </div>
-    <div class="callout-body">
-      <p>WHY is more important than HOW.</p>
-
-    </div>
-  </div>
-</div>
-
-<p>We define software architecture in terms beyond structural scaffolding, incorporating principles, characteristics, and so on. Architecture is broader than just the combination of structural elements.</p>
-<p>why? examples?</p>
-<div class="callout callout-note d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
-  <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
- 
- class="outline/info-circle svg-inline callout-icon me-2 mb-3" id="svg-info-circle" role="img">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-  <path d="M12 9h.01" />
-  <path d="M11 12h1v4h1" />
-</svg>
-  <div class="callout-content">
-    <div class="callout-title">
-        <p>Third Law</p>
-
-      </div>
-    <div class="callout-body">
-      <p>Most architectral decisions aren&rsquo;t binary but rather exist on a spectrum between extremes.</p>
-
-    </div>
-  </div>
-</div>
-
-<h1 id="yagni">YAGNI</h1>
-<h1 id="the-essence-of-good-design">The Essence of Good Design</h1>
-<p>and relationship with changeability</p>
-<h1 id="one-rule-to-rule-them-all">One Rule to Rule Them All</h1>
-<p>As developers, we live under a constant barrage of helpful advice, often in the form of rules with cute names. We&rsquo;re told how to design, how to code, how to deploy, how to monitor: there are systems and rules for everything. How can we keep up? How can we know what&rsquo;s good advice, and what&rsquo;s bad?</p>
-<p>Over time I&rsquo;ve come to realize that just about every good piece of advice is actually a special case of something both more general and simpler. So, let me introduce you to the &ldquo;one rule to rule them all.&rdquo;</p>
-<h1 id="various-to-sort">Various (to sort)</h1>
-<p>ProofOfConcept, Design decision, MVP, TTM,
-Design principles: SOLID, DRY, KISS, Yagni, Demeter Law, Avoid Premature Optimization, Principle of Least Astonishment  and others
-Keep in mind expected lifespan,</p>
-<p>use good judgement</p>
-<p>clean code critique
-That&rsquo;s why coding is an art in its own right.
-There&rsquo;s some good practices and some bad, but if you do not understand the craft, just blindly following good practices will lead you to dogmatic code.
-And that&rsquo;s the biggest sin of clean code, it presents absolute dogma, not advice.</p>
-<h1 id="simple-design">Simple Design</h1>
-<p>Extreme Programming practice;
-read also &ldquo;Simple Design&rdquo; part of the &ldquo;The Art of Agile Development&rdquo; book
-<a href="http://www.extremeprogramming.org/rules/simple.html">http://www.extremeprogramming.org/rules/simple.html</a></p>
-<h1 id="simple-thing-">Simple Thing (?)</h1>
-<p><a href="https://wiki.c2.com/?DoTheSimplestThingThatCouldPossiblyWork">https://wiki.c2.com/?DoTheSimplestThingThatCouldPossiblyWork</a></p>
-<h1 id="how-to-use-it">How to use it</h1>
-<h1 id="reflection-and-improvements">Reflection and Improvements</h1>
+			<p>here I&rsquo;m trying to explore the concept of changeability and it&rsquo;s use in software engineering</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -583,7 +432,7 @@ read also &ldquo;Simple Design&rdquo; part of the &ldquo;The Art of Agile Develo
 				</div>
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Prev</div>
-					<a href="/engineering/methodologies/" class="stretched-link text-reset text-decoration-none">Methodologies</a>
+					<a href="/engineering/architecture/architecture/" class="stretched-link text-reset text-decoration-none">Architecture</a>
 				</div>
 			</div>
 		</div>
@@ -592,7 +441,7 @@ read also &ldquo;Simple Design&rdquo; part of the &ldquo;The Art of Agile Develo
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Next</div>
-					<a href="/engineering/data/trade-off-db/" class="stretched-link text-reset text-decoration-none">Trade Off Db</a>
+					<a href="/engineering/data/databases/" class="stretched-link text-reset text-decoration-none">Databases</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

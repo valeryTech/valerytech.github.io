@@ -14,7 +14,14 @@
       <link>https://valery.tech/engineering/architecture/architecture/</link>
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>https://valery.tech/engineering/architecture/architecture/</guid>
-      <description>&lt;p&gt;(filler, in progress)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture.&lt;/p&gt;</description>
+      <description>&lt;p&gt;[Draft]&lt;/p&gt;&#xA;&lt;p&gt;Why you need to understand what is Software Architecture and how to use it concepts?&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Changeability</title>
+      <link>https://valery.tech/engineering/architecture/changeability/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>https://valery.tech/engineering/architecture/changeability/</guid>
+      <description>&lt;p&gt;here I&amp;rsquo;m trying to explore the concept of changeability and it&amp;rsquo;s use in software engineering&lt;/p&gt;</description>
     </item>
     <item>
       <title>Toolbox</title>
@@ -22,6 +29,13 @@
       <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
       <guid>https://valery.tech/engineering/architecture/toolbox/</guid>
       <description>&lt;h1 id=&#34;laws&#34;&gt;Laws&lt;/h1&gt;&#xA;&lt;p&gt;Things that seemed universally true about software architecture. These three laws seem pretty universal and inform many important perspectives for working software architects.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Yagni</title>
+      <link>https://valery.tech/engineering/architecture/yagni/</link>
+      <pubDate>Sat, 22 Feb 2025 09:02:28 +0000</pubDate>
+      <guid>https://valery.tech/engineering/architecture/yagni/</guid>
+      <description>&lt;p&gt;description&lt;/p&gt;&#xA;&lt;p&gt;definitions&lt;/p&gt;&#xA;&lt;p&gt;usage&lt;/p&gt;&#xA;&lt;p&gt;for his ability to spot opportunities to apply yagni&lt;/p&gt;&#xA;&lt;h1 id=&#34;context--discourse&#34;&gt;Context / Discourse&lt;/h1&gt;&#xA;&lt;p&gt;relation with minimalism&#xA;relation with other concepts&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
