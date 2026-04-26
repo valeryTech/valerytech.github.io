@@ -54,11 +54,11 @@
 
 ## layouts
 [[mounts]]
-  source = "node_modules/@thulite/core/layouts"
+  source = "node_modules/@thulite/doks-core/layouts"
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/@thulite/seo/layouts"
+  source = "node_modules/@thulite/inline-svg/layouts"
   target = "layouts"
 
 [[mounts]]
@@ -66,11 +66,11 @@
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/@thulite/doks-core/layouts"
+  source = "node_modules/@thulite/seo/layouts"
   target = "layouts"
 
 [[mounts]]
-  source = "node_modules/@thulite/inline-svg/layouts"
+  source = "node_modules/@thulite/core/layouts"
   target = "layouts"
 
 [[mounts]]
