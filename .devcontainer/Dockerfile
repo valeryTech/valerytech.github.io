@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm
+FROM mcr.microsoft.com/devcontainers/javascript-node:1-bookworm
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -13,6 +13,7 @@ ARG TARGETARCH
 RUN npm install --global n && \
     . /tmp/versions.env && \
     n "${NODE_VERSION}" && \
+    npm install --global "npm@${NPM_VERSION}" && \
     case "${TARGETARCH}" in \
       amd64) hugo_arch="linux-amd64" ;; \
       arm64) hugo_arch="linux-arm64" ;; \

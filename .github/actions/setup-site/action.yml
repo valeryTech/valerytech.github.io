@@ -1,5 +1,5 @@
 name: Setup site toolchain
-description: Install pinned Node.js, Hugo, and npm dependencies
+description: Install pinned Node.js, npm, Hugo, and project dependencies
 
 runs:
   using: composite
@@ -9,6 +9,7 @@ runs:
       run: |
         source "$GITHUB_ACTION_PATH/../../../.infra/versions.env"
         echo "NODE_VERSION=$NODE_VERSION" >> "$GITHUB_ENV"
+        echo "NPM_VERSION=$NPM_VERSION" >> "$GITHUB_ENV"
         echo "HUGO_VERSION=$HUGO_VERSION" >> "$GITHUB_ENV"
 
     - name: Setup Node.js
@@ -16,6 +17,10 @@ runs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: npm
+
+    - name: Setup npm
+      shell: bash
+      run: npm install --global "npm@${NPM_VERSION}"
 
     - name: Install Hugo
       shell: bash

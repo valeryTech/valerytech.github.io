@@ -42,12 +42,13 @@ data to `resources/`.
 
 Pinned versions live in `.infra/versions.env`:
 
-- `NODE_VERSION=20.11.0`
-- `HUGO_VERSION=0.144.1`
+- `NODE_VERSION=24.15.0`
+- `NPM_VERSION=11.13.0`
+- `HUGO_VERSION=0.160.1`
 
 That file is the source of truth for both local containers and GitHub Actions, so
-the local preview/build path and the production deploy path run on the same Hugo
-and Node versions.
+the local preview/build path and the production deploy path run on the same Hugo,
+Node, and npm versions.
 
 ### Local runtime
 
@@ -63,9 +64,9 @@ of the supported workflow.
 The dev command sets `--baseURL=http://localhost:1313/`, so local preview
 renders internal links against localhost instead of the production domain.
 
-`.devcontainer/Dockerfile` installs the pinned Node and Hugo versions into the
-image. `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
-hashes `package-lock.json`, runs `npm ci` when dependencies are missing or stale,
+`.devcontainer/Dockerfile` installs the pinned Node, npm, and Hugo versions into
+the image. `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs:
+it hashes `package-lock.json`, runs `npm ci` when dependencies are missing or stale,
 then starts the requested command.
 
 The normal local preview path is:
@@ -98,8 +99,8 @@ Production hosting is GitHub Pages. Deployments run from GitHub Actions on pushe
 to `master`.
 
 - `.github/actions/setup-site/action.yml` loads `.infra/versions.env`
-- the action installs the pinned Node version, installs the pinned Hugo binary, and
-  runs `npm ci`
+- the action installs the pinned Node version, upgrades npm to the pinned npm
+  version, installs the pinned Hugo binary, and runs `npm ci`
 - `.github/workflows/ci.yml` validates the build on non-`master` pushes and pull
   requests via `scripts/build-site.sh --host`
 - `.github/workflows/deploy.yml` uses the same build wrapper before uploading
@@ -110,6 +111,9 @@ Netlify is no longer part of the supported deployment path.
 The important contract is that local production builds and CI production builds
 resolve through the same repo-owned build wrapper, while local preview remains a
 separate Hugo server path.
+
+The repo is npm-only. `package.json` declares the supported package manager, and
+pnpm-specific config is not part of the supported workflow.
 
 ### Build artifacts
 

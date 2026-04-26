@@ -4,6 +4,7 @@
   "description": "AI Engineering and System Design Knowledge Base",
   "author": "Valery Judah",
   "license": "MIT",
+  "packageManager": "npm@11.13.0",
   "scripts": {
     "create": "hugo new",
     "dev": "hugo server --disableFastRender --noHTTPCache --baseURL=http://localhost:1313/",
@@ -12,18 +13,21 @@
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
-    "@thulite/doks-core": "^1.8.0",
-    "@thulite/images": "^3.3.0",
-    "@thulite/inline-svg": "^1.1.0",
-    "@thulite/seo": "^2.4.1",
+    "@thulite/doks-core": "^1.9.3",
+    "@thulite/images": "^3.3.4",
+    "@thulite/inline-svg": "^1.2.2",
+    "@thulite/seo": "^2.4.3",
     "@tabler/icons": "^3.12.0",
-    "thulite": "^2.5.0"
+    "thulite": "^2.6.5"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "autoprefixer": "^10.5.0",
     "prettier": "^3.3.3",
+    "purgecss-whitelister": "^2.4.0",
     "vite": "^5.4.2"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">=24.15.0"
   }
 }
