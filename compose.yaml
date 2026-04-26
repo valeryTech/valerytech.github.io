@@ -1,0 +1,17 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    command: ["npm", "run", "dev", "--", "--bind=0.0.0.0"]
+    entrypoint: ["/usr/local/bin/dev-entrypoint"]
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/workspace
+      - valerytech-node-modules:/workspace/node_modules
+    working_dir: /workspace
+
+volumes:
+  valerytech-node-modules:
+    name: valerytech-node-modules

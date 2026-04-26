@@ -1,5 +1,15 @@
 {
+  "name": "valery-tech",
   "build": {
+    "context": "..",
     "dockerfile": "./Dockerfile"
-  }
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "mounts": [
+    "source=valerytech-node-modules,target=/workspace/node_modules,type=volume"
+  ],
+  "forwardPorts": [1313],
+  "postCreateCommand": "/usr/local/bin/dev-entrypoint true",
+  "postStartCommand": "/usr/local/bin/dev-entrypoint true"
 }

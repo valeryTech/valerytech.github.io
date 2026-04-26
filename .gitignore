@@ -128,3 +128,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Local infra and generated site output
+.DS_Store
+.docker-tmp/
+.hugo_build.lock
+public/
+resources/

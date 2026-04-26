@@ -1,0 +1,41 @@
+name: Setup site toolchain
+description: Install pinned Node.js, Hugo, and npm dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Load pinned versions
+      shell: bash
+      run: |
+        source "$GITHUB_ACTION_PATH/../../../.infra/versions.env"
+        echo "NODE_VERSION=$NODE_VERSION" >> "$GITHUB_ENV"
+        echo "HUGO_VERSION=$HUGO_VERSION" >> "$GITHUB_ENV"
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: npm
+
+    - name: Install Hugo
+      shell: bash
+      run: |
+        set -euo pipefail
+        case "$(uname -m)" in
+          x86_64) hugo_arch="linux-amd64" ;;
+          aarch64|arm64) hugo_arch="linux-arm64" ;;
+          *)
+            echo "Unsupported architecture: $(uname -m)" >&2
+            exit 1
+            ;;
+        esac
+
+        archive="hugo_extended_${HUGO_VERSION}_${hugo_arch}.tar.gz"
+        wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${archive}"
+        tar -xzf "${archive}" hugo
+        sudo install -m 0755 hugo /usr/local/bin/hugo
+        rm -f hugo "${archive}"
+
+    - name: Install npm dependencies
+      shell: bash
+      run: npm ci

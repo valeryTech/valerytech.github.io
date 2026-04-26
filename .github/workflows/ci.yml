@@ -1,0 +1,27 @@
+name: Validate site build
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_ENVIRONMENT: production
+      HUGO_ENV: production
+      TZ: Etc/UTC
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup site toolchain
+        uses: ./.github/actions/setup-site
+
+      - name: Build production website
+        run: npm run build
