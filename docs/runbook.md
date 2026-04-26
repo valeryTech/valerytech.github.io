@@ -1,5 +1,20 @@
 ## Local Runbook
 
+### Source of truth
+
+Edit source files in:
+
+- `content/`
+- `layouts/`
+- `assets/`
+- `config/`
+
+Do not edit generated site output in `public/`.
+
+With `hugo server`, Hugo watches source files for changes, rebuilds the site,
+and refreshes the browser. It does not rewrite your source templates or content
+files.
+
 ### Requirements
 
 - Docker with `docker compose`
@@ -13,6 +28,10 @@ docker compose up site
 ```
 
 The site is served at `http://localhost:1313`.
+
+This is the normal development workflow for editing content and templates. The
+server rebuilds automatically when files in `content/`, `layouts/`, `assets/`,
+`config/`, and other watched Hugo source directories change.
 
 Stop the preview server:
 
@@ -33,6 +52,10 @@ This updates generated output in `public/` and cached generated assets in
 
 Generated output is local-only. `public/` and `resources/` are not meant to be
 committed.
+
+Use this when you want a production-style build or need to inspect generated
+output directly. Do not make manual edits in `public/`; they will be replaced by
+the next build.
 
 ### Verify
 

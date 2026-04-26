@@ -4,7 +4,7 @@ description = "You're welcome to the System Design Knowledge Base"
 images = ["cover.png"]
 
 # mainSections
-mainSections = ["projects", "system-design"]
+mainSections = ["projects", "system-design", "ai-engineering"]
 
 [social]
   twitter = "tecvalery"
@@ -44,7 +44,7 @@ mainSections = ["projects", "system-design"]
   bootstrapJavascript = false # false (default) or true
 
   # Nav
-  sectionNav = ["engineering","projects", "system-design"] # ["docs"] (default) or list of sections (e.g. ["docs", "guides"])
+  sectionNav = ["engineering", "projects", "system-design", "ai-engineering"] # ["docs"] (default) or list of sections (e.g. ["docs", "guides"])
   toTopButton = true # false (default) or true
   breadcrumbTrail = true # false (default) or true
   headlineHash = true # true (default) or false
