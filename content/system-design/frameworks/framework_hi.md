@@ -31,7 +31,7 @@ For example, if you were designing a system like Twitter, you might have the fol
 - Users should be able to post tweets
 - Users should be able to follow other users
 - Users should be able to see tweets from users they follow
-    
+
 A cache meanwhile might have requirements like:
 - Clients should be able to insert items
 - Clients should be able to set expirations
@@ -89,7 +89,7 @@ For our Twitter example, our core entities are rather simple:
 >A couple useful questions to ask yourself to help identify core entities:
 >- Who are the actors in the system? Are they overlapping?
 >- What are the nouns or resources necessary to satisfy the functional requirements?
-    
+
 Aim to choose good names for your entities. While most problems are small enough that you could probably sub in foo and bar for any entity in your system, some interviewers use this as an opportunity to see whether you're any good at one of the [hardest problems in computer science](https://www.martinfowler.com/bliki/TwoHardThings.html).
 
 ## API or System Interface (~5 minutes)
@@ -110,7 +110,7 @@ For Twitter, we would choose REST and would have the following endpoints. Notice
 
 `POST /v1/tweet body: {   "text": string } GET /v1/tweet/:tweetId -> Tweet POST /v1/follow/:userId GET /v1/feed -> Tweet[]`
 
->[!danger] 
+>[!danger]
 >Notice how there is no userId in the POST /v1/tweet endpoint? This is because we will get the id of the user initiating the request from the authentication token in the request header. Putting sensitive information like user ids in the request body is a security risk and a mistake that many candidates make. Don't be one of them!
 
 ## [Optional] Data Flow (~5 minutes)

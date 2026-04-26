@@ -1,13 +1,31 @@
 ## Infrastructure
 
-### Build model
+### Purpose
 
-This site is built by Hugo, with Node/npm providing the frontend dependency layer
-used by the theme and asset pipeline. The command boundary is:
+This document describes the repo's build and execution contract: which command
+layer contributors use, how local preview runs, and how the same build path is
+reused in CI and GitHub Pages deployment.
 
-- `make` for repo and local infrastructure tasks
-- `npm` for app-level Hugo tasks
+### Command model
+
+This site is built by Hugo, with Node/npm providing the frontend dependency
+layer used by the theme and asset pipeline.
+
+The command boundary is:
+
+- `make` for contributor-facing local tasks
+- `npm` for app-level Hugo commands
 - Docker/devcontainer for local execution
+
+The main local entrypoints are:
+
+- `make up`
+- `make down`
+- `make build`
+- `make verify`
+- `make clean`
+- `make format`
+- `make hugo-version`
 
 The app-level entrypoints remain:
 
@@ -31,7 +49,7 @@ That file is the source of truth for both local containers and GitHub Actions, s
 the local preview/build path and the production deploy path run on the same Hugo
 and Node versions.
 
-### Local infrastructure
+### Local runtime
 
 Local work is isolated in Docker. Host-level Hugo or Node installation is not part
 of the supported workflow.
@@ -42,12 +60,28 @@ of the supported workflow.
 - the repo is bind-mounted into `/workspace`
 - `node_modules` lives in the named Docker volume `valerytech-node-modules`
 
+The dev command sets `--baseURL=http://localhost:1313/`, so local preview
+renders internal links against localhost instead of the production domain.
+
 `.devcontainer/Dockerfile` installs the pinned Node and Hugo versions into the
 image. `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
 hashes `package-lock.json`, runs `npm ci` when dependencies are missing or stale,
 then starts the requested command.
 
-Repo-owned scripts hold reusable task logic:
+The normal local preview path is:
+
+1. `make up`
+2. `docker compose up site`
+3. `npm run dev`
+4. `hugo server ... --baseURL=http://localhost:1313/`
+
+That gives a live local server at `http://localhost:1313` with Hugo file
+watching enabled for mounted source files.
+
+### Repo task scripts
+
+Repo-owned scripts hold reusable task logic instead of embedding longer logic in
+the `Makefile` or CI workflows:
 
 - `scripts/build-site.sh` is the shared production build wrapper
 - `scripts/verify-site.sh` builds the site, starts preview if needed, and checks
@@ -73,7 +107,14 @@ to `master`.
 
 Netlify is no longer part of the supported deployment path.
 
+The important contract is that local production builds and CI production builds
+resolve through the same repo-owned build wrapper, while local preview remains a
+separate Hugo server path.
+
 ### Build artifacts
 
 `public/` and `resources/` are generated artifacts. They are disposable outputs,
 not authoring locations, and should not be tracked in git.
+
+Other disposable local artifacts include `hugo_stats.json` and
+`.hugo_build.lock`.

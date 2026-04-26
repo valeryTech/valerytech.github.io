@@ -1,6 +1,77 @@
 ## Local Runbook
 
-### Source of truth
+### Purpose
+
+Use this document for day-to-day local workflows: preview, build, verify, stop,
+and clean the site.
+
+### Before you start
+
+- Docker with `docker compose`
+- `make`
+
+Host-level Hugo or Node installs are not part of the supported workflow.
+
+### Common workflows
+
+Start the local preview server:
+
+```bash
+make up
+```
+
+Use this while editing content, templates, or assets. The site is served at
+`http://localhost:1313` and Hugo rebuilds automatically when watched source
+files change. The local preview is configured with a localhost base URL, so
+internal links stay on the local server instead of jumping to production.
+
+Build the site in production mode:
+
+```bash
+make build
+```
+
+Use this to generate fresh output in `public/` and `resources/`.
+
+Verify the local build and a few core routes:
+
+```bash
+make verify
+```
+
+Use this when you want a quick confidence check that the site builds and serves
+correctly.
+
+Stop the local preview server:
+
+```bash
+make down
+```
+
+Use this to shut down the local preview stack when you are done.
+
+Remove generated local artifacts:
+
+```bash
+make clean
+```
+
+Use this to clear disposable outputs such as `public/`, `resources/`, and other
+generated local files.
+
+Run the formatter in Docker:
+
+```bash
+make format
+```
+
+Print the Hugo version from the local container:
+
+```bash
+make hugo-version
+```
+
+### What to edit
 
 Edit source files in:
 
@@ -9,92 +80,13 @@ Edit source files in:
 - `assets/`
 - `config/`
 
-Do not edit generated site output in `public/`.
+Do not edit generated output in `public/` or `resources/`.
 
-With `hugo server`, Hugo watches source files for changes, rebuilds the site,
-and refreshes the browser. It does not rewrite your source templates or content
-files.
+For content structure, section layout, and where Markdown should live, see
+[docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md).
 
-### Requirements
+### Related docs
 
-- Docker with `docker compose`
-- `make`
-
-### Preview
-
-Start the local Hugo server:
-
-```bash
-make up
-```
-
-The site is served at `http://localhost:1313`.
-
-This is the normal development workflow for editing content and templates. The
-server rebuilds automatically when files in `content/`, `layouts/`, `assets/`,
-`config/`, and other watched Hugo source directories change.
-
-Underlying command: `docker compose up site`
-
-Stop the preview server:
-
-```bash
-make down
-```
-
-### Build
-
-Generate the site in the container:
-
-```bash
-make build
-```
-
-This updates generated output in `public/` and cached generated assets in
-`resources/`.
-
-Generated output is local-only. `public/` and `resources/` are not meant to be
-committed.
-
-Use this when you want a production-style build or need to inspect generated
-output directly. Do not make manual edits in `public/`; they will be replaced by
-the next build.
-
-Underlying command: `docker compose run --rm site bash scripts/build-site.sh --inside`
-
-### Verify
-
-Check the local preview and a few core routes:
-
-```bash
-make verify
-```
-
-Print the Hugo version inside the container:
-
-```bash
-make hugo-version
-```
-
-Remove generated outputs:
-
-```bash
-make clean
-```
-
-Run Prettier in the container:
-
-```bash
-make format
-```
-
-### Devcontainer
-
-The repo includes a devcontainer that uses the same Hugo and Node toolchain as the
-Docker workflow. Open the folder in the devcontainer and dependencies will be
-installed into a Docker volume instead of the host filesystem.
-
-### Deploy
-
-Production deploys run through GitHub Actions to GitHub Pages when `master` is
-updated.
+- [README.md](/Users/val/projects/website/valerytech.github.io/README.md) for the shortest local quickstart
+- [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for toolchain, Docker, CI, and deployment details
+- [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement rules

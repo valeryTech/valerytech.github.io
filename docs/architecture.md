@@ -39,6 +39,7 @@ publishable material should be placed here directly.
 
 The content tree is organized by section. Current top-level sections include:
 
+- `content/ai-engineering/`
 - `content/system-design/`
 - `content/engineering/`
 - `content/projects/`
@@ -51,6 +52,8 @@ section folders. For example:
 
 - `content/system-design/_index.md` renders the section landing page
 - `content/system-design/topics/api.md` renders `/system-design/topics/api/`
+- `content/ai-engineering/evaluation/harness-and-platform.md` renders
+  `/ai-engineering/evaluation/harness-and-platform/`
 
 If material is unfinished, keep it in a local in-repo holding area rather than
 outside the site source. The current pattern is a subfolder such as
@@ -73,14 +76,22 @@ the UI.
 
 ## Build Flow
 
-Local commands are defined in `package.json`:
+This document only describes the source-side architecture. For local workflow
+commands, use [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md).
+For build/runtime/deploy mechanics, use
+[docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md).
 
-- `npm run dev` starts the Hugo dev server
-- `npm run build` runs the production Hugo build
+At a high level:
 
-During the build, Hugo reads from `content/`, `layouts/`, `assets/`, and
-`static/`, then writes the generated site to `public/` and processed artifacts
-to `resources/`.
+- authored content and config live in `content/`, `config/`, `layouts/`,
+  `assets/`, and `static/`
+- Hugo reads those source folders to build the site
+- generated output is written to `public/`
+- generated asset/cache artifacts are written to `resources/`
+
+For local preview, the repo uses a localhost dev base URL so internal links stay
+on the local server rather than jumping to the production domain. That is an
+execution detail, not a content-architecture rule.
 
 ## Practical Rule
 
@@ -94,3 +105,8 @@ When adding or restructuring knowledge-base content:
 One config file still points to `content/en`, but the actual authored content in
 this repo currently lives under `content/`. Treat `content/` as the source of
 truth.
+
+## Related Docs
+
+- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) covers day-to-day local commands
+- [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) covers Docker, toolchain, CI, and deployment
