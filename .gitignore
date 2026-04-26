@@ -52,6 +52,7 @@ web_modules/
 .npm
 .venv
 .migration/
+.tools/
 
 # Python artifacts
 __pycache__/
