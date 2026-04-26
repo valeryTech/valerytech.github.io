@@ -133,5 +133,6 @@ dist
 .DS_Store
 .docker-tmp/
 .hugo_build.lock
+hugo_stats.json
 public/
 resources/

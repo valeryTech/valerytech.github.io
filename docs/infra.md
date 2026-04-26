@@ -1,33 +1,63 @@
 ## Infrastructure
 
-### Deployment model
+### Build model
 
-- Production hosting is GitHub Pages.
-- Deployments run from GitHub Actions on pushes to `master`.
-- Netlify is no longer part of the supported deployment path.
+This site is built by Hugo, with Node/npm providing the frontend dependency layer
+used by the theme and asset pipeline. The app-level entrypoints are:
 
-### Toolchain source of truth
+- `npm run dev` for local preview
+- `npm run build` for a production build
 
-Pinned versions live in `.infra/versions.env`.
+The main authored inputs are `content/`, `layouts/`, `assets/`, `static/`, and
+`config/`. Hugo writes the generated site to `public/` and generated asset/cache
+data to `resources/`.
 
-- `NODE_VERSION` is used by GitHub Actions and the local container image.
-- `HUGO_VERSION` is used by GitHub Actions and the local container image.
+### Shared toolchain
 
-This keeps local builds and Pages deploys on the same toolchain.
+Pinned versions live in `.infra/versions.env`:
 
-### Local execution
+- `NODE_VERSION=20.11.0`
+- `HUGO_VERSION=0.144.1`
 
-Local work is isolated through Docker:
+That file is the source of truth for both local containers and GitHub Actions, so
+the local preview/build path and the production deploy path run on the same Hugo
+and Node versions.
 
-- `compose.yaml` runs the Hugo dev server
-- the devcontainer uses the same Dockerfile and dependency bootstrap logic
-- `.devcontainer/dev-entrypoint.sh` keeps `node_modules` in sync with
-  `package-lock.json`
+### Local infrastructure
+
+Local work is isolated in Docker. Host-level Hugo or Node installation is not part
+of the supported workflow.
+
+- `compose.yaml` builds the image from `.devcontainer/Dockerfile`
+- the `site` service runs `npm run dev -- --bind=0.0.0.0`
+- the repo is bind-mounted into `/workspace`
+- `node_modules` lives in the named Docker volume `valerytech-node-modules`
+
+`.devcontainer/Dockerfile` installs the pinned Node and Hugo versions into the
+image. `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
+hashes `package-lock.json`, runs `npm ci` when dependencies are missing or stale,
+then starts the requested command.
+
+The devcontainer reuses the same Dockerfile, workspace mount, and bootstrap logic,
+so opening the repo in a devcontainer and running `docker compose` use the same
+runtime contract.
+
+### CI and deployment
+
+Production hosting is GitHub Pages. Deployments run from GitHub Actions on pushes
+to `master`.
+
+- `.github/actions/setup-site/action.yml` loads `.infra/versions.env`
+- the action installs the pinned Node version, installs the pinned Hugo binary, and
+  runs `npm ci`
+- `.github/workflows/deploy.yml` runs `npm run build` with
+  `HUGO_ENVIRONMENT=production` and uploads `public/` to GitHub Pages
+- `.github/workflows/ci.yml` validates the build on non-`master` pushes and pull
+  requests
+
+Netlify is no longer part of the supported deployment path.
 
 ### Build artifacts
 
-- `content/`, `layouts/`, `assets/`, `static/`, and `config/` are source inputs
-- `public/` is generated site output
-- `resources/` is Hugo generated asset/cache output
-
-`public/` and `resources/` are build artifacts and should not be tracked in git.
+`public/` and `resources/` are generated artifacts. They are disposable outputs,
+not authoring locations, and should not be tracked in git.
