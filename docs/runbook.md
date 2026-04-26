@@ -18,13 +18,14 @@ files.
 ### Requirements
 
 - Docker with `docker compose`
+- `make`
 
 ### Preview
 
 Start the local Hugo server:
 
 ```bash
-docker compose up site
+make up
 ```
 
 The site is served at `http://localhost:1313`.
@@ -33,10 +34,12 @@ This is the normal development workflow for editing content and templates. The
 server rebuilds automatically when files in `content/`, `layouts/`, `assets/`,
 `config/`, and other watched Hugo source directories change.
 
+Underlying command: `docker compose up site`
+
 Stop the preview server:
 
 ```bash
-docker compose down
+make down
 ```
 
 ### Build
@@ -44,7 +47,7 @@ docker compose down
 Generate the site in the container:
 
 ```bash
-docker compose run --rm site npm run build
+make build
 ```
 
 This updates generated output in `public/` and cached generated assets in
@@ -57,19 +60,32 @@ Use this when you want a production-style build or need to inspect generated
 output directly. Do not make manual edits in `public/`; they will be replaced by
 the next build.
 
+Underlying command: `docker compose run --rm site bash scripts/build-site.sh --inside`
+
 ### Verify
 
-Check the Hugo version inside the container:
+Check the local preview and a few core routes:
 
 ```bash
-docker compose run --rm site hugo version
+make verify
 ```
 
-If you are running inside another container or do not have direct access to the host
-browser, verify the server from inside the running service:
+Print the Hugo version inside the container:
 
 ```bash
-docker compose exec -T site wget -S --spider http://127.0.0.1:1313/
+make hugo-version
+```
+
+Remove generated outputs:
+
+```bash
+make clean
+```
+
+Run Prettier in the container:
+
+```bash
+make format
 ```
 
 ### Devcontainer

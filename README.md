@@ -4,19 +4,19 @@ Knowledge Base for ML, AI and related topics.
 
 ## Local workflow
 
-This repo uses Docker for local builds and preview so you do not need a system-wide
-Hugo install.
+This repo uses Docker for local builds and preview, with `make` as the primary
+local command surface. You do not need a system-wide Hugo install.
 
 ### Preview
 
 ```bash
-docker compose up site
+make up
 ```
 
 ### Build
 
 ```bash
-docker compose run --rm site npm run build
+make build
 ```
 
 Deployments run through GitHub Actions to GitHub Pages on pushes to `master`.

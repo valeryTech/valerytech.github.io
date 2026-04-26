@@ -33,11 +33,7 @@ jobs:
         uses: ./.github/actions/setup-site
 
       - name: Build production website
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-          TZ: Etc/UTC
-        run: npm run build
+        run: bash scripts/build-site.sh --host
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
