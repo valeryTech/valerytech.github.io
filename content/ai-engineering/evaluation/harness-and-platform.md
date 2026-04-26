@@ -1,19 +1,16 @@
 ---
-contributors: []
-date: '2026-04-26T00:00:00Z'
-description: Evaluation of LLM-based workflows and coding agents.
 draft: false
-lastmod: '2026-04-26T00:00:00Z'
-summary: ''
-title: Evaluation Harness and Platform
 toc: true
-weight: 10
+title: "Harness And Platform"
+linkTitle: "Harness And Platform"
 ---
+
 This page is dedicated to evaluation of LLM-based workflows and coding agents.
 The goal is to make agent behavior observable, repeatable, and comparable across
 prompts, tools, models, and workflow designs.
 
 # Why this matters
+
 
 Without a reliable evaluation loop, changes to prompts, tools, or orchestration
 quickly turn into anecdotal tuning. A harness gives you controlled execution and
@@ -21,6 +18,7 @@ repeatable test cases. A platform lets you compare runs over time, inspect
 failures, and decide whether a change actually improved the system.
 
 # Evaluation Harness
+
 
 The harness is the execution layer for running scenarios in a controlled way.
 
@@ -32,6 +30,7 @@ The harness is the execution layer for running scenarios in a controlled way.
 
 # Evaluation Platform
 
+
 The platform is the analysis and operations layer on top of the harness.
 
 - Organize datasets, scenarios, baselines, and experiment runs.
@@ -41,6 +40,7 @@ The platform is the analysis and operations layer on top of the harness.
 - Connect evaluation results back to workflow or product decisions.
 
 # Coding Agent Focus
+
 
 Coding agents need more than answer quality checks. Evaluation should cover:
 
@@ -53,6 +53,7 @@ Coding agents need more than answer quality checks. Evaluation should cover:
 
 # Initial structure
 
+
 An effective starting point is:
 
 1. A small scenario set with real tasks.
@@ -62,6 +63,7 @@ An effective starting point is:
 5. Versioned prompts, models, and agent settings.
 
 # Next steps
+
 
 Expand this page with:
 

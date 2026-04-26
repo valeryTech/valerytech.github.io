@@ -1,18 +1,19 @@
-## Local Runbook
+# Local Runbook
 
-### Purpose
+## Purpose
 
-Use this document for day-to-day local workflows: preview, build, verify, stop,
-and clean the site.
+Use this document for day-to-day local work on the site: preview, build,
+verify, stop, and reset the local environment.
 
-### Before you start
+## Before You Start
 
 - Docker with `docker compose`
 - `make`
 
-Host-level Hugo or Node installs are not part of the supported workflow.
+Host-level Hugo, Node, npm, or Python package installs are not part of the
+supported workflow.
 
-### Common workflows
+## Common Workflows
 
 Start the local preview server:
 
@@ -20,10 +21,9 @@ Start the local preview server:
 make up
 ```
 
-Use this while editing content, templates, or assets. The site is served at
-`http://localhost:1313` and Hugo rebuilds automatically when watched source
-files change. The local preview is configured with a localhost base URL, so
-internal links stay on the local server instead of jumping to production.
+Use this while editing content, templates, config, or assets. The site is
+served at `http://localhost:1313`, Hugo rebuilds watched files automatically,
+and local links stay on localhost instead of jumping to production.
 
 Build the site in production mode:
 
@@ -31,47 +31,43 @@ Build the site in production mode:
 make build
 ```
 
-Use this to generate fresh output in `public/` and `resources/`.
+Use this to regenerate `public/` and `resources/` the same way CI and GitHub
+Pages do.
 
-Verify the local build and a few core routes:
+Run a quick local confidence check:
 
 ```bash
 make verify
 ```
 
-Use this when you want a quick confidence check that the site builds and serves
-correctly.
+Use this when you want a production-style build plus a few route checks.
 
-Stop the local preview server:
+Stop the local preview stack:
 
 ```bash
 make down
 ```
 
-Use this to shut down the local preview stack when you are done.
+Use this when you are done or when the preview server gets into a bad reload
+state.
 
-Remove generated local artifacts:
+Remove disposable generated artifacts:
 
 ```bash
 make clean
 ```
 
-Use this to clear disposable outputs such as `public/`, `resources/`, and other
-generated local files.
+Use this before a clean rebuild or after migration if the local preview still
+shows stale output.
 
-Run the formatter in Docker:
+Optional utility commands:
 
 ```bash
 make format
-```
-
-Print the Hugo version from the local container:
-
-```bash
 make hugo-version
 ```
 
-### What to edit
+## What To Edit
 
 Edit source files in:
 
@@ -82,11 +78,42 @@ Edit source files in:
 
 Do not edit generated output in `public/` or `resources/`.
 
-For content structure, section layout, and where Markdown should live, see
+Some `content/` subtrees are migration-managed. For those sections, edit the
+external notes source instead of the generated files in `content/`. The
+migration workflow is documented in
+[docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
+
+For repo structure, section ownership, and content placement rules, see
 [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md).
 
-### Related docs
+## Troubleshooting
 
-- [README.md](/Users/val/projects/website/valerytech.github.io/README.md) for the shortest local quickstart
-- [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for toolchain, Docker, CI, and deployment details
-- [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement rules
+Local edits do not show up:
+
+- confirm you are looking at `http://localhost:1313`
+- refresh the exact page you changed
+- if needed, restart preview with `make down` and `make up`
+
+Local preview still shows deleted or old pages after migration:
+
+- run `make clean`
+- rerun migration if needed
+- start preview again with `make up`
+
+Links jump from localhost to `valery.tech`:
+
+- this usually means you are looking at stale output or a stale browser view
+- rebuild or restart preview before debugging templates
+
+Migration-managed content looks wrong locally:
+
+- check the external notes source, not just the generated `content/` file
+- use the migration workflow in
+  [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md)
+
+## Related Docs
+
+- [README.md](/Users/val/projects/website/valerytech.github.io/README.md) for the shortest quickstart
+- [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) for the external-notes workflow
+- [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for toolchain, Docker, CI, and deployment
+- [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement

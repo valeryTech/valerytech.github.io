@@ -50,6 +50,19 @@ web_modules/
 
 # Optional npm cache directory
 .npm
+.venv
+.migration/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
 
 # Optional eslint cache
 .eslintcache
@@ -136,3 +149,4 @@ dist
 hugo_stats.json
 public/
 resources/
+content-old/

@@ -1,16 +1,11 @@
 ---
-contributors: []
-date: '2025-02-22T09:02:28.392283'
-description: Default Description
 draft: false
-lastmod: '2025-02-22T09:02:28.392283'
-summary: ''
-title: Trade Off Db
 toc: true
-weight: 810
+title: "Trade Off Db"
+linkTitle: "Trade Off Db"
 ---
-
 # relational-vs-nosql
+
 
 Don't oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you're being unrealistic, you probably won't change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you're too fixated on being right, you'll miss the opportunity.
 
@@ -38,14 +33,17 @@ If you ask us, we'd probably go for NoSQL and justify it as: (1) It doesn't look
 
 #### Examples
 
-##### 1. Design a banking system
+# 1. Design a banking system
+
 
 This is a textbook example of strong consistency. Transactions in a banking system need ACID guarantees. As such, we are probably better off picking a relational database that can give us this strong consistency.
 
-##### 2. Design a system to help doctors diagnose potential illnesses given symptoms
+# 2. Design a system to help doctors diagnose potential illnesses given symptoms
+
 
 Let's say this is mainly a querying system. Doctors enter a list of symptoms and get back potential illnesses and treatments. The data we will be storing is unstructured in nature, and it will likely be an ever increasing database as we add more illnesses, symptoms, and diagnoses. In this example, it might be wise to pick a non-relational database where we can store large volumes of unstructured data, scale horizontally, and be fine with just eventual consistency.
 
-##### 3. Design Amazon
+# 3. Design Amazon
+
 
 Amazon is a good example of a system where we might want to use both of these. We'd want to have consistency for product transactions, while being flexible about the data in our product catalog. It wouldn't be crazy to suggest using a relational database to keep track of purchases and stock, while using a non-relational database for the product catalog.

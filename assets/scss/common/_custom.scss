@@ -1,1 +1,62 @@
-// Put your custom SCSS code here
+.selected-readings-stack .card-nav {
+  margin: 0 !important;
+}
+
+.selected-readings-stack .card-nav + .card-nav {
+  margin-top: 0.375rem !important;
+}
+
+.selected-readings-stack .card {
+  margin: 0 !important;
+}
+
+.selected-readings-stack .card-body {
+  padding: 1rem 1.25rem !important;
+}
+
+.selected-readings-stack .card-text:last-child {
+  margin-bottom: 0;
+}
+
+.homepage-sections {
+  margin-top: 1.25rem;
+}
+
+.homepage-sections .card-nav {
+  margin: 0 !important;
+}
+
+.homepage-sections .card-nav + .card-nav {
+  margin-top: 0.75rem !important;
+}
+
+.homepage-sections .card {
+  margin: 0 !important;
+  border-color: var(--bs-border-color);
+  background-color: var(--bs-tertiary-bg);
+  box-shadow: none;
+}
+
+.homepage-sections .card-body {
+  padding: 1.125rem 1.25rem !important;
+  align-items: flex-start;
+}
+
+.homepage-sections .card-title {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.homepage-sections .card-text {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0;
+  color: var(--bs-secondary-color);
+  max-width: 32rem;
+}
+
+.homepage-sections .icon-tabler-arrow-right {
+  opacity: 0.7;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.1rem;
+}

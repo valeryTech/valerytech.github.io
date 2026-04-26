@@ -1,11 +1,15 @@
 ---
-contributors: []
-date: '2026-04-26T00:00:00Z'
-description: Notes on building, operating, and evaluating LLM-based systems.
 draft: false
-lastmod: '2026-04-26T00:00:00Z'
-summary: ''
-title: AI Engineering
 toc: true
-weight: 820
+title: "AI Engineering"
+aliases:
+  - "/ai-engineering/about/"
+linkTitle: "AI Engineering"
 ---
+
+This section is for practical AI engineering work: building LLM-based workflows,
+reasoning about agent behavior, and making these systems measurable enough to
+improve them with intent rather than guesswork.
+
+Start with [Evaluation Harness and Platform]({{< ref "ai-engineering/evaluation/harness-and-platform" >}})
+for a dedicated page on evaluating LLM-based workflows and coding agents.

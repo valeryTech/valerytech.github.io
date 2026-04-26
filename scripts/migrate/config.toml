@@ -1,0 +1,50 @@
+[defaults]
+include = ["**/*.md", "*.md"]
+exclude = [
+  "**/.obsidian/**",
+  "**/.DS_Store",
+  "**/templates/**",
+]
+synthesize_section_indexes = true
+attachment_mode = "referenced-only"
+
+[defaults.frontmatter]
+draft = false
+toc = true
+
+[[imports]]
+name = "system-design"
+source_root_kind = "external"
+source_subtree = "system-design"
+target_subtree = "system-design"
+include = ["**/*.md", "*.md"]
+
+[[imports]]
+name = "engineering"
+source_root_kind = "external"
+source_subtree = "engineering"
+target_subtree = "engineering"
+include = ["**/*.md", "*.md"]
+
+[[imports]]
+name = "ai-engineering"
+source_root_kind = "external"
+source_subtree = "ai-engineering"
+target_subtree = "ai-engineering"
+include = ["**/*.md", "*.md"]
+root_index_source = "_index.md"
+
+[[imports]]
+name = "projects"
+source_root_kind = "external"
+source_subtree = "projects"
+target_subtree = "projects"
+include = ["**/*.md", "*.md"]
+
+[[imports]]
+name = "migration-smoke"
+source_root_kind = "repo"
+source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"
+target_subtree = "system-design/integrated-test-pages"
+include = ["migration-smoke.md"]
+synthesize_section_indexes = false

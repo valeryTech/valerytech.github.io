@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help up down build verify clean format hugo-version
+.PHONY: help up down build verify clean format hugo-version migrate migrate-check
 
 help: ## Show available targets
 	@echo "Usage: make <target>"
@@ -27,3 +27,9 @@ format: ## Run Prettier in Docker
 
 hugo-version: ## Print the Hugo version from Docker
 	@docker compose run --rm site hugo version
+
+migrate: ## Regenerate managed content from external notes
+	@bash scripts/migrate-site.sh sync
+
+migrate-check: ## Validate migration mappings and stage output
+	@bash scripts/migrate-site.sh check

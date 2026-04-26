@@ -67,9 +67,14 @@ skipped. To override this behavior, set $skipHome to false below.
   {{- $currentPage := .currentPage }}
   {{- $node := .node }}
 
-  {{- $linkContent := $node.Page.LinkTitle }}
-  {{- with $node.Name }}
-    {{- $linkContent = . }}
+  {{- $linkContent := "" }}
+  {{- with $node.Page }}
+    {{- $linkContent = .LinkTitle }}
+  {{- end }}
+  {{- if not $linkContent }}
+    {{- with $node.Name }}
+      {{- $linkContent = . }}
+    {{- end }}
   {{- end }}
 
   {{- $ariaCurrent := "" }}

@@ -1,26 +1,24 @@
 ---
-contributors: []
-date: '2025-02-22T09:02:28.392283'
-description: Default Description
 draft: false
-lastmod: '2025-02-22T09:02:28.392283'
-summary: ''
-title: Architecture
 toc: true
-weight: 810
+title: "Architecture"
+linkTitle: "Architecture"
 ---
-
 [Draft]
 
 Why you need to understand what is Software Architecture and how to use it concepts?
 
 **TL;DR:** This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture.
 
+<https://handbook.gitlab.com/handbook/engineering/architecture/>
+
 # Definition
+
 
 definitions list and it's analysis
 
 # Ontology
+
 
 key components, terminology
 
@@ -30,19 +28,30 @@ basic concepts
 
 # Practicality Lens
 
+
 Different authors ans scholars highlight numerous diverse concepts for building software systems. There is a wide range of concept types: (best) practices, approaches, methods, laws, principles, theories, heuristics, and more.
 
 However, what matters most to me is the ability to adapt and employ this variety as a **practical toolbox** for creating effective systems.
-
 > Looking ahead, my key focus will be to develop a **holistic set** of tools, clearly structured and integrated, for practical use in software architecture and design.
-
 A key challenge in this pursuit is that principles can sometimes conflict and contradict each other. The real question is not just which principles to follow but *how to balance and apply them effectively* to the problem at hand.
+
+# Underlying Common Concepts
+
+
+complexity, simplicity
+
+driving forces
 
 # Toolbox
 
-One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Laws]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
+
+One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Toolbox]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
+
+common principles
 
 engineering principles, like
+
+acronyms sets, like KISS, YAGNI, SOLID
 
 .. (insert other tools here) ..
 
@@ -50,9 +59,11 @@ Concepts such as the definition of software architecture or architectural charac
 
 # Architectural Characteristics
 
+
 list of characteristics, applicability, mapping to the parts of the system, definitions, how to specify them
 
 # Decisions
+
 
 paper "Decision-Making Techniques for Software Architecture Design: A Comparative Survey"
 
@@ -67,7 +78,9 @@ decisions withing a more broad context of businness discource
 <https://www.reddit.com/r/softwarearchitecture/comments/1ad40ia/how_can_i_become_better_in_architectural_decision/>
 
 <https://en.wikipedia.org/wiki/Architectural_decision>
+
 <https://adr.github.io/>
+
 <https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file>
 
 ## ADRs
@@ -76,7 +89,9 @@ decisions withing a more broad context of businness discource
 
 # Personalies
 
+
 Ralph Johnson, Martin Fowler
+
 Neal Ford, Mark Richards
 
 Barry O'reilly and residual theory
@@ -85,15 +100,23 @@ Barry O'reilly and residual theory
 
 # Sources
 
+
 <https://martinfowler.com/architecture/>
+
 <https://www.youtube.com/watch?v=DngAZyWMGR0>
+
 <https://www.youtube.com/watch?v=u_LnubpBDCA>
+
 <https://www.youtube.com/watch?v=lurbDAEU0KM>
+
 <https://www.youtube.com/watch?v=0TwoubGSXpc>
+
 <https://www.youtube.com/watch?v=CjCJ76oZXTE>
+
 <https://www.youtube.com/watch?v=MZnrxjw602E>
 
 <https://www.youtube.com/watch?v=LcJKxPXYudE>
+
 war stories, reflections
 
 <https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
@@ -103,9 +126,11 @@ war stories, reflections
 <https://www.youtube.com/watch?v=bmSAYlu0NcY>
 
 interesting
+
 "What Software Architects Do That Programmers DON'T" <https://www.youtube.com/watch?v=IwrvE-wHm84>
 
 Barry
+
 <https://www.youtube.com/watch?v=H8ZOp8ayluU>
 
 <https://www.youtube.com/watch?v=36I_eW8K1EY> interesting advices and reflections
@@ -129,8 +154,11 @@ Barry
 <https://www.cloudwaydigital.com/>
 
 <https://www.youtube.com/watch?v=_CXPDDRn6to> agility and architecture
+
 <https://www.youtube.com/watch?v=CXCkDKM0OX0> hopre and farley
+
 <https://www.youtube.com/watch?v=aCiejroMUmc>
+
 paper "Agility and Architecture" by Babel
 
 <https://levelup.gitconnected.com/from-software-developer-to-software-architect-roadmap-to-success-695951521d9b>
@@ -142,9 +170,11 @@ paper "Agility and Architecture" by Babel
 <https://www.thoughtworks.com/insights/topic/architecture>
 
 "Good Enough Architecture"
+
 <https://www.youtube.com/watch?v=RtRpL3Ndi0c>
 
 katas, practice
+
 <https://fundamentalsofsoftwarearchitecture.com/katas/list.html>
 
 <https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
@@ -152,11 +182,13 @@ katas, practice
 <https://martinfowler.com/architecture/>
 
 <https://roadmap.sh/software-design-architecture>
+
 <https://roadmap.sh/software-architect>
 
 <https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/>
 
 # Common dev practices
+
 
 <https://www.youtube.com/@HealthyDev/videos>
 
@@ -165,6 +197,7 @@ katas, practice
 <https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/>
 
 other
+
 <https://awesome-architecture.com/>
 
 Simon Brown videos
@@ -175,10 +208,29 @@ Simon Brown videos
 <https://learn.microsoft.com/en-us/azure/architecture/patterns/>
 
 Vsevolodovich (?)
+
 <https://www.youtube.com/@architectureweekly/videos>
+
 also it has some system design interviews
+
 and blog <https://blog.vvsevolodovich.dev/>
 
 book "Cloud Native Spring in Action" contains in its first chapters good material about cloud native and what does it mean
 
 <https://www.thoughtworks.com/insights/blog/architecture/software-architecture-decisions-andrew-harmel-law>
+
+to sort
+
+[Evidence in software architecture, a systematic literature review](https://dl.acm.org/doi/abs/10.1145/2460999.2461014)
+
+architecture
+
+<https://www.infoq.com/articles/architecture-experimentation/>
+
+<https://www.industrialempathy.com/posts/design-docs-at-google/>
+
+other resources to read:
+
+<http://onsites.fyi/blog/article/apple-ict2-software-engineer-interview-questions>
+
+<https://interviewing.io/blog/technical-interview-performance-is-kind-of-arbitrary-heres-the-data>

@@ -6,8 +6,8 @@ actual content, local template overrides, and project-specific assets.
 
 ## Main Parts
 
-- `content/` is the source of published pages. This is where the main Markdown
-  content lives now.
+- `content/` is the source of published pages for Hugo, but some subtrees are
+  generated from external notes by the migration pipeline.
 - `config/` defines Hugo behavior such as menus, params, permalinks, and module
   mounts.
 - `layouts/` contains local template and partial overrides layered on top of
@@ -33,9 +33,23 @@ If it looks project-specific, check these local folders.
 
 ## Content Structure
 
-All primary Markdown content should live inside this repo under `content/`.
-There is no external `notes` folder in the current Hugo setup, and new
-publishable material should be placed here directly.
+This repo now supports two content-authoring paths:
+
+- direct in-repo Markdown under `content/`
+- external notes imported into managed `content/` targets by the migration
+  pipeline
+
+The committed migration manifest in `scripts/migrate/config.toml` decides which
+sections are regenerated from external notes.
+
+The migration regression surface is intentionally split:
+
+- the external notes tree keeps `integrated-test-pages/callouts.md` for manual
+  copy/reference
+- other migration regression cases live in repo-owned tests instead of the
+  notes tree
+- one repo-owned smoke page is imported into
+  `content/system-design/integrated-test-pages/` for quick manual verification
 
 The content tree is organized by section. Current top-level sections include:
 
@@ -45,7 +59,6 @@ The content tree is organized by section. Current top-level sections include:
 - `content/projects/`
 - `content/blog/`
 - `content/topics/`
-- `content/english/`
 
 Section landing pages use `_index.md`. Regular pages use `.md` files inside the
 section folders. For example:
@@ -55,9 +68,9 @@ section folders. For example:
 - `content/ai-engineering/evaluation/harness-and-platform.md` renders
   `/ai-engineering/evaluation/harness-and-platform/`
 
-If material is unfinished, keep it in a local in-repo holding area rather than
-outside the site source. The current pattern is a subfolder such as
-`content/system-design/to_sort/`.
+If material is unfinished, it can live either in a local in-repo holding area
+such as `content/system-design/to_sort/` or upstream in the external notes tree
+before migration.
 
 ## Navigation And Routing
 
@@ -97,16 +110,19 @@ execution detail, not a content-architecture rule.
 
 When adding or restructuring knowledge-base content:
 
-- put publishable Markdown in `content/`
+- decide first whether the target section is direct-authored or migration-managed
+- put direct-authored publishable Markdown in `content/`
+- put migration-managed source material in the external notes tree and rerun the migration
 - group files by subject area inside the repo
 - use `_index.md` for section pages
 - keep generated files out of `content/`
 
-One config file still points to `content/en`, but the actual authored content in
-this repo currently lives under `content/`. Treat `content/` as the source of
-truth.
+`content/` remains Hugo's immediate build input, but it is no longer always the
+canonical authoring location for every section.
 
 ## Related Docs
 
 - [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) covers day-to-day local commands
+- [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) covers the external-notes import workflow
 - [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) covers Docker, toolchain, CI, and deployment
+- [docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md) covers migrated callout syntax, mapping, and verification

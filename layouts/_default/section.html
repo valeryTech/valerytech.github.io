@@ -1,0 +1,49 @@
+{{ define "main" }}
+  {{ $root := .FirstSection }}
+  {{ $childSections := .Sections.ByTitle }}
+  {{ $childPages := .RegularPages.ByTitle }}
+  <div class="row flex-xl-nowrap">
+    <div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+      {{ with $root.Sections }}
+        {{ partial "sidebar/render-section-menu.html" (dict "currentPage" $ "nodes" .) }}
+      {{ end }}
+    </div>
+    <main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
+      {{ if not .IsHome }}
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            {{ if ne .RelPermalink $root.RelPermalink }}
+              <li class="breadcrumb-item"><a href="{{ $root.RelPermalink }}">{{ $root.LinkTitle }}</a></li>
+            {{ end }}
+            <li class="breadcrumb-item active" aria-current="page">{{ .LinkTitle }}</li>
+          </ol>
+        </nav>
+      {{ end }}
+      <div class="page-header d-flex flex-row justify-content-between align-items-start">
+        <div>
+          <h1>{{ .Title }}</h1>
+        </div>
+      </div>
+      {{ .Content }}
+      {{ if or $childSections $childPages }}
+        <div class="card-list mt-4">
+          {{ range $childSections }}
+            <div class="card my-3">
+              <div class="card-body">
+                <a class="stretched-link" href="{{ .RelPermalink }}">{{ .LinkTitle }} &rarr;</a>
+              </div>
+            </div>
+          {{ end }}
+          {{ range $childPages }}
+            <div class="card my-3">
+              <div class="card-body">
+                <a class="stretched-link" href="{{ .RelPermalink }}">{{ .LinkTitle }} &rarr;</a>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </main>
+  </div>
+{{ end }}

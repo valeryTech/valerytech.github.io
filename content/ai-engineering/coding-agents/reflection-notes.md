@@ -1,0 +1,147 @@
+---
+draft: false
+toc: true
+title: "Reflection Notes"
+linkTitle: "Reflection Notes"
+---
+# Part 0: What I understand about working with coding agents after ~60B token events in 9 months
+
+
+Over the last 9 months, my agentic engineering workflow has consumed roughly:
+
+- 3.51B fresh input tokens
+- 56.1B cached input tokens
+- 282M output tokens
+- 93M reasoning tokens
+
+This scale creates enough surface area to observe recurring patterns: where coding agents help, where they fail, where they create hidden risk, and what kinds of human discipline they require.
+
+My work is also close to the subject itself. I build agentic systems, mostly agent-oriented RAG and semantic reasoning over closed corpora. Around 60% of that work is software engineering and architecture: designing systems, building evaluation harnesses, debugging model behavior, maintaining retrieval pipelines, and turning ambiguous reasoning failures into concrete engineering problems.
+
+Most of the usage came from heavy, high-context engineering sessions: research, design, implementation, evaluation, debugging, and refactoring. For longer workstreams, I also did not rely on a single chat session as "memory." I introduced handoff notes, workstream notes, evaluation artifacts, explicit task state, and other workflow harnesses to make long-running work recoverable. The goal was to prevent a session from becoming the only place where project memory lived.
+
+## Project Understanding
+
+
+[Project Ownership]({{< ref "ai-engineering/coding-agents/project-ownership" >}})
+
+# Goals
+
+
+checklist; advides list; practices; like what in the refactoring.io
+
+checklist for beginners
+
+how to understand that these will be useful
+
+# Different types of systems
+
+# Principles
+
+### Vague problems and premature coding
+
+
+Sometimes problem is vague or complex so detailed implementation plans the coding agents love to produce ahead of time is moving us in the wrong direction. The main problems is: first to understand that we don't have enough information to make a decision. The second is framing the problem itself.
+
+For the first problem (understanding where you are) I'm use the 'alignment and based principle' -
+
+My main approach here is to isolate and first try to frame the problem in the isolated setting.
+
+so the solution here is PoC and isolated experiments. As usually we could bring here common SDLC practices. The guiding principle in the understanding the plan has redundant details is to ask yourself - what and how this detail help us to implement and guarantee the MVP invariants and requirements.
+
+### Overengineering
+
+
+Codex and other agents relly like to overengineer code as well as conceptual model. it could propose 20 fields and a whole subsystem with very complex logic to operate on them, when it's enough a structrure with 2 fields. And the simple phrase in agents.md "don't overengineer" doesn't' really help. Solution: varous guardrails - principles of software engineering, minimalism, step by step, cross-review with adversarial agent. but the main is principles
+
+I started be really glad when I see Bob is deleting the code, not adding one.
+
+# Agent Features
+
+
+differences with humans - agents don't have long-memory, so every time they start from 0. -> long memory + quick introduction + (what else)
+
+### Context overflow
+
+
+use handoff and plans
+
+### They have imperfect uncertainty calibration
+
+
+Agents often do not naturally say "I am unsure." They may confidently choose a path when the codebase contains conflicting signals.
+
+**Risk:**
+
+The agent makes a migration, changes an API, or deletes code based on an assumption.
+
+### They do not inherently know what is safe to change
+
+
+Humans know which files are sensitive. Agents do not.
+
+### They imitate nearby patterns, even bad ones
+
+
+Agents often follow local code style. Usually good, but dangerous if old code is deprecated.
+
+others in [Context Engineering]({{< ref "ai-engineering/coding-agents/context-engineering" >}}#assumptions-and-useful-facts)
+
+# Workflow and ...
+
+
+augment, not replace
+
+for investigation and understanding
+
+# harness
+
+
+how to build and use 'agents.md' mechanism
+
+# Favor Conventionality and Diagnose Deviations
+
+
+Architecture of the Target System
+
+{{< callout context="note" title="**Principle of Least Astonishment**" icon="outline/info-circle" >}}
+Agent-ready systems should minimize architectural and procedural surprise.
+{{< /callout >}}
+
+-> The target system should be predictable to a competent newcomer.
+
+The target system should favor conventional and predictable design. Its structure, naming, tooling, testing strategy, and architectural boundaries should follow patterns that are familiar to a competent software engineer encountering the project for the first time. Since coding agents are trained largely on conventional software projects, they can be regarded as having similar expectations about project organization and development workflows. This does not require the system to be generic or simplistic; rather, local conventions and architectural choices should be easy to infer, consistent across the codebase, and aligned with common software engineering practice. In the sense, agent-ready systems should follow the .
+
+also there are foundational engineering principles based on which we can build and refactor our system: modularity, abstraction, ...
+
+To work with idiosyncrasy in an agent-ready target system, treat every deviation from common practice as an architectural cost that should be justified, documented, or removed.
+
+# Initial scaffold
+
+
+python: uv, ... link to the:
+
+# Context Management
+
+
+[Context Engineering]({{< ref "ai-engineering/coding-agents/context-engineering" >}})
+
+# Documentation
+
+#todo reformulate
+
+the problem of misalignment of docs and code is really harsh here. Why: because we're moving very fast. Sometimes old (non aligned) documents are such misleading that the agent is really going in the wrong direction. =>
+
+- balance: create a minimal set of canonical docs, runbooks which is useful for agent to quickly understand your current work and be easy to support aligning with current project state
+- adrs, evergreen mvp documentation to get the agent (and you) the direction and hard base to work. for example in the mvp for docforge I set the main (link)
+- logs: use workstreams/md documents to plan and fix your work
+- handoffs between session (use one default handoff documents)
+
+# Reflection and Improvement
+
+
+regularly use some note to fix reflection,
+
+procedure to experimentation?
+
+how to use reflection? procedures, schedule, ...

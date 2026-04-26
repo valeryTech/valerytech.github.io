@@ -21,7 +21,7 @@ mainSections = ["projects", "system-design", "ai-engineering"]
 
   ## Button
   navBarButton = false # false (default) or true
-  navBarButtonUrl = "/system-design/about/"
+  navBarButtonUrl = "/system-design/"
   navBarButtonText = "Get started"
 
   # FlexSearch

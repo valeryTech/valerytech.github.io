@@ -11,6 +11,7 @@ RUN apt-get update && \
 COPY .infra/versions.env /tmp/versions.env
 ARG TARGETARCH
 RUN npm install --global n && \
+    curl -LsSf https://astral.sh/uv/0.11.6/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh && \
     . /tmp/versions.env && \
     n "${NODE_VERSION}" && \
     npm install --global "npm@${NPM_VERSION}" && \

@@ -1,31 +1,29 @@
 ---
-contributors: []
-date: '2025-02-22T09:02:28.392283'
-description: Default Description
 draft: false
-lastmod: '2025-02-22T09:02:28.392283'
-summary: ''
-title: Databases
 toc: true
-weight: 810
+title: "Databases"
+linkTitle: "Databases"
 ---
-
 data access pattern
 
 Types: SQL, Key-Value Stores, Blob Stores (S3, GCS), Timelines DB, Graph(Neo4j), Spatial (QuadTree)
 
 # sql
 
+
 Pros: ACID transactions, imposing very strict structure => querying capabilities, DB indexing, Data Normalization.
 
 # k-v stores
 
+
 pros: caching, no-strict scheme, speed
+
 examples
 
 # functional partitioning
 
 # sharding
+
 
 Divide a data store into a set of horizontal partitions or shards. This can improve scalability when storing and accessing large volumes of data.
 
@@ -41,17 +39,30 @@ what is it? trade-offs
 
 # indexing
 
+
 definitions.
 
 Indexing is a mechanism by which the underlying data is mapped for faster retrieval.
+
 For a system to process an instruction involving data access, these are the certain steps involved:
 
 problems
 
 cons:
+
 -> This means that by maintaining an index, we could reduce the I/O calls to the disk substantially, from 25 calls before the index to 2 calls (one for the index and the other for the specific block).
 
 multilevel index
+
 B-Trees, B+ trees
 
 <https://jepsen.io/analyses>
+
+# resources
+
+
+"Fundamentals of Database Engineering" course by [Hussein Nasser](https://coursehunter.net/source/hussein-nasser "Hussein Nasser")
+
+"Relational Databases" by Oz Nova
+
+<https://coursehunter.net/course/osnovy-relyacionnyh-baz-dannyh>

@@ -1,24 +1,39 @@
-# System Design and Architecture
+# Knowledge Base Publishing System
 
-Knowledge Base for ML, AI and related topics.
+This repository is the system that transforms, previews, builds, and deploys a
+Markdown-based knowledge base. It is a Hugo site built on the Thulite/Doks
+stack, with the content tree in-repo under `content/`.
+
+The main source inputs are:
+
+- `content/` for authored Markdown
+- `layouts/`, `config/`, and `assets/` for local presentation and build behavior
+
+Generated output such as `public/` and `resources/` is disposable build
+artifact, not an authoring surface.
 
 ## Local workflow
 
-This repo uses Docker for local builds and preview, with `make` as the primary
-local command surface. You do not need a system-wide Hugo install.
+Local work runs in Docker, with `make` as the main contributor entrypoint. You
+do not need a system-wide Hugo or Node installation.
 
-### Preview
+Preview locally:
 
 ```bash
 make up
 ```
 
-### Build
+Build the site:
 
 ```bash
 make build
 ```
 
-Deployments run through GitHub Actions to GitHub Pages on pushes to `master`.
+Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 
-More commands and infra details are in [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) and [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md).
+For more detail:
+
+- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) for local workflows
+- [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) for the external-notes migration workflow
+- [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for Docker, toolchain, CI, and deployment
+- [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement

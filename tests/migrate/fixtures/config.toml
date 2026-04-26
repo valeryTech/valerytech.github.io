@@ -1,0 +1,24 @@
+[defaults]
+include = ["**/*.md", "*.md"]
+synthesize_section_indexes = true
+attachment_mode = "referenced-only"
+
+[defaults.frontmatter]
+draft = false
+toc = true
+
+[[imports]]
+name = "system-design"
+source_root_kind = "external"
+source_subtree = "system-design"
+target_subtree = "system-design"
+root_index_source = "_index.md"
+include = ["**/*.md", "*.md"]
+
+[[imports]]
+name = "migration-smoke"
+source_root_kind = "repo"
+source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"
+target_subtree = "system-design/integrated-test-pages"
+include = ["migration-smoke.md"]
+synthesize_section_indexes = false

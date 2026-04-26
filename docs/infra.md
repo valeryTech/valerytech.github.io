@@ -11,6 +11,10 @@ reused in CI and GitHub Pages deployment.
 This site is built by Hugo, with Node/npm providing the frontend dependency
 layer used by the theme and asset pipeline.
 
+The repo also includes a small Python subsystem for content migration. That
+tooling is isolated with `uv`, but it still runs through Docker rather than
+requiring host-side Python package installation.
+
 The command boundary is:
 
 - `make` for contributor-facing local tasks
@@ -26,6 +30,8 @@ The main local entrypoints are:
 - `make clean`
 - `make format`
 - `make hugo-version`
+- `make migrate-check`
+- `make migrate`
 
 The app-level entrypoints remain:
 
@@ -37,6 +43,10 @@ The app-level entrypoints remain:
 The main authored inputs are `content/`, `layouts/`, `assets/`, `static/`, and
 `config/`. Hugo writes the generated site to `public/` and generated asset/cache
 data to `resources/`.
+
+Some `content/` subtrees are regenerated from external notes instead of being
+edited directly. The committed migration manifest in `scripts/migrate/config.toml`
+defines which sections are managed that way.
 
 ### Shared toolchain
 
@@ -65,9 +75,10 @@ The dev command sets `--baseURL=http://localhost:1313/`, so local preview
 renders internal links against localhost instead of the production domain.
 
 `.devcontainer/Dockerfile` installs the pinned Node, npm, and Hugo versions into
-the image. `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs:
-it hashes `package-lock.json`, runs `npm ci` when dependencies are missing or stale,
-then starts the requested command.
+the image. It also installs `uv` for the migration pipeline.
+`.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
+hashes `package-lock.json`, runs `npm ci` when dependencies are missing or
+stale, then starts the requested command.
 
 The normal local preview path is:
 
@@ -88,10 +99,52 @@ the `Makefile` or CI workflows:
 - `scripts/verify-site.sh` builds the site, starts preview if needed, and checks
   core routes
 - `scripts/clean-generated.sh` removes disposable generated outputs
+- `scripts/migrate-site.sh` runs the Docker-wrapped migration entrypoint against
+  a runtime-provided `SOURCE_NOTES` path
 
 The devcontainer reuses the same Dockerfile, workspace mount, and bootstrap logic,
 so opening the repo in a devcontainer and running `docker compose` use the same
 runtime contract.
+
+### Migration pipeline
+
+The migration path is Docker-first:
+
+- `pyproject.toml` and `uv.lock` define the Python environment
+- `scripts/migrate/` contains the migration CLI, staging pipeline, and the committed tree manifest
+- `scripts/migrate-site.sh` uses `/Users/val/notes` by default
+- contributors can override that default at runtime with `SOURCE_NOTES=/abs/path`
+- `make migrate-check` validates and stages output into `.migration/` without
+  rewriting `content/`
+- `make migrate` rebuilds only the manifest-managed `content/` targets
+
+That default is repo-owned and machine-specific. Override it when running
+against a different notes root.
+
+Internally, the migration code is split into planning, note indexing,
+attachment resolution, parsing, conversion, staging, and render/report stages
+around a small document IR. That keeps path mapping, wiki-link rewriting,
+heading handling, callout conversion, asset copying, and Hugo rendering
+decoupled instead of living in one large function.
+
+This pipeline is deterministic. It rebuilds managed targets from source notes
+instead of trying to preserve prior generated output in place.
+
+Callout-specific migration behavior, including the supported source syntax and
+the visual regression page, is documented in
+[docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md).
+
+Operator-facing migration usage lives in
+[docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
+
+Regression coverage is split by purpose:
+
+- `/Users/val/notes/system-design/integrated-test-pages/callouts.md` stays in
+  the external notes tree as the manual copy/reference catalog
+- `tests/migrate/fixtures/` holds the authoritative automated regression inputs
+  for links, headings, unresolved links, and title handling
+- `tests/migrate/smoke_notes/` provides one small repo-owned smoke page that is
+  imported into the local site for quick visual checks
 
 ### CI and deployment
 
@@ -122,3 +175,6 @@ not authoring locations, and should not be tracked in git.
 
 Other disposable local artifacts include `hugo_stats.json` and
 `.hugo_build.lock`.
+
+The migration workspace under `.migration/`, including the Docker-managed
+`.migration/.venv/` created by `uv`, is also disposable and ignored.
