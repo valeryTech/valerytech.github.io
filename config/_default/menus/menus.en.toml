@@ -10,12 +10,12 @@
 
 [[main]]
   name = "Engineering"
-  url = "/engineering/engineering-guide/"
+  url = "/engineering/"
   weight = 30
 
 [[main]]
   name = "Projects"
-  url = "/projects/about/"
+  url = "/projects/"
   weight = 40
 
 [[social]]
@@ -24,11 +24,6 @@
   url = "https://github.com/valeryTech"
   post = "v0.1.0"
   weight = 30
-
-[[sidebar_docs]]
-  name = "Guides"
-  pageRef = "/docs/guides"
-  weight = 10
 
 [[footer]]
   name = "AI Engineering"
@@ -42,12 +37,12 @@
 
 [[footer]]
   name = "Engineering"
-  url = "/engineering/engineering-guide/"
+  url = "/engineering/"
   weight = 30
 
 [[footer]]
   name = "Projects"
-  url = "/projects/about/"
+  url = "/projects/"
   weight = 40
 
 [[footer]]

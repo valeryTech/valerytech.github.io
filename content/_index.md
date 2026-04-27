@@ -76,12 +76,12 @@ Use the site by major topic area when you want the broader map instead of a sing
 {{< link-card
   title="Engineering"
   description="General software engineering practices, architecture thinking, and implementation discipline."
-  href="/engineering/engineering-guide/"
+  href="/engineering/"
 >}}
 {{< link-card
   title="Projects"
   description="Working notes, learning paths, and project-oriented material connected to the broader knowledge base."
-  href="/projects/about/"
+  href="/projects/"
 >}}
 {{< /card-grid >}}
 
