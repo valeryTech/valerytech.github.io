@@ -4,9 +4,7 @@
   {{ $childPages := .RegularPages.ByTitle }}
   <div class="row flex-xl-nowrap">
     <div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
-      {{ with $root.Sections }}
-        {{ partial "sidebar/render-section-menu.html" (dict "currentPage" $ "nodes" .) }}
-      {{ end }}
+      {{ partial "sidebar/section-menu.html" . }}
     </div>
     <main class="docs-content col-lg-11 col-xl-9 mx-xl-auto">
       {{ if not .IsHome }}
@@ -20,11 +18,13 @@
           </ol>
         </nav>
       {{ end }}
-      <div class="page-header d-flex flex-row justify-content-between align-items-start">
-        <div>
-          <h1>{{ .Title }}</h1>
+      {{ if .Params.showTitle }}
+        <div class="page-header d-flex flex-row justify-content-between align-items-start">
+          <div>
+            <h1>{{ .Title }}</h1>
+          </div>
         </div>
-      </div>
+      {{ end }}
       {{ .Content }}
       {{ if or $childSections $childPages }}
         <div class="card-list mt-4">

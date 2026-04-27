@@ -48,16 +48,24 @@ skipped. To override this behavior, set $skipHome to false below.
 
 {{- /* Get parameters. */}}
 {{- $currentPage := .currentPage }}
+{{- $rootPage := .rootPage }}
 {{- $nodes := .nodes }}
 
 {{- /* Render. */}}
-<nav class="section-nav docs-links">
-  <ul class="list-unstyled">
+<nav class="section-nav docs-links" aria-label="{{ $rootPage.LinkTitle }} navigation">
+  <ul class="list-unstyled sidebar-tree">
+    {{- with $rootPage }}
+      {{- $rootIsCurrent := $currentPage.Eq . }}
+      {{- $rootIsAncestor := and (not $rootIsCurrent) (in $currentPage.Ancestors .) }}
+      <li class="sidebar-item sidebar-root{{ if $rootIsCurrent }} active{{ end }}{{ if $rootIsAncestor }} active-ancestor{{ end }}">
+        <a{{ if $rootIsCurrent }} aria-current="page"{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }} Overview</a>
+      </li>
+    {{- end }}
     {{- range $nodes }}
       {{- if and .Page.IsHome $skipHome }}
         {{- continue }}
       {{- end }}
-      {{- template "walk" (dict "node" . "currentPage" $currentPage) }}
+      {{- template "walk" (dict "node" . "currentPage" $currentPage "depth" 1) }}
     {{- end }}
   </ul>
 </nav>
@@ -66,6 +74,7 @@ skipped. To override this behavior, set $skipHome to false below.
 {{- define "walk" }}
   {{- $currentPage := .currentPage }}
   {{- $node := .node }}
+  {{- $depth := .depth }}
 
   {{- $linkContent := "" }}
   {{- with $node.Page }}
@@ -77,32 +86,34 @@ skipped. To override this behavior, set $skipHome to false below.
     {{- end }}
   {{- end }}
 
-  {{- $ariaCurrent := "" }}
-  {{- $liClass := "" }}
-
-  {{- if in $currentPage.Ancestors $node.Page }}
-    {{- $ariaCurrent = "true" }}
+  {{- $isCurrent := $currentPage.Eq $node.Page }}
+  {{- $isAncestor := and (not $isCurrent) (in $currentPage.Ancestors $node.Page) }}
+  {{- $hasChildren := gt (len $node.Page.Pages) 0 }}
+  {{- $defaultOpen := eq $depth 1 }}
+  {{- with $node.Page.Params.sidebar }}
+    {{- if isset . "collapsed" }}
+      {{- $defaultOpen = not (index . "collapsed") }}
+    {{- end }}
   {{- end }}
+  {{- $isOpen := or $defaultOpen (or $isCurrent $isAncestor) }}
 
-  {{- if $currentPage.Eq $node.Page }}
-    {{- $ariaCurrent = "page" }}
-    {{- $liClass = "active" }}
-  {{- end }}
-
-  <li {{- with $liClass }} class="{{ . }}" {{ end -}}>
-    {{- with $node.Page.Pages }}
-    <details{{- with $ariaCurrent }} open{{- end }}{{- if ne $node.Page.Params.sidebar.collapsed true }} open{{- end }}>
-      <summary>{{ $linkContent }}</summary>
-      <ul class="list-unstyled list-nested">
-        {{- range .GroupBy "Weight" "asc" }}
-        {{- range .ByTitle }}
-          {{- template "walk" (dict "node" . "currentPage" $currentPage) }}
-        {{- end }}
-        {{- end }}
-      </ul>
-    </details>
+  <li class="sidebar-item depth-{{ $depth }}{{ if $hasChildren }} sidebar-group{{ else }} sidebar-leaf{{ end }}{{ if $isCurrent }} active{{ end }}{{ if $isAncestor }} active-ancestor{{ end }}">
+    {{- if $hasChildren }}
+      <details{{ if $isOpen }} open{{ end }}>
+        <summary>{{ $linkContent }}</summary>
+        <ul class="list-unstyled list-nested">
+          <li class="sidebar-item sidebar-overview depth-{{ add $depth 1 }}{{ if $isCurrent }} active{{ end }}">
+            <a{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ $node.Page.RelPermalink }}">Overview</a>
+          </li>
+          {{- range $node.Page.Pages.GroupBy "Weight" "asc" }}
+            {{- range .ByTitle }}
+              {{- template "walk" (dict "node" . "currentPage" $currentPage "depth" (add $depth 1)) }}
+            {{- end }}
+          {{- end }}
+        </ul>
+      </details>
     {{- else }}
-      <a {{- with $ariaCurrent }} aria-current="{{ . }}" {{- end }} href="{{- $node.Page.RelPermalink }}">{{ $linkContent }}</a>
+      <a{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ $node.Page.RelPermalink }}">{{ $linkContent }}</a>
     {{- end }}
   </li>
 {{- end }}
