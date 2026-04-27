@@ -15,6 +15,9 @@ subtrees are generated this way.
 If a section is migration-managed, the canonical source is the external notes
 tree, not the generated Markdown under `content/`.
 
+Each `[[imports]]` entry in the manifest controls one managed subtree, such as
+`system-design` or `ai-engineering`.
+
 ## Runtime Contract
 
 By default, the migration commands use:
@@ -76,6 +79,40 @@ MIGRATE_CONFIG=/abs/path/to/manifest.toml make migrate
 
 Use this for one-off imports, narrow experiments, or section-specific migration
 runs.
+
+## Manifest Selectors
+
+Each `[[imports]]` entry may optionally narrow the imported source paths with:
+
+- `selection_mode = "opt-out" | "opt-in"`
+- `selection_paths = ["..."]`
+
+Rules:
+
+- `selection_paths` are relative to that import's `source_subtree`
+- a folder path applies recursively to all descendants
+- a file path applies only to that exact source file
+- `opt-out` means import everything except the listed files/folders
+- `opt-in` means import only the listed files/folders
+- `root_index_source` still imports the section root index when configured, even in `opt-in`
+
+Example:
+
+```toml
+[[imports]]
+name = "ai-engineering"
+source_root_kind = "external"
+source_subtree = "ai-engineering"
+target_subtree = "ai-engineering"
+selection_mode = "opt-in"
+selection_paths = ["coding-agents", "evaluation"]
+include = ["**/*.md", "*.md"]
+root_index_source = "_index.md"
+```
+
+The committed manifest currently uses that pattern for `ai-engineering`, so
+only `coding-agents/`, `evaluation/`, and the root `_index.md` are regenerated
+for that section.
 
 ## Operational Notes
 

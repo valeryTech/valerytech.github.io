@@ -5,26 +5,6 @@ title: "Effective Context Engineering For Ai Agents"
 linkTitle: "Effective Context Engineering For Ai Agents"
 ---
 
-title: "Effective context engineering for AI agents"
-
-source: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
-
-author:
-
-- "[[@AnthropicAI]]"
-
-published:
-
-created: 2025-10-01
-
-description: "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems."
-
-tags:
-
-- "clippings"
-
-[Engineering at Anthropic](https://www.anthropic.com/engineering)
-
 After a few years of prompt engineering being the focus of attention in applied AI, a new term has come to prominence: **context engineering**. Building with language models is becoming less about finding the right words and phrases for your prompts, and more about answering the broader question of "what configuration of context is most likely to generate our model's desired behavior?"
 
 **Context** refers to the set of tokens included when sampling from a large-language model (LLM). The **engineering** problem at hand is optimizing the utility of those tokens against the inherent constraints of LLMs in order to consistently achieve a desired outcome. Effectively wrangling LLMs often requires *thinking in context* -- in other words: considering the holistic state available to the LLM at any given time and what potential behaviors that state might yield.
@@ -149,8 +129,3 @@ Context engineering represents a fundamental shift in how we build with LLMs. As
 The techniques we've outlined will continue evolving as models improve. We're already seeing that smarter models require less prescriptive engineering, allowing agents to operate with more autonomy. But even as capabilities scale, treating context as a precious, finite resource will remain central to building reliable, effective agents.
 
 Get started with context engineering in the Claude Developer Platform today, and access helpful tips and best practices via our [memory and context management](https://github.com/anthropics/claude-cookbooks/blob/main/tool_use/memory_cookbook.ipynb) cookbook.
-
-## Acknowledgements
-
-
-Written by Anthropic's Applied AI team: Prithvi Rajasekaran, Ethan Dixon, Carly Ryan, and Jeremy Hadfield, with contributions from team members Rafi Ayub, Hannah Moran, Cal Rueb, and Connor Jennings. Special thanks to Molly Vorwerck, Stuart Ritchie, and Maggie Vo for their support.

@@ -35,11 +35,14 @@ def make_workspace() -> FixtureWorkspace:
     root = Path(temp_dir.name)
     source_root = root / "source_notes"
     smoke_root = root / "tests" / "migrate" / "smoke_notes"
+    config_path = root / "tests" / "migrate" / "config.toml"
     content_root = root / "content"
     work_root = root / ".migration" / "work"
     report_root = root / ".migration" / "reports"
     shutil.copytree(FIXTURE_ROOT / "source_notes", source_root)
     shutil.copytree(FIXTURE_ROOT / "smoke_notes", smoke_root)
+    config_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(FIXTURE_ROOT / "config.toml", config_path)
     content_root.mkdir(parents=True, exist_ok=True)
     return FixtureWorkspace(
         temp_dir=temp_dir,
@@ -48,7 +51,7 @@ def make_workspace() -> FixtureWorkspace:
         content_root=content_root,
         work_root=work_root,
         report_root=report_root,
-        config_path=FIXTURE_ROOT / "config.toml",
+        config_path=config_path,
     )
 
 

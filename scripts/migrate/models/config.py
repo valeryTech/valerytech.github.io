@@ -11,6 +11,8 @@ class ImportRule:
     source_root_kind: str
     source_subtree: Path
     target_subtree: Path
+    selection_mode: str
+    selection_paths: tuple[Path, ...]
     include: tuple[str, ...]
     exclude: tuple[str, ...]
     root_index_source: str | None

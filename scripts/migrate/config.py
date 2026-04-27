@@ -14,6 +14,26 @@ def _as_tuple(value: object, default: tuple[str, ...]) -> tuple[str, ...]:
     return tuple(str(item) for item in value)
 
 
+def _as_relative_paths(value: object) -> tuple[Path, ...]:
+    if value is None:
+        return tuple()
+    if not isinstance(value, list):
+        raise ValueError("selection_paths must be a list")
+
+    paths: list[Path] = []
+    for item in value:
+        raw = str(item).strip()
+        if raw in {"", "."}:
+            raise ValueError("selection_paths entries must be non-empty relative paths")
+        path = Path(raw)
+        if path.is_absolute():
+            raise ValueError("selection_paths entries must be relative paths")
+        if ".." in path.parts:
+            raise ValueError("selection_paths entries must not contain '..'")
+        paths.append(path)
+    return tuple(paths)
+
+
 def load_config(config_path: Path) -> MigrationConfig:
     raw = tomllib.loads(config_path.read_text(encoding="utf-8"))
 
@@ -43,6 +63,12 @@ def load_config(config_path: Path) -> MigrationConfig:
         rename_overrides = entry.get("rename_overrides", {})
         if not isinstance(rename_overrides, dict):
             raise ValueError("rename_overrides must be a table")
+        selection_mode = str(entry.get("selection_mode", "opt-out"))
+        if selection_mode not in {"opt-in", "opt-out"}:
+            raise ValueError("selection_mode must be 'opt-in' or 'opt-out'")
+        selection_paths = _as_relative_paths(entry.get("selection_paths"))
+        if selection_mode == "opt-in" and not selection_paths:
+            raise ValueError("opt-in imports must define at least one selection_paths entry")
 
         target_subtree = Path(str(entry["target_subtree"]))
         if str(target_subtree) in {"", "."}:
@@ -56,6 +82,8 @@ def load_config(config_path: Path) -> MigrationConfig:
                 source_root_kind=source_root_kind,
                 source_subtree=Path(str(entry["source_subtree"])),
                 target_subtree=target_subtree,
+                selection_mode=selection_mode,
+                selection_paths=selection_paths,
                 include=_as_tuple(entry.get("include"), default_include),
                 exclude=_as_tuple(entry.get("exclude"), default_exclude),
                 root_index_source=(

@@ -21,9 +21,9 @@ A short set of high-signal notes and article-based writeups worth opening first.
 
 {{< card-grid >}}
 {{< link-card
-  title="Context Engineering"
-  description="Practical notes on shaping agent context, preserving useful state, and avoiding noisy prompts."
-  href="/ai-engineering/coding-agents/context-engineering/"
+  title="AGENTS.md"
+  description="Practical notes on what high-leverage agent instruction files should contain and how they fit into a broader context system."
+  href="/ai-engineering/coding-agents/agents-md/"
 >}}
 {{< /card-grid >}}
 
@@ -45,9 +45,9 @@ A short set of high-signal notes and article-based writeups worth opening first.
 
 {{< card-grid >}}
 {{< link-card
-  title="What Makes Claude Code So Damn Good"
-  description="Notes on coding-agent ergonomics, control flow, and the interaction patterns that make agent work effective."
-  href="/ai-engineering/agents/input/what-makes-claude-code-so-damn-good-and-how-to-recreate-that-magic-in-your-agent/"
+  title="Project Ownership"
+  description="Why coding-agent speed does not remove the need for a human-held model of the system and its constraints."
+  href="/ai-engineering/coding-agents/project-ownership/"
 >}}
 {{< /card-grid >}}
 

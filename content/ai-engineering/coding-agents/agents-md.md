@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Context Engineering"
-linkTitle: "Context Engineering"
+title: "Agents Md"
+linkTitle: "Agents Md"
 ---
 # Mental Model
 
@@ -30,11 +30,11 @@ Its job is to:
 - route the agent to canonical sources of truth;
 - define when the agent should stop and ask for help (sometimes).
 
-In practice, `AGENTS.md` is the agent's first-read entry point into the repository.
+{{< callout context="tip" title="Core idea" icon="outline/rocket" >}}
+A good `AGENTS.md` reduces repeated human steering. It makes the repository more legible to agents by turning local conventions into explicit, versioned context.
+{{< /callout >}}
 
-> A good `AGENTS.md` reduces repeated human steering. It makes the repository more legible to agents by turning local conventions into explicit, versioned context.
-
-# Assumptions and LLM-based coding agents features
+# Assumptions
 
 
 Before designing `AGENTS.md`, it helps to make the operating model explicit.
@@ -73,7 +73,7 @@ There are two constraints:
 - First axis. Attention has a budget. As the amount of visible material grows, each individual instruction has less effective weight. Long `AGENTS.md` files, long conversations, broad search results, duplicated docs, and noisy tool output all increase the chance that important guidance is missed, forgotten, or applied weakly.
 - Second, **signals differ in kind and authority**. A coding agent does not receive only instructions. It receives authority rules, user intent, repository docs, local examples, comments, test results, errors, tool output, and inferred conventions. Some of these are explicit instructions; others are evidence.
 
-Therefore, `AGENTS.md` should stay short and act as a signal router. It should name canonical sources of truth, distinguish project policy from local examples, and route detailed or task-specific guidance to harnesses, docs, commands, and package-level rules.
+Therefore, `AGENTS.md` should stay short and act as a signal router.
 
 # From assumptions to design rules
 
@@ -86,7 +86,7 @@ The build method follows from the assumptions above:
 - Because signals are mixed, it should clarify source-of-truth hierarchy instead of duplicating guidance across docs.
 - Because plausible completion is not correctness, it should route agents to validation commands, task harnesses, contracts, and checks.
 
-### 6.1 Start with the smallest useful file
+### Start with the smallest useful file
 
 
 Start from an empty file or a minimal template.
@@ -104,10 +104,10 @@ A minimal first version is better than a comprehensive one because it lets you o
 
 Examples:
 
-- https://github.com/valery-judah/sem-rag/blob/main/AGENTS.md
-- https://github.com/valery-judah/python-repo-template
+- <https://github.com/valery-judah/sem-rag/blob/main/AGENTS.md>
+- <https://github.com/valery-judah/python-repo-template>
 
-### 6.2 Add only project-specific defaults
+### Add only project-specific defaults
 
 
 The most valuable instructions are not generic engineering advice. They are local defaults that an agent cannot reliably infer from public training data or common conventions.
@@ -126,7 +126,7 @@ Examples:
 
 Do not add rules like "write clean code" or "follow best practices." The agent already has generic software-engineering priors. `AGENTS.md` should correct those priors where they are wrong for this repository.
 
-### 6.3. Treat context as a budget
+### Treat context as a budget
 
 
 Root `AGENTS.md` is expensive because it is read broadly across sessions and tasks.
@@ -143,10 +143,12 @@ Therefore, root `AGENTS.md` should contain only information that is:
 
 If a topic requires a long explanation, it probably does not belong in the root file. Move it to a canonical doc and link to it.
 
-### 6.4. Make it a map, not a manual: use progressive disclosure
+### Make it a map, not a manual: use progressive disclosure
 
+{{< callout context="note" title="Routing principle" icon="outline/info-circle" >}}
+The file should route agents to sources of truth, not duplicate them.
+{{< /callout >}}
 
-> The file should route agents to sources of truth, not duplicate them.
 
 `AGENTS.md` should not contain all project knowledge. It should route the agent to the right knowledge at the right time.
 
@@ -160,7 +162,7 @@ The root file should contain only universal context:
 
 Detailed or specialized instructions should live in canonical docs and be loaded only when relevant.
 
-### 6.5. Add modules only when they are earned
+### Add modules only when they are earned
 
 
 Do not add modules because they sound useful. Add them because the agent repeatedly needs that instruction and the absence of the instruction causes real mistakes.
@@ -176,14 +178,14 @@ Before adding a module, ask:
 
 If the module cannot pass this test, do not add it yet.
 
-### 6.6. Prefer enforcement over prose
+### Prefer enforcement over prose
 
 
 If a rule matters, eventually enforce it with CI, lint, scripts, tests, or structural checks. `AGENTS.md` should point to those mechanisms, not become the only enforcement layer. When a rule becomes mechanically enforced, shrink the prose to a short reminder or link.
 
 This is also a core harness-engineering lesson: agents work better in environments with strict boundaries, predictable structure, accessible tools, fast tests, and feedback messages that tell them how to recover.
 
-### 6.7. Convert repeated failures into harness improvements
+### Convert repeated failures into harness improvements
 
 
 Every repeated agent failure is a signal that the harness is missing something.
@@ -201,25 +203,29 @@ Possible destinations:
 - improve error messages so they tell the agent how to recover;
 - add a feature contract, runbook, or execution plan.
 
+{{< callout context="tip" title="Placement rule" icon="outline/rocket" >}}
 Use this rough rule:
 
-```
-Simple local default      → AGENTS.md  
-Detailed explanation      → canonical doc  
-Repeated manual workflow  → script or Make target  
-Important invariant       → CI, lint, test, or structural check  
-Feature-specific behavior → feature contract
-```
+`Simple local default -> AGENTS.md`  
+`Detailed explanation -> canonical doc`  
+`Repeated manual workflow -> script or Make target`  
+`Important invariant -> CI, lint, test, or structural check`  
+`Feature-specific behavior -> feature contract`
+{{< /callout >}}
 
 
 This keeps `AGENTS.md` from becoming a dumping ground while still turning agent mistakes into durable improvements.
 
-### 7. Separate stable root rules from changing domain knowledge
+### Separate stable root rules from changing domain knowledge
 
 
 Stable, universal rules belong in root `AGENTS.md`. Changing guidance belongs deeper in the handbook, domain docs, feature docs, or package-level `AGENTS.md` files. In monorepos, rules that apply only to one package should live in that package's nested `AGENTS.md`, not in the root.
 
 ### Anti-patterns to avoid
+
+{{< callout context="caution" title="Root `AGENTS.md` fails when it becomes an encyclopedia instead of a routing layer." icon="outline/alert-triangle" >}}
+
+{{< /callout >}}
 
 
 Do not let root `AGENTS.md` become:
@@ -247,12 +253,9 @@ This is a property of the whole system, not of the agent alone and not of `AGENT
 
 ## North star
 
-
-The north star is **quality-adjusted autonomous task completion**.
-
-A stronger formulation is:
-
-> The system should allow a coding agent to complete larger, more valuable tasks end-to-end with less repeated human steering, stronger validation, and controlled risk.
+{{< callout context="note" title="North star" icon="outline/info-circle" >}}
+The system should allow a coding agent to complete larger, more valuable tasks end-to-end with less repeated human steering, stronger validation, and controlled risk.
+{{< /callout >}}
 
 ## System-level goal
 
@@ -263,16 +266,15 @@ It should give the agent the right context, constraints, tools, and feedback at 
 
 This system includes more than `AGENTS.md`. It includes canonical docs, architecture maps, feature contracts, execution plans, tests, linters, CI, scripts, generated schemas, runbooks, review feedback, and maintenance processes.
 
-The core system goal is:
+{{< callout context="note" title="System goal" icon="outline/info-circle" >}}
+Maximize agent effectiveness per unit of context.
+{{< /callout >}}
 
-> Maximize agent effectiveness per unit of context.
 
 This matches the "context engineering" idea: the problem is not just prompting, but filling the model's context window with the right information for the next step, while controlling what does and does not enter context.
 
 ## User goals
 
-
-The user wants leverage.
 
 A good context-management system should let the user delegate well-scoped work and receive a result that is useful, reviewable, and close to mergeable.
 
@@ -280,11 +282,14 @@ The user should spend less time repeating project-specific instructions, correct
 
 The user should remain responsible for intent, product judgment, architecture judgment, and risk decisions. The agent should absorb routine execution work, but not silently take over decisions that require ownership or taste.
 
-So the user goal is:
-
-> Delegate more routine and semi-complex work without losing control over quality, architecture, or risk.
+{{< callout context="note" title="User outcome" icon="outline/info-circle" >}}
+Delegate more routine and semi-complex work without losing control over quality, architecture, or risk.
+{{< /callout >}}
 
 # Examples
+
+
+This is what the end state should look like in practice:
 
 ```
 # Agent Contract
