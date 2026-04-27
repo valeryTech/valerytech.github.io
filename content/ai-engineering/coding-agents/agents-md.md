@@ -4,16 +4,29 @@ toc: true
 title: "Agents Md"
 linkTitle: "Agents Md"
 ---
-# Mental Model
+# Operating Model
 
 
-Think of a coding agent as a capable colleague whose memory is reset at the start of every session.
+A practical mental model is to treat a coding agent as a capable colleague who starts each session with strong general knowledge but limited project-specific context.
 
-Do not write `AGENTS.md` as if the agent is dumb. Write it as onboarding context for a competent engineer who can read the repository, search files, run tools, infer patterns, and make reasonable decisions.
+{{< callout context="tip" title="Advice" icon="outline/rocket" >}}
+Do not write `AGENTS.md` as if the agent is dumb. Write it as onboarding context for a competent engineer who also can read the repository, search files, run tools, infer patterns, and make reasonable decisions.
+{{< /callout >}}
 
-The problem is not that the agent cannot work. The problem is that it does not automatically know this project's local defaults, constraints, history, or preferred workflows.
+## Onboarding
 
-Good instructions tell the agent what a new teammate would need to know before making changes here. Bad instructions restate generic software-engineering advice the agent already knows.
+
+This creates a project specifics onboarding problem. A human developer gradually accumulates project-local context during onboarding and day-to-day work. A coding agent, however, starts each session without that accumulated project memory. The agent must reconstruct the project’s onboarding context from scratch every time.
+
+So:
+
+> Our job as users in this user-project-agent system is to improve the context flow: make project-specific knowledge easier for the agent to find, trust, and apply.
+
+And `AGENTS.md` is one of the tools for improving this context flow.
+
+It gives the project a stable place to encode onboarding context that should not depend on a particular user prompt or a particular chat session.
+
+A good `AGENTS.md` helps the agent form a better task frame: what the project is, how it is organized, which conventions matter, which sources to trust, which commands to run, what risks to avoid, and how changes should be validated.
 
 # What `AGENTS.md` is
 
@@ -240,7 +253,7 @@ Do not let root `AGENTS.md` become:
 
 Keep the loop simple, use clear markdown sections, write explicit algorithms for important workflows, and provide examples where the agent must choose between similar actions.
 
-# Goals of the user-project-agent context system
+# Additional: System-level reframing
 
 
 The goal is not to "write a good `AGENTS.md`." `AGENTS.md` is only one part of a larger system: user, project, coding agent, repository knowledge, validation tools, and feedback loops.
@@ -265,11 +278,6 @@ The context-management system should make the project **legible, navigable, and 
 It should give the agent the right context, constraints, tools, and feedback at the right time, so the agent can transform user intent into validated project changes.
 
 This system includes more than `AGENTS.md`. It includes canonical docs, architecture maps, feature contracts, execution plans, tests, linters, CI, scripts, generated schemas, runbooks, review feedback, and maintenance processes.
-
-{{< callout context="note" title="System goal" icon="outline/info-circle" >}}
-Maximize agent effectiveness per unit of context.
-{{< /callout >}}
-
 
 This matches the "context engineering" idea: the problem is not just prompting, but filling the model's context window with the right information for the next step, while controlling what does and does not enter context.
 
