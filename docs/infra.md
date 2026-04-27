@@ -21,18 +21,6 @@ The command boundary is:
 - `npm` for app-level Hugo commands
 - Docker/devcontainer for local execution
 
-The main local entrypoints are:
-
-- `make up`
-- `make down`
-- `make build`
-- `make verify`
-- `make clean`
-- `make format`
-- `make hugo-version`
-- `make migrate-check`
-- `make migrate`
-
 The app-level entrypoints remain:
 
 - `npm run dev`
@@ -47,6 +35,10 @@ data to `resources/`.
 Some `content/` subtrees are regenerated from external notes instead of being
 edited directly. The committed migration manifest in `scripts/migrate/config.toml`
 defines which sections are managed that way.
+
+Contributor-facing command usage lives in
+[docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md)
+and [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
 
 ### Shared toolchain
 
@@ -80,14 +72,7 @@ the image. It also installs `uv` for the migration pipeline.
 hashes `package-lock.json`, runs `npm ci` when dependencies are missing or
 stale, then starts the requested command.
 
-The normal local preview path is:
-
-1. `make up`
-2. `docker compose up site`
-3. `npm run dev`
-4. `hugo server ... --baseURL=http://localhost:1313/`
-
-That gives a live local server at `http://localhost:1313` with Hugo file
+That yields a live local server at `http://localhost:1313` with Hugo file
 watching enabled for mounted source files.
 
 ### Repo task scripts
@@ -99,8 +84,7 @@ the `Makefile` or CI workflows:
 - `scripts/verify-site.sh` builds the site, starts preview if needed, and checks
   core routes
 - `scripts/clean-generated.sh` removes disposable generated outputs
-- `scripts/migrate-site.sh` runs the Docker-wrapped migration entrypoint against
-  a runtime-provided `SOURCE_NOTES` path
+- `scripts/migrate-site.sh` runs the Docker-wrapped migration entrypoint
 
 The devcontainer reuses the same Dockerfile, workspace mount, and bootstrap logic,
 so opening the repo in a devcontainer and running `docker compose` use the same
@@ -112,14 +96,8 @@ The migration path is Docker-first:
 
 - `pyproject.toml` and `uv.lock` define the Python environment
 - `scripts/migrate/` contains the migration CLI, staging pipeline, and the committed tree manifest
-- `scripts/migrate-site.sh` uses `/Users/val/notes` by default
-- contributors can override that default at runtime with `SOURCE_NOTES=/abs/path`
-- `make migrate-check` validates and stages output into `.migration/` without
-  rewriting `content/`
-- `make migrate` rebuilds only the manifest-managed `content/` targets
-
-That default is repo-owned and machine-specific. Override it when running
-against a different notes root.
+- `scripts/migrate-site.sh` provides the bridge from Docker to the external
+  notes source and the managed `content/` targets
 
 Internally, the migration code is split into planning, note indexing,
 attachment resolution, parsing, conversion, staging, and render/report stages
@@ -130,21 +108,10 @@ decoupled instead of living in one large function.
 This pipeline is deterministic. It rebuilds managed targets from source notes
 instead of trying to preserve prior generated output in place.
 
-Callout-specific migration behavior, including the supported source syntax and
-the visual regression page, is documented in
-[docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md).
-
 Operator-facing migration usage lives in
 [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
-
-Regression coverage is split by purpose:
-
-- `/Users/val/notes/system-design/integrated-test-pages/callouts.md` stays in
-  the external notes tree as the manual copy/reference catalog
-- `tests/migrate/fixtures/` holds the authoritative automated regression inputs
-  for links, headings, unresolved links, and title handling
-- `tests/migrate/smoke_notes/` provides one small repo-owned smoke page that is
-  imported into the local site for quick visual checks
+Callout-specific migration behavior lives in
+[docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md).
 
 ### CI and deployment
 

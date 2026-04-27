@@ -78,9 +78,15 @@ Edit source files in:
 
 Do not edit generated output in `public/` or `resources/`.
 
-Some `content/` subtrees are migration-managed. For those sections, edit the
-external notes source instead of the generated files in `content/`. The
-migration workflow is documented in
+These `content/` sections are migration-managed:
+
+- `content/system-design/`
+- `content/engineering/`
+- `content/ai-engineering/`
+- `content/projects/`
+
+For those sections, edit the external notes source instead of the generated
+files in `content/`. The migration workflow is documented in
 [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
 
 For repo structure, section ownership, and content placement rules, see
@@ -96,6 +102,7 @@ Local edits do not show up:
 
 Local preview still shows deleted or old pages after migration:
 
+- stop preview with `make down`
 - run `make clean`
 - rerun migration if needed
 - start preview again with `make up`

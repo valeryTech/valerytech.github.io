@@ -1,0 +1,21 @@
+{{- $node := .node -}}
+{{- $scratch := .scratch -}}
+{{- $skipHome := .skipHome | default true -}}
+
+{{- if and $skipHome $node.Page.IsHome -}}
+  {{- return -}}
+{{- end -}}
+
+{{- with $node.Page.Pages -}}
+  {{- range .GroupBy "Weight" "asc" -}}
+    {{- range .ByTitle -}}
+      {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" $skipHome) -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- with $node.Page -}}
+    {{- if .IsPage -}}
+      {{- $scratch.Add "pages" (slice .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,17 @@
+{{- $scratch := newScratch -}}
+{{- $scratch.Set "pages" (slice) -}}
+{{- $sidebar := printf "sidebar_%s" .Section -}}
+
+{{- with index site.Menus $sidebar -}}
+  {{- range . -}}
+    {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" true) -}}
+  {{- end -}}
+{{- else -}}
+  {{- with (.Site.GetPage "section" .Section).Pages -}}
+    {{- range . -}}
+      {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" true) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return ($scratch.Get "pages") -}}
