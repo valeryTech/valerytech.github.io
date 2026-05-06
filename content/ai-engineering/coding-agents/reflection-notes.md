@@ -4,27 +4,6 @@ toc: true
 title: "Reflection Notes"
 linkTitle: "Reflection Notes"
 ---
-# Part 0: What I understand about working with coding agents after ~60B token events in 9 months
-
-
-Over the last 9 months, my agentic engineering workflow has consumed roughly:
-
-- 3.51B fresh input tokens
-- 56.1B cached input tokens
-- 282M output tokens
-- 93M reasoning tokens
-
-This scale creates enough surface area to observe recurring patterns: where coding agents help, where they fail, where they create hidden risk, and what kinds of human discipline they require.
-
-My work is also close to the subject itself. I build agentic systems, mostly agent-oriented RAG and semantic reasoning over closed corpora. Around 60% of that work is software engineering and architecture: designing systems, building evaluation harnesses, debugging model behavior, maintaining retrieval pipelines, and turning ambiguous reasoning failures into concrete engineering problems.
-
-Most of the usage came from heavy, high-context engineering sessions: research, design, implementation, evaluation, debugging, and refactoring. For longer workstreams, I also did not rely on a single chat session as "memory." I introduced handoff notes, workstream notes, evaluation artifacts, explicit task state, and other workflow harnesses to make long-running work recoverable. The goal was to prevent a session from becoming the only place where project memory lived.
-
-## Project Understanding
-
-
-[Project Ownership]({{< ref "ai-engineering/coding-agents/project-ownership" >}})
-
 # Goals
 
 
@@ -35,6 +14,9 @@ checklist for beginners
 how to understand that these will be useful
 
 # Different types of systems
+
+
+is this difference essential for our workflow and configuration?
 
 # Principles
 
@@ -55,6 +37,15 @@ so the solution here is PoC and isolated experiments. As usually we could bring 
 Codex and other agents relly like to overengineer code as well as conceptual model. it could propose 20 fields and a whole subsystem with very complex logic to operate on them, when it's enough a structrure with 2 fields. And the simple phrase in agents.md "don't overengineer" doesn't' really help. Solution: varous guardrails - principles of software engineering, minimalism, step by step, cross-review with adversarial agent. but the main is principles
 
 I started be really glad when I see Bob is deleting the code, not adding one.
+
+# Planning and Designing, Decisions
+
+
+so, we could decide on different steps
+
+create plan - discuss it (but there the problem you cannot have all information)
+
+or create several worktrees and compare the code and it's actual work and then ... (kind of POC)
 
 # Agent Features
 

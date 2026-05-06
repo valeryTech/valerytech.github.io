@@ -6,15 +6,20 @@ linkTitle: "Harness And Platform"
 ---
 
 This page is dedicated to evaluation of LLM-based workflows and coding agents.
+
 The goal is to make agent behavior observable, repeatable, and comparable across
+
 prompts, tools, models, and workflow designs.
 
 # Why this matters
 
 
 Without a reliable evaluation loop, changes to prompts, tools, or orchestration
+
 quickly turn into anecdotal tuning. A harness gives you controlled execution and
+
 repeatable test cases. A platform lets you compare runs over time, inspect
+
 failures, and decide whether a change actually improved the system.
 
 # Evaluation Harness

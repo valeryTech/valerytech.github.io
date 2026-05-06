@@ -10,13 +10,13 @@ linkTitle: "Agents Md"
 A practical mental model is to treat a coding agent as a capable colleague who starts each session with strong general knowledge but limited project-specific context.
 
 {{< callout context="tip" title="Advice" icon="outline/rocket" >}}
-Do not write `AGENTS.md` as if the agent is dumb. Write it as onboarding context for a competent engineer who also can read the repository, search files, run tools, infer patterns, and make reasonable decisions.
+Do not write `AGENTS.md` as if the agent is dumb. Write it as onboarding context for a competent engineer who also can read the repository, search files, run tools, infer patterns, and make reasonable decisions.
 {{< /callout >}}
 
 ## Onboarding
 
 
-This creates a project specifics onboarding problem. A human developer gradually accumulates project-local context during onboarding and day-to-day work. A coding agent, however, starts each session without that accumulated project memory. The agent must reconstruct the project’s onboarding context from scratch every time.
+This creates a project specifics onboarding problem. A human developer gradually accumulates project-local context during onboarding and day-to-day work. A coding agent, however, starts each session without that accumulated project memory. The agent must reconstruct the project's onboarding context from scratch every time.
 
 So:
 
@@ -219,10 +219,10 @@ Possible destinations:
 {{< callout context="tip" title="Placement rule" icon="outline/rocket" >}}
 Use this rough rule:
 
-`Simple local default -> AGENTS.md`  
-`Detailed explanation -> canonical doc`  
-`Repeated manual workflow -> script or Make target`  
-`Important invariant -> CI, lint, test, or structural check`  
+`Simple local default -> AGENTS.md`
+`Detailed explanation -> canonical doc`
+`Repeated manual workflow -> script or Make target`
+`Important invariant -> CI, lint, test, or structural check`
 `Feature-specific behavior -> feature contract`
 {{< /callout >}}
 

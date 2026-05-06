@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Effective Context Engineering For Ai Agents"
-linkTitle: "Effective Context Engineering For Ai Agents"
+title: "In Effective Context Engineering"
+linkTitle: "In Effective Context Engineering"
 ---
 
 After a few years of prompt engineering being the focus of attention in applied AI, a new term has come to prominence: **context engineering**. Building with language models is becoming less about finding the right words and phrases for your prompts, and more about answering the broader question of "what configuration of context is most likely to generate our model's desired behavior?"
