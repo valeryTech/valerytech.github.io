@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "SD Signals OpenAI"
-linkTitle: "SD Signals OpenAI"
+title: "Sd Signals Openai"
+linkTitle: "Sd Signals Openai"
 ---
+---
+
+title: "SD Signals OpenAI"
+
+linkTitle: "SD Signals OpenAI"
+
 # Senior System Design Interview Rubric (Refactored)
 
 > Purpose-built for a 60-minute system design round. Converts vague "signals" into behaviorally anchored constructs with explicit weights, timeboxes, and a decision policy. No statistics, calibration, or interviewer-training content is included.

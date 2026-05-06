@@ -1,9 +1,17 @@
 ---
 draft: false
 toc: true
-title: "System Design"
-linkTitle: "System Design"
+title: "02 System Design"
+linkTitle: "02 System Design"
 ---
+---
+
+title: "System Design"
+
+linkTitle: "System Design"
+
+# System Design
+
 ## Core Principles
 
 

@@ -1,9 +1,17 @@
 ---
 draft: false
 toc: true
-title: "Delivery Framework"
-linkTitle: "Delivery Framework"
+title: "Framework Hi"
+linkTitle: "Framework Hi"
 ---
+---
+
+title: "Delivery Framework"
+
+linkTitle: "Delivery Framework"
+
+# Delivery Framework
+
 
 Our delivery framework is a sequence of steps and timings we recommend for your interview. By structuring your interview in this way, you'll stay focused on the bits that are most important to your interviewer. An added benefit is that you'll have a clear path to fall back if you're overwhelmed. Many candidates are (understandably!) nervous in their interview. It's easy to get lost if you aren't building up a solution in a linear way.
 

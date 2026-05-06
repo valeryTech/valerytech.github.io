@@ -1,9 +1,14 @@
 ---
 draft: false
 toc: true
-title: "TikTok"
-linkTitle: "TikTok"
+title: "Tik Tok"
+linkTitle: "Tik Tok"
 ---
+---
+
+title: "TikTok"
+
+linkTitle: "TikTok"
 
 Let's say you are not familiar with TikTok. What do you do next? Probably ask your interviewer, right? Even if you know the platform well, it's wise to start by clarifying rather than assuming. The flow might go something like this:
 

@@ -1,9 +1,14 @@
 ---
 draft: false
 toc: true
-title: "System Design Interview Input"
-linkTitle: "System Design Interview Input"
+title: "Sd Interview Input"
+linkTitle: "Sd Interview Input"
 ---
+---
+
+title: "System Design Interview Input"
+
+linkTitle: "System Design Interview Input"
 
 other comment:
 

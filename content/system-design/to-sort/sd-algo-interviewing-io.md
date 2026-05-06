@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "SD AlgoInterviewing"
-linkTitle: "SD Algo Interviewing.io"
+title: "Sd Algo Interviewing Io"
+linkTitle: "Sd Algo Interviewing Io"
 ---
+---
+
+title: SD AlgoInterviewing
+
+linkTitle: SD Algo Interviewing.io
+
 # Framework IO
 
 

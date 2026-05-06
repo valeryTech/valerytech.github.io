@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "SD To Sort"
-linkTitle: "SD To Sort"
+title: "Sd To Sort"
+linkTitle: "Sd To Sort"
 ---
+---
+
+title: "SD To Sort"
+
+linkTitle: "SD To Sort"
+
 # Various
 
 

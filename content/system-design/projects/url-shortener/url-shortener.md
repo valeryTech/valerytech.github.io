@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener"
-linkTitle: "URL Shortener"
+title: "Url Shortener"
+linkTitle: "Url Shortener"
 ---
+---
+
+title: "URL Shortener"
+
+linkTitle: "URL Shortener"
+
 # **Core Requirements**
 
 ## Functional Requirements

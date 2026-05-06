@@ -1,9 +1,14 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener Useful"
-linkTitle: "URL Shortener Useful"
+title: "Url Shortener Useful"
+linkTitle: "Url Shortener Useful"
 ---
+---
+
+title: "URL Shortener Useful"
+
+linkTitle: "URL Shortener Useful"
 
 From a product marketing perspective, "Analytics" might be the core value proposition you sell. But from a **system implementation and user-experience perspective, Redirection is the non-negotiable, foundational core of the entire product.**
 

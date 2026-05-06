@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener NFRs"
-linkTitle: "URL Shortener NFRs"
+title: "Url Shortener Nfrs"
+linkTitle: "Url Shortener Nfrs"
 ---
+---
+
+title: "URL Shortener NFRs"
+
+linkTitle: "URL Shortener NFRs"
+
 # hellointerview variant
 
 
