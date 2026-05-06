@@ -233,3 +233,7 @@
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+.docs-content sup[id^="fnref"] + sup[id^="fnref"] {
+  margin-left: 0.2em;
+}
