@@ -93,7 +93,6 @@ The first version does not need full coverage. Its purpose is to stop relying on
 ## tbc
 
 
-
 - concrete metrics for agentic workflows;
 - example benchmark tasks;
 - a failure taxonomy for coding agents;
