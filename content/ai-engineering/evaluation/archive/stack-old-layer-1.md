@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack Old Layer 1"
-linkTitle: "Stack Old Layer 1"
+title: "Causal Stack (Archived)"
+linkTitle: "Causal Stack (Archived)"
 ---
 # Model-Mechanism Constraints
 
@@ -108,7 +108,6 @@ Formally: \(P(t_{next} | C)\)
 The model predicts the next token from `C`, not from the full conversation history, all available documents, external state, or prior sessions unless those are included in `C`.
 
 ## Observable failure patterns
-
 
 #todo analyse
 
@@ -480,6 +479,7 @@ Maps to the document's M6, but extends it slightly to include self-conditioning 
 
 
 Starting point:
+
 \[P(y \mid x) = \prod_{i=1}^{n} P(y_i \mid x, y_{<i})\]
 
 From this:
