@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 30 System Faults"
-linkTitle: "Stack 30 System Faults"
+title: "Stack 40 System Faults"
+linkTitle: "Stack 40 System Faults"
 ---
 # Layer 3 -- System-Level Faults
 
@@ -57,18 +57,18 @@ Examples:
 
 I would use ten system-fault families:
 
-|Code|System fault family|Core failure|
-|---|---|---|
-|**S1**|Context Assembly Faults|The system builds the wrong runtime context.|
-|**S2**|Retrieval and Grounding Faults|The system fails to supply or enforce source-grounded evidence.|
-|**S3**|Instruction and Policy Control Faults|The system fails to preserve instruction priority or policy boundaries.|
-|**S4**|State and Memory Faults|The system fails to preserve, update, or invalidate durable state.|
-|**S5**|Tool Orchestration Faults|The system calls tools incorrectly or fails to constrain tool use.|
-|**S6**|Output Contract Faults|The system accepts outputs that violate required structure or semantics.|
-|**S7**|Fallback and Escalation Faults|The system lacks good behavior when confidence, evidence, or capability is insufficient.|
-|**S8**|Evaluation and Regression Faults|The system does not detect known failure modes before release.|
-|**S9**|Observability and Diagnosis Faults|The system cannot explain, reproduce, or localize failures.|
-|**S10**|Change Management Faults|Model, prompt, retrieval, or policy changes alter behavior without adequate control.|
+| Code    | System fault family                   | Core failure                                                                             |
+| ------- | ------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **S1**  | Context Assembly Faults               | The system builds the wrong runtime context.                                             |
+| **S2**  | Retrieval and Grounding Faults        | The system fails to supply or enforce source-grounded evidence.                          |
+| **S3**  | Instruction and Policy Control Faults | The system fails to preserve instruction priority or policy boundaries.                  |
+| **S4**  | State and Memory Faults               | The system fails to preserve, update, or invalidate durable state.                       |
+| **S5**  | Tool Orchestration Faults             | The system calls tools incorrectly or fails to constrain tool use.                       |
+| **S6**  | Output Contract Faults                | The system accepts outputs that violate required structure or semantics.                 |
+| **S7**  | Fallback and Escalation Faults        | The system lacks good behavior when confidence, evidence, or capability is insufficient. |
+| **S8**  | Evaluation and Regression Faults      | The system does not detect known failure modes before release.                           |
+| **S9**  | Observability and Diagnosis Faults    | The system cannot explain, reproduce, or localize failures.                              |
+| **S10** | Change Management Faults              | Model, prompt, retrieval, or policy changes alter behavior without adequate control.     |
 
 This gives us a system-focused Layer 3 without drifting into cost, latency, or generic delivery management.
 
@@ -534,9 +534,36 @@ This covers "regression from model or prompt changes."
 |Context-window failures|S1 Context Assembly, S4 State|
 |Poor fallback behavior|S7 Fallback and Escalation|
 |Brittle prompt chains|S1 Context Assembly, S3 Instruction Control, S10 Change Management|
+|Hidden regression|S10 Change Management, S8 Evaluation and Regression, often S9 Observability and Diagnosis|
 |Evaluation blind spots|S8 Evaluation and Regression|
 |Regression from model or prompt changes|S10 Change Management|
 |Safety / policy misclassification|S3 Instruction and Policy Control, S8 Evaluation|
+
+# How to classify "Instruction-following drift"
+
+
+Use "instruction-following drift" as an informal umbrella term, not as a new atomic Layer 2 fault.
+
+| Common meaning | Classify as | Reason |
+|---|---|---|
+| Workflow or prerequisite drift | F25 Invariant Loss + F26 Plan Drift | Earlier constraints or required step order stop governing later behavior. |
+| Prompt or example priority confusion | F03 Context Priority Confusion + F12 Constraint Misclassification + F13 Example Overgeneralization | The system is still "following instructions," but the wrong instruction signal dominates. |
+| Untrusted embedded instruction uptake | F15 Control/Data Confusion + F16 Prompt-Injection Compliance | Non-operative content is treated as operative instruction. |
+
+On the Layer 3 side, the likely system homes are still S1 Context Assembly, S3 Instruction and Policy Control, and S4 State and Memory, depending on whether the failure is in context construction, instruction control, or state persistence.
+
+# How to classify "Hidden regression"
+
+
+Use "hidden regression" as an informal lens, not as a new atomic Layer 2 fault or a new Layer 3 family.
+
+| Common meaning | Classify as | Reason |
+|---|---|---|
+| Behavior changed after a prompt, model, retrieval, tool, schema, policy, or memory update | S10 Change Management | The system allowed a behavior-changing update without adequate compatibility checks or rollout controls. |
+| The regression was not caught before release | S8 Evaluation and Regression | The system lacked the regression coverage, scenario slices, or release gates needed to detect the degradation. |
+| The regression is hard to localize, replay, or attribute | S9 Observability and Diagnosis | The system did not preserve enough trace, version, or provenance data to explain what changed. |
+
+Classify the regressed behavior itself under the affected domain fault as well, such as S2 Retrieval and Grounding, S3 Instruction and Policy Control, S5 Tool Orchestration, or S6 Output Contract. "Hidden regression" is the change, evaluation, and diagnosis lens over that behavior.
 
 Some of your "Layer 3 -- Delivery and engineering problems" are not system faults themselves. They are downstream engineering consequences of system faults:
 
@@ -547,6 +574,7 @@ Some of your "Layer 3 -- Delivery and engineering problems" are not system fault
 |Unclear ownership|Missing ownership model across S1-S10|
 |Slow QA cycles|S8 Evaluation gaps + unclear acceptance criteria|
 |Weak regression testing|S8 Evaluation and Regression|
+|Hidden regression|S10 Change Management + S8 Evaluation + often S9 Observability|
 |Difficult acceptance criteria|S8 Evaluation + S7 fallback ambiguity|
 |Unstable demos|S8 Evaluation + S10 Change Management|
 |High manual review burden|S2/S6/S7 controls insufficient or immature|
@@ -628,7 +656,7 @@ Layer 3 system fault:
 S10 Change Management Fault — prompt or model changed without behavioral regression tests
 
 Layer 4 engineering problem:
-Hard-to-debug regression
+Hidden regression / hard-to-debug regression
 
 Layer 5 user symptom:
 “It worked yesterday but not today.”

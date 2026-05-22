@@ -34,6 +34,60 @@ CALLOUT_MAP = {
     "danger": ("danger", "outline/alert-octagon"),
 }
 WIKI_LINK_RE = re.compile(r"(!)?\[\[([^\]|#]+)?(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
+MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
+BLOCK_MATH_RE = re.compile(r"(?<!\\)\$\$(?!\$)(.+?)(?<!\\)\$\$(?!\$)", re.DOTALL)
+
+
+def normalize_math_delimiters(text: str) -> str:
+    text = BLOCK_MATH_RE.sub(rewrite_block_math, text)
+    return "\n".join(normalize_inline_math(line) for line in text.splitlines())
+
+
+def rewrite_block_math(match: re.Match[str]) -> str:
+    content = match.group(1).strip("\n")
+    if "\n" in content:
+        return f"\\[\n{content}\n\\]"
+    return f"\\[{content}\\]"
+
+
+def normalize_inline_math(line: str) -> str:
+    result: list[str] = []
+    start = 0
+    cursor = 0
+    while cursor < len(line):
+        opener = find_inline_delimiter(line, cursor)
+        if opener == -1:
+            result.append(line[start:])
+            break
+
+        closer = find_inline_delimiter(line, opener + 1)
+        if closer == -1:
+            result.append(line[start:])
+            break
+
+        result.append(line[start:opener])
+        result.append(r"\(")
+        result.append(line[opener + 1 : closer])
+        result.append(r"\)")
+        start = closer + 1
+        cursor = closer + 1
+
+    return "".join(result)
+
+
+def find_inline_delimiter(text: str, start: int) -> int:
+    cursor = start
+    while True:
+        position = text.find("$", cursor)
+        if position == -1:
+            return -1
+        if position > 0 and text[position - 1] == "\\":
+            cursor = position + 1
+            continue
+        if position + 1 < len(text) and text[position + 1] == "$":
+            cursor = position + 2
+            continue
+        return position
 
 
 @dataclass(frozen=True)
@@ -73,7 +127,7 @@ def strip_duplicate_leading_title_heading(document: Document, title: str) -> lis
 
 
 def rewrite_inline_links(text: str, ctx: RenderContext) -> str:
-    def replace(match: re.Match[str]) -> str:
+    def replace_wiki_link(match: re.Match[str]) -> str:
         is_embed = bool(match.group(1))
         target = (match.group(2) or "").strip()
         heading = (match.group(3) or "").strip()
@@ -91,30 +145,105 @@ def rewrite_inline_links(text: str, ctx: RenderContext) -> str:
             link_text = label or heading
             return f"[{link_text}](#{slugify_heading(heading)})"
 
-        if target:
-            linked_note = ctx.note_index.resolve(ctx.note, target)
-            if linked_note is not None:
-                link_text = label or humanize_slug(Path(target).stem)
-                ref = f'{{{{< ref "{linked_note.target_ref}" >}}}}'
-                if heading:
-                    ref = f"{ref}#{slugify_heading(heading)}"
-                return f"[{link_text}]({ref})"
-
-            attachment = ctx.attachment_resolver.resolve(ctx.note, target)
-            if attachment is not None:
-                copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1])
-                link_text = label or Path(target).name
-                rel_path = relative_output_from_note(ctx.note, copied.output_rel)
-                return f"[{link_text}]({rel_path})"
-
-        ctx.report.add_warning(
-            "unresolved-link",
-            f"Could not resolve {match.group(0)}",
-            source=ctx.note.source_rel_global.as_posix(),
+        return render_link_target(
+            target=target,
+            heading=heading,
+            label=label,
+            original=match.group(0),
+            ctx=ctx,
         )
-        return match.group(0)
 
-    return WIKI_LINK_RE.sub(replace, text)
+    def replace_markdown_link(match: re.Match[str]) -> str:
+        label = match.group(1)
+        target, heading = split_markdown_target(match.group(2))
+        if (
+            not target
+            or target.startswith("#")
+            or has_external_scheme(target)
+            or is_generated_shortcode_target(target)
+        ):
+            return match.group(0)
+        return render_link_target(
+            target=target,
+            heading=heading,
+            label=label,
+            fallback_label=label,
+            original=match.group(0),
+            ctx=ctx,
+        )
+
+    return WIKI_LINK_RE.sub(replace_wiki_link, MARKDOWN_LINK_RE.sub(replace_markdown_link, text))
+
+
+def render_link_target(
+    *,
+    target: str,
+    heading: str,
+    label: str,
+    fallback_label: str | None = None,
+    original: str,
+    ctx: RenderContext,
+) -> str:
+    linked_note = ctx.note_index.resolve(ctx.note, target)
+    if linked_note is not None:
+        link_text = label or humanize_slug(Path(target).stem)
+        ref = f'{{{{< ref "{linked_note.target_ref}" >}}}}'
+        if heading:
+            ref = f"{ref}#{slugify_heading(heading)}"
+        return f"[{link_text}]({ref})"
+
+    attachment = ctx.attachment_resolver.resolve(ctx.note, target)
+    if attachment is not None:
+        copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1])
+        link_text = label or Path(target).name
+        rel_path = relative_output_from_note(ctx.note, copied.output_rel)
+        return f"[{link_text}]({rel_path})"
+
+    ctx.report.add_warning(
+        "unresolved-link",
+        f"Could not resolve {original}",
+        source=ctx.note.source_rel_global.as_posix(),
+    )
+    if fallback_label and is_local_markdown_target(target):
+        return fallback_label
+    return original
+
+
+def split_markdown_target(raw_target: str) -> tuple[str, str]:
+    target = raw_target.strip()
+    if not target:
+        return "", ""
+
+    if target.startswith("<") and ">" in target:
+        target = target[1 : target.index(">")].strip()
+    else:
+        title_match = re.match(r'^(?P<dest>.+?)\s+(?:"[^"]*"|\'[^\']*\')\s*$', target)
+        if title_match:
+            target = title_match.group("dest").strip()
+
+    if "#" not in target:
+        return target, ""
+
+    base, fragment = target.split("#", 1)
+    return base, fragment
+
+
+def has_external_scheme(target: str) -> bool:
+    return bool(re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target))
+
+
+def is_generated_shortcode_target(target: str) -> bool:
+    stripped = target.lstrip()
+    return stripped.startswith("{{<") or stripped.startswith("{{%")
+
+
+def is_local_markdown_target(target: str) -> bool:
+    stripped = target.strip().lower()
+    return stripped.endswith(".md")
+
+
+def rewrite_markdown_text(text: str, ctx: RenderContext) -> str:
+    return rewrite_inline_links(normalize_math_delimiters(text), ctx)
 
 
 def convert_embed(block: Embed, ctx: RenderContext) -> str:
@@ -150,16 +279,16 @@ def convert_embed(block: Embed, ctx: RenderContext) -> str:
 
 def convert_block(block: object, ctx: RenderContext) -> str:
     if isinstance(block, MarkdownChunk):
-        return rewrite_inline_links(block.text, ctx)
+        return rewrite_markdown_text(block.text, ctx)
     if isinstance(block, Heading):
-        return f'{"#" * block.level} {rewrite_inline_links(block.text, ctx)}'
+        return f'{"#" * block.level} {rewrite_markdown_text(block.text, ctx)}'
     if isinstance(block, FencedCode):
         opener = f"{block.fence}{block.info}" if block.info else block.fence
         return f"{opener}\n{block.text}\n{block.fence}"
     if isinstance(block, Callout):
         context, icon = callout_presentation(block.kind)
         title = escape_shortcode(block.title or block.kind.title())
-        body = rewrite_inline_links(block.body, ctx)
+        body = rewrite_markdown_text(block.body, ctx)
         return (
             f'{{{{< callout context="{context}" title="{title}" icon="{icon}" >}}}}\n'
             f"{body}\n"

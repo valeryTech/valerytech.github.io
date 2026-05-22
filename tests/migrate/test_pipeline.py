@@ -36,14 +36,24 @@ class MigrationPipelineTests(unittest.TestCase):
         self.assertEqual(first, 0)
 
         api_path = self.workspace.content_root / "system-design/topics/api.md"
+        index_path = self.workspace.content_root / "system-design/_index.md"
         smoke_path = self.workspace.content_root / "system-design/integrated-test-pages/migration-smoke.md"
         self.assertTrue(api_path.exists())
+        self.assertTrue(index_path.exists())
         self.assertTrue(smoke_path.exists())
 
         api_content = api_path.read_text(encoding="utf-8")
+        index_content = index_path.read_text(encoding="utf-8")
         smoke_content = smoke_path.read_text(encoding="utf-8")
         self.assertIn('title: "Api"', api_content)
         self.assertIn('figure src="api.assets/api-diagram.png"', api_content)
+        self.assertIn('[Caching Doc]({{< ref "system-design/topics/caching" >}})', api_content)
+        self.assertIn(r"Inline math: \(x = y + 1\).", api_content)
+        self.assertIn("\\[\nf(x) = x^2\n\\]", api_content)
+        self.assertIn("Price stays literal at $10 a month.", api_content)
+        self.assertIn(r"tracking \(R_0\)", api_content)
+        self.assertIn(r"System design root with inline math \(n^2\).", index_content)
+        self.assertIn("\\[\nQ = \\lambda \\times W\n\\]", index_content)
         self.assertIn('[System Elements]({{< ref "system-design/elements/elements" >}})', smoke_content)
         self.assertIn("[[missing-note]]", smoke_content)
 

@@ -4,23 +4,16 @@ toc: true
 title: "Ai Systems Features"
 linkTitle: "Ai Systems Features"
 ---
+Understanding LLM mechanisms and AI-system failure modes gives us a practical engineering advantage. Instead of discovering weaknesses only through production incidents, we can anticipate them during system design. The mechanism stack lets us identify which causal surfaces are relevant for a given application, derive likely failure modes, and then select appropriate controls, traces, recovery paths, and evaluations before deployment.
 
-here we will see the different features of AI systems
+In practice, this supports four core engineering functions:
 
-1. **Prevent** classes of failures (design-time controls)
-2. **Detect** failures quickly (instrumentation + monitoring)
-3. **Recover** gracefully (runtime mitigation + fallbacks)
-4. **Prove** a system works (evaluation + regression gating)
+1. **Prevent** classes of failures through design-time controls such as schemas, validators, retrieval design, source grounding, prompt contracts, policy gates, and tool authorization.
+2. **Detect** failures quickly through instrumentation, traces, monitoring, and component-level observability.
+3. **Recover** gracefully through fallbacks, retries, abstention, clarification, human escalation, rollback, and safe degraded modes.
+4. **Prove** the system works through evaluations, scenario tests, adversarial tests, regression gates, and release criteria.
 
-usually we learn from practice, but here we could beforehand select ... mechanics, failures, ...
-
-...
-
-AI systems fail differently from traditional software. Traditional tests usually assume deterministic behavior, clear expected outputs, and localized failure modes. LLM-based systems do not always have those properties. Their behavior can vary across prompts, model versions, retrieved context, tool outputs, and conversation history; their outputs may have several acceptable forms; and their failures can be fluent, plausible, and difficult to detect.
-
-what we could use to prevent ...
-
-An evaluation harness gives teams a structured way to make this behavior observable, measurable, comparable, and governable. It runs repeatable task scenarios, captures traces across the system, applies task-specific quality criteria, compares behavior across versions, and produces evidence for debugging, release decisions, and ongoing monitoring.
+This moves AI engineering from trial-and-error prompt iteration toward mechanism-informed architecture. The engineer can ask, before launch: Which mechanisms are active? Which failure modes are likely? Which controls are needed? What must be logged? How will the system recover? What evidence proves the behavior is acceptable?
 
 ## Behavior Instability
 
@@ -255,7 +248,7 @@ This is particularly important for customer-facing agents.
 
 # A map of AI-system characteristics
 
-## 2. Knowledge dependence
+## Knowledge dependence
 
 
 AI systems do not "contain" all knowledge reliably. Their behavior depends on:
@@ -292,7 +285,7 @@ We need to measure:
 - faithfulness to evidence;
 - sensitivity to missing or noisy context.
 
-## 3. Compositional / pipeline structure
+## Compositional / pipeline structure
 
 
 Most real AI systems are **not just one model call**. They are pipelines:
@@ -333,7 +326,7 @@ We need:
 - traceability across stages;
 - clear attribution of failure source.
 
-## 4. Agentic / action-taking behavior
+## Agentic / action-taking behavior
 
 
 Agentic systems do not just answer -- they:
@@ -375,8 +368,6 @@ We need to measure:
 - recovery behavior;
 - task completion success;
 - action safety.
-
-# other?
 
 ## Data and knowledge drift
 
@@ -466,9 +457,8 @@ The evaluation goal is to make failures diagnosable.
 
 A useful evaluation platform should capture traces, inputs, outputs, retrieved context, tool calls, scores, labels, and human judgments so that teams can locate the failure point.
 
---
+## 7. Weak inherent interpretability
 
-or ## 7. Weak inherent interpretability
 
 AI systems often give outputs without exposing a clean causal explanation.
 
@@ -516,7 +506,7 @@ Without a harness, these comparisons are anecdotal.
 
 The evaluation goal is to support controlled experiments with comparable metrics, datasets, and failure analysis.
 
-## Operational Instability / Environment Drift (?)
+## Operational Instability / Environment Drift
 
 
 **Operational instability** means that the input may appear to be the same from the user's perspective, but the underlying system conditions have changed.
@@ -599,76 +589,3 @@ The evaluation goal is to measure quality together with operational metrics:
 - accuracy; - success rate; - latency; - token usage; - tool-call count; - cost per task; - retry rate; - timeout rate; - failure recovery rate.
 
 The goal is not just "best quality." It is **acceptable quality at acceptable cost and latency**.
-
-# Core motivation
-
-
-An evaluation harness exists because AI systems are:
-
-**probabilistic, context-dependent, hard to specify, hard to debug, and easy to regress.**
-
-So the harness should help answer five fundamental questions:
-
-1. **Does the system solve the task?**
-2. **Is the answer grounded and safe?**
-3. **Where did failure happen?**
-4. **Did a change improve or regress behavior?**
-5. **Is the system reliable enough for production use?**
-
-# Additional
-
-
-(?) For LLM agents and semantic RAG systems, evaluation is not just about scoring final answers. It is about evaluating the whole behavior chain: input understanding, retrieval, planning, tool use, generation, grounding, safety, and operational performance.
-
-## Retrieval failures in semantic RAG
-
-
-Semantic retrieval introduces its own failure modes.
-
-Common problems include:
-
-- the right document is not retrieved;
-- irrelevant chunks are retrieved because they are semantically similar;
-- important context is split across chunks;
-- outdated documents rank higher than current ones;
-- the model receives too much context and ignores the key evidence;
-- metadata filters silently exclude the right material.
-
-The evaluation goal is to measure retrieval behavior independently from answer generation.
-
-Important RAG questions:
-
-- Did the system retrieve the necessary evidence?
-- Was the evidence ranked high enough?
-- Was the context complete?
-- Was the context current?
-- Did irrelevant context distract the model?
-
-## Agentic workflow errors
-
-
-Agentic systems do more than answer questions. They plan, call tools, inspect results, update state, and make decisions.
-
-This creates characteristic failures:
-
-- choosing the wrong tool;
-- calling the right tool with bad arguments;
-- skipping required steps;
-- taking unnecessary steps;
-- misinterpreting tool output;
-- failing to recover from tool errors;
-- entering loops;
-- stopping too early;
-- taking an action without enough evidence.
-
-The evaluation goal is to assess **process quality**, not just final output quality.
-
-For agents, we often need to evaluate:
-
-- plan validity;
-- tool selection;
-- tool-call correctness;
-- intermediate reasoning artifacts, where available;
-- state transitions;
-- final answer or action;
-- recovery behavior after failure.

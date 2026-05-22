@@ -1,13 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Stack Old"
-linkTitle: "Stack Old"
+title: "Stack Umbrella Model"
+linkTitle: "Stack Umbrella Model"
 ---
-## Recommended umbrella model
+## Recommended Umbrella Model
 
 
-Use this chain:
+The chain:
 
 Mechanism -> Constraint -> Failure Pattern -> Boundary -> Control -> Test/Monitor
 
@@ -15,10 +15,8 @@ Example:
 
 Autoregressive decoding -> plausibility pressure -> unsupported claims -> unacceptable in legal/medical/finance -> retrieval + evidence policy + verifier -> citation integrity monitor
 
-# causal stack
+# Causal Stack
 
-
-I would organize it as a **causal stack**, not just a list of issues.
 
 The cleanest structure is:
 
@@ -212,9 +210,6 @@ Symptoms are user-visible manifestations.
 Impact is business consequence.
 ```
 
-
-For your wording, I would avoid saying only:
-
 ```text
 LLMs are unstable and non-deterministic.
 ```
@@ -273,4 +268,4 @@ Properties → Failure Modes → Delivery Friction → User Symptoms → Busines
 ```
 
 
-That gives you a clear causal story and avoids mixing root causes, engineering issues, and symptoms into the same bucket.
+That gives a clear causal story and avoids mixing root causes, engineering issues, and symptoms into the same bucket.

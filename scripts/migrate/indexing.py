@@ -11,14 +11,17 @@ class NoteIndex:
     def __init__(self, notes: tuple[PlannedNote, ...]) -> None:
         self._notes_by_global: dict[str, PlannedNote] = {}
         self._notes_by_import: dict[tuple[str, str], PlannedNote] = {}
+        self._notes_by_source_path: dict[str, PlannedNote] = {}
         self._notes_by_basename: dict[str, list[PlannedNote]] = defaultdict(list)
 
         for note in notes:
             global_key = normalize_note_key(note.source_rel_global)
             import_key = normalize_note_key(note.source_rel_import)
+            source_path_key = normalize_note_key(note.source_path)
             basename_key = normalize_note_key(Path(note.source_rel_import.name))
             self._notes_by_global[global_key] = note
             self._notes_by_import[(note.import_rule.name, import_key)] = note
+            self._notes_by_source_path[source_path_key] = note
             self._notes_by_basename[basename_key].append(note)
 
     def resolve(self, current_note: PlannedNote, raw_target: str) -> PlannedNote | None:
@@ -43,6 +46,9 @@ class NoteIndex:
         for key in global_candidates:
             if key and (note := self._notes_by_global.get(key)):
                 return note
+
+        if note := self._notes_by_source_path.get(normalized_target):
+            return note
 
         basename_matches = self._notes_by_basename.get(normalized_target, [])
         if len(basename_matches) == 1:

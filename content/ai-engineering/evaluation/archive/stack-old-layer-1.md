@@ -84,13 +84,9 @@ Core principle:
 
 An LLM does not operate over "everything relevant." It operates over the runtime context supplied to it:
 
-$$
+`y = M_theta(C)`
 
-y = M_\theta(C)
-
-$$
-
-where CC is the current context supplied to the model: system instructions, user input, prior turns, retrieved evidence, memory, tool outputs, summaries, and any other injected material.
+where `C` is the current context supplied to the model: system instructions, user input, prior turns, retrieved evidence, memory, tool outputs, summaries, and any other injected material.
 
 Therefore, model behavior is bounded by:
 
@@ -107,11 +103,12 @@ These constraints are not product bugs by themselves, but architectural limits t
 
 The model can only condition directly on information present in the current context window.
 
-Formally: $P(t_{next} \mid C)$
+Formally: \(P(t_{next} | C)\)
 
-The model predicts the next token from (C), not from the full conversation history, all available documents, external state, or prior sessions unless those are included in (C).
+The model predicts the next token from `C`, not from the full conversation history, all available documents, external state, or prior sessions unless those are included in `C`.
 
 ## Observable failure patterns
+
 
 #todo analyse
 
@@ -263,17 +260,13 @@ I would formulate the **Generation Constraints** as **G1-G3**.
 
 A model does not generate a response as a complete object in one step. It generates token by token:
 
-$$
-
-P(y \mid x) = \prod_{i=1}^{n} P(y_i \mid x, y_{<i})
-
-$$
+`P(y | x) = product_{i=1}^n P(y_i | x, y_<i>)`
 
 where:
 
-- (x) is the supplied context,
-- (y_i) is the next generated token,
-- (y_{<i}) is the partial answer already generated.
+- `x` is the supplied context,
+- `y_i` is the next generated token,
+- `y_<i` is the partial answer already generated.
 
 This has three important consequences:
 
@@ -292,7 +285,7 @@ So Generation Constraints should be framed as:
 
 The model generates by repeatedly selecting likely next tokens conditioned on the current context and its own previously generated tokens.
 
-At step (i): $P(y_i \mid x, y_{<i})$
+At step `i`: `P(y_i | x, y_<i>)`
 
 The model is therefore optimized toward locally plausible continuation, not inherently toward truth, groundedness, completeness, safety, consistency, or task success.
 
@@ -353,9 +346,9 @@ Better:
 
 The model outputs a probability distribution, not a single necessary continuation.
 
-The actual response depends on a decoding procedure:  $D(P(y_i \mid x, y_{<i}))$
+The actual response depends on a decoding procedure: `D(P(y_i | x, y_<i>))`
 
-where (D) may involve greedy selection, sampling, temperature, top-p, beam search, constrained decoding, or other decoding rules.
+where `D` may involve greedy selection, sampling, temperature, top-p, beam search, constrained decoding, or other decoding rules.
 
 ## Proper formulation
 
@@ -401,13 +394,9 @@ The generated sequence is highly sensitive to the initial context and to the par
 
 Generation is conditioned not only on the user's semantic intent, but on the exact tokenized prompt:
 
-[
+\[P(y_i | x, y_i)\]
 
-P(y_i \mid x, y_{<i})
-
-]
-
-Small changes to (x) can alter the probability distribution. Small changes to early generated tokens (y_{<i}) can alter the remainder of the trajectory.
+Small changes to `x` can alter the probability distribution. Small changes to early generated tokens \(y_{j<i}\) can alter the remainder of the trajectory.
 
 ## Proper formulation
 
@@ -448,11 +437,7 @@ The combined constraint is:
 
 But generation also has **self-conditioning**:
 
-[
-
-y_1 \rightarrow y_2 \rightarrow y_3 \rightarrow \dots
-
-]
+`y_1 -> y_2 -> y_3 -> ...`
 
 Once the model starts down one path, the partial answer becomes part of the context for the rest of the answer.
 
@@ -495,12 +480,7 @@ Maps to the document's M6, but extends it slightly to include self-conditioning 
 
 
 Starting point:
-
-[
-
-P(y \mid x) = \prod_{i=1}^{n} P(y_i \mid x, y_{<i})
-
-]
+\[P(y \mid x) = \prod_{i=1}^{n} P(y_i \mid x, y_{<i})\]
 
 From this:
 
@@ -509,11 +489,7 @@ From this:
 
 Because each token is generated as a continuation of previous tokens:
 
-[
-
-P(y_i \mid x, y_{<i})
-
-]
+`P(y_i | x, y_<i>)`
 
 we get:
 
@@ -526,11 +502,7 @@ The model continues plausibly; it does not natively verify globally.
 
 Because each step yields a distribution rather than a single answer:
 
-[
-
-P(y_i \mid \cdot)
-
-]
+`P(y_i | ...)`
 
 we get:
 
@@ -541,13 +513,9 @@ The final output depends on how the distribution is decoded.
 ## 3. Conditioning on prompt and prior output
 
 
-Because every next token is conditioned on (x) and (y_{<i}):
+Because every next token is conditioned on `x` and `y_<i`:
 
-[
-
-x, y_{<i}
-
-]
+`x, y_<i`
 
 we get:
 
@@ -593,23 +561,7 @@ This matters because the canonical constraint should name the **cause**, not the
 
 **Epistemic constraints** are model-mechanism constraints governing the relationship between generated text and truth, evidence, justification, and confidence.
 
-A base LLM does not directly output:
-
-[
-
-\text{truth}
-
-]
-
-It outputs:
-
-[
-
-P(y \mid C)
-
-]
-
-That is, a probability distribution over possible text continuations given a context (C).
+A base LLM does not directly output: `truth` It outputs: `P(y | C)`. That is, a probability distribution over possible text continuations given a context `C`.
 
 This means the model's native object is not a fact, proof, belief, source, or calibrated confidence estimate. Its native object is a **textual continuation distribution**.
 
@@ -626,21 +578,13 @@ The probability of a textual continuation is not the same as the probability tha
 
 The model estimates something like:
 
-[
-
-P(y \mid C)
-
-]
+`P(y | C)`
 
 not directly:
 
-[
+`P(true(p) | C)`
 
-P(\text{true}(p) \mid C)
-
-]
-
-where (p) is the proposition expressed by (y).
+where `p` is the proposition expressed by `y`.
 
 A continuation may be likely because it is common, fluent, stylistically appropriate, or contextually expected. That does not make it true.
 
@@ -687,37 +631,7 @@ Better:
 
 The model does not inherently bind generated claims to specific evidence, sources, or provenance.
 
-It can produce a claim:
-
-[
-
-p
-
-]
-
-and it can produce an explanation or citation-like text:
-
-[
-
-e
-
-]
-
-but the generation mechanism alone does not guarantee:
-
-[
-
-e \Rightarrow p
-
-]
-
-or:
-
-[
-
-\text{source}(e) \text{ actually supports } p
-
-]
+It can produce a claim: `p` and it can produce an explanation or citation-like text: `e` but the generation mechanism alone does not guarantee: `e -> p` or: `source(e) actually supports p`
 
 Grounding is therefore not native to the generated claim. It must be supplied or enforced through context structure, retrieval, tools, verification, or source-aware system design.
 
@@ -779,19 +693,11 @@ is itself generated as part of the textual continuation.
 
 So the model is producing:
 
-[
-
-P(\text{confidence phrase} \mid C)
-
-]
+`P(confidence_phrase | C)`
 
 not necessarily:
 
-[
-
-P(\text{answer is correct} \mid C)
-
-]
+`P(answer_is_correct | C)`
 
 This creates a gap between confidence tone and epistemic reliability.
 
@@ -830,19 +736,11 @@ A high-probability token sequence may be high-probability because it is conventi
 
 So neither of these is automatically reliable:
 
-[
-
-\text{confident wording}
-
-]
+`confident wording`
 
 nor:
 
-[
-
-\text{high token likelihood}
-
-]
+`high token likelihood`
 
 as a direct measure of correctness.
 
@@ -857,11 +755,7 @@ The model does not have guaranteed privileged access to a separate truth oracle,
 
 Self-evaluation is another continuation:
 
-[
-
-P(y_{\text{eval}} \mid C, y_{\text{answer}})
-
-]
+`P(y_eval | C, y_answer)`
 
 not an independent guarantee that the answer is correct.
 
@@ -945,22 +839,14 @@ Canonical statement:
 
 Start from the base object:
 
-[
-
-P(y \mid C)
-
-]
+`P(y | C)`
 
 The model produces likely text given context.
 
 ## 1. Text likelihood is not proposition truth
 
 
-[
-
-P(y \mid C) \neq P(\text{true}(p_y) \mid C)
-
-]
+`P(y | C) != P(true(p_y) | C)`
 
 Therefore:
 
@@ -969,11 +855,7 @@ Therefore:
 ## 2. Generated explanation is not evidence binding
 
 
-[
-
-P(e \mid C, p) \neq \text{supports}(e, p)
-
-]
+`P(e | C, p) != supports(e, p)`
 
 Therefore:
 
@@ -982,11 +864,7 @@ Therefore:
 ## 3. Confidence language is not calibrated correctness
 
 
-[
-
-P(c \mid C, y) \neq P(\text{correct}(y) \mid C)
-
-]
+`P(c | C, y) != P(correct(y) | C)`
 
 Therefore:
 
@@ -995,11 +873,7 @@ Therefore:
 ## 4. Self-evaluation is another generated continuation
 
 
-[
-
-P(y_{\text{eval}} \mid C, y_{\text{answer}})
-
-]
+`P(y_eval | C, y_answer)`
 
 Therefore:
 
