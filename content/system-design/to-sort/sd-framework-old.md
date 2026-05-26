@@ -1,15 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Sd Framework Old"
-linkTitle: "Sd Framework Old"
----
----
-
 title: "SD Framework Old"
-
 linkTitle: "SD Framework Old"
-
+---
 # To Refactor
 
 

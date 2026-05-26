@@ -82,6 +82,8 @@ Question:
 
 > What system-level property shapes behavior?
 
+Deployed AI systems have an empirical operating character. Behavior is shaped by soft correctness, repeated-run and scenario-level variability, mutable context and environment conditions, and limited native observability. That means quality cannot be inferred from implementation structure alone; it has to be established by observing how the system behaves under representative conditions.
+
 # Layer 2 -- Behavioral fault modes
 
 
@@ -131,6 +133,8 @@ The evaluation view describes methods for detecting or measuring Layer 2 faults.
 
 It is not itself a causal layer.
 
+It is the mechanism by which empirical behavior is revealed, compared, and validated. In this stack, evaluation is not an optional afterthought. It is how teams determine whether intended behavior actually holds across repeated runs, prompt variants, context changes, product slices, and runtime conditions.
+
 Examples:
 
 ```text
@@ -173,6 +177,8 @@ Evaluation question:
 
 
 Layer 3 describes controls around Layer 2 faults, or failures of those controls.
+
+Because the system is empirical, Layer 3 is where measured behavior becomes an operational discipline. Release gates, regression suites, monitoring, tracing, and escalation paths are the mechanisms teams use to prove that behavior is acceptable, and to detect when it is no longer acceptable.
 
 Examples of controls:
 

@@ -74,6 +74,35 @@ A candidate belongs in Layer 1C when it satisfies all of the following:
 
 Layer 1C is therefore the right home for features that appear when LLMs become products, agents, RAG systems, workflow automations, copilots, or decision-support systems.
 
+## Framing principle -- AI systems are empirical systems
+
+
+AI systems are empirical systems.
+
+That means their behavior cannot be fully trusted, specified, or improved from implementation structure alone. Once an LLM is embedded in a real application, quality has to be discovered, measured, and validated through representative scenarios, repeated runs, perturbations, slice analysis, traces, and production observation.
+
+Calling AI systems empirical does not mean their behavior is arbitrary, unknowable, or only testable in production. It means that design-time reasoning, static inspection, and ordinary deterministic tests are necessary but insufficient. They must be supplemented by behavioral measurement under representative inputs, contexts, system states, and operational constraints.
+
+This is a cross-cutting Layer 1C framing principle rather than a separate primitive feature. Its minimal core emerges from the interaction of:
+
+- `C1` Behavioral Outcome Variability;
+- `C2` Soft Correctness Surface;
+- `C7` Environment and Version Dependence;
+- `C8` Weak Native Observability and Attribution.
+
+It is further strengthened by `C3` External Knowledge Dependence, `C4` Evidence-Grounded Generation Surface, `C5` Compositional Pipeline Structure, and `C6` Agentic State-Action Interface, because mutable knowledge sources, grounding requirements, multi-stage composition, and state-action loops all increase the amount of behavior that must be validated empirically.
+
+> An AI system is a model-centered, context-dependent, pipeline-mediated, environment-sensitive, evidence- and policy-constrained, resource-bounded system whose reliability must be established empirically at the level of intended outcomes, grounding, process quality, safety boundaries, and operational behavior.
+
+This framing principle is not a Layer 2 fault, not an evaluation method, and not a Layer 3 control. It explains why those downstream artifacts are necessary.
+
+### Engineering consequences
+
+
+- development improves systems by experiment, comparison, and measured behavior rather than code inspection alone;
+- operation depends on traces, monitoring, regression checks, and slice visibility;
+- delivery requires acceptance criteria, evaluation coverage, and release gates tied to observed behavior.
+
 ## Feature matrix
 
 
@@ -369,6 +398,8 @@ Evaluation must explicitly measure:
 - sensitivity to noisy or misleading context;
 - whether available authoritative context was actually used.
 
+Because knowledge sources can be stale, missing, reordered, or weakly authoritative, reliability here is an empirical question about observed behavior under those knowledge conditions.
+
 ## Important boundary
 
 
@@ -464,6 +495,8 @@ Evaluation must explicitly measure:
 - claim-source traceability;
 - unsupported-claim behavior when evidence is weak or absent;
 - whether the system abstains or qualifies claims when grounding is insufficient.
+
+For grounded systems, reliability is empirical at the level of support, traceability, abstention, and evidence-faithful behavior, not just answer fluency.
 
 ## Important boundary
 
@@ -564,6 +597,8 @@ Evaluation requires traceability across stages so teams can distinguish:
 - parser or schema failures from model failures;
 - policy-layer failures from upstream content failures.
 
+Because end-to-end behavior emerges from stage interaction, static inspection of individual components is insufficient; pipeline reliability has to be measured under replay, traces, or representative runtime conditions.
+
 ## Important boundary
 
 
@@ -655,6 +690,8 @@ Evaluation must assess intermediate process quality, not just final output quali
 - recovery behavior;
 - stopping behavior;
 - task completion success under realistic tool and state conditions.
+
+For agentic systems, plan quality, tool use, recovery, and stopping behavior are empirical properties of the whole state-action loop, not facts that can be inferred from final-answer inspection alone.
 
 ## Important boundary
 

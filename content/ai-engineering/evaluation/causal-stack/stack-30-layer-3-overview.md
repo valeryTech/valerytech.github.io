@@ -263,6 +263,8 @@ An offline score alone is not a Layer 3 control unless it is connected to a rele
 ## Layer 3 design principle: prevent, detect, recover, prove
 
 
+The "prove" role exists because AI systems are empirical systems. Acceptable behavior is not established by implementation intent alone. It has to be demonstrated through measurement, traces, regression evidence, monitoring, and operational review. Layer 3 is where that empirical requirement becomes release gates, runtime checks, escalation paths, and governance rather than a disconnected offline score.
+
 Layer 3 controls can play four different roles.
 
 ### 1. Prevent

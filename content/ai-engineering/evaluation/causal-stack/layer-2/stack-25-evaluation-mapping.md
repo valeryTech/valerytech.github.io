@@ -42,6 +42,9 @@ Layer 4 impact mapping
   -> why the fault matters to users, business, safety, or operations
 ```
 
+
+AI systems must be evaluated empirically because end-to-end behavior cannot be trusted from implementation structure alone. The practical consequence is that evaluation has to observe behavior under repeated runs, perturbations, slice variation, context changes, and realistic process conditions rather than relying only on exact-match or one-run checks.
+
 ## Evaluation principles
 
 ### 1. Evaluate behavior, not surface text alone

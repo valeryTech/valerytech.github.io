@@ -32,7 +32,7 @@ source_root_kind = "external"
 source_subtree = "ai-engineering"
 target_subtree = "ai-engineering"
 selection_mode = "opt-in"
-selection_paths = ["coding-agents", "evaluation"]
+selection_paths = ["coding-agents", "evaluation", "empirical-nature.md", "experimentation.md"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 
