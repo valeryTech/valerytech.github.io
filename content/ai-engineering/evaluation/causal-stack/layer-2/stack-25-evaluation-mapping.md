@@ -11,7 +11,7 @@ linkTitle: "Stack 25 Evaluation Mapping"
 
 This document maps **Layer 2 feature-derived fault modes** to evaluation methods.
 
-Layer 2 fault modes describe recurring behavioral failure patterns that arise from Layer 1A mechanisms and Layer 1B learned or behavioral LLM features. This document answers a different question:
+Layer 2 fault modes describe recurring behavioral failure patterns that arise downstream of Layer 1A mechanisms, Layer 1B learned or behavioral LLM features, and Layer 1C AI-system-level causal features. This document answers a different question:
 
 > Given a Layer 2 fault mode, how do we detect it, measure it, reproduce it, or decide whether the behavior is acceptable?
 
@@ -26,7 +26,10 @@ This document does **not** define:
 Those belong in adjacent documents.
 
 ```text
-Layer 1A / 1B
+Layer 0
+  -> interface conditions that shape how meaning must be inferred
+
+Layer 1A / 1B / 1C
   -> why the fault is possible
 
 Layer 2 fault inventory
@@ -35,7 +38,7 @@ Layer 2 fault inventory
 Layer 2 evaluation mapping
   -> how to detect, measure, or reproduce the fault
 
-Layer 3 control mapping
+Layer 3 control families
   -> what system controls reduce or recover from the fault
 
 Layer 4 impact mapping
@@ -290,29 +293,25 @@ Checks whether generated claims are supported by approved evidence.
 3. Check whether evidence supports each claim.
 4. Score unsupported, contradicted, or overextended claims.
 
-### EM5. Retrieval Evaluation
+### EM5. Truth / Factuality Evaluation
 
 
-Evaluates whether retrieval found the right evidence before generation.
+Evaluates whether generated claims are actually true, regardless of whether support was supplied in the current context.
 
 **Catches:**
 
-- missing evidence;
-- stale evidence;
-- irrelevant context;
-- incomplete context;
-- ranking errors;
-- source coverage gaps.
+- plausible but false claims;
+- outdated claims;
+- wrong labels or extracted facts;
+- false calculations or transformations;
+- domain-specific correctness failures.
 
-**Common metrics:**
+**Common oracles:**
 
-- recall at k;
-- precision at k;
-- mean reciprocal rank;
-- expected-document recall;
-- source freshness;
-- authority coverage;
-- chunk completeness.
+- gold labels;
+- trusted references;
+- expert review;
+- tool-backed verification.
 
 ### EM6. Schema / Parser Validation
 
@@ -342,50 +341,30 @@ Semantic validation:
 
 Both may be required.
 
-### EM7. Semantic Output Evaluation
+### EM7. Reasoning / Process Evaluation
 
 
-Judges whether the output satisfies task-specific meaning, not exact text.
-
-**Catches:**
-
-- incomplete answers;
-- wrong decisions;
-- missed obligations;
-- incorrect summaries;
-- misleading transformations;
-- incorrect classifications;
-- semantically invalid structured values.
-
-**Oracle types:**
-
-- rubric;
-- reference answer;
-- human judgment;
-- LLM judge with calibration;
-- deterministic domain checker;
-- policy rule.
-
-### EM8. Reasoning / Process Evaluation
-
-
-Evaluates multi-step reasoning, decomposition, constraint preservation, and plan quality.
+Evaluates whether reasoning, decomposition, intermediate checks, and visible process preserve the task constraints and goal.
 
 **Catches:**
 
-- plan drift;
-- invariant loss;
-- spurious decomposition;
+- wrong decisions despite fluent wording;
+- scope loss;
+- constraint loss;
 - premature closure;
-- skipped reasoning step;
-- error accumulation;
-- unsupported leap.
+- spurious decomposition;
+- path dependence;
+- error accumulation.
 
-**Note:**
+**Evaluation objects:**
 
-This does not require trusting hidden chain-of-thought. It can evaluate visible plans, intermediate artifacts, tool traces, checklists, or externally reconstructed process steps.
+- visible plans;
+- intermediate artifacts;
+- checklists;
+- structured reasoning traces;
+- externally reconstructed process steps.
 
-### EM9. Agent Trace Evaluation
+### EM8. Agent Trace Evaluation
 
 
 Evaluates tool-using or action-taking behavior through traces.
@@ -413,7 +392,7 @@ Evaluates tool-using or action-taking behavior through traces.
 - final action;
 - error handling.
 
-### EM10. Calibration Evaluation
+### EM9. Calibration Evaluation
 
 
 Checks whether confidence or uncertainty language tracks correctness.
@@ -434,7 +413,7 @@ Checks whether confidence or uncertainty language tracks correctness.
 - uncertainty appropriateness;
 - confidence stability across repeated runs.
 
-### EM11. Safety / Policy Evaluation
+### EM10. Safety / Policy Evaluation
 
 
 Tests whether the system follows safety, policy, compliance, and escalation requirements.
@@ -457,6 +436,32 @@ Tests whether the system follows safety, policy, compliance, and escalation requ
 - boundary cases;
 - refusal quality rubrics;
 - escalation-decision tests.
+
+### EM11. Stress / Budget Evaluation
+
+
+Tests behavior under context, latency, token, compute, retrieval, or cost constraints.
+
+**Catches:**
+
+- truncation-induced loss;
+- compression-induced distortion;
+- shallow reasoning under budget;
+- skipped verification;
+- incomplete output;
+- degraded retrieval from budget limits;
+- latency-driven fallback errors.
+
+**Stressors:**
+
+- long input;
+- many documents;
+- dense distractors;
+- low latency budget;
+- low max-output tokens;
+- forced summarization;
+- limited retrieval depth;
+- cost cap.
 
 ### EM12. Distributional Slice Evaluation
 
@@ -485,36 +490,12 @@ Evaluates performance across domains, formats, languages, populations, task type
 - task framing;
 - tool/API type.
 
-### EM13. Stress / Budget Evaluation
-
-
-Tests behavior under context, latency, token, compute, retrieval, or cost constraints.
-
-**Catches:**
-
-- truncation-induced loss;
-- compression-induced distortion;
-- shallow reasoning under budget;
-- skipped verification;
-- incomplete output;
-- degraded retrieval from budget limits;
-- latency-driven fallback errors.
-
-**Stressors:**
-
-- long input;
-- many documents;
-- dense distractors;
-- low latency budget;
-- low max-output tokens;
-- forced summarization;
-- limited retrieval depth;
-- cost cap.
-
-### EM14. Regression Evaluation
+### EM13. Regression Evaluation
 
 
 Compares behavior across versions.
+
+Assume the blast radius may be wider than the directly edited case: a local prompt, model, retrieval, schema, tool, or policy change can produce regressions in adjacent slices or seemingly unrelated workflows.
 
 **Catches:**
 
@@ -539,6 +520,58 @@ Compares behavior across versions.
 - schema;
 - post-processing;
 - data source.
+
+### EM14. Human-Review / Rubric Evaluation
+
+
+Uses structured human or expert review when quality is semantic, contextual, subjective, policy-sensitive, or product-specific.
+
+**Catches:**
+
+- tone or persona mismatch;
+- usefulness failures;
+- clarification failures;
+- ambiguous task success;
+- nuanced policy application;
+- acceptable-variation disputes.
+
+**Requirements:**
+
+- explicit criteria;
+- scale anchors;
+- reviewer instructions;
+- adjudication path;
+- inter-rater expectations.
+
+### EM15. Production Monitoring / Drift Evaluation
+
+
+Detects whether deployed behavior remains acceptable as users, data, tools, policies, prompts, models, and environments change.
+
+It is the runtime backstop for residual non-local regressions that were not fully exposed by offline regression suites.
+
+**Catches:**
+
+- production behavior drift;
+- data and knowledge drift;
+- retrieval-index drift;
+- tool/API drift;
+- latent regressions not covered offline;
+- long-tail failures;
+- incident patterns;
+- silent degradation.
+
+**Typical signals:**
+
+- sampled output review;
+- user feedback;
+- incident reports;
+- refusal and escalation-rate drift;
+- tool-call failure rates;
+- retrieval miss rates;
+- citation support rates;
+- schema failure rates;
+- latency and cost drift.
 
 ## Oracle types
 
@@ -571,8 +604,8 @@ Use the weakest oracle that is sufficient for the task, and the strongest oracle
 Exact string required:
   use exact-match or parser/schema oracle
 
-Meaning required:
-  use semantic, rubric, or reference-answer oracle
+Truth required:
+  use reference-answer, expert, or tool-backed oracle
 
 Evidence required:
   use evidence-entailment or retrieval oracle
@@ -581,7 +614,7 @@ Process required:
   use trace/process oracle
 
 Reliability required:
-  use repeated-run or regression oracle
+  use repeated-run, regression, or monitoring oracle
 ```
 
 ## Fault-to-evaluation matrix
@@ -591,61 +624,61 @@ The following matrix assumes a separate Layer 2 fault inventory with atomic `Fxx
 
 | Fault | What to evaluate | Primary methods | Main oracle types | Observable signal |
 |---|---|---|---|---|
-| **F01 Context Omission** | Whether required information was available to the model | EM3, EM5, EM13 | OR8, OR11 | required evidence absent from retrieved/prompt context |
+| **F01 Context Omission** | Whether required information was available to the model | EM3, EM11, EM15 | OR8, OR11 | required evidence absent from retrieved/prompt context |
 | **F02 Context Underutilization** | Whether present evidence influenced the answer | EM3, EM4, EM7 | OR7, OR5 | answer ignores relevant supplied evidence |
-| **F03 Context Priority Confusion** | Whether the model prioritized the right source/instruction | EM3, EM4, EM11 | OR7, OR10, OR11 | lower-authority or less relevant context overrides stronger context |
-| **F04 Continuity Loss** | Whether required prior state was preserved | EM3, EM9, EM14 | OR11, OR4 | prior decision/preference/state missing or contradicted |
-| **F05 Stale-State Reliance** | Whether outdated state is treated as current | EM3, EM5, EM14 | OR4, OR8, OR11 | answer relies on stale document, memory, or tool output |
+| **F03 Context Priority Confusion** | Whether the model prioritized the right source/instruction | EM3, EM4, EM10 | OR7, OR10, OR11 | lower-authority or less relevant context overrides stronger context |
+| **F04 Continuity Loss** | Whether required prior state was preserved | EM3, EM8, EM13 | OR11, OR4 | prior decision/preference/state missing or contradicted |
+| **F05 Stale-State Reliance** | Whether outdated state is treated as current | EM3, EM5, EM15 | OR4, OR8, OR11 | answer relies on stale document, memory, or tool output |
 | **F06 Distractor Assimilation** | Whether irrelevant context contaminates the answer | EM3, EM4 | OR7, OR9 | irrelevant span appears in answer or decision |
 | **F07 Source/Authority Confusion** | Whether source authority is respected | EM3, EM4, EM11 | OR7, OR10 | untrusted or low-authority source treated as governing |
 | **F08 Prompt-Form Sensitivity** | Whether semantically equivalent prompts preserve behavior | EM2, EM14 | OR9, OR12 | paraphrase changes answer, decision, tool, refusal, or escalation |
 | **F09 Task Misinduction** | Whether the inferred task matches the intended task | EM2, EM7 | OR4, OR5, OR9 | model summarizes instead of extracts, explains instead of decides, etc. |
 | **F10 Task Blending** | Whether multiple tasks are separated and executed correctly | EM2, EM7, EM8 | OR5, OR11 | model merges incompatible instructions or partially performs each |
 | **F11 Scope Misinterpretation** | Whether response scope matches task scope | EM2, EM7 | OR4, OR5 | answer is too broad, too narrow, or answers a nearby question |
-| **F12 Constraint Misclassification** | Whether hard/soft constraints are interpreted correctly | EM2, EM7, EM11 | OR5, OR10 | hard requirement treated as optional or preference treated as mandatory |
+| **F12 Constraint Misclassification** | Whether hard/soft constraints are interpreted correctly | EM2, EM7, EM10 | OR5, OR10 | hard requirement treated as optional or preference treated as mandatory |
 | **F13 Example Overgeneralization** | Whether examples are copied or treated as exhaustive rules | EM2, EM3, EM12 | OR5, OR9 | output follows accidental example features |
 | **F14 Example Underuse** | Whether examples are used where they define the task | EM2, EM3, EM7 | OR5, OR9 | model ignores demonstrated label space, format, or edge case |
-| **F15 Control/Data Confusion** | Whether data is treated as instruction or vice versa | EM3, EM11 | OR10, OR11 | quoted/retrieved/tool text changes model behavior as instruction |
-| **F16 Prompt-Injection Compliance** | Whether untrusted embedded instructions are followed | EM3, EM11 | OR10, OR11 | model follows malicious or irrelevant instruction in untrusted content |
+| **F15 Control/Data Confusion** | Whether data is treated as instruction or vice versa | EM3, EM10 | OR10, OR11 | quoted/retrieved/tool text changes model behavior as instruction |
+| **F16 Prompt-Injection Compliance** | Whether untrusted embedded instructions are followed | EM3, EM10 | OR10, OR11 | model follows malicious or irrelevant instruction in untrusted content |
 | **F17 Output-Format Drift** | Whether output obeys required structure | EM6, EM14 | OR2 | invalid format, missing fields, extra commentary |
 | **F18 Boundary/Stopping Error** | Whether output begins, ends, and separates content correctly | EM6, EM7 | OR2, OR5 | premature stop, overgeneration, mixed payload/commentary |
 | **F19 Exact-String Corruption** | Whether required strings are preserved exactly | EM6, EM7 | OR1 | IDs, names, quotes, paths, or keys altered |
 | **F20 Numeric/Symbolic Fragility** | Whether formal operations are correct | EM6, EM7 | OR3 | incorrect arithmetic, sorting, counting, comparison, or symbolic edit |
 | **F21 Structured-Data Semantic Error** | Whether schema-valid fields are semantically correct | EM6, EM7 | OR2, OR4, OR5 | valid JSON with wrong field values |
 | **F22 Local Plausibility Drift** | Whether output stays globally aligned with task/evidence | EM7, EM8 | OR5, OR7 | answer starts correctly but drifts into unsupported or irrelevant continuation |
-| **F23 Path Dependence** | Whether early assumptions contaminate later output | EM8, EM14 | OR5, OR11 | initial false frame persists despite later correction/evidence |
-| **F24 Error Accumulation** | Whether small errors compound across steps | EM8, EM9 | OR3, OR11 | later result depends on earlier unchecked mistake |
-| **F25 Invariant Loss** | Whether required constraints persist across steps | EM8, EM9, EM11 | OR5, OR10, OR11 | plan or answer violates earlier constraint |
-| **F26 Plan Drift** | Whether plan execution stays aligned with goal | EM8, EM9 | OR11 | agent/reasoning steps depart from objective |
-| **F27 Spurious Decomposition** | Whether task decomposition is valid | EM8, EM9 | OR5, OR11 | plausible subtasks are irrelevant, invalid, or incomplete |
-| **F28 Premature Closure** | Whether answer/action occurs before enough evidence | EM8, EM9, EM11 | OR7, OR10, OR11 | model finalizes without required verification or tool result |
-| **F29 Looping/Repetition** | Whether repeated steps make progress | EM9, EM13 | OR11, OR14 | repeated calls/text without new information |
+| **F23 Path Dependence** | Whether early assumptions contaminate later output | EM7, EM8 | OR5, OR11 | initial false frame persists despite later correction/evidence |
+| **F24 Error Accumulation** | Whether small errors compound across steps | EM7, EM8 | OR3, OR11 | later result depends on earlier unchecked mistake |
+| **F25 Invariant Loss** | Whether required constraints persist across steps | EM7, EM8, EM10 | OR5, OR10, OR11 | plan or answer violates earlier constraint |
+| **F26 Plan Drift** | Whether plan execution stays aligned with goal | EM7, EM8 | OR11 | agent/reasoning steps depart from objective |
+| **F27 Spurious Decomposition** | Whether task decomposition is valid | EM7, EM8 | OR5, OR11 | plausible subtasks are irrelevant, invalid, or incomplete |
+| **F28 Premature Closure** | Whether answer/action occurs before enough evidence | EM7, EM8, EM10 | OR7, OR10, OR11 | model finalizes without required verification or tool result |
+| **F29 Looping/Repetition** | Whether repeated steps make progress | EM8, EM11, EM15 | OR11, OR14 | repeated calls/text without new information |
 | **F30 Unsupported Assertion** | Whether claims have sufficient support | EM4, EM7 | OR7 | factual claim lacks evidence in available/approved context |
-| **F31 Plausibility-Truth Gap** | Whether plausible claims are true | EM4, EM7, EM12 | OR4, OR7 | fluent answer is false |
-| **F32 Non-Grounded Justification** | Whether explanation actually supports conclusion | EM4, EM8 | OR7, OR5 | rationale or citation-like text does not entail claim |
+| **F31 Plausibility-Truth Gap** | Whether plausible claims are true | EM5, EM7, EM12 | OR4, OR7 | fluent answer is false |
+| **F32 Non-Grounded Justification** | Whether explanation actually supports conclusion | EM4, EM7 | OR7, OR5 | rationale or citation-like text does not entail claim |
 | **F33 Fabricated Citation/Source** | Whether cited source exists and supports the claim | EM4, EM5 | OR7, OR8 | nonexistent, malformed, or invented source reference |
 | **F34 Evidence-Claim Mismatch** | Whether cited evidence supports cited claim | EM4 | OR7 | real source cited for unsupported or contradicted claim |
 | **F35 Parametric-Prior Override** | Whether learned prior overrides supplied evidence | EM3, EM4, EM12 | OR7, OR9 | answer follows common/default belief despite contrary context |
-| **F36 Weak Confidence Calibration** | Whether confidence tracks correctness | EM10, EM1 | OR12 | confidence level not predictive of accuracy |
-| **F37 Non-Privileged Self-Evaluation** | Whether self-checking is treated as independent verification | EM10, EM8 | OR11, OR7 | model says it checked without independent evidence/tooling |
-| **F38 Sycophantic Agreement** | Whether model agrees when correction is required | EM11, EM2 | OR10, OR5 | model validates false premise or unsafe user framing |
-| **F39 Over-Refusal** | Whether allowed tasks are incorrectly refused | EM11, EM12, EM14 | OR10 | refusal when policy allows compliance |
-| **F40 Under-Refusal** | Whether disallowed/risky tasks are incorrectly fulfilled | EM11, EM12 | OR10 | compliance when refusal, warning, or escalation required |
-| **F41 Clarification Failure** | Whether model asks needed questions and avoids unnecessary ones | EM7, EM11, EM2 | OR5, OR10 | asks needless question or proceeds despite ambiguity |
-| **F42 Tone/Persona Inconsistency** | Whether style matches product contract | EM7, EM12, EM14 | OR5, OR9 | tone, role, or persona shifts inappropriately |
-| **F43 Verbosity Mismatch** | Whether response length/detail fits task | EM7, EM12 | OR5 | answer too terse, too long, or overexplained |
-| **F44 Competence Cliff** | Whether performance collapses on a slice | EM12, EM14 | OR13 | sharp drop by domain, language, format, edge case |
+| **F36 Weak Confidence Calibration** | Whether confidence tracks correctness | EM9, EM1 | OR12 | confidence level not predictive of accuracy |
+| **F37 Non-Privileged Self-Evaluation** | Whether self-checking is treated as independent verification | EM9, EM8 | OR11, OR7 | model says it checked without independent evidence/tooling |
+| **F38 Sycophantic Agreement** | Whether model agrees when correction is required | EM10, EM2 | OR10, OR5 | model validates false premise or unsafe user framing |
+| **F39 Over-Refusal** | Whether allowed tasks are incorrectly refused | EM10, EM12, EM14 | OR10 | refusal when policy allows compliance |
+| **F40 Under-Refusal** | Whether disallowed/risky tasks are incorrectly fulfilled | EM10, EM12 | OR10 | compliance when refusal, warning, or escalation required |
+| **F41 Clarification Failure** | Whether model asks needed questions and avoids unnecessary ones | EM7, EM10, EM14 | OR5, OR10 | asks needless question or proceeds despite ambiguity |
+| **F42 Tone/Persona Inconsistency** | Whether style matches product contract | EM12, EM14, EM15 | OR5, OR9 | tone, role, or persona shifts inappropriately |
+| **F43 Verbosity Mismatch** | Whether response length/detail fits task | EM7, EM14 | OR5 | answer too terse, too long, or overexplained |
+| **F44 Competence Cliff** | Whether performance collapses on a slice | EM12, EM14, EM15 | OR13 | sharp drop by domain, language, format, edge case |
 | **F45 Distributional Overgeneralization** | Whether familiar patterns are misapplied outside scope | EM12, EM7 | OR13, OR5 | uses common template where exception/domain-specific behavior needed |
 | **F46 Output Variance** | Whether repeated runs preserve intended behavior | EM1 | OR9, OR12 | materially different outcomes across same scenario |
-| **F47 Tail-Risk Generation** | Whether rare severe failures appear under repetition/stress | EM1, EM11, EM13 | OR12, OR10 | low-frequency severe bad output |
-| **F48 Truncation-Induced Loss** | Whether token/context limits remove needed information | EM13, EM3 | OR8, OR14 | omitted evidence or incomplete answer due to length limit |
-| **F49 Compression-Induced Distortion** | Whether summaries/state compression preserve critical details | EM13, EM7 | OR4, OR5 | compressed state loses exception, constraint, date, entity, or decision |
-| **F50 Budget-Induced Incompleteness** | Whether latency/cost/token budget causes shallow behavior | EM13 | OR14, OR5 | skipped verification, partial answer, shallow reasoning |
-| **F51 Tool-Selection Error** | Whether correct tool is chosen | EM9, EM14 | OR11 | wrong tool, missing needed tool, unnecessary tool |
-| **F52 Tool-Argument Error** | Whether tool arguments are correct and safe | EM9, EM6 | OR2, OR11 | malformed, incomplete, unsafe, or wrong parameters |
-| **F53 Tool-Output Misinterpretation** | Whether tool result is read and applied correctly | EM9, EM4, EM7 | OR11, OR7 | answer contradicts or overgeneralizes tool output |
-| **F54 Action-Readiness Error** | Whether action is justified before execution/recommendation | EM9, EM11 | OR10, OR11 | action taken or recommended without sufficient basis |
-| **F55 Recovery Failure** | Whether system/model recovers from error or missing data | EM9, EM13 | OR11, OR14 | failed tool call, missing evidence, or exception leads to bad final state |
+| **F47 Tail-Risk Generation** | Whether rare severe failures appear under repetition/stress | EM1, EM10, EM11 | OR12, OR10 | low-frequency severe bad output |
+| **F48 Truncation-Induced Loss** | Whether token/context limits remove needed information | EM11, EM3 | OR8, OR14 | omitted evidence or incomplete answer due to length limit |
+| **F49 Compression-Induced Distortion** | Whether summaries/state compression preserve critical details | EM11, EM7 | OR4, OR5 | compressed state loses exception, constraint, date, entity, or decision |
+| **F50 Budget-Induced Incompleteness** | Whether latency/cost/token budget causes shallow behavior | EM11, EM15 | OR14, OR5 | skipped verification, partial answer, shallow reasoning |
+| **F51 Tool-Selection Error** | Whether correct tool is chosen | EM8, EM14 | OR11 | wrong tool, missing needed tool, unnecessary tool |
+| **F52 Tool-Argument Error** | Whether tool arguments are correct and safe | EM8, EM6 | OR2, OR11 | malformed, incomplete, unsafe, or wrong parameters |
+| **F53 Tool-Output Misinterpretation** | Whether tool result is read and applied correctly | EM8, EM4, EM7 | OR11, OR7 | answer contradicts or overgeneralizes tool output |
+| **F54 Action-Readiness Error** | Whether action is justified before execution/recommendation | EM8, EM10 | OR10, OR11 | action taken or recommended without sufficient basis |
+| **F55 Recovery Failure** | Whether system/model recovers from error or missing data | EM8, EM11, EM15 | OR11, OR14 | failed tool call, missing evidence, or exception leads to bad final state |
 
 ## Family-level evaluation bundles
 
@@ -656,16 +689,16 @@ Use `FF` for family-level fault bundles to avoid confusing them with atomic `Fxx
 
 | Family bundle | Primary methods | Notes |
 |---|---|---|
-| **FF1 Behavioral Instability** | EM1, EM2, EM14 | Evaluate repeated runs and semantically equivalent variants at the level of intended behavior. |
+| **FF1 Behavioral Instability** | EM1, EM2, EM13 | Evaluate repeated runs and semantically equivalent variants at the level of intended behavior. |
 | **FF2 Ambiguous or Misinduced Task Behavior** | EM2, EM7, EM8 | Evaluate whether the model inferred the right operation, scope, and success criteria. |
-| **FF3 Hallucination and Unsupported Claims** | EM4, EM7, EM12 | Separate falsehood, lack of support, fabricated sources, and evidence mismatch. |
-| **FF4 Weak Grounding / Source Infidelity** | EM3, EM4, EM5 | Separate retrieval failure from generation failure. |
-| **FF5 Weak Calibration and Misleading Confidence** | EM10, EM1 | Confidence language is generated behavior, not independent verification. |
+| **FF3 Hallucination and Unsupported Claims** | EM4, EM5, EM14 | Separate falsehood, lack of support, fabricated sources, and evidence mismatch. |
+| **FF4 Weak Grounding / Source Infidelity** | EM3, EM4, EM15 | Separate retrieval failure from generation failure. |
+| **FF5 Weak Calibration and Misleading Confidence** | EM9, EM1 | Confidence language is generated behavior, not independent verification. |
 | **FF6 Output Format / Schema Drift** | EM6, EM14 | Combine parser validation with semantic field validation. |
-| **FF7 Inconsistent Interaction Behavior** | EM7, EM11, EM12, EM14 | Covers tone, refusal, clarification, verbosity, escalation, and product behavior. |
-| **FF8 Uneven Competence / Distributional Failure** | EM12, EM14 | Requires slice definitions; average score is insufficient. |
-| **FF9 Agentic Process Failure** | EM9, EM8, EM11 | Requires trace-level evaluation, not only final answer grading. |
-| **FF10 Retrieval-Conditioned Answer Failure** | EM3, EM4, EM5 | Evaluate retrieval availability, context use, and claim grounding separately. |
+| **FF7 Inconsistent Interaction Behavior** | EM10, EM12, EM14, EM15 | Covers tone, refusal, clarification, verbosity, escalation, and product behavior. |
+| **FF8 Uneven Competence / Distributional Failure** | EM12, EM14, EM15 | Requires slice definitions; average score is insufficient. |
+| **FF9 Agentic Process Failure** | EM7, EM8, EM10, EM15 | Requires trace-level evaluation, not only final answer grading. |
+| **FF10 Retrieval-Conditioned Answer Failure** | EM3, EM4, EM15 | Evaluate retrieval availability, context use, and claim grounding separately. |
 
 ## Evaluation record schema
 
@@ -860,7 +893,7 @@ increase task/context pressure
 
 This document should not prescribe system fixes in detail.
 
-It may identify the kind of Layer 3 handoff needed, but the actual controls belong in `stack-26-layer-3-control-mapping.md`.
+It may identify the kind of Layer 3 handoff needed, but the actual controls belong in stack-31-layer-3-control-families.md.
 
 Examples:
 
@@ -895,7 +928,7 @@ A customer-support assistant must summarize a customer issue and decide whether 
 
 - EM1 Repeated-Run Evaluation
 - EM2 Perturbation / Paraphrase Evaluation
-- EM7 Semantic Output Evaluation
+- EM14 Human-Review / Rubric Evaluation
 
 **Oracle**
 
@@ -929,8 +962,8 @@ A legal assistant answers a contract question using retrieved documents.
 **Evaluation methods**
 
 - EM4 Grounding / Evidence Evaluation
-- EM5 Retrieval Evaluation
-- EM7 Semantic Output Evaluation
+- EM5 Truth / Factuality Evaluation
+- EM14 Human-Review / Rubric Evaluation
 
 **Oracle**
 
@@ -963,7 +996,7 @@ The model extracts invoice fields into JSON.
 **Evaluation methods**
 
 - EM6 Schema / Parser Validation
-- EM7 Semantic Output Evaluation
+- EM5 Truth / Factuality Evaluation
 
 **Oracle**
 
@@ -997,9 +1030,9 @@ An agent must look up account status before drafting a response.
 
 **Evaluation methods**
 
-- EM9 Agent Trace Evaluation
-- EM8 Reasoning / Process Evaluation
-- EM11 Safety / Policy Evaluation
+- EM8 Agent Trace Evaluation
+- EM7 Reasoning / Process Evaluation
+- EM10 Safety / Policy Evaluation
 
 **Oracle**
 
@@ -1031,9 +1064,9 @@ A QA assistant answers domain-specific technical questions and expresses confide
 
 **Evaluation methods**
 
-- EM10 Calibration Evaluation
+- EM9 Calibration Evaluation
 - EM12 Distributional Slice Evaluation
-- EM7 Semantic Output Evaluation
+- EM5 Truth / Factuality Evaluation
 
 **Oracle**
 

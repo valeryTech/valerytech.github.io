@@ -37,7 +37,7 @@ This follows from the system-level causal properties of AI applications: behavio
 ## Engineering consequences
 
 
-The relevant engineering question is not only did we implement the intended system? It is also:
+The core engineering challenge extends beyond strict implementation. We must also ask:
 
 > Does the implemented system behave acceptably across the scenarios, inputs, users, data states, versions, and operational constraints that matter?
 

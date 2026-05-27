@@ -432,27 +432,29 @@ Examples:
 
 Layer 3 controls can be organized into the following families.
 
+Use the `L3CF1-L3CF15` identifiers for cross-document references. They replace the older flat `C1-C15` Layer 3 control-family labels.
+
 | Code | Control family | Core question |
 |---|---|---|
-| **C1** | Context Construction Controls | Did the system supply the right runtime information? |
-| **C2** | Retrieval and Source Controls | Did the system retrieve, rank, filter, attribute, and authorize evidence correctly? |
-| **C3** | State and Memory Controls | Did the system preserve and rehydrate required continuity state? |
-| **C4** | Prompt and Task-Contract Controls | Did the system specify the task, role, constraints, and success criteria clearly enough? |
-| **C5** | Control/Data Isolation Controls | Did the system separate instructions, data, examples, evidence, tool outputs, and untrusted text? |
-| **C6** | Output Contract Controls | Did the system enforce required format, schema, types, boundaries, and exact fields? |
-| **C7** | Grounding and Verification Controls | Did the system verify claims, citations, calculations, and decisions against evidence or trusted tools? |
-| **C8** | Calibration and Confidence Controls | Did the system prevent misleading confidence, unsupported certainty, or false self-verification? |
-| **C9** | Reasoning and Process Controls | Did the system monitor plans, intermediate steps, invariants, and stopping behavior? |
-| **C10** | Tool and Action Controls | Did the system constrain tool choice, tool arguments, recovery, and external actions? |
-| **C11** | Safety and Policy Controls | Did the system enforce refusal, escalation, privacy, compliance, and authorization boundaries? |
-| **C12** | Budget and Resource Controls | Did the system manage context, token, latency, cost, memory, and compute pressure? |
-| **C13** | Observability and Trace Controls | Did the system capture enough evidence to debug, audit, and monitor behavior? |
-| **C14** | Evaluation and Regression Controls | Did the system detect degradation across models, prompts, retrieval, tools, policies, and data? |
-| **C15** | Human Review and Escalation Controls | Did the system route uncertain, risky, ambiguous, or high-impact cases to a safer path? |
+| **L3CF1** | Context Construction Controls | Did the system supply the right runtime information? |
+| **L3CF2** | Retrieval and Source Controls | Did the system retrieve, rank, filter, attribute, and authorize evidence correctly? |
+| **L3CF3** | State and Memory Controls | Did the system preserve and rehydrate required continuity state? |
+| **L3CF4** | Prompt and Task-Contract Controls | Did the system specify the task, role, constraints, and success criteria clearly enough? |
+| **L3CF5** | Control/Data Isolation Controls | Did the system separate instructions, data, examples, evidence, tool outputs, and untrusted text? |
+| **L3CF6** | Output Contract Controls | Did the system enforce required format, schema, types, boundaries, and exact fields? |
+| **L3CF7** | Grounding and Verification Controls | Did the system verify claims, citations, calculations, and decisions against evidence or trusted tools? |
+| **L3CF8** | Calibration and Confidence Controls | Did the system prevent misleading confidence, unsupported certainty, or false self-verification? |
+| **L3CF9** | Reasoning and Process Controls | Did the system monitor plans, intermediate steps, invariants, and stopping behavior? |
+| **L3CF10** | Tool and Action Controls | Did the system constrain tool choice, tool arguments, recovery, and external actions? |
+| **L3CF11** | Safety and Policy Controls | Did the system enforce refusal, escalation, privacy, compliance, and authorization boundaries? |
+| **L3CF12** | Budget and Resource Controls | Did the system manage context, token, latency, cost, memory, and compute pressure? |
+| **L3CF13** | Observability and Trace Controls | Did the system capture enough evidence to debug, audit, and monitor behavior? |
+| **L3CF14** | Evaluation and Regression Controls | Did the system detect degradation across models, prompts, retrieval, tools, policies, and data? |
+| **L3CF15** | Human Review and Escalation Controls | Did the system route uncertain, risky, ambiguous, or high-impact cases to a safer path? |
 
 These families are not mutually exclusive. A single production issue often requires controls from several families.
 
-# C1 -- Context Construction Controls
+# L3CF1 -- Context Construction Controls
 
 ## Purpose
 
@@ -487,9 +489,9 @@ Ensure that the model receives the runtime information required for correct beha
 ## Limitations
 
 
-C1 can ensure that information is supplied. It cannot guarantee that the model will use the information correctly. That may require C2, C4, C7, C13, or C14.
+L3CF1 can ensure that information is supplied. It cannot guarantee that the model will use the information correctly. That may require L3CF2, L3CF4, L3CF7, L3CF13, or L3CF14.
 
-# C2 -- Retrieval and Source Controls
+# L3CF2 -- Retrieval and Source Controls
 
 ## Purpose
 
@@ -528,7 +530,7 @@ Ensure that evidence is retrieved, ranked, filtered, attributed, and authorized 
 
 Retrieval quality is not the same as answer quality. A system can retrieve the right evidence and still generate an unsupported or misleading answer.
 
-# C3 -- State and Memory Controls
+# L3CF3 -- State and Memory Controls
 
 ## Purpose
 
@@ -566,7 +568,7 @@ Preserve required state across turns, sessions, tools, and workflow steps.
 
 Memory controls can also introduce risk if stale, private, irrelevant, or unauthorized state is reintroduced.
 
-# C4 -- Prompt and Task-Contract Controls
+# L3CF4 -- Prompt and Task-Contract Controls
 
 ## Purpose
 
@@ -605,7 +607,7 @@ Make the intended task, constraints, output requirements, role, and success crit
 
 A better prompt is not the same as a hard contract. High-reliability systems usually need validators, schemas, tools, retrieval checks, or authorization controls in addition to prompts.
 
-# C5 -- Control/Data Isolation Controls
+# L3CF5 -- Control/Data Isolation Controls
 
 ## Purpose
 
@@ -642,7 +644,7 @@ Separate trusted instructions from untrusted data, examples, retrieved content, 
 
 Isolation reduces risk but does not create a native privilege boundary inside the model. High-risk actions still need external authorization and validation controls.
 
-# C6 -- Output Contract Controls
+# L3CF6 -- Output Contract Controls
 
 ## Purpose
 
@@ -680,9 +682,9 @@ Ensure that outputs satisfy required syntax, schema, type, boundary, and structu
 ## Limitations
 
 
-A syntactically valid output can still be semantically wrong. C6 should often be paired with C7 verification or C10 tool/action controls.
+A syntactically valid output can still be semantically wrong. L3CF6 should often be paired with L3CF7 verification or L3CF10 tool/action controls.
 
-# C7 -- Grounding and Verification Controls
+# L3CF7 -- Grounding and Verification Controls
 
 ## Purpose
 
@@ -721,7 +723,7 @@ Verify claims, citations, calculations, extracted fields, decisions, and recomme
 
 Grounding is not identical to truth. A claim can be supported by supplied evidence while the evidence itself is outdated or wrong. For external truth, trusted sources or tools are required.
 
-# C8 -- Calibration and Confidence Controls
+# L3CF8 -- Calibration and Confidence Controls
 
 ## Purpose
 
@@ -757,7 +759,7 @@ Prevent misleading confidence, unsupported certainty, false self-verification, o
 
 Generated confidence language is not a calibrated probability by default. Confidence controls should avoid presenting model self-assessment as independent verification.
 
-# C9 -- Reasoning and Process Controls
+# L3CF9 -- Reasoning and Process Controls
 
 ## Purpose
 
@@ -797,7 +799,7 @@ Monitor or constrain multi-step reasoning, planning, invariant preservation, dec
 
 Generated reasoning text is not guaranteed to reveal actual internal computation. Process controls should focus on externally inspectable artifacts, traces, decisions, and state transitions.
 
-# C10 -- Tool and Action Controls
+# L3CF10 -- Tool and Action Controls
 
 ## Purpose
 
@@ -840,7 +842,7 @@ Control tool selection, tool arguments, tool-output interpretation, retry behavi
 
 Tool access changes risk. A conversational error may become an operational failure when connected to tools or external actions.
 
-# C11 -- Safety and Policy Controls
+# L3CF11 -- Safety and Policy Controls
 
 ## Purpose
 
@@ -882,7 +884,7 @@ Enforce refusal, escalation, privacy, compliance, authorization, content, and do
 
 Safety controls must distinguish model behavior from product policy. A model may be capable of producing something that the product should still block or escalate.
 
-# C12 -- Budget and Resource Controls
+# L3CF12 -- Budget and Resource Controls
 
 ## Purpose
 
@@ -921,7 +923,7 @@ Manage context, token, latency, cost, memory, and compute constraints so require
 
 Budget controls often involve product tradeoffs. If cost or latency prevents verification, the system should represent the resulting uncertainty or escalate.
 
-# C13 -- Observability and Trace Controls
+# L3CF13 -- Observability and Trace Controls
 
 ## Purpose
 
@@ -962,7 +964,7 @@ Capture enough information to debug, audit, monitor, reproduce, and explain syst
 
 Observability does not itself fix behavior. It makes failures diagnosable and supports evaluation, monitoring, and governance.
 
-# C14 -- Evaluation and Regression Controls
+# L3CF14 -- Evaluation and Regression Controls
 
 ## Purpose
 
@@ -1004,7 +1006,7 @@ Detect behavioral degradation across changes in models, prompts, retrieval, tool
 
 Evaluation becomes a control only when connected to a decision: block release, trigger retry, alert an operator, route to review, or change system behavior.
 
-# C15 -- Human Review and Escalation Controls
+# L3CF15 -- Human Review and Escalation Controls
 
 ## Purpose
 
@@ -1052,16 +1054,16 @@ Layer 3 system faults can be classified by the type of missing or inadequate con
 
 | Code | System fault family | Description |
 |---|---|---|
-| **S1** | Missing control | No relevant control exists. |
-| **S2** | Weak control | A control exists but is too weak, narrow, or informal. |
-| **S3** | Misconfigured control | A control is configured incorrectly. |
-| **S4** | Stale control | A control no longer matches current model, prompt, data, policy, or tool behavior. |
-| **S5** | Bypassed control | A control exists but is skipped in some path. |
-| **S6** | Unobserved control | A control runs but does not emit enough trace or decision evidence. |
-| **S7** | Ungated evaluation | Evaluation exists but does not block release or trigger action. |
-| **S8** | Incomplete recovery | Detection exists, but fallback, retry, escalation, or blocking behavior is missing. |
-| **S9** | Boundary confusion | Responsibility between model behavior, system control, policy, and user impact is unclear. |
-| **S10** | Environment drift | External data, APIs, schemas, policies, or usage patterns changed without control updates. |
+| **MISSING_CONTROL** | Missing control | No relevant control exists. |
+| **WEAK_CONTROL** | Weak control | A control exists but is too weak, narrow, or informal. |
+| **MISCONFIGURED_CONTROL** | Misconfigured control | A control is configured incorrectly. |
+| **STALE_CONTROL** | Stale control | A control no longer matches current model, prompt, data, policy, or tool behavior. |
+| **BYPASSED_CONTROL** | Bypassed control | A control exists but is skipped in some path. |
+| **UNOBSERVED_CONTROL** | Unobserved control | A control runs but does not emit enough trace or decision evidence. |
+| **UNGATED_EVALUATION** | Ungated evaluation | Evaluation exists but does not block release or trigger action. |
+| **INCOMPLETE_RECOVERY** | Incomplete recovery | Detection exists, but fallback, retry, escalation, or blocking behavior is missing. |
+| **BOUNDARY_CONFUSION** | Boundary confusion | Responsibility between model behavior, system control, policy, and user impact is unclear. |
+| **ENVIRONMENT_DRIFT** | Environment drift | External data, APIs, schemas, policies, or usage patterns changed without control updates. |
 
 Examples:
 
@@ -1070,7 +1072,7 @@ Layer 2 fault:
   Unsupported assertion
 
 Layer 3 system fault:
-  S1 Missing control — no claim-source support check exists.
+  MISSING_CONTROL Missing control — no claim-source support check exists.
 ```
 
 ```text
@@ -1078,7 +1080,7 @@ Layer 2 fault:
   Invalid tool argument
 
 Layer 3 system fault:
-  S5 Bypassed control — argument validator runs in manual mode but not in agentic auto-run mode.
+  BYPASSED_CONTROL Bypassed control — argument validator runs in manual mode but not in agentic auto-run mode.
 ```
 
 ```text
@@ -1086,7 +1088,7 @@ Layer 2 fault:
   Prompt-form sensitivity
 
 Layer 3 system fault:
-  S7 Ungated evaluation — perturbation tests reveal instability, but release is not blocked.
+  UNGATED_EVALUATION Ungated evaluation — perturbation tests reveal instability, but release is not blocked.
 ```
 
 ## Control record template
@@ -1135,13 +1137,13 @@ Example:
 
 ```text
 Control code:
-  C7.2
+  L3CF7.2
 
 Control name:
   Claim-source support check
 
 Control family:
-  C7 Grounding and Verification Controls
+  L3CF7 Grounding and Verification Controls
 
 Control purpose:
   Prevent or detect generated factual claims that are not supported by approved evidence.
@@ -1220,13 +1222,13 @@ Example:
 
 ```text
 System fault code:
-  S-C7-001
+  S-L3CF7-001
 
 System fault name:
   Missing claim-source support gate
 
 Related control family:
-  C7 Grounding and Verification Controls
+  L3CF7 Grounding and Verification Controls
 
 Description:
   The system allowed factual claims to be generated without checking whether they were supported by the retrieved or approved evidence.
@@ -1267,36 +1269,36 @@ Boundary notes:
 
 | Layer 2 fault family | Primary Layer 3 controls | Secondary controls |
 |---|---|---|
-| Context faults | C1 Context Construction, C2 Retrieval and Source, C3 State and Memory | C12 Budget, C13 Observability, C14 Evaluation |
-| Generation faults | C6 Output Contract, C9 Reasoning and Process, C14 Evaluation and Regression | C11 Safety, C12 Budget, C15 Human Review |
-| Epistemic faults | C7 Grounding and Verification, C2 Retrieval and Source, C8 Calibration | C13 Observability, C15 Human Review |
-| Instruction/task faults | C4 Prompt and Task Contract, C5 Control/Data Isolation | C10 Tool and Action, C11 Safety, C14 Regression |
-| Reasoning/planning faults | C9 Reasoning and Process, C10 Tool and Action | C13 Observability, C15 Human Review |
-| Structure/representation faults | C6 Output Contract | C10 Tool and Action, C14 Regression |
-| Budget/resource faults | C12 Budget and Resource | C1 Context Construction, C15 Escalation |
-| Interaction/experience faults | C4 Prompt and Task Contract, C8 Calibration, C11 Safety and Policy | C14 Regression, C15 Human Review |
-| Agent/action faults | C10 Tool and Action, C11 Safety and Policy | C9 Process, C13 Observability, C15 Human Review |
-| Distributional competence faults | C14 Evaluation and Regression, C15 Human Review | C4 Task Contract, C7 Verification |
+| Context faults | L3CF1 Context Construction, L3CF2 Retrieval and Source, L3CF3 State and Memory | L3CF12 Budget, L3CF13 Observability, L3CF14 Evaluation |
+| Generation faults | L3CF6 Output Contract, L3CF9 Reasoning and Process, L3CF14 Evaluation and Regression | L3CF11 Safety, L3CF12 Budget, L3CF15 Human Review |
+| Epistemic faults | L3CF7 Grounding and Verification, L3CF2 Retrieval and Source, L3CF8 Calibration | L3CF13 Observability, L3CF15 Human Review |
+| Instruction/task faults | L3CF4 Prompt and Task Contract, L3CF5 Control/Data Isolation | L3CF10 Tool and Action, L3CF11 Safety, L3CF14 Regression |
+| Reasoning/planning faults | L3CF9 Reasoning and Process, L3CF10 Tool and Action | L3CF13 Observability, L3CF15 Human Review |
+| Structure/representation faults | L3CF6 Output Contract | L3CF10 Tool and Action, L3CF14 Regression |
+| Budget/resource faults | L3CF12 Budget and Resource | L3CF1 Context Construction, L3CF15 Escalation |
+| Interaction/experience faults | L3CF4 Prompt and Task Contract, L3CF8 Calibration, L3CF11 Safety and Policy | L3CF14 Regression, L3CF15 Human Review |
+| Agent/action faults | L3CF10 Tool and Action, L3CF11 Safety and Policy | L3CF9 Process, L3CF13 Observability, L3CF15 Human Review |
+| Distributional competence faults | L3CF14 Evaluation and Regression, L3CF15 Human Review | L3CF4 Task Contract, L3CF7 Verification |
 
 ## Evaluation-method to Layer 3 control mapping
 
 
 | Evaluation method | Controls it validates |
 |---|---|
-| Repeated-run testing | C14 Evaluation and Regression, C6 Output Contracts, C11 Safety and Policy |
-| Prompt perturbation / paraphrase testing | C4 Prompt and Task Contract, C14 Evaluation and Regression |
-| Context ablation / insertion testing | C1 Context Construction, C2 Retrieval and Source, C7 Grounding and Verification |
-| Grounding and citation evaluation | C2 Retrieval and Source, C7 Grounding and Verification |
-| Truth / factuality evaluation | C7 Grounding and Verification, C15 Human Review |
-| Schema and parser validation | C6 Output Contract Controls |
-| Reasoning / process evaluation | C9 Reasoning and Process, C10 Tool and Action |
-| Agent trace evaluation | C10 Tool and Action, C13 Observability and Trace |
-| Calibration evaluation | C8 Calibration and Confidence |
-| Safety and policy adversarial testing | C11 Safety and Policy, C5 Control/Data Isolation, C10 Tool and Action |
-| Stress / budget testing | C12 Budget and Resource, C1 Context Construction |
-| Distributional slice testing | C14 Evaluation and Regression, C15 Human Review |
-| Regression / diff testing | C14 Evaluation and Regression |
-| Human-review / rubric evaluation | C15 Human Review and Escalation, C14 Evaluation and Regression |
+| Repeated-run testing | L3CF14 Evaluation and Regression, L3CF6 Output Contracts, L3CF11 Safety and Policy |
+| Prompt perturbation / paraphrase testing | L3CF4 Prompt and Task Contract, L3CF14 Evaluation and Regression |
+| Context ablation / insertion testing | L3CF1 Context Construction, L3CF2 Retrieval and Source, L3CF7 Grounding and Verification |
+| Grounding and citation evaluation | L3CF2 Retrieval and Source, L3CF7 Grounding and Verification |
+| Truth / factuality evaluation | L3CF7 Grounding and Verification, L3CF15 Human Review |
+| Schema and parser validation | L3CF6 Output Contract Controls |
+| Reasoning / process evaluation | L3CF9 Reasoning and Process, L3CF10 Tool and Action |
+| Agent trace evaluation | L3CF10 Tool and Action, L3CF13 Observability and Trace |
+| Calibration evaluation | L3CF8 Calibration and Confidence |
+| Safety and policy adversarial testing | L3CF11 Safety and Policy, L3CF5 Control/Data Isolation, L3CF10 Tool and Action |
+| Stress / budget testing | L3CF12 Budget and Resource, L3CF1 Context Construction |
+| Distributional slice testing | L3CF14 Evaluation and Regression, L3CF15 Human Review |
+| Regression / diff testing | L3CF14 Evaluation and Regression |
+| Human-review / rubric evaluation | L3CF15 Human Review and Escalation, L3CF14 Evaluation and Regression |
 
 Evaluation is part of Layer 3 only when it participates in design, debugging, monitoring, release gating, runtime decisions, escalation, or governance. A disconnected score is not sufficient.
 
@@ -1322,10 +1324,10 @@ Layer 3 system faults:
   answer generation was allowed without support gating.
 
 Layer 3 controls:
-  C2 Retrieval and Source Controls;
-  C7 Grounding and Verification Controls;
-  C13 Observability and Trace Controls;
-  C15 Human Review for high-risk claims.
+  L3CF2 Retrieval and Source Controls;
+  L3CF7 Grounding and Verification Controls;
+  L3CF13 Observability and Trace Controls;
+  L3CF15 Human Review for high-risk claims.
 
 Layer 4 impact:
   user relies on an unsupported answer.
@@ -1349,10 +1351,10 @@ Layer 3 system faults:
   tool/action layer accepted model instruction from retrieved content.
 
 Layer 3 controls:
-  C5 Control/Data Isolation Controls;
-  C10 Tool and Action Controls;
-  C11 Safety and Policy Controls;
-  C13 Observability and Trace Controls.
+  L3CF5 Control/Data Isolation Controls;
+  L3CF10 Tool and Action Controls;
+  L3CF11 Safety and Policy Controls;
+  L3CF13 Observability and Trace Controls.
 
 Layer 4 impact:
   system may leak data, take unauthorized action, or produce manipulated output.
@@ -1376,9 +1378,9 @@ Layer 3 system faults:
   prompt relied on natural-language instruction alone.
 
 Layer 3 controls:
-  C6 Output Contract Controls;
-  C4 Prompt and Task-Contract Controls;
-  C14 Evaluation and Regression Controls.
+  L3CF6 Output Contract Controls;
+  L3CF4 Prompt and Task-Contract Controls;
+  L3CF14 Evaluation and Regression Controls.
 
 Layer 4 impact:
   downstream parser fails or silently consumes wrong data.
@@ -1403,10 +1405,10 @@ Layer 3 system faults:
   no dry-run mode.
 
 Layer 3 controls:
-  C10 Tool and Action Controls;
-  C11 Safety and Policy Controls;
-  C13 Observability and Trace Controls;
-  C15 Human Review and Escalation Controls.
+  L3CF10 Tool and Action Controls;
+  L3CF11 Safety and Policy Controls;
+  L3CF13 Observability and Trace Controls;
+  L3CF15 Human Review and Escalation Controls.
 
 Layer 4 impact:
   unintended external action is taken.
@@ -1432,11 +1434,11 @@ Layer 3 system faults:
   no human review for legal-risk output.
 
 Layer 3 controls:
-  C1 Context Construction Controls;
-  C4 Prompt and Task-Contract Controls;
-  C7 Grounding and Verification Controls;
-  C12 Budget and Resource Controls;
-  C15 Human Review and Escalation Controls.
+  L3CF1 Context Construction Controls;
+  L3CF4 Prompt and Task-Contract Controls;
+  L3CF7 Grounding and Verification Controls;
+  L3CF12 Budget and Resource Controls;
+  L3CF15 Human Review and Escalation Controls.
 
 Layer 4 impact:
   user misunderstands legal or business obligation.
@@ -1462,10 +1464,10 @@ Layer 3 system faults:
   no calibration evaluation.
 
 Layer 3 controls:
-  C7 Grounding and Verification Controls;
-  C8 Calibration and Confidence Controls;
-  C14 Evaluation and Regression Controls;
-  C15 Human Review for high-risk domains.
+  L3CF7 Grounding and Verification Controls;
+  L3CF8 Calibration and Confidence Controls;
+  L3CF14 Evaluation and Regression Controls;
+  L3CF15 Human Review for high-risk domains.
 
 Layer 4 impact:
   user over-trusts a wrong answer.
@@ -1490,9 +1492,9 @@ Layer 3 system faults:
   no behavioral equivalence criteria.
 
 Layer 3 controls:
-  C4 Prompt and Task-Contract Controls;
-  C14 Evaluation and Regression Controls;
-  C13 Observability and Trace Controls.
+  L3CF4 Prompt and Task-Contract Controls;
+  L3CF14 Evaluation and Regression Controls;
+  L3CF13 Observability and Trace Controls.
 
 Layer 4 impact:
   customers receive inconsistent support handling.
@@ -1627,33 +1629,18 @@ stack-30-layer-3-overview.md
   Defines Layer 3, its boundary, object types, control families, and examples.
 
 stack-31-layer-3-control-families.md
-  Expands each C1-C15 family into detailed control records.
+  Expands each L3CF1-L3CF15 family into detailed control records.
 
-stack-32-layer-3-system-faults.md
-  Catalogs missing, weak, stale, bypassed, or misconfigured controls.
+stack-32-layer-3-semantic-fault-view.md
+  Provides a specialist semantic view over Layer 3 controls and faults.
 
-stack-33-layer-3-observability-and-traces.md
-  Defines trace requirements and debugging evidence.
-
-stack-34-layer-3-evaluation-and-regression.md
-  Defines release gates, regression suites, scenario coverage, and monitoring.
-
-stack-35-layer-3-worked-examples.md
-  Applies the Layer 1 -> Layer 2 -> Layer 3 -> Layer 4 stack to concrete cases.
-```
-
-
-The separate control-mapping document can then focus only on mappings:
-
-```text
-stack-26-layer-3-control-mapping.md
-  Maps Layer 2 fault modes and evaluation methods to Layer 3 controls.
+stack-33-layer-3-system-fault-families.md
+  Catalogs Layer 3 system fault families and architecture responsibility patterns.
 ```
 
 ## Open questions
 
 
-- Should Layer 3 controls use `C` codes, while system faults use `S` codes?
 - Should system faults and controls live in separate documents?
 - Should evaluation and regression controls remain inside Layer 3 or form a separate evaluation/control layer?
 - Should human review be treated as a control, escalation path, governance mechanism, or all three?

@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Stack 40 System Faults"
-linkTitle: "Stack 40 System Faults"
+title: "Stack 33 Layer 3 System Fault Families"
+linkTitle: "Stack 33 Layer 3 System Fault Families"
 ---
-# Layer 3 -- System-Level Faults
+# Layer 3 -- System Fault Families
 
 ## Definition
 
@@ -55,24 +55,26 @@ Examples:
 # Proposed Layer 3 taxonomy
 
 
+Use the `L3S1-L3S10` identifiers for canonical Layer 3 fault-family references. They replace the older `S1-S10` labels used in earlier drafts.
+
 I would use ten system-fault families:
 
 | Code    | System fault family                   | Core failure                                                                             |
 | ------- | ------------------------------------- | ---------------------------------------------------------------------------------------- |
-| **S1**  | Context Assembly Faults               | The system builds the wrong runtime context.                                             |
-| **S2**  | Retrieval and Grounding Faults        | The system fails to supply or enforce source-grounded evidence.                          |
-| **S3**  | Instruction and Policy Control Faults | The system fails to preserve instruction priority or policy boundaries.                  |
-| **S4**  | State and Memory Faults               | The system fails to preserve, update, or invalidate durable state.                       |
-| **S5**  | Tool Orchestration Faults             | The system calls tools incorrectly or fails to constrain tool use.                       |
-| **S6**  | Output Contract Faults                | The system accepts outputs that violate required structure or semantics.                 |
-| **S7**  | Fallback and Escalation Faults        | The system lacks good behavior when confidence, evidence, or capability is insufficient. |
-| **S8**  | Evaluation and Regression Faults      | The system does not detect known failure modes before release.                           |
-| **S9**  | Observability and Diagnosis Faults    | The system cannot explain, reproduce, or localize failures.                              |
-| **S10** | Change Management Faults              | Model, prompt, retrieval, or policy changes alter behavior without adequate control.     |
+| **L3S1**  | Context Assembly Faults               | The system builds the wrong runtime context.                                             |
+| **L3S2**  | Retrieval and Grounding Faults        | The system fails to supply or enforce source-grounded evidence.                          |
+| **L3S3**  | Instruction and Policy Control Faults | The system fails to preserve instruction priority or policy boundaries.                  |
+| **L3S4**  | State and Memory Faults               | The system fails to preserve, update, or invalidate durable state.                       |
+| **L3S5**  | Tool Orchestration Faults             | The system calls tools incorrectly or fails to constrain tool use.                       |
+| **L3S6**  | Output Contract Faults                | The system accepts outputs that violate required structure or semantics.                 |
+| **L3S7**  | Fallback and Escalation Faults        | The system lacks good behavior when confidence, evidence, or capability is insufficient. |
+| **L3S8**  | Evaluation and Regression Faults      | The system does not detect known failure modes before release.                           |
+| **L3S9**  | Observability and Diagnosis Faults    | The system cannot explain, reproduce, or localize failures.                              |
+| **L3S10** | Change Management Faults              | Model, prompt, retrieval, or policy changes alter behavior without adequate control.     |
 
 This gives us a system-focused Layer 3 without drifting into cost, latency, or generic delivery management.
 
-# S1. Context Assembly Faults
+# L3S1. Context Assembly Faults
 
 ## Definition
 
@@ -113,7 +115,7 @@ Layer 2: The model ignores a buried constraint.
 Layer 3: The system injected 20 retrieved chunks with no ranking, no source priority, and no constraint extraction.
 ```
 
-# S2. Retrieval and Grounding Faults
+# L3S2. Retrieval and Grounding Faults
 
 ## Definition
 
@@ -157,7 +159,7 @@ Layer 3: The system did not require the answer to be grounded in the current pol
 
 This is the proper system-level version of "hallucination risk."
 
-# S3. Instruction and Policy Control Faults
+# L3S3. Instruction and Policy Control Faults
 
 ## Definition
 
@@ -201,7 +203,7 @@ Layer 3: The system has no policy classifier or permission gate independent of p
 
 This covers "safety / policy misclassification" from your list.
 
-# S4. State and Memory Faults
+# L3S4. State and Memory Faults
 
 ## Definition
 
@@ -241,7 +243,7 @@ Layer 2: The assistant acts as if an old preference is still valid.
 Layer 3: The memory system has no staleness, update, or provenance policy.
 ```
 
-# S5. Tool Orchestration Faults
+# L3S5. Tool Orchestration Faults
 
 ## Definition
 
@@ -287,7 +289,7 @@ Layer 3: The system allowed generated text to become a tool argument without sou
 
 This captures "incorrect tool use" from your list.
 
-# S6. Output Contract Faults
+# L3S6. Output Contract Faults
 
 ## Definition
 
@@ -327,7 +329,7 @@ Layer 2: The model emits malformed JSON.
 Layer 3: The system has no strict schema validation and retry/rejection path.
 ```
 
-# S7. Fallback and Escalation Faults
+# L3S7. Fallback and Escalation Faults
 
 ## Definition
 
@@ -371,7 +373,7 @@ Layer 3: The system has no “missing required inputs → clarify” rule.
 
 This covers "poor fallback behavior."
 
-# S8. Evaluation and Regression Faults
+# L3S8. Evaluation and Regression Faults
 
 ## Definition
 
@@ -417,7 +419,7 @@ Layer 3: The release process tested one sample per prompt and did not measure ta
 
 This covers "evaluation blind spots" and "weak regression testing."
 
-# S9. Observability and Diagnosis Faults
+# L3S9. Observability and Diagnosis Faults
 
 ## Definition
 
@@ -461,7 +463,7 @@ Layer 3: The system did not log which retrieved chunks were available to the mod
 
 This is the system-fault root of hard-to-debug and hard-to-reproduce failures.
 
-# S10. Change Management Faults
+# L3S10. Change Management Faults
 
 ## Definition
 
@@ -510,34 +512,34 @@ This covers "regression from model or prompt changes."
 
 |Code|System-level fault|Canonical statement|
 |---|---|---|
-|**S1**|Context Assembly Faults|The system builds the wrong runtime context.|
-|**S2**|Retrieval and Grounding Faults|The system fails to supply or enforce adequate evidence.|
-|**S3**|Instruction and Policy Control Faults|The system fails to maintain stable instruction or policy boundaries.|
-|**S4**|State and Memory Faults|The system fails to preserve, update, or invalidate durable state.|
-|**S5**|Tool Orchestration Faults|The system fails to route, constrain, validate, or interpret tool use.|
-|**S6**|Output Contract Faults|The system accepts outputs that violate required structure, semantics, or exactness.|
-|**S7**|Fallback and Escalation Faults|The system lacks appropriate behavior when evidence, context, confidence, or permission is insufficient.|
-|**S8**|Evaluation and Regression Faults|The system lacks tests for the fault modes its architecture exposes.|
-|**S9**|Observability and Diagnosis Faults|The system cannot reproduce, attribute, or localize failures.|
-|**S10**|Change Management Faults|The system allows behavioral changes without adequate compatibility checks or rollout controls.|
+|**L3S1**|Context Assembly Faults|The system builds the wrong runtime context.|
+|**L3S2**|Retrieval and Grounding Faults|The system fails to supply or enforce adequate evidence.|
+|**L3S3**|Instruction and Policy Control Faults|The system fails to maintain stable instruction or policy boundaries.|
+|**L3S4**|State and Memory Faults|The system fails to preserve, update, or invalidate durable state.|
+|**L3S5**|Tool Orchestration Faults|The system fails to route, constrain, validate, or interpret tool use.|
+|**L3S6**|Output Contract Faults|The system accepts outputs that violate required structure, semantics, or exactness.|
+|**L3S7**|Fallback and Escalation Faults|The system lacks appropriate behavior when evidence, context, confidence, or permission is insufficient.|
+|**L3S8**|Evaluation and Regression Faults|The system lacks tests for the fault modes its architecture exposes.|
+|**L3S9**|Observability and Diagnosis Faults|The system cannot reproduce, attribute, or localize failures.|
+|**L3S10**|Change Management Faults|The system allows behavioral changes without adequate compatibility checks or rollout controls.|
 
 # Mapping your examples into this taxonomy
 
 
 |Your example|Proposed Layer 3 placement|
 |---|---|
-|Output instability|S8 Evaluation/Regression, S10 Change Management; derived from GF3|
-|Inconsistent behavior across similar inputs|S3 Instruction/Policy Control, S8 Evaluation; derived from IF1|
-|Instruction-following drift|S1 Context Assembly, S3 Instruction Control, S4 State|
-|Incorrect tool use|S5 Tool Orchestration|
-|Retrieval-grounding failures|S2 Retrieval and Grounding|
-|Context-window failures|S1 Context Assembly, S4 State|
-|Poor fallback behavior|S7 Fallback and Escalation|
-|Brittle prompt chains|S1 Context Assembly, S3 Instruction Control, S10 Change Management|
-|Hidden regression|S10 Change Management, S8 Evaluation and Regression, often S9 Observability and Diagnosis|
-|Evaluation blind spots|S8 Evaluation and Regression|
-|Regression from model or prompt changes|S10 Change Management|
-|Safety / policy misclassification|S3 Instruction and Policy Control, S8 Evaluation|
+|Output instability|L3S8 Evaluation/Regression, L3S10 Change Management; derived from GF3|
+|Inconsistent behavior across similar inputs|L3S3 Instruction/Policy Control, L3S8 Evaluation; derived from IF1|
+|Instruction-following drift|L3S1 Context Assembly, L3S3 Instruction Control, L3S4 State|
+|Incorrect tool use|L3S5 Tool Orchestration|
+|Retrieval-grounding failures|L3S2 Retrieval and Grounding|
+|Context-window failures|L3S1 Context Assembly, L3S4 State|
+|Poor fallback behavior|L3S7 Fallback and Escalation|
+|Brittle prompt chains|L3S1 Context Assembly, L3S3 Instruction Control, L3S10 Change Management|
+|Hidden regression|L3S10 Change Management, L3S8 Evaluation and Regression, often L3S9 Observability and Diagnosis|
+|Evaluation blind spots|L3S8 Evaluation and Regression|
+|Regression from model or prompt changes|L3S10 Change Management|
+|Safety / policy misclassification|L3S3 Instruction and Policy Control, L3S8 Evaluation|
 
 # How to classify "Instruction-following drift"
 
@@ -550,7 +552,7 @@ Use "instruction-following drift" as an informal umbrella term, not as a new ato
 | Prompt or example priority confusion | F03 Context Priority Confusion + F12 Constraint Misclassification + F13 Example Overgeneralization | The system is still "following instructions," but the wrong instruction signal dominates. |
 | Untrusted embedded instruction uptake | F15 Control/Data Confusion + F16 Prompt-Injection Compliance | Non-operative content is treated as operative instruction. |
 
-On the Layer 3 side, the likely system homes are still S1 Context Assembly, S3 Instruction and Policy Control, and S4 State and Memory, depending on whether the failure is in context construction, instruction control, or state persistence.
+On the Layer 3 side, the likely system homes are still L3S1 Context Assembly, L3S3 Instruction and Policy Control, and L3S4 State and Memory, depending on whether the failure is in context construction, instruction control, or state persistence.
 
 # How to classify "Hidden regression"
 
@@ -559,28 +561,30 @@ Use "hidden regression" as an informal lens, not as a new atomic Layer 2 fault o
 
 | Common meaning | Classify as | Reason |
 |---|---|---|
-| Behavior changed after a prompt, model, retrieval, tool, schema, policy, or memory update | S10 Change Management | The system allowed a behavior-changing update without adequate compatibility checks or rollout controls. |
-| The regression was not caught before release | S8 Evaluation and Regression | The system lacked the regression coverage, scenario slices, or release gates needed to detect the degradation. |
-| The regression is hard to localize, replay, or attribute | S9 Observability and Diagnosis | The system did not preserve enough trace, version, or provenance data to explain what changed. |
+| Behavior changed after a prompt, model, retrieval, tool, schema, policy, or memory update | L3S10 Change Management | The system allowed a behavior-changing update without adequate compatibility checks or rollout controls. |
+| The regression was not caught before release | L3S8 Evaluation and Regression | The system lacked the regression coverage, scenario slices, or release gates needed to detect the degradation. |
+| The regression is hard to localize, replay, or attribute | L3S9 Observability and Diagnosis | The system did not preserve enough trace, version, or provenance data to explain what changed. |
 
-Classify the regressed behavior itself under the affected domain fault as well, such as S2 Retrieval and Grounding, S3 Instruction and Policy Control, S5 Tool Orchestration, or S6 Output Contract. "Hidden regression" is the change, evaluation, and diagnosis lens over that behavior.
+Classify the regressed behavior itself under the affected domain fault as well, such as L3S2 Retrieval and Grounding, L3S3 Instruction and Policy Control, L3S5 Tool Orchestration, or L3S6 Output Contract. "Hidden regression" is the change, evaluation, and diagnosis lens over that behavior.
+
+The effect is often non-local even when the triggering edit was local. A narrow prompt, retrieval, schema, or policy change may degrade adjacent slices or seemingly unrelated workflows because the changed control surface is shared more broadly than the team first assumed.
 
 Some of your "Layer 3 -- Delivery and engineering problems" are not system faults themselves. They are downstream engineering consequences of system faults:
 
 |Delivery/engineering problem|Usually caused by|
 |---|---|
-|Hard-to-reproduce bugs|S9 Observability + GF3 Output Variance|
-|Hard-to-debug failures|S9 Observability|
-|Unclear ownership|Missing ownership model across S1-S10|
-|Slow QA cycles|S8 Evaluation gaps + unclear acceptance criteria|
-|Weak regression testing|S8 Evaluation and Regression|
-|Hidden regression|S10 Change Management + S8 Evaluation + often S9 Observability|
-|Difficult acceptance criteria|S8 Evaluation + S7 fallback ambiguity|
-|Unstable demos|S8 Evaluation + S10 Change Management|
-|High manual review burden|S2/S6/S7 controls insufficient or immature|
-|Deployment risk|S8 + S9 + S10|
-|Monitoring gaps|S9 Observability|
-|Difficulty defining "done"|S8 Evaluation + unclear operating envelope|
+|Hard-to-reproduce bugs|L3S9 Observability + GF3 Output Variance|
+|Hard-to-debug failures|L3S9 Observability|
+|Unclear ownership|Missing ownership model across L3S1-L3S10|
+|Slow QA cycles|L3S8 Evaluation gaps + unclear acceptance criteria|
+|Weak regression testing|L3S8 Evaluation and Regression|
+|Hidden regression|L3S10 Change Management + L3S8 Evaluation + often L3S9 Observability|
+|Difficult acceptance criteria|L3S8 Evaluation + L3S7 fallback ambiguity|
+|Unstable demos|L3S8 Evaluation + L3S10 Change Management|
+|High manual review burden|L3S2/L3S6/L3S7 controls insufficient or immature|
+|Deployment risk|L3S8 + L3S9 + L3S10|
+|Monitoring gaps|L3S9 Observability|
+|Difficulty defining "done"|L3S8 Evaluation + unclear operating envelope|
 
 So I would keep those in **Layer 4: Delivery and Engineering Problems**, not in Layer 3.
 
@@ -596,7 +600,7 @@ Layer 2 fault mode:
 EF2 Unsupported Assertion
 
 Layer 3 system fault:
-S2 Retrieval and Grounding Fault — answer allowed without evidence requirement
+L3S2 Retrieval and Grounding Fault — answer allowed without evidence requirement
 
 Layer 4 engineering problem:
 Manual review burden
@@ -615,7 +619,7 @@ Layer 2 fault mode:
 IF1 Prompt-Form Sensitivity
 
 Layer 3 system fault:
-S8 Evaluation and Regression Fault — no paraphrase robustness suite
+L3S8 Evaluation and Regression Fault — no paraphrase robustness suite
 
 Layer 4 engineering problem:
 Unstable demos
@@ -634,7 +638,7 @@ Layer 2 fault mode:
 SF1 Exact-String Corruption
 
 Layer 3 system fault:
-S5 Tool Orchestration Fault — generated ID accepted as tool parameter without validation
+L3S5 Tool Orchestration Fault — generated ID accepted as tool parameter without validation
 
 Layer 4 engineering problem:
 Deployment risk
@@ -653,7 +657,7 @@ Layer 2 fault mode:
 GF3 Output Variance / IF2 Task Misinduction
 
 Layer 3 system fault:
-S10 Change Management Fault — prompt or model changed without behavioral regression tests
+L3S10 Change Management Fault — prompt or model changed without behavioral regression tests
 
 Layer 4 engineering problem:
 Hidden regression / hard-to-debug regression

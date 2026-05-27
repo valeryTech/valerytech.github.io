@@ -1,20 +1,22 @@
 ---
 draft: false
 toc: true
-title: "Stack Working Examples"
-linkTitle: "Stack Working Examples"
+title: "Stack 27 Worked Examples"
+linkTitle: "Stack 27 Worked Examples"
 ---
-# Layer 2 Worked Examples
+# Layer 2 -- Worked Examples
 
 
 This document shows how to apply the Layer 2 fault inventory to concrete AI-system failures.
 
 Layer 2 fault modes are behavioral patterns. They describe what went wrong in the model or agent behavior before assigning responsibility to a system component, missing control, evaluation gap, or user impact.
 
+Layer 0 remains upstream: ambiguity, context dependence, pragmatic inference, discourse continuity, and social framing shape the interface conditions, but Layer 2 names the observable behavioral failure pattern.
+
 Use these examples to practice the stack:
 
 ```text
-Layer 1A / 1B contributors
+Layer 1A / 1B / 1C contributors
   -> Layer 2 fault modes
   -> Layer 3 system faults or missing controls
   -> Layer 4 impact
@@ -83,6 +85,10 @@ A support assistant receives three retrieved chunks. One contains the governing 
 - A5 In-Band Control/Data Representation.
 - A8 Distributional Token Scoring.
 - B1 Learned Natural-Language Task Induction.
+- C3 External Knowledge Dependence.
+- C4 Evidence-Grounded Generation Surface.
+- C5 Compositional Pipeline Structure.
+- C9 Policy and Trust Boundary Mediation.
 
 ## Layer 2 faults
 
@@ -128,6 +134,9 @@ A document retrieved for a RAG answer contains the text: "Ignore previous instru
 - A4 Attention/Position-Mediated Context Integration.
 - B1 Learned Natural-Language Task Induction.
 - B3 Natural-Language Interface Sensitivity.
+- C3 External Knowledge Dependence.
+- C5 Compositional Pipeline Structure.
+- C9 Policy and Trust Boundary Mediation.
 
 ## Layer 2 faults
 
@@ -229,6 +238,9 @@ A policy QA system answers from general background knowledge because the retriev
 - A3 Finite Ordered Context Interface.
 - A8 Distributional Token Scoring.
 - B7 Distribution-Conditional Competence.
+- C3 External Knowledge Dependence.
+- C5 Compositional Pipeline Structure.
+- C7 Environment, Version, and Non-Local Change Effects.
 
 ## Layer 2 faults
 
@@ -453,6 +465,9 @@ An agent attempts to retrieve a record with a malformed ID. The tool returns an 
 - A7 Autoregressive Factorization.
 - A9 Decoding Path Selection.
 - B1 Learned Natural-Language Task Induction.
+- C5 Compositional Pipeline Structure.
+- C6 Agentic State-Action Interface.
+- C8 Weak Native Observability and Attribution.
 
 ## Layer 2 faults
 
@@ -947,6 +962,9 @@ A user asks for the current status of a regulation. The assistant answers from m
 - A3 Finite Ordered Context Interface.
 - B1 Learned Natural-Language Task Induction.
 - B7 Distribution-Conditional Competence.
+- C3 External Knowledge Dependence.
+- C6 Agentic State-Action Interface.
+- C7 Environment, Version, and Non-Local Change Effects.
 
 ## Layer 2 faults
 

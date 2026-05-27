@@ -33,14 +33,15 @@ Layer 4
 ```
 
 
-This file defines the **control vocabulary**. It should be used by later mapping documents, especially:
+This file defines the **control vocabulary**. It should be used by later mapping and fault-family documents, especially:
 
 ```text
-stack-26-layer-3-control-mapping.md
+stack-30-layer-3-overview.md
+stack-33-layer-3-system-fault-families.md
 ```
 
 
-which maps Layer 2 fault modes to these Layer 3 control families.
+The detailed control IDs in this file use the `L3A*`, `L3B*`, `L3C*`, `L3D*`, and `L3X*` namespaces so they cannot be confused with Layer 1 `A*`, `B*`, or `C*` identifiers. They replace the older local `A*`, `B*`, `C*`, `D*`, and `X*` control labels used in earlier drafts.
 
 ## Scope
 
@@ -218,7 +219,7 @@ A **control family** is a broad class of related controls operating at the same 
 Example:
 
 ```text
-B5 Claim Grounding and Citation Controls
+L3B5 Claim Grounding and Citation Controls
 ```
 
 
@@ -240,7 +241,7 @@ Example:
 
 ```text
 Control family:
-  A4 Output Contract and Parser Controls
+  L3A4 Output Contract and Parser Controls
 
 Control instance:
   validate assistant output against JSON Schema v7 before passing it to the API consumer
@@ -685,44 +686,44 @@ Common engineering trap:
 
 | Boundary | Code | Control family | Core question |
 |---|---:|---|---|
-| Interface / Contract | A1 | Task Contract Controls | Did the system convert soft intent into an explicit task contract? |
-| Interface / Contract | A2 | Instruction Hierarchy Controls | Did the system define which instructions dominate when conflicts occur? |
-| Interface / Contract | A3 | Prompt Assembly Controls | Did the system assemble instructions, examples, context, and output requirements safely? |
-| Interface / Contract | A4 | Output Contract and Parser Controls | Did the system enforce required output format, schema, type, and boundary rules? |
-| Interface / Contract | A5 | Symbolic / Exactness Controls | Did the system protect strings, IDs, numbers, code, tables, and other exact values? |
-| Interface / Contract | A6 | Interaction Contract Controls | Did the system enforce tone, verbosity, clarification, refusal, escalation, and UX behavior rules? |
-| Knowledge / Grounding | B1 | Context Assembly Controls | Did the system supply the right runtime information in usable form? |
-| Knowledge / Grounding | B2 | Retrieval Controls | Did the system retrieve and rank the right evidence? |
-| Knowledge / Grounding | B3 | Source Authority and Freshness Controls | Did the system preserve source priority, authority, and currency? |
-| Knowledge / Grounding | B4 | Evidence Packaging Controls | Did the system label, quote, delimit, and expose evidence clearly? |
-| Knowledge / Grounding | B5 | Claim Grounding and Citation Controls | Did the system require claims to be supported by evidence? |
-| Knowledge / Grounding | B6 | Claim Verification Controls | Did the system check important claims against trusted references or tools? |
-| Knowledge / Grounding | B7 | Confidence Communication Controls | Did the system prevent misleading certainty, false verification, or unsupported confidence? |
-| State / Process / Action | C1 | State Persistence Controls | Did the system preserve required state across turns, calls, sessions, and workflows? |
-| State / Process / Action | C2 | Memory Rehydration Controls | Did the system reintroduce relevant state into the current context? |
-| State / Process / Action | C3 | Planning and Process Integrity Controls | Did the system preserve goals, constraints, and checkpoints across steps? |
-| State / Process / Action | C4 | Tool Selection Controls | Did the system route to the right tool when needed? |
-| State / Process / Action | C5 | Tool Argument Controls | Did the system validate tool arguments before execution? |
-| State / Process / Action | C6 | Tool Output Interpretation Controls | Did the system ensure tool results were read and applied correctly? |
-| State / Process / Action | C7 | Recovery and Retry Controls | Did the system recover from missing data, tool errors, invalid output, or uncertainty? |
-| State / Process / Action | C8 | Action Authorization Controls | Did the system block external actions until authorization and evidence requirements were met? |
-| State / Process / Action | C9 | Transaction and Rollback Controls | Did the system make risky actions reversible, auditable, confirmed, or compensable? |
-| Policy / Reliability / Envelope | D1 | Policy Boundary Controls | Did the system enforce safety, compliance, privacy, and allowed-use boundaries? |
-| Policy / Reliability / Envelope | D2 | Refusal and Escalation Controls | Did the system refuse, warn, clarify, or escalate at the right time? |
-| Policy / Reliability / Envelope | D3 | Competence Boundary Controls | Did the system recognize domains, slices, or cases outside reliable competence? |
-| Policy / Reliability / Envelope | D4 | Routing and Fallback Controls | Did the system route hard or risky cases to safer models, tools, workflows, or humans? |
-| Policy / Reliability / Envelope | D5 | Stability Controls | Did the system detect and bound repeated-run, perturbation, and tail-risk instability? |
-| Policy / Reliability / Envelope | D6 | Operating-Budget Controls | Did the system manage context, latency, cost, token, and compute pressure? |
-| Policy / Reliability / Envelope | D7 | Deployment and Version Controls | Did the system track model, prompt, index, policy, schema, and tool changes? |
-| Cross-Cutting | X1 | Traceability Controls | Did the system capture enough evidence to debug, audit, and reproduce behavior? |
-| Cross-Cutting | X2 | Evaluation Gate Controls | Did evaluations block unsafe, regressive, or unproven releases? |
-| Cross-Cutting | X3 | Runtime Monitoring Controls | Did the system detect degradation after deployment? |
-| Cross-Cutting | X4 | Incident Review Controls | Did the system convert failures into taxonomy updates, tests, and controls? |
-| Cross-Cutting | X5 | Human Escalation Controls | Did the system package uncertain or risky cases for human decision? |
+| Interface / Contract | L3A1 | Task Contract Controls | Did the system convert soft intent into an explicit task contract? |
+| Interface / Contract | L3A2 | Instruction Hierarchy Controls | Did the system define which instructions dominate when conflicts occur? |
+| Interface / Contract | L3A3 | Prompt Assembly Controls | Did the system assemble instructions, examples, context, and output requirements safely? |
+| Interface / Contract | L3A4 | Output Contract and Parser Controls | Did the system enforce required output format, schema, type, and boundary rules? |
+| Interface / Contract | L3A5 | Symbolic / Exactness Controls | Did the system protect strings, IDs, numbers, code, tables, and other exact values? |
+| Interface / Contract | L3A6 | Interaction Contract Controls | Did the system enforce tone, verbosity, clarification, refusal, escalation, and UX behavior rules? |
+| Knowledge / Grounding | L3B1 | Context Assembly Controls | Did the system supply the right runtime information in usable form? |
+| Knowledge / Grounding | L3B2 | Retrieval Controls | Did the system retrieve and rank the right evidence? |
+| Knowledge / Grounding | L3B3 | Source Authority and Freshness Controls | Did the system preserve source priority, authority, and currency? |
+| Knowledge / Grounding | L3B4 | Evidence Packaging Controls | Did the system label, quote, delimit, and expose evidence clearly? |
+| Knowledge / Grounding | L3B5 | Claim Grounding and Citation Controls | Did the system require claims to be supported by evidence? |
+| Knowledge / Grounding | L3B6 | Claim Verification Controls | Did the system check important claims against trusted references or tools? |
+| Knowledge / Grounding | L3B7 | Confidence Communication Controls | Did the system prevent misleading certainty, false verification, or unsupported confidence? |
+| State / Process / Action | L3C1 | State Persistence Controls | Did the system preserve required state across turns, calls, sessions, and workflows? |
+| State / Process / Action | L3C2 | Memory Rehydration Controls | Did the system reintroduce relevant state into the current context? |
+| State / Process / Action | L3C3 | Planning and Process Integrity Controls | Did the system preserve goals, constraints, and checkpoints across steps? |
+| State / Process / Action | L3C4 | Tool Selection Controls | Did the system route to the right tool when needed? |
+| State / Process / Action | L3C5 | Tool Argument Controls | Did the system validate tool arguments before execution? |
+| State / Process / Action | L3C6 | Tool Output Interpretation Controls | Did the system ensure tool results were read and applied correctly? |
+| State / Process / Action | L3C7 | Recovery and Retry Controls | Did the system recover from missing data, tool errors, invalid output, or uncertainty? |
+| State / Process / Action | L3C8 | Action Authorization Controls | Did the system block external actions until authorization and evidence requirements were met? |
+| State / Process / Action | L3C9 | Transaction and Rollback Controls | Did the system make risky actions reversible, auditable, confirmed, or compensable? |
+| Policy / Reliability / Envelope | L3D1 | Policy Boundary Controls | Did the system enforce safety, compliance, privacy, and allowed-use boundaries? |
+| Policy / Reliability / Envelope | L3D2 | Refusal and Escalation Controls | Did the system refuse, warn, clarify, or escalate at the right time? |
+| Policy / Reliability / Envelope | L3D3 | Competence Boundary Controls | Did the system recognize domains, slices, or cases outside reliable competence? |
+| Policy / Reliability / Envelope | L3D4 | Routing and Fallback Controls | Did the system route hard or risky cases to safer models, tools, workflows, or humans? |
+| Policy / Reliability / Envelope | L3D5 | Stability Controls | Did the system detect and bound repeated-run, perturbation, and tail-risk instability? |
+| Policy / Reliability / Envelope | L3D6 | Operating-Budget Controls | Did the system manage context, latency, cost, token, and compute pressure? |
+| Policy / Reliability / Envelope | L3D7 | Deployment and Version Controls | Did the system track model, prompt, index, policy, schema, and tool changes? |
+| Cross-Cutting | L3X1 | Traceability Controls | Did the system capture enough evidence to debug, audit, and reproduce behavior? |
+| Cross-Cutting | L3X2 | Evaluation Gate Controls | Did evaluations block unsafe, regressive, or unproven releases? |
+| Cross-Cutting | L3X3 | Runtime Monitoring Controls | Did the system detect degradation after deployment? |
+| Cross-Cutting | L3X4 | Incident Review Controls | Did the system convert failures into taxonomy updates, tests, and controls? |
+| Cross-Cutting | L3X5 | Human Escalation Controls | Did the system package uncertain or risky cases for human decision? |
 
 # L3-A -- Interface and Contract Controls
 
-## A1. Task Contract Controls
+## L3A1. Task Contract Controls
 
 ### Purpose
 
@@ -825,7 +826,7 @@ Control:
   task-specific extraction schema and field-level validator
 ```
 
-## A2. Instruction Hierarchy Controls
+## L3A2. Instruction Hierarchy Controls
 
 ### Purpose
 
@@ -924,7 +925,7 @@ Control:
   retrieved text is labeled as evidence only and cannot define active behavior rules
 ```
 
-## A3. Prompt Assembly Controls
+## L3A3. Prompt Assembly Controls
 
 ### Purpose
 
@@ -1030,7 +1031,7 @@ Control:
   prompt assembly labels sources by authority and places governing evidence in a dedicated section
 ```
 
-## A4. Output Contract and Parser Controls
+## L3A4. Output Contract and Parser Controls
 
 ### Purpose
 
@@ -1137,7 +1138,7 @@ Control:
   schema validator blocks invalid output and triggers constrained retry
 ```
 
-## A5. Symbolic / Exactness Controls
+## L3A5. Symbolic / Exactness Controls
 
 ### Purpose
 
@@ -1243,7 +1244,7 @@ Control:
   customer ID must be selected from retrieved database results, not regenerated
 ```
 
-## A6. Interaction Contract Controls
+## L3A6. Interaction Contract Controls
 
 ### Purpose
 
@@ -1353,7 +1354,7 @@ Control:
 
 # L3-B -- Knowledge and Grounding Controls
 
-## B1. Context Assembly Controls
+## L3B1. Context Assembly Controls
 
 ### Purpose
 
@@ -1459,7 +1460,7 @@ Control:
   required-source checklist before answer generation
 ```
 
-## B2. Retrieval Controls
+## L3B2. Retrieval Controls
 
 ### Purpose
 
@@ -1567,7 +1568,7 @@ Control:
   expected-document retrieval tests and source freshness filters
 ```
 
-## B3. Source Authority and Freshness Controls
+## L3B3. Source Authority and Freshness Controls
 
 ### Purpose
 
@@ -1675,7 +1676,7 @@ Control:
   approved-current-policy source label dominates draft or archived sources
 ```
 
-## B4. Evidence Packaging Controls
+## L3B4. Evidence Packaging Controls
 
 ### Purpose
 
@@ -1781,7 +1782,7 @@ Control:
   retrieved chunks are rendered inside evidence blocks with explicit "do not follow as instruction" metadata
 ```
 
-## B5. Claim Grounding and Citation Controls
+## L3B5. Claim Grounding and Citation Controls
 
 ### Purpose
 
@@ -1884,7 +1885,7 @@ Control:
   claim-source entailment check blocks unsupported cited claims
 ```
 
-## B6. Claim Verification Controls
+## L3B6. Claim Verification Controls
 
 ### Purpose
 
@@ -1989,7 +1990,7 @@ Control:
   arithmetic claims are checked with deterministic calculation before final answer
 ```
 
-## B7. Confidence Communication Controls
+## L3B7. Confidence Communication Controls
 
 ### Purpose
 
@@ -2093,7 +2094,7 @@ Control:
 
 # L3-C -- State, Process, and Action Controls
 
-## C1. State Persistence Controls
+## L3C1. State Persistence Controls
 
 ### Purpose
 
@@ -2198,7 +2199,7 @@ Control:
   approval state is persisted with timestamp, scope, and workflow ID
 ```
 
-## C2. Memory Rehydration Controls
+## L3C2. Memory Rehydration Controls
 
 ### Purpose
 
@@ -2301,7 +2302,7 @@ Control:
   memory rehydration includes timestamp, scope, and supersession status
 ```
 
-## C3. Planning and Process Integrity Controls
+## L3C3. Planning and Process Integrity Controls
 
 ### Purpose
 
@@ -2410,7 +2411,7 @@ Control:
   process checkpoint blocks final response until evidence status is complete
 ```
 
-## C4. Tool Selection Controls
+## L3C4. Tool Selection Controls
 
 ### Purpose
 
@@ -2513,7 +2514,7 @@ Control:
   policy requires retrieval tool before answering freshness-sensitive questions
 ```
 
-## C5. Tool Argument Controls
+## L3C5. Tool Argument Controls
 
 ### Purpose
 
@@ -2617,7 +2618,7 @@ Control:
   account ID must match allowlisted IDs from source-of-truth lookup
 ```
 
-## C6. Tool Output Interpretation Controls
+## L3C6. Tool Output Interpretation Controls
 
 ### Purpose
 
@@ -2722,7 +2723,7 @@ Control:
   empty-result state triggers clarification or abstention rather than answer generation
 ```
 
-## C7. Recovery and Retry Controls
+## L3C7. Recovery and Retry Controls
 
 ### Purpose
 
@@ -2832,7 +2833,7 @@ Control:
   missing-evidence state triggers retrieval retry, then abstention if still unresolved
 ```
 
-## C8. Action Authorization Controls
+## L3C8. Action Authorization Controls
 
 ### Purpose
 
@@ -2940,7 +2941,7 @@ Control:
   external-send action requires explicit user confirmation of recipient, subject, and body
 ```
 
-## C9. Transaction and Rollback Controls
+## L3C9. Transaction and Rollback Controls
 
 ### Purpose
 
@@ -3047,7 +3048,7 @@ Control:
 
 # L3-D -- Policy, Reliability, and Operating-Envelope Controls
 
-## D1. Policy Boundary Controls
+## L3D1. Policy Boundary Controls
 
 ### Purpose
 
@@ -3155,7 +3156,7 @@ Control:
   policy check runs before final answer and before external action execution
 ```
 
-## D2. Refusal and Escalation Controls
+## L3D2. Refusal and Escalation Controls
 
 ### Purpose
 
@@ -3262,7 +3263,7 @@ Control:
   escalation policy requires clarification before irreversible action
 ```
 
-## D3. Competence Boundary Controls
+## L3D3. Competence Boundary Controls
 
 ### Purpose
 
@@ -3367,7 +3368,7 @@ Control:
   document-type classifier routes unsupported formats to expert review
 ```
 
-## D4. Routing and Fallback Controls
+## L3D4. Routing and Fallback Controls
 
 ### Purpose
 
@@ -3472,7 +3473,7 @@ Control:
   domain classifier routes tax questions to approved tax workflow or human review
 ```
 
-## D5. Stability Controls
+## L3D5. Stability Controls
 
 ### Purpose
 
@@ -3579,7 +3580,7 @@ Control:
   escalation decision must be stable across repeated runs and paraphrase variants
 ```
 
-## D6. Operating-Budget Controls
+## L3D6. Operating-Budget Controls
 
 ### Purpose
 
@@ -3689,7 +3690,7 @@ Control:
   context budget planner marks dropped required sections and blocks answer generation
 ```
 
-## D7. Deployment and Version Controls
+## L3D7. Deployment and Version Controls
 
 ### Purpose
 
@@ -3802,7 +3803,7 @@ Control:
 
 # L3-X -- Cross-Cutting Controls
 
-## X1. Traceability Controls
+## L3X1. Traceability Controls
 
 ### Purpose
 
@@ -3916,7 +3917,7 @@ Control:
   retrieval trace records query, ranked chunks, selected chunks, and source metadata
 ```
 
-## X2. Evaluation Gate Controls
+## L3X2. Evaluation Gate Controls
 
 ### Purpose
 
@@ -4020,7 +4021,7 @@ Control:
   release gate blocks if parser-valid rate falls below threshold
 ```
 
-## X3. Runtime Monitoring Controls
+## L3X3. Runtime Monitoring Controls
 
 ### Purpose
 
@@ -4126,7 +4127,7 @@ Control:
   runtime grounding monitor tracks claim-support rate by source and release version
 ```
 
-## X4. Incident Review Controls
+## L3X4. Incident Review Controls
 
 ### Purpose
 
@@ -4234,7 +4235,7 @@ Control:
   incident review adds citation-existence test and source-support gate before next release
 ```
 
-## X5. Human Escalation Controls
+## L3X5. Human Escalation Controls
 
 ### Purpose
 
@@ -4350,21 +4351,21 @@ If older documents use the flat `C1-C15` control-family list, map them as follow
 
 | Old control | New home |
 |---|---|
-| C1 Context Construction Controls | B1 Context Assembly Controls |
-| C2 Retrieval and Source Controls | B2 Retrieval Controls + B3 Source Authority and Freshness Controls |
-| C3 State and Memory Controls | C1 State Persistence Controls + C2 Memory Rehydration Controls |
-| C4 Prompt and Task-Contract Controls | A1 Task Contract Controls + A2 Instruction Hierarchy Controls + A3 Prompt Assembly Controls |
-| C5 Control/Data Isolation Controls | A2 Instruction Hierarchy Controls + A3 Prompt Assembly Controls + B4 Evidence Packaging Controls + D1 Policy Boundary Controls |
-| C6 Output Contract Controls | A4 Output Contract and Parser Controls + A5 Symbolic / Exactness Controls |
-| C7 Grounding and Verification Controls | B5 Claim Grounding and Citation Controls + B6 Claim Verification Controls |
-| C8 Calibration and Confidence Controls | B7 Confidence Communication Controls |
-| C9 Reasoning and Process Controls | C3 Planning and Process Integrity Controls |
-| C10 Tool and Action Controls | C4 Tool Selection Controls + C5 Tool Argument Controls + C6 Tool Output Interpretation Controls + C8 Action Authorization Controls |
-| C11 Safety and Policy Controls | D1 Policy Boundary Controls + D2 Refusal and Escalation Controls |
-| C12 Budget and Resource Controls | D6 Operating-Budget Controls |
-| C13 Observability and Trace Controls | X1 Traceability Controls |
-| C14 Evaluation and Regression Controls | X2 Evaluation Gate Controls + X3 Runtime Monitoring Controls + D7 Deployment and Version Controls |
-| C15 Human Review and Escalation Controls | X5 Human Escalation Controls + D2 Refusal and Escalation Controls |
+| C1 Context Construction Controls | L3B1 Context Assembly Controls |
+| C2 Retrieval and Source Controls | L3B2 Retrieval Controls + L3B3 Source Authority and Freshness Controls |
+| C3 State and Memory Controls | L3C1 State Persistence Controls + L3C2 Memory Rehydration Controls |
+| C4 Prompt and Task-Contract Controls | L3A1 Task Contract Controls + L3A2 Instruction Hierarchy Controls + L3A3 Prompt Assembly Controls |
+| C5 Control/Data Isolation Controls | L3A2 Instruction Hierarchy Controls + L3A3 Prompt Assembly Controls + L3B4 Evidence Packaging Controls + L3D1 Policy Boundary Controls |
+| C6 Output Contract Controls | L3A4 Output Contract and Parser Controls + L3A5 Symbolic / Exactness Controls |
+| C7 Grounding and Verification Controls | L3B5 Claim Grounding and Citation Controls + L3B6 Claim Verification Controls |
+| C8 Calibration and Confidence Controls | L3B7 Confidence Communication Controls |
+| C9 Reasoning and Process Controls | L3C3 Planning and Process Integrity Controls |
+| C10 Tool and Action Controls | L3C4 Tool Selection Controls + L3C5 Tool Argument Controls + L3C6 Tool Output Interpretation Controls + L3C8 Action Authorization Controls |
+| C11 Safety and Policy Controls | L3D1 Policy Boundary Controls + L3D2 Refusal and Escalation Controls |
+| C12 Budget and Resource Controls | L3D6 Operating-Budget Controls |
+| C13 Observability and Trace Controls | L3X1 Traceability Controls |
+| C14 Evaluation and Regression Controls | L3X2 Evaluation Gate Controls + L3X3 Runtime Monitoring Controls + L3D7 Deployment and Version Controls |
+| C15 Human Review and Escalation Controls | L3X5 Human Escalation Controls + L3D2 Refusal and Escalation Controls |
 
 ## Cross-boundary dependencies
 
@@ -4373,22 +4374,22 @@ Layer 3 controls rarely operate in isolation.
 
 | Dependency | Reason |
 |---|---|
-| A1 Task Contract -> A4 Output Contract | The system must know the task before enforcing the right output shape. |
-| A2 Instruction Hierarchy -> B4 Evidence Packaging | Evidence must be labeled so it is not treated as instruction. |
-| B2 Retrieval -> B5 Claim Grounding | The system cannot ground claims in evidence it did not retrieve. |
-| B3 Source Authority -> B5 Claim Grounding | Citation support is weaker if source authority is unknown. |
-| B5 Claim Grounding -> B7 Confidence Communication | Confidence should reflect support and verification status. |
-| C1 State Persistence -> C2 Memory Rehydration | Stored state must be reintroduced to affect current behavior. |
-| C4 Tool Selection -> C5 Tool Argument | Choosing the right tool is separate from calling it correctly. |
-| C5 Tool Argument -> C8 Action Authorization | Valid arguments may still be unauthorized or unsafe. |
-| C6 Tool Output Interpretation -> B5 Claim Grounding | Tool results often become evidence for generated claims. |
-| C7 Recovery and Retry -> X1 Traceability | Recovery decisions need trace evidence. |
-| D1 Policy Boundary -> D2 Refusal/Escalation | Policy classification must lead to user-facing behavior. |
-| D3 Competence Boundary -> D4 Routing/Fallback | Detected unreliability should route to a safer path. |
-| D6 Operating Budget -> B1 Context Assembly | Budget decisions determine what evidence and state fit into context. |
-| D7 Deployment/Version -> X2 Evaluation Gate | Changes need version-aware evaluation. |
-| X1 Traceability -> X4 Incident Review | Incidents cannot be diagnosed without traces. |
-| X5 Human Escalation -> X1 Traceability | Reviewers need evidence packages and audit trails. |
+| L3A1 Task Contract -> L3A4 Output Contract | The system must know the task before enforcing the right output shape. |
+| L3A2 Instruction Hierarchy -> L3B4 Evidence Packaging | Evidence must be labeled so it is not treated as instruction. |
+| L3B2 Retrieval -> L3B5 Claim Grounding | The system cannot ground claims in evidence it did not retrieve. |
+| L3B3 Source Authority -> L3B5 Claim Grounding | Citation support is weaker if source authority is unknown. |
+| L3B5 Claim Grounding -> L3B7 Confidence Communication | Confidence should reflect support and verification status. |
+| L3C1 State Persistence -> L3C2 Memory Rehydration | Stored state must be reintroduced to affect current behavior. |
+| L3C4 Tool Selection -> L3C5 Tool Argument | Choosing the right tool is separate from calling it correctly. |
+| L3C5 Tool Argument -> L3C8 Action Authorization | Valid arguments may still be unauthorized or unsafe. |
+| L3C6 Tool Output Interpretation -> L3B5 Claim Grounding | Tool results often become evidence for generated claims. |
+| L3C7 Recovery and Retry -> L3X1 Traceability | Recovery decisions need trace evidence. |
+| L3D1 Policy Boundary -> L3D2 Refusal/Escalation | Policy classification must lead to user-facing behavior. |
+| L3D3 Competence Boundary -> L3D4 Routing/Fallback | Detected unreliability should route to a safer path. |
+| L3D6 Operating Budget -> L3B1 Context Assembly | Budget decisions determine what evidence and state fit into context. |
+| L3D7 Deployment/Version -> L3X2 Evaluation Gate | Changes need version-aware evaluation. |
+| L3X1 Traceability -> L3X4 Incident Review | Incidents cannot be diagnosed without traces. |
+| L3X5 Human Escalation -> L3X1 Traceability | Reviewers need evidence packages and audit trails. |
 
 ## Minimal control sets by system type
 
@@ -4400,130 +4401,130 @@ These are starting points, not exhaustive requirements.
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A6 Interaction Contract Controls;
-- B7 Confidence Communication Controls;
-- D1 Policy Boundary Controls;
-- D2 Refusal and Escalation Controls;
-- D5 Stability Controls;
-- X1 Traceability Controls;
-- X2 Evaluation Gate Controls;
-- X3 Runtime Monitoring Controls.
+- L3A1 Task Contract Controls;
+- L3A6 Interaction Contract Controls;
+- L3B7 Confidence Communication Controls;
+- L3D1 Policy Boundary Controls;
+- L3D2 Refusal and Escalation Controls;
+- L3D5 Stability Controls;
+- L3X1 Traceability Controls;
+- L3X2 Evaluation Gate Controls;
+- L3X3 Runtime Monitoring Controls.
 
 ### RAG question-answering system
 
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A2 Instruction Hierarchy Controls;
-- A3 Prompt Assembly Controls;
-- B1 Context Assembly Controls;
-- B2 Retrieval Controls;
-- B3 Source Authority and Freshness Controls;
-- B4 Evidence Packaging Controls;
-- B5 Claim Grounding and Citation Controls;
-- B7 Confidence Communication Controls;
-- D6 Operating-Budget Controls;
-- X1 Traceability Controls;
-- X2 Evaluation Gate Controls;
-- X3 Runtime Monitoring Controls.
+- L3A1 Task Contract Controls;
+- L3A2 Instruction Hierarchy Controls;
+- L3A3 Prompt Assembly Controls;
+- L3B1 Context Assembly Controls;
+- L3B2 Retrieval Controls;
+- L3B3 Source Authority and Freshness Controls;
+- L3B4 Evidence Packaging Controls;
+- L3B5 Claim Grounding and Citation Controls;
+- L3B7 Confidence Communication Controls;
+- L3D6 Operating-Budget Controls;
+- L3X1 Traceability Controls;
+- L3X2 Evaluation Gate Controls;
+- L3X3 Runtime Monitoring Controls.
 
 ### Structured extraction system
 
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A3 Prompt Assembly Controls;
-- A4 Output Contract and Parser Controls;
-- A5 Symbolic / Exactness Controls;
-- B1 Context Assembly Controls;
-- B5 Claim Grounding and Citation Controls, if extracted values must be sourced;
-- D6 Operating-Budget Controls;
-- X2 Evaluation Gate Controls;
-- X3 Runtime Monitoring Controls.
+- L3A1 Task Contract Controls;
+- L3A3 Prompt Assembly Controls;
+- L3A4 Output Contract and Parser Controls;
+- L3A5 Symbolic / Exactness Controls;
+- L3B1 Context Assembly Controls;
+- L3B5 Claim Grounding and Citation Controls, if extracted values must be sourced;
+- L3D6 Operating-Budget Controls;
+- L3X2 Evaluation Gate Controls;
+- L3X3 Runtime Monitoring Controls.
 
 ### Customer-support classifier or escalation system
 
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A6 Interaction Contract Controls;
-- B1 Context Assembly Controls;
-- B7 Confidence Communication Controls;
-- D1 Policy Boundary Controls;
-- D2 Refusal and Escalation Controls;
-- D3 Competence Boundary Controls;
-- D5 Stability Controls;
-- X1 Traceability Controls;
-- X2 Evaluation Gate Controls;
-- X5 Human Escalation Controls.
+- L3A1 Task Contract Controls;
+- L3A6 Interaction Contract Controls;
+- L3B1 Context Assembly Controls;
+- L3B7 Confidence Communication Controls;
+- L3D1 Policy Boundary Controls;
+- L3D2 Refusal and Escalation Controls;
+- L3D3 Competence Boundary Controls;
+- L3D5 Stability Controls;
+- L3X1 Traceability Controls;
+- L3X2 Evaluation Gate Controls;
+- L3X5 Human Escalation Controls.
 
 ### Agentic tool-using workflow
 
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A2 Instruction Hierarchy Controls;
-- A4 Output Contract and Parser Controls;
-- C1 State Persistence Controls;
-- C2 Memory Rehydration Controls;
-- C3 Planning and Process Integrity Controls;
-- C4 Tool Selection Controls;
-- C5 Tool Argument Controls;
-- C6 Tool Output Interpretation Controls;
-- C7 Recovery and Retry Controls;
-- C8 Action Authorization Controls;
-- C9 Transaction and Rollback Controls;
-- D1 Policy Boundary Controls;
-- X1 Traceability Controls;
-- X2 Evaluation Gate Controls;
-- X5 Human Escalation Controls.
+- L3A1 Task Contract Controls;
+- L3A2 Instruction Hierarchy Controls;
+- L3A4 Output Contract and Parser Controls;
+- L3C1 State Persistence Controls;
+- L3C2 Memory Rehydration Controls;
+- L3C3 Planning and Process Integrity Controls;
+- L3C4 Tool Selection Controls;
+- L3C5 Tool Argument Controls;
+- L3C6 Tool Output Interpretation Controls;
+- L3C7 Recovery and Retry Controls;
+- L3C8 Action Authorization Controls;
+- L3C9 Transaction and Rollback Controls;
+- L3D1 Policy Boundary Controls;
+- L3X1 Traceability Controls;
+- L3X2 Evaluation Gate Controls;
+- L3X5 Human Escalation Controls.
 
 ### High-risk decision-support system
 
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A6 Interaction Contract Controls;
-- B2 Retrieval Controls;
-- B3 Source Authority and Freshness Controls;
-- B5 Claim Grounding and Citation Controls;
-- B6 Claim Verification Controls;
-- B7 Confidence Communication Controls;
-- D1 Policy Boundary Controls;
-- D2 Refusal and Escalation Controls;
-- D3 Competence Boundary Controls;
-- D4 Routing and Fallback Controls;
-- X1 Traceability Controls;
-- X2 Evaluation Gate Controls;
-- X3 Runtime Monitoring Controls;
-- X5 Human Escalation Controls.
+- L3A1 Task Contract Controls;
+- L3A6 Interaction Contract Controls;
+- L3B2 Retrieval Controls;
+- L3B3 Source Authority and Freshness Controls;
+- L3B5 Claim Grounding and Citation Controls;
+- L3B6 Claim Verification Controls;
+- L3B7 Confidence Communication Controls;
+- L3D1 Policy Boundary Controls;
+- L3D2 Refusal and Escalation Controls;
+- L3D3 Competence Boundary Controls;
+- L3D4 Routing and Fallback Controls;
+- L3X1 Traceability Controls;
+- L3X2 Evaluation Gate Controls;
+- L3X3 Runtime Monitoring Controls;
+- L3X5 Human Escalation Controls.
 
 ### External-action system
 
 
 Usually needs:
 
-- A1 Task Contract Controls;
-- A2 Instruction Hierarchy Controls;
-- A4 Output Contract and Parser Controls;
-- C1 State Persistence Controls;
-- C3 Planning and Process Integrity Controls;
-- C4 Tool Selection Controls;
-- C5 Tool Argument Controls;
-- C6 Tool Output Interpretation Controls;
-- C7 Recovery and Retry Controls;
-- C8 Action Authorization Controls;
-- C9 Transaction and Rollback Controls;
-- D1 Policy Boundary Controls;
-- D2 Refusal and Escalation Controls;
-- X1 Traceability Controls;
-- X5 Human Escalation Controls.
+- L3A1 Task Contract Controls;
+- L3A2 Instruction Hierarchy Controls;
+- L3A4 Output Contract and Parser Controls;
+- L3C1 State Persistence Controls;
+- L3C3 Planning and Process Integrity Controls;
+- L3C4 Tool Selection Controls;
+- L3C5 Tool Argument Controls;
+- L3C6 Tool Output Interpretation Controls;
+- L3C7 Recovery and Retry Controls;
+- L3C8 Action Authorization Controls;
+- L3C9 Transaction and Rollback Controls;
+- L3D1 Policy Boundary Controls;
+- L3D2 Refusal and Escalation Controls;
+- L3X1 Traceability Controls;
+- L3X5 Human Escalation Controls.
 
 ## Anti-patterns
 
@@ -4663,9 +4664,7 @@ Check context budget, truncation, chunking, retrieval depth, summarization loss,
 ## Open questions
 
 
-- Should control codes use `A/B/C/D/X` as defined here, or be prefixed more explicitly as `L3-A1`, `L3-B1`, etc.?
 - Should `stack-31` contain detailed control-family records, or should each boundary later get its own file?
-- Should system faults have separate codes from system controls?
 - Should runtime monitors be separated from release gates in a later document?
 - Should human escalation be treated as a cross-cutting control, a policy control, or both?
 - Should evaluation gates live in Layer 3 or in a separate evaluation/governance layer?

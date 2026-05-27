@@ -6,95 +6,14 @@ linkTitle: "Stack 1c Ai System Level Causal Features"
 ---
 # Layer 1C -- AI-System-Level Causal Features
 
-## Definition
-
-
-An **AI-system-level causal feature** is a stable property of a deployed or deployable AI system that shapes behavior across tasks, users, data states, model versions, tools, and runtime conditions.
-
-Layer 1C features are broader than base-model mechanisms. They are not confined to transformer internals. They describe the causal surfaces created when LLMs are embedded inside real systems: retrieval pipelines, prompts, memory, tools, schemas, post-processing, monitoring, policy controls, user interfaces, and production infrastructure.
-
-Layer 1C features are not faults. They are first-layer properties that make certain downstream fault modes possible or likely under specific system conditions.
-
-They sit beside, not below, the model-level layers:
-
-```text
-Layer 1A — Primitive model / inference mechanisms
-    Tokenization, parametric prior, context window, attention, in-band control/data,
-    stateless invocation, autoregression, token scoring, decoding, compute limits
-
-Layer 1B — Learned or behavioral LLM features
-    Task induction, in-context learning, interface sensitivity, plural valid-output space,
-    interaction-style priors, confidence-language generation, uneven competence
-
-Layer 1C — AI-system-level causal features
-    Behavioral variability, soft correctness, external knowledge dependence,
-    evidence grounding, compositional pipelines, agentic state-action loops,
-    environment drift, resource tradeoffs, weak observability, policy mediation
-
-Layer 2 — Feature-derived fault modes
-    Hallucination, unsupported claims, retrieval misses, prompt fragility,
-    tool-call errors, hidden regressions, unsafe actions, poor recoverability, etc.
-```
-
-
-A Layer 1C feature should answer:
-
-> What stable system-level property shapes behavior once an LLM is placed inside a real application or workflow?
-
-It should not be an observed failure, product incident, missing guardrail, evaluation metric, or user impact.
-
-For example:
-
-```text
-Layer 1C feature:
-  Compositional Pipeline Structure
-
-Derived fault mode:
-  Retrieval succeeded but answer generation ignored the evidence
-
-System fault:
-  Evaluation only checked final answer quality and did not capture retrieval traces
-
-Impact:
-  Team cannot localize whether the failure was caused by retrieval, prompt assembly, or generation
-```
-
-## Inclusion criteria
-
-
-A candidate belongs in Layer 1C when it satisfies all of the following:
-
-1. It is **system-level**, meaning it arises from model orchestration, retrieval, tools, state, runtime, policy controls, or production infrastructure.
-2. It is **stable across many systems or workflows**, not a one-off implementation defect.
-3. It is **causal**, meaning it helps explain recurring downstream failure classes.
-4. It is **not itself a failure**.
-5. It is **not purely a base-model mechanism** already captured by Layer 1A.
-6. It is **not purely a learned model behavior** already captured by Layer 1B.
-7. It helps explain why AI systems require evaluation, monitoring, traces, regression testing, and governance beyond ordinary deterministic unit tests.
-
-Layer 1C is therefore the right home for features that appear when LLMs become products, agents, RAG systems, workflow automations, copilots, or decision-support systems.
-
 ## Framing principle -- AI systems are empirical systems
 
 
-AI systems are empirical systems.
-
-That means their behavior cannot be fully trusted, specified, or improved from implementation structure alone. Once an LLM is embedded in a real application, quality has to be discovered, measured, and validated through representative scenarios, repeated runs, perturbations, slice analysis, traces, and production observation.
+That means their behavior cannot be fully trusted, specified, or improved from implementation structure alone. Once an LLM is embedded in a real application, quality has to be discovered, measured, and validated through representative scenarios, repeated runs, traces, and production observation.
 
 Calling AI systems empirical does not mean their behavior is arbitrary, unknowable, or only testable in production. It means that design-time reasoning, static inspection, and ordinary deterministic tests are necessary but insufficient. They must be supplemented by behavioral measurement under representative inputs, contexts, system states, and operational constraints.
 
-This is a cross-cutting Layer 1C framing principle rather than a separate primitive feature. Its minimal core emerges from the interaction of:
-
-- `C1` Behavioral Outcome Variability;
-- `C2` Soft Correctness Surface;
-- `C7` Environment and Version Dependence;
-- `C8` Weak Native Observability and Attribution.
-
-It is further strengthened by `C3` External Knowledge Dependence, `C4` Evidence-Grounded Generation Surface, `C5` Compositional Pipeline Structure, and `C6` Agentic State-Action Interface, because mutable knowledge sources, grounding requirements, multi-stage composition, and state-action loops all increase the amount of behavior that must be validated empirically.
-
-> An AI system is a model-centered, context-dependent, pipeline-mediated, environment-sensitive, evidence- and policy-constrained, resource-bounded system whose reliability must be established empirically at the level of intended outcomes, grounding, process quality, safety boundaries, and operational behavior.
-
-This framing principle is not a Layer 2 fault, not an evaluation method, and not a Layer 3 control. It explains why those downstream artifacts are necessary.
+This is a cross-cutting Layer 1C framing principle rather than a separate primitive feature.
 
 ### Engineering consequences
 
@@ -106,18 +25,18 @@ This framing principle is not a Layer 2 fault, not an evaluation method, and not
 ## Feature matrix
 
 
-| Code    | Feature                                   | Core question it answers                                                                     |
-| ------- | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **C1**  | Behavioral Outcome Variability            | Does the system preserve materially equivalent behavior across repeated or varied scenarios? |
-| **C2**  | Soft Correctness Surface                  | What counts as acceptable output when there is no single exact answer?                       |
-| **C3**  | External Knowledge Dependence             | Which knowledge sources shape behavior, and what happens when they change or are missing?    |
-| **C4**  | Evidence-Grounded Generation Surface      | Are claims expected to be traceable to approved evidence?                                    |
-| **C5**  | Compositional Pipeline Structure          | How does behavior emerge from multiple interacting components?                               |
-| **C6**  | Agentic State-Action Interface            | How does the system move from generation to tools, state, decisions, or external action?     |
-| **C7**  | Environment and Version Dependence        | How do model, prompt, data, tool, policy, or configuration changes affect behavior?          |
-| **C8**  | Weak Native Observability and Attribution | Can failures be traced to the responsible component or condition?                            |
-| **C9**  | Policy and Trust Boundary Mediation       | How are safety, compliance, authorization, and trust boundaries enforced?                    |
-| **C10** | Quality-Cost-Latency Tradeoff             | What quality is feasible under operational budgets?                                          |
+| Code    | Feature                                             | Core question it answers                                                                                           |
+| ------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **C1**  | Behavioral Outcome Variability                      | Does the system preserve materially equivalent behavior across repeated or varied scenarios?                       |
+| **C2**  | Soft Correctness Surface                            | What counts as acceptable output when there is no single exact answer?                                             |
+| **C3**  | Compositional Pipeline Structure                    | How does behavior emerge from multiple interacting components?                                                     |
+| **C4**  | Agentic State-Action Interface                      | How does the system move from generation to tools, state, decisions, or external action?                           |
+| **C5a** | Runtime Context Drift                               | How do hidden execution-context changes alter behavior even when visible input stays the same?                     |
+| **C5b** | Recursive Feedback and Data-Action Coupling         | How does the system's own behavior reshape the future data or state it later depends on?                           |
+| **C5c** | Change Non-Locality                                 | How do apparently local changes produce behavioral effects outside the directly targeted case, slice, or workflow? |
+| **C6**  | Weak Native Observability and Attribution           | Can failures be traced to the responsible component or condition?                                                  |
+| **C7**  | Policy and Trust Boundary Mediation                 | How are safety, compliance, authorization, and trust boundaries enforced?                                          |
+| **C8**  | Quality-Cost-Latency-Reliability Operating Envelope | What quality is feasible under operational budgets for cost, latency, and reliability?                             |
 
 # C1. Behavioral Outcome Variability
 
@@ -139,9 +58,6 @@ The important unit is not exact text. The important unit is the **intended outco
 - user-facing commitment.
 
 Two outputs may be worded differently while preserving the same intended outcome. Conversely, two outputs may look similar while differing in a materially important decision.
-
-## Canonical statement
-
 
 > AI-system behavior should be evaluated at the level of materially intended outcomes, not exact surface text; the same or similar scenarios may yield different outcomes because generation, context, tools, retrieval, runtime, or environment conditions vary.
 
@@ -215,22 +131,6 @@ The main trap for people coming from traditional software engineering is assumin
 
 A single successful demo only shows that the system worked once. Reliable evaluation requires repeating the same scenario and measuring whether materially correct behavior is preserved across runs.
 
-## Important boundary
-
-
-C1 is not the same as A9 Decoding Path Selection.
-
-```text
-A9:
-  The decoding procedure realizes one token path from model scores.
-
-C1:
-  The end-to-end system may or may not preserve materially equivalent outcomes across repeated or varied scenarios.
-```
-
-
-C1 is also not itself "instability." Instability is the downstream failure mode that occurs when variability exceeds the acceptable range for the task.
-
 # C2. Soft Correctness Surface
 
 ## Core feature
@@ -254,11 +154,6 @@ A response may need to be judged by several criteria at once:
 - downstream usability.
 
 This differs from traditional deterministic unit tests, where expected outputs are often exact, binary, and localized.
-
-## Canonical statement
-
-
-> Many AI tasks have a soft correctness surface: multiple outputs may be acceptable, but acceptance depends on task-specific quality criteria rather than exact text matching.
 
 ## Why this belongs in Layer 1C
 
@@ -293,20 +188,6 @@ Material variation:
   different external action.
 ```
 
-## What it explains downstream
-
-
-C2 contributes to fault modes involving:
-
-- overuse of exact-match evaluation;
-- under-specified acceptance criteria;
-- false confidence from superficial similarity;
-- rejecting good outputs because wording differs;
-- accepting bad outputs because wording looks plausible;
-- inconsistent human review;
-- unclear release gates;
-- poor comparison between model, prompt, or retrieval variants.
-
 ## Important boundary
 
 
@@ -320,201 +201,7 @@ C2:
   The system must define which outputs are acceptable for the task and risk context.
 ```
 
-
-C2 is not a fault. The fault occurs when a system with soft correctness is evaluated as if it had a single exact answer.
-
-# C3. External Knowledge Dependence
-
-## Core feature
-
-
-AI-system behavior often depends on multiple knowledge sources, not only the model's parametric prior.
-
-Relevant knowledge may come from:
-
-- pretraining and post-training;
-- prompt context;
-- retrieved documents;
-- vector stores;
-- databases;
-- user memory;
-- project state;
-- tool outputs;
-- APIs;
-- current environment state;
-- conversation history;
-- policy documents;
-- business rules.
-
-The system's answer depends on which knowledge is available, selected, ranked, inserted, interpreted, and used.
-
-## Canonical statement
-
-
-> AI-system knowledge is distributed across the model, context, retrieval, tools, memory, and external data sources; behavior changes when any of those knowledge sources changes or is missing.
-
-## Why this belongs in Layer 1C
-
-
-The base model has a parametric prior, but real systems often need current, private, authoritative, or task-specific information. That information must be supplied by the system.
-
-External knowledge dependence creates a causal chain:
-
-```text
-source data
-  → indexing / chunking / metadata
-  → retrieval
-  → ranking / filtering
-  → prompt assembly
-  → model generation
-  → citation / grounding / action
-```
-
-
-The model may mix retrieved evidence with learned priors. The system must therefore decide which sources are authoritative and how evidence should constrain generation.
-
-## What it explains downstream
-
-
-C3 contributes to fault modes involving:
-
-- retrieval misses;
-- stale or outdated answers;
-- unsupported claims;
-- irrelevant evidence use;
-- source-priority confusion;
-- mixing retrieved facts with model assumptions;
-- failure to use available authoritative context;
-- overreliance on weak retrieved context;
-- answers changing when the index, documents, metadata, or tools change.
-
-## Evaluation implications
-
-
-Evaluation must explicitly measure:
-
-- retrieval coverage;
-- sensitivity to missing context;
-- sensitivity to noisy or misleading context;
-- whether available authoritative context was actually used.
-
-Because knowledge sources can be stale, missing, reordered, or weakly authoritative, reliability here is an empirical question about observed behavior under those knowledge conditions.
-
-## Important boundary
-
-
-C3 is broader than A2 and A3.
-
-```text
-A2:
-  The model has a static parametric learned prior.
-
-A3:
-  The model directly conditions only on finite runtime context.
-
-C3:
-  The system must manage which external knowledge sources are available, authoritative, retrievable, and inserted into the model’s context.
-```
-
-
-C3 is not itself a retrieval failure. Retrieval failure is a downstream fault mode when the system fails to supply or prioritize necessary knowledge.
-
-# C4. Evidence-Grounded Generation Surface
-
-## Core feature
-
-
-Some AI systems are expected to answer from approved evidence rather than from unconstrained model prior. In those systems, claims should be traceable to provided or retrievable sources.
-
-This is common in:
-
-- RAG systems;
-- legal assistants;
-- policy assistants;
-- medical or financial decision support;
-- enterprise knowledge systems;
-- customer support agents;
-- compliance workflows;
-- research assistants;
-- document QA systems.
-
-Evidence-grounded generation requires both:
-
-```text
-retrieval quality:
-  Did the system fetch the necessary evidence?
-
-source-faithful generation:
-  Did the model use the evidence accurately and avoid unsupported claims?
-```
-
-## Canonical statement
-
-
-> In source-grounded AI systems, answer quality depends not only on fluent generation but on whether claims are supported by approved evidence and traceable to the right sources.
-
-## Why this belongs in Layer 1C
-
-
-Grounding is not a primitive property of the base model. It is a system-level requirement imposed by product design, risk context, and source architecture.
-
-A grounded system must manage:
-
-- source authority;
-- retrieval coverage;
-- evidence ranking;
-- chunk completeness;
-- document freshness;
-- citation generation;
-- claim-source alignment;
-- conflict handling;
-- abstention when evidence is insufficient.
-
-This feature is conditional. It applies when the system is supposed to answer from evidence, not when the system is doing unconstrained creative writing.
-
-## What it explains downstream
-
-
-C4 contributes to fault modes involving:
-
-- answers not supported by retrieved documents;
-- invented citations;
-- correct-sounding but ungrounded explanations;
-- retrieved context ignored by the model;
-- source mismatch;
-- citation to irrelevant evidence;
-- mixing evidence with parametric assumptions;
-- inability to tell whether a claim came from a source or the model prior.
-
-## Evaluation implications
-
-
-Evaluation must explicitly measure:
-
-- source-faithful generation;
-- claim-source traceability;
-- unsupported-claim behavior when evidence is weak or absent;
-- whether the system abstains or qualifies claims when grounding is insufficient.
-
-For grounded systems, reliability is empirical at the level of support, traceability, abstention, and evidence-faithful behavior, not just answer fluency.
-
-## Important boundary
-
-
-C4 is not the same as C3 External Knowledge Dependence.
-
-```text
-C3:
-  The system depends on external knowledge sources.
-
-C4:
-  The system is expected to make claims that are traceable to authoritative evidence.
-```
-
-
-C4 is also not itself hallucination. Hallucination or unsupported-claim generation is a downstream fault mode when the grounding surface fails.
-
-# C5. Compositional Pipeline Structure
+# C3. Compositional Pipeline Structure
 
 ## Core feature
 
@@ -549,33 +236,10 @@ End-to-end behavior depends on how these components interact.
 
 > AI-system behavior is often compositional: final outputs and actions emerge from multiple interacting components rather than from one isolated model invocation.
 
-## Why this belongs in Layer 1C
-
-
-Pipeline composition creates causal surfaces that do not exist in a single base-model call.
-
-A system can fail because:
-
-```text
-input was misclassified;
-retrieval missed the key document;
-reranker demoted the correct chunk;
-prompt assembly buried the evidence;
-model ignored the evidence;
-parser rejected the output;
-tool schema was ambiguous;
-post-processor stripped required fields;
-policy layer blocked the answer;
-state update wrote the wrong value.
-```
-
-
-The final answer alone often does not reveal which component caused the outcome.
-
 ## What it explains downstream
 
 
-C5 contributes to fault modes involving:
+C3 contributes to fault modes involving:
 
 - hard-to-localize root cause;
 - silent degradation in one component;
@@ -599,160 +263,132 @@ Evaluation requires traceability across stages so teams can distinguish:
 
 Because end-to-end behavior emerges from stage interaction, static inspection of individual components is insufficient; pipeline reliability has to be measured under replay, traces, or representative runtime conditions.
 
-## Important boundary
-
-
-C5 is not the same as weak observability.
-
-```text
-C5:
-  The system is composed of interacting stages.
-
-C8:
-  The system does not naturally expose enough trace information to diagnose which stage caused failure.
-```
-
-
-C5 is not a fault. A pipeline may be well designed. The downstream fault occurs when interaction effects are not controlled, tested, or instrumented.
-
-# C6. Agentic State-Action Interface
+# C4. Agentic Control-Flow and State-Action Interface
 
 ## Core feature
 
 
-Agentic AI systems do more than produce answer text. They can plan, call tools, inspect outputs, update state, make decisions, and sometimes act in the external world.
+Agentic AI systems are compositional AI systems in which the model or orchestration layer has some autonomy over control flow.
 
-An agentic system may involve:
+They do more than produce answer text. They may select steps, call tools, inspect outputs, update state, recover from errors, decide when to stop, ask for clarification, escalate to a human, or take action in an external system.
 
-- task decomposition;
-- planning;
-- tool selection;
-- tool argument construction;
-- API calls;
-- browser or database operations;
-- code execution;
-- memory reads and writes;
-- state transitions;
-- retries;
-- recovery after errors;
-- final action execution;
-- user confirmation or escalation.
+The important feature is not that the system contains tools or multiple components. That is already covered by C3 Compositional Pipeline Structure. The additional feature is that some part of the control flow is delegated to model-mediated or AI-mediated decisions.
+
+```text
+Non-agentic pipeline:
+  The system defines the stages.
+  The model performs bounded transformations inside those stages.
+
+Agentic workflow:
+  The system may allow the model or orchestration layer to decide which step to take next, which tool to use, what state to update, whether to recover, whether to continue, or whether to stop.
+```
+
+
+This creates a state-action loop:
+
+```text
+interpret context
+→ choose next step
+→ call tool or take action
+→ observe result
+→ update state
+→ decide whether to continue, recover, escalate, or stop
+```
+
 
 Final success depends on the whole behavior chain, not only the final message.
 
 ## Canonical statement
 
 
-> Agentic systems expose a state-action loop: the system interprets context, chooses steps, calls tools or takes actions, observes results, updates state, and continues until stopping.
+> Agentic systems are compositional AI systems with delegated control-flow autonomy: the system may participate in selecting steps, calling tools, interpreting observations, updating state, recovering from failures, deciding when to stop, or taking external action.
 
-## Why this belongs in Layer 1C
-
-
-A base LLM emits text or structured tokens. An agentic system interprets some of those outputs as actions or tool calls.
-
-This creates additional causal surfaces:
-
-- whether the model chooses the right tool;
-- whether arguments are correct;
-- whether tool outputs are interpreted accurately;
-- whether the system preserves state;
-- whether it recovers from errors;
-- whether it stops at the right time;
-- whether an action is safe and justified.
-
-Agentic workflows often have several valid plans. Evaluation must therefore assess process quality, not only final answer quality.
-
-## What it explains downstream
+## Control-flow autonomy spectrum
 
 
-C6 contributes to fault modes involving:
+Agentic behavior is not a binary category. It exists on a spectrum.
 
-- wrong tool choice;
-- correct tool with wrong arguments;
-- missing required steps;
-- unnecessary steps;
-- premature stopping;
-- loops;
-- failure to recover from tool errors;
-- misinterpreted tool output;
-- unsafe or unjustified external actions;
-- state corruption;
-- action taken without enough evidence.
+```text
+Fixed pipeline: Stages are predetermined. The model performs bounded generation, extraction, classification, or transformation.
 
-## Evaluation implications
+Conditional pipeline: The system branches based on rules, classifiers, model outputs, metadata, policy checks, or validation results.
+
+Tool-using workflow: The model or system selects or parameterizes tools inside a bounded orchestration pattern.
+
+Agentic loop: The model or orchestration layer participates in selecting steps, interpreting observations, updating state, recovering from failure, and deciding whether to continue or stop.
+
+Externally acting agent: Model-mediated decisions can change external systems, user-visible state, records, permissions, messages, transactions, code, tickets, calendars, or other operational artifacts.
+```
 
 
-Evaluation must assess intermediate process quality, not just final output quality. That includes:
+The higher the control-flow autonomy, the more important process evaluation, authorization, observability, recovery behavior, and stopping criteria become.
 
-- plan quality;
-- tool-call correctness;
-- step efficiency;
-- recovery behavior;
-- stopping behavior;
-- task completion success under realistic tool and state conditions.
+## What this adds beyond C3
 
-For agentic systems, plan quality, tool use, recovery, and stopping behavior are empirical properties of the whole state-action loop, not facts that can be inferred from final-answer inspection alone.
+
+C3 explains that end-to-end behavior emerges from multiple interacting components. C4 explains what changes when the system delegates part of the execution policy to AI-mediated decisions.
+
+```text
+C3:
+  How does behavior emerge from interacting components?
+
+C4:
+  How does the system decide what to do next, what to act on,
+  what state to update, how to recover, and when to stop?
+```
+
+
+A retrieval-augmented question-answering system may be compositional without being strongly agentic. It may always retrieve, assemble context, generate, validate, and return an answer.
+
+An agentic support assistant may decide whether to search documents, inspect account state, open a ticket, request clarification, escalate to a human, or draft a customer response. The components may be similar, but the causal surface is different because the control flow is partly dynamic and model-mediated.
+
+## Engineering consequences
+
+
+Agentic systems usually require explicit control and observability mechanisms around the state-action loop.
+
+The system should define which decisions are delegated to the model, which are controlled by deterministic orchestration, and which require validation, confirmation, or human approval.
+
+For low-risk tasks, broad control-flow autonomy may be acceptable. For high-impact tasks, autonomy should usually be narrowed by schemas, policies, validators, confirmations, and escalation paths.
 
 ## Important boundary
 
 
-C6 is not the same as A9 Decoding Path Selection.
+C4 is not separate from C3.
 
-```text
-A9:
-  A token path is selected from model scores.
+Agentic systems are usually implemented as pipelines, graphs, or orchestrated workflows. The distinction is not architectural base. The distinction is degree of control-flow autonomy. C4 is therefore a specialized, higher-autonomy case within compositional AI systems, not a wholly separate kind of architecture.
 
-C6:
-  Some selected outputs are interpreted by the system as tool calls, decisions, state transitions, or real-world actions.
-```
+The central engineering question is how much control-flow autonomy the system has, what actions that autonomy can affect, and what controls make that autonomy safe and reliable.
 
-
-C6 is not itself an unsafe action. Unsafe action is a downstream fault mode when action selection, authorization, validation, or recovery fails.
-
-# C7. Environment and Version Dependence
+# C5a. Runtime Context Drift
 
 ## Core feature
 
 
-AI-system behavior depends on mutable system conditions. A user-facing input may appear the same while the underlying environment has changed.
+AI-system behavior is determined by the full runtime context, not only by the visible user input.
 
-This is one of the main reasons LLM-based systems are prone to hidden regressions: behavior can change after updates even when the user-facing task appears unchanged.
+A user request may appear identical across two runs while the effective execution context has changed. When this happens, the system is not actually processing the same scenario, even if the user-facing task looks unchanged.
 
-Relevant changing conditions include:
+Runtime context drift is the condition where the visible input remains stable, but one or more hidden execution conditions that shape behavior have changed.
 
-- model version;
-- model provider;
-- decoding parameters;
-- system prompt;
-- developer prompt;
-- prompt template;
-- embedding model;
-- retrieval index;
-- chunking strategy;
-- ranking logic;
-- retrieved documents;
-- document ordering;
-- source data;
-- database state;
-- API response format;
-- tool schemas;
-- available tools;
-- policy version;
-- guardrails;
-- output parser;
-- conversation history;
-- user profile or memory;
-- backend configuration.
+```text
+Visible input:
+  The user-facing request, task, document, or instruction.
 
-## Canonical statement
+Runtime context:
+  The hidden execution conditions that shape system behavior.
+
+Effective scenario:
+  Visible input + runtime context.
+```
 
 
-> AI-system behavior is version- and environment-dependent; apparent model variability may be caused by uncontrolled changes in the surrounding system state.
+This feature explains why "same prompt, different answer" is often an incomplete diagnosis. The visible prompt may be the same, but the effective scenario may not be.
 
 ## Why this belongs in Layer 1C
 
 
-This feature explains why "same prompt, different result" is often not true model randomness. The full scenario may not actually be the same.
+Runtime context drift is not itself a failure.  It means a structural property of deployed AI systems that can become a factor behind failures. It is a structural condition of deployed AI systems that can cause or obscure failures when runtime context is not captured, versioned, controlled, or accounted for during evaluation and incident analysis.
 
 Example:
 
@@ -762,152 +398,650 @@ User request:
 
 Run 1:
   model version A;
-  original CRM notes;
-  policy version 3;
-  old escalation rubric.
+  prompt template version 12;
+  CRM notes from Monday;
+  retrieval index version 41;
+  escalation policy version 3;
+  old account-risk rubric.
 
 Run 2:
   model version B;
-  updated CRM note mentions possible account compromise;
-  policy version 4;
-  revised escalation rubric.
+  prompt template version 12;
+  CRM notes updated on Tuesday;
+  retrieval index version 44;
+  escalation policy version 4;
+  revised account-risk rubric.
 ```
 
 
-A different escalation decision may be correct, but the evaluation should treat this as a changed scenario, not unexplained nondeterminism.
+The visible request is unchanged. The effective runtime scenario is not.
+
+A different escalation decision may be correct. The issue is not automatically inconsistency, randomness, or regression. The issue is that the two outputs cannot be interpreted as behavior under the same conditions unless the runtime context is captured and compared.
+
+## What can drift
+
+
+Runtime context includes every execution-time condition that can influence system behavior.
+
+```text
+Model:
+  model provider;
+  model family;
+  model version;
+  fine-tune version;
+  serving variant;
+  decoding parameters;
+  safety layer;
+  provider-side defaults.
+
+Prompting:
+  system prompt;
+  developer prompt;
+  task prompt;
+  prompt template;
+  instruction hierarchy;
+  few-shot examples;
+  formatting constraints.
+
+Retrieval:
+  corpus contents;
+  index version;
+  embedding model;
+  chunking strategy;
+  ranking algorithm;
+  filters;
+  top-k settings;
+  source freshness;
+  citation and grounding rules.
+
+External data:
+  database records;
+  CRM notes;
+  documents;
+  tickets;
+  user profile data;
+  account state;
+  permissions;
+  pricing;
+  inventory;
+  timestamps.
+
+Tools:
+  tool definitions;
+  API versions;
+  tool availability;
+  authentication state;
+  permissions;
+  tool outputs;
+  cache state;
+  retry behavior;
+  timeout behavior.
+
+Policies and rubrics:
+  safety policy;
+  escalation policy;
+  compliance rules;
+  business rules;
+  refusal criteria;
+  risk thresholds;
+  evaluation rubrics.
+
+Schemas and parsers:
+  input schema;
+  output schema;
+  JSON contracts;
+  validation rules;
+  enum definitions;
+  downstream parser assumptions.
+
+State:
+  conversation history;
+  memory;
+  session state;
+  user state;
+  feature flags;
+  rollout cohort;
+  experiment assignment;
+  cache contents.
+
+Runtime environment:
+  deployment version;
+  orchestration code;
+  routing logic;
+  dependency versions;
+  regional configuration;
+  fallback paths;
+  infrastructure behavior.
+```
+
+
+Any of these can change while the visible input remains the same.
 
 ## What it explains downstream
 
 
-C7 contributes to fault modes involving:
+Runtime context drift contributes to fault modes involving:
 
-- hidden regressions;
-- prompt edits that fix one case and break another;
-- model upgrades that change refusal, escalation, or tool behavior;
-- retrieval-index changes that surface different evidence;
-- data refreshes that change classifications;
-- tool API changes that break parsers;
-- policy updates that change allowed behavior;
-- evaluation results that are not comparable across runs.
+```text
+apparently inconsistent outputs;
+non-reproducible incidents;
+evaluation runs that are not comparable;
+retrieval-dependent behavior shifts;
+policy-dependent behavior shifts;
+tool-dependent behavior shifts;
+state-dependent behavior shifts;
+hidden data-refresh effects;
+apparent model flakiness caused by untracked context changes.
+```
 
-## Why this commonly appears as hidden regression
 
-
-AI systems are especially prone to hidden regressions because behavior depends on mutable model, prompt, retrieval, policy, tool, schema, and state conditions that are easy to change without obvious surface cues.
-
-When one of those conditions shifts, the visible task may still look "the same" to the team or the user, while the effective runtime scenario is no longer the same. That makes behavioral degradation easy to misread as randomness, flakiness, or isolated incident noise instead of a change-induced failure.
-
-This is why hidden regression is better treated as a common manifestation of C7 than as a separate primitive feature.
+The common pattern is that the team compares two outputs as if the same scenario was executed twice, when in fact the runtime scenario changed between runs.
 
 ## Common engineering trap
 
 
-The main trap is treating environmental drift as if it were random model behavior.
+The main trap is treating the visible input as the unit of comparison.
 
-If an input yields a different result today than yesterday, the cause is rarely model nondeterminism. It is usually an uncontrolled change in the surrounding system state, such as the retrieval index, tool API, prompt template, policy version, or available context.
+```text
+Incorrect framing:
+  "The same prompt produced a different answer."
+
+Better framing:
+  "Did the same effective runtime scenario produce a different answer?"
+```
+
+
+For AI systems, the effective scenario is the relevant unit of comparison.
+
+A prompt alone is usually insufficient. The behavior may also depend on retrieved context, source data, model version, policy rules, tool outputs, memory, state, schema, routing, and deployment configuration.
+
+## Engineering consequences
+
+
+Runtime context drift means AI delivery systems need explicit scenario capture and version control.
+
+Production traces should capture enough of the runtime context to make behavior explainable, reproducible, and comparable.
+
+At minimum, this usually includes:
+
+```text
+visible user input;
+assembled prompt;
+system and developer instructions;
+model name, version, and configuration;
+retrieved documents and ranking metadata;
+source document versions;
+tool calls and tool outputs;
+policy and rubric versions;
+schema and parser versions;
+conversation, memory, and session state;
+feature flags and rollout cohort;
+runtime environment and orchestration version;
+timestamps and external data snapshots where relevant.
+```
+
+
+The goal is not indiscriminate logging. The goal is to preserve the behaviorally relevant context needed for debugging, evaluation, audit, replay, and incident analysis.
 
 ## Important boundary
 
 
-C7 is not the same as C1 Behavioral Outcome Variability.
+Runtime context drift is not itself a regression.
 
 ```text
-C1:
-  Behavior may vary across repeated or varied scenarios.
+Runtime context drift:
+  The effective execution context changed.
 
-C7:
-  Behavior may change because the underlying system version or environment changed.
+Regression:
+  Behavior degraded relative to an acceptance standard.
 ```
 
 
-C7 is not itself a regression. Regression is the downstream fault mode when a change degrades behavior relative to an acceptance standard.
+A changed output may be correct if the runtime context changed. For example, a revised escalation policy may require a different decision than the previous policy. A refreshed retrieval index may surface newer evidence. Updated account data may change the correct recommendation.
 
-# C8. Weak Native Observability and Attribution
+Runtime context drift becomes a downstream fault when the system fails to control, detect, explain, reproduce, or evaluate the behavioral consequences of changed runtime conditions.
+
+## Boundary with nondeterminism
+
+
+Runtime context drift is also distinct from model nondeterminism.
+
+```text
+Model nondeterminism:
+  The same effective runtime scenario can produce different outputs because
+  generation or execution is stochastic or unstable.
+
+Runtime context drift:
+  The effective runtime scenario was not actually the same.
+```
+
+
+When an output changes across runs, nondeterminism is only one possible explanation. The first diagnostic question should be whether the full runtime scenario was actually unchanged.
+
+# C5b. Recursive Feedback and Data-Action Coupling
 
 ## Core feature
 
 
-AI systems often do not naturally expose a clean causal explanation for their behavior. When a system fails, the observed final output may not reveal whether the cause was the user input, prompt, model, retrieval, ranking, tool output, parser, policy layer, state, or runtime condition.
+AI systems can influence the future data, state, and operating conditions under which they later behave.
 
-Useful diagnosis often requires explicit traces.
+A system output may not end when it is shown to a user. It may be stored, copied, edited, approved, rejected, indexed, summarized, logged, rated, used as training data, written into memory, or promoted into an authoritative source. User reactions to the output may also become data. In agentic systems, external actions may change records, tickets, documents, messages, permissions, rankings, workflows, or other state that later becomes part of the system's runtime context.
 
-A trace may include:
+The result is a recursive feedback loop:
 
-- user input;
-- normalized input;
-- system and developer prompts;
-- retrieved documents;
-- retrieval scores;
-- reranking scores;
-- prompt assembly;
-- model inputs and outputs;
-- decoding configuration;
-- tool calls;
-- tool arguments;
-- tool outputs;
-- intermediate decisions;
-- validator outputs;
-- policy checks;
-- parser results;
-- state reads and writes;
-- latency and cost metrics;
-- human labels or judgments.
-
-## Canonical statement
+```text
+system behavior
+→ user reaction or external action
+→ data capture or state change
+→ memory, retrieval, analytics, evaluation, policy, or training update
+→ changed future system behavior
+```
 
 
-> AI-system behavior is weakly observable by default; reliable debugging and governance require explicit instrumentation, traces, evidence capture, and failure attribution.
+This feature is not merely that context changes over time. It is that the AI system participates in producing the future context.
+
+Recursive feedback can be beneficial when governed. It enables adaptation, personalization, continuous improvement, and regression discovery. It becomes dangerous when the system cannot distinguish reliable external signal from its own generated residue, weak user feedback, contaminated state, or automation-shaped data.
+
+## Feedback-loop variants
+
+
+Recursive feedback loops can be intentional or hidden.
+
+### Intentional feedback loops
+
+
+Intentional feedback loops are designed into the system. They may be beneficial when the captured signal is reliable, well-scoped, and governed.
+
+Examples include:
+
+```text
+User ratings:
+  thumbs up/down, star ratings, explicit corrections, satisfaction scores.
+
+Preference learning:
+  remembered user preferences, personalization data, ranking feedback.
+
+Human review:
+  reviewer approvals, edits, labels, escalations, adjudications.
+
+Product analytics:
+  clicks, dwell time, abandonment, conversion, repeated queries.
+
+Evaluation improvement:
+  failed production cases added to regression suites.
+
+Fine-tuning:
+  approved examples, corrected outputs, labeled conversations, expert demonstrations.
+
+Policy improvement:
+  incidents and edge cases used to refine safety, compliance, or escalation rules.
+```
+
+
+Intentional feedback is not inherently bad. It is often necessary for system improvement. The risk is that noisy, biased, synthetic, stale, or weakly interpreted signals can be treated as reliable evidence.
+
+### Hidden or implicit feedback loops
+
+
+Hidden feedback loops are not designed as learning mechanisms, but still change future behavior.
+
+Examples include:
+
+```text
+AI-written notes: assistant-generated summaries are stored in CRM, ticket, medical, legal, or project records and later retrieved as authoritative history.
+
+AI-authored documentation: generated answers are copied into a knowledge base and later used as retrieval evidence.
+
+Memory writes: inferred user preferences or facts are stored without strong validation and later shape personalization.
+
+Workflow side effects: an agent labels, routes, closes, prioritizes, or updates records, causing future systems to treat those changes as ground truth.
+
+Search and ranking exposure: recommendations affect what users see, and user interactions with exposed items reinforce future rankings.
+
+Training contamination: model-generated outputs enter future training, evaluation, or prompt improvement datasets without provenance controls.
+
+Evaluation contamination: production outputs or model-assisted labels leak into benchmark examples, making future evaluation less independent.
+```
+
+
+Hidden feedback loops are especially risky because teams may interpret future behavior as evidence of external reality when it is partly evidence of the system's own prior behavior.
+
+## Data feedback versus action feedback
+
+
+Feedback loops can operate through data, actions, or both.
+
+### Data feedback
+
+
+Data feedback occurs when outputs or reactions become future informational inputs.
+
+```text
+system answer
+→ user copies it into documentation
+→ documentation is indexed
+→ future answers retrieve it
+```
+
+
+The main risk is that generated or weakly validated content becomes future evidence.
+
+### Action feedback
+
+
+Action feedback occurs when the system changes external state, and that changed state later affects behavior.
+
+```text
+agent triages a ticket as low priority
+→ low-priority tickets receive slower handling
+→ future analytics show lower urgency
+→ the system becomes more likely to classify similar tickets as low priority
+```
+
+
+Common action-feedback surfaces include: - ticket routing; - record updates; - calendar changes; - messages sent; - labels assigned; - permissions changed; - recommendations shown; - accounts flagged; - issues closed; - tasks created; - documents edited; - workflows triggered.
+
+The main risk is that the system's own actions change the data-generating process.
+
+## Evidence laundering
+
+
+A particularly important feedback-loop failure is evidence laundering.
+
+```text
+An unsupported AI output is stored as ordinary data. Later, the system retrieves that stored data as evidence. The same unsupported claim now appears grounded because it has acquired the form of a source.
+```
+
+
+This can happen through documentation, CRM notes, tickets, internal wikis, generated reports, code comments, summaries, or user-visible answers copied into authoritative systems.
+
+Evidence laundering is dangerous because the failure becomes harder to detect over time. The later system may not be hallucinating in the narrow sense; it may be faithfully using a contaminated source.
+
+## State degradation
+
+
+Recursive feedback can also degrade operational state.
+
+```text
+A support assistant omits risk signals from case summaries.
+Those summaries become the durable customer history.
+Future triage sees fewer risk signals than actually occurred.
+Escalation quality degrades over time.
+```
+
+```text
+An agent repeatedly labels ambiguous requests as low priority.
+Low-priority handling reduces follow-up evidence.
+Future analytics understate the true severity of similar requests.
+The classifier’s decision boundary shifts toward under-escalation.
+```
+
+```text
+A memory system stores inferred preferences too aggressively.
+Future recommendations are shaped by weak assumptions.
+User behavior becomes narrower because the system keeps reinforcing
+the same inferred profile.
+```
+
+
+State degradation is not simply stale data. It is accumulated distortion caused by system-mediated writes, omissions, labels, summaries, or actions.
+
+## Engineering consequences
+
+
+Systems with recursive feedback require controls over what is written, remembered, indexed, learned from, or treated as evidence.
+
+A click, rating, edit, acceptance, copied answer, stored summary, or user reaction is not automatically ground truth. It is an observation produced inside a system that may already shape what the user saw, believed, clicked, accepted, or corrected.
+
+# C5c. Change Non-Locality
+
+## Core feature
+
+
+AI-system changes do not have guaranteed local behavioral effects.
+
+A bounded change to one part of an AI system may alter behavior outside the case, slice, workflow, or component that motivated the change. The change may appear local in implementation terms, but its behavioral effects can propagate through shared prompts, policies, retrieval paths, schemas, tools, memory, routing logic, model behavior, state, and downstream consumers.
+
+This is **change non-locality**: the blast radius of a change cannot be inferred only from the apparent locality of the edit.
+
+```text
+Local change:
+  A bounded modification to one system element, such as a model version,
+  prompt, retrieval index, policy, schema, tool definition, memory behavior,
+  routing rule, rubric, or orchestration step.
+
+Expected local effect:
+  The change affects only the intended case, slice, workflow, or behavior.
+
+Change non-locality:
+  The change also affects other cases, slices, workflows, decisions, outputs,
+  tool paths, or downstream behaviors that were not directly targeted.
+```
+
+
+The engineering consequence is simple:
+
+```text
+The edit boundary is not the impact boundary.
+```
+
+
+A change that is syntactically small may still have broad behavioral impact if it touches a shared or semantically influential control surface.
 
 ## Why this belongs in Layer 1C
 
 
-Traditional software failures often have localized stack traces, deterministic reproducers, and crisp expected outputs. AI systems frequently combine probabilistic generation, soft correctness, retrieval, tools, policies, and mutable state.
+Change non-locality is a system-level causal feature of AI applications.
 
-The final answer alone may not reveal:
+It explains why "we only changed one thing" is often not a safe assumption about impact scope. The implementation change may be local, but the behavioral effect may not be.
+
+Example:
 
 ```text
-Was the right document retrieved?
-Was it ranked high enough?
-Was it included in the prompt?
-Did the model ignore it?
-Did the parser alter the output?
-Did the policy layer block part of the answer?
-Did a tool return stale data?
-Did a timeout force fallback behavior?
+Targeted fix:
+  Add a stronger refusal instruction for one risky support workflow.
+
+Intended effect:
+  The assistant refuses unsafe account-recovery requests.
+
+Non-local effects:
+  benign account-help requests now over-refuse;
+  escalation rates change in adjacent support categories;
+  retrieved policy evidence is cited less consistently;
+  agents receive fewer actionable summaries;
+  downstream routing decisions become more conservative.
 ```
+
+
+The edit was local. The behavioral effect was not.
+
+This does not mean the change was bad. It means the impact boundary could not be inferred from the edit boundary. The impact scope had to be estimated, tested, and monitored.
+
+## Why change effects become non-local
+
+
+AI systems are weakly behaviorally local because many of their control surfaces are shared, semantic, probabilistic, and interaction-dependent.
 
 ## What it explains downstream
 
 
-C8 contributes to fault modes involving:
+Change non-locality contributes to fault modes involving:
 
-- hard-to-debug failures;
-- low auditability;
-- inability to reproduce failures;
-- inability to compare alternatives;
-- unclear release decisions;
-- weak stakeholder trust;
-- failure analysis based on anecdotes;
-- inability to locate the failing component;
-- monitoring that detects bad outcomes but not causes.
+```text
+hidden regressions;
+prompt fixes that break adjacent tasks;
+model upgrades that shift tool-use behavior;
+policy updates that increase over-refusal;
+retrieval changes that alter grounding outside the target slice;
+schema changes that preserve valid format but alter action semantics;
+routing updates that change downstream behavior in unexpected workflows;
+safety patches that degrade benign completion;
+memory changes that affect personalization or authorization behavior;
+tool changes that alter planning, recovery, or stopping behavior;
+evaluation gains on one slice accompanied by degradation elsewhere.
+```
+
+
+The common pattern is that a change succeeds on the motivating case but causes degradation, drift, or semantic change elsewhere.
 
 ## Important boundary
 
 
-C8 is not the same as poor observability as a system defect.
+Change non-locality is not itself a regression.
 
 ```text
-C8 feature:
-  AI systems are not naturally self-explaining or fully traceable.
+Change non-locality:
+  A local change affects behavior outside the directly targeted area.
 
-Layer 3 system fault:
-  Product failed to capture traces, evidence, tool calls, and intermediate decisions.
+Regression:
+  The changed behavior is worse relative to an acceptance standard.
 ```
 
 
-C8 is also distinct from model interpretability. Even if model internals remain opaque, system-level observability can still capture enough traces to diagnose many production failures.
+A non-local effect may be positive, negative, or neutral. For example, a better grounding instruction may improve citation behavior across many workflows. That is still non-local, but not a fault.
 
-# C9. Policy and Trust Boundary Mediation
+Change non-locality becomes a downstream fault when the broader effects are harmful, unmeasured, unexplained, or inconsistent with the intended change.
+
+## Boundary with runtime context drift
+
+
+Change non-locality is distinct from runtime context drift.
+
+```text
+Runtime context drift:
+  The same visible input runs under different hidden execution conditions.
+
+Change non-locality:
+  A local change produces effects outside the directly targeted case, slice,
+  workflow, or component.
+```
+
+
+Runtime context drift is about whether two runs are comparable.
+
+Change non-locality is about the impact scope of a change.
+
+A single incident may involve both. For example, a retrieval index update changes the runtime context for many tasks, and that local retrieval change then produces non-local behavioral effects across workflows that were not directly targeted.
+
+## Boundary with ordinary software coupling
+
+
+Change non-locality is not unique to AI systems. Conventional software can also have coupling, side effects, and regressions.
+
+The AI-specific issue is that behavioral locality is weaker and harder to reason about because the system's behavior is mediated by semantic, learned, probabilistic, and context-sensitive components.
+
+```text
+Ordinary software coupling:
+  A code change affects another component through explicit dependencies,
+  shared state, API contracts, or control flow.
+
+AI-system change non-locality:
+  A change affects other behavior through shared prompts, latent model
+  generalization, retrieved context, policy interpretation, tool interaction,
+  memory, state, runtime context, threshold decisions, and semantic acceptance
+  criteria.
+```
+
+
+This makes impact analysis less reducible to static dependency analysis. The dependency graph is not only code-level. It is also semantic, behavioral, and operational.
+
+## Relationship to downstream layers
+
+
+Change non-locality explains why downstream evaluation and governance must be slice-based, regression-oriented, and change-aware.
+
+```text
+Layer 2 evaluation view:
+  Detect whether a change affected behavior across versions, slices,
+  workflows, and time.
+
+Layer 3 semantic fault view:
+  Determine whether the changed behavior preserved meaning, grounding, action
+  correctness, safety, policy compliance, and downstream usability.
+
+Layer 3 system-fault view:
+  Classify harmful non-local effects as hidden regression, change-management
+  failure, evaluation gap, observability gap, or release-governance failure.
+```
+
+
+C5c is therefore not the hidden regression itself. It is the Layer 1C causal feature that explains why hidden regressions can arise from apparently local changes.
+
+# C6. Weak Native Observability and Attribution
+
+## Core feature
+
+
+AI systems often do not naturally expose a clean causal explanation for their behavior.
+
+When a system produces a wrong, unsafe, unsupported, inconsistent, or unexpected output, the final answer usually does not reveal what the cause was.
+
+As a result, production diagnosis requires explicit instrumentation. Without traces, evidence capture, runtime metadata, and attribution signals, teams are left inferring causes from the final output alone, which is usually insufficient.
+
+AI systems are weakly observable in two related senses:
+
+```text
+System-level weak observability:
+  The deployed system does not automatically expose which component or
+  evidence source shaped the outcome.
+
+Model-level interpretability limits:
+  The model's internal computation is not fully transparent, and generated
+  explanations are not guaranteed to be faithful accounts of why the model
+  produced a particular output.
+```
+
+
+C6 is primarily about the first issue: observability and attribution in deployed AI systems.
+
+The second dimension defines an important boundary: even strong system traces do not fully explain the model's internal decision process.
+
+## Canonical statement
+
+
+AI systems are weakly observable by default. A final output does not expose the full causal path through the deployed system, and model-generated explanations are not reliable evidence of the model's internal reasoning. Reliable debugging, evaluation, governance, and incident response therefore require explicit instrumentation: traces, prompt and context capture, evidence provenance, tool-call logs, policy decisions, runtime metadata, state transitions, and failure attribution. These mechanisms improve system-level diagnosis while recognizing that model internals remain only partially interpretable.
+
+## Engineering consequences
+
+
+C6 means observability must be designed into the AI delivery system, not added only after failures occur. The goal is to make enough of the system behavior observable that teams can debug, audit, compare, reproduce, and govern the deployed system responsibly.
+
+## Important boundary
+
+
+C6 is not the same as poor observability as a system defect.
+
+```text
+C6 feature:
+  AI systems are not naturally self-explaining or fully traceable.
+
+Layer 3 system fault:
+  The product failed to capture prompts, traces, evidence, tool calls,
+  policy decisions, intermediate outputs, runtime metadata, or state changes.
+```
+
+
+C6 is also distinct from model interpretability.
+
+```text
+Model interpretability:
+  Attempts to explain the model's internal computation, representations,
+  circuits, learned features, or activation patterns.
+
+System observability:
+  Captures externally visible inputs, components, intermediate artifacts,
+  runtime conditions, and outputs so failures can be diagnosed at the
+  deployed-system level.
+```
+
+
+Even if model internals remain partially opaque, system-level observability can still diagnose many production failures.
+
+Conversely, even strong system-level traces do not fully explain the model's internal decision process.
+
+C6 is therefore the Layer 1C feature that AI systems require explicit observability and attribution mechanisms because neither the deployed pipeline nor the model itself is naturally transparent enough for reliable debugging, governance, and incident analysis.
+
+# C7. Policy and Trust Boundary Mediation
 
 ## Core feature
 
@@ -958,7 +1092,7 @@ Policy mediation may include:
 ## What it explains downstream
 
 
-C9 contributes to fault modes involving:
+C7 contributes to fault modes involving:
 
 - leaking sensitive data;
 - unauthorized recommendations;
@@ -975,117 +1109,56 @@ C9 contributes to fault modes involving:
 ## Important boundary
 
 
-C9 is not itself a safety failure. It is the causal feature that safety behavior is mediated across multiple model and system layers.
+C7 is not itself a safety failure. It is the causal feature that safety behavior is mediated across multiple model and system layers.
 
 It interacts strongly with:
 
 ```text
 A5 In-Band Control/Data Representation
 B1 Learned Natural-Language Task Induction
-C5 Compositional Pipeline Structure
-C6 Agentic State-Action Interface
-C8 Weak Native Observability and Attribution
+C3 Compositional Pipeline Structure
+C4 Agentic State-Action Interface
+C6 Weak Native Observability and Attribution
 ```
 
 
 A safety incident belongs downstream, usually as a Layer 2 fault mode, Layer 3 system fault, or Layer 4 user/business impact.
 
-# C10. Quality-Cost-Latency Tradeoff
+# C8. Quality-Cost-Latency-Reliability Operating Envelope
 
 ## Core feature
 
 
-AI systems operate under practical resource constraints. Higher-quality behavior may require more computation, retrieval, tool use, validation, or human review, but those improvements increase latency, cost, complexity, and operational risk.
+AI systems operate inside practical resource and reliability constraints. The quality of system behavior is shaped by the amount of computation, context, retrieval, tool use, validation, monitoring, retry logic, and human review the system is allowed to use for a given task.
 
-Quality-improving interventions may include:
+Higher-quality behavior may require more resources:
 
-- larger models;
-- longer context;
+- stronger models;
+- longer context windows;
 - more retrieval;
-- better reranking;
+- better ranking or reranking;
 - more tool calls;
-- multiple samples;
-- self-checking;
-- verifier passes;
-- constrained decoding;
-- retries;
+- multiple model passes;
+- verifier or critic passes;
+- structured validation;
+- citation or grounding checks;
+- retries and fallbacks;
 - human review;
-- more detailed traces;
-- stronger policy checks.
+- fuller trace capture;
+- stricter policy checks.
 
-These can improve reliability, but they also affect:
+These interventions can improve answer quality, grounding, safety, or task completion. But they also consume operational budget and can increase:
 
 - latency;
 - token usage;
 - cost per task;
-- throughput;
-- timeout rate;
-- tool-call count;
-- error surface area;
-- system complexity;
-- user experience.
+- timeout probability;
+- infrastructure load;
+- tool-call failure exposure;
+- orchestration complexity;
+- retry amplification;
+- user waiting time;
+- monitoring and storage cost;
+- human-review burden.
 
-## Canonical statement
-
-
-> AI-system quality is constrained by operational budgets; the goal is not maximum possible quality, but acceptable quality at acceptable cost, latency, reliability, and risk.
-
-## Why this belongs in Layer 1C
-
-
-This is the system-level counterpart to transformer compute scaling.
-
-A base model may perform better with more context, more passes, or more samples. A deployed system must decide whether those extra resources are feasible for the product context.
-
-Examples:
-
-```text
-A legal assistant may justify slower responses for stronger citation checking.
-
-A customer support triage system may need lower latency and simpler verification.
-
-A high-risk agentic action may require tool authorization, dry runs, or human approval.
-```
-
-## What it explains downstream
-
-
-C10 contributes to fault modes involving:
-
-- skipped verification;
-- insufficient retrieval;
-- over-compressed context;
-- premature stopping;
-- timeout-driven shortcuts;
-- failure to run multi-pass validation;
-- excessive cost from over-engineered flows;
-- poor user experience from high latency;
-- unsafe simplification of high-risk workflows;
-- release decisions based on quality without operational metrics.
-
-## Important boundary
-
-
-C10 is broader than A10 Transformer Compute Scaling.
-
-```text
-A10:
-  Transformer inference imposes token, latency, memory, and compute budgets.
-
-C10:
-  The full AI system must trade quality against cost, latency, reliability, tool use, monitoring, and operational complexity.
-```
-
-
-C10 is not a product performance bug. It is the resource tradeoff surface that shapes system design.
-
-# Condensed formulation
-
-
-A polished definition:
-
-> **Layer 1C features are the system-level causal properties of AI applications: behavior varies across runs and contexts, correctness is soft and task-specific, knowledge is distributed across external sources, outputs may need grounding, behavior emerges from pipelines and agents, runtime environments drift, quality is resource-constrained, failures are weakly observable by default, and safety boundaries require multi-layer mediation.**
-
-Condensed:
-
-> **An AI system is a model-centered, context-dependent, pipeline-mediated, environment-sensitive, resource-constrained system whose behavior must be evaluated at the level of intended outcomes, evidence grounding, process quality, safety boundaries, and operational reliability.**
+The system therefore does not optimize for maximum theoretical quality. It operates within an envelope of acceptable quality, acceptable latency, acceptable cost, acceptable reliability, and acceptable risk.

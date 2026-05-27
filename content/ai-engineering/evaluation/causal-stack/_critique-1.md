@@ -150,7 +150,7 @@ User, business, safety, compliance, and operational impact
 ```
 
 
-But in `stack-40-system-faults.md`, the recommended wording introduces:
+But in `stack-33-layer-3-system-fault-families.md`, the recommended wording introduces:
 
 ```text
 Layer 4: engineering problem
@@ -343,7 +343,7 @@ stack-25-evaluation-mapping.md
 stack-31-layer-3-control-families.md
   control catalog
 
-stack-working-examples.md
+stack-27-worked-examples.md
   applied examples
 ```
 

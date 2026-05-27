@@ -9,7 +9,9 @@ linkTitle: "Stack 21 Fault Inventory"
 
 This file defines the canonical atomic fault modes for Layer 2.
 
-Layer 2 fault modes are recurring behavioral failure patterns that arise from Layer 1A mechanisms and Layer 1B learned behavioral features. They are not yet system faults, missing controls, evaluation methods, or user impacts.
+Layer 2 fault modes are recurring behavioral failure patterns that arise downstream of Layer 1A mechanisms, Layer 1B learned behavioral features, and Layer 1C AI-system-level causal features.
+
+They are not Layer 0 interface conditions, not Layer 1 causes, not Layer 3 system faults or controls, not evaluation methods, and not Layer 4 impacts.
 
 Use this inventory as the base catalog. Broader groups such as "Behavioral Instability," "Hallucination and Unsupported Claims," or "Agentic Process Failure" should be treated as family views over these atomic faults, not as replacements for them.
 
@@ -21,7 +23,7 @@ Each fault record uses the following fields:
 - **Definition:** what failed behaviorally.
 - **Canonical statement:** reusable one-sentence formulation.
 - **Typical expressions:** common observable forms.
-- **Derived from:** primary Layer 1A mechanisms and Layer 1B features.
+- **Derived from:** primary Layer 1A, Layer 1B, and Layer 1C contributors.
 - **Common neighbors:** nearby faults that often co-occur.
 - **Not this:** boundary guidance to prevent overuse.
 

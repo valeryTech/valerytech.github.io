@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Stack 32b Layer 3 Semantic System Faults"
-linkTitle: "Stack 32b Layer 3 Semantic System Faults"
+title: "Stack 32 Layer 3 Semantic Fault View"
+linkTitle: "Stack 32 Layer 3 Semantic Fault View"
 ---
-# Layer 3 -- NLP and Semantic System Fault Groups
+# Layer 3 -- Semantic Fault View
 
 ## Purpose
 
@@ -31,6 +31,8 @@ This document is intended for NLP specialists, applied AI engineers, evaluation 
 - workflow automation systems.
 
 It does not replace the general Layer 3 control-family taxonomy. It provides a specialist semantic view over it.
+
+The `S1-S14` group labels in this document are local view labels, not canonical cross-stack identifiers. The canonical Layer 3 fault-family namespace is `L3S*` in `stack-33-layer-3-system-fault-families.md`.
 
 ## Core idea
 
@@ -1209,6 +1211,8 @@ Semantic behavior over time: meaning, grounding, task fit, evidence use, tool me
 
 
 Many regressions are semantic, not syntactic. A prompt, model, retriever, schema, tool, or policy update can preserve surface quality while changing meaning, evidence use, refusal behavior, or action semantics.
+
+Those semantic regressions are often wider than the directly edited case. A change can look correct on the manually inspected example while altering grounding, refusal boundaries, or action meaning in adjacent slices or workflows.
 
 ### Common system faults
 

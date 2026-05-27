@@ -2137,7 +2137,7 @@ Resource pressure is not always visible in the final answer. A response may look
 # Family-to-control mapping
 
 
-This table is intentionally high level. Detailed controls belong in `stack-26-layer-3-control-mapping.md`.
+This table is intentionally high level. Detailed controls belong in stack-31-layer-3-control-families.md.
 
 | Family                                           | Typical Layer 3 controls                                                                   |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------ |
@@ -2166,6 +2166,7 @@ Root causes may be found in:
 
 - Layer 1A mechanisms;
 - Layer 1B learned features;
+- Layer 1C AI-system-level causal features;
 - Layer 3 system faults;
 - training/data layers;
 - deployment or operational environment.
@@ -2237,8 +2238,8 @@ stack-24-classification-views.md
 stack-25-evaluation-mapping.md
   Maps faults and families to evaluation methods.
 
-stack-26-layer-3-control-mapping.md
-  Maps Layer 2 faults to Layer 3 controls.
+stack-31-layer-3-control-families.md
+  Defines the canonical Layer 3 control families used to contain Layer 2 faults.
 
 stack-27-layer-2-worked-examples.md
   Shows end-to-end examples.
@@ -2264,7 +2265,7 @@ What exact behavioral fault occurred?
 ```
 
 
-Use `stack-26-layer-3-control-mapping.md` when you need to ask:
+Use `stack-31-layer-3-control-families.md` when you need to ask:
 
 ```text
 What system control should have prevented, detected, or recovered from it?

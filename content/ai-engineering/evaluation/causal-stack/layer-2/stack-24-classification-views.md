@@ -17,6 +17,8 @@ This view answers:
 
 > What test, oracle, trace, comparison, or measurement would reveal this fault?
 
+Layer 0 sits upstream of this view as the interface substrate: ambiguity, context dependence, pragmatic inference, discourse history, and social framing shape the scenarios being evaluated, but they are not themselves Layer 2 faults.
+
 It is useful when designing:
 
 - evaluation harnesses;
@@ -31,6 +33,8 @@ It is useful when designing:
 This view does **not** replace the fault inventory. It is a secondary view over the fault inventory.
 
 A single Layer 2 fault can require several evaluation methods. A single evaluation method can detect several fault modes.
+
+Layer 2 faults arise downstream of Layer 1A mechanisms, Layer 1B learned behaviors, and Layer 1C AI-system-level causal features.
 
 ### Core distinction
 
@@ -105,6 +109,7 @@ Can detect:
 | **EM12** | Distributional slice testing | Does performance hold across domains, languages, formats, edge cases, and rare task patterns? |
 | **EM13** | Regression / diff testing | Did a model, prompt, retrieval, policy, schema, data, or tool change introduce new failures? |
 | **EM14** | Human-review / rubric evaluation | Does the output satisfy task-specific quality criteria that cannot be fully captured by deterministic checks? |
+| **EM15** | Production monitoring / drift evaluation | Does deployed behavior remain within acceptable bounds over time? |
 
 # EM1. Repeated-run testing
 
@@ -1316,6 +1321,8 @@ Critical regression:
 
 Regression testing should use task-specific behavioral equivalence criteria, not only text similarity.
 
+It should also assume that change impact may be non-local: the edited prompt, model, retriever, schema, or policy can introduce failures outside the originally touched case or manually inspected slice.
+
 # EM14. Human-review / rubric evaluation
 
 ## Purpose
@@ -1419,6 +1426,56 @@ A good human-review setup should define:
 - inter-rater agreement expectations;
 - escalation path for ambiguous cases.
 
+# EM15. Production monitoring / drift evaluation
+
+## Purpose
+
+
+Detect whether deployed behavior remains acceptable as users, data, tools, prompts, models, and environments change over time.
+
+This method extends evaluation from pre-release testing into ongoing operation.
+
+## Evaluation question
+
+
+> Does deployed behavior remain stable, safe, useful, and correct under real production conditions?
+
+## Best suited for
+
+
+- production drift;
+- retrieval-index or source drift;
+- tool/API drift;
+- policy drift;
+- latent regressions not covered by offline suites;
+- long-tail failures;
+- incident detection;
+- silent degradation.
+
+## Typical setup
+
+
+Use telemetry, sampled review, automated checks, replayed incidents, and trend monitoring.
+
+Production monitoring is the runtime backstop for residual regressions whose effects were broader or harder to predict than offline change-focused evaluation could fully cover.
+
+Possible signals include:
+
+- user-feedback rates;
+- escalation-rate drift;
+- tool-call failure rates;
+- retrieval miss rates;
+- citation-support rates;
+- schema failure rates;
+- safety-policy hits;
+- latency and cost drift;
+- changed input distributions.
+
+## Important boundary
+
+
+Production monitoring is still part of the evaluation view. It detects, measures, and surfaces faults. It becomes a Layer 3 control only when tied to alerts, gates, escalation paths, or other operational responses.
+
 # Fault-family to evaluation-method mapping
 
 
@@ -1426,16 +1483,16 @@ This table maps broad Layer 2 fault families to likely evaluation methods.
 
 | Fault family | Primary methods | Secondary methods |
 |---|---|---|
-| **FF1. Behavioral Instability** | EM1 Repeated-run testing; EM2 Prompt perturbation | EM13 Regression / diff testing; EM14 Human-review rubric |
+| **FF1. Behavioral Instability** | EM1 Repeated-run testing; EM2 Prompt perturbation | EM13 Regression / diff testing; EM14 Human-review rubric; EM15 Production monitoring |
 | **FF2. Ambiguous or Misinduced Task Behavior** | EM2 Prompt perturbation; EM14 Human-review rubric | EM7 Reasoning / process evaluation; EM13 Regression / diff testing |
 | **FF3. Hallucination and Unsupported Claims** | EM4 Grounding and citation evaluation; EM5 Truth / factuality evaluation | EM9 Calibration evaluation; EM14 Human-review rubric |
-| **FF4. Weak Grounding / Source Infidelity** | EM4 Grounding and citation evaluation; EM3 Context ablation / insertion testing | EM13 Regression / diff testing; EM14 Human-review rubric |
+| **FF4. Weak Grounding / Source Infidelity** | EM4 Grounding and citation evaluation; EM3 Context ablation / insertion testing | EM13 Regression / diff testing; EM14 Human-review rubric; EM15 Production monitoring |
 | **FF5. Weak Calibration and Misleading Confidence** | EM9 Calibration evaluation | EM1 Repeated-run testing; EM5 Truth / factuality evaluation; EM14 Human-review rubric |
 | **FF6. Output Format / Schema Drift** | EM6 Schema and parser validation | EM13 Regression / diff testing; EM11 Stress / budget testing |
 | **FF7. Inconsistent Interaction Behavior** | EM14 Human-review rubric; EM1 Repeated-run testing | EM2 Prompt perturbation; EM13 Regression / diff testing |
 | **FF8. Uneven Competence / Distributional Failure** | EM12 Distributional slice testing | EM5 Truth / factuality evaluation; EM14 Human-review rubric |
-| **FF9. Agentic Process Failure** | EM8 Agent trace evaluation | EM10 Safety and policy adversarial testing; EM13 Regression / diff testing |
-| **FF10. Retrieval-Conditioned Answer Failure** | EM3 Context ablation / insertion testing; EM4 Grounding and citation evaluation | EM11 Stress / budget testing; EM13 Regression / diff testing |
+| **FF9. Agentic Process Failure** | EM8 Agent trace evaluation | EM10 Safety and policy adversarial testing; EM13 Regression / diff testing; EM15 Production monitoring |
+| **FF10. Retrieval-Conditioned Answer Failure** | EM3 Context ablation / insertion testing; EM4 Grounding and citation evaluation | EM11 Stress / budget testing; EM13 Regression / diff testing; EM15 Production monitoring |
 
 # Atomic fault to evaluation-method mapping
 
@@ -1781,8 +1838,12 @@ Do not rely only on text similarity.
 An observed bad result may involve multiple layers:
 
 ```text
-Layer 1A / 1B:
-  Mechanisms and learned features that make the behavior possible.
+Layer 0:
+  Interface conditions that shape how meaning must be inferred.
+
+Layer 1A / 1B / 1C:
+  Mechanisms, learned behaviors, and AI-system-level causal features
+  that make the behavior possible.
 
 Layer 2:
   Behavioral fault mode detected by the evaluation.
@@ -1976,6 +2037,7 @@ This metadata keeps evaluation findings connected to the Layer 2 fault inventory
 | EM12 Distributional slice | slice label, scenario set, per-slice metric, comparison to aggregate |
 | EM13 Regression/diff | baseline version, candidate version, diff type, regression label |
 | EM14 Human rubric | rubric version, reviewer ID, criterion scores, adjudication if needed |
+| EM15 Production monitoring | metric definition, baseline window, alert threshold, sampling or review process |
 
 # Relationship to other Layer 2 documents
 
@@ -1992,8 +2054,8 @@ stack-23-fault-family-index.md
 stack-25-evaluation-mapping.md
   Can expand this view into a full harness design.
 
-stack-26-layer-3-control-mapping.md
-  Maps detected Layer 2 faults to system controls.
+stack-31-layer-3-control-families.md
+  Defines the Layer 3 control families that respond to detected Layer 2 faults.
 ```
 
 

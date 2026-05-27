@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Evaluation Method Views"
-linkTitle: "Evaluation Method Views"
+title: "Stack 26 Evaluation Method Reference"
+linkTitle: "Stack 26 Evaluation Method Reference"
 ---
-# Evaluation-Method Views
+# Evaluation Method Reference
 
 ## Purpose
 
@@ -20,8 +20,11 @@ This document is a standalone companion to the Layer 2 fault-mode inventory. It 
 Layer 2 fault modes are recurring behavioral failure patterns. Evaluation methods are procedures for making those failures observable.
 
 ```text
-Layer 1A / 1B:
-  causal mechanisms and learned behavioral features
+Layer 0:
+  interface substrate and irreducible communication conditions
+
+Layer 1A / 1B / 1C:
+  causal mechanisms, learned behavioral features, and AI-system-level properties
 
 Layer 2:
   recurring behavioral fault modes
@@ -1510,6 +1513,8 @@ The evaluator must classify whether the difference is acceptable, material, or c
 
 Some changes are intended improvements even if the exact output differs.
 
+Regression coverage should assume that change effects may be non-local. The edited prompt, model, retriever, schema, tool, or policy can degrade behavior outside the motivating case, so comparison should include adjacent slices and representative workflows rather than only the touched scenario.
+
 # EM14. Human-review / rubric evaluation
 
 ## Purpose
@@ -1653,6 +1658,8 @@ It extends evaluation from pre-release testing to ongoing operation.
 
 
 Monitor production or near-production behavior using a mix of telemetry, sampling, automated checks, and human review.
+
+This is the runtime backstop for regressions whose blast radius was broader or less predictable than offline regression suites revealed.
 
 Possible signals:
 
@@ -2385,14 +2392,7 @@ This document should sit alongside the Layer 2 classification views document.
 Suggested file name:
 
 ```text
-evaluation-method-views.md
-```
-
-
-or, if using numbered stack files:
-
-```text
-stack-24a-evaluation-method-views.md
+stack-26-evaluation-method-reference.md
 ```
 
 
@@ -2404,7 +2404,7 @@ stack-21-fault-inventory.md
 stack-23-fault-family-index.md
 stack-24-classification-views.md
 stack-25-evaluation-mapping.md
-stack-26-layer-3-control-mapping.md
+stack-31-layer-3-control-families.md
 ```
 
 
