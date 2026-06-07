@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 21 Fault Inventory"
-linkTitle: "Stack 21 Fault Inventory"
+title: "Fault Inventory"
+linkTitle: "Fault Inventory"
 ---
 # Layer 2 Fault Inventory
 

@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 1b Restructuring"
-linkTitle: "Stack 1b Restructuring"
+title: "Draft Layer 1b Taxonomy Restructuring"
+linkTitle: "Draft Layer 1b Taxonomy Restructuring"
 ---
 The sections overlap because the current document mixes **feature categories** with **cross-cutting behavioral dimensions**. Some B-codes are relatively discrete causal features. Others are better understood as axes that modulate several other features. Making them strictly mutually exclusive is possible only if the document shifts from "causal feature list" to a more formal classification system.
 
@@ -381,77 +381,6 @@ B6 covers the non-privileged status of generated confidence, uncertainty, justif
 
 Do not let B6 become a general "tone" feature.
 
-# 2. Can the sections be made mutually exclusive?
-
-
-Strictly: not cleanly, if they remain "features."
-
-LLM behavior is compositional. A single production failure often involves several Layer 1B properties simultaneously.
-
-Example:
-
-```text
-User asks a vague current-facts question.
-
-B1: model infers task
-B3: wording affects interpretation
-B8: model tends to answer
-B10: stale prior influences content
-B6: confidence language makes answer look reliable
-B4: output has multiple acceptable phrasings
-```
-
-
-Trying to force only one B-code onto that behavior would lose causal information.
-
-But you can make them mutually exclusive for **diagnostic attribution** by distinguishing:
-
-```text
-primary causal feature
-secondary contributing feature
-cross-cutting modifier
-downstream fault mode
-```
-
-
-That is probably the best compromise.
-
-## Better model
-
-
-Instead of:
-
-```text
-Each incident maps to exactly one B-code.
-```
-
-
-Use:
-
-```text
-Each incident has:
-- one primary causal feature,
-- zero or more contributing features,
-- zero or more modifiers,
-- one or more downstream fault modes.
-```
-
-
-Example:
-
-```json
-{
-  "primary_feature": "B10 Parametric Prior Persistence",
-  "contributing_features": ["B8 Cooperative Completion", "B6 Confidence Language"],
-  "modifiers": ["high interface sensitivity", "freshness-sensitive domain"],
-  "fault_mode": "temporal hallucination",
-  "system_fault": "no source authority rule"
-}
-```
-
-
-That is more faithful to real AI systems.
-
 # 3. Underlying axes behind the taxonomy
 
 
@@ -519,13 +448,13 @@ challenge premise
 
 Relevant B-codes:
 
-|Posture pressure|Current B-code|
-|---|---|
-|Direct answer pressure|B8|
-|Refusal/redirect pressure|B9|
-|Clarification style|B5 / B8|
-|Evidence-grounding need|B10|
-|Competence-aware abstention|B7|
+| Posture pressure            | Current B-code |
+| --------------------------- | -------------- |
+| Direct answer pressure      | B8             |
+| Refusal/redirect pressure   | B9             |
+| Clarification style         | B5 / B8        |
+| Evidence-grounding need     | B10            |
+| Competence-aware abstention | B7             |
 
 This axis is currently spread across B5, B8, B9, B7, and B10.
 

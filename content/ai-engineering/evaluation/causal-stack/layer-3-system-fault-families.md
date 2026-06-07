@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 33 Layer 3 System Fault Families"
-linkTitle: "Stack 33 Layer 3 System Fault Families"
+title: "Layer 3 System Fault Families"
+linkTitle: "Layer 3 System Fault Families"
 ---
 # Layer 3 -- System Fault Families
 

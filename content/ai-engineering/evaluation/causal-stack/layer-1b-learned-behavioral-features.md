@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Stack 1b Learned Behavioral Llm Features"
-linkTitle: "Stack 1b Learned Behavioral Llm Features"
+title: "Layer 1b Learned Behavioral Features"
+linkTitle: "Layer 1b Learned Behavioral Features"
 ---
+# UNDER CONSTRUCTION
+
 # Layer 1B -- Learned or Behavioral LLM Features
 
 ## Definition
@@ -281,14 +283,16 @@ B1:
   The model's scores are shaped by its induced interpretation of the requested task.
 ```
 
-### B2. In-Context Demonstration Conditioning
+### B2. In-Context Learning
 
 #### Core feature
 
 
-The model can use examples inside the prompt to infer a runtime task pattern without updating its parameters.
+The model can adapt its runtime behavior based on information provided inside the current context, without updating its parameters.
 
-A prompt can demonstrate a mapping:
+In-context learning is the learned behavioral ability to use prompt-local instructions, examples, demonstrations, labels, formats, schemas, corrections, or patterns to infer how the current task should be performed.
+
+A simple few-shot prompt can demonstrate a mapping:
 
 ```text
 Input A → Output A
@@ -297,44 +301,37 @@ Input C → ?
 ```
 
 
-The model conditions on the demonstrated pattern and generates a continuation that follows it. This is commonly called **in-context learning** or **few-shot prompting**.
+The model conditions on the demonstrated pattern and generates a continuation that follows it. No training step occurs during this process. The model's weights (\theta) remain fixed during inference; the context changes the model's activations and token probabilities, not its learned parameters.
 
-This is not parameter learning. The model's weights \(\theta\) remain fixed during inference. The examples change the conditioning context and the model's activations, not the learned parameters.
-
-#### Terminology note: relation to in-context learning
-
-
-This feature overlaps with what the research literature and practitioner community often call **in-context learning** or **few-shot prompting**. This document uses the narrower term **In-Context Demonstration Conditioning** for operational precision.
-
-First, "learning" can imply a parameter update, durable memory change, or persistent adaptation. In B2, no such update occurs. The model's weights remain fixed during inference; the examples change the conditioning context and the model's forward-pass behavior, not the learned parameters.
-
-Second, "in-context learning" is often used broadly for many forms of prompt-based adaptation. B2 is narrower: it refers specifically to cases where examples or demonstrations in the prompt define an input-output pattern, label space, output format, edge-case convention, or behavioral mapping that the model is expected to continue.
-
-The standard term is therefore acknowledged, but the taxonomy uses "demonstration conditioning" to preserve the operational boundary between general task induction, example-driven runtime behavior, and actual training.
+In-context learning can therefore make the model behave as though it has learned a task locally, but the adaptation is prompt-conditioned and inference-time. It can disappear, weaken, or change when the relevant context is removed, reordered, contradicted, or pushed out of the context window.
 
 #### Canonical statement
 
 
-> Examples in context can act as a runtime task specification: they demonstrate the input-output mapping the model should continue, without changing the model's weights.
+> The model can adapt its runtime behavior from prompt-local information such as examples, demonstrations, labels, instructions, schemas, and corrections, without changing its weights.
 
 #### Why this belongs in Layer 1B
 
 
-In-context demonstration conditioning is a learned behavioral feature, not a separate training update and not a deterministic program.
+In-context learning is not a primitive tensor operation, a training update, or a deterministic program. It is a learned behavioral feature produced by the interaction of model architecture, learned priors, context integration, and task induction.
 
-It is produced by interaction among:
+It emerges from:
 
 ```text
 A2 Static Parametric Learned Prior
 + A3 Finite Ordered Context Interface
 + A4 Attention/Position-Mediated Context Integration
 + A5 In-Band Control/Data Representation
++ A7 Autoregressive Factorization
++ A8 Distributional Token Scoring
 + B1 Learned Natural-Language Task Induction
-→ In-Context Demonstration Conditioning
+→ In-Context Learning
 ```
 
 
-It deserves separate treatment from B1 because examples can specify a task more operationally than verbal instructions alone.
+It belongs in Layer 1B because it is stable, causal, shaped by learned behavior and prompt conditioning, and not itself a fault. It helps explain how a fixed-parameter model can adapt to a local task pattern at inference time.
+
+It deserves separate treatment from B1 because B1 concerns inferring the requested operation from natural-language and pragmatic cues in general. B2 concerns runtime adaptation from information inside the current context, especially examples, demonstrations, labels, schemas, and prompt-local patterns.
 
 For example, the instruction:
 
@@ -357,14 +354,55 @@ Label:
 ```
 
 
-The examples define the label space, output format, and classification standard.
+The examples define the label space, output format, and classification standard. The model has not been retrained, but its runtime behavior is conditioned by the demonstrated task pattern.
+
+#### Demonstration-conditioned and non-demonstration cases
+
+
+In-context learning includes, but is not limited to, few-shot demonstration conditioning.
+
+The clearest case is demonstration-conditioned behavior:
+
+```text
+Input A → Output A
+Input B → Output B
+Input C → Output C
+Input D → ?
+```
+
+
+Here, examples define the input-output mapping the model should continue.
+
+But in-context learning can also occur without explicit input-output demonstrations. The context may provide:
+
+- a schema;
+- a label set;
+- a glossary;
+- a correction;
+- a local definition;
+- a temporary convention;
+- a formatting contract;
+- a domain-specific rubric;
+- an instruction hierarchy;
+- a conversation-local fact;
+- a source document that defines the task standard.
+
+For example:
+
+```text
+For this review, treat "P0" as requiring immediate executive escalation.
+Classify the following incident using only this rubric.
+```
+
+
+No few-shot examples are given, but the model can still adapt its runtime behavior from the local context. This is why the broader name **In-Context Learning** is appropriate if the section is meant to cover context-driven adaptation beyond demonstrations.
 
 #### Recognition vs. synthesis
 
 
-In-context demonstration conditioning can operate in at least two ways.
+In-context learning can operate in at least two ways.
 
-In many cases, demonstrations help the model recognize and activate a familiar latent task pattern:
+In many cases, context helps the model recognize and activate a familiar latent task pattern:
 
 ```text
 Review text → sentiment label
@@ -374,7 +412,7 @@ Input sentence → translated sentence
 ```
 
 
-In other cases, demonstrations define a local or unusual mapping that is not captured by a standard task name:
+In other cases, context defines a local or unusual mapping that is not captured by a standard task name:
 
 ```text
 Customer message → internal escalation code
@@ -384,14 +422,14 @@ Raw note → product-specific CRM format
 ```
 
 
-B2 covers both cases. The key property is not whether the task was already familiar or newly specified. The key property is that demonstrations in the prompt shape the effective runtime mapping without changing the model's weights.
+B2 covers both cases. The key property is not whether the task was already familiar or newly specified. The key property is that information in the current context shapes the effective runtime mapping without changing the model's weights.
 
-This should not be interpreted as a claim that the model has learned a new durable skill. The behavior is conditioned on the current context and can disappear, weaken, or shift when the examples are removed, reordered, contradicted, or separated from the generation point.
+This should not be interpreted as a claim that the model has learned a new durable skill. The behavior is conditioned on the current context and can disappear, weaken, or shift when the relevant context is removed, reordered, contradicted, or separated from the generation point.
 
-#### What examples can specify
+#### What context can specify
 
 
-In-context demonstrations can specify:
+In-context learning can specify or modify:
 
 - label spaces;
 - output formats;
@@ -400,39 +438,52 @@ In-context demonstrations can specify:
 - edge-case handling;
 - tone and style;
 - level of detail;
+- local definitions;
+- temporary terminology;
 - domain-specific conventions;
+- task-specific rubrics;
 - tool-call patterns;
 - refusal or escalation patterns;
+- source-specific standards;
 - what counts as a valid answer.
 
 #### Why this is useful
 
 
-Few-shot examples can be more precise than prose when the task is:
+In-context learning can be more precise than generic instructions when the task is:
 
 - unusual;
+- local to a specific product or organization;
 - hard to describe declaratively;
 - dependent on edge cases;
 - sensitive to output format;
 - domain-specific;
-- defined by examples rather than rules;
+- defined by examples or rubrics rather than general rules;
 - new to the model's ordinary instruction-following distribution.
 
-#### Sources of demonstration sensitivity
+It allows a fixed-parameter model to behave flexibly across tasks without task-specific retraining. For systems engineering, this is useful but also means the prompt and retrieved context can act as part of the runtime behavioral specification.
+
+#### Sources of in-context sensitivity
 
 
-Because examples are themselves tokens in context, their influence depends on how they are selected, ordered, separated, and related to the target case. Demonstrations can shape behavior strongly, but the strength and direction of that conditioning are context-dependent.
+Because in-context learning depends on tokens inside the current context, its influence depends on how that context is selected, ordered, separated, and related to the target case.
 
-Example-induced behavior depends on:
+In-context behavior can depend on:
 
 - example order;
 - example diversity;
 - example consistency;
 - similarity between examples and the new case;
-- whether examples conflict with the written instruction;
+- clarity of the label space;
+- whether examples conflict with written instructions;
+- whether instructions conflict with source context;
+- whether schemas are explicit or implied;
 - whether examples are clearly separated from data;
-- how much context separates examples from the generation point;
-- whether examples are treated as rules, evidence, or mere illustrations.
+- how much context separates relevant information from the generation point;
+- whether local definitions override common meanings;
+- whether context is treated as rule, evidence, illustration, or user data.
+
+These sensitivities are not faults by themselves. They become faults when systems depend on narrow, accidental, inconsistent, stale, or untrusted context in ways that produce unacceptable behavior.
 
 #### What it explains downstream
 
@@ -443,20 +494,31 @@ B2 contributes to fault modes involving:
 - copying examples too literally;
 - ignoring abstract instructions in favor of examples;
 - treating examples as exhaustive rules;
-- failing on cases outside the example pattern;
+- failing on cases outside the demonstrated pattern;
 - label-space drift;
+- schema drift;
 - inconsistent edge-case handling;
 - example-order effects;
-- few-shot prompt regressions after small edits.
+- prompt-local definition leakage;
+- conflict between retrieved context and written instructions;
+- few-shot prompt regressions after small edits;
+- treating untrusted prompt content as task specification.
 
 #### Important boundary
 
 
-B2 is not the same as B1.
+B2 is not the same as B1 Learned Natural-Language Task Induction.
 
-B1 is about inferring the task from natural-language cues in general.
+```text
+B1:
+  The model infers what task or operation is being requested from natural-language,
+  pragmatic, and contextual cues.
 
-B2 is about the specific role of in-context examples in shaping the effective task mapping without weight updates.
+B2:
+  The model adapts its runtime behavior from prompt-local information such as
+  examples, schemas, labels, rubrics, definitions, corrections, or source context.
+```
+
 
 B2 is also not the same as B3 Natural-Language Interface Sensitivity.
 
@@ -466,21 +528,33 @@ B3:
   surface form changes.
 
 B2:
-  Demonstrations specifically condition the runtime mapping by showing examples
-  of the input-output pattern the model should continue.
+  Information inside the context acts as a local behavioral specification that
+  conditions the task mapping, decision rule, format, label space, or standard.
 ```
 
 
-Example order can affect both B2 and B3. The distinction is that B2 concerns the demonstrated mapping itself, while B3 concerns broader natural-language and contextual sensitivity.
+Example order can affect both B2 and B3. The distinction is that B2 concerns context-driven adaptation to a local mapping or standard, while B3 concerns broader natural-language and contextual sensitivity.
 
-B2 is not itself behavioral fragility. It is the feature that allows examples to shape behavior. Fragility occurs when the system depends too heavily on narrow, accidental, inconsistent, or unrepresentative demonstrations.
+B2 is not parameter learning.
 
-B2 is also not a replacement for formal specification. If the output must satisfy strict requirements, examples should usually be paired with schemas, validators, tests, or constrained decoding.
+```text
+Parameter learning:
+  The model's weights are updated through training or fine-tuning.
+
+B2:
+  The model's weights remain fixed. Runtime behavior changes because the current
+  context changes the conditioning information available during inference.
+```
+
+
+B2 is not itself behavioral fragility. It is the feature that allows prompt-local information to shape behavior. Fragility occurs when the system depends too heavily on narrow, accidental, inconsistent, stale, or untrusted context.
+
+B2 is also not a replacement for formal specification. If the output must satisfy strict requirements, in-context examples and rubrics should usually be paired with schemas, validators, tests, constrained decoding, or other system-layer controls.
 
 #### Testing implication
 
 
-Do not test only the exact demonstration set used during prompt development.
+Do not test only the exact prompt context used during development.
 
 Useful test slices include:
 
@@ -491,10 +565,13 @@ Useful test slices include:
 - examples with edge cases;
 - target cases outside the demonstrated pattern;
 - conflicts between written instructions and examples;
+- conflicts between retrieved context and prompt instructions;
+- local definitions that override common meanings;
 - cases where examples imply a label space or schema;
-- cases where examples are similar in surface form but require different decisions.
+- cases where examples are similar in surface form but require different decisions;
+- cases where untrusted content attempts to redefine the task.
 
-The target property is not that examples always dominate the written instruction. The target property is that demonstrations influence behavior in the intended way, and that unacceptable overgeneralization, copying, or label drift is detected.
+The target property is not that context always dominates prior behavior or written instruction. The target property is that in-context information influences behavior in the intended way, under the intended authority rules, and that unacceptable overgeneralization, copying, label drift, schema drift, or instruction/context conflict is detected.
 
 ### B3. Natural-Language Interface Sensitivity
 

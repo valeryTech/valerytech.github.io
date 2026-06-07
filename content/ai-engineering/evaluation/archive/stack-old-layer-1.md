@@ -109,7 +109,6 @@ The model predicts the next token from `C`, not from the full conversation histo
 
 ## Observable failure patterns
 
-#todo analyse
 
 - The model ignores or contradicts earlier user requirements.
 - Long-running conversations lose constraints introduced many turns earlier.
@@ -137,7 +136,6 @@ also: Availability failures are often misdiagnosed as reasoning failures.
 
 ## Best-first mitigations
 
-#todo analyse
 
 - **Structured state store:** persist constraints, decisions, approvals, and user preferences outside the prompt.
 - **Context rehydration:** deterministically reintroduce relevant state before each important step.

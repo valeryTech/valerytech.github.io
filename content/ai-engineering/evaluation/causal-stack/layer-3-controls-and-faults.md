@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 30 Layer 3 Overview"
-linkTitle: "Stack 30 Layer 3 Overview"
+title: "Layer 3 Controls And Faults"
+linkTitle: "Layer 3 Controls And Faults"
 ---
 # Layer 3 -- System Controls and System Faults
 
@@ -1625,16 +1625,16 @@ Capture enough trace data to attribute failures across retrieval, prompt assembl
 This overview defines the Layer 3 boundary and control families. Later documents can specialize the material:
 
 ```text
-stack-30-layer-3-overview.md
+layer-3-controls-and-faults.md
   Defines Layer 3, its boundary, object types, control families, and examples.
 
-stack-31-layer-3-control-families.md
+layer-3-control-families.md
   Expands each L3CF1-L3CF15 family into detailed control records.
 
-stack-32-layer-3-semantic-fault-view.md
+layer-3-semantic-fault-view.md
   Provides a specialist semantic view over Layer 3 controls and faults.
 
-stack-33-layer-3-system-fault-families.md
+layer-3-system-fault-families.md
   Catalogs Layer 3 system fault families and architecture responsibility patterns.
 ```
 

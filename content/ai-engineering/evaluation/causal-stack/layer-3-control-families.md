@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 31 Layer 3 Control Families"
-linkTitle: "Stack 31 Layer 3 Control Families"
+title: "Layer 3 Control Families"
+linkTitle: "Layer 3 Control Families"
 ---
 # Layer 3 -- System Control Families
 
@@ -36,8 +36,8 @@ Layer 4
 This file defines the **control vocabulary**. It should be used by later mapping and fault-family documents, especially:
 
 ```text
-stack-30-layer-3-overview.md
-stack-33-layer-3-system-fault-families.md
+layer-3-controls-and-faults.md
+layer-3-system-fault-families.md
 ```
 
 

@@ -32,7 +32,7 @@ So, calling an AI system empirical means the system's behavior must be observed 
 ## Why this is true
 
 
-This follows from the system-level causal properties of AI applications: behavior can vary across runs and contexts, correctness is often soft and task-specific, knowledge is distributed across external sources, outputs may need evidence grounding, behavior emerges from pipelines and agents, environments drift, failures are weakly observable by default, and quality is constrained by cost and latency tradeoffs. I treat these as a AI-system-level causal features layer in the stack (see [Stack 1c Ai System Level Causal Features]({{< ref "ai-engineering/evaluation/causal-stack/stack-1c-ai-system-level-causal-features" >}})).
+This follows from the system-level causal properties of AI applications: behavior can vary across runs and contexts, correctness is often soft and task-specific, knowledge is distributed across external sources, outputs may need evidence grounding, behavior emerges from pipelines and agents, environments drift, failures are weakly observable by default, and quality is constrained by cost and latency tradeoffs. I treat these as a AI-system-level causal features layer in the stack (see [Layer 1c Ai System Causal Features]({{< ref "ai-engineering/evaluation/causal-stack/layer-1c-ai-system-causal-features" >}})).
 
 ## Engineering consequences
 

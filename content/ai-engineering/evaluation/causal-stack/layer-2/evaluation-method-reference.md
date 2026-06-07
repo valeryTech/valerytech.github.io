@@ -1,11 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Stack 26 Evaluation Method Reference"
-linkTitle: "Stack 26 Evaluation Method Reference"
+title: "Evaluation Method Reference"
+linkTitle: "Evaluation Method Reference"
 ---
-# Evaluation Method Reference
-
 ## Purpose
 
 
@@ -2392,19 +2390,19 @@ This document should sit alongside the Layer 2 classification views document.
 Suggested file name:
 
 ```text
-stack-26-evaluation-method-reference.md
+evaluation-method-reference.md
 ```
 
 
 Recommended references:
 
 ```text
-stack-20-layer-2-overview.md
-stack-21-fault-inventory.md
-stack-23-fault-family-index.md
-stack-24-classification-views.md
-stack-25-evaluation-mapping.md
-stack-31-layer-3-control-families.md
+fault-inventory.md
+fault-family-index.md
+classification-views.md
+fault-evaluation-mapping.md
+worked-examples.md
+layer-3-control-families.md
 ```
 
 

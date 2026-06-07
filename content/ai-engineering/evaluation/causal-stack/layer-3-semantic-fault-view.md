@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 32 Layer 3 Semantic Fault View"
-linkTitle: "Stack 32 Layer 3 Semantic Fault View"
+title: "Layer 3 Semantic Fault View"
+linkTitle: "Layer 3 Semantic Fault View"
 ---
 # Layer 3 -- Semantic Fault View
 
@@ -32,7 +32,7 @@ This document is intended for NLP specialists, applied AI engineers, evaluation 
 
 It does not replace the general Layer 3 control-family taxonomy. It provides a specialist semantic view over it.
 
-The `S1-S14` group labels in this document are local view labels, not canonical cross-stack identifiers. The canonical Layer 3 fault-family namespace is `L3S*` in `stack-33-layer-3-system-fault-families.md`.
+The `S1-S14` group labels in this document are local view labels, not canonical cross-stack identifiers. The canonical Layer 3 fault-family namespace is `L3S*` in `layer-3-system-fault-families.md`.
 
 ## Core idea
 

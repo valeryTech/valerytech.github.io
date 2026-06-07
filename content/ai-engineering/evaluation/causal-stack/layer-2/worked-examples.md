@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 27 Worked Examples"
-linkTitle: "Stack 27 Worked Examples"
+title: "Worked Examples"
+linkTitle: "Worked Examples"
 ---
 # Layer 2 -- Worked Examples
 

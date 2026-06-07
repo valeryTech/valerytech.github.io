@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 24 Classification Views"
-linkTitle: "Stack 24 Classification Views"
+title: "Classification Views"
+linkTitle: "Classification Views"
 ---
 # Layer 2 -- Classification Views
 
@@ -2045,21 +2045,21 @@ This metadata keeps evaluation findings connected to the Layer 2 fault inventory
 This document should be used with:
 
 ```text
-stack-21-fault-inventory.md
+fault-inventory.md
   Defines atomic Layer 2 fault modes.
 
-stack-23-fault-family-index.md
+fault-family-index.md
   Defines broad FF1-FF10 family groupings.
 
-stack-25-evaluation-mapping.md
+fault-evaluation-mapping.md
   Can expand this view into a full harness design.
 
-stack-31-layer-3-control-families.md
+layer-3-control-families.md
   Defines the Layer 3 control families that respond to detected Layer 2 faults.
 ```
 
 
-`stack-24-classification-views.md` should not duplicate full fault definitions. It should define classification views and show how to use them.
+`classification-views.md` should not duplicate full fault definitions. It should define classification views and show how to use them.
 
 # Short formulation
 

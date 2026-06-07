@@ -1,11 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Operating Model"
-linkTitle: "Operating Model"
+title: "Causal Stack Operating Model"
+linkTitle: "Causal Stack Operating Model"
 ---
-# Causal Stack Operating Model
-
 
 This document is the top-level bridge for the causal stack. It explains how interface properties, model and system features, behavioral faults, evaluation methods, operational controls, and impacts fit together.
 
@@ -46,7 +44,7 @@ Natural language is not a degraded programming language or a loose API payload. 
 
 These are irreducible interface conditions, not product defects. A deployed AI system cannot assume that users will speak in fully explicit, context-free, schema-complete commands. Downstream layers therefore exist partly to accommodate ambiguity, underspecification, reference resolution, pragmatic intent, turn history, and social framing rather than trying to engineer them away.
 
-For the detailed Layer 0 taxonomy, see [stack-0-protocol.md]({{< ref "ai-engineering/evaluation/causal-stack/stack-0-protocol" >}}).
+For the detailed Layer 0 taxonomy, see [layer-0-natural-language-properties.md]({{< ref "ai-engineering/evaluation/causal-stack/layer-0-natural-language-properties" >}}).
 
 ## Layer 1 -- Causal features
 

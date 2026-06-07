@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 25 Evaluation Mapping"
-linkTitle: "Stack 25 Evaluation Mapping"
+title: "Fault Evaluation Mapping"
+linkTitle: "Fault Evaluation Mapping"
 ---
 # Layer 2 Evaluation Mapping
 
@@ -893,7 +893,7 @@ increase task/context pressure
 
 This document should not prescribe system fixes in detail.
 
-It may identify the kind of Layer 3 handoff needed, but the actual controls belong in stack-31-layer-3-control-families.md.
+It may identify the kind of Layer 3 handoff needed, but the actual controls belong in layer-3-control-families.md.
 
 Examples:
 

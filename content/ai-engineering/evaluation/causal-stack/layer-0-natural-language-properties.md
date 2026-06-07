@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 0 Protocol"
-linkTitle: "Stack 0 Protocol"
+title: "Layer 0 Natural Language Properties"
+linkTitle: "Layer 0 Natural Language Properties"
 ---
 # Natural-Language Properties: A Linguistic and Semantic Taxonomy
 

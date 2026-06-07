@@ -1,13 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Stack 23 Fault Family Index"
-linkTitle: "Stack 23 Fault Family Index"
+title: "Fault Family Index"
+linkTitle: "Fault Family Index"
 ---
 # Layer 2 -- Fault Family Index
 
 
-Canonical atomic fault definitions live in `stack-21-fault-inventory.md`.
+Canonical atomic fault definitions live in `fault-inventory.md`.
 
 ## Purpose
 
@@ -193,7 +193,7 @@ The diagnostic question this family helps answer.
 Common manifestations or subcases.
 
 ### Typical atomic faults
-Representative atomic faults from `stack-21-fault-inventory.md`.
+Representative atomic faults from `fault-inventory.md`.
 
 ### Primary Layer 1A contributors
 Base architectural or inference mechanisms that often contribute.
@@ -2137,7 +2137,7 @@ Resource pressure is not always visible in the final answer. A response may look
 # Family-to-control mapping
 
 
-This table is intentionally high level. Detailed controls belong in stack-31-layer-3-control-families.md.
+This table is intentionally high level. Detailed controls belong in layer-3-control-families.md.
 
 | Family                                           | Typical Layer 3 controls                                                                   |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------ |
@@ -2219,33 +2219,27 @@ They may help detect families, but they are not themselves fault families.
 # Relationship to other Layer 2 documents
 
 ```text
-stack-20-layer-2-overview.md
-  Defines Layer 2 scope, inclusion criteria, and relationship to other layers.
-
-stack-21-fault-inventory.md
+fault-inventory.md
   Defines atomic fault modes.
 
-stack-22-fault-record-template.md
-  Defines the schema for each atomic fault record.
-
-stack-23-fault-family-index.md
+fault-family-index.md
   This file. Defines broad non-exclusive families over the atomic inventory.
 
-stack-24-classification-views.md
+classification-views.md
   Defines alternative views: causal origin, affected artifact, evaluation method,
   product risk, and control strategy.
 
-stack-25-evaluation-mapping.md
+fault-evaluation-mapping.md
   Maps faults and families to evaluation methods.
 
-stack-31-layer-3-control-families.md
+evaluation-method-reference.md
+  Defines the evaluation-method vocabulary used by the mapping and classification views.
+
+layer-3-control-families.md
   Defines the canonical Layer 3 control families used to contain Layer 2 faults.
 
-stack-27-layer-2-worked-examples.md
+worked-examples.md
   Shows end-to-end examples.
-
-stack-28-boundaries-and-non-goals.md
-  Prevents category drift.
 ```
 
 # Short rule of thumb
@@ -2258,14 +2252,14 @@ What kind of failure is this?
 ```
 
 
-Use `stack-21-fault-inventory.md` when you need to ask:
+Use `fault-inventory.md` when you need to ask:
 
 ```text
 What exact behavioral fault occurred?
 ```
 
 
-Use `stack-31-layer-3-control-families.md` when you need to ask:
+Use `layer-3-control-families.md` when you need to ask:
 
 ```text
 What system control should have prevented, detected, or recovered from it?

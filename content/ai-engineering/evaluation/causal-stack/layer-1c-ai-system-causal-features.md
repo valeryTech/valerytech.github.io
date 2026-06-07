@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Stack 1c Ai System Level Causal Features"
-linkTitle: "Stack 1c Ai System Level Causal Features"
+title: "Layer 1c Ai System Causal Features"
+linkTitle: "Layer 1c Ai System Causal Features"
 ---
 # Layer 1C -- AI-System-Level Causal Features
 

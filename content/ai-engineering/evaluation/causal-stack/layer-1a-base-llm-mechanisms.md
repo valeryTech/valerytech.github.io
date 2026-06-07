@@ -1,13 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Stack 1a Base Mechanisms"
-linkTitle: "Stack 1a Base Mechanisms"
+title: "Layer 1a Base Llm Mechanisms"
+linkTitle: "Layer 1a Base Llm Mechanisms"
 ---
 # Layer 1A - Base LLM Architectural / Inference Mechanisms
 
 
-This document moves the **base mechanisms** out of stack-10-casual-features.md into a dedicated Layer 1A file.
+This document defines the **base mechanisms** in a dedicated Layer 1A file.
 
 It keeps the original mechanism text as closely as possible, but renames the surviving mechanism set from:
 
