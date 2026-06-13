@@ -187,7 +187,7 @@ A candidate belongs in Layer 3 if it satisfies at least one of the following:
 
 1. It is a system design element that shapes model inputs, outputs, actions, or monitoring.
 2. It prevents, detects, constrains, recovers from, or provides evidence about Layer 2 faults.
-3. It concerns retrieval, context construction, prompt assembly, state, tools, validation, authorization, observability, evaluation, monitoring, release gating, or human escalation.
+3. It concerns retrieval, Context Assembly, prompt assembly, state, tools, validation, authorization, observability, evaluation, monitoring, release gating, or human escalation.
 4. It describes a missing or inadequate operational safeguard.
 5. It can be changed without modifying the base model architecture or learned model parameters.
 6. It can be implemented, tested, traced, configured, versioned, monitored, or audited at the system level.
@@ -436,7 +436,7 @@ Use the `L3CF1-L3CF15` identifiers for cross-document references. They replace t
 
 | Code | Control family | Core question |
 |---|---|---|
-| **L3CF1** | Context Construction Controls | Did the system supply the right runtime information? |
+| **L3CF1** | Context Assembly Controls | Did the system supply the right runtime information? |
 | **L3CF2** | Retrieval and Source Controls | Did the system retrieve, rank, filter, attribute, and authorize evidence correctly? |
 | **L3CF3** | State and Memory Controls | Did the system preserve and rehydrate required continuity state? |
 | **L3CF4** | Prompt and Task-Contract Controls | Did the system specify the task, role, constraints, and success criteria clearly enough? |
@@ -454,7 +454,7 @@ Use the `L3CF1-L3CF15` identifiers for cross-document references. They replace t
 
 These families are not mutually exclusive. A single production issue often requires controls from several families.
 
-# L3CF1 -- Context Construction Controls
+# L3CF1 -- Context Assembly Controls
 
 ## Purpose
 
@@ -1269,13 +1269,13 @@ Boundary notes:
 
 | Layer 2 fault family | Primary Layer 3 controls | Secondary controls |
 |---|---|---|
-| Context faults | L3CF1 Context Construction, L3CF2 Retrieval and Source, L3CF3 State and Memory | L3CF12 Budget, L3CF13 Observability, L3CF14 Evaluation |
+| Context faults | L3CF1 Context Assembly, L3CF2 Retrieval and Source, L3CF3 State and Memory | L3CF12 Budget, L3CF13 Observability, L3CF14 Evaluation |
 | Generation faults | L3CF6 Output Contract, L3CF9 Reasoning and Process, L3CF14 Evaluation and Regression | L3CF11 Safety, L3CF12 Budget, L3CF15 Human Review |
 | Epistemic faults | L3CF7 Grounding and Verification, L3CF2 Retrieval and Source, L3CF8 Calibration | L3CF13 Observability, L3CF15 Human Review |
 | Instruction/task faults | L3CF4 Prompt and Task Contract, L3CF5 Control/Data Isolation | L3CF10 Tool and Action, L3CF11 Safety, L3CF14 Regression |
 | Reasoning/planning faults | L3CF9 Reasoning and Process, L3CF10 Tool and Action | L3CF13 Observability, L3CF15 Human Review |
 | Structure/representation faults | L3CF6 Output Contract | L3CF10 Tool and Action, L3CF14 Regression |
-| Budget/resource faults | L3CF12 Budget and Resource | L3CF1 Context Construction, L3CF15 Escalation |
+| Budget/resource faults | L3CF12 Budget and Resource | L3CF1 Context Assembly, L3CF15 Escalation |
 | Interaction/experience faults | L3CF4 Prompt and Task Contract, L3CF8 Calibration, L3CF11 Safety and Policy | L3CF14 Regression, L3CF15 Human Review |
 | Agent/action faults | L3CF10 Tool and Action, L3CF11 Safety and Policy | L3CF9 Process, L3CF13 Observability, L3CF15 Human Review |
 | Distributional competence faults | L3CF14 Evaluation and Regression, L3CF15 Human Review | L3CF4 Task Contract, L3CF7 Verification |
@@ -1287,7 +1287,7 @@ Boundary notes:
 |---|---|
 | Repeated-run testing | L3CF14 Evaluation and Regression, L3CF6 Output Contracts, L3CF11 Safety and Policy |
 | Prompt perturbation / paraphrase testing | L3CF4 Prompt and Task Contract, L3CF14 Evaluation and Regression |
-| Context ablation / insertion testing | L3CF1 Context Construction, L3CF2 Retrieval and Source, L3CF7 Grounding and Verification |
+| Context ablation / insertion testing | L3CF1 Context Assembly, L3CF2 Retrieval and Source, L3CF7 Grounding and Verification |
 | Grounding and citation evaluation | L3CF2 Retrieval and Source, L3CF7 Grounding and Verification |
 | Truth / factuality evaluation | L3CF7 Grounding and Verification, L3CF15 Human Review |
 | Schema and parser validation | L3CF6 Output Contract Controls |
@@ -1295,7 +1295,7 @@ Boundary notes:
 | Agent trace evaluation | L3CF10 Tool and Action, L3CF13 Observability and Trace |
 | Calibration evaluation | L3CF8 Calibration and Confidence |
 | Safety and policy adversarial testing | L3CF11 Safety and Policy, L3CF5 Control/Data Isolation, L3CF10 Tool and Action |
-| Stress / budget testing | L3CF12 Budget and Resource, L3CF1 Context Construction |
+| Stress / budget testing | L3CF12 Budget and Resource, L3CF1 Context Assembly |
 | Distributional slice testing | L3CF14 Evaluation and Regression, L3CF15 Human Review |
 | Regression / diff testing | L3CF14 Evaluation and Regression |
 | Human-review / rubric evaluation | L3CF15 Human Review and Escalation, L3CF14 Evaluation and Regression |
@@ -1434,7 +1434,7 @@ Layer 3 system faults:
   no human review for legal-risk output.
 
 Layer 3 controls:
-  L3CF1 Context Construction Controls;
+  L3CF1 Context Assembly Controls;
   L3CF4 Prompt and Task-Contract Controls;
   L3CF7 Grounding and Verification Controls;
   L3CF12 Budget and Resource Controls;

@@ -16,7 +16,7 @@ toc: "true"
 
 [draft]
 
-[Architecture]({{< ref "engineering/architecture/architecture" >}}) is in progress at the moment.
+[[topics/engineering/architecture/architecture]] is in progress at the moment.
 
 # Common Description
 

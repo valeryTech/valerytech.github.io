@@ -7,7 +7,7 @@ linkTitle: "Exploratory Design"
 
 I'll broaden the frame from RAG to engineering methodology. The useful target is not "manual RAG," but a family of practices around staged pipelines, inspection surfaces, human steering, exploratory design, and progressive automation.
 
-A naive AI pipeline prematurely commits to hidden policies for retrieval, ranking, context construction, synthesis, and validation. During early development, these policies should be treated as hypotheses rather than fixed implementation details. The system should expose intermediate artifacts at selected stage boundaries, allow controlled intervention, persist traces of modifications and outcomes, and use those traces to derive, evaluate, and eventually automate stable policies.
+A naive AI pipeline prematurely commits to hidden policies for retrieval, ranking, Context Assembly, synthesis, and validation. During early development, these policies should be treated as hypotheses rather than fixed implementation details. The system should expose intermediate artifacts at selected stage boundaries, allow controlled intervention, persist traces of modifications and outcomes, and use those traces to derive, evaluate, and eventually automate stable policies.
 
 problem:
 

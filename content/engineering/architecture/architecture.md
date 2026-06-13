@@ -45,7 +45,7 @@ driving forces
 # Toolbox
 
 
-One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Toolbox]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
+One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [[topics/engineering/architecture/toolbox#Laws]] section.
 
 common principles
 

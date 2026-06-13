@@ -11,7 +11,9 @@ linkTitle: "Layer 0 Natural Language Properties"
 
 This document organizes important properties of natural language from a linguistic and semantic point of view. The focus is on how natural language differs from programming languages, formal languages, and APIs.
 
-The document intentionally excludes AI-system-design mechanisms, implementation patterns, agent architecture, tool-use policies, and engineering solutions. The goal here is to describe the linguistic phenomena themselves and their relationships.
+We have to define the foundational properties of natural language as an interface protocol, ensuring that system architectures *natively accommodate indeterminacy, context-dependence, and pragmatic intent*, rather than attempting to enforce formal-language determinism on the user.
+
+Also teams lack sometimes an explicit model of the linguistic mechanisms behind user input, so they misdiagnose failures, assign fixes to the wrong layer, and overestimate what a component can infer or execute safely.
 
 ## Core thesis
 
@@ -22,16 +24,16 @@ Programming languages and APIs are designed around explicitness, determinism, st
 
 A compact contrast:
 
-| Dimension | Programming languages / APIs | Natural language |
-|---|---|---|
-| Reference | Explicit identifiers | Contextual expressions, pronouns, deixis |
-| Meaning | Defined by formal semantics or schema | Interpreted through semantics, context, and pragmatics |
-| Missing information | Usually invalid or rejected | Often normal and recoverable |
-| Ambiguity | Usually an error | Often manageable or even useful |
-| Context | External to the syntax unless explicitly modeled | Central to interpretation |
-| Intent | Encoded as explicit operation | Inferred from utterance, context, and situation |
-| Interaction | Usually transactional | Often incremental, corrective, and collaborative |
-| Social meaning | Mostly absent | Often structurally important |
+| Dimension           | Programming languages / APIs                                                                | Natural language                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Reference           | Explicit identifiers and **formally scoped** environments (closures, namespaces).           | Contextual expressions, pronouns, deixis                                       |
+| Meaning             | Defined by **formal semantics** (operational, denotational) and rigid schemas.              | Interpreted through semantics, context, and pragmatics                         |
+| Missing information | Must be resolvable via **deterministic algorithms** (e.g., type inference, defaults).       | Normal; recovered via **pragmatic inference** and shared background knowledge. |
+| Ambiguity           | Strictly resolved via precedence rules, or rejected as a syntax/type error.Usually an error | Often manageable, functionally necessary, or structurally useful.              |
+| Context             | **Closed-world**: Strictly defined by lexical or dynamic scope boundaries.                  | **Open-world**: Relies on unbounded situational and cultural knowledge.        |
+| Intent              | Stated explicitly (imperative) or resolved via deterministic solvers (declarative).         | Inferred from the utterance, speaker goals, and social situation.              |
+| Interaction         | **Mechanically corrective** (e.g., REPLs, compile-time errors, LSP feedback).               | **Socially collaborative** (incremental repair, asking for clarification).     |
+| Social meaning      | Irrelevant to the execution semantics (code executes identically regardless of intent).     | Structurally foundational to the interpretation of the message.                |
 
 ## 1. Foundational linguistic layers
 
@@ -1099,41 +1101,51 @@ Discourse:
 
 - The utterance likely modifies a previous draft or proposal.
 
-## 9. Comparison with programming languages and APIs
+## 9. Comparison with formal languages, APIs, and intermediaries
 
 
-The contrast with programming languages and APIs helps clarify the distinctive nature of natural language.
+This section explicitly separates the internal execution semantics of a programming language (state management and logic) from boundary schemas (APIs) and intermediate domain-specific models.
 
-### 9.1 Programming languages
+The contrast with programming languages and APIs helps clarify the distinctive nature of natural language. By observing how systems process meaning across a spectrum of communicative protocols, we can map exactly where systems enforce strict execution bounds and where natural language relies on open-world inference.
+
+The fundamental baseline is that formal languages favor explicit, context-independent interpretation, while natural language favors situated, context-sensitive, pragmatically inferred meaning.
+
+### 9.1 General-purpose programming languages (Internal determinism)
 
 
-Programming languages require formally valid expressions whose meaning is governed by a specification, compiler, interpreter, type system, or runtime.
+Programming languages govern a system's internal state machine. They require formally valid expressions whose meaning is governed by a specification, compiler, interpreter, type system, or runtime.
 
-Typical properties:
+Typical properties include:
 
 - explicit variables
 - fixed syntax
 - defined operators
 - scoped bindings
-- deterministic parsing where possible
 - strict error behavior
 - formal execution model
 
-Example:
+**Layer 0 Contrast:** General-purpose programming languages are the antithesis of natural language because they completely reject **Group A (Indeterminacy)**. A compiler will halt immediately if faced with ambiguity or vagueness. Furthermore, they reject **Group E (Social and communicative framing)**; social meaning is entirely irrelevant to the execution semantics, and code executes identically regardless of intent. Context is strictly "closed-world," defined by exact lexical or dynamic scope boundaries.
 
-```text
-reschedule(eventId="evt_123", date="2026-05-27")
-```
+### 9.2 Declarative configuration languages (Bounded context dependence)
 
 
-The operation, target, and date are explicit.
+Declarative configuration languages (e.g., Terraform, Kubernetes YAML) define a desired infrastructure end-state rather than imperative operations. The system's execution loop continuously compares the environment to the configuration and mutates the system to match.
 
-### 9.2 APIs
+**Layer 0 Contrast:** These languages introduce a mechanized, rigid form of **Group B (Context dependence)**. A configuration file cannot be evaluated in isolation; its execution depends entirely on an external state file or environment. However, unlike natural language--which relies on unbounded situational and cultural knowledge--this context remains strictly defined and bounded. There is no unspoken background assumption; state is mathematically tracked.
+
+### 9.3 Domain-specific languages and query systems (Deterministic intent)
 
 
-APIs require inputs that conform to a schema.
+Domain-Specific Languages (DSLs) like SQL or GraphQL are highly specialized interfaces optimized for a single operational domain. They are largely declarative, allowing the user to state the "what" while the system handles the "how."
 
-Typical properties:
+**Layer 0 Contrast:** DSLs mimic **Group C (Pragmatic meaning and speaker intent)** by abstracting execution. Intent is resolved via deterministic solvers. However, they aggressively reject phenomena like vagueness (fuzzy boundaries). A database query planner cannot process a request for values that are "cheap" or "nearby" without a strictly explicit, deterministic parameter.
+
+### 9.4 Application programming interfaces (Boundary validation)
+
+
+APIs govern the external communication boundary between systems. They do not manage internal state directly; instead, they require inputs that conform to a schema.
+
+Typical properties include:
 
 - named endpoints or methods
 - required parameters
@@ -1143,37 +1155,44 @@ Typical properties:
 - defined response formats
 - explicit success/failure states
 
-Example:
+**Layer 0 Contrast:** APIs strictly reject **Group D (Discourse and conversational structure)**. They are stateless and transactional. While natural language users often omit required parameters--relying on underspecification because it is efficient or socially expected--doing so in an API results in a validation error. APIs do not support mixed initiative or incremental refinement natively.
 
-```json
-{
-  "event_id": "evt_123",
-  "new_date": "2026-05-27",
-  "timezone": "America/Sao_Paulo"
-}
-```
+### 9.5 Controlled natural languages (The syntactic illusion)
 
 
-The API does not normally infer "it," "tomorrow," "same as before," or "a bit more formal" unless those concepts are separately modeled.
+Controlled Natural Languages (CNLs), such as Gherkin (Cucumber) or AppleScript, are formal execution interfaces disguised with natural language vocabulary (e.g., `Given a user is logged in, When they click 'Buy'`).
 
-### 9.3 Natural language
+**Layer 0 Contrast:** CNLs present a syntactic illusion. While they use English words, they map directly to rigid, operational schemas. They structurally prohibit conversational repair, implicature, and coreference. Deviating with a non-mapped synonym causes a fatal parsing error, proving that simply using English words does not constitute a natural language interface if indeterminacy is disallowed.
+
+### 9.6 Natural language (Situated pragmatic interface)
 
 
-Natural language permits expressions such as:
+Natural language is not simply an imprecise version of a programming language; it is a different kind of communicative system. It permits highly underspecified expressions such as:
 
 > "Move it to tomorrow."
 
-This compact utterance may involve:
+This compact utterance fails deterministic parsing and lacks the required parameters of an API schema. To execute it, a system must use implicit context to resolve "it," deictic framing to resolve "tomorrow," and pragmatics to determine if "move" means to reschedule, relocate, or reorder. Natural language accommodates missing information as normal, recovering it via pragmatic inference and shared background knowledge.
 
-| Feature | Required interpretation |
-|---|---|
-| "move" | reschedule, relocate, reorder, transfer? |
-| "it" | which event, object, task, or file? |
-| "tomorrow" | date relative to speaker and timezone |
-| omitted time | preserve existing time or choose a new one? |
-| omitted confirmation | should this be direct, tentative, or discussed? |
+### 9.7 [WIP] Synthesis: The interaction paradigm matrix
 
-Natural language is not less structured than an API. It is structured differently: through context, inference, discourse, and social convention.
+
+Because formal systems and natural language optimize for fundamentally different goals, their primary interaction loops handle missing information and syntactic deviation through completely divergent mechanisms.
+
+This matrix maps communicative systems across a spectrum ranging from maximum internal determinism (PLs) to maximum situated pragmatics (Natural Language). By isolating the "Primary Mechanism" alongside the parameters derived from the Layer 0 taxonomy, we can pinpoint exactly how a system handles intent, context, and failure.
+
+| **Paradigm**                  | **Primary Mechanism(s)**                                        | **Tolerance for Indeterminacy (Group A)**                                                                     | **Contextual Scope (Group B)**                                                                       | **Resolution of Intent (Group C)**                                                                         | **Interactional Initiative (Group D)**                                                    | **Failure Resolution Protocol**                                                                          |
+| ----------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Programming Languages**     | Compiler/Interpreter parsing AST, static/dynamic type checking. | **Zero-Tolerance / Fatal:** Ambiguity immediately corrupts the parse tree.                                    | **Closed-World / Scoped: **Defined strictly by lexical scope or dynamic bindings.                    | **Explicit Invocation:** Operations and control flows are imperatively defined.                            | **Strictly Transactional: **Monolithic compilation or evaluation pass.                    | **Execution Halt:** Triggers fatal exception (e.g., Syntax/Type Error) to protect machine state.         |
+| **Declarative Configs**       | State reconciliation loop, idempotent target-state application. | **Zero-Tolerance / Fatal:**Underspecified parameters prevent state synchronization.                           | **Closed-World / External:** Relies on explicitly tracked, mathematical state files or cluster data. | **Target-State Declaration:** Desired outcome is explicit; the "how" is abstracted.                        | **Asynchronous / Polling:** System continuously checks state and applies patches.         | **State Drift Alert / Halt: **Aborts application to prevent corrupting infrastructure state.             |
+| **DSLs & Query Systems**      | Deterministic query planner / domain-specific execution engine. | **Bounded Inference:**Rejects vague boundaries (e.g., "nearby") but infers optimal execution paths.           | **Closed-World / Schema:**Bound entirely to the specific domain structure (e.g., a database schema). | **Solver-Delegated:** Intent is stated, but the operational path is resolved via deterministic algorithms. | **Strictly Transactional:** Single query-response loop.                                   | **Optimization Halt:** Rejects execution if planner cannot resolve a deterministic path.                 |
+| **APIs**                      | Boundary schema validation, stateless JSON/RPC payload parsing. | **Zero-Tolerance / Fatal:** Missing required information results in an invalid payload.                       | **Stateless / Isolated:** The payload must contain 100% of the required context.                     | **Explicit Invocation:** Target endpoint, method, and parameters are fully specified.                      | **Strictly Transactional:** Single request-response cycle.                                | **Boundary Rejection: **Blocks payload to protect data contract (e.g., HTTP 400 Bad Request).            |
+| **Controlled NLs (CNLs)**     | Rigid lexical mapping, regex-based token translation to AST.    | **Zero-Tolerance / Fatal:** Presents a syntactic illusion; synonyms or slight phrasing changes cause failure. | **Closed-World / Script:** Bound to predefined behavioral scenarios and strict step definitions.     | **Explicit Invocation (Masked):** Prose maps directly to underlying deterministic operations.              | **Strictly Transactional:** Evaluated top-down as a monolithic test or script.            | **Lexical Halt: **Fails on out-of-vocabulary tokens or unmapped syntax patterns.                         |
+| **Natural Language**(Layer 0) | Pragmatic inference, cognitive processing, social convention.   | **Open Inference:**Underspecification and ambiguity are normal; meaning is recovered dynamically.             | **Open-World / Situational:**Relies on unbounded history, physical environment, and assumptions.     | **Pragmatic Inference:** Inferred from tone, relevance, speech act, and speaker goals.                     | **Mixed-Initiative:** Incremental refinement, mutual shared control over the interaction. | **Conversational Repair:**Triggers discourse loops (e.g., clarification questions) to negotiate meaning. |
+
+### Architectural Takeaway
+
+
+A true natural language interface protocol cannot simply be an API wrapped in a speech-to-text parser. It requires an architecture natively capable of **Open Inference**, **Open-World Scope**, and **Mixed-Initiative Interaction**, utilizing **Conversational Repair** rather than halting execution when faced with indeterminacy.
 
 ## 10. Complete taxonomy table
 

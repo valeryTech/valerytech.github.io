@@ -4351,7 +4351,7 @@ If older documents use the flat `C1-C15` control-family list, map them as follow
 
 | Old control | New home |
 |---|---|
-| C1 Context Construction Controls | L3B1 Context Assembly Controls |
+| C1 Context Assembly Controls | L3B1 Context Assembly Controls |
 | C2 Retrieval and Source Controls | L3B2 Retrieval Controls + L3B3 Source Authority and Freshness Controls |
 | C3 State and Memory Controls | L3C1 State Persistence Controls + L3C2 Memory Rehydration Controls |
 | C4 Prompt and Task-Contract Controls | L3A1 Task Contract Controls + L3A2 Instruction Hierarchy Controls + L3A3 Prompt Assembly Controls |

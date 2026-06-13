@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 
 from scripts.migrate.attachments import AttachmentResolver
@@ -11,6 +12,8 @@ from scripts.migrate.reporting import write_report
 from scripts.migrate.runtime import MigrationRoots, MigrationRun
 from scripts.migrate.staging import stage_output
 from scripts.migrate.sync import sync_to_content
+
+logger = logging.getLogger(__name__)
 
 
 def run(
@@ -37,7 +40,9 @@ def run(
     )
 
     try:
+        logger.info("Starting migration pipeline with command: %s", command)
         plan = build_migration_plan(config, roots)
+        logger.info("Migration plan built.")
         report.managed_targets.extend(path.as_posix() for path in plan.managed_targets)
         run_state = MigrationRun(
             command=command,
@@ -49,11 +54,19 @@ def run(
             report=report,
         )
         staging_root = stage_output(run_state)
+        logger.info("Output staged successfully.")
         write_report(report, report_root)
         if command == "sync":
             sync_to_content(plan, content_root, staging_root)
+            logger.info("Content sync complete.")
     except MigrationFailed as exc:
+        logger.error("Migration failed: %s", exc)
         report.add_error(str(exc))
+        write_report(report, report_root)
+        return 1
+    except Exception as exc:
+        logger.exception("Unexpected error during migration")
+        report.add_error(f"Unexpected error: {exc}")
         write_report(report, report_root)
         return 1
 

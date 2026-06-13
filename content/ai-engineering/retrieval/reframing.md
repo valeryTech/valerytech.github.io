@@ -112,25 +112,25 @@ User-facing result or action
 
 The LLM may be used in any of these nodes:
 
-|System stage|Possible LLM role|
-|---|---|
-|Query understanding|intent detection, ambiguity detection, slot extraction, query decomposition|
-|Source routing|decide whether to use search, SQL, vector index, graph, CRM, logs, codebase, API|
-|Retrieval improvement|query rewriting, hypothetical document generation, semantic expansion, reranking support|
-|Document processing|chunking, entity extraction, metadata generation, taxonomy mapping|
-|Knowledge enrichment|graph construction, relationship extraction, event extraction, schema alignment|
-|Context construction|summarization, compression, contradiction detection, evidence packing|
-|Planning|dynamic workflow construction, tool selection, subtask sequencing|
-|Execution|API call planning, code generation, structured transformations|
-|Verification|citation checking, answer-grounding checks, consistency checks|
-|Presentation|final answer, report, UI text, table, explanation, next-best action|
+| System stage          | Possible LLM role                                                                        |
+| --------------------- | ---------------------------------------------------------------------------------------- |
+| Query understanding   | intent detection, ambiguity detection, slot extraction, query decomposition              |
+| Source routing        | decide whether to use search, SQL, vector index, graph, CRM, logs, codebase, API         |
+| Retrieval improvement | query rewriting, hypothetical document generation, semantic expansion, reranking support |
+| Document processing   | chunking, entity extraction, metadata generation, taxonomy mapping                       |
+| Knowledge enrichment  | graph construction, relationship extraction, event extraction, schema alignment          |
+| Context Assembly  | summarization, compression, contradiction detection, evidence packing                    |
+| Planning              | dynamic workflow construction, tool selection, subtask sequencing                        |
+| Execution             | API call planning, code generation, structured transformations                           |
+| Verification          | citation checking, answer-grounding checks, consistency checks                           |
+| Presentation          | final answer, report, UI text, table, explanation, next-best action                      |
 
 ## Toward a Better Mental Model
 
 
 Because (at least naive) "RAG" implies a linear `Fetch -> Append -> Create` workflow, it fails to capture the broader system architectural boundaries and the shift from answer generation to task completion.
 
-### From Retrieval-First to Task-First Context Construction
+### From Retrieval-First to Task-First Context Assembly
 
 
 RAG should be understood not as "retrieval added to generation," but as one implementation of a broader product pattern: constructing task-relevant context from external knowledge so an AI system can complete user JTBD.
@@ -146,7 +146,7 @@ So the architectural view direction should be:
 ## **Modularity as the Engineering Boundary**
 
 
-Once RAG is reframed as task-relevant context construction, the system should not be designed as a single opaque chain. It should be decomposed into cohesive modules or components with explicit contracts.
+Once RAG is reframed as task-relevant Context Assembly, the system should not be designed as a single opaque chain. It should be decomposed into cohesive modules or components with explicit contracts.
 
 This is not unique to AI systems. It is the standard software-engineering principle of modularity: separate responsibilities, minimize unnecessary coupling, and define interfaces that allow components to be changed, tested, evaluated, and operated independently.
 
@@ -166,7 +166,7 @@ Each module should have a clear contract. For example:
 ## RAG retrieval engineering
 
 
-> Within task-first context construction, retrieval engineering is representation alignment.
+> Within task-first Context Assembly, retrieval engineering is representation alignment.
 
 A retrieval system succeeds when it aligns three things: the user's intent (task-shaped information need), the representations of the source data, and the matching strategy between them.
 
@@ -223,7 +223,7 @@ A clearer taxonomy should separate five things: the product objective, the broad
 | ----------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | Product objective       | **Task completion**                                                      | The outcome the system is trying to achieve for the user                                 |
 | Broad system category   | **Context-augmented task systems**                                       | AI systems that complete tasks by acquiring, structuring, and using external context     |
-| Design principle        | **Task-first context construction**                                      | The method for designing these systems around the user task and its context requirements |
+| Design principle        | **Task-first Context Assembly**                                      | The method for designing these systems around the user task and its context requirements |
 | Implementation pattern  | **RAG**                                                                  | A narrower retrieve-then-generate pattern within the broader category                    |
 | Runtime artifact        | **Working context**                                                      | The structured information the system uses to reason, act, verify, or present a result   |
 | System responsibilities | **Context acquisition, context structuring, verification, presentation** | The engineering functions required to construct and use working context                  |
@@ -247,16 +247,16 @@ The central engineering question is:
 
 This shifts the architectural boundary from individual components to the full context workflow. The model, prompt, retriever, vector database, tools, and verification layer become components inside a task-centered system. The design focus becomes reliable task completion through appropriate working context.
 
-### Task-First Context Construction
+### Task-First Context Assembly
 
 
-**Task-first context construction** is the design principle for context-augmented task systems.
+**Task-first Context Assembly** is the design principle for context-augmented task systems.
 
 Instead of beginning with a retriever, vector store, prompt template, or model output, the system (or developer) begins with the user task. The first question is not "what should we retrieve?" but "what does the system need to know, inspect, verify, or do in order to complete this task correctly?"
 
 This shifts the design center from retrieval mechanics to task requirements. A task may require documents, database rows, API responses, application state, user constraints, permissions, policy rules, calculations, or human clarification. These are not interchangeable pieces of text to append to a prompt. They are different forms of context with different authority, freshness, structure, and verification requirements.
 
-Task-first context construction therefore has (should have) five core steps:
+Task-first Context Assembly therefore has (should have) five core steps:
 
 1. Interpret the user task, including intent, constraints, ambiguity, and desired outcome.
 2. Determine what knowledge, state, evidence, tools, and verification signals are required.
@@ -266,7 +266,7 @@ Task-first context construction therefore has (should have) five core steps:
 
 In this framing, retrieval is not the starting point of the architecture. It is one context-acquisition method selected when the task requires information from searchable representations. The broader objective is to construct the right working context for the job the user is trying to accomplish.
 
-The practical test is simple: if the constructed context is insufficient, stale, unauthorized, poorly structured, or mismatched to the task, the system will fail even if the model and prompt are strong. Task-first context construction makes context quality a function of task success, not just retrieval relevance.
+The practical test is simple: if the constructed context is insufficient, stale, unauthorized, poorly structured, or mismatched to the task, the system will fail even if the model and prompt are strong. Task-first Context Assembly makes context quality a function of task success, not just retrieval relevance.
 
 ### The Context Lifecycle
 

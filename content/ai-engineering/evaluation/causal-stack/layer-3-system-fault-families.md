@@ -552,7 +552,7 @@ Use "instruction-following drift" as an informal umbrella term, not as a new ato
 | Prompt or example priority confusion | F03 Context Priority Confusion + F12 Constraint Misclassification + F13 Example Overgeneralization | The system is still "following instructions," but the wrong instruction signal dominates. |
 | Untrusted embedded instruction uptake | F15 Control/Data Confusion + F16 Prompt-Injection Compliance | Non-operative content is treated as operative instruction. |
 
-On the Layer 3 side, the likely system homes are still L3S1 Context Assembly, L3S3 Instruction and Policy Control, and L3S4 State and Memory, depending on whether the failure is in context construction, instruction control, or state persistence.
+On the Layer 3 side, the likely system homes are still L3S1 Context Assembly, L3S3 Instruction and Policy Control, and L3S4 State and Memory, depending on whether the failure is in Context Assembly, instruction control, or state persistence.
 
 # How to classify "Hidden regression"
 

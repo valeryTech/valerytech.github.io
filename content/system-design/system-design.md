@@ -158,7 +158,7 @@ vsevolodovich:
 # Projects & Examples
 
 
-[[projects_gtd/projects|projects]] SD section
+[[topics/gtd/projects_gtd/projects|projects]] SD section
 
 # Community
 

@@ -22,7 +22,7 @@ include = ["**/*.md", "*.md"]
 [[imports]]
 name = "engineering"
 source_root_kind = "external"
-source_subtree = "engineering"
+source_subtree = "topics/engineering"
 target_subtree = "engineering"
 include = ["**/*.md", "*.md"]
 
