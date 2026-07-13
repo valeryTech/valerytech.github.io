@@ -74,13 +74,13 @@ or, more precise:
 ## System Assumptions and Constraints
 
 
-To design an effective experimentation infrastructure, we must explicitly bound the system with the following operational realities. These follow from [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}}) and the broader [[layer-1c-ai-system-causal-features|AI-system-level causal features]] in the causal stack.
+To design an effective experimentation infrastructure, we must explicitly bound the system with the following operational realities. These follow from [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}}) and the broader [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}) in the causal stack.
 
-- **Non-Determinism:** Foundational models introduce inherent stochasticity. System design assumes exact output replication is rarely guaranteed; reproducibility focuses on replicating the _distribution_ of outcomes and exact state configurations. This is part of the behavioral variability described in [[layer-1c-ai-system-causal-features|AI-system-level causal features]].
+- **Non-Determinism:** Foundational models introduce inherent stochasticity. System design assumes exact output replication is rarely guaranteed; reproducibility focuses on replicating the _distribution_ of outcomes and exact state configurations. This is part of the behavioral variability described in [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
 - **Eval-Driven Bottlenecks:** Ground-truth evaluations often require human-in-the-loop (HITL) review. Automated proxy metrics (e.g., LLM-as-a-judge) operate under the constraint of imperfect alignment with human preference, which is why teams need [evaluation harnesses]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}}) and an evaluation [platform layer]({{< ref "ai-engineering/evaluation/harness-and-platform" >}}) rather than one-off checks.
-- **Cost and Latency:** Exhaustive regression testing across all model parameters and prompts scales linearly in cost and time. The architecture must support statistical sampling and multi-tiered evaluation pipelines while respecting the [[layer-1c-ai-system-causal-features|quality-cost-latency operating envelope]].
-- **Data Drift:** The operational environment is highly dynamic. Data distributions and user behaviors will shift, requiring continuous feedback loops to update baseline evaluation sets. This belongs with the runtime and environment-change concerns in [[layer-1c-ai-system-causal-features|AI-system-level causal features]].
-- For the broader map of these properties and how they connect to faults, controls, and evaluation, see [[causal-stack-operating-model]].
+- **Cost and Latency:** Exhaustive regression testing across all model parameters and prompts scales linearly in cost and time. The architecture must support statistical sampling and multi-tiered evaluation pipelines while respecting the [quality-cost-latency operating envelope]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
+- **Data Drift:** The operational environment is highly dynamic. Data distributions and user behaviors will shift, requiring continuous feedback loops to update baseline evaluation sets. This belongs with the runtime and environment-change concerns in [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
+- For the broader map of these properties and how they connect to faults, controls, and evaluation, see [Causal Stack Operating Model]({{< ref "ai-engineering/causal-stack/causal-stack-operating-model" >}}).
 
 # Connections
 
@@ -88,10 +88,10 @@ To design an effective experimentation infrastructure, we must explicitly bound 
 - [Ebse]({{< ref "engineering/eng-exp/ebse" >}}) - Empirical Software Engineering
 - [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}})
-- [[layer-1c-ai-system-causal-features|AI-system-level causal features]]
+- [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}})
 - [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}})
 - [Harness And Platform]({{< ref "ai-engineering/evaluation/harness-and-platform" >}})
-- [[causal-stack-operating-model]]
+- [Causal Stack Operating Model]({{< ref "ai-engineering/causal-stack/causal-stack-operating-model" >}})
 - science method
 
 Treude and Storey (2025) note that generative AI forces software engineering to adapt traditional empirical research methods to capture the new, probabilistic dynamics of AI tools. Because AI models act as "general-purpose technologies," developers are shifting from writing code to designing, evaluating, and refining experimental solutions. This necessitates the exact kind of structured experimentation pipelines
@@ -169,7 +169,7 @@ AI systems are exposed to distribution shift.
 
 User behavior changes. Product catalogs change. Fraud patterns change. language changes. Business rules change. New edge cases appear. Model providers update APIs. Retrieval indexes become stale.
 
-Experimentation helps detect whether a change improves the system under current conditions rather than historical assumptions. In the causal stack, this belongs with [[layer-1c-ai-system-causal-features|runtime context drift and change non-locality]].
+Experimentation helps detect whether a change improves the system under current conditions rather than historical assumptions. In the causal stack, this belongs with [runtime context drift and change non-locality]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
 
 ### 5. AI systems fail in subtle ways
 
@@ -208,7 +208,7 @@ Experimentation turns these from opinions into measured engineering decisions.
 ### 7. Cost and latency are first-class constraints
 
 
-A model that performs best may be too expensive or too slow. Experimentation helps find the operating point where quality, latency, and cost are acceptable inside the [[layer-1c-ai-system-causal-features|quality-cost-latency operating envelope]].
+A model that performs best may be too expensive or too slow. Experimentation helps find the operating point where quality, latency, and cost are acceptable inside the [quality-cost-latency operating envelope]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
 
 For example:
 

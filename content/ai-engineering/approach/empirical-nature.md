@@ -4,35 +4,86 @@ toc: true
 title: "Empirical Nature"
 linkTitle: "Empirical Nature"
 ---
-# AI Systems Are Empirical Systems
-
-## Purpose
+# AI Systems Require Behavioral Evidence
 
 
-This note defines a working principle for designing, evaluating, and reasoning about AI systems:
+This note defines a working principle for designing, evaluating, and operating AI systems.
 
-> AI systems are empirical systems.
+## Short
 
-So, AI-system quality cannot be fully inferred from code, prompts, model choice, architecture diagrams, or component specifications alone.
+
+An AI system’s behavior is implemented by its complete runtime composition, including model weights, prompts, code, data, tools, policies, and state. However, much of the model’s behavior is encoded implicitly in learned parameters rather than expressed as an inspectable specification. Consequently, engineers can execute the system to observe particular outputs, but they cannot generally derive its product-level behavior across an operational distribution through implementation inspection or local component reasoning alone. Those properties must be established empirically.
 
 ## Core claim
 
 
+There are two common errors:
+1. Treating AI behavior as arbitrary or inexplicable.
+2. Treating architectural and implementation correctness as sufficient evidence of product-level quality.
+
+AI-system quality is an empirical property. This does not mean that AI behavior is arbitrary, that implementation reasoning is unimportant, or that quality can only be tested in production.
+
+The behavior cannot be fully inferred from code, prompts, model choice, architecture diagrams, or component specifications alone. And the behavior is implemented by the system, but it is not fully specified in a human-legible or compositionally predictable form.
+
 An AI system is empirical because its relevant behavior must be discovered, measured, and validated through observation under realistic conditions.
 
-For deterministic software, we can often reason locally: "Given this input, this code path, and this state, the output should be exactly X". That form of reasoning still matters in AI systems. But it is insufficient by itself.
-
-Once an LLM is embedded in a real product -- with prompts, retrieval, tools, policies, state, schemas, memory, runtime configuration, and production infrastructure -- the system's actual behavior has to be established through representative tests, repeated runs, perturbations, traces, regression checks, and production monitoring.
-
 Conceptually:
-> AI engineering requires implementation reasoning plus behavioral evidence.
+> AI engineering requires implementation reasoning **plus** behavioral evidence.
 
 So, calling an AI system empirical means the system's behavior must be observed and measured under the conditions in which it is expected to operate. But it does **not** mean the system is arbitrary or only testable in production. It means static reasoning is incomplete without behavioral validation.
 
 ## Why this is true
 
+### Implementation does not amount to behavioral specification
 
-This follows from the system-level causal properties of AI applications: behavior can vary across runs and contexts, correctness is often soft and task-specific, knowledge is distributed across external sources, outputs may need evidence grounding, behavior emerges from pipelines and agents, environments drift, failures are weakly observable by default, and quality is constrained by cost and latency tradeoffs. I treat these as a AI-system-level causal features layer in the stack (see [[layer-1c-ai-system-causal-features]]).
+
+In conventional software, important behavior is often expressed relatively directly through human-written control flow, constraints, types, and specifications. In AI systems, much of the relevant behavior is induced by learned parameters, training data, prompts, context, retrieval results, tool outputs, sampling choices, and interactions between components.
+
+The system still implements the behavior in a causal sense. However, that behavior is usually not represented in a form from which engineers can compositionally derive answers to questions such as:
+
+- How often will the system answer correctly?
+- Which classes of input will cause hallucinations?
+- How robust is it to ambiguous or adversarial input?
+- Will improvements on one task degrade another?
+- How will model behavior interact with retrieval, tools, memory, and user behavior?
+
+This makes behavioral observation necessary.
+
+This follows from the system-level causal properties of AI applications: behavior can vary across runs and contexts, correctness is often soft and task-specific, knowledge is distributed across external sources, outputs may need evidence grounding, behavior emerges from pipelines and agents, environments drift, failures are weakly observable by default, and quality is constrained by cost and latency tradeoffs. I treat these as a AI-system-level causal features layer in the stack (see [Layer 1c Ai System Causal Features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}})).
+
+### Why compositional reasoning breaks down
+
+
+In conventional software, components often expose explicit semantics:
+
+```
+validated input
++ known algorithm
++ explicit branch conditions
+→ predictable result
+```
+
+
+With a learned model, the component semantics are largely implicit:
+
+```
+input
++ billions of learned parameters
++ context
+→ behavior discovered through execution
+```
+
+
+Even if every surrounding component is understood, the model’s contribution cannot usually be summarized as a stable, complete contract such as:
+
+```
+For every supported input satisfying P, the model will produce an output satisfying Q.
+```
+
+
+That contract has to be investigated empirically.
+
+The same problem occurs at the composed-system level. Knowing the isolated properties of retrieval, prompting, generation, and validation does not fully determine how they interact across the operational distribution.
 
 ## Engineering consequences
 
@@ -79,6 +130,19 @@ This behavioral specification is a part of evaluation harness subsystem delivery
 Engineering rule:
 
 > Do not treat an AI system as reliable until its intended behavior has been measured under the conditions in which it is expected to operate.
+
+## Execution is not the same as inspection
+
+
+For a particular input, an exact output can be obtained by executing a deterministic model configuration. That does not mean the output—or broader properties of the system—can be feasibly derived by inspecting the code and weights.
+
+This gives three different levels:
+
+1. **Encoded:** Behavior is implemented in the complete system state, including model weights.
+2. **Executable:** Particular behavior can be observed by running the system on a particular input.
+3. **Predictable:** General behavioral properties can be inferred without sampling representative executions.
+
+AI systems generally satisfy the first two. The third is limited.
 
 ## Common anti-patterns
 
@@ -132,7 +196,7 @@ Better:
 
 This supports the idea that **experimentation is not outside AI engineering**. It is the base layer because the only reliable way to improve an AI system is to run controlled experiments and measure what changes. See [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
 
-## Application: practical design questions
+## Application (WIP): practical design questions
 
 
 Use these questions during design reviews, eval planning, release decisions, and incident analysis.
