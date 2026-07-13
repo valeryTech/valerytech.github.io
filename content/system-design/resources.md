@@ -100,7 +100,7 @@ communication and protocols
 
 [Databases]({{< ref "engineering/data/databases" >}}#resources)
 
-[Engineering Guide]({{< ref "engineering/engineering-guide" >}}#resources)
+[[engineering-guide#Resources]]
 
 "Fundamentals of Backend Engineering"
 

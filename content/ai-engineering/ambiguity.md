@@ -71,7 +71,7 @@ Ambiguity has multiple sources. Some come from natural language. Some come from 
 ### 1. Natural-language interface
 
 
-Natural language is not a strict API. It supports incomplete, ambiguous, contextual, socially aware communication. See [Layer 0 Natural Language Properties]({{< ref "ai-engineering/evaluation/causal-stack/layer-0-natural-language-properties" >}})
+Natural language is not a strict API. It supports incomplete, ambiguous, contextual, socially aware communication. See [[layer-0-natural-language-properties]]
 
 The design lesson:
 

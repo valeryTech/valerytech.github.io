@@ -105,15 +105,15 @@ source_root_kind = "external"
 source_subtree = "ai-engineering"
 target_subtree = "ai-engineering"
 selection_mode = "opt-in"
-selection_paths = ["coding-agents", "evaluation", "ambiguity.md", "empirical-nature.md", "experimentation.md"]
+selection_paths = ["coding-agents", "evaluation", "ambiguity.md", "approach/empirical-nature.md", "approach/experimentation.md"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 ```
 
 The committed manifest currently uses that pattern for `ai-engineering`, so
 only `coding-agents/`, `evaluation/`, `ambiguity.md`,
-`empirical-nature.md`, `experimentation.md`, and the root `_index.md` are
-regenerated for that section.
+`approach/empirical-nature.md`, `approach/experimentation.md`, and the root
+`_index.md` are regenerated for that section.
 
 ## Operational Notes
 

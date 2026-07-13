@@ -31,6 +31,36 @@ additional:
 
 we could introduce some 'points' in the pipeline where we manually manage the context assembly, for example. so providing interactive platform/base will be beneficial
 
+## Human-in-the-loop systems
+
+
+**HITL systems** are about placing review, correction, approval, and escalation points inside an AI workflow. The purpose is risk control, quality improvement, compliance, and feedback capture.
+
+**Human, system, and evaluator feedback loops**
+
+That lets you include faster feedback from:
+
+- human reviewers,
+- domain experts,
+- end users,
+- automated judges,
+- policy engines,
+- deterministic validators,
+- downstream system signals,
+- production outcomes.
+
+Strictly speaking, when the feedback comes from another model or system, it is no longer purely "human-in-the-loop." It becomes a **control loop**, **review loop**, or **evaluator loop**. That distinction is useful.
+
+Relevant patterns include human review queues, approval gates, escalation paths, judge calibration, feedback flywheels, online and offline evaluation loops, production signal capture, edit-to-fix workflows, audit trails, and confidence-based routing.
+
+xxx
+
+You can design AI workflows with human review, feedback capture, escalation paths, and auditability where full automation is unsafe or immature.
+
+This matters for startups selling into legal, healthcare, finance, operations, support, sales, and enterprise workflows. "Allus" explicitly mentions human feedback, review loops, and iterative task refinement.
+
+Human-in-the-loop workflows, judge calibration. Feedback flywheels, online/offline feedback systems, production signal capture, edit-to-fix workflows.
+
 ### some thoughts on algorithm/pipeline development
 
 
