@@ -12,7 +12,7 @@ This note defines a working principle for designing, evaluating, and operating A
 ## Short
 
 
-An AI system’s behavior is implemented by its complete runtime composition, including model weights, prompts, code, data, tools, policies, and state.
+An AI system's behavior is implemented by its complete runtime composition, including model weights, prompts, code, data, tools, policies, and state.
 
 Much of the behavior contributed by learned components is encoded implicitly rather than expressed as a human-legible behavioral specification. Engineers can execute the system and observe particular outputs, but they generally cannot derive its product-level behavior across an operational distribution through implementation inspection or local component reasoning alone.
 
@@ -30,12 +30,6 @@ There are two common errors:
 
 AI-system quality is an empirical property. This does not mean that AI behavior is arbitrary, that implementation reasoning is unimportant, or that quality can only be tested in production. An AI system is empirical because its relevant behavior must be discovered, measured, and validated through observation under realistic conditions.
 
-There are risks conflating three different claims:
-
-1. Actual system behavior is a property of the implemented system (including weights).
-2. Engineers often need empirical methods to learn that behavior.
-3. Confidence that requirements are satisfied **must be supported** by empirical evidence.
-
 The behavior cannot be fully inferred from code, prompts, model choice, architecture diagrams, or component specifications alone. And the behavior is implemented by the system, but it is not fully specified in a human-legible or compositionally predictable form.
 
 Conceptually:
@@ -51,18 +45,6 @@ So, calling an AI system empirical means the system's behavior must be observed 
 In conventional software, important behavior is often expressed relatively directly through human-written control flow, constraints, types, and specifications.
 
 Complex conventional systems also require integration testing, load testing, fault injection, and production observation. AI systems intensify this systems-engineering problem because learned components have implicit semantics, inputs are open-ended, correctness is often task-specific, and behavior depends heavily on context and external state.
-
-Relevant behavior may be influenced by:
-
-- learned parameters and training data;
-- prompts and conversation context;
-- retrieved documents and ranking;
-- tool outputs and external APIs;
-- sampling and decoding choices;
-- policies, validators, and fallback paths;
-- memory and runtime state;
-- interactions between components;
-- user behavior and environmental drift.
 
 The system still implements the behavior in a causal sense. However, that behavior is usually not represented in a form from which engineers can compositionally derive answers to questions such as:
 
@@ -164,24 +146,28 @@ Engineering rule:
 
 This supports the idea that **experimentation is not outside AI engineering**. It is the base layer because the only reliable way to improve an AI system is to run controlled experiments and measure what changes. See [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
 
-## Assurance chain
+## Assurance System
+
+### Lens 1: Assurance Chain
 
 
 A useful engineering model connects five concepts:
 
-| Concept | Meaning |
-|---|---|
-| **Product or behavioral requirement** | A scoped statement of the user need, job to be done, intended outcome, relevant conditions, acceptance criteria, and operating constraints. |
-| **Implementation assurance** | Evidence that explicit mechanisms, controls, interfaces, and deterministic invariants are correctly designed and implemented. |
-| **Behavioral evidence** | Observations of integrated-system behavior under relevant scenarios, including evaluations, experiments, traces, replays, and production observations. |
-| **Assurance assessment** | An interpretation of implementation assurance and behavioral evidence against the requirement, including coverage, uncertainty, limitations, failure severity, and residual risk. |
-| **Operational decision** | A decision to release, restrict, mitigate, monitor, escalate, roll back, or gather more evidence based on the assessment and the organization's risk tolerance. |
+| Concept                               | Meaning                                                                                                                                                                           |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Product or behavioral requirement** | A scoped statement of the user need, job to be done, intended outcome, relevant conditions, acceptance criteria, and operating constraints.                                       |
+| **Implementation assurance**          | Evidence that explicit mechanisms, controls, interfaces, and deterministic invariants are correctly designed and implemented.                                                     |
+| **Behavioral evidence**               | Observations of integrated-system behavior under relevant scenarios, including evaluations, experiments, traces, replays, and production observations.                            |
+| **Assurance assessment**              | An interpretation of implementation assurance and behavioral evidence against the requirement, including coverage, uncertainty, limitations, failure severity, and residual risk. |
+| **Operational decision**              | A decision to release, restrict, mitigate, monitor, escalate, roll back, or gather more evidence based on the assessment and the organization's risk tolerance.                   |
 
 The resulting chain is:
 
 > The requirement defines what must be true. Implementation assurance establishes explicit mechanisms and safeguards. Behavioral evidence measures integrated-system performance. The assessment determines what the combined evidence supports. The operational decision defines what the organization is prepared to release and under which controls.
 
 Behavioral evidence is necessarily scoped. It supports claims about the evaluated system, population, scenarios, configuration, and time period. Its strength depends on representative coverage, data and label quality, sample size, and uncertainty. Those concerns should be handled explicitly in the evaluation methodology rather than hidden behind a single score.
+
+### Lens 2
 
 ## Example: account-compromise escalation
 
