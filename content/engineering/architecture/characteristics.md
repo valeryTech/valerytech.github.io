@@ -18,15 +18,15 @@ Operational architectural characteristics cover capabilities such as performance
 
 Table 4-1. Common operational architectural characteristics
 
-| Term | Definition |
-| --- | --- |
-| Availability | How much of the time the system will need to be available; if that's 24/7, steps need to be in place to allow the system to be up and running quickly in case of any failure. |
-| Continuity | The system's disaster recovery capability. |
-| Performance | How well the system performs; ways to measure this include stress testing, peak analysis, analysis of the frequency of functions used, and response times. |
-| Recoverability | Business continuity requirements: in case of a disaster, how quickly the system must get back online. This includes backup strategies and requirements for duplicate hardware. |
+| Term               | Definition                                                                                                                                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Availability       | How much of the time the system will need to be available; if that's 24/7, steps need to be in place to allow the system to be up and running quickly in case of any failure.                                 |
+| Continuity         | The system's disaster recovery capability.                                                                                                                                                                    |
+| Performance        | How well the system performs; ways to measure this include stress testing, peak analysis, analysis of the frequency of functions used, and response times.                                                    |
+| Recoverability     | Business continuity requirements: in case of a disaster, how quickly the system must get back online. This includes backup strategies and requirements for duplicate hardware.                                |
 | Reliability/safety | Whether the system needs to be fail-safe, or if it is mission critical in a way that affects lives. If it fails, will it cost the company large sums of money? This is often a spectrum rather than a binary. |
-| Robustness | The system's ability to handle error and boundary conditions while running, for example, if the internet connection or power fails. |
-| Scalability | The system's ability to perform and operate as the number of users or requests increases. |
+| Robustness         | The system's ability to handle error and boundary conditions while running, for example, if the internet connection or power fails.                                                                           |
+| Scalability        | The system's ability to perform and operate as the number of users or requests increases.                                                                                                                     |
 
 Operational architectural characteristics overlap heavily with operations and DevOps concerns.
 
