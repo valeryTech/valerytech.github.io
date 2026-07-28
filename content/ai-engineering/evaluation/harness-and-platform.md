@@ -25,18 +25,7 @@ The core question is:
 ## Evaluation Harness
 
 
-The **evaluation harness** is the execution layer. It runs scenarios under controlled conditions and captures enough evidence to compare, debug, and replay behavior.
-
-A useful harness should:
-
-- define representative tasks for workflows and coding agents;
-- capture inputs, tool calls, intermediate outputs, final responses, and generated artifacts;
-- run the same task across prompt variants, models, tools, or agent strategies;
-- score runs using deterministic checks, human review, rubric-based review, or hybrid evaluation;
-- preserve traces so failures can be replayed, inspected, and debugged;
-- compare candidate behavior against a baseline or previous version.
-
-See also: [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}})
+Argumentation : [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}})
 
 ## Evaluation Platform
 

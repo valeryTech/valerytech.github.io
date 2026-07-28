@@ -64,7 +64,7 @@ You need to deliver a new feature. There are 5 programmers and 40 tasks. How man
 
 Money.
 
-A user pays $10 a month for your image store service, storing all their photos, each downsized to 3MB. During a month a user fetches 1K photos. Find the pricing page of your favorite cloud provider, and calculate the cost associated with each user. How much is your revenue per user? Check for different assumed photo counts.
+A user pays \$10 a month for your image store service, storing all their photos, each downsized to 3MB. During a month a user fetches 1K photos. Find the pricing page of your favorite cloud provider, and calculate the cost associated with each user. How much is your revenue per user? Check for different assumed photo counts.
 
 Others include CPU time, RAM size, latencies of various kinds (disk access, RAM access, network), thread count.
 

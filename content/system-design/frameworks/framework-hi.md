@@ -1,15 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Framework Hi"
-linkTitle: "Framework Hi"
+title: "Delivery Framework (HI)"
+linkTitle: "Delivery Framework (HI)"
 ---
----
-
-title: "Delivery Framework"
-
-linkTitle: "Delivery Framework"
-
 # Delivery Framework
 
 

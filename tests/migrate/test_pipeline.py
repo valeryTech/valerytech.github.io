@@ -49,11 +49,27 @@ class MigrationPipelineTests(unittest.TestCase):
         self.assertIn('figure src="api.assets/api-diagram.png"', api_content)
         self.assertIn('[Caching Doc]({{< ref "system-design/topics/caching" >}})', api_content)
         self.assertIn(r"Inline math: \(x = y + 1\).", api_content)
-        self.assertIn("\\[\nf(x) = x^2\n\\]", api_content)
+        self.assertIn(r"\[f(x) = x^2\]", api_content)
         self.assertIn("Price stays literal at $10 a month.", api_content)
+        self.assertIn(r"Escaped prices stay literal at \$10 and \$20.", api_content)
+        self.assertIn(
+            r"Shell code uses `$HOME` and `$PATH`; model math uses \(R_D\).",
+            api_content,
+        )
+        self.assertIn(
+            "\\[\n"
+            "\\begin{aligned}\n"
+            "a &= b \\\\\n"
+            "c &= d\n"
+            "\\end{aligned}\n"
+            "\\]",
+            api_content,
+        )
+        self.assertIn("Inline math stays literal here: $not_converted$.", api_content)
+        self.assertIn("$$\nblock_math_stays_literal\n$$", api_content)
         self.assertIn(r"tracking \(R_0\)", api_content)
         self.assertIn(r"System design root with inline math \(n^2\).", index_content)
-        self.assertIn("\\[\nQ = \\lambda \\times W\n\\]", index_content)
+        self.assertIn(r"\[Q = \lambda \times W\]", index_content)
         self.assertIn('[System Elements]({{< ref "system-design/elements/elements" >}})', smoke_content)
         self.assertIn("[[missing-note]]", smoke_content)
 

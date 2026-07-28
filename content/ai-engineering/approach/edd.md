@@ -28,10 +28,8 @@ Just like the "Test Pyramid" (Unit > Integration > E2E), AI has its own hierarch
 |**Level**|**Type**|**Description**|**Example**|**Latency/Cost**|
 |---|---|---|---|---|
 |**L1**|**Deterministic**|Code-based checks. Binary pass/fail.|Does the JSON have the field `user_id`? Is the response < 500 tokens?|Low / Free|
-|**L2**|**Model-Graded**|Using a "Judge" LLM to score a "Student" LLM.|"On a scale of 1-5, how polite is this response?" or "Does the answer contain PII?"|Medium / \[
-|
-|**L3**|**Human-in-the-Loop**|Experts reviewing logs. Used to _calibrate_ L2.|A lawyer verifying if the legal summary is actually accurate.|High / $
-\]|
+|**L2**|**Model-Graded**|Using a "Judge" LLM to score a "Student" LLM.|"On a scale of 1-5, how polite is this response?" or "Does the answer contain PII?"|Medium / \$\$|
+|**L3**|**Human-in-the-Loop**|Experts reviewing logs. Used to _calibrate_ L2.|A lawyer verifying if the legal summary is actually accurate.|High / \$\$\$|
 
 ### **II. The Metrics: What are we actually measuring?**
 

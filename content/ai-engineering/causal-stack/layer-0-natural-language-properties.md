@@ -842,7 +842,7 @@ Incremental refinement occurs when a speaker gradually narrows, revises, or exte
 
 Example:
 
-> "Find laptops under $1500."
+> "Find laptops under \$1500."
 > "Only 14-inch ones."
 > "With 32GB RAM."
 > "Actually, prioritize battery life."

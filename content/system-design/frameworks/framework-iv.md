@@ -1,15 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Framework Iv"
-linkTitle: "Framework Iv"
----
----
-
 title: "Framework IV"
-
 linkTitle: "Framework IV"
-
+---
 # Fundamentals of this framework
 
 

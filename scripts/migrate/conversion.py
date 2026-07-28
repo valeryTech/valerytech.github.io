@@ -36,11 +36,60 @@ CALLOUT_MAP = {
 WIKI_LINK_RE = re.compile(r"(!)?\[\[([^\]|#]+)?(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
 BLOCK_MATH_RE = re.compile(r"(?<!\\)\$\$(?!\$)(.+?)(?<!\\)\$\$(?!\$)", re.DOTALL)
+BACKTICK_RUN_RE = re.compile(r"`+")
 
 
 def normalize_math_delimiters(text: str) -> str:
+    return "".join(
+        segment if is_inline_code else normalize_unprotected_math(segment)
+        for segment, is_inline_code in split_inline_code_spans(text)
+    )
+
+
+def split_inline_code_spans(text: str) -> list[tuple[str, bool]]:
+    """Split Markdown into normal text and complete backtick code spans."""
+    runs = list(BACKTICK_RUN_RE.finditer(text))
+    next_run_of_length: dict[int, int] = {}
+    matching_run: list[int | None] = [None] * len(runs)
+    for index in range(len(runs) - 1, -1, -1):
+        run_length = len(runs[index].group(0))
+        matching_run[index] = next_run_of_length.get(run_length)
+        next_run_of_length[run_length] = index
+
+    segments: list[tuple[str, bool]] = []
+    normal_start = 0
+    run_index = 0
+    while run_index < len(runs):
+        opener = runs[run_index]
+        closer_index = matching_run[run_index]
+        if is_escaped(text, opener.start()) or closer_index is None:
+            run_index += 1
+            continue
+
+        closer = runs[closer_index]
+        if normal_start < opener.start():
+            segments.append((text[normal_start : opener.start()], False))
+        segments.append((text[opener.start() : closer.end()], True))
+        normal_start = closer.end()
+        run_index = closer_index + 1
+
+    if normal_start < len(text):
+        segments.append((text[normal_start:], False))
+    return segments
+
+
+def is_escaped(text: str, position: int) -> bool:
+    backslashes = 0
+    position -= 1
+    while position >= 0 and text[position] == "\\":
+        backslashes += 1
+        position -= 1
+    return backslashes % 2 == 1
+
+
+def normalize_unprotected_math(text: str) -> str:
     text = BLOCK_MATH_RE.sub(rewrite_block_math, text)
-    return "\n".join(normalize_inline_math(line) for line in text.splitlines())
+    return "".join(normalize_inline_math(line) for line in text.splitlines(keepends=True))
 
 
 def rewrite_block_math(match: re.Match[str]) -> str:

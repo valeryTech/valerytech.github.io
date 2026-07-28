@@ -1,15 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Sd Framework V0"
-linkTitle: "Sd Framework V0"
+title: "Framework SD v0.1"
+linkTitle: "Framework SD v0.1"
 ---
----
-
-title: "SD Framework v0"
-
-linkTitle: "SD Framework v0"
-
 # Functional Requirements
 
 

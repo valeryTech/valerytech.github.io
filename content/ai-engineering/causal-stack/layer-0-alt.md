@@ -4747,7 +4747,7 @@ Parameters may include:
 |Format|PDF, spreadsheet, bullet list|
 |Tone|formal, concise, softer|
 |Recipient|Alex, legal, client|
-|Threshold|under $500, within 10 miles|
+|Threshold|under \$500, within 10 miles|
 
 Parameter correction is often local: it changes one part of an otherwise stable intent.
 
@@ -4809,7 +4809,7 @@ Incremental refinement occurs when a speaker gradually modifies an earlier reque
 Example:
 
 > "Find hotels in Madrid."
-> "Under $200."
+> "Under \$200."
 > "Near the conference venue."
 > "Actually, prioritize quiet ones."
 
@@ -4857,7 +4857,7 @@ Constraint removal can broaden the solution space or change the interpretation o
 
 Example:
 
-> "Find options under $100."
+> "Find options under \$100."
 > "Actually, remove the price limit."
 
 The price constraint no longer applies.
@@ -5197,7 +5197,7 @@ Retraction differs from overwriting. The earlier parameter may become inactive r
 
 Example:
 
-> "Under $100."
+> "Under \$100."
 > "Actually, no price limit."
 
 The price parameter is not changed from `$100` to another number. It is removed.

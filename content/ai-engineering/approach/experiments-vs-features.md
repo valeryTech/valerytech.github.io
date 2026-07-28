@@ -73,18 +73,23 @@ Bryan's capability funnel approach provides another powerful communication tool.
 Perhaps the most counterintuitive aspect of this approach is the emphasis on learning from failures. In traditional software development, failures are often hidden or downplayed. In AI development, they're the primary source of learning.
 
 Eugene operationalizes this at his organization through what he calls a "fifteen-five" - a weekly update that takes fifteen minutes to write and five minutes to read:
+
 > "In my fifteen-fives, I document my failures and my successes. Within our team, we also have weekly"no-prep sharing sessions" where we discuss what we've been working on and what we've learned. When I do this, I go out of my way to share failures."
+
 This practice normalizes failure as part of the learning process. It shows that even experienced practitioners encounter dead ends, and it accelerates team learning by sharing those experiences openly. And by celebrating the process of experimentation rather than just the outcomes, teams create an environment where people feel safe taking risks and learning from failures.
 
 ### A Better Way Forward
 
 
 So what does an experiment-based roadmap look like in practice? Here's a simplified example from a content moderation project Eugene worked on:
+
 > "I was asked to do content moderation. I said, 'It's uncertain whether we'll meet that goal. It's uncertain even if that goal is feasible with our data, or what machine learning techniques would work. But here's my experimentation roadmap. Here are the techniques I'm gonna try, and I'm gonna update you at a two-week cadence.'"
+
 The roadmap didn't promise specific features or capabilities. Instead, it committed to a systematic exploration of possible approaches, with regular check-ins to assess progress and pivot if necessary.
 
 The results were telling:
 > "For the first two to three months, nothing worked. \[...\] And then \[a breakthrough\] came out. \[...\] Within a month, that problem was solved. So you can see that in the first quarter or even four months, it was going nowhere. \[...\] But then you can also see that all of a sudden, some new technology comes along, some new paradigm, some new reframing comes along that just \[solves\] 80% of \[the problem\]."
+
 This pattern - long periods of apparent failure followed by breakthroughs - is common in AI development. Traditional feature-based roadmaps would have killed the project after months of "failure," missing the eventual breakthrough.
 
 By focusing on experiments rather than features, teams create space for these breakthroughs to emerge. They also build the infrastructure and processes that make breakthroughs more likely - data pipelines, evaluation frameworks, and rapid iteration cycles.

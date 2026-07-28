@@ -20,7 +20,6 @@ more accent on: evidence + evaluation; + distribution (methodology 1.3)
 
 > **AI production readiness is the state in which a defined AI-enabled system or change, its production environment, and the organization responsible for it are together sufficient for a specified production use, based on the available evidence and within explicitly defined limits of uncertainty and residual risk.**
 
-
 The "defined AI-enabled system or change" may include:
 
 - The model and exact model version

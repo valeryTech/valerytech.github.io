@@ -32,11 +32,27 @@ class ConversionTests(unittest.TestCase):
         body = "\n\n".join(rendered.body_parts)
         self.assertIn('[Caching]({{< ref "system-design/topics/caching" >}})', body)
         self.assertIn('[Caching Doc]({{< ref "system-design/topics/caching" >}})', body)
-        self.assertIn("```md\n> [!note] Example\n> Keep this literal inside the code block.\n```", body)
+        self.assertIn("```md\n> [!note] Example\n> Keep this literal inside the code block.", body)
         self.assertIn(r"Inline math: \(x = y + 1\).", body)
         self.assertIn(r"\[f(x) = x^2\]", body)
         self.assertIn(r"tracking \(R_0\)", body)
         self.assertIn("Price stays literal at $10 a month.", body)
+        self.assertIn(r"Escaped prices stay literal at \$10 and \$20.", body)
+        self.assertIn(
+            r"Shell code uses `$HOME` and `$PATH`; model math uses \(R_D\).",
+            body,
+        )
+        self.assertIn(
+            "\\[\n"
+            "\\begin{aligned}\n"
+            "a &= b \\\\\n"
+            "c &= d\n"
+            "\\end{aligned}\n"
+            "\\]",
+            body,
+        )
+        self.assertIn("Inline math stays literal here: $not_converted$.", body)
+        self.assertIn("$$\nblock_math_stays_literal\n$$", body)
 
     def test_conversion_rewrites_absolute_markdown_note_links(self) -> None:
         note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
@@ -154,6 +170,98 @@ class ConversionTests(unittest.TestCase):
         normalized = normalize_math_delimiters(text)
 
         self.assertEqual(normalized, r"\[D(P_\theta(y_i \mid x, y_{<i})) \rightarrow y_i\]")
+
+    def test_normalize_math_delimiters_preserves_multiline_display_layout(self) -> None:
+        text = (
+            "$$\n"
+            "\\begin{aligned}\n"
+            "a &= b \\\\\n"
+            "c &= d\n"
+            "\\end{aligned}\n"
+            "$$"
+        )
+
+        normalized = normalize_math_delimiters(text)
+
+        self.assertEqual(
+            normalized,
+            "\\[\n"
+            "\\begin{aligned}\n"
+            "a &= b \\\\\n"
+            "c &= d\n"
+            "\\end{aligned}\n"
+            "\\]",
+        )
+
+    def test_normalize_math_delimiters_preserves_canonical_and_literal_delimiters(self) -> None:
+        text = (
+            r"Canonical inline \(x + y\) stays canonical." "\n"
+            r"Canonical block \[x + y\] stays canonical." "\n"
+            r"Escaped prices \$10 and \$20 stay literal." "\n"
+            r"Escaped price markers \$\$ and \$\$\$ stay literal." "\n"
+            "An unmatched $ delimiter stays literal."
+        )
+
+        self.assertEqual(normalize_math_delimiters(text), text)
+
+    def test_normalize_math_delimiters_preserves_dollars_in_inline_code(self) -> None:
+        examples = (
+            "Use `$HOME` and `$PATH`.",
+            "Vim uses `$`; Haskell uses `<$>`.",
+            "Inline code containing `$$` stays literal.",
+        )
+
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertEqual(normalize_math_delimiters(text), text)
+
+    def test_normalize_math_delimiters_preserves_arbitrary_length_and_multiline_code_spans(self) -> None:
+        text = (
+            "Double backticks preserve ``a `single` backtick and $HOME``.\n"
+            "A multiline span: ```first line\n"
+            "$HOME and $$ remain literal\n"
+            "last line```."
+        )
+
+        self.assertEqual(normalize_math_delimiters(text), text)
+
+    def test_normalize_math_delimiters_converts_math_beside_inline_code(self) -> None:
+        text = "Use `$HOME`, ``the `$PATH` variable``, and model $R_D$."
+
+        normalized = normalize_math_delimiters(text)
+
+        self.assertEqual(
+            normalized,
+            r"Use `$HOME`, ``the `$PATH` variable``, and model \(R_D\).",
+        )
+
+    def test_normalize_math_delimiters_converts_display_math_beside_inline_code(self) -> None:
+        text = "Inline code `$$` stays literal.\n\n$$\nf(x) = x^2\n$$"
+
+        self.assertEqual(
+            normalize_math_delimiters(text),
+            "Inline code `$$` stays literal.\n\n\\[f(x) = x^2\\]",
+        )
+
+    def test_normalize_math_delimiters_does_not_pair_dollars_across_inline_code(self) -> None:
+        text = "$left `literal code` right$"
+
+        self.assertEqual(normalize_math_delimiters(text), text)
+
+    def test_normalize_math_delimiters_treats_unmatched_backticks_as_text(self) -> None:
+        text = "Inline $x ` y$ remains math."
+
+        self.assertEqual(
+            normalize_math_delimiters(text),
+            r"Inline \(x ` y\) remains math.",
+        )
+
+    def test_normalize_math_delimiters_is_idempotent(self) -> None:
+        text = "Inline $x + y$ and code `$HOME`.\n\n$$\nf(x) = x^2\n$$"
+
+        normalized = normalize_math_delimiters(text)
+
+        self.assertEqual(normalize_math_delimiters(normalized), normalized)
 
 
 if __name__ == "__main__":
