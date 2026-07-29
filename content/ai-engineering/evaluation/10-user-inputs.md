@@ -103,22 +103,13 @@ A **dimension** is a way to categorize different parts of a user query. Each dim
 - **Customer persona:** the type of customer being supported, such as a first-time buyer, frequent shopper, or business customer;
 - **Scenario type:** how clearly the customer expresses the issue, such as well-specified, ambiguous, incomplete, or involving multiple requests.
 
-An application may have many potentially useful dimensions. As a practical starting point, identify at least three candidate dimensions.
+An application may have many potentially useful dimensions. As a practical starting point, begin with at least three candidate dimensions, while avoiding unnecessary dimensions that do not represent a distinct failure surface or meaningful behavioural difference. The final set should be small enough to review and combine effectively, but sufficient to represent the important ways the application may fail.
 
 Do not choose dimensions arbitrarily. Select dimensions that describe where the AI application is likely to fail. Use the product-derived coverage requirements, failure hypotheses, observed user behaviour, qualitative research, domain knowledge, and previously observed traces to identify these failure surfaces.
 
-For example, usage data or qualitative research might indicate that business customers experience problems when tracking orders. In that case, **Customer persona** and **Feature** are useful dimensions because their interaction represents an observed or plausible area of failure.
-
-For each candidate dimension, ask:
-- Does it correspond to an observed or plausible failure mode?
-- Could changing its value expose different system behaviour or a different form of failure?
-- Does it support one or more coverage requirements?
-- Can its values be defined clearly enough to classify or generate user inputs consistently?
-- Does it add meaningful variation beyond the dimensions already selected?
+For example, usage data or qualitative research might indicate that business customers experience problems when tracking orders. In that case, **Customer persona** and **Feature** are useful dimensions because their interaction represents an observed or plausible area of failure.
 
 When direct evidence about likely failures is limited, begin with distinctions implied by the product's main jobs, guarantees, critical failures, routes, tools, permissions, and operating conditions. Treat these initial dimensions as provisional and revise them as real inputs and executed traces provide better evidence.
-
-Start with at least three candidate dimensions, while avoiding unnecessary dimensions that do not represent a distinct failure surface or meaningful behavioural difference. The final set should be small enough to review and combine effectively, but sufficient to represent the important ways the application may fail.
 
 ### 2. Construct and review tuples
 

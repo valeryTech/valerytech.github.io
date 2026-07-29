@@ -4,31 +4,170 @@ toc: true
 title: "Evaluation"
 linkTitle: "Evaluation"
 ---
-How an AI team connects product intent and observed executions, turns human and automated judgment into reusable evaluation knowledge, and uses the resulting evidence to make product decisions.
-
-## What Are AI Evaluations?
+# AI Evaluation as an Engineering Learning System
 
 
-AI evaluation is the ongoing practice of understanding, judging, and improving how an AI system behaves.
+AI evaluation connects product intent with observed system behaviour. It turns human and automated judgment into reusable knowledge and uses that knowledge to produce evidence for product decisions.
 
-It connects five activities:
+## What Is AI Evaluation?
 
-1. **Specify intended behavior.** Make explicit what the system should and should not do.
-2. **Observe actual behavior.** Collect executions, outcomes, feedback, and other evidence from testing and production.
-3. **Judge the behavior.** Decide whether the observed behavior is acceptable using code checks, scenarios, model-based evaluators, or human review.
-4. **Turn judgment into reusable knowledge.** Create failure categories, labeled examples, datasets, rubrics, evaluators, thresholds, and decision rules.
-5. **Use the evidence to improve and govern the product.** Support product changes, regression testing, release decisions, monitoring, and risk control.
 
-AI evaluation is therefore broader than checking whether a system passes a test. It is an iterative, evidence-driven part of AI engineering that helps a team understand what the product does, decide whether that behavior is acceptable, and improve both the product and the way it is evaluated over time.
+AI evaluation is the engineering practice of producing and applying trustworthy, scoped, and decision-relevant claims about how an AI system behaves.
 
-More details and reasoning in the [Application Problems](#application-problems)
+It connects five forms of work:
+
+1. **Define intended behaviour.**
+    Make explicit the user jobs, product guarantees, invariants, supported capabilities, prohibited actions, and operating conditions that matter.
+2. **Observe actual behaviour.**
+    Execute the system and capture enough evidence to reconstruct what happened, including user context, model outputs, retrieval, tool calls, state changes, final responses, and downstream outcomes.
+3. **Judge observed behaviour.**
+    Determine whether an execution is acceptable using product rules, code-based checks, reference comparisons, model-based evaluators, or human review.
+4. **Compile judgment into reusable evaluation knowledge.**
+    Convert observations into criteria, failure models, representative examples, labelled datasets, evaluator definitions, thresholds, and decision rules.
+5. **Apply the resulting evidence.**
+    Use evaluation findings to investigate failures, compare system versions, prevent regressions, support release decisions, monitor production behaviour, and govern product risk.
+
+Evaluation is therefore broader than running a test suite or calculating a quality score. It is an iterative subsystem within AI engineering that improves both the product and the ability to understand the product.
+
+A compact definition is:
+
+> **AI evaluation is an iterative, evidence-driven engineering practice that makes intended behaviour explicit, captures representative evidence of actual behaviour, applies validated judgment, compiles that judgment into reusable evaluation knowledge, and uses the resulting findings to improve and govern the product.**
+
+## Why AI Evaluation Is a Learning System
+
+
+AI applications are probabilistic, context-sensitive, and distributed across models, prompts, retrieval, tools, state, policies, business logic, and user experience.
+
+Their desired behaviour is usually only partially specified before deployment. New user behaviour, system conditions, and failure modes emerge through execution. A change intended to improve one behaviour may also create regressions elsewhere.
+
+The central engineering problem is therefore:
+
+> **How can a team intentionally improve and safely operate a context-sensitive, probabilistic product when intended behaviour is only partially specified, actual behaviour emerges during execution, and changes can have uncertain effects?**
+
+Evaluation addresses the knowledge and control uncertainty within this problem.
+
+Its corresponding question is:
+
+> **Given product intent, an evolving AI system, and a changing operating environment, how can a team produce trustworthy evidence about what the product does, whether that behaviour is acceptable, where failures occur, and whether a proposed change improves the product?**
+
+## The Three Learning Loops
+
+
+The evaluation operating model contains three loops, distinguished by the object each loop changes.
+
+**Product Improvement Loop**
+
+The Product Improvement Loop changes system behaviour. Details are in [Product Improvement]({{< ref "ai-engineering/evaluation/product-improvement" >}}).
+
+**Evaluation Knowledge Loop**
+
+The Evaluation Knowledge Loop owns the team's definition and understanding of quality. This loop is the conceptual centre of evaluation. It explains how observations become reusable evaluation knowledge and how that knowledge remains responsive to new evidence.
+
+**Evaluation Infrastructure Loop**
+
+The Evaluation Infrastructure Loop changes how evidence is captured, stored, inspected, and evaluated.
+
+```text
+Missing or inaccessible evidence
+    ↓
+Instrumentation or tooling change
+    ↓
+Improved trace capture and evaluation
+    ↓
+New execution or evaluation gap
+    ↺
+```
+
+
+Examples include adding missing conversation history, recording tool responses, preserving system and prompt versions, connecting actions with their outcomes, or improving review interfaces.
+
+The loops are distinct but connected. A single trace review may reveal:
+
+- a product failure requiring a system change;
+- an unclear criterion requiring evaluation-knowledge refinement;
+- missing evidence requiring an instrumentation change.
+
+## The Evaluation Knowledge Loop
+
+
+The Evaluation Knowledge Loop develops and revises the team's explicit, evidence-linked understanding of which product behaviours matter and how they should be judged. It connects evaluation coverage, trace analysis, criteria and failure models, evaluators, labels, measurements, and findings. The sequence below describes the failure-oriented path through the loop; other quality lenses use the same relationship between observed behaviour, reusable judgment, and application.
+
+```text
+Product intent and observed user behaviour
+    ↓
+[[10-user-inputs|Build and maintain representative user inputs]]
+    ↓
+Evaluation cases + fixtures + system configuration
+    ↓ execute
+Complete traces and outcomes
+    ↓
+[[20-error-analysis|Discover and structure recurring failures]]
+    ↓
+Trace-linked observations, categories, and failure model
+    ↓
+[[30-failure-model-use|Operationalise, measure, and use the failure model]]
+    ↓
+Criteria and evaluators
+    ↓
+Labels, measurements, and findings
+    ↓
+New executions, disagreements, and poorly fitting cases
+    ↺ revise coverage, failure definitions, criteria, evaluators, and labels
+```
+
+### Inputs Establish and Revise Coverage
+
+
+[10 User Inputs]({{< ref "ai-engineering/evaluation/10-user-inputs" >}}) describes how product intent becomes coverage requirements and a representative set of real, manually written, and synthetic user inputs. Inputs are combined with fixtures and expected conditions to form executable evaluation cases; execution produces the traces analysed downstream. The coverage model remains provisional: observed user behaviour and later failures may require changes to the evaluation boundary, dimensions, tuples, fixtures, and case allocation.
+
+### Error Analysis Develops the Failure Model
+
+
+[20 Error Analysis]({{< ref "ai-engineering/evaluation/20-error-analysis" >}}) uses complete traces to identify concrete failure incidents, compare them across executions, and develop an application-specific failure model. It preserves the dependency from each failure mode back to representative incidents and supporting trace evidence. Discovery remains distinct from measurement so that categories are developed from observed behaviour before they are narrowed into operational checks.
+
+### Operationalisation Applies and Tests the Knowledge
+
+
+[30 Failure Model Use]({{< ref "ai-engineering/evaluation/30-failure-model-use" >}}) converts selected failure modes into explicit criteria and validated evaluators, applies them to complete traces, and produces accepted labels, measurements, comparisons, and findings. These findings support the Product Improvement Loop, while evaluator application also tests the evaluation knowledge itself: unclear cases, evaluator disagreements, and new failure patterns may require the failure model, criteria, examples, evaluators, or existing labels to be revised.
+
+The dependencies are bidirectional. Product intent and observed usage shape coverage; coverage determines which behaviours can be observed; traces support the failure model; the failure model governs evaluators; and evaluator application produces new evidence about both the product and the adequacy of the evaluation knowledge. Findings that concern another persistent object are routed to the appropriate loop below.
+
+### Route Findings to the Appropriate Loop
+
+
+Evaluation findings do not all imply a product change.
+
+```text
+Observed product failure
+    → Product Improvement Loop
+
+New or poorly fitting behaviour
+    → Evaluation Knowledge Loop
+
+Unclear or overlapping criterion
+    → Evaluation Knowledge Loop
+
+Incorrect evaluator decision
+    → Evaluation Knowledge Loop
+
+Missing trace evidence
+    → Evaluation Infrastructure Loop
+
+Inaccessible or inefficient review process
+    → Evaluation Infrastructure Loop
+```
+
+
+When a failure definition or evaluator changes, affected traces may need to be relabelled.
+
+When required evidence is unavailable, instrumentation should be improved and the relevant executions captured again.
 
 ## About Step-by-Step Instructions
 
 
 AI evaluation can be presented as a step-by-step process. This is useful, especially for teams that are just getting started, because it helps them establish the first version of an evaluation system.
 
-However, this view can make the work seem more linear than it really is. AI development is iterative. In practice, the product, evaluation knowledge, and evaluation infrastructure evolve through several connected loops that run continuously (see [[operating-model]]).
+However, this view can make the work seem more linear than it really is. AI development is iterative. In practice, the product, evaluation knowledge, and evaluation infrastructure evolve through several connected loops that run continuously.
 
 We can still define a startup sequence to put these loops into operation. That sequence explains how to begin, while the loops explain how the work continues over time. The startup sequence should therefore be understood as a set of initial actions within a broader operating system.
 
@@ -37,302 +176,183 @@ We can still define a startup sequence to put these loops into operation. That s
 ## Startup (Kick-off) Sequence: Putting the Loops into Operation
 
 
-The operating model consists of several continuous learning loops:
+**Starting the Evaluation System**
 
-- the **product-improvement loop**, which changes system behavior;
-- the **evaluation-knowledge loop**, which develops the team's understanding of desired behavior and failure;
-- the **evaluation-infrastructure loop**, which improves how evidence is captured and evaluated.
+The three learning loops describe continuous operation, but they assume that the product, evidence path, and initial evaluation knowledge already exist. Starting the evaluation system therefore requires a temporary dependency order that establishes the first repeatable path from product intent to product evidence and a decision.
 
-These loops describe how the system operates once the necessary components are in place. They do not, by themselves, explain how a team gets started.
+A useful metaphor is a mechanism made of interlocking gears:
 
-The startup sequence provides that initial path.
+- the **product-improvement gear** changes system behaviour;
+- the **evaluation-knowledge gear** changes the team's understanding of quality;
+- the **evaluation-infrastructure gear** changes how evidence is captured and applied.
 
-A useful metaphor is a mechanism made of several gears. Before the mechanism can run continuously, the gears must be placed in the correct positions, connected, and given enough initial material to begin turning.
+The startup sequence places these gears, connects them, and supplies the initial product behaviour and evidence required to make them turn. After startup, they operate continuously and can move together: one trace review may drive a product fix, a criterion refinement, and an instrumentation change.
 
-The startup sequence can be reduced to six actions:
+A practical startup sequence is under design in [01 Starting Sequence]({{< ref "ai-engineering/evaluation/01-starting-sequence" >}}).
 
-> **Build -> Instrument -> Execute -> Review -> Systematize -> Operationalize**
-
-These actions place the initial gears into position.
-
-```text
-Build an executable product path
-              ↓
-Make its behavior observable
-              ↓
-Collect representative executions
-              ↓
-Review behavior openly
-              ↓
-Systematize quality and failure knowledge
-              ↓
-Create initial evaluation assets
-              ↓
-Use the findings to improve the product
-              ↓
-Run the learning loops continuously
-```
-
-### Build an executable product path
+## Operational Evaluation Architecture
 
 
-Start with a narrow end-to-end system that can produce realistic behavior.
+The learning loops describe how evaluation knowledge changes. The operational architecture describes how evaluators are selected, where they run, and how their evidence influences engineering and release decisions.
 
-It does not need to be complete. It must include enough of the intended workflow to expose relevant model interactions, retrieval, tool use, state changes, business logic, and user outcomes.
-
-### Establish minimum evaluation infrastructure
+### Evaluation Pyramid and Integration with the Test Pyramid
 
 
-Capture enough information to reconstruct executions and review them.
-
-The initial evidence path may be simple:
+Evaluation methods should be layered by determinism, cost, speed, and judgment complexity:
 
 ```text
-Execution
-    ↓
-Trace and outcome capture
-    ↓
-Storage
-    ↓
-Human review
+                    Human evaluation
+             ambiguous, novel, high-stakes cases
+                           ▲
+                  Model-based evaluation
+             semantic and behavioural judgment
+                           ▲
+                 Reference-based evaluation
+              comparison with trusted outcomes
+                           ▲
+                    Code-based evaluation
+         schemas, fields, tool calls, invariants, rules
 ```
 
 
-The objective is to establish a usable evidence path, not to build a complete evaluation platform immediately.
+The broad base should use deterministic checks wherever the required behaviour can be expressed reliably. Examples include validating output structure, checking required fields, confirming that the correct tool was called, verifying permissions, and testing state transitions. These checks are faster, cheaper, and easier to debug than model-based judges.
 
-This places the evaluation-infrastructure gear in position.
+Higher layers are used when lower layers cannot express the relevant judgment. Model-based evaluators are appropriate for semantic or contextual criteria; human review remains necessary for unstable definitions, novel behaviour, adjudication, and consequential decisions.
 
-### 01 Establish the Evaluation Evidence Layer
+This evaluation pyramid complements the conventional software test pyramid rather than replacing it:
 
+- unit and component tests validate deterministic implementation behaviour;
+- integration and end-to-end tests validate system paths and dependencies;
+- evaluation cases examine probabilistic behaviour across representative conditions;
+- production evaluation checks how the system behaves under the live input distribution.
 
-Begin by identifying the minimum evidence required to reconstruct, understand, and evaluate an AI-system execution. Define an initial trace schema that captures the user context, system instructions, model and prompt versions, retrieved information, tool calls, intermediate actions, outputs, operational conditions, and downstream outcomes.
+A single execution may therefore be checked by ordinary assertions, code-based evaluators, model-based evaluators, and selective human review.
 
-Instrument the application using this initial schema and collect representative executions from production, dogfooding, structured test scenarios, or simulated users. Treat this configuration as a starting hypothesis.
-
-Advice: Use Brain Trust, LangSmith, Arize, or build your own. The tool doesn't matter. What matters is capturing traces and being able to take notes on them later for error analysis.
-
-The broader objective: observability supplies evolving behavioral evidence to the evaluation and improvement cycle.
-
-xx
-
-During trace review, record both behavioral failures and cases where the available evidence is insufficient to explain or evaluate the system.
-
-Use these findings to iteratively refine the application, the observability layer, the evaluation criteria, the evaluation datasets, and the evaluators. The objective is to develop an evidence layer that evolves with the system and supports continued error analysis, regression testing, and production evaluation.
-
-### Collect representative executions
+### Execution Topology
 
 
-Run the product on a mix of:
+Evaluations can run in three main locations:
 
-- structured scenarios;
-- domain-expert examples;
-- historical cases;
-- edge cases;
-- dogfooding;
-- simulated users;
-- limited production traffic.
+|Plane|When it runs|Typical purpose|
+|---|---|---|
+|Offline|Before deployment against fixed, sampled, or generated cases|Discovery, regression testing, candidate comparison, and release evidence|
+|Online synchronous|Inside the live request path|Deterministic safety checks, policy enforcement, validation, and blocking controls|
+|Online asynchronous|After or alongside the live request|Monitoring, sampling, failure discovery, drift detection, and dataset growth|
 
-The initial goal is learning rather than producing a definitive quality score.
+Placement depends on latency, cost, reliability, and consequence. A slow or probabilistic judge should not become a synchronous gate unless its benefit justifies the operational risk. Online findings should feed new cases and failure models into the offline plane; offline evaluators should move online only when their behaviour and operational cost are sufficiently understood.
 
-### Review behavior openly
+### Integration into CI/CD and Release Gates
 
 
-Reviewers record concrete observations without relying only on a predefined taxonomy.
-
-They should capture:
-
-- what happened;
-- what should have happened;
-- why the difference matters;
-- which evidence supports the judgment;
-- whether evidence is missing;
-- which object may need to change.
-
-Open review allows unexpected categories to emerge from actual behavior.
-
-### Systematize quality knowledge
-
-
-Recurring observations are organized into:
-
-- behavioral requirements;
-- failure categories;
-- representative examples;
-- severity levels;
-- evaluation criteria;
-- labeled datasets.
-
-### Create initial evaluation assets
-
-
-Convert important knowledge into reusable checks, datasets, rubrics, evaluators, and review procedures.
-
-Use the simplest reliable method for each requirement.
-
-### Begin continuous operation
-
-
-Once the initial product, knowledge, and infrastructure objects exist, the startup sequence gives way to the continuous operating model.
-
-The team no longer follows a rigid linear process. Findings move directly into the loop or loops that own the required change.
-
-## The Startup Sequence and the Continuous Loops
-
-
-The two views answer different questions.
-
-| View                               | Question answered                                                                     |
-| ---------------------------------- | ------------------------------------------------------------------------------------- |
-| **Startup sequence**               | What must we do first to establish the operating mechanism?                           |
-| **Product-improvement loop**       | How do we change the system's behavior?                                               |
-| **Evaluation-knowledge loop**      | How do we improve our definition and understanding of quality?                        |
-| **Evaluation-infrastructure loop** | How do we improve the capture and application of evaluation evidence?                 |
-| **Data flywheel**                  | How does evidence move between the product, evaluation knowledge, and infrastructure? |
-
-The startup sequence is temporarily ordered because some capabilities depend on others. A system must produce behavior before that behavior can be observed. Evidence must be available before failures can be studied systematically. Recurring failures must be understood before reliable evaluators can be constructed.
-
-After startup, the work becomes iterative rather than sequential. A finding can cause simultaneous changes to the product, evaluation knowledge, and evaluation infrastructure.
-
-## Components or Views (draft)
-
-
-We could select important topics, system views, or areas (or propose another name). They could be interleaving, or be just views of the system.
-
-### Evaluator Design and Validation
-
-
-...
-
-### Automated Evals
-
-
-Build Binary LLM Judges: Write judge prompt with three parts: evaluation criteria (when is it a failure?), what's NOT a failure (prevents false positives), and output format (return only true or false). Binary scores work better than 1-5 scales. You only verify two things instead of five.
-
-Validate Judge With TPR and TNR: Test your judge against human labels from error analysis. Don't use overall agreement (trap metric). Measure TPR (catches real errors) and TNR (doesn't false alarm) separately. Both must be above 80%. If low, add examples to prompt and iterate.
-
-## Operating model
-
-
-The evaluation domain operates through three learning loops, each defined by the object being changed.
-
-Each feedback path forms a distinct learning loop:
+Evaluation evidence can support several levels of automation:
 
 ```text
-Product Improvement Loop
-Finding → Product change → Validation → New executions → Finding
-```
+Informational result
+    → visible to the team but does not block
 
-```text
-Evaluation Knowledge Loop
-Observation → Criteria, labels, datasets, or evaluators
-            → Application to new executions → Refined knowledge
-```
+Warning threshold
+    → requires review or an explicit exception
 
-```text
-Evaluation Infrastructure Loop
-Evidence or execution gap → Instrumentation or pipeline change
-                          → Improved capture and evaluation
-                          → New gap
+Release gate
+    → blocks when a validated critical criterion fails
+
+Runtime control
+    → prevents or redirects a live action
 ```
 
 
-More details are in [[operating-model]].
+Gates should be scoped to stable criteria, representative cases, validated evaluators, and explicit decision rules. A noisy aggregate score is a poor release gate. Critical invariants and known regression cases are stronger candidates because the expected behaviour and consequence of failure are clear.
 
-### Execution topology
+Every gate should record the system version, dataset version, evaluator version, threshold, exceptions, and supporting traces. This preserves the ability to explain why a release passed or failed and whether results remain comparable after the evaluation definition changes.
 
-
-Defines where evaluations run: offline, online synchronous, online asynchronous (Offline and Online Planes)
-
-### Evaluation Pyramid and Integration to the Test Pyramid
-
-
-07 Use Code Evals When Possible: Format validation? Check for markdown symbols with regex. Required field checks? Verify parameters exist. Tool selection? Confirm correct tool was called. No LLM needed. Code evals are faster, cheaper, more reliable. Save LLM judges for subjective judgment only.
-
-### Integration into CI/CD and Gates
-
-
-...
-
-## Architectural interpretation
-
-
-The subsystem can be represented as:
+### Architectural View
 
 ```text
 AI Evaluation Subsystem
-│
-
+├── Product definition and coverage
+├── Execution and evidence layer
+│   ├── Offline evaluation
+│   ├── Online synchronous controls
+│   └── Online asynchronous monitoring
+├── Evaluation knowledge
+│   ├── Observations and taxonomy
+│   ├── Criteria and failure models
+│   └── Cases, datasets, and labels
+├── Evaluation methods
+│   ├── Code-based checks
+│   ├── Reference comparisons
+│   ├── Model-based judges
+│   └── Human review
+└── Decision integration
+    ├── Investigation and product changes
+    ├── CI/CD and release gates
+    ├── Production monitoring
+    └── Risk controls
 ```
 
-## Example
+
+The architecture is connected by traceability: product intent determines coverage; executions produce evidence; evaluation knowledge turns evidence into reusable judgment; and decision rules apply the resulting findings to product operation.
+
+## Running Example: AI-Assisted Property Management
 
 
-we're going to use example: All the different activities that you might be engaged in as a property manager, their application is helping you manage that with the assistance of AI
+An AI-assisted property-management application is a useful running example because it contains the messiness of a real AI product rather than a simplified question-answering task.
 
-real world app messiness: It's a really good example because it incorporates all the messiness of a real-world AI application. There are tool calls, there's RAG, multi-turn conversations. There are even multiple channels you can interact with the application through: voice, text message, or chatbot. So it's a lot of different messiness of the real world. This is not a simplified example. This is something that you will encounter in the real world. Your application might have these complexities.
+The system may help property managers coordinate maintenance, communicate with tenants, search property information, schedule vendors, and update records. Users may interact through voice, text messaging, or a chatbot. A single workflow can involve retrieval, tool calls, multi-turn conversation, permissions, state changes, and downstream real-world actions.
 
-problem set up: they had something initially that worked, but they really wanted to know, number one, how do we figure out what's going wrong, and number two, how do we improve the application systematically beyond just doing vibe checks? They already did vibe checks.
+Suppose the team has an initial product that appears to work during informal testing but needs to answer two questions:
+
+1. What is going wrong across realistic executions?
+2. How can the product be improved systematically beyond ad hoc "vibe checks"?
+
+The evaluation system begins by defining important jobs and guarantees, collecting full traces, and reviewing concrete failures. It may discover behaviours such as losing a tenant's stated availability, inventing a property feature, scheduling without authorisation, or claiming success after a tool failure. Those observations become a property-management-specific taxonomy, regression cases, evaluators, and release evidence.
+
+This example can be used throughout the loops:
+
+- a scheduling error enters the Product Improvement Loop;
+- a newly observed constraint-handling pattern enters the Evaluation Knowledge Loop;
+- a missing vendor-tool response enters the Evaluation Infrastructure Loop.
 
 ## Taxonomy
 
 
-See [Taxonomy]({{< ref "ai-engineering/evaluation/taxonomy" >}})
+The evaluation taxonomy organises the recurring, application-specific behaviours discovered through trace review. It should remain connected to concrete observations, examples, product requirements, and operational criteria rather than becoming a static list of generic AI failure labels.
 
-## Application: Placing Evals into context
+See [Taxonomy]({{< ref "ai-engineering/evaluation/taxonomy" >}}).
 
-### 1. Start from the AI-engineering problem
-
-
-An AI application produces behavior that is:
-
-- probabilistic and context-dependent;
-- distributed across models, prompts, retrieval, tools, state, business logic, and UX;
-- only partially specified in advance;
-- exposed to an open and changing input distribution;
-- difficult to assess using a single correctness oracle;
-- susceptible to broad and unexpected regressions when one component changes.
-
-This creates the root AI-engineering problem:
-
-> **How can a team intentionally improve and safely operate a context-sensitive, probabilistic product when its desired behavior is only partially specified, its actual behavior emerges during execution, and product changes can have uncertain effects?**
-
-Evaluation addresses the knowledge and control uncertainty in that problem. Product engineering applies the resulting decisions to the implementation.
-
-A corresponding root evaluation problem is:
-
-> **Given product intent, an evolving AI system, and a changing operating environment, how can a team produce trustworthy, scoped, and decision-relevant evidence about what the product does, whether that behavior is acceptable, why failures occur, and whether a proposed change improves the product?**
-
-This places evaluation inside AI engineering rather than treating it as an isolated measurement discipline.
-
-### Purpose and Definition
+## Evaluation Artefacts
 
 
-The **problems being solved** should define the domain boundaries.
+The Evaluation Knowledge Loop produces several related but distinct artefacts:
 
-AI evaluation exists to support decisions about an AI product. It should provide (in ideal) a systematic way to understand how the product behaves, determine whether that behavior is acceptable, and establishes with sufficient confidence whether a change improved outcomes without unacceptable regressions.
+|Artefact|Purpose|
+|---|---|
+|Product definition|States the jobs, guarantees, constraints, and failures that matter|
+|Coverage requirement|States what behaviours and conditions the evaluation must represent|
+|Evaluation case|Defines an executable input, fixture, and relevant expected condition|
+|Trace|Records what the system actually did|
+|Observation|Describes a concrete behaviour found in a trace|
+|Evaluation model|Organises recurring quality or failure patterns|
+|Criterion|Defines how a particular behaviour should be judged|
+|Evaluator|Implements or applies a criterion|
+|Label|Records the judgment for one execution|
+|Measurement|Aggregates labels across a defined sample|
+|Finding|Interprets measurements and evidence for a product decision|
+|Decision rule|Specifies how evidence influences release, monitoring, or intervention|
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
-AI evaluation is an iterative evidence-driven cycle. We begin with an initial definition of expected behavior and a minimal observability configuration. We collect and inspect traces to discover failures, missing evidence, and ambiguous requirements. Those findings are used to refine the application, the instrumentation, the evaluation datasets, and the evaluators. The updated system is then validated and deployed, producing new traces that initiate the next iteration.
-{{< /callout >}}
+Preserving these distinctions prevents several common errors:
+
+- treating an input as a complete evaluation case;
+- treating a final response as the complete execution;
+- treating an observation as a stable failure category;
+- treating a failure category as an operational evaluator;
+- treating an evaluator output as a product finding;
+- treating a measured rate as universally representative;
+- treating missing evidence as successful behaviour.
+
+## Evaluation as Continuous Knowledge Development
 
 
-More abstract version:
+Evaluation knowledge is never final.
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
-AI evaluation is an iterative, evidence-driven engineering process that makes expected behavior explicit, captures representative evidence of actual behavior, applies validated judgment, compiles that judgment into reusable evaluation assets, and uses the resulting claims to improve and govern the product over time
-{{< /callout >}}
-
-### What are the main problems?
-
-
-The main problems are:
-
-- **Definition:** It is often unclear what "good behavior" means.
-- **Observability:** We may not capture enough information to understand what happened.
-- **Judgment:** Some behavior is subjective or difficult to evaluate reliably.
-- **Coverage:** Test cases cannot represent every real-world situation.
-- **Change:** The product, users, and failure modes continue to evolve.
-
-In one sentence:
-
-> AI evaluations define how a system should behave, collect evidence of how it actually behaves, judge the difference, and use the findings to improve both the system and the evaluation process.
+Product requirements change. Users introduce new goals and language. Models, tools, data, and workflows evolve. New traces reveal behaviours that were not represented in the previous coverage model or failure taxonomy. Existing evaluators become incomplete or unreliable.
