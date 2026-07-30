@@ -2,7 +2,7 @@
 
 title: AI Engineering and Architecture
 description: simple description
-lead: Welcome to the knowledge base for AI engineering, system design, and software architecture.
+lead: An informal knowledge base of evolving drafts to help you design, build, and deliver AI systems. These drafts contain conceptual models, frameworks, methods, and practices—but they do not guarantee success.
 date: 2023-09-07T16:33:54+02:00
 lastmod: 2023-09-07T16:33:54+02:00
 draft: false
@@ -14,31 +14,31 @@ robots: ""
 
 ## Selected Readings
 
-A short set of high-signal notes and article-based writeups worth opening first.
+A small selection of notes and drafts to start with.
 
 <div class="selected-readings-stack">
 
 {{< card-grid >}}
 {{< link-card
-  title="AGENTS.md"
-  description="Notes on what agent instruction files should contain and how they fit into a broader context system."
-  href="/ai-engineering/coding-agents/agents-md/"
+  title="AI Systems Require Behavioral Evidence"
+  description="Why the quality of an AI system must be observed and measured under realistic conditions."
+  href="/ai-engineering/approach/empirical-nature/"
 >}}
 {{< /card-grid >}}
 
 {{< card-grid >}}
 {{< link-card
-  title="Evaluation Harness and Platform"
-  description="A concrete starting point for measuring workflow quality instead of relying on intuition."
-  href="/ai-engineering/evaluation/harness-and-platform/"
+  title="Evaluation"
+  description="Drafts on evaluating AI systems, understanding their failures, and improving their behavior."
+  href="/ai-engineering/evaluation/"
 >}}
 {{< /card-grid >}}
 
 {{< card-grid >}}
 {{< link-card
-  title="Project Ownership"
-  description="Why coding-agent speed does not remove the need for a human-held model of the system and its constraints."
-  href="/ai-engineering/coding-agents/project-ownership/"
+  title="Natural Language Interface Substrate"
+  description="A working model of how meaning, context, ambiguity, and intent shape natural-language interfaces."
+  href="/ai-engineering/causal-stack/layer-0-alt/"
 >}}
 {{< /card-grid >}}
 

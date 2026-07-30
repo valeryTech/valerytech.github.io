@@ -9,6 +9,13 @@ linkTitle: "Var"
 
 - extract prescriptive knowledge
 
+## questions
+
+
+- how to define and specify AI System and it's behaviour. Real and actual.
+- define our goals conceptual hierarchy, like successful delivery, implementing features
+- how we understand the AI system state (define current state; past behaviour)
+
 what is explicitly borrowed from grounded theory from what is merely compatible with it, then assess where the adaptation changes the method.
 
 and find main / important differences or improvements
@@ -16,6 +23,8 @@ and find main / important differences or improvements
 The **starting-dataset procedure and the subsequent error analysis form one integrated, failure-oriented variant of grounded theory**.
 
 The important qualification is that this is **grounded-theory-inspired engineering analysis**, rather than a full grounded theory study. Its intended product is an operational taxonomy and evaluation system, not a social-scientific theory.
+
+## Conceptual Model
 
 ## Operating model
 

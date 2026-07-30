@@ -37,13 +37,6 @@ include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 
 [[imports]]
-name = "projects"
-source_root_kind = "external"
-source_subtree = "projects"
-target_subtree = "projects"
-include = ["**/*.md", "*.md"]
-
-[[imports]]
 name = "migration-smoke"
 source_root_kind = "repo"
 source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"
