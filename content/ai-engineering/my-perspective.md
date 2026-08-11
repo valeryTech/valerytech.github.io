@@ -14,7 +14,7 @@ That includes orchestration, tool use, context and retrieval, state (loops) and 
 ## The engineering problem
 
 
-Much of AI engineering today focuses on layering on more capability and complexity; as well as increasingly autonomous behaviour.
+Much of AI engineering today tends to address problems by layering on additional capabilities, mechanisms, and autonomy, increasing the complexity of the resulting system.
 
 Building those capabilities well is an essential part of production AI engineering. My focus is on the broader engineering problem that emerges once those capabilities have to work together as part of a product. This problem is how to engineer the resulting system so that **its behaviour can be understood and evaluated**, and **the system itself can be changed and operated systematically**.
 
