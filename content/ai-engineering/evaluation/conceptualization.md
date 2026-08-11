@@ -62,9 +62,9 @@ Uncertainty
 ## AI Product
 
 
-The product definition is the **normative model** of the product: what value it should produce, which behaviour it should preserve, and which failures are unacceptable.
+The product definition is the **normative model** of the product: what value it should produce.
 
-**AI Product.** An AI Product is an intended value-producing capability offered to a defined set of actors, together with explicit commitments, boundaries, and success conditions.
+**AI Product.** An AI Product is an intended value-producing capability offered to a defined set of actors.
 
 ```text
 AI Product
@@ -73,6 +73,7 @@ AI Product
 ├── Jobs to be done
 ├── Supported capabilities and workflows
 ├── MVP scope
+possible if really required:
 ├── Promises and behavioural guarantees
 ├── Invariants
 ├── Non-guarantees and unsupported behaviour

@@ -7,11 +7,11 @@ linkTitle: "10 User Inputs"
 # Building a Starting Set of User Inputs for AI Evaluation
 
 
-An evaluation dataset is ultimately **trace-oriented**. A trace records the full sequence of inputs, outputs, intermediate actions, tool results, and system behaviour produced while processing an evaluation case.
+This guide addresses building a representative set of **user inputs**. These inputs form one component of the evaluation dataset and define the portion of the query space that should cover the important ways users may interact with the application.
 
-This guide addresses a narrower task within dataset construction: building a representative set of **user inputs**. These inputs form one component of the evaluation dataset and define the portion of the query space that the resulting traces will exercise.
+The goal is to provide evidence about the product behaviours that matter without over-representing one common workflow or leaving important guarantees, failures, and operating conditions untested.
 
-At this stage, the primary objective is **product-derived query-space representation**. The input set should cover the important ways users may interact with the application. The goal is to provide evidence about the product behaviours that matter without over-representing one common workflow or leaving important guarantees, failures, and operating conditions untested.
+At this stage, the primary objective is **product-derived query-space representation**.
 
 A starting set of approximately 100 executed cases is a practical heuristic. It can provide enough coverage to surface a range of failure modes and move towards _theoretical saturation_--the point at which analyzing additional traces is increasingly unlikely to reveal substantially new error categories because the existing categories are already well developed (Morse 1995). The required product coverage should determine the final number and distribution of cases.
 
@@ -21,41 +21,10 @@ In early-stage applications, real user inputs and traces are often sparse. Synth
 
 We therefore need a structured process for building a representative set of user inputs. The process should produce evaluation cases that are diverse, realistic, grounded in the system, and allocated according to product importance and risk.
 
-## Phased workflow
+## Steps
 
 
-I'm organizing the workflow into four phases representing different kinds of work. Activities within a phase may happen in parallel, inform one another, or be revisited as evidence accumulates. The phases communicate logical relationships without prescribing a rigid execution order.
-
-### 1. Define the evaluation design
-
-
-The product definition governs the evaluation design. It identifies the behaviours and outcomes that matter; the evaluation boundary selects which of them are in scope; coverage requirements state what the starting set must represent; and dimensions provide a way to organise and inspect that coverage.
-
-```text
-Product definition
-    ├→ Product guarantees
-    ├→ Main jobs to be done
-    ├→ Critical failures
-    └→ Architecture and operating constraints
-                    ↓
-            Evaluation boundary
-                    ↓
-        Coverage requirements
-            ├→ Core intents
-            ├→ Failure hypotheses
-            ├→ Product routes and tools
-            └→ Important system conditions
-                    ↓
-                Dimensions
-```
-
-
-The activities in this phase may inform one another and be revisited. For example, an important product guarantee may narrow the evaluation boundary, while an observed route or permission condition may reveal that a coverage requirement needs to be split.
-
-#### 1.1 Establish the product definition
-
-
-Begin by recording the product-specific inputs that govern coverage:
+**Agree on the product definition.** Begin by recording or agreeing on the product-specific inputs that govern coverage:
 
 - **Product guarantees:** behaviours or properties the application is expected to preserve.
 - **Main jobs to be done:** outcomes users principally rely on the product to achieve.
@@ -64,26 +33,7 @@ Begin by recording the product-specific inputs that govern coverage:
 
 Use product requirements, system documentation, architecture knowledge, policy and safety requirements, domain expertise, and observed product behaviour as evidence. Available user inputs can reveal missing or misunderstood product behaviour, but they should not be the sole source of the product definition.
 
-#### 1.2 Define the evaluation boundary
-
-
-Use the product definition to clarify what the application can and cannot do and which behaviours the evaluation will cover. This should include:
-
-- supported capabilities and workflows;
-- tools and data sources;
-- intended users;
-- permission boundaries;
-- unsupported or prohibited actions;
-- relevant environmental constraints.
-
-The output of this activity is a clear statement of the application's capabilities and the scope of the evaluation.
-
-#### 1.3 Translate the product definition into coverage requirements
-
-
-Translate the in-scope product definition into explicit statements of the behaviours, conditions, paths, and interactions that the evaluation set must represent.
-
-A coverage requirement may specify:
+Optionally extract or formulate coverage requirements:
 
 - a main job or core intent that needs baseline coverage;
 - a guarantee that must be exercised across several contexts;
@@ -92,10 +42,7 @@ A coverage requirement may specify:
 - an important interaction between several dimension values;
 - a known difficult or regression case that must be preserved.
 
-Coverage requirements should be specific enough to guide tuple selection and case allocation without prescribing one exact assistant response.
-
-#### 1.4 Select dimensions
-
+**Select dimensions**
 
 A **dimension** is a way to categorize different parts of a user query. Each dimension represents one axis of variation. For example, for an e-commerce support agent, useful dimensions might include:
 
@@ -110,6 +57,10 @@ Do not choose dimensions arbitrarily. Select dimensions that describe where the 
 For example, usage data or qualitative research might indicate that business customers experience problems when tracking orders. In that case, **Customer persona** and **Feature** are useful dimensions because their interaction represents an observed or plausible area of failure.
 
 When direct evidence about likely failures is limited, begin with distinctions implied by the product's main jobs, guarantees, critical failures, routes, tools, permissions, and operating conditions. Treat these initial dimensions as provisional and revise them as real inputs and executed traces provide better evidence.
+
+> Rule: A candidate dimension must describe something identifiable from the user's input itself.
+
+You could use prompt from [Prompts 03 Dimensions Set]({{< ref "ai-engineering/evaluation/prompts-03-dimensions-set" >}})
 
 ### 2. Construct and review tuples
 
@@ -171,47 +122,7 @@ Give the model:
 
 Generate tuples first, without generating user inputs. Keeping tuple generation separate from input generation makes coverage easier to inspect and reduces superficial variation.
 
-**Tuple-generation prompt**
-
-```text
-We are building an evaluation dataset for [application description].
-
-Generate [number] distinct tuples.
-
-Each tuple should contain one permitted value from each relevant dimension.
-
-Coverage requirements:
-- [requirement ID]: [requirement]
-- [requirement ID]: [requirement]
-
-Dimensions and permitted values:
-
-Feature:
-- [value]
-- [value]
-
-User type:
-- [value]
-- [value]
-
-Scenario:
-- [value]
-- [value]
-
-System state:
-- [value]
-- [value]
-
-Examples of acceptable tuples:
-- [example]
-- [example]
-
-Requirements:
-- Avoid duplicates and near-duplicates.
-- Vary values across the relevant dimensions.
-- Prefer tuples that could produce different system behaviour.
-- Do not create tuples outside the application scope.
-```
+**Tuple-generation prompt** is in [Prompts 04 Tuples]({{< ref "ai-engineering/evaluation/prompts-04-tuples" >}})
 
 ### 3. Source inputs and construct evaluation cases
 
@@ -226,7 +137,6 @@ Real input
                                                    ├→ Evaluation cases
 Unsatisfied coverage requirement                   │
     → Target tuple                                 │
-    → Fixtures and system context                  │
     → Synthetic user input ────────────────────────┘
 ```
 
