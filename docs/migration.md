@@ -16,7 +16,7 @@ If a section is migration-managed, the canonical source is the external notes
 tree, not the generated Markdown under `content/`.
 
 Each `[[imports]]` entry in the manifest controls one managed subtree, such as
-`system-design` or `ai-engineering`.
+`system-design`, `ai-engineering`, or `projects`.
 
 ## Runtime Contract
 
@@ -110,10 +110,9 @@ include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 ```
 
-The committed manifest currently uses that pattern for `ai-engineering`, so
-only `coding-agents/`, `evaluation/`, `ambiguity.md`,
-`approach/empirical-nature.md`, `approach/experimentation.md`, and the root
-`_index.md` are regenerated for that section.
+The committed manifest uses that pattern for `ai-engineering` and `projects`.
+The Projects import currently publishes only `code-assistant.md` and the root
+`_index.md`; the other external project notes remain unpublished.
 
 ## Sidebar Ordering
 

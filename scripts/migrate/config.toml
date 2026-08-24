@@ -42,6 +42,16 @@ root_index_source = "_index.md"
 "my-perspective" = 30
 
 [[imports]]
+name = "projects"
+source_root_kind = "external"
+source_subtree = "projects"
+target_subtree = "projects"
+selection_mode = "opt-in"
+selection_paths = ["code-assistant.md"]
+include = ["**/*.md", "*.md"]
+root_index_source = "_index.md"
+
+[[imports]]
 name = "migration-smoke"
 source_root_kind = "repo"
 source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"

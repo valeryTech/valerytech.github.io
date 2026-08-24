@@ -1,20 +1,18 @@
 ---
 
 title: AI Engineering and Architecture
-description: simple description
-lead: An informal knowledge base of evolving drafts to help you design, build, and deliver AI systems. These drafts contain conceptual models, frameworks, methods, and practices—but they do not guarantee success.
+description: Engineering notes on building AI systems whose behavior can be understood, evaluated, and improved systematically.
+lead: Engineering notes on building AI systems whose behavior can be understood, evaluated, and improved systematically.
 date: 2023-09-07T16:33:54+02:00
 lastmod: 2023-09-07T16:33:54+02:00
 draft: false
 seo:
-canonical: ""
-robots: ""
+  title: AI Engineering and Architecture
+  canonical: ""
+  robots: ""
 ---
 
-{{< callout context="note" title="Content access" icon="outline/info-circle" >}}
-Some notes on this site may be intentionally obfuscated to discourage unauthorized automated scraping and use in LLM training. This is a temporary measure while I look for a more appropriate way to control machine access to and reuse of this content.
-{{< /callout >}}
-
+Notes by [Valery Judah](/ai-engineering/my-perspective/), a software engineer working on production AI systems, evaluation, and software architecture. Find me on [GitHub](https://github.com/valeryTech).
 
 ## Selected Readings
 
@@ -72,6 +70,11 @@ Use the site by major topic area when you want the broader map instead of a sing
   title="Engineering"
   description="General software engineering practices, architecture thinking, and implementation discipline."
   href="/engineering/"
+>}}
+{{< link-card
+  title="Projects"
+  description="Worked engineering concepts and design explorations grounded in practical system concerns."
+  href="/projects/"
 >}}
 {{< /card-grid >}}
 

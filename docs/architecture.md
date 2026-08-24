@@ -67,6 +67,8 @@ section folders. For example:
 - `content/system-design/topics/api.md` renders `/system-design/topics/api/`
 - `content/ai-engineering/evaluation/harness-and-platform.md` renders
   `/ai-engineering/evaluation/harness-and-platform/`
+- `content/projects/code-assistant.md` is generated from the selected external
+  project note and renders `/projects/code-assistant/`
 
 If material is unfinished, it can live either in a local in-repo holding area
 such as `content/system-design/to_sort/` or upstream in the external notes tree

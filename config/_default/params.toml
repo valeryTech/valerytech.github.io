@@ -1,6 +1,6 @@
 # Hugo
-title = "My Knowledge Base"
-description = "You're welcome to the System Design Knowledge Base"
+title = "AI Engineering and Architecture"
+description = "Engineering notes on building AI systems whose behavior can be understood, evaluated, and improved systematically."
 images = ["cover.png"]
 
 # mainSections
@@ -130,7 +130,7 @@ mainSections = ["projects", "system-design", "ai-engineering"]
     type = "Person" # Organization (default) or Person
     logo = "favicon-512x512.png" # Logo of Organization — favicon-512x512.png (default)
     name = "Valery Judah" # Name of Organization or Person
-    sameAs = [] # E.g. ["https://github.com/valeryTech"]
+    sameAs = ["https://github.com/valeryTech"]
     images = ["cover.png"] # ["cover.png"] (default)
     article = [] # Article sections
     newsArticle = [] # NewsArticle sections
