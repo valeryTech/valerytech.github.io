@@ -12,7 +12,7 @@ seo:
   robots: ""
 ---
 
-Notes by [Valery Judah](/ai-engineering/my-perspective/), a software engineer working on production AI systems, evaluation, and software architecture. Find me on [GitHub](https://github.com/valeryTech).
+Notes by [Valery Yuda](/ai-engineering/my-perspective/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
 
 ## Selected Readings
 

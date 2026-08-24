@@ -5,6 +5,6 @@
   [en.params]
     languageISO = "EN"
     languageTag = "en-US"
-    footer = 'Notes by <a href="/ai-engineering/my-perspective/">Valery Judah</a>'
+    footer = 'Notes by <a href="/ai-engineering/my-perspective/">Valery Yuda</a>'
     alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">Doks version 1.0 just shipped!</a>'
 

@@ -129,8 +129,8 @@ mainSections = ["projects", "system-design", "ai-engineering"]
   [seo.schemas]
     type = "Person" # Organization (default) or Person
     logo = "favicon-512x512.png" # Logo of Organization — favicon-512x512.png (default)
-    name = "Valery Judah" # Name of Organization or Person
-    sameAs = ["https://github.com/valeryTech"]
+    name = "Valery Yuda" # Name of Organization or Person
+    sameAs = ["https://github.com/valery-judah"]
     images = ["cover.png"] # ["cover.png"] (default)
     article = [] # Article sections
     newsArticle = [] # NewsArticle sections
