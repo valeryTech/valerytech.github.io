@@ -14,6 +14,10 @@ seo:
 
 Notes by [Valery Yuda](/ai-engineering/my-perspective/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
 
+{{< callout context="note" title="Content access" icon="outline/info-circle" >}}
+Some notes on this site may be intentionally obfuscated to discourage unauthorized automated scraping and use in LLM training. This is a temporary measure while I look for a more appropriate way to control machine access to and reuse of this content.
+{{< /callout >}}
+
 ## Selected Readings
 
 A small selection of notes and drafts to start with.
