@@ -733,3 +733,946 @@ Check individual executions for those failure modes.
 Product Improvement Loop
 Uses the results to decide how to change the product.
 ```
+
+# process model candidate
+
+
+Yes. I'd model it as a set of **nested loops with stage gates**, rather than one pipeline that permanently moves from discovery to automation.
+
+The source-derived backbone is:
+
+```text
+Analyze → Measure → Improve
+```
+
+
+Failure understanding expands `Analyze` into discovery, coding, category development, and a failure model. Operationalisation then converts selected failure modes into labels and measurements. New or unclear failures reopen discovery.
+
+The gates, registries, lifecycle states, and separation of online sampling streams below are proposed structures for your system.
+
+# Overall process
+
+```text
+1. Failure discovery
+       ↓
+2. Failure-mode triage
+       ↓
+3. Operational metric design
+       ↓
+4. Evaluator implementation
+       ↓
+5. Human alignment
+       ↓
+6. Held-out validation
+       ↓
+7. Evaluator-suite assembly
+       ↓
+8. Offline measurement
+       ↓
+9. Online measurement
+       ↓
+10. Aggregation and SUT views
+       ↓
+11. SUT improvement
+
+At any point:
+    new failure           → failure discovery
+    ambiguous definition  → operational metric design
+    evaluator drift       → human alignment
+    missing coverage      → evaluation design
+    SUT change            → offline measurement
+```
+
+# Step 1: Maintain the failure model
+
+
+The input is the output of failure understanding:
+
+```text
+trace reviews
+    ↓
+concrete failure observations
+    ↓
+initial and focused coding
+    ↓
+failure modes
+    ↓
+failure model
+```
+
+
+At this stage, failure descriptions remain grounded in observed behavior. Experts identify what was wrong before claiming an internal cause, and they avoid prematurely forcing incidents into a fixed taxonomy.
+
+A failure-mode record could contain:
+
+```text
+FailureMode
+
+id
+title
+behavioral definition
+representative incidents
+contrasting successful incidents
+known boundaries
+affected product guarantees
+required trace evidence
+status
+```
+
+
+I'd give failure modes a lifecycle:
+
+```text
+provisional
+    ↓
+developed
+    ↓
+candidate-for-measurement
+    ↓
+operationalised
+    ↓
+monitored
+    ↓
+revised or retired
+```
+
+
+Not every discovered failure needs an evaluator.
+
+# Step 2: Triage each failure mode
+
+
+Before designing an evaluator, classify the failure mode.
+
+```text
+Failure mode
+    ↓
+┌──────────────────────────────────────────┐
+│ Is the intended product behavior clear? │
+└──────────────────────────────────────────┘
+       │
+       ├── no
+       │     ↓
+       │  clarify product or SUT specification
+       │     ↓
+       │  rerun and observe again
+       │
+       └── yes
+             ↓
+       Is repeated measurement useful?
+             │
+             ├── no → fix, defer, or retain for discovery
+             └── yes → operationalise
+```
+
+
+The evaluator guidance explicitly recommends resolving specification ambiguity before building automated evaluation. Otherwise, the evaluator may measure whether the SUT inferred unstated intent rather than whether it generalized from a clear specification.
+
+I'd use four triage outcomes:
+
+|Outcome|Meaning|
+|---|---|
+|**Fix now**|The failure comes from a clear specification or implementation omission and does not yet justify permanent measurement.|
+|**Operationalise**|The behavior is sufficiently understood and important enough to measure repeatedly.|
+|**Continue discovery**|The failure boundary is still unclear or incidents do not yet form a coherent mode.|
+|**Defer**|The mode is understood, but measurement cost currently exceeds its value.|
+
+This is the first gate.
+
+# Step 3: Choose the evaluation level
+
+
+For every operationalisation candidate, define where the failure exists.
+
+Multi-turn evaluation distinguishes three useful levels:
+
+- **Session level:** did the whole interaction accomplish the user's goal?
+- **Turn level:** was a particular response acceptable?
+- **Cross-turn or coherence level:** did the SUT retain and use earlier context correctly?
+
+So a failure mode should declare an evidence scope:
+
+```text
+failure_mode: loses user-stated constraint
+
+evaluation_level: cross-turn
+target: case execution
+required_evidence:
+  - earlier user constraint
+  - later SUT response or action
+```
+
+
+Another could be:
+
+```text
+failure_mode: invalid tool identifier
+
+evaluation_level: step
+target: tool invocation
+required_evidence:
+  - available tool registry
+  - emitted tool identifier
+```
+
+
+The broad SUT view and the failure-mode view should remain distinct:
+
+```text
+Holistic evaluator:
+Did the session accomplish the user’s goal?
+
+Specialized evaluator:
+Did this particular known failure occur?
+```
+
+
+A successful session signal should not be defined only as "none of the known failure evaluators fired." The failure model will always have some incompleteness.
+
+# Step 4: Define the operational metric
+
+
+This is the bridge between an analytical failure mode and an automated evaluator.
+
+```text
+Failure mode
+    ↓ operationalisation
+Operational metric
+    ↓ implementation
+Evaluator
+```
+
+
+An operational metric should define:
+
+```text
+OperationalMetric
+
+failure_mode_id
+version
+
+evaluation_level
+target
+applicability
+
+PASS definition
+FAIL definition
+
+required evidence
+allowed evidence
+exclusions
+boundary cases
+insufficient-evidence behavior
+
+reference strategy
+cost or risk of false pass
+cost or risk of false fail
+```
+
+
+Example:
+
+```text
+Metric: retention of user-stated constraints
+
+Applicable when:
+  the user states an active constraint
+  and the SUT later recommends or acts on an option
+
+PASS:
+  the later behavior respects the active constraint,
+  or explicitly asks to revise it
+
+FAIL:
+  the later behavior contradicts or ignores the active constraint
+
+Required evidence:
+  the original constraint
+  relevant intervening updates
+  the later response or action
+```
+
+
+This is where explicit criteria become necessary. They are required for repeatable automated measurement, even though they were not required for the expert's initial discovery review.
+
+# Step 5: Choose the evaluator implementation
+
+
+The broader concept should be **automated evaluator**. An LLM-as-Judge is one implementation type.
+
+```text
+Operational metric
+    ↓
+┌──────────────────────────────────────┐
+│ Can the property be checked exactly? │
+└──────────────────────────────────────┘
+       │
+       ├── yes → programmatic evaluator
+       │
+       └── no  → LLM evaluator or hybrid
+```
+
+
+Programmatic evaluators fit objective properties such as schema validity, valid tool names, required fields, executable SQL, or deterministic state checks. LLM evaluators fit behavior requiring semantic or domain interpretation. The sources recommend narrow, failure-specific evaluators and favor code where possible because it is cheaper, deterministic, and easier to interpret.
+
+Possible implementations are:
+
+```text
+Programmatic
+    deterministic rule or executable check
+
+Reference-based
+    compare against expected output, state, action, or trace
+
+Reference-free
+    assess an intrinsic behavioral property
+
+LLM-as-Judge
+    semantic binary classification
+
+Hybrid
+    deterministic evidence extraction
+        + semantic judgment
+```
+
+
+One operational metric may have more than one implementation. For example, a deterministic check can detect missing fields while an LLM evaluator handles semantically equivalent formulations.
+
+# Step 6: Build human reference data
+
+
+The initial open-ended failure notes are not yet sufficient as evaluator validation data.
+
+You now create a separate dataset asking a narrower question:
+
+```text
+Does failure mode F occur in this trace?
+
+PASS: failure absent
+FAIL: failure present
+```
+
+
+This dataset should include:
+
+- clear passes;
+- clear failures;
+- boundary cases;
+- cases from important product slices;
+- varying conversation lengths;
+- different failure positions;
+- cases that superficially resemble the failure but should pass.
+
+For multi-turn modes, include complete sessions, conversation prefixes, changed constraints, corrections, and other perturbations when relevant. The source recommends full-session review, reduced reproductions, `N-1` conversation prefixes, and targeted perturbations to expose context and memory failures.
+
+For LLM evaluators, divide the human-labeled examples into disjoint sets:
+
+```text
+Training examples
+    used as possible few-shot examples
+
+Development set
+    used repeatedly for evaluator refinement
+
+Held-out test set
+    used only after development is complete
+```
+
+
+The source suggests keeping most examples for development and test, with balanced pass/fail representation where feasible. Development and test examples must not appear in the evaluator prompt.
+
+# Step 7: Run the evaluator-alignment loop
+
+
+This is the first major repeated loop.
+
+```text
+Write baseline evaluator
+       ↓
+Run on development set
+       ↓
+Compare with human labels
+       ↓
+Calculate pass and failure recognition
+       ↓
+Inspect disagreements
+       ↓
+Revise evaluator or operational metric
+       ↓
+Run again
+```
+
+
+For an LLM evaluator:
+
+```text
+task definition
++ precise PASS/FAIL definitions
++ training-set examples
++ structured output
+```
+
+
+The recommended task is narrow and usually binary.
+
+For every disagreement, I'd classify the cause:
+
+```text
+Evaluator problem
+    prompt, model, parsing, rule, or implementation is wrong
+
+Operational-definition problem
+    PASS/FAIL boundary is ambiguous
+
+Evidence problem
+    trace lacks evidence needed for the metric
+
+Human-label problem
+    reference label is mistaken or inconsistent
+
+Failure-model problem
+    failure mode is too broad or combines distinct behaviors
+```
+
+
+That gives different feedback paths:
+
+```text
+evaluator problem
+    → revise evaluator
+
+definition problem
+    → revise operational metric
+
+evidence problem
+    → revise trace capture or applicability rule
+
+label problem
+    → expert review of reference label
+
+failure-model problem
+    → reopen failure understanding
+```
+
+
+The sources explicitly recommend inspecting false passes and false fails, refining criteria and examples, and decomposing a metric when alignment stalls. They also note that prompt development can reveal that human labels or the failure definition should change.
+
+# Step 8: Freeze and validate
+
+
+Once development performance stabilizes:
+
+```text
+freeze:
+  operational metric version
+  evaluator code or prompt
+  model and parameters
+  training examples
+  output parser
+```
+
+
+Then run the held-out test set.
+
+The validation artifact should record:
+
+```text
+EvaluatorValidation
+
+evaluator_version
+metric_version
+test_set_version
+
+human pass count
+human fail count
+
+true pass rate
+true fail rate
+false-pass rate
+false-fail rate
+
+performance by important slice
+known limitations
+validation decision
+```
+
+
+I'd use three validation outcomes:
+
+```text
+validated
+    suitable for declared scope
+
+restricted
+    suitable only for particular slices or uses
+
+rejected
+    not reliable enough for measurement
+```
+
+
+Thresholds should reflect risk. Missing an unauthorized financial action is different from falsely flagging a mild tone issue. The source uses 90% as an example, while explicitly saying the acceptable rates depend on application needs.
+
+A process rule I'd add: once test-set errors influence evaluator redesign, that test set is no longer clean. The next formal validation should use a new held-out version.
+
+# Step 9: Register evaluator versions
+
+
+Validated evaluators need their own lifecycle.
+
+```text
+draft
+  ↓
+development-aligned
+  ↓
+test-validated
+  ↓
+active
+  ↓
+degraded
+  ↓
+retired
+```
+
+
+An evaluator registry could contain:
+
+```text
+EvaluatorVersion
+
+id
+operational_metric_id
+implementation_type
+code/prompt/model version
+required inputs
+supported scopes
+validation report
+known limitations
+status
+effective dates
+```
+
+
+This registry prevents a measurement from saying only:
+
+```text
+constraint retention = 94%
+```
+
+
+It should also establish:
+
+```text
+measured with evaluator E17
+under metric definition M4
+validated on reference set R3
+```
+
+# Step 10: Assemble an evaluator suite
+
+
+An evaluator suite is a versioned measurement policy.
+
+```text
+EvaluatorSuite
+
+holistic session evaluator
+failure-mode evaluators
+applicability routing
+aggregation policy
+suite version
+```
+
+
+Example:
+
+```text
+Wallet evaluator suite v3
+
+holistic:
+  task_completion_v2
+
+failure modes:
+  constraint_retention_v4
+  unauthorized_action_v2
+  unsupported_state_claim_v5
+  invalid_tool_usage_v1
+```
+
+
+A suite may contain:
+
+- one broad session-success evaluator;
+- several specialized failure-mode evaluators;
+- programmatic checks;
+- LLM evaluators;
+- evaluators that apply only to particular workflows or trace shapes.
+
+The suite should not run every evaluator on every trace. Applicability is part of the metric.
+
+# Step 11: Build the offline evaluation loop
+
+
+Offline evaluation operates against declared SUT versions and controlled cohorts.
+
+```text
+SUT version
+    +
+execution configuration
+    +
+evaluation cohort
+        ↓
+execution run
+        ↓
+execution result
+        ↓
+evaluator suite
+        ↓
+judgments
+        ↓
+evaluation snapshot
+```
+
+
+Useful offline cohorts include:
+
+```text
+General evaluation cohort
+    broad representative behavior
+
+Regression cohort
+    previously observed and fixed failures
+
+Failure-targeted cohort
+    cases designed to exercise one failure mode
+
+Conversation-length cohort
+    short, medium, and long interactions
+
+Perturbation cohort
+    changed goals, added constraints, corrections, ambiguity
+
+Prefix cohort
+    N-1 conversation state followed by repeated next-turn sampling
+```
+
+
+Multi-turn evaluation benefits from broad session-level judgment, while turn-level inspection is mainly useful for debugging particular failures.
+
+The offline SUT improvement loop is:
+
+```text
+measure baseline
+    ↓
+change SUT
+    ↓
+execute comparable cohorts
+    ↓
+measure again
+    ↓
+compare by holistic success and failure mode
+    ↓
+inspect regressions and improvements
+    ↓
+change SUT again
+```
+
+
+An offline result should be a versioned **evaluation snapshot**, containing all execution, evaluator-suite, and aggregation versions.
+
+# Step 12: Build the online evaluation loop
+
+
+Online evaluation should use two different sampling streams.
+
+This separation is my proposed structure.
+
+## Measurement stream
+
+```text
+representative production sample
+    ↓
+evaluator suite
+    ↓
+prevalence estimates
+    ↓
+time-series and slice analytics
+```
+
+
+Its purpose is estimating how the SUT behaves in production. Sampling should be representative enough to support prevalence claims.
+
+## Discovery and audit stream
+
+```text
+risk-based / uncertain / new-feature traces
+    ↓
+human review
+    ↓
+novel failures or evaluator disagreements
+```
+
+
+Its purpose is finding new problems and checking evaluator health.
+
+These streams should remain separate because a risk-targeted sample cannot be interpreted as an unbiased production failure rate without an explicit weighting design.
+
+The online maintenance loop is:
+
+```text
+automated online judgments
+        ↓
+periodic human audit
+        ↓
+compare evaluator with current human labels
+        ↓
+alignment stable?
+    ┌───────────┴───────────┐
+   yes                      no
+    ↓                        ↓
+continue             evaluator alignment loop
+```
+
+
+The evaluator source recommends ongoing human labeling and repeated alignment checks because production data, SUT behavior, models, and failure modes can drift.
+
+# Step 13: Aggregate judgments into SUT views
+
+
+The primitive outputs are evaluator judgments:
+
+```text
+trace T42
+
+holistic task completion: PASS
+constraint retention: FAIL
+unauthorized action: PASS
+unsupported state claim: PASS
+```
+
+
+Aggregation then produces several distinct views.
+
+## 1. Holistic success
+
+```text
+session pass rate
+task-completion rate
+goal-achievement rate
+```
+
+
+This answers whether the SUT succeeds overall.
+
+## 2. Failure prevalence
+
+```text
+constraint-loss rate
+unauthorized-action rate
+unsupported-claim rate
+```
+
+
+Each denominator should include only traces where the evaluator was applicable.
+
+## 3. Failure profile
+
+```text
+Which known failure modes dominate?
+Which occur together?
+Which modes are rare but severe?
+```
+
+## 4. Slice views
+
+
+Break measurements down by:
+
+```text
+workflow
+feature
+case type
+model
+tool
+conversation length
+turn position
+interaction form
+risk class
+online/offline source
+SUT version
+```
+
+
+Conversation length and turn position are especially relevant for multi-turn systems because degradation may appear only later in an interaction.
+
+## 5. Change views
+
+```text
+SUT v12 vs v13
+prompt A vs prompt B
+model X vs model Y
+before fix vs after fix
+```
+
+
+These should show both improvements and regressions by failure mode.
+
+## 6. Evaluator-health views
+
+```text
+test-set true-pass rate
+test-set true-fail rate
+human-audit disagreement
+insufficient-evidence rate
+current evaluator version
+validation age
+performance by slice
+drift indicators
+```
+
+
+This view distinguishes a SUT change from a measurement-system change.
+
+# Step 14: Account for evaluator error
+
+
+Automated evaluator predictions are measurements from an imperfect instrument.
+
+For evaluator-backed prevalence, preserve:
+
+```text
+raw evaluator rate
+estimated human rate
+uncertainty interval
+evaluator validation characteristics
+```
+
+
+The source proposes using held-out test-set performance to correct the raw rate and calculate a confidence interval.
+
+Conceptually:
+
+```text
+raw automated judgments
+        +
+held-out human/evaluator comparison
+        ↓
+corrected prevalence estimate
+        +
+confidence interval
+```
+
+
+This should be applied per failure mode, because each evaluator has different error characteristics.
+
+A single overall score would discard much of this information. I'd postpone any weighted SUT score until there is an explicit product policy describing severity, importance, and aggregation.
+
+# The core loops
+
+
+The complete system has five loops.
+
+## 1. Failure-discovery loop
+
+```text
+observe traces
+    ↓
+record failures
+    ↓
+compare and code
+    ↓
+refine failure model
+    ↓
+sample more traces
+```
+
+
+Triggered by novel, unclear, or poorly represented behavior.
+
+## 2. Evaluator-alignment loop
+
+```text
+operational metric
+    ↓
+evaluator
+    ↓
+development-set comparison
+    ↓
+disagreement analysis
+    ↓
+refinement
+```
+
+
+Triggered while building an evaluator or when evaluator performance degrades.
+
+## 3. SUT-improvement loop
+
+```text
+offline measurement
+    ↓
+identify important failures
+    ↓
+change SUT
+    ↓
+rerun
+    ↓
+compare
+```
+
+
+Triggered by planned development work.
+
+## 4. Online-maintenance loop
+
+```text
+production measurement
+    ↓
+human audit
+    ↓
+detect drift
+    ↓
+revalidate or revise evaluator
+```
+
+
+Triggered continuously or periodically after deployment.
+
+## 5. Evaluation-design loop
+
+```text
+failure or missing evidence
+    ↓
+identify coverage/capture gap
+    ↓
+revise cases or execution evidence
+    ↓
+run again
+```
+
+
+Triggered when the issue is with what was exercised or captured, rather than with the SUT or evaluator.
+
+# The resulting system structure
+
+```text
+Failure Model Registry
+        ↓
+Operational Metric Registry
+        ↓
+Evaluator Registry
+        ↓
+Evaluator Suite Registry
+       / \
+      /   \
+Offline   Online
+ Plane     Plane
+      \   /
+       \ /
+Judgment and Measurement Store
+        ↓
+Analytics / SUT Views
+```
+
+
+The next concrete step is Step 2: apply the four-way triage--**fix now, operationalise, continue discovery, or defer**--to your current failure set. Paste or attach that set, and we can classify it one failure mode at a time.

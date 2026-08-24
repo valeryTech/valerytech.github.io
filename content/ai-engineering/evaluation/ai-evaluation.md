@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Evaluation"
-linkTitle: "Evaluation"
+title: "Ai Evaluation"
+linkTitle: "Ai Evaluation"
 ---
 # AI Evaluation as an Engineering Learning System
 
@@ -233,11 +233,11 @@ A single execution may therefore be checked by ordinary assertions, code-based e
 
 Evaluations can run in three main locations:
 
-|Plane|When it runs|Typical purpose|
-|---|---|---|
-|Offline|Before deployment against fixed, sampled, or generated cases|Discovery, regression testing, candidate comparison, and release evidence|
-|Online synchronous|Inside the live request path|Deterministic safety checks, policy enforcement, validation, and blocking controls|
-|Online asynchronous|After or alongside the live request|Monitoring, sampling, failure discovery, drift detection, and dataset growth|
+| Plane               | When it runs                                                 | Typical purpose                                                                    |
+| ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Offline             | Before deployment against fixed, sampled, or generated cases | Discovery, regression testing, candidate comparison, and release evidence          |
+| Online synchronous  | Inside the live request path                                 | Deterministic safety checks, policy enforcement, validation, and blocking controls |
+| Online asynchronous | After or alongside the live request                          | Monitoring, sampling, failure discovery, drift detection, and dataset growth       |
 
 Placement depends on latency, cost, reliability, and consequence. A slow or probabilistic judge should not become a synchronous gate unless its benefit justifies the operational risk. Online findings should feed new cases and failure models into the offline plane; offline evaluators should move online only when their behaviour and operational cost are sufficiently understood.
 

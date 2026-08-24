@@ -25,10 +25,9 @@ Do not generate examples for neighboring tuples.
 
 Do not generate ideal assistant responses.
 
+```
 # Inputs
-
 ## Product specification
-
 
 <PRODUCT_SPEC>
 
@@ -38,7 +37,6 @@ Do not generate ideal assistant responses.
 
 ## Dimension set
 
-
 <DIMENSION_SET>
 
 {{DIMENSION_SET}}
@@ -46,7 +44,6 @@ Do not generate ideal assistant responses.
 </DIMENSION_SET>
 
 ## Target tuple
-
 
 <TARGET_TUPLE>
 
@@ -56,12 +53,13 @@ Do not generate ideal assistant responses.
 
 ## Optional generation context
 
-
 <GENERATION_CONTEXT>
 
 {{GENERATION_CONTEXT}}
 
 </GENERATION_CONTEXT>
+```
+
 
 Generation context may contain approved domain vocabulary, example entity names, locale information, or other constraints.
 
@@ -87,26 +85,7 @@ Your job is to vary the natural-language realization without changing those cons
 # 2. Treat the tuple as authoritative
 
 
-Read the definitions of every dimension used in the target tuple.
-
-For each example, verify that the generated input satisfies every assigned value.
-
-Do not silently reinterpret dimension values.
-
-Do not add difficulty that belongs to another tuple.
-
-For example:
-
-- if determinacy is `clear`, do not introduce accidental ambiguity;
-- if multiplicity is `single`, do not add a second request;
-- if context dependence is `self_contained`, the message must make sense without prior conversation;
-- if reference surface is `named_phrase`, do not introduce typos merely for variety;
-- if information coverage is `partial`, do not accidentally make the transaction fully specified;
-- if the tuple represents `resolved_correction`, make the user's final intended value recoverable;
-- if the tuple represents `contradictory`, do not resolve the contradiction;
-- if the tuple represents `intent_ambiguous`, preserve genuine ambiguity rather than making one interpretation obviously dominant.
-
-Tuple fidelity is more important than linguistic diversity.
+Read the definitions of every dimension used in the target tuple. For each example, verify that the generated input satisfies every assigned value. Do not silently reinterpret dimension values. Do not add difficulty that belongs to another tuple. Tuple fidelity is more important than linguistic diversity.
 
 # 3. Generate user inputs, not test descriptions
 
