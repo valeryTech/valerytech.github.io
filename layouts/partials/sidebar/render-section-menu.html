@@ -89,7 +89,7 @@ skipped. To override this behavior, set $skipHome to false below.
   {{- $isCurrent := $currentPage.Eq $node.Page }}
   {{- $isAncestor := and (not $isCurrent) (in $currentPage.Ancestors $node.Page) }}
   {{- $hasChildren := gt (len $node.Page.Pages) 0 }}
-  {{- $defaultOpen := eq $depth 1 }}
+  {{- $defaultOpen := false }}
   {{- with $node.Page.Params.sidebar }}
     {{- if isset . "collapsed" }}
       {{- $defaultOpen = not (index . "collapsed") }}

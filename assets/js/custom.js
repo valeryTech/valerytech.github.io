@@ -152,8 +152,37 @@ function initTocActiveState() {
   requestUpdate();
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initTocActiveState);
-} else {
+function initTopLevelSidebarAccordion() {
+  const sidebars = document.querySelectorAll(".section-nav");
+
+  for (const sidebar of sidebars) {
+    const topLevelGroups = Array.from(
+      sidebar.querySelectorAll(".sidebar-group.depth-1 > details")
+    );
+
+    for (const group of topLevelGroups) {
+      group.addEventListener("toggle", () => {
+        if (!group.open) {
+          return;
+        }
+
+        for (const sibling of topLevelGroups) {
+          if (sibling !== group) {
+            sibling.open = false;
+          }
+        }
+      });
+    }
+  }
+}
+
+function initCustomBehavior() {
   initTocActiveState();
+  initTopLevelSidebarAccordion();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCustomBehavior);
+} else {
+  initCustomBehavior();
 }
