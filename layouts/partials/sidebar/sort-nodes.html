@@ -1,0 +1,51 @@
+{{- $weighted := slice -}}
+{{- $unweighted := slice -}}
+{{- $weights := slice -}}
+
+{{- range . -}}
+  {{- $node := . -}}
+  {{- $title := "" -}}
+  {{- $path := "" -}}
+  {{- with $node.Page -}}
+    {{- $title = .LinkTitle -}}
+    {{- $path = .RelPermalink -}}
+  {{- end -}}
+  {{- if not $title -}}
+    {{- with $node.Name -}}
+      {{- $title = . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $sortTitle := printf "%s\x00%s" $title $path -}}
+
+  {{- $hasWeight := false -}}
+  {{- $weight := 0 -}}
+  {{- with $node.Page -}}
+    {{- with .Params.sidebar -}}
+      {{- if isset . "weight" -}}
+        {{- $hasWeight = true -}}
+        {{- $weight = index . "weight" -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $entry := dict "node" $node "title" $sortTitle "weight" $weight -}}
+  {{- if $hasWeight -}}
+    {{- $weighted = $weighted | append $entry -}}
+    {{- $weights = $weights | append $weight -}}
+  {{- else -}}
+    {{- $unweighted = $unweighted | append $entry -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $sorted := slice -}}
+{{- range sort (uniq $weights) -}}
+  {{- $weight := . -}}
+  {{- range sort (where $weighted "weight" "eq" $weight) "title" "asc" -}}
+    {{- $sorted = $sorted | append .node -}}
+  {{- end -}}
+{{- end -}}
+{{- range sort $unweighted "title" "asc" -}}
+  {{- $sorted = $sorted | append .node -}}
+{{- end -}}
+
+{{- return $sorted -}}

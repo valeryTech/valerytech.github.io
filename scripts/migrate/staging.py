@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import shutil
+from dataclasses import replace
 from pathlib import Path
 
 from scripts.migrate.conversion import RenderContext, convert_document
@@ -9,6 +10,24 @@ from scripts.migrate.parser import parse_document
 from scripts.migrate.planning import synthetic_index_frontmatter
 from scripts.migrate.render import render_document, render_frontmatter
 from scripts.migrate.runtime import MigrationRun
+
+
+def with_sidebar_weight(
+    frontmatter: dict[str, object],
+    target: Path,
+    run: MigrationRun,
+) -> dict[str, object]:
+    if target not in run.plan.sidebar_weights:
+        return frontmatter
+
+    result = dict(frontmatter)
+    existing_sidebar = result.get("sidebar", {})
+    if not isinstance(existing_sidebar, dict):
+        raise TypeError(f"sidebar front matter must be a mapping for {target.as_posix()}")
+    sidebar = dict(existing_sidebar)
+    sidebar["weight"] = run.plan.sidebar_weights[target]
+    result["sidebar"] = sidebar
+    return result
 
 
 def write_synthetic_indexes(staging_root: Path, run: MigrationRun) -> None:
@@ -23,8 +42,9 @@ def write_synthetic_indexes(staging_root: Path, run: MigrationRun) -> None:
             if index_rel not in synthetic_targets and not (staging_root / index_rel).exists():
                 path = staging_root / index_rel
                 path.parent.mkdir(parents=True, exist_ok=True)
+                frontmatter = synthetic_index_frontmatter(run.config, parent)
                 path.write_text(
-                    render_frontmatter(synthetic_index_frontmatter(run.config, parent)),
+                    render_frontmatter(with_sidebar_weight(frontmatter, index_rel, run)),
                     encoding="utf-8",
                 )
                 synthetic_targets.add(index_rel)
@@ -49,6 +69,14 @@ def stage_note(staging_root: Path, note: PlannedNote, run: MigrationRun) -> None
     )
     destination = staging_root / note.target_rel_content
     destination.parent.mkdir(parents=True, exist_ok=True)
+    converted = replace(
+        converted,
+        frontmatter=with_sidebar_weight(
+            converted.frontmatter,
+            note.target_rel_content,
+            run,
+        ),
+    )
     destination.write_text(render_document(converted), encoding="utf-8")
     run.report.generated_files.append(note.target_rel_content.as_posix())
 

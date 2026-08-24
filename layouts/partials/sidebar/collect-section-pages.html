@@ -7,10 +7,8 @@
 {{- end -}}
 
 {{- with $node.Page.Pages -}}
-  {{- range .GroupBy "Weight" "asc" -}}
-    {{- range .ByTitle -}}
-      {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" $skipHome) -}}
-    {{- end -}}
+  {{- range partial "sidebar/sort-nodes.html" . -}}
+    {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" $skipHome) -}}
   {{- end -}}
 {{- else -}}
   {{- with $node.Page -}}

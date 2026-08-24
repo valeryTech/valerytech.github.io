@@ -5,6 +5,9 @@ from pathlib import Path
 from typing import Any
 
 
+SidebarWeight = int | float
+
+
 @dataclass(frozen=True)
 class ImportRule:
     name: str
@@ -19,6 +22,7 @@ class ImportRule:
     synthesize_section_indexes: bool
     attachment_mode: str
     rename_overrides: dict[str, str]
+    sidebar_weights: dict[Path, SidebarWeight]
 
 
 @dataclass(frozen=True)

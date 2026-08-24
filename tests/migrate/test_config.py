@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 from textwrap import dedent
 import unittest
 
@@ -22,6 +23,55 @@ class MigrationConfigTests(unittest.TestCase):
         rule = config.imports[0]
         self.assertEqual(rule.selection_mode, "opt-out")
         self.assertEqual(rule.selection_paths, tuple())
+        self.assertEqual(
+            rule.sidebar_weights,
+            {Path("topics"): 10, Path("topics/api"): 20},
+        )
+
+    def test_sidebar_weights_must_use_relative_extensionless_paths(self) -> None:
+        invalid_paths = (
+            ("/topics", "relative"),
+            ("../topics", "'..'"),
+            ("topics.md", "extensionless"),
+        )
+        for invalid_path, message in invalid_paths:
+            with self.subTest(path=invalid_path):
+                self.write_config(
+                    f"""
+                    [defaults]
+
+                    [[imports]]
+                    name = "system-design"
+                    source_root_kind = "external"
+                    source_subtree = "system-design"
+                    target_subtree = "system-design"
+
+                    [imports.sidebar_weights]
+                    "{invalid_path}" = 10
+                    """
+                )
+
+                with self.assertRaisesRegex(ValueError, message):
+                    load_config(self.workspace.config_path)
+
+    def test_sidebar_weights_must_be_numeric(self) -> None:
+        self.write_config(
+            """
+            [defaults]
+
+            [[imports]]
+            name = "system-design"
+            source_root_kind = "external"
+            source_subtree = "system-design"
+            target_subtree = "system-design"
+
+            [imports.sidebar_weights]
+            "topics" = "first"
+            """
+        )
+
+        with self.assertRaisesRegex(ValueError, "must be numeric"):
+            load_config(self.workspace.config_path)
 
     def test_opt_in_requires_selection_paths(self) -> None:
         self.write_config(

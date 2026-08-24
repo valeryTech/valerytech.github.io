@@ -15,6 +15,10 @@ target_subtree = "system-design"
 root_index_source = "_index.md"
 include = ["**/*.md", "*.md"]
 
+[imports.sidebar_weights]
+"topics" = 10
+"topics/api" = 20
+
 [[imports]]
 name = "migration-smoke"
 source_root_kind = "repo"

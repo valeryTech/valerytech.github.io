@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-from scripts.migrate.models.config import ImportRule
+from scripts.migrate.models.config import ImportRule, SidebarWeight
 
 
 @dataclass(frozen=True)
@@ -27,3 +27,4 @@ class PlannedAttachment:
 class MigrationPlan:
     notes: tuple[PlannedNote, ...]
     managed_targets: tuple[Path, ...]
+    sidebar_weights: dict[Path, SidebarWeight]

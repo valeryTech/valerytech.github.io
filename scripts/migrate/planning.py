@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from scripts.migrate.models import ImportRule, MigrationConfig, MigrationPlan, PlannedNote
+from scripts.migrate.models.config import SidebarWeight
 from scripts.migrate.paths import note_to_ref, source_import_root
 from scripts.migrate.runtime import MigrationRoots
 from scripts.migrate.text import humanize_slug, slugify
@@ -117,7 +118,61 @@ def build_migration_plan(
                 )
             )
 
-    return MigrationPlan(notes=tuple(notes), managed_targets=tuple(managed_targets))
+    sidebar_weights = resolve_sidebar_weights(config, notes)
+    return MigrationPlan(
+        notes=tuple(notes),
+        managed_targets=tuple(managed_targets),
+        sidebar_weights=sidebar_weights,
+    )
+
+
+def synthetic_index_targets(notes: list[PlannedNote]) -> set[Path]:
+    targets: set[Path] = set()
+    for note in notes:
+        if not note.import_rule.synthesize_section_indexes:
+            continue
+        parent = note.target_rel_content.parent
+        import_root = note.import_rule.target_subtree
+        while parent != import_root.parent and parent != Path("."):
+            targets.add(parent / "_index.md")
+            if parent == import_root:
+                break
+            parent = parent.parent
+    return targets
+
+
+def resolve_sidebar_weights(
+    config: MigrationConfig,
+    notes: list[PlannedNote],
+) -> dict[Path, SidebarWeight]:
+    output_targets = {note.target_rel_content for note in notes}
+    output_targets.update(synthetic_index_targets(notes))
+    resolved: dict[Path, SidebarWeight] = {}
+
+    for rule in config.imports:
+        for relative_path, weight in rule.sidebar_weights.items():
+            base = rule.target_subtree / relative_path
+            candidates = [base / "_index.md", base.with_suffix(".md")]
+            matches = [candidate for candidate in candidates if candidate in output_targets]
+            display_path = relative_path.as_posix()
+            if not matches:
+                raise MigrationFailed(
+                    f"Unknown sidebar_weights target for import '{rule.name}': {display_path}"
+                )
+            if len(matches) > 1:
+                raise MigrationFailed(
+                    f"Ambiguous sidebar_weights target for import '{rule.name}': {display_path}"
+                )
+
+            target = matches[0]
+            if target in resolved and resolved[target] != weight:
+                raise MigrationFailed(
+                    f"Conflicting sidebar weights for target '{target.as_posix()}': "
+                    f"{resolved[target]} and {weight}"
+                )
+            resolved[target] = weight
+
+    return resolved
 
 
 def synthetic_index_frontmatter(config: MigrationConfig, parent: Path) -> dict[str, object]:

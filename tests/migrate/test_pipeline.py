@@ -37,15 +37,20 @@ class MigrationPipelineTests(unittest.TestCase):
 
         api_path = self.workspace.content_root / "system-design/topics/api.md"
         index_path = self.workspace.content_root / "system-design/_index.md"
+        topics_index_path = self.workspace.content_root / "system-design/topics/_index.md"
         smoke_path = self.workspace.content_root / "system-design/integrated-test-pages/migration-smoke.md"
         self.assertTrue(api_path.exists())
         self.assertTrue(index_path.exists())
+        self.assertTrue(topics_index_path.exists())
         self.assertTrue(smoke_path.exists())
 
         api_content = api_path.read_text(encoding="utf-8")
         index_content = index_path.read_text(encoding="utf-8")
+        topics_index_content = topics_index_path.read_text(encoding="utf-8")
         smoke_content = smoke_path.read_text(encoding="utf-8")
         self.assertIn('title: "Api"', api_content)
+        self.assertIn("sidebar:\n  weight: 20", api_content)
+        self.assertIn("sidebar:\n  weight: 10", topics_index_content)
         self.assertIn('figure src="api.assets/api-diagram.png"', api_content)
         self.assertIn('[Caching Doc]({{< ref "system-design/topics/caching" >}})', api_content)
         self.assertIn(r"Inline math: \(x = y + 1\).", api_content)

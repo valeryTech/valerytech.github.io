@@ -3,6 +3,8 @@ draft: false
 toc: true
 title: "My Perspective"
 linkTitle: "My Perspective"
+sidebar:
+  weight: 30
 ---
 # My approach to production AI engineering
 

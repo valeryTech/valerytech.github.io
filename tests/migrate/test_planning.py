@@ -105,6 +105,61 @@ class PlanningTests(unittest.TestCase):
         with self.assertRaises(MigrationFailed):
             build_migration_plan(config, make_run(self.workspace).roots)
 
+    def test_unknown_sidebar_weight_target_fails_plan(self) -> None:
+        roots = make_run(self.workspace).roots
+        self.write_config(
+            """
+            [defaults]
+            include = ["**/*.md", "*.md"]
+
+            [[imports]]
+            name = "system-design"
+            source_root_kind = "external"
+            source_subtree = "system-design"
+            target_subtree = "system-design"
+
+            [imports.sidebar_weights]
+            "missing" = 10
+            """
+        )
+
+        config = load_config(self.workspace.config_path)
+        with self.assertRaisesRegex(MigrationFailed, "Unknown sidebar_weights target"):
+            build_migration_plan(config, roots)
+
+    def test_conflicting_sidebar_weights_across_imports_fail_plan(self) -> None:
+        roots = make_run(self.workspace).roots
+        self.write_config(
+            """
+            [defaults]
+            include = ["**/*.md", "*.md"]
+
+            [[imports]]
+            name = "system-design"
+            source_root_kind = "external"
+            source_subtree = "system-design"
+            target_subtree = "system-design"
+
+            [imports.sidebar_weights]
+            "integrated-test-pages" = 10
+
+            [[imports]]
+            name = "migration-smoke"
+            source_root_kind = "repo"
+            source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"
+            target_subtree = "system-design/integrated-test-pages"
+            include = ["migration-smoke.md"]
+            synthesize_section_indexes = false
+
+            [imports.sidebar_weights]
+            "." = 20
+            """
+        )
+
+        config = load_config(self.workspace.config_path)
+        with self.assertRaisesRegex(MigrationFailed, "Conflicting sidebar weights"):
+            build_migration_plan(config, roots)
+
 
 if __name__ == "__main__":
     unittest.main()

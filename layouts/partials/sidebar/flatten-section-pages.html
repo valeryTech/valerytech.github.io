@@ -3,12 +3,12 @@
 {{- $sidebar := printf "sidebar_%s" .Section -}}
 
 {{- with index site.Menus $sidebar -}}
-  {{- range . -}}
+  {{- range partial "sidebar/sort-nodes.html" . -}}
     {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" true) -}}
   {{- end -}}
 {{- else -}}
   {{- with (.Site.GetPage "section" .Section).Pages -}}
-    {{- range . -}}
+    {{- range partial "sidebar/sort-nodes.html" . -}}
       {{- partial "sidebar/collect-section-pages.html" (dict "node" . "scratch" $scratch "skipHome" true) -}}
     {{- end -}}
   {{- end -}}

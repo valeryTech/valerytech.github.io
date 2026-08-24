@@ -115,6 +115,33 @@ only `coding-agents/`, `evaluation/`, `ambiguity.md`,
 `approach/empirical-nature.md`, `approach/experimentation.md`, and the root
 `_index.md` are regenerated for that section.
 
+## Sidebar Ordering
+
+Migration-managed content can define optional left-menu weights in its import
+entry. Keys are extensionless paths relative to `target_subtree` and may refer
+to a section or a regular page:
+
+```toml
+[[imports]]
+name = "engineering"
+source_subtree = "topics/engineering"
+target_subtree = "engineering"
+
+[imports.sidebar_weights]
+"architecture" = 10
+"data" = 20
+"topics/tests" = 30
+```
+
+The migration writes each configured value to `sidebar.weight` in the generated
+front matter. Lower values appear first. Entries with the same weight are
+alphabetical, and entries without weights follow alphabetically. Use gaps such
+as 10, 20, and 30 so entries can be inserted later.
+
+The manifest is the source of truth for managed content because `make migrate`
+replaces generated subtrees. For content outside those subtrees, set
+`sidebar.weight` directly in the page front matter.
+
 ## Operational Notes
 
 Managed content may be overwritten on every migration run. Do not hand-edit

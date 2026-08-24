@@ -49,7 +49,7 @@ skipped. To override this behavior, set $skipHome to false below.
 {{- /* Get parameters. */}}
 {{- $currentPage := .currentPage }}
 {{- $rootPage := .rootPage }}
-{{- $nodes := .nodes }}
+{{- $nodes := partial "sidebar/sort-nodes.html" .nodes }}
 
 {{- /* Render. */}}
 <nav class="section-nav docs-links" aria-label="{{ $rootPage.LinkTitle }} navigation">
@@ -105,10 +105,8 @@ skipped. To override this behavior, set $skipHome to false below.
           <li class="sidebar-item sidebar-overview depth-{{ add $depth 1 }}{{ if $isCurrent }} active{{ end }}">
             <a{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ $node.Page.RelPermalink }}">Overview</a>
           </li>
-          {{- range $node.Page.Pages.GroupBy "Weight" "asc" }}
-            {{- range .ByTitle }}
-              {{- template "walk" (dict "node" . "currentPage" $currentPage "depth" (add $depth 1)) }}
-            {{- end }}
+          {{- range partial "sidebar/sort-nodes.html" $node.Page.Pages }}
+            {{- template "walk" (dict "node" . "currentPage" $currentPage "depth" (add $depth 1)) }}
           {{- end }}
         </ul>
       </details>

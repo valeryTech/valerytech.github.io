@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import math
 import tomllib
 from pathlib import Path
 
 from scripts.migrate.models import ImportRule, MigrationConfig
+from scripts.migrate.models.config import SidebarWeight
 
 
 def _as_tuple(value: object, default: tuple[str, ...]) -> tuple[str, ...]:
@@ -32,6 +34,34 @@ def _as_relative_paths(value: object) -> tuple[Path, ...]:
             raise ValueError("selection_paths entries must not contain '..'")
         paths.append(path)
     return tuple(paths)
+
+
+def _as_sidebar_weights(value: object) -> dict[Path, SidebarWeight]:
+    if value is None:
+        return {}
+    if not isinstance(value, dict):
+        raise ValueError("sidebar_weights must be a table")
+
+    weights: dict[Path, SidebarWeight] = {}
+    for raw_path, raw_weight in value.items():
+        text = str(raw_path).strip()
+        if not text:
+            raise ValueError("sidebar_weights paths must be non-empty")
+        path = Path(text)
+        if path.is_absolute():
+            raise ValueError("sidebar_weights paths must be relative")
+        if ".." in path.parts:
+            raise ValueError("sidebar_weights paths must not contain '..'")
+        if path.suffix:
+            raise ValueError("sidebar_weights paths must be extensionless")
+        if path in weights:
+            raise ValueError(f"Duplicate sidebar_weights path: {path.as_posix()}")
+        if isinstance(raw_weight, bool) or not isinstance(raw_weight, (int, float)):
+            raise ValueError(f"sidebar weight for '{text}' must be numeric")
+        if isinstance(raw_weight, float) and not math.isfinite(raw_weight):
+            raise ValueError(f"sidebar weight for '{text}' must be finite")
+        weights[path] = raw_weight
+    return weights
 
 
 def load_config(config_path: Path) -> MigrationConfig:
@@ -100,6 +130,7 @@ def load_config(config_path: Path) -> MigrationConfig:
                 rename_overrides={
                     str(key): str(value) for key, value in rename_overrides.items()
                 },
+                sidebar_weights=_as_sidebar_weights(entry.get("sidebar_weights")),
             )
         )
 

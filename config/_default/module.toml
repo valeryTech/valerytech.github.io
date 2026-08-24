@@ -58,6 +58,10 @@
   target = "layouts/_partials/sidebar"
 
 [[mounts]]
+  source = "layouts/partials/main"
+  target = "layouts/_partials/main"
+
+[[mounts]]
   source = "layouts"
   target = "layouts"
 
