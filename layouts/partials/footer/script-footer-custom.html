@@ -1,5 +1,12 @@
 {{/* Put your custom <script></script> tags here */}}
 
+{{- with .FirstSection }}
+<script>
+  const sectionNavLabel = document.getElementById("offcanvasNavSectionLabel");
+  if (sectionNavLabel) sectionNavLabel.textContent = {{ .LinkTitle | jsonify | safeJS }};
+</script>
+{{- end }}
+
 {{/* EXAMPLE - only load script for production
 {{ if eq (hugo.Environment) "production" -}}
   {{ partial "footer/esbuild" (dict "src" "js/instantpage.js" "load" "async" "transpile" false) -}}

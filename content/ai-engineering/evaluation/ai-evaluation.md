@@ -1,11 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Ai Evaluation"
-linkTitle: "Ai Evaluation"
+title: "AI Evaluation as an Engineering Learning System"
+linkTitle: "AI Evaluation"
 ---
-# AI Evaluation as an Engineering Learning System
-
 
 AI evaluation connects product intent with observed system behaviour. It turns human and automated judgment into reusable knowledge and uses that knowledge to produce evidence for product decisions.
 

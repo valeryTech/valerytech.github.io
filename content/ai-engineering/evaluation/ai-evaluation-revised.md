@@ -1,11 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Ai Evaluation Revised"
-linkTitle: "Ai Evaluation Revised"
+title: "AI Evaluation as an Iterative Engineering Practice"
+linkTitle: "AI Evaluation Revised"
 ---
-# AI Evaluation as an Iterative Engineering Practice
-
 
 AI evaluation connects product intent, observed system behaviour, and a defined decision or knowledge need. It uses deliberate probes and operational observations to produce evidence, develops explicit Quality Understanding, and applies that understanding to product decisions.
 

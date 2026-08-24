@@ -1,11 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Harness And Platform"
-linkTitle: "Harness And Platform"
+title: "Evaluation of LLM Workflows and Coding Agents"
+linkTitle: "Harness and Platform"
 ---
-# Evaluation of LLM Workflows and Coding Agents
-
 
 This page covers evaluation for LLM-based workflows and coding agents.
 
