@@ -1,17 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Sd Algorithm"
-linkTitle: "Sd Algorithm"
----
----
-
 title: "SD Algorithm"
-
 linkTitle: "SD Algorithm"
-
-# SD algorithm
-
+---
 
 This document describes step-by-step framework on how to tackle a system design question
 

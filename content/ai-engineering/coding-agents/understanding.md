@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Part 0"
-linkTitle: "Part 0"
+title: "Understanding"
+linkTitle: "Understanding"
 ---
 # Part 0: What I understand about working with coding agents after ~60B token events in 9 months
 

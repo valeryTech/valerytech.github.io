@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Non Functional Requirements"
-linkTitle: "Non Functional Requirements"
+title: "Non-Functional Requirements"
+linkTitle: "NFR"
 ---
+
 read book "Implementing SLO"
 
 <https://sre.google/sre-book/service-level-objectives/>

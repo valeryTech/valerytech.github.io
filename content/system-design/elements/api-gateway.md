@@ -1,14 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Api Gateway"
-linkTitle: "Api Gateway"
----
----
-
 title: "API Gateway"
-
 linkTitle: "API Gateway"
+---
 
 important things: define core responsiblities and how to introduce it to design
 

@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Edd"
-linkTitle: "Edd"
+title: "Eval-Driven Development"
+linkTitle: "EDD"
 ---
+
 resources
 
 https://cookbook.openai.com/examples/partners/eval_driven_system_design/receipt_inspection

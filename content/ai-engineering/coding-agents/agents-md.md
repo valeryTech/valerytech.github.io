@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Agents Md"
-linkTitle: "Agents Md"
+title: "AGENTS.md"
+linkTitle: "AGENTS.md"
 ---
 # Operating Model
 

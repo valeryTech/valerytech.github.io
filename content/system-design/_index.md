@@ -2,17 +2,10 @@
 draft: false
 toc: true
 title: "System Design"
+aliases:
+  - "/system-design/about/"
 linkTitle: "System Design"
 ---
----
-
-title: System Design
-
-linkTitle: System Design
-
-aliases:
-
-  - /system-design/about/
 
 This section collects system design notes, interview-oriented frameworks, core
 

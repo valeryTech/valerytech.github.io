@@ -4,7 +4,7 @@ toc: true
 title: "In"
 linkTitle: "In"
 ---
-I think the defensible position is narrower than "LLM code is crap," and it's stronger because it survives scrutiny:
+
 
 > Current coding agents have clearly improved at producing locally correct code. There is still weak evidence that they can autonomously perform the full production software-engineering job.
 
@@ -100,7 +100,7 @@ And I currently see far less of the second category than the first.
 ## high signal(?)
 
 
-Yes. After looking specifically for people who pass your filter, **Mitchell Hashimoto is probably the best current match**. **Daniel Stenberg is the best counterweight from long-lived production software.**
+After looking specifically for people who pass the filter, **Mitchell Hashimoto is probably the best current match**. **Daniel Stenberg is the best counterweight from long-lived production software.**
 
 The important caveat: no individual engineer gives us "strong evidence" for an industry-wide claim. A practitioner gives a case study. What makes these two useful is that their case studies expose the artifacts and failure modes instead of asking us to trust their impressions.
 
@@ -291,8 +291,3 @@ being able to maintain the system
         ≠
 owning it in production
 ```
-
-
-That's probably the intellectual thread I'd follow.
-
-If we're building a **high-signal 2026/27 source network**, I would use these two as seed nodes and then look specifically for another 10-15 engineers with the same standard: _current code + production ownership + inspectable AI usage + public failures_. I suspect that will produce a very different reading list from the AI conference circuit.

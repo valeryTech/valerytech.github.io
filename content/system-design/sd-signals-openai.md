@@ -1,16 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Sd Signals Openai"
-linkTitle: "Sd Signals Openai"
----
----
-
 title: "SD Signals OpenAI"
-
-linkTitle: "SD Signals OpenAI"
-
+linkTitle: "SD Signals (OpenAI)"
+---
 # Senior System Design Interview Rubric (Refactored)
+
 
 > Purpose-built for a 60-minute system design round. Converts vague "signals" into behaviorally anchored constructs with explicit weights, timeboxes, and a decision policy. No statistics, calibration, or interviewer-training content is included.
 
@@ -55,6 +50,7 @@ Measurement principles
 8. (Optional) Bonus (≤2-3 min) - product/user lens, if time remains.
 
 ## 3. Behaviorally Anchored Rating Scales (BARS)
+
 
 > Use anchors verbatim. "3" = solid senior; "4-5" = strong/exceptional.
 

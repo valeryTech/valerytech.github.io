@@ -1,15 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Slowflake Id"
-linkTitle: "Slowflake Id"
----
----
-
 title: "Slowflake ID"
-
 linkTitle: "Slowflake ID"
-
+---
 # Snowflake ID
 
 

@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Cross Domain Mindset"
-linkTitle: "Cross Domain Mindset"
+title: "Cross-Domain Mindset"
+linkTitle: "Cross-Domain Mindset"
 ---
+
 Short answer: yes, they absolutely apply in ML, but some of them show up in slightly different ways and are even more important because of uncertainty around data and models.
 
 I'll go through your list and map it to ML work.
