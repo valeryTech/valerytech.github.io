@@ -60,7 +60,7 @@ When direct evidence about likely failures is limited, begin with distinctions i
 
 > Rule: A candidate dimension must describe something identifiable from the user's input itself.
 
-You could use prompt from [Prompts 03 Dimensions Set]({{< ref "ai-engineering/evaluation/prompts-03-dimensions-set" >}})
+You could use prompt from [Prompts 03 Dimensions Set]({{< ref "ai-engineering/evaluation/v1/prompts-03-dimensions-set" >}})
 
 ### 2. Construct and review tuples
 
@@ -122,7 +122,7 @@ Give the model:
 
 Generate tuples first, without generating user inputs. Keeping tuple generation separate from input generation makes coverage easier to inspect and reduces superficial variation.
 
-**Tuple-generation prompt** is in [Prompts 04 Tuples]({{< ref "ai-engineering/evaluation/prompts-04-tuples" >}})
+**Tuple-generation prompt** is in [Prompts 04 Tuples]({{< ref "ai-engineering/evaluation/v1/prompts-04-tuples" >}})
 
 ### 3. Source inputs and construct evaluation cases
 
@@ -253,7 +253,7 @@ Review the combined evaluation cases at the dataset level against the product-de
 
 > Does the set provide sufficient evidence about the product's main jobs, guarantees, critical failures, and materially distinct execution conditions?
 
-For the fuller balancing method, see [Building a balanced starting evaluation set]({{< ref "ai-engineering/evaluation/11-building-balanced-set" >}}). Grouping and sampling techniques can support the balancing process.
+For the fuller balancing method, see [Building a balanced starting evaluation set]({{< ref "ai-engineering/evaluation/v1/11-building-balanced-set" >}}). Grouping and sampling techniques can support the balancing process.
 
 Adjust the set until (for example):
 
@@ -378,7 +378,7 @@ The product definition provides the initial direction for the evaluation set, bu
 
 Real user inputs may reveal jobs, assumptions, or operating conditions that were not represented in the original product model. Executed traces may expose failure modes that were not anticipated by the initial failure hypotheses. These findings should trigger reviewed updates to the evaluation boundary, jobs and intents, guarantees and failure assumptions, dimensions, tuples, fixtures, and case allocation.
 
-The product definition should guide the evaluation design without preventing the design from adapting to observed user behaviour and system evidence. For a detailed method for deriving coverage requirements and allocating cases, see [Building a balanced starting evaluation set]({{< ref "ai-engineering/evaluation/11-building-balanced-set" >}}).
+The product definition should guide the evaluation design without preventing the design from adapting to observed user behaviour and system evidence. For a detailed method for deriving coverage requirements and allocating cases, see [Building a balanced starting evaluation set]({{< ref "ai-engineering/evaluation/v1/11-building-balanced-set" >}}).
 
 #### Revise the coverage model as evidence accumulates
 

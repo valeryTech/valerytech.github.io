@@ -23,7 +23,7 @@ The core question is:
 ## Evaluation Harness
 
 
-Argumentation : [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}})
+Argumentation : [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}})
 
 ## Evaluation Platform
 

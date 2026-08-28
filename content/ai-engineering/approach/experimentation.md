@@ -77,7 +77,7 @@ or, more precise:
 To design an effective experimentation infrastructure, we must explicitly bound the system with the following operational realities. These follow from [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}}) and the broader [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}) in the causal stack.
 
 - **Non-Determinism:** Foundational models introduce inherent stochasticity. System design assumes exact output replication is rarely guaranteed; reproducibility focuses on replicating the _distribution_ of outcomes and exact state configurations. This is part of the behavioral variability described in [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
-- **Eval-Driven Bottlenecks:** Ground-truth evaluations often require human-in-the-loop (HITL) review. Automated proxy metrics (e.g., LLM-as-a-judge) operate under the constraint of imperfect alignment with human preference, which is why teams need [evaluation harnesses]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}}) and an evaluation [platform layer]({{< ref "ai-engineering/evaluation/harness-and-platform" >}}) rather than one-off checks.
+- **Eval-Driven Bottlenecks:** Ground-truth evaluations often require human-in-the-loop (HITL) review. Automated proxy metrics (e.g., LLM-as-a-judge) operate under the constraint of imperfect alignment with human preference, which is why teams need [evaluation harnesses]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) and an evaluation [platform layer]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}}) rather than one-off checks.
 - **Cost and Latency:** Exhaustive regression testing across all model parameters and prompts scales linearly in cost and time. The architecture must support statistical sampling and multi-tiered evaluation pipelines while respecting the [quality-cost-latency operating envelope]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
 - **Data Drift:** The operational environment is highly dynamic. Data distributions and user behaviors will shift, requiring continuous feedback loops to update baseline evaluation sets. This belongs with the runtime and environment-change concerns in [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
 - For the broader map of these properties and how they connect to faults, controls, and evaluation, see [Causal Stack Operating Model]({{< ref "ai-engineering/causal-stack/causal-stack-operating-model" >}}).
@@ -89,8 +89,8 @@ To design an effective experimentation infrastructure, we must explicitly bound 
 - [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}})
 - [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}})
-- [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}})
-- [Harness And Platform]({{< ref "ai-engineering/evaluation/harness-and-platform" >}})
+- [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}})
+- [Harness And Platform]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}})
 - [Causal Stack Operating Model]({{< ref "ai-engineering/causal-stack/causal-stack-operating-model" >}})
 - science method
 
@@ -160,7 +160,7 @@ But production experimentation may reveal:
 
 AI systems need both offline evaluation and online experimentation because the real system includes users, product flows, traffic patterns, latency budgets, and failure modes.
 
-This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}}) rather than relying only on benchmark deltas or isolated demos.
+This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) rather than relying only on benchmark deltas or isolated demos.
 
 ### 4. Data changes over time
 
@@ -252,6 +252,6 @@ AI systems improve through iteration:
 6. Deploy cautiously.
 7. Monitor production outcomes.
 
-This is the operational loop that [evaluation harnesses]({{< ref "ai-engineering/evaluation/why-use-evaluation-harness" >}}) and [evaluation platforms]({{< ref "ai-engineering/evaluation/harness-and-platform" >}}) are meant to support.
+This is the operational loop that [evaluation harnesses]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) and [evaluation platforms]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}}) are meant to support.
 
 Without experimentation, AI engineering becomes guesswork.

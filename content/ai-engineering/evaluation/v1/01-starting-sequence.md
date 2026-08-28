@@ -212,8 +212,8 @@ Automated evaluators are not a prerequisite. The material explicitly allows huma
 
 Several elements remain incomplete or external to the attachments:
 
-- `[11 Building Balanced Set]({{< ref "ai-engineering/evaluation/11-building-balanced-set" >}})` is referenced as the fuller coverage-balancing method but was not provided.
-- `[Taxonomy]({{< ref "ai-engineering/evaluation/taxonomy" >}})` is referenced separately, although much of its development method appears in the error-analysis guide.
+- [11 Building Balanced Set]({{< ref "ai-engineering/evaluation/v1/11-building-balanced-set" >}}) is referenced as the fuller coverage-balancing method but was not provided.
+- `[Taxonomy]({{< ref "ai-engineering/evaluation/v1/taxonomy" >}})` is referenced separately, although much of its development method appears in the error-analysis guide.
 - The detailed path is predominantly **failure-oriented**. Successful task completion, user outcomes, usability, cost, latency, and other quality lenses are acknowledged but not developed to the same depth.
 - The artefact model names decision rules, thresholds, versioned datasets, and evaluator versions, but no concrete storage or governance method is defined.
 - There is no explicit procedure for selecting which discovered failure modes should be operationalised first.

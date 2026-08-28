@@ -9,7 +9,7 @@ WAS_RUNNING=0
 BASE_URL="${BASE_URL:-http://127.0.0.1:1313}"
 ROUTES=(
   "/"
-  "/system-design/topics/api/"
+  "/engineering/topics/api/"
 )
 
 cleanup() {

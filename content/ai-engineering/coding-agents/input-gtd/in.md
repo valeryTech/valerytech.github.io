@@ -5,7 +5,6 @@ title: "to review"
 linkTitle: "to review"
 ---
 
-
 > Current coding agents have clearly improved at producing locally correct code. There is still weak evidence that they can autonomously perform the full production software-engineering job.
 
 That distinction is important.

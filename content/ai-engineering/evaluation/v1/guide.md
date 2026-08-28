@@ -6,7 +6,7 @@ linkTitle: "Guide"
 ---
 Where to start?
 
-It could depend on different factors, but first - get to know most base / ambiguous concepts at [Taxonomy]({{< ref "ai-engineering/evaluation/taxonomy" >}}). For example, what is trace, span, .... It gives us alignment these required concepts and tools to investigate the domain further.
+It could depend on different factors, but first - get to know most base / ambiguous concepts at [Taxonomy]({{< ref "ai-engineering/evaluation/v1/taxonomy" >}}). For example, what is trace, span, .... It gives us alignment these required concepts and tools to investigate the domain further.
 
 If you need to start now. Sequence:
 

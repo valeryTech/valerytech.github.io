@@ -46,7 +46,7 @@ When real user traces exist, they can be sampled across important features, user
 
 The initial sample is primarily a **discovery sample**. Its purpose is to expose a broad range of behaviour and reveal recurring or consequential failures. It may intentionally differ from production traffic by emphasizing ambiguous, difficult, invalid, high-risk, or boundary cases.
 
-See more details in [10 User Inputs]({{< ref "ai-engineering/evaluation/10-user-inputs" >}}).
+See more details in [10 User Inputs]({{< ref "ai-engineering/evaluation/v1/10-user-inputs" >}}).
 
 ### 2. Run the System and Collect Complete Traces
 

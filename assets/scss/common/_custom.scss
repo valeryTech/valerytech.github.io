@@ -62,6 +62,52 @@
   margin-top: 0.1rem;
 }
 
+.ai-outreach-note {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem;
+  background: var(--bs-tertiary-bg);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.ai-outreach-note h2 {
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.ai-outreach-note p {
+  margin: 0 0 0.5rem;
+  font-size: inherit;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--bs-secondary-color);
+}
+
+.ai-outreach-note p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-outreach-note ol {
+  margin: 0.35rem 0 0.75rem 1.25rem;
+  padding: 0;
+  line-height: 1.55;
+  color: var(--bs-secondary-color);
+}
+
+.ai-outreach-note li {
+  margin-bottom: 0.35rem;
+}
+
+.ai-outreach-note li:last-child {
+  margin-bottom: 0;
+}
+
 .section-nav {
   padding-top: 1.5rem;
   padding-right: 1rem;

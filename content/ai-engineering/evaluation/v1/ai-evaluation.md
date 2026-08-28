@@ -55,7 +55,7 @@ The evaluation operating model contains three loops, distinguished by the object
 
 **Product Improvement Loop**
 
-The Product Improvement Loop changes system behaviour. Details are in [Product Improvement]({{< ref "ai-engineering/evaluation/product-improvement" >}}).
+The Product Improvement Loop changes system behaviour. Details are in [Product Improvement]({{< ref "ai-engineering/evaluation/v1/product-improvement" >}}).
 
 **Evaluation Knowledge Loop**
 
@@ -116,17 +116,17 @@ New executions, disagreements, and poorly fitting cases
 ### Inputs Establish and Revise Coverage
 
 
-[10 User Inputs]({{< ref "ai-engineering/evaluation/10-user-inputs" >}}) describes how product intent becomes coverage requirements and a representative set of real, manually written, and synthetic user inputs. Inputs are combined with fixtures and expected conditions to form executable evaluation cases; execution produces the traces analysed downstream. The coverage model remains provisional: observed user behaviour and later failures may require changes to the evaluation boundary, dimensions, tuples, fixtures, and case allocation.
+[10 User Inputs]({{< ref "ai-engineering/evaluation/v1/10-user-inputs" >}}) describes how product intent becomes coverage requirements and a representative set of real, manually written, and synthetic user inputs. Inputs are combined with fixtures and expected conditions to form executable evaluation cases; execution produces the traces analysed downstream. The coverage model remains provisional: observed user behaviour and later failures may require changes to the evaluation boundary, dimensions, tuples, fixtures, and case allocation.
 
 ### Error Analysis Develops the Failure Model
 
 
-[20 Error Analysis]({{< ref "ai-engineering/evaluation/20-error-analysis" >}}) uses complete traces to identify concrete failure incidents, compare them across executions, and develop an application-specific failure model. It preserves the dependency from each failure mode back to representative incidents and supporting trace evidence. Discovery remains distinct from measurement so that categories are developed from observed behaviour before they are narrowed into operational checks.
+[20 Error Analysis]({{< ref "ai-engineering/evaluation/v1/20-error-analysis" >}}) uses complete traces to identify concrete failure incidents, compare them across executions, and develop an application-specific failure model. It preserves the dependency from each failure mode back to representative incidents and supporting trace evidence. Discovery remains distinct from measurement so that categories are developed from observed behaviour before they are narrowed into operational checks.
 
 ### Operationalisation Applies and Tests the Knowledge
 
 
-[30 Failure Model Use]({{< ref "ai-engineering/evaluation/30-failure-model-use" >}}) converts selected failure modes into explicit criteria and validated evaluators, applies them to complete traces, and produces accepted labels, measurements, comparisons, and findings. These findings support the Product Improvement Loop, while evaluator application also tests the evaluation knowledge itself: unclear cases, evaluator disagreements, and new failure patterns may require the failure model, criteria, examples, evaluators, or existing labels to be revised.
+[[30-failure-model-use]] converts selected failure modes into explicit criteria and validated evaluators, applies them to complete traces, and produces accepted labels, measurements, comparisons, and findings. These findings support the Product Improvement Loop, while evaluator application also tests the evaluation knowledge itself: unclear cases, evaluator disagreements, and new failure patterns may require the failure model, criteria, examples, evaluators, or existing labels to be revised.
 
 The dependencies are bidirectional. Product intent and observed usage shape coverage; coverage determines which behaviours can be observed; traces support the failure model; the failure model governs evaluators; and evaluator application produces new evidence about both the product and the adequacy of the evaluation knowledge. Findings that concern another persistent object are routed to the appropriate loop below.
 
@@ -186,7 +186,7 @@ A useful metaphor is a mechanism made of interlocking gears:
 
 The startup sequence places these gears, connects them, and supplies the initial product behaviour and evidence required to make them turn. After startup, they operate continuously and can move together: one trace review may drive a product fix, a criterion refinement, and an instrumentation change.
 
-A practical startup sequence is under design in [01 Starting Sequence]({{< ref "ai-engineering/evaluation/01-starting-sequence" >}}).
+A practical startup sequence is under design in [01 Starting Sequence]({{< ref "ai-engineering/evaluation/v1/01-starting-sequence" >}}).
 
 ## Operational Evaluation Architecture
 
@@ -316,7 +316,7 @@ This example can be used throughout the loops:
 
 The evaluation taxonomy organises the recurring, application-specific behaviours discovered through trace review. It should remain connected to concrete observations, examples, product requirements, and operational criteria rather than becoming a static list of generic AI failure labels.
 
-See [Taxonomy]({{< ref "ai-engineering/evaluation/taxonomy" >}}).
+See [Taxonomy]({{< ref "ai-engineering/evaluation/v1/taxonomy" >}}).
 
 ## Evaluation Artefacts
 

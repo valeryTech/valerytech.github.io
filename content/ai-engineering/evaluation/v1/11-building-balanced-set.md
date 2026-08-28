@@ -7,7 +7,7 @@ linkTitle: "11 Building Balanced Set"
 ## Building a balanced starting evaluation set
 
 
-A balanced evaluation set represents the parts of the product that matter, in proportions appropriate to their importance and risk. Here we're building [10 User Inputs]({{< ref "ai-engineering/evaluation/10-user-inputs" >}}) user inputs for evaluation set, but also the methods and principles could be applied to other or more broad concepts.
+A balanced evaluation set represents the parts of the product that matter, in proportions appropriate to their importance and risk. Here we're building [10 User Inputs]({{< ref "ai-engineering/evaluation/v1/10-user-inputs" >}}) user inputs for evaluation set, but also the methods and principles could be applied to other or more broad concepts.
 
 Balance does not mean assigning the same number of cases to every intent, dimension value, or tuple. Some workflows are more central to the product, some guarantees require broader validation, and some failures justify additional coverage because their consequences are severe. The composition of the starting set should therefore be derived from the product rather than from a generic sampling rule.
 
