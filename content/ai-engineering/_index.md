@@ -2,9 +2,9 @@
 draft: false
 toc: true
 title: "AI Engineering"
-description: "Practical notes on using models within systems that generate candidates, obtain evidence, evaluate whole-job outcomes, and improve through feedback."
 aliases:
   - "/ai-engineering/about/"
+description: "Practical notes on using models within systems that generate candidates, obtain evidence, evaluate whole-job outcomes, and improve through feedback."
 linkTitle: "AI Engineering"
 ---
 This section is for practical AI engineering work: using models inside systems that generate candidates, obtain evidence, evaluate outcomes, and improve through feedback. The relevant unit is usually the whole job and its outcome, not an isolated model output.

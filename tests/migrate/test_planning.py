@@ -1,10 +1,15 @@
 from __future__ import annotations
 
+from pathlib import Path
 from textwrap import dedent
 import unittest
 
 from scripts.migrate.config import load_config
-from scripts.migrate.planning import MigrationFailed, build_migration_plan
+from scripts.migrate.planning import (
+    MigrationFailed,
+    build_migration_plan,
+    synthetic_index_frontmatter,
+)
 from tests.migrate.support import make_run, make_workspace
 
 
@@ -104,6 +109,14 @@ class PlanningTests(unittest.TestCase):
         config = load_config(self.workspace.config_path)
         with self.assertRaises(MigrationFailed):
             build_migration_plan(config, make_run(self.workspace).roots)
+
+    def test_synthetic_index_frontmatter_accepts_title_override(self) -> None:
+        config = load_config(self.workspace.config_path)
+
+        frontmatter = synthetic_index_frontmatter(config, Path("ai"), "AI")
+
+        self.assertEqual(frontmatter["title"], "AI")
+        self.assertEqual(frontmatter["linkTitle"], "AI")
 
     def test_unknown_sidebar_weight_target_fails_plan(self) -> None:
         roots = make_run(self.workspace).roots

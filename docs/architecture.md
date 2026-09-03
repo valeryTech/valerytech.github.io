@@ -53,6 +53,7 @@ The migration regression surface is intentionally split:
 
 The content tree is organized by section. Current top-level sections include:
 
+- `content/ai/`
 - `content/ai-engineering/`
 - `content/system-design/`
 - `content/engineering/`
@@ -65,6 +66,8 @@ section folders. For example:
 
 - `content/system-design/_index.md` renders the section landing page
 - `content/system-design/topics/api.md` renders `/system-design/topics/api/`
+- `content/ai/collab-and-joint-work/build-approach.md` renders
+  `/ai/collab-and-joint-work/build-approach/`
 - `content/ai-engineering/evaluation/harness-and-platform.md` renders
   `/ai-engineering/evaluation/harness-and-platform/`
 - `content/projects/code-assistant.md` is generated from the selected external

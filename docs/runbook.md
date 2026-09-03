@@ -82,6 +82,7 @@ These `content/` sections are migration-managed:
 
 - `content/system-design/`
 - `content/engineering/`
+- `content/ai/`
 - `content/ai-engineering/`
 - `content/projects/`
 

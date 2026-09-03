@@ -105,6 +105,13 @@ def load_config(config_path: Path) -> MigrationConfig:
             raise ValueError(
                 f"Import {entry.get('name', '<unknown>')} must use a non-root target_subtree"
             )
+        section_title = (
+            str(entry["section_title"]).strip()
+            if entry.get("section_title") is not None
+            else None
+        )
+        if section_title == "":
+            raise ValueError("section_title must be non-empty")
 
         imports.append(
             ImportRule(
@@ -112,6 +119,7 @@ def load_config(config_path: Path) -> MigrationConfig:
                 source_root_kind=source_root_kind,
                 source_subtree=Path(str(entry["source_subtree"])),
                 target_subtree=target_subtree,
+                section_title=section_title,
                 selection_mode=selection_mode,
                 selection_paths=selection_paths,
                 include=_as_tuple(entry.get("include"), default_include),

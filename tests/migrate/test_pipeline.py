@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from textwrap import dedent
 import unittest
 
 from scripts.migrate.pipeline import run
@@ -81,6 +82,43 @@ class MigrationPipelineTests(unittest.TestCase):
         second = self.run_pipeline("sync")
         self.assertEqual(second, 0)
         self.assertEqual(api_content, api_path.read_text(encoding="utf-8"))
+
+    def test_sync_uses_section_title_for_synthetic_root_index(self) -> None:
+        source = self.workspace.source_root / "ai/collab-and-joint-work/note.md"
+        source.parent.mkdir(parents=True)
+        source.write_text("# Note\n", encoding="utf-8")
+        self.workspace.config_path.write_text(
+            dedent(
+                """
+                [defaults]
+                include = ["**/*.md", "*.md"]
+
+                [defaults.frontmatter]
+                draft = false
+                toc = true
+
+                [[imports]]
+                name = "ai"
+                source_root_kind = "external"
+                source_subtree = "ai"
+                target_subtree = "ai"
+                section_title = "AI"
+                selection_mode = "opt-in"
+                selection_paths = ["collab-and-joint-work"]
+                """
+            ).strip()
+            + "\n",
+            encoding="utf-8",
+        )
+
+        result = self.run_pipeline("sync")
+
+        self.assertEqual(result, 0)
+        root_index = (self.workspace.content_root / "ai/_index.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn('title: "AI"', root_index)
+        self.assertIn('linkTitle: "AI"', root_index)
 
 
 if __name__ == "__main__":

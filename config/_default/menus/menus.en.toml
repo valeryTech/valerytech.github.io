@@ -4,6 +4,11 @@
   weight = 10
 
 [[main]]
+  name = "AI"
+  url = "/ai/"
+  weight = 15
+
+[[main]]
   name = "System Design"
   url = "/system-design/"
   weight = 20
@@ -29,6 +34,11 @@
   name = "AI Engineering"
   url = "/ai-engineering/"
   weight = 10
+
+[[footer]]
+  name = "AI"
+  url = "/ai/"
+  weight = 15
 
 [[footer]]
   name = "System Design"

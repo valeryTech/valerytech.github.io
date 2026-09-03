@@ -175,8 +175,12 @@ def resolve_sidebar_weights(
     return resolved
 
 
-def synthetic_index_frontmatter(config: MigrationConfig, parent: Path) -> dict[str, object]:
-    label = humanize_slug(parent.name)
+def synthetic_index_frontmatter(
+    config: MigrationConfig,
+    parent: Path,
+    title_override: str | None = None,
+) -> dict[str, object]:
+    label = title_override or humanize_slug(parent.name)
     return {
         **config.frontmatter_defaults,
         "title": label,

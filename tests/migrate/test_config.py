@@ -23,10 +23,28 @@ class MigrationConfigTests(unittest.TestCase):
         rule = config.imports[0]
         self.assertEqual(rule.selection_mode, "opt-out")
         self.assertEqual(rule.selection_paths, tuple())
+        self.assertIsNone(rule.section_title)
         self.assertEqual(
             rule.sidebar_weights,
             {Path("topics"): 10, Path("topics/api"): 20},
         )
+
+    def test_section_title_must_be_non_empty(self) -> None:
+        self.write_config(
+            """
+            [defaults]
+
+            [[imports]]
+            name = "ai"
+            source_root_kind = "external"
+            source_subtree = "ai"
+            target_subtree = "ai"
+            section_title = "  "
+            """
+        )
+
+        with self.assertRaisesRegex(ValueError, "section_title"):
+            load_config(self.workspace.config_path)
 
     def test_sidebar_weights_must_use_relative_extensionless_paths(self) -> None:
         invalid_paths = (

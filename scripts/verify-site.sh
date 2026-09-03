@@ -9,6 +9,8 @@ WAS_RUNNING=0
 BASE_URL="${BASE_URL:-http://127.0.0.1:1313}"
 ROUTES=(
   "/"
+  "/ai/"
+  "/ai/collab-and-joint-work/"
   "/engineering/topics/api/"
 )
 

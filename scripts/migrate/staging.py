@@ -42,7 +42,14 @@ def write_synthetic_indexes(staging_root: Path, run: MigrationRun) -> None:
             if index_rel not in synthetic_targets and not (staging_root / index_rel).exists():
                 path = staging_root / index_rel
                 path.parent.mkdir(parents=True, exist_ok=True)
-                frontmatter = synthetic_index_frontmatter(run.config, parent)
+                title_override = (
+                    note.import_rule.section_title if parent == import_root else None
+                )
+                frontmatter = synthetic_index_frontmatter(
+                    run.config,
+                    parent,
+                    title_override,
+                )
                 path.write_text(
                     render_frontmatter(with_sidebar_weight(frontmatter, index_rel, run)),
                     encoding="utf-8",
