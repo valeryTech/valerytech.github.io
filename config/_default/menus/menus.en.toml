@@ -46,11 +46,16 @@
   weight = 40
 
 [[footer]]
+  name = "About"
+  url = "/about/"
+  weight = 50
+
+[[footer]]
   name = "Content Use"
   url = "/content-use/"
-  weight = 50
+  weight = 60
 
 [[footer]]
   name = "Privacy Policy"
   url = "/privacy/"
-  weight = 60
+  weight = 70

@@ -1,6 +1,6 @@
 # Hugo
-title = "AI Engineering and Architecture"
-description = "Engineering notes on building AI systems whose behavior can be understood, evaluated, and improved systematically."
+title = "Systems & Engineering"
+description = "Working notes on software, AI systems, cognition, and human-agent systems."
 images = ["cover.png"]
 
 # mainSections

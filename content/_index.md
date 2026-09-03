@@ -1,18 +1,18 @@
 ---
 
-title: AI Engineering and Architecture
-description: Engineering notes on building AI systems whose behavior can be understood, evaluated, and improved systematically.
-lead: Engineering notes on building AI systems whose behavior can be understood, evaluated, and improved systematically.
+title: Systems & Engineering
+description: Working notes on software engineering, AI systems, cognition, and human-agent systems that can be understood, evaluated, corrected, and trusted.
+lead: Working notes on software, AI systems, cognition, and human-agent systems.
 date: 2023-09-07T16:33:54+02:00
-lastmod: 2023-09-07T16:33:54+02:00
+lastmod: 2026-09-03T00:00:00-03:00
 draft: false
 seo:
-  title: AI Engineering and Architecture
+  title: Systems & Engineering
   canonical: ""
   robots: ""
 ---
 
-Notes by [Valery Yuda](/ai-engineering/my-perspective/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
+Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
 
 {{< callout context="note" title="Content access" icon="outline/info-circle" >}}
 Some notes on this site may be intentionally obfuscated to discourage unauthorized automated scraping and use in LLM training. This is a temporary measure while I look for a more appropriate way to control machine access to and reuse of this content.
@@ -23,6 +23,14 @@ Some notes on this site may be intentionally obfuscated to discourage unauthoriz
 A small selection of notes and drafts to start with.
 
 <div class="selected-readings-stack">
+
+{{< card-grid >}}
+{{< link-card
+  title="Working Assumptions"
+  description="The current view behind these notes: scoped intelligence, cheap proposals, evidence-driven selection, and whole-system outcomes."
+  href="/ai-engineering/working-assumptions/"
+>}}
+{{< /card-grid >}}
 
 {{< card-grid >}}
 {{< link-card
@@ -59,7 +67,7 @@ Use the site by major topic area when you want the broader map instead of a sing
 {{< card-grid >}}
 {{< link-card
   title="AI Engineering"
-  description="Practical notes on LLM-based systems, evaluation workflows, and agent behavior."
+  description="Practical notes on models inside systems that generate candidates, obtain evidence, and improve through feedback."
   href="/ai-engineering/"
 >}}
 {{< link-card
@@ -84,4 +92,4 @@ Use the site by major topic area when you want the broader map instead of a sing
 
 </div>
 
-<a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="/ai-engineering/" role="button">Start with AI Engineering</a>
+<a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="#browse-by-section" role="button">Browse the notes</a>
