@@ -1,9 +1,8 @@
-// Prefer the system-installed Avenir family and retain Doks' bundled Jost as
-// the consistent cross-platform fallback.
+// Prefer locally installed Avenir, then the platform UI font. Doks' bundled
+// Jost remains the final named fallback and can be selected explicitly.
 $font-family-sans-serif:
   "Avenir Next",
   Avenir,
-  "Jost",
   system-ui,
   -apple-system,
   "Segoe UI",
@@ -12,6 +11,7 @@ $font-family-sans-serif:
   "Noto Sans",
   "Liberation Sans",
   Arial,
+  "Jost",
   sans-serif,
   "Apple Color Emoji",
   "Segoe UI Emoji",

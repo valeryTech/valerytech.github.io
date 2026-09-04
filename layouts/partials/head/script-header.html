@@ -7,8 +7,9 @@
 
     if (!cookie) return;
 
-    const preference = cookie.slice("font-preference=".length);
-    if (preference === "avenir" || preference === "jost") {
+    const savedPreference = cookie.slice("font-preference=".length);
+    const preference = savedPreference === "avenir" ? "system" : savedPreference;
+    if (preference === "system" || preference === "jost") {
       document.documentElement.setAttribute("data-font-preference", preference);
     }
   })();

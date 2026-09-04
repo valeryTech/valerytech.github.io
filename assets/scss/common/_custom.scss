@@ -36,9 +36,9 @@
   }
 }
 
-html[data-font-preference="avenir"] {
-  --bs-font-sans-serif: "Avenir Next", Avenir, "Jost", system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+html[data-font-preference="system"] {
+  --bs-font-sans-serif: "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, "Jost",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
   --bs-body-font-family: var(--bs-font-sans-serif);

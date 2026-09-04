@@ -179,7 +179,7 @@ function initTopLevelSidebarAccordion() {
 function initFontPreference() {
   const preferenceAttribute = "data-font-preference";
   const cookieName = "font-preference";
-  const validPreferences = new Set(["avenir", "jost"]);
+  const validPreferences = new Set(["system", "jost"]);
   const navigation = document.querySelector(
     "#offcanvasNavMain .offcanvas-body"
   );
@@ -200,7 +200,7 @@ function initFontPreference() {
   select.className = "font-preference-select";
 
   for (const [value, name] of [
-    ["avenir", "Avenir"],
+    ["system", "System"],
     ["jost", "Jost"],
   ]) {
     const option = document.createElement("option");
@@ -212,7 +212,7 @@ function initFontPreference() {
   const savedPreference =
     document.documentElement.getAttribute(preferenceAttribute);
   select.value =
-    validPreferences.has(savedPreference) ? savedPreference : "avenir";
+    validPreferences.has(savedPreference) ? savedPreference : "system";
 
   select.addEventListener("change", () => {
     const preference = select.value;
