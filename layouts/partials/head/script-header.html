@@ -1,4 +1,18 @@
 <!-- Insert scripts NOT needed by stylesheets here -->
+<script>
+  (() => {
+    const cookie = document.cookie
+      .split("; ")
+      .find((entry) => entry.startsWith("font-preference="));
+
+    if (!cookie) return;
+
+    const preference = cookie.slice("font-preference=".length);
+    if (preference === "avenir" || preference === "jost") {
+      document.documentElement.setAttribute("data-font-preference", preference);
+    }
+  })();
+</script>
 {{ $noop := .WordCount }}
 {{ if or (.Page.Store.Get "hasMath") .IsNode }}
 <link

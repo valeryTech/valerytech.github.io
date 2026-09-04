@@ -176,9 +176,71 @@ function initTopLevelSidebarAccordion() {
   }
 }
 
+function initFontPreference() {
+  const preferenceAttribute = "data-font-preference";
+  const cookieName = "font-preference";
+  const validPreferences = new Set(["avenir", "jost"]);
+  const navigation = document.querySelector(
+    "#offcanvasNavMain .offcanvas-body"
+  );
+
+  if (!navigation || document.getElementById("fontPreference")) {
+    return;
+  }
+
+  const control = document.createElement("div");
+  control.className = "font-preference-control";
+
+  const label = document.createElement("label");
+  label.htmlFor = "fontPreference";
+  label.textContent = "Font";
+
+  const select = document.createElement("select");
+  select.id = "fontPreference";
+  select.className = "font-preference-select";
+
+  for (const [value, name] of [
+    ["avenir", "Avenir"],
+    ["jost", "Jost"],
+  ]) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = name;
+    select.append(option);
+  }
+
+  const savedPreference =
+    document.documentElement.getAttribute(preferenceAttribute);
+  select.value =
+    validPreferences.has(savedPreference) ? savedPreference : "avenir";
+
+  select.addEventListener("change", () => {
+    const preference = select.value;
+    if (!validPreferences.has(preference)) {
+      return;
+    }
+
+    document.documentElement.setAttribute(preferenceAttribute, preference);
+    document.cookie = `${cookieName}=${preference}; Max-Age=31536000; Path=/; SameSite=Lax`;
+  });
+
+  control.append(label, select);
+
+  const colorModeButton = document.getElementById("buttonColorMode");
+  const socialMenu = document.getElementById("socialMenu");
+  const insertionPoint = colorModeButton || socialMenu;
+
+  if (insertionPoint?.parentElement === navigation) {
+    navigation.insertBefore(control, insertionPoint);
+  } else {
+    navigation.append(control);
+  }
+}
+
 function initCustomBehavior() {
   initTocActiveState();
   initTopLevelSidebarAccordion();
+  initFontPreference();
 }
 
 if (document.readyState === "loading") {
