@@ -13,14 +13,14 @@ There is **no single, settled practitioner taxonomy of human-AI collaboration pa
 
 Your first-principles taxonomy is therefore **substantially right**, but I would refactor it slightly. The research suggests **six primary collaboration modes**, plus **handoff/escalation as a transition pattern rather than a peer mode**:
 
-> **Elicit → Delegate → Propose & review → Critique/coach → Reason together → Construct together**
+> **Elicit -> Delegate -> Propose & review -> Critique/coach -> Reason together -> Construct together**
 > with **handoff/escalation** moving responsibility between those modes.
 
 This distinction matters. *Delegation*, for example, specifies who performs the work. *Proposal & review* specifies who generates versus who commits. *Shared reasoning* specifies how judgment is distributed. *Handoff* specifies how that allocation changes over time. Those are different dimensions of collaboration rather than interchangeable UI patterns. This interpretation is consistent with systematic HCI taxonomies, mixed-initiative research, and human-automation research. [^3][^6][^5]
 
 A second important conclusion is that **the pattern is not enough**. Any collaboration mode needs a common substrate:
 
-**alignment → grounding → coordination → observability/directability → review/commitment → repair/adaptation**
+**alignment -> grounding -> coordination -> observability/directability -> review/commitment -> repair/adaptation**
 
 Clark and Brennan's grounding research explains why collaborators continually establish sufficient shared understanding; Klein and colleagues add mutual predictability and directability; Salas and colleagues emphasize monitoring, backup behavior, adaptability, shared mental models, trust, and closed-loop communication. Modern AI guidelines translate these requirements into concrete UX mechanisms such as showing what the system is doing, enabling correction, explaining consequential outputs, preserving control, and providing takeover paths. [^7][^5][^4][^8]
 
@@ -36,7 +36,7 @@ Those answers determine the collaboration pattern.
 
 The strongest finding for your earlier **proposal interface** is also clear: **"transparency" is too vague**. In collaborative work, the relevant design contract is more concrete:
 
-`AI contribution → make it observable → make evidence available → allow challenge/edit → explicit commitment → retain reversibility`
+`AI contribution -> make it observable -> make evidence available -> allow challenge/edit -> explicit commitment -> retain reversibility`
 
 That combines **inspectability, verifiability, directability, and commitment control**. Google calls related mechanics "supervise automation" and "review and approve"; Microsoft calls for efficient correction, explanations, consequence visibility, and controls; current coding agents expose plans, diffs, comments, approvals, and review gates. [^1][^2][^9][^10]
 
@@ -98,7 +98,7 @@ One product can move through several patterns in a single workflow. A coding age
 
 **Definition.** Elicitation applies when one participant cannot make progress reliably because another participant possesses relevant goals, constraints, observations, preferences, or domain knowledge. The collaboration therefore advances by actively reducing an information asymmetry:
 
-`AI asks → human contributes context → AI updates → possibly asks again`
+`AI asks -> human contributes context -> AI updates -> possibly asks again`
 
 This is more than "asking clarifying questions." In Clark and Brennan's terms, it is part of **grounding**: determining whether the parties' shared understanding is sufficient for the present task and repairing it when necessary. [^7]
 
@@ -116,7 +116,7 @@ This is more than "asking clarifying questions." In Clark and Brennan's terms, i
 
 **Definition.** Delegation applies when the human has an objective but does not need to personally perform some part of the work:
 
-`human defines outcome/boundary → AI plans and executes → AI reports result`
+`human defines outcome/boundary -> AI plans and executes -> AI reports result`
 
 Delegation therefore transfers **execution responsibility**, not necessarily final authority. The distinction is crucial: "the AI did the task" does not imply "the AI had authority to commit every consequential action." Human-AI delegation research explicitly distinguishes levels such as full automation, AI-leading with human assistance, human-leading with AI assistance, and no AI. [^13]
 
@@ -134,7 +134,7 @@ Delegation therefore transfers **execution responsibility**, not necessarily fin
 
 **Definition.** Here the AI has enough capability to construct a candidate, but the human retains meaningful evaluative judgment or authority:
 
-`current state → AI proposal → inspect/evaluate → accept/edit/reject → committed state`
+`current state -> AI proposal -> inspect/evaluate -> accept/edit/reject -> committed state`
 
 This is the pattern closest to the **proposal interface** we discussed earlier. Its essence is not generic transparency. It is a **commitment protocol for collaborative work**.
 
@@ -160,7 +160,7 @@ This distinction is important. **Inspectability** answers "what would change?" *
 
 **Definition.** In this mode, the human remains the primary actor or author while AI plays an evaluative role:
 
-`human attempts → AI observes/evaluates → feedback → human revises`
+`human attempts -> AI observes/evaluates -> feedback -> human revises`
 
 A **critic** optimizes the work product; a **coach** additionally optimizes the person's future ability. That distinction is worth preserving. A system that rewrites a student's answer may improve the artifact while undermining the learning goal; a coach intentionally keeps meaningful work with the learner.
 
@@ -178,7 +178,7 @@ A **critic** optimizes the work product; a **coach** additionally optimizes the 
 
 **Definition.** Shared reasoning is appropriate when neither participant should simply produce an answer for the other because relevant information, hypotheses, or judgment are distributed:
 
-`AI hypothesis → human evidence/judgment → AI revises → human challenges → ... → joint conclusion`
+`AI hypothesis -> human evidence/judgment -> AI revises -> human challenges -> ... -> joint conclusion`
 
 The object being built is primarily an **understanding, diagnosis, plan, or decision**, not an artifact.
 
@@ -198,7 +198,7 @@ Modern human-agent communication research reinforces this. Bansal and colleagues
 
 **Definition.** Joint construction differs from shared reasoning primarily in the object of collaboration:
 
-`shared artifact state → human contribution ↔ AI contribution → persistent revised state`
+`shared artifact state -> human contribution <-> AI contribution -> persistent revised state`
 
 Both participants can directly shape a document, design, model, codebase, image, plan, or other artifact.
 
@@ -216,7 +216,7 @@ Both participants can directly shape a document, design, model, codebase, image,
 
 I would **not** put this at exactly the same conceptual level as the six patterns above. A handoff is a **transition in responsibility**:
 
-`mode A → boundary encountered → communicate state → transfer responsibility → mode B`
+`mode A -> boundary encountered -> communicate state -> transfer responsibility -> mode B`
 
 An AI can hand off from delegation into proposal/review, from shared reasoning into a human decision, or from autonomous execution into human recovery.
 
@@ -281,11 +281,11 @@ Ask five questions:
 
 | Question | What it diagnoses | Pattern it tends to suggest |
 |---|---|---|
-| **Who has necessary information?** | Information asymmetry | If the human has it and AI needs it → **elicitation** |
-| **Who should perform the work?** | Execution ownership | If AI can own a bounded task → **delegation** |
-| **Who should make or authorize the judgment?** | Decision authority | If AI can generate but human should commit → **proposal & review** |
-| **Who needs to develop capability by doing the work?** | Learning/skill objective | Human works, AI evaluates → **critique/coaching** |
-| **Is the value distributed across both parties?** | Complementarity | Distributed judgment → **shared reasoning**; distributed artifact contribution → **joint construction** |
+| **Who has necessary information?** | Information asymmetry | If the human has it and AI needs it -> **elicitation** |
+| **Who should perform the work?** | Execution ownership | If AI can own a bounded task -> **delegation** |
+| **Who should make or authorize the judgment?** | Decision authority | If AI can generate but human should commit -> **proposal & review** |
+| **Who needs to develop capability by doing the work?** | Learning/skill objective | Human works, AI evaluates -> **critique/coaching** |
+| **Is the value distributed across both parties?** | Complementarity | Distributed judgment -> **shared reasoning**; distributed artifact contribution -> **joint construction** |
 
 Then ask a sixth question continuously:
 

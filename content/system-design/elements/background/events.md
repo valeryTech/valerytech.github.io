@@ -12,4 +12,4 @@ text
 ## Heading Two
 
 
-[[projects/projects|projects]]
+[[topics/ml/projects/projects|projects]]

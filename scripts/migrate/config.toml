@@ -33,7 +33,7 @@ source_subtree = "ai"
 target_subtree = "ai"
 section_title = "AI"
 selection_mode = "opt-in"
-selection_paths = ["collab-and-joint-work"]
+selection_paths = ["collab-and-joint-work", "product-model/risk-areas"]
 include = ["**/*.md", "*.md"]
 
 [[imports]]

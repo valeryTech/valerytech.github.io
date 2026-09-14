@@ -287,3 +287,109 @@ So I'd use:
 **Scientific reasoning:** **overgeneralization from insufficient evidence**
 
 And I particularly like the Design Science stance for our project: **build situated artifacts first; generalize only after repeated instances reveal stable design principles.** That gives us a methodological justification for starting with one concrete E2E SaaS workflow rather than designing the universal workflow language first.
+
+## compression
+
+
+I'd call the whole activity an **inquiry**. Search is one action inside it.
+
+At the very beginning, the person may not yet have a clear "information need." They have some combination of a trigger, partial understanding, curiosity, uncertainty, and context.
+
+A useful conceptualization is:
+
+```text
+situation / trigger
+        ↓
+current inquiry state
+  - what I know
+  - what I suspect
+  - what I'm uncertain about
+  - what I'm trying to accomplish
+  - what has caught my attention
+        ↓
+probe
+  query, browse, follow a link,
+  inspect a note, ask a question...
+        ↓
+evidence encountered
+        ↓
+interpretation / sensemaking
+        ↓
+updated inquiry state
+        ↺
+```
+
+
+So `DSL` is a **probe** produced from the person's current inquiry state.
+
+The important part is that the inquiry state can itself change:
+
+```text
+"I want to look up DSL"
+
+→ "I want to remember what DSL means"
+
+→ "I have several conflicting ideas about DSL"
+
+→ "I'm actually interested in DSLs as abstraction mechanisms"
+
+→ "How are DSLs different from APIs?"
+```
+
+
+The person isn't necessarily pursuing one fixed information need throughout. The need becomes clearer or changes as they encounter evidence.
+
+I'd separate the terms roughly like this:
+
+|Concept|Meaning|
+|---|---|
+|**Inquiry**|whole evolving activity|
+|**Inquiry state**|person's current understanding, uncertainty, goals, questions|
+|**Information seeking**|actions taken to improve that state|
+|**Search**|retrieval-oriented information-seeking action|
+|**Probe**|a particular move: query, filter, browse action, question|
+|**Evidence**|material encountered as a result|
+|**Sensemaking**|interpreting evidence and changing one's understanding|
+
+For your system, that gives a particularly clean model:
+
+```text
+person
+  has an inquiry state S₀
+
+S₀
+  ↓
+probe: "DSL"
+  ↓
+system presents evidence E₁
+  ↓
+person interprets E₁
+  ↓
+new inquiry state S₁
+  ↓
+next probe
+  ↓
+...
+```
+
+
+I like **inquiry state** as the central object here because it doesn't assume that the person already knows their intent, question, or desired answer.
+
+You could even define it loosely as:
+
+```text
+InquiryState {
+  context
+  current_understanding
+  uncertainties
+  questions
+  interests
+  goals
+  encountered_evidence
+}
+```
+
+
+At the very beginning, many of these may be empty or vague.
+
+That gives us a useful shift in perspective: you're potentially designing an **interactive inquiry system**, where retrieval supports an evolving inquiry, rather than treating each query as an isolated search request.

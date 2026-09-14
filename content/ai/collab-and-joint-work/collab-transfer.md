@@ -76,7 +76,7 @@ A few of these feel especially strong as AI product principles.
 
 Then **proposal before commitment** is the pattern you already identified:
 
-`AI contribution → inspect → discuss/modify → commit`
+`AI contribution -> inspect -> discuss/modify -> commit`
 
 And **repair** is probably underexplored. Human collaborators constantly repair shared understanding:
 
@@ -86,7 +86,7 @@ That is more than clarification. It is maintaining **common ground**--a shared u
 
 Another useful one is **handoff design**. Good collaboration doesn't mean both parties participate equally in every step:
 
-`AI investigates → human decides → AI executes → human reviews`
+`AI investigates -> human decides -> AI executes -> human reviews`
 
 The product should make those boundaries visible.
 
@@ -101,7 +101,7 @@ And then **inspectability / controllability / verifiability** become one subset 
 
 In good collaboration, one participant usually doesn't silently modify shared work. They:
 
-`propose → show what changed → explain if needed → other person reviews → accept / modify / reject`
+`propose -> show what changed -> explain if needed -> other person reviews -> accept / modify / reject`
 
 So the broader design principle could be:
 
@@ -170,7 +170,7 @@ Both collaborators need enough shared understanding of:
 
 And they need mechanisms to repair that understanding:
 
-`explain → acknowledge → clarify → correct`
+`explain -> acknowledge -> clarify -> correct`
 
 Clark and Brennan treat this continual grounding as foundational to collective action. ([CMU School of Computer Science](https://www.cs.cmu.edu/~illah/CLASSDOCS/Clark91.pdf?utm_source=chatgpt.com "GROUNDING IN COMMUNICATION"))
 
@@ -241,11 +241,11 @@ Collaborators contribute things:
 
 The other participant may need to:
 
-`inspect → understand → verify → challenge → modify → accept`
+`inspect -> understand -> verify -> challenge -> modify -> accept`
 
 This is exactly Teresa's change-set design:
 
-`AI proposes → human evaluates → human changes → AI adapts`
+`AI proposes -> human evaluates -> human changes -> AI adapts`
 
 This is where I would place:
 
@@ -267,7 +267,7 @@ People misunderstand each other. Evidence changes. Someone cannot do their part.
 
 Good collaboration therefore needs:
 
-`detect breakdown → surface it → diagnose → repair/replan → continue`
+`detect breakdown -> surface it -> diagnose -> repair/replan -> continue`
 
 This comes through strongly in both CSCW's "articulation work" and teamwork research on adaptability and backup behavior. Schmidt and Bannon argue that real work requires ongoing adjustment because contingencies cannot all be planned in advance. ([Welcome to DTU Research Database](https://orbit.dtu.dk/en/publications/taking-cscw-seriously-supporting-articulation-work/?utm_source=chatgpt.com "Taking CSCW seriously. Supporting articulation work - Welcome to DTU Research Database")) Salas et al. similarly include adaptability and backup behavior among their core teamwork components. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.1177/1046496405277134 "Is there a "Big Five" in Teamwork? - Eduardo Salas, Dana E. Sims, C. Shawn Burke, 2005"))
 
@@ -346,7 +346,7 @@ I'd formulate the model like this:
 
 A compact version:
 
-`align → ground → coordinate → observe/direct → review/commit → repair/adapt`
+`align -> ground -> coordinate -> observe/direct -> review/commit -> repair/adapt`
 
 And I'd treat things like **trust, predictability, reversibility, transparency, and communication quality** as properties that support these mechanics, rather than additional stages.
 
@@ -361,7 +361,7 @@ AI helps move the reasoning process forward by forming hypotheses, proposing int
 
 Typical loop:
 
-`AI proposes → human evaluates → human changes/questions → AI adapts`
+`AI proposes -> human evaluates -> human changes/questions -> AI adapts`
 
 That is exactly the pattern your notes extract from Teresa's opportunity-tree example.
 
@@ -403,31 +403,31 @@ I'd extract the patterns around **how work and judgment move between human and A
 From Teresa's examples, I'd highlight these:
 
 1. **Guided practice**
-    `user works → AI evaluates → AI gives feedback → user revises`
+    `user works -> AI evaluates -> AI gives feedback -> user revises`
     Use when the user benefits from doing the work themselves while receiving expert feedback. Outcome Coach and Interview Coach fit here.
-2. **Proposal → review**
-    `AI proposes change → human inspects → accepts/edits/rejects → AI updates`
+2. **Proposal -> review**
+    `AI proposes change -> human inspects -> accepts/edits/rejects -> AI updates`
     Use when AI can do substantial work, but the human should retain control over consequential changes. Teresa's opportunity-tree change set is the clearest example.
 3. **Shared reasoning**
-    `AI forms hypothesis → human contributes evidence/judgment → AI revises → repeat`
+    `AI forms hypothesis -> human contributes evidence/judgment -> AI revises -> repeat`
     Use when neither side has enough information or judgment to solve the problem alone. Your support-diagnosis example fits this well.
 4. **Elicitation**
-    `user gives weak signal → AI asks targeted questions → richer understanding emerges`
+    `user gives weak signal -> AI asks targeted questions -> richer understanding emerges`
     Here AI's role is to obtain missing context. Teresa's "I didn't like this article" example fits directly.
 5. **Delegation**
-    `human assigns bounded task → AI executes → human receives result`
+    `human assigns bounded task -> AI executes -> human receives result`
     Use when doing the work itself doesn't need to remain part of the user's reasoning. This is closer to Teresa's administrative-agent examples than to her synthesis tools.
 6. **Critique / second opinion**
-    `human creates or decides → AI challenges/checks → human decides whether to revise`
+    `human creates or decides -> AI challenges/checks -> human decides whether to revise`
     This is related to guided practice, but the emphasis is different: AI is there to find weaknesses, contradictions, missing evidence, or alternatives.
 
 I'd add two patterns from broader collaboration theory, though they are less directly grounded in Teresa's talk:
 
 7. **Handoff**
-    `human works → AI takes over a defined part → human resumes`
+    `human works -> AI takes over a defined part -> human resumes`
     Useful when responsibility shifts clearly between collaborators.
 8. **Escalation / request for help**
-    `AI reaches uncertainty/authority boundary → asks human to decide or intervene`
+    `AI reaches uncertainty/authority boundary -> asks human to decide or intervene`
     A good collaborator knows when it should stop driving.
 
 The important distinction is that these are **patterns**, while things like inspectability, common ground, reversibility, and controllability are **mechanics that make the patterns work well**.
@@ -453,7 +453,7 @@ Yes. I'd derive them from the structure of collaborative work itself, without st
 
 A collaborative task has a few basic ingredients:
 
-`goal → understand situation → decide what to do → act → observe result → adjust`
+`goal -> understand situation -> decide what to do -> act -> observe result -> adjust`
 
 And two collaborators differ in four things:
 
@@ -469,11 +469,11 @@ Collaboration patterns then fall out of how those responsibilities are distribut
 
 **Condition:** one collaborator has information the other needs.
 
-`AI needs context ← human has context`
+`AI needs context <- human has context`
 
 So:
 
-`AI asks → human provides evidence → AI updates understanding`
+`AI asks -> human provides evidence -> AI updates understanding`
 
 This isn't specifically an AI pattern. A doctor interviewing a patient or an engineer debugging with a customer works the same way.
 
@@ -484,7 +484,7 @@ This isn't specifically an AI pattern. A doctor interviewing a patient or an eng
 
 **Condition:** one collaborator knows the desired result, while the other is better positioned to perform the work.
 
-`human defines task → AI executes → result returned`
+`human defines task -> AI executes -> result returned`
 
 The human retains the goal; AI owns a bounded piece of execution.
 
@@ -495,7 +495,7 @@ The human retains the goal; AI owns a bounded piece of execution.
 
 **Condition:** AI can produce a candidate result, while the human retains authority or important judgment.
 
-`AI proposes → human evaluates → accept / change / reject`
+`AI proposes -> human evaluates -> accept / change / reject`
 
 For example, changing a configuration, restructuring a plan, or making a diagnosis.
 
@@ -508,7 +508,7 @@ This is where inspectability and controllability become essential mechanics.
 
 **Condition:** the human should perform the work, but another participant can improve its quality through evaluation.
 
-`human acts → AI observes → AI gives feedback → human adjusts`
+`human acts -> AI observes -> AI gives feedback -> human adjusts`
 
 The important point is that the work remains with the human.
 
@@ -523,13 +523,13 @@ This covers coaching, reviewing, checking, challenging, and second opinions.
 
 `AI hypothesis`
 
-→ `human evidence/judgment`
+-> `human evidence/judgment`
 
-→ `AI updates`
+-> `AI updates`
 
-→ `human challenges`
+-> `human challenges`
 
-→ `...`
+-> `...`
 
 Neither side merely approves the other's result. The answer emerges through interaction.
 
@@ -544,7 +544,7 @@ There's another pattern I would distinguish from shared reasoning.
 
 **Condition:** both participants contribute directly to the evolving work product.
 
-`human contribution → AI contribution → human edit → AI extension → ...`
+`human contribution -> AI contribution -> human edit -> AI extension -> ...`
 
 Examples: jointly writing a plan, designing an architecture, constructing a model.
 
@@ -560,11 +560,11 @@ The difference from shared reasoning is the object of collaboration:
 
 **Condition:** who should own the next step changes during the work.
 
-`AI works → reaches boundary → human takes over`
+`AI works -> reaches boundary -> human takes over`
 
 or:
 
-`human works → delegates a subproblem → AI works → returns control`
+`human works -> delegates a subproblem -> AI works -> returns control`
 
 The boundary might come from authority, uncertainty, capability, risk, or access.
 

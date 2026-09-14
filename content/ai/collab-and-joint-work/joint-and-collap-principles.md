@@ -5,14 +5,13 @@ title: "Joint And Collap Principles"
 linkTitle: "Joint And Collap Principles"
 ---
 
-
-Yes. I think there is a publishable paper here, but I’d frame the motivation more carefully than “researchers know this; practitioners don’t read the papers.”
+Yes. I think there is a publishable paper here, but I'd frame the motivation more carefully than "researchers know this; practitioners don't read the papers."
 
 There is evidence for a real gap, but it seems to come from several mechanisms.
 
 First, the relevant knowledge is split across fields. Interactive IR, information seeking, HCI, visual analytics, end-user programming, mixed-initiative systems, provenance, and AI have developed partly separate research traditions. Work on interactive IR has explicitly noted the limited overlap between system-oriented IR, interactive IR, and information-seeking research. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0306457307000489?utm_source=chatgpt.com "On the role of user-centred evaluation in the advancement of interactive information retrieval - ScienceDirect"))
 
-Second, the dominant evaluation methods often favor systems that are easier to measure offline. Classical IR evaluation reduces the problem to something like `query → ranking → relevance`, while interactive systems involve reformulation, learning, changing goals, and different users. Interactive evaluation is richer but also substantially more expensive and harder to reproduce. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0306457322001182?utm_source=chatgpt.com "Toward Cranfield-inspired reusability assessment in interactive information retrieval evaluation - ScienceDirect")) Bates identified the underlying mismatch decades ago: real information needs change as people encounter information, while classical retrieval evaluation tends to assume a stable need. ([GSEIS Pages](https://pages.gseis.ucla.edu/faculty/bates/berrypicking.html?utm_source=chatgpt.com "The Design of Browsing and Berrypicking Techniques"))
+Second, the dominant evaluation methods often favor systems that are easier to measure offline. Classical IR evaluation reduces the problem to something like `query -> ranking -> relevance`, while interactive systems involve reformulation, learning, changing goals, and different users. Interactive evaluation is richer but also substantially more expensive and harder to reproduce. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0306457322001182?utm_source=chatgpt.com "Toward Cranfield-inspired reusability assessment in interactive information retrieval evaluation - ScienceDirect")) Bates identified the underlying mismatch decades ago: real information needs change as people encounter information, while classical retrieval evaluation tends to assume a stable need. ([GSEIS Pages](https://pages.gseis.ucla.edu/faculty/bates/berrypicking.html?utm_source=chatgpt.com "The Design of Browsing and Berrypicking Techniques"))
 
 Third, there is an organizational boundary. A study of 21 industry practitioners across 14 organizations found that conventional separation between AI engineering and UX design breaks down for Human-AI systems: interface requirements affect model behavior, data, and system components, so teams created ad-hoc representations to communicate across those boundaries. ([arXiv](https://arxiv.org/abs/2207.01749?utm_source=chatgpt.com "Human-AI Guidelines in Practice: Leaky Abstractions as an Enabler in Collaborative Software Teams")) This is quite close to your intuition about practitioners and organizational decision-making, but it suggests a structural problem beyond people simply not reading HCI literature.
 
@@ -25,7 +24,7 @@ input
 ```
 
 
-What we’re describing needs something more like:
+What we're describing needs something more like:
 
 ```text
 persistent state
@@ -42,9 +41,9 @@ persistent state
 
 That engineering-cost explanation is my inference, rather than something the literature above directly establishes.
 
-And there is an important counterexample: when researchers have actually built systems around these principles, the results often look a lot like what impressed you about Matrix. **AI Chains**, for example, let people inspect and modify intermediate LLM operations; in its 20-person study, chaining improved task outcomes and increased transparency, controllability, and the users’ sense of collaboration. Users could compare alternative branches and debug individual steps. ([DOI](https://doi.org/10.1145/3491102.3517582?utm_source=chatgpt.com "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts | Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems"))
+And there is an important counterexample: when researchers have actually built systems around these principles, the results often look a lot like what impressed you about Matrix. **AI Chains**, for example, let people inspect and modify intermediate LLM operations; in its 20-person study, chaining improved task outcomes and increased transparency, controllability, and the users' sense of collaboration. Users could compare alternative branches and debug individual steps. ([DOI](https://doi.org/10.1145/3491102.3517582?utm_source=chatgpt.com "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts | Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems"))
 
-So I think the paper’s motivating question could be:
+So I think the paper's motivating question could be:
 
 > We already know a great deal about designing interactive systems for uncertain, evolving information work. Why do contemporary LLM-based retrieval systems so often reduce the interaction to a query box followed by an answer?
 
@@ -52,11 +51,11 @@ That is a much stronger opening.
 
 Your Hebbia observation then works as the contemporary trigger. What caught your attention was specifically that Matrix exposes intermediate computation, makes it manipulable, supports multi-stage analysis, and turns the expert into an operator of the process.
 
-I would make the first publication a **position/synthesis paper**, rather than claiming a novel empirical theory.
+I would make the first publication a **position/synthesis paper**, rather than claiming a novel empirical theory.
 
 A possible title:
 
-**Beyond the Query–Answer Interface: Established Principles for Interactive AI Information Systems**
+**Beyond the Query-Answer Interface: Established Principles for Interactive AI Information Systems**
 
 Or, more specifically:
 
@@ -68,7 +67,7 @@ The core thesis could be:
 
 > Current RAG systems usually treat information access as an automated transformation from a user query to retrieved context and an answer. Decades of research in interactive information retrieval, HCI, sensemaking, mixed-initiative systems, visual analytics, end-user programming, and provenance suggest a different model: information seeking is an iterative process in which users and computational systems jointly construct and revise representations of the information need, evidence, and emerging understanding. We synthesize these traditions into a set of design principles and show how they change the architecture of RAG and query-understanding systems.
 
-I’d structure the paper in five parts.
+I'd structure the paper in five parts.
 
 ### 1. The problem: RAG inherited the wrong interaction abstraction
 
@@ -86,7 +85,7 @@ answer
 ```
 
 
-Even sophisticated implementations largely make improvements _inside_ this pipeline:
+Even sophisticated implementations largely make improvements _inside_ this pipeline:
 
 ```text
 rewrite
@@ -110,7 +109,7 @@ answer
 ```
 
 
-The point shouldn’t be that such RAG is technically primitive. The issue is that its **interaction model hides the evolving investigation**.
+The point shouldn't be that such RAG is technically primitive. The issue is that its **interaction model hides the evolving investigation**.
 
 Contrast:
 
@@ -139,7 +138,7 @@ user ↔ state ├── retrieval operations
 ### 2. Short literature review: the ideas already exist
 
 
-I’d keep this section deliberately concise and organized by _design problem_, not chronologically.
+I'd keep this section deliberately concise and organized by _design problem_, not chronologically.
 
 |Tradition|Established idea|Consequence for AI systems|
 |---|---|---|
@@ -176,7 +175,7 @@ And W3C PROV gives an established formal vocabulary for tracing entities, activi
 ### 3. Synthesize the literature into principles
 
 
-I’d be careful here: the claimed contribution is not that each principle is new.
+I'd be careful here: the claimed contribution is not that each principle is new.
 
 The contribution is:
 
@@ -184,28 +183,35 @@ The contribution is:
 
 Perhaps seven principles:
 
-**P1 — Externalize the evolving problem state.**  
+**P1 -- Externalize the evolving problem state.**
+
 Important interpretations, questions, evidence, hypotheses, and decisions should exist as persistent objects.
 
-**P2 — Support mixed initiative.**  
+**P2 -- Support mixed initiative.**
+
 Human and AI should both be able to introduce questions, revise representations, perform operations, and request clarification.
 
-**P3 — Make operations incremental, inspectable, and reversible.**  
+**P3 -- Make operations incremental, inspectable, and reversible.**
+
 The user should see the consequences of an intervention and be able to revise it locally.
 
-**P4 — Treat the information need as evolving.**  
+**P4 -- Treat the information need as evolving.**
+
 Query understanding is an iterative process whose previous states and branches remain available.
 
-**P5 — Provide composable operations over typed information objects.**  
+**P5 -- Provide composable operations over typed information objects.**
+
 Search, decomposition, evidence extraction, comparison, critique, etc. should form a small computational vocabulary.
 
-**P6 — Separate shared investigation state from its views.**  
+**P6 -- Separate shared investigation state from its views.**
+
 Matrix, graph, source view, evidence table, timeline, and conversation are coordinated projections of the same state.
 
-**P7 — Preserve provenance and epistemic status throughout computation.**  
+**P7 -- Preserve provenance and epistemic status throughout computation.**
+
 Claims, transformations, evidence, uncertainty, source authority, and human/AI interventions retain their derivation.
 
-That is already enough. I wouldn’t try to publish 15 principles.
+That is already enough. I wouldn't try to publish 15 principles.
 
 ### 4. Apply the principles to RAG
 
@@ -267,7 +273,7 @@ similarity⁡(E(q),E(d))
 
 you have an inspectable retrieval plan:
 
-(query projection,corpus projection,relation,evidence need)
+(query projection,corpus projection,relation,evidence need)
 
 For example:
 
@@ -290,7 +296,7 @@ concepts
 ```
 
 
-That gives the paper a concrete contribution beyond generic “make AI interactive.”
+That gives the paper a concrete contribution beyond generic "make AI interactive."
 
 ### 5. Apply it specifically to query understanding
 
@@ -347,7 +353,7 @@ Our extension is:
 
 > clarification does not have to consist solely of the system asking another textual question.
 
-The system can expose an **editable interpretation**:
+The system can expose an **editable interpretation**:
 
 ```text
 I think you're trying to:
@@ -368,8 +374,6 @@ Evidence wanted:
 The user may correct that faster than having three more conversational turns.
 
 That is where direct manipulation, mixed initiative, interactive IR, and LLM query understanding finally connect.
-
----
 
 And I would end the paper with an evaluation agenda, because otherwise reviewers can reasonably ask whether these principles merely produce a more complicated UI.
 
@@ -393,7 +397,7 @@ H5  Experts benefit more from controllability as domain
 ```
 
 
-Metrics shouldn't just be retrieval `nDCG` or answer correctness. Measure:
+Metrics shouldn't just be retrieval `nDCG` or answer correctness. Measure:
 
 ```text
 task success
@@ -416,4 +420,4 @@ So I think the publication should make one central argument:
 
 Then RAG/query understanding becomes the worked demonstration of what happens when we take those principles seriously.
 
-This is a credible position paper because we wouldn't claim that “we invented interactive AI.” The novelty would be the **synthesis, translation into explicit architectural principles, and their application to modern RAG/query-understanding pipelines**.
+This is a credible position paper because we wouldn't claim that "we invented interactive AI." The novelty would be the **synthesis, translation into explicit architectural principles, and their application to modern RAG/query-understanding pipelines**.
