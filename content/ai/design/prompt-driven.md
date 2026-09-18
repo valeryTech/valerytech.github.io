@@ -13,37 +13,41 @@ This is not inherently a problem. Many tasks are appropriately performed by an L
 
 This note calls that problem **prompt-only enforcement**:
 
-> Prompt-only enforcement occurs when the architecture treats prompt compliance as sufficient assurance for a property whose required assurance exceeds the demonstrated reliability and failure containment of the model-based mechanism.
+> Prompt-only enforcement occurs when an architecture relies on a prompt instruction to satisfy a system requirement without controls, evidence, and failure handling adequate to that requirement.
 
-The deciding question is not whether the behavior is called "business logic" or whether it is written in a prompt. It is whether the implementation, evidence, and failure controls are strong enough for the assurance the requirement demands.
+The deciding question is not whether the behavior is called "business logic" or whether it is written in a prompt. It is whether the implementation, controls, evidence, and failure handling justify relying on the system to meet the requirement at its stated boundary and failure tolerance.
 
 ```text
-required assurance > justified assurance
-                     ↓
-                assurance gap
-                     ↓
-strengthen controls or evidence, narrow scope,
-weaken the claim, or reject the design
+system claim
+    ↓
+are the controls, evidence, and failure handling adequate?
+    ├─ yes → rely on the claim within its stated limits
+    └─ no  → support gap
+                  ↓
+         strengthen controls or evidence, narrow scope,
+         weaken the claim, or reject the design
 ```
 
 
+A **support gap** exists when the implementation, controls, evidence, and failure handling do not justify relying on the system to meet the requirement under its stated conditions.
+
 When that gap is material and remains unaddressed, the prompt-specified requirement has become an architectural problem.
 
-## Specification, implementation, enforcement, and assurance
+## Specification, implementation, enforcement, and evidence
 
 
-Four architectural responsibilities are easy to collapse in an LLM application:
+Four questions are easy to collapse in an LLM application:
 
 | Responsibility | Question | Example |
 |---|---|---|
 | Specification | What should happen? | "Return an object with exactly these fields." |
 | Implementation | What mechanism performs it? | The prompt/model combination constructs a candidate object. |
 | Enforcement | What prevents an unacceptable result from being accepted? | Constrained generation or a schema validator rejects an invalid object. |
-| Assurance | What justifies trusting the result? | Integration tests exercise rejection and failure paths, and review confirms that downstream processing cannot bypass validation. |
+| Evidence | What shows that the implementation and enforcement work under the stated conditions? | Integration tests exercise rejection and failure paths, and review confirms that downstream processing cannot bypass validation. |
 
-The prompt contains or serves as a runtime behavioral specification and also supplies instructions to the implementation. Neither role establishes that every result complies. Assurance is the justified confidence that the requirement will be met under stated conditions. Enforcement is one way to establish assurance; measured reliability, containment, detection, and recovery may also contribute.
+The prompt contains or serves as a runtime behavioral specification and also supplies instructions to the implementation. Neither role establishes that every result complies. Evidence shows how the implementation and its controls behave under stated conditions. Containment, detection, and recovery can reduce or manage failures, but they do not by themselves establish that the required property holds.
 
-Prompt-specified systems make it tempting to collapse the first three responsibilities into one natural-language artifact and then infer the fourth:
+Prompt-specified systems make it tempting to collapse the first three questions into one natural-language artifact and then rely on the result without the fourth:
 
 ```text
 prompt
@@ -51,18 +55,18 @@ prompt
   + implementation instructions
   + assumed enforcement
               ↓
-      assumed assurance
+      unsupported trust
 ```
 
 
-The mistake is treating the instruction as enforcement and the result as evidence of assurance. A statement of intent is not, by itself, evidence that the system provides the required assurance.
+The mistake is treating the instruction as enforcement and the result as evidence. A statement of intent does not, by itself, justify relying on the system.
 
 An output schema illustrates the distinction. A prompt that says "return JSON shaped like X" contains an output instruction. It does not by itself create an enforced output contract. Constrained decoding can prevent malformed candidates; parsing and schema validation can accept or reject candidates before downstream use.
 
 ## Classify the requirement first
 
 
-The assurance requirement should drive the architecture. A useful starting point is to classify each property as hard, statistical, or best effort.
+The requirement class, failure tolerance, and consequences should drive the architecture. A useful starting point is to classify each property as hard, statistical, or best effort.
 
 | Requirement class | Meaning | Example |
 |---|---|---|
@@ -72,9 +76,9 @@ The assurance requirement should drive the architecture. A useful starting point
 
 An **invariant** should remain a strict term. If a property may fail in 5% of accepted results while the system still satisfies its specification, it is not an invariant. It is a statistical requirement or best-effort behavior.
 
-The same operation can belong to different classes in different systems. JSON formatting may be best effort when a human reads the result, but a hard property when an automated service consumes it. A business decision may be intentionally statistical, while a simple formatting rule may be critical. The subject matter of the rule does not determine its assurance class.
+The same operation can belong to different classes in different systems. JSON formatting may be best effort when a human reads the result, but a hard property when an automated service consumes it. A business decision may be intentionally statistical, while a simple formatting rule may be critical. The subject matter of the rule does not determine its requirement class.
 
-The words used in a prompt do not determine the class either. *Must*, *never*, and *guarantee* may signal a hard property, but the actual system contract and its boundary determine the class. Failure consequences inform how much assurance the requirement should demand and whether the contract should be strengthened.
+The words used in a prompt do not determine the class either. *Must*, *never*, and *guarantee* may signal a hard property, but the actual system contract and its boundary determine the class. Failure consequences determine how strict the contract, controls, and evidence should be.
 
 ### Hard properties
 
@@ -93,7 +97,7 @@ A hard property applies at a stated boundary, usually to every result the system
 ### Statistical requirements
 
 
-A statistical requirement permits individual failures while setting a performance target over a defined population. A useful requirement and assurance plan together include at least:
+A statistical requirement permits individual failures while setting a performance target over a defined population. A useful requirement and evaluation plan together include at least:
 
 ```text
 population
@@ -109,7 +113,7 @@ For example:
 
 > On supported knowledge-reconstruction queries drawn from the production distribution, mean per-query recall of human-labeled materially relevant evidence units must be at least 95% within a defined candidate-review budget. The evaluation protocol must report uncertainty, the distribution across queries, and a complementary precision or review-burden target. Omissions of high-importance evidence are measured separately and are not covered by the general error budget.
 
-For this kind of requirement, a prompt/model combination may be a suitable implementation. Evaluation is then the principal evidence for the assurance claim, while monitoring checks whether its assumptions continue to hold.
+For this kind of requirement, a prompt/model combination may be a suitable implementation. Evaluation is then the principal evidence for the system claim, while monitoring checks whether its assumptions continue to hold.
 
 ### Best-effort behavior
 
@@ -143,15 +147,15 @@ requirement
     ↓
 prompt/model candidate
     ↓
-enforcement, verification, or review
+acceptance control appropriate to the property
     ↓
 accepted result or rejected candidate
 ```
 
 
-Making the boundary visible is necessary but not sufficient. The control at that boundary must itself have failure properties and evidence compatible with the required assurance.
+Making the boundary visible is necessary but not sufficient. The control at that boundary must itself have failure properties and evidence adequate to the requirement.
 
-A statistical requirement has a different assurance path:
+A statistical requirement needs a different kind of evidence:
 
 ```text
 requirement
@@ -164,32 +168,37 @@ evidence that the population-level target is met
 ```
 
 
-"Prompt-only" refers to the basis for trust, not merely the number of components in the diagram. Adding a second model call or a superficial format check does not close an assurance gap unless it materially addresses the relevant failure modes.
+"Prompt-only" refers to the basis for trust, not merely the number of components in the diagram. Adding a second model call or a superficial format check does not close a support gap unless it materially addresses the relevant failure modes.
 
 When the mismatched property is a hard invariant, **prompt-encoded invariant** is a useful name for the especially serious subtype.
 
-## Why the assurance gap arises
+## What changes when behavior is implemented with prompts
 
 
-LLMs interpret natural-language instructions rather than execute them under the fixed semantics of a conventional policy engine, state machine, or arithmetic expression. Their behavior can change with the model, context, retrieved material, user input, and competing instructions.
+Moving behavior into a prompt does more than change where a rule is written. It changes the mechanism that interprets the rule. A prompt lets the system handle language, context, and judgment that may be hard to express as exact rules. In return, more behavior depends on how the model interprets the instruction, the context it receives, the model version, and the runtime state.
 
-Relevant failure modes include:
+The causal stack traces these effects from [natural-language properties]({{< ref "ai-engineering/causal-stack/layer-0-natural-language-properties" >}}), through [base LLM mechanisms]({{< ref "ai-engineering/causal-stack/layer-1a-base-llm-mechanisms" >}}) and [learned model behavior]({{< ref "ai-engineering/causal-stack/layer-1b-final-scheme" >}}), to [AI-system causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}). In short, the model infers the task from text and context, instructions and data share a model-readable channel, and the result depends on the full runtime scenario rather than on the visible prompt alone.
 
-- imperfect instruction following;
-- ambiguity in natural-language rules;
-- sensitivity to context and prompt wording;
-- conflicts between trusted instructions and untrusted content;
-- accidental or adversarial prompt injection;
-- changes to models, prompts, tools, or retrieval; and
-- plausible output that conceals a violated requirement.
+These conditions are not automatically failures. Variation and context sensitivity are often part of why a prompt is useful. The design question is whether their benefits fit the task and whether the system can measure and contain the resulting failures.
 
-Randomness is not the whole issue. Deterministic decoding can make a result repeatable without making the natural-language rule mechanically enforceable or the result correct.
+| Variant | Good fit | Main benefit | Main trade-offs |
+|---|---|---|---|
+| Application-owned rule or state machine | Exact relations, permissions, state changes, and hard boundaries | Explicit execution, direct testing, and usually low runtime cost | More formalization and maintenance; poor fit for fuzzy semantic judgment |
+| One bounded prompt | A small semantic task with limited consequences | Simple flow, low orchestration cost, and the full task context in one call | Coupled instructions, prompt sensitivity, broad change effects, and more difficulty finding which part failed |
+| Fixed mixed workflow | A known multi-step task containing both exact and semantic work | Smaller prompt tasks, explicit state, parallel work, local retries, and step-level tests | More handoffs, error propagation, orchestration, calls, latency, and trace requirements |
+| Model-directed workflow | A task where the useful route cannot be fixed in advance | Adaptive routing and tool choice | Variable paths, cost, and stopping behavior; harder evaluation; greater state and action risk |
 
-These characteristics do not make an LLM unsuitable for required behavior. They limit what may be inferred from the presence of an instruction alone. A prompt/model combination can demonstrate strong measured performance on a defined task. That can support a statistical claim under the tested conditions. It does not establish that a property holds for every accepted result.
+These choices can be combined within one system. Choose per task and system boundary, not once for the whole application. Use prompts where semantic judgment is needed. For a multi-step task that needs several stages, prefer a fixed mixed workflow over model-directed control when those stages are known. Use model-directed control only when the adaptive path adds measured value. Keep permissions, commit boundaries, hard rules, budgets, and stop conditions application-owned.
+
+A prompt call does not by itself create a pipeline, a feedback loop, or a model-directed workflow. Those conditions arise when the application connects model output to later steps, stored state, tools, or actions.
+
+Deterministic decoding can make one runtime scenario more repeatable without making its result correct. One successful run shows that the system worked once; it does not establish stable behavior over repeated runs or reasonable variations. A prompt/model combination can support a statistical claim when representative evaluation shows that it meets the target under stated conditions. It does not establish that a property holds for every accepted result.
+
+For the Knowledge Assistant, corpus accounting, permissions, user selection state, and context construction remain application-owned. Alias generation, grouping, and synthesis are bounded prompt tasks inside a fixed mixed workflow. A model-directed discovery loop may be added only as an optional, read-only path with an explicit budget. It cannot change permissions or commit external actions.
 
 The safer principle is:
 
-> A prompt instruction alone should not be treated as stronger evidence than the measured assurance of the model-based mechanism.
+> A prompt instruction states intended behavior. Measured behavior and runtime controls determine whether the system can be relied on.
 
 ## A middle pattern: task-specific prompts in a workflow
 
@@ -243,19 +252,19 @@ This pattern organizes the work. It does not make model output correct, prevent 
 
 Each prompt node should be evaluated for its own task, and the full workflow should be evaluated end to end. Passing every node-level check does not show that the full workflow meets the system requirement.
 
-## Controls provide different kinds of assurance
+## Controls answer different questions
 
 
-Not every validator provides the same assurance. An architecture review should identify the type of control, the failure it addresses, the evidence that it works, and the limitations that remain.
+Validators and other controls answer different questions. An architecture review should identify the type of control, the failure it addresses, the evidence that it works, and the limitations that remain.
 
 | Control | Examples | What it checks or contributes | Important limitation |
 |---|---|---|---|
-| Structural enforcement | Constrained decoding, parser, schema validator, type check, database constraint | Whether an output has an allowed structure or satisfies a mechanically checkable relation | Does not establish that its content is true or semantically supported |
-| Rule-based enforcement | Policy engine, calculation, state machine, referential check | Whether a precisely encoded relation holds for the supplied inputs | Depends on correct rules, trusted inputs, and implementation quality |
+| Structural acceptance control | Constrained decoding, parser, schema validator, type check, database constraint | Whether an output has an allowed structure or satisfies a mechanically checkable relation | Does not establish that its content is true or semantically supported |
+| Rule-based acceptance control | Policy engine, calculation, state machine, referential check | Whether a precisely encoded relation holds for the supplied inputs | Depends on correct rules, trusted inputs, and implementation quality |
 | Probabilistic verification | Classifier, entailment model, second LLM review | Additional measured evidence about a semantic property | Remains fallible and may share failures with the generator |
 | Human verification | Editorial approval, domain review, two-person approval | Contextual judgment at a review boundary | Has capacity, consistency, fatigue, and training limits |
 
-Moving a rule from a prompt into code is therefore not sufficient reasoning on its own. Application code may provide much stronger assurance for `amount <= approved_limit` when its inputs and arithmetic are trusted. A second LLM checking whether a claim is supported remains a probabilistic mechanism, even when it sits outside the generation prompt and is called a verifier.
+The first two kinds of control enforce a property only when the application connects them to an acceptance or commit boundary that blocks failures and cannot be bypassed. Moving a rule from a prompt into code is therefore not sufficient reasoning on its own. Application code may enforce `amount <= approved_limit` at a non-bypassable approval boundary when its inputs and arithmetic are trusted. A second LLM checking whether a claim is supported remains a probabilistic mechanism, even when it sits outside the generation prompt and is called a verifier.
 
 Controls also play different roles in failure handling:
 
@@ -269,7 +278,7 @@ A complete design may need more than one. Detection does not prevent harm, conta
 ### Independence matters
 
 
-A verifier's assurance contribution depends on its own accuracy and coverage and on how its errors correlate with the generator's. Running the same model with the same evidence, assumptions, and similar instructions twice may reproduce the same mistake. Agreement between the two calls can then create apparent confidence without adding much assurance.
+A verifier's value as evidence depends on its own accuracy and coverage and on how its errors correlate with the generator's. Running the same model with the same evidence, assumptions, and similar instructions twice may reproduce the same mistake. Agreement between the two calls can then create apparent confidence without adding much support.
 
 Independence can be improved by using controls based on different mechanisms or information:
 
@@ -283,7 +292,7 @@ Independence can be improved by using controls based on different mechanisms or 
 - route high-consequence cases to human review; and
 - measure the end-to-end failure rate instead of assuming that a second pass helps.
 
-Conditional error correlation is not binary. The verifier's contribution should be measured against the failures that matter.
+Independence is a matter of degree. Measure the verifier's added value against the failures that matter.
 
 ## Worked example: closed-corpus knowledge reconstruction
 
@@ -354,7 +363,7 @@ regression gates and sampled corpus-wide audits
 
 The evaluation must establish its denominator from the corpus rather than labeling only the candidates returned by the current retriever; otherwise, the omissions remain invisible. Its unit must match the product claim: passage recall is only a proxy for information coverage unless the relationship has been justified. Ordinary production monitoring can track observable signals such as ingestion failures, channel completion, drift, and truncation. Measuring recall in production requires sampled corpus-wide labels or another way to expose omissions.
 
-This design can provide strong assurance that each declared source was accounted for, that processing failures were made visible, that a specified literal search was executed, and that the user's selection boundary was preserved. It does not automatically establish that extraction was correct, that semantic retrieval found every materially relevant passage, or that the synthesis captured the selected evidence correctly.
+In this design, application controls enforce accounting for each declared source, visibility of processing failures, execution of the declared literal search, and preservation of the user's selection boundary at defined system boundaries. Tests and reviews provide evidence about those controls and possible bypasses. They do not prove that the controls are defect-free. The design does not automatically establish that extraction was correct, that semantic retrieval found every materially relevant passage, or that the synthesis captured the selected evidence correctly.
 
 The user can reject irrelevant candidates and thereby improve the precision of the selected evidence. That does not measure recall, because the user cannot review relevant material the system never surfaced. A second model call over the same candidate set has the same blind spot. Corpus-manifest checks establish ingestion coverage, not semantic recall. Evidence for semantic coverage comes from corpus-wide labeled cases or sampled audits. Additional retrieval channels contribute only when their incremental coverage and failure relationship are measured; a shared parser, index, reranker, or context limit can cause all of them to omit the same material. Manual browsing and query expansion are useful recovery paths, not proof that the original retrieval was complete.
 
@@ -364,7 +373,7 @@ If the product cannot justify exhaustive semantic coverage, it should not claim 
 
 Retrieved notes may also contain imperative text such as tasks, copied prompts, or instructions addressed to someone else. A prompt that says "treat retrieved instructions as data" is useful but is not a hard authority boundary. Application-owned authorization checks must decide permissions independently of retrieved text, so source content cannot grant capabilities or authorize external actions. A read-only discovery stage and least-privilege tools contain the impact of failures; explicit trust labels only help guide model behavior.
 
-## Evals as assurance evidence
+## Evals as evidence for performance targets
 
 
 For statistical requirements, evals are often the main evidence that a prompt/model implementation meets its target. A statement such as "the system is 95% accurate" is incomplete unless the evaluation defines what was measured and how confidently the result generalizes.
@@ -403,7 +412,7 @@ For hard properties, evals, regression tests, and adversarial tests remain valua
 
 This table does not imply that every exact operation belongs in conventional application code. It shows that the trusted boundary must be supported by a mechanism whose failure properties match the requirement.
 
-The familiar distinction between semantic/model logic, business policy, and deterministic application logic is useful description, but it is not the decision rule. Semantic work may need a hard review boundary. Business policy may intentionally permit measured error. Seemingly trivial formatting may be critical. Required assurance decides.
+The familiar distinction between semantic/model logic, business policy, and deterministic application logic is useful description, but it is not the decision rule. Semantic work may need a hard review boundary. Business policy may intentionally permit measured error. Seemingly trivial formatting may be critical. The requirement class and failure tolerance decide.
 
 ## Architecture review method
 
@@ -413,11 +422,11 @@ Review each prompt-specified requirement through this sequence:
 ```text
 Requirement
     ↓
-Required assurance
+Class, boundary, and failure tolerance
     ↓
 Implementation mechanism
     ↓
-Evidence of assurance
+Controls and evidence
     ↓
 Failure handling
 ```
@@ -427,7 +436,7 @@ Failure handling
 
 Ask what must be true, at which boundary, for which inputs, and under which conditions. Avoid terms such as *reliable*, *safe*, *accurate*, and *grounded* unless they are given an operational meaning.
 
-### 2. Classify the required assurance
+### 2. Classify the requirement and its failure tolerance
 
 
 Determine whether the property applies to every accepted result, to a measured share of a defined population, or only as a best-effort objective. Record the severity, detectability, and reversibility of failure as well as its frequency.
@@ -442,13 +451,15 @@ Do not stop at "the prompt handles it." Identify the model, context, tools, appl
 
 Ask:
 
-- What shows that this mechanism reaches the required assurance?
+- For a hard property, what runtime control applies the requirement at the trusted boundary?
+- What evidence tests that control, its inputs, and possible bypasses?
+- For a statistical requirement, what evaluation measures the target and its uncertainty?
 - Which failures are prevented, detected, contained, or addressed through recovery?
 - Is verification sufficiently independent from generation?
 - What assumptions must hold for the controls to work?
 - Which system changes require reevaluation?
 
-"The prompt explicitly says so" is a specification answer, not an assurance answer.
+"The prompt explicitly says so" is a specification answer, not evidence.
 
 ### 5. Close or acknowledge the gap
 
@@ -462,7 +473,7 @@ Possible responses include:
 - define and evaluate a statistical target;
 - add monitoring and recovery;
 - narrow the supported population; or
-- weaken the requirement to match what the system can honestly assure.
+- weaken the requirement to match what the system can support.
 
 If the gap cannot be closed, the system should not claim the stronger property.
 
@@ -471,7 +482,7 @@ If the gap cannot be closed, the system should not claim the stronger property.
 
 Start with:
 
-> What level of assurance does this property require, and what evidence or mechanism establishes that the implementation reaches that level?
+> What exactly must hold, at which boundary, and with what failure tolerance? What controls apply it, what evidence tests them, and what happens when they fail?
 
 Then branch by requirement type:
 
@@ -493,7 +504,7 @@ For every branch, ask whether verification and control failures are sufficiently
 Warning signs of prompt-only enforcement include one or more of the following:
 
 - The consequence of violation exceeds the stated tolerance.
-- The primary assurance argument is that the prompt instructs the model correctly.
+- The primary justification is that the prompt instructs the model correctly.
 - Evaluation does not establish a claimed statistical reliability.
 - Checks do not address the relevant semantic failure.
 - A verifier is subject to substantially the same failures as the generator.
@@ -502,7 +513,7 @@ Warning signs of prompt-only enforcement include one or more of the following:
 ## Terminology
 
 
-**Prompt-specified system** is a neutral descriptive term in this note. It says where important behavior is specified without implying that the behavior is good, bad, deterministic, or assured.
+**Prompt-specified system** is a neutral descriptive term in this note. It says where important behavior is specified without implying that the behavior is correct, reliable, or enforced.
 
 **Prompt-only enforcement** is the proposed anti-pattern within that broader category. **Prompt-encoded invariant** names the hard-property subtype.
 
@@ -515,17 +526,17 @@ This note makes several deliberate choices.
 
 First, it uses **prompt-specified system** as a neutral umbrella rather than treating prompt-heavy design as an anti-pattern. Prompts are a natural place for semantic analysis, classification, synthesis, and other behavior whose intended semantics are judgmental. Calling the whole architecture defective would obscure the narrower problem and make the argument easy to dismiss.
 
-Second, it defines **prompt-only enforcement** as an assurance mismatch rather than as "business logic in prompts." The category of the logic is only a rough clue. A business rule may legitimately be statistical, while a formatting rule may be a hard requirement when another service consumes the output. Required assurance is the more general decision variable.
+Second, it defines **prompt-only enforcement** as a support gap rather than as "business logic in prompts." The category of the logic is only a rough clue. A business rule may legitimately be statistical, while a formatting rule may be a hard requirement when another service consumes the output. The requirement class and failure tolerance are better guides for the design.
 
 Third, it keeps **invariant** strict. A property that may fail within an accepted error budget is not an invariant in the conventional software sense. Calling it a *probabilistic invariant* would blur the difference between a per-result contract and a population-level performance target. The hard, statistical, and best-effort classes make that distinction explicit.
 
-Fourth, the note does not reduce the remedy to "put it in deterministic code." Code can contain defects, inputs can be untrusted, and some semantic properties cannot be decided mechanically. The relevant question is whether the chosen mechanism, evidence, and failure handling justify the assurance being claimed. Structural validation, rule-based enforcement, probabilistic verification, and human review answer different questions.
+Fourth, the note does not reduce the remedy to "put it in deterministic code." Code can contain defects, inputs can be untrusted, and some semantic properties cannot be decided mechanically. The relevant question is whether the chosen mechanism, controls, evidence, and failure handling justify relying on the system claim. Structural validation, rule-based enforcement, probabilistic verification, and human review answer different questions.
 
 Fifth, task-specific prompt workflows are treated as an implementation choice, not an enforcement mechanism. Splitting a large prompt into smaller tasks can make inputs, outputs, and failures easier to inspect and test. It does not stop errors from spreading between nodes or replace application-owned controls for hard properties.
 
-Sixth, verifier independence is explicit because adding another model call can look like defense in depth without providing it. A verifier contributes assurance through its accuracy, coverage, and error relationship with the generator. Repeating the same assumptions through the same model may preserve the original failure.
+Sixth, verifier independence is explicit because adding another model call can look like defense in depth without providing it. A verifier adds useful evidence only when its accuracy, coverage, and shared failures with the generator are measured. Repeating the same assumptions through the same model may preserve the original failure.
 
-Finally, closed-corpus knowledge reconstruction is the main example because it exposes the boundary between mechanically checkable scope and semantic completeness. Corpus membership, index status, literal matching, and selection records can often be checked directly. Whether retrieval found every materially relevant passage and whether a synthesis represented the evidence faithfully require semantic judgment. A user can curate the candidates shown but cannot identify an omission that retrieval never exposed. Treating these properties as one promise to "find everything" would hide the exact assurance gap the note is intended to reveal.
+Finally, closed-corpus knowledge reconstruction is the main example because it exposes the boundary between mechanically checkable scope and semantic completeness. Corpus membership, index status, literal matching, and selection records can often be checked directly. Whether retrieval found every materially relevant passage and whether a synthesis represented the evidence faithfully require semantic judgment. A user can curate the candidates shown but cannot identify an omission that retrieval never exposed. Treating these properties as one promise to "find everything" would hide the exact support gap the note is intended to reveal.
 
 Together, these choices keep the claim narrow: prompts are not the problem, and probabilistic implementation is not the problem. The problem is trusting a mechanism beyond what its evidence and failure controls justify.
 
@@ -534,7 +545,7 @@ Together, these choices keep the claim narrow: prompts are not the problem, and 
 
 Prompt-specified systems are a legitimate way to build software. Prompts can specify behavior, and prompt/model mechanisms can implement analysis, classification, transformation, workflow, and decision behavior. For statistical and best-effort requirements, a prompt/model mechanism may be exactly the right design.
 
-The anti-pattern is not "important logic in prompts." It is an unsupported assurance claim: the system treats the presence of an instruction as sufficient reason to trust that the resulting property holds.
+The anti-pattern is not "important logic in prompts." It is an unsupported system claim: the system treats the presence of an instruction as sufficient reason to trust that the resulting property holds.
 
 The durable principle is:
 
@@ -543,12 +554,13 @@ The durable principle is:
 Or, as the review framework:
 
 ```text
-Requirement → required assurance → implementation mechanism
-            → evidence of assurance → failure handling
+Requirement → class, boundary, and failure tolerance
+            → implementation mechanism → controls and evidence
+            → failure handling
 ```
 
 
-Do not confuse a requested behavior with an assured property.
+Do not confuse a requested behavior with a property the system enforces or supports with evidence.
 
 ## Related sources
 
