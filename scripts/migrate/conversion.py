@@ -241,6 +241,14 @@ def render_link_target(
             ref = f"{ref}#{slugify_heading(heading)}"
         return f"[{link_text}]({ref})"
 
+    if is_local_markdown_target(target):
+        ctx.report.add_warning(
+            "unresolved-link",
+            f"Could not resolve {original}",
+            source=ctx.note.source_rel_global.as_posix(),
+        )
+        return fallback_label if fallback_label is not None else original
+
     attachment = ctx.attachment_resolver.resolve(ctx.note, target)
     if attachment is not None:
         copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1])

@@ -6,6 +6,9 @@ linkTitle: "Deep Research Report Citations Formatted"
 ---
 # SVPG's Solution Risk Dimensions and Teresa Torres's Continuous Discovery Model
 
+
+> **Status:** Source research report. See [`risk-areas-model.md`]({{< ref "ai/risk-areas/risk-areas-model" >}}) for the selected model and [`risk-areas-reassembled.md`]({{< ref "ai/risk-areas/risk-areas-reassembled" >}}) for the supporting synthesis.
+
 ## Executive summary
 
 
@@ -13,13 +16,13 @@ SVPG's **Value, Usability, Feasibility, and Viability** and Teresa Torres's **De
 
 The more important difference is elsewhere in their models:
 
-**SVPG gives you a taxonomy for asking, "How could this proposed solution fail?"**
+**SVPG provides a taxonomy for asking, "How could this proposed solution fail?"**
 
-**Torres gives you a structure for asking, "What are we trying to achieve, which customer opportunity should we address, which solutions could address it, what must be true for those solutions to work, and what evidence should we collect?"** Her Opportunity Solution Tree connects a desired outcome to an opportunity space, solution space, and assumption tests. [^3][^4]
+**Torres provides a structure for asking, "What outcome is being pursued, which customer opportunity should be addressed, which solutions could address it, what must be true for those solutions to work, and what evidence should be collected?"** Her Opportunity Solution Tree connects a desired outcome to an opportunity space, solution space, and assumption tests. [^3][^4]
 
 So these models are mostly **complementary, not competing**.
 
-My recommended synthesis is:
+The recommended synthesis is:
 
 > **Outcome -> Opportunities -> Candidate solutions -> Solution risk dimensions -> Concrete assumptions -> Evidence / assumption tests -> Decision -> Production outcome**
 
@@ -27,9 +30,9 @@ For the solution risk dimensions, use:
 
 > **Value, Usability, Feasibility, Viability, and Ethics**
 
-Keep **Value** rather than Torres's **Desirability** if you work heavily in B2B, because "will the customer buy or the user choose to use this?" is clearer there. Keep **Ethics** explicit because Torres treats it as a fifth assumption category, and Cagan has separately argued that ethics can disappear inside the large viability bucket and therefore deserves explicit attention. [^5][^1][^6]
+Keep **Value** rather than Torres's **Desirability** for work that is heavily B2B, because "will the customer buy or the user choose to use this?" is clearer there. Keep **Ethics** explicit because Torres treats it as a fifth assumption category, and Cagan has separately argued that ethics can disappear inside the large viability bucket and therefore deserves explicit attention. [^5][^1][^6]
 
-Most importantly, do **not** make "Value risk: high" the atomic unit in your discovery documentation. Make the atomic unit a concrete assumption:
+Most importantly, do **not** make "Value risk: high" the atomic unit in discovery documentation. Make the atomic unit a concrete assumption:
 
 > **Value assumption:** Finance controllers will allow the system to auto-match invoices without reviewing every match.
 
@@ -54,14 +57,14 @@ The terminology evolved over time, which explains some apparent contradictions b
 | Period | SVPG | Teresa Torres |
 |---|---|---|
 | **2017** | Cagan formalizes four risks: value, usability, feasibility, and business viability. [^5] | Torres had already introduced the Opportunity Solution Tree in 2016 as a representation of desired outcomes, opportunities, solutions, and experiments. [^12] |
-| **2020** | Cagan says ethics is normally within viability but argues for explicitly considering a fifth "should we build it?" ethical risk. [^6] | Torres's continuous-discovery material is increasingly explicit about opportunity-space prioritization and customer framing. [^13] |
+| **2020** | Cagan says ethics is normally within viability but argues for explicitly considering a fifth "should this be built?" ethical risk. [^6] | Torres's continuous-discovery material is increasingly explicit about opportunity-space prioritization and customer framing. [^13] |
 | **2021** | SVPG continues emphasizing the four product risks in discovery. [^14] | *Continuous Discovery Habits* codifies the sequence: outcome -> interviews/opportunities -> assumption testing/solutions, centered around the OST. [^15] |
 | **2023** | SVPG explicitly calls the four categories a **product risk taxonomy** and says ethics, compliance, and go-to-market can sit within viability. [^10] | Torres publishes her five assumption types and directly compares them with Cagan's four risks, saying the concepts are largely the same while arguing that assumptions are easier to test. [^1] |
 | **2025-2026** | SVPG sharpens discovery as "build to learn," with most attention on finding a solution that clears the four risks and produces the outcome. [^16][^11] | Product Talk continues to use outcome -> opportunity -> solution -> assumption tests and the five assumption categories, including ethics. [^17][^18] |
 
 This history matters because neither framework is a static four-box or five-box checklist. SVPG increasingly describes the four risks as a **conceptual model for evaluating potential solutions**, while Torres embeds nearly equivalent concerns inside a broader continuous decision system. [^10][^16][^19]
 
-For the examples below I assume a **cross-functional digital product team**, using a B2B SaaS product as the concrete case. That makes the value/desirability distinction especially visible. The synthesis also applies to consumer and internal products, but SVPG explicitly notes that the value and usability bars can differ for internal products because users may have less choice and training may be acceptable. [^20]
+The examples below assume a **cross-functional digital product team**, using a B2B SaaS product as the concrete case. That makes the value/desirability distinction especially visible. The synthesis also applies to consumer and internal products, but SVPG explicitly notes that the value and usability bars can differ for internal products because users may have less choice and training may be acceptable. [^20]
 
 ## Concept mapping
 
@@ -72,8 +75,8 @@ Consider a B2B product team building an **AI-assisted invoice reconciliation sys
 |---|---|---|---|---|---|---|
 | **Value** | **Desirability assumptions** | SVPG: whether customers will buy or users choose to use the solution. Torres: why customers will want the solution and whether they will perform the behaviours needed to obtain value from it. [^5][^21][^22] | "Finance controllers will trust automated matching enough to let the product automatically reconcile at least 70% of invoices." | Knowing that reconciliation is painful doesn't establish that this solution is compelling enough to change behaviour. The team needs evidence of adoption, switching, commitment, or actual use. | **Value assumption:** "Controllers will allow automatic reconciliation for high-confidence matches." | A realistic prototype where controllers choose manual vs automatic matching; a demand/commitment test such as opting into an automated pilot; behavioural data showing current manual overrides and willingness to delegate. Torres specifically suggests demand tests and behavioural prototype tests for desirability. [^21][^23] |
 | **Usability** | **Usability assumptions** | SVPG: whether users can figure out how to use the solution. Torres: assumptions that users can find what they need, understand what to do, and successfully do it. [^5][^9] | "A controller can review an uncertain match, understand why it was flagged, and approve or reject it without assistance." | Value and usability need separate evidence: users can strongly want automatic reconciliation while still being unable to understand the exception workflow. | **Usability assumption:** "A first-time controller can identify why a match is uncertain and choose the correct action without help." | Moderated prototype task observation; unmoderated task-completion prototype test; analytics or session evidence from a comparable existing workflow. Torres treats prototype tests as a primary way of observing customer behaviour. [^23] |
-| **Feasibility** | **Feasibility assumptions** | SVPG: whether engineers can build what is needed with available time, skills, and technology. Torres: why the team believes it can build the solution; she sometimes extends this to legal, compliance, security, and organizational feasibility. [^5][^9] | "Using the data available from the ERP, we can reach the required matching quality and latency without building a new data pipeline." | "Can we build AI matching?" is too broad. Decompose feasibility into the few technical facts on which the solution depends. | **Feasibility assumption:** "The fields available through the customer's ERP API contain enough information to produce acceptable matching quality." | Engineering research spike; working technical prototype against representative data; API/data audit or performance benchmark. Torres explicitly identifies research spikes as a feasibility assumption test. [^23] |
-| **Business viability** | **Viability assumptions** | SVPG: whether the solution works for the various aspects and constraints of the business, including go-to-market, contracts, compliance, acquisition economics, monetization, and brand. Torres: why the solution will be good for the business, including whether it drives the outcome and whether its economics work. [^5][^22] | "We can sell automatic reconciliation under existing enterprise contracts while maintaining acceptable cost to serve and meeting audit requirements." | Customer enthusiasm doesn't establish that the company can profitably, legally, operationally, and commercially offer the solution. | **Viability assumption:** "At expected usage, inference and support costs remain below our target cost per reconciled invoice." | Unit-economics model using observed pilot usage; finance/pricing review using real willingness-to-pay evidence; legal/compliance/contract review or stakeholder prototype review. SVPG specifically directs viability testing toward relevant business stakeholders. [^11] |
+| **Feasibility** | **Feasibility assumptions** | SVPG: whether engineers can build what is needed with available time, skills, and technology. Torres: why the team believes it can build the solution; she sometimes extends this to legal, compliance, security, and organizational feasibility. [^5][^9] | "The data available from the ERP can support the required matching quality and latency without a new data pipeline." | "Can the team build AI matching?" is too broad. Decompose feasibility into the few technical facts on which the solution depends. | **Feasibility assumption:** "The fields available through the customer's ERP API contain enough information to produce acceptable matching quality." | Engineering research spike; working technical prototype against representative data; API/data audit or performance benchmark. Torres explicitly identifies research spikes as a feasibility assumption test. [^23] |
+| **Business viability** | **Viability assumptions** | SVPG: whether the solution works for the various aspects and constraints of the business, including go-to-market, contracts, compliance, acquisition economics, monetization, and brand. Torres: why the solution will be good for the business, including whether it drives the outcome and whether its economics work. [^5][^22] | "Automatic reconciliation can be sold under existing enterprise contracts while maintaining acceptable cost to serve and meeting audit requirements." | Customer enthusiasm doesn't establish that the company can profitably, legally, operationally, and commercially offer the solution. | **Viability assumption:** "At expected usage, inference and support costs remain below the target cost per reconciled invoice." | Unit-economics model using observed pilot usage; finance/pricing review using real willingness-to-pay evidence; legal/compliance/contract review or stakeholder prototype review. SVPG specifically directs viability testing toward relevant business stakeholders. [^11] |
 
 The mapping is intentionally almost one-to-one. Torres herself says that her assumption categories and Cagan's risk areas are conceptually addressing the same ideas. Her distinction is about **granularity**: "viability risk" does not specify what to investigate; a statement such as "SMS acquisition revenue will exceed SMS delivery cost" can be assessed and tested. [^1][^22]
 
@@ -97,7 +100,7 @@ For the invoice example:
 | **Assumption tests** | Prototype behaviour test, technical spike, compliance review. | Evidence collected before committing to production delivery. |
 | **Outcome evidence** | Actual month-end reconciliation rate after launch. | Ultimate evidence that the solution generated the intended result. Both approaches are outcome-oriented. [^11][^26] |
 
-This is why I would **not add SVPG's four boxes as a peer level to Outcome / Opportunity / Solution in an OST**. They are a different axis. An OST describes the **decision structure**; risk dimensions classify the **uncertainties inside candidate solutions**.
+This is why SVPG's four boxes should **not be added as a peer level to Outcome / Opportunity / Solution in an OST**. They are a different axis. An OST describes the **decision structure**; risk dimensions classify the **uncertainties inside candidate solutions**.
 
 ## Terminology differences
 
@@ -106,15 +109,15 @@ The terms are related but should not be collapsed.
 
 | Term | Best precise meaning | How SVPG uses it | How Torres uses it | Recommended team usage |
 |---|---|---|---|---|
-| **Risk** | A decision-relevant consequence arising from uncertainty. ISO 31000 defines risk in terms of the effect of uncertainty on objectives. [^27] | Four broad categories of ways a product solution might fail: value, usability, feasibility, viability. Risk assessment should consider consequence. [^7] | Torres talks about the **risk carried by assumptions**, and the categories help teams uncover that risk. [^2] | Use for **"what happens if we're wrong?"** Example: "If this assumption is false, adoption is likely to fail." |
-| **Uncertainty** | Lack of sufficient knowledge/evidence about whether something is true or what will happen. | Present implicitly through the need for evidence and risk reduction, although SVPG normally speaks in terms of risk. [^7] | Operationalized mainly through assumptions with varying evidence strength. [^8] | Use as an umbrella concept: "We have low confidence because evidence is weak." Do not use it as the concrete artifact. |
+| **Risk** | A decision-relevant consequence arising from uncertainty. ISO 31000 defines risk in terms of the effect of uncertainty on objectives. [^27] | Four broad categories of ways a product solution might fail: value, usability, feasibility, viability. Risk assessment should consider consequence. [^7] | Torres talks about the **risk carried by assumptions**, and the categories help teams uncover that risk. [^2] | Use for **"what happens if the assumption is wrong?"** Example: "If this assumption is false, adoption is likely to fail." |
+| **Uncertainty** | Lack of sufficient knowledge/evidence about whether something is true or what will happen. | Present implicitly through the need for evidence and risk reduction, although SVPG normally speaks in terms of risk. [^7] | Operationalized mainly through assumptions with varying evidence strength. [^8] | Use as an umbrella concept: "Confidence is low because evidence is weak." Do not use it as the concrete artifact. |
 | **Assumption** | A proposition that must hold for the idea to work. | SVPG discusses identifying assumptions but its canonical taxonomy is expressed as risks. [^28] | Explicitly defined as beliefs that must be true for ideas to succeed. [^29] | Make this the **atomic discovery artifact**. Phrase it specifically and positively enough to test. |
 | **Opportunity** | A customer need, pain point, or desire that could be addressed to create customer value. | Closest analogue is the problem the team has been asked to solve; "opportunity" is not one of the four solution risks. | A first-class object between the outcome and solutions on the OST. [^30][^26] | Reserve **opportunity** for customer needs/problems. Do not call feature ideas opportunities. |
 | **Outcome** | Measurable result the team seeks to change. | Discovery should find a solution that clears the product risks **and achieves the necessary outcome**. [^24][^11] | Root of the OST; product outcomes typically represent customer behaviour connected to business value. [^3] | Keep a single explicit **desired outcome** above discovery work. |
 | **Solution** | Product, feature, service, or approach proposed to address an opportunity/problem. | The primary subject being tested against the four product risks. [^11] | Sits below a target opportunity and should be explored in alternatives. [^4][^2] | Always attach assumptions to a specific candidate solution. |
 | **Assumption test** | A small structured activity designed to increase or decrease confidence in one assumption. | SVPG often speaks more broadly about testing prototypes and running discovery experiments. [^24][^16] | Torres explicitly defines an assumption test as an activity for evaluating risk in one assumption. [^23] | Prefer **assumption test** for pre-build discovery work. |
 | **Experiment** | In the strict Torres vocabulary, a test of causal impact once something exists in production. | SVPG uses "experimentation" more broadly for rapid discovery learning. [^24] | Torres intentionally distinguishes experiments from assumption tests: assumption tests help decide what to build; experiments measure impact after building. [^23] | Write **assumption test** before delivery and **production experiment / outcome measurement** after launch. |
-| **Value / Desirability** | Whether the customer/user will choose the solution and perform the behaviour needed to benefit. | **Value**. [^5] | **Desirability**. [^21] | I recommend **Value** as the category, especially in B2B; use concrete value assumptions underneath it. |
+| **Value / Desirability** | Whether the customer/user will choose the solution and perform the behaviour needed to benefit. | **Value**. [^5] | **Desirability**. [^21] | **Value** is the recommended category, especially in B2B; use concrete value assumptions underneath it. |
 
 ### Risk and assumption should remain separate
 
@@ -122,7 +125,7 @@ The terms are related but should not be collapsed.
 A useful team model is:
 
 > **Assumption:** what must be true.
-> **Uncertainty:** how little we know about whether it is true.
+> **Uncertainty:** how little is known about whether it is true.
 > **Risk:** why being wrong is consequential.
 > **Evidence:** what currently supports or contradicts it.
 
@@ -149,9 +152,9 @@ Torres describes discovery as:
 
 The opportunity space contains customer needs, pain points, and desires; teams build it continuously from customer stories and use it to decide which customer opportunity to target before comparing candidate solutions. [^3][^26]
 
-She recommends framing opportunities from the customer's point of view and provides a simple check: could you imagine a customer actually saying it? For example, "reduce support tickets" is business language, while "I can't figure out how to do X" expresses the customer problem. [^18]
+She recommends framing opportunities from the customer's point of view and provides a simple check: could a customer plausibly say it? For example, "reduce support tickets" is business language, while "I can't figure out how to do X" expresses the customer problem. [^18]
 
-She also treats the model as **bidirectional and continuous**. Learning about solutions can change your understanding of the opportunity; learning across opportunities can change your understanding of the outcome. Torres explicitly warns against treating outcome -> opportunity -> solution as sequential phases that must be completed once. [^31]
+She also treats the model as **bidirectional and continuous**. Learning about solutions can change the understanding of the opportunity; learning across opportunities can change the understanding of the outcome. Torres explicitly warns against treating outcome -> opportunity -> solution as sequential phases that must be completed once. [^31]
 
 ### Current SVPG puts more weight on solution discovery
 
@@ -169,7 +172,7 @@ This is a genuine difference in emphasis:
 | Does the team choose among customer opportunities? | Less explicit in the four-risk framework. | Yes. Opportunity prioritization is a central discovery decision. [^34] |
 | What gets intensive testing? | Candidate solutions against product risks. [^11] | Candidate solutions by testing their assumptions, after selecting an opportunity. [^8] |
 
-I would preserve **both levels**.
+Both levels should be preserved.
 
 A product strategy or leader can define a broad strategic problem such as:
 
@@ -186,7 +189,7 @@ This gives leadership control over **where the company plays** while giving the 
 ## Discovery practice differences
 
 
-The two approaches become especially complementary when you compare how they surface, prioritize, and test uncertainty.
+The two approaches become especially complementary when comparing how they surface, prioritize, and test uncertainty.
 
 | Discovery activity | SVPG | Torres | Recommended combined practice |
 |---|---|---|---|
@@ -195,10 +198,10 @@ The two approaches become especially complementary when you compare how they sur
 | **Prioritize opportunities** | Outside the four-risk taxonomy; generally connected to strategy and problem selection. [^11] | Assess opportunity size, market factors, company factors, customer importance, and current satisfaction; prioritize in the opportunity space before solution effort. [^34] | Choose a target opportunity before investing deeply in one solution. |
 | **Generate solutions** | Collaborative product/design/engineering solution discovery. [^5][^32] | Generate multiple solutions for the target opportunity and compare them. [^8][^31] | Keep at least a few plausible candidates long enough to avoid premature commitment. |
 | **Surface solution uncertainty** | Assess value, usability, feasibility, and viability risk. Different ideas have different risk profiles. [^7] | Enumerate desirability, viability, feasibility, usability, and ethical assumptions using story maps, tree-line reasoning, data audits, and pre-mortems. [^2] | First scan dimensions; then convert meaningful risks into explicit assumptions. |
-| **Prioritize what to learn** | Consider severity/consequence and select the necessary evidence standard. [^7] | Prioritize assumptions based on how critical they are to the idea and how little evidence exists. [^8] | Ask: **If false, how damaging? How weak is our current evidence?** |
+| **Prioritize what to learn** | Consider severity/consequence and select the necessary evidence standard. [^7] | Prioritize assumptions based on how critical they are to the idea and how little evidence exists. [^8] | Ask: **If false, how damaging? How weak is the current evidence?** |
 | **Choose evidence** | Match test/evidence to risk: customers for value/usability, engineers for feasibility, stakeholders for viability. Evidence can range from qualitative feedback to quantitative testing. [^11][^7] | Prototype tests, one-question surveys, data mining, and research spikes; set success criteria before testing. [^23][^8] | Choose the cheapest credible test that meaningfully changes the decision. |
 | **Interpret evidence** | Use judgement proportional to consequence; don't demand maximum proof for every uncertainty. [^7] | Compare and contrast candidate solutions and avoid deciding from a single test. [^8] | Accumulate evidence until the decision is sufficiently safe, then move. |
-| **After release** | Actual business impact is the ultimate test of whether the team made the right choices. [^11] | Production experiments/outcome evidence tell you what impact the built solution produced. [^23] | Keep the outcome feedback loop open and revisit opportunity/solution assumptions when impact misses expectations. |
+| **After release** | Actual business impact is the ultimate test of whether the team made the right choices. [^11] | Production experiments/outcome evidence show what impact the built solution produced. [^23] | Keep the outcome feedback loop open and revisit opportunity/solution assumptions when impact misses expectations. |
 
 ### Surfacing assumptions
 
@@ -220,13 +223,13 @@ SVPG asks teams to consider the **severity and consequence** of being wrong and 
 
 Torres's assumption mapping asks whether an assumption is **critical to success** and how much **evidence** already supports it. The assumptions that are both critical and weakly supported are the riskiest. [^8]
 
-I would record three fields:
+Record three fields:
 
 | Field | Question |
 |---|---|
 | **Criticality** | If false, does the candidate solution still work? |
 | **Consequence** | What does being wrong cost customers or the company? |
-| **Evidence strength** | How convincing is the evidence we already have? |
+| **Evidence strength** | How convincing is the existing evidence? |
 
 Test assumptions with **high criticality, high consequence, and weak evidence** first.
 
@@ -245,7 +248,7 @@ SVPG:
 
 Torres:
 
-> "Turn those concerns into the actual propositions on which your candidate solution depends."
+> "Turn those concerns into the actual propositions on which the candidate solution depends."
 
 Torres herself says the concepts are essentially the same and that assumption wording makes them easier to test. [^1]
 
@@ -268,7 +271,7 @@ Cagan argued that **desirability** could blur customer value and usability and i
 
 Both positions are internally coherent.
 
-For team language, I favour:
+For team language, prefer:
 
 > **Value: Will the relevant customer or user choose the required behaviour given their alternatives and costs?**
 
@@ -283,9 +286,9 @@ Torres deliberately allows feasibility to include technical, legal, compliance, 
 
 SVPG draws the boundary differently. Its 2026 material puts compliance, security, legality, marketing/selling economics, and monetization under **viability**, while feasibility focuses on whether the solution can technically be built. [^11]
 
-For organizational clarity, I would adopt the SVPG boundary:
+For organizational clarity, adopt the SVPG boundary:
 
-> **Feasibility:** Can we technically create and deliver the intended behaviour with available technology, data, skills, dependencies, and relevant time constraints?
+> **Feasibility:** Can the team technically create and deliver the intended behaviour with available technology, data, skills, dependencies, and relevant time constraints?
 
 > **Viability:** Can the organization legally, commercially, financially, operationally, and organizationally support the solution?
 
@@ -297,7 +300,7 @@ So:
 
 > "Can this model ever achieve the accuracy required for regulated approval?" -> **discovery feasibility/viability assumption**.
 
-> "Implement our known authorization pattern correctly" -> **delivery requirement**.
+> "Implement the known authorization pattern correctly" -> **delivery requirement**.
 
 ### Ethics should be explicit
 
@@ -308,7 +311,7 @@ SVPG's main four-risk taxonomy says ethics can be embedded in viability, but Cag
 
 There is therefore less disagreement than the "four versus five" labels imply.
 
-I recommend:
+The recommendation is:
 
 > **Ethics / Harm: Could this solution create material harm for customers, non-customers, employees, society, or the environment, even if it is valuable, usable, feasible, and commercially viable?**
 
@@ -323,7 +326,7 @@ Evidence could include subgroup analysis, failure-mode review, stakeholder/user 
 
 Torres gives the product team an explicit mechanism for **continuously discovering and prioritizing customer opportunities**. SVPG's current formulation assumes that product strategy has already identified a worthwhile problem and argues that the difficult work is usually finding a winning solution. [^31][^11]
 
-I would not try to resolve this by choosing one philosophy universally.
+This should not be resolved by choosing one philosophy universally.
 
 The appropriate allocation depends on uncertainty:
 
@@ -363,7 +366,7 @@ Instead of a document with headings such as:
 > Feasibility risk
 > Viability risk
 
-I would keep one evidence table per target opportunity or solution set:
+Keep one evidence table per target opportunity or solution set:
 
 | Candidate | Dimension | Assumption | Consequence if false | Current evidence | Confidence | Next test | Success criterion | Decision |
 |---|---|---|---|---|---|---|---|---|
@@ -400,7 +403,7 @@ flowchart TD
     H -->|Yes| I[Choose fastest credible
     assumption test]
     I --> J[Collect evidence]
-    J --> K{What did we learn?}
+    J --> K{What was learned?}
 
     K -->|Assumption weakened| L[Change or reject solution]
     K -->|Assumption strengthened| M[Update confidence]
@@ -426,13 +429,13 @@ This flow deliberately has loops. Torres describes continuous discovery as weekl
 ### Recommended vocabulary
 
 
-For team communication, I would standardize on this wording:
+For team communication, standardize on this wording:
 
-> **Desired outcome** -- what result are we trying to change?
+> **Desired outcome** -- what result is the work intended to change?
 
-> **Opportunity** -- which customer need, pain point, or desire are we targeting?
+> **Opportunity** -- which customer need, pain point, or desire is being targeted?
 
-> **Candidate solution** -- how might we address it?
+> **Candidate solution** -- how might it be addressed?
 
 > **Solution risk dimensions** -- Value, Usability, Feasibility, Viability, Ethics.
 
@@ -440,7 +443,7 @@ For team communication, I would standardize on this wording:
 
 > **Risk** -- what is the consequence if that assumption is false?
 
-> **Evidence** -- what do we currently know?
+> **Evidence** -- what is currently known?
 
 > **Assumption test** -- what is the cheapest credible way to learn enough to make the next decision?
 
@@ -455,7 +458,7 @@ The resulting model can be summarized as:
 > Concrete assumptions tell the team what to learn next.
 > Evidence tells the team when it is reasonable to make a decision.**
 
-That is the terminology I would use in product-team docs.
+That is the recommended terminology for product-team documentation.
 
 ## Citation references
 

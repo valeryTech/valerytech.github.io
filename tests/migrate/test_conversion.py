@@ -85,6 +85,49 @@ class ConversionTests(unittest.TestCase):
             body,
         )
 
+    def test_conversion_rewrites_parent_relative_markdown_note_links(self) -> None:
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        document = parse_document("[Elements](../elements/elements.md)")
+        rendered = convert_document(
+            document,
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=self.workspace.work_root / "content",
+            ),
+            self.run.config.frontmatter_defaults,
+        )
+
+        body = "\n\n".join(rendered.body_parts)
+        self.assertEqual(body, '[Elements]({{< ref "system-design/elements/elements" >}})')
+
+    def test_conversion_does_not_copy_unpublished_markdown_notes_as_attachments(self) -> None:
+        unpublished = self.workspace.source_root / "private/hidden.md"
+        unpublished.parent.mkdir(parents=True)
+        unpublished.write_text("# Hidden\n", encoding="utf-8")
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        document = parse_document(
+            "[Hidden](private/hidden.md)\n\n[[private/hidden.md]]"
+        )
+        rendered = convert_document(
+            document,
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=self.workspace.work_root / "content",
+            ),
+            self.run.config.frontmatter_defaults,
+        )
+
+        body = "\n\n".join(rendered.body_parts)
+        self.assertEqual(body, "Hidden\n\n[[private/hidden.md]]")
+        self.assertFalse((self.workspace.work_root / "content").exists())
+        self.assertTrue(any(item.code == "unresolved-link" for item in self.run.report.warnings))
+
     def test_conversion_strips_duplicate_title_heading_and_reports_unresolved_links(self) -> None:
         title_note = next(
             note

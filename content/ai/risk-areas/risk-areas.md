@@ -7,70 +7,66 @@ linkTitle: "Risk Areas"
 # part 1
 
 
-Yes, calling them "risks" is defensible, but I'd use a slightly more precise name.
+> **Status:** Early working notes. See [`risk-areas-model.md`]({{< ref "ai/risk-areas/risk-areas-model" >}}) for the selected model. These notes are retained as source material and may contain positions that were not selected.
+
+Calling them "risks" is defensible, but a slightly more precise name is useful.
 
 SVPG's four are:
 
 - Value -- will customers choose/buy/use it?
 - Usability -- can users use it effectively?
-- Feasibility -- can we build it within our constraints?
+- Feasibility -- can it be built within the relevant constraints?
 - Viability -- does it work for the business?
 
 SVPG itself later describes these explicitly as a **product risk taxonomy**. ([Silicon Valley Product Group](https://www.svpg.com/product-risk-taxonomies/?utm_source=chatgpt.com "Article: Product Risk Taxonomy : Silicon Valley Product Group"))
 
 The subtle issue is that **value, usability, feasibility, and viability aren't themselves risks**. They're dimensions in which uncertainty exists. In formal risk terminology, ISO 31000 defines risk around the "effect of uncertainty on objectives." ([ISO](https://www.iso.org/news/ref2263.html?utm_source=chatgpt.com "ISO - The new ISO 31000 keeps risk management simple"))
 
-So I'd model them like this:
+They can be modeled like this:
 
 |Dimension|Concrete risk|
 |---|---|
 |Value|Customers may not consider the problem important enough to switch/pay|
 |Usability|Users may fail to complete the main workflow without assistance|
-|Feasibility|We may not achieve the required latency with the available architecture|
+|Feasibility|The required latency may not be achievable with the available architecture|
 |Viability|The solution may make the unit economics unacceptable|
 
-This distinction becomes useful when you actually manage discovery. "Value risk" is too broad to test directly; **specific risks within the value dimension** can be tested.
+This distinction becomes useful when managing discovery. "Value risk" is too broad to test directly; **specific risks within the value dimension** can be tested.
 
-I'd therefore recommend the terminology:
+The recommended terminology is therefore:
 
 **Four Product Risk Dimensions**
 
--> Value
-
--> Usability
-
--> Feasibility
-
--> Viability
+-> Value -> Usability -> Feasibility -> Viability
 
 And underneath each dimension, capture individual **risks**.
 
-There's another term you could use: **uncertainties**. For example:
+Another possible term is **uncertainties**. For example:
 
 > Product Discovery reduces uncertainty across four dimensions: value, usability, feasibility, and viability.
 
-I actually prefer this wording when explaining discovery, because discovery is fundamentally about gathering evidence before committing to build. SVPG describes discovery similarly: gathering evidence that a solution is valuable, usable, feasible, viable, and capable of achieving the desired outcome. ([Silicon Valley Product Group](https://www.svpg.com/the-product-operating-model-an-introduction/?utm_source=chatgpt.com "The Product Operating Model: An Introduction  - Silicon Valley Product Group : Silicon Valley Product Group"))
+This wording is preferable when explaining discovery, because discovery is fundamentally about gathering evidence before committing to build. SVPG describes discovery similarly: gathering evidence that a solution is valuable, usable, feasible, viable, and capable of achieving the desired outcome. ([Silicon Valley Product Group](https://www.svpg.com/the-product-operating-model-an-introduction/?utm_source=chatgpt.com "The Product Operating Model: An Introduction  - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-I would avoid calling the four things **"assumptions."** An assumption is slightly different:
+Avoid calling the four things **"assumptions."** An assumption is slightly different:
 
 > Assumption: "Finance managers reconcile invoices every week."
 > Risk: That assumption could be false, resulting in insufficient product value.
 > Dimension: Value.
 
-So the hierarchy I'd use is:
+The resulting hierarchy is:
 
 **Product Risk Dimensions -> Risks -> Assumptions -> Evidence**
 
-That gives you much cleaner language than treating "Value Risk" as one giant risk.
+That produces much cleaner language than treating "Value Risk" as one giant risk.
 
 # part 1 - reasoning
 
 
-After reading the broader SVPG material, I think their model is coherent, but the terminology mixes two levels: **properties of a good solution** and **risks that those properties won't hold**.
+The broader SVPG material presents a coherent model, but the terminology mixes two levels: **properties of a good solution** and **risks that those properties won't hold**.
 
 SVPG itself uses both forms. It says an effective solution is "valuable, usable, feasible and viable," while also calling value/usability/feasibility/viability a risk taxonomy. ([Silicon Valley Product Group](https://www.svpg.com/product-model-concepts/?utm_source=chatgpt.com "Product Model Concepts - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-I'd formalize it this way.
+It can be formalized this way.
 
 ### 1. The four are solution dimensions
 
@@ -81,8 +77,8 @@ A candidate solution needs to satisfy four conditions:
 |---|---|---|
 |**Value**|The solution provides enough value that the relevant customer or user will choose it.|**Will they choose it?**|
 |**Usability**|The intended users can successfully accomplish what they need with the solution.|**Can they use it?**|
-|**Feasibility**|We can build and deliver the solution given our technology, skills, time, and important technical constraints.|**Can we build it?**|
-|**Viability**|The organization can sustainably and responsibly offer the solution within its business constraints.|**Can our business support it?**|
+|**Feasibility**|The team can build and deliver the solution given its technology, skills, time, and important technical constraints.|**Can the team build it?**|
+|**Viability**|The organization can sustainably and responsibly offer the solution within its business constraints.|**Can the organization support it?**|
 
 Then:
 
@@ -105,7 +101,7 @@ It means roughly:
 
 SVPG explicitly distinguishes this from usability: a user may be perfectly capable of using something while having no desire to use it. Their 2025 material calls this the distinction between "could use" and "choose to use." ([Silicon Valley Product Group](https://www.svpg.com/product-design-and-ai/ "Product, Design and AI - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-I would make the definition slightly stronger:
+A slightly stronger definition is:
 
 > **Value:** Will the target customer/user choose this solution given their alternatives, costs of switching/adoption, and the importance of the problem?
 
@@ -115,7 +111,7 @@ For a commercial product, this becomes competitive:
 
 That matches SVPG's newer emphasis. In 2026 they explicitly say that a commercial solution often needs to be substantially better than alternatives to cause switching. ([Silicon Valley Product Group](https://www.svpg.com/build-to-learn-vs-build-to-earn/ "Build to Learn vs Build to Earn - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-For an internal product the definition changes slightly because users may have no meaningful choice. SVPG acknowledges this. In that case I would define value as:
+For an internal product the definition changes slightly because users may have no meaningful choice. SVPG acknowledges this. In that case, value can be defined as:
 
 > Does the solution actually solve the intended problem well enough to produce the required benefit?
 
@@ -123,19 +119,19 @@ SVPG says much the same: for internal products, what counts is successfully comp
 
 So **"value" is probably the weakest label of the four**. "Adoption risk" would be clearer for commercial products, but worse for internal products.
 
-I'd retain **Value** for compatibility, with an explicit definition.
+**Value** is worth retaining for compatibility, with an explicit definition.
 
 ### 3. Usability is comparatively clean
 
 
-I would define it as:
+It can be defined as:
 
 > **Usability:** Can the intended users successfully accomplish the required tasks in their expected context, with an acceptable amount of learning, effort, and assistance?
 
 The important separation is:
 
-- "I can use this" -> usability.
-- "I want/need to use this" -> value.
+- "The solution can be used successfully" -> usability.
+- "The solution is worth choosing or using" -> value.
 
 A beautiful, intuitive solution to a problem nobody cares about has low usability risk and high value risk.
 
@@ -148,13 +144,13 @@ This separation is one reason SVPG prefers four dimensions over IDEO's desirabil
 
 SVPG's original wording is:
 
-> Can our engineers build what we need with the time, skills, and technology available? ([Silicon Valley Product Group](https://www.svpg.com/four-big-risks/ "The Four Big Risks - Silicon Valley Product Group : Silicon Valley Product Group"))
+> Can the engineers build what is needed with the time, skills, and technology available? ([Silicon Valley Product Group](https://www.svpg.com/four-big-risks/ "The Four Big Risks - Silicon Valley Product Group : Silicon Valley Product Group"))
 
 Their newer material talks about being able to build and deliver a **product-quality** solution. ([Silicon Valley Product Group](https://www.svpg.com/the-purpose-of-prototypes/?utm_source=chatgpt.com "The Purpose of Prototypes - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-I would therefore define it as:
+It can therefore be defined as:
 
-> **Feasibility:** Can we build and deliver the required solution within the relevant technical, capability, and time constraints?
+> **Feasibility:** Can the team build and deliver the required solution within the relevant technical, capability, and time constraints?
 
 Examples of concrete feasibility risks:
 
@@ -167,18 +163,18 @@ Examples of concrete feasibility risks:
 
 One boundary needs judgment. SVPG's 2026 material separates discovery risks from ordinary delivery concerns such as reliability, scale, fault tolerance, security, and operations. ([Silicon Valley Product Group](https://www.svpg.com/build-to-learn-vs-build-to-earn/ "Build to Learn vs Build to Earn - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-I'd use this rule:
+The following rule is useful:
 
-> If a technical property could invalidate the **solution concept**, it is feasibility risk during discovery. If we already know how to satisfy it and it is a matter of implementing the solution correctly, it is delivery work.
+> If a technical property could invalidate the **solution concept**, it is feasibility risk during discovery. If the means of satisfying it are already known and only correct implementation remains, it is delivery work.
 
-For example, "Can inference finish within 100 ms at all?" is discovery. "Make sure our known implementation meets its 100 ms SLO" is delivery.
+For example, "Can inference finish within 100 ms at all?" is discovery. "Make sure the known implementation meets its 100 ms SLO" is delivery.
 
 ### 5. Viability is the broad business constraint
 
 
-I would define it as:
+It can be defined as:
 
-> **Business viability:** Can our organization offer, operate, support, and benefit from this solution within its economic, legal, strategic, commercial, and organizational constraints?
+> **Business viability:** Can the organization offer, operate, support, and benefit from this solution within its economic, legal, strategic, commercial, and organizational constraints?
 
 This includes things such as:
 
@@ -201,13 +197,13 @@ It is deliberately a large bucket. Cagan acknowledges that things like ethics, c
 The clean distinction with value is:
 
 > **Value asks whether the customer wants the transaction.**
-> **Viability asks whether our business wants and can support the transaction.**
+> **Viability asks whether the business wants and can support the transaction.**
 
 For example:
 
 Customer will happily pay $10/month -> value looks good.
 
-Serving that customer costs us $35/month -> viability problem.
+Serving that customer costs $35/month -> viability problem.
 
 ### 6. The four don't describe all product uncertainty
 
@@ -220,13 +216,13 @@ Their current model starts with:
 
 Then discovery asks whether the candidate solution is valuable, usable, feasible, and viable **and whether it is likely to achieve the desired outcome**. ([Silicon Valley Product Group](https://www.svpg.com/build-to-learn-faq/ "Build To Learn FAQ - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-So I wouldn't claim:
+Avoid claiming:
 
 > "These are the four risks of building a product."
 
 That's too broad.
 
-I'd say:
+Instead:
 
 > **These are four major dimensions of solution risk.**
 
@@ -236,15 +232,15 @@ For example:
 
 **Problem selection risk**
 
-Are we solving a problem worth spending resources on?
+Is the problem worth spending resources on?
 
 **Problem-understanding risk**
 
-Do we understand the problem and affected people correctly?
+Are the problem and affected people understood correctly?
 
 **Outcome risk**
 
-Even if people adopt the solution, does it actually move the metric/business outcome we're responsible for?
+Even if people adopt the solution, does it actually move the target metric or business outcome?
 
 **Delivery/operational risks**
 
@@ -257,11 +253,11 @@ That scope makes the model much stronger.
 ### 7. Risk itself should be concrete
 
 
-I wouldn't put something like this into a discovery document:
+Avoid putting something like this into a discovery document:
 
 > Value risk: High
 
-It doesn't tell us what we're uncertain about.
+It does not identify the uncertainty.
 
 Instead:
 
@@ -272,7 +268,7 @@ Instead:
 
 This also fits SVPG's "Discovery - Judgement" article. They argue that teams should assess which risks are significant, consider the consequence of being wrong, and choose the amount of evidence accordingly. ([Silicon Valley Product Group](https://www.svpg.com/discovery-judgement/ "Discovery - Judgement - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-So I'd use this conceptual hierarchy:
+The resulting conceptual hierarchy is:
 
 **Problem + desired outcome**
 
@@ -311,37 +307,37 @@ And after launch:
 
 That last step is important because SVPG explicitly says the ultimate evidence that the team made the right decisions is whether the intended business impact actually happened. ([svpg.com](https://www.svpg.com/build-to-learn-faq/ "Build To Learn FAQ - Silicon Valley Product Group : Silicon Valley Product Group"))
 
-My preferred name for the framework would therefore be **Four Solution Risk Dimensions**. It preserves SVPG's vocabulary while being more precise about what the four things actually represent.
+The preferred name for the framework is therefore **Four Solution Risk Dimensions**. It preserves SVPG's vocabulary while being more precise about what the four things actually represent.
 
 # answer 2
 
 
-Yes -- focusing specifically on our interpretation, there is practitioner precedent for separating the top-level classification from the concrete things being tested.
+There is practitioner precedent for this interpretation, which separates the top-level classification from the concrete things being tested.
 
 The closest matches are:
 
-|Practitioner|Top level|Concrete level|Fit with our interpretation|
-|---|---|---|---|
-|Teresa Torres|**Assumption categories**: desirability, viability, feasibility, usability, ethical|Individual **assumptions**|Very close|
-|Roman Pichler|**Success factors**: desirability, feasibility, viability, ethicality|Individual **risks / assumptions** related to each factor|Closest conceptual match|
-|IDEO|**Lenses / perspectives**: desirability, feasibility, viability|Questions, prototypes, findings|Supports calling them dimensions/lenses|
-|SVPG|**Risk taxonomy / types of risk**|Risks tested during discovery|Compatible, but terminology is looser|
+| Practitioner  | Top level                                                                           | Concrete level                                            | Fit with this interpretation            |
+| ------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------- |
+| Teresa Torres | **Assumption categories**: desirability, viability, feasibility, usability, ethical | Individual **assumptions**                                | Very close                              |
+| Roman Pichler | **Success factors**: desirability, feasibility, viability, ethicality               | Individual **risks / assumptions** related to each factor | Closest conceptual match                |
+| IDEO          | **Lenses / perspectives**: desirability, feasibility, viability                     | Questions, prototypes, findings                           | Supports calling them dimensions/lenses |
+| SVPG          | **Risk taxonomy / types of risk**                                                   | Risks tested during discovery                             | Compatible, but terminology is looser   |
 
-Teresa Torres is particularly useful here. She explicitly says assumptions "fall into five categories," then expects teams to enumerate specific assumptions inside each category. So "feasibility" is a category; something like "our inference pipeline can respond in <500ms" is the actual assumption you investigate.
+Teresa Torres is particularly useful here. She explicitly says assumptions "fall into five categories," then expects teams to enumerate specific assumptions inside each category. So "feasibility" is a category; something like "the inference pipeline can respond in <500ms" is the actual assumption under investigation.
 
-Roman Pichler gets even closer to our distinction. He calls desirability, feasibility, viability, and ethicality **product success factors**, then separately talks about the **risks related to** those factors. For example, under feasibility he gives concrete risks such as the necessary technology being difficult to apply or lacking people with the required skills.
+Roman Pichler gets even closer to this distinction. He calls desirability, feasibility, viability, and ethicality **product success factors**, then separately talks about the **risks related to** those factors. For example, under feasibility he gives concrete risks such as the necessary technology being difficult to apply or lacking people with the required skills.
 
-IDEO doesn't call its three headings risks at all. It explicitly calls desirability, viability, and feasibility **perspectives** and **lenses**. That is strong support for the intuition that these words describe axes along which you evaluate a solution.
+IDEO doesn't call its three headings risks at all. It explicitly calls desirability, viability, and feasibility **perspectives** and **lenses**. That is strong support for the interpretation that these words describe axes along which a solution is evaluated.
 
-Even SVPG's later terminology helps our argument. Cagan calls the model a **product risk taxonomy** and talks about "types of risk." A taxonomy is inherently a classification. So although SVPG says "value risk," it is effectively using Value as a risk category.
+Even SVPG's later terminology supports the argument. Cagan calls the model a **product risk taxonomy** and talks about "types of risk." A taxonomy is inherently a classification. So although SVPG says "value risk," it is effectively using Value as a risk category.
 
-The important caveat is that I don't see a major practitioner using our exact hierarchy verbatim:
+The important caveat is that no major practitioner appears to use this exact hierarchy verbatim:
 
 **Product Risk Dimension -> Risk -> Assumption -> Test -> Evidence**
 
-That's our synthesis.
+This hierarchy is a synthesis.
 
-And I think it's better than copying any single framework because each term has a distinct job:
+It is more useful than copying any single framework because each term has a distinct job:
 
 > **Dimension:** Value
 > **Risk:** Customers may not switch from their current workflow.
@@ -349,7 +345,7 @@ And I think it's better than copying any single framework because each term has 
 > **Test:** Put a realistic prototype in front of target customers and ask for a meaningful commitment.
 > **Evidence:** 7/10 agree to run a pilot.
 
-I'd therefore be comfortable standardizing on:
+The following terminology can therefore be standardized:
 
 **Product Risk Dimensions**
 
@@ -363,7 +359,7 @@ I'd therefore be comfortable standardizing on:
 
 -> **Decision**
 
-If we want maximum alignment with existing product-discovery language, I'd probably drop the word "Product" after the first level:
+For maximum alignment with existing product-discovery language, the word "Product" can be dropped after the first level:
 
 **Product Risk Dimensions -> Risks -> Assumptions -> Tests -> Evidence**
 

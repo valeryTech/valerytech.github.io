@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import posixpath
 import re
 import unicodedata
 from pathlib import Path
 
 
 def normalize_note_key(value: str | Path) -> str:
-    path = Path(str(value).replace("\\", "/"))
+    raw = str(value).replace("\\", "/")
+    normalized = posixpath.normpath(raw)
+    path = Path(normalized)
     if path.suffix.lower() == ".md":
         path = path.with_suffix("")
     return path.as_posix().strip().strip("/").lower()

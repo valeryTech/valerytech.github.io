@@ -28,7 +28,7 @@ also:
 # Workflow Design Approach
 
 
-[[workflow-design]]
+[Workflow Design]({{< ref "ai/design/workflow-design/workflow-design" >}})
 
 # System Definition
 

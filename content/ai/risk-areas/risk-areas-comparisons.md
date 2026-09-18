@@ -1,31 +1,102 @@
 ---
 draft: false
 toc: true
-title: "Res Risk Areas Corrected V2"
-linkTitle: "Res Risk Areas Corrected V2"
+title: "Risk Areas Comparisons"
+linkTitle: "Risk Areas Comparisons"
 ---
 # Naming and Operationalizing SVPG's Four Product Risk Areas
 
-## Executive summary
+
+> **Status:** Supporting comparison, not canonical guidance. See [`risk-areas-model.md`]({{< ref "ai/risk-areas/risk-areas-model" >}}) for the selected model. This document preserves alternative names, the four-dimensions-with-optional-Ethics position, the practitioner survey, and the history behind the overlapping terms.
+
+## Recommended naming conventions
+
+### Recommended default: Product Risk Dimensions
 
 
-Across product management, design, Lean Startup, and innovation consulting, there is broad agreement on the **substance** behind SVPG's four areas: teams need evidence that a solution creates customer value, can be used successfully, can be built, and makes sense for the organization. There is much less agreement on what those areas should be **called**. SVPG and Marty Cagan explicitly call them a **product risk taxonomy**: value risk, usability risk, feasibility risk, and business viability risk. IDEO, Nielsen Norman Group, and McKinsey generally use **desirability, feasibility, and viability** as lenses or conditions, with usability folded into desirability. Teresa Torres moves one level down and works with **assumptions** in five categories: desirability, viability, feasibility, usability, and ethical. Roman Pichler uses **product success factors** and **strategy risks**: desirability, feasibility, viability, and ethicality. Lean Startup centers on **leap-of-faith assumptions, hypotheses, experiments, and validated learning**, without maintaining a four-part taxonomy. [^svpg-taxonomy][^torres-five][^pichler-success][^ideo-design-thinking][^lean-method]
-
-My recommendation is to call SVPG's four headings **Product Risk Dimensions: Value, Usability, Feasibility, Viability**. This keeps compatibility with SVPG while making the abstraction level explicit. Under each dimension, write **specific risks**, identify the **assumptions** creating those risks, run **tests or experiments**, and record **evidence**. This resolves the linguistic problem with statements such as "Value is a risk": value is better treated as the dimension in which concrete risks exist. This interpretation is also consistent with ISO 31000's more formal definition of risk as the "effect of uncertainty on objectives." [^iso-31000][^svpg-taxonomy]
-
-For a discovery board, I would therefore use:
+The recommended default for most product teams is:
 
 > **Product Risk Dimensions**
+> **Value · Usability · Feasibility · Viability**
+
+This is more precise than simply naming a section "Four Risks."
+
+The reason is semantic as well as practical. ISO 31000 defines risk as the **effect of uncertainty on objectives**. Under that meaning, "Value" by itself is a subject or dimension; even "value risk" is still a category label. A concrete risk would say what might happen and why the product objective would suffer. SVPG itself calls its model a **risk taxonomy**, meaning a classification system for types of risk, which supports treating the four labels as categories or dimensions rather than four individual risk records. [^iso-31000][^svpg-taxonomy]
+
+For example:
+
+> **Dimension:** Value
+> **Risk:** Target finance teams may see too little improvement over their spreadsheet workflow to switch, preventing adoption.
+
+The second sentence is a risk that can be investigated. "Value" indicates where to look.
+
+**Pros:** faithful to SVPG; preserves the useful Value/Usability distinction; works equally well for B2B and B2C; separates taxonomy from concrete risk statements; gives design, engineering and business teams a shared coverage checklist. [^svpg-taxonomy]
+
+**Cons:** the word *risk* can make discovery sound like defensive risk management; people may still write vague entries such as "high value risk" instead of spelling out what could fail.
+
+> **Decision rationale:** This preserves the label most faithful to SVPG and establishes that the four names are categories rather than individual risk records. It remains an alternative because the canonical document narrows the label to **Solution Risk Dimensions**.
+
+### Good alternative for discovery workshops: Product Uncertainties
+
+
+A softer formulation is:
+
+> **Key Product Uncertainties**
 > Value · Usability · Feasibility · Viability
->
-> **Risk:** What uncertain failure could prevent the outcome?
-> **Assumption:** What must be true for the solution to succeed?
-> **Test:** What is the cheapest credible way to challenge that assumption?
-> **Evidence:** What did we observe, and what decision follows?
 
-This combines what is strongest in SVPG and Teresa Torres: SVPG provides a compact **coverage taxonomy**, while Torres provides a more precise **unit of testing**. Torres explicitly argues that a broad label such as viability risk does not by itself tell a team what to test; enumerating the underlying assumptions does. [^torres-five][^torres-assumption-testing]
+This works particularly well in early discovery, where the goal is to expose what the team does not yet know and gather evidence. SVPG's own current "build to learn" language and Pichler's risk-driven strategy discovery both treat uncertainty as something to resolve before larger commitments are made. [^svpg-build-to-learn][^pichler-strategy]
 
-A second recommendation is to consider **Ethics/Safety** as a fifth explicit dimension when potential harm deserves independent attention. Torres uses ethical assumptions, Pichler uses ethicality as one of four success factors, and practitioners have extended Cagan's model to five product risks by adding ethics. SVPG acknowledges ethics but generally places it within business viability, while also recognizing the argument for breaking it out when teams might otherwise neglect it. [^svpg-ethics][^torres-five][^pichler-success][^mindtheproduct-ml]
+Its weakness is precision. "Uncertainty" indicates that knowledge is incomplete; it does not state **what objective is threatened or what consequence follows**. That makes it a good workshop heading and a weaker risk-register item. This distinction follows the ISO definition of risk as the effect that uncertainty has on objectives. [^iso-31000]
+
+A useful phrasing is:
+
+> "What are the biggest uncertainties across Value, Usability, Feasibility and Viability?"
+
+Then convert the important answers into specific risk statements.
+
+> **Decision rationale:** "Uncertainty" is retained as workshop language because it helps elicit unknowns. It is not canonical record structure because it does not state the threatened objective or consequence.
+
+### Best for an experiment backlog: Assumption Categories
+
+
+For a team running frequent discovery tests, Torres' terminology is useful:
+
+> **Assumption Categories**
+> Desirability/Value · Usability · Feasibility · Viability · Ethics, where applicable
+
+An assumption is naturally testable because it can be written as a proposition that needs to hold. Torres defines assumptions in essentially those terms and recommends identifying, prioritizing and testing them rather than evaluating a whole idea as one indivisible object. [^torres-five][^torres-assumption-testing]
+
+For example:
+
+> **Risk:** Buyers may not switch because the existing process is good enough.
+> **Assumption:** The target buyer experiences the problem frequently enough that eliminating it changes purchase behavior.
+
+The risk and assumption are related but are not the same sentence.
+
+The disadvantage of using **Assumptions** as the name for the top level is that Value, Usability, Feasibility and Viability are not themselves assumptions. A product can contain dozens of assumptions in every category; Torres' August 2026 material continues to emphasize generating many underlying assumptions before identifying the risky ones. [^torres-aug-2026]
+
+Avoid:
+
+> ❌ "The four assumptions are Value, Usability, Feasibility and Viability."
+
+and use:
+
+> ✓ "Assumptions are evaluated across four product risk dimensions."
+
+> **Decision rationale:** This section supplies the canonical model's atomic unit without treating the dimension labels as assumptions. The category says where to look; the assumption states what must be true and can be tested.
+
+### When to add Ethics/Safety
+
+
+SVPG places ethical, compliance and related concerns largely within business viability. Cagan has acknowledged the argument for separating ethical risk when it otherwise receives insufficient attention. Torres makes **Ethical assumptions** a fifth category, while Pichler makes **Ethicality** a first-class product-success factor. [^svpg-taxonomy][^svpg-ethics][^torres-five][^pichler-success]
+
+For a team where potential harm, privacy, fairness, safety or societal effects are material, the recommended form is:
+
+> **Product Risk Dimensions: Value · Usability · Feasibility · Viability · Ethics/Safety**
+
+The advantage of a fifth category is attention: teams are forced to ask the question explicitly. The cost is another category and some overlap with viability, security, compliance and usability. SVPG's 2023 discussion correctly identifies this as a tradeoff between completeness and a taxonomy people can remember and use. [^svpg-taxonomy]
+
+> **Decision rationale:** This preserves the source's optional-Ethics position. The canonical document resolves the tradeoff differently by making Ethics explicit, because maintaining attention to harm outweighs the cost of overlap.
 
 ## How practitioners name and operationalize the areas
 
@@ -49,11 +120,17 @@ The main difference between the frameworks is not whether customer, user, techni
 | **Productboard** -- [*Guide: Product Discovery Process & Techniques*](https://www.productboard.com/blog/step-by-step-framework-for-better-product-discovery/) (product-company practitioner blog) | Directly adopts Cagan's **value risk, usability risk, feasibility risk, business viability risk** | Productboard uses discovery to reduce these risks, then uses qualitative and quantitative research, ideation, prototypes, and testing through a Double Diamond-style process. Its terminology is a direct adoption of SVPG rather than an independent taxonomy. [^productboard-discovery] |
 | **Mind the Product, practitioner example** -- [*Should you really be using machine learning?*](https://www.mindtheproduct.com/should-you-really-be-using-machine-learning/) (PM media/practitioner article) | **five product risks**: **value, usability, feasibility, viability, ethics** | The article extends the Cagan structure with a distinct ethical question, then asks concrete questions in each category to decide whether ML is appropriate. This is an article-level practitioner extension, not evidence of a universal Mind the Product house taxonomy. [^mindtheproduct-ml] |
 
+> **Decision rationale:** This inventory shows that similar concerns are organized around different managed objects. It supports the synthesis, but the full survey belongs here because it would interrupt the canonical path from definitions to workflow.
+
 Two patterns dominate this comparison.
 
 First, **SVPG is one of the few prominent frameworks that deliberately keeps Value and Usability separate**. IDEO, NN/g, McKinsey and similar design-oriented frameworks usually put both under **Desirability**. Cagan says this separation became important to him particularly in B2B products, where the person deciding whether to buy a product and the person required to use it can be different people with different criteria. [^svpg-taxonomy]
 
+> **Decision rationale:** This pattern supports keeping **Value** and **Usability** separate in the canonical taxonomy, especially where buyer and user are different people.
+
 Second, several practitioners have shifted attention from naming broad categories to identifying the **specific belief that could be wrong**. Torres is the clearest example: an assumption is a belief that must hold for an idea to succeed, and the team should surface many such assumptions, rank them by risk, and test the important ones. Google Design Sprints similarly decomposes assumptions and converts them into sprint questions, while Lean Startup expresses uncertain beliefs as measurable hypotheses. [^torres-five][^google-assumptions][^lean-method]
+
+> **Decision rationale:** This pattern supports making the concrete assumption, rather than the broad risk category, the atomic discovery artifact. Together, the two patterns separate coverage from unit of work.
 
 ## Alternative taxonomies and why they differ
 
@@ -79,6 +156,8 @@ This consolidation is intentional. NN/g, for example, defines desirability in te
 
 The three-lens model has a clear advantage: it is compact and works well as an innovation or concept-evaluation model. The tradeoff is loss of diagnostic precision. A concept can solve a valuable problem while still having an unusable workflow. That distinction becomes especially useful in B2B, internal tools and other settings where buyers, administrators, approvers and end users are different people. This latter argument is also Cagan's stated rationale for retaining separate Value and Usability categories. [^svpg-taxonomy]
 
+> **Decision rationale:** This is the nearest competing coverage model, so it makes the cost of merging Value and Usability explicit. The canonical synthesis chooses diagnostic precision over compactness.
+
 ### Five assumption categories
 
 
@@ -90,13 +169,15 @@ Here, an item on the team's board is not normally "the viability risk." The team
 
 This distinction is operationally important. Torres explicitly argues that describing a solution as having "viability risk" leaves the test ambiguous; enumerating viability assumptions gives the team something concrete to evaluate. Her workflow uses story maps to expose desirability, usability and feasibility assumptions, traces an Opportunity Solution Tree to find viability assumptions, intentionally explores potential harm, and then prioritizes assumptions for testing. [^torres-five][^torres-assumption-testing]
 
-I would summarize the distinction this way:
+The distinction can be summarized this way:
 
-**SVPG:** "Have we covered every important kind of product risk?"
+**SVPG:** "Has every important kind of product risk been covered?"
 
-**Torres:** "What exactly are we assuming, and which assumption should we test next?"
+**Torres:** "What exactly is being assumed, and which assumption should be tested next?"
 
 Those are complementary questions, not competing ones. This is an analytical synthesis of the two methods. [^svpg-taxonomy][^torres-five]
+
+> **Decision rationale:** This is the bridge between SVPG and Torres: dimensions provide coverage, while assumptions provide testable propositions. That complementarity, rather than either framework alone, is the basis for the canonical synthesis.
 
 ### Desirability, feasibility, viability, ethicality
 
@@ -119,6 +200,8 @@ Its conceptual difference from SVPG is revealing:
 
 The choice reflects the **level at which the framework is being used**. Pichler is often validating product strategy; Cagan's taxonomy is heavily used during solution discovery. At a strategy level, ethics may deserve a separate gate while detailed interaction usability can sit lower in the decomposition. [^pichler-success][^pichler-strategy][^svpg-taxonomy]
 
+> **Decision rationale:** Pichler shows that category choice changes with the level of analysis. His strategy model explains why Ethics may rise and Usability may be nested, but it does not replace the canonical solution-level model.
+
 ### Value and growth hypotheses
 
 
@@ -133,12 +216,16 @@ That means there is no clean one-to-one mapping:
 
 Lean Startup is therefore better understood as a **learning architecture** than as a completeness checklist.
 
+> **Decision rationale:** Lean Startup is retained to prevent a false one-to-one taxonomy mapping. It contributes an evidence-and-learning loop, not a complete checklist of solution failure modes.
+
 ### Corporate innovation variants
 
 
 BCG X shows why taxonomies change with context. Its "Four Lenses for Validation" are **Desirability, Viability, Feasibility, and Strategic Fit**. The extra question is whether a venture has synergies or advantages within the sponsoring company. [^bcg-four-lenses]
 
 That suggests a useful general principle: the fourth or fifth category often exposes the failure mode that a particular organization is most prone to overlook. SVPG separated business viability because customer value could crowd it out. Torres and Pichler expose ethics because harm can disappear inside an overly broad business category. BCG exposes strategic fit because corporate venture ideas can look attractive in isolation while making little sense for the parent company. This is an inference from how the respective authors explain their taxonomies. [^svpg-taxonomy][^torres-five][^pichler-success][^bcg-four-lenses]
+
+> **Decision rationale:** These variants support a general rule: an extra category is an attention mechanism for a failure mode the host organization tends to hide. That rule helps justify explicit Ethics without claiming that five categories are universal.
 
 A compact comparison makes the pattern clearer:
 
@@ -154,227 +241,110 @@ A compact comparison makes the pattern clearer:
 The practical lesson is that there are **two independent design choices** in any taxonomy:
 
 1. **Coverage:** Which classes of failure deserve an explicit category?
-2. **Unit of work:** Do you manage lenses, risks, assumptions, hypotheses, questions, or experiments?
+2. **Unit of work:** Are the managed objects lenses, risks, assumptions, hypotheses, questions, or experiments?
 
 Much of the apparent disagreement between practitioners disappears once those two choices are separated. [^svpg-taxonomy][^torres-five][^lean-method][^bcg-four-lenses]
 
-## Recommended naming conventions
+> **Decision rationale:** This is the comparison's main analytical result. The canonical model makes the two choices separately: five dimensions for coverage and concrete assumptions for the unit of work.
 
-### Recommended default: Product Risk Dimensions
+## Source context and evolution
 
 
-For most product teams, I recommend:
+The terminology evolved over time, which explains some apparent contradictions between articles.
 
-> **Product Risk Dimensions**
-> **Value · Usability · Feasibility · Viability**
+| Period | SVPG | Teresa Torres |
+|---|---|---|
+| **2017** | Cagan formalizes four risks: value, usability, feasibility, and business viability. [^5] | Torres had already introduced the Opportunity Solution Tree in 2016 as a representation of desired outcomes, opportunities, solutions, and experiments. [^12] |
+| **2020** | Cagan says ethics is normally within viability but argues for explicitly considering a fifth "should this be built?" ethical risk. [^6] | Torres's continuous-discovery material is increasingly explicit about opportunity-space prioritization and customer framing. [^13] |
+| **2021** | SVPG continues emphasizing the four product risks in discovery. [^14] | *Continuous Discovery Habits* codifies the sequence: outcome -> interviews/opportunities -> assumption testing/solutions, centered around the OST. [^15] |
+| **2023** | SVPG explicitly calls the four categories a **product risk taxonomy** and says ethics, compliance, and go-to-market can sit within viability. [^10] | Torres publishes her five assumption types and directly compares them with Cagan's four risks, saying the concepts are largely the same while arguing that assumptions are easier to test. [^1] |
+| **2025-2026** | SVPG sharpens discovery as "build to learn," with most attention on finding a solution that clears the four risks and produces the outcome. [^16][^11] | Product Talk continues to use outcome -> opportunity -> solution -> assumption tests and the five assumption categories, including ethics. [^17][^18] |
 
-This is more precise than simply naming a section "Four Risks."
+This history matters because neither framework is a static four-box or five-box checklist. SVPG increasingly describes the four risks as a **conceptual model for evaluating potential solutions**, while Torres embeds nearly equivalent concerns inside a broader continuous decision system. [^10][^16][^19]
 
-The reason is semantic as well as practical. ISO 31000 defines risk as the **effect of uncertainty on objectives**. Under that meaning, "Value" by itself is a subject or dimension; even "value risk" is still a category label. A concrete risk would say what might happen and why the product objective would suffer. SVPG itself calls its model a **risk taxonomy**, meaning a classification system for types of risk, which supports treating the four labels as categories or dimensions rather than four individual risk records. [^iso-31000][^svpg-taxonomy]
+> **Decision rationale:** The chronology is retained to reconcile changing source language and apparent contradictions. It comes after the conceptual comparison because history explains the terminology but does not determine the operating model.
 
-For example:
+## Citation references
 
-> **Dimension:** Value
-> **Risk:** Target finance teams may see too little improvement over their spreadsheet workflow to switch, preventing adoption.
 
-The second sentence is a risk you can investigate. "Value" tells you where to look.
+> **Source limitation:** The numbered `turn...` references preserve provenance from the original research session but are not portable citations. The linked references below are the independently usable bibliography.
 
-**Pros:** faithful to SVPG; preserves the useful Value/Usability distinction; works equally well for B2B and B2C; separates taxonomy from concrete risk statements; gives design, engineering and business teams a shared coverage checklist. [^svpg-taxonomy]
+[^1]: Source reference: `turn8view0`
 
-**Cons:** the word *risk* can make discovery sound like defensive risk management; people may still write vague entries such as "high value risk" instead of spelling out what could fail.
+[^2]: Source reference: `turn4view5`
 
-### Good alternative for discovery workshops: Product Uncertainties
+[^3]: Source reference: `turn3view2`
 
+[^4]: Source reference: `turn6search0`
 
-A softer formulation is:
+[^5]: Source reference: `turn4view0`
 
-> **Key Product Uncertainties**
-> Value · Usability · Feasibility · Viability
+[^6]: Source reference: `turn9view0`
 
-This works particularly well in early discovery, where the goal is to expose what the team does not yet know and gather evidence. SVPG's own current "build to learn" language and Pichler's risk-driven strategy discovery both treat uncertainty as something to resolve before larger commitments are made. [^svpg-build-to-learn][^pichler-strategy]
+[^7]: Source reference: `turn9view3`
 
-Its weakness is precision. "Uncertainty" tells you that knowledge is incomplete; it does not state **what objective is threatened or what consequence follows**. That makes it a good workshop heading and a weaker risk-register item. This distinction follows the ISO definition of risk as the effect that uncertainty has on objectives. [^iso-31000]
+[^8]: Source reference: `turn3view1`
 
-A useful phrasing is:
+[^9]: Source reference: `turn4view4`
 
-> "What are our biggest uncertainties across Value, Usability, Feasibility and Viability?"
+[^10]: Source reference: `turn3view6`
 
-Then convert the important answers into specific risk statements.
+[^11]: Source reference: `turn9view1`
 
-### Best for an experiment backlog: Assumption Categories
+[^12]: Source reference: `turn0search12`
 
+[^13]: Source reference: `turn11view2`
 
-For a team running frequent discovery tests, I would borrow Torres' terminology:
+[^14]: Source reference: `turn2search3`
 
-> **Assumption Categories**
-> Desirability/Value · Usability · Feasibility · Viability · Ethics, where applicable
+[^15]: Source reference: `turn8view1`
 
-An assumption is naturally testable because it can be written as a proposition that needs to hold. Torres defines assumptions in essentially those terms and recommends identifying, prioritizing and testing them rather than evaluating a whole idea as one indivisible object. [^torres-five][^torres-assumption-testing]
+[^16]: Source reference: `turn3view9`
 
-For example:
+[^17]: Source reference: `turn1search4`
 
-> **Risk:** Buyers may not switch because the existing process is good enough.
-> **Assumption:** The target buyer experiences the problem frequently enough that eliminating it changes purchase behavior.
+[^18]: Source reference: `turn11view0`
 
-The risk and assumption are related but are not the same sentence.
+[^19]: Source reference: `turn8view4`
 
-The disadvantage of using **Assumptions** as the name for the top level is that Value, Usability, Feasibility and Viability are not themselves assumptions. A product can contain dozens of assumptions in every category; Torres' August 2026 material continues to emphasize generating many underlying assumptions before identifying the risky ones. [^torres-aug-2026]
+[^20]: Source reference: `turn0search17`
 
-I would therefore avoid:
+[^21]: Source reference: `turn4view2`
 
-> ❌ "Our four assumptions are Value, Usability, Feasibility and Viability."
+[^22]: Source reference: `turn4view3`
 
-and use:
+[^23]: Source reference: `turn4view6`
 
-> ✓ "We evaluate assumptions across four product risk dimensions."
+[^24]: Source reference: `turn2search2`
 
-### A terminology stack that works across artifacts
+[^25]: Source reference: `turn5search15`
 
+[^26]: Source reference: `turn8view3`
 
-The cleanest vocabulary is:
+[^27]: Source reference: `turn10search1`
 
-| Level | Recommended term | Question it answers | Example |
-|---|---|---|---|
-| **Dimension** | Product Risk Dimension | *Which area are we examining?* | Value |
-| **Risk** | Specific Product Risk | *What could fail, and what outcome would that threaten?* | Buyers may not switch from their current process, so adoption stays below the required level. |
-| **Assumption** | Underlying Assumption | *What belief has to be true?* | The current process creates enough pain to motivate switching. |
-| **Test / experiment** | Test | *How can we challenge the assumption cheaply and credibly?* | Prototype plus a real commitment action. |
-| **Evidence** | Evidence | *What did users, systems or the business actually show us?* | Observed behavior, benchmark results, commitment, unit economics, stakeholder decision. |
-| **Decision** | Decision | *What changes because of the evidence?* | Proceed, modify, investigate further, or stop. |
+[^28]: Source reference: `turn2search13`
 
-This combines SVPG's risk coverage, Torres' assumption-testing discipline, Lean Startup's hypothesis/experiment logic, and Google Sprint's progression from assumptions to questions to prototype validation. [^svpg-taxonomy][^torres-five][^lean-method][^google-assumptions]
+[^29]: Source reference: `turn4view1`
 
-The hierarchy can be represented as:
+[^30]: Source reference: `turn3view3`
 
-```mermaid
-flowchart LR
-    D["Product Risk Dimension<br/>Value · Usability · Feasibility · Viability"]
-    R["Specific Risk<br/>What may prevent the outcome?"]
-    A["Underlying Assumption<br/>What has to be true?"]
-    E["Evidence<br/>What did we observe?"]
+[^31]: Source reference: `turn8view5`
 
-    D -->|"classifies"| R
-    R -->|"depends on / is driven by"| A
-    A -->|"test to obtain"| E
-```
+[^32]: Source reference: `turn3view7`
 
+[^33]: Source reference: `turn11view1`
 
-The arrows describe a working decomposition rather than a formal causal ontology. In practice, teams may discover an assumption first and then articulate the risk it creates. What matters is maintaining the distinctions among classification, uncertain outcome, belief, and evidence. Torres similarly says that precise categorization is less important than surfacing and evaluating the assumptions that create risk. [^torres-five]
+[^34]: Source reference: `turn8view2`
 
-For a one-line team standard, I would use:
+[^35]: Source reference: `turn5search26`
 
-> **We assess Product Risk Dimensions--Value, Usability, Feasibility, and Viability--by identifying specific risks, surfacing the assumptions behind them, and collecting evidence through targeted tests.**
-
-### When to add Ethics/Safety
-
-
-SVPG places ethical, compliance and related concerns largely within business viability. Cagan has acknowledged the argument for separating ethical risk when it otherwise receives insufficient attention. Torres makes **Ethical assumptions** a fifth category, while Pichler makes **Ethicality** a first-class product-success factor. [^svpg-taxonomy][^svpg-ethics][^torres-five][^pichler-success]
-
-For a team where potential harm, privacy, fairness, safety or societal effects are material, I recommend:
-
-> **Product Risk Dimensions: Value · Usability · Feasibility · Viability · Ethics/Safety**
-
-The advantage of a fifth category is attention: teams are forced to ask the question explicitly. The cost is another category and some overlap with viability, security, compliance and usability. SVPG's 2023 discussion correctly identifies this as a tradeoff between completeness and a taxonomy people can remember and use. [^svpg-taxonomy]
-
-## From dimensions to testable evidence
-
-
-The critical move is to stop at neither:
-
-> "We have value risk."
-
-nor:
-
-> "We need to validate value."
-
-Neither statement identifies what could be false. Torres' assumption-testing approach and Lean Startup's measurable-hypothesis approach both push the team toward propositions that can be challenged by evidence. SVPG similarly says teams should understand the risks and then select techniques for quickly testing ideas against them. [^torres-five][^lean-method][^svpg-taxonomy]
-
-A practical record can use this template:
-
-> **Dimension:** Value / Usability / Feasibility / Viability
-> **Objective affected:** What outcome are we trying to achieve?
-> **Specific risk:** What might be true that prevents that outcome?
-> **Underlying assumption:** What must be true for our proposed solution to work?
-> **Current evidence:** What do we already know, and how strong is that evidence?
-> **Test:** What is the cheapest credible test that distinguishes the competing possibilities?
-> **Decision rule:** Before seeing results, what evidence would change our decision?
-> **Result:** What happened?
-> **Decision:** Continue, modify, investigate further, or stop.
-
-Defining success criteria before a test is consistent with Torres' approach to reducing confirmation bias; Lean Startup likewise favors hypotheses with observable, preferably measurable expected behavior. [^torres-assumption-testing][^lean-method]
-
-Here are four illustrative examples. The product, thresholds and results are hypothetical.
-
-| Dimension | Specific testable risk | Underlying assumption | Suitable experiment / evidence |
-|---|---|---|---|
-| **Value** | Finance managers may consider automated reconciliation only marginally better than spreadsheets, so they may not switch or pay. | The reconciliation problem is frequent and costly enough that the target buyer will take a meaningful step toward adopting the proposed solution. | Conduct problem research, then show a realistic prototype and ask for a **behavioral commitment** appropriate to the stage: pilot participation, data connection, procurement introduction, deposit/pre-order where appropriate, etc. Define the required signal before testing. This follows the demand-testing logic used by Torres and the behavioral hypothesis approach of Lean Startup. [^torres-five][^lean-method] |
-| **Usability** | First-time administrators may fail to connect their accounting system without assistance, preventing activation. | A representative administrator can understand the terminology, locate the integration flow and complete setup with the intended level of assistance. | Run moderated usability sessions with a prototype or test environment. Observe task completion, critical errors, requests for help, path taken and time where relevant. NN/g treats actual user testing as a central way of evaluating interaction quality, while SVPG explicitly assigns prototypes to usability-risk discovery. [^nng-usability][^svpg-four] |
-| **Feasibility** | The matching service may fail to meet required latency, accuracy or processing-cost constraints at expected production volume. | The proposed architecture/model can meet explicitly defined technical requirements on representative data and load. | Build an engineering spike or narrow technical prototype and benchmark it using production-like data and traffic. Do only enough implementation to answer the technical question. SVPG explicitly describes feasibility as whether engineering can build what is needed under available constraints; Google Sprints similarly provide for technical reviews during validation. [^svpg-four][^google-validate] |
-| **Viability** | The solution may create too much support/compliance cost for the target price, or an internal constraint may prevent selling it. | Required pricing, gross economics, sales/support model, security/compliance conditions and stakeholder constraints can coexist. | Combine a pricing/willingness-to-pay test with a unit-economics sensitivity model and targeted legal, security, sales or stakeholder reviews. Pragmatic Institute's framework explicitly uses Business Plans, financial models, Pricing and Product Profitability for these questions; SVPG includes compliance, monetization and ability to market/sell within viability risk. [^pragmatic-framework][^svpg-four] |
-
-A B2B example shows why keeping **Value** and **Usability** separate is often useful. Suppose an executive buyer sees a clear financial return and willingly purchases a workflow product. The end users may still find the workflow difficult enough that adoption collapses. A three-lens model can describe the whole situation as a desirability problem; SVPG's four-dimensional model produces two clearer hypotheses: the **buyer value hypothesis** passed while the **user usability hypothesis** failed. Cagan explicitly cites buyer/user separation as the reason he considers the four-part taxonomy more useful for many business products. [^svpg-taxonomy]
-
-A discovery process built around these records can be visualized as a repeating matrix rather than a phase gate:
-
-| Discovery question | Value | Usability | Feasibility | Viability |
-|---|---|---|---|---|
-| **What do we believe?** | User/customer will choose it | User can complete the workflow | Team/system can deliver it | Organization can support and sustain it |
-| **What evidence is strongest?** | Observed behavior and meaningful commitments | Successful behavior with representative users | Technical benchmark / working spike | Economics, stakeholder, legal/compliance and GTM evidence |
-| **Typical early test** | Interview + demand/commitment test | Prototype usability session | Technical spike | Business-model/stakeholder review |
-| **Typical later test** | Pilot adoption / retention / purchase behavior | Production task success and support patterns | Load, reliability and operational tests | Pricing, margin, sales, compliance and operational performance |
-
-No framework prescribes that these columns be resolved sequentially. SVPG emphasizes addressing important risks early; Torres prioritizes the riskiest assumptions; Pichler says to select the largest strategy uncertainty and iterate; design thinking itself is explicitly iterative. The practical implication is to order tests by **risk and cost of being wrong**, rather than mechanically doing Value first, then Usability, then Feasibility, then Viability. [^svpg-taxonomy][^torres-assumption-testing][^pichler-strategy][^ideo-design-thinking]
-
-## Overall recommendation
-
-
-The research supports using **risk** as SVPG uses it, but with one important refinement in team language.
-
-**"The Four Product Risks" is legitimate SVPG terminology.** Marty Cagan deliberately calls the model a product risk taxonomy, and Productboard and other practitioners have adopted those exact labels. [^svpg-taxonomy][^productboard-discovery]
-
-For artifacts, however, **"Product Risk Dimensions" is clearer**:
-
-> ### Product Risk Dimensions
-> **Value** -- Will the customer/user choose the solution?
-> **Usability** -- Can the intended user successfully use it?
-> **Feasibility** -- Can we deliver it within the relevant technical and operational constraints?
-> **Viability** -- Can the business support, sell, operate and sustain it?
-
-Then reserve **risk** for statements such as:
-
-> "Target administrators may abandon setup because connecting their data requires credentials they do not control, preventing activation."
-
-And reserve **assumption** for:
-
-> "The target administrator has access to the credentials required during setup."
-
-That distinction gives every word a clear job:
-
-```text
-Dimension
-   ↓
-Specific risk
-   ↓
-Underlying assumption(s)
-   ↓
-Targeted test
-   ↓
-Evidence
-   ↓
-Decision
-```
-
-
-The taxonomy answers **where uncertainty may exist**. The risk explains **what might go wrong and what objective is affected**. The assumption identifies **what the team currently believes must be true**. The test generates **evidence**. That combination is more operationally precise than using "risk," "uncertainty," and "assumption" interchangeably, and it is consistent with the strongest parts of SVPG, Torres, Lean Startup, Google Design Sprints, and formal risk terminology. [^svpg-taxonomy][^torres-five][^lean-method][^google-assumptions][^iso-31000]
-
-For most software product teams, my preferred team wording is therefore:
-
-> **"For each solution, identify the significant risks across four Product Risk Dimensions--Value, Usability, Feasibility and Viability. State each risk concretely, expose the assumptions behind it, and gather enough evidence to make the next decision."**
-
-For an experiment board, use **Assumptions** as the individual items. For an executive or design workshop, **Desirability-Feasibility-Viability** can be simpler when the distinction between buyer value and user usability is not important. For B2B products, internal products, or products with distinct buyers and users, I would keep SVPG's four dimensions. Where potential harm warrants independent scrutiny, I would add **Ethics/Safety** explicitly instead of trusting it to remain visible inside Viability. [^svpg-taxonomy][^torres-five][^pichler-success]
+[^36]: Source reference: `turn6search5`
 
 ## References
 
+
+> **Decision rationale:** This bibliography remains separate from the internal reference list because these links are reader-usable evidence rather than session-local provenance markers.
 
 [^svpg-taxonomy]: [SVPG, "Product Risk Taxonomy."](https://www.svpg.com/product-risk-taxonomies/)
 

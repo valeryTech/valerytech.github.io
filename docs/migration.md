@@ -112,14 +112,13 @@ root_index_source = "_index.md"
 ```
 
 The committed manifest uses that pattern for `ai`, `ai-engineering`, and
-`projects`. The AI import currently publishes only
-`ai/collab-and-joint-work/` and `ai/product-model/risk-areas/`. Selecting the
-nested `product-model/risk-areas` path does not import other files from its
-parent folders. Because the notes subtree has no root `_index.md`, the migration
-synthesizes the required parent landing pages and uses `section_title = "AI"`
-for the root page to preserve the acronym. The Projects import
-currently publishes only `code-assistant.md` and the root `_index.md`; the
-other external project notes remain unpublished.
+`projects`. The AI import currently publishes `ai/collab-and-joint-work/`,
+`ai/design/`, `ai/operating-model/`, `ai/risk-areas/`, and `ai/review.md`.
+Because the notes subtree has no root `_index.md`, the migration synthesizes
+the required parent landing pages and uses `section_title = "AI"` for the root
+page to preserve the acronym. The Projects import currently publishes only
+`code-assistant.md` and the root `_index.md`; the other external project notes
+remain unpublished.
 
 ## Sidebar Ordering
 
