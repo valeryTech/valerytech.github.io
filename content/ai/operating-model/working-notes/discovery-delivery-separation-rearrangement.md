@@ -12,7 +12,7 @@ This editorial record explains how the source text was arranged. It is not part 
 ## Rules used
 
 
-- The preserved baseline is `HEAD:ai/product-model/in/discovery-deliery-separation.md`.
+- The preserved baseline is `7c21461:ai/product-model/in/discovery-deliery-separation.md`.
 - Its SHA-256 is `9fec88e8b31b7bbfceb05cae57e8b318129ee019ab86e7702aabc25437019e1a`.
 - The working-tree source file was removed after the split. The Git version is the authority.
 - Removing the working-tree source was explicitly authorized after the annotated split was complete.
@@ -53,7 +53,7 @@ These questions are related, but they are not one scale. The rearrangement separ
 | [`production-commitment-boundary-alternative.md`]({{< ref "ai/operating-model/working-notes/production-commitment-boundary-alternative" >}}) | Earlier boundary formulations, prototype purpose, production context, and the effect of a production commitment. |
 | [`discovery-delivery-platform-proposal.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-platform-proposal" >}}) | A proposed platform design kept outside the current model. |
 | [`discovery-delivery-evaluation-evidence-deferred.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}) | Evaluation evidence held for the separate evaluation section. |
-| [`discovery-delivery-separation-source-notes.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-separation-source-notes" >}}) | The remaining future research question. |
+| [`discovery-delivery-separation-source-notes.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-separation-source-notes" >}}) | The removed role-model comparison and the remaining future research question. |
 
 ## Source disposition
 
@@ -62,7 +62,7 @@ The units are listed in source order. The units assigned to the evidence file ap
 
 | Unit | Source lines | Destination |
 |---|---:|---|
-| DDS-01 | 2 | Removed with `comparisons/discovery-delivery-and-role-model.md` after the split. The original remains in Git. |
+| DDS-01 | 2 | `working-notes/discovery-delivery-separation-source-notes.md` |
 | DDS-02 | 4 | `working-notes/discovery-delivery-practitioner-evidence.md` |
 | DDS-03 | 6-19 | `working-notes/discovery-delivery-practitioner-evidence.md` |
 | DDS-04 | 21 | `working-notes/discovery-delivery-practitioner-evidence.md` |
@@ -83,8 +83,8 @@ The units are listed in source order. The units assigned to the evidence file ap
 | DDS-19 | 178-216 | `working-notes/discovery-delivery-platform-proposal.md` |
 | DDS-20 | 218-222 | `working-notes/discovery-delivery-platform-proposal.md` |
 | DDS-21 | 224-226 | `working-notes/discovery-delivery-platform-proposal.md` |
-| DDS-22 | 228-238 | Removed with `comparisons/discovery-delivery-and-role-model.md` after the split. The original remains in Git. |
-| DDS-23 | 240-257 | Removed with `comparisons/discovery-delivery-and-role-model.md` after the split. The original remains in Git. |
+| DDS-22 | 228-238 | `working-notes/discovery-delivery-separation-source-notes.md` |
+| DDS-23 | 240-257 | `working-notes/discovery-delivery-separation-source-notes.md` |
 | DDS-24 | 259 | `working-notes/discovery-delivery-practitioner-evidence.md` |
 | DDS-25 | 261 | `working-notes/discovery-delivery-separation-source-notes.md` |
 
@@ -111,7 +111,7 @@ The source table mixes the purpose of the work with code lifetime, acceptable sh
 ### Work and roles are separate axes
 
 
-Discovery and delivery classify work. Citizens, agents, and experts classify participants. The source warns that a role-based sequence could turn engineers into an approval service. The user later removed the comparison file that contained this passage, but the original remains in Git. The two models are not treated as direct substitutes.
+Discovery and delivery classify work. Citizens, agents, and experts classify participants. The source warns that a role-based sequence could turn engineers into an approval service. The comparison file was later removed, so the source passages are now kept in `discovery-delivery-separation-source-notes.md`. The two models are not treated as direct substitutes.
 
 ### Commitment changes obligations
 
@@ -152,8 +152,8 @@ The final source question uses "commitment gate." Its concrete questions remain 
 - The working-tree source file has been removed.
 - Before the language edit, all 25 source units matched their recorded source spans. The final-line newline normalization is recorded above.
 - Before the language edit, all 192 nonblank source lines appeared once across the six source-derived output files. No nonblank source line was missing or duplicated.
-- After the language edit, 22 units remain in their recorded destination files. The user removed the comparison file containing DDS-01, DDS-22, and DDS-23. The disposition table records those removals.
-- The original wording can still be recovered from the Git baseline.
+- After the language edit, all 25 units have a recorded destination. DDS-01, DDS-22, and DDS-23 are kept in the source-notes file rather than in a reader-facing comparison.
+- The original wording can still be recovered from the Git baseline at commit `7c21461`.
 - All external citation links from the retained units are unchanged.
 - All local Markdown links in these files resolve.
 - Every output file identifies its editorial text.

@@ -7,7 +7,7 @@ linkTitle: "Discovery Delivery Practitioner Evidence"
 # Practitioner evidence about discovery and delivery
 
 
-> **Editorial note:** The title, section headings, bridges, and comments in this file are editorial. The passages between the source markers come from `HEAD:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow. The edits are intended to preserve the original claims. The citations are unchanged. This is supporting material, not the definition of the operating model.
+> **Editorial note:** The title, section headings, bridges, and comments in this file are editorial. The passages between the source markers come from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow. The edits are intended to preserve the original claims. The citations are unchanged. This is supporting material, not the definition of the operating model.
 
 ## Purpose of the work
 

@@ -266,6 +266,8 @@ The causal mapping is:
 | Stakeholder and team can blame each other          | Decision authority and accountability move together  | The group choosing the solution also owns its result                           |
 | Every iteration requires expensive production work | Prototypes/test techniques address risks cheaply     | Several solution iterations can happen before production                       |
 
+The proposed speed does not come only from engineers writing code faster. It comes from trying several possible solutions through less expensive discovery before committing to production implementation.
+
 ### 6. Transformation model
 
 

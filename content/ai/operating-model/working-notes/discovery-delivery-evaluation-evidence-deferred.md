@@ -7,7 +7,7 @@ linkTitle: "Discovery Delivery Evaluation Evidence Deferred"
 # Deferred evidence about evaluation
 
 
-> **Editorial note:** Evaluation is being handled separately, so this source passage has not been placed in the operating model. Teresa Torres is introduced in [`discovery-delivery-practitioner-evidence.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}). The passage comes from `HEAD:ai/product-model/in/discovery-deliery-separation.md`. Its wording has been edited for grammar and flow. The edit is intended to preserve the original claims. The citation is unchanged.
+> **Editorial note:** Evaluation is being handled separately, so this source passage has not been placed in the operating model. Teresa Torres is introduced in [`discovery-delivery-practitioner-evidence.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}). The passage comes from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Its wording has been edited for grammar and flow. The edit is intended to preserve the original claims. The citation is unchanged.
 
 <!-- source-unit: DDS-11; source-lines: 94 -->
 

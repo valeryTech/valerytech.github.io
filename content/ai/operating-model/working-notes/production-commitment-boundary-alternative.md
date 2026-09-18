@@ -18,7 +18,7 @@ A discovery prototype may take shortcuts because its purpose is learning. Produc
 ## Evidence about prototypes and an earlier boundary diagram
 
 
-> **Editorial note:** The headings and comments in this section are editorial. The passages with source-unit markers come from `HEAD:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow.
+> **Editorial note:** The headings and comments in this section are editorial. The passages with source-unit markers come from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow.
 
 ### Prototypes as decision tools
 

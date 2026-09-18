@@ -7,7 +7,7 @@ linkTitle: "Discovery Delivery Platform Proposal"
 # A platform proposal for discovery and delivery
 
 
-> **Editorial note:** The file title, the heading marked as editorial, and all comments are editorial. The passages with source-unit markers come from `HEAD:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow. This is a platform proposal, not the current definition of discovery and delivery.
+> **Editorial note:** The file title, the heading marked as editorial, and all comments are editorial. The passages with source-unit markers come from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow. This is a platform proposal, not the current definition of discovery and delivery.
 
 ## Editorial grouping: proposed platform design
 

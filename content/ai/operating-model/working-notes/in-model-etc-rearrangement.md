@@ -12,11 +12,12 @@ This is an editorial record. It explains how the source text was arranged. It is
 ## Rules used
 
 
-- The baseline is `HEAD:ai/product-model/in/in-model-etc.md`.
+- The baseline is `7c21461:ai/product-model/in/in-model-etc.md`.
 - Its SHA-256 is `0a4867af53db6ddf0c4d5421b0b4ea104606d800bb266f90baad5c507a115e0d`.
 - The original working-tree file had already been removed during the earlier split. The Git version is the preserved baseline.
-- Source text may be split and moved.
-- Source text may not be rewritten.
+- During the initial rearrangement, source text could be split and moved but not rewritten.
+- A later grammar and flow edit changed wording while intending to preserve meaning.
+- The recovered source-notes file summarizes some draft fragments. The Git baseline remains the authority for their exact wording.
 - Short status notes may be added when a file could otherwise be mistaken for the current position. They must be marked as editorial.
 - Every source passage must appear once across the output files.
 - File names, marked status notes, and this record are editorial.
@@ -42,7 +43,7 @@ The unit here is one problem and the work around possible solutions. This materi
 | [`solution-states-and-terms-alternative.md`]({{< ref "ai/operating-model/working-notes/solution-states-and-terms-alternative" >}}) | Alternative state sequence and vocabulary. |
 | [`experiment-as-primary-unit-alternative.md`]({{< ref "ai/operating-model/working-notes/experiment-as-primary-unit-alternative" >}}) | Alternative claim about the experiment and feature as units of work. |
 | [`discovery-delivery-interface-alternative.md`]({{< ref "ai/operating-model/working-notes/discovery-delivery-interface-alternative" >}}) | Earlier four-part interface. |
-| `in-model-etc-source-notes.md` | Planning text, broken references, repeated text, revision comments, and placeholders. |
+| [`in-model-etc-source-notes.md`]({{< ref "ai/operating-model/working-notes/in-model-etc-source-notes" >}}) | Planning text, broken references, repeated text, revision comments, and placeholders. |
 
 ## Source disposition
 
@@ -52,7 +53,8 @@ The unit here is one problem and the work around possible solutions. This materi
 | 2-6 | `in-model-etc-source-notes.md` |
 | 8, 304 | `experiment-as-primary-unit-alternative.md` |
 | 10-46, 50-60, 62, 66, 70-145, 147-261, 265-298 | `feature-team-and-empowered-team.md`, in dependency order rather than source order |
-| 48, 64, 68, 263, 300, 302, 306, 310, 321, 324-334, 338-340, 369-371, 397, 486, 509-517, 560, 566, 582, the third sentence of 584, 609 | `in-model-etc-source-notes.md` |
+| 48, 64, 68, 300, 302, 306, 310, 321, 324-334, 338-340, 369-371, 397, 486, 509-517, 560, 566, 582, the third sentence of 584, 609 | `in-model-etc-source-notes.md` |
+| 263 | `comparisons/feature-team-and-empowered-team.md` |
 | 308, 312-319, 322, 336, 351, 353, 355-367, 519-558, 562-564, 568-580, the first two sentences of 584, 586-607 | `discovery-and-delivery.md`, in dependency order rather than source order |
 | 342-349, 373-395 | `discovery-delivery-interface-alternative.md` |
 | 398-463 | `capability-funnel.md` |
@@ -102,7 +104,7 @@ Text with placeholders, editing comments, broken references such as "the attache
 ## Checks
 
 
-- No source passage was omitted or duplicated. Line 584 was split into two passages.
+- The disposition table assigns every nonblank source line to a current file. Line 584 is split at a sentence boundary between two destinations.
 - The broken causal table was repaired. Its rows are together again.
 - The selected and older interface versions are separate.
 - The comparison, current explanation, alternatives, and raw source notes are separate.
