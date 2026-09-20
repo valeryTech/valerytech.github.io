@@ -7,63 +7,63 @@ aliases:
 linkTitle: "AI Evaluation"
 ---
 
-AI evaluation is a way to gather and interpret evidence about how an AI product behaves. It supports questions and decisions during discovery, delivery, and production use.
+The main job of evaluation is to help us see what an AI product actually does in situations that matter. We run or watch the product, record what happens, and use what we learn to make product decisions.
 
-It is needed because product behavior cannot be inferred from the implementation alone. The same system may behave differently across inputs, product state, model or prompt versions, tools, data, and operating conditions.
+Product behavior includes the answers people see, the tools and data the product uses, the actions it takes, and the changes it makes. When we call behavior right or wrong, we need a clear rule or expectation for that judgment.
 
-Evaluation does not remove this uncertainty. It makes a limited part of the behavior visible and gives the team a stated basis for deciding what to do next.
+Evaluation never shows everything the product could do. Running a test case shows what happened in the conditions we tested. Reviewing a production sample shows what happened for the users and time period included in that sample. Tests, evaluators, and scores help us inspect and summarize behavior. They are tools, not the goal.
 
 ## Start with the question
 
 
-Evaluation begins with a question or uncertainty, not with a dataset or metric.
+Evaluation begins with a question or something the team needs to learn, not with a dataset or metric.
 
 Examples include:
 
 - Can this candidate solution provide the proposed behavior?
 - Where does it fail, and which failures matter?
-- Is the evidence sufficient for the production commitment being considered?
+- Is the evidence strong enough for the production commitment being considered?
 - Does a candidate change improve the target behavior without causing an important regression?
 - Does live behavior remain within the active production commitment?
 - Has production use revealed a new situation, failure, or mistaken assumption?
 
-The question determines which situations to examine, what evidence to capture, how to judge it, and what finding would be useful.
+The question determines which situations to examine, what to record, how to judge what happened, and what the team needs to learn from the result.
 
 ## The reasoning chain
 
 ```text
-Question or uncertainty
+Question or something the team needs to learn
         ↓
-Evaluation basis: provisional behavior claim,
-product rule, or proposed or active production commitment
+Behavior to examine and any rule or commitment
+used to judge it
         ↓
-Evidence and coverage needed
+Situations or live runs to examine
         ↓
-Designed cases or production sample
+Run or observe the product
         ↓
-Execution and captured evidence
+Record what happened
         ↓
-Judgment and comparison
+Judge it when a clear expectation exists
         ↓
-Finding and remaining uncertainty
+Explain the result, its limits, and what is still unknown
         ↓
 Decision
 ```
 
 
-This is a reasoning dependency, not a sequence of product phases. Exploratory work may begin before a stable behavior claim or criterion exists. A finding may also send the work back to revise the question, claim, cases, criteria, or evidence path.
+The arrows show what depends on what, not a fixed set of product phases. Exploratory work may begin before the team has a stable behavior claim or criterion. A result may also send the team back to revise the question, claim, cases, criteria, or way it records evidence.
 
 ## Framework and subsystem
 
 
-The **evaluation framework** defines the reasoning:
+The **evaluation framework** explains:
 
 - which question is being answered;
-- which behavior is being claimed and in which situations;
-- which evidence would be useful;
-- how the evidence will be judged;
-- what the result can and cannot support;
-- how the result will be interpreted for a decision.
+- which behavior matters and in which situations;
+- what the team needs to record;
+- how it will judge what happened;
+- what the result can and cannot tell us;
+- how the result will help with a decision.
 
 The **evaluation subsystem** is the people, practices, data, and software used to produce, inspect, judge, compare, and preserve evidence. It includes cases, samples, execution tools, traces, storage, criteria, evaluators, human review, versioning, comparison, and production observation.
 
@@ -74,11 +74,11 @@ The detailed goals and boundaries are in [Goals of AI Evaluation]({{< ref "ai-en
 ## Evaluation in discovery and delivery
 
 
-Discovery and delivery are concurrent kinds of work.
+Discovery and delivery can happen at the same time.
 
-- **Discovery** mainly reduces uncertainty. Evaluation can probe a candidate solution, compare alternatives, expose behavior boundaries, and find failures or missing assumptions.
+- **Discovery** mainly helps the team learn what it does not yet know. Evaluation can probe a candidate solution, compare alternatives, expose behavior boundaries, and find failures or missing assumptions.
 - **Delivery** mainly builds and operates a dependable production solution. Evaluation can check committed behavior, compare a change with a baseline, detect regressions, and support rollout or rollback decisions.
-- **Production use** supplies evidence that cannot be obtained elsewhere. It can reveal new inputs, failures, costs, dependencies, user responses, and mistaken intent.
+- **Production use** shows things that pre-release tests cannot. It can reveal new inputs, failures, costs, dependencies, user responses, and mistaken intent.
 
 A production commitment changes the obligations attached to a solution. It does not end discovery. Evaluation continues because both the implementation and the understanding of the intended behavior can change.
 
@@ -107,7 +107,7 @@ A finding states what the available evidence supports within its limits. It shou
 - the observed behavior;
 - the judgment or comparison;
 - important variation and failures;
-- missing evidence and remaining uncertainty.
+- missing evidence and what remains unknown.
 
 The people responsible for the product decision use the finding with other evidence and judgment. A failed evaluation does not automatically mean "fix the model." The issue may be the solution, implementation, production commitment, criterion, evaluator, sample, or evidence capture.
 
@@ -125,7 +125,7 @@ For an exploratory question:
 5. Inspect the behavior with product or domain experts.
 6. Record the finding, limits, and next question.
 
-Make the work more repeatable when the same judgment will be needed again, the commitment becomes more consequential, or production behavior must be monitored over time.
+Make the work more repeatable when the same judgment will be needed again, the commitment carries more risk, or production behavior must be watched over time.
 
 ## Document set
 

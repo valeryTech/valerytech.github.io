@@ -9,13 +9,13 @@ linkTitle: "10 User Inputs"
 
 This guide addresses building a representative set of **user inputs**. These inputs form one component of the evaluation dataset and define the portion of the query space that should cover the important ways users may interact with the application.
 
-The goal is to provide evidence about the product behaviours that matter without over-representing one common workflow or leaving important guarantees, failures, and operating conditions untested.
+The goal is to provide evidence about the product behaviors that matter without over-representing one common workflow or leaving important guarantees, failures, and operating conditions untested.
 
 At this stage, the primary objective is **product-derived query-space representation**.
 
 A starting set of approximately 100 executed cases is a practical heuristic. It can provide enough coverage to surface a range of failure modes and move towards _theoretical saturation_--the point at which analyzing additional traces is increasingly unlikely to reveal substantially new error categories because the existing categories are already well developed (Morse 1995). The required product coverage should determine the final number and distribution of cases.
 
-When suitable real user inputs are available, they should be the primary source. They can form the candidate pool for the initial set, subject to coverage review. If substantially more are available, sample across their variation. Real inputs provide evidence about actual usage, but their frequency does not define the evaluation scope by itself. The resulting traces should exercise product-important behaviours rather than repeatedly follow the most common feature path.
+When suitable real user inputs are available, they should be the primary source. They can form the candidate pool for the initial set, subject to coverage review. If substantially more are available, sample across their variation. Real inputs provide evidence about actual usage, but their frequency does not define the evaluation scope by itself. The resulting traces should exercise product-important behaviors rather than repeatedly follow the most common feature path.
 
 In early-stage applications, real user inputs and traces are often sparse. Synthetic inputs may then be used to fill important gaps, but they should be generated systematically. Simply asking an LLM to produce a list of user queries commonly results in generic, repetitive examples that do not reflect realistic usage patterns.
 
@@ -26,12 +26,12 @@ We therefore need a structured process for building a representative set of user
 
 **Agree on the product definition.** Begin by recording or agreeing on the product-specific inputs that govern coverage:
 
-- **Product guarantees:** behaviours or properties the application is expected to preserve.
+- **Product guarantees:** behaviors or properties the application is expected to preserve.
 - **Main jobs to be done:** outcomes users principally rely on the product to achieve.
 - **Critical failures:** consequential outcomes that the evaluation should guard against.
-- **Architecture and operating constraints:** routes, models, prompts, policies, tools, data sources, permissions, action boundaries, and environmental limits that can change system behaviour.
+- **Architecture and operating constraints:** routes, models, prompts, policies, tools, data sources, permissions, action boundaries, and environmental limits that can change system behavior.
 
-Use product requirements, system documentation, architecture knowledge, policy and safety requirements, domain expertise, and observed product behaviour as evidence. Available user inputs can reveal missing or misunderstood product behaviour, but they should not be the sole source of the product definition.
+Use product requirements, system documentation, architecture knowledge, policy and safety requirements, domain expertise, and observed product behavior as evidence. Available user inputs can reveal missing or misunderstood product behavior, but they should not be the sole source of the product definition.
 
 Optionally extract or formulate coverage requirements:
 
@@ -50,9 +50,9 @@ A **dimension** is a way to categorize different parts of a user query. Each dim
 - **Customer persona:** the type of customer being supported, such as a first-time buyer, frequent shopper, or business customer;
 - **Scenario type:** how clearly the customer expresses the issue, such as well-specified, ambiguous, incomplete, or involving multiple requests.
 
-An application may have many potentially useful dimensions. As a practical starting point, begin with at least three candidate dimensions, while avoiding unnecessary dimensions that do not represent a distinct failure surface or meaningful behavioural difference. The final set should be small enough to review and combine effectively, but sufficient to represent the important ways the application may fail.
+An application may have many potentially useful dimensions. As a practical starting point, begin with at least three candidate dimensions, while avoiding unnecessary dimensions that do not represent a distinct failure surface or meaningful behavioral difference. The final set should be small enough to review and combine effectively, but sufficient to represent the important ways the application may fail.
 
-Do not choose dimensions arbitrarily. Select dimensions that describe where the AI application is likely to fail. Use the product-derived coverage requirements, failure hypotheses, observed user behaviour, qualitative research, domain knowledge, and previously observed traces to identify these failure surfaces.
+Do not choose dimensions arbitrarily. Select dimensions that describe where the AI application is likely to fail. Use the product-derived coverage requirements, failure hypotheses, observed user behavior, qualitative research, domain knowledge, and previously observed traces to identify these failure surfaces.
 
 For example, usage data or qualitative research might indicate that business customers experience problems when tracking orders. In that case, **Customer persona** and **Feature** are useful dimensions because their interaction represents an observed or plausible area of failure.
 
@@ -99,9 +99,9 @@ Do not try to generate every possible tuple. Select tuples that cover:
 - contexts in which product guarantees could hold or fail;
 - critical failures and their associated failure hypotheses;
 - important routes, tools, permissions, and system conditions;
-- unusual but plausible interactions that require different system behaviour.
+- unusual but plausible interactions that require different system behavior.
 
-Write approximately 20 initial tuples manually. Allocate them according to the importance, risk, behavioural variation, and uncertainty represented by the coverage requirements rather than distributing them equally across dimension values. This helps validate whether the selected dimensions produce coherent and useful tuples before asking an LLM to create more.
+Write approximately 20 initial tuples manually. Allocate them according to the importance, risk, behavioral variation, and uncertainty represented by the coverage requirements rather than distributing them equally across dimension values. This helps validate whether the selected dimensions produce coherent and useful tuples before asking an LLM to create more.
 
 #### 2.2 Expand tuple coverage with an LLM
 
@@ -182,7 +182,7 @@ Vary the language naturally. Real users may:
 - use domain-specific language;
 - describe a goal rather than a precise action.
 
-Variation should come from realistic behaviour rather than mechanically paraphrasing the same input.
+Variation should come from realistic behavior rather than mechanically paraphrasing the same input.
 
 **User-input generation prompt**
 
@@ -262,14 +262,16 @@ Adjust the set until (for example):
 
 Continue sampling, generating, and reviewing cases until the dataset satisfies the intended coverage and quality thresholds. Remove or revise inputs that are unrealistic, off-target, redundant, or inconsistent with their assigned tuple and execution context. Approximately 100 executed cases may serve as a practical starting point, but the number and distribution of cases should follow from the required product coverage.
 
-> Because the resulting traces form the basis of downstream evaluation, each case should be realistic, representative, and capable of exercising materially distinct system behaviour.
+> Because the resulting traces form the basis of downstream evaluation, each case should be realistic, representative, and capable of exercising materially distinct system behavior.
 
 Once these checks are satisfied, approve the resulting starting set for execution.
 
 #### 4.3 Execute cases and collect traces
 
 
-Execute the coverage-reviewed starting set against the intended system configuration and record the resulting traces.
+Run each approved case through the named product version and full setup that the evaluation is meant to cover. Record the models, prompts, routing, tools, data, permissions, policies, fixtures, and other settings that can change what the product does.
+
+Capture enough information to see the product's answers, actions, tool and data use, state changes, effects outside the product, and errors. A trace may miss some of what happened, so record known gaps in what can be seen. Do not replace the complete product run with a model-only call unless the evaluation question is specifically about that model call.
 
 ### Workflow summary
 
@@ -329,17 +331,22 @@ Synthetic generation should produce realistic user requests rather than model an
 
 ### Ground inputs in the system
 
-### Preserve realistic user behaviour
+
+A realistic user message is not enough by itself. Pair each input with the fixtures and system state needed to create the intended situation. For example, set up the right account, permissions, records, tool responses, conversation history, and external conditions before running the case.
+
+Run the case through the complete, identified version and setup of the product. This lets the evaluation observe what people would see, which tools and data the product uses, which actions it takes, and which state changes or effects outside the product follow. If a case uses a mock or leaves out part of the product, record that limit so the results are not mistaken for behavior of the complete product.
+
+### Preserve realistic user behavior
 
 
 Inputs should reflect how users actually communicate. Realistic inputs may be incomplete, indirect, conversational, inconsistent, or error-filled. They should not reveal the hidden tuple or expected condition, or read like instructions written for an evaluator.
 
-Variation should come from meaningful behavioural differences rather than repeated paraphrasing.
+Variation should come from meaningful behavioral differences rather than repeated paraphrasing.
 
 ### Start with straightforward cases
 
 
-Start with clear and feasible requests to establish baseline behaviour. Then add more complex cases involving ambiguity, missing information, conflicting requirements, unavailable resources, multiple intents, conversational context, and unusual workflows. This makes it easier to separate basic capability problems from failures caused by added complexity.
+Start with clear and feasible requests to establish baseline behavior. Then add more complex cases involving ambiguity, missing information, conflicting requirements, unavailable resources, multiple intents, conversational context, and unusual workflows. This makes it easier to separate basic capability problems from failures caused by added complexity.
 
 ### Build in domain-expert review and feedback loops
 
@@ -351,7 +358,7 @@ Add clear review points throughout the design process so product and domain expe
 
 The construction of an evaluation input set should begin with the product definition.
 
-The product definition describes what the application is intended to help users accomplish, which behaviours it is expected to preserve, which actions and conditions it supports, and which failures would have significant consequences.
+The product definition describes what the application is intended to help users accomplish, which behaviors it is expected to preserve, which actions and conditions it supports, and which failures would have significant consequences.
 
 ### Derive coverage from the product
 
@@ -365,7 +372,7 @@ Case allocation should reflect the importance of the user job, the scope of the 
 
 Production frequency should inform the dataset, but it should not be the only basis for case allocation.
 
-### Loop Related:
+### Keep coverage up to date
 
 #### Treat the initial coverage model as provisional
 
@@ -374,7 +381,7 @@ The product definition provides the initial direction for the evaluation set, bu
 
 Real user inputs may reveal jobs, assumptions, or operating conditions that were not represented in the original product model. Executed traces may expose failure modes that were not anticipated by the initial failure hypotheses. These findings should trigger reviewed updates to the evaluation boundary, jobs and intents, guarantees and failure assumptions, dimensions, tuples, fixtures, and case allocation.
 
-The product definition should guide the evaluation design without preventing the design from adapting to observed user behaviour and system evidence. For a detailed method for deriving coverage requirements and allocating cases, see [Coverage and Case Design]({{< ref "ai-engineering/evaluation/v1/coverage-and-case-design" >}}).
+The product definition should guide the evaluation design without preventing the design from adapting to observed user behavior and system evidence. For a detailed method for deriving coverage requirements and allocating cases, see [Coverage and Case Design]({{< ref "ai-engineering/evaluation/v1/coverage-and-case-design" >}}).
 
 #### Revise the coverage model as evidence accumulates
 
@@ -388,11 +395,11 @@ Use the product definition and failure hypotheses to guide the first dataset des
 
 **Product definition**
 
-The description of the outcomes the application supports, the guarantees it should preserve, the failures that matter, and the architecture and operating constraints that shape its behaviour.
+The description of the outcomes the application supports, the guarantees it should preserve, the failures that matter, and the architecture and operating constraints that shape its behavior.
 
 **Product guarantee**
 
-A behaviour or property the application is expected to preserve across relevant interactions.
+A behavior or property the application is expected to preserve across relevant interactions.
 
 **Main job to be done**
 
@@ -434,7 +441,7 @@ Tuple:
 ```
 
 
-A tuple may omit a dimension when that dimension is not relevant to the intended behaviour. It does not need to contain one value from every dimension defined for the entire dataset.
+A tuple may omit a dimension when that dimension is not relevant to the intended behavior. It does not need to contain one value from every dimension defined for the entire dataset.
 
 **User input**
 
@@ -450,7 +457,7 @@ Fixtures should create the conditions represented by the tuple.
 
 **Expected condition**
 
-A description of the relevant state or behaviour that should be present when the evaluation case is executed.
+A description of the relevant state or behavior that should be present when the evaluation case is executed.
 
 The expected condition confirms that the intended scenario has been activated. It should not prescribe one exact assistant response.
 
@@ -464,8 +471,12 @@ Expected condition:
 ```
 
 
+**Execution**
+
+One time the identified product runs for an evaluation case under a stated setup and set of conditions.
+
 **Trace**
 
-The recorded sequence of inputs, outputs, intermediate actions, tool results, and system behaviour produced when an evaluation case is executed.
+The information captured about an execution, such as its inputs, outputs, intermediate actions, tool results, state changes, and other product behavior.
 
-A trace is an execution result. It is not part of the tuple or the original user input.
+A trace may not include everything that happened. It is evidence about the execution, not the execution itself, and it is not part of the tuple or the original user input.

@@ -7,6 +7,8 @@ linkTitle: "Guide"
 # AI Evaluation Guide
 
 
+> **Evaluation shows us how the product actually behaves in defined situations, so teams can make better product decisions.**
+
 Start with [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}) for the overall model.
 
 Then use the document that matches the current question:
@@ -23,25 +25,24 @@ Then use the document that matches the current question:
 | Design the tools and practices that produce evaluation evidence | [Evaluation Subsystem]({{< ref "ai-engineering/evaluation/v1/evaluation-subsystem" >}}) |
 | Decide whether repeated controlled execution is needed | [Why Use an Evaluation Harness?]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) |
 | Understand controlled execution and comparison | [Evaluation Harness and Workspace]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}}) |
-| Use real product behavior as evidence | [Production Learning]({{< ref "ai-engineering/evaluation/v1/production-learning" >}}) |
+| Learn from observed production behavior | [Production Learning]({{< ref "ai-engineering/evaluation/v1/production-learning" >}}) |
 
 The documents follow one reasoning chain:
 
 ```text
-question or uncertainty
+question that matters
         ↓
-evaluation basis: behavior claim, product rule,
-or proposed or active production commitment
+behavior we need to see and any rule for judging it
         ↓
-evidence and coverage needed
+situations to test or production runs to sample
         ↓
-cases or production sample
+run or observe the product
         ↓
-execution and captured evidence
+record what happened
         ↓
-judgment and comparison
+judge it when a clear rule exists
         ↓
-finding and remaining uncertainty
+explain what the evidence shows and does not show
         ↓
 decision
 ```

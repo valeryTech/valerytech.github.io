@@ -11,6 +11,8 @@ linkTitle: "Conceptualization"
 
 This document explains the wider system in which AI evaluation works. It connects product intent, behavior produced by an AI system, a question that needs evidence, and the evaluation work used to address that question.
 
+> **Evaluation shows us how the product actually behaves in defined situations, so teams can make better product decisions.**
+
 It is the source model for the more detailed evaluation documents. It helps check whether the evaluation framework and evaluation subsystem have the right goals, boundaries, and capabilities. It is not a required sequence of project stages.
 
 The model contains five connected parts:
@@ -225,7 +227,7 @@ Question or decision need ──────────────────
 ~~~
 
 
-> **Evaluation uses captured evidence about product behavior to address a named question. When judgment is required, it applies a stated evaluation basis. It reports what the evidence supports, where that support applies, and what remains unknown.**
+> **Evaluation starts with what happened when the product ran. It uses the recorded evidence to answer a named question. When the team needs to call behavior right or wrong, it uses a stated rule or expectation. The result explains what the evidence shows, where it applies, and what is still unknown.**
 
 An observation alone is not a complete evaluation. It becomes part of an evaluation when it is interpreted for a named question. Exploratory review can begin before a stable claim or criterion exists. A judgment that behavior is acceptable or unacceptable requires a stated basis.
 
@@ -320,12 +322,10 @@ Evaluation is needed because relevant AI product behavior cannot be inferred fro
 ## Evaluation goals
 
 
-The top-level evaluation goal is:
-
-> **Use scoped evidence to state what it supports about AI product behavior for a named question, with its source and limits made clear.**
+The main purpose stated above breaks into six goals:
 
 ~~~text
-E0. Support informed decisions with scoped evidence
+E0. Show product behavior clearly enough to support decisions
 │
 ├── E1. Make relevant behavior and the evaluation basis explicit
 ├── E2. Observe behavior and capture the required evidence

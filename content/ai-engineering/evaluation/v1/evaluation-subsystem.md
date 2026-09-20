@@ -13,7 +13,9 @@ It includes people and operating practices as well as software. A script that ru
 
 Its main goal is:
 
-> Produce credible evidence in time for the current question or decision, and preserve useful cases, criteria, and findings for later evaluations.
+> **Evaluation shows us how the product actually behaves in defined situations, so we can make better product decisions.**
+
+The subsystem makes this possible by recording, organizing, and helping people inspect what happened. It also saves useful cases, criteria, and findings for later evaluations.
 
 The [evaluation framework]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}) defines what the evidence means. The subsystem makes the required evidence available.
 
@@ -81,7 +83,7 @@ The subsystem should preserve:
 - case, dataset, and sample versions;
 - links from cases to the claims or risks they examine.
 
-Designed cases and production samples answer different questions. Designed cases provide controlled coverage and comparison. Production samples show what happened within a stated population and period. Neither should be treated as universally representative.
+Designed cases and production samples answer different questions. Runs of designed cases show what happened in the conditions the team chose to test. A production sample is a selected group of live runs; reviewing those runs shows what happened for the users and time period included in that sample. Neither source shows how the product will behave in every situation.
 
 ### Execution and replay
 
@@ -95,7 +97,7 @@ The subsystem may need to:
 - run a candidate without exposing it to users;
 - limit or progressively increase live exposure.
 
-Reproduction is useful, but exact repetition is not always possible. External services, changing data, model updates, time, and nondeterminism may change the execution. The subsystem should record these limits rather than promise perfect replay.
+Reproduction is useful, but exact repetition is not always possible. External services, changing data, model updates, time, and random variation may change the run. The subsystem should record these limits rather than promise perfect replay.
 
 ### Evidence capture
 
@@ -113,12 +115,12 @@ Capture the evidence required for the current question. Depending on the product
 - user feedback or correction;
 - downstream product outcomes.
 
-A trace is captured evidence about an execution. It is not the execution itself and may omit relevant events. Capture requirements should be explicit. Missing evidence must remain visible and must not be counted as successful behavior.
+An execution is one time the product runs. A trace is the information recorded about that run. It is not the run itself and may leave out relevant events. State clearly what must be recorded. Missing information must remain visible and must not be counted as successful behavior.
 
 ### Storage, links, and source history
 
 
-The subsystem should preserve stable identifiers and links among:
+The subsystem should preserve fixed IDs and links among:
 
 ```text
 question
@@ -136,19 +138,19 @@ question
 
 The storage design may be simple at first. The important requirement is that a reviewer can find the evidence behind a judgment and understand which versions produced it.
 
-Access, retention, privacy, and security rules apply to evaluation data. Production traces may contain customer data, sensitive context, or records of consequential actions.
+Access, retention, privacy, and security rules apply to evaluation data. Production traces may contain customer data, sensitive context, or records of important actions.
 
 ### Review and judgment
 
 
-The subsystem should support the methods required by the evaluation basis and criterion:
+A criterion is a rule used to judge one part of the behavior. The subsystem should support the methods needed to apply that rule:
 
-- deterministic checks for rules, schemas, permissions, and invariants;
+- code checks for rules, schemas, permissions, and conditions that must always hold;
 - comparisons with trusted references;
-- model-based evaluators for suitable semantic judgments;
-- human or domain review for unclear, disputed, new, or consequential behavior.
+- model-based evaluators for suitable judgments about meaning;
+- human or domain review for unclear, disputed, new, or high-impact behavior.
 
-Review tools should show the evidence needed for the judgment rather than only the final response. They should allow a reviewer to record uncertainty, disagreement, and missing evidence.
+Review tools should show the evidence needed for the judgment rather than only the final response. They should allow a reviewer to record unclear cases, disagreements, and missing evidence.
 
 Automated evaluators require their own evidence. Their agreement with trusted judgments, known failure modes, sensitivity to irrelevant changes, and stability across time should be checked before their output controls a release or live action.
 
@@ -241,7 +243,7 @@ When a definition changes, affected labels and measurements may need to be revie
 The smallest useful version may contain only:
 
 1. a named question;
-2. an evaluation basis or provisional expectation, when needed;
+2. a basis for judgment or an expectation that may still change, when needed;
 3. a small set of cases;
 4. a way to run an identified system;
 5. saved evidence with enough context for review;

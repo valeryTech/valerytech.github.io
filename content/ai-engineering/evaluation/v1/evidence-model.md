@@ -11,11 +11,13 @@ linkTitle: "Evidence Model"
 
 This document defines the main objects used in AI evaluation and the claims that can be made from them.
 
+> **Evaluation shows us how the product actually behaves in defined situations, so teams can make better product decisions.**
+
 It is not a delivery process. The same objects can be used while exploring a possible solution, building and operating a production solution, or reviewing live behavior.
 
 The central distinction is simple:
 
-> **An execution is an occurrence. Its trajectory is what happens. A trace is the evidence captured about it. Evaluation judges behavior from that evidence.**
+> **An execution is one time the product runs. Its trajectory is everything that happens during that run. A trace is the information recorded about it, and may not include everything. Evaluation uses that record to understand the behavior and, when a clear rule exists, judge it.**
 
 A useful high-level relationship is:
 
@@ -94,9 +96,11 @@ Some cases contain a fixed sequence of actions. Others contain an adaptive parti
 ## Production sample
 
 
-A **production sample** defines how live executions are selected for examination.
+A **production sample** is a selected group of live executions that a team examines.
 
-It should state the relevant population, time range, selection method, and any groups or conditions that matter. A production-distribution sample, a sample of unusual behavior, and a sample of high-risk actions support different conclusions.
+It should state which users or other group and time period the runs come from, how the runs were selected, and any conditions that matter. A sample meant to reflect typical live use, a sample of unusual behavior, and a sample of high-risk actions support different conclusions.
+
+Designed cases and production samples answer different questions. Running a case shows behavior under the test conditions chosen for that case. Reviewing the runs in a production sample shows behavior only for the users, time period, and selection method it covers.
 
 The sample definition is not the evidence itself. The captured traces for the selected executions provide the evidence.
 
@@ -281,8 +285,8 @@ When a judgment will be repeated, preserve these parts:
 | Artifact | Meaning |
 | --- | --- |
 | Operational failure mode | One precise failure behavior selected for repeated assessment |
-| Criterion | A stated rule or basis for judging one aspect of behavior |
-| Evaluator | A person, procedure, or tool that applies a criterion to evidence |
+| Criterion | A rule used to judge one part of behavior |
+| Evaluator | A person, method, or tool that uses a criterion to judge evidence |
 | Raw evaluator result | The direct output produced by one evaluator run |
 | Label | A recorded judgment or evaluator result for a stated unit and criterion, linked to the operational mode when applicable, with its evidence source, provenance, and review status |
 | Measurement | A summary of labels or observations over a defined set or sample |

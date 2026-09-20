@@ -469,7 +469,8 @@ Criterion:
 Judgment:
 Known or possible consequence:
 Reviewer:
-~~
+~~~
+
 
 Keep any operational-mode label in a separate linked record. The label must identify the unit, mode and criterion versions, evidence source, evaluator, result, provenance, and review status.
 
@@ -478,6 +479,7 @@ Keep observations that are rare, unclear, or not yet part of a group. Low freque
 Use a product or domain expert when the judgment depends on specialized rules, permissions, user roles, safety requirements, or domain practice.
 
 ## Compare incidents before naming failure categories
+
 
 For a small set, failure incidents may be compared directly.
 
@@ -519,27 +521,26 @@ One incident, anticipated failure, or failure hypothesis may suggest a provision
 
 ## Develop supported failure categories
 
+
 A **failure category** is a reusable analytical description of a pattern of observed failure. It helps explain what several incidents have in common. It is not yet a rule for labeling every execution.
 
 For example, these incidents:
 
-~~~
-
+~~~text
 failed to preserve the buyer's budget
 
 failed to preserve the user's pet requirement
 
 failed to preserve the replacement preference
-
 ~~~
+
 
 may support this provisional category:
 
-~~~
-
+~~~text
 failed to preserve a user-stated constraint
-
 ~~~
+
 
 Track three properties separately:
 
@@ -589,6 +590,7 @@ Combining these into one label makes later comparison and diagnosis harder.
 
 ## Examine relationships without claiming cause
 
+
 Some analyses need more than a flat list of categories. This is especially true for multi-step and agentic behavior.
 
 Record observed relationships such as:
@@ -604,29 +606,28 @@ For each relationship, keep the supporting executions and contrary cases.
 
 Use language such as:
 
-~~~
-
+~~~text
 In the reviewed executions, the unsupported entity selection occurred before
 
 the wrong tool action in four cases. One contrast case corrected the selection
 
 before the action.
-
 ~~~
+
 
 Do not write:
 
-~~~
-
+~~~text
 The unsupported entity selection caused the wrong action.
-
 ~~~
+
 
 unless separate diagnostic evidence supports that causal claim.
 
 Observed sequence, co-occurrence, and conditional patterns can guide diagnosis. They do not prove a root cause.
 
 ## Seek evidence that tests categories and modes
+
 
 Once a category or operational mode is proposed, choose further cases or production examples that could change it.
 
@@ -656,6 +657,7 @@ For the current decision, pause development when new relevant evidence no longer
 
 ## Revise and version the failure model
 
+
 New evidence may require the team to:
 
 - add a category or mode;
@@ -676,6 +678,7 @@ The current collection of categories, operational modes, their mappings, and the
 
 ## Specify operational failure modes
 
+
 Define an operational mode from a supported category, a known criterion, or an anticipated risk grounded in an explicit evaluation basis when the team needs to:
 
 - label the failure repeatedly;
@@ -687,8 +690,7 @@ Define an operational mode from a supported category, a known criterion, or an a
 
 An **operational failure mode** is a narrowly defined failure behavior that can be assessed on a named unit. Its specification states how to decide whether that failure is present or absent when the mode applies and the evidence is sufficient.
 
-~~~
-
+~~~text
 failure category, known criterion, or grounded anticipated risk
 
     -> operational binary failure mode
@@ -702,8 +704,8 @@ failure category, known criterion, or grounded anticipated risk
     -> evaluator results on the target set recorded as labels
 
     -> aggregate measurement
-
 ~~~
+
 
 The evaluator steps are optional when the target set is labeled directly through the reference-judgment process. Not every category, criterion, or risk needs an operational mode. Every selected operational failure mode must have a binary core.
 
@@ -725,10 +727,10 @@ Applying a criterion produces a judgment or evaluator result. Recording that res
 
 ### Define the binary core
 
+
 Example:
 
-~~~
-
+~~~text
 Failure category:
 
 Confirmation failure.
@@ -752,8 +754,8 @@ The write tool is called before participant-visible confirmation.
 ABSENT:
 
 Participant-visible confirmation occurs before the write tool is called.
-
 ~~~
+
 
 Use four label states:
 
@@ -770,29 +772,31 @@ Severity, subtype, incident count, first occurrence, consequence, and confidence
 
 ### Allow several modes in one execution
 
+
 Binary does not mean mutually exclusive. Treat each operational mode as a separate question. One execution may contain several present failure modes.
 
 Definitions should be distinct enough that reviewers can apply them consistently. If modes overlap by design or form a hierarchy, record the relationship and the aggregation rule. Do not add their rates as though the modes were disjoint.
 
 ### Keep positive criteria and failure predicates connected
 
+
 A positive criterion may express the acceptable side of the same boundary:
 
-~~~
-
+~~~text
 Positive criterion:
 
 For a supported write that requires confirmation, participant-visible
 
 confirmation must occur before the write tool is called.
-
 ~~~
+
 
 For this criterion, **PASS** maps to failure **ABSENT** and **FAIL** maps to failure **PRESENT**. Keep the explicit failure predicate and this mapping. A positive criterion does not replace the operational failure mode in the failure-oriented approach.
 
 Do not silently reverse the meaning of pass and fail when evaluator results are converted into failure-mode labels.
 
 ### Specify each mode
+
 
 For each operational mode, define:
 
@@ -813,6 +817,7 @@ For each operational mode, define:
 During reference labeling, apply each selected mode to every unit in the reference set. This produces a unit-by-mode label matrix. An execution can therefore receive **PRESENT** for several modes.
 
 ### Implement and validate evaluators
+
 
 An evaluator applies the operational criterion. It does not define the category, mode, or criterion.
 
@@ -837,9 +842,10 @@ After validation, apply the evaluator to the target set and record each result a
 
 Not every operational mode needs a permanent automated evaluator. Manual labels may be enough for a small or temporary analysis. Automation becomes useful when the mode must be applied repeatedly or at a larger scale.
 
-Detailed guidance belongs in [Judgment and Findings](30-judgment-and-findings.md).
+Detailed guidance belongs in [Judgment and Findings]({{< ref "ai-engineering/evaluation/v1/30-judgment-and-findings" >}}).
 
 ## Measure only when the evidence supports measurement
+
 
 Predictive analysis may begin with measurements rather than failure-category development. In the failure-oriented approach, measure an operational mode only after its definition and labels are stable enough for the question.
 
@@ -847,11 +853,10 @@ Select one declared label per unit, mode, and mode version for the measurement. 
 
 For one operational mode, the observed present-label rate is:
 
-~~~
-
+~~~text
 PRESENT / (PRESENT + ABSENT)
-
 ~~~
+
 
 This denominator contains applicable, judgeable units. Report **NOT APPLICABLE** and **NOT JUDGEABLE** counts separately. Use another denominator only when it is explicitly defined and justified.
 
@@ -885,8 +890,7 @@ Use groups or slices only when they follow from the question, product scope, ris
 
 Keep the evidence levels distinct:
 
-~~~
-
+~~~text
 Judgment:
 
 Application of an evaluation basis to one unit. The result may be PASS, FAIL,
@@ -924,19 +928,19 @@ A defined summary of labels, judgments, or observations.
 Finding:
 
 An interpretation of the evidence for the named question, with its limits.
-
 ~~~
+
 
 A raw evaluator result becomes an evaluator-produced label when it is recorded with the unit, operational mode, criterion, evidence source, evaluator, provenance, and review status. Review may confirm, change, or adjudicate that label. None of these is yet a product finding.
 
 ## Keep failure patterns and root causes separate
 
+
 A failure category describes a broad pattern in observed product behavior. An operational failure mode states how one part of that pattern is assessed on a unit. A root cause explains why the behavior occurred.
 
 Keep these records separate:
 
-~~~
-
+~~~text
 Failure incident:
 
 The transfer was executed before the required confirmation.
@@ -960,8 +964,8 @@ The confirmation state may not have been passed to the action policy.
 Root cause:
 
 Not established.
-
 ~~~
+
 
 Sequence and correlation in a trace do not prove causation.
 
@@ -983,6 +987,7 @@ A diagnosis may show that the original category or operational mode was badly de
 
 ## Review responsibilities
 
+
 Failure analysis normally needs several forms of judgment:
 
 - people responsible for the product state the intended behavior and scope;
@@ -994,6 +999,7 @@ Failure analysis normally needs several forms of judgment:
 One person may perform several roles in a small project. The responsibilities still need to be clear.
 
 ## Outputs
+
 
 The output should match the purpose.
 
@@ -1030,10 +1036,10 @@ A complete analysis package may contain:
 
 ## Workflow summary
 
+
 Known-criterion path:
 
-~~~
-
+~~~text
 question and decision
 
     -> evaluation basis
@@ -1047,13 +1053,12 @@ question and decision
     -> optional category analysis
 
     -> finding
-
 ~~~
+
 
 Known-criterion failure-measurement path:
 
-~~~
-
+~~~text
 question and decision
 
     -> evaluation basis
@@ -1073,13 +1078,12 @@ question and decision
     -> measurement
 
     -> finding
-
 ~~~
+
 
 Exploratory path:
 
-~~~
-
+~~~text
 question and decision
 
     -> provisional expectation and system context
@@ -1107,13 +1111,12 @@ question and decision
     -> per-mode measurements
 
     -> finding
-
 ~~~
+
 
 Predictive aggregate path:
 
-~~~
-
+~~~text
 question and decision
 
     -> evaluation basis, prediction target, and relevant system context
@@ -1131,13 +1134,12 @@ question and decision
     -> optional qualitative category or mode analysis
 
     -> finding
-
 ~~~
+
 
 Reported event and diagnosis path:
 
-~~~
-
+~~~text
 reported event and evidence
 
     -> evaluation basis and judgment
@@ -1149,12 +1151,13 @@ reported event and evidence
     -> reproduction and cause hypotheses
 
     -> separate technical diagnosis
-
 ~~~
+
 
 These are evidence paths, not sequences of project phases. New evidence can send the work back to any earlier part. When people label the target set directly, the candidate-evaluator and held-out-validation steps do not apply.
 
 ## Limits
+
 
 Failure analysis cannot:
 
@@ -1168,4 +1171,3 @@ Failure analysis cannot:
 - make one failure model valid for every product route, population, or system version.
 
 State these limits with the finding.
-~~~
