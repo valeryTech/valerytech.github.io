@@ -171,7 +171,7 @@ ownership, or a node is added or removed, ZooKeeper notifies the routing tier so
 
 it can keep its routing information up to date.
 
-For example, LinkedIn's Espresso uses Helix [31] for cluster management (which in
+For example, LinkedIn's Espresso uses HPlatform [31] for cluster management (which in
 
 turn relies on ZooKeeper), implementing a routing tier as shown in Figure 6-8.
 

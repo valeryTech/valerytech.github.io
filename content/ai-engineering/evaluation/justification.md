@@ -50,7 +50,7 @@ The single best article to give the Client team is [The Revenge of the Data Scie
 ## second phase
 
 
-We could consider each anti-pattern as a failure mechanism, not just a rule: what information gets lost, what false inference follows, and what concrete safeguard blocks it. 
+We could consider each anti-pattern as a failure mechanism, not just a rule: what information gets lost, what false inference follows, and what concrete safeguard blocks it.
 
 Once a failure mode exists, the evaluator estimates its prevalence; each failure gets its own evaluator; objective failures should use deterministic checks; LLM judges are for narrow judgment tasks and must be aligned against human labels. That gives us a precise way to explain why the common shortcuts fail.
 

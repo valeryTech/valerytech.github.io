@@ -73,9 +73,7 @@ vendor capability
 ## The problem at the center
 
 
-
 > **People speak as if using AI components is the same thing as knowing how to engineer AI systems.**
-
 
 Calling an API, building a chatbot, connecting tools, or shipping an internal assistant does not by itself show that someone knows:
 
@@ -89,7 +87,7 @@ Calling an API, building a chatbot, connecting tools, or shipping an internal as
 
 And this is why claimed years of experience mean much less to me than they seem to mean to the market.
 
-If someone says they have ten years of AI experience, my question is 
+If someone says they have ten years of AI experience, my question is
 
 > **What kind of reasoning did those years produce?**
 
