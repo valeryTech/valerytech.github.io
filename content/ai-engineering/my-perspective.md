@@ -35,7 +35,7 @@ Putting these pieces in place is not enough. Each of these practices has to acco
 
 Evaluation plays a central role in this engineering system. It combines a technical subsystem with the methods and discipline needed to identify the behaviours and failure modes that matter, translate them into evaluation criteria and representative test cases, and interpret what the evidence supports. Lessons from experimentation and production feed back into evaluation and guide changes to the system.
 
-**Evaluation provides evidence for product and engineering decisions; the surrounding engineering practices provide the means to act on those decisions.** My approach includes both.
+**Evaluation provides evidence for product and engineering decisions; the surrounding engineering practices provide the means to act on those decisions.** My approach includes both.
 
 ## Enabling principles
 
@@ -51,6 +51,8 @@ Evaluation plays a central role in this engineering system. It combines a techni
 
 I'm developing a companion discovery and delivery framework as one way to organise this work. Discovery reduces uncertainty about possible solutions, while delivery takes responsibility for building and operating product behaviour within a committed scope. Both continue as the team learns from experiments, implementation and production use.
 
-The framework uses **solution risk areas**--Value, Usability, Feasibility and Viability--to help identify important assumptions that might otherwise be missed. The **solution utility ladder** makes claims about a solution's usefulness explicit: from basic system behaviour to completing the user's job, improving on the current alternative and producing the intended change.
+I aim to move quickly by shortening the path from an important question to credible evidence and a decision. When time is tight, I choose the smallest useful next step: a quick test for an uncertain choice, or a narrow production release that we can support. Before acting, I make the question, limits and failure response clear enough for that step. The depth of evidence and control reflects the consequences of being wrong, and what we learn informs the next commitment.
+
+The framework uses **solution risk areas** -- Value, Usability, Feasibility and Viability -- to help identify important assumptions that might otherwise be missed. The **solution utility ladder** makes claims about a solution's usefulness explicit: from basic system behaviour to completing the user's job, improving on the current alternative and producing the intended change.
 
 Together, these tools connect what the team learns with decisions about the solution, its scope, architecture and production commitments.

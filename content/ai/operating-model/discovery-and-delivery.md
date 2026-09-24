@@ -29,6 +29,17 @@ For example:
 
 The label matters only when it helps choose the right standard for the work. Discovery still needs controls when it can affect people, data, or production systems. Delivery still needs fast feedback and room to learn.
 
+## Frame before acting, learn after acting
+
+
+The phrase ["ready-fire-aim"](</Users/val/notes-acc/Discovery and exploration/svpg/build-to-learn-faq.md:149>) describes launching changes quickly and hoping useful outcomes follow. That is a poor substitute for knowing which problem a change addresses and what its results would mean. The opposite mistake is treating an initial plan as settled and refusing to revise it when implementation or real use reveals something new.
+
+Before acting, frame the next decision: what problem or outcome matters, which assumption or production obligation is at issue, what evidence could change the decision, and how much exposure the action justifies. A small, reversible test may need only brief framing. A consequential production change needs stronger evidence and clearer operating responsibilities.
+
+Discovery can move quickly through controlled tests of named questions. A test involving real users or systems still needs limits, safeguards, observation, and a way to stop it. Delivery can release a narrow scope while learning from use, but the team must first state what people may rely on within that scope and how it will support and recover the behavior.
+
+The recurring pattern is **frame the decision → act within justified limits → inspect the result → revise the next commitment**. Discovery and delivery differ in the purpose and obligations of the work, not in whether thinking happens before or after action.
+
 ## Use evidence to choose the next commitment
 
 
