@@ -1,7 +1,7 @@
 title = "Systems & Engineering"
 baseurl = "https://valery.tech"
 canonifyURLs = false
-disableAliases = true
+disableAliases = false
 disableHugoGeneratorInject = true
 # disableKinds = ["taxonomy", "term"]
 enableEmoji = true

@@ -115,7 +115,8 @@ The committed manifest uses that pattern for `ai`, `ai-engineering`, and
 `projects`. The AI import currently publishes `ai/approach/`,
 `ai/collab-and-joint-work/`, `ai/design/`, `ai/operating-model/`, and
 `ai/risk-areas/`. The former `ai-engineering/my-perspective.md` page now appears
-under `ai/approach/`.
+under `ai/approach/`. Its source note declares the old URL as a Hugo alias, so
+migration preserves the redirect in the generated page front matter.
 Because the notes subtree has no root `_index.md`, the migration synthesizes
 the required parent landing pages and uses `section_title = "AI"` for the root
 page to preserve the acronym. The Projects import currently publishes only

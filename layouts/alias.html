@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+  </head>
+  <body>
+    <p><a href="{{ .Permalink }}">Continue to {{ .Page.Title }}</a></p>
+  </body>
+</html>

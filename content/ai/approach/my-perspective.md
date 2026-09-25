@@ -1,6 +1,8 @@
 ---
 draft: false
 toc: true
+aliases:
+  - "/ai-engineering/my-perspective/"
 title: "My Perspective"
 linkTitle: "My Perspective"
 ---
