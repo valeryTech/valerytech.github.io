@@ -38,7 +38,7 @@ Before acting, frame the next decision: what problem or outcome matters, which a
 
 Discovery can move quickly through controlled tests of named questions. A test involving real users or systems still needs limits, safeguards, observation, and a way to stop it. Delivery can release a narrow scope while learning from use, but the team must first state what people may rely on within that scope and how it will support and recover the behavior.
 
-The recurring pattern is **frame the decision → act within justified limits → inspect the result → revise the next commitment**. Discovery and delivery differ in the purpose and obligations of the work, not in whether thinking happens before or after action.
+The recurring pattern is **frame the decision -> act within justified limits -> inspect the result -> revise the next commitment**. Discovery and delivery differ in the purpose and obligations of the work, not in whether thinking happens before or after action.
 
 ## Use evidence to choose the next commitment
 

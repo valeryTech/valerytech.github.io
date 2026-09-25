@@ -112,8 +112,10 @@ root_index_source = "_index.md"
 ```
 
 The committed manifest uses that pattern for `ai`, `ai-engineering`, and
-`projects`. The AI import currently publishes `ai/collab-and-joint-work/`,
-`ai/design/`, `ai/operating-model/`, `ai/risk-areas/`, and `ai/review.md`.
+`projects`. The AI import currently publishes `ai/approach/`,
+`ai/collab-and-joint-work/`, `ai/design/`, `ai/operating-model/`, and
+`ai/risk-areas/`. The former `ai-engineering/my-perspective.md` page now appears
+under `ai/approach/`.
 Because the notes subtree has no root `_index.md`, the migration synthesizes
 the required parent landing pages and uses `section_title = "AI"` for the root
 page to preserve the acronym. The Projects import currently publishes only

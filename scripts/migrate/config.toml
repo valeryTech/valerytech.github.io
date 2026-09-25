@@ -34,10 +34,10 @@ target_subtree = "ai"
 section_title = "AI"
 selection_mode = "opt-in"
 selection_paths = [
+  "approach",
   "collab-and-joint-work",
   "design",
   "operating-model",
-  "review.md",
   "risk-areas",
 ]
 include = ["**/*.md", "*.md"]
@@ -48,7 +48,7 @@ source_root_kind = "external"
 source_subtree = "ai-engineering"
 target_subtree = "ai-engineering"
 selection_mode = "opt-in"
-selection_paths = ["coding-agents", "evaluation", "retrieval", "causal-stack", "ambiguity.md", "my-perspective.md", "working-assumptions.md", "approach"]
+selection_paths = ["coding-agents", "evaluation", "retrieval", "causal-stack", "ambiguity.md", "working-assumptions.md", "approach"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 
@@ -56,7 +56,6 @@ root_index_source = "_index.md"
 "working-assumptions" = 1
 "evaluation" = 10
 "retrieval" = 20
-"my-perspective" = 30
 
 [[imports]]
 name = "projects"
