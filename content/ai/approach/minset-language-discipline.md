@@ -7,7 +7,7 @@ linkTitle: "Minset Language Discipline"
 # Language, mindset, and discipline in AI product development
 
 
-I see AI product engineering as a practice that is still taking shape. It brings together knowledge from software engineering, machine learning, experimentation, product development, domain expertise, and operations. We have established knowledge to use in these areas. How we combine it into a dependable way of building AI products still needs examination and development. ([Systems & Engineering](https://valery.tech/ai/approach/align/ "Aligning on AI product engineering | Systems & Engineering"))
+I see AI product engineering as a practice that is still taking shape. It brings together knowledge from software engineering, machine learning, experimentation, product development, domain expertise, and operations. We have established knowledge to use in these areas. How we combine it into a dependable way of building AI products still needs examination and development.
 
 A team can have a clear product goal while needing to investigate whether and how a proposed system can achieve it. The intended outcome can remain stable as the team discovers which implementation works, under which conditions, and with which limits.
 
@@ -16,7 +16,7 @@ There are therefore two things to develop: the product and the practice used to 
 ## When language makes the work sound settled
 
 
-My concern is that people can speak about AI engineering as though the important questions about the practice have already been answered. Familiar titles, tools, and methods can make the remaining work sound like straightforward application. That leaves less room to examine whether the approach itself is adequate for the problem. ([Systems & Engineering](https://valery.tech/ai/approach/align/ "Aligning on AI product engineering | Systems & Engineering"))
+My concern is that people can speak about AI engineering as though the important questions about the practice have already been answered. Familiar titles, tools, and methods can make the remaining work sound like straightforward application. That leaves less room to examine whether the approach itself is adequate for the problem.
 
 Consider a team assigning someone responsibility for evaluation. One person understands the task as maintaining the existing tests and improving their scores. Another understands it as investigating whether those tests capture the required behavior, establishing suitable methods, and using the findings to guide development. Both responsibilities could be described as "owning evaluation," but they involve different work and authority.
 
@@ -29,7 +29,7 @@ I do not expect every statement to be hesitant or overloaded with qualifications
 ## What I mean by a scientific mindset
 
 
-For me, a scientific mindset starts with distinguishing what we have observed from what we assume. It means making our reasoning available for examination, investigating what we do not understand, and being willing to change our conclusions. Honesty about failures and limits is part of that work. ([Systems & Engineering](https://valery.tech/ai/approach/my-perspective/ "My approach to production AI engineering | Systems & Engineering"))
+For me, a scientific mindset starts with distinguishing what we have observed from what we assume. It means making our reasoning available for examination, investigating what we do not understand, and being willing to change our conclusions. Honesty about failures and limits is part of that work.
 
 In practical terms, an uncertain idea should lead to a question we can investigate. What do we expect to happen? Why? What evidence would support that explanation, and what could show that it is wrong? When several explanations or solutions are plausible, we should consider how to distinguish between them. An experiment is useful when its result can improve our understanding or inform a decision.
 
@@ -59,7 +59,7 @@ Discipline means carrying this way of thinking into the work consistently.
 
 When investigating a change, we should preserve enough information to explain the question, what was changed, how the result was judged, what happened, and what we concluded. That lets other people examine the reasoning and lets the team use what it learned in later decisions. Counting experiments tells us little unless we understand what those experiments established.
 
-Evaluation provides practical support for this. Its data, tools, methods, and review practices help people inspect behavior, compare changes, and examine failures. Shared criteria connect those observations to product expectations. The findings can then inform decisions about what to build, change, support, or investigate further. ([Systems & Engineering](https://valery.tech/ai/approach/my-perspective/ "My approach to production AI engineering | Systems & Engineering"))
+Evaluation provides practical support for this. Its data, tools, methods, and review practices help people inspect behavior, compare changes, and examine failures. Shared criteria connect those observations to product expectations. The findings can then inform decisions about what to build, change, support, or investigate further.
 
 The amount of investigation should fit the decision. A familiar, reversible change may need little additional work. A decision with serious consequences, weak evidence, or failures that are difficult to detect deserves more attention. Sometimes a smaller supported release is a reasonable way to proceed while continuing to learn.
 
@@ -70,7 +70,7 @@ The purpose is to make progress with an understood basis for the step being take
 ## What the company must make possible
 
 
-These expectations depend on how the company responds to questions and findings. People need to be able to report failures, acknowledge uncertainty, ask for help, and challenge an explanation. Trust and cooperation make it possible for knowledge from different roles to influence the work. ([Systems & Engineering](https://valery.tech/ai/approach/my-perspective/ "My approach to production AI engineering | Systems & Engineering"))
+These expectations depend on how the company responds to questions and findings. People need to be able to report failures, acknowledge uncertainty, ask for help, and challenge an explanation. Trust and cooperation make it possible for knowledge from different roles to influence the work.
 
 A team may initially lack the methods or understanding it needs. Helping establish them can be part of the engineering contribution. A concrete investigation gives people something to examine together and may also reveal that the proposed solution is larger than necessary. Questions about relevance, frequency, consequences, cost, or alternatives can help clarify the need.
 

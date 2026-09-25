@@ -11,7 +11,7 @@ A company building an AI product needs to decide which approach to pursue, what 
 
 The intended product can be clear while the way to build it remains uncertain. We may know what an assistant should do without knowing which combination of model, instructions, information, tools, and workflow will achieve it across the situations users encounter. Evaluation helps us investigate that relationship between what we build and how it behaves.
 
-Here, evaluation means examining behavior in stated situations and interpreting what the observations tell us. It can help us explore an unfamiliar problem, compare possible solutions, or assess behavior against an agreed expectation. Before calling a result acceptable, we need to explain what we judged and on what basis. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/ai-evaluation-goals/ "Ai Evaluation Goals | Systems & Engineering"))
+Here, evaluation means examining behavior in stated situations and interpreting what the observations tell us. It can help us explore an unfamiliar problem, compare possible solutions, or assess behavior against an agreed expectation. Before calling a result acceptable, we need to explain what we judged and on what basis.
 
 ## What evaluation helps us decide
 
@@ -22,14 +22,14 @@ As the product becomes something people rely on, the questions become more speci
 
 Evaluation also helps develop the capability further. When we change a prompt, a model, retrieval, or a workflow, we need to understand whether the change improves the intended behavior and whether it damages something that already worked. Findings can guide the next change, support a release, or reveal that a different solution is needed.
 
-These questions continue after release. Live use exposes situations and failures that earlier work did not represent. That evidence can change priorities, supported scope, or the approach itself. Investigation and delivery can happen together; releasing a product does not finish the work of understanding it. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/ai-evaluation-goals/ "Ai Evaluation Goals | Systems & Engineering"))
+These questions continue after release. Live use exposes situations and failures that earlier work did not represent. That evidence can change priorities, supported scope, or the approach itself. Investigation and delivery can happen together; releasing a product does not finish the work of understanding it.
 
 ## How this changes the engineering work
 
 
 Consider a hypothetical assistant that drafts customer-support replies using company policies and order information. The goal is to help support agents resolve requests with less effort while avoiding incorrect promises to customers.
 
-Suppose a review finds that routine answers are acceptable, but some drafts miss an important policy exception. The finding gives the team a concrete problem to investigate. Did the system receive the relevant policy? Did it overlook the exception? Was the expected behavior unclear? The answer affects whether the team should change retrieval, instructions, application logic, or the criteria used to judge the draft. Evaluation can expose a mismatch; identifying its cause may require further investigation. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/ai-evaluation-goals/ "Ai Evaluation Goals | Systems & Engineering"))
+Suppose a review finds that routine answers are acceptable, but some drafts miss an important policy exception. The finding gives the team a concrete problem to investigate. Did the system receive the relevant policy? Did it overlook the exception? Was the expected behavior unclear? The answer affects whether the team should change retrieval, instructions, application logic, or the criteria used to judge the draft. Evaluation can expose a mismatch; identifying its cause may require further investigation.
 
 After making a change, the team can compare results on the relevant cases and check whether previously acceptable behavior has deteriorated. The purpose is to understand the effects of the change well enough to decide what to do next.
 
@@ -40,13 +40,13 @@ Evaluation therefore contributes to both understanding the current system and fi
 ## Why this needs a continuing capability
 
 
-The questions recur as the product changes. A team needs to preserve useful cases, compare versions, inspect failures, and bring findings from production into later development. I call the maintained capability for doing this the **evaluation subsystem**. It includes the people, practices, data, and software involved. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/evaluation-subsystem/ "Evaluation Subsystem | Systems & Engineering"))
+The questions recur as the product changes. A team needs to preserve useful cases, compare versions, inspect failures, and bring findings from production into later development. I call the maintained capability for doing this the **evaluation subsystem**. It includes the people, practices, data, and software involved.
 
-To make a result understandable, the team needs enough context to examine it: the input, relevant information and actions, the system version, the observed result, and the reason for the judgment. A reviewer should be able to move from a summary back to the evidence behind it. This is what makes results useful for comparison and investigation. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/evaluation-subsystem/ "Evaluation Subsystem | Systems & Engineering"))
+To make a result understandable, the team needs enough context to examine it: the input, relevant information and actions, the system version, the observed result, and the reason for the judgment. A reviewer should be able to move from a summary back to the evidence behind it. This is what makes results useful for comparison and investigation.
 
 The practice around that evidence is equally important. Engineers and domain experts need to select relevant situations, examine behavior together, and make expectations concrete. For the support assistant, "follows company policy" becomes clearer when people inspect a case where omitting an exception changes the answer. Shared examples and criteria give the team a more precise language for discussing success, failure, and proposed improvements.
 
-This capability also needs maintenance. Cases can become outdated, records can omit necessary information, and automated evaluators can make unreliable judgments. The evaluation subsystem must expose these limits and allow its own methods to be revised. Otherwise, a change in the evaluation may be mistaken for a change in the product. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/evaluation-subsystem/ "Evaluation Subsystem | Systems & Engineering"))
+This capability also needs maintenance. Cases can become outdated, records can omit necessary information, and automated evaluators can make unreliable judgments. The evaluation subsystem must expose these limits and allow its own methods to be revised. Otherwise, a change in the evaluation may be mistaken for a change in the product.
 
 ## What the evidence supports
 
