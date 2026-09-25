@@ -176,6 +176,10 @@ html[data-font-preference="jost"] {
   font-weight: 600;
 }
 
+.section-nav .sidebar-tree > .sidebar-leaf > a {
+  padding-left: 0;
+}
+
 .section-nav a:hover {
   color: var(--bs-primary);
 }
@@ -208,6 +212,10 @@ html[data-font-preference="jost"] {
 }
 
 .section-nav .sidebar-root.active > a::before {
+  left: -0.5rem;
+}
+
+.section-nav .sidebar-tree > .sidebar-leaf.active > a::before {
   left: -0.5rem;
 }
 
