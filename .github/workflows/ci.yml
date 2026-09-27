@@ -19,5 +19,8 @@ jobs:
       - name: Setup site toolchain
         uses: ./.github/actions/setup-site
 
+      - name: Test analytics helpers
+        run: npm run test:analytics
+
       - name: Build production website
         run: bash scripts/build-site.sh --host

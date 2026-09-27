@@ -49,7 +49,20 @@ check_route() {
 }
 
 cd "$ROOT"
+log "Running analytics unit tests"
+docker compose run --rm site npm run test:analytics
+
 bash scripts/build-site.sh
+
+if [[ ! -f "$ROOT/public/404.html" ]]; then
+  fail "Expected the production build to generate public/404.html"
+fi
+
+if ! grep -Fq 'page_kind:"404"' "$ROOT/public/404.html"; then
+  fail "Expected the custom 404 page to include its analytics context"
+fi
+
+log "Verified production 404 output"
 
 if docker compose ps --status running --services | grep -Fxq "site"; then
   WAS_RUNNING=1

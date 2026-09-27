@@ -22,6 +22,11 @@ build_in_container() {
     -e HUGO_ENVIRONMENT=production \
     -e HUGO_ENV=production \
     -e TZ=Etc/UTC \
+    -e HUGOxPARAMSxANALYTICSxPOSTHOGTOKEN \
+    -e HUGOxPARAMSxANALYTICSxPOSTHOGHOST \
+    -e HUGOxPARAMSxANALYTICSxCLARITYID \
+    -e HUGOxPARAMSxANALYTICSxRELEASE \
+    -e HUGOxPARAMSxANALYTICSxSOURCEMAPS \
     site \
     bash scripts/build-site.sh --inside
 }

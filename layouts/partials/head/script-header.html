@@ -23,4 +23,5 @@
   crossorigin="anonymous"
 >
 {{ end }}
-{{ template "_internal/google_analytics.html" . }}
+{{ partial "head/analytics-context.html" . }}
+{{ partial "head/analytics.html" . }}

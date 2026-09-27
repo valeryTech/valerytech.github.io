@@ -7,6 +7,28 @@
 </script>
 {{- end }}
 
+{{- if hugo.IsProduction }}
+  {{- with site.Params.analytics.posthogtoken }}
+    {{- partial "footer/esbuild" (dict
+      "src" "js/analytics/posthog.js"
+      "load" "async"
+      "transpile" false
+      "params" (dict
+        "posthogProjectToken" .
+        "posthogHost" site.Params.analytics.posthoghost
+      )
+    ) }}
+  {{- end }}
+  {{- with site.Params.analytics.clarityid }}
+    {{- partial "footer/esbuild" (dict
+      "src" "js/analytics/clarity.js"
+      "load" "async"
+      "transpile" false
+      "params" (dict "clarityProjectId" .)
+    ) }}
+  {{- end }}
+{{- end }}
+
 {{/* EXAMPLE - only load script for production
 {{ if eq (hugo.Environment) "production" -}}
   {{ partial "footer/esbuild" (dict "src" "js/instantpage.js" "load" "async" "transpile" false) -}}

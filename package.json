@@ -10,14 +10,17 @@
     "dev": "hugo server --disableFastRender --noHTTPCache --renderToMemory --baseURL=http://localhost:1313/",
     "format": "prettier **/** -w -c",
     "build": "hugo --minify --gc --cleanDestinationDir",
+    "test:analytics": "node --test tests/analytics/*.test.mjs",
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "@tabler/icons": "^3.12.0",
     "@thulite/doks-core": "^1.9.3",
     "@thulite/images": "^3.3.4",
     "@thulite/inline-svg": "^1.2.2",
     "@thulite/seo": "^2.4.3",
+    "posthog-js": "^1.434.15",
     "thulite": "^2.6.5"
   },
   "devDependencies": {

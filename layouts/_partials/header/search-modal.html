@@ -8,7 +8,7 @@
           <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
             <label for="query" class="visually-hidden">{{ i18n "search_title" }}</label>
             <div class="d-flex">
-              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="{{ i18n "search_placeholder" }}" aria-label="{{ i18n "search_placeholder" }}" maxlength="128" autocomplete="off">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg ph-no-capture" data-ph-no-autocapture placeholder="{{ i18n "search_placeholder" }}" aria-label="{{ i18n "search_placeholder" }}" maxlength="128" autocomplete="off">
               <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
             </div>
           </form>

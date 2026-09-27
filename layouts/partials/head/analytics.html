@@ -1,0 +1,24 @@
+{{- with site.Config.Services.GoogleAnalytics.ID }}
+  {{- if hugo.IsProduction }}
+    {{- $contentGroup := "other" }}
+    {{- if $.IsHome }}
+      {{- $contentGroup = "home" }}
+    {{- else if $.Section }}
+      {{- $contentGroup = $.Section }}
+    {{- end }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+
+  gtag("js", new Date());
+  gtag("config", {{ . | jsonify | safeJS }}, {
+    content_group: {{ $contentGroup | jsonify | safeJS }}
+  });
+
+  window.siteAnalytics?.subscribe(({ name, parameters }) => {
+    gtag("event", name, parameters);
+  });
+</script>
+  {{- end }}
+{{- end }}

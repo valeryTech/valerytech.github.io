@@ -3,6 +3,16 @@ title = "Systems & Engineering"
 description = "Working notes on software, AI systems, cognition, and human-agent systems."
 images = ["cover.png"]
 
+# Browser analytics. Production builds load each provider only when its public
+# project identifier is present. GitHub Actions supplies these through
+# repository variables; local defaults stay empty to avoid recording dev use.
+[analytics]
+  posthogtoken = ""
+  posthoghost = "https://us.i.posthog.com"
+  clarityid = ""
+  release = "unknown"
+  sourcemaps = false
+
 # mainSections
 mainSections = ["projects", "system-design", "ai-engineering", "ai"]
 
