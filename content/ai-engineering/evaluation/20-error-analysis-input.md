@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "20 Error Analysis"
-linkTitle: "20 Error Analysis"
+title: "20 Error Analysis Input"
+linkTitle: "20 Error Analysis Input"
 ---
 # Failure Understanding: Discovering and Structuring How AI Products Fail
 

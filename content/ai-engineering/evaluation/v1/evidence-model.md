@@ -39,42 +39,6 @@ Measurements, comparisons, and findings
 Decision or next action
 ```
 
-
-This shows dependencies between the objects. It does not require the work to happen once or in this order. New evidence may change the claim, case, capture, criterion, evaluator, or decision.
-
-## Decision or uncertainty
-
-
-Evaluation begins with a question that matters to a decision. Examples include:
-
-- whether a proposed behavior appears possible;
-- whether one candidate behaves better than another;
-- whether the evidence supports a production commitment;
-- whether a change preserves committed behavior;
-- whether a rollout should continue;
-- whether live behavior requires delivery work or renewed discovery.
-
-The question determines which evidence is useful. Evidence gathered for one question may not support another conclusion.
-
-## Bounded behavior claim
-
-
-A **behavior claim** states what the product is expected to do, for whom, and in which situations.
-
-It should identify:
-
-- the users or systems concerned;
-- the situations in which the claim applies;
-- the expected behavior;
-- important limits and failure behavior;
-- the conditions under which the behavior is expected.
-
-During discovery, a claim may be provisional and open to change. When a team is considering or has made a [production commitment]({{< ref "ai/operating-model/production-commitment" >}}), the claim should reflect the behavior and scope for which the team may accept or has accepted responsibility.
-
-A production commitment is not a state of the claim. It is a decision that combines a behavior promise with limits, required conditions, operating obligations, remaining assumptions, and accepted uncertainty.
-
-A claim is not evidence that the behavior occurs. It provides a basis for deciding what to examine and, when appropriate, how to judge the result.
-
 ## Evaluation case
 
 
@@ -240,52 +204,121 @@ Keep these properties separate:
 
 For example, an execution may complete and satisfy its capture contract but still be not judgeable because the criterion requires evidence that the capture contract did not request.
 
-## Failure incident, failure category, operational failure mode, and root cause
+## Failure knowledge and diagnosis
 
 
-These concepts answer different questions.
+The durable concepts form three related paths:
+
+```text
+trace + observation + evaluation basis
+    → failure incident
+    → comparison across incidents
+    → failure category
+    → organized failure taxonomy
+    → failure model with properties, variation, and supported relationships
+
+failure category, or an explicit requirement or risk
+    → select behavior for repeated assessment
+    → operational failure mode → criterion → evaluator → label
+
+failure incident or pattern
+    → cause hypothesis → diagnostic investigation → established root cause
+```
+
+
+These arrows describe possible uses of evidence, not mandatory stages for every evaluation. An anticipated risk may be operationalized before any incident has been observed. A category may remain useful without becoming an operational mode. An incident can be recorded before anyone knows what caused it.
 
 ### Failure incident
 
 
-A **failure incident** is a concrete, evidence-linked instance of unacceptable behavior in one execution.
+A **failure incident** is a concrete, evidence-linked instance of behavior judged unacceptable in one execution under a stated evaluation basis. Record the behavior and its location in the trace, the applicable expectation, and the evidence supporting the judgment. One execution may contain several incidents.
+
+An observation that appears concerning but cannot yet be judged remains an observation and an open question. It should not acquire a failure label solely because it was unexpected.
 
 For an initial whole-case review, it may be useful to record the **first observable failure**: the earliest point at which the trace contains enough evidence to establish a violation. This is a review aid, not a requirement to ignore later failures.
 
 ### Failure category
 
 
-A **failure category** is a reusable analytical description of a pattern of failure. It is usually developed and tested by comparing incidents across executions.
+A **failure category** is a reusable analytical description of a pattern of unacceptable behavior. It is developed and tested by comparing incidents, including cases that challenge a proposed grouping. It describes what the failures have in common and the boundary that distinguishes them from nearby patterns.
 
-A first-failure note is not yet a well-supported category. One incident or a known risk may suggest a provisional category, but comparison with other cases is needed before treating it as a general pattern. The category should have a clear boundary and examples that show where it applies and does not apply.
+A first-failure note is not yet a supported category. One incident may suggest a provisional category, but a claim that the pattern recurs needs comparative evidence. A category should link to supporting incidents, examples at its boundary, and unresolved or contradictory cases. Its definition may also record relevant variation and consequences without claiming to know their cause.
 
-Failure categories may overlap or form a hierarchy.
+Categories should be distinguishable in meaning. They may overlap in an execution or form a hierarchy; a single incident can inform more than one category when the evidence supports it.
+
+### Failure taxonomy
+
+
+A **failure taxonomy** organizes failure categories for a particular product and scope. It records their names, definitions, distinctions, and grouping or hierarchy where useful. It answers which kinds of failure the team has identified and how they are classified.
+
+The taxonomy need not be exhaustive or mutually exclusive. Its coverage and boundaries depend on the situations examined. New incidents can require a category to be added, split, merged, or redefined. Preserve those revisions and the affected evidence links.
+
+### Failure model
+
+
+A **failure model** is the broader, evidence-linked account of how a product fails. It includes the taxonomy and, where supported, the categories' properties and variation, observed conditions, relationships between failures, consequences, boundaries, and supporting or contradictory evidence.
+
+The taxonomy classifies patterns; the model records what has been learned about them. A model may be useful while incomplete. It should distinguish observed sequences and associations from proposed causal explanations. A category, taxonomy, or model does not by itself establish a root cause or a production failure rate.
 
 ### Operational failure mode
 
 
-An **operational failure mode** is one precise failure behavior selected for repeated assessment. It may come from a supported failure category, a known criterion, or an anticipated risk grounded in an explicit evaluation basis. A risk can suggest a mode, but it does not by itself establish that the behavior is unacceptable.
+An **operational failure mode** is a precisely specified failure behavior selected for repeated assessment. It may be derived from a supported failure category or directly from an explicit requirement or anticipated risk grounded in an evaluation basis. It is an operational evaluation object, whether or not a corresponding category has been developed. An anticipated mode does not imply that an incident has occurred or that the behavior has a measured frequency.
 
-Its specification defines the unit, applicability, required evidence, and the criteria for deciding whether the failure is **PRESENT** or **ABSENT**. **NOT APPLICABLE** and **NOT JUDGEABLE** remain separate control states.
+The mode identifies the behavior, unit of assessment, applicability, and evidence needed. A linked **criterion** supplies the decision rule for **PRESENT** or **ABSENT**. **NOT APPLICABLE** means the mode does not apply to the assessed unit; **NOT JUDGEABLE** means it applies but the available evidence cannot support the judgment. The criterion and evaluator should be versioned when judgments are repeated.
 
-Operational modes do not have to be mutually exclusive. Each mode is applied as a separate question, so one execution may have several **PRESENT** labels.
+Selection for repeated assessment does not convert every analytical category into a binary label. State how the mode relates to its source category, especially if it covers only a narrower observable part. Modes need not be mutually exclusive: each poses a separate question, and one execution may have several **PRESENT** labels.
+
+### Cause hypothesis
+
+
+A **cause hypothesis** is a proposed mechanism or condition that might explain an incident or recurring pattern. It should name what evidence would support it, what alternatives remain, and, where possible, what observation or experiment would distinguish them.
+
+A trace may suggest a hypothesis, including when one visible mistake precedes another. Sequence or association alone does not establish that the earlier event caused the later one. Hypotheses belong to diagnosis, not to the definition of a failure category or the result of an operational failure-mode check.
 
 ### Root cause
 
 
-A **root cause** is a mechanism or condition that explains why the failure occurred.
+A **root cause** is a mechanism or condition established by sufficient diagnostic evidence as explaining why an incident or pattern occurred. The scope of that explanation should be stated; several contributing conditions may be involved, and evidence for one incident need not generalize to every member of a category.
 
-A trace may show where behavior first became demonstrably wrong without showing its cause. Root-cause analysis may require reproduction, implementation inspection, diagnostic data, or a separate experiment.
+Establishing a cause may require reproduction, implementation inspection, diagnostic data, intervention, or a separate experiment. Finding the first observable failure locates a point of demonstrated wrong behavior; it does not identify the underlying mechanism.
+
+### Analytical working artifacts
+
+
+The method in [Failure Understanding]({{< ref "ai-engineering/evaluation/v1/20-error-analysis" >}}) may use **initial codes** and **focused codes** to move from concrete incidents to categories. Reviewers may also code a relevant observation before they can judge it; only behavior established as failure under a basis supports a failure category. Codes are revisable working artifacts, not additional durable levels between incident and category in the general evidence model. Preserve their links to the source evidence when they support an important category decision.
+
+### Properties and status
+
+
+Record the workflow stage, affected expectation, consequence, severity, or first-observable position as properties of an incident or category when useful. They are not additional levels in the failure-concept chain. State whether a category is provisional or supported by comparison, whether an operational mode was derived from observed incidents or specified in anticipation, and whether a causal account remains a hypothesis or has diagnostic support. These statuses can change as evidence accumulates.
+
+### Example of the boundaries
+
+
+Suppose a transfer tool is called before the user confirms the transfer, and a product rule requires confirmation first:
+
+| Concept | What it records in this example |
+| --- | --- |
+| Observation | The trace shows the tool call at step 3 and no preceding confirmation in the captured interaction. |
+| Failure incident | The step 3 action violates the stated confirmation rule in this execution, assuming the capture supports that judgment. |
+| Failure category | After comparison with other incidents, **action before required confirmation** describes a recurring pattern and its boundary. |
+| Failure taxonomy | The category may be grouped with other authorization or confirmation failures. |
+| Failure model | The category, observed variations and consequences, contrast cases, and supported relationships are retained together. |
+| Operational failure mode and criterion | The selected mode targets a transfer initiated before confirmation; its criterion specifies the required evidence and rule for assigning `PRESENT` or `ABSENT` to a defined unit. |
+| Cause hypothesis | A proposed explanation, such as a routing step that did not enforce confirmation, remains open until diagnostic evidence tests it. |
+
+The observed tool call and the rule can establish an incident. Comparable evidence is needed to support a recurring category; independent diagnostic work is needed to establish the proposed cause.
 
 ## Reusable parts of evaluation
 
 
-When a judgment will be repeated, preserve these parts:
+Failure incidents, categories, the taxonomy, and the failure model preserve analytical knowledge even when no measurement is planned. When a judgment will be repeated, preserve the appropriate operational parts:
 
 | Artifact | Meaning |
 | --- | --- |
 | Operational failure mode | One precise failure behavior selected for repeated assessment |
-| Criterion | A rule used to judge one part of behavior |
+| Criterion | A decision rule that applies an evaluation basis to evidence for the stated unit; for an operational mode, it defines how the mode is judged |
 | Evaluator | A person, method, or tool that uses a criterion to judge evidence |
 | Raw evaluator result | The direct output produced by one evaluator run |
 | Label | A recorded judgment or evaluator result for a stated unit and criterion, linked to the operational mode when applicable, with its evidence source, provenance, and review status |
@@ -305,20 +338,6 @@ A **decision** states what people responsible for the product choose to do with 
 
 A finding does not make the decision. It also does not establish a root cause merely because it shows a mismatch.
 
-## Traceability
-
-
-An important finding should preserve enough links to answer:
-
-- What question was being answered?
-- Which evaluation basis and version applied, including any behavior claim, production commitment, or product rule?
-- Which situations were represented?
-- Which product and system versions produced the behavior?
-- Which evidence was captured, and under which capture contract?
-- Which operational mode, criterion, and evaluator versions were used?
-- How were labels, measurements, and comparisons produced?
-- What limits and uncertainty remained?
-- Which decision followed?
 
 A useful traceability chain is:
 
@@ -355,41 +374,20 @@ Decision
 
 Not every evaluation needs every artifact. Preserve the links required to understand and reconsider the finding.
 
+For analytical work, retain the path from source traces and incident judgments through category membership and revisions of the taxonomy or failure model. For operational assessment, retain the source and version of the mode and its criterion. For diagnosis, retain the hypotheses, tests, alternatives, and evidence behind any root-cause claim. These paths can be followed separately; they should not be collapsed into the single linear chain above.
+
 ## Core distinctions
 
-```text
-case is not execution
 
-execution is not trajectory
+| Question | Object that answers it | Boundary to preserve |
+| --- | --- | --- |
+| What situation was specified? | Case or sample definition | An execution is one occurrence under particular versions and conditions. |
+| What actually happened? | Trajectory | A trace captures only the available part of that trajectory; an observation states something supported by that trace. |
+| Was the required evidence recorded? | Capture status | Judgeability also depends on the particular criterion and basis. |
+| Was the observed behavior acceptable? | Judgment under an evaluation basis | A failure incident is a concrete judged instance; a verdict on a case does not define a recurring category. |
+| What recurring patterns have we found? | Failure categories, organized in a taxonomy and enriched in a failure model | This analytical knowledge can remain useful without an operational check or a proven cause. |
+| Can a selected behavior be checked repeatedly? | Operational failure mode, criterion, and evaluator | The mode specifies the target behavior; the criterion states the rule; the evaluator applies it and produces a result. |
+| Why did it happen? | Cause hypothesis followed by a supported root-cause account | An observed sequence or recurring category alone cannot establish the mechanism. |
+| What does the evidence mean for the question? | Finding | Measurements and evaluator results are inputs; responsible people make the decision. |
 
-trajectory is not trace
-
-trace is not a complete record of the execution
-
-state is not observation
-
-capture completion is not judgeability
-
-judgeability is not correctness
-
-observation is not judgment
-
-verdict is not failure category
-
-failure category is not operational failure mode
-
-operational failure mode is not root cause
-
-operational failure mode is not criterion
-
-operational failure mode is not evaluator
-
-criterion is not evaluator
-
-evaluator result is not finding
-
-measurement is not decision
-```
-
-
-Preserving these distinctions keeps the strength and limits of evaluation evidence visible.
+These boundaries keep the strength and limits of evaluation evidence visible.

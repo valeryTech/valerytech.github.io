@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Language Mindset Discipline 2"
-linkTitle: "Language Mindset Discipline 2"
+title: "Language Mindset Discipline 1"
+linkTitle: "Language Mindset Discipline 1"
 ---
 # Language, mindset, and discipline in AI product development
 

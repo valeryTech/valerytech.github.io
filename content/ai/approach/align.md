@@ -33,7 +33,7 @@ My concern is that language can make the practice sound more settled than it is.
 
 I expect a scientific mindset in practical terms: distinguish observations from assumptions, investigate consequential questions, and revise conclusions when the evidence calls for it. Shared language helps people understand and challenge the reasoning. Discipline makes this part of everyday work. My own methods must remain open to the same examination.
 
-[Language, mindset, and discipline in AI product development]({{< ref "ai/approach/minset-language-discipline" >}}) explains this position in more detail.
+[Language, mindset, and discipline in AI product development]({{< ref "ai/approach/language-mindset-discipline-0" >}}) explains this position in more detail.
 
 Evaluation is one foundation for that work. It helps us compare approaches, investigate failures, assess changes, and establish what the product can support. A continuing evaluation capability includes people, methods, data, and software, with shared criteria that make results understandable. Those results inform decisions; delivering a useful product also requires user understanding and the engineering needed to act on the findings.
 
