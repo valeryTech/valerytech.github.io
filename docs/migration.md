@@ -113,8 +113,31 @@ root_index_source = "_index.md"
 
 The committed manifest uses that pattern for `ai`, `ai-engineering`, and
 `projects`. The AI import currently publishes `ai/approach/`,
-`ai/collab-and-joint-work/`, `ai/design/`, `ai/operating-model/`, and
-`ai/risk-areas/`. The former `ai-engineering/my-perspective.md` page now appears
+`ai/collab-and-joint-work/`, `ai/design/`, `ai/discovery/`, `ai/methodology/`,
+`ai/methodology-v1.3/`, `ai/operating-model/`, `ai/risk-areas/`, and
+`ai/system-evaluation/`. It also imports two individual files from `ai/var/`:
+`ai-product-types.md` (the seven product archetypes and deployment taxonomy) and
+`practitioner_guide_seven_ai_product_types.md` (the accompanying design,
+evaluation, and estimation guide).
+
+The methodology imports include the developer and instrumentation guides,
+comparison and change-detection methods, slice definitions, and supporting
+rules and specifications. Those methodology pages remain source-note
+migrations. System evaluation is curated in the canonical notes as
+Building and Reviewing Software with AI: product framing, design decisions,
+common development mistakes, the review process, and testing during review.
+Migration publishes those articles without rewriting them. The former
+`generation.md` fragment is
+folded into `code-review.md`, which preserves its old URL as a Hugo alias.
+
+The detailed `ai/design-research/` and legacy `ai/architecture-dsl-like/`
+collections remain outside the allowlist pending a deliberate publication
+sequence. The taxonomy improvement proposal and other `ai/var/` notes are also
+excluded. Links from selected notes do not authorize importing their private
+targets. Keep new selections specific; do not opt in the whole `ai/` or
+`ai/var/` tree to resolve references.
+
+The former `ai-engineering/my-perspective.md` page now appears
 under `ai/approach/`. Its source note declares the old URL as a Hugo alias, so
 migration preserves the redirect in the generated page front matter.
 Because the notes subtree has no root `_index.md`, the migration synthesizes

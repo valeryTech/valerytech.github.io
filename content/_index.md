@@ -1,16 +1,20 @@
 ---
 
 title: Systems & Engineering
-description: Working notes on software engineering, AI systems, cognition, and human-agent systems that can be understood, evaluated, corrected, and trusted.
-lead: Working notes on software, AI systems, cognition, and human-agent systems.
+description: Working notes on software engineering, system design, AI systems, and how people work with them—from design decisions to testing and improvement.
+lead: Working notes on software engineering, AI systems, and how people work with them.
 date: 2023-09-07T16:33:54+02:00
-lastmod: 2026-09-03T00:00:00-03:00
+lastmod: 2026-10-19T00:00:00-03:00
 draft: false
 seo:
   title: Systems & Engineering
   canonical: ""
   robots: ""
 ---
+
+I write about building software and making it work in practice—from understanding a problem and choosing a design to testing behavior and improving the result.
+
+A recurring question is how people, models, and software can work well together: what each should do, how to check the results, and where human judgment is needed. These pages include practical guides, design explorations, and ideas I am still working through.
 
 Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
 
@@ -29,6 +33,14 @@ A small selection of notes and drafts to start with.
   title="Working Assumptions"
   description="The current view behind these notes: scoped intelligence, cheap proposals, evidence-driven selection, and whole-system outcomes."
   href="/ai-engineering/working-assumptions/"
+>}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< link-card
+  title="Exploratory Design Inquiry"
+  description="Working notes on using research, reframing, and prototypes to develop understanding, discover better questions, and explore possible directions."
+  href="/ai/discovery/analysis-or-operation-model/"
 >}}
 {{< /card-grid >}}
 

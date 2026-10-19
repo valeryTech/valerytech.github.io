@@ -46,7 +46,7 @@ Many of these are:
 - **not deterministic**,
 - **not stable over time**.
 
-Therefore, your evaluation/test system must intentionally do some of what compilers and type systems do in classical stacks: **force explicitness**.
+Therefore, the evaluation/test system must intentionally do some of what compilers and type systems do in classical stacks: **force explicitness**.
 
 ## 2. First principles: why a test set exists in LLM systems
 
@@ -68,7 +68,7 @@ LLM systems add two structural realities:
 1. **Distributional behavior**
     Many outcomes are not binary; there are multiple acceptable responses and correctness is often empirical.
 2. **Moving dependencies**
-    Even if your code doesn't change, behavior can shift due to:
+    Even if the code doesn't change, behavior can shift due to:
 - model/provider updates,
 - index refreshes,
 - corpus drift,
@@ -77,10 +77,10 @@ LLM systems add two structural realities:
 
 **Engineering objective:** convert change into **controlled learning** rather than uncontrolled risk.
 
-## 3) "Foreseeing qualities" (the architectural properties you want)
+## 3) "Foreseeing qualities" (the target architectural properties)
 
 
-These are the properties your system should have _after_ you build a strong evaluation/test regime. The test system's job is to make these qualities the path of least resistance.
+These are the properties the system should have _after_ establishing a strong evaluation/test regime. The test system's job is to make these qualities the path of least resistance.
 
 ### Q1. Modularity and explicit boundaries
 
@@ -98,7 +98,7 @@ Each subsystem has a clear responsibility and interface:
 ### Q2. Replayability (reproducible debugging)
 
 
-Given a failure, you can replay the run with pinned versions and reproduce the issue.
+A failed run can be replayed with pinned versions to reproduce the issue.
 
 ### Q3. Contractual interfaces (schema + semantics)
 
@@ -162,7 +162,7 @@ The operating pattern is:
 
 If a property is not gated or measured, it will not reliably shape architecture.
 
-## 5. The quality contract model (what you enforce)
+## 5. The quality contract model (the enforced properties)
 
 
 A robust LLM test system should be organized around a **quality contract** with three components:
@@ -280,7 +280,7 @@ The pyramid is not just about test types; it is an architecture enforcement plan
 - redaction correctness
 - retry budget logic correctness
 
-**Pressure outcome:** you cannot hide logic in a monolith; you must implement clean interfaces.
+**Pressure outcome:** the design must expose clean interfaces instead of hiding logic in a monolith.
 
 ### L2 -- Invariant validator plane (contract enforcement pressure)
 
@@ -325,7 +325,7 @@ RAG contracts:
 - no unsupported claims (for routes requiring strict grounding)
 - retrieval query constraints (if generated): tenant/language filters
 
-**Pressure outcome:** you must implement dependency injection, schema versioning, and replay artifacts.
+**Pressure outcome:** the design requires dependency injection, schema versioning, and replay artifacts.
 
 ### L4 -- Hermetic scenario integration (wiring pressure)
 
@@ -358,7 +358,7 @@ Requires seeded sandbox tenants, pinned index versions, sandbox tools.
 
 **Pressure outcome:** forces observability, lineage metadata, and a disciplined incident-to-regression process.
 
-## 8. The required artifacts that tests force you to build
+## 8. Required artifacts imposed by tests
 
 ### 8.1 Run manifest (lineage metadata)
 
@@ -374,7 +374,7 @@ Every run should record:
 - slice definition
 - budgets (latency/cost/retries)
 
-**Pressure effect:** you can't "ship without knowing what you shipped."
+**Pressure effect:** releases require an explicit record of their contents.
 
 ### 8.2 Replay packet (minimum reproducible record)
 
@@ -508,7 +508,7 @@ Cases must be:
 
 **Refactor:** schema versioning, compatibility windows, dual-read/dual-write patterns where appropriate.
 
-## 11. A step-by-step build plan (if you were to implement this)
+## 11. A step-by-step implementation plan
 
 ### Phase 1: Define the contract + evidence schema
 

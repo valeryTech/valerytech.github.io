@@ -7,11 +7,11 @@ aliases:
 linkTitle: "AI Evaluation"
 ---
 
-The main job of evaluation is to help us see what an AI product actually does in situations that matter. We run or watch the product, record what happens, and use what we learn to make product decisions.
+Evaluation establishes what an AI product actually does in situations that matter. Teams run or observe the product, record what happens, and use the findings to make product decisions.
 
-Product behavior includes the answers people see, the tools and data the product uses, the actions it takes, and the changes it makes. When we call behavior right or wrong, we need a clear rule or expectation for that judgment.
+Product behavior includes the answers people see, the tools and data the product uses, the actions it takes, and the changes it makes. Judging behavior as right or wrong requires a clear rule or expectation.
 
-Evaluation never shows everything the product could do. Running a test case shows what happened in the conditions we tested. Reviewing a production sample shows what happened for the users and time period included in that sample. Tests, evaluators, and scores help us inspect and summarize behavior. They are tools, not the goal.
+Evaluation never shows everything the product could do. Running a test case shows what happened in the tested conditions. Reviewing a production sample shows what happened for the users and time period included in that sample. Tests, evaluators, and scores support the inspection and summarization of behavior. They are tools, not the goal.
 
 ## Start with the question
 
@@ -62,7 +62,7 @@ The **evaluation framework** explains:
 - which behavior matters and in which situations;
 - what the team needs to record;
 - how it will judge what happened;
-- what the result can and cannot tell us;
+- what the result can and cannot establish;
 - how the result will help with a decision.
 
 The **evaluation subsystem** is the people, practices, data, and software used to produce, inspect, judge, compare, and preserve evidence. It includes cases, samples, execution tools, traces, storage, criteria, evaluators, human review, versioning, comparison, and production observation.

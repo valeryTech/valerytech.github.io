@@ -37,8 +37,16 @@ selection_paths = [
   "approach",
   "collab-and-joint-work",
   "design",
+  "discovery",
+  "methodology",
+  "methodology-v1.3",
   "operating-model",
   "risk-areas",
+  "system-evaluation",
+  # Publish the taxonomy and guide without importing the rest of var/.
+  "var/ai-product-types.md",
+  "var/practitioner_guide_seven_ai_product_types.md",
+  # Detailed design-research and architecture-dsl-like notes remain private.
 ]
 include = ["**/*.md", "*.md"]
 

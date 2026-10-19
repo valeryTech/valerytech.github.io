@@ -17,7 +17,7 @@ That can be acceptable for throwaway scripts, experiments, migration helpers, or
 
 So the principle could be:
 
-> **Do not let the agent produce core system complexity faster than you can understand, review, and explain it.**
+> **Do not let the agent produce core system complexity faster than its maintainers can understand, review, and explain it.**
 
 Or more sharply:
 
@@ -33,4 +33,4 @@ A useful distinction:
 |Evaluation harness|Understand what is being measured and what is not|
 |Agent/RAG reasoning pipeline|Understand data flow, retrieval assumptions, ranking/eval logic, and semantic failure modes|
 
-The key problem from your notes is that agents make it cheap to add code but not cheap to preserve understanding. That means technical debt is no longer just "bad design over time"; it becomes **unreviewed complexity accumulating at machine speed**.
+Agents make adding code cheap without making the preservation of understanding equally cheap. That means technical debt is no longer just "bad design over time"; it becomes **unreviewed complexity accumulating at machine speed**.

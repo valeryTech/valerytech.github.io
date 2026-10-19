@@ -147,6 +147,6 @@ A practical rubric can evaluate project idiosyncrasy along five dimensions.
 |Architectural regularity|Similar problems are solved similarly|Similar problems are solved differently|
 |Validation clarity|Relevant tests and checks are easy to identify|It is unclear how to verify a change|
 
-Then you could say:
+A concise formulation is:
 
 > A target system is agent-ready to the extent that it scores well on structural predictability, naming consistency, workflow explicitness, architectural regularity, and validation clarity.

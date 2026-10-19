@@ -11,7 +11,7 @@ linkTitle: "Conceptualization"
 
 This document explains the wider system in which AI evaluation works. It connects product intent, behavior produced by an AI system, a question that needs evidence, and the evaluation work used to address that question.
 
-> **Evaluation shows us how the product actually behaves in defined situations, so teams can make better product decisions.**
+> **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
 
 It is the source model for the more detailed evaluation documents. It helps check whether the evaluation framework and evaluation subsystem have the right goals, boundaries, and capabilities. It is not a required sequence of project stages.
 

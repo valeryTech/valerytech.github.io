@@ -14,22 +14,22 @@ _A practical principle for designing, building, and operating AI products_
 
 An AI product is more than a model. Its behavior comes from the complete system: model, prompts, context, data, retrieval, tools, application code, policies, and runtime state.
 
-We can often define the product clearly upfront:
+The product can often be defined clearly upfront:
 
 - the job it should do;
-- the capability we want to deliver;
-- the users and situations we want to support;
+- the intended capability;
+- the target users and situations;
 - the quality bar;
-- the failures we cannot accept;
+- the unacceptable failures;
 - the cost, latency, and safety constraints.
 
-What we usually cannot determine from architecture, code, prompts, and model choice alone is how reliably the complete product will meet that bar across the cases it will actually encounter.
+What usually cannot be determined from architecture, code, prompts, and model choice alone is how reliably the complete product will meet that bar across the cases it will actually encounter.
 
-Normal software checks remain necessary. They tell us whether the system is wired correctly and whether hard safeguards are enforced. But they are not enough to tell us whether the AI product works well.
+Normal software checks remain necessary. They establish whether the system is wired correctly and whether hard safeguards are enforced. But they are not enough to establish whether the AI product works well.
 
-For that, we need evals.
+Evaluations provide that behavioral evidence.
 
-> **Code tells us whether we built the mechanisms and safeguards correctly. Evals tell us how the complete product actually behaves.**
+> **Code checks establish whether mechanisms and safeguards are implemented correctly. Evals show how the complete product actually behaves.**
 
 In practice, AI engineering means:
 
@@ -69,7 +69,7 @@ Experiments may improve how those properties are implemented, but they do not ne
 
 The uncertainty is narrower:
 
-> **Can the system meet the required quality bar, across the cases that matter, using the models, data, tools, and workflow available to us?**
+> **Can the system meet the required quality bar, across the cases that matter, using the models, data, tools, and workflow available to the team?**
 
 And, when it cannot yet meet the bar:
 
@@ -82,7 +82,7 @@ That is why AI delivery needs a stronger measurement and iteration loop. The des
 
 For every important product requirement, ask three questions.
 
-### 1. Can we guarantee it in code?
+### 1. Can code guarantee it?
 
 
 Some requirements should not depend on the model behaving correctly.
@@ -100,7 +100,7 @@ Examples:
 
 These properties can be established through architecture, code review, deterministic tests, permissions, and runtime controls.
 
-### 2. Do we need to test it with evals?
+### 2. Does it require evals?
 
 
 Other requirements depend on how the complete system behaves across different cases.
@@ -119,7 +119,7 @@ Examples:
 
 These properties cannot usually be guaranteed by inspecting the implementation. They have to be tested by running the product.
 
-### 3. What do we do when confidence is not high enough?
+### 3. What action follows when confidence is insufficient?
 
 
 Some residual risk remains even after good engineering and evaluation.
@@ -301,7 +301,7 @@ define the job and quality bar
 
 This is not a replacement for product discovery, UX design, implementation, security, adoption work, or normal software delivery.
 
-It is the loop that tells us whether the AI capability is becoming good enough to support those delivery decisions. The original engineering note similarly places instrumentation, evaluation, failure inspection, regression testing, release controls, and monitoring inside the delivery cycle.
+It is the loop that establishes whether the AI capability is becoming good enough to support those delivery decisions. The original engineering note similarly places instrumentation, evaluation, failure inspection, regression testing, release controls, and monitoring inside the delivery cycle.
 
 ## How to use this throughout delivery
 
@@ -361,16 +361,16 @@ A useful experiment record can remain lightweight:
 
 ```text
 Question:
-What are we trying to learn?
+What needs to be learned?
 
 Baseline:
 How does the current version perform?
 
 Change:
-What are we changing?
+What is being changed?
 
 Cases and measures:
-How will we judge the result?
+How will the result be judged?
 
 Result:
 What improved, regressed, or stayed unchanged?
@@ -508,7 +508,7 @@ For supported English-language account-security tickets:
 - a ticket identified as compromised must never reach the automatic close operation;
 - p95 processing time must remain below eight seconds.
 
-### Guarantee what we can in code
+### Guarantee enforceable properties in code
 
 
 Code review and deterministic tests establish that:

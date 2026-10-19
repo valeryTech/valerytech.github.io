@@ -11,13 +11,13 @@ linkTitle: "Evidence Model"
 
 This document defines the main objects used in AI evaluation and the claims that can be made from them.
 
-> **Evaluation shows us how the product actually behaves in defined situations, so teams can make better product decisions.**
+> **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
 
 It is not a delivery process. The same objects can be used while exploring a possible solution, building and operating a production solution, or reviewing live behavior.
 
 The central distinction is simple:
 
-> **An execution is one time the product runs. Its trajectory is everything that happens during that run. A trace is the information recorded about it, and may not include everything. Evaluation uses that record to understand the behavior and, when a clear rule exists, judge it.**
+> **An execution is one time the product runs. Its trajectory is everything that happens during that run. A trace is the information recorded about it, and may not include everything. Evaluation uses that record to understand and judge the behavior.**
 
 A useful high-level relationship is:
 
@@ -155,20 +155,6 @@ For example, a user may see a confirmation message while the evaluator can also 
 The origin and visibility of evidence are therefore part of the trace.
 
 ## Evaluation basis
-
-
-The **evaluation basis** is the stated reason for judging behavior in a particular way.
-
-It may draw from:
-
-- a provisional behavior claim;
-- an active or proposed production commitment;
-- case-specific expectations;
-- product rules or invariants;
-- safety, policy, or domain requirements;
-- an approved comparison standard.
-
-Evaluation should not silently invent product intent. If the basis is missing, ambiguous, or inconsistent, the result may be an open question rather than a pass or fail.
 
 ## Judgment
 
@@ -338,7 +324,6 @@ A **decision** states what people responsible for the product choose to do with 
 
 A finding does not make the decision. It also does not establish a root cause merely because it shows a mismatch.
 
-
 A useful traceability chain is:
 
 ```text
@@ -385,7 +370,7 @@ For analytical work, retain the path from source traces and incident judgments t
 | What actually happened? | Trajectory | A trace captures only the available part of that trajectory; an observation states something supported by that trace. |
 | Was the required evidence recorded? | Capture status | Judgeability also depends on the particular criterion and basis. |
 | Was the observed behavior acceptable? | Judgment under an evaluation basis | A failure incident is a concrete judged instance; a verdict on a case does not define a recurring category. |
-| What recurring patterns have we found? | Failure categories, organized in a taxonomy and enriched in a failure model | This analytical knowledge can remain useful without an operational check or a proven cause. |
+| What recurring patterns were found? | Failure categories, organized in a taxonomy and enriched in a failure model | This analytical knowledge can remain useful without an operational check or a proven cause. |
 | Can a selected behavior be checked repeatedly? | Operational failure mode, criterion, and evaluator | The mode specifies the target behavior; the criterion states the rule; the evaluator applies it and produces a result. |
 | Why did it happen? | Cause hypothesis followed by a supported root-cause account | An observed sequence or recurring category alone cannot establish the mechanism. |
 | What does the evidence mean for the question? | Finding | Measurements and evaluator results are inputs; responsible people make the decision. |

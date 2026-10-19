@@ -19,7 +19,7 @@ When suitable real user inputs are available, they should be the primary source.
 
 In early-stage applications, real user inputs and traces are often sparse. Synthetic inputs may then be used to fill important gaps, but they should be generated systematically. Simply asking an LLM to produce a list of user queries commonly results in generic, repetitive examples that do not reflect realistic usage patterns.
 
-We therefore need a structured process for building a representative set of user inputs. The process should produce evaluation cases that are diverse, realistic, grounded in the system, and allocated according to product importance and risk.
+A structured process is therefore needed to build a representative set of user inputs. The process should produce evaluation cases that are diverse, realistic, grounded in the system, and allocated according to product importance and risk.
 
 ## Steps
 
@@ -63,7 +63,7 @@ When direct evidence about likely failures is limited, begin with distinctions i
 ### 2. Construct and review tuples
 
 
-Once we've defined our dimensions, we create structured combinations of them.
+After defining dimensions, create structured combinations of them.
 
 Tuples provide a structured description of the intended interaction before a specific user input or executable evaluation case is created. They are a representation mechanism, not an independent source of coverage obligations. Manual construction and LLM-assisted expansion help explore the query space, while human review determines which tuples are approved.
 
@@ -162,7 +162,7 @@ Real input
 
 After the combinations have been reviewed and approved, generate the actual message a user might send for each one.
 
-You could use LLM for it cause they especially good at it. An LLM prompt should explain:
+An LLM can assist with generating candidate inputs. Its prompt should explain:
 
 - what the system does;
 - the approved tuple;

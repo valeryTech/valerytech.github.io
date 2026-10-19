@@ -13,7 +13,7 @@ It includes people and operating practices as well as software. A script that ru
 
 Its main goal is:
 
-> **Evaluation shows us how the product actually behaves in defined situations, so we can make better product decisions.**
+> **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
 
 The subsystem makes this possible by recording, organizing, and helping people inspect what happened. It also saves useful cases, criteria, and findings for later evaluations.
 

@@ -222,7 +222,7 @@ Persistent design memory, project rules, feedforward guidance, and architecture-
 ### Harness-mediated worlds
 
 
-The earlier intuition that "the world of coding agents is extremely different across cases" is fundamentally right. A coding agent's world is not a fixed physical environment; it is partly **constructed by the harness**.
+Coding-agent environments differ substantially across cases. A coding agent's world is not a fixed physical environment; it is partly **constructed by the harness**.
 
 One harness may expose raw files, shell, logs, and runtime dashboards. Another may expose only summarised resources. One may allow ephemeral web search; another may prohibit it but provide managed memory files. One may return long tool payloads; another may aggressively truncate.
 
@@ -269,7 +269,7 @@ The most important benchmark-design lesson is to **separate stage errors**. Repo
 ### 1. Salience modelling
 
 
-Current systems mostly use heuristic retrieval, ranking, or summarisation. We still lack a robust, task-general theory of which observations should survive into the model's active context, especially under long-horizon coding work. Existing long-context studies show that more tokens are not enough; what matters is whether the right tokens are made salient in the right representation and position.[^lost-middle][^longbench][^ruler][^nolima]
+Current systems mostly use heuristic retrieval, ranking, or summarisation. The field still lacks a robust, task-general theory of which observations should survive into the model's active context, especially under long-horizon coding work. Existing long-context studies show that more tokens are not enough; what matters is whether the right tokens are made salient in the right representation and position.[^lost-middle][^longbench][^ruler][^nolima]
 
 ### 2. Faithful compression
 

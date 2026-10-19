@@ -1,8 +1,12 @@
 ---
 draft: false
 toc: true
-title: "to review"
-linkTitle: "to review"
+title: "Evidence for Coding Agents in Production Engineering"
+linkTitle: "Evidence for Coding Agents in Production Engineering"
+---
+# Evidence for coding-agent use in production engineering
+
+
 ---
 
 > Current coding agents have clearly improved at producing locally correct code. There is still weak evidence that they can autonomously perform the full production software-engineering job.
@@ -16,25 +20,25 @@ A useful decomposition is:
 3. **Production software engineering** -- make the right change under incomplete requirements while preserving architecture, operability, security, maintainability, and future team velocity.
 4. **System ownership** -- operate it for months, debug incidents, evolve requirements, migrate dependencies, pay down mistakes, and explain why the system is built that way.
 
-We have increasingly strong evidence for 1 and 2.
+The evidence summarized here is stronger for code generation and bounded repository tasks.
 
-I don't see strong evidence that 3 and 4 are solved.
+It does not establish that autonomous production engineering and system ownership are solved.
 
 And benchmarks systematically collapse those distinctions.
 
 For example, a 2025 study modified SWE-bench tasks to make prompts resemble the much less complete requests developers actually give coding assistants. Performance for some models dropped by more than 50% relative to the formal benchmark prompts. ([arXiv](https://arxiv.org/abs/2510.08996?utm_source=chatgpt.com "Saving SWE-Bench: A Benchmark Mutation Approach for Realistic Agent Evaluation"))
 
-Even the benchmark makers are struggling with validity. OpenAI stopped treating SWE-bench Verified as useful for frontier comparison because of contamination and flawed tests, and in July 2026 reported that roughly 30% of SWE-bench Pro tasks appeared broken. Those are vendor findings, so I wouldn't use them as capability evidence, but they're useful evidence that benchmark scores need substantial qualification. ([OpenAI](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/?utm_source=chatgpt.com "Why SWE-bench Verified no longer measures frontier coding capabilities | OpenAI"))
+Even the benchmark makers are struggling with validity. OpenAI stopped treating SWE-bench Verified as useful for frontier comparison because of contamination and flawed tests, and in July 2026 reported that roughly 30% of SWE-bench Pro tasks appeared broken. Those vendor findings concern benchmark validity; they should not be treated as direct evidence of agent capability. ([OpenAI](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/?utm_source=chatgpt.com "Why SWE-bench Verified no longer measures frontier coding capabilities | OpenAI"))
 
-METR gives us another useful reality check. Their controlled 2025 experiment had experienced developers working on repositories they already knew; access to AI made them 19% slower, while the developers believed it had made them faster. Their 2026 follow-up suggests newer tools probably improved productivity, but METR explicitly says selection effects made the new estimate unreliable. ([Metr](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/?utm_source=chatgpt.com "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity - METR"))
+METR provides another comparison. Their controlled 2025 experiment had experienced developers working on repositories they already knew; access to AI made them 19% slower, while the developers believed it had made them faster. Their 2026 follow-up suggests newer tools probably improved productivity, but METR explicitly says selection effects made the new estimate unreliable. ([Metr](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/?utm_source=chatgpt.com "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity - METR"))
 
 That "felt faster / wasn't faster" discrepancy is exactly why anecdotes from enthusiastic engineers need discounting.
 
-At the same time, I would also push back on the strongest anti-AI version of the argument. There isn't good evidence that AI-assisted code is universally unmaintainable garbage. A preregistered 2026 experiment with 151 participants, 95% professional developers, found no significant downstream maintainability or code-quality difference between code originally produced with and without AI assistance. AI-assisted participants also completed the initial task substantially faster. ([Springer](https://link.springer.com/article/10.1007/s10664-026-10889-1?utm_source=chatgpt.com "Echoes of AI: Investigating the downstream effects of AI assistants on software maintainability | Empirical Software Engineering | Springer Nature Link"))
+The strongest negative generalization also exceeds the evidence. There isn't good evidence that AI-assisted code is universally unmaintainable garbage. A preregistered 2026 experiment with 151 participants, 95% professional developers, found no significant downstream maintainability or code-quality difference between code originally produced with and without AI assistance. AI-assisted participants also completed the initial task substantially faster. ([Springer](https://link.springer.com/article/10.1007/s10664-026-10889-1?utm_source=chatgpt.com "Echoes of AI: Investigating the downstream effects of AI assistants on software maintainability | Empirical Software Engineering | Springer Nature Link"))
 
-So our methodology has to be adversarial in **both directions**.
+The methodology should challenge claims in **both directions**.
 
-The stronger test I'd use is something like a **production engineering test**:
+A **production engineering test** should address:
 
 |Question|Why it matters|
 |---|---|
@@ -60,7 +64,7 @@ From the perspective of a production team, several unresolved questions remain:
 ```text
 Who understands these 15,000 lines?
 
-Did it introduce a second abstraction for something we already had?
+Did it duplicate an existing abstraction?
 
 Did it encode assumptions nobody noticed?
 
@@ -80,28 +84,24 @@ For prototypes, generating lots of code cheaply can be extremely valuable. The c
 
 For production systems, every line becomes a liability somebody may need to understand, test, secure, migrate, monitor and eventually delete. The value function changes completely.
 
-So I would add an explicit filter to our source methodology:
+A useful source-selection criterion follows:
 
 > **Does the speaker's evidence come from generating software, or from owning software after it was generated?**
 
-That is probably one of the most useful anti-hype distinctions we can make.
+This distinguishes initial code generation from sustained engineering outcomes.
 
-Someone saying "we shipped an agent-built application in two days" is providing weak evidence.
+A report of shipping an agent-built application in two days provides weak evidence about sustained production ownership.
 
-Someone saying:
+A twelve-month account of agent contributions, including defect rates, rollback rates, review time, change-failure rate, incident load, code churn, and team handover results, provides more relevant production evidence.
 
-> "We let agents contribute to this service for 12 months. Here are defect rates, rollback rates, review time, change-failure rate, incident load, code churn and the results when another team inherited it."
+The examples reviewed here contain less longitudinal ownership evidence than initial delivery evidence.
 
-would get my full attention.
-
-And I currently see far less of the second category than the first.
-
-## high signal(?)
+## Practitioner case studies
 
 
-After looking specifically for people who pass the filter, **Mitchell Hashimoto is probably the best current match**. **Daniel Stenberg is the best counterweight from long-lived production software.**
+**Mitchell Hashimoto** provides an inspectable case of agent-assisted implementation. **Daniel Stenberg** provides a complementary perspective from long-lived production software.
 
-The important caveat: no individual engineer gives us "strong evidence" for an industry-wide claim. A practitioner gives a case study. What makes these two useful is that their case studies expose the artifacts and failure modes instead of asking us to trust their impressions.
+The important caveat: no individual engineer establishes an industry-wide claim. A practitioner gives a case study. What makes these two useful is that their case studies expose the artifacts and failure modes rather than relying solely on impressions.
 
 ### Mitchell Hashimoto
 
@@ -121,7 +121,7 @@ During development:
 - when the agent produces code he doesn't understand, he backs it out;
 - the final result gets a thorough manual review before merge. ([Mitchell Hashimoto](https://mitchellh.com/writing/non-trivial-vibing?utm_source=chatgpt.com "Vibing a Non-Trivial Ghostty Feature - Mitchell Hashimoto"))
 
-That is almost exactly the distinction we've been discussing.
+The case illustrates the distinction between generating code and retaining engineering ownership.
 
 The interesting part isn't that "AI wrote a production feature." The process was approximately:
 
@@ -154,7 +154,7 @@ His February 2026 "AI Adoption Journey" is even more useful for methodology. Whe
 
 He then gradually identified task classes where agents were predictable enough to delegate. He explicitly says part of becoming effective was learning **when not to use an agent**, because sending an agent into a task it will probably fail at wastes time. ([Mitchell Hashimoto](https://mitchellh.com/writing/my-ai-adoption-journey?utm_source=chatgpt.com "My AI Adoption Journey - Mitchell Hashimoto"))
 
-That's much closer to the methodology you're asking for.
+This supports task-specific evaluation against manual work.
 
 His "harness engineering" idea is also grounded in this practice. It isn't "agents need an amazing orchestration platform." It's basically:
 
@@ -173,7 +173,7 @@ repeat
 
 For example, tests, screenshot tooling, repository instructions, commands and other deterministic checks. ([Mitchell Hashimoto](https://mitchellh.com/writing/my-ai-adoption-journey?utm_source=chatgpt.com "My AI Adoption Journey - Mitchell Hashimoto"))
 
-I would put him at:
+The case can be assessed against the source-selection criteria:
 
 |Criterion|Assessment|
 |---|---|
@@ -196,11 +196,11 @@ I would put him at:
 ### Daniel Stenberg
 
 
-For the other half of the question, I think **Daniel Stenberg may be even more valuable**.
+**Daniel Stenberg** contributes evidence about the maintenance costs of generated code.
 
 He has maintained curl for decades. This gives him a perspective that almost every coding-agent discussion lacks: **the cost of code after it has been merged**.
 
-His June 2026 post "A human in control" makes almost exactly the software-engineering argument we've been circling.
+His June 2026 post "A human in control" emphasizes long-term maintenance and human ownership.
 
 His reasoning is that writing the initial code isn't the main problem in curl. Maintaining and polishing that code over decades is. Human review does more than find syntax errors: it preserves architecture, established design choices and maintainer understanding of how the system behaves. ([daniel.haxx.se](https://daniel.haxx.se/blog/2026/06/10/a-human-in-control/?utm_source=chatgpt.com "A human in control | daniel.haxx.se"))
 
@@ -244,22 +244,10 @@ That evolution is useful. He's updating his view based on observed outputs.
 
 [Read: A human in control](https://daniel.haxx.se/blog/2026/06/10/a-human-in-control/?utm_source=chatgpt.com)
 
-### What I think these two actually establish
+### What these cases support
 
 
-They make me modify the claims we discussed.
-
-I would **not** now say:
-
-> Coding-agent output is generally production-quality.
-
-There isn't evidence for that.
-
-I also wouldn't say:
-
-> Coding-agent output is generally an over-engineered pile of crap.
-
-We don't have good enough evidence for that generalization either.
+Neither case establishes that coding-agent output is generally production-quality or generally unmaintainable. Both broad generalizations require stronger evidence.
 
 The evidence supports something narrower:
 
@@ -273,9 +261,9 @@ Hashimoto demonstrates the first proposition from the inside: he successfully sh
 
 Stenberg demonstrates the second from the other end: decades of production ownership make initial code production only one small part of the engineering problem.
 
-That pair is much stronger evidence for me than fifty AI Engineer conference talks.
+The cases are useful because they expose concrete work, interventions, and ownership constraints.
 
-And there's one thing I particularly like about putting **Hashimoto + Stenberg together**: they don't even need to agree about how heavily AI should be used. Their observations converge on the same constraint:
+**Hashimoto and Stenberg** need not agree on the extent of agent use for their observations to converge on the same constraint:
 
 ```text
 Generating code

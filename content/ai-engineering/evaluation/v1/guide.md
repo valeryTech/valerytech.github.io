@@ -7,7 +7,7 @@ linkTitle: "Guide"
 # AI Evaluation Guide
 
 
-> **Evaluation shows us how the product actually behaves in defined situations, so teams can make better product decisions.**
+> **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
 
 Start with [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}) for the overall model.
 
@@ -32,7 +32,7 @@ The documents follow one reasoning chain:
 ```text
 question that matters
         ↓
-behavior we need to see and any rule for judging it
+the required behavior and any rule for judging it
         ↓
 situations to test or production runs to sample
         ↓

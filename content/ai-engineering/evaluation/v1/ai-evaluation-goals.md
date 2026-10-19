@@ -9,9 +9,9 @@ linkTitle: "Ai Evaluation Goals"
 ## Purpose
 
 
-> **Evaluation shows us how the product actually behaves in defined situations, so we can make better product decisions.**
+> **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
 
-We cannot know how an AI product will behave from its specification or implementation alone. Behavior can change with the input, product state, model, prompt, tools, data, and operating conditions. Live use also reveals situations that pre-release work does not cover.
+An AI product's specification or implementation alone cannot establish its behavior. Behavior can change with the input, product state, model, prompt, tools, data, and operating conditions. Live use also reveals situations that pre-release work does not cover.
 
 Seeing what happened once is not enough on its own. It becomes part of an evaluation when the team uses it to answer a named question. The team can explore before it has a stable behavior claim or criterion, but it needs a clear rule or expectation before calling behavior acceptable. A number or score also needs an explanation before it can help with a decision.
 

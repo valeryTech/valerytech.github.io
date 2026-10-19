@@ -39,11 +39,11 @@ don't automate, augment
 
 In practice, it looks like this:
 
-> "Let's tweak the prompt and see if it feels better."
+> Prompt changes judged only by whether the result feels better.
 > "Try GPT-4.1 instead of this model."
 > "Add more context to the RAG prompt."
 > "The output looks good on these three examples, so ship it."
-> "Users say it's worse, but we don't know exactly why."
+> Reports of worse user experience without evidence explaining the cause.
 
 The problem is not experimentation. Experimentation is necessary in AI development. The problem is **uncontrolled experimentation**: no baseline, no test set, no defined success metric, no versioning, and no repeatable way to know whether a change improved the system or just made a few examples look better.
 
@@ -74,7 +74,7 @@ or, more precise:
 ## System Assumptions and Constraints
 
 
-To design an effective experimentation infrastructure, we must explicitly bound the system with the following operational realities. These follow from [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}}) and the broader [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}) in the causal stack.
+To design an effective experimentation infrastructure, the system must be explicitly bounded with the following operational realities. These follow from [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}}) and the broader [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}) in the causal stack.
 
 - **Non-Determinism:** Foundational models introduce inherent stochasticity. System design assumes exact output replication is rarely guaranteed; reproducibility focuses on replicating the _distribution_ of outcomes and exact state configurations. This is part of the behavioral variability described in [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}}).
 - **Eval-Driven Bottlenecks:** Ground-truth evaluations often require human-in-the-loop (HITL) review. Automated proxy metrics (e.g., LLM-as-a-judge) operate under the constraint of imperfect alignment with human preference, which is why teams need [evaluation harnesses]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) and an evaluation [platform layer]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}}) rather than one-off checks.
@@ -85,7 +85,7 @@ To design an effective experimentation infrastructure, we must explicitly bound 
 # Connections
 
 
-- [[ebse]] - Empirical Software Engineering
+- [Ebse]({{< ref "ai/methodology/ebse" >}}) - Empirical Software Engineering
 - [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}})
 - [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}})
@@ -120,7 +120,7 @@ So experimentation is needed to answer questions like:
 - Does adding a tool improve task completion or just add latency?
 - Does fine-tuning improve the target behavior or overfit?
 
-You cannot reliably infer these answers from architecture diagrams.
+Architecture diagrams alone cannot reliably establish these answers.
 
 ### 2. Requirements are often underspecified
 
@@ -148,9 +148,9 @@ Example: a more cautious AI assistant may reduce hallucinations but also become 
 ### 3. Offline metrics are not enough
 
 
-You can evaluate a model on benchmarks or test sets, but production behavior often differs.
+Model behavior on benchmarks or test sets often differs from production behavior.
 
-Offline evaluation may tell you:
+Offline evaluation may establish:
 
 > "Model A has higher accuracy than Model B."
 
@@ -228,7 +228,7 @@ AI safety properties require continuous testing:
 - Does it mishandle private documents?
 - Does it degrade under adversarial input?
 
-These are empirical questions. You need red-teaming, adversarial testing, staged rollouts, monitoring, and regression suites.
+These are empirical questions. Answering them requires red-teaming, adversarial testing, staged rollouts, monitoring, and regression suites.
 
 ### 9. User value is not always aligned with model metrics
 

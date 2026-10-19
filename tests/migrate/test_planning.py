@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 from textwrap import dedent
 import unittest
@@ -109,6 +110,55 @@ class PlanningTests(unittest.TestCase):
         config = load_config(self.workspace.config_path)
         with self.assertRaises(MigrationFailed):
             build_migration_plan(config, make_run(self.workspace).roots)
+
+    def test_public_ai_import_keeps_design_research_private(self) -> None:
+        manifest = Path(__file__).resolve().parents[2] / "scripts/migrate/config.toml"
+        config = load_config(manifest)
+        ai_rule = next(rule for rule in config.imports if rule.name == "ai")
+        config = replace(config, imports=(ai_rule,))
+        import_root = self.workspace.source_root / "ai"
+
+        # Materialize the manifest's selections without requiring external notes.
+        for selection in ai_rule.selection_paths:
+            path = import_root / selection
+            if path.suffix == ".md":
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("# Public note\n", encoding="utf-8")
+            else:
+                path.mkdir(parents=True, exist_ok=True)
+
+        public_notes = {
+            "var/ai-product-types.md",
+            "var/practitioner_guide_seven_ai_product_types.md",
+            "system-evaluation/review-flow-specification.md",
+            "methodology/ebse.md",
+            "methodology-v1.3/usage/ai-systems-framework-developer-guide-v1.md",
+            "methodology-v1.3/change-detection-v1.2.md",
+            "methodology-v1.3/slices-definition-v1.1.md",
+        }
+        private_notes = {
+            "design-research/00-index.md",
+            "design-research/03-language-and-compiler/private-mechanism.md",
+            "architecture-dsl-like/research-direction.md",
+            "var/ai-product-types-improvement-proposal.md",
+            "var/reuse.md",
+        }
+        for relative in public_notes | private_notes:
+            path = import_root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("# Note\n", encoding="utf-8")
+
+        # A public source may refer to research without selecting it for publication.
+        (import_root / "var/ai-product-types.md").write_text(
+            "# Product archetypes\n\n"
+            "[Research](../design-research/03-language-and-compiler/private-mechanism.md)\n",
+            encoding="utf-8",
+        )
+        plan = build_migration_plan(config, make_run(self.workspace).roots)
+        selected = {note.source_rel_import.as_posix() for note in plan.notes}
+
+        self.assertTrue(public_notes <= selected)
+        self.assertTrue(private_notes.isdisjoint(selected))
 
     def test_synthetic_index_frontmatter_accepts_title_override(self) -> None:
         config = load_config(self.workspace.config_path)

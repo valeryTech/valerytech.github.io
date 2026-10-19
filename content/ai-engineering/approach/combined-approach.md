@@ -35,7 +35,7 @@ also:
 
 What is a system?
 
-A structured approach to solving problems that guide how we think about and tackle challenges in the context of building an AI product:
+A structured problem-solving approach guides reasoning and action when building an AI product:
 
 1. A framework for evaluating different technologies and tools
 2. A decision-making process for prioritizing development efforts

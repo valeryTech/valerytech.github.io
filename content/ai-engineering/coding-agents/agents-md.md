@@ -20,7 +20,7 @@ This creates a project specifics onboarding problem. A human developer gradually
 
 So:
 
-> Our job as users in this user-project-agent system is to improve the context flow: make project-specific knowledge easier for the agent to find, trust, and apply.
+> The user's role in the user-project-agent system is to improve the context flow: make project-specific knowledge easier for the agent to find, trust, and apply.
 
 And `AGENTS.md` is one of the tools for improving this context flow.
 
@@ -52,7 +52,7 @@ A good `AGENTS.md` reduces repeated human steering. It makes the repository more
 
 Before designing `AGENTS.md`, it helps to make the operating model explicit.
 
-We are designing for modern coding agents -- Codex, Claude Code, Cursor-style agents, and similar systems -- that already have strong generic engineering knowledge, tool use, default policies, and learned conventions.
+The target is modern coding agents -- Codex, Claude Code, Cursor-style agents, and similar systems -- that already have strong generic engineering knowledge, tool use, default policies, and learned conventions.
 
 The following assumptions explain what `AGENTS.md` can usefully influence.
 
@@ -113,7 +113,7 @@ The first version should usually contain only:
 - where the canonical docs live;
 - any hard constraints that are already known and broadly relevant.
 
-A minimal first version is better than a comprehensive one because it lets you observe where the agent actually struggles.
+A minimal first version is better than a comprehensive one because it makes actual agent difficulties easier to observe.
 
 Examples:
 
@@ -182,11 +182,11 @@ Do not add modules because they sound useful. Add them because the agent repeate
 
 Before adding a module, ask:
 
-1. What failure mode did we observe?
+1. What failure mode was observed?
 2. Is the failure recurring or costly?
 3. Can the instruction be stated in a few lines?
 4. Is it stable enough to belong in root `AGENTS.md`?
-5. Can we tell whether the instruction helped?
+5. Can the instruction's effect be assessed?
 6. Would a test, lint rule, script, or canonical doc be better?
 
 If the module cannot pass this test, do not add it yet.
