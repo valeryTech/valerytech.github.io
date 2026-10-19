@@ -4,10 +4,10 @@ toc: true
 title: "Reframing"
 linkTitle: "Reframing"
 ---
-# Beyond RAG: Task-to-Context Alignment
+# Beyond RAG: Context-to-Task Alignment
 
 
-Goal: We should stop treating RAG as the architecture and instead treat it as one pattern within task-to-context systems.
+Goal: We should stop treating RAG as the architecture and instead treat it as one pattern within context-augmented task systems.
 
 Retrieval-Augmented Generation is a useful research framing, but it is increasingly the wrong product framing. In production AI systems, the hard problem often sits upstream of generation:  determining what the user is trying to accomplish, what external knowledge or state is needed, how that context should be constructed, and what operation should be performed.
 
@@ -18,12 +18,14 @@ RAG is not sufficient as a product architecture. It is one implementation patter
 
 The original 2020 RAG paper was useful, but narrow: it framed RAG as combining a pretrained seq2seq generator with non-parametric memory retrieved from a dense index, mainly to improve knowledge-intensive language generation and factuality. That is a model-centric NLP framing, not a full AI product framing.
 
-## Task-To-Context Alignment
+## Context-to-Task Alignment
 
 
-The broader problem behind RAG is **task-to-context alignment**. A user does not simply provide a query that needs documents; they express, often incompletely, a task they are trying to accomplish. The system must translate that task into a working context: the evidence, state, constraints, tools, representations, and verification signals required to produce a correct outcome. Retrieval is one way to acquire that context. Generation is one way to present the result. Neither is the full architecture.
+The broader problem behind RAG is **context-to-task alignment**: constructing and adapting working context to satisfy the requirements of the user's task. A user does not simply provide a query that needs documents; they express, often incompletely, a task they are trying to accomplish. The system must interpret that task, derive its context requirements, and assemble the evidence, state, constraints, tools, representations, and verification signals required to produce a correct outcome. Retrieval is one way to acquire that context. Generation is one way to present the result. Neither is the full architecture.
 
-In this framing, retrieval engineering becomes a subproblem of task-to-context alignment. Its role is representation alignment: matching the user's task-shaped information need to the corpus representations most likely to expose the right evidence.
+The name describes the direction of fit: context is aligned to the task. The design process still proceeds from task interpretation to context requirements and context assembly. That task → context sequence describes how context is derived; context-to-task alignment describes what the resulting context must satisfy. As an inquiry develops, evidence can revise the task interpretation and require a context update.
+
+In this framing, retrieval engineering becomes a subproblem of context-to-task alignment. Its role is representation alignment: matching the user's task-shaped information need to the corpus representations most likely to expose the right evidence.
 
 ## Problems
 
@@ -178,7 +180,7 @@ Thus, the core responsibilities of an IR engineer are:
 
 This gives us a simple lens for analyzing retrieval systems: every system can be understood by how it predicts intent, how it represents data, and how it aligns the two at query time.
 
-This three-part lens -- intent, representation, and matching -- provides a practical way to analyze retrieval systems within the broader task-to-context architecture. It shifts retrieval engineering away from tool choice and toward the design of representations and routing strategies that expose the evidence required for task success.
+This three-part lens -- intent, representation, and matching -- provides a practical way to analyze retrieval systems within the broader context-to-task alignment framework. It shifts retrieval engineering away from tool choice and toward the design of representations and routing strategies that expose the evidence required for task success.
 
 ## (Possible) Factors in Retrieval System Design
 

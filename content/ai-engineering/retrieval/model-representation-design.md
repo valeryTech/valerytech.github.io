@@ -4,684 +4,165 @@ toc: true
 title: "Model Representation Design"
 linkTitle: "Model Representation Design"
 ---
+# Representation Design for Task-Relevant Retrieval
 
-| Task need                                       | Useful representation                                         |
-| ----------------------------------------------- | ------------------------------------------------------------- |
-| Find exact term or identifier                   | lexical index, keyword field, exact-match metadata            |
-| Find semantically related policy or explanation | dense vector representation, hybrid search                    |
-| Find a person, product, account, or project     | entity index, normalized metadata                             |
-| Answer from tables                              | table objects, extracted rows, schema-aware search            |
-| Traverse relationships                          | graph representation                                          |
-| Verify authority                                | source metadata, ownership, approval status, policy hierarchy |
-| Check freshness                                 | timestamps, version fields, update history                    |
-| Cite evidence                                   | passage-level chunks with provenance                          |
-| Summarize large documents                       | section summaries, document outline, hierarchical chunks      |
 
-A stronger framing would be:
+Representation design determines what aspects of source material become searchable and how a match can be recovered as usable source material. It starts with the information needs of a class of tasks and the limitations of the available sources.
 
-> **Representation Design is the process of deriving searchable access surfaces from source material so that different task-shaped information needs can reach the right evidence.**
+A **retrieval representation** is a searchable view: a passage, normalized field, embedding, summary, generated question, table object, or relationship linked to the material it represents. Its usefulness depends on the access it enables, the information it loses or adds, and the reliability of source recovery.
 
-The user request is not the retrieval query; the system first derives a task context requirement, then matches that requirement against searchable representations. Your current docs already point toward this with "chunks, summaries, entities, metadata, tables, synthetic questions, relationships, or structured fields," but the section can make this a design method rather than a list.
+This is one contribution to [context-to-task alignment]({{< ref "ai-engineering/retrieval/model" >}}). A successful match still needs interpretation, selection, and assessment before it can support a downstream operation. The [contract note]({{< ref "ai-engineering/retrieval/conceptual-alignment" >}}) separates those responsibilities, and [retrieval design]({{< ref "ai-engineering/retrieval/retrieval-design" >}}) describes how to compare candidate methods.
 
-## A more systematic model
+## Start with a task family and an access problem
 
 
-I would structure Representation Design around **what latent structure we want to expose**.
+Corpus design usually supports recurring task families. Runtime retrieval chooses among available representations for the current requirement; it need not derive a new corpus model for every request.
 
-Raw corpus material contains many things that are not directly searchable:
+Begin with concrete scenarios. What would count as useful material? Where does it occur? What prevents the existing access method from finding or interpreting it? Useful difficulties include unfamiliar vocabulary, exact identifiers, table structure, dispersed evidence, missing qualifiers, and conflicting versions.
 
-```text
-terms
-meanings
-entities
-claims
-facts
-definitions
-examples
-rules
-exceptions
-tables
-relationships
-events
-versions
-authority signals
-freshness signals
-procedures
-user-question affordances
-```
+The user request, context requirement, and retrieval query have different roles but can contain identical text. An identifier can already be a suitable lookup query. A vague inquiry may need clarification, alternative queries, or inspection before its useful distinctions are known.
 
+A practical design sequence is:
 
-A representation makes one or more of these searchable.
+1. Describe the task family and the evidence or observations it needs.
+2. Identify the source units and relationships that contain that material.
+3. State the access failure in the current baseline.
+4. Propose the smallest view or access change that could address it.
+5. Specify what the view preserves, transforms, omits, or generates.
+6. Define matching, filtering, and source-recovery behavior.
+7. Compare the candidate with the baseline using reviewed cases and whole-task outcomes.
 
-So instead of asking:
+Generating more representations is a hypothesis about a particular access problem. It introduces preparation, synchronization, routing, and review costs. Retain a new view when its contribution justifies those costs.
 
-> What representations can we generate?
+## Describe a representation along independent dimensions
 
-ask:
 
-> What kind of access does the task require, and what latent structure must be made explicit for that access to work?
+A catalogue can mix units, transformations, matching methods, and quality metadata as if they were interchangeable choices. Separate those dimensions when specifying a design.
 
-That gives you a derivation framework.
+| Dimension | Design question | Examples |
+| --- | --- | --- |
+| Source unit | What original material is represented? | Paragraph, section, table row, code function, record, image region. |
+| Exposed content or relationship | What should become accessible? | Identifier, definition, claim, exception, entity, dependency, event, change. |
+| Transformation | How is the view derived? | Segmentation, extraction, normalization, summarization, generation, linking, annotation. |
+| Search encoding and access | How will the interface match or restrict it? | Exact field lookup, lexical terms, vector matching, structured filters, graph traversal. |
+| Applicability metadata | What determines whether it can be used here? | Source revision, effective date, owner, approval status, access conditions. |
+| Source recovery | How does a match lead to material that can be inspected? | Stable resource key, revision and span, parent section, table headers, transformation record. |
+| Intended use | What operation should this access support? | Discovery, verification, comparison, extraction, calculation, navigation. |
 
-## Representation families we can derive
+These dimensions can be combined. A section summary can be searched lexically or through embeddings. A normalized identifier can occur in both a record and a passage. Authority metadata can constrain several views without becoming a separate semantic matching method.
 
-### 1. Source-preserving representations
+Confidence is an attributed judgment with a method and target, rather than an intrinsic property that makes a source trustworthy. Likewise, provenance establishes origin and transformations; governing authority needs its own task-specific basis.
 
+## Separate matching units from interpretation units
 
-These keep the source close to its original form. They are useful when the system needs grounded evidence, citations, or exact context.
 
-Examples:
+Several units can participate in one retrieval route:
 
-```text
-document chunks
-section-level chunks
-paragraph passages
-sentence-level evidence units
-code blocks
-table objects
-figure/image regions
-page-level units
-document outline nodes
-```
+| Unit | Role |
+| --- | --- |
+| Source unit | The original material and its location. |
+| Encoding context | The exact input used to compute a representation, including added headings or surrounding text. |
+| Retrieval representation | The searchable view that participates in matching. |
+| Retrieval hit | A result of one run, with its query, route, rank, and score. |
+| Reading unit | Original material shown or supplied to interpret the match. |
+| Working-context unit | Material selected for a particular downstream operation. |
 
+A generated question can locate a paragraph. A sentence can locate a section. A row may need its table headers and units to be interpreted. A word-level match may use vectors computed with surrounding text. The displayed unit and the encoding input therefore need not be identical.
 
-These are not just "chunks." The unit should reflect the evidence shape. A legal clause, a table row, a troubleshooting step, and a code function should not necessarily be represented with the same chunking strategy.
+Preserve those relationships. Expanding a hit should retain its original locator and identify the added material. A structural paragraph or token-bounded chunk is a boundary choice; semantic matching does not establish that the boundary preserves all meaning required by the task.
 
-Use when the task requires:
+## Candidate views by information need
 
-```text
-citation
-grounding
-close reading
-answering from source text
-exact reference
-evidence inspection
-```
 
-### 2. Lexical and identifier representations
+The following are options to investigate, rather than a required set of indexes or an exhaustive taxonomy.
 
+| Information need | Candidate view or access change | Important preservation question |
+| --- | --- | --- |
+| Exact term, identifier, or error code | Original terms, identifier field, aliases, acronym map | Does normalization preserve exactness and distinguish different identifiers? |
+| Concept or paraphrased explanation | Passage or section encoding, lexical expansion, generated access questions | Can the match be recovered from original material, including its qualifications? |
+| Broad discovery or navigation | Section summary, topic view, document outline | Does an abstraction conceal exceptions or disagreement? |
+| Entity lookup and aggregation | Normalized entities, canonical identifiers, alias relationships | Are uncertain identities and conflicting aliases distinguishable? |
+| Claim comparison and verification | Extracted assertions linked to source spans and qualifiers | Is the assertion presented as an extraction rather than an established fact? |
+| Rules, exceptions, and eligibility | Condition, obligation, deadline, and exception fields | Are scope, modality, exceptions, and source revision retained? |
+| Document scope and surrounding meaning | Heading paths, parent-child links, adjacency, footnotes | Can the relevant parent context and referenced material be recovered? |
+| Table or numeric reasoning | Table, row, schema, cell, and unit views | Are headers, units, missing values, and provenance preserved? |
+| Dependencies and relationships | Entity, citation, ownership, or dependency links | What supports each relationship and what direction does it have? |
+| Time, versions, and change | Effective dates, revision lineage, events, diffs, supersession links | Is observation time distinguished from the time a statement applies? |
+| Authority and conflicting material | Approval metadata, source hierarchy, disagreement links | What makes a source governing for this task, and what remains unresolved? |
+| Procedures and workflow guidance | Steps, preconditions, decision points, fallback paths | Does the view preserve ordering and conditions without implying permission to execute? |
 
-These expose exact language and exact identifiers.
+A single source can support several views, and one view can serve several needs. An extracted rule can carry temporal metadata, belong to a document hierarchy, and be found through both terms and vectors.
 
-Examples:
+## Define the view's contract
 
-```text
-keyword index
-n-gram index
-identifier index
-SKU / account / ticket / policy ID fields
-quoted phrase index
-acronym expansion index
-synonym dictionary
-domain vocabulary map
-```
 
+Before indexing a derived view, specify enough information to understand its behavior and maintain it:
 
-This matters because semantic search often weakens exactness. A task such as "find policy SEC-17B" or "where is this error code mentioned?" should not rely only on embeddings.
+| Contract element | What to record |
+| --- | --- |
+| Source binding | Resource identity, observed revision or snapshot, and extent where applicable. |
+| Transformation | Method, relevant configuration, and which material was copied, normalized, inferred, or generated. |
+| Encoding input | Actual text or data used, including augmentation, truncation, and surrounding context. |
+| Matching interface | Query form, searchable fields, filters, ranking method, and result limits. |
+| Source recovery | How a hit resolves to its original occurrence and suitable reading context. |
+| Applicability | Freshness, authority, and access metadata required for the intended use. |
+| Synchronization | What source or method changes require rebuilding or invalidating derived state. |
+| Known limitations | Lost structure, ambiguous mappings, unsupported inputs, or coverage gaps. |
 
-Use when the task requires:
+These can be ordinary records or configuration fields. The contract does not require a separate service for each view.
 
-```text
-exact match
-known-item lookup
-identifier search
-error-code search
-legal or policy term matching
-auditability
-```
+Generated questions, summaries, claims, and links can help discovery while introducing errors. Keep their generated content separate from original wording. A question about a deadline does not establish the deadline; an extracted policy condition does not settle which revision governs. Correction of an access view should not alter the identity of the original source.
 
-### 3. Semantic representations
+If exact source recovery is unavailable, expose the limitation and restrict the claims the view supports. Approximate document association is different from a verified span suitable for exact citation.
 
+## Three illustrative designs
 
-These expose meaning rather than surface wording.
+### Exact identifier lookup
 
-Examples:
 
-```text
-dense embeddings of passages
-dense embeddings of sections
-hybrid lexical-semantic representations
-concept embeddings
-domain-adapted embeddings
-task-specific embeddings
-```
+The user asks for `SEC-17B`. The current need is to locate that policy, rather than infer a broader topic. A baseline can query an identifier field or the literal source text using the request unchanged.
 
+Check identifier variants, collisions, missing records, permissions, and applicable revisions. Add alias normalization only if real cases justify it. A result with a similar title is not an exact identifier match, and semantic expansion is not inherently useful for this task.
 
-These are useful when the user does not know the corpus vocabulary. They are weaker when authority, exactness, versioning, or structured constraints matter.
+### Concept discovery across notes
 
-Use when the task requires:
 
-```text
-conceptual discovery
-approximate matching
-policy/explanation lookup
-finding related cases
-matching user language to domain language
-```
+The user asks what their notes contain about DSLs. Literal search can find explicit mentions; useful passages may also discuss language design without that acronym. A candidate semantic route or generated access questions can be compared with the literal baseline.
 
-### 4. Summary and abstraction representations
+Recover original paragraphs and surrounding sections so the user can inspect meaning. Preserve the route that found each occurrence. Compare unique useful material, missed passages, mistaken associations, and review effort. The discovery task may finish with a navigable collection and open questions, without synthesis.
 
+### Comparison across policy revisions
 
-This is where summaries belong, but they should be treated as one family among several.
 
-Examples:
+The user wants to understand how a requirement changed. The access problem includes locating the correct revisions, recovering clauses and exceptions, and preserving applicability dates.
 
-```text
-section summaries
-document summaries
-hierarchical summaries
-topic summaries
-decision summaries
-change summaries
-exception summaries
-scope summaries
-```
+A candidate design can combine revision metadata, original sections, structural links, and a change view. A summary may help navigation but should not replace the clauses needed for comparison. Assess whether the chosen versions apply, whether apparent differences reflect changed wording or changed obligations, and whether qualifications survive assembly.
 
+These examples motivate different combinations. They do not show that one representation family is generally superior.
 
-There are also different abstraction levels:
+## Route, combine, and recover
 
-```text
-surface summary: what this section says
-conceptual summary: what idea this section represents
-operational summary: what the user can do with it
-evidentiary summary: what claim this section supports
-```
 
+Independent acquisition through several views can expose material absent from another route. Rescoring an existing candidate pool can change its order or selection but cannot recover source items outside that pool unless the operation also performs new acquisition.
 
-This is important: a summary is not just compression. It is a new access surface. It lets retrieval hit the **gist**, **scope**, or **role**of a source unit when the original wording is too detailed or too noisy.
+When combining routes, preserve query, representation version, score meaning, and source identity. Equal source occurrences can share a collection entry while retaining several routes. Contained and partially overlapping occurrences need explicit relationships; text equality alone does not identify an occurrence.
 
-Use when the task requires:
+Raw scores from different methods should not be treated as comparable relevance probabilities without a justified combination method. Ranking, source-word attribution, filtering, review judgment, and visual emphasis are separate contracts. A convincing highlight is not evidence that the match is useful for the task.
 
-```text
-broad discovery
-large-document navigation
-high-level comparison
-routing to relevant sections
-context compression
-```
+## Evaluate representation choices
 
-### 5. Synthetic demand-side representations
 
+Evaluation assets support design; they are not another family of runtime source representations. Keep task scenarios, reviewed relevance judgments, expected evidence, hard negatives, and failure cases separate from the material they evaluate. Whether they are searchable for an engineering task is a separate use case.
 
-Instead of only representing what the document says, generate representations of **how users might look for it**.
+A useful comparison asks:
 
-Examples:
+- Does the view recover reviewed useful material that the baseline misses?
+- What useful material does it omit or obscure?
+- Can each match be traced to the intended source occurrence and interpreted correctly?
+- Do required metadata, qualifiers, and access constraints survive the route?
+- Does the resulting working context help the downstream task under comparable budgets?
+- What preparation, synchronization, latency, and human review costs does the view add?
 
-```text
-synthetic questions
-sample user queries
-FAQ-style access points
-hypothetical search intents
-query paraphrases
-problem statements this passage could answer
-task descriptions supported by this source
-```
+Hold source snapshots, scenarios, and relevant limits comparable when attributing differences to a representation. Separate cases used to invent the method from cases used to challenge it. Include changes and failures: stale indexes, repeated text, ambiguous aliases, missing table headers, generated errors, and sources that do not cover the need.
 
-
-This is a major category because user language and source language often diverge. Your own draft says raw corpus material is rarely searchable in the representation users need; source material is stored in one form, while users search through their own vocabulary, task context, and implicit intent.
-
-Use when the task requires:
-
-```text
-matching user phrasing to source material
-supporting vague or underspecified queries
-bridging novice language to expert corpus language
-retrieving answers from documents that do not phrase things as questions
-```
-
-
-Example:
-
-```text
-Source text:
-"Employees may submit reimbursement requests within 30 days of travel completion."
-
-Derived synthetic queries:
-- "How long do I have to submit travel expenses?"
-- "Can I still file a reimbursement after my trip?"
-- "What is the deadline for expense claims?"
-```
-
-### 6. Entity and normalized-record representations
-
-
-These expose entities that appear inside documents but are not necessarily searchable as first-class objects.
-
-Examples:
-
-```text
-people
-organizations
-products
-projects
-customers
-accounts
-systems
-locations
-policies
-teams
-repositories
-tickets
-normalized aliases
-canonical IDs
-entity profiles
-```
-
-
-This is useful when retrieval should find "the thing" rather than merely passages mentioning the thing.
-
-Use when the task requires:
-
-```text
-find a person, account, project, product, or system
-resolve aliases
-join across documents
-filter by entity
-aggregate evidence around one entity
-```
-
-### 7. Claim, fact, and assertion representations
-
-
-Documents often contain atomic claims embedded in prose. Extracting them creates a representation suitable for verification, comparison, and contradiction detection.
-
-Examples:
-
-```text
-atomic claims
-fact triples
-claim + evidence span
-claim + qualifier
-claim + date
-claim + source
-claim + confidence
-claim + contradicting claims
-```
-
-
-Use when the task requires:
-
-```text
-fact verification
-answer grounding
-citation
-conflict detection
-claim comparison
-audit
-```
-
-
-This is different from summarization. A summary compresses a section. A claim representation decomposes it into checkable assertions.
-
-### 8. Rule, policy, and constraint representations
-
-
-Some corpora contain rules rather than facts. Policies, contracts, product requirements, compliance docs, and SOPs often need this treatment.
-
-Examples:
-
-```text
-rule objects
-condition-action structures
-eligibility criteria
-exceptions
-obligations
-prohibitions
-permissions
-thresholds
-deadlines
-approval requirements
-```
-
-
-Use when the task requires:
-
-```text
-determine whether something is allowed
-apply a policy
-check compliance
-identify exceptions
-explain a decision
-```
-
-
-Example representation:
-
-```text
-Rule:
-Employees may submit reimbursement requests within 30 days of travel completion.
-
-Derived fields:
-- actor: employee
-- action: submit reimbursement request
-- condition: travel completed
-- deadline: 30 days after completion
-- modality: permitted
-```
-
-### 9. Structural representations
-
-
-These expose document organization and internal layout.
-
-Examples:
-
-```text
-document tree
-section hierarchy
-heading path
-table of contents
-parent-child chunk links
-adjacent-section links
-appendix links
-footnote links
-cross-references
-```
-
-
-Use when the task requires:
-
-```text
-navigate a large document
-retrieve context around a passage
-understand scope
-avoid isolated chunk errors
-recover parent section meaning
-```
-
-
-This is especially important because chunk retrieval often loses hierarchy. A passage may only make sense under its parent heading.
-
-### 10. Table, schema, and row representations
-
-
-Tables should not be treated as plain text if the task requires row/column reasoning.
-
-Examples:
-
-```text
-table object
-row object
-column schema
-cell-level representation
-table summary
-table provenance
-numeric field extraction
-schema-aware index
-```
-
-
-Use when the task requires:
-
-```text
-answer from tables
-compare values
-filter rows
-aggregate fields
-extract structured data
-perform calculations
-```
-
-### 11. Relationship and graph representations
-
-
-These expose connections.
-
-Examples:
-
-```text
-entity graph
-document citation graph
-policy dependency graph
-product-component graph
-ownership graph
-workflow graph
-system dependency graph
-concept graph
-```
-
-
-Use when the task requires:
-
-```text
-traverse relationships
-answer dependency questions
-understand ownership
-connect evidence across sources
-perform impact analysis
-```
-
-
-Your draft already identifies graph traversal as a possible retrieval mechanism and graph structure as a corpus representation, but this can be elevated into a full representation family.
-
-### 12. Temporal and version representations
-
-
-These expose time, freshness, lineage, and change.
-
-Examples:
-
-```text
-created_at
-updated_at
-effective_date
-expiration_date
-version number
-document lineage
-supersedes / superseded_by links
-change summaries
-diff representations
-temporal event records
-```
-
-
-Use when the task requires:
-
-```text
-freshness
-latest policy
-compare versions
-historical reconstruction
-change analysis
-avoid stale answers
-```
-
-
-This matters because many retrieval failures come from selecting stale or duplicated material, not from generation failure.
-
-### 13. Authority, provenance, and trust representations
-
-
-These expose whether a source should be trusted.
-
-Examples:
-
-```text
-source owner
-approval status
-policy hierarchy
-source type
-canonicality
-citation metadata
-provenance chain
-access permissions
-review status
-confidence score
-```
-
-
-Use when the task requires:
-
-```text
-verify authority
-choose between conflicting sources
-cite evidence
-respect permissions
-support auditability
-```
-
-
-This connects directly to your broader context model: acquired context may be stale, conflicting, unauthorized, or only partially relevant, so selection and structuring must preserve signals needed for trust.
-
-### 14. Contradiction and conflict representations
-
-
-These are derived representations that make disagreement searchable.
-
-Examples:
-
-```text
-conflicting claims
-duplicate-but-different passages
-outdated-vs-current pairs
-policy exception pairs
-source disagreement clusters
-```
-
-
-Use when the task requires:
-
-```text
-compare evidence
-verify answer consistency
-detect stale content
-surface uncertainty
-resolve conflicting sources
-```
-
-
-This is useful for enterprise corpora where contradictions are normal.
-
-### 15. Procedural and workflow representations
-
-
-Many documents encode procedures, not just knowledge.
-
-Examples:
-
-```text
-step sequences
-preconditions
-postconditions
-decision points
-required inputs
-required approvals
-fallback paths
-tool/API actions
-workflow state transitions
-```
-
-
-Use when the task requires:
-
-```text
-complete a process
-troubleshoot
-execute a workflow
-guide a user through steps
-determine next action
-```
-
-
-This links representation design to task completion rather than answer generation.
-
-### 16. Evaluation and test representations
-
-
-A retrieval system also needs representations used for evaluation, not just runtime retrieval.
-
-Examples:
-
-```text
-golden queries
-query-document relevance judgments
-task scenarios
-expected evidence sets
-hard negative examples
-known failure cases
-coverage maps
-```
-
-
-Use when the task requires:
-
-```text
-measure retrieval quality
-test recall
-detect regressions
-evaluate task utility
-observe representation gaps
-```
-
-
-This is important because representation design should be evaluated by task utility, not semantic similarity alone.
-
-## The deeper taxonomy
-
-
-The section could say that representations are derived along several dimensions:
-
-```text
-1. Unit
-   What is being represented?
-   passage, section, document, table row, entity, claim, rule, event, workflow step
-
-2. Transformation
-   How is it derived?
-   chunking, summarization, extraction, normalization, abstraction, generation, linking
-
-3. Access mode
-   How will it be searched?
-   keyword, vector, hybrid, filter, graph traversal, SQL, table search, entity lookup
-
-4. Task fit
-   What task need does it serve?
-   find, answer, verify, compare, summarize, decide, extract, route, act
-
-5. Quality signals
-   What makes it safe to use?
-   provenance, authority, freshness, permissions, confidence, contradiction markers
-
-6. Consumer fit
-   Who uses it downstream?
-   LLM, reranker, planner, verifier, workflow engine, UI, evaluator
-```
-
-
-That gives you a more systematic replacement for the shallow table.
-
-## Possible rewrite of the section
-
-
-You could replace the table with something like this:
-
-> **Representation Design**
->
-> A corpus should not be treated as one flat collection of embeddable text. Source material contains many latent structures: terms, entities, facts, claims, rules, tables, relationships, versions, authority signals, procedures, and examples of possible user intent. Representation design is the process of making these latent structures explicit and searchable.
->
-> A representation is therefore not merely a storage format. It is an access surface: a derived view of source material that supports a particular class of task-shaped information need.
->
-> Representations can be derived through several transformations:
->
-> ```text
-> segmentation      -> passages, sections, evidence units
-> extraction        -> entities, fields, claims, rules, events
-> normalization     -> canonical IDs, aliases, schema-aligned records
-> abstraction       -> summaries, topics, concepts, document outlines
-> generation        -> synthetic questions, sample queries, hypothetical intents
-> structuring       -> tables, rows, workflow steps, document trees
-> linking           -> graphs, citations, dependencies, lineage
-> annotation        -> provenance, authority, freshness, permissions, confidence
-> evaluation        -> golden queries, relevance labels, hard negatives
-> ```
->
-> Different representations expose different evidence shapes. A system that only embeds chunks exposes semantic similarity, but may fail on exact identifiers, tables, versions, authority, relationships, policy rules, or user phrasing. A stronger retrieval layer derives multiple representations from the same corpus and routes each task context requirement to the representation most likely to satisfy it.
->
-> The design question is not "which index should we build?" but:
->
-> ```text
-> What must be made searchable so that this class of task can obtain sufficient,
-> trustworthy, fresh, and usable context?
-> ```
-
-That would make the section more structural and less like an example table.
+A representation is useful when its demonstrated access contribution justifies its losses and costs for the intended task family. Context assessment and outcome verification determine whether particular results are usable in the current task.

@@ -6,1017 +6,213 @@ linkTitle: "Model"
 ---
 # Model of Context-Augmented Task Systems
 
+## Task, requirements, and operation
 
-This ontology and models defines a systems-level view of context-augmented task execution. Its purpose is to separate concepts that are often collapsed in retrieval-augmented systems: the user's observable request, the task the system infers from that request, the context required to complete the task, and the source-directed queries or actions used to obtain that context.
+### User and user request
 
-The central premise is that context should be constructed around task completion, not around surface similarity between a user request and stored content. A user request is an observable product-layer event: a message, API request, button click, or other interaction by which the user asks for assistance. It may contain useful signals, but it is not itself the task, or the context requirement.
 
-The system must therefore infer a task from the request, derive the task's context requirement, and then decide how that context should be acquired. In some cases this means retrieval from a corpus. In others, it may require database queries, API calls, application-state inspection, clarification from the user, etc.
+The **User** is the person or actor whose goal motivates the work. A **User Request** is an observable interaction through which that goal is expressed: a message, search phrase, API request, selected document, image, or application action.
 
-This gives the core lifecycle:
+A request can contain evidence, constraints, and useful state as well as instructions.
 
-```text
-User Request
-  → Task Interpretation
-  → Task Context Requirement
-  → Context Access Planning
-  → Context Acquisition
-  → Acquired Context
-  → Context Assembly
-  → Working Context
-  → Downstream Consumer
-  → Outcome
-```
+### Interpreted task
 
-# Core Domain Model
 
-## Product Layer
+The **Interpreted Task** is the system's current account of what the user wants to accomplish. It includes the intended outcome, scope, constraints, and unresolved ambiguities. Interpretation can use the request, relevant prior work, application state, and clarification.
 
+The task can be bounded, such as locating a record, or exploratory, such as discovering disagreements across notes. It is a revisable interpretation rather than a claim that the user's purpose is fully known. New evidence can reveal a mistaken assumption or help the user formulate a more useful question.
 
-The broader product should be organized around task completion, while retrieval is one internal context-acquisition mechanism. The retrieval layer can use lexical search, vector search, metadata filtering, graph traversal, SQL queries, API calls, access-control checks, freshness policies, reranking, and other mechanisms depending on the task and source.
+### Consuming operation
 
-## User
 
+A **Consuming Operation** is the next operation for which working context is prepared. Its contract specifies its purpose, required inputs, acceptable form, relevant limits, and expected result.
 
-The **User** is the actor whose goal gives the system a reason to retrieve or construct context.
+Examples include reading source passages, comparing policies, extracting fields, calculating a value, generating a query, or preparing a proposed action. A person, deterministic software, or a model can perform the operation. A generator is one kind of consumer.
 
-## User Request
+A whole task can contain several operations with different context needs. A comparison may need both governing policies and their effective dates; formatting its result may need only the verified comparison and presentation requirements.
 
+### Task context requirement
 
-The **User Request** is the observable interaction by which a user expresses a desired task. It is what the product can directly observe at the interaction layer.
 
-It may be:
+A **Task Context Requirement** specifies what information, evidence, state, or constraints must be available or checked for the current task and operation. It records the reason for the need and, where possible, how adequacy will be judged.
 
-```text
-typed message
-search phrase
-voice command
-button click
-selected file
-highlighted text
-API request
-image upload
-```
+Requirements may concern factual support, source scope, authority, freshness, provenance, permissions, contradictory material, or the consumer's input format. Resource limits constrain how the system can satisfy them. Requirements can begin incomplete and be refined during investigation.
 
-## Task
+For a policy comparison, requirements might include:
 
+| Requirement | Basis for assessment |
+| --- | --- |
+| Identify the two applicable policy revisions | Document identity, revision, scope, and effective dates. |
+| Compare the relevant obligations and exceptions | Original clauses with enough surrounding context to interpret them. |
+| Explain unresolved differences | Conflicting provisions and the basis, if any, for deciding which governs. |
+| Produce a cited comparison | Source locators preserved in the consumer's actual inputs. |
 
-The **Task** is what the user is trying to accomplish.
+A requirement is not itself evidence that it has been satisfied. A statement such as “use current policy” needs a source and a check appropriate to the task.
 
-Examples:
+## Sources, access, and representations
 
-```text
-answer a question
-find a record
-verify a claim
-summarize a document
-debug a system
-compare alternatives
-make a decision
-extract structured data
-update a record
-classify a request
-produce a recommendation
-refuse unsafe action
-escalate to a human
-```
+### Context and context sources
 
 
-The task is inferred from the user request. It is more fundamental than request or query because retrieval should serve task completion, not text similarity. Retrieval should target sufficient, trustworthy, bounded evidence for a downstream task, not merely similar documents.
+**Context** is information made available to support interpretation, reasoning, action, verification, or presentation. It can include source material, observations, task instructions, user constraints, and earlier results.
 
-### Task Lifecycle
+A **Context Source** is a resource from which information can be obtained: a corpus, database, external service, application state, log, policy system, or person. A source is not automatically accurate or governing because it is the original location of a statement.
 
-## Task Context Requirement
+An **Acquisition Interface** is the means of accessing a source: search, a database query, an API request, state inspection, calculation, or clarification. Different interfaces can expose the same source; one interface can expose several kinds of information.
 
+Tools and services are capabilities, not information artifacts. Their descriptions, availability, constraints, and returned observations can enter context. Permission to perform an action must still be enforced by the executing system. Merely including a permission statement in context does not authorize execution.
 
-A **Task Context Requirement** is the system's task-facing specification of the information, evidence, state, constraints, and verification signals required to complete a user task.
+### Corpus and representation
 
-It is derived from the interpreted Task, not directly from the User Request. The User Request is the observable expression of what the user asks or does. The Task Context Requirement defines what the system must know, inspect, retrieve, verify, or obtain in order to complete the task correctly.
 
-## Retrieval Query
+A **Corpus** is a collection of source material available for search. A **Retrieval Representation** is a searchable view of that material, such as a passage, embedding, normalized identifier field, table object, summary, or generated question linked to its source.
 
+A representation can expose an aspect of a source while omitting or changing other aspects. Generated or extracted views are derived artifacts; their contents do not become verified facts merely by being indexed.
 
-A **Retrieval Query** is the source-directed expression of a Task Context Requirement.
+Representation design usually addresses a class of tasks at design time. At runtime, the system selects among available sources, representations, and routes. A new request does not necessarily require rebuilding the corpus or creating another representation.
 
-## Query Representation(s)
+### Retrieval query and query representation
 
 
-The **Query Representation** is the searchable form of a retrieval query.
+A **Retrieval Query** is a source-directed expression used to seek information. A **Query Representation** is the form used by a matching interface, such as terms, a vector, entity identifiers, or filters.
 
-It may include:
+The request, interpreted task, context requirement, query, and query representation have distinct roles. They can nevertheless contain identical text. An exact identifier request can pass directly to an appropriate lookup interface. Rewriting is justified when it improves the source-directed expression, rather than being a mandatory stage.
 
-```text
-dense vector
-sparse terms
-entities
-filters
-subqueries
-metadata constraints
-```
+**Representation Alignment** is the retrieval-specific fit among the information need, searchable views, and matching strategy, including recovery of the source material needed for interpretation. It contributes to context-to-task alignment but does not establish source authority, context sufficiency, or task success by itself.
 
-## Representation Alignment
+## Acquisition and investigation state
 
+### Context access planning
 
-Representation Alignment is the retrieval-specific problem of matching a task-shaped information need to the searchable forms of source content.
 
-The user request is not itself the retrieval query. The system first interprets the request into a Task, derives a Task Context Requirement, and then translates that requirement into one or more Retrieval Queries.
+**Context Access Planning** decides where and how information should be sought. It selects sources, interfaces, representations, query strategies, filters, limits, and fallbacks using the current requirements and available state.
 
-Representation Alignment asks whether those retrieval queries are matched against the right searchable representations.
+Its output is a plan or a set of acquisition decisions. Planning may be a fixed rule, a person's choice, or a model-backed operation. It can be combined with acquisition in one implementation while keeping the decision and its result distinguishable.
 
-A retrieval system is not well-designed merely because it embeds chunks and returns semantically similar passages. It is well-designed when its representations expose the kinds of evidence, facts, entities, records, and structures required by the task.
+### Context acquisition
 
-Representation Alignment has three parts:
 
-1. Identify the task-shaped information need.
-2. Design searchable representations that expose the needed evidence.
-3. Choose the matching strategy that connects the need to the right representation.
+**Context Acquisition** obtains information through the selected interfaces. Its output is **Acquired Context**: retrieved hits, database rows, API responses, observations, calculated values, or user clarifications.
 
-The retrieval layer should therefore be evaluated by task utility, not by semantic similarity alone.
+Acquired context may be incomplete, stale, conflicting, irrelevant, or in a form the next operation cannot use. An empty search result records what that acquisition returned; it does not establish that the information does not exist.
 
-## RAG-specific: Corpus and Representations
+A read operation can acquire context. An operation that updates a record or sends a request with an external effect also belongs to execution. Its response can provide new context, but describing the operation as acquisition must not hide its effects or authorization requirements.
 
+### Investigation state
 
-The **corpus** is the source content available to the system that may contain information useful for a task. It is not inherently useful just because it exists; it becomes useful only when the system can expose the right parts of it for the user's task.
 
-A **representation** is a searchable form of corpus content. Retrieval engineering creates representations that make different aspects of the corpus accessible: meaning, exact terms, entities, metadata, structure, relationships, freshness, authority, or summaries.
+For work that develops over multiple operations, **Investigation State** retains the current inquiry and enough of its history to inspect, revise, or resume the work. It can contain:
 
-**Design goal:** derive the corpus model from the task, not from retrieval infrastructure.
+| Object | Meaning |
+| --- | --- |
+| Requirement revision | A dated or versioned account of what the current operation needs. |
+| Acquisition run | The actual query or request, source scope, parameters, versions, and returned candidates. |
+| Candidate | An item made available for inspection, with its acquisition route and source reference. |
+| Selection | A recorded choice to retain an item for a purpose. |
+| Judgment | An assessment of relevance, support, authority, or exclusion, with its target and basis. |
+| Claim | A proposition under examination, with links to supporting, qualifying, or conflicting material. |
+| Gap or conflict | A requirement without adequate support, an unresolved disagreement, or an acquisition limitation. |
+| Operation run | The inputs, actor or method, configuration, result, and relevant dependencies of an operation. |
 
-When designing the corpus, start with the question:
+Collection is distinct from accepting material as evidence for a claim. A candidate can be collected before its authority is known; counterevidence can be retained because it challenges a conclusion.
 
-> What must the system have, know, access, or verify to complete the task?
+These are optional modeling elements according to the task. A direct lookup can use ordinary request and result records. A sustained investigation may require explicit selections, judgments, claims, and dependencies. The model does not prescribe a workflow engine or a universal storage schema.
 
-This leads to a cleaner conceptual model than starting from documents, chunks, embeddings, indexes, or vector stores. The corpus should be modeled around the kinds of task-relevant evidence, records, state, constraints, structure, freshness, authority, and verification signals the system needs to expose.
+### Source identity and provenance
 
-The design objective is not merely to store source content. It is to make the corpus representable and searchable in forms that align with user tasks.
 
-### Representation Design
+A source reference identifies the material actually observed. For text, this can be a document identity, revision, and exact span. For a record, it can be a resource key and version. For live state, it may require a captured value and observation time when no stable revision is available.
 
+Retain the acquisition route separately from source identity. Several queries can recover the same occurrence; identical text can occur in different locations. Equal, contained, and partially overlapping spans need distinct relationships. Unknown or stale coordinates remain unresolved.
 
-Representation Design is the process of deriving searchable access surfaces from source content so that different task-shaped information needs can reach the right evidence.
+Provenance records where material came from and how it was transformed. Authority concerns whether it should govern this task. Precise provenance does not settle authority or factual truth.
 
-We could structure Representation Design around **what latent structure we want to expose**. See more in [Model Representation Design]({{< ref "ai-engineering/retrieval/model-representation-design" >}})
+## Context assembly and working context
 
-## Broad Acquisition: Context Sources
 
+**Context Assembly** is the selection and structuring of available material into **Working Context** for a named consuming operation. Acquisition obtains material; assembly determines what the operation actually receives. Available material can come from the request, investigation state, earlier results, or new acquisition.
 
-In the broader context-acquisition model, the corpus is only one kind of context source. A context source is any system, collection, state, or capability from which task-relevant context can be obtained.
+**Context Selection** chooses material according to the task and operation. **Context Structuring** makes the selected material usable through ordering, grouping, normalization, citation, compression, or explicit marking of contradictions and uncertainty.
 
-Different context sources expose different acquisition interfaces. A corpus is accessed through retrieval. A database is accessed through queries. An API is accessed through calls. Application state is accessed through inspection. A policy system is accessed through evaluation. A human is accessed through clarification.
+Working context is a bounded input view. It can include source passages, records, requirements, relevant judgments, unresolved issues, and instructions. It need not contain every candidate or every earlier conversation turn.
 
-The system's task is not simply to retrieve from a corpus, but to decide which context sources are needed, how they should be accessed, and how the acquired context should be structured into working context for the task.
+For an inspectable run, retain an input snapshot or manifest sufficient to identify the actual content, ordering, versions, and transformations consumed. A reference to a mutable document without its observed revision may be insufficient. A summary should remain distinguishable from original source text.
 
-### 1. Context Source
+Assembly is not the whole task lifecycle. It does not include task execution or outcome verification. Nor is minimal size an unconditional goal: useful detail, qualifications, or deliberate redundancy may be necessary. The aim is adequate, usable context within the operation's limits.
 
+## Context assessment
 
-A **Context Source** is anything the system can use to obtain task-relevant knowledge, evidence, state, constraints, tools, or verification signals.
 
-> A Context Source is any system, collection, state, or capability from which task-relevant context can be obtained.
+**Context Assessment** evaluates a working-context snapshot against a stated requirement revision and consuming-operation contract. It produces findings, unresolved issues, and a basis for deciding whether to proceed, revise, acquire more information, or clarify the task.
 
-Examples:
+| Dimension | Assessment question |
+| --- | --- |
+| Support | Which requirements have relevant supporting material, and what is the basis for accepting it? |
+| Scope | Which sources and candidate pools were considered, and what material remains unavailable or unreviewed? |
+| Authority and freshness | Are the observations applicable, current enough, and drawn from appropriate sources? |
+| Integrity | Can material be traced to its source, with qualifications and transformations preserved? |
+| Conflict and uncertainty | What contradicts, limits, or weakens the proposed interpretation? |
+| Permitted use | Is the information eligible for this use under the applicable access and use constraints? |
+| Consumer fit | Does the operation receive the necessary structure, detail, ordering, and instructions within its limits? |
 
-```text
-corpus
-database
-API
-application state
-user profile
-permission system
-policy engine
-log system
-code repository
-calculator
-human clarification
-```
+An assessment should refer to the requirement, relevant material, method or reviewer, findings, and remaining uncertainty. Requirement status can distinguish supported, partly supported, unresolved, and contradicted; unavailable material is a limitation on the assessment rather than evidence for a conclusion.
 
+Assessment can occur during acquisition and review as well as after assembly. The distinction is a responsibility, not a mandatory additional model call. A deterministic version check can establish one condition; evaluating conflicting provisions may require expert judgment. No single score establishes all dimensions of alignment.
 
-This is the broad analogue to "corpus."
+A decision to proceed is scoped to the current operation and accepted uncertainty. Budget exhaustion, pool exhaustion, adequate support, required clarification, and a user's decision to stop are different stopping reasons. A discovery result can be useful while substantive questions remain open.
 
-```text
-Corpus = a context source optimized for retrieval
-API = a context source accessed through calls
-Database = a context source accessed through queries
-Application state = a context source accessed through inspection
-Tool = a context source or capability accessed through invocation
-Human = a context source accessed through clarification
-```
+Coverage also needs a declared denominator. Index coverage, screening coverage, selected-source-range coverage, requirement support, and judged retrieval recall answer different questions. None is a general proof of completeness.
 
-### 2. Acquisition Interface
+## Operations, results, and outcomes
 
 
-An **Acquisition Interface** is how the system accesses a context source.
+The **Result** is the direct output of an operation. The **Outcome** is its contribution to the user's task, including any verified state change or useful discovery. Producing an artifact and achieving the intended outcome can require different checks.
 
-Examples:
+| Consumer | Working context | Result and outcome checks |
+| --- | --- | --- |
+| Person inspecting sources | Located passages, reading context, scope, and unresolved questions | Can the person find and inspect useful material for the inquiry? |
+| Deterministic calculation | Observed values, units, and calculation parameters | Was the calculation performed correctly on the intended values? |
+| Generative model | Selected material, requirements, and instructions | Is the output supported and appropriate for its intended use? |
+| Action executor | Validated instruction, identifiers, current state, and applicable constraints | Was the operation authorized, executed, and its resulting state verified? |
 
-```text
-retrieval query
-SQL query
-API call
-tool invocation
-state inspection
-policy check
-graph traversal
-calculation
-clarification question
-```
+Generation can produce prose, structured fields, queries, plans, code, or proposed tool calls. Generated instructions may then need validation and execution. The generic model does not require generation before another operation can consume working context.
 
+**Outcome Verification** checks the result or observed state against the task's success criteria. It can reveal missing context, misuse of adequate context, an execution failure, or a mistaken task interpretation. Context assessment and outcome verification therefore remain separate responsibilities.
 
-This avoids calling everything a "tool." A database is not a tool in the same sense as a calculator, and an API is not the same as a corpus. But all of them expose context through an interface.
+## Operation contracts and feedback
 
-### 3. Acquired Context
 
+The following contracts are an analysis vocabulary. A small implementation can combine several rows; an investigation can repeat or branch them.
 
-**Acquired Context** is the raw context returned from a context source before it is structured into working context.
+| Operation | Main inputs | Direct outputs |
+| --- | --- | --- |
+| Interpret task | Request and relevant existing context | Interpreted task, ambiguities, and current purpose. |
+| Derive requirements | Task and consuming-operation contract | Context requirements and assessment criteria. |
+| Plan access | Requirements, available sources, representations, and current gaps | Acquisition decisions. |
+| Acquire | Source-directed requests and access decisions | Acquired context and acquisition-run information. |
+| Inspect and review | Candidates, source context, and requirements | Judgments, selections, claims, or questions. |
+| Assemble | Requirements, available material, and consumer contract | Working-context snapshot or manifest. |
+| Assess context | Requirements, working context, scope, and checks | Findings, gaps, conflicts, and a scoped adequacy judgment. |
+| Choose next action | Assessment, current state, and resource limits | Continue, clarify, revise, execute, or stop with a reason. |
+| Perform operation | Declared working-context inputs and applicable controls | Result and, where relevant, observed external effects. |
+| Verify outcome | Result, observed state, task, and success criteria | Verification findings and further work. |
 
-Examples:
+Feedback can revise the task, requirements, acquisition route, selections, assembly, or the consuming operation. For example:
 
-```text
-retrieved passage
-database row
-API response
-permission decision
-policy rule
-log event
-calculated value
-user clarification
-tool output
-```
+- An ambiguous identifier can require clarification before lookup.
+- A candidate can reveal terminology that justifies another search.
+- A missing exception can require expansion to the parent section.
+- Conflicting policies can require another source or an explicit unresolved result.
+- A failed calculation can require corrected units rather than more retrieval.
+- A useful discovery can complete the current task without synthesis.
 
+Record dependencies at the level needed to understand invalidation. A source revision can invalidate a locator or freshness judgment. A requirement change can invalidate a support assessment. Changing an operation's input snapshot makes its old result a result of different inputs. Preserve earlier results when useful while marking their applicability accurately.
 
-This keeps the lifecycle clean:
+## Design-time evaluation
 
-```text
-Task Requirement
-→ Context Source
-→ Acquisition Interface
-→ Acquired Context
-→ Working Context
-→ Outcome
-```
 
-### How this relates to RAG
+Runtime assessment asks whether particular inputs are adequate for the current operation. Design-time evaluation asks how reliably a method behaves across stated tasks, sources, versions, and conditions.
 
+Evaluate acquisition with reviewed relevance judgments and route comparisons; evaluate mapping with source-recovery checks; evaluate assessment with reviewed support and conflict cases; evaluate execution against outcomes. Include relevant latency, cost, and human correction effort. A valid contract or successful run alone does not establish semantic quality.
 
-For RAG:
-
-```text
-Context Source:        Corpus
-Acquisition Interface: Retrieval query / search
-Acquired Context:      Retrieved candidates or evidence
-Working Context:       Selected passages packaged for the model
-```
-
-
-For a database-backed assistant:
-
-```text
-Context Source:        Database
-Acquisition Interface: SQL query
-Acquired Context:      Rows / aggregates
-Working Context:       Structured data relevant to the task
-```
-
-
-For an API-backed workflow:
-
-```text
-Context Source:        External service
-Acquisition Interface: API call
-Acquired Context:      API response
-Working Context:       Normalized state or result
-```
-
-
-For a policy check:
-
-```text
-Context Source:        Policy system
-Acquisition Interface: Policy evaluation
-Acquired Context:      Allow / deny / constraints
-Working Context:       Permission or compliance constraint
-```
-
-## Context
-
-### Purpose
-
-
-Context is what the system needs beyond the User Request in order to complete a Task correctly. The central design question is:
-
-> What must the system have, know, access, or verify to complete the Task?
-
-This prevents context from being reduced to "text appended to a prompt." Context may include evidence, state, constraints, permissions, policy rules, tool outputs, database records, API responses, user-provided information, or verification signals.
-
-### Context Access Planning
-
-
-**Context Access Planning** is the process of deciding which **Context Sources**, **Acquisition Interfaces**, **Representations**, and constraints should be used to satisfy a **Task Context Requirement** before context is actually obtained.
-
-It answers:
-
-> Which context sources, acquisition interfaces, source representations, and constraints should be used to obtain the context required for this task?
-
-This stage is upstream of **Context Acquisition**. It does not retrieve, query, call, inspect, or evaluate sources directly. Instead, it determines how acquisition should proceed.
-
-Context Access Planning may decide:
-
-```text
-which Context Sources are relevant
-which Acquisition Interfaces should be used
-which source representations should be searched, queried, or inspected
-which filters, constraints, or policies should apply
-which acquisition paths should be attempted first
-which fallback paths should be available
-```
-
-
-This distinction matters because choosing a source is not enough. A single source may expose multiple representations or access surfaces.
-
-For example, a corpus may expose:
-
-```text
-lexical index
-dense vector representation
-hybrid search
-entity index
-metadata filters
-document hierarchy
-table objects
-graph representation
-section summaries
-freshness or authority metadata
-```
-
-
-A database may expose:
-
-```text
-tables
-views
-schemas
-indexes
-stored procedures
-aggregates
-row-level permissions
-```
-
-
-An API may expose:
-
-```text
-endpoints
-query parameters
-resource identifiers
-pagination
-authorization scopes
-freshness guarantees
-rate limits
-```
-
-
-Context Access Planning therefore resolves a task-facing context requirement into acquisition-facing decisions about access.
-
-```text
-Task Context Requirement
-  → Context Access Planning
-  → Context Acquisition
-```
-
-
-Context Access Planning may specify:
-
-```text
-selected Context Sources
-selected Acquisition Interfaces
-selected Source Representations
-query or call strategy
-required filters
-permission constraints
-freshness constraints
-authority constraints
-cost or latency constraints
-fallback strategy
-```
-
-
-For RAG, Context Access Planning may decide that the system should search a particular corpus using hybrid retrieval over passage chunks, entity metadata, and freshness filters.
-
-For a database-backed assistant, it may decide that the system should query a particular table or view using a schema-aware query.
-
-For an API-backed workflow, it may decide that the system should call a specific endpoint with selected parameters and authorization scope.
-
-For an application-state task, it may decide that the system should inspect current UI state, selected objects, session history, or user permissions.
-
-Context Access Planning is broader than retrieval planning. Retrieval planning is one case where the selected context source is a corpus and the selected acquisition interface is retrieval. In broader context-augmented task systems, access planning may involve retrieval, database querying, API calling, application-state inspection, policy evaluation, calculation, or clarification.
-
-The boundary is:
-
-| Stage                        | Responsibility                                                                |
-| ---------------------------- | ----------------------------------------------------------------------------- |
-| **Task Context Requirement** | Defines what the system needs to know, verify, inspect, or obtain             |
-| **Context Access Planning**  | Decides where and how that context should be sought                           |
-| **Context Acquisition**      | Obtains raw context from the selected sources through the selected interfaces |
-| **Context Assembly**     | Selects and structures acquired context into Working Context                  |
-
-Context Access Planning can fail even when the Task Context Requirement is correct. Failure modes include:
-
-```text
-selecting the wrong source
-selecting the wrong representation of the right source
-using semantic retrieval when exact-match lookup is required
-using stale representations when freshness is required
-omitting metadata filters needed for authority or permissions
-querying a broad corpus when a structured database is authoritative
-calling an API when cached state is sufficient
-asking the user for clarification when the answer is already available
-```
-
-
-A good Context Access Planning result is:
-
-```text
-task-aligned
-source-aware
-representation-aware
-permission-safe
-freshness-aware
-authority-aware
-cost-aware
-latency-aware
-fallback-capable
-```
-
-
-In this ontology, Context Access Planning is the canonical term for deciding how the task's context requirement should be operationalized across available sources, interfaces, representations, and constraints.
-
-### Context Acquisition
-
-
-**Context Acquisition** is the system functionality of obtaining context required by the **Task Context Requirement**.
-
-It answers:
-
-> What does the system need to obtain before it can construct Working Context for this Task?
-
-In RAG, Context Acquisition usually takes the form of **retrieval** from a **Corpus**. The retrieval subsystem translates the Task Context Requirement into one or more **Retrieval Queries**, searches Corpus Representations, and returns retrieved candidates.
-
-In broader context-augmented task systems, the same responsibility may involve querying a database, calling an API, inspecting application state, checking permissions, evaluating policy, reading logs, running a calculation, invoking a tool, or asking the user for clarification.
-
-The input to Context Acquisition is the **Task Context Requirement**, as constrained by **Context Access Planning** decisions.
-
-The output is **Acquired Context**.
-
-Acquired Context may include:
-
-```text
-retrieved candidates
-database rows
-API responses
-permission results
-policy decisions
-application state
-log entries
-calculated values
-tool outputs
-user clarifications
-```
-
-
-Acquired Context is not yet Working Context. It is the context the system has obtained, but it may still be incomplete, redundant, stale, conflicting, too detailed, or only partially relevant.
-
-The next stages decide what to keep and how to make it usable:
-
-```text
-Acquired Context
-  → Context Selection
-  → Context Structuring
-  → Working Context
-```
-
-
-The boundary is important:
-
-| Stage                   | Responsibility                                                               |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| **Context Acquisition** | Obtains possible context from Context Sources                                |
-| **Context Selection**   | Decides which Acquired Context is useful for the Task                        |
-| **Context Structuring** | Prepares selected context for downstream use                                 |
-| **Working Context**     | The selected and structured context actually used by the downstream consumer |
-
-The purpose of Context Acquisition is not to obtain as much context as possible. It is to obtain context likely to satisfy the Task Context Requirement under the relevant constraints: permission, authority, freshness, cost, latency, and expected usefulness.
-
-### Related terminology
-
-
-Different research and engineering traditions name parts of Context Acquisition differently:
-
-| Term                             | Scope                                                    | Use in this ontology                                                    |
-| -------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Retrieval**                    | Finding relevant items from a Corpus or index            | RAG-specific form of Context Acquisition                                |
-| **Information Retrieval**        | Discipline of search, indexing, ranking, and evaluation  | Background discipline for retrieval systems                             |
-| **External knowledge retrieval** | Retrieving knowledge outside model parameters            | RAG-specific acquisition from documents, memory, or knowledge bases     |
-| **Context retrieval**            | Retrieving relevant context items                        | Useful when acquisition is retrieval-shaped                             |
-| **Tool use**                     | Using external tools, APIs, calculators, or services     | One mechanism of Context Acquisition                                    |
-| **Tool invocation**              | Calling a specific tool                                  | Low-level form of acquiring tool output                                 |
-| **API calling**                  | Calling external or internal services                    | One mechanism of Context Acquisition                                    |
-| **Action**                       | Agent interaction with an environment or external system | Broader than acquisition; may obtain context or change state            |
-| **Information access**           | Accessing information resources                          | Broad but less precise than Context Acquisition                         |
-| **Context Access Planning**     | Deciding which Context Sources, interfaces, and representations to use | Upstream of Context Acquisition                            |
-| **Context Assembly**         | Selecting and structuring context into Working Context   | Broader lifecycle that includes acquisition, selection, and structuring |
-
-In this ontology, **Context Acquisition** is the umbrella term. Specific mechanisms should be named directly when useful:
-
-```text
-Context Acquisition
-  ├─ Retrieval
-  ├─ Querying
-  ├─ API calling
-  ├─ Tool invocation
-  ├─ State inspection
-  ├─ Policy or permission evaluation
-  ├─ Calculation
-  └─ Clarification
-```
-
-### Acquired Context
-
-
-**Acquired Context** is the raw result obtained from a Context Source.
-
-Examples:
-
-```text
-retrieved passages
-database rows
-API responses
-permission results
-policy decisions
-log events
-calculated values
-user clarifications
-tool outputs
-```
-
-
-Acquired Context is not necessarily ready to use. It may be incomplete, redundant, untrusted, stale, too detailed, or mismatched to the Task Context Requirement.
-
-### Context Assembly
-
-
-**Context Assembly** is the post-acquisition process that transforms **Acquired Context** into **Working Context**. It is downstream of **Context Acquisition** and upstream of the **Downstream Consumer**.
-
-Context Assembly has two main stages:
-
-**Context Selection** decides which Acquired Context should be kept for the task. It determines which evidence, records, tool outputs, policy rules, state, or source results are relevant, trusted, permitted, and useful.
-
-**Context Structuring** prepares the selected context for downstream use. It may involve normalization, summarization, compression, deduplication, ordering, citation, schema alignment, entity resolution, provenance preservation, and contradiction marking.
-
-Useful Working Context is:
-
-```text
-sufficient
-minimal
-non-redundant
-well-ordered
-source-grounded
-permission-safe
-fresh enough
-authority-aware
-budget-compatible
-consumer-ready
-contradiction-aware
-```
-
-
-Context Assembly can fail even when Context Acquisition succeeds. The system may obtain the right context items but still produce poor Working Context by selecting the wrong subset, excluding decisive evidence, losing provenance, over-compressing, under-compressing, ordering evidence poorly, or formatting the context in a form the downstream consumer cannot use.
-
-The goal is not only to reduce size. The goal is to make context usable for reasoning, action, verification, or presentation.
-
-### Working Context
-
-
-**Working Context** is the selected and structured context passed to a downstream consumer. Working Context is the endpoint of Context Assembly. It is the artifact the system gives to the component that will perform the next operation.
-
-### Generator and Output Consumer
-
-
-After **Working Context** is constructed, it is consumed by a downstream component. In many systems, the first downstream component is a **Generator**. A **Generator** is a component that uses Working Context to produce a **Generated Output**.
-
-```text
-Working Context
-  → Generator
-  → Generated Output
-```
-
-
-The Generated Output may be the final user-facing answer, but it may also be an intermediate artifact intended for another system.
-
-Examples of Generated Output include:
-
-```text
-natural-language answer
-summary
-classification
-structured object
-SQL query
-API request
-tool call
-code patch
-execution plan
-workflow instruction
-refusal
-clarification request
-```
-
-
-A second component may then consume the Generated Output. An **Output Consumer** is the component, system, or actor that receives and uses the Generated Output.
-
-Examples:
-
-```text
-user
-user interface
-agent runner
-tool executor
-SQL engine
-workflow engine
-API gateway
-database
-validator
-policy checker
-another model
-external system
-```
-
-
-This gives the downstream lifecycle:
-
-```text
-Working Context
-  → Generator
-  → Generated Output
-  → Output Consumer
-  → Outcome
-```
-
-
-The distinction is important because generation quality and outcome quality are not the same.
-
-- A Generator may produce a valid SQL query, but the SQL engine may reject it.
-- A Generator may produce a tool call, but the tool runner may fail.
-- A Generator may produce a plausible plan, but the agent may execute it incorrectly.
-- A Generator may produce a correct answer, but the user interface may omit citations or format it poorly.
-
-So the broader system should distinguish:
-
-```text
-Working Context quality
-Generated Output quality
-Output Consumer behavior
-Final Outcome utility
-```
-
-
-In simple RAG, the Output Consumer may be the user or user interface, and the Generated Output is the answer. In agentic or workflow systems, the Generated Output is often an intermediate instruction consumed by another component before a final Outcome exists.
-
-### Outcome, Evaluation, and Feedback
-
-
-The broader lifecycle does not end at Working Context.
-
-After Working Context is consumed, the system produces an **Outcome**. The Outcome may be:
-
-```text
-answer
-decision
-classification
-record update
-API call
-workflow step
-structured object
-refusal
-escalation
-clarification request
-```
-
-
-The Outcome is evaluated by task utility: whether it is correct, grounded, permitted, consistent, fresh enough, and useful.
-
-Feedback from the Outcome can improve future source selection, retrieval, context acquisition, context selection, context structuring, representations, and evaluation.
-
-# Process-Centered Modeling Scheme
-
-
-Each system operation should be modeled as a process with typed inputs, used resources, direct outputs, and derived artifacts.
-
-```text
-Process:
-  <process name>
-
-Input:
-  <artifact or state consumed by the process>
-
-Uses:
-  <component, source, interface, representation, policy, or constraint used by the process>
-  <non-exhaustive, non-formal influences on the process>
-
-Output:
-  <artifact directly produced by the process>
-
-Derived artifact:
-  <artifact inferred, specified, or made available from the output>
-```
-
-### Task Interpretation
-
-```text
-Process:
-  Task Interpretation
-
-Input:
-  User Request
-
-Uses (optional, later):
-  User Profile
-  Session State
-  Product State
-  Domain Assumptions
-  Safety Policy
-
-Output:
-  Interpreted Task
-
-Derived artifact:
-  Task Context Requirement
-```
-
-### Context Access Planning
-
-```text
-Process:
-  Context Access Planning
-
-Input:
-  Task Context Requirement
-
-Uses:
-  available context sources  
-  available acquisition interfaces  
-  available representations  
-  task constraints
-
-Constrains:
-  Context Acquisition
-```
-
-
-Context Access Planning preserves the conceptual distinction between deciding where and how context should be sought and actually obtaining context. A real system may implement planning and acquisition as separate components or collapse them into a single source-specific path.
-
-### Context Acquisition
-
-```text
-Process:
-  Context Acquisition
-
-Input:
-  Task Context Requirement
-  Context Access Planning decisions
-
-Uses:
-  Context Source
-  Acquisition Interface
-  Representation(s)
-  Acquisition Mechanism: Retrieval Query / SQL Query / API Call / Tool Invocation / etc.
-
-Output:
-  Acquired Context
-```
-
-### Context Assembly
-
-```
-Process:
-  Context Assembly
-
-Input:
-  Acquired Context
-
-Uses:
-	Task Context Requirement  
-	Acquired Context  
-	available source metadata  
-	downstream format requirements  
-	task constraints
-
-Output:
-  Working Context
-
-Derived artifact:
-  Evidence Set
-```
-
-### Generation
-
-```text
-Process:
-  Generation
-
-Performed by:
-  Generator
-
-Input:
-  Working Context
-
-May use / consider:
-  output requirements
-  user-facing instructions
-  downstream consumer expectations
-  safety constraints
-  formatting constraints
-
-Output:
-  Generated Output
-
-Derived artifact:
-  None required
-```
-
-
-Generated Output = an artifact produced by a Generator from Working Context.
-
-```
-It may be:
-  natural-language answer
-  summary
-  classification
-  structured object
-  SQL query
-  API request
-  tool call
-  code patch
-  execution instruction
-  refusal
-  clarification request
-```
-
-### Execution
-
-```text
-Process:
-  Execution
-
-Input:
-  Generated Output
-
-Uses:
-  Output Consumer
-  Tool Executor
-  API Gateway
-  SQL Engine
-  Workflow Engine
-  Permission System
-
-Output:
-  Execution Result
-
-Derived artifact:
-  Outcome
-```
-
-### Evaluation
-
-```text
-Process:
-  Evaluation
-
-Input:
-  Outcome
-
-Uses:
-  Success Criteria
-  Task Utility Criteria
-  Grounding Criteria
-  Safety Criteria
-  User Feedback
-  System Metrics
-
-Output:
-  Evaluation Signal
-
-Derived artifact:
-  Feedback
-```
-
-# Views
-
-## Typed Dependency Graph
-
-
-At the entity level, I would model the core graph like this:
-
-```text
-User
-  └─ has → User Goal
-        └─ motivates → User Task
-              └─ expressed_by → User Request
-
-User Request
-  └─ interpreted_as → Interpreted Task
-        └─ requires → Task Context Requirement
-
-Task Context Requirement
-  ├─ constrains → Context Access Planning
-  └─ satisfied_by → Working Context
-
-Context Access Planning
-  ├─ selects → Context Source
-  ├─ selects → Acquisition Interface
-  ├─ targets → Representation
-  └─ constrains → Context Acquisition
-
-Context Acquisition
-  └─ produces → Acquired Context
-
-Acquired Context
-  └─ input_to → Context Assembly
-        └─ produces → Working Context
-
-Working Context
-  └─ consumed_by → Generator
-        └─ produces → Generated Output
-
-Generated Output
-  └─ consumed_by → Output Consumer
-        └─ produces_or_contributes_to → Outcome
-
-Outcome
-  └─ evaluated_against → Success Criteria
-        └─ yields → Evaluation Signal
-              └─ may_yield → Feedback
-```
-
-## Where possible loops belong
-
-
-The graph should allow at least five loops.
-
-### Clarification loop
-
-```text
-Interpreted Task
-  → ambiguity detected
-  → Clarification Request
-  → User Response
-  → revised Interpreted Task
-```
-
-
-Use when the task is underspecified.
-
-### Context gap loop
-
-```text
-Working Context
-  → insufficiency detected
-  → revised Task Context Requirement
-  → revised Context Access Planning
-  → more Acquired Context
-```
-
-
-Use when acquired context is incomplete or insufficient.
-
-### Verification loop
-
-```text
-Generated Output
-  → validation failure
-  → Context Selection / Context Acquisition / Generation retry
-```
-
-
-Use when output is unsupported, stale, contradictory, unsafe, or malformed.
-
-### Execution failure loop
-
-```text
-Generated Output
-  → Output Consumer
-  → execution failure
-  → revised Generated Output or revised Context Access Planning
-```
-
-
-Example: generated SQL fails, API call is rejected, tool execution errors.
-
-### User feedback loop
-
-```text
-Outcome
-  → User Evaluation
-  → Follow-up Request
-  → Task Refinement
-```
-
-
-This is the normal multi-turn loop.
+Use this model in proportion to the task: a direct lookup needs a small set of checks, while an evolving investigation needs enough explicit state to preserve its evidence decisions and unresolved questions.

@@ -7,16 +7,36 @@ linkTitle: "Retrieval Design"
 # Retrieval Design: Simple Baselines, Interactive Experiments, and Shared Work
 
 
-Retrieval design involves discovering which operations, representations, and decisions a task needs. A useful first implementation makes those choices visible enough to inspect, change, and compare. The flow itself is a design hypothesis.
+Retrieval design tests how to construct context that fits a user's current task and the operation that will consume it. A useful first implementation makes its requirements, acquisition choices, selected inputs, and checks visible enough to inspect, change, and compare. The flow itself is a design hypothesis.
 
 An LLM can interpret a request, suggest queries, judge candidates, compress context, and synthesize an answer. Whether it should perform each operation is a separate design question. Assign a model a bounded responsibility, expose its actual output, and compare the resulting workflow with a simpler alternative.
 
-This develops the engineering method behind [task-to-context alignment and evidence workflows]({{< ref "ai-engineering/retrieval/reframing-proposed" >}}). It adapts the exploratory pipeline-design notes and their critical commentary to retrieval. The method is a design proposal; the retained research dialogues supply ideas and questions rather than measured evidence that this approach always works.
+This develops the engineering method behind the [domain model]({{< ref "ai-engineering/retrieval/model" >}}) and its [evidence-workflow specialization]({{< ref "ai-engineering/retrieval/reframing-proposed" >}}). The [contract note]({{< ref "ai-engineering/retrieval/conceptual-alignment" >}}) separates responsibilities, while [representation design]({{< ref "ai-engineering/retrieval/model-representation-design" >}}) develops access-view choices. The method also adapts the exploratory pipeline-design notes and their critical commentary. These are design proposals and sources of questions, rather than measured evidence that one workflow always works.
+
+## State what the current operation needs
+
+
+Begin with a task scenario, the next consuming operation, and a concrete uncertainty. The operation may be source inspection by a person, a deterministic calculation, a comparison, or generation. It should not default to an LLM answer when discovery is the user's current purpose.
+
+Record enough to make a comparison interpretable:
+
+| Element | Question to answer |
+| --- | --- |
+| Current purpose | What would count as progress or completion for the user now? |
+| Consuming operation | Who or what will use the inputs, in what form, and under what limits? |
+| Context requirements | What material must be available or checked, and why? |
+| Available material | What is already supplied or retained, and what needs acquisition? |
+| Assessment basis | What observations or reviewed examples would justify using the context? |
+| Open uncertainty | Which assumption or failure does this experiment address? |
+
+Requirements can be provisional. An exploratory task can begin with finding inspectable material and documenting search limitations, then develop more specific questions. An exact identifier request can already be a suitable lookup query. Separate conceptual roles without manufacturing transformations or model calls.
+
+Context assessment asks whether particular inputs are adequate for the current operation. The experiment asks how reliably a proposed method constructs and assesses such inputs across cases. Check the resulting task outcome separately from both.
 
 ## Start with a small, real, inspectable baseline
 
 
-Choose a bounded corpus and a concrete information need. Make the initial behavior easy to explain: which sources were searched, what matched, what was returned, and what the user can inspect next.
+Choose a bounded source scope and a concrete information need. For a retrieval experiment, make the initial behavior easy to explain: which sources were searched, what matched, what was returned, and what the user can inspect next. If supplied material is already sufficient, a no-new-acquisition baseline may be appropriate.
 
 For an exact concept such as `DSL`, a useful baseline might be literal matching, original paragraphs, and a source reader. A paraphrase task may justify a simple semantic route immediately. The starting point should expose the uncertainty in the actual task; no particular retrieval algorithm is a universal first step.
 
@@ -47,14 +67,16 @@ These are conceptual boundaries. Several steps can share a function, process, sc
 | Encode or otherwise index a view | Versioned searchable representation | Which input and transformations produced it? |
 | Synchronize derived state | Index contents and coverage report | Which sources or representations are missing, changed, or stale? |
 
-Generated views and embeddings are optional implementation choices. Preserve enough information to inspect their source inputs. Corpus preparation deserves its own analysis: a runtime reranker cannot recover text that parsing discarded or indexing omitted.
+Generated views and embeddings are optional implementation choices. Prepare them for the intended task families; runtime work can select among existing views. Preserve enough information to inspect their source inputs and transformations. Corpus preparation deserves its own analysis: a reranker restricted to a candidate pool cannot recover text that parsing discarded or indexing omitted.
 
 ### Find and use material
 
 
 | Step | Inspectable output | Design question |
 | --- | --- | --- |
-| Capture the request | Original request and current task constraints | What does the user currently want to discover or accomplish? |
+| Capture the request and current purpose | Original request, supplied material, and current task interpretation | What does the user currently want to discover or accomplish? |
+| Identify the consuming operation | Purpose, actor or method, input form, and limits | What operation will use the context next? |
+| Derive current context requirements | Information needs, constraints, ambiguities, and assessment basis | What must be available or checked for that operation? |
 | Propose an interpretation or expansion, when useful | Editable interpretations, aliases, or alternative queries | What meaning was added, and should it affect this search? |
 | Choose acquisition scope and routes | Sources, channels, queries, filters, and limits | Where will the system look, and under what restrictions? |
 | Acquire candidates per route | Hits with actual query, rank, score, and route | What did each method return or miss? |
@@ -66,12 +88,15 @@ Generated views and embeddings are optional implementation choices. Preserve eno
 | Assess usefulness | Judgments, reasons, uncertainty, and disagreements | Relevant to which task, and useful in what role? |
 | Collect material | Selected source occurrences and collection events | What has been retained for further work? |
 | Assess gaps and coverage | Requirement status and unreviewed or missing material | What remains unknown, and what is the scope of the coverage claim? |
-| Choose the next action | Continue scanning, branch, clarify, or stop with a reason | What warrants another operation? |
 | Assemble working context | Input manifest, source units, ordering, and transformations | What will the downstream operation actually receive? |
-| Perform the downstream task, when needed | Comparison, extraction, synthesis, or other result | Did the operation use its declared inputs appropriately? |
-| Verify the result | Check results and unresolved issues | What supports accepting this result for its intended use? |
+| Assess assembled context | Findings against requirements and consumer limits, with remaining gaps and conflicts | Does the actual input view preserve what the next operation needs? |
+| Choose the next action | Continue scanning, acquire more, revise, clarify, proceed, or stop with a reason | What warrants the next decision under the current uncertainty and budget? |
+| Perform the consuming operation | Inspection, calculation, comparison, extraction, synthesis, or another result | Did the person or component use its declared inputs appropriately? |
+| Verify the outcome | Result checks, observed effects where applicable, and unresolved issues | What supports accepting the outcome for its intended use? |
 
 The table is an analysis vocabulary, not a mandatory linear pipeline. Routes can branch, reading can reopen acquisition, and some tasks finish with discovery. Source identity may be resolved before or after ranking according to the method. Keep the dependencies explicit when experimenting with a different order.
+
+Acquisition obtains material; assembly selects and structures available material into working context. Assessment can be interleaved with both, but should also consider what survives the actual assembly. A useful collected set can still produce inadequate inputs if compression drops an exception, ordering obscures a qualification, or the consumer needs another data format.
 
 The boundaries also separate quantities that are easily confused: retrieval similarity, ranking, word attribution, relevance judgment, collection, and visual emphasis. Changing highlight opacity can remain a display operation. Changing a filter or the passages passed to synthesis changes a different part of the work.
 
@@ -89,7 +114,7 @@ For an uncertain operation, write down:
 
 Choose among direct user action, deterministic software, retrieval models, and generative models for that specific operation. A source-range union has a different contract from interpreting an ambiguous inquiry. General claims that humans provide judgment or models handle scale do not establish competence on the particular cases.
 
-For example, before adding LLM relevance filtering, inspect the raw candidate set and the source context supplied to the reviewer. Determine what “relevant” means for the inquiry and how disagreements will be represented. Then compare model suggestions with reviewed cases and with the existing workflow. Measure both useful exclusions and useful material incorrectly removed.
+For example, before adding LLM relevance filtering, inspect the raw candidate set and the source context supplied to the reviewer. Determine what “relevant” means for the inquiry and how disagreements will be represented. Then compare model suggestions with reviewed cases and with the existing workflow. Measure both useful exclusions and useful material incorrectly removed. Keep relevance judgments separate from judgments about source authority or support for a particular claim.
 
 A failed final answer can then be traced to a narrower question: was the source absent, the view poorly chosen, the candidate missed, the context insufficient, the judgment wrong, or the supplied evidence misused? Each diagnosis calls for a different experiment.
 
@@ -150,7 +175,8 @@ For the DSL inquiry, an illustrative sequence is:
 2. **Add one semantic acquisition route.** Retain its candidates and route information alongside the literal baseline. Compare unique useful source occurrences, misses, redundancy, and review effort. Keep the same downstream reading and collection behavior where possible.
 3. **Test one context-expansion rule.** On the same candidate pool, compare the locator alone with a paragraph or section expansion. Judge whether the added context resolves ambiguity or introduces distracting material. Record the additional reading or model-input cost.
 4. **Test model review if judgment is a demonstrated bottleneck.** Make its suggestions inspectable, retain the underlying candidates, and compare kept and excluded material against reviewed scenarios. Include counterexamples and disagreements.
-5. **Add downstream synthesis when it serves the current task.** Record the exact evidence supplied and compare the result with the discovery-only workflow. Check support independently from writing quality.
+5. **Assess the assembled inputs for the intended operation.** Check source identity, required reading context, task support, conflicts, and consumer limits. A discovery view can be useful with open questions; a comparison claiming to resolve them needs a different basis.
+6. **Add downstream synthesis when it serves the current task.** Record the exact evidence supplied and compare the result with the discovery-only workflow. Check support independently from writing quality. Other operations, such as a calculation or direct human inspection, can use the same contract without a generator.
 
 Each iteration answers a question about one boundary. The sequence can stop as soon as the workflow is useful, or change when another uncertainty becomes more important. Keep a full-pipeline comparison as well, because improving a local metric can worsen the overall task.
 
@@ -159,9 +185,11 @@ Hold the source snapshot, scenario, and budget comparable when attributing a dif
 ## Preserve enough evidence to learn
 
 
-A small experiment record can contain the scenario, source snapshot, operation and configuration, input references, actual outputs, interventions with reasons, observations, and the next hypothesis. Saved files or a small local store can be sufficient initially.
+A small experiment record can contain the scenario, requirement revision, consumer contract, source snapshot, operation and configuration, input references, context-assessment findings, actual outputs, interventions with reasons, observed outcome, and the next hypothesis. Record what is needed to understand the comparison rather than requiring a full investigation schema for every trial. Saved files or a small local store can be sufficient initially.
 
 Retain the original stage output when an intervention creates a revised artifact. Record which version a downstream operation consumed. A result from an earlier query should remain associated with that query when it finishes after a newer run.
+
+An assessment applies to particular requirements and inputs. Changing a source, requirement, selection, or consuming operation can make it stale. Preserve the earlier finding when useful while making its applicability clear. Keep input snapshots distinct from the larger investigation state that can supply later operations.
 
 Recorded outputs support inspection. A new model call can produce a different result, so distinguish inspecting a saved run from executing a variant again. A generated explanation of why a source was selected should also remain distinguishable from the actual query, scores, and selection events.
 

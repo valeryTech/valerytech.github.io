@@ -4,210 +4,203 @@ toc: true
 title: "Reframing Proposed"
 linkTitle: "Reframing Proposed"
 ---
-# Beyond RAG: Task-to-Context Alignment and Evidence Workflows
+# Context-to-Task Alignment and Evidence Workflows
 
 
-Retrieval-Augmented Generation describes a useful mechanism: retrieved information conditions generated output. A product architecture also has to explain what the user is trying to accomplish, how relevant information becomes usable evidence, which decisions remain open, and how the result will be checked.
+This proposal develops an evidence workflow for knowledge-intensive tasks: finding, inspecting, collecting, comparing, and using source material. It specializes the [domain model]({{< ref "ai-engineering/retrieval/model" >}}), while the [main framing]({{< ref "ai-engineering/retrieval/reframing" >}}) remains a separate draft. The [editorial review]({{< ref "ai-engineering/retrieval/reframing-session-review" >}}) records the reasons for these distinctions.
 
-The broader design problem is **task-to-context alignment**: determining and constructing the knowledge, state, constraints, and verification signals required for the user's current job. Retrieval is one means of acquiring them. Generation is one operation that may use them.
+**Context-to-task alignment** is the fit between working context and the requirements of the current task and consuming operation, under the applicable constraints. Acquisition and assembly help achieve that fit. Assessment makes the basis for proceeding, continuing investigation, or returning an unresolved result inspectable.
 
-For knowledge-intensive work, this principle leads to an evidence workflow: an explicit process for finding, inspecting, collecting, interpreting, and using source material. Its state must remain inspectable and revisable as the inquiry develops.
+RAG describes retrieval-conditioned generation. An evidence workflow also has to explain the user's purpose, source scope, evidence decisions, changing requirements, and outcome checks. It can use generation, deterministic operations, and direct human inspection. It need not culminate in a generated answer.
 
-## Begin with the user's job, including exploration
+## Begin with the current purpose
 
 
-Some tasks are well specified: extract a field, compare two policies, or answer a bounded question. Others begin as an inquiry: “What do my notes contain about DSLs?” The user may need to see relevant passages before knowing which distinctions matter or what question to ask next.
+Some tasks are bounded: extract a field, compare two revisions, or verify a stated claim. Others begin as an inquiry: “What do my notes contain about DSLs?” Inspection can reveal distinctions the user could not specify before seeing the material.
 
-Discovery can be the desired outcome. A useful result might be a navigable set of source passages, a map of disagreements, or a better formulation of the problem. Synthesis can follow later.
+Task-first design means beginning with the current purpose, constraints, and uncertainties. It does not require a complete specification before acquisition. The task interpretation and its context requirements remain revisable.
 
-Task-first design therefore does not require a complete task specification at the beginning. It requires an explicit account of the current purpose, constraints, and uncertainties, with a way to revise them. Inspection can change the question; the changed question can require another acquisition route or a different representation.
+Discovery can complete the current job. A useful outcome might be a navigable set of source passages, a map of disagreement, or a better question. If the next operation is synthesis, it needs a different input view from the one used to browse candidates. If it is a calculation, original values and units may matter more than prose excerpts.
 
-The architecture should support that feedback loop:
+The inquiry develops through related decisions:
 
 ```text
-Inquiry and current requirements
-            ↓
-Acquire candidates → inspect source context → collect and judge
-       ↑                                          ↓
-       └──── revise question or address a gap ────┤
-                                                  ↓
-                                  explicit stopping decision
-                                                  ↓
-                                  bounded working context
-                                                  ↓
-                                  downstream task and checks
+Current task interpretation and next operation
+                    ↓
+Requirements and available investigation state
+                    ↓
+Acquire, inspect, and review material as needed
+                    ↓
+Assemble working context ↔ assess support and gaps
+                    ↓
+Choose: continue, clarify, revise, proceed, or stop
+                    ↓ when proceeding
+Person, deterministic operation, or model
+                    ↓
+Result and outcome checks → feedback to the inquiry
 ```
 
 
-The downstream task may produce an answer, structured extraction, comparison, decision, or action. It can also return unresolved questions that reopen the inquiry.
+This is a vocabulary for feedback and dependencies, rather than a mandatory sequence of services or model calls. An exact lookup may need only a query, a source check, and presentation of the result.
 
-## Distinguish sources, investigation state, and working context
+## Keep sources, investigation state, and working context distinct
 
 
-These objects have different responsibilities and lifetimes:
-
-| Layer | What it contains | Why it exists |
+| Layer | What it contains | Responsibility |
 | --- | --- | --- |
-| Sources and external state | Original documents, records, application state, and their revisions | Provide the authoritative material for the task. |
-| Derived acquisition representations | Chunks, vectors, lexical indexes, extracted fields, generated retrieval aliases | Make aspects of that material searchable. |
-| Investigation state | Acquisition runs, candidates, selections, judgments, questions, claims, and dependencies | Preserve what was considered and how the inquiry developed. |
-| Working context | The selected inputs, requirements, provenance, and constraints for one operation | Give that operation a bounded, usable view of the investigation. |
+| Sources and observed external state | Documents, records, application observations, and their revisions or observation times | Preserve the material from which information was obtained. |
+| Derived acquisition representations | Searchable passages, vectors, normalized fields, summaries, generated access questions | Expose aspects of source material for access. |
+| Investigation state | Requirements, runs, candidates, selections, judgments, claims, gaps, and dependencies | Preserve enough of the inquiry to inspect, revise, or resume it. |
+| Working context | Selected material, requirements, provenance, constraints, and instructions for one operation | Give that operation a bounded and usable input view. |
 
-An embedding index is a derived view of the sources. A selected set is a state of the investigation. A prompt is an input to an operation. Treating these as one object makes changes difficult to interpret and failures difficult to locate.
+Sources can be mistaken, stale, or disputed. Original location establishes provenance, not factual truth or governing authority. Derived representations can introduce further errors and must remain distinguishable from source content.
 
-Working context should be constructed from the relevant state rather than becoming its only record. A synthesis call may need selected passages and unresolved conflicts; it does not need every discarded candidate or every previous conversation turn. Those earlier decisions can remain available for inspection without occupying the model's context window.
+Working context should be constructed from relevant available material rather than becoming the only record of the investigation. A comparison operation may need selected passages and unresolved conflicts; it does not need every discarded candidate or previous conversation turn. Earlier decisions can remain inspectable outside that input view.
 
-Outside document investigation, the same separation applies to live records and application state. Context preparation must preserve the authority and freshness required by the operation; successful execution still needs its own outcome checks.
+The amount of retained state should follow the task. A sustained review can need claims, judgments, and dependencies. A direct record lookup need not become a persisted investigation.
 
-## Retrieval units and reading units serve different purposes
+## Design access around the information need
 
 
-“Chunk” often collapses several design choices:
+Retrieval engineering connects the task-shaped information need, searchable source views, matching and routing methods, and reliable source recovery. The [representation-design note]({{< ref "ai-engineering/retrieval/model-representation-design" >}}) develops this as a design method.
 
-| Unit | Responsibility |
+The request and retrieval query have distinct roles but can contain identical text. An exact identifier may be ready for lookup. A conceptual inquiry may benefit from alternative terms or representations, provided additions remain inspectable and can be challenged.
+
+Generated questions, summaries, extracted claims, and normalized fields can help locate source material. They are access views rather than interchangeable evidence. Record what was copied, transformed, or generated and how each view maps to its source.
+
+Independent routes can acquire material missing from another route. A reranker operating only on an existing pool can refine that pool but cannot recover sources outside it without additional acquisition. Preserve this distinction when interpreting an experiment.
+
+## Match, read, and use at appropriate granularities
+
+
+“Chunk” can hide several different units:
+
+| Unit | Question it answers |
 | --- | --- |
-| Encoding context | The input that influences a computed representation. |
-| Retrieval representation | The searchable object used for matching. |
-| Retrieval hit | One result of an acquisition run, with its route, rank, and score. |
-| Source span | An addressable occurrence in an original source revision. |
-| Reading unit | Enough original material to interpret the hit. |
-| Evidence selection | A recorded choice to retain source material for an inquiry. |
-| Working-context unit | Material included in a particular downstream operation. |
+| Encoding context | What input influenced the computed representation, including added headings or surroundings? |
+| Retrieval representation | What searchable object matched the query? |
+| Retrieval hit | What did this run return, by which route, rank, and score? |
+| Source occurrence | Where does the original material occur, in which observed revision? |
+| Reading unit | What surrounding material is needed to interpret the match? |
+| Selection | What did someone retain for a stated purpose? |
+| Working-context unit | What will the named operation actually consume? |
 
-A generated question can locate a paragraph. A sentence can locate a section. A token-level match can highlight a word whose vector was contextualized by an entire chunk. The displayed passage need not be the text used for retrieval, and the text used for retrieval need not be sufficient for interpretation.
+A generated question can locate a paragraph; a sentence can locate a section; a row can require table headers and units. A token match can refer to a word whose vector was computed with surrounding text. Semantic ranking does not establish that a token-bounded chunk preserves the meaning needed for interpretation.
 
-This gives a useful design pattern: **match at the granularity that exposes the signal, then read at the granularity needed to preserve its meaning.** Expansion should retain the original locator and record the added context. A paragraph, section, table, or code block is an interpretation choice, not automatically a complete semantic unit.
+A useful design hypothesis is to match at the granularity that exposes the signal and recover the context needed to read it. Expansion retains the original locator and identifies the added material. Parent sections, adjacent paragraphs, and referenced exceptions are candidates for expansion, not automatically required additions.
 
-Semantic retrieval also does not imply semantic chunking. A model can rank structurally defined, token-bounded chunks semantically while having no role in choosing their boundaries.
-
-## Retrieval engineering is representation alignment with source recovery
+## Review candidates without conflating their states
 
 
-The user's expression and the corpus rarely expose information in the same form. A request can use a concept name while the source explains its consequences, gives an example, or answers a question without using that name.
+A hit is a candidate. Retrieval does not establish that it is true, applicable, or sufficient support for a claim. Display, inspection, collection, relevance judgment, authority assessment, and citation have different meanings.
 
-Retrieval engineering aligns:
+An interface can combine actions for convenience. A click can collect a passage immediately, while the underlying record still distinguishes collection from a later judgment about support. Counterevidence may be worth collecting precisely because it challenges a conclusion.
 
-1. The task-shaped information need.
-2. Searchable representations that expose relevant aspects of the sources.
-3. Matching and routing strategies suited to those representations.
-4. Reliable mapping from a match back to interpretable source material.
+Acquisition channels should expose their scope, matching rules, limits, and failure modes. Preserve the query and route for each candidate when combining channels. Review should distinguish rejected, uninspected, unavailable, and unresolved material where those distinctions matter to the inquiry.
 
-Possible representations include paragraphs, sentences, propositions, generated questions, contextual phrases, entities, tables, metadata, and relationships. They are alternative views, not interchangeable facts.
+An evidence set is a selected body of material for an inquiry or purpose. It can persist across operations. A particular working-context snapshot is a view selected from that material and other relevant state; neither collection nor inclusion proves support.
 
-A generated question or extracted proposition can help locate a source without replacing it as evidence. Transformations should record what was generated, what was copied, and which exact source occurrence they refer to. A mistaken alias should be correctable without changing the source's identity.
-
-Alternative representations can participate in different architectures. Independently indexed views can acquire candidates that another route missed. A second-stage scorer operating only on an existing candidate pool can refine that pool, but cannot recover sources absent from it. Representation experiments should make this boundary explicit.
-
-## Design retrieval through small, interactive experiments
+## Assess context for the next operation
 
 
-Task-to-context alignment also changes how the system is developed. Begin with a small real inquiry and the simplest inspectable baseline that can test its uncertainties. Treat the pipeline, including where an LLM belongs, as a design hypothesis.
+The operative question is whether the selected inputs are adequate for the named operation under the current requirements and accepted uncertainty. The basis should be available for inspection.
 
-Decompose the flow into elementary decisions with observable inputs and outputs: source preparation, query interpretation, acquisition, source recovery, ranking, context expansion, judgment, collection, gap assessment, and context assembly. Each boundary should make it possible to inspect a failure, compare an alternative, or change one decision while preserving the surrounding work. This decomposition does not require a separate service or user control for every operation.
+For an illustrative policy comparison:
 
-People, deterministic software, and models can work on the same intermediate artifacts. A person can inspect candidates directly, a model can suggest aliases or judgments, and software can preserve source identity and record changes. Assign those responsibilities according to the operation and evidence of competence. Keep raw candidates available when testing optional model review or synthesis.
+| Requirement | Observed basis | Remaining issue or decision |
+| --- | --- | --- |
+| Compare the intended revisions | Two documents with verified identifiers and revision metadata | Confirm whether both revisions apply to the requested scope. |
+| Preserve obligations and exceptions | Selected clauses and parent sections | An exception refers to an annex that has not been inspected. |
+| Produce a cited comparison | Source occurrences included in the planned inputs | Recover the annex before claiming a complete comparison, or explicitly limit the result. |
 
-Interaction serves two loops: advancing the current investigation and learning how the pipeline should behave. An intervention with a recorded reason can suggest a policy; testing it on further cases determines whether it should become automation. Some useful decisions can remain interactive. The goal is a productive division of work that can evolve through evidence.
+Assessment considers support, search scope, authority, freshness, source integrity, conflicting material, permitted use, and the consumer's required form and limits. Findings should refer to a requirement revision, the material considered, the method or reviewer, and unresolved issues. A single similarity score or “enough evidence” response does not establish all these conditions.
 
-The companion [retrieval-design note]({{< ref "ai-engineering/retrieval/retrieval-design" >}}) develops the elementary steps, collaborative workflow, experiment records, and an iterative DSL example.
+Assessment can be interleaved with inspection and assembly. A simple task can use direct checks. A complex inquiry may need explicit judgments that can be challenged or revised. No universal numeric adequacy threshold follows from the architectural principle.
 
-## Acquisition produces candidates; review gives them a role
+Adequacy is relative to the next operation. Material can be adequate for presenting an unresolved disagreement while inadequate for choosing a governing policy. Checking the resulting comparison or action remains a separate responsibility.
 
-
-A hit is a candidate. Similarity establishes neither factual truth nor support for a particular claim. Reading, collecting, judging usefulness, resolving authority, and citing support are distinct operations.
-
-An interface can combine actions for convenience. Clicking a passage may immediately collect it. The underlying state should still distinguish that collection event from a later judgment that the passage supports a conclusion.
-
-Acquisition channels should expose their contracts. Literal search, dense retrieval, a database query, and graph traversal have different matching rules, limits, and failure modes. Combining their outputs should preserve how each candidate was obtained. A unified view does not require erasing retrieval routes.
-
-Review should preserve rejected and unresolved material where the task requires auditability. A rejected candidate, an uninspected candidate, an unavailable operation, an empty result, and a claim with missing support mean different things.
-
-## Accumulate evidence and stop for a stated reason
+## Accumulate material and stop for a stated reason
 
 
-Large investigations need a control policy as well as a retriever. One policy acquires a bounded pool and reads it in batches. Another issues new searches as gaps emerge. A workflow can combine them.
+Two acquisition policies can coexist: inspect more of an already acquired candidate pool, or issue another acquisition request to address a gap. Keep their runs and dependencies distinct.
 
-The review loop needs state: remaining candidates, material already inspected, collected source passages, judgments, task requirements, conflicts, and outstanding gaps. Each review step can update that state without repeatedly rewriting a final answer.
+State can include remaining candidates, inspected material, selected source occurrences, judgments, requirement status, conflicts, and open questions. Review updates that state without requiring repeated synthesis of a final answer.
 
-Stopping reasons should remain distinguishable:
+Distinguish stopping because:
 
-- The declared requirements have adequate support under the chosen review policy.
-- The current candidate pool has been exhausted.
+- The requirements of the current operation have adequate support under the review policy.
+- The current pool has been exhausted, with acquisition limitations still recorded.
 - A time, token, cost, or evidence-count budget has been reached.
-- A blocking gap requires clarification, another source, or human judgment.
-- The user chooses to stop or deliver the current discovery result.
+- A gap requires another source, clarification, or a different kind of judgment.
+- The user chooses to stop or accept the current discovery result.
 
-A count is a useful limit, but it is not a sufficiency proof. An LLM may propose that the evidence is adequate; its reasons and the requirements it considers satisfied should remain inspectable. For an exhaustive inquiry, unreviewed material and acquisition limitations still matter after a plausible answer becomes possible.
+An evidence count is a limit rather than a sufficiency proof. Pool exhaustion establishes neither corpus completeness nor the absence of relevant information. For an exhaustive inquiry, unsearched or unreviewed material continues to limit the conclusion even when a plausible answer is available.
 
-Before downstream synthesis, materialize the selected input snapshot. A fresh execution context can then use the selected original passages, relevant judgments, and unresolved conflicts rather than relying only on accumulated summaries. This snapshot fixes the inputs for that run; it does not prevent later revision of the investigation.
+Before a consequential downstream operation, retain enough of its input snapshot or manifest to identify what it actually consumed: source revisions, selected material, ordering, transformations, and relevant constraints. The snapshot fixes the inputs for that run while allowing later revision of the inquiry.
 
-## Source identity and retrieval provenance are separate
-
-
-Different routes can return equal, contained, or partially overlapping pieces of the same source. Text equality alone cannot resolve these relationships: the same words can occur twice in one document or in different documents.
-
-Where exact mapping is available, use document identity, source revision, and source extent. Equal extents can share one collected entry with several retrieval routes. Contained and partial overlaps can remain separate objects with explicit relationships. Unknown or stale coordinates should remain unknown.
-
-Selection coverage is a separate calculation. A set of selected ranges may fully cover another passage without replacing the original selections with a merged object. Gaps must remain gaps. A document checkbox that selects loaded results should not imply that every paragraph in the document has been reviewed.
-
-Source provenance also does not settle authority. Two passages can be precisely located and still disagree. Contradictions, qualifications, draft status, and governing-source decisions should remain available to the task rather than disappearing during deduplication or summarization.
-
-## Separate ranking, attribution, filtering, and appearance
+## Preserve source identity and disagreement
 
 
-Several quantities may appear in the same interface:
+For exact text mapping, use document identity, observed revision, and source extent. For records or live state, use the available resource identity, version, or captured observation. Paths, current line numbers, and text equality alone can be insufficient.
 
-- A retrieval score ranks candidates within an acquisition route.
-- An attribution score maps a representation match onto source words or spans.
-- A filter decides which returned objects remain eligible or visible.
-- A review judgment assesses usefulness or support for the task.
-- A display curve converts a score into visual emphasis.
+Equal extents can share one collection entry while retaining multiple acquisition routes. Contained and partially overlapping passages can remain separately inspectable and removable. The same words in different locations remain distinct occurrences. Unknown or stale mappings should remain unresolved.
 
-These quantities need separate contracts. A ranking method can work reasonably while its word-level attribution is misleading. A stronger highlight can make a mistaken match more persuasive. Changing appearance should not silently change eligibility, ranking, or collected evidence.
+Source-range coverage is a separate calculation. Several selected intervals can cover another span without replacing them with a new merged source object. Gaps remain gaps. Selecting loaded results for a document should not imply that the whole document has been reviewed.
 
-Model positions also need not correspond to whole visible words. Subwords, special tokens, augmentation, and truncated input complicate alignment. Missing attribution coverage should be explicit rather than repaired with invented offsets or scores.
+Authority decisions and conflicting interpretations also survive collection. Deduplication or compression must not silently erase qualifications, draft status, counterevidence, or the reason one source was chosen to govern.
 
-Raw scores and percentiles are not calibrated relevance probabilities. A percentile describes a returned distribution; it does not establish that its strongest items are useful. Scores from different representation families or models should not be assumed comparable without a justified combination policy.
-
-## Make composition and invalidation explicit
+## Separate scores, judgments, and appearance
 
 
-Modularity becomes useful when operations exchange named objects with clear contracts:
+Retrieval ranking, source-word attribution, filtering, review judgments, and visual emphasis can appear together but make different claims.
+
+| Quantity | Meaning |
+| --- | --- |
+| Retrieval score | Supports ordering within the stated matching method and route. |
+| Attribution score | Relates a representation match to source words or spans under a stated method. |
+| Filter | Determines which objects remain eligible or visible. |
+| Review judgment | Assesses usefulness, support, authority, or another declared criterion. |
+| Display curve | Converts a value into visual emphasis. |
+
+A stronger highlight can make a mistaken match more persuasive. Appearance changes should not silently alter collection or evidence eligibility. A percentile describes a position in a distribution, rather than a calibrated probability of relevance. Scores across methods need a justified combination policy.
+
+Subwords, special tokens, augmented inputs, and truncation can complicate source-word mapping. Missing attribution coverage should be explicit rather than repaired with invented scores or offsets.
+
+## Compose operations and track changing inputs
+
+
+Modularity becomes useful when operations exchange objects with explicit contracts:
 
 ```text
-Acquire:       inquiry + source scope + parameters → candidate set
-Expand:        candidate + source revision         → reading unit
-Review:        reading units + requirements        → judgments and selections
-Assess gaps:   selections + requirements           → coverage and open issues
-Execute:       declared input snapshot             → task result
-Verify:        result + inputs + checks            → status and findings
+Acquire:   requirements + access decisions → candidates and run information
+Review:    candidates + reading context + requirements → judgments and selections
+Assemble:  available material + requirements + consumer contract → working context
+Assess:    working context + requirements + scope and checks → findings and gaps
+Perform:   declared working context + applicable controls → result
+Verify:    result + observed state + success criteria → findings and further work
 ```
 
 
-An operation run should retain its inputs, parameters, output, actor, and relevant versions. Dependencies then emerge from normal composition. Reordering a view should not change those dependencies.
+An operation can be performed by a person, deterministic software, or a model. Generation can produce prose, fields, queries, code, plans, or proposed calls. Producing an instruction is separate from validating and executing it; an executor must enforce applicable authorization and verify effects.
 
-When a source, selection, requirement, or parameter changes, dependent results may become stale. Keeping their prior output inspectable is useful; presenting it as current is misleading. The system should distinguish a rerun from a revision of an earlier judgment.
+Where revision and auditability matter, retain the actual inputs, method or actor, parameters, outputs, and dependencies. Source changes can invalidate locators and freshness judgments; requirement changes can invalidate support assessments; new selections can make an earlier synthesis inapplicable. Preserve prior outputs when useful while representing which inputs they describe.
 
-People, fixed workflows, and agents can use the same operations. An agent changes how operations are chosen, not the need for source identity, declared inputs, and validation. RAG can be one operation inside such a workflow; agentic control and retrieval-conditioned generation are compatible dimensions.
+RAG and agentic control can coexist: retrieval-conditioned generation describes an operation, while an agent can choose which operations to perform. Fixed orchestration can use the same evidence contracts.
 
-## Evaluate the claim each boundary makes
+## Evaluate the boundary being claimed
 
-
-Task success depends on multiple boundaries. Evaluation should preserve their differences:
 
 | Boundary | Relevant checks |
 | --- | --- |
-| Index construction | Source synchronization, representation coverage, version compatibility, truncation. |
-| Acquisition | Judged recall, ranking quality, route contribution, latency and cost. |
-| Source mapping | Exact source recovery, revision checks, repeated occurrences, overlap integrity. |
-| Attribution | Reviewed word/span matches, missing coverage, misleading highlights. |
-| Evidence review | Selection usefulness, counterevidence, exclusions, requirement support. |
-| Downstream execution | Faithfulness, task correctness, unresolved conflicts, permitted and verified actions. |
+| Source preparation and indexing | Synchronization, represented source scope, transformations, truncation, and version compatibility. |
+| Acquisition | Reviewed recall and ranking, unique route contribution, latency, cost, and review effort. |
+| Source recovery | Correct occurrence, revision, extent, reading context, and overlap relationships. |
+| Attribution | Reviewed word or span mapping, missing coverage, and misleading emphasis. |
+| Evidence review and context assessment | Support judgments, counterevidence, authority, gaps, exclusions, and consumer usability. |
+| Consuming operation and outcome | Faithful use of declared inputs, task correctness, permitted execution, and verified effects. |
 
-“Coverage” needs an explicit scope. Index coverage measures represented source material. Screening coverage measures reviewed material in a declared pool. Source-range coverage measures selected intervals. Requirement coverage measures support for the inquiry. Retrieval recall measures recovery of judged relevant items. These quantities can inform one another, but none substitutes for the others.
+Index coverage, screening coverage, source-range coverage, requirement support, and judged retrieval recall have different denominators. Record the scope of each claim rather than treating them as interchangeable measures of completeness.
 
-Versioning is part of this evaluation boundary. Source changes can invalidate evidence coordinates or relevance judgments. Representation changes can invalidate indexes. A compatible vector dimension alone does not establish compatible embeddings; model identity, transformations, templates, and measured runtime behavior matter.
+Runtime context assessment concerns a particular operation. Design-time evaluation concerns how reliably a method behaves across cases. An inspectable prototype can demonstrate an interaction or contract without establishing semantic quality or readiness for other tasks and corpora.
 
-Prototype checks can establish that a pipeline runs, preserves sources, and supports an interaction. They do not establish that one representation retrieves better than another. Readiness belongs to a stated task, corpus, profile, and evaluation, rather than to a tool choice or a convincing demonstration.
-
-The architectural objective is reliable progress on the user's task through appropriate context and explicit evidence decisions. RAG remains a useful mechanism within that architecture. Evidence workflows explain how the surrounding knowledge work can remain inspectable, revisable, and testable.
+The [retrieval-design note]({{< ref "ai-engineering/retrieval/retrieval-design" >}}) develops small baselines, interactive comparisons, experiment records, and progressive automation. The architectural proposal supplies distinctions to test; it does not establish their implementation cost or benefit in advance.
