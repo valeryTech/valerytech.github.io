@@ -131,15 +131,16 @@ class PlanningTests(unittest.TestCase):
             "var/ai-product-types.md",
             "var/practitioner_guide_seven_ai_product_types.md",
             "system-evaluation/review-flow-specification.md",
-            "methodology/ebse.md",
-            "methodology-v1.3/usage/ai-systems-framework-developer-guide-v1.md",
-            "methodology-v1.3/change-detection-v1.2.md",
-            "methodology-v1.3/slices-definition-v1.1.md",
+            "other/methodology/ebse.md",
+            "other/methodology-v1.3/usage/ai-systems-framework-developer-guide-v1.md",
+            "other/methodology-v1.3/change-detection-v1.2.md",
+            "other/methodology-v1.3/slices-definition-v1.1.md",
         }
         private_notes = {
             "design-research/00-index.md",
             "design-research/03-language-and-compiler/private-mechanism.md",
             "architecture-dsl-like/research-direction.md",
+            "other/private-note.md",
             "var/ai-product-types-improvement-proposal.md",
             "var/reuse.md",
         }

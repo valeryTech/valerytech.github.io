@@ -84,7 +84,7 @@ To design an effective experimentation infrastructure, the system must be explic
 # Connections
 
 
-- [Ebse]({{< ref "ai/methodology/ebse" >}}) - Empirical Software Engineering
+- [Ebse]({{< ref "ai/other/methodology/ebse" >}}) - Empirical Software Engineering
 - [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}})
 - [AI-system-level causal features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}})

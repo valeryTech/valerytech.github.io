@@ -1206,26 +1206,17 @@ Suppose:
 A bias-corrected estimate of the human-equivalent Pass rate is:
 
 \[
-
 \hat{\theta}
-
 =
-
 \frac{p_{\text{obs}} + \mathrm{TNR} - 1}
-
      {\mathrm{TPR} + \mathrm{TNR} - 1}
-
 \]
 
 clipped to the interval \([0,1]\).
 
 This correction is not usable when:
 
-\[
-
-\mathrm{TPR} + \mathrm{TNR} - 1
-
-\]
+\[\mathrm{TPR} + \mathrm{TNR} - 1\]
 
 is near zero, because the judge provides little information beyond chance.
 

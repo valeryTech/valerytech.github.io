@@ -157,8 +157,8 @@ root_index_source = "_index.md"
 
 The committed manifest uses that pattern for `ai`, `ai-engineering`, and
 `projects`. The AI import currently publishes `ai/approach/`,
-`ai/collab-and-joint-work/`, `ai/design/`, `ai/discovery/`, `ai/methodology/`,
-`ai/methodology-v1.3/`, `ai/operating-model/`, `ai/risk-areas/`, and
+`ai/collab-and-joint-work/`, `ai/design/`, `ai/discovery/`, `ai/other/methodology/`,
+`ai/other/methodology-v1.3/`, `ai/operating-model/`, `ai/risk-areas/`, and
 `ai/system-evaluation/`. It also imports two individual files from `ai/var/`:
 `ai-product-types.md` (the seven product archetypes and deployment taxonomy) and
 `practitioner_guide_seven_ai_product_types.md` (the accompanying design,
