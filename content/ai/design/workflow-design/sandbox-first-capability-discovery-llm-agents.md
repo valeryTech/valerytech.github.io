@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A proposed method for discovering LLM agent capabilities in bounded sandboxes before adding specialised tools, components, or workflows."
 title: "Sandbox First Capability Discovery Llm Agents"
 linkTitle: "Sandbox First Capability Discovery Llm Agents"
 ---

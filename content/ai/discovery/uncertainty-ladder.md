@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A proposed AI development framework distinguishing solvability, approach, constrained feasibility, operations, and adoption, with detailed possibility probes and organizational implications; transition criteria and operating practices remain unfinished."
+description: "A proposed AI uncertainty ladder from solvability to adoption, with possibility probes and unfinished practices for moving between stages."
 title: "Uncertainty Ladder"
 linkTitle: "Uncertainty Ladder"
 ---

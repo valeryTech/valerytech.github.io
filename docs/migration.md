@@ -40,7 +40,9 @@ Run `make migrate` after editing the source note. The importer preserves
 (discoverable from `/agent-map/`) uses it ahead of the automatic excerpt. It is
 also available to the website's page metadata. Keep it concise: the map displays
 up to 240 characters.
-If no description is supplied, the map continues to use the page summary.
+Production checks require a nonempty description of up to 240 characters for
+every migrated article across AI, AI Engineering, Engineering, System Design,
+and Projects. Section indexes and other pages can fall back to the page summary.
 
 Set this property in the original note, rather than in the migration-managed
 `content/` copy, so the next import preserves it.

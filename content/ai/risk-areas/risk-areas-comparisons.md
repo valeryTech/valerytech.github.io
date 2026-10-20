@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A supporting terminology comparison contrasts product-risk dimensions, uncertainties, and assumption categories across practitioners, preserving alternative taxonomies and the reasoning for separating coverage dimensions from testable propositions."
+description: "Supporting comparisons of product-risk dimensions, uncertainty, and assumption categories, preserving alternative taxonomies and naming tradeoffs."
 title: "Risk Areas Comparisons"
 linkTitle: "Risk Areas Comparisons"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Old pointer to notes that have been moved or reorganized."
+description: "A pointer to reorganized interactive-investigation principles, a position paper, worked retrieval examples, and research comments."
 title: "Joint And Collap Principles"
 linkTitle: "Joint And Collap Principles"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "The canonical risk model uses concrete assumptions to separate current-condition and intended-change questions, candidate-solution dimensions, and production obligations, tying bounded commitments to decision-relevant evidence and consequences."
+description: "Use concrete assumptions, evidence, and consequences to decide commitments across current conditions, candidate solutions, and production obligations."
 title: "Risk Areas Model"
 linkTitle: "Risk Areas Model"
 ---

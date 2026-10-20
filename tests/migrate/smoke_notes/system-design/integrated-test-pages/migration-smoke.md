@@ -1,6 +1,7 @@
 ---
 title: "Migration Smoke"
 linkTitle: "Smoke"
+description: "A small migration smoke page for checking resolved notes, local and cross-document headings, and unresolved links in generated site content."
 ---
 
 This page is the repo-owned manual smoke surface for migration.

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Old pointer to notes that have been moved or reorganized."
+description: "A pointer to reorganized research on participant capabilities, work allocation, augmenting human work, and collaborative-system design."
 title: "Build Approach"
 linkTitle: "Build Approach"
 ---

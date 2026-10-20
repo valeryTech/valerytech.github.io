@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Old pointer to notes that have been moved or reorganized."
+description: "A pointer to reorganized notes on joint activity, a human-AI collaboration model, collaboration patterns, and their supporting comments."
 title: "Collab Transfer"
 linkTitle: "Collab Transfer"
 ---

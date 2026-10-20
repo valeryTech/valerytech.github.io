@@ -101,16 +101,18 @@ test('maps distinguish preferred entry points, published drafts, and archived hi
   assert.doesNotMatch(versioned, /\[(Canonical|Archived|Draft)\]/);
 });
 
-test('Engineering documents have curated descriptions, including honest descriptions for placeholders', () => {
+test('migrated documents have curated descriptions, including honest descriptions for placeholders', () => {
   const engineering = maps.get('/agent-map/engineering/');
   assert.match(engineering, /Compare DRY, WET, and AHA to decide when duplication is acceptable/);
   assert.match(engineering, /An empty placeholder for SQL notes; no technical guidance has been written yet/);
-  const articles = files(path.join(root, 'content/engineering')).filter((filename) => filename.endsWith('.md') && path.basename(filename) !== '_index.md');
-  assert.ok(articles.length > 0);
-  for (const filename of articles) {
-    const description = readFileSync(filename, 'utf8').match(/^description: "(.+)"$/m)?.[1];
-    assert.ok(description && description !== 'Default Description', `Missing curated description: ${filename}`);
-    assert.ok(description.length <= 240, `Description should fit the map: ${filename}`);
+  for (const collection of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
+    const articles = files(path.join(root, 'content', collection)).filter((filename) => filename.endsWith('.md') && path.basename(filename) !== '_index.md');
+    assert.ok(articles.length > 0, `No articles found in ${collection}`);
+    for (const filename of articles) {
+      const description = readFileSync(filename, 'utf8').match(/^description: "(.+)"$/m)?.[1];
+      assert.ok(description?.trim() && description !== 'Default Description', `Missing curated description: ${filename}`);
+      assert.ok(description.length <= 240, `Description should fit the map: ${filename}`);
+    }
   }
 });
 

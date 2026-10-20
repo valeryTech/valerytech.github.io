@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Old pointer to notes that have been moved or reorganized."
+description: "A pointer to reorganized research on human-AI collaboration patterns, their mechanics, selection, and evaluation; claims remain unverified."
 title: "Human Ai Collaboration Patterns Report"
 linkTitle: "Human Ai Collaboration Patterns Report"
 ---

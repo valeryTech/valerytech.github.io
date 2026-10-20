@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Migration Smoke"
+description: "A small migration smoke page for checking resolved notes, local and cross-document headings, and unresolved links in generated site content."
 linkTitle: "Smoke"
 ---
 
