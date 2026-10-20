@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Original API-gateway notes"
 description: "Archived API gateway notes on request routing, shared middleware, adoption trade-offs, implementation options, and supporting sources."
+document_status: "archived"
 linkTitle: "Original API-gateway notes"
 ---
 

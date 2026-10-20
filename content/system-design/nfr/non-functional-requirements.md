@@ -19,7 +19,7 @@ For each important requirement, record:
 4. **Design consequence:** what choice does it influence?
 5. **Trade-off:** what can be relaxed, and what must still hold?
 
-For example, “fast redirects” needs a scope and measurement: the URL-shortener drafts propose a p95 latency target for resolve requests. Before using it, clarify whether it covers cached requests, uncached requests, or all eligible requests. A number without that context is not yet a useful design constraint.
+For example, "fast redirects" needs a scope and measurement: the URL-shortener drafts propose a p95 latency target for resolve requests. Before using it, clarify whether it covers cached requests, uncached requests, or all eligible requests. A number without that context is not yet a useful design constraint.
 
 ## Questions by quality
 
@@ -51,11 +51,11 @@ An availability percentage alone does not determine the architecture. The depend
 Original reading list:
 
 - *Implementing SLOs*.
-- [Service-level objectives — Google SRE book](https://sre.google/sre-book/service-level-objectives/).
+- [Service-level objectives -- Google SRE book](https://sre.google/sre-book/service-level-objectives/).
 - [How to design good SLOs](https://cloud.google.com/blog/products/devops-sre/how-to-design-good-slos-according-to-google-sres).
-- [Implementing SLOs — SRE workbook](https://sre.google/workbook/implementing-slos/).
+- [Implementing SLOs -- SRE workbook](https://sre.google/workbook/implementing-slos/).
 - [Google Cloud reliability framework](https://cloud.google.com/architecture/framework/reliability/printable).
 - [Google SRE books](https://sre.google/books/) and [book updates](https://sre.google/resources/book-update/).
-- [The Calculus of Service Availability — ACM](https://cacm.acm.org/practice/the-calculus-of-service-availability/) and [paper](https://dl.acm.org/doi/pdf/10.1145/3080202).
-- “Thinking about Availability in Large Service Infrastructures.”
+- [The Calculus of Service Availability -- ACM](https://cacm.acm.org/practice/the-calculus-of-service-availability/) and [paper](https://dl.acm.org/doi/pdf/10.1145/3080202).
+- "Thinking about Availability in Large Service Infrastructures."
 - [PACELC overview](https://en.wikipedia.org/wiki/PACELC_design_principle).

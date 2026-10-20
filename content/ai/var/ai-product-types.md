@@ -10,8 +10,6 @@ linkTitle: "Ai Product Types"
 
 Revised 2026-10-18. This note defines a practical vocabulary for product discovery and comparison. The [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}) develops the design, evaluation, and estimation method.
 
-The [editable tldraw board](https://www.tldraw.com/f/LO7apgTgZZn1VGy9rb0qL) maps the main ideas, their design implications, and the principles connecting them. Begin with **Ideas and influences** and **Principles and feedback**; the earlier diagrams remain as references.
-
 AI products combine different kinds of work, context, collaboration, and authority. The seven archetypes below describe common product purposes. Their numbering preserves the original classification; it does not rank sophistication, cost, autonomy, or risk.
 
 Describe a product in two parts: **the work it primarily supports** and **the requirements of its particular deployment**. A bounded booking assistant can execute consequential transactions. An investigation workspace can require complex evidence handling while having no authority to change an external system.
@@ -107,27 +105,27 @@ For example, a medical copilot could also be an agentic assistant. An audit repo
 
 ### A simpler architecture-level classification
 
-#### Level 1 — Conversational AI
+#### Level 1 -- Conversational AI
 
 
 - Chatbots
 - Predefined task assistants
 
-#### Level 2 — Contextual AI
+#### Level 2 -- Contextual AI
 
 
 - Support
 - Reporting
 - Specialized domain copilots
 
-#### Level 3 — Action-oriented AI
+#### Level 3 -- Action-oriented AI
 
 
 - Tool use
 - Workflow execution
 - Coordination
 
-#### Level 4 — AI-powered systems and platforms
+#### Level 4 -- AI-powered systems and platforms
 
 
 - Complex reasoning

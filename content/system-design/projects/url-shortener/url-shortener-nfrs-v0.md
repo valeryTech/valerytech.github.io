@@ -66,7 +66,6 @@ I'll design a **read-optimized redirect service** that is massively scalable and
 
 # Consistency
 
-
 #todo add PACELC and other tools perspective and reasoning
 
 - **Requirement**: The system will favor **Availability over strong Consistency (AP in the CAP theorem)**.

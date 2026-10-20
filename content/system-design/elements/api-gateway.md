@@ -30,8 +30,8 @@ AWS API Gateway, Kong, NGINX, Apigee, and Traefik. Compare their relevant behavi
 ## Sources
 
 
-- [API gateway deep dive — Hello Interview](https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway).
-- [API gateways in microservices — Microsoft](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway).
-- [API gateway pattern — microservices.io](https://microservices.io/patterns/apigateway.html).
+- [API gateway deep dive -- Hello Interview](https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway).
+- [API gateways in microservices -- Microsoft](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway).
+- [API gateway pattern -- microservices.io](https://microservices.io/patterns/apigateway.html).
 - [AWS API Gateway resources](https://aws.amazon.com/api-gateway/resources/).
 - [Video to review](https://www.youtube.com/watch?v=1vjOv_f9L8I).

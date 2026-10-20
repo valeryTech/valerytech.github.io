@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Trace user needs through outcomes, workflows, capabilities, and system responsibilities; compare JTBD, requirements engineering, Wardley Mapping, and related methods."
 title: "Backward Design Der"
 linkTitle: "Backward Design Der"
 ---

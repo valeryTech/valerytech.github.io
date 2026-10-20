@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Distinguish communication needs between services before choosing technology, with notes on polling, streaming, collaboration, and APIs."
 title: "Communication"
 linkTitle: "Communication"
 ---

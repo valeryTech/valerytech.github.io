@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Compare operational, structural, cloud, and cross-cutting quality characteristics when discussing architectural requirements and trade-offs."
 title: "Characteristics"
 linkTitle: "Characteristics"
 ---

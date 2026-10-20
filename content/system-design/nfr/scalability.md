@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Scalability"
 description: "How to connect workload and bottlenecks to vertical scaling, duplication, partitioning, decomposition, caching, queues, autoscaling, and growth decisions."
+document_status: "canonical"
 linkTitle: "Scalability"
 ---
 
@@ -78,7 +79,7 @@ Distinguish predictable load, such as daily traffic patterns, from unexpected sp
 
 - Ian Gorton, *Foundations of Scalable Systems* (2022).
 - *Designing Fine-Grained Microservices*.
-- [Data partitioning — Microsoft](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning).
-- [Sharding pattern — Microsoft](https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding).
-- [Scaling services with Shard Manager — Meta](https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/).
+- [Data partitioning -- Microsoft](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning).
+- [Sharding pattern -- Microsoft](https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding).
+- [Scaling services with Shard Manager -- Meta](https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/).
 - [Full excerpts and additional sources]({{< ref "system-design/archive/scalability-reading-notes" >}}).

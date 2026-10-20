@@ -1,0 +1,1 @@
+{{- printf "Status labels: **Canonical** = preferred starting point for its topic; **Draft** = provisional working material; **Archived** = preserved history. Unlabeled documents have no assigned status.\n\n" -}}

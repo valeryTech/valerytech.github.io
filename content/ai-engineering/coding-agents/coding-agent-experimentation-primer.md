@@ -6,15 +6,18 @@ description: "A methodology primer for studying coding-agent improvements: frame
 linkTitle: "Studying Coding-Agent Improvements"
 ---
 
-**Document type:** Conceptual methodology primer  
-**Date:** 18 October 2026  
-**Companion to:** *Research agenda: `AGENTS.md` and reliable coding-agent autonomy*  
+**Document type:** Conceptual methodology primer
+
+**Date:** 18 October 2026
+
+**Companion to:** *Research agenda: `AGENTS.md` and reliable coding-agent autonomy*
+
 **Scope:** Research thinking and method selection. A detailed experimental protocol comes later.
 
 ## Purpose
 
 
-The goal is to improve the **user–repository–agent system**: its instructions, documentation, tools, validation, and human interaction. Evaluation should establish whether a change helps, for which tasks, and at what cost. A useful research cycle is:
+The goal is to improve the **user-repository-agent system**: its instructions, documentation, tools, validation, and human interaction. Evaluation should establish whether a change helps, for which tasks, and at what cost. A useful research cycle is:
 
 ```mermaid
 flowchart TB
@@ -33,7 +36,7 @@ flowchart TB
 ```
 
 
-**Research cycle:** Observe → Question → Hypothesize → Evaluate → Interpret → Refine → repeat.
+**Research cycle:** Observe -> Question -> Hypothesize -> Evaluate -> Interpret -> Refine -> repeat.
 
 This is an iterative cycle. Exploratory work can come before a hypothesis, and disappointing results are useful when they change the resulting understanding or design.
 
@@ -44,8 +47,8 @@ Ask first: *What decision would this knowledge change?* For example, is it bette
 
 Then name the **context**, **intervention or phenomenon**, **comparison (if relevant)**, and **outcome**. This makes the question answerable.
 
-- **Too broad:** “Are instruction files good?”
-- **Better:** “For maintenance tasks in Python repositories, does a minimal root `AGENTS.md`, compared with no instruction file, reduce human corrections while preserving accepted task completion?”
+- **Too broad:** "Are instruction files good?"
+- **Better:** "For maintenance tasks in Python repositories, does a minimal root `AGENTS.md`, compared with no instruction file, reduce human corrections while preserving accepted task completion?"
 
 Different questions call for different evidence:
 
@@ -59,7 +62,7 @@ Different questions call for different evidence:
 
 A **research question** defines what an investigation aims to learn. A **hypothesis** predicts an observable relationship. It should be possible to encounter evidence inconsistent with the prediction.
 
-**Example hypothesis:** “For comparable maintenance tasks, a minimal root `AGENTS.md` reduces the number of human corrections per accepted change without a practically important loss in task-completion quality.”
+**Example hypothesis:** "For comparable maintenance tasks, a minimal root `AGENTS.md` reduces the number of human corrections per accepted change without a practically important loss in task-completion quality."
 
 This predicts outcomes; it does not establish them. Before evaluating it, define *correction*, *accepted change*, and what counts as a meaningful quality loss. A useful comparison is the null expectation that the intervention makes no meaningful difference to the primary outcome.
 
@@ -81,7 +84,7 @@ These approaches complement one another. For example, a case study can reveal a 
 ## 4. Decide what would count as improvement
 
 
-For coding-agent work, “better” needs more than a model's self-reported success or a shorter execution time. Distinguish:
+For coding-agent work, "better" needs more than a model's self-reported success or a shorter execution time. Distinguish:
 
 - **Outcome:** Was the task correctly completed and acceptable for review or merge?
 - **Human effort:** How much preparation, prompting, intervention, review, and correction was required?
@@ -124,8 +127,8 @@ This is enough to prevent vague claims and premature conclusions. The next step 
 
 These are methodological starting points, not evidence that any specific `AGENTS.md` recommendation works.
 
-- **Kitchenham, Dybå & Jørgensen (2004), “Evidence-based software engineering.”** How to formulate answerable questions, appraise evidence, and apply findings in context. [Durham bibliography](https://ebse.webspace.durham.ac.uk/ebse-bibliography/evidence-based-software-engineering/) · [DOI](https://doi.org/10.1109/ICSE.2004.1317449)
+- **Kitchenham, Dybå & Jørgensen (2004), "Evidence-based software engineering."** How to formulate answerable questions, appraise evidence, and apply findings in context. [Durham bibliography](https://ebse.webspace.durham.ac.uk/ebse-bibliography/evidence-based-software-engineering/) · [DOI](https://doi.org/10.1109/ICSE.2004.1317449)
 - **Wieringa (2014), Design Science Methodology for Information Systems and Software Engineering.** Research questions, artifact design, and evaluation in context. [Springer](https://doi.org/10.1007/978-3-662-43839-8)
 - **Wohlin et al. (2024), Experimentation in Software Engineering.** A fuller reference for selecting empirical methods and running experiments. [Springer](https://doi.org/10.1007/978-3-662-69306-3)
-- **Runeson & Höst (2009), “Guidelines for conducting and reporting case study research in software engineering.”** How to investigate complex real-world settings. [Open-access paper](https://doi.org/10.1007/s10664-008-9102-8)
-- **Stol, Ralph & Fitzgerald (2016), “Grounded theory in software engineering research.”** What grounded theory entails and how to apply it responsibly. [University repository](https://cora.ucc.ie/handle/10468/7041)
+- **Runeson & Höst (2009), "Guidelines for conducting and reporting case study research in software engineering."** How to investigate complex real-world settings. [Open-access paper](https://doi.org/10.1007/s10664-008-9102-8)
+- **Stol, Ralph & Fitzgerald (2016), "Grounded theory in software engineering research."** What grounded theory entails and how to apply it responsibly. [University repository](https://cora.ucc.ie/handle/10468/7041)

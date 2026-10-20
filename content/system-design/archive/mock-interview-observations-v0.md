@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Original mock-interview observations"
 description: "Archived observations from mock interviews on problem framing, technical depth, concurrency, quantification, trade-offs, and interviewer collaboration."
+document_status: "archived"
 linkTitle: "Original mock-interview observations"
 ---
 

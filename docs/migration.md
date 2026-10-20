@@ -45,6 +45,36 @@ If no description is supplied, the map continues to use the page summary.
 Set this property in the original note, rather than in the migration-managed
 `content/` copy, so the next import preserves it.
 
+## Document Status and Map Exclusions
+
+Use a separate `document_status` property to help readers choose between related
+documents. The map displays these labels next to document links:
+
+- `canonical`: the preferred starting point for that topic, rather than a claim
+  that the material is final or independently verified.
+- `draft`: provisional working material that remains publicly readable.
+- `archived`: material retained for historical context.
+
+For example, a published working draft can use:
+
+```yaml
+---
+description: "A draft proposal for adopting the test-strategy playbook across teams."
+document_status: draft
+draft: false
+---
+```
+
+Hugo's `draft` property controls publication. It is independent of the editorial
+`document_status` label. Unlabeled documents keep an unspecified status; the map
+does not treat version numbers, filenames, or selected reading links as proof
+that one document supersedes another.
+
+Set `agent_map_exclude: true` on an article to omit its entry and redirects from
+agent maps while keeping the page published. The template Example Post uses this
+property. The generated 404 utility page is also omitted from navigation maps.
+Migration preserves both properties from the original note's front matter.
+
 ## Runtime Contract
 
 By default, the migration commands use:
@@ -150,7 +180,7 @@ source_root_kind = "external"
 source_subtree = "ai-engineering"
 target_subtree = "ai-engineering"
 selection_mode = "opt-in"
-selection_paths = ["coding-agents", "evaluation", "ambiguity.md", "approach/empirical-nature.md", "approach/experimentation.md"]
+selection_paths = ["coding-agents", "evaluation", "approach/empirical-nature.md", "approach/experimentation.md"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 ```

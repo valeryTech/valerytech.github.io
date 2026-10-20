@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Study Kubernetes architecture, pods, deployments, replica sets, resource management, service discovery, configuration, and extensions, with learning exercises."
 title: "Kubernetes"
 linkTitle: "Kubernetes"
 ---

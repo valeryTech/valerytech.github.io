@@ -151,7 +151,6 @@ Start by briefly stating the core problem and goal. This shows you understand th
 
 ### **Step 2: Explain the "How" (The Core Technical Flow)**
 
-
 #todo refactor this to HLD + Deep Dives approach from Hello Interview Framework
 
 This is where you immediately pivot to the technical design you prepared. You connect your proposed flow directly to the "Why" you just established.

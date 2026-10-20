@@ -6,7 +6,6 @@ description: "Explains evaluation anti-patterns through a wallet example, distin
 linkTitle: "Product-Specific Evaluation"
 ---
 
-
 Your "Client gives us a `completeness = 0.84`, therefore the product works" example is almost exactly the class of eval practice Hamel argues against.
 
 One important qualification: **"completeness" itself is not automatically a bad evaluator.** It becomes defensible if you have discovered that incompleteness is an actual product failure, defined precisely what constitutes that failure, obtained human labels, and validated an evaluator against those labels. What Hamel objects to is inventing an abstract quality dimension first and treating its score as evidence of product quality. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/should-i-use-ready-to-use-evaluation-metrics.html?utm_source=chatgpt.com))

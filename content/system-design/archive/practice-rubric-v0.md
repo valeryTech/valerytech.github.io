@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Original System Design Practice Rubric"
 description: "The original practice assessment proposal, including weighted criteria, behavioral rating scales, timing suggestions, scoring thresholds, and capacity-estimation shorthand."
+document_status: "archived"
 linkTitle: "Original System Design Practice Rubric"
 ---
 

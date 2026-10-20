@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Architecture principles before the refactor"
 description: "Archived principles and references covering architectural context, modularity, feedback loops, microservices, design practices, and modeling approaches."
+document_status: "archived"
 linkTitle: "Architecture principles before the refactor"
 ---
 

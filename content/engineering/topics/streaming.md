@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Collected streaming resources, learning exercises, batch-versus-stream examples, and Redpanda walkthrough notes for analytics and session-recording use cases."
 title: "Streaming"
 linkTitle: "Streaming"
 ---

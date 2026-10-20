@@ -63,28 +63,55 @@ test('only the main index and five merged collection maps are generated', () => 
   assert.deepEqual([...maps.keys()].sort(), expected.sort());
   const ai = extractLinks(maps.get('/agent-map/ai/'));
   assert.ok(ai.some((link) => link.pathname === '/ai/discovery/analysis-or-operation-model/'));
-  assert.ok(ai.some((link) => link.pathname === '/ai/methodology-v1-3/usage/rfc-v1-4/'));
+  assert.ok(ai.some((link) => link.pathname === '/ai/other/methodology-v1-3/usage/rfc-v1-4/'));
   assert.ok(!ai.some((link) => link.pathname === '/agent-map/ai/discovery/'));
   assert.ok(!ai.some((link) => link.pathname.startsWith('/system-design/')));
   for (const [route, document] of maps) {
     if (route === '/agent-map/') continue;
     assert.ok(extractLinks(document).some((link) => link.pathname === '/agent-map/'), `Missing main map link: ${route}`);
   }
-  assert.ok(extractLinks(main).some((link) => link.pathname === '/blog/example-post/'));
+  assert.ok(!extractLinks(main).some((link) => link.pathname === '/blog/example-post/'));
+  assert.ok(!extractLinks(main).some((link) => link.pathname === '/404.html'));
+  assert.doesNotMatch(main, /Example Post|Page not found/);
   assert.ok(extractLinks(main).some((link) => link.pathname === '/topics/'));
 });
 
-test('following the maps covers the complete built website, including aliases and generated pages', () => {
+test('following the maps covers published material, including aliases, with explicit utility and template exclusions', () => {
   for (const document of maps.values()) assert.doesNotMatch(document, /\{\{/);
   for (const filename of files(output).filter((filename) => filename.endsWith('.html'))) {
     let route = `/${path.relative(output, filename).split(path.sep).join('/')}`;
     route = route.replace(/\/index\.html$/, '/');
     // Pagination repeats a collection already in the maps.
     if (/\/page\/\d+\/$/.test(route)) continue;
+    if (['/404.html', '/blog/example-post/'].includes(route)) continue;
     assert.ok(mappedPaths.has(normalize(route)), `Missing website route: ${route}`);
   }
   const generated = files(path.join(output, 'agent-map')).filter((filename) => filename.endsWith('.html'));
   assert.equal(maps.size, generated.length, 'Every generated map must be reachable from the main map');
+});
+
+test('maps distinguish preferred entry points, published drafts, and archived history without guessing from version names', () => {
+  const systemDesign = maps.get('/agent-map/system-design/');
+  assert.match(systemDesign, /href=["']?\/system-design\/system-design\/["']?>[^<]+<\/a> <strong>\[Canonical\]<\/strong>/);
+  assert.match(systemDesign, /href=["']?\/system-design\/archive\/study-plan-v0\/["']?>[^<]+<\/a> <strong>\[Archived\]<\/strong>/);
+  const engineering = maps.get('/agent-map/engineering/');
+  assert.match(engineering, /href=["']?\/engineering\/architecture\/architecture\/["']?>[^<]+<\/a> <strong>\[Draft\]<\/strong>/);
+  const versioned = maps.get('/agent-map/ai-engineering/').match(/<li><a href=["']?\/ai-engineering\/evaluation\/v1\/guide\/["']?>[\s\S]*?<\/li>/)?.[0];
+  assert.ok(versioned, 'Versioned documents remain discoverable');
+  assert.doesNotMatch(versioned, /\[(Canonical|Archived|Draft)\]/);
+});
+
+test('Engineering documents have curated descriptions, including honest descriptions for placeholders', () => {
+  const engineering = maps.get('/agent-map/engineering/');
+  assert.match(engineering, /Compare DRY, WET, and AHA to decide when duplication is acceptable/);
+  assert.match(engineering, /An empty placeholder for SQL notes; no technical guidance has been written yet/);
+  const articles = files(path.join(root, 'content/engineering')).filter((filename) => filename.endsWith('.md') && path.basename(filename) !== '_index.md');
+  assert.ok(articles.length > 0);
+  for (const filename of articles) {
+    const description = readFileSync(filename, 'utf8').match(/^description: "(.+)"$/m)?.[1];
+    assert.ok(description && description !== 'Default Description', `Missing curated description: ${filename}`);
+    assert.ok(description.length <= 240, `Description should fit the map: ${filename}`);
+  }
 });
 
 test('Hugo renders the assembled Markdown and retains the text download URLs', () => {

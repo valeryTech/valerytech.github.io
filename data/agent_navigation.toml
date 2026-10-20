@@ -1,5 +1,5 @@
 # Selected reading links in the short /agent-map/ index.
-# Every other published document is discoverable through its section map.
+# Published technical documents are discoverable through their section maps.
 main_documents = [
   "/ai-engineering/working-assumptions",
   "/ai/discovery/analysis-or-operation-model",

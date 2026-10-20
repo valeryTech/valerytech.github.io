@@ -15,7 +15,7 @@ RAG describes retrieval-conditioned generation. An evidence workflow also has to
 ## Begin with the current purpose
 
 
-Some tasks are bounded: extract a field, compare two revisions, or verify a stated claim. Others begin as an inquiry: “What do my notes contain about DSLs?” Inspection can reveal distinctions the user could not specify before seeing the material.
+Some tasks are bounded: extract a field, compare two revisions, or verify a stated claim. Others begin as an inquiry: "What do my notes contain about DSLs?" Inspection can reveal distinctions the user could not specify before seeing the material.
 
 Task-first design means beginning with the current purpose, constraints, and uncertainties. It does not require a complete specification before acquisition. The task interpretation and its context requirements remain revisable.
 
@@ -72,7 +72,7 @@ Independent routes can acquire material missing from another route. A reranker o
 ## Match, read, and use at appropriate granularities
 
 
-“Chunk” can hide several different units:
+"Chunk" can hide several different units:
 
 | Unit | Question it answers |
 | --- | --- |
@@ -112,7 +112,7 @@ For an illustrative policy comparison:
 | Preserve obligations and exceptions | Selected clauses and parent sections | An exception refers to an annex that has not been inspected. |
 | Produce a cited comparison | Source occurrences included in the planned inputs | Recover the annex before claiming a complete comparison, or explicitly limit the result. |
 
-Assessment considers support, search scope, authority, freshness, source integrity, conflicting material, permitted use, and the consumer's required form and limits. Findings should refer to a requirement revision, the material considered, the method or reviewer, and unresolved issues. A single similarity score or “enough evidence” response does not establish all these conditions.
+Assessment considers support, search scope, authority, freshness, source integrity, conflicting material, permitted use, and the consumer's required form and limits. Findings should refer to a requirement revision, the material considered, the method or reviewer, and unresolved issues. A single similarity score or "enough evidence" response does not establish all these conditions.
 
 Assessment can be interleaved with inspection and assembly. A simple task can use direct checks. A complex inquiry may need explicit judgments that can be challenged or revised. No universal numeric adequacy threshold follows from the architectural principle.
 

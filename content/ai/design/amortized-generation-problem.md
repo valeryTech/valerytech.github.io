@@ -6,7 +6,6 @@ title: "Amortized Generation Problem"
 linkTitle: "Amortized Generation Problem"
 ---
 
-
 There is **amortized problem solving**: the model, viewed as an agent, has learned a mapping from prompts to plausible outputs during training and applies that mapping at inference time, without necessarily instantiating the problem as an explicit structure and solving that structure.
 
 In classical AI, AIMA distinguishes a reflex-like mapping from a **problem-solving agent**. A problem-solving agent explicitly formulates a goal, formulates a problem, searches for a solution, and then acts. A reflex agent essentially maps its current state to an action using what it already contains. ([AIMA](https://aima.cs.berkeley.edu/figures.pdf?utm_source=chatgpt.com "4x3-sas-exploring-adp-error+loss.eps"))

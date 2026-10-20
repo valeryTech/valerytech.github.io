@@ -56,6 +56,10 @@ Maps are ordinary HTML pages with headings and links, served as `text/html`.
 The previous `/llms.txt` and `/site-map.md` downloads remain available at the root
 and under the five content collections, and now point to the HTML maps.
 Every collection map links back to the main index.
+Template examples and the 404 utility page are omitted. Optional Canonical,
+Draft, and Archived labels come from `document_status` in the source note's
+properties; unlabeled versions retain an unspecified status. See
+[document status and exclusions](migration.md#document-status-and-map-exclusions).
 The footer links to the main map; page metadata links to the collection map,
 including for articles in nested subsections. Selected reading links are
 configured in `data/agent_navigation.toml`.

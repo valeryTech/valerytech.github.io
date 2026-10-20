@@ -13,9 +13,9 @@ linkTitle: "Sandbox First Capability Discovery Llm Agents"
 
 > Before designing a workflow around an LLM agent, give the agent a safe, general environment and enough basic tools to work. Let it solve representative tasks with as few assumptions about the method as possible. Observe what it can do. Add specialised components only after experiments show that they help.
 
-The important word is **discovery**. Ordinary software components have explicitly implemented behaviour. LLMs learn behaviours during training, and their possible strategies lack a complete specification. Anthropic states this directly: “we don’t understand how models do most of the things they do.” [1](#ref-1)
+The important word is **discovery**. Ordinary software components have explicitly implemented behaviour. LLMs learn behaviours during training, and their possible strategies lack a complete specification. Anthropic states this directly: "we don't understand how models do most of the things they do." [1](#ref-1)
 
-A directly relevant research result comes from Cheng et al.'s 2026 paper, originally titled *LLM-in-Sandbox Elicits General Agentic Intelligence* and retitled *Computer Environments Elicit General Agentic Intelligence in LLMs*. It deliberately gives models a **minimal, general-purpose computer environment** with just Bash, a file editor and a finish action. Its two stated design principles are **minimal** and **exploratory**: preserve basic computer capabilities and encourage the model to “freely experiment within this environment”. Strong models spontaneously installed tools, used files to handle large inputs and wrote programs to check their own outputs. The authors report gains across six non-coding domains, although weaker models sometimes became worse when given the same sandbox. <sup>[[2]](#ref-2)</sup>
+A directly relevant research result comes from Cheng et al.'s 2026 paper, originally titled *LLM-in-Sandbox Elicits General Agentic Intelligence* and retitled *Computer Environments Elicit General Agentic Intelligence in LLMs*. It deliberately gives models a **minimal, general-purpose computer environment** with just Bash, a file editor and a finish action. Its two stated design principles are **minimal** and **exploratory**: preserve basic computer capabilities and encourage the model to "freely experiment within this environment". Strong models spontaneously installed tools, used files to handle large inputs and wrote programs to check their own outputs. The authors report gains across six non-coding domains, although weaker models sometimes became worse when given the same sandbox. <sup>[[2]](#ref-2)</sup>
 
 This provides experimental support for the capability-elicitation premise. The research result and the proposed engineering method have distinct scopes:
 
@@ -43,7 +43,7 @@ A concise definition is:
 
 > **Start with the agent in a safe, general-purpose sandbox. Give it the goal, the information it needs and a small set of powerful tools. Leave the solution method open. Observe what it does before deciding how the agent architecture should work.**
 
-“Few restrictions” needs one important qualification.
+"Few restrictions" needs one important qualification.
 
 There are **two different kinds of restriction**:
 
@@ -118,11 +118,11 @@ flowchart TD
 ```
 
 
-A subtle point matters here: **Sandbox-First does not discover “all possible capabilities”.** No finite set of experiments can establish that. It discovers an expanding set of **observed capabilities under known conditions**. A capability is therefore better recorded as:
+A subtle point matters here: **Sandbox-First does not discover "all possible capabilities".** No finite set of experiments can establish that. It discovers an expanding set of **observed capabilities under known conditions**. A capability is therefore better recorded as:
 
 > Model **M**, with environment **E**, tools **T**, instructions **P** and budget **B**, succeeds on task class **C** with reliability **R**.
 
-That formulation prevents statements such as “the model can't do X” after one badly designed interface, or “the model can do X” after one lucky attempt.
+That formulation prevents statements such as "the model can't do X" after one badly designed interface, or "the model can do X" after one lucky attempt.
 
 ## Related principles
 
@@ -133,30 +133,30 @@ Sandbox-First does not replace ordinary software-engineering principles. Several
 |---|---|---|
 | **LLM-in-Sandbox** | Give the LLM a minimal computer environment and let it explore. | **Closest technical neighbour.** It directly tests the claim that general computer primitives can expose capabilities without predefined domain workflows. <sup>[[2]](#ref-2)</sup> |
 | **CodeAct** | Let agents act through executable code. | Supports using a general action substrate from which the agent can compose operations. <sup>[[4]](#ref-4)</sup> |
-| **ReAct** | Alternate model reasoning/actions with observations from the environment. | Supplies the minimal agent loop: act → observe → decide again. It does not prescribe the higher-level workflow. <sup>[[5]](#ref-5)</sup> |
+| **ReAct** | Alternate model reasoning/actions with observations from the environment. | Supplies the minimal agent loop: act -> observe -> decide again. It does not prescribe the higher-level workflow. <sup>[[5]](#ref-5)</sup> |
 | **Sandboxed autonomy / containment** | Allow autonomy inside enforced technical boundaries. | Makes open exploration practical without giving the agent equivalent freedom over production systems. <sup>[[3]](#ref-3)</sup> |
 | **KISS / Simple Design** | Keep the design as simple as the present problem permits. | Supports beginning with one agent and basic tools before introducing graphs, routers, specialised agents or other machinery. Fowler's discussion of evolutionary design makes this explicit. <sup>[[6]](#ref-6)</sup> |
 | **YAGNI** | Don't build anticipated functionality before it is needed. | Says not to build planner agents, memory systems, workflow DSLs, etc. merely because the architecture might need them later. <sup>[[7]](#ref-7)</sup> |
 | **Avoid premature abstraction** | Generalise after the relevant cases are understood. | Supports observing several tasks/projects before extracting common agent components. Metz argues that the wrong abstraction can cost more than temporary duplication. <sup>[[8]](#ref-8)</sup> |
-| **Evolutionary / harvested design** | Build applications first and extract shared infrastructure from experience. | Supports learning across projects and turning repeated needs into shared components. Fowler describes this as a “harvested platform”. <sup>[[9]](#ref-9)</sup> |
+| **Evolutionary / harvested design** | Build applications first and extract shared infrastructure from experience. | Supports learning across projects and turning repeated needs into shared components. Fowler describes this as a "harvested platform". <sup>[[9]](#ref-9)</sup> |
 | **Bitter Lesson** | General methods that can exploit increasing computation have repeatedly beaten large amounts of hand-built domain knowledge over the long run. | Provides a reason to question architectural constraints based on a designer's preferred solution. It is an analogy and historical lesson, not direct evidence that every agent should be minimally constrained. <sup>[[10]](#ref-10)</sup> |
 | **Harness engineering** | Improve the environment, tools, feedback and information surrounding the model. | Becomes especially important *after* discovery exposes bottlenecks. OpenAI reports that an underspecified environment initially limited its agents; engineering the surrounding environment became a major part of the work. <sup>[[11]](#ref-11)</sup> |
-| **Agent-oriented tool design** | Design tools based on how models actually use them, then evaluate and revise them. | Provides the feedback loop after the baseline: prototype → observe traces → evaluate → improve interfaces. Anthropic explicitly recommends this experimental cycle. <sup>[[12]](#ref-12)</sup> |
+| **Agent-oriented tool design** | Design tools based on how models actually use them, then evaluate and revise them. | Provides the feedback loop after the baseline: prototype -> observe traces -> evaluate -> improve interfaces. Anthropic explicitly recommends this experimental cycle. <sup>[[12]](#ref-12)</sup> |
 
-The **Bitter Lesson** deserves careful wording. Sutton's argument is that AI history repeatedly favoured general methods able to absorb more computation—especially search and learning—over hand-coded human knowledge. <sup>[[10]](#ref-10)</sup> It does **not** prove that an agent graph is bad or that specialised tools are bad.
+The **Bitter Lesson** deserves careful wording. Sutton's argument is that AI history repeatedly favoured general methods able to absorb more computation--especially search and learning--over hand-coded human knowledge. <sup>[[10]](#ref-10)</sup> It does **not** prove that an agent graph is bad or that specialised tools are bad.
 
 The connection is narrower:
 
 > **Avoid encoding an assumed solution method when a more general mechanism can discover a solution.**
 
-Sandbox-First applies this idea at the agent-system level. A shell, filesystem, code interpreter and useful external services are general mechanisms. “Planner agent → SQL agent → critic agent → formatter agent” is a much stronger claim about how the solution should happen.
+Sandbox-First applies this idea at the agent-system level. A shell, filesystem, code interpreter and useful external services are general mechanisms. "Planner agent -> SQL agent -> critic agent -> formatter agent" is a much stronger claim about how the solution should happen.
 
-Anthropic's agent-engineering guidance reaches a similar practical conclusion from experience: its teams found successful implementations commonly used “simple, composable patterns” and recommend adding complexity when it demonstrably improves results. They distinguish fixed workflows from agents precisely by whether code determines the path or the model dynamically chooses it. <sup>[[13]](#ref-13)</sup>
+Anthropic's agent-engineering guidance reaches a similar practical conclusion from experience: its teams found successful implementations commonly used "simple, composable patterns" and recommend adding complexity when it demonstrably improves results. They distinguish fixed workflows from agents precisely by whether code determines the path or the model dynamically chooses it. <sup>[[13]](#ref-13)</sup>
 
 ## Unknowns in LLM agent capability
 
 
-The main unknown is not simply “how intelligent is the model?”. The useful unit is the **model interacting with an environment**.
+The main unknown is not simply "how intelligent is the model?". The useful unit is the **model interacting with an environment**.
 
 Five questions matter.
 
@@ -196,7 +196,7 @@ The opposite is also true:
 
 τ-bench and Anthropic's evaluation guidance both emphasise repeated trials. Anthropic recommends evaluating final environment state where possible, isolating trials and avoiding graders that unnecessarily require one particular action sequence. <sup>[[16]](#ref-16)</sup>
 
-Those two statements—**failure does not establish inability; success does not establish reliability**—are probably among the most important foundations for capability-discovery engineering.
+Those two statements--**failure does not establish inability; success does not establish reliability**--are probably among the most important foundations for capability-discovery engineering.
 
 ## The experimental workbench
 
@@ -209,7 +209,7 @@ The **capability core** can be:
 |---|---|---|
 | **Model** | One capable LLM | Establishes a baseline before composition effects enter |
 | **System prompt** | Goal, environment description and basic operating rules | Avoid encoding a proposed workflow |
-| **Agent loop** | Model → tool call → result → model, until finish | This is enough for ReAct-style interaction. <sup>[[5]](#ref-5)</sup> |
+| **Agent loop** | Model -> tool call -> result -> model, until finish | This is enough for ReAct-style interaction. <sup>[[5]](#ref-5)</sup> |
 | **Sandbox** | Isolated Linux/container/VM | Lets the model experiment without equivalent access to the host or production. <sup>[[3]](#ref-3)</sup> |
 | **Shell** | Bash or equivalent | A general computer interface |
 | **Filesystem** | Temporary working directory | External memory, artefacts, intermediate state |
@@ -227,7 +227,7 @@ Separately, the **experimental core** should exist from the start:
 
 **Trace logging.** Record model/version, system prompt, task, tools available, tool calls, outputs and errors, files changed, database effects, tokens, elapsed time and final result. Anthropic distinguishes the agent trace from the final environmental outcome because both are useful for different purposes. <sup>[[19]](#ref-19)</sup>
 
-**Outcome evaluation.** Prefer checks on the result or resulting state. If the task is “find these customers and produce a CSV”, check the CSV and the answers. A correct result should not fail evaluation solely because the tool-call order differed from an anticipated sequence, unless that sequence was itself a task requirement. <sup>[[19]](#ref-19)</sup>
+**Outcome evaluation.** Prefer checks on the result or resulting state. If the task is "find these customers and produce a CSV", check the CSV and the answers. A correct result should not fail evaluation solely because the tool-call order differed from an anticipated sequence, unless that sequence was itself a task requirement. <sup>[[19]](#ref-19)</sup>
 
 **Repeatability.** Run important tasks several times. Record ordinary success rate and a strict reliability measure such as `pass^k`: whether all of \(k\) repeated attempts succeed. <sup>[[16]](#ref-16)</sup>
 
@@ -274,7 +274,7 @@ Test: compare a goal-based prompt against a prompt requiring a particular plan o
 ### Give general tools before specialised workflows
 
 
-**Begin with useful primitives—files, code, shell, data access and APIs—and see what the agent can compose from them.**
+**Begin with useful primitives--files, code, shell, data access and APIs--and see what the agent can compose from them.**
 
 Why: CodeAct and LLM-in-Sandbox both show that executable environments let models combine basic operations into higher-level behaviour. Anthropic's code-execution work similarly finds advantages in letting agents filter, chain and transform tool results programmatically. <sup>[[4]](#ref-4)</sup>
 
@@ -305,7 +305,7 @@ Test: repeat the same tasks and perturb wording, data and starting conditions.
 
 Why: architecture effects are conditional. Google's 180-configuration study found that multi-agent approaches helped some task structures and hurt others. Anthropic's long-running-agent work likewise added specific harness mechanisms in response to observed long-horizon failures. <sup>[[18]](#ref-18)</sup>
 
-Test: run an ablation—remove the component—and see what changes.
+Test: run an ablation--remove the component--and see what changes.
 
 These rules produce **progressive formalisation**:
 
@@ -349,10 +349,10 @@ The following experiments would test the proposed method directly.
 | Experiment | Setup | What to look for | Decision rule |
 |---|---|---|---|
 | **Sandbox uplift** | Same model and tasks: direct answer vs minimal sandbox with files/Bash/Python/SQL | New solution strategies, success, cost, retries | Keep the sandbox as the default capability baseline where it improves useful task classes enough to justify cost |
-| **Open method vs prescribed workflow** | Same environment; one condition gets only the goal, another must plan → execute → review | Success, repeatability, cost; cases where each condition wins | Require the workflow only for task classes where it repeatedly improves the outcome |
+| **Open method vs prescribed workflow** | Same environment; one condition gets only the goal, another must plan -> execute -> review | Success, repeatability, cost; cases where each condition wins | Require the workflow only for task classes where it repeatedly improves the outcome |
 | **General primitives vs specialised tools** | Bash/Python/SQL/API access versus several predefined higher-level tools | Whether the model successfully constructs operations itself; token/tool overhead; errors | Promote a repeated operation to a specialised tool when doing so reliably improves quality, safety or cost |
 | **Component ablation** | Add planner, reviewer, memory or extra agent one at a time | Improvement by task type; especially sequential vs parallel work | Keep a component only where its measured gain survives repeated trials and new cases |
-| **Reliability test** | Run representative cases 5–10 times, then alter wording/data while preserving intent | Success distribution, `pass^k`, failure modes | Treat a capability as dependable only at the reliability level required by the use case |
+| **Reliability test** | Run representative cases 5-10 times, then alter wording/data while preserving intent | Success distribution, `pass^k`, failure modes | Treat a capability as dependable only at the reliability level required by the use case |
 | **Harvest across projects** | After several projects, identify one recurring need; build one shared component and test it on a project that did not shape its design | Whether the abstraction transfers without forcing unrelated cases into the same shape | Share it only when held-out projects benefit; otherwise leave the implementations separate |
 
 The third and sixth experiments test two central assumptions of the method: whether general primitives already support work that might otherwise require a custom implementation, and whether a recurring need is stable enough to justify a shared component.
@@ -363,14 +363,14 @@ The third and sixth experiments test two central assumptions of the method: whet
 | Priority | Primary source | Why it is useful for this approach |
 |---|---|---|
 | **Essential** | Cheng et al., 2026, [*Computer Environments Elicit General Agentic Intelligence in LLMs*](https://arxiv.org/abs/2601.16206) | The closest research result to Sandbox-First. Minimal general sandbox, exploratory behaviour, three computer meta-capabilities, seven models and six domains. It also gives an important negative result: weaker models can become worse in an open computer environment. <sup>[[2]](#ref-2)</sup> |
-| **Essential** | Wang et al., 2024, [*Executable Code Actions Elicit Better LLM Agents — CodeAct*](https://arxiv.org/abs/2402.01030) | Strong evidence for executable code as a broad action space from which an agent can compose higher-level operations. <sup>[[4]](#ref-4)</sup> |
-| **Essential** | Yang et al., 2024, [*SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering*](https://arxiv.org/abs/2405.15793) | Shows that the environment/interface is part of observed capability. Useful protection against concluding “the model can't do it” when the interface may be the problem. <sup>[[15]](#ref-15)</sup> |
+| **Essential** | Wang et al., 2024, [*Executable Code Actions Elicit Better LLM Agents -- CodeAct*](https://arxiv.org/abs/2402.01030) | Strong evidence for executable code as a broad action space from which an agent can compose higher-level operations. <sup>[[4]](#ref-4)</sup> |
+| **Essential** | Yang et al., 2024, [*SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering*](https://arxiv.org/abs/2405.15793) | Shows that the environment/interface is part of observed capability. Useful protection against concluding "the model can't do it" when the interface may be the problem. <sup>[[15]](#ref-15)</sup> |
 | **Essential** | Yao et al., 2024, [*τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains*](https://arxiv.org/abs/2406.12045) | Best foundation here for distinguishing occasional capability from repeated reliability and for checking final state rather than trusting the agent's own statement of success. <sup>[[16]](#ref-16)</sup> |
 | **Essential** | Anthropic, 2026, [*Demystifying evals for AI agents*](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) | Practical experimental method: tasks, trials, graders, traces, isolated environments, repeated runs and outcome-based evaluation. <sup>[[19]](#ref-19)</sup> |
 | **High** | Anthropic, 2024, [*Building effective agents*](https://www.anthropic.com/engineering/building-effective-agents) | Strong industry argument for starting with simple composable systems and introducing agent complexity only when needed. <sup>[[13]](#ref-13)</sup> |
 | **High** | OpenAI, 2026, [*Harness engineering: leveraging Codex in an agent-first world*](https://openai.com/index/harness-engineering/) | Shows the next phase after capability discovery: improve tools, context, feedback and the environment when observed failures show what agents are missing. <sup>[[11]](#ref-11)</sup> |
 | **High** | Kim et al., 2025/26, [*Towards a Science of Scaling Agent Systems*](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/) | Controlled evidence that architecture is conditional: multi-agent systems can help or hurt according to task structure. Important evidence against assuming that more agent components are inherently better. <sup>[[18]](#ref-18)</sup> |
-| **High** | Anthropic, 2025, [*Writing effective tools for agents — with agents*](https://www.anthropic.com/engineering/writing-tools-for-agents) | Practical method for discovering good tool interfaces through prototypes, real tasks, traces and evaluation. <sup>[[12]](#ref-12)</sup> |
+| **High** | Anthropic, 2025, [*Writing effective tools for agents -- with agents*](https://www.anthropic.com/engineering/writing-tools-for-agents) | Practical method for discovering good tool interfaces through prototypes, real tasks, traces and evaluation. <sup>[[12]](#ref-12)</sup> |
 | **High** | Anthropic, 2026, [*How we contain Claude across products*](https://www.anthropic.com/engineering/how-we-contain-claude) | The safety side of Sandbox-First: give agents useful room to act while enforcing technical boundaries around files, networks and other consequences. <sup>[[3]](#ref-3)</sup> |
 | **Foundation** | Yao et al., 2022/23, [*ReAct: Synergizing Reasoning and Acting in Language Models*](https://arxiv.org/abs/2210.03629) | The basic environment-interaction loop underlying much subsequent agent work: act, observe and adapt. <sup>[[5]](#ref-5)</sup> |
 | **Foundation** | Wang et al., 2023, [*Voyager: An Open-Ended Embodied Agent with Large Language Models*](https://arxiv.org/abs/2305.16291) | Earlier demonstration of open-ended exploration, environmental feedback, executable skill creation and accumulation of discovered behaviours. <sup>[[14]](#ref-14)</sup> |
@@ -386,27 +386,27 @@ And the shortest version of its underlying law is:
 
 > **When capability is unknown, preserve the space in which capability can be discovered.**
 
-A sandbox is what makes that practical: **broad freedom of method inside a narrow boundary of consequences**. The research from Cheng et al. makes that more than a software-design analogy—their minimal, exploratory computer environment actually elicited useful behaviours that had not been encoded as predefined workflows. <sup>[[2]](#ref-2)</sup>
+A sandbox is what makes that practical: **broad freedom of method inside a narrow boundary of consequences**. The research from Cheng et al. makes that more than a software-design analogy--their minimal, exploratory computer environment actually elicited useful behaviours that had not been encoded as predefined workflows. <sup>[[2]](#ref-2)</sup>
 
 ## References
 
 
-1. <a id="ref-1"></a> [Anthropic — Tracing the Thoughts of a Large Language Model](https://www.anthropic.com/research/tracing-thoughts-language-model)
-2. <a id="ref-2"></a> [Cheng et al. — Computer Environments Elicit General Agentic Intelligence in LLMs (2026)](https://arxiv.org/abs/2601.16206v3)
-3. <a id="ref-3"></a> [Anthropic — How We Contain Claude Across Products](https://www.anthropic.com/engineering/how-we-contain-claude)
-4. <a id="ref-4"></a> [Wang et al. — Executable Code Actions Elicit Better LLM Agents (CodeAct)](https://arxiv.org/abs/2402.01030)
-5. <a id="ref-5"></a> [Yao et al. — ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
-6. <a id="ref-6"></a> [Martin Fowler — Is Design Dead?](https://martinfowler.com/articles/designDead.html)
-7. <a id="ref-7"></a> [Martin Fowler — YAGNI](https://martinfowler.com/bliki/Yagni.html)
-8. <a id="ref-8"></a> [Sandi Metz — The Wrong Abstraction](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
-9. <a id="ref-9"></a> [Martin Fowler — Harvested Platform](https://martinfowler.com/bliki/HarvestedPlatform.html)
-10. <a id="ref-10"></a> [Rich Sutton — The Bitter Lesson](https://www.incompleteideas.net/IncIdeas/BitterLesson.html)
-11. <a id="ref-11"></a> [OpenAI — Harness Engineering: Leveraging Codex in an Agent-First World](https://openai.com/index/harness-engineering/)
-12. <a id="ref-12"></a> [Anthropic — Writing Effective Tools for AI Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
-13. <a id="ref-13"></a> [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
-14. <a id="ref-14"></a> [Wang et al. — Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291)
-15. <a id="ref-15"></a> [Yang et al. — SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793)
-16. <a id="ref-16"></a> [Yao et al. — τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045)
-17. <a id="ref-17"></a> [METR — Measuring AI Ability to Complete Long Tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
-18. <a id="ref-18"></a> [Google Research — Towards a Science of Scaling Agent Systems](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/)
-19. <a id="ref-19"></a> [Anthropic — Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+1. <a id="ref-1"></a> [Anthropic -- Tracing the Thoughts of a Large Language Model](https://www.anthropic.com/research/tracing-thoughts-language-model)
+2. <a id="ref-2"></a> [Cheng et al. -- Computer Environments Elicit General Agentic Intelligence in LLMs (2026)](https://arxiv.org/abs/2601.16206v3)
+3. <a id="ref-3"></a> [Anthropic -- How We Contain Claude Across Products](https://www.anthropic.com/engineering/how-we-contain-claude)
+4. <a id="ref-4"></a> [Wang et al. -- Executable Code Actions Elicit Better LLM Agents (CodeAct)](https://arxiv.org/abs/2402.01030)
+5. <a id="ref-5"></a> [Yao et al. -- ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+6. <a id="ref-6"></a> [Martin Fowler -- Is Design Dead?](https://martinfowler.com/articles/designDead.html)
+7. <a id="ref-7"></a> [Martin Fowler -- YAGNI](https://martinfowler.com/bliki/Yagni.html)
+8. <a id="ref-8"></a> [Sandi Metz -- The Wrong Abstraction](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
+9. <a id="ref-9"></a> [Martin Fowler -- Harvested Platform](https://martinfowler.com/bliki/HarvestedPlatform.html)
+10. <a id="ref-10"></a> [Rich Sutton -- The Bitter Lesson](https://www.incompleteideas.net/IncIdeas/BitterLesson.html)
+11. <a id="ref-11"></a> [OpenAI -- Harness Engineering: Leveraging Codex in an Agent-First World](https://openai.com/index/harness-engineering/)
+12. <a id="ref-12"></a> [Anthropic -- Writing Effective Tools for AI Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+13. <a id="ref-13"></a> [Anthropic -- Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+14. <a id="ref-14"></a> [Wang et al. -- Voyager: An Open-Ended Embodied Agent with Large Language Models](https://arxiv.org/abs/2305.16291)
+15. <a id="ref-15"></a> [Yang et al. -- SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793)
+16. <a id="ref-16"></a> [Yao et al. -- τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045)
+17. <a id="ref-17"></a> [METR -- Measuring AI Ability to Complete Long Tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
+18. <a id="ref-18"></a> [Google Research -- Towards a Science of Scaling Agent Systems](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/)
+19. <a id="ref-19"></a> [Anthropic -- Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)

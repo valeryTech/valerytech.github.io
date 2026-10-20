@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Compare replication strategies and their latency, availability, and consistency trade-offs, including replication logs, lag, read guarantees, and multi-leader designs."
 title: "Replication"
 linkTitle: "Replication"
 ---

@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Original system-design resource catalog"
 description: "The original catalog of system design courses, guides, communities, technical talks, engineering blogs, and papers, including unreviewed source comments."
+document_status: "archived"
 linkTitle: "Original system-design resource catalog"
 ---
 

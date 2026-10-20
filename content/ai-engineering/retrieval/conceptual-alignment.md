@@ -37,7 +37,7 @@ Suppose the user requests policy `SEC-17B`. If the task is exact lookup and the 
 
 The roles are still different. The request expresses the user's need; the query instructs a selected source interface. The route needs to distinguish an exact identifier match from a similar title and expose applicable revision or scope information where the task requires it.
 
-For “What do my notes contain about DSLs?”, the request may also be a useful initial query. Inspection can then reveal aliases, related concepts, or disagreements that justify further searches. An expansion adds an interpretation; it should remain inspectable and revisable.
+For "What do my notes contain about DSLs?", the request may also be a useful initial query. Inspection can then reveal aliases, related concepts, or disagreements that justify further searches. An expansion adds an interpretation; it should remain inspectable and revisable.
 
 Reusing request text is therefore not inherently a failure, and transforming it does not inherently improve retrieval. The failure is allowing the choice of query, source, scope, or matching rule to escape scrutiny when it materially affects task success.
 
@@ -46,7 +46,7 @@ Reusing request text is therefore not inherently a failure, and transforming it 
 
 A narrow retrieval component can accept source-directed queries and return candidates. Task interpretation, requirement derivation, and access planning then belong to callers or other components. A broader search component can accept a request and perform some or all of those responsibilities internally.
 
-Both boundaries can be useful. Naming a component “RAG” or “retrieval” does not determine its contract. State what it accepts, what it decides, and what it returns.
+Both boundaries can be useful. Naming a component "RAG" or "retrieval" does not determine its contract. State what it accepts, what it decides, and what it returns.
 
 | Accepted input | Responsibility implied by the boundary |
 | --- | --- |

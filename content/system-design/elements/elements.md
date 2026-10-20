@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Building-Block Map and Study Template"
 description: "A map of core system design components and patterns, with a study template, technical references, and topics for further development."
+document_status: "canonical"
 linkTitle: "Building-Block Map"
 ---
 
@@ -89,7 +90,7 @@ The existing notes identify these gaps:
 Use [practice]({{< ref "system-design/system-design" >}}#a-practice-loop) to decide which gap to study next. The original notes mention these topic catalogs and pattern references:
 
 - [Azure architecture patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/).
-- [Modern system-design building blocks — Educative](https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-building-blocks-for-modern-system-design).
-- [Sequencer — Educative](https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-sequencer).
-- [System-design master template — DesignGurus](https://www.designgurus.io/course-play/grokking-the-system-design-interview/doc/system-design-master-template).
+- [Modern system-design building blocks -- Educative](https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-building-blocks-for-modern-system-design).
+- [Sequencer -- Educative](https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-sequencer).
+- [System-design master template -- DesignGurus](https://www.designgurus.io/course-play/grokking-the-system-design-interview/doc/system-design-master-template).
 - [Designing Data-Intensive Applications, second edition](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/).

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Compare goal-driven and scenario-driven architecture methods, from Impact Mapping and KAOS to Domain Storytelling, EventStorming, quality scenarios, and BDD."
 title: "Flow 2"
 linkTitle: "Flow 2"
 ---

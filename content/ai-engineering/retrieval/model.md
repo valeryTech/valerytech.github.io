@@ -46,7 +46,7 @@ For a policy comparison, requirements might include:
 | Explain unresolved differences | Conflicting provisions and the basis, if any, for deciding which governs. |
 | Produce a cited comparison | Source locators preserved in the consumer's actual inputs. |
 
-A requirement is not itself evidence that it has been satisfied. A statement such as “use current policy” needs a source and a check appropriate to the task.
+A requirement is not itself evidence that it has been satisfied. A statement such as "use current policy" needs a source and a check appropriate to the task.
 
 ## Sources, access, and representations
 

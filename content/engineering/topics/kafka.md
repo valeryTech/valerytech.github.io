@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Study Kafka topics, partitions, producers, consumer groups, offsets, rebalancing, delivery semantics, and failure handling when designing event pipelines."
 title: "Kafka"
 linkTitle: "Kafka"
 ---

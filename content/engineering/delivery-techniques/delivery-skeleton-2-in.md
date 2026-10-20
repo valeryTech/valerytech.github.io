@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Choose one narrow end-to-end workflow to validate architectural boundaries, data contracts, observability, and failure handling before expanding functionality."
 title: "Delivery Skeleton 2 In"
 linkTitle: "Delivery Skeleton 2 In"
 ---

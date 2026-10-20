@@ -14,7 +14,7 @@ Connect redundancy and recovery decisions to the operations that must remain usa
 - **Active/passive:** a redundant instance takes over when its primary fails.
 - **Active/active:** multiple instances serve traffic.
 
-The original notes also identify primary–replica and multi-primary replication as topics to study. Keep the replication arrangement explicit when discussing failover.
+The original notes also identify primary-replica and multi-primary replication as topics to study. Keep the replication arrangement explicit when discussing failover.
 
 ## Questions to answer
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Structure trade-off analysis by defining goals and criteria, comparing alternatives, quantifying attributes, recording a decision, and validating it iteratively."
 title: "Trade Offs"
 linkTitle: "Trade Offs"
 ---

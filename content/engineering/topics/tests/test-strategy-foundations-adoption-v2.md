@@ -1,6 +1,8 @@
 ---
 draft: false
 toc: true
+description: "A draft RFC for adopting the test-strategy playbook across teams, covering evidence maps, CI gates, determinism, ownership, implementation phases, and rollout."
+document_status: "draft"
 title: "Test Strategy Foundations Adoption V2"
 linkTitle: "Test Strategy Foundations Adoption V2"
 ---

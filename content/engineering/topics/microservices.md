@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A short reading list linking microservices architecture articles, pattern catalogs, examples, and a technical video."
 title: "Microservices"
 linkTitle: "Microservices"
 ---

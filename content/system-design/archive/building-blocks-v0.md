@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Building-block notes before the refactor"
 description: "Archived building-block collection covering routing, messaging, service infrastructure, security, identifiers, and a template for studying components and patterns."
+document_status: "archived"
 linkTitle: "Building-block notes before the refactor"
 ---
 

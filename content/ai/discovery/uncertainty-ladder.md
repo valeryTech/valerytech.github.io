@@ -7,7 +7,6 @@ linkTitle: "Uncertainty Ladder"
 ---
 # AI uncertainty ladder
 
-
 #ai-eng/collection How are problems framed, discovered, and documented, including through retrospectives?
 #ai-eng/collection How are AI capabilities and features framed?
 
@@ -665,7 +664,7 @@ Organizations that do this will convert the current wave of AI ambition into dur
 
 **Reflection and distillation**
 
-The framework combines the possibility–feasibility distinction, a ladder of uncertainty, complementary dimensions of progress, methods for investigating possibility, diagnostic signals, and organizational implications.
+The framework combines the possibility-feasibility distinction, a ladder of uncertainty, complementary dimensions of progress, methods for investigating possibility, diagnostic signals, and organizational implications.
 
 The core insight is this: much of the difficulty and waste in current AI development comes from organizations being forced onto the early rungs of the ladder while still using the mental models, processes, and success metrics of later rungs.
 

@@ -1,5 +1,6 @@
 {{- printf "# %s: website map for agents\n\n" site.Title -}}
 {{- printf "Start with a main section map or a selected document. Each section map contains all its documents, grouped by subsection.\n\n" -}}
+{{- partial "agent-map/status-key.md" . -}}
 {{- printf "[Website](%s) · [Main map](%s)\n\n" site.Home.RelPermalink (partial "agent-map/url.html" site.Home) -}}
 {{- printf "## Section maps\n\n" -}}
 {{- range site.Sections.ByTitle -}}
@@ -31,6 +32,5 @@
   {{- $information = $information | append . -}}
   {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
 {{- end -}}
-{{- printf "- [Page not found](%s)\n" ("404.html" | relURL) -}}
 {{- partial "agent-map/aliases.md" $information -}}
 {{- printf "\nGenerated with the website. Follow the section-map links to discover the complete published collection.\n" -}}

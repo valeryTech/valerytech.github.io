@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "An index of exploratory pipeline-design research on inspectable artifacts, interactive workbenches, and progressive automation, including proposals and open questions."
 title: "Exploratory Design"
 linkTitle: "Exploratory Design"
 ---

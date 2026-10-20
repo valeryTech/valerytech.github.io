@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "URL-shortener design alternatives before the refactor"
 description: "Archived URL-shortener design alternatives covering API contracts, redirect semantics, read-first and write-first walkthroughs, storage, code generation, and open questions."
+document_status: "archived"
 linkTitle: "URL-shortener design alternatives before the refactor"
 ---
 

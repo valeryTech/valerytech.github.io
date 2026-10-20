@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Collected event-driven architecture resources, patterns, and excerpts for exploring pub/sub, events, and messaging-based system design."
 title: "Eda"
 linkTitle: "Eda"
 ---

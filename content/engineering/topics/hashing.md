@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Brief notes and references on rendezvous and consistent hashing for distributing keys across servers while limiting remapping when membership changes."
 title: "Hashing"
 linkTitle: "Hashing"
 ---

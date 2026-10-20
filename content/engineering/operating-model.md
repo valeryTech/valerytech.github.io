@@ -1,6 +1,8 @@
 ---
 draft: false
 toc: true
+description: "A four-layer sketch connecting engineering standards, repository and pipeline enforcement, service readiness, and delivery measurements."
+document_status: "draft"
 title: "Operating Model"
 linkTitle: "Operating Model"
 ---

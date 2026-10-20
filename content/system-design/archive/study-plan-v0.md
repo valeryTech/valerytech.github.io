@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Preparation notes before the refactor"
 description: "The original preparation plan connecting technical foundations, toolbox development, repeated practice, mock interviews, communities, and broader engineering disciplines."
+document_status: "archived"
 linkTitle: "Preparation notes before the refactor"
 ---
 

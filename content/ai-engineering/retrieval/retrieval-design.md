@@ -41,7 +41,7 @@ For an exact concept such as `DSL`, a useful baseline might be literal matching,
 
 Keep the first experiment narrow. It can establish whether people can find and inspect relevant material before adding automated evidence judgment or synthesis. Use a few real examples that expose different difficulties: exact vocabulary, paraphrases, conflicting notes, repeated text, and a subject the corpus does not cover.
 
-Simplicity means a small set of explicit assumptions and observable decisions. A two-box `search → LLM` diagram can hide choices about source scope, granularity, ranking, omission, context order, and sufficiency. Record those choices even when the baseline automates them.
+Simplicity means a small set of explicit assumptions and observable decisions. A two-box `search -> LLM` diagram can hide choices about source scope, granularity, ranking, omission, context order, and sufficiency. Record those choices even when the baseline automates them.
 
 An automatic end-to-end baseline can be useful for comparison. Keep its intermediate results available so a plausible final answer does not become the only evidence that retrieval worked. A model might explain DSLs convincingly while missing the particular disagreement the user wanted to find in their notes.
 
@@ -113,11 +113,11 @@ For an uncertain operation, write down:
 
 Choose among direct user action, deterministic software, retrieval models, and generative models for that specific operation. A source-range union has a different contract from interpreting an ambiguous inquiry. General claims that humans provide judgment or models handle scale do not establish competence on the particular cases.
 
-For example, before adding LLM relevance filtering, inspect the raw candidate set and the source context supplied to the reviewer. Determine what “relevant” means for the inquiry and how disagreements will be represented. Then compare model suggestions with reviewed cases and with the existing workflow. Measure both useful exclusions and useful material incorrectly removed. Keep relevance judgments separate from judgments about source authority or support for a particular claim.
+For example, before adding LLM relevance filtering, inspect the raw candidate set and the source context supplied to the reviewer. Determine what "relevant" means for the inquiry and how disagreements will be represented. Then compare model suggestions with reviewed cases and with the existing workflow. Measure both useful exclusions and useful material incorrectly removed. Keep relevance judgments separate from judgments about source authority or support for a particular claim.
 
 A failed final answer can then be traced to a narrower question: was the source absent, the view poorly chosen, the candidate missed, the context insufficient, the judgment wrong, or the supplied evidence misused? Each diagnosis calls for a different experiment.
 
-## Build shared human–AI work around the same artifacts
+## Build shared human-AI work around the same artifacts
 
 
 The collaborative unit is the evolving inquiry and its artifacts. A person, a model-backed operation, and deterministic software can contribute to the same candidate sets, selections, questions, and judgments.
@@ -137,9 +137,9 @@ These allocations are hypotheses to evaluate, not permanent assignments. A perso
 
 The model can also help design the system: propose decompositions, find counterexamples, challenge a relevance criterion, or explain differences between runs. That design role is distinct from automatically judging every candidate at runtime.
 
-Support language, direct manipulation, and examples together. A user might describe an information need in prose, edit suggested aliases, select passages with ordinary controls, and mark one example as “related vocabulary, wrong subject.” Each contribution should affect explicit state rather than requiring the system to reconstruct the decision from conversation history.
+Support language, direct manipulation, and examples together. A user might describe an information need in prose, edit suggested aliases, select passages with ordinary controls, and mark one example as "related vocabulary, wrong subject." Each contribution should affect explicit state rather than requiring the system to reconstruct the decision from conversation history.
 
-Shared storage alone does not establish shared understanding. Show the operative interpretation, match rule, and scope where they matter. The person and model may otherwise use “all matches,” “selected,” or “relevant” in different senses. The joint-activity commentary identifies this distinction between stored context and common ground.
+Shared storage alone does not establish shared understanding. Show the operative interpretation, match rule, and scope where they matter. The person and model may otherwise use "all matches," "selected," or "relevant" in different senses. The joint-activity commentary identifies this distinction between stored context and common ground.
 
 ## Use interaction for two learning loops
 
@@ -148,7 +148,7 @@ Shared storage alone does not establish shared understanding. Show the operative
 
 **The design loop improves future behavior.** The team examines such interventions across scenarios, identifies recurring failures, proposes a policy, and tests whether it improves the workflow.
 
-One action can contribute to both loops, but the records have different meanings. Adding a paragraph records a change to a particular selected set. “The preceding paragraph defines the acronym” records a reason. “Always include the preceding paragraph” is a new policy hypothesis requiring separate evidence.
+One action can contribute to both loops, but the records have different meanings. Adding a paragraph records a change to a particular selected set. "The preceding paragraph defines the acronym" records a reason. "Always include the preceding paragraph" is a new policy hypothesis requiring separate evidence.
 
 A click can express navigation, curiosity, disagreement, or collection according to the interface. It becomes a relevance label only under a defined interpretation. Preserve uncertainty and conflicting judgments instead of automatically turning observed behavior into training targets.
 

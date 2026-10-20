@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Scalability reading notes"
 description: "Archived scalability definitions and reading excerpts covering scaling strategies, partitioning, queues, caching, CQRS, stateless services, autoscaling, and performance trade-offs."
+document_status: "archived"
 linkTitle: "Scalability reading notes"
 ---
 

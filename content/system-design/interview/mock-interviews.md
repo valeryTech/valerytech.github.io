@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Reviewing Mock System Design Interviews"
 description: "A method for reviewing mock interviews, with observations and questions about framing, design completeness, concurrency, trade-offs, quantification, and collaboration."
+document_status: "canonical"
 linkTitle: "Mock Interview Review"
 ---
 
@@ -41,7 +42,7 @@ The original notes discuss a global-counter exercise and a promotional-code exer
 - Introducing a Bloom filter early can distract from the core problem when its purpose has not been established.
 - Identifying a race condition is only a starting point; the design still needs to explain how concurrent operations behave.
 - For the promotional-code design, identifying the campaign as the key feature helped focus the discussion.
-- Assumptions such as “one account per user” should be stated explicitly.
+- Assumptions such as "one account per user" should be stated explicitly.
 - A synchronous versus asynchronous API decision should explain both technical consequences and the user experience, with room for interviewer feedback.
 - Anti-abuse controls, such as rate limiting, should be connected to the relevant flow.
 - Writing down the discussion and checking agreement at milestones helps keep the shared design clear.

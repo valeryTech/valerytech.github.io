@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explore cache placement, invalidation, write strategies, freshness, eviction policies, and sharding when weighing performance against consistency and complexity."
 title: "Caching"
 linkTitle: "Caching"
 ---

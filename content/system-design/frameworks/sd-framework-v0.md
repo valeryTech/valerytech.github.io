@@ -89,7 +89,6 @@ That's it -- clear, honest, and it buys you time to move to architecture without
 
 # SD Ideas
 
-
 #idea: We can set scale (V) and throughput requirements such that a system fails to meet Non-Functional Requirements (NFRs) until the interviewee or designer implements necessary design adjustments or refactors.
 #idea For each system design example, we can implement one of the following approaches:
 

@@ -6,7 +6,6 @@ description: "Proposes coverage design as an upstream activity linked to failure
 linkTitle: "Evaluation Coverage in Discovery and Delivery"
 ---
 
-
 We could reframe the existing user-input work as an upstream coverage-design phase, with user inputs as one artifact, and connect it bidirectionally with failure understanding.
 
 ## Role in Discovery and Delivery

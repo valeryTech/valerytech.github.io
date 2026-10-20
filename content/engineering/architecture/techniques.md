@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Choose spikes, proofs of concept, prototypes, walking skeletons, vertical slices, and rollout techniques according to the uncertainty being resolved."
 title: "Techniques"
 linkTitle: "Techniques"
 ---

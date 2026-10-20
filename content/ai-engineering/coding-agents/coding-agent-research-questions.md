@@ -8,9 +8,12 @@ linkTitle: "Coding-Agent Research Agenda"
 # Research agenda: `AGENTS.md` and reliable coding-agent autonomy
 
 
-**Document type:** Research questions  
-**Date:** 18 October 2026  
-**Basis:** *AGENTS.md — Operating Model* (`agents-md.md`)  
+**Document type:** Research questions
+
+**Date:** 18 October 2026
+
+**Basis:** *AGENTS.md -- Operating Model* (`agents-md.md`)
+
 **Status:** Scope and questions only; experimental methodology will be developed separately.
 
 ## Purpose
@@ -18,7 +21,7 @@ linkTitle: "Coding-Agent Research Agenda"
 
 The existing guide proposes an operating model for coding agents: provide concise project-specific onboarding, route agents to canonical sources, use validation and tooling to enforce important rules, and improve the surrounding system when failures recur. Those are useful working hypotheses, but the agents, tools, and available evidence have changed.
 
-This research will determine which recommendations remain supported, where they apply, and which should be revised. The object of evaluation is the full **user–repository–agent system**, with `AGENTS.md` as one component.
+This research will determine which recommendations remain supported, where they apply, and which should be revised. The object of evaluation is the full **user-repository-agent system**, with `AGENTS.md` as one component.
 
 **Primary research question**
 
@@ -38,7 +41,7 @@ This research will determine which recommendations remain supported, where they 
 - Does the file improve architectural consistency or review quality even when benchmark task-success rates stay unchanged?
 - What additional execution cost or maintenance burden does the file create?
 
-**Guide claims to revisit:** “What `AGENTS.md` is”; “Start with the smallest useful file.”
+**Guide claims to revisit:** "What `AGENTS.md` is"; "Start with the smallest useful file."
 
 ### RQ2. Which assumptions about context and memory remain accurate?
 
@@ -50,9 +53,9 @@ This research will determine which recommendations remain supported, where they 
 - How do tools such as Codex, Claude Code, Cursor, and comparable agents handle instruction loading, nested files, working-directory scope, and precedence?
 - What persists across fresh sessions, resumed sessions, context compaction, and subagent execution?
 - When are repository instructions reliably available, and when do agents need to discover or retrieve them?
-- How should the guide's claim that agents reconstruct project context “from scratch every time” be qualified for products with persistent memory or other state?
+- How should the guide's claim that agents reconstruct project context "from scratch every time" be qualified for products with persistent memory or other state?
 
-**Guide claims to revisit:** “Onboarding”; “Agents work from assembled context”; guidance on nested files.
+**Guide claims to revisit:** "Onboarding"; "Agents work from assembled context"; guidance on nested files.
 
 ### RQ3. Which kinds of instructions earn their place?
 
@@ -66,7 +69,7 @@ This research will determine which recommendations remain supported, where they 
 - Which repository details can agents infer dependably from code, tests, and configuration, and which need explicit explanation?
 - When do examples or decision procedures work better than short declarative rules?
 
-**Guide claims to revisit:** “Agents bring generic priors”; “Add only project-specific defaults.”
+**Guide claims to revisit:** "Agents bring generic priors"; "Add only project-specific defaults."
 
 ### RQ4. Is shorter instruction context consistently better?
 
@@ -80,7 +83,7 @@ This research will determine which recommendations remain supported, where they 
 - Do prominent placement and source-authority cues matter more than raw token count?
 - How much additional cost comes from loading instructions, and how much from extra exploration or validation caused by following them?
 
-**Guide claims to revisit:** “Context is limited and signals are mixed”; “Treat context as a budget.”
+**Guide claims to revisit:** "Context is limited and signals are mixed"; "Treat context as a budget."
 
 ### RQ5. When does routing to documentation work better than including guidance directly?
 
@@ -94,7 +97,7 @@ This research will determine which recommendations remain supported, where they 
 - What must be visible before the first action, and what can safely be retrieved later?
 - How do information placement and source-of-truth rules behave when documents are stale, inconsistent, or competing?
 
-**Guide claims to revisit:** “Make it a map, not a manual”; “Separate stable root rules from changing domain knowledge.”
+**Guide claims to revisit:** "Make it a map, not a manual"; "Separate stable root rules from changing domain knowledge."
 
 ### RQ6. How should recurring failures be diagnosed and addressed?
 
@@ -108,7 +111,7 @@ This research will determine which recommendations remain supported, where they 
 - When an automated check already enforces an invariant, is a brief explanation or recovery procedure still useful?
 - When is a repeated failure evidence of a problem in the surrounding workflow, and when is that explanation insufficient?
 
-**Guide claims to revisit:** “Prefer enforcement over prose”; “Convert repeated failures into harness improvements.”
+**Guide claims to revisit:** "Prefer enforcement over prose"; "Convert repeated failures into harness improvements."
 
 ### RQ7. How should instructions be maintained and removed?
 
@@ -122,7 +125,7 @@ This research will determine which recommendations remain supported, where they 
 - Does continually adding rules after failures improve generalization to new tasks, or overfit to prior incidents?
 - What evidence should justify editing, relocating, consolidating, or deleting a rule?
 
-**Guide claims to revisit:** “Add modules only when they are earned”; “Canonical sources”; “Anti-patterns to avoid.”
+**Guide claims to revisit:** "Add modules only when they are earned"; "Canonical sources"; "Anti-patterns to avoid."
 
 ### RQ8. What validation and human involvement produce reliable autonomy?
 
@@ -136,7 +139,7 @@ This research will determine which recommendations remain supported, where they 
 - How should quality account for incomplete requirements, architectural violations, review effort, and defects discovered after acceptance?
 - Which decisions should remain with the human, and how should agents recognize that boundary?
 
-**Guide claims to revisit:** “Validation”; “Reliable autonomy”; “User goals.”
+**Guide claims to revisit:** "Validation"; "Reliable autonomy"; "User goals."
 
 ## Evidence requirements across all questions
 
@@ -175,10 +178,10 @@ Begin with **RQ1, RQ2, RQ4, and RQ5**. These challenge the central assumptions a
 
 These are initial leads from the question-formulation discussion, **not yet a completed literature review**. Verify publication details, methodology, findings, and applicability during the research phase.
 
-- *Evaluating AGENTS.md* — https://arxiv.org/abs/2602.11988
-- Empirical study of `AGENTS.md` and development performance — https://arxiv.org/abs/2601.20404
-- Vercel, *AGENTS.md outperforms skills in our agent evals* — https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals
-- Claude Code documentation, *Memory* — https://code.claude.com/docs/en/memory
+- *Evaluating AGENTS.md* -- https://arxiv.org/abs/2602.11988
+- Empirical study of `AGENTS.md` and development performance -- https://arxiv.org/abs/2601.20404
+- Vercel, *AGENTS.md outperforms skills in our agent evals* -- https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals
+- Claude Code documentation, *Memory* -- https://code.claude.com/docs/en/memory
 
 ## Boundary of this document
 

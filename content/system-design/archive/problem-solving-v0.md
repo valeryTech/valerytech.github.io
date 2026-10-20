@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Original problem-solving notes"
 description: "Archived draft questions about structuring complex design problems, considering trade-offs, and keeping end users and service clients in view."
+document_status: "archived"
 linkTitle: "Original problem-solving notes"
 ---
 

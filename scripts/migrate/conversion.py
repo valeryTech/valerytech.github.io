@@ -374,6 +374,8 @@ def convert_document(
         "title",
         "aliases",
         "description",
+        "document_status",
+        "agent_map_exclude",
         "summary",
         "date",
         "lastmod",

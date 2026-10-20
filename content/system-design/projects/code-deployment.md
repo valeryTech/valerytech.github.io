@@ -40,7 +40,7 @@ The original sketch includes only these states; failure and recovery behavior re
 ## Scale assumptions to confirm
 
 
-- Artifact size: 1–10 GB.
+- Artifact size: 1-10 GB.
 - Deployment volume: thousands of artifacts daily.
 - Targets: hundreds of machines.
 

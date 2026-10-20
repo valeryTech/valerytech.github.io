@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A research dialogue exploring how user goals and workflows can ground architectural responsibilities and provide context beyond structural diagrams."
 title: "Flow 1"
 linkTitle: "Flow 1"
 ---

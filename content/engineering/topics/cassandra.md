@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Reading notes on Cassandra consistency and availability trade-offs, tunable consistency, and resources for analytics with Apache Spark."
 title: "Cassandra"
 linkTitle: "Cassandra"
 ---

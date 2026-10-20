@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Practical learning advice for Terraform: choose a small infrastructure goal, implement it as code, and expand through hands-on AWS exercises."
 title: "Terraform"
 linkTitle: "Terraform"
 ---

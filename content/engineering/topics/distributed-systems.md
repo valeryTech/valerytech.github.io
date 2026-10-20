@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A study-resource list for distributed systems, linking courses, books, lectures, and practical learning material."
 title: "Distributed Systems"
 linkTitle: "Distributed Systems"
 ---

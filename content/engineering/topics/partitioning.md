@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Reason about key-range and hash partitioning, skew, secondary indexes, rebalancing, and request routing when scaling data storage and query throughput."
 title: "Partitioning"
 linkTitle: "Partitioning"
 ---

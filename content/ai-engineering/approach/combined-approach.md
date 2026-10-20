@@ -6,10 +6,9 @@ description: "Connects the causal stack, evaluation harness, observability, test
 linkTitle: "Structured AI Development Approach"
 ---
 
-
 Structured AI development approach:
 
-- Causal stack framework: the causal-stack set of notes under `ai-engineering/evaluation/causal-stack`, with [Causal Stack Operating Model]({{< ref "ai-engineering/causal-stack/causal-stack-operating-model" >}}) as the top-level map. It links language and system-level causal properties to fault families, evaluation methods, and operational controls, so it shows where the harness, platform, and methodology fit.
+- Product behavior investigations: the [practical guide]({{< ref "ai-engineering/causal-stack" >}}) connects customer cases, debugging questions, claims, and focused checks. Use it to choose the next useful investigation and assess a product change.
 - Evaluation harness and platform
 - Methodology and operating model
 - Observability and test pyramid
@@ -19,7 +18,7 @@ Structured AI development approach:
 
 and approach of design: [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}}):
 
-The central idea is integrative: the eval harness/test pyramid, observability, and the [causal stack framework]({{< ref "ai-engineering/causal-stack/causal-stack-operating-model" >}}) are complementary parts of one AI delivery system, together giving a fuller picture of failure modes, evaluation, and operational control.
+The central idea is integrative: the eval harness/test pyramid, observability, and the [product behavior guide]({{< ref "ai-engineering/causal-stack" >}}) are complementary parts of one AI delivery system, together giving a fuller picture of failure modes, evaluation, and operational control.
 
 There is a clean way to combine (and refactor) the **test pyramid**, the **canonical eval flow set**, and the **observability scheme** into a single coherent "quality system" for LLM products. The main move is to stop treating them as competing frameworks and instead make them **orthogonal views of the same control system** and playing together as a basis for reliable AI delivery.
 

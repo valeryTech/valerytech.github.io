@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Build a test portfolio from product intent, invariants, contracts, quality scenarios, and risks, using the practical test pyramid to balance feedback speed and diagnostic value."
 title: "Test Strategy Foundations"
 linkTitle: "Test Strategy Foundations"
 ---

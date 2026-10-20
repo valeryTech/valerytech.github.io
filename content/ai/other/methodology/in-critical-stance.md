@@ -6,7 +6,6 @@ title: "In Critical Stance"
 linkTitle: "In Critical Stance"
 ---
 
-
 Several related terms emphasize different aspects of evidence-based practice:
 
 - **Empirical validation** -- checking whether a claim holds up against observation or experience.

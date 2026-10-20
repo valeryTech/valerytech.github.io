@@ -1,6 +1,8 @@
 ---
 draft: false
 toc: true
+description: "Choose delivery techniques by uncertainty and lifecycle stage, specifying scope, real versus simplified parts, completion evidence, lifespan, and the next decision."
+document_status: "draft"
 title: "Engineering Delivery Techniques Guide"
 linkTitle: "Engineering Delivery Techniques Guide"
 ---

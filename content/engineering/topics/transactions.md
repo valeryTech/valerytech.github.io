@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Study transaction guarantees and costs through ACID, atomic rollback, isolation levels, and examples of concurrent reads and writes."
 title: "Transactions"
 linkTitle: "Transactions"
 ---

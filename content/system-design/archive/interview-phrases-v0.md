@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Interview phrase collection before the refactor"
 description: "Archived interview phrases, synonym lists, and transcript fragments for stating assumptions, discussing trade-offs, handling uncertainty, and navigating disagreement."
+document_status: "archived"
 linkTitle: "Interview phrase collection before the refactor"
 ---
 

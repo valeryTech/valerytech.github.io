@@ -10,7 +10,7 @@ linkTitle: "System Design"
 
 These notes connect architectural reasoning, interview preparation, technical building blocks, and worked design exercises. Start with the question you are trying to answer.
 
-| I want to… | Start here |
+| I want to... | Start here |
 | --- | --- |
 | Plan my preparation and practice | [Study and practice]({{< ref "system-design/system-design" >}}) |
 | Think through architectural choices | [Design principles]({{< ref "system-design/02-system-design" >}}) |

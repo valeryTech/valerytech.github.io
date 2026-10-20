@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Use back-of-the-envelope estimates and common performance numbers to reason about capacity and judge whether a proposed design can meet its requirements."
 title: "Envelope Estimations"
 linkTitle: "Envelope Estimations"
 ---

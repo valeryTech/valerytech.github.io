@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Earlier URL-shortener NFR reasoning"
 description: "Archived URL-shortener quality-target proposals, availability tables, error-budget reasoning, architecture assumptions, and interview scripts preserved for comparison."
+document_status: "archived"
 linkTitle: "Earlier URL-shortener NFR reasoning"
 ---
 

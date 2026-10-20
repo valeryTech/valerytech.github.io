@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "System Design Archive"
 description: "An index of original notes preserved during refactoring, linking historical drafts and reading collections to their organized working versions."
+document_status: "archived"
 linkTitle: "Archive"
 ---
 

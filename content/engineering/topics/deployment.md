@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explore deployment principles, environments, infrastructure as code, and progressive release techniques including blue-green deployment, feature flags, canaries, and parallel runs."
 title: "Deployment"
 linkTitle: "Deployment"
 ---

@@ -24,7 +24,7 @@ The initial notes propose:
 - Contextualize latency for each operation.
 - Support files around 50 GB, motivating a discussion of resumable uploads.
 - Preserve data integrity.
-- Explore a workload of roughly 200–300 million daily active users.
+- Explore a workload of roughly 200-300 million daily active users.
 
 These are exercise assumptions to confirm, rather than measured workload facts.
 

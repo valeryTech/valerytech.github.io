@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Research notes connecting declarative specifications, execution engines, domain models, DSLs, and semantic modeling, with a list of contributors to study."
 title: "Declarative"
 linkTitle: "Declarative"
 ---

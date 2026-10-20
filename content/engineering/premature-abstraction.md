@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Recognize speculative generalization, model concrete workflows first, and use design probes before committing to shared abstractions."
 title: "Premature Abstraction"
 linkTitle: "Premature Abstraction"
 ---

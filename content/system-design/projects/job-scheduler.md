@@ -15,7 +15,7 @@ Early requirements and open questions; a complete design has not yet been record
 
 Objects: user, job, and schedule.
 
-A user can upload a job, start it manually, or establish a schedule. The setup flow is upload → manual execution or schedule creation.
+A user can upload a job, start it manually, or establish a schedule. The setup flow is upload -> manual execution or schedule creation.
 
 ## Questions to clarify
 

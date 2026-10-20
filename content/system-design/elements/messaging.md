@@ -57,11 +57,11 @@ Tools mentioned in the original notes: Kafka, RabbitMQ, SQS, SNS, and EventBridg
 
 - [Saga pattern](https://microservices.io/patterns/data/saga.html).
 - [Eventuate](https://eventuate.io/) and [Eventuate Tram](https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html).
-- [Designing event-driven architectures — AWS](https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/).
+- [Designing event-driven architectures -- AWS](https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/).
 - [AWS messaging](https://aws.amazon.com/messaging/).
 - [Choosing serverless messaging services](https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/).
 - [AWS event-driven architecture](https://aws.amazon.com/event-driven-architecture/).
-- [Six event-driven architecture patterns — Wix](https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47).
+- [Six event-driven architecture patterns -- Wix](https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47).
 
 ### Trade-offs and further reading
 

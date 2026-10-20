@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Original messaging and event notes"
 description: "Archived notes and sources on messaging models, event-driven architecture, delivery semantics, ordering, retention, retries, and event sourcing."
+document_status: "archived"
 linkTitle: "Original messaging and event notes"
 ---
 

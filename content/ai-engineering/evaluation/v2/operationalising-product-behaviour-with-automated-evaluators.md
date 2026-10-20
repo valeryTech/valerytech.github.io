@@ -1207,8 +1207,11 @@ A bias-corrected estimate of the human-equivalent Pass rate is:
 
 \[
 \hat{\theta}
+
 =
+
 \frac{p_{\text{obs}} + \mathrm{TNR} - 1}
+
      {\mathrm{TPR} + \mathrm{TNR} - 1}
 \]
 

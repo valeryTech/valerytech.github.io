@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "System Design: Study and Practice"
 description: "A study and practice plan combining technical foundations, toolbox development, design exercises, mock interviews, feedback, and reflection beyond interview preparation."
+document_status: "canonical"
 linkTitle: "Study and Practice"
 ---
 

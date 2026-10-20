@@ -55,7 +55,7 @@ The system still implements the behavior in a causal sense. However, that behavi
 
 This makes behavioral observation necessary.
 
-This follows from the system-level causal properties of AI applications: behavior can vary across runs and contexts, correctness is often soft and task-specific, knowledge is distributed across external sources, outputs may need evidence grounding, behavior emerges from pipelines and agents, environments drift, failures are weakly observable by default, and quality is constrained by cost and latency tradeoffs. These form the AI-system-level causal-features layer in the stack (see [Layer 1c Ai System Causal Features]({{< ref "ai-engineering/causal-stack/layer-1c-ai-system-causal-features" >}})).
+In a product investigation, inspect the relevant inputs, source material, state, component handoffs, versions, and operating constraints. The [model and system reference]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}}) separates background findings from those observable conditions; the [focused checks]({{< ref "ai-engineering/causal-stack/checks" >}}) provide ways to investigate them.
 
 ### Compositional reasoning is limited
 

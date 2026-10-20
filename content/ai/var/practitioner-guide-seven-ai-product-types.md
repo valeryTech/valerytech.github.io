@@ -61,7 +61,7 @@ Identify responsibility at important transitions:
 
 One person need not hold all four responsibilities. A customer may describe an issue while an employee owns its resolution, software enforces an account restriction, and a specialist judges an exception. See the research's responsibility-allocation model.
 
-### Separate the questions behind “correct”
+### Separate the questions behind "correct"
 
 
 | Concern | Question | What passing does not establish |
@@ -130,7 +130,7 @@ flowchart LR
 
 **Effort drivers.** Artifact interaction, context assembly, privacy requirements, and the breadth of distinct evaluation criteria. A chat interface alone says little about sensitivity or integration cost.
 
-**Common failure.** Treating all tasks as one “helpfulness” problem, or completing work that the person needed to perform to learn. The [TRY case](#case-try) illustrates several work uses; its vendor-reported time savings are specific to that organization.
+**Common failure.** Treating all tasks as one "helpfulness" problem, or completing work that the person needed to perform to learn. The [TRY case](#case-try) illustrates several work uses; its vendor-reported time savings are specific to that organization.
 
 ## 3. Contextual support assistant
 
@@ -409,7 +409,7 @@ A platform is a reuse scope available to all seven archetypes. Start with common
 
 Derive infrastructure from a required property:
 
-**Desired property → observable failure → constraint or check → enforcement owner → evidence that it works.**
+**Desired property -> observable failure -> constraint or check -> enforcement owner -> evidence that it works.**
 
 | Desired property | Example failure | Design response to assess |
 |---|---|---|

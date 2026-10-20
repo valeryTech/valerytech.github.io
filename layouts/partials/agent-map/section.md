@@ -8,6 +8,7 @@
   {{- end -}}
 {{- end -}}
 {{- printf "All documents in this collection are listed below, grouped by subsection.\n\n" -}}
+{{- partial "agent-map/status-key.md" . -}}
 {{- if .RegularPages -}}
   {{- printf "## Documents\n\n" -}}
 {{- end -}}

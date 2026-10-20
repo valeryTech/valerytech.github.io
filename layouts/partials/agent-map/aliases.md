@@ -3,7 +3,7 @@
   {{- $page := . -}}
   {{- $title := .Title | plainify | htmlUnescape -}}
   {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
-  {{- if and (not .Draft) (.OutputFormats.Get "HTML") -}}
+  {{- if and (not .Draft) (not .Params.agent_map_exclude) (.OutputFormats.Get "HTML") -}}
     {{- range .Aliases -}}
       {{- $links = $links | append (printf "- [%s](%s) → [%s](%s)\n" . (. | relURL) $title $page.RelPermalink) -}}
     {{- end -}}

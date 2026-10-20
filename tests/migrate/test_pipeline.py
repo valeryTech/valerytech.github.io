@@ -83,6 +83,19 @@ class MigrationPipelineTests(unittest.TestCase):
         self.assertEqual(second, 0)
         self.assertEqual(api_content, api_path.read_text(encoding="utf-8"))
 
+    def test_sync_preserves_navigation_metadata_without_hiding_published_drafts(self) -> None:
+        source = self.workspace.source_root / "system-design/topics/api.md"
+        source.write_text(
+            "---\ndocument_status: draft\nagent_map_exclude: true\n---\n"
+            + source.read_text(encoding="utf-8"), encoding="utf-8",
+        )
+
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        generated = (self.workspace.content_root / "system-design/topics/api.md").read_text(encoding="utf-8")
+        self.assertIn('document_status: "draft"', generated)
+        self.assertIn("agent_map_exclude: true", generated)
+        self.assertIn("draft: false", generated)
+
     def test_sync_uses_section_title_for_synthetic_root_index(self) -> None:
         source = self.workspace.source_root / "ai/collab-and-joint-work/note.md"
         source.parent.mkdir(parents=True)

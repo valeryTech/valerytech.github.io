@@ -31,6 +31,6 @@ Definitions and models; consistency patterns; examples connecting an access patt
 - *Designing Data-Intensive Applications*.
 - [Consistency model](https://en.wikipedia.org/wiki/Consistency_model).
 - [Sequential consistency](https://en.wikipedia.org/wiki/Sequential_consistency).
-- [Consistency patterns — systemdesign.one](https://systemdesign.one/consistency-patterns/).
-- [Consistency patterns — DesignGurus](https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems).
-- [Database consistency — Alex DeBrie](https://www.alexdebrie.com/posts/database-consistency/).
+- [Consistency patterns -- systemdesign.one](https://systemdesign.one/consistency-patterns/).
+- [Consistency patterns -- DesignGurus](https://www.designgurus.io/blog/Consistency-Patterns-Distributed-Systems).
+- [Database consistency -- Alex DeBrie](https://www.alexdebrie.com/posts/database-consistency/).

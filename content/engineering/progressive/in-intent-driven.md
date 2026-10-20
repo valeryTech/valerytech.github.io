@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Frame architecture through user needs and jobs to be done, using domain language, DSLs, DDD practices, use cases, and decision records to preserve intent."
 title: "In Intent Driven"
 linkTitle: "In Intent Driven"
 ---

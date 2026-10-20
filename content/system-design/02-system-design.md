@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "System Design Principles"
 description: "Principles for making architectural choices through context, boundaries, feedback, state ownership, interactions, and explicit trade-offs."
+document_status: "canonical"
 linkTitle: "Design Principles"
 ---
 
@@ -43,7 +44,7 @@ Use the [problem-solving checklist]({{< ref "system-design/frameworks/problem-so
 
 - **Architecture views:** [C4 model](https://c4model.com/) and the [Zachman framework](https://en.wikipedia.org/wiki/Zachman_Framework); the original notes also mention TOGAF.
 - **Distributed-system topics to study:** consistency models, the CAP theorem, and the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem). Follow the [building-block map]({{< ref "system-design/elements/elements" >}}) for related topics.
-- **Architecture writers:** [Ruth Malan](https://www.ruthmalan.com/), Vlad Khononov's “Balancing,” [Diana Montalion](https://www.youtube.com/watch?v=m7cWdYVAzX0), and [Christian Posta](https://blog.christianposta.com/).
+- **Architecture writers:** [Ruth Malan](https://www.ruthmalan.com/), Vlad Khononov's "Balancing," [Diana Montalion](https://www.youtube.com/watch?v=m7cWdYVAzX0), and [Christian Posta](https://blog.christianposta.com/).
 - **Operational and cost perspectives:** [The Frugal Architect](https://thefrugalarchitect.com/) and the [AWS Architecture Center](https://aws.amazon.com/architecture).
 - **Engineering case studies:** Netflix's [distributed counter](https://netflixtechblog.com/netflixs-distributed-counter-abstraction-8d0c45eb66b2), [data gateway](https://netflixtechblog.medium.com/data-gateway-a-platform-for-growing-and-protecting-the-data-tier-f1ed8db8f5c6), and [adaptive concurrency limits](https://medium.com/@NetflixTechBlog/performance-under-load-3e6fa9a60581).
 

@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "URL Shortener"
 description: "A working URL-shortener design covering requirements, redirect and creation APIs, data ownership, read/write flows, uniqueness, caching, consistency, and deep-dive choices."
+document_status: "canonical"
 linkTitle: "URL Shortener"
 ---
 
@@ -135,7 +136,7 @@ Choose the issues that follow from the agreed requirements:
 - **Reliability:** identify dependency failures, fallback behavior, and how the selected SLO would be measured.
 - **Abuse and operations:** connect rate limits, basic validation, metrics, and structured errors to the paths they protect or observe.
 
-A simple initial store remains an option. The question “when would a separate counter, generator, or partitioned store become necessary?” is part of the design discussion.
+A simple initial store remains an option. The question "when would a separate counter, generator, or partitioned store become necessary?" is part of the design discussion.
 
 ## Review checklist
 
