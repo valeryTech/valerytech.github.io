@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Review AI-assisted changes for invented APIs, unsupported assumptions, unnecessary complexity, weak tests, and unverified execution claims."
 title: "Llm Specific Review Guide"
 linkTitle: "Llm Specific Review Guide"
 ---

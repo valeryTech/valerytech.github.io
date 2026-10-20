@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Review implementation logic, APIs, state, data, dependencies, security, and operability using project context and relevant technical checklists."
 title: "Technical Review Guide"
 linkTitle: "Technical Review Guide"
 ---

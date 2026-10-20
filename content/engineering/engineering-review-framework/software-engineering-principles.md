@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Apply simplicity, scope control, reuse, consistent abstractions, clear responsibilities, and maintainability when designing and reviewing code."
 title: "Software Engineering Principles"
 linkTitle: "Software Engineering Principles"
 ---

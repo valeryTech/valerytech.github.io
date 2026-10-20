@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Reference lists for business context, requirements, engineering principles, technical review, testing, AI-specific risks, and review tools."
 title: "Review Reference Lists"
 linkTitle: "Review Reference Lists"
 ---

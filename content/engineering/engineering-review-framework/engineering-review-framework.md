@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Review software changes across business context, requirements, engineering principles, technical quality, testing, AI risks, and tools."
 title: "Engineering Review Framework"
 linkTitle: "Engineering Review Framework"
 ---
