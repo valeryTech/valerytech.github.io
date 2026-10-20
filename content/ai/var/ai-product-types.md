@@ -9,6 +9,8 @@ linkTitle: "Ai Product Types"
 
 Revised 2026-10-18. This note defines a practical vocabulary for product discovery and comparison. The [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}) develops the design, evaluation, and estimation method.
 
+The [editable tldraw board](https://www.tldraw.com/f/LO7apgTgZZn1VGy9rb0qL) maps the main ideas, their design implications, and the principles connecting them. Begin with **Ideas and influences** and **Principles and feedback**; the earlier diagrams remain as references.
+
 AI products combine different kinds of work, context, collaboration, and authority. The seven archetypes below describe common product purposes. Their numbering preserves the original classification; it does not rank sophistication, cost, autonomy, or risk.
 
 Describe a product in two parts: **the work it primarily supports** and **the requirements of its particular deployment**. A bounded booking assistant can execute consequential transactions. An investigation workspace can require complex evidence handling while having no authority to change an external system.
@@ -74,7 +76,7 @@ This synthesis draws on the design-research collection's work-complexity profile
 
 The earlier classification used the following labels. The revised archetypes above separate product purpose from deployment requirements more clearly.
 
-## Seven types of AI products
+### Seven types of AI products
 
 
 |Type|Description|Example|
@@ -87,44 +89,63 @@ The earlier classification used the following labels. The revised archetypes abo
 |6. Agentic operations assistant|Uses external tools and executes multi-step workflows, often across applications.|Scheduling meetings, emailing clients, coordinating tasks, updating CRM|
 |7. Intelligent analytical engine / AI platform|Combines complex rules, analytical models, forecasting, data pipelines, and orchestration. Can power multiple applications.|Forecasting systems, decision engines, risk platforms, operational optimization|
 
-## One important distinction
+### One important distinction
 
 
 These aren't necessarily seven sequential levels of sophistication.
 
 The earlier classification combines several dimensions:
 
-- Interaction: Closed workflows versus open-ended conversations.
-- Context: Generic knowledge versus knowledge of a system, account, or specialized domain.
-- Capabilities: Answering, extracting, reporting, predicting, or performing actions.
-- Autonomy: Providing information, recommending actions, or executing them.
-- Architecture: Standalone assistants versus reusable engines that power multiple applications.
+- **Interaction:** Closed workflows versus open-ended conversations.
+- **Context:** Generic knowledge versus knowledge of a system, account, or specialized domain.
+- **Capabilities:** Answering, extracting, reporting, predicting, or performing actions.
+- **Autonomy:** Providing information, recommending actions, or executing them.
+- **Architecture:** Standalone assistants versus reusable engines that power multiple applications.
 
 For example, a medical copilot could also be an agentic assistant. An audit reporting product could use a complex analytical engine. And a forecasting platform might expose a chatbot while most of its value comes from the underlying pipelines.
 
-## A simpler architecture-level classification
+### A simpler architecture-level classification
+
+#### Level 1 — Conversational AI
 
 
-Level 1 -- Conversational AI
+- Chatbots
+- Predefined task assistants
 
-Chatbots and predefined task assistants
+#### Level 2 — Contextual AI
 
-Level 2 -- Contextual AI
 
-Support, reporting, and specialized domain copilots
+- Support
+- Reporting
+- Specialized domain copilots
 
-Level 3 -- Action-oriented AI
+#### Level 3 — Action-oriented AI
 
-Tool use, workflow execution, and coordination
 
-Level 4 -- AI-powered systems and platforms
+- Tool use
+- Workflow execution
+- Coordination
 
-Complex reasoning, forecasting, orchestration, reusable pipelines, and application APIs
+#### Level 4 — AI-powered systems and platforms
+
+
+- Complex reasoning
+- Forecasting
+- Orchestration
+- Reusable pipelines
+- Application APIs
 
 These four levels describe increasing system integration and architectural scope, although individual products can combine features from multiple levels.
 
+### Assistant, agent, and platform
+
+
 The most significant distinction is between an AI assistant, an AI agent, and an AI-powered software platform.
 
-An assistant primarily helps a person complete work. An agent can execute work through tools. A platform exposes reusable capabilities, models, rules, and pipelines that other applications can build on.
+| Role | Main purpose |
+|---|---|
+| **Assistant** | Primarily helps a person complete work. |
+| **Agent** | Can execute work through tools. |
+| **Platform** | Exposes reusable capabilities, models, rules, and pipelines that other applications can build on. |
 
 For architecture, development effort, and pricing comparisons, all seven types can be evaluated along common dimensions: integration depth, data complexity, reasoning requirements, autonomy, reliability, and infrastructure.

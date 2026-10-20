@@ -69,3 +69,8 @@
   name = "Privacy Policy"
   url = "/privacy/"
   weight = 70
+
+[[footer]]
+  name = "Agent map (Markdown)"
+  url = "/site-map.md"
+  weight = 80

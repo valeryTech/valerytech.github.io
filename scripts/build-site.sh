@@ -13,6 +13,8 @@ build_on_host() {
   export TZ="${TZ:-Etc/UTC}"
   log "Running production build"
   npm run build
+  log "Verifying the public agent map"
+  npm run test:site-map
 }
 
 build_in_container() {

@@ -34,3 +34,10 @@ docker compose run --rm \
     --work-root .migration/work \
     --report-root .migration/reports \
     "${command_name}"
+
+if [[ "${command_name}" == "sync" ]]; then
+  log "Refreshing the public agent map at /site-map.md"
+  docker compose run --rm \
+    -e UV_PROJECT_ENVIRONMENT=.migration/.venv \
+    site uv run --frozen python -m scripts.site_map
+fi

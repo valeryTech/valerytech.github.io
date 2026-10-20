@@ -9,6 +9,8 @@ linkTitle: "Practitioner Guide Seven Ai Product Types"
 
 Revised 2026-10-18. Use the [short taxonomy]({{< ref "ai/var/ai-product-types" >}}) for the vocabulary and this guide to turn a product idea into design decisions, evaluation, operating requirements, and an estimate.
 
+The [editable tldraw board](https://www.tldraw.com/f/LO7apgTgZZn1VGy9rb0qL) maps the argument behind the guide: **Ideas and influences** connects work properties to design requirements, while **Principles and feedback** relates human control, evidence, acceptance, authority, and policy learning. Supporting diagrams remain on reference pages.
+
 ## Start with the work
 
 

@@ -12,6 +12,7 @@ ROUTES=(
   "/ai/"
   "/ai/collab-and-joint-work/"
   "/engineering/topics/api/"
+  "/site-map.md"
 )
 
 cleanup() {

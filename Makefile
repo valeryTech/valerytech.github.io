@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help up down build verify clean format hugo-version migrate migrate-check
+.PHONY: help up down build verify clean format hugo-version migrate migrate-check site-map site-map-check
 
 help: ## Show available targets
 	@echo "Usage: make <target>"
@@ -33,3 +33,9 @@ migrate: ## Regenerate managed content from external notes
 
 migrate-check: ## Validate migration mappings and stage output
 	@bash scripts/migrate-site.sh check
+
+site-map: ## Generate the public agent map at public/site-map.md
+	@docker compose run --rm -e UV_PROJECT_ENVIRONMENT=.migration/.venv site uv run --frozen python -m scripts.site_map
+
+site-map-check: ## Check the public agent map without rewriting it
+	@docker compose run --rm -e UV_PROJECT_ENVIRONMENT=.migration/.venv site uv run --frozen python -m scripts.site_map --check

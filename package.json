@@ -11,6 +11,7 @@
     "format": "prettier **/** -w -c",
     "build": "hugo --minify --gc --cleanDestinationDir",
     "test:analytics": "node --test tests/analytics/*.test.mjs",
+    "test:site-map": "node --test tests/site-map/*.test.mjs",
     "preview": "vite preview --outDir public"
   },
   "dependencies": {

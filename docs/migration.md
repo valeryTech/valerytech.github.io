@@ -65,6 +65,16 @@ make migrate
 
 Use this to rebuild only the sections managed by the manifest.
 
+After a successful sync, the migration command also regenerates the public
+agent navigation document at `public/site-map.md`. Visitors can find it through
+the website footer's **Agent map (Markdown)** link. `make migrate-check` does
+not rewrite that document.
+
+Hugo also generates `/site-map.md` during every preview and production build,
+so the published map follows the site's current pages without a committed
+snapshot. It contains website URLs and summaries of published content. Drafts
+and private source-note paths are not part of the map.
+
 Override the notes root explicitly:
 
 ```bash

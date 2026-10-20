@@ -33,6 +33,7 @@ Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 
 For more detail:
 
+- [Public agent map](https://valery.tech/site-map.md) for website navigation in one Markdown document; generated on every Hugo build and refreshed by `make migrate` or `make site-map`
 - [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) for local workflows
 - [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) for the external-notes migration workflow
 - [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for Docker, toolchain, CI, and deployment

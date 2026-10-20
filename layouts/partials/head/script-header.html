@@ -1,4 +1,7 @@
 <!-- Insert scripts NOT needed by stylesheets here -->
+{{- with site.Home.OutputFormats.Get "agentMap" }}
+<link rel="alternate" type="text/markdown" title="Website map for agents" href="{{ .Permalink }}">
+{{- end }}
 <script>
   (() => {
     const cookie = document.cookie

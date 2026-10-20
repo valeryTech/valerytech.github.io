@@ -25,12 +25,22 @@ copyRight = "Copyright (c) 2014-2023"
   enable = true
 
 [outputs]
-  home = ["HTML", "RSS", "searchIndex"]
+  home = ["HTML", "RSS", "searchIndex", "agentMap"]
   section = ["HTML", "RSS", "SITEMAP"]
 
 [outputFormats.searchIndex]
   mediaType = "application/json"
   baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
+# One Markdown navigation document for agents visiting the website.
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+
+[outputFormats.agentMap]
+  mediaType = "text/markdown"
+  baseName = "site-map"
   isPlainText = true
   notAlternative = true
 

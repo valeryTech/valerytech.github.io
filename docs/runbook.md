@@ -34,6 +34,16 @@ make build
 Use this to regenerate `public/` and `resources/` the same way CI and GitHub
 Pages do.
 
+Every Hugo build also creates `/site-map.md`, a single Markdown navigation map
+for agents visiting the website. It is linked from the shared footer and page
+metadata. The map groups published pages by section and includes short
+descriptions and legacy redirects.
+
+`make migrate` refreshes `public/site-map.md` after a successful content sync.
+To export just the map again, run `make site-map`; use `make site-map-check` to
+compare the exported file with a fresh production build. The output is
+generated rather than committed.
+
 Run a quick local confidence check:
 
 ```bash
