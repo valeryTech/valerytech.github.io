@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Building and Reviewing Software with AI"
-description: "Practical notes on building software with coding agents: understanding the problem, choosing a design, testing behavior, and reviewing the change."
+description: "A reading guide to building and reviewing AI-assisted software changes, connecting product intent, system design, implementation, meaningful checks, and the merge decision."
 lastmod: "2026-10-19"
 linkTitle: "Building and Reviewing with AI"
 ---

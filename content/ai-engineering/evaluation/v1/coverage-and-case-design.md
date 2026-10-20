@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Coverage And Case Design"
-linkTitle: "Coverage And Case Design"
+title: "Coverage and Case Design for AI Evaluation"
+description: "Guides evaluation case and sample selection around a stated question, distinguishing designed coverage, production prevalence, critical boundaries, variation, and regression protection."
+linkTitle: "Coverage and Case Design for AI Evaluation"
 ---
-# Coverage and Case Design for AI Evaluation
-
 ## Purpose
 
 

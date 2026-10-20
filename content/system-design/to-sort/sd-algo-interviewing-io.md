@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "SD AlgoInterviewing"
-linkTitle: "SD Algo Interviewing.io"
+title: "Interviewing.io Framework: Concise Notes"
+description: "Concise interviewing.io framework notes on requirements, objects, mutability, access patterns, quality characteristics, data types, APIs, scale, and storage design."
+linkTitle: "Interviewing.io Framework: Concise Notes"
 ---
+
+Concise companion to the [detailed interviewing.io framework]({{< ref "system-design/frameworks/framework-iv" >}}). Both versions remain available in the [framework comparison]({{< ref "system-design/frameworks" >}}).
+
 # Framework IO
 
 
@@ -60,6 +64,7 @@ The general shape of an access pattern requirement is:
 
 We're not suggesting you blindly implement all of these, but rather that *you consider them as possible access patterns* for your clarification questions. For example, should we be able to get all accounts that liked a tweet? Or would the number be enough?
 > For these access patterns, you should also consider ranking.
+
 Are there any access patterns that require ranking the object? In this example, "creating a curated feed of tweets" will require further clarification. Strive for simplicity first. Can you return them sorted by chronological time? Identify these access patterns of interest, like the curated feed, and get a feel for what your interviewer is looking for: do they want you to suggest an algorithm for a feed?
 
 ## characteristics
@@ -73,6 +78,7 @@ NFRs will strongly influence our design. They define what we should be optimizin
 There is an opportunity to relax one or several specific requirements
 {{< /callout >}}
 
+
 Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as "We don't need to focus on [Insert requirement, such as "consistency"] as much in this case because [Insert reason, such as "it's okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users"]."
 
 ### performance
@@ -81,7 +87,9 @@ Good candidates can view non-functional requirements mainly as opportunities to 
 
 ### consistency
 
+
 > Remember: Non-Functional Requirements
+
 Consider the three main non-functional requirements: performance, availability, and security.
 
     Performance: Which access patterns, if any, require good performance?
@@ -122,6 +130,7 @@ Think about the objects the system needs to hold and their data type. There are 
 
 {{< /callout >}}
 
+
 More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.
 
 ## 2.3 scale
@@ -155,7 +164,8 @@ In fact, we can go as far as saying that if you've executed the last two steps c
 Let's get some of the more obvious components out of the way first. Did you identify any type of media or blobs in step 2.1? If so, these are great candidates to store in blob storage. A blob (Binary Large Object) is basically just binary data. We store and retrieve these as a single item. For example, ZIP files or other binaries.
 
 Some popular blob stores are Amazon S3 and Azure Blob storage. In general, you don't need to worry too much about the specific brand you'd be using. Just tell your interviewer that these images/blobs you identified are good candidates to store in some blob storage, and then draw a "blob" box.
->[!Rule of thumb]
+> [!Rule of thumb]
+
 Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don't say the specific brand. Instead, say "some kind of blob storage." Because if you say, "we should use S3 here," the next question out of your interviewer's mouth will be, "why not Azure blob instead of S3?"
 
 There's a chance you might want to couple the blob storage with a CDN, but that's something we'll look into in step 3.2. This step is all about identifying how to store content, not how to distribute it.

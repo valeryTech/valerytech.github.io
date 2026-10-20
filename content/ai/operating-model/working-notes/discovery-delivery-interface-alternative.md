@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "An earlier four-part discovery–delivery interface: a defined solution, investment evidence, shared team understanding, and production requirements beyond the prototype."
 title: "Discovery Delivery Interface Alternative"
 linkTitle: "Discovery Delivery Interface Alternative"
 ---
+
 > **Editorial note:** This is the earlier four-part version. Read it with [`discovery-and-delivery.md`]({{< ref "ai/operating-model/discovery-and-delivery" >}}). The same team does both kinds of work, and the interface is not a handoff.
 
 - Discovery asks whether there is enough evidence that this is the solution worth building.

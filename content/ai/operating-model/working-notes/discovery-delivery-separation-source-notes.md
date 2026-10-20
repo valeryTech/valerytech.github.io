@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Preserves the argument against organizing AI work as citizens, agents, and experts, plus an earlier question about obligations when prototypes become supported systems."
 title: "Discovery Delivery Separation Source Notes"
 linkTitle: "Discovery Delivery Separation Source Notes"
 ---

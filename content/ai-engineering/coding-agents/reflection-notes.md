@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Reflection Notes"
-linkTitle: "Reflection Notes"
+title: "Coding-Agent Reflection Notes"
+description: "Working observations on agent overengineering, uncertainty, conventional architecture, provisional planning, canonical documentation, and recoverable workstreams, with open questions about reflection and experimentation."
+linkTitle: "Coding-Agent Reflection Notes"
 ---
 # Goals
 

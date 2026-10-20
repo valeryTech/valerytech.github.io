@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Delivery Framework (HI)"
-linkTitle: "Delivery Framework (HI)"
+title: "Hello Interview Delivery Framework"
+description: "Hello Interview’s timed delivery framework, moving from requirements, entities, and interfaces to a complete high-level design and focused deep dives."
+linkTitle: "Hello Interview Delivery Framework"
 ---
+
+Source framework retained as a separate approach. Compare it with the [other frameworks]({{< ref "system-design/frameworks" >}}); use the [NFR guide]({{< ref "system-design/nfr/non-functional-requirements" >}}) when interpreting the example quality targets.
+
 # Delivery Framework
 
 
@@ -60,6 +64,7 @@ It's important that non-functional requirements are put in the context of the sy
 "The system should have low latency search, < 500ms," is much more useful as it identifies the part of the system that most needs to be low latency and provides a target.
 {{< /callout >}}
 
+
 Coming up with non-functional requirements can be challenging, especially if you're not familiar with the domain. Here is a checklist of things to consider that might help you identify the most important non-functional requirements for your system. You'll want to identify the top 3-5 that are most relevant to your system.
 
 1. **CAP Theorem**: Should your system prioritize consistency or availability? Note, partition tolerance is a given in distributed systems.
@@ -92,10 +97,11 @@ For our Twitter example, our core entities are rather simple:
 - Tweet
 - Follow
 
->A couple useful questions to ask yourself to help identify core entities:
+> A couple useful questions to ask yourself to help identify core entities:
 >
->- Who are the actors in the system? Are they overlapping?
->- What are the nouns or resources necessary to satisfy the functional requirements?
+> - Who are the actors in the system? Are they overlapping?
+> - What are the nouns or resources necessary to satisfy the functional requirements?
+
 Aim to choose good names for your entities. While most problems are small enough that you could probably sub in foo and bar for any entity in your system, some interviewers use this as an opportunity to see whether you're any good at one of the [hardest problems in computer science](https://www.martinfowler.com/bliki/TwoHardThings.html).
 
 ## API or System Interface (~5 minutes)
@@ -147,11 +153,13 @@ Don't over think this! Your primary goal is to design an architecture that satis
 It's incredibly common for candidates to start layering on complexity too early, resulting in them never arriving at a complete solution. Focus on a relatively simple design that meets the core functional requirements, and then layer on complexity to satisfy the non-functional requirements in your deep dives section. It's natural to identify areas where you can add complexity, like caches or message queues, while in the high-level design. We encourage you to note these areas with a simple verbal callout and written note, and then move on.
 {{< /callout >}}
 
+
 As you're drawing your design, you should be talking through your thought process with your interviewer. Be explicit about how data flows through the system and what state (either in databases, caches, message queues, etc.) changes with each request, starting from API requests and ending with the response. When your request reaches your database or persistence layer, it's a great time to start documenting the relevant columns/fields for each entity. You can do this directly next to your database visually. This helps keep it close to the relevant components and makes it easy to evolve as you iterate on your design. No need to worry too much about types here, your interviewer can infer and they'll only slow you down.
 
 {{< callout context="danger" title="Focus on relevant" icon="outline/alert-octagon" >}}
 Don't waste your time documenting every column/field in your schema. For example, your interviewer knows that a User table has a name, email, and password hash so you don't need to write these down. Instead, focus on the columns/fields that are particularly relevant to your design.
 {{< /callout >}}
+
 
 For our simple Twitter example, here is how you might build up your design, one endpoint at a time:
 
@@ -165,6 +173,7 @@ Astute readers probably noticed that our simple, high-level design of Twitter is
 {{< callout context="note" title="Be Proactive" icon="outline/info-circle" >}}
 The degree in which you're proactive in leading deep dives is a function of your seniority. More junior candidates can expect the interviewer to jump in here and point out places where the design could be improved. More senior candidates should be able to identify these places themselves and lead the discussion.
 {{< /callout >}}
+
 
 So for example, one of our non-functional requirements for Twitter was that our system needs to scale to >100M DAU. We could then lead a discussion oriented around horizontal scaling, the introduction of caches, and database sharding -- updating our design as we go. Another was that feeds need to be fetched with low latency. In the case of Twitter, this is actually the most interesting problem. We'd lead a discussion about fanout-on-read vs fanout-on-write and the use of caches.
 

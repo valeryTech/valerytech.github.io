@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Product Fault Families"
+description: "Reorganizes fault classification around seven product debugging surfaces, combining affected artifacts and failure operators with trace requirements, evaluation methods, and control gaps."
 linkTitle: "Product Fault Families"
 ---
 

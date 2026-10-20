@@ -1,229 +1,95 @@
 ---
 draft: false
 toc: true
-title: "Elements"
-linkTitle: "Elements"
+title: "Building-Block Map and Study Template"
+description: "A map of core system design components and patterns, with a study template, technical references, and topics for further development."
+linkTitle: "Building-Block Map"
 ---
-Different peope have different classification and point of view what and how to learn. -> So what?
 
-HelloInterview clussified topics to learn into this structure:
+Organize the toolbox into core concepts, components and technologies, and patterns. Study them in relation to a problem: what does this element do, and why does this design need it?
 
-Core Concepts => { Key Technologies, Patterns } => Delivery Framework => Common Problems Practicing
+The original topic collection is preserved in [building-block notes]({{< ref "system-design/archive/building-blocks-v0" >}}).
 
-[Elements]({{< ref "system-design/elements/elements" >}})
+## How to study a building block
 
-- foundational SD knowledge
-- key characteristics of systems
-- actual components of the system like LB, caches, proxies, leader election
-- actual tuck; real-life tools, existing products to use in SD to build your system
-- system design patterns
 
-(refactor)
+For each component or pattern, record:
 
-Topics to research and grok:
+1. The problem it solves and a concrete use case.
+2. How it works, including the important request or data flow.
+3. The assumptions and constraints under which it is useful.
+4. Trade-offs, failure behavior, and alternatives.
+5. Relevant implementations and examples from practice cases.
 
-building blocks (systems approach?)
+Keep concepts separate from product names. Use a specific implementation to deepen the explanation when its behavior matters.
 
-nfu reasoning
+## Request routing and delivery
 
-trade-offs:
+### DNS
 
-- commong trade-off reasoning
-- make a list of these in one place and refine them after you get more and more practice
 
-async patterns, communication, protocols,
+Study backlog: add a description of its role in the request path and how to discuss it during a design interview.
 
-distributed coordination, transactions and sagas..
+### CDN
 
-common technical problems
 
-data and databases
+A content delivery network serves content from distributed locations closer to users. The original notes emphasize reducing delivery distance and reducing requests handled by origin servers.
 
-api construction
+### Load balancer
 
-fundamental things: vector clocks
 
-I would say that we can add another category here to learn: communication and protocols.
+Distributes incoming traffic across a pool of backend servers. Explain both the routing policy and how the backend pool is discovered and kept current.
 
-(interviewing.io)
+Policies to study include random selection, round robin and weighted round robin, least connections, load-aware selection, hashing, and path-based routing. Distinguish L4 and L7 behavior where it matters.
 
-12 fundamental (technical) system design concepts:
+The source notes discuss static configuration and registration with a coordination service such as etcd or ZooKeeper. NGINX and HAProxy are implementation examples to examine.
 
-a. APIs
+### Proxy
 
-b. Databases (SQL vs NoSQL)
 
-c. Scaling
+A forward proxy acts on behalf of clients; a reverse proxy acts on behalf of servers. The notes identify filtering, logging, caching, traffic distribution, and request or response changes as capabilities to consider.
 
-d. CAP Theorem
+### API gateway
 
-e. Web authentication and basic security
 
-f. Load balancers
+See [API gateway]({{< ref "system-design/elements/api-gateway" >}}) for routing, shared request handling, and deciding whether a separate gateway belongs in the design.
 
-g. Caching
+## Communication and service boundaries
 
-h. Message queues
 
-i. Indexing
+- [Messaging and events]({{< ref "system-design/elements/messaging" >}}): point-to-point and publish/subscribe models, delivery, ordering, retention, and retry questions.
+- [Queue notes]({{< ref "engineering/topics/queues" >}}): related background.
+- **Sidecar pattern:** place supporting functionality in a separate process alongside an application.
+- **Service mesh:** study the infrastructure responsibilities identified in the notes: traffic management, discovery, load balancing, telemetry, and failure controls.
+- [Microservices]({{< ref "engineering/topics/microservices" >}}): broader service-design notes.
 
-j. Failover
+## Data, distribution, and capacity
 
-k. Replication
 
-l. Consistent hashing
+- [Database notes]({{< ref "engineering/data/databases" >}}): storage models, indexes, replication, and related fundamentals.
+- [Scalability]({{< ref "system-design/nfr/scalability" >}}): duplication, partitioning, functional decomposition, caching, and asynchronous work.
+- [Consistency]({{< ref "system-design/nfr/consistency" >}}): operation-specific guarantees and trade-offs.
+- [Caching]({{< ref "engineering/topics/caching" >}}): cache behavior and use cases.
+- [Distributed systems]({{< ref "engineering/topics/distributed-systems" >}}): coordination and distributed-system foundations.
+- [Key-value store exercise]({{< ref "system-design/projects/key-value-store" >}}), [rate limiter]({{< ref "system-design/projects/rate-limiter" >}}), and [Snowflake ID sources]({{< ref "system-design/projects/infra/slowflake-id" >}}): focused applications.
 
-educative.io uses term "Building Block" <https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-building-blocks-for-modern-system-design>
+## Topics to develop
 
-**From Books**
 
-DDIA 2nd edition: <https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/>
+The existing notes identify these gaps:
 
-syn: element, pattern, high-level strategy
+- API contracts, communication mechanisms, and protocols.
+- Distributed coordination, leader election, transactions, sagas, and vector clocks.
+- Consistent hashing, scatter-gather, and distributed computation such as MapReduce.
+- Key-value stores and in-memory data grids.
+- Rate limiting, including distributed and tier-based policies.
+- Security: authentication, authorization, password hashing and salting, and usability trade-offs.
+- Common design templates, including a CRUD service, control plane, and management interface.
 
-From
+Use [practice]({{< ref "system-design/system-design" >}}#a-practice-loop) to decide which gap to study next. The original notes mention these topic catalogs and pattern references:
 
-<https://docs.microsoft.com/en-us/azure/architecture/patterns/>
-
-interviewing.io
-
-system-design-primer
-
-- Distributed computing with MapReduce
-- Consistent hashing
-- Scatter gather
-
-stateless services and idempotent API as a key to scalability
-
-**pattern description blueprint:**
-
-a definition of a pattern;
-
-which problems this patterns solves;
-
-specific algorithm(s) of work and {scenario}/{case};
-
-trade-offs and analogues;
-
-specific implementations / solutions { s }
-
-also, you can introduce a rule of thumb practice (when to use )
-
-# dns
-
-
-todo: add description and usage of DNS in a SD interview
-
-## cdn
-
-
-A content delivery network (CDN) is a globally distributed network of proxy servers, serving content from locations closer to the user.
-
-Serving content from CDNs can significantly improve performance in two ways:
-
-- Users receive content from data centers close to them
-- Your servers do not have to serve requests that the CDN fulfills
-
-# Load Balancer
-
-
-_Load balancing_ refers to efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
-
-Why do we need LB?
-
-LB is to provide redundancy, reliability, and improve performance.
-
-terms: LB policy (server selection strategy), backend set list (server pool).
-
-LB policies: purely random, RR, weighted RR, load- or timeout-based, least (+weighted) connections, ip-based (hashing), path based (functional decomposition), combined policy and model.
-
-On which levels LB can be done? L4 and L7
-
-Service Discovery.
-
-Service discovery is the mechanism the load balancer uses to discover the pool of servers it can route requests to. A naive way to implement it is to use a static configuration file that lists the IP addresses of all the servers, which is painful to manage and keep up to date. A more flexible solution is to have a fault-tolerant coordination service, like, e.g., etcd or Zookeeper, manage the list of servers. When a new server comes online, it registers itself to the coordination service with a TTL. When the server unregisters itself, or the TTL expires because it hasn't renewed its registration, the server is removed from the pool.
-
-Examples of Load Balancers: nginx, haproxy, ... .
-
-# proxy
-
-
-Proxy runs on behalf of client where is RP is running on behalf of server. Can do many interesting things: filter requests, logging, caching, LB, changing infromation in requests and responses.
-
-# API Gateway
-
-
-[Api_gateway]({{< ref "system-design/elements/api-gateway" >}})
-
-trade-offs
-
-# pub/sub
-
-
-todo: resolve some problems, situations (for example, rebalancing)
-
-See 'events' file for more detailed view.
-
-todo: refactor to messaging
-
-# asynchronism
-
-
-message queues, task queues
-
-[Queues]({{< ref "engineering/topics/queues" >}})
-
-# sidecar pattern
-
-
-Segregating the functionalities of an application into a separate process can be viewed as Sidecar Pattern.
-
-# service mesh
-
-
-The evolution of service mesh architecture has been a game changer. It shifts the complexity associated with microservice architecture to a separate infrastructure layer and provides a lot of functionalities like load balancing, service discovery, traffic management, circuit breaking, telemetry, fault injection, and more.
-
-# distributed calculations
-
-# key-value store
-
-
-IM data grid
-
-# rate limiting
-
-
-going distributed problems and solutions:
-
-tier-base RL is more complicated
-
-# security
-
-
-The question of security is all about the trade off between total safety (a wall) vs total convenience (a hole in the wall).
-
-processes: authentication (figuring out who are you talking to) and authorization ()
-
-sources: sam newmans book, interviewing.io sd section,
-
-That way you can rely on two factors to authenticate who's at the door: looking through the peephole and asking for the password to authenticate.
-
-hashing (store the hashes of passwords in a db)
-
-salting, rainbow tables
-
-# sequencer
-
-
-from <https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-sequencer>
-
-# Templates etc
-
-
-hello interview added to patterns simple crud service
-
-Arhmad introduced Master template
-
-<https://www.designgurus.io/course-play/grokking-the-system-design-interview/doc/system-design-master-template>
-
-also we can think about control panel and all other elements and frameworks that we're using in production
+- [Azure architecture patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/).
+- [Modern system-design building blocks — Educative](https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-building-blocks-for-modern-system-design).
+- [Sequencer — Educative](https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-sequencer).
+- [System-design master template — DesignGurus](https://www.designgurus.io/course-play/grokking-the-system-design-interview/doc/system-design-master-template).
+- [Designing Data-Intensive Applications, second edition](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/).

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Defining the Product Before Building"
-description: "Define who the product is for, what it should help them do, what is included, and which questions need answers before design and implementation."
+description: "How to draft a useful product brief from users, jobs, workflows, and scope, while separating requirements from current behavior, assumptions, and unresolved product choices."
 lastmod: "2026-10-19"
 linkTitle: "Product Framing"
 ---

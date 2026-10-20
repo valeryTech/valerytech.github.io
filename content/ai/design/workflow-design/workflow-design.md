@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "An interaction-point design sketch for exposing uncertain workflow decisions, capturing human judgment, and advancing from recommendations to approved execution and bounded autonomy."
 title: "Workflow Design"
 linkTitle: "Workflow Design"
 ---
+
 
 Designing workflows:
 

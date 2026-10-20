@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "10 User Inputs"
-linkTitle: "10 User Inputs"
+title: "Building a Starting Set of User Inputs for AI Evaluation"
+description: "Builds starting evaluation inputs from product-derived coverage requirements, reviewed tuples, real samples, and synthetic requests, keeping case conditions separate from expected answers."
+linkTitle: "Starting Evaluation Inputs"
 ---
-# Building a Starting Set of User Inputs for AI Evaluation
-
 
 This guide addresses building a representative set of **user inputs**. These inputs form one component of the evaluation dataset and define the portion of the query space that should cover the important ways users may interact with the application.
 

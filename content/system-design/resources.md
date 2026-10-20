@@ -1,198 +1,93 @@
 ---
 draft: false
 toc: true
-title: "Resources"
+title: "System Design Resources"
+description: "A catalog of system design courses, guides, topic maps, technical talks, video channels, engineering blogs, papers, and communities."
 linkTitle: "Resources"
 ---
-# Courses and WebSites
 
-> What and where to learn?
-There are numerous sources available for learning System Design (SD). To help avoid "tutorial hell," this selection focuses on core tutorials, videos and courses that provide (hopefully) a structured learning path.
+A catalog of the courses, guides, talks, papers, and communities collected in these notes. Choose a source for a specific study question and bring it back into the [practice loop]({{< ref "system-design/system-design" >}}#a-practice-loop).
 
-ok, we have several couses and websites on system design itself
+## Courses and structured material
 
-but system design has some relation with more common fields like distributed systems, architecture, software engineering, ...
 
-so I found interesting way of SD Fight Club created a map
+- **Hello Interview:** [delivery-framework notes]({{< ref "system-design/frameworks/framework-hi" >}}), [worked cases]({{< ref "system-design/projects" >}}), and the [collected video channel](https://www.youtube.com/@hello_interview).
+- **System Design for Interviews and Beyond:** [course](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) and [video series](https://www.youtube.com/@SystemDesignInterview/videos). The original notes emphasize learning the thought process as well as the concepts.
+- **interviewing.io:** [framework notes]({{< ref "system-design/frameworks/framework-iv" >}}), [interview guidance]({{< ref "system-design/interview/iw-io-interview" >}}), and the [worked-example guide](https://interviewing.io/guides/system-design-interview/part-four#chapter-one).
+- **AlgoExpert:** fundamentals and examples courses, plus “Systems Design Interview Tips.”
+- **Zero To Mastery:** “Master the Coding Interview: System Design + Architecture (Part 1).”
+- **DesignGurus:** [system-design interview playbook](https://www.designgurus.io/path/system-design-interview-playbook).
+- **TryExponent and Educative:** retained as sources to explore; the original notes include unresolved opinions about depth and curriculum.
 
-what do they do: map with different categories
+## Guides and topic maps
 
-list all the things
 
-## HelloInterview
+- [Preparing for systems-design and coding interviews — The Pragmatic Engineer](https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/).
+- [System Design Patterns](https://github.com/Sairyss/system-design-patterns).
+- [System-design interview guide — TryExponent](https://www.tryexponent.com/blog/system-design-interview-guide).
+- [Awesome system-design resources](https://github.com/ashishps1/awesome-system-design-resources).
+- [System Design Handbook](https://www.systemdesignhandbook.com) and its [course catalog article](https://www.systemdesignhandbook.com/blog/best-system-design-courses/).
+- [Hints for distributed-systems design](https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html).
 
+### System Design Fight Club
 
-examples + youtube channel + premium subscription
 
-Description: Practical Advices
+- [Repository and reading guide](https://github.com/systemdesignfightclub/SDFC/tree/main).
+- [Roadmap and resource map](https://github.com/systemdesignfightclub/SDFC?tab=readme-ov-file).
+- [Website](https://systemdesignfightclub.com).
+- [Video channel](https://www.youtube.com/@SDFC/videos).
+- [Collected map image](https://camo.githubusercontent.com/c325f72420c916f47a8ca1b1df91c28b853f557722e5f7846abe1e58618b0ac3/68747470733a2f2f692e696d6775722e636f6d2f786346564a61762e706e67).
 
-## Course of Michail Smarchok
+The preparation notes highlight the roadmap's categories and its senior/staff-level concepts and books as material to review.
 
+## Related technical study
 
-- ["System Design for Interviews and Beyond"](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) course and [youtube videos](<https://www.youtube.com/@SystemDesignInterview/videos>) video serie containing examples.
 
-"In this video-based course, we will take you on a journey to learn the *fundamental concepts* of system design. ... In addition to the knowledge and understanding of system design concepts, this course will teach you *the thought process behind system design*. We will discuss the questions you should ask yourself when designing a system and how to evaluate available options. ... "
+- [Distributed-systems notes]({{< ref "engineering/topics/distributed-systems" >}}), including their source collection.
+- [Database notes]({{< ref "engineering/data/databases" >}}).
+- [Microservices notes]({{< ref "engineering/topics/microservices" >}}).
+- **Hussein Nasser:** “Fundamentals of Backend Communications and Protocols” and “Fundamentals of Backend Engineering”; [collected course-source page](https://coursehunter.net/source/hussein-nasser).
+- [Architecture principles and engineering blogs]({{< ref "system-design/02-system-design" >}}#models-and-further-reading).
+- [NFR and SLO reading list]({{< ref "system-design/nfr/non-functional-requirements" >}}#sources-and-further-study).
 
-## Algoexpert
+## Engineering talks and case studies
 
 
-Algoexpert 2 courses (fundamentals and examples)
+- [Scaling Instagram infrastructure](https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s).
+- [Scaling Facebook Live videos](https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s).
+- [Building real-time infrastructure at Facebook — SREcon 2017](https://www.youtube.com/watch?v=ODkEWsO5I30).
+- [TAO: Facebook's distributed data store for the social graph — USENIX ATC 2013](https://www.youtube.com/watch?v=sNIvHttFjdI).
+- [Four Facebook system-design videos — collected article](https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2).
+- [GitHub engineer video — topic to review](https://www.youtube.com/watch?v=LeUUxLRdvho).
+- [Overview video — topic to review](https://www.youtube.com/watch?v=F2FmTdLtb_4).
+- [Jeff Dean's Stanford talk](https://www.youtube.com/watch?v=modXC5IWTJI).
+- [Building a billion-user load balancer at Facebook](https://www.youtube.com/watch?v=bxhYNfFeVF4).
+- [Netflix guide to microservices](https://www.youtube.com/watch?v=CZ3wIuvmHeM).
+- [Amazon DynamoDB deep dive](https://www.youtube.com/watch?v=HaEPXoXVf2k).
 
-## Zerotomastery
+### Video channels and mocks
 
 
-Zerotomastery "Master the Coding Interview: System Design + Architecture (Part 1)"
+- [Hello Interview](https://www.youtube.com/@hello_interview).
+- [Irtiza Hafiz](https://www.youtube.com/@irtizahafiz).
+- [Interview Pen](https://www.youtube.com/@interviewpen).
+- [ByteByteGo](https://www.youtube.com/@ByteByteGo).
+- [Mock videos and review observations]({{< ref "system-design/interview/mock-interviews" >}}#source-material).
 
-## interviewing.io
+## Technical blogs and papers
 
 
-Not full course. Has mock interview videos, guides..
+- [Company engineering-blog catalog — TryExponent](https://www.tryexponent.com/courses/system-design-interviews/company-engineering-blogs).
+- [Engineering-blog collection — workat.tech](https://workat.tech/system-design/article/best-engineering-blogs-articles-videos-system-design-tvwa05b8bzzr).
+- [Streams and tables — Confluent](https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/).
+- [All-or-none ordered peer-to-peer broadcast](https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be).
+- [Service-level objectives — Google SRE book](https://sre.google/sre-book/service-level-objectives/).
 
-## Distributed Systems Course
+Paper reading queue: Amazon Dynamo, Google MapReduce, Google GFS, and Facebook TAO. Read for the problem, assumptions, mechanisms, and trade-offs; compare the design with a case you have attempted.
 
+## Community and discussion
 
-from [Distributed Systems]({{< ref "engineering/topics/distributed-systems" >}}#sources)
 
-## Engineering Courses
+The original preparation plan suggests peer mocks, Discord communities, forums, meetups, LeetCode discussions, and the [collected PM Interview community link](https://launchpass.com/pminterview).
 
-# Guides
-
-
-guides
-
-<https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/>
-
-<https://github.com/Sairyss/system-design-patterns>
-
-<https://interviewing.io/guides/system-design-interview/part-four#chapter-one>
-
-interview process guides
-
-interview guide +
-
-interviewing.io
-
-<https://www.tryexponent.com/blog/system-design-interview-guide>
-
-## SD Fightclub Guide
-
-
-<https://github.com/systemdesignfightclub/SDFC/tree/main>
-
-and videos: <https://www.youtube.com/@SDFC/videos>
-
-Stopped 1 year ago
-
-very interesting videos <https://systemdesignfightclub.com>
-
-roadmap and resource map: <https://github.com/systemdesignfightclub/SDFC?tab=readme-ov-file>
-
-map <https://camo.githubusercontent.com/c325f72420c916f47a8ca1b1df91c28b853f557722e5f7846abe1e58618b0ac3/68747470733a2f2f692e696d6775722e636f6d2f786346564a61762e706e67>
-
-# Related Areas
-
-
-add map link
-
-communication and protocols
-
-"Fundamentals of Backend Communications and Protocols" by [Hussein Nasser](https://coursehunter.net/source/hussein-nasser "Hussein Nasser")
-
-[Databases]({{< ref "engineering/data/databases" >}}#resources)
-
-[[engineering-guide#Resources]]
-
-"Fundamentals of Backend Engineering"
-
-## Other
-
-
-**tryexponent** later
-
-videos, mock interview videos, courses, blog and guides
-
-also they have question section with sometimes interesting comments
-
-some people say that they have shallow cirriculum
-
-**educative.io** later
-
-someone doesn't recommend
-
-# Sources
-
-## FightClub
-
-
-<https://www.tryexponent.com/courses/system-design-interviews/company-engineering-blogs>
-
-Also there are another materials:
-
-- "Systems Design Interview Tips" by Algoexpert.
-- [System Design Patterns](<https://github.com/Sairyss/system-design-patterns>) project has interesting cirriculim with examples.
-- Designgurus website has a set of SD [courses playbook](https://www.designgurus.io/path/system-design-interview-playbook).
-- Bytebytego has many useful materials
-
-king of guide <https://github.com/ashishps1/awesome-system-design-resources>
-
-no name, materials
-
-<https://www.systemdesignhandbook.com/blog/best-system-design-courses/>
-
-<https://www.systemdesignhandbook.com>
-
-## Other (2)
-
-
-<https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2>
-
-Scaling Instagram Infrastructure - <https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s>
-
-Scaling Facebook Live Videos to a Billion Users - <https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s>
-
-Building Real Time Infrastructure at Facebook - Facebook - SRECon2017 - <https://www.youtube.com/watch?v=ODkEWsO5I30>
-
-USENIX ATC '13 - TAO: Facebook's Distributed Data Store for the Social Graph - <https://www.youtube.com/watch?v=sNIvHttFjdI>
-
-<https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html>
-
-# useful_videos
-
-
-<https://www.youtube.com/watch?v=LeUUxLRdvho> github engineer
-
-common overview
-
-<https://www.youtube.com/watch?v=F2FmTdLtb_4>
-
-channels with useful videos:
-
-<https://www.youtube.com/@hello_interview> staff engineer
-
-<https://www.youtube.com/@irtizahafiz>
-
-<https://www.youtube.com/@interviewpen> ??
-
-<https://www.youtube.com/@ByteByteGo>
-
-# Tecnical and Company Blogs
-
-# Papers
-
-
-<https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/>
-
-<https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be>
-
-sla, slo and other: <https://sre.google/sre-book/service-level-objectives/>
-
-papers:
-
-- Amazon - Dynamo paper
-- Google - Map-reduce paper
-- Google - GFS paper
-- Facebook - TAO paper
-- Jeff Dean's talk at Stanford: /watch?v=modXC5IWTJI
-- Building Billion user Load Balancer at Facebook: /watch?v=bxhYNfFeVF4
-- Netflix Guide to Microservices: /watch?v=CZ3wIuvmHeM
-- Amazon DynamoDB deep dive: /watch?v=HaEPXoXVf2k
+The [original resource catalog]({{< ref "system-design/archive/resources-v0" >}}) retains the earlier ordering, quotations, and unreviewed comments.

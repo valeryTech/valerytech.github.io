@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A proposed LLM exploration brief separating standing contribution and discretion from changing project state, allowing concrete design choices while keeping the eventual direction and its rationale open."
 title: "Discovery Llm Roles"
 linkTitle: "Discovery Llm Roles"
 ---

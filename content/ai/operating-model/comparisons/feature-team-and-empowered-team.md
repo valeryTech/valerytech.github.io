@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "Compares team inputs, solution-decision rights, feedback, and accountability, explaining how early feature commitments become shared discovery and delivery of a strategically assigned problem."
 title: "Feature Team And Empowered Team"
 linkTitle: "Feature Team And Empowered Team"
 ---
+
 > **Editorial note:** This is a comparison from the source note. Its claim that the team is accountable for the customer or business result is not settled in the current operating model.
 
 ## From old to the new model

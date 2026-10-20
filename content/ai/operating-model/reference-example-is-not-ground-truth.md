@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Shows why an approved report cannot define ground truth for an entire product; separates independent facts, requirements, reference examples, criteria, evaluator judgments, and decision evidence."
 title: "Reference Example Is Not Ground Truth"
 linkTitle: "Reference Example Is Not Ground Truth"
 ---

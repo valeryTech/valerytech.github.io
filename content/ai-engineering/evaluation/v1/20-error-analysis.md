@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "20 Error Analysis"
-linkTitle: "20 Error Analysis"
+title: "Failure Understanding: Discovering and Structuring How AI Products Fail"
+description: "A failure-discovery method using trace inspection, constant comparison, category refinement, and theoretical sampling before selecting operational failure modes for measurement."
+linkTitle: "Failure Understanding"
 ---
-# Failure Understanding: Discovering and Structuring How AI Products Fail
-
 ## Purpose
 
 

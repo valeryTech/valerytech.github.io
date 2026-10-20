@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "An intermediate interpretation organizing exploratory design inquiry into theoretical foundations, evolving state, inquiry modes, and six principles, with iteration mechanics left for development through practice."
 title: "Discovery Analysis"
 linkTitle: "Discovery Analysis"
 ---

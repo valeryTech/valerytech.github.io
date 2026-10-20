@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Coding Agent Research Questions"
-linkTitle: "Coding Agent Research Questions"
+title: "Research agenda: AGENTS.md and reliable coding-agent autonomy"
+description: "Eight research questions testing assumptions behind AGENTS.md, covering instruction value, context limits, documentation routing, failure diagnosis, maintenance, validation, and human involvement."
+linkTitle: "Coding-Agent Research Agenda"
 ---
 # Research agenda: `AGENTS.md` and reliable coding-agent autonomy
 

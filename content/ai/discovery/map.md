@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "An annotated reading map linking the provisional inquiry model, LLM briefing, sensemaking literature, and interactive pipeline examples, with a suggested path toward a small exploration that improves understanding."
 title: "Map"
 linkTitle: "Map"
 ---

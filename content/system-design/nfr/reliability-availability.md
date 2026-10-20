@@ -1,30 +1,34 @@
 ---
 draft: false
 toc: true
-title: "Reliability Availability"
-linkTitle: "Reliability Availability"
+title: "Reliability and Availability"
+description: "Reliability and availability questions covering single points of failure, redundancy configurations, replication, failover, degraded operation, recovery, and service targets."
+linkTitle: "Reliability and Availability"
 ---
-# reliability & availability
 
-## patterns
+Connect redundancy and recovery decisions to the operations that must remain usable. Start by finding single points of failure and asking what happens when each dependency becomes unavailable.
+
+## Redundancy configurations
 
 
-There are two complementary patterns to support high availability: **fail-over** and **replication**. Active-Passive and Active-Active are two types of redundancy configurations that enable high availability in the event of systems failure.
+- **Active/passive:** a redundant instance takes over when its primary fails.
+- **Active/active:** multiple instances serve traffic.
 
-**Active/passive failover.** Active/passive failover configurations provide a fully redundant instance of each node that is brought online only if its associated primary node fails.
+The original notes also identify primary–replica and multi-primary replication as topics to study. Keep the replication arrangement explicit when discussing failover.
 
-**Active-active failover (Active Redundancy)** In active-active, both servers are managing traffic, spreading the load between them.
+## Questions to answer
 
-**Master-slave replication.**
 
-**Master-master replication.**
+- Which component or dependency can make the whole flow unavailable?
+- How is failure detected, and how is traffic moved to a healthy instance?
+- What state must be available after failover?
+- What can the system continue to do while a dependency is unavailable?
+- What does the client observe during recovery?
+- What evidence supports the availability target?
 
-Practices & principles.
+A failover plan needs explanation as well as redundant boxes in the diagram. Review it against the [NFR measurement questions]({{< ref "system-design/nfr/non-functional-requirements" >}}).
 
-You wanna make sure that first and foremost that your system doesn't have single point of failure.=> use redundancy
+## Further study
 
-language:
 
-failover plan
-
-sources: fine-grained book,
+The original source reminder is the *Designing Fine-Grained Microservices* book. For SLOs, service availability, and reliability reading, use the [NFR source list]({{< ref "system-design/nfr/non-functional-requirements" >}}#sources-and-further-study).

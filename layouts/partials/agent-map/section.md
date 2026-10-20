@@ -1,20 +1,16 @@
-{{- $section := .section -}}
-{{- $level := .level -}}
-{{- $seen := .seen -}}
-{{- if and (not $section.Draft) ($section.OutputFormats.Get "HTML") -}}
-  {{- $seen.Set $section.RelPermalink true -}}
-  {{- $title := $section.Title | plainify | htmlUnescape -}}
-  {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
-  {{- printf "\n%s [%s](%s)\n\n" (strings.Repeat $level "#") $title $section.Permalink -}}
-  {{- with $section.Description -}}
-    {{- if ne . "Default Description" -}}
-      {{- printf "%s\n\n" (. | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 240) -}}
-    {{- end -}}
-  {{- end -}}
-  {{- range $section.RegularPages.ByTitle -}}
-    {{- partial "agent-map/entry.md" (dict "page" . "seen" $seen) -}}
-  {{- end -}}
-  {{- range $section.Sections.ByTitle -}}
-    {{- partial "agent-map/section.md" (dict "section" . "level" (math.Min 6 (add $level 1) | int) "seen" $seen) -}}
+{{- $title := .Title | plainify | htmlUnescape -}}
+{{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
+{{- printf "# %s: section map for agents\n\n" $title -}}
+{{- printf "[Main map](%s) · [This map](%s) · [Section overview](%s)\n\n" ((site.Home.OutputFormats.Get "agentText").Permalink) ((.OutputFormats.Get "agentText").Permalink) .Permalink -}}
+{{- with .Description -}}
+  {{- if ne . "Default Description" -}}
+    {{- printf "%s\n\n" (. | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 240) -}}
   {{- end -}}
 {{- end -}}
+{{- printf "All documents in this collection are listed below, grouped by subsection.\n\n" -}}
+{{- if .RegularPages -}}
+  {{- printf "## Documents\n\n" -}}
+{{- end -}}
+{{- partial "agent-map/contents.md" (dict "section" . "level" 2) -}}
+{{- partial "agent-map/aliases.md" (where site.Pages "Section" .Section) -}}
+{{- printf "\nUse the main map to explore other collections. Descriptions come from note metadata or the page summary; working notes and versions retain their own scope.\n" -}}

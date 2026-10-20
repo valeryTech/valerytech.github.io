@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "A Practical Review Process"
-description: "A practical review process covering requirements, affected code, design, implementation, testing, deployment, and the decision to merge."
+description: "An eight-step merge-review process covering intended behavior, affected systems, design, implementation, tests, deployment, and recovery, with a concise record of evidence and remaining gaps."
 lastmod: "2026-10-19"
 linkTitle: "Review Process"
 ---

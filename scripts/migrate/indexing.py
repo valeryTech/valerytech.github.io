@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import unquote
 
 from scripts.migrate.models import MigrationPlan, PlannedNote
 from scripts.migrate.text import normalize_note_key
@@ -25,9 +26,16 @@ class NoteIndex:
             self._notes_by_basename[basename_key].append(note)
 
     def resolve(self, current_note: PlannedNote, raw_target: str) -> PlannedNote | None:
+        raw_target = unquote(raw_target)
         normalized_target = normalize_note_key(raw_target)
         if not normalized_target:
             return None
+
+        # Source paths keep a common coordinate system even when imports have
+        # different subtree depths or map into differently named site sections.
+        source_candidate = normalize_note_key(current_note.source_path.parent / raw_target)
+        if note := self._notes_by_source_path.get(source_candidate):
+            return note
 
         import_candidates = [
             normalize_note_key(current_note.source_rel_import.parent / raw_target),

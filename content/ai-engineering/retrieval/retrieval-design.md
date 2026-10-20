@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Retrieval Design"
+title: "Retrieval Design: Simple Baselines, Interactive Experiments, and Shared Work"
+description: "Develops retrieval through small inspectable baselines and shared human–AI experiments, using explicit artifacts and comparisons to decide which bounded operations merit automation."
 linkTitle: "Retrieval Design"
 ---
-# Retrieval Design: Simple Baselines, Interactive Experiments, and Shared Work
-
 
 Retrieval design tests how to construct context that fits a user's current task and the operation that will consume it. A useful first implementation makes its requirements, acquisition choices, selected inputs, and checks visible enough to inspect, change, and compare. The flow itself is a design hypothesis.
 

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Ai Evaluation"
+title: "AI Evaluation as an Iterative Engineering Practice"
+description: "An integrated evaluation practice for developing scoped behavioral knowledge, coordinating coverage, failure understanding, judgment, traceability, and improvements to both products and evidence capability."
 linkTitle: "AI Evaluation"
 ---
-# AI Evaluation as an Iterative Engineering Practice
-
 ## 1. Purpose and scope
 
 

@@ -1,56 +1,47 @@
 ---
 draft: false
 toc: true
-title: "Code Deployment"
+title: "Code Deployment System: Requirements Sketch"
+description: "A partial code-deployment design sketch covering release artifacts, deployment operations, status APIs, completion targets, and example workload assumptions."
 linkTitle: "Code Deployment"
 ---
-# Requirements
+# Code Deployment System
 
 
-Example: Design a code deployment system aimed for developers at a company. They should be able to tag a release, and our system will package it and deploy it to some servers.
+Partial example from the [interviewing.io framework]({{< ref "system-design/frameworks/framework-iv" >}}). Developers tag a release; the system packages the code and deploys it to servers.
 
-**Artifact:** (product name, version, commit hash)
-
-**Trigger a release:** publishes a code artifact and deploys it to all servers.
-
-**Performance:** 1 hour from release triggered to servers.
-
-**Availability:** Can tolerate some downtime: 99.9% availability.
-
-# Data Types
+## Requirements and example constraints
 
 
-Ask your interviewer about the type of these artifacts that we are building.
+- Identify an artifact by product, version, and commit hash.
+- Trigger a release that publishes an artifact and deploys it to the target servers.
+- Make deployment status available to the developer.
+- Example completion target: within one hour of triggering a release.
+- Example availability target: 99.9%; the exercise allows some downtime.
 
-- Code Artifacts. Type: blobs (ZIP, TAR, bz2, etc.)
+## Data
 
-# API
 
-```txt
-1
-2  putRelease:
-3    POST release/{productId}/{commitId}
-4    returns: deploymentId # Id to check the status of the deployment
-5
-6  getDeploymentStatus:
-7    GET deployment/{deploymentId}
-8    returns: status # PENDING, DEPLOYED
-9
+Code artifacts are blobs, such as ZIP, TAR, or compressed archives. Clarify the artifact format and build inputs before choosing storage and packaging behavior.
+
+## API sketch
+
+```text
+POST /release/{productId}/{commitId}
+  -> deploymentId
+
+GET /deployment/{deploymentId}
+  -> status: PENDING | DEPLOYED
 ```
 
-# Scale
+
+The original sketch includes only these states; failure and recovery behavior remain to be designed.
+
+## Scale assumptions to confirm
 
 
-Ask your interviewer about the scale of these deployments. Here are examples of some good questions to ask (and an interviewer's possible replies):
+- Artifact size: 1–10 GB.
+- Deployment volume: thousands of artifacts daily.
+- Targets: hundreds of machines.
 
-**Candidate:** What's the average size of the artifacts that we need to package?
-
-**Interviewer:** We'll say 1 to 10GB.
-
-**Candidate:** How many artifacts do we expect to deploy daily?
-
-**Interviewer:** In the order of thousands.
-
-**Candidate:** How many machines do we need to deploy to?
-
-**Interviewer:** Around hundreds.
+These are example interviewer answers, not measurements. Continue with the [case template]({{< ref "system-design/projects/case-template" >}}) to explain the design and its trade-offs.

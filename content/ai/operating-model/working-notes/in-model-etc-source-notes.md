@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Unselected planning fragments connecting strategy, empowered teams, experiments, risk tests, and a two-way discovery–delivery interface, with unresolved wording retained for reference."
 title: "In Model Etc Source Notes"
 linkTitle: "In Model Etc Source Notes"
 ---

@@ -4,7 +4,7 @@ toc: true
 title: "Reviewing Software Changes"
 aliases:
   - "/ai/system-evaluation/generation/"
-description: "Review software changes by checking the problem, the affected code, design choices, tests, and deployment needs when working with AI."
+description: "Principles for reviewing beyond the diff: check product intent, affected callers, design assumptions, and whether tests could expose the mistakes repeated in code and explanations."
 lastmod: "2026-10-19"
 linkTitle: "Reviewing Software Changes"
 ---

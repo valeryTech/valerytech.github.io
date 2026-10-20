@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Old pointer to notes that have been moved or reorganized."
 title: "Build Approach"
 linkTitle: "Build Approach"
 ---

@@ -1,186 +1,63 @@
 ---
 draft: false
 toc: true
-title: "System Design"
-linkTitle: "System Design"
+title: "System Design: Study and Practice"
+description: "A study and practice plan combining technical foundations, toolbox development, design exercises, mock interviews, feedback, and reflection beyond interview preparation."
+linkTitle: "Study and Practice"
 ---
-# What to Learn
 
-{{< callout context="note" title="Advice" icon="outline/info-circle" >}}
-Use [[learning]] principles and practices!
-{{< /callout >}}
+Preparation combines technical understanding, a way to structure the discussion, and repeated practice. Build a small toolbox, apply it to a problem, and refine it from the difficulties you encounter.
 
-At a high level, preparing for system design interviews is really about assembling the *right* pieces: you'll need to know some core concepts, key technologies, and common patterns. On this base, you'll establish a strategy or delivery framework for executing the interview. And finally, you'll need to *practice* to ensure you're comfortable the day of your actual interview.
+## What to learn
 
-More detailed information and (list?) are in [Elements]({{< ref "system-design/elements/elements" >}})
 
-About depth:
-> What's the difference between knowing the path and walking the path? How can we tell when our knowledge of a subject has become a real, applicable skill?
-- [ ] SDFC gihub-repo (System Design Fight Clut) road map also contains interesting 'Resources' section with differect categories as well as 'Terms & Concepts' section with concept & book list per level (senior, staff). Hovewer, it's more oriented for distributes systems and  'system'-level jobs.
+- **Foundations:** distributed systems, data and databases, architecture, and software engineering.
+- **Building blocks:** APIs, storage, caching, load balancing, messaging, and coordination. Use the [building-block map]({{< ref "system-design/elements/elements" >}}) to identify gaps.
+- **Quality requirements:** scalability, reliability, availability, consistency, latency, and security. Practice connecting each requirement to a specific operation and decision in the [NFR guide]({{< ref "system-design/nfr/non-functional-requirements" >}}).
+- **Design delivery:** choose a [framework]({{< ref "system-design/frameworks" >}}) and become comfortable explaining the design as it develops.
+- **Collaboration:** clarify assumptions, invite feedback, make decisions, and adapt. Use [interview practice]({{< ref "system-design/interview" >}}) to review this separately from technical knowledge.
 
-# relationship / interconnections map
+Depth means being able to explain how a component works, why it belongs in this design, what it costs, and what happens when it fails. Recognizing a pattern's name is a starting point.
 
+## A practice loop
 
-I would also say that System Design has connections to other fields, like as:
 
-```
-System Design
- │
- ├─ Foundations
- │   ├─ Software Engineering
- │   └─ Architecture
- │
- ├─ Core Technical Pillars
- │   ├─ Distributed Systems
- │   ├─ Data & Databases (DDiA)
- │   ├─ Microservices
- │   ├─ Communication & Protocols
- │   └─ API Engineering
- │
- ├─ Product & User Context
- │   ├─ Product Management
- │   └─ User Experience (UX)
- │
- └─ Execution & Org Context
-     ├─ Project Management Aspect
-     ├─ (Time & Complexity)
-     └─ Organizational Context
-```
+1. Choose a [case]({{< ref "system-design/projects" >}}) and attempt it before reading the walkthrough.
+2. Clarify users, the core use cases, scope, and the constraints that could change the design.
+3. Use your chosen framework to produce a complete initial design. Trace concrete requests through it.
+4. Compare it with a source walkthrough or discuss it in a mock interview. Look for different assumptions as well as different solutions.
+5. Record the decision you struggled with, the reason, and a focused question to study.
+6. Repeat the case or implement a small part of it to check whether the gap is resolved.
 
-The output of the SD interview is a blueprint of the system to deliver. In more common sence it would be set of signals and information to the interviewer.
+Start mock interviews early enough to discover weaknesses in communication, pacing, and problem navigation. Interview performance is related to engineering skill, but it is also a format that needs practice.
 
-It's high-level - you have only approximately 45 minutes, short term (without changes in the future), without a detailed or any plan how to implement this system. Another differences to a real system delivery: absense of org context, team and project management, ( what else?)
+## Build the toolbox through use
 
-So here is a hypothesis to check: do sofware engineering principles and laws  have some other importance profile (statistically)
 
-# Modeling and Discource
+Begin with a few principles, components, and patterns. For each, record the problem it solves, its mechanism, alternatives, and trade-offs. The [component-note template]({{< ref "system-design/elements/elements" >}}#how-to-study-a-building-block) gives a consistent shape.
 
-# How to prepare
+Select varied exercises rather than accumulating complete reference architectures. A URL shortener emphasizes read/write paths and identifiers; file storage adds large objects and synchronization; Ticketmaster introduces contention and reservations.
 
+After a few designs, review recurring difficulties. Turn them into a short checklist or a targeted technical note. Keep a record of assumptions and trade-offs so you can see how your reasoning changes.
 
-maybe see channels with useful videos [Resources]({{< ref "system-design/resources" >}}#useful-videos)
+## Review a mock interview
 
-reflect and analyze papers [Papers](#papers)
 
-blogs on system design; technical blogs; conferences
+Use the [mock-review method and observations]({{< ref "system-design/interview/mock-interviews" >}}). Review both the design and the conversation:
 
-# Advices
+- Did I identify the core problem and finish an end-to-end design?
+- Did I explain the alternatives and make a justified choice?
+- Did I address the critical race, bottleneck, or failure case?
+- Did I state assumptions, involve the interviewer, and respond to feedback?
+- Which part should I try again before watching another solution?
 
+Peers, mentors, community discussions, and implementation experiments can all provide feedback. The important part is closing the loop between practice and the next attempt.
 
-It's vital to master the Basic Principles first.
+## Beyond the interview
 
-The best candidates trying by doing LOTS of mock interviews, with peers
 
-start interviews early
+System design connects to product and UX, organizational boundaries, project constraints, and changes over time. An interview compresses this into a short conversation and usually leaves much of the implementation and organizational context unspecified.
 
-Use engineering principles. ? [link]
+When working on a real system, extend the discussion to delivery, team ownership, migration, operation, and evolution. See [design principles]({{< ref "system-design/02-system-design" >}}) for that broader perspective and [resources]({{< ref "system-design/resources" >}}) for reading and communities.
 
-# Plan v0.1
-
-
-Start by developing a toolbox (Version 1) to address the time-consuming nature of selecting tools and patterns, as identifying the right tools and patterns can be a lengthy process. Apply it to practical challenges while iterating and improving it along the way.
-
-## Action Plan Structure
-
-
-0. Play through and collect information over several real-world challenges. repeat them with AI, then really implement them with llm-agents. Then reflect.
-2. Apply the Toolbox to Real-World Challenges:
-- Use your toolbox to design solutions for practical scenarios, such as building scalable APIs, designing a database schema, or implementing caching layers.
-- Select diverse problems to cover a range of system design principles.
-
-2a.Develop a Starter Toolbox (Version 1):
-
-- Create a collection of foundational tools, frameworks, and design patterns to streamline the decision-making process.
-- (?) Focus on essential concepts like scalability, reliability, and modularity to build a versatile starting point.
-3. Iterate and Refine:
-- Continuously evaluate your toolbox based on the challenges you solve.
-- Identify gaps or inefficiencies and incorporate new tools, techniques, or patterns as you gain experience.
-4. Practice Collaborative Design:
-- Simulate interview-style system design discussions with peers or mentors to enhance your ability to explain and adapt your toolbox in real-time.
-5. Document Lessons Learned:
-- Keep a log of the systems you design, the tools you use, and the trade-offs you encounter.
-- Use these reflections to improve your problem-solving and prepare for interviews.
-
-## Practice
-
-
-Once you have the foundation in place, it's time to practice. Passively consuming content is good, but you'll retain 10x more information by actually doing.
-
-1. Choose a question: Select a question from the list of common questions below.
-2. Read the requirements: Understand the requirements of the system you'll need to design.
-3. Try to answer on your own: Either practice with our [Guided Practices](https://www.hellointerview.com/premium) (below) or on a virtual whiteboard like [Excalidraw](https://excalidraw.com/).
-4. Read the answer key: Only after you have tried to answer the question, read the answer key to see how your answer compares.
-5. Put your knowledge to the test: Once you've done a few questions and are feeling comfortable, put your knowledge to the test by [scheduling a mock interview](https://www.hellointerview.com/mock/schedule) with an interviewer from your target company.
-
-## Interviewing.io
-
-
-Candidates often get overwhelmed with system design. We don't blame them. There are literally hundreds of topics you can study when preparing for an interview. But does that mean that you should drop everything and go study all of them? Absolutely not. It's vital to master the basic principles first.
-
-Professional experience with distributed systems isn't needed to pass system design interviews. And even if you do have that experience, keep in mind that many talented distributed systems engineers still struggle with the system design interview format. How you perform in an interview is not a measure of your worth as a software engineer -- it is a measure of *your ability to do system design interviews*. The two are related but not equal; being a good programmer has a surprisingly small role in passing interviews.
-
-# Interview and Delivery Framework
-
-
-My artifacts:
-
-- [Iw Io Interview]({{< ref "system-design/interview/iw-io-interview" >}}) notes + checklist.v0.1
-- 'sd-interview-framework.v0' with 'frameworks' folder
-
-<https://interviewing.io/guides/system-design-interview/part-three>
-
-watch, analyze and reflect mock interviews [mock_interviews](#mock-interviews)
-
-# Mock Interview Examples
-
-
-interviewing.io videos from youtube <https://www.youtube.com/watch?v=mQgKAK7y11s>
-
-tryexponent mock videos <https://www.youtube.com/watch?v=iyLqwyFL0Zc>
-
-hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really interesting
-
-<https://www.hellointerview.com/>
-
-<http://youtube.com/watch?v=PI0yGBT9LHo>
-
-vsevolodovich:
-
-- <https://www.youtube.com/watch?v=JWc8L2cCnJI>
-
-^^ analyze them:
-
-- find out errors, try it yourself first, how would you resolve this errors?
-- technical depth? alternative solutions?
-- communication aspect, leadership skills, proactivity,
-- interview structure.
-
-# Projects & Examples
-
-
-[[topics/gtd/projects_gtd/projects|projects]] SD section
-
-# Community
-
-
-discord servers!
-
-forums
-
-meet ups
-
-<https://launchpass.com/pminterview>
-
-you can discuss some project on leetcode, for example
-
-# Fundamentals & Distributed Systems
-
-
-[Distributed Systems]({{< ref "engineering/topics/distributed-systems" >}})
-
-# Microservices
-
-
-[Microservices]({{< ref "engineering/topics/microservices" >}})
-
-# Other
+The [original preparation notes]({{< ref "system-design/archive/study-plan-v0" >}}) retain the earlier plan, field map, hypotheses, and video references.

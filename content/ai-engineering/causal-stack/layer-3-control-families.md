@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 3 Control Families"
-linkTitle: "Layer 3 Control Families"
+title: "Layer 3 -- System Control Families"
+description: "A boundary-organized control catalog covering contracts, grounding, state and actions, policy and reliability, and cross-cutting governance, with evidence needs, limitations, and system-specific minimum sets."
+linkTitle: "Layer 3 -- System Control Families"
 ---
-# Layer 3 -- System Control Families
-
 ## Purpose
 
 

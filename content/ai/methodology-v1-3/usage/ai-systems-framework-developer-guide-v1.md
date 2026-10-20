@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Ai Systems Framework Developer Guide V1"
-linkTitle: "Ai Systems Framework Developer Guide V1"
+title: "AI Systems Framework for Software Developers (v1)"
+description: "A draft developer guide translating the framework into episode records, comparison artifacts, and everyday prompt-change and incident workflows, with an incremental ladder from tracing to controlled rollout."
+linkTitle: "Developer Guide"
 ---
-# AI Systems Framework for Software Developers (v1)
-
 
 **Status:** Draft
 

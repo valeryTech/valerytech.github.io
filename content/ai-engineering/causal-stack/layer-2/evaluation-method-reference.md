@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Evaluation Method Reference"
+description: "A reference of fifteen evaluation methods with questions, setups, signals, metrics, oracles, and mappings for revealing behavioral faults without conflating evaluation with operational control."
 linkTitle: "Evaluation Method Reference"
 ---
 ## Purpose

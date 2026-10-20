@@ -18,6 +18,33 @@ tree, not the generated Markdown under `content/`.
 Each `[[imports]]` entry in the manifest controls one managed subtree, such as
 `system-design`, `ai`, `ai-engineering`, or `projects`.
 
+## Descriptions From Note Properties
+
+To supply the agent map's description, add a `description` property to the
+canonical source note's YAML front matter. This is the properties block used
+by Obsidian, enclosed in `---` lines at the very start of the Markdown file:
+
+```markdown
+---
+title: "Evaluation coverage"
+description: "How to choose evaluation cases, identify coverage gaps, and connect findings to product decisions."
+---
+
+# Evaluation coverage
+
+The note's content starts here.
+```
+
+Run `make migrate` after editing the source note. The importer preserves
+`description` in the generated page metadata, and the article's section map
+(discoverable from `/llms.txt`) uses it ahead of the automatic excerpt. It is
+also available to the website's page metadata. Keep it concise: the map displays
+up to 240 characters.
+If no description is supplied, the map continues to use the page summary.
+
+Set this property in the original note, rather than in the migration-managed
+`content/` copy, so the next import preserves it.
+
 ## Runtime Contract
 
 By default, the migration commands use:
@@ -66,14 +93,19 @@ make migrate
 Use this to rebuild only the sections managed by the manifest.
 
 After a successful sync, the migration command also regenerates the public
-agent navigation document at `public/site-map.md`. Visitors can find it through
-the website footer's **Agent map (Markdown)** link. `make migrate-check` does
-not rewrite that document.
+agent maps at `public/llms.txt` and in the five main collection directories,
+with matching `site-map.md` versions. Visitors start at `/llms.txt` through the
+footer's **Agent map** link. This short index links to collection maps and
+selected documents; each collection map lists all its articles, grouped by
+subsection. Small collections such as Blog and Topics fit in the main index.
+There are six maps in total. All `llms.txt` files use `text/plain` for reader compatibility.
+`make migrate-check` does not rewrite the maps.
 
-Hugo also generates `/site-map.md` during every preview and production build,
-so the published map follows the site's current pages without a committed
-snapshot. It contains website URLs and summaries of published content. Drafts
-and private source-note paths are not part of the map.
+Hugo also generates the complete map set during every preview and production
+build. The exporter removes obsolete map files, including the former nested
+subsection maps. Article descriptions come from source-note metadata, with the page
+summary as a fallback. Drafts and private source-note paths are excluded.
+The main index's selected documents are configured in `data/agent_navigation.toml`.
 
 Override the notes root explicitly:
 

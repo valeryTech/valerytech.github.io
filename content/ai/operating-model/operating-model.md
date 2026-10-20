@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Eight principles for deciding what to investigate, build, or support, matching each commitment to assumptions, decision-relevant evidence, consequences, reversibility, and production obligations."
 title: "Operating Model"
 linkTitle: "Operating Model"
 ---

@@ -1,0 +1,14 @@
+{{- $content := .page.Content -}}
+{{- with partial "main/page-description.html" .page -}}
+  {{- $description := . -}}
+  {{- $openingHeading := findRE `(?s)^\s*<h1\b[^>]*>.*?</h1>` $content 1 -}}
+  {{- if and (not $.hasTitle) $openingHeading -}}
+    {{- /* Keep a title authored in Markdown above the page introduction. */ -}}
+    {{- range $openingHeading -}}
+      {{- $content = replace $content . (printf "%s\n%s" . $description) 1 -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $content = printf "%s\n%s" $description $content -}}
+  {{- end -}}
+{{- end -}}
+{{- $content | safeHTML -}}

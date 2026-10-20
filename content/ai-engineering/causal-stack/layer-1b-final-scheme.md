@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 1b Final Scheme"
-linkTitle: "Layer 1b Final Scheme"
+title: "Layer 1B -- Learned Behavioral LLM Features"
+description: "Distinguishes primary learned behavioral mechanisms from cross-cutting sensitivity, equivalence, confidence, and competence axes, with attribution examples and boundaries against faults and controls."
+linkTitle: "Layer 1B -- Learned Behavioral LLM Features"
 ---
-# Layer 1B -- Learned Behavioral LLM Features
-
 ## Purpose
 
 

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Testing a Change During Review"
-description: "Turn important PR statements into practical tests, check the test setup, reproduce failures, and explain what the results mean for the change."
+description: "How to test important PR claims and validate the test setup, using a lost response after commit to expose duplicate writes and unsafe retry assumptions."
 lastmod: "2026-10-19"
 linkTitle: "Testing During Review"
 ---

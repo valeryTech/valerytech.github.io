@@ -1,96 +1,78 @@
 ---
 draft: false
 toc: true
-title: "Mock Interviews"
-linkTitle: "Mock Interviews"
+title: "Reviewing Mock System Design Interviews"
+description: "A method for reviewing mock interviews, with observations and questions about framing, design completeness, concurrency, trade-offs, quantification, and collaboration."
+linkTitle: "Mock Interview Review"
 ---
-problem: global counter.
 
-<https://www.youtube.com/watch?v=V1HlNh4IhUo>
+Review an attempt to identify what to practice next. Separate what the candidate did, what the interviewer asked, and your interpretation of the effect.
 
-<https://systemdesign.one/distributed-counter-system-design/>
+## Review method
 
-ac analyzing signals:
 
-- clarified strategy of burger assignment -> E6 kind of signal
-- reasoning about single region vs cross region is good
-- mentioned bloom filter at an early stage -> low-level detail -> he want to use Bloom filter instead of designing a proper solution
-- you should involve interviewer more. don't do decision on behalf of customers. So you can identify trade-offs, then describe pros and cons and then ask a mention of ac. "what do you think it's important for our problem?"
-- tc slightly release on of the requirements: counter could be less than 6M -> good signal for E6 (why?)
-- tc *didn't handle* the critical part of the system which is the race conditions and how the things would be handled
-1. 12.23
+1. Attempt the problem before watching the reference solution.
+2. Note the scope, assumptions, main flows, and decisions made during the interview.
+3. Identify where the candidate completed the design, changed direction, became stuck, or left a critical issue unresolved.
+4. Review the technical reasoning and the collaboration separately.
+5. Choose one or two issues to practice, then repeat the relevant part of the design.
 
---
+## Questions to ask
 
-communication: tc iterated on the fact that marketing compain is the *key feature* of the design
 
-tc *stated their assumption* that each user has one account
+| Area | What to examine |
+| --- | --- |
+| Problem framing | Was the core user need identified? Were assumptions and scope checked? |
+| Design | Was there a complete flow? Did the API, data, and components fit together? |
+| Trade-offs | Were alternatives compared against actual requirements? Was a decision made? |
+| Technical depth | Was the central concurrency, consistency, or scaling problem resolved? |
+| Quantification | Did the numbers affect a decision? Were units and implications clear? |
+| Collaboration | Did the candidate invite feedback and respond to prompts? |
+| Pacing | Were low-level details deferred until the core design was complete? |
 
-tc clarified if they should focus on tracking the order infrastructure
+Use the [practice rubric]({{< ref "system-design/sd-signals-openai" >}}) for a more detailed review. Treat the interpretation of a single interview as an observation rather than proof of a level or universal hiring criterion.
 
-user experience when post promo code
+## Observations from earlier mocks
 
-phrase. tc also identified the trade-off that they can have the API as sync and async. TC also identified the pros and cons in terms of technical simplicity and user experience.
 
-technical. tc talked about the rate-limiting to avoid the abusing the system.
+The original notes discuss a global-counter exercise and a promotional-code exercise.
 
-sync/async
+- Clarifying how work is assigned, and comparing one-region with cross-region behavior, can expose important design choices.
+- Introducing a Bloom filter early can distract from the core problem when its purpose has not been established.
+- Identifying a race condition is only a starting point; the design still needs to explain how concurrent operations behave.
+- For the promotional-code design, identifying the campaign as the key feature helped focus the discussion.
+- Assumptions such as “one account per user” should be stated explicitly.
+- A synchronous versus asynchronous API decision should explain both technical consequences and the user experience, with room for interviewer feedback.
+- Anti-abuse controls, such as rate limiting, should be connected to the relevant flow.
+- Writing down the discussion and checking agreement at milestones helps keep the shared design clear.
+- Explaining the API and schema alongside an end-to-end flow can keep the discussion connected.
 
-**red** flag: tc could have involved the interviewer while making the decision about sync vs async.
+## Recurring technical questions
 
-most common trade-offs: api, sql/nosql, caching, scaling, core problem, push/pull, sync/async
 
-not all numbers are important. qps is always important. storage numbers usually important.
+Each problem has a central puzzle. The earlier examples include push versus pull for live comments, photo storage and processing for Instagram, matching riders and drivers, and handling spikes.
 
-interview: get several solutions, and explicitly say about trade-offs
+Topics to revisit across cases:
 
-make several deep-dive moments (db choises, db sizes, connection with)
+- Push/pull, acceptable delay, update frequency, and workload.
+- Fan-out on read versus fan-out on write, including celebrity traffic spikes.
+- Coordination, communication, cache invalidation, and consistency models.
+- Bloom versus cuckoo filters when a probabilistic filter solves a stated problem.
+- SQL/NoSQL, caching, and synchronous/asynchronous choices in the specific context.
 
-ac(nfr) -> what is the implications? for example, why latency p95 200 ms? why 3.2GB/day
+## Source material
 
-explain for an ac it's meaning
 
-example. 40x10^7 -> horizontal scaling?
+- [Global-counter mock](https://www.youtube.com/watch?v=V1HlNh4IhUo).
+- [Distributed-counter design discussion](https://systemdesign.one/distributed-counter-system-design/).
+- [Fan-out under celebrity traffic spikes](https://codemia.io/blog/path/Re-evaluating-Fan-Out-on-Write-vs-Fan-Out-on-Read-Under-Celebrity-Traffic-Spikes-2025).
+- [Consistency-model overview](https://www.scylladb.com/glossary/consistency-models/).
+- [Original dated observations]({{< ref "system-design/archive/mock-interview-observations-v0" >}}).
 
-connect you discussion with numbers and acs(nfr)
+Additional mock videos collected in the preparation notes:
 
-get feedback on milestones
-
-write down your discussion
-
-efficiency play:
-> you can explain api, schema etc in a flow
-> "I'm going to explain thing end to end. You know, I'm going to explain API while I'm talking about the flow."
-core puzzle
-
-what is the core puzzle. for example, for live comments this is a push vs pull trade-off
-
-examples: push/pull in live commenting, save/process photos on instagram surfing, algorithm connecting rider and driver
-
-spikes
-
-push/pull and dt, frequency, numbers considerations. (example - I cannot use pull - dt < 100 ms)
-
-fan-out
-
-<https://codemia.io/blog/path/Re-evaluating-Fan-Out-on-Write-vs-Fan-Out-on-Read-Under-Celebrity-Traffic-Spikes-2025>
-
-coordination
-
-communication
-
-ranking algorithms?
-
-feed construction
-
-CUCKOO vs BLOOM filter
-
-eventual consistency patterns
-
-consistensy model
-
-<https://www.scylladb.com/glossary/consistency-models/>
-
-21.12.23
-
-It's a good practice to include a brief point about cache invalidation during system design interviews. (source?)
+- [interviewing.io](https://www.youtube.com/watch?v=mQgKAK7y11s).
+- [TryExponent](https://www.youtube.com/watch?v=iyLqwyFL0Zc).
+- [Hello Interview](https://www.youtube.com/watch?v=tgSe27eoBG0).
+- [Additional mock](http://youtube.com/watch?v=PI0yGBT9LHo).
+- [Vsevolodovich](https://www.youtube.com/watch?v=JWc8L2cCnJI).

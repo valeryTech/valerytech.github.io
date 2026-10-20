@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Project Ownership"
-linkTitle: "Project Ownership"
+title: "Project Understanding and Ownership"
+description: "Explains why human project ownership must retain architectural understanding and accountability, and how accepting incomprehensible agent changes creates compounding comprehension debt."
+linkTitle: "Project Understanding and Ownership"
 ---
 # Project understanding
 

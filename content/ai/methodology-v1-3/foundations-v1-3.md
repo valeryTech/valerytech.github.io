@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Foundations V1 3"
-linkTitle: "Foundations V1 3"
+title: "Foundations v1.3 — Assumptions, Invariants, Validity Threats, and Factor Mappings"
+description: "The framework’s normative validity contract: six assumptions connect AI failure factors to comparability invariants, required safeguards, and inconclusive decisions when evidence integrity breaks."
+linkTitle: "Foundations v1.3"
 ---
 # Foundations v1.3 -- Assumptions, Invariants, Validity Threats, and Factor Mappings
 

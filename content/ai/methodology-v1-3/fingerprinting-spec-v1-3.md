@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Fingerprinting Spec V1 3"
-linkTitle: "Fingerprinting Spec V1 3"
+title: "Fingerprinting Spec v1.3 — Canonicalization and Hash Semantics"
+description: "The normative canonicalization and hashing specification for configuration, input, dependency, and measurement identities, including default expansion, inactive settings, and explicit exceptions to strict comparability."
+linkTitle: "Fingerprinting v1.3"
 ---
 # Fingerprinting Spec v1.3 -- Canonicalization and Hash Semantics
 

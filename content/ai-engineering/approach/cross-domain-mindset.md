@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Cross-Domain Mindset"
+description: "Maps senior software engineering strengths to ML and LLM work, with a gap assessment and practical learning projects in data, experimentation, evaluation, and operations."
 linkTitle: "Cross-Domain Mindset"
 ---
 

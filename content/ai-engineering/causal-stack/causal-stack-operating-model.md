@@ -2,8 +2,10 @@
 draft: false
 toc: true
 title: "Causal Stack Operating Model"
+description: "Maps language properties, model mechanisms, learned behaviors, system features, observable faults, controls, and impacts, keeping evaluation as a cross-cutting diagnostic view."
 linkTitle: "Causal Stack Operating Model"
 ---
+
 
 The old fault family index recognized compositional AI systems, including retrieval, memory, tools, state, validators, policy layers, and orchestration. But it still had a problem: it grouped failures by **conceptual fault type**, while the new `product-fault-families.md` groups them by **product debugging surface**.
 

@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Hello Interview Notes"
-linkTitle: "Hello Interview Notes"
+title: "Dropbox: Hello Interview Walkthrough"
+description: "A Hello Interview Dropbox walkthrough covering file upload, download, sharing, synchronization, large-file handling, performance, security, and interview-level expectations."
+linkTitle: "Dropbox: Hello Interview Walkthrough"
 ---
+
+Source walkthrough retained for comparison with an independent attempt. Start with the [Dropbox case index]({{< ref "system-design/projects/dropbox" >}}) or [personal preparation notes]({{< ref "system-design/projects/dropbox/dropbox" >}}).
+
 ## Understanding the Problem
 
 ### Functional Requirements

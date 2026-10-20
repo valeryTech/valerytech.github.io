@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Combined Approach"
-linkTitle: "Combined Approach"
+title: "Structured AI Development Approach"
+description: "Connects the causal stack, evaluation harness, observability, test pyramid, and operating model into one delivery system for diagnosing failures and directing engineering work."
+linkTitle: "Structured AI Development Approach"
 ---
+
 
 Structured AI development approach:
 

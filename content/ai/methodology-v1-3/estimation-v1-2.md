@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Estimation V1 2"
-linkTitle: "Estimation V1 2"
+title: "Estimation v1.2 — Production Discipline for LLM / Agentic Systems"
+description: "A production estimation design converting episode measurements into state estimates and deltas, with metric-specific uncertainty, cluster-aware inference, missingness controls, and explicit window finalization."
+linkTitle: "Estimation v1.2"
 ---
 # Estimation v1.2 -- Production Discipline for LLM / Agentic Systems
 

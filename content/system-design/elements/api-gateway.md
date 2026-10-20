@@ -2,53 +2,36 @@
 draft: false
 toc: true
 title: "API Gateway"
+description: "API gateway responsibilities, request routing, shared policies, adoption trade-offs, implementation examples, and how to introduce the component during an interview."
 linkTitle: "API Gateway"
 ---
 
-important things: define core responsiblities and how to introduce it to design
+An API gateway provides an entry point that routes client requests to backend services. Introduce it by explaining the routing problem it solves in this design.
 
-maybe add problem based lens
-
-microsoft:
-
-In a microservices architecture, a client might interact with more than one front-end service. Given this fact, how does a client know what endpoints to call? What happens when new services are introduced, or existing services are refactored? How do services handle SSL termination, authentication, and other concerns? An _API gateway_ can help to address these challenges.
-
-# Core Responsibilities
-
-> Funny enough, I'll often have candidates introduce a gateway in a system design interview and emphasize that it will do all this middleware stuff but never mention the core reason they need it -- **request routing**.
-
-# Usage
-
-> The TLDR is: use it when you have a microservices architecture and don't use it when you have a simple client-server architecture.
-With a microservices architecture, an API Gateway becomes almost essential. Without one, clients would need to know about and communicate with multiple services directly, leading to tighter coupling and more complex client code. The gateway provides a clean separation between your internal service architecture and your external API surface.
-
-However, it's equally important to recognize when an API Gateway might be overkill. For simple monolithic applications or systems with a single client type, introducing an API Gateway adds unnecessary complexity.
-> I've mentioned this throughout, but I want it to be super clear. While it's important to understand every component you introduce into your design, the API Gateway is not the most interesting. There is a far greater chance that you are making a mistake by spending too much time on it than not enough.
->
-> Get it down, say it will handle routing and middleware, and move on.
-
-# Sources
+## Responsibilities
 
 
-(good one)
+Start with request routing. Then identify any shared request handling assigned to the gateway, such as authentication, TLS termination, rate limiting, or logging. Be clear about which responsibilities remain with the backend services.
 
-<https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway>
+The original Microsoft example asks how clients find the right endpoints as services are introduced or refactored. A gateway can provide a stable external API boundary while routing internally.
 
-other to sort:
-
-<https://www.youtube.com/watch?v=1vjOv_f9L8I>
-
-<https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway>
-
-<https://microservices.io/patterns/apigateway.html>
-
-<https://aws.amazon.com/api-gateway/resources/>
-
-# Common API Gateway Solutions
+## When to introduce it
 
 
-- **AWS API Gateway**: A fully managed service from Amazon Web Services for creating, deploying, and managing APIs at any scale.
-- **Kong**: An open-source, scalable API Gateway that is often used in microservices environments.
-- **NGINX**: Frequently used as a reverse proxy and API Gateway, providing features like load balancing, request routing, and rate limiting.
-- **Apigee**: A Google Cloud API management platform that offers full lifecycle API management with security, monitoring, and versioning.
-- **Traefik**: A modern HTTP reverse proxy and load balancer for microservices, which acts as an API Gateway with built-in service discovery, SSL, and other functionalities.
+Consider the number of backend services, the client-facing interface, and the shared policies needed on the request path. Explain the benefit of a separate gateway relative to the complexity it adds.
+
+In an interview, describe its role and move to the core design problem. Reserve implementation details for a deep dive when routing or policy enforcement is central to the exercise.
+
+## Implementation examples from the notes
+
+
+AWS API Gateway, Kong, NGINX, Apigee, and Traefik. Compare their relevant behavior when selecting an implementation rather than treating the names as interchangeable.
+
+## Sources
+
+
+- [API gateway deep dive — Hello Interview](https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway).
+- [API gateways in microservices — Microsoft](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway).
+- [API gateway pattern — microservices.io](https://microservices.io/patterns/apigateway.html).
+- [AWS API Gateway resources](https://aws.amazon.com/api-gateway/resources/).
+- [Video to review](https://www.youtube.com/watch?v=1vjOv_f9L8I).

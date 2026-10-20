@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "AGENTS.md"
+description: "Treats AGENTS.md as concise project-specific onboarding, with progressive disclosure, canonical sources, executable safeguards, and recurring-failure feedback to improve reliable agent autonomy."
 linkTitle: "AGENTS.md"
 ---
 # Operating Model

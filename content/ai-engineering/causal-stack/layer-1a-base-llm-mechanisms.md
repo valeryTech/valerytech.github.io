@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 1a Base Llm Mechanisms"
-linkTitle: "Layer 1a Base Llm Mechanisms"
+title: "Layer 1A - Base LLM Architectural / Inference Mechanisms"
+description: "Defines ten base model and inference mechanisms, from tokenization and learned parameters to attention, autoregressive generation, decoding, and compute scaling, separating mechanisms from faults."
+linkTitle: "Layer 1A — Base LLM Mechanisms"
 ---
-# Layer 1A - Base LLM Architectural / Inference Mechanisms
-
 
 This document defines the **base mechanisms** in a dedicated Layer 1A file.
 

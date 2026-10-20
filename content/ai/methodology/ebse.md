@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Ebse"
-linkTitle: "Ebse"
+title: "Evidence-Based Software Engineering"
+description: "An introductory summary of evidence-based software engineering, explaining its five-stage process for combining critically appraised research with practitioner expertise and stakeholder values."
+linkTitle: "Evidence-Based Software Engineering"
 ---
 ## Overview of Evidence-Based Software Engineering
 

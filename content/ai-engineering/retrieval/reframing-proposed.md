@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Reframing Proposed"
-linkTitle: "Reframing Proposed"
+title: "Context-to-Task Alignment and Evidence Workflows"
+description: "Proposes an inspectable evidence workflow for collecting, comparing, and using source material, preserving source identity, evolving task state, context judgments, and unresolved gaps."
+linkTitle: "Context-to-Task Alignment and Evidence Workflows"
 ---
-# Context-to-Task Alignment and Evidence Workflows
-
 
 This proposal develops an evidence workflow for knowledge-intensive tasks: finding, inspecting, collecting, comparing, and using source material. It specializes the [domain model]({{< ref "ai-engineering/retrieval/model" >}}), while the [main framing]({{< ref "ai-engineering/retrieval/reframing" >}}) remains a separate draft. The [editorial review]({{< ref "ai-engineering/retrieval/reframing-session-review" >}}) records the reasons for these distinctions.
 

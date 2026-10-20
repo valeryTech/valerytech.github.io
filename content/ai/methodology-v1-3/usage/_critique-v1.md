@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Critique V1"
-linkTitle: "Critique V1"
+title: "AI Systems Framework — Methodology Critique (v1)"
+description: "A critical assessment of the framework’s operational tools, identifying fingerprint fragmentation, unstable labelers, evaluator weakness, inconclusive decisions, and governance overhead alongside a prioritized adoption sequence."
+linkTitle: "Methodology Critique"
 ---
+
 This review describes the methodology as a **toolkit**, explains the failures each tool addresses, and assesses its strengths and operational risks.
 
 # 1. The main "tools" in the methodology (what to adopt)

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Conceptualization"
-linkTitle: "Conceptualization"
+title: "Conceptual Model for AI Evaluation"
+description: "The source model connecting product intent, system executions, evidence needs, evaluation capabilities, and feedback routes, with explicit boundaries for diagnosis and decision ownership."
+linkTitle: "Conceptual Model for AI Evaluation"
 ---
-# Conceptual Model for AI Evaluation
-
 ## Purpose and scope
 
 

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 3 System Fault Families"
-linkTitle: "Layer 3 System Fault Families"
+title: "Layer 3 -- System Fault Families"
+description: "A proposed taxonomy of ten surrounding-system failure families, translating model tendencies into engineering responsibilities for context, grounding, policy, tools, state, observability, and change."
+linkTitle: "Layer 3 -- System Fault Families"
 ---
-# Layer 3 -- System Fault Families
-
 ## Definition
 
 

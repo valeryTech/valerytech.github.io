@@ -1,6 +1,12 @@
 <!-- Insert scripts NOT needed by stylesheets here -->
-{{- with site.Home.OutputFormats.Get "agentMap" }}
-<link rel="alternate" type="text/markdown" title="Website map for agents" href="{{ .Permalink }}">
+{{- $agentMap := site.Home.OutputFormats.Get "agentText" }}
+{{- with .FirstSection }}
+  {{- with .OutputFormats.Get "agentText" }}
+    {{- $agentMap = . }}
+  {{- end }}
+{{- end }}
+{{- with $agentMap }}
+<link rel="alternate" type="text/plain" title="Website map for agents" href="{{ .Permalink }}">
 {{- end }}
 <script>
   (() => {

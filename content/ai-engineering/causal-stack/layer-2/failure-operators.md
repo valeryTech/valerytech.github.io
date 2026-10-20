@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Failure Operators"
+description: "Defines twenty artifact-level failure descriptors and selection rules, combining product family, affected artifact, and observable relation while separating causes, controls, and consequences."
 linkTitle: "Failure Operators"
 ---
 

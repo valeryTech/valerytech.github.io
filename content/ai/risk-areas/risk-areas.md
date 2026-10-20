@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Early working arguments distinguish broad solution-risk dimensions from concrete assumptions and consequences, debating Value, operational feasibility, and uncertainty outside the four-risk taxonomy before the selected model was developed."
 title: "Risk Areas"
 linkTitle: "Risk Areas"
 ---

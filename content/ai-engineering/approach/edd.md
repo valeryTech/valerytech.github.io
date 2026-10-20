@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Eval-Driven Development"
+description: "An introductory evaluation-driven development blueprint covering deterministic checks, model judges, human calibration, RAG metrics, and regression gates for prompt changes."
 linkTitle: "EDD"
 ---
 

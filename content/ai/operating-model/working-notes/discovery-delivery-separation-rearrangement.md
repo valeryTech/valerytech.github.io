@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "An editorial audit explaining the source split and decisions about purpose, roles, commitment, responsibility, platform proposals, and deferred evaluation, with historical preservation checks."
 title: "Discovery Delivery Separation Rearrangement"
 linkTitle: "Discovery Delivery Separation Rearrangement"
 ---

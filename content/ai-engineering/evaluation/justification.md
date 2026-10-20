@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Justification"
-linkTitle: "Justification"
+title: "Grounding AI Evaluation in Product-Specific Failures"
+description: "Explains evaluation anti-patterns through a wallet example, distinguishing construct validity, evaluator reliability, prevalence measurement, and causal diagnosis from reassuring generic quality scores."
+linkTitle: "Product-Specific Evaluation"
 ---
+
 
 Your "Client gives us a `completeness = 0.84`, therefore the product works" example is almost exactly the class of eval practice Hamel argues against.
 

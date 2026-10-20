@@ -51,6 +51,35 @@ html[data-font-preference="jost"] {
   --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
+.page-description,
+.content blockquote {
+  margin: 1rem 0 1.75rem;
+  padding: 1rem 1.25rem;
+  border: 0;
+  border-inline-start: 0.2rem solid var(--bs-primary);
+  border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+  color: var(--bs-body-color);
+  background-color: var(--bs-tertiary-bg);
+}
+
+.page-description {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.content blockquote {
+  font-size: inherit;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .selected-readings-stack .card-nav {
   margin: 0 !important;
 }

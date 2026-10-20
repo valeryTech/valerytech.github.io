@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "A small reading list of critiques of software-development methodologies, with essays, discussions, personal retrospectives, and a reference to The Leprechauns of Software Engineering."
 title: "Methodologies"
 linkTitle: "Methodologies"
 ---
+
 <https://www.reddit.com/r/programming/comments/xl4k9/why_software_development_methodologies_suck/>
 
 <https://www.thoughtworks.com/insights/blog/why-software-development-methodologies-suck>

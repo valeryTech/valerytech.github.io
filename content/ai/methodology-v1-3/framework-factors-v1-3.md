@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Framework Factors V1 3"
-linkTitle: "Framework Factors V1 3"
+title: "Framework Factors v1.3 (Operating Model for Failure Drivers and Required Controls)"
+description: "The revised failure-driver operating model adds behavioral equivalence, hidden-state instability, and product experience to risk-tiered reliability controls, with explicit tracing, recovery, ownership, and release requirements."
+linkTitle: "Framework Factors v1.3"
 ---
-# Framework Factors v1.3 (Operating Model for Failure Drivers and Required Controls)
-
 ## 1. Why AI systems need a different reliability framework
 
 

@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Framework IV"
-linkTitle: "Framework IV"
+title: "Interviewing.io System Design Framework"
+description: "Interviewing.io’s three-stage framework for deriving a design from requirements, objects, access patterns, data types, APIs, scale, storage, and services."
+linkTitle: "Interviewing.io System Design Framework"
 ---
+
+Detailed three-stage source framework, retained independently from the [other approaches]({{< ref "system-design/frameworks" >}}). The [concise companion]({{< ref "system-design/to-sort/sd-algo-interviewing-io" >}}) provides a shorter review outline.
+
 # Fundamentals of this framework
 
 
@@ -147,7 +151,7 @@ It might sound like a small detail at first, but mutability can limit our abilit
 ## Example 1: Design TikTok
 
 
-[Tik_tok]({{< ref "system-design/projects/tik-tok" >}})
+[TikTok requirements example]({{< ref "system-design/projects/tik-tok" >}})
 
 ## Example 2: Design a code deployment system
 
@@ -169,6 +173,7 @@ This is actually a pretty good example of how some problems might be less intens
 {{< callout context="tip" title="Extra points" icon="outline/rocket" >}}
 Some interviewers might also be interested in evaluating your user-orientation. Can you think of how a developer might want to use this system beyond just publishing a release? #sd/tips
 {{< /callout >}}
+
 
 For example, you might want to ask about the possibility to recall a release. Do they want a page to see all releases and the deployment status? Should we alert them about failures? #sd/tips
 
@@ -195,6 +200,7 @@ NFRs will strongly influence our design. They define what we should be optimizin
 Non-functional requirements can feel like platitudes. Who doesn't want every system they design to be redundant, scalable, available, consistent, and so on and so forth? But it's a trap to say, "Non-functional requirements are always the same."
 {{< /callout >}}
 
+
 Good candidates can view non-functional requirements mainly as opportunities to relax one specific requirement, such as "We don't need to focus on [Insert requirement, such as "consistency"] as much in this case because [Insert reason, such as "it's okay in this scenario of TikTok if some users get access to certain videos later than the rest of our users"]."
 
 If NFRs are over-specified, the solution may be too expensive to be practical; if they are under-specified, the system will not be suitable for its intended purpose. Use your common sense, and ask the right questions to land on a set of non-functional requirements that make sense for the system you are designing.
@@ -211,6 +217,7 @@ So when does it make sense to optimize for performance?
 {{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 It makes the most sense when we have synchronous user-facing workflows. That is, the user is expecting an immediate response from the system. In addition, we want to optimize for the synchronous workflows that are accessed the most frequently.
 {{< /callout >}}
+
 
 Take a look at the access patterns you identified in your functional requirements. Which ones are user-facing, expected to happen synchronously, and accessed frequently? Let's use our Twitter example: Is there any access pattern that we might want to optimize for performance?
 
@@ -230,6 +237,7 @@ In an actual interview, if a candidate says, "Do we want 4 nines? 5 nines? 6 nin
 
 So what I mean is that talking about availability is good, but talking about "we want 6 nines" in an actual interview can be a signal that this person is behaving **like an imposter**. This will cause the interviewer to ask harsher follow-up questions than if the candidate hadn't said anything about the "number of nines" in the first place!
 {{< /callout >}}
+
 
 An example of a problem where we might be fine with taking a hit on availability is one where consistency is very important. Think, for example, about a banking system. One of the most important mandates of the system would be consistency. Operations need to be transactional. In this case, it might be acceptable if our system is unavailable/stale for small periods of time, as long as it is consistent. However, with Twitter, we'd rather have it be inconsistent than unavailable. When in doubt about what to prioritize, ask your interviewer whether consistency is preferred over availability.
 
@@ -309,6 +317,7 @@ For our Twitter example, we will store:
 More than 90% of the time, users will interact with the system through HTTPS, and as such we encourage you to think about the API in terms of HTTPS requests.
 {{< /callout >}}
 
+
 If you are curious about the rare cases where one might want to use a different protocol (like WebSockets), refer to future iterations of this guide (release dates TBD) where we will dive into these exceptions.
 
 But even in these rare cases, *it helps to start thinking* about the API in terms of HTTPS requests.
@@ -341,13 +350,15 @@ Look at the access patterns you defined in the functional requirements to write 
 It seems like we've identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I'd probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?"
 {{< /callout >}}
 
+
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you'll most likely be wrong. Believe me, your interviewer doesn't care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 
-See more in [Envelope_estimations]({{< ref "engineering/topics/envelope-estimations" >}})
+See more in [Capacity estimation]({{< ref "engineering/topics/envelope-estimations" >}})
 
 {{< callout context="tip" title="Outlaw Idea" icon="outline/rocket" >}}
 We've seen online resources that spend so much time showing you how to calculate these numbers down to byte precision. For example: "Remember there are this many bytes in a GB, so if you have 7 GB then you have this many bytes..." But for 90% of problems... who cares? Go for some ballpark numbers, and make the math easy. You know you are probably wrong anyway, and it's irrelevant as long as you are in the ballpark and have something to work with.
 {{< /callout >}}
+
 
 Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher -- it's called **margin of safety**. For our Twitter example we can go for these numbers:
 
@@ -385,7 +396,8 @@ Once you know your requirements, it's time to get specific.
 Example. Code Deployment System.
 {{< /callout >}}
 
-See more in [Code_deployment]({{< ref "system-design/projects/code-deployment" >}})
+
+See more in [Code deployment example]({{< ref "system-design/projects/code-deployment" >}})
 
 # Step 3: Design (2)
 
@@ -408,6 +420,7 @@ At the risk of oversimplifying, we suggest that you start small. Just follow som
 I'm going to start drawing some boxes. I'm just thinking out loud for now, so don't hold me to any of this. We can come back to it later.
 {{< /callout >}}
 
+
 This is basically giving you a free pass to flush your brain and be wrong. Which is exactly what you want when there's a clean slate in front of you. Again, design is an iterative process. Expecting that you'll go from clean slate to perfect design in one go is just... foolish.
 
 ## So what is "Design"
@@ -420,7 +433,8 @@ We should first align on our outputs. Design simply means two components:
 
 We know the **what** (steps 1 and 2), so now we focus on the **where** and the **how**. We will start with designing the data storage layer first and then think about the microservices that access this data.
 
-{{< figure src="framework-iv.assets/microservice-design.webp" alt="Design Steps" caption="Design Steps" >}}
+![Microservice design](microservice-design.webp)
+> Design Steps
 
 On the far left we have our users and the API, and on the far right we have storage. Microservices are the connective tissue between these. As such, it pays off to think about them last. Otherwise, how will we know what we need to connect?
 
@@ -438,6 +452,7 @@ Going back to our Twitter example, we'll want to store media from tweets in some
 {{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 Say the generic name of the component, not the brand name. Unless you are very familiar with a specific brand (like S3), don't say the specific brand. Instead, say "some kind of blob storage." Because if you say, "we should use S3 here," the next question out of your interviewer's mouth will be, "why not Azure blob instead of S3?"
 {{< /callout >}}
+
 
 There's a chance you might want to couple the blob storage with a CDN, but that's something we'll look into in step 3.2. *This step is all about identifying how to store content, not how to distribute it.*
 
@@ -457,6 +472,7 @@ Relational vs. Non-Relational, sometimes referred to as SQL vs. NoSQL, is one of
 {{< callout context="caution" title="Remember" icon="outline/alert-triangle" >}}
 There's no right or wrong answer -- it's all about how to justify your picks.
 {{< /callout >}}
+
 
 Don't oversell a solution. Every solution has positive and negative aspects and needs to be approached with a sense of realism. If you're being unrealistic, you probably won't change your mind (even when it benefits you to change your mind!). For example, sometimes the interviewer will give you an out by asking some follow-up questions, giving you a chance to see your own mistake and change your mind. But if you're too fixated on being right, you'll miss the opportunity.
 
@@ -495,6 +511,7 @@ Now look at the access patterns and make some adjustments. We identified two acc
 Be mindful of any "get all" access patterns. These usually need to be guarded by paging. You don't want a single endpoint returning the entire tweet history of an account. Depending on the account, that might be a very expensive query, and degrade user experience. Usually these will be behind logic that pages the response. That's why Twitter will load pages of tweets, even if it seems like an "infinite scroll" in the UI.
 {{< /callout >}}
 
+
 Now onto `getFeed`. Let's define feed to be a list of tweets of all the accounts the given account follows, sorted chronologically. There's one thing we are missing here already: the information about who follows whom. Let's say we add that relation in some new table:
 
 - Followers: account_id, follower_id
@@ -511,6 +528,7 @@ However, don't fall into the common pitfall of prematurely optimizing your syste
 "Although this would work from a functional perspective, I'm afraid it might not fulfill our non-functional requirements. Concretely speaking, we've identified the system to be read-heavy, and this approach would be prone to a slow read performance. I assume we'd like to optimize it -- what do you think?"
 {{< /callout >}}
 
+
 Assess your current solution, provide your opinion, and then ask your interviewer for their thoughts. This is the best way to iterate on system design. You don't want to rely solely on your interviewer without expressing your thoughts because it may convey a lack of criticality/independence.
 
 You also don't want to move forward without any input from your interviewer because it may be perceived as poor collaboration. We find that **stating your rationale followed by a subtle "what do you think?" or "let me know if you think I'm approaching this the wrong way" is the perfect balance between being independent but also collaborative.**
@@ -520,6 +538,7 @@ For the sake of learning, let's say that our interviewer agrees with us and want
 {{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
 When looking to optimize performance for a read-heavy access pattern that requires several queries, consider storing the final result in a separate table and keeping it up to date.
 {{< /callout >}}
+
 
 In this example, we might want to store the user feeds in a table and keep that up to date as new tweets come up. That way, we have an instant mapping from user to its feed, making `getFeed` fast at the cost of using more memory and the added complexity of having to maintain feeds up to date.
 
@@ -543,6 +562,7 @@ Ask yourself: Are there any access patterns that would benefit from caching the 
 Not all systems designed in system design interviews require caching.
 {{< /callout >}}
 
+
 Remember that every decision you make has some trade-off. There's no such thing as a free lunch in system design. Therefore, we urge you to consider the downsides of your design decisions and mention them during the interview.
 
 {{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
@@ -553,11 +573,13 @@ Consider using caching when all three of these are true:
 - The objects we are caching are read often
 {{< /callout >}}
 
+
 A common technology used when caching is needed is Redis. If you are not familiar with it, all you need to know is that it is a way for you to cache parts of your database in memory such that it's faster to access them.
 
 {{< callout context="caution" title="Remember" icon="outline/alert-triangle" >}}
 If you haven't used Redis, don't say, "Let's use Redis here" in the interview; instead, say "Let's add a cache here." Brand names are a riskier bet than generic names of components unless you have thorough experience with a specific brand, because the first follow-up question will likely be, "Why Redis and not Memcached?"
 {{< /callout >}}
+
 
 What are some of the downsides of caching, you may ask? To begin with, it introduces two replicas of the same data. Even though our source of truth remains to be persistent storage (our database), it is now possible to get the result from the cache as well. This might introduce inconsistencies if the cache is out of date from the source of truth. This is why it's wiser to cache objects that don't usually change too often. It's also costly to maintain and adds complexity to the system. Now every time we want to update our logic, we'll need to consider the caching layer as well.
 

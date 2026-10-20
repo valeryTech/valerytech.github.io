@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Designing Evaluation Coverage and Cases"
+description: "Designs minimal reviewable evaluation cases from a decision, behavior expectations, risks, and coverage requirements, separating deliberate case coverage from representative production sampling."
 linkTitle: "Evaluation Coverage"
 ---
 ## 1. Purpose

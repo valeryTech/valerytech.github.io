@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Coding Agent Experimentation Primer"
-linkTitle: "Coding Agent Experimentation Primer"
+title: "A practical way to study coding-agent improvements"
+description: "A methodology primer for studying coding-agent improvements: frame decision-relevant questions, choose research methods, define useful outcomes, and interpret comparisons without overclaiming."
+linkTitle: "Studying Coding-Agent Improvements"
 ---
-# A practical way to study coding-agent improvements
-
 
 **Document type:** Conceptual methodology primer  
 **Date:** 18 October 2026  

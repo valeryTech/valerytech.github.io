@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Interviewing.io Interview"
-linkTitle: "Interviewing.io Interview"
+title: "Interviewing.io Interview Notes"
+description: "Interviewing.io guidance and personal annotations on interview types, assessment signals, problem navigation, technical depth, pacing, collaboration, and common mistakes."
+linkTitle: "Interviewing.io Interview Notes"
 ---
+
+Source notes and personal annotations on system-design interviewing. Use the [interview index]({{< ref "system-design/interview" >}}) for the organized communication and practice notes.
+
 # Checklist
 
 
@@ -23,7 +27,8 @@ What it's like to walk into a system design interview
 When beginning an interview, try to imagine what the interviewer is looking for. What are their goals for the session? How can you help them achieve those goals in a way that persuades them that you'll be a strong hire?
 
 Put simply, the interviewer's goal is to find enough data to hire you. Given the limited time available to them, an interviewer has to try to get enough positive signal about your ability so they can justify giving you a "hire" rating. In one hour you have to show your interviewer that you understand the fundamentals of a system (end to end). You also should be able to name and explain (at least at a high level) each part of the system, describe the tradeoffs you make, and find a solution.
->The best way to accomplish this is to imagine that you're explaining a design doc to a group of more junior engineers. They will ask you questions about your decisions and want to know what you're trying to solve. Anticipating these questions and your responses will set you up for success in the interview.
+> The best way to accomplish this is to imagine that you're explaining a design doc to a group of more junior engineers. They will ask you questions about your decisions and want to know what you're trying to solve. Anticipating these questions and your responses will set you up for success in the interview.
+
 (your output format)
 
 The less code you write in a system design interview, the better.
@@ -62,6 +67,7 @@ Being proactive in a system design (SD) interview is essential to demonstrate le
 Always consider trade-offs especially in SD interview
 {{< /callout >}}
 
+
 In system design, there isn't a single "best" solution; instead, multiple viable
 
 approaches exist, each with its own set of trade-offs. This is because system design problems are often complex and multifaceted.
@@ -78,7 +84,8 @@ Instead of finding (or "retrieving") a solution, you are creating a solution. In
 (Mental Way)
 
 Here's another way to think about it. You aren't solving a problem -- you're creating a map to help someone else find the solution. Instead of coloring inside some lines, you'll need to draw the lines for someone else to color in. In a system design interview, there are no correct answers -- though there are certainly incorrect ones -- so there is nothing to solve. Instead, you'll ask questions, make stuff, and explain how and why the stuff you made was reasonable.
->"Pretend it's 1999, so a lot of the stuff we have access to today simply doesn't exist. You and a group of your schoolmates are in your garage, hoping to make something. You're the most senior one there. You will design it and your friends will code it up, and the thing is: the Minimum Viable Product has to be completed by tomorrow. So, there's no time to prep and no need to worry about the intricacies of system architecture that you don't know. Just answer this: How would you design this system so your friends could code it up today, right now? **It doesn't have to be pretty. It doesn't have to be complicated. It doesn't have to impress anyone. It just has to get done**."
+> "Pretend it's 1999, so a lot of the stuff we have access to today simply doesn't exist. You and a group of your schoolmates are in your garage, hoping to make something. You're the most senior one there. You will design it and your friends will code it up, and the thing is: the Minimum Viable Product has to be completed by tomorrow. So, there's no time to prep and no need to worry about the intricacies of system architecture that you don't know. Just answer this: How would you design this system so your friends could code it up today, right now? **It doesn't have to be pretty. It doesn't have to be complicated. It doesn't have to impress anyone. It just has to get done**."
+
 To succeed in a system design interview, you *want to collaborate with your interviewer*, try crazy stuff, and try more crazy stuff until the design "feels right."
 
 ## Lean towards your strengths
@@ -100,6 +107,7 @@ By now you've heard (or read) that 'there's no right way to design a system," an
 
 Watch this video of two experts designing the same system side by side. By the time you're done, you'll have a practical example that proves "there's no right way to design a system". Pay attention, and you'll notice how effective it is when you guide the interview toward your strengths and when you're open about gaps in your understanding. The video is split into two parts.
 > This is one of the most important lessons!
+
 We have "rules of thumb" scattered throughout this guide. In those cases, they apply directly to the material. But in this instance, these rules of thumb don't fit anywhere, because they apply to, well, everything.
 
 ## Interviewer behavior
@@ -107,6 +115,7 @@ We have "rules of thumb" scattered throughout this guide. In those cases, they a
 
 As an interviewer, it's hard to tell the difference between a bad candidate and a good candidate who is stuck.
 > If the interviewer interrupts you, it's probably because you're going off track.
+
 If your interviewer interrupts you to suggest that you explore another avenue, then most likely you're designing the system in contradiction to what the interviewer expects. In this case, let the interviewer explain what they expect, and then you should ask clarifying questions to ensure you understand the new direction before moving on.
 
 It's fine if the interviewer asks you questions, but it's a bad sign if the interviewer starts telling you how to do things. This is a negative signal because the interviewer feels that you need help to move forward, and this will lower your score.
@@ -123,6 +132,7 @@ In a system design interview, you may encounter two different situations:
 {{< callout context="note" title="Know an Interviever" icon="outline/info-circle" >}}
 
 {{< /callout >}}
+
 
 If you know a little about your interviewer's background, you should have a hint about what to expect, which can allow you to prepare a little ahead of time.
 
@@ -145,6 +155,7 @@ Your interviewer cares less about whether your design is good in itself, and mor
 The first rule of distributed systems is that you should avoid them if you don't need them! Always **consider maintenance costs**. People don't build distributed systems for fun. If all of Google could run on just one machine, you can bet they would do it.
 {{< /callout >}}
 
+
 In other words, if there is a simple way to do things and a complex way to do things, **aim for the simple path**. Not because the simple way is more likely to be correct, but because you have to make more assumptions for more complicated explanations to be true.
 
 Accept that there are some things that you will not know, and be ready to admit this to your interviewer. In the third core concept (below), we will teach you exactly how to say this without losing points in the interview.
@@ -160,6 +171,7 @@ Working under time constraints might not permit iterations on the design. Howeve
 At the risk of oversimplifying, we suggest that you *start small*. Just follow some rules of thumb depending on what you identified in steps 1 and 2. We can guarantee you that you'll get a decent design. Then you can use the remaining time to iterate on it.
 {{< /callout >}}
 
+
 You can name it as First Pass, as well as Naive Design, or Baseline Solution
 > collect only main features
 > components prioritization
@@ -168,6 +180,7 @@ You can name it as First Pass, as well as Naive Design, or Baseline Solution
 {{< callout context="note" title="Drawing" icon="outline/info-circle" >}}
 Draw only critical components.
 {{< /callout >}}
+
 
 no premature optimization - follow the steps in this interview SD framework
 
@@ -178,6 +191,7 @@ prioritization of the components to further process
 {{< callout context="tip" title="First Going Immutable" icon="outline/rocket" >}}
 
 {{< /callout >}}
+
 
 Here is one way to get unstuck during a system design interview: consider the immutable case. This is a practical way to dumb the problem down. Tackle the dumber problem, and then add in complexity after that. Considering the immutable case also helps with identifying bottlenecks, as well as with capacity planning.
 
@@ -362,6 +376,7 @@ Suppose, for instance, that the image sharing service you're designing will requ
 
 {{< /callout >}}
 
+
 The important thing is to discuss the possible approaches and their consequences for the user experience with your interviewer before making a decision. You can never go wrong by making the end user the driving force in your design.
 
 # Flags
@@ -412,6 +427,7 @@ If your goal is to maximize a mid-level offer, not improve your "average passing
 
 Simply put, at the above-senior level an awkward pause will be held against you -- that's basically guaranteed. But at mid-level, most of your attempts to fill in an awkward pause may hurt you more than keeping silent.
 {{< /callout >}}
+
 
 Another way to think of it: when you are not leading the conversation, you signal that you're not really far above mid-level. (But if you are comfortable at mid-level, this is not a downside!)
 
@@ -500,7 +516,7 @@ system evaluation
 - What are their **key expectations**? (low latency, reliability, security, ease of use)
 - How does user behavior **impact system design**? (e.g., peak traffic patterns, read vs. write ratios)
 
-we can introduce here product approach as in [Url Shortener]({{< ref "system-design/projects/url-shortener/url-shortener" >}})
+we can introduce here product approach as in [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener" >}})
 
 # back-of-the-envelope estimations
 
@@ -510,6 +526,7 @@ You should check with your interviewer to see if they want to see you do some ma
 {{< callout context="note" title="Tell your interviewer:" icon="outline/info-circle" >}}
 It seems like we've identified the main requirements, we have an API in place, and we know how the distribution of requests looks. If I were designing this system for real, I'd probably want to do some back-of-the-envelope math to estimate the number of requests and average volume of data we need to store. Do you want me to do the math or do you want me to skip it?
 {{< /callout >}}
+
 
 If they agree, you should assign these requests some ballpark numbers in terms of writes/minute and reads/minute. It really does not matter at all if you are right or wrong. In fact, you'll most likely be wrong. Believe me, your interviewer doesn't care. We just want to agree on some numbers so we can do some back-of-the-envelope math.
 

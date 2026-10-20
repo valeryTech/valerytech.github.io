@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Practitioner examples from Cagan, Uber, Torres, Willison, Beck, and Doernenburg showing how AI-assisted exploration differs from accepting long-term engineering responsibility."
 title: "Discovery Delivery Practitioner Evidence"
 linkTitle: "Discovery Delivery Practitioner Evidence"
 ---

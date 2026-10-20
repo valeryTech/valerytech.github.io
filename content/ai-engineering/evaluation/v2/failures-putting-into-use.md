@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Failures Putting Into Use"
-linkTitle: "Failures Putting Into Use"
+title: "Using Failure Understanding in Product Discovery and Delivery"
+description: "Working guidance for routing failure findings into discovery, delivery, hypotheses, and risk assessments, then connecting operational criteria and automated evaluators across execution planes."
+linkTitle: "Applying Failure Understanding"
 ---
 # part one
 

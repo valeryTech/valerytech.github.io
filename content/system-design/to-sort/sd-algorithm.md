@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "SD Algorithm"
-linkTitle: "SD Algorithm"
+title: "Four-Step System Design Outline"
+description: "A four-step interview outline covering scope, high-level design, deep dives, and wrap-up, with expected artifacts and agreement checkpoints."
+linkTitle: "Four-Step System Design Outline"
 ---
+
+Alternative interview outline. Its four stages and artifact checkpoints are retained; see the [framework comparison]({{< ref "system-design/frameworks" >}}) for the other approaches.
+
+# SD algorithm
+
 
 This document describes step-by-step framework on how to tackle a system design question
 

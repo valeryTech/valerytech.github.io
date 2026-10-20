@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Evaluation Subsystem"
+description: "Defines the people, practices, data, and software needed to run, capture, inspect, judge, compare, and preserve behavioral evidence, scaling from a minimal useful subsystem."
 linkTitle: "Evaluation Subsystem"
 ---
 ## Purpose

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Product Improvement System"
+title: "AI Product Improvement System"
+description: "Connects concurrent discovery and delivery through bounded production slices, with separate quality-understanding and evidence-capability loops and traceable feedback to the object requiring change."
 linkTitle: "Product Improvement System"
 ---
-# AI Product Improvement System
-
 ## 1. Purpose
 
 

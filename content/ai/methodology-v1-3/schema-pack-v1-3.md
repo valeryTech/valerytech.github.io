@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Schema Pack V1 3"
-linkTitle: "Schema Pack V1 3"
+title: "Schema Pack v1.3 — Normative Contracts for Framework Artifacts"
+description: "A normative catalog of framework artifact contracts, specifying required fields, provenance, coverage, and compatibility rules so traces, estimates, change packets, and gate reports remain interpretable."
+linkTitle: "Schema Pack v1.3"
 ---
 # Schema Pack v1.3 -- Normative Contracts for Framework Artifacts
 

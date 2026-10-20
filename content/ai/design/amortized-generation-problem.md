@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "Explains how plausible generation can skip task-specific research, planning, and verification, and proposes task-specific deliberation as an evaluation criterion."
 title: "Amortized Generation Problem"
 linkTitle: "Amortized Generation Problem"
 ---
+
 
 There is **amortized problem solving**: the model, viewed as an agent, has learned a mapping from prompts to plausible outputs during training and applies that mapping at inference time, without necessarily instantiating the problem as an explicit structure and solving that structure.
 

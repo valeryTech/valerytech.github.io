@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "Chat Room"
-linkTitle: "Chat Room"
+title: "Public Chat Room: Interview Report"
+description: "An interview report on a public chat-room design, highlighting message delivery, caching, client tracking, and an unresolved burst-handling problem."
+linkTitle: "Public Chat Room: Interview Report"
 ---
+# Public Chat Room
+
+
+Collected interview report with an unresolved question about bursts exceeding a fixed message buffer. The report is preserved below; compare it with the [messaging questions]({{< ref "system-design/elements/messaging" >}}).
+
 I had a SD question to design a public chat room. For something large scale as quora, twitter, reddit, 4chan where users can pop in to a room anytime, read, send, like past/live messages and then exit the chat room, and also see a list of currently running chat rooms. Each chat room can have several 1000s of users at any time.
 
 After laying out reqts-read heavy, where async delays are acceptable, immutable msgs with append only wide columns as a persistent store sharded on chat_room_id.

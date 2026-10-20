@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A superseded five-level query-assistant example showing why valid and executable queries fall short of correct answers, understood intent, and completing the user’s analytical job."
 title: "Capability Funnel"
 linkTitle: "Capability Funnel"
 ---

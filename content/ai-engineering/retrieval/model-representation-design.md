@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Model Representation Design"
-linkTitle: "Model Representation Design"
+title: "Representation Design for Task-Relevant Retrieval"
+description: "A task-led method for designing searchable source views, separating matching from reading units and testing source recovery, information loss, relevance, and cost."
+linkTitle: "Representation Design for Task-Relevant Retrieval"
 ---
-# Representation Design for Task-Relevant Retrieval
-
 
 Representation design determines what aspects of source material become searchable and how a match can be recovered as usable source material. It starts with the information needs of a class of tasks and the limitations of the available sources.
 

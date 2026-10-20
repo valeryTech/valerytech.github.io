@@ -7,7 +7,7 @@ help: ## Show available targets
 	@echo ""
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_.-]+:.*?## / {printf "  %-15s %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
 
-up: ## Start the local preview server
+up: migrate ## Import notes and refresh maps before starting the local preview
 	@docker compose up site
 
 down: ## Stop the local preview server
@@ -34,8 +34,8 @@ migrate: ## Regenerate managed content from external notes
 migrate-check: ## Validate migration mappings and stage output
 	@bash scripts/migrate-site.sh check
 
-site-map: ## Generate the public agent map at public/site-map.md
+site-map: ## Generate the main and section agent maps in public/
 	@docker compose run --rm -e UV_PROJECT_ENVIRONMENT=.migration/.venv site uv run --frozen python -m scripts.site_map
 
-site-map-check: ## Check the public agent map without rewriting it
+site-map-check: ## Check all agent maps without rewriting them
 	@docker compose run --rm -e UV_PROJECT_ENVIRONMENT=.migration/.venv site uv run --frozen python -m scripts.site_map --check

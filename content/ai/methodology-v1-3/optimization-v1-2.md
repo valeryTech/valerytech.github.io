@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Optimization V1 2"
-linkTitle: "Optimization V1 2"
+title: "Optimization v1.2 — Production Discipline for LLM / Agentic Systems"
+description: "A production optimization design that screens AI configurations offline, confirms candidates on holdouts, and admits only approved options to online routing with constraints and circuit breakers."
+linkTitle: "Optimization v1.2"
 ---
 # Optimization v1.2 -- Production Discipline for LLM / Agentic Systems
 

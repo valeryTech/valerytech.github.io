@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A working vocabulary distinguishing design knowledge, inquiry artifacts, prototypes, rationale, and commitments, with a taxonomy showing how each contributes to an evolving model of the situation."
 title: "Dictionary"
 linkTitle: "Dictionary"
 ---

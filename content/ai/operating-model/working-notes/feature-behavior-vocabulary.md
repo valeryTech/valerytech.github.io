@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Uses transaction capture to distinguish the visible feature, supported situations, required behavior, and the obligation to make that behavior dependable in production."
 title: "Feature Behavior Vocabulary"
 linkTitle: "Feature Behavior Vocabulary"
 ---

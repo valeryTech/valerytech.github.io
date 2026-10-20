@@ -12,7 +12,11 @@ ROUTES=(
   "/ai/"
   "/ai/collab-and-joint-work/"
   "/engineering/topics/api/"
+  "/llms.txt"
   "/site-map.md"
+  "/ai/llms.txt"
+  "/engineering/llms.txt"
+  "/system-design/llms.txt"
 )
 
 cleanup() {
@@ -81,3 +85,27 @@ wait_for_server
 for route in "${ROUTES[@]}"; do
   check_route "$route"
 done
+
+for map_path in "" "/ai" "/ai-engineering" "/engineering" "/system-design" "/projects"; do
+  map_content_type="$(curl -fsS -o /dev/null -w '%{content_type}' "${BASE_URL}${map_path}/llms.txt")"
+  if [[ "${map_content_type}" != text/plain* ]]; then
+    fail "Expected text/plain for ${map_path}/llms.txt, got ${map_content_type}"
+  fi
+  plain_map="$(curl -fsS "${BASE_URL}${map_path}/llms.txt")"
+  markdown_map="$(curl -fsS "${BASE_URL}${map_path}/site-map.md")"
+  if [[ "${plain_map}" != "${markdown_map}" ]]; then
+    fail "Expected matching plain-text and Markdown maps for ${map_path:-/}"
+  fi
+  if [[ "${plain_map}" != "# "* ]]; then
+    fail "Expected ${map_path}/llms.txt to contain a navigation document"
+  fi
+done
+log "Verified plain-text content types and matching formats for main and section maps"
+
+for removed_map in "/ai/discovery/llms.txt" "/system-design/nfr/llms.txt"; do
+  status="$(curl -sS -o /dev/null -w '%{http_code}' "${BASE_URL}${removed_map}")"
+  if [[ "${status}" != "404" ]]; then
+    fail "Expected the merged subsection map ${removed_map} to be absent, got ${status}"
+  fi
+done
+log "Verified former subsection maps are no longer generated"

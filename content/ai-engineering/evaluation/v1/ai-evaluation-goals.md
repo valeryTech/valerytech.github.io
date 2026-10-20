@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Ai Evaluation Goals"
-linkTitle: "Ai Evaluation Goals"
+title: "Goals of AI Evaluation"
+description: "Defines goals for the evaluation framework and supporting subsystem, starting from named questions and distinguishing behavioral evidence, user value, causal claims, and decisions."
+linkTitle: "Goals of AI Evaluation"
 ---
-# Goals of AI Evaluation
-
 ## Purpose
 
 

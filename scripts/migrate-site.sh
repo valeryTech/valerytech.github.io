@@ -36,7 +36,7 @@ docker compose run --rm \
     "${command_name}"
 
 if [[ "${command_name}" == "sync" ]]; then
-  log "Refreshing the public agent map at /site-map.md"
+  log "Refreshing the main and section agent maps (start at /llms.txt)"
   docker compose run --rm \
     -e UV_PROJECT_ENVIRONMENT=.migration/.venv \
     site uv run --frozen python -m scripts.site_map

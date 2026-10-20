@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "Framework SD v0.1"
-linkTitle: "Framework SD v0.1"
+title: "Personal Requirements-First Framework Draft"
+description: "A personal framework experiment prioritizing core user value, enabling features, quality requirements, interview phrasing, and follow-up design constraints."
+linkTitle: "Personal Requirements-First Framework Draft"
 ---
+
+Personal framework experiment, retained alongside the [other frameworks]({{< ref "system-design/frameworks" >}}). The scripts and architecture examples are draft proposals; see [NFR reasoning]({{< ref "system-design/nfr/non-functional-requirements" >}}) and the [URL-shortener alternatives]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}) for contextualized targets.
+
 # Functional Requirements
 
 
@@ -84,6 +88,7 @@ Here's how a staff-level person would handle it, verbatim.
 That's it -- clear, honest, and it buys you time to move to architecture without over-promising.
 
 # SD Ideas
+
 
 #idea: We can set scale (V) and throughput requirements such that a system fails to meet Non-Functional Requirements (NFRs) until the interviewee or designer implements necessary design adjustments or refactors.
 #idea For each system design example, we can implement one of the following approaches:

@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Rfc V1 4"
-linkTitle: "Rfc V1 4"
+title: "RFC: AI Systems Framework — Overview and Adoption (v1)"
+description: "A draft organization-wide adoption RFC defining shared AI behavior artifacts, compliance expectations, ownership, and phased exit criteria for connecting runtime evidence to release decisions and on-call response."
+linkTitle: "Overview and Adoption RFC"
 ---
 # RFC: AI Systems Framework -- Overview and Adoption (v1)
 

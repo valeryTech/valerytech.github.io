@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A deployment-design method for seven AI archetypes, covering shared work, responsibility, evidence and authority boundaries, recoverable execution, launch checks, and explicit effort and payback assumptions."
 title: "Practitioner Guide Seven Ai Product Types"
 linkTitle: "Practitioner Guide Seven Ai Product Types"
 ---

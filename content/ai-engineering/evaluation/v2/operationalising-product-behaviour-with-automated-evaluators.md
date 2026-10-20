@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Operationalising Product Behaviour with Automated Evaluators"
+description: "Turns explicit behavior criteria into validated automated judgments, covering trusted labels, disjoint data splits, uncertainty, placement, and gradual promotion to gates or runtime controls."
 linkTitle: "Automated Evaluators"
 ---
 ## 1. Purpose

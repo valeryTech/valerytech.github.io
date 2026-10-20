@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener Agentic"
-linkTitle: "URL Shortener Agentic"
+title: "URL Shortener: Coding-Agent Experiments"
+description: "Notes and prompts from URL-shortener implementation experiments with Roo-Code and Kiro, including planning workflows and questions about evaluating generated code."
+linkTitle: "URL Shortener: Coding-Agent Experiments"
 ---
+
+Implementation workflow experiments and prompts, separate from the [system-design case]({{< ref "system-design/projects/url-shortener" >}}). Tool references retain their original experiment context.
+
 # 1. Roo-Code local service
 
 

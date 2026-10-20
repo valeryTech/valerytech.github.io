@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "Instagram"
-linkTitle: "Instagram"
+title: "Instagram: Collected Design Discussion"
+description: "Collected critiques of Instagram design examples, exploring interview realism, product scope, business context, requirements, and architectural subproblems."
+linkTitle: "Instagram: Collected Design Discussion"
 ---
+# Instagram
+
+
+Collected discussion and critique for further review. These comments reflect their original contexts; use the [case template]({{< ref "system-design/projects/case-template" >}}) to develop an independent design.
+
 # Interesting Example
 
 

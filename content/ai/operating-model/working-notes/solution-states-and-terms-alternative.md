@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "An earlier solution-state vocabulary separating discovery and delivery activities from lifecycle states, and explaining why evidence worth investing in does not establish business outcomes."
 title: "Solution States And Terms Alternative"
 linkTitle: "Solution States And Terms Alternative"
 ---
+
 > **Editorial note:** This proposal depends on [`solution-as-central-object.md`]({{< ref "ai/operating-model/working-notes/solution-as-central-object" >}}). Its state names are not part of the current model.
 
 Discovery and Delivery can be presented as activities, while the transformations apply to the solution.

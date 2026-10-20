@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
-title: "00 Refactor"
-linkTitle: "00 Refactor"
+title: "AI Evaluation Framework: Refactoring Notes"
+description: "Refactoring proposals that shift the evaluation model toward bounded production commitments, independently versioned behavior contracts, system configurations, rollout policies, and discovery-versus-delivery routing."
+linkTitle: "AI Evaluation Framework: Refactoring Notes"
 ---
+
 The evaluation mechanics are already compatible with the new delivery mindset; the main changes are at the top of the model: what the product commits to, what a delivery change is, and what "release readiness" means.
 
 ```

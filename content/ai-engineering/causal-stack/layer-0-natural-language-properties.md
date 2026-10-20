@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 0 Natural Language Properties"
-linkTitle: "Layer 0 Natural Language Properties"
+title: "Natural-Language Properties: A Linguistic and Semantic Taxonomy"
+description: "A linguistic taxonomy of indeterminacy, context dependence, pragmatic intent, discourse, and social framing, comparing natural-language interfaces with programming languages, DSLs, and APIs."
+linkTitle: "Natural-Language Properties"
 ---
-# Natural-Language Properties: A Linguistic and Semantic Taxonomy
-
 ## Purpose
 
 

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Rfc V1 3"
-linkTitle: "Rfc V1 3"
+title: "RFC: AI Systems Framework v1.3"
+description: "An earlier single-team implementation RFC proposing layered libraries, schemas, release gates, monitoring, and optimization, with concrete rollout milestones and resolutions of conflicting terminology across the methodology pack."
+linkTitle: "Framework RFC v1.3"
 ---
-# RFC: AI Systems Framework v1.3
-
 
 **Status:** Draft
 

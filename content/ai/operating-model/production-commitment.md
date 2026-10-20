@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A practical production-commitment template, illustrated with Wallet, separating promised behavior, supported scope, remaining assumptions, harm limits, operating responsibilities, and withdrawal conditions."
 title: "Production Commitment"
 linkTitle: "Production Commitment"
 ---

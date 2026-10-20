@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Research notes tracing a shift from fast interaction prototyping to broader design inquiry, using knowledge-search examples to develop frames, alternatives, questions, and an evolving model of the situation."
 title: "Discovery"
 linkTitle: "Discovery"
 ---

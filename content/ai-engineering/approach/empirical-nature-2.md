@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Empirical Nature 2"
-linkTitle: "Empirical Nature 2"
+title: "AI Products Need Evals, Not Just Tests"
+description: "A practical delivery guide for combining code guarantees, product-specific evals, domain-expert review, release controls, and production learning throughout the AI product lifecycle."
+linkTitle: "AI Products Need Evals, Not Just Tests"
 ---
-# AI Products Need Evals, Not Just Tests
-
 
 _A practical principle for designing, building, and operating AI products_
 

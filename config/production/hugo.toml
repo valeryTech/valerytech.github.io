@@ -1,2 +1,5 @@
 # Overrides for production environment
 baseurl = "https://valery.tech/"
+
+# Production cleanup must not delete resources cached by a running preview.
+resourceDir = "resources/production"

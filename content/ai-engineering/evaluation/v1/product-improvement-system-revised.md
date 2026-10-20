@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Product Improvement System Revised"
-linkTitle: "Product Improvement System Revised"
+title: "AI Product Improvement System"
+description: "Models continuous improvement through separate product, quality-understanding, and evidence-capability loops, operating across offline and online planes and sharing a data-and-evidence flywheel."
+linkTitle: "AI Product Improvement System"
 ---
-# AI Product Improvement System
-
 ## A Model for Continuous AI Design, Evaluation, and Delivery
 
 ## 1. Purpose

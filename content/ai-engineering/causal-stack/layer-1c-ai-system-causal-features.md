@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 1c Ai System Causal Features"
-linkTitle: "Layer 1c Ai System Causal Features"
+title: "Layer 1C -- AI-System-Level Causal Features"
+description: "Explains system-level sources of behavioral uncertainty, including composition, runtime context, feedback, non-local change effects, weak observability, trust mediation, and operating constraints."
+linkTitle: "Layer 1C -- AI-System-Level Causal Features"
 ---
-# Layer 1C -- AI-System-Level Causal Features
-
 ## Framing principle -- AI systems are empirical systems
 
 

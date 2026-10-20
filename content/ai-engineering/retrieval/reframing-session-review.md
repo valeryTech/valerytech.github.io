@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Reframing Session Review"
-linkTitle: "Reframing Session Review"
+title: "RAG Reframing: Editorial Review of the Companion Documents"
+description: "Records editorial decisions across the retrieval companion notes, clarifying bounded assembly, context fitness, discovery, working views, and responsibilities reserved for the main framing."
+linkTitle: "RAG Reframing: Editorial Review"
 ---
-# RAG Reframing: Editorial Review of the Companion Documents
-
 
 Review date: 2026-10-19.
 

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Empirical Nature"
-linkTitle: "Empirical Nature"
+title: "AI Systems Require Behavioral Evidence"
+description: "Explains why implementation inspection cannot establish AI behavior, connecting scoped behavioral evidence, enforceable safeguards, assurance assessments, and operational decisions through an escalation example."
+linkTitle: "AI Systems Require Behavioral Evidence"
 ---
-# AI Systems Require Behavioral Evidence
-
 
 This note defines a working principle for designing, evaluating, and operating AI systems.
 

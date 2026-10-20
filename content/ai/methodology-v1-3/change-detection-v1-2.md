@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Change Detection V1 2"
-linkTitle: "Change Detection V1 2"
+title: "Change Detection v1.2 — Production Discipline for LLM / Agentic Systems"
+description: "A production design separating integrity checks, anomaly detection, statistical confirmation, attribution, and action, with standardized change packets and backtested alerts tied to comparable baselines."
+linkTitle: "Change Detection v1.2"
 ---
 # Change Detection v1.2 -- Production Discipline for LLM / Agentic Systems
 

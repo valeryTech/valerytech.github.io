@@ -73,6 +73,12 @@ section folders. For example:
 - `content/projects/code-assistant.md` is generated from the selected external
   project note and renders `/projects/code-assistant/`
 
+When a Markdown file has a nonempty `description` in its front matter, its HTML
+page displays it as an introductory paragraph with inline Markdown formatting.
+The introduction follows the page title, including an opening H1 authored in
+Markdown, or precedes the body when there is no title. The homepage uses `lead`
+as a fallback; blog and legal pages use `summary` when no description is present.
+
 If material is unfinished, it can live either in a local in-repo holding area
 such as `content/system-design/to_sort/` or upstream in the external notes tree
 before migration.

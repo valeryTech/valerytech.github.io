@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A placeholder page containing sample headings and a project link, with no developed notes on events or messaging."
 title: "Events"
 linkTitle: "Events"
 ---
@@ -12,4 +13,4 @@ text
 ## Heading Two
 
 
-[[topics/ml/projects/projects|projects]]
+[Practice cases]({{< ref "system-design/projects" >}})

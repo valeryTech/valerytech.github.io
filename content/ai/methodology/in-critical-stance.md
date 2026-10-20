@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "Working terminology for a critical empirical engineering stance: question claims, test them in practice, scrutinize measurements and interpretations, and revise conclusions through reflection."
 title: "In Critical Stance"
 linkTitle: "In Critical Stance"
 ---
+
 
 Several related terms emphasize different aspects of evidence-based practice:
 

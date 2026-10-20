@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "SD To Sort"
-linkTitle: "SD To Sort"
+title: "Architecture and Distributed-Systems Reading Notes"
+description: "Architecture and distributed-systems reading excerpts on trade-offs, coupling, modularity, risk, failure detection, clocks, leader election, data models, and microservices."
+linkTitle: "Architecture and Distributed-Systems Reading Notes"
 ---
+
+Collected excerpts and personal annotations, grouped by source. For an organized synthesis, see [design principles]({{< ref "system-design/02-system-design" >}}), [scalability]({{< ref "system-design/nfr/scalability" >}}), and the [building-block map]({{< ref "system-design/elements/elements" >}}).
+
 # Various
 
 

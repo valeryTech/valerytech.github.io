@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Experimental Design V1 1"
-linkTitle: "Experimental Design V1 1"
+title: "Experimental Design v1.1 (LLM / Agentic Systems)"
+description: "The normative experiment design specification for offline paired tests, online A/B tests, and switchbacks, connecting precommitted inference, contamination controls, and uncertainty margins to release verdicts."
+linkTitle: "Experimental Design v1.1"
 ---
-# Experimental Design v1.1 (LLM / Agentic Systems)
-
 
 This document operationalizes **Methodology Principles v1.1** for experimentation and release gating. It defines a normative doctrine for proving improvement under stochastic behavior, drifting inputs/environments, and noisy measurement (LLM-as-judge).
 

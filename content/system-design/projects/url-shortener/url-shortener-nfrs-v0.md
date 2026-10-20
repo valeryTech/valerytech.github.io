@@ -1,9 +1,12 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener NFRs v0"
-linkTitle: "URL Shortener NFRs v0"
+title: "URL Shortener: Consistency and NFR Draft"
+description: "An extended URL-shortener draft exploring user workloads, replication, propagation delay, transactional outbox, PACELC, read scaling, latency tiers, and availability."
+linkTitle: "URL Shortener: Consistency and NFR Draft"
 ---
+
+Extended exploration of user archetypes, consistency, replication, the transactional outbox, PACELC, and read-path targets. Retained alongside the [other NFR proposals]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}); numerical examples are provisional.
 
 Other to consider:
 
@@ -56,11 +59,13 @@ This is a much smaller, but vital, user segment. These are users who generate th
 	- **Less Latency-Sensitive**: A user will tolerate 500ms to create a link, whereas a 500ms redirect is unacceptable.
 	- **Requires More Complex Logic**: This path involves validation, potential collision checks for custom aliases, and calling a code generation service.
 > This asymmetry is an important factor (?)
+
 **Drives Service Decomposition**: The vastly different traffic patterns and requirements of Creators vs. Consumers are the primary justification for splitting the system into a **Write Service** and a **Read/Redirect Service**. You scale them independently.
 
 I'll design a **read-optimized redirect service** that is massively scalable and globally distributed, likely fronted by a CDN. The **write service** will be a separate, more centralized component focused on data integrity. This allows us to scale and provision resources for each path independently, which is far more efficient and resilient."
 
 # Consistency
+
 
 #todo add PACELC and other tools perspective and reasoning
 

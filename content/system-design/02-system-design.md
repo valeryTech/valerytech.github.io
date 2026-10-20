@@ -1,60 +1,50 @@
 ---
 draft: false
 toc: true
-title: "System Design"
-linkTitle: "System Design"
+title: "System Design Principles"
+description: "Principles for making architectural choices through context, boundaries, feedback, state ownership, interactions, and explicit trade-offs."
+linkTitle: "Design Principles"
 ---
-## Core Principles
+
+System design is contextual: the users, boundaries, workload, organization, and expected changes determine which trade-offs matter. A design describes both the parts and their interactions over time.
+
+## Start with the context
 
 
-- **Feedback Loop:** In most cases, when working on a project or designing a new system, it's all about the existence of a feedback loop and shortening it.
-- **Modularity:** [The Golden Age of Modularity](https://vladikk.com/2025/03/30/golden-age-of-modularity/)
-- **Interactions:** The question of how to describe interactions is crucial for architecture analysis and for considering a system's behavior.
-- **Contextual Design:** Architectural design is system design. System design is contextual design -- it is inherently about boundaries (what's in, what's out, what spans, what moves between), and about tradeoffs. It reshapes what is outside, just as it shapes what is inside.
-- **Design Across Time:** System design is design across boundaries, and across (and over) time. It's integrative. The system itself shapes the possibilities and probabilities of sociotechnical adaption.
+Identify what is inside the system, what is outside it, and what crosses the boundary. Connect technical choices to user needs and the few [architectural characteristics]({{< ref "system-design/nfr/non-functional-requirements" >}}) that drive this design.
 
-## Concepts and Patterns
+Include the lifecycle in the analysis: how data is created, read, changed, and removed; how the system is deployed and operated; and how the design might evolve. The relevant architecture views depend on the question being examined.
+
+## Use feedback to improve the design
 
 
-- **Microservices:**
-	- **IPC:** The choice of Inter-Process Communication mechanism is an important architectural decision that can impact application availability.
-	- **Data Consistency:** To solve the complex problem of maintaining data consistency in a microservice architecture, an application must use a different mechanism that builds on the concepts of loosely coupled, asynchronous services.
-	- **Distributed Tracing:** Another way of understanding the behavior of a microservices-based application.
-- **Architectural Characteristics (ACs):** Effectiveness, maintainability, user friendliness, etc.
-- **Frameworks:**
-	- **TOGAF & Zachman:** [Wikipedia](https://en.wikipedia.org/wiki/Zachman_Framework)
-	- **C4 Model:** [c4model.com](https://c4model.com/)
-- **High-Level Concepts:**
-	- **Eventual Consistency:** [Wikipedia](https://en.wikipedia.org/wiki/Eventual_consistency)
-	- **C10k problem:** [Wikipedia](https://en.wikipedia.org/wiki/C10k_problem)
-	- **CAP Theorem:** A requirement to maintain an eventually consistent replica of some data in order to implement a query.
-- **MVP, POC, and Prototyping:**
-	- Building a Minimum Viable Product (MVP) is a great first step to ensure that a team understands the constraints and requirements of the microservices style.
-	- [Minimum Viable Product, Revisited](https://tidyfirst.substack.com/p/minimum-viable-product-revisited)
+Keep the feedback loop short. A whole-team whiteboard session, a concrete request trace, a prototype, or a small implementation can expose gaps in the current model. Treat mistakes as information for the next iteration.
 
-## Practices and Heuristics
+An MVP or proof of concept can help test assumptions about requirements and constraints. Choose what to build according to what you need to learn. See [Minimum Viable Product, Revisited](https://tidyfirst.substack.com/p/minimum-viable-product-revisited).
+
+## Make interactions and ownership explicit
 
 
-- **Visualize Your Architecture:** A whole-team whiteboard session is often a useful exercise for reviewing the overall architecture as it evolves. Focus on key quality attributes that drive out your architectural vision (scalability, performance, usability concerns, etc.).
-- **Heuristic Questions:** Use leading questions like "who?", "what?", "when?", "why?" to organize information and see the situation from a different angle.
-- **Trial and Error:** Perceive each mistake as an experience that will help in making correct decisions in the future.
-- **Lifecycle Analysis:** It's sometimes beneficial to introduce time in the analysis of an element/subsystem.
-- **Create a practical toolbox** and use it during the processes of design, refactoring, and other activities.
-- **Use flash cards** with questions and principles and use them repeatedly in checklists and design stages.
+For each important flow, show who calls whom, what information crosses the boundary, and which component owns the state. These questions connect the diagram to behavior.
 
-## Resources
+Microservices bring particular questions about inter-process communication, state ownership, consistency across services, independent deployment, and distributed tracing. Use these questions to examine a service boundary before adding it to a design.
+
+Modularity concerns what can change independently as well as how the system is divided. See [The Golden Age of Modularity](https://vladikk.com/2025/03/30/golden-age-of-modularity/).
+
+## Compare choices in their setting
 
 
-- **Blogs & People:**
-	- [System Design Blogs on workat.tech](https://workat.tech/system-design/article/best-engineering-blogs-articles-videos-system-design-tvwa05b8bzzr)
-	- **Ruth Malan:** [ruthmalan.com](https://www.ruthmalan.com/)
-	- **Vlad Khononov:** "Balancing"
-	- **Diana Montalion:** [Book and videos](https://www.youtube.com/watch?v=m7cWdYVAzX0)
-	- **Christian Posta:** [blog.christianposta.com](https://blog.christianposta.com/)
-	- **The Frugal Architect:** [thefrugalarchitect.com](https://thefrugalarchitect.com/)
-- **Architecture Centers:**
-	- [AWS Architecture Center](https://aws.amazon.com/architecture)
-- **Netflix Tech Blog:**
-	- [Distributed Counter](https://netflixtechblog.com/netflixs-distributed-counter-abstraction-8d0c45eb66b2)
-	- [Data Gateway](https://netflixtechblog.medium.com/data-gateway-a-platform-for-growing-and-protecting-the-data-tier-f1ed8db8f5c6)
-	- [Performance Under Load (Adaptive Concurrency Limits)](https://medium.com/@NetflixTechBlog/performance-under-load-3e6fa9a60581)
+Name the problem, the constraints, the plausible alternatives, and the consequence of each choice. Select an approach and state what evidence or change in requirements would make you revisit it.
+
+Use the [problem-solving checklist]({{< ref "system-design/frameworks/problem-solving-approach" >}}) alongside any of the [interview frameworks]({{< ref "system-design/frameworks" >}}). Keep a practical toolbox and use short questions or flash cards to recall it during design work.
+
+## Models and further reading
+
+
+- **Architecture views:** [C4 model](https://c4model.com/) and the [Zachman framework](https://en.wikipedia.org/wiki/Zachman_Framework); the original notes also mention TOGAF.
+- **Distributed-system topics to study:** consistency models, the CAP theorem, and the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem). Follow the [building-block map]({{< ref "system-design/elements/elements" >}}) for related topics.
+- **Architecture writers:** [Ruth Malan](https://www.ruthmalan.com/), Vlad Khononov's “Balancing,” [Diana Montalion](https://www.youtube.com/watch?v=m7cWdYVAzX0), and [Christian Posta](https://blog.christianposta.com/).
+- **Operational and cost perspectives:** [The Frugal Architect](https://thefrugalarchitect.com/) and the [AWS Architecture Center](https://aws.amazon.com/architecture).
+- **Engineering case studies:** Netflix's [distributed counter](https://netflixtechblog.com/netflixs-distributed-counter-abstraction-8d0c45eb66b2), [data gateway](https://netflixtechblog.medium.com/data-gateway-a-platform-for-growing-and-protecting-the-data-tier-f1ed8db8f5c6), and [adaptive concurrency limits](https://medium.com/@NetflixTechBlog/performance-under-load-3e6fa9a60581).
+
+See the [resource catalog]({{< ref "system-design/resources" >}}) for more courses, talks, and papers. The [earlier principles note]({{< ref "system-design/archive/architecture-principles-v0" >}}) preserves the original wording and links.

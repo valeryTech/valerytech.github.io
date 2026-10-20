@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "SD Framework Old"
-linkTitle: "SD Framework Old"
+title: "Extended System Design Framework Collection"
+description: "An extended collection of design steps, architectural principles, staff-level considerations, follow-up questions, technical checklists, and examples."
+linkTitle: "Extended System Design Framework Collection"
 ---
+
+Extended collection of framework steps, principles, questions, and examples. Retained as an additional perspective in the [framework comparison]({{< ref "system-design/frameworks" >}}). Source statements and incomplete ideas keep their draft context.
+
 # To Refactor
 
 
@@ -77,7 +81,9 @@ Try:
 
 ## Understand the problem and establish design scope
 
+
 > Outline use cases, constraints, and assumptions. Define Feature Expectations
+
 Just like algorithm design, system design questions will also most likely be weakly defined. So we need gather requirements and scope the problem. You have to get a sense for the scope of the problem before you start exploring the space of possible solutions.
 
 So how do you figure out what type of service the interviewer wants you to build? Ask them! A basic prompt leaves room for you to start a conversation with your interviewer about the system you're designing -- what type of users does it serve, what type of traffic can it expect, what limits will it have? Demonstrating that you can think critically about the parameters of your service is the first step in any system design interview.
@@ -368,7 +374,7 @@ Estimation. Estimation, especially in the form of a back-of-the-envelope calcula
 ## Back-of-the-envelope capacity estimation
 
 
-[Envelope_estimations]({{< ref "engineering/topics/envelope-estimations" >}})
+[Capacity estimation]({{< ref "engineering/topics/envelope-estimations" >}})
 
 # Follow-Up Questions
 

@@ -2,7 +2,8 @@
 draft: false
 toc: true
 title: "Evidence for Coding Agents in Production Engineering"
-linkTitle: "Evidence for Coding Agents in Production Engineering"
+description: "Examines evidence for production coding-agent use, separating code generation from engineering ownership through evaluation questions and practitioner cases from Mitchell Hashimoto and Daniel Stenberg."
+linkTitle: "Production Coding-Agent Evidence"
 ---
 # Evidence for coding-agent use in production engineering
 

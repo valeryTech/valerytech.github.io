@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Argues that AI product engineering must develop its methods alongside the product, using shared cases, explicit assumptions, critical reflection, and organizational support."
 title: "Language Mindset Discipline 0"
 linkTitle: "Language Mindset Discipline 0"
 ---

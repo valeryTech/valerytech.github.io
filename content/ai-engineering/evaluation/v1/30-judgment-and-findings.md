@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "30 Judgment And Findings"
-linkTitle: "30 Judgment And Findings"
+title: "Judgment and Findings"
+description: "Connects criteria, evidence sufficiency, judgment methods, evaluator validation, measurements, and scoped findings while keeping disagreement, causal diagnosis, and product decisions distinct."
+linkTitle: "Judgment and Findings"
 ---
-# Judgment and Findings
-
 ## Purpose
 
 

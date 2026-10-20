@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Evidence Model"
-linkTitle: "Evidence Model"
+title: "Evidence Model for AI Evaluation"
+description: "Defines evaluation objects and their limits, separating cases, executions, trajectories, traces, observations, judgments, failure knowledge, causal hypotheses, findings, and decisions."
+linkTitle: "Evidence Model for AI Evaluation"
 ---
-# Evidence Model for AI Evaluation
-
 ## Purpose
 
 

@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "20 Error Analysis Input"
-linkTitle: "20 Error Analysis Input"
+title: "Failure Understanding: Discovering and Structuring How AI Products Fail"
+description: "A companion copy of the failure-understanding method, moving from concrete trace incidents and constant comparison to a product-specific failure model and selected operational measures."
+linkTitle: "Failure Understanding"
 ---
-# Failure Understanding: Discovering and Structuring How AI Products Fail
-
 ## Purpose
 
 

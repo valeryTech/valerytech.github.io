@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Experimentation"
-linkTitle: "Experimentation"
+title: "Disciplined AI Experimentation"
+description: "Explains why AI delivery needs controlled experiments with baselines, versioned configurations, representative cases, and production feedback to resolve quality, cost, and latency tradeoffs."
+linkTitle: "Disciplined AI Experimentation"
 ---
-# Disciplined AI Experimentation
-
 
 **Objective:** Define the systemic framework for transitioning AI development workflows from uncontrolled, intuition-based iterations to evidence-driven, decision-grade engineering.
 

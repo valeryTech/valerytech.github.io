@@ -25,8 +25,15 @@ copyRight = "Copyright (c) 2014-2023"
   enable = true
 
 [outputs]
-  home = ["HTML", "RSS", "searchIndex", "agentMap"]
+  home = ["HTML", "RSS", "searchIndex", "agentMap", "agentText"]
   section = ["HTML", "RSS", "SITEMAP"]
+
+# Keep maps only for the five main collections. Nested sections are merged in.
+[[cascade]]
+  outputs = ["HTML", "RSS", "SITEMAP", "agentMap", "agentText"]
+  [cascade.target]
+    kind = "section"
+    path = "{/ai,/ai-engineering,/engineering,/system-design,/projects}"
 
 [outputFormats.searchIndex]
   mediaType = "application/json"
@@ -34,13 +41,19 @@ copyRight = "Copyright (c) 2014-2023"
   isPlainText = true
   notAlternative = true
 
-# One Markdown navigation document for agents visiting the website.
+# One navigation document, also served as plain text for agent reader compatibility.
 [mediaTypes."text/markdown"]
   suffixes = ["md"]
 
 [outputFormats.agentMap]
   mediaType = "text/markdown"
   baseName = "site-map"
+  isPlainText = true
+  notAlternative = true
+
+[outputFormats.agentText]
+  mediaType = "text/plain"
+  baseName = "llms"
   isPlainText = true
   notAlternative = true
 

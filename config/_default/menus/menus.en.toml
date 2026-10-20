@@ -71,6 +71,6 @@
   weight = 70
 
 [[footer]]
-  name = "Agent map (Markdown)"
-  url = "/site-map.md"
+  name = "Agent map"
+  url = "/llms.txt"
   weight = 80

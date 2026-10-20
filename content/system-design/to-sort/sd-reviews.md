@@ -1,9 +1,13 @@
 ---
 draft: false
 toc: true
-title: "SD Reviews"
-linkTitle: "SD Reviews"
+title: "System Design Review Excerpts"
+description: "Collected review excerpts on URL shorteners, file storage, chat, feeds, rate limiting, search, and location-based systems, emphasizing mechanisms and trade-offs."
+linkTitle: "System Design Review Excerpts"
 ---
+
+Collected case-review material. Compare with the [URL-shortener case]({{< ref "system-design/projects/url-shortener" >}}), [Dropbox case]({{< ref "system-design/projects/dropbox" >}}), and [messaging notes]({{< ref "system-design/elements/messaging" >}}).
+
 # tiny url
 
 

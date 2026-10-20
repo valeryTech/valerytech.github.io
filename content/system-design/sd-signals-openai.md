@@ -1,11 +1,14 @@
 ---
 draft: false
 toc: true
-title: "SD Signals OpenAI"
-linkTitle: "SD Signals (OpenAI)"
+title: "System Design Practice Review Rubric"
+description: "A personal senior-level practice rubric with weighted criteria, behavioral rating scales, interview timing, scoring guidance, and capacity-estimation patterns."
+linkTitle: "Practice Review Rubric"
 ---
-# Senior System Design Interview Rubric (Refactored)
+# Senior System Design Practice Review Rubric
 
+
+Personal practice rubric. The proposed weights, gates, and pass labels have not been calibrated as an assessment instrument. The filename reflects the earlier note title; the material does not establish an official OpenAI hiring rubric. Use the [interview index]({{< ref "system-design/interview" >}}) for related practice notes.
 
 > Purpose-built for a 60-minute system design round. Converts vague "signals" into behaviorally anchored constructs with explicit weights, timeboxes, and a decision policy. No statistics, calibration, or interviewer-training content is included.
 
@@ -40,14 +43,21 @@ Measurement principles
 ## 2. Timeboxed Interview Flow (60 min)
 
 
-1. Framing & Requirements (7-8 min) - clarify users, top use cases, data freshness, constraints, SLOs.
-2. API & Data Model (7-8 min) - list key endpoints/contracts; define core entities & relationships.
-3. High-Level Architecture (12-15 min) - draw components & flows; identify hot paths & queues.
-4. Scale & Capacity (8-10 min) - do quick math; highlight bottlenecks & headroom.
-5. State & Consistency (7-8 min) - detail writes/reads, partitions, indexes, consistency, idempotency.
-6. Reliability & Operability (7-8 min) - failure plan, degradation, metrics/alerts, deploy/rollback, cost.
-7. Evolution & Trade-offs (3-5 min) - MVP scope, next steps, key risks, explicit trade decisions.
-8. (Optional) Bonus (≤2-3 min) - product/user lens, if time remains.
+One possible 60-minute allocation for practicing this rubric. Adapt the emphasis to the problem and leave room for interviewer direction; the [other frameworks]({{< ref "system-design/frameworks" >}}) use different structures.
+
+| Area | Minutes |
+| --- | ---: |
+| Framing and requirements | 7 |
+| API and data model | 7 |
+| High-level architecture and flows | 12 |
+| Scale and capacity reasoning | 6 |
+| State and consistency | 10 |
+| Reliability and operability | 10 |
+| Evolution and trade-offs | 5 |
+| Recap and open questions | 3 |
+| **Total** | **60** |
+
+Product and user impact can be discussed within each area. It does not require extra time beyond this allocation.
 
 ## 3. Behaviorally Anchored Rating Scales (BARS)
 
@@ -241,10 +251,8 @@ Decision:  Strong Hire / Hire / Lean No / No Hire
 ### Appendix A: Quick Capacity Math Patterns
 
 
-- RPS -> bandwidth: `RPS × payload (KB) ≈ MB/s` (×8 for Mb/s).
-- Daily storage: `events/day × event size` -> compress × retention (days).
+- Response bandwidth: `responses/second × bytes/response = bytes/second`; convert bytes to bits by multiplying by 8.
+- Retained event storage: `events/day × bytes/event × retention days`; then account for compression, replication, indexes, and metadata as applicable.
 - Cache sizing: `hotset keys × avg value size`; check hit-rate needed to meet p95 latency.
-- Queue depth: `arrival rate - service rate` over burst window -> required backlog and latency budget.
+- Backlog added during a constant-rate burst: `max(0, arrivals/second - completions/second) × burst seconds`; include any starting backlog separately.
 - Shard count: `(peak writes per shard) ≤ write limit per node` with headroom (e.g., 50-60%).
-
-_If useful, I can also generate a one-page candidate handout with a blank worksheet for SLOs, capacity, and a consistency checklist, aligned to this rubric._

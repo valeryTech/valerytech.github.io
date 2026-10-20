@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Why Use Evaluation Harness"
-linkTitle: "Why Use Evaluation Harness"
+title: "Why Use an Evaluation Harness?"
+description: "Explains when repeatable execution and versioned evidence justify a harness, what credible comparisons require, and which quality or product claims a harness cannot establish."
+linkTitle: "Why Use an Evaluation Harness?"
 ---
-# Why Use an Evaluation Harness?
-
 
 AI system behavior can change when the model, prompt, tools, data, orchestration, product state, or operating conditions change. A few successful demonstrations do not show whether a change helped across the situations that matter or whether it broke an existing behavior.
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A delivery-flow proposal connecting product bets to explicit behavior commitments, production slices, evaluation, release, and operation, with more informative alternatives to feature-completion percentages."
 title: "Production Flow Proposal"
 linkTitle: "Production Flow Proposal"
 ---

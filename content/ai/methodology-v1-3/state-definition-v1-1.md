@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "State Definition V1 1"
-linkTitle: "State Definition V1 1"
+title: "State Definition v1.1 (LLM / Agentic Systems)"
+description: "A specification separating AI-system identity from observed behavior, defining comparable state estimates and deltas across configuration, inputs, dependencies, measurement, and uncertain outcomes for release decisions."
+linkTitle: "State Definition v1.1"
 ---
-# State Definition v1.1 (LLM / Agentic Systems)
-
 
 This document defines **system state** for LLM and agentic applications in a way that is **auditable**, **comparable across time**, and **sufficient for decisions** (ship/rollback, debug, monitor, optimize).
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Earlier commitment-boundary proposals using Mehta’s prototype categories and WorkOS examples to show why fidelity, repository, and environment do not determine production obligations."
 title: "Production Commitment Boundary Alternative"
 linkTitle: "Production Commitment Boundary Alternative"
 ---

@@ -1,122 +1,62 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener NFRs"
-linkTitle: "URL Shortener NFRs"
+title: "URL Shortener: NFR Explorations"
+description: "A comparison of URL-shortener quality-target proposals, connecting workload, latency, availability, consistency, lifecycle behavior, measurement, and architectural implications."
+linkTitle: "NFR Explorations"
 ---
-# hellointerview variant
+
+The notes contain two proposed target sets. Keep them distinct and choose an explicit set for each design attempt. These are practice assumptions, not measurements or guarantees of a particular deployment.
+
+## Alternative target sets
 
 
-**Core Requirements**
+| Area | Hello Interview variant recorded in the notes | Personal v1 proposal |
+| --- | --- | --- |
+| Workload | 1 billion links and 100 million daily active users | Read-heavy; explore tens of thousands of read QPS at peak |
+| Resolve latency | Less than 100 ms; percentile and measurement boundary need clarification | p95 below 100 ms for cached redirects |
+| Resolve availability | 99.99% | 99.9%, with a reason to examine a higher target if business needs require it |
+| Consistency | Prioritize availability where appropriate | Explore asynchronous global propagation while defining post-create visibility |
+| Uniqueness | A short code maps to a single destination | Enforce the same invariant in the write path |
 
-1. The system should ensure uniqueness for the short codes (no two long URLs can map to the same short URL)
-2. The redirection should occur with minimal delay (< 100ms)
-3. The system should be reliable and available 99.99% of the time (availability > consistency)
-4. The system should scale to support 1B shortened URLs and 100M DAU
+The scale discussion also considers a base62 keyspace and sufficient code capacity for at least a billion mappings. Code length is one question; allocation and collision handling still need an explanation.
 
-**Below the line (out of scope):**
-
-- Data consistency in real-time analytics.
-- Advanced security features like spam detection and malicious URL filtering.
-
-# My Reasoning
+## Make the targets usable
 
 
-- **Availability (Resolve -- CV):** v1 **99.9%** measured at the edge (successful redirects / total resolves). Error budget ≈ 0.1%.
-- **Latency (Resolve -- CV):** p95 **< 100 ms** end‑to‑end for cached redirects.
-- **Consistency:** **Availability > Consistency** for resolve; creation can be eventually consistent globally. (numbers?)
-- **Scalability:** Keyspace sufficient for ≥ **1B** links (e.g., random base62 length≥6). Read‑heavy ratio; design read path for high QPS (addition) handle **tens of thousands QPS** read peaks.
-- **Security/Abuse:** Basic anti‑abuse: rate limits per IP/key, blocklist of malicious domains, reserved aliases.
-- **Observability (min):** Metrics for resolve success rate, latency; structured errors for create.
-> **Upgrade path (only if needed):** 99.99% Resolve ⇒ multi‑region active/active + edge KV + dependency SLOs.
-Traceability to Non-Functional Requirements (why FR choices matter)
+For each target, connect user value, measurement, and a design implication. Follow the [general NFR method]({{< ref "system-design/nfr/non-functional-requirements" >}}).
 
-- **<100ms redirect** -> favors 302 over 301 initially (less permanent caching risk), CDN/edge routing, hot path must avoid DB joins.
-- **99.99% availability** -> resolution path must be **read-optimized**, possibly **eventually consistent** with write path; acceptability of slight propagation delay (e.g., alias visible globally within seconds).
-- **Scale (1B links, 100M DAU)** -> alias length/charset, partitioning strategy, and **read-only hot path** design are influenced by FR-2 semantics.
+**Resolve latency:** clarify cached versus uncached requests and the end-to-end boundary. Explain how the hot path meets the selected target.
 
-Say:
-> "I'll put the tight latency/availability SLOs on Resolve, and allow eventual consistency on Create. That's how we maximize user-perceived value."
+**Availability:** define eligible requests, successful outcomes, timeouts, and where measurement occurs. The earlier proposal uses successful redirects divided by eligible resolve requests, measured at the edge. Confirm how valid not-found or expired responses are classified.
 
-# Structuring our work with NFRs
+**Consistency:** specify behavior by operation. If a write is acknowledged before propagation finishes, what does an immediate resolve in another region do? Which uniqueness guarantees must still hold at creation?
+
+**Lifecycle:** if a link expires or is deactivated, how long may a cached mapping remain usable?
+
+**Basic operations and abuse controls:** the personal proposal includes rate limits, reserved aliases, domain blocking, resolve success/latency metrics, and structured create errors. Decide which are in scope. The recorded Hello Interview variant leaves analytics consistency and advanced malicious-link filtering outside the initial exercise.
+
+## Availability and architecture
 
 
-According to the Hello Interview framework, we address non-functional requirements (NFRs) in two main phases (The Hello Interview methodology integrates non-functional requirements into the system design process at two key stages:):
+The earlier reasoning maps availability percentages to deployment recipes such as multi-AZ, edge caching, and multi-region active/active. Keep these as candidate mechanisms to evaluate. A percentage alone does not establish either a necessary architecture or an achieved service level.
 
-- **Initial Definition:** Immediately after establishing the functional requirements, we identify and document the most critical NFRs.
-- **Design Refinement:** During the "Deep Dive" phase, we refine the High-Level Design. This design, which was initially created to meet functional requirements, is now adjusted to ensure it also satisfies the NFRs.
+Discuss the failure model, dependency availability, recovery behavior, cache semantics, cost, and operational burden. If a higher target matters for paid campaigns, partner commitments, or another user need, explain that need before adding complexity.
 
-Therefore, by the time we reach the deep dive section, we have two key artifacts ready:
+For a time-based SLI over a 30-day period, 99.9% corresponds to 43.2 minutes outside the target and 99.99% to 4.32 minutes. For a request-based SLI, the budget is a fraction of eligible requests instead. Choose the measurement before interpreting the budget.
 
-- The specified Functional Requirements.
-- Initial version of NFRs
-- A blueprint of the High-Level Design (HLD exists as a baseline for refinement).
-
-# Availability
-
-## Specific numbers Justification
+## Use requirements in two passes
 
 
-Great call-out. Quoting **"99.99%"** without a reason _does_ sound like posturing. The fix is to **justify the SLO from user value and cost/complexity**, or start lower and show a path up. **Don't claim four nines unless you can justify the business need and the engineering spend**. Start with **99.9%** for v1, show the **upgrade path** to 99.99%, and you'll read as credible and value-driven.
+1. Establish the important qualities and assumptions before architecture.
+2. Return to them during deep dives, identify where the baseline falls short, and refine the design.
 
-# 1. Start with value -> pick a baseline SLO
+Give numbers when they distinguish choices; otherwise state the uncertainty and identify the decision the missing value would affect. Targets for creation, management, or other secondary paths can also matter when their requirements demand it.
 
-
-- **Moment of value = Resolve (redirect).** It deserves the _tightest_ SLO.
-- **Default, unless business says otherwise:** **99.9%** for v1.
-	- That's ≈ **43.2 minutes/month** of downtime (30-day month).
-	- It's achievable with **multi-AZ**, edge caching, and solid ops **without** multi-region active/active.
-
-Only push to **99.99%** if you can **name the reason** (paid campaigns, partner SLAs, contractual penalties, or huge brand risk), because it drives a step-function in complexity/cost.
-
-# 2. Translate nines -> architecture & cost (so it's not hand-wavy)
+## Additional reasoning
 
 
-| SLO (Resolve) | Downtime/mo | Typical architecture commitment                                                                   |
-| ------------- | ----------: | ------------------------------------------------------------------------------------------------- |
-| **99.5%**     |    ~216 min | single region, multi-AZ; acceptable for MVP/internal                                              |
-| **99.9%**     |   ~43.2 min | multi-AZ + CDN/edge cache; circuit breakers; DB not on hot path                                   |
-| **99.95%**    |   ~21.6 min | add regional cache redundancy, automated failover drills                                          |
-| **99.99%**    |   ~4.32 min | **multi-region active/active**, anycast DNS, edge KV, chaos/testing, rigorous dependency SLOs (?) |
-> If you say "four nines," you're implicitly committing to **multi-region** and **edge-served** resolves, plus dependency budgets (DNS/CDN/KV).
-
-# 3. Use an error-budget frame (sounds senior, keeps you honest)
-
-
-- **SLI:** successful redirects / total resolve requests, measured at the edge (4xx due to user input excluded; 5xx and timeouts included).
-- **99.9% SLO ⇒ error budget** ≈ 0.1% of requests. Spend it on deploys, chaos tests, and known risks.
-- If business needs "near-zero downtime" during a launch week, temporarily raise the SLO or freeze risky changes.
-
-# 4. Decision tree you can say in 20 seconds
-
-
-- **Is downtime revenue/contract critical (ads, partners, campaigns)?**
-	- **Yes** -> target **99.99%**, design multi-region active/active.
-	- **No / MVP** -> **99.9%**; design for upgradeability later.
-- **Will we serve from edge caches if origin is unhealthy?** If yes, effective availability rises without full multi-region DB.
-
-# 5. Interview-safe phrasing (avoid impostor vibes)
-
-> "Because resolve is the core value path, I'll set a **v1 SLO of 99.9%** (≈43 min/month). That's achievable with multi-AZ, CDN/edge cache, and cache-aside so the DB isn't on the hot path. **If we have revenue-critical campaigns or partner SLAs**, we can raise to **99.99%** by going multi-region active/active and pushing more logic into the edge KV. I'll design the read path to **upgrade** cleanly if we need that."
-
-# Why mention anything at all?
-
-
-- To **anchor priorities**: Resolve is the only path that must be ultra-available/low-latency.
-- To **bound complexity**: 99.9% ⇒ multi-AZ + edge cache; 99.99% ⇒ multi-region. That's a real design fork.
-
-# Micro-workflow for the NFR slice (under 20s)
-
-
-1. Name the **value path**: "Resolve."
-2. State the **trade-off**: "Availability > consistency."
-3. Give a **single latency target** (optional): "p95 <100 ms."
-4. Only give an **availability number if asked**; otherwise keep it directional.
-5. **Offer an upgrade path** in one clause.
-
-# Anti-impostor heuristics
-
-
-- Don't drop "four nines" unless you also say "multi-region active/active + edge KV."
-- If you can't justify, stay directional: "high availability on Resolve; eventually consistent Create."
-- Use numbers **only** for the value path; keep the rest qualitative.
+- [Consistency and NFR draft]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs-v0" >}}): user archetypes, replication, outbox, PACELC, read scale, and latency tiers.
+- [Requirements and user/business context]({{< ref "system-design/projects/url-shortener/url-shortener-useful" >}}).
+- [Earlier NFR reasoning]({{< ref "system-design/archive/url-shortener-nfrs-before-refactor" >}}): retains the original architecture table, scripts, and decision tree.
+- [Working design]({{< ref "system-design/projects/url-shortener/url-shortener" >}}).

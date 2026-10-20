@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Semantic Fault Family Index"
+description: "A proposed semantic fault taxonomy organizing failed meanings, claims, representations, processes, and interactions, with diagnostic relations, scenario designs, and evaluation-method selection."
 linkTitle: "Semantic Fault Family Index"
 ---
 

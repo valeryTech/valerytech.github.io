@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Instrumentation V1 2"
-linkTitle: "Instrumentation V1 2"
+title: "Instrumentation v1.2 — Production Discipline for LLM / Agentic Systems"
+description: "A production tracing design that records a minimal envelope for every episode and samples detailed spans, preserving comparability and regression attribution while controlling logging cost."
+linkTitle: "Instrumentation v1.2"
 ---
 # Instrumentation v1.2 -- Production Discipline for LLM / Agentic Systems
 

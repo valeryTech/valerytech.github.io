@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "In Harnes Building"
-linkTitle: "In Harnes Building"
+title: "Harness-Building for Coding Agents"
+description: "A research synthesis defining coding-agent harness functions, relating them to classical AI architectures, and proposing design patterns and diagnostics beyond model benchmark scores."
+linkTitle: "Harness-Building for Coding Agents"
 ---
-# Harness-Building for Coding Agents
-
 ## Executive summary
 
 

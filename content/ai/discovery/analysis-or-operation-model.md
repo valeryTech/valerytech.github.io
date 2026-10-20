@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A provisional model of inquiry work centered on an evolving design situation, choosing research, reframing, making, or comparison as needed and increasing commitments with evidence."
 title: "Analysis Or Operation Model"
 linkTitle: "Analysis Or Operation Model"
 ---

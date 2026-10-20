@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Perception And Context Management"
-linkTitle: "Perception And Context Management"
+title: "Perception and Context Management in Coding Agents"
+description: "Separates acquiring repository observations from maintaining useful working context, with design implications and diagnostics for access, interpretation, salience, compression, and memory failures."
+linkTitle: "Perception and Context Management"
 ---
-# Perception and Context Management in Coding Agents
-
 ## Executive summary
 
 

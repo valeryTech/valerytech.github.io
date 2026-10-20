@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A deferred Torres case showing production traces becoming failure categories, human labels, validated LLM judges, and regression-based release decisions."
 title: "Discovery Delivery Evaluation Evidence Deferred"
 linkTitle: "Discovery Delivery Evaluation Evidence Deferred"
 ---

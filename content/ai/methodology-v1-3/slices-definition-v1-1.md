@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Slices Definition V1 1"
-linkTitle: "Slices Definition V1 1"
+title: "Slices v1.1"
+description: "A draft specification distinguishing input-defined evaluation slices from execution-defined diagnostics, with governance rules that prevent post-treatment selection bias from invalidating release comparisons."
+linkTitle: "Slices v1.1"
 ---
-# Slices v1.1
-
 > Status: Draft (v1.1)
 >
 > This specification defines slice *types*, their correct use in offline gating and online monitoring, and the operational and causal pitfalls of trace-defined slices.

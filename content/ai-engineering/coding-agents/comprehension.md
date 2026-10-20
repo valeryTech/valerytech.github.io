@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Comprehension"
-linkTitle: "Comprehension"
+title: "Project Understanding"
+description: "Argues that maintainers must understand core product changes before accepting them, because agent-generated complexity can accumulate faster than human review and comprehension."
+linkTitle: "Project Understanding"
 ---
 ## Project understanding
 

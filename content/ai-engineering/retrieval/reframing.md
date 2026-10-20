@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Reframing"
-linkTitle: "Reframing"
+title: "Beyond RAG: Context-to-Task Alignment"
+description: "Reframes RAG as one pattern within context-augmented task systems, organizing acquisition, representations, matching, and orchestration around user needs and consuming operations."
+linkTitle: "Beyond RAG: Context-to-Task Alignment"
 ---
-# Beyond RAG: Context-to-Task Alignment
-
 
 Goal: We should stop treating RAG as the architecture and instead treat it as one pattern within context-augmented task systems.
 

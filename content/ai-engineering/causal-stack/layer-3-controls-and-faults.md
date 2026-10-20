@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 3 Controls And Faults"
-linkTitle: "Layer 3 Controls And Faults"
+title: "Layer 3 -- System Controls and System Faults"
+description: "Defines the operational layer of the causal stack, distinguishing behavioral faults from surrounding control failures and connecting prevention, detection, recovery, evidence, and impact."
+linkTitle: "Layer 3 -- System Controls and System Faults"
 ---
-# Layer 3 -- System Controls and System Faults
-
 ## Purpose
 
 

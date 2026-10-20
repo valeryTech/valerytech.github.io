@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Coverage Design Phase"
-linkTitle: "Coverage Design Phase"
+title: "Evaluation Coverage in Discovery and Delivery"
+description: "Proposes coverage design as an upstream activity linked to failure understanding, showing how its evidence sources and purposes change across discovery, commitment, delivery, and production."
+linkTitle: "Evaluation Coverage in Discovery and Delivery"
 ---
+
 
 We could reframe the existing user-input work as an upstream coverage-design phase, with user inputs as one artifact, and connect it bidirectionally with failure understanding.
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A supporting research synthesis reorders source passages with decision rationales, explaining the canonical model’s assumption-centered reasoning, separate problem and solution concerns, and explicit Harm dimension."
 title: "Risk Areas Reassembled"
 linkTitle: "Risk Areas Reassembled"
 ---

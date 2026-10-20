@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Methodology Principles"
+title: "Methodology Principles v1.1"
+description: "The normative entry point to the AI Systems Framework, linking probabilistic system state, trustworthy measurement, controlled experiments, release gates, and operational learning into one discipline."
 linkTitle: "Methodology Principles"
 ---
-# Methodology Principles v1.1
-
 
 A design-and-operations discipline for **LLM / agentic systems** where behavior is stochastic, tool-dependent, and measured with imperfect instruments.
 

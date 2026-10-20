@@ -1,9 +1,11 @@
 ---
 draft: false
 toc: true
+description: "A deferred behavior-management sketch attaching evaluation to the production promise, so failures can prompt implementation fixes or reconsideration of product intent."
 title: "Evaluation And Production Learning"
 linkTitle: "Evaluation And Production Learning"
 ---
+
 > **Status:** Deferred note. Evaluation is kept separate from the current operating model and is not developed here yet.
 
 ## 7. Evals stop being "AI tests"

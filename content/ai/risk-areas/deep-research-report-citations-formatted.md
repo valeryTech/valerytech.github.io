@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A source research report maps SVPG solution-risk dimensions to Torres’s assumption testing and opportunity trees, proposing a combined workflow while examining scope, ethics, and feasibility-versus-viability boundaries."
 title: "Deep Research Report Citations Formatted"
 linkTitle: "Deep Research Report Citations Formatted"
 ---

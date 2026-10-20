@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explains what a hands-on AI engineering role must support: applying experienced judgment, investigating behavior, influencing decisions, and developing the practice through production work."
 title: "Align"
 linkTitle: "Align"
 ---

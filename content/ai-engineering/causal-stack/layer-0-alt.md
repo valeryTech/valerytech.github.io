@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Layer 0 Alt"
-linkTitle: "Layer 0 Alt"
+title: "Layer 0 — Natural Language Interface Substrate"
+description: "An expanded alternative Layer 0 model of situated language interpretation, covering reference, intent, conversational revision, social signals, risk-sensitive repair, and worked interaction examples."
+linkTitle: "Layer 0 — Natural Language Interface Substrate"
 ---
 # 0. Outline:
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Classifies discovery and delivery by purpose rather than phase, explaining how the same team frames decisions, tests assumptions, fulfills obligations, and learns during production."
 title: "Discovery And Delivery"
 linkTitle: "Discovery And Delivery"
 ---

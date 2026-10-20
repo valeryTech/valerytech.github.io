@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Making System Design Decisions"
-description: "Choose a design that fits the requirements and existing system, record important trade-offs, and give implementation clear guidance."
+description: "How to choose a small system design, test consequential assumptions, record trade-offs, and tell implementation which data, dependency, and failure-handling rules it must preserve."
 lastmod: "2026-10-19"
 linkTitle: "System Design Decisions"
 ---

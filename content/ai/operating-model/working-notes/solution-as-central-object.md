@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A short argument for tracking the evolving solution as the lifecycle object, treating features as outputs or possible implementations of that solution."
 title: "Solution As Central Object"
 linkTitle: "Solution As Central Object"
 ---

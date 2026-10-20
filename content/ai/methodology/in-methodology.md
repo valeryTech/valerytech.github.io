@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Research notes grounding AI engineering evidence in empirical methods and causal inference, followed by a detailed validity critique of Zalando’s coding-agent experience report."
 title: "In Methodology"
 linkTitle: "In Methodology"
 ---

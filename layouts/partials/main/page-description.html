@@ -1,0 +1,3 @@
+{{- with .Description | strings.TrimSpace -}}
+  <p class="lead page-description">{{ $.RenderString (dict "display" "inline") . }}</p>
+{{- end -}}

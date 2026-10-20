@@ -23,6 +23,9 @@ Preview locally:
 make up
 ```
 
+This runs `make migrate` first to import the latest notes and refresh the agent
+maps, then starts the preview. If migration fails, preview startup stops.
+
 Build the site:
 
 ```bash
@@ -33,7 +36,7 @@ Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 
 For more detail:
 
-- [Public agent map](https://valery.tech/site-map.md) for website navigation in one Markdown document; generated on every Hugo build and refreshed by `make migrate` or `make site-map`
+- [Public agent map](https://valery.tech/llms.txt) for a short index and selected documents; five collection maps list all articles grouped by subsection. Maps are served as plain text, generated on every Hugo build, and refreshed by `make migrate` or `make site-map`.
 - [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) for local workflows
 - [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) for the external-notes migration workflow
 - [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for Docker, toolchain, CI, and deployment

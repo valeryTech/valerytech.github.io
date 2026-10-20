@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Production Learning"
+description: "Explains how deliberate production sampling and traceable evidence test commitments, reveal new failures, improve evaluation assets, and route findings without assuming drift or causation."
 linkTitle: "Production Learning"
 ---
 ## Purpose

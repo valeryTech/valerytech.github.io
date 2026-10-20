@@ -1,15 +1,19 @@
 ---
 draft: false
 toc: true
-title: "System Design Interview Input"
-linkTitle: "System Design Interview Input"
+title: "Collected System Design Interview Comments"
+description: "Collected practitioner discussions about system design interviews, seniority expectations, technical depth, trade-offs, cost, delivery constraints, and candidate evaluation."
+linkTitle: "Collected System Design Interview Comments"
 ---
+
+Source excerpts and practitioner opinions, with their original discussion context. Use the [interview index]({{< ref "system-design/interview" >}}) for working practice notes.
 
 other comment:
 
 A senior SWE also has nuanced understanding of time and cost with regards to a project. When asked to design a system one of the first questions I have is about the timeline for implementation so I don't end up with something very grand that can't be shipped on time. A senior SWE is also cognizant of the tradeoffs between ideal-state (design dogma), costs (recurring server costs, engineering builder-hours) , and timeline. Demonstrating good navigation of the tension between these factors during system design questions (not a new grad requirement) will also signal seniority.
 
 ## Comments
+
 
 > **kdn86** • [205 points](https://reddit.com/r/ExperiencedDevs/comments/1i57tmt/comment/m81hins/) •
 >

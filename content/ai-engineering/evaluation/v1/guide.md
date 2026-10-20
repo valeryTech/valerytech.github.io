@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Guide"
-linkTitle: "Guide"
+title: "AI Evaluation Guide"
+description: "A navigation guide to the first evaluation framework, routing readers from their current question to conceptual, evidence, coverage, judgment, harness, and production-learning notes."
+linkTitle: "AI Evaluation Guide"
 ---
-# AI Evaluation Guide
-
 
 > **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
 

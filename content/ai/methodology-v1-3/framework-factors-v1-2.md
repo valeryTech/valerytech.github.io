@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Framework Factors V1 2"
-linkTitle: "Framework Factors V1 2"
+title: "Framework Factors v1.2 (Failure Drivers and Required Controls)"
+description: "An earlier reliability operating model mapping AI failure drivers to controls, accountable owners, release-risk tiers, and maturity levels for design reviews, releases, and incident learning."
+linkTitle: "Framework Factors v1.2"
 ---
-# Framework Factors v1.2 (Failure Drivers and Required Controls)
-
 
 This document explains why LLM and agentic systems need different engineering controls than deterministic software, and how a tech lead should convert those failure drivers into release gates, owners, monitoring, and incident learning.
 

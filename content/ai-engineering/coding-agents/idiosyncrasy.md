@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Idiosyncrasy"
-linkTitle: "Idiosyncrasy"
+title: "Guide: Working with Idiosyncrasy in Agent-Ready Target Systems"
+description: "A diagnostic guide to architectural legibility, using routine changes to uncover hidden conventions and decide which deviations to document, simplify, or preserve."
+linkTitle: "Idiosyncrasy in Agent-Ready Systems"
 ---
-# Guide: Working with Idiosyncrasy in Agent-Ready Target Systems
-
 
 A target system intended for coding agents should be evaluated not only by its runtime behavior, but also by its **architectural legibility**. In this context, architectural legibility means that a competent newcomer -- human or agent -- can form reasonable expectations about where functionality is located, how changes should be made, and how those changes can be validated.
 

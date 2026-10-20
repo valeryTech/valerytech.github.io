@@ -58,6 +58,7 @@ Local work is isolated in Docker. Host-level Hugo or Node installation is not pa
 of the supported workflow.
 
 - `Makefile` is the primary contributor-facing entrypoint
+- `make up` completes migration and agent-map regeneration before starting preview
 - `compose.yaml` builds the image from `.devcontainer/Dockerfile`
 - the `site` service runs `npm run dev -- --bind=0.0.0.0`
 - the repo is bind-mounted into `/workspace`
@@ -74,6 +75,10 @@ stale, then starts the requested command.
 
 That yields a live local server at `http://localhost:1313` with Hugo file
 watching enabled for mounted source files.
+
+Production builds use `resources/production/` for generated resources, while
+preview uses `resources/`. This keeps production garbage collection from deleting
+stylesheet files that the running preview has cached.
 
 ### Repo task scripts
 

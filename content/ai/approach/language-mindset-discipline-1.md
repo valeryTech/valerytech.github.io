@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Applies a scientific engineering stance to discovery and delivery, making production commitments, evidence limits, decision authority, and the support expected from an employer explicit."
 title: "Language Mindset Discipline 1"
 linkTitle: "Language Mindset Discipline 1"
 ---

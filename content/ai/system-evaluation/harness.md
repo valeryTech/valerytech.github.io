@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Working with a Coding Agent"
-description: "A practical way to work with a coding agent: define the change, resolve important questions, choose a design, implement, test, and review."
+description: "A practical coding-agent workflow separating building, explaining, and checking a change, with focused investigations, lightweight records, and explicit decision ownership."
 lastmod: "2026-10-19"
 linkTitle: "Working with a Coding Agent"
 ---

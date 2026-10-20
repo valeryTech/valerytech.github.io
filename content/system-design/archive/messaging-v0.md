@@ -1,9 +1,15 @@
 ---
 draft: false
 toc: true
-title: "Events"
-linkTitle: "Events"
+title: "Original messaging and event notes"
+description: "Archived notes and sources on messaging models, event-driven architecture, delivery semantics, ordering, retention, retries, and event sourcing."
+linkTitle: "Original messaging and event notes"
 ---
+
+Preserved notes from before the October 19, 2026 refactor. [Return to the working note]({{< ref "system-design/elements/messaging" >}}). Technical claims and numerical assumptions retain their original draft context.
+
+<!-- Original note follows. -->
+
 # Sources
 
 

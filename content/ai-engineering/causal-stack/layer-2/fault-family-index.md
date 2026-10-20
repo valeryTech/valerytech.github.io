@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Fault Family Index"
-linkTitle: "Fault Family Index"
+title: "Layer 2 -- Fault Family Index"
+description: "Groups behavioral faults into fifteen overlapping analytical families, linking model contributors, evaluation methods, and controls while retaining separate atomic definitions and diagnostic boundaries."
+linkTitle: "Layer 2 -- Fault Family Index"
 ---
-# Layer 2 -- Fault Family Index
-
 
 Canonical atomic fault definitions live in `fault-inventory.md`.
 

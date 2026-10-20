@@ -1,44 +1,51 @@
 ---
 draft: false
 toc: true
-title: "Problem Solving Approach"
-linkTitle: "Problem Solving Approach"
+title: "Problem-Solving Checklist"
+description: "A reusable checklist for framing a design problem, tracing behavior, comparing alternatives, checking failures, and evaluating the complete system."
+linkTitle: "Problem-Solving Checklist"
 ---
-I want to create here a **structured** approach to breaking down complex problems.
 
-I think I can modify the common problem-solving framework to use it during system design.
+Use these questions inside whichever [framework]({{< ref "system-design/frameworks" >}}) you choose. The aim is to make the reasoning explicit without turning the checklist into a mandatory sequence.
 
-Thought process behind system design.
-
-What questions should we ask ourselves when designing a system, and how do we evaluate the available options?
-
-## Checklist to ensure all actions are completed
+## Frame the problem
 
 
-How to be sure that all trade-offs are considered?
+- Who uses the system? Include service clients as well as end users.
+- What are they trying to accomplish, and what is the core moment of value?
+- Which use cases are in scope? Which edge cases can be deferred?
+- What constraints and assumptions could change the design?
+- Which quality requirements matter most, and why?
 
-Many engineers skip defining the problem clearly, *leading to over-engineering or missing critical trade-offs* later.
+Confirm the scope before committing to a detailed solution. Keep the client's experience in view as the design develops.
 
-Also constantly? add client perspective - will it be convenient for a user. Make an assumptions about user. #todo learn UX
+## Trace concrete behavior
 
-Consider also services as clients?
 
-Add Link to holistic user view.
+- What inputs and outputs define each core operation?
+- Which entities and relationships are involved? What can change?
+- What are the access patterns?
+- Where does a request go, and what state changes before it succeeds?
+- What does the client observe on success, failure, or retry?
 
-Be direct, confident, and willing to take a clear position when the evidence supports one.
+## Compare and choose
 
-Do not react to my ideas, questions, or decisions with excitement, praise, admiration, or exaggerated approval. Avoid sycophantic language and unnecessary validation. Treat my input matter-of-factly and focus on its substance.
 
-Do not describe things as "unusual", "unusually", "rare", "remarkable", "impressive", "interesting", or similar unless that characterization is necessary and supported by the context.
+- What problem would this component or pattern solve?
+- What simpler alternative is available?
+- What does each option gain, cost, or make harder?
+- Which requirement supports the choice?
+- Which estimate or experiment would distinguish the alternatives?
 
-In particular, avoid filler such as:
+Make a decision when the evidence supports it. State uncertainty where it remains and identify what would change the decision.
 
-- "That's unusually insightful."
-- "That's a great question."
-- "You're absolutely right."
-- "That's a very interesting point."
-- "This is surprisingly effective."
+## Check the whole design
 
-Prefer plain statements that explain the actual point. If something is good, bad, common, rare, surprising, or important, say why instead of using an adjective as empty emphasis.
 
-Do not mirror my enthusiasm or emotional intensity. Keep your tone calm, matter-of-fact, and intellectually independent. Disagree with me when appropriate.
+- Does every core requirement have a complete flow?
+- Is the critical concurrency, consistency, or scaling problem addressed?
+- What happens when a dependency is slow or unavailable?
+- Does the user experience still make sense under the chosen trade-offs?
+- What remains unresolved, and what should be investigated next?
+
+The [interview-review notes]({{< ref "system-design/interview/mock-interviews" >}}) turn these questions into a practice loop.

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Seven overlapping AI product archetypes classified by primary work, with a separate deployment profile for context, collaboration, authority, evidence, continuity, and reuse."
 title: "Ai Product Types"
 linkTitle: "Ai Product Types"
 ---

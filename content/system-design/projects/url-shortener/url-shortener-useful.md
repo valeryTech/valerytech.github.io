@@ -1,9 +1,12 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener Useful"
-linkTitle: "URL Shortener Useful"
+title: "URL Shortener: Requirements and Product Context"
+description: "URL-shortener requirements and product perspectives connecting core value, enabling features, optional enhancements, user stories, redirect flows, and business context."
+linkTitle: "URL Shortener: Requirements and Product Context"
 ---
+
+Additional requirements and product-framing perspectives. The [case index]({{< ref "system-design/projects/url-shortener" >}}) connects these proposals to the working design and NFR explorations.
 
 From a product marketing perspective, "Analytics" might be the core value proposition you sell. But from a **system implementation and user-experience perspective, Redirection is the non-negotiable, foundational core of the entire product.**
 
@@ -38,6 +41,7 @@ De-prioritized: Link Customization & Branded Domains
 - QR code generation, link previews
 
 # URL Shortener -- Interview‑Style System Requirements (v1)
+
 
 > **Interview framing (≤5 min):** I'll lock the scope with top functional requirements prioritized by user value, quantify the key non‑functional targets for the value path, state assumptions/constraints, and mark out‑of‑scope. This will drive a lean high‑level design.
 
@@ -123,7 +127,9 @@ This sequence describes the events that occur in the milliseconds after an end-u
 
 # Product Thinking
 
+
 > `Why -> How -> What's Next` Justification
+
 You need a fast, effective way to integrate product thinking into your technical answer.
 
 The key is to use product reasoning to **justify your technical decisions**. Here's a concise framework to do this quickly.
@@ -144,6 +150,7 @@ Start by briefly stating the core problem and goal. This shows you understand th
 - **Why it works**: In two sentences, you've identified the user, the business need, and used that to declare your main technical priority.
 
 ### **Step 2: Explain the "How" (The Core Technical Flow)**
+
 
 #todo refactor this to HLD + Deep Dives approach from Hello Interview Framework
 

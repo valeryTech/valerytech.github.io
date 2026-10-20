@@ -1,38 +1,44 @@
 ---
 draft: false
 toc: true
-title: "Dropbox"
-linkTitle: "Dropbox"
+title: "Dropbox: Personal Preparation Notes"
+description: "Personal Dropbox preparation notes on upload, download, synchronization, large files, integrity, workload assumptions, and questions to resolve before completing the design."
+linkTitle: "Personal Notes"
 ---
-core features:
 
-upload a file
+Partial design and reflection. The [source walkthrough]({{< ref "system-design/projects/dropbox/hello-interview-notes" >}}) is kept separately so its explanation can be compared with an independent attempt.
 
-download a file
-
-automatically sync file across devices
-
-how we can come up to blob storage?
-
-## NFRs
+## Core operations
 
 
-- availability `>>` consistency
-- contextualizing latency
-- file size ~50 GB
-	- resumable uploads
-- data integrity
+- Upload a file.
+- Download a file.
+- Automatically synchronize files across devices.
 
-# Calculations
+## Provisional quality and scale assumptions
 
 
-scale: DAU=`2-3*10^8`
+The initial notes propose:
 
-do we need to define: dt of upload visibility?
+- Favor availability where delayed visibility is acceptable; define consistency needs separately for the relevant operations.
+- Contextualize latency for each operation.
+- Support files around 50 GB, motivating a discussion of resumable uploads.
+- Preserve data integrity.
+- Explore a workload of roughly 200–300 million daily active users.
 
-# Reflection
+These are exercise assumptions to confirm, rather than measured workload facts.
+
+## Questions to resolve
 
 
-again I need a checklist to remember that first I have to solve core client problems and (how to say)
+- How do the file operations and object sizes lead to a choice of blob storage?
+- How soon should an uploaded file become visible on another device?
+- Which part of upload or synchronization must complete before the client sees success?
+- What request rates and transfer volumes follow from the assumed active users?
 
-Evon reason about dropbox as already knowleagable user (or engineer) because the did it before. So he kind of describes things. But we during our preparation and skills imrovement have to really reason on lower level perhaps. Or, at least do something more detailed approach.
+## Reflection
+
+
+Start by solving the core client problems. A source walkthrough can describe a familiar design quickly; during preparation, work through the lower-level reasoning needed to derive the design independently.
+
+Use the [problem-solving checklist]({{< ref "system-design/frameworks/problem-solving-approach" >}}) to keep the client flow visible before adding components.

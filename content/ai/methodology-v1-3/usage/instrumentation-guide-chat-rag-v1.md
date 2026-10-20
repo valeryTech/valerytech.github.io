@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Instrumentation Guide Chat Rag V1"
-linkTitle: "Instrumentation Guide Chat Rag V1"
+title: "Instrumentation Guide for Chat + RAG (v1)"
+description: "A draft chat-and-RAG implementation guide specifying retrieval evidence, context selection, citation, provenance, and missingness records, with sampled raw exemplars and conformance checks for trustworthy regression diagnosis."
+linkTitle: "Chat + RAG Instrumentation"
 ---
-# Instrumentation Guide for Chat + RAG (v1)
-
 
 **Status:** Draft
 

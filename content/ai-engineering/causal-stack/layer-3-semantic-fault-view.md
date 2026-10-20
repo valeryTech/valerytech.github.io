@@ -1,11 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Layer 3 Semantic Fault View"
-linkTitle: "Layer 3 Semantic Fault View"
+title: "Layer 3 -- Semantic Fault View"
+description: "A specialist view of system controls for preserving meaning, source authority, support relations, intent, and field semantics across retrieval, transformations, tool use, and interaction."
+linkTitle: "Layer 3 -- Semantic Fault View"
 ---
-# Layer 3 -- Semantic Fault View
-
 ## Purpose
 
 

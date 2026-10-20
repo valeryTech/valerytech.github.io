@@ -1,285 +1,91 @@
 ---
 draft: false
 toc: true
-title: "Phrases"
-linkTitle: "Phrases"
+title: "Communicating During a System Design Interview"
+description: "Practical interview phrasing for clarifying scope, stating assumptions, explaining flows, comparing choices, handling disagreement and uncertainty, and managing time."
+linkTitle: "Communication Phrases"
 ---
-Your mentioned also that we should retrieve interviews
 
-I'm thinking about that actual interviewing.io
+Use these as prompts for clear reasoning. Adapt them to what you actually know and to the discussion; there is no need to memorize a script.
 
-# How to push back against your interviewer in a helpful way
+## Establish the scope
 
 
-Example of a candidate pushing back:
+> “Let me check the core use case: the user wants to ___. I suggest we focus on ___ and leave ___ for later. Does that match the problem?”
 
-**Interviewer:** "I wouldn't use a cache here in my opinion"
+> “Should I include authentication in this design, or assume an existing service provides it?”
 
-**Interviewee:** "Sure we can take out the cache, though the reason I think a cache might be useful here is [insert technical reasoning here]. Do you think there might be a better way we can approach this?"
+> “What happens from the user's perspective if this operation is delayed or fails?”
 
-## Choose your words carefully
+Ask questions whose answers could change the design. When proposing a scope, make the assumption visible and leave room for correction.
 
+## State an assumption
 
-1. Acknowledge and affirm your interviewer. Start with "sure," "OK," or "yes," so they are open to what you're saying. This results in them being less likely to push back against your pushback.
 
-(?)
-> The best language to cause your counterpart to let their guard down is "I'm sorry". If you want to push back, and you don't want the interviewer to challenge it, start your push back with "Ok. I'm sorry, but if we take out the cache won't that result in [insert technical reasoning here]..."
-1. Remember that you are colleagues on the same team. The best way to demonstrate this is to use collaborative language. This is the easiest way to build empathy and score micro points to get them on your side.
-> The best language to demonstrate collaboration is "We" or "Let's." For example: "We could take out the cache. However, if we did that one drawback would be [insert technical reasoning here]..."
+> “I'll assume ___ as a starting point. If it were ___ instead, the main design change would be ___.”
 
-## Handwave stuff for the sake of time
+> “I'm assuming hundreds of concurrent interviews for this example. Should we examine a substantially larger workload?”
 
+> “For the initial design, I'll treat ___ as an existing dependency with this contract: ___.”
 
-No one can design a real-world system in 40-60 minutes. You can only design partial non-usable systems in that amount of time. As a result, you won't be able to cover everything in depth.
+Distinguish a fact supplied by the interviewer from a number or condition you are proposing.
 
-{{< callout context="note" title="Remember" icon="outline/info-circle" >}}
-It's more important to cover everything broadly than it is to explain every small thing in detail.
-{{< /callout >}}
+## Explain a flow
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
-It is common for interviewers to ask a candidate to "design Gmail." There are so many different dimensions to the product we know as "Gmail," so no candidate can actually design Gmail in the amount of time they have in an interview. Whenever people tell you to 'design gmail' that is to scare you."
-{{< /callout >}}
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
-Handwaving stuff is a smart time-management choice. It's also a tactic to avoid getting derailed.
-{{< /callout >}}
+> “I'll walk through this end to end: the request enters here, this component validates it, this state changes, and the client receives ___.”
 
+> “I'll define the relevant API and fields alongside the flow so we can see how they fit together.”
 
-When we say "handwave stuff," this means that you can say, "I'm going to skip going into [detailed thing] for now, but if we want, we can come back to it later." If you dive deeply into the details of every single thing, you'll fall down too many rabbit holes to be productive. But if you notice and address this so your interviewer understands, by saying something like, "Hey, here is a rabbit hole we could go down, but let's skip it for now," you're killing a few birds with one stone. You're demonstrating your knowledge by calling it out, and simultaneously you're keeping the interview on track, because in an open-ended situation like this, it's just as important to know where you're not going as it is to know where you are going.
+Keep the explanation grounded in a concrete request and the state it touches.
 
-### Example
+## Compare alternatives and decide
 
 
-of a smart way to handwave stuff (taken from one of our mock interviews)
+> “Option A helps with ___ but introduces ___. Option B is simpler in ___ but gives up ___. Given our requirement for ___, I'll choose A.”
 
-## Be Proactive
+> “The estimate matters because it tells us whether ___ fits on one instance or needs to be partitioned.”
 
+> “This decision depends on ___. I'd revisit it if ___ changed.”
 
-Be proactive when you know there's a particularly tricky part coming up, and you know you want to take it on
+Tie trade-offs to the actual workload, access patterns, and guarantees. Avoid treating a database category or architectural style as a complete argument.
 
-If you feel some part of the question could/would become problematic, fight the instinct to avoid it and instead pinpoint it right away.
+## Respond to disagreement
 
-You can say something like this:
 
-"The challenge we would face very soon would be with [multiple workers updating their offsets while grabbing the next task concurrently?]. Let me finish the [API specs / DB schema / etc] part and then begin attacking that challenge. I know that would be a hard part, and might kindly ask you to navigate it if I begin approaching the problem from the wrong end."
+> “We can remove the cache. My reason for including it was ___. Without it, how should we meet ___?”
 
-# Exactly what words to say in specific scenarios
+> “I may be missing a constraint. Is your concern the added complexity, the consistency behavior, or something else?”
 
-## What to say when you don't know what to do
+> “That changes the assumption I was using. I'll update the design here and check the affected flow.”
 
+Treat the discussion as collaborative design. Acknowledge the concern, explain your reasoning, and use the feedback to move the design forward.
 
-Weak interview candidates are scared to ever utter the phrase "I don't know." Stronger interview candidates say "I don't know" more often and then strengthen this with a buffer -- the words you put around your uncertainty. A naked "I don't know" is a dead end, so your interviewer has nowhere to go. Adding a buffer gives your interviewer several paths they can take to move the conversation forward.
+## Make uncertainty useful
 
-хх
 
-Before we tell you exactly what words to say, let's unpack a concept. There are different levels of "not knowing." Sometimes you have no clue. Sometimes you have a clue. And other times, you're certain.
+> “I don't know that product's exact guarantee. The behavior this design needs is ___. I'd verify whether the product provides it.”
 
-<https://interviewing.io/guides/system-design-interview/part-two#c-exactly-what-words-to-say-in-specific-scenarios>
+> “I'm unsure about ___. Let me work through a concrete example.”
 
-# Questions
+> “I see two possible approaches. I'll compare them against our requirements before choosing.”
 
+## Manage depth and time
 
-Asking High-Impact, Non-Trivial Questions
 
-Many candidates ask basic clarifying questions (e.g., "What's the expected user base?"). A proactive candidate asks **impactful, second-order questions**, such as:
+> “The difficult part here is ___. I'll finish the core flow, then return to that decision.”
 
-The goal is to uncover **hidden constraints and trade-offs** that shape the design's direction.
+> “For now, this component must provide ___. I'll keep its internals as a deep-dive topic.”
 
-## Alternative
+> “We have an end-to-end design. The highest-risk remaining issue is ___. I'll focus the next few minutes there.”
 
+Defer implementation detail deliberately, while keeping the component's responsibility and required behavior clear.
 
-Maybe ask not the expected user base, but make a set of assumptions and then aks about the set itself. Does it reflect the actual situation?
+## Check agreement and conclude
 
-# Verify phrases
 
+> “Is this the flow you intended us to support?”
 
-1. Is that correct?
-2. Is that a fair way to describe this?"
-3. "Would you say that's an accurate representation of the concept?"
-4. "Does that seem like a correct description to you?"
-5. "Do you think I'm on the right track with that explanation?"
-6. "Have I captured the essence of the idea adequately?"
-7. "Do you agree with this portrayal of the system?"
-8. "Does that capture the idea correctly, in your opinion?"
-9. "Is my understanding in line with what we're aiming for?"
-10. "Would this be an appropriate way to articulate the design?"
-11. "Does this align well with your understanding?"
-12. "Is this depiction consistent with your perception of the system?"
-
-# Assumption phrases
-
-
-Let's assume that
-
-1. "For the purpose of this discussion, we can consider..."
-2. "In order to simplify the problem, we will suppose that..."
-3. "As a starting point, let's take into account that..."
-4. "To begin with, let's presume that..."
-5. "In the context of this system design, we'll work under the assumption that..."
-6. "For the sake of our analysis, we'll assume that..."
-7. "To simplify our approach, let's suppose that..."
-8. "For the sake of this discussion, let's say that..."
-9. "If we consider a situation where..."
-10. "Presuming that..."
-11. "Under the assumption that..."
-12. "Suppose that..."
-13. "In a scenario where..."
-14. "Assuming, for argument's sake, that..."
-15. "If we take for granted that..."
-16. "Let's propose a hypothetical in which..."
-17. "Should we accept the premise that..."
-18. "Positing that..."
-19. "Given the condition that..."
-20. "On the understanding that..."
-21. "Taking into consideration that..."
-22. "Assuming the scenario where..."
-23. "Let's model a situation where..."
+> “We've covered ___. The design meets ___ under these assumptions. The main unresolved risk is ___, and the next thing I'd check is ___.”
 
-Remember to use these phrases to clearly outline assumptions or conditions to your design. This will help set up a clear context and constraints for your design solutions.
-
-# Assumption questions
-
-
-And just a general question. Can I assume that [your auth and authorization is already handled?]
-
-1. "Is it safe to presume that...?"
-2. "Am I correct in thinking that...?"
-3. "Do we take it as a given that...?"
-4. "Would it be reasonable to infer that...?"
-5. "Is it correct to suppose that...?"
-6. "May I consider that...?"
-7. "Would you agree if I say that...?"
-8. "Is it accurate to assume that...?"
-9. "Can we operate under the assumption that...?"
-10. "Could we establish that...?"
-11. "Would it be logical to propose that...?"
-12. "Are we working on the premise that...?"
-13. "Can we accept the notion that...?"
-14. "Is it fair to suggest that...?"
-15. "Should we proceed under the belief that...?"
-16. "Can we base our discussion on the idea that...?"
-17. "Would it be sensible to envisage that...?"
-18. "Can we build our argument on the fact that...?"
-19. "Could we take for granted that...?"
-
-# Trade-off Discussion Phrases
-
-
-These phrases highlight the pros and cons of a design decision.
-
-"If we use a relational database, we'll have strong consistency and structured data, but it may not scale horizontally as well as a NoSQL database."
-
-"Implementing microservices will provide scalability and isolation, but it might also introduce complexity in terms of service coordination and data consistency."
-
-1. "While using a SQL database would give us the benefits of ACID properties and structured data, we might encounter scalability issues as the user base grows."
-2. "If we choose to implement a microservices architecture, we would benefit from better scalability and separation of concerns, but we also need to consider the increased complexity in service communication and data consistency."
-3. "Opting for a monolithic architecture could expedite our initial development process due to its simplicity. However, in the long run, we might face issues with scalability and agility."
-4. "Implementing a caching layer can significantly improve our system's performance by reducing database load. However, we would then need to address challenges related to cache invalidation and maintaining data consistency."
-5. "While vertical scaling might provide us with a straightforward way to improve our system's capacity, it's not as cost-effective or flexible as horizontal scaling."
-6. "Implementing data sharding can help manage large volumes of data more efficiently, but it also introduces additional complexity, such as handling distributed transactions and joins."
-7. "Using a NoSQL database can offer us flexible data models and easy scalability, but we lose some of the benefits of structured querying and ACID properties that a SQL database provides."
-8. "Storing data in multiple regions can improve latency and availability for users worldwide, but we'd have to carefully handle data replication and consistency."
-
-When discussing trade-offs during a system design interview, there are several categories that you can focus on. Here are some examples:
-
-1. **Performance vs Scalability**: These phrases discuss the trade-off between optimizing a system for performance (speed) versus scaling (handling growth).
-	- "Using a cache can significantly improve performance, but it also introduces the problem of cache management as we scale."
-	- "We could optimize our database for read-heavy operations for faster performance, but this could affect our ability to scale for write-heavy operations."
-2. **Consistency vs Availability**: In distributed systems, there's often a trade-off between data consistency and system availability (as described in the CAP theorem).
-	- "We could design for strong consistency, but that might impact our system's availability in case of network partition."
-	- "If we aim for high availability, we might need to tolerate eventual consistency in our data."
-3. **Speed of Development vs System Performance**: These phrases discuss the trade-off between quickly building a system and optimizing it for high performance.
-	- "Using an ORM could speed up our development process, but it might not be as performant as writing raw SQL queries."
-	- "A monolithic architecture may allow us to develop quickly in the early stages, but it could impact performance and scalability in the long term."
-4. **Read Optimization vs Write Optimization**: These phrases discuss the trade-off between optimizing for read operations versus write operations.
-	- "Denormalizing the database can speed up read operations, but it can slow down write operations due to the need for multiple updates."
-	- "If we optimize for write operations, we might slow down read operations, as more complex queries might be required."
-5. **Cost vs Performance**: These phrases discuss the trade-off between the cost of resources (like servers or services) and the performance they provide.
-	- "While using premium server hardware or services can improve our system's performance, it will also increase our costs."
-	- "We could use a CDN to improve our global load times, but this would also increase our operational expenses."
-
-# To Sort and Review
-
-# Common phrases and synonims
-
-
-- going to do something
-- Intend to do something
-- Aim to do something
-
-# Requirements
-
-
-Can I assume that this system is already handled or do I need also implement it here?
-
-Just to simplify and for the context what I'm doing here I will assume that I'll get an email address that is already validated and all that and that email address will be what I would use to refer to specific users.
-
-I just want to get on a general overwiev so we are sure that we are on the same page so basically we are going to have like a user [situation overview]
-
-So the first thing that we are going to have is that both will have to access some type of front end. In it the logged in
-
-We are also going to have a some way to compile and run the code
-
-I'm assuming here we are talking about a coding interview which is more interesting. But do you care about other types of interview.
-
-Do you want me to cover other parts? -> No
-
-Rewiew phrases and their aim.
-
-And at the same time we need to have something that will be able to store the interview.
-
-This would be bassically the audio support where we are actually going to allow users to talk to each other.
-
-So I think discover the main features that we are going to support.
-
-Is there anything else that is not on the list that you think I should cover?
-
-Ok. Ok. This makes perfect sense. Okay. (Agreement)
-
-So this service will actually have to support like multiple concurrent interviews of course like there might be more than one interview happening at the same time. But that should be fine ... so ... I'm making an assumption here and you might correct me if I'm wrong.But assistant like interviewer dot IO it might have maybe let's say hundreds of users doing an interview at the same moment in time but it is it seems unlikely that they would have like hundreds of thousands with like different orders of magnitude right uh is this a fair assumption do you want me to assume that it will have like a reasonable number of users or do you want me to just for the sake of it assume that we are going to have I don't know a million users are doing it at the same time or something like that I think talking about how your system can scale
-
-^ question about assumption and
-
-REWRITED
-
-So, this service will need to support multiple concurrent interviews, as there may be more than one interview happening simultaneously. However, I want to clarify my assumption and invite your input if I'm mistaken. For instance, Assistant Interviewer.IO might have hundreds of users conducting interviews concurrently, but it seems unlikely that it would have hundreds of thousands of users or orders of magnitude higher. Is it fair to assume that we should consider a reasonable number of users, or would you like me to assume an extreme scenario, such as a million users conducting interviews simultaneously? I believe discussing how the system can scale is important in this context.
-
-xxxxxxxx
-
-Design for me an interviewing.io
-
-I'll try here to draw main components (shows drawing.io)
-
-So, basically,
-
-First, we are going to have the online editor and
-
-so basically these these two users will would actually talk then as I mentioned with that at first with the general front end here uh this front end is obviously like a distributed piece of infrastructure. So for the purpose of this I will put it as a black box here. If we have time later we can try make it like to to give it a specific dimension to see how many like service we would need and all that. But because I will be more worried about allowing it to scale than to have a correct number of instance right off the bat. Then I will not discuss this at this point in time but I we can get to it like later. right? So basically yeah these users they are already authenticated
-
-And basically what it does.
-
-xxxx design Spotify (IGonAnOffer)
-
-I can think of thing I mean there'are song musics, [list of ]
-
-Lets establish some basic use cases.
-
-But most core thing is that I play a song and it's coming back through my phone maybe my car
-
-Let's do some quick drilling down into some numbers here. So tell me about how many users you're thinking about here for this design?
-
-What about number of songs?
-
-make do
-
-a black amish a thing?
-
-..., I barely had any suicides, did I?
-
-I'd say Robert's about 40-odd - [maybe](https://dictionary.cambridge.org/dictionary/english/maybe "maybe") 45.
-
-To learn roots, you must understand the prefix and suffix pattern of words and their impact when added to different words.
-
-from grokking sd interview
-
-*To handle this*, a more intelligent LB solution *can be placed* that periodically queries backend server about their load and *adjusts traffic* based on that.
+For the source discussion, see [interviewing.io's communication guide](https://interviewing.io/guides/system-design-interview/part-two#c-exactly-what-words-to-say-in-specific-scenarios). The [original phrase collection]({{< ref "system-design/archive/interview-phrases-v0" >}}) preserves the longer examples, synonym lists, and transcript fragments.

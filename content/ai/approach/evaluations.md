@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Connects evaluation’s role in discovery and delivery with the maintained people, cases, criteria, and tools that turn observed behavior into decision-relevant evidence."
 title: "Evaluations"
 linkTitle: "Evaluations"
 ---

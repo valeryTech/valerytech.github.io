@@ -1,9 +1,14 @@
 ---
 draft: false
 toc: true
-title: "TikTok"
-linkTitle: "TikTok"
+title: "TikTok: Requirements-Gathering Example"
+description: "A TikTok requirements-gathering example demonstrating how to clarify objects, relationships, mutability, access patterns, and important system qualities."
+linkTitle: "TikTok: Requirements-Gathering Example"
 ---
+# TikTok
+
+
+Requirements-focused example associated with the [interviewing.io framework]({{< ref "system-design/frameworks/framework-iv" >}}). It illustrates objects, relations, mutability, and access patterns rather than a complete design.
 
 Let's say you are not familiar with TikTok. What do you do next? Probably ask your interviewer, right? Even if you know the platform well, it's wise to start by clarifying rather than assuming. The flow might go something like this:
 

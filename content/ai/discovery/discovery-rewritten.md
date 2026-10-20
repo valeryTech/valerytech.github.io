@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A working research synthesis grounding inquiry before problem definition in Schön, creative problem solving, co-evolution, sensemaking, and design-space theory, with prototyping as one method and selective commitment."
 title: "Discovery Rewritten"
 linkTitle: "Discovery Rewritten"
 ---

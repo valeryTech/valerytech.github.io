@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Common Mistakes in AI-Assisted Development"
-description: "Common mistakes when building software with AI, with examples and review checks for requirements, system design, implementation, and tests."
+description: "A reviewer’s catalog of AI-assisted development mistakes, showing how guessed requirements, missed impacts, unsuitable designs, and shared code–test assumptions can survive passing tests."
 lastmod: "2026-10-19"
 linkTitle: "Common Development Mistakes"
 ---

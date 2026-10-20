@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "An editorial audit of the operating-model draft split, recording selected interface ideas, unresolved outcome accountability, alternative solution states, and source destinations."
 title: "In Model Etc Rearrangement"
 linkTitle: "In Model Etc Rearrangement"
 ---
