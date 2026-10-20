@@ -3,7 +3,7 @@
   {{- if not $section.Draft -}}
     {{- $title := $section.Title | plainify | htmlUnescape -}}
     {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
-    {{- printf "- [%s](%s)" $title .Permalink -}}
+    {{- printf "- [%s](%s)" $title (partial "agent-map/url.html" $section) -}}
     {{- if not $.compact -}}
       {{- with $section.Description -}}
         {{- if ne . "Default Description" -}}

@@ -6,7 +6,7 @@
 {{- range $section.Sections.ByTitle -}}
   {{- $title := .Title | plainify | htmlUnescape -}}
   {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
-  {{- printf "\n%s [%s](%s)\n\n" (strings.Repeat $level "#") $title .Permalink -}}
+  {{- printf "\n%s [%s](%s)\n\n" (strings.Repeat $level "#") $title .RelPermalink -}}
   {{- with .Description -}}
     {{- if ne . "Default Description" -}}
       {{- printf "%s\n\n" (. | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 240) -}}

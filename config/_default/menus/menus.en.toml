@@ -72,5 +72,5 @@
 
 [[footer]]
   name = "Agent map"
-  url = "/llms.txt"
+  url = "/agent-map/"
   weight = 80

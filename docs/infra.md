@@ -90,6 +90,9 @@ the `Makefile` or CI workflows:
   core routes
 - `scripts/clean-generated.sh` removes disposable generated outputs
 - `scripts/migrate-site.sh` runs the Docker-wrapped migration entrypoint
+- `scripts/site-map.mjs` assembles generated Markdown for the six HTML navigation
+  maps after migration and before npm preview/build; it uses the existing Node and
+  Hugo toolchain, including on CI
 
 The devcontainer reuses the same Dockerfile, workspace mount, and bootstrap logic,
 so opening the repo in a devcontainer and running `docker compose` use the same

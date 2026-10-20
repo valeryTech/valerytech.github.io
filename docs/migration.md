@@ -37,7 +37,7 @@ The note's content starts here.
 
 Run `make migrate` after editing the source note. The importer preserves
 `description` in the generated page metadata, and the article's section map
-(discoverable from `/llms.txt`) uses it ahead of the automatic excerpt. It is
+(discoverable from `/agent-map/`) uses it ahead of the automatic excerpt. It is
 also available to the website's page metadata. Keep it concise: the map displays
 up to 240 characters.
 If no description is supplied, the map continues to use the page summary.
@@ -92,18 +92,20 @@ make migrate
 
 Use this to rebuild only the sections managed by the manifest.
 
-After a successful sync, the migration command also regenerates the public
-agent maps at `public/llms.txt` and in the five main collection directories,
-with matching `site-map.md` versions. Visitors start at `/llms.txt` through the
+After a successful sync, the migration command assembles Markdown map sources in
+the generated `content/agent-map/` directory. Hugo renders them as HTML during
+the next preview or production build. Visitors start at `/agent-map/` through the
 footer's **Agent map** link. This short index links to collection maps and
 selected documents; each collection map lists all its articles, grouped by
 subsection. Small collections such as Blog and Topics fit in the main index.
-There are six maps in total. All `llms.txt` files use `text/plain` for reader compatibility.
+There are six maps in total, served as ordinary `text/html` pages at `/agent-map/`
+and `/agent-map/<collection>/`. The former `llms.txt` and `site-map.md` URLs remain
+as companion downloads and link to the HTML maps.
 `make migrate-check` does not rewrite the maps.
 
-Hugo also generates the complete map set during every preview and production
-build. The exporter removes obsolete map files, including the former nested
-subsection maps. Article descriptions come from source-note metadata, with the page
+The npm preview and build entrypoints refresh the Markdown sources before Hugo
+renders the site, including on CI. Generated sources are ignored by Git; production
+builds clear obsolete public outputs. Article descriptions come from source-note metadata, with the page
 summary as a fallback. Drafts and private source-note paths are excluded.
 The main index's selected documents are configured in `data/agent_navigation.toml`.
 

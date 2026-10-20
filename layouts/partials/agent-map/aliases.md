@@ -5,7 +5,7 @@
   {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
   {{- if and (not .Draft) (.OutputFormats.Get "HTML") -}}
     {{- range .Aliases -}}
-      {{- $links = $links | append (printf "- [%s](%s) → [%s](%s)\n" . (. | absURL) $title $page.Permalink) -}}
+      {{- $links = $links | append (printf "- [%s](%s) → [%s](%s)\n" . (. | relURL) $title $page.RelPermalink) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

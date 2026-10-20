@@ -7,4 +7,4 @@ ROOT="$(repo_root)"
 
 cd "$ROOT"
 log "Removing generated site artifacts"
-rm -rf public resources hugo_stats.json .hugo_build.lock
+rm -rf public resources content/agent-map hugo_stats.json .hugo_build.lock

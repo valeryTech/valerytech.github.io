@@ -34,8 +34,8 @@ migrate: ## Regenerate managed content from external notes
 migrate-check: ## Validate migration mappings and stage output
 	@bash scripts/migrate-site.sh check
 
-site-map: ## Generate the main and section agent maps in public/
-	@docker compose run --rm -e UV_PROJECT_ENVIRONMENT=.migration/.venv site uv run --frozen python -m scripts.site_map
+site-map: ## Assemble Markdown sources for the HTML agent maps
+	@docker compose run --rm site npm run maps
 
 site-map-check: ## Check all agent maps without rewriting them
-	@docker compose run --rm -e UV_PROJECT_ENVIRONMENT=.migration/.venv site uv run --frozen python -m scripts.site_map --check
+	@docker compose run --rm site npm run maps -- --check

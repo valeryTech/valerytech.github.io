@@ -41,7 +41,7 @@ copyRight = "Copyright (c) 2014-2023"
   isPlainText = true
   notAlternative = true
 
-# One navigation document, also served as plain text for agent reader compatibility.
+# Markdown assembly exports; keep the old text URLs as companion downloads.
 [mediaTypes."text/markdown"]
   suffixes = ["md"]
 

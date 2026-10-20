@@ -7,9 +7,12 @@
   "packageManager": "npm@11.13.0",
   "scripts": {
     "create": "hugo new",
+    "predev": "node scripts/site-map.mjs",
     "dev": "hugo server --disableFastRender --noHTTPCache --renderToMemory --baseURL=http://localhost:1313/",
     "format": "prettier **/** -w -c",
+    "prebuild": "node scripts/site-map.mjs",
     "build": "hugo --minify --gc --cleanDestinationDir",
+    "maps": "node scripts/site-map.mjs",
     "test:analytics": "node --test tests/analytics/*.test.mjs",
     "test:site-map": "node --test tests/site-map/*.test.mjs",
     "preview": "vite preview --outDir public"

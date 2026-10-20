@@ -40,19 +40,22 @@ make build
 Use this to regenerate `public/` and `resources/` the same way CI and GitHub
 Pages do.
 
-Every Hugo build creates six navigation maps:
+Preview startup and production builds assemble Markdown, then Hugo renders six
+HTML navigation maps:
 
-- `/llms.txt` is the short main index, with links to top-level section maps and
+- `/agent-map/` is the short main index, with links to top-level section maps and
   selected documents.
-- `/ai/llms.txt`, `/ai-engineering/llms.txt`, `/engineering/llms.txt`,
-  `/system-design/llms.txt`, and `/projects/llms.txt` each list their collection's
+- `/agent-map/ai/`, `/agent-map/ai-engineering/`, `/agent-map/engineering/`,
+  `/agent-map/system-design/`, and `/agent-map/projects/` each list their collection's
   complete contents, grouped under subsection headings with descriptions and
   relevant legacy redirects.
 - Blog, Topics, and website information pages fit in the main index. Subsections
   do not generate separate map files.
 
-All maps are served as `text/plain`; each has an identical `site-map.md` version
-in the same directory. Every collection map links back to the main index.
+Maps are ordinary HTML pages with headings and links, served as `text/html`.
+The previous `/llms.txt` and `/site-map.md` downloads remain available at the root
+and under the five content collections, and now point to the HTML maps.
+Every collection map links back to the main index.
 The footer links to the main map; page metadata links to the collection map,
 including for articles in nested subsections. Selected reading links are
 configured in `data/agent_navigation.toml`.
@@ -60,10 +63,19 @@ configured in `data/agent_navigation.toml`.
 The five mapped collections are selected by the `cascade` rule in
 `config/_default/hugo.toml`.
 
-`make migrate` refreshes the complete map set after a successful content sync.
-Use `make site-map` to export all maps again and remove obsolete section-map
-files; `make site-map-check` checks the complete set against a fresh build.
-The output is generated rather than committed.
+`make migrate` runs `scripts/site-map.mjs` after a successful content sync.
+The script uses Hugo's page inventory to assemble six Markdown sources under
+`content/agent-map/`. These generated files are ignored by Git and excluded from
+normal article listings and search. Hugo renders them with `layouts/agent-map.html`.
+The `predev` and `prebuild` npm hooks also refresh the sources, so a clean checkout
+can preview or deploy without access to the external notes folder.
+
+Use `make site-map` to regenerate the Markdown sources without starting the site;
+an already running preview rebuilds them automatically. `make site-map-check`
+compares the Markdown sources against a fresh assembly without rewriting them.
+`make build` renders the complete HTML site and removes obsolete public outputs.
+After editing repo content during a preview session, rerun `make site-map` to
+refresh its HTML maps.
 
 Run a quick local confidence check:
 

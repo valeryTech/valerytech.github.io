@@ -12,6 +12,12 @@ ROUTES=(
   "/ai/"
   "/ai/collab-and-joint-work/"
   "/engineering/topics/api/"
+  "/agent-map/"
+  "/agent-map/ai/"
+  "/agent-map/ai-engineering/"
+  "/agent-map/engineering/"
+  "/agent-map/system-design/"
+  "/agent-map/projects/"
   "/llms.txt"
   "/site-map.md"
   "/ai/llms.txt"
@@ -87,6 +93,15 @@ for route in "${ROUTES[@]}"; do
 done
 
 for map_path in "" "/ai" "/ai-engineering" "/engineering" "/system-design" "/projects"; do
+  html_route="/agent-map${map_path}/"
+  html_content_type="$(curl -fsS -o /dev/null -w '%{content_type}' "${BASE_URL}${html_route}")"
+  if [[ "${html_content_type}" != text/html* ]]; then
+    fail "Expected text/html for ${html_route}, got ${html_content_type}"
+  fi
+  html_map="$(curl -fsS "${BASE_URL}${html_route}")"
+  if [[ "${html_map}" != *'<main '* || "${html_map}" != *'Website navigation map'* ]]; then
+    fail "Expected readable HTML navigation at ${html_route}"
+  fi
   map_content_type="$(curl -fsS -o /dev/null -w '%{content_type}' "${BASE_URL}${map_path}/llms.txt")"
   if [[ "${map_content_type}" != text/plain* ]]; then
     fail "Expected text/plain for ${map_path}/llms.txt, got ${map_content_type}"
@@ -100,7 +115,7 @@ for map_path in "" "/ai" "/ai-engineering" "/engineering" "/system-design" "/pro
     fail "Expected ${map_path}/llms.txt to contain a navigation document"
   fi
 done
-log "Verified plain-text content types and matching formats for main and section maps"
+log "Verified HTML map content types and companion text downloads for all six maps"
 
 for removed_map in "/ai/discovery/llms.txt" "/system-design/nfr/llms.txt"; do
   status="$(curl -sS -o /dev/null -w '%{http_code}' "${BASE_URL}${removed_map}")"

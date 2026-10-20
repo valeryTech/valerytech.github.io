@@ -1,7 +1,7 @@
 {{- $title := .Title | plainify | htmlUnescape -}}
 {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
 {{- printf "# %s: section map for agents\n\n" $title -}}
-{{- printf "[Main map](%s) · [This map](%s) · [Section overview](%s)\n\n" ((site.Home.OutputFormats.Get "agentText").Permalink) ((.OutputFormats.Get "agentText").Permalink) .Permalink -}}
+{{- printf "[Main map](%s) · [This map](%s) · [Section overview](%s)\n\n" (partial "agent-map/url.html" site.Home) (partial "agent-map/url.html" .) .RelPermalink -}}
 {{- with .Description -}}
   {{- if ne . "Default Description" -}}
     {{- printf "%s\n\n" (. | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 240) -}}

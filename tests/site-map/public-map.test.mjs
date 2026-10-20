@@ -7,7 +7,11 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const output = path.join(root, 'public');
 const normalize = (route) => decodeURIComponent(route).replace(/\/$/, '') || '/';
-const extractLinks = (document) => [...document.matchAll(/\]\((https?:\/\/[^)]+)\)/g)].map((match) => new URL(match[1]));
+const origin = 'https://valery.tech';
+const extractLinks = (document) => [...document.matchAll(/\bhref=(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)]
+  .map((match) => new URL((match[1] ?? match[2] ?? match[3]).replaceAll('&amp;', '&'), origin));
+const extractMarkdownLinks = (document) => [...document.matchAll(/\]\(([^)]+)\)/g)].map((match) => new URL(match[1], origin));
+const mainContent = (document) => document.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
 
 function outputFile(route) {
   const relative = decodeURIComponent(route).replace(/^\//, '');
@@ -24,46 +28,47 @@ function files(directory) {
 // Discover maps exactly as a reader would: follow links from the main map.
 function discoverMaps() {
   const documents = new Map();
-  const pending = ['/llms.txt'];
+  const pending = ['/agent-map/'];
   while (pending.length) {
     const route = pending.shift();
     if (documents.has(route)) continue;
-    const document = readFileSync(outputFile(route), 'utf8');
+    const document = mainContent(readFileSync(outputFile(route), 'utf8'));
+    assert.ok(document, `HTML map must have readable main content: ${route}`);
     documents.set(route, document);
     for (const link of extractLinks(document)) {
-      if (link.pathname.endsWith('/llms.txt') && !documents.has(link.pathname)) pending.push(link.pathname);
+      if (link.pathname.startsWith('/agent-map/') && !documents.has(link.pathname)) pending.push(link.pathname);
     }
   }
   return documents;
 }
 
 const maps = discoverMaps();
-const main = maps.get('/llms.txt');
+const main = maps.get('/agent-map/');
 const links = [...maps.values()].flatMap(extractLinks);
 const mappedPaths = new Set(links.map((link) => normalize(link.pathname)));
 
 test('the main map stays short and links to section maps and selected documents', () => {
-  assert.match(main, /^# .+website map for agents/);
+  assert.match(main, /<h1\b[^>]*>[^<]+website map for agents<\/h1>/);
   assert.ok(Buffer.byteLength(main) < 6000, 'Main map should remain a short discovery index');
   assert.ok(extractLinks(main).length < 40, 'Main map should not become a full article inventory');
-  assert.match(main, /## Main documents/);
+  assert.match(main, /<h2\b[^>]*>Main documents<\/h2>/);
   assert.match(main, /\/ai-engineering\/working-assumptions\//);
   for (const section of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
-    assert.ok(extractLinks(main).some((link) => link.pathname === `/${section}/llms.txt`));
+    assert.ok(extractLinks(main).some((link) => link.pathname === `/agent-map/${section}/`));
   }
 });
 
 test('only the main index and five merged collection maps are generated', () => {
-  const expected = ['/llms.txt', '/ai/llms.txt', '/ai-engineering/llms.txt', '/engineering/llms.txt', '/system-design/llms.txt', '/projects/llms.txt'];
+  const expected = ['/agent-map/', '/agent-map/ai/', '/agent-map/ai-engineering/', '/agent-map/engineering/', '/agent-map/system-design/', '/agent-map/projects/'];
   assert.deepEqual([...maps.keys()].sort(), expected.sort());
-  const ai = extractLinks(maps.get('/ai/llms.txt'));
+  const ai = extractLinks(maps.get('/agent-map/ai/'));
   assert.ok(ai.some((link) => link.pathname === '/ai/discovery/analysis-or-operation-model/'));
   assert.ok(ai.some((link) => link.pathname === '/ai/methodology-v1-3/usage/rfc-v1-4/'));
-  assert.ok(!ai.some((link) => link.pathname === '/ai/discovery/llms.txt'));
+  assert.ok(!ai.some((link) => link.pathname === '/agent-map/ai/discovery/'));
   assert.ok(!ai.some((link) => link.pathname.startsWith('/system-design/')));
   for (const [route, document] of maps) {
-    if (route === '/llms.txt') continue;
-    assert.ok(extractLinks(document).some((link) => link.pathname === '/llms.txt'), `Missing main map link: ${route}`);
+    if (route === '/agent-map/') continue;
+    assert.ok(extractLinks(document).some((link) => link.pathname === '/agent-map/'), `Missing main map link: ${route}`);
   }
   assert.ok(extractLinks(main).some((link) => link.pathname === '/blog/example-post/'));
   assert.ok(extractLinks(main).some((link) => link.pathname === '/topics/'));
@@ -78,19 +83,26 @@ test('following the maps covers the complete built website, including aliases an
     if (/\/page\/\d+\/$/.test(route)) continue;
     assert.ok(mappedPaths.has(normalize(route)), `Missing website route: ${route}`);
   }
-  const generated = files(output).filter((filename) => path.basename(filename) === 'llms.txt');
+  const generated = files(path.join(output, 'agent-map')).filter((filename) => filename.endsWith('.html'));
   assert.equal(maps.size, generated.length, 'Every generated map must be reachable from the main map');
 });
 
-test('every plain-text map has an identical Markdown version', () => {
+test('Hugo renders the assembled Markdown and retains the text download URLs', () => {
   for (const [route, document] of maps) {
-    assert.equal(document, readFileSync(outputFile(route.replace(/llms\.txt$/, 'site-map.md')), 'utf8'));
+    const section = route.slice('/agent-map/'.length).replace(/\/$/, '');
+    const prefix = section ? `/${section}` : '';
+    const markdown = readFileSync(outputFile(`${prefix}/site-map.md`), 'utf8');
+    const source = readFileSync(path.join(root, 'content/agent-map', section ? `${section}.md` : '_index.md'), 'utf8');
+    assert.ok(source.endsWith(markdown), `Markdown input is stale: ${route}`);
+    assert.equal(markdown, readFileSync(outputFile(`${prefix}/llms.txt`), 'utf8'));
+    assert.deepEqual(extractLinks(document).map((link) => link.pathname), extractMarkdownLinks(markdown).map((link) => link.pathname), `HTML should preserve all Markdown navigation links: ${route}`);
+    assert.doesNotMatch(document, /^# |\]\(\//m, `Map must be rendered HTML: ${route}`);
   }
+  assert.match(maps.get('/agent-map/system-design/'), /Design questions and study references for specifying visibility after writes/);
 });
 
 test('all map links lead to published website output and expose no repository navigation', () => {
   assert.ok(links.length > 0);
-  const origin = links[0].origin;
   for (const link of links) {
     assert.equal(link.origin, origin, `Unexpected external navigation link: ${link}`);
     assert.ok(statSync(outputFile(link.pathname)).isFile(), `Missing destination: ${link}`);
@@ -100,17 +112,18 @@ test('all map links lead to published website output and expose no repository na
 
 test('pages expose the main map in the footer and their collection map in metadata', () => {
   const pages = [
-    ['index.html', '/llms.txt'],
-    ['ai-engineering/working-assumptions/index.html', '/ai-engineering/llms.txt'],
-    ['system-design/nfr/consistency/index.html', '/system-design/llms.txt'],
-    ['blog/example-post/index.html', '/llms.txt']
+    ['index.html', '/agent-map/'],
+    ['ai-engineering/working-assumptions/index.html', '/agent-map/ai-engineering/'],
+    ['system-design/nfr/consistency/index.html', '/agent-map/system-design/'],
+    ['blog/example-post/index.html', '/agent-map/'],
+    ['agent-map/ai/index.html', '/agent-map/ai/']
   ];
   for (const [relative, mapRoute] of pages) {
     const html = readFileSync(path.join(output, relative), 'utf8');
     const footer = html.match(/<footer\b[\s\S]*?<\/footer>/)?.[0];
-    assert.ok(footer?.includes('/llms.txt'), `Main map missing from footer: ${relative}`);
+    assert.ok(footer?.includes('/agent-map/'), `Main map missing from footer: ${relative}`);
     assert.ok(footer?.includes('Agent map'), `Footer label missing: ${relative}`);
-    const alternates = html.match(/<link\b[^>]*type=["']?text\/plain["']?[^>]*>/g) || [];
-    assert.ok(alternates.some((link) => link.includes(mapRoute)), `Section map missing from metadata: ${relative}`);
+    const mapLinks = html.match(/<link\b[^>]*>/g) || [];
+    assert.ok(mapLinks.some((link) => /rel=["']?sitemap["']?[\s>]/.test(link) && /type=["']?text\/html["']?[\s>]/.test(link) && extractLinks(link)[0]?.pathname === mapRoute), `HTML collection map missing from metadata: ${relative}`);
   }
 });

@@ -1,13 +1,13 @@
 <!-- Insert scripts NOT needed by stylesheets here -->
-{{- $agentMap := site.Home.OutputFormats.Get "agentText" }}
-{{- with .FirstSection }}
-  {{- with .OutputFormats.Get "agentText" }}
-    {{- $agentMap = . }}
+{{- $agentMap := partial "agent-map/url.html" site.Home }}
+{{- if eq .Section "agent-map" }}
+  {{- $agentMap = .RelPermalink }}
+{{- else }}
+  {{- with .FirstSection }}
+    {{- $agentMap = partial "agent-map/url.html" . }}
   {{- end }}
 {{- end }}
-{{- with $agentMap }}
-<link rel="alternate" type="text/plain" title="Website map for agents" href="{{ .Permalink }}">
-{{- end }}
+<link rel="sitemap" type="text/html" title="Website map for agents" href="{{ $agentMap | absURL }}">
 <script>
   (() => {
     const cookie = document.cookie
