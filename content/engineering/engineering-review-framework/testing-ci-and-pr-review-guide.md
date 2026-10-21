@@ -30,6 +30,18 @@ A test suite does not need every test type for every change. Use a combination t
 
 [Independent verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}#2-design-verification-independently) derives expected behavior, reliability properties, and consequential failure scenarios separately from the proposed implementation. It distinguishes deciding what to verify from making those checks executable with real system knowledge.
 
+### Can the tests detect a defect?
+
+
+Ask what plausible implementation mistake an important test would catch. Inspect whether its setup reaches that behavior and its assertions distinguish the correct result from the mistake. For a bug fix, demonstrate that the regression test fails before the fix and passes afterward where practical. A targeted faulty variant can also expose weak checks; use this when it helps resolve uncertainty about test strength.
+
+### Comparing existing and proposed behavior
+
+
+For refactoring and compatibility changes, run the same relevant scenarios against both versions. Compare outputs and consequential effects such as stored state, emitted events, external calls, and errors. Keep inputs, initial state, and operating conditions comparable, and identify which differences the change permits.
+
+Existing behavior provides a baseline for what should remain compatible. Judge differences against the intended contract: a known bug should not become a requirement merely because it exists in the older version.
+
 ## Continuous integration
 
 
@@ -79,6 +91,8 @@ External references checked on 2026-10-20. The workflow guidance above is a reco
 
 
 - [Test Strategy Foundations and the Practical Test Pyramid]({{< ref "engineering/topics/tests/test-strategy-foundations" >}}) -- choosing test scope, separating acceptance criteria from test levels, and balancing speed, realism, and diagnosability.
+- Verification-engineering investigation -- plausible defects that could escape the current tests.
+- Review-flow experiments -- comparing observable behavior across system versions.
 
 ## Related documents
 

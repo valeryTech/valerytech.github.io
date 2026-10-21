@@ -55,6 +55,8 @@ Numerical targets belong to the project's requirements. This reference list does
 
 Supporting note: [Software Engineering Principles]({{< ref "engineering/engineering-review-framework/software-engineering-principles" >}}).
 
+Apply the shared goals across programming paradigms. Select named techniques according to the language, existing code, and actual design problem.
+
 ### Simplicity and scope
 
 
@@ -70,13 +72,11 @@ Supporting note: [Software Engineering Principles]({{< ref "engineering/engineer
 
 
 - **Single level of abstraction:** Keep a function at a consistent conceptual level; extract lower-level details when they obscure its purpose.
-- **Single responsibility:** Give functions, classes, and modules a cohesive responsibility.
+- **Cohesive responsibilities:** Give functions, types, and modules a coherent purpose; keep related reasons for change together.
 - **Separation of concerns:** Keep distinct concerns within appropriate boundaries.
 - **High cohesion, low coupling:** Group related behavior and limit unnecessary dependencies.
-- **Encapsulation:** Hide implementation details behind clear interfaces.
-- **Dependency inversion:** Keep high-level policies independent of low-level implementation details where appropriate.
-- **Composition over inheritance:** Prefer composition when it produces a simpler design.
-- **Law of Demeter:** Limit a component's knowledge of its collaborators' internal structure.
+- **Information hiding:** Reduce dependence on internal representation and what callers must know and coordinate, including ordering, state, and failures.
+- **Explicit state and effects:** Make mutation, time, randomness, I/O, and their ownership and ordering understandable.
 
 ### Clarity and maintainability
 
@@ -87,6 +87,14 @@ Supporting note: [Software Engineering Principles]({{< ref "engineering/engineer
 - **Consistency:** Follow established project conventions.
 - **Explicit failure handling:** Make invalid states and failures visible and handle them deliberately.
 - **Testability:** Keep important behavior straightforward to verify.
+
+### Techniques to select where applicable
+
+
+- **Dependency inversion:** Isolate important policy from infrastructure details when useful; the boundary may use functions, modules, or object interfaces.
+- **Composition over inheritance:** Consider composition when evaluating a design that uses inheritance.
+- **Law of Demeter:** Check whether object navigation creates unnecessary dependence on internal structure.
+- **Functional techniques:** Consider pure transformations, immutable values, and explicit state and error modeling where they help.
 
 Apply these principles together. Extracting functions, introducing interfaces, or removing duplication should improve the solution without adding unnecessary complexity.
 
@@ -103,6 +111,7 @@ Supporting note: [Technical Review Guide]({{< ref "engineering/engineering-revie
 - Concurrency, transactions, retries, and idempotency
 - Security boundaries and authorization
 - Errors and failure paths
+- Earliest mistaken assumption or decision, and its dependent conclusions
 - Performance and resource use
 - Dependencies and configuration
 - Logging, metrics, and tracing
@@ -118,6 +127,8 @@ CI means continuous integration; PR means pull request.
 - Author self-review
 - Unit, integration, contract, and end-to-end testing
 - Test relevance, failure cases, and regression coverage
+- Evidence that important tests detect plausible defects
+- Comparison of existing and proposed behavior where compatibility is required
 - Independent derivation of expected behavior and reliability checks
 - Consequential failure scenarios and observable expected results
 - Build, formatting, linting, and type checking

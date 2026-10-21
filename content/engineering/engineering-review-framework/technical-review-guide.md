@@ -41,20 +41,3 @@ The diff provides a starting point. Google's guidance explicitly recommends cons
 
 
 Use established language, framework, API, database, and security checklists where they already exist. This guide identifies their place in the review; project guides supply the detailed checks and conventions.
-
-When a topic is absent from those guides, add detail at the narrowest useful location. A database migration convention belongs with database guidance. A general reminder about preserving data belongs in the shared reference list.
-
-## Interpreting findings
-
-
-Connect a finding to expected behavior, an affected contract, a failure scenario, or a concrete maintenance concern. Distinguish personal preferences from defects and agreed project standards.
-
-Use tests, measurements, or specialist review when a conclusion requires them. Code inspection alone should not be reported as a measured performance result or a completed recovery test. Keep unverified concerns clearly marked while gathering more evidence.
-
-## Related Engineering Topics
-
-
-- [Transactions]({{< ref "engineering/topics/transactions" >}}) -- atomicity, isolation, and the guarantees needed when reads and writes interact.
-- [Consistency]({{< ref "system-design/nfr/consistency" >}}#questions-for-a-design) -- questions about visibility after writes, acceptable staleness, and concurrent updates.
-- [Caching]({{< ref "engineering/topics/caching" >}}) -- invalidation, write strategies, and the trade-off between freshness and performance.
-- [Deployment]({{< ref "engineering/topics/deployment" >}}#progressive-delivery) -- blue-green deployments, feature flags, canaries, and parallel runs.

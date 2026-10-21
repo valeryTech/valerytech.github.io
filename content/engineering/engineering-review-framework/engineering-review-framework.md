@@ -48,7 +48,7 @@ The behavior and quality expected of the solution, including measurable targets 
 ### 3. Software engineering principles
 
 
-The principles used to assess design and implementation decisions. A supporting list keeps principles such as KISS, YAGNI, and consistent levels of abstraction available during review.
+Shared goals for assessing design and implementation, such as simplicity, cohesive responsibilities, information hiding, and explicit state and effects. Supporting guidance distinguishes these goals from techniques selected for the language and programming paradigm.
 
 ### 4. Technical review checklists
 

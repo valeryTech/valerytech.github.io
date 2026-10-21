@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Apply simplicity, scope control, reuse, consistent abstractions, clear responsibilities, and maintainability when designing and reviewing code."
+description: "Apply shared engineering goals across programming paradigms, using design techniques appropriate to the language, code, and actual dependencies."
 title: "Software Engineering Principles"
 linkTitle: "Software Engineering Principles"
 ---
@@ -11,6 +11,8 @@ linkTitle: "Software Engineering Principles"
 Use a shared list of engineering principles when considering a solution. This note supports the single **Software engineering principles** entry in the main review checklist.
 
 The list helps prevent important concerns from being missed. It does not require a separate checklist response or justification for every principle on every change.
+
+Use the shared goals across functional, object-oriented, procedural, and mixed code. Choose design techniques according to the language and the actual problem. A principle's familiar name does not prescribe a class hierarchy, an interface, or a particular architecture.
 
 ## Simplicity and scope
 
@@ -27,13 +29,10 @@ The list helps prevent important concerns from being missed. It does not require
 
 
 - **Single level of abstraction.** Keep each function at a consistent level of detail. Move lower-level details into suitable functions when they obscure the purpose of the surrounding code.
-- **Single responsibility.** Give a function, class, or module one coherent responsibility. Its reasons for changing should be closely related.
+- **Cohesive responsibilities.** Give a function, type, or module a coherent purpose. Keep behavior and knowledge that change together close together.
 - **Separation of concerns.** Give different concerns clear boundaries so that their details do not become unnecessarily mixed together.
 - **High cohesion, low coupling.** Keep related behavior together and limit dependencies between unrelated parts.
-- **Encapsulation.** Provide the operations consumers need. Keep internal data representations and implementation choices private where practical.
-- **Dependency inversion.** Keep high-level policies independent of low-level implementation details where that separation is useful.
-- **Composition over inheritance.** Prefer combining components when it produces a simpler design than an inheritance hierarchy.
-- **Law of Demeter.** Limit dependence on collaborators' internal structure and chains of objects that expose it.
+- **Information hiding.** Expose the behavior and data consumers need while limiting dependence on internal representation and implementation choices. Functions, modules, types, and objects can all provide useful boundaries. - **Explicit state and effects.** Make dependencies on mutable state, time, randomness, and I/O understandable. Keep ownership, ordering, and failure behavior clear.
 
 ### What abstraction levels mean here
 
@@ -43,6 +42,13 @@ A function that describes a business workflow should remain understandable in te
 Abstraction level and responsibility describe different aspects of organization. A function can serve one business purpose but still mix workflow decisions with the details of how they are implemented.
 
 This principle does not prescribe a fixed set of architectural layers, a class for every concern, or a helper for every expression. Extracting code should give a concept a useful name and a clear boundary. Keep small, cohesive details together when separating them would make the code harder to follow.
+
+### What callers need to know
+
+
+Assess an abstraction by the behavior it provides and the knowledge its callers need to use it correctly. Include ordering rules, state, configuration, failure handling, and coordination with other operations. A small function or method signature can still require substantial knowledge of the implementation.
+
+A useful abstraction absorbs complexity and keeps shared knowledge in one place. Mentally remove it: would callers have to recover that knowledge and coordination themselves, or would unnecessary indirection disappear? Use this question to evaluate its purpose alongside actual contract and dependency requirements.
 
 ## Clarity and maintainability
 
@@ -54,12 +60,21 @@ This principle does not prescribe a fixed set of architectural layers, a class f
 - **Explicit failure handling.** Make invalid states and failures visible. Handle them as the operation's contract requires.
 - **Testability.** Keep important behavior practical to verify without unnecessary setup, hidden state, or dependence on unrelated systems.
 
+## Techniques that depend on context
+
+
+- **Dependency inversion.** When important policy needs protection from infrastructure details, make it depend on the behavior it requires. The original principle is expressed through object-oriented abstractions; functional code can pursue the same separation with function parameters or module contracts. For example, a workflow can receive a `loadCustomer` function rather than call a particular database library. Introduce that boundary when it reduces a concrete dependency problem.
+- **Composition over inheritance.** Where inheritance is an available design choice, consider whether composition makes behavior and contracts easier to understand. This comparison is relevant to code using inheritance.
+- **Law of Demeter.** In object-oriented code, consider whether navigation through collaborators exposes internal structure and spreads coupling. Apply the broader information-hiding goal to other styles; nested data access alone does not establish a design defect.
+
+In functional code, consider whether data transformations, state changes, and effects are easy to reason about. Pure functions can isolate calculations from I/O, and immutable data can reduce unintended changes to shared values. Where the language supports them, domain types and explicit success/failure values can express valid states and outcomes. Use these techniques when they improve the solution within the project's conventions.
+
 ## Applying principles together
 
 
 Use the principles to guide judgment. They are not a scoring system or a mandate to introduce more structure.
 
-Some duplication may be acceptable while the shared concept is unclear. An interface may be useful at an actual dependency boundary, while adding one to every class may create unnecessary work. A shorter function can improve readability when its extracted operations have meaningful names.
+Some duplication may be acceptable while the shared concept is unclear. A dependency boundary may be useful when it isolates a real concern; introducing a new interface or function parameter everywhere can create unnecessary work. A shorter function can improve readability when its extracted operations have meaningful names.
 
 Simplicity includes satisfying correctness, security, and operational requirements. Required validation, recovery behavior, or compatibility support remains part of the solution even when it adds code.
 
@@ -71,8 +86,5 @@ Apply the principles to AI-generated changes with the same expectations. Additio
 - [AHA Programming]({{< ref "engineering/aha-programming" >}}) -- when duplication is preferable to a poorly understood abstraction.
 - [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) -- speculative generality, wrong abstractions, and learning from concrete cases before generalizing.
 - SOLID notes -- working notes on responsibility, extension points, and protecting components from changes elsewhere.
-
-## Related documents
-
-
-[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Requirements and Quality Targets]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}) · [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}})
+- Type-driven design -- expressing domain states, constraints, workflows, and errors through types.
+- Module-design guidance -- evaluating abstractions by the capability they provide and the knowledge required of callers.
