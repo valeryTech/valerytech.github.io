@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "jev-to-ontology"
-description:
+description: "Explore how Jev classification, explicit ontologies, and confidence thresholds guide agent decisions, escalation, and evaluation."
 linkTitle: "jev-to-ontology"
 ---
 ## Feed post
