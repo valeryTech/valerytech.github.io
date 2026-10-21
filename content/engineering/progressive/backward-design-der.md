@@ -5,30 +5,31 @@ description: "Trace user needs through outcomes, workflows, capabilities, and sy
 title: "Backward Design Der"
 linkTitle: "Backward Design Der"
 ---
-What you were doing was closer to **backward design derivation**:
+# Backward design derivation
+
+
+**Backward design derivation** starts with a user need and works out which responsibilities and design choices are needed to meet it:
 
 > user need -> required outcome -> user workflow -> what the system must make possible at each step -> system responsibilities -> design
 
-XXX
+Methods that support this chain mainly come from **requirements engineering, strategic design, and architecture evaluation**. Architecture-diagramming methods address a different part of the work.
 
-Yes. What you are looking for exists, but it sits mostly in **requirements engineering / strategic design / architecture evaluation**, rather than in architecture-diagramming methods.
+C4 describes a software system through diagrams at different levels of detail. Its FAQ says that C4 does not define a software delivery or design process. Business processes, workflows, and domain models are also outside its main focus. ([C4 model](https://c4model.com/ "Home | C4 model"))
 
-Your observation about C4 is essentially consistent with C4's stated scope: C4 describes a software system through hierarchical abstractions and diagrams, and its FAQ explicitly says that it implies nothing about the software delivery/design process. It also says business processes, workflows, domain models, etc. are outside its main focus. ([C4 model](https://c4model.com/?utm_source=chatgpt.com "Home | C4 model"))
-
-The distinction I'd make is:
+The key distinction is:
 
 > **Architecture description:** "What exists, and how is it connected?"
 >
-> **Architecture reasoning:** "What problem are we solving, for whom, what behavior/outcome is required, and therefore why must these architectural elements exist?"
+> **Architecture reasoning:** "What problem does the system solve, for whom, what behavior/outcome is required, and therefore why must these architectural elements exist?"
 
-You're looking primarily for the second category.
+Backward design derivation mainly concerns the reasoning behind the architecture.
 
-## The closest approaches I found
+## Related approaches
 
 ### 1. JTBD -> capabilities -> target architecture
 
 
-There is actually an explicit industry approach doing almost exactly what you described.
+An industry example directly connects user jobs to a target architecture.
 
 Capital One published **"Leveraging Jobs to Be Done to Start a Target Architecture."** Their chain is roughly:
 
@@ -38,9 +39,9 @@ Their JTBD formulation is:
 
 `While [situation], users need to [action], for the purpose of [goal]`
 
-They then map the **action** to a business capability and decide which system should provide that capability. Repeating this across the JTBD inventory yields an initial architecture blueprint. They also combine this with EventStorming and pain points. ([Capital One](https://www.capitalone.com/tech/software-engineering/leveraging-jtbd/ "Leveraging Jobs to Be Done to Start a Target Architecture | Capital One"))
+They map each **action** to a business capability and decide which system should provide it. Doing this for every JTBD produces an initial architecture plan. They also use EventStorming and identified pain points. ([Capital One](https://www.capitalone.com/tech/software-engineering/leveraging-jtbd/ "Leveraging Jobs to Be Done to Start a Target Architecture | Capital One"))
 
-This is extremely close to your idea:
+The chain explains why an architectural element is needed:
 
 ```text
 Why does AccountDetailsService exist?
@@ -59,20 +60,20 @@ API / read model / datastore / authorization / etc.
 ```
 
 
-Now the `Account Details API` has a **causal ancestry**. You can navigate upward from technical artifact to capability to user job.
+The `Account Details API` has a **causal ancestry**: its purpose can be traced from the API to the capability it provides, and then to the user job it supports.
 
-I'd put this near the top of your reading list.
+The Capital One article is one of the first sources to read for this approach.
 
 ### 2. JTBD-Oriented Requirements Engineering + RE4SA
 
 
-There's also academic work surprisingly close to this.
+Research in requirements engineering describes related methods.
 
-Utrecht University researchers proposed **Jobs-to-be-Done Oriented Requirements Engineering**, formalizing Job Stories so that requirements explicitly contain **situation, motivation, and expected outcome** rather than becoming feature statements detached from their purpose. ([Utrecht University](https://research-portal.uu.nl/en/publications/jobs-to-be-done-oriented-requirements-engineering-a-method-for-de/ "Jobs-to-be-Done Oriented Requirements Engineering: A Method For Defining Job Stories
+Utrecht University researchers proposed **Jobs-to-be-Done Oriented Requirements Engineering**, giving Job Stories a defined structure. Each requirement includes the **situation, motivation, and expected outcome**, so a feature stays connected to its purpose. ([Utrecht University](https://research-portal.uu.nl/en/publications/jobs-to-be-done-oriented-requirements-engineering-a-method-for-de/ "Jobs-to-be-Done Oriented Requirements Engineering: A Method For Defining Job Stories
 
 -  Utrecht University"))
 
-A related Utrecht line of work developed **RE4SA -- Requirements Engineering for Software Architecture**. RE4SA explicitly links requirements to architectural elements: epic stories/user stories are related to modules/features, with the intent of keeping requirements and architecture aligned. ([Utrecht University Repository](https://dspace.library.uu.nl/handle/1874/396208 "Explicit Alignment of Requirements and Architecture in Agile Development"))
+A related Utrecht line of work developed **RE4SA -- Requirements Engineering for Software Architecture**. RE4SA directly links requirements to architectural elements. It connects epic stories and user stories to modules and features to keep requirements and architecture in agreement. ([Utrecht University Repository](https://dspace.library.uu.nl/handle/1874/396208 "Explicit Alignment of Requirements and Architecture in Agile Development"))
 
 Put the two together conceptually:
 
@@ -89,21 +90,21 @@ Module / service / component
 ```
 
 
-That is almost a direct research answer to your question.
+Together, these approaches suggest a way to trace architectural choices back to user jobs.
 
-RE4SA itself doesn't give you the product-level `why`; the JTBD-oriented RE work supplies that upstream context.
+RE4SA does not itself explain the product-level `why`. The JTBD-oriented requirements work provides that earlier context.
 
 ### 3. User Requirements Notation -- probably the closest _single modelling language_
 
 
-This one is quite interesting and relatively obscure.
+URN is one of the less well-known methods in this comparison.
 
-The ITU standard **User Requirements Notation (URN)** deliberately combines two complementary models:
+The ITU standard **User Requirements Notation (URN)** combines two models that cover different needs:
 
 - **GRL -- Goal-oriented Requirement Language**
 - **UCM -- Use Case Maps**
 
-GRL models things such as stakeholder goals and intentions; UCM models operational/functional scenarios and supports architectural reasoning. The ITU describes URN as supporting elicitation, analysis, specification, validation, and traceability of requirements. ([itu.int](https://www.itu.int/epublications/publication/itu-t-z-151-2018-10-user-requirements-notation-urn-language-definition?utm_source=chatgpt.com "User Requirements Notation (URN) - Language definition"))
+GRL models stakeholder goals and intentions. UCM models scenarios of how a system works and helps reason about its architecture. The ITU describes URN as supporting elicitation, analysis, specification, validation, and traceability of requirements. ([itu.int](https://www.itu.int/epublications/publication/itu-t-z-151-2018-10-user-requirements-notation-urn-language-definition "User Requirements Notation (URN) - Language definition"))
 
 Conceptually:
 
@@ -131,14 +132,12 @@ Conceptually:
 ```
 
 
-For your stated criterion, **URN is one of the strongest matches** because goals and operational/architectural scenarios belong to one coherent notation instead of living in disconnected Jira tickets and architecture diagrams.
+For integrating goals with operational scenarios, **URN is one of the strongest matches in this comparison** because goals and operational or architectural scenarios share one notation. This keeps them connected rather than spread across unrelated Jira tickets and architecture diagrams.
 
-Its downside is cultural/practical: it comes from the more formal requirements-engineering tradition rather than today's lightweight product/engineering workflow.
+Its drawback is practical adoption. It comes from formal requirements engineering, so it may feel heavy compared with a lightweight product and engineering workflow.
 
 ### 4. Wardley Mapping -- user need as literal "north"
 
-
-This may appeal to you for a different reason.
 
 A Wardley Map starts by identifying:
 
@@ -148,7 +147,7 @@ A Wardley Map starts by identifying:
 4. dependencies between those capabilities,
 5. the evolutionary state of those capabilities.
 
-The landscape is explicitly **anchored on the user and their needs**. ([learnwardleymapping.com](https://learnwardleymapping.com/landscape/?utm_source=chatgpt.com "Landscape"))
+The landscape is explicitly **anchored on the user and their needs**. ([learnwardleymapping.com](https://learnwardleymapping.com/landscape/ "Landscape"))
 
 So:
 
@@ -166,13 +165,13 @@ User
 ```
 
 
-This gives every lower-level thing an answer to:
+This gives every lower-level capability an answer to:
 
 > **"Needed by what?"**
 
-Which is exactly the missing property you're describing.
+This keeps the reason for each capability and dependency visible.
 
-Wardley Mapping then adds another dimension: whether each capability is genesis/custom/product/commodity. That means you can reason about things like:
+Wardley Mapping then adds another dimension: whether each capability is genesis/custom/product/commodity. That supports decisions such as:
 
 ```text
 user need
@@ -185,12 +184,12 @@ should we invent / build / buy / outsource / commoditize this?
 ```
 
 
-It doesn't model runtime software behaviour very well. I would use it **above architecture**, particularly when reasoning about boundaries, ownership, build-vs-buy, platforms and strategic differentiation.
+It does not model runtime software behaviour in detail. It belongs **above architecture**, especially when deciding boundaries, ownership, build-vs-buy choices, platforms, and which capabilities make the product different.
 
 ## 5. Problem Frames / Architectural Frames
 
 
-Michael Jackson's **Problem Frames** tradition starts from a principle very close to what you're getting at:
+Michael Jackson's **Problem Frames** tradition starts from this principle:
 
 software exists to produce some required effect **in a world outside the software**.
 
@@ -204,11 +203,11 @@ machine/software
 ```
 
 
-Jackson describes software development problems as being about the real environment in which the system must have its effect. ([Oro](https://oro.open.ac.uk/7513/?utm_source=chatgpt.com "Open Research Online"))
+Jackson describes software development problems as being about the real environment in which the system must have its effect. ([Oro](https://oro.open.ac.uk/7513/ "Open Research Online"))
 
-Later work connected Problem Frames directly to software architecture through **Architectural Frames** and related extensions: architecture can participate in decomposition of the problem while retaining the relationship to the original requirement/problem context. ([Oro](https://oro.open.ac.uk/3334/?utm_source=chatgpt.com "Open Research Online"))
+Later work linked Problem Frames to software architecture through **Architectural Frames** and related extensions. These let architecture help break a problem into parts while keeping each part connected to the original requirements and problem context. ([Oro](https://oro.open.ac.uk/3334/ "Open Research Online"))
 
-This is philosophically very close to your objection to architecture-first reasoning.
+This keeps architectural reasoning connected to the problem being solved.
 
 Instead of:
 
@@ -217,7 +216,7 @@ Browser → API Gateway → Service → DB
 ```
 
 
-you begin with something like:
+the derivation begins with:
 
 ```text
 A customer must be able to recover access to their account
@@ -232,12 +231,12 @@ What architecture realizes that guarantee?
 ```
 
 
-It's less product-management-flavoured than JTBD, but much stronger about **problem context**.
+It uses less product-management language than JTBD, but gives more attention to **problem context**.
 
 ## 6. Impact Mapping
 
 
-Impact Mapping is upstream from architecture, but its structure is almost ideal for providing the missing context:
+Impact Mapping comes before architecture. Its structure is well suited to explaining the goals and behavior that architecture needs to support:
 
 ```text
 GOAL
@@ -250,7 +249,7 @@ DELIVERABLES
 ```
 
 
-Its explicit purpose is to show how technical deliverables are expected to create changes in actor behaviour and how those changes contribute to business goals. ([Impact Mapping](https://www.impactmapping.org/drawing.html?utm_source=chatgpt.com "Drawing impact maps"))
+Its purpose is to show how technical deliverables are expected to change actor behaviour, and how those changes support business goals. ([Impact Mapping](https://www.impactmapping.org/drawing.html "Drawing impact maps"))
 
 So instead of:
 
@@ -259,7 +258,7 @@ Implement notification service
 ```
 
 
-you get:
+the reasoning becomes:
 
 ```text
 Goal:
@@ -288,11 +287,11 @@ Impact Mapping stops before architecture. But as the **top layer of an architect
 ## 7. Domain Storytelling + DDD
 
 
-**Domain Storytelling** starts from actual domain actors performing activities with work objects. Its stated goal is to make business processes and domain knowledge tangible and then use that understanding to develop business software. ([Domain Storytelling](https://domainstorytelling.org/?utm_source=chatgpt.com "Domain Storytelling"))
+**Domain Storytelling** starts from actual domain actors performing activities with work objects. Its stated goal is to make business processes and domain knowledge concrete, then use that understanding to develop business software. ([Domain Storytelling](https://domainstorytelling.org/ "Domain Storytelling"))
 
-The method can feed requirements, user-story mapping, domain modelling and DDD. ([Domain Storytelling](https://domainstorytelling.org/requirements?utm_source=chatgpt.com "Requirements - Domain Storytelling"))
+The method can help develop requirements, user-story maps, domain models, and DDD designs. ([Domain Storytelling](https://domainstorytelling.org/requirements "Requirements - Domain Storytelling"))
 
-So you can go:
+The derivation can proceed through:
 
 ```text
 Human/domain story
@@ -317,16 +316,16 @@ It's somewhat weaker at answering:
 
 > "Why should that process/product exist at all?"
 
-For that, I'd put JTBD/Impact Mapping above it.
+JTBD or Impact Mapping can supply that upstream rationale.
 
-EventStorming belongs roughly in the same family: it is explicitly a collaborative exploration method for complex business domains. ([EventStorming](https://www.eventstorming.com/?utm_source=chatgpt.com "EventStorming"))
+EventStorming belongs roughly in the same family: it is explicitly a collaborative exploration method for complex business domains. ([EventStorming](https://www.eventstorming.com/ "EventStorming"))
 
 ## 8. SEI: business goals -> quality scenarios -> architecture
 
 
-There's another branch dealing with the _architectural forces_ part of your question.
+Another group of methods examines **architectural forces**: the needs and constraints that shape a design.
 
-SEI's **Quality Attribute Workshop / ATAM** methods deliberately derive architecturally important quality attributes from **business and mission goals** and turn them into concrete scenarios before analyzing architecture. ([SEI](https://insights.sei.cmu.edu/library/the-sei-quality-attribute-workshop/?utm_source=chatgpt.com "The SEI Quality Attribute Workshop"))
+SEI's **Quality Attribute Workshop / ATAM** methods start with **business and mission goals**. They identify the quality attributes that matter to the architecture and turn them into concrete scenarios before analyzing the design. ([SEI](https://insights.sei.cmu.edu/library/the-sei-quality-attribute-workshop/ "The SEI Quality Attribute Workshop"))
 
 For example:
 
@@ -349,9 +348,9 @@ Architectural decisions
 
 This is very good for answering:
 
-> "Why do we have this queue/cache/replica/failover mechanism?"
+> "Why does this architecture need a queue/cache/replica/failover mechanism?"
 
-Because you can trace it to a concrete quality-attribute scenario and ultimately a business driver.
+The reason for the mechanism can be traced to a concrete quality-attribute scenario, and from there to a business need.
 
 It doesn't solve the functional/JTBD side by itself.
 
@@ -365,13 +364,13 @@ Its first section explicitly asks for the **driving forces** of the architecture
 - underlying business goals,
 - essential features/functional requirements,
 - architecture quality goals,
-- stakeholders and expectations. ([arc42 Documentation](https://docs.arc42.org/section-1/?utm_source=chatgpt.com "1 - Introduction and Goals | arc42 Documentation"))
+- stakeholders and expectations. ([arc42 Documentation](https://docs.arc42.org/section-1/ "1 - Introduction and Goals | arc42 Documentation"))
 
-Its solution-strategy section then connects architectural cornerstones to the problem statement, quality goals and constraints. ([arc42 Documentation](https://docs.arc42.org/section-4/?utm_source=chatgpt.com "4 - Solution strategy | arc42 Documentation"))
+Its solution-strategy section connects the main architecture choices to the problem, quality goals, and constraints. ([arc42 Documentation](https://docs.arc42.org/section-4/ "4 - Solution strategy | arc42 Documentation"))
 
-And the newer **Architecture Inception Canvas** goes further: it starts with the business case/economic driver and quality goals before proceeding to architecture. ([Software Architecture Canvas](https://canvas.arc42.org/architecture-inception-canvas?utm_source=chatgpt.com "Architecture Inception Canvas - Software Architecture Canvas"))
+And the newer **Architecture Inception Canvas** goes further: it starts with the business case/economic driver and quality goals before proceeding to architecture. ([Software Architecture Canvas](https://canvas.arc42.org/architecture-inception-canvas "Architecture Inception Canvas - Software Architecture Canvas"))
 
-So arc42 gives you a much better **document structure** than bare C4 for this purpose.
+For this purpose, arc42 provides a more complete **document structure** than C4 alone. It has places to record the reasons for decisions alongside the structural views.
 
 But it doesn't impose strong traceability such as:
 
@@ -380,12 +379,12 @@ JTBD-17 → Scenario-4 → Capability-X → Service-Y → ADR-23
 ```
 
 
-You'd add that yourself.
+Such links need to be added explicitly.
 
-# I think the underlying model you're searching for is this
+## A causal architecture model
 
 
-I would formulate it as a **causal architecture model**:
+One proposed way to combine these methods is a **causal architecture model**:
 
 ```text
           PRODUCT / PROBLEM WORLD
@@ -423,15 +422,15 @@ I would formulate it as a **causal architecture model**:
 ```
 
 
-The important property here is that **every downward edge means "therefore we need..."**.
+The important property here is that **every downward edge means "therefore this is required..."**.
 
 And every upward edge means **"this exists because..."**.
 
-That gives you a much more useful architecture question than:
+This adds questions about purpose to structural questions such as:
 
 > "What does this service call?"
 
-You can ask:
+Questions about the reasons for the design include:
 
 > "Remove this service. Which user outcome becomes impossible?"
 
@@ -456,12 +455,12 @@ JTBD: acquire product when needed
 ```
 
 
-That's genuine architectural rationale.
+This explains the reasons behind the architecture.
 
-## If I were assembling a practical methodology
+## A practical methodology
 
 
-I wouldn't replace C4. I'd put it at the lower end:
+C4 can describe the structure at the lower end of this reasoning chain:
 
 ```text
 JTBD / Impact Mapping
@@ -476,7 +475,7 @@ C4
 ```
 
 
-And make the traceability explicit:
+Record the links between the levels:
 
 ```text
 JTBD-12
@@ -490,8 +489,8 @@ JTBD-12
 ```
 
 
-For something more formal, **URN** is the closest ready-made unified model I found.
+For a more formal approach, **URN** is the closest existing model found in this comparison that combines goals and scenarios.
 
-For something more contemporary/pragmatic, I'd investigate the combination of **JTBD -> Impact Mapping -> Domain Storytelling/EventStorming -> capabilities -> arc42/C4**, with **QAW-style quality scenarios** supplying the non-functional architectural forces.
+A lighter practical approach combines **JTBD -> Impact Mapping -> Domain Storytelling/EventStorming -> capabilities -> arc42/C4**, with **QAW-style quality scenarios** supplying the non-functional architectural forces.
 
-And the Capital One article is particularly worth looking at because somebody has independently arrived at almost exactly the chain you're describing: **JTBD -> capability -> system -> target architecture**. ([Capital One](https://www.capitalone.com/tech/software-engineering/leveraging-jtbd/ "Leveraging Jobs to Be Done to Start a Target Architecture | Capital One"))
+The Capital One article provides an example of the chain: **JTBD -> capability -> system -> target architecture**. ([Capital One](https://www.capitalone.com/tech/software-engineering/leveraging-jtbd/ "Leveraging Jobs to Be Done to Start a Target Architecture | Capital One"))

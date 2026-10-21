@@ -149,7 +149,15 @@ An **AI Product** is an intended value-producing capability offered to a defined
 
 The AI Product is the normative model of what value should be produced. It may define:
 
-- purpose and intended outcomes; - target users and affected actors; - jobs to be done; - supported capabilities and workflows; - minimum viable scope; - promises and behavioural guarantees; - invariants; - unsupported behaviour and non-guarantees; - unacceptable or critical failures.
+- purpose and intended outcomes;
+- target users and affected actors;
+- jobs to be done;
+- supported capabilities and workflows;
+- minimum viable scope;
+- promises and behavioural guarantees;
+- invariants;
+- unsupported behaviour and non-guarantees;
+- unacceptable or critical failures.
 
 Product intent defines expected behaviour:
 

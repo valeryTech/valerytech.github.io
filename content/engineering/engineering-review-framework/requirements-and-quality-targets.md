@@ -13,11 +13,11 @@ Keep the expected behavior, quality, and constraints of a software change explic
 ## Whether requirements exist
 
 
-Consider requirement definition separately from implementation quality. A working implementation does not establish that all relevant expectations were identified.
+Check whether requirements are defined separately from checking implementation quality. A working implementation does not establish that all relevant expectations were identified.
 
 Requirements may come from the feature, existing product behavior, shared platform standards, or operating constraints. Keep those sources distinguishable from assumptions made during implementation.
 
-An applicable requirement that has not been defined remains an open issue. The current implementation, a test result, or an agent's suggestion should not silently become the accepted target.
+An applicable requirement that has not been defined remains an open issue. Do not let the current implementation, a test result, or an agent's suggestion become the accepted target without an explicit decision.
 
 ## Functional requirements
 
@@ -34,6 +34,8 @@ Topics to retain:
 - Existing behavior that must be preserved
 
 Keep these requirements connected to the problem and scope. Implementation choices belong here only when they are actual constraints.
+
+[Backward design]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}#1-work-backward-from-product-framing) helps trace the intended outcome through necessary conditions to system responsibilities, making missing behavior and unnecessary design elements easier to question.
 
 ## Non-functional requirements
 
@@ -52,7 +54,7 @@ Topics to retain:
 - Observability, support, and operability
 - Maintainability and deployment constraints
 
-These categories are reminders. Their importance and required specificity depend on the change and the system.
+These categories are reminders. How important and detailed they need to be depends on the change and the system.
 
 ## Numerical targets
 
@@ -63,7 +65,7 @@ Keep targets connected to the conditions under which they apply. A performance t
 
 Numerical targets can describe functional behavior as well as system quality. Some requirements are better expressed as explicit rules or constraints, such as supported environments or restrictions on stored data.
 
-Keep required thresholds, desired improvements, and observed measurements distinguishable.
+Distinguish required thresholds, desired improvements, and observed measurements.
 
 ## Constraints and dependencies
 
@@ -75,9 +77,15 @@ Make these constraints visible when they limit the solution. Preserve the distin
 ## Verification expectations
 
 
-Keep a broad connection between each important requirement and how it can be established: tests, measurement, inspection, or operational observation.
+For each important requirement, record how it can be checked: through tests, measurement, inspection, or observation during operation.
 
 Detailed procedures belong in the relevant testing or review guides. At this level, retain the requirement and its intended basis for evaluation. Record uncertainty when a requirement cannot yet be verified.
+
+## Related notes
+
+
+- [Reasoning About Non-Functional Requirements]({{< ref "system-design/nfr/non-functional-requirements" >}}) -- connect quality requirements to operations, measurements, workload assumptions, and design choices.
+- [Architectural Characteristics]({{< ref "engineering/architecture/characteristics" >}}) -- a vocabulary of operational, structural, and cross-cutting qualities to consider.
 
 ## Related documents
 

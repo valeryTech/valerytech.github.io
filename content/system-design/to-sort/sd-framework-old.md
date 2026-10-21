@@ -13,15 +13,15 @@ Extended collection of framework steps, principles, questions, and examples. Ret
 
 <https://www.youtube.com/watch?v=Gg318hR5JY0>
 
-analyze this video from google
+Review task: analyze the linked Google video.
 
-how candidate reason about scalability and availability?
+Review question: how does the candidate reason about scalability and availability?
 
-frame an interviewer that you understand that your system would need to be distributed (in some scenarios)
+Explain to the interviewer which scenarios would require the system to be distributed.
 
-design the system to be scalable
+Design goal: make the system scalable.
 
-interview: make reasonable design choice and justify it
+Interview practice: make reasonable design choices and explain the reasoning.
 
 What you do is important, but how you communicate is even more important.
 
@@ -480,7 +480,7 @@ Why It Works:
 
 ✔ Prevents over-engineering too early.
 
-^^ also maybe we can say like: ok, we have several scenatios for the future. One most probable of them is night-spikes of users. So one of the qualities of one subsystem is to hold this kind of load. We can address it now, but I'll propose that it will be in our list of bottleneck (more common name) analysis and system improvement.
+Possible interview framing: consider several future scenarios. If nighttime user spikes are among the most likely, identify which subsystem must handle that load. Although the design could address this now, the suggested approach is to add it to the bottleneck analysis and system-improvement list.
 
 ## The Bottleneck-First Model
 
@@ -491,7 +491,7 @@ Identify and eliminate bottlenecks first, instead of prematurely optimizing.
 
 🔹 How to Apply It:
 
-1. Ask where the biggest bottleneck is. <- Maybe here we can find out most critical bottleneck for users? Future x critical bottlenecks? How we can change the design in the future to prevent this bottlenecks? Proactive
+1. Ask where the biggest bottleneck is. Additional questions: which bottlenecks are most critical for users? Which future bottlenecks could become critical? How could future design changes prevent them? Consider a proactive approach.
 
 CPU-bound? (Compute-heavy tasks need parallelization)
 

@@ -5,7 +5,7 @@ description: "Choose spikes, proofs of concept, prototypes, walking skeletons, v
 title: "Techniques"
 linkTitle: "Techniques"
 ---
-Yes. These techniques map well to different **engineering lifecycle goals**. The important point is that they are not interchangeable: each answers a different kind of question.
+These techniques map well to different **engineering lifecycle goals**. The important point is that they are not interchangeable: each answers a different kind of question.
 
 ## Engineering lifecycle techniques by goal
 

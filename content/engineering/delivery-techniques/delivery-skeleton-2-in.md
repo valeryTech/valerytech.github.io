@@ -10,11 +10,11 @@ linkTitle: "Delivery Skeleton 2 In"
 ## Definition
 
 
-An architectural walking skeleton is a delivery technique where the team builds a small executable version of the system that runs through the main architectural components.
+An architectural walking skeleton is a small runnable version of the system that passes through its main architectural components.
 
 It implements one narrow workflow from input to output.
 
-The purpose is to verify that the main parts of the system can work together before investing in broader functionality.
+Its purpose is to check that the main parts can work together before building more functionality.
 
 The implementation should be small, but it should follow the intended system structure. Later work should extend it rather than replace it.
 
@@ -35,7 +35,7 @@ The goal is not to complete any one subsystem.
 ## How to Choose the Workflow
 
 
-Choose one workflow that is narrow but representative.
+Choose one small workflow that represents the intended system.
 
 The workflow should:
 
@@ -98,7 +98,7 @@ The following can be simple or incomplete:
 - production infrastructure
 - full test coverage
 
-These areas can be improved later if the initial implementation preserves the right component boundaries.
+These areas can be improved later if the first implementation keeps the right component boundaries.
 
 ## Minimal vs. Fake
 
@@ -190,7 +190,7 @@ The following may change later:
 - advanced error handling
 - evaluation framework
 
-The walking skeleton is not the final implementation. It is the first implementation that proves the system can run through the intended path.
+The walking skeleton is the first implementation that proves the intended path can run. It is not the final implementation.
 
 ## Completion Criteria
 

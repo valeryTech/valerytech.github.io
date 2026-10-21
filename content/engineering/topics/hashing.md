@@ -5,7 +5,7 @@ description: "Brief notes and references on rendezvous and consistent hashing fo
 title: "Hashing"
 linkTitle: "Hashing"
 ---
-# Hasning strategies
+# Hashing strategies
 
 ## Rendezvous Hashing
 
@@ -17,16 +17,12 @@ Rendezvous hashing - rank server set.
 ## Consistent Hashing
 
 
-Consistent hashing is a way to effectively distribute the keys in any distributed storage system -- cache, database, or otherwise -- to a large number of nodes or servers while allowing us to add or remove nodes without incurring a large performance hit.
+Consistent hashing is a way to effectively distribute the keys in any distributed storage system -- cache, database, or otherwise -- to a large number of nodes or servers while allowing nodes to be added or removed without incurring a large performance hit.
 
 sources
 
 <https://akshatm.svbtle.com/consistent-hash-rings-theory-and-implementation>
 
-interviewing.io
+Additional reading source: interviewing.io.
 
-xxx
-
-You should use good hashing function.
-
-In both of these stategies we have some form of consistency in mapping (for example  between clients and servers).
+Both strategies require a suitable hash function and preserve some consistency in mappings, such as mappings between clients and servers.

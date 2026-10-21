@@ -18,18 +18,18 @@ linkTitle: "Test Strategy Foundations Adoption V2"
 ## Decision summary
 
 
-Adopt the "Test Strategy Playbook v3: Practical Pyramid, Clear Mental Models, and Operational Governance" as the organization-wide framework for building and operating our automated test portfolio, CI/CD gates, and quality governance.
+Adopt the "Test Strategy Playbook v3: Practical Pyramid, Clear Mental Models, and Operational Governance" as the shared framework for building and running the organization's automated tests, CI/CD gates, and quality rules.
 
-This RFC defines the operating model, required artifacts, CI gate structure, ownership rules, metrics, and a phased rollout plan to implement the framework across 5-6 teams while keeping feedback fast, tests deterministic, and failures diagnosable.
+This RFC defines how the framework will work: the required artifacts, CI gate structure, ownership rules, metrics, and a step-by-step rollout across 5-6 teams. The aim is to keep feedback fast, test results repeatable, and failures easy to diagnose.
 
 ## Context and problem
 
 
-As our system and teams scale, the default failure mode is "suite drift": tests move upward in scope (more real dependencies, more network boundaries), become slower and flakier, and failures become harder to localize.
+As the system and teams grow, a common failure mode is "suite drift." Tests involve more real dependencies and network boundaries, become slower and less reliable, and make it harder to find where a failure began.
 
-The playbook frames this with the Cost-Fidelity-Debuggability trade-off: as scope increases, fidelity tends to increase, but cost and flakiness risk rise and debug locality worsens -- so broad, high-fidelity suites must be explicitly curated.
+The playbook describes this as the Cost-Fidelity-Debuggability trade-off. Broader tests tend to behave more like production, but cost more, risk more flaky results, and make failures harder to locate. Broad suites with high fidelity therefore need deliberate selection and maintenance.
 
-The framework also emphasizes that acceptance criteria describe *what* we prove, not *where* the test runs; acceptance evidence can (and often should) be provided at lower layers rather than defaulting to end-to-end automation.
+Acceptance criteria describe *what* must be proved, not *where* a test runs. Lower-level tests can often provide the evidence, and should be used when they can do so, rather than defaulting to end-to-end automation.
 
 ### Goals
 
@@ -73,7 +73,7 @@ To prevent suite bloat and flakiness, we will explicitly prohibit the following 
 - **Encoding acceptance primarily via E2E/UI automation** (acceptance evidence should be pushed to the lowest feasible scope).
 - **In-memory substitutes where real infrastructure semantics matter** (e.g., relying on non-Postgres DBs to validate Postgres transaction/isolation behavior).
 
-Each prohibited pattern should be replaced with a lower-scope alternative (unit, seam, contract, or single-service component tests) that is deterministic and diagnosable.
+Replace each prohibited pattern with a lower-scope alternative: a unit, seam, contract, or single-service component test. Its results should be repeatable and its failures easy to diagnose.
 
 ### Common test taxonomy and definitions
 
@@ -92,7 +92,7 @@ We will standardize the vocabulary to prevent teams from labeling multi-service 
 ### Required "test basis" artifacts
 
 
-The playbook's central assertion is that test strategies fail when they don't connect requirements/risks to suites to pipeline gates to ownership; the test basis and evidence mapping provide that connection.
+The playbook's main claim is that test strategies fail when requirements and risks are not connected to test suites, pipeline gates, and owners. The test basis and evidence map make those connections.
 
 Each service (or major feature) must maintain a lightweight **Test Basis** document containing:
 
@@ -108,7 +108,7 @@ Each service (or major feature) must maintain a lightweight **Test Basis** docum
 ### Evidence mapping (traceability)
 
 
-We will use the playbook's evidence map template as the canonical traceability artifact connecting risks/requirements to evidence, suites, CI gates, thresholds, and owners.
+The playbook's evidence map template will be the main record linking risks and requirements to evidence, suites, CI gates, thresholds, and owners.
 
 Minimum fields (per the playbook): **Item, Requirement/Risk, Failure mode, Evidence type, Suite, Gate, Metric/Threshold, Owner, Notes**.
 
@@ -256,7 +256,7 @@ Core metrics:
 ## Release gating and exceptions
 
 
-When test basis or evidence is missing, the playbook recommends choosing an explicit policy such as: block release; allow behind a feature flag to staged users; allow with increased monitoring and rollback plan; or allow only after manual review by designated owners.
+When the test basis or evidence is missing, choose a clear policy. Options in the playbook include blocking release; allowing release behind a feature flag to selected users; allowing release with more monitoring and a rollback plan; or requiring manual review by the designated owners first.
 
 We will standardize an exception template:
 

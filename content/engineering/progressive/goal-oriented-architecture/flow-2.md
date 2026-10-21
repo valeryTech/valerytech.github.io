@@ -5,12 +5,12 @@ description: "Compare goal-driven and scenario-driven architecture methods, from
 title: "Flow 2"
 linkTitle: "Flow 2"
 ---
-## Answer 1
+# Intent-driven and scenario-driven architecture
 
 
-Yes. The thing you are looking for is not really another architecture-view notation. It is closer to an **intent-driven / goal-driven / scenario-driven architecture process**, where architectural elements remain traceable back to the reason the system exists.
+The relevant approach is an **intent-driven / goal-driven / scenario-driven architecture process**, rather than another architecture-view notation. It keeps each architectural element connected to the reason the system exists.
 
-C4 is deliberately downstream of that problem. It can tell you:
+C4 describes structural levels downstream of those concerns:
 
 `Person -> System -> Container -> Component`
 
@@ -27,9 +27,9 @@ Impact Mapping uses:
 
 `Goal -> Actor -> Impact -> Deliverable`
 
-So instead of starting with "we need an email service", you start with the business/product outcome, identify whose behavior must change, and only then introduce things to build. Importantly, the method explicitly describes the map as preserving the reasoning that led to a feature suggestion. ([Impact Mapping](https://www.impactmapping.org/drawing.html?utm_source=chatgpt.com "Drawing impact maps"))
+The process starts with a business/product outcome, identifies whose behavior must change, and only then introduces possible deliverables such as an email service. The method describes the map as a record of the reasoning behind a suggested feature. ([Impact Mapping](https://www.impactmapping.org/drawing.html "Drawing impact maps"))
 
-For what you're describing, this is extremely useful as the layer **above architecture**.
+Impact Mapping can supply the layer **above architecture**.
 
 For example:
 
@@ -50,14 +50,14 @@ Deliverable
 ```
 
 
-Its limitation is that it deliberately stops roughly at "what should we build?" It doesn't derive architecture.
+Its limitation is that it stops at potential deliverables; it does not derive architecture.
 
 ### 2. Goal-Oriented Requirements Engineering -- KAOS / i*
 
 
 This is the more rigorous, engineering-oriented version of the same idea.
 
-GORE asks what stakeholder/system **goals** exist, refines higher-level goals into subgoals, determines alternative ways of satisfying them, and eventually assigns concrete responsibilities to humans/software/other agents. Van Lamsweerde describes requirements engineering precisely as identifying goals, operationalizing them into services/constraints, and assigning responsibility to agents. ([DOI](https://doi.org/10.1145/337180.337184?utm_source=chatgpt.com "Requirements engineering in the year 00 | Proceedings of the 22nd international conference on Software engineering"))
+GORE identifies stakeholder and system **goals**, breaks them into subgoals, compares ways to meet them, and assigns concrete responsibilities to people, software, or other agents. Van Lamsweerde describes requirements engineering as identifying goals, operationalizing them into services and constraints, and assigning responsibility to agents. Here, operationalizing means turning a goal into requirements that can be carried out. ([DOI](https://doi.org/10.1145/337180.337184 "Requirements engineering in the year 00 | Proceedings of the 22nd international conference on Software engineering"))
 
 Conceptually:
 
@@ -76,24 +76,24 @@ Architecture
 ```
 
 
-This is surprisingly close to your complaint about C4.
+This supplies a goal-refinement model beyond the structural views provided by C4.
 
-With KAOS you can potentially point at something and ask:
+A KAOS model can support the question:
 
 > Why must this responsibility exist?
 
-and follow the graph upward until you reach an actual stakeholder goal.
+The graph can then be followed upward to a stakeholder goal.
 
-The downside: KAOS/i* come from requirements-engineering academia and are significantly heavier than most modern product teams want.
+The drawback is that KAOS/i* come from academic requirements engineering and require more formal work than most modern product teams want.
 
-### 3. Domain Storytelling -- very strong for your "user does X, then..." example
+### 3. Domain Storytelling -- grounding architecture in user activity
 
 
 Domain Storytelling's central question is essentially:
 
 > Who does what with what, and with whom?
 
-It models actors, their activities, and the work objects flowing between them. It is explicitly scenario-based and can model both existing and desired processes. Its authors also describe deriving requirements and domain models from those stories. ([Domain Storytelling](https://domainstorytelling.org/quick-start-guide?utm_source=chatgpt.com "Quick-Start Guide - Domain Storytelling"))
+It models actors, their activities, and the work objects flowing between them. It is explicitly scenario-based and can model both existing and desired processes. Its authors also describe deriving requirements and domain models from those stories. ([Domain Storytelling](https://domainstorytelling.org/quick-start-guide "Quick-Start Guide - Domain Storytelling"))
 
 So:
 
@@ -114,16 +114,14 @@ Customer
 ```
 
 
-Now your architecture isn't floating in space. It is supporting a **domain story**.
-
-This is one of the approaches I'd investigate most seriously for what you're after.
+The architecture supports a concrete **domain story**. Domain Storytelling is therefore one of the first methods to investigate for this approach.
 
 ### 4. EventStorming -- business process as the substrate for architecture
 
 
 EventStorming goes a little further toward architecture than Domain Storytelling.
 
-You first discover what actually happens in the business/domain:
+The process first discovers what happens in the business/domain:
 
 ```text
 User submitted request
@@ -138,25 +136,23 @@ Response sent
 ```
 
 
-and progressively discover commands, policies, actors, aggregates/boundaries, etc. Brandolini explicitly positions it as collaborative exploration of complex business domains rather than modeling the existing software; the technique has Process Modelling and Software Design variants. ([EventStorming](https://www.eventstorming.com/?utm_source=chatgpt.com "EventStorming"))
+The workshop gradually identifies commands, policies, actors, aggregates, and boundaries. Brandolini describes it as a way to explore complex business domains together, rather than model the existing software; the technique has Process Modelling and Software Design variants. ([EventStorming](https://www.eventstorming.com/ "EventStorming"))
 
 That last distinction is important:
 
 > Don't model the software and ask what it does.
 > Model the domain and discover what software needs to exist.
 
-That's very close to the inversion you're asking for.
+EventStorming does not inherently establish whether the modeled process contributes to a valuable **product outcome**.
 
-Its weakness is that EventStorming doesn't inherently explain the **product outcome**. You can EventStorm a completely pointless business process.
-
-So I would put Impact Mapping/JTBD above it.
+Impact Mapping or JTBD can provide that upstream justification.
 
 ### 5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology
 
 
 This is where things get particularly relevant architecturally.
 
-The SEI's Quality Attribute Workshop starts from **business/mission goals and stakeholder concerns**, converts those into concrete scenarios, identifies architectural drivers, and then Attribute-Driven Design uses architecturally significant requirements to produce architecture. ([SEI](https://insights.sei.cmu.edu/library/the-sei-quality-attribute-workshop/?utm_source=chatgpt.com "The SEI Quality Attribute Workshop"))
+The SEI's Quality Attribute Workshop starts with **business/mission goals and stakeholder concerns**. It turns them into concrete scenarios and identifies architectural drivers: the requirements that shape the design. Attribute-Driven Design then uses these architecturally significant requirements to develop the architecture. ([SEI](https://insights.sei.cmu.edu/library/the-sei-quality-attribute-workshop/ "The SEI Quality Attribute Workshop"))
 
 The chain becomes:
 
@@ -179,9 +175,9 @@ Architecture
 
 For example, instead of:
 
-> "We need Kafka."
+> "Use Kafka."
 
-you could have:
+the reasoning can establish:
 
 ```text
 Business goal:
@@ -205,16 +201,16 @@ Transaction Service → Event Bus → Notification Service
 
 Now Kafka isn't a box on a diagram. There is an explicit causal explanation for why something Kafka-like is required.
 
-ATAM complements this on the evaluation side: its utility tree translates business context into quality-attribute drivers and concrete stimulus/response scenarios, which are then used to judge architectural approaches and tradeoffs. ([SEI](https://www.sei.cmu.edu/documents/629/2000_005_001_13706.pdf?utm_source=chatgpt.com "ATAM: Method for"))
+ATAM helps evaluate the result. Its utility tree connects business context to quality-attribute drivers and concrete stimulus/response scenarios. Those scenarios are used to assess architectural approaches and tradeoffs. ([SEI](https://www.sei.cmu.edu/documents/629/2000_005_001_13706.pdf "ATAM: Method for"))
 
 This SEI family probably deserves more attention than it gets in contemporary software architecture.
 
 ### 6. arc42 -- a much better "frame around C4"
 
 
-arc42 doesn't solve product discovery, but its architecture documentation structure begins with **business goals, essential requirements, stakeholders, quality goals, context and constraints** before getting into building blocks/runtime/deployment. ([arc42 Documentation](https://docs.arc42.org/section-1/?utm_source=chatgpt.com "1 - Introduction and Goals | arc42 Documentation"))
+arc42 doesn't solve product discovery, but its architecture documentation structure begins with **business goals, essential requirements, stakeholders, quality goals, context and constraints** before getting into building blocks/runtime/deployment. ([arc42 Documentation](https://docs.arc42.org/section-1/ "1 - Introduction and Goals | arc42 Documentation"))
 
-So you can effectively do:
+One possible documentation structure is:
 
 ```text
 arc42
@@ -230,12 +226,12 @@ arc42
 ```
 
 
-I would regard C4 as a perfectly good **notation inside** something like arc42, rather than as the architecture method itself.
+C4 can serve as a **notation inside** an arc42 architecture description, rather than being treated as the architecture method itself.
 
 ### 7. 4+1 / use-case-driven architecture -- older, but conceptually important
 
 
-Kruchten's 4+1 model is interesting because the `+1` is not merely another structural view: it consists of selected use cases/scenarios. The architecture is iteratively developed around scenarios, which also illustrate and validate the other views. ([arXiv](https://arxiv.org/abs/2006.04975?utm_source=chatgpt.com "Architectural Blueprints: The 4+1 View Model of Software Architecture"))
+In Kruchten's 4+1 model, the `+1` consists of selected use cases and scenarios, rather than another structural view. The architecture develops through repeated work on those scenarios, which also explain and validate the other views. ([arXiv](https://arxiv.org/abs/2006.04975 "Architectural Blueprints: The 4+1 View Model of Software Architecture"))
 
 So it already recognizes:
 
@@ -251,7 +247,7 @@ Physical view
 
 RUP pushed the idea further by being explicitly **use-case-driven and architecture-centric**.
 
-It's not as outcome-oriented as what you're describing--the "why" usually stops at the use case--but historically this is an important predecessor.
+Its reasoning usually stops at the use case rather than the product outcome. This makes it a relevant earlier approach, with a narrower scope.
 
 ### 8. BDD / outside-in development -- same principle at code scale
 
@@ -269,11 +265,11 @@ Implementation
 ```
 
 
-Cucumber's current BDD description explicitly frames the process as breaking down user problems into examples and using those examples continuously from concept through implementation. ([Cucumber](https://cucumber.io/docs/bdd/?utm_source=chatgpt.com "Behaviour-Driven Development | Cucumber"))
+Cucumber's current BDD description explicitly frames the process as breaking down user problems into examples and using those examples continuously from concept through implementation. ([Cucumber](https://cucumber.io/docs/bdd/ "Behaviour-Driven Development | Cucumber"))
 
-So BDD does at the code/design boundary approximately what you're asking architecture to do at a larger scale.
+BDD connects desired behavior to implementation at the code/design boundary.
 
-The interesting conclusion is that I don't think the ideal method is one of these individually.
+No single method in this comparison appears to cover the whole chain; the proposed approach combines the parts that support one another.
 
 The coherent stack would be something like:
 
@@ -330,23 +326,19 @@ Notification Service
 ```
 
 
-That, I think, is the missing property you're describing.
+This forms an **explanation graph from intent to implementation**.
 
-Not "better diagrams," but an **explanation graph from intent to implementation**.
+A practical starting sequence is **Impact Mapping -> Domain Storytelling/EventStorming -> QAW/ADD**, with **arc42 + C4 used to document and present the result**. Those four layers fit together unusually well even though they weren't designed as one methodology.
 
-If I were choosing just three things to dig into first, I'd use **Impact Mapping -> Domain Storytelling/EventStorming -> QAW/ADD**, with **arc42 + C4 as the presentation layer**. Those four layers fit together unusually well even though they weren't designed as one methodology.
-
-## Answer 2
+## Progressive refinement from product intent
 
 
-Yes. I think you've connected two dimensions that are often treated separately:
+Two dimensions are often treated separately:
 
-1. **How architecture is derived** -- progressively, introducing structure only when something forces it.
-2. **What architecture is derived from** -- product intent and observable product behavior, rather than an abstract catalog of "architectural concerns."
+1. **How architecture is derived** -- step by step, adding structure only when a need requires it.
+2. **What architecture is derived from** -- the product purpose and its observable behavior, rather than a general list of "architectural concerns."
 
-I would not call the first one "working backwards."
-
-A better term is **progressive refinement from intent** or simply **goal refinement**.
+The first dimension is better described as **progressive refinement from intent** or **goal refinement** than as "working backwards."
 
 The conceptual process is:
 
@@ -377,7 +369,7 @@ This has several surprisingly close precedents.
 
 KAOS calls the move **goal refinement** and **goal operationalization**: progressively turn goals into lower-level requirements, then assign those requirements to responsible agents. Van Lamsweerde even has work explicitly titled _From System Goals to Software Architecture_. ([Webperso](https://webperso.info.ucl.ac.be/~avl/gore.php "Goal-Driven Requirements Engineering: the KAOS Approach"))
 
-That is much closer to your idea than "working backwards":
+The goal-refinement chain is:
 
 ```text
 Goal
@@ -392,15 +384,15 @@ Architecture
 ```
 
 
-There is also a useful older term, **stepwise refinement**, from Wirth: begin with an abstract statement and progressively replace it with more concrete decisions. ([Research Collection](https://www.research-collection.ethz.ch/items/cf590cb8-3d8f-40eb-9026-071a68b7a116?utm_source=chatgpt.com "Program development by step-wise refinement")) The difference is that classic stepwise refinement is about programs; what you're describing applies the same epistemic rule starting at the product level.
+There is also a useful older term, **stepwise refinement**, from Wirth: begin with an abstract statement and progressively replace it with more concrete decisions. ([Research Collection](https://www.research-collection.ethz.ch/items/cf590cb8-3d8f-40eb-9026-071a68b7a116 "Program development by step-wise refinement")) The difference is that classic stepwise refinement is about programs; the proposed approach applies the same reasoning rule starting at the product level.
 
 The second particularly relevant family is **outside-in + Responsibility-Driven Design**.
 
 Responsibility-Driven Design says, roughly, don't begin by classifying data into objects. Start from the responsibilities that need to be fulfilled and then find roles that collaborate to fulfill them. Wirfs-Brock explicitly frames objects as roles and responsibilities working together toward the larger goals of the application. ([Wirfs-Brock](https://www.wirfs-brock.com/Design.html "Wirfs-Brock Associates Responsibility-Driven Design"))
 
-Freeman and Pryce take this further in outside-in TDD. One striking property is that a collaborator **doesn't even need to exist yet**: a test can expose that a responsibility requires some supporting role, and only then do you introduce it. ([InformIT](https://www.informit.com/articles/article.aspx?p=1400614&seqNum=6 "Unit-Testing the Collaborating Objects | Test-Driven Development with Objects | InformIT")) They explicitly contrast this dynamic, responsibility-based view with starting from static classifications of things. ([InformIT](https://www.informit.com/articles/article.aspx?p=1400614&seqNum=3 "Follow the Messages | Test-Driven Development with Objects | InformIT"))
+Freeman and Pryce take this further in outside-in TDD. A collaborator **doesn't even need to exist yet**. A test can reveal that a responsibility needs a supporting role; the collaborator is introduced when that need appears. ([InformIT](https://www.informit.com/articles/article.aspx?p=1400614&seqNum=6 "Unit-Testing the Collaborating Objects | Test-Driven Development with Objects | InformIT")) They contrast this view of roles working together with starting from a fixed classification of things. ([InformIT](https://www.informit.com/articles/article.aspx?p=1400614&seqNum=3 "Follow the Messages | Test-Driven Development with Objects | InformIT"))
 
-That seems extremely close to your "prevent redundant concepts and entities" requirement.
+This supports the aim of avoiding redundant concepts and entities.
 
 For example, don't begin with:
 
@@ -446,7 +438,7 @@ but sending an invoice must not be lost.
 ```
 
 
-Now you have justification for:
+The constraint now justifies:
 
 ```text
 persist pending delivery
@@ -488,7 +480,7 @@ Why?
 
 That's substantially different from ordinary architecture modeling.
 
-There is an old requirements technique that fits your second point unusually well too: **Essential Use Cases**. Constantine and Lockwood structure them explicitly as:
+A related requirements technique is **Essential Use Cases**. Constantine and Lockwood structure them explicitly as:
 
 ```text
 User intention       System responsibility
@@ -498,13 +490,13 @@ request invoice  →   provide invoice
 ```
 
 
-and deliberately describe these in abstract, implementation-independent terms. ([ResearchGate](https://www.researchgate.net/publication/2350151_Structure_and_Style_in_Use_Cases_for_User_Interface_Design?utm_source=chatgpt.com "(PDF) Structure and Style in Use Cases for User Interface Design"))
+These interactions describe intentions and responsibilities without choosing an implementation. ([ResearchGate](https://www.researchgate.net/publication/2350151_Structure_and_Style_in_Use_Cases_for_User_Interface_Design "(PDF) Structure and Style in Use Cases for User Interface Design"))
 
-I think that distinction -- **user intention / system responsibility** -- may be one of the missing conceptual links you're looking for.
+The distinction between **user intention and system responsibility** connects product intent to design obligations.
 
-Then Vertical Slice Architecture gives you an implementation consequence of the same philosophy. Bogard argues for treating each request/use case independently, starting simple, allowing abstractions to emerge when the business logic actually requires them rather than imposing `Controller -> Service -> Repository` everywhere. ([Jimmy Bogard](https://www.jimmybogard.com/vertical-slice-architecture/ "Vertical Slice Architecture"))
+Vertical Slice Architecture provides a related implementation approach. Bogard argues for treating each request/use case independently, starting simple, allowing abstractions to emerge when the business logic actually requires them rather than imposing `Controller -> Service -> Repository` everywhere. ([Jimmy Bogard](https://www.jimmybogard.com/vertical-slice-architecture/ "Vertical Slice Architecture"))
 
-So I'd currently formulate the combined principle as:
+The proposed combined principle is:
 
 > **Architecture is the progressive allocation of product responsibilities to software structures.**
 
@@ -512,9 +504,7 @@ Not:
 
 > First design an architecture, then see how features fit into it.
 
-And perhaps even more importantly, I would slightly modify your second point. The foundation shouldn't be "the product" understood as its current features or UI.
-
-It should be:
+The foundation is broader than the current product features or UI. It comprises:
 
 ```text
 product purpose
@@ -527,7 +517,7 @@ product purpose
 
 The existing product is only one realization of those things.
 
-That gives you a nice rule for every architecture concept:
+This yields a rule for every architecture concept:
 
 ```text
 No architectural element without a parent reason.
@@ -549,4 +539,4 @@ product outcome
 ```
 
 
-This is, I think, more precise than both "working backwards" and "user-centered architecture." It's essentially **architecture by successive justification**: each refinement introduces only the concepts necessary to satisfy something already established one level above.
+The proposed label **architecture by successive justification** is more precise for this synthesis than "working backwards" or "user-centered architecture": each step adds only the concepts needed to meet a requirement already established at the level above.

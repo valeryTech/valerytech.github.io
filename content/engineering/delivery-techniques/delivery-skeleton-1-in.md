@@ -10,11 +10,11 @@ linkTitle: "Delivery Skeleton 1 In"
 ## Overview
 
 
-An **architectural walking skeleton** is a delivery technique for building the smallest executable version of a system that connects the major architectural parts end-to-end.
+An **architectural walking skeleton** is the smallest runnable version of a system that connects its main architectural parts from input to output.
 
-It is intentionally narrow in product capability, but real in architecture.
+It supports only a small part of the product, but uses the real architecture.
 
-The goal is not to deliver a complete feature set. The goal is to establish and validate the system's structural spine early: component boundaries, integration points, data contracts, operational assumptions, and the core execution path.
+The goal is to build and test the system's main structure early, before delivering a full set of features. This includes component boundaries, integration points, data contracts, assumptions about how the system will operate, and the main execution path.
 
 A walking skeleton should normally be extended, not thrown away.
 
@@ -23,15 +23,15 @@ A walking skeleton should normally be extended, not thrown away.
 
 When using this technique, the team should not ask:
 
-> What is the smallest feature we can ship?
+> What is the smallest shippable feature?
 
 Instead, the team should ask:
 
-> What is the smallest real workflow that forces the system's major architectural parts to work together?
+> What is the smallest real workflow that requires the system's major architectural parts to work together?
 
 The answer becomes the walking skeleton.
 
-The result should be a thin vertical slice through the system. It should touch every important architectural layer, but only with the minimum behavior required to make the full path executable.
+The result should be a thin vertical slice through the system. It should pass through every important architectural layer, with just enough behavior to run the full path.
 
 ## Principle
 
@@ -51,7 +51,7 @@ Use an architectural walking skeleton when:
 
 - The system has multiple components that must work together.
 - Integration risk is higher than individual feature risk.
-- The team needs early proof that the end-to-end path is viable.
+- The team needs early proof that the full path can work.
 - Future work depends on stable contracts between components.
 - The product scope is still narrow, but the technical foundation matters.
 - The team wants to avoid building isolated horizontal layers that do not integrate until late.
@@ -70,7 +70,7 @@ An architectural walking skeleton produces a runnable system slice that proves:
 5. Architectural risks are exposed early.
 6. Future work can extend the slice without replacing its core structure.
 
-The output is not expected to be feature-complete. It is expected to be structurally credible.
+The output does not need every feature. Its structure must be realistic enough to test the intended architecture.
 
 ## What This Is Not
 
@@ -95,7 +95,7 @@ A walking skeleton is used to establish the system spine and should normally bec
 ## Delivery Rule
 
 
-For each major architectural concern, implement the simplest real version that allows the full path to run.
+For each major architectural concern, build the simplest real implementation that lets the full path run.
 
 Prefer:
 
@@ -120,11 +120,11 @@ Avoid:
 
 A walking skeleton should include enough implementation to validate the architecture, but no more than necessary.
 
-The team should identify the major architectural parts of the future system and connect them with the smallest meaningful workflow.
+The team should identify the future system's main architectural parts and connect them through the smallest meaningful workflow.
 
 For example, instead of fully building one subsystem before starting another, the team should create a minimal path across all critical subsystems.
 
-The implementation should be designed so that later work can replace simple internals without changing the overall system shape.
+Later work should be able to replace simple internal implementations without changing the overall system structure.
 
 A simple component may be acceptable.
 
@@ -141,7 +141,7 @@ A walking skeleton is working well when:
 - Interfaces between components are visible and testable.
 - The team learns about integration risks early.
 - Future features have an obvious place to attach.
-- The implementation feels small, but structurally representative.
+- The implementation is small, but represents the intended structure.
 
 ## Bad Signs
 
@@ -154,7 +154,7 @@ The technique is being misapplied when:
 - The demo path bypasses the intended architecture.
 - The team cannot explain how future work extends the slice.
 - The implementation must be discarded before the next milestone.
-- The slice proves local behavior but not end-to-end viability.
+- The slice proves that individual parts work, but not that the full path can work.
 
 ## Acceptance Criteria
 
@@ -191,7 +191,7 @@ A walking skeleton validates executable architecture.
 
 A thin vertical slice is a narrow implementation across the stack.
 
-A walking skeleton is a specific kind of thin vertical slice focused on proving the architectural spine.
+A walking skeleton is a thin vertical slice used specifically to test the main architecture.
 
 ### Foundation Layer
 
@@ -203,22 +203,22 @@ A walking skeleton is vertical. It connects the layers through a working path.
 ## Summary
 
 
-An architectural walking skeleton is a delivery technique for building the smallest executable version of a system that traverses the real architecture end-to-end.
+An architectural walking skeleton builds the smallest runnable version of a system that follows the real architecture from input to output.
 
 It is narrow in functionality but real in structure.
 
-Its purpose is to validate integration points, component boundaries, data contracts, and operational assumptions before the team invests in broader feature development.
+Its purpose is to validate integration points, component boundaries, data contracts, and operational assumptions before the team spends time building a broader set of features.
 
-The slice should be extendable, not disposable.
+The slice should be suitable for further work, rather than something to throw away.
 
-# initial (throw)
+## Terminology and document-QA example
 
 
-One of the approaches in delivery is to use a think executable slice.
+The name of a thin runnable slice can reflect its purpose.
 
 Engineers would usually name this one of these, depending on emphasis:
 
-|Name engineers use|Meaning|Fit for your case|
+|Name engineers use|Meaning|Fit for an architectural baseline|
 |---|---|---|
 |**Walking Skeleton**|Smallest executable end-to-end system that connects the main architectural parts|**Best fit**|
 |**Thin Vertical Slice**|A narrow slice through the full stack/product flow|Also very good|
@@ -227,7 +227,7 @@ Engineers would usually name this one of these, depending on emphasis:
 |**Foundation Slice**|Says "basis for future work"|Understandable, but less standard|
 |**Tracer Bullet**|Small implementation used to validate direction/assumptions|Good if the main goal is discovery, not foundation|
 
-For your document, I would use:
+Possible titles for a Markdown-only document-QA baseline include:
 
 ```md
 # MVP-0: Markdown-Only Walking Skeleton
@@ -247,18 +247,18 @@ The most engineer-native formulation is probably:
 
 Why **walking skeleton**: Fowler's site uses it for "a very coarse integration" that defines the problem boundaries and uses as much real infrastructure as possible. ([martinfowler.com](https://martinfowler.com/articles/dependency-composition.html "Dependency Composition")) Another common definition is "the thinnest possible slice of real functionality" that can be built, deployed, and tested end-to-end. ([Def My Func](https://www.defmyfunc.com/2019_10_18_walking_skeleton/ "Integration, integration, integration. An introduction to walking skeletons in the enterprise | @defmyfunc blog"))
 
-I would avoid **base level** or **base layer**. Engineers may understand it, but it sounds like a horizontal infrastructure layer. Your thing is not horizontal; it cuts through the system vertically: input -> processing -> retrieval -> answer -> citations/abstention. So **walking skeleton** or **thin vertical slice** is much more precise.
+**Base level** and **base layer** suggest horizontal infrastructure. A document-QA slice cuts through the system vertically: input -> processing -> retrieval -> answer -> citations/abstention. So **walking skeleton** or **thin vertical slice** is much more precise.
 
-Yes. Your slice has at least **two distinct engineering goals**:
+An architectural baseline has **two distinct engineering goals**:
 
 1. **Walking goal**
     Let a user/developer "walk through" the system end-to-end and experience the intended flow.
 2. **Probing / architecture goal**
     Establish and validate the core architectural building blocks: boundaries, contracts, data model, retrieval path, answer-generation path, provenance, abstention behavior, etc.
 
-Because of that, **"walking skeleton" alone is slightly too narrow**. It captures goal 1 well, but not all of goal 2.
+For these two goals, **"walking skeleton" alone is slightly too narrow**. It describes running the flow end-to-end, but does not fully express the goal of testing the architecture. Adding **architectural** makes that second purpose clear.
 
-The more precise engineering name would be:
+More precise engineering names for this combined purpose are:
 
 ```md
 # MVP-0: Architectural Walking Skeleton
@@ -272,7 +272,7 @@ or:
 ```
 
 
-My preference:
+The preferred title for this example is:
 
 ```md
 # MVP-0: Architectural Walking Skeleton
@@ -281,7 +281,7 @@ My preference:
 
 Why: it is still recognizable to engineers as a **walking skeleton**, but the word **architectural** makes clear that its purpose is not only user-visible end-to-end behavior. It also establishes the system's structural spine.
 
-You could define it like this:
+The definition can state both goals clearly:
 
 ```md
 MVP-0 is an architectural walking skeleton: a minimal, executable slice of the system that lets users and developers walk the core QA flow end-to-end while also validating the foundational architecture, component boundaries, and evidence/answering contracts.
@@ -290,7 +290,7 @@ MVP-0 is an architectural walking skeleton: a minimal, executable slice of the s
 
 Alternative names by nuance:
 
-|Name|Best when you want to emphasize|
+|Name|Primary emphasis|
 |---|---|
 |**Architectural Walking Skeleton**|Both end-to-end execution and architecture validation|
 |**Foundation Architecture Slice**|Foundational building blocks more than user flow|
@@ -299,7 +299,7 @@ Alternative names by nuance:
 |**Reference Implementation Slice**|A concrete implementation that demonstrates intended contracts|
 |**Tracer Bullet Architecture Slice**|Learning/probing unknowns is the main purpose|
 
-For your case, I would use this structure:
+A document-QA baseline can use this structure:
 
 ```md
 # MVP-0: Architectural Walking Skeleton

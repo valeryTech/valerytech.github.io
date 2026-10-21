@@ -8,9 +8,9 @@ linkTitle: "Software Engineering Principles"
 ## Purpose
 
 
-Keep a shared list of engineering principles available when considering a solution. This note supports the single **Software engineering principles** entry in the main review checklist.
+Use a shared list of engineering principles when considering a solution. This note supports the single **Software engineering principles** entry in the main review checklist.
 
-The list is intended to reduce omissions. It does not require a separate checklist response or justification for every principle on every change.
+The list helps prevent important concerns from being missed. It does not require a separate checklist response or justification for every principle on every change.
 
 ## Simplicity and scope
 
@@ -26,11 +26,11 @@ The list is intended to reduce omissions. It does not require a separate checkli
 ## Responsibilities and abstraction
 
 
-- **Single level of abstraction.** Keep each function at a consistent conceptual level. Move lower-level details into suitable functions when they obscure the purpose of the surrounding code.
-- **Single responsibility.** Give a function, class, or module a cohesive responsibility, with closely related reasons for change.
-- **Separation of concerns.** Keep distinct concerns within appropriate boundaries so that their details do not become unnecessarily entangled.
+- **Single level of abstraction.** Keep each function at a consistent level of detail. Move lower-level details into suitable functions when they obscure the purpose of the surrounding code.
+- **Single responsibility.** Give a function, class, or module one coherent responsibility. Its reasons for changing should be closely related.
+- **Separation of concerns.** Give different concerns clear boundaries so that their details do not become unnecessarily mixed together.
 - **High cohesion, low coupling.** Keep related behavior together and limit dependencies between unrelated parts.
-- **Encapsulation.** Expose the operations consumers need while keeping internal representations and implementation choices private where practical.
+- **Encapsulation.** Provide the operations consumers need. Keep internal data representations and implementation choices private where practical.
 - **Dependency inversion.** Keep high-level policies independent of low-level implementation details where that separation is useful.
 - **Composition over inheritance.** Prefer combining components when it produces a simpler design than an inheritance hierarchy.
 - **Law of Demeter.** Limit dependence on collaborators' internal structure and chains of objects that expose it.
@@ -40,18 +40,18 @@ The list is intended to reduce omissions. It does not require a separate checkli
 
 A function that describes a business workflow should remain understandable in terms of that workflow. Detailed parsing, storage mechanics, or calculation steps can belong in functions that express those operations at the appropriate level.
 
-Abstraction level and responsibility describe different aspects of organization. A function can serve one business purpose while still mixing workflow decisions with implementation mechanics.
+Abstraction level and responsibility describe different aspects of organization. A function can serve one business purpose but still mix workflow decisions with the details of how they are implemented.
 
-This principle does not prescribe a fixed set of architectural layers, a class for every concern, or a helper for every expression. Extraction should give a useful name and boundary to a concept. Keep small, cohesive details together when separating them would make the code harder to follow.
+This principle does not prescribe a fixed set of architectural layers, a class for every concern, or a helper for every expression. Extracting code should give a concept a useful name and a clear boundary. Keep small, cohesive details together when separating them would make the code harder to follow.
 
 ## Clarity and maintainability
 
 
-- **DRY -- don't repeat yourself.** Keep shared knowledge and business rules consistent. Similar-looking code alone is insufficient reason to create a shared abstraction.
+- **DRY -- don't repeat yourself.** Keep shared knowledge and business rules in agreement. Similar-looking code alone is insufficient reason to create a shared abstraction.
 - **Least astonishment.** Keep behavior consistent with names, contracts, and the expectations established by the surrounding code.
 - **Clarity over cleverness.** Make intent and control flow straightforward to understand.
 - **Consistency.** Follow established project conventions unless there is a concrete reason to change them.
-- **Explicit failure handling.** Make invalid states and failures visible, and handle them according to the operation's contract.
+- **Explicit failure handling.** Make invalid states and failures visible. Handle them as the operation's contract requires.
 - **Testability.** Keep important behavior practical to verify without unnecessary setup, hidden state, or dependence on unrelated systems.
 
 ## Applying principles together
@@ -64,6 +64,13 @@ Some duplication may be acceptable while the shared concept is unclear. An inter
 Simplicity includes satisfying correctness, security, and operational requirements. Required validation, recovery behavior, or compatibility support remains part of the solution even when it adds code.
 
 Apply the principles to AI-generated changes with the same expectations. Additional AI-specific risks are collected in the reference lists and explained in the [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}).
+
+## Related notes
+
+
+- [AHA Programming]({{< ref "engineering/aha-programming" >}}) -- when duplication is preferable to a poorly understood abstraction.
+- [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) -- speculative generality, wrong abstractions, and learning from concrete cases before generalizing.
+- SOLID notes -- working notes on responsibility, extension points, and protecting components from changes elsewhere.
 
 ## Related documents
 

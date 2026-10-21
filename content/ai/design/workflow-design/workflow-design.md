@@ -5,20 +5,24 @@ description: "An interaction-point design sketch for exposing uncertain workflow
 title: "Workflow Design"
 linkTitle: "Workflow Design"
 ---
+## Designing workflows
 
-Designing workflows:
 
-Interaction-point design approach for AI workflows. The idea was to expose uncertain pipeline decisions -- retrieval candidates, context assembly, validation, review judgments, and failure labels -- as inspectable artifacts before automating them. That gave us a way to compare variants, capture domain feedback as traces, and turn stable patterns into evaluation criteria, operational controls, or automated policies.
+An interaction-point design approach exposes uncertain workflow decisions as inspectable artifacts before automating them. These decisions include retrieval candidates, context assembly, validation, review judgments, and failure labels. This supports comparison of variants, captures domain feedback as traces, and turns stable patterns into evaluation criteria, operational controls, or automated policies.
 
 ## Augmentation
 
 
 **Augmentation** is about helping a human perform the work better or faster. The AI may draft, summarize, recommend, retrieve, classify, or prepare options, while the human remains the actor.
 
-## some example of moving the ladder
+<a id="some-example-of-moving-the-ladder"></a>
+
+## Example of progressively increasing autonomy
 
 
-From 'copilot.money' This is the beginning of a longer arc. Our vision is an assistant that earns autonomy incrementally -- asking more and acting less early on, and gradually earning the right to handle more on its own as it proves its judgment. The boundary between "suggests" and "acts" will move over time, but always at your pace and under your control.
+Excerpt attributed in these notes to `copilot.money`:
+
+This is the beginning of a longer arc. Our vision is an assistant that earns autonomy incrementally -- asking more and acting less early on, and gradually earning the right to handle more on its own as it proves its judgment. The boundary between "suggests" and "acts" will move over time, but always at your pace and under your control.
 
 ## Progressive autonomy
 

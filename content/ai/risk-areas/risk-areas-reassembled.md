@@ -692,6 +692,8 @@ Do not turn those fields into a pseudo-precise score unless ranking actually hel
 ## Citation references
 
 
+The original research export recorded identifiers instead of source titles or URLs for the numbered references below. Their sources remain unresolved; the identifiers are retained for traceability.
+
 > **Reference note:** These numeric `turn...` entries are preserved from the source report. They are internal research references rather than usable publication citations. Rearrangement can retain them, but cannot repair them without changing the underlying text and sourcing.
 
 [^1]: Source reference: `turn8view0`

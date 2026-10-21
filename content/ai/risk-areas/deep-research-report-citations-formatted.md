@@ -464,6 +464,8 @@ That is the recommended terminology for product-team documentation.
 ## Citation references
 
 
+The original research export recorded identifiers instead of source titles or URLs for the numbered references below. Their sources remain unresolved; the identifiers are retained for traceability.
+
 [^1]: Source reference: `turn8view0`
 
 [^2]: Source reference: `turn4view5`

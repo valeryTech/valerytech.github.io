@@ -8,12 +8,12 @@ linkTitle: "URL Shortener: Requirements and Product Context"
 
 Additional requirements and product-framing perspectives. The [case index]({{< ref "system-design/projects/url-shortener" >}}) connects these proposals to the working design and NFR explorations.
 
-From a product marketing perspective, "Analytics" might be the core value proposition you sell. But from a **system implementation and user-experience perspective, Redirection is the non-negotiable, foundational core of the entire product.**
+From a product marketing perspective, "Analytics" might be the core value proposition offered to customers. But from a **system implementation and user-experience perspective, Redirection is the non-negotiable, foundational core of the entire product.**
 
 ## System Design Interview Priorities: The MVP Approach
 
 
-In a time-constrained interview, the goal is to design a system that **works correctly at its core** and can then be scaled. You must prioritize the features that deliver the primary function flawlessly.
+In a time-constrained interview, the goal is a system that **works correctly at its core** and can then be scaled. Prioritize the features that deliver the primary function flawlessly.
 
 Priority #1: Flawless, High-Speed Redirection (The Read Path)
 
@@ -21,11 +21,11 @@ Priority #2: Reliable Link Generation & Storage (The Write Path)
 
 **What to Explicitly De-prioritize for the MVP**
 
-Stating what you are _not_ building initially is just as important as stating what you _are_ building. This demonstrates focus.
+State both the initial scope and the excluded features to keep the design focused.
 
 De-prioritized: Advanced Analytics
 
-- **Why**: Full-scale analytics (tracking geolocation, referrers, etc.) requires a separate data pipeline (e.g., Kafka, Spark, data warehouse). This is a massive increase in complexity. For an MVP, you can start by simply incrementing a counter in your database for each click. You'd say, _"For the initial implementation, I'll defer a full analytics suite and start with a basic click counter to keep the read path as fast as possible."_
+- **Why**: Full-scale analytics (tracking geolocation, referrers, etc.) requires a separate data pipeline (e.g., Kafka, Spark, data warehouse), adding substantial complexity. An MVP can start with a database counter incremented for each click. Example interview wording: _"For the initial implementation, I'll defer a full analytics suite and start with a basic click counter to keep the read path as fast as possible."_
 
 De-prioritized: User Accounts & Link Management
 
@@ -42,6 +42,8 @@ De-prioritized: Link Customization & Branded Domains
 
 # URL Shortener -- Interview‑Style System Requirements (v1)
 
+
+Example interview framing:
 
 > **Interview framing (≤5 min):** I'll lock the scope with top functional requirements prioritized by user value, quantify the key non‑functional targets for the value path, state assumptions/constraints, and mark out‑of‑scope. This will drive a lean high‑level design.
 
@@ -95,10 +97,12 @@ De-prioritized: Link Customization & Branded Domains
 
 - another doc
 
-## 3. Assumptions & Constraints (defaults I'll design to unless overruled)
+<a id="3-assumptions--constraints-defaults-ill-design-to-unless-overruled"></a>
+
+## 3. Assumptions & Constraints
 
 
-This have to be considered later..
+Proposed defaults, subject to revision. Review these later.
 
 - **Redirect code default:** **302** (per‑link override to 301 later)
 - **Uniqueness scope:** Alias uniqueness is **global**, **case‑insensitive**
@@ -130,48 +134,44 @@ This sequence describes the events that occur in the milliseconds after an end-u
 
 > `Why -> How -> What's Next` Justification
 
-You need a fast, effective way to integrate product thinking into your technical answer.
-
-The key is to use product reasoning to **justify your technical decisions**. Here's a concise framework to do this quickly.
-
-By using this `Why -> How -> What's Next` framework, you seamlessly blend product reasoning with a strong technical design in a way that is fast, structured, and impressive.
+Use product reasoning to **justify technical decisions**. The `Why -> How -> What's Next` framework provides a quick, structured way to connect product thinking with a technical design.
 
 ### **The 3-Step "Why, How, What's Next" Framework**
 
 
-Use this mental model to structure your answer. It should take less than 90 seconds to deliver upfront before you dive deep into the technical components.
+Present the framework in less than 90 seconds before discussing the technical components in detail.
 
 ### **Step 1: Frame the "Why" (User & Business Context)**
 
 
-Start by briefly stating the core problem and goal. This shows you understand the purpose of the system you're building.
+Briefly state the core problem and goal to establish the purpose of the system.
 
 - **What to say**: "Before I design the components, let's quickly frame the core problem. For a URL shortener, the primary user is someone sharing a link who needs it to be clean and trustworthy. The business goal is to provide an extremely fast and reliable redirection service. Therefore, my design will prioritize the **read path's latency and availability** above all else."
-- **Why it works**: In two sentences, you've identified the user, the business need, and used that to declare your main technical priority.
+- **Why it works**: The two sentences identify the user, the business need, and the main technical priority.
 
 ### **Step 2: Explain the "How" (The Core Technical Flow)**
 
 #todo refactor this to HLD + Deep Dives approach from Hello Interview Framework
 
-This is where you immediately pivot to the technical design you prepared. You connect your proposed flow directly to the "Why" you just established.
+Connect the prepared technical design and proposed flow to the user and business goals established in Step 1.
 
 - **What to say**: "To achieve that low latency and high availability, let's walk through the request lifecycle. A user's click hits a CDN, which routes to a load balancer. This distributes traffic to a fleet of stateless redirect servers. Each server performs a lookup against a distributed key-value store like Redis or DynamoDB and issues a `301`redirect. This design is simple, scalable, and directly serves our primary goal of a fast read path."
-- **Why it works**: You present your technical solution as the logical answer to the problem you framed in Step 1.
+- **Why it works**: The technical solution directly addresses the problem framed in Step 1.
 
 ### **Step 3: State the "What's Next" (Assumptions & Metrics)**
 
 
-Quickly mention the trade-offs you're making for this initial design (the MVP) and how you'd measure its success. This demonstrates senior-level thinking.
+Briefly state the MVP's trade-offs and how its success would be measured. This demonstrates senior-level thinking.
 
 - **What to say**: "For this initial design, I'm making a key **assumption** that we can de-prioritize features like detailed analytics and user accounts to focus on the core redirection service. The main **KPIs** I'd use to measure success would be **p99 redirect latency** and **uptime**. If those metrics are solid, we can then build monetizable features like analytics on top."
-- **Why it works**: It shows you're pragmatic, you understand iterative development (MVP), and you're data-driven (KPIs). You're acknowledging the limitations of your design in a time-constrained scenario, which is a sign of a mature engineer.
+- **Why it works**: It shows a practical approach, iterative development (MVP), and decisions guided by data (KPIs). It also acknowledges the design's limits within a time-constrained interview.
 
 # Business Context Perspective
 
 
 Analyzing these functionalities from a product perspective shifts the focus from _how_  they work to _why_ they exist and the value they deliver to specific user segments.
 
-Here is an analysis and comparison of the core functionality areas of URL shorteners from a product management standpoint.
+The following comparison examines the core functionality areas of URL shorteners from a product management perspective.
 
 ## 1. Generation & Storage (Core Link Shortening Utility)
 

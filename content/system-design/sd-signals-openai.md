@@ -256,3 +256,8 @@ Decision:  Strong Hire / Hire / Lean No / No Hire
 - Cache sizing: `hotset keys × avg value size`; check hit-rate needed to meet p95 latency.
 - Backlog added during a constant-rate burst: `max(0, arrivals/second - completions/second) × burst seconds`; include any starting backlog separately.
 - Shard count: `(peak writes per shard) ≤ write limit per node` with headroom (e.g., 50-60%).
+
+## Optional practice aid
+
+
+Create a one-page candidate handout with a blank worksheet for SLOs and capacity estimates, plus a consistency checklist aligned with this rubric.

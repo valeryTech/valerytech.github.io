@@ -11,9 +11,11 @@ Personal framework experiment, retained alongside the [other frameworks]({{< ref
 # Functional Requirements
 
 
-???
+Draft gap: a general functional-requirements section has not yet been written.
 
-## 8. One-minute script you can say verbatim
+<a id="8-one-minute-script-you-can-say-verbatim"></a>
+
+## 8. One-minute interview script
 
 
 > "I'll structure FRs by **value**. The **Core Value** is redirecting a short code to its long URL; the **Enabler** is _creating that mapping_; alias/expiration are **Enhancements**.
@@ -25,15 +27,15 @@ Personal framework experiment, retained alongside the [other frameworks]({{< ref
 ## **Why this works**
 
 
-- **Signals product thinking:** You're anchoring FRs to outcomes, not features.
+- **Signals product thinking:** FRs are tied to outcomes rather than features.
 - **Guides design trade-offs:** Read path gets the budget and the SLOs.
-- **Keeps you on time:** You won't drown in enhancements before shipping value.
+- **Keeps the design on schedule:** Core value comes before enhancements.
 
-Use this structure on any system: name the **Moment of Value**, tag FRs as **CV/EN/EH**, attach SLOs only to CV, and sequence your design accordingly.
+To apply this structure to any system, name the **Moment of Value**, tag FRs as **CV/EN/EH**, attach SLOs only to CV, and plan the design in that order.
 
-Great pushback. In a **5-minute** requirements pass, you only mention numbers if they (a) change the design you'll draw and (b) you can justify them in one line. A senior/staff engineer keeps it **directional** by default and only quantifies the **value path** if asked.
+In a **5-minute** requirements pass, mention numbers only if they (a) change the design and (b) can be justified in one line. For a senior/staff interview, the proposed default is to keep requirements **directional** and quantify only the **value path**, if asked.
 
-Here's how a staff-level person would handle it, verbatim.
+The following scripts illustrate this approach for a staff-level interview.
 
 # Number Pitfall
 
@@ -70,8 +72,8 @@ Here's how a staff-level person would handle it, verbatim.
 ## **Anti-impostor heuristics**
 
 
-- Don't drop "four nines" unless you also say "multi-region active/active + edge KV."
-- If you can't justify, stay directional: "high availability on Resolve; eventually consistent Create."
+- Pair "four nines" with "multi-region active/active + edge KV."
+- When a number cannot be justified, stay directional: "high availability on Resolve; eventually consistent Create."
 - Use numbers **only** for the value path; keep the rest qualitative.
 
 ## **Example mini-dialog**
@@ -85,23 +87,25 @@ Here's how a staff-level person would handle it, verbatim.
 
 **You:** "v1: **99.9%** Resolve with **multi-AZ + CDN**, p95 **<100 ms**. If we need **99.99%**, I'll go **multi-region active/active**; otherwise I'll keep it lean."
 
-That's it -- clear, honest, and it buys you time to move to architecture without over-promising.
+This script states the priorities and targets clearly and honestly, leaving time for architecture without over-promising.
 
 # SD Ideas
 
-#idea: We can set scale (V) and throughput requirements such that a system fails to meet Non-Functional Requirements (NFRs) until the interviewee or designer implements necessary design adjustments or refactors.
-#idea For each system design example, we can implement one of the following approaches:
+#idea: Set scale (V) and throughput requirements that cause a system to fail its Non-Functional Requirements (NFRs) until the interviewee or designer adjusts or refactors the design.
+#idea For each system design example, consider either of the following approaches:
 
 - Introduce increased numerical requirements in a follow-up, preventing the interviewee from anticipating these conditions and thereby simulating a real-world scenario.
 - Encrypt these numerical parameters within the initial conditions.
 
-### Analysis of Your Ideas
+<a id="analysis-of-your-ideas"></a>
+
+### Analysis of the Two Approaches
 
 
-Your two concepts are sound and are frequently used in interviews to differentiate between junior and senior candidates.
+Both approaches are useful and frequently used in interviews to distinguish junior and senior candidates.
 
-1. **Progressive Scaling:** Your first idea, where the scale/throughput requirements (`V`) are increased mid-interview, is an excellent method to test **iterative design and bottleneck analysis**. A candidate is forced to re-evaluate their initial design and identify which components will fail under the new load. This simulates the real-world evolution of a service and assesses whether the candidate can proactively refactor for scale.
-2. **Implicit Requirements:** Your second idea, to obscure or omit key numerical requirements initially, effectively tests the candidate's **requirements-gathering discipline**. A strong candidate will not proceed with a design without first probing for critical NFRs like QPS (Queries Per Second), read/write ratios, latency targets, and availability goals. This technique filters for engineers who seek to understand the problem domain before proposing a solution.
+1. **Progressive Scaling:** Increase the scale/throughput requirements (`V`) mid-interview to test **iterative design and bottleneck analysis**. The candidate must re-evaluate the initial design and identify which components will fail under the new load. This simulates the evolution of a real service and assesses whether the candidate can proactively refactor for scale.
+2. **Implicit Requirements:** Obscure or omit key numerical requirements initially to test the candidate's **requirements-gathering discipline**. A strong candidate probes for critical NFRs like QPS (Queries Per Second), read/write ratios, latency targets, and availability goals before proceeding with a design. This tests whether the candidate seeks to understand the problem domain before proposing a solution.
 
 # Other Important Interview Techniques
 

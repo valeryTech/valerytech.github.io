@@ -18,6 +18,7 @@ The framework covers the problem being solved, the requirements, the implementat
 - **Engineering Review Framework** -- this document: purpose, main components, and the top-level checklist.
 - **[Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}})** -- supporting lists of engineering principles and review topics for each component.
 - **[Framework Rationale and Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})** -- why the framework is organized this way and how to use it during development and review.
+- **[Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}})** -- two supporting approaches: derive needed behavior from product outcomes, and design checks independently around important failures.
 
 The seven component notes are linked from the main checklist below. Each explains its area without requiring the reader to reconstruct earlier discussions.
 
@@ -67,7 +68,7 @@ Additional concerns for work assisted by large language models (LLMs), including
 ### 7. Review agents, skills, and tools
 
 
-The tools available to support review, including code review agents, reusable review skills, and automated checks. Their suitability, scope, and findings also need consideration.
+Ways to support any review area: introduce focused agents, capture reusable guidance in skills, combine activities into agentic workflows, and use tools to gather evidence. Choose or adapt them to the review question; specific implementations are examples that can change over time.
 
 ## Using the framework
 

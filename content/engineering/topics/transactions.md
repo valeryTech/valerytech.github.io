@@ -28,39 +28,13 @@ The ability to abort a transaction on error and have all writes from that transa
 ## Durability
 
 
-isolation levels: read commited and serializable
+isolation levels: read commited and serializable Implementing read committed
 
-Implementing read committed
+Read committed is a very popular isolation level. It is the default setting in Oracle 11g, PostgreSQL, SQL Server 2012, MemSQL, and many other databases [8].
 
-Read committed is a very popular isolation level. It is the default setting in Oracle
+Most commonly, databases prevent dirty writes by using row-level locks: when a transaction wants to modify a particular object (row or document), it must first acquire a lock on that object. It must then hold that lock until the transaction is committed or aborted. Only one transaction can hold the lock for any given object; if another transaction wants to write to the same object, it must wait until the first transaction is committed or aborted before it can acquire the lock and continue. This locking is done automatically by databases in read committed mode (or stronger iso‐ lation levels).
 
-11g, PostgreSQL, SQL Server 2012, MemSQL, and many other databases [8].
-
-Most commonly, databases prevent dirty writes by using row-level locks: when a
-
-transaction wants to modify a particular object (row or document), it must first
-
-acquire a lock on that object. It must then hold that lock until the transaction is com‐
-
-mitted or aborted. Only one transaction can hold the lock for any given object; if
-
-another transaction wants to write to the same object, it must wait until the first
-
-transaction is committed or aborted before it can acquire the lock and continue. This
-
-locking is done automatically by databases in read committed mode (or stronger iso‐
-
-lation levels).
-
-How do we prevent dirty reads? *One option* would be to use the same lock, and to
-
-require any transaction that wants to read an object to briefly acquire the lock and
-
-then release it again immediately after reading. This would ensure that a read
-
-couldn't happen while an object has a dirty, uncommitted value (because during that
-
-time the lock would be held by the transaction that has made the write).
+How do we prevent dirty reads? *One option* would be to use the same lock, and to require any transaction that wants to read an object to briefly acquire the lock and then release it again immediately after reading. This would ensure that a read couldn't happen while an object has a dirty, uncommitted value (because during that time the lock would be held by the transaction that has made the write).
 
 However, the approach of requiring read locks does not work well in practice,
 

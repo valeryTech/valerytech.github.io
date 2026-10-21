@@ -11,9 +11,9 @@ Source notes and personal annotations on system-design interviewing. Use the [in
 # Checklist
 
 
-You should create a paper with checklist items to do during the interview, like main steps, inputs-outputs, what not to forget, etc.
+Preparation task: create a paper checklist for the interview, including the main steps, inputs and outputs, and reminders.
 
-Preparation to some interview:
+Before a specific interview:
 
 - (tool) Ask your recruiter what software you'll be using for your interview and practice with it ahead of time. You don't want to be fumbling with the software during your interview.
 
@@ -98,7 +98,7 @@ A candidate doing a system design interview will usually experience confusion. T
 ## Two Types of Interviewers
 
 
-We need to act differently with cold and warm interviewers (take strategies from interviewing.io website).
+Preparation task: study interviewing.io's strategies for adapting to cold and warm interviewers.
 
 ## There's no right way to design a system
 
@@ -516,7 +516,7 @@ system evaluation
 - What are their **key expectations**? (low latency, reliability, security, ease of use)
 - How does user behavior **impact system design**? (e.g., peak traffic patterns, read vs. write ratios)
 
-we can introduce here product approach as in [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener" >}})
+Possible addition: apply the product approach used in the [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener" >}}) notes.
 
 # back-of-the-envelope estimations
 

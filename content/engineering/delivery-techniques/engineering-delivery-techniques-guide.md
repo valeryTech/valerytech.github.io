@@ -16,7 +16,7 @@ linkTitle: "Engineering Delivery Techniques Guide"
 ## 1. Purpose
 
 
-Engineering teams use terms such as _spike_, _proof of concept_, _prototype_, _walking skeleton_, _MVP_, _pilot_, and _canary_ to describe early or incremental work.
+Engineering teams use terms such as _spike_, _proof of concept_, _prototype_, _walking skeleton_, _MVP_, _pilot_, and _canary_ for early work or work delivered in small steps.
 
 These terms are often used loosely. That creates planning problems:
 
@@ -362,7 +362,7 @@ The knowledge should survive. The code may not.
 
 The learning target must be real.
 
-If the spike is about API limitations, use the real API. If it is about performance, use representative data. If it is about integration complexity, touch the actual integration surface.
+If the spike is about API limitations, use the real API. If it is about performance, use representative data. If it is about integration complexity, test the actual integration point.
 
 ### What can be simplified
 
@@ -491,7 +491,7 @@ A POC is complete when:
 ### Example
 
 
-A team wants to use a document parser. A POC runs the parser on representative files, measures extraction quality, identifies unsupported cases, and decides whether the parser is viable.
+A team wants to use a document parser. A POC runs it on representative files, measures extraction quality, finds unsupported cases, and checks whether the parser can meet the need.
 
 ### Related techniques
 
@@ -603,7 +603,7 @@ A team prototypes a document QA flow where a user uploads a document, asks a que
 ### Definition
 
 
-A tracer bullet is a narrow implementation used to test whether a technical direction is viable by sending a small amount of real work through the intended path.
+A tracer bullet is a small implementation that tests whether a technical direction can work. It sends a small amount of real work through the intended path.
 
 It is similar to a walking skeleton, but the emphasis is on validating direction and assumptions rather than establishing a stable architectural base.
 
@@ -656,7 +656,7 @@ State this before starting.
 ### What must be real
 
 
-The assumptions being tested must be exercised through real behavior. If testing an integration path, the integration must be real enough. If testing latency, the timing path must be representative.
+The test must use real behavior to check the assumptions. If testing an integration path, the integration must be real enough. If testing latency, the timing path must be representative.
 
 ### What can be simplified
 
@@ -995,7 +995,7 @@ A document QA MVP may support a limited set of document types and question flows
 ### Definition
 
 
-A reference implementation is a concrete implementation that demonstrates the intended way to use an API, architecture, protocol, pattern, or platform capability.
+A reference implementation is a working example of the intended way to use an API, architecture, protocol, pattern, or platform capability.
 
 It provides a working example of correct usage.
 
@@ -1087,7 +1087,7 @@ A platform team provides a service template showing request handling, authentica
 ### Definition
 
 
-An RFC or technical design doc is a written proposal used to align on a problem, design, tradeoffs, and implementation plan before significant engineering work begins.
+An RFC or technical design doc is a written proposal for agreeing on the problem, design, tradeoffs, and implementation plan before major engineering work begins.
 
 ### Primary question
 
@@ -1466,7 +1466,7 @@ A team releases a new document review workflow to two customer teams, monitors c
 ### Definition
 
 
-A beta is a release to a broader but still limited set of users to validate product, quality, compatibility, and operational behavior before general availability.
+A beta makes the product available to a broader but still limited group of users. It tests the product, quality, compatibility, and behavior in operation before general availability.
 
 ### Primary question
 
@@ -2448,7 +2448,7 @@ If code was written without production expectations, review it before promoting 
 ### 10.3 Building horizontal layers too early
 
 
-A common failure mode is building storage, platform, API, UI, or infrastructure layers in isolation. Prefer a narrow end-to-end path unless the horizontal layer is clearly justified by near-term consumers.
+A common failure mode is building storage, platform, API, UI, or infrastructure layers in isolation. Prefer a small end-to-end path unless there are clear users for the horizontal layer in the near term.
 
 ### 10.4 Mocking the risky part
 

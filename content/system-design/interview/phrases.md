@@ -90,3 +90,8 @@ Defer implementation detail deliberately, while keeping the component's responsi
 > "We've covered ___. The design meets ___ under these assumptions. The main unresolved risk is ___, and the next thing I'd check is ___."
 
 For the source discussion, see [interviewing.io's communication guide](https://interviewing.io/guides/system-design-interview/part-two#c-exactly-what-words-to-say-in-specific-scenarios). The [original phrase collection]({{< ref "system-design/archive/interview-phrases-v0" >}}) preserves the longer examples, synonym lists, and transcript fragments.
+
+## Related practice
+
+
+For a larger phrasebook with vocabulary distinctions, worked dialogues, and language for workplace design reviews, see Language for discussing trade-offs. The English collection connects it to speaking practice, sentence structures, and personal rewrites.

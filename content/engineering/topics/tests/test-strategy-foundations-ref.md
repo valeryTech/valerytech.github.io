@@ -8,7 +8,7 @@ linkTitle: "Test Strategy Foundations Ref"
 # Test Strategy Playbook (v3): Practical Pyramid, Clear Mental Models, and Operational Governance
 
 
-This document is a combined **teaching guide + execution playbook** for designing, governing, and operating a software test portfolio in modern systems (including microservices, Kafka/Kafka Streams, and Postgres).
+This document is both a **teaching guide and practical playbook**. It explains how to design, manage, and run a set of software tests for modern systems, including microservices, Kafka/Kafka Streams, and Postgres.
 
 It intentionally balances:
 
@@ -76,7 +76,7 @@ A reliable way to reason about test layers is a triangle:
 
 - **Fidelity**: how close the test is to production behavior,
 - **Cost**: runtime + maintenance + environment complexity,
-- **Debuggability**: how quickly a failure tells you what broke.
+- **Debuggability**: how quickly a failure identifies what broke.
 
 As scope increases (more real dependencies, more network, more processes):
 
@@ -92,9 +92,9 @@ This is why broad, high-fidelity tests must be curated: they are valuable, but e
 
 
 1. **Write tests with different granularity.**
-2. **As you go higher, have fewer tests.**
+2. **Use fewer tests as scope increases.**
 
-This is not dogma about exact counts. It is a practical way to prevent the test portfolio from drifting into slow, brittle, high-scope dependency.
+This does not set fixed test counts. It helps prevent the test portfolio from becoming dependent on slow, brittle tests with a broad scope.
 
 ### 2.2 Classic layers (what each layer is for)
 
@@ -113,10 +113,10 @@ Mid-scope tests that verify wiring and real infrastructure semantics at the seam
 
 High-scope smoke alarms ensuring critical user journeys still work, kept minimal because they are expensive and harder to localize.
 
-### 2.3 Non-zero-sum improvement (without "economics framing")
+### 2.3 Improving the whole test portfolio
 
 
-The pyramid is not a fixed allocation game. You can improve overall usefulness by:
+The pyramid is not a fixed allocation game. Overall usefulness can be improved by:
 
 - increasing determinism (hermetic infra, time control, no sleeps),
 - improving diagnosability (better assertions and failure artifacts),
@@ -655,17 +655,17 @@ For any proposed test:
 
 1. What risk does it mitigate?
 2. What is the smallest scope that can falsify that risk?
-3. Will the failure localize quickly? What artifacts will we capture?
+3. Will the failure localize quickly? What artifacts will be captured?
 4. Is it deterministic? If not, should it move to nightly or be redesigned?
 5. Does it duplicate lower-level coverage? If yes, why is it justified?
 6. Does it fit the runtime and flake budgets for its intended gate?
 
-If you cannot answer these, the test is likely to increase cost without increasing confidence.
+If these questions cannot be answered, the test is likely to increase cost without increasing confidence.
 
 # Application "Acceptance"
 
 
-We talk about **acceptance** because a test strategy is not only about verifying code correctness; it is about verifying that what you built is the **right thing** from a stakeholder perspective, and doing so in a way that is **testable, repeatable, and dispute-resistant**.
+**Acceptance** goes beyond checking code correctness. It checks that the implementation meets stakeholder needs, using evidence that is **testable, repeatable, and clear enough to avoid disputes**.
 
 ### What "acceptance" means
 
@@ -712,8 +712,8 @@ In waterfall-era processes this often became **UAT (User Acceptance Testing)** n
 
 Agile/XP reframed acceptance to solve the "late UAT" problem:
 
-- If you only discover misunderstandings at the end, cost is high.
-- If you define acceptance criteria up front, you reduce ambiguity and rework.
+- Discovering misunderstandings only at the end makes correction costly.
+- Defining acceptance criteria up front reduces ambiguity and rework.
 
 This led to practices like:
 
@@ -725,7 +725,7 @@ The purpose stayed the same -- prove the requirement is met -- but the timing sh
 
 ## Why acceptance matters in a test framework (today)
 
-### A) It prevents "we tested, but shipped the wrong thing"
+### A) It prevents shipping the wrong thing despite passing tests
 
 
 Without acceptance criteria, teams can produce lots of passing tests that only confirm:
@@ -743,9 +743,9 @@ Acceptance criteria create an objective "done" definition. That improves:
 
 - planning and estimation,
 - review quality ("does this meet the stated criteria?"),
-- release decisions ("what evidence do we have?").
+- release decisions ("what evidence is available?").
 
-### C) It reduces E2E bloat (the point of your section)
+### C) It reduces E2E bloat
 
 
 If teams think "acceptance = E2E," they put all acceptance evidence at the highest scope:
@@ -757,7 +757,7 @@ If teams think "acceptance = E2E," they put all acceptance evidence at the highe
 
 Saying "acceptance is orthogonal to test level" is a corrective:
 
-you can satisfy acceptance criteria with _the smallest scope that can prove them_.
+acceptance criteria can be satisfied with _the smallest scope that can prove them_.
 
 ## How to use acceptance correctly (operationally)
 
@@ -789,12 +789,12 @@ Evidence can be:
 
 All of those are "acceptance evidence." Only one of them needs to be E2E -- and often none, if the risk profile doesn't require it.
 
-If you want, I can propose a small acceptance-criteria template that forces "testable behavior + evidence mapping" (and avoids vague statements like "works," "is reliable," "fast enough").
+An acceptance-criteria template should describe **testable behavior and the evidence that will check it**. Avoid vague statements such as "works," "is reliable," or "fast enough."
 
 # Application "Acceptance & BDD"
 
 
-Yes. "Acceptance" and BDD are tightly connected -- but they are not the same thing.
+**Acceptance** and BDD are closely connected but serve different roles.
 
 ## The connection in one sentence
 
@@ -838,7 +838,7 @@ They overlap, but there are two important distinctions:
 ### 2. BDD scenarios can be executed at different test levels
 
 
-This is where your "acceptance is orthogonal to test level" point becomes relevant.
+Acceptance is orthogonal to test level.
 
 A Given/When/Then scenario can be implemented as:
 
@@ -875,7 +875,7 @@ That association is accidental and tooling-driven, not conceptual.
 ### Keep UI steps minimal
 
 
-If you do UI E2E:
+For UI E2E tests:
 
 - keep it to a handful of critical journeys,
 - avoid encoding detailed business rule coverage through the UI.
@@ -900,4 +900,4 @@ Same scenario, different layers.
 ## Bottom line
 
 
-BDD is strongly related to acceptance because it is a disciplined way to _discover and express_ acceptance criteria. But "BDD tests" should not default to E2E. Treat BDD as the specification language; implement the checks at the lowest layer that provides sufficient evidence.
+BDD is closely related to acceptance because it provides a structured way to _discover and express_ acceptance criteria. But "BDD tests" do not have to be E2E tests. Use BDD to state the specification, then put the checks at the lowest layer that provides enough evidence.

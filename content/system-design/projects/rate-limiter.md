@@ -8,7 +8,7 @@ linkTitle: "Rate Limiter: Reading and Design Outline"
 # Rate Limiter
 
 
-Partial article plan and reading notes. The open tasks and distributed-algorithm questions are retained. Return to [practice cases]({{< ref "system-design/projects" >}}).
+Partial article plan, source excerpts, and personal critique. Includes open tasks and questions about distributed algorithms. Return to [practice cases]({{< ref "system-design/projects" >}}).
 
 # Sources
 

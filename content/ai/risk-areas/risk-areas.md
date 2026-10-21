@@ -5,7 +5,10 @@ description: "Early working arguments distinguish broad solution-risk dimensions
 title: "Risk Areas"
 linkTitle: "Risk Areas"
 ---
-# part 1
+
+<a id="part-1"></a>
+
+# Naming the solution-risk dimensions
 
 
 > **Status:** Early working notes. See [`risk-areas-model.md`]({{< ref "ai/risk-areas/risk-areas-model" >}}) for the selected model. These notes are retained as source material and may contain positions that were not selected.
@@ -60,7 +63,9 @@ The resulting hierarchy is:
 
 That produces much cleaner language than treating "Value Risk" as one giant risk.
 
-# part 1 - reasoning
+<a id="part-1---reasoning"></a>
+
+# Reasoning behind the solution-risk dimensions
 
 
 The broader SVPG material presents a coherent model, but the terminology mixes two levels: **properties of a good solution** and **risks that those properties won't hold**.
@@ -310,7 +315,9 @@ That last step is important because SVPG explicitly says the ultimate evidence t
 
 The preferred name for the framework is therefore **Four Solution Risk Dimensions**. It preserves SVPG's vocabulary while being more precise about what the four things actually represent.
 
-# answer 2
+<a id="answer-2"></a>
+
+# Comparison with other discovery frameworks
 
 
 There is practitioner precedent for this interpretation, which separates the top-level classification from the concrete things being tested.

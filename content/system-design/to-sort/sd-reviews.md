@@ -395,15 +395,15 @@ If read performance is the bottlenech we can add read replicas to help.
 # file storage
 
 
-why four-nines? not five nines? alternatives -> high availability in common as a AC (nfr)
+Open question: why four-nines availability rather than five nines? Consider alternatives and high availability as an architectural characteristic (NFR).
 
-how to reason about read/write heavy property?
+Open question: how should the design determine whether the workload is read-heavy or write-heavy?
 
-in terms of latency: "very low latency"?
+Open question: what does "very low latency" mean in measurable terms?
 
 batch vs stream. cdc.
 
-tbd: the ac gived a hint: 20,000 rps. They gived this hint intentionally. Why? What do they want?
+Review question: the AC gave a hint of 20,000 rps. Why was this hint given, and what was it intended to reveal?
 
 there are 4 stages in meta: scoping, designing for scale, communication
 
@@ -416,7 +416,7 @@ there are 4 stages in meta: scoping, designing for scale, communication
 
 +tc shared an assumption that is out of scope for this discussion
 
--he ask a question "how to interact with feature" -> instead you should get several options
+-he asked "how to interact with feature". Review suggestion: offer several interaction options instead.
 
 +tc asked average number of interaction from a user to this feature
 
@@ -427,15 +427,15 @@ there are 4 stages in meta: scoping, designing for scale, communication
 ## Static Locations
 
 
-my notes:
+Personal notes:
 
-This service's fundamental operation is searching. User should be able to search all nearby friends within a specified radius for any particular location.
+This service's main operation is searching. Users should be able to find all nearby friends within a specified radius of any location.
 
-phrase: Given a user's location, return top X points of interest near the user
+Example access pattern: given a user's location, return the top X nearby points of interest.
 
-! static locations
+Scope: static locations.
 
-pipeline: design iteration (Naive Approach) ->
+Design iterations, starting with a naive approach:
 
 *first iteration*
 
@@ -443,19 +443,19 @@ lat, lon
 
 *second iteration*
 
-geohashing algorithms and proximity servers, geohash4, geohash5, and geohash6 ... find neighbours and query `select .. like 'asdfn%'`
+Use geohashing algorithms and proximity servers, with geohash4, geohash5, and geohash6. Find neighbours and query `select .. like 'asdfn%'`.
 
-index on geohash
+Add an index on geohash.
 
 *third iteration*
 
-problems: `LIKE` can be slow; every request still makes a DB query which can be a bottleneck; diffucult to scale
+Problems: `LIKE` can be slow; every request still makes a database query, which can become a bottleneck; scaling is difficult.
 
-solution: introduce 4, 5, 6 prefixes(and index these columns) and denormalizing
+Possible solution: introduce 4, 5, 6 prefixes, index these columns, and denormalize.
 
-solution 2: add business cache and 3 leveled caches (return ids of bussinesses with this geohash)
+Possible solution 2: add a business cache and 3 levels of caches that return IDs of businesses with the given geohash.
 
-write flow: introduce CDC in Kafka - cdc from mysql to kafka and then to 'business post processing' service to write changes to caches
+Write flow: send changes through CDC from MySQL to Kafka, then to a "business post processing" service that updates the caches.
 
 language: first pass
 

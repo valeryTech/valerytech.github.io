@@ -10,11 +10,10 @@ linkTitle: "Ticketmaster: Source Walkthrough and Notes"
 
 Collected source walkthrough with additional notes. Compare its assumptions and choices with your own design using the [case template]({{< ref "system-design/projects/case-template" >}}).
 
-[Up to 25% off select mock interviews 🎉](https://www.hellointerview.com/discounts)
+Source-page metadata retained from the capture:
 
-[![Hello Interview](https://www.hellointerview.com/_next/image?url=https%3A%2F%2Ffiles.hellointerview.com%2Fbuild-assets%2FPRODUCTION%2F_next%2Fstatic%2Fmedia%2FlogoAndNamePrimaryPremium.d3ccc6fc.png&w=384&q=75)](https://www.hellointerview.com/)
-
-- Back to Main
+- [Captured promotion: up to 25% off select mock interviews](https://www.hellointerview.com/discounts).
+- [Hello Interview](https://www.hellointerview.com/); [captured site-logo image](https://www.hellointerview.com/_next/image?url=https%3A%2F%2Ffiles.hellointerview.com%2Fbuild-assets%2FPRODUCTION%2F_next%2Fstatic%2Fmedia%2FlogoAndNamePrimaryPremium.d3ccc6fc.png&w=384&q=75).
 
 ## Understanding the Problem
 
@@ -464,6 +463,11 @@ You should know which technologies to use, not just in theory but in practice, a
 **Advanced System Design and Scalability**: Your approach to system design should be advanced, focusing on scalability and reliability, especially under high load conditions. This includes a thorough understanding of distributed systems, load balancing, caching strategies, and other advanced concepts necessary for building robust, scalable systems.
 
 **The Bar for Ticketmaster:** For a staff+ candidate, expectations are high regarding depth and quality of solutions, particularly for the complex scenarios discussed earlier. Great candidates are diving deep into at least 2-3 key areas, showcasing not just proficiency but also innovative thinking and optimal solution-finding abilities. A crucial indicator of a staff+ candidate's caliber is the level of insight and knowledge they bring to the table. A good measure for this is if the interviewer comes away from the discussion having gained new understanding or perspectives.
+
+## Unsorted workflow notes
+
+
+Captured prompt and workflow fragments, separate from the Ticketmaster walkthrough. Their wording is retained; the intended system and surrounding prompt context are not recorded.
 
 focus on ensuring the requirements, design, and tasks are of high quality and thoroughly tested.
 

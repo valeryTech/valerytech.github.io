@@ -14,9 +14,10 @@ product-and-evaluation-model.md
 20-failure-understanding.md
 ```
 
-XXX
 
-The framework is already close. I would not redesign the evaluation subsystem. I would change the **product model around it**.
+#todo
+
+The proposed refactor keeps the evaluation subsystem and changes the **product model around it**.
 
 The strongest parts already fit the new framing:
 
@@ -25,12 +26,12 @@ The strongest parts already fit the new framing:
 - evaluation produces scoped evidence and findings, while product owners make product and release decisions;
 - failure understanding builds product-specific knowledge from actual traces rather than assuming a fixed generic taxonomy.
 
-The classical framing is mostly visible **above** those mechanisms.
+The classical framing appears mainly in the **product model above** those mechanisms.
 
 ### 1. The main conceptual change
 
 
-Today the model contains language like:
+The model being reviewed uses language such as:
 
 > AI Product = intended value-producing capability
 
@@ -41,9 +42,9 @@ and:
 > introduce a feature
 > build the MVP
 
-Your goal tree even has `G3. Deliver product capabilities -> Build the MVP -> Introduce new features`.
+The goal tree includes `G3. Deliver product capabilities -> Build the MVP -> Introduce new features`.
 
-That is where I'd make the change.
+That part of the model needs the proposed change.
 
 Instead of making the central delivery object a **feature/MVP/capability**, make it a:
 
@@ -90,16 +91,16 @@ Production evidence
 
 The evaluation subsystem sits across this entire structure.
 
-### 2. I would redefine `AI Product`
+### 2. Proposed redefinition of `AI Product`
 
 
-Your current definition is:
+The definition being reviewed is:
 
 > An AI Product is an intended value-producing capability offered to a defined set of actors.
 
-"Capability" is now causing us trouble because we're using the same word for model abilities, product functionality, and roadmap units.
+"Capability" is ambiguous here because it refers to model abilities, product functionality, and roadmap units.
 
-I'd change it to something like:
+Proposed definition:
 
 > **An AI Product is a set of intended product behaviors offered to defined actors to produce intended outcomes.**
 
@@ -118,7 +119,7 @@ AI Product
 ```
 
 
-I would remove `MVP scope`.
+Proposed change: remove `MVP scope` from the delivered-product model.
 
 For a delivered product, use:
 
@@ -128,7 +129,7 @@ or:
 
 > **committed production slices**
 
-Discovery can still have prototypes and solution scopes. They don't need to masquerade as an MVP.
+Discovery can still use prototypes and solution scopes without treating them as an MVP.
 
 ### 3. Production slice becomes the delivery planning unit
 
@@ -196,13 +197,13 @@ evaluation questions / cases / criteria
 ### 4. This changes the meaning of the Product Improvement Loop
 
 
-Your current Product Improvement Loop is very broad. It owns things such as:
+The Product Improvement Loop being reviewed is broad. It covers:
 
 > identifying and framing opportunities; deciding which problems to pursue; defining a change hypothesis; implementing; releasing; monitoring.
 
 That mixes Discovery and Delivery.
 
-I would narrow it.
+The proposal narrows its scope.
 
 After the productization commitment, the **Delivered Product Improvement Loop** would ask:
 
@@ -248,16 +249,16 @@ That boundary becomes useful.
 
 Delivery improves the implementation of a sufficiently clear commitment.
 
-Discovery revisits what we should commit to.
+Discovery revisits what the product should commit to.
 
 ### 5. Keep `Delivered AI Product State`, but decompose it
 
 
-Your current definition is:
+The definition being reviewed is:
 
 > product intent + configured AI System + operating/rollout policy.
 
-I actually like this aggregate concept for the improvement loop.
+This aggregate concept remains useful for the improvement loop.
 
 But for evaluation traceability, don't treat it as one indivisible version.
 
@@ -296,14 +297,14 @@ A changed prompt does not mean product intent changed.
 
 A changed product guarantee does.
 
-### 6. Your core evaluation definition survives almost unchanged
+### 6. The core evaluation definition stays almost unchanged
 
 
-Your current definition is strong:
+The existing definition remains suitable:
 
 > AI evaluation is an iterative, evidence-driven engineering practice that frames a decision or knowledge need, makes intended behaviour explicit, probes and observes actual behaviour, applies validated judgement, builds reusable Quality Understanding, and uses the resulting findings to support product improvement and governance decisions.
 
-I wouldn't materially change it.
+The proposal keeps this definition with no material change.
 
 The change is what feeds `intended behaviour`.
 
@@ -336,9 +337,9 @@ That is a cleaner normative source.
 ### 7. The three loops become clearer
 
 
-Your three-loop model remains useful.
+The three-loop model remains useful.
 
-I would interpret it like this:
+The loops can be interpreted as follows:
 
 |Loop|Persistent object|Delivery question|
 |---|---|---|
@@ -348,12 +349,12 @@ I would interpret it like this:
 
 Then Discovery sits around this system and can be entered whenever evidence challenges the product commitment itself.
 
-So you don't need a fourth "Discovery loop" inside the evaluation architecture.
+A fourth "Discovery loop" is therefore unnecessary inside the evaluation architecture.
 
-### 8. Your failure-understanding work fits especially well
+### 8. Failure understanding fits the revised model
 
 
-I wouldn't change much there.
+The failure-understanding method needs few changes.
 
 The important addition is a routing question after a failure is understood:
 
@@ -392,14 +393,14 @@ Evidence Capability
 ```
 
 
-Your current framework already has the latter two distinctions between product failure, Quality Understanding problems, and missing evidence.
+The framework already distinguishes product failure, Quality Understanding problems, and missing evidence.
 
-We are adding the **Discovery vs Delivery routing dimension**.
+The proposed addition is the **Discovery vs Delivery routing dimension**.
 
-### 9. The biggest change to your lifecycle
+### 9. Splitting the lifecycle
 
 
-Your current lifecycle says:
+The lifecycle being reviewed is:
 
 ```text
 Product goal, problem, or opportunity
@@ -413,7 +414,7 @@ Design and implement candidate
 ```
 
 
-I would split that explicitly:
+Proposed split:
 
 ```text
 DISCOVERY LIFECYCLE
@@ -475,14 +476,14 @@ During Delivery:
 
 The same hypothesis/evidence discipline applies, but the decision context is different.
 
-### 10. And this gives evals a very precise role
+### 10. The role of evaluation
 
 
-Your original Teresa-inspired statement still works:
+The original Teresa-inspired statement remains suitable:
 
 > define good behavior -> observe actual behavior -> evaluate gaps -> improve the product -> evaluate again
 
-I'd only make one thing explicit:
+The proposed clarification is the routing of a gap:
 
 ```text
                      ┌── Discovery
@@ -497,7 +498,7 @@ gap ─────────────────┤
 ```
 
 
-And a third route already present in your framework:
+A third route already exists in the framework:
 
 ```text
                      └── Evaluation subsystem
@@ -505,6 +506,6 @@ And a third route already present in your framework:
 ```
 
 
-That is probably the conceptual connection your framework was missing.
+This routing connects gaps to the kind of work needed to address them.
 
-So I would **preserve most of the evaluation architecture**. The larger rewrite should be around `AI Product`, the product-owner goal tree, the Product Improvement Loop's scope, and the Delivery Lifecycle. The cases, traces, Quality Understanding, failure models, evaluators, offline/online planes, and Evidence Capability all survive with relatively minor terminology changes.
+The proposal **preserves most of the evaluation architecture**. The larger rewrite should be around `AI Product`, the product-owner goal tree, the Product Improvement Loop's scope, and the Delivery Lifecycle. The cases, traces, Quality Understanding, failure models, evaluators, offline/online planes, and Evidence Capability all survive with relatively minor terminology changes.

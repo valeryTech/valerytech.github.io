@@ -17,23 +17,25 @@ Describe how testing, continuous integration (CI), and pull request (PR) review 
 
 Tests exercise selected behavior. CI runs configured checks in a shared workflow. PR review brings the problem, implementation, results, and remaining uncertainty into one discussion.
 
-Use these activities together when deciding whether a change is ready. A successful CI run establishes the outcome of its executed checks. The review still needs to consider missing requirements, gaps in coverage, and design decisions outside those checks.
+Use these activities together when deciding whether a change is ready. A successful CI run shows that the checks it actually ran passed. The review still needs to consider missing requirements, gaps in coverage, and design decisions outside those checks.
 
 ## Testing
 
 
 Choose tests according to the behavior and risk involved. The supporting reference list includes unit, integration, contract, and end-to-end tests, along with performance, security, and recovery checks where relevant.
 
-Keep expected results connected to requirements and supported behavior. Include useful regression coverage for a bug fix and relevant boundary or failure cases for new behavior. Review test expectations, setup, and assertions as part of the change. Google's guidance treats test validity and maintainability as review concerns in their own right.[1]
+Base expected results on the requirements and supported behavior. Include useful regression coverage for a bug fix and relevant boundary or failure cases for new behavior. Review test expectations, setup, and assertions as part of the change. Google's guidance treats test validity and maintainability as review concerns in their own right.[1]
 
 A test suite does not need every test type for every change. Use a combination that can establish the important behavior without unnecessary duplication or fragile setup. Numerical quality targets belong to the [Requirements and Quality Targets]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}}) note and the project's requirements.
+
+[Independent verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}#2-design-verification-independently) derives expected behavior, reliability properties, and consequential failure scenarios separately from the proposed implementation. It distinguishes deciding what to verify from making those checks executable with real system knowledge.
 
 ## Continuous integration
 
 
 Keep routine checks automated where practical: building, formatting, linting, type checking, tests, and relevant security or dependency checks. Add specialized checks where the project needs them, such as migration validation or performance regression testing.
 
-Make results understandable. Keep successful checks, failures, skipped work, and unavailable environments distinguishable. Results used for approval should correspond to the revision being reviewed. A change to tests or CI configuration deserves review alongside the application code it affects.
+Make results clear. Distinguish passed checks, failed checks, skipped work, and work that could not run because its environment was unavailable. Results used for approval should match the revision being reviewed. A change to tests or CI configuration deserves review alongside the application code it affects.
 
 Detailed job configuration and merge rules remain project-specific. This framework does not prescribe universal coverage percentages, timing limits, or a fixed CI pipeline.
 
@@ -42,7 +44,7 @@ Detailed job configuration and merge rules remain project-specific. This framewo
 
 Review the complete change before requesting review. Keep the PR focused, explain its purpose and scope, and link to relevant context and requirements. Summarize the checks actually performed and any remaining limitations.
 
-Record consequential decisions and risks where they help the reviewer understand the implementation. Google's guidance on change descriptions emphasizes explaining both the change and its rationale.[2] Existing tickets or design notes can supply the detail without being copied into the PR.
+Record important decisions and risks when they help explain the implementation. Google's guidance on change descriptions emphasizes explaining both the change and its rationale.[2] Existing tickets or design notes can supply the detail without being copied into the PR.
 
 Keep changes small enough to understand while preserving a coherent, working change. Google's guidance on small changes includes self-contained changes with related tests.[3]
 
@@ -56,7 +58,7 @@ Use the engineering principles to discuss design choices. Use technical guides a
 ## Discussion and completion
 
 
-Explain the consequence of a requested change. Keep correctness, security, compatibility, and agreed requirements distinguishable from optional improvements. Google's review standard prioritizes technical reasoning and code health while allowing reasonable design choices.[4]
+Explain the consequence of a requested change. Distinguish correctness, security, compatibility, and agreed requirements from optional improvements. Google's review standard prioritizes technical reasoning and code health while allowing reasonable design choices.[4]
 
 Resolve issues that block acceptance, make unresolved requirements and verification gaps visible, and use the project's existing process for accepted follow-up work. Revisit affected results after substantive revisions. The project determines who can approve the change and accept remaining risk.
 
@@ -72,6 +74,11 @@ External references checked on 2026-10-20. The workflow guidance above is a reco
 [3] Google Engineering Practices, [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html).
 
 [4] Google Engineering Practices, [The Standard of Code Review](https://google.github.io/eng-practices/review/reviewer/standard.html).
+
+## Related notes
+
+
+- [Test Strategy Foundations and the Practical Test Pyramid]({{< ref "engineering/topics/tests/test-strategy-foundations" >}}) -- choosing test scope, separating acceptance criteria from test levels, and balancing speed, realism, and diagnosability.
 
 ## Related documents
 

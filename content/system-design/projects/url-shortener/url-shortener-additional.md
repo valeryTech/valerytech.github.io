@@ -29,7 +29,7 @@ Supplementary estimation, completion checks, and design skeleton. Read alongside
 - Security/abuse basics noted (rate limit, reserved aliases)
 - Acceptance tests enumerated (unit + e2e)
 
-(?) how we can come up and reason this design? What problems does it solve?
+Open questions: How can this design be derived and justified? What problems does it solve?
 
 # URL Shortener "design skeleton" to draw
 
@@ -52,12 +52,12 @@ Demonstrates operational maturity anchored to value.
 - **If cache cold:** return short TTL 503 with human-friendly fallback (minimize blast radius).
 - **If expiration job lags:** tolerate brief stale resolves; correctness catches up (availability over strict freshness).
 
-(?) deep dives # If they push on one dimension
+Possible deep dives if one dimension needs more attention:
 
 - **Bigger scale:** increase TTLs on very hot codes, push mapping into provider edge KV (Cloudflare KV/Workers, Fastly KV), or preload hot sets.
 - **Stronger consistency on create:** conditional writes/unique index + per-alias token; still async propagate to caches.
 
-**Stateless Service**: The redirection service should be stateless so you can scale it horizontally behind a load balancer.
+**Stateless Service**: Keep the redirection service stateless so it can scale horizontally behind a load balancer.
 
 Edge Cases
 

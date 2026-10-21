@@ -6,15 +6,15 @@ description: "Explains why AI delivery needs controlled experiments with baselin
 linkTitle: "Disciplined AI Experimentation"
 ---
 
-**Objective:** Define the systemic framework for transitioning AI development workflows from uncontrolled, intuition-based iterations to evidence-driven, decision-grade engineering.
+**Objective:** Define a framework for moving AI development from uncontrolled, intuition-based iteration to evidence-driven engineering that supports decisions.
 
 The engineering problem is not to eliminate experimentation. The engineering problem is to make experimentation **controlled, observable, reproducible, and decision-grade**.
 
-So the contrast should not be:
+The distinction should not be reduced to:
 
 > guesswork -> engineering
 
-A better contrast is:
+A more useful distinction is:
 
 > uncontrolled experimentation -> disciplined experimentation
 
@@ -25,11 +25,11 @@ or:
 ## Experimental Approach
 
 
-experimental nature, hypothesis, scientific approach and experiment velocity priority
+AI development is empirical: form hypotheses, use scientific methods, and prioritize the speed of useful experiments.
 
 **Leverage for small teams:** build tools that reduce manual review, unblock migrations, help engineers diagnose incidents, and let domain experts iterate without waiting on platform changes
 
-don't automate, augment
+Augment human work rather than automate it.
 
 ## Ad Hoc AI Development
 
@@ -58,7 +58,7 @@ A non-ad hoc AI workflow would usually include:
 | Hard to reproduce results   | Logged inputs, outputs, model versions, parameters |
 | Shipping based on intuition | Deployment gates and regression checks             |
 
-**"ad hoc AI development"** refers to AI work that is reactive, informal, and difficult to measure or reproduce. A tighter alternative might be:
+**"ad hoc AI development"** refers to AI work that is reactive, informal, and difficult to measure or reproduce. Alternative descriptions include:
 
 > "intuition-driven AI development"
 

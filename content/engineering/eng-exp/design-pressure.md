@@ -10,7 +10,7 @@ linkTitle: "Design Pressure"
 ## How a Contract-Driven Test System Shapes Architecture (RAG + Function Calling)
 
 
-This document is a technical reference on **why** and **how** an evaluation/test system should create **design pressure toward modularity** for LLM products -- specifically **RAG + function calling** systems. It is designed as a "research memory" artifact: comprehensive, detailed, and intended to be revisited.
+This document explains **why** and **how** an evaluation and test system should push LLM products toward a more modular design. It focuses on **RAG + function calling** systems. It is a detailed technical reference meant to preserve the research and be read again later.
 
 ## 1. The core idea: tests as an architectural force
 
@@ -20,8 +20,8 @@ In classical software engineering, tests are not only a verification mechanism. 
 - Code that is hard to test is often:
 	- tightly coupled,
 	- unclear in responsibilities,
-	- entangled with external dependencies,
-	- difficult to reason about and evolve.
+	- mixed with external dependencies,
+	- difficult to understand and change.
 - A strong test strategy creates **pressure** to introduce:
 	- explicit boundaries,
 	- smaller units,
@@ -67,9 +67,9 @@ Systems change faster than manual verification scales. Every change risks breaki
 LLM systems add two structural realities:
 
 1. **Distributional behavior**
-    Many outcomes are not binary; there are multiple acceptable responses and correctness is often empirical.
+    Many outcomes are not simply right or wrong. Several responses may be acceptable, and correctness often has to be assessed through observation.
 2. **Moving dependencies**
-    Even if the code doesn't change, behavior can shift due to:
+    Behavior can change even when the code stays the same, because of:
 - model/provider updates,
 - index refreshes,
 - corpus drift,
@@ -114,7 +114,7 @@ Tools and retrieval behave like APIs with:
 ### Q4. Observability-by-design
 
 
-The system produces the artifacts needed to diagnose and evaluate:
+The system records what is needed to diagnose and evaluate its behavior:
 
 - traces, lineage metadata, retrieved doc IDs, tool calls/outputs, decisions, budgets.
 
@@ -131,19 +131,19 @@ Randomness is intentional and bounded; CI gates are stable and deterministic/nea
 ### Q7. Blast-radius control
 
 
-Changes can be rolled out gradually and attributed:
+Changes can be released gradually, with their effects traced to the relevant versions:
 
 - prompt versions, model versions, index versions, tool schema versions, feature flags.
 
 ### Q8. Failure-driven evolution (data flywheel)
 
 
-Production failures become regression cases with labeled failure modes and get promoted into suites.
+Production failures become regression cases. Each case is labeled with its failure mode and added to a test suite.
 
 ### Q9. Operational efficiency as correctness
 
 
-Latency/cost budgets are treated as correctness constraints, gated and monitored.
+Latency and cost budgets are treated as correctness requirements. They are checked before release and monitored in use.
 
 ### Q10. Extensibility
 
@@ -153,7 +153,7 @@ Adding a tool/route is standardized: schema + contract tests + sandbox scenario 
 ## 4. Mechanism: how tests create design pressure
 
 
-Design pressure is created when shipping requires artifacts that **cannot exist** unless the architecture has clean boundaries.
+Tests create design pressure when a release requires artifacts that **cannot be produced** without clear architectural boundaries.
 
 The operating pattern is:
 
@@ -166,7 +166,7 @@ If a property is not gated or measured, it will not reliably shape architecture.
 ## 5. The quality contract model (the enforced properties)
 
 
-A robust LLM test system should be organized around a **quality contract** with three components:
+A reliable LLM test system should use a **quality contract** with three parts:
 
 1. **Non-negotiable invariants** (hard constraints; deterministic/near-deterministic)
 2. **Interface contracts** (tool + retrieval seams; fixtures/record-replay/sandbox)
@@ -178,7 +178,7 @@ And it must include:
 - standardized **reason codes**,
 - a **run manifest** (lineage metadata).
 
-This contract becomes the "spec" that drives the pyramid and the architecture.
+This contract becomes the "spec" used to shape the test pyramid and the architecture.
 
 ## 6. A reference boundary map (testable modular architecture)
 
@@ -256,7 +256,7 @@ A single-turn assistant with RAG + tools can be decomposed into modules that are
 ## 7. How the test pyramid should force modularity
 
 
-The pyramid is not just about test types; it is an architecture enforcement plan.
+The pyramid describes both the test types and how they enforce architectural requirements.
 
 ### L0 -- Static checks (compile-time pressure)
 

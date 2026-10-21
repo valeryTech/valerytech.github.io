@@ -6,4 +6,5 @@ document_status: "draft"
 title: "Changeability"
 linkTitle: "Changeability"
 ---
-here I'm trying to explore the concept of changeability and it's use in software engineering
+
+Research topic: the concept of changeability and its use in software engineering. Definitions and practical applications remain to be developed.

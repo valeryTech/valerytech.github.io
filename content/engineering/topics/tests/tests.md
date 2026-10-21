@@ -8,9 +8,9 @@ linkTitle: "Tests"
 # meta-way
 
 
-Below is a "meta" way to think about tests as a technical lead: tests are not primarily about catching bugs; they are about controlling _risk_ and _change cost_ by turning expectations into fast, repeatable, diagnosable signals.
+For a technical lead, the main purpose of tests is to control _risk_ and _the cost of change_, beyond simply catching bugs. Tests turn expectations into quick, repeatable signals that help locate problems.
 
-## Why we introduce tests at all
+## Why introduce tests
 
 ### The core problem: software changes faster than human memory
 
@@ -22,7 +22,7 @@ Every code change potentially breaks:
 - an integration point (API, schema, message contract),
 - a non-functional constraint (latency, idempotency, concurrency safety).
 
-Without tests, your feedback loop is mostly:
+Without tests, the feedback loop is mostly:
 
 - "someone notices in production," or
 - "manual QA remembers to try that," or
@@ -53,7 +53,7 @@ Think of tests as mechanisms for:
 
 - They don't guarantee "no bugs." They reduce the probability and blast radius of defects.
 - They don't replace observability, canaries, feature flags, or incident response.
-- They don't automatically validate product correctness (you can write the wrong spec).
+- They don't automatically validate product correctness (the specification itself may be wrong).
 
 ## Conceptual model: cost vs fidelity vs debuggability
 
@@ -62,7 +62,7 @@ A useful mental model is a triangle:
 
 - **Fidelity** (how close to real production behavior),
 - **Cost** (runtime + maintenance + environment complexity),
-- **Debuggability** (how quickly a failure tells you what broke).
+- **Debuggability** (how quickly a failure identifies what broke).
 
 As scope increases (more real dependencies, more network, more processes):
 
@@ -81,11 +81,11 @@ Classic pyramid layers:
 2. **Integration / component / subsystem tests** (some)
 3. **End-to-end (E2E) tests** (few)
 
-Not dogma about counts; it's a statement about **where you want most of your confidence to come from**: #todo refactor because it's not a zero-sum game (sou you could improve the whole "usefullness")
+The pyramid guides the scope and cost of evidence rather than prescribing fixed test counts. Overall usefulness can also improve through better determinism, diagnosability, and test design.
 
 - **Cheap, deterministic tests** should cover most logic and edge cases.
 - **Mid-scope tests** verify wiring and real infrastructure semantics.
-- **Large-scope tests** are smoke alarms: they ensure critical user journeys still work, but you keep them minimal because they're expensive and brittle.
+- **Large-scope tests** are smoke alarms: they ensure critical user journeys still work, but they remain limited because they're expensive and brittle.
 
 ### Why "more E2E" usually fails operationally
 
@@ -104,23 +104,23 @@ Teams often try to compensate for weak lower layers by adding E2E. That tends to
 > Tests that exercise a coherent slice of the system (a service, bounded context, or module cluster) **with real internal components** and **real infrastructure dependencies** (DB, queues, filesystem), while **faking or controlling external systems** (third-party APIs, other services).
 They sit between unit tests and full E2E:
 
-- Wider scope than unit tests: you validate wiring, configuration, serialization, ORM behavior, migrations, concurrency, etc.
+- Wider scope than unit tests: they validate wiring, configuration, serialization, ORM behavior, migrations, concurrency, etc.
 - Narrower and more controlled than E2E: fewer moving parts, clearer ownership, better determinism.
 
 ### What problems subsystem tests solve
 
 
 1. **Reality checks for infrastructure semantics**
-    ORMs, transaction boundaries, isolation levels, migrations, query correctness, message ack/retry behavior -- these are where unit tests lie to you.
+    ORMs, transaction boundaries, isolation levels, migrations, query correctness, message ack/retry behavior -- these are areas where test doubles can hide real infrastructure behavior.
 2. **Boundary correctness within a bounded context**
-    You can verify "if an Order is placed, we persist it, publish an event, and enforce idempotency" without needing the whole company's microservices running.
+    A test can verify that placing an order persists it, publishes an event, and enforces idempotency without needing the whole company's microservices running.
 3. **Better diagnosis**
-    When a subsystem test fails, you typically know which service/module is broken, not "somewhere in the distributed system."
+    When a subsystem test fails, the affected service/module is usually clear, not "somewhere in the distributed system."
 
 ### A concrete example
 
 
-If you own an "Orders" service:
+For an Orders service:
 
 - **Unit tests:** pricing rules, validation, state transitions.
 - **Subsystem tests:** run the service with a real DB (and maybe a real message broker), call the HTTP/gRPC endpoint, assert:
@@ -179,7 +179,7 @@ A common, effective distribution (conceptual, not numeric):
 Two high-leverage practices:
 
 1. **Contract tests prevent E2E explosion**
-    If each service verifies its producer/consumer contracts, you don't need massive E2E coverage to detect API drift.
+    If each service verifies its producer/consumer contracts, broad E2E coverage is less necessary to detect API drift.
 2. **Hermetic subsystem tests reduce flakes**
     Use controlled dependencies (e.g., ephemeral DB/queue instances, deterministic clocks/IDs) so tests don't rely on shared environments.
 
@@ -200,20 +200,20 @@ Two high-leverage practices:
 
 When adding a test, ask:
 
-1. What risk am I controlling (regression, infra semantics, contract drift, journey breakage)?
+1. What risk is controlled (regression, infra semantics, contract drift, journey breakage)?
 2. What is the smallest scope that can detect this risk?
 3. Will failure be diagnosable in <10 minutes?
 4. Can this test be deterministic on every run?
 5. Where will it run (local, PR CI, nightly), and what is the runtime budget?
 
-If you want, describe your system shape (monolith vs microservices, main persistence and messaging tech, CI constraints). I can propose a concrete, layered test strategy (including where subsystem tests start/stop, what to stub, and what to keep real) tailored to that architecture.
+Tailoring a layered strategy requires the system shape (monolith or microservices), persistence and messaging technologies, and CI constraints. These determine where subsystem tests start and stop, what to stub, and what to keep real.
 
 # preparation
 
 
-Before defining tests, you want to define the _test basis_: the set of artifacts and decisions that collectively state "what correctness means," "what risks matter," and "what evidence is acceptable." Product spec and HLD are necessary, but they are not sufficient in distributed systems.
+Before defining tests, establish the _test basis_: the documents and decisions that state "what correctness means," "what risks matter," and "what evidence is acceptable." Product spec and HLD are necessary, but they are not sufficient in distributed systems.
 
-Below is a structured set of prerequisites I would expect (or deliberately create) before committing to a test strategy.
+The following prerequisites establish a basis for a test strategy.
 
 ## 1. Product intent and acceptance basis
 
@@ -274,7 +274,7 @@ These become the basis for unit tests and for subsystem tests around messaging a
 ## 3. System boundaries and interface specifications
 
 
-In microservices, you must define boundaries explicitly or you will not know what to mock vs what to keep real.
+Explicit microservice boundaries determine which dependencies to mock and which to keep real.
 
 ### API contracts
 
@@ -296,7 +296,7 @@ In microservices, you must define boundaries explicitly or you will not know wha
 - Which service owns which tables/aggregates.
 - Whether other services may read that data (ideally no, but if yes: how).
 
-Interface specs are the foundation for contract tests; without them, you end up relying on brittle E2E.
+Interface specs are the foundation for contract tests; without them, teams can become dependent on brittle E2E tests.
 
 ## 4. Architecture blueprint beyond HLD
 
@@ -353,12 +353,12 @@ Examples:
 - feeds/recommendations: latency/availability > strict consistency
 - auth: security correctness dominates
 
-This tells you where to spend test budget.
+This guides the allocation of test effort.
 
 ## 6. Operational readiness prerequisites (often overlooked)
 
 
-Tests should align with how you will detect and manage failure in production.
+Tests should align with how failure will be detected and managed in production.
 
 ### Observability plan
 
@@ -383,7 +383,7 @@ Tests should align with how you will detect and manage failure in production.
 - Idempotency and dedup mechanisms.
 - How to repair projections/materialized views.
 
-This directly influences what you test (e.g., replay safety, idempotency, migration rollbacks).
+This directly influences test scope (e.g., replay safety, idempotency, migration rollbacks).
 
 ## 7. Security and privacy model
 
@@ -407,12 +407,12 @@ Before writing tests, design for testability:
 - "Hermetic" configuration: unique topic names, consumer groups, Streams application.id per test.
 - Controlled external side effects (outbox pattern, stubs).
 
-If you skip this, tests become expensive and flaky, and people stop trusting them.
+Without testability foundations, tests become expensive and flaky, and people stop trusting them.
 
 ## Minimal "ready to define tests" checklist
 
 
-If you want a crisp gate, I use something like:
+A minimum readiness gate is:
 
 1. FRs/NFRs + explicit acceptance criteria for critical flows.
 2. Domain invariants + idempotency rules written down.
@@ -423,7 +423,7 @@ If you want a crisp gate, I use something like:
 7. Deployment/versioning plan (especially schema evolution).
 8. Testability hooks agreed (time, IDs, boundary seams).
 
-If you share one concrete feature (one workflow) and its NFRs, I can show how each of the prerequisites above maps to specific test types (unit/subsystem/contract/E2E/resilience) and what evidence you should require before shipping.
+For a concrete feature or workflow and its NFRs, map each prerequisite to unit, subsystem, contract, E2E, or resilience evidence and identify what is required before shipping.
 
 # microservices shape
 
@@ -432,26 +432,20 @@ If you share one concrete feature (one workflow) and its NFRs, I can show how ea
 
 Thinking
 
-Designing a microservices test strategy
+For microservices using Kafka, Kafka Streams, and multi-node Postgres, the test strategy must check **domain correctness**, **how distributed messaging behaves**, and **how the database behaves during concurrent work and partial failures**. It must also keep CI practical.
 
-I need to outline a comprehensive test strategy for microservices with Kafka/Kafka Streams and multi-node Postgres clusters. This includes a structured approach across different layers: unit, subsystem, contract, integration, and E2E. I'll also mention tools like Testcontainers, embedded Kafka, and TopologyTestDriver for Kafka Streams. I'll cover Kafka-specific topics like schemas, consumer group behavior, idempotency, DLQ, and Postgres failover testing. The strategy should integrate patterns like schema evolution testing and database-specific approaches.
+The test strategy covers unit, subsystem, contract, integration, and E2E layers. Tools include Testcontainers, embedded Kafka, and TopologyTestDriver for Kafka Streams. Kafka-specific topics include schemas, consumer-group behavior, idempotency, dead-letter queues, and schema evolution. Database-specific checks include Postgres failover.
 
-Designing effective test environments for microservices
+Hermetic environments isolate the tests from outside changes, using temporary containers. Subsystem tests keep Postgres and Kafka real while stubbing external services, for example with WireMock. The outbox pattern is relevant when investigating DB-to-Kafka delivery and exactly-once requirements; the guarantees still depend on the full system boundary and how consumers behave. Kafka Streams tests cover deterministic topologies, serialization, state stores, and integration with a real broker. Multi-node Postgres and HA tests focus on replication lag and failover. Organize the checks into correctness, performance, and resilience while keeping risk management central.
 
-I'll mention using ephemeral containers for hermetic test environments and the outbox pattern for exactly-once guarantees between DB and Kafka. For Kafka Streams, I'll test topologies deterministically with TopologyTestDriver and test serialization, state stores, and integration with real Kafka. Subsystem tests should use real Postgres and Kafka brokers with stubs for external services like Wiremock. Also, I'll address multi-node Postgres and HA tests, focusing on replication lag and failover. Finally, I'll categorize tests into correctness, performance, and resilience while keeping it focused on risk management.
+## 1. Test objectives for Kafka and Postgres microservices
 
-Given your stack (microservices + Kafka/Kafka Streams + multi-node Postgres), the "test pyramid + subsystem tests" conversation becomes very concrete: you need to control (a) _domain correctness_, (b) _distributed messaging semantics_, and (c) _database semantics under concurrency and partial failure_ -- without turning CI into a slow, flaky distributed-systems simulation.
-
-Below is a pragmatic model that I would use as a tech lead.
-
-## 1. What tests are buying you in a Kafka + Postgres microservices world
-
-### The real risks you must control
+### Principal risks
 
 
 1. **Regression of domain invariants**
     Most production issues are "a rule changed unintentionally" or "edge case not handled" (state transitions, idempotency rules, validation, pricing, entitlements, etc.).
-2. **Mismatch between what you think messaging does and what Kafka actually does**
+2. **Mismatch between assumed messaging behavior and what Kafka actually does**
     Examples:
 	- duplicate delivery and reprocessing,
 	- reordering across partitions,
@@ -459,7 +453,7 @@ Below is a pragmatic model that I would use as a tech lead.
 	- offset commit behavior,
 	- DLQ/retry loops,
 	- schema evolution breaking consumers.
-3. **Mismatch between what you think Postgres does and what it actually does**
+3. **Mismatch between assumed Postgres behavior and what it actually does**
     Examples:
 	- transaction boundaries and isolation behavior,
 	- lock contention and deadlocks,
@@ -467,11 +461,11 @@ Below is a pragmatic model that I would use as a tech lead.
 	- migrations that work on empty DB but fail on real data,
 	- read-your-writes vs replica lag (if read replicas are involved).
 4. **Change cost**
-    Without automated checks, every change forces large manual verification and discourages refactoring. With good tests, you can keep batch sizes small and ship reliably.
+    Without automated checks, every change forces large manual verification and discourages refactoring. With good tests, teams can keep batch sizes small and ship reliably.
 
-The key is _placing_ tests so that most confidence comes from fast, deterministic checks, while still validating the "physics" of Kafka and Postgres where it matters.
+The key is _placing_ tests so that most confidence comes from fast, repeatable checks, while still testing the real behavior of Kafka and Postgres where it matters.
 
-## 2. A modern pyramid for your architecture
+## 2. A pyramid for Kafka and Postgres microservices
 
 
 Think in layers by **scope vs realism**:
@@ -496,14 +490,14 @@ Goal: validate _pure logic and deterministic transformations_.
 
 Rule: if it doesn't require a real broker or DB to falsify, keep it here.
 
-### B) Subsystem / component tests (some; very high value in your stack)
+### B) Subsystem / component tests (some; valuable for this stack)
 
 
 Definition (operational): **run one service as a black box with real infrastructure dependencies it owns**:
 
 - real Postgres (usually single-node ephemeral in CI)
 - real Kafka broker (ephemeral)
-- real serialization stack (Avro/Protobuf/JSON), schema registry if you use it
+- real serialization stack (Avro/Protobuf/JSON), schema registry where applicable
     ...and **stub external services** (HTTP/gRPC to other services, third-party APIs).
 
 What these tests catch that unit tests will miss:
@@ -519,7 +513,7 @@ These are the "money tests" for Kafka + Postgres systems.
 ### C) Contract tests (strongly recommended; reduces need for broad E2E)
 
 
-In microservices with Kafka, you need contracts for **asynchronous interfaces**.
+Microservices using Kafka need contracts for **asynchronous interfaces**.
 
 Two contract directions:
 
@@ -543,12 +537,12 @@ Keep these minimal because:
 - they're the most expensive to maintain,
 - they tend to become flaky as the system grows.
 
-Use them as "canary checks," not as your primary safety net.
+Use them as "canary checks," rather than the primary safety net.
 
 ### E) Resilience / HA tests (targeted; usually nightly or pre-release)
 
 
-Because you have **multi-node Postgres**, you should explicitly test failure modes -- but not on every PR.
+**Multi-node Postgres** requires explicit failure-mode tests -- but not on every PR.
 
 Examples:
 
@@ -574,9 +568,9 @@ Per service:
 - Stub:
 	- downstream HTTP/gRPC,
 	- third-party integrations,
-	- other services' Kafka outputs (unless you are explicitly testing a contract).
+	- other services' Kafka outputs (unless the test explicitly checks a contract).
 
-This gives you high fidelity for what the service owns, and stable determinism.
+This provides high fidelity for what the service owns, and stable determinism.
 
 ### The 8 failure classes subsystem tests should intentionally cover
 
@@ -590,7 +584,7 @@ This gives you high fidelity for what the service owns, and stable determinism.
 7. **Consumer restart**: stop/start service -> resumes correctly from offsets.
 8. **Kafka Streams state**: restoration from changelog topics; state store correctness under restart.
 
-If your subsystem suite covers these, E2E can stay small.
+If the subsystem suite covers these, E2E can stay small.
 
 ## 4. Kafka and Kafka Streams: what to test where
 
@@ -616,7 +610,7 @@ If your subsystem suite covers these, E2E can stay small.
 ### Kafka Streams
 
 
-Kafka Streams is its own "subsystem inside the service." I typically split into:
+Kafka Streams is its own "subsystem inside the service." Its tests can be split into:
 
 1. **Topology-level deterministic tests (unit-like)**
 	- verify transformations and aggregation results given input records
@@ -625,9 +619,9 @@ Kafka Streams is its own "subsystem inside the service." I typically split into:
 2. **Integration/subsystem tests with a real broker**
 	- catch misconfig (SerDes, state store/changelog, topic config, exactly-once settings, ACLs)
 	- validate restart behavior and state restoration
-	- validate processing guarantees as configured (and ensure your application logic remains safe under duplicates anyway)
+	- validate processing guarantees as configured (and ensure application logic remains safe under duplicates)
 
-Important principle: even if you enable "exactly-once" processing in Streams, design semantics as if duplicates can happen, because operational realities and boundary effects (DB writes, external calls) often reintroduce at-least-once behavior unless you implement end-to-end transactional patterns.
+Important principle: even with "exactly-once" processing in Streams, design semantics as if duplicates can happen, because behavior during operation and effects outside Streams, such as DB writes and external calls, often bring back at-least-once behavior without end-to-end transactional patterns.
 
 ## 5. Postgres: single-node in CI, multi-node in targeted suites
 
@@ -635,7 +629,7 @@ Important principle: even if you enable "exactly-once" processing in Streams, de
 
 
 - **PR/CI**: use ephemeral **single-node Postgres** for almost all subsystem tests.
-    It gives you accurate SQL semantics, transactions, constraints, and migrations with far less flakiness.
+    It provides accurate SQL semantics, transactions, constraints, and migrations with far less flakiness.
 - **Nightly / pre-release**: run a smaller suite against **multi-node Postgres** to validate:
 	- failover handling,
 	- retry logic and timeouts,
@@ -648,8 +642,8 @@ Important principle: even if you enable "exactly-once" processing in Streams, de
 - migrations on non-empty data (seed a representative dataset)
 - transaction boundaries (what must be atomic)
 - unique constraints under concurrency (two requests racing)
-- locking/deadlocks (at least one designed deadlock case to ensure you fail fast and retry appropriately)
-- serialization anomalies if you rely on particular isolation levels
+- locking/deadlocks (at least one designed deadlock case to verify fast failure and appropriate retries)
+- serialization anomalies where correctness depends on particular isolation levels
 
 ## 6. Operationalizing this into a workable CI strategy
 
@@ -670,7 +664,7 @@ A pattern that scales:
 
 
 - the same as PR
-- plus a few cross-service contract checks (if you version topics/contracts centrally)
+- plus a few cross-service contract checks (if topics/contracts are versioned centrally)
 
 ### Nightly / pre-release (environment-heavy)
 
@@ -697,7 +691,7 @@ A pattern that scales:
 4. **Prefer contract tests over "full integration environments"**
     Contracts scale; shared environments become bottlenecks.
 
-## A concrete "default" scheme I would propose per microservice
+## A proposed default scheme per microservice
 
 
 - **Unit**
@@ -716,14 +710,12 @@ A pattern that scales:
 	- multi-node Postgres failover
 	- broker restart/rebalance under processing
 
-If you tell me one representative flow (e.g., "OrderPlaced event triggers Streams aggregation and writes projection to Postgres, then publishes BillingRequested"), I can map that single flow into a crisp set of unit/subsystem/contract/E2E tests and show exactly what should be asserted at each layer. That tends to make the pyramid and the subsystem boundary "click" for teams.
+A representative flow for mapping tests is: **OrderPlaced triggers a Streams aggregation, writes a projection to Postgres, and publishes BillingRequested**. Map that flow to unit, subsystem, contract, and E2E tests with explicit assertions at each layer; this makes the subsystem boundary concrete.
 
-# pyramid rewritten prop
+# Improving overall test assurance
 
 
-You are correct to challenge the "not dogma about counts" phrasing. The pyramid is often presented as if test effort is a fixed budget that you merely allocate across layers. In practice, it is not a zero-sum game: you can increase _total_ confidence and _total_ usefulness by improving test design, observability, determinism, diagnosability, and by introducing the right intermediate artifacts (contracts, narrow integration, etc.). The pyramid is best understood as a _constraint system_ on where marginal investment produces the highest return -- not a fixed pie chart.
-
-Below is a refactoring of the original paragraph and the underlying model so it reflects the non-zero-sum reality without losing the core guidance.
+Test effort is not a fixed budget that can only be moved between layers. The _total_ confidence and usefulness can grow through better test design, observability, repeatable results, easier diagnosis, and useful intermediate artifacts such as contracts and narrow integration tests. The pyramid is best understood as a _constraint system_: it guides where additional test effort provides the most benefit. It is not a fixed pie chart.
 
 ## Refactored principle: the pyramid is a leverage curve, not an allocation rule
 
@@ -741,9 +733,9 @@ The optimal strategy is to:
 - Use mid/high scope to cover the risks that low scope cannot falsify,
 - Actively reduce the cost and brittleness of higher-scope tests (so they become more useful per unit cost).
 
-This is explicitly non-zero-sum: you can improve the whole curve.
+This is explicitly non-zero-sum: the whole curve can improve.
 
-### The "dogma" that should be removed
+### Limits of fixed-count interpretations
 
 
 What becomes dogma is treating "many/some/few" as:
@@ -752,25 +744,24 @@ What becomes dogma is treating "many/some/few" as:
 - a universal template,
 - a substitute for thinking about risk and evidence.
 
-Instead, treat "many/some/few" as a default expectation **given typical cost and flake profiles**. If you change those profiles, the shape can legitimately change.
+Instead, treat "many/some/few" as a default expectation **given typical cost and flake profiles**. If those profiles change, the shape can legitimately change.
 
-## Refactored wording you can use in your framework document
+## Assurance across test scopes
 
 
-Here is a more precise replacement for the original text (drop-in quality):
 > The "pyramid" is not a rule about proportions; it is guidance about **marginal return on assurance**.
-> Low-scope tests are usually cheapest and most diagnosable, so they should carry most of your regression and edge-case coverage. Mid-scope tests validate boundary semantics and integration points that unit tests cannot falsify. High-scope E2E tests provide limited but essential end-to-end confidence for critical journeys.
-> This is not zero-sum: you can increase overall assurance by improving determinism, diagnosability, and contract clarity, and by using narrow integration and contract tests to make higher-level assurance cheaper and less brittle.
+> Low-scope tests are usually cheapest and most diagnosable, so they should carry most regression and edge-case coverage. Mid-scope tests validate boundary semantics and integration points that unit tests cannot falsify. High-scope E2E tests provide limited but essential end-to-end confidence for critical journeys.
+> This is not zero-sum: overall assurance can increase by improving determinism, diagnosability, and contract clarity, and by using narrow integration and contract tests to make higher-level assurance cheaper and less brittle.
 
 ## How to express "non-zero-sum" operationally
 
 
-If you want this to be actionable (not philosophical), define levers that increase total usefulness:
+Operational improvements can increase total usefulness:
 
 ### 1. Reduce the cost of higher-scope tests
 
 
-Higher scope is expensive mostly because of environment and flakiness. You can make them cheaper by:
+Higher scope is expensive mostly because of environment and flakiness. Their cost can be reduced through:
 
 - hermetic environments (ephemeral Kafka/Postgres, isolated topic/group IDs),
 - deterministic clocks/IDs,
@@ -778,7 +769,7 @@ Higher scope is expensive mostly because of environment and flakiness. You can m
 - narrowing scope (component tests rather than multi-service),
 - contract testing to eliminate broad cross-service coupling.
 
-Result: you don't just "move coverage down"; you make the entire suite more effective.
+Result: the entire suite becomes more effective, beyond moving coverage to lower scopes.
 
 ### 2. Improve diagnosability to reduce the "hidden cost"
 
@@ -820,12 +811,12 @@ Pyramid guidance should be parameterized by:
 ## A better "invariant" than counts
 
 
-Instead of "many/some/few," define invariants you actually care about:
+Instead of "many/some/few," define outcome-oriented invariants:
 
 1. **Most failures should be caught before merge** (fast pipeline gates).
 2. **Most failures should be localized** (single team/service ownership).
 3. **High-scope tests should be rare enough to remain stable and fast enough to be trusted.**
-4. **If a high-scope test finds a defect not caught lower, you add a lower-scope test (push down), or a contract, to prevent recurrence.**
+4. **If a high-scope test finds a defect not caught lower, add a lower-scope test or a contract to prevent recurrence.**
 
 This preserves the pyramid's intent while acknowledging non-zero-sum improvement.
 
@@ -835,16 +826,12 @@ This preserves the pyramid's intent while acknowledging non-zero-sum improvement
 The same refactor applies:
 
 - It is not "unit evals vs scenario evals vs E2E agent runs" as a fixed budget.
-- You can increase total assurance by improving graders, trace capture, determinism, and by adding component evals (tool-call correctness, retrieval grounding) that reduce reliance on costly end-to-end agent trajectories.
+- Total assurance can increase by improving graders, trace capture, determinism, and by adding component evals (tool-call correctness, retrieval grounding) that reduce reliance on costly end-to-end agent trajectories.
 
-If you want, I can rewrite the original "classic pyramid layers" section into a polished, framework-ready markdown subsection (with definitions, invariants, and anti-dogma language) in the same style as your earlier "Practical Test Pyramid" doc.
-
-# pyramid rewritten-2
-
-## Test Pyramid as an Assurance Leverage Model (Framework-Ready)
+# Test Pyramid as an Assurance Leverage Model
 
 
-This section reframes the classic test pyramid to remove "counts dogma" and make it explicitly **non-zero-sum**: you can improve the total usefulness of the test system, not only rebalance effort across layers.
+This section treats the test pyramid as **non-zero-sum**, rather than a rule about fixed test counts. The whole test system can become more useful; effort does not only move between layers.
 
 ### 1. Core idea: not a ratio, a leverage curve
 
@@ -857,7 +844,7 @@ As test scope increases (more real dependencies, more processes, more network):
 - **Cost and flakiness risk** tend to increase,
 - **Diagnosability** tends to decrease (harder to localize root cause).
 
-A healthy strategy earns most regression confidence at low scope, and uses higher scope only for risks low scope cannot falsify -- while continuously improving the cost and determinism of every layer.
+A healthy strategy gets most regression confidence from low-scope tests. It uses broader tests for risks that narrower tests cannot reveal, while continuing to reduce cost and improve repeatability at every layer.
 
 ### 2. Layer definitions (what each layer is for)
 
@@ -871,7 +858,7 @@ The classic layers remain useful if each layer has a clear job:
 
 **Scope:** pure functions and small modules; dependencies replaced with doubles.
 
-**Signals you want:**
+**Expected signals:**
 
 - correctness of business rules and state transitions,
 - idempotency logic (at the logic level),
@@ -887,7 +874,7 @@ The classic layers remain useful if each layer has a clear job:
 
 **Scope:** one service or component with **one real external dependency at a time** (e.g., Postgres, Kafka, filesystem) and controlled inputs/outputs.
 
-**Signals you want:**
+**Expected signals:**
 
 - DB behavior: migrations, constraints, transaction boundaries, concurrency cases,
 - messaging behavior: serialization, headers, keying/partitioning, retries/DLQ, offset semantics,
@@ -904,7 +891,7 @@ The classic layers remain useful if each layer has a clear job:
 
 **Scope:** multiple services and real network boundaries; real or production-like environments.
 
-**Signals you want:**
+**Expected signals:**
 
 - a limited set of "money paths" survives real orchestration,
 - top-level integration wiring didn't break,
@@ -915,9 +902,9 @@ The classic layers remain useful if each layer has a clear job:
 ### 3. The anti-dogma statement (the refactor)
 
 
-Use this wording to avoid the "zero-sum counts" trap:
+The principle can be stated as follows:
 > The pyramid is not a rule about fixed proportions; it is a rule about where **marginal investment buys the most assurance**. Low-scope tests typically yield the highest confidence per unit cost and are most diagnosable, so they should carry most regression and edge-case coverage. Mid-scope tests validate boundary semantics and integration points that unit tests cannot falsify. E2E tests are intentionally few, focused on critical journeys, because they are costly and harder to diagnose.
-> This is not zero-sum: you can increase overall assurance by improving determinism, diagnosability, contract clarity, and by introducing narrow integration and contract testing that reduces the need for broad E2E.
+> This is not zero-sum: overall assurance can increase by improving determinism, diagnosability, contract clarity, and by introducing narrow integration and contract testing that reduces the need for broad E2E.
 
 ### 4. Framework invariants (what must be true, regardless of counts)
 
@@ -933,7 +920,7 @@ Instead of ratios, enforce these invariants:
 ### 5. What "improving the whole usefulness" looks like (non-zero-sum levers)
 
 
-You can raise total confidence without simply moving tests between layers by investing in:
+Total confidence can increase through:
 
 - **Diagnosability:** richer assertions, structured failure artifacts, traces/log capture on failure.
 - **Determinism:** hermetic environments, isolated resources (topics, consumer groups), controlled clocks/IDs, no sleeps.
@@ -956,8 +943,6 @@ For any new test, answer:
 
 1. What risk is being mitigated (regression, seam semantics, contract drift, journey breakage)?
 2. What is the **smallest scope** that can falsify that risk?
-3. Will the failure localize quickly? If not, how will we capture artifacts to localize?
+3. Will the failure localize quickly? If not, which artifacts will support localization?
 4. Can it be deterministic? If not, should it move to a different layer or cadence (nightly vs PR)?
 5. Does it duplicate lower-level coverage? If yes, why is the duplication justified?
-
-If you want, paste your original "Classic pyramid layers..." paragraph and I'll rewrite it into a shorter version that still preserves this framework language (drop-in replacement with consistent tone).

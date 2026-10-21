@@ -27,20 +27,20 @@ Testing and resilience:
 - Add canary and rollback guidance to reduce blast radius on changes that affect the hot redirect path
 - Add safe defaults for TTLs, retries, and backoff policies to prevent thundering herds during partial outages
 
-As a Staff Engineer, my first action is to break down that monolithic DAU number into a workload characterization based on user archetypes. For a URL-shortener, the most impactful division is between **Creators** and **Consumers**.
+A Staff Engineer's workload analysis can start by breaking the daily active user (DAU) total into user archetypes. For a URL shortener, the most useful division in this draft is between **Creators** and **Consumers**.
 
 ## User Archetypes and Their Impact on Scale
 
 
-Let's define these user types and analyze how they shape the system design.
+These user types shape the workload and system design.
 
 ### 1. Consumers (The Readers)
 
 
-This is the overwhelming majority of your traffic. These are the end-users who click a shortened link.
+Consumers are the end-users who click a shortened link. They account for the overwhelming majority of traffic in this proposal.
 
 - **Behavior**: Executes a single, high-frequency action: resolving a short URL. This is a **read-only** operation.
-- **Scale Dimension**: This is your **Queries Per Second (QPS)** driver. If 100M DAU click an average of 1.5 links per day, that's 150M resolves, heavily concentrated during peak hours. This could translate to tens or hundreds of thousands of QPS on the read path.
+- **Scale Dimension**: This drives **Queries Per Second (QPS)**. If 100M DAU click an average of 1.5 links per day, that's 150M resolves, heavily concentrated during peak hours. This could translate to tens or hundreds of thousands of QPS on the read path.
 - **Architectural Impact**:
 	- **Extreme Latency Sensitivity**: Redirects must be near-instantaneous (<100ms).
 	- **High Availability is Core Value**: The resolve path _is_ the product. It must be designed for 99.9% or higher availability.
@@ -53,16 +53,18 @@ This is the overwhelming majority of your traffic. These are the end-users who c
 This is a much smaller, but vital, user segment. These are users who generate the short links.
 
 - **Behavior**: Executes write-heavy operations: creating a link, optionally adding a custom alias or expiration.
-- **Scale Dimension**: This drives **Transactions Per Second (TPS)** on the write path and your total storage volume (e.g., planning for over 1 billion links). The TPS will be orders of magnitude lower than the read path QPS.
+- **Scale Dimension**: This drives **Transactions Per Second (TPS)** on the write path and total storage volume (e.g., planning for over 1 billion links). The TPS will be orders of magnitude lower than the read path QPS.
 - **Architectural Impact**:
 	- **Consistency is Key**: When a creator gets a short URL, it must be durably stored and unique.
 	- **Less Latency-Sensitive**: A user will tolerate 500ms to create a link, whereas a 500ms redirect is unacceptable.
 	- **Requires More Complex Logic**: This path involves validation, potential collision checks for custom aliases, and calling a code generation service.
 > This asymmetry is an important factor (?)
 
-**Drives Service Decomposition**: The vastly different traffic patterns and requirements of Creators vs. Consumers are the primary justification for splitting the system into a **Write Service** and a **Read/Redirect Service**. You scale them independently.
+**Drives Service Decomposition**: The vastly different traffic patterns and requirements of Creators vs. Consumers are the primary justification in this proposal for splitting the system into a **Write Service** and a **Read/Redirect Service**. The services can scale independently.
 
-I'll design a **read-optimized redirect service** that is massively scalable and globally distributed, likely fronted by a CDN. The **write service** will be a separate, more centralized component focused on data integrity. This allows us to scale and provision resources for each path independently, which is far more efficient and resilient."
+Example wording for the proposed design:
+
+> "I'll design a **read-optimized redirect service** that is massively scalable and globally distributed, likely fronted by a CDN. The **write service** will be a separate, more centralized component focused on data integrity. This allows us to scale and provision resources for each path independently, which is far more efficient and resilient."
 
 # Consistency
 
@@ -73,7 +75,7 @@ I'll design a **read-optimized redirect service** that is massively scalable and
 
 While the initial write must be strongly consistent, **eventual consistency** is the correct and necessary model for propagating that write to the globally distributed Read Path. Using eventual consistency here is a deliberate trade-off that enables high availability and low latency for reads.
 
-Here is the step-by-step reasoning for how this hybrid consistency model works:
+The hybrid consistency model works as follows:
 
 ## Step 1: Strongly Consistent Write (The "CP" part)
 
@@ -107,7 +109,7 @@ This model provides the ideal outcome: the **creator** gets the immediate, stron
 ## Potential Pitfalls
 
 
-As a Staff Software Engineer, I'd focus on the following potential pitfalls in the hybrid consistency implementation. These are issues that can arise even with a well-designed system and require specific architectural safeguards.
+Potential pitfalls in the hybrid consistency implementation deserve attention from a Staff Software Engineer. These issues can arise even in a well-designed system and require specific architectural safeguards.
 
 ### Excessive Replication Lag
 
@@ -143,7 +145,7 @@ A poorly managed failover of the primary database can lead to data loss.
 ## Transactional Outbox
 
 
-Yes, the transactional outbox pattern is an excellent and robust solution for this exact problem. It directly addresses the potential pitfall of a "dual write" failure, where a database commit succeeds but the subsequent message publication fails.
+The transactional outbox pattern addresses a "dual write" failure: the database commit succeeds, but the subsequent message publication fails.
 
 ### The Problem: Dual Writes
 
@@ -162,7 +164,7 @@ The critical failure point is between steps 3 and 4. The database has committed 
 
 This pattern ensures that saving the data and creating the event for replication happen in a single, atomic step.
 
-Here is the step-by-step implementation:
+Implementation steps:
 
 1. **Atomic Write**: The Write Service starts a single database transaction. Inside this transaction, it performs two writes:
 	- It `INSERTs` the new link data into the `links` table.
@@ -185,7 +187,7 @@ Here is the step-by-step implementation:
 
 The PACELC theorem states that in a distributed system, there is a trade-off: in the event of a network **P**artition, a system must choose between **A**vailability and **C**onsistency. **E**lse (in normal operation), it must choose between **L**atency and **C**onsistency.
 
-Applying this principle to our URL shortener design forces us to make deliberate, distinct choices for the Read Path and the Write Path.
+Applying this principle to the URL shortener requires separate choices for the Read Path and the Write Path.
 
 ### Read Path (Redirects)
 
@@ -210,25 +212,25 @@ The Write Path is designed as a **PC/EC** system.
 # Read Path
 
 
-Numbers Calculation. To design a scalable system, you must translate business metrics into specific engineering targets that drive architectural decisions.
+Translate business metrics into engineering targets that guide architectural decisions.
 
 ## Scale and Scalability
 
 
 Estimating Peak Load
 
-We start with the business scale and refine it to calculate the peak load, which is the most critical metric for capacity planning.
+Start with business scale and estimate peak load, the main capacity-planning metric in this draft.
 
 1. **Total Daily Requests**: With **100 million DAU** and an estimated average of **2 clicks per user**, the system handles **200 million redirects per day**.
 2. **Peak Traffic Window**: Assuming 80% of traffic occurs during a 4-hour window (14,400 seconds), the peak load is **160 million** requests.
-3. **Peak QPS**: This gives us our primary design target.
+3. **Peak QPS**: This gives the primary design target.
 	- `160,000,000 requests / 14,400 seconds` ≈ **11,111 QPS**
 
-We will design the retrieve path to handle a peak load of **~12,000 QPS**.
+The proposed retrieve path targets a peak load of **~12,000 QPS**.
 
 Peak QPS (~12k)
 
-Now that we have 12k QPS, what does this value tell us? It shows that a single-server architecture cannot handle this load. Therefore, we have to consider our options and apply the appropriate distributed system patterns to build a **system** capable of this load.
+This draft treats 12k QPS as exceeding a single server's capacity and uses that assumption to explore distributed system patterns. The options below are intended to build a **system** capable of this load.
 
 Options: horizontal scaling with stateless services + LB (RR); caching; read replicas;
 
@@ -254,13 +256,13 @@ trade off: User Perception vs. Technical Cost
 
 **Requirement**: The **95th percentile (p95)** response time for a redirect, measured from the edge, must be **less than 100 milliseconds**.
 
-How had we derive it? Studies on human perception have consistently shown that actions completed within 100 milliseconds are perceived by the human brain as instantaneous.
+Rationale recorded in the draft: studies on human perception have consistently shown that actions completed within 100 milliseconds are perceived by the human brain as instantaneous.
 
-For a URL redirect, the goal is to make the transition seamless, as if the user clicked directly on the final destination link. To achieve this "instantaneous" feeling, we must target the sub-100ms range.
+For a URL redirect, the goal is a seamless transition, as if the user clicked directly on the final destination link. The proposal targets the sub-100ms range to create this "instantaneous" feeling.
 
 **Architectural Implication**: To meet this target for a global user base, caching must be pushed to a **Content Delivery Network (CDN) or an edge network**. Serving requests from a centralized region would introduce unacceptable network latency for distant users.
 
-This tight latency budget is the primary justification for using a **CDN or an edge network**. By placing a server (or at least a cache) physically close to the user, we dramatically reduce the Round Trip Time (RTT). This allows the DNS, TCP, and TLS steps to complete in a fraction of the time, preserving a significant portion of the 100ms budget for the actual application logic (the redirect lookup).
+This tight latency budget is the primary justification for using a **CDN or an edge network**. Placing a server (or at least a cache) physically close to the user reduces the Round Trip Time (RTT). This allows the DNS, TCP, and TLS steps to complete in a fraction of the time, preserving a significant portion of the 100ms budget for the actual application logic (the redirect lookup).
 
 ### Tiered SLO
 
@@ -275,11 +277,11 @@ This acknowledges that under extreme, unexpected load, gracefully degrading perf
 ## Availability
 
 
-For the Read Path's availability, I propose a baseline of **99.9%** for the MVP, which is achievable with a standard **single-region, multi-AZ** architecture.
+The Read Path proposal sets a baseline of **99.9%** availability for the MVP and identifies a standard **single-region, multi-AZ** architecture as a way to achieve it.
 
-Later, we can move to the **99.99%** level to accommodate future business requirements..
+A later proposal could target **99.99%** to meet future business requirements.
 
-For example if we use url-shortener for High-Stakes, Time-Sensitive Campaigns
+Example: high-stakes, time-sensitive campaigns using the URL shortener.
 
 When short links are used for major, time-bound events, any downtime can lead to significant financial or reputational damage.
 

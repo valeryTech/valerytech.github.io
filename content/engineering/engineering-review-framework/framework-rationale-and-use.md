@@ -8,7 +8,7 @@ linkTitle: "Framework Rationale And Use"
 ## Purpose
 
 
-Explain the reasoning behind the Engineering Review Framework and how to use its documents during development and review. The framework is intended to improve recall: keep relevant concerns available so that they are less likely to be forgotten.
+Explain the reasoning behind the Engineering Review Framework and how to use its documents during development and review. The framework helps reviewers remember relevant concerns by keeping them available during the review.
 
 The main checklist covers business context, requirements, engineering principles, technical review, testing and PR review, LLM-specific risks, and review tools. Supporting notes explain those areas without requiring a separate response for every topic.
 
@@ -19,12 +19,12 @@ The main checklist covers business context, requirements, engineering principles
 
 Business context explains the intended benefit. Requirements describe the behavior and quality the solution must provide. Keeping both visible gives the reviewer a basis for evaluating the implementation.
 
-Requirement definition deserves attention of its own. An implementation can be internally consistent while depending on an unconfirmed assumption. A performance measurement can be accurate while the acceptable performance target remains undefined. The framework therefore includes whether relevant requirements exist, as well as whether the solution satisfies them.
+Whether the requirements have been defined needs a separate check. An implementation can be internally consistent while depending on an unconfirmed assumption. A performance measurement can be accurate while the acceptable performance target remains undefined. The framework therefore includes whether relevant requirements exist, as well as whether the solution satisfies them.
 
 ### Make principles available at the point of review
 
 
-The principles list provides reminders about simplicity, scope, abstraction, responsibilities, and maintainability. One entry in the main checklist points to that entire list.
+The principles list provides reminders about simplicity, scope, abstraction, responsibilities, and maintainability. One item in the main checklist links to the whole list.
 
 Principles guide judgment. Applying them mechanically can create conflicting demands: extracting more functions may obscure a small operation, and removing similar code may introduce a weak shared abstraction. The supporting note explains how to consider those trade-offs.
 
@@ -33,7 +33,7 @@ Principles guide judgment. Applying them mechanically can create conflicting dem
 
 The review areas describe what needs consideration. Tests, CI jobs, human reviewers, and agents provide different ways to examine those areas. Keeping them separate allows the team to change tools while preserving its expectations.
 
-A tool's output also has a scope. A test result concerns the behavior exercised by that test; an inspection concerns the code and context examined. Keep conclusions within those limits.
+A tool's output also has a scope. A test result concerns the behavior exercised by that test; an inspection concerns the code and context examined. Keep conclusions within what the evidence supports.
 
 ## How the documents fit together
 
@@ -56,7 +56,7 @@ Establish enough context and requirements to choose a solution. Consider simplic
 ### During implementation
 
 
-Use the principles and technical references while the design is still easy to adjust. Keep the change focused and include the tests needed to demonstrate its behavior. Google's engineering guidance recommends small, self-contained changes that remain coherent and reviewable.[1]
+Use the principles and technical references while the design is still easy to adjust. Keep the change focused and include the tests needed to show its behavior. Google's engineering guidance recommends small, self-contained changes that remain coherent and reviewable.[1]
 
 ### During PR review
 
@@ -66,7 +66,7 @@ Use the main checklist to recall the review areas. Consult the relevant lists an
 ## Choosing the depth of review
 
 
-Consider the consequences of failure, the affected users and systems, uncertainty, and how easily a change can be reversed. The number of changed lines is only one consideration.
+Choose the depth of review based on what failure would cause, who and what is affected, what remains uncertain, and how easily the change can be reversed. The number of changed lines is only one consideration.
 
 A small authorization change may need careful security review. A database migration may need attention to compatibility, data preservation, and recovery. A documentation correction can use a much smaller set of supporting topics.
 

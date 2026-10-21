@@ -25,7 +25,7 @@ Topics to retain:
 - Constraints on time, resources, and delivery
 - Dependencies on other work or decisions
 
-Describe the problem independently of a proposed implementation. Keep assumptions about value visible when they have not yet been established.
+Describe the problem independently of a proposed implementation. Keep assumptions about value clearly marked until there is evidence for them.
 
 ## Product context
 
@@ -45,7 +45,7 @@ Keep enough surrounding context to explain the change without requiring the revi
 ## Feature framing
 
 
-Feature framing establishes the boundary of the proposed change.
+Feature framing defines what is included in the proposed change.
 
 Topics to retain:
 
@@ -68,9 +68,14 @@ A product outcome and an implementation requirement serve different purposes. Th
 ## Uncertainty
 
 
-Keep confirmed needs, assumptions, and unresolved decisions distinguishable. Missing context should remain visible so that implementation choices do not silently become product decisions.
+Distinguish confirmed needs, assumptions, and unresolved decisions. Missing context should remain visible so that implementation choices do not silently become product decisions.
 
 The amount of framing should fit the change. A small correction may need only a brief explanation; a new capability may need more context. Existing tickets or product notes can supply that context without being duplicated.
+
+## Related notes
+
+
+- Product Vocabulary for an AI Engineer -- distinctions between user opportunities, solutions, outputs, and outcomes.
 
 ## Related documents
 

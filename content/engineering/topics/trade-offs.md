@@ -8,9 +8,11 @@ linkTitle: "Trade Offs"
 # A Systematic Trade-Off Analysis Framework
 
 
-(from chatgpt)
+Provenance: ChatGPT-generated framework notes.
 
-Here's a more detailed, systemic approach to constructing and using a Trade-Off Analysis Framework:
+Provenance: ChatGPT-generated framework notes.
+
+This framework structures the comparison of alternatives against explicit objectives and criteria.
 
 ## 1. Define Objectives and Goals
 
@@ -114,4 +116,11 @@ Here's a more detailed, systemic approach to constructing and using a Trade-Off 
 	- Tools like Excel, R, or Python for quantitative analysis.
 	- Specialized tools like MATLAB or Tableau for complex visualizations.
 
-This systematic framework ensures that trade-offs are evaluated comprehensively, and decisions are made transparently and effectively. Let me know if you'd like more details on implementing any specific component!
+This systematic framework ensures that trade-offs are evaluated comprehensively, and decisions are made transparently and effectively.
+
+## Related notes
+
+
+- Language for discussing trade-offs: vocabulary, sentence patterns, and worked discussions for presenting the analysis, examining evidence, and reaching a decision.
+- [Reasoning about non-functional requirements]({{< ref "system-design/nfr/non-functional-requirements" >}}): connect a user need to a measurable target, an assumption, and a design consequence.
+- [System-design interview communication]({{< ref "system-design/interview/phrases" >}}): a compact set of prompts for explaining choices during an interview.

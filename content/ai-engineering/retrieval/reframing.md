@@ -6,7 +6,7 @@ description: "Reframes RAG as one pattern within context-augmented task systems,
 linkTitle: "Beyond RAG: Context-to-Task Alignment"
 ---
 
-Goal: We should stop treating RAG as the architecture and instead treat it as one pattern within context-augmented task systems.
+Goal: treat RAG as one pattern within context-augmented task systems, rather than as the whole architecture.
 
 Retrieval-Augmented Generation is a useful research framing, but it is increasingly the wrong product framing. In production AI systems, the hard problem often sits upstream of generation:  determining what the user is trying to accomplish, what external knowledge or state is needed, how that context should be constructed, and what operation should be performed.
 
@@ -177,7 +177,7 @@ Thus, the core responsibilities of an IR engineer are:
 2. **Generate retrieval-ready representations.** Create searchable views of the corpus that expose the forms of information users need: chunks, summaries, entities, metadata, tables, synthetic questions, relationships, or structured fields.
 3. **Match intent to the right representation.** Route the query to the representation and retrieval strategy most likely to produce useful evidence for the task.
 
-This gives us a simple lens for analyzing retrieval systems: every system can be understood by how it predicts intent, how it represents data, and how it aligns the two at query time.
+This provides a simple lens for analyzing retrieval systems: every system can be understood by how it predicts intent, how it represents data, and how it aligns the two at query time.
 
 This three-part lens -- intent, representation, and matching -- provides a practical way to analyze retrieval systems within the broader context-to-task alignment framework. It shifts retrieval engineering away from tool choice and toward the design of representations and routing strategies that expose the evidence required for task success.
 
@@ -201,7 +201,7 @@ Documents contain relevant information in many latent forms: entities, facts, ta
 ### Searchable Representation
 
 
-Retrieval engineering is the work of creating intermediate representations that bridge the user's need and the raw corpus. Instead of treating the corpus as one flat text index, we can generate multiple views of the same source material: chunks, summaries, synthetic questions, extracted entities, normalized fields, table objects, metadata records, document categories, visual embeddings, or graph structures. Each representation makes a different aspect of the corpus searchable.
+Retrieval engineering is the work of creating intermediate representations that bridge the user's need and the raw corpus. Instead of treating the corpus as one flat text index, the system can generate multiple views of the same source material: chunks, summaries, synthetic questions, extracted entities, normalized fields, table objects, metadata records, document categories, visual embeddings, or graph structures. Each representation makes a different aspect of the corpus searchable.
 
 ### Matching Strategy
 

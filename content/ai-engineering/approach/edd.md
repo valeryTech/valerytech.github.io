@@ -5,12 +5,12 @@ title: "Eval-Driven Development"
 description: "An introductory evaluation-driven development blueprint covering deterministic checks, model judges, human calibration, RAG metrics, and regression gates for prompt changes."
 linkTitle: "EDD"
 ---
+## Resources
 
-resources
 
 https://cookbook.openai.com/examples/partners/eval_driven_system_design/receipt_inspection
 
-and also evaluation-driven system design / system delivery
+Related approaches: evaluation-driven system design and system delivery.
 
 **Eval-Driven Development (EDD)** is the architectural answer to the non-deterministic nature of AI.
 
@@ -20,7 +20,7 @@ An illustrative EDD assertion is: `similarity(result, expected) > 0.8`. The metr
 
 Establishing EDD early gives teams a basis for evaluating prompt changes rather than relying on impressions. Relying on impressions can create regression loops where fixing one prompt breaks several other behaviors.
 
-Here is the architectural blueprint for an EDD pipeline.
+The following blueprint describes an EDD pipeline.
 
 ### **I. The Core Concept: The "Pyramid of Evals"**
 

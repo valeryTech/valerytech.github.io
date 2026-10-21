@@ -5,10 +5,10 @@ title: "Using Failure Understanding in Product Discovery and Delivery"
 description: "Working guidance for routing failure findings into discovery, delivery, hypotheses, and risk assessments, then connecting operational criteria and automated evaluators across execution planes."
 linkTitle: "Applying Failure Understanding"
 ---
-# part one
+# Failure understanding as product feedback
 
 
-Yes. The key distinction is:
+The key distinction is:
 
 > **A trace, incident, correction, or user complaint is raw product feedback. Failure understanding is the method that turns part of that feedback into structured, decision-relevant evidence about product behaviour.**
 
@@ -51,7 +51,7 @@ Failure understanding focuses on one part:
 
 > **Where observed product behaviour departs from a provisional or committed product expectation, under which situations, and with which consequences.**
 
-So I would describe it as **structured product-behaviour feedback**.
+This makes failure understanding a form of **structured product-behaviour feedback**.
 
 It should not replace customer research or outcome analysis. A system may behave according to specification while users still find the solution unhelpful. Conversely, a system may contain known failures while still showing that the interaction idea has value.
 
@@ -92,7 +92,7 @@ Discovery implications
 ### Example for Solution B
 
 
-Suppose we begin with:
+Suppose the starting hypothesis is:
 
 > **H-B2 -- Feasibility:** For supported transaction descriptions, Wallet produces the intended draft or exposes material uncertainty.
 
@@ -106,7 +106,7 @@ This finding does several things.
 
 H-B2 is weakened for ambiguous account references. It may remain supported for unique references.
 
-So we should split or narrow the claim:
+The claim should therefore be split or narrowed:
 
 ```text
 Supported so far:
@@ -352,7 +352,7 @@ One observed failure can validly create work in several loops.
 ## Integrated feedback model
 
 
-I would place failure understanding in the overall system like this:
+Failure understanding fits into the overall system as follows:
 
 ```text
                     DISCOVERY
@@ -416,7 +416,7 @@ The source failure-understanding method already separates trace observations, re
 ## Minimal addition to the framework
 
 
-I would add one step after failure-model development:
+Proposed addition after failure-model development:
 
 ```text
 Failure model
@@ -439,7 +439,7 @@ A compact decision-integration table is enough:
 |---|---|---|---|
 |Ambiguous account selected without evidence|Weakens H-B2; confirms feasibility and control risk for ambiguous references|Discovery + Delivery + Quality Understanding|Narrow initial scope or add unresolved-state behaviour; implement deterministic uniqueness check|
 
-So yes: failure understanding is part of feedback about the product, but more precisely it is the method that converts raw product-behaviour feedback into reusable understanding and decision-relevant findings.
+Failure understanding is part of product feedback: it converts raw product-behaviour feedback into reusable understanding and decision-relevant findings.
 
 The full loop becomes:
 
@@ -458,10 +458,12 @@ Quality Understanding, or Evidence Capability
 Observe again
 ```
 
-# additional
+# Connecting execution planes and automated evaluators
 
 
-Yes--**we considered the planes and automated evaluators in `ai-evaluation.md`, but we haven't yet connected them tightly enough to Failure Understanding and the Discovery/Delivery activities.**
+**The execution planes and automated evaluators in `ai-evaluation.md` need a clearer connection to Failure Understanding and Discovery/Delivery activities.**
+
+**Source material:** Implementing Automated Evaluators explains the automated-evaluator recommendations used in this section.
 
 The current architecture already distinguishes:
 
@@ -500,7 +502,7 @@ Discovery / Delivery feedback
 ## Three independent dimensions
 
 
-We should avoid treating "offline", "online", and "automatic evaluator" as one classification. They answer different questions.
+"Offline", "online", and "automatic evaluator" belong to different classifications because they answer different questions.
 
 ### 1. Product activity
 
@@ -567,7 +569,7 @@ Those uses have different requirements and consequences.
 ## Relationship with Failure Understanding
 
 
-Our current `failure-understanding.md` already establishes the right boundary:
+`failure-understanding.md` already defines the boundary:
 
 ```text
 failure observations
@@ -611,9 +613,9 @@ Decision rule
 ```
 
 
-The attached automated-evaluator material describes this as the move from analysing failures to measuring their prevalence and changes. It recommends failure-specific evaluators, using code for objective checks and an LLM judge for semantic or contextual judgement.
+The referenced automated-evaluator material describes this as the move from analysing failures to measuring their prevalence and changes. It recommends failure-specific evaluators, using code for objective checks and an LLM judge for semantic or contextual judgement.
 
-I would call the next method:
+Proposed name for the next method:
 
 > **Operationalising Product Behaviour and Building Automated Evaluators**
 
@@ -742,7 +744,7 @@ Offline evaluators support:
 - incident reproduction;
 - replay of production cases.
 
-Reference-based evaluators are particularly useful for stable cases with product-defined expected values. Reference-free evaluators can check intrinsic rules and are easier to apply to new, unlabeled traces. The attached material describes both approaches and notes that reference-free checks are particularly useful for broader monitoring, including potential online use.
+Reference-based evaluators are particularly useful for stable cases with product-defined expected values. Reference-free evaluators can check intrinsic rules and are easier to apply to new, unlabeled traces. The referenced material describes both approaches and notes that reference-free checks are particularly useful for broader monitoring, including potential online use.
 
 For Wallet:
 
@@ -802,7 +804,7 @@ The automated-evaluator source explicitly frames automation as a way to estimate
 
 But the evaluator output is not automatically a product finding.
 
-We still need:
+A finding still requires:
 
 ```text
 Evaluator outputs
@@ -824,7 +826,7 @@ For example:
 
 That is still incomplete.
 
-We need to know:
+The finding must state:
 
 - how the sample was selected;
 - whether the evaluator has been validated;
@@ -865,7 +867,7 @@ allow or reject persistence
 ```
 
 
-These are automatic evaluations in a broad sense, but operationally I would call them:
+These are automatic evaluations in a broad sense. Their operational role is:
 
 > **runtime controls**
 
@@ -886,7 +888,7 @@ For code-based evaluators, validate:
 - missing-value behaviour;
 - fixture and version compatibility.
 
-For LLM judges, the uploaded source recommends:
+For LLM judges, the referenced source recommends:
 
 - one narrow criterion per evaluator;
 - explicit pass/fail definitions;
@@ -1041,4 +1043,4 @@ Then `30-automatic-evaluators.md` should cover four things:
 3. validating evaluator reliability;
 4. placing evaluators offline, online asynchronously, or--under stricter conditions--online synchronously.
 
-So the answer is: **yes, the planes and automatic evaluators are present in the overall architecture, but the next document must make them the explicit bridge from Failure Understanding to scalable Discovery, Delivery, release, and production feedback.**
+**The planes and automatic evaluators are present in the overall architecture. The proposed next document should make them an explicit bridge from Failure Understanding to scalable Discovery, Delivery, release, and production feedback.**

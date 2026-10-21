@@ -111,12 +111,12 @@ Some core ones and how they translate:
 	- interpreting AB test results,
 	- explaining model behavior and limitations.
 
-"Unblocking others" is huge. ML projects often stall because one person is stuck on data access, evaluation design, or infra quirks. Seniors who can see across these boundaries add disproportionate value.
+Helping others make progress is especially important. ML projects often stall because one person is stuck on data access, evaluation design, or infra quirks. Seniors who can see across these boundaries add disproportionate value.
 
 ## 6. Knowledge sharing
 
 
-In ML this becomes _very_ important:
+Knowledge sharing is especially important in ML:
 
 - Experiments are easy to repeat badly and hard to reproduce properly if undocumented.
 - Without sharing:
@@ -297,7 +297,7 @@ System-design experience transfers directly to these new components and failure 
 ### E. Evaluation frameworks for LLMs
 
 
-In LLM land, "accuracy on a test set" is usually not enough.
+For LLM systems, "accuracy on a test set" is usually not enough.
 
 Other evaluation modes:
 
@@ -306,7 +306,7 @@ Other evaluation modes:
 - **LLM-as-a-judge** evals: using another model for auto-grading (with care).
 - **Human evals**: structured, sampled, with clear rubrics.
 
-Being able to design a sane evaluation regime for a new LLM feature (what to measure, how to sample, when to involve humans) is a real differentiator.
+Designing a sound evaluation process for a new LLM feature requires deciding what to measure, how to sample, and when to involve humans. This is an important engineering skill.
 
 ### F. Monitoring and operations for ML
 
@@ -602,7 +602,7 @@ The gaps suggest three learning themes.
 ## 3. How to use this in practice
 
 
-One way to operationalize this:
+One way to apply this:
 
 1. **Create a gap map for the relevant role**
     Skim each area above and mark:

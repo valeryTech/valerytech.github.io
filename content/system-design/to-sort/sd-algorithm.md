@@ -11,66 +11,60 @@ Alternative interview outline. Its four stages and artifact checkpoints are reta
 # SD algorithm
 
 
-This document describes step-by-step framework on how to tackle a system design question
+This outline describes four steps for answering a system design question.
 
 ## 1. Understand the problem and establish Design Scope
 
 
-What you need to collect and define:
+Collect and define:
 
-- Functional Requirements. They may reside in a form of User Stories or Use Cases.
-- Edge Cases and Scenarios that will not be covered
-- Constraints
-- Architectural Characteristics for the whole system or its parts
-- Borders of the system under construction
+- Functional requirements, expressed as user stories or use cases.
+- Edge cases and scenarios outside the agreed scope.
+- Constraints.
+- Architectural characteristics for the whole system or its parts.
+- Boundaries of the system being designed.
 
-Flag: an agreement with the interviewer on the design.
+Checkpoint: agree on the design with the interviewer.
 
-Output (list of artifacts to be obtained): FR (User Stories, Corner Cases), AR+quantitative characteristics
+Output: FR (user stories and corner cases), AR, and quantitative characteristics.
 
 ## 2. Create a High-Level Design
 
 
-Sketch your main components/parts/subsystems and the connections between them. Justify, refactor and repeat.
+Sketch the main components, parts, or subsystems and their connections. Explain the choices, revise the design, and repeat.
 
-If possible, go through a few concrete use cases.
+Walk through a few concrete use cases where possible.
 
-?? Estimations
+Open question: whether and where to include estimates in this step.
 
-?? Define Data model (Logical and Physical ERD etc) .
+Open question: whether and where to define the data model, including logical and physical ERDs.
 
-=> maybe add some APIs for Read/Write scenarios for crucial components/parts then define these API and borders.
+Possible addition: identify APIs for read/write scenarios in critical components, then define the APIs and component boundaries.
 
-Flag: an agreement with the interviewer on the design.
+Checkpoint: agree on the design with the interviewer.
 
-Output: blueprint of a system under construction. Only main components.
+Output: a blueprint showing the main components of the system being designed.
 
 ## 3. Design Deep Dive
 
 
-identify and prioritize components in the architecture
+Identify and prioritize the architectural components.
 
-dig deeper into 2-3 components
+Examine 2-3 components in more detail and select database types.
 
-and select DB types
+Compare different approaches, describe their pros and cons, and explain the choice.
 
-provide different approaches, their pros and cons, and why would you choose one
+Checkpoint: does the design meet all functional and non-functional requirements?
 
-Flag: does your design meet all functional and non-functional requirements?
-
-Output: ??
+Open question: define the output of this step.
 
 ## 4. Wrapping up
 
 
-Try to answer these follow-up questions:
+Possible wrap-up topics:
 
-identify the system bottlenecks and discuss potential improvements
-
-it could be useful to give the interviewer a recap of your design.
-
-you can talk about error cases (network faults, server failure),
-
-operation issues (maybe properties of production-ready systems)
-
-how to handle next scale curve
+- Identify system bottlenecks and discuss potential improvements.
+- Recap the design for the interviewer.
+- Discuss error cases, such as network faults and server failure.
+- Discuss operational issues; properties of production-ready systems may be a useful framing.
+- Explain how the design could handle the next increase in scale.

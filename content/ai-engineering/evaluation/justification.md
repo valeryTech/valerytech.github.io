@@ -6,7 +6,7 @@ description: "Explains evaluation anti-patterns through a wallet example, distin
 linkTitle: "Product-Specific Evaluation"
 ---
 
-Your "Client gives us a `completeness = 0.84`, therefore the product works" example is almost exactly the class of eval practice Hamel argues against.
+The example "Client gives us a `completeness = 0.84`, therefore the product works" illustrates the class of evaluation practice Hamel argues against.
 
 One important qualification: **"completeness" itself is not automatically a bad evaluator.** It becomes defensible if you have discovered that incompleteness is an actual product failure, defined precisely what constitutes that failure, obtained human labels, and validated an evaluator against those labels. What Hamel objects to is inventing an abstract quality dimension first and treating its score as evidence of product quality. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/should-i-use-ready-to-use-evaluation-metrics.html?utm_source=chatgpt.com))
 
@@ -32,30 +32,28 @@ One important qualification: **"completeness" itself is not automatically a bad 
 17. **Build the eval dashboard before building the ability to inspect traces.** This is the "tools trap" in the Field Guide. A polished dashboard full of generic scores can actively discourage investigation because it creates the feeling that measurement already exists. Hamel puts a simple, domain-specific trace viewer and low-friction annotation workflow ahead of sophisticated evaluation infrastructure. ([Hamel's Blog](https://hamel.dev/blog/posts/field-guide/ "A Field Guide to Rapidly Improving AI Products - Hamel's Blog"))
 18. **Assume "hard to evaluate" is purely an eval-engineering problem.** Hamel's 2026 article goes further: if experts cannot cheaply verify an AI output, users probably cannot either. Product design should expose sources, intermediate artifacts, diffs, constraints, provenance, or other checkable evidence. That also makes evals much easier. ([Hamel's Blog](https://hamel.dev/blog/posts/eval-smell/))
 
-I would make **#1-#8 the core argument**. They directly attack the idea that an eval platform succeeds by producing plausible-looking quality numbers.
+**Proposed focus:** use **#1-#8 as the core argument** against treating plausible-looking quality numbers as evidence that an evaluation platform succeeds.
 
-The question I would put next to a metric such as **"Completeness: 0.84"** is:
+A metric such as **"Completeness: 0.84"** needs answers to these questions:
 
 > What concrete product failure does 0.84 measure; who established the ground truth; what does pass/fail mean on actual examples; how well does the evaluator reproduce expert judgment on unseen labeled data; and what product decision changes if this number moves?
 
-If those questions don't have answers, **0.84 is an output of the evaluation system, but there is no evidence yet that it measures product quality**. That is the distinction I think you should build the demonstration around.
+If those questions don't have answers, **0.84 is an output of the evaluation system, but there is no evidence yet that it measures product quality**. That distinction is central to the demonstration.
 
-There is also a very clean conceptual chain across:
+The reasoning follows this chain:
 
 **raw traces -> human error analysis -> observed failure taxonomy -> prioritize failures -> scoped pass/fail criteria -> human labels -> validated automated evaluator -> failure rates on representative data -> engineering experiments -> production/product outcomes.**
 
-Additionally:
+For the Client team, the main recommended article is [The Revenge of the Data Scientist](https://hamel.dev/blog/posts/revenge/). It was published in March 2026 and is almost a ready-made critique of a score/dashboard-first eval product. Then use [Using LLM-as-a-Judge For Evaluation](https://hamel.dev/blog/posts/llm-judge/?utm_source=chatgpt.com) for the methodological details and [A Field Guide to Rapidly Improving AI Products](https://hamel.dev/blog/posts/field-guide/) for the broader development loop.
 
-The single best article to give the Client team is [The Revenge of the Data Scientist](https://hamel.dev/blog/posts/revenge/). It was published in March 2026 and is almost a ready-made critique of a score/dashboard-first eval product. Then use [Using LLM-as-a-Judge For Evaluation](https://hamel.dev/blog/posts/llm-judge/?utm_source=chatgpt.com) for the methodological details and [A Field Guide to Rapidly Improving AI Products](https://hamel.dev/blog/posts/field-guide/) for the broader development loop.
-
-## second phase
+## Explaining the failure mechanisms
 
 
-We could consider each anti-pattern as a failure mechanism, not just a rule: what information gets lost, what false inference follows, and what concrete safeguard blocks it.
+Each anti-pattern can be examined as a failure mechanism: what information gets lost, what false inference follows, and what concrete safeguard blocks it.
 
-Once a failure mode exists, the evaluator estimates its prevalence; each failure gets its own evaluator; objective failures should use deterministic checks; LLM judges are for narrow judgment tasks and must be aligned against human labels. That gives us a precise way to explain why the common shortcuts fail.
+Once a failure mode exists, the evaluator estimates its prevalence; each failure gets its own evaluator; objective failures should use deterministic checks; LLM judges are for narrow judgment tasks and must be aligned against human labels. This provides a precise explanation of why the common shortcuts fail.
 
-XXX
+#todo
 
 Model backbone:
 
@@ -63,12 +61,12 @@ Model backbone:
 
 That matches failure-understanding flow, where discovery precedes operationalisation and measurement, ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/20-error-analysis/?utm_source=chatgpt.com "20 Error Analysis | AI Engineering and Architecture")) and it also maps cleanly onto `wallet-evals` distinction between Execution -> Judgment -> Evaluation. [wallet-evals concepts.md](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md?utm_source=chatgpt.com)
 
-The useful claim: Every step adds an inference. If you skip a step, the final number may still be computable, but you haven't established what the number means.
+Every step adds an inference. Skipping a step may leave the final number computable without establishing what it means.
 
 ### 1. Start with generic metrics
 
 
-Suppose Client gives you:
+Suppose Client reports:
 
 ```text
 Completeness: 0.91
@@ -77,7 +75,7 @@ Coherence:    0.96
 ```
 
 
-The problem happens before measurement. There is no demonstrated relationship between `Completeness` and the behaviors that determine whether your product works.
+The problem happens before measurement. There is no demonstrated relationship between `Completeness` and the behaviors that determine whether the product works.
 
 Hamel calls this out directly: generic metrics such as helpfulness, coherence, and quality measure abstract properties that may have little connection to application-specific failures. A good score therefore doesn't establish successful product behavior. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/should-i-use-ready-to-use-evaluation-metrics.html?utm_source=chatgpt.com))
 
@@ -116,9 +114,9 @@ successful wallet behavior
 ```
 
 
-This is a **construct validity** failure: we haven't shown that the thing being measured represents the product behavior we care about.
+This is a **construct validity** failure: the measured property has not been shown to represent the product behavior of interest.
 
-Prevention is your current sequence:
+The failure-understanding sequence addresses this problem:
 
 ```text
 traces
@@ -160,7 +158,7 @@ The failure occurs because the taxonomy constrains observation. Reviewers start 
 
 Hamel documents a production case where a team wrote its rubric first and then spent labeling effort on criteria that rarely appeared as actual failures. ([Hamel's Blog](https://hamel.dev/notes/llm/ai-product-engineering/evals-production.html?utm_source=chatgpt.com "Case Study: Putting Evals Into Production - Hamel's Blog"))
 
-Your failure-understanding model handles this better:
+The failure-understanding model starts from observed behavior:
 
 ```text
 trace 17 → wrong account selected
@@ -174,9 +172,9 @@ Account-selection / disambiguation failure
 ```
 
 
-Only then do you operationalise it.
+Only then is the failure category operationalised.
 
-So the problem with rubric-first evaluation is not primarily that the rubric might be wrong. It's that **you have no evidence yet about which distinctions are useful**.
+The main problem with rubric-first evaluation is the **lack of evidence about which distinctions are useful**, even before asking whether the rubric is correct.
 
 ### 3. Put several concerns into one evaluator
 
@@ -200,7 +198,7 @@ style        -> mediocre
 
 Both could receive `4.1`.
 
-You've now destroyed information needed for engineering.
+Combining the concerns loses information needed for engineering.
 
 The aggregate permits compensation:
 
@@ -217,7 +215,7 @@ And if `4.1 -> 3.9`, nobody knows what changed.
 
 Hamel identifies arbitrary multidimensional scoring as a recurring mistake and recommends narrow binary judgments because they give a much clearer decision boundary and failure interpretation. ([Hamel's Blog](https://hamel.dev/blog/posts/llm-judge/?utm_source=chatgpt.com "Using LLM-as-a-Judge For Evaluation: A Complete Guide - Hamel's Blog"))
 
-Your evaluator unit should therefore usually be:
+Each evaluator should therefore usually assess one criterion:
 
 ```text
 Evaluator E12
@@ -246,7 +244,7 @@ This distinction is important. **Atomic evaluators and aggregate evaluation resu
 ### 4. Trust an LLM judge without validating it
 
 
-Suppose Client implements your F12 evaluator:
+Suppose Client implements an F12 evaluator:
 
 ```text
 LLM judge:
@@ -258,7 +256,7 @@ Does this interaction clearly identify the source account?
 
 The criterion may now be good.
 
-But we have a second inference:
+A second inference is still needed:
 
 ```text
 judge says PASS
@@ -283,13 +281,13 @@ judge almost always says PASS
 ```
 
 
-You can't distinguish them.
+Without validation, these explanations cannot be distinguished.
 
 This is a **measurement validity** problem.
 
 Hamel recommends validating scoped judges against human labels on held-out data and measuring their ability to correctly identify both passes and failures. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/can-i-use-the-same-model-for-both-the-main-task-and-evaluation.html?utm_source=chatgpt.com "Q: Can I use the same model for both the main task and evaluation? - Hamel's Blog"))
 
-So you want:
+The validation process needs:
 
 ```text
 Failure mode F12
@@ -309,7 +307,7 @@ TNR = ...
 
 Only after that does evaluator output become credible measurement.
 
-This is also why your `automatic-evaluators.md` approach is the right second stage: **failure discovery creates the criterion; evaluator validation establishes whether automation can apply that criterion reliably.**
+This explains the role of `automatic-evaluators.md` as the second stage: **failure discovery creates the criterion; evaluator validation establishes whether automation can apply that criterion reliably.**
 
 ### 5. Use overall judge accuracy
 
@@ -343,22 +341,22 @@ When humans say FAIL, how often does evaluator catch the failure?
 ```
 
 
-Hence TPR/TNR, sensitivity/specificity, precision/recall depending on how you define the positive class.
+Hence TPR/TNR, sensitivity/specificity, precision/recall depending on the definition of the positive class.
 
 Hamel explicitly recommends measuring the judge against human labels this way. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/can-i-use-the-same-model-for-both-the-main-task-and-evaluation.html?utm_source=chatgpt.com "Q: Can I use the same model for both the main task and evaluation? - Hamel's Blog"))
 
-This gives you a strong counterexample whenever somebody presents:
+This is a counterexample to claims based only on agreement, such as:
 
 > Our evaluator has 95% agreement.
 
-Your next question is simply:
+The necessary follow-up question is:
 
 > What's the failure prevalence, and what are the evaluator's false-positive and false-negative rates?
 
 ### 6. Treat evaluator output as the evaluation result
 
 
-This is where your `wallet-evals` vocabulary becomes particularly useful.
+The `wallet-evals` vocabulary distinguishes evaluator output from an evaluation result.
 
 Suppose:
 
@@ -392,7 +390,7 @@ time period?
 
 And according to what decision rule?
 
-Your model correctly separates these:
+The model separates these:
 
 ```text
 Execution
@@ -438,7 +436,7 @@ release threshold <= 3%
 ```
 
 
-That is an evaluation result you can use.
+That is an evaluation result that can support a decision.
 
 `Quality = 87.3` has no comparable semantics.
 
@@ -474,9 +472,9 @@ UI contract
 ```
 
 
-Your concepts document already makes exactly this separation: judgments tell you whether evidence satisfies a criterion; failure understanding and diagnosis consume that evidence afterward. [wallet-evals concepts.md](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md?utm_source=chatgpt.com)
+The concepts document makes this separation: judgments state whether evidence satisfies a criterion; failure understanding and diagnosis use that evidence afterward. [wallet-evals concepts.md](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md?utm_source=chatgpt.com)
 
-This also explains why complete traces matter. Your current error-analysis writeup explicitly treats final output as insufficient because earlier tool/state failures can be hidden by a plausible final answer. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/20-error-analysis/?utm_source=chatgpt.com "20 Error Analysis | AI Engineering and Architecture"))
+This also explains why complete traces matter. The error-analysis note treats final output as insufficient because earlier tool/state failures can be hidden by a plausible final answer. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/20-error-analysis/?utm_source=chatgpt.com "20 Error Analysis | AI Engineering and Architecture"))
 
 So:
 
@@ -488,7 +486,7 @@ Trace review → diagnoses
 
 Those are different jobs.
 
-I think this yields a much stronger overall model than "Hamel says generic metrics are bad."
+This gives a fuller explanation than "Hamel says generic metrics are bad."
 
 The argument becomes:
 
@@ -515,7 +513,7 @@ The argument becomes:
 
 Every arrow is a **proof obligation**.
 
-For any metric Client proposes, you can therefore ask five questions:
+Any metric Client proposes should answer five questions:
 
 |Question|What it establishes|
 |---|---|
@@ -543,4 +541,4 @@ If they say:
 
 they fail question 5.
 
-That, I think, is the cleanest reasoning framework for demonstrating exactly **why** these anti-patterns fail rather than merely saying that your approach is preferable.
+This reasoning framework explains **why** the anti-patterns fail and which evidence each step requires.

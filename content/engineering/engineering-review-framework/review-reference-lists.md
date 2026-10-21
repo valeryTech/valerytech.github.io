@@ -36,6 +36,7 @@ Supporting note: [Requirements and Quality Targets]({{< ref "engineering/enginee
 
 - Whether the relevant requirements have been defined
 - Functional behavior and acceptance criteria
+- Intended outcomes, necessary conditions, and system responsibilities
 - Boundary cases and failure behavior
 - Numerical targets and workload assumptions, where applicable
 - Performance and scalability
@@ -117,6 +118,8 @@ CI means continuous integration; PR means pull request.
 - Author self-review
 - Unit, integration, contract, and end-to-end testing
 - Test relevance, failure cases, and regression coverage
+- Independent derivation of expected behavior and reliability checks
+- Consequential failure scenarios and observable expected results
 - Build, formatting, linting, and type checking
 - Relevant security, dependency, and performance checks
 - PR purpose, scope, testing information, and risks
@@ -148,6 +151,9 @@ Supporting note: [Review Agents, Skills, and Tools]({{< ref "engineering/enginee
 
 - Reusable review skills and prompts
 - General code review agents
+- Agentic workflows combining analysis, critique, and verification
+- Wrappers and harnesses for context, execution, and result collection
+- Independent review contexts and isolated experiments where useful
 - Focused reviews for simplicity and abstraction consistency
 - Focused reviews for security, performance, and compatibility
 - Linters, type checkers, scanners, and test runners
@@ -156,9 +162,11 @@ Supporting note: [Review Agents, Skills, and Tools]({{< ref "engineering/enginee
 - Validation of automated findings
 - Human judgment and responsibility for the final decision
 
-Specific tools can be added to this list as they are selected. The review areas remain applicable when tools change.
+Introduce or adapt support for a concrete review need. The [tool and skill catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}) provides current examples; the review areas remain applicable when implementations change.
 
 ## Related guidance
 
 
 [Framework Rationale and Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}}) explains how to use these lists and choose the depth of review.
+
+[Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) explains outcome-based derivation, independent test design, and their limitations.

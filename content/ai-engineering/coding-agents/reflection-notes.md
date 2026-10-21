@@ -8,16 +8,16 @@ linkTitle: "Coding-Agent Reflection Notes"
 # Goals
 
 
-checklist; advides list; practices; like what in the refactoring.io
+Develop a checklist, advice, and practices, similar to those in refactoring.io.
 
-checklist for beginners
+Include a checklist for beginners.
 
-how to understand that these will be useful
+Open question: how can the usefulness of these materials be assessed?
 
 # Different types of systems
 
 
-is this difference essential for the workflow and configuration?
+Open question: do differences between system types require different workflows and configurations?
 
 # Principles
 
@@ -31,7 +31,7 @@ Isolate the uncertain part and use a proof of concept or a focused experiment to
 ## Overengineering
 
 
-Codex and other agents relly like to overengineer code as well as conceptual model. it could propose 20 fields and a whole subsystem with very complex logic to operate on them, when it's enough a structrure with 2 fields. And the simple phrase in agents.md "don't overengineer" doesn't' really help. Solution: varous guardrails - principles of software engineering, minimalism, step by step, cross-review with adversarial agent. but the main is principles
+Codex and other agents often overengineer both code and conceptual models. An agent might propose 20 fields and a subsystem with complex logic when a structure with 2 fields would be enough. A simple instruction in agents.md, "don't overengineer," does not seem to help much. Possible guardrails include software engineering principles, minimalism, step-by-step work, and cross-review by an adversarial agent. Engineering principles are the main safeguard.
 
 Deleting unnecessary code can be a better outcome than adding more implementation.
 
@@ -42,17 +42,17 @@ The workflow can separate the following steps:
 
 create a provisional plan -> discuss it -> revise as missing information becomes available
 
-or create several worktrees and compare the code and it's actual work and then ... (kind of POC)
+Another option is to create several worktrees and compare the implementations and their actual behavior, as in a proof of concept. The next step remains to be defined.
 
 # Agent Features
 
 
-differences with humans - agents don't have long-memory, so every time they start from 0. -> long memory + quick introduction + (what else)
+Working assumption: unlike humans, agents lack long-term memory and start from 0 each time. Possible support: long-term memory and a quick introduction. Open question: what else is needed?
 
 ### Context overflow
 
 
-use handoff and plans
+Use handoff notes and plans.
 
 ### They have imperfect uncertainty calibration
 
@@ -78,14 +78,12 @@ others in [[ai-engineering/coding-agents/agents.md#Assumptions and Useful facts]
 # Workflow and ...
 
 
-augment, not replace
-
-for investigation and understanding
+Use agents to augment human work rather than replace it, especially for investigation and understanding.
 
 # harness
 
 
-how to build and use 'agents.md' mechanism
+Open question: how should the 'agents.md' mechanism be built and used?
 
 # Favor Conventionality and Diagnose Deviations
 
@@ -94,11 +92,12 @@ Architecture of the Target System
 
 {{< callout context="note" title="**Principle of Least Astonishment**" icon="outline/info-circle" >}}
 Agent-ready systems should minimize architectural and procedural surprise.
+
+The target system should be predictable to a competent newcomer.
 {{< /callout >}}
 
--> The target system should be predictable to a competent newcomer.
 
-The target system should favor conventional and predictable design. Its structure, naming, tooling, testing strategy, and architectural boundaries should follow patterns that are familiar to a competent software engineer encountering the project for the first time. Since coding agents are trained largely on conventional software projects, they can be regarded as having similar expectations about project organization and development workflows. This does not require the system to be generic or simplistic; rather, local conventions and architectural choices should be easy to infer, consistent across the codebase, and aligned with common software engineering practice. In the sense, agent-ready systems should follow the .
+The target system should favor conventional and predictable design. Its structure, naming, tooling, testing strategy, and architectural boundaries should follow patterns that are familiar to a competent software engineer encountering the project for the first time. Since coding agents are trained largely on conventional software projects, they can be regarded as having similar expectations about project organization and development workflows. This does not require the system to be generic or simplistic; rather, local conventions and architectural choices should be easy to infer, consistent across the codebase, and aligned with common software engineering practice. #todo Complete the unfinished reference to the principle agent-ready systems should follow.
 
 Foundational engineering principles such as modularity and abstraction guide system construction and refactoring.
 
@@ -107,7 +106,7 @@ To work with idiosyncrasy in an agent-ready target system, treat every deviation
 # Initial scaffold
 
 
-python: uv, ... link to the:
+Python scaffold: uv. #todo Add the remaining tools and the intended reference link.
 
 # Context Management
 
@@ -123,13 +122,14 @@ Rapid development can leave documentation inconsistent with code. Stale document
 - Maintain a minimal set of canonical documents and runbooks that help an agent understand current work and remain easy to align with the project state.
 - Record consequential decisions in ADRs and keep MVP documentation current to give both maintainers and agents a stable basis for decisions.
 - Use workstream logs to record plans, evidence, decisions, and completed work.
-- handoffs between session (use one default handoff documents)
+- Use one default handoff document between sessions.
 
 # Reflection and Improvement
 
 
-regularly use some note to fix reflection,
+Record reflections regularly in a dedicated note.
 
-procedure to experimentation?
+Open questions:
 
-how to use reflection? procedures, schedule, ...
+- What procedure should guide experimentation?
+- How should reflection work in practice: procedures, schedule, and other details?

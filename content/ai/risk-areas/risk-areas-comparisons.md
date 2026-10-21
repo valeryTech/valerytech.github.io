@@ -268,6 +268,8 @@ This history matters because neither framework is a static four-box or five-box 
 ## Citation references
 
 
+The original research export recorded identifiers instead of source titles or URLs for the numbered references below. Their sources remain unresolved; the identifiers are retained for traceability.
+
 > **Source limitation:** The numbered `turn...` references preserve provenance from the original research session but are not portable citations. The linked references below are the independently usable bibliography.
 
 [^1]: Source reference: `turn8view0`

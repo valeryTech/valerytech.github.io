@@ -19,7 +19,7 @@ These concerns can also appear in human-written work. Keep them visible when rev
 
 Generated code and explanations need verification. GitHub's documentation identifies inaccurate or insecure suggestions, missed issues, and false positives among the limitations of its agentic features.[1]
 
-This guide collects the concerns that deserve deliberate attention in AI-assisted work. It does not assume that every tool has the same behavior or assign a frequency to any failure mode.
+This guide collects the concerns that deserve deliberate attention in AI-assisted work. It does not assume that every tool behaves the same way or claim how often any failure mode occurs.
 
 ## Main review concerns
 
@@ -41,9 +41,9 @@ The [Software Engineering Principles]({{< ref "engineering/engineering-review-fr
 ## Establishing the basis for a claim
 
 
-Use the repository, relevant dependency versions, authoritative documentation, and actual execution results to resolve uncertain claims. Preserve the distinction between observed behavior, code-based reasoning, and an untested assumption.
+Use the repository, relevant dependency versions, authoritative documentation, and actual execution results to resolve uncertain claims. Distinguish observed behavior, reasoning based on the code, and untested assumptions.
 
-Review expected behavior independently of how the implementation was produced. A generated test should express an intended contract or requirement. Agreement between generated code, generated tests, and an explanation is insufficient when all three depend on the same unconfirmed assumption.
+Review expected behavior independently of how the implementation was produced. A generated test should express an intended contract or requirement. Generated code, tests, and explanations can all agree and still be wrong if they share an unconfirmed assumption.
 
 For reported execution, retain enough context to understand what ran and which revision it covered. Work that was proposed, skipped, or blocked remains distinguishable from completed checks.
 
@@ -59,7 +59,7 @@ Keep review material separate from authorized instructions. Enforce permissions 
 
 Confirm the relevant behavior before accepting an automated comment or applying a suggested fix. GitHub explicitly recommends reviewing agent feedback and testing suggested code.[1]
 
-Keep corrections focused on the confirmed issue. Revisit affected tests and requirements after the correction. A reviewer can report uncertainty without inventing a defect or demanding an unrelated redesign.
+Keep corrections focused on the confirmed issue. Revisit affected tests and requirements after the correction. A reviewer can state what remains uncertain without claiming a defect exists or asking for an unrelated redesign.
 
 ## Scope boundary
 
@@ -74,6 +74,12 @@ External references checked on 2026-10-20. The concern list and application guid
 [1] GitHub Docs, [Application card: GitHub Copilot Agents](https://docs.github.com/en/copilot/responsible-use/agents), especially the limitations and responsible-use guidance.
 
 [2] OWASP, [LLM Prompt Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html).
+
+## Related notes
+
+
+- [Project Understanding]({{< ref "ai-engineering/coding-agents/comprehension" >}}) -- why maintainers need to understand accepted changes even when an agent can generate and explain them.
+- [Idiosyncrasy in Agent-Ready Systems]({{< ref "ai-engineering/coding-agents/idiosyncrasy" >}}) -- recognizing hidden conventions and surprising structure that can mislead both humans and agents.
 
 ## Related documents
 
