@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "CPython free threading and concurrency"
 description: "Explain CPython free threading, the GIL, synchronization of shared data, and the differences between threads, processes, isolated interpreters, and asynchronous tasks."
-title: "Cpython Free Threading And Concurrency"
-linkTitle: "Cpython Free Threading And Concurrency"
+linkTitle: "CPython concurrency"
 ---
 
 Original conversation: [Shared ChatGPT thread](https://chatgpt.com/share/6ad808db-6ebc-83e9-879c-e45756ee7384)

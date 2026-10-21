@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "CPython, the JVM, and polymorphism"
 description: "Compare CPython and JVM execution, bytecode, memory management, and polymorphism, including Python's method lookup, descriptors, and operator dispatch."
-title: "Cpython Jvm Comparison And Polymorphism"
-linkTitle: "Cpython Jvm Comparison And Polymorphism"
+linkTitle: "CPython, JVM, and polymorphism"
 ---
-# CPython, the JVM, and polymorphism
-
 
 Original conversation: [Shared ChatGPT thread](https://chatgpt.com/share/6ad807c9-e3fc-83e9-baa5-63e44b7c1be7)
 

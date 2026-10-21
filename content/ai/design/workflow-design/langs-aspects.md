@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Langs Aspects"
+title: "Language choice and semantic guarantees for AI systems"
 description: "Compare Go, Scala, Haskell, and BEAM for AI-generated code, and explore typed semantic substrates that preserve guarantees across AI workflows."
-linkTitle: "Langs Aspects"
+linkTitle: "Language choice for AI systems"
 ---
-# Language choice and semantic guarantees for AI systems
-
 
 Source discussion: [BEAM languages explained](https://chatgpt.com/share/6ad81a28-376c-83e9-a239-5d008ce09749).
 

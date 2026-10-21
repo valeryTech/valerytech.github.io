@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Python data model, annotations, and Pydantic"
 description: "Explain Python's runtime class creation, annotations, and dataclasses, and trace how Pydantic builds schemas and calls its Rust validation engine."
-title: "Python Concepts Comparison"
-linkTitle: "Python Concepts Comparison"
+linkTitle: "Python data model and Pydantic"
 ---
-# Python data model, annotations, and Pydantic
-
 
 Original conversation: [Shared ChatGPT thread](https://chatgpt.com/share/6ad8073c-4f48-83ea-9bd2-b4b1d81fe800)
 

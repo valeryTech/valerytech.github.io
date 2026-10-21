@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "jev-to-ontology"
+title: "Jev, ontologies, and confidence-based routing"
 description: "Explore how Jev classification, explicit ontologies, and confidence thresholds guide agent decisions, escalation, and evaluation."
-linkTitle: "jev-to-ontology"
+linkTitle: "Jev and ontologies"
 ---
 ## Feed post
 
