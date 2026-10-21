@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explain CPython free threading, the GIL, synchronization of shared data, and the differences between threads, processes, isolated interpreters, and asynchronous tasks."
 title: "Cpython Free Threading And Concurrency"
 linkTitle: "Cpython Free Threading And Concurrency"
 ---

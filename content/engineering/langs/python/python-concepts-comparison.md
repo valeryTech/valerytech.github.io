@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explain Python's runtime class creation, annotations, and dataclasses, and trace how Pydantic builds schemas and calls its Rust validation engine."
 title: "Python Concepts Comparison"
 linkTitle: "Python Concepts Comparison"
 ---

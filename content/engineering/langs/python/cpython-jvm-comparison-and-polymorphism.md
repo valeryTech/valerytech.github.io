@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Compare CPython and JVM execution, bytecode, memory management, and polymorphism, including Python's method lookup, descriptors, and operator dispatch."
 title: "Cpython Jvm Comparison And Polymorphism"
 linkTitle: "Cpython Jvm Comparison And Polymorphism"
 ---

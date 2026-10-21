@@ -88,3 +88,7 @@ Apply the principles to AI-generated changes with the same expectations. Additio
 - SOLID notes -- working notes on responsibility, extension points, and protecting components from changes elsewhere.
 - Type-driven design -- expressing domain states, constraints, workflows, and errors through types.
 - Module-design guidance -- evaluating abstractions by the capability they provide and the knowledge required of callers.
+
+
+
+jota.feldmann@virtasant.com
