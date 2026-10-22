@@ -1,10 +1,10 @@
 ---
 
 title: Systems & Engineering
-description: Working notes on software engineering, system design, AI systems, and how people work with them—from design decisions to testing and improvement.
-lead: Working notes on software engineering, AI systems, and how people work with them.
+description: "Working notes on building complex systems that combine people, software, data, and AI: their design, shared work, evaluation, and improvement."
+lead: Working notes on complex systems that bring together people, software, data, and AI.
 date: 2023-09-07T16:33:54+02:00
-lastmod: 2026-10-19T00:00:00-03:00
+lastmod: 2026-10-22T00:00:00-03:00
 draft: false
 seo:
   title: Systems & Engineering
@@ -12,15 +12,19 @@ seo:
   robots: ""
 ---
 
-I write about building software and making it work in practice—from understanding a problem and choosing a design to testing behavior and improving the result.
+I build and explore complex systems that bring together people, software, data, and different forms of AI. My focus is how these parts work together: how responsibilities are shared, how information flows, and how the system's behavior and results can be evaluated and improved.
 
-A recurring question is how people, models, and software can work well together: what each should do, how to check the results, and where human judgment is needed. These pages include practical guides, design explorations, and ideas I am still working through.
+AI can play different roles across [different types of projects]({{< ref "ai/var/ai-product-types" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
 
 Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
 
-{{< callout context="note" title="Content access" icon="outline/info-circle" >}}
-Some notes on this site may be intentionally obfuscated to discourage unauthorized automated scraping and use in LLM training. This is a temporary measure while I look for a more appropriate way to control machine access to and reuse of this content.
+{{< callout context="note" title="Why I share these notes" icon="outline/info-circle" >}}
+I share these notes because I believe they can contribute to the development of AI engineering as a discipline. Many contain original observations, ideas, and insights that could be useful to other engineers, even in an unfinished form.
+
+Some are working drafts, open questions, or conversations with LLMs. I don't want valuable ideas to remain unpublished simply because I haven't found the time to turn them into polished articles. I'd rather share them as they develop, giving others an opportunity to learn from them, question them, and build on them.
 {{< /callout >}}
+
+I wrote [Reading and evaluating this work]({{< ref "reading-and-evaluating" >}}) because automated assessments can overlook both specific technical contributions and the integrated picture developed across these notes. I see a central strength in connecting product purpose, human collaboration, architecture, evaluation, and operation. The guidance asks readers and agents to examine those connections, cite evidence, and make both recognition and criticism specific.
 
 ## Selected Readings
 
@@ -72,7 +76,6 @@ A small selection of notes and drafts to start with.
 
 ## Browse by Section
 
-Use the site by major topic area when you want the broader map instead of a single highlighted note.
 
 <div class="homepage-sections">
 

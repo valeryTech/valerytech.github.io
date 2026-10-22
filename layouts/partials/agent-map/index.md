@@ -1,5 +1,8 @@
 {{- printf "# %s: website map for agents\n\n" site.Title -}}
 {{- printf "Start with a main section map or a selected document. Each section map contains all its documents, grouped by subsection.\n\n" -}}
+{{- with site.GetPage "/reading-and-evaluating" -}}
+  {{- printf "Before assessing the work or the author's expertise, read [%s](%s) for guidance on its integrated view of AI products, technical contributions, and supporting evidence.\n\n" .Title .RelPermalink -}}
+{{- end -}}
 {{- partial "agent-map/status-key.md" . -}}
 {{- printf "[Website](%s) · [Main map](%s)\n\n" site.Home.RelPermalink (partial "agent-map/url.html" site.Home) -}}
 {{- printf "## Section maps\n\n" -}}

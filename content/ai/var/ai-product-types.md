@@ -5,27 +5,29 @@ description: "Seven overlapping AI product archetypes classified by primary work
 title: "Ai Product Types"
 linkTitle: "Ai Product Types"
 ---
-# Seven AI product archetypes
 
-
-Revised 2026-10-18. This note defines a practical vocabulary for product discovery and comparison. The [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}) develops the design, evaluation, and estimation method.
-
-AI products combine different kinds of work, context, collaboration, and authority. The seven archetypes below describe common product purposes. Their numbering preserves the original classification; it does not rank sophistication, cost, autonomy, or risk.
-
-Describe a product in two parts: **the work it primarily supports** and **the requirements of its particular deployment**. A bounded booking assistant can execute consequential transactions. An investigation workspace can require complex evidence handling while having no authority to change an external system.
+I think there are different types of a AI products. 
+- First one, it's like a closed task sets assistant, then next one is just chatbot, 
+- the next one could be like supporting assistant that can give you information about the system and your account, 
+- and the next one is like support reporting analytics for the auditors - provide them preliminary version of reports, with proper invariants, like [[analysis-1]]. 
+- The next could be like medical copilot that translates clients transcripts and check receipts. 
+- The next one will be clearly agentic, like setting up meetings, setting using tools, mailing clients or helping coordinate, 
+- and the next one is when you have a big amount of complex rules and environments like forecasting and the whole analytical engine with different pipelines, so you can you can build a app products on this base also.
 
 ## Seven product archetypes
 
 
-| # | Archetype | Primary work | Examples |
-|---|---|---|---|
-| 1 | **Bounded workflow assistant** | Moves a request through a known set of states toward a defined outcome. | Booking, account recovery, form completion, order-status routing. |
-| 2 | **General work assistant** | Helps people ask, draft, explain, compare, and explore across many tasks. | Writing, summarization, coding assistance, brainstorming, document analysis. |
-| 3 | **Contextual support assistant** | Resolves an issue using product knowledge, the customer's actual state, and case history. | Billing explanations, configuration diagnosis, account support, escalation. |
-| 4 | **Investigation and evidence-synthesis system** | Develops questions, evidence, claims, and contradictions into findings or a better understanding. | Audit preparation, due diligence, policy research, incident investigation. |
-| 5 | **Domain work copilot** | Helps a professional develop or check an artifact under domain requirements. | Clinical notes, transcript translation, contract review, receipt classification. |
-| 6 | **Delegated operations and coordination system** | Pursues a bounded goal by selecting steps, using tools, coordinating participants, and handling exceptions. | Scheduling, customer follow-up, CRM updates, onboarding coordination. |
-| 7 | **Analytical and decision system** | Uses rules, calculations, forecasts, simulations, or optimization to support a defined decision. | Demand forecasting, risk analysis, resource allocation, scenario planning. |
+| #   | Archetype                                        | Primary work                                                                                                | Examples                                                                         |
+| --- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| 1   | **Bounded workflow assistant**                   | Moves a request through a known set of states toward a defined outcome.                                     | Booking, account recovery, form completion, order-status routing.                |
+| 2   | **General work assistant**                       | Helps people ask, draft, explain, compare, and explore across many tasks.                                   | Writing, summarization, coding assistance, brainstorming, document analysis.     |
+| 3   | **Contextual support assistant**                 | Resolves an issue using product knowledge, the customer's actual state, and case history.                   | Billing explanations, configuration diagnosis, account support, escalation.      |
+| 4   | **Investigation and evidence-synthesis system**  | Develops questions, evidence, claims, and contradictions into findings or a better understanding.           | Audit preparation, due diligence, policy research, incident investigation.       |
+| 5   | **Domain work copilot**                          | Helps a professional develop or check an artifact under domain requirements.                                | Clinical notes, transcript translation, contract review, receipt classification. |
+| 6   | **Delegated operations and coordination system** | Pursues a bounded goal by selecting steps, using tools, coordinating participants, and handling exceptions. | Scheduling, customer follow-up, CRM updates, onboarding coordination.            |
+| 7   | **Analytical and decision system**               | Uses rules, calculations, forecasts, simulations, or optimization to support a defined decision.            | Demand forecasting, risk analysis, resource allocation, scenario planning.       |
+
+These archetypes may share capabilities, but their execution boundaries must remain explicit. A contextual support assistant can diagnose issues and explain resolutions without modifying external systems. Operations such as refunds, account changes, or bookings belong to separate, tightly constrained workflows with predefined actions and enforced permissions. An LLM may help identify the appropriate workflow, but it cannot independently authorize or execute operations outside its permitted scope.
 
 These archetypes overlap. A support product might combine issue diagnosis, a fixed refund workflow, and delegated follow-up. An audit product might combine evidence synthesis, a domain copilot, and numerical analysis.
 

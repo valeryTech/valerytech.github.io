@@ -25,7 +25,7 @@ make up
 `make up` runs `make migrate` first, importing the latest source notes and
 refreshing the agent maps before it starts the preview. If migration fails,
 the preview startup command is not run. The `SOURCE_NOTES` and `MIGRATE_CONFIG`
-overrides documented in [docs/migration.md](migration.md) also apply here.
+overrides documented under [Migration](#migration) also apply here.
 
 Use this while editing content, templates, config, or assets. The site is
 served at `http://localhost:1313`, Hugo rebuilds watched files automatically,
@@ -56,10 +56,9 @@ Maps are ordinary HTML pages with headings and links, served as `text/html`.
 The previous `/llms.txt` and `/site-map.md` downloads remain available at the root
 and under the five content collections, and now point to the HTML maps.
 Every collection map links back to the main index.
-Template examples and the 404 utility page are omitted. Optional Canonical,
-Draft, and Archived labels come from `document_status` in the source note's
-properties; unlabeled versions retain an unspecified status. See
-[document status and exclusions](migration.md#document-status-and-map-exclusions).
+Template examples and the 404 utility page are omitted. Source-note properties
+control descriptions, publication, map exclusions, and optional status labels;
+see [Note metadata](#note-metadata).
 The footer links to the main map; page metadata links to the collection map,
 including for articles in nested subsections. Selected reading links are
 configured in `data/agent_navigation.toml`.
@@ -114,6 +113,54 @@ make format
 make hugo-version
 ```
 
+## Migration
+
+The [migration config](../scripts/migrate/config.toml) controls which source
+notes are imported and where they appear under `content/`. It is the source of
+truth for import selections and path mappings.
+
+Validate and stage the import before replacing managed content:
+
+```bash
+make migrate-check
+```
+
+Inspect `.migration/reports/check.json` for errors and unresolved links, and
+`.migration/work/content/` for the generated Markdown. To apply the import and
+refresh the agent maps:
+
+```bash
+make migrate
+```
+
+The default source is `/Users/val/notes`. Both commands and `make up` accept
+`SOURCE_NOTES` and `MIGRATE_CONFIG` overrides, for example:
+
+```bash
+make migrate SOURCE_NOTES=/abs/path/to/notes
+MIGRATE_CONFIG=/abs/path/to/manifest.toml make migrate-check
+```
+
+Within each import, `selection_paths` are relative to `source_subtree`; folders
+apply recursively. `selection_mode` chooses `opt-in` or `opt-out`.
+`root_index_source` includes the section index even with opt-in selection;
+`section_title` names a synthesized root index. Use `rename_overrides` to retain
+published paths when source files move. For sidebar ordering, set numeric
+`sidebar_weights` keyed by extensionless paths relative to `target_subtree`;
+lower weights appear first, followed by unweighted entries alphabetically.
+
+### Note metadata
+
+Set these properties in the source note's YAML front matter so migration
+preserves them:
+
+| Property | Purpose |
+| --- | --- |
+| `description` | Required on each migrated article; up to 240 characters for the page introduction and agent map. |
+| `document_status` | Optional map label: `canonical` for the preferred starting point, `draft` for provisional material, or `archived` for preserved history. Unset means no assigned status. |
+| `draft` | Controls Hugo publication independently of the `document_status` label. |
+| `agent_map_exclude: true` | Omits the article and its redirects from agent maps while leaving the page published. |
+
 ## What To Edit
 
 Edit source files in:
@@ -125,17 +172,9 @@ Edit source files in:
 
 Do not edit generated output in `public/` or `resources/`.
 
-These `content/` sections are migration-managed:
-
-- `content/system-design/`
-- `content/engineering/`
-- `content/ai/`
-- `content/ai-engineering/`
-- `content/projects/`
-
-For those sections, edit the external notes source instead of the generated
-files in `content/`. The migration workflow is documented in
-[docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
+For subtrees managed by the [migration config](../scripts/migrate/config.toml),
+edit the external source notes. Each migration replaces their generated
+`content/` files. Use the [migration commands](#migration) to regenerate them.
 
 For repo structure, section ownership, and content placement rules, see
 [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md).
@@ -163,12 +202,10 @@ Links jump from localhost to `valery.tech`:
 Migration-managed content looks wrong locally:
 
 - check the external notes source, not just the generated `content/` file
-- use the migration workflow in
-  [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md)
+- use the [migration commands](#migration) to regenerate the content
 
 ## Related Docs
 
 - [README.md](/Users/val/projects/website/valerytech.github.io/README.md) for the shortest quickstart
-- [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) for the external-notes workflow
 - [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for toolchain, Docker, CI, and deployment
 - [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement

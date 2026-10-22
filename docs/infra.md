@@ -37,8 +37,7 @@ edited directly. The committed migration manifest in `scripts/migrate/config.tom
 defines which sections are managed that way.
 
 Contributor-facing command usage lives in
-[docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md)
-and [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
+[docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md).
 
 ### Shared toolchain
 
@@ -117,7 +116,7 @@ This pipeline is deterministic. It rebuilds managed targets from source notes
 instead of trying to preserve prior generated output in place.
 
 Operator-facing migration usage lives in
-[docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md).
+[the runbook](runbook.md#migration).
 Callout-specific migration behavior lives in
 [docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md).
 

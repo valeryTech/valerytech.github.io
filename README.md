@@ -37,7 +37,6 @@ Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 For more detail:
 
 - [Public agent map](https://valery.tech/agent-map/) for a short HTML index and selected documents; five collection maps list all articles grouped by subsection. `make migrate` assembles their Markdown sources, then Hugo renders the HTML during preview or build. Builds also refresh the sources automatically.
-- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) for local workflows
-- [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) for the external-notes migration workflow
+- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) for local workflows and note imports
 - [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for Docker, toolchain, CI, and deployment
 - [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement

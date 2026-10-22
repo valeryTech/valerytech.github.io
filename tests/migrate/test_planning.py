@@ -111,7 +111,7 @@ class PlanningTests(unittest.TestCase):
         with self.assertRaises(MigrationFailed):
             build_migration_plan(config, make_run(self.workspace).roots)
 
-    def test_public_ai_import_keeps_design_research_private(self) -> None:
+    def test_public_ai_import_includes_var_and_keeps_design_research_private(self) -> None:
         manifest = Path(__file__).resolve().parents[2] / "scripts/migrate/config.toml"
         config = load_config(manifest)
         ai_rule = next(rule for rule in config.imports if rule.name == "ai")
@@ -128,8 +128,13 @@ class PlanningTests(unittest.TestCase):
                 path.mkdir(parents=True, exist_ok=True)
 
         public_notes = {
-            "var/ai-product-types.md",
-            "var/practitioner_guide_seven_ai_product_types.md",
+            "var/01-was/ai-product-types.md",
+            "var/01-was/practitioner_guide_seven_ai_product_types.md",
+            "var/01-was/ai-product-types-improvement-proposal.md",
+            "var/02-ai-project-examples/ai-project-examples-and-design-model.md",
+            "var/02-ai-project-examples/cases/coding-agents-and-harnesses.md",
+            "var/ai-systems-classification/ais-classification.md",
+            "var/reuse.md",
             "system-evaluation/review-flow-specification.md",
             "other/methodology/ebse.md",
             "other/methodology-v1.3/usage/ai-systems-framework-developer-guide-v1.md",
@@ -141,8 +146,6 @@ class PlanningTests(unittest.TestCase):
             "design-research/03-language-and-compiler/private-mechanism.md",
             "architecture-dsl-like/research-direction.md",
             "other/private-note.md",
-            "var/ai-product-types-improvement-proposal.md",
-            "var/reuse.md",
         }
         for relative in public_notes | private_notes:
             path = import_root / relative
@@ -150,16 +153,22 @@ class PlanningTests(unittest.TestCase):
             path.write_text("# Note\n", encoding="utf-8")
 
         # A public source may refer to research without selecting it for publication.
-        (import_root / "var/ai-product-types.md").write_text(
+        (import_root / "var/01-was/ai-product-types.md").write_text(
             "# Product archetypes\n\n"
-            "[Research](../design-research/03-language-and-compiler/private-mechanism.md)\n",
+            "[Research](../../design-research/03-language-and-compiler/private-mechanism.md)\n",
             encoding="utf-8",
         )
         plan = build_migration_plan(config, make_run(self.workspace).roots)
-        selected = {note.source_rel_import.as_posix() for note in plan.notes}
+        targets = {note.source_rel_import.as_posix(): note.target_ref for note in plan.notes}
+        selected = set(targets)
 
         self.assertTrue(public_notes <= selected)
         self.assertTrue(private_notes.isdisjoint(selected))
+        self.assertEqual(targets["var/01-was/ai-product-types.md"], "ai/var/ai-product-types")
+        self.assertEqual(
+            targets["var/01-was/practitioner_guide_seven_ai_product_types.md"],
+            "ai/var/practitioner-guide-seven-ai-product-types",
+        )
 
     def test_synthetic_index_frontmatter_accepts_title_override(self) -> None:
         config = load_config(self.workspace.config_path)

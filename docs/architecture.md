@@ -133,7 +133,6 @@ canonical authoring location for every section.
 
 ## Related Docs
 
-- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) covers day-to-day local commands
-- [docs/migration.md](/Users/val/projects/website/valerytech.github.io/docs/migration.md) covers the external-notes import workflow
+- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) covers local commands and note imports
 - [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) covers Docker, toolchain, CI, and deployment
 - [docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md) covers migrated callout syntax, mapping, and verification

@@ -43,12 +43,15 @@ selection_paths = [
   "operating-model",
   "risk-areas",
   "system-evaluation",
-  # Publish the taxonomy and guide without importing the rest of var/.
-  "var/ai-product-types.md",
-  "var/practitioner_guide_seven_ai_product_types.md",
+  "var",
   # Detailed design-research and architecture-dsl-like notes remain private.
 ]
 include = ["**/*.md", "*.md"]
+
+# Preserve the published URLs after the source notes moved into 01-was/.
+[imports.rename_overrides]
+"var/01-was/ai-product-types.md" = "var/ai-product-types.md"
+"var/01-was/practitioner_guide_seven_ai_product_types.md" = "var/practitioner-guide-seven-ai-product-types.md"
 
 [[imports]]
 name = "ai-engineering"
