@@ -4,7 +4,7 @@ toc: true
 description: "A working outline of software architecture concepts, quality characteristics, decisions, practices, and resources for developing architectural judgment."
 document_status: "draft"
 title: "Architecture"
-linkTitle: "Architecture"
+linkTitle: "Software Architecture"
 ---
 [Draft]
 

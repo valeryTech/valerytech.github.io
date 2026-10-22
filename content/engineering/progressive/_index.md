@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Progressive"
-linkTitle: "Progressive"
+title: "Progressive Architecture"
+linkTitle: "Progressive Architecture"
 ---

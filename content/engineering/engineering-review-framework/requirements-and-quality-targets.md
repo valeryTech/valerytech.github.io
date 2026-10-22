@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Define functional behavior, quality targets, constraints, workload assumptions, and verification criteria before assessing implementation."
 title: "Requirements And Quality Targets"
-linkTitle: "Requirements And Quality Targets"
+linkTitle: "Requirements and Quality Targets"
 ---
 ## Purpose
 

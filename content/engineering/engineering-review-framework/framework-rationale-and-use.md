@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Use the Engineering Review Framework to retain context, choose review depth, and connect checklists, supporting notes, and project guidance."
 title: "Framework Rationale And Use"
-linkTitle: "Framework Rationale And Use"
+linkTitle: "Framework Rationale and Use"
 ---
 ## Purpose
 

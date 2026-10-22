@@ -15,7 +15,7 @@ Then use the document that matches the current question:
 | Need | Document |
 | --- | --- |
 | Understand how product intent, system behavior, decision needs, and evaluation connect | [Conceptual Model for AI Evaluation]({{< ref "ai-engineering/evaluation/v1/conceptualization" >}}) |
-| Understand the purpose and limits of evaluation | [Goals of AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}) |
+| Understand the purpose and limits of evaluation | Goals of AI Evaluation |
 | Distinguish cases, executions, traces, judgments, and findings | [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}) |
 | Choose situations, inputs, cases, samples, and datasets | [Coverage and Case Design]({{< ref "ai-engineering/evaluation/v1/coverage-and-case-design" >}}) |
 | Build a starting set of test data | [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/v1/10-user-inputs" >}}) |

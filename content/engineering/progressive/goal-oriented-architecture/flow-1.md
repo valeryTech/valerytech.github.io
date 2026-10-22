@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Research notes on how user goals and workflows can ground architectural responsibilities and provide context beyond structural diagrams."
 title: "Flow 1"
-linkTitle: "Flow 1"
+linkTitle: "Architecture Grounded in User Goals"
 ---
 # Architecture grounded in user goals
 

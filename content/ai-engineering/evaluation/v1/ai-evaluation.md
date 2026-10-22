@@ -70,7 +70,7 @@ The **evaluation subsystem** is the people, practices, data, and software used t
 
 The subsystem supports decisions. It does not own product intent, accepted risk, production commitments, or release decisions.
 
-The detailed goals and boundaries are in [Goals of AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}).
+The detailed goals and boundaries are in Goals of AI Evaluation.
 
 ## Evaluation in discovery and delivery
 
@@ -132,7 +132,7 @@ Make the work more repeatable when the same judgment will be needed again, the c
 
 
 - [Conceptual Model for AI Evaluation]({{< ref "ai-engineering/evaluation/v1/conceptualization" >}}) explains how product intent, system behavior, decision needs, evaluation goals, and responsibilities connect.
-- [Goals of AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}) defines the goals and boundaries of the framework and subsystem.
+- Goals of AI Evaluation defines the goals and boundaries of the framework and subsystem.
 - [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}) separates a case, execution, trace, observation, judgment, measurement, and finding.
 - [Coverage and Case Design]({{< ref "ai-engineering/evaluation/v1/coverage-and-case-design" >}}) explains how to choose situations, cases, samples, and datasets for a question.
 - [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/v1/10-user-inputs" >}}) gives the working process for building test data from real, manual, and generated inputs.

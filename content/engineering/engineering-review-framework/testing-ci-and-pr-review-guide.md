@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Combine tests, CI, author preparation, and human review to assess software changes, with clear expectations and evidence from executed checks."
 title: "Testing Ci And Pr Review Guide"
-linkTitle: "Testing Ci And Pr Review Guide"
+linkTitle: "Testing, CI, and PR Review Guide"
 ---
 # Testing, CI, and PR Review Guide
 

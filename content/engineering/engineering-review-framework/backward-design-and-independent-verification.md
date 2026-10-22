@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Work backward from product outcomes to required behavior, then independently design verification around consequential failures and observable results."
 title: "Backward Design And Independent Verification"
-linkTitle: "Backward Design And Independent Verification"
+linkTitle: "Backward Design and Independent Verification"
 ---
 
 Two complementary approaches can support the Engineering Review Framework. **Backward design** establishes why behavior and responsibilities are needed. **Independent verification** challenges whether the solution provides that behavior, including under relevant failure conditions. Either can be used by a human reviewer or supported by agents and skills.

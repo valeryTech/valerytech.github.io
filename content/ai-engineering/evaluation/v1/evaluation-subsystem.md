@@ -18,7 +18,7 @@ Its main goal is:
 
 The subsystem makes this possible by recording, organizing, and helping people inspect what happened. It also saves useful cases, criteria, and findings for later evaluations.
 
-The [evaluation framework]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}) defines what the evidence means. The subsystem makes the required evidence available.
+The evaluation framework defines what the evidence means. The subsystem makes the required evidence available.
 
 ## Responsibilities and limits
 

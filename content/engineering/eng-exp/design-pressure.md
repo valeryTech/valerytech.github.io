@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Use contract-driven evaluation and testing to encourage modularity, replayability, explicit interfaces, and diagnosable failures in RAG and function-calling systems."
 title: "Design Pressure"
-linkTitle: "Design Pressure"
+linkTitle: "Design Pressure Toward Modularity"
 ---
 # Design Pressure Toward Modularity in LLM Systems
 

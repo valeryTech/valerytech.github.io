@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Brief notes on message queues for buffering traffic spikes, decoupling processing, and distributing messages to multiple systems."
 title: "Queues"
-linkTitle: "Queues"
+linkTitle: "Message Queues"
 ---
 # Types
 

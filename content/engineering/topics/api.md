@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "A short research checklist and reading link for exploring API design, evolution, system interfaces, and the relationship between APIs and protocols."
 title: "Api"
-linkTitle: "Api"
+linkTitle: "API"
 ---
 # API design research topics
 

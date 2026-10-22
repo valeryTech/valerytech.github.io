@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Tests"
-linkTitle: "Tests"
+title: "Testing"
+linkTitle: "Testing"
 ---

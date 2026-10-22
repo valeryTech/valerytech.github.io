@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Collected architectural heuristics for reasoning about trade-offs, design rationale, simplicity, changeability, and the expected lifespan of a solution."
 title: "Toolbox"
-linkTitle: "Toolbox"
+linkTitle: "Architecture Toolbox"
 ---
 # Laws
 

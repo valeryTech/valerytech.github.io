@@ -719,7 +719,7 @@ These are architectural patterns, not exclusive project types. A real system is 
 
 
 - [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}) gives the short overview.
-- [Goals of AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}) turns this source model into framework and subsystem goals.
+- Goals of AI Evaluation turns this source model into framework and subsystem goals.
 - [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}) defines cases, executions, traces, observations, judgments, findings, and related artifacts.
 - [Evaluation Subsystem]({{< ref "ai-engineering/evaluation/v1/evaluation-subsystem" >}}) describes the people, practices, data, and software used to produce evaluation evidence.
 - [Judgment and Findings]({{< ref "ai-engineering/evaluation/v1/30-judgment-and-findings" >}}) defines criteria, evaluators, labels, measurements, findings, and decision rules.

@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Interview-oriented notes for discussing SQL and NoSQL choices through consistency, data shape, scaling, and worked system-design examples."
 title: "Trade Off Db"
-linkTitle: "Trade Off Db"
+linkTitle: "SQL vs. NoSQL Trade-offs"
 ---
 # relational-vs-nosql
 

@@ -12,7 +12,7 @@ This document explains how to choose the situations used in an AI evaluation.
 
 A case set or production sample is useful only in relation to a question. It does not represent product quality in general. It supports a limited conclusion about defined product behavior, users, situations, and operating conditions.
 
-The broader reasoning is described in [Goals of AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation-goals" >}}) and the [operating model]({{< ref "ai/operating-model/operating-model" >}}).
+The broader reasoning is described in Goals of AI Evaluation and the [operating model]({{< ref "ai/operating-model/operating-model" >}}).
 
 ## Start with the question and decision
 

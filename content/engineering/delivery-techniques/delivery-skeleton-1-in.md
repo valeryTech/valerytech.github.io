@@ -3,7 +3,7 @@ draft: false
 toc: true
 description: "Define an architectural walking skeleton, its acceptance criteria and lifespan, with document-QA examples and alternative formulations of the first delivery slice."
 title: "Delivery Skeleton 1 In"
-linkTitle: "Delivery Skeleton 1 In"
+linkTitle: "Walking Skeleton: Definition and Examples"
 ---
 # Delivery Technique: Architectural Walking Skeleton
 

@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Eng Exp"
-linkTitle: "Eng Exp"
+title: "Engineering Experiments"
+linkTitle: "Engineering Experiments"
 ---
