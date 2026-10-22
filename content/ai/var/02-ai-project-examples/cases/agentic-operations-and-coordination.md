@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Distinguishes adaptive action selection from coordination across people, services, and time, using scheduling and recruiting to examine authorization, recovery, and verified outcomes."
 title: "Agentic Operations And Coordination"
 linkTitle: "Agentic Operations And Coordination"
 ---

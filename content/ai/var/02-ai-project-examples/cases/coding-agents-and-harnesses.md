@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Examines coding agents, harnesses, and programmable workspaces, including execution isolation, permissions, feedback loops, verification limits, and review of software changes."
 title: "Coding Agents And Harnesses"
 linkTitle: "Coding Agents And Harnesses"
 ---

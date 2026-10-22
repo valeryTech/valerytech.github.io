@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help up down build verify clean format hugo-version migrate migrate-check site-map site-map-check
+.PHONY: help up down build lint verify clean format hugo-version migrate migrate-check site-map site-map-check
 
 help: ## Show available targets
 	@echo "Usage: make <target>"
@@ -15,6 +15,9 @@ down: ## Stop the local preview server
 
 build: ## Run the production build in Docker
 	@bash scripts/build-site.sh
+
+lint: ## Check page descriptions are 110-250 characters
+	@docker compose run --rm site npm run lint
 
 verify: ## Build and verify local routes
 	@bash scripts/verify-site.sh

@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Proposes security as a distinct AI design concern, connecting threat models and trust boundaries to reliability, guardrails, evidence checks, and hallucination limits."
 title: "Security Aspect"
 linkTitle: "Security Aspect"
 ---

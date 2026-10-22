@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "A proposed multidimensional taxonomy of AI systems and components, covering action authority, architecture, deployment, boundary invariants, and distinct forms of assurance."
 title: "Ais Classification"
 linkTitle: "Ais Classification"
 ---

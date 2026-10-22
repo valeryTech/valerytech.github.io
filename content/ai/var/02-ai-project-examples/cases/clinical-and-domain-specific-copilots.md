@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explores clinical and domain-specific copilots through meaning preservation, professional review, acceptance for a declared purpose, and authorized changes to records."
 title: "Clinical And Domain Specific Copilots"
 linkTitle: "Clinical And Domain Specific Copilots"
 ---

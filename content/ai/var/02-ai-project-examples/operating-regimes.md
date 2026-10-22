@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explores candidate operating regimes for AI systems, how work progresses in each, and how transitions preserve state while permissions remain independently enforced."
 title: "Operating Regimes"
 linkTitle: "Operating Regimes"
 ---

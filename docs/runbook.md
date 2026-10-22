@@ -40,6 +40,22 @@ make build
 Use this to regenerate `public/` and `resources/` the same way CI and GitHub
 Pages do.
 
+Lint page descriptions:
+
+```bash
+make lint
+```
+
+This runs the same Hugo SEO check as the build and fails when a published page's
+description is outside 110–250 characters, inclusive. It checks the resolved SEO
+description, including summary fallbacks and generated section and taxonomy pages,
+and renders in memory without replacing `public/`. `make build` continues to
+report these violations as warnings. Inside the container or CI, use `npm run lint`
+or `npm run lint:descriptions`.
+
+The limits are configurable under `[seo.description.length]` in
+`config/_default/params.toml`.
+
 Preview startup and production builds assemble Markdown, then Hugo renders six
 HTML navigation maps:
 
@@ -156,7 +172,7 @@ preserves them:
 
 | Property | Purpose |
 | --- | --- |
-| `description` | Required on each migrated article; up to 240 characters for the page introduction and agent map. |
+| `description` | Required on each migrated article; use 110–250 characters for the page introduction, SEO metadata, and agent map. |
 | `document_status` | Optional map label: `canonical` for the preferred starting point, `draft` for provisional material, or `archived` for preserved history. Unset means no assigned status. |
 | `draft` | Controls Hugo publication independently of the `document_status` label. |
 | `agent_map_exclude: true` | Omits the article and its redirects from agent maps while leaving the page published. |

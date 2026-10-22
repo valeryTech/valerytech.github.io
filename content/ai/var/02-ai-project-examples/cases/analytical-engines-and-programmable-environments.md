@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Examines analytical engines and programmable SQL, DSL, or code environments, including controlled execution, calculation correctness, provenance, and reproducibility."
 title: "Analytical Engines And Programmable Environments"
 linkTitle: "Analytical Engines And Programmable Environments"
 ---

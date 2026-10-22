@@ -111,7 +111,7 @@ test('migrated documents have curated descriptions, including honest description
     for (const filename of articles) {
       const description = readFileSync(filename, 'utf8').match(/^description: "(.+)"$/m)?.[1];
       assert.ok(description?.trim() && description !== 'Default Description', `Missing curated description: ${filename}`);
-      assert.ok(description.length <= 240, `Description should fit the map: ${filename}`);
+      assert.ok(description.length <= 250, `Description should fit the map: ${filename}`);
     }
   }
 });

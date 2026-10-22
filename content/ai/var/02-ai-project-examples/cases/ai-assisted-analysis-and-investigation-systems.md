@@ -1,6 +1,7 @@
 ---
 draft: false
 toc: true
+description: "Explores predefined analysis, evolving investigations, and synthesis through audit examples, emphasizing evidence traceability, coverage, uncertainty, and expert review."
 title: "Ai Assisted Analysis And Investigation Systems"
 linkTitle: "Ai Assisted Analysis And Investigation Systems"
 ---

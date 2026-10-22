@@ -127,6 +127,10 @@ mainSections = ["projects", "system-design", "ai-engineering", "ai"]
 
 # SEO (@thulite/seo)
 [seo]
+  [seo.description.length]
+    min = 110
+    max = 250
+    errorLevel = "warning" # make lint treats these warnings as errors
   [seo.title]
     separator = " | "
     suffix = ""
