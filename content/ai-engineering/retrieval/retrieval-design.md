@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Retrieval Design: Simple Baselines, Interactive Experiments, and Shared Work"
-description: "Develops retrieval through small inspectable baselines and shared human–AI experiments, using explicit artifacts and comparisons to decide which bounded operations merit automation."
+description: "Separate improvements to the current inquiry from policies for future runs. Use small retrieval baselines, inspectable interventions, and whole-task comparisons to decide which operations to automate."
 linkTitle: "Retrieval Design"
 ---
 

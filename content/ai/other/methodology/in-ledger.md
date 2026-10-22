@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An empty placeholder for a methodology ledger; no substantive content has been added yet."
+description: "A methodology ledger placeholder with no entries. The surrounding notes develop an evidence protocol, empirical foundations, and a critical stance toward AI engineering claims."
 title: "In Ledger"
 linkTitle: "In Ledger"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A short argument for tracking the evolving solution as the lifecycle object, treating features as outputs or possible implementations of that solution."
+description: "SVPG’s use of feature as both output and a possible solution prompts a naming choice: make the solution the central lifecycle object, with features representing particular approaches."
 title: "Solution As Central Object"
 linkTitle: "Solution As Central Object"
 ---

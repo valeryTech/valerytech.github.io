@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "State Definition v1.1 (LLM / Agentic Systems)"
-description: "A specification separating AI-system identity from observed behavior, defining comparable state estimates and deltas across configuration, inputs, dependencies, measurement, and uncertain outcomes for release decisions."
+description: "A system’s identity and its measured behavior are different objects. State keys track configuration, inputs, dependencies, and evaluators; estimates and delta reports add outcomes, uncertainty, and comparison context."
 linkTitle: "State Definition v1.1"
 ---
 

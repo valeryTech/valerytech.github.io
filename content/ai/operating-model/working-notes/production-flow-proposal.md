@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A delivery-flow proposal connecting product bets to explicit behavior commitments, production slices, evaluation, release, and operation, with more informative alternatives to feature-completion percentages."
+description: "Progress in AI delivery is clearer when it names supported situations and behavior thresholds. Product bets become production commitments and slices that cycle through implementation, evaluation, release, and observation."
 title: "Production Flow Proposal"
 linkTitle: "Production Flow Proposal"
 ---

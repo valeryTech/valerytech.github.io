@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Use concrete assumptions, evidence, and consequences to decide commitments across current conditions, candidate solutions, and production obligations."
+description: "State what must be true, what supports it, and what failure would cost. Separating assumptions about the intended change, candidate solution, and operation keeps evidence tied to the next product commitment."
 title: "Risk Areas Model"
 linkTitle: "Risk Areas Model"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Uses a Wallet example to replace ambiguous MVP language with discovery prototype, productization commitment, initial production slice, and subsequent scope expansion."
+description: "Calling both a learning prototype and a first production release an MVP hides different obligations. Wallet transaction capture illustrates clearer names for discovery, the commitment to production, and later scope increases."
 title: "Mvp Terminology"
 linkTitle: "Mvp Terminology"
 ---

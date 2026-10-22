@@ -36,6 +36,24 @@
   }
 }
 
+// Give links and display controls their own rows on smaller desktop screens.
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-expand-lg #offcanvasNavMain {
+    min-width: 0;
+  }
+
+  .navbar-expand-lg #offcanvasNavMain .offcanvas-body {
+    flex-wrap: wrap;
+    justify-content: flex-end !important;
+    row-gap: 0.25rem;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    flex-basis: 100%;
+    justify-content: flex-end;
+  }
+}
+
 html[data-font-preference="system"] {
   --bs-font-sans-serif: "Avenir Next", Avenir, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, "Jost",
@@ -80,12 +98,67 @@ html[data-font-preference="jost"] {
   }
 }
 
+.homepage {
+  text-align: left;
+}
+
+.homepage-header {
+  max-width: 60rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.homepage-layout {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.homepage-intro,
+.homepage-explore,
+.homepage-browse {
+  min-width: 0;
+}
+
+.homepage-layout > :not(.homepage-browse) > :first-child {
+  margin-top: 0;
+}
+
+.homepage-explore {
+  padding-top: 2rem;
+  border-top: 1px solid var(--bs-border-color);
+}
+
+.homepage-explore h2,
+.homepage-browse h2 {
+  margin-top: 0;
+  text-align: left;
+}
+
+.homepage-browse {
+  grid-column: 1 / -1;
+  padding-top: 2rem;
+  border-top: 1px solid var(--bs-border-color);
+}
+
+@media (min-width: 992px) {
+  .homepage-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    column-gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .homepage-explore {
+    padding-top: 0;
+    padding-inline-start: clamp(1.5rem, 3vw, 3rem);
+    border-top: 0;
+    border-inline-start: 1px solid var(--bs-border-color);
+  }
+}
+
 .selected-readings-stack .card-nav {
   margin: 0 !important;
 }
 
 .selected-readings-stack .card-nav + .card-nav {
-  margin-top: 0.375rem !important;
+  margin-top: 0.75rem !important;
 }
 
 .selected-readings-stack .card {

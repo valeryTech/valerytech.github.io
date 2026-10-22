@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Preserves the argument against organizing AI work as citizens, agents, and experts, plus an earlier question about obligations when prototypes become supported systems."
+description: "A sequence of business people building, agents coding, and engineers approving can reduce engineering to cleanup. These passages ask how ownership, evidence, controls, and prototype reuse should inform a production commitment."
 title: "Discovery Delivery Separation Source Notes"
 linkTitle: "Discovery Delivery Separation Source Notes"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A short alternative framing that makes experiments the unit of uncertain discovery and features the unit only after evidence supports productization."
+description: "Experiments can organize AI discovery around what must be learned before investing in a solution. This framing then shifts the unit of work to the feature once evidence justifies productization."
 title: "Experiment As Primary Unit Alternative"
 linkTitle: "Experiment As Primary Unit Alternative"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A working research synthesis grounding inquiry before problem definition in Schön, creative problem solving, co-evolution, sensemaking, and design-space theory, with prototyping as one method and selective commitment."
+description: "Inquiry can begin before a problem is defined. Reflection, sensemaking, concept expansion, and co-evolution explain how research, prototypes, and comparisons reshape understanding and support selective commitment."
 title: "Discovery Rewritten"
 linkTitle: "Discovery Rewritten"
 ---

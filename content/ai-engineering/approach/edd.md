@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Eval-Driven Development"
-description: "An introductory evaluation-driven development blueprint covering deterministic checks, model judges, human calibration, RAG metrics, and regression gates for prompt changes."
+description: "An eval pyramid combines fast code checks, model grading, and human calibration. A prompt-change example connects reusable cases and RAG quality measures to local iteration and CI gates."
 linkTitle: "EDD"
 ---
 ## Resources

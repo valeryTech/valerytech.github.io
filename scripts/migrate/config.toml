@@ -32,12 +32,14 @@ source_root_kind = "external"
 source_subtree = "ai"
 target_subtree = "ai"
 section_title = "AI"
+root_index_source = "_index.md"
 selection_mode = "opt-in"
 selection_paths = [
   "approach",
   "collab-and-joint-work",
   "design",
   "discovery",
+  "other/_index.md",
   "other/methodology",
   "other/methodology-v1.3",
   "operating-model",
@@ -48,9 +50,8 @@ selection_paths = [
 ]
 include = ["**/*.md", "*.md"]
 
-# Preserve the published URLs after the source notes moved into 01-was/.
+# Preserve the practitioner's published URL after its source moved into 01-was/.
 [imports.rename_overrides]
-"var/01-was/ai-product-types.md" = "var/ai-product-types.md"
 "var/01-was/practitioner_guide_seven_ai_product_types.md" = "var/practitioner-guide-seven-ai-product-types.md"
 
 [[imports]]

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Earlier commitment-boundary proposals using Mehta’s prototype categories and WorkOS examples to show why fidelity, repository, and environment do not determine production obligations."
+description: "Production code can be used to test an idea without committing to ship it. WorkOS and Mehta help distinguish the question a prototype answers from the responsibility accepted for an enduring system."
 title: "Production Commitment Boundary Alternative"
 linkTitle: "Production Commitment Boundary Alternative"
 ---

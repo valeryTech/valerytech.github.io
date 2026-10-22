@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Disciplined AI Experimentation"
-description: "Explains why AI delivery needs controlled experiments with baselines, versioned configurations, representative cases, and production feedback to resolve quality, cost, and latency tradeoffs."
+description: "A useful AI experiment names the decision, baseline, change, cases, and judgment rule. Versioned evidence and production follow-up test whether quality gains justify their cost, latency, and workflow effects."
 linkTitle: "Disciplined AI Experimentation"
 ---
 

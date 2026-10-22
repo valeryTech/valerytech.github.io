@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Examines analytical engines and programmable SQL, DSL, or code environments, including controlled execution, calculation correctness, provenance, and reproducibility."
+description: "A calculation engine can run established pipelines while people or agents construct new SQL, DSL, or code analyses, making procedure construction, controlled execution, and result validation separate design concerns."
 title: "Analytical Engines And Programmable Environments"
 linkTitle: "Analytical Engines And Programmable Environments"
 ---

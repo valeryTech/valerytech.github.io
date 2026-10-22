@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Methodology Principles v1.1"
-description: "The normative entry point to the AI Systems Framework, linking probabilistic system state, trustworthy measurement, controlled experiments, release gates, and operational learning into one discipline."
+description: "AI improvement requires separating what was changed from shifts in inputs, dependencies, and evaluation. The principles join that distinction to uncertainty, controlled experiments, constrained optimization, and incident learning."
 linkTitle: "Methodology Principles"
 ---
 

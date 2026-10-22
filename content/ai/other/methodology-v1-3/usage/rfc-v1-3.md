@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "RFC: AI Systems Framework v1.3"
-description: "An earlier single-team implementation RFC proposing layered libraries, schemas, release gates, monitoring, and optimization, with concrete rollout milestones and resolutions of conflicting terminology across the methodology pack."
+description: "A product team can implement the framework as runtime, measurement, state, monitoring, and optimization layers. The RFC defines their interfaces, rollout milestones, owners, and resolutions of conflicting conventions."
 linkTitle: "Framework RFC v1.3"
 ---
 

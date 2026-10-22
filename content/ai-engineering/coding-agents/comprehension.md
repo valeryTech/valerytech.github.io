@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Project Understanding"
-description: "Argues that maintainers must understand core product changes before accepting them, because agent-generated complexity can accumulate faster than human review and comprehension."
+description: "For core product code, acceptance requires maintainers to explain the architecture, invariants, and failure modes; cheaper code generation makes understanding a constraint on implementation speed."
 linkTitle: "Project Understanding"
 ---
 ## Project understanding

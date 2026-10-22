@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Foundations v1.3 — Assumptions, Invariants, Validity Threats, and Factor Mappings"
-description: "The framework’s normative validity contract: six assumptions connect AI failure factors to comparability invariants, required safeguards, and inconclusive decisions when evidence integrity breaks."
+description: "Comparisons of AI behavior depend on assumptions about data, randomness, measurement, dependencies, optimization, and observability. The validity contract connects these assumptions to safeguards and remedies when they fail."
 linkTitle: "Foundations v1.3"
 ---
 # Foundations v1.3 -- Assumptions, Invariants, Validity Threats, and Factor Mappings

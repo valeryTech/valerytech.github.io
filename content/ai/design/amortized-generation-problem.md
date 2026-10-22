@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Explains how plausible generation can skip task-specific research, planning, and verification, and proposes task-specific deliberation as an evaluation criterion."
+description: "Task-specific deliberation asks whether an AI system performs the research, decomposition, and verification its answer requires, making skipped work visible behind otherwise plausible outputs."
 title: "Amortized Generation Problem"
 linkTitle: "Amortized Generation Problem"
 ---

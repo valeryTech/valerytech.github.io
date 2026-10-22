@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Explains what a hands-on AI engineering role must support: applying experienced judgment, investigating behavior, influencing decisions, and developing the practice through production work."
+description: "The work and support I seek in AI product engineering: hands-on responsibility, room to apply and develop judgment, and time, access, and authority to turn findings into product decisions."
 title: "Align"
 linkTitle: "Align"
 ---

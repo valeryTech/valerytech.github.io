@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A superseded five-level query-assistant example showing why valid and executable queries fall short of correct answers, understood intent, and completing the user’s analytical job."
+description: "A query can be syntactically valid and execute successfully while still answering the wrong question. Five levels trace the gap from query generation to understanding intent and completing an analytical job."
 title: "Capability Funnel"
 linkTitle: "Capability Funnel"
 ---

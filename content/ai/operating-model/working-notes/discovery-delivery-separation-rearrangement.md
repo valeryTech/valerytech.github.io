@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An editorial audit explaining the source split and decisions about purpose, roles, commitment, responsibility, platform proposals, and deferred evaluation, with historical preservation checks."
+description: "Purpose, participant roles, AI autonomy, and platform controls were intertwined in one source. This rearrangement record separates those questions and explains the decisions, provenance, and preservation checks behind the split."
 title: "Discovery Delivery Separation Rearrangement"
 linkTitle: "Discovery Delivery Separation Rearrangement"
 ---

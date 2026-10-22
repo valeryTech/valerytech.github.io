@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Explores clinical and domain-specific copilots through meaning preservation, professional review, acceptance for a declared purpose, and authorized changes to records."
+description: "Clinical examples separate meaning preservation, professional acceptance, and authorized record changes; a statement accepted for documentation may still lack a basis for another clinical decision."
 title: "Clinical And Domain Specific Copilots"
 linkTitle: "Clinical And Domain Specific Copilots"
 ---

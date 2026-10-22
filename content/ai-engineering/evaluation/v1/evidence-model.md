@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Evidence Model for AI Evaluation"
-description: "Defines evaluation objects and their limits, separating cases, executions, trajectories, traces, observations, judgments, failure knowledge, causal hypotheses, findings, and decisions."
+description: "Cases specify situations, executions produce trajectories, and traces capture partial evidence; these distinctions anchor judgeability, failure models, operational checks, and causal diagnosis."
 linkTitle: "Evidence Model for AI Evaluation"
 ---
 ## Purpose

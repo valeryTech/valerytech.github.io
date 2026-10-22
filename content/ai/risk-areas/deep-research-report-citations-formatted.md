@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A source research report maps SVPG solution-risk dimensions to Torres’s assumption testing and opportunity trees, proposing a combined workflow while examining scope, ethics, and feasibility-versus-viability boundaries."
+description: "SVPG’s risk taxonomy and Torres’s opportunity trees address different parts of product discovery. An invoice-reconciliation case maps their terms and combines assumption tests, evidence, explicit Ethics, and outcome measurement."
 title: "Deep Research Report Citations Formatted"
 linkTitle: "Deep Research Report Citations Formatted"
 ---

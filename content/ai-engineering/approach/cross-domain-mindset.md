@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Cross-Domain Mindset"
-description: "Maps senior software engineering strengths to ML and LLM work, with a gap assessment and practical learning projects in data, experimentation, evaluation, and operations."
+description: "Product thinking, ownership, and software architecture carry into ML and LLM work. A lifecycle gap map connects those strengths to data literacy, statistical experiments, evaluation, and focused learning projects."
 linkTitle: "Cross-Domain Mindset"
 ---
 

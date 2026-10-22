@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An earlier backup of the discovery research notes, preserving the prototyping-to-inquiry argument, knowledge-search examples, theoretical comparisons, and an additional compact inquiry-state formulation."
+description: "A preserved version of the discovery research, including DSL interaction examples, prototyping principles, theory comparisons, and an appended inquiry-state model. It records the reasoning behind the later synthesis."
 title: "Discovery V0 Backup"
 linkTitle: "Discovery V0 Backup"
 ---

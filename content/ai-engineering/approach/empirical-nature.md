@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Systems Require Behavioral Evidence"
-description: "Explains why implementation inspection cannot establish AI behavior, connecting scoped behavioral evidence, enforceable safeguards, assurance assessments, and operational decisions through an escalation example."
+description: "Learned components limit what implementation inspection can establish. An escalation example links requirements, mechanism assurance, behavioral evidence, and decisions about the scope a product can support."
 linkTitle: "AI Systems Require Behavioral Evidence"
 ---
 

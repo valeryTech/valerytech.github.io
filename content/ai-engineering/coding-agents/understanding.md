@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Part 0: Observations from ~60B coding-agent token events over nine months"
-description: "Introduces the author's coding-agent experience and workstream practices, providing background for the linked argument that project understanding remains a human responsibility."
+description: "Nine months of intensive coding-agent work motivate a practice of keeping task state, handoffs, and evaluation artifacts outside chat, with project understanding as the responsibility that anchors the series."
 linkTitle: "Coding-Agent Engineering Observations"
 ---
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A provisional model of inquiry work centered on an evolving design situation, choosing research, reframing, making, or comparison as needed and increasing commitments with evidence."
+description: "The object of inquiry is an evolving situation model: frames, observations, questions, possibilities, and commitments. Research, reframing, prototypes, or comparison are selected for what they can reveal next."
 title: "Analysis Or Operation Model"
 linkTitle: "Analysis Or Operation Model"
 ---

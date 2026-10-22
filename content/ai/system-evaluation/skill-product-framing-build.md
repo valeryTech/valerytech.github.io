@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Defining the Product Before Building"
-description: "How to draft a useful product brief from users, jobs, workflows, and scope, while separating requirements from current behavior, assumptions, and unresolved product choices."
+description: "A buildable brief identifies who needs what outcome and how they complete the job. Separating agreed requirements from existing behavior, assumptions, and open choices gives engineers and agents a basis for design."
 lastmod: "2026-10-19"
 linkTitle: "Product Framing"
 ---

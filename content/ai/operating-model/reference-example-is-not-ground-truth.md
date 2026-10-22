@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Shows why an approved report cannot define ground truth for an entire product; separates independent facts, requirements, reference examples, criteria, evaluator judgments, and decision evidence."
+description: "An approved report can hide an untested definition of good behavior. Separate verifiable facts, binding requirements, reference examples, and evaluator judgments before using an eval result to justify a product decision."
 title: "Reference Example Is Not Ground Truth"
 linkTitle: "Reference Example Is Not Ground Truth"
 ---

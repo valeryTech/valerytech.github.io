@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Grounding AI Evaluation in Product-Specific Failures"
-description: "Explains evaluation anti-patterns through a wallet example, distinguishing construct validity, evaluator reliability, prevalence measurement, and causal diagnosis from reassuring generic quality scores."
+description: "A wallet assistant illustrates why quality scores need a chain of evidence: product-specific failure criteria, validated judges, suitable sampling, and a declared question and decision scope."
 linkTitle: "Product-Specific Evaluation"
 ---
 

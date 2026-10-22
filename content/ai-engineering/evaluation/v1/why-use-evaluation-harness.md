@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Why Use an Evaluation Harness?"
-description: "Explains when repeatable execution and versioned evidence justify a harness, what credible comparisons require, and which quality or product claims a harness cannot establish."
+description: "A harness becomes useful when changing models, prompts, tools, or state requires repeatable comparisons: identified cases, controlled fixtures, saved traces, and version records make regressions inspectable."
 linkTitle: "Why Use an Evaluation Harness?"
 ---
 

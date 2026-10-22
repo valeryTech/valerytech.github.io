@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Examines coding agents, harnesses, and programmable workspaces, including execution isolation, permissions, feedback loops, verification limits, and review of software changes."
+description: "A coding agent's engineering loop links repository changes to execution feedback and review; harnesses manage tools, context, permissions, and session state as the work moves toward integration and delivery."
 title: "Coding Agents And Harnesses"
 linkTitle: "Coding Agents And Harnesses"
 ---

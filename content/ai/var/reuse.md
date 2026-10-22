@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A proposed enterprise AI platform decomposition and dependency-based build order, starting with gateway, SDK, tracing, prompt versions, and policy before retrieval and agent runtimes."
+description: "Reusable AI infrastructure separates common access, retrieval, tool, and evaluation capabilities from application workflows, with a build plan that establishes attribution, versioning, and policy before agent orchestration."
 title: "Reuse"
 linkTitle: "Reuse"
 ---

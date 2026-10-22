@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Early working arguments distinguish broad solution-risk dimensions from concrete assumptions and consequences, debating Value, operational feasibility, and uncertainty outside the four-risk taxonomy before the selected model was developed."
+description: "Value, usability, feasibility, and viability describe areas to investigate rather than four testable claims. These arguments derive concrete risks and assumptions, define the boundaries, and identify uncertainty the four omit."
 title: "Risk Areas"
 linkTitle: "Risk Areas"
 ---

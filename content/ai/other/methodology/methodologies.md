@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A small reading list of critiques of software-development methodologies, with essays, discussions, personal retrospectives, and a reference to The Leprechauns of Software Engineering."
+description: "Essays, practitioner retrospectives, and discussions question whether prescribed software-development methodologies improve practice, with The Leprechauns of Software Engineering as a related reading."
 title: "Methodologies"
 linkTitle: "Methodologies"
 ---

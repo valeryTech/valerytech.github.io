@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Context Engineering (to review)"
-description: "Anthropic's guide to curating high-signal agent context, including just-in-time retrieval, tool design, compaction, persistent notes, and strategies for long-running tasks."
+description: "Anthropic treats the model's attention as a scarce resource: keep enough high-signal context for each step, retrieve more on demand, and preserve continuity through compaction, notes, or subagents."
 linkTitle: "CE (under review)"
 ---
 

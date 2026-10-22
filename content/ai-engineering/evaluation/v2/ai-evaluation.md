@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Evaluation as an Iterative Engineering Practice"
-description: "An integrated evaluation practice for developing scoped behavioral knowledge, coordinating coverage, failure understanding, judgment, traceability, and improvements to both products and evidence capability."
+description: "A product decision defines the evidence an AI evaluation needs: explicit expectations, selected cases or samples, complete traces, attributable judgments, and scoped findings that guide the next product or evaluation change."
 linkTitle: "AI Evaluation"
 ---
 ## 1. Purpose and scope

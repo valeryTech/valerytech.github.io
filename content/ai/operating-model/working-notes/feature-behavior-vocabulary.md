@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Uses transaction capture to distinguish the visible feature, supported situations, required behavior, and the obligation to make that behavior dependable in production."
+description: "One transaction-capture feature contains many promises: preserve input, expose ambiguity, validate rules, require confirmation, and save once. Distinguishing feature, scope, behavior, and commitment makes those promises visible."
 title: "Feature Behavior Vocabulary"
 linkTitle: "Feature Behavior Vocabulary"
 ---

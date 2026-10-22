@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Classifies discovery and delivery by purpose rather than phase, explaining how the same team frames decisions, tests assumptions, fulfills obligations, and learns during production."
+description: "Building to answer a question and building behavior people rely on can happen together. The decision, evidence needed, and obligations involved determine whether the work is discovery, delivery, or both."
 title: "Discovery And Delivery"
 linkTitle: "Discovery And Delivery"
 ---

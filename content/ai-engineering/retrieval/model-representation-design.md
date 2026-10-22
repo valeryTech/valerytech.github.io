@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Representation Design for Task-Relevant Retrieval"
-description: "A task-led method for designing searchable source views, separating matching from reading units and testing source recovery, information loss, relevance, and cost."
+description: "Design searchable views around a demonstrated access problem, then recover the original material needed to read a match. Test whether added access outweighs information loss, source-mapping errors, and upkeep."
 linkTitle: "Representation Design for Task-Relevant Retrieval"
 ---
 

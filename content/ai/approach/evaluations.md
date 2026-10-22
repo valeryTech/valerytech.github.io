@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Connects evaluation’s role in discovery and delivery with the maintained people, cases, criteria, and tools that turn observed behavior into decision-relevant evidence."
+description: "Evaluation connects product decisions with a maintained capability to inspect behavior, develop shared criteria, compare changes, and learn from production while preserving the limits of the evidence."
 title: "Evaluations"
 linkTitle: "Evaluations"
 ---

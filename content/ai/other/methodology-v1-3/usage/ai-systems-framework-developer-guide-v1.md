@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Systems Framework for Software Developers (v1)"
-description: "A draft developer guide translating the framework into episode records, comparison artifacts, and everyday prompt-change and incident workflows, with an incremental ladder from tracing to controlled rollout."
+description: "A prompt or retrieval change needs evidence beyond a few convincing answers. Developer workflows connect episode provenance, safe slice comparisons, delta reports, and incident triage, building toward controlled rollout."
 linkTitle: "Developer Guide"
 ---
 

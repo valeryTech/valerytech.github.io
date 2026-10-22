@@ -2,6 +2,6 @@
 draft: false
 toc: true
 title: "Methodology v1.3"
-description: "Version 1.3 methodology references for AI systems, covering configuration, comparison, measurement, instrumentation, and usage."
+description: "The framework treats AI improvement as an evidence loop from execution traces to estimates, controlled comparisons, release gates, monitoring, and constrained search, with shared contracts across the steps."
 linkTitle: "Methodology v1.3"
 ---

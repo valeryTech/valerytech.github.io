@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Research notes grounding AI engineering evidence in empirical methods and causal inference, followed by a detailed validity critique of Zalando’s coding-agent experience report."
+description: "Empirical software engineering, causal inference, and mixed methods give AI claims a testable basis. A critique of Zalando’s agent report separates operational observations from causal evidence."
 title: "In Methodology"
 linkTitle: "In Methodology"
 ---

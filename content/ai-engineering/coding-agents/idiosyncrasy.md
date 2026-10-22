@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Guide: Working with Idiosyncrasy in Agent-Ready Target Systems"
-description: "A diagnostic guide to architectural legibility, using routine changes to uncover hidden conventions and decide which deviations to document, simplify, or preserve."
+description: "Routine change tasks reveal the hidden local knowledge a codebase demands. Compare newcomer expectations with actual structure, then justify, document, isolate, or remove architectural surprises."
 linkTitle: "Idiosyncrasy in Agent-Ready Systems"
 ---
 

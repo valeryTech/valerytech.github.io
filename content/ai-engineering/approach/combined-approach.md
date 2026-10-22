@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Structured AI Development Approach"
-description: "Connects the causal stack, evaluation harness, observability, test pyramid, and operating model into one delivery system for diagnosing failures and directing engineering work."
+description: "Evaluation, observability, test layers, and product investigations reveal different parts of the same delivery system. Connecting them helps a team choose what to build, inspect, change, and release."
 linkTitle: "Structured AI Development Approach"
 ---
 

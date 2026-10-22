@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Handling Underspecified Requests in AI Applications"
-description: "How to resolve missing decisions, respect delegated choices, enforce execution requirements, and test answers and actions."
+description: "Missing details call for different responses: delegated choice, factual lookup, clarification, or a blocked step. File-cleanup and policy examples connect those decisions to authority, execution evidence, and tests."
 linkTitle: "Handling Underspecified Requests in AI Applications"
 ---
 ## Purpose

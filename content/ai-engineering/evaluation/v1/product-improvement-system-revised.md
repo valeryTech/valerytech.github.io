@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Product Improvement System"
-description: "Models continuous improvement through separate product, quality-understanding, and evidence-capability loops, operating across offline and online planes and sharing a data-and-evidence flywheel."
+description: "Feedback loops are defined by what they change: the delivered product, quality understanding, or evidence capability. Offline and online evidence connects all three through reusable evaluation assets."
 linkTitle: "AI Product Improvement System"
 ---
 ## A Model for Continuous AI Design, Evaluation, and Delivery

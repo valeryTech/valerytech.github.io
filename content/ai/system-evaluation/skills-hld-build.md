@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Making System Design Decisions"
-description: "How to choose a small system design, test consequential assumptions, record trade-offs, and tell implementation which data, dependency, and failure-handling rules it must preserve."
+description: "System design turns intended behavior into components, data ownership, interactions, and failure rules. Consequential assumptions get focused checks, and decisions record what implementation must preserve or reconsider."
 lastmod: "2026-10-19"
 linkTitle: "System Design Decisions"
 ---

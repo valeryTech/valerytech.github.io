@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Using Failure Understanding in Product Discovery and Delivery"
-description: "Working guidance for routing failure findings into discovery, delivery, hypotheses, and risk assessments, then connecting operational criteria and automated evaluators across execution planes."
+description: "A failure finding can revise a solution hypothesis, narrow a product commitment, trigger an implementation change, and expose evaluation gaps. Criteria and validated evaluators carry that feedback into offline and live use."
 linkTitle: "Applying Failure Understanding"
 ---
 # Failure understanding as product feedback

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A proposed method for discovering LLM agent capabilities in bounded sandboxes before adding specialised tools, components, or workflows."
+description: "Agent capability depends on the environment as well as the model. A minimal sandbox, general tools, repeated trials, and component ablations test which added workflow structures improve results."
 title: "Sandbox First Capability Discovery Llm Agents"
 linkTitle: "Sandbox First Capability Discovery Llm Agents"
 ---

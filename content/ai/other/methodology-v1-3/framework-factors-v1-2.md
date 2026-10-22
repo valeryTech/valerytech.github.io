@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Framework Factors v1.2 (Failure Drivers and Required Controls)"
-description: "An earlier reliability operating model mapping AI failure drivers to controls, accountable owners, release-risk tiers, and maturity levels for design reviews, releases, and incident learning."
+description: "From input shift to unsafe tool access, failure drivers become reviewable requirements through observable signals, required artifacts, validation methods, owners, and release controls scaled to risk."
 linkTitle: "Framework Factors v1.2"
 ---
 

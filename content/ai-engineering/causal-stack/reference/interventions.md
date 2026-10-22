@@ -11,7 +11,7 @@ aliases:
   - "/ai-engineering/evaluation/causal-stack/layer-3-system-fault-families/"
   - "/ai-engineering/causal-stack/layer-3-semantic-fault-view/"
   - "/ai-engineering/evaluation/causal-stack/layer-3-semantic-fault-view/"
-description: "A short menu of changes to consider after diagnosing a product problem, including validation and tradeoffs."
+description: "A diagnosed boundary suggests changes to compare, from source selection and context assembly to permissions, retries, and recovery. Each option carries a check, a cost, and a limit on what it can establish."
 linkTitle: "Possible interventions"
 ---
 

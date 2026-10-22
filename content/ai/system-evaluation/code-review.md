@@ -4,7 +4,7 @@ toc: true
 title: "Reviewing Software Changes"
 aliases:
   - "/ai/system-evaluation/generation/"
-description: "Principles for reviewing beyond the diff: check product intent, affected callers, design assumptions, and whether tests could expose the mistakes repeated in code and explanations."
+description: "A sound review follows the intended change through requirements, surrounding code, design choices, and tests. It checks whether convincing explanations and passing checks could all repeat the same mistaken assumption."
 lastmod: "2026-10-19"
 linkTitle: "Reviewing Software Changes"
 ---

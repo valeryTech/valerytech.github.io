@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Harness-Building for Coding Agents"
-description: "A research synthesis defining coding-agent harness functions, relating them to classical AI architectures, and proposing design patterns and diagnostics beyond model benchmark scores."
+description: "A harness converts model competence into software work through access, context, action, state, evaluation, and oversight; classical agent architectures guide its decomposition and component-level comparisons."
 linkTitle: "Harness-Building for Coding Agents"
 ---
 ## Executive summary

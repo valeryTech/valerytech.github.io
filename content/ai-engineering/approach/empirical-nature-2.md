@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Products Need Evals, Not Just Tests"
-description: "A practical delivery guide for combining code guarantees, product-specific evals, domain-expert review, release controls, and production learning throughout the AI product lifecycle."
+description: "A clear product target can still leave reliability uncertain. The delivery loop combines enforceable safeguards, realistic cases, trace inspection, expert judgment, regression checks, and scoped release decisions."
 linkTitle: "AI Products Need Evals, Not Just Tests"
 ---
 

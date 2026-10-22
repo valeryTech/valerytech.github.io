@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Working terminology for a critical empirical engineering stance: question claims, test them in practice, scrutinize measurements and interpretations, and revise conclusions through reflection."
+description: "Critical empirical practice combines skepticism, practical tests, and reflection. Its vocabulary distinguishes checking a claim from examining whether the measurement and interpretation support it."
 title: "In Critical Stance"
 linkTitle: "In Critical Stance"
 ---

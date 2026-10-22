@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Building and Reviewing Software with AI"
-description: "A reading guide to building and reviewing AI-assisted software changes, connecting product intent, system design, implementation, meaningful checks, and the merge decision."
+description: "AI-assisted development connects a user’s problem to a design, implementation, and evidence that the result works. These notes carry that thread through product framing, coding-agent work, testing, and merge review."
 lastmod: "2026-10-19"
 linkTitle: "Building and Reviewing with AI"
 ---

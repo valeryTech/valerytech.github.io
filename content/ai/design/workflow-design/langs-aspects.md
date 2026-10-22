@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Language choice and semantic guarantees for AI systems"
-description: "Compare Go, Scala, Haskell, and BEAM for AI-generated code, and explore typed semantic substrates that preserve guarantees across AI workflows."
+description: "Go, Scala, Haskell, and BEAM expose different trade-offs in compiler feedback and fault isolation. Semantic substrates extend the question to guarantees preserved when people, models, and programs compose behavior."
 linkTitle: "Language choice for AI systems"
 ---
 

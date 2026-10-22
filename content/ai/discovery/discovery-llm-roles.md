@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A proposed LLM exploration brief separating standing contribution and discretion from changing project state, allowing concrete design choices while keeping the eventual direction and its rationale open."
+description: "An exploration brief gives an LLM purpose, discretion, and a definition of useful progress, while a separate note carries the current situation. Making an example concrete need not settle the product direction."
 title: "Discovery Llm Roles"
 linkTitle: "Discovery Llm Roles"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Explores predefined analysis, evolving investigations, and synthesis through audit examples, emphasizing evidence traceability, coverage, uncertainty, and expert review."
+description: "Predefined assessment can produce findings that redirect an investigation; audit examples show why workpapers need links among observations, calculations, hypotheses, evidence gaps, and expert judgments."
 title: "Ai Assisted Analysis And Investigation Systems"
 linkTitle: "Ai Assisted Analysis And Investigation Systems"
 ---

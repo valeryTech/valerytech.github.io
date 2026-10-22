@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A pointer to reorganized research on human-AI collaboration patterns, their mechanics, selection, and evaluation; claims remain unverified."
+description: "A guide to the collaboration research synthesis, pattern selection, general mechanics, and evaluation rubrics; the linked studies and catalogs sit outside the published website."
 title: "Human Ai Collaboration Patterns Report"
 linkTitle: "Human Ai Collaboration Patterns Report"
 ---

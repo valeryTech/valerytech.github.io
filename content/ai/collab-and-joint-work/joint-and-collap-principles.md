@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A pointer to reorganized interactive-investigation principles, a position paper, worked retrieval examples, and research comments."
+description: "A route through the interactive-investigation position paper, seven principles, and worked retrieval examples, with commentary and research destinations outside the published website."
 title: "Joint And Collap Principles"
 linkTitle: "Joint And Collap Principles"
 ---

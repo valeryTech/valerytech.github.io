@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Instrumentation Guide for Chat + RAG (v1)"
-description: "A draft chat-and-RAG implementation guide specifying retrieval evidence, context selection, citation, provenance, and missingness records, with sampled raw exemplars and conformance checks for trustworthy regression diagnosis."
+description: "Diagnosing a RAG answer requires knowing what was retrieved, what entered the prompt, and what the answer cited. Stage records connect that evidence to versions, missingness, sampling, and conformance checks."
 linkTitle: "Chat + RAG Instrumentation"
 ---
 

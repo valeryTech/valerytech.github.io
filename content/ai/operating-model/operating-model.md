@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Eight principles for deciding what to investigate, build, or support, matching each commitment to assumptions, decision-relevant evidence, consequences, reversibility, and production obligations."
+description: "Evidence matters when it can change a product decision. Eight principles connect the condition to improve, alternative solutions, assumptions, and production responsibilities to what the team commits to next."
 title: "Operating Model"
 linkTitle: "Operating Model"
 ---

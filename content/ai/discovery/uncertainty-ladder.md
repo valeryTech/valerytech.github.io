@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A proposed AI uncertainty ladder from solvability to adoption, with possibility probes and unfinished practices for moving between stages."
+description: "An AI project may still need evidence of possibility, a working recipe, feasibility, operational reliability, or user value. The ladder links these unknowns to possibility probes, failure diagnosis, progress, and planning."
 title: "Uncertainty Ladder"
 linkTitle: "Uncertainty Ladder"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A working vocabulary distinguishing design knowledge, inquiry artifacts, prototypes, rationale, and commitments, with a taxonomy showing how each contributes to an evolving model of the situation."
+description: "Design knowledge, inquiry artifacts, and the eventual product are different outcomes. A vocabulary and taxonomy clarify how sketches, frames, prototypes, observations, rationale, and decisions contribute to each."
 title: "Dictionary"
 linkTitle: "Dictionary"
 ---

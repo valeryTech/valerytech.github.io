@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Practitioner examples from Cagan, Uber, Torres, Willison, Beck, and Doernenburg showing how AI-assisted exploration differs from accepting long-term engineering responsibility."
+description: "AI can accelerate prototyping while engineers still need to judge architecture and maintain the result. Cases from Uber, Torres, Willison, Beck, and Doernenburg examine where generated output needs that judgment."
 title: "Discovery Delivery Practitioner Evidence"
 linkTitle: "Discovery Delivery Practitioner Evidence"
 ---

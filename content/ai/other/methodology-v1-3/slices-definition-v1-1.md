@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Slices v1.1"
-description: "A draft specification distinguishing input-defined evaluation slices from execution-defined diagnostics, with governance rules that prevent post-treatment selection bias from invalidating release comparisons."
+description: "Comparing variants on requests that happened to use a tool can select different populations. Slice types separate input-defined release cohorts from execution diagnostics, with versioned predicates and promotion rules."
 linkTitle: "Slices v1.1"
 ---
 > Status: Draft (v1.1)

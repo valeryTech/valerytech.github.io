@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A supporting research synthesis reorders source passages with decision rationales, explaining the canonical model’s assumption-centered reasoning, separate problem and solution concerns, and explicit Harm dimension."
+description: "Risk dimensions cover ways a solution can fail; opportunity trees organize the choices around it. This synthesis explains how concrete assumptions, explicit Ethics, and evidence connect the two while keeping their roles distinct."
 title: "Risk Areas Reassembled"
 linkTitle: "Risk Areas Reassembled"
 ---

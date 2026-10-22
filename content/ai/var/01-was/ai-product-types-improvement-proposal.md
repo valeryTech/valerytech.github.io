@@ -1,14 +1,14 @@
 ---
 draft: false
 toc: true
-description: "The rationale for replacing a maturity ladder with overlapping product archetypes and deployment profiles, adding collaboration, evidence acceptance, action authority, recovery, and scenario-based estimates."
+description: "Why product purpose, collaboration, action authority, evidence acceptance, and platform scope need separate treatment, with targeted changes to the taxonomy, practitioner guide, and estimation method."
 title: "Ai Product Types Improvement Proposal"
 linkTitle: "Ai Product Types Improvement Proposal"
 ---
 # Improving the AI product taxonomy and practitioner guide
 
 
-Date: 2026-10-18. Proposed revisions to [AI product types]({{< ref "ai/var/ai-product-types" >}}) and the [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}).
+Date: 2026-10-18. Proposed revisions to the earlier AI product taxonomy (now superseded by the [worked project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}})) and the [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}).
 
 Status: implemented in both documents on 2026-10-18. The review below records the reasoning about the earlier drafts; the rewritten documents contain the current synthesis.
 

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Research agenda: AGENTS.md and reliable coding-agent autonomy"
-description: "Eight research questions testing assumptions behind AGENTS.md, covering instruction value, context limits, documentation routing, failure diagnosis, maintenance, validation, and human involvement."
+description: "Study when repository instructions earn their recurring cost: eight questions connect loading, placement, length, failure remedies, maintenance, and escalation to accepted changes and total human effort."
 linkTitle: "Coding-Agent Research Agenda"
 ---
 # Research agenda: `AGENTS.md` and reliable coding-agent autonomy

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An earlier solution-state vocabulary separating discovery and delivery activities from lifecycle states, and explaining why evidence worth investing in does not establish business outcomes."
+description: "Distinguish an idea, prototype, effective solution, and production product from the work done on them. The state vocabulary also asks why being worth building does not establish that a business outcome will follow."
 title: "Solution States And Terms Alternative"
 linkTitle: "Solution States And Terms Alternative"
 ---

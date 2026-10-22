@@ -1,14 +1,14 @@
 ---
 draft: false
 toc: true
-description: "A deployment-design method for seven AI archetypes, covering shared work, responsibility, evidence and authority boundaries, recoverable execution, launch checks, and explicit effort and payback assumptions."
+description: "Work through a deployment from shared tasks and responsibilities to architecture, evaluation, launch criteria, and payback, with patterns for seven AI archetypes and a contract-investigation walkthrough."
 title: "Practitioner Guide Seven Ai Product Types"
 linkTitle: "Practitioner Guide Seven Ai Product Types"
 ---
 # Practitioner guide to seven AI product archetypes
 
 
-Revised 2026-10-18. Use the [short taxonomy]({{< ref "ai/var/ai-product-types" >}}) for the vocabulary and this guide to turn a product idea into design decisions, evaluation, operating requirements, and an estimate.
+Revised 2026-10-18. Use the [worked project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}) for product cases and design concepts, and this guide to turn a product idea into design decisions, evaluation, operating requirements, and an estimate.
 
 The [editable tldraw board](https://www.tldraw.com/f/LO7apgTgZZn1VGy9rb0qL) maps the argument behind the guide: **Ideas and influences** connects work properties to design requirements, while **Principles and feedback** relates human control, evidence, acceptance, authority, and policy learning. Supporting diagrams remain on reference pages.
 

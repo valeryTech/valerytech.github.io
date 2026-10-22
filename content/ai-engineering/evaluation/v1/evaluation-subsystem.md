@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Evaluation Subsystem"
-description: "Defines the people, practices, data, and software needed to run, capture, inspect, judge, compare, and preserve behavioral evidence, scaling from a minimal useful subsystem."
+description: "An AI evaluation subsystem connects cases and live runs to inspectable traces, reliable judgments, comparisons, and findings through people, data, tools, and practices that grow with repeated evidence needs."
 linkTitle: "Evaluation Subsystem"
 ---
 ## Purpose

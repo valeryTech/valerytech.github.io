@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Product Improvement System"
-description: "Connects concurrent discovery and delivery through bounded production slices, with separate quality-understanding and evidence-capability loops and traceable feedback to the object requiring change."
+description: "Four feedback loops maintain solution bets, delivered behavior, quality definitions, and evidence tools. Bounded production contracts connect discovery decisions to implementation, controlled release, and learning from use."
 linkTitle: "Product Improvement System"
 ---
 ## 1. Purpose

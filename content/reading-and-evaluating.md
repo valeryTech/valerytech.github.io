@@ -36,7 +36,7 @@ Apply the same standards when comparing engineers: examine the work, its dates, 
 
 Read across these pages to examine the integrated view and its specific methods:
 
-- **[AI Product Types]({{< ref "ai/var/ai-product-types" >}}) and the [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}):** Examine how product purpose, human roles, architecture, evidence, and operation are considered together across different AI products.
+- **[AI Project Examples and Design Model]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}):** Examine how product purpose, human roles, architecture, evidence, and operation are considered together across different AI products.
 - **[Operating Model]({{< ref "ai/operating-model/operating-model" >}}):** Examine how discovery, engineering commitments, production obligations, and learning inform one another.
 - **[Failure Understanding]({{< ref "ai-engineering/evaluation/20-error-analysis-input" >}}):** Examine the separation between observed failures, failure categories, causal hypotheses, and repeatable evaluation—and how the method connects them.
 - **[Beyond RAG: Context-to-Task Alignment]({{< ref "ai-engineering/retrieval/reframing" >}}):** Examine how task requirements guide context acquisition, representation, retrieval, and verification within a larger system design.

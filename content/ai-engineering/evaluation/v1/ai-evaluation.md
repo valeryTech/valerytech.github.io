@@ -4,7 +4,7 @@ toc: true
 title: "AI Evaluation"
 aliases:
   - "/ai-engineering/evaluation/v1/ai-evaluation-revised/"
-description: "An overview of question-led AI evaluation, linking behavior claims, evidence, judgment, and findings across discovery and delivery without conflating product outcomes or decisions."
+description: "AI evaluation starts with a question and examines whole-product behavior in defined situations, preserving the evidence and limits needed to inform discovery, delivery, and production decisions."
 linkTitle: "AI Evaluation"
 ---
 

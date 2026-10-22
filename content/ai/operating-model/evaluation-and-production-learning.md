@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A deferred behavior-management sketch attaching evaluation to the production promise, so failures can prompt implementation fixes or reconsideration of product intent."
+description: "Evaluate the behavior promised to users as models, prompts, and architecture change. A gap can call for an engineering fix or a new product decision about what good behavior should mean."
 title: "Evaluation And Production Learning"
 linkTitle: "Evaluation And Production Learning"
 ---

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Cases from product use"
-description: "A lightweight record of customer tasks, observed behavior, evidence, and decisions."
+description: "A case links an attempted customer job to its outcome, hidden human assistance, and supporting artifacts. Competing explanations and a next check keep observations useful without prematurely naming a cause."
 linkTitle: "Cases from product use"
 ---
 

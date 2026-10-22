@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An architecture review framework separating hard, statistical, and best-effort requirements, using a knowledge-assistant example to match prompts with controls, evidence, and failure handling."
+description: "Trust in prompt-specified systems depends on requirement classes, acceptance boundaries, and evidence. A knowledge-assistant example turns those distinctions into an architecture review method."
 title: "Prompt Driven"
 linkTitle: "Prompt Driven"
 ---

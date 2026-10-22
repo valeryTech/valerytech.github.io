@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A practical production-commitment template, illustrated with Wallet, separating promised behavior, supported scope, remaining assumptions, harm limits, operating responsibilities, and withdrawal conditions."
+description: "A production promise includes limits and failure behavior as well as useful behavior. A Wallet example and commitment record make accepted uncertainty, harm controls, and ongoing responsibilities explicit."
 title: "Production Commitment"
 linkTitle: "Production Commitment"
 ---

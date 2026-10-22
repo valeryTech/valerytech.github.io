@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An intermediate interpretation organizing exploratory design inquiry into theoretical foundations, evolving state, inquiry modes, and six principles, with iteration mechanics left for development through practice."
+description: "Exploratory inquiry can be organized around what needs framing, learning, expanding, or distinguishing. Five layers connect that choice of move to an evolving situation model, theoretical foundations, and six principles."
 title: "Discovery Analysis"
 linkTitle: "Discovery Analysis"
 ---

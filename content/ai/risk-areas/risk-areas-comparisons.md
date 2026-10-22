@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Supporting comparisons of product-risk dimensions, uncertainty, and assumption categories, preserving alternative taxonomies and naming tradeoffs."
+description: "Choosing a taxonomy means choosing what receives attention and what the team records. Practitioner comparisons examine separate buyer value and usability, optional Ethics/Safety, and corporate Strategic Fit."
 title: "Risk Areas Comparisons"
 linkTitle: "Risk Areas Comparisons"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A deferred Torres case showing production traces becoming failure categories, human labels, validated LLM judges, and regression-based release decisions."
+description: "Torres turns production traces into failure categories and human-labeled cases. LLM judges are checked against those labels, and regression measurements guide releases while emails still receive human review."
 title: "Discovery Delivery Evaluation Evidence Deferred"
 linkTitle: "Discovery Delivery Evaluation Evidence Deferred"
 ---

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Testing a Change During Review"
-description: "How to test important PR claims and validate the test setup, using a lost response after commit to expose duplicate writes and unsafe retry assumptions."
+description: "A retry test can miss duplicate writes if its timeout mock never saves anything. The worked example checks a lost response after commit, then inspects request identities, saved state, and side effects."
 lastmod: "2026-10-19"
 linkTitle: "Testing During Review"
 ---

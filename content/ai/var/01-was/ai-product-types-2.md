@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Seven overlapping AI product archetypes, with a common deployment profile for collaboration, authority, evidence, recovery, and reuse."
+description: "A concrete AI product description names the people, outcome, sources, responsibilities, permitted operations, checks, and recovery rules, using overlapping work archetypes to organize discovery."
 title: "Ai Product Types 2"
 linkTitle: "Ai Product Types 2"
 ---

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Change Detection v1.2 — Production Discipline for LLM / Agentic Systems"
-description: "A production design separating integrity checks, anomaly detection, statistical confirmation, attribution, and action, with standardized change packets and backtested alerts tied to comparable baselines."
+description: "A metric spike needs integrity checks, comparison with a suitable baseline, and attribution before it supports a response. The detection pipeline packages that evidence with actions and lessons for future incidents."
 linkTitle: "Change Detection v1.2"
 ---
 # Change Detection v1.2 -- Production Discipline for LLM / Agentic Systems

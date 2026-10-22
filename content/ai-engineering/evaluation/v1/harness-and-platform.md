@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Evaluation Harness and Workspace"
-description: "Distinguishes controlled execution and capture from the wider evaluation workspace, explaining what comparisons preserve and where coverage, judgment, and product decisions remain separate."
+description: "Controlled execution and evidence capture form the evaluation harness; the wider workspace supplies case management, trace review, version comparisons, human judgment, and production learning."
 linkTitle: "Evaluation Harness and Workspace"
 ---
 

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Failure Understanding: Discovering and Structuring How AI Products Fail"
-description: "A failure-discovery method using trace inspection, constant comparison, category refinement, and theoretical sampling before selecting operational failure modes for measurement."
+description: "Recurring AI failures become useful engineering knowledge when incidents are compared, category boundaries tested, and selected failure modes translated into evidence-based criteria and measurements."
 linkTitle: "Failure Understanding"
 ---
 ## Purpose

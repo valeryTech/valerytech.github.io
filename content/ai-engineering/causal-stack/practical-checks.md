@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Learning through real product use"
-description: "A sequence from a customer's existing workflow to a usable product, focused investigations, and revisions to engineering practice."
+description: "Start from an existing customer job, build one usable path, inspect real attempts, compare changes, and observe repeat use. Record which investigation questions improve decisions and how much effort the guide adds."
 linkTitle: "Learning through real product use"
 ---
 

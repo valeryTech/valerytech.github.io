@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Unselected planning fragments connecting strategy, empowered teams, experiments, risk tests, and a two-way discovery–delivery interface, with unresolved wording retained for reference."
+description: "The fragments connect strategic problems to empowered teams, solution experiments, and production work. They retain planning questions about evidence strength, shared understanding, and the two-way flow between discovery and delivery."
 title: "In Model Etc Source Notes"
 linkTitle: "In Model Etc Source Notes"
 ---

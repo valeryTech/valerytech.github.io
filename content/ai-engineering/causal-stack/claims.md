@@ -5,7 +5,7 @@ title: "Claims to check in product work"
 aliases:
   - "/ai-engineering/causal-stack/layer-1b-final-scheme/"
   - "/ai-engineering/evaluation/causal-stack/layer-1b-final-scheme/"
-description: "How to state engineering expectations, distinguish kinds of evidence, and revise recommendations."
+description: "A definition, incident explanation, and product recommendation need different support. Scoped expectations, counterexamples, and revision rules let product evidence strengthen, narrow, or overturn engineering claims."
 linkTitle: "Claims to check in product work"
 ---
 

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Coverage and Case Design for AI Evaluation"
-description: "Guides evaluation case and sample selection around a stated question, distinguishing designed coverage, production prevalence, critical boundaries, variation, and regression protection."
+description: "Claims, critical boundaries, and meaningful variation determine evaluation coverage. Cases encode executable conditions; production samples define which live behavior the resulting findings can describe."
 linkTitle: "Coverage and Case Design for AI Evaluation"
 ---
 ## Purpose

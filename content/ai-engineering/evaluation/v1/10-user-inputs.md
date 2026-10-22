@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Building a Starting Set of User Inputs for AI Evaluation"
-description: "Builds starting evaluation inputs from product-derived coverage requirements, reviewed tuples, real samples, and synthetic requests, keeping case conditions separate from expected answers."
+description: "Build evaluation inputs by mapping real requests to meaningful variation and generating missing situations from reviewed tuples, then add fixtures and balance cases against product guarantees and risk."
 linkTitle: "Starting Evaluation Inputs"
 ---
 

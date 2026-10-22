@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Compares team inputs, solution-decision rights, feedback, and accountability, explaining how early feature commitments become shared discovery and delivery of a strategically assigned problem."
+description: "Feature teams and empowered teams allocate solution choices and outcome responsibility differently. Their inputs, feedback loops, and response to a failed first release reveal the consequences."
 title: "Feature Team And Empowered Team"
 linkTitle: "Feature Team And Empowered Team"
 ---

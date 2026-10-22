@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Argues that AI product engineering must develop its methods alongside the product, using shared cases, explicit assumptions, critical reflection, and organizational support."
+description: "Building an AI product also develops the practice behind it: shared cases sharpen expectations, experiments examine assumptions, and team support lets findings change the work."
 title: "Language Mindset Discipline 0"
 linkTitle: "Language Mindset Discipline 0"
 ---

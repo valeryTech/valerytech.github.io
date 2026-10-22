@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Explores support assistants that diagnose issues using product knowledge and authorized account data, with read-only investigation and separately controlled workflows for corrections."
+description: "A support assistant can diagnose a case from product rules and authorized account observations, then hand a correction to a bounded workflow whose permissions remain independent of the conversation."
 title: "Context Aware Support Assistant"
 linkTitle: "Context Aware Support Assistant"
 ---

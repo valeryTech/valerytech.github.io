@@ -3,7 +3,7 @@ draft: false
 toc: true
 aliases:
   - "/ai-engineering/my-perspective/"
-description: "A statement of my engineering approach: make AI behavior understandable, changes controllable, and production decisions evidence-based through evaluation and supporting team practices."
+description: "My approach to AI engineering treats behavior as a system concern, combining evaluation with architecture, team practices, and production learning so evidence can guide changes and supported scope."
 title: "My Perspective"
 linkTitle: "My Perspective"
 ---

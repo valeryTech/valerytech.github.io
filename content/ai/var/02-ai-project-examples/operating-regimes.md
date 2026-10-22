@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Explores candidate operating regimes for AI systems, how work progresses in each, and how transitions preserve state while permissions remain independently enforced."
+description: "Work can advance through user questions, permitted transitions, new evidence, artifact revisions, or delegated steps; comparing those rules helps distinguish operating regimes from deployment permissions."
 title: "Operating Regimes"
 linkTitle: "Operating Regimes"
 ---

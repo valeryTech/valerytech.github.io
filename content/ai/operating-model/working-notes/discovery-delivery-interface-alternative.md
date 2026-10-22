@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An earlier four-part discovery–delivery interface: a defined solution, investment evidence, shared team understanding, and production requirements beyond the prototype."
+description: "Turning a discovered solution into production software requires more than a prototype. This interface combines a defined solution, investment evidence, shared understanding, and requirements the prototype cannot show."
 title: "Discovery Delivery Interface Alternative"
 linkTitle: "Discovery Delivery Interface Alternative"
 ---

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Perception and Context Management in Coding Agents"
-description: "Separates acquiring repository observations from maintaining useful working context, with design implications and diagnostics for access, interpretation, salience, compression, and memory failures."
+description: "A coding agent can access the right file and still lose the needed fact. Separate observation and state estimation from selection, compression, and memory to diagnose access, interpretation, and salience failures."
 linkTitle: "Perception and Context Management"
 ---
 ## Executive summary

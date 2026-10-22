@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "A practical way to study coding-agent improvements"
-description: "A methodology primer for studying coding-agent improvements: frame decision-relevant questions, choose research methods, define useful outcomes, and interpret comparisons without overclaiming."
+description: "Start with the engineering decision an investigation could change, choose a method for that question, and assess accepted work, human effort, and risk using comparisons that can revise the recommendation."
 linkTitle: "Studying Coding-Agent Improvements"
 ---
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A proposed evidence protocol for AI engineering claims, using coding-agent productivity to require counterfactuals, reproducible evaluations, uncertainty, and total human effort including downstream rework."
+description: "A productivity claim must account for supervision, review, correction, and later rework. The protocol sets evidence requirements for AI evaluations, including baselines, failure cases, and uncertainty."
 title: "In Protocol"
 linkTitle: "In Protocol"
 ---

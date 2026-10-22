@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Evaluation Guide"
-description: "A navigation guide to the first evaluation framework, routing readers from their current question to conceptual, evidence, coverage, judgment, harness, and production-learning notes."
+description: "The AI evaluation guide routes practical questions to methods for case design, evidence capture, failure analysis, evaluator validation, controlled comparisons, and learning from real use."
 linkTitle: "AI Evaluation Guide"
 ---
 

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Goals of AI Evaluation"
-description: "Defines goals for the evaluation framework and supporting subsystem, starting from named questions and distinguishing behavioral evidence, user value, causal claims, and decisions."
+description: "The evaluation framework defines what evidence a decision requires; its supporting subsystem captures, judges, and reuses that evidence across discovery, production commitments, delivery, and operation."
 linkTitle: "Goals of AI Evaluation"
 ---
 ## Purpose

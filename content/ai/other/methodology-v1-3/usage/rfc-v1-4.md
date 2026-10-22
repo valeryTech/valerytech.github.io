@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "RFC: AI Systems Framework — Overview and Adoption (v1)"
-description: "A draft organization-wide adoption RFC defining shared AI behavior artifacts, compliance expectations, ownership, and phased exit criteria for connecting runtime evidence to release decisions and on-call response."
+description: "Teams can coordinate product-specific quality decisions through shared evidence artifacts. This adoption RFC connects runtime records and comparisons to release gates, incident response, ownership, and rollout criteria."
 linkTitle: "Overview and Adoption RFC"
 ---
 # RFC: AI Systems Framework -- Overview and Adoption (v1)

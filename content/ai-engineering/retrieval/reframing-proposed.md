@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Context-to-Task Alignment and Evidence Workflows"
-description: "Proposes an inspectable evidence workflow for collecting, comparing, and using source material, preserving source identity, evolving task state, context judgments, and unresolved gaps."
+description: "An evidence workflow separates source identity, acquisition routes, collection, and support judgments, retaining gaps and exact operation inputs so an inquiry can evolve or finish with discovery."
 linkTitle: "Context-to-Task Alignment and Evidence Workflows"
 ---
 

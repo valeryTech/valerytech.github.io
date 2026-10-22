@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "AI Evaluation Framework: Refactoring Notes"
-description: "Refactoring proposals that shift the evaluation model toward bounded production commitments, independently versioned behavior contracts, system configurations, rollout policies, and discovery-versus-delivery routing."
+description: "Reframes AI delivery around committed product behavior: bounded production slices replace feature planning, while contracts, implementations, and rollout stay separately versioned and findings route to discovery or delivery."
 linkTitle: "AI Evaluation Framework: Refactoring Notes"
 ---
 

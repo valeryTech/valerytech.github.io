@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Applies a scientific engineering stance to discovery and delivery, making production commitments, evidence limits, decision authority, and the support expected from an employer explicit."
+description: "A practical engineering stance for discovery and delivery: make supported behavior explicit, test consequential assumptions, preserve the reasoning, and give findings a route into product commitments."
 title: "Language Mindset Discipline 1"
 linkTitle: "Language Mindset Discipline 1"
 ---

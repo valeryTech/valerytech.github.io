@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Project Understanding and Ownership"
-description: "Explains why human project ownership must retain architectural understanding and accountability, and how accepting incomprehensible agent changes creates compounding comprehension debt."
+description: "Accepting changes before closing understanding gaps compounds comprehension debt. Human ownership keeps the project model, design judgment, and accountability connected as agents accelerate implementation."
 linkTitle: "Project Understanding and Ownership"
 ---
 # Project understanding

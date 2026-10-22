@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Describes open-ended AI assistance and its coexistence with bounded workflows, preserving context and work in progress while enforcing permissions for external operations."
+description: "Users can refine goals through open-ended assistance and move into a supported workflow when they want to act; context can carry across the transition while operation permissions stay under application control."
 title: "General Purpose Ai Assistant"
 linkTitle: "General Purpose Ai Assistant"
 ---

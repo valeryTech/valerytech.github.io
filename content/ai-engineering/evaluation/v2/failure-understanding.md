@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Failure Understanding: Developing an Evidence-Linked Model of Recurring AI Product Failures"
-description: "Develops evidence-linked failure models from complete traces, separating earliest divergence, propagation, consequences, and causal hypotheses before operationalizing selected patterns for measurement."
+description: "Compare complete execution traces with product expectations and successful contrasts to develop recurring failure modes. Track the first visible divergence, later effects, and unresolved boundaries before defining measurements."
 linkTitle: "Failure Understanding"
 ---
 ## 1. Purpose

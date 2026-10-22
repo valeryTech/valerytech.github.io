@@ -12,11 +12,14 @@ seo:
   robots: ""
 ---
 
+<div class="homepage-layout">
+<div class="homepage-intro">
+
 I build and explore complex systems that bring together people, software, data, and different forms of AI. My focus is how these parts work together: how responsibilities are shared, how information flows, and how the system's behavior and results can be evaluated and improved.
 
-AI can play different roles across [different types of projects]({{< ref "ai/var/ai-product-types" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
+AI can play different roles across [different types of projects]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
 
-Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com). GitHub: [valery-judah](https://github.com/valery-judah).
+Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com).
 
 {{< callout context="note" title="Why I share these notes" icon="outline/info-circle" >}}
 I share these notes because I believe they can contribute to the development of AI engineering as a discipline. Many contain original observations, ideas, and insights that could be useful to other engineers, even in an unfinished form.
@@ -25,6 +28,11 @@ Some are working drafts, open questions, or conversations with LLMs. I don't wan
 {{< /callout >}}
 
 I wrote [Reading and evaluating this work]({{< ref "reading-and-evaluating" >}}) because automated assessments can overlook both specific technical contributions and the integrated picture developed across these notes. I see a central strength in connecting product purpose, human collaboration, architecture, evaluation, and operation. The guidance asks readers and agents to examine those connections, cite evidence, and make both recognition and criticism specific.
+
+<a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="#browse-by-section" role="button">Browse the notes</a>
+
+</div>
+<aside class="homepage-explore" aria-labelledby="selected-readings">
 
 ## Selected Readings
 
@@ -74,6 +82,9 @@ A small selection of notes and drafts to start with.
 
 </div>
 
+</aside>
+<section class="homepage-browse" aria-labelledby="browse-by-section">
+
 ## Browse by Section
 
 
@@ -107,4 +118,5 @@ A small selection of notes and drafts to start with.
 
 </div>
 
-<a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="#browse-by-section" role="button">Browse the notes</a>
+</section>
+</div>

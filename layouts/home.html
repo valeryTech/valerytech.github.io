@@ -1,18 +1,14 @@
 {{ define "main" }}
-<section class="section container-fluid mt-n3 pb-3">
-  <div class="row justify-content-center">
-    <div class="col-lg-12 text-center">
-      <h1>{{ .Title }}</h1>
-    </div>
-    <div class="col-lg-9 col-xl-8 text-center">
-      {{ with partial "main/page-description.html" . }}
-        {{ . }}
-      {{ else }}
-        {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
-      {{ end }}
-      {{ .Content }}
-    </div>
-  </div>
+<section class="section homepage mt-n3 pb-3">
+  <header class="homepage-header">
+    <h1>{{ .Title }}</h1>
+    {{ with partial "main/page-description.html" . }}
+      {{ . }}
+    {{ else }}
+      {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
+    {{ end }}
+  </header>
+  {{ .Content }}
 </section>
 {{ end }}
 

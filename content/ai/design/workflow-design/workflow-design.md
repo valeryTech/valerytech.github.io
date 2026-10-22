@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An interaction-point design sketch for exposing uncertain workflow decisions, capturing human judgment, and advancing from recommendations to approved execution and bounded autonomy."
+description: "Inspectable retrieval, context, and review decisions let people shape a workflow before automating it. Traces and explicit action limits support a path from recommendations to approved or bounded execution."
 title: "Workflow Design"
 linkTitle: "Workflow Design"
 ---

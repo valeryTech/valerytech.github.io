@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Experimental Design v1.1 (LLM / Agentic Systems)"
-description: "The normative experiment design specification for offline paired tests, online A/B tests, and switchbacks, connecting precommitted inference, contamination controls, and uncertainty margins to release verdicts."
+description: "Paired offline runs, randomized A/B tests, and switchbacks answer different comparison problems. Precommitted endpoints, clustering, contamination controls, and decision margins determine what their results can support."
 linkTitle: "Experimental Design v1.1"
 ---
 

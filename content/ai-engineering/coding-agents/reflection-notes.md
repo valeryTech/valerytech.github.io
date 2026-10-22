@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Coding-Agent Reflection Notes"
-description: "Working observations on agent overengineering, uncertainty, conventional architecture, provisional planning, canonical documentation, and recoverable workstreams, with open questions about reflection and experimentation."
+description: "Use focused experiments before committing to a design; counter agent overengineering with conventional architecture, canonical documents, and workstream notes that survive session changes."
 linkTitle: "Coding-Agent Reflection Notes"
 ---
 # Goals

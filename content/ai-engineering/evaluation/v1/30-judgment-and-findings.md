@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Judgment and Findings"
-description: "Connects criteria, evidence sufficiency, judgment methods, evaluator validation, measurements, and scoped findings while keeping disagreement, causal diagnosis, and product decisions distinct."
+description: "Judging AI behavior requires applicable criteria and sufficient evidence; validated evaluators, traceable labels, and explicit denominators turn those judgments into scoped findings for product decisions."
 linkTitle: "Judgment and Findings"
 ---
 ## Purpose

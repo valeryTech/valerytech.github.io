@@ -4,7 +4,7 @@ toc: true
 title: "AI Engineering"
 aliases:
   - "/ai-engineering/about/"
-description: "Practical notes on using models within systems that generate candidates, obtain evidence, evaluate whole-job outcomes, and improve through feedback."
+description: "Engineering AI products connects intended behavior with context, execution, evidence, and decisions. These notes develop that connection through evaluation, retrieval, coding agents, and product investigations."
 linkTitle: "AI Engineering"
 ---
 This section is for practical AI engineering work: using models inside systems that generate candidates, obtain evidence, evaluate outcomes, and improve through feedback. The relevant unit is usually the whole job and its outcome, not an isolated model output.

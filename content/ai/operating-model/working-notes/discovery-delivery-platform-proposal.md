@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "An earlier proposal contrasting cheap discovery sandboxes with controlled production delivery, annotated to challenge phase-based diagrams and accidental promotion of prototypes."
+description: "AI prototyping platforms need easy experimentation and explicit decisions about production use. The proposal examines sandbox access, engineering controls, and the danger of treating a working prototype as a supported system."
 title: "Discovery Delivery Platform Proposal"
 linkTitle: "Discovery Delivery Platform Proposal"
 ---

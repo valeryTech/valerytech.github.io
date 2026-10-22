@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Optimization v1.2 — Production Discipline for LLM / Agentic Systems"
-description: "A production optimization design that screens AI configurations offline, confirms candidates on holdouts, and admits only approved options to online routing with constraints and circuit breakers."
+description: "Configuration search begins with explicit objectives and hard constraints, then moves from cheap offline screening to holdout and canary confirmation. Online exploration uses approved options and circuit breakers."
 linkTitle: "Optimization v1.2"
 ---
 # Optimization v1.2 -- Production Discipline for LLM / Agentic Systems

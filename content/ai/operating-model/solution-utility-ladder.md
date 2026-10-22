@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A method for separating technical validity, user-job completion, comparative usefulness, and intended effects, with a Wallet example distinguishing utility from coverage and production readiness."
+description: "Valid output is only one claim about a solution. Build a ladder through job completion, improvement over alternatives, and the intended change, while recording coverage and production conditions separately."
 title: "Solution Utility Ladder"
 linkTitle: "Solution Utility Ladder"
 ---

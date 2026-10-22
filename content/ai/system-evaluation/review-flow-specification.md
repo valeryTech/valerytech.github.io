@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "A Practical Review Process"
-description: "An eight-step merge-review process covering intended behavior, affected systems, design, implementation, tests, deployment, and recovery, with a concise record of evidence and remaining gaps."
+description: "Readiness to merge depends on more than code correctness. Eight review steps connect intended behavior and system impact to design, implementation, testing, deployment, recovery, and a recommendation grounded in evidence."
 lastmod: "2026-10-19"
 linkTitle: "Review Process"
 ---

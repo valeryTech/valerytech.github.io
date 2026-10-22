@@ -5,7 +5,7 @@ title: "Focused checks for AI product behavior"
 aliases:
   - "/ai-engineering/causal-stack/layer-2/evaluation-method-reference/"
   - "/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-reference/"
-description: "Concrete recipes for judging outputs, investigating failures, comparing changes, and following product outcomes."
+description: "Focused checks turn a product question into cases, a judgment rule, and an interpretable comparison. Recipes cover evidence use, variation, exact meaning, tool effects, fallback, and continued customer outcomes."
 linkTitle: "Focused checks for AI product behavior"
 ---
 

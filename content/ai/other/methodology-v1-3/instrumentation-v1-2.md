@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Instrumentation v1.2 — Production Discipline for LLM / Agentic Systems"
-description: "A production tracing design that records a minimal envelope for every episode and samples detailed spans, preserving comparability and regression attribution while controlling logging cost."
+description: "A compact record for every episode captures identity, routing, termination, budgets, and failures. Detailed traces are sampled by importance, with field and retention rules for diagnosis under logging limits."
 linkTitle: "Instrumentation v1.2"
 ---
 # Instrumentation v1.2 -- Production Discipline for LLM / Agentic Systems

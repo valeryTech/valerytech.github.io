@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Working Assumptions"
-description: "Current hypotheses about scoped intelligence, candidate generation, evidence-driven selection, feedback loops, and whole-system outcomes."
+description: "Cheap proposals make discriminating evidence the bottleneck. Scoped task performance, explicit evaluators, and feedback around the whole job provide a way to turn generated alternatives into useful outcomes."
 date: "2026-09-03T00:00:00-03:00"
 lastmod: "2026-09-03T00:00:00-03:00"
 linkTitle: "Working Assumptions"

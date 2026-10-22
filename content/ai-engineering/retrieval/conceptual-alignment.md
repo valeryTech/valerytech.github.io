@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Conceptual Alignment and Contract Discipline in RAG Systems"
-description: "Clarifies contracts among task interpretation, context requirements, queries, acquisition, assembly, assessment, and execution so retrieval decisions remain diagnosable without implying task success."
+description: "A request can serve unchanged as a query while the roles remain distinct. Explicit input and output contracts expose who interprets the task, selects evidence, judges context, and checks the outcome."
 linkTitle: "RAG Concepts and Contracts"
 ---
 

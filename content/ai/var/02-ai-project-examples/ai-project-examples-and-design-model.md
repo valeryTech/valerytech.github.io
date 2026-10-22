@@ -1,7 +1,9 @@
 ---
 draft: false
 toc: true
-description: "Eight concrete AI product cases, their relationships, and initial design-model notes."
+aliases:
+  - "/ai/var/ai-product-types/"
+description: "An activity and its intended result provide a starting unit for AI design; eight product cases help separate capabilities, workflow relationships, product scope, and implementation choices."
 title: "Ai Project Examples And Design Model"
 linkTitle: "Ai Project Examples And Design Model"
 ---

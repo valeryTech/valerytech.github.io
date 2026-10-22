@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Estimation v1.2 — Production Discipline for LLM / Agentic Systems"
-description: "A production estimation design converting episode measurements into state estimates and deltas, with metric-specific uncertainty, cluster-aware inference, missingness controls, and explicit window finalization."
+description: "Episode outcomes become state estimates and deltas through paired or clustered inference, explicit uncertainty, and missingness rules. Window finalization accounts for late data before results support decisions."
 linkTitle: "Estimation v1.2"
 ---
 # Estimation v1.2 -- Production Discipline for LLM / Agentic Systems

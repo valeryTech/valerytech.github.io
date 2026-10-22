@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Causal-stack refactoring record"
-description: "Records the completed consolidation, destinations of retired files, and the evidence limits of the resulting guide."
+description: "The refactoring replaces overlapping layer taxonomies with cases, claims, debugging, and checks tied to customer tasks. A destination map records which material survived, how it changed, and which evidence claims remain open."
 linkTitle: "Causal-stack refactoring record"
 ---
 

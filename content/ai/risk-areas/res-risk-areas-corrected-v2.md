@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A source practitioner survey compares SVPG, design-thinking, Torres, Pichler, and Lean Startup terminology, recommending product-risk dimensions with concrete risks, assumptions, tests, and optional Ethics/Safety coverage."
+description: "Practitioners manage uncertainty through risk categories, assumptions, design lenses, or hypotheses. This survey compares those choices and derives a chain from product-risk dimensions through tests to evidence and decisions."
 title: "Res Risk Areas Corrected V2"
 linkTitle: "Res Risk Areas Corrected V2"
 ---

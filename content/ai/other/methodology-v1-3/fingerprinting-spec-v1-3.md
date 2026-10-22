@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Fingerprinting Spec v1.3 — Canonicalization and Hash Semantics"
-description: "The normative canonicalization and hashing specification for configuration, input, dependency, and measurement identities, including default expansion, inactive settings, and explicit exceptions to strict comparability."
+description: "Configuration, inputs, dependencies, and evaluators need identities that survive harmless representation changes. Canonical JSON, expanded defaults, and versioned hashes define how those identities are computed and compared."
 linkTitle: "Fingerprinting v1.3"
 ---
 # Fingerprinting Spec v1.3 -- Canonicalization and Hash Semantics

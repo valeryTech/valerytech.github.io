@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "Describes task assistants that use application-enforced workflows to constrain operations, validate transitions, and enforce permissions while allowing flexible language interaction."
+description: "A task assistant can let the model interpret requests and navigate a state machine or constraint graph while application logic enforces valid inputs, transitions, permissions, and execution conditions."
 title: "Closed Set Task Assistant"
 linkTitle: "Closed Set Task Assistant"
 ---

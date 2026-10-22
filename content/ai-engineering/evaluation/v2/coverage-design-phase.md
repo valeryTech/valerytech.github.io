@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Evaluation Coverage in Discovery and Delivery"
-description: "Proposes coverage design as an upstream activity linked to failure understanding, showing how its evidence sources and purposes change across discovery, commitment, delivery, and production."
+description: "Coverage design spans discovery probes, production commitments, release evidence, and live sampling; failure findings revise which behaviors and situations need representation at each stage."
 linkTitle: "Evaluation Coverage in Discovery and Delivery"
 ---
 

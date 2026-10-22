@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Conceptual Model for AI Evaluation"
-description: "The source model connecting product intent, system executions, evidence needs, evaluation capabilities, and feedback routes, with explicit boundaries for diagnosis and decision ownership."
+description: "Product intent, configured AI systems, execution evidence, and decision needs meet in an evaluation model with distinct feedback routes for product improvement, evaluation knowledge, and infrastructure."
 linkTitle: "Conceptual Model for AI Evaluation"
 ---
 ## Purpose and scope
