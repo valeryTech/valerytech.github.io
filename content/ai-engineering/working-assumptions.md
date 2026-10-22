@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Working Assumptions"
-description: "Cheap proposals make discriminating evidence the bottleneck. Scoped task performance, explicit evaluators, and feedback around the whole job provide a way to turn generated alternatives into useful outcomes."
+description: "Plausible proposals are becoming abundant; good experiments and discriminating evidence remain scarce. Scoped task performance, explicit evaluators, and whole-job feedback connect alternatives to useful outcomes."
 date: "2026-09-03T00:00:00-03:00"
 lastmod: "2026-09-03T00:00:00-03:00"
 linkTitle: "Working Assumptions"

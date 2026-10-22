@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Part 0: Observations from ~60B coding-agent token events over nine months"
-description: "Nine months of intensive coding-agent work motivate a practice of keeping task state, handoffs, and evaluation artifacts outside chat, with project understanding as the responsibility that anchors the series."
+description: "An account of nine months of agentic engineering, with handoffs, workstream notes, task state, and evaluation artifacts used to keep long-running work recoverable beyond one chat session."
 linkTitle: "Coding-Agent Engineering Observations"
 ---
 

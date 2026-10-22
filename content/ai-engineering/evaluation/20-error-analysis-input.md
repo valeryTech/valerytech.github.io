@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Failure Understanding: Discovering and Structuring How AI Products Fail"
-description: "Failure understanding turns trace-linked incidents into a product-specific failure model through coding, constant comparison, and targeted sampling, then selects behaviors for repeatable assessment."
+description: "A copy of the V1 failure-understanding method: compare trace-linked incidents, code recurring patterns, and test category boundaries to build a failure model; optionally prepare selected behaviors for repeatable assessment."
 linkTitle: "Failure Understanding"
 ---
 ## Purpose

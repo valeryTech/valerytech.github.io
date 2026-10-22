@@ -1,544 +1,362 @@
 ---
 draft: false
 toc: true
-title: "Grounding AI Evaluation in Product-Specific Failures"
-description: "A wallet assistant illustrates why quality scores need a chain of evidence: product-specific failure criteria, validated judges, suitable sampling, and a declared question and decision scope."
+title: "Product-Specific AI Evaluation: Measurement and Validity"
+description: "Defines the evidence needed to interpret AI evaluation results: operational criteria, validated evaluators, explicit sampling and aggregation, and decision rules tied to a declared scope."
 linkTitle: "Product-Specific Evaluation"
 ---
 
-The example "Client gives us a `completeness = 0.84`, therefore the product works" illustrates the class of evaluation practice Hamel argues against.
+An evaluation score supports a product claim only when the measured behavior, judgment method, sample, and interpretation are specified. A value such as `completeness = 0.84` is insufficient on its own: it could represent a fraction of required fields, an average ordinal rating, or an uncalibrated model output. Each interpretation has different implications.
 
-One important qualification: **"completeness" itself is not automatically a bad evaluator.** It becomes defensible if you have discovered that incompleteness is an actual product failure, defined precisely what constitutes that failure, obtained human labels, and validated an evaluator against those labels. What Hamel objects to is inventing an abstract quality dimension first and treating its score as evidence of product quality. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/should-i-use-ready-to-use-evaluation-metrics.html?utm_source=chatgpt.com))
+Completeness can be a useful measure when the required content is defined and its omission constitutes a product failure. The methodological problem is treating a named quality dimension as a product measure without establishing that relationship.
 
-### Bad practices to demonstrate
+This note describes the evidence needed to move from observed behavior to a scoped evaluation finding. Wallet-assistant examples and all numerical results below are illustrative.
 
-
-1. **Start with generic qualities: completeness, helpfulness, relevance, coherence, fluency, quality.** These sound plausible but don't establish whether users can successfully do the task. Hamel calls these generic metrics a source of false confidence. His example is a team celebrating a higher "helpfulness" score while users still fail basic tasks. The metric should emerge from application-specific failures such as "calendar scheduling failure" or "failed to escalate to human." ([Hamel's Blog](https://hamel.dev/blog/posts/field-guide/ "A Field Guide to Rapidly Improving AI Products - Hamel's Blog"))
-2. **Create a dashboard with lots of metrics because more measurement feels more rigorous.** Hamel explicitly identifies "too many metrics" as a recurring mistake. Metric sprawl fragments attention and makes it unclear what engineering action should follow a score change. ([Hamel's Blog](https://hamel.dev/blog/posts/llm-judge/ "Using LLM-as-a-Judge For Evaluation: A Complete Guide - Hamel's Blog"))
-3. **Use arbitrary numeric scales: `completeness=0.82`, `quality=4.1/5`, etc., without calibrated semantics.** Hamel repeatedly criticizes 1-5/Likert-style grading. What separates a 3 from a 4? What should an engineer change because the score moved from 3.7 to 4.1? His preferred starting point is scoped pass/fail plus a critique explaining the decision. ([Hamel's Blog](https://hamel.dev/blog/posts/llm-judge/ "Using LLM-as-a-Judge For Evaluation: A Complete Guide - Hamel's Blog"))
-4. **Define the rubric before looking at actual outputs.** This is a major anti-pattern. Hamel calls for error analysis first because evaluation criteria change as experts inspect real outputs--"criteria drift." A recent production case he documents did exactly this wrong: the team wrote criteria first and spent labeling effort on failures that did not actually occur. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/ "AI Evals: Everything You Need to Know - Hamel's Blog"))
-5. **Write evals for failures you imagine instead of failures you observe.** His FAQ explicitly pushes back on "eval-driven development" as a general approach for LLM products. The output space is too broad to anticipate all meaningful failures. Start with traces, discover failures, then codify the important ones into tests. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/should-i-practice-eval-driven-development.html?utm_source=chatgpt.com "Q: Should I practice eval-driven development? - Hamel's Blog"))
-6. **Generate a test set with "LLM, give me 50 test queries."** Hamel calls this bad experimental design: you tend to get generic, repetitive, unrepresentative examples. Synthetic data should be based on production behavior and deliberate dimensions--personas, workflows, edge cases, known failure conditions, system constraints. ([Hamel's Blog](https://hamel.dev/blog/posts/revenge/ "The Revenge of the Data Scientist - Hamel's Blog"))
-7. **Trust an LLM judge because its answers look reasonable.** Hamel treats the judge as another classifier that itself must be evaluated. You need human labels from someone whose judgment you trust, a train/dev/test split, prompt iteration on dev, and a held-out test set. Otherwise the number emitted by the judge has no established meaning. ([Hamel's Blog](https://hamel.dev/blog/posts/revenge/ "The Revenge of the Data Scientist - Hamel's Blog"))
-8. **Report "judge accuracy" or "agreement" as proof that the judge is good.** This fails badly for uncommon failures. If only 5% of examples fail, a judge that always says "pass" has 95% agreement and detects zero failures. Hamel recommends looking separately at the judge's ability to detect failures and passes--TPR/TNR or precision/recall depending on framing. ([Hamel's Blog](https://hamel.dev/blog/posts/llm-judge/ "Using LLM-as-a-Judge For Evaluation: A Complete Guide - Hamel's Blog"))
-9. **Put the entire rubric and entire trace into one giant judge call.** Hamel argues for scoped evaluations. His more recent guidance also warns that giving every judge the full trace can make it worse because irrelevant context distracts the evaluator. Each evaluator should receive the evidence needed for its specific failure mode. ([Hamel's Blog](https://hamel.dev/blog/posts/revenge/ "The Revenge of the Data Scientist - Hamel's Blog"))
-10. **Automate the evaluation process before humans understand the failures.** One especially dangerous pattern is having an AI generate the rubric and immediately use that rubric to score outputs. Hamel describes this as stacking abstractions that can hide errors behind convincing scores. LLMs can accelerate taxonomy work and evaluator implementation after people have inspected the data; they don't replace that step. ([Hamel's Blog](https://hamel.dev/blog/posts/eval-tools/ "Selecting The Right AI Evals Tool - Hamel's Blog"))
-11. **Let engineers, vendors, or outsourced annotators decide what "good" means without domain experts.** Hamel repeatedly pushes domain experts and PMs toward raw traces and actual outcomes. Outsourcing error analysis is, in his words, usually a mistake because the process itself creates the product understanding you need to define quality. ([Hamel's Blog](https://hamel.dev/blog/posts/revenge/ "The Revenge of the Data Scientist - Hamel's Blog"))
-12. **Build an expensive LLM evaluator for every problem you encounter.** Some failures need a prompt fix; others need a deterministic assertion, schema check, regex, execution check, or product change. Hamel explicitly says to fix obvious issues first and reserve expensive evaluators for persistent failures that require judgment. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/ "AI Evals: Everything You Need to Know - Hamel's Blog"))
-13. **Treat the eval dataset as a permanent "golden set."** Products, users, and failure patterns change. Hamel recommends recurring error analysis and updating the eval set. He even notes that old and new aggregate scores may stop being directly comparable, which is acceptable because evals are primarily a hill-climbing mechanism. Long-term product health should additionally be measured with actual product metrics. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/what-should-i-do-when-my-gold-eval-dataset-becomes-stale.html?utm_source=chatgpt.com))
-14. **Sample only what your existing evaluator or user feedback already flags.** That ensures you mostly rediscover known failures. Hamel recommends retaining random production samples while using targeted sampling for known problems, so new failure modes can still emerge. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/how-can-i-efficiently-sample-production-traces-for-review.html "Q: How can I efficiently sample production traces for review? - Hamel's Blog"))
-15. **Try to evaluate the entire product surface equally from day one.** His office-hours material explicitly recommends narrowing the problem. A product might have 40 conversation categories while 5-6 account for most traffic. Start where usage, impact, or uncertainty is concentrated, get that methodology working, then expand. ([Hamel's Blog](https://hamel.dev/notes/llm/officehours/scoping.html "Tame Complexity By Scoping LLM Evals - Hamel's Blog"))
-16. **Measure implementation success instead of user success.** "Did the tool call succeed?" can be a useful component check, but a product eval should ask whether the intended outcome happened--for example, whether the appointment was actually made. Hamel explicitly tells teams to expose product outcomes to domain experts. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/ "AI Evals: Everything You Need to Know - Hamel's Blog"))
-17. **Build the eval dashboard before building the ability to inspect traces.** This is the "tools trap" in the Field Guide. A polished dashboard full of generic scores can actively discourage investigation because it creates the feeling that measurement already exists. Hamel puts a simple, domain-specific trace viewer and low-friction annotation workflow ahead of sophisticated evaluation infrastructure. ([Hamel's Blog](https://hamel.dev/blog/posts/field-guide/ "A Field Guide to Rapidly Improving AI Products - Hamel's Blog"))
-18. **Assume "hard to evaluate" is purely an eval-engineering problem.** Hamel's 2026 article goes further: if experts cannot cheaply verify an AI output, users probably cannot either. Product design should expose sources, intermediate artifacts, diffs, constraints, provenance, or other checkable evidence. That also makes evals much easier. ([Hamel's Blog](https://hamel.dev/blog/posts/eval-smell/))
-
-**Proposed focus:** use **#1-#8 as the core argument** against treating plausible-looking quality numbers as evidence that an evaluation platform succeeds.
-
-A metric such as **"Completeness: 0.84"** needs answers to these questions:
-
-> What concrete product failure does 0.84 measure; who established the ground truth; what does pass/fail mean on actual examples; how well does the evaluator reproduce expert judgment on unseen labeled data; and what product decision changes if this number moves?
-
-If those questions don't have answers, **0.84 is an output of the evaluation system, but there is no evidence yet that it measures product quality**. That distinction is central to the demonstration.
-
-The reasoning follows this chain:
-
-**raw traces -> human error analysis -> observed failure taxonomy -> prioritize failures -> scoped pass/fail criteria -> human labels -> validated automated evaluator -> failure rates on representative data -> engineering experiments -> production/product outcomes.**
-
-For the Client team, the main recommended article is [The Revenge of the Data Scientist](https://hamel.dev/blog/posts/revenge/). It was published in March 2026 and is almost a ready-made critique of a score/dashboard-first eval product. Then use [Using LLM-as-a-Judge For Evaluation](https://hamel.dev/blog/posts/llm-judge/?utm_source=chatgpt.com) for the methodological details and [A Field Guide to Rapidly Improving AI Products](https://hamel.dev/blog/posts/field-guide/) for the broader development loop.
-
-## Explaining the failure mechanisms
+## 1. Evaluation objects and scope
 
 
-Each anti-pattern can be examined as a failure mechanism: what information gets lost, what false inference follows, and what concrete safeguard blocks it.
+The main objects have distinct roles:
 
-Once a failure mode exists, the evaluator estimates its prevalence; each failure gets its own evaluator; objective failures should use deterministic checks; LLM judges are for narrow judgment tasks and must be aligned against human labels. This provides a precise explanation of why the common shortcuts fail.
+| Object | Role |
+| --- | --- |
+| Product expectation | States the behavior the product is expected to provide within a defined scope. |
+| Failure mode | Describes a recurring observed departure from an applicable expectation. |
+| Criterion | Defines how a specific aspect of an execution will be judged. |
+| Evaluator | Applies a criterion to evidence using code, human review, an LLM, or a combination of methods. |
+| Judgment | Records the assessment of one judgment unit, with supporting evidence. |
+| Measurement | Aggregates judgments over a declared set or sample. |
+| Finding | Interprets the evidence for an evaluation question, with stated limitations. |
+| Decision | Uses findings, requirements, and tradeoffs to select an action. |
 
-#todo
-
-Model backbone:
-
-**observed behavior -> failure model -> criterion -> evaluator -> judgment -> aggregation -> product decision**
-
-That matches failure-understanding flow, where discovery precedes operationalisation and measurement, ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/20-error-analysis/?utm_source=chatgpt.com "20 Error Analysis | AI Engineering and Architecture")) and it also maps cleanly onto `wallet-evals` distinction between Execution -> Judgment -> Evaluation. [wallet-evals concepts.md](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md?utm_source=chatgpt.com)
-
-Every step adds an inference. Skipping a step may leave the final number computable without establishing what it means.
-
-### 1. Start with generic metrics
-
-
-Suppose Client reports:
+A typical failure-oriented workflow is:
 
 ```text
-Completeness: 0.91
-Relevance:    0.94
-Coherence:    0.96
+Production observations or executed cases
+    → trace review and error analysis
+    → recurring failure modes
+    → operational criteria
+    → validated evaluators
+    → judgments
+    → measurements over a declared sample
+    → scoped findings
+    → product or engineering decisions
 ```
 
 
-The problem happens before measurement. There is no demonstrated relationship between `Completeness` and the behaviors that determine whether the product works.
+Criteria can also originate from explicit product requirements, guarantees, or invariants. A requirement such as “no transfer is submitted before confirmation” can be tested before a violation occurs. Error analysis adds evidence about actual failures and helps refine criterion boundaries; it is not a prerequisite for every requirement-based test.
 
-Hamel calls this out directly: generic metrics such as helpfulness, coherence, and quality measure abstract properties that may have little connection to application-specific failures. A good score therefore doesn't establish successful product behavior. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/should-i-use-ready-to-use-evaluation-metrics.html?utm_source=chatgpt.com))
+Define the evaluation question and scope before interpreting an aggregate. Relevant scope fields include system version, feature, user cohort, scenario, locale, environment, and time period. These determine which executions belong in the analysis and how far the finding can generalize.
 
-Consider a wallet assistant:
+This separation is consistent with the Execution → Judgment → Evaluation model described in [wallet-evals concepts](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md).
+
+## 2. Establish the relationship between the metric and product behavior
+
+### Construct validity
+
+
+Construct validity concerns whether a measure represents the behavior or property of interest. A generic language-quality score does not establish this relationship by itself.
+
+Consider the response:
 
 ```text
-Response A:
-"Your transfer of $500 is ready. Would you like me to confirm it?"
+“Your transfer of $500 is ready. Would you like me to confirm it?”
 
 Completeness = 0.96
 ```
 
 
-But perhaps the actual product failure discovered from traces is:
+Suppose trace review has identified this failure mode:
 
 ```text
-F12: Confirmation is offered without showing the source account
-     when the user owns multiple eligible accounts.
+F12: The assistant offers transfer confirmation without making
+     the source account unambiguous when multiple accounts are eligible.
 ```
 
 
-The response can be linguistically complete while failing F12.
+The response may satisfy a generic completeness rubric while still exhibiting F12. The score and the product failure concern different properties.
 
-So:
+An operational criterion makes the intended relationship explicit:
 
 ```text
-high Completeness
-        ↓
-does NOT imply
-        ↓
-absence of F12
-        ↓
-does NOT imply
-        ↓
-successful wallet behavior
+Criterion C12: Source-account identification before confirmation
+
+Judgment unit:
+A transfer-confirmation offer and the preceding interaction state.
+
+Applicability:
+The user has multiple eligible source accounts and the assistant
+has reached the confirmation step.
+
+PASS:
+The user-visible interaction unambiguously identifies the source account
+associated with the proposed transfer.
+
+FAIL:
+Confirmation is offered while that account remains ambiguous.
+
+Required evidence:
+Eligible accounts, relevant user selections, conversation context,
+user-visible confirmation content, and the proposed transfer's account ID.
+
+NOT APPLICABLE:
+The execution is outside the applicability conditions.
+
+NOT JUDGEABLE:
+The criterion applies, but required evidence is missing or inconclusive.
 ```
 
 
-This is a **construct validity** failure: the measured property has not been shown to represent the product behavior of interest.
+Account identity and wording are related but distinct. A unique account label may establish what was shown to the user; matching it to the proposed transfer also requires action-state evidence.
 
-The failure-understanding sequence addresses this problem:
+A failure rate for C12 now has a defined interpretation. It still needs a denominator, an evaluator with known limitations, and a suitable sample.
+
+### Criterion discovery and revision
+
+
+Trace review should compare concrete incidents, successful contrasts, and ambiguous cases. For example:
 
 ```text
-traces
-  ↓
-observed incidents
-  ↓
-recurring failure mode F12
-  ↓
-criterion:
-"Before confirmation, source account must be unambiguous."
-  ↓
-evaluator
-  ↓
-F12 failure rate
+Trace 17: Wrong account selected.
+Trace 31: Wrong account selected after an ambiguous reference.
+Trace 42: Ambiguity resolved silently.
+Trace 58: Confirmation presented for an unintended account.
 ```
 
 
-Now `2.7% F12 failures` has an interpretable meaning. Hamel similarly recommends that application-specific metrics emerge from error analysis. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/why-is-error-analysis-so-important-in-llm-evals-and-how-is-it-performed.html?utm_source=chatgpt.com))
+These observations suggest related account-selection and disambiguation problems. Further review determines whether they share a criterion or require separate criteria.
 
-### 2. Write the rubric first
+A taxonomy defined entirely before inspection can constrain what reviewers notice. Use initial requirements and categories as provisional guidance, then revise them when evidence exposes missing distinctions, unused categories, or disputed expectations. Reviewers need relevant product and domain knowledge; annotator instructions alone cannot resolve an undefined product expectation.
+
+LLMs can assist with clustering observations, drafting criteria, and locating candidate examples. Human review is still needed to establish whether the resulting categories and boundaries reflect the product's expectations.
+
+See [Failure Understanding]({{< ref "ai-engineering/evaluation/v2/failure-understanding" >}}) for the distinction between observations, failure candidates, failure modes, and evidence gaps.
+
+## 3. Design evaluators around separable criteria
+
+### Judgment granularity
 
 
-This looks more disciplined:
+A rubric such as “score correctness, completeness, relevance, conciseness, and professionalism from 1 to 5” combines several concerns. Two executions can receive the same score while having different failure profiles:
+
+| Execution | Correctness | Style | Possible composite score |
+| --- | --- | --- | --- |
+| A | Incorrect | Strong | 4/5 |
+| B | Correct | Weak | 4/5 |
+
+The composite obscures which behavior changed and may allow improvements in one dimension to offset failures in another. Retain separate judgments when criteria protect different outcomes, such as account identification and fee disclosure. Any later aggregation should declare whether compensation is allowed.
+
+Pass/fail is a useful default for a specific behavioral boundary. Numeric measures are appropriate when their semantics are defined: latency, cost, the fraction of required items present, or an ordinal rubric with explicit anchors. Averaging an ordinal rating additionally assumes that differences between adjacent levels are meaningful for the intended analysis.
+
+Keep applicability and evidence sufficiency separate from pass/fail. Excluding `NOT JUDGEABLE` cases without reporting them can make a system appear better as trace coverage deteriorates.
+
+### Method and evidence selection
+
+
+Choose the simplest method that can apply the criterion reliably enough for its intended use.
+
+| Criterion type | Suitable starting method |
+| --- | --- |
+| Schema, required fields, allowed values | Deterministic validation |
+| Event order, tool arguments, state transitions | Code over structured execution evidence |
+| Exact expected result | Comparison with a trusted reference or execution result |
+| Context-dependent semantic judgment | Human review or a validated, scoped LLM judge |
+
+Fix obvious product defects when the required change is already clear. A new LLM evaluator is useful when repeated measurement requires semantic judgment; it is not required for every observed defect.
+
+Each evaluator needs enough context to apply its criterion. A final response alone cannot establish event ordering or state correctness. Conversely, passing every available trace field to every judge can add irrelevant context and complicate validation. Define the evidence contract per criterion and retain access to the complete trace for investigation.
+
+A judgment record should identify the execution, criterion version, evaluator version, label, and supporting evidence. LLM judgments should include a short rationale tied to that evidence so reviewers can inspect disagreements.
+
+## 4. Validate automated judgment
+
+
+A well-defined criterion does not establish that an automated evaluator applies it correctly. Treat an LLM judge as a classifier with a specified input contract, label definition, and validation population.
+
+A validation procedure should:
+
+1. Collect examples covering passes, failures, ambiguous boundaries, and relevant operating conditions.
+2. Obtain labels from qualified reviewers using the same criterion and evidence contract.
+3. Review disagreements and resolve unclear expectations or annotation instructions.
+4. Separate examples used for prompt development and selection from a held-out test set.
+5. Evaluate the frozen evaluator on the held-out set and report errors by class and relevant scenario.
+
+A train/development/test split is useful when examples serve distinct development roles. The essential constraint is that the test set remains independent of evaluator tuning. Keep related traces, repeated executions, and close synthetic variants together when splitting to reduce leakage.
+
+Human labels are a reference with their own limitations. Persistent reviewer disagreement can indicate an unclear criterion, insufficient evidence, or a disputed product expectation. It should not be hidden by treating one label as unquestionable ground truth.
+
+### Class imbalance and error rates
+
+
+Define the positive class explicitly. With **failure as positive**:
+
+| Human reference | Evaluator says FAIL | Evaluator says PASS |
+| --- | --- | --- |
+| FAIL | True positive (TP) | False negative (FN) |
+| PASS | False positive (FP) | True negative (TN) |
 
 ```text
-We care about:
-- completeness
-- relevance
-- coherence
-- tone
-- conciseness
-- grounding
+Failure recall / sensitivity = TP / (TP + FN)
+Specificity                 = TN / (TN + FP)
+Failure precision           = TP / (TP + FP)
+Accuracy                    = (TP + TN) / total
 ```
 
 
-But the categories came from someone's expectations about how an AI _might_ fail.
+If 2% of examples fail, an evaluator that always returns `PASS` has 98% accuracy and zero failure recall. Overall agreement therefore cannot establish whether the evaluator detects the behavior of interest.
 
-The failure occurs because the taxonomy constrains observation. Reviewers start fitting behavior into existing boxes instead of discovering what the application actually does.
+Report class counts as well as rates. Recall estimated from a small number of failures is uncertain even when the point estimate is high. Precision also depends on failure prevalence, so precision measured on a failure-enriched validation set does not directly describe production performance.
 
-Hamel documents a production case where a team wrote its rubric first and then spent labeling effort on criteria that rarely appeared as actual failures. ([Hamel's Blog](https://hamel.dev/notes/llm/ai-product-engineering/evals-production.html?utm_source=chatgpt.com "Case Study: Putting Evals Into Production - Hamel's Blog"))
+The acceptable error profile depends on use. False negatives can hide release regressions; false positives can generate monitoring noise or block acceptable executions. A judge validated for offline analysis needs additional assessment before it is used as a runtime control.
 
-The failure-understanding model starts from observed behavior:
+### Judge error and measured prevalence
+
+
+The fraction of executions labeled `FAIL` is the evaluator's observed failure rate. It is not automatically the true product failure rate.
+
+For an applicable, judgeable population, let:
 
 ```text
-trace 17 → wrong account selected
-trace 31 → wrong account selected
-trace 42 → ambiguous account silently resolved
-trace 58 → confirmation shown for wrong account
-
-              ↓ comparison
-
-Account-selection / disambiguation failure
+p = true failure prevalence
+s = evaluator sensitivity
+f = evaluator false-positive rate
+q = observed fraction labeled FAIL
 ```
 
 
-Only then is the failure category operationalised.
-
-The main problem with rubric-first evaluation is the **lack of evidence about which distinctions are useful**, even before asking whether the rubric is correct.
-
-### 3. Put several concerns into one evaluator
-
-
-Suppose the evaluator asks:
-
-> Is this response complete, correct, relevant, concise, and professional? Score 1-5.
-
-Imagine:
+Then:
 
 ```text
-Version A:
-correctness  -> bad
-style        -> excellent
-
-Version B:
-correctness  -> excellent
-style        -> mediocre
+q = s × p + f × (1 − p)
 ```
 
 
-Both could receive `4.1`.
+For example, if `p = 0.02`, `s = 0.90`, and `f = 0.05`, the observed failure rate is `0.067`: 6.7% instead of 2%. False positives can dominate when the underlying failure is rare.
 
-Combining the concerns loses information needed for engineering.
+This relationship assumes sensitivity and false-positive rate apply to the population being measured. They may change across scenarios, system versions, or production conditions. Any correction for judge error must account for that assumption and for uncertainty in the validation estimates.
 
-The aggregate permits compensation:
+## 5. Separate coverage from prevalence estimation
+
+
+Different sampling designs answer different questions.
+
+| Sample | Main use | Interpretation limit |
+| --- | --- | --- |
+| Random production sample | Estimate behavior in a defined production population; discover unanticipated failures | Rare conditions may have few examples |
+| Targeted sample | Investigate known failures, affected cohorts, or uncertain boundaries | Raw failure frequency does not estimate overall prevalence |
+| Regression suite | Check previously observed failures and explicit requirements | Results describe the suite rather than traffic frequency |
+| Synthetic cases | Exercise deliberate variations, rare situations, and system constraints | Representativeness requires separate evidence |
+
+Retain random production review alongside targeted sampling. Sampling only traces flagged by existing evaluators or user feedback limits discovery to problems those mechanisms already expose.
+
+Synthetic generation should vary specified dimensions such as workflows, account configurations, constraints, and known failure conditions. An unconstrained request for “50 test queries” provides little control over coverage or redundancy. Cases derived from hypothetical risks should be identified as such rather than presented as observed production failures.
+
+Prioritize initial coverage using traffic, failure impact, and uncertainty. Equal case counts across every feature are not a requirement; the coverage rationale and resulting gaps should be explicit.
+
+For aggregate prevalence, report the population, sampling method, applicability rules, and denominators. A stratified or targeted sample needs appropriate weighting to estimate a population rate, and that requires known sampling probabilities or defensible population weights.
+
+Evaluation datasets also change as the product and its failure modes change. Version cases, criteria, and evaluator configurations. When the suite changes, an aggregate-score change may reflect changed coverage as well as changed product behavior. A fixed comparison subset can preserve continuity while an updated suite measures current concerns.
+
+## 6. Aggregate judgments into scoped findings
+
+
+For criterion C12, a basic sample failure rate is:
 
 ```text
-critical behavior failure
-        +
-cosmetic improvement
-        =
-same score
+C12 failure rate = FAIL / (PASS + FAIL)
 ```
 
 
-And if `4.1 -> 3.9`, nobody knows what changed.
+This denominator contains applicable, judgeable units. Report `NOT APPLICABLE` and `NOT JUDGEABLE` counts separately, including the fraction of applicable units that could not be judged. Otherwise the failure rate describes an undisclosed subset of executions.
 
-Hamel identifies arbitrary multidimensional scoring as a recurring mistake and recommends narrow binary judgments because they give a much clearer decision boundary and failure interpretation. ([Hamel's Blog](https://hamel.dev/blog/posts/llm-judge/?utm_source=chatgpt.com "Using LLM-as-a-Judge For Evaluation: A Complete Guide - Hamel's Blog"))
-
-Each evaluator should therefore usually assess one criterion:
-
-```text
-Evaluator E12
-Criterion: Source account is unambiguous before confirmation.
-
-PASS
-FAIL
-```
-
-
-and separately:
-
-```text
-Evaluator E17
-Criterion: Fee is disclosed before confirmation.
-
-PASS
-FAIL
-```
-
-
-Aggregation happens afterward.
-
-This distinction is important. **Atomic evaluators and aggregate evaluation results are different artifacts.**
-
-### 4. Trust an LLM judge without validating it
-
-
-Suppose Client implements an F12 evaluator:
-
-```text
-LLM judge:
-Does this interaction clearly identify the source account?
-
-→ PASS
-```
-
-
-The criterion may now be good.
-
-A second inference is still needed:
-
-```text
-judge says PASS
-        ↓ ?
-human expert would say PASS
-```
-
-
-Without validation, that arrow is unsupported.
-
-The judge is another probabilistic model. A `97% product pass rate` could mean:
-
-```text
-product is excellent
-```
-
-
-or:
-
-```text
-judge almost always says PASS
-```
-
-
-Without validation, these explanations cannot be distinguished.
-
-This is a **measurement validity** problem.
-
-Hamel recommends validating scoped judges against human labels on held-out data and measuring their ability to correctly identify both passes and failures. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/can-i-use-the-same-model-for-both-the-main-task-and-evaluation.html?utm_source=chatgpt.com "Q: Can I use the same model for both the main task and evaluation? - Hamel's Blog"))
-
-The validation process needs:
-
-```text
-Failure mode F12
-
-Human-labeled examples
-        ↓
-train / dev / test
-        ↓
-build evaluator
-        ↓
-compare evaluator ↔ humans
-        ↓
-TPR = ...
-TNR = ...
-```
-
-
-Only after that does evaluator output become credible measurement.
-
-This explains the role of `automatic-evaluators.md` as the second stage: **failure discovery creates the criterion; evaluator validation establishes whether automation can apply that criterion reliably.**
-
-### 5. Use overall judge accuracy
-
-
-This produces another deceptively good number.
-
-Suppose F12 occurs in 2% of interactions.
-
-An evaluator that says `PASS` for everything gets:
-
-```text
-98% accuracy
-```
-
-
-while catching:
-
-```text
-0% of actual F12 failures
-```
-
-
-So overall accuracy can make a useless evaluator look excellent.
-
-The product question normally requires knowing separately:
-
-```text
-When humans say PASS, how often does evaluator say PASS?
-
-When humans say FAIL, how often does evaluator catch the failure?
-```
-
-
-Hence TPR/TNR, sensitivity/specificity, precision/recall depending on the definition of the positive class.
-
-Hamel explicitly recommends measuring the judge against human labels this way. ([Hamel's Blog](https://hamel.dev/blog/posts/evals-faq/can-i-use-the-same-model-for-both-the-main-task-and-evaluation.html?utm_source=chatgpt.com "Q: Can I use the same model for both the main task and evaluation? - Hamel's Blog"))
-
-This is a counterexample to claims based only on agreement, such as:
-
-> Our evaluator has 95% agreement.
-
-The necessary follow-up question is:
-
-> What's the failure prevalence, and what are the evaluator's false-positive and false-negative rates?
-
-### 6. Treat evaluator output as the evaluation result
-
-
-The `wallet-evals` vocabulary distinguishes evaluator output from an evaluation result.
-
-Suppose:
-
-```text
-F12 judge: PASS
-F17 judge: PASS
-F22 judge: FAIL
-```
-
-
-Those are **judgments**.
-
-They don't yet answer:
-
-> Does Wallet work?
-
-That question is underspecified.
-
-For which:
-
-```text
-version?
-feature?
-user cohort?
-scenario?
-environment?
-risk level?
-time period?
-```
-
-
-And according to what decision rule?
-
-The model separates these:
-
-```text
-Execution
-    ↓
-evidence
-
-Judgment
-    ↓
-criterion-specific assessments
-
-Evaluation
-    ↓
-answer to an evaluation question
-for a declared scope
-```
-
-
-[wallet-evals concepts.md](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md?utm_source=chatgpt.com)
-
-So a defensible result would look more like:
+A result should retain enough context to interpret the measurement:
 
 ```text
 Question:
-Did Wallet v1.14 regress transfer confirmation behavior?
+Did version 1.14 regress source-account identification
+before transfer confirmation?
 
 Scope:
-consumer accounts
-multi-account users
-EN locale
-transfer scenarios
-build 1.14 vs 1.13
+Consumer users with multiple eligible source accounts;
+English-language transfer scenarios; controlled test environment.
 
-Evidence:
-412 case executions
+Design:
+412 applicable, judgeable case executions per version,
+using the same cases, criterion, and evaluator configuration.
 
-Result:
-F12 failure rate
-1.13: 1.8%
-1.14: 7.5%
+Observed C12 failures:
+Version 1.13:  7 / 412 = 1.7%
+Version 1.14: 31 / 412 = 7.5%
 
-Decision rule:
-release threshold <= 3%
+Illustrative acceptance rule:
+Observed C12 failure rate must be no greater than 3%
+on this regression suite.
+
+Finding:
+Version 1.14 exceeds the specified acceptance threshold
+and has a higher observed failure rate on this suite.
+
+Limits:
+These results do not estimate production prevalence.
+Repeated executions may be needed to characterize stochastic variation.
+Evaluator error and uncertainty remain relevant to interpretation.
 ```
 
 
-That is an evaluation result that can support a decision.
+The threshold is a product decision input; it does not follow from the score itself. If a decision concerns an underlying population rate rather than a fixed suite result, specify how sampling uncertainty and evaluator error enter the rule. A point estimate below a threshold may still leave substantial uncertainty about compliance.
 
-`Quality = 87.3` has no comparable semantics.
+For version comparisons, keep cases and operating conditions comparable. Paired cases can expose which behaviors changed, but repeated runs from the same case are not necessarily independent observations. Counts, case-level changes, and uncertainty matter alongside percentage differences.
 
-### 7. Treat a failed eval as root cause
+Avoid hiding critical failures in a broad average. Where applicable, define independent acceptance conditions for critical criteria and use other measurements to describe tradeoffs. A single aggregate is useful only when its weighting and compensation rules match the intended decision.
 
-
-Another subtle mistake:
-
-```text
-F12 = FAIL
-```
+## 7. Separate failure detection, diagnosis, and product outcomes
 
 
-means:
+A C12 failure establishes that the observed execution violated the source-account criterion. It does not identify the cause. Possible causes include account-state errors, retrieval, tool responses, selection logic, prompts, model behavior, conversation-state handling, or the UI contract.
 
-> The observed behavior violates F12.
+Diagnosis uses the complete trace to locate observable divergences and form causal hypotheses. Controlled changes and subsequent evaluation can test those hypotheses. A lower failure rate after a change supports an improvement under the comparison conditions; attribution to a specific component requires a design that isolates its contribution.
 
-It does **not** mean:
+Likewise, component success does not establish user success. A tool can return successfully while acting on the wrong account. Evaluation of a transfer workflow may need to inspect intended account selection, confirmation, resulting state, and the user-visible outcome.
 
-> The prompt caused F12.
+Criterion-specific regression results support engineering decisions. Production measures of task completion, recovery, and user outcomes provide additional evidence about product performance. Their definitions and denominators need the same care as offline evaluation measures.
 
-The cause might be:
-
-```text
-retrieval
-account state
-tool response
-tool-selection logic
-prompt
-model
-conversation state
-UI contract
-```
+## 8. Evaluation infrastructure and review artifacts
 
 
-The concepts document makes this separation: judgments state whether evidence satisfies a criterion; failure understanding and diagnosis use that evidence afterward. [wallet-evals concepts.md](https://github.com/valery-judah/wallet-evals/blob/main/docs/product/concepts.md?utm_source=chatgpt.com)
+Trace inspection and annotation are prerequisites for understanding what automated scores mean. A dashboard can summarize measurements, but investigation requires access to the executions, criteria, evidence, and disagreements behind them.
 
-This also explains why complete traces matter. The error-analysis note treats final output as insufficient because earlier tool/state failures can be hidden by a plausible final answer. ([Systems & Engineering](https://valery.tech/ai-engineering/evaluation/v1/20-error-analysis/?utm_source=chatgpt.com "20 Error Analysis | AI Engineering and Architecture"))
+When reviewers cannot verify an output, inspect the evidence available to both reviewers and users. Missing provenance, intermediate artifacts, state changes, or confirmation details may indicate an observability or product-design gap. Adding these can improve both evaluation and user verification.
 
-So:
+For each decision-relevant metric, retain the following artifacts:
 
-```text
-Evaluator → detects
-Trace review → diagnoses
-```
+| Artifact | Required content |
+| --- | --- |
+| Criterion specification | Product expectation or observed failure, applicability, judgment unit, boundary, required evidence, and handling of missing evidence |
+| Evaluator specification | Method, input contract, implementation or prompt version, and output schema |
+| Validation report | Labeling procedure, data split, class counts, error rates, scenario coverage, and limitations |
+| Dataset or sample manifest | Case versions or sampling design, target population, coverage, and exclusions |
+| Result record | System version, judgment counts, denominators, aggregation rules, and relevant uncertainty |
+| Finding and decision rule | Evaluation question, supported interpretation, acceptance conditions, limitations, and resulting action |
 
+Changes to product behavior, criteria, evidence collection, evaluator models, or traffic can invalidate earlier assumptions. Revisit the affected artifacts and revalidate where the measurement relationship may have changed.
 
-Those are different jobs.
-
-This gives a fuller explanation than "Hamel says generic metrics are bad."
-
-The argument becomes:
-
-```text
-                 PRODUCT CLAIM
-"Wallet works for scenario X"
-                      ▲
-                      │
-             evaluation result
-                      ▲
-          scope + aggregation rule
-                      │
-                  judgments
-                      ▲
-          validated evaluators
-                      │
-                  criteria
-                      ▲
-              failure model
-                      │
-             observed traces
-```
+## References
 
 
-Every arrow is a **proof obligation**.
+The methodological issues discussed here are developed in:
 
-Any metric Client proposes should answer five questions:
+- [A Field Guide to Rapidly Improving AI Products](https://hamel.dev/blog/posts/field-guide/): trace inspection, error analysis, and application-specific measurement.
+- [Using LLM-as-a-Judge for Evaluation](https://hamel.dev/blog/posts/llm-judge/): scoped judgments, human-label validation, and class-specific error rates.
+- [The Revenge of the Data Scientist](https://hamel.dev/blog/posts/revenge/): experimental design, synthetic data, and evaluator development.
+- [Case Study: Putting Evals Into Production](https://hamel.dev/notes/llm/ai-product-engineering/evals-production.html): rubric design and production error analysis.
+- [Should I Use Ready-to-Use Evaluation Metrics?](https://hamel.dev/blog/posts/evals-faq/should-i-use-ready-to-use-evaluation-metrics.html): the relationship between generic metrics and product failures.
+- [How Can I Efficiently Sample Production Traces for Review?](https://hamel.dev/blog/posts/evals-faq/how-can-i-efficiently-sample-production-traces-for-review.html): random and targeted sampling.
+- [What Should I Do When My Gold Eval Dataset Becomes Stale?](https://hamel.dev/blog/posts/evals-faq/what-should-i-do-when-my-gold-eval-dataset-becomes-stale.html): dataset maintenance and score comparability.
+- [Selecting the Right AI Evals Tool](https://hamel.dev/blog/posts/eval-tools/): tooling and automation boundaries.
+- [Tame Complexity by Scoping LLM Evals](https://hamel.dev/notes/llm/officehours/scoping.html): prioritizing evaluation scope.
+- [Eval Smell](https://hamel.dev/blog/posts/eval-smell/): output verification and product design.
 
-|Question|What it establishes|
-|---|---|
-|What observed product behavior or requirement does this measure?|construct validity|
-|What precise criterion defines pass/fail?|interpretable decision boundary|
-|What evidence does the evaluator inspect?|evidence sufficiency|
-|How was the evaluator validated against expert judgment?|measurement validity|
-|What evaluation question, population, and decision does the aggregate answer?|decision validity|
+Related notes:
 
-If they say:
-
-> We measure completeness because completeness is important.
-
-they fail question 1.
-
-If they say:
-
-> GPT-5 evaluates completeness.
-
-they fail question 4.
-
-If they say:
-
-> Average completeness is 0.91, therefore the product is good.
-
-they fail question 5.
-
-This reasoning framework explains **why** the anti-patterns fail and which evidence each step requires.
+- [Failure Understanding]({{< ref "ai-engineering/evaluation/v2/failure-understanding" >}})
+- [Operationalising Product Behaviour with Automated Evaluators]({{< ref "ai-engineering/evaluation/v2/operationalising-product-behaviour-with-automated-evaluators" >}})
+- [Judgment and Findings]({{< ref "ai-engineering/evaluation/v1/30-judgment-and-findings" >}})

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Operationalising Product Behaviour with Automated Evaluators"
-description: "Build evaluators from narrow behavior criteria and trace evidence, validate them against trusted labels, and account for judge error before using their measurements for monitoring, release gates, or runtime controls."
+description: "Build evaluators from narrow criteria and trace evidence; validate against trusted labels. Interpret measurements with judge error, and define distinct decision rules for monitoring, release gates, and per-execution runtime controls."
 linkTitle: "Automated Evaluators"
 ---
 ## 1. Purpose
