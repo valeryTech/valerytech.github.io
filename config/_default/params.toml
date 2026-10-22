@@ -44,7 +44,7 @@ mainSections = ["projects", "system-design", "ai-engineering", "ai"]
   ## Search results
   showDate = false # false (default) or true
   showSummary = true # true (default) or false
-  searchLimit = 99 # 0 (no limit, default) or natural number
+  searchLimit = 12 # 0 (no limit, default) or natural number
 
   # Global alert
   alert = false # false (default) or true

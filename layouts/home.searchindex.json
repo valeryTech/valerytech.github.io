@@ -1,0 +1,25 @@
+{{- $pages := where site.Pages "Params.exclude_search" "!=" true -}}
+{{- with site.Params.doks.searchExclKinds -}}
+  {{- $pages = where $pages "Kind" "not in" . -}}
+{{- end -}}
+{{- with site.Params.doks.searchExclTypes -}}
+  {{- $pages = where $pages "Type" "not in" . -}}
+{{- end -}}
+
+{{- $index := slice -}}
+{{- range $id, $page := $pages -}}
+  {{/* The theme inserts summaries as HTML. Keep previews short and escaped,
+       while retaining the complete article text for full-text search. */}}
+  {{- $summary := $page.Description | default $page.Summary | plainify | htmlUnescape -}}
+  {{- $summary = $summary | replaceRE `\s+` " " | strings.TrimSpace | truncate 179 "…" | htmlUnescape | htmlEscape -}}
+  {{- $index = $index | append (dict
+    "id" $id
+    "title" $page.Title
+    "permalink" $page.RelPermalink
+    "tags" ($page.Params.tags | default slice)
+    "content" $page.Plain
+    "summary" $summary
+    "date" (time.Format (site.Params.searchDateFormat | default "2006-01-02") $page.Date)
+  ) -}}
+{{- end -}}
+{{- $index | jsonify -}}
