@@ -1,0 +1,2571 @@
+{
+  "version": 1,
+  "start": "a917a4d9b65738e118d1d30e76f3737d42900052",
+  "through": "01110cf5800506e60b6ab92ae28c95a0cd3596ff",
+  "routes": {
+    "/": {
+      "source": "content/_index.md",
+      "title": "Systems & Engineering"
+    },
+    "/about": {
+      "source": "content/about.md",
+      "title": "About"
+    },
+    "/ai": {
+      "source": "content/ai/_index.md",
+      "title": "AI"
+    },
+    "/ai-engineering": {
+      "source": "content/ai-engineering/_index.md",
+      "title": "AI Engineering"
+    },
+    "/ai-engineering/about": {
+      "title": "AI Engineering",
+      "source": "content/ai-engineering/ai-engineering.md"
+    },
+    "/ai-engineering/agents": {
+      "source": "content/ai-engineering/agents/_index.md",
+      "title": "Agents"
+    },
+    "/ai-engineering/agents/ae": {
+      "source": "content/ai-engineering/agents/ae/_index.md",
+      "title": "Ae"
+    },
+    "/ai-engineering/agents/ae/ae-discussion": {
+      "source": "content/ai-engineering/agents/ae/ae-discussion.md",
+      "title": "Ae Discussion"
+    },
+    "/ai-engineering/agents/ae/ae-framework": {
+      "source": "content/ai-engineering/agents/ae/ae-framework.md",
+      "title": "Ae Framework"
+    },
+    "/ai-engineering/agents/ae/ae-map-and-interview-prep": {
+      "source": "content/ai-engineering/agents/ae/ae-map-and-interview-prep.md",
+      "title": "Ae Map And Interview Prep"
+    },
+    "/ai-engineering/agents/ae/curriculum-v2": {
+      "source": "content/ai-engineering/agents/ae/curriculum-v2.md",
+      "title": "Curriculum V2"
+    },
+    "/ai-engineering/agents/ae/curriculum-v3": {
+      "source": "content/ai-engineering/agents/ae/curriculum-v3.md",
+      "title": "Curriculum V3"
+    },
+    "/ai-engineering/agents/ae/curriculum-v4": {
+      "source": "content/ai-engineering/agents/ae/curriculum-v4.md",
+      "title": "Curriculum V4"
+    },
+    "/ai-engineering/agents/ae/language": {
+      "source": "content/ai-engineering/agents/ae/language.md",
+      "title": "Language"
+    },
+    "/ai-engineering/agents/ae/patterns": {
+      "source": "content/ai-engineering/agents/ae/patterns.md",
+      "title": "Patterns"
+    },
+    "/ai-engineering/agents/ae/patterns-ae": {
+      "source": "content/ai-engineering/agents/ae/patterns-ae.md",
+      "title": "Patterns Ae"
+    },
+    "/ai-engineering/agents/ae/syllabus": {
+      "source": "content/ai-engineering/agents/ae/syllabus.md",
+      "title": "Syllabus"
+    },
+    "/ai-engineering/agents/agents": {
+      "source": "content/ai-engineering/agents/agents.md",
+      "title": "Agents"
+    },
+    "/ai-engineering/agents/coding-agents": {
+      "source": "content/ai-engineering/agents/coding-agents.md",
+      "title": "Coding Agents"
+    },
+    "/ai-engineering/agents/contex-build": {
+      "source": "content/ai-engineering/agents/contex-build/_index.md",
+      "title": "Contex Build"
+    },
+    "/ai-engineering/agents/contex-build/agent-build-2": {
+      "source": "content/ai-engineering/agents/contex-build/agent-build-2.md",
+      "title": "Agent Build 2"
+    },
+    "/ai-engineering/agents/contex-build/agents-md-approach": {
+      "source": "content/ai-engineering/agents/contex-build/agents-md-approach.md",
+      "title": "Agents Md Approach"
+    },
+    "/ai-engineering/agents/contex-build/agents-md-build-protocol": {
+      "source": "content/ai-engineering/agents/contex-build/agents-md-build-protocol.md",
+      "title": "Agents Md Build Protocol"
+    },
+    "/ai-engineering/agents/contex-build/agents-old": {
+      "source": "content/ai-engineering/agents/contex-build/agents-old.md",
+      "title": "Agents Old"
+    },
+    "/ai-engineering/agents/contex-build/strategy": {
+      "source": "content/ai-engineering/agents/contex-build/strategy.md",
+      "title": "Strategy"
+    },
+    "/ai-engineering/agents/input": {
+      "source": "content/ai-engineering/agents/input/_index.md",
+      "title": "Input"
+    },
+    "/ai-engineering/agents/input/context-engineering-paper": {
+      "source": "content/ai-engineering/agents/input/context-engineering-paper.md",
+      "title": "Context Engineering Paper"
+    },
+    "/ai-engineering/agents/input/harness-engineering-leveraging-codex-in-an-agent-first-world": {
+      "source": "content/ai-engineering/agents/input/harness-engineering-leveraging-codex-in-an-agent-first-world.md",
+      "title": "Harness Engineering Leveraging Codex In An Agent First World"
+    },
+    "/ai-engineering/agents/input/how-i-structure-claude-md-after-1000-sessions": {
+      "source": "content/ai-engineering/agents/input/how-i-structure-claude-md-after-1000-sessions.md",
+      "title": "How I Structure Claude Md After 1000 Sessions"
+    },
+    "/ai-engineering/agents/input/how-to-structure-context-for-ai-agents-without-wasting-tokens": {
+      "source": "content/ai-engineering/agents/input/how-to-structure-context-for-ai-agents-without-wasting-tokens.md",
+      "title": "How To Structure Context For Ai Agents Without Wasting Tokens"
+    },
+    "/ai-engineering/agents/input/llm-agents-know-to": {
+      "source": "content/ai-engineering/agents/input/llm-agents-know-to.md",
+      "title": "Llm Agents Know To"
+    },
+    "/ai-engineering/agents/input/my-ai-adoption-journey": {
+      "source": "content/ai-engineering/agents/input/my-ai-adoption-journey.md",
+      "title": "My Ai Adoption Journey"
+    },
+    "/ai-engineering/agents/input/perspective-topics": {
+      "source": "content/ai-engineering/agents/input/perspective-topics.md",
+      "title": "Perspective Topics"
+    },
+    "/ai-engineering/agents/input/the-emerging-harness-engineering-playbook": {
+      "source": "content/ai-engineering/agents/input/the-emerging-harness-engineering-playbook.md",
+      "title": "The Emerging Harness Engineering Playbook"
+    },
+    "/ai-engineering/agents/input/what-makes-claude-code-so-damn-good-and-how-to-recreate-that-magic-in-your-agent": {
+      "source": "content/ai-engineering/agents/input/what-makes-claude-code-so-damn-good-and-how-to-recreate-that-magic-in-your-agent.md",
+      "title": "What Makes Claude Code So Damn Good And How To Recreate That Magic In Your Agent"
+    },
+    "/ai-engineering/agents/syllabus": {
+      "source": "content/ai-engineering/agents/syllabus/_index.md",
+      "title": "Syllabus"
+    },
+    "/ai-engineering/agents/syllabus/agent-runtime-syllabus": {
+      "source": "content/ai-engineering/agents/syllabus/agent-runtime-syllabus.md",
+      "title": "Agent Runtime Syllabus"
+    },
+    "/ai-engineering/agents/syllabus/another-gemini": {
+      "source": "content/ai-engineering/agents/syllabus/another-gemini.md",
+      "title": "Another Gemini"
+    },
+    "/ai-engineering/agents/syllabus/hitl-copilot-syllabus": {
+      "source": "content/ai-engineering/agents/syllabus/hitl-copilot-syllabus.md",
+      "title": "Hitl Copilot Syllabus"
+    },
+    "/ai-engineering/agents/syllabus/inference-cost-distributed-syllabus": {
+      "source": "content/ai-engineering/agents/syllabus/inference-cost-distributed-syllabus.md",
+      "title": "Inference Cost Distributed Syllabus"
+    },
+    "/ai-engineering/agents/var": {
+      "source": "content/ai-engineering/agents/var/_index.md",
+      "title": "Var"
+    },
+    "/ai-engineering/agents/var/llm-adapt": {
+      "source": "content/ai-engineering/agents/var/llm-adapt.md",
+      "title": "Llm Adapt"
+    },
+    "/ai-engineering/agents/var/llm-agent-evolution": {
+      "source": "content/ai-engineering/agents/var/llm-agent-evolution.md",
+      "title": "Llm Agent Evolution"
+    },
+    "/ai-engineering/agents/var/llm-dialogues-adapt": {
+      "source": "content/ai-engineering/agents/var/llm-dialogues-adapt.md",
+      "title": "Llm Dialogues Adapt"
+    },
+    "/ai-engineering/agents/var/llm-dialogues-gpt": {
+      "source": "content/ai-engineering/agents/var/llm-dialogues-gpt.md",
+      "title": "Llm Dialogues Gpt"
+    },
+    "/ai-engineering/agents/var/llm-dialogues-role": {
+      "source": "content/ai-engineering/agents/var/llm-dialogues-role.md",
+      "title": "Llm Dialogues Role"
+    },
+    "/ai-engineering/ambiguity": {
+      "source": "content/ai-engineering/ambiguity.md",
+      "title": "Ambiguity in AI Systems"
+    },
+    "/ai-engineering/approach": {
+      "source": "content/ai-engineering/approach/_index.md",
+      "title": "Approach"
+    },
+    "/ai-engineering/approach/combined-approach": {
+      "source": "content/ai-engineering/approach/combined-approach.md",
+      "title": "Structured AI Development Approach"
+    },
+    "/ai-engineering/approach/cross-domain-mindset": {
+      "source": "content/ai-engineering/approach/cross-domain-mindset.md",
+      "title": "Cross-Domain Mindset"
+    },
+    "/ai-engineering/approach/edd": {
+      "source": "content/ai-engineering/approach/edd.md",
+      "title": "Eval-Driven Development"
+    },
+    "/ai-engineering/approach/empirical-nature": {
+      "source": "content/ai-engineering/approach/empirical-nature.md",
+      "title": "AI Systems Require Behavioral Evidence"
+    },
+    "/ai-engineering/approach/empirical-nature-2": {
+      "source": "content/ai-engineering/approach/empirical-nature-2.md",
+      "title": "AI Products Need Evals, Not Just Tests"
+    },
+    "/ai-engineering/approach/empirical-nature-add": {
+      "source": "content/ai-engineering/approach/empirical-nature-add.md",
+      "title": "Empirical Nature Add"
+    },
+    "/ai-engineering/approach/experimentation": {
+      "source": "content/ai-engineering/approach/experimentation.md",
+      "title": "Disciplined AI Experimentation"
+    },
+    "/ai-engineering/approach/experiments-vs-features": {
+      "source": "content/ai-engineering/approach/experiments-vs-features.md",
+      "title": "Experiments Vs Features"
+    },
+    "/ai-engineering/approach/workflow-design": {
+      "source": "content/ai-engineering/approach/workflow-design.md",
+      "title": "Workflow Design"
+    },
+    "/ai-engineering/causal-stack": {
+      "source": "content/ai-engineering/causal-stack/_index.md",
+      "title": "Investigating AI product behavior"
+    },
+    "/ai-engineering/causal-stack/cases": {
+      "source": "content/ai-engineering/causal-stack/cases.md",
+      "title": "Cases from product use"
+    },
+    "/ai-engineering/causal-stack/causal-stack-operating-model": {
+      "source": "content/ai-engineering/causal-stack/causal-stack-operating-model.md",
+      "title": "Causal Stack Operating Model"
+    },
+    "/ai-engineering/causal-stack/checks": {
+      "source": "content/ai-engineering/causal-stack/checks.md",
+      "title": "Focused checks for AI product behavior"
+    },
+    "/ai-engineering/causal-stack/claims": {
+      "source": "content/ai-engineering/causal-stack/claims.md",
+      "title": "Claims to check in product work"
+    },
+    "/ai-engineering/causal-stack/debugging": {
+      "source": "content/ai-engineering/causal-stack/debugging.md",
+      "title": "Debugging a failed customer task"
+    },
+    "/ai-engineering/causal-stack/layer-0-alt": {
+      "source": "content/ai-engineering/causal-stack/layer-0-alt.md",
+      "title": "Layer 0 — Natural Language Interface Substrate"
+    },
+    "/ai-engineering/causal-stack/layer-0-natural-language-properties": {
+      "source": "content/ai-engineering/causal-stack/layer-0-natural-language-properties.md",
+      "title": "Natural-Language Properties: A Linguistic and Semantic Taxonomy"
+    },
+    "/ai-engineering/causal-stack/layer-1a-base-llm-mechanisms": {
+      "source": "content/ai-engineering/causal-stack/layer-1a-base-llm-mechanisms.md",
+      "title": "Layer 1A - Base LLM Architectural / Inference Mechanisms"
+    },
+    "/ai-engineering/causal-stack/layer-1b-final-scheme": {
+      "source": "content/ai-engineering/causal-stack/layer-1b-final-scheme.md",
+      "title": "Layer 1B -- Learned Behavioral LLM Features"
+    },
+    "/ai-engineering/causal-stack/layer-1c-ai-system-causal-features": {
+      "source": "content/ai-engineering/causal-stack/layer-1c-ai-system-causal-features.md",
+      "title": "Layer 1C -- AI-System-Level Causal Features"
+    },
+    "/ai-engineering/causal-stack/layer-2": {
+      "source": "content/ai-engineering/causal-stack/layer-2/_index.md",
+      "title": "Layer 2"
+    },
+    "/ai-engineering/causal-stack/layer-2/evaluation-method-reference": {
+      "source": "content/ai-engineering/causal-stack/layer-2/evaluation-method-reference.md",
+      "title": "Evaluation Method Reference"
+    },
+    "/ai-engineering/causal-stack/layer-2/failure-operators": {
+      "source": "content/ai-engineering/causal-stack/layer-2/failure-operators.md",
+      "title": "Failure Operators"
+    },
+    "/ai-engineering/causal-stack/layer-2/fault-family-index": {
+      "source": "content/ai-engineering/causal-stack/layer-2/fault-family-index.md",
+      "title": "Layer 2 -- Fault Family Index"
+    },
+    "/ai-engineering/causal-stack/layer-2/product-fault-families": {
+      "source": "content/ai-engineering/causal-stack/layer-2/product-fault-families.md",
+      "title": "Product Fault Families"
+    },
+    "/ai-engineering/causal-stack/layer-2/semantic-fault-family-index": {
+      "source": "content/ai-engineering/causal-stack/layer-2/semantic-fault-family-index.md",
+      "title": "Semantic Fault Family Index"
+    },
+    "/ai-engineering/causal-stack/layer-3-control-families": {
+      "source": "content/ai-engineering/causal-stack/layer-3-control-families.md",
+      "title": "Layer 3 -- System Control Families"
+    },
+    "/ai-engineering/causal-stack/layer-3-controls-and-faults": {
+      "source": "content/ai-engineering/causal-stack/layer-3-controls-and-faults.md",
+      "title": "Layer 3 -- System Controls and System Faults"
+    },
+    "/ai-engineering/causal-stack/layer-3-semantic-fault-view": {
+      "source": "content/ai-engineering/causal-stack/layer-3-semantic-fault-view.md",
+      "title": "Layer 3 -- Semantic Fault View"
+    },
+    "/ai-engineering/causal-stack/layer-3-system-fault-families": {
+      "source": "content/ai-engineering/causal-stack/layer-3-system-fault-families.md",
+      "title": "Layer 3 -- System Fault Families"
+    },
+    "/ai-engineering/causal-stack/practical-checks": {
+      "source": "content/ai-engineering/causal-stack/practical-checks.md",
+      "title": "Learning through real product use"
+    },
+    "/ai-engineering/causal-stack/reference": {
+      "source": "content/ai-engineering/causal-stack/reference/_index.md",
+      "title": "Reference"
+    },
+    "/ai-engineering/causal-stack/reference/interventions": {
+      "source": "content/ai-engineering/causal-stack/reference/interventions.md",
+      "title": "Possible interventions"
+    },
+    "/ai-engineering/causal-stack/reference/language": {
+      "source": "content/ai-engineering/causal-stack/reference/language.md",
+      "title": "Language and interaction"
+    },
+    "/ai-engineering/causal-stack/reference/model-and-system": {
+      "source": "content/ai-engineering/causal-stack/reference/model-and-system.md",
+      "title": "Model and system behavior"
+    },
+    "/ai-engineering/causal-stack/review-and-refactoring": {
+      "source": "content/ai-engineering/causal-stack/review-and-refactoring.md",
+      "title": "Causal-stack refactoring record"
+    },
+    "/ai-engineering/coding-agents": {
+      "source": "content/ai-engineering/coding-agents/_index.md",
+      "title": "Coding Agents"
+    },
+    "/ai-engineering/coding-agents/agents-md": {
+      "source": "content/ai-engineering/coding-agents/agents-md.md",
+      "title": "AGENTS.md"
+    },
+    "/ai-engineering/coding-agents/ca-dict": {
+      "source": "content/ai-engineering/coding-agents/ca-dict.md",
+      "title": "Ca Dict"
+    },
+    "/ai-engineering/coding-agents/coding-agent-experimentation-primer": {
+      "source": "content/ai-engineering/coding-agents/coding-agent-experimentation-primer.md",
+      "title": "A practical way to study coding-agent improvements"
+    },
+    "/ai-engineering/coding-agents/coding-agent-research-questions": {
+      "source": "content/ai-engineering/coding-agents/coding-agent-research-questions.md",
+      "title": "Research agenda: AGENTS.md and reliable coding-agent autonomy"
+    },
+    "/ai-engineering/coding-agents/comprehension": {
+      "source": "content/ai-engineering/coding-agents/comprehension.md",
+      "title": "Project Understanding"
+    },
+    "/ai-engineering/coding-agents/context-engineering": {
+      "source": "content/ai-engineering/coding-agents/context-engineering.md",
+      "title": "Context Engineering"
+    },
+    "/ai-engineering/coding-agents/effective-context-engineering-for-ai-agents": {
+      "source": "content/ai-engineering/coding-agents/effective-context-engineering-for-ai-agents.md",
+      "title": "Effective Context Engineering For Ai Agents"
+    },
+    "/ai-engineering/coding-agents/harness-engineering-1": {
+      "source": "content/ai-engineering/coding-agents/harness-engineering-1.md",
+      "title": "Harness Engineering 1"
+    },
+    "/ai-engineering/coding-agents/idiosyncrasy": {
+      "source": "content/ai-engineering/coding-agents/idiosyncrasy.md",
+      "title": "Guide: Working with Idiosyncrasy in Agent-Ready Target Systems"
+    },
+    "/ai-engineering/coding-agents/in": {
+      "source": "content/ai-engineering/coding-agents/in.md",
+      "title": "In"
+    },
+    "/ai-engineering/coding-agents/in-effective-context-engineering": {
+      "source": "content/ai-engineering/coding-agents/in-effective-context-engineering.md",
+      "title": "In Effective Context Engineering"
+    },
+    "/ai-engineering/coding-agents/in-harnes-building": {
+      "source": "content/ai-engineering/coding-agents/in-harnes-building.md",
+      "title": "In Harnes Building"
+    },
+    "/ai-engineering/coding-agents/input-gtd": {
+      "source": "content/ai-engineering/coding-agents/input-gtd/_index.md",
+      "title": "Input Gtd"
+    },
+    "/ai-engineering/coding-agents/input-gtd/effective-context-engineering": {
+      "source": "content/ai-engineering/coding-agents/input-gtd/effective-context-engineering.md",
+      "title": "Context Engineering (to review)"
+    },
+    "/ai-engineering/coding-agents/input-gtd/harness-engineering-1": {
+      "source": "content/ai-engineering/coding-agents/input-gtd/harness-engineering-1.md",
+      "title": "Harness Engineering 1"
+    },
+    "/ai-engineering/coding-agents/input-gtd/in": {
+      "source": "content/ai-engineering/coding-agents/input-gtd/in.md",
+      "title": "Evidence for Coding Agents in Production Engineering"
+    },
+    "/ai-engineering/coding-agents/input-gtd/in-harnes-building": {
+      "source": "content/ai-engineering/coding-agents/input-gtd/in-harnes-building.md",
+      "title": "Harness-Building for Coding Agents"
+    },
+    "/ai-engineering/coding-agents/part-0": {
+      "source": "content/ai-engineering/coding-agents/part-0.md",
+      "title": "Part 0"
+    },
+    "/ai-engineering/coding-agents/perception-and-context-management": {
+      "source": "content/ai-engineering/coding-agents/perception-and-context-management.md",
+      "title": "Perception and Context Management in Coding Agents"
+    },
+    "/ai-engineering/coding-agents/project-ownership": {
+      "source": "content/ai-engineering/coding-agents/project-ownership.md",
+      "title": "Project Understanding and Ownership"
+    },
+    "/ai-engineering/coding-agents/reflection-notes": {
+      "source": "content/ai-engineering/coding-agents/reflection-notes.md",
+      "title": "Coding-Agent Reflection Notes"
+    },
+    "/ai-engineering/coding-agents/understanding": {
+      "source": "content/ai-engineering/coding-agents/understanding.md",
+      "title": "Part 0: Observations from ~60B coding-agent token events over nine months"
+    },
+    "/ai-engineering/empirical-nature": {
+      "source": "content/ai-engineering/empirical-nature.md",
+      "title": "Empirical Nature"
+    },
+    "/ai-engineering/evaluation": {
+      "source": "content/ai-engineering/evaluation/_index.md",
+      "title": "Evaluation"
+    },
+    "/ai-engineering/evaluation/01-starting-sequence": {
+      "source": "content/ai-engineering/evaluation/01-starting-sequence.md",
+      "title": "01 Starting Sequence"
+    },
+    "/ai-engineering/evaluation/10-user-inputs": {
+      "source": "content/ai-engineering/evaluation/10-user-inputs.md",
+      "title": "10 User Inputs"
+    },
+    "/ai-engineering/evaluation/11-building-balanced-set": {
+      "source": "content/ai-engineering/evaluation/11-building-balanced-set.md",
+      "title": "11 Building Balanced Set"
+    },
+    "/ai-engineering/evaluation/20-error-analysis": {
+      "source": "content/ai-engineering/evaluation/20-error-analysis.md",
+      "title": "20 Error Analysis"
+    },
+    "/ai-engineering/evaluation/20-error-analysis-input": {
+      "source": "content/ai-engineering/evaluation/20-error-analysis-input.md",
+      "title": "Failure Understanding: Discovering and Structuring How AI Products Fail"
+    },
+    "/ai-engineering/evaluation/30-failure-model-use": {
+      "source": "content/ai-engineering/evaluation/30-failure-model-use.md",
+      "title": "30 Failure Model Use"
+    },
+    "/ai-engineering/evaluation/ai-evaluation": {
+      "source": "content/ai-engineering/evaluation/ai-evaluation.md",
+      "title": "AI Evaluation as an Engineering Learning System"
+    },
+    "/ai-engineering/evaluation/ai-evaluation-revised": {
+      "source": "content/ai-engineering/evaluation/ai-evaluation-revised.md",
+      "title": "AI Evaluation as an Iterative Engineering Practice"
+    },
+    "/ai-engineering/evaluation/ai-systems-features": {
+      "source": "content/ai-engineering/evaluation/ai-systems-features.md",
+      "title": "Ai Systems Features"
+    },
+    "/ai-engineering/evaluation/archive": {
+      "source": "content/ai-engineering/evaluation/archive/_index.md",
+      "title": "Archive"
+    },
+    "/ai-engineering/evaluation/archive/ai-system-problems-symptoms-report": {
+      "source": "content/ai-engineering/evaluation/archive/ai-system-problems-symptoms-report.md",
+      "title": "Ai System Problems Symptoms Report"
+    },
+    "/ai-engineering/evaluation/archive/ai-systems-features": {
+      "source": "content/ai-engineering/evaluation/archive/ai-systems-features.md",
+      "title": "Ai Systems Features"
+    },
+    "/ai-engineering/evaluation/archive/stack-old-layer-1": {
+      "source": "content/ai-engineering/evaluation/archive/stack-old-layer-1.md",
+      "title": "Causal Stack (Archived)"
+    },
+    "/ai-engineering/evaluation/archive/stack-umbrella-model": {
+      "source": "content/ai-engineering/evaluation/archive/stack-umbrella-model.md",
+      "title": "Stack Umbrella Model"
+    },
+    "/ai-engineering/evaluation/causal-stack": {
+      "source": "content/ai-engineering/evaluation/causal-stack/_index.md",
+      "title": "Causal Stack"
+    },
+    "/ai-engineering/evaluation/causal-stack/_critique-1": {
+      "source": "content/ai-engineering/evaluation/causal-stack/_critique-1.md",
+      "title": "Critique 1"
+    },
+    "/ai-engineering/evaluation/causal-stack/ai-system-problems-symptoms-report": {
+      "source": "content/ai-engineering/evaluation/causal-stack/ai-system-problems-symptoms-report.md",
+      "title": "Ai System Problems Symptoms Report"
+    },
+    "/ai-engineering/evaluation/causal-stack/ai-systems-features": {
+      "source": "content/ai-engineering/evaluation/causal-stack/ai-systems-features.md",
+      "title": "Ai Systems Features"
+    },
+    "/ai-engineering/evaluation/causal-stack/causal-stack-operating-model": {
+      "source": "content/ai-engineering/evaluation/causal-stack/causal-stack-operating-model.md",
+      "title": "Causal Stack Operating Model"
+    },
+    "/ai-engineering/evaluation/causal-stack/draft-layer-1b-taxonomy-restructuring": {
+      "source": "content/ai-engineering/evaluation/causal-stack/draft-layer-1b-taxonomy-restructuring.md",
+      "title": "Draft Layer 1b Taxonomy Restructuring"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-0-alt": {
+      "title": "Former published alias",
+      "source": "Hugo alias"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-0-natural-language-properties": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-0-natural-language-properties.md",
+      "title": "Layer 0 Natural Language Properties"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-1a-base-llm-mechanisms": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-1a-base-llm-mechanisms.md",
+      "title": "Layer 1a Base Llm Mechanisms"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-1b-final-scheme": {
+      "title": "Former published alias",
+      "source": "Hugo alias"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-1b-learned-behavioral-features": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-1b-learned-behavioral-features.md",
+      "title": "Layer 1b Learned Behavioral Features"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-1c-ai-system-causal-features": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-1c-ai-system-causal-features.md",
+      "title": "Layer 1c Ai System Causal Features"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/_index.md",
+      "title": "Layer 2"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/classification-views": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/classification-views.md",
+      "title": "Classification Views"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-reference": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-reference.md",
+      "title": "Evaluation Method Reference"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-views": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-views.md",
+      "title": "Evaluation Method Views"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/failure-operators": {
+      "title": "Former published alias",
+      "source": "Hugo alias"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/fault-evaluation-mapping": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/fault-evaluation-mapping.md",
+      "title": "Fault Evaluation Mapping"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/fault-family-index": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/fault-family-index.md",
+      "title": "Fault Family Index"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/fault-inventory": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/fault-inventory.md",
+      "title": "Fault Inventory"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/product-fault-families": {
+      "title": "Former published alias",
+      "source": "Hugo alias"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/semantic-fault-family-index": {
+      "title": "Former published alias",
+      "source": "Hugo alias"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-21-fault-inventory": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-21-fault-inventory.md",
+      "title": "Stack 21 Fault Inventory"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-23-fault-family-index": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-23-fault-family-index.md",
+      "title": "Stack 23 Fault Family Index"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-24-classification-views": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-24-classification-views.md",
+      "title": "Stack 24 Classification Views"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-25-evaluation-mapping": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-25-evaluation-mapping.md",
+      "title": "Stack 25 Evaluation Mapping"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-26-evaluation-method-reference": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-26-evaluation-method-reference.md",
+      "title": "Stack 26 Evaluation Method Reference"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-27-worked-examples": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-27-worked-examples.md",
+      "title": "Stack 27 Worked Examples"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-working-examples": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/stack-working-examples.md",
+      "title": "Stack Working Examples"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/worked-examples": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-2/worked-examples.md",
+      "title": "Worked Examples"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-3-control-families": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-3-control-families.md",
+      "title": "Layer 3 Control Families"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-3-controls-and-faults": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-3-controls-and-faults.md",
+      "title": "Layer 3 Controls And Faults"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-3-semantic-fault-view": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-3-semantic-fault-view.md",
+      "title": "Layer 3 Semantic Fault View"
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-3-system-fault-families": {
+      "source": "content/ai-engineering/evaluation/causal-stack/layer-3-system-fault-families.md",
+      "title": "Layer 3 System Fault Families"
+    },
+    "/ai-engineering/evaluation/causal-stack/operating-model": {
+      "source": "content/ai-engineering/evaluation/causal-stack/operating-model.md",
+      "title": "Operating Model"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-0-protocol": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-0-protocol.md",
+      "title": "Stack 0 Protocol"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-10-mechanisms": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-10-mechanisms.md",
+      "title": "Stack 10 Mechanisms"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-1a-base-mechanisms": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-1a-base-mechanisms.md",
+      "title": "Stack 1a Base Mechanisms"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-1b-learned-behavioral-llm-features": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-1b-learned-behavioral-llm-features.md",
+      "title": "Stack 1b Learned Behavioral Llm Features"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-1b-restructuring": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-1b-restructuring.md",
+      "title": "Stack 1b Restructuring"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-1c-ai-system-level-causal-features": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-1c-ai-system-level-causal-features.md",
+      "title": "Stack 1c Ai System Level Causal Features"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-20-fault-modes": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-20-fault-modes.md",
+      "title": "Stack 20 Fault Modes"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-30-layer-3-overview": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-30-layer-3-overview.md",
+      "title": "Stack 30 Layer 3 Overview"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-30-system-faults": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-30-system-faults.md",
+      "title": "Stack 30 System Faults"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-31-layer-3-control-families": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-31-layer-3-control-families.md",
+      "title": "Stack 31 Layer 3 Control Families"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-32-layer-3-semantic-fault-view": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-32-layer-3-semantic-fault-view.md",
+      "title": "Stack 32 Layer 3 Semantic Fault View"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-32b-layer-3-semantic-system-faults": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-32b-layer-3-semantic-system-faults.md",
+      "title": "Stack 32b Layer 3 Semantic System Faults"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-33-layer-3-system-fault-families": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-33-layer-3-system-fault-families.md",
+      "title": "Stack 33 Layer 3 System Fault Families"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-40-system-faults": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-40-system-faults.md",
+      "title": "Stack 40 System Faults"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-mechanisms-to-faults": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-mechanisms-to-faults.md",
+      "title": "Stack Mechanisms To Faults"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-old": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-old.md",
+      "title": "Stack Old"
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-old-layer-1": {
+      "source": "content/ai-engineering/evaluation/causal-stack/stack-old-layer-1.md",
+      "title": "Stack Old Layer 1"
+    },
+    "/ai-engineering/evaluation/conceptualization": {
+      "source": "content/ai-engineering/evaluation/conceptualization.md",
+      "title": "Conceptualization"
+    },
+    "/ai-engineering/evaluation/conceptualization-2": {
+      "source": "content/ai-engineering/evaluation/conceptualization-2.md",
+      "title": "Conceptualization 2"
+    },
+    "/ai-engineering/evaluation/evaluation": {
+      "source": "content/ai-engineering/evaluation/evaluation.md",
+      "title": "Evaluation"
+    },
+    "/ai-engineering/evaluation/guide": {
+      "source": "content/ai-engineering/evaluation/guide.md",
+      "title": "Guide"
+    },
+    "/ai-engineering/evaluation/harness-and-platform": {
+      "source": "content/ai-engineering/evaluation/harness-and-platform.md",
+      "title": "Evaluation of LLM Workflows and Coding Agents"
+    },
+    "/ai-engineering/evaluation/justification": {
+      "source": "content/ai-engineering/evaluation/justification.md",
+      "title": "Product-Specific AI Evaluation: Measurement and Validity"
+    },
+    "/ai-engineering/evaluation/product-improvement": {
+      "source": "content/ai-engineering/evaluation/product-improvement.md",
+      "title": "Product Improvement"
+    },
+    "/ai-engineering/evaluation/product-improvement-system-revised": {
+      "source": "content/ai-engineering/evaluation/product-improvement-system-revised.md",
+      "title": "Product Improvement System Revised"
+    },
+    "/ai-engineering/evaluation/prompts-03-dimensions-set": {
+      "source": "content/ai-engineering/evaluation/prompts-03-dimensions-set.md",
+      "title": "Prompts 03 Dimensions Set"
+    },
+    "/ai-engineering/evaluation/prompts-04-tuples": {
+      "source": "content/ai-engineering/evaluation/prompts-04-tuples.md",
+      "title": "Prompts 04 Tuples"
+    },
+    "/ai-engineering/evaluation/prompts-05-examples-generation": {
+      "source": "content/ai-engineering/evaluation/prompts-05-examples-generation.md",
+      "title": "Prompts 05 Examples Generation"
+    },
+    "/ai-engineering/evaluation/taxonomy": {
+      "source": "content/ai-engineering/evaluation/taxonomy.md",
+      "title": "Taxonomy"
+    },
+    "/ai-engineering/evaluation/v1": {
+      "source": "content/ai-engineering/evaluation/v1/_index.md",
+      "title": "V1"
+    },
+    "/ai-engineering/evaluation/v1/01-starting-sequence": {
+      "source": "content/ai-engineering/evaluation/v1/01-starting-sequence.md",
+      "title": "01 Starting Sequence"
+    },
+    "/ai-engineering/evaluation/v1/10-user-inputs": {
+      "source": "content/ai-engineering/evaluation/v1/10-user-inputs.md",
+      "title": "Building a Starting Set of User Inputs for AI Evaluation"
+    },
+    "/ai-engineering/evaluation/v1/11-building-balanced-set": {
+      "source": "content/ai-engineering/evaluation/v1/11-building-balanced-set.md",
+      "title": "11 Building Balanced Set"
+    },
+    "/ai-engineering/evaluation/v1/20-error-analysis": {
+      "source": "content/ai-engineering/evaluation/v1/20-error-analysis.md",
+      "title": "Failure Understanding"
+    },
+    "/ai-engineering/evaluation/v1/30-judgment-and-findings": {
+      "source": "content/ai-engineering/evaluation/v1/30-judgment-and-findings.md",
+      "title": "Judgment and Findings"
+    },
+    "/ai-engineering/evaluation/v1/ai-evaluation": {
+      "source": "content/ai-engineering/evaluation/v1/ai-evaluation.md",
+      "title": "AI Evaluation"
+    },
+    "/ai-engineering/evaluation/v1/ai-evaluation-goals": {
+      "source": "content/ai-engineering/evaluation/v1/ai-evaluation-goals.md",
+      "title": "Goals of AI Evaluation"
+    },
+    "/ai-engineering/evaluation/v1/ai-evaluation-revised": {
+      "source": "content/ai-engineering/evaluation/v1/ai-evaluation-revised.md",
+      "title": "AI Evaluation as an Iterative Engineering Practice"
+    },
+    "/ai-engineering/evaluation/v1/conceptualization": {
+      "source": "content/ai-engineering/evaluation/v1/conceptualization.md",
+      "title": "Conceptual Model for AI Evaluation"
+    },
+    "/ai-engineering/evaluation/v1/conceptualization-2": {
+      "source": "content/ai-engineering/evaluation/v1/conceptualization-2.md",
+      "title": "Conceptualization 2"
+    },
+    "/ai-engineering/evaluation/v1/coverage-and-case-design": {
+      "source": "content/ai-engineering/evaluation/v1/coverage-and-case-design.md",
+      "title": "Coverage and Case Design for AI Evaluation"
+    },
+    "/ai-engineering/evaluation/v1/evaluation-subsystem": {
+      "source": "content/ai-engineering/evaluation/v1/evaluation-subsystem.md",
+      "title": "Evaluation Subsystem"
+    },
+    "/ai-engineering/evaluation/v1/evidence-model": {
+      "source": "content/ai-engineering/evaluation/v1/evidence-model.md",
+      "title": "Evidence Model for AI Evaluation"
+    },
+    "/ai-engineering/evaluation/v1/guide": {
+      "source": "content/ai-engineering/evaluation/v1/guide.md",
+      "title": "AI Evaluation Guide"
+    },
+    "/ai-engineering/evaluation/v1/harness-and-platform": {
+      "source": "content/ai-engineering/evaluation/v1/harness-and-platform.md",
+      "title": "Evaluation Harness and Workspace"
+    },
+    "/ai-engineering/evaluation/v1/product-improvement": {
+      "source": "content/ai-engineering/evaluation/v1/product-improvement.md",
+      "title": "Product Improvement"
+    },
+    "/ai-engineering/evaluation/v1/product-improvement-system-revised": {
+      "source": "content/ai-engineering/evaluation/v1/product-improvement-system-revised.md",
+      "title": "AI Product Improvement System"
+    },
+    "/ai-engineering/evaluation/v1/production-learning": {
+      "source": "content/ai-engineering/evaluation/v1/production-learning.md",
+      "title": "Production Learning"
+    },
+    "/ai-engineering/evaluation/v1/prompts-03-dimensions-set": {
+      "source": "content/ai-engineering/evaluation/v1/prompts-03-dimensions-set.md",
+      "title": "Prompts 03 Dimensions Set"
+    },
+    "/ai-engineering/evaluation/v1/prompts-04-tuples": {
+      "source": "content/ai-engineering/evaluation/v1/prompts-04-tuples.md",
+      "title": "Prompts 04 Tuples"
+    },
+    "/ai-engineering/evaluation/v1/prompts-05-examples-generation": {
+      "source": "content/ai-engineering/evaluation/v1/prompts-05-examples-generation.md",
+      "title": "Prompts 05 Examples Generation"
+    },
+    "/ai-engineering/evaluation/v1/taxonomy": {
+      "source": "content/ai-engineering/evaluation/v1/taxonomy.md",
+      "title": "Taxonomy"
+    },
+    "/ai-engineering/evaluation/v1/why-use-evaluation-harness": {
+      "source": "content/ai-engineering/evaluation/v1/why-use-evaluation-harness.md",
+      "title": "Why Use an Evaluation Harness?"
+    },
+    "/ai-engineering/evaluation/v2": {
+      "source": "content/ai-engineering/evaluation/v2/_index.md",
+      "title": "V2"
+    },
+    "/ai-engineering/evaluation/v2/00-refactor": {
+      "source": "content/ai-engineering/evaluation/v2/00-refactor.md",
+      "title": "AI Evaluation Framework: Refactoring Notes"
+    },
+    "/ai-engineering/evaluation/v2/10-evaluation-coverage": {
+      "source": "content/ai-engineering/evaluation/v2/10-evaluation-coverage.md",
+      "title": "Designing Evaluation Coverage and Cases"
+    },
+    "/ai-engineering/evaluation/v2/ai-evaluation": {
+      "source": "content/ai-engineering/evaluation/v2/ai-evaluation.md",
+      "title": "AI Evaluation as an Iterative Engineering Practice"
+    },
+    "/ai-engineering/evaluation/v2/ai-evaluation-goals": {
+      "source": "content/ai-engineering/evaluation/v2/ai-evaluation-goals.md",
+      "title": "Ai Evaluation Goals"
+    },
+    "/ai-engineering/evaluation/v2/coverage-design-phase": {
+      "source": "content/ai-engineering/evaluation/v2/coverage-design-phase.md",
+      "title": "Evaluation Coverage in Discovery and Delivery"
+    },
+    "/ai-engineering/evaluation/v2/failure-understanding": {
+      "source": "content/ai-engineering/evaluation/v2/failure-understanding.md",
+      "title": "Failure Understanding: Developing an Evidence-Linked Model of Recurring AI Product Failures"
+    },
+    "/ai-engineering/evaluation/v2/failures-putting-into-use": {
+      "source": "content/ai-engineering/evaluation/v2/failures-putting-into-use.md",
+      "title": "Using Failure Understanding in Product Discovery and Delivery"
+    },
+    "/ai-engineering/evaluation/v2/operationalising-product-behaviour-with-automated-evaluators": {
+      "source": "content/ai-engineering/evaluation/v2/operationalising-product-behaviour-with-automated-evaluators.md",
+      "title": "Operationalising Product Behaviour with Automated Evaluators"
+    },
+    "/ai-engineering/evaluation/v2/product-improvement-system": {
+      "source": "content/ai-engineering/evaluation/v2/product-improvement-system.md",
+      "title": "AI Product Improvement System"
+    },
+    "/ai-engineering/evaluation/var": {
+      "source": "content/ai-engineering/evaluation/var.md",
+      "title": "Var"
+    },
+    "/ai-engineering/evaluation/why-use-evaluation-harness": {
+      "source": "content/ai-engineering/evaluation/why-use-evaluation-harness.md",
+      "title": "Why Use Evaluation Harness"
+    },
+    "/ai-engineering/experimentation": {
+      "source": "content/ai-engineering/experimentation.md",
+      "title": "Experimentation"
+    },
+    "/ai-engineering/handling-underspecified-requests-in-ai-applications": {
+      "source": "content/ai-engineering/handling-underspecified-requests-in-ai-applications.md",
+      "title": "Handling Underspecified Requests in AI Applications"
+    },
+    "/ai-engineering/my-perspective": {
+      "source": "content/ai-engineering/my-perspective.md",
+      "title": "My Perspective"
+    },
+    "/ai-engineering/other": {
+      "source": "content/ai-engineering/other/_index.md",
+      "title": "Other"
+    },
+    "/ai-engineering/other/production-ready": {
+      "source": "content/ai-engineering/other/production-ready/_index.md",
+      "title": "Production Ready"
+    },
+    "/ai-engineering/other/production-ready/ai-spec": {
+      "source": "content/ai-engineering/other/production-ready/ai-spec.md",
+      "title": "Ai Spec"
+    },
+    "/ai-engineering/other/production-ready/background-and-definition-review": {
+      "source": "content/ai-engineering/other/production-ready/background-and-definition-review.md",
+      "title": "Background And Definition Review"
+    },
+    "/ai-engineering/other/production-ready/background-and-definitions": {
+      "source": "content/ai-engineering/other/production-ready/background-and-definitions.md",
+      "title": "Background And Definitions"
+    },
+    "/ai-engineering/other/production-ready/building": {
+      "source": "content/ai-engineering/other/production-ready/building.md",
+      "title": "Building"
+    },
+    "/ai-engineering/other/production-ready/domain-model": {
+      "source": "content/ai-engineering/other/production-ready/domain-model.md",
+      "title": "Domain Model"
+    },
+    "/ai-engineering/other/production-ready/input": {
+      "source": "content/ai-engineering/other/production-ready/input/_index.md",
+      "title": "Input"
+    },
+    "/ai-engineering/other/production-ready/input/in-adoption": {
+      "source": "content/ai-engineering/other/production-ready/input/in-adoption.md",
+      "title": "In Adoption"
+    },
+    "/ai-engineering/other/production-ready/input/in-operation": {
+      "source": "content/ai-engineering/other/production-ready/input/in-operation.md",
+      "title": "In Operation"
+    },
+    "/ai-engineering/other/production-ready/input/in-production-ready": {
+      "source": "content/ai-engineering/other/production-ready/input/in-production-ready.md",
+      "title": "In Production Ready"
+    },
+    "/ai-engineering/other/production-ready/input/prod": {
+      "source": "content/ai-engineering/other/production-ready/input/prod.md",
+      "title": "Prod"
+    },
+    "/ai-engineering/other/production-ready/input/readme": {
+      "source": "content/ai-engineering/other/production-ready/input/readme.md",
+      "title": "Readme"
+    },
+    "/ai-engineering/other/production-ready/production-readiness-framework": {
+      "source": "content/ai-engineering/other/production-ready/production-readiness-framework.md",
+      "title": "Production Readiness Framework"
+    },
+    "/ai-engineering/other/production-ready/production-readiness-model": {
+      "source": "content/ai-engineering/other/production-ready/production-readiness-model.md",
+      "title": "Production Readiness Model"
+    },
+    "/ai-engineering/retrieval": {
+      "source": "content/ai-engineering/retrieval/_index.md",
+      "title": "Retrieval"
+    },
+    "/ai-engineering/retrieval/conceptual-alignment": {
+      "source": "content/ai-engineering/retrieval/conceptual-alignment.md",
+      "title": "Conceptual Alignment and Contract Discipline in RAG Systems"
+    },
+    "/ai-engineering/retrieval/model": {
+      "source": "content/ai-engineering/retrieval/model.md",
+      "title": "Model of Context-Augmented Task Systems"
+    },
+    "/ai-engineering/retrieval/model-representation-design": {
+      "source": "content/ai-engineering/retrieval/model-representation-design.md",
+      "title": "Representation Design for Task-Relevant Retrieval"
+    },
+    "/ai-engineering/retrieval/reframing": {
+      "source": "content/ai-engineering/retrieval/reframing.md",
+      "title": "Beyond RAG: Context-to-Task Alignment"
+    },
+    "/ai-engineering/retrieval/reframing-proposed": {
+      "source": "content/ai-engineering/retrieval/reframing-proposed.md",
+      "title": "Context-to-Task Alignment and Evidence Workflows"
+    },
+    "/ai-engineering/retrieval/reframing-session-review": {
+      "source": "content/ai-engineering/retrieval/reframing-session-review.md",
+      "title": "RAG Reframing: Editorial Review of the Companion Documents"
+    },
+    "/ai-engineering/retrieval/retrieval-design": {
+      "source": "content/ai-engineering/retrieval/retrieval-design.md",
+      "title": "Retrieval Design: Simple Baselines, Interactive Experiments, and Shared Work"
+    },
+    "/ai-engineering/working-assumptions": {
+      "source": "content/ai-engineering/working-assumptions.md",
+      "title": "Working Assumptions"
+    },
+    "/ai/approach": {
+      "source": "content/ai/approach/_index.md",
+      "title": "Approach"
+    },
+    "/ai/approach/align": {
+      "source": "content/ai/approach/align.md",
+      "title": "Align"
+    },
+    "/ai/approach/evaluation-discovery-delivery": {
+      "source": "content/ai/approach/evaluation-discovery-delivery.md",
+      "title": "Evaluation Discovery Delivery"
+    },
+    "/ai/approach/evaluations": {
+      "source": "content/ai/approach/evaluations.md",
+      "title": "Evaluations"
+    },
+    "/ai/approach/language-mindset-discipline-0": {
+      "source": "content/ai/approach/language-mindset-discipline-0.md",
+      "title": "Language Mindset Discipline 0"
+    },
+    "/ai/approach/language-mindset-discipline-1": {
+      "source": "content/ai/approach/language-mindset-discipline-1.md",
+      "title": "Language Mindset Discipline 1"
+    },
+    "/ai/approach/language-mindset-discipline-2": {
+      "source": "content/ai/approach/language-mindset-discipline-2.md",
+      "title": "Language Mindset Discipline 2"
+    },
+    "/ai/approach/minset-language-discipline": {
+      "source": "content/ai/approach/minset-language-discipline.md",
+      "title": "Minset Language Discipline"
+    },
+    "/ai/approach/my-approach-production-ai-engineering": {
+      "source": "content/ai/approach/my-approach-production-ai-engineering.md",
+      "title": "My Approach Production Ai Engineering"
+    },
+    "/ai/approach/my-perspective": {
+      "source": "content/ai/approach/my-perspective.md",
+      "title": "My Perspective"
+    },
+    "/ai/approach/my-perspective/)": {
+      "title": "Former published redirect",
+      "source": "data/redirects.json"
+    },
+    "/ai/collab-and-joint-work": {
+      "source": "content/ai/collab-and-joint-work/_index.md",
+      "title": "Collab And Joint Work"
+    },
+    "/ai/collab-and-joint-work/build-approach": {
+      "source": "content/ai/collab-and-joint-work/build-approach.md",
+      "title": "Build Approach"
+    },
+    "/ai/collab-and-joint-work/collab-transfer": {
+      "source": "content/ai/collab-and-joint-work/collab-transfer.md",
+      "title": "Collab Transfer"
+    },
+    "/ai/collab-and-joint-work/human-ai-collaboration-patterns-report": {
+      "source": "content/ai/collab-and-joint-work/human-ai-collaboration-patterns-report.md",
+      "title": "Human Ai Collaboration Patterns Report"
+    },
+    "/ai/collab-and-joint-work/joint-and-collap-principles": {
+      "source": "content/ai/collab-and-joint-work/joint-and-collap-principles.md",
+      "title": "Joint And Collap Principles"
+    },
+    "/ai/design": {
+      "source": "content/ai/design/_index.md",
+      "title": "Design"
+    },
+    "/ai/design/amortized-generation-problem": {
+      "source": "content/ai/design/amortized-generation-problem.md",
+      "title": "Amortized Generation Problem"
+    },
+    "/ai/design/prompt-driven": {
+      "source": "content/ai/design/prompt-driven.md",
+      "title": "Prompt Driven"
+    },
+    "/ai/design/workflow-design": {
+      "source": "content/ai/design/workflow-design/_index.md",
+      "title": "Workflow Design"
+    },
+    "/ai/design/workflow-design/jev-to-workflow": {
+      "source": "content/ai/design/workflow-design/jev-to-workflow.md",
+      "title": "Jev, ontologies, and confidence-based routing"
+    },
+    "/ai/design/workflow-design/langs-aspects": {
+      "source": "content/ai/design/workflow-design/langs-aspects.md",
+      "title": "Language choice and semantic guarantees for AI systems"
+    },
+    "/ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents": {
+      "source": "content/ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents.md",
+      "title": "Sandbox First Capability Discovery Llm Agents"
+    },
+    "/ai/design/workflow-design/workflow-design": {
+      "source": "content/ai/design/workflow-design/workflow-design.md",
+      "title": "Workflow Design"
+    },
+    "/ai/discovery": {
+      "source": "content/ai/discovery/_index.md",
+      "title": "Discovery"
+    },
+    "/ai/discovery/analysis-or-operation-model": {
+      "source": "content/ai/discovery/analysis-or-operation-model.md",
+      "title": "Analysis Or Operation Model"
+    },
+    "/ai/discovery/dictionary": {
+      "source": "content/ai/discovery/dictionary.md",
+      "title": "Dictionary"
+    },
+    "/ai/discovery/discovery": {
+      "source": "content/ai/discovery/discovery.md",
+      "title": "Discovery"
+    },
+    "/ai/discovery/discovery-analysis": {
+      "source": "content/ai/discovery/discovery-analysis.md",
+      "title": "Discovery Analysis"
+    },
+    "/ai/discovery/discovery-llm-roles": {
+      "source": "content/ai/discovery/discovery-llm-roles.md",
+      "title": "Discovery Llm Roles"
+    },
+    "/ai/discovery/discovery-rewritten": {
+      "source": "content/ai/discovery/discovery-rewritten.md",
+      "title": "Discovery Rewritten"
+    },
+    "/ai/discovery/discovery-v0-backup": {
+      "source": "content/ai/discovery/discovery-v0-backup.md",
+      "title": "Discovery V0 Backup"
+    },
+    "/ai/discovery/map": {
+      "source": "content/ai/discovery/map.md",
+      "title": "Map"
+    },
+    "/ai/discovery/uncertainty-ladder": {
+      "source": "content/ai/discovery/uncertainty-ladder.md",
+      "title": "Uncertainty Ladder"
+    },
+    "/ai/methodology": {
+      "source": "content/ai/methodology/_index.md",
+      "title": "Methodology"
+    },
+    "/ai/methodology-v1-3": {
+      "source": "content/ai/methodology-v1-3/_index.md",
+      "title": "Methodology v1.3"
+    },
+    "/ai/methodology-v1-3/change-detection-v1-2": {
+      "source": "content/ai/methodology-v1-3/change-detection-v1-2.md",
+      "title": "Change Detection v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/methodology-v1-3/estimation-v1-2": {
+      "source": "content/ai/methodology-v1-3/estimation-v1-2.md",
+      "title": "Estimation v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/methodology-v1-3/experimental-design-v1-1": {
+      "source": "content/ai/methodology-v1-3/experimental-design-v1-1.md",
+      "title": "Experimental Design v1.1 (LLM / Agentic Systems)"
+    },
+    "/ai/methodology-v1-3/fingerprinting-spec-v1-3": {
+      "source": "content/ai/methodology-v1-3/fingerprinting-spec-v1-3.md",
+      "title": "Fingerprinting Spec v1.3 — Canonicalization and Hash Semantics"
+    },
+    "/ai/methodology-v1-3/foundations-v1-3": {
+      "source": "content/ai/methodology-v1-3/foundations-v1-3.md",
+      "title": "Foundations v1.3 — Assumptions, Invariants, Validity Threats, and Factor Mappings"
+    },
+    "/ai/methodology-v1-3/framework-factors-v1-2": {
+      "source": "content/ai/methodology-v1-3/framework-factors-v1-2.md",
+      "title": "Framework Factors v1.2 (Failure Drivers and Required Controls)"
+    },
+    "/ai/methodology-v1-3/framework-factors-v1-3": {
+      "source": "content/ai/methodology-v1-3/framework-factors-v1-3.md",
+      "title": "Framework Factors v1.3 (Operating Model for Failure Drivers and Required Controls)"
+    },
+    "/ai/methodology-v1-3/instrumentation-v1-2": {
+      "source": "content/ai/methodology-v1-3/instrumentation-v1-2.md",
+      "title": "Instrumentation v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/methodology-v1-3/methodology-principles": {
+      "source": "content/ai/methodology-v1-3/methodology-principles.md",
+      "title": "Methodology Principles v1.1"
+    },
+    "/ai/methodology-v1-3/optimization-v1-2": {
+      "source": "content/ai/methodology-v1-3/optimization-v1-2.md",
+      "title": "Optimization v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/methodology-v1-3/schema-pack-v1-3": {
+      "source": "content/ai/methodology-v1-3/schema-pack-v1-3.md",
+      "title": "Schema Pack v1.3 — Normative Contracts for Framework Artifacts"
+    },
+    "/ai/methodology-v1-3/slices-definition-v1-1": {
+      "source": "content/ai/methodology-v1-3/slices-definition-v1-1.md",
+      "title": "Slices v1.1"
+    },
+    "/ai/methodology-v1-3/state-definition-v1-1": {
+      "source": "content/ai/methodology-v1-3/state-definition-v1-1.md",
+      "title": "State Definition v1.1 (LLM / Agentic Systems)"
+    },
+    "/ai/methodology-v1-3/usage": {
+      "source": "content/ai/methodology-v1-3/usage/_index.md",
+      "title": "Usage"
+    },
+    "/ai/methodology-v1-3/usage/_critique-v1": {
+      "source": "content/ai/methodology-v1-3/usage/_critique-v1.md",
+      "title": "AI Systems Framework — Methodology Critique (v1)"
+    },
+    "/ai/methodology-v1-3/usage/ai-systems-framework-developer-guide-v1": {
+      "source": "content/ai/methodology-v1-3/usage/ai-systems-framework-developer-guide-v1.md",
+      "title": "AI Systems Framework for Software Developers (v1)"
+    },
+    "/ai/methodology-v1-3/usage/instrumentation-guide-chat-rag-v1": {
+      "source": "content/ai/methodology-v1-3/usage/instrumentation-guide-chat-rag-v1.md",
+      "title": "Instrumentation Guide for Chat + RAG (v1)"
+    },
+    "/ai/methodology-v1-3/usage/rfc-v1-3": {
+      "source": "content/ai/methodology-v1-3/usage/rfc-v1-3.md",
+      "title": "RFC: AI Systems Framework v1.3"
+    },
+    "/ai/methodology-v1-3/usage/rfc-v1-4": {
+      "source": "content/ai/methodology-v1-3/usage/rfc-v1-4.md",
+      "title": "RFC: AI Systems Framework — Overview and Adoption (v1)"
+    },
+    "/ai/methodology/ebse": {
+      "source": "content/ai/methodology/ebse.md",
+      "title": "Evidence-Based Software Engineering"
+    },
+    "/ai/methodology/in-critical-stance": {
+      "source": "content/ai/methodology/in-critical-stance.md",
+      "title": "In Critical Stance"
+    },
+    "/ai/methodology/in-ledger": {
+      "source": "content/ai/methodology/in-ledger.md",
+      "title": "In Ledger"
+    },
+    "/ai/methodology/in-methodology": {
+      "source": "content/ai/methodology/in-methodology.md",
+      "title": "In Methodology"
+    },
+    "/ai/methodology/in-protocol": {
+      "source": "content/ai/methodology/in-protocol.md",
+      "title": "In Protocol"
+    },
+    "/ai/methodology/methodologies": {
+      "source": "content/ai/methodology/methodologies.md",
+      "title": "Methodologies"
+    },
+    "/ai/operating-model": {
+      "source": "content/ai/operating-model/_index.md",
+      "title": "Operating Model"
+    },
+    "/ai/operating-model/comparisons": {
+      "source": "content/ai/operating-model/comparisons/_index.md",
+      "title": "Comparisons"
+    },
+    "/ai/operating-model/comparisons/feature-team-and-empowered-team": {
+      "source": "content/ai/operating-model/comparisons/feature-team-and-empowered-team.md",
+      "title": "Feature Team And Empowered Team"
+    },
+    "/ai/operating-model/delivery": {
+      "source": "content/ai/operating-model/delivery.md",
+      "title": "Delivery"
+    },
+    "/ai/operating-model/discovery-and-delivery": {
+      "source": "content/ai/operating-model/discovery-and-delivery.md",
+      "title": "Discovery And Delivery"
+    },
+    "/ai/operating-model/evaluation-and-production-learning": {
+      "source": "content/ai/operating-model/evaluation-and-production-learning.md",
+      "title": "Evaluation And Production Learning"
+    },
+    "/ai/operating-model/operating-model": {
+      "source": "content/ai/operating-model/operating-model.md",
+      "title": "Operating Model"
+    },
+    "/ai/operating-model/production-commitment": {
+      "source": "content/ai/operating-model/production-commitment.md",
+      "title": "Production Commitment"
+    },
+    "/ai/operating-model/reference-example-is-not-ground-truth": {
+      "source": "content/ai/operating-model/reference-example-is-not-ground-truth.md",
+      "title": "Reference Example Is Not Ground Truth"
+    },
+    "/ai/operating-model/solution-utility-ladder": {
+      "source": "content/ai/operating-model/solution-utility-ladder.md",
+      "title": "Solution Utility Ladder"
+    },
+    "/ai/operating-model/working-notes": {
+      "source": "content/ai/operating-model/working-notes/_index.md",
+      "title": "Working Notes"
+    },
+    "/ai/operating-model/working-notes/capability-funnel": {
+      "source": "content/ai/operating-model/working-notes/capability-funnel.md",
+      "title": "Capability Funnel"
+    },
+    "/ai/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred": {
+      "source": "content/ai/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred.md",
+      "title": "Discovery Delivery Evaluation Evidence Deferred"
+    },
+    "/ai/operating-model/working-notes/discovery-delivery-interface-alternative": {
+      "source": "content/ai/operating-model/working-notes/discovery-delivery-interface-alternative.md",
+      "title": "Discovery Delivery Interface Alternative"
+    },
+    "/ai/operating-model/working-notes/discovery-delivery-platform-proposal": {
+      "source": "content/ai/operating-model/working-notes/discovery-delivery-platform-proposal.md",
+      "title": "Discovery Delivery Platform Proposal"
+    },
+    "/ai/operating-model/working-notes/discovery-delivery-practitioner-evidence": {
+      "source": "content/ai/operating-model/working-notes/discovery-delivery-practitioner-evidence.md",
+      "title": "Discovery Delivery Practitioner Evidence"
+    },
+    "/ai/operating-model/working-notes/discovery-delivery-separation-rearrangement": {
+      "source": "content/ai/operating-model/working-notes/discovery-delivery-separation-rearrangement.md",
+      "title": "Discovery Delivery Separation Rearrangement"
+    },
+    "/ai/operating-model/working-notes/discovery-delivery-separation-source-notes": {
+      "source": "content/ai/operating-model/working-notes/discovery-delivery-separation-source-notes.md",
+      "title": "Discovery Delivery Separation Source Notes"
+    },
+    "/ai/operating-model/working-notes/experiment-as-primary-unit-alternative": {
+      "source": "content/ai/operating-model/working-notes/experiment-as-primary-unit-alternative.md",
+      "title": "Experiment As Primary Unit Alternative"
+    },
+    "/ai/operating-model/working-notes/feature-behavior-vocabulary": {
+      "source": "content/ai/operating-model/working-notes/feature-behavior-vocabulary.md",
+      "title": "Feature Behavior Vocabulary"
+    },
+    "/ai/operating-model/working-notes/in-model-etc-rearrangement": {
+      "source": "content/ai/operating-model/working-notes/in-model-etc-rearrangement.md",
+      "title": "In Model Etc Rearrangement"
+    },
+    "/ai/operating-model/working-notes/in-model-etc-source-notes": {
+      "source": "content/ai/operating-model/working-notes/in-model-etc-source-notes.md",
+      "title": "In Model Etc Source Notes"
+    },
+    "/ai/operating-model/working-notes/mvp-terminology": {
+      "source": "content/ai/operating-model/working-notes/mvp-terminology.md",
+      "title": "Mvp Terminology"
+    },
+    "/ai/operating-model/working-notes/production-commitment-boundary-alternative": {
+      "source": "content/ai/operating-model/working-notes/production-commitment-boundary-alternative.md",
+      "title": "Production Commitment Boundary Alternative"
+    },
+    "/ai/operating-model/working-notes/production-flow-proposal": {
+      "source": "content/ai/operating-model/working-notes/production-flow-proposal.md",
+      "title": "Production Flow Proposal"
+    },
+    "/ai/operating-model/working-notes/solution-as-central-object": {
+      "source": "content/ai/operating-model/working-notes/solution-as-central-object.md",
+      "title": "Solution As Central Object"
+    },
+    "/ai/operating-model/working-notes/solution-states-and-terms-alternative": {
+      "source": "content/ai/operating-model/working-notes/solution-states-and-terms-alternative.md",
+      "title": "Solution States And Terms Alternative"
+    },
+    "/ai/other": {
+      "source": "content/ai/other/_index.md",
+      "title": "Other"
+    },
+    "/ai/other/methodology": {
+      "source": "content/ai/other/methodology/_index.md",
+      "title": "Methodology"
+    },
+    "/ai/other/methodology-v1-3": {
+      "source": "content/ai/other/methodology-v1-3/_index.md",
+      "title": "Methodology v1.3"
+    },
+    "/ai/other/methodology-v1-3/change-detection-v1-2": {
+      "source": "content/ai/other/methodology-v1-3/change-detection-v1-2.md",
+      "title": "Change Detection v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/other/methodology-v1-3/estimation-v1-2": {
+      "source": "content/ai/other/methodology-v1-3/estimation-v1-2.md",
+      "title": "Estimation v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/other/methodology-v1-3/experimental-design-v1-1": {
+      "source": "content/ai/other/methodology-v1-3/experimental-design-v1-1.md",
+      "title": "Experimental Design v1.1 (LLM / Agentic Systems)"
+    },
+    "/ai/other/methodology-v1-3/fingerprinting-spec-v1-3": {
+      "source": "content/ai/other/methodology-v1-3/fingerprinting-spec-v1-3.md",
+      "title": "Fingerprinting Spec v1.3 — Canonicalization and Hash Semantics"
+    },
+    "/ai/other/methodology-v1-3/foundations-v1-3": {
+      "source": "content/ai/other/methodology-v1-3/foundations-v1-3.md",
+      "title": "Foundations v1.3 — Assumptions, Invariants, Validity Threats, and Factor Mappings"
+    },
+    "/ai/other/methodology-v1-3/framework-factors-v1-2": {
+      "source": "content/ai/other/methodology-v1-3/framework-factors-v1-2.md",
+      "title": "Framework Factors v1.2 (Failure Drivers and Required Controls)"
+    },
+    "/ai/other/methodology-v1-3/framework-factors-v1-3": {
+      "source": "content/ai/other/methodology-v1-3/framework-factors-v1-3.md",
+      "title": "Framework Factors v1.3 (Operating Model for Failure Drivers and Required Controls)"
+    },
+    "/ai/other/methodology-v1-3/instrumentation-v1-2": {
+      "source": "content/ai/other/methodology-v1-3/instrumentation-v1-2.md",
+      "title": "Instrumentation v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/other/methodology-v1-3/methodology-principles": {
+      "source": "content/ai/other/methodology-v1-3/methodology-principles.md",
+      "title": "Methodology Principles v1.1"
+    },
+    "/ai/other/methodology-v1-3/optimization-v1-2": {
+      "source": "content/ai/other/methodology-v1-3/optimization-v1-2.md",
+      "title": "Optimization v1.2 — Production Discipline for LLM / Agentic Systems"
+    },
+    "/ai/other/methodology-v1-3/schema-pack-v1-3": {
+      "source": "content/ai/other/methodology-v1-3/schema-pack-v1-3.md",
+      "title": "Schema Pack v1.3 — Normative Contracts for Framework Artifacts"
+    },
+    "/ai/other/methodology-v1-3/slices-definition-v1-1": {
+      "source": "content/ai/other/methodology-v1-3/slices-definition-v1-1.md",
+      "title": "Slices v1.1"
+    },
+    "/ai/other/methodology-v1-3/state-definition-v1-1": {
+      "source": "content/ai/other/methodology-v1-3/state-definition-v1-1.md",
+      "title": "State Definition v1.1 (LLM / Agentic Systems)"
+    },
+    "/ai/other/methodology-v1-3/usage": {
+      "source": "content/ai/other/methodology-v1-3/usage/_index.md",
+      "title": "Usage"
+    },
+    "/ai/other/methodology-v1-3/usage/_critique-v1": {
+      "source": "content/ai/other/methodology-v1-3/usage/_critique-v1.md",
+      "title": "AI Systems Framework — Methodology Critique (v1)"
+    },
+    "/ai/other/methodology-v1-3/usage/ai-systems-framework-developer-guide-v1": {
+      "source": "content/ai/other/methodology-v1-3/usage/ai-systems-framework-developer-guide-v1.md",
+      "title": "AI Systems Framework for Software Developers (v1)"
+    },
+    "/ai/other/methodology-v1-3/usage/instrumentation-guide-chat-rag-v1": {
+      "source": "content/ai/other/methodology-v1-3/usage/instrumentation-guide-chat-rag-v1.md",
+      "title": "Instrumentation Guide for Chat + RAG (v1)"
+    },
+    "/ai/other/methodology-v1-3/usage/rfc-v1-3": {
+      "source": "content/ai/other/methodology-v1-3/usage/rfc-v1-3.md",
+      "title": "RFC: AI Systems Framework v1.3"
+    },
+    "/ai/other/methodology-v1-3/usage/rfc-v1-4": {
+      "source": "content/ai/other/methodology-v1-3/usage/rfc-v1-4.md",
+      "title": "RFC: AI Systems Framework — Overview and Adoption (v1)"
+    },
+    "/ai/other/methodology/ebse": {
+      "source": "content/ai/other/methodology/ebse.md",
+      "title": "Evidence-Based Software Engineering"
+    },
+    "/ai/other/methodology/in-critical-stance": {
+      "source": "content/ai/other/methodology/in-critical-stance.md",
+      "title": "In Critical Stance"
+    },
+    "/ai/other/methodology/in-ledger": {
+      "source": "content/ai/other/methodology/in-ledger.md",
+      "title": "In Ledger"
+    },
+    "/ai/other/methodology/in-methodology": {
+      "source": "content/ai/other/methodology/in-methodology.md",
+      "title": "In Methodology"
+    },
+    "/ai/other/methodology/in-protocol": {
+      "source": "content/ai/other/methodology/in-protocol.md",
+      "title": "In Protocol"
+    },
+    "/ai/other/methodology/methodologies": {
+      "source": "content/ai/other/methodology/methodologies.md",
+      "title": "Methodologies"
+    },
+    "/ai/product-model": {
+      "source": "content/ai/product-model/_index.md",
+      "title": "Product Model"
+    },
+    "/ai/product-model/risk-areas": {
+      "source": "content/ai/product-model/risk-areas/_index.md",
+      "title": "Risk Areas"
+    },
+    "/ai/product-model/risk-areas/deep-research-report-citations-formatted": {
+      "source": "content/ai/product-model/risk-areas/deep-research-report-citations-formatted.md",
+      "title": "Deep Research Report Citations Formatted"
+    },
+    "/ai/product-model/risk-areas/res-risk-areas-corrected-v2": {
+      "source": "content/ai/product-model/risk-areas/res-risk-areas-corrected-v2.md",
+      "title": "Res Risk Areas Corrected V2"
+    },
+    "/ai/product-model/risk-areas/risk-areas": {
+      "source": "content/ai/product-model/risk-areas/risk-areas.md",
+      "title": "Risk Areas"
+    },
+    "/ai/review": {
+      "source": "content/ai/review.md",
+      "title": "Review"
+    },
+    "/ai/risk-areas": {
+      "source": "content/ai/risk-areas/_index.md",
+      "title": "Risk Areas"
+    },
+    "/ai/risk-areas/deep-research-report-citations-formatted": {
+      "source": "content/ai/risk-areas/deep-research-report-citations-formatted.md",
+      "title": "Deep Research Report Citations Formatted"
+    },
+    "/ai/risk-areas/res-risk-areas-corrected-v2": {
+      "source": "content/ai/risk-areas/res-risk-areas-corrected-v2.md",
+      "title": "Res Risk Areas Corrected V2"
+    },
+    "/ai/risk-areas/risk-areas": {
+      "source": "content/ai/risk-areas/risk-areas.md",
+      "title": "Risk Areas"
+    },
+    "/ai/risk-areas/risk-areas-comparisons": {
+      "source": "content/ai/risk-areas/risk-areas-comparisons.md",
+      "title": "Risk Areas Comparisons"
+    },
+    "/ai/risk-areas/risk-areas-model": {
+      "source": "content/ai/risk-areas/risk-areas-model.md",
+      "title": "Risk Areas Model"
+    },
+    "/ai/risk-areas/risk-areas-reassembled": {
+      "source": "content/ai/risk-areas/risk-areas-reassembled.md",
+      "title": "Risk Areas Reassembled"
+    },
+    "/ai/system-evaluation": {
+      "source": "content/ai/system-evaluation/_index.md",
+      "title": "Building and Reviewing Software with AI"
+    },
+    "/ai/system-evaluation/code-review": {
+      "source": "content/ai/system-evaluation/code-review.md",
+      "title": "Reviewing Software Changes"
+    },
+    "/ai/system-evaluation/delivery-flow": {
+      "source": "content/ai/system-evaluation/delivery-flow.md",
+      "title": "Common Mistakes in AI-Assisted Development"
+    },
+    "/ai/system-evaluation/generation": {
+      "title": "Former published alias",
+      "source": "Hugo alias"
+    },
+    "/ai/system-evaluation/harness": {
+      "source": "content/ai/system-evaluation/harness.md",
+      "title": "Working with a Coding Agent"
+    },
+    "/ai/system-evaluation/review-flow": {
+      "source": "content/ai/system-evaluation/review-flow.md",
+      "title": "Testing a Change During Review"
+    },
+    "/ai/system-evaluation/review-flow-specification": {
+      "source": "content/ai/system-evaluation/review-flow-specification.md",
+      "title": "A Practical Review Process"
+    },
+    "/ai/system-evaluation/skill-product-framing-build": {
+      "source": "content/ai/system-evaluation/skill-product-framing-build.md",
+      "title": "Defining the Product Before Building"
+    },
+    "/ai/system-evaluation/skills-hld-build": {
+      "source": "content/ai/system-evaluation/skills-hld-build.md",
+      "title": "Making System Design Decisions"
+    },
+    "/ai/var": {
+      "source": "content/ai/var/_index.md",
+      "title": "Var"
+    },
+    "/ai/var/01-was": {
+      "source": "content/ai/var/01-was/_index.md",
+      "title": "01 Was"
+    },
+    "/ai/var/01-was/ai-product-types-2": {
+      "source": "content/ai/var/01-was/ai-product-types-2.md",
+      "title": "Ai Product Types 2"
+    },
+    "/ai/var/01-was/ai-product-types-improvement-proposal": {
+      "source": "content/ai/var/01-was/ai-product-types-improvement-proposal.md",
+      "title": "Ai Product Types Improvement Proposal"
+    },
+    "/ai/var/02-ai-project-examples": {
+      "source": "content/ai/var/02-ai-project-examples/_index.md",
+      "title": "02 Ai Project Examples"
+    },
+    "/ai/var/02-ai-project-examples/ai-project-examples-and-design-model": {
+      "source": "content/ai/var/02-ai-project-examples/ai-project-examples-and-design-model.md",
+      "title": "Ai Project Examples And Design Model"
+    },
+    "/ai/var/02-ai-project-examples/cases": {
+      "source": "content/ai/var/02-ai-project-examples/cases/_index.md",
+      "title": "Cases"
+    },
+    "/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination": {
+      "source": "content/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination.md",
+      "title": "Agentic Operations And Coordination"
+    },
+    "/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems": {
+      "source": "content/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems.md",
+      "title": "Ai Assisted Analysis And Investigation Systems"
+    },
+    "/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments": {
+      "source": "content/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments.md",
+      "title": "Analytical Engines And Programmable Environments"
+    },
+    "/ai/var/02-ai-project-examples/cases/clinical-and-domain-specific-copilots": {
+      "source": "content/ai/var/02-ai-project-examples/cases/clinical-and-domain-specific-copilots.md",
+      "title": "Clinical And Domain Specific Copilots"
+    },
+    "/ai/var/02-ai-project-examples/cases/closed-set-task-assistant": {
+      "source": "content/ai/var/02-ai-project-examples/cases/closed-set-task-assistant.md",
+      "title": "Closed Set Task Assistant"
+    },
+    "/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses": {
+      "source": "content/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses.md",
+      "title": "Coding Agents And Harnesses"
+    },
+    "/ai/var/02-ai-project-examples/cases/context-aware-support-assistant": {
+      "source": "content/ai/var/02-ai-project-examples/cases/context-aware-support-assistant.md",
+      "title": "Context Aware Support Assistant"
+    },
+    "/ai/var/02-ai-project-examples/cases/general-purpose-ai-assistant": {
+      "source": "content/ai/var/02-ai-project-examples/cases/general-purpose-ai-assistant.md",
+      "title": "General Purpose Ai Assistant"
+    },
+    "/ai/var/02-ai-project-examples/operating-regimes": {
+      "source": "content/ai/var/02-ai-project-examples/operating-regimes.md",
+      "title": "Operating Regimes"
+    },
+    "/ai/var/ai-product-types": {
+      "source": "content/ai/var/ai-product-types.md",
+      "title": "Ai Product Types"
+    },
+    "/ai/var/ai-systems-classification": {
+      "source": "content/ai/var/ai-systems-classification/_index.md",
+      "title": "Ai Systems Classification"
+    },
+    "/ai/var/ai-systems-classification/ais-classification": {
+      "source": "content/ai/var/ai-systems-classification/ais-classification.md",
+      "title": "Ais Classification"
+    },
+    "/ai/var/practitioner-guide-seven-ai-product-types": {
+      "source": "content/ai/var/practitioner-guide-seven-ai-product-types.md",
+      "title": "Practitioner Guide Seven Ai Product Types"
+    },
+    "/ai/var/reuse": {
+      "source": "content/ai/var/reuse.md",
+      "title": "Reuse"
+    },
+    "/ai/var/security-aspect": {
+      "source": "content/ai/var/security-aspect.md",
+      "title": "Security Aspect"
+    },
+    "/blog": {
+      "source": "content/blog/_index.md",
+      "title": "Blog"
+    },
+    "/blog/example-post": {
+      "source": "content/blog/example/index.md",
+      "title": "Example Post"
+    },
+    "/blog/post-link": {
+      "title": "Former published redirect",
+      "source": "data/redirects.json"
+    },
+    "/content-use": {
+      "source": "content/content-use.md",
+      "title": "Content Use"
+    },
+    "/engineering": {
+      "source": "content/engineering/_index.md",
+      "title": "Engineering"
+    },
+    "/engineering/aha-programming": {
+      "source": "content/engineering/aha-programming.md",
+      "title": "AHA Programming 💡"
+    },
+    "/engineering/architecture": {
+      "source": "content/engineering/architecture/_index.md",
+      "title": "Architecture"
+    },
+    "/engineering/architecture/architecture": {
+      "source": "content/engineering/architecture/architecture.md",
+      "title": "Architecture"
+    },
+    "/engineering/architecture/changeability": {
+      "source": "content/engineering/architecture/changeability.md",
+      "title": "Changeability"
+    },
+    "/engineering/architecture/characteristics": {
+      "source": "content/engineering/architecture/characteristics.md",
+      "title": "Characteristics"
+    },
+    "/engineering/architecture/techniques": {
+      "source": "content/engineering/architecture/techniques.md",
+      "title": "Techniques"
+    },
+    "/engineering/architecture/toolbox": {
+      "source": "content/engineering/architecture/toolbox.md",
+      "title": "Toolbox"
+    },
+    "/engineering/architecture/yagni": {
+      "source": "content/engineering/architecture/yagni.md",
+      "title": "Yagni"
+    },
+    "/engineering/data": {
+      "source": "content/engineering/data/_index.md",
+      "title": "Data"
+    },
+    "/engineering/data/databases": {
+      "source": "content/engineering/data/databases.md",
+      "title": "Databases"
+    },
+    "/engineering/data/trade-off-db": {
+      "source": "content/engineering/data/trade-off-db.md",
+      "title": "Trade Off Db"
+    },
+    "/engineering/ddd": {
+      "source": "content/engineering/ddd/_index.md",
+      "title": "DDD"
+    },
+    "/engineering/ddd/declarative": {
+      "source": "content/engineering/ddd/declarative.md",
+      "title": "Declarative"
+    },
+    "/engineering/delivery-techniques": {
+      "source": "content/engineering/delivery-techniques/_index.md",
+      "title": "Delivery Techniques"
+    },
+    "/engineering/delivery-techniques/delivery-skeleton-1-in": {
+      "source": "content/engineering/delivery-techniques/delivery-skeleton-1-in.md",
+      "title": "Delivery Skeleton 1 In"
+    },
+    "/engineering/delivery-techniques/delivery-skeleton-2-in": {
+      "source": "content/engineering/delivery-techniques/delivery-skeleton-2-in.md",
+      "title": "Delivery Skeleton 2 In"
+    },
+    "/engineering/delivery-techniques/engineering-delivery-techniques-guide": {
+      "source": "content/engineering/delivery-techniques/engineering-delivery-techniques-guide.md",
+      "title": "Engineering Delivery Techniques Guide"
+    },
+    "/engineering/delivery-techniques/exploratory-design": {
+      "source": "content/engineering/delivery-techniques/exploratory-design.md",
+      "title": "Exploratory Design"
+    },
+    "/engineering/delivery-techniques/skeletons": {
+      "source": "content/engineering/delivery-techniques/skeletons.md",
+      "title": "Skeletons"
+    },
+    "/engineering/ebse": {
+      "source": "content/engineering/ebse.md",
+      "title": "Ebse"
+    },
+    "/engineering/eng-exp": {
+      "source": "content/engineering/eng-exp/_index.md",
+      "title": "Engineering Experiments"
+    },
+    "/engineering/eng-exp/design-pressure": {
+      "source": "content/engineering/eng-exp/design-pressure.md",
+      "title": "Design Pressure"
+    },
+    "/engineering/eng-exp/ebse": {
+      "source": "content/engineering/eng-exp/ebse.md",
+      "title": "Ebse"
+    },
+    "/engineering/eng-exp/edd": {
+      "source": "content/engineering/eng-exp/edd.md",
+      "title": "Edd"
+    },
+    "/engineering/eng-exp/exploratory-design": {
+      "source": "content/engineering/eng-exp/exploratory-design.md",
+      "title": "Exploratory Design"
+    },
+    "/engineering/eng-exp/input": {
+      "source": "content/engineering/eng-exp/input/_index.md",
+      "title": "Input"
+    },
+    "/engineering/eng-exp/input/experiments-vs-features": {
+      "source": "content/engineering/eng-exp/input/experiments-vs-features.md",
+      "title": "Experiments Vs Features"
+    },
+    "/engineering/eng-exp/input/roadmap-citation": {
+      "source": "content/engineering/eng-exp/input/roadmap-citation.md",
+      "title": "Roadmap Citation"
+    },
+    "/engineering/engineering-guide": {
+      "source": "content/engineering/engineering-guide.md",
+      "title": "Engineering Guide"
+    },
+    "/engineering/engineering-review-framework": {
+      "source": "content/engineering/engineering-review-framework/_index.md",
+      "title": "Engineering Review Framework"
+    },
+    "/engineering/engineering-review-framework/backward-design-and-independent-verification": {
+      "source": "content/engineering/engineering-review-framework/backward-design-and-independent-verification.md",
+      "title": "Backward Design And Independent Verification"
+    },
+    "/engineering/engineering-review-framework/business-product-and-feature-context": {
+      "source": "content/engineering/engineering-review-framework/business-product-and-feature-context.md",
+      "title": "Business Product And Feature Context"
+    },
+    "/engineering/engineering-review-framework/engineering-review-framework": {
+      "source": "content/engineering/engineering-review-framework/engineering-review-framework.md",
+      "title": "Engineering Review Framework"
+    },
+    "/engineering/engineering-review-framework/framework-rationale-and-use": {
+      "source": "content/engineering/engineering-review-framework/framework-rationale-and-use.md",
+      "title": "Framework Rationale And Use"
+    },
+    "/engineering/engineering-review-framework/llm-specific-review-guide": {
+      "source": "content/engineering/engineering-review-framework/llm-specific-review-guide.md",
+      "title": "Llm Specific Review Guide"
+    },
+    "/engineering/engineering-review-framework/requirements-and-quality-targets": {
+      "source": "content/engineering/engineering-review-framework/requirements-and-quality-targets.md",
+      "title": "Requirements And Quality Targets"
+    },
+    "/engineering/engineering-review-framework/review-agents-skills-and-tools": {
+      "source": "content/engineering/engineering-review-framework/review-agents-skills-and-tools.md",
+      "title": "Review Agents Skills And Tools"
+    },
+    "/engineering/engineering-review-framework/review-reference-lists": {
+      "source": "content/engineering/engineering-review-framework/review-reference-lists.md",
+      "title": "Review Reference Lists"
+    },
+    "/engineering/engineering-review-framework/review-tools-and-skills-catalog": {
+      "source": "content/engineering/engineering-review-framework/review-tools-and-skills-catalog.md",
+      "title": "Review Tools And Skills Catalog"
+    },
+    "/engineering/engineering-review-framework/software-engineering-principles": {
+      "source": "content/engineering/engineering-review-framework/software-engineering-principles.md",
+      "title": "Software Engineering Principles"
+    },
+    "/engineering/engineering-review-framework/technical-review-guide": {
+      "source": "content/engineering/engineering-review-framework/technical-review-guide.md",
+      "title": "Technical Review Guide"
+    },
+    "/engineering/engineering-review-framework/testing-ci-and-pr-review-guide": {
+      "source": "content/engineering/engineering-review-framework/testing-ci-and-pr-review-guide.md",
+      "title": "Testing Ci And Pr Review Guide"
+    },
+    "/engineering/engineering-review-framework/workflow-trial-and-recommendations": {
+      "source": "content/engineering/engineering-review-framework/workflow-trial-and-recommendations.md",
+      "title": "Workflow Trial And Recommendations"
+    },
+    "/engineering/langs": {
+      "source": "content/engineering/langs/_index.md",
+      "title": "Languages"
+    },
+    "/engineering/langs/python": {
+      "source": "content/engineering/langs/python/_index.md",
+      "title": "Python"
+    },
+    "/engineering/langs/python/cpython-free-threading-and-concurrency": {
+      "source": "content/engineering/langs/python/cpython-free-threading-and-concurrency.md",
+      "title": "CPython free threading and concurrency"
+    },
+    "/engineering/langs/python/cpython-jvm-comparison-and-polymorphism": {
+      "source": "content/engineering/langs/python/cpython-jvm-comparison-and-polymorphism.md",
+      "title": "CPython, the JVM, and polymorphism"
+    },
+    "/engineering/langs/python/python-concepts-comparison": {
+      "source": "content/engineering/langs/python/python-concepts-comparison.md",
+      "title": "Python data model, annotations, and Pydantic"
+    },
+    "/engineering/methodologies": {
+      "source": "content/engineering/methodologies.md",
+      "title": "Methodologies"
+    },
+    "/engineering/operating-model": {
+      "source": "content/engineering/operating-model.md",
+      "title": "Operating Model"
+    },
+    "/engineering/premature-abstraction": {
+      "source": "content/engineering/premature-abstraction.md",
+      "title": "Premature Abstraction"
+    },
+    "/engineering/progressive": {
+      "source": "content/engineering/progressive/_index.md",
+      "title": "Progressive Architecture"
+    },
+    "/engineering/progressive/backward-design-der": {
+      "source": "content/engineering/progressive/backward-design-der.md",
+      "title": "Backward Design Der"
+    },
+    "/engineering/progressive/goal-oriented-architecture": {
+      "source": "content/engineering/progressive/goal-oriented-architecture/_index.md",
+      "title": "Goal-Oriented Architecture"
+    },
+    "/engineering/progressive/goal-oriented-architecture/flow-1": {
+      "source": "content/engineering/progressive/goal-oriented-architecture/flow-1.md",
+      "title": "Flow 1"
+    },
+    "/engineering/progressive/goal-oriented-architecture/flow-2": {
+      "source": "content/engineering/progressive/goal-oriented-architecture/flow-2.md",
+      "title": "Flow 2"
+    },
+    "/engineering/progressive/in-intent-driven": {
+      "source": "content/engineering/progressive/in-intent-driven.md",
+      "title": "In Intent Driven"
+    },
+    "/engineering/topics": {
+      "source": "content/engineering/topics/_index.md",
+      "title": "Engineering Topics"
+    },
+    "/engineering/topics/api": {
+      "source": "content/engineering/topics/api.md",
+      "title": "Api"
+    },
+    "/engineering/topics/caching": {
+      "source": "content/engineering/topics/caching.md",
+      "title": "Caching"
+    },
+    "/engineering/topics/cassandra": {
+      "source": "content/engineering/topics/cassandra.md",
+      "title": "Cassandra"
+    },
+    "/engineering/topics/communication": {
+      "source": "content/engineering/topics/communication.md",
+      "title": "Communication"
+    },
+    "/engineering/topics/deployment": {
+      "source": "content/engineering/topics/deployment.md",
+      "title": "Deployment"
+    },
+    "/engineering/topics/distributed-systems": {
+      "source": "content/engineering/topics/distributed-systems.md",
+      "title": "Distributed Systems"
+    },
+    "/engineering/topics/dynamodb": {
+      "source": "content/engineering/topics/dynamodb.md",
+      "title": "Dynamodb"
+    },
+    "/engineering/topics/eda": {
+      "source": "content/engineering/topics/eda.md",
+      "title": "Eda"
+    },
+    "/engineering/topics/envelope-estimations": {
+      "source": "content/engineering/topics/envelope-estimations.md",
+      "title": "Envelope Estimations"
+    },
+    "/engineering/topics/hashing": {
+      "source": "content/engineering/topics/hashing.md",
+      "title": "Hashing"
+    },
+    "/engineering/topics/kafka": {
+      "source": "content/engineering/topics/kafka.md",
+      "title": "Kafka"
+    },
+    "/engineering/topics/kubernetes": {
+      "source": "content/engineering/topics/kubernetes.md",
+      "title": "Kubernetes"
+    },
+    "/engineering/topics/microservices": {
+      "source": "content/engineering/topics/microservices.md",
+      "title": "Microservices"
+    },
+    "/engineering/topics/partitioning": {
+      "source": "content/engineering/topics/partitioning.md",
+      "title": "Partitioning"
+    },
+    "/engineering/topics/queues": {
+      "source": "content/engineering/topics/queues.md",
+      "title": "Queues"
+    },
+    "/engineering/topics/replication": {
+      "source": "content/engineering/topics/replication.md",
+      "title": "Replication"
+    },
+    "/engineering/topics/security": {
+      "source": "content/engineering/topics/security.md",
+      "title": "Security"
+    },
+    "/engineering/topics/sql": {
+      "source": "content/engineering/topics/sql.md",
+      "title": "Sql"
+    },
+    "/engineering/topics/stream-processing": {
+      "source": "content/engineering/topics/stream-processing.md",
+      "title": "Stream Processing"
+    },
+    "/engineering/topics/streaming": {
+      "source": "content/engineering/topics/streaming.md",
+      "title": "Streaming"
+    },
+    "/engineering/topics/terraform": {
+      "source": "content/engineering/topics/terraform.md",
+      "title": "Terraform"
+    },
+    "/engineering/topics/tests": {
+      "source": "content/engineering/topics/tests/_index.md",
+      "title": "Testing"
+    },
+    "/engineering/topics/tests/test-strategy-foundations": {
+      "source": "content/engineering/topics/tests/test-strategy-foundations.md",
+      "title": "Test Strategy Foundations"
+    },
+    "/engineering/topics/tests/test-strategy-foundations-adoption-v2": {
+      "source": "content/engineering/topics/tests/test-strategy-foundations-adoption-v2.md",
+      "title": "Test Strategy Foundations Adoption V2"
+    },
+    "/engineering/topics/tests/test-strategy-foundations-ref": {
+      "source": "content/engineering/topics/tests/test-strategy-foundations-ref.md",
+      "title": "Test Strategy Foundations Ref"
+    },
+    "/engineering/topics/tests/tests": {
+      "source": "content/engineering/topics/tests/tests.md",
+      "title": "Tests"
+    },
+    "/engineering/topics/trade-offs": {
+      "source": "content/engineering/topics/trade-offs.md",
+      "title": "Trade Offs"
+    },
+    "/engineering/topics/transactions": {
+      "source": "content/engineering/topics/transactions.md",
+      "title": "Transactions"
+    },
+    "/english": {
+      "source": "content/english/_index.md",
+      "title": "English"
+    },
+    "/privacy": {
+      "source": "content/privacy.md",
+      "title": "Privacy Policy"
+    },
+    "/projects": {
+      "source": "content/projects/_index.md",
+      "title": "Projects"
+    },
+    "/projects/about": {
+      "source": "content/projects/projects.md",
+      "title": "Projects"
+    },
+    "/projects/code-assistant": {
+      "source": "content/projects/code-assistant.md",
+      "title": "Codebase-Aware Engineering Assistant (Concept)"
+    },
+    "/projects/common": {
+      "source": "content/projects/common/_index.md",
+      "title": "Common"
+    },
+    "/projects/common/chatbots_practice": {
+      "source": "content/projects/common/chatbots_practice.md",
+      "title": "Chatbots Practice"
+    },
+    "/projects/common/collaborative_learning_ts-and-js": {
+      "source": "content/projects/common/collaborative_learning_TS and JS.md",
+      "title": "Collaborative Learning Ts And Js"
+    },
+    "/projects/common/critical_thinking": {
+      "source": "content/projects/common/critical_thinking.md",
+      "title": "Critical Thinking"
+    },
+    "/projects/common/critical-thinking": {
+      "source": "content/projects/common/critical-thinking.md",
+      "title": "Critical Thinking"
+    },
+    "/projects/common/hypothesis": {
+      "source": "content/projects/common/hypothesis.md",
+      "title": "Hypothesis"
+    },
+    "/projects/common/improvements": {
+      "source": "content/projects/common/improvements.md",
+      "title": "Improvements"
+    },
+    "/projects/common/speech_improver": {
+      "source": "content/projects/common/speech_improver.md",
+      "title": "Speech Improver"
+    },
+    "/projects/foundations": {
+      "source": "content/projects/foundations/_index.md",
+      "title": "Foundations"
+    },
+    "/projects/foundations/learning": {
+      "source": "content/projects/foundations/learning.md",
+      "title": "Learning"
+    },
+    "/projects/foundations/questions": {
+      "source": "content/projects/foundations/questions.md",
+      "title": "Questions"
+    },
+    "/projects/foundations/reflective_practice": {
+      "source": "content/projects/foundations/reflective_practice.md",
+      "title": "Reflective Practice"
+    },
+    "/projects/foundations/research": {
+      "source": "content/projects/foundations/research.md",
+      "title": "Research"
+    },
+    "/projects/foundations/understanding": {
+      "source": "content/projects/foundations/understanding.md",
+      "title": "Understanding"
+    },
+    "/projects/remote_server": {
+      "source": "content/projects/remote_server.md",
+      "title": "Remote Server"
+    },
+    "/reading-and-evaluating": {
+      "source": "content/reading-and-evaluating.md",
+      "title": "Reading and evaluating this work"
+    },
+    "/system-design": {
+      "source": "content/system-design/_index.md",
+      "title": "System Design"
+    },
+    "/system-design/02-system-design": {
+      "source": "content/system-design/02-system-design.md",
+      "title": "System Design Principles"
+    },
+    "/system-design/about": {
+      "title": "System Design",
+      "source": "content/system-design/system-design.md"
+    },
+    "/system-design/archive": {
+      "source": "content/system-design/archive/_index.md",
+      "title": "System Design Archive"
+    },
+    "/system-design/archive/api-gateway-v0": {
+      "source": "content/system-design/archive/api-gateway-v0.md",
+      "title": "Original API-gateway notes"
+    },
+    "/system-design/archive/architecture-principles-v0": {
+      "source": "content/system-design/archive/architecture-principles-v0.md",
+      "title": "Architecture principles before the refactor"
+    },
+    "/system-design/archive/building-blocks-v0": {
+      "source": "content/system-design/archive/building-blocks-v0.md",
+      "title": "Building-block notes before the refactor"
+    },
+    "/system-design/archive/interview-phrases-v0": {
+      "source": "content/system-design/archive/interview-phrases-v0.md",
+      "title": "Interview phrase collection before the refactor"
+    },
+    "/system-design/archive/messaging-v0": {
+      "source": "content/system-design/archive/messaging-v0.md",
+      "title": "Original messaging and event notes"
+    },
+    "/system-design/archive/mock-interview-observations-v0": {
+      "source": "content/system-design/archive/mock-interview-observations-v0.md",
+      "title": "Original mock-interview observations"
+    },
+    "/system-design/archive/practice-rubric-v0": {
+      "source": "content/system-design/archive/practice-rubric-v0.md",
+      "title": "Original System Design Practice Rubric"
+    },
+    "/system-design/archive/problem-solving-v0": {
+      "source": "content/system-design/archive/problem-solving-v0.md",
+      "title": "Original problem-solving notes"
+    },
+    "/system-design/archive/resources-v0": {
+      "source": "content/system-design/archive/resources-v0.md",
+      "title": "Original system-design resource catalog"
+    },
+    "/system-design/archive/scalability-reading-notes": {
+      "source": "content/system-design/archive/scalability-reading-notes.md",
+      "title": "Scalability reading notes"
+    },
+    "/system-design/archive/study-plan-v0": {
+      "source": "content/system-design/archive/study-plan-v0.md",
+      "title": "Preparation notes before the refactor"
+    },
+    "/system-design/archive/url-shortener-design-v0": {
+      "source": "content/system-design/archive/url-shortener-design-v0.md",
+      "title": "URL-shortener design alternatives before the refactor"
+    },
+    "/system-design/archive/url-shortener-nfrs-before-refactor": {
+      "source": "content/system-design/archive/url-shortener-nfrs-before-refactor.md",
+      "title": "Earlier URL-shortener NFR reasoning"
+    },
+    "/system-design/elements": {
+      "source": "content/system-design/elements/_index.md",
+      "title": "System Design Building Blocks"
+    },
+    "/system-design/elements/api_gateway": {
+      "source": "content/system-design/elements/api_gateway.md",
+      "title": "Api Gateway"
+    },
+    "/system-design/elements/api-gateway": {
+      "source": "content/system-design/elements/api-gateway.md",
+      "title": "API Gateway"
+    },
+    "/system-design/elements/background": {
+      "source": "content/system-design/elements/background/_index.md",
+      "title": "Background"
+    },
+    "/system-design/elements/background/events": {
+      "source": "content/system-design/elements/background/events.md",
+      "title": "Events"
+    },
+    "/system-design/elements/elements": {
+      "source": "content/system-design/elements/elements.md",
+      "title": "Building-Block Map and Study Template"
+    },
+    "/system-design/elements/messaging": {
+      "source": "content/system-design/elements/messaging.md",
+      "title": "Messaging and Events"
+    },
+    "/system-design/elements/test_page": {
+      "source": "content/system-design/elements/test_page.md",
+      "title": "Test Page"
+    },
+    "/system-design/frameworks": {
+      "source": "content/system-design/frameworks/_index.md",
+      "title": "System Design Frameworks"
+    },
+    "/system-design/frameworks/framework_hi": {
+      "source": "content/system-design/frameworks/framework_hi.md",
+      "title": "Framework Hi"
+    },
+    "/system-design/frameworks/framework_iv": {
+      "source": "content/system-design/frameworks/framework_iv.md",
+      "title": "Framework Iv"
+    },
+    "/system-design/frameworks/framework_sd": {
+      "source": "content/system-design/frameworks/framework_sd.md",
+      "title": "Framework Sd"
+    },
+    "/system-design/frameworks/framework-hi": {
+      "source": "content/system-design/frameworks/framework-hi.md",
+      "title": "Hello Interview Delivery Framework"
+    },
+    "/system-design/frameworks/framework-iv": {
+      "source": "content/system-design/frameworks/framework-iv.md",
+      "title": "Interviewing.io System Design Framework"
+    },
+    "/system-design/frameworks/problem-solving-approach": {
+      "source": "content/system-design/frameworks/problem-solving-approach.md",
+      "title": "Problem-Solving Checklist"
+    },
+    "/system-design/frameworks/sd-framework-v0": {
+      "source": "content/system-design/frameworks/sd-framework-v0.md",
+      "title": "Personal Requirements-First Framework Draft"
+    },
+    "/system-design/integrated-test-pages": {
+      "source": "content/system-design/integrated-test-pages/_index.md",
+      "title": "Integrated Test Pages"
+    },
+    "/system-design/integrated-test-pages/callouts": {
+      "source": "content/system-design/integrated-test-pages/callouts.md",
+      "title": "Callouts"
+    },
+    "/system-design/integrated-test-pages/migration-smoke": {
+      "source": "content/system-design/integrated-test-pages/migration-smoke.md",
+      "title": "Migration Smoke"
+    },
+    "/system-design/interview": {
+      "source": "content/system-design/interview/_index.md",
+      "title": "System Design Interview Practice"
+    },
+    "/system-design/interview/interview": {
+      "source": "content/system-design/interview/interview.md",
+      "title": "Interview"
+    },
+    "/system-design/interview/interview_phrases": {
+      "source": "content/system-design/interview/interview_phrases.md",
+      "title": "Interview Phrases"
+    },
+    "/system-design/interview/iw-io-interview": {
+      "source": "content/system-design/interview/iw-io-interview.md",
+      "title": "Interviewing.io Interview Notes"
+    },
+    "/system-design/interview/mock-interviews": {
+      "source": "content/system-design/interview/mock-interviews.md",
+      "title": "Reviewing Mock System Design Interviews"
+    },
+    "/system-design/interview/phrases": {
+      "source": "content/system-design/interview/phrases.md",
+      "title": "Communicating During a System Design Interview"
+    },
+    "/system-design/interview/problem_solving_approach": {
+      "source": "content/system-design/interview/problem_solving_approach.md",
+      "title": "Problem Solving Approach"
+    },
+    "/system-design/interview/sd-interview-input": {
+      "source": "content/system-design/interview/sd-interview-input.md",
+      "title": "Collected System Design Interview Comments"
+    },
+    "/system-design/nfr": {
+      "source": "content/system-design/nfr/_index.md",
+      "title": "Non-Functional Requirements"
+    },
+    "/system-design/nfr/consistency": {
+      "source": "content/system-design/nfr/consistency.md",
+      "title": "Consistency"
+    },
+    "/system-design/nfr/non-functional-requirements": {
+      "source": "content/system-design/nfr/non-functional-requirements.md",
+      "title": "Reasoning About Non-Functional Requirements"
+    },
+    "/system-design/nfr/observability": {
+      "source": "content/system-design/nfr/observability.md",
+      "title": "Observability"
+    },
+    "/system-design/nfr/reliability--availability": {
+      "source": "content/system-design/nfr/reliability & availability.md",
+      "title": "Reliability & Availability"
+    },
+    "/system-design/nfr/reliability-availability": {
+      "source": "content/system-design/nfr/reliability-availability.md",
+      "title": "Reliability and Availability"
+    },
+    "/system-design/nfr/scalability": {
+      "source": "content/system-design/nfr/scalability.md",
+      "title": "Scalability"
+    },
+    "/system-design/projects": {
+      "source": "content/system-design/projects/_index.md",
+      "title": "System Design Practice Cases"
+    },
+    "/system-design/projects/_themes": {
+      "source": "content/system-design/projects/_themes.md",
+      "title": " Themes"
+    },
+    "/system-design/projects/case-template": {
+      "source": "content/system-design/projects/case-template.md",
+      "title": "System Design Case Template"
+    },
+    "/system-design/projects/chat-room": {
+      "source": "content/system-design/projects/chat-room.md",
+      "title": "Public Chat Room: Interview Report"
+    },
+    "/system-design/projects/code_deployment": {
+      "source": "content/system-design/projects/code_deployment.md",
+      "title": "Code Deployment"
+    },
+    "/system-design/projects/code-deployment": {
+      "source": "content/system-design/projects/code-deployment.md",
+      "title": "Code Deployment System: Requirements Sketch"
+    },
+    "/system-design/projects/designing-dropbox": {
+      "source": "content/system-design/projects/designing-dropbox.md",
+      "title": "Designing Dropbox"
+    },
+    "/system-design/projects/dropbox": {
+      "source": "content/system-design/projects/dropbox/_index.md",
+      "title": "Dropbox Design Case"
+    },
+    "/system-design/projects/dropbox/dropbox": {
+      "source": "content/system-design/projects/dropbox/dropbox.md",
+      "title": "Dropbox: Personal Preparation Notes"
+    },
+    "/system-design/projects/dropbox/hello-interview-notes": {
+      "source": "content/system-design/projects/dropbox/hello-interview-notes.md",
+      "title": "Dropbox: Hello Interview Walkthrough"
+    },
+    "/system-design/projects/events": {
+      "source": "content/system-design/projects/events.md",
+      "title": "Events"
+    },
+    "/system-design/projects/infra": {
+      "source": "content/system-design/projects/infra/_index.md",
+      "title": "Infra"
+    },
+    "/system-design/projects/infra/slowflake-id": {
+      "source": "content/system-design/projects/infra/slowflake-id.md",
+      "title": "Snowflake ID"
+    },
+    "/system-design/projects/instagram": {
+      "source": "content/system-design/projects/Instagram.md",
+      "title": "Instagram: Collected Design Discussion"
+    },
+    "/system-design/projects/interviewing-io": {
+      "source": "content/system-design/projects/interviewing-io.md",
+      "title": "Interviewing.io Product Design"
+    },
+    "/system-design/projects/interviewing.io": {
+      "source": "content/system-design/projects/interviewing.io.md",
+      "title": "Interviewing.Io"
+    },
+    "/system-design/projects/iv4_example": {
+      "source": "content/system-design/projects/iv4_example.md",
+      "title": "Iv4 Example"
+    },
+    "/system-design/projects/iv4-example": {
+      "source": "content/system-design/projects/iv4-example.md",
+      "title": "Interviewing.io Worked Example"
+    },
+    "/system-design/projects/job-scheduler": {
+      "source": "content/system-design/projects/job-scheduler.md",
+      "title": "Job Scheduler: Requirements Draft"
+    },
+    "/system-design/projects/key-value-store": {
+      "source": "content/system-design/projects/key-value-store.md",
+      "title": "Key-Value Store: Cache Policy Notes"
+    },
+    "/system-design/projects/live-commenting": {
+      "source": "content/system-design/projects/live-commenting.md",
+      "title": "Live Commenting"
+    },
+    "/system-design/projects/online-file-storage": {
+      "source": "content/system-design/projects/online-file-storage.md",
+      "title": "Online File Storage"
+    },
+    "/system-design/projects/rate_limiter": {
+      "source": "content/system-design/projects/rate_limiter.md",
+      "title": "Rate Limiter"
+    },
+    "/system-design/projects/rate-limiter": {
+      "source": "content/system-design/projects/rate-limiter.md",
+      "title": "Rate Limiter: Reading and Design Outline"
+    },
+    "/system-design/projects/sd_reviews": {
+      "source": "content/system-design/projects/sd_reviews.md",
+      "title": "Sd Reviews"
+    },
+    "/system-design/projects/spotify": {
+      "source": "content/system-design/projects/spotify.md",
+      "title": "Spotify"
+    },
+    "/system-design/projects/ticketmaster": {
+      "source": "content/system-design/projects/ticketmaster.md",
+      "title": "Ticketmaster: Source Walkthrough and Notes"
+    },
+    "/system-design/projects/tik_tok": {
+      "source": "content/system-design/projects/tik_tok.md",
+      "title": "Tik Tok"
+    },
+    "/system-design/projects/tik-tok": {
+      "source": "content/system-design/projects/tik-tok.md",
+      "title": "TikTok: Requirements-Gathering Example"
+    },
+    "/system-design/projects/url-shortener": {
+      "source": "content/system-design/projects/url-shortener/_index.md",
+      "title": "URL Shortener Design Case"
+    },
+    "/system-design/projects/url-shortener/url-shortener": {
+      "source": "content/system-design/projects/url-shortener/url-shortener.md",
+      "title": "URL Shortener"
+    },
+    "/system-design/projects/url-shortener/url-shortener-additional": {
+      "source": "content/system-design/projects/url-shortener/url-shortener-additional.md",
+      "title": "URL Shortener: Interview Checklist"
+    },
+    "/system-design/projects/url-shortener/url-shortener-agentic": {
+      "source": "content/system-design/projects/url-shortener/url-shortener-agentic.md",
+      "title": "URL Shortener: Coding-Agent Experiments"
+    },
+    "/system-design/projects/url-shortener/url-shortener-nfrs": {
+      "source": "content/system-design/projects/url-shortener/url-shortener-nfrs.md",
+      "title": "URL Shortener: NFR Explorations"
+    },
+    "/system-design/projects/url-shortener/url-shortener-nfrs-v0": {
+      "source": "content/system-design/projects/url-shortener/url-shortener-nfrs-v0.md",
+      "title": "URL Shortener: Consistency and NFR Draft"
+    },
+    "/system-design/projects/url-shortener/url-shortener-useful": {
+      "source": "content/system-design/projects/url-shortener/url-shortener-useful.md",
+      "title": "URL Shortener: Requirements and Product Context"
+    },
+    "/system-design/projects/whatsapp": {
+      "source": "content/system-design/projects/whatsapp.md",
+      "title": "WhatsApp"
+    },
+    "/system-design/resources": {
+      "source": "content/system-design/resources.md",
+      "title": "System Design Resources"
+    },
+    "/system-design/sd-signals-openai": {
+      "source": "content/system-design/sd-signals-openai.md",
+      "title": "System Design Practice Review Rubric"
+    },
+    "/system-design/system-design": {
+      "source": "content/system-design/system-design.md",
+      "title": "System Design: Study and Practice"
+    },
+    "/system-design/to_sort": {
+      "source": "content/system-design/to_sort/_index.md",
+      "title": "To Sort"
+    },
+    "/system-design/to_sort/sd_algo_interviewing.io": {
+      "source": "content/system-design/to_sort/sd_algo_interviewing.io.md",
+      "title": "Sd Algo Interviewing.Io"
+    },
+    "/system-design/to_sort/sd_algorithm": {
+      "source": "content/system-design/to_sort/sd_algorithm.md",
+      "title": "Sd Algorithm"
+    },
+    "/system-design/to_sort/sd_framework_old": {
+      "source": "content/system-design/to_sort/sd_framework_old.md",
+      "title": "Sd Framework Old"
+    },
+    "/system-design/to_sort/sd_to_sort": {
+      "source": "content/system-design/to_sort/sd_to_sort.md",
+      "title": "Sd To Sort"
+    },
+    "/system-design/to-sort": {
+      "source": "content/system-design/to-sort/_index.md",
+      "title": "Collected Notes and Framework Variants"
+    },
+    "/system-design/to-sort/sd-algo-interviewing-io": {
+      "source": "content/system-design/to-sort/sd-algo-interviewing-io.md",
+      "title": "Interviewing.io Framework: Concise Notes"
+    },
+    "/system-design/to-sort/sd-algorithm": {
+      "source": "content/system-design/to-sort/sd-algorithm.md",
+      "title": "Four-Step System Design Outline"
+    },
+    "/system-design/to-sort/sd-framework-old": {
+      "source": "content/system-design/to-sort/sd-framework-old.md",
+      "title": "Extended System Design Framework Collection"
+    },
+    "/system-design/to-sort/sd-reviews": {
+      "source": "content/system-design/to-sort/sd-reviews.md",
+      "title": "System Design Review Excerpts"
+    },
+    "/system-design/to-sort/sd-to-sort": {
+      "source": "content/system-design/to-sort/sd-to-sort.md",
+      "title": "Architecture and Distributed-Systems Reading Notes"
+    },
+    "/system-design/topics": {
+      "source": "content/system-design/topics/_index.md",
+      "title": "Topics"
+    },
+    "/system-design/topics/api": {
+      "source": "content/system-design/topics/api.md",
+      "title": "Api"
+    },
+    "/system-design/topics/caching": {
+      "source": "content/system-design/topics/caching.md",
+      "title": "Caching"
+    },
+    "/system-design/topics/communication": {
+      "source": "content/system-design/topics/communication.md",
+      "title": "Communication"
+    },
+    "/system-design/topics/distributed-systems": {
+      "source": "content/system-design/topics/distributed-systems.md",
+      "title": "Distributed Systems"
+    },
+    "/system-design/topics/envelope_estimations": {
+      "source": "content/system-design/topics/envelope_estimations.md",
+      "title": "Envelope Estimations"
+    },
+    "/system-design/topics/hashing": {
+      "source": "content/system-design/topics/hashing.md",
+      "title": "Hashing"
+    },
+    "/system-design/topics/microservices": {
+      "source": "content/system-design/topics/microservices.md",
+      "title": "Microservices"
+    },
+    "/system-design/topics/partitioning": {
+      "source": "content/system-design/topics/partitioning.md",
+      "title": "Partitioning"
+    },
+    "/system-design/topics/queues": {
+      "source": "content/system-design/topics/queues.md",
+      "title": "Queues"
+    },
+    "/system-design/topics/replication": {
+      "source": "content/system-design/topics/replication.md",
+      "title": "Replication"
+    },
+    "/system-design/topics/security": {
+      "source": "content/system-design/topics/security.md",
+      "title": "Security"
+    },
+    "/system-design/topics/stream_processing": {
+      "source": "content/system-design/topics/stream_processing.md",
+      "title": "Stream Processing"
+    },
+    "/system-design/topics/streaming": {
+      "source": "content/system-design/topics/streaming.md",
+      "title": "Streaming"
+    },
+    "/system-design/topics/trade-offs": {
+      "source": "content/system-design/topics/trade-offs.md",
+      "title": "Trade Offs"
+    },
+    "/system-design/topics/transactions": {
+      "source": "content/system-design/topics/transactions.md",
+      "title": "Transactions"
+    },
+    "/topics": {
+      "source": "content/topics/_index.md",
+      "title": "Topics"
+    }
+  }
+}

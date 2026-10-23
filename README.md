@@ -34,6 +34,11 @@ make build
 
 Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 
+Migration and builds also generate legacy URL pages from `data/redirects.json`.
+Moved or removed published URLs need a documented replacement; missing mappings
+and broken internal links stop the build with a report. See the runbook's
+URL-preservation section for the map format and workflow.
+
 For more detail:
 
 - [Public agent map](https://valery.tech/agent-map/) for a short HTML index and selected documents; five collection maps list all articles grouped by subsection. `make migrate` assembles their Markdown sources, then Hugo renders the HTML during preview or build. Builds also refresh the sources automatically.

@@ -15,6 +15,8 @@ build_on_host() {
   npm run build
   log "Verifying the public agent map"
   npm run test:site-map
+  log "Verifying legacy URL redirects"
+  npm run test:redirects
 }
 
 build_in_container() {

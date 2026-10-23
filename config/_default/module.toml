@@ -87,6 +87,10 @@
 
 ## static
 [[mounts]]
+  source = ".generated/redirects"
+  target = "static"
+
+[[mounts]]
   source = "node_modules/@thulite/doks-core/static"
   target = "static"
 

@@ -152,3 +152,4 @@ public/
 resources/
 content-old/
 content/agent-map/
+.generated/

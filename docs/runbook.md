@@ -220,6 +220,68 @@ Migration-managed content looks wrong locally:
 - check the external notes source, not just the generated `content/` file
 - use the [migration commands](#migration) to regenerate the content
 
+## Preserve URLs when moving or removing notes
+
+`make migrate`, `make build`, and `make site-map` prepare the legacy URL pages
+automatically. `make up` also prepares them before starting Hugo. No client-side
+404 interception is needed: GitHub Pages receives a physical HTML file at every
+mapped old address, and unknown addresses retain the normal 404 response.
+
+The editable map is `data/redirects.json`. Entries use a website path as the key,
+one or more current destination paths in `to`, and a public-facing `comment`:
+
+```json
+{
+  "version": 1,
+  "redirects": {
+    "/former-note/": {
+      "to": ["/current-note/"],
+      "comment": "This note moved into the engineering collection."
+    },
+    "/former-collection/": {
+      "to": ["/first-replacement/", "/second-replacement/"],
+      "comment": "The original material was split into these two notes."
+    }
+  }
+}
+```
+
+A single destination redirects automatically with a visible fallback link and
+a meta-refresh fallback for browsers without JavaScript. The JavaScript redirect
+preserves the incoming query string and fragment. Multiple destinations show an
+explanation and a choice of links; they never select one automatically. Use that
+form for retired material with related reading, and explain that the original
+draft is no longer published. Comments appear on the website, so keep private
+paths and editorial instructions out of them.
+
+`data/url-history.json` is the cumulative published-URL ledger. It was seeded
+from the last snapshot before the April 2026 migration and subsequent Git
+snapshots. The generator asks Hugo for actual published permalinks using each
+snapshot's configuration and clock, rather than guessing from filenames. It
+imports later commits incrementally and records current uncommitted pages and
+Hugo aliases as well. Commit ledger updates alongside content changes; do not
+remove old entries to suppress a failure. CI fetches full history for this step.
+
+If a former address disappears without a map entry or a surviving Hugo alias,
+preparation fails with its old title and source file. The complete list, mapping
+stubs, and any broken internal links are written to
+`.generated/redirect-report.json`. Add the appropriate mapping or fix the
+source link, then rerun the command. Destinations must be current published
+pages; missing targets, chains, loops, duplicate routes, and conflicts with live
+pages or existing aliases are errors. Source-note links imported by migration
+must be corrected in the external notes too, otherwise the next migration will
+bring them back and fail validation.
+
+The generated HTML lives in the ignored `.generated/redirects/` directory,
+mounted as Hugo static files. It is rebuilt before publication, excluded from
+search and the agent maps, and marked `noindex, follow`. `make site-map-check`
+checks that the ledger, redirects, and navigation maps are current. The production
+build tests every generated redirect and every recorded historical address.
+
+These are static HTML redirects, not server-configured HTTP 301 redirects.
+If building from a source archive without `.git`, the committed ledger still
+protects known URLs, but earlier unrecorded Git commits cannot be discovered.
+
 ## Related Docs
 
 - [README.md](/Users/val/projects/website/valerytech.github.io/README.md) for the shortest quickstart

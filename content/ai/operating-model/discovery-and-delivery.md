@@ -33,7 +33,7 @@ The label matters only when it helps choose the right standard for the work. Dis
 ## Frame before acting, learn after acting
 
 
-The phrase ["ready-fire-aim"](</Users/val/notes-acc/Discovery and exploration/svpg/build-to-learn-faq.md:149>) describes launching changes quickly and hoping useful outcomes follow. That is a poor substitute for knowing which problem a change addresses and what its results would mean. The opposite mistake is treating an initial plan as settled and refusing to revise it when implementation or real use reveals something new.
+The phrase ["ready-fire-aim"](https://www.svpg.com/build-to-learn-faq/) describes launching changes quickly and hoping useful outcomes follow. That is a poor substitute for knowing which problem a change addresses and what its results would mean. The opposite mistake is treating an initial plan as settled and refusing to revise it when implementation or real use reveals something new.
 
 Before acting, frame the next decision: what problem or outcome matters, which assumption or production obligation is at issue, what evidence could change the decision, and how much exposure the action justifies. A small, reversible test may need only brief framing. A consequential production change needs stronger evidence and clearer operating responsibilities.
 

@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, 
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { buildRedirects, generatedDirectory } from './redirects.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const content = path.join(root, 'content/agent-map');
@@ -19,12 +20,17 @@ function markdownFiles(directory) {
 
 const temporary = mkdtempSync(path.join(tmpdir(), 'agent-site-map-'));
 try {
+  // Inventory real Hugo pages and aliases, without yesterday's generated redirects.
+  if (!check) rmSync(path.join(root, generatedDirectory), { recursive: true, force: true });
+  mkdirSync(path.join(root, generatedDirectory), { recursive: true });
   // Reuse Hugo's published-page inventory, descriptions, and URL resolution.
   // This calls Hugo directly, so it cannot recurse into npm's prebuild hook.
   execFileSync('hugo', [
     '--environment', 'production', '--logLevel', 'error',
     '--destination', temporary, '--noBuildLock',
   ], { cwd: root, stdio: 'pipe' });
+
+  buildRedirects({ root, publicDir: temporary, check });
 
   const sources = new Map();
   for (const filename of markdownFiles(temporary).filter((filename) => path.basename(filename) === 'site-map.md')) {

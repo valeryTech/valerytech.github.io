@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-legacy-redirect>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="color-scheme" content="light dark">
+  <title>{{title}} | Systems &amp; Engineering</title>
+  {{redirect}}
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #253044; background: #f7f9fc; }
+    body { max-width: 44rem; margin: 8vh auto; padding: 1.5rem; line-height: 1.65; }
+    header { margin-bottom: 3rem; font-weight: 650; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.2; }
+    a { color: #2058b0; text-underline-offset: .2em; overflow-wrap: anywhere; }
+    .old-path, li span { color: #61708a; font-size: .9rem; overflow-wrap: anywhere; }
+    ul { padding: 0; list-style: none; }
+    li { padding: 1rem 0; border-top: 1px solid #dce2ec; }
+    li a, li span { display: block; }
+    footer { margin-top: 3rem; }
+    @media (prefers-color-scheme: dark) {
+      :root { color: #e2e7ee; background: #151b25; }
+      a { color: #9dc2ff; }
+      .old-path, li span { color: #a3b1c6; }
+      li { border-color: #364153; }
+    }
+  </style>
+</head>
+<body>
+  <header><a href="/">Systems &amp; Engineering</a></header>
+  <main>
+    <p class="old-path">Former address: {{from}}</p>
+    <h1>{{title}}</h1>
+    <p>{{comment}}</p>
+    <p>{{intro}}</p>
+    <ul>{{links}}</ul>
+  </main>
+  <footer><a href="/agent-map/">Browse all notes</a></footer>
+</body>
+</html>

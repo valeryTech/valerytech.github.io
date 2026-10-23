@@ -8,6 +8,7 @@ const root = fileURLToPath(new URL('../../', import.meta.url));
 const output = path.join(root, 'public');
 const normalize = (route) => decodeURIComponent(route).replace(/\/$/, '') || '/';
 const origin = 'https://valery.tech';
+const redirectPaths = new Set(Object.keys(JSON.parse(readFileSync(path.join(root, 'data/redirects.json'), 'utf8')).redirects).map(normalize));
 const extractLinks = (document) => [...document.matchAll(/\bhref=(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)]
   .map((match) => new URL((match[1] ?? match[2] ?? match[3]).replaceAll('&amp;', '&'), origin));
 const extractMarkdownLinks = (document) => [...document.matchAll(/\]\(([^)]+)\)/g)].map((match) => new URL(match[1], origin));
@@ -84,6 +85,8 @@ test('following the maps covers published material, including aliases, with expl
     // Pagination repeats a collection already in the maps.
     if (/\/page\/\d+\/$/.test(route)) continue;
     if (['/404.html', '/blog/example-post/'].includes(route)) continue;
+    // Explanatory legacy pages are utilities, not current collection documents.
+    if (redirectPaths.has(normalize(route))) continue;
     assert.ok(mappedPaths.has(normalize(route)), `Missing website route: ${route}`);
   }
   const generated = files(path.join(output, 'agent-map')).filter((filename) => filename.endsWith('.html'));

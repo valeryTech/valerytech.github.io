@@ -98,6 +98,16 @@ Navigation is a mix of:
 That means content placement affects both URLs and how sections are surfaced in
 the UI.
 
+Published URLs are retained in `data/url-history.json`. Preparation in
+`scripts/site-map.mjs` invokes `scripts/redirects.mjs` to import subsequent Git
+snapshots, validate the current Hugo output, and render decisions from
+`data/redirects.json` through `scripts/redirect-page.html`. The generated static
+files under `.generated/redirects/` preserve old addresses on GitHub Pages and
+in local preview. Single replacements redirect; multiple replacements show a
+choice. The build fails when a retired URL has no decision or an internal link
+has no destination. The workflow is described in the runbook's URL-preservation
+section.
+
 ## Build Flow
 
 This document only describes the source-side architecture. For local workflow

@@ -17,6 +17,7 @@
     "maps": "node scripts/site-map.mjs",
     "test:analytics": "node --test tests/analytics/*.test.mjs",
     "test:site-map": "node --test tests/site-map/*.test.mjs",
+    "test:redirects": "node --test tests/redirects/*.test.mjs",
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
