@@ -36,8 +36,9 @@ Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 
 Migration and builds also generate legacy URL pages from `data/redirects.json`.
 Moved or removed published URLs need a documented replacement; missing mappings
-and broken internal links stop the build with a report. See the runbook's
-URL-preservation section for the map format and workflow.
+and broken internal links stop the build with a report. See
+[the intended redirect functionality](docs/legacy-url-redirects.md) for behavior
+and acceptance criteria, and the runbook's URL-preservation section for the workflow.
 
 For more detail:
 

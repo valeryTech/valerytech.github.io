@@ -222,6 +222,9 @@ Migration-managed content looks wrong locally:
 
 ## Preserve URLs when moving or removing notes
 
+The [legacy URL redirects document](legacy-url-redirects.md) describes the
+intended visitor behavior, failure handling, and acceptance criteria.
+
 `make migrate`, `make build`, and `make site-map` prepare the legacy URL pages
 automatically. `make up` also prepares them before starting Hugo. No client-side
 404 interception is needed: GitHub Pages receives a physical HTML file at every
