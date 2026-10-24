@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-24",
+  "sources": {
+    "ga4": {
+      "report": "https://analytics.google.com/analytics/web/?authuser=2#/analysis/a346580592p479060226/edit/PPnR5gRPSVqFV8ms3puNqA",
+      "from": "2026-09-26",
+      "through": "2026-10-23",
+      "metric": "Views, page title contains 404; hostname restricted to the three production domains"
+    },
+    "posthog": {
+      "report": "https://us.posthog.com/project/631264/sql",
+      "through": "2026-10-24",
+      "metric": "not_found_viewed count across all retained events; hostname restricted to the three production domains; local test paths excluded"
+    }
+  },
+  "routes": {
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-21-fault-inventory": {
+      "ga4": 10
+    },
+    "/ai-engineering/evaluation/causal-stack/layer-2/stack-27-worked-examples": {
+      "ga4": 7
+    },
+    "/ai-engineering/evaluation/causal-stack/stack-33-layer-3-system-fault-families": {
+      "ga4": 12
+    },
+    "/ai-engineering/evaluation/evaluation": {
+      "ga4": 1,
+      "posthog": 1
+    },
+    "/ai-engineering/evaluation/harness-and-platform": {
+      "ga4": 2,
+      "posthog": 2
+    },
+    "/ai-engineering/evaluation/v1/01-starting-sequence": {
+      "ga4": 2,
+      "posthog": 1
+    },
+    "/ai-engineering/evaluation/v1/product-improvement": {
+      "ga4": 3
+    },
+    "/ai-engineering/evaluation/v1/product-improvement-system-revised": {
+      "ga4": 7,
+      "posthog": 1
+    },
+    "/ai-engineering/evaluation/v1/prompts-04-tuples": {
+      "ga4": 4
+    },
+    "/ai-engineering/evaluation/v1/taxonomy": {
+      "ga4": 6
+    },
+    "/ai-engineering/evaluation/v2/ai-evaluation-goals": {
+      "ga4": 1,
+      "posthog": 1
+    },
+    "/ai-engineering/other": {
+      "posthog": 1
+    },
+    "/ai-engineering/other/production-ready/background-and-definitions": {
+      "ga4": 2
+    },
+    "/ai-engineering/other/production-ready/input/in-adoption": {
+      "ga4": 3,
+      "posthog": 1
+    },
+    "/ai-engineering/other/production-ready/input/in-operation": {
+      "ga4": 1,
+      "posthog": 1
+    },
+    "/ai-engineering/other/production-ready/production-readiness-framework": {
+      "ga4": 6
+    },
+    "/ai-engineering/other/production-ready/production-readiness-model": {
+      "ga4": 3
+    },
+    "/ai/approach/evaluation-discovery-delivery": {
+      "posthog": 1
+    },
+    "/ai/approach/my-perspective/)": {
+      "ga4": 1,
+      "posthog": 1
+    },
+    "/ai/methodology-v1-3/optimization-v1-2": {
+      "posthog": 1
+    },
+    "/ai/methodology-v1-3/schema-pack-v1-3": {
+      "posthog": 1
+    },
+    "/ai/methodology-v1-3/usage/_critique-v1": {
+      "posthog": 1
+    },
+    "/ai/methodology-v1-3/usage/instrumentation-guide-chat-rag-v1": {
+      "posthog": 1
+    },
+    "/ai/review": {
+      "ga4": 1
+    },
+    "/blog/post-link": {
+      "ga4": 3,
+      "posthog": 3
+    },
+    "/engineering/eng-exp/input/experiments-vs-features": {
+      "ga4": 1
+    },
+    "/engineering/eng-exp/input/roadmap-citation": {
+      "ga4": 1
+    },
+    "/projects/common/critical-thinking": {
+      "ga4": 1
+    },
+    "/projects/foundations/research": {
+      "posthog": 1
+    },
+    "/system-design/interview/interview": {
+      "ga4": 8
+    },
+    "/system-design/projects/designing-dropbox": {
+      "ga4": 2
+    },
+    "/system-design/topics/caching": {
+      "ga4": 8
+    },
+    "/system-design/topics/replication": {
+      "posthog": 1
+    }
+  }
+}

@@ -495,6 +495,14 @@
       "source": "content/ai-engineering/evaluation/archive/stack-umbrella-model.md",
       "title": "Stack Umbrella Model"
     },
+    "/ai-engineering/evaluation/cases": {
+      "source": "content/ai-engineering/evaluation/cases/_index.md",
+      "title": "Cases"
+    },
+    "/ai-engineering/evaluation/cases/03-eval-failure-mode": {
+      "source": "content/ai-engineering/evaluation/cases/03-eval-failure-mode.md",
+      "title": "03 Eval Failure Mode"
+    },
     "/ai-engineering/evaluation/causal-stack": {
       "source": "content/ai-engineering/evaluation/causal-stack/_index.md",
       "title": "Causal Stack"
@@ -2348,7 +2356,7 @@
       "title": "Snowflake ID"
     },
     "/system-design/projects/instagram": {
-      "source": "content/system-design/projects/Instagram.md",
+      "source": "content/system-design/projects/instagram.md",
       "title": "Instagram: Collected Design Discussion"
     },
     "/system-design/projects/interviewing-io": {

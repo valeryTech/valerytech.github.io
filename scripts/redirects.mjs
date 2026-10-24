@@ -7,6 +7,7 @@ const origin = 'https://valery.tech';
 export const generatedDirectory = '.generated/redirects';
 const mapFile = 'data/redirects.json';
 const historyFile = 'data/url-history.json';
+const trafficFile = 'data/redirect-traffic.json';
 
 export function normalizeRoute(value) {
   if (typeof value !== 'string' || !value.startsWith('/') || value.startsWith('//') || /[?#\\]/.test(value)) {
@@ -123,6 +124,30 @@ export function validateMappings(mappings, current, available) {
   return normalized;
 }
 
+// Reviewed production observations are kept independently of routing decisions.
+// A historical URL with no observed traffic does not require a replacement.
+export function validateTraffic(document) {
+  const isObject = (value) => value && typeof value === 'object' && !Array.isArray(value);
+  if (document?.version !== 1 || !isObject(document.sources) || !isObject(document.routes)) throw new Error(`Unsupported schema in ${trafficFile}`);
+  const routes = new Map();
+  for (const [from, counts] of Object.entries(document.routes)) {
+    const route = normalizeRoute(from);
+    if (routes.has(route)) throw new Error(`Duplicate traffic route: ${from}`);
+    if (!isObject(counts) || !Object.keys(counts).length || Object.entries(counts).some(([source, count]) =>
+      !Object.hasOwn(document.sources, source) || !Number.isSafeInteger(count) || count <= 0
+    )) throw new Error(`${from}: record positive production 404 counts from a documented source in ${trafficFile}.`);
+    routes.set(route, counts);
+  }
+  return routes;
+}
+
+export function findMissingTraffic(traffic, mappings, available) {
+  for (const route of mappings.keys()) {
+    if (!traffic.has(route)) throw new Error(`${publicURL(route)}: no reviewed production 404 traffic in ${trafficFile}. Omit this mapping until a visit is observed.`);
+  }
+  return [...traffic.keys()].filter((route) => !available(route) && !mappings.has(route));
+}
+
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const publicURL = (route) => {
   const normalized = normalizeRoute(route);
@@ -140,7 +165,7 @@ export function renderRedirect(from, entry, current, template) {
   }).join('\n');
   const values = {
     title: escapeHTML(title),
-    redirect: single ? `<script>window.location.replace(${JSON.stringify(destination)} + window.location.search + window.location.hash);</script>\n<meta http-equiv="refresh" content="0; url=${escapeHTML(destination)}">\n<link rel="canonical" href="${escapeHTML(origin + destination)}">` : '',
+    redirect: single ? `<script>window.location.replace(${JSON.stringify(destination)} + window.location.search + window.location.hash);</script>\n<noscript><meta http-equiv="refresh" content="0; url=${escapeHTML(destination)}"></noscript>\n<link rel="canonical" href="${escapeHTML(origin + destination)}">` : '',
     from: escapeHTML(publicURL(from)),
     comment: escapeHTML(entry.comment),
     intro: single ? 'You will be taken to its current location. You can also follow the link below.' : 'Related pages:',
@@ -184,7 +209,7 @@ export function buildRedirects({ root, publicDir, check = false }) {
   const pages = inventory(root);
   recordRoutes(history, pages);
   const current = new Map(pages.map(({ route, ...metadata }) => [route, metadata]));
-  // Alias URLs are public contracts too; retain them if a future migration removes aliases.
+  // Keep aliases in the historical inventory even when they have no observed traffic.
   for (const htmlFile of htmlFiles(publicDir)) {
     const html = readFileSync(htmlFile, 'utf8');
     if (/http-equiv=["']?refresh\b/i.test(html) && !html.includes('data-legacy-redirect')) {
@@ -200,12 +225,13 @@ export function buildRedirects({ root, publicDir, check = false }) {
     return availability.get(route);
   };
   const mappings = validateMappings(document.redirects, current, available);
-  // Manually recovered shared links become durable contracts as well.
+  const traffic = validateTraffic(JSON.parse(readFileSync(path.join(root, trafficFile), 'utf8')));
+  // Retain reviewed shared links in the inventory without requiring every old URL.
   for (const route of mappings.keys()) history.routes[route] ||= { title: 'Former published redirect', source: mapFile };
   history.routes = Object.fromEntries(Object.entries(history.routes).sort(([a], [b]) => a.localeCompare(b)));
   const serialized = JSON.stringify(history, null, 2) + '\n';
   if (!check && serialized !== original) writeFileSync(filename, serialized);
-  const missing = Object.entries(history.routes).filter(([route]) => !available(route) && !mappings.has(route));
+  const missing = findMissingTraffic(traffic, mappings, available).map((route) => [route, history.routes[route] || { title: 'Observed missing URL', source: trafficFile }]);
   const broken = checkInternalLinks(publicDir, mappings, available);
   if (missing.length || broken.length) {
     const report = {
@@ -224,9 +250,9 @@ export function buildRedirects({ root, publicDir, check = false }) {
     const examples = missing.slice(0, 8).map(([route, metadata]) => `- ${publicURL(route)} — ${metadata.title} (${metadata.source})`);
     const links = broken.slice(0, 8).map(({ target, sources }) => `- ${target} linked from ${sources.join(', ')}`);
     throw new Error([
-      `${missing.length} formerly published URLs need mappings in ${mapFile}.`,
+      `${missing.length} URLs with reviewed production 404 traffic need mappings in ${mapFile}.`,
       ...examples,
-      `${broken.length} internal link destinations are missing. Fix the source link, or add a documented mapping if the page moved.`,
+      `${broken.length} internal link destinations are missing. Fix the source link, or add a traffic-backed mapping if the page moved.`,
       ...links,
       'Add an entry such as: "/old-path/": { "to": ["/current-path/"], "comment": "Why this material moved" }',
       'Use multiple destinations when material was split; automatic redirects require a single destination.',
@@ -250,5 +276,5 @@ export function buildRedirects({ root, publicDir, check = false }) {
     }
     rmSync(path.join(root, '.generated/redirect-report.json'), { force: true });
   }
-  console.log(`Validated ${Object.keys(history.routes).length} historical URLs and ${mappings.size} redirect pages.`);
+  console.log(`Recorded ${Object.keys(history.routes).length} historical URLs; validated ${traffic.size} visited URLs and ${mappings.size} redirect pages.`);
 }

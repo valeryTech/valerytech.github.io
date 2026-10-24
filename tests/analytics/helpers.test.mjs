@@ -6,6 +6,7 @@ import {
   classifyOutboundDestination,
   getDownloadDetails,
   getNavigationArea,
+  getNotFoundDetails,
   sanitizePostHogEvent,
   scrollDepthBucket,
   searchQueryLengthBucket,
@@ -83,6 +84,59 @@ test("download detection keeps only the public path and file type", () => {
     ),
     { file_type: "pdf", resource_path: "/files/report.pdf" }
   );
+});
+
+test("404 details preserve missing and internal source paths without queries or fragments", () => {
+  assert.deepEqual(
+    getNotFoundDetails(
+      "https://valery.tech/missing/?token=private#secret",
+      "https://valery.tech/ai/?search=private#heading",
+      "release-123"
+    ),
+    {
+      requested_path: "/missing/",
+      referrer_type: "internal",
+      referrer_host: "valery.tech",
+      referrer_path: "/ai/",
+      site_release: "release-123",
+    }
+  );
+});
+
+test("404 details retain only the host for external sources", () => {
+  assert.deepEqual(
+    getNotFoundDetails(
+      "https://valery.tech/missing/",
+      "https://source.example/private/article?key=secret#section"
+    ),
+    {
+      requested_path: "/missing/",
+      referrer_type: "external",
+      referrer_host: "source.example",
+      referrer_path: "",
+      site_release: "unknown",
+    }
+  );
+});
+
+test("404 details distinguish unavailable referrers without guessing a source", () => {
+  for (const referrer of [
+    "",
+    "/relative/path",
+    "invalid",
+    "file:///Users/private/note",
+    "javascript:alert(1)",
+  ]) {
+    const details = getNotFoundDetails(
+      "https://valery.tech/missing/",
+      referrer,
+      ""
+    );
+    assert.equal(details.referrer_type, "unknown");
+    assert.equal(details.referrer_host, "");
+    assert.equal(details.referrer_path, "");
+    assert.equal(details.site_release, "unknown");
+  }
 });
 
 test("PostHog URL properties remove query strings, fragments, and contact values", () => {

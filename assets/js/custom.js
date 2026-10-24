@@ -2,6 +2,7 @@ import {
   getCodeLanguage,
   getDownloadDetails,
   getNavigationArea,
+  getNotFoundDetails,
   classifyOutboundDestination,
   pathWithoutQuery,
   scrollDepthBucket,
@@ -570,9 +571,14 @@ function initReaderEngagementAnalytics() {
 
 function initNotFoundAnalytics() {
   if (window.siteAnalytics?.context?.page_kind === "404") {
-    sendAnalyticsEvent("not_found_viewed", {
-      requested_path: window.location.pathname,
-    });
+    sendAnalyticsEvent(
+      "not_found_viewed",
+      getNotFoundDetails(
+        window.location.href,
+        document.referrer,
+        window.siteAnalytics.context.site_release
+      )
+    );
   }
 }
 

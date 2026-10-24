@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { normalizeRoute, parseCSV, renderRedirect, validateMappings } from '../../scripts/redirects.mjs';
+import { runInNewContext } from 'node:vm';
+import { findMissingTraffic, normalizeRoute, parseCSV, renderRedirect, validateMappings, validateTraffic } from '../../scripts/redirects.mjs';
 
 const current = new Map([['/new', { title: 'Current note' }], ['/second', { title: 'Second note' }]]);
 const available = (route) => current.has(route);
@@ -37,13 +38,53 @@ test('bad destinations, chains, loops, duplicate routes and collisions stop gene
   assert.throws(() => validateMappings({ '/alias/': entry }, current, () => true), /output already exists/);
 });
 
+test('traffic requires positive counts, documented sources and unambiguous URL variants', () => {
+  const document = { version: 1, sources: { ga4: { report: 'Production 404 report' } }, routes: { '/old/': { ga4: 2 } } };
+  assert.deepEqual([...validateTraffic(document)], [['/old', { ga4: 2 }]]);
+  for (const routes of [
+    { '/old/': { ga4: 0 } },
+    { '/old/': { ga4: -1 } },
+    { '/old/': { ga4: 1.5 } },
+    { '/old/': { unknown: 1 } },
+    { '/old/': {} },
+    { '/old/': null },
+    { '/old/': { ga4: 1 }, '/old/index.html': { ga4: 1 } },
+  ]) assert.throws(() => validateTraffic({ ...document, routes }));
+  assert.throws(() => validateTraffic({ ...document, version: 2 }), /Unsupported schema/);
+});
+
+test('observed missing URLs require coverage even when they were absent from Git history', () => {
+  const traffic = new Map([['/old', { ga4: 2 }], ['/new', { ga4: 1 }], ['/alias', { posthog: 1 }]]);
+  const output = (route) => available(route) || route === '/alias';
+  assert.deepEqual(findMissingTraffic(traffic, new Map(), output), ['/old']);
+  assert.deepEqual(findMissingTraffic(traffic, new Map([['/old', entry]]), output), []);
+});
+
+test('unvisited historical URLs need no mapping and cannot acquire a speculative redirect', () => {
+  assert.deepEqual(findMissingTraffic(new Map(), new Map(), () => false), []);
+  assert.throws(() => findMissingTraffic(new Map(), new Map([['/unvisited', entry]]), () => false), /no reviewed production 404 traffic/);
+});
+
 test('a single destination has a no-JavaScript redirect, canonical URL and a working link', () => {
   const html = renderRedirect('/old', entry, current, template);
-  assert.match(html, /http-equiv="refresh" content="0; url=\/new\/"/);
+  assert.match(html, /<noscript><meta http-equiv="refresh" content="0; url=\/new\/"><\/noscript>/);
   assert.match(html, /rel="canonical" href="https:\/\/valery.tech\/new\/"/);
   assert.match(html, /window.location.replace\("\/new\/" \+ window.location.search \+ window.location.hash\)/);
   assert.match(html, /<a href="\/new\/">Current note<\/a>/);
   assert.match(html, /name="robots" content="noindex, follow"/);
+});
+
+test('the browser redirect preserves query strings and fragments without a competing refresh', () => {
+  const html = renderRedirect('/old', entry, current, template);
+  const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(script);
+  for (const [search, hash] of [['', ''], ['?utm_source=old-post&query=a%26b', '#criterion'], ['', '#part%202']]) {
+    const navigations = [];
+    runInNewContext(script, { window: { location: { search, hash, replace: (url) => navigations.push(url) } } });
+    assert.deepEqual(navigations, [`/new/${search}${hash}`]);
+  }
+  const withJavaScript = html.replace(/<noscript>[\s\S]*?<\/noscript>/g, '');
+  assert.doesNotMatch(withJavaScript, /http-equiv="refresh"/);
 });
 
 test('a split note explains the choices without automatically selecting one', () => {

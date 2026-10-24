@@ -51,6 +51,26 @@ export function pathWithoutQuery(value, base) {
   return url?.pathname || "/";
 }
 
+export function getNotFoundDetails(location, referrer, release = "unknown") {
+  const current = toUrl(location);
+  let source;
+  try {
+    source = new URL(referrer);
+  } catch {
+    source = null;
+  }
+  if (!source || !["http:", "https:"].includes(source.protocol)) source = null;
+  const internal = source && source.origin === current?.origin;
+
+  return {
+    requested_path: current?.pathname || "/",
+    referrer_type: source ? (internal ? "internal" : "external") : "unknown",
+    referrer_host: source?.hostname || "",
+    referrer_path: internal ? source.pathname : "",
+    site_release: release || "unknown",
+  };
+}
+
 export function searchQueryLengthBucket(length) {
   if (length <= 0) return "0";
   if (length <= 3) return "1-3";

@@ -12,8 +12,23 @@ if (projectId) {
     analytics_Storage: "denied",
   });
 
-  window.siteAnalytics?.subscribe(({ name }) => {
+  window.siteAnalytics?.subscribe(({ name, parameters }) => {
     if (typeof name === "string") {
+      if (name === "not_found_viewed") {
+        Clarity.setTag("page_kind", "404");
+        for (const key of [
+          "requested_path",
+          "referrer_type",
+          "referrer_host",
+          "referrer_path",
+          "site_release",
+        ]) {
+          const value = parameters[key];
+          if (typeof value === "string" && value.length > 0) {
+            Clarity.setTag(key, value.slice(0, 255));
+          }
+        }
+      }
       Clarity.event(name);
     }
   });

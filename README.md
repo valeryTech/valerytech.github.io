@@ -34,15 +34,13 @@ make build
 
 Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
 
-Migration and builds also generate legacy URL pages from `data/redirects.json`.
-Moved or removed published URLs need a documented replacement; missing mappings
-and broken internal links stop the build with a report. See
-[the intended redirect functionality](docs/legacy-url-redirects.md) for behavior
-and acceptance criteria, and the runbook's URL-preservation section for the workflow.
+Migration and builds generate [legacy URL redirects](docs/legacy-url-redirects.md)
+for reviewed production 404 visits. Missing coverage and broken internal links
+stop the build; unvisited historical URLs need no mapping.
 
 For more detail:
 
 - [Public agent map](https://valery.tech/agent-map/) for a short HTML index and selected documents; five collection maps list all articles grouped by subsection. `make migrate` assembles their Markdown sources, then Hugo renders the HTML during preview or build. Builds also refresh the sources automatically.
-- [docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md) for local workflows and note imports
-- [docs/infra.md](/Users/val/projects/website/valerytech.github.io/docs/infra.md) for Docker, toolchain, CI, and deployment
-- [docs/architecture.md](/Users/val/projects/website/valerytech.github.io/docs/architecture.md) for repo structure and content placement
+- [docs/runbook.md](docs/runbook.md) for local workflows and note imports
+- [docs/infra.md](docs/infra.md) for Docker, toolchain, CI, and deployment
+- [docs/architecture.md](docs/architecture.md) for repo structure and content placement
