@@ -1,5 +1,6 @@
 {{ define "main" }}
   {{ $root := .FirstSection }}
+  {{ $entryPage := partial "main/section-entry-page.html" . }}
   {{ $childSections := .Sections.ByTitle }}
   {{ $childPages := .RegularPages.ByTitle }}
   <div class="row flex-xl-nowrap">
@@ -25,7 +26,7 @@
           </div>
         </div>
       {{ end }}
-      {{ partial "main/content-with-description.html" (dict "page" . "hasTitle" .Params.showTitle) }}
+      {{ partial "main/content-with-description.html" (dict "page" $entryPage "hasTitle" .Params.showTitle) }}
       {{ if or $childSections $childPages }}
         <div class="card-list mt-4">
           {{ range $childSections }}
@@ -36,6 +37,7 @@
             </div>
           {{ end }}
           {{ range $childPages }}
+            {{ if .Eq $entryPage }}{{ continue }}{{ end }}
             <div class="card my-3">
               <div class="card-body">
                 <a class="stretched-link" href="{{ .RelPermalink }}">{{ .LinkTitle }} &rarr;</a>

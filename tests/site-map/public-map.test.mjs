@@ -107,6 +107,18 @@ test('maps distinguish preferred entry points, published drafts, and archived hi
   assert.doesNotMatch(versioned, /\[(Canonical|Archived|Draft)\]/);
 });
 
+test('Design Research uses 00 Index as its sidebar entry and landing-page reading guide', () => {
+  const html = readFileSync(outputFile('/ai/design-research/'), 'utf8');
+  const group = html.match(/<summary>Design Research<\/summary>([\s\S]*?)<\/details>/)?.[1];
+  assert.ok(group, 'The Design Research sidebar group must be present');
+  const entry = group.match(/<a\b[^>]*>[\s\S]*?<\/a>/)?.[0];
+  assert.ok(entry);
+  assert.equal(extractLinks(entry)[0].pathname, '/ai/design-research/00-index/');
+  assert.match(entry, />00 Index<\/a>/);
+  assert.equal(extractLinks(group).filter((link) => link.pathname === '/ai/design-research/00-index/').length, 1);
+  assert.match(mainContent(html), /Suggested reading path/);
+});
+
 test('migrated documents have curated descriptions, including honest descriptions for placeholders', () => {
   const engineering = maps.get('/agent-map/engineering/');
   assert.match(engineering, /Compare DRY, WET, and AHA to decide when duplication is acceptable/);

@@ -16,6 +16,10 @@ images = ["cover.png"]
 # mainSections
 mainSections = ["projects", "system-design", "ai-engineering", "ai"]
 
+# Use the authored reading guide as the Design Research section entry.
+[sectionIndexes]
+  "/ai/design-research/" = "/ai/design-research/00-index"
+
 [social]
   twitter = "tecvalery"
 

@@ -99,13 +99,17 @@ skipped. To override this behavior, set $skipHome to false below.
 
   <li class="sidebar-item depth-{{ $depth }}{{ if $hasChildren }} sidebar-group{{ else }} sidebar-leaf{{ end }}{{ if $isCurrent }} active{{ end }}{{ if $isAncestor }} active-ancestor{{ end }}">
     {{- if $hasChildren }}
+      {{- $entryPage := partial "main/section-entry-page.html" $node.Page }}
+      {{- $entryLabel := cond ($entryPage.Eq $node.Page) "Overview" $entryPage.LinkTitle }}
+      {{- $entryIsCurrent := or $isCurrent ($currentPage.Eq $entryPage) }}
       <details{{ if $isOpen }} open{{ end }}>
         <summary>{{ $linkContent }}</summary>
         <ul class="list-unstyled list-nested">
-          <li class="sidebar-item sidebar-overview depth-{{ add $depth 1 }}{{ if $isCurrent }} active{{ end }}">
-            <a{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ $node.Page.RelPermalink }}">Overview</a>
+          <li class="sidebar-item sidebar-overview depth-{{ add $depth 1 }}{{ if $entryIsCurrent }} active{{ end }}">
+            <a{{ if $entryIsCurrent }} aria-current="page"{{ end }} href="{{ $entryPage.RelPermalink }}">{{ $entryLabel }}</a>
           </li>
           {{- range partial "sidebar/sort-nodes.html" $node.Page.Pages }}
+            {{- if .Page.Eq $entryPage }}{{ continue }}{{ end }}
             {{- template "walk" (dict "node" . "currentPage" $currentPage "depth" (add $depth 1)) }}
           {{- end }}
         </ul>
