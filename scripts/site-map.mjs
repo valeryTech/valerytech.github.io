@@ -30,8 +30,6 @@ try {
     '--destination', temporary, '--noBuildLock',
   ], { cwd: root, stdio: 'pipe' });
 
-  buildRedirects({ root, publicDir: temporary, check });
-
   const sources = new Map();
   for (const filename of markdownFiles(temporary).filter((filename) => path.basename(filename) === 'site-map.md')) {
     const section = path.relative(temporary, path.dirname(filename));
@@ -63,7 +61,6 @@ try {
     if (stale.length || changed.length) {
       throw new Error(`Generated map Markdown is stale. Run make site-map.\n${[...stale, ...changed.map(([name]) => name)].join('\n')}`);
     }
-    console.log(`All ${sources.size} Markdown map sources are up to date.`);
   } else {
     mkdirSync(content, { recursive: true });
     for (const [name, source] of changed) {
@@ -72,8 +69,18 @@ try {
       writeFileSync(target, source);
     }
     for (const name of stale) rmSync(path.join(content, name));
-    console.log(`Assembled ${sources.size} Markdown maps in content/agent-map/. Hugo renders them at /agent-map/.`);
+    // Validate current maps, including on clean checkouts without generated sources.
+    rmSync(temporary, { recursive: true, force: true });
+    execFileSync('hugo', [
+      '--environment', 'production', '--logLevel', 'error',
+      '--destination', temporary, '--noBuildLock',
+    ], { cwd: root, stdio: 'pipe' });
   }
+
+  buildRedirects({ root, publicDir: temporary, check });
+  console.log(check
+    ? `All ${sources.size} Markdown map sources are up to date.`
+    : `Assembled ${sources.size} Markdown maps in content/agent-map/. Hugo renders them at /agent-map/.`);
 } catch (error) {
   console.error(error.message);
   if (error.stderr) console.error(error.stderr.toString());
