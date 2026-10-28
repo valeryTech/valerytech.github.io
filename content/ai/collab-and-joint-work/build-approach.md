@@ -8,8 +8,8 @@ linkTitle: "Build Approach"
 
 This note indexes design-research material on participant capabilities, allocation of work, and collaborative-system design.
 
-- Participant profiles and work allocation covers the initial model and its revision, with sibling comments.
-- Augmenting human work examines the move from conversational interfaces to collaborative work, with sibling comments.
-- Collaborative-system design practices describes design practices and a test for collaborative behavior, with sibling comments.
+- [Participant profiles and work allocation]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) covers the initial model and its revision, with sibling [comments]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation-comments" >}}).
+- [Augmenting human work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}#from-conversational-interfaces-to-collaborative-work) examines the move from conversational interfaces to collaborative work, with sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}).
+- [Collaborative-system design practices]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) describes design practices and a test for collaborative behavior, with sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments" >}}).
 
-The mapping log records the source ranges and checksums for the reorganization. The source's capability claims and design proposals remain unverified.
+The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-5-participant-profiles-and-design-practices) records the source ranges and checksums for the reorganization. The source's capability claims and design proposals remain unverified.

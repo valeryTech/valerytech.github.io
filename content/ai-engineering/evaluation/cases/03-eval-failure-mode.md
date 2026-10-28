@@ -24,7 +24,7 @@ Evaluation should describe system state and behavior, test design hypotheses, an
 
 Define the problem, product goals, jobs to be done (JTBDs), and required guarantees. Use them to guide design decisions. Aim to cover important invariants, jobs, and known failures in the test set.
 
-Critical features can be specified upfront. “Grounding theory” is proposed as the most complete approach; the method and its relation to the specification need clarification.
+Critical features can be specified upfront. "Grounding theory" is proposed as the most complete approach; the method and its relation to the specification need clarification.
 
 ### Versioned system under test
 
@@ -49,7 +49,7 @@ Fast, reliable comparison of two experiment results is a core requirement. Resul
 
 Define run, span, trace, SUT, evaluation run, SUT run, SUT-run results, and judge results consistently.
 
-Judges and evaluation calculations need further specification. The term “rulers” remains undefined.
+Judges and evaluation calculations need further specification. The term "rulers" remains undefined.
 
 ## Reported findings
 

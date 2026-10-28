@@ -31,7 +31,7 @@ Start by identifying the work people are trying to do, the objects they need to 
 | 6 | Delegated operations and coordination system | Goal, plan, actions, waits, and handoffs | Authorized work completes within scope, with exceptions accounted for. |
 | 7 | Analytical and decision system | Data, assumptions, scenarios, and decision options | Analysis improves a defined decision against a meaningful baseline. |
 
-The guide's design method is a synthesis of the local design-research collection. Those notes contain retained dialogues, corrections, and proposals. The external [case studies](#deployment-examples-and-source-limits) illustrate deployments; they do not validate this taxonomy or establish expected returns for another organization.
+The guide's design method is a synthesis of the local [design-research collection]({{< ref "ai/design-research/document-map" >}}). Those notes contain retained dialogues, corrections, and proposals. The external [case studies](#deployment-examples-and-source-limits) illustrate deployments; they do not validate this taxonomy or establish expected returns for another organization.
 
 ## Describe the deployment before choosing components
 
@@ -59,7 +59,7 @@ Identify responsibility at important transitions:
 | Judgment | Who assesses the contribution, using which evidence and criteria? |
 | Authority | Who may commit the result or authorize a concrete external action? |
 
-One person need not hold all four responsibilities. A customer may describe an issue while an employee owns its resolution, software enforces an account restriction, and a specialist judges an exception. See the research's responsibility-allocation model.
+One person need not hold all four responsibilities. A customer may describe an issue while an employee owns its resolution, software enforces an account restriction, and a specialist judges an exception. See the research's [responsibility-allocation model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}#responsibility-allocation-and-handoff).
 
 ### Separate the questions behind "correct"
 
@@ -73,7 +73,7 @@ One person need not hold all four responsibilities. A customer may describe an i
 | Acceptance | Is this exact result suitable for this purpose and these conditions? | Acceptance does not apply automatically to a changed revision or purpose. |
 | Authority | May this principal perform this concrete action on these resources with these arguments? | Tool availability or result acceptance does not grant authority. |
 
-These are design questions, not six mandatory dialogs or a requirement to build a compiler. Some properties admit deterministic enforcement; others need measured evaluation or professional judgment. The verification-and-acceptance note explains the distinctions.
+These are design questions, not six mandatory dialogs or a requirement to build a compiler. Some properties admit deterministic enforcement; others need measured evaluation or professional judgment. The [verification-and-acceptance note]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}#scope-and-status) explains the distinctions.
 
 ## 1. Bounded workflow assistant
 
@@ -189,7 +189,7 @@ flowchart LR
 
 **Effort drivers.** Evidence requirements, source quality, domain definitions, omission costs, and the work needed for meaningful review. Report generation is only one part of the product.
 
-**Common failure.** Treating citations or an execution trace as proof that a conclusion follows. The research's bounded-corpus proposal and comments distinguish coverage records from completeness. The [KPMG announcement](#case-kpmg) illustrates audit work with professional oversight.
+**Common failure.** Treating citations or an execution trace as proof that a conclusion follows. The research's [bounded-corpus proposal and comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}) distinguish coverage records from completeness. The [KPMG announcement](#case-kpmg) illustrates audit work with professional oversight.
 
 ## 5. Domain work copilot
 
@@ -251,7 +251,7 @@ The direct path from preparation to authorization represents actions already per
 
 **Effort drivers.** Independent systems, identities, side effects, waits, and exception paths. A confident model or repeated past approval does not expand the delegation.
 
-**Common failure.** Treating tool access as authorization, or retrying an uncertain external operation as though it were a harmless computation. The research's concrete-operation discussion and result-use proposal give related design questions.
+**Common failure.** Treating tool access as authorization, or retrying an uncertain external operation as though it were a harmless computation. The research's [concrete-operation discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}#authorization-of-concrete-operations) and [result-use proposal]({{< ref "ai/design-research/interactive-systems/13-edits-runs-and-result-use" >}}) give related design questions.
 
 ## 7. Analytical and decision system
 
@@ -302,7 +302,7 @@ Select collaboration patterns according to the intended outcome and allocation o
 
 Language is useful for expressing goals and compositional requests. Direct controls help people inspect details and make precise changes. Stable views can expose different aspects of the same work: a document for prose, a table for evidence, a calendar for availability, or a chart for scenario comparison. Shared stored state still requires visible interpretation and repair when participants understand it differently.
 
-Choose the objects and controls needed for the task. Inspection should show actual sources, observations, changes, and action records; a generated rationale is not automatically an execution record. The local design-practices comments explain these qualifications. The CHI 2019 [Guidelines for Human-AI Interaction](https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/) provide a separate practitioner resource, evaluated across multiple interaction scenarios.
+Choose the objects and controls needed for the task. Inspection should show actual sources, observations, changes, and action records; a generated rationale is not automatically an execution record. The local [design-practices comments]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments" >}}) explain these qualifications. The CHI 2019 [Guidelines for Human-AI Interaction](https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/) provide a separate practitioner resource, evaluated across multiple interaction scenarios.
 
 ## Preserve continuity and distinguish recovery operations
 
@@ -329,7 +329,7 @@ An old run completing late must not silently replace work for a newer goal. A ch
 | Undo | Restore or derive an earlier application/artifact state under a defined scope. |
 | Compensate or reconcile | Address an external effect or establish what happened. Some consequences cannot be reversed. |
 
-Define an idempotency mechanism for operations that support one: key scope, duplicate behavior, retention, and observable outcome. For unsupported or uncertain cases, specify reconciliation or human handling. A trace and a checkpoint do not, by themselves, guarantee safe replay or rollback. See the research's inspection-and-replay comments.
+Define an idempotency mechanism for operations that support one: key scope, duplicate behavior, retention, and observable outcome. For unsupported or uncertain cases, specify reconciliation or human handling. A trace and a checkpoint do not, by themselves, guarantee safe replay or rollback. See the research's [inspection-and-replay comments]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments" >}}#inspection-and-replay).
 
 ## Evaluate the product, the collaboration, and the operation
 
@@ -345,7 +345,7 @@ Build evaluation around the properties the deployment needs. Separate cases used
 
 Seed plausible errors to test review, and include correct cases to measure unnecessary rejection. Interrupt work with a changed constraint and inspect subsequent behavior. Break a tool or remove access and test whether people can take over with enough context. If the intended outcome is learning or understanding, measure that outcome directly.
 
-Use the current process and a simpler alternative as baselines. Compare human-alone and AI-alone conditions when claiming complementarity. Where feasible, hold task, model, tools, information, and budgets constant while comparing interaction designs. See the collaboration-evaluation comments.
+Use the current process and a simpler alternative as baselines. Compare human-alone and AI-alone conditions when claiming complementarity. Where feasible, hold task, model, tools, information, and budgets constant while comparing interaction designs. See the [collaboration-evaluation comments]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation-comments" >}}).
 
 Expert review supplies judgments and decisions, which can disagree or be mistaken. Record the assessor, reason, uncertainty, and revision. A correction useful in the current task can suggest a reusable rule, but adoption requires a separate scope, evaluation, and decision. Observed approvals do not grant new authority.
 
@@ -418,7 +418,7 @@ Derive infrastructure from a required property:
 | A result must remain associated with its task. | An older run finishes and overwrites the newer task's result. | Bind results to input/goal revisions; define explicit selection and compatibility rules. |
 | A handoff must preserve usable context. | A recipient repeats diagnosis because prior attempts are unclear. | Transfer issue state, observations, remaining work, and ownership; test recipient understanding. |
 
-Choose the minimum constraints appropriate to the property and stated assumptions. A schema, audit store, shared database, or sandbox supports particular controls; the component name alone does not establish the desired behavior. The local builder-method discussion supplies the design approach, with qualifications in its comments.
+Choose the minimum constraints appropriate to the property and stated assumptions. A schema, audit store, shared database, or sandbox supports particular controls; the component name alone does not establish the desired behavior. The local [builder-method discussion]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#a-builder-method-for-minimal-semantic-constraints) supplies the design approach, with qualifications in its [comments]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method-comments" >}}).
 
 ## Worked example: contract investigation with controlled result use
 
@@ -433,7 +433,7 @@ An analyst wants to identify contract clauses that may conflict with policy. The
 6. **Respond to change.** Policy P2 arrives. Preserve the earlier records and use dependency rules to identify which findings need reconsideration. Explain the limits of continued use.
 7. **Learn without silently changing policy.** An analyst's repeated extraction corrections suggest a reusable rule. Preserve the interventions and reasons, evaluate a rule candidate on separate cases, and decide its scope before adoption.
 
-The example requires explicit relationships between edits, inputs, runs, results, and decisions. It leaves storage technology and orchestration choices open. The research's edits, runs, and result-use proposal develops the related revision questions.
+The example requires explicit relationships between edits, inputs, runs, results, and decisions. It leaves storage technology and orchestration choices open. The research's [edits, runs, and result-use proposal]({{< ref "ai/design-research/interactive-systems/13-edits-runs-and-result-use" >}}) develops the related revision questions.
 
 ## Deployment examples and source limits
 
@@ -451,4 +451,4 @@ The sources below were checked on 2026-10-18. Case studies and product descripti
 | <a id="case-doordash"></a>[DoorDash: ensemble time-series forecasting, 20 June 2023](https://careersatdoordash.com/blog/how-doordash-built-an-ensemble-learning-model-for-time-series-forecasting/) | The engineering account describes ELITE and tradeoffs among accuracy, data/model configurations, temporal validation, runtime, and compute cost. | One forecasting implementation; its architecture and performance improvements are not universal requirements. |
 | <a id="case-metaflow"></a>[Metaflow: What is Metaflow?](https://docs.metaflow.org/introduction/what-is-metaflow) | The documentation describes infrastructure for developing, deploying, and operating data-intensive applications, originally developed at Netflix. | Reusable infrastructure is a separate scope choice from the business purpose of an analytical application. |
 
-For the local research behind the guide, begin with the document map, collaborative-system design practices, collaboration patterns, and composable investigation workspaces, reading their corrections and comments alongside the proposals.
+For the local research behind the guide, begin with the [document map]({{< ref "ai/design-research/document-map" >}}), [collaborative-system design practices]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}), [collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}), and [composable investigation workspaces]({{< ref "ai/design-research/interactive-systems/03-composable-investigation-workspaces" >}}), reading their corrections and comments alongside the proposals.

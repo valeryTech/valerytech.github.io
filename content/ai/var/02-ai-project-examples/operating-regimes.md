@@ -135,7 +135,7 @@ These are **candidate regimes**, derived from differences in how work progresses
 ### 3. What would make something a separate regime?
 
 
-A separate regime needs a stronger criterion than “this is a different kind of task.”
+A separate regime needs a stronger criterion than "this is a different kind of task."
 
 Proposed criterion:
 

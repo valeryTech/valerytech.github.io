@@ -103,6 +103,34 @@ class ConversionTests(unittest.TestCase):
         body = "\n\n".join(rendered.body_parts)
         self.assertEqual(body, '[Elements]({{< ref "system-design/elements/elements" >}})')
 
+    def test_conversion_rewrites_markdown_note_links_with_parentheses(self) -> None:
+        source = self.workspace.source_root / "system-design/topics/input(GTD)/note.md"
+        source.parent.mkdir(parents=True)
+        source.write_text("# Note\n", encoding="utf-8")
+        run = make_run(self.workspace)
+        note = next(note for note in run.plan.notes if note.target_ref == "system-design/topics/api")
+        for target in (
+            "input(GTD)/note.md",
+            f"<{source.as_posix()}>",
+            f'<{source.as_posix()}> "Reading note"',
+        ):
+            with self.subTest(target=target):
+                rendered = convert_document(
+                    parse_document(f"[Reading]({target})"),
+                    RenderContext(
+                        note=note,
+                        note_index=run.note_index,
+                        attachment_resolver=run.attachment_resolver,
+                        report=run.report,
+                        staging_root=self.workspace.work_root / "content",
+                    ),
+                    run.config.frontmatter_defaults,
+                )
+                self.assertEqual(
+                    "\n\n".join(rendered.body_parts),
+                    '[Reading]({{< ref "system-design/topics/input-gtd/note" >}})',
+                )
+
     def test_conversion_does_not_copy_unpublished_markdown_notes_as_attachments(self) -> None:
         unpublished = self.workspace.source_root / "private/hidden.md"
         unpublished.parent.mkdir(parents=True)
@@ -188,6 +216,23 @@ class ConversionTests(unittest.TestCase):
         self.assertEqual(body, "Missing Doc")
         self.assertTrue(any(item.code == "unresolved-link" for item in self.run.report.warnings))
 
+    def test_conversion_drops_missing_local_attachment_links_to_plain_text(self) -> None:
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        rendered = convert_document(
+            parse_document("[Missing data](missing.json) and [Missing PDF](</missing/paper (1).pdf>)"),
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=self.workspace.work_root / "content",
+            ),
+            self.run.config.frontmatter_defaults,
+        )
+
+        self.assertEqual("\n\n".join(rendered.body_parts), "Missing data and Missing PDF")
+        self.assertEqual(len(self.run.report.warnings), 2)
+
     def test_normalize_math_delimiters_rewrites_balanced_math_and_preserves_literal_dollars(self) -> None:
         text = (
             "Inline $x^2$ and $y$.\n"
@@ -246,6 +291,14 @@ class ConversionTests(unittest.TestCase):
         )
 
         self.assertEqual(normalize_math_delimiters(text), text)
+
+    def test_normalize_math_delimiters_preserves_escaped_wiki_links_as_literal_brackets(self) -> None:
+        text = r"Literal \[\[analysis-1\]\], math \[x^2\], and code `\[\[literal\]\]`."
+
+        self.assertEqual(
+            normalize_math_delimiters(text),
+            r"Literal &#91;&#91;analysis-1&#93;&#93;, math \[x^2\], and code `\[\[literal\]\]`.",
+        )
 
     def test_normalize_math_delimiters_preserves_dollars_in_inline_code(self) -> None:
         examples = (

@@ -439,6 +439,10 @@
       "source": "content/ai-engineering/evaluation/_index.md",
       "title": "Evaluation"
     },
+    "/ai-engineering/evaluation/_starting-point": {
+      "source": "content/ai-engineering/evaluation/_starting-point.md",
+      "title": "Starting Point"
+    },
     "/ai-engineering/evaluation/01-starting-sequence": {
       "source": "content/ai-engineering/evaluation/01-starting-sequence.md",
       "title": "01 Starting Sequence"
@@ -497,7 +501,7 @@
     },
     "/ai-engineering/evaluation/cases": {
       "source": "content/ai-engineering/evaluation/cases/_index.md",
-      "title": "Cases"
+      "title": "Evaluation Cases"
     },
     "/ai-engineering/evaluation/cases/03-eval-failure-mode": {
       "source": "content/ai-engineering/evaluation/cases/03-eval-failure-mode.md",
@@ -1011,6 +1015,10 @@
       "source": "content/ai-engineering/working-assumptions.md",
       "title": "Working Assumptions"
     },
+    "/ai/ai-systems-design": {
+      "source": "content/ai/ai-systems-design/_index.md",
+      "title": "AI Systems Design"
+    },
     "/ai/approach": {
       "source": "content/ai/approach/_index.md",
       "title": "Approach"
@@ -1055,6 +1063,118 @@
       "title": "Former published redirect",
       "source": "data/redirects.json"
     },
+    "/ai/architecture-dsl-like": {
+      "source": "content/ai/architecture-dsl-like/_index.md",
+      "title": "Architecture DSL: V0"
+    },
+    "/ai/architecture-dsl-like/_index-dsl": {
+      "source": "content/ai/architecture-dsl-like/_index-dsl.md",
+      "title": "Original DSL Index"
+    },
+    "/ai/architecture-dsl-like/architecture-generalization": {
+      "source": "content/ai/architecture-dsl-like/architecture-generalization.md",
+      "title": "Architecture Generalization"
+    },
+    "/ai/architecture-dsl-like/behavioural-specification": {
+      "source": "content/ai/architecture-dsl-like/behavioural-specification.md",
+      "title": "Behavioural Specification"
+    },
+    "/ai/architecture-dsl-like/behavioural-specification-2": {
+      "source": "content/ai/architecture-dsl-like/behavioural-specification-2.md",
+      "title": "Behavioural Specification 2"
+    },
+    "/ai/architecture-dsl-like/bts": {
+      "source": "content/ai/architecture-dsl-like/bts.md",
+      "title": "Behavioral Types and Protocols"
+    },
+    "/ai/architecture-dsl-like/creator-approach": {
+      "source": "content/ai/architecture-dsl-like/creator-approach.md",
+      "title": "Creator Approach"
+    },
+    "/ai/architecture-dsl-like/data-renegades-ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker": {
+      "source": "content/ai/architecture-dsl-like/data-renegades-ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker.md",
+      "title": "Data Renegades Ep 11 Contrarian Bets And Ai Skepticism With Michael Stonebraker"
+    },
+    "/ai/architecture-dsl-like/dsl-approach": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/_index.md",
+      "title": "DSL Approach"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/constrained-generativity-semantic-substrate-design": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/constrained-generativity-semantic-substrate-design.md",
+      "title": "Constrained Generativity Semantic Substrate Design"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/db-approach": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/db-approach.md",
+      "title": "Db Approach"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/declarative-approach": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/declarative-approach.md",
+      "title": "Declarative Approach"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/declarative-layer": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/declarative-layer.md",
+      "title": "Declarative Layer"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/deep-research-report-formatted": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/deep-research-report-formatted.md",
+      "title": "Deep Research Report Formatted"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/design-model": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/design-model.md",
+      "title": "Design Model"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/dsl-ai": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/dsl-ai.md",
+      "title": "Dsl Ai"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/dsl-for-rag": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/dsl-for-rag.md",
+      "title": "Dsl For Rag"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/dsls-enable-reliable-use-of-llms": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/dsls-enable-reliable-use-of-llms.md",
+      "title": "Dsls Enable Reliable Use Of Llms"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/languages": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/languages.md",
+      "title": "Languages"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/problem-framing": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/problem-framing.md",
+      "title": "Problem Framing"
+    },
+    "/ai/architecture-dsl-like/dsl-approach/typed-durable-inspectable-runtimes-report": {
+      "source": "content/ai/architecture-dsl-like/dsl-approach/typed-durable-inspectable-runtimes-report.md",
+      "title": "Typed Durable Inspectable Runtimes Report"
+    },
+    "/ai/architecture-dsl-like/investigation-lang-alg": {
+      "source": "content/ai/architecture-dsl-like/investigation-lang-alg.md",
+      "title": "Investigation Lang Alg"
+    },
+    "/ai/architecture-dsl-like/investigation-lang-alg-llm-layer": {
+      "source": "content/ai/architecture-dsl-like/investigation-lang-alg-llm-layer.md",
+      "title": "Investigation Lang Alg Llm Layer"
+    },
+    "/ai/architecture-dsl-like/programmable-environments-human-ai-collaboration": {
+      "source": "content/ai/architecture-dsl-like/programmable-environments-human-ai-collaboration.md",
+      "title": "Programmable Environments Human Ai Collaboration"
+    },
+    "/ai/architecture-dsl-like/research-direction": {
+      "source": "content/ai/architecture-dsl-like/research-direction.md",
+      "title": "Research Direction"
+    },
+    "/ai/architecture-dsl-like/semantic-kernel": {
+      "source": "content/ai/architecture-dsl-like/semantic-kernel.md",
+      "title": "Semantic Kernel"
+    },
+    "/ai/architecture-dsl-like/sensemaking": {
+      "source": "content/ai/architecture-dsl-like/sensemaking.md",
+      "title": "Sensemaking"
+    },
+    "/ai/architecture-dsl-like/some-augmenting": {
+      "source": "content/ai/architecture-dsl-like/some-augmenting.md",
+      "title": "Some Augmenting"
+    },
     "/ai/collab-and-joint-work": {
       "source": "content/ai/collab-and-joint-work/_index.md",
       "title": "Collab And Joint Work"
@@ -1078,6 +1198,694 @@
     "/ai/design": {
       "source": "content/ai/design/_index.md",
       "title": "Design"
+    },
+    "/ai/design-research": {
+      "source": "content/ai/design-research/_index.md",
+      "title": "Design Research"
+    },
+    "/ai/design-research/00-index": {
+      "source": "content/ai/design-research/00-index.md",
+      "title": "00 Index"
+    },
+    "/ai/design-research/00-index-comments": {
+      "source": "content/ai/design-research/00-index-comments.md",
+      "title": "00 Index Comments"
+    },
+    "/ai/design-research/00-introduction": {
+      "source": "content/ai/design-research/00-introduction.md",
+      "title": "AI systems design: purpose and reading map"
+    },
+    "/ai/design-research/00-overview": {
+      "source": "content/ai/design-research/00-overview/_index.md",
+      "title": "Research Overview"
+    },
+    "/ai/design-research/00-overview/01-problem-framing": {
+      "source": "content/ai/design-research/00-overview/01-problem-framing.md",
+      "title": "01 Problem Framing"
+    },
+    "/ai/design-research/00-overview/02-research-direction": {
+      "source": "content/ai/design-research/00-overview/02-research-direction.md",
+      "title": "02 Research Direction"
+    },
+    "/ai/design-research/00-overview/03-original-index-notes": {
+      "source": "content/ai/design-research/00-overview/03-original-index-notes.md",
+      "title": "03 Original Index Notes"
+    },
+    "/ai/design-research/00-overview/04-architectural-framings": {
+      "source": "content/ai/design-research/00-overview/04-architectural-framings.md",
+      "title": "04 Architectural Framings"
+    },
+    "/ai/design-research/00-overview/05-refined-research-question": {
+      "source": "content/ai/design-research/00-overview/05-refined-research-question.md",
+      "title": "05 Refined Research Question"
+    },
+    "/ai/design-research/00-overview/06-research-scope-and-hierarchy": {
+      "source": "content/ai/design-research/00-overview/06-research-scope-and-hierarchy.md",
+      "title": "06 Research Scope And Hierarchy"
+    },
+    "/ai/design-research/00-overview/07-collaboration-framework-research-routes": {
+      "source": "content/ai/design-research/00-overview/07-collaboration-framework-research-routes.md",
+      "title": "07 Collaboration Framework Research Routes"
+    },
+    "/ai/design-research/00-overview/07-collaboration-framework-research-routes-comments": {
+      "source": "content/ai/design-research/00-overview/07-collaboration-framework-research-routes-comments.md",
+      "title": "07 Collaboration Framework Research Routes Comments"
+    },
+    "/ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope": {
+      "source": "content/ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope.md",
+      "title": "08 Collaborative Computation And Alice Research Scope"
+    },
+    "/ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope-comments": {
+      "source": "content/ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope-comments.md",
+      "title": "08 Collaborative Computation And Alice Research Scope Comments"
+    },
+    "/ai/design-research/01-foundations": {
+      "source": "content/ai/design-research/01-foundations/_index.md",
+      "title": "Foundations"
+    },
+    "/ai/design-research/01-foundations/01-constrained-generativity": {
+      "source": "content/ai/design-research/01-foundations/01-constrained-generativity.md",
+      "title": "01 Constrained Generativity"
+    },
+    "/ai/design-research/01-foundations/02-semantic-substrate-design-report": {
+      "source": "content/ai/design-research/01-foundations/02-semantic-substrate-design-report.md",
+      "title": "02 Semantic Substrate Design Report"
+    },
+    "/ai/design-research/01-foundations/03-behavioral-types-and-protocols": {
+      "source": "content/ai/design-research/01-foundations/03-behavioral-types-and-protocols.md",
+      "title": "03 Behavioral Types And Protocols"
+    },
+    "/ai/design-research/01-foundations/04-participant-neutral-system-model": {
+      "source": "content/ai/design-research/01-foundations/04-participant-neutral-system-model.md",
+      "title": "04 Participant Neutral System Model"
+    },
+    "/ai/design-research/01-foundations/04-participant-neutral-system-model-comments": {
+      "source": "content/ai/design-research/01-foundations/04-participant-neutral-system-model-comments.md",
+      "title": "04 Participant Neutral System Model Comments"
+    },
+    "/ai/design-research/01-foundations/05-constrained-common-substrate": {
+      "source": "content/ai/design-research/01-foundations/05-constrained-common-substrate.md",
+      "title": "05 Constrained Common Substrate"
+    },
+    "/ai/design-research/01-foundations/06-architectural-least-commitment-and-precedents": {
+      "source": "content/ai/design-research/01-foundations/06-architectural-least-commitment-and-precedents.md",
+      "title": "06 Architectural Least Commitment And Precedents"
+    },
+    "/ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models": {
+      "source": "content/ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models.md",
+      "title": "07 Constraint Guarantee And Composition Models"
+    },
+    "/ai/design-research/01-foundations/08-semantic-substrate-builder-method": {
+      "source": "content/ai/design-research/01-foundations/08-semantic-substrate-builder-method.md",
+      "title": "08 Semantic Substrate Builder Method"
+    },
+    "/ai/design-research/01-foundations/08-semantic-substrate-builder-method-comments": {
+      "source": "content/ai/design-research/01-foundations/08-semantic-substrate-builder-method-comments.md",
+      "title": "08 Semantic Substrate Builder Method Comments"
+    },
+    "/ai/design-research/01-foundations/09-verification-and-acceptance": {
+      "source": "content/ai/design-research/01-foundations/09-verification-and-acceptance.md",
+      "title": "09 Verification And Acceptance"
+    },
+    "/ai/design-research/01-foundations/10-complexity-and-work-structure": {
+      "source": "content/ai/design-research/01-foundations/10-complexity-and-work-structure.md",
+      "title": "10 Complexity And Work Structure"
+    },
+    "/ai/design-research/01-foundations/10-complexity-and-work-structure-comments": {
+      "source": "content/ai/design-research/01-foundations/10-complexity-and-work-structure-comments.md",
+      "title": "10 Complexity And Work Structure Comments"
+    },
+    "/ai/design-research/01-foundations/11-participant-profiles-and-work-allocation": {
+      "source": "content/ai/design-research/01-foundations/11-participant-profiles-and-work-allocation.md",
+      "title": "11 Participant Profiles And Work Allocation"
+    },
+    "/ai/design-research/01-foundations/11-participant-profiles-and-work-allocation-comments": {
+      "source": "content/ai/design-research/01-foundations/11-participant-profiles-and-work-allocation-comments.md",
+      "title": "11 Participant Profiles And Work Allocation Comments"
+    },
+    "/ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis": {
+      "source": "content/ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis.md",
+      "title": "12 Research Terms And Levels Of Analysis"
+    },
+    "/ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis-comments": {
+      "source": "content/ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis-comments.md",
+      "title": "12 Research Terms And Levels Of Analysis Comments"
+    },
+    "/ai/design-research/02-human-ai-collaboration": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/_index.md",
+      "title": "Human-AI Collaboration"
+    },
+    "/ai/design-research/02-human-ai-collaboration/01-augmenting-human-work": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/01-augmenting-human-work.md",
+      "title": "01 Augmenting Human Work"
+    },
+    "/ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments.md",
+      "title": "01 Augmenting Human Work Comments"
+    },
+    "/ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action.md",
+      "title": "02 Sensemaking And Epistemic Action"
+    },
+    "/ai/design-research/02-human-ai-collaboration/03-programmable-human-ai-environments-report": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/03-programmable-human-ai-environments-report.md",
+      "title": "03 Programmable Human Ai Environments Report"
+    },
+    "/ai/design-research/02-human-ai-collaboration/04-augmentation-literature-and-reading-path": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/04-augmentation-literature-and-reading-path.md",
+      "title": "04 Augmentation Literature And Reading Path"
+    },
+    "/ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model.md",
+      "title": "05 Joint Activity And Collaboration Model"
+    },
+    "/ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments.md",
+      "title": "05 Joint Activity And Collaboration Model Comments"
+    },
+    "/ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns.md",
+      "title": "06 Human Ai Collaboration Patterns"
+    },
+    "/ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments.md",
+      "title": "06 Human Ai Collaboration Patterns Comments"
+    },
+    "/ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis.md",
+      "title": "07 Collaboration Patterns Research Synthesis"
+    },
+    "/ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis-comments": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis-comments.md",
+      "title": "07 Collaboration Patterns Research Synthesis Comments"
+    },
+    "/ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices.md",
+      "title": "08 Collaborative System Design Practices"
+    },
+    "/ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments": {
+      "source": "content/ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments.md",
+      "title": "08 Collaborative System Design Practices Comments"
+    },
+    "/ai/design-research/03-language-and-compiler": {
+      "source": "content/ai/design-research/03-language-and-compiler/_index.md",
+      "title": "Language and Compiler"
+    },
+    "/ai/design-research/03-language-and-compiler/01-dsl-reliability": {
+      "source": "content/ai/design-research/03-language-and-compiler/01-dsl-reliability.md",
+      "title": "DSLs Enable Reliable Use of LLMs"
+    },
+    "/ai/design-research/03-language-and-compiler/02-typed-dsl-and-compiler": {
+      "source": "content/ai/design-research/03-language-and-compiler/02-typed-dsl-and-compiler.md",
+      "title": "02 Typed Dsl And Compiler"
+    },
+    "/ai/design-research/03-language-and-compiler/03-declarative-programming-model": {
+      "source": "content/ai/design-research/03-language-and-compiler/03-declarative-programming-model.md",
+      "title": "03 Declarative Programming Model"
+    },
+    "/ai/design-research/03-language-and-compiler/03-declarative-programming-model-comments": {
+      "source": "content/ai/design-research/03-language-and-compiler/03-declarative-programming-model-comments.md",
+      "title": "03 Declarative Programming Model Comments"
+    },
+    "/ai/design-research/03-language-and-compiler/04-dsl-as-mediation-layer": {
+      "source": "content/ai/design-research/03-language-and-compiler/04-dsl-as-mediation-layer.md",
+      "title": "04 Dsl As Mediation Layer"
+    },
+    "/ai/design-research/03-language-and-compiler/05-layered-design-model": {
+      "source": "content/ai/design-research/03-language-and-compiler/05-layered-design-model.md",
+      "title": "05 Layered Design Model"
+    },
+    "/ai/design-research/03-language-and-compiler/06-language-and-formalism-choices": {
+      "source": "content/ai/design-research/03-language-and-compiler/06-language-and-formalism-choices.md",
+      "title": "06 Language And Formalism Choices"
+    },
+    "/ai/design-research/03-language-and-compiler/07-semantic-kernel": {
+      "source": "content/ai/design-research/03-language-and-compiler/07-semantic-kernel.md",
+      "title": "07 Semantic Kernel"
+    },
+    "/ai/design-research/03-language-and-compiler/08-typed-dsl-project-candidates": {
+      "source": "content/ai/design-research/03-language-and-compiler/08-typed-dsl-project-candidates.md",
+      "title": "08 Typed Dsl Project Candidates"
+    },
+    "/ai/design-research/03-language-and-compiler/09-dsl-and-formal-methods-reading-path": {
+      "source": "content/ai/design-research/03-language-and-compiler/09-dsl-and-formal-methods-reading-path.md",
+      "title": "09 Dsl And Formal Methods Reading Path"
+    },
+    "/ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning": {
+      "source": "content/ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "title": "10 Program Authoring And Typed Planning"
+    },
+    "/ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification": {
+      "source": "content/ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification.md",
+      "title": "11 Behavioral Compilation And Specification"
+    },
+    "/ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl": {
+      "source": "content/ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl.md",
+      "title": "12 Tickloom Semantic Model And Scenario Dsl"
+    },
+    "/ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl-comments": {
+      "source": "content/ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl-comments.md",
+      "title": "12 Tickloom Semantic Model And Scenario Dsl Comments"
+    },
+    "/ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts": {
+      "source": "content/ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts.md",
+      "title": "13 Domain Semantics And Operation Contracts"
+    },
+    "/ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts-comments": {
+      "source": "content/ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts-comments.md",
+      "title": "13 Domain Semantics And Operation Contracts Comments"
+    },
+    "/ai/design-research/04-investigation-and-epistemics": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/_index.md",
+      "title": "Investigation and Epistemics"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra.md",
+      "title": "01 Investigation Language And Algebra"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/02-llm-operated-investigation-runtime": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/02-llm-operated-investigation-runtime.md",
+      "title": "02 Llm Operated Investigation Runtime"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag.md",
+      "title": "03 Epistemic Contracts For Rag"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations.md",
+      "title": "04 Provenance And Argumentation Foundations"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "title": "05 Multirepresentation Retrieval And Projections"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections-comments": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections-comments.md",
+      "title": "05 Multirepresentation Retrieval And Projections Comments"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "title": "06 Bounded Corpus Evidence Synthesis"
+    },
+    "/ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments": {
+      "source": "content/ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments.md",
+      "title": "06 Bounded Corpus Evidence Synthesis Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution": {
+      "source": "content/ai/design-research/05-runtime-and-execution/_index.md",
+      "title": "Runtime and Execution"
+    },
+    "/ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime": {
+      "source": "content/ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime.md",
+      "title": "01 Generalized Agent Runtime"
+    },
+    "/ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime-comments.md",
+      "title": "01 Generalized Agent Runtime Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution/02-database-centered-runtime": {
+      "source": "content/ai/design-research/05-runtime-and-execution/02-database-centered-runtime.md",
+      "title": "02 Database Centered Runtime"
+    },
+    "/ai/design-research/05-runtime-and-execution/03-resource-aware-investigation-planning": {
+      "source": "content/ai/design-research/05-runtime-and-execution/03-resource-aware-investigation-planning.md",
+      "title": "03 Resource Aware Investigation Planning"
+    },
+    "/ai/design-research/05-runtime-and-execution/04-formal-models-for-agent-execution": {
+      "source": "content/ai/design-research/05-runtime-and-execution/04-formal-models-for-agent-execution.md",
+      "title": "04 Formal Models For Agent Execution"
+    },
+    "/ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries": {
+      "source": "content/ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "title": "05 Trusted Effect Boundaries"
+    },
+    "/ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results": {
+      "source": "content/ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results.md",
+      "title": "06 Program Versions Runs And Results"
+    },
+    "/ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments.md",
+      "title": "06 Program Versions Runs And Results Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution/07-collaboration-framework": {
+      "source": "content/ai/design-research/05-runtime-and-execution/07-collaboration-framework.md",
+      "title": "07 Collaboration Framework"
+    },
+    "/ai/design-research/05-runtime-and-execution/07-collaboration-framework-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/07-collaboration-framework-comments.md",
+      "title": "07 Collaboration Framework Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry": {
+      "source": "content/ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry.md",
+      "title": "08 Prompt Text Composition And Registry"
+    },
+    "/ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry-comments.md",
+      "title": "08 Prompt Text Composition And Registry Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation": {
+      "source": "content/ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation.md",
+      "title": "09 Declarative System Configuration And Instantiation"
+    },
+    "/ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation-comments.md",
+      "title": "09 Declarative System Configuration And Instantiation Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity": {
+      "source": "content/ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity.md",
+      "title": "10 Configuration Publishing And Version Identity"
+    },
+    "/ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity-comments.md",
+      "title": "10 Configuration Publishing And Version Identity Comments"
+    },
+    "/ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration": {
+      "source": "content/ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration.md",
+      "title": "11 Evaluation Plans And System Configuration"
+    },
+    "/ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration-comments": {
+      "source": "content/ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration-comments.md",
+      "title": "11 Evaluation Plans And System Configuration Comments"
+    },
+    "/ai/design-research/06-research-reports": {
+      "source": "content/ai/design-research/06-research-reports/_index.md",
+      "title": "Research Reports"
+    },
+    "/ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation": {
+      "source": "content/ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation.md",
+      "title": "01 Programmable Probabilistic Agent Computation"
+    },
+    "/ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes": {
+      "source": "content/ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes.md",
+      "title": "02 Typed Durable Inspectable Runtimes"
+    },
+    "/ai/design-research/06-research-reports/03-shared-runtime-landscape": {
+      "source": "content/ai/design-research/06-research-reports/03-shared-runtime-landscape.md",
+      "title": "03 Shared Runtime Landscape"
+    },
+    "/ai/design-research/06-research-reports/04-investigation-systems-and-related-work": {
+      "source": "content/ai/design-research/06-research-reports/04-investigation-systems-and-related-work.md",
+      "title": "04 Investigation Systems And Related Work"
+    },
+    "/ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks": {
+      "source": "content/ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks.md",
+      "title": "05 Agent Runtime Evaluation And Benchmarks"
+    },
+    "/ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks-comments": {
+      "source": "content/ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks-comments.md",
+      "title": "05 Agent Runtime Evaluation And Benchmarks Comments"
+    },
+    "/ai/design-research/06-research-reports/06-governance-patents-and-specification-trust": {
+      "source": "content/ai/design-research/06-research-reports/06-governance-patents-and-specification-trust.md",
+      "title": "06 Governance Patents And Specification Trust"
+    },
+    "/ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks": {
+      "source": "content/ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks.md",
+      "title": "07 Investigation Evaluation And Benchmarks"
+    },
+    "/ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks-comments": {
+      "source": "content/ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks-comments.md",
+      "title": "07 Investigation Evaluation And Benchmarks Comments"
+    },
+    "/ai/design-research/06-research-reports/08-behavioral-compilation-evaluation-and-failure-modes": {
+      "source": "content/ai/design-research/06-research-reports/08-behavioral-compilation-evaluation-and-failure-modes.md",
+      "title": "08 Behavioral Compilation Evaluation And Failure Modes"
+    },
+    "/ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study": {
+      "source": "content/ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study.md",
+      "title": "09 Long Running Work Failures And Field Study"
+    },
+    "/ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study-comments": {
+      "source": "content/ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study-comments.md",
+      "title": "09 Long Running Work Failures And Field Study Comments"
+    },
+    "/ai/design-research/06-research-reports/10-interactive-investigation-position-paper": {
+      "source": "content/ai/design-research/06-research-reports/10-interactive-investigation-position-paper.md",
+      "title": "10 Interactive Investigation Position Paper"
+    },
+    "/ai/design-research/06-research-reports/10-interactive-investigation-position-paper-comments": {
+      "source": "content/ai/design-research/06-research-reports/10-interactive-investigation-position-paper-comments.md",
+      "title": "10 Interactive Investigation Position Paper Comments"
+    },
+    "/ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation": {
+      "source": "content/ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation.md",
+      "title": "11 Human Ai Collaboration Evaluation"
+    },
+    "/ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation-comments": {
+      "source": "content/ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation-comments.md",
+      "title": "11 Human Ai Collaboration Evaluation Comments"
+    },
+    "/ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics": {
+      "source": "content/ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics.md",
+      "title": "12 Multiagent Coordination And System Semantics"
+    },
+    "/ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics-comments": {
+      "source": "content/ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics-comments.md",
+      "title": "12 Multiagent Coordination And System Semantics Comments"
+    },
+    "/ai/design-research/06-research-reports/13-research-method-and-claim-validation": {
+      "source": "content/ai/design-research/06-research-reports/13-research-method-and-claim-validation.md",
+      "title": "13 Research Method And Claim Validation"
+    },
+    "/ai/design-research/06-research-reports/13-research-method-and-claim-validation-comments": {
+      "source": "content/ai/design-research/06-research-reports/13-research-method-and-claim-validation-comments.md",
+      "title": "13 Research Method And Claim Validation Comments"
+    },
+    "/ai/design-research/07-sources": {
+      "source": "content/ai/design-research/07-sources/_index.md",
+      "title": "Sources"
+    },
+    "/ai/design-research/07-sources/01-stonebraker-data-renegades-transcript": {
+      "source": "content/ai/design-research/07-sources/01-stonebraker-data-renegades-transcript.md",
+      "title": "Data Renegades | Ep. #11, Contrarian Bets and AI Skepticism with Michael Stonebraker"
+    },
+    "/ai/design-research/document-map": {
+      "source": "content/ai/design-research/document-map.md",
+      "title": "Document Map"
+    },
+    "/ai/design-research/document-map-comments": {
+      "source": "content/ai/design-research/document-map-comments.md",
+      "title": "Document Map Comments"
+    },
+    "/ai/design-research/input": {
+      "source": "content/ai/design-research/input/_index.md",
+      "title": "Research Inputs"
+    },
+    "/ai/design-research/input/ai-systems-classification-formatted": {
+      "source": "content/ai/design-research/input/ai-systems-classification-formatted.md",
+      "title": "Ai Systems Classification Formatted"
+    },
+    "/ai/design-research/input/analyze-ai-system-design": {
+      "source": "content/ai/design-research/input/analyze-ai-system-design.md",
+      "title": "Analyze Ai System Design"
+    },
+    "/ai/design-research/input/designing-llm-guardrails": {
+      "source": "content/ai/design-research/input/designing-llm-guardrails.md",
+      "title": "Designing Llm Guardrails"
+    },
+    "/ai/design-research/input/designing-llm-systems": {
+      "source": "content/ai/design-research/input/designing-llm-systems.md",
+      "title": "Designing Llm Systems"
+    },
+    "/ai/design-research/input/general-conceptual-design-model-with-references": {
+      "source": "content/ai/design-research/input/general-conceptual-design-model-with-references.md",
+      "title": "General Conceptual Design Model With References"
+    },
+    "/ai/design-research/input/harness": {
+      "source": "content/ai/design-research/input/harness/_index.md",
+      "title": "Agent Harness Research"
+    },
+    "/ai/design-research/input/harness/harness-reading-map": {
+      "source": "content/ai/design-research/input/harness/harness-reading-map.md",
+      "title": "Harness Reading Map"
+    },
+    "/ai/design-research/input/harness/object-oriented-harness": {
+      "source": "content/ai/design-research/input/harness/object-oriented-harness.md",
+      "title": "Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design"
+    },
+    "/ai/design-research/input/harness/type-oriented-functional-harnesses-with-references": {
+      "source": "content/ai/design-research/input/harness/type-oriented-functional-harnesses-with-references.md",
+      "title": "Type Oriented Functional Harnesses With References"
+    },
+    "/ai/design-research/input/modeling-hybrid-ai-systems": {
+      "source": "content/ai/design-research/input/modeling-hybrid-ai-systems.md",
+      "title": "Modeling Hybrid Ai Systems"
+    },
+    "/ai/design-research/input/pinned-chats-index": {
+      "source": "content/ai/design-research/input/pinned-chats-index.md",
+      "title": "Pinned Chats Index"
+    },
+    "/ai/design-research/input/reports": {
+      "source": "content/ai/design-research/input/reports/_index.md",
+      "title": "Source Research Reports"
+    },
+    "/ai/design-research/input/reports/general-conceptual-design-model-for-llm-software-systems": {
+      "source": "content/ai/design-research/input/reports/general-conceptual-design-model-for-llm-software-systems.md",
+      "title": "General Conceptual Design Model For Llm Software Systems"
+    },
+    "/ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text": {
+      "source": "content/ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text.md",
+      "title": "Preventing Overreliance On Persuasive Ai Generated Text"
+    },
+    "/ai/design-research/input/reports/reflection-in-hybrid-ai-systems": {
+      "source": "content/ai/design-research/input/reports/reflection-in-hybrid-ai-systems.md",
+      "title": "Reflection In Hybrid Ai Systems"
+    },
+    "/ai/design-research/input/research-to-product-validation": {
+      "source": "content/ai/design-research/input/research-to-product-validation.md",
+      "title": "Research To Product Validation"
+    },
+    "/ai/design-research/input/sections": {
+      "source": "content/ai/design-research/input/sections/_index.md",
+      "title": "Supporting Research Topics"
+    },
+    "/ai/design-research/input/sections/formal-verification": {
+      "source": "content/ai/design-research/input/sections/formal-verification/_index.md",
+      "title": "Formal Verification"
+    },
+    "/ai/design-research/input/sections/formal-verification/formal-verification-with-references": {
+      "source": "content/ai/design-research/input/sections/formal-verification/formal-verification-with-references.md",
+      "title": "Formal Verification With References"
+    },
+    "/ai/design-research/input/sections/jev": {
+      "source": "content/ai/design-research/input/sections/jev/_index.md",
+      "title": "Jev and Decision Models"
+    },
+    "/ai/design-research/input/sections/jev/jev-1": {
+      "source": "content/ai/design-research/input/sections/jev/jev-1.md",
+      "title": "Jev 1"
+    },
+    "/ai/design-research/input/sections/jev/jev-alignment": {
+      "source": "content/ai/design-research/input/sections/jev/jev-alignment.md",
+      "title": "Jev Alignment"
+    },
+    "/ai/design-research/input/sections/jev/jev-system-one-with-references": {
+      "source": "content/ai/design-research/input/sections/jev/jev-system-one-with-references.md",
+      "title": "Jev System One With References"
+    },
+    "/ai/design-research/input/sections/jev/system-one-decision-models-first-principles-with-references": {
+      "source": "content/ai/design-research/input/sections/jev/system-one-decision-models-first-principles-with-references.md",
+      "title": "System One Decision Models First Principles With References"
+    },
+    "/ai/design-research/interactive-systems": {
+      "source": "content/ai/design-research/interactive-systems/_index.md",
+      "title": "Interactive Systems"
+    },
+    "/ai/design-research/interactive-systems/00-collection-review-comments": {
+      "source": "content/ai/design-research/interactive-systems/00-collection-review-comments.md",
+      "title": "00 Collection Review Comments"
+    },
+    "/ai/design-research/interactive-systems/00-index": {
+      "source": "content/ai/design-research/interactive-systems/00-index.md",
+      "title": "00 Index"
+    },
+    "/ai/design-research/interactive-systems/00-index-comments": {
+      "source": "content/ai/design-research/interactive-systems/00-index-comments.md",
+      "title": "00 Index Comments"
+    },
+    "/ai/design-research/interactive-systems/01-shared-investigation-state-and-views": {
+      "source": "content/ai/design-research/interactive-systems/01-shared-investigation-state-and-views.md",
+      "title": "01 Shared Investigation State And Views"
+    },
+    "/ai/design-research/interactive-systems/02-stable-interface-components": {
+      "source": "content/ai/design-research/interactive-systems/02-stable-interface-components.md",
+      "title": "02 Stable Interface Components"
+    },
+    "/ai/design-research/interactive-systems/03-composable-investigation-workspaces": {
+      "source": "content/ai/design-research/interactive-systems/03-composable-investigation-workspaces.md",
+      "title": "03 Composable Investigation Workspaces"
+    },
+    "/ai/design-research/interactive-systems/04-design-observations-from-hebbia": {
+      "source": "content/ai/design-research/interactive-systems/04-design-observations-from-hebbia.md",
+      "title": "04 Design Observations From Hebbia"
+    },
+    "/ai/design-research/interactive-systems/04-design-observations-from-hebbia-comments": {
+      "source": "content/ai/design-research/interactive-systems/04-design-observations-from-hebbia-comments.md",
+      "title": "04 Design Observations From Hebbia Comments"
+    },
+    "/ai/design-research/interactive-systems/05-application-state-and-computation": {
+      "source": "content/ai/design-research/interactive-systems/05-application-state-and-computation.md",
+      "title": "05 Application State And Computation"
+    },
+    "/ai/design-research/interactive-systems/05-application-state-and-computation-comments": {
+      "source": "content/ai/design-research/interactive-systems/05-application-state-and-computation-comments.md",
+      "title": "05 Application State And Computation Comments"
+    },
+    "/ai/design-research/interactive-systems/06-complex-interface-reading-path": {
+      "source": "content/ai/design-research/interactive-systems/06-complex-interface-reading-path.md",
+      "title": "06 Complex Interface Reading Path"
+    },
+    "/ai/design-research/interactive-systems/06-complex-interface-reading-path-comments": {
+      "source": "content/ai/design-research/interactive-systems/06-complex-interface-reading-path-comments.md",
+      "title": "06 Complex Interface Reading Path Comments"
+    },
+    "/ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction": {
+      "source": "content/ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "title": "07 Language Intent And Hybrid Interaction"
+    },
+    "/ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction-comments": {
+      "source": "content/ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction-comments.md",
+      "title": "07 Language Intent And Hybrid Interaction Comments"
+    },
+    "/ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition": {
+      "source": "content/ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition.md",
+      "title": "08 Generated Workspaces And Application Composition"
+    },
+    "/ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition-comments": {
+      "source": "content/ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition-comments.md",
+      "title": "08 Generated Workspaces And Application Composition Comments"
+    },
+    "/ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries": {
+      "source": "content/ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries.md",
+      "title": "09 Intent Environments And Domain Boundaries"
+    },
+    "/ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries-comments": {
+      "source": "content/ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries-comments.md",
+      "title": "09 Intent Environments And Domain Boundaries Comments"
+    },
+    "/ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation": {
+      "source": "content/ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation.md",
+      "title": "10 Exploratory Pipeline Design And Progressive Automation"
+    },
+    "/ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments": {
+      "source": "content/ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments.md",
+      "title": "10 Exploratory Pipeline Design And Progressive Automation Comments"
+    },
+    "/ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches": {
+      "source": "content/ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches.md",
+      "title": "11 Inspectable Pipeline Workbenches"
+    },
+    "/ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches-comments": {
+      "source": "content/ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches-comments.md",
+      "title": "11 Inspectable Pipeline Workbenches Comments"
+    },
+    "/ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles": {
+      "source": "content/ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles.md",
+      "title": "12 Exploratory Pipeline Design Goals And Principles"
+    },
+    "/ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles-comments": {
+      "source": "content/ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles-comments.md",
+      "title": "12 Exploratory Pipeline Design Goals And Principles Comments"
+    },
+    "/ai/design-research/interactive-systems/13-edits-runs-and-result-use": {
+      "source": "content/ai/design-research/interactive-systems/13-edits-runs-and-result-use.md",
+      "title": "13 Edits Runs And Result Use"
+    },
+    "/ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly": {
+      "source": "content/ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "title": "14 Collaborative Writing And Text Assembly"
+    },
+    "/ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly-comments": {
+      "source": "content/ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly-comments.md",
+      "title": "14 Collaborative Writing And Text Assembly Comments"
+    },
+    "/ai/design-research/interactive-systems/reassembly-map": {
+      "source": "content/ai/design-research/interactive-systems/reassembly-map.md",
+      "title": "Reassembly Map"
+    },
+    "/ai/design-research/reassembly-map": {
+      "source": "content/ai/design-research/reassembly-map.md",
+      "title": "Reassembly Map"
     },
     "/ai/design/amortized-generation-problem": {
       "source": "content/ai/design/amortized-generation-problem.md",
@@ -2181,7 +2989,7 @@
     },
     "/system-design/elements/background": {
       "source": "content/system-design/elements/background/_index.md",
-      "title": "Background"
+      "title": "Background Processing"
     },
     "/system-design/elements/background/events": {
       "source": "content/system-design/elements/background/events.md",
@@ -2233,7 +3041,7 @@
     },
     "/system-design/integrated-test-pages": {
       "source": "content/system-design/integrated-test-pages/_index.md",
-      "title": "Integrated Test Pages"
+      "title": "Migration Test Pages"
     },
     "/system-design/integrated-test-pages/callouts": {
       "source": "content/system-design/integrated-test-pages/callouts.md",
@@ -2349,7 +3157,7 @@
     },
     "/system-design/projects/infra": {
       "source": "content/system-design/projects/infra/_index.md",
-      "title": "Infra"
+      "title": "Infrastructure References"
     },
     "/system-design/projects/infra/slowflake-id": {
       "source": "content/system-design/projects/infra/slowflake-id.md",

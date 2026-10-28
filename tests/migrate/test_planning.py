@@ -111,7 +111,7 @@ class PlanningTests(unittest.TestCase):
         with self.assertRaises(MigrationFailed):
             build_migration_plan(config, make_run(self.workspace).roots)
 
-    def test_public_ai_import_includes_var_and_keeps_design_research_private(self) -> None:
+    def test_public_ai_import_includes_research_sections_and_var(self) -> None:
         manifest = Path(__file__).resolve().parents[2] / "scripts/migrate/config.toml"
         config = load_config(manifest)
         ai_rule = next(rule for rule in config.imports if rule.name == "ai")
@@ -128,6 +128,10 @@ class PlanningTests(unittest.TestCase):
                 path.mkdir(parents=True, exist_ok=True)
 
         public_notes = {
+            "ai-systems-design/overview.md",
+            "architecture-dsl-like/research-direction.md",
+            "design-research/00-index.md",
+            "design-research/03-language-and-compiler/mechanism.md",
             "var/01-was/ai-product-types.md",
             "var/01-was/practitioner_guide_seven_ai_product_types.md",
             "var/01-was/ai-product-types-improvement-proposal.md",
@@ -142,9 +146,6 @@ class PlanningTests(unittest.TestCase):
             "other/methodology-v1.3/slices-definition-v1.1.md",
         }
         private_notes = {
-            "design-research/00-index.md",
-            "design-research/03-language-and-compiler/private-mechanism.md",
-            "architecture-dsl-like/research-direction.md",
             "other/private-note.md",
         }
         for relative in public_notes | private_notes:
@@ -152,10 +153,10 @@ class PlanningTests(unittest.TestCase):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text("# Note\n", encoding="utf-8")
 
-        # A public source may refer to research without selecting it for publication.
+        # A public source may refer to an unselected note without publishing it.
         (import_root / "var/01-was/ai-product-types.md").write_text(
             "# Product archetypes\n\n"
-            "[Research](../../design-research/03-language-and-compiler/private-mechanism.md)\n",
+            "[Private note](../../other/private-note.md)\n",
             encoding="utf-8",
         )
         plan = build_migration_plan(config, make_run(self.workspace).roots)
@@ -164,7 +165,7 @@ class PlanningTests(unittest.TestCase):
 
         self.assertTrue(public_notes <= selected)
         self.assertTrue(private_notes.isdisjoint(selected))
-        self.assertEqual(targets["var/01-was/ai-product-types.md"], "ai/var/ai-product-types")
+        self.assertEqual(targets["var/01-was/ai-product-types.md"], "ai/var/01-was/ai-product-types")
         self.assertEqual(
             targets["var/01-was/practitioner_guide_seven_ai_product_types.md"],
             "ai/var/practitioner-guide-seven-ai-product-types",

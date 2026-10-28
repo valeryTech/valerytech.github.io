@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "stage": 7,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Split the natural-language interface dialogue into language intent and hybrid interaction, candidate plans, generated-workspace consequences, and instruction boundaries. Original wording, examples, formulas, citations, and line endings remain unchanged.",
+  "source": {
+    "path": "archived source 029",
+    "absolutePath": "archived source 011",
+    "originalLines": 764,
+    "originalBytes": 23745,
+    "originalSha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+    "originalFinalNewline": true,
+    "currentRole": "navigation stub",
+    "stubLines": 10,
+    "stubBytes": 1942
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        198
+      ],
+      "destination": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "anchor": "<!-- Language-intent dialogue source begins below. -->",
+      "description": "Opening request, response framing, reading map, and request-space argument",
+      "lines": 198,
+      "bytes": 9220,
+      "sha256": "521afd0c3686cd279eb5f1ffcd0d231efe38b10c69fcfa2f8625a3a12b1a72f2",
+      "finalNewline": true,
+      "fenceMarkers": 16,
+      "displayMathMarkers": 6,
+      "destinationLines": [
+        14,
+        211
+      ]
+    },
+    {
+      "sourceLines": [
+        199,
+        303
+      ],
+      "destination": "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "anchor": "<!-- Natural-language candidate-plan passage begins below. -->",
+      "description": "Declarative comparison, ambiguity, complete typed-plan diagram, and calendar example",
+      "lines": 105,
+      "bytes": 2822,
+      "sha256": "7357ccc4148e609c959b659bee83a635716bba14d912afc0cae8627b476772d7",
+      "finalNewline": true,
+      "fenceMarkers": 8,
+      "displayMathMarkers": 0,
+      "destinationLines": [
+        523,
+        627
+      ]
+    },
+    {
+      "sourceLines": [
+        304,
+        488
+      ],
+      "destination": "ai/interactive-systems/08-generated-workspaces-and-application-composition.md",
+      "anchor": "<!-- Generated-workspace consequences begin below. -->",
+      "description": "Complete proposals for smaller interface surfaces, temporary tools, and application composition",
+      "lines": 185,
+      "bytes": 3922,
+      "sha256": "bd986b8da32779fe39515563ef28406f90cf0c2e0d6916cff9cfc8e1fa901acd",
+      "finalNewline": true,
+      "fenceMarkers": 22,
+      "displayMathMarkers": 4,
+      "destinationLines": [
+        14,
+        198
+      ]
+    },
+    {
+      "sourceLines": [
+        489,
+        634
+      ],
+      "destination": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "anchor": "<!-- Language-intent dialogue source begins below. -->",
+      "description": "Usability, abstraction levels, direct manipulation, and examples",
+      "lines": 146,
+      "bytes": 4453,
+      "sha256": "ab6e56decad13e980f2e2be20d94ed25e1d94e8edf40c77c2db617b96efe7d44",
+      "finalNewline": true,
+      "fenceMarkers": 8,
+      "displayMathMarkers": 6,
+      "destinationLines": [
+        212,
+        357
+      ]
+    },
+    {
+      "sourceLines": [
+        635,
+        678
+      ],
+      "destination": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "anchor": "<!-- Natural-language instruction-boundary passage begins below. -->",
+      "description": "Instructions versus untrusted data, full email example, and proposed safeguards",
+      "lines": 44,
+      "bytes": 1184,
+      "sha256": "4723bdc7239128012611fddb4d6568816786b70feea06173b4fb1dcc69c67625",
+      "finalNewline": true,
+      "fenceMarkers": 6,
+      "displayMathMarkers": 0,
+      "destinationLines": [
+        132,
+        175
+      ]
+    },
+    {
+      "sourceLines": [
+        679,
+        764
+      ],
+      "destination": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "anchor": "<!-- Language-intent dialogue source begins below. -->",
+      "description": "Closing thesis and complete old/new interaction diagrams",
+      "lines": 86,
+      "bytes": 2144,
+      "sha256": "61aba6c01adc4c0d19a77a288ef4bf987228fb5a520e77782429232824c1fb2a",
+      "finalNewline": true,
+      "fenceMarkers": 10,
+      "displayMathMarkers": 0,
+      "destinationLines": [
+        358,
+        443
+      ]
+    }
+  ],
+  "prefixes": {
+    "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md": {
+      "lines": 13,
+      "bytes": 1561,
+      "sha256": "e9d7150fa97558044132d72af161390a47ee647504e5ba37ab0601f272396ab8",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md": {
+      "lines": 522,
+      "bytes": 9919,
+      "sha256": "056eb54674ada6dbe544bf86b0af4e07588a14c940aa1106bc3b364bb16d5845",
+      "previousLines": 515,
+      "previousBytes": 8909,
+      "previousSha256": "0b7129765149d252e1f429a6b944bb5f8e8ea70868e8a9f6e8e3cb7de1a9f87e",
+      "previousContentsByteIdentical": true
+    },
+    "ai/interactive-systems/08-generated-workspaces-and-application-composition.md": {
+      "lines": 13,
+      "bytes": 1789,
+      "sha256": "6004fcaaa39cee3041f997e708b6723259eeba69ad3ba35d6b946792e6e5a562",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md": {
+      "lines": 131,
+      "bytes": 16736,
+      "sha256": "fb0d57ba6f9e83fddea933c6517da77f62d376a8d79c5944e9fde6c59d5ef7db",
+      "previousLines": 123,
+      "previousBytes": 15812,
+      "previousSha256": "61cd0d279605dbf415c9f886ab7a6edcc07c9a51a7a10898949a31e196b9bb11",
+      "previousContentsByteIdentical": true
+    }
+  },
+  "existingDestinations": [
+    {
+      "path": "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "previousLines": 515,
+      "previousBytes": 8909,
+      "previousSha256": "0b7129765149d252e1f429a6b944bb5f8e8ea70868e8a9f6e8e3cb7de1a9f87e",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "previousLines": 123,
+      "previousBytes": 15812,
+      "previousSha256": "61cd0d279605dbf415c9f886ab7a6edcc07c9a51a7a10898949a31e196b9bb11",
+      "previousContentsByteIdentical": true
+    }
+  ],
+  "destinations": [
+    {
+      "path": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "lines": 443,
+      "bytes": 17378,
+      "sha256": "a07ac8642dd1c48765754ae0a2a86c77af9e0f5f113b92866fbaa52b694e4ec0",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "lines": 627,
+      "bytes": 12741,
+      "sha256": "45723fdcddcec3a4387fc24327af480cda19f2786c6a6eb84f9ef083e96df403",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/interactive-systems/08-generated-workspaces-and-application-composition.md",
+      "lines": 198,
+      "bytes": 5711,
+      "sha256": "c9d66674ae35d4b042584762af49204a13ad5193ddbb2c05fe1316172480aa5d",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "lines": 175,
+      "bytes": 17920,
+      "sha256": "ae5217504b31d081845b87863c0165e4ddf952dcdc406629a9accd4a47b4a2e7",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    }
+  ],
+  "moveOrder": [
+    {
+      "originalSourceLines": [
+        679,
+        764
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 21601,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        635,
+        678
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 20417,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        489,
+        634
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 15964,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        304,
+        488
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 12042,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        199,
+        303
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 9220,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        1,
+        198
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "editorialFiles": [
+    "ai/interactive-systems/07-language-intent-and-hybrid-interaction-comments.md",
+    "ai/interactive-systems/08-generated-workspaces-and-application-composition-comments.md",
+    "ai/interactive-systems/00-index.md",
+    "ai/interactive-systems/00-index-comments.md"
+  ],
+  "verification": {
+    "reconstructedLines": 764,
+    "reconstructedBytes": 23745,
+    "reconstructedSha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+    "allPassagesByteIdentical": true,
+    "sourceRangesCoverOriginalExactlyOnce": true,
+    "omittedOrDuplicatedBytes": 0,
+    "existingDestinationContentsByteIdentical": true,
+    "allCodeBlocksWhole": true,
+    "allDisplayFormulasWhole": true,
+    "completeCodeBlocks": 35,
+    "completeDisplayFormulas": 8,
+    "sourceFinalNewlinePreserved": true,
+    "priorMappings": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "lines": 173,
+        "bytes": 14749,
+        "sha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+        "passagesVerified": 3
+      }
+    ],
+    "sourceWasEmptyAfterMoves": true,
+    "originalPathRetained": true,
+    "sourceTextRewritten": false,
+    "claimsIndependentlyVerified": false,
+    "localLinkVerification": {
+      "filesChecked": 10,
+      "localLinksChecked": 191,
+      "headingAnchorsChecked": 40,
+      "broken": []
+    },
+    "scopedGitDiffChecks": {
+      "notesStandard": {
+        "exitCode": 2,
+        "warnings": [
+          {
+            "path": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+            "line": 175,
+            "message": "new blank line at EOF",
+            "preservedOriginalSourceLine": 678,
+            "resolution": "Kept unchanged because it is part of the original source passage."
+          }
+        ]
+      },
+      "notesAccStandard": {
+        "exitCode": 0
+      },
+      "notesWithOriginalBlankAtEofAllowed": {
+        "exitCode": 0,
+        "configuration": "core.whitespace=-blank-at-eof"
+      },
+      "allOtherScopedWhitespaceChecksPassed": true
+    },
+    "finalReconstructions": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "lines": 173,
+        "bytes": 14749,
+        "sha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/07-nlp-interface-reassembly.json",
+        "lines": 764,
+        "bytes": 23745,
+        "sha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+        "passagesVerified": 6
+      }
+    ],
+    "baselineVerification": {
+      "snapshotRole": "Observed shared-workspace snapshot. Unrelated changes are reported, not reverted.",
+      "baselineFiles": 115,
+      "intendedPaths": [
+        "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+        "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+        "ai/interactive-systems/00-index.md",
+        "ai/interactive-systems/00-index-comments.md",
+        "ai/interactive-systems/reassembly-map.md",
+        "archived source 029"
+      ],
+      "intendedBaselineChanges": 6,
+      "filesOutsideIntendedEdits": 109,
+      "unchangedFilesOutsideIntendedEdits": 107,
+      "externalChanges": [
+        {
+          "path": "ai/design-research/00-index.md",
+          "previousSha256": "da96952933372e6398b959d992710fbb4ca435ba6ff513fd6389d8727c780b4f",
+          "currentSha256": "03a58a6df114c22bbdc142d32becfee39f34e372528261a1e38afd933f1bce5c",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/reassembly-map.md",
+          "previousSha256": "8df1e9155ae25ebd203c7086f35fc000cf33daa0e0fb0734da3dec980370e038",
+          "currentSha256": "eabab9373de9a9e2d68eb8ba45535e48bd7dcab6e3f79494e2b35426c5965a74",
+          "editedOrRevertedByThisPass": false
+        }
+      ]
+    }
+  },
+  "audit": "ai/interactive-systems/reassembly-map.md#stage-7-natural-language-interface-dialogue",
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions.",
+    "privateSourceFingerprints": "omitted"
+  }
+}

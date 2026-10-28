@@ -33,6 +33,7 @@
 [[mounts]]
   source = "content"
   target = "content"
+  files = ["! **/*.assets/*.html", "! **/*.assets/*.htm"]
 
 ## data
 [[mounts]]
@@ -86,6 +87,12 @@
   target = "layouts"
 
 ## static
+# Publish HTML attachments as static files rather than content pages.
+[[mounts]]
+  source = "content"
+  target = "static"
+  files = ["**/*.assets/*.html", "**/*.assets/*.htm"]
+
 [[mounts]]
   source = ".generated/redirects"
   target = "static"

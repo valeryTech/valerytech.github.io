@@ -22,7 +22,7 @@ The proposal retains **Context-aware support assistant** as a separate case for 
 
 It brings together several concerns: product knowledge, live user-specific information, diagnosis, and controlled transitions to other workflows.
 
-The initial phrase **“resolves an issue”** needs qualification because the assistant may explain or diagnose an issue without being authorized to perform the correction.
+The initial phrase **"resolves an issue"** needs qualification because the assistant may explain or diagnose an issue without being authorized to perform the correction.
 
 ## 3. Context-aware support assistant
 

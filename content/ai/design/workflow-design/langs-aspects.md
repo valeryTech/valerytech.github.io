@@ -19,7 +19,7 @@ The research notes propose a shift in the design of AI systems that goes beyond 
 
 The research notes share the central idea of **constrained generativity**: establish a small set of shared rules and guarantees, while allowing humans, LLMs, tools, and other components to generate and compose new behavior within those constraints.
 
-The *Semantic Substrate Design* work defines this in terms of preserving guarantees across independently developed components. The *Problem Framing* work extends it into a collaborative environment where participants share state, but authority, effects, provenance, and invariants remain under explicit control. Problem framing
+The *Semantic Substrate Design* work defines this in terms of preserving guarantees across independently developed components. The *Problem Framing* work extends it into a collaborative environment where participants share state, but authority, effects, provenance, and invariants remain under explicit control. [Problem framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}})
 
 This shifts the central research question:
 
@@ -37,7 +37,7 @@ The proposal has three levels. They reinforce each other, but each makes a diffe
 | **Participant-neutral programmable environment** | Humans, LLMs, programs, and tools contribute to shared computations governed by explicit semantics | A different architecture for AI products |
 | **Typed DSLs and semantic compilation** | Generate constrained programs and validate them before controlled execution | A concrete implementation and verification mechanism |
 
-The semantic substrate research goes beyond the specific architecture. It asks how to derive the least restrictive constraints sufficient to preserve a selected guarantee. Semantic substrate design report Semantic substrate builder method
+The semantic substrate research goes beyond the specific architecture. It asks how to derive the least restrictive constraints sufficient to preserve a selected guarantee. [Semantic substrate design report]({{< ref "ai/design-research/01-foundations/02-semantic-substrate-design-report" >}}) [Semantic substrate builder method]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}})
 
 The proposed research emphasis is deriving those constraints, rather than treating one product architecture as the whole problem.
 
@@ -65,9 +65,9 @@ flowchart TD
 
 This reflects the distinction between a participant proposing something and the system accepting it as authoritative.
 
-It also allows LLMs to generate new hypotheses, workflows, or interpretations without requiring the entire workflow to be specified in advance. Problem framing
+It also allows LLMs to generate new hypotheses, workflows, or interpretations without requiring the entire workflow to be specified in advance. [Problem framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}})
 
-The *Behavioral Compilation* work adds another proposal: the system can use LLM outputs to discover requirements and synthesize reusable procedures. These procedures can still contain LLM operations. The goal is to make their behavior inspectable and subject to explicit contracts. Behavioral compilation and specification
+The *Behavioral Compilation* work adds another proposal: the system can use LLM outputs to discover requirements and synthesize reusable procedures. These procedures can still contain LLM operations. The goal is to make their behavior inspectable and subject to explicit contracts. [Behavioral compilation and specification]({{< ref "ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification" >}})
 
 **Reconsidering Go, Scala, Haskell, and BEAM**
 
@@ -83,7 +83,7 @@ Scala 3 becomes attractive when those abstractions must integrate with existing 
 
 BEAM could be valuable for supervising isolated execution processes. That gives runtime fault tolerance, although semantic correctness still depends on the contracts and verification system.
 
-The *Language and Formalism Choices* document proposes that a family of focused languages sharing a common semantic intermediate representation may be preferable to one general-purpose language. Language and formalism choices
+The *Language and Formalism Choices* document proposes that a family of focused languages sharing a common semantic intermediate representation may be preferable to one general-purpose language. [Language and formalism choices]({{< ref "ai/design-research/03-language-and-compiler/06-language-and-formalism-choices" >}})
 
 The article's language predictions therefore do not settle the language choices for this architecture.
 
@@ -93,7 +93,7 @@ Two technical challenges remain open.
 
 First, **formal validity and domain correctness remain separate**. A program can satisfy its types, permissions, and declared effects while selecting the wrong customers, drawing unsupported conclusions, or misinterpreting the user's intent.
 
-The *Verification and Acceptance* notes distinguish compilation, verification, acceptance, and authorization for external effects. Verification and acceptance
+The *Verification and Acceptance* notes distinguish compilation, verification, acceptance, and authorization for external effects. [Verification and acceptance]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}})
 
 Second, creating useful semantic contracts is expensive. Someone must define what a valid result means, which assumptions apply, and what happens when participants disagree.
 
@@ -107,7 +107,7 @@ But demonstrating that this can be done systematically is a substantial research
 
 A proposed starting point is the narrower case developed in the notes: **typed epistemic contracts for LLM-based investigation**.
 
-For example, a system should only finalize a finding when its evidence satisfies declared coverage, authority, and provenance requirements. Otherwise, the result remains preliminary, unresolved, or an abstention. Epistemic contracts for RAG
+For example, a system should only finalize a finding when its evidence satisfies declared coverage, authority, and provenance requirements. Otherwise, the result remains preliminary, unresolved, or an abstention. [Epistemic contracts for RAG]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}})
 
 Compare three implementations of the same investigation workload: a conventional tool-calling agent, a fixed workflow with validators, and the proposed semantic-substrate approach.
 

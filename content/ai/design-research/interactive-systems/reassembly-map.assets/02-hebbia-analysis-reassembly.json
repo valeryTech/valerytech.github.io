@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "stage": 2,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Hebbia product analysis regrouped into four case notes. All original passages moved unchanged through move_text.py.",
+  "source": {
+    "path": "projects/input/hebbia-sem/hebbia-analysis-1.md",
+    "originalLines": 856,
+    "originalBytes": 30899,
+    "originalSha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+    "originalFinalNewline": false,
+    "currentRole": "navigation stub",
+    "stubLines": 12,
+    "stubBytes": 1726,
+    "stubSha256": "85ceaf347aa5cca38f69b89fdcae33b73d32e8d7995264ba0dcb427af7f1e8c0"
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        32
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/01-product-and-workflow-context.md",
+      "destinationLines": [
+        14,
+        45
+      ],
+      "lines": 32,
+      "bytes": 2369,
+      "sha256": "9aef28804a9e4515dbed5238937dcdecd05082e0c518480428b4aae8e4b88a80"
+    },
+    {
+      "sourceLines": [
+        33,
+        134
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "destinationLines": [
+        14,
+        115
+      ],
+      "lines": 102,
+      "bytes": 3442,
+      "sha256": "bb77f52a30cfdab5d1be1fffb7c5406325843b4a5cc1f10daeca88696d658166"
+    },
+    {
+      "sourceLines": [
+        135,
+        350
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/03-document-understanding-and-retrieval.md",
+      "destinationLines": [
+        14,
+        229
+      ],
+      "lines": 216,
+      "bytes": 8206,
+      "sha256": "d5d8dcbb834a7f1884cb7b60cf11a4f248c753501835515654310a496648d53d"
+    },
+    {
+      "sourceLines": [
+        351,
+        454
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/04-evidence-contracts-and-product-comparison.md",
+      "destinationLines": [
+        14,
+        117
+      ],
+      "lines": 104,
+      "bytes": 4665,
+      "sha256": "04bba89bde434626b1e2c1f2c8c7486f5a37575713b7f11337ea473d78258d93"
+    },
+    {
+      "sourceLines": [
+        455,
+        479
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "destinationLines": [
+        116,
+        140
+      ],
+      "lines": 25,
+      "bytes": 856,
+      "sha256": "93c545bed108856ca00b5e20c96dd5415bd3e640cc7e4834cf8de72ecb7cbf76"
+    },
+    {
+      "sourceLines": [
+        480,
+        571
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/04-evidence-contracts-and-product-comparison.md",
+      "destinationLines": [
+        118,
+        209
+      ],
+      "lines": 92,
+      "bytes": 2687,
+      "sha256": "a62b7289a816f46373f3f51bb988bc6eb3d24e7cd7918e56e2f00056a2d0f19b"
+    },
+    {
+      "sourceLines": [
+        572,
+        627
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/03-document-understanding-and-retrieval.md",
+      "destinationLines": [
+        230,
+        285
+      ],
+      "lines": 56,
+      "bytes": 1976,
+      "sha256": "156bc0b42245d5f64ccd9970de574bfe2b2da3430f1236351d678234fa249a74"
+    },
+    {
+      "sourceLines": [
+        628,
+        781
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/01-product-and-workflow-context.md",
+      "destinationLines": [
+        46,
+        199
+      ],
+      "lines": 154,
+      "bytes": 3656,
+      "sha256": "1fae0721d1cf61aaf066f4eccbbf11ba4304aa4db354df268a51c47275c93fbb"
+    },
+    {
+      "sourceLines": [
+        782,
+        856
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/04-evidence-contracts-and-product-comparison.md",
+      "destinationLines": [
+        210,
+        284
+      ],
+      "lines": 75,
+      "bytes": 3042,
+      "sha256": "73dba14903d2c629bab546637babca7b2328084d509d0e41dad0ca7e8e2d017d"
+    }
+  ],
+  "destinations": [
+    {
+      "path": "projects/input/hebbia-sem/analysis/01-product-and-workflow-context.md",
+      "prefixLines": 13,
+      "prefixBytes": 900,
+      "prefixSha256": "8a6c5f9fa41984883bc815190c2229337a3cf17583e3a3a5080de0be15db5bba",
+      "lines": 199,
+      "bytes": 6925,
+      "sha256": "7da5d2f8153fc252d5db152f6be62ac2b50ca8fde8a24ebdedb406a13be82c6d",
+      "finalNewline": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "prefixLines": 13,
+      "prefixBytes": 1086,
+      "prefixSha256": "85f9fbc69eca94a11c553df8eb2040c88f38c2daa457449b48618492bf017fdd",
+      "lines": 140,
+      "bytes": 5384,
+      "sha256": "cf4d71a03cfbf9f6ed2d6375d5514ecba846ec25c805ce56435d6c343abf1868",
+      "finalNewline": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/analysis/03-document-understanding-and-retrieval.md",
+      "prefixLines": 13,
+      "prefixBytes": 1251,
+      "prefixSha256": "661337f783f788368462788eafc7d84160db71ed533cce047612e1d114efd070",
+      "lines": 285,
+      "bytes": 11433,
+      "sha256": "e96ddb1d92b3d7bf236fb67c4ba177be81669d3b1fc9bc90282c0b6ecebe15c0",
+      "finalNewline": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/analysis/04-evidence-contracts-and-product-comparison.md",
+      "prefixLines": 13,
+      "prefixBytes": 1124,
+      "prefixSha256": "780864b4e0206b8f69164f8aaa0cb35a803a81ae85c0179bf73b08605105d946",
+      "lines": 284,
+      "bytes": 11518,
+      "sha256": "8c420221c80867201285aa9d98fc79fd05bb85ab8228961a36b84dcfb15b9a98",
+      "finalNewline": false
+    }
+  ],
+  "moveOrder": [
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 27857,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 24201,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 22225,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 19538,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 18682,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 14017,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 5811,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 2369,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "verification": {
+    "reconstructedLines": 856,
+    "reconstructedBytes": 30899,
+    "reconstructedSha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+    "byteForByteMatch": true,
+    "sourceBytesAfterMoves": 0,
+    "sourceCoverageExact": true,
+    "passageChecksumsVerified": true,
+    "dryRunsNonMutating": true,
+    "everyAppliedMoveVerified": true,
+    "noCodeFenceDivided": true,
+    "unrelatedBaselineChanges": [],
+    "unrelatedBaselineUnchangedCount": 79,
+    "sourceStubCreatedAfterMoves": true,
+    "finalMappedPassagesVerified": true,
+    "stage1": {
+      "mappedPassagesVerified": true,
+      "reconstructedLines": 1469,
+      "reconstructedBytes": 32504,
+      "reconstructedSha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+      "historicalWholeFileChecksumsNotUsed": true
+    },
+    "navigation": {
+      "localLinksChecked": 87,
+      "headingAnchorsChecked": 8,
+      "missingLinks": 0
+    },
+    "concurrentChangesAfterMoves": [
+      "ai/design-research/00-index.md",
+      "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments.md",
+      "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments.md",
+      "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns.md",
+      "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model.md"
+    ],
+    "neighbourChatInspectedReadOnly": true
+  },
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

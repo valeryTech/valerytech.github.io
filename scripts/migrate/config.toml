@@ -35,9 +35,12 @@ section_title = "AI"
 root_index_source = "_index.md"
 selection_mode = "opt-in"
 selection_paths = [
+  "ai-systems-design",
   "approach",
+  "architecture-dsl-like",
   "collab-and-joint-work",
   "design",
+  "design-research",
   "discovery",
   "other/_index.md",
   "other/methodology",
@@ -46,7 +49,6 @@ selection_paths = [
   "risk-areas",
   "system-evaluation",
   "var",
-  # Detailed design-research and architecture-dsl-like notes remain private.
 ]
 include = ["**/*.md", "*.md"]
 

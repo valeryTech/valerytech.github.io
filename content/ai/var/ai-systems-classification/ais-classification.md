@@ -10,7 +10,7 @@ linkTitle: "Ais Classification"
 ## Executive summary and scope
 
 
-**Scope and assumptions.** This report covers contemporary machine-learning and AI systems, including conventional predictive ML, generative AI, retrieval-augmented systems, tool-using agents, autonomous software, and safety-related cyber-physical systems. The evidence base runs through **October 22, 2026** and prioritizes standards bodies, regulators, original papers, and first-party system documentation. “AI system” is treated as broader than “AI model”: the OECD describes a model as a core component used by a system to infer outputs, while the deployed system can combine one or more models with data, software, interfaces, and other components. [^1]
+**Scope and assumptions.** This report covers contemporary machine-learning and AI systems, including conventional predictive ML, generative AI, retrieval-augmented systems, tool-using agents, autonomous software, and safety-related cyber-physical systems. The evidence base runs through **October 22, 2026** and prioritizes standards bodies, regulators, original papers, and first-party system documentation. "AI system" is treated as broader than "AI model": the OECD describes a model as a core component used by a system to infer outputs, while the deployed system can combine one or more models with data, software, interfaces, and other components. [^1]
 
 The main finding is that **there is no generally accepted single-axis taxonomy for AI systems**. Existing classifications answer different questions. The OECD classifies systems through People & Planet, Economic Context, Data & Input, AI Model, and Task & Output. NIST AI RMF organizes risk management around Govern, Map, Measure, and Manage and evaluates trustworthiness properties across the lifecycle. The EU AI Act primarily classifies legal risk and attaches obligations. ISO standards split architecture, lifecycle, data quality, robustness, risk management, testing, and management-system assurance across several documents. Human-factors taxonomies focus on allocation of work between people and automation, while agent research focuses on planning, action, and tool access. [^2]
 
@@ -52,7 +52,7 @@ NIST AI RMF is better viewed as a **risk and assurance framework** than a finite
 
 The EU AI Act is primarily a **risk-based legal classification and obligations framework**. For high-risk systems, its requirements span risk management, data and data governance, technical documentation, logging, transparency, human oversight, and accuracy, robustness, and cybersecurity. It therefore supplies many assurance dimensions, while saying much less about whether an application is batch versus streaming, monolithic versus plug-in based, or cloud versus edge. [^10]
 
-ISO spreads the problem across standards. ISO/IEC 23053 provides a conceptual framework for components and functions of ML-based AI systems; ISO/IEC 5338 addresses lifecycle processes; ISO/IEC 5259 addresses data quality; ISO/IEC 24029 addresses neural-network robustness; ISO/IEC 42001 addresses organizational AI management; and the ISO/IEC 42119 series addresses testing of AI systems and components. This division is useful in practice because “classification”, “architecture”, “testing”, and “certification” are separate concerns. [^11]
+ISO spreads the problem across standards. ISO/IEC 23053 provides a conceptual framework for components and functions of ML-based AI systems; ISO/IEC 5338 addresses lifecycle processes; ISO/IEC 5259 addresses data quality; ISO/IEC 24029 addresses neural-network robustness; ISO/IEC 42001 addresses organizational AI management; and the ISO/IEC 42119 series addresses testing of AI systems and components. This division is useful in practice because "classification", "architecture", "testing", and "certification" are separate concerns. [^11]
 
 Human-factors research adds a dimension these governance frameworks can flatten. Parasuraman, Sheridan, and Wickens classify automation according to where automation occurs in the information-processing chain: information acquisition, information analysis, decision/action selection, and action implementation. A system can therefore automate some stages while retaining human control of others. EASA makes a related distinction in aviation: Level 1 applications assist humans, while Level 2 introduces human-AI cooperation and automatic decision-making under human oversight; EASA's proposed 2026 Issue 3 extends the framework toward advanced automation. [^12]
 
@@ -62,8 +62,8 @@ The requested dimensions can be synthesized as follows.
 |---|---|---|
 | **Agentic/autonomous vs. assistive** | Information only; recommendation/draft; action proposed for approval; bounded automatic execution; autonomous execution within an operational domain | Record **action authority**, not merely how capable the model appears. ReAct systems reason and act through environments; NIST's 2026 agent initiative explicitly describes agents as capable of autonomous actions. SAE and EASA show that domain taxonomies can formalize degrees of automation and human responsibility. [^13] |
 | **Input complexity** | Structured records; free text; documents; images/audio/video; sensor streams; multimodal combinations; live external state | OECD makes Data & Input a first-class dimension. Complexity should also record temporal behavior, sensitivity, provenance, and whether inputs cross a trust boundary. IDx-DR, for example, consumes ophthalmic images, while modern coding agents can consume repository data and visual inputs. [^14] |
-| **Human-in-the-loop roles** | Requester; subject; reviewer; approver; operator; supervisor; override authority; auditor; affected person with appeal rights | A binary “human present” field loses too much information. Record both **role** and **control point**. NIST explicitly asks about human oversight; EASA treats human-AI interaction as part of safety assurance; current agent products use explicit approval checkpoints for consequential actions. [^15] |
-| **Batch vs. real time** | Offline batch; asynchronous job; interactive; streaming; deadline-constrained real time | MLPerf makes the difference measurable: Offline benchmarks emphasize throughput, while Single-Stream emphasizes per-request latency and is used for latency-sensitive edge workloads. “Hard real time” should additionally record a maximum deadline and behavior on deadline miss. [^16] |
+| **Human-in-the-loop roles** | Requester; subject; reviewer; approver; operator; supervisor; override authority; auditor; affected person with appeal rights | A binary "human present" field loses too much information. Record both **role** and **control point**. NIST explicitly asks about human oversight; EASA treats human-AI interaction as part of safety assurance; current agent products use explicit approval checkpoints for consequential actions. [^15] |
+| **Batch vs. real time** | Offline batch; asynchronous job; interactive; streaming; deadline-constrained real time | MLPerf makes the difference measurable: Offline benchmarks emphasize throughput, while Single-Stream emphasizes per-request latency and is used for latency-sensitive edge workloads. "Hard real time" should additionally record a maximum deadline and behavior on deadline miss. [^16] |
 | **Safety and robustness** | Empirically tested; adversarially tested; monitored; fail-safe; formally bounded property | NIST requires regular safety evaluation and safe failure. ISO/IEC 24029-2 defines methodology for formal robustness assessment. These are distinct evidence levels. [^17] |
 | **Provenance and traceability** | Source identity; data/model version; derivation chain; prompt/configuration; retrieved evidence; tool result; actor/action/time records | W3C PROV explicitly models entities, activities, agents, use, generation, derivation, and attribution. NIST also identifies provenance as supporting transparency and accountability. [^18] |
 | **Verifiability and certifiability** | Testable only; independently validated; safety case; regulated authorization; management-system certification; formally verified bounded property | Formal verification proves a specified property under assumptions. Regulatory authorization and management-system certification provide different evidence. ISO/IEC 42006 certifies AIMS processes; ISO/IEC 24029-2 addresses formal robustness. [^19] |
@@ -90,9 +90,9 @@ A source-family comparison makes the gaps clearer:
 
 These differences are reflected in a small prevalence analysis performed for this report. The corpus contains 18 deliberately selected primary or near-primary sources spanning OECD, NIST, EU, ISO, human-automation research, SAE, EASA, Model Cards, Datasheets, W3C PROV, ReAct, Toolformer, RAG, and MLPerf. [^28]
 
-A dimension was counted only when the source gave it substantive explicit treatment. An omitted dimension therefore means **“not a first-class concern in this source”**, not that the source considers it irrelevant. This is a purposive coding exercise rather than a systematic meta-analysis. Performance appeared in 10/18 sources, inputs/data in 9/18, autonomy and provenance in 8/18 each, while explicit runtime mode appeared in only 2/18 and edge/cloud deployment in 1/18. The tail is significant: operational architecture is much less consistently classified than model behavior, performance, and governance.
+A dimension was counted only when the source gave it substantive explicit treatment. An omitted dimension therefore means **"not a first-class concern in this source"**, not that the source considers it irrelevant. This is a purposive coding exercise rather than a systematic meta-analysis. Performance appeared in 10/18 sources, inputs/data in 9/18, autonomy and provenance in 8/18 each, while explicit runtime mode appeared in only 2/18 and edge/cloud deployment in 1/18. The tail is significant: operational architecture is much less consistently classified than model behavior, performance, and governance.
 
-![Reported feature prevalence across the 18-source core corpus](assets/classification_feature_prevalence.png)
+![Reported feature prevalence across the 18-source core corpus](ais-classification.assets/classification-feature-prevalence.png)
 
 *Figure recreated from the six category counts explicitly reported in the source text. The original chart image was not included in the supplied files.*
 
@@ -124,7 +124,7 @@ Agent architectures make the controller and connector categories more important.
 
 The same distinction is visible in deployed products. GitHub Copilot can use MCP servers to access repository and third-party context; GitHub documents toolsets as independently configurable and recommends enabling only necessary capability groups because tool availability affects both accuracy and security. Microsoft Copilot Cowork executes multi-step work across email, calendars, documents, Teams, research, and files, with sensitive actions gated by approval. The model is therefore one component inside a controller/tool/authorization/UI system. [^33]
 
-Verifiers require a further distinction. A deterministic schema check can guarantee that a syntactically invalid action is rejected. A formal neural-network verifier can establish a mathematical property in a specified region; Reluplex, for example, was designed to verify neural-network properties or produce counterexamples. A learned “judge” or safety classifier supplies probabilistic evidence and can itself fail. These components should all be called verifiers only if their assurance type is recorded explicitly. [^34]
+Verifiers require a further distinction. A deterministic schema check can guarantee that a syntactically invalid action is rejected. A formal neural-network verifier can establish a mathematical property in a specified region; Reluplex, for example, was designed to verify neural-network properties or produce counterexamples. A learned "judge" or safety classifier supplies probabilistic evidence and can itself fail. These components should all be called verifiers only if their assurance type is recorded explicitly. [^34]
 
 The following entity-relationship diagram captures a general system decomposition. It is a synthesis rather than a diagram prescribed by any single standard; its separation of models from the containing system follows OECD and ISO usage, and its component and dependency boundaries follow NIST and modern agent/RAG architectures. [^35]
 
@@ -213,9 +213,9 @@ Two component properties deserve explicit treatment because they propagate upwar
 ## Invariants and assurance requirements
 
 
-“Invariant” is used loosely in AI discussions, so four evidence categories should be separated.
+"Invariant" is used loosely in AI discussions, so four evidence categories should be separated.
 
-A **hard runtime invariant** is enforced on every execution within its technical assumptions: for example, “this agent token cannot invoke the payment API” or “an output that fails the JSON schema is never forwarded.” A **bounded formal guarantee** proves a mathematical property in a specified domain, such as local robustness within a perturbation region. An **operational requirement** establishes a measurable bound such as a latency SLO or availability objective. An **assurance claim** is supported by accumulated evidence such as testing, process controls, independent validation, regulatory review, or a safety case. Formal neural-network verification and Waymo's safety-case methodology illustrate why these evidence forms should not be conflated. [^38]
+A **hard runtime invariant** is enforced on every execution within its technical assumptions: for example, "this agent token cannot invoke the payment API" or "an output that fails the JSON schema is never forwarded." A **bounded formal guarantee** proves a mathematical property in a specified domain, such as local robustness within a perturbation region. An **operational requirement** establishes a measurable bound such as a latency SLO or availability objective. An **assurance claim** is supported by accumulated evidence such as testing, process controls, independent validation, regulatory review, or a safety case. Formal neural-network verification and Waymo's safety-case methodology illustrate why these evidence forms should not be conflated. [^38]
 
 Common invariants and guarantees map to systems as follows.
 
@@ -251,12 +251,12 @@ A **tool-using agent** needs capability boundaries, authentication and authoriza
 
 An **autonomous physical system** further requires an operational domain, timing guarantees, sensing and actuator health assumptions, safe-state behavior, extensive validation, continuous monitoring, and a structured safety argument. Waymo's safety case explicitly combines system description, development methodology, validation metrics, and validation results to justify deployment without a human driver. [^54]
 
-One important engineering conclusion follows: **invariants belong at interfaces as often as they belong to models**. For an agent, “tool arguments satisfy policy before execution” is frequently more enforceable than “the LLM will never propose a dangerous action.” For RAG, “every displayed citation resolves to a retrieved source used for that response” is more testable than a broad requirement that the model “never hallucinate.” This follows from the distinction between probabilistic learned components and enforceable deterministic system boundaries reflected in NIST's component approach and formal verification work. [^55]
+One important engineering conclusion follows: **invariants belong at interfaces as often as they belong to models**. For an agent, "tool arguments satisfy policy before execution" is frequently more enforceable than "the LLM will never propose a dangerous action." For RAG, "every displayed citation resolves to a retrieved source used for that response" is more testable than a broad requirement that the model "never hallucinate." This follows from the distinction between probabilistic learned components and enforceable deterministic system boundaries reflected in NIST's component approach and formal verification work. [^55]
 
 ## Comparative system taxonomy
 
 
-The table below applies the dimensions to representative system types. **“Unspecified” means that the cited public source does not make the dimension clear enough to classify confidently**; it should not be read as an assertion about the internal implementation.
+The table below applies the dimensions to representative system types. **"Unspecified" means that the cited public source does not make the dimension clear enough to classify confidently**; it should not be read as an assertion about the internal implementation.
 
 | System type | Action authority and human role | Inputs and timing | Architecture / external dependencies / deployment | Primary invariants and assurance needs | Representative example |
 |---|---|---|---|---|---|
@@ -271,7 +271,7 @@ The table below applies the dimensions to representative system types. **“Unsp
 
 Several cross-cutting patterns emerge.
 
-**Autonomy rises primarily when outputs become externally effective actions.** Generating an answer, prediction, draft, or code suggestion is usually assistive. Creating a pull request is a bounded external action. Sending email or modifying shared files carries broader organizational side effects. Steering a vehicle creates immediate physical effects. That gradient is better represented through action authority and operational boundaries than through a single “AI sophistication” score. [^63]
+**Autonomy rises primarily when outputs become externally effective actions.** Generating an answer, prediction, draft, or code suggestion is usually assistive. Creating a pull request is a bounded external action. Sending email or modifying shared files carries broader organizational side effects. Steering a vehicle creates immediate physical effects. That gradient is better represented through action authority and operational boundaries than through a single "AI sophistication" score. [^63]
 
 **Human oversight changes form with timing.** Pre-action approval works for an email agent because seconds of delay are acceptable. It cannot be the primary safety mechanism for every steering decision in an autonomous vehicle. Safety-related real-time systems therefore shift assurance toward prevalidated operational bounds, monitors, safety controllers, and safe failure. NIST's explicit treatment of response time and safe failure and the SAE/Waymo frameworks support this distinction. [^64]
 
@@ -289,14 +289,14 @@ For new systems, a useful classification record should contain **nine fields**. 
 | **Context and consequence** | Identify intended use, affected people, environment, failure consequences, regulatory domain | Internal productivity / business-critical / rights-affecting / regulated / safety-critical |
 | **Action authority** | Classify the highest side effect the system can perform without additional human authorization | A0: information only; A1: recommendation/draft; A2: proposes action requiring approval; A3: automatically executes bounded actions with supervision/override; A4: autonomous execution inside a declared operational domain |
 | **Input/data profile** | Record structure, modality, live/static behavior, source trust and sensitivity | Structured + text + images; streaming sensors; personal data; public documents |
-| **Human control** | Name people and their control points instead of writing only “HITL” | Requester, reviewer, pre-action approver, runtime supervisor, emergency override, auditor, affected-person appeal |
+| **Human control** | Name people and their control points instead of writing only "HITL" | Requester, reviewer, pre-action approver, runtime supervisor, emergency override, auditor, affected-person appeal |
 | **Timing and deployment** | Record when results must exist and where computation runs | Offline batch / async / interactive / streaming / deadline ≤ X; cloud / edge / embedded / hybrid |
 | **Architecture and dependencies** | Draw the component graph and identify trust boundaries | Models, retriever, controller, verifier, monitor, UI, stores, external APIs, actuators |
 | **Assurance evidence** | State what supports each important claim | Benchmark test, subgroup test, red-team result, monitoring evidence, independent validation, regulatory authorization, safety case, formal proof |
 | **Governance and traceability** | State what can be traced and retained | Data lineage, model/prompt/config versions, source citations, tool logs, approvals, privacy/retention policies |
 | **Metrics and change policy** | Define acceptance criteria plus what triggers reevaluation | Accuracy ≥ X, p99 latency ≤ Y, task success ≥ Z, incident threshold, model/corpus/tool update revalidation |
 
-The proposed **action-authority classes** deserve emphasis. They should not be treated as another universal “levels of AI” standard and they do not map one-to-one onto SAE driving levels. Their purpose is to give software architecture reviews an immediate answer to a practical question: *what can this system cause to happen without a new human decision?* The importance of that question follows from human-automation research, EASA's distinction between assistance and automatic decision-making under oversight, and current agent standards work. [^66]
+The proposed **action-authority classes** deserve emphasis. They should not be treated as another universal "levels of AI" standard and they do not map one-to-one onto SAE driving levels. Their purpose is to give software architecture reviews an immediate answer to a practical question: *what can this system cause to happen without a new human decision?* The importance of that question follows from human-automation research, EASA's distinction between assistance and automatic decision-making under oversight, and current agent standards work. [^66]
 
 The most useful decision rules are:
 
@@ -393,22 +393,22 @@ A compact system descriptor can consequently look like:
 
 > **Customer-support RAG agent:** medium-consequence enterprise system; A2 action authority; text/document input including personal data; interactive cloud deployment; LLM + retriever + enterprise corpus + controller + ticketing connector + policy verifier + audit store; pre-action approval for refunds/account changes; p95 response SLO; document/citation provenance; connector-level authorization; privacy/retention controls; empirical model/retrieval evaluations plus production monitoring.
 
-That descriptor conveys substantially more engineering information than labels such as “LLM application”, “agentic AI”, or “human in the loop”, because it identifies the actual authority, data, timing, dependencies, controls, and evidence.
+That descriptor conveys substantially more engineering information than labels such as "LLM application", "agentic AI", or "human in the loop", because it identifies the actual authority, data, timing, dependencies, controls, and evidence.
 
 ## Findings, limitations, and implications
 
 
 The research supports several general conclusions.
 
-**AI system classification works best as a vector, not a hierarchy.** OECD's five dimensions, NIST's lifecycle controls, human-automation levels, performance benchmarks, and architecture papers each expose information that cannot be reconstructed from a single “risk level” or “autonomy level.” In particular, performance, generality, autonomy, consequence, and deployment constraints are logically independent. [^71]
+**AI system classification works best as a vector, not a hierarchy.** OECD's five dimensions, NIST's lifecycle controls, human-automation levels, performance benchmarks, and architecture papers each expose information that cannot be reconstructed from a single "risk level" or "autonomy level." In particular, performance, generality, autonomy, consequence, and deployment constraints are logically independent. [^71]
 
 **Autonomy should be classified at the action boundary.** Whether the underlying technology is an LLM, vision network, symbolic planner, or hybrid is less informative for operational risk than whether it can execute consequential actions and under whose authority. NIST's 2026 agent initiative explicitly centers agents capable of autonomous actions, while deployed Cowork and GitHub systems expose action scope and approvals as concrete controls. [^72]
 
-**“Human in the loop” is too coarse for serious system documentation.** Human roles can include request, review, pre-action approval, continuous supervision, emergency override, post-hoc audit, and appeal. The feasible role also depends on timing: manual approval may be appropriate for enterprise transactions yet impossible as the primary mechanism in millisecond-scale physical control. Human-automation research, EASA, NIST, and autonomous-driving classifications all reinforce this point. [^73]
+**"Human in the loop" is too coarse for serious system documentation.** Human roles can include request, review, pre-action approval, continuous supervision, emergency override, post-hoc audit, and appeal. The feasible role also depends on timing: manual approval may be appropriate for enterprise transactions yet impossible as the primary mechanism in millisecond-scale physical control. Human-automation research, EASA, NIST, and autonomous-driving classifications all reinforce this point. [^73]
 
-**Provenance and explainability solve different problems.** Provenance answers questions such as “which source, data, model version, activity and actor led here?” W3C PROV provides explicit structures for that chain. Explainability concerns how a system arrived at or represents a decision mechanism, while interpretability concerns what the result means in context under NIST terminology. A system can have excellent provenance and weak mechanistic explainability, or the reverse. [^74]
+**Provenance and explainability solve different problems.** Provenance answers questions such as "which source, data, model version, activity and actor led here?" W3C PROV provides explicit structures for that chain. Explainability concerns how a system arrived at or represents a decision mechanism, while interpretability concerns what the result means in context under NIST terminology. A system can have excellent provenance and weak mechanistic explainability, or the reverse. [^74]
 
-**Verifiability must name the property being verified.** “Verified AI” without a property and domain is not a useful classification. Formal methods can establish properties such as bounded local robustness for certain networks; they do not thereby prove factual correctness, fairness, security, safe tool use, or correctness of the surrounding system. ISO/IEC 24029-2 and Reluplex make the scope of formal robustness verification explicit. [^48]
+**Verifiability must name the property being verified.** "Verified AI" without a property and domain is not a useful classification. Formal methods can establish properties such as bounded local robustness for certain networks; they do not thereby prove factual correctness, fairness, security, safe tool use, or correctness of the surrounding system. ISO/IEC 24029-2 and Reluplex make the scope of formal robustness verification explicit. [^48]
 
 **Certification must name the object of certification.** ISO/IEC 42006 concerns bodies that audit and certify organizations' AI management systems according to ISO/IEC 42001. It is therefore evidence concerning management-system conformity. ISO work specifically directed at AI-system conformity-assessment schemes is separate and, as of October 2026, includes work still under development. [^75]
 
@@ -418,7 +418,7 @@ The research supports several general conclusions.
 
 **The most dependable guarantees are often enforced outside the generative model.** Authorization checks, schemas, transaction limits, tool allowlists, approval gates, provenance logging, runtime budgets, and fail-safe transitions can be engineered as deterministic controls even when the model generating a proposal is probabilistic. Formal neural-network methods can add stronger bounded claims where suitable; safety cases and lifecycle controls address broader system claims that cannot generally be reduced to a model proof. [^78]
 
-Finally, the framework should preserve **“unspecified” as a valid value**. Missing information is itself important. Public documentation may describe model performance while omitting deployment topology; a regulatory authorization may describe intended use without disclosing internal architecture; an agent paper may specify its controller loop while saying little about privacy or operational auditability. Filling such fields by assumption would make the taxonomy less useful. Model Cards and Datasheets were created in part because systematic documentation of intended use, evaluation, data origin, and limitations cannot safely be inferred from the artifact alone. [^42]
+Finally, the framework should preserve **"unspecified" as a valid value**. Missing information is itself important. Public documentation may describe model performance while omitting deployment topology; a regulatory authorization may describe intended use without disclosing internal architecture; an agent paper may specify its controller loop while saying little about privacy or operational auditability. Filling such fields by assumption would make the taxonomy less useful. Model Cards and Datasheets were created in part because systematic documentation of intended use, evaluation, data origin, and limitations cannot safely be inferred from the artifact alone. [^42]
 
 The resulting practical rule is:
 
@@ -428,81 +428,159 @@ The resulting practical rule is:
 
 
 [^1]: [What is AI? Can you make a clear distinction between AI ...](https://oecd.ai/en/wonk/definition)
+
 [^2]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^3]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^4]: [A model for types and levels of human interaction with ...](https://dl.acm.org/doi/10.1109/3468.844354)
-[^5]: [ISO/IEC 24029-2:2023 - Robustness of neural networks — Part 2](https://www.iso.org/standard/79804.html)
+
+[^5]: [ISO/IEC 24029-2:2023 - Robustness of neural networks -- Part 2](https://www.iso.org/standard/79804.html)
+
 [^6]: [Manage - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/playbook/manage/)
+
 [^7]: [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
+
 [^8]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^9]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^10]: [Regulation - EU - 2024/1689 - EN - EUR-Lex - European Union](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng)
+
 [^11]: [ISO/IEC 23053:2022 - Framework for AI systems using ...](https://www.iso.org/standard/74438.html)
+
 [^12]: [A model for types and levels of human interaction with ...](https://dl.acm.org/doi/10.1109/3468.844354)
+
 [^13]: [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+
 [^14]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^15]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^16]: [MLPerf Inference 5.1: Benchmarking Small LLMs with ...](https://mlcommons.org/2025/09/small-llm-inference-5-1/)
+
 [^17]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^18]: [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
+
 [^19]: [ISO/IEC 42006:2025 Information technology](https://www.iso.org/standard/42006)
+
 [^20]: [Trustworthy AI: Managing the Risks of Artificial Intelligence](https://www.nist.gov/speech-testimony/trustworthy-ai-managing-risks-artificial-intelligence)
+
 [^21]: [Communications of the ACM](https://dl.acm.org/doi/fullHtml/10.1145/3458723)
+
 [^22]: [Model Cards for Model Reporting](https://research.google/pubs/model-cards-for-model-reporting/)
+
 [^23]: [ISO/IEC 23053:2022 - Framework for AI systems using ...](https://www.iso.org/standard/74438.html)
+
 [^24]: [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761)
+
 [^25]: [Benchmark MLPerf Inference: Datacenter](https://mlcommons.org/benchmarks/inference-datacenter/)
+
 [^26]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^27]: [Artificial intelligence](https://www.iso.org/sectors/it-technologies/ai)
+
 [^28]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^29]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^30]: [ISO/IEC 23053:2022 - Framework for AI systems using ...](https://www.iso.org/standard/74438.html)
+
 [^31]: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
+
 [^32]: [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+
 [^33]: [MCP and cloud agent - GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent)
+
 [^34]: [An Efficient SMT Solver for Verifying Deep Neural Networks](https://arxiv.org/html/1702.01135v2)
+
 [^35]: [What is AI? Can you make a clear distinction between AI ...](https://oecd.ai/en/wonk/definition)
+
 [^36]: [Manage - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/playbook/manage/)
+
 [^37]: [Application card: Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/copilot-cowork-application-card)
+
 [^38]: [An Efficient SMT Solver for Verifying Deep Neural Networks](https://arxiv.org/html/1702.01135v2)
+
 [^39]: [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
+
 [^40]: [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
+
 [^41]: [Regulation - EU - 2024/1689 - EN - EUR-Lex - European Union](https://eur-lex.europa.eu/legal-content/EN-DE/ALL/?from=EN&uri=CELEX%3A32024R1689)
+
 [^42]: [Model Cards for Model Reporting](https://research.google/pubs/model-cards-for-model-reporting/)
+
 [^43]: [MCP and cloud agent - GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent)
+
 [^44]: [Application card: Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/copilot-cowork-application-card)
+
 [^45]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^46]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^47]: [J3259 : Taxonomy & Definitions for Operational Design ...](https://www.sae.org/standards/j3259-taxonomy-definitions-operational-design-domain-odd-driving-automation-systems)
-[^48]: [ISO/IEC 24029-2:2023 - Robustness of neural networks — Part 2](https://www.iso.org/standard/79804.html)
+
+[^48]: [ISO/IEC 24029-2:2023 - Robustness of neural networks -- Part 2](https://www.iso.org/standard/79804.html)
+
 [^49]: [AI Risks and Trustworthiness - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/)
+
 [^50]: [Manage - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/playbook/manage/)
+
 [^51]: [Four Principles of Explainable Artificial Intelligence](https://nvlpubs.nist.gov/nistpubs/ir/2021/nist.ir.8312.pdf)
+
 [^52]: [Regulation - EU - 2024/1689 - EN - EUR-Lex - European Union](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng)
+
 [^53]: [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761)
+
 [^54]: [Waymo's Toolkit For Building a Credible Safety Case](https://waymo.com/blog/2023/03/a-blueprint-for-av-safety-waymos)
+
 [^55]: [Manage - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/playbook/manage/)
-[^56]: [AlphaFold — Google DeepMind](https://deepmind.google/science/alphafold/)
+
+[^56]: [AlphaFold -- Google DeepMind](https://deepmind.google/science/alphafold/)
+
 [^57]: [GitHub Copilot code review](https://docs.github.com/copilot/concepts/agents/code-review)
+
 [^58]: [accessdata.fda.gov](https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN180001.pdf)
+
 [^59]: [Application card: Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/copilot-cowork-application-card)
+
 [^60]: [GitHub Copilot on GitHub.com](https://docs.github.com/copilot/concepts/agents/coding-agent/about-coding-agent)
+
 [^61]: [EASA Artificial Intelligence concept paper (proposed Issue 2 ...](https://www.easa.europa.eu/en/newsroom-and-events/news/easa-artificial-intelligence-concept-paper-proposed-issue-2-)
+
 [^62]: [10 AI Lessons from Driving 200+ Million Fully Autonomous ...](https://waymo.com/blog/2026/08/10ailessons)
+
 [^63]: [Application card: GitHub Copilot Agents](https://docs.github.com/en/copilot/responsible-use/agents)
+
 [^64]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^65]: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
+
 [^66]: [A model for types and levels of human interaction with ...](https://dl.acm.org/doi/10.1109/3468.844354)
+
 [^67]: [AI Agent Standards Initiative | NIST](https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative)
+
 [^68]: [Application card: Microsoft Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/copilot-cowork-application-card)
+
 [^69]: [Model Cards for Model Reporting](https://research.google/pubs/model-cards-for-model-reporting/)
+
 [^70]: [Benchmark MLPerf Inference: Tiny](https://mlcommons.org/benchmarks/inference-tiny/)
+
 [^71]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)
+
 [^72]: [AI Agent Standards Initiative | NIST](https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative)
+
 [^73]: [A model for types and levels of human interaction with ...](https://dl.acm.org/doi/10.1109/3468.844354)
+
 [^74]: [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)
+
 [^75]: [ISO/IEC 42006:2025 Information technology](https://www.iso.org/standard/42006)
+
 [^76]: [MLPerf Inference 5.1: Benchmarking Small LLMs with ...](https://mlcommons.org/2025/09/small-llm-inference-5-1/)
+
 [^77]: [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+
 [^78]: [AI RMF Core - AIRC - NIST AI Resource Center](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
+
 [^79]: [The OECD Framework for Classifying AI Systems to assess ...](https://oecd.ai/en/wonk/classification)

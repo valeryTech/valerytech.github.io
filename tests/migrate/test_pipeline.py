@@ -96,6 +96,57 @@ class MigrationPipelineTests(unittest.TestCase):
         self.assertIn("agent_map_exclude: true", generated)
         self.assertIn("draft: false", generated)
 
+    def test_sync_publishes_attachment_links_and_preserves_snapshot_origin(self) -> None:
+        source = self.workspace.source_root / "system-design/topics/api.md"
+        snapshot = source.parent / "snapshot.html"
+        snapshot.write_text(
+            '<a href="/settings/apps">Settings</a>'
+            '<a href="#local">Section</a>'
+            '<a href="https://other.example/">External</a>'
+            '<svg><use href="/icons.svg#icon"></use></svg>',
+            encoding="utf-8",
+        )
+        source.write_text(
+            "Source: [Original conversation](https://original.example/conversation)\n\n"
+            "[Snapshot](snapshot.html)\n\n![[snapshot.html]]\n\n"
+            + source.read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        generated = (self.workspace.content_root / "system-design/topics/api.md").read_text(encoding="utf-8")
+        self.assertIn('[Snapshot](/system-design/topics/api.assets/snapshot.html)', generated)
+        self.assertIn('[snapshot.html](/system-design/topics/api.assets/snapshot.html)', generated)
+        html = (self.workspace.content_root / "system-design/topics/api.assets/snapshot.html").read_text(encoding="utf-8")
+        self.assertIn('href="https://original.example/settings/apps"', html)
+        self.assertIn('href="https://original.example/icons.svg#icon"', html)
+        self.assertIn('href="#local"', html)
+        self.assertIn('href="https://other.example/"', html)
+        self.assertIn('href="/settings/apps"', snapshot.read_text(encoding="utf-8"))
+
+    def test_sync_copies_markdown_images_and_reports_missing_images(self) -> None:
+        source = self.workspace.source_root / "system-design/topics/api.md"
+        image = source.parent / "image (1).svg"
+        image.write_text('<svg xmlns="http://www.w3.org/2000/svg"></svg>', encoding="utf-8")
+        source.write_text(
+            '![Diagram](<image (1).svg>)\n\n'
+            '![Missing diagram](missing.png)\n\n'
+            '![](https://example.com/external.png)\n\n'
+            + source.read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        generated = (self.workspace.content_root / "system-design/topics/api.md").read_text(encoding="utf-8")
+        self.assertIn('![Diagram](api.assets/image-1.svg)', generated)
+        self.assertIn('\nMissing diagram\n', generated)
+        self.assertNotIn('missing.png', generated)
+        self.assertIn('![](https://example.com/external.png)', generated)
+        copied = self.workspace.content_root / "system-design/topics/api.assets/image-1.svg"
+        self.assertEqual(copied.read_bytes(), image.read_bytes())
+        report = (self.workspace.report_root / "sync.json").read_text(encoding="utf-8")
+        self.assertIn('Could not resolve image missing.png', report)
+
     def test_sync_uses_section_title_for_synthetic_root_index(self) -> None:
         source = self.workspace.source_root / "ai/collab-and-joint-work/note.md"
         source.parent.mkdir(parents=True)

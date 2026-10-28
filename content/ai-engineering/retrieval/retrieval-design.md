@@ -10,7 +10,7 @@ Retrieval design tests how to construct context that fits a user's current task 
 
 An LLM can interpret a request, suggest queries, judge candidates, compress context, and synthesize an answer. Whether it should perform each operation is a separate design question. Assign a model a bounded responsibility, expose its actual output, and compare the resulting workflow with a simpler alternative.
 
-This develops the engineering method behind the [domain model]({{< ref "ai-engineering/retrieval/model" >}}) and its [evidence-workflow specialization]({{< ref "ai-engineering/retrieval/reframing-proposed" >}}). The [contract note]({{< ref "ai-engineering/retrieval/conceptual-alignment" >}}) separates responsibilities, while [representation design]({{< ref "ai-engineering/retrieval/model-representation-design" >}}) develops access-view choices. The method also adapts the exploratory pipeline-design notes and their critical commentary. These are design proposals and sources of questions, rather than measured evidence that one workflow always works.
+This develops the engineering method behind the [domain model]({{< ref "ai-engineering/retrieval/model" >}}) and its [evidence-workflow specialization]({{< ref "ai-engineering/retrieval/reframing-proposed" >}}). The [contract note]({{< ref "ai-engineering/retrieval/conceptual-alignment" >}}) separates responsibilities, while [representation design]({{< ref "ai-engineering/retrieval/model-representation-design" >}}) develops access-view choices. The method also adapts the [exploratory pipeline-design notes]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) and their critical commentary. These are design proposals and sources of questions, rather than measured evidence that one workflow always works.
 
 ## State what the current operation needs
 
@@ -139,7 +139,7 @@ The model can also help design the system: propose decompositions, find countere
 
 Support language, direct manipulation, and examples together. A user might describe an information need in prose, edit suggested aliases, select passages with ordinary controls, and mark one example as "related vocabulary, wrong subject." Each contribution should affect explicit state rather than requiring the system to reconstruct the decision from conversation history.
 
-Shared storage alone does not establish shared understanding. Show the operative interpretation, match rule, and scope where they matter. The person and model may otherwise use "all matches," "selected," or "relevant" in different senses. The joint-activity commentary identifies this distinction between stored context and common ground.
+Shared storage alone does not establish shared understanding. Show the operative interpretation, match rule, and scope where they matter. The person and model may otherwise use "all matches," "selected," or "relevant" in different senses. The [joint-activity commentary]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments" >}}) identifies this distinction between stored context and common ground.
 
 ## Use interaction for two learning loops
 
@@ -152,7 +152,7 @@ One action can contribute to both loops, but the records have different meanings
 
 A click can express navigation, curiosity, disagreement, or collection according to the interface. It becomes a relevance label only under a defined interpretation. Preserve uncertainty and conflicting judgments instead of automatically turning observed behavior into training targets.
 
-The workbench model and comments and edits/runs proposal provide related questions about these records.
+The [workbench model and comments]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}) and [edits/runs proposal]({{< ref "ai/design-research/interactive-systems/13-edits-runs-and-result-use" >}}) provide related questions about these records.
 
 ## Introduce interaction where it resolves a concrete uncertainty
 
@@ -208,9 +208,9 @@ The engineering progression is: choose a small real task, expose its uncertain d
 ## Related design-research notes
 
 
-- Exploratory pipeline design and its comments: interaction as a design method, with automatic baselines and runtime review kept in scope.
-- Inspectable pipeline workbenches and its comments: artifacts, interventions, observations, and comparisons.
-- Goals and principles and its comments: proposed progressive automation and the evidence its adoption would require.
-- Participant profiles and its comments: allocation based on task-specific competence and failure modes.
-- Collaborative-system design practices and its comments: shared work, initiative, steering, and recovery.
-- Language and hybrid interaction: combining natural-language requests with direct manipulation and examples.
+- [Exploratory pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) and its [comments]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments" >}}): interaction as a design method, with automatic baselines and runtime review kept in scope.
+- [Inspectable pipeline workbenches]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}) and its [comments]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches-comments" >}}): artifacts, interventions, observations, and comparisons.
+- [Goals and principles]({{< ref "ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles" >}}) and its [comments]({{< ref "ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles-comments" >}}): proposed progressive automation and the evidence its adoption would require.
+- [Participant profiles]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) and its [comments]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation-comments" >}}): allocation based on task-specific competence and failure modes.
+- [Collaborative-system design practices]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) and its [comments]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments" >}}): shared work, initiative, steering, and recovery.
+- [Language and hybrid interaction]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}): combining natural-language requests with direct manipulation and examples.

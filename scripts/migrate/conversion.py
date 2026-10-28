@@ -34,7 +34,12 @@ CALLOUT_MAP = {
     "danger": ("danger", "outline/alert-octagon"),
 }
 WIKI_LINK_RE = re.compile(r"(!)?\[\[([^\]|#]+)?(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
-MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
+MARKDOWN_LINK_RE = re.compile(
+    r"(!?)\[([^\]]*)\]\("
+    r"(<[^>\n]+>(?:\s+(?:\"[^\"]*\"|'[^']*'))?"
+    r"|(?:[^()\n]|\([^()\n]*\))+)\)"
+)
+ESCAPED_WIKI_LINK_RE = re.compile(r"\\\[\\\[(.*?)\\\]\\\]")
 BLOCK_MATH_RE = re.compile(r"(?<!\\)\$\$(?!\$)(.+?)(?<!\\)\$\$(?!\$)", re.DOTALL)
 BACKTICK_RUN_RE = re.compile(r"`+")
 
@@ -88,6 +93,8 @@ def is_escaped(text: str, position: int) -> bool:
 
 
 def normalize_unprotected_math(text: str) -> str:
+    # Escaped wiki brackets are literal text, not Goldmark math delimiters.
+    text = ESCAPED_WIKI_LINK_RE.sub(r"&#91;&#91;\1&#93;&#93;", text)
     text = BLOCK_MATH_RE.sub(rewrite_block_math, text)
     return "".join(normalize_inline_math(line) for line in text.splitlines(keepends=True))
 
@@ -203,8 +210,9 @@ def rewrite_inline_links(text: str, ctx: RenderContext) -> str:
         )
 
     def replace_markdown_link(match: re.Match[str]) -> str:
-        label = match.group(1)
-        target, heading = split_markdown_target(match.group(2))
+        is_image = bool(match.group(1))
+        label = match.group(2)
+        target, heading = split_markdown_target(match.group(3))
         if (
             not target
             or target.startswith("#")
@@ -212,6 +220,20 @@ def rewrite_inline_links(text: str, ctx: RenderContext) -> str:
             or is_generated_shortcode_target(target)
         ):
             return match.group(0)
+        if is_image:
+            attachment = ctx.attachment_resolver.resolve(ctx.note, target)
+            if attachment is None:
+                ctx.report.add_warning(
+                    "missing-attachment",
+                    f"Could not resolve image {target}",
+                    source=ctx.note.source_rel_global.as_posix(),
+                )
+                return label or Path(target).name
+            copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1], ctx.note)
+            rel_path = relative_output_from_note(ctx.note, copied.output_rel)
+            if heading:
+                rel_path += f"#{heading}"
+            return f"![{label}]({rel_path})"
         return render_link_target(
             target=target,
             heading=heading,
@@ -251,17 +273,16 @@ def render_link_target(
 
     attachment = ctx.attachment_resolver.resolve(ctx.note, target)
     if attachment is not None:
-        copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1])
+        copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1], ctx.note)
         link_text = label or Path(target).name
-        rel_path = relative_output_from_note(ctx.note, copied.output_rel)
-        return f"[{link_text}]({rel_path})"
+        return f"[{link_text}](/{copied.output_rel.as_posix()})"
 
     ctx.report.add_warning(
         "unresolved-link",
         f"Could not resolve {original}",
         source=ctx.note.source_rel_global.as_posix(),
     )
-    if fallback_label and is_local_markdown_target(target):
+    if fallback_label is not None and Path(target).suffix:
         return fallback_label
     return original
 
@@ -317,7 +338,7 @@ def convert_embed(block: Embed, ctx: RenderContext) -> str:
         )
         return f"![[{target}]]"
 
-    copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1])
+    copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1], ctx.note)
     suffix = attachment[0].suffix.lower()
     if suffix in IMAGE_EXTENSIONS:
         alt = escape_shortcode(block.caption or Path(target).stem)
@@ -330,8 +351,7 @@ def convert_embed(block: Embed, ctx: RenderContext) -> str:
         )
 
     label = block.caption or Path(target).name
-    rel_path = relative_output_from_note(ctx.note, copied.output_rel)
-    return f"[{label}]({rel_path})"
+    return f"[{label}](/{copied.output_rel.as_posix()})"
 
 
 def convert_block(block: object, ctx: RenderContext) -> str:

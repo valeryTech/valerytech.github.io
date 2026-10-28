@@ -143,5 +143,6 @@ The naming also matters. **Copilot** implies that a person remains actively invo
 
 **Domain-specific work copilot** remains the candidate broader name. An open conceptual question is what distinguishes this group from **AI-assisted analysis and investigation systems**, since a specialized professional product may support both.
 
-[^use-cases]: `use-cases.md` — attachment cited in the source conversation.
-[^c2-acceptance]: `c2-acceptance.md` — attachment cited in the source conversation.
+[^use-cases]: `use-cases.md` -- attachment cited in the source conversation.
+
+[^c2-acceptance]: `c2-acceptance.md` -- attachment cited in the source conversation.

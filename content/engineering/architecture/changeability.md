@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-description: "A one-line research prompt about changeability in software engineering; the concept is not developed yet."
+description: "An undeveloped research prompt on changeability in software engineering, marking a topic for future definitions, examples, and practical applications."
 document_status: "draft"
 title: "Changeability"
 linkTitle: "Changeability"

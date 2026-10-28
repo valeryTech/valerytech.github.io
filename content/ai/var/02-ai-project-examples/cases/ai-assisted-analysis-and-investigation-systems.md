@@ -74,7 +74,7 @@ One constraint is essential: switching modes cannot itself grant additional perm
 
 Scope questions: How should products that analyze complex information and provide informational results be framed? Are there several kinds of products, and what are their main features? Reporting may be only one result.
 
-**“Reporting and audit assistant” is too narrow** for the work considered here. The report is one possible result of the work. The more fundamental purpose is to help people understand complex information, discover relevant patterns, evaluate evidence, and develop findings they can use.
+**"Reporting and audit assistant" is too narrow** for the work considered here. The report is one possible result of the work. The more fundamental purpose is to help people understand complex information, discover relevant patterns, evaluate evidence, and develop findings they can use.
 
 The audit example makes this distinction concrete. analytical.md describes a system where users select from predefined analyses, but the underlying accounting data can vary enormously. The complexity comes from interpreting the data and its relationships, even though the user interaction may be as simple as clicking a button.
 
@@ -177,7 +177,7 @@ An open question is whether **analytical assessment and investigation are genuin
 ## Coexistence within one analytical process
 
 
-**Predefined analysis, open-ended investigation, and synthesis can coexist within one product—and even within the same analytical process.**
+**Predefined analysis, open-ended investigation, and synthesis can coexist within one product--and even within the same analytical process.**
 
 In the audit example:
 

@@ -87,6 +87,9 @@ test('following the maps covers published material, including aliases, with expl
     if (['/404.html', '/blog/example-post/'].includes(route)) continue;
     // Explanatory legacy pages are utilities, not current collection documents.
     if (redirectPaths.has(normalize(route))) continue;
+    // HTML attachments are resources of a mapped article, not separate articles.
+    const attachment = route.match(/^(.*)\/([^/]+)\.assets\//);
+    if (attachment) route = attachment[2] === '_index' ? `${attachment[1]}/` : `${attachment[1]}/${attachment[2]}/`;
     assert.ok(mappedPaths.has(normalize(route)), `Missing website route: ${route}`);
   }
   const generated = files(path.join(output, 'agent-map')).filter((filename) => filename.endsWith('.html'));
@@ -107,7 +110,9 @@ test('maps distinguish preferred entry points, published drafts, and archived hi
 test('migrated documents have curated descriptions, including honest descriptions for placeholders', () => {
   const engineering = maps.get('/agent-map/engineering/');
   assert.match(engineering, /Compare DRY, WET, and AHA to decide when duplication is acceptable/);
-  assert.match(engineering, /An empty placeholder for SQL notes; no technical guidance has been written yet/);
+  const sql = engineering.match(/<li><a href=["']?\/engineering\/topics\/sql\/["']?>[\s\S]*?<\/li>/)?.[0];
+  assert.ok(sql, 'The SQL placeholder must remain discoverable');
+  assert.match(sql, /placeholder/i, 'The description must identify the SQL page as a placeholder');
   for (const collection of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
     const articles = files(path.join(root, 'content', collection)).filter((filename) => filename.endsWith('.md') && path.basename(filename) !== '_index.md');
     assert.ok(articles.length > 0, `No articles found in ${collection}`);

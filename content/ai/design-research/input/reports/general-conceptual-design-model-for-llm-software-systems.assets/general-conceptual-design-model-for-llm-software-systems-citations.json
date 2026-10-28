@@ -1,0 +1,1884 @@
+{
+  "report": "general-conceptual-design-model-for-llm-software-systems.md",
+  "captured_on": "2026-10-25",
+  "citation_format": "Every original citation group is reconstructed from identifiable source URLs. Unresolved secondary source IDs have separate footnotes; exact original groups are retained per occurrence.",
+  "numbered_sources": {
+    "1": {
+      "title": "Ai Project Examples And Design Model | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+    },
+    "3": {
+      "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+    },
+    "4": {
+      "title": "Coding Agents And Harnesses | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+    },
+    "22": {
+      "title": "Coding Agents And Harnesses | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+    },
+    "26": {
+      "title": "Coding Agents And Harnesses | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+    },
+    "6": {
+      "title": "Agentic Operations And Coordination | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+    },
+    "25": {
+      "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
+      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+    },
+    "30": {
+      "title": "Language choice and semantic guarantees for AI systems | Systems & Engineering",
+      "url": "https://valery.tech/ai/design/workflow-design/langs-aspects/"
+    },
+    "2": {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    "12": {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    "5": {
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "url": "https://arxiv.org/abs/2406.13352"
+    },
+    "24": {
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "url": "https://arxiv.org/abs/2406.13352"
+    },
+    "29": {
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "url": "https://arxiv.org/abs/2406.13352"
+    },
+    "8": {
+      "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+      "url": "https://arxiv.org/abs/2403.11322"
+    },
+    "16": {
+      "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+      "url": "https://arxiv.org/abs/2403.11322"
+    },
+    "14": {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "url": "https://arxiv.org/abs/2005.11401"
+    },
+    "15": {
+      "title": "Prompting Is Programming: A Query Language for Large ...",
+      "url": "https://arxiv.org/abs/2212.06094"
+    },
+    "21": {
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "url": "https://arxiv.org/abs/2306.05685"
+    },
+    "27": {
+      "title": "Sapien: A Stateful Policy Engine for Autonomous AI Agents",
+      "url": "https://arxiv.org/html/2610.00797v1"
+    },
+    "7": {
+      "title": "Zanzibar: Google's Consistent, Global Authorization System",
+      "url": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+    },
+    "9": {
+      "title": "Building Effective AI Agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents"
+    },
+    "11": {
+      "title": "Trustworthy agents in practice",
+      "url": "https://www.anthropic.com/research/trustworthy-agents"
+    },
+    "20": {
+      "title": "making Claude Code more secure and autonomous - Anthropic",
+      "url": "https://www.anthropic.com/engineering/claude-code-sandboxing"
+    },
+    "28": {
+      "title": "Demystifying evals for AI agents - Anthropic",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+    },
+    "10": {
+      "title": "AI Risk Management Framework | NIST",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    "13": {
+      "title": "A Vocabulary for Structural Validation of JSON",
+      "url": "https://json-schema.org/draft/2020-12/json-schema-validation"
+    },
+    "17": {
+      "title": "Specification",
+      "url": "https://json-schema.org/specification"
+    },
+    "18": {
+      "title": "OWL 2 Web Ontology Language Document Overview ...",
+      "url": "https://www.w3.org/TR/owl2-overview/"
+    },
+    "19": {
+      "title": "TLA+ Tools - Leslie Lamport",
+      "url": "https://lamport.azurewebsites.net/tla/tools.html?unhideBut=hide-tlc&unhideDiv=tlc"
+    },
+    "23": {
+      "title": "Structured model outputs | OpenAI API",
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs"
+    }
+  },
+  "occurrences": [
+    {
+      "occurrence": 1,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 2,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0",
+        "turn21view3"
+      ],
+      "exported_footnotes": [
+        1,
+        31
+      ],
+      "unresolved_source_ids": [
+        "turn21view3"
+      ]
+    },
+    {
+      "occurrence": 3,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search2",
+        "turn13search3"
+      ],
+      "exported_footnotes": [
+        2,
+        14,
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 4,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      },
+      "original_reference_ids": [
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 5,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 6,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352"
+      },
+      "original_reference_ids": [
+        "turn15search0",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        5,
+        27
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 7,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Agentic Operations And Coordination | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 8,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "Zanzibar: Google's Consistent, Global Authorization System",
+        "url": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search3",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        7,
+        32,
+        27
+      ],
+      "unresolved_source_ids": [
+        "turn14search3"
+      ]
+    },
+    {
+      "occurrence": 9,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4",
+        "turn13search9"
+      ],
+      "exported_footnotes": [
+        8,
+        33
+      ],
+      "unresolved_source_ids": [
+        "turn13search9"
+      ]
+    },
+    {
+      "occurrence": 10,
+      "displayed_citation": 9,
+      "primary_source": {
+        "title": "Building Effective AI Agents",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents"
+      },
+      "original_reference_ids": [
+        "turn15search16"
+      ],
+      "exported_footnotes": [
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 11,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "AI Risk Management Framework | NIST",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      "original_reference_ids": [
+        "turn18search0",
+        "turn18search1"
+      ],
+      "exported_footnotes": [
+        10,
+        34
+      ],
+      "unresolved_source_ids": [
+        "turn18search1"
+      ]
+    },
+    {
+      "occurrence": 12,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "Trustworthy agents in practice",
+        "url": "https://www.anthropic.com/research/trustworthy-agents"
+      },
+      "original_reference_ids": [
+        "turn15search2"
+      ],
+      "exported_footnotes": [
+        11
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 13,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 14,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn20view0",
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        12,
+        6,
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 15,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "A Vocabulary for Structural Validation of JSON",
+        "url": "https://json-schema.org/draft/2020-12/json-schema-validation"
+      },
+      "original_reference_ids": [
+        "turn14search10",
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        13,
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 16,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 17,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Prompting Is Programming: A Query Language for Large ...",
+        "url": "https://arxiv.org/abs/2212.06094"
+      },
+      "original_reference_ids": [
+        "turn13search3",
+        "turn13search12"
+      ],
+      "exported_footnotes": [
+        15,
+        35
+      ],
+      "unresolved_source_ids": [
+        "turn13search12"
+      ]
+    },
+    {
+      "occurrence": 18,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      },
+      "original_reference_ids": [
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 19,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      "original_reference_ids": [
+        "turn13search0"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 20,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 21,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      },
+      "original_reference_ids": [
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 22,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      },
+      "original_reference_ids": [
+        "turn21view1",
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        3,
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 23,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Specification",
+        "url": "https://json-schema.org/specification"
+      },
+      "original_reference_ids": [
+        "turn14search0",
+        "turn14search10"
+      ],
+      "exported_footnotes": [
+        17,
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 24,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Document Overview ...",
+        "url": "https://www.w3.org/TR/owl2-overview/"
+      },
+      "original_reference_ids": [
+        "turn14search1",
+        "turn14search20"
+      ],
+      "exported_footnotes": [
+        18,
+        36
+      ],
+      "unresolved_source_ids": [
+        "turn14search20"
+      ]
+    },
+    {
+      "occurrence": 25,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 26,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "TLA+ Tools - Leslie Lamport",
+        "url": "https://lamport.azurewebsites.net/tla/tools.html?unhideBut=hide-tlc&unhideDiv=tlc"
+      },
+      "original_reference_ids": [
+        "turn17search6"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 27,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "A Vocabulary for Structural Validation of JSON",
+        "url": "https://json-schema.org/draft/2020-12/json-schema-validation"
+      },
+      "original_reference_ids": [
+        "turn14search10",
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        13,
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 28,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Document Overview ...",
+        "url": "https://www.w3.org/TR/owl2-overview/"
+      },
+      "original_reference_ids": [
+        "turn14search1",
+        "turn14search20"
+      ],
+      "exported_footnotes": [
+        18,
+        36
+      ],
+      "unresolved_source_ids": [
+        "turn14search20"
+      ]
+    },
+    {
+      "occurrence": 29,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Prompting Is Programming: A Query Language for Large ...",
+        "url": "https://arxiv.org/abs/2212.06094"
+      },
+      "original_reference_ids": [
+        "turn13search3",
+        "turn21view1",
+        "turn21view4"
+      ],
+      "exported_footnotes": [
+        15,
+        3,
+        30
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 30,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 31,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "making Claude Code more secure and autonomous - Anthropic",
+        "url": "https://www.anthropic.com/engineering/claude-code-sandboxing"
+      },
+      "original_reference_ids": [
+        "turn15search3",
+        "turn15search11"
+      ],
+      "exported_footnotes": [
+        20,
+        37
+      ],
+      "unresolved_source_ids": [
+        "turn15search11"
+      ]
+    },
+    {
+      "occurrence": 32,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+        "url": "https://arxiv.org/abs/2306.05685"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn17search10"
+      ],
+      "exported_footnotes": [
+        21,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search10"
+      ]
+    },
+    {
+      "occurrence": 33,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 34,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "TLA+ Tools - Leslie Lamport",
+        "url": "https://lamport.azurewebsites.net/tla/tools.html?unhideBut=hide-tlc&unhideDiv=tlc"
+      },
+      "original_reference_ids": [
+        "turn17search6"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 35,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 36,
+      "displayed_citation": 22,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2",
+        "turn15search2",
+        "turn15search10"
+      ],
+      "exported_footnotes": [
+        22,
+        11,
+        39
+      ],
+      "unresolved_source_ids": [
+        "turn15search10"
+      ]
+    },
+    {
+      "occurrence": 37,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Structured model outputs | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs"
+      },
+      "original_reference_ids": [
+        "turn16search0",
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        23,
+        40
+      ],
+      "unresolved_source_ids": [
+        "turn16search2"
+      ]
+    },
+    {
+      "occurrence": 38,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Document Overview ...",
+        "url": "https://www.w3.org/TR/owl2-overview/"
+      },
+      "original_reference_ids": [
+        "turn14search1",
+        "turn14search20"
+      ],
+      "exported_footnotes": [
+        18,
+        36
+      ],
+      "unresolved_source_ids": [
+        "turn14search20"
+      ]
+    },
+    {
+      "occurrence": 39,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      },
+      "original_reference_ids": [
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 40,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Prompting Is Programming: A Query Language for Large ...",
+        "url": "https://arxiv.org/abs/2212.06094"
+      },
+      "original_reference_ids": [
+        "turn13search3"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 41,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 42,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "making Claude Code more secure and autonomous - Anthropic",
+        "url": "https://www.anthropic.com/engineering/claude-code-sandboxing"
+      },
+      "original_reference_ids": [
+        "turn15search3",
+        "turn15search29"
+      ],
+      "exported_footnotes": [
+        20,
+        41
+      ],
+      "unresolved_source_ids": [
+        "turn15search29"
+      ]
+    },
+    {
+      "occurrence": 43,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "Zanzibar: Google's Consistent, Global Authorization System",
+        "url": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search3"
+      ],
+      "exported_footnotes": [
+        7,
+        32
+      ],
+      "unresolved_source_ids": [
+        "turn14search3"
+      ]
+    },
+    {
+      "occurrence": 44,
+      "displayed_citation": 24,
+      "primary_source": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352"
+      },
+      "original_reference_ids": [
+        "turn15search0"
+      ],
+      "exported_footnotes": [
+        24
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 45,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+        "url": "https://arxiv.org/abs/2306.05685"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn17search10"
+      ],
+      "exported_footnotes": [
+        21,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search10"
+      ]
+    },
+    {
+      "occurrence": 46,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Agentic Operations And Coordination | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 47,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0",
+        "turn21view3"
+      ],
+      "exported_footnotes": [
+        1,
+        31
+      ],
+      "unresolved_source_ids": [
+        "turn21view3"
+      ]
+    },
+    {
+      "occurrence": 48,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 49,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 50,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+      },
+      "original_reference_ids": [
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 51,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Agentic Operations And Coordination | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 52,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      },
+      "original_reference_ids": [
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 53,
+      "displayed_citation": 26,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2",
+        "turn15search3"
+      ],
+      "exported_footnotes": [
+        26,
+        20
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 54,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      "original_reference_ids": [
+        "turn13search2",
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        14,
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 55,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 56,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      "original_reference_ids": [
+        "turn13search0"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 57,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Prompting Is Programming: A Query Language for Large ...",
+        "url": "https://arxiv.org/abs/2212.06094"
+      },
+      "original_reference_ids": [
+        "turn13search3",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        15,
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 58,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Agentic Operations And Coordination | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 59,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 60,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+      },
+      "original_reference_ids": [
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 61,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+      },
+      "original_reference_ids": [
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 62,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Agentic Operations And Coordination | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 63,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "Sapien: A Stateful Policy Engine for Autonomous AI Agents",
+        "url": "https://arxiv.org/html/2610.00797v1"
+      },
+      "original_reference_ids": [
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        27
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 64,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 65,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "making Claude Code more secure and autonomous - Anthropic",
+        "url": "https://www.anthropic.com/engineering/claude-code-sandboxing"
+      },
+      "original_reference_ids": [
+        "turn15search3",
+        "turn15search11"
+      ],
+      "exported_footnotes": [
+        20,
+        37
+      ],
+      "unresolved_source_ids": [
+        "turn15search11"
+      ]
+    },
+    {
+      "occurrence": 66,
+      "displayed_citation": 28,
+      "primary_source": {
+        "title": "Demystifying evals for AI agents - Anthropic",
+        "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+      },
+      "original_reference_ids": [
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        28
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 67,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352"
+      },
+      "original_reference_ids": [
+        "turn15search0",
+        "turn15search8"
+      ],
+      "exported_footnotes": [
+        29,
+        42
+      ],
+      "unresolved_source_ids": [
+        "turn15search8"
+      ]
+    },
+    {
+      "occurrence": 68,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Agentic Operations And Coordination | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 69,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+      },
+      "original_reference_ids": [
+        "turn21view0",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        25,
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 70,
+      "displayed_citation": 24,
+      "primary_source": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352"
+      },
+      "original_reference_ids": [
+        "turn15search0"
+      ],
+      "exported_footnotes": [
+        24
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 71,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "Sapien: A Stateful Policy Engine for Autonomous AI Agents",
+        "url": "https://arxiv.org/html/2610.00797v1"
+      },
+      "original_reference_ids": [
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        27
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 72,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Structured model outputs | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs"
+      },
+      "original_reference_ids": [
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 73,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+        "url": "https://arxiv.org/abs/2306.05685"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn17search10"
+      ],
+      "exported_footnotes": [
+        21,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search10"
+      ]
+    },
+    {
+      "occurrence": 74,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 75,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      "original_reference_ids": [
+        "turn13search0"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 76,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Prompting Is Programming: A Query Language for Large ...",
+        "url": "https://arxiv.org/abs/2212.06094"
+      },
+      "original_reference_ids": [
+        "turn13search3",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        15,
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 77,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "Zanzibar: Google's Consistent, Global Authorization System",
+        "url": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        7,
+        27
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 78,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 79,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 80,
+      "displayed_citation": 30,
+      "primary_source": {
+        "title": "Language choice and semantic guarantees for AI systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/design/workflow-design/langs-aspects/"
+      },
+      "original_reference_ids": [
+        "turn21view4"
+      ],
+      "exported_footnotes": [
+        30
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 81,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0",
+        "turn21view0",
+        "turn21view1",
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        1,
+        25,
+        3,
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 82,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "Zanzibar: Google's Consistent, Global Authorization System",
+        "url": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search3"
+      ],
+      "exported_footnotes": [
+        7,
+        32
+      ],
+      "unresolved_source_ids": [
+        "turn14search3"
+      ]
+    },
+    {
+      "occurrence": 83,
+      "displayed_citation": 24,
+      "primary_source": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352"
+      },
+      "original_reference_ids": [
+        "turn15search0"
+      ],
+      "exported_footnotes": [
+        24
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 84,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Coding Agents And Harnesses | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      },
+      "original_reference_ids": [
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 85,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "Trustworthy agents in practice",
+        "url": "https://www.anthropic.com/research/trustworthy-agents"
+      },
+      "original_reference_ids": [
+        "turn15search2",
+        "turn15search10"
+      ],
+      "exported_footnotes": [
+        11,
+        39
+      ],
+      "unresolved_source_ids": [
+        "turn15search10"
+      ]
+    },
+    {
+      "occurrence": 86,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Ai Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      },
+      "original_reference_ids": [
+        "turn19view0",
+        "turn20view0",
+        "turn21view0",
+        "turn21view1",
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        1,
+        6,
+        25,
+        3,
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 87,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "AI Risk Management Framework | NIST",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      "original_reference_ids": [
+        "turn18search0",
+        "turn18search1"
+      ],
+      "exported_footnotes": [
+        10,
+        34
+      ],
+      "unresolved_source_ids": [
+        "turn18search1"
+      ]
+    },
+    {
+      "occurrence": 88,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Specification",
+        "url": "https://json-schema.org/specification"
+      },
+      "original_reference_ids": [
+        "turn14search0",
+        "turn14search10"
+      ],
+      "exported_footnotes": [
+        17,
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 89,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Document Overview ...",
+        "url": "https://www.w3.org/TR/owl2-overview/"
+      },
+      "original_reference_ids": [
+        "turn14search1",
+        "turn14search20"
+      ],
+      "exported_footnotes": [
+        18,
+        36
+      ],
+      "unresolved_source_ids": [
+        "turn14search20"
+      ]
+    },
+    {
+      "occurrence": 90,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "Zanzibar: Google's Consistent, Global Authorization System",
+        "url": "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search3"
+      ],
+      "exported_footnotes": [
+        7,
+        32
+      ],
+      "unresolved_source_ids": [
+        "turn14search3"
+      ]
+    },
+    {
+      "occurrence": 91,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 92,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      "original_reference_ids": [
+        "turn13search0"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 93,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Prompting Is Programming: A Query Language for Large ...",
+        "url": "https://arxiv.org/abs/2212.06094"
+      },
+      "original_reference_ids": [
+        "turn13search3",
+        "turn13search12"
+      ],
+      "exported_footnotes": [
+        15,
+        35
+      ],
+      "unresolved_source_ids": [
+        "turn13search12"
+      ]
+    },
+    {
+      "occurrence": 94,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+        "url": "https://arxiv.org/abs/2403.11322"
+      },
+      "original_reference_ids": [
+        "turn13search4",
+        "turn13search9"
+      ],
+      "exported_footnotes": [
+        8,
+        33
+      ],
+      "unresolved_source_ids": [
+        "turn13search9"
+      ]
+    },
+    {
+      "occurrence": 95,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352"
+      },
+      "original_reference_ids": [
+        "turn15search0",
+        "turn15search8"
+      ],
+      "exported_footnotes": [
+        29,
+        42
+      ],
+      "unresolved_source_ids": [
+        "turn15search8"
+      ]
+    },
+    {
+      "occurrence": 96,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "Sapien: A Stateful Policy Engine for Autonomous AI Agents",
+        "url": "https://arxiv.org/html/2610.00797v1"
+      },
+      "original_reference_ids": [
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        27
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 97,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+        "url": "https://arxiv.org/abs/2306.05685"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn17search10"
+      ],
+      "exported_footnotes": [
+        21,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search10"
+      ]
+    },
+    {
+      "occurrence": 98,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "TLA+ Tools - Leslie Lamport",
+        "url": "https://lamport.azurewebsites.net/tla/tools.html?unhideBut=hide-tlc&unhideDiv=tlc"
+      },
+      "original_reference_ids": [
+        "turn17search6"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 99,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "Trustworthy agents in practice",
+        "url": "https://www.anthropic.com/research/trustworthy-agents"
+      },
+      "original_reference_ids": [
+        "turn15search2",
+        "turn15search3",
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        11,
+        20,
+        28
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 100,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Structured model outputs | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs"
+      },
+      "original_reference_ids": [
+        "turn16search0",
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        23,
+        40
+      ],
+      "unresolved_source_ids": [
+        "turn16search2"
+      ]
+    },
+    {
+      "occurrence": 101,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Specification",
+        "url": "https://json-schema.org/specification"
+      },
+      "original_reference_ids": [
+        "turn14search0",
+        "turn14search1",
+        "turn13search4",
+        "turn13search3",
+        "turn15search3",
+        "turn14search2",
+        "turn17search0",
+        "turn13search2",
+        "turn21view2"
+      ],
+      "exported_footnotes": [
+        17,
+        18,
+        8,
+        15,
+        20,
+        7,
+        21,
+        14,
+        4
+      ],
+      "unresolved_source_ids": []
+    }
+  ],
+  "unresolved_sources": {
+    "31": {
+      "original_reference_id": "turn21view3",
+      "url": null
+    },
+    "32": {
+      "original_reference_id": "turn14search3",
+      "url": null
+    },
+    "33": {
+      "original_reference_id": "turn13search9",
+      "url": null
+    },
+    "34": {
+      "original_reference_id": "turn18search1",
+      "url": null
+    },
+    "35": {
+      "original_reference_id": "turn13search12",
+      "url": null
+    },
+    "36": {
+      "original_reference_id": "turn14search20",
+      "url": null
+    },
+    "37": {
+      "original_reference_id": "turn15search11",
+      "url": null
+    },
+    "38": {
+      "original_reference_id": "turn17search10",
+      "url": null
+    },
+    "39": {
+      "original_reference_id": "turn15search10",
+      "url": null
+    },
+    "40": {
+      "original_reference_id": "turn16search2",
+      "url": null
+    },
+    "41": {
+      "original_reference_id": "turn15search29",
+      "url": null
+    },
+    "42": {
+      "original_reference_id": "turn15search8",
+      "url": null
+    }
+  }
+}

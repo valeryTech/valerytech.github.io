@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Online File Storage"
-description: "A queued online-file-storage design prompt, linking to the related Dropbox exercise and the case template."
+description: "A queued online file storage design exercise with links to the related Dropbox case and a reusable case template; no independent design has been recorded yet."
 linkTitle: "Online File Storage"
 ---
 

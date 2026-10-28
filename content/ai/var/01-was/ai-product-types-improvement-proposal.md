@@ -12,7 +12,7 @@ Date: 2026-10-18. Proposed revisions to the earlier AI product taxonomy (now sup
 
 Status: implemented in both documents on 2026-10-18. The review below records the reasoning about the earlier drafts; the rewritten documents contain the current synthesis.
 
-This review starts from the research map and follows selected notes on work structure, collaboration, verification, evidence synthesis, operation authority, and interactive systems, including their editorial comments. It is a conceptual review, not an exhaustive rereading of the collection or an independent fact check of the guide's external references. The research contains retained dialogues, later corrections, and proposals; the recommendations below are a conceptual synthesis, not claims that the collection has validated a single architecture.
+This review starts from the [research map]({{< ref "ai/design-research/document-map" >}}) and follows selected notes on work structure, collaboration, verification, evidence synthesis, operation authority, and interactive systems, including their editorial comments. It is a conceptual review, not an exhaustive rereading of the collection or an independent fact check of the guide's external references. The research contains retained dialogues, later corrections, and proposals; the recommendations below are a conceptual synthesis, not claims that the collection has validated a single architecture.
 
 ## 1. Keep the seven archetypes; change the comparison model
 
@@ -28,7 +28,7 @@ Use two complementary descriptions:
 1. **Product archetype:** What work does the product primarily help someone do?
 2. **Deployment profile:** What context, collaboration, authority, evidence, continuity, and integration does this particular implementation require?
 
-This follows the research's work-complexity discussion, which treats complexity as a profile, and its responsibility-allocation model, which separates information, execution, judgment, and authority.
+This follows the research's [work-complexity discussion]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure" >}}#complexity-profile-and-examples), which treats complexity as a profile, and its [responsibility-allocation model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}#responsibility-allocation-and-handoff), which separates information, execution, judgment, and authority.
 
 ## 2. Proposed changes to ai-product-types.md
 
@@ -55,7 +55,7 @@ Three naming changes matter most:
 - **"Reporting and audit" -> "Investigation and evidence synthesis."** This includes exploratory questions, contradictions, incomplete evidence, and abstention. A report is one possible output; improved understanding can also be the outcome.
 - **Separate analytical systems from platform scope.** The original Type 7 includes complex rules and pipelines. The guide narrows this to an ML training and serving platform. Retain rule-based and hybrid analytical systems, and describe a reusable platform as an architectural scope available to every archetype.
 
-The sensemaking note motivates understanding as an outcome. The composition dialogue also preserves the author's concern that a fixed matrix, cube, or graph could constrain useful combinations of operations.
+The [sensemaking note]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) motivates understanding as an outcome. The [composition dialogue]({{< ref "ai/design-research/interactive-systems/03-composable-investigation-workspaces" >}}#original-dialogue) also preserves the author's concern that a fixed matrix, cube, or graph could constrain useful combinations of operations.
 
 ### Replace the four levels with one deployment profile
 
@@ -103,9 +103,9 @@ The existing template covers architecture, engineering effort, data, validation,
 
 Choose only the objects needed for that workflow; a universal workspace ontology is unnecessary. A support case may need issue state and an escalation package. A document copilot may need protected passages and proposed edits. A forecast may need scenario assumptions and an editable comparison with the baseline.
 
-The design-practices note provides useful questions. Its comments qualify confidence, reversibility, and shared state. Stored context alone does not establish shared understanding, and a generated explanation is not necessarily a faithful execution record.
+The [design-practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}#practices-that-apply-across-all-three-shifts) provides useful questions. Its [comments]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments" >}}) qualify confidence, reversibility, and shared state. Stored context alone does not establish shared understanding, and a generated explanation is not necessarily a faithful execution record.
 
-Do not add a mandatory approval dialog to every operation. Give review a defined purpose and enough evidence for the reviewer to exercise judgment. Choose delegation, proposal/review, joint construction, critique, or shared reasoning according to the work. See the pattern-selection discussion.
+Do not add a mandatory approval dialog to every operation. Give review a defined purpose and enough evidence for the reviewer to exercise judgment. Choose delegation, proposal/review, joint construction, critique, or shared reasoning according to the work. See the [pattern-selection discussion]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}#choosing-the-right-pattern).
 
 ### C. Separate checks, acceptance, and authority
 
@@ -125,7 +125,7 @@ Ask separate questions:
 
 These are distinct questions, not necessarily six sequential screens or a requirement to build a compiler. A typed request can express the wrong intent. A traceable claim can be unsupported. A professional can approve an error. An accepted internal finding can still lack authorization for publication.
 
-The verification-and-acceptance note supplies the central distinctions. The concrete-operation authority discussion explains why access to a tool is insufficient.
+The [verification-and-acceptance note]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}#scope-and-status) supplies the central distinctions. The [concrete-operation authority discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}#authorization-of-concrete-operations) explains why access to a tool is insufficient.
 
 ### D. Strengthen the evidence contract for Types 3-5
 
@@ -140,7 +140,7 @@ The guide already covers citations and lineage. Extend this to the questions tho
 
 Keep claim support, examination coverage, and source conflicts separate. A claim can have supporting evidence while corpus coverage remains incomplete. Processing every document does not prove that every relevant fact was found.
 
-Use the bounded-corpus evidence proposal together with its comments on completeness and authority. Describe coverage methods and measured limitations instead of adopting an unconditional completeness guarantee.
+Use the [bounded-corpus evidence proposal]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}) together with its [comments on completeness and authority]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}). Describe coverage methods and measured limitations instead of adopting an unconditional completeness guarantee.
 
 ### E. Add continuity and recovery for work that outlives one interaction
 
@@ -159,7 +159,7 @@ The guide should state what happens when:
 
 Distinguish inspecting recorded observations, rerunning computation, and executing external operations again. The current requirement that "a run can be replayed from its trace" needs these qualifications. Specify idempotency where the operation supports it, reconciliation for uncertain outcomes, and compensation where appropriate; avoid promising universal rollback.
 
-The run-history comments and edits/runs/result-use proposal provide concrete starting points.
+The [run-history comments]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments" >}}#inspection-and-replay) and [edits/runs/result-use proposal]({{< ref "ai/design-research/interactive-systems/13-edits-runs-and-result-use" >}}) provide concrete starting points.
 
 ### F. Evaluate the human and system together
 
@@ -175,7 +175,7 @@ Keep the existing model, retrieval, workflow, and business measures. Add tests o
 
 Compare against the existing process, a simpler workflow, and alternative interaction designs where relevant. Test human-alone and AI-alone baselines when claiming complementarity.
 
-Replace the statement that professional workflows "naturally provide ground truth and sign-off." They provide opportunities for expert review, but judgments can be mistaken, disagree, or address different purposes. Preserve assessor, reason, uncertainty, and disagreement. See the collaboration-evaluation comments.
+Replace the statement that professional workflows "naturally provide ground truth and sign-off." They provide opportunities for expert review, but judgments can be mistaken, disagree, or address different purposes. Preserve assessor, reason, uncertainty, and disagreement. See the [collaboration-evaluation comments]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation-comments" >}}).
 
 ### G. Rework estimates and source presentation
 
@@ -197,7 +197,7 @@ Keep the guide's advice to start with a thin shared platform. Add one step befor
 
 For example, "a prepared refund must not be executed under an approval for a different amount" motivates binding the authorization to the concrete operation and checking it at execution. A tool registry or audit store alone does not establish that property.
 
-The builder method motivates this approach. Its comments explicitly caution that proposed mechanisms are not proven consequences of a complexity profile.
+The [builder method]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#a-builder-method-for-minimal-semantic-constraints) motivates this approach. Its [comments]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method-comments" >}}) explicitly caution that proposed mechanisms are not proven consequences of a complexity profile.
 
 ## 4. A worked example to add to the guide
 
@@ -213,7 +213,7 @@ Use one example to make the relationships tangible:
 
 This combines investigation, domain work, and potentially delegated operations. It shows how archetypes compose, why several views can help, and why result acceptance differs from action authority. It does not require a particular database, DSL, or orchestration framework.
 
-The final step also reflects the research's distinction between runtime review and design learning. Review can be valuable for the current task even when it produces no new automation.
+The final step also reflects the research's distinction between [runtime review and design learning]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments" >}}#separate-runtime-review-from-design-learning). Review can be valuable for the current task even when it produces no new automation.
 
 ## 5. Suggested editorial sequence
 

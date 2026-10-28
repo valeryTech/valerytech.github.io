@@ -1,0 +1,1310 @@
+{
+  "scope": "The design-research collection, its sibling comments, and direct references to other local notes.",
+  "relations": [
+    {
+      "from": "O05",
+      "to": "O06",
+      "label": "Clarifies scope",
+      "reason": "The later critique distinguishes a general question from one architecture.",
+      "evidence": [
+        {
+          "file": "00-overview/06-research-scope-and-hierarchy.md",
+          "find": "Shared state, runtime enforcement, authority, provenance"
+        }
+      ]
+    },
+    {
+      "from": "F01",
+      "to": "F07",
+      "label": "Explores formal models",
+      "reason": "The formal-model note develops candidate constraints and composition relations.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(01-foundations/01-constrained-generativity.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(01-foundations/07-constraint-guarantee-and-composition-models.md)"
+        }
+      ]
+    },
+    {
+      "from": "F07",
+      "to": "F08",
+      "label": "Informs a builder method",
+      "reason": "The builder method asks which constraints could support desired guarantees.",
+      "evidence": [
+        {
+          "file": "00-overview/06-research-scope-and-hierarchy.md",
+          "find": "The formal models explore which constraints imply which guarantees."
+        }
+      ]
+    },
+    {
+      "from": "F10",
+      "to": "F08",
+      "label": "Supplies proposed requirements",
+      "reason": "The proposed work profile can inform design requirements but is not a validated metric.",
+      "evidence": [
+        {
+          "file": "01-foundations/08-semantic-substrate-builder-method-comments.md",
+          "find": "## Why the requirements example belongs here"
+        }
+      ]
+    },
+    {
+      "from": "F08",
+      "to": "F04",
+      "label": "Informs an application",
+      "reason": "The participant-neutral architecture is an application rather than the general theory.",
+      "evidence": [
+        {
+          "file": "00-overview/06-research-scope-and-hierarchy.md",
+          "find": "| Applications |"
+        }
+      ]
+    },
+    {
+      "from": "F08",
+      "to": "I01",
+      "label": "Informs an application",
+      "reason": "The investigation algebra is a separate application of the broader research.",
+      "evidence": [
+        {
+          "file": "00-overview/06-research-scope-and-hierarchy.md",
+          "find": "| Applications |"
+        }
+      ]
+    },
+    {
+      "from": "F08",
+      "to": "L11",
+      "label": "Informs an application",
+      "reason": "Behavioral compilation is another application, with its own hypothesis.",
+      "evidence": [
+        {
+          "file": "00-overview/06-research-scope-and-hierarchy.md",
+          "find": "| Applications |"
+        }
+      ]
+    },
+    {
+      "from": "F04",
+      "to": "C05",
+      "label": "Connects architecture and joint activity",
+      "reason": "The shared-work architecture and general collaboration mechanics address related questions.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments.md",
+          "find": "## Relation to the wider design research"
+        }
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "C06",
+      "label": "Organizes pattern discussions",
+      "reason": "The general collaboration model remains distinct from its proposed pattern catalogue.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(02-human-ai-collaboration/05-joint-activity-and-collaboration-model.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(02-human-ai-collaboration/06-human-ai-collaboration-patterns.md)"
+        }
+      ]
+    },
+    {
+      "from": "F11",
+      "to": "C08",
+      "label": "Informs work allocation",
+      "reason": "Participant profiles offer a proposed input to design choices rather than universal participant properties.",
+      "evidence": [
+        {
+          "file": "01-foundations/11-participant-profiles-and-work-allocation-comments.md",
+          "find": "## From profiles to design approaches"
+        }
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "L03",
+      "label": "Expresses patterns as constraints",
+      "reason": "The declarative note retains proposal, review, delegation, and shared-reasoning examples.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(02-human-ai-collaboration/06-human-ai-collaboration-patterns.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(03-language-and-compiler/03-declarative-programming-model.md)"
+        }
+      ]
+    },
+    {
+      "from": "C05",
+      "to": "R07",
+      "label": "Suggests software abstractions",
+      "reason": "The framework proposes an implementation of collaboration mechanics, not a completed runtime.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/07-collaboration-framework-comments.md",
+          "find": "## Declared contracts and enforced checks"
+        }
+      ]
+    },
+    {
+      "from": "C06",
+      "to": "E11",
+      "label": "Proposes pattern tests",
+      "reason": "The evaluation note keeps the proposed tests separate from a completed study.",
+      "evidence": [
+        {
+          "file": "06-research-reports/11-human-ai-collaboration-evaluation-comments.md",
+          "find": "## Choose an outcome before a test"
+        }
+      ]
+    },
+    {
+      "from": "C02",
+      "to": "E11",
+      "label": "Raises an outcome question",
+      "reason": "Better understanding needs its own study and cannot be inferred from successful execution.",
+      "evidence": [
+        {
+          "file": "00-index-comments.md",
+          "find": "A program synthesized for one case is not yet a reusable procedure"
+        }
+      ]
+    },
+    {
+      "from": "L02",
+      "to": "L07",
+      "label": "Connects language and semantics",
+      "reason": "The typed language and semantic kernel discuss related contracts and checks.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(03-language-and-compiler/02-typed-dsl-and-compiler.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(03-language-and-compiler/07-semantic-kernel.md)"
+        }
+      ]
+    },
+    {
+      "from": "L07",
+      "to": "L13",
+      "label": "Adds business meanings",
+      "reason": "The domain-contract passage extends discussion beyond the kernel example without replacing it.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/13-domain-semantics-and-operation-contracts.md",
+          "find": "The existing [semantic-kernel discussion]"
+        }
+      ]
+    },
+    {
+      "from": "L13",
+      "to": "L10",
+      "label": "Supports intent compilation",
+      "reason": "Operation descriptions help construct candidate plans, while interpretation can remain wrong.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/13-domain-semantics-and-operation-contracts-comments.md",
+          "find": "The [intent-compilation passage]"
+        }
+      ]
+    },
+    {
+      "from": "L13",
+      "to": "R05",
+      "label": "Separates description and authority",
+      "reason": "Describing an operation does not grant permission to invoke it.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/13-domain-semantics-and-operation-contracts-comments.md",
+          "find": "## Described operations are not security authority"
+        }
+      ]
+    },
+    {
+      "from": "L11",
+      "to": "E08",
+      "label": "Needs an independent test",
+      "reason": "The behavioral evaluation distinguishes teacher fidelity from task correctness.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(03-language-and-compiler/11-behavioral-compilation-and-specification.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(06-research-reports/08-behavioral-compilation-evaluation-and-failure-modes.md)"
+        }
+      ]
+    },
+    {
+      "from": "L03",
+      "to": "L11",
+      "label": "Keeps authoring alternatives open",
+      "reason": "Maintained declarations and generated procedures have not been selected as one authoring model.",
+      "evidence": [
+        {
+          "file": "00-index-comments.md",
+          "find": "### Generated procedures and maintained declarations"
+        }
+      ]
+    },
+    {
+      "from": "L02",
+      "to": "F09",
+      "label": "Qualifies compiler validity",
+      "reason": "Passing structural checks does not establish semantic truth.",
+      "evidence": [
+        {
+          "file": "00-index-comments.md",
+          "find": "### Compiler validity and semantic truth"
+        }
+      ]
+    },
+    {
+      "from": "F09",
+      "to": "R05",
+      "label": "Separates acceptance and action",
+      "reason": "Accepting an exact result for a purpose is distinct from authorizing an external effect.",
+      "evidence": [
+        {
+          "file": "00-index-comments.md",
+          "find": "| Accepted |"
+        }
+      ]
+    },
+    {
+      "from": "I01",
+      "to": "I02",
+      "label": "Connects algebra and execution",
+      "reason": "The runtime proposal executes investigations through typed operators and plans.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/01-investigation-language-and-algebra.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/02-llm-operated-investigation-runtime.md)"
+        }
+      ]
+    },
+    {
+      "from": "I03",
+      "to": "I01",
+      "label": "Constrains investigation results",
+      "reason": "Epistemic contracts concern conditions for constructing conclusions and reporting gaps.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/03-epistemic-contracts-for-rag.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/01-investigation-language-and-algebra.md)"
+        }
+      ]
+    },
+    {
+      "from": "I04",
+      "to": "I03",
+      "label": "Distinguishes lineage and support",
+      "reason": "A derivation record alone does not establish that evidence supports a claim.",
+      "evidence": [
+        {
+          "file": "06-research-reports/13-research-method-and-claim-validation-comments.md",
+          "find": "The [provenance note]"
+        }
+      ]
+    },
+    {
+      "from": "I05",
+      "to": "I06",
+      "label": "Supports evidence synthesis",
+      "reason": "The complete retrieval pipeline remains distinct from corpus and answer requirements.",
+      "evidence": [
+        {
+          "file": "04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments.md",
+          "find": "## Separate corpus consideration from completeness"
+        }
+      ]
+    },
+    {
+      "from": "I05",
+      "to": "C02",
+      "label": "Connects retrieval and inspection",
+      "reason": "Representation and execution views can support sensemaking without proving improved understanding.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(02-human-ai-collaboration/02-sensemaking-and-epistemic-action.md)"
+        }
+      ]
+    },
+    {
+      "from": "I06",
+      "to": "E07",
+      "label": "Needs evidence-quality tests",
+      "reason": "Coverage, conflict handling, support, and abstention need separate evaluation.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(06-research-reports/07-investigation-evaluation-and-benchmarks.md)"
+        }
+      ]
+    },
+    {
+      "from": "I02",
+      "to": "R03",
+      "label": "Separates logical and physical plans",
+      "reason": "Resource-aware planning considers alternative implementations without weakening declared contracts.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(04-investigation-and-epistemics/02-llm-operated-investigation-runtime.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(05-runtime-and-execution/03-resource-aware-investigation-planning.md)"
+        }
+      ]
+    },
+    {
+      "from": "I02",
+      "to": "R01",
+      "label": "Is a runtime application",
+      "reason": "The generalized runtime treats investigation as one workload, not its complete scope.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/01-generalized-agent-runtime.md",
+          "find": "RAG becomes one workload on top."
+        }
+      ]
+    },
+    {
+      "from": "R01",
+      "to": "R02",
+      "label": "Considers a database backend",
+      "reason": "Database-centered execution is an implementation proposal rather than a required architecture.",
+      "evidence": [
+        {
+          "file": "00-index.md",
+          "find": "(05-runtime-and-execution/01-generalized-agent-runtime.md)"
+        },
+        {
+          "file": "00-index.md",
+          "find": "(05-runtime-and-execution/02-database-centered-runtime.md)"
+        }
+      ]
+    },
+    {
+      "from": "R01",
+      "to": "E05",
+      "label": "Needs execution tests",
+      "reason": "Recovery, runtime enforcement, and replay are not tests of evidence truth or human understanding.",
+      "evidence": [
+        {
+          "file": "06-research-reports/05-agent-runtime-evaluation-and-benchmarks-comments.md",
+          "find": "## Three different questions"
+        }
+      ]
+    },
+    {
+      "from": "R06",
+      "to": "F09",
+      "label": "Names result revisions",
+      "reason": "History and acceptance concern exact versions and purposes, not automatic permission to act.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/06-program-versions-runs-and-results-comments.md",
+          "find": "## Relation to verification and external actions"
+        }
+      ]
+    },
+    {
+      "from": "R06",
+      "to": "E09",
+      "label": "Connects revisions and failures",
+      "reason": "The long-running-work dialogue links changing goals and dependent work to a proposed field study.",
+      "evidence": [
+        {
+          "file": "06-research-reports/09-long-running-work-failures-and-field-study-comments.md",
+          "find": "## Different versions of the model"
+        }
+      ]
+    },
+    {
+      "from": "E09",
+      "to": "E05",
+      "label": "Separates field and controlled studies",
+      "reason": "Failures observed in practice and injected runtime failures answer different questions.",
+      "evidence": [
+        {
+          "file": "06-research-reports/09-long-running-work-failures-and-field-study-comments.md",
+          "find": "## Field study and controlled evaluation"
+        }
+      ]
+    },
+    {
+      "from": "R08",
+      "to": "R09",
+      "label": "Provides configuration components",
+      "reason": "Prompt text, composition, and system configuration retain separate identities.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/09-declarative-system-configuration-and-instantiation-comments.md",
+          "find": "The opening [prompt note]"
+        }
+      ]
+    },
+    {
+      "from": "R09",
+      "to": "R10",
+      "label": "Connects construction and publishing",
+      "reason": "A resolved revision differs from a mutable selector or source commit.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/10-configuration-publishing-and-version-identity-comments.md",
+          "find": "## Keep the identities distinct"
+        }
+      ]
+    },
+    {
+      "from": "R10",
+      "to": "R11",
+      "label": "Names evaluated versions",
+      "reason": "The evaluation proposal references a selected system rather than redefining it.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/10-configuration-publishing-and-version-identity-comments.md",
+          "find": "The next [evaluation-plan note]"
+        }
+      ]
+    },
+    {
+      "from": "R11",
+      "to": "E13",
+      "label": "Separates configuration and validity",
+      "reason": "Recording a system and evaluator version does not establish that the test measures its intended property.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/11-evaluation-plans-and-system-configuration-comments.md",
+          "find": "## Configuration does not establish evaluation validity"
+        }
+      ]
+    },
+    {
+      "from": "F12",
+      "to": "E13",
+      "label": "Separates terms and evidence",
+      "reason": "Working definitions and levels of analysis inform the proposed claim-validation method.",
+      "evidence": [
+        {
+          "file": "01-foundations/12-research-terms-and-levels-of-analysis-comments.md",
+          "find": "The linked [research-method proposal]"
+        }
+      ]
+    },
+    {
+      "from": "E12",
+      "to": "O08",
+      "label": "Preserves a scope correction",
+      "reason": "The final reply separates collaborative computation from the emergence of cognition in Alice.",
+      "evidence": [
+        {
+          "file": "00-overview/08-collaborative-computation-and-alice-research-scope.md",
+          "find": "The complete final reply below corrects an earlier connection"
+        }
+      ]
+    },
+    {
+      "from": "F12",
+      "to": "O08",
+      "label": "Keeps Alice assumptions separate",
+      "reason": "Interleaved dictionary examples do not make Alice conditions requirements of a collaboration runtime.",
+      "evidence": [
+        {
+          "file": "01-foundations/12-research-terms-and-levels-of-analysis-comments.md",
+          "find": "The discussion uses viability, mattering, relational meaning"
+        }
+      ]
+    },
+    {
+      "from": "E13",
+      "to": "E11",
+      "label": "Requires a study-specific claim",
+      "reason": "A general method proposal does not replace collaboration, investigation, or runtime tests.",
+      "evidence": [
+        {
+          "file": "06-research-reports/13-research-method-and-claim-validation-comments.md",
+          "find": "The ten practices are proposed methods"
+        }
+      ]
+    },
+    {
+      "from": "O07",
+      "to": "R07",
+      "label": "Compares research routes",
+      "reason": "The route comparison explores ways to investigate the framework without selecting an implementation.",
+      "evidence": [
+        {
+          "file": "00-overview/07-collaboration-framework-research-routes.md",
+          "find": "The sibling [comments]"
+        }
+      ]
+    },
+    {
+      "from": "S01",
+      "to": "R02",
+      "label": "Links captured source passages",
+      "reason": "The interview navigation records where the technical exchanges are retained.",
+      "evidence": [
+        {
+          "file": "07-sources/01-stonebraker-data-renegades-transcript.md",
+          "find": "The source note retains the original episode metadata"
+        }
+      ]
+    },
+    {
+      "from": "O01",
+      "to": "O04",
+      "label": "Develops possible framings",
+      "reason": "The retained response explores alternatives to the original prompt without selecting one architecture.",
+      "evidence": [
+        {
+          "file": "00-overview/04-architectural-framings.md",
+          "find": "The retained LLM response explores possible framings for the [original prompt]"
+        }
+      ]
+    },
+    {
+      "from": "O04",
+      "to": "O05",
+      "label": "Questions architectural assumptions",
+      "reason": "The later critique separates one shared-environment proposal from the broader research question.",
+      "evidence": [
+        {
+          "file": "00-overview/05-refined-research-question.md",
+          "find": "That's a good research question for one architecture."
+        }
+      ]
+    },
+    {
+      "from": "O02",
+      "to": "I03",
+      "label": "Proposes an investigation study",
+      "reason": "The dialogue proposes evidence requirements as program semantics and explicitly limits what could be proved.",
+      "evidence": [
+        {
+          "file": "00-overview/02-research-direction.md",
+          "find": "The part in your notes that still looks like the sharper research contribution is **epistemic contracts as executable program semantics**"
+        }
+      ]
+    },
+    {
+      "from": "F02",
+      "to": "F06",
+      "label": "Locates the report background",
+      "reason": "The retained report summary links its literature survey and case studies to the separate precedent discussion.",
+      "evidence": [
+        {
+          "file": "01-foundations/02-semantic-substrate-design-report.md",
+          "find": "The original summary, general research gaps, and complete bibliography stay here."
+        }
+      ]
+    },
+    {
+      "from": "F06",
+      "to": "F01",
+      "label": "Broadens the construction question",
+      "reason": "The dialogue continues from an open architectural stance to the more general composition principle.",
+      "evidence": [
+        {
+          "file": "01-foundations/06-architectural-least-commitment-and-precedents.md",
+          "find": "The dialogue continues in [Constrained generativity]"
+        }
+      ]
+    },
+    {
+      "from": "F03",
+      "to": "C05",
+      "label": "Connects protocols and joint activity",
+      "reason": "The saved discussion places permitted interaction sequences beside common ground and coordination. Protocol conformance alone does not establish shared understanding.",
+      "evidence": [
+        {
+          "file": "01-foundations/03-behavioral-types-and-protocols.md",
+          "find": "|**Joint Activity / Common Ground**|"
+        }
+      ]
+    },
+    {
+      "from": "F03",
+      "to": "R04",
+      "label": "Compares behavior models",
+      "reason": "The protocol discussion names traces, automata, and Petri nets as candidate models. The execution note develops several such models without choosing one universal formalism.",
+      "evidence": [
+        {
+          "file": "01-foundations/03-behavioral-types-and-protocols.md",
+          "find": "Then define a semantic model. Common choices are:"
+        },
+        {
+          "file": "05-runtime-and-execution/04-formal-models-for-agent-execution.md",
+          "find": "I would resist selecting one existing formalism and declaring it *the* theory."
+        }
+      ]
+    },
+    {
+      "from": "R04",
+      "to": "R03",
+      "label": "Connects contracts and plan selection",
+      "reason": "The execution proposal allows physical implementations to vary while retaining the same logical contract.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/04-formal-models-for-agent-execution.md",
+          "find": "could have multiple physical implementations, while the compiler requires each implementation to refine the same logical contract."
+        }
+      ]
+    },
+    {
+      "from": "R04",
+      "to": "F09",
+      "label": "Limits a proposed soundness claim",
+      "reason": "The conditional execution argument concerns declared invariants rather than the truth of arbitrary model judgments.",
+      "evidence": [
+        {
+          "file": "05-runtime-and-execution/04-formal-models-for-agent-execution.md",
+          "find": "That statement deliberately does **not** prove that arbitrary model-generated semantic judgements are true."
+        }
+      ]
+    },
+    {
+      "from": "F05",
+      "to": "R05",
+      "label": "Separates proposals and committed effects",
+      "reason": "The substrate proposal distinguishes an untrusted contribution from an authoritative transition.",
+      "evidence": [
+        {
+          "file": "01-foundations/05-constrained-common-substrate.md",
+          "find": "The actual boundary is **untrusted contribution versus authoritative transition**."
+        }
+      ]
+    },
+    {
+      "from": "F05",
+      "to": "R06",
+      "label": "Connects revisions and result use",
+      "reason": "The revision-integrity proposal keeps old artifacts inspectable while dependent results and acceptance may need review.",
+      "evidence": [
+        {
+          "file": "01-foundations/05-constrained-common-substrate.md",
+          "find": "### Revision integrity"
+        }
+      ]
+    },
+    {
+      "from": "L04",
+      "to": "L05",
+      "label": "Separates design dimensions",
+      "reason": "The mediation dialogue and layered model distinguish representation, isolation, authority, and commitment.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/04-dsl-as-mediation-layer.md",
+          "find": "**semantic mediation** and **execution isolation** should be separate dimensions."
+        },
+        {
+          "file": "03-language-and-compiler/05-layered-design-model.md",
+          "find": "Other concerns are parallel axes:"
+        }
+      ]
+    },
+    {
+      "from": "L04",
+      "to": "L02",
+      "label": "Connects mediation and compiler checks",
+      "reason": "The DSL proposal discusses inspecting complete programs and checking sequences before execution.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/04-dsl-as-mediation-layer.md",
+          "find": "The DSL adds capabilities that tool calling alone does not naturally provide:"
+        }
+      ]
+    },
+    {
+      "from": "L05",
+      "to": "F09",
+      "label": "Places checks at different stages",
+      "reason": "The layered model separates structural checks, current conditions, observed outcomes, and user evaluation.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/05-layered-design-model.md",
+          "find": "Different properties belong at different stages."
+        }
+      ]
+    },
+    {
+      "from": "L05",
+      "to": "R05",
+      "label": "Separates expression and permission",
+      "reason": "The layered model permits a plan to be expressed without granting authority to execute it.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/05-layered-design-model.md",
+          "find": "An agent can be allowed to express a broad plan without receiving authority to execute it."
+        }
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "F11",
+      "label": "Connects task properties and allocation",
+      "reason": "The augmentation dialogue proposes allocation by task properties rather than fixed participant categories.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/01-augmenting-human-work.md",
+          "find": "### Allocate work based on task properties"
+        }
+      ]
+    },
+    {
+      "from": "C01",
+      "to": "C05",
+      "label": "Connects augmentation and joint activity",
+      "reason": "The augmentation note points to the separate collaboration model and preserves its own work-allocation discussion.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/01-augmenting-human-work.md",
+          "find": "The [joint activity and collaboration model]"
+        }
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "C04",
+      "label": "Locates historical context",
+      "reason": "The environment report links its historical foundations and timeline to the augmentation reading note.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/03-programmable-human-ai-environments-report.md",
+          "find": "The [historical foundations and timeline]"
+        }
+      ]
+    },
+    {
+      "from": "C03",
+      "to": "E03",
+      "label": "Locates the systems comparison",
+      "reason": "The environment report links its redistributed product discussion and comparison matrices. Their saved claims remain unverified.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/03-programmable-human-ai-environments-report.md",
+          "find": "[current systems and comparison matrices]"
+        }
+      ]
+    },
+    {
+      "from": "C04",
+      "to": "C02",
+      "label": "Connects augmentation and sensemaking",
+      "reason": "The reading dialogue discusses helping people maintain and revise beliefs, evidence, questions, and disagreements.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/04-augmentation-literature-and-reading-path.md",
+          "find": "It's helping maintain and manipulate an **epistemic state**:"
+        }
+      ]
+    },
+    {
+      "from": "C07",
+      "to": "C06",
+      "label": "Locates the proposed pattern catalogue",
+      "reason": "The retained synthesis links its complete terminology comparison and pattern catalogue without establishing a settled taxonomy.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/07-collaboration-patterns-research-synthesis.md",
+          "find": "- The [collaboration patterns note]"
+        }
+      ]
+    },
+    {
+      "from": "C07",
+      "to": "E11",
+      "label": "Locates proposed collaboration tests",
+      "reason": "The retained synthesis links the separate pattern tests, audit, and review rubric.",
+      "evidence": [
+        {
+          "file": "02-human-ai-collaboration/07-collaboration-patterns-research-synthesis.md",
+          "find": "- The [collaboration evaluation note]"
+        }
+      ]
+    },
+    {
+      "from": "L01",
+      "to": "L12",
+      "label": "Continues the captured article",
+      "reason": "The reliability note links the complete Tickloom semantic-model and scenario examples.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/01-dsl-reliability.md",
+          "find": "The article continues with the [Tickloom semantic model]"
+        }
+      ]
+    },
+    {
+      "from": "L12",
+      "to": "L07",
+      "label": "Illustrates a domain vocabulary",
+      "reason": "The captured example supplies named types and operations for protocol code. It is a case to compare with kernel design, not a measured general result.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl.md",
+          "find": "The semantic model itself acts as a context."
+        }
+      ]
+    },
+    {
+      "from": "L12",
+      "to": "F09",
+      "label": "Distinguishes compilation and correctness",
+      "reason": "The case comments explain why rejecting an invalid declaration differs from establishing the intended protocol behavior.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl-comments.md",
+          "find": "A compiler rejection of an invalid declaration is a narrower result than establishing that the distributed algorithm is correct."
+        }
+      ]
+    },
+    {
+      "from": "L06",
+      "to": "R04",
+      "label": "Compares roles for formalisms",
+      "reason": "Both dialogues assign different concerns to different languages or formal models. The suggestions do not select an implementation stack.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/06-language-and-formalism-choices.md",
+          "find": "The theory itself argues against forcing every problem through one maximally expressive language."
+        },
+        {
+          "file": "05-runtime-and-execution/04-formal-models-for-agent-execution.md",
+          "find": "Different formalisms correspond to different kinds of guarantees."
+        }
+      ]
+    },
+    {
+      "from": "L08",
+      "to": "I01",
+      "label": "Proposes an investigation application",
+      "reason": "The candidate-project dialogue includes iterative retrieval with loops and exit conditions. The suggested first project remains a proposal.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/08-typed-dsl-project-candidates.md",
+          "find": "### 1. Iterative RAG / research query processor"
+        }
+      ]
+    },
+    {
+      "from": "L09",
+      "to": "L01",
+      "label": "Discusses the captured DSL article",
+      "reason": "The reading dialogue discusses the article and its attribution. The saved literature descriptions have not been independently checked here.",
+      "evidence": [
+        {
+          "file": "03-language-and-compiler/09-dsl-and-formal-methods-reading-path.md",
+          "find": "that 2026 article is **written by Unmesh Joshi**"
+        }
+      ]
+    },
+    {
+      "from": "E01",
+      "to": "R01",
+      "label": "Frames a runtime research question",
+      "reason": "The retained report frames long-running computation with uncertain operators and explicit control obligations.",
+      "evidence": [
+        {
+          "file": "06-research-reports/01-programmable-probabilistic-agent-computation.md",
+          "find": "The broad research programme in your notes can be stated as:"
+        }
+      ]
+    },
+    {
+      "from": "E02",
+      "to": "I02",
+      "label": "Locates the investigation-runtime discussion",
+      "reason": "The retained report links its durable and inspectable execution discussion to the runtime note.",
+      "evidence": [
+        {
+          "file": "06-research-reports/02-typed-durable-inspectable-runtimes.md",
+          "find": "- <a id=\"durable-and-inspectable-execution\"></a>[Durable and inspectable execution]"
+        }
+      ]
+    },
+    {
+      "from": "E03",
+      "to": "R05",
+      "label": "Compares visibility and authority",
+      "reason": "The saved systems comparison distinguishes visibility from authority. Product descriptions are context, not verified security guarantees.",
+      "evidence": [
+        {
+          "file": "06-research-reports/03-shared-runtime-landscape.md",
+          "find": "It explicitly separates visibility from authority."
+        }
+      ]
+    },
+    {
+      "from": "E04",
+      "to": "L11",
+      "label": "Locates behavioral-compilation comparisons",
+      "reason": "The related-work section retains the behavioral dialogue's comparisons and links the original abstraction analysis.",
+      "evidence": [
+        {
+          "file": "06-research-reports/04-investigation-systems-and-related-work.md",
+          "find": "The following material comes from the abstraction analysis in [Behavioral compilation and specification]"
+        }
+      ]
+    },
+    {
+      "from": "E06",
+      "to": "R05",
+      "label": "Raises trust and access questions",
+      "reason": "The governance discussion separates the value of an audit trace from permission to read it. Its legal and patent claims remain outside this verification.",
+      "evidence": [
+        {
+          "file": "06-research-reports/06-governance-patents-and-specification-trust.md",
+          "find": "The fact that a trace is valuable for audit does not mean every participant should be allowed to read the trace."
+        }
+      ]
+    },
+    {
+      "from": "E10",
+      "to": "I05",
+      "label": "Locates the worked interaction examples",
+      "reason": "The proposed paper links the complete retrieval and query-understanding examples in the existing retrieval note.",
+      "evidence": [
+        {
+          "file": "06-research-reports/10-interactive-investigation-position-paper.md",
+          "find": "The complete [RAG and query-understanding examples]"
+        }
+      ]
+    },
+    {
+      "from": "E10",
+      "to": "C02",
+      "label": "Connects evolving needs and sensemaking",
+      "reason": "The interaction proposal treats the information need as revisable and preserves questions and interpretations as working objects.",
+      "evidence": [
+        {
+          "file": "06-research-reports/10-interactive-investigation-position-paper.md",
+          "find": "**P4 -- Treat the information need as evolving.**"
+        },
+        {
+          "file": "06-research-reports/10-interactive-investigation-position-paper.md",
+          "find": "**P1 -- Externalize the evolving problem state.**"
+        }
+      ]
+    },
+    {
+      "from": "E10",
+      "to": "E07",
+      "label": "Separates interaction and evidence tests",
+      "reason": "The paper comments distinguish observations of user understanding and correction effort from controlled retrieval and contract tests.",
+      "evidence": [
+        {
+          "file": "06-research-reports/10-interactive-investigation-position-paper-comments.md",
+          "find": "The [existing investigation evaluation note]"
+        }
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "title": "Theory, builder method, and applications",
+      "description": "The general theory and builder method remain separate from application architectures. The arrows suggest reading connections, not proven derivations.",
+      "relations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "title": "Joint work and collaboration",
+      "description": "The model, patterns, participant profiles, software framework, and proposed tests address different parts of collaborative work.",
+      "relations": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "title": "Language, domain meaning, and verification",
+      "description": "Compiler checks, domain meaning, behavioral synthesis, acceptance, and permission to act remain distinct.",
+      "relations": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "title": "Investigation and evidence",
+      "description": "The investigation track connects an algebra, evidence contracts, retrieval, runtime plans, and proposed evidence tests.",
+      "relations": [
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "title": "Execution, history, and configuration",
+      "description": "Execution tests, version records, prompt components, system revisions, and evaluation configuration retain their separate roles.",
+      "relations": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "title": "Research claims and separate scope",
+      "description": "Vocabulary and claim validation can inform studies without merging collaborative computation with the Alice research question.",
+      "relations": [
+        39,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "title": "Development of the framing question",
+      "description": "The original prompt, alternative architectures, and later critique describe stages of the discussion. Their order does not select a research or implementation sequence.",
+      "relations": [
+        45,
+        46,
+        0,
+        47
+      ]
+    },
+    {
+      "title": "Protocols and execution properties",
+      "description": "Interaction protocols and execution models concern permitted behavior. The proposed checks retain their assumptions and do not establish the truth of model judgments.",
+      "relations": [
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "title": "Mediation, checks, and authority",
+      "description": "Representation, isolation, authority, and commitment have different roles. The connections also show where revision history and result checks enter the discussion.",
+      "relations": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "title": "Captured DSL examples and verification",
+      "description": "The captured article and Tickloom example can be read beside kernel and verification discussions. The examples do not establish a general reliability improvement.",
+      "relations": [
+        67,
+        68,
+        69,
+        72
+      ]
+    },
+    {
+      "title": "Augmentation and interactive investigation",
+      "description": "The historical reading discussion and interaction proposal connect to sensemaking and retrieval examples. Proposed user studies remain separate from evidence-contract tests.",
+      "relations": [
+        62,
+        64,
+        78,
+        79,
+        80
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "documents": [
+        "F01",
+        "F08",
+        "F04",
+        "O06"
+      ],
+      "text": "The general principle, builder method, and participant-neutral architecture are different levels. A database, shared state, or DSL is not a universal requirement."
+    },
+    {
+      "documents": [
+        "L02",
+        "F09",
+        "I03"
+      ],
+      "text": "Compiler validity, operator correctness, evidence support, and acceptance for a purpose require different checks."
+    },
+    {
+      "documents": [
+        "F09",
+        "R05",
+        "L13"
+      ],
+      "text": "A described operation or accepted result does not establish authority for an external action."
+    },
+    {
+      "documents": [
+        "L03",
+        "L11",
+        "GUIDE-C"
+      ],
+      "text": "Maintained declarations and generated executable behavior might be layers or alternatives. The notes do not select the relationship."
+    },
+    {
+      "documents": [
+        "I04",
+        "I06",
+        "I03"
+      ],
+      "text": "Lineage, corpus consideration, retrieval recall, evidence support, and conflict resolution are distinct properties."
+    },
+    {
+      "documents": [
+        "R06",
+        "R09",
+        "R10",
+        "R11"
+      ],
+      "text": "A program revision, resolved system revision, environment binding, evaluation plan, and observed run are different records."
+    },
+    {
+      "documents": [
+        "R01",
+        "R06",
+        "R09"
+      ],
+      "text": "Using recorded observations differs from making new live model or tool calls. Matching configuration identity does not guarantee exact outcomes."
+    },
+    {
+      "documents": [
+        "C02",
+        "E11",
+        "E05",
+        "E07",
+        "E08"
+      ],
+      "text": "Human understanding, runtime enforcement, evidence quality, and program generalization need different tests."
+    },
+    {
+      "documents": [
+        "F10",
+        "E09",
+        "E05"
+      ],
+      "text": "The work profile is proposed, the field study has not been conducted, and injected failures do not validate every task dimension."
+    },
+    {
+      "documents": [
+        "F12",
+        "F11",
+        "O08",
+        "E12"
+      ],
+      "text": "Working cognitive definitions, assigned work roles, security authority, and the emergence of agency are not interchangeable."
+    },
+    {
+      "documents": [
+        "O08",
+        "O06",
+        "E13"
+      ],
+      "text": "Alice is a separate research direction. Sharing a method does not make one direction a prerequisite of the other."
+    },
+    {
+      "documents": [
+        "R11",
+        "E13",
+        "E11"
+      ],
+      "text": "A runnable evaluation configuration is not evidence that its scoring rules are valid or its illustrative threshold is justified."
+    },
+    {
+      "documents": [
+        "F03",
+        "R04",
+        "C05",
+        "F09"
+      ],
+      "text": "Permitted interaction sequences, safety, eventual completion, shared understanding, and evidence truth require different checks. A monitor proposal does not establish all of them."
+    },
+    {
+      "documents": [
+        "L04",
+        "L05",
+        "L02",
+        "R05"
+      ],
+      "text": "A more structured program or isolated runner does not by itself grant authority. The accepted representation, current permission, and confirmed external outcome remain separate."
+    },
+    {
+      "documents": [
+        "L01",
+        "L12",
+        "L07",
+        "F09"
+      ],
+      "text": "The captured DSL examples illustrate domain vocabulary and scenario construction. They do not measure general generation reliability or establish every possible protocol execution."
+    },
+    {
+      "documents": [
+        "E10",
+        "C02",
+        "E07",
+        "E11"
+      ],
+      "text": "Interactive correction, user understanding, retrieval quality, and contract enforcement need distinct observations. The proposed paper and studies are not completed research."
+    }
+  ]
+}

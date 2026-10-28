@@ -118,4 +118,4 @@ The central observation from this example is that **a product may contain both e
 
 This distinction remains relevant to comparison across the product cases.
 
-[^readme]: `README.md` — attachment cited in the source conversation.
+[^readme]: `README.md` -- attachment cited in the source conversation.
