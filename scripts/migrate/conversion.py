@@ -403,6 +403,10 @@ def convert_document(
         "toc",
         "weight",
         "contributors",
+        "showTitle",
+        "contribution_id",
+        "contribution_order",
+        "contribution_route_id",
     ):
         if key in document.frontmatter:
             frontmatter[key] = document.frontmatter[key]

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "start": "a917a4d9b65738e118d1d30e76f3737d42900052",
-  "through": "e9f32eb0c563e5d496157acd60238fc405e1b35c",
+  "through": "ca402c7c835f44a64e51e8ec976396afb82d475b",
   "routes": {
     "/": {
       "source": "content/_index.md",
@@ -1018,6 +1018,10 @@
     "/ai/ai-systems-design": {
       "source": "content/ai/ai-systems-design/_index.md",
       "title": "AI Systems Design"
+    },
+    "/ai/ai-systems-design/chatgpt-pro-research-questions-2026-10-29": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-research-questions-2026-10-29.md",
+      "title": "Twenty research questions for ChatGPT Pro"
     },
     "/ai/ai-systems-design/representations-composition-and-understanding": {
       "source": "content/ai/ai-systems-design/representations-composition-and-understanding.md",
@@ -2506,6 +2510,26 @@
     "/content-use": {
       "source": "content/content-use.md",
       "title": "Content Use"
+    },
+    "/contributions": {
+      "source": "content/contributions/_index.md",
+      "title": "Contributions and connections"
+    },
+    "/contributions/evaluation-evidence": {
+      "source": "content/contributions/evaluation-evidence.md",
+      "title": "Evaluation evidence and trace integrity"
+    },
+    "/contributions/from-uncertainty-to-commitment": {
+      "source": "content/contributions/from-uncertainty-to-commitment.md",
+      "title": "From uncertainty to commitment: a reading route"
+    },
+    "/contributions/investigation-composition": {
+      "source": "content/contributions/investigation-composition.md",
+      "title": "Composable investigation workspaces"
+    },
+    "/contributions/uncertainty-utility-commitments": {
+      "source": "content/contributions/uncertainty-utility-commitments.md",
+      "title": "Uncertainty, usefulness, and commitments"
     },
     "/engineering": {
       "source": "content/engineering/_index.md",

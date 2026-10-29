@@ -60,6 +60,7 @@ The content tree is organized by section. Current top-level sections include:
 - `content/projects/`
 - `content/blog/`
 - `content/topics/`
+- `content/contributions/` (selected source notes from `projects/valery-tech/`)
 
 Section landing pages use `_index.md`. Regular pages use `.md` files inside the
 section folders. For example:
@@ -72,6 +73,12 @@ section folders. For example:
   `/ai-engineering/evaluation/harness-and-platform/`
 - `content/projects/code-assistant.md` is generated from the selected external
   project note and renders `/projects/code-assistant/`
+- `content/contributions/` is generated from five explicitly selected notes in
+  `/Users/val/notes/projects/valery-tech/`. The overview, three contribution
+  records, and connected reading route are authored in the notes vault. Each
+  record's title and description also supply its homepage and agent-map entry.
+  Implementation notes and author-review questions in that source folder are
+  excluded from publication.
 
 When a Markdown file has a nonempty `description` in its front matter, its HTML
 page displays it as an introductory paragraph with inline Markdown formatting.

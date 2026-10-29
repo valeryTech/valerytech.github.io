@@ -201,6 +201,22 @@ preserves them:
 | `document_status` | Optional map label: `canonical` for the preferred starting point, `draft` for provisional material, or `archived` for preserved history. Unset means no assigned status. |
 | `draft` | Controls Hugo publication independently of the `document_status` label. |
 | `agent_map_exclude: true` | Omits the article and its redirects from agent maps while leaving the page published. |
+| `showTitle` | Retains the legacy title flag on import. Standard article templates supply a title when the body has no authored H1. |
+| `contribution_id`, `contribution_order` | Identifies and orders a selected contribution record; its title and description supply the homepage and agent-map excerpts. |
+| `contribution_route_id` | Identifies a connected reading route. |
+
+### Contribution records
+
+The canonical contribution notes live in `/Users/val/notes/projects/valery-tech/`.
+The dedicated `contributions` import selects five filenames explicitly and maps
+`contributions.md` to `content/contributions/_index.md`. The three record pages
+and reading route are generated alongside it. Edit the source notes, then run
+`make migrate`; do not maintain another copy of their summaries in templates.
+
+`implementation-notes.md` and `author-review.md` remain local project context.
+They are not selected by the migration manifest. Adding a file to that folder
+does not publish it automatically. The generated content is committed with the
+website so CI can build without access to the notes vault.
 
 ## What To Edit
 

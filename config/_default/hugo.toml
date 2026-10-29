@@ -62,7 +62,6 @@ copyRight = "Copyright (c) 2014-2023"
   mediaType = "application/xml"
   baseName = "sitemap"
   isHTML = false
-  isPlainText = true
   noUgly = true
   rel  = "sitemap"
 

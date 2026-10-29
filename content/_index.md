@@ -21,6 +21,8 @@ AI can play different roles across [different types of projects]({{< ref "ai/var
 
 Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com).
 
+{{< contribution-preview >}}
+
 {{< callout context="note" title="Why I share these notes" icon="outline/info-circle" >}}
 I share these notes because I believe they can contribute to the development of AI engineering as a discipline. Many contain original observations, ideas, and insights that could be useful to other engineers, even in an unfinished form.
 

@@ -88,6 +88,23 @@ include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 
 [[imports]]
+name = "contributions"
+source_root_kind = "external"
+source_subtree = "projects/valery-tech"
+target_subtree = "contributions"
+root_index_source = "contributions.md"
+selection_mode = "opt-in"
+# Keep implementation notes and author-review questions in the local vault.
+selection_paths = [
+  "contributions.md",
+  "investigation-composition.md",
+  "evaluation-evidence.md",
+  "uncertainty-utility-commitments.md",
+  "from-uncertainty-to-commitment.md",
+]
+include = ["*.md"]
+
+[[imports]]
 name = "migration-smoke"
 source_root_kind = "repo"
 source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"

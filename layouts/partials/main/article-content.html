@@ -1,0 +1,18 @@
+{{- $page := .page -}}
+{{- $needsTitle := not (findRE `<h1\b` $page.Content 1) -}}
+<article class="article-content" aria-label="{{ $page.Title }}">
+  {{ if $needsTitle }}
+    <header class="page-header d-flex flex-row justify-content-between align-items-start">
+      <h1>{{ $page.Title }}</h1>
+      {{ if and .aiButtons site.Params.doks.aiButtons }}
+        <div>{{ partial "main/ai-buttons.html" $page }}</div>
+      {{ end }}
+    </header>
+  {{ end }}
+  {{ $content := partial "main/content-with-description.html" (dict "page" $page "hasTitle" $needsTitle) }}
+  {{ if and .headlineHash site.Params.doks.headlineHash }}
+    {{ partial "main/headline-hash" $content }}
+  {{ else }}
+    {{ $content }}
+  {{ end }}
+</article>

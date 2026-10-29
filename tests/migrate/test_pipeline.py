@@ -96,6 +96,60 @@ class MigrationPipelineTests(unittest.TestCase):
         self.assertIn("agent_map_exclude: true", generated)
         self.assertIn("draft: false", generated)
 
+    def test_contribution_import_preserves_records_and_excludes_project_context(self) -> None:
+        project = self.workspace.source_root / "projects/valery-tech"
+        project.mkdir(parents=True)
+        (project / "contributions.md").write_text(
+            '---\ntitle: Contributions\nshowTitle: true\n---\n'
+            '[[investigation-composition|Read the record]]\n', encoding="utf-8",
+        )
+        (project / "investigation-composition.md").write_text(
+            '---\ntitle: Composable investigations\n'
+            'description: One canonical contribution summary.\n'
+            'contribution_id: investigation-composition\ncontribution_order: 1\n'
+            'showTitle: true\n---\n[[system-design/topics/api|Primary source]]\n',
+            encoding="utf-8",
+        )
+        (project / "route.md").write_text(
+            '---\ncontribution_route_id: from-uncertainty-to-commitment\n---\n'
+            '[[investigation-composition]]\n', encoding="utf-8",
+        )
+        for name in ("implementation-notes.md", "author-review.md"):
+            (project / name).write_text("Local project context, not public copy.\n", encoding="utf-8")
+        with self.workspace.config_path.open("a", encoding="utf-8") as config:
+            config.write(dedent('''
+
+                [[imports]]
+                name = "contributions"
+                source_subtree = "projects/valery-tech"
+                target_subtree = "contributions"
+                root_index_source = "contributions.md"
+                selection_mode = "opt-in"
+                selection_paths = ["contributions.md", "investigation-composition.md", "route.md"]
+                include = ["*.md"]
+            '''))
+
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        generated = self.workspace.content_root / "contributions"
+        self.assertEqual(
+            {path.name for path in generated.iterdir()},
+            {"_index.md", "investigation-composition.md", "route.md"},
+        )
+        record = (generated / "investigation-composition.md").read_text(encoding="utf-8")
+        self.assertIn('contribution_id: "investigation-composition"', record)
+        self.assertIn('contribution_order: "1"', record)
+        self.assertIn('description: "One canonical contribution summary."', record)
+        self.assertIn('showTitle: true', record)
+        self.assertIn('[Primary source]({{< ref "system-design/topics/api" >}})', record)
+        self.assertIn(
+            '[Read the record]({{< ref "contributions/investigation-composition" >}})',
+            (generated / "_index.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            'contribution_route_id: "from-uncertainty-to-commitment"',
+            (generated / "route.md").read_text(encoding="utf-8"),
+        )
+
     def test_sync_publishes_attachment_links_and_preserves_snapshot_origin(self) -> None:
         source = self.workspace.source_root / "system-design/topics/api.md"
         snapshot = source.parent / "snapshot.html"
