@@ -6,4 +6,4 @@ title: "Sensemaking"
 linkTitle: "Sensemaking"
 ---
 
-Moved to [[ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-partnership|Sensemaking and epistemic partnership]].
+Moved to [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}).

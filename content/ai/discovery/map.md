@@ -26,12 +26,12 @@ Comments below are my interpretation and suggested use of the existing notes (20
 ## Sensemaking and interactive system design
 
 
-- Sensemaking and epistemic action -- The clearest account of better mental models as an outcome of human-AI work. This gives conceptual language to the learning we seek through interaction.
-- Augmentation literature and reading path -- Broader background on tools extending human understanding and collaborative investigation. A route into the literature rather than a prototyping procedure.
-- Exploratory pipeline design and comments -- Apply exploration to uncertain pipeline decisions. Valuable for making behavior inspectable; progressive automation is one possible outcome of inquiry.
-- Inspectable pipeline workbenches and comments -- Concrete proposals for artifacts, interventions, traces, and a RAG playground. Borrow the interaction ideas before committing to the proposed infrastructure.
-- Exploratory pipeline goals and principles and comments -- A broader engineering proposal. Read the comments with it: recorded interventions still need interpretation and evidence before becoming general rules.
-- Retrieval design -- A concrete application using small baselines, shared artifacts, and interactive comparisons. Particularly useful for turning our knowledge-search examples into something we can investigate.
+- [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) -- The clearest account of better mental models as an outcome of human-AI work. This gives conceptual language to the learning we seek through interaction.
+- [Augmentation literature and reading path]({{< ref "ai/design-research/02-human-ai-collaboration/04-augmentation-literature-and-reading-path" >}}) -- Broader background on tools extending human understanding and collaborative investigation. A route into the literature rather than a prototyping procedure.
+- [Exploratory pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) and [comments]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments" >}}) -- Apply exploration to uncertain pipeline decisions. Valuable for making behavior inspectable; progressive automation is one possible outcome of inquiry.
+- [Inspectable pipeline workbenches]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}) and [comments]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches-comments" >}}) -- Concrete proposals for artifacts, interventions, traces, and a RAG playground. Borrow the interaction ideas before committing to the proposed infrastructure.
+- [Exploratory pipeline goals and principles]({{< ref "ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles" >}}) and [comments]({{< ref "ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles-comments" >}}) -- A broader engineering proposal. Read the comments with it: recorded interventions still need interpretation and evidence before becoming general rules.
+- [Retrieval design]({{< ref "ai-engineering/retrieval/retrieval-design" >}}) -- A concrete application using small baselines, shared artifacts, and interactive comparisons. Particularly useful for turning our knowledge-search examples into something we can investigate.
 
 ## Adjacent perspectives
 

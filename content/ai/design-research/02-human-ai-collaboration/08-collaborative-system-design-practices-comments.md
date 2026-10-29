@@ -53,4 +53,4 @@ Inspectability can be supported by actual sources, assumptions, changes, planned
 
 The final five-question test is a proposed review aid, not evidence that a design works. The [collaboration evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) suggests additional tests of interruption, review, handoff, and recovery.
 
-The guide supplies no experiment or measured benefit. No interface, runtime, or study is selected by the split. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-5-participant-profiles-and-design-practices) records preservation of the complete dialogue.
+The guide supplies no experiment or measured benefit. No interface, runtime, or study is selected by the split. The mapping log records preservation of the complete dialogue.

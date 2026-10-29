@@ -19,13 +19,13 @@ The completed research report is saved separately and linked below. Its numbered
 
 Now let's reason about these things.
 
-First, we have systems where we have people, code, data, usual components, and now we have LLMs. And LLMs have a set of features. Not only non-reliability, but also, like, they are able to generate text formally. Thus, from this text, they are generating what? So, something, propose actions, processing information, give something in the area of NLP, like we have usual there, but we have also the area where we can structure.
+First, we have systems with people, code, data, and the usual components, and now we also have LLMs. LLMs have a set of features, including unreliability and the ability to generate text. Formally, they generate text, but what can they produce through that text? They can propose actions, process information, and perform familiar NLP tasks, but they can also produce structured output.
 
-[https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/>) Then about AI system types, maybe we should reason from the common perspective. Maybe later or now we could reason for the specific example, like clear agentic application.
+[https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/>) Then, regarding AI system types, maybe we should reason from a common perspective. Later, or even now, we could consider a specific example, such as an agentic application.
 
-So one direction, like security and restricting non-reliability of the LLMs. We could introduce here different means of achieving this and find out these means. It could be system architecture, like you can find the mods. We could introduce, like, software graphs. So it's kind of harness. Also we need to understand what we can use also. It could be, like, type modeling from the language, or maybe adding tools, a specific set of tools, and give them to the LLM in sandbox or some kind of restricted environments. It also could be, what, different guardrails, automatic judges, and other classifiers, maybe. Like, Jev, we can use some models to understand whether the system, LLM, propose this one. So this is one direction.
+So one direction is security and limiting LLM unreliability. We could identify different ways to achieve this, including through system architecture. We could introduce software graphs as a kind of harness. We also need to understand what else we can use. It could be type modeling within a language, or perhaps giving the LLM a specific set of tools in a sandbox or another restricted environment. It could also involve different guardrails, automatic judges, and other classifiers. For example, with Jev, we could use models to assess what the system or LLM proposes. So this is one direction.
 
-And next direction will be: could we, like, use the strong sides of LLMs, like text generation? It could have downsides; it has downsides, and, like, we... okay, and it has good sides, and we can benefit from the text generation. Like LLMs can analyze known structured information and propose us different ways of achieving the goal. So, and we need to understand what we can use to enforce or make use of these beneficials. Like also could be the type modeling, domain modeling, DSLs, what else? So we need to find it. Let's analyze conceptually my product or problem framing.
+And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs—what else? We need to find out. Let's analyze my product or problem framing conceptually.
 
 ---
 
@@ -526,7 +526,7 @@ Your existing project classification can supply the application cases. Your oper
 ## User -- turn 2
 
 
-[Deep research](<https://chatgpt.com/settings/plugins-settings/apps/connector_openai_deep_research>) Okay, let's develop this as a general design model.  We need to do it on the conceptual level first, and then we could rebuild the systems, for example, the examples, the different types, from the ground up using this. Let's make a deep research on this.
+[Deep research](<https://chatgpt.com/settings/plugins-settings/apps/connector_openai_deep_research>) Okay, let's develop this as a general design model. We need to work at the conceptual level first, and then we could rebuild the systems—for example, the different types in our examples—from the ground up using this model. Let's do some deep research on this.
 
 ---
 
@@ -548,7 +548,7 @@ Deep Research will present its research plan and deliver the full report in the 
 ## User -- turn 3
 
 
-analyse report. How we could start building the system from the ground up? First, it could be maybe just conceptualization. How we, what are the main building blocks of the system? Maybe modes, and how we, what are the features of these building blocks? How we could combine them.
+Analyze the report. How could we start building the system from the ground up? Maybe we could begin with conceptualization. What are the main building blocks of the system—perhaps modes? What are the features of these building blocks? How could we combine them?
 
 ---
 

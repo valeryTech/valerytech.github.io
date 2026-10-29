@@ -59,6 +59,6 @@ The [design-research collection]({{< ref "ai/design-research/00-index" >}}) cove
 ## Documents awaiting a separate pass
 
 
-The visual-programming dialogue, Hebbia product analysis, semantic-engineering dialogue, short context-assembly sketch, complex UI dialogue, natural-language interface dialogue, language-interface architecture reply, exploratory-design material, and interactive-investigation principles have received separate passes. The principles' [mapping]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-3-interactive-investigation-position-paper) is recorded with design research.
+The visual-programming dialogue, Hebbia product analysis, semantic-engineering dialogue, short context-assembly sketch, complex UI dialogue, natural-language interface dialogue, language-interface architecture reply, exploratory-design material, and interactive-investigation principles have received separate passes. The principles' mapping is recorded with design research.
 
 No documents remain on the selected pending list. Application examples and captured sources remain in place and are linked from the collection. The completed source passes do not establish that every related note in either repository has been reviewed.

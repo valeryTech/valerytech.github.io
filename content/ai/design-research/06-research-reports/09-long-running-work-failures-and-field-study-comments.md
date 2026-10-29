@@ -45,4 +45,4 @@ The closing collaborative-work definition is a proposed object of study. It does
 
 Claims attributed to LangChain, Anthropic, HORIZON, and the oversight study were retained with their original links. They were not independently checked during the reassembly. Preserving attribution does not verify the claims or adopt a research or implementation choice.
 
-The source comments (archived source 016) preserve the broader review and updated placement. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-9-long-running-work-model-and-field-study) records all original ranges and preservation checks. Plain-writing guided only the new prose, and no original reply was edited.
+The source comments (archived source 016) preserve the broader review and updated placement. The mapping log records all original ranges and preservation checks. Plain-writing guided only the new prose, and no original reply was edited.

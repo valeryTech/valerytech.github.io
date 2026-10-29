@@ -492,7 +492,7 @@ So one tentative proposal is to organize the overall idea as:
 
 If you need one umbrella phrase for the whole shift, **"from conversational interfaces to collaborative systems"** is probably the clearest. "Conversational" describes the current UI paradigm; "collaborative system" describes the deeper product model you're moving toward.
 
-The [source redirect]({{< ref "ai/collab-and-joint-work/build-approach" >}}) links the initial profiles, design practices, and later revision. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-5-participant-profiles-and-design-practices) records the complete split.
+The [source redirect]({{< ref "ai/collab-and-joint-work/build-approach" >}}) links the initial profiles, design practices, and later revision. The mapping log records the complete split.
 
 ## From rewriting prompts to a shared writing workspace
 

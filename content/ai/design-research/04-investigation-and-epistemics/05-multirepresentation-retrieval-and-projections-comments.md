@@ -53,4 +53,4 @@ The reply suggests that correcting an exposed interpretation may be faster than 
 
 The [evaluation agenda]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}#evaluation-agenda-and-closing-argument) proposes checking retrieval success, error diagnosis, recovery cost, and understanding. Increased visibility alone does not establish improvement in any of those outcomes.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-3-interactive-investigation-position-paper) distinguishes the new import from the initial dialogue. Original text and literature attributions remain unchanged, and no implementation is selected by the arrangement.
+The mapping log distinguishes the new import from the initial dialogue. Original text and literature attributions remain unchanged, and no implementation is selected by the arrangement.

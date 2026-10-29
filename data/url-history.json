@@ -1019,6 +1019,14 @@
       "source": "content/ai/ai-systems-design/_index.md",
       "title": "AI Systems Design"
     },
+    "/ai/ai-systems-design/representations-composition-and-understanding": {
+      "source": "content/ai/ai-systems-design/representations-composition-and-understanding.md",
+      "title": "Representations, composition, and understanding in AI systems"
+    },
+    "/ai/ai-systems-design/research-problems-and-prototypes": {
+      "source": "content/ai/ai-systems-design/research-problems-and-prototypes.md",
+      "title": "Twenty research problems for AI systems design"
+    },
     "/ai/approach": {
       "source": "content/ai/approach/_index.md",
       "title": "Approach"
@@ -1730,6 +1738,30 @@
     "/ai/design-research/input/reports/reflection-in-hybrid-ai-systems": {
       "source": "content/ai/design-research/input/reports/reflection-in-hybrid-ai-systems.md",
       "title": "Reflection In Hybrid Ai Systems"
+    },
+    "/ai/design-research/input/research-llm-programming-languages": {
+      "source": "content/ai/design-research/input/research-llm-programming-languages/_index.md",
+      "title": "Research LLM Programming Languages"
+    },
+    "/ai/design-research/input/research-llm-programming-languages/agent-guarantees": {
+      "source": "content/ai/design-research/input/research-llm-programming-languages/agent-guarantees.md",
+      "title": "Agent guarantees"
+    },
+    "/ai/design-research/input/research-llm-programming-languages/alignment": {
+      "source": "content/ai/design-research/input/research-llm-programming-languages/alignment.md",
+      "title": "Programming languages and the design research program"
+    },
+    "/ai/design-research/input/research-llm-programming-languages/conversation": {
+      "source": "content/ai/design-research/input/research-llm-programming-languages/conversation.md",
+      "title": "Research LLM Programming Languages — Conversation"
+    },
+    "/ai/design-research/input/research-llm-programming-languages/language-design": {
+      "source": "content/ai/design-research/input/research-llm-programming-languages/language-design.md",
+      "title": "Language design"
+    },
+    "/ai/design-research/input/research-llm-programming-languages/language-thesis": {
+      "source": "content/ai/design-research/input/research-llm-programming-languages/language-thesis.md",
+      "title": "Language thesis"
     },
     "/ai/design-research/input/research-to-product-validation": {
       "source": "content/ai/design-research/input/research-to-product-validation.md",

@@ -66,4 +66,4 @@ The derivations are proposed reasons for allocating work. They do not prove that
 
 The [collaboration evaluation framework]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) supplies related testing questions. No implementation or study is selected by the split, and empirical claims in the dialogue remain unverified.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-5-participant-profiles-and-design-practices) records the original ranges and reconstruction checks. The source placeholders and heading marked for rewriting are preserved in the split rather than treated as instructions to rewrite the dialogue.
+The mapping log records the original ranges and reconstruction checks. The source placeholders and heading marked for rewriting are preserved in the split rather than treated as instructions to rewrite the dialogue.

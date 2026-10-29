@@ -57,7 +57,7 @@ The original report summary and complete bibliography remain here. The report is
 - The [joint-activity model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}#research-synthesis-of-collaboration-mechanics) retains the general mechanics, consolidated model, complete workflow, and closing argument.
 - The [collaboration evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) retains the pattern tests, collaboration audit, and review rubric.
 
-The [original source redirect]({{< ref "ai/collab-and-joint-work/human-ai-collaboration-patterns-report" >}}) links all destinations. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) records the original ranges and checksums.
+The [original source redirect]({{< ref "ai/collab-and-joint-work/human-ai-collaboration-patterns-report" >}}) links all destinations. The mapping log records the original ranges and checksums.
 
 ## Citation index added during reassembly
 

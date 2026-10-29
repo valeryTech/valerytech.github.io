@@ -31,4 +31,4 @@ A state keeper can maintain records without proving that the records are complet
 
 The closing [work model]({{< ref "ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study" >}}) abbreviates the earlier list and omits explicit state-keeper and recovery roles. The complete list remains here, and neither version was silently substituted for the other.
 
-The original reply continues with [goal revisions]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#goal-revisions-and-dependent-work). The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-9-long-running-work-model-and-field-study) records the imported range and exact preservation of the earlier model note.
+The original reply continues with [goal revisions]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#goal-revisions-and-dependent-work). The mapping log records the imported range and exact preservation of the earlier model note.

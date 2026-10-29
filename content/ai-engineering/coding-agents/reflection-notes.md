@@ -73,7 +73,7 @@ Humans know which files are sensitive. Agents do not.
 
 Agents often follow local code style. Usually good, but dangerous if old code is deprecated.
 
-others in [[ai-engineering/coding-agents/agents.md#Assumptions and Useful facts]]
+others in [Agents Md]({{< ref "ai-engineering/coding-agents/agents-md" >}}#assumptions)
 
 # Workflow and ...
 
@@ -111,7 +111,7 @@ Python scaffold: uv. #todo Add the remaining tools and the intended reference li
 # Context Management
 
 
-[[ai-engineering/coding-agents/agents.md]]
+[Agents Md]({{< ref "ai-engineering/coding-agents/agents-md" >}})
 
 # Documentation
 

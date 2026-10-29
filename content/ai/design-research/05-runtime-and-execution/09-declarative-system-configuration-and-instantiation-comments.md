@@ -45,4 +45,4 @@ Isolation also needs an enforceable effect boundary. Running the production conf
 
 The next [publishing note]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) discusses selecting and retaining resolved revisions. The [evaluation-plan note]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}) discusses how a consumer could name the system and test conditions.
 
-The [audit]({{< ref "ai/design-research/reassembly-map" >}}#declarative-system-configuration-dialogue) records unchanged source ranges. The split adopts no storage format, runtime implementation, or guarantee of reproducible outcomes.
+The audit records unchanged source ranges. The split adopts no storage format, runtime implementation, or guarantee of reproducible outcomes.

@@ -45,6 +45,6 @@ The [workbench note]({{< ref "ai/design-research/interactive-systems/11-inspecta
 ## Source accounting and limits
 
 
-The prompt-registry archive (archived source 014) remains unchanged. Its body is an exact prefix of the longer configuration dialogue's body. The [audit]({{< ref "ai/design-research/reassembly-map" >}}#declarative-system-configuration-dialogue) maps both histories to the shared retained text, which was imported once.
+The prompt-registry archive (archived source 014) remains unchanged. Its body is an exact prefix of the longer configuration dialogue's body. The audit maps both histories to the shared retained text, which was imported once.
 
 Saved product descriptions and template-library claims were not independently verified. Plain-writing guided only the new commentary and navigation, not the retained source text.

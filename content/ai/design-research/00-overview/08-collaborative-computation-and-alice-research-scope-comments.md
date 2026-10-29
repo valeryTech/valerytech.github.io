@@ -33,4 +33,4 @@ The suggested relation to artificial life and other fields remains a source clai
 
 The possible later connection between emerging beings and coordination is conditional. It should not be treated as a required sequence or evidence that either research branch already works.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-8-multiagent-coordination-analysis-and-alice-scope) records the complete correction and its original ending. No experiment, implementation, or theory was selected by the arrangement.
+The mapping log records the complete correction and its original ending. No experiment, implementation, or theory was selected by the arrangement.

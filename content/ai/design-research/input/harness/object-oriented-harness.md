@@ -28,7 +28,7 @@ Formatted copy of the [original paper](https://arxiv.org/html/2610.28380), licen
 
 Agent harnesses are executable code that specifies the prompts, tools, and control flow around a language model. A single global harness can struggle with heterogeneous tasks that require different execution strategies. In this work, we introduce Object-Oriented Harness (OO-Harness), a harness optimization framework that evolves a hierarchy of executable harness classes using object-oriented design. During training, an evolution agent uses execution records to create a family of specialized harnesses, each implemented as a subclass of the base or an existing specialized harness via inheritance. At test time, a harness router uses routing lessons accumulated during training to select a specific harness for each task. Across three long-horizon benchmarks spanning business workflows, workspace tasks, and tool use, OO-Harness achieves the best performance among the compared methods, with an absolute improvement of up to \(15.79\%\) over the base harness. Extensive ablation studies examine the contributions of its core components.
 
-Figure 1: Three ways to organize harness adaptation
+![Figure 1: Three ways to organize harness adaptation](object-oriented-harness.assets/figure1-overview.png)
 
 Figure 1: Three ways to organize harness adaptation. (a) A single global harness serves all tasks. (b) A router selects among independent harness implementations. (c) OO-Harness selects among specialized harnesses that share code through inheritance.
 
@@ -72,7 +72,7 @@ Recent work automates harness construction and revision through code search and 
 
 A harness implements the prompts, tools, and execution rules around an *executor*, the language model \(M\) that carries out tasks [^18]. OO-Harness evolves this code on discovery tasks while keeping \(M\) fixed, then evaluates the frozen harnesses on disjoint held-out tasks (Figure 2). This differs from Meta-Harness's TerminalBench-2 discovery experiment, which uses the same tasks for search and final evaluation [^9]. Separating discovery from evaluation is essential for assessing generalization beyond the search set [^23].
 
-Figure 2: Problem setting
+![Figure 2: Problem setting](object-oriented-harness.assets/train-test-setting.png)
 
 Figure 2: Problem setting. We use a train/test split: harnesses evolve on discovery tasks and are evaluated on disjoint held-out tasks.
 
@@ -80,7 +80,7 @@ A *harness hierarchy* \(\mathcal{T}_{H}\) stores complete harness classes, start
 
 Execution records \(\mathcal{E}\) store candidate code, discovery-task trajectories, outcomes, and reflections from successful and unsuccessful proposals. Where lesson stores are enabled, we summarize these records into *design lessons* \(\mathcal{L}_{\pi}\) for code revision and *routing lessons* \(\mathcal{L}_{\rho}\) for harness selection. Design lessons describe useful changes and failed approaches; routing lessons describe when a harness applies. Both accumulate during discovery and remain frozen at deployment. The router's model weights stay fixed; training changes the evidence that guides its decisions.
 
-Figure 3: OO-Harness training and test-time execution
+![Figure 3: OO-Harness training and test-time execution](object-oriented-harness.assets/figure2-method.png)
 
 Figure 3: OO-Harness training and test-time execution. (1) Base execution records initialize task clusters. (2) The evolution agent builds and evaluates subclasses, updating lessons from execution feedback. (3) The resulting harness hierarchy, harness descriptions, and routing lessons are frozen for testing. (4) The harness router uses the task, observable base trajectory, and frozen routing lessons to select a specialized harness or reuse the base result.
 
@@ -229,7 +229,7 @@ OO-Harness achieves the highest primary score on all three benchmarks (Table 1),
 
 We compare more closely with Meta-Harness, a prominent prior approach to global harness optimization. During training, Meta-Harness evolves one global harness, whereas OO-Harness builds a hierarchy of specialized harnesses through cluster-specific evolution. Both freeze code before testing; Meta-Harness applies one harness to every task, while OO-Harness selects from its learned hierarchy. Figure 4 highlights three advantages of OO-Harness: training progress, with larger early gains in the averaged discovery curve (a); training efficiency, with shorter recorded search duration (b); and generalization performance, with higher held-out scores (c). Evaluating revisions on target clusters instead of rerunning the full discovery set can reduce API calls and associated cost per candidate. These results motivate hierarchical, adaptive harness optimization for heterogeneous tasks.
 
-Figure 4: Global versus hierarchical harness optimization
+![Figure 4: Global versus hierarchical harness optimization](object-oriented-harness.assets/search-summary-main.svg)
 
 Figure 4: Global versus hierarchical harness optimization. Compared with Meta-Harness, OO-Harness shows (a) larger early training gains, (b) shorter recorded search time, and (c) higher held-out scores. Curves align runs by their fraction of recorded updates.
 
@@ -260,7 +260,7 @@ Table 2 shows that the value of execution evidence depends on the workload. Comp
 
 One central design choice of OO-Harness is evolution via inheritance. We examine its contribution on Workspace-Bench with three ways of learning harnesses. The routing procedure, executor, task splits, and nominal search budget are the same across variants; only how harness code is learned changes. OO extends earlier harnesses through subclasses. Flat copies previously evolved code into a class derived directly from the base, without inheriting from a specialized harness. Base-reset starts from the base and adds new changes without carrying forward previously evolved code. Each variant conducts a separate search and is evaluated once on Lite-100.
 
-Figure 5: Inheritance ablation on Workspace-Bench
+![Figure 5: Inheritance ablation on Workspace-Bench](object-oriented-harness.assets/inheritance-ablation.svg)
 
 Figure 5: Inheritance ablation on Workspace-Bench. We find that learning through inheritance outperforms Flat and Base-reset.
 
@@ -280,7 +280,7 @@ In OO-Harness, a task is rerun with an evolved specialized harness only when the
 
 Table 3: Base performance by routing destination on AutomationBench. We find that tasks routed to specialized harnesses have substantially weaker Base performance on average, while OO-Harness preserves stronger Base executions through reuse.
 
-Figure 6: Learned clusters and an example router lesson
+![Figure 6: Learned clusters and an example router lesson](object-oriented-harness.assets/cluster-comparison-main.svg)
 
 Figure 6: Learned clusters and an example router lesson. Panels (a,b) compare learned clusters (rows) with domains or task types (columns); cells count shared discovery tasks. AutomationBench clusters largely reflect execution needs, while Workspace-Bench clusters largely follow task types. Panel (c) schematically shows how repeated query-parsing errors in a Base trajectory match a saved routing lesson, leading to selection of an API error-normalizer harness. Blank cells are zero; Workspace-Bench column IDs match the numbered rows.
 
@@ -301,7 +301,7 @@ Inheritance supports both shared behavior and targeted specialization. On Automa
 
 To examine behavior in extreme OOD scenarios, we construct a setting with 254 Toolathlon-GYM training tasks and 49 Toolathlon test tasks [^10]. Their named application families are disjoint, making the test set largely out of distribution relative to the training set (Appendix A.7). We evolve harnesses on this training split and compare OO-Harness against Meta-Harness. At test time, Meta-Harness applies its learned global harness, whereas the OO-Harness router selects the general Base harness for every test task. As Figure 7 shows, reusing Base preserves its performance, while applying the Meta-Harness harness yields a lower PASS rate. Keeping Base as a routing option allows OO-Harness to handle unfamiliar tasks without requiring them to use a specialization learned on different application families.
 
-Figure 7: Base reuse on the selected OOD test tasks
+![Figure 7: Base reuse on the selected OOD test tasks](object-oriented-harness.assets/ood-transfer.svg)
 
 Figure 7: Base reuse on the selected OOD test tasks. After evolution on the disjoint training split, OO-Harness reuses Base on every test task, preserving its performance, while applying the learned Meta-Harness harness reduces PASS.
 
@@ -658,7 +658,7 @@ The specialized backend handles direct document writes and can also create a mis
 
 The requested output format is often visible in the task description, giving the router a useful cue for selecting this capability. This is consistent with the small difference between task-only and trajectory-based routing on Workspace-Bench.
 
-Figure 8: Generating a Word document through the file backend
+![Figure 8: Generating a Word document through the file backend](object-oriented-harness.assets/document-backend-main.svg)
 
 Figure 8: Generating a Word document through the file backend. For the same illustrative `write_file` call, the base backend saves text under a `.docx` filename; the specialized backend renders the text into a binary document.
 
@@ -671,7 +671,7 @@ Business workflows often require changes to application state, but an execution 
 
 Figure 9 shows successive extensions within the discovery-setup lineage. Building on s9's missing-write completion check, s12 adds a reminder near the turn limit when no write has succeeded. Its child s29 retains both mechanisms and adds guidance for unrecoverable errors and repeated unproductive tool results.
 
-Figure 9: Adding execution checks through inheritance
+![Figure 9: Adding execution checks through inheritance](object-oriented-harness.assets/shared-ancestor-case.svg)
 
 Figure 9: Adding execution checks through inheritance. Successive nodes add a missing-write completion check, a near-budget reminder, and tool-error guidance. Arrows show inheritance. The filled node s29 is active; s9 and s12 are inactive ancestors that supply inherited behavior.
 
@@ -682,7 +682,7 @@ Figure 9: Adding execution checks through inheritance. Successive nodes add a mi
 
 Table 4: Execution evidence behind two routing choices. Examples from an earlier AutomationBench workflow pair observed Base behavior with the applicable routing lesson and the recorded choice.
 
-Figure 10: Learned task clusters on Toolathlon-GYM
+![Figure 10: Learned task clusters on Toolathlon-GYM](object-oriented-harness.assets/cluster-toolathlon-appendix.svg)
 
 Figure 10: Learned task clusters on Toolathlon-GYM. Rows are learned clusters and columns are evaluated AAH app groups. Cells count shared discovery tasks, showing how a cluster can span several applications. Blank cells are zero; Base and unclustered tasks are omitted.
 

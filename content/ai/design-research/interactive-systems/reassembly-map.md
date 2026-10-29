@@ -15,7 +15,7 @@ Editorial context, 2026-10-20: This map is a historical record of the reassembly
 ## Hebbia folder relocation, 2026-10-05
 
 
-The Hebbia case folder moved from `projects/input/hebbia-sem/` to `ai/input/hebbia-sem/`. Links below point to its current location. Historical JSON manifests retain their original paths and checksums; resolve that old prefix through the relocation record. Only navigation links were edited, with no retained dialogue changes or line-range shifts.
+The Hebbia case folder moved from `projects/input/hebbia-sem/` to `ai/input/hebbia-sem/`. Links below point to its current location. Historical JSON manifests retain their original paths and checksums; resolve that old prefix through the [relocation record](/ai/design-research/interactive-systems/reassembly-map.assets/relocation-map.json). Only navigation links were edited, with no retained dialogue changes or line-range shifts.
 
 ## Stage 1: visual-programming dialogue
 

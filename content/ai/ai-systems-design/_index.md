@@ -12,6 +12,8 @@ The [introduction and reading map]({{< ref "ai/design-research/00-introduction" 
 
 The intention here is to develop clearer concepts, explanations, and worked examples, then use them to formulate focused questions for implementation and research. Understanding the situation, comparing possibilities, and explaining design choices are part of that work. As it develops, I plan to produce a more finished set of notes and a set of papers.
 
-This page establishes the continuation; substantive notes will be added as the work develops.
+Start with [Representations, composition, and understanding in AI systems]({{< ref "ai/ai-systems-design/representations-composition-and-understanding" >}}). This conceptual research note develops candidate principles about how representations guide construction, constraints support composition, and explicit models can help people understand and revise their work.
+
+[Twenty research problems for AI systems design]({{< ref "ai/ai-systems-design/research-problems-and-prototypes" >}}) connects these principles to a proposed program of end-to-end prototypes. It maps questions about meaning, composition, evidence, collaboration, and revision to four prototype families and comparisons across implementation languages.
 
 *Editorial note, 2026-10-28: This starting page was drafted with Codex from the author's stated plans.*

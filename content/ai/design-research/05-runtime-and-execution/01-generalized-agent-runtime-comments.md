@@ -33,4 +33,4 @@ The complete coding-harness example remains beside the mechanism list. Its claim
 
 The original reply continues with the [failure taxonomy and field-study proposal]({{< ref "ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study" >}}). The proposal studies work from practice and remains distinct from the [controlled runtime evaluation]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks" >}}).
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-9-long-running-work-model-and-field-study) records the imported range and exact preservation of the earlier runtime note. No runtime implementation or experiment was selected by the arrangement.
+The mapping log records the imported range and exact preservation of the earlier runtime note. No runtime implementation or experiment was selected by the arrangement.

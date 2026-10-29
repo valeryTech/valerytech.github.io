@@ -36,6 +36,6 @@ A comparison needs stated tasks, scoring rules, conditions, and treatment of fai
 ## Audit and limits
 
 
-The [configuration and instantiation note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the proposed shared runtime interface. The [audit]({{< ref "ai/design-research/reassembly-map" >}}#declarative-system-configuration-dialogue) records the final exchange's original range and checksum.
+The [configuration and instantiation note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the proposed shared runtime interface. The audit records the final exchange's original range and checksum.
 
 The split adopts no evaluation schema, sample size, scoring method, reliability target, or runtime implementation. The new comments remain separate from the preserved proposal.

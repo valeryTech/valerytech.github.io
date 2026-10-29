@@ -35,7 +35,7 @@ The [collaboration evaluation framework]({{< ref "ai/design-research/06-research
 
 The original heading marked "first part (to rewrite)" and the placeholder remain intact within the imported dialogue. They are part of the source, not instructions followed during reassembly.
 
-All pre-stage bytes of the augmentation note remain an unchanged prefix. A new line terminator and navigation separate that text from the imported passage. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-5-participant-profiles-and-design-practices) records the boundary and all original ranges.
+All pre-stage bytes of the augmentation note remain an unchanged prefix. A new line terminator and navigation separate that text from the imported passage. The mapping log records the boundary and all original ranges.
 
 The new comments and arrangement select no implementation or experiment.
 

@@ -49,4 +49,4 @@ The Java annotations and operation names are illustrative. Reassembly does not c
 
 The claim that an LLM becomes an implementation detail describes a proposed separation of responsibilities. Model behavior and failure modes would still affect the checks required around its contributions.
 
-The [responsibility comments]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments" >}}#framework-responsibility-allocation) distinguish work assignment from accountability. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-6-collaboration-framework) records the moved ranges and preservation checks. No implementation or experiment is selected by the arrangement.
+The [responsibility comments]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments" >}}#framework-responsibility-allocation) distinguish work assignment from accountability. The mapping log records the moved ranges and preservation checks. No implementation or experiment is selected by the arrangement.

@@ -1,0 +1,150 @@
+{
+  "source": "https://chatgpt.com/share/6ae328f4-5520-83e8-a168-0003d9964255",
+  "exported_on": "2026-10-29",
+  "citation_groups": [
+    {
+      "number": 1,
+      "original_marker": "genui{\"citation\":{\"refs\":[\"turn10view1\",\"turn10view2\"]}}",
+      "sources": [
+        {
+          "title": "Prediction: AI will make formal verification go mainstream",
+          "url": "https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html?utm_source=chatgpt.com"
+        },
+        {
+          "title": "Jane Street Blog - Formal methods and the future of programming",
+          "url": "https://blog.janestreet.com/formal-methods-at-jane-street-index/?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn24view0\"}}",
+      "sources": [
+        {
+          "title": "Tracking Capabilities for Safer Agents",
+          "url": "https://arxiv.org/html/2603.00991v2?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn17view0\"}}",
+      "sources": [
+        {
+          "title": "[2503.18666] AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents",
+          "url": "https://arxiv.org/abs/2503.18666?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "original_marker": "genui{\"citation\":{\"refs\":[\"turn21view2\",\"turn25view0\"]}}",
+      "sources": [
+        {
+          "title": "[2503.18813] Defeating Prompt Injections by Design",
+          "url": "https://arxiv.org/abs/2503.18813?utm_source=chatgpt.com"
+        },
+        {
+          "title": "Florian Tramèr",
+          "url": "https://www.floriantramer.com/publications/camel25/?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "original_marker": "genui{\"citation\":{\"refs\":[\"turn17academia6\",\"turn24view1\"]}}",
+      "sources": [
+        {
+          "title": "ETAS: An Effect-Typed Language for Agent Systems",
+          "url": "https://arxiv.org/abs/2607.17780?utm_source=chatgpt.com"
+        },
+        {
+          "title": "GitHub - etas-project/etas: Etas programming language CLI, package manager, driver, tests, examples, and specification.",
+          "url": "https://github.com/etas-project/etas?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn10view1\"}}",
+      "sources": [
+        {
+          "title": "Prediction: AI will make formal verification go mainstream",
+          "url": "https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn10view2\"}}",
+      "sources": [
+        {
+          "title": "Jane Street Blog - Formal methods and the future of programming",
+          "url": "https://blog.janestreet.com/formal-methods-at-jane-street-index/?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn10view3\"}}",
+      "sources": [
+        {
+          "title": "DSLs Enable Reliable Use of LLMs",
+          "url": "https://martinfowler.com/articles/llm-and-dsls.html?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "original_marker": "genui{\"citation\":{\"refs\":[\"turn25view2\",\"turn25view1\",\"turn24view1\"]}}",
+      "sources": [
+        {
+          "title": "Getting Started with Dafny: A Guide",
+          "url": "https://dafny.org/dafny/OnlineTutorial/guide?utm_source=chatgpt.com"
+        },
+        {
+          "title": "[2505.23643] Securing AI Agents with Information-Flow Control",
+          "url": "https://arxiv.org/abs/2505.23643?utm_source=chatgpt.com"
+        },
+        {
+          "title": "GitHub - etas-project/etas: Etas programming language CLI, package manager, driver, tests, examples, and specification.",
+          "url": "https://github.com/etas-project/etas?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn10view3\"}}",
+      "sources": [
+        {
+          "title": "DSLs Enable Reliable Use of LLMs",
+          "url": "https://martinfowler.com/articles/llm-and-dsls.html?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "original_marker": "genui{\"citation\":{\"ref\":\"turn21view2\"}}",
+      "sources": [
+        {
+          "title": "[2503.18813] Defeating Prompt Injections by Design",
+          "url": "https://arxiv.org/abs/2503.18813?utm_source=chatgpt.com"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "original_marker": "genui{\"citation\":{\"refs\":[\"turn10view1\",\"turn25view3\"]}}",
+      "sources": [
+        {
+          "title": "Prediction: AI will make formal verification go mainstream",
+          "url": "https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html?utm_source=chatgpt.com"
+        },
+        {
+          "title": "Tracking Capabilities for Safer Agents",
+          "url": "https://arxiv.org/html/2603.00991v2?utm_source=chatgpt.com"
+        }
+      ]
+    }
+  ]
+}

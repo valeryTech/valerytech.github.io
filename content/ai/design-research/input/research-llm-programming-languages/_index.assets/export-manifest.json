@@ -1,0 +1,87 @@
+{
+  "title": "Research LLM Programming Languages",
+  "source": "https://chatgpt.com/share/6ae328f4-5520-83e8-a168-0003d9964255",
+  "exported_on": "2026-10-29",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "conversation": {
+    "file": "conversation.md",
+    "user_messages": 1,
+    "assistant_progress_updates": 3,
+    "assistant_final_responses": 1,
+    "citation_groups": 12
+  },
+  "subagent_reports": [
+    {
+      "name": "Language thesis",
+      "file": "language-thesis.md",
+      "status": "complete",
+      "source_text_characters": 6952,
+      "source_text_sha256": "857311ff2eb3cbf52ee77e8132c579a282c470c38dc45ae1f6440b0c4015e97b",
+      "links": [
+        "https://blog.janestreet.com/formal-methods-at-jane-street-index/",
+        "https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html",
+        "https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/",
+        "https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models",
+        "https://arxiv.org/abs/2504.09246",
+        "https://doi.org/10.1145/3729274",
+        "https://arxiv.org/abs/2409.00921",
+        "https://doi.org/10.1145/3689728",
+        "https://arxiv.org/abs/2509.22908",
+        "https://www.galois.com/articles/claude-can-sometimes-prove-it",
+        "https://zoep.github.io/blog/2026/04/17/machine-generated-code-machine-checked-proofs/",
+        "https://aclanthology.org/2025.ommm-1.11/"
+      ]
+    },
+    {
+      "name": "Agent guarantees",
+      "file": "agent-guarantees.md",
+      "status": "complete",
+      "source_text_characters": 6417,
+      "source_text_sha256": "53d3e2a21d689e0d7d4a499be664ce12233ef2b6eeb1e7b3d980116be1cbad61",
+      "links": [
+        "https://doi.org/10.1145/3786335.3813127",
+        "https://arxiv.org/html/2603.00991v2",
+        "https://github.com/lampepfl/tacit",
+        "https://arxiv.org/html/2503.18813v2",
+        "https://www.floriantramer.com/publications/camel25/",
+        "https://github.com/google-research/camel-prompt-injection",
+        "https://conf.researchr.org/details/icse-2026/icse-2026-research-track/29/AgentSpec-Customizable-Runtime-Enforcement-for-Safe-and-Reliable-LLM-Agents",
+        "https://cposkitt.github.io/files/publications/agentspec_llm_enforcement_icse26.pdf",
+        "https://arxiv.org/abs/2503.18666",
+        "https://arxiv.org/abs/2505.23643",
+        "https://arxiv.org/html/2505.23643v2",
+        "https://www.microsoft.com/en-us/research/publication/securing-ai-agents-with-information-flow-control/",
+        "https://github.com/microsoft/fides",
+        "https://commandline.microsoft.com/information-flow-control-moving-toward-secure-autonomous-agents/"
+      ]
+    },
+    {
+      "name": "Language design",
+      "file": "language-design.md",
+      "status": "complete",
+      "source_text_characters": 8868,
+      "source_text_sha256": "9001430c06a61fbd626ef740dbc795c03cfed202c2e661ed4518ee770bbc9dc5",
+      "links": [
+        "https://arxiv.org/abs/2607.17780",
+        "https://hr.tan.pub/",
+        "https://github.com/etas-project/etas",
+        "https://doi.org/10.1145/3832776",
+        "https://www.sciencedirect.com/science/article/pii/S2352220826000830",
+        "https://doi.org/10.1016/j.jlamp.2026.101191",
+        "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7139658",
+        "https://pldi23.sigplan.org/details/pldi-2023-pldi/81/Prompting-Is-Programming-A-Query-Language-for-Large-Language-Models",
+        "https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models",
+        "https://arxiv.org/abs/2610.37461",
+        "https://arxiv.org/html/2610.37461v1"
+      ]
+    }
+  ],
+  "scope": "Original visible conversation and all three complete sub-agent final responses. No new research or factual corrections.",
+  "formatting": "Parent Markdown retained; grouped citation widgets converted to numbered footnotes. Sub-agent rich text converted to Markdown, retaining text, headings, lists, tables, and explicit links.",
+  "omitted": [
+    "tool logs",
+    "empty and redacted messages",
+    "raw browser snapshots",
+    "account and private conversation metadata"
+  ]
+}

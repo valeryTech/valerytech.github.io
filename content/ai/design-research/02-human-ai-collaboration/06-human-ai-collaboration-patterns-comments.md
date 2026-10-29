@@ -55,7 +55,7 @@ A human review point does not guarantee adequate oversight. The reviewer needs e
 
 Revising shared work can be reversible even when an external effect is not. A future pattern specification should identify what can be undone and what requires separate authority.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-2-joint-activity-and-collaboration-patterns) records the original ranges and checksums. The reassembly chooses no implementation and does not validate the proposed pattern-selection rules.
+The mapping log records the original ranges and checksums. The reassembly chooses no implementation and does not validate the proposed pattern-selection rules.
 
 ## Later report taxonomy
 
@@ -82,4 +82,4 @@ The product descriptions and empirical numbers have not been independently check
 
 The local footnote definitions are marked copies from the [complete bibliography]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis" >}}#references). They preserve citation access without changing the original labels or adding independent support.
 
-The [evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) retains the overall testing framework. The [new mapping]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) records the imported ranges and preservation of the earlier pattern dialogue.
+The [evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) retains the overall testing framework. The new mapping records the imported ranges and preservation of the earlier pattern dialogue.

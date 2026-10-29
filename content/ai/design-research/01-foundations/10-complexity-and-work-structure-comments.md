@@ -54,7 +54,7 @@ The claim that a requirement survives future model improvements is a hypothesis 
 
 Automatic derivation of collaboration or runtime behavior is a proposed framework direction. The reply supplies examples, but no derivation algorithm, completeness argument, or evaluation. The related work-structure reply (archived source 004) is the next source to analyse separately, not evidence that the proposal already works.
 
-The reassembly selects no experiment or implementation. Original source text and new navigation are distinguished in the [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-1-complexity-and-work-structure).
+The reassembly selects no experiment or implementation. Original source text and new navigation are distinguished in the mapping log.
 
 Plain-writing (archived source 003) guided only the new commentary and navigation. It did not change the retained reply.
 
@@ -67,7 +67,7 @@ Coupling, goal compatibility, and behavioral correlation are proposed distinctio
 
 The distinction between unknown, distributed, and unreliable information can help define different experiments. The captured article's reported failures and the reply's interpretation of them remain source claims, not empirical validation of the work profile.
 
-The earlier examples, qualifications, and closing hierarchy remain unchanged. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-8-multiagent-coordination-analysis-and-alice-scope) records the imported block and the added boundary newline after the earlier note.
+The earlier examples, qualifications, and closing hierarchy remain unchanged. The mapping log records the imported block and the added boundary newline after the earlier note.
 
 ## Imported work types and task dimensions
 
@@ -80,4 +80,4 @@ The opening five layers, earlier work-model hierarchy, and closing [consolidated
 
 The earlier "next source" wording above records the previous review state. The long-running-work reply (archived source 004) has now been redistributed, and its source path links all destinations. Its complete [goal-revision passage]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#goal-revisions-and-dependent-work) joins the version-history note because it concerns accepted changes and dependent work, rather than task difficulty.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-9-long-running-work-model-and-field-study) records the imported range and exact preservation of the earlier complexity note and comments. The literature claims remain attributed source claims, not independently verified findings.
+The mapping log records the imported range and exact preservation of the earlier complexity note and comments. The literature claims remain attributed source claims, not independently verified findings.

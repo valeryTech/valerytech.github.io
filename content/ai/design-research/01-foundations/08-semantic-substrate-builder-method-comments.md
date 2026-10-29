@@ -45,4 +45,4 @@ The [runtime discussion]({{< ref "ai/design-research/05-runtime-and-execution/01
 
 The closing suggestion to derive behavior from a work profile remains in the foundation note. No compiler, planning procedure, or theorem is supplied by the imported passage. The split chooses neither a framework API nor a first experiment.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-1-complexity-and-work-structure) distinguishes all retained source bytes from new navigation and commentary. Plain-writing (archived source 003) guided the new prose only.
+The mapping log distinguishes all retained source bytes from new navigation and commentary. Plain-writing (archived source 003) guided the new prose only.

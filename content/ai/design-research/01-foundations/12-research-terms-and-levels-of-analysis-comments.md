@@ -37,7 +37,7 @@ A study should identify the observed system and the state that persists across a
 
 The linked [research-method proposal]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}) extends the vocabulary discussion into evidence requirements. The Wei dialogue (archived source 008) was read as context, not redistributed or independently checked against the talk.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-10-research-terms-and-claim-validation) records the original ranges and preservation checks. Plain-writing guided only the new prose. No definition, theory of cognition, or research policy was adopted by the arrangement.
+The mapping log records the original ranges and preservation checks. Plain-writing guided only the new prose. No definition, theory of cognition, or research policy was adopted by the arrangement.
 
 ## Imported dictionary dialogue
 
@@ -73,4 +73,4 @@ The source distinguishes unattended execution from internally regulated activity
 
 The closing diagram places grounding, understanding, agency, autonomy, and meaning in a proposed sequence. The source explicitly says its causal order is unestablished. The diagram and warning remain together, and the arrangement establishes no necessary or sufficient relation among the concepts.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-11-working-dictionary-and-disputed-concepts) records both complete source ranges, the unchanged earlier terms passage, and the limited update to the earlier context-only description. Plain-writing guided only the new prose. The dictionary drafts, Wei interpretation, and Alice theory were not independently verified or adopted by the reassembly.
+The mapping log records both complete source ranges, the unchanged earlier terms passage, and the limited update to the earlier context-only description. Plain-writing guided only the new prose. The dictionary drafts, Wei interpretation, and Alice theory were not independently verified or adopted by the reassembly.

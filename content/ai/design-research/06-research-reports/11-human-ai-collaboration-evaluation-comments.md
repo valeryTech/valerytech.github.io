@@ -57,4 +57,4 @@ The [runtime evaluation plan]({{< ref "ai/design-research/06-research-reports/05
 
 A runtime test cannot establish that a reviewer understood a proposal. A user study cannot establish a universal enforcement guarantee, and confidence or satisfaction alone cannot establish result correctness.
 
-The [source synthesis]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis" >}}) retains the bibliography. Literature and product claims remain unverified, and no experiment is selected by the split. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) records preservation checks.
+The [source synthesis]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis" >}}) retains the bibliography. Literature and product claims remain unverified, and no experiment is selected by the split. The mapping log records preservation checks.

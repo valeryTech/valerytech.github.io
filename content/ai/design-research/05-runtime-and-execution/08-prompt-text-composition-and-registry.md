@@ -16,7 +16,7 @@ The final request starts with named prompt versions, online editing, rendered te
 
 The dialogue continues in [declarative system configuration and instantiation]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}). Related [inspectable workbenches]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}) and [program and run history]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) retain their separate models.
 
-The original source overview (archived source 015) links the complete split. The unchanged prompt-registry archive (archived source 014) contains the same opening discussion under a different title. The [audit]({{< ref "ai/design-research/reassembly-map" >}}#declarative-system-configuration-dialogue) records both source identities and the shared text without a second import.
+The original source overview (archived source 015) links the complete split. The unchanged prompt-registry archive (archived source 014) contains the same opening discussion under a different title. The audit records both source identities and the shared text without a second import.
 
 <!-- Prompt text, composition, and registry source begins below. -->
 

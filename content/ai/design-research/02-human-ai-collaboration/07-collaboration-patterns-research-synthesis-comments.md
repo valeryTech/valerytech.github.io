@@ -44,7 +44,7 @@ The report's references are retained for inspection. Their presence does not ver
 
 The original bibliography is moved once into the synthesis note. Clearly labelled local copies provide definitions for the unchanged footnote labels in the other destinations. The citation index in the synthesis note refers to all original entries, including entries cited only elsewhere.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) distinguishes those reference copies from original moved text. The copies do not represent additional sources or independent confirmation.
+The mapping log distinguishes those reference copies from original moved text. The copies do not represent additional sources or independent confirmation.
 
 ## Relation to the design system
 

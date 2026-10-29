@@ -42,4 +42,4 @@ The earlier model treats the program as a shared artifact that participants can 
 
 Adding a constraint may remove every permitted completion. The reply's progressively refined behavior sets should therefore be treated as a model to develop, rather than evidence that every refinement preserves a usable plan.
 
-The [routes comments]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes-comments" >}}) distinguish proposed build strategies from completed research. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-7-collaboration-framework-research-routes) records the new import and exact preservation of all earlier programming-model bytes.
+The [routes comments]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes-comments" >}}) distinguish proposed build strategies from completed research. The mapping log records the new import and exact preservation of all earlier programming-model bytes.

@@ -92,7 +92,7 @@ These differences are reflected in a small prevalence analysis performed for thi
 
 A dimension was counted only when the source gave it substantive explicit treatment. An omitted dimension therefore means **"not a first-class concern in this source"**, not that the source considers it irrelevant. This is a purposive coding exercise rather than a systematic meta-analysis. Performance appeared in 10/18 sources, inputs/data in 9/18, autonomy and provenance in 8/18 each, while explicit runtime mode appeared in only 2/18 and edge/cloud deployment in 1/18. The tail is significant: operational architecture is much less consistently classified than model behavior, performance, and governance.
 
-Feature prevalence across the 18-source core corpus -- reconstructed from six values stated in the report
+![Feature prevalence across the 18-source core corpus -- reconstructed from six values stated in the report](ai-systems-classification-formatted.assets/classification-feature-prevalence.png)
 
 *Figure reconstructed from the six counts explicitly stated in the report; the uploaded PDF contains a caption but no visible chart.*
 

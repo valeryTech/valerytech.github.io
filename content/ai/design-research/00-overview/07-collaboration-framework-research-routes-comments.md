@@ -53,4 +53,4 @@ The [investigation evaluation proposal]({{< ref "ai/design-research/06-research-
 
 The layered architecture, code examples, and comparative judgments remain proposals. The reply does not establish that the named layers compose correctly or that a planner can find a permitted execution. The [declarative comments]({{< ref "ai/design-research/03-language-and-compiler/03-declarative-programming-model-comments" >}}) describe the related distinction between permitted behavior and successful completion.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-7-collaboration-framework-research-routes) records the moved ranges and preservation checks. No language, runtime, public API, or first application is selected by the arrangement.
+The mapping log records the moved ranges and preservation checks. No language, runtime, public API, or first application is selected by the arrangement.

@@ -53,4 +53,4 @@ Inspectable state can help a person identify an error, but does not establish th
 
 The [epistemic-contract note]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}) and [provenance note]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}) discuss related obligations. The interaction proposal should not be presented as satisfying those obligations merely because it exposes representations and derivations.
 
-The literature descriptions and product claims have not been independently checked during reassembly. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-3-interactive-investigation-position-paper) records source fidelity, not research verification. No publication, experiment, or implementation is selected by the split.
+The literature descriptions and product claims have not been independently checked during reassembly. The mapping log records source fidelity, not research verification. No publication, experiment, or implementation is selected by the split.

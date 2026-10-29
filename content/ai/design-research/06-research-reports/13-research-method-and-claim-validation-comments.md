@@ -44,4 +44,4 @@ The complete five-artifact proposal remains intact. The reassembly creates no se
 
 The [Alice scope note]({{< ref "ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope" >}}) keeps the emergence of agency separate from collaboration among existing participants. The closing suggestion that both programs could use the proposed method does not make either program a prerequisite of the other.
 
-Literature claims, novelty judgments, and named-paper interpretations remain attributed source claims. Their citations were retained without live verification. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-10-research-terms-and-claim-validation) records the original blocks and unchanged earlier notes. Plain-writing guided only the new prose.
+Literature claims, novelty judgments, and named-paper interpretations remain attributed source claims. Their citations were retained without live verification. The mapping log records the original blocks and unchanged earlier notes. Plain-writing guided only the new prose.

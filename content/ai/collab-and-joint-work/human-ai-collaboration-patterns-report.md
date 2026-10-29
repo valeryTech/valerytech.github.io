@@ -15,4 +15,4 @@ This note indexes a [design-research]({{< ref "ai/design-research/00-index" >}})
 - The [general mechanics and concluding model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}#research-synthesis-of-collaboration-mechanics) develop the collaboration model, with [comments]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments" >}}#added-report-synthesis).
 - The [collaboration evaluation framework]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) provides a test table, audit, and rubric, with sibling [comments]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation-comments" >}}).
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) records the source ranges and checksums for the reorganization. The report's literature and product claims remain unverified.
+The mapping log records the source ranges and checksums for the reorganization. The report's literature and product claims remain unverified.

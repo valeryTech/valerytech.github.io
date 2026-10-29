@@ -16,7 +16,7 @@ Read the [sibling comments]({{< ref "ai/design-research/05-runtime-and-execution
 
 The preceding [configuration and instantiation discussion]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) defines the proposed resolved revision. The dialogue continues in [evaluation plans and system configuration]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}). The earlier [prompt discussion]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry" >}}) retains its own publication examples.
 
-The original source overview (archived source 015) links the complete split. The [audit]({{< ref "ai/design-research/reassembly-map" >}}#declarative-system-configuration-dialogue) records the original range and checksum.
+The original source overview (archived source 015) links the complete split. The audit records the original range and checksum.
 
 <!-- Configuration publishing and version identity source begins below. -->
 

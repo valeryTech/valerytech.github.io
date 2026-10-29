@@ -33,4 +33,4 @@ A later study should define the ground truth and control which participant recei
 
 The listed metrics need rules for identifying a critical omission, correct abstention, unsupported conclusion, and preserved decisive dissent. No experiment was run or selected by the reassembly.
 
-The [coordination report]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}) retains the surrounding framework argument and critique. The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-8-multiagent-coordination-analysis-and-alice-scope) records the imported range and exact preservation of the earlier evaluation note.
+The [coordination report]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}) retains the surrounding framework argument and critique. The mapping log records the imported range and exact preservation of the earlier evaluation note.

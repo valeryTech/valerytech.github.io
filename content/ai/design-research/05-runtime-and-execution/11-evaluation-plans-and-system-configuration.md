@@ -16,7 +16,7 @@ Read the [sibling comments]({{< ref "ai/design-research/05-runtime-and-execution
 
 The preceding [publishing and version discussion]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) explains how the referenced artifacts could be selected. Related [runtime evaluation]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks" >}}) and [investigation evaluation]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}) address separate research questions.
 
-The original source overview (archived source 015) links the complete split. The [audit]({{< ref "ai/design-research/reassembly-map" >}}#declarative-system-configuration-dialogue) records the original range and checksum.
+The original source overview (archived source 015) links the complete split. The audit records the original range and checksum.
 
 <!-- Evaluation plans and system configuration source begins below. -->
 

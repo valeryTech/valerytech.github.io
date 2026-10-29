@@ -58,7 +58,7 @@ The reply's literature descriptions and attributions remain unverified during re
 
 The model provides questions about collaboration that could inform later contracts and runtime requirements. It does not select a shared-state architecture, prove a system guarantee, or supply a theory of complex adaptive systems.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-2-joint-activity-and-collaboration-patterns) records the complete split. No experiment or implementation is selected by arranging the material.
+The mapping log records the complete split. No experiment or implementation is selected by arranging the material.
 
 ## Added report synthesis
 
@@ -78,7 +78,7 @@ The workflow should also distinguish accepting a shared contribution from author
 
 The [pattern comments]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments" >}}#later-report-taxonomy) explain the revised six-mode classification. The [evaluation comments]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation-comments" >}}) describe what later tests would need to establish.
 
-The report's literature agreement and product claims remain unverified. The [new mapping]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) records the imported ranges and the preservation of all earlier model text.
+The report's literature agreement and product claims remain unverified. The new mapping records the imported ranges and the preservation of all earlier model text.
 
 ## Framework responsibility allocation
 
@@ -93,4 +93,4 @@ The shared-reasoning example leaves commit authority as "perhaps Human." The phr
 
 The `transfer()` example records the participants, responsibility, and reason for a handoff. A later protocol would also need to define acceptance by the receiving participant and the status of work already in progress. The reply does not establish how simultaneous work, cancellation, or failed handoffs are handled.
 
-The [framework comments]({{< ref "ai/design-research/05-runtime-and-execution/07-collaboration-framework-comments" >}}) discuss enforcement and recovery limits. The [new mapping]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-6-collaboration-framework) records the complete split and preservation of the earlier model and comments.
+The [framework comments]({{< ref "ai/design-research/05-runtime-and-execution/07-collaboration-framework-comments" >}}) discuss enforcement and recovery limits. The new mapping records the complete split and preservation of the earlier model and comments.

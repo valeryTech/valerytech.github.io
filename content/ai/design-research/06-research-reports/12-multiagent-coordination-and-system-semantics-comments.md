@@ -44,7 +44,7 @@ The source's competence, understanding, and agency distinctions provide a termin
 
 The Alice proposal remains a separate speculative research program. Coordination failures among existing participants do not validate a theory of how agency emerges. The [Alice comments]({{< ref "ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope-comments" >}}) explain the boundary.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-8-multiagent-coordination-analysis-and-alice-scope) records the original ranges and preservation checks. Plain-writing guided only the new prose, and no original reply was edited.
+The mapping log records the original ranges and preservation checks. Plain-writing guided only the new prose, and no original reply was edited.
 
 ## Research paradigms and institutional framing
 
@@ -57,4 +57,4 @@ The institutional-framing passage retains the explicit warning that public organ
 
 The dated public statements, literature summaries, and interpretations of Anthropic and Wei remain source claims. The reassembly did not verify the cited pages or the source's description of the research process. The earlier endorsement, methodological critique, and Alice correction are retained with editorial wording.
 
-The [mapping log]({{< ref "ai/design-research/reassembly-map" >}}#related-notes-pass-10-research-terms-and-claim-validation) records the added passage and exact preservation of the earlier note and comments. Plain-writing guided only the new prose, and no research policy or theory was adopted.
+The mapping log records the added passage and exact preservation of the earlier note and comments. Plain-writing guided only the new prose, and no research policy or theory was adopted.
