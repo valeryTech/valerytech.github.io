@@ -131,10 +131,13 @@ mainSections = ["projects", "system-design", "ai-engineering", "ai"]
 
 # SEO (@thulite/seo)
 [seo]
+  [seo.description]
+    exemptKinds = ["404", "taxonomy", "term"]
+    exemptTypes = ["legal"]
   [seo.description.length]
     min = 110
     max = 250
-    errorLevel = "warning" # make lint treats these warnings as errors
+    errorLevel = "warning" # make lint treats scoped editorial warnings as errors
   [seo.title]
     separator = " | "
     suffix = ""

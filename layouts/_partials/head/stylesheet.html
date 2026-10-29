@@ -1,0 +1,18 @@
+{{- $options := dict
+  "targetPath" "main.css"
+  "transpiler" "dartsass"
+  "includePaths" (slice "node_modules")
+  "silenceDependencyDeprecations" true
+  "silenceDeprecations" (slice "import")
+-}}
+{{- /* The theme still uses Sass @import; keep other local deprecations visible. */ -}}
+{{- $css := "" -}}
+{{- if hugo.IsDevelopment -}}
+  {{- $options = merge $options (dict "enableSourceMap" true) -}}
+  {{- $css = resources.Get "scss/app.scss" | css.Sass $options | resources.Fingerprint "sha512" -}}
+{{- else -}}
+  {{- $options = merge $options (dict "outputStyle" "compressed") -}}
+  {{- $css = resources.Get "scss/app.scss" | css.Sass $options | css.PostCSS (dict "config" "config/postcss.config.js") | resources.Fingerprint "sha512" | resources.PostProcess -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+<noscript><style>img.lazyload { display: none; }</style></noscript>

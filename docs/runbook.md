@@ -46,15 +46,40 @@ Lint page descriptions:
 make lint
 ```
 
-This runs the same Hugo SEO check as the build and fails when a published page's
-description is outside 110–250 characters, inclusive. It checks the resolved SEO
-description, including summary fallbacks and generated section and taxonomy pages,
-and renders in memory without replacing `public/`. `make build` continues to
-report these violations as warnings. Inside the container or CI, use `npm run lint`
-or `npm run lint:descriptions`.
+This runs the same Hugo SEO check as the build and fails when an editorial page's
+resolved description is outside 110–250 characters, inclusive. The check covers
+the homepage, articles, and section pages with an authored description, summary,
+or introduction. SEO overrides and summary fallbacks still apply. It renders in
+memory without replacing `public/`. `make build` reports violations as warnings.
+Inside the container or CI, use `npm run lint` or `npm run lint:descriptions`.
+
+404 pages, taxonomy indexes and terms, legal pages, empty section listings, and
+pages marked `seo.robots: noindex` (or `none`) do not need to meet the editorial
+length target. A short description is still emitted when available; an empty
+description tag is omitted. Exemption from this check does not change indexing.
+
+Use an explicit front matter override for other technical pages or to require a
+description on an important landing page:
+
+```yaml
+seo:
+  validateDescription: false # true opts a page into validation
+```
+
+The example blog post uses this exemption because it is a theme demo. Main
+collection landing pages keep their authored descriptions and are validated.
 
 The limits are configurable under `[seo.description.length]` in
-`config/_default/params.toml`.
+`config/_default/params.toml`; exempt page kinds and content types are configured
+in `[seo.description]`. The 110–250 range is an editorial convention, not a
+Google requirement. Google can build snippets from page content and has no fixed
+meta-description length limit; see [Google's snippet guidance](https://developers.google.com/search/docs/appearance/snippet).
+
+After changing toolchain pins or the Dockerfile, rebuild and restart preview:
+
+```bash
+docker compose up --build -d site
+```
 
 Preview startup and production builds assemble Markdown, then Hugo renders six
 HTML navigation maps:

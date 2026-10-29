@@ -46,10 +46,11 @@ Pinned versions live in `.infra/versions.env`:
 - `NODE_VERSION=24.15.0`
 - `NPM_VERSION=11.13.0`
 - `HUGO_VERSION=0.160.1`
+- `DART_SASS_VERSION=1.107.0`
 
 That file is the source of truth for both local containers and GitHub Actions, so
 the local preview/build path and the production deploy path run on the same Hugo,
-Node, and npm versions.
+Node, npm, and Dart Sass versions.
 
 ### Local runtime
 
@@ -66,8 +67,8 @@ of the supported workflow.
 The dev command sets `--baseURL=http://localhost:1313/`, so local preview
 renders internal links against localhost instead of the production domain.
 
-`.devcontainer/Dockerfile` installs the pinned Node, npm, and Hugo versions into
-the image. It also installs `uv` for the migration pipeline.
+`.devcontainer/Dockerfile` installs the pinned Node, npm, Hugo, and Dart Sass
+versions into the image. It also installs `uv` for the migration pipeline.
 `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
 hashes `package-lock.json`, runs `npm ci` when dependencies are missing or
 stale, then starts the requested command.
@@ -78,6 +79,14 @@ watching enabled for mounted source files.
 Production builds use `resources/production/` for generated resources, while
 preview uses `resources/`. This keeps production garbage collection from deleting
 stylesheet files that the running preview has cached.
+
+The local `layouts/_partials/head/stylesheet.html` selects Dart Sass for both
+preview and production. Production still runs PostCSS, fingerprinting, and Hugo
+postprocessing; preview keeps CSS source maps. The theme's legacy Sass imports
+and dependency deprecations are silenced while other local Sass warnings remain
+visible. `assets/scss/components/_forms.scss` makes the theme's obsolete Bootstrap
+form selector extends optional for Dart Sass. Sass module conversion belongs with
+a future theme upgrade.
 
 ### Repo task scripts
 
@@ -127,7 +136,7 @@ to `master`.
 
 - `.github/actions/setup-site/action.yml` loads `.infra/versions.env`
 - the action installs the pinned Node version, upgrades npm to the pinned npm
-  version, installs the pinned Hugo binary, and runs `npm ci`
+  version, installs the pinned Hugo and Dart Sass binaries, and runs `npm ci`
 - `.github/workflows/ci.yml` validates the build on non-`master` pushes and pull
   requests via `scripts/build-site.sh --host`
 - `.github/workflows/deploy.yml` uses the same build wrapper before uploading

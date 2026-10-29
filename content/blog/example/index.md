@@ -13,6 +13,7 @@ contributors: []
 pinned: false
 homepage: false
 seo:
+  validateDescription: false # Theme demo, not an editorial article.
   title: "" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)

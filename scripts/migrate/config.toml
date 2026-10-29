@@ -51,6 +51,12 @@ selection_paths = [
   "var",
 ]
 include = ["**/*.md", "*.md"]
+exclude = [
+  "**/.obsidian/**",
+  "**/.DS_Store",
+  "**/templates/**",
+  "design-research/reassembly-map.md",
+]
 
 # Preserve the practitioner's published URL after its source moved into 01-was/.
 [imports.rename_overrides]

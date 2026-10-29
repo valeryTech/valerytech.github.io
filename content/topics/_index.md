@@ -1,6 +1,6 @@
 ---
 title: "Topics"
-description: "Default Description"
+description: ""
 summary: ""
 date: "2025-02-21T12:15:20.633974"
 lastmod: "2025-02-21T12:15:20.633974"

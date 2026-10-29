@@ -16,7 +16,7 @@ down: ## Stop the local preview server
 build: ## Run the production build in Docker
 	@bash scripts/build-site.sh
 
-lint: ## Check page descriptions are 110-250 characters
+lint: ## Check editorial descriptions are 110-250 characters
 	@docker compose run --rm site npm run lint
 
 verify: ## Build and verify local routes

@@ -1,0 +1,19 @@
+// Doks compatibility: Bootstrap 5 removed .form-group and .form-inline.
+// Optional extends preserve the existing output when those selectors are absent.
+.search-form {
+  @extend .form-inline !optional;
+}
+
+.search-form label {
+  @extend .form-group !optional;
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @extend .form-control;
+}
+
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-secondary;
+}
