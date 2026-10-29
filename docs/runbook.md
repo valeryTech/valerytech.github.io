@@ -104,6 +104,18 @@ The footer links to the main map; page metadata links to the collection map,
 including for articles in nested subsections. Selected reading links are
 configured in `data/agent_navigation.toml`.
 
+The short main map starts with Evaluation, AI, and AI Engineering. It also links
+the reading map and code examples, followed by the section maps and selected
+technical notes. Titles and descriptions come from the destination pages.
+The main map retains its existing size and link-count limits.
+
+Edit research copy in `/Users/val/notes/projects/valery-tech/research.md` and
+`selected-implementations.md`. The dedicated research import selects exactly
+those two files. Archived contribution summaries are not imported.
+Run migration before building when changing these notes, and check the generated
+public paths and pinned code links. Keep unrelated work in progress outside a
+scoped import when preparing a particular release.
+
 The five mapped collections are selected by the `cascade` rule in
 `config/_default/hugo.toml`.
 
@@ -202,16 +214,14 @@ preserves them:
 | `draft` | Controls Hugo publication independently of the `document_status` label. |
 | `agent_map_exclude: true` | Omits the article and its redirects from agent maps while leaving the page published. |
 | `showTitle` | Retains the legacy title flag on import. Standard article templates supply a title when the body has no authored H1. |
-| `contribution_id`, `contribution_order` | Identifies and orders a selected contribution record; its title and description supply the homepage and agent-map excerpts. |
-| `contribution_route_id` | Identifies a connected reading route. |
 
-### Contribution records
+### Project notes
 
-The canonical contribution notes live in `/Users/val/notes/projects/valery-tech/`.
-The dedicated `contributions` import selects five filenames explicitly and maps
-`contributions.md` to `content/contributions/_index.md`. The three record pages
-and reading route are generated alongside it. Edit the source notes, then run
-`make migrate`; do not maintain another copy of their summaries in templates.
+Only `research.md` and `selected-implementations.md` are published from
+`/Users/val/notes/projects/valery-tech/`. The former contribution overview,
+three summaries, and reading route are archived source drafts. Their public
+URLs redirect through Hugo aliases to the reading map or relevant technical
+notes; the summaries themselves are no longer generated.
 
 `implementation-notes.md` and `author-review.md` remain local project context.
 They are not selected by the migration manifest. Adding a file to that folder

@@ -12,6 +12,7 @@ class NoteIndex:
     def __init__(self, notes: tuple[PlannedNote, ...]) -> None:
         self._notes_by_global: dict[str, PlannedNote] = {}
         self._notes_by_import: dict[tuple[str, str], PlannedNote] = {}
+        self._notes_by_root: dict[tuple[str, str], list[PlannedNote]] = defaultdict(list)
         self._notes_by_source_path: dict[str, PlannedNote] = {}
         self._notes_by_basename: dict[str, list[PlannedNote]] = defaultdict(list)
 
@@ -19,9 +20,11 @@ class NoteIndex:
             global_key = normalize_note_key(note.source_rel_global)
             import_key = normalize_note_key(note.source_rel_import)
             source_path_key = normalize_note_key(note.source_path)
+            root_key = normalize_note_key(note.import_rule.source_subtree / note.source_rel_import)
             basename_key = normalize_note_key(Path(note.source_rel_import.name))
             self._notes_by_global[global_key] = note
             self._notes_by_import[(note.import_rule.name, import_key)] = note
+            self._notes_by_root[(note.import_rule.source_root_kind, root_key)].append(note)
             self._notes_by_source_path[source_path_key] = note
             self._notes_by_basename[basename_key].append(note)
 
@@ -50,6 +53,19 @@ class NoteIndex:
         for key in import_candidates:
             if key and (note := self._notes_by_import.get((current_note.import_rule.name, key))):
                 return note
+
+        # A vault-root link retains the full source subtree even when a nested
+        # import publishes selected files under a different site section. Repo
+        # fixtures and external notes have independent root-relative namespaces.
+        root_matches = self._notes_by_root.get(
+            (current_note.import_rule.source_root_kind, normalized_target), []
+        )
+        if len(root_matches) == 1:
+            return root_matches[0]
+        if root_matches:
+            # The same source may be published at several destinations. Do not
+            # choose one implicitly by import order for this explicit alias.
+            return None
 
         for key in global_candidates:
             if key and (note := self._notes_by_global.get(key)):

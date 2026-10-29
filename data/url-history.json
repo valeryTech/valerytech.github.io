@@ -1,7 +1,7 @@
 {
   "version": 1,
   "start": "a917a4d9b65738e118d1d30e76f3737d42900052",
-  "through": "ca402c7c835f44a64e51e8ec976396afb82d475b",
+  "through": "9f0085728df062c575fb1b1f0c18eead585fc880",
   "routes": {
     "/": {
       "source": "content/_index.md",
@@ -9,7 +9,7 @@
     },
     "/about": {
       "source": "content/about.md",
-      "title": "About"
+      "title": "About Valery Yuda"
     },
     "/ai": {
       "source": "content/ai/_index.md",
@@ -765,7 +765,7 @@
     },
     "/ai-engineering/evaluation/v1": {
       "source": "content/ai-engineering/evaluation/v1/_index.md",
-      "title": "V1"
+      "title": "Evaluation V1: cases, evidence, and findings"
     },
     "/ai-engineering/evaluation/v1/01-starting-sequence": {
       "source": "content/ai-engineering/evaluation/v1/01-starting-sequence.md",
@@ -861,7 +861,7 @@
     },
     "/ai-engineering/evaluation/v2": {
       "source": "content/ai-engineering/evaluation/v2/_index.md",
-      "title": "V2"
+      "title": "Evaluation V2: product improvement"
     },
     "/ai-engineering/evaluation/v2/00-refactor": {
       "source": "content/ai-engineering/evaluation/v2/00-refactor.md",
@@ -1019,9 +1019,29 @@
       "source": "content/ai/ai-systems-design/_index.md",
       "title": "AI Systems Design"
     },
+    "/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/_index.md",
+      "title": "Chatgpt Pro Followups 2026 10 29"
+    },
+    "/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/catalog": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/catalog.md",
+      "title": "Catalog"
+    },
+    "/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/readme": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/readme.md",
+      "title": "Additional sources and second questions for the twenty Pro chats"
+    },
     "/ai/ai-systems-design/chatgpt-pro-research-questions-2026-10-29": {
       "source": "content/ai/ai-systems-design/chatgpt-pro-research-questions-2026-10-29.md",
       "title": "Twenty research questions for ChatGPT Pro"
+    },
+    "/ai/ai-systems-design/chatgpt-pro-research-runs-2026-10-29": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-research-runs-2026-10-29.md",
+      "title": "ChatGPT Pro research conversations"
+    },
+    "/ai/ai-systems-design/chatgpt-pro-research-source-map-2026-10-29": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-research-source-map-2026-10-29.md",
+      "title": "Source map for the twenty ChatGPT Pro research questions"
     },
     "/ai/ai-systems-design/representations-composition-and-understanding": {
       "source": "content/ai/ai-systems-design/representations-composition-and-understanding.md",
@@ -2961,7 +2981,15 @@
     },
     "/reading-and-evaluating": {
       "source": "content/reading-and-evaluating.md",
-      "title": "Reading and evaluating this work"
+      "title": "About these notes"
+    },
+    "/research": {
+      "source": "content/research/_index.md",
+      "title": "Reading map"
+    },
+    "/research/selected-implementations": {
+      "source": "content/research/selected-implementations.md",
+      "title": "Selected implementations"
     },
     "/system-design": {
       "source": "content/system-design/_index.md",

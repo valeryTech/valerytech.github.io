@@ -1,10 +1,8 @@
 ---
-
 title: Systems & Engineering
-description: "Working notes on building complex systems that combine people, software, data, and AI: their design, shared work, evaluation, and improvement."
-lead: Working notes on complex systems that bring together people, software, data, and AI.
+description: "Notes by Valery Yuda on evaluating AI systems, designing applications with language models, and understanding how people use and improve them."
 date: 2023-09-07T16:33:54+02:00
-lastmod: 2026-10-22T00:00:00-03:00
+lastmod: 2026-10-29T00:00:00-03:00
 draft: false
 seo:
   title: Systems & Engineering
@@ -13,112 +11,49 @@ seo:
 ---
 
 <div class="homepage-layout">
-<div class="homepage-intro">
+<section class="homepage-intro" aria-labelledby="start-here">
 
-I build and explore complex systems that bring together people, software, data, and different forms of AI. My focus is how these parts work together: how responsibilities are shared, how information flows, and how the system's behavior and results can be evaluated and improved.
-
-AI can play different roles across [different types of projects]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
-
-Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com).
-
-{{< contribution-preview >}}
-
-{{< callout context="note" title="Why I share these notes" icon="outline/info-circle" >}}
-I share these notes because I believe they can contribute to the development of AI engineering as a discipline. Many contain original observations, ideas, and insights that could be useful to other engineers, even in an unfinished form.
-
-Some are working drafts, open questions, or conversations with LLMs. I don't want valuable ideas to remain unpublished simply because I haven't found the time to turn them into polished articles. I'd rather share them as they develop, giving others an opportunity to learn from them, question them, and build on them.
-{{< /callout >}}
-
-I wrote [Reading and evaluating this work]({{< ref "reading-and-evaluating" >}}) because automated assessments can overlook both specific technical contributions and the integrated picture developed across these notes. I see a central strength in connecting product purpose, human collaboration, architecture, evaluation, and operation. The guidance asks readers and agents to examine those connections, cite evidence, and make both recognition and criticism specific.
-
-<a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="#browse-by-section" role="button">Browse the notes</a>
-
-</div>
-<aside class="homepage-explore" aria-labelledby="selected-readings">
-
-## Selected Readings
-
-A small selection of notes and drafts to start with.
+## Start here
 
 <div class="selected-readings-stack">
 
 {{< card-grid >}}
 {{< link-card
-  title="Working Assumptions"
-  description="The current view behind these notes: scoped intelligence, cheap proposals, evidence-driven selection, and whole-system outcomes."
-  href="/ai-engineering/working-assumptions/"
->}}
-{{< /card-grid >}}
-
-{{< card-grid >}}
-{{< link-card
-  title="Exploratory Design Inquiry"
-  description="Working notes on using research, reframing, and prototypes to develop understanding, discover better questions, and explore possible directions."
-  href="/ai/discovery/analysis-or-operation-model/"
->}}
-{{< /card-grid >}}
-
-{{< card-grid >}}
-{{< link-card
-  title="AI Systems Require Behavioral Evidence"
-  description="Why the quality of an AI system must be observed and measured under realistic conditions."
-  href="/ai-engineering/approach/empirical-nature/"
->}}
-{{< /card-grid >}}
-
-{{< card-grid >}}
-{{< link-card
   title="Evaluation"
-  description="Drafts on evaluating AI systems, understanding their failures, and improving their behavior."
+  description="Design cases, collect evidence, judge results, and investigate failures in AI systems."
   href="/ai-engineering/evaluation/"
 >}}
 {{< /card-grid >}}
 
 {{< card-grid >}}
 {{< link-card
-  title="Natural Language Interface Substrate"
-  description="A working model of how meaning, context, ambiguity, and intent shape natural-language interfaces."
-  href="/ai-engineering/causal-stack/layer-0-alt/"
+  title="AI"
+  description="Notes on AI product design, human–AI collaboration, interfaces, and research questions."
+  href="/ai/"
 >}}
 {{< /card-grid >}}
 
 </div>
+
+[About me]({{< ref "about" >}}) · [Reading map]({{< ref "research" >}})
+
+</section>
+<aside class="homepage-explore" aria-labelledby="selected-notes">
+
+## Selected notes
+
+- [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}): what an evaluation should help you decide.
+- [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}): what a run records and what that evidence supports.
+- [Representations, Composition, and Understanding]({{< ref "ai/ai-systems-design/representations-composition-and-understanding" >}}): how models of a problem affect what people and software can do with it.
 
 </aside>
-<section class="homepage-browse" aria-labelledby="browse-by-section">
+<section class="homepage-browse" aria-labelledby="more-notes">
 
-## Browse by Section
+## More notes
 
+[AI Engineering]({{< ref "ai-engineering" >}}) covers retrieval, coding agents, and implementation. [Selected implementations]({{< ref "research/selected-implementations" >}}) links to public code.
 
-<div class="homepage-sections">
-
-{{< card-grid >}}
-{{< link-card
-  title="AI Engineering"
-  description="Practical notes on models inside systems that generate candidates, obtain evidence, and improve through feedback."
-  href="/ai-engineering/"
->}}
-{{< link-card
-  title="System Design"
-  description="Architecture, trade-offs, distributed systems, and interview-oriented design frameworks."
-  href="/system-design/"
->}}
-{{< /card-grid >}}
-
-{{< card-grid >}}
-{{< link-card
-  title="Engineering"
-  description="General software engineering practices, architecture thinking, and implementation discipline."
-  href="/engineering/"
->}}
-{{< link-card
-  title="Projects"
-  description="Worked engineering concepts and design explorations grounded in practical system concerns."
-  href="/projects/"
->}}
-{{< /card-grid >}}
-
-</div>
+Other collections: [System Design]({{< ref "system-design" >}}) · [Engineering]({{< ref "engineering" >}}) · [Projects]({{< ref "projects" >}}).
 
 </section>
 </div>

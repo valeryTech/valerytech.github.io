@@ -1,13 +1,10 @@
 {{ define "main" }}
-<div class="row row-about justify-content-center align-items-center">
-  <div class="col-md-16 col-lg-7">
-    <article>
+<main class="row row-about justify-content-center" id="main-content">
+  <div class="col-md-16 col-lg-12">
+    <article class="article-content about-content" aria-label="{{ .Title }}">
       <h1>{{ .Title }}</h1>
       {{ partial "main/content-with-description.html" (dict "page" . "hasTitle" true) }}
     </article>
   </div>
-  <div class="col-md-16 col-lg-7 text-center">
-    [image]
-  </div>
-</div>
+</main>
 {{ end }}

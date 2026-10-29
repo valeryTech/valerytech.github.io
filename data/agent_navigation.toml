@@ -1,12 +1,10 @@
 # Selected reading links in the short /agent-map/ index.
 # Published technical documents are discoverable through their section maps.
 main_documents = [
+  "/ai-engineering/evaluation/v1/ai-evaluation",
+  "/ai-engineering/evaluation/v1/evidence-model",
   "/ai-engineering/working-assumptions",
-  "/ai/discovery/analysis-or-operation-model",
   "/ai-engineering/approach/empirical-nature",
-  "/ai/system-evaluation/harness",
-  "/ai/operating-model/operating-model",
-  "/system-design/system-design",
-  "/system-design/02-system-design",
-  "/engineering/architecture/architecture",
+  "/ai/ai-systems-design/representations-composition-and-understanding",
+  "/ai/ai-systems-design/research-problems-and-prototypes",
 ]

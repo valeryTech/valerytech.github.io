@@ -1,6 +1,8 @@
 ---
 draft: false
 toc: true
+aliases:
+  - "/contributions/investigation-composition/"
 description: "A dialogue on typed investigation operations, provenance-preserving composition, inspectable nested blocks, and evidence constraints, with visual graphs derived from dependencies."
 title: "03 Composable Investigation Workspaces"
 linkTitle: "03 Composable Investigation Workspaces"

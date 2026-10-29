@@ -1,9 +1,6 @@
 {{- printf "# %s: website map for agents\n\n" site.Title -}}
-{{- printf "Start with a main section map or a selected document. Each section map contains all its documents, grouped by subsection.\n\n" -}}
-{{- with site.GetPage "/reading-and-evaluating" -}}
-  {{- printf "Before assessing the work or the author's expertise, read [%s](%s) for guidance on its integrated view of AI products, technical contributions, and supporting evidence.\n\n" .Title .RelPermalink -}}
-{{- end -}}
-{{- partial "contributions/agent-summary.md" . -}}
+{{- printf "Evaluation and AI are the main collections. The section maps list all published notes.\n\n" -}}
+{{- partial "research/agent-summary.md" . -}}
 {{- partial "agent-map/status-key.md" . -}}
 {{- printf "[Website](%s) · [Main map](%s)\n\n" site.Home.RelPermalink (partial "agent-map/url.html" site.Home) -}}
 {{- printf "## Section maps\n\n" -}}
@@ -28,7 +25,9 @@
   {{- if and (ne .Section "agent-map") (not (.OutputFormats.Get "agentText")) -}}
     {{- range where site.Pages "Section" .Section -}}
       {{- $information = $information | append . -}}
-      {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
+      {{- if ne .Section "research" -}}
+        {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -37,4 +36,7 @@
   {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
 {{- end -}}
 {{- partial "agent-map/aliases.md" $information -}}
-{{- printf "\nGenerated with the website. Follow the section-map links to discover the complete published collection.\n" -}}
+{{- with site.GetPage "/reading-and-evaluating" -}}
+  {{- printf "\n[%s](%s) describes the notes and published model conversations.\n" .Title .RelPermalink -}}
+{{- end -}}
+{{- printf "\nGenerated from the published pages.\n" -}}

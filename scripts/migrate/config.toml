@@ -88,20 +88,14 @@ include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 
 [[imports]]
-name = "contributions"
+name = "research"
 source_root_kind = "external"
 source_subtree = "projects/valery-tech"
-target_subtree = "contributions"
-root_index_source = "contributions.md"
+target_subtree = "research"
+root_index_source = "research.md"
 selection_mode = "opt-in"
-# Keep implementation notes and author-review questions in the local vault.
-selection_paths = [
-  "contributions.md",
-  "investigation-composition.md",
-  "evaluation-evidence.md",
-  "uncertainty-utility-commitments.md",
-  "from-uncertainty-to-commitment.md",
-]
+# Contribution summaries and private project work are not published.
+selection_paths = ["research.md", "selected-implementations.md"]
 include = ["*.md"]
 
 [[imports]]

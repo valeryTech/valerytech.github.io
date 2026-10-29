@@ -150,6 +150,143 @@ class MigrationPipelineTests(unittest.TestCase):
             (generated / "route.md").read_text(encoding="utf-8"),
         )
 
+    def test_vault_root_links_cross_filename_selected_imports(self) -> None:
+        project = self.workspace.source_root / "projects/valery-tech"
+        project.mkdir(parents=True)
+        source_notes = {
+            "contributions.md": (
+                "# Contributions\n\n"
+                "[[projects/valery-tech/research|Research map]]\n\n"
+                "[[research|Relative research]]\n"
+            ),
+            "investigation-composition.md": (
+                "# Investigation\n\n"
+                "[[projects/valery-tech/research#Research question|Question]]\n\n"
+                "[[contributions|Contribution map]]\n\n"
+                "[[system-design/topics/api|Primary source]]\n"
+            ),
+            "research.md": (
+                "# Research\n\n## Research question\n\n"
+                "[[projects/valery-tech/contributions|Contribution map]]\n\n"
+                "[[projects/valery-tech/investigation-composition|Record]]\n\n"
+                "[[selected-implementations|Code]]\n"
+            ),
+            "selected-implementations.md": (
+                "# Selected implementations\n\n"
+                "[[projects/valery-tech/research.md|Research]]\n"
+            ),
+            "implementation-notes.md": "Private implementation context.\n",
+            "author-review.md": "Private author context.\n",
+        }
+        for name, body in source_notes.items():
+            (project / name).write_text(body, encoding="utf-8")
+        with self.workspace.config_path.open("a", encoding="utf-8") as config:
+            config.write(dedent('''
+
+                [[imports]]
+                name = "contributions"
+                source_subtree = "projects/valery-tech"
+                target_subtree = "contributions"
+                root_index_source = "contributions.md"
+                selection_mode = "opt-in"
+                selection_paths = ["contributions.md", "investigation-composition.md"]
+                include = ["*.md"]
+
+                [[imports]]
+                name = "research"
+                source_subtree = "projects/valery-tech"
+                target_subtree = "research"
+                root_index_source = "research.md"
+                selection_mode = "opt-in"
+                selection_paths = ["research.md", "selected-implementations.md"]
+                include = ["*.md"]
+            '''))
+
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        contributions = self.workspace.content_root / "contributions"
+        research = self.workspace.content_root / "research"
+        self.assertEqual(
+            {path.name for path in contributions.iterdir()},
+            {"_index.md", "investigation-composition.md"},
+        )
+        self.assertEqual(
+            {path.name for path in research.iterdir()},
+            {"_index.md", "selected-implementations.md"},
+        )
+        overview = (contributions / "_index.md").read_text(encoding="utf-8")
+        record = (contributions / "investigation-composition.md").read_text(encoding="utf-8")
+        research_map = (research / "_index.md").read_text(encoding="utf-8")
+        code = (research / "selected-implementations.md").read_text(encoding="utf-8")
+        self.assertIn('[Research map]({{< ref "research" >}})', overview)
+        self.assertIn('[Relative research]({{< ref "research" >}})', overview)
+        self.assertIn('[Question]({{< ref "research" >}}#research-question)', record)
+        self.assertIn('[Contribution map]({{< ref "contributions" >}})', record)
+        self.assertIn('[Primary source]({{< ref "system-design/topics/api" >}})', record)
+        self.assertIn('[Contribution map]({{< ref "contributions" >}})', research_map)
+        self.assertIn('[Record]({{< ref "contributions/investigation-composition" >}})', research_map)
+        self.assertIn('[Code]({{< ref "research/selected-implementations" >}})', research_map)
+        self.assertIn('[Research]({{< ref "research" >}})', code)
+        self.assertNotIn("[[", overview + record + research_map + code)
+        self.assertNotIn("Private", overview + record + research_map + code)
+
+    def test_root_relative_aliases_are_scoped_and_ambiguous_outputs_stay_unresolved(self) -> None:
+        for root in (self.workspace.source_root, self.workspace.root):
+            project = root / "shared/deep"
+            project.mkdir(parents=True)
+            (project / "source.md").write_text(
+                "[[shared/deep/target|Root target]]\n", encoding="utf-8",
+            )
+            (project / "target.md").write_text("# Target\n", encoding="utf-8")
+        with self.workspace.config_path.open("a", encoding="utf-8") as config:
+            config.write(dedent('''
+
+                [[imports]]
+                name = "external-deep"
+                source_root_kind = "external"
+                source_subtree = "shared/deep"
+                target_subtree = "external-docs"
+
+                [[imports]]
+                name = "repo-deep"
+                source_root_kind = "repo"
+                source_subtree = "shared/deep"
+                target_subtree = "repo-docs"
+            '''))
+
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        external_source = self.workspace.content_root / "external-docs/source.md"
+        repo_source = self.workspace.content_root / "repo-docs/source.md"
+        self.assertIn(
+            '[Root target]({{< ref "external-docs/target" >}})',
+            external_source.read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            '[Root target]({{< ref "repo-docs/target" >}})',
+            repo_source.read_text(encoding="utf-8"),
+        )
+
+        # Publishing the same external source at a second destination must not
+        # make the explicit root alias silently choose the last configured one.
+        with self.workspace.config_path.open("a", encoding="utf-8") as config:
+            config.write(dedent('''
+
+                [[imports]]
+                name = "external-copy"
+                source_root_kind = "external"
+                source_subtree = "shared/deep"
+                target_subtree = "external-copy"
+                selection_mode = "opt-in"
+                selection_paths = ["target.md"]
+            '''))
+        self.assertEqual(self.run_pipeline("sync"), 0)
+        self.assertIn(
+            "[[shared/deep/target|Root target]]", external_source.read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            '[Root target]({{< ref "repo-docs/target" >}})',
+            repo_source.read_text(encoding="utf-8"),
+        )
+
     def test_sync_publishes_attachment_links_and_preserves_snapshot_origin(self) -> None:
         source = self.workspace.source_root / "system-design/topics/api.md"
         snapshot = source.parent / "snapshot.html"

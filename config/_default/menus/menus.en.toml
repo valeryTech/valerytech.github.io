@@ -1,12 +1,17 @@
 [[main]]
+  name = "Evaluation"
+  url = "/ai-engineering/evaluation/"
+  weight = 5
+
+[[main]]
   name = "AI Engineering"
   url = "/ai-engineering/"
-  weight = 10
+  weight = 15
 
 [[main]]
   name = "AI"
   url = "/ai/"
-  weight = 15
+  weight = 10
 
 [[main]]
   name = "System Design"
@@ -24,14 +29,19 @@
   weight = 40
 
 [[footer]]
+  name = "Evaluation"
+  url = "/ai-engineering/evaluation/"
+  weight = 5
+
+[[footer]]
   name = "AI Engineering"
   url = "/ai-engineering/"
-  weight = 10
+  weight = 15
 
 [[footer]]
   name = "AI"
   url = "/ai/"
-  weight = 15
+  weight = 10
 
 [[footer]]
   name = "System Design"

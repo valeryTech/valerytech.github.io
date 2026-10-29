@@ -6,6 +6,10 @@ description: "Candidate research conversations grounded in the design-research n
 linkTitle: "Twenty research questions for ChatGPT Pro"
 ---
 
+Submitted conversations are tracked in the ChatGPT Pro research conversation log.
+
+Expanded attachment sets for all twenty questions are in the question-by-question source map. It links the broader notes, source conversations, paired critiques, and prototype records, and explains their relevance. For the existing conversations, use the additional-source packets and second questions, selected against the earlier uploads.
+
 These are proposed conversations for selection. They develop questions across the existing twenty-problem prototype agenda rather than assigning one conversation to each directory. The emphasis is on concepts, explanations, useful distinctions, and what the prototypes should lead us to reconsider.
 
 The source review covered the collection's introduction and research framing, the newer representations/composition/understanding synthesis, selected foundational and interaction notes and their critiques, the prototype agenda and handoffs, and recorded P01–P08 observations and next experiments. This was a focused reading, not an exhaustive audit of every source, implementation, or run. Prototype findings below are attributed to the saved records; no experiments were rerun for this document. External literature claims in the archive have not been independently verified here.
@@ -21,7 +25,7 @@ The original author questions, model-generated proposals, and subsequent editori
 >
 > Develop the question below through clear concepts, concrete examples, and counterexamples. Use formalism where it clarifies a relationship. When relating it to prior research, verify primary sources if search is available; identify source leads you cannot verify. Distinguish established results, your synthesis, and new conjectures. A useful conclusion may be a revised concept or a sharper question. Explain what further inquiry could distinguish the competing accounts.
 
-Suggested common attachment: Representations, composition, and understanding. Add the focused sources listed under the chosen question. Local links are preparation references; a ChatGPT conversation needs the files uploaded or their relevant text pasted.
+For new conversations, use the common background and question-specific attachment set in the source map. The shorter source lists below preserve the original focused selections. Local links are preparation references; a ChatGPT conversation needs the actual files uploaded, selected from its library, or their relevant text pasted.
 
 ## 1. What could unify construction, composition, and understanding?
 

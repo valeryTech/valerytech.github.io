@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="section homepage mt-n3 pb-3">
+<main class="section homepage mt-n3 pb-3" id="main-content">
   <header class="homepage-header">
     <h1>{{ .Title }}</h1>
     {{ with partial "main/page-description.html" . }}
@@ -9,7 +9,7 @@
     {{ end }}
   </header>
   {{ .Content }}
-</section>
+</main>
 {{ end }}
 
 {{ define "sidebar-prefooter" }}

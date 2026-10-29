@@ -104,6 +104,11 @@ html[data-font-preference="jost"] {
   text-align: left;
 }
 
+.about-content {
+  max-width: 72ch;
+  margin-inline: auto;
+}
+
 .homepage-header {
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
@@ -424,24 +429,4 @@ html[data-font-preference="jost"] {
 
 .docs-content sup[id^="fnref"] + sup[id^="fnref"] {
   margin-left: 0.2em;
-}
-
-.contribution-preview {
-  margin-block: 2rem;
-
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.1rem; margin-block: 0 0.4rem; }
-}
-
-.contribution-preview-list {
-  list-style: none;
-  padding: 0;
-
-  > li {
-    border-left: 3px solid var(--bs-border-color);
-    padding-left: 1rem;
-    margin-block: 1.25rem;
-  }
-
-  p { margin-bottom: 0; }
 }
