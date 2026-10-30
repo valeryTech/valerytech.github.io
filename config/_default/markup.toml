@@ -35,6 +35,6 @@ defaultMarkdownHandler = "goldmark"
   wrapperClasses = 'highlight'
 
 [tableOfContents]
-  endLevel = 4
+  endLevel = 6
   ordered = false
   startLevel = 1

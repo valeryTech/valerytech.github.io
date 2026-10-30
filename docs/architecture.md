@@ -41,7 +41,7 @@ compiled CSS, and core scripts. The local sidebar retains arbitrary nesting,
 `sidebar.weight` ordering, section overview links, and reading-guide entry pages.
 Previous/next links follow that same ordering. Breadcrumbs include the complete
 Hugo ancestor chain, and headings retain targets used by imported wiki links.
-The right-hand outline uses Hugo's nested `TableOfContents` through H4, including
+The right-hand outline uses Hugo's nested `TableOfContents` through H6, including
 authored H1s. Scroll highlighting marks both the current heading and its ancestor
 path, and keeps the current link visible in long outlines. Mobile/tablet readers
 use an “On this page” disclosure with the same hierarchy. Browser regression

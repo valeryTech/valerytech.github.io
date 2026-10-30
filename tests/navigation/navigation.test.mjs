@@ -74,16 +74,31 @@ test('a deeply nested sidebar opens the full current path and marks its parent g
   assert.deepEqual(ancestors.map((group) => group.label), ['Usage', 'Methodology v1.3', 'Other']);
 });
 
-test('the page outline includes H1–H4 and retains real nested lists', async (t) => {
-  const page = await pageFor(t, base + framework);
-  const structure = await page.evaluate(() => ({
-    headingIds: [...document.querySelectorAll('.article-content h1[id], .article-content h2[id], .article-content h3[id], .article-content h4[id]')].map((heading) => heading.id),
-    outlineIds: [...document.querySelectorAll('.hextra-toc a[href^="#"]')].map((link) => decodeURIComponent(link.hash.slice(1))),
-    nested: document.querySelectorAll('.hextra-toc li > ul').length,
-  }));
-  assert.deepEqual(structure.outlineIds, structure.headingIds);
-  assert.ok(structure.nested >= 4);
-  await screenshot(page, 'hextra-outline');
+test('the page outline includes all six heading levels with nested indentation and highlighting', async (t) => {
+  for (const pathname of [framework, '/system-design/projects/ticketmaster/']) {
+    const page = await pageFor(t, base + pathname);
+    const structure = await page.evaluate(() => ({
+      headingIds: [...document.querySelectorAll('.article-content :is(h1, h2, h3, h4, h5, h6)[id]')].map((heading) => heading.id),
+      outlineIds: [...document.querySelectorAll('.hextra-toc a[href^="#"]')].map((link) => decodeURIComponent(link.hash.slice(1))),
+      nested: document.querySelectorAll('.hextra-toc li > ul').length,
+    }));
+    assert.deepEqual(structure.outlineIds, structure.headingIds);
+    assert.ok(structure.nested >= 4);
+    const sixthLevel = page.locator('.article-content h6[id]');
+    const deepestHeading = await sixthLevel.count() ? sixthLevel.first() : page.locator('.article-content h5[id]').first();
+    const deepest = await deepestHeading.getAttribute('id');
+    assert.ok(deepest);
+    await readAt(page, deepest);
+    const outline = await page.locator(`.hextra-toc a[href="#${deepest}"]`).evaluate((link) => {
+      let item = link.closest('li');
+      let parent;
+      while (!parent && (item = item.parentElement.closest('li'))) parent = item.querySelector(':scope > a');
+      return { left: link.getBoundingClientRect().left, parentLeft: parent?.getBoundingClientRect().left };
+    });
+    assert.ok(outline.left > outline.parentLeft, 'Child headings are visibly indented');
+    assert.ok(await page.locator('.hextra-toc a.active-ancestor').count() >= 2);
+    await screenshot(page, pathname === framework ? 'hextra-outline' : 'hextra-six-level-outline');
+  }
 });
 
 test('scrolling updates the current heading and its ancestors, including between headings', async (t) => {
@@ -226,7 +241,7 @@ test('all ten imported callout styles retain their titles, icons, lists and code
   }
 });
 
-test('the local outline preserves the deployed outline targets and hierarchy', { skip: !reference }, async (t) => {
+test('the expanded outline preserves deployed heading paths while adding deeper headings', { skip: !reference }, async (t) => {
   for (const [index, pathname] of [route, framework].entries()) {
     const local = await pageFor(t, base + pathname);
     const deployed = await pageFor(t, reference + pathname);
@@ -241,7 +256,12 @@ test('the local outline preserves the deployed outline targets and hierarchy', {
         return { hash: link.hash, parents };
       }));
     }
-    assert.deepEqual(await structure(local, '.hextra-toc'), await structure(deployed, '.docs-toc'));
+    const previous = await structure(deployed, '.docs-toc');
+    const previousIds = new Set(previous.map((heading) => heading.hash));
+    const current = (await structure(local, '.hextra-toc'))
+      .filter((heading) => previousIds.has(heading.hash))
+      .map((heading) => ({ ...heading, parents: heading.parents.filter((hash) => previousIds.has(hash)) }));
+    assert.deepEqual(current, previous);
     await screenshot(local, `hextra-comparison-${index}`);
     await screenshot(deployed, `deployed-comparison-${index}`);
   }

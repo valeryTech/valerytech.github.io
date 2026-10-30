@@ -161,7 +161,7 @@ pnpm-specific config is not part of the supported workflow.
 
 `npm run test:navigation` uses Playwright Core and an installed Chrome browser
 against `BASE_URL` (default `http://localhost:1313`). These browser checks cover
-the current page and its ancestors in the section menu, nested H1–H4 outlines,
+the current page and its ancestors in the section menu, nested H1–H6 outlines,
 scroll highlighting, direct heading links, active-outline visibility, and
 mobile/tablet navigation. They also check short and deep breadcrumb trails and
 all ten imported callout styles in light, dark, desktop, and mobile layouts.
@@ -176,7 +176,8 @@ their scroll margin. Smaller screens expose the same outline in an accessible
 “On this page” disclosure. Local CSS also marks the section-menu ancestor path.
 
 An optional `REFERENCE_URL=https://valery.tech` compares heading targets and
-ancestor paths with the deployed Doks site. This is a manual migration check;
+ancestor paths with the deployed Doks site, while allowing the additional H5/H6
+entries. This is a manual migration check;
 CI checks the local artifact so a later production content change cannot make
 an unrelated branch fail. See the runbook for commands.
 

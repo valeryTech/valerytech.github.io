@@ -165,9 +165,33 @@ html[data-font-preference="jost"] body {
 }
 
 .section-nav summary {
-  display: list-item;
-  list-style-position: inside;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  list-style: none;
   cursor: pointer;
+}
+
+.section-nav summary::marker {
+  content: "";
+}
+
+.section-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.section-nav summary::before {
+  content: "";
+  flex: 0 0 0.375rem;
+  height: 0.375rem;
+  margin-block-start: 0.5em;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  opacity: 0.75;
+}
+
+.section-nav details[open] > summary::before {
+  transform: rotate(90deg);
 }
 
 .section-nav a:hover,
