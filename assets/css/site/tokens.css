@@ -28,8 +28,9 @@
   --site-focus-offset: 3px;
   --site-motion-fast: 150ms;
 
-  /* Semantic colors: context stacks and tables can evolve independently. */
+  /* Semantic colors: breadcrumbs, context stacks, and tables evolve independently. */
   --site-page-background: #fff;
+  --site-breadcrumb-background: #dbeafe;
   --site-context-header: #ced9e6;
   --site-context-surface: #eff2f6;
   --site-muted: #64748b;
@@ -65,6 +66,7 @@
 
 .dark {
   --site-page-background: var(--hx-color-dark, #111);
+  --site-breadcrumb-background: #263f60;
   --site-context-header: #1c2733;
   --site-context-surface: #141a20;
   --site-muted: #a3a3a3;

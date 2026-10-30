@@ -19,7 +19,7 @@
 .breadcrumb {
   padding: var(--site-space-3) var(--site-space-4);
   border-radius: var(--site-radius-lg);
-  background: var(--site-context-header);
+  background: var(--site-breadcrumb-background);
   color: var(--site-context-foreground);
 }
 

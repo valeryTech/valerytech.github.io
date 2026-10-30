@@ -75,7 +75,9 @@ semantic colors such as `context-header`, `context-surface`, `table-header`,
 `table-surface`, `panel`, `muted`, and `accent`. Derived card and navigation colors
 use the same theme tokens, so theme switching updates them together.
 
-- Breadcrumbs and pinned navigation use the darker context palette.
+- Breadcrumbs use `breadcrumb-background`, an independent blue fill matching the
+  table header's initial light/dark values. Adjust it separately from tables and
+  the pinned navigation's darker context palette.
 - Callouts and homepage cards use borderless, soft fills. Callout severity colors
   come from the Hextra classes selected by the local shortcode adapter.
 - Tables use a brighter header and a uniform body fill. Four-pixel gaps expose
