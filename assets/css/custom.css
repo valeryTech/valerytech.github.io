@@ -179,6 +179,11 @@ html[data-font-preference="jost"] body {
   cursor: pointer;
 }
 
+/* Reserve the disclosure gutter on page links to align sibling labels. */
+.section-nav a {
+  padding-inline-start: 1.5rem;
+}
+
 .section-nav summary::marker {
   content: "";
 }
