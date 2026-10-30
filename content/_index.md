@@ -10,6 +10,10 @@ seo:
   robots: ""
 ---
 
+I build and explore complex systems that bring together people, software, data, and different forms of AI. My focus is how these parts work together: how responsibilities are shared, how information flows, and how the system's behavior and results can be evaluated and improved.
+
+AI can play different roles across [different types of projects]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
+
 <div class="homepage-layout">
 <section class="homepage-intro" aria-labelledby="start-here">
 

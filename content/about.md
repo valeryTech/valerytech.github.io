@@ -9,7 +9,7 @@ toc: false
 
 I'm Valery Yuda. My current focus is [evaluation]({{< ref "ai-engineering/evaluation" >}}) and [AI systems]({{< ref "ai" >}}): how to find out what a system does, understand its failures, and decide what to change.
 
-The [reading map]({{< ref "research" >}}) points to the main topics. [Selected implementations]({{< ref "research/selected-implementations" >}}) links to code. Some pages are drafts or conversations with models; [About these notes]({{< ref "reading-and-evaluating" >}}) explains the formats.
+The [reading map]({{< ref "research" >}}) points to the main topics. [Selected implementations]({{< ref "research/selected-implementations" >}}) links to code. [About these notes]({{< ref "reading-and-evaluating" >}}) describes the notebook and why I publish work in progress.
 
 For questions or collaboration, email [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com).
 
