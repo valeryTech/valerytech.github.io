@@ -82,13 +82,14 @@ export function initStickyNavigation() {
     document.documentElement.style.setProperty('--site-breadcrumb-height', `${breadcrumbHeight}px`);
     const rootHeight = rowHeight(root);
     const titleHeight = rowHeight(title);
-    const stackParents = !window.matchMedia('(max-height: 500px)').matches;
+    // CSS owns the compact-viewport policy; keep JS measurement in sync with it.
+    const stackParents = getComputedStyle(document.documentElement).getPropertyValue('--site-stack-parents').trim() !== '0';
     const heights = new Map([...summaries, ...outlineLinks].map(element => [element, rowHeight(element)]));
     for (const [element, parents] of [...sidebarPaths, ...outlinePaths]) {
       const base = sidebarPaths.has(element) ? rootHeight : titleHeight;
       const offset = (stackParents ? parents : []).reduce((sum, parent) => sum + heights.get(parent), base);
       element.style.setProperty('--site-sticky-offset', `${offset}px`);
-      element.style.setProperty('--site-sticky-layer', `${100 - parents.length}`);
+      element.style.setProperty('--site-sticky-depth', `${parents.length}`);
     }
     root?.querySelector('a')?.style.setProperty('--site-sticky-offset', '0px');
     updatePins();

@@ -1,0 +1,30 @@
+@font-face {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/jost-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/jost-latin-600-normal.woff2") format("woff2");
+}
+
+html[data-font-preference="jost"] body {
+  font-family: Jost, ui-sans-serif, system-ui, sans-serif;
+}
+
+.page-description {
+  color: var(--site-muted);
+  font-size: var(--site-text-lg);
+  line-height: 1.7;
+  margin-block: var(--site-space-4) var(--site-space-8);
+}
+
+.article-content {
+  overflow-wrap: anywhere;
+}

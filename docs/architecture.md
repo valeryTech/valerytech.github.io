@@ -75,14 +75,16 @@ inside a keyboard-scrollable surface. Cells use one soft body fill and a brighte
 blue header. Only the table's four outer corners are rounded; internal cell
 corners stay square. Thin gaps between rows and columns show the surrounding
 background. Empty header rows are omitted. Both components use filled styling in
-`assets/css/custom.css` for light and dark modes.
+`assets/css/site/components.css` for light and dark modes.
 
 The site's SEO field precedence, description validation, analytics event bus,
 legacy redirects, attachment URLs, and HTML/Markdown navigation maps remain
 site-owned. `layouts/_partials/head.html` is based on Hextra v0.13.0 with the
 site's SEO and analytics entrypoints. Review it against upstream when upgrading.
-`assets/css/custom.css` is the active local stylesheet. The old
-`assets/scss/common/_custom.scss` is not loaded by Hextra.
+`assets/css/site/` contains the active local CSS modules, assembled by
+`layouts/_partials/styles/site.html`. Shared tokens and conventions are documented
+in the [styling guide](styling.md). The old `assets/scss/common/_custom.scss` is
+not loaded by Hextra.
 
 ## Content Structure
 

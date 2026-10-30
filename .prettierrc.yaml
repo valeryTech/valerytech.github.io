@@ -17,3 +17,9 @@ overrides:
   - files: ["*.scss"]
     options:
       singleQuote: false
+  - files: ["assets/css/site/**/*.css"]
+    options:
+      tabWidth: 2
+      endOfLine: lf
+      printWidth: 100
+      singleQuote: false

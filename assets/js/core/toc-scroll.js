@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!panel || !panel.getClientRects().length) return;
     const bounds = panel.getBoundingClientRect();
     const rect = link.getBoundingClientRect();
-    const padding = 16;
+    const padding = parseFloat(getComputedStyle(panel).scrollPaddingTop) || 0;
     const stickyOffset = parseFloat(getComputedStyle(link).getPropertyValue('--site-sticky-offset')) || 0;
     const top = bounds.top + Math.max(padding, stickyOffset);
     if (rect.top < top) {

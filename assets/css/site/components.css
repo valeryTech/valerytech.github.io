@@ -1,0 +1,158 @@
+.site-link-card h3,
+.site-link-card h4 {
+  margin-block-start: 0;
+  margin-block-end: var(--site-space-2);
+  font-size: var(--site-text-lg);
+}
+
+.card-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--site-space-4);
+  margin-block: var(--site-space-4);
+}
+
+.site-link-card {
+  position: relative;
+  padding: var(--site-space-5);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius-lg);
+  transition:
+    border-color var(--site-motion-fast),
+    background-color var(--site-motion-fast);
+}
+
+.site-link-card:hover,
+.site-link-card:focus-within {
+  border-color: var(--site-accent);
+  background: var(--site-panel);
+}
+
+.site-link-card a::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+
+.content .site-link-card p {
+  margin: 0;
+  color: var(--site-muted);
+  font-size: var(--site-text-md);
+}
+
+.site-home .site-link-card {
+  border: 0;
+  background: var(--site-card-surface);
+}
+
+.site-home .site-link-card:hover,
+.site-home .site-link-card:focus-within {
+  background: var(--site-card-hover);
+}
+
+.site-home .site-link-card:has(a:focus-visible),
+.site-table-scroll:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+.site-home .site-link-card a {
+  color: var(--site-card-link);
+}
+
+.site-home .site-link-card p {
+  color: inherit;
+}
+
+.content .site-callout {
+  align-items: flex-start;
+  gap: var(--site-space-3);
+  border: 0;
+  border-radius: var(--site-radius-lg);
+  padding: var(--site-space-4) var(--site-space-5);
+}
+
+.site-callout > :first-child {
+  flex-shrink: 0;
+  padding: var(--site-space-1) 0 0;
+}
+
+.site-callout > :first-child svg {
+  display: block;
+  width: var(--site-space-5);
+  height: var(--site-space-5);
+}
+
+.site-callout-title {
+  margin-block: 0 var(--site-space-2);
+}
+
+.site-callout-title + p {
+  margin-block-start: var(--site-space-2);
+}
+
+.site-table-scroll {
+  margin-block: var(--site-space-6);
+  overflow-x: auto;
+  border-radius: var(--site-radius-lg);
+}
+
+.content .site-table-scroll > table {
+  display: table;
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: var(--site-tile-gap);
+  overflow-wrap: normal;
+}
+
+.content .site-table-scroll :is(table, thead, tbody, tr, th, td) {
+  border: 0;
+}
+
+.content .site-table-scroll thead {
+  background: transparent;
+}
+
+.content .site-table-scroll :is(th, td) {
+  padding: var(--site-table-padding-block) var(--site-space-4);
+  border-radius: 0;
+  background: var(--site-table-surface);
+  text-align: start;
+  vertical-align: top;
+}
+
+.content .site-table-scroll thead th {
+  background: var(--site-table-header);
+}
+
+/* Round only the outside perimeter, including tables with an empty tbody. */
+.content .site-table-scroll > table > :first-child > tr:first-child > :first-child {
+  border-start-start-radius: var(--site-radius-lg);
+}
+
+.content .site-table-scroll > table > :first-child > tr:first-child > :last-child {
+  border-start-end-radius: var(--site-radius-lg);
+}
+
+.content .site-table-scroll > table > :last-child > tr:last-child > :first-child,
+.content .site-table-scroll > table:not(:has(tbody tr)) > thead > tr:last-child > :first-child {
+  border-end-start-radius: var(--site-radius-lg);
+}
+
+.content .site-table-scroll > table > :last-child > tr:last-child > :last-child,
+.content .site-table-scroll > table:not(:has(tbody tr)) > thead > tr:last-child > :last-child {
+  border-end-end-radius: var(--site-radius-lg);
+}
+
+@media (max-width: 640px) {
+  .content .site-table-scroll :is(th, td) {
+    padding-inline: var(--site-space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-link-card {
+    transition: none;
+  }
+}

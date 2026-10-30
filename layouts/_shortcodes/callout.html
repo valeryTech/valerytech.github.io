@@ -9,11 +9,11 @@
   {{- $icon = index $icons $kind | default "information-circle" -}}
 {{- end -}}
 {{- $styles := dict
-  "info" "hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"
-  "default" "hx:border-green-200 hx:bg-green-100 hx:text-green-900 hx:dark:border-green-200/30 hx:dark:bg-green-900/30 hx:dark:text-green-200"
-  "warning" "hx:border-amber-200 hx:bg-amber-100 hx:text-amber-900 hx:dark:border-amber-200/30 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"
-  "error" "hx:border-red-200 hx:bg-red-100 hx:text-red-900 hx:dark:border-red-200/30 hx:dark:bg-red-900/30 hx:dark:text-red-200"
-  "important" "hx:border-purple-200 hx:bg-purple-100 hx:text-purple-900 hx:dark:border-purple-200/30 hx:dark:bg-purple-900/30 hx:dark:text-purple-200"
+  "info" "hx:bg-blue-100 hx:text-blue-900 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"
+  "default" "hx:bg-green-100 hx:text-green-900 hx:dark:bg-green-900/30 hx:dark:text-green-200"
+  "warning" "hx:bg-amber-100 hx:text-amber-900 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"
+  "error" "hx:bg-red-100 hx:text-red-900 hx:dark:bg-red-900/30 hx:dark:text-red-200"
+  "important" "hx:bg-purple-100 hx:text-purple-900 hx:dark:bg-purple-900/30 hx:dark:text-purple-200"
 -}}
 {{- $class := index $styles $kind | default "hx:bg-orange-50 hx:text-orange-800 hx:dark:bg-orange-400/20 hx:dark:text-orange-300" -}}
 {{- $content := .Page.RenderString .InnerDeindent -}}

@@ -34,7 +34,7 @@
   {{- partial "twitter_cards.html" . -}}
 
   {{- $mainCss := resources.Get "css/compiled/main.css" -}}
-  {{- $customCss := resources.Get "css/custom.css" -}}
+  {{- $customCss := partial "styles/site.html" . -}}
   {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
 
   {{- /* Production build */ -}}

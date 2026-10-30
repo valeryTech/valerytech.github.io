@@ -10,6 +10,8 @@
     "predev": "node scripts/site-map.mjs",
     "dev": "hugo server --disableFastRender --noHTTPCache --renderToMemory --baseURL=http://localhost:1313/",
     "format": "prettier **/** -w -c",
+    "format:styles": "prettier \"assets/css/site/**/*.css\" --write",
+    "lint:styles": "prettier \"assets/css/site/**/*.css\" --check",
     "lint": "npm run lint:descriptions",
     "lint:descriptions": "HUGOxPARAMSxSEOxDESCRIPTIONxLENGTHxERRORLEVEL=error hugo --environment production --renderToMemory --noBuildLock --logLevel error",
     "prebuild": "node scripts/site-map.mjs",

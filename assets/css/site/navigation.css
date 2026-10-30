@@ -1,0 +1,394 @@
+.content :is(h1, h2, h3, h4, h5, h6)[id] {
+  scroll-margin-top: calc(
+    var(--hextra-navbar-height) + var(--site-context-gap) + var(--site-breadcrumb-height, 0px) +
+      var(--site-space-4)
+  );
+}
+
+.site-breadcrumb-sticky {
+  /* Square opaque backing must cover the main gutter and rounded card corners. */
+  position: sticky;
+  top: var(--hextra-navbar-height);
+  z-index: var(--site-layer-breadcrumb);
+  margin-block: calc(-1 * var(--site-context-gap)) var(--site-context-gap);
+  margin-inline: calc(-1 * var(--site-content-gutter));
+  padding: var(--site-context-gap) var(--site-content-gutter);
+  background: var(--site-page-background);
+}
+
+.breadcrumb {
+  padding: var(--site-space-3) var(--site-space-4);
+  border-radius: var(--site-radius-lg);
+  background: var(--site-context-header);
+  color: var(--site-context-foreground);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-2);
+  margin: 0;
+  color: inherit;
+  font-size: var(--site-text-sm);
+}
+
+.breadcrumb li[aria-current="page"] {
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-inline-end: var(--site-space-2);
+  opacity: 0.6;
+}
+
+.section-nav {
+  --site-nav-label-inset: calc(
+    var(--site-nav-padding-inline) + var(--site-nav-disclosure-size) +
+      var(--site-nav-disclosure-gap)
+  );
+  font-size: var(--site-text-sm);
+  line-height: var(--site-line-ui);
+}
+
+.section-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-nav .list-nested {
+  margin-inline-start: var(--site-nav-indent);
+  padding-inline-start: var(--site-nav-indent);
+  border-inline-start: 1px solid var(--site-border);
+}
+
+.section-nav a,
+.section-nav summary,
+.mobile-site-nav a {
+  display: block;
+  padding: var(--site-nav-padding-block) var(--site-nav-padding-inline);
+  border-radius: var(--site-radius-sm);
+  color: var(--site-muted);
+  overflow-wrap: anywhere;
+}
+
+.section-nav summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--site-nav-disclosure-gap);
+  list-style: none;
+  cursor: pointer;
+}
+
+/* Reserve the disclosure gutter on page links to align sibling labels. */
+.section-nav a {
+  padding-inline-start: var(--site-nav-label-inset);
+}
+
+.section-nav summary::marker {
+  content: "";
+}
+
+.section-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.section-nav summary::before {
+  content: "";
+  flex: 0 0 var(--site-nav-disclosure-size);
+  height: var(--site-nav-disclosure-size);
+  margin-block-start: 0.5em;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  opacity: 0.75;
+}
+
+.section-nav details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.section-nav a:hover,
+.section-nav summary:hover {
+  color: var(--site-accent);
+  background: var(--site-panel);
+}
+
+.section-nav a[aria-current="page"] {
+  color: var(--site-accent);
+  background: var(--site-panel);
+  font-weight: 600;
+}
+
+.site-toc-scroll {
+  position: sticky;
+  top: calc(var(--hextra-navbar-height) + var(--site-context-gap));
+  max-height: calc(
+    100dvh - var(--hextra-navbar-height) - var(--site-context-gap) - var(--site-space-4)
+  );
+  overflow-y: auto;
+  scroll-padding-block: var(--site-space-4);
+  padding: 0 var(--site-space-1) var(--site-space-4);
+  font-size: var(--site-text-sm);
+}
+
+.site-toc-title {
+  position: sticky;
+  top: 0;
+  z-index: calc(var(--site-layer-stack-parent) + 1);
+  margin: 0 0 var(--site-stack-gap);
+  padding: var(--site-space-3) var(--site-space-2);
+  background: var(--site-page-background);
+  font-weight: 600;
+}
+
+.site-page-outline {
+  --site-nav-label-inset: calc(var(--site-current-marker-width) + var(--site-current-marker-gap));
+}
+
+.site-page-outline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-page-outline li > ul {
+  margin-inline-start: var(--site-nav-indent);
+  padding-inline-start: var(--site-nav-indent);
+  border-inline-start: 1px solid var(--site-border);
+}
+
+.site-page-outline a {
+  display: block;
+  padding: var(--site-nav-padding-block) var(--site-nav-padding-inline);
+  padding-inline-start: var(--site-nav-label-inset);
+  margin-block: 0 var(--site-stack-gap);
+  border-radius: var(--site-radius-sm);
+  color: var(--site-muted);
+  font-size: var(--site-text-sm);
+  line-height: var(--site-line-ui);
+  overflow-wrap: anywhere;
+}
+
+.site-page-outline a:hover {
+  color: var(--site-accent);
+}
+
+.section-nav .active-ancestor > details > summary,
+.section-nav .sidebar-root.active-ancestor > a,
+.site-page-outline a.active-ancestor {
+  color: var(--site-nav-ancestor);
+  font-weight: 600;
+}
+
+.site-page-outline a.active {
+  color: var(--site-accent);
+  background: var(--site-panel);
+  font-weight: 700;
+}
+
+.section-nav a[aria-current="page"],
+.site-page-outline a.active {
+  position: relative;
+}
+
+/* Keep the current marker the same distance from labels in both panels. */
+.section-nav a[aria-current="page"]::before,
+.site-page-outline a.active::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: calc(
+    var(--site-nav-label-inset) - var(--site-current-marker-width) - var(--site-current-marker-gap)
+  );
+  width: var(--site-current-marker-width);
+  border-radius: var(--site-radius-marker);
+  background: var(--site-accent);
+}
+
+.site-mobile-toc {
+  margin-block: var(--site-space-4) var(--site-space-6);
+  padding: var(--site-space-3);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius-md);
+  font-size: var(--site-text-sm);
+}
+
+.site-mobile-toc > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.site-mobile-toc[open] > summary {
+  margin-bottom: var(--site-space-3);
+}
+
+.site-mobile-toc nav {
+  max-height: 55dvh;
+  overflow-y: auto;
+}
+
+.site-back-to-top {
+  margin-top: var(--site-space-4);
+  padding: var(--site-space-2);
+  color: var(--site-muted);
+  cursor: pointer;
+  font-size: var(--site-text-xs);
+}
+
+@media (min-width: 1280px) {
+  .site-mobile-toc {
+    display: none;
+  }
+}
+
+/* Original tree controls form the stack; JS supplies measured offsets and depth. */
+.section-nav .sidebar-root {
+  margin-bottom: var(--site-stack-gap);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: calc(var(--site-layer-stack-parent) + 1);
+  background: var(--site-page-background);
+}
+
+.section-nav .sidebar-root::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 100%;
+  height: var(--site-context-gap);
+  background: var(--site-page-background);
+  pointer-events: none;
+}
+
+.site-sidebar-scroll,
+.site-toc-scroll {
+  overscroll-behavior-y: contain;
+}
+
+.site-sidebar-scroll {
+  padding-top: var(--site-context-gap);
+}
+
+.section-nav .sidebar-root > a {
+  padding-block: var(--site-space-3);
+}
+
+.section-nav .site-sticky-summary,
+.hextra-toc a.site-toc-parent {
+  position: sticky;
+  top: var(--site-sticky-offset, 0px);
+  z-index: calc(var(--site-layer-stack-parent) - var(--site-sticky-depth, 0));
+  margin-bottom: var(--site-stack-gap);
+}
+
+.section-nav .site-sticky-summary,
+.hextra-toc .site-toc-parent {
+  background: var(--site-page-background);
+}
+
+.section-nav :is(a, summary),
+.hextra-toc a {
+  scroll-margin-block-start: calc(var(--site-sticky-offset, 0px) + var(--site-space-2));
+}
+
+.hextra-toc a.site-toc-parent.active {
+  background: var(--site-panel);
+}
+
+.section-nav .site-pinned,
+.hextra-toc .site-pinned {
+  border-radius: 0;
+  background: var(--site-context-surface);
+  color: var(--site-accent);
+}
+
+.section-nav .site-pinned-first,
+.hextra-toc .site-pinned-first {
+  border-start-start-radius: var(--site-radius-lg);
+  border-start-end-radius: var(--site-radius-lg);
+  background: var(--site-context-header);
+  color: var(--site-context-foreground);
+}
+
+.section-nav .site-pinned-last,
+.hextra-toc .site-pinned-last {
+  border-end-start-radius: var(--site-radius-lg);
+  border-end-end-radius: var(--site-radius-lg);
+}
+
+.section-nav .sidebar-root.site-pinned > a {
+  color: inherit;
+  background: transparent;
+}
+
+.site-pinned::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  height: var(--site-stack-gap);
+  background: var(--site-page-background);
+  pointer-events: none;
+}
+
+.site-pinned a:hover,
+a.site-pinned:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.breadcrumb a:focus-visible,
+.site-pinned:focus-visible,
+.site-pinned a:focus-visible {
+  outline: var(--site-focus-width) solid currentColor;
+  outline-offset: var(--site-focus-width);
+}
+
+@media (max-width: 767px) {
+  :root:not([data-hextra-banner="visible"]) .hextra-sidebar-container {
+    padding-top: var(--hextra-navbar-height);
+  }
+}
+
+@media (width: 768px) {
+  /* Hextra's inclusive 48rem mobile rule overlaps its md desktop utilities. */
+  .hextra-sidebar-container {
+    position: sticky;
+    top: var(--hextra-navbar-height);
+    bottom: auto;
+    width: 16rem;
+    padding-top: 0;
+    z-index: auto;
+  }
+}
+
+@media (max-height: 500px) {
+  :root {
+    --site-stack-parents: 0;
+  }
+
+  .section-nav .site-sticky-summary,
+  .hextra-toc a.site-toc-parent {
+    position: relative;
+  }
+}
+
+@media print {
+  .site-breadcrumb-sticky {
+    position: static;
+  }
+}
+
+.mobile-site-nav {
+  padding-bottom: var(--site-space-4);
+  margin-bottom: var(--site-space-4);
+  border-bottom: 1px solid var(--site-border);
+}

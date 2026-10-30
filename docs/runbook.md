@@ -309,7 +309,8 @@ The migration regression suite can be run independently:
 docker compose run --rm site uv run --frozen python -m unittest discover -s tests/migrate
 ```
 
-Change the site UI in `assets/css/custom.css` and local `layouts/` overrides.
+Change the site UI in `assets/css/site/` and local `layouts/` overrides. See the
+[styling guide](styling.md) for tokens, component ownership, and validation.
 The importer keeps the existing callout/card syntax; the theme adapters render
 it as Hextra components. Imported heading links, sidebar weights, and section
 reading guides are preserved. A trailing `/**` exclusion in the migration

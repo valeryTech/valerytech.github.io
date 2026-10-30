@@ -83,8 +83,10 @@ stylesheet files that the running preview has cached.
 
 The theme is pinned to Hextra v0.13.0 under `themes/hextra/`. Initialize it with
 `git submodule update --init --recursive`; CI and deployment use recursive
-submodule checkout. Hextra's compiled CSS is combined with
-`assets/css/custom.css` and fingerprinted in production. Dart Sass remains
+submodule checkout. `layouts/_partials/styles/site.html` assembles the ordered
+`assets/css/site/` modules into one local CSS resource. Hextra's compiled CSS is
+combined with that resource and fingerprinted in production. Formatting and UI
+conventions are described in the [styling guide](styling.md). Dart Sass remains
 available in the shared toolchain but is not used by the Hextra build.
 
 FlexSearch comes from the local npm package, and KaTeX styles/fonts and Jost
@@ -142,6 +144,7 @@ to `master`.
   version, installs the pinned Hugo and Dart Sass binaries, and runs `npm ci`
 - `.github/workflows/ci.yml` validates the build on non-`master` pushes and pull
   requests via `scripts/build-site.sh --host`
+- CI runs `npm run lint:styles` to check the site CSS formatting
 - after the build, CI installs Playwright's Chromium and runs the navigation
   browser tests against Vite's preview of the minified `public/` artifact
 - failed CI runs retain navigation screenshots as a downloadable artifact

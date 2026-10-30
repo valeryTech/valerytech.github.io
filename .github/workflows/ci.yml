@@ -25,6 +25,9 @@ jobs:
       - name: Test analytics helpers
         run: npm run test:analytics
 
+      - name: Check site CSS formatting
+        run: npm run lint:styles
+
       - name: Build production website
         run: bash scripts/build-site.sh --host
 

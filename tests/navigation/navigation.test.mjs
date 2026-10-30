@@ -205,7 +205,33 @@ test('the scrolling outline keeps its title and parent heading stack above the a
   const ancestor = page.locator('.hextra-toc a.active-ancestor').first();
   const target = await ancestor.getAttribute('href');
   await ancestor.click();
+  await page.waitForURL(url => url.hash === target);
   assert.equal(new URL(page.url()).hash, target);
+});
+
+test('the desktop breakpoint keeps the article visible and the navbar title inside its gutter', async (t) => {
+  for (const width of [767, 768, 769, 820]) {
+    const page = await pageFor(t, base + route, width);
+    for (const font of ['system', 'jost']) {
+      await page.evaluate(font => { document.documentElement.dataset.fontPreference = font; }, font);
+      await page.evaluate(() => document.fonts.ready);
+      const layout = await page.evaluate(() => {
+        const main = document.querySelector('main').getBoundingClientRect();
+        const sidebar = document.querySelector('.hextra-sidebar-container').getBoundingClientRect();
+        const header = document.querySelector('.hextra-nav-container nav');
+        const title = header.querySelector('a').getBoundingClientRect();
+        const gutter = parseFloat(getComputedStyle(header).paddingInlineStart);
+        return { mainLeft: main.left, sidebarRight: sidebar.right, sidebarWidth: sidebar.width, titleLeft: title.left, gutter, hit: Boolean(document.elementFromPoint(main.left + main.width / 2, 400)?.closest('main')) };
+      });
+      assert.ok(layout.titleLeft >= layout.gutter - 1, `${width}px ${font}: header title stays inside its gutter`);
+      assert.ok(layout.hit, `${width}px ${font}: the sidebar does not cover the article`);
+      if (width >= 768) {
+        assert.ok(layout.mainLeft >= layout.sidebarRight - 1, `${width}px ${font}: sidebar and article occupy separate columns`);
+        assert.ok(layout.sidebarWidth < width / 2, `${width}px ${font}: sidebar stays within its desktop column`);
+      }
+    }
+    await screenshot(page, `desktop-boundary-${width}`);
+  }
 });
 
 test('short viewports leave room for the active outline entry below the pinned title', async (t) => {
