@@ -18,6 +18,8 @@
   --site-page-background: #fff;
   --site-context-gap: 8px;
   --site-stack-gap: 4px;
+  --site-context-header: #ced9e6;
+  --site-context-surface: #eff2f6;
   --site-muted: #64748b;
   --site-border: #e2e8f0;
   --site-panel: #f8fafc;
@@ -30,6 +32,8 @@
 
 .dark {
   --site-page-background: var(--hx-color-dark, #111);
+  --site-context-header: #1c2733;
+  --site-context-surface: #141a20;
   --site-muted: #a3a3a3;
   --site-border: #303030;
   --site-panel: #171717;
@@ -42,7 +46,12 @@ html[data-font-preference="jost"] body {
   font-family: Jost, ui-sans-serif, system-ui, sans-serif;
 }
 
+.hextra-nav-container {
+  background: var(--site-page-background);
+}
+
 .hextra-nav-container .hextra-nav-container-blur {
+  display: none;
   box-shadow: none;
 }
 
@@ -75,16 +84,27 @@ html[data-font-preference="jost"] body {
   );
 }
 
-.breadcrumb {
+.site-breadcrumb-sticky {
   position: sticky;
-  top: calc(var(--hextra-navbar-height) + var(--site-context-gap));
+  top: var(--hextra-navbar-height);
   z-index: 10;
-  margin-bottom: 1rem;
+  margin: calc(-1 * var(--site-context-gap)) -1.5rem var(--site-context-gap);
+  padding: var(--site-context-gap) 1.5rem;
+  background: var(--site-page-background);
+}
+
+.breadcrumb {
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-  background: var(--site-table-header);
+  background: var(--site-context-header);
   color: color-mix(in srgb, var(--site-accent) 55%, currentColor);
-  box-shadow: 0 0 0 var(--site-context-gap) var(--site-page-background);
+}
+
+@media (min-width: 768px) {
+  .site-breadcrumb-sticky {
+    margin-inline: -3rem;
+    padding-inline: 3rem;
+  }
 }
 
 .breadcrumb ol {
@@ -560,7 +580,7 @@ html[data-font-preference="jost"] body {
 .section-nav .site-pinned,
 .hextra-toc .site-pinned {
   border-radius: 0;
-  background: var(--site-table-surface);
+  background: var(--site-context-surface);
   color: var(--site-accent);
 }
 
@@ -568,7 +588,7 @@ html[data-font-preference="jost"] body {
 .hextra-toc .site-pinned-first {
   border-start-start-radius: 0.75rem;
   border-start-end-radius: 0.75rem;
-  background: var(--site-table-header);
+  background: var(--site-context-header);
   color: color-mix(in srgb, var(--site-accent) 55%, currentColor);
 }
 
@@ -620,7 +640,7 @@ a.site-pinned:hover {
 }
 
 @media print {
-  .breadcrumb {
+  .site-breadcrumb-sticky {
     position: static;
   }
 }

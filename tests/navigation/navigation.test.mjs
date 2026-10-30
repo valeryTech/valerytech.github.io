@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 import { mkdirSync } from 'node:fs';
 import path from 'node:path';
 
-const { chromium } = createRequire(import.meta.url)('playwright-core');
+const { chromium, webkit } = createRequire(import.meta.url)('playwright-core');
 const base = process.env.BASE_URL || 'http://localhost:1313';
 const reference = process.env.REFERENCE_URL;
 const screenshots = process.env.SCREENSHOT_DIR;
@@ -14,8 +14,9 @@ let browser;
 
 before(async () => {
   const channel = process.env.BROWSER_CHANNEL || 'chrome';
-  browser = await chromium.launch({
-    channel: channel === 'chromium' ? undefined : channel,
+  const engine = process.env.BROWSER_ENGINE === 'webkit' ? webkit : chromium;
+  browser = await engine.launch({
+    channel: engine === chromium && channel !== 'chromium' ? channel : undefined,
     executablePath: process.env.BROWSER_EXECUTABLE || undefined,
     headless: true,
   });
@@ -121,6 +122,50 @@ test('breadcrumbs stay below the top bar and deep-linked headings stay below the
     await screenshot(page, `sticky-breadcrumb-${width}`);
     await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link').last().click();
     assert.equal(new URL(page.url()).pathname, '/ai/other/methodology-v1-3/usage/');
+  }
+});
+
+test('opaque navigation hides page content above and around the rounded breadcrumb corners', async (t) => {
+  for (const width of [1440, 390]) for (const scheme of ['light', 'dark']) {
+    const page = await pageFor(t, base + route, width);
+    await page.emulateMedia({ colorScheme: scheme });
+    await page.waitForFunction(scheme => document.documentElement.classList.contains('dark') === (scheme === 'dark'), scheme);
+    await page.evaluate(() => {
+      window.scrollTo({ top: 1400, behavior: 'instant' });
+      // Bright content behind the sticky layers makes any paint gap visible.
+      const probe = document.createElement('div');
+      probe.style.cssText = 'position:fixed;inset:0;background:#ff00ff;z-index:5;pointer-events:none';
+      document.body.append(probe);
+      return new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    });
+    const crumb = await page.locator('.breadcrumb').boundingBox();
+    const header = await page.locator('.hextra-nav-container').boundingBox();
+    const points = [
+      { x: width / 2, y: header.y + header.height - 2 },
+      { x: crumb.x + 1, y: crumb.y - 6 },
+      { x: crumb.x + crumb.width - 2, y: crumb.y - 6 },
+      { x: crumb.x + 1, y: crumb.y + 1 },
+      { x: crumb.x + 1, y: crumb.y + crumb.height + 6 },
+    ];
+    const png = await page.screenshot({
+      scale: 'css',
+      path: screenshots ? path.join(screenshots, `opaque-navigation-${width}-${scheme}.png`) : undefined,
+    });
+    const paint = await page.evaluate(async ({ png, points }) => {
+      const image = new Image();
+      image.src = `data:image/png;base64,${png}`;
+      await image.decode();
+      const canvas = document.createElement('canvas');
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      const context = canvas.getContext('2d');
+      context.fillStyle = getComputedStyle(document.body).backgroundColor;
+      context.fillRect(0, 0, 1, 1);
+      const expected = [...context.getImageData(0, 0, 1, 1).data];
+      context.drawImage(image, 0, 0);
+      return { expected, pixels: points.map(({ x, y }) => [...context.getImageData(Math.floor(x), Math.floor(y), 1, 1).data]) };
+    }, { png: png.toString('base64'), points });
+    assert.ok(paint.pixels.every(pixel => pixel.every((value, i) => value === paint.expected[i])), 'Page content is fully masked at the top bar, gaps, and rounded corners');
   }
 });
 

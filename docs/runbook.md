@@ -319,7 +319,7 @@ To upgrade Hextra, check out the intended release in `themes/hextra/`, review
 local head/sidebar/heading overrides against it, run `make verify`, and commit
 the updated submodule pointer. Keep the theme pinned to a release commit.
 
-### Check navigation in Chrome
+### Check navigation in Chrome or WebKit
 
 Start the Docker preview with `make up`. In another terminal with Node/npm and
 Google Chrome installed, install the project dependencies and run:
@@ -343,3 +343,13 @@ Set `BASE_URL` to test another preview. Set `BROWSER_EXECUTABLE` to select a
 specific Chrome executable. CI uses `BROWSER_CHANNEL=chromium` after running
 `npx playwright-core install --with-deps chromium`, and checks the minified
 production output using Vite preview. These checks do not require host Hugo.
+
+For Safari-engine checks, install WebKit and select it explicitly:
+
+```bash
+npx playwright-core install webkit
+BROWSER_ENGINE=webkit npm run test:navigation
+```
+
+The scrolling checks also sample rendered pixels over bright underlying content
+to catch transparency or gaps around the breadcrumb's rounded corners.

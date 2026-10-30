@@ -1,5 +1,6 @@
 {{- $page := .page -}}
 {{- if ne $page.Params.breadcrumbs false -}}
+<div class="site-breadcrumb-sticky">
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
     {{ range $page.Ancestors.Reverse }}
@@ -8,4 +9,5 @@
     <li aria-current="page">{{ $page.LinkTitle }}</li>
   </ol>
 </nav>
+</div>
 {{- end -}}

@@ -58,6 +58,9 @@ and outline title without stacking all parent rows.
 The breadcrumb and pinned stacks use filled surfaces with rounded outer corners,
 thin gaps between parent rows, and space below the top bar. Unpinned tree labels
 retain their normal appearance.
+The top bar and the full-width breadcrumb backing are opaque during scrolling.
+Only the filled breadcrumb card is rounded, so page content cannot show through
+its corners or the gap below the top bar.
 
 The importer remains independent of the theme. Its `callout context/title/icon`
 output is accepted by `layouts/_shortcodes/callout.html`, which maps severity and
