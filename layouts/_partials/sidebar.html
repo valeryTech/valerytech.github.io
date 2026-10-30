@@ -7,7 +7,7 @@
   {{- $page.Store.Set "enableFooterSwitches" true -}}
 {{- end -}}
 <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $desktopClass }}" aria-label="Site navigation">
-  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
+  <div class="site-sidebar-scroll hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
     <nav class="mobile-site-nav hx:md:hidden" aria-label="Collections">
       {{ range site.Menus.main }}
         {{ if ne .Params.type "search" }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}

@@ -47,6 +47,15 @@ path, and keeps the current link visible in long outlines. Mobile/tablet readers
 use an “On this page” disclosure with the same hierarchy. Browser regression
 checks live in `tests/navigation/` and run against the production artifact in CI.
 
+Breadcrumbs stay below the top bar while reading. The left navigation pins its
+collection and section summaries as they scroll out of view; the right outline
+does the same for its title and parent headings. The original controls remain
+clickable. `assets/js/navigation/sticky-context.mjs` measures wrapping labels so
+each level sits below its parents, including after resizing or changing fonts.
+Heading links account for the breadcrumb height, and outline scrolling keeps
+the active heading below its parent stack. Short viewports retain the collection
+and outline title without stacking all parent rows.
+
 The importer remains independent of the theme. Its `callout context/title/icon`
 output is accepted by `layouts/_shortcodes/callout.html`, which maps severity and
 titles to Hextra callout components. Existing `card-grid` and `link-card`

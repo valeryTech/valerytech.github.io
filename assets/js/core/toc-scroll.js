@@ -33,8 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const bounds = panel.getBoundingClientRect();
     const rect = link.getBoundingClientRect();
     const padding = 16;
-    if (rect.top < bounds.top + padding) {
-      panel.scrollTop -= bounds.top + padding - rect.top;
+    const stickyOffset = parseFloat(getComputedStyle(link).getPropertyValue('--site-sticky-offset')) || 0;
+    const top = bounds.top + Math.max(padding, stickyOffset);
+    if (rect.top < top) {
+      panel.scrollTop -= top - rect.top;
     } else if (rect.bottom > bounds.bottom - padding) {
       panel.scrollTop += rect.bottom - bounds.bottom + padding;
     }
@@ -57,11 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (changed) keepVisible(link);
     }
+    if (changed) document.dispatchEvent(new Event('site:outline-change'));
   }
 
   function update() {
     scheduled = false;
-    const readingLine = Math.max(120, Math.round(window.innerHeight * 0.35));
+    const contextBottom = document.querySelector('.breadcrumb')?.getBoundingClientRect().bottom || 0;
+    const readingLine = Math.max(120, contextBottom + 16, Math.round(window.innerHeight * 0.35));
     let current = headings[0].id;
     for (const { id, heading } of headings) {
       if (heading.getBoundingClientRect().top <= readingLine) current = id;
@@ -108,6 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("hashchange", followHash);
   window.addEventListener("pageshow", scheduleUpdate);
   window.addEventListener("load", scheduleUpdate);
+  document.addEventListener('site:navigation-layout', () => {
+    scheduleUpdate();
+    links.filter((link) => link.classList.contains('active')).forEach(keepVisible);
+  });
   // Mark deep links immediately; scroll events keep the state correct afterwards.
   followHash();
 });

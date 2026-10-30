@@ -74,6 +74,108 @@ test('a deeply nested sidebar opens the full current path and marks its parent g
   assert.deepEqual(ancestors.map((group) => group.label), ['Usage', 'Methodology v1.3', 'Other']);
 });
 
+test('scrolling a long sidebar keeps its collection and parent section controls visible', async (t) => {
+  for (const width of [1440, 390]) {
+    const page = await pageFor(t, base + route, width);
+    if (width === 390) await page.getByRole('button', { name: 'Menu', exact: true }).click();
+    await page.locator('.site-sidebar-scroll').evaluate(panel => { panel.scrollTop = panel.scrollHeight; });
+    const context = await page.locator('.section-nav a[aria-current="page"]').evaluate(link => {
+      const panel = link.closest('.site-sidebar-scroll').getBoundingClientRect();
+      const root = link.closest('.section-nav').querySelector('.sidebar-root').getBoundingClientRect();
+      const parents = [];
+      for (let group = link.closest('details'); group; group = group.parentElement.closest('details')) {
+        const summary = group.querySelector(':scope > summary');
+        const bounds = summary.getBoundingClientRect();
+        parents.unshift({ label: summary.textContent, top: bounds.top, bottom: bounds.bottom });
+      }
+      return { top: panel.top, bottom: panel.bottom, rootTop: root.top, rootBottom: root.bottom, parents };
+    });
+    assert.deepEqual(context.parents.map(parent => parent.label), ['Other', 'Methodology v1.3', 'Usage']);
+    assert.ok(context.rootTop >= context.top);
+    assert.ok(context.parents.every(parent => parent.top >= context.rootBottom - 1 && parent.bottom <= context.bottom));
+    assert.ok(Math.abs(context.parents[0].top - context.rootBottom) < 1);
+    assert.ok(Math.abs(context.parents[1].top - context.parents[0].bottom) < 1);
+    await screenshot(page, `sticky-sidebar-${width}`);
+    const parent = page.locator('.section-nav .sidebar-group.depth-1.active-ancestor > details');
+    await parent.locator(':scope > summary').click();
+    assert.equal(await parent.getAttribute('open'), null);
+    await page.keyboard.press('Enter');
+    assert.ok(await parent.getAttribute('open') !== null, 'Pinned section controls still work with the keyboard');
+  }
+});
+
+test('breadcrumbs stay below the top bar and deep-linked headings stay below the breadcrumbs', async (t) => {
+  const id = 'level-3--slices-and-state-snapshots';
+  for (const width of [1440, 390]) {
+    const page = await pageFor(t, base + route + `#${id}`, width);
+    await page.waitForFunction((id) => {
+      const heading = document.getElementById(id).getBoundingClientRect();
+      const breadcrumb = document.querySelector('.breadcrumb').getBoundingClientRect();
+      return heading.top >= breadcrumb.bottom + 8 && heading.top < innerHeight;
+    }, id);
+    const bounds = await page.locator('.breadcrumb').boundingBox();
+    const header = await page.locator('.hextra-nav-container').boundingBox();
+    assert.ok(Math.abs(bounds.y - header.y - header.height) < 1);
+    assert.ok(await page.evaluate(() => scrollY > 500));
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    await screenshot(page, `sticky-breadcrumb-${width}`);
+    await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link').last().click();
+    assert.equal(new URL(page.url()).pathname, '/ai/other/methodology-v1-3/usage/');
+  }
+});
+
+test('the scrolling outline keeps its title and parent heading stack above the active heading', async (t) => {
+  const page = await pageFor(t, base + '/system-design/projects/ticketmaster/');
+  const id = await page.locator('.article-content h6[id]').first().getAttribute('id');
+  await readAt(page, id);
+  const current = page.locator('.hextra-toc a[aria-current="location"]');
+  await current.evaluate(link => {
+    const panel = link.closest('.site-toc-scroll');
+    const offset = parseFloat(getComputedStyle(link).getPropertyValue('--site-sticky-offset'));
+    panel.scrollTop += link.getBoundingClientRect().top - panel.getBoundingClientRect().top - offset - 8;
+  });
+  const context = await current.evaluate(link => {
+    const panel = link.closest('.site-toc-scroll');
+    const bounds = panel.getBoundingClientRect();
+    const title = panel.querySelector('.site-toc-title').getBoundingClientRect();
+    const parents = [];
+    for (let item = link.closest('li').parentElement.closest('li'); item; item = item.parentElement.closest('li')) {
+      const parent = item.querySelector(':scope > a');
+      if (parent) {
+        const rect = parent.getBoundingClientRect();
+        parents.unshift({ top: rect.top, bottom: rect.bottom });
+      }
+    }
+    return { top: bounds.top, bottom: bounds.bottom, titleTop: title.top, titleBottom: title.bottom, parents, currentTop: link.getBoundingClientRect().top };
+  });
+  assert.ok(context.parents.length >= 3);
+  assert.ok(Math.abs(context.titleTop - context.top) < 1);
+  let previous = context.titleBottom;
+  for (const parent of context.parents) {
+    assert.ok(parent.top >= previous - 1, 'Pinned parent labels do not overlap');
+    previous = parent.bottom;
+  }
+  assert.ok(context.currentTop >= previous - 1, 'The active heading is below its pinned ancestors');
+  await screenshot(page, 'sticky-outline');
+  const ancestor = page.locator('.hextra-toc a.active-ancestor').first();
+  const target = await ancestor.getAttribute('href');
+  await ancestor.click();
+  assert.equal(new URL(page.url()).hash, target);
+});
+
+test('short viewports leave room for the active outline entry below the pinned title', async (t) => {
+  const page = await pageFor(t);
+  await page.setViewportSize({ width: 1440, height: 480 });
+  await readAt(page, 'level-3--slices-and-state-snapshots');
+  await page.waitForFunction(() => {
+    const active = document.querySelector('.hextra-toc a.active').getBoundingClientRect();
+    const title = document.querySelector('.site-toc-title').getBoundingClientRect();
+    return active.top >= title.bottom && active.bottom <= innerHeight;
+  });
+  assert.ok(await page.locator('.hextra-toc .site-toc-parent').evaluateAll(links => links.every(link => getComputedStyle(link).position !== 'sticky')));
+  await screenshot(page, 'sticky-short-viewport');
+});
+
 test('the page outline includes all six heading levels with nested indentation and highlighting', async (t) => {
   for (const pathname of [framework, '/system-design/projects/ticketmaster/']) {
     const page = await pageFor(t, base + pathname);

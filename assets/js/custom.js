@@ -9,6 +9,7 @@ import {
   searchQueryLengthBucket,
   toUrl,
 } from "./analytics/helpers.mjs";
+import { initStickyNavigation } from "./navigation/sticky-context.mjs";
 
 function initTopLevelSidebarAccordion() {
   const sidebars = document.querySelectorAll(".section-nav");
@@ -416,6 +417,7 @@ function initNotFoundAnalytics() {
 function initCustomBehavior() {
   initTopLevelSidebarAccordion();
   initFontPreference();
+  initStickyNavigation();
   initNavigationAnalytics();
   initCopyAnalytics();
   initSearchAnalytics();
