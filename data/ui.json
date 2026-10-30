@@ -19,7 +19,48 @@
       }
     ]
   },
+  "display": {
+    "cookie": {
+      "name": "display-preferences",
+      "maxAgeSeconds": 31536000
+    },
+    "breadcrumbs": {
+      "default": "sticky",
+      "options": [
+        { "value": "sticky", "label": "Keep visible while scrolling" },
+        { "value": "static", "label": "Show at the page start" },
+        { "value": "hidden", "label": "Hide breadcrumbs" }
+      ]
+    },
+    "textSize": {
+      "default": "standard",
+      "options": [
+        { "value": "standard", "label": "Standard" },
+        { "value": "large", "label": "Large" },
+        { "value": "larger", "label": "Larger" }
+      ]
+    },
+    "lineSpacing": {
+      "default": "comfortable",
+      "options": [
+        { "value": "comfortable", "label": "Comfortable" },
+        { "value": "compact", "label": "Compact" },
+        { "value": "roomy", "label": "Roomy" }
+      ]
+    },
+    "pinAncestors": {
+      "default": true
+    }
+  },
   "navigation": {
+    "resize": {
+      "cookie": {
+        "name": "navigation-widths",
+        "maxAgeSeconds": 31536000
+      },
+      "legacyStorageKey": "site-navigation-widths",
+      "keyboardStepPixels": 16
+    },
     "outline": {
       "minimumReadingLinePixels": 120,
       "readingViewportFraction": 0.35,

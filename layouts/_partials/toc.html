@@ -1,11 +1,13 @@
 {{- /* Hugo's outline retains H1s and nested lists, honoring markup.tableOfContents. */ -}}
 {{- $outline := .TableOfContents -}}
 {{- if and (ne .Params.toc false) (findRE `<a\b` $outline 1) -}}
-<aside class="hextra-toc site-page-outline hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="On this page">
-  <div class="hextra-scrollbar site-toc-scroll">
-    <p class="site-toc-title">On this page</p>
-    {{ $outline }}
-    <button id="backToTop" class="site-back-to-top hx:opacity-0" tabindex="-1" type="button">Scroll to top ↑</button>
+<aside id="page-outline" data-site-pane="outline" class="hextra-toc site-page-outline hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="On this page">
+  <div class="site-toc-frame">
+    <div class="hextra-scrollbar site-toc-scroll">
+      <p class="site-toc-title">On this page</p>
+      {{ $outline }}
+      <button id="backToTop" class="site-back-to-top hx:opacity-0" tabindex="-1" type="button">Scroll to top ↑</button>
+    </div>
   </div>
 </aside>
 {{- end -}}

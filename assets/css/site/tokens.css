@@ -19,6 +19,8 @@
   --site-text-base: 1rem;
   --site-text-lg: 1.125rem;
   --site-line-ui: 1.5;
+  --site-reading-text-size: var(--site-text-base);
+  --site-reading-line-height: 1.75;
 
   --site-radius-marker: 0.125rem;
   --site-radius-sm: 0.25rem;
@@ -62,6 +64,31 @@
   --site-current-marker-gap: var(--site-space-2);
   --site-tile-gap: var(--site-space-1);
   --site-table-padding-block: 0.875rem;
+  --site-pane-default-width: 16rem;
+  --site-pane-min-width: 12rem;
+  --site-pane-max-width: 28rem;
+  --site-reading-min-width: 24rem;
+  --site-pane-resizer-width: var(--site-space-6);
+}
+
+:root[data-text-size="large"] {
+  --site-reading-text-size: var(--site-text-lg);
+}
+
+:root[data-text-size="larger"] {
+  --site-reading-text-size: 1.25rem;
+}
+
+:root[data-line-spacing="compact"] {
+  --site-reading-line-height: 1.5;
+}
+
+:root[data-line-spacing="roomy"] {
+  --site-reading-line-height: 1.95;
+}
+
+:root[data-pin-ancestors="false"] {
+  --site-stack-parents: 0;
 }
 
 .dark {

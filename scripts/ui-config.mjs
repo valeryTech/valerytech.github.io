@@ -8,6 +8,18 @@ export function readUiConfig() {
 }
 
 export function validateUiConfig({ ui, callouts, analytics }) {
+  function validateCookie(cookie, feature) {
+    assert.match(
+      cookie.name,
+      /^[a-zA-Z0-9_-]+$/,
+      `${feature} cookie name must be a valid identifier`,
+    );
+    assert.ok(
+      Number.isInteger(cookie.maxAgeSeconds) && cookie.maxAgeSeconds > 0,
+      `${feature} cookie maxAgeSeconds must be positive`,
+    );
+  }
+
   const fonts = ui.fonts;
   assert.ok(
     Array.isArray(fonts.options) && fonts.options.length,
@@ -20,15 +32,7 @@ export function validateUiConfig({ ui, callouts, analytics }) {
     assert.ok(typeof option.label === "string" && option.label.trim(), "each font needs a label");
   }
   assert.ok(values.includes(fonts.default), "ui.fonts.default must be an available font");
-  assert.match(
-    fonts.cookie.name,
-    /^[a-zA-Z0-9_-]+$/,
-    "font cookie name must be a valid identifier",
-  );
-  assert.ok(
-    Number.isInteger(fonts.cookie.maxAgeSeconds) && fonts.cookie.maxAgeSeconds > 0,
-    "font cookie maxAgeSeconds must be positive",
-  );
+  validateCookie(fonts.cookie, "font");
   assert.ok(
     fonts.aliases && typeof fonts.aliases === "object",
     "ui.fonts.aliases must be an object",
@@ -37,6 +41,56 @@ export function validateUiConfig({ ui, callouts, analytics }) {
     assert.ok(!values.includes(alias), `font alias ${alias} must not replace an available font`);
     assert.ok(values.includes(value), `font alias ${alias} must target an available font`);
   }
+
+  const resize = ui.navigation.resize;
+  validateCookie(resize.cookie, "navigation resize");
+  const display = ui.display;
+  validateCookie(display.cookie, "display");
+  assert.equal(
+    new Set([resize.cookie.name, fonts.cookie.name, display.cookie.name]).size,
+    3,
+    "preference cookie names must be distinct",
+  );
+  for (const [key, supported] of Object.entries({
+    breadcrumbs: ["sticky", "static", "hidden"],
+    textSize: ["standard", "large", "larger"],
+    lineSpacing: ["comfortable", "compact", "roomy"],
+  })) {
+    const setting = display[key];
+    assert.ok(
+      Array.isArray(setting.options) && setting.options.length,
+      `display ${key} needs options`,
+    );
+    const values = setting.options.map((option) => option.value);
+    assert.equal(new Set(values).size, values.length, `display ${key} options must be unique`);
+    assert.ok(
+      values.includes(setting.default),
+      `display ${key} default must be an available option`,
+    );
+    for (const option of setting.options) {
+      assert.ok(
+        supported.includes(option.value),
+        `display ${key} option must have styling support`,
+      );
+      assert.ok(
+        typeof option.label === "string" && option.label.trim(),
+        `display ${key} options need labels`,
+      );
+    }
+  }
+  assert.equal(
+    typeof display.pinAncestors.default,
+    "boolean",
+    "display pinAncestors default must be boolean",
+  );
+  assert.ok(
+    typeof resize.legacyStorageKey === "string" && resize.legacyStorageKey.trim(),
+    "navigation resize legacyStorageKey must be a nonempty string",
+  );
+  assert.ok(
+    Number.isInteger(resize.keyboardStepPixels) && resize.keyboardStepPixels > 0,
+    "navigation resize keyboardStepPixels must be a positive integer",
+  );
 
   const outline = ui.navigation.outline;
   assert.ok(

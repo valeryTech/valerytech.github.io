@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "How this personal website handles visitor information."
 summary: "How this personal website handles visitor information."
 date: 2023-09-07T17:19:07+02:00
-lastmod: 2026-03-27T00:00:00-03:00
+lastmod: 2026-10-30T00:00:00-03:00
 draft: false
 type: "legal"
 toc: false
@@ -24,6 +24,6 @@ Site search is performed locally in the browser. Search terms and copied text ar
 
 The site also uses Microsoft Clarity for click and scroll heatmaps, bot detection, and session replay. Clarity can reconstruct public page content and interactions for a recorded visit. Form and search input values are masked. The site initially tells Clarity that analytics and advertising storage consent has not been granted, so Clarity must not use cookies unless a later consent mechanism grants permission.
 
-The site is hosted by GitHub Pages. GitHub and its infrastructure providers may process technical information, such as IP addresses and request details, to deliver and protect the site. Some pages also load a stylesheet from jsDelivr. Your selected color theme is stored only in your browser, and site searches are performed locally in your browser.
+The site is hosted by GitHub Pages. GitHub and its infrastructure providers may process technical information, such as IP addresses and request details, to deliver and protect the site. Your reading and navigation preferences, including font, text size, breadcrumbs, and panel widths, are remembered in preference cookies on this site. Your selected color theme is stored in browser storage. Fonts, search assets, and math styles are served by this site.
 
 You can use browser privacy controls, content blockers, or Do Not Track to limit analytics collection. You can also clear stored site data through your browser settings.

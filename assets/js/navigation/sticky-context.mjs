@@ -69,7 +69,9 @@ export function initStickyNavigation() {
 
   function measure() {
     scheduled = false;
-    const breadcrumbHeight = breadcrumb?.getBoundingClientRect().height || 0;
+    const breadcrumbPinned =
+      breadcrumb && getComputedStyle(breadcrumb.parentElement).position === "sticky";
+    const breadcrumbHeight = breadcrumbPinned ? breadcrumb.getBoundingClientRect().height : 0;
     document.documentElement.style.setProperty("--site-breadcrumb-height", `${breadcrumbHeight}px`);
     const rootHeight = rowHeight(root);
     const titleHeight = rowHeight(title);
@@ -125,12 +127,15 @@ export function initStickyNavigation() {
   tree?.closest(".hextra-sidebar-container")?.addEventListener("transitionend", schedulePins);
   window.addEventListener("scroll", schedulePins, { passive: true });
   document.addEventListener("site:outline-change", scheduleMeasure);
+  document.addEventListener("site:display-change", scheduleMeasure);
+  document.addEventListener("site:font-change", scheduleMeasure);
   window.addEventListener("resize", scheduleMeasure);
   window.addEventListener("load", () => {
     measure();
     revealHash();
   });
   document.fonts?.ready.then(scheduleMeasure);
+  document.fonts?.addEventListener("loadingdone", scheduleMeasure);
   measure();
   revealHash();
 }

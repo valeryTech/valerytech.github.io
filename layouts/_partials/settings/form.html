@@ -1,0 +1,57 @@
+{{- $ui := hugo.Data.ui -}}
+<form id="site-settings" class="site-settings not-prose" aria-label="Site settings">
+  <fieldset class="site-settings-controls" data-settings-controls disabled>
+    <legend class="hx:sr-only">Reading and navigation preferences</legend>
+    <fieldset class="site-settings-group">
+      <legend>Reading</legend>
+      <div class="site-settings-grid">
+        <div>
+          <label for="settings-font">Font</label>
+          <select id="settings-font">
+            {{ range $ui.fonts.options }}<option value="{{ .value }}" {{ if eq .value $ui.fonts.default }}selected{{ end }}>{{ .label }}</option>{{ end }}
+          </select>
+        </div>
+        {{ range slice (dict "key" "textSize" "label" "Article text size") (dict "key" "lineSpacing" "label" "Line spacing") }}
+          {{ $setting := index $ui.display .key }}
+          <div>
+            <label for="settings-{{ .key }}">{{ .label }}</label>
+            <select id="settings-{{ .key }}" data-display-setting="{{ .key }}">
+              {{ range $setting.options }}<option value="{{ .value }}" {{ if eq .value $setting.default }}selected{{ end }}>{{ .label }}</option>{{ end }}
+            </select>
+          </div>
+        {{ end }}
+      </div>
+      <p class="site-settings-help">Text size and line spacing apply to article paragraphs and lists.</p>
+      <div class="site-settings-preview" role="region" aria-label="Reading preview">
+        Good explanations connect ideas, evidence, and decisions. Adjust the font and spacing until this text feels comfortable to read.
+      </div>
+    </fieldset>
+    <fieldset class="site-settings-group">
+      <legend>Navigation</legend>
+      <div>
+        <label for="settings-breadcrumbs">Breadcrumbs</label>
+        <select id="settings-breadcrumbs" data-display-setting="breadcrumbs">
+          {{ range $ui.display.breadcrumbs.options }}<option value="{{ .value }}" {{ if eq .value $ui.display.breadcrumbs.default }}selected{{ end }}>{{ .label }}</option>{{ end }}
+        </select>
+      </div>
+      <div class="site-settings-toggle">
+        <input id="settings-pin-ancestors" type="checkbox" data-display-setting="pinAncestors" aria-describedby="settings-pins-help" {{ if $ui.display.pinAncestors.default }}checked{{ end }} />
+        <div>
+          <label for="settings-pin-ancestors">Keep parent sections visible</label>
+          <p id="settings-pins-help" class="site-settings-help">Pin the current path in the left navigation and page outline while scrolling.</p>
+        </div>
+      </div>
+      <p id="settings-widths-help" class="site-settings-help">These widths apply on larger screens and adjust to leave room for the article. The mobile navigation stays full width.</p>
+      {{ range slice (dict "key" "sidebar" "label" "Left navigation width") (dict "key" "outline" "label" "Page outline width") }}
+        <div class="site-settings-width">
+          <label for="settings-{{ .key }}-width">{{ .label }}</label>
+          <output for="settings-{{ .key }}-width" id="settings-{{ .key }}-value"></output>
+          <input id="settings-{{ .key }}-width" type="range" step="1" data-pane-preference="{{ .key }}" aria-describedby="settings-widths-help" />
+        </div>
+      {{ end }}
+    </fieldset>
+    <button type="button" class="site-settings-reset" data-settings-reset>Reset to site defaults</button>
+  </fieldset>
+  <p class="site-settings-status" role="status" aria-label="Settings status">Enable JavaScript to change your site settings.</p>
+  <span class="site-settings-width-reference" data-pane-size-reference aria-hidden="true"></span>
+</form>

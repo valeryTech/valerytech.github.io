@@ -1,10 +1,10 @@
 {{- $docs := in site.Params.mainSections .Section -}}
 {{- $home := .IsHome -}}
-<div class="hx:mx-auto hx:flex hextra-max-page-width">
-  {{ partial "sidebar.html" (dict "context" . "disableSidebar" (not $docs) "displayPlaceholder" (not $home)) }}
+<div class="site-page-layout hx:mx-auto hx:flex hextra-max-page-width">
+  {{ partial "sidebar.html" (dict "context" . "disableSidebar" (not $docs) "displayPlaceholder" (and (not $home) (ne .Params.sidebar.hide true))) }}
   {{ if not $home }}{{ partial "toc.html" . }}{{ end }}
-  <div class="hx:w-full hx:min-w-0 hx:flex hx:justify-center hx:pb-8">
-    <main id="content" class="site-main hx:w-full hx:min-w-0 hx:pt-4 {{ if $home }}site-home{{ else }}hextra-max-content-width{{ end }}">
+  <div class="site-article-column hx:w-full hx:min-w-0 hx:flex hx:justify-center hx:pb-8">
+    <main id="content" class="site-main hx:w-full hx:min-w-0 hx:pt-4 {{ if $home }}site-home{{ else }}hextra-max-content-width{{ end }}{{ if eq .Params.layout "settings" }} site-settings-page{{ end }}">
       {{ if and (not $home) (ne .Section "agent-map") }}{{ partial "breadcrumb.html" (dict "page" . "enable" true) }}{{ end }}
       {{ if and (not $home) (ne .Section "agent-map") }}{{ partial "main/mobile-toc.html" . }}{{ end }}
       <div class="content">

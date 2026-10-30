@@ -9,9 +9,11 @@ The site uses Hextra's compiled CSS plus a small, site-owned CSS bundle. Edit
 | `tokens.css` | Spacing, type sizes, radii, semantic colors, shared layout geometry |
 | `base.css` | Self-hosted fonts, page descriptions, content wrapping |
 | `shell.css` | Main gutter, navbar, footer, previous/next links, font control |
+| `panes.css` | Resizable navigation columns, reading-space limits, resize handles |
 | `navigation.css` | Breadcrumbs, section tree, outline, active markers, pinned stacks |
 | `components.css` | Cards, callouts, Markdown tables |
 | `collections.css` | Homepage grid and section indexes |
+| `settings.css` | Settings form, reading preview, native controls, sidebar link |
 
 For template/JavaScript ownership and external configuration, see the
 [frontend conventions](frontend.md). The visual hierarchy is scale tokens,
@@ -55,6 +57,11 @@ Choose a semantic token when several components must move together:
   rhythm, including 6px row padding and 10px nesting steps.
 - `current-marker-width` / `current-marker-gap`: the same 3px marker and 8px
   label gap in both panes.
+- `pane-default-width`, `pane-min-width`, and `pane-max-width`: 256px default
+  navigation panes, adjustable from 192px to 448px while preserving the article's
+  `reading-min-width` (384px). Runtime `--site-sidebar-width` and
+  `--site-outline-width` hold the measured, constrained choices. Resize handles
+  use a 24px hit area and a small material grip instead of a pane border.
 
 The left page-link inset is calculated from inline padding, triangle size, and
 triangle-to-label gap. Change those inputs rather than adding an unrelated
@@ -89,8 +96,11 @@ use the same theme tokens, so theme switching updates them together.
 
 Use the text-size tokens for UI labels and descriptions. Navigation uses
 `text-sm` (14px) and `line-ui` (1.5); descriptions and card titles use `text-lg`
-(18px). Body copy and heading typography remain Hextra-owned. System and Jost
-fonts must both work, including when a label wraps.
+(18px). Reader preferences select article text sizes of 16, 18, or 20px and line
+heights of 1.5, 1.75, or 1.95 through `reading-text-size` and
+`reading-line-height`. Small headings grow with the article text. Settings
+controls keep their UI scale; their reading preview reflects the selected size
+and spacing. System and Jost must both work, including when a label wraps.
 
 ## Cascade and component boundaries
 
@@ -117,6 +127,11 @@ The navbar paints an opaque page background. The sticky breadcrumb wrapper is
 also opaque and square, extending across the main gutter; only its inner card
 is rounded. Preserve this backing to prevent Safari from showing scrolling
 content through corners or gaps.
+
+Breadcrumbs can be pinned, shown only at the start, or hidden through
+`data-breadcrumbs`. Preserve the opaque backing in the pinned mode. The
+`data-pin-ancestors` attribute can disable parent stacks while keeping pane
+titles pinned. Short viewport rules still apply.
 
 The breadcrumb uses layer 10 below Hextra's navbar (20). Tree parents use local
 layer 100 minus ancestor depth; collection/outline titles use 101. The latter

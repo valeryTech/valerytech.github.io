@@ -1,6 +1,0 @@
-{{- $script := resources.Get "js/preferences/restore-font.js" | js.Build (dict
-  "target" "es2015"
-  "minify" true
-  "params" (dict "fonts" hugo.Data.ui.fonts)
-) -}}
-<script>{{ $script.Content | safeJS }}</script>

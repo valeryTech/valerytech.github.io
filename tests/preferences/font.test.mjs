@@ -8,6 +8,17 @@ import {
 
 const { fonts } = readUiConfig().ui;
 
+function cookieDocument(t) {
+  const original = Object.getOwnPropertyDescriptor(globalThis, "document");
+  const document = { cookie: "" };
+  Object.defineProperty(globalThis, "document", { configurable: true, value: document });
+  t.after(() => {
+    if (original) Object.defineProperty(globalThis, "document", original);
+    else delete globalThis.document;
+  });
+  return document;
+}
+
 test("saved font choices retain legacy compatibility and reject unknown values", () => {
   assert.equal(normalizeFontPreference("jost", fonts), "jost");
   assert.equal(normalizeFontPreference("avenir", fonts), "system");
@@ -16,19 +27,27 @@ test("saved font choices retain legacy compatibility and reject unknown values",
   }
 });
 
-test("font restoration handles other cookies, encoding, and malformed values", () => {
+test("font restoration handles other cookies, encoding, and malformed values", (t) => {
+  const document = cookieDocument(t);
+  const read = (cookies) => {
+    document.cookie = cookies;
+    return savedFontPreference(fonts);
+  };
   const name = fonts.cookie.name;
-  assert.equal(savedFontPreference(`other=x;${name}=jost; third=y`, fonts), "jost");
-  assert.equal(savedFontPreference(`${name}=%6aost`, fonts), "jost");
-  assert.equal(savedFontPreference(`${name}=avenir`, fonts), "system");
+  assert.equal(read(`other=x; ${name}=jost; third=y`), "jost");
+  assert.equal(read(`${name}=%6aost`), "jost");
+  assert.equal(read(`${name}=avenir`), "system");
   for (const cookies of ["", `not-${name}=jost`, `${name}=%E0%A4%A`, `${name}=unknown`]) {
-    assert.equal(savedFontPreference(cookies, fonts), fonts.default);
+    assert.equal(read(cookies), fonts.default);
   }
 });
 
-test("a configured default and cookie name are used by both restore paths", () => {
+test("a configured default and cookie name are used by both restore paths", (t) => {
+  const document = cookieDocument(t);
   const config = { ...fonts, default: "jost", cookie: { ...fonts.cookie, name: "reading-font" } };
   assert.equal(normalizeFontPreference(undefined, config), "jost");
-  assert.equal(savedFontPreference("font-preference=system", config), "jost");
-  assert.equal(savedFontPreference("reading-font=system", config), "system");
+  document.cookie = "font-preference=system";
+  assert.equal(savedFontPreference(config), "jost");
+  document.cookie = "reading-font=system";
+  assert.equal(savedFontPreference(config), "system");
 });

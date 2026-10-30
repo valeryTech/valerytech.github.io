@@ -1,0 +1,95 @@
+.site-article-column {
+  flex: 1;
+}
+
+.site-pane-resizer {
+  display: none;
+  position: absolute;
+  inset-block: 0;
+  width: var(--site-pane-resizer-width);
+  z-index: 1;
+  cursor: col-resize;
+  touch-action: none;
+  border-radius: var(--site-radius-sm);
+}
+
+.site-pane-resizer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 50%;
+  width: var(--site-current-marker-width);
+  height: var(--site-space-10);
+  transform: translate(-50%, -50%);
+  border-radius: var(--site-radius-marker);
+  background: var(--site-border);
+}
+
+.site-pane-resizer:is(:hover, :focus-visible, [data-resizing]) {
+  background: var(--site-card-surface);
+}
+
+.site-pane-resizer:is(:hover, :focus-visible, [data-resizing])::before {
+  background: var(--site-accent);
+}
+
+.site-pane-resizer:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+.site-sidebar-resizer {
+  inset-inline-end: calc(-1 * var(--site-pane-resizer-width) / 2);
+}
+
+.site-outline-resizer {
+  inset-inline-start: calc(-1 * var(--site-space-4) - var(--site-pane-resizer-width) / 2);
+}
+
+.site-resizing-panes,
+.site-resizing-panes * {
+  cursor: col-resize;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (min-width: 768px) {
+  .site-article-column {
+    min-width: var(--site-reading-min-width);
+  }
+
+  [data-site-pane="sidebar"] {
+    width: var(--site-sidebar-width, var(--site-pane-default-width));
+    min-width: var(--site-pane-min-width);
+    max-width: var(--site-pane-max-width);
+    /* Divider geometry must update immediately, including with reduced motion. */
+    transition: none;
+  }
+
+  .site-sidebar-resizer {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  [data-site-pane="outline"] {
+    width: var(--site-outline-width, var(--site-pane-default-width));
+    min-width: var(--site-pane-min-width);
+    max-width: var(--site-pane-max-width);
+    transition: none;
+  }
+
+  .site-outline-resizer {
+    display: block;
+  }
+}
+
+@media print {
+  .site-pane-resizer {
+    display: none;
+  }
+
+  .site-article-column {
+    min-width: 0;
+  }
+}

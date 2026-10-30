@@ -27,4 +27,18 @@ html[data-font-preference="jost"] body {
 
 .article-content {
   overflow-wrap: anywhere;
+  font-size: var(--site-reading-text-size);
+  line-height: var(--site-reading-line-height);
+}
+
+.article-content :where(p, li):not(:where(.not-prose *, .page-description)) {
+  line-height: var(--site-reading-line-height);
+}
+
+.article-content h5 {
+  font-size: max(var(--site-text-lg), var(--site-reading-text-size));
+}
+
+.article-content h6 {
+  font-size: var(--site-reading-text-size);
 }

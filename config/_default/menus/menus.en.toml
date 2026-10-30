@@ -1,12 +1,7 @@
 [[main]]
-  name = "Evaluation"
-  pageRef = "/ai-engineering/evaluation/"
-  weight = 5
-
-[[main]]
   name = "AI Engineering"
   pageRef = "/ai-engineering/"
-  weight = 15
+  weight = 5
 
 [[main]]
   name = "AI"
@@ -14,19 +9,19 @@
   weight = 10
 
 [[main]]
+  name = "Evaluation"
+  pageRef = "/ai-engineering/evaluation/"
+  weight = 15
+
+[[main]]
   name = "System Design"
   pageRef = "/system-design/"
   weight = 20
 
 [[main]]
-  name = "Engineering"
-  pageRef = "/engineering/"
-  weight = 30
-
-[[main]]
-  name = "Projects"
-  pageRef = "/projects/"
-  weight = 40
+  name = "AI Design Research"
+  pageRef = "/ai/design-research/"
+  weight = 25
 
 [[main]]
 name = "Search"
@@ -35,14 +30,9 @@ weight = 90
 type = "search"
 
 [[footer]]
-  name = "Evaluation"
-  url = "/ai-engineering/evaluation/"
-  weight = 5
-
-[[footer]]
   name = "AI Engineering"
   url = "/ai-engineering/"
-  weight = 15
+  weight = 5
 
 [[footer]]
   name = "AI"
@@ -50,9 +40,19 @@ type = "search"
   weight = 10
 
 [[footer]]
+  name = "Evaluation"
+  url = "/ai-engineering/evaluation/"
+  weight = 15
+
+[[footer]]
   name = "System Design"
   url = "/system-design/"
   weight = 20
+
+[[footer]]
+  name = "AI Design Research"
+  url = "/ai/design-research/"
+  weight = 25
 
 [[footer]]
   name = "Engineering"
@@ -78,6 +78,11 @@ type = "search"
   name = "Privacy Policy"
   url = "/privacy/"
   weight = 70
+
+[[footer]]
+  name = "Settings"
+  url = "/settings/"
+  weight = 75
 
 [[footer]]
   name = "Agent map"

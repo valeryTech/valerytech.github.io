@@ -1,0 +1,159 @@
+.site-settings-page {
+  max-width: 54rem;
+}
+
+.site-settings {
+  position: relative;
+  max-width: 48rem;
+  margin-block: var(--site-space-8);
+  font-size: var(--site-text-base);
+  line-height: var(--site-line-ui);
+}
+
+.site-settings-controls {
+  display: grid;
+  gap: var(--site-space-6);
+  min-width: 0;
+}
+
+.site-settings fieldset {
+  min-width: 0;
+  border: 0;
+}
+
+.site-settings-group {
+  display: grid;
+  gap: var(--site-space-4);
+  padding: var(--site-space-6);
+  border-radius: var(--site-radius-lg);
+  background: var(--site-card-surface);
+}
+
+.site-settings-group > legend {
+  float: inline-start;
+  width: 100%;
+  margin-bottom: var(--site-space-4);
+  font-size: var(--site-text-lg);
+  font-weight: 600;
+}
+
+.site-settings label {
+  display: block;
+  font-weight: 600;
+}
+
+.site-settings select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: var(--site-space-2);
+  padding: var(--site-space-2) var(--site-space-3);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius-sm);
+  background: var(--site-page-background);
+  color: inherit;
+  font: inherit;
+}
+
+.site-settings-help,
+.site-settings-status {
+  margin: 0;
+  color: var(--site-muted);
+  font-size: var(--site-text-sm);
+  font-weight: 400;
+}
+
+.site-settings-status {
+  margin-top: var(--site-space-4);
+}
+
+.site-settings-preview {
+  padding: var(--site-space-4);
+  border-radius: var(--site-radius-md);
+  background: var(--site-page-background);
+  font-size: var(--site-reading-text-size);
+  line-height: var(--site-reading-line-height);
+}
+
+.site-settings-grid {
+  display: grid;
+  gap: var(--site-space-4);
+}
+
+.site-settings-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--site-space-3);
+}
+
+.site-settings-toggle > input {
+  width: var(--site-space-5);
+  height: var(--site-space-5);
+  flex-shrink: 0;
+  margin-top: var(--site-space-1);
+  accent-color: var(--site-accent);
+}
+
+.site-settings-width {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--site-space-2);
+}
+
+.site-settings-width > input {
+  width: 100%;
+  grid-column: 1 / -1;
+  min-height: var(--site-space-6);
+  accent-color: var(--site-accent);
+}
+
+.site-settings-width > output {
+  color: var(--site-muted);
+  font-size: var(--site-text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.site-settings-reset {
+  justify-self: start;
+  padding: var(--site-space-3) var(--site-space-4);
+  border-radius: var(--site-radius-md);
+  background: var(--site-panel);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-settings-reset:hover {
+  background: var(--site-card-hover);
+}
+
+.site-settings :is(input, select, button):focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+.site-settings-width-reference {
+  position: absolute;
+  width: var(--site-pane-default-width);
+  min-width: var(--site-pane-min-width);
+  max-width: var(--site-pane-max-width);
+  height: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-settings-link {
+  color: var(--site-muted);
+  font-size: var(--site-text-sm);
+}
+
+.site-settings-link:hover {
+  color: var(--site-accent);
+}
+
+@media (min-width: 640px) {
+  .site-settings-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

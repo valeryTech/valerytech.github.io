@@ -9,7 +9,7 @@ const html = (route) => readFileSync(path.join(output, route, 'index.html'), 'ut
 const attr = (name, value) => new RegExp(`${name}=(?:"${value}"|'${value}'|${value}(?=[\\s>]))`);
 
 test('Hextra renders one main landmark and title on the primary page types', () => {
-  for (const route of ['', 'about', 'ai', 'engineering/topics/api', 'privacy', 'agent-map']) {
+  for (const route of ['', 'about', 'ai', 'engineering/topics/api', 'privacy', 'agent-map', 'settings']) {
     const document = html(route);
     assert.match(document, /hextra-nav-container/);
     assert.match(document, /hextra-search-dialog/);

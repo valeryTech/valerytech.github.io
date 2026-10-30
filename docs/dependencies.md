@@ -30,6 +30,11 @@ v5. The PostHog upload action stays on v2 with its CLI version updated separatel
 
 ## Compatibility decisions
 
+- Preference cookies use [js-cookie 3.0.8](https://github.com/js-cookie/js-cookie/releases/tag/v3.0.8),
+  bundled through Hugo. One site-owned adapter supplies root path, SameSite,
+  HTTPS security, expiration, and nonfatal handling when cookies are unavailable.
+  The library replaces handwritten font-cookie parsing and stores pane widths.
+
 - [Node 26.13.0 is an LTS release](https://nodejs.org/en/blog/release/v26.13.0).
   Its Linux binaries require `libatomic`, so the container explicitly installs
   `libatomic1`. Local containers and CI select the same Node/npm versions.

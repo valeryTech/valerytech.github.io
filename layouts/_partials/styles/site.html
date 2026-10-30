@@ -1,6 +1,6 @@
 {{- /* Explicit order keeps tokens first and avoids browser-side CSS imports. */ -}}
 {{- $styles := slice -}}
-{{- range slice "tokens" "base" "shell" "navigation" "components" "collections" -}}
+{{- range slice "tokens" "base" "shell" "panes" "navigation" "components" "collections" "settings" -}}
   {{- $styles = $styles | append (resources.Get (printf "css/site/%s.css" .)) -}}
 {{- end -}}
 {{- return ($styles | resources.Concat "css/custom.css") -}}

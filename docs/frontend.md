@@ -11,7 +11,7 @@ boundaries, and visual checks.
 | --- | --- |
 | `config/_default/` | Hugo/theme settings, menus, environment integration |
 | `assets/css/site/tokens.css` | Visual scale, theme colors, shared layout contracts |
-| `data/ui.json` | Font choices/cookie compatibility and outline reading policy |
+| `data/ui.json` | Settings choices/defaults, preference cookies, pane keyboard step, outline policy |
 | `data/callouts.json` | Callout types, importer aliases, legacy icons, fallback style |
 | `data/analytics.json` | Engagement/completion thresholds and sampling interval |
 | `.infra/versions.env` | Shared toolchain versions |
@@ -47,14 +47,19 @@ configuration and initializes the feature modules once per document:
 
 | Module | Responsibility |
 | --- | --- |
-| `navigation/index.mjs` | Coordinate outline, accordion, and sticky context |
+| `navigation/index.mjs` | Coordinate pane resizing, outline, accordion, and sticky context |
+| `navigation/resize.mjs` | Independent pane widths and drag/keyboard controls |
 | `navigation/outline.mjs` | Reading position, heading selection, ancestor states |
 | `navigation/sticky-context.mjs` | Measure wrapping rows and place pinned context |
 | `navigation/accordion.mjs` | Open one top-level sidebar group at a time |
 | `navigation/hierarchy.mjs` | Shared DOM ancestry and heading ID decoding |
 | `preferences/font.mjs` | Build the font control and persist a selected choice |
-| `preferences/font-settings.mjs` | Preference normalization and cookie parsing |
-| `preferences/restore-font.js` | Restore the preference inline before first paint |
+| `preferences/font-settings.mjs` | Font normalization and legacy value compatibility |
+| `preferences/cookies.mjs` | Shared js-cookie adapter and cookie attributes |
+| `preferences/panes.mjs` | Pane preference validation, cookie storage, legacy migration |
+| `preferences/display.mjs` | Normalize and apply breadcrumbs, reading size/spacing, parent stacks |
+| `preferences/settings.mjs` | Connect the settings form to the preference modules |
+| `preferences/restore-preferences.js` | Restore font and display preferences before first paint |
 | `analytics/interactions.mjs` | Translate user actions into analytics events |
 | `analytics/engagement.mjs` | Visible reading time, engagement, page-exit summary |
 
@@ -68,6 +73,51 @@ fixed depth. Sticky layout and highlighting use the same traversal. CSS supplies
 resolved scroll clearance and compact-viewport policy; JavaScript measures
 geometry rather than duplicating spacing or media queries.
 
+Pane sizing consumes CSS minimum/maximum widths and the article column's minimum
+width. Saved choices use the `navigation.resize.cookie` configuration and are
+clamped to the available space without discarding the preferred widths when a
+window narrows. Storage failures leave the controls usable. Resize handles are
+focusable vertical separators; arrow keys move the divider, Home/End select its
+limits, Enter or double-click resets one pane, and Escape cancels a drag. Mobile
+drawers retain their full width and have no resize handle. The outline's sticky
+frame contains its handle outside the clipped scroll area.
+
+Font, display, and pane preferences use [js-cookie](https://github.com/js-cookie/js-cookie)
+through one shared adapter. Cookie names and lifetimes remain with their owning
+feature in `data/ui.json`; all currently expire after one year. Cookies use
+`Path=/`, `SameSite=Lax`, and `Secure` on HTTPS, with no Domain attribute. The
+library is bundled locally, including the font's early restoration script.
+
+The `navigation-widths` cookie stores only numeric sidebar/outline widths. It
+takes precedence over the old `site-navigation-widths` local-storage entry.
+Migration deletes the legacy entry only after verifying the cookie was saved.
+Resetting removes the cookie and legacy entry so old sizes cannot reappear.
+Rejected cookies leave the controls usable and preserve legacy data for a later
+migration attempt.
+
+## Settings page and defaults
+
+`/settings/` is linked in the footer and document sidebar controls. Its Hugo
+shortcode renders labeled native controls from the same `data/ui.json` choices
+used by the preference modules. The page offers font, article text size, line
+spacing, breadcrumb behavior, parent stacks, and both navigation widths. Changes
+apply immediately, and the footer font selector stays in sync. Reset removes
+the three preference cookies and any legacy pane-width entry.
+
+Site defaults live beside each setting's options in `ui.display` and `ui.fonts`.
+The settings page edits this browser's overrides. The display cookie stores only
+values that differ from the configured defaults. Unknown values fall back to
+those defaults; validation rejects options without CSS support and cookie-name
+collisions. Preference storage failures are reported on the settings page while
+the controls remain usable.
+
+Breadcrumbs support `sticky`, `static`, and `hidden`. Only a sticky breadcrumb
+contributes to heading scroll clearance. A display-change event requests new
+sticky measurements, including when pinning changes without a size change.
+Small-viewport limits continue to take precedence over enabling parent stacks.
+Reading text size and line spacing use CSS tokens; pane slider bounds are
+measured from the same CSS width tokens as the drag controls.
+
 `assets/js/core/toc-scroll.js` is intentionally an empty override of Hextra's
 observer. Hextra concatenates core scripts without module bundling, so the site
 outline is initialized from the bundled navigation feature. Keep the override
@@ -76,7 +126,7 @@ when upgrading to avoid running two outline controllers.
 ## Dependencies and events
 
 UI modules own visible behavior; analytics owns event vocabulary and delivery.
-The font control emits `site:font-change` with a normalized preference. Analytics
+Font changes emit `site:font-change` with a normalized preference. Analytics
 listens and emits `display_preference_changed`; the control works independently
 of analytics availability.
 
@@ -93,7 +143,7 @@ authoring syntax independent of the selected theme.
 
 Retain native links, headings, tables, and disclosure controls. Breadcrumbs,
 section navigation, and content remain useful without the deferred bundle. The
-inline font script restores a choice independently of the deferred selector.
+inline preference script restores choices independently of the deferred controls.
 
 Run checks that exercise the changed behavior:
 

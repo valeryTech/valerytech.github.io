@@ -24,6 +24,26 @@ test("callout aliases cannot silently fall back after a configuration typo", () 
   assert.throws(() => validateUiConfig(config), /unknown type warnign/);
 });
 
+test("pane resizing requires a legacy storage key and a usable keyboard step", () => {
+  const config = readUiConfig();
+  config.ui.navigation.resize.legacyStorageKey = "";
+  assert.throws(() => validateUiConfig(config), /resize legacyStorageKey/);
+  config.ui.navigation.resize.legacyStorageKey = "panes";
+  config.ui.navigation.resize.keyboardStepPixels = 0;
+  assert.throws(() => validateUiConfig(config), /resize keyboardStepPixels/);
+});
+
+test("preference cookies require separate valid names and positive lifetimes", () => {
+  const config = readUiConfig();
+  config.ui.navigation.resize.cookie.name = config.ui.fonts.cookie.name;
+  assert.throws(() => validateUiConfig(config), /cookie names must be distinct/);
+  config.ui.navigation.resize.cookie.name = "bad;name";
+  assert.throws(() => validateUiConfig(config), /cookie name must be a valid identifier/);
+  config.ui.navigation.resize.cookie.name = "panes";
+  config.ui.navigation.resize.cookie.maxAgeSeconds = 0;
+  assert.throws(() => validateUiConfig(config), /cookie maxAgeSeconds must be positive/);
+});
+
 test("reading and engagement thresholds reject unusable or contradictory values", () => {
   for (const fraction of [-1, 0, 1, Infinity]) {
     const config = readUiConfig();
@@ -36,4 +56,19 @@ test("reading and engagement thresholds reject unusable or contradictory values"
   config.analytics.engagement.completedVisiblePercent = 100;
   config.analytics.engagement.tickMilliseconds = 0;
   assert.throws(() => validateUiConfig(config), /tickMilliseconds must be a positive integer/);
+});
+
+test("display controls require supported options and coherent defaults", () => {
+  const config = readUiConfig();
+  config.ui.display.breadcrumbs.default = "unknown";
+  assert.throws(() => validateUiConfig(config), /breadcrumbs default/);
+  config.ui.display.breadcrumbs.default = "sticky";
+  config.ui.display.textSize.options.push({ value: "huge", label: "Huge" });
+  assert.throws(() => validateUiConfig(config), /textSize option must have styling support/);
+  config.ui.display.textSize.options.pop();
+  config.ui.display.pinAncestors.default = "yes";
+  assert.throws(() => validateUiConfig(config), /pinAncestors default must be boolean/);
+  config.ui.display.pinAncestors.default = true;
+  config.ui.display.cookie.name = config.ui.fonts.cookie.name;
+  assert.throws(() => validateUiConfig(config), /cookie names must be distinct/);
 });

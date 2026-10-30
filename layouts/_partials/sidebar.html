@@ -6,7 +6,7 @@
   {{- $desktopClass = cond (.displayPlaceholder | default false) "hx:md:hidden hx:xl:block" "hx:md:hidden" -}}
   {{- $page.Store.Set "enableFooterSwitches" true -}}
 {{- end -}}
-<aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $desktopClass }}" aria-label="Site navigation">
+<aside id="site-navigation" {{ if $docs }}data-site-pane="sidebar"{{ end }} class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $desktopClass }}" aria-label="Site navigation">
   <div class="site-sidebar-scroll hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
     <nav class="mobile-site-nav hx:md:hidden" aria-label="Collections">
       {{ range site.Menus.main }}
@@ -15,7 +15,8 @@
     </nav>
     {{ if $docs }}{{ partial "sidebar/section-menu.html" $page }}{{ end }}
   </div>
-  <div class="site-sidebar-controls hx:mx-4 hx:py-4 {{ if $disabled }}hx:md:hidden{{ end }}">
+  <div class="site-sidebar-controls hx:flex hx:items-center hx:justify-between hx:gap-2 hx:mx-4 hx:py-4 {{ if $disabled }}hx:md:hidden{{ end }}">
     {{ partial "theme-toggle.html" }}
+    <a class="site-settings-link" href="{{ "settings/" | relURL }}">Settings</a>
   </div>
 </aside>

@@ -6,6 +6,7 @@
 .homepage-layout {
   display: grid;
   gap: var(--site-space-10);
+  margin-block-start: var(--site-space-8);
 }
 
 .homepage-layout > * {

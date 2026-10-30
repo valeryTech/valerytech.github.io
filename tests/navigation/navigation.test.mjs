@@ -47,8 +47,8 @@ async function pageFor(t, url = base + route, width = 1440) {
   return page;
 }
 
-async function screenshot(page, name) {
-  if (screenshots) await page.screenshot({ path: path.join(screenshots, `${name}.png`) });
+async function screenshot(page, name, options = {}) {
+  if (screenshots) await page.screenshot({ ...options, path: path.join(screenshots, `${name}.png`) });
 }
 
 async function readAt(page, id) {
@@ -122,6 +122,308 @@ test('font choices persist and restore independently of the deferred controls', 
   assert.equal(await page.locator('#fontPreference').count(), 0);
   assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
   assert.match(await page.locator('body').evaluate(element => getComputedStyle(element).fontFamily), /Jost/);
+});
+
+async function dragPane(page, handle, distance) {
+  const box = await handle.boundingBox();
+  const x = box.x + box.width / 2;
+  const y = box.y + Math.min(box.height / 2, 160);
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  await page.mouse.move(x + distance, y, { steps: 8 });
+  await page.mouse.up();
+}
+
+async function paneWidths(page) {
+  return page.locator('[data-site-pane]').evaluateAll(panes => Object.fromEntries(panes.map(pane => [pane.dataset.sitePane, Math.round(pane.getBoundingClientRect().width)])));
+}
+
+async function paneCookie(page) {
+  return (await page.context().cookies()).find(cookie => cookie.name === 'navigation-widths');
+}
+
+async function savedPaneWidths(page) {
+  const cookie = await paneCookie(page);
+  return cookie ? JSON.parse(decodeURIComponent(cookie.value)) : undefined;
+}
+
+async function displayCookie(page) {
+  const cookie = (await page.context().cookies()).find(cookie => cookie.name === 'display-preferences');
+  return cookie ? JSON.parse(decodeURIComponent(cookie.value)) : undefined;
+}
+
+test('site settings link opens editable reading and navigation preferences on desktop and mobile', async (t) => {
+  for (const width of [1440, 390]) {
+    const page = await pageFor(t, base + '/', width);
+    await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
+    await page.waitForURL(url => url.pathname === '/settings/');
+    const settings = page.getByRole('form', { name: 'Site settings' });
+    await settings.getByLabel('Font', { exact: true }).selectOption('jost');
+    await settings.getByLabel('Article text size').selectOption('larger');
+    await settings.getByLabel('Line spacing').selectOption('roomy');
+    await settings.getByLabel('Breadcrumbs', { exact: true }).selectOption('static');
+    await settings.getByLabel('Keep parent sections visible').uncheck();
+    await settings.getByRole('slider', { name: 'Left navigation width' }).focus();
+    await page.keyboard.press('End');
+    await settings.getByRole('slider', { name: 'Page outline width' }).focus();
+    await page.keyboard.press('Home');
+    assert.deepEqual(await savedPaneWidths(page), { sidebar: 448, outline: 192 });
+    assert.deepEqual(await displayCookie(page), { breadcrumbs: 'static', textSize: 'larger', lineSpacing: 'roomy', pinAncestors: false });
+    assert.equal(await page.locator('#fontPreference').inputValue(), 'jost');
+    await page.locator('#fontPreference').selectOption('system');
+    assert.equal(await settings.getByLabel('Font', { exact: true }).inputValue(), 'system');
+    await settings.getByLabel('Font', { exact: true }).selectOption('jost');
+    await page.reload({ waitUntil: 'networkidle' });
+    assert.equal(await settings.getByLabel('Font', { exact: true }).inputValue(), 'jost');
+    assert.equal(await settings.getByLabel('Breadcrumbs', { exact: true }).inputValue(), 'static');
+    assert.equal(await settings.getByLabel('Article text size').inputValue(), 'larger');
+    assert.equal(await settings.getByLabel('Line spacing').inputValue(), 'roomy');
+    assert.equal(await settings.getByLabel('Keep parent sections visible').isChecked(), false);
+    assert.equal(await settings.getByRole('slider', { name: 'Left navigation width' }).inputValue(), '448');
+    await page.evaluate(() => document.fonts.ready);
+    const reading = await page.locator('.site-settings-preview').evaluate(element => {
+      const style = getComputedStyle(element);
+      return { size: style.fontSize, lineHeight: style.lineHeight, font: style.fontFamily };
+    });
+    assert.equal(reading.size, '20px');
+    assert.equal(reading.lineHeight, '39px');
+    assert.match(reading.font, /Jost/);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+    const alignment = await page.evaluate(() => {
+      const crumb = document.querySelector('.breadcrumb').getBoundingClientRect();
+      const settings = document.getElementById('site-settings').getBoundingClientRect();
+      return Math.abs(crumb.left - settings.left) < 1 && Math.abs(crumb.right - settings.right) < 1;
+    });
+    assert.ok(alignment, 'The settings form and breadcrumb share one content column');
+    await screenshot(page, `settings-${width}-light`, { fullPage: true });
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.waitForFunction(() => document.documentElement.classList.contains('dark'));
+    await screenshot(page, `settings-${width}-dark`, { fullPage: true });
+  }
+});
+
+test('breadcrumb settings control visibility and sticky clearance on deeply linked pages', async (t) => {
+  const page = await pageFor(t, base + '/settings/');
+  const id = 'level-3--slices-and-state-snapshots';
+  let stickyClearance;
+  for (const mode of ['sticky', 'static', 'hidden']) {
+    if (mode !== 'sticky') await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+    await page.getByRole('form', { name: 'Site settings' }).getByLabel('Breadcrumbs', { exact: true }).selectOption(mode);
+    await page.goto(base + route + '#' + id, { waitUntil: 'networkidle' });
+    const layout = await page.evaluate(id => {
+      const heading = document.getElementById(id);
+      const crumb = document.querySelector('.site-breadcrumb-sticky');
+      return { headingTop: heading.getBoundingClientRect().top, clearance: parseFloat(getComputedStyle(heading).scrollMarginTop), navbarBottom: document.querySelector('.hextra-nav-container').getBoundingClientRect().bottom, position: getComputedStyle(crumb).position, display: getComputedStyle(crumb).display, crumbBottom: crumb.getBoundingClientRect().bottom, pinnedHeight: parseFloat(document.documentElement.style.getPropertyValue('--site-breadcrumb-height')) };
+    }, id);
+    assert.ok(layout.headingTop >= layout.navbarBottom + 16, mode + ': heading stays clear of the navbar');
+    if (mode === 'sticky') {
+      stickyClearance = layout.clearance;
+      assert.equal(layout.position, 'sticky');
+      assert.ok(layout.pinnedHeight > 0);
+      assert.ok(layout.headingTop >= layout.crumbBottom - 1);
+    } else {
+      assert.equal(layout.pinnedHeight, 0);
+      assert.ok(layout.clearance < stickyClearance, mode + ': no space is reserved for an unpinned breadcrumb');
+      if (mode === 'static') {
+        assert.equal(layout.position, 'relative');
+        assert.ok(layout.crumbBottom < 0);
+      } else assert.equal(layout.display, 'none');
+    }
+  }
+});
+
+test('reading and parent-stack preferences restore before the deferred bundle and reset together', async (t) => {
+  const page = await pageFor(t, base + '/settings/');
+  const settings = page.getByRole('form', { name: 'Site settings' });
+  await settings.getByLabel('Font', { exact: true }).selectOption('jost');
+  await settings.getByLabel('Breadcrumbs', { exact: true }).selectOption('hidden');
+  await settings.getByLabel('Article text size').selectOption('large');
+  await settings.getByLabel('Keep parent sections visible').uncheck();
+  await settings.getByRole('slider', { name: 'Left navigation width' }).focus();
+  await page.keyboard.press('End');
+  await page.goto(base + route, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('.site-sticky-summary').first().evaluate(element => getComputedStyle(element).position), 'relative');
+  assert.equal(await page.locator('.hextra-toc .site-toc-parent').first().evaluate(element => getComputedStyle(element).position), 'relative');
+  await page.route(/\/js\/custom[^/]*\.js(?:\?|$)/, request => request.abort());
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.equal(await page.locator('html').getAttribute('data-breadcrumbs'), 'hidden');
+  assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
+  assert.equal(await page.locator('html').getAttribute('data-pin-ancestors'), 'false');
+  assert.equal(await page.locator('.article-content > p:not(.page-description)').first().evaluate(element => getComputedStyle(element).fontSize), '18px');
+  await page.unroute(/\/js\/custom[^/]*\.js(?:\?|$)/);
+  await page.context().addCookies([{ name: 'unrelated', value: 'keep', url: base }]);
+  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await settings.getByRole('button', { name: 'Reset to site defaults' }).click();
+  assert.equal(await settings.getByLabel('Font', { exact: true }).inputValue(), 'system');
+  assert.equal(await settings.getByLabel('Breadcrumbs', { exact: true }).inputValue(), 'sticky');
+  assert.equal(await settings.getByLabel('Article text size').inputValue(), 'standard');
+  assert.equal(await settings.getByLabel('Keep parent sections visible').isChecked(), true);
+  assert.equal(await settings.getByRole('slider', { name: 'Left navigation width' }).inputValue(), '256');
+  assert.equal(await settings.getByRole('status', { name: 'Settings status' }).textContent(), 'Site defaults restored.');
+  const cookies = await page.context().cookies();
+  assert.ok(cookies.some(cookie => cookie.name === 'unrelated'));
+  assert.ok(cookies.every(cookie => !['font-preference', 'navigation-widths', 'display-preferences'].includes(cookie.name)));
+  await page.goto(base + route, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('html').getAttribute('data-breadcrumbs'), 'sticky');
+  assert.equal(await page.locator('.site-sticky-summary').first().evaluate(element => getComputedStyle(element).position), 'sticky');
+  assert.deepEqual(await paneWidths(page), { sidebar: 256, outline: 256 });
+});
+
+test('settings remain usable when cookies are blocked and explain unsaved changes', async (t) => {
+  const page = await pageFor(t, base + '/settings/');
+  await page.context().addInitScript(() => Object.defineProperty(document, 'cookie', {
+    get() { throw new DOMException('Cookies blocked', 'SecurityError'); },
+    set() { throw new DOMException('Cookies blocked', 'SecurityError'); },
+  }));
+  await page.reload({ waitUntil: 'networkidle' });
+  const settings = page.getByRole('form', { name: 'Site settings' });
+  await settings.getByLabel('Breadcrumbs', { exact: true }).selectOption('hidden');
+  assert.equal(await page.locator('html').getAttribute('data-breadcrumbs'), 'hidden');
+  assert.match(await settings.getByRole('status', { name: 'Settings status' }).textContent(), /could not save/);
+  await settings.getByLabel('Font', { exact: true }).selectOption('jost');
+  assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
+  assert.match(await settings.getByRole('status', { name: 'Settings status' }).textContent(), /could not save/);
+});
+
+test('both navigation panes resize independently and keep their widths across pages and reloads', async (t) => {
+  const page = await pageFor(t);
+  const left = page.getByRole('separator', { name: 'Site navigation width' });
+  const right = page.getByRole('separator', { name: 'Page outline width' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 256, outline: 256 });
+  await dragPane(page, left, 80);
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 256 });
+  await dragPane(page, right, -72);
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+  assert.equal(await right.getAttribute('aria-valuenow'), '328');
+  assert.deepEqual(await savedPaneWidths(page), { sidebar: 336, outline: 328 });
+  const cookie = await paneCookie(page);
+  assert.equal(cookie.path, '/');
+  assert.equal(cookie.sameSite, 'Lax');
+  assert.equal(cookie.secure, new URL(base).protocol === 'https:');
+  assert.ok(cookie.expires > Date.now() / 1000 + 86400);
+  assert.equal(await page.evaluate(() => localStorage.getItem('site-navigation-widths')), null);
+  await page.goto(base + framework, { waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+  await page.evaluate(() => localStorage.setItem('site-navigation-widths', JSON.stringify({ sidebar: 448, outline: 448 })));
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+  await screenshot(page, 'resized-panes');
+  await right.dblclick();
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 256 });
+  await left.focus();
+  await page.keyboard.press('Enter');
+  assert.deepEqual(await paneWidths(page), { sidebar: 256, outline: 256 });
+  assert.equal(await paneCookie(page), undefined);
+  assert.equal(await page.evaluate(() => localStorage.getItem('site-navigation-widths')), null);
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 256, outline: 256 });
+});
+
+test('existing pane widths migrate to a cookie and remain after legacy storage is cleared', async (t) => {
+  const page = await pageFor(t);
+  await page.evaluate(() => localStorage.setItem('site-navigation-widths', JSON.stringify({ sidebar: 336, outline: 328 })));
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+  assert.deepEqual(await savedPaneWidths(page), { sidebar: 336, outline: 328 });
+  assert.equal(await page.evaluate(() => localStorage.getItem('site-navigation-widths')), null);
+  await page.evaluate(() => localStorage.clear());
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+});
+
+test('pane dividers support the keyboard, cancel dragging and keep resized sticky stacks usable', async (t) => {
+  const page = await pageFor(t);
+  const left = page.getByRole('separator', { name: 'Site navigation width' });
+  const right = page.getByRole('separator', { name: 'Page outline width' });
+  await left.focus();
+  await page.keyboard.press('ArrowRight');
+  await right.focus();
+  await page.keyboard.press('ArrowLeft');
+  assert.deepEqual(await paneWidths(page), { sidebar: 272, outline: 272 });
+  await page.keyboard.press('Home');
+  assert.equal((await paneWidths(page)).outline, 192);
+  await page.keyboard.press('End');
+  assert.equal((await paneWidths(page)).outline, 448);
+  await left.focus();
+  await page.keyboard.press('Home');
+  const box = await left.boundingBox();
+  await page.mouse.move(box.x + box.width / 2, box.y + 140);
+  await page.mouse.down();
+  await page.mouse.move(box.x + 80, box.y + 140);
+  await page.keyboard.press('Escape');
+  await page.mouse.up();
+  assert.deepEqual(await paneWidths(page), { sidebar: 192, outline: 448 });
+  assert.equal(await page.locator('.site-resizing-panes').count(), 0);
+  await right.focus();
+  await page.keyboard.press('Home');
+  await page.locator('.site-sidebar-scroll').evaluate(panel => { panel.scrollTop = panel.scrollHeight; });
+  await readAt(page, 'level-3--slices-and-state-snapshots');
+  await page.waitForFunction(() => {
+    for (const selector of ['.site-sidebar-scroll', '.site-toc-scroll']) {
+      const panel = document.querySelector(selector);
+      const rows = [...panel.querySelectorAll('.site-pinned')].filter(row => row.getBoundingClientRect().height);
+      for (let i = 1; i < rows.length; i++) if (rows[i].getBoundingClientRect().top < rows[i - 1].getBoundingClientRect().bottom - 1) return false;
+    }
+    return true;
+  });
+  await screenshot(page, 'resized-sticky-stacks');
+});
+
+test('saved pane widths fit narrow windows without changing the mobile drawer or losing preferences', async (t) => {
+  const page = await pageFor(t);
+  await page.getByRole('separator', { name: 'Site navigation width' }).focus();
+  await page.keyboard.press('End');
+  await page.getByRole('separator', { name: 'Page outline width' }).focus();
+  await page.keyboard.press('End');
+  await page.reload({ waitUntil: 'networkidle' });
+  for (const width of [1280, 820, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth && document.querySelector('.site-article-column').getBoundingClientRect().width >= 384);
+    if (width < 1280) assert.equal(await page.getByRole('separator', { name: /width$/ }).count(), 1);
+  }
+  await page.setViewportSize({ width: 390, height: 900 });
+  assert.equal(await page.getByRole('separator', { name: /width$/ }).count(), 0);
+  await page.getByRole('button', { name: 'Menu', exact: true }).click();
+  assert.equal((await paneWidths(page)).sidebar, 390);
+  await page.getByRole('button', { name: 'Menu', exact: true }).click();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.waitForFunction(() => [...document.querySelectorAll('[data-site-pane]')].every(pane => Math.round(pane.getBoundingClientRect().width) === 448));
+  assert.deepEqual(await savedPaneWidths(page), { sidebar: 448, outline: 448 });
+});
+
+test('pane resizing works with malformed cookies and retains legacy settings if cookies are blocked', async (t) => {
+  const page = await pageFor(t);
+  await page.context().addCookies([{ name: 'navigation-widths', value: encodeURIComponent('{broken'), url: base }]);
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 256, outline: 256 });
+  await page.context().clearCookies();
+  await page.evaluate(() => localStorage.setItem('site-navigation-widths', JSON.stringify({ sidebar: 336, outline: 328 })));
+  await page.context().addInitScript(() => {
+    Object.defineProperty(document, 'cookie', {
+      get() { throw new DOMException('Cookies blocked', 'SecurityError'); },
+      set() { throw new DOMException('Cookies blocked', 'SecurityError'); },
+    });
+  });
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
+  assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('site-navigation-widths'))), { sidebar: 336, outline: 328 });
+  await page.getByRole('separator', { name: 'Site navigation width' }).focus();
+  await page.keyboard.press('ArrowRight');
+  assert.equal((await paneWidths(page)).sidebar, 352);
+});
+
+test('settings remain understandable when JavaScript is unavailable', async (t) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 } });
+  t.after(() => context.close());
+  const page = await context.newPage();
+  const response = await page.goto(base + '/settings/');
+  assert.equal(response.status(), 200);
+  const settings = page.getByRole('form', { name: 'Site settings' });
+  assert.equal(await settings.getByLabel('Font', { exact: true }).isDisabled(), true);
+  assert.equal(await page.getByText('Enable JavaScript to change your site settings.').isVisible(), true);
 });
 
 test('a deeply nested sidebar opens the full current path and marks its parent groups', async (t) => {

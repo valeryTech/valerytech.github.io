@@ -3019,6 +3019,10 @@
       "source": "content/research/selected-implementations.md",
       "title": "Selected implementations"
     },
+    "/settings": {
+      "source": "content/settings.md",
+      "title": "Site settings"
+    },
     "/system-design": {
       "source": "content/system-design/_index.md",
       "title": "System Design"
