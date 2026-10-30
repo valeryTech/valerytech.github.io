@@ -38,15 +38,52 @@ export function initStickyNavigation() {
   }
   const sidebarPaths = new Map([...summaries, ...sidebarLinks].map(element => [element, sidebarParents(element)]));
   const outlinePaths = new Map(outlineLinks.map(link => [link, outlineParents(link)]));
+  const panes = [
+    { panel: tree?.closest('.site-sidebar-scroll'), root, rows: summaries },
+    { panel: outline?.closest('.site-toc-scroll'), root: title, rows: outlineLinks.filter(link => link.classList.contains('site-toc-parent')) },
+  ].filter(pane => pane.panel && pane.root);
+  let pinsScheduled = false;
+
+  function updatePins() {
+    pinsScheduled = false;
+    for (const { panel, root, rows } of panes) {
+      const top = panel.getBoundingClientRect().top + (parseFloat(getComputedStyle(panel).paddingTop) || 0);
+      const pinned = root.getBoundingClientRect().height ? [root] : [];
+      for (const row of rows) {
+        if ((sidebarPaths.get(row) || []).some(parent => !parent.parentElement.open)) continue;
+        const style = getComputedStyle(row);
+        const offset = parseFloat(style.getPropertyValue('--site-sticky-offset')) || 0;
+        const rect = row.getBoundingClientRect();
+        if (style.position === 'sticky' && rect.height && Math.abs(rect.top - top - offset) < 1) pinned.push(row);
+      }
+      pinned.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+      const visible = new Set(pinned);
+      for (const row of [root, ...rows]) {
+        row.classList.toggle('site-pinned', visible.has(row));
+        row.classList.toggle('site-pinned-first', row === pinned[0]);
+        row.classList.toggle('site-pinned-last', row === pinned.at(-1));
+      }
+    }
+  }
+
+  function schedulePins() {
+    if (pinsScheduled) return;
+    pinsScheduled = true;
+    requestAnimationFrame(updatePins);
+  }
+
+  function rowHeight(element) {
+    return element ? element.getBoundingClientRect().height + (parseFloat(getComputedStyle(element).marginBottom) || 0) : 0;
+  }
 
   function measure() {
     scheduled = false;
     const breadcrumbHeight = breadcrumb?.getBoundingClientRect().height || 0;
     document.documentElement.style.setProperty('--site-breadcrumb-height', `${breadcrumbHeight}px`);
-    const rootHeight = root?.getBoundingClientRect().height || 0;
-    const titleHeight = title?.getBoundingClientRect().height || 0;
+    const rootHeight = rowHeight(root);
+    const titleHeight = rowHeight(title);
     const stackParents = !window.matchMedia('(max-height: 500px)').matches;
-    const heights = new Map([...summaries, ...outlineLinks].map(element => [element, element.getBoundingClientRect().height]));
+    const heights = new Map([...summaries, ...outlineLinks].map(element => [element, rowHeight(element)]));
     for (const [element, parents] of [...sidebarPaths, ...outlinePaths]) {
       const base = sidebarPaths.has(element) ? rootHeight : titleHeight;
       const offset = (stackParents ? parents : []).reduce((sum, parent) => sum + heights.get(parent), base);
@@ -54,6 +91,7 @@ export function initStickyNavigation() {
       element.style.setProperty('--site-sticky-layer', `${100 - parents.length}`);
     }
     root?.querySelector('a')?.style.setProperty('--site-sticky-offset', '0px');
+    updatePins();
     document.dispatchEvent(new Event('site:navigation-layout'));
   }
 
@@ -80,6 +118,9 @@ export function initStickyNavigation() {
     if (element) observer.observe(element);
   }
   tree?.addEventListener('toggle', scheduleMeasure, true);
+  for (const { panel } of panes) panel.addEventListener('scroll', schedulePins, { passive: true });
+  tree?.closest('.hextra-sidebar-container')?.addEventListener('transitionend', schedulePins);
+  window.addEventListener('scroll', schedulePins, { passive: true });
   document.addEventListener('site:outline-change', scheduleMeasure);
   window.addEventListener('resize', scheduleMeasure);
   window.addEventListener('load', () => { measure(); revealHash(); });

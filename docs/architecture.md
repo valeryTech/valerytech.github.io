@@ -55,6 +55,9 @@ each level sits below its parents, including after resizing or changing fonts.
 Heading links account for the breadcrumb height, and outline scrolling keeps
 the active heading below its parent stack. Short viewports retain the collection
 and outline title without stacking all parent rows.
+The breadcrumb and pinned stacks use filled surfaces with rounded outer corners,
+thin gaps between parent rows, and space below the top bar. Unpinned tree labels
+retain their normal appearance.
 
 The importer remains independent of the theme. Its `callout context/title/icon`
 output is accepted by `layouts/_shortcodes/callout.html`, which maps severity and

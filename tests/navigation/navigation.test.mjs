@@ -93,8 +93,8 @@ test('scrolling a long sidebar keeps its collection and parent section controls 
     assert.deepEqual(context.parents.map(parent => parent.label), ['Other', 'Methodology v1.3', 'Usage']);
     assert.ok(context.rootTop >= context.top);
     assert.ok(context.parents.every(parent => parent.top >= context.rootBottom - 1 && parent.bottom <= context.bottom));
-    assert.ok(Math.abs(context.parents[0].top - context.rootBottom) < 1);
-    assert.ok(Math.abs(context.parents[1].top - context.parents[0].bottom) < 1);
+    assert.ok(Math.abs(context.parents[0].top - context.rootBottom - 4) < 1);
+    assert.ok(Math.abs(context.parents[1].top - context.parents[0].bottom - 4) < 1);
     await screenshot(page, `sticky-sidebar-${width}`);
     const parent = page.locator('.section-nav .sidebar-group.depth-1.active-ancestor > details');
     await parent.locator(':scope > summary').click();
@@ -115,7 +115,7 @@ test('breadcrumbs stay below the top bar and deep-linked headings stay below the
     }, id);
     const bounds = await page.locator('.breadcrumb').boundingBox();
     const header = await page.locator('.hextra-nav-container').boundingBox();
-    assert.ok(Math.abs(bounds.y - header.y - header.height) < 1);
+    assert.ok(Math.abs(bounds.y - header.y - header.height - 8) < 1);
     assert.ok(await page.evaluate(() => scrollY > 500));
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await screenshot(page, `sticky-breadcrumb-${width}`);
