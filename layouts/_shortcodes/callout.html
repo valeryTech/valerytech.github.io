@@ -15,8 +15,9 @@
   "error" "hx:border-red-200 hx:bg-red-100 hx:text-red-900 hx:dark:border-red-200/30 hx:dark:bg-red-900/30 hx:dark:text-red-200"
   "important" "hx:border-purple-200 hx:bg-purple-100 hx:text-purple-900 hx:dark:border-purple-200/30 hx:dark:bg-purple-900/30 hx:dark:text-purple-200"
 -}}
+{{- $class := index $styles $kind | default "hx:bg-orange-50 hx:text-orange-800 hx:dark:bg-orange-400/20 hx:dark:text-orange-300" -}}
 {{- $content := .Page.RenderString .InnerDeindent -}}
 {{- with .Get "title" -}}
   {{- $content = printf "<p class=\"site-callout-title\"><strong>%s</strong></p>\n%s" (htmlEscape .) $content | safeHTML -}}
 {{- end -}}
-{{- partial "shortcodes/callout.html" (dict "content" $content "icon" $icon "class" (index $styles $kind)) -}}
+{{- partial "shortcodes/callout.html" (dict "content" $content "icon" $icon "class" (printf "site-callout %s" $class)) -}}
