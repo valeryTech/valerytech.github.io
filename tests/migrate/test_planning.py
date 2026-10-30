@@ -9,6 +9,7 @@ from scripts.migrate.config import load_config
 from scripts.migrate.planning import (
     MigrationFailed,
     build_migration_plan,
+    should_include,
     synthetic_index_frontmatter,
 )
 from tests.migrate.support import make_run, make_workspace
@@ -29,6 +30,14 @@ class PlanningTests(unittest.TestCase):
         refs = {note.target_ref for note in run.plan.notes}
         self.assertIn("system-design/topics/api", refs)
         self.assertIn("system-design/integrated-test-pages/migration-smoke", refs)
+
+    def test_subtree_exclusions_cover_all_depths_without_excluding_siblings(self) -> None:
+        includes = ("*.md", "**/*.md")
+        excludes = ("topics/coordination/**",)
+        for name in ["plan.md", "runs/status.md", "runs/pilot/review.md"]:
+            self.assertFalse(should_include(Path("topics/coordination") / name, includes, excludes))
+        self.assertTrue(should_include(Path("topics/published.md"), includes, excludes))
+        self.assertTrue(should_include(Path("topics/coordination-notes.md"), includes, excludes))
 
     def test_build_plan_skips_markdown_named_directories_but_imports_their_notes(self) -> None:
         directory = self.workspace.source_root / "system-design/topics/agents.md"

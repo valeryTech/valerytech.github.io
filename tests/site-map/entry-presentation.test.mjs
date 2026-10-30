@@ -13,16 +13,19 @@ function fixture(t) {
   t.after(() => rmSync(root, { recursive: true, force: true }));
   for (const filename of [
     'layouts/home.html', 'layouts/about/single.html', 'layouts/_shortcodes/link-card.html',
+    'layouts/_partials/main/page.html', 'layouts/partials/main/article-content.html',
     'layouts/partials/main/page-description.html', 'layouts/partials/main/content-with-description.html',
   ]) {
     mkdirSync(path.dirname(path.join(root, filename)), { recursive: true });
     copyFileSync(path.join(repository, filename), path.join(root, filename));
   }
   mkdirSync(path.join(root, 'content'), { recursive: true });
-  // Include the real theme shortcode underneath the local mount to exercise
-  // override precedence, not just a site with no competing card implementation.
+  for (const name of ['sidebar', 'toc', 'breadcrumb', 'main/docs-navigation']) {
+    writeFileSync(path.join(root, 'layouts/_partials', `${name}.html`), '');
+  }
+  // Put a competing shortcode below the local mount to exercise precedence.
   mkdirSync(path.join(root, 'theme/_shortcodes'), { recursive: true });
-  copyFileSync(path.join(repository, 'node_modules/@thulite/doks-core/layouts/_shortcodes/link-card.html'), path.join(root, 'theme/_shortcodes/link-card.html'));
+  writeFileSync(path.join(root, 'theme/_shortcodes/link-card.html'), '<p>Shadowed theme card</p>');
   writeFileSync(path.join(root, 'hugo.toml'), `
 baseURL = "https://example.org/"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
@@ -66,13 +69,14 @@ test('homepage card titles use H3 while preserving non-home headings, card nesti
   const output = fixture(t);
   const home = output('index.html');
   const ordinary = output('ordinary/index.html');
-  assert.equal((home.match(/<h3 class="card-title h5 my-0">/g) || []).length, 2);
+  assert.equal((home.match(/<h3>/g) || []).length, 2);
   assert.doesNotMatch(home, /<h5\b/);
-  assert.match(ordinary, /<h5 class="card-title h5 my-0">/);
+  assert.match(ordinary, /<h4>/);
   assert.equal((home.match(/class="card-nav(?: d-flex flex-column flex-sm-row)?"/g) || []).length, 2);
   for (const html of [home, ordinary]) {
     assert.match(html, /href="\/research\/selected-implementations\/" target="_blank"[^>]*rel="noopener"/);
-    assert.match(html, /class="card text-end w-100 fixture-card"/);
+    assert.match(html, /class="hextra-card site-link-card fixture-card"/);
+    assert.doesNotMatch(html, /Shadowed theme card/);
     assert.match(html, /Mechanism and evidence\./);
   }
 });

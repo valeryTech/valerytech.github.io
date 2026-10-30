@@ -1,8 +1,8 @@
 # Knowledge Base Publishing System
 
 This repository is the system that transforms, previews, builds, and deploys a
-Markdown-based knowledge base. It is a Hugo site built on the Thulite/Doks
-stack, with the content tree in-repo under `content/`.
+Markdown-based knowledge base. It is a Hugo site built with the Hextra
+theme, with the content tree in-repo under `content/`.
 
 The main source inputs are:
 
@@ -11,6 +11,18 @@ The main source inputs are:
 
 Generated output such as `public/` and `resources/` is disposable build
 artifact, not an authoring surface.
+
+## Theme checkout
+
+Hextra v0.13.0 is pinned as a Git submodule under `themes/hextra/`.
+After cloning or switching to this branch, initialize it before running Hugo:
+
+```bash
+git submodule update --init --recursive
+```
+
+GitHub Actions checks out the submodule automatically. Site-specific presentation
+is in `assets/css/custom.css`; Hextra's compiled CSS ships with the theme.
 
 ## Local workflow
 

@@ -78,7 +78,7 @@ function refreshHistory(root, history) {
     try {
       const archive = run('git', ['archive', revision, 'content', 'config'], root, { encoding: 'buffer' });
       run('tar', ['-x', '-C', snapshot], root, { input: archive });
-      for (const name of ['node_modules', 'layouts', 'assets', 'static', 'data']) {
+      for (const name of ['node_modules', 'themes', 'layouts', 'assets', 'static', 'data']) {
         if (existsSync(path.join(root, name))) symlinkSync(path.join(root, name), path.join(snapshot, name), 'dir');
       }
       // Use the commit's config and clock: file names alone do not determine Hugo URLs.

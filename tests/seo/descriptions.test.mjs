@@ -16,7 +16,7 @@ function fixture(t) {
     mkdirSync(path.join(root, directory), { recursive: true });
   }
   copyFileSync(path.join(repository, 'config/_default/params.toml'), path.join(root, 'config/_default/params.toml'));
-  for (const partial of ['description.html', 'validate-description.html']) {
+  for (const partial of ['description.html', 'description-value.html', 'validate-description.html']) {
     copyFileSync(path.join(repository, 'layouts/_partials/seo', partial), path.join(root, 'layouts/_partials/seo', partial));
   }
   writeFileSync(path.join(root, 'hugo.toml'), `

@@ -1,11 +1,4 @@
 {{- $pages := where site.Pages "Params.exclude_search" "!=" true -}}
-{{- with site.Params.doks.searchExclKinds -}}
-  {{- $pages = where $pages "Kind" "not in" . -}}
-{{- end -}}
-{{- with site.Params.doks.searchExclTypes -}}
-  {{- $pages = where $pages "Type" "not in" . -}}
-{{- end -}}
-
 {{- $index := slice -}}
 {{- range $id, $page := $pages -}}
   {{/* The theme inserts summaries as HTML. Keep previews short and escaped,

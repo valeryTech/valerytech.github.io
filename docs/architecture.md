@@ -1,7 +1,7 @@
 # Architecture
 
-This repository is a Hugo site built on top of the Thulite/Doks stack. Most of
-the site framework comes from mounted theme modules, while this repo owns the
+This repository is a Hugo site built with the Hextra theme. The
+base UI comes from the pinned `themes/hextra/` Git submodule, while this repo owns the
 actual content, local template overrides, and project-specific assets.
 
 ## Main Parts
@@ -12,14 +12,15 @@ actual content, local template overrides, and project-specific assets.
   mounts.
 - `layouts/` contains local template and partial overrides layered on top of
   the theme-provided layouts.
-- `assets/` contains SCSS, JavaScript, and images processed during the build.
+- `assets/` contains site CSS, JavaScript, and images processed during the build.
 - `static/` contains files copied to the final site as-is.
 - `public/` and `resources/` are generated output and build artifacts. They are
   not authoring locations.
 
 ## Ownership Boundaries
 
-The base site behavior mostly comes from Thulite/Doks modules mounted through
+The base site behavior comes from Hextra v0.13.0. Local assets, compatibility
+partials, self-hosted vendor assets, and attachment files are mounted through
 `config/_default/module.toml`. This repo mainly customizes the site in four
 places:
 
@@ -28,8 +29,32 @@ places:
 - `layouts/` for local template overrides
 - `assets/` for local styling, scripts, and images
 
-If something looks like default theme behavior, check the mounted modules first.
+If something looks like default theme behavior, check `themes/hextra/` first.
 If it looks project-specific, check these local folders.
+
+## Hextra Integration
+
+`layouts/_partials/main/page.html` supplies the Hextra page shell for the
+homepage, articles, section indexes, About, legal pages, and navigation maps.
+It uses Hextra's navbar, search dialog, table of contents, theme switcher,
+compiled CSS, and core scripts. The local sidebar retains arbitrary nesting,
+`sidebar.weight` ordering, section overview links, and reading-guide entry pages.
+Previous/next links follow that same ordering. Breadcrumbs include the complete
+Hugo ancestor chain, and headings retain targets used by imported wiki links.
+
+The importer remains independent of the theme. Its `callout context/title/icon`
+output is accepted by `layouts/_shortcodes/callout.html`, which maps severity and
+titles to Hextra callout components. Existing `card-grid` and `link-card`
+shortcodes retain their authoring syntax and use the new UI. Math is rendered by
+Hugo, with KaTeX styles and fonts served locally; FlexSearch and the optional Jost
+reading font are also served from pinned npm dependencies.
+
+The site's SEO field precedence, description validation, analytics event bus,
+legacy redirects, attachment URLs, and HTML/Markdown navigation maps remain
+site-owned. `layouts/_partials/head.html` is based on Hextra v0.13.0 with the
+site's SEO and analytics entrypoints. Review it against upstream when upgrading.
+`assets/css/custom.css` is the active local stylesheet. The old
+`assets/scss/common/_custom.scss` is not loaded by Hextra.
 
 ## Content Structure
 
@@ -80,6 +105,9 @@ section folders. For example:
   implementations. Former contribution summaries remain archived in the notes
   vault and are not imported. Their old URLs are aliases on the relevant notes.
   Private project plans, positioning work, and reviews are also excluded.
+  The active `ai/ai-system-design/research-followups-2026-10-30/` coordination
+  subtree is excluded as working material; trailing `/**` exclusions apply at
+  every nesting depth.
 
 When a Markdown file has a nonempty `description` in its front matter, its HTML
 page displays it as an introductory paragraph with inline Markdown formatting.

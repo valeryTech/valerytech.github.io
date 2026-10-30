@@ -1,0 +1,7 @@
+<div class="site-footer">
+  <p>Notes by <a href="{{ "about/" | relURL }}">Valery Yuda</a></p>
+  <nav aria-label="Footer">
+    {{ range site.Menus.footer }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+  </nav>
+  <div id="font-preference-container"></div>
+</div>

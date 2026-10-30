@@ -1,32 +1,38 @@
 [[main]]
   name = "Evaluation"
-  url = "/ai-engineering/evaluation/"
+  pageRef = "/ai-engineering/evaluation/"
   weight = 5
 
 [[main]]
   name = "AI Engineering"
-  url = "/ai-engineering/"
+  pageRef = "/ai-engineering/"
   weight = 15
 
 [[main]]
   name = "AI"
-  url = "/ai/"
+  pageRef = "/ai/"
   weight = 10
 
 [[main]]
   name = "System Design"
-  url = "/system-design/"
+  pageRef = "/system-design/"
   weight = 20
 
 [[main]]
   name = "Engineering"
-  url = "/engineering/"
+  pageRef = "/engineering/"
   weight = 30
 
 [[main]]
   name = "Projects"
-  url = "/projects/"
+  pageRef = "/projects/"
   weight = 40
+
+[[main]]
+name = "Search"
+weight = 90
+[main.params]
+type = "search"
 
 [[footer]]
   name = "Evaluation"

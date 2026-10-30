@@ -8,8 +8,9 @@ reused in CI and GitHub Pages deployment.
 
 ### Command model
 
-This site is built by Hugo, with Node/npm providing the frontend dependency
-layer used by the theme and asset pipeline.
+This site is built by Hugo with the pinned Hextra Git submodule. Node/npm
+provides analytics libraries, self-hosted search/math/font assets, and build scripts.
+Hextra ships compiled CSS, so local builds do not compile Tailwind or Bootstrap.
 
 The repo also includes a small Python subsystem for content migration. That
 tooling is isolated with `uv`, but it still runs through Docker rather than
@@ -80,13 +81,15 @@ Production builds use `resources/production/` for generated resources, while
 preview uses `resources/`. This keeps production garbage collection from deleting
 stylesheet files that the running preview has cached.
 
-The local `layouts/_partials/head/stylesheet.html` selects Dart Sass for both
-preview and production. Production still runs PostCSS, fingerprinting, and Hugo
-postprocessing; preview keeps CSS source maps. The theme's legacy Sass imports
-and dependency deprecations are silenced while other local Sass warnings remain
-visible. `assets/scss/components/_forms.scss` makes the theme's obsolete Bootstrap
-form selector extends optional for Dart Sass. Sass module conversion belongs with
-a future theme upgrade.
+The theme is pinned to Hextra v0.13.0 under `themes/hextra/`. Initialize it with
+`git submodule update --init --recursive`; CI and deployment use recursive
+submodule checkout. Hextra's compiled CSS is combined with
+`assets/css/custom.css` and fingerprinted in production. Dart Sass remains
+available in the shared toolchain but is not used by the Hextra build.
+
+FlexSearch comes from the local npm package, and KaTeX styles/fonts and Jost
+fonts are mounted into the published site. These features do not require
+build-time CDN downloads. Mermaid retains Hextra's standard optional loader.
 
 ### Repo task scripts
 

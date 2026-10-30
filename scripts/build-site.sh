@@ -19,6 +19,8 @@ build_on_host() {
   npm run test:site-map
   log "Verifying legacy URL redirects"
   npm run test:redirects
+  log "Verifying Hextra and migrated content rendering"
+  npm run test:theme
 }
 
 build_in_container() {

@@ -1,0 +1,42 @@
+{{- /* Keep the site's metadata precedence; validation scope is owned by this site. */ -}}
+{{- $policy := site.Params.seo.description -}}
+{{- $errorLevel := lower (default "warning" $policy.length.errorLevel) -}}
+{{- if not (in (slice "ignore" "warning" "error") $errorLevel) -}}
+  {{- errorf "Invalid seo.description.length.errorLevel %q; use ignore, warning, or error" $errorLevel -}}
+{{- end -}}
+{{- $summaryFallback := true -}}
+{{- if isset $policy "summaryfallback" -}}
+  {{- $summaryFallback = $policy.summaryFallback -}}
+{{- end -}}
+{{- $description := "" -}}
+{{- if .Params.seo.description -}}
+  {{- $description = .Params.seo.description -}}
+{{- else if .Description -}}
+  {{- $description = .Description -}}
+{{- else if and $summaryFallback .Summary -}}
+  {{- $description = .Summary -}}
+{{- else if and $summaryFallback .Params.summary -}}
+  {{- $description = .Params.summary -}}
+{{- else if $policy.siteParamsFallback -}}
+  {{- $description = site.Params.description -}}
+{{- end -}}
+{{- $description = $description | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- if and (ne $errorLevel "ignore") (partial "seo/validate-description.html" .) -}}
+  {{- $min := default 110 $policy.length.min -}}
+  {{- $max := default 250 $policy.length.max -}}
+  {{- $length := strings.RuneCount $description -}}
+  {{- $message := "" -}}
+  {{- if lt $length $min -}}
+    {{- $message = printf "Description too short on page '%s'. %d characters is < %d" .TranslationKey $length $min -}}
+  {{- else if gt $length $max -}}
+    {{- $message = printf "Description too long on page '%s'. %d characters is > %d" .TranslationKey $length $max -}}
+  {{- end -}}
+  {{- with $message -}}
+    {{- if eq $errorLevel "error" -}}
+      {{- errorf "%s" . -}}
+    {{- else -}}
+      {{- warnf "%s" . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $description -}}

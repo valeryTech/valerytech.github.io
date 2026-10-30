@@ -56,6 +56,8 @@ exclude = [
   "**/.DS_Store",
   "**/templates/**",
   "design-research/reassembly-map.md",
+  # Active research coordination files are not publication sources.
+  "ai-system-design/research-followups-2026-10-30/**",
 ]
 
 # Preserve the practitioner's published URL after its source moved into 01-was/.

@@ -1,12 +1,3 @@
-{{/* Put your custom <script></script> tags here */}}
-
-{{- with .FirstSection }}
-<script>
-  const sectionNavLabel = document.getElementById("offcanvasNavSectionLabel");
-  if (sectionNavLabel) sectionNavLabel.textContent = {{ .LinkTitle | jsonify | safeJS }};
-</script>
-{{- end }}
-
 {{- if hugo.IsProduction }}
   {{- with site.Params.analytics.posthogtoken }}
     {{- partial "footer/esbuild" (dict
@@ -28,15 +19,3 @@
     ) }}
   {{- end }}
 {{- end }}
-
-{{/* EXAMPLE - only load script for production
-{{ if eq (hugo.Environment) "production" -}}
-  {{ partial "footer/esbuild" (dict "src" "js/instantpage.js" "load" "async" "transpile" false) -}}
-{{ end -}}
-*/}}
-
-{{/* EXAMPLE - only load script for a page type e.g. contact or gallery
-{{ if eq .Type "gallery" -}}
-  {{ partial "footer/esbuild" (dict "src" "js/gallery.js" "load" "async" "transpile" false) -}}
-{{ end -}}
-*/}}

@@ -12,7 +12,7 @@ function fixture(t) {
   const root = mkdtempSync(path.join(tmpdir(), 'section-index-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
   for (const filename of [
-    '_default/section.html', 'partials/main/article-content.html',
+    '_default/section.html', '_partials/main/page.html', 'partials/main/article-content.html',
     'partials/main/content-with-description.html', 'partials/main/page-description.html',
     'partials/main/section-entry-page.html', 'partials/main/navigation-description.html',
     'partials/agent-map/status.html', 'partials/section-index/index.html',
@@ -22,6 +22,9 @@ function fixture(t) {
     const destination = path.join(root, 'layouts', filename);
     mkdirSync(path.dirname(destination), { recursive: true });
     copyFileSync(path.join(repository, 'layouts', filename), destination);
+  }
+  for (const name of ['sidebar', 'toc', 'breadcrumb']) {
+    writeFileSync(path.join(root, 'layouts/_partials', `${name}.html`), '');
   }
   mkdirSync(path.join(root, 'layouts/partials/sidebar'), { recursive: true });
   writeFileSync(path.join(root, 'layouts/partials/sidebar/section-menu.html'), '');

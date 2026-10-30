@@ -291,3 +291,30 @@ and [analytics](analytics.md#reports) for saved 404 reports.
 - [README.md](../README.md) for the shortest quickstart
 - [docs/infra.md](infra.md) for toolchain, Docker, CI, and deployment
 - [docs/architecture.md](architecture.md) for repo structure and content placement
+
+## Hextra theme
+
+Initialize the pinned theme after a fresh clone or branch switch:
+
+```bash
+git submodule update --init --recursive
+```
+
+`make up` imports Markdown and starts Hextra at `http://localhost:1313/`.
+`make build` runs the production build plus SEO, navigation-map, redirect,
+and Hextra integration checks. `make verify` also checks live preview routes.
+The migration regression suite can be run independently:
+
+```bash
+docker compose run --rm site uv run --frozen python -m unittest discover -s tests/migrate
+```
+
+Change the site UI in `assets/css/custom.css` and local `layouts/` overrides.
+The importer keeps the existing callout/card syntax; the theme adapters render
+it as Hextra components. Imported heading links, sidebar weights, and section
+reading guides are preserved. A trailing `/**` exclusion in the migration
+manifest excludes an entire source subtree, including nested attachments.
+
+To upgrade Hextra, check out the intended release in `themes/hextra/`, review
+local head/sidebar/heading overrides against it, run `make verify`, and commit
+the updated submodule pointer. Keep the theme pinned to a release commit.

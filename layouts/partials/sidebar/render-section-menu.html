@@ -6,7 +6,7 @@ Renders a recursive section menu starting from a page collection or menu.
 As it walks the tree, this partial:
 
     - Sets class="active" on the active list item
-    - Sets aria-current="page" on the active anchor
+    - Sets class="hextra-sidebar-active-item" aria-current="page" on the active anchor
     - Sets aria-current="true" on the ancestors of the active anchor
 
 If you feed it a single page, you must wrap the page in a slice. See examples
@@ -58,7 +58,7 @@ skipped. To override this behavior, set $skipHome to false below.
       {{- $rootIsCurrent := $currentPage.Eq . }}
       {{- $rootIsAncestor := and (not $rootIsCurrent) (in $currentPage.Ancestors .) }}
       <li class="sidebar-item sidebar-root{{ if $rootIsCurrent }} active{{ end }}{{ if $rootIsAncestor }} active-ancestor{{ end }}">
-        <a{{ if $rootIsCurrent }} aria-current="page"{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }} Overview</a>
+        <a{{ if $rootIsCurrent }} class="hextra-sidebar-active-item" aria-current="page"{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }} Overview</a>
       </li>
     {{- end }}
     {{- range $nodes }}
@@ -106,7 +106,7 @@ skipped. To override this behavior, set $skipHome to false below.
         <summary>{{ $linkContent }}</summary>
         <ul class="list-unstyled list-nested">
           <li class="sidebar-item sidebar-overview depth-{{ add $depth 1 }}{{ if $entryIsCurrent }} active{{ end }}">
-            <a{{ if $entryIsCurrent }} aria-current="page"{{ end }} href="{{ $entryPage.RelPermalink }}">{{ $entryLabel }}</a>
+            <a{{ if $entryIsCurrent }} class="hextra-sidebar-active-item" aria-current="page"{{ end }} href="{{ $entryPage.RelPermalink }}">{{ $entryLabel }}</a>
           </li>
           {{- range partial "sidebar/sort-nodes.html" $node.Page.Pages }}
             {{- if .Page.Eq $entryPage }}{{ continue }}{{ end }}
@@ -115,7 +115,7 @@ skipped. To override this behavior, set $skipHome to false below.
         </ul>
       </details>
     {{- else }}
-      <a{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ $node.Page.RelPermalink }}">{{ $linkContent }}</a>
+      <a{{ if $isCurrent }} class="hextra-sidebar-active-item" aria-current="page"{{ end }} href="{{ $node.Page.RelPermalink }}">{{ $linkContent }}</a>
     {{- end }}
   </li>
 {{- end }}

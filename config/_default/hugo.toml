@@ -1,3 +1,4 @@
+theme = "hextra"
 title = "Systems & Engineering"
 baseurl = "https://valery.tech"
 canonifyURLs = false

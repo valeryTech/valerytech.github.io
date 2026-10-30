@@ -1,17 +1,1 @@
-{{ define "main" }}
-<main class="section homepage mt-n3 pb-3" id="main-content">
-  <header class="homepage-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
-  </header>
-  {{ .Content }}
-</main>
-{{ end }}
-
-{{ define "sidebar-prefooter" }}
-  {{ if site.Params.doks.backgroundDots -}}
-  <div class="d-flex justify-content-start">
-    <div class="bg-dots"></div>
-  </div>
-  {{ end -}}
-{{ end }}
+{{ define "main" }}{{ partial "main/page.html" . }}{{ end }}

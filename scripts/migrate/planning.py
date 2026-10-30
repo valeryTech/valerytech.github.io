@@ -15,7 +15,16 @@ class MigrationFailed(RuntimeError):
 
 def matches_any(rel_path: Path, patterns: tuple[str, ...]) -> bool:
     posix = rel_path.as_posix()
-    return any(rel_path.match(pattern) or posix == pattern for pattern in patterns)
+    for pattern in patterns:
+        if rel_path.match(pattern) or posix == pattern:
+            return True
+        # pathlib's ** matches one path component here, not an entire subtree.
+        # A trailing /** explicitly includes every descendant of that directory.
+        if pattern.endswith("/**"):
+            directory = pattern[:-3]
+            if any(parent.match(directory) for parent in rel_path.parents if parent != Path(".")):
+                return True
+    return False
 
 
 def should_include(rel_path: Path, include: tuple[str, ...], exclude: tuple[str, ...]) -> bool:

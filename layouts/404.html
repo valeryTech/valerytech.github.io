@@ -1,11 +1,10 @@
 {{ define "main" }}
-<section class="section container-fluid py-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-9 col-xl-8 text-center">
-      <h1>Page not found</h1>
-      <p class="lead">The requested page does not exist or has moved.</p>
-      <a class="btn btn-primary" href="/">Return to the homepage</a>
-    </div>
-  </div>
-</section>
+<div class="hx:mx-auto hx:flex hextra-max-page-width">
+  {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+  <main id="content" class="site-not-found content">
+    <h1>Page not found</h1>
+    <p>The requested page does not exist or has moved.</p>
+    <a href="{{ "" | relURL }}">Return to the homepage</a>
+  </main>
+</div>
 {{ end }}

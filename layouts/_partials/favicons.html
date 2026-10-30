@@ -1,0 +1,16 @@
+{{- /* Use the site's own identity rather than Hextra's example favicons. */ -}}
+{{- with resources.Get "favicon.ico" -}}
+  <link rel="icon" href="{{ .RelPermalink }}" sizes="32x32">
+{{- end -}}
+{{- with resources.Get "favicon.svg" -}}
+  <link rel="icon" href="{{ .RelPermalink }}" type="image/svg+xml" id="favicon-svg">
+{{- end -}}
+{{- with resources.Get "favicon.png" -}}
+  {{- $icon := . -}}
+  {{- range slice 16 32 -}}
+    {{- $sized := $icon.Resize (printf "%dx%d" . .) -}}
+    <link rel="icon" href="{{ $sized.RelPermalink }}" type="image/png" sizes="{{ . }}x{{ . }}">
+  {{- end -}}
+  {{- $touch := .Resize "180x180" -}}
+  <link rel="apple-touch-icon" href="{{ $touch.RelPermalink }}" sizes="180x180">
+{{- end -}}

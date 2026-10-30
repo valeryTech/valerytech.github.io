@@ -19,23 +19,18 @@
     "test:seo": "node --test tests/seo/*.test.mjs",
     "test:site-map": "node --test tests/site-map/*.test.mjs",
     "test:redirects": "node --test tests/redirects/*.test.mjs",
+    "test:theme": "node --test tests/theme/*.test.mjs",
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
     "@microsoft/clarity": "^1.0.2",
-    "@tabler/icons": "^3.12.0",
-    "@thulite/doks-core": "^1.9.3",
-    "@thulite/images": "^3.3.4",
-    "@thulite/inline-svg": "^1.2.2",
-    "@thulite/seo": "^2.4.3",
     "posthog-js": "^1.434.15",
-    "thulite": "^2.6.5"
+    "flexsearch": "0.8.143",
+    "katex": "0.16.25",
+    "@fontsource/jost": "^5.2.0"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^8.0.0",
-    "autoprefixer": "^10.5.0",
     "prettier": "^3.3.3",
-    "purgecss-whitelister": "^2.4.0",
     "vite": "^8.0.16"
   },
   "engines": {

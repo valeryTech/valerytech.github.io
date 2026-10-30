@@ -88,18 +88,18 @@ export function scrollDepthBucket(percent) {
 }
 
 export function getNavigationArea(link) {
-  if (link.closest("[role='search'], .search-modal, #searchModal")) {
+  if (link.closest("[role='search'], .hextra-search-dialog, .search-modal, #searchModal")) {
     return "search";
   }
 
-  if (link.closest(".docs-toc, .toc-mobile, #TableOfContents")) {
+  if (link.closest(".hextra-toc, .docs-toc, .toc-mobile, #TableOfContents")) {
     return "table_of_contents";
   }
 
   if (link.closest(".page-nav")) return "previous_next";
-  if (link.closest(".docs-sidebar, .section-nav")) return "section_navigation";
+  if (link.closest(".hextra-sidebar-container, .docs-sidebar, .section-nav")) return "section_navigation";
   if (link.closest(".breadcrumb")) return "breadcrumb";
-  if (link.closest("header, .navbar, #offcanvasNavMain"))
+  if (link.closest("header, .hextra-nav-container, .navbar, #offcanvasNavMain"))
     return "site_navigation";
   if (link.closest("footer, .page-footer")) return "footer";
   if (link.closest("main")) return "content";
