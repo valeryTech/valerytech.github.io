@@ -330,7 +330,9 @@ npm run test:navigation
 ```
 
 The checks exercise nested section menus, current/ancestor highlights, H1–H4
-outlines, scrolling, direct heading links, and mobile/tablet navigation. To
+outlines, scrolling, direct heading links, and mobile/tablet navigation.
+The suite also verifies breadcrumb parent links and all ten callout examples
+from the System Design test catalog in light/dark and mobile layouts. To
 compare the outline with production and save review screenshots:
 
 ```bash

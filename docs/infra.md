@@ -163,7 +163,9 @@ pnpm-specific config is not part of the supported workflow.
 against `BASE_URL` (default `http://localhost:1313`). These browser checks cover
 the current page and its ancestors in the section menu, nested H1–H4 outlines,
 scroll highlighting, direct heading links, active-outline visibility, and
-mobile/tablet navigation. The static route checks in `make verify` remain
+mobile/tablet navigation. They also check short and deep breadcrumb trails and
+all ten imported callout styles in light, dark, desktop, and mobile layouts.
+The static route checks in `make verify` remain
 independent of browser installation.
 
 The page outline uses Hugo's `TableOfContents`, preserving its nested lists and

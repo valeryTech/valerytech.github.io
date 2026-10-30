@@ -162,6 +162,70 @@ test('mobile and tablet readers can navigate a multi-level page outline and the 
   }
 });
 
+test('short and deeply nested breadcrumb trails wrap on mobile and navigate to their parents', async (t) => {
+  const cases = [
+    { pathname: '/system-design/', labels: ['Home', 'System Design'], parents: ['/'] },
+    { pathname: '/system-design/frameworks/framework-iv/', labels: ['Home', 'System Design', 'Frameworks', 'Interviewing.io System Design Framework'], parents: ['/', '/system-design/', '/system-design/frameworks/'] },
+    { pathname: '/system-design/integrated-test-pages/callouts/', labels: ['Home', 'System Design', 'Migration Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
+    { pathname: route, labels: ['Home', 'AI', 'Other', 'Methodology v1.3', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai/', '/ai/other/', '/ai/other/methodology-v1-3/', '/ai/other/methodology-v1-3/usage/'] },
+  ];
+  for (const width of [1440, 390]) {
+    const page = await pageFor(t, base + cases[0].pathname, width);
+    for (const { pathname, labels, parents } of cases) {
+      await page.goto(base + pathname, { waitUntil: 'networkidle' });
+      const breadcrumb = page.getByRole('navigation', { name: 'Breadcrumb', exact: true });
+      assert.deepEqual(await breadcrumb.locator('li').allTextContents(), labels);
+      assert.deepEqual(await breadcrumb.locator('a').evaluateAll((links) => links.map((link) => new URL(link.href).pathname)), parents);
+      assert.equal(await breadcrumb.locator('[aria-current="page"]').count(), 1);
+      assert.equal(await breadcrumb.locator('[aria-current="page"] a').count(), 0);
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      if (screenshots && pathname === route) await screenshot(page, `breadcrumbs-${width}`);
+      await breadcrumb.locator('a').last().click();
+      assert.equal(new URL(page.url()).pathname, parents.at(-1));
+    }
+  }
+});
+
+test('all ten imported callout styles retain their titles, icons, lists and code in light/dark and mobile layouts', async (t) => {
+  const pathname = '/system-design/integrated-test-pages/callouts/';
+  const page = await pageFor(t, base + pathname);
+  const titles = ['Note', 'Tip', 'Caution', 'Danger', 'Important', 'Radiation hazard', 'Info', 'Question', 'Thumbup', 'Thumbdown'];
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const scheme of ['light', 'dark']) {
+      await page.emulateMedia({ colorScheme: scheme });
+      await page.waitForFunction((scheme) => document.documentElement.classList.contains('dark') === (scheme === 'dark'), scheme);
+      const boxes = await page.locator('.site-callout-title').evaluateAll((headings) => headings.map((title) => {
+        const box = title.closest('[class~="hx:overflow-x-auto"]');
+        return {
+          title: title.textContent.trim(),
+          background: getComputedStyle(box).backgroundColor,
+          icon: box.querySelector('svg')?.innerHTML,
+          list: [...box.querySelectorAll('li')].map((item) => item.textContent.trim()),
+          code: [...box.querySelectorAll('pre code')].map((code) => code.textContent.trim()),
+        };
+      }));
+      assert.deepEqual(boxes.map((box) => box.title), titles);
+      assert.ok(boxes.every((box) => box.icon && box.background !== 'rgba(0, 0, 0, 0)'));
+      assert.equal(new Set(boxes.map((box) => box.background)).size, 4);
+      // Existing source meanings are preserved: Important/Info use Note's style,
+      // while warnings and Thumbdown use Caution's style.
+      for (const title of ['Important', 'Info', 'Question', 'Thumbup']) {
+        assert.equal(boxes.find((box) => box.title === title).background, boxes[0].background);
+      }
+      for (const title of ['Radiation hazard', 'Thumbdown']) {
+        assert.equal(boxes.find((box) => box.title === title).background, boxes[2].background);
+      }
+      assert.deepEqual(boxes[2].list, ['First caution item', 'Second caution item']);
+      assert.deepEqual(boxes[3].code, ['npm create thulite@latest -- --template doks']);
+      const aliasIcons = ['Note', 'Question', 'Thumbup', 'Thumbdown'].map((title) => boxes.find((box) => box.title === title).icon);
+      assert.equal(new Set(aliasIcons).size, 4);
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await screenshot(page, `callouts-${scheme}-${width}`);
+    }
+  }
+});
+
 test('the local outline preserves the deployed outline targets and hierarchy', { skip: !reference }, async (t) => {
   for (const [index, pathname] of [route, framework].entries()) {
     const local = await pageFor(t, base + pathname);
