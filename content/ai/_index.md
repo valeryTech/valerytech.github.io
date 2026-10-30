@@ -11,7 +11,6 @@ Notes on designing AI systems and understanding how people work with them.
 ## Topics
 
 
-- [AI systems design]({{< ref "ai/ai-systems-design" >}}) — representations, interfaces, and how components fit together.
 - [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) — how people use representations to investigate and revise an idea.
 - [AI product work]({{< ref "ai/operating-model/operating-model" >}}) — assumptions, product decisions, and evidence from use.
 - [AI project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}) — differences in tasks, participants, architecture, and evaluation.

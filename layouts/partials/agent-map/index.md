@@ -15,16 +15,13 @@
   {{- end -}}
 {{- end -}}
 {{- printf "\n## Website information\n\n" -}}
-{{- $information := slice site.Home -}}
 {{- partial "agent-map/entry.md" (dict "page" site.Home "compact" true) -}}
 {{- range site.Home.RegularPages.ByTitle -}}
-  {{- $information = $information | append . -}}
   {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
 {{- end -}}
 {{- range site.Sections.ByTitle -}}
   {{- if and (ne .Section "agent-map") (not (.OutputFormats.Get "agentText")) -}}
     {{- range where site.Pages "Section" .Section -}}
-      {{- $information = $information | append . -}}
       {{- if ne .Section "research" -}}
         {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
       {{- end -}}
@@ -32,10 +29,8 @@
   {{- end -}}
 {{- end -}}
 {{- range where site.Pages "Kind" "in" (slice "taxonomy" "term") -}}
-  {{- $information = $information | append . -}}
   {{- partial "agent-map/entry.md" (dict "page" . "compact" true) -}}
 {{- end -}}
-{{- partial "agent-map/aliases.md" $information -}}
 {{- with site.GetPage "/reading-and-evaluating" -}}
   {{- printf "\n[%s](%s) describes the notes and published model conversations.\n" .Title .RelPermalink -}}
 {{- end -}}

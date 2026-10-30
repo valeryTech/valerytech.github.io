@@ -13,6 +13,7 @@ const extractLinks = (document) => [...document.matchAll(/\bhref=(?:"([^"]*)"|'(
   .map((match) => new URL((match[1] ?? match[2] ?? match[3]).replaceAll('&amp;', '&'), origin));
 const extractMarkdownLinks = (document) => [...document.matchAll(/\]\(([^)]+)\)/g)].map((match) => new URL(match[1], origin));
 const mainContent = (document) => document.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+const isAlias = (document) => /<meta\b[^>]*\bhttp-equiv=["']?refresh["']?[\s>]/i.test(document);
 
 function outputFile(route) {
   const relative = decodeURIComponent(route).replace(/^\//, '');
@@ -77,7 +78,7 @@ test('only the main index and five merged collection maps are generated', () => 
   assert.ok(extractLinks(main).some((link) => link.pathname === '/topics/'));
 });
 
-test('following the maps covers published material, including aliases, with explicit utility and template exclusions', () => {
+test('following the maps covers current published material, excluding redirects, utilities and templates', () => {
   for (const document of maps.values()) assert.doesNotMatch(document, /\{\{/);
   for (const filename of files(output).filter((filename) => filename.endsWith('.html'))) {
     let route = `/${path.relative(output, filename).split(path.sep).join('/')}`;
@@ -87,6 +88,8 @@ test('following the maps covers published material, including aliases, with expl
     if (['/404.html', '/blog/example-post/'].includes(route)) continue;
     // Explanatory legacy pages are utilities, not current collection documents.
     if (redirectPaths.has(normalize(route))) continue;
+    // Hugo aliases preserve old addresses without advertising them in the maps.
+    if (isAlias(readFileSync(filename, 'utf8'))) continue;
     // HTML attachments are resources of a mapped article, not separate articles.
     const attachment = route.match(/^(.*)\/([^/]+)\.assets\//);
     if (attachment) route = attachment[2] === '_index' ? `${attachment[1]}/` : `${attachment[1]}/${attachment[2]}/`;
@@ -150,13 +153,15 @@ test('Hugo renders the assembled Markdown and retains the text download URLs', (
   assert.match(maps.get('/agent-map/system-design/'), /Design questions and study references for specifying visibility after writes/);
 });
 
-test('all map links lead to published website output and expose no repository navigation', () => {
+test('all map links lead directly to current pages and expose no legacy or repository navigation', () => {
   assert.ok(links.length > 0);
   for (const link of links) {
     assert.equal(link.origin, origin, `Unexpected external navigation link: ${link}`);
     assert.ok(statSync(outputFile(link.pathname)).isFile(), `Missing destination: ${link}`);
+    assert.ok(!redirectPaths.has(normalize(link.pathname)), `Legacy redirect in map: ${link}`);
+    assert.ok(!isAlias(readFileSync(outputFile(link.pathname), 'utf8')), `Alias in map: ${link}`);
   }
-  for (const document of maps.values()) assert.doesNotMatch(document, /\/Users\/|SOURCE_NOTES|\.\.\/content\/|file:\/\//);
+  for (const document of maps.values()) assert.doesNotMatch(document, /Legacy URLs and redirects|\/Users\/|SOURCE_NOTES|\.\.\/content\/|file:\/\//);
 });
 
 test('pages expose the main map in the footer and their collection map in metadata', () => {

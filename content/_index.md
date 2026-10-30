@@ -48,7 +48,6 @@ AI can play different roles across [different types of projects]({{< ref "ai/var
 
 - [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}): what an evaluation should help you decide.
 - [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}): what a run records and what that evidence supports.
-- [Representations, Composition, and Understanding]({{< ref "ai/ai-systems-design/representations-composition-and-understanding" >}}): how models of a problem affect what people and software can do with it.
 
 </aside>
 <section class="homepage-browse" aria-labelledby="more-notes">

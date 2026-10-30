@@ -35,7 +35,6 @@ section_title = "AI"
 root_index_source = "_index.md"
 selection_mode = "opt-in"
 selection_paths = [
-  "ai-systems-design",
   "approach",
   "architecture-dsl-like",
   "collab-and-joint-work",
@@ -86,17 +85,6 @@ selection_mode = "opt-in"
 selection_paths = ["code-assistant.md"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
-
-[[imports]]
-name = "research"
-source_root_kind = "external"
-source_subtree = "projects/valery-tech"
-target_subtree = "research"
-root_index_source = "research.md"
-selection_mode = "opt-in"
-# Contribution summaries and private project work are not published.
-selection_paths = ["research.md", "selected-implementations.md"]
-include = ["*.md"]
 
 [[imports]]
 name = "migration-smoke"

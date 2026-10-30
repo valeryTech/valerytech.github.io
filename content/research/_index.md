@@ -18,6 +18,4 @@ The main sections are Evaluation and AI.
 ## Research notes and code
 
 
-[AI systems design]({{< ref "ai/ai-systems-design" >}}) links the notes on representations and composition, together with twenty proposed research problems.
-
 [Selected implementations]({{< ref "research/selected-implementations" >}}) links public code from Wallet, Wallet Evals, and sem-rag.

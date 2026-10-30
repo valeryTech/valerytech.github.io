@@ -73,8 +73,9 @@ section folders. For example:
   `/ai-engineering/evaluation/harness-and-platform/`
 - `content/projects/code-assistant.md` is generated from the selected external
   project note and renders `/projects/code-assistant/`
-- `content/research/` imports exactly `research.md` and
-  `selected-implementations.md` from `/Users/val/notes/projects/valery-tech/`.
+- `content/research/` retains the reading map and selected implementation pages
+  in the repository. `/Users/val/notes/projects/valery-tech/` is excluded from
+  migration.
   The reading map starts with Evaluation and AI; the code page links to specific
   implementations. Former contribution summaries remain archived in the notes
   vault and are not imported. Their old URLs are aliases on the relevant notes.

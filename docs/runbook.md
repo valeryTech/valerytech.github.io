@@ -88,8 +88,8 @@ HTML navigation maps:
   selected documents.
 - `/agent-map/ai/`, `/agent-map/ai-engineering/`, `/agent-map/engineering/`,
   `/agent-map/system-design/`, and `/agent-map/projects/` each list their collection's
-  complete contents, grouped under subsection headings with descriptions and
-  relevant legacy redirects.
+  complete contents, grouped under subsection headings with descriptions.
+  Maps link directly to current pages; legacy URLs and redirects are omitted.
 - Blog, Topics, and website information pages fit in the main index. Subsections
   do not generate separate map files.
 
@@ -109,12 +109,9 @@ the reading map and code examples, followed by the section maps and selected
 technical notes. Titles and descriptions come from the destination pages.
 The main map retains its existing size and link-count limits.
 
-Edit research copy in `/Users/val/notes/projects/valery-tech/research.md` and
-`selected-implementations.md`. The dedicated research import selects exactly
-those two files. Archived contribution summaries are not imported.
-Run migration before building when changing these notes, and check the generated
-public paths and pinned code links. Keep unrelated work in progress outside a
-scoped import when preparing a particular release.
+Edit the retained research pages in `content/research/`, then build and check
+their public paths and pinned code links. `/Users/val/notes/projects/valery-tech/`
+is excluded from migration, as is `/Users/val/notes/ai/ai-systems-design/`.
 
 The five mapped collections are selected by the `cascade` rule in
 `config/_default/hugo.toml`.
@@ -212,14 +209,15 @@ preserves them:
 | `description` | Required on each migrated article; use 110–250 characters for the page introduction, SEO metadata, and agent map. |
 | `document_status` | Optional map label: `canonical` for the preferred starting point, `draft` for provisional material, or `archived` for preserved history. Unset means no assigned status. |
 | `draft` | Controls Hugo publication independently of the `document_status` label. |
-| `agent_map_exclude: true` | Omits the article and its redirects from agent maps while leaving the page published. |
+| `agent_map_exclude: true` | Omits the article from agent maps while leaving the page published. |
 | `showTitle` | Retains the legacy title flag on import. Standard article templates supply a title when the body has no authored H1. |
 
 ### Project notes
 
-Only `research.md` and `selected-implementations.md` are published from
-`/Users/val/notes/projects/valery-tech/`. The former contribution overview,
-three summaries, and reading route are archived source drafts. Their public
+`/Users/val/notes/projects/valery-tech/` is excluded from migration. Its previously
+imported reading map and selected implementation pages remain in
+`content/research/`. The former contribution overview, three summaries, and
+reading route are archived source drafts. Their public
 URLs redirect through Hugo aliases to the reading map or relevant technical
 notes; the summaries themselves are no longer generated.
 

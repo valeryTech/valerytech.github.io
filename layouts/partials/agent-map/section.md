@@ -13,5 +13,4 @@
   {{- printf "## Documents\n\n" -}}
 {{- end -}}
 {{- partial "agent-map/contents.md" (dict "section" . "level" 2) -}}
-{{- partial "agent-map/aliases.md" (where site.Pages "Section" .Section) -}}
 {{- printf "\nUse the main map to explore other collections. Descriptions come from note metadata or the page summary; working notes and versions retain their own scope.\n" -}}

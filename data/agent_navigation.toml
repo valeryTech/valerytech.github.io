@@ -5,6 +5,4 @@ main_documents = [
   "/ai-engineering/evaluation/v1/evidence-model",
   "/ai-engineering/working-assumptions",
   "/ai-engineering/approach/empirical-nature",
-  "/ai/ai-systems-design/representations-composition-and-understanding",
-  "/ai/ai-systems-design/research-problems-and-prototypes",
 ]
