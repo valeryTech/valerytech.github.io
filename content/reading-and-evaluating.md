@@ -1,8 +1,8 @@
 ---
 title: "About these notes"
 description: "Notes on AI system design and evaluation: how people and models work together, what evidence reveals about behavior, and how that evidence changes a product."
-date: 2026-10-22T00:00:00-03:00
-lastmod: 2026-10-29T00:00:00-03:00
+date: 2026-04-22T00:00:00-03:00
+lastmod: 2026-04-27T00:00:00-03:00
 draft: false
 toc: false
 showTitle: true

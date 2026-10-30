@@ -8,7 +8,7 @@ linkTitle: "06 Complex Interface Reading Path Comments"
 # Comments on the complex interface reading path
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
 The comments concern the [retained reading dialogue]({{< ref "ai/design-research/interactive-systems/06-complex-interface-reading-path" >}}). They are separate from the user's questions and the saved LLM replies.
 

@@ -8,7 +8,7 @@ linkTitle: "02 Typed Durable Inspectable Runtimes"
 # Typed, Durable, Inspectable Runtimes for LLM-Based Investigation
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## Executive summary
 
@@ -114,7 +114,7 @@ The table shows an important asymmetry. Programming-languages work is strongest 
 ## Annotated relationship to the proposed research
 
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The annotations below continue in the linked notes with their original arguments retained and wording edited.
 
@@ -133,7 +133,7 @@ The proposed gap to defend is:
 
 > **A compositional contract system for evidence-seeking probabilistic programs, in which conclusion strength is determined by machine-checkable evidence state and unsatisfied obligations become explicit abstention rather than silently degraded answers.**
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The formal model, compiler example, and evaluation design continue in the linked notes.
 

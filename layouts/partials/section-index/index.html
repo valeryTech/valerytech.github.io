@@ -1,0 +1,17 @@
+{{- $section := . -}}
+{{- $entryPage := partial "main/section-entry-page.html" . -}}
+{{ partial "main/article-content.html" (dict "page" .) }}
+{{ if not ($entryPage.Eq $section) }}
+  <section class="section-start" aria-labelledby="section-start-title">
+    <h2 id="section-start-title">Start here</h2>
+    <ul class="section-map-notes">
+      {{ partial "section-index/note.html" $entryPage }}
+    </ul>
+  </section>
+{{ end }}
+{{ if or .Sections .RegularPages }}
+  <section class="section-index" aria-labelledby="section-index-title">
+    <h2 id="section-index-title">Explore this section</h2>
+    {{ partial "section-index/contents.html" (dict "section" . "level" 3 "skip" $entryPage) }}
+  </section>
+{{ end }}

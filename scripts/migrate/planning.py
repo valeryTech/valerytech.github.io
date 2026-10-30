@@ -86,6 +86,8 @@ def build_migration_plan(
 
         managed_targets.append(rule.target_subtree)
         for source_path in sorted(import_root.rglob("*.md")):
+            if not source_path.is_file():
+                continue
             rel_import = source_path.relative_to(import_root)
             if not selection_allows(rel_import, rule, import_root):
                 continue

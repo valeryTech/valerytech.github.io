@@ -8,9 +8,9 @@ linkTitle: "09 Long Running Work Failures And Field Study"
 # Long-running work failures and field study
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained reply proposes a failure taxonomy and a study of tasks from practice. Its study questions, consolidated model, and closing definition remain together. The sibling [comments]({{< ref "ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study-comments" >}}) explain their status and distinguish the proposal from a completed study.
 

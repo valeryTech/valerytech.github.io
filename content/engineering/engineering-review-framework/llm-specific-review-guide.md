@@ -69,7 +69,7 @@ This note concerns AI used in the engineering process. A product that itself use
 ## References
 
 
-External references checked on 2026-10-20. The concern list and application guidance above are recommendations for this framework, not measured claims about all models.
+External references checked on 2026-04-20. The concern list and application guidance above are recommendations for this framework, not measured claims about all models.
 
 [1] GitHub Docs, [Application card: GitHub Copilot Agents](https://docs.github.com/en/copilot/responsible-use/agents), especially the limitations and responsible-use guidance.
 

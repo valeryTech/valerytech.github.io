@@ -30,6 +30,17 @@ class PlanningTests(unittest.TestCase):
         self.assertIn("system-design/topics/api", refs)
         self.assertIn("system-design/integrated-test-pages/migration-smoke", refs)
 
+    def test_build_plan_skips_markdown_named_directories_but_imports_their_notes(self) -> None:
+        directory = self.workspace.source_root / "system-design/topics/agents.md"
+        directory.mkdir()
+        nested_note = directory / "instructions.md"
+        nested_note.write_text("# Instructions\n", encoding="utf-8")
+
+        source_paths = {note.source_path for note in make_run(self.workspace).plan.notes}
+
+        self.assertNotIn(directory, source_paths)
+        self.assertIn(nested_note, source_paths)
+
     def test_collision_fails_plan(self) -> None:
         duplicate = self.workspace.source_root / "system-design/topics/API!.md"
         duplicate.write_text("# Duplicate\n", encoding="utf-8")
@@ -128,7 +139,7 @@ class PlanningTests(unittest.TestCase):
                 path.mkdir(parents=True, exist_ok=True)
 
         public_notes = {
-            "ai-systems-design/overview.md",
+            "ai-system-design/overview.md",
             "architecture-dsl-like/research-direction.md",
             "design-research/00-index.md",
             "design-research/03-language-and-compiler/mechanism.md",

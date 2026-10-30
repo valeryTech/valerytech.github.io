@@ -8,7 +8,7 @@ linkTitle: "03 Programmable Human Ai Environments Report"
 # Programmable environments for heterogeneous human-AI collaboration
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## Executive summary
 
@@ -53,7 +53,7 @@ The central research question can consequently be sharpened to:
 
 That question is broader than neuro-symbolic AI. Neuro-symbolic AI gives an important answer to the **representation and reasoning** boundary: learned systems can generate or interpret representations consumed by symbolic reasoning systems. It says much less by itself about identities, multiple principals, human authority, durable execution, access control, resource ownership or external side effects. [^turn2search1][^turn2academia38]
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Sections moved to related notes
 
@@ -375,9 +375,9 @@ The original Deep Research export used transient ChatGPT source identifiers. The
 
 [^turn15search1]: Agent2Agent (A2A) Protocol, current enterprise/security and authorization guidance. <https://a2a-protocol.org/latest/topics/enterprise-ready/> Original Deep Research source key: `turn15search1`.
 
-[^turn14search2]: Model Context Protocol maintainers, "The 2026-07-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-07-28/> Original Deep Research source key: `turn14search2`.
+[^turn14search2]: Model Context Protocol maintainers, "The 2026-01-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-01-28/> Original Deep Research source key: `turn14search2`.
 
-[^turn14search10]: Model Context Protocol maintainers, "The 2026-07-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/> Original Deep Research source key: `turn14search10`.
+[^turn14search10]: Model Context Protocol maintainers, "The 2026-01-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/> Original Deep Research source key: `turn14search10`.
 
 [^turn14search9]: Model Context Protocol, experimental Tasks specification (2025-11-25), security considerations for task isolation and authorization-context binding. <https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks> Original Deep Research source key: `turn14search9`.
 

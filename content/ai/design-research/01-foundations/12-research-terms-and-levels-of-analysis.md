@@ -8,9 +8,9 @@ linkTitle: "12 Research Terms And Levels Of Analysis"
 # Research terms and levels of analysis
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained reply proposes how to describe systems without treating task performance as evidence of every other cognitive property. The opening motivation, complete dictionary-entry template, learning example, and levels of analysis remain together.
 
@@ -133,7 +133,7 @@ That one rule would improve a lot of current agent research.
 
 The original reply continues with [research practices and claim records]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}#research-practices-and-claim-records). The source overview (archived source 009) links all pieces in their original order.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Initial working dictionary
 

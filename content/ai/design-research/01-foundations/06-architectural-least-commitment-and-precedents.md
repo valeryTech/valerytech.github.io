@@ -8,9 +8,9 @@ linkTitle: "06 Architectural Least Commitment And Precedents"
 # Architectural least commitment and precedents
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The opening question, its answer, and the historical survey remain together here. The dialogue continues in [Constrained generativity]({{< ref "ai/design-research/01-foundations/01-constrained-generativity" >}}#another), which broadens the argument beyond one architecture.
 
@@ -269,7 +269,7 @@ This is where the author's "we don't know what we don't know" premise becomes a 
 
 One terminology point: The recommendation is not to use **grounded theory** for this. That term already names a specific qualitative research methodology in which theories are induced from empirical data. ([APA Dictionary](https://dictionary.apa.org/grounded-theory?utm_source=chatgpt.com "APA Dictionary of Psychology")) **Design-space theory**, **semantic substrate**, **least-commitment substrate**, or **architectural least commitment** are much closer to what you mean.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The following literature foundations, case studies, and comparison table come from the [semantic-substrate report]({{< ref "ai/design-research/01-foundations/02-semantic-substrate-design-report" >}}). They supplement the earlier dialogue above. The [formal models]({{< ref "ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models" >}}) and [builder method]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}) remain separate from the survey.
 
@@ -666,7 +666,7 @@ The benefit is not that the proposal generator becomes trustworthy. The substrat
 
 Recent 2026 work on LLM-agent runtimes is independently moving towards this boundary: trace contracts, capability mediation, canonical-state/commit separation and runtime validation are active research directions, though much of this literature remains preprint or working-paper work rather than settled theory. [^turn19search3][^turn19search2]
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The intervening formal derivation is now in [Constraint, guarantee, and composition models]({{< ref "ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models" >}}). The complete comparison table follows below.
 
@@ -703,7 +703,7 @@ Second, **consensus and CRDTs put constraints in different places**. Consensus c
 
 Third, **Unix and capability systems represent opposite ends of semantic richness**. Unix intentionally provides a semantically weak composition boundary; capability systems add strong semantics precisely where effects and authority make a weak boundary unsafe. A future semantic substrate can therefore be thin in some dimensions and strict in others.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation definitions for the imported report sections
 

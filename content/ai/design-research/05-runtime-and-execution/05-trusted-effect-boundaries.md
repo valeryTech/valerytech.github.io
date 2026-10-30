@@ -8,7 +8,7 @@ linkTitle: "05 Trusted Effect Boundaries"
 # Trusted effect boundaries
 
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 This section comes from the [programmable human-AI environments report]({{< ref "ai/design-research/02-human-ai-collaboration/03-programmable-human-ai-environments-report" >}}), which retains the complete architectural synthesis and bibliography. The [current systems discussion and comparison matrices]({{< ref "ai/design-research/06-research-reports/03-shared-runtime-landscape" >}}#current-llm-systems-and-human-augmentation) provide the surrounding systems context. The original distinctions between task capabilities and security capabilities, threat-model qualifications, diagrams, provenance example, and verification taxonomy remain together below.
 
@@ -78,7 +78,7 @@ A useful conclusion is that **verification is plural**:
 
 No single "verifier" answers all of these. Treating them as separate kinds of evidence is one of the most important architecture lessons from the combined literature. [^turn4search2][^turn6search0][^turn14search0][^turn5search2][^turn21search3][^turn21search0][^turn20search4]
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Citation definitions for the imported report sections
 
@@ -127,9 +127,9 @@ These definitions are local copies from the [complete original bibliography]({{<
 
 [^turn15search1]: Agent2Agent (A2A) Protocol, current enterprise/security and authorization guidance. <https://a2a-protocol.org/latest/topics/enterprise-ready/> Original Deep Research source key: `turn15search1`.
 
-[^turn14search2]: Model Context Protocol maintainers, "The 2026-07-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-07-28/> Original Deep Research source key: `turn14search2`.
+[^turn14search2]: Model Context Protocol maintainers, "The 2026-01-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-01-28/> Original Deep Research source key: `turn14search2`.
 
-[^turn14search10]: Model Context Protocol maintainers, "The 2026-07-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/> Original Deep Research source key: `turn14search10`.
+[^turn14search10]: Model Context Protocol maintainers, "The 2026-01-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/> Original Deep Research source key: `turn14search10`.
 
 [^turn14search9]: Model Context Protocol, experimental Tasks specification (2025-11-25), security considerations for task isolation and authorization-context binding. <https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks> Original Deep Research source key: `turn14search9`.
 

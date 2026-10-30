@@ -8,7 +8,7 @@ linkTitle: "04 Design Observations From Hebbia"
 # Design observations prompted by Hebbia
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The passage below is the author's original reaction to Hebbia Matrix. It records what impressed the author and the extensions they proposed. The observations are retained with editorial wording.
 

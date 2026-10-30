@@ -146,4 +146,4 @@ The eventual practical guidance should be derived from these relationships and t
 
 The companion [Twenty research problems for AI systems design]({{< ref "ai/ai-system-design/research-problems-and-prototypes" >}}) turns these foundations into questions to investigate through complete examples in different languages. It proposes comparisons that could help refine the principles and reveal their limits.
 
-*Editorial note, 2026-10-29: Drafted with Codex from the author's research material and clarification that the focus is conceptualization and fundamental principles. The proposed principles and synthesis remain open to revision.*
+*Editorial note, 2026-04-29: Drafted with Codex from the author's research material and clarification that the focus is conceptualization and fundamental principles. The proposed principles and synthesis remain open to revision.*

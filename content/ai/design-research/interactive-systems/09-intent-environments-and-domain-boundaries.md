@@ -8,7 +8,7 @@ linkTitle: "09 Intent Environments And Domain Boundaries"
 # Intent environments and domain boundaries
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained reply proposes separating a domain's data, meanings, operations, and authority from the interface used for a task. Its opening diagrams, Semantic Web Services discussion, and complete eight-layer overview remain together. The later application-boundary discussion, engineering implications, reliability argument, and closing predictions follow in their original order.
 

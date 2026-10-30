@@ -6,7 +6,7 @@ title: "07 Semantic Kernel"
 linkTitle: "07 Semantic Kernel"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The working interpretation is that this can be a strong architecture if the separate component is the **semantic kernel** of the system, not just another workflow service. It should define what a valid audit program is, type-check it, apply policies, and compile it into an executable plan.
 
@@ -416,7 +416,7 @@ Program + Catalog
 
 A pure core is particularly valuable because it becomes easy to test exhaustively.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Tickloom case study
 

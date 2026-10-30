@@ -8,7 +8,7 @@ linkTitle: "06 Bounded Corpus Evidence Synthesis Comments"
 # Comments on evidence synthesis over a bounded corpus
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
 The comments below are new editorial analysis. Original arguments are retained with editorial wording in the [evidence-contract note]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}), [retrieval pipeline]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#bounded-corpus-retrieval-pipeline), and separate case material.
 

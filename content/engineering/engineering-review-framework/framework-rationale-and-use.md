@@ -82,7 +82,7 @@ Judge the framework by whether it helps surface missed requirements, defects, an
 ## References
 
 
-External references checked on 2026-10-20. The organization and usage guidance above are recommendations for this framework.
+External references checked on 2026-04-20. The organization and usage guidance above are recommendations for this framework.
 
 [1] Google Engineering Practices, [Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html).
 

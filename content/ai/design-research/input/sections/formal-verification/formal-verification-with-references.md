@@ -535,7 +535,7 @@ Formal verification is strongest where a system crosses from uncertain reasoning
 
 [^22]: Mathlib: Mathematical Library for Lean 4. <https://github.com/leanprover-community/mathlib4>
 
-[^23]: Lean 4.33.0 Release Notes (2026-08-10). <https://lean-lang.org/doc/reference/latest/releases/v4.33.0/>
+[^23]: Lean 4.33.0 Release Notes (2026-02-10). <https://lean-lang.org/doc/reference/latest/releases/v4.33.0/>
 
 [^24]: Reservoir: Lean Package Registry. <https://reservoir.lean-lang.org/packages>
 

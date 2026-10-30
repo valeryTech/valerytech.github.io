@@ -6,7 +6,7 @@ title: "03 Declarative Programming Model"
 linkTitle: "03 Declarative Programming Model"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## declarative approach
 
@@ -408,7 +408,7 @@ It may be:
 
 The DSL is how builders describe that set; humans and models refine it; the engine chooses and executes members of it.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Collaboration patterns as declarative constraints
 
@@ -499,7 +499,7 @@ again without specifying the turns.
 
 That begins to look like a genuine framework built from collaboration semantics.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Source of truth in the captured DSL article
 

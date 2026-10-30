@@ -8,7 +8,7 @@ linkTitle: "13 Domain Semantics And Operation Contracts"
 # Domain semantics and operation contracts
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained passage distinguishes an API's input types from the business meanings needed to use it. The complete account example and domain sketch remain with the refund-operation contract. The reply calls the described operation a capability, which needs to be distinguished from authority to invoke it.
 
@@ -177,7 +177,7 @@ This starts looking surprisingly similar to OWL-S's old notion of inputs, output
 
 But natural-language descriptions can carry much of the fuzzy meaning while formal fields carry properties where correctness matters.
 
-Current MCP is an early, incomplete version of this direction. A server can expose discoverable tools with JSON Schema input and output contracts; the July 28, 2026 protocol revision expanded those tool definitions to full JSON Schema 2020-12. ([Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-07-28/?utm_source=chatgpt.com "The 2026-07-28 Specification | Model Context Protocol Blog"))
+Current MCP is an early, incomplete version of this direction. A server can expose discoverable tools with JSON Schema input and output contracts; the July 28, 2026 protocol revision expanded those tool definitions to full JSON Schema 2020-12. ([Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-01-28/?utm_source=chatgpt.com "The 2026-01-28 Specification | Model Context Protocol Blog"))
 
 The recommendation is not to bet that MCP specifically dominates computing twenty years from now.
 

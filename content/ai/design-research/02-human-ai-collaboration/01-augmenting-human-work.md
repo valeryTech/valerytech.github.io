@@ -6,13 +6,13 @@ title: "01 Augmenting Human Work"
 linkTitle: "01 Augmenting Human Work"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 Initial design question: How should a system of people and LLM-based agents collaborate, and on what kinds of tasks? The author's framing asks how the features of people and current and future LLMs should affect the design. It initially proposes that LLMs lack a world model and have capabilities rather than intelligence; the response below questions both assumptions. The introduction strategy is to augment workflows initially performed by people and identify explicit points for human decisions.
 
 TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The [joint activity and collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) develops a related taxonomy with its original reasoning. [Human-AI collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) keeps the complete interaction-pattern discussion separate from the general model.
 
@@ -429,7 +429,7 @@ That last category appears close to the proposed design direction. It suggests t
 
 Further research question for AI tools in software engineering, research, and knowledge work: how could this literature map into concrete system-design patterns, such as an "epistemic copilot" compared with current coding agents?
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## From conversational interfaces to collaborative work
 

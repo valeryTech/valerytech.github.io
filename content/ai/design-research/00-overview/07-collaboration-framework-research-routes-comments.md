@@ -8,9 +8,9 @@ linkTitle: "07 Collaboration Framework Research Routes Comments"
 # Collaboration framework research routes: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [routes note]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes" >}}) retains the original analysis and routes arguments with editorial wording. The comments explain the arrangement and open design questions, rather than recording completed experiments or an accepted implementation plan.
+New commentary by Codex, added on 2026-04-01. The [routes note]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes" >}}) retains the original analysis and routes arguments with editorial wording. The comments explain the arrangement and open design questions, rather than recording completed experiments or an accepted implementation plan.
 
 ## Why the route comparison stays together
 

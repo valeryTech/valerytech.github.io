@@ -8,7 +8,7 @@ linkTitle: "08 Prompt Text Composition And Registry"
 # Prompt text, composition, and registry
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The sequence of proposals and author corrections follows the prompt discussion from a broad registry proposal through the author's corrections to a smaller text format. The opening message includes system-manifest and production-workbench context. All questions, arguments, examples, and corrections remain represented; wording and dialogue role labels have been reformulated for standalone reading.
 

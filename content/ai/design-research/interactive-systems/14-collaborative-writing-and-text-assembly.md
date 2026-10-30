@@ -8,7 +8,7 @@ linkTitle: "14 Collaborative Writing And Text Assembly"
 # Collaborative writing and text assembly
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained sketch proposes a writing workflow in which the user compares alternatives and assembles a final text. The complete example note follows the workflow, including its revision and removal remark.
 

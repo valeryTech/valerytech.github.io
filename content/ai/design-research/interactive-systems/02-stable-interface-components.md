@@ -8,9 +8,9 @@ linkTitle: "02 Stable Interface Components"
 # Stable interface components
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Editorial navigation added on 2026-10-01. The retained passage begins below. -->
+<!-- Editorial navigation added on 2026-04-01. The retained passage begins below. -->
 
 The passage continues the [shared-state reply]({{< ref "ai/design-research/interactive-systems/01-shared-investigation-state-and-views" >}}). The original user question about composing interface blocks is in the Matrix case note.
 

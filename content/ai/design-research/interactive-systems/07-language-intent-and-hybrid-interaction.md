@@ -8,7 +8,7 @@ linkTitle: "07 Language Intent And Hybrid Interaction"
 # Language intent and hybrid interaction
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained dialogue begins with the author's request to investigate natural language as an interface. The LLM reply reframes the problem as a large space of compositional requests, discusses usability and examples, and closes with a proposed role for language in communicating partially specified intent.
 

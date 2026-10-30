@@ -6,7 +6,7 @@ title: "01 Generalized Agent Runtime"
 linkTitle: "01 Generalized Agent Runtime"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The same architecture generalizes well beyond RAG.
 
@@ -728,7 +728,7 @@ Search / SQL / tools                ← reuse
 
 This keeps the paper focused on the semantic contribution and avoids spending most of the project reimplementing a workflow scheduler.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation links added during reassembly
 
@@ -749,14 +749,14 @@ The original numbered citations link to the entries below, which point to the [s
 - <a id="ref-31"></a>[Reference 31]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-31)
 - <a id="ref-32"></a>[Reference 32]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-32)
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Program versions, runs, and results
 
 
 The complete [graph, repair, and branch discussions]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#7-you-probably-need-three-graphs-not-one) are now in the program-history note. Its sibling [comments note]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments" >}}) contains new explanations. The runtime's execution tiers and guarded program reuse remain below.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Execution tiers from the behavioral dialogue
 
@@ -853,14 +853,14 @@ fallback:
 
 When those assumptions fail, the system should return to the general model, record the new trace, and possibly extend the compiled procedure.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Recorded history and later result use
 
 
 The [artifact-history discussion]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#dag-versus-evolving-artifact-graph), [execution-run records]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#6-execute-and-retain-the-trace), and [rules for later result use]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#the-dag-should-probably-be-several-related-graphs) are now in the program-history note.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Runtime support for long-running work
 

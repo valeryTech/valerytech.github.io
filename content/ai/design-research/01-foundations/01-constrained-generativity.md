@@ -8,9 +8,9 @@ linkTitle: "01 Constrained Generativity"
 # Constrained generativity
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained dialogue develops the general principle, construction rules, and examples. The opening discussion and historical survey are in [Architectural least commitment and precedents]({{< ref "ai/design-research/01-foundations/06-architectural-least-commitment-and-precedents" >}}). The later [scope dialogue and revised research question]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#analyse-problem) are now in the overview.
 
@@ -592,7 +592,7 @@ The most formal proposed framing is:
 
 That last chain is probably the closest technical formulation of the unresolved `XXX` concept in the original question.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Continued scope analysis
 

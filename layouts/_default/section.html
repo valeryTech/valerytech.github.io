@@ -1,8 +1,5 @@
 {{ define "main" }}
   {{ $root := .FirstSection }}
-  {{ $entryPage := partial "main/section-entry-page.html" . }}
-  {{ $childSections := .Sections.ByTitle }}
-  {{ $childPages := .RegularPages.ByTitle }}
   <div class="row flex-xl-nowrap">
     <div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
       {{ partial "sidebar/section-menu.html" . }}
@@ -19,26 +16,7 @@
           </ol>
         </nav>
       {{ end }}
-      {{ partial "main/article-content.html" (dict "page" $entryPage) }}
-      {{ if or $childSections $childPages }}
-        <div class="card-list mt-4">
-          {{ range $childSections }}
-            <div class="card my-3">
-              <div class="card-body">
-                <a class="stretched-link" href="{{ .RelPermalink }}">{{ .LinkTitle }} &rarr;</a>
-              </div>
-            </div>
-          {{ end }}
-          {{ range $childPages }}
-            {{ if .Eq $entryPage }}{{ continue }}{{ end }}
-            <div class="card my-3">
-              <div class="card-body">
-                <a class="stretched-link" href="{{ .RelPermalink }}">{{ .LinkTitle }} &rarr;</a>
-              </div>
-            </div>
-          {{ end }}
-        </div>
-      {{ end }}
+      {{ partial "section-index/index.html" . }}
     </main>
   </div>
 {{ end }}

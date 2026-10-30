@@ -6,9 +6,9 @@ title: "Analyze Ai System Design"
 linkTitle: "Analyze Ai System Design"
 ---
 
-Publication note, 2026-10-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
+Publication note, 2026-04-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
 
-Conversation captured on 2026-10-25. Main turns use `##` headings. Tables, lists, code, diagrams, and source links available in the page are preserved.
+Conversation captured on 2026-04-25. Main turns use `##` headings. Tables, lists, code, diagrams, and source links available in the page are preserved.
 
 ---
 

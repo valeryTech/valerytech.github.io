@@ -8,7 +8,7 @@ linkTitle: "05 Application State And Computation"
 # Application state and computation
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained passage comes from the first LLM reply in the complex-interface dialogue (archived source 018). Its [opening question and resource list]({{< ref "ai/design-research/interactive-systems/06-complex-interface-reading-path" >}}#research-complex-ui-design) and the later request for practitioners remain in the reading-path note.
 

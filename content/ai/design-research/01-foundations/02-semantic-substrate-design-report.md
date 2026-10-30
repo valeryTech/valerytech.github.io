@@ -8,7 +8,7 @@ linkTitle: "02 Semantic Substrate Design Report"
 # Constrained Generativity and Semantic Substrate Design
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## Executive summary
 
@@ -75,7 +75,7 @@ The most important practical conclusion is:
 
 This gives builders a theory for constructing their own systems rather than one prescribed architecture.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The original summary, general research gaps, and complete bibliography stay here. The [literature and case studies]({{< ref "ai/design-research/01-foundations/06-architectural-least-commitment-and-precedents" >}}#foundations-in-the-literature), [formal models]({{< ref "ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models" >}}), and [builder method]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}) now have separate locations. The builder note includes the complete dialogue passages added during the preceding split.
 
@@ -297,7 +297,7 @@ while requiring:
 C.
 \]
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The remaining research-gap sections discuss [provenance as part of validation]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}#provenance-should-become-operational-semantics-when-it-affects-trust) and the [proposed generativity measure and concluding thesis]({{< ref "ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models" >}}#generativity-itself-needs-a-better-formal-measure). The complete original bibliography follows.
 

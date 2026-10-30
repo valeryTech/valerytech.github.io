@@ -1,0 +1,37 @@
+{{- $section := .section -}}
+{{- $level := .level -}}
+{{- $skip := .skip -}}
+{{- $pages := partial "section-index/pages.html" $section.RegularPages.ByTitle -}}
+{{- with $skip -}}
+  {{- $pages = where $pages "RelPermalink" "ne" .RelPermalink -}}
+{{- end -}}
+{{ with $pages }}
+  <ul class="section-map-notes">
+    {{ range . }}
+      {{ partial "section-index/note.html" . }}
+    {{ end }}
+  </ul>
+{{ end }}
+{{ range $section.Sections.ByTitle }}
+  {{ $notes := partial "section-index/pages.html" .RegularPagesRecursive }}
+  {{ $count := len $notes }}
+  <section class="section-map-group">
+    {{ printf "<h%d class=\"section-map-heading\">" $level | safeHTML }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with partial "agent-map/status.html" . }}
+        <span class="section-map-status">{{ . }}</span>
+      {{ end }}
+    {{ printf "</h%d>" $level | safeHTML }}
+    {{ with partial "main/navigation-description.html" . }}
+      <p class="section-map-description">{{ . }}</p>
+    {{ end }}
+    {{ if or $count .Sections }}
+      <details class="section-map-disclosure"{{ if le $count 3 }} open{{ end }}>
+        <summary>Browse {{ $count }} {{ if eq $count 1 }}note{{ else }}notes{{ end }}</summary>
+        <div class="section-map-contents">
+          {{ partial "section-index/contents.html" (dict "section" . "level" (math.Min 6 (add $level 1) | int)) }}
+        </div>
+      </details>
+    {{ end }}
+  </section>
+{{ end }}

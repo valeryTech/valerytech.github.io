@@ -16,7 +16,7 @@ images = ["cover.png"]
 # mainSections
 mainSections = ["projects", "system-design", "ai-engineering", "ai"]
 
-# Use the authored reading guide as the Design Research section entry.
+# Link the authored reading guide from the section index and sidebar.
 [sectionIndexes]
   "/ai/design-research/" = "/ai/design-research/00-index"
 

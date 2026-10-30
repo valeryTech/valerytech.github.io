@@ -8,9 +8,9 @@ linkTitle: "06 Program Versions Runs And Results"
 # Program versions, runs, and results
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The following arguments were moved from [Behavioral compilation and specification]({{< ref "ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification" >}}) and [Generalized agent runtime]({{< ref "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime" >}}). Original section numbers are retained. New explanations and open questions are in the sibling [comments note]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments" >}}).
 
@@ -127,7 +127,7 @@ The connected code-mode document's requirement that work proceed in discrete, ve
 
 The following sections 7 to 9 continue the same initial analysis. Their source context is retained with the passages.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Source context for behavioral compilation
 
@@ -314,7 +314,7 @@ The useful persistent structure is therefore an **artifact derivation graph**, c
 
 The runtime control graph may contain loops. The immutable derivation history remains acyclic.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Execution and downstream gates from the reanalysis
 
@@ -430,7 +430,7 @@ accept_partial
 
 Without these, "process all results and continue" is underspecified.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Goal revisions and dependent work
 

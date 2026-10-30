@@ -8,7 +8,7 @@ linkTitle: "Pinned Chats Index"
 # Saved research conversations
 
 
-Four conversations captured on 2026-10-25, edited for public release on 2026-10-28.
+Four conversations captured on 2026-04-25, edited for public release on 2026-04-28.
 
 | Chat | User turns | Assistant replies | Completed report |
 |---|---:|---:|---|

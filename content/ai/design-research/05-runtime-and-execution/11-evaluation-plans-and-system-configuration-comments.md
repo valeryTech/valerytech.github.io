@@ -8,7 +8,7 @@ linkTitle: "11 Evaluation Plans And System Configuration Comments"
 # Comments on evaluation plans and system configuration
 
 
-New commentary by Codex, added on 2026-10-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}) retains the complete final exchange and every example. The proposed EvaluationPlan or RunConfig is an execution configuration, not a completed experiment.
+New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}) retains the complete final exchange and every example. The proposed EvaluationPlan or RunConfig is an execution configuration, not a completed experiment.
 
 ## Reference the system instead of redefining it
 

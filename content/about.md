@@ -1,8 +1,8 @@
 ---
 title: "About Valery Yuda"
 description: "I write about AI evaluation, product design, and software systems. This notebook collects explanations, research questions, and work in progress."
-date: 2026-09-03T00:00:00-03:00
-lastmod: 2026-10-29T00:00:00-03:00
+date: 2026-03-03T00:00:00-03:00
+lastmod: 2026-04-27T00:00:00-03:00
 draft: false
 toc: false
 ---

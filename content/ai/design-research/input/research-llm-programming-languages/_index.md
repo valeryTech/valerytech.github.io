@@ -6,7 +6,7 @@ description: "The source conversation and three complete sub-agent reports on pr
 linkTitle: "Research LLM Programming Languages"
 ---
 
-Exported on 2026-10-29 from this [shared ChatGPT conversation](https://chatgpt.com/share/6ae328f4-5520-83e8-a168-0003d9964255), with the three completed reports recovered from its signed-in sub-agent viewer.
+Exported on 2026-04-29 from this [shared ChatGPT conversation](https://chatgpt.com/share/6ae328f4-5520-83e8-a168-0003d9964255), with the three completed reports recovered from its signed-in sub-agent viewer.
 
 - [Conversation]({{< ref "ai/design-research/input/research-llm-programming-languages/conversation" >}}) — the original user request, assistant progress updates, final synthesis, and linked citation sources.
 - [Language thesis]({{< ref "ai/design-research/input/research-llm-programming-languages/language-thesis" >}}) — publications arguing for types and formal verification in the AI era, plus supporting research.

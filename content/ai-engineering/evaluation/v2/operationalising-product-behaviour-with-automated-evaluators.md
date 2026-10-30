@@ -668,7 +668,7 @@ Trusted expected draft:
 type = expense
 amount = 24
 account_id = visa-personal
-date = 2026-08-26
+date = 2026-02-26
 ```
 
 

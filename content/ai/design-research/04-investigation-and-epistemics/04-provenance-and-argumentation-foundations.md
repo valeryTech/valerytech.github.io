@@ -246,7 +246,7 @@ document
 
 The agent can query this graph programmatically.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The passages below come from the [typed investigation report]({{< ref "ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes" >}}). The report's [shared bibliography]({{< ref "ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes" >}}#references) remains in the main report.
 
@@ -265,7 +265,7 @@ The passages below come from the [typed investigation report]({{< ref "ai/design
 
 **RUBICON** is the closest systems architecture to the logical/physical-plan proposal. It supports the argument that LLM/data work should be expressed in a higher-level algebra and lowered using database-style planning. The research gap is to extend this query-processing model from "produce the requested data/result efficiently" to "produce a result only under declared evidence conditions".
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Source context for behavioral compilation
 
@@ -275,7 +275,7 @@ The following section comes from [Behavioral compilation and specification]({{< 
 # 6. Provenance should become a language-level concept
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The DSL will add much more value if provenance is represented in its semantics rather than merely in output JSON.
 
@@ -305,7 +305,7 @@ This gives the compiler something meaningful to enforce.
 
 Without such types, the DSL risks becoming a YAML workflow syntax whose compiler can only catch misspelled fields. With evidence, effect, and artifact types, it becomes a real semantic boundary.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Provenance in validation and transition rules
 
@@ -349,7 +349,7 @@ Then provenance is part of the transition semantics, not an audit annotation.
 
 Recent agent-security work is exploring this direction by binding authority-bearing tool arguments to their provenance, but this is still emerging research. [^turn19academia48] The broader principle has clear roots in capability reasoning: authority should flow through explicit, inspectable paths. [^turn3search0]
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation definitions for the imported report sections
 

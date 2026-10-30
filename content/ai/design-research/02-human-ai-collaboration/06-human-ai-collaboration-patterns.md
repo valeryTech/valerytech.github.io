@@ -8,9 +8,9 @@ linkTitle: "06 Human Ai Collaboration Patterns"
 # Human-AI collaboration patterns
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained LLM passages distinguish collaboration mechanics from interaction patterns. They preserve the shared reasoning loop, the complete Teresa-attributed discussion, and the later responsibility-based derivation. The sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments" >}}) explain the changing lists and their limits.
 
@@ -262,7 +262,7 @@ The answers determine the collaboration pattern.
 
 This also clarifies why **"AI collaborator" isn't one interaction model**. Collaboration is the deliberate allocation and movement of these responsibilities between human and AI.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Practitioner and research synthesis
 

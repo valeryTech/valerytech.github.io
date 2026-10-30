@@ -10,7 +10,7 @@ linkTitle: "00 Index"
 
 Start with [the introduction and reading map]({{< ref "ai/design-research/00-introduction" >}}) for the purpose of the collection, its intended contribution to practice and understanding, and the relationship between the earlier DSL exploration and the continuation in [AI systems design]({{< ref "ai/ai-system-design" >}}). The detailed reading guide follows below.
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The note set reorganizes the former `architecture-dsl-like` collection while preserving its source arguments and technical detail through editorial reformulation. The reading path starts with the general theory, continues with the builder method, and then introduces applications.
 

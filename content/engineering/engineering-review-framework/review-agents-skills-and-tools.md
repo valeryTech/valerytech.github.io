@@ -89,7 +89,7 @@ The current agent-harness investigation explores separate agents with scoped con
 ## References
 
 
-External references checked on 2026-10-20. Local tool and skill sources are linked in the catalog. Tool capabilities can change; the framework does not depend on a specific version.
+External references checked on 2026-04-20. Local tool and skill sources are linked in the catalog. Tool capabilities can change; the framework does not depend on a specific version.
 
 [1] GitHub Docs, [Application card: GitHub Copilot Agents](https://docs.github.com/en/copilot/responsible-use/agents).
 
@@ -98,7 +98,7 @@ External references checked on 2026-10-20. Local tool and skill sources are link
 ## Related notes
 
 
-- [AGENTS.md guidance]({{< ref "ai-engineering/coding-agents/agents-md" >}}) -- giving agents concise project context, canonical references, and validation commands.
+- [AGENTS.md guidance]({{< ref "ai-engineering/coding-agents/agents-md/agents-md" >}}) -- giving agents concise project context, canonical references, and validation commands.
 
 ## Related documents
 

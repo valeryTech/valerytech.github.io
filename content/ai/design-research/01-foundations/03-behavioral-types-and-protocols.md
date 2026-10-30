@@ -6,7 +6,7 @@ title: "03 Behavioral Types And Protocols"
 linkTitle: "03 Behavioral Types And Protocols"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The working interpretation is that the relevant research area already exists, but it is split across several communities. The strongest established framing for the stated goal is **Joint Cognitive Systems / Cognitive Systems Engineering**: treat the human, agents, tools, and environment as one system whose behavior you design. Hollnagel and Woods explicitly argue for studying human-machine interaction as the behavior of a unified system. ([Routledge](https://www.routledge.com/Joint-Cognitive-Systems-Foundations-of-Cognitive-Systems-Engineering/Hollnagel-Woods/p/book/9780849328213?utm_source=chatgpt.com "Joint Cognitive Systems: Foundations of Cognitive Systems Engineering"))
 

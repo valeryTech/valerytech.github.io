@@ -8,9 +8,9 @@ linkTitle: "07 Constraint Guarantee And Composition Models"
 # Constraint, guarantee, and composition models
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The formal argument and worked models come from the [semantic-substrate report]({{< ref "ai/design-research/01-foundations/02-semantic-substrate-design-report" >}}). The [literature survey]({{< ref "ai/design-research/01-foundations/06-architectural-least-commitment-and-precedents" >}}#foundations-in-the-literature) and [builder method]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}) provide the surrounding context. The proposed extension-set measure and concluding thesis remain together below.
 
@@ -444,7 +444,7 @@ If references are unforgeable and new authority can only arise through controlle
 
 The crucial insight is that a capability model does not need to predict what code a component will execute. It limits what consequences that code can have.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The following section originally concluded the report's research-gap discussion. Its extension-set measure is a proposed research formulation, as the original text explains. The other [research gaps]({{< ref "ai/design-research/01-foundations/02-semantic-substrate-design-report" >}}#research-gaps-and-promising-directions) remain in the report.
 
@@ -533,7 +533,7 @@ This reframes the project from designing one human/LLM/software architecture int
 
 That chain has direct foundations in refinement, interface and contract theory, weakest-precondition reasoning, capability security, algebraic distributed systems, type/effect systems, Unix composition and declarative programming. What remains open is their integration into a practical theory of **semantic substrate design**. [^turn1search0][^turn15search11][^turn15search0][^turn14search9][^turn11search6][^turn5search0][^turn2search0][^turn7search0]
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation definitions for the imported report sections
 

@@ -21,7 +21,7 @@ Open question: Which other principles belong in this model?
 # Proposed analysis
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The proposed layered design model should identify what each abstraction restricts, which guarantees it adds, what uncertainty remains, and how it improves feedback and execution.
 

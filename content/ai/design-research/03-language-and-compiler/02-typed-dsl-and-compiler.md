@@ -6,7 +6,7 @@ title: "02 Typed Dsl And Compiler"
 linkTitle: "02 Typed Dsl And Compiler"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## much sharper architecture
 
@@ -1014,14 +1014,14 @@ Then later `attributes` can acquire cost estimates, deadlines, quality requireme
 
 So the LLM response supports the scope constraint: **don't introduce time, quality, model size, cost, and similar concerns into the type/effect system now.** We should first get clear on what the semantic contract of the DSL is. The next useful question is probably whether effects, capabilities, state transitions, and failures should actually be four distinct concepts in the DSL, or whether some of them can share one underlying mechanism.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## General verification and acceptance
 
 
 The complete [compilation-versus-correctness discussion]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}#4-compilation-and-correctness-are-different-loops) is now in the shared verification note. Language constraints and static validation remain below.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Language constraints from the behavioral dialogue
 
@@ -1049,7 +1049,7 @@ A broad language gives:
 
 The key research problem is not merely language design. It is finding the smallest language in which the desired semantic procedures have short representations.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Static validation from the reanalysis
 
@@ -1104,14 +1104,14 @@ VerificationResult =
 
 A failed comparison should not automatically trigger a procedure repair. The reference candidate might be wrong. The problem contract might be incomplete. The source might genuinely be ambiguous. The failure classifier must identify what kind of revision is warranted.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Tickloom case study
 
 
 The complete [semantic-model and scenario-DSL example]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}) is now in one case-study note. Its sibling [comments note]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl-comments" >}}) explains the distinction between compilation and a correct test.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Related database interview
 

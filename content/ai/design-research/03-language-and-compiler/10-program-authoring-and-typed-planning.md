@@ -6,7 +6,7 @@ title: "10 Program Authoring And Typed Planning"
 linkTitle: "10 Program Authoring And Typed Planning"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 <a id="i-would-expose-two-authoring-interfaces"></a>
 
@@ -665,7 +665,7 @@ event: <resolved event id>
 participants:
   - Sarah
 constraints:
-  date: 2026-08-27
+  date: 2026-02-27
   start_after: "13:00"
   end_before: "18:00"
   require_all_available: true

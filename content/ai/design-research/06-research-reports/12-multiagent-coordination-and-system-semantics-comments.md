@@ -8,9 +8,9 @@ linkTitle: "12 Multiagent Coordination And System Semantics Comments"
 # Multiagent coordination and system semantics: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [report note]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}) retains the original LLM arguments with editorial wording. The comments are interpretation and review questions, not original dialogue or independently verified findings.
+New commentary by Codex, added on 2026-04-01. The [report note]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}) retains the original LLM arguments with editorial wording. The comments are interpretation and review questions, not original dialogue or independently verified findings.
 
 ## Why the replies stay together
 

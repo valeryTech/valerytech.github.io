@@ -8,7 +8,7 @@ linkTitle: "Review Tools and Skills Catalog"
 
 These are current examples of the agents, skills, workflows, and harnesses described in [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}}). Other implementations can fill the same roles or address new review needs.
 
-Local sources inspected on 2026-10-20. Descriptions reflect the current source files; the tools and skills were not executed as part of this inventory. Links point to local checkouts.
+Local sources inspected on 2026-04-20. Descriptions reflect the current source files; the tools and skills were not executed as part of this inventory. Links point to local checkouts.
 
 ## Wrappers and review experiments
 

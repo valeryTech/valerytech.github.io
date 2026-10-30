@@ -8,9 +8,9 @@ linkTitle: "03 Declarative Programming Model Comments"
 # Declarative programming model: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [programming-model note]({{< ref "ai/design-research/03-language-and-compiler/03-declarative-programming-model" >}}) retains the earlier arguments and new pattern passage with editorial wording, while preserving the captured article text exactly. The comments focus on the imported pattern passage and its relation to the earlier model. They do not independently verify the earlier source claims.
+New commentary by Codex, added on 2026-04-01. The [programming-model note]({{< ref "ai/design-research/03-language-and-compiler/03-declarative-programming-model" >}}) retains the earlier arguments and new pattern passage with editorial wording, while preserving the captured article text exactly. The comments focus on the imported pattern passage and its relation to the earlier model. They do not independently verify the earlier source claims.
 
 ## Why the pattern examples belong here
 

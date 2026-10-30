@@ -6,7 +6,7 @@ title: "01 Investigation Language And Algebra"
 linkTitle: "01 Investigation Language And Algebra"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 Initial question: Could investigation be represented as abstract computation on a machine and connected to more fundamental theory without excessive abstraction? Would a DSL provide a useful way to enter this domain?
 

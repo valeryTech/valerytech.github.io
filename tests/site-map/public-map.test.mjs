@@ -110,7 +110,7 @@ test('maps distinguish preferred entry points, published drafts, and archived hi
   assert.doesNotMatch(versioned, /\[(Canonical|Archived|Draft)\]/);
 });
 
-test('Design Research uses 00 Index as its sidebar entry and landing-page reading guide', () => {
+test('Design Research keeps its sidebar reading guide and has a separate section index', () => {
   const html = readFileSync(outputFile('/ai/design-research/'), 'utf8');
   const group = html.match(/<summary>Design Research<\/summary>([\s\S]*?)<\/details>/)?.[1];
   assert.ok(group, 'The Design Research sidebar group must be present');
@@ -119,7 +119,31 @@ test('Design Research uses 00 Index as its sidebar entry and landing-page readin
   assert.equal(extractLinks(entry)[0].pathname, '/ai/design-research/00-index/');
   assert.match(entry, />00 Index<\/a>/);
   assert.equal(extractLinks(group).filter((link) => link.pathname === '/ai/design-research/00-index/').length, 1);
-  assert.match(mainContent(html), /Suggested reading path/);
+  const content = mainContent(html);
+  assert.match(content, /<h1>Design Research<\/h1>/);
+  assert.match(content, /Start here/);
+  assert.ok(extractLinks(content).some((link) => link.pathname === '/ai/design-research/00-index/'));
+  assert.match(content, /Explore this section/);
+  assert.doesNotMatch(content, /<h2\b[^>]*>Suggested reading path/);
+});
+
+test('collection indexes present grouped notes with the same descriptions as their assembled maps', () => {
+  for (const section of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
+    const html = mainContent(readFileSync(outputFile(`/${section}/`), 'utf8'));
+    assert.equal((html.match(/<h1\b/g) || []).length, 1, section);
+    assert.match(html, /Explore this section/);
+    assert.match(html, /section-map-description/);
+    const paths = new Set(extractLinks(html).map((link) => link.pathname));
+    for (const link of extractLinks(maps.get(`/agent-map/${section}/`))) {
+      if (link.pathname.startsWith(`/${section}/`) && link.pathname !== `/${section}/`) {
+        assert.ok(paths.has(link.pathname), `Missing note or subsection from ${section} index: ${link.pathname}`);
+      }
+    }
+  }
+  const ai = mainContent(readFileSync(outputFile('/ai/'), 'utf8'));
+  const description = 'A conceptual research note on how representations guide construction';
+  assert.ok(ai.includes(description), 'The section index should show the note description');
+  assert.ok(maps.get('/agent-map/ai/').includes(description), 'The assembled map should use the same description');
 });
 
 test('migrated documents have curated descriptions, including honest descriptions for placeholders', () => {

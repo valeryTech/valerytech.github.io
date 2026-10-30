@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Building and Reviewing Software with AI"
 description: "AI-assisted development connects a user’s problem to a design, implementation, and evidence that the result works. These notes carry that thread through product framing, coding-agent work, testing, and merge review."
-lastmod: "2026-10-19"
+lastmod: "2026-04-19"
 linkTitle: "Building and Reviewing with AI"
 ---
 

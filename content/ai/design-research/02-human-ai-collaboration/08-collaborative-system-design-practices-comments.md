@@ -8,7 +8,7 @@ linkTitle: "08 Collaborative System Design Practices Comments"
 # Collaborative-system design practices: comments
 
 
-New commentary by Codex, added on 2026-10-01. The [practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) retains an original question and complete LLM reply. The comments explain the arrangement and questions for later design work.
+New commentary by Codex, added on 2026-04-01. The [practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) retains an original question and complete LLM reply. The comments explain the arrangement and questions for later design work.
 
 ## Why the practices stay together
 

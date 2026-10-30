@@ -6,7 +6,7 @@ title: "03 Shared Runtime Landscape"
 linkTitle: "03 Shared Runtime Landscape"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 <a id="other"></a>
 
@@ -39,7 +39,7 @@ A proposed map of the nearest work follows:
 |**LangGraph / Temporal**|Persistent state, durable execution, replay, interruptions, human intervention and controlled side effects. ([Docs by LangChain](https://docs.langchain.com/oss/python/langgraph/persistence?utm_source=chatgpt.com "Persistence - Docs by LangChain"))|Workflow is the organizing abstraction. Authority, provenance and participant semantics generally sit outside that abstraction.|
 |**Multiparty session types / choreographies**|Probably the strongest older theoretical ancestor: specify global interaction among participants and mechanically guarantee protocol properties such as communication safety, progress and deadlock freedom. ([Springer](https://link.springer.com/article/10.1007/s10270-022-01040-x?utm_source=chatgpt.com "Composable partial multiparty session types for open systems \| Software and Systems Modeling \| Springer Nature Link"))|Usually assumes protocol-shaped, largely deterministic participants and declared interaction structure. It doesn't address epistemic/probabilistic participants, shared semantic state or authority/provenance.|
 
-There are also several mature technologies that each solve one slice of the research question. MCP and A2A solve connectivity and interoperability; notably, A2A deliberately leaves the meaning, scope and revocation semantics of authorization to implementations. ([Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-07-28/?utm_source=chatgpt.com "The 2026-07-28 Specification | Model Context Protocol Blog")) Cedar, Biscuit and UCAN make authority explicit; Biscuit and UCAN additionally support attenuated/delegated capability chains. ([Cedar Policy Language Reference Guide](https://docs.cedarpolicy.com/auth/authorization.html?utm_source=chatgpt.com "Authorization | Cedar Policy Language Reference Guide")) Automerge gives you replicated shared state plus complete change history. ([Automerge](https://automerge.org/blog/automerge-3/?utm_source=chatgpt.com "Automerge 3.0")) Koka and Unison make computational effects visible in types, with Unison extending the idea into distributed computation. ([Unison](https://www.unison-lang.org/docs/language-reference/abilities-and-ability-handlers/?utm_source=chatgpt.com "Abilities and ability handlers · Unison programming language"))
+There are also several mature technologies that each solve one slice of the research question. MCP and A2A solve connectivity and interoperability; notably, A2A deliberately leaves the meaning, scope and revocation semantics of authorization to implementations. ([Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-01-28/?utm_source=chatgpt.com "The 2026-01-28 Specification | Model Context Protocol Blog")) Cedar, Biscuit and UCAN make authority explicit; Biscuit and UCAN additionally support attenuated/delegated capability chains. ([Cedar Policy Language Reference Guide](https://docs.cedarpolicy.com/auth/authorization.html?utm_source=chatgpt.com "Authorization | Cedar Policy Language Reference Guide")) Automerge gives you replicated shared state plus complete change history. ([Automerge](https://automerge.org/blog/automerge-3/?utm_source=chatgpt.com "Automerge 3.0")) Koka and Unison make computational effects visible in types, with Unison extending the idea into distributed computation. ([Unison](https://www.unison-lang.org/docs/language-reference/abilities-and-ability-handlers/?utm_source=chatgpt.com "Abilities and ability handlers · Unison programming language"))
 
 The review argues that the differentiation is not "nobody has thought about state/authority/provenance." Every one of those has substantial prior art. The potentially distinct thesis is their **unification around a participant-neutral environment**:
 
@@ -47,7 +47,7 @@ The review argues that the differentiation is not "nobody has thought about stat
 
 The saved review did not identify a system that makes all seven the same semantic object.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Systems survey from the programmable environments report
 
@@ -110,7 +110,7 @@ resource / time / money bounds             collaboration topology
 
 There are domains in which the right-hand side also must be prescribed--regulated processes, safety procedures and formally verified protocols are obvious examples. Workflow research exists precisely because some sequence constraints are domain invariants. [^turn4search2][^turn4search1] The architectural point is to distinguish those genuine invariants from incidental orchestration choices.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The original report places its [trusted execution discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) between the current systems discussion above and the complete comparison matrices below. Its [historical survey]({{< ref "ai/design-research/02-human-ai-collaboration/04-augmentation-literature-and-reading-path" >}}#historical-foundations-and-the-boundaries-they-introduced) provides the context for the earlier traditions in the first matrix.
 
@@ -150,7 +150,7 @@ The modern systems make the division of concerns even clearer:
 | **AlphaEvolve (2025)** [^turn18search0] | LLMs supply creative program proposals; objective evaluators select and evolve them | Only evaluator-scored executable candidates enter evolutionary selection | program, proposal, evaluator, score, program database | Mathematics/algorithm tasks and reported Google infrastructure applications | Depends on computable high-quality objective functions |
 | **CaMeL (2025; SaTML 2026)** [^turn21search0][^turn21search8] | Protect tool-using LLMs even when the model itself is susceptible to prompt injection | Trusted user control flow separated from untrusted data; tool policies enforce data/security capabilities | trusted/quarantined model roles, data-flow graph, security capability, tool policy | AgentDojo; revised paper reports 77% secure task completion vs 84% undefended | Strong guarantees rely on explicit threat-model and flow/policy assumptions |
 | **AgentSpec (2025)** [^turn20academia24] | Constrain autonomous model behaviour using runtime rules | Effects are intercepted against trigger/predicate/enforcement rules | rule, trigger, predicate, enforcement action | Code, embodied-agent and autonomous-driving evaluations | Complete safety depends on policy coverage; generated policies are imperfect |
-| **MCP 2026-07-28** [^turn14search2][^turn14search10] | Standard interface between AI applications and external services/tools | Stateless protocol boundary; self-describing requests; transport authorisation; Tasks extension | request, Tool, resource, Task handle, capability/extension, auth context | Protocol/implementation adoption rather than task-quality benchmark | Standardises connectivity more than application-level authority semantics |
+| **MCP 2026-01-28** [^turn14search2][^turn14search10] | Standard interface between AI applications and external services/tools | Stateless protocol boundary; self-describing requests; transport authorisation; Tasks extension | request, Tool, resource, Task handle, capability/extension, auth context | Protocol/implementation adoption rather than task-quality benchmark | Standardises connectivity more than application-level authority semantics |
 | **A2A current specification** [^turn15search3][^turn15search1] | Let independently implemented, opaque agents discover one another and coordinate long-running tasks | HTTP/protocol boundary; agent internals deliberately opaque; authorisation local to server | `AgentCard`, `Task`, `Message`, `Part`, `Artifact`, `Context`, lifecycle | Interoperability standard, not cognitive benchmark | Distributed policy and global invariants remain application concerns |
 | **AttriGuard, USENIX Security '26** [^turn20search4] | Decide whether a requested tool effect is causally grounded in user intent | Proposed tool calls are checked at runtime against counterfactual executions with external-control influence attenuated | proposed tool call, observation, shadow execution, causal attribution | Four LLMs, two agent benchmarks; static and adaptive prompt-injection attacks | Extra model execution/latency; causal test remains an approximation of intent |
 
@@ -164,7 +164,7 @@ Third, **shared state has several legitimate implementations**. A blackboard exp
 
 Fourth, **conversation should not be the authoritative substrate**. A2A's own current design distinguishes communication `Message`s from deliverable `Artifact`s and warns against relying on transient messages for critical information. [^turn15search3] The security literature reaches the same conclusion from another direction: a single undifferentiated natural-language context is a bad place to encode both untrusted data and trusted control. [^turn21search0][^turn20search3]
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation definitions for the imported report sections
 
@@ -259,6 +259,6 @@ These definitions are local copies from the [complete original bibliography]({{<
 
 [^turn15search1]: Agent2Agent (A2A) Protocol, current enterprise/security and authorization guidance. <https://a2a-protocol.org/latest/topics/enterprise-ready/> Original Deep Research source key: `turn15search1`.
 
-[^turn14search2]: Model Context Protocol maintainers, "The 2026-07-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-07-28/> Original Deep Research source key: `turn14search2`.
+[^turn14search2]: Model Context Protocol maintainers, "The 2026-01-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-01-28/> Original Deep Research source key: `turn14search2`.
 
-[^turn14search10]: Model Context Protocol maintainers, "The 2026-07-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/> Original Deep Research source key: `turn14search10`.
+[^turn14search10]: Model Context Protocol maintainers, "The 2026-01-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/> Original Deep Research source key: `turn14search10`.

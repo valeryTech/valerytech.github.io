@@ -77,7 +77,7 @@ Resolve issues that block acceptance, make unresolved requirements and verificat
 ## References
 
 
-External references checked on 2026-10-20. The workflow guidance above is a recommendation for this framework.
+External references checked on 2026-04-20. The workflow guidance above is a recommendation for this framework.
 
 [1] Google Engineering Practices, [What to look for in a code review](https://google.github.io/eng-practices/review/reviewer/looking-for.html).
 

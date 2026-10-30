@@ -8,7 +8,7 @@ linkTitle: "08 Collaborative Computation And Alice Research Scope Comments"
 # Collaborative computation and Alice research scope: comments
 
 
-New commentary by Codex, added on 2026-10-01. The [scope note]({{< ref "ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope" >}}) preserves the complete final reply. The comments explain its placement and limits, rather than adopting the reply's theory.
+New commentary by Codex, added on 2026-04-01. The [scope note]({{< ref "ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope" >}}) preserves the complete final reply. The comments explain its placement and limits, rather than adopting the reply's theory.
 
 ## Why the correction has its own note
 

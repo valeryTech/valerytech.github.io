@@ -8,16 +8,16 @@ linkTitle: "08 Semantic Substrate Builder Method"
 # Semantic substrate builder method
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The complete builder method comes from the [semantic-substrate report]({{< ref "ai/design-research/01-foundations/02-semantic-substrate-design-report" >}}). The [formal models]({{< ref "ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models" >}}) explain the relation between constraints and guarantees. The builder dialogue imported during the preceding split stays with the method, including its original examples and navigation.
 
 ## Deriving requirements from work complexity
 
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The following retained passage comes from the reply now grouped in [Complexity and work structure]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure" >}}). It proposes candidate requirements and mechanisms from a work profile. The sibling [comments]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method-comments" >}}) distinguish the proposal from the guarantee-based method that follows.
 
@@ -265,7 +265,7 @@ naturally implies constraints on authority, commit validation and provenance.
 
 It does **not** necessarily imply a fixed workflow, fixed graph, deterministic proposal generation, one particular model architecture, or shared mutable state for every component.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ### Builder questions and examples from the dialogue
 
@@ -337,7 +337,7 @@ The LLM proposal therefore favors **semantic substrate design** over "constraine
 
 "Constrained generativity" can describe the underlying principle.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The intervening section 3 critiques the earlier architecture-specific question and is now in [Refined research question]({{< ref "ai/design-research/00-overview/05-refined-research-question" >}}#3-the-second-problem-framing-is-currently-too-solution-shaped). After the examples below, the dialogue continues with the [relation between constraints and guarantees]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#5-the-theory-needs-a-relation-between-constraints-and-guarantees).
 
@@ -420,7 +420,7 @@ Only the second looks like the architecture currently described in file 2.
 
 That separation is important because it turns the human/LLM architecture into evidence for the theory instead of making the theory dependent on agents.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Design and LLM roles from the captured DSL article
 
@@ -450,7 +450,7 @@ So where do LLMs fit in? I see LLMs playing two roles. They are a great help whi
 
 A useful way to frame this is through [Domain Driven Design](http://martinfowler.com/bliki/DomainDrivenDesign.html). Its core insight is building a shared conceptual model of the domain in code, and then using that model - which DDD calls a [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html) - both to evolve the codebase and to give the team a vocabulary to think and communicate in. Often, it is highly effective to build a domain specific language on top of that model: a constrained syntax for expressing the domain's concepts and operations. Seen this way, most development is the process of building a domain model and using it to evolve the system. The LLM plays two distinct roles depending on whether the domain model already exists. In this article, I will focus on how [Domain-Specific Languages](https://martinfowler.com/dsl.html) (DSLs) work with LLMs.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 The article's intervening examples are now in [DSL reliability]({{< ref "ai/design-research/03-language-and-compiler/01-dsl-reliability" >}}#example-using-llms-to-generate-diagram-rich-powerpoint-presentations) and the [Tickloom case study]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}). The case study keeps the semantic model and scenario DSL together. The closing discussion of the two phases follows.
 
@@ -463,11 +463,11 @@ The first phase is *designing the abstraction or DSL itself*. Here the LLM is be
 
 The second phase begins once the abstraction or DSL is in place. Now what the LLM does changes: it becomes a *natural-language interface* to what you have built. The prompts in this article are examples -- "implement a quorum store as a Tickloom Replica", "write a scenario reproducing the DDIA §10.6 read", "create a slide YAML for this diagram". In each case the English description maps almost directly onto the vocabulary you defined, and the LLM is a dependable generator precisely because the abstraction supplies both the context that grounds the prompt and the harness that checks the result.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 The article ends with [the DSL as the source of truth]({{< ref "ai/design-research/03-language-and-compiler/03-declarative-programming-model" >}}#the-dsl-as-the-source-of-truth). The citation definitions below belong to the earlier semantic substrate report excerpts, not to the captured DSL article.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Citation definitions for the imported report sections
 

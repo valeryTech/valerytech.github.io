@@ -6,7 +6,7 @@ title: "04 Formal Models For Agent Execution"
 linkTitle: "04 Formal Models For Agent Execution"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## this separation
 
@@ -516,7 +516,7 @@ Certified<T, property>
 
 and reason about a composition containing both hard guarantees and empirical reliability targets. SEVerA's explicit separation of hard constraints from a soft optimisation objective is one useful starting point. [5](#ref-5)
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation links added during reassembly
 

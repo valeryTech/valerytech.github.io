@@ -8,7 +8,7 @@ linkTitle: "12 Exploratory Pipeline Design Goals And Principles"
 # Exploratory pipeline design goals and principles
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained passage is the complete third formulation from the exploratory-design source. Its original label, "third - to analyse", remains below with the proposed names, definition, purpose, goals, non-goals, ten principles, operating loops, design objective, and manifesto. The passage is a proposal for analysis rather than an accepted method or implementation checklist.
 

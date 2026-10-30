@@ -8,9 +8,9 @@ linkTitle: "06 Research Scope And Hierarchy"
 # Research scope and hierarchy
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Scope and status
 
@@ -114,7 +114,7 @@ That's almost exactly where the earlier document eventually arrives with its que
 
 That should probably become the center.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The intervening passages are now in the [builder questions]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#2-this-changes-what-you-give-builders), the [critique of the earlier question]({{< ref "ai/design-research/00-overview/05-refined-research-question" >}}#3-the-second-problem-framing-is-currently-too-solution-shaped), and the [complete comparison of three builders]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#4-start-from-guarantees-then-derive-constraints). The dialogue continues below with the relation between constraints and guarantees.
 

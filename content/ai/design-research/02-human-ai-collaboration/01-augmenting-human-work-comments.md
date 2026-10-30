@@ -8,7 +8,7 @@ linkTitle: "01 Augmenting Human Work Comments"
 # Augmenting human work: comments
 
 
-New commentary by Codex, added on 2026-10-01. The comments primarily explain the newly imported [framing dialogue]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}#from-conversational-interfaces-to-collaborative-work). They do not independently verify the earlier note's literature or product claims.
+New commentary by Codex, added on 2026-04-01. The comments primarily explain the newly imported [framing dialogue]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}#from-conversational-interfaces-to-collaborative-work). They do not independently verify the earlier note's literature or product claims.
 
 ## Why the framing belongs here
 

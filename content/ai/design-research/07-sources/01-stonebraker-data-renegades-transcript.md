@@ -7,7 +7,7 @@ linkTitle: "Data Renegades | Ep. #11, Contrarian Bets and AI Skepticism with Mic
 ---
 light mode
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 # Stonebraker interview source
 
@@ -97,7 +97,7 @@ Then in the miracle of open source, of the way open source is supposed to be, th
 
 **Michael:** Well, I mean at the time I was involved in commercializing Postgres with a different venture. And so the fact that some other people picked up the Berkeley code line I thought was wonderful. And so, I mean it didn't at all conflict with what we were trying to do and so it was totally independent of me or the commercial Postgres company.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Research, commercialization, and careers
 
@@ -226,7 +226,7 @@ I think I read Apple News religiously. I read pieces of the New York Times. I ke
 
 **Michael:** Sure, CL. Thanks for all the interesting questions.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Captured page footer
 

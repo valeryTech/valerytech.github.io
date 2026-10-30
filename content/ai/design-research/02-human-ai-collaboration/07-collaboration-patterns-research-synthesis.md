@@ -8,7 +8,7 @@ linkTitle: "07 Collaboration Patterns Research Synthesis"
 # Human-AI Collaboration Patterns: A Practitioner and Research Synthesis
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## Executive summary
 
@@ -46,7 +46,7 @@ That combines **inspectability, verifiability, directability, and commitment con
 
 Finally, the best way to validate a collaborative AI is **not AI accuracy alone**. Test whether the *human-AI system* can establish common ground, detect and repair misunderstandings, appropriately allocate work, catch seeded AI errors, maintain calibrated reliance, transfer control without losing situational awareness, and outperform sensible human-only and AI-only baselines where complementarity is the goal. Research on AI-assisted decisions repeatedly finds that adding advice, confidence, or explanations does not automatically produce better joint performance; interaction order and cognitive biases matter. [^3][^11]
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The original report summary and complete bibliography remain here. The report is a retained LLM synthesis, not an adopted taxonomy or independently verified review. The sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis-comments" >}}) explain the split and the status of its claims.
 

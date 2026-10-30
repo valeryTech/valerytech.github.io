@@ -8,9 +8,9 @@ linkTitle: "11 Human Ai Collaboration Evaluation Comments"
 # Human-AI collaboration evaluation: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) retains the report's proposed tests with editorial wording. The comments distinguish the proposal from a completed study.
+New commentary by Codex, added on 2026-04-01. The [evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) retains the report's proposed tests with editorial wording. The comments distinguish the proposal from a completed study.
 
 ## Why the evaluation has its own note
 

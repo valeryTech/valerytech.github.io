@@ -8,7 +8,7 @@ linkTitle: "05 Multirepresentation Retrieval And Projections Comments"
 # Multi-representation retrieval and projections: comments
 
 
-New commentary by Codex, added on 2026-10-01. The comments primarily concern the newly imported [interactive RAG and query-understanding examples]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#interactive-rag-and-query-understanding). The initial question and reply remain unchanged above that section. The comments are interpretation, not original dialogue or verified results.
+New commentary by Codex, added on 2026-04-01. The comments primarily concern the newly imported [interactive RAG and query-understanding examples]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#interactive-rag-and-query-understanding). The initial question and reply remain unchanged above that section. The comments are interpretation, not original dialogue or verified results.
 
 ## Why both worked examples belong here
 

@@ -8,7 +8,7 @@ linkTitle: "DSLs Enable Reliable Use of LLMs"
 # DSL reliability
 
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 The note retains the source metadata, reliability argument, and complete presentation example from the captured article "DSLs Enable Reliable Use of LLMs". The [opening design discussion]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#design-and-llm-roles-from-the-captured-dsl-article) is now in the builder method note. The remaining article sections are linked after the presentation example.
 
@@ -93,7 +93,7 @@ The full YAML spec can be viewed at [this Github repo](https://github.com/unmesh
 
 Notice that the LLM played two different parts in this single example. First it was a co-designer -- helping shape the step-marked PlantUML extension and the slide YAML on top of existing PlantUML tooling. Then, once that small DSL existed, it became the natural-language interface that turns an English request into a valid spec. We will come back to this division of labour at the end of the article.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Continuation of the captured article
 

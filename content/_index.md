@@ -2,7 +2,7 @@
 title: Systems & Engineering
 description: "Notes by Valery Yuda on evaluating AI systems, designing applications with language models, and understanding how people use and improve them."
 date: 2023-09-07T16:33:54+02:00
-lastmod: 2026-10-29T00:00:00-03:00
+lastmod: 2026-04-27T00:00:00-03:00
 draft: false
 seo:
   title: Systems & Engineering

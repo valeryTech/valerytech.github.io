@@ -8,7 +8,7 @@ linkTitle: "12 Tickloom Semantic Model And Scenario Dsl Comments"
 # Comments on the Tickloom case study
 
 
-The comments were added by Codex on 2026-09-30 at the user's request. They explain the sibling [case-study note]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}) and record open questions. They are new commentary, not part of the captured article or an agreed implementation specification.
+The comments were added by Codex on 2026-03-30 at the user's request. They explain the sibling [case-study note]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}) and record open questions. They are new commentary, not part of the captured article or an agreed implementation specification.
 
 ## Why the examples are together
 

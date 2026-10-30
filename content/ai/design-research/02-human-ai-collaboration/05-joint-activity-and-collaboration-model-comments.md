@@ -8,9 +8,9 @@ linkTitle: "05 Joint Activity And Collaboration Model Comments"
 # Joint activity and collaboration model: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [model note]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains original LLM arguments with editorial wording. The comments are interpretation and design questions, not original dialogue or verified findings.
+New commentary by Codex, added on 2026-04-01. The [model note]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains original LLM arguments with editorial wording. The comments are interpretation and design questions, not original dialogue or verified findings.
 
 ## Why the model stays together
 

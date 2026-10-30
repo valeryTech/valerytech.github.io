@@ -8,9 +8,9 @@ linkTitle: "14 Collaborative Writing And Text Assembly Comments"
 # Collaborative writing and text assembly: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [case note]({{< ref "ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly" >}}) retains the workflow sketch and complete example note. The comments describe open design questions, rather than an adopted interface or a tested benefit.
+New commentary by Codex, added on 2026-04-01. The [case note]({{< ref "ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly" >}}) retains the workflow sketch and complete example note. The comments describe open design questions, rather than an adopted interface or a tested benefit.
 
 ## Why the workflow and examples stay together
 

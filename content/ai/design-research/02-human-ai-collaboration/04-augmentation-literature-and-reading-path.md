@@ -6,7 +6,7 @@ title: "04 Augmentation Literature And Reading Path"
 linkTitle: "04 Augmentation Literature And Reading Path"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 To read:
 
@@ -125,7 +125,7 @@ And multiple views could project it.
 
 Co-STORM is probably the paper proposed as a first reading on the **human interaction** side.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Historical survey from the programmable environments report
 
@@ -170,7 +170,7 @@ The most useful way to organise the older literature is by the boundary each tra
 
 Finally, **neuro-symbolic AI addresses a different cut through the system**. Garcez, Broda and Gabbay's foundational treatment combines symbolic knowledge representation and reasoning with neural learning; later "third wave" work argues for principled integration motivated partly by interpretability, accountability and trustworthy reasoning. [^turn2search1][^turn2academia38] This remains valuable, especially for components such as AlphaGeometry. But "neural versus symbolic" is only one axis of a larger architecture. A human, database or payment service cannot be adequately classified by that distinction, and the distinction alone does not tell us who is authorised to send the payment.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The original report places its [current systems discussion and comparison matrices]({{< ref "ai/design-research/06-research-reports/03-shared-runtime-landscape" >}}#current-llm-systems-and-human-augmentation) and [trusted execution discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) between the historical survey above and the complete timeline below. The timeline and both paragraphs interpreting it remain together.
 
@@ -221,7 +221,7 @@ The post-2022 part should not be read as one linear replacement chain. ReAct, LM
 
 The latest protocol work also shows that the abstraction is still moving. MCP's 28 July 2026 revision changed a previously stateful core to a stateless request/response core and moved long-running Tasks to an extension, while A2A treats long-running stateful `Task`s as a fundamental inter-agent object. [^turn14search2][^turn14search10][^turn15search3] That divergence is informative: **transport state, task state and application state are different things and need not live in the same layer.**
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation definitions for the imported report sections
 
@@ -300,6 +300,6 @@ These definitions are local copies from the [complete original bibliography]({{<
 
 [^turn15search3]: Agent2Agent (A2A) Protocol, current specification and core concepts. <https://a2a-protocol.org/latest/topics/key-concepts/> Original Deep Research source key: `turn15search3`.
 
-[^turn14search2]: Model Context Protocol maintainers, "The 2026-07-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-07-28/> Original Deep Research source key: `turn14search2`.
+[^turn14search2]: Model Context Protocol maintainers, "The 2026-01-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-01-28/> Original Deep Research source key: `turn14search2`.
 
-[^turn14search10]: Model Context Protocol maintainers, "The 2026-07-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/> Original Deep Research source key: `turn14search10`.
+[^turn14search10]: Model Context Protocol maintainers, "The 2026-01-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/> Original Deep Research source key: `turn14search10`.

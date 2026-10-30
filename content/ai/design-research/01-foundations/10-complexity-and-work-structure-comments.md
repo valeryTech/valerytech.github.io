@@ -8,9 +8,9 @@ linkTitle: "10 Complexity And Work Structure Comments"
 # Complexity and work structure: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [source note]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure" >}}) retains the arguments from parts of the original LLM reply with editorial wording. The comments below are interpretation and review, not original dialogue or verified research results.
+New commentary by Codex, added on 2026-04-01. The [source note]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure" >}}) retains the arguments from parts of the original LLM reply with editorial wording. The comments below are interpretation and review, not original dialogue or verified research results.
 
 ## Why the material stays together
 

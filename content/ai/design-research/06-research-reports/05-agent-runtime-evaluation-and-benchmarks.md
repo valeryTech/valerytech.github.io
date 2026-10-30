@@ -8,9 +8,9 @@ linkTitle: "05 Agent Runtime Evaluation And Benchmarks"
 # Agent-runtime evaluation and benchmarks
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The following runtime passage comes from [Programmable probabilistic agent computation]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}). Its numbered citations point to the shared bibliography through the local links below. The complete cross-application metric framework remains intact.
 
@@ -93,7 +93,7 @@ That motivates a benchmark that does not currently seem well represented:
 
 A few hundred carefully specified scenarios would be more scientifically useful than thousands of ordinary question-answering examples.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Citation links added during reassembly
 
@@ -116,14 +116,14 @@ The original numbered citations link to the entries below, which point to the [s
 - <a id="ref-41"></a>[Reference 41]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-41)
 - <a id="ref-42"></a>[Reference 42]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-42)
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Interview context for BEAVER and DAB
 
 
 The [complete text-to-SQL and benchmark exchange]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#text-to-sql-rubicon-and-benchmarks-from-the-interview) is preserved in the database runtime note. The interview connects BEAVER with RUBICON and distinguishes retrieval from action tasks. The reported results and qualifications remain attributed to the captured interview, without independent verification or updates. No benchmark passages were duplicated here.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Shared verification framework
 

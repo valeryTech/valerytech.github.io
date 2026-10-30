@@ -8,9 +8,9 @@ linkTitle: "11 Participant Profiles And Work Allocation Comments"
 # Participant profiles and work allocation: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [profile note]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) retains the original questions and LLM proposals with editorial wording. The comments explain placement and unresolved definitions, rather than treating the profiles as verified facts.
+New commentary by Codex, added on 2026-04-01. The [profile note]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) retains the original questions and LLM proposals with editorial wording. The comments explain placement and unresolved definitions, rather than treating the profiles as verified facts.
 
 ## Why the initial and revised models stay together
 

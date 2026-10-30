@@ -8,7 +8,7 @@ linkTitle: "01 Generalized Agent Runtime Comments"
 # Generalized agent runtime: comments
 
 
-New commentary by Codex, added on 2026-10-01. The [runtime note]({{< ref "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime" >}}) preserves its earlier passages and the complete added mechanism list and coding-harness example. The comments focus on the added passage and do not independently verify the earlier report or product claims.
+New commentary by Codex, added on 2026-04-01. The [runtime note]({{< ref "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime" >}}) preserves its earlier passages and the complete added mechanism list and coding-harness example. The comments focus on the added passage and do not independently verify the earlier report or product claims.
 
 ## Why the runtime passage belongs here
 

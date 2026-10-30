@@ -39,4 +39,4 @@ Related reading for [Object-Oriented Harness: Evolving Agent Harnesses through O
 4. **Object-Oriented Harness** for specialization and task-specific selection.
 5. **Type-Oriented and Functional Harnesses** for the proposed alternative.
 
-Publication note, 2026-10-28: This reading guide omits local file locations and machine-specific search records.
+Publication note, 2026-04-28: This reading guide omits local file locations and machine-specific search records.

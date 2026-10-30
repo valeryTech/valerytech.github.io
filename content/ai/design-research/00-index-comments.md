@@ -8,7 +8,7 @@ linkTitle: "00 Index Comments"
 # Comments on the design-research collection
 
 
-These comments were added by Codex on 2026-09-30 at the user's request. This is an internal consistency review of the reorganized notes, not new source dialogue, an agreed architecture, or an external literature review. The [index]({{< ref "ai/design-research/00-index" >}}) remains the reading guide, and the reassembly map records the text moves.
+These comments were added by Codex on 2026-03-30 at the user's request. This is an internal consistency review of the reorganized notes, not new source dialogue, an agreed architecture, or an external literature review. The [index]({{< ref "ai/design-research/00-index" >}}) remains the reading guide, and the reassembly map records the text moves.
 
 ## Keep proposals separate from decisions
 

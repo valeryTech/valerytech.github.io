@@ -8,7 +8,7 @@ linkTitle: "12 Tickloom Semantic Model And Scenario Dsl"
 # Tickloom semantic model and scenario DSL
 
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 The following passages come from the captured article ["DSLs Enable Reliable Use of LLMs"]({{< ref "ai/design-research/03-language-and-compiler/01-dsl-reliability" >}}). They were moved unchanged from [Semantic kernel]({{< ref "ai/design-research/03-language-and-compiler/07-semantic-kernel" >}}) and [Typed DSL and compiler]({{< ref "ai/design-research/03-language-and-compiler/02-typed-dsl-and-compiler" >}}), in the article's original order. New explanations and open questions are in the sibling [comments note]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl-comments" >}}).
 

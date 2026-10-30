@@ -8,9 +8,9 @@ linkTitle: "01 Shared Investigation State And Views"
 # Shared investigation state and views
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Editorial navigation added on 2026-10-01. The retained passage begins below. -->
+<!-- Editorial navigation added on 2026-04-01. The retained passage begins below. -->
 
 The passage continues the opening reply in the Matrix case note. It proposes shared investigation objects, several views over the same state, and collaboration through recorded contributions.
 

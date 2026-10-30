@@ -8,7 +8,7 @@ linkTitle: "07 Investigation Evaluation And Benchmarks Comments"
 # Investigation evaluation and benchmarks: comments
 
 
-New commentary by Codex, added on 2026-10-01. The [evaluation note]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}) preserves its earlier benchmark proposal and the imported multiagent evidence passage. The comments focus on the added proposal, and they do not independently verify the earlier benchmark descriptions.
+New commentary by Codex, added on 2026-04-01. The [evaluation note]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}) preserves its earlier benchmark proposal and the imported multiagent evidence passage. The comments focus on the added proposal, and they do not independently verify the earlier benchmark descriptions.
 
 ## Why the evidence proposal belongs here
 

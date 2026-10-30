@@ -1,7 +1,7 @@
 {
   "version": 1,
   "start": "a917a4d9b65738e118d1d30e76f3737d42900052",
-  "through": "393b40ef11dd0ff4648212ff84f026f5890c568a",
+  "through": "b569a65838e6cd38cbd55967979a2ca82e626736",
   "routes": {
     "/": {
       "source": "content/_index.md",
@@ -344,8 +344,20 @@
       "title": "Coding Agents"
     },
     "/ai-engineering/coding-agents/agents-md": {
-      "source": "content/ai-engineering/coding-agents/agents-md.md",
+      "source": "content/ai-engineering/coding-agents/agents-md/_index.md",
+      "title": "Agents Md"
+    },
+    "/ai-engineering/coding-agents/agents-md/agents-md": {
+      "source": "content/ai-engineering/coding-agents/agents-md/agents-md.md",
       "title": "AGENTS.md"
+    },
+    "/ai-engineering/coding-agents/agents-md/coding-agent-experimentation-primer": {
+      "source": "content/ai-engineering/coding-agents/agents-md/coding-agent-experimentation-primer.md",
+      "title": "A practical way to study coding-agent improvements"
+    },
+    "/ai-engineering/coding-agents/agents-md/coding-agent-research-questions": {
+      "source": "content/ai-engineering/coding-agents/agents-md/coding-agent-research-questions.md",
+      "title": "Research agenda: AGENTS.md and reliable coding-agent autonomy"
     },
     "/ai-engineering/coding-agents/ca-dict": {
       "source": "content/ai-engineering/coding-agents/ca-dict.md",
@@ -1031,28 +1043,28 @@
       "source": "content/ai/ai-systems-design/_index.md",
       "title": "AI Systems Design"
     },
-    "/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29": {
-      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/_index.md",
+    "/ai/ai-systems-design/chatgpt-pro-followups-2026-04-27": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-04-27/_index.md",
       "title": "Chatgpt Pro Followups 2026 10 29"
     },
-    "/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/catalog": {
-      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/catalog.md",
+    "/ai/ai-systems-design/chatgpt-pro-followups-2026-04-27/catalog": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-04-27/catalog.md",
       "title": "Catalog"
     },
-    "/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/readme": {
-      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-10-29/readme.md",
+    "/ai/ai-systems-design/chatgpt-pro-followups-2026-04-27/readme": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-followups-2026-04-27/readme.md",
       "title": "Additional sources and second questions for the twenty Pro chats"
     },
-    "/ai/ai-systems-design/chatgpt-pro-research-questions-2026-10-29": {
-      "source": "content/ai/ai-systems-design/chatgpt-pro-research-questions-2026-10-29.md",
+    "/ai/ai-systems-design/chatgpt-pro-research-questions-2026-04-27": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-research-questions-2026-04-27.md",
       "title": "Twenty research questions for ChatGPT Pro"
     },
-    "/ai/ai-systems-design/chatgpt-pro-research-runs-2026-10-29": {
-      "source": "content/ai/ai-systems-design/chatgpt-pro-research-runs-2026-10-29.md",
+    "/ai/ai-systems-design/chatgpt-pro-research-runs-2026-04-27": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-research-runs-2026-04-27.md",
       "title": "ChatGPT Pro research conversations"
     },
-    "/ai/ai-systems-design/chatgpt-pro-research-source-map-2026-10-29": {
-      "source": "content/ai/ai-systems-design/chatgpt-pro-research-source-map-2026-10-29.md",
+    "/ai/ai-systems-design/chatgpt-pro-research-source-map-2026-04-27": {
+      "source": "content/ai/ai-systems-design/chatgpt-pro-research-source-map-2026-04-27.md",
       "title": "Source map for the twenty ChatGPT Pro research questions"
     },
     "/ai/ai-systems-design/representations-composition-and-understanding": {
@@ -1742,6 +1754,10 @@
     "/ai/design-research/input/harness/harness-reading-map": {
       "source": "content/ai/design-research/input/harness/harness-reading-map.md",
       "title": "Harness Reading Map"
+    },
+    "/ai/design-research/input/harness/in-harnes-building": {
+      "source": "content/ai/design-research/input/harness/in-harnes-building.md",
+      "title": "Harness-Building for Coding Agents"
     },
     "/ai/design-research/input/harness/object-oriented-harness": {
       "source": "content/ai/design-research/input/harness/object-oriented-harness.md",

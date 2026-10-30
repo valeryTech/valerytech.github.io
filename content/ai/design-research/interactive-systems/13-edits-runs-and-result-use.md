@@ -8,7 +8,7 @@ linkTitle: "13 Edits Runs And Result Use"
 # Proposed relationships between edits, runs, and result use
 
 
-Date: 2026-10-01. The note is new design commentary, not retained dialogue. Its rules are a proposed starting point for discussion, not accepted requirements or an implemented system.
+Date: 2026-04-01. The note is new design commentary, not retained dialogue. Its rules are a proposed starting point for discussion, not accepted requirements or an implemented system.
 
 An edit should identify what it changes and which revision it starts from. A computation should identify the exact inputs it reads, and a result-use decision should identify the exact output and purpose it concerns. A view can display the history and decisions without treating a displayed result as current or accepted by default.
 
@@ -98,6 +98,6 @@ The later language-interface review can use the same questions for an editable i
 
 The note adds a proposal without moving, copying, or rewriting any retained dialogue passage. Links from the index and collection review identify it as new commentary. The existing [reassembly log]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}) remains the record of original source locations.
 
-Verification on 2026-10-01 rechecked all 48 mapped passages across eight source audits and reconstructed the original sources exactly. The proposal, review, and index passed checks for 114 local links, including 29 heading anchors, and passed the whitespace checks.
+Verification on 2026-04-01 rechecked all 48 mapped passages across eight source audits and reconstructed the original sources exactly. The proposal, review, and index passed checks for 114 local links, including 29 heading anchors, and passed the whitespace checks.
 
 At the recorded workspace snapshot, 140 of 145 existing files were unchanged. The index and review received the intended editorial changes, while three design-research files changed externally and were left untouched. The Git index remained unchanged, and this pass did not stage, unstage, or commit files.

@@ -8,9 +8,9 @@ linkTitle: "08 Semantic Substrate Builder Method Comments"
 # Semantic substrate builder method: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The comments concern the newly imported [work-complexity passage]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#deriving-requirements-from-work-complexity), not an independent review of every source in the builder-method note. The original proposal is retained with editorial wording.
+New commentary by Codex, added on 2026-04-01. The comments concern the newly imported [work-complexity passage]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}#deriving-requirements-from-work-complexity), not an independent review of every source in the builder-method note. The original proposal is retained with editorial wording.
 
 ## Why the requirements example belongs here
 

@@ -8,7 +8,7 @@ linkTitle: "Document Map Comments"
 # Comments on the design research document map
 
 
-Date: 2026-10-01. The comments are new editorial analysis for the [document map]({{< ref "ai/design-research/document-map" >}}). The relationships suggest ways to read the collection, and they do not select an architecture or establish a research result.
+Date: 2026-04-01. The comments are new editorial analysis for the [document map]({{< ref "ai/design-research/document-map" >}}). The relationships suggest ways to read the collection, and they do not select an architecture or establish a research result.
 
 ## Scope of the pass
 

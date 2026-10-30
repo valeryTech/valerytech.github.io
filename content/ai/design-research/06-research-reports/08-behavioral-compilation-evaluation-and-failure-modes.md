@@ -8,15 +8,15 @@ linkTitle: "08 Behavioral Compilation Evaluation And Failure Modes"
 # Behavioral compilation evaluation and failure modes
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 This note keeps the failure analyses and proposed synthetic experiment beside each other. The source arguments below were moved from the combined evaluation note and are retained with editorial wording.
 
 The [evaluation comments]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks-comments" >}}) distinguish reproducing examples from solving a task. The earlier analysis, later critique, and source context remain separate below.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Source context for behavioral compilation
 
@@ -75,7 +75,7 @@ The prompt says one thing while the domain model encodes another. Counter by gen
 
 The output provides page, section, or span precision not preserved during ingestion. Counter by making permissible provenance granularity part of each source artifact's contract.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Synthesis problems from the behavioral dialogue
 
@@ -163,7 +163,7 @@ The relevant equivalence relation may involve:
 
 The verifier therefore defines the operational meaning of the task. This is as important as the DSL itself.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Synthetic experiment from the reanalysis
 

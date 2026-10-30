@@ -8,9 +8,9 @@ linkTitle: "Ai Product Types Improvement Proposal"
 # Improving the AI product taxonomy and practitioner guide
 
 
-Date: 2026-10-18. Proposed revisions to the earlier AI product taxonomy (now superseded by the [worked project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}})) and the [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}).
+Date: 2026-04-18. Proposed revisions to the earlier AI product taxonomy (now superseded by the [worked project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}})) and the [practitioner guide]({{< ref "ai/var/practitioner-guide-seven-ai-product-types" >}}).
 
-Status: implemented in both documents on 2026-10-18. The review below records the reasoning about the earlier drafts; the rewritten documents contain the current synthesis.
+Status: implemented in both documents on 2026-04-18. The review below records the reasoning about the earlier drafts; the rewritten documents contain the current synthesis.
 
 This review starts from the [research map]({{< ref "ai/design-research/document-map" >}}) and follows selected notes on work structure, collaboration, verification, evidence synthesis, operation authority, and interactive systems, including their editorial comments. It is a conceptual review, not an exhaustive rereading of the collection or an independent fact check of the guide's external references. The research contains retained dialogues, later corrections, and proposals; the recommendations below are a conceptual synthesis, not claims that the collection has validated a single architecture.
 

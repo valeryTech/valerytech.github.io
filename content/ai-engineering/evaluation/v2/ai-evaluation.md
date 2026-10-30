@@ -1268,7 +1268,7 @@ Case:
     "Paid $24 for lunch with Visa yesterday"
 
 Fixture:
-    current date = 2026-08-27
+    current date = 2026-02-27
     account "Visa" exists and is unambiguous
     product-approved currency rule applies
 
@@ -1276,7 +1276,7 @@ Expected draft:
     transaction type = expense
     amount = 24
     source account = Visa
-    date = 2026-08-26
+    date = 2026-02-26
     currency = expected product-defined value
     category = expected value or unresolved,
                according to the active contract

@@ -3,8 +3,8 @@ draft: false
 toc: true
 title: "Working Assumptions"
 description: "Plausible proposals are becoming abundant; good experiments and discriminating evidence remain scarce. Scoped task performance, explicit evaluators, and whole-job feedback connect alternatives to useful outcomes."
-date: "2026-09-03T00:00:00-03:00"
-lastmod: "2026-09-03T00:00:00-03:00"
+date: "2026-03-03T00:00:00-03:00"
+lastmod: "2026-03-03T00:00:00-03:00"
 linkTitle: "Working Assumptions"
 sidebar:
   weight: 1

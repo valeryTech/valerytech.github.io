@@ -8,7 +8,7 @@ linkTitle: "00 Index Comments"
 # Comments on the interactive systems collection
 
 
-The comments below were added on 2026-10-01. They are separate from the retained user and LLM text.
+The comments below were added on 2026-04-01. They are separate from the retained user and LLM text.
 
 ## Separate the example from the design proposal
 

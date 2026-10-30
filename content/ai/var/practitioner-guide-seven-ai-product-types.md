@@ -8,7 +8,7 @@ linkTitle: "Practitioner Guide Seven Ai Product Types"
 # Practitioner guide to seven AI product archetypes
 
 
-Revised 2026-10-18. Use the [worked project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}) for product cases and design concepts, and this guide to turn a product idea into design decisions, evaluation, operating requirements, and an estimate.
+Revised 2026-04-18. Use the [worked project examples]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}) for product cases and design concepts, and this guide to turn a product idea into design decisions, evaluation, operating requirements, and an estimate.
 
 The [editable tldraw board](https://www.tldraw.com/f/LO7apgTgZZn1VGy9rb0qL) maps the argument behind the guide: **Ideas and influences** connects work properties to design requirements, while **Principles and feedback** relates human control, evidence, acceptance, authority, and policy learning. Supporting diagrams remain on reference pages.
 
@@ -438,7 +438,7 @@ The example requires explicit relationships between edits, inputs, runs, results
 ## Deployment examples and source limits
 
 
-The sources below were checked on 2026-10-18. Case studies and product descriptions are first-party reports. Engineering accounts explain particular implementations. Their metrics should retain the source's population, definition, and observation period; none is a general forecast of another deployment's ROI. These examples illustrate selected capabilities rather than assigning a vendor product to one exclusive archetype.
+The sources below were checked on 2026-04-18. Case studies and product descriptions are first-party reports. Engineering accounts explain particular implementations. Their metrics should retain the source's population, definition, and observation period; none is a general forecast of another deployment's ROI. These examples illustrate selected capabilities rather than assigning a vendor product to one exclusive archetype.
 
 | Source | Supported observation | Interpretation limit |
 |---|---|---|

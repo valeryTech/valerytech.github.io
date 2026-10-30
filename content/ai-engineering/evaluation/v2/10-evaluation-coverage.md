@@ -184,7 +184,7 @@ fixture:
       name: Visa
     - id: visa-shared
       name: Visa
-  current_date: 2026-08-27
+  current_date: 2026-02-27
 
 expected_condition:
   account_reference: ambiguous
@@ -468,7 +468,7 @@ fixture:
   active_accounts:
     - id: visa-personal
       name: Visa
-  current_date: 2026-08-27
+  current_date: 2026-02-27
 
 expected_condition:
   account_reference: determinate
@@ -487,7 +487,7 @@ fixture:
       name: Visa
     - id: visa-shared
       name: Visa
-  current_date: 2026-08-27
+  current_date: 2026-02-27
 
 expected_condition:
   account_reference: ambiguous
@@ -506,7 +506,7 @@ fixture:
       name: Cash
     - id: visa-personal
       name: Visa
-  current_date: 2026-08-27
+  current_date: 2026-02-27
 
 expected_condition:
   source_account: missing

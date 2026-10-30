@@ -5,7 +5,7 @@ title: "Reviewing Software Changes"
 aliases:
   - "/ai/system-evaluation/generation/"
 description: "A sound review follows the intended change through requirements, surrounding code, design choices, and tests. It checks whether convincing explanations and passing checks could all repeat the same mistaken assumption."
-lastmod: "2026-10-19"
+lastmod: "2026-04-19"
 linkTitle: "Reviewing Software Changes"
 ---
 

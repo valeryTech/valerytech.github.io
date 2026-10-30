@@ -8,7 +8,7 @@ linkTitle: "05 Agent Runtime Evaluation And Benchmarks Comments"
 # Comments on the evaluation plans
 
 
-These comments were added by Codex on 2026-09-30 at the user's request. They concern the three related evaluation notes. They are new commentary, not part of the original dialogues, observed results, or an agreed experiment specification.
+These comments were added by Codex on 2026-03-30 at the user's request. They concern the three related evaluation notes. They are new commentary, not part of the original dialogues, observed results, or an agreed experiment specification.
 
 ## Three different questions
 

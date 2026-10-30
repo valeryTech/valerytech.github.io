@@ -8,7 +8,7 @@ linkTitle: "08 Prompt Text Composition And Registry Comments"
 # Comments on prompt text, composition, and registry
 
 
-New commentary by Codex, added on 2026-10-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry" >}}) preserves the original exchanges without rewriting them. The comments explain the changes in scope and identify questions for a later design.
+New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry" >}}) preserves the original exchanges without rewriting them. The comments explain the changes in scope and identify questions for a later design.
 
 ## Keep the corrections with the proposals
 

@@ -8,9 +8,9 @@ linkTitle: "10 Complexity And Work Structure"
 # Complexity and work structure
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained LLM reply proposes a profile of work complexity and a model of continuity across execution episodes. It is a design proposal, not a validated complexity measure. The sibling [comments]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure-comments" >}}) explain the arrangement and its limits.
 
@@ -224,7 +224,7 @@ rather than:
 
 The working interpretation is that this direction also connects very naturally to the framework idea. The framework could potentially let developers describe the **complexity structure of the work**--dependencies, uncertainty, authority, volatility, recovery requirements--and derive some collaboration/runtime behavior from it automatically.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Coordination and epistemic refinements
 
@@ -285,7 +285,7 @@ Those require different semantics.
 
 The surrounding framework analysis and later methodological critique remain in the [coordination report]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}).
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Work types and task dimensions
 

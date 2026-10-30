@@ -253,4 +253,4 @@ Build that small scenario in Python and Haskell, then add Scala 3 to challenge w
 
 For each prototype, publish the question, the runnable example, its language and boundary assumptions, a successful case, a revealing failure, and the resulting revision to the conceptual account. Retain useful excerpts of the design dialogue and the reasons for changing direction. This makes the process of learning from implementation part of the contribution.
 
-*Editorial note, 2026-10-29: Drafted with Codex from the research notes and the author's request for a set of important problems to investigate through end-to-end prototypes in different languages. The comparisons and sequence are proposals; this note reports no completed prototypes or experimental results.*
+*Editorial note, 2026-04-29: Drafted with Codex from the research notes and the author's request for a set of important problems to investigate through end-to-end prototypes in different languages. The comparisons and sequence are proposals; this note reports no completed prototypes or experimental results.*

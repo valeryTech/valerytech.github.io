@@ -8,7 +8,7 @@ linkTitle: "09 Declarative System Configuration And Instantiation Comments"
 # Comments on declarative system configuration and instantiation
 
 
-New commentary by Codex, added on 2026-10-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the initial DC requirements and later SC requirements as complete separate formulations. Neither list is an implemented interface or an adopted specification.
+New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the initial DC requirements and later SC requirements as complete separate formulations. Neither list is an implemented interface or an adopted specification.
 
 ## The later question expands the system boundary
 

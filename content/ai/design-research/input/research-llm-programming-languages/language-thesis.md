@@ -6,7 +6,7 @@ description: "Papers and essays on why AI may increase the value of typed langua
 linkTitle: "Language thesis"
 ---
 
-Final response from the **Language thesis** sub-agent in [Research LLM Programming Languages]({{< ref "ai/design-research/input/research-llm-programming-languages/conversation" >}}). Captured on 2026-10-29 from the signed-in sub-agent viewer. Wording, URLs, headings, lists, and tables are preserved; rich-text formatting is converted to Markdown. Retrieved-reference IDs are retained as written in the report.
+Final response from the **Language thesis** sub-agent in [Research LLM Programming Languages]({{< ref "ai/design-research/input/research-llm-programming-languages/conversation" >}}). Captured on 2026-04-29 from the signed-in sub-agent viewer. Wording, URLs, headings, lists, and tables are preserved; rich-text formatting is converted to Markdown. Retrieved-reference IDs are retained as written in the report.
 
 ---
 

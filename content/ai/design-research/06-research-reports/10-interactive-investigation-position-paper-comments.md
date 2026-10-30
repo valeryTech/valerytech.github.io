@@ -8,7 +8,7 @@ linkTitle: "10 Interactive Investigation Position Paper Comments"
 # Interactive investigation position paper: comments
 
 
-New commentary by Codex, added on 2026-10-01. The [paper note]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}) preserves original LLM text. The comments explain placement and design questions, rather than presenting the proposed paper as completed research.
+New commentary by Codex, added on 2026-04-01. The [paper note]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}) preserves original LLM text. The comments explain placement and design questions, rather than presenting the proposed paper as completed research.
 
 ## Why the paper material stays together
 

@@ -60,6 +60,6 @@ Treat the reports and bibliographies as working research material. Some source r
 
 I intend to continue in [AI systems design]({{< ref "ai/ai-system-design" >}}), developing a more coherent account while keeping earlier questions and revisions available for comparison. As the work develops, I plan to date substantive revisions and link later explanations and papers to the earlier material they develop or correct. The aim is for readers to follow what I currently think, how that view developed, and what is still open. Readers can contribute by identifying an unclear distinction, offering a counterexample, pointing to relevant prior work, or describing a practical situation in which an idea helps or fails.
 
-*Editorial note, 2026-10-28: This introduction was drafted with Codex from the author's stated aims and the existing collection. It is new framing for the material, separate from the retained dialogues.*
+*Editorial note, 2026-04-28: This introduction was drafted with Codex from the author's stated aims and the existing collection. It is new framing for the material, separate from the retained dialogues.*
 
-Publication note, 2026-10-28: The public edition omits private account links, raw browser snapshots, machine-specific source metadata, and personal or case-identifying details. Some dialogue passages are generalized for privacy.
+Publication note, 2026-04-28: The public edition omits private account links, raw browser snapshots, machine-specific source metadata, and personal or case-identifying details. Some dialogue passages are generalized for privacy.

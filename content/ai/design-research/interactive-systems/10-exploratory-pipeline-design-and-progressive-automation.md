@@ -8,7 +8,7 @@ linkTitle: "10 Exploratory Pipeline Design And Progressive Automation"
 # Exploratory pipeline design and progressive automation
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained material concerns using inspection and intervention to discover how a pipeline should work before committing uncertain decisions to automation. The opening context, labelled requests, and complete first answer remain together. The second formulation's diagnosis, research-practice comparison, engineering framing, interaction criteria, and closing formulations follow in their original order.
 

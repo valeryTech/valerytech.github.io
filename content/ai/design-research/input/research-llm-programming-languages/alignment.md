@@ -6,7 +6,7 @@ description: "An alignment review connecting programming-language research to th
 linkTitle: "Programming languages and the design research program"
 ---
 
-Editorial analysis by Codex, 2026-10-29. This note compares the [exported conversation and reports]({{< ref "ai/design-research/input/research-llm-programming-languages" >}}) with the wider collection. It distinguishes existing ideas, additional precedents, and proposed research questions. The source-check scope is recorded below; the exported text remains unchanged.
+Editorial analysis by Codex, 2026-04-29. This note compares the [exported conversation and reports]({{< ref "ai/design-research/input/research-llm-programming-languages" >}}) with the wider collection. It distinguishes existing ideas, additional precedents, and proposed research questions. The source-check scope is recorded below; the exported text remains unchanged.
 
 The material strongly aligns with the program. It gives concrete mechanisms for the relationship already being investigated: explicit constraints can preserve selected properties while allowing people, models, and software to construct useful combinations. Its main contribution to this collection is a more precise connection between a desired property, its representation, and its enforcement.
 

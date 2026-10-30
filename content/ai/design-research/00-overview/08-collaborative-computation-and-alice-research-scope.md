@@ -8,9 +8,9 @@ linkTitle: "08 Collaborative Computation And Alice Research Scope"
 # Collaborative computation and Alice research scope
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The complete final reply below corrects an earlier connection between two research directions. Collaborative computation concerns coordination among existing participants. The Alice proposal concerns conditions under which agency and cognition might emerge. The distinction is retained as a scope discussion, not an adopted theory or runtime requirement.
 

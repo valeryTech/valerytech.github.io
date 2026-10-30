@@ -8,9 +8,9 @@ linkTitle: "07 Collaboration Framework Comments"
 # Collaboration framework: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [framework note]({{< ref "ai/design-research/05-runtime-and-execution/07-collaboration-framework" >}}) preserves the original LLM reply without rewriting it. The comments explain the arrangement and design questions, rather than recording an implemented framework or verified findings.
+New commentary by Codex, added on 2026-04-01. The [framework note]({{< ref "ai/design-research/05-runtime-and-execution/07-collaboration-framework" >}}) preserves the original LLM reply without rewriting it. The comments explain the arrangement and design questions, rather than recording an implemented framework or verified findings.
 
 ## Why the software layers stay together
 

@@ -8,7 +8,7 @@ linkTitle: "Research LLM Programming Languages — Conversation"
 # Research LLM Programming Languages
 
 
-Exported on 2026-10-29 from the [shared conversation](https://chatgpt.com/share/6ae328f4-5520-83e8-a168-0003d9964255). The user message, three assistant progress updates, and final response are preserved. Citation widgets are converted to numbered footnotes with their source titles and URLs; their original groups are recorded in [conversation-citations.json](/ai/design-research/input/research-llm-programming-languages/conversation.assets/conversation-citations.json).
+Exported on 2026-04-29 from the [shared conversation](https://chatgpt.com/share/6ae328f4-5520-83e8-a168-0003d9964255). The user message, three assistant progress updates, and final response are preserved. Citation widgets are converted to numbered footnotes with their source titles and URLs; their original groups are recorded in [conversation-citations.json](/ai/design-research/input/research-llm-programming-languages/conversation.assets/conversation-citations.json).
 
 Separate sub-agent final responses: [Language thesis]({{< ref "ai/design-research/input/research-llm-programming-languages/language-thesis" >}}), [Agent guarantees]({{< ref "ai/design-research/input/research-llm-programming-languages/agent-guarantees" >}}), and [Language design]({{< ref "ai/design-research/input/research-llm-programming-languages/language-design" >}}).
 

@@ -6,7 +6,7 @@ description: "An editorial map of the retrieval companions explains why assembly
 linkTitle: "RAG Reframing: Editorial Review"
 ---
 
-Review date: 2026-10-19.
+Review date: 2026-04-19.
 
 This note records the rationale for revising the retrieval companion documents. It is an editorial assessment of their concepts and contracts, rather than a new architectural specification or a report of measured retrieval quality. The [main framing]({{< ref "ai-engineering/retrieval/reframing" >}}) remains a separate draft whose rewrite and final structure are undecided.
 

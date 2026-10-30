@@ -8,9 +8,9 @@ linkTitle: "12 Research Terms And Levels Of Analysis Comments"
 # Research terms and levels of analysis: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [terms note]({{< ref "ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis" >}}) retains the original proposal with editorial wording. The comments explain the arrangement and open questions, rather than adopting the proposed definitions.
+New commentary by Codex, added on 2026-04-01. The [terms note]({{< ref "ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis" >}}) retains the original proposal with editorial wording. The comments explain the arrangement and open questions, rather than adopting the proposed definitions.
 
 ## Why the opening passages stay together
 

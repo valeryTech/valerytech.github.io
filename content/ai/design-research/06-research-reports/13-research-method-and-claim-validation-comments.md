@@ -8,9 +8,9 @@ linkTitle: "13 Research Method And Claim Validation Comments"
 # Research method and claim validation: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [method note]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}) retains the original proposal with editorial wording. The comments distinguish the proposed method from a completed protocol or verified literature review.
+New commentary by Codex, added on 2026-04-01. The [method note]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}) retains the original proposal with editorial wording. The comments distinguish the proposed method from a completed protocol or verified literature review.
 
 ## Why the method and artifact plan stay together
 

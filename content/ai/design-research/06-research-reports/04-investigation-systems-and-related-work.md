@@ -6,7 +6,7 @@ title: "04 Investigation Systems And Related Work"
 linkTitle: "04 Investigation Systems And Related Work"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## analogues
 
@@ -250,7 +250,7 @@ The proposed focus is epistemic computation:
 
 That's a meaningful distinction, but the proposal is to study Palantir almost as closely as Hebbia.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The passages below come from the [typed investigation report]({{< ref "ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes" >}}). The report's [shared bibliography]({{< ref "ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes" >}}#references) remains in the main report.
 
@@ -271,7 +271,7 @@ The passages below come from the [typed investigation report]({{< ref "ai/design
 
 **TRAQ** is perhaps the most important adjacent work conceptually. It demonstrates that RAG can carry a mathematical correctness guarantee when uncertainty is formulated appropriately, using conformal prediction. Rather than competing with this idea, the proposal is to cite it as evidence for a hierarchy of contracts: deterministic structural certificates, policy certificates, and statistical semantic guarantees can coexist in one typed result.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Related work from the behavioral dialogue
 

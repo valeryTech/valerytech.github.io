@@ -75,7 +75,7 @@ But Stonebraker's key warning is that **database durability does not make an LLM
 # Proposed analysis
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The working interpretation is that Stonebraker's direction is highly relevant here. The proposal is to separate three decisions: what should be delegated to an existing DBMS, what belongs in our investigation runtime/compiler, and whether any new storage/index structure is justified by requirements existing systems can't express.
 
@@ -423,7 +423,7 @@ Stonebraker himself is a good example here: even DBOS did not argue that one sto
 
 That's likely the right instinct for us too.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Specialized engines and DBOS from the Stonebraker interview
 
@@ -492,7 +492,7 @@ And so that's what the commercial DBOS company has focused on is the programming
 
 So check it out. It's very, very easy to use and blindingly fast.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## NoSQL, SQL optimizers, and transactions from the interview
 
@@ -533,11 +533,11 @@ And so the relational guys are moving in that direction. Also supporting-- The b
 
 **Michael:** My favorite joke is to say at the beginning the NoSQL guys said "no, don't use SQL." Then that quickly morphed into "not only SQL," which is what you mentioned. In my opinion, it's now moving toward "not yet SQL."
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 The interview continues below with [text-to-SQL failures, RUBICON, and benchmark comparisons](#text-to-sql-rubicon-and-benchmarks-from-the-interview). The next exchange refers back to the NoSQL discussion above.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Text-to-SQL, RUBICON, and benchmarks from the interview
 
@@ -616,7 +616,7 @@ So instead of betting on an LLM as the overall orchestrator, we're betting on SQ
 
 > And I keep reading that the number of successful production agentic AI projects is like 20% or 10%. People are having trouble just getting the basics. And so I expect the going is going to get is a lot tougher than people think. And picking the low hanging fruit I think is of course a great idea. And I think Claude and Anthropic is the fabulous success story. But I think that this stuff is not going to universally be true. We'll see.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Return to the database runtime design
 

@@ -8,9 +8,9 @@ linkTitle: "06 Program Versions Runs And Results Comments"
 # Comments on program versions, runs, and results
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-The comments were added by Codex on 2026-09-30 at the user's request. They explain the sibling [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) and identify open design questions. They are new commentary, not part of the original dialogues or an agreed implementation specification.
+The comments were added by Codex on 2026-03-30 at the user's request. They explain the sibling [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) and identify open design questions. They are new commentary, not part of the original dialogues or an agreed implementation specification.
 
 ## What the grouped passages describe
 

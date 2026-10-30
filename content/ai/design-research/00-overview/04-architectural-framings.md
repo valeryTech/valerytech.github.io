@@ -8,9 +8,9 @@ linkTitle: "04 Architectural Framings"
 # Architectural framings
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained LLM response explores possible framings for the [original prompt]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}). The alternatives concern a family of collaborative systems, while the [research-scope note]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) separates that application from the general theory and builder method.
 

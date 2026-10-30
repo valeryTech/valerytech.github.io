@@ -10,7 +10,7 @@ linkTitle: "Map"
 
 The focus is developing our understanding and mental models through exploration. LLMs can make possibilities concrete quickly: small implementations, interfaces, examples, and variations we can play with. A prototype can be disposable while the questions, distinctions, and knowledge it produces remain useful.
 
-Comments below are my interpretation and suggested use of the existing notes (2026-10-19).
+Comments below are my interpretation and suggested use of the existing notes (2026-04-19).
 
 ## Core discovery notes
 

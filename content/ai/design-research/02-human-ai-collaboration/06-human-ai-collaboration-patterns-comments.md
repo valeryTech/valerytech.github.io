@@ -8,9 +8,9 @@ linkTitle: "06 Human Ai Collaboration Patterns Comments"
 # Human-AI collaboration patterns: comments
 
 
-Editorial context, 2026-10-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
+Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 
-New commentary by Codex, added on 2026-10-01. The [pattern note]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) retains the original LLM arguments with editorial wording. The comments explain their placement and unresolved choices, rather than presenting the patterns as validated design rules.
+New commentary by Codex, added on 2026-04-01. The [pattern note]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) retains the original LLM arguments with editorial wording. The comments explain their placement and unresolved choices, rather than presenting the patterns as validated design rules.
 
 ## Why the pattern discussions stay together
 

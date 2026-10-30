@@ -8,7 +8,7 @@ linkTitle: "01 Programmable Probabilistic Agent Computation"
 # Programmable Probabilistic Agent Computation
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 ## Executive summary
 
@@ -328,7 +328,7 @@ FORMAL METHODS ─────┼───── DATABASE SYSTEMS
 
 As of **25 August 2026**, the proposal is to characterise the opportunity this way: **the component ideas are no longer speculative, and several 2026 papers are approaching the same boundary from different directions. The generalised, compositional machine remains open enough to support a substantial research programme.** The strongest claim to pursue is therefore not that symbolic constraints around agents are new; the evidence clearly says otherwise. The stronger research claim is that these pieces can be given **one programming model with compositional semantics across neural uncertainty, durable state, authority, provenance, temporal behaviour and physical execution**, and that doing so produces measurable reliability benefits on long-running real agent workloads. [3](#ref-3), [4](#ref-4), [5](#ref-5), [8](#ref-8), [6](#ref-6), [7](#ref-7), [10](#ref-10)
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Sections moved during reassembly
 

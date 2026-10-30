@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "reviewed_on": "2026-10-24",
+  "reviewed_on": "2026-04-24",
   "sources": {
     "ga4": {
       "report": "https://analytics.google.com/analytics/web/?authuser=2#/analysis/a346580592p479060226/edit/PPnR5gRPSVqFV8ms3puNqA",
-      "from": "2026-09-26",
-      "through": "2026-10-23",
+      "from": "2026-03-26",
+      "through": "2026-04-23",
       "metric": "Views, page title contains 404; hostname restricted to the three production domains"
     },
     "posthog": {
       "report": "https://us.posthog.com/project/631264/sql",
-      "through": "2026-10-24",
+      "through": "2026-04-24",
       "metric": "not_found_viewed count across all retained events; hostname restricted to the three production domains; local test paths excluded"
     }
   },

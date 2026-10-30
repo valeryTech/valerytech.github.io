@@ -8,7 +8,7 @@ linkTitle: "07 Collaboration Patterns Research Synthesis Comments"
 # Collaboration patterns research synthesis: comments
 
 
-New commentary by Codex, added on 2026-10-01. The [synthesis note]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis" >}}) retains original LLM text. The comments explain placement and questions for later work, rather than adopting the source's findings.
+New commentary by Codex, added on 2026-04-01. The [synthesis note]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis" >}}) retains original LLM text. The comments explain placement and questions for later work, rather than adopting the source's findings.
 
 ## Why the report is split
 

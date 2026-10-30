@@ -72,7 +72,7 @@ What happens to active executions when policy v7 becomes v8?
 
 Those questions belong inside the broad programme, especially for self-modifying agents.
 
-<!-- Navigation added during reassembly on 2026-09-30. Original source text is unchanged. -->
+<!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
 ## Citation links added during reassembly
 

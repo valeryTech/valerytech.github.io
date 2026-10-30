@@ -8,7 +8,7 @@ linkTitle: "Ai Product Types 2"
 # AI product types
 
 
-Revised 2026-10-20.
+Revised 2026-04-20.
 
 Describe an AI product in two parts:
 

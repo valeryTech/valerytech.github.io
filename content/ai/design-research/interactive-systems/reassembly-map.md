@@ -8,11 +8,11 @@ linkTitle: "Reassembly Map"
 # Interactive systems reassembly map
 
 
-Public-edition note, 2026-10-28: Private source locations and machine-specific audit details are omitted or replaced with neutral archive labels. Historical coordinates and checksums describe earlier snapshots, not the edited public files.
+Public-edition note, 2026-04-28: Private source locations and machine-specific audit details are omitted or replaced with neutral archive labels. Historical coordinates and checksums describe earlier snapshots, not the edited public files.
 
-Editorial context, 2026-10-20: This map is a historical record of the reassembly before the plain-language editorial pass. Its checksums, byte counts, line ranges, and statements of unchanged wording describe the text at that earlier stage, not the current edited notes.
+Editorial context, 2026-04-20: This map is a historical record of the reassembly before the plain-language editorial pass. Its checksums, byte counts, line ranges, and statements of unchanged wording describe the text at that earlier stage, not the current edited notes.
 
-## Hebbia folder relocation, 2026-10-05
+## Hebbia folder relocation, 2026-04-05
 
 
 The Hebbia case folder moved from `projects/input/hebbia-sem/` to `ai/input/hebbia-sem/`. Links below point to its current location. Historical JSON manifests retain their original paths and checksums; resolve that old prefix through the [relocation record](/ai/design-research/interactive-systems/reassembly-map.assets/relocation-map.json). Only navigation links were edited, with no retained dialogue changes or line-range shifts.
@@ -22,7 +22,7 @@ The Hebbia case folder moved from `projects/input/hebbia-sem/` to `ai/input/hebb
 
 The mapping and whole-file checksums in stage 1 describe its historical snapshot. Stage 3 extracts the author's observation from the first case note. Use the [current dialogue mapping](/ai/design-research/interactive-systems/reassembly-map.assets/03-hebbia-design-observations-reassembly.json) for reconstruction after that extraction.
 
-Date: 2026-10-01. The user approved splitting documents one at a time and separating Hebbia-specific material from general design ideas.
+Date: 2026-04-01. The user approved splitting documents one at a time and separating Hebbia-specific material from general design ideas.
 
 The source was visual-programming-env.md. Before the split, it contained 1469 lines and 32,504 bytes. Its SHA-256 checksum was `441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68`.
 
@@ -104,7 +104,7 @@ No original note path was deleted. No files were staged or committed.
 ## Stage 2: Hebbia product analysis
 
 
-Date: 2026-10-01. This pass continues the document-by-document split and keeps product-specific analysis separate from general design proposals.
+Date: 2026-04-01. This pass continues the document-by-document split and keeps product-specific analysis separate from general design proposals.
 
 The source was hebbia-analysis-1.md. Before the split, it contained 856 logical lines and 30,899 bytes. The final line had no newline. Its SHA-256 checksum was `9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c`.
 
@@ -165,7 +165,7 @@ No files were staged or committed.
 ## Stage 3: author's design observations
 
 
-Date: 2026-10-01. The user asked to extract their own reaction to the ideas proposed by Hebbia.
+Date: 2026-04-01. The user asked to extract their own reaction to the ideas proposed by Hebbia.
 
 The complete original observation moved from lines 13 to 21 of the Matrix case note into [design observations prompted by Hebbia]({{< ref "ai/design-research/interactive-systems/04-design-observations-from-hebbia" >}}), at lines 13 to 21. The passage contains nine lines and 869 bytes. Its SHA-256 checksum is `fe1eb8fc6b7a56714039b97666f1421895214e439e2b1cf84a7bd2558a705835`.
 
@@ -217,7 +217,7 @@ Only new navigation and separate comments were written around the unchanged sour
 ## Stage 4: semantic-engineering dialogue
 
 
-Date: 2026-10-01. The pass continues with semantic-eng.md. The complete source was read before the split.
+Date: 2026-04-01. The pass continues with semantic-eng.md. The complete source was read before the split.
 
 Before the split, the source contained 439 logical lines and 17,434 bytes. The final line had no newline. Its SHA-256 checksum was `798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee`.
 
@@ -288,7 +288,7 @@ No files were staged or committed.
 ## Stage 5: task-specific context assembly
 
 
-Date: 2026-10-01. The source was task-specific-context-assembly.md, a short sketch without speaker labels. It contained eight logical lines and 690 bytes, and its final line had no newline. Its SHA-256 checksum was `fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697`.
+Date: 2026-04-01. The source was task-specific-context-assembly.md, a short sketch without speaker labels. It contained eight logical lines and 690 bytes, and its final line had no newline. Its SHA-256 checksum was `fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697`.
 
 ### Mapping
 
@@ -342,7 +342,7 @@ No original note path was deleted, and no files were staged or committed.
 ## Stage 6: complex UI design dialogue
 
 
-Date: 2026-10-01. The source was 0919-research-complex-ui-design.md (archived source 018), in the linked source archive collection. Before the split, it contained 173 lines and 14,749 bytes, with a final newline. Its SHA-256 checksum was `[private-source checksum omitted]`.
+Date: 2026-04-01. The source was 0919-research-complex-ui-design.md (archived source 018), in the linked source archive collection. Before the split, it contained 173 lines and 14,749 bytes, with a final newline. Its SHA-256 checksum was `[private-source checksum omitted]`.
 
 ### Mapping
 
@@ -401,7 +401,7 @@ No original note path was deleted, and no files were staged or committed.
 ## Stage 7: natural-language interface dialogue
 
 
-Date: 2026-10-01. The source was nlp-interface.md (archived source 019), in the linked source archive collection. Before the split, it contained 764 lines and 23,745 bytes, with a final newline. Its SHA-256 checksum was `[private-source checksum omitted]`.
+Date: 2026-04-01. The source was nlp-interface.md (archived source 019), in the linked source archive collection. Before the split, it contained 764 lines and 23,745 bytes, with a final newline. Its SHA-256 checksum was `[private-source checksum omitted]`.
 
 ### Mapping
 
@@ -471,7 +471,7 @@ No original note path was deleted, and no files were staged or committed.
 ## Stage 8: language interfaces and architecture
 
 
-Date: 2026-10-01. The source was nlp-interface-to-architecture.md (archived source 020), in the linked source archive collection. Before the split, it contained 962 logical lines and 28,361 bytes, without a final newline. Its SHA-256 checksum was `[private-source checksum omitted]`.
+Date: 2026-04-01. The source was nlp-interface-to-architecture.md (archived source 020), in the linked source archive collection. Before the split, it contained 962 logical lines and 28,361 bytes, without a final newline. Its SHA-256 checksum was `[private-source checksum omitted]`.
 
 ### Mapping
 
@@ -552,7 +552,7 @@ No original note path was deleted, and no files were staged or committed.
 ## Stage 9: exploratory pipeline design
 
 
-Date: 2026-10-01. The source was [exploratory-design.md]({{< ref "engineering/eng-exp/exploratory-design" >}}). Before the split, it contained 1,315 logical lines and 40,096 bytes, without a final newline. Its SHA-256 checksum was `c0588f3696a3a97967e7c1d22c32f4c0bd2b51c74439b6c782f7189f0f8f9b17`.
+Date: 2026-04-01. The source was [exploratory-design.md]({{< ref "engineering/eng-exp/exploratory-design" >}}). Before the split, it contained 1,315 logical lines and 40,096 bytes, without a final newline. Its SHA-256 checksum was `c0588f3696a3a97967e7c1d22c32f4c0bd2b51c74439b6c782f7189f0f8f9b17`.
 
 ### Mapping
 
@@ -626,7 +626,7 @@ The workspace contained existing staged entries before this pass. No original no
 ## Stage 10: co-writer sketches
 
 
-Date: 2026-10-01. The sources were co-writer.md (archived source 021) and examples.md (archived source 022). The saved notes contain no speaker labels, so the split does not infer authorship for unlabelled sentences.
+Date: 2026-04-01. The sources were co-writer.md (archived source 021) and examples.md (archived source 022). The saved notes contain no speaker labels, so the split does not infer authorship for unlabelled sentences.
 
 | Original source | Logical lines | Bytes | Final newline | SHA-256 |
 |---|---|---|---|---|

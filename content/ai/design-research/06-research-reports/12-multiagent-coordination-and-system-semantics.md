@@ -8,9 +8,9 @@ linkTitle: "12 Multiagent Coordination And System Semantics"
 # Multiagent coordination and system semantics
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The retained dialogue first connects a captured article to the collaboration framework, then questions the article's interpretation of observed behavior. Both replies remain source material, and their claims have not been independently verified by the reassembly. The sibling [comments]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics-comments" >}}) explain the arrangement and review questions.
 
@@ -717,7 +717,7 @@ Anthropic frequently does not. That is the proposed conceptual gap to focus on.
 
 The complete [Alice reply]({{< ref "ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope" >}}#alice) follows the second reply in the original source. It explicitly corrects the second reply's attempt to connect the two research directions. The correction remains separate and linked, rather than being substituted into the earlier argument.
 
-<!-- Navigation added during reassembly on 2026-10-01. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Research paradigms and institutional framing
 

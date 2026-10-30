@@ -8,7 +8,7 @@ linkTitle: "00 Collection Review Comments"
 # Review of the interactive systems collection
 
 
-Date: 2026-10-01. The review is new editorial analysis, separate from the retained dialogues. The recommendations and example below are proposals for discussion, not an accepted system design.
+Date: 2026-04-01. The review is new editorial analysis, separate from the retained dialogues. The recommendations and example below are proposals for discussion, not an accepted system design.
 
 Keep the retained passages in their current notes. The main overlap concerns different questions about the same work, rather than passages that should be merged. A topic-based reading path can make the distinctions easier to follow without removing repetitions or separating examples from their arguments.
 

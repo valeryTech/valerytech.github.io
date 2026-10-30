@@ -8,7 +8,7 @@ linkTitle: "11 Inspectable Pipeline Workbenches"
 # Inspectable pipeline workbenches
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained passage is sections 5 to 8 of the second exploratory-design formulation. It keeps the complete artifact vocabulary, RAG example, runtime and design-time interaction lists, and architecture proposal together. The records and checks are proposed concepts rather than an implemented system or accepted schema.
 

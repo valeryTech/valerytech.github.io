@@ -8,7 +8,7 @@ linkTitle: "10 Configuration Publishing And Version Identity Comments"
 # Comments on configuration publishing and version identity
 
 
-New commentary by Codex, added on 2026-10-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) preserves the complete Git, repository, selection, and component-version exchanges. The recommendations remain proposals for the application under discussion.
+New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) preserves the complete Git, repository, selection, and component-version exchanges. The recommendations remain proposals for the application under discussion.
 
 ## Keep the identities distinct
 

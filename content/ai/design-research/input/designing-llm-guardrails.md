@@ -6,9 +6,9 @@ title: "Designing Llm Guardrails"
 linkTitle: "Designing Llm Guardrails"
 ---
 
-Publication note, 2026-10-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
+Publication note, 2026-04-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
 
-Conversation captured on 2026-10-25. Main turns use `##` headings. Tables, lists, code, diagrams, and source links available in the page are preserved.
+Conversation captured on 2026-04-25. Main turns use `##` headings. Tables, lists, code, diagrams, and source links available in the page are preserved.
 
 The completed research report is saved separately and linked below. Its numbered citations link to source titles and URLs recovered from the original report; full citation metadata is preserved separately.
 

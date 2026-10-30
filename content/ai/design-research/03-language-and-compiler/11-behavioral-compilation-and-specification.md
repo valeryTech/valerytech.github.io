@@ -6,12 +6,12 @@ title: "11 Behavioral Compilation And Specification"
 linkTitle: "11 Behavioral Compilation And Specification"
 ---
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 # Behavioral compilation and specification
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The original question, access note, and main argument are retained here. The redistributed sections are linked below. The arguments are retained with editorial wording and the original section numbers.
 
@@ -183,7 +183,7 @@ BehaviorSpec
 
 This prevents the synthesizer from simply hardcoding one sampled answer.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Redistributed sections 4 to 9
 
@@ -249,14 +249,14 @@ SynthesisTarget =
 
 Without this distinction, the system may claim to have learned a procedure when it has only generated an elaborate one-off answer.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Redistributed lifecycle and domain records
 
 
 The complete [initial lifecycle]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#11-suggested-canonical-lifecycle) and [domain record catalog]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#12-core-domain-artifacts) are now in the program-history note. The detailed later problem-framing and synthesis stages remain below.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Redistributed section 13
 
@@ -308,7 +308,7 @@ The strongest conceptual changes are:
 
 For a source-faithful follow-up, the three unresolved `@//...` documents need to be attached or otherwise exposed; their references did not resolve in the current connected sources.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Follow-up analyses from behavioural-specification-2
 
@@ -384,7 +384,7 @@ Here:
 
 The first output should be understood as a **behavioral witness**, not automatically as truth. Verification against it establishes fidelity to the teacher. It does not by itself establish correctness.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Related work and execution tiers
 
@@ -475,7 +475,7 @@ That broader combination could be described as:
 
 > **A tiered neuro-symbolic runtime that compiles model-generated semantic traces into guarded, evidence-carrying agent programs.**
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Synthesis problems and targets
 
@@ -507,7 +507,7 @@ The reusable-primitive version is where cumulative DSL or library growth occurs.
 
 These targets should be researched separately.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Language, compilation cost, and execution history
 
@@ -869,7 +869,7 @@ Execution view
 
 These views can share storage while retaining different semantics.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Remaining lifecycle stages and system properties
 
@@ -953,7 +953,7 @@ SynthesisTarget =
 
 Without this distinction, a one-off generated workflow may be mistaken for a generalized algorithm.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## Experiment linked from the reanalysis
 

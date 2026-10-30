@@ -6,7 +6,7 @@ title: "03 Epistemic Contracts For Rag"
 linkTitle: "03 Epistemic Contracts For Rag"
 ---
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 here we're not talking about feedback loops, optimization, and other questions arisen in the common discussion in [Dsl Ai]({{< ref "ai/architecture-dsl-like/dsl-approach/dsl-ai" >}})
 
@@ -620,7 +620,7 @@ Finding<
 
 A downstream operator could refuse the second type.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The passages below come from the [typed investigation report]({{< ref "ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes" >}}). The report's [shared bibliography]({{< ref "ai/design-research/06-research-reports/02-typed-durable-inspectable-runtimes" >}}#references) remains in the main report.
 
@@ -711,7 +711,7 @@ A realistic first theorem would therefore be **structural soundness**, along rou
 
 This deliberately does **not** prove that an LLM correctly judged semantic entailment. It proves that the system cannot silently skip the required verification path, lose lineage, ignore a declared source-precedence check, or turn an unresolved obligation into the strongest result type. That boundary is consistent with formal agent workflow work and the broader probabilistic-program-verification literature.
 
-<!-- Navigation added during reassembly on 2026-09-30. Source arguments are retained with editorial wording, 2026-10-20; quoted source passages remain exact. -->
+<!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 ## General verification and acceptance
 

@@ -8,7 +8,7 @@ linkTitle: "06 Bounded Corpus Evidence Synthesis"
 # Evidence synthesis over a bounded corpus
 
 
-Editorial context, 2026-10-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
+Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
 The retained passages contain the author's requirements and the LLM's proposals for an evidence-synthesis contract, a coverage ledger, explicit outcomes, and an inspectable authority policy.
 

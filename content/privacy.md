@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "How this personal website handles visitor information."
 summary: "How this personal website handles visitor information."
 date: 2023-09-07T17:19:07+02:00
-lastmod: 2026-09-27T00:00:00-03:00
+lastmod: 2026-03-27T00:00:00-03:00
 draft: false
 type: "legal"
 toc: false
