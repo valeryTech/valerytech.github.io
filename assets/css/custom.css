@@ -203,7 +203,7 @@ html[data-font-preference="jost"] body {
 
 .content .site-table-scroll :is(th, td) {
   padding: 0.875rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
   background: var(--site-table-surface);
   text-align: start;
   vertical-align: top;
