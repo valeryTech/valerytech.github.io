@@ -23,3 +23,18 @@ overrides:
       endOfLine: lf
       printWidth: 100
       singleQuote: false
+  - files:
+      - "assets/js/custom.js"
+      - "assets/js/navigation/*.mjs"
+      - "assets/js/preferences/*.{js,mjs}"
+      - "assets/js/analytics/{emit,engagement,interactions}.mjs"
+      - "scripts/*ui-config.mjs"
+      - "tests/{config,preferences}/*.mjs"
+      - "tests/analytics/engagement.test.mjs"
+      - "data/{ui,callouts,analytics}.json"
+    options:
+      tabWidth: 2
+      endOfLine: lf
+      printWidth: 100
+      singleQuote: false
+      trailingComma: all

@@ -25,8 +25,13 @@ jobs:
       - name: Test analytics helpers
         run: npm run test:analytics
 
-      - name: Check site CSS formatting
-        run: npm run lint:styles
+      - name: Test UI configuration and preferences
+        run: npm run test:ui
+
+      - name: Check frontend formatting
+        run: |
+          npm run lint:styles
+          npm run lint:ui
 
       - name: Build production website
         run: bash scripts/build-site.sh --host

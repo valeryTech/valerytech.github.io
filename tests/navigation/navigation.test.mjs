@@ -58,6 +58,30 @@ async function readAt(page, id) {
   await page.waitForFunction((id) => document.querySelector('.hextra-toc a[aria-current="location"]')?.hash === `#${id}`, id);
 }
 
+test('font choices persist and restore independently of the deferred controls', async (t) => {
+  const page = await pageFor(t, base + '/');
+  await page.context().addCookies([{ name: 'font-preference', value: 'avenir', url: base }]);
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'system');
+  assert.equal(await page.locator('#fontPreference').inputValue(), 'system');
+  await page.evaluate(() => {
+    window.fontEvents = [];
+    window.siteAnalytics = { emit: (name, parameters) => window.fontEvents.push({ name, parameters }) };
+  });
+  await page.locator('#fontPreference').selectOption('jost');
+  assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
+  assert.ok((await page.context().cookies()).some(cookie => cookie.name === 'font-preference' && cookie.value === 'jost'));
+  assert.deepEqual(await page.evaluate(() => window.fontEvents), [{
+    name: 'display_preference_changed', parameters: { preference_type: 'font', preference_value: 'jost' },
+  }]);
+  // The head script must restore a saved choice even if the deferred bundle fails.
+  await page.route(/\/js\/custom[^/]*\.js(?:\?|$)/, request => request.abort());
+  await page.reload({ waitUntil: 'networkidle' });
+  assert.equal(await page.locator('#fontPreference').count(), 0);
+  assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
+  assert.match(await page.locator('body').evaluate(element => getComputedStyle(element).fontFamily), /Jost/);
+});
+
 test('a deeply nested sidebar opens the full current path and marks its parent groups', async (t) => {
   const page = await pageFor(t);
   const current = page.locator('.section-nav a[aria-current="page"]');

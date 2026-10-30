@@ -311,6 +311,11 @@ docker compose run --rm site uv run --frozen python -m unittest discover -s test
 
 Change the site UI in `assets/css/site/` and local `layouts/` overrides. See the
 [styling guide](styling.md) for tokens, component ownership, and validation.
+Feature modules and external settings are described in the
+[frontend conventions](frontend.md). Use `npm run check:config` after editing
+`data/ui.json`, `data/callouts.json`, or `data/analytics.json`; preview startup
+and production builds also run this check. `npm run test:ui` checks configuration
+failure modes and saved-font compatibility.
 The importer keeps the existing callout/card syntax; the theme adapters render
 it as Hextra components. Imported heading links, sidebar weights, and section
 reading guides are preserved. A trailing `/**` exclusion in the migration

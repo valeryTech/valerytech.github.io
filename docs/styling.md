@@ -13,6 +13,11 @@ The site uses Hextra's compiled CSS plus a small, site-owned CSS bundle. Edit
 | `components.css` | Cards, callouts, Markdown tables |
 | `collections.css` | Homepage grid and section indexes |
 
+For template/JavaScript ownership and external configuration, see the
+[frontend conventions](frontend.md). The visual hierarchy is scale tokens,
+semantic theme/layout tokens, then component rules; behavior settings live
+with their owning feature configuration.
+
 The assembled resource keeps the URL `css/custom.css` in local preview. Production
 combines it with Hextra's CSS into one minified, fingerprinted stylesheet. There
 are no browser-side `@import` requests or additional CSS tools to install.

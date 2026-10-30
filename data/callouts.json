@@ -1,0 +1,43 @@
+{
+  "fallback": {
+    "icon": "information-circle",
+    "class": "hx:bg-orange-50 hx:text-orange-800 hx:dark:bg-orange-400/20 hx:dark:text-orange-300"
+  },
+  "aliases": {
+    "note": "info",
+    "tip": "default",
+    "caution": "warning",
+    "danger": "error"
+  },
+  "legacyIcons": {
+    "outline/info-circle": "information-circle",
+    "outline/help-octagon": "question-mark-circle",
+    "outline/thumb-up": "thumb-up",
+    "outline/thumb-down": "thumb-down",
+    "outline/rocket": "light-bulb",
+    "outline/alert-triangle": "exclamation",
+    "outline/alert-octagon": "ban"
+  },
+  "types": {
+    "info": {
+      "icon": "information-circle",
+      "class": "hx:bg-blue-100 hx:text-blue-900 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"
+    },
+    "default": {
+      "icon": "light-bulb",
+      "class": "hx:bg-green-100 hx:text-green-900 hx:dark:bg-green-900/30 hx:dark:text-green-200"
+    },
+    "warning": {
+      "icon": "exclamation",
+      "class": "hx:bg-amber-100 hx:text-amber-900 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"
+    },
+    "error": {
+      "icon": "ban",
+      "class": "hx:bg-red-100 hx:text-red-900 hx:dark:bg-red-900/30 hx:dark:text-red-200"
+    },
+    "important": {
+      "icon": "exclamation-circle",
+      "class": "hx:bg-purple-100 hx:text-purple-900 hx:dark:bg-purple-900/30 hx:dark:text-purple-200"
+    }
+  }
+}

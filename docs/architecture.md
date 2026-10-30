@@ -86,6 +86,13 @@ site's SEO and analytics entrypoints. Review it against upstream when upgrading.
 in the [styling guide](styling.md). The old `assets/scss/common/_custom.scss` is
 not loaded by Hextra.
 
+Browser behavior is composed in `assets/js/custom.js` from navigation,
+preferences, and analytics feature modules. Font and outline settings live in
+`data/ui.json`; callout mappings live in `data/callouts.json`; engagement policy
+lives in `data/analytics.json`. The [frontend conventions](frontend.md) describe
+configuration boundaries, shared hierarchy traversal, template adapters, events,
+and validation.
+
 ## Content Structure
 
 This repo now supports two content-authoring paths:

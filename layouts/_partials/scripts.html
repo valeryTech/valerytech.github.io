@@ -25,4 +25,8 @@
 {{- end -}}
 
 {{ partial "footer/script-footer-custom.html" . }}
-{{ partial "footer/esbuild.html" (dict "src" "js/custom.js" "load" "defer") }}
+{{ partial "footer/esbuild.html" (dict
+  "src" "js/custom.js"
+  "load" "defer"
+  "params" (dict "ui" site.Data.ui "engagement" site.Data.analytics.engagement)
+) }}

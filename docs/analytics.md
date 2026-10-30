@@ -72,6 +72,12 @@ alone does not identify bots or professional demographics.
 
 ## Configuration
 
+Reader engagement thresholds and the sampling interval live in
+`data/analytics.json`. `assets/js/analytics/engagement.mjs` consumes this policy;
+`assets/js/analytics/interactions.mjs` translates UI actions into the existing
+event contract. `npm run check:config` validates the policy before preview/build,
+and `npm run test:analytics` checks active/background time and event delivery.
+
 Set these GitHub repository **variables** under Settings → Secrets and variables
 → Actions. They are public browser configuration, not credentials.
 

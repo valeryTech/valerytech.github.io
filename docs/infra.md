@@ -176,8 +176,9 @@ independent of browser installation.
 
 The page outline uses Hugo's `TableOfContents`, preserving its nested lists and
 the configured heading range. `assets/js/core/toc-scroll.js` overrides Hextra's
-observer to retain the site's reading-position behavior, ancestor highlights,
-and automatic outline scrolling. Explicit hash destinations remain selected at
+observer with an empty shim. The bundled `assets/js/navigation/outline.mjs`
+supplies reading-position behavior, ancestor highlights, and automatic outline
+scrolling. Explicit hash destinations remain selected at
 their scroll margin. Smaller screens expose the same outline in an accessible
 “On this page” disclosure. Local CSS also marks the section-menu ancestor path.
 

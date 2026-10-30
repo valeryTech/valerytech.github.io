@@ -24,6 +24,8 @@ git submodule update --init --recursive
 GitHub Actions checks out the submodule automatically. Site-specific presentation
 is in `assets/css/site/`; Hextra's compiled CSS ships with the theme. See the
 [styling guide](docs/styling.md) for tokens and component conventions.
+The [frontend conventions](docs/frontend.md) cover feature modules, configuration,
+and dependency boundaries.
 
 ## Local workflow
 

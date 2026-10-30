@@ -8,20 +8,6 @@
   {{- end }}
 {{- end }}
 <link rel="sitemap" type="text/html" title="Website map for agents" href="{{ $agentMap | absURL }}">
-<script>
-  (() => {
-    const cookie = document.cookie
-      .split("; ")
-      .find((entry) => entry.startsWith("font-preference="));
-
-    if (!cookie) return;
-
-    const savedPreference = cookie.slice("font-preference=".length);
-    const preference = savedPreference === "avenir" ? "system" : savedPreference;
-    if (preference === "system" || preference === "jost") {
-      document.documentElement.setAttribute("data-font-preference", preference);
-    }
-  })();
-</script>
+{{ partialCached "head/font-preference.html" . }}
 {{ partial "head/analytics-context.html" . }}
 {{ partial "head/analytics.html" . }}

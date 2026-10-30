@@ -1,21 +1,14 @@
 {{- /* Keep the importer's callout contract, rendered with Hextra components. */ -}}
 {{- $context := .Get "context" | default (.Get "type") | default "note" -}}
-{{- $kind := index (dict "note" "info" "tip" "default" "caution" "warning" "danger" "error") $context | default $context -}}
-{{- $icons := dict "info" "information-circle" "default" "light-bulb" "warning" "exclamation" "error" "ban" "important" "exclamation-circle" -}}
-{{- $legacyIcons := dict "outline/info-circle" "information-circle" "outline/help-octagon" "question-mark-circle" "outline/thumb-up" "thumb-up" "outline/thumb-down" "thumb-down" "outline/rocket" "light-bulb" "outline/alert-triangle" "exclamation" "outline/alert-octagon" "ban" -}}
+{{- $config := site.Data.callouts -}}
+{{- $kind := index $config.aliases $context | default $context -}}
+{{- $style := index $config.types $kind | default $config.fallback -}}
 {{- $icon := .Get "icon" | default "" -}}
-{{- $icon = index $legacyIcons $icon | default $icon -}}
+{{- $icon = index $config.legacyIcons $icon | default $icon -}}
 {{- if not (index site.Data.icons $icon) -}}
-  {{- $icon = index $icons $kind | default "information-circle" -}}
+  {{- $icon = $style.icon -}}
 {{- end -}}
-{{- $styles := dict
-  "info" "hx:bg-blue-100 hx:text-blue-900 hx:dark:bg-blue-900/30 hx:dark:text-blue-200"
-  "default" "hx:bg-green-100 hx:text-green-900 hx:dark:bg-green-900/30 hx:dark:text-green-200"
-  "warning" "hx:bg-amber-100 hx:text-amber-900 hx:dark:bg-amber-900/30 hx:dark:text-amber-200"
-  "error" "hx:bg-red-100 hx:text-red-900 hx:dark:bg-red-900/30 hx:dark:text-red-200"
-  "important" "hx:bg-purple-100 hx:text-purple-900 hx:dark:bg-purple-900/30 hx:dark:text-purple-200"
--}}
-{{- $class := index $styles $kind | default "hx:bg-orange-50 hx:text-orange-800 hx:dark:bg-orange-400/20 hx:dark:text-orange-300" -}}
+{{- $class := $style.class -}}
 {{- $content := .Page.RenderString .InnerDeindent -}}
 {{- with .Get "title" -}}
   {{- $content = printf "<p class=\"site-callout-title\"><strong>%s</strong></p>\n%s" (htmlEscape .) $content | safeHTML -}}
