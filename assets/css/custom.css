@@ -32,6 +32,13 @@ html[data-font-preference="jost"] body {
   font-family: Jost, ui-sans-serif, system-ui, sans-serif;
 }
 
+@media (min-width: 1024px) {
+  .hextra-nav-container .hextra-search-trigger {
+    margin-inline-start: 2rem;
+    flex-shrink: 0;
+  }
+}
+
 .page-description {
   color: var(--site-muted);
   font-size: 1.125rem;
