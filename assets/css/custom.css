@@ -19,6 +19,8 @@
   --site-border: #e2e8f0;
   --site-panel: #f8fafc;
   --site-accent: #2563eb;
+  --site-current-marker-width: 0.1875rem;
+  --site-current-marker-gap: 0.5rem;
 }
 
 .dark {
@@ -145,6 +147,7 @@ html[data-font-preference="jost"] body {
 }
 
 .section-nav {
+  --site-nav-label-inset: 1.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
 }
@@ -181,7 +184,7 @@ html[data-font-preference="jost"] body {
 
 /* Reserve the disclosure gutter on page links to align sibling labels. */
 .section-nav a {
-  padding-inline-start: 1.5rem;
+  padding-inline-start: var(--site-nav-label-inset);
 }
 
 .section-nav summary::marker {
@@ -216,7 +219,6 @@ html[data-font-preference="jost"] body {
   color: var(--site-accent);
   background: var(--site-panel);
   font-weight: 600;
-  box-shadow: inset 3px 0 0 var(--site-accent);
 }
 
 .section-nav .active-ancestor > details > summary,
@@ -239,6 +241,12 @@ html[data-font-preference="jost"] body {
   font-weight: 600;
 }
 
+.site-page-outline {
+  --site-nav-label-inset: calc(
+    var(--site-current-marker-width) + var(--site-current-marker-gap)
+  );
+}
+
 .site-page-outline ul {
   list-style: none;
   padding: 0;
@@ -254,6 +262,7 @@ html[data-font-preference="jost"] body {
 .site-page-outline a {
   display: block;
   padding: 0.3rem 0.5rem;
+  padding-inline-start: var(--site-nav-label-inset);
   margin-block: 0.125rem;
   border-radius: 0.25rem;
   color: var(--site-muted);
@@ -274,8 +283,27 @@ html[data-font-preference="jost"] body {
 .site-page-outline a.active {
   color: var(--site-accent);
   background: var(--site-panel);
-  box-shadow: inset 3px 0 0 var(--site-accent);
   font-weight: 700;
+}
+
+.section-nav a[aria-current="page"],
+.site-page-outline a.active {
+  position: relative;
+}
+
+/* Keep the current marker the same distance from labels in both panels. */
+.section-nav a[aria-current="page"]::before,
+.site-page-outline a.active::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: calc(
+    var(--site-nav-label-inset) - var(--site-current-marker-width) -
+      var(--site-current-marker-gap)
+  );
+  width: var(--site-current-marker-width);
+  border-radius: 0.125rem;
+  background: var(--site-accent);
 }
 
 .site-mobile-toc {
