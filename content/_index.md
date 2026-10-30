@@ -10,12 +10,21 @@ seo:
   robots: ""
 ---
 
+<div class="homepage-layout">
+<div class="homepage-intro">
+
 I build and explore complex systems that bring together people, software, data, and different forms of AI. My focus is how these parts work together: how responsibilities are shared, how information flows, and how the system's behavior and results can be evaluated and improved.
 
 AI can play different roles across [different types of projects]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
 
-<div class="homepage-layout">
-<section class="homepage-intro" aria-labelledby="start-here">
+{{< callout context="note" title="Why I share these notes" icon="outline/info-circle" >}}
+I share these notes because I believe they can contribute to the development of AI engineering as a discipline. Many contain original observations, ideas, and insights that could be useful to other engineers, even in an unfinished form.
+
+Some are working drafts, open questions, or conversations with LLMs. I don't want valuable ideas to remain unpublished simply because I haven't found the time to turn them into polished articles. I'd rather share them as they develop, giving others an opportunity to learn from them, question them, and build on them.
+{{< /callout >}}
+
+</div>
+<aside class="homepage-explore" aria-labelledby="start-here">
 
 ## Start here
 
@@ -39,11 +48,6 @@ AI can play different roles across [different types of projects]({{< ref "ai/var
 
 </div>
 
-[About me]({{< ref "about" >}}) · [Reading map]({{< ref "research" >}})
-
-</section>
-<aside class="homepage-explore" aria-labelledby="selected-notes">
-
 ## Selected notes
 
 - [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}): what an evaluation should help you decide.
@@ -57,6 +61,17 @@ AI can play different roles across [different types of projects]({{< ref "ai/var
 [AI Engineering]({{< ref "ai-engineering" >}}) covers retrieval, coding agents, and implementation. [Selected implementations]({{< ref "research/selected-implementations" >}}) links to public code.
 
 Other collections: [System Design]({{< ref "system-design" >}}) · [Engineering]({{< ref "engineering" >}}) · [Projects]({{< ref "projects" >}}).
+
+</section>
+<section class="homepage-about" aria-labelledby="about-me">
+
+## About me
+
+For guidance on assessing the ideas, evidence, and connections across these notes, see [Reading and evaluating this work]({{< ref "reading-and-evaluating" >}}).
+
+[About me]({{< ref "about" >}}) · [Reading map]({{< ref "research" >}})
+
+Notes by [Valery Yuda](/about/). Email: [valery.yuda@gmail.com](mailto:valery.yuda@gmail.com).
 
 </section>
 </div>

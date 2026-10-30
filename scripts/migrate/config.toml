@@ -35,6 +35,7 @@ section_title = "AI"
 root_index_source = "_index.md"
 selection_mode = "opt-in"
 selection_paths = [
+  "ai-system-design",
   "approach",
   "architecture-dsl-like",
   "collab-and-joint-work",

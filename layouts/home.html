@@ -2,11 +2,7 @@
 <main class="section homepage mt-n3 pb-3" id="main-content">
   <header class="homepage-header">
     <h1>{{ .Title }}</h1>
-    {{ with partial "main/page-description.html" . }}
-      {{ . }}
-    {{ else }}
-      {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
-    {{ end }}
+    {{ with .Params.lead }}<p class="lead">{{ . | safeHTML }}</p>{{ end }}
   </header>
   {{ .Content }}
 </main>

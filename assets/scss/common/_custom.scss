@@ -120,7 +120,8 @@ html[data-font-preference="jost"] {
 
 .homepage-intro,
 .homepage-explore,
-.homepage-browse {
+.homepage-browse,
+.homepage-about {
   min-width: 0;
 }
 
@@ -134,12 +135,18 @@ html[data-font-preference="jost"] {
 }
 
 .homepage-explore h2,
-.homepage-browse h2 {
+.homepage-browse h2,
+.homepage-about h2 {
   margin-top: 0;
   text-align: left;
 }
 
-.homepage-browse {
+.homepage-explore .selected-readings-stack + h2 {
+  margin-top: clamp(2rem, 3vw, 3rem);
+}
+
+.homepage-browse,
+.homepage-about {
   grid-column: 1 / -1;
   padding-top: 2rem;
   border-top: 1px solid var(--bs-border-color);

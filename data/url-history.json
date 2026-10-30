@@ -1,7 +1,7 @@
 {
   "version": 1,
   "start": "a917a4d9b65738e118d1d30e76f3737d42900052",
-  "through": "7c6862d8e2c0236ac072ac0852485a23ce0e683b",
+  "through": "393b40ef11dd0ff4648212ff84f026f5890c568a",
   "routes": {
     "/": {
       "source": "content/_index.md",
@@ -1014,6 +1014,18 @@
     "/ai-engineering/working-assumptions": {
       "source": "content/ai-engineering/working-assumptions.md",
       "title": "Working Assumptions"
+    },
+    "/ai/ai-system-design": {
+      "source": "content/ai/ai-system-design/_index.md",
+      "title": "AI Systems Design"
+    },
+    "/ai/ai-system-design/representations-composition-and-understanding": {
+      "source": "content/ai/ai-system-design/representations-composition-and-understanding.md",
+      "title": "Representations, composition, and understanding in AI systems"
+    },
+    "/ai/ai-system-design/research-problems-and-prototypes": {
+      "source": "content/ai/ai-system-design/research-problems-and-prototypes.md",
+      "title": "Twenty research problems for AI systems design"
     },
     "/ai/ai-systems-design": {
       "source": "content/ai/ai-systems-design/_index.md",
