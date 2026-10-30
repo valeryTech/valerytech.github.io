@@ -21,9 +21,7 @@
   --site-accent: #2563eb;
   --site-current-marker-width: 0.1875rem;
   --site-current-marker-gap: 0.5rem;
-  --site-table-surface: #f8fafc;
-  --site-table-header: #e9eef5;
-  --site-table-stripe: #f1f5f9;
+  --site-table-surface: #f5f7fa;
 }
 
 .dark {
@@ -31,9 +29,7 @@
   --site-border: #303030;
   --site-panel: #171717;
   --site-accent: #93c5fd;
-  --site-table-surface: #18181b;
-  --site-table-header: #27272a;
-  --site-table-stripe: #202024;
+  --site-table-surface: #1c1c20;
 }
 
 html[data-font-preference="jost"] body {
@@ -179,7 +175,6 @@ html[data-font-preference="jost"] body {
   margin-block: 1.5rem;
   overflow-x: auto;
   border-radius: 0.75rem;
-  background: var(--site-table-surface);
 }
 
 .site-table-scroll:focus-visible {
@@ -192,7 +187,7 @@ html[data-font-preference="jost"] body {
   width: 100%;
   margin: 0;
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 0 0.25rem;
   overflow-wrap: normal;
 }
 
@@ -201,17 +196,24 @@ html[data-font-preference="jost"] body {
 }
 
 .content .site-table-scroll thead {
-  background: var(--site-table-header);
+  background: transparent;
 }
 
 .content .site-table-scroll :is(th, td) {
   padding: 0.875rem 1rem;
+  background: var(--site-table-surface);
   text-align: start;
   vertical-align: top;
 }
 
-.content .site-table-scroll tbody > tr:nth-child(even) {
-  background: var(--site-table-stripe);
+.content .site-table-scroll tr > :first-child {
+  border-start-start-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+}
+
+.content .site-table-scroll tr > :last-child {
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
 }
 
 .section-nav {

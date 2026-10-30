@@ -56,9 +56,10 @@ reading font are also served from pinned npm dependencies.
 
 Callouts use borderless colored surfaces. Markdown tables use
 `layouts/_markup/render-table.html` to retain native table cells and alignment
-inside a keyboard-scrollable surface, with shaded headers and alternating row
-fills instead of grid lines. Empty header rows are omitted. Both components use
-the rounded, filled styling in `assets/css/custom.css` for light and dark modes.
+inside a keyboard-scrollable surface. Rows share one soft fill and rounded ends,
+separated by thin gaps showing the surrounding background. Empty header rows are
+omitted. Both components use the rounded, filled styling in
+`assets/css/custom.css` for light and dark modes.
 
 The site's SEO field precedence, description validation, analytics event bus,
 legacy redirects, attachment URLs, and HTML/Markdown navigation maps remain
