@@ -38,6 +38,14 @@ html[data-font-preference="jost"] body {
   font-family: Jost, ui-sans-serif, system-ui, sans-serif;
 }
 
+.hextra-nav-container .hextra-nav-container-blur {
+  box-shadow: none;
+}
+
+.hextra-footer > hr {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .hextra-nav-container .hextra-search-trigger {
     margin-inline-start: 2rem;
@@ -420,10 +428,6 @@ html[data-font-preference="jost"] body {
   font-weight: 600;
 }
 
-.site-sidebar-controls {
-  border-top: 1px solid var(--site-border);
-}
-
 .mobile-site-nav {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -477,7 +481,6 @@ html[data-font-preference="jost"] body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  border-top: 1px solid var(--site-border);
   margin-top: 3rem;
   padding-top: 1.5rem;
 }
