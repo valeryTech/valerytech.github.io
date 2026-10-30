@@ -27,3 +27,26 @@ jobs:
 
       - name: Build production website
         run: bash scripts/build-site.sh --host
+
+      - name: Install browser for navigation checks
+        run: npx playwright-core install --with-deps chromium
+
+      - name: Check navigation in the production preview
+        env:
+          BROWSER_CHANNEL: chromium
+          BASE_URL: http://127.0.0.1:4173
+          SCREENSHOT_DIR: .generated/navigation-review
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > "$RUNNER_TEMP/navigation-preview.log" 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid"' EXIT
+          npm run test:navigation
+
+      - name: Upload navigation screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: navigation-review
+          path: .generated/navigation-review
+          if-no-files-found: ignore
+          include-hidden-files: true

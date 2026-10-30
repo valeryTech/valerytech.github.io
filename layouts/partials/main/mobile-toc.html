@@ -1,0 +1,7 @@
+{{- $outline := .TableOfContents -}}
+{{- if and (ne .Params.toc false) (findRE `<a\b` $outline 1) -}}
+<details class="site-mobile-toc site-page-outline">
+  <summary>On this page</summary>
+  {{ replace $outline `id="TableOfContents"` `id="mobileTableOfContents"` | safeHTML }}
+</details>
+{{- end -}}

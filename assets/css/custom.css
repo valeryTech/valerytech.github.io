@@ -180,6 +180,102 @@ html[data-font-preference="jost"] body {
   color: var(--site-accent);
   background: var(--site-panel);
   font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--site-accent);
+}
+
+.section-nav .active-ancestor > details > summary,
+.section-nav .sidebar-root.active-ancestor > a {
+  color: color-mix(in srgb, var(--site-accent) 45%, var(--site-muted));
+  font-weight: 600;
+}
+
+.site-toc-scroll {
+  position: sticky;
+  top: var(--hextra-navbar-height);
+  max-height: calc(100dvh - var(--hextra-navbar-height) - 1rem);
+  overflow-y: auto;
+  padding: 1.5rem 0.25rem 1rem;
+  font-size: 0.875rem;
+}
+
+.site-toc-title {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.site-page-outline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-page-outline li > ul {
+  margin-inline-start: 0.625rem;
+  padding-inline-start: 0.625rem;
+  border-inline-start: 1px solid var(--site-border);
+}
+
+.site-page-outline a {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  margin-block: 0.125rem;
+  border-radius: 0.25rem;
+  color: var(--site-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.site-page-outline a:hover {
+  color: var(--site-accent);
+}
+
+.site-page-outline a.active-ancestor {
+  color: color-mix(in srgb, var(--site-accent) 45%, var(--site-muted));
+  font-weight: 600;
+}
+
+.site-page-outline a.active {
+  color: var(--site-accent);
+  background: var(--site-panel);
+  box-shadow: inset 3px 0 0 var(--site-accent);
+  font-weight: 700;
+}
+
+.site-mobile-toc {
+  margin-block: 1rem 1.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--site-border);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.site-mobile-toc > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.site-mobile-toc[open] > summary {
+  margin-bottom: 0.75rem;
+}
+
+.site-mobile-toc nav {
+  max-height: 55dvh;
+  overflow-y: auto;
+}
+
+.site-back-to-top {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color: var(--site-muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 1280px) {
+  .site-mobile-toc {
+    display: none;
+  }
 }
 
 .section-nav .sidebar-root {

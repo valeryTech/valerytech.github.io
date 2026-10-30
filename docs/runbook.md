@@ -318,3 +318,26 @@ manifest excludes an entire source subtree, including nested attachments.
 To upgrade Hextra, check out the intended release in `themes/hextra/`, review
 local head/sidebar/heading overrides against it, run `make verify`, and commit
 the updated submodule pointer. Keep the theme pinned to a release commit.
+
+### Check navigation in Chrome
+
+Start the Docker preview with `make up`. In another terminal with Node/npm and
+Google Chrome installed, install the project dependencies and run:
+
+```bash
+npm ci
+npm run test:navigation
+```
+
+The checks exercise nested section menus, current/ancestor highlights, H1–H4
+outlines, scrolling, direct heading links, and mobile/tablet navigation. To
+compare the outline with production and save review screenshots:
+
+```bash
+REFERENCE_URL=https://valery.tech SCREENSHOT_DIR=.generated/navigation-review npm run test:navigation
+```
+
+Set `BASE_URL` to test another preview. Set `BROWSER_EXECUTABLE` to select a
+specific Chrome executable. CI uses `BROWSER_CHANNEL=chromium` after running
+`npx playwright-core install --with-deps chromium`, and checks the minified
+production output using Vite preview. These checks do not require host Hugo.

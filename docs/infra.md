@@ -142,6 +142,9 @@ to `master`.
   version, installs the pinned Hugo and Dart Sass binaries, and runs `npm ci`
 - `.github/workflows/ci.yml` validates the build on non-`master` pushes and pull
   requests via `scripts/build-site.sh --host`
+- after the build, CI installs Playwright's Chromium and runs the navigation
+  browser tests against Vite's preview of the minified `public/` artifact
+- failed CI runs retain navigation screenshots as a downloadable artifact
 - `.github/workflows/deploy.yml` uses the same build wrapper before uploading
   `public/` to GitHub Pages
 
@@ -153,6 +156,27 @@ separate Hugo server path.
 
 The repo is npm-only. `package.json` declares the supported package manager, and
 pnpm-specific config is not part of the supported workflow.
+
+### Navigation checks
+
+`npm run test:navigation` uses Playwright Core and an installed Chrome browser
+against `BASE_URL` (default `http://localhost:1313`). These browser checks cover
+the current page and its ancestors in the section menu, nested H1–H4 outlines,
+scroll highlighting, direct heading links, active-outline visibility, and
+mobile/tablet navigation. The static route checks in `make verify` remain
+independent of browser installation.
+
+The page outline uses Hugo's `TableOfContents`, preserving its nested lists and
+the configured heading range. `assets/js/core/toc-scroll.js` overrides Hextra's
+observer to retain the site's reading-position behavior, ancestor highlights,
+and automatic outline scrolling. Explicit hash destinations remain selected at
+their scroll margin. Smaller screens expose the same outline in an accessible
+“On this page” disclosure. Local CSS also marks the section-menu ancestor path.
+
+An optional `REFERENCE_URL=https://valery.tech` compares heading targets and
+ancestor paths with the deployed Doks site. This is a manual migration check;
+CI checks the local artifact so a later production content change cannot make
+an unrelated branch fail. See the runbook for commands.
 
 ### Build artifacts
 

@@ -20,7 +20,7 @@ function fixture(t) {
     copyFileSync(path.join(repository, filename), path.join(root, filename));
   }
   mkdirSync(path.join(root, 'content'), { recursive: true });
-  for (const name of ['sidebar', 'toc', 'breadcrumb', 'main/docs-navigation']) {
+  for (const name of ['sidebar', 'toc', 'breadcrumb', 'main/docs-navigation', 'main/mobile-toc']) {
     writeFileSync(path.join(root, 'layouts/_partials', `${name}.html`), '');
   }
   // Put a competing shortcode below the local mount to exercise precedence.

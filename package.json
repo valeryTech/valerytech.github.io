@@ -20,7 +20,8 @@
     "test:site-map": "node --test tests/site-map/*.test.mjs",
     "test:redirects": "node --test tests/redirects/*.test.mjs",
     "test:theme": "node --test tests/theme/*.test.mjs",
-    "preview": "vite preview --outDir public"
+    "preview": "vite preview --outDir public",
+    "test:navigation": "node --test tests/navigation/*.test.mjs"
   },
   "dependencies": {
     "@microsoft/clarity": "^1.0.2",
@@ -31,7 +32,8 @@
   },
   "devDependencies": {
     "prettier": "^3.3.3",
-    "vite": "^8.0.16"
+    "vite": "^8.0.16",
+    "playwright-core": "1.64.1"
   },
   "engines": {
     "node": ">=24.15.0"

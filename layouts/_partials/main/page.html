@@ -6,6 +6,7 @@
   <div class="hx:w-full hx:min-w-0 hx:flex hx:justify-center hx:pb-8">
     <main id="content" class="hx:w-full hx:min-w-0 hx:px-6 hx:pt-4 hx:md:px-12 {{ if $home }}site-home{{ else }}hextra-max-content-width{{ end }}">
       {{ if and (not $home) (ne .Section "agent-map") }}{{ partial "breadcrumb.html" (dict "page" . "enable" true) }}{{ end }}
+      {{ if and (not $home) (ne .Section "agent-map") }}{{ partial "main/mobile-toc.html" . }}{{ end }}
       <div class="content">
         {{ if eq .Section "agent-map" }}
           <article aria-label="Website navigation map">{{ .Content }}</article>

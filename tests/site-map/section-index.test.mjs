@@ -23,7 +23,7 @@ function fixture(t) {
     mkdirSync(path.dirname(destination), { recursive: true });
     copyFileSync(path.join(repository, 'layouts', filename), destination);
   }
-  for (const name of ['sidebar', 'toc', 'breadcrumb']) {
+  for (const name of ['sidebar', 'toc', 'breadcrumb', 'main/mobile-toc']) {
     writeFileSync(path.join(root, 'layouts/_partials', `${name}.html`), '');
   }
   mkdirSync(path.join(root, 'layouts/partials/sidebar'), { recursive: true });
