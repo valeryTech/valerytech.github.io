@@ -1,7 +1,7 @@
 {{- /* Require editorial descriptions, while allowing navigation and utility pages. */ -}}
 {{- $policy := site.Params.seo.description -}}
 {{- $validate := not (or (in $policy.exemptKinds .Kind) (in $policy.exemptTypes .Type)) -}}
-{{- if and (eq .Kind "section") (not (.Description | strings.TrimSpace)) (not .Params.seo.description) (not .Params.summary) (not (.RawContent | strings.TrimSpace)) -}}
+{{- if and (eq .Kind "section") (not (.Description | strings.TrimSpace)) (not .Params.seo.description) (not .RawSummary) (not (.RawContent | strings.TrimSpace)) -}}
   {{- $validate = false -}}
 {{- end -}}
 {{- if findRE `(?i)(^|[,\s])(noindex|none)($|[,\s])` (default "" .Params.seo.robots) -}}

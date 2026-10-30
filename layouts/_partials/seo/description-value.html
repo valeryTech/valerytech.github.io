@@ -15,8 +15,8 @@
   {{- $description = .Description -}}
 {{- else if and $summaryFallback .Summary -}}
   {{- $description = .Summary -}}
-{{- else if and $summaryFallback .Params.summary -}}
-  {{- $description = .Params.summary -}}
+{{- else if and $summaryFallback .RawSummary -}}
+  {{- $description = .RawSummary -}}
 {{- else if $policy.siteParamsFallback -}}
   {{- $description = site.Params.description -}}
 {{- end -}}

@@ -325,6 +325,10 @@ To upgrade Hextra, check out the intended release in `themes/hextra/`, review
 local head/sidebar/heading overrides against it, run `make verify`, and commit
 the updated submodule pointer. Keep the theme pinned to a release commit.
 
+For package and runtime upgrades, see the [dependency update record](dependencies.md).
+Keep KaTeX's local styles/fonts aligned with Hugo's embedded renderer and rebuild
+the container after changing `.infra/versions.env`.
+
 ### Check navigation in Chrome or WebKit
 
 Start the Docker preview with `make up`. In another terminal with Node/npm and

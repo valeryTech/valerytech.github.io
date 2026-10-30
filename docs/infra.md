@@ -42,12 +42,17 @@ Contributor-facing command usage lives in
 
 ### Shared toolchain
 
+The [dependency update record](dependencies.md) lists the current package/action
+upgrades, compatibility decisions, and verification commands.
+
 Pinned versions live in `.infra/versions.env`:
 
-- `NODE_VERSION=24.15.0`
-- `NPM_VERSION=11.13.0`
-- `HUGO_VERSION=0.160.1`
+- `NODE_VERSION=26.13.0` (LTS)
+- `NPM_VERSION=12.2.1`
+- `HUGO_VERSION=0.169.0`
 - `DART_SASS_VERSION=1.107.0`
+- `UV_VERSION=0.13.6`
+- `N_VERSION=11.0.0` (container Node installer)
 
 That file is the source of truth for both local containers and GitHub Actions, so
 the local preview/build path and the production deploy path run on the same Hugo,
@@ -70,6 +75,7 @@ renders internal links against localhost instead of the production domain.
 
 `.devcontainer/Dockerfile` installs the pinned Node, npm, Hugo, and Dart Sass
 versions into the image. It also installs `uv` for the migration pipeline.
+The container includes `libatomic1`, required by the Node 26 Linux binaries.
 `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
 hashes `package-lock.json`, runs `npm ci` when dependencies are missing or
 stale, then starts the requested command.
@@ -92,6 +98,11 @@ available in the shared toolchain but is not used by the Hextra build.
 FlexSearch comes from the local npm package, and KaTeX styles/fonts and Jost
 fonts are mounted into the published site. These features do not require
 build-time CDN downloads. Mermaid retains Hextra's standard optional loader.
+
+Keep the local KaTeX package aligned with Hugo's embedded renderer: Hugo 0.169.0
+embeds KaTeX 0.18.4, so that exact stylesheet/font package is pinned even while
+newer standalone KaTeX releases exist. See the
+[Hugo math documentation](https://gohugo.io/functions/transform/tomath/).
 
 ### Repo task scripts
 

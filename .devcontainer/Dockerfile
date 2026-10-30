@@ -4,15 +4,16 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
+    libatomic1 \
     wget && \
     rm -rf /var/lib/apt/lists/* && \
     update-ca-certificates
 
 COPY .infra/versions.env /tmp/versions.env
 ARG TARGETARCH
-RUN npm install --global n && \
-    curl -LsSf https://astral.sh/uv/0.11.6/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh && \
-    . /tmp/versions.env && \
+RUN . /tmp/versions.env && \
+    npm install --global "n@${N_VERSION}" && \
+    curl -LsSf "https://astral.sh/uv/${UV_VERSION}/install.sh" | env UV_INSTALL_DIR=/usr/local/bin sh && \
     n "${NODE_VERSION}" && \
     npm install --global "npm@${NPM_VERSION}" && \
     case "${TARGETARCH}" in \

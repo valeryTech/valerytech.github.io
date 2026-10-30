@@ -24,13 +24,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           submodules: recursive
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Setup site toolchain
         uses: ./.github/actions/setup-site
@@ -56,14 +56,14 @@ jobs:
           release-name: valerytech.github.io
           release-version: ${{ github.sha }}
           delete-after-upload: true
-          cli-version: 0.10.0
+          cli-version: 0.19.0
 
       - name: Remove source maps from deployment artifact
         if: always()
         run: if [[ -d public ]]; then find public -type f -name '*.map' -delete; fi
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -76,4 +76,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -58,6 +58,48 @@ async function readAt(page, id) {
   await page.waitForFunction((id) => document.querySelector('.hextra-toc a[aria-current="location"]')?.hash === `#${id}`, id);
 }
 
+test('local search finds indexed notes and opens the selected result from the keyboard', async (t) => {
+  for (const width of [1440, 390]) {
+    const page = await pageFor(t, base + '/', width);
+    await page.locator('[data-search-open]').first().click();
+    const input = page.locator('.hextra-search-input');
+    await input.fill('ticketmaster');
+    const results = page.locator('#hextra-search-results a[role="option"]');
+    await results.first().waitFor({ state: 'visible' });
+    assert.ok(await results.evaluateAll(links => links.some(link => link.pathname === '/system-design/projects/ticketmaster/')));
+    await input.press('ArrowDown');
+    const selected = page.locator('#hextra-search-results a[aria-selected="true"]');
+    const target = new URL(await selected.getAttribute('href'), base);
+    await screenshot(page, `search-${width}`);
+    await input.press('Enter');
+    await page.waitForURL(url => url.pathname === target.pathname && url.hash === target.hash);
+    assert.equal(new URL(page.url()).pathname, target.pathname);
+  }
+});
+
+test('math uses the local KaTeX stylesheet and loads its display fonts', async (t) => {
+  for (const width of [1440, 390]) {
+    const page = await pageFor(t, base + '/ai-engineering/approach/edd/', width);
+    const formula = page.locator('.article-content .katex').first();
+    await page.evaluate(() => document.fonts.ready);
+    await formula.evaluate(element => element.scrollIntoView({ block: 'center', behavior: 'instant' }));
+    assert.equal(await page.locator('link[rel="stylesheet"][href^="/vendor/katex/katex"]').count(), 1);
+    const rendering = await formula.evaluate(element => {
+      const html = element.querySelector('.katex-html');
+      const mathml = element.querySelector('.katex-mathml');
+      return {
+        width: html.getBoundingClientRect().width,
+        mathmlPosition: getComputedStyle(mathml).position,
+        fontsLoaded: [...document.fonts].some(font => font.family.startsWith('KaTeX_') && font.status === 'loaded'),
+      };
+    });
+    assert.ok(rendering.width > 0, 'The visual formula is laid out');
+    assert.equal(rendering.mathmlPosition, 'absolute', 'The matching stylesheet hides the duplicate MathML visually');
+    assert.ok(rendering.fontsLoaded, 'Math display fonts load locally');
+    await screenshot(page, `math-${width}`);
+  }
+});
+
 test('font choices persist and restore independently of the deferred controls', async (t) => {
   const page = await pageFor(t, base + '/');
   await page.context().addCookies([{ name: 'font-preference', value: 'avenir', url: base }]);

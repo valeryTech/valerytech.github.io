@@ -1,11 +1,11 @@
 {{- /* Keep the importer's callout contract, rendered with Hextra components. */ -}}
 {{- $context := .Get "context" | default (.Get "type") | default "note" -}}
-{{- $config := site.Data.callouts -}}
+{{- $config := hugo.Data.callouts -}}
 {{- $kind := index $config.aliases $context | default $context -}}
 {{- $style := index $config.types $kind | default $config.fallback -}}
 {{- $icon := .Get "icon" | default "" -}}
 {{- $icon = index $config.legacyIcons $icon | default $icon -}}
-{{- if not (index site.Data.icons $icon) -}}
+{{- if not (index hugo.Data.icons $icon) -}}
   {{- $icon = $style.icon -}}
 {{- end -}}
 {{- $class := $style.class -}}
