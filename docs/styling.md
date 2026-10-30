@@ -135,7 +135,7 @@ media queries. These values match the existing layout:
 | --- | --- |
 | 640px and below | Compact table cell padding |
 | 768px and above | Desktop sidebar and wider main gutter |
-| 768px to below 1024px | Hide the search shortcut badge so the title fits |
+| 768px to below 1024px | Use an icon-only search button so collection links and wider system fonts fit |
 | 1024px and above | Homepage columns and extra search/menu spacing |
 | 1280px and above | Right outline replaces the mobile outline disclosure |
 | 500px height and below | Pin pane titles, disable ancestor stacking |

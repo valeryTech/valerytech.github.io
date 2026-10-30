@@ -59,7 +59,7 @@ async function readAt(page, id) {
 }
 
 test('local search finds indexed notes and opens the selected result from the keyboard', async (t) => {
-  for (const width of [1440, 390]) {
+  for (const width of [1440, 768, 390]) {
     const page = await pageFor(t, base + '/', width);
     await page.locator('[data-search-open]').first().click();
     const input = page.locator('.hextra-search-input');

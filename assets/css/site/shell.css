@@ -15,7 +15,14 @@
 }
 
 @media (768px <= width < 1024px) {
-  /* Leave room for the title and collection links in the narrow desktop header. */
+  /* Keep all collection links visible with wider system fonts on tablets. */
+  .hextra-search-trigger {
+    flex-shrink: 0;
+    width: auto;
+    padding: var(--site-space-2);
+  }
+
+  .hextra-search-trigger-label,
   .hextra-search-trigger-kbd {
     display: none;
   }
