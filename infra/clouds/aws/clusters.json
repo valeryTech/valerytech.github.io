@@ -1,0 +1,245 @@
+{
+  "cloud": "aws",
+  "items": [
+    {
+      "id": "cluster-aws-dev",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "runtime-platform",
+      "technology": "EKS",
+      "network_ref": "network-aws-dev",
+      "endpoint": "https://cluster-aws-dev.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.16.64.0/18",
+      "service_cidr": "10.16.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-aws-test",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "runtime-platform",
+      "technology": "EKS",
+      "network_ref": "network-aws-test",
+      "endpoint": "https://cluster-aws-test.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.17.64.0/18",
+      "service_cidr": "10.17.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-aws-stage",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "runtime-platform",
+      "technology": "EKS",
+      "network_ref": "network-aws-stage",
+      "endpoint": "https://cluster-aws-stage.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.18.64.0/18",
+      "service_cidr": "10.18.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-aws-prod",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "runtime-platform",
+      "technology": "EKS",
+      "network_ref": "network-aws-prod",
+      "endpoint": "https://cluster-aws-prod.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 6,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.19.64.0/18",
+      "service_cidr": "10.19.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-aws-dr",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "runtime-platform",
+      "technology": "EKS",
+      "network_ref": "network-aws-dr",
+      "endpoint": "https://cluster-aws-dr.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 6,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.20.64.0/18",
+      "service_cidr": "10.20.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    }
+  ]
+}

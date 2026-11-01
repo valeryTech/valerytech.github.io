@@ -1,0 +1,1524 @@
+{
+  "services": [
+    {
+      "id": "service-api-gateway-dev",
+      "name": "api-gateway",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "platform",
+      "cluster_ref": "cluster-aws-dev",
+      "identity_ref": "identity-aws-dev",
+      "datastore_refs": [
+        "data-redis-aws-dev"
+      ],
+      "endpoint": "https://service-api-gateway-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/aws/api-gateway"
+    },
+    {
+      "id": "service-identity-service-dev",
+      "name": "identity-service",
+      "cloud": "azure",
+      "environment": "dev",
+      "region": "eastus2",
+      "owner": "identity",
+      "cluster_ref": "cluster-azure-dev",
+      "identity_ref": "identity-azure-dev",
+      "datastore_refs": [
+        "data-postgresql-azure-dev"
+      ],
+      "endpoint": "https://service-identity-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/azure/identity-service"
+    },
+    {
+      "id": "service-customer-service-dev",
+      "name": "customer-service",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "customer",
+      "cluster_ref": "cluster-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "datastore_refs": [
+        "data-spanner-gcp-dev"
+      ],
+      "endpoint": "https://service-customer-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/gcp/customer-service"
+    },
+    {
+      "id": "service-order-service-dev",
+      "name": "order-service",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "commerce",
+      "cluster_ref": "cluster-aws-dev",
+      "identity_ref": "identity-aws-dev",
+      "datastore_refs": [
+        "data-aurora-postgresql-aws-dev"
+      ],
+      "endpoint": "https://service-order-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/aws/order-service"
+    },
+    {
+      "id": "service-payment-service-dev",
+      "name": "payment-service",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "payments",
+      "cluster_ref": "cluster-aws-dev",
+      "identity_ref": "identity-aws-dev",
+      "datastore_refs": [
+        "data-aurora-mysql-aws-dev"
+      ],
+      "endpoint": "https://service-payment-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/aws/payment-service"
+    },
+    {
+      "id": "service-billing-service-dev",
+      "name": "billing-service",
+      "cloud": "azure",
+      "environment": "dev",
+      "region": "eastus2",
+      "owner": "finance",
+      "cluster_ref": "cluster-azure-dev",
+      "identity_ref": "identity-azure-dev",
+      "datastore_refs": [
+        "data-sqlserver-azure-dev"
+      ],
+      "endpoint": "https://service-billing-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/azure/billing-service"
+    },
+    {
+      "id": "service-inventory-service-dev",
+      "name": "inventory-service",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "supply-chain",
+      "cluster_ref": "cluster-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "datastore_refs": [
+        "data-mysql-gcp-dev"
+      ],
+      "endpoint": "https://service-inventory-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/gcp/inventory-service"
+    },
+    {
+      "id": "service-search-service-dev",
+      "name": "search-service",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "discovery",
+      "cluster_ref": "cluster-aws-dev",
+      "identity_ref": "identity-aws-dev",
+      "datastore_refs": [
+        "data-opensearch-aws-dev"
+      ],
+      "endpoint": "https://service-search-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/aws/search-service"
+    },
+    {
+      "id": "service-notification-service-dev",
+      "name": "notification-service",
+      "cloud": "azure",
+      "environment": "dev",
+      "region": "eastus2",
+      "owner": "engagement",
+      "cluster_ref": "cluster-azure-dev",
+      "identity_ref": "identity-azure-dev",
+      "datastore_refs": [
+        "data-eventhubs-azure-dev"
+      ],
+      "endpoint": "https://service-notification-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/azure/notification-service"
+    },
+    {
+      "id": "service-recommendation-service-dev",
+      "name": "recommendation-service",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "ml-platform",
+      "cluster_ref": "cluster-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "datastore_refs": [
+        "data-bigtable-gcp-dev"
+      ],
+      "endpoint": "https://service-recommendation-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/gcp/recommendation-service"
+    },
+    {
+      "id": "service-analytics-service-dev",
+      "name": "analytics-service",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "cluster_ref": "cluster-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "datastore_refs": [
+        "data-bigquery-gcp-dev"
+      ],
+      "endpoint": "https://service-analytics-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/gcp/analytics-service"
+    },
+    {
+      "id": "service-fraud-service-dev",
+      "name": "fraud-service",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "risk",
+      "cluster_ref": "cluster-aws-dev",
+      "identity_ref": "identity-aws-dev",
+      "datastore_refs": [
+        "data-redshift-aws-dev"
+      ],
+      "endpoint": "https://service-fraud-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/aws/fraud-service"
+    },
+    {
+      "id": "service-workflow-service-dev",
+      "name": "workflow-service",
+      "cloud": "azure",
+      "environment": "dev",
+      "region": "eastus2",
+      "owner": "enterprise-apps",
+      "cluster_ref": "cluster-azure-dev",
+      "identity_ref": "identity-azure-dev",
+      "datastore_refs": [
+        "data-oracle-azure-dev"
+      ],
+      "endpoint": "https://service-workflow-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/azure/workflow-service"
+    },
+    {
+      "id": "service-support-service-dev",
+      "name": "support-service",
+      "cloud": "azure",
+      "environment": "dev",
+      "region": "eastus2",
+      "owner": "customer-operations",
+      "cluster_ref": "cluster-azure-dev",
+      "identity_ref": "identity-azure-dev",
+      "datastore_refs": [
+        "data-cosmosdb-azure-dev"
+      ],
+      "endpoint": "https://service-support-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/azure/support-service"
+    },
+    {
+      "id": "service-document-service-dev",
+      "name": "document-service",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "content-platform",
+      "cluster_ref": "cluster-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "datastore_refs": [
+        "data-gcs-gcp-dev"
+      ],
+      "endpoint": "https://service-document-service-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/gcp/document-service"
+    },
+    {
+      "id": "service-integration-gateway-dev",
+      "name": "integration-gateway",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "integrations",
+      "cluster_ref": "cluster-aws-dev",
+      "identity_ref": "identity-aws-dev",
+      "datastore_refs": [
+        "data-kafka-aws-dev"
+      ],
+      "endpoint": "https://service-integration-gateway-dev.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-dev",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dev/aws/integration-gateway"
+    },
+    {
+      "id": "service-api-gateway-test",
+      "name": "api-gateway",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "platform",
+      "cluster_ref": "cluster-aws-test",
+      "identity_ref": "identity-aws-test",
+      "datastore_refs": [
+        "data-redis-aws-test"
+      ],
+      "endpoint": "https://service-api-gateway-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/aws/api-gateway"
+    },
+    {
+      "id": "service-identity-service-test",
+      "name": "identity-service",
+      "cloud": "azure",
+      "environment": "test",
+      "region": "eastus2",
+      "owner": "identity",
+      "cluster_ref": "cluster-azure-test",
+      "identity_ref": "identity-azure-test",
+      "datastore_refs": [
+        "data-postgresql-azure-test"
+      ],
+      "endpoint": "https://service-identity-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/azure/identity-service"
+    },
+    {
+      "id": "service-customer-service-test",
+      "name": "customer-service",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "customer",
+      "cluster_ref": "cluster-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "datastore_refs": [
+        "data-spanner-gcp-test"
+      ],
+      "endpoint": "https://service-customer-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/gcp/customer-service"
+    },
+    {
+      "id": "service-order-service-test",
+      "name": "order-service",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "commerce",
+      "cluster_ref": "cluster-aws-test",
+      "identity_ref": "identity-aws-test",
+      "datastore_refs": [
+        "data-aurora-postgresql-aws-test"
+      ],
+      "endpoint": "https://service-order-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/aws/order-service"
+    },
+    {
+      "id": "service-payment-service-test",
+      "name": "payment-service",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "payments",
+      "cluster_ref": "cluster-aws-test",
+      "identity_ref": "identity-aws-test",
+      "datastore_refs": [
+        "data-aurora-mysql-aws-test"
+      ],
+      "endpoint": "https://service-payment-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/aws/payment-service"
+    },
+    {
+      "id": "service-billing-service-test",
+      "name": "billing-service",
+      "cloud": "azure",
+      "environment": "test",
+      "region": "eastus2",
+      "owner": "finance",
+      "cluster_ref": "cluster-azure-test",
+      "identity_ref": "identity-azure-test",
+      "datastore_refs": [
+        "data-sqlserver-azure-test"
+      ],
+      "endpoint": "https://service-billing-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/azure/billing-service"
+    },
+    {
+      "id": "service-inventory-service-test",
+      "name": "inventory-service",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "supply-chain",
+      "cluster_ref": "cluster-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "datastore_refs": [
+        "data-mysql-gcp-test"
+      ],
+      "endpoint": "https://service-inventory-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/gcp/inventory-service"
+    },
+    {
+      "id": "service-search-service-test",
+      "name": "search-service",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "discovery",
+      "cluster_ref": "cluster-aws-test",
+      "identity_ref": "identity-aws-test",
+      "datastore_refs": [
+        "data-opensearch-aws-test"
+      ],
+      "endpoint": "https://service-search-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/aws/search-service"
+    },
+    {
+      "id": "service-notification-service-test",
+      "name": "notification-service",
+      "cloud": "azure",
+      "environment": "test",
+      "region": "eastus2",
+      "owner": "engagement",
+      "cluster_ref": "cluster-azure-test",
+      "identity_ref": "identity-azure-test",
+      "datastore_refs": [
+        "data-eventhubs-azure-test"
+      ],
+      "endpoint": "https://service-notification-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/azure/notification-service"
+    },
+    {
+      "id": "service-recommendation-service-test",
+      "name": "recommendation-service",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "ml-platform",
+      "cluster_ref": "cluster-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "datastore_refs": [
+        "data-bigtable-gcp-test"
+      ],
+      "endpoint": "https://service-recommendation-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/gcp/recommendation-service"
+    },
+    {
+      "id": "service-analytics-service-test",
+      "name": "analytics-service",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "cluster_ref": "cluster-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "datastore_refs": [
+        "data-bigquery-gcp-test"
+      ],
+      "endpoint": "https://service-analytics-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/gcp/analytics-service"
+    },
+    {
+      "id": "service-fraud-service-test",
+      "name": "fraud-service",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "risk",
+      "cluster_ref": "cluster-aws-test",
+      "identity_ref": "identity-aws-test",
+      "datastore_refs": [
+        "data-redshift-aws-test"
+      ],
+      "endpoint": "https://service-fraud-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/aws/fraud-service"
+    },
+    {
+      "id": "service-workflow-service-test",
+      "name": "workflow-service",
+      "cloud": "azure",
+      "environment": "test",
+      "region": "eastus2",
+      "owner": "enterprise-apps",
+      "cluster_ref": "cluster-azure-test",
+      "identity_ref": "identity-azure-test",
+      "datastore_refs": [
+        "data-oracle-azure-test"
+      ],
+      "endpoint": "https://service-workflow-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/azure/workflow-service"
+    },
+    {
+      "id": "service-support-service-test",
+      "name": "support-service",
+      "cloud": "azure",
+      "environment": "test",
+      "region": "eastus2",
+      "owner": "customer-operations",
+      "cluster_ref": "cluster-azure-test",
+      "identity_ref": "identity-azure-test",
+      "datastore_refs": [
+        "data-cosmosdb-azure-test"
+      ],
+      "endpoint": "https://service-support-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/azure/support-service"
+    },
+    {
+      "id": "service-document-service-test",
+      "name": "document-service",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "content-platform",
+      "cluster_ref": "cluster-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "datastore_refs": [
+        "data-gcs-gcp-test"
+      ],
+      "endpoint": "https://service-document-service-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/gcp/document-service"
+    },
+    {
+      "id": "service-integration-gateway-test",
+      "name": "integration-gateway",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "integrations",
+      "cluster_ref": "cluster-aws-test",
+      "identity_ref": "identity-aws-test",
+      "datastore_refs": [
+        "data-kafka-aws-test"
+      ],
+      "endpoint": "https://service-integration-gateway-test.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-test",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/test/aws/integration-gateway"
+    },
+    {
+      "id": "service-api-gateway-stage",
+      "name": "api-gateway",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "platform",
+      "cluster_ref": "cluster-aws-stage",
+      "identity_ref": "identity-aws-stage",
+      "datastore_refs": [
+        "data-redis-aws-stage"
+      ],
+      "endpoint": "https://service-api-gateway-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/aws/api-gateway"
+    },
+    {
+      "id": "service-identity-service-stage",
+      "name": "identity-service",
+      "cloud": "azure",
+      "environment": "stage",
+      "region": "eastus2",
+      "owner": "identity",
+      "cluster_ref": "cluster-azure-stage",
+      "identity_ref": "identity-azure-stage",
+      "datastore_refs": [
+        "data-postgresql-azure-stage"
+      ],
+      "endpoint": "https://service-identity-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/azure/identity-service"
+    },
+    {
+      "id": "service-customer-service-stage",
+      "name": "customer-service",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "customer",
+      "cluster_ref": "cluster-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "datastore_refs": [
+        "data-spanner-gcp-stage"
+      ],
+      "endpoint": "https://service-customer-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/gcp/customer-service"
+    },
+    {
+      "id": "service-order-service-stage",
+      "name": "order-service",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "commerce",
+      "cluster_ref": "cluster-aws-stage",
+      "identity_ref": "identity-aws-stage",
+      "datastore_refs": [
+        "data-aurora-postgresql-aws-stage"
+      ],
+      "endpoint": "https://service-order-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/aws/order-service"
+    },
+    {
+      "id": "service-payment-service-stage",
+      "name": "payment-service",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "payments",
+      "cluster_ref": "cluster-aws-stage",
+      "identity_ref": "identity-aws-stage",
+      "datastore_refs": [
+        "data-aurora-mysql-aws-stage"
+      ],
+      "endpoint": "https://service-payment-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/aws/payment-service"
+    },
+    {
+      "id": "service-billing-service-stage",
+      "name": "billing-service",
+      "cloud": "azure",
+      "environment": "stage",
+      "region": "eastus2",
+      "owner": "finance",
+      "cluster_ref": "cluster-azure-stage",
+      "identity_ref": "identity-azure-stage",
+      "datastore_refs": [
+        "data-sqlserver-azure-stage"
+      ],
+      "endpoint": "https://service-billing-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/azure/billing-service"
+    },
+    {
+      "id": "service-inventory-service-stage",
+      "name": "inventory-service",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "supply-chain",
+      "cluster_ref": "cluster-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "datastore_refs": [
+        "data-mysql-gcp-stage"
+      ],
+      "endpoint": "https://service-inventory-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/gcp/inventory-service"
+    },
+    {
+      "id": "service-search-service-stage",
+      "name": "search-service",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "discovery",
+      "cluster_ref": "cluster-aws-stage",
+      "identity_ref": "identity-aws-stage",
+      "datastore_refs": [
+        "data-opensearch-aws-stage"
+      ],
+      "endpoint": "https://service-search-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/aws/search-service"
+    },
+    {
+      "id": "service-notification-service-stage",
+      "name": "notification-service",
+      "cloud": "azure",
+      "environment": "stage",
+      "region": "eastus2",
+      "owner": "engagement",
+      "cluster_ref": "cluster-azure-stage",
+      "identity_ref": "identity-azure-stage",
+      "datastore_refs": [
+        "data-eventhubs-azure-stage"
+      ],
+      "endpoint": "https://service-notification-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/azure/notification-service"
+    },
+    {
+      "id": "service-recommendation-service-stage",
+      "name": "recommendation-service",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "ml-platform",
+      "cluster_ref": "cluster-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "datastore_refs": [
+        "data-bigtable-gcp-stage"
+      ],
+      "endpoint": "https://service-recommendation-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/gcp/recommendation-service"
+    },
+    {
+      "id": "service-analytics-service-stage",
+      "name": "analytics-service",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "cluster_ref": "cluster-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "datastore_refs": [
+        "data-bigquery-gcp-stage"
+      ],
+      "endpoint": "https://service-analytics-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/gcp/analytics-service"
+    },
+    {
+      "id": "service-fraud-service-stage",
+      "name": "fraud-service",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "risk",
+      "cluster_ref": "cluster-aws-stage",
+      "identity_ref": "identity-aws-stage",
+      "datastore_refs": [
+        "data-redshift-aws-stage"
+      ],
+      "endpoint": "https://service-fraud-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/aws/fraud-service"
+    },
+    {
+      "id": "service-workflow-service-stage",
+      "name": "workflow-service",
+      "cloud": "azure",
+      "environment": "stage",
+      "region": "eastus2",
+      "owner": "enterprise-apps",
+      "cluster_ref": "cluster-azure-stage",
+      "identity_ref": "identity-azure-stage",
+      "datastore_refs": [
+        "data-oracle-azure-stage"
+      ],
+      "endpoint": "https://service-workflow-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/azure/workflow-service"
+    },
+    {
+      "id": "service-support-service-stage",
+      "name": "support-service",
+      "cloud": "azure",
+      "environment": "stage",
+      "region": "eastus2",
+      "owner": "customer-operations",
+      "cluster_ref": "cluster-azure-stage",
+      "identity_ref": "identity-azure-stage",
+      "datastore_refs": [
+        "data-cosmosdb-azure-stage"
+      ],
+      "endpoint": "https://service-support-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/azure/support-service"
+    },
+    {
+      "id": "service-document-service-stage",
+      "name": "document-service",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "content-platform",
+      "cluster_ref": "cluster-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "datastore_refs": [
+        "data-gcs-gcp-stage"
+      ],
+      "endpoint": "https://service-document-service-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/gcp/document-service"
+    },
+    {
+      "id": "service-integration-gateway-stage",
+      "name": "integration-gateway",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "integrations",
+      "cluster_ref": "cluster-aws-stage",
+      "identity_ref": "identity-aws-stage",
+      "datastore_refs": [
+        "data-kafka-aws-stage"
+      ],
+      "endpoint": "https://service-integration-gateway-stage.enterprise.invalid",
+      "replicas": 2,
+      "namespace": "enterprise-stage",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/stage/aws/integration-gateway"
+    },
+    {
+      "id": "service-api-gateway-prod",
+      "name": "api-gateway",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "platform",
+      "cluster_ref": "cluster-aws-prod",
+      "identity_ref": "identity-aws-prod",
+      "datastore_refs": [
+        "data-redis-aws-prod"
+      ],
+      "endpoint": "https://service-api-gateway-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/aws/api-gateway"
+    },
+    {
+      "id": "service-identity-service-prod",
+      "name": "identity-service",
+      "cloud": "azure",
+      "environment": "prod",
+      "region": "eastus2",
+      "owner": "identity",
+      "cluster_ref": "cluster-azure-prod",
+      "identity_ref": "identity-azure-prod",
+      "datastore_refs": [
+        "data-postgresql-azure-prod"
+      ],
+      "endpoint": "https://service-identity-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/azure/identity-service"
+    },
+    {
+      "id": "service-customer-service-prod",
+      "name": "customer-service",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "customer",
+      "cluster_ref": "cluster-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "datastore_refs": [
+        "data-spanner-gcp-prod"
+      ],
+      "endpoint": "https://service-customer-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/gcp/customer-service"
+    },
+    {
+      "id": "service-order-service-prod",
+      "name": "order-service",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "commerce",
+      "cluster_ref": "cluster-aws-prod",
+      "identity_ref": "identity-aws-prod",
+      "datastore_refs": [
+        "data-aurora-postgresql-aws-prod"
+      ],
+      "endpoint": "https://service-order-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/aws/order-service"
+    },
+    {
+      "id": "service-payment-service-prod",
+      "name": "payment-service",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "payments",
+      "cluster_ref": "cluster-aws-prod",
+      "identity_ref": "identity-aws-prod",
+      "datastore_refs": [
+        "data-aurora-mysql-aws-prod"
+      ],
+      "endpoint": "https://service-payment-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/aws/payment-service"
+    },
+    {
+      "id": "service-billing-service-prod",
+      "name": "billing-service",
+      "cloud": "azure",
+      "environment": "prod",
+      "region": "eastus2",
+      "owner": "finance",
+      "cluster_ref": "cluster-azure-prod",
+      "identity_ref": "identity-azure-prod",
+      "datastore_refs": [
+        "data-sqlserver-azure-prod"
+      ],
+      "endpoint": "https://service-billing-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/azure/billing-service"
+    },
+    {
+      "id": "service-inventory-service-prod",
+      "name": "inventory-service",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "supply-chain",
+      "cluster_ref": "cluster-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "datastore_refs": [
+        "data-mysql-gcp-prod"
+      ],
+      "endpoint": "https://service-inventory-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/gcp/inventory-service"
+    },
+    {
+      "id": "service-search-service-prod",
+      "name": "search-service",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "discovery",
+      "cluster_ref": "cluster-aws-prod",
+      "identity_ref": "identity-aws-prod",
+      "datastore_refs": [
+        "data-opensearch-aws-prod"
+      ],
+      "endpoint": "https://service-search-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/aws/search-service"
+    },
+    {
+      "id": "service-notification-service-prod",
+      "name": "notification-service",
+      "cloud": "azure",
+      "environment": "prod",
+      "region": "eastus2",
+      "owner": "engagement",
+      "cluster_ref": "cluster-azure-prod",
+      "identity_ref": "identity-azure-prod",
+      "datastore_refs": [
+        "data-eventhubs-azure-prod"
+      ],
+      "endpoint": "https://service-notification-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/azure/notification-service"
+    },
+    {
+      "id": "service-recommendation-service-prod",
+      "name": "recommendation-service",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "ml-platform",
+      "cluster_ref": "cluster-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "datastore_refs": [
+        "data-bigtable-gcp-prod"
+      ],
+      "endpoint": "https://service-recommendation-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/gcp/recommendation-service"
+    },
+    {
+      "id": "service-analytics-service-prod",
+      "name": "analytics-service",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "cluster_ref": "cluster-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "datastore_refs": [
+        "data-bigquery-gcp-prod"
+      ],
+      "endpoint": "https://service-analytics-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/gcp/analytics-service"
+    },
+    {
+      "id": "service-fraud-service-prod",
+      "name": "fraud-service",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "risk",
+      "cluster_ref": "cluster-aws-prod",
+      "identity_ref": "identity-aws-prod",
+      "datastore_refs": [
+        "data-redshift-aws-prod"
+      ],
+      "endpoint": "https://service-fraud-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/aws/fraud-service"
+    },
+    {
+      "id": "service-workflow-service-prod",
+      "name": "workflow-service",
+      "cloud": "azure",
+      "environment": "prod",
+      "region": "eastus2",
+      "owner": "enterprise-apps",
+      "cluster_ref": "cluster-azure-prod",
+      "identity_ref": "identity-azure-prod",
+      "datastore_refs": [
+        "data-oracle-azure-prod"
+      ],
+      "endpoint": "https://service-workflow-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/azure/workflow-service"
+    },
+    {
+      "id": "service-support-service-prod",
+      "name": "support-service",
+      "cloud": "azure",
+      "environment": "prod",
+      "region": "eastus2",
+      "owner": "customer-operations",
+      "cluster_ref": "cluster-azure-prod",
+      "identity_ref": "identity-azure-prod",
+      "datastore_refs": [
+        "data-cosmosdb-azure-prod"
+      ],
+      "endpoint": "https://service-support-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/azure/support-service"
+    },
+    {
+      "id": "service-document-service-prod",
+      "name": "document-service",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "content-platform",
+      "cluster_ref": "cluster-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "datastore_refs": [
+        "data-gcs-gcp-prod"
+      ],
+      "endpoint": "https://service-document-service-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/gcp/document-service"
+    },
+    {
+      "id": "service-integration-gateway-prod",
+      "name": "integration-gateway",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "integrations",
+      "cluster_ref": "cluster-aws-prod",
+      "identity_ref": "identity-aws-prod",
+      "datastore_refs": [
+        "data-kafka-aws-prod"
+      ],
+      "endpoint": "https://service-integration-gateway-prod.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-prod",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/prod/aws/integration-gateway"
+    },
+    {
+      "id": "service-api-gateway-dr",
+      "name": "api-gateway",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "platform",
+      "cluster_ref": "cluster-aws-dr",
+      "identity_ref": "identity-aws-dr",
+      "datastore_refs": [
+        "data-redis-aws-dr"
+      ],
+      "endpoint": "https://service-api-gateway-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/aws/api-gateway"
+    },
+    {
+      "id": "service-identity-service-dr",
+      "name": "identity-service",
+      "cloud": "azure",
+      "environment": "dr",
+      "region": "westus3",
+      "owner": "identity",
+      "cluster_ref": "cluster-azure-dr",
+      "identity_ref": "identity-azure-dr",
+      "datastore_refs": [
+        "data-postgresql-azure-dr"
+      ],
+      "endpoint": "https://service-identity-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/azure/identity-service"
+    },
+    {
+      "id": "service-customer-service-dr",
+      "name": "customer-service",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "customer",
+      "cluster_ref": "cluster-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "datastore_refs": [
+        "data-spanner-gcp-dr"
+      ],
+      "endpoint": "https://service-customer-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/gcp/customer-service"
+    },
+    {
+      "id": "service-order-service-dr",
+      "name": "order-service",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "commerce",
+      "cluster_ref": "cluster-aws-dr",
+      "identity_ref": "identity-aws-dr",
+      "datastore_refs": [
+        "data-aurora-postgresql-aws-dr"
+      ],
+      "endpoint": "https://service-order-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/aws/order-service"
+    },
+    {
+      "id": "service-payment-service-dr",
+      "name": "payment-service",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "payments",
+      "cluster_ref": "cluster-aws-dr",
+      "identity_ref": "identity-aws-dr",
+      "datastore_refs": [
+        "data-aurora-mysql-aws-dr"
+      ],
+      "endpoint": "https://service-payment-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/aws/payment-service"
+    },
+    {
+      "id": "service-billing-service-dr",
+      "name": "billing-service",
+      "cloud": "azure",
+      "environment": "dr",
+      "region": "westus3",
+      "owner": "finance",
+      "cluster_ref": "cluster-azure-dr",
+      "identity_ref": "identity-azure-dr",
+      "datastore_refs": [
+        "data-sqlserver-azure-dr"
+      ],
+      "endpoint": "https://service-billing-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/azure/billing-service"
+    },
+    {
+      "id": "service-inventory-service-dr",
+      "name": "inventory-service",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "supply-chain",
+      "cluster_ref": "cluster-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "datastore_refs": [
+        "data-mysql-gcp-dr"
+      ],
+      "endpoint": "https://service-inventory-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/gcp/inventory-service"
+    },
+    {
+      "id": "service-search-service-dr",
+      "name": "search-service",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "discovery",
+      "cluster_ref": "cluster-aws-dr",
+      "identity_ref": "identity-aws-dr",
+      "datastore_refs": [
+        "data-opensearch-aws-dr"
+      ],
+      "endpoint": "https://service-search-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/aws/search-service"
+    },
+    {
+      "id": "service-notification-service-dr",
+      "name": "notification-service",
+      "cloud": "azure",
+      "environment": "dr",
+      "region": "westus3",
+      "owner": "engagement",
+      "cluster_ref": "cluster-azure-dr",
+      "identity_ref": "identity-azure-dr",
+      "datastore_refs": [
+        "data-eventhubs-azure-dr"
+      ],
+      "endpoint": "https://service-notification-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/azure/notification-service"
+    },
+    {
+      "id": "service-recommendation-service-dr",
+      "name": "recommendation-service",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "ml-platform",
+      "cluster_ref": "cluster-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "datastore_refs": [
+        "data-bigtable-gcp-dr"
+      ],
+      "endpoint": "https://service-recommendation-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/gcp/recommendation-service"
+    },
+    {
+      "id": "service-analytics-service-dr",
+      "name": "analytics-service",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "cluster_ref": "cluster-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "datastore_refs": [
+        "data-bigquery-gcp-dr"
+      ],
+      "endpoint": "https://service-analytics-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/gcp/analytics-service"
+    },
+    {
+      "id": "service-fraud-service-dr",
+      "name": "fraud-service",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "risk",
+      "cluster_ref": "cluster-aws-dr",
+      "identity_ref": "identity-aws-dr",
+      "datastore_refs": [
+        "data-redshift-aws-dr"
+      ],
+      "endpoint": "https://service-fraud-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/aws/fraud-service"
+    },
+    {
+      "id": "service-workflow-service-dr",
+      "name": "workflow-service",
+      "cloud": "azure",
+      "environment": "dr",
+      "region": "westus3",
+      "owner": "enterprise-apps",
+      "cluster_ref": "cluster-azure-dr",
+      "identity_ref": "identity-azure-dr",
+      "datastore_refs": [
+        "data-oracle-azure-dr"
+      ],
+      "endpoint": "https://service-workflow-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/azure/workflow-service"
+    },
+    {
+      "id": "service-support-service-dr",
+      "name": "support-service",
+      "cloud": "azure",
+      "environment": "dr",
+      "region": "westus3",
+      "owner": "customer-operations",
+      "cluster_ref": "cluster-azure-dr",
+      "identity_ref": "identity-azure-dr",
+      "datastore_refs": [
+        "data-cosmosdb-azure-dr"
+      ],
+      "endpoint": "https://service-support-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/azure/support-service"
+    },
+    {
+      "id": "service-document-service-dr",
+      "name": "document-service",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "content-platform",
+      "cluster_ref": "cluster-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "datastore_refs": [
+        "data-gcs-gcp-dr"
+      ],
+      "endpoint": "https://service-document-service-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/gcp/document-service"
+    },
+    {
+      "id": "service-integration-gateway-dr",
+      "name": "integration-gateway",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "integrations",
+      "cluster_ref": "cluster-aws-dr",
+      "identity_ref": "identity-aws-dr",
+      "datastore_refs": [
+        "data-kafka-aws-dr"
+      ],
+      "endpoint": "https://service-integration-gateway-dr.enterprise.invalid",
+      "replicas": 6,
+      "namespace": "enterprise-dr",
+      "slo_availability": 0.999,
+      "enabled": false,
+      "secret_path": "enterprise/dr/aws/integration-gateway"
+    }
+  ]
+}

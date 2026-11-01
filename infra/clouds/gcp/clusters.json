@@ -1,0 +1,245 @@
+{
+  "cloud": "gcp",
+  "items": [
+    {
+      "id": "cluster-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "runtime-platform",
+      "technology": "GKE",
+      "network_ref": "network-gcp-dev",
+      "endpoint": "https://cluster-gcp-dev.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.80.64.0/18",
+      "service_cidr": "10.80.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "runtime-platform",
+      "technology": "GKE",
+      "network_ref": "network-gcp-test",
+      "endpoint": "https://cluster-gcp-test.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.81.64.0/18",
+      "service_cidr": "10.81.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "runtime-platform",
+      "technology": "GKE",
+      "network_ref": "network-gcp-stage",
+      "endpoint": "https://cluster-gcp-stage.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.82.64.0/18",
+      "service_cidr": "10.82.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "runtime-platform",
+      "technology": "GKE",
+      "network_ref": "network-gcp-prod",
+      "endpoint": "https://cluster-gcp-prod.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 6,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.83.64.0/18",
+      "service_cidr": "10.83.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "runtime-platform",
+      "technology": "GKE",
+      "network_ref": "network-gcp-dr",
+      "endpoint": "https://cluster-gcp-dr.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 6,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.84.64.0/18",
+      "service_cidr": "10.84.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    }
+  ]
+}

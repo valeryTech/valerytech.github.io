@@ -1,0 +1,245 @@
+{
+  "cloud": "azure",
+  "items": [
+    {
+      "id": "cluster-azure-dev",
+      "cloud": "azure",
+      "environment": "dev",
+      "region": "eastus2",
+      "owner": "runtime-platform",
+      "technology": "AKS",
+      "network_ref": "network-azure-dev",
+      "endpoint": "https://cluster-azure-dev.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.48.64.0/18",
+      "service_cidr": "10.48.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-azure-test",
+      "cloud": "azure",
+      "environment": "test",
+      "region": "eastus2",
+      "owner": "runtime-platform",
+      "technology": "AKS",
+      "network_ref": "network-azure-test",
+      "endpoint": "https://cluster-azure-test.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.49.64.0/18",
+      "service_cidr": "10.49.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-azure-stage",
+      "cloud": "azure",
+      "environment": "stage",
+      "region": "eastus2",
+      "owner": "runtime-platform",
+      "technology": "AKS",
+      "network_ref": "network-azure-stage",
+      "endpoint": "https://cluster-azure-stage.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 2,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.50.64.0/18",
+      "service_cidr": "10.50.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-azure-prod",
+      "cloud": "azure",
+      "environment": "prod",
+      "region": "eastus2",
+      "owner": "runtime-platform",
+      "technology": "AKS",
+      "network_ref": "network-azure-prod",
+      "endpoint": "https://cluster-azure-prod.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 6,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.51.64.0/18",
+      "service_cidr": "10.51.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    },
+    {
+      "id": "cluster-azure-dr",
+      "cloud": "azure",
+      "environment": "dr",
+      "region": "westus3",
+      "owner": "runtime-platform",
+      "technology": "AKS",
+      "network_ref": "network-azure-dr",
+      "endpoint": "https://cluster-azure-dr.enterprise.invalid:6443",
+      "private_api": true,
+      "workload_identity": true,
+      "node_pools": [
+        {
+          "name": "system",
+          "min": 3,
+          "max": 6,
+          "class": "general"
+        },
+        {
+          "name": "applications",
+          "min": 6,
+          "max": 120,
+          "class": "general"
+        },
+        {
+          "name": "batch",
+          "min": 0,
+          "max": 60,
+          "class": "interruptible"
+        },
+        {
+          "name": "ml",
+          "min": 0,
+          "max": 24,
+          "class": "accelerated"
+        }
+      ],
+      "pod_cidr": "10.52.64.0/18",
+      "service_cidr": "10.52.128.0/20",
+      "addons": [
+        "mesh",
+        "external-secrets",
+        "policy-agent",
+        "otel",
+        "gitops"
+      ],
+      "enabled": false
+    }
+  ]
+}

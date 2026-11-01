@@ -1,0 +1,80 @@
+{
+  "cloud": "gcp",
+  "items": [
+    {
+      "id": "account-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-gcp-dev",
+      "enabled": false,
+      "cost_center": "CC-120",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-gcp-test",
+      "enabled": false,
+      "cost_center": "CC-121",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-gcp-stage",
+      "enabled": false,
+      "cost_center": "CC-122",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-gcp-prod",
+      "enabled": false,
+      "cost_center": "CC-123",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-gcp-dr",
+      "enabled": false,
+      "cost_center": "CC-124",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    }
+  ]
+}

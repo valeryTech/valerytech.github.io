@@ -1,0 +1,80 @@
+{
+  "cloud": "aws",
+  "items": [
+    {
+      "id": "account-aws-dev",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-aws-dev",
+      "enabled": false,
+      "cost_center": "CC-100",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-aws-test",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-aws-test",
+      "enabled": false,
+      "cost_center": "CC-101",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-aws-stage",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-aws-stage",
+      "enabled": false,
+      "cost_center": "CC-102",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-aws-prod",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-aws-prod",
+      "enabled": false,
+      "cost_center": "CC-103",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    },
+    {
+      "id": "account-aws-dr",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "cloud-platform",
+      "tenant_id": "tenant-aws-dr",
+      "enabled": false,
+      "cost_center": "CC-104",
+      "guardrails": [
+        "deny-public-data",
+        "require-tags",
+        "require-credential-rotation"
+      ]
+    }
+  ]
+}

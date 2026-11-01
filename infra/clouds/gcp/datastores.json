@@ -1,0 +1,1355 @@
+{
+  "cloud": "gcp",
+  "items": [
+    {
+      "id": "data-postgresql-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "postgresql",
+      "service_class": "database",
+      "host": "data-postgresql-gcp-dev.enterprise.invalid",
+      "port": 5432,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-mysql-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "mysql",
+      "service_class": "database",
+      "host": "data-mysql-gcp-dev.enterprise.invalid",
+      "port": 3306,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-spanner-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "spanner",
+      "service_class": "database",
+      "host": "data-spanner-gcp-dev.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-bigtable-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigtable",
+      "service_class": "database",
+      "host": "data-bigtable-gcp-dev.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-redis-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "redis",
+      "service_class": "cache",
+      "host": "data-redis-gcp-dev.enterprise.invalid",
+      "port": 6379,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-pubsub-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "pubsub",
+      "service_class": "messaging",
+      "host": "data-pubsub-gcp-dev.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-bigquery-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigquery",
+      "service_class": "warehouse",
+      "host": "data-bigquery-gcp-dev.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-gcs-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "gcs",
+      "service_class": "object-storage",
+      "host": "data-gcs-gcp-dev.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-clickhouse-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "clickhouse",
+      "service_class": "warehouse",
+      "host": "data-clickhouse-gcp-dev.enterprise.invalid",
+      "port": 8443,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-cassandra-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "cassandra",
+      "service_class": "database",
+      "host": "data-cassandra-gcp-dev.enterprise.invalid",
+      "port": 9042,
+      "network_ref": "network-gcp-dev",
+      "identity_ref": "identity-gcp-dev",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dev"
+      }
+    },
+    {
+      "id": "data-postgresql-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "postgresql",
+      "service_class": "database",
+      "host": "data-postgresql-gcp-test.enterprise.invalid",
+      "port": 5432,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-mysql-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "mysql",
+      "service_class": "database",
+      "host": "data-mysql-gcp-test.enterprise.invalid",
+      "port": 3306,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-spanner-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "spanner",
+      "service_class": "database",
+      "host": "data-spanner-gcp-test.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-bigtable-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigtable",
+      "service_class": "database",
+      "host": "data-bigtable-gcp-test.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-redis-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "redis",
+      "service_class": "cache",
+      "host": "data-redis-gcp-test.enterprise.invalid",
+      "port": 6379,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-pubsub-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "pubsub",
+      "service_class": "messaging",
+      "host": "data-pubsub-gcp-test.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-bigquery-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigquery",
+      "service_class": "warehouse",
+      "host": "data-bigquery-gcp-test.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-gcs-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "gcs",
+      "service_class": "object-storage",
+      "host": "data-gcs-gcp-test.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-clickhouse-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "clickhouse",
+      "service_class": "warehouse",
+      "host": "data-clickhouse-gcp-test.enterprise.invalid",
+      "port": 8443,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-cassandra-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "cassandra",
+      "service_class": "database",
+      "host": "data-cassandra-gcp-test.enterprise.invalid",
+      "port": 9042,
+      "network_ref": "network-gcp-test",
+      "identity_ref": "identity-gcp-test",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-test"
+      }
+    },
+    {
+      "id": "data-postgresql-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "postgresql",
+      "service_class": "database",
+      "host": "data-postgresql-gcp-stage.enterprise.invalid",
+      "port": 5432,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-mysql-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "mysql",
+      "service_class": "database",
+      "host": "data-mysql-gcp-stage.enterprise.invalid",
+      "port": 3306,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-spanner-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "spanner",
+      "service_class": "database",
+      "host": "data-spanner-gcp-stage.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-bigtable-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigtable",
+      "service_class": "database",
+      "host": "data-bigtable-gcp-stage.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-redis-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "redis",
+      "service_class": "cache",
+      "host": "data-redis-gcp-stage.enterprise.invalid",
+      "port": 6379,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-pubsub-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "pubsub",
+      "service_class": "messaging",
+      "host": "data-pubsub-gcp-stage.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-bigquery-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigquery",
+      "service_class": "warehouse",
+      "host": "data-bigquery-gcp-stage.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-gcs-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "gcs",
+      "service_class": "object-storage",
+      "host": "data-gcs-gcp-stage.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-clickhouse-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "clickhouse",
+      "service_class": "warehouse",
+      "host": "data-clickhouse-gcp-stage.enterprise.invalid",
+      "port": 8443,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-cassandra-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "cassandra",
+      "service_class": "database",
+      "host": "data-cassandra-gcp-stage.enterprise.invalid",
+      "port": 9042,
+      "network_ref": "network-gcp-stage",
+      "identity_ref": "identity-gcp-stage",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 1,
+      "backup": {
+        "retention_days": 7,
+        "rpo_seconds": 3600,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-stage"
+      }
+    },
+    {
+      "id": "data-postgresql-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "postgresql",
+      "service_class": "database",
+      "host": "data-postgresql-gcp-prod.enterprise.invalid",
+      "port": 5432,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-mysql-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "mysql",
+      "service_class": "database",
+      "host": "data-mysql-gcp-prod.enterprise.invalid",
+      "port": 3306,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-spanner-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "spanner",
+      "service_class": "database",
+      "host": "data-spanner-gcp-prod.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-bigtable-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigtable",
+      "service_class": "database",
+      "host": "data-bigtable-gcp-prod.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-redis-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "redis",
+      "service_class": "cache",
+      "host": "data-redis-gcp-prod.enterprise.invalid",
+      "port": 6379,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-pubsub-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "pubsub",
+      "service_class": "messaging",
+      "host": "data-pubsub-gcp-prod.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-bigquery-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "bigquery",
+      "service_class": "warehouse",
+      "host": "data-bigquery-gcp-prod.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-gcs-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "gcs",
+      "service_class": "object-storage",
+      "host": "data-gcs-gcp-prod.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-clickhouse-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "clickhouse",
+      "service_class": "warehouse",
+      "host": "data-clickhouse-gcp-prod.enterprise.invalid",
+      "port": 8443,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-cassandra-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "data-platform",
+      "technology": "cassandra",
+      "service_class": "database",
+      "host": "data-cassandra-gcp-prod.enterprise.invalid",
+      "port": 9042,
+      "network_ref": "network-gcp-prod",
+      "identity_ref": "identity-gcp-prod",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-prod"
+      }
+    },
+    {
+      "id": "data-postgresql-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "postgresql",
+      "service_class": "database",
+      "host": "data-postgresql-gcp-dr.enterprise.invalid",
+      "port": 5432,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-mysql-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "mysql",
+      "service_class": "database",
+      "host": "data-mysql-gcp-dr.enterprise.invalid",
+      "port": 3306,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-spanner-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "spanner",
+      "service_class": "database",
+      "host": "data-spanner-gcp-dr.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-bigtable-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "bigtable",
+      "service_class": "database",
+      "host": "data-bigtable-gcp-dr.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-redis-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "redis",
+      "service_class": "cache",
+      "host": "data-redis-gcp-dr.enterprise.invalid",
+      "port": 6379,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-pubsub-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "pubsub",
+      "service_class": "messaging",
+      "host": "data-pubsub-gcp-dr.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-bigquery-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "bigquery",
+      "service_class": "warehouse",
+      "host": "data-bigquery-gcp-dr.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-gcs-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "gcs",
+      "service_class": "object-storage",
+      "host": "data-gcs-gcp-dr.enterprise.invalid",
+      "port": 443,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-clickhouse-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "clickhouse",
+      "service_class": "warehouse",
+      "host": "data-clickhouse-gcp-dr.enterprise.invalid",
+      "port": 8443,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    },
+    {
+      "id": "data-cassandra-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "data-platform",
+      "technology": "cassandra",
+      "service_class": "database",
+      "host": "data-cassandra-gcp-dr.enterprise.invalid",
+      "port": 9042,
+      "network_ref": "network-gcp-dr",
+      "identity_ref": "identity-gcp-dr",
+      "database": "enterprise",
+      "private_only": true,
+      "enabled": false,
+      "availability_zones": 3,
+      "backup": {
+        "retention_days": 35,
+        "rpo_seconds": 300,
+        "restore_drill": "quarterly"
+      },
+      "encryption": {
+        "at_rest": true,
+        "in_transit": true,
+        "key_ref": "kms-gcp-dr"
+      }
+    }
+  ]
+}

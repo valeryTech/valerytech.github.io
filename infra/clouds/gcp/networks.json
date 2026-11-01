@@ -1,0 +1,280 @@
+{
+  "cloud": "gcp",
+  "items": [
+    {
+      "id": "network-gcp-dev",
+      "cloud": "gcp",
+      "environment": "dev",
+      "region": "us-central1",
+      "owner": "network-platform",
+      "cidr": "10.80.0.0/16",
+      "hub": "Cloud Router",
+      "subnets": [
+        {
+          "name": "hub",
+          "cidr": "10.80.0.0/24",
+          "public": false
+        },
+        {
+          "name": "ingress",
+          "cidr": "10.80.1.0/24",
+          "public": false
+        },
+        {
+          "name": "app-a",
+          "cidr": "10.80.4.0/24",
+          "public": false
+        },
+        {
+          "name": "app-b",
+          "cidr": "10.80.5.0/24",
+          "public": false
+        },
+        {
+          "name": "app-c",
+          "cidr": "10.80.6.0/24",
+          "public": false
+        },
+        {
+          "name": "data-a",
+          "cidr": "10.80.8.0/24",
+          "public": false
+        },
+        {
+          "name": "data-b",
+          "cidr": "10.80.9.0/24",
+          "public": false
+        },
+        {
+          "name": "data-c",
+          "cidr": "10.80.10.0/24",
+          "public": false
+        }
+      ],
+      "dns_zone": "gcp-dev.enterprise.invalid",
+      "public_egress": false,
+      "private_endpoints": true,
+      "flow_logs": "observability"
+    },
+    {
+      "id": "network-gcp-test",
+      "cloud": "gcp",
+      "environment": "test",
+      "region": "us-central1",
+      "owner": "network-platform",
+      "cidr": "10.81.0.0/16",
+      "hub": "Cloud Router",
+      "subnets": [
+        {
+          "name": "hub",
+          "cidr": "10.81.0.0/24",
+          "public": false
+        },
+        {
+          "name": "ingress",
+          "cidr": "10.81.1.0/24",
+          "public": false
+        },
+        {
+          "name": "app-a",
+          "cidr": "10.81.4.0/24",
+          "public": false
+        },
+        {
+          "name": "app-b",
+          "cidr": "10.81.5.0/24",
+          "public": false
+        },
+        {
+          "name": "app-c",
+          "cidr": "10.81.6.0/24",
+          "public": false
+        },
+        {
+          "name": "data-a",
+          "cidr": "10.81.8.0/24",
+          "public": false
+        },
+        {
+          "name": "data-b",
+          "cidr": "10.81.9.0/24",
+          "public": false
+        },
+        {
+          "name": "data-c",
+          "cidr": "10.81.10.0/24",
+          "public": false
+        }
+      ],
+      "dns_zone": "gcp-test.enterprise.invalid",
+      "public_egress": false,
+      "private_endpoints": true,
+      "flow_logs": "observability"
+    },
+    {
+      "id": "network-gcp-stage",
+      "cloud": "gcp",
+      "environment": "stage",
+      "region": "us-central1",
+      "owner": "network-platform",
+      "cidr": "10.82.0.0/16",
+      "hub": "Cloud Router",
+      "subnets": [
+        {
+          "name": "hub",
+          "cidr": "10.82.0.0/24",
+          "public": false
+        },
+        {
+          "name": "ingress",
+          "cidr": "10.82.1.0/24",
+          "public": false
+        },
+        {
+          "name": "app-a",
+          "cidr": "10.82.4.0/24",
+          "public": false
+        },
+        {
+          "name": "app-b",
+          "cidr": "10.82.5.0/24",
+          "public": false
+        },
+        {
+          "name": "app-c",
+          "cidr": "10.82.6.0/24",
+          "public": false
+        },
+        {
+          "name": "data-a",
+          "cidr": "10.82.8.0/24",
+          "public": false
+        },
+        {
+          "name": "data-b",
+          "cidr": "10.82.9.0/24",
+          "public": false
+        },
+        {
+          "name": "data-c",
+          "cidr": "10.82.10.0/24",
+          "public": false
+        }
+      ],
+      "dns_zone": "gcp-stage.enterprise.invalid",
+      "public_egress": false,
+      "private_endpoints": true,
+      "flow_logs": "observability"
+    },
+    {
+      "id": "network-gcp-prod",
+      "cloud": "gcp",
+      "environment": "prod",
+      "region": "us-central1",
+      "owner": "network-platform",
+      "cidr": "10.83.0.0/16",
+      "hub": "Cloud Router",
+      "subnets": [
+        {
+          "name": "hub",
+          "cidr": "10.83.0.0/24",
+          "public": false
+        },
+        {
+          "name": "ingress",
+          "cidr": "10.83.1.0/24",
+          "public": false
+        },
+        {
+          "name": "app-a",
+          "cidr": "10.83.4.0/24",
+          "public": false
+        },
+        {
+          "name": "app-b",
+          "cidr": "10.83.5.0/24",
+          "public": false
+        },
+        {
+          "name": "app-c",
+          "cidr": "10.83.6.0/24",
+          "public": false
+        },
+        {
+          "name": "data-a",
+          "cidr": "10.83.8.0/24",
+          "public": false
+        },
+        {
+          "name": "data-b",
+          "cidr": "10.83.9.0/24",
+          "public": false
+        },
+        {
+          "name": "data-c",
+          "cidr": "10.83.10.0/24",
+          "public": false
+        }
+      ],
+      "dns_zone": "gcp-prod.enterprise.invalid",
+      "public_egress": false,
+      "private_endpoints": true,
+      "flow_logs": "observability"
+    },
+    {
+      "id": "network-gcp-dr",
+      "cloud": "gcp",
+      "environment": "dr",
+      "region": "us-east1",
+      "owner": "network-platform",
+      "cidr": "10.84.0.0/16",
+      "hub": "Cloud Router",
+      "subnets": [
+        {
+          "name": "hub",
+          "cidr": "10.84.0.0/24",
+          "public": false
+        },
+        {
+          "name": "ingress",
+          "cidr": "10.84.1.0/24",
+          "public": false
+        },
+        {
+          "name": "app-a",
+          "cidr": "10.84.4.0/24",
+          "public": false
+        },
+        {
+          "name": "app-b",
+          "cidr": "10.84.5.0/24",
+          "public": false
+        },
+        {
+          "name": "app-c",
+          "cidr": "10.84.6.0/24",
+          "public": false
+        },
+        {
+          "name": "data-a",
+          "cidr": "10.84.8.0/24",
+          "public": false
+        },
+        {
+          "name": "data-b",
+          "cidr": "10.84.9.0/24",
+          "public": false
+        },
+        {
+          "name": "data-c",
+          "cidr": "10.84.10.0/24",
+          "public": false
+        }
+      ],
+      "dns_zone": "gcp-dr.enterprise.invalid",
+      "public_egress": false,
+      "private_endpoints": true,
+      "flow_logs": "observability"
+    }
+  ]
+}

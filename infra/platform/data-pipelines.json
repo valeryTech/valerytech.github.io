@@ -1,0 +1,74 @@
+{
+  "pipelines": [
+    {
+      "id": "pipeline-dev",
+      "enabled": false,
+      "source": "data-aurora-postgresql-aws-dev",
+      "transport": "data-kafka-aws-dev",
+      "staging": "data-adls-azure-dev",
+      "warehouse": "data-bigquery-gcp-dev",
+      "consumers": [
+        "service-analytics-service-dev",
+        "system-snowflake-dev"
+      ],
+      "mode": "cdc-to-lakehouse",
+      "schema_registry": "https://schemas.enterprise.invalid"
+    },
+    {
+      "id": "pipeline-test",
+      "enabled": false,
+      "source": "data-aurora-postgresql-aws-test",
+      "transport": "data-kafka-aws-test",
+      "staging": "data-adls-azure-test",
+      "warehouse": "data-bigquery-gcp-test",
+      "consumers": [
+        "service-analytics-service-test",
+        "system-snowflake-test"
+      ],
+      "mode": "cdc-to-lakehouse",
+      "schema_registry": "https://schemas.enterprise.invalid"
+    },
+    {
+      "id": "pipeline-stage",
+      "enabled": false,
+      "source": "data-aurora-postgresql-aws-stage",
+      "transport": "data-kafka-aws-stage",
+      "staging": "data-adls-azure-stage",
+      "warehouse": "data-bigquery-gcp-stage",
+      "consumers": [
+        "service-analytics-service-stage",
+        "system-snowflake-stage"
+      ],
+      "mode": "cdc-to-lakehouse",
+      "schema_registry": "https://schemas.enterprise.invalid"
+    },
+    {
+      "id": "pipeline-prod",
+      "enabled": false,
+      "source": "data-aurora-postgresql-aws-prod",
+      "transport": "data-kafka-aws-prod",
+      "staging": "data-adls-azure-prod",
+      "warehouse": "data-bigquery-gcp-prod",
+      "consumers": [
+        "service-analytics-service-prod",
+        "system-snowflake-prod"
+      ],
+      "mode": "cdc-to-lakehouse",
+      "schema_registry": "https://schemas.enterprise.invalid"
+    },
+    {
+      "id": "pipeline-dr",
+      "enabled": false,
+      "source": "data-aurora-postgresql-aws-dr",
+      "transport": "data-kafka-aws-dr",
+      "staging": "data-adls-azure-dr",
+      "warehouse": "data-bigquery-gcp-dr",
+      "consumers": [
+        "service-analytics-service-dr",
+        "system-snowflake-dr"
+      ],
+      "mode": "cdc-to-lakehouse",
+      "schema_registry": "https://schemas.enterprise.invalid"
+    }
+  ]
+}

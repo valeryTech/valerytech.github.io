@@ -1,0 +1,90 @@
+{
+  "environment": "dev",
+  "accounts": [
+    "account-aws-dev",
+    "account-azure-dev",
+    "account-gcp-dev"
+  ],
+  "networks": [
+    "network-aws-dev",
+    "network-azure-dev",
+    "network-gcp-dev"
+  ],
+  "clusters": [
+    "cluster-aws-dev",
+    "cluster-azure-dev",
+    "cluster-gcp-dev"
+  ],
+  "datastores": [
+    "data-aurora-postgresql-aws-dev",
+    "data-aurora-mysql-aws-dev",
+    "data-dynamodb-aws-dev",
+    "data-redis-aws-dev",
+    "data-kafka-aws-dev",
+    "data-opensearch-aws-dev",
+    "data-s3-aws-dev",
+    "data-redshift-aws-dev",
+    "data-mongodb-aws-dev",
+    "data-rabbitmq-aws-dev",
+    "data-sqlserver-azure-dev",
+    "data-postgresql-azure-dev",
+    "data-cosmosdb-azure-dev",
+    "data-redis-azure-dev",
+    "data-eventhubs-azure-dev",
+    "data-blob-azure-dev",
+    "data-adls-azure-dev",
+    "data-synapse-azure-dev",
+    "data-oracle-azure-dev",
+    "data-nats-azure-dev",
+    "data-postgresql-gcp-dev",
+    "data-mysql-gcp-dev",
+    "data-spanner-gcp-dev",
+    "data-bigtable-gcp-dev",
+    "data-redis-gcp-dev",
+    "data-pubsub-gcp-dev",
+    "data-bigquery-gcp-dev",
+    "data-gcs-gcp-dev",
+    "data-clickhouse-gcp-dev",
+    "data-cassandra-gcp-dev"
+  ],
+  "services": [
+    "service-api-gateway-dev",
+    "service-identity-service-dev",
+    "service-customer-service-dev",
+    "service-order-service-dev",
+    "service-payment-service-dev",
+    "service-billing-service-dev",
+    "service-inventory-service-dev",
+    "service-search-service-dev",
+    "service-notification-service-dev",
+    "service-recommendation-service-dev",
+    "service-analytics-service-dev",
+    "service-fraud-service-dev",
+    "service-workflow-service-dev",
+    "service-support-service-dev",
+    "service-document-service-dev",
+    "service-integration-gateway-dev"
+  ],
+  "systems": [
+    "system-onprem-dev",
+    "system-salesforce-dev",
+    "system-servicenow-dev",
+    "system-workday-dev",
+    "system-sap-dev",
+    "system-oracle-erp-dev",
+    "system-github-dev",
+    "system-gitlab-dev",
+    "system-jira-dev",
+    "system-slack-dev",
+    "system-twilio-dev",
+    "system-stripe-dev",
+    "system-snowflake-dev",
+    "system-databricks-dev",
+    "system-okta-dev"
+  ],
+  "identity": [
+    "identity-aws-dev",
+    "identity-azure-dev",
+    "identity-gcp-dev"
+  ]
+}

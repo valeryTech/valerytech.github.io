@@ -1,0 +1,345 @@
+{
+  "links": [
+    {
+      "id": "link-00060",
+      "source": "network-aws-dev",
+      "target": "system-onprem-dev",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00061",
+      "source": "network-aws-dev",
+      "target": "network-azure-dev",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00062",
+      "source": "network-aws-dev",
+      "target": "network-gcp-dev",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00063",
+      "source": "network-azure-dev",
+      "target": "system-onprem-dev",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00064",
+      "source": "network-azure-dev",
+      "target": "network-gcp-dev",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00065",
+      "source": "network-gcp-dev",
+      "target": "system-onprem-dev",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00125",
+      "source": "network-aws-test",
+      "target": "system-onprem-test",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00126",
+      "source": "network-aws-test",
+      "target": "network-azure-test",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00127",
+      "source": "network-aws-test",
+      "target": "network-gcp-test",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00128",
+      "source": "network-azure-test",
+      "target": "system-onprem-test",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00129",
+      "source": "network-azure-test",
+      "target": "network-gcp-test",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00130",
+      "source": "network-gcp-test",
+      "target": "system-onprem-test",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00190",
+      "source": "network-aws-stage",
+      "target": "system-onprem-stage",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00191",
+      "source": "network-aws-stage",
+      "target": "network-azure-stage",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00192",
+      "source": "network-aws-stage",
+      "target": "network-gcp-stage",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00193",
+      "source": "network-azure-stage",
+      "target": "system-onprem-stage",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00194",
+      "source": "network-azure-stage",
+      "target": "network-gcp-stage",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00195",
+      "source": "network-gcp-stage",
+      "target": "system-onprem-stage",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00255",
+      "source": "network-aws-prod",
+      "target": "system-onprem-prod",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00256",
+      "source": "network-aws-prod",
+      "target": "network-azure-prod",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00257",
+      "source": "network-aws-prod",
+      "target": "network-gcp-prod",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00258",
+      "source": "network-azure-prod",
+      "target": "system-onprem-prod",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00259",
+      "source": "network-azure-prod",
+      "target": "network-gcp-prod",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00260",
+      "source": "network-gcp-prod",
+      "target": "system-onprem-prod",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00320",
+      "source": "network-aws-dr",
+      "target": "system-onprem-dr",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00321",
+      "source": "network-aws-dr",
+      "target": "network-azure-dr",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00322",
+      "source": "network-aws-dr",
+      "target": "network-gcp-dr",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00323",
+      "source": "network-azure-dr",
+      "target": "system-onprem-dr",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00324",
+      "source": "network-azure-dr",
+      "target": "network-gcp-dr",
+      "protocol": "ipsec-bgp",
+      "port": 0,
+      "purpose": "cross-cloud encrypted transit",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    },
+    {
+      "id": "link-00325",
+      "source": "network-gcp-dr",
+      "target": "system-onprem-dr",
+      "protocol": "private-link",
+      "port": 0,
+      "purpose": "datacenter connectivity",
+      "enabled": false,
+      "encryption": "tls-or-mtls",
+      "egress": "deny-unless-listed"
+    }
+  ],
+  "routing": {
+    "mode": "hub-and-spoke",
+    "environment_isolation": true,
+    "default_egress": "deny",
+    "public_addresses": []
+  },
+  "dns": {
+    "zone": "enterprise.invalid",
+    "split_horizon": true,
+    "live_resolvers": []
+  }
+}

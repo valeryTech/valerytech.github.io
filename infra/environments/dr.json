@@ -1,0 +1,90 @@
+{
+  "environment": "dr",
+  "accounts": [
+    "account-aws-dr",
+    "account-azure-dr",
+    "account-gcp-dr"
+  ],
+  "networks": [
+    "network-aws-dr",
+    "network-azure-dr",
+    "network-gcp-dr"
+  ],
+  "clusters": [
+    "cluster-aws-dr",
+    "cluster-azure-dr",
+    "cluster-gcp-dr"
+  ],
+  "datastores": [
+    "data-aurora-postgresql-aws-dr",
+    "data-aurora-mysql-aws-dr",
+    "data-dynamodb-aws-dr",
+    "data-redis-aws-dr",
+    "data-kafka-aws-dr",
+    "data-opensearch-aws-dr",
+    "data-s3-aws-dr",
+    "data-redshift-aws-dr",
+    "data-mongodb-aws-dr",
+    "data-rabbitmq-aws-dr",
+    "data-sqlserver-azure-dr",
+    "data-postgresql-azure-dr",
+    "data-cosmosdb-azure-dr",
+    "data-redis-azure-dr",
+    "data-eventhubs-azure-dr",
+    "data-blob-azure-dr",
+    "data-adls-azure-dr",
+    "data-synapse-azure-dr",
+    "data-oracle-azure-dr",
+    "data-nats-azure-dr",
+    "data-postgresql-gcp-dr",
+    "data-mysql-gcp-dr",
+    "data-spanner-gcp-dr",
+    "data-bigtable-gcp-dr",
+    "data-redis-gcp-dr",
+    "data-pubsub-gcp-dr",
+    "data-bigquery-gcp-dr",
+    "data-gcs-gcp-dr",
+    "data-clickhouse-gcp-dr",
+    "data-cassandra-gcp-dr"
+  ],
+  "services": [
+    "service-api-gateway-dr",
+    "service-identity-service-dr",
+    "service-customer-service-dr",
+    "service-order-service-dr",
+    "service-payment-service-dr",
+    "service-billing-service-dr",
+    "service-inventory-service-dr",
+    "service-search-service-dr",
+    "service-notification-service-dr",
+    "service-recommendation-service-dr",
+    "service-analytics-service-dr",
+    "service-fraud-service-dr",
+    "service-workflow-service-dr",
+    "service-support-service-dr",
+    "service-document-service-dr",
+    "service-integration-gateway-dr"
+  ],
+  "systems": [
+    "system-onprem-dr",
+    "system-salesforce-dr",
+    "system-servicenow-dr",
+    "system-workday-dr",
+    "system-sap-dr",
+    "system-oracle-erp-dr",
+    "system-github-dr",
+    "system-gitlab-dr",
+    "system-jira-dr",
+    "system-slack-dr",
+    "system-twilio-dr",
+    "system-stripe-dr",
+    "system-snowflake-dr",
+    "system-databricks-dr",
+    "system-okta-dr"
+  ],
+  "identity": [
+    "identity-aws-dr",
+    "identity-azure-dr",
+    "identity-gcp-dr"
+  ]
+}

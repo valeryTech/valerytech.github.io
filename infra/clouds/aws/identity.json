@@ -1,0 +1,75 @@
+{
+  "cloud": "aws",
+  "items": [
+    {
+      "id": "identity-aws-dev",
+      "cloud": "aws",
+      "environment": "dev",
+      "region": "us-east-1",
+      "owner": "security-platform",
+      "issuer_url": "https://identity-aws-dev.enterprise.invalid/oidc",
+      "vault_url": "https://vault-aws-dev.enterprise.invalid:8200",
+      "workload_federation": true,
+      "kms_ref": "kms-aws-dev",
+      "rotation_days": 30,
+      "human_access": "sso-plus-mfa",
+      "enabled": false
+    },
+    {
+      "id": "identity-aws-test",
+      "cloud": "aws",
+      "environment": "test",
+      "region": "us-east-1",
+      "owner": "security-platform",
+      "issuer_url": "https://identity-aws-test.enterprise.invalid/oidc",
+      "vault_url": "https://vault-aws-test.enterprise.invalid:8200",
+      "workload_federation": true,
+      "kms_ref": "kms-aws-test",
+      "rotation_days": 30,
+      "human_access": "sso-plus-mfa",
+      "enabled": false
+    },
+    {
+      "id": "identity-aws-stage",
+      "cloud": "aws",
+      "environment": "stage",
+      "region": "us-east-1",
+      "owner": "security-platform",
+      "issuer_url": "https://identity-aws-stage.enterprise.invalid/oidc",
+      "vault_url": "https://vault-aws-stage.enterprise.invalid:8200",
+      "workload_federation": true,
+      "kms_ref": "kms-aws-stage",
+      "rotation_days": 30,
+      "human_access": "sso-plus-mfa",
+      "enabled": false
+    },
+    {
+      "id": "identity-aws-prod",
+      "cloud": "aws",
+      "environment": "prod",
+      "region": "us-east-1",
+      "owner": "security-platform",
+      "issuer_url": "https://identity-aws-prod.enterprise.invalid/oidc",
+      "vault_url": "https://vault-aws-prod.enterprise.invalid:8200",
+      "workload_federation": true,
+      "kms_ref": "kms-aws-prod",
+      "rotation_days": 30,
+      "human_access": "sso-plus-mfa",
+      "enabled": false
+    },
+    {
+      "id": "identity-aws-dr",
+      "cloud": "aws",
+      "environment": "dr",
+      "region": "us-west-2",
+      "owner": "security-platform",
+      "issuer_url": "https://identity-aws-dr.enterprise.invalid/oidc",
+      "vault_url": "https://vault-aws-dr.enterprise.invalid:8200",
+      "workload_federation": true,
+      "kms_ref": "kms-aws-dr",
+      "rotation_days": 30,
+      "human_access": "sso-plus-mfa",
+      "enabled": false
+    }
+  ]
+}
