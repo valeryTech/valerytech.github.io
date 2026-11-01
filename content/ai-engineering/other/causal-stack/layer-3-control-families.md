@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Layer 3: System Control Families"
+description: "Restored draft of the canonical Layer 3 control families for AI systems, grouped by architectural boundary, with core definitions and observability requirements for each family."
 linkTitle: "Layer 3: Control Families"
 ---
 ## Purpose

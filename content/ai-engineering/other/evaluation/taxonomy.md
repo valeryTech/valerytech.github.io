@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Traces as the Evidence Model for Evaluation"
+description: "Early draft of a trace taxonomy for AI evaluation: traces, spans, events, artifacts, outcomes and evaluations, trace boundaries in conversations, and how observability relates to evaluation."
 linkTitle: "Trace Taxonomy"
 ---
 

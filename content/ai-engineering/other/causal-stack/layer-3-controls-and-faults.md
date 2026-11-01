@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Layer 3: System Controls and System Faults"
+description: "Restored draft of the causal stack's Layer 3: the controls, safeguards, monitoring and processes that decide whether behavioral fault modes are prevented, detected, bounded or recovered from."
 linkTitle: "Layer 3: Controls and Faults"
 ---
 ## Purpose

@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Layer 1C: AI-System-Level Causal Features"
+description: "Restored draft of the causal stack's Layer 1C: features of AI systems that cause failures, starting from the principle that AI systems are empirical and must be measured, not only inspected."
 linkTitle: "Layer 1C: Causal Features"
 ---
 ## Framing principle -- AI systems are empirical systems

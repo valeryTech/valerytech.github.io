@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "Layer 3: System Fault Families"
+description: "Restored draft of the causal stack's Layer 3 fault families: failures in the application around the model that let model-derived fault modes reach users, with typical faults and examples."
 linkTitle: "Layer 3: Fault Families"
 ---
 ## Definition

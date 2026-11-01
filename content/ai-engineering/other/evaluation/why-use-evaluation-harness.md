@@ -2,6 +2,7 @@
 draft: false
 toc: true
 title: "How to Manage Behavioral Change in Production AI Systems"
+description: "Early draft guide on evaluation harnesses: why production AI systems need one, the behavioral contract, evaluation methods, and how the harness supports change validation and release gates."
 linkTitle: "Managing Behavioral Change"
 ---
 
