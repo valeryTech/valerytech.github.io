@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Type-Oriented and Functional Harnesses for AI Agents"
 description: "A proposal for typed functional agent harnesses using explicit effects, contracts, and composable behaviors, compared with inheritance-based specialization and routing."
-title: "Type Oriented Functional Harnesses With References"
-linkTitle: "Type Oriented Functional Harnesses With References"
+linkTitle: "Type-Oriented Harnesses"
 ---
-# Type-Oriented and Functional Harnesses for AI Agent Orchestration
-
 ## Executive summary
 
 

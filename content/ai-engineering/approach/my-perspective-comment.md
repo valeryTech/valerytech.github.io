@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Production AI Engineering: Review and Alignment"
 description: "Reviews a production AI engineering statement for company alignment, identifying missing accountability, domain participation, proportional rigor, and evidence-based planning mechanisms."
-linkTitle: "Production AI Engineering: Review and Alignment"
+linkTitle: "Perspective Review"
 ---
 ## Overall assessment
 

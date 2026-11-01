@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Declarative Configs"
+title: "Declarative AI System Configurations"
 linkTitle: "Declarative Configs"
 ---

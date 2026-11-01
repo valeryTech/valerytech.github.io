@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "URL-shortener design alternatives before the refactor"
+title: "URL Shortener Design Alternatives Before the Refactor"
 description: "Archived URL-shortener design alternatives covering API contracts, redirect semantics, read-first and write-first walkthroughs, storage, code generation, and open questions."
 document_status: "archived"
-linkTitle: "URL-shortener design alternatives before the refactor"
+linkTitle: "URL Shortener Alternatives"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/projects/url-shortener/url-shortener" >}}). Numerical targets and technical claims below retain their original draft context.

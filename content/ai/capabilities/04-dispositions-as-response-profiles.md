@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Dispositions as Response Profiles"
 description: "A working account: a disposition ascription describes a chosen system's causal response profile across a declared family of scenarios, inferred from limited evidence. Its parts, closest relatives in the literature, and the decisions it still needs."
-linkTitle: "Dispositions as Response Profiles"
+linkTitle: "Response Profiles"
 ---
 
 [What a disposition claim means]({{< ref "ai/capabilities/03-what-a-disposition-claim-means" >}}) ends with the question of who fixes the conditions and the manifestation. This note answers it by making those choices explicit parts of an inquiry. The result is a working account, not a finished theory.

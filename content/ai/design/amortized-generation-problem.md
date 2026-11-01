@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "The Amortized Generation Problem"
 description: "Task-specific deliberation asks whether an AI system performs the research, decomposition, and verification its answer requires, making skipped work visible behind otherwise plausible outputs."
-title: "Amortized Generation Problem"
-linkTitle: "Amortized Generation Problem"
+linkTitle: "Amortized Generation"
 ---
 
 There is **amortized problem solving**: the model, viewed as an agent, has learned a mapping from prompts to plausible outputs during training and applies that mapping at inference time, without necessarily instantiating the problem as an explicit structure and solving that structure.

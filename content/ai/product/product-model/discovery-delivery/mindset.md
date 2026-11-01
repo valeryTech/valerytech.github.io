@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "The Mindset Shift for AI Products"
 description: "A working delivery model replaces feature completion with responsibility for bounded production behavior, using transaction capture to connect narrow scope, required quality, evaluation, and ongoing learning."
-title: "Mindset"
 linkTitle: "Mindset"
 ---
 

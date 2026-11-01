@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Intent Environments and Domain Boundaries"
 description: "An LLM architecture proposal separates authoritative domain data, semantics, capabilities, and policy from task-specific interfaces, placing probabilistic intent compilation over checked execution rather than dissolving application boundaries."
-title: "09 Intent Environments And Domain Boundaries"
-linkTitle: "09 Intent Environments And Domain Boundaries"
+linkTitle: "Intent Environments"
 ---
-# Intent environments and domain boundaries
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

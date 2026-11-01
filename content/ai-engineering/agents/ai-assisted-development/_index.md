@@ -4,7 +4,7 @@ toc: true
 title: "Building and Reviewing Software with AI"
 description: "AI-assisted development connects a user’s problem to a design, implementation, and evidence that the result works. These notes carry that thread through product framing, coding-agent work, testing, and merge review."
 lastmod: "2026-04-19"
-linkTitle: "Building and Reviewing with AI"
+linkTitle: "Building with AI"
 ---
 
 When I work with a coding agent, the goal is a useful software change that fits the existing system and stays understandable to the people who will maintain it.

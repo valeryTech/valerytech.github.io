@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.11 Comments on Evaluation Plans and System Configuration"
 description: "Reviews evaluation-plan boundaries, requiring exact system and suite references, recorded behavior-changing runtime conditions, and valid scoring evidence beyond merely capturing traces or versioning evaluators."
-title: "11 Evaluation Plans And System Configuration Comments"
-linkTitle: "11 Evaluation Plans And System Configuration Comments"
+weight: "111"
+linkTitle: "5.11 Comments"
 ---
-# Comments on evaluation plans and system configuration
-
 
 New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}) retains the complete final exchange and every example. The proposed EvaluationPlan or RunConfig is an execution configuration, not a completed experiment.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Project Understanding"
+title: "Project Understanding for Coding Agents"
 description: "For core product code, acceptance requires maintainers to explain the architecture, invariants, and failure modes; cheaper code generation makes understanding a constraint on implementation speed."
 linkTitle: "Project Understanding"
 ---
-## Project understanding
-
 
 The engineer must maintain a working mental model of the system. Coding agents can generate, modify, and explain code quickly, but they do not remove the need for human comprehension. In fact, they increase the need for it, because implementation velocity can exceed the engineer's ability to evaluate whether a change is coherent.
 

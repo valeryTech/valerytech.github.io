@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Collaborative Writing and Text Assembly"
 description: "An original co-writing sketch proposes comparing sentence or logical-part alternatives, selecting fragments, and assembling a final text, retaining both sample formulations and the remark about removing one."
-title: "14 Collaborative Writing And Text Assembly"
-linkTitle: "14 Collaborative Writing And Text Assembly"
+linkTitle: "Collaborative Writing"
 ---
-# Collaborative writing and text assembly
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

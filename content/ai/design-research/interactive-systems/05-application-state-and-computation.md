@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Application State and Computation"
 description: "A proposed application architecture routes interaction through explicit state, events, and command/effect boundaries, using a TypeScript sketch to frame editing and out-of-order asynchronous computation as transition problems."
-title: "05 Application State And Computation"
-linkTitle: "05 Application State And Computation"
+linkTitle: "State and Computation"
 ---
-# Application state and computation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

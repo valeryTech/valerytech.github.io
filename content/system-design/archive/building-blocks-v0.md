@@ -4,7 +4,7 @@ toc: true
 title: "Building-Block Collection Before the Refactor"
 description: "The building-block topics collected before the October 2026 refactor, rewritten as a map: how courses divide what to learn, Educative's building blocks and interviewing.io's concepts by hub, and where each original section now lives."
 document_status: "archived"
-linkTitle: "Building-Block Collection Before the Refactor"
+linkTitle: "Building Blocks"
 ---
 
 Part of the [system design archive]({{< ref "system-design/archive" >}}).

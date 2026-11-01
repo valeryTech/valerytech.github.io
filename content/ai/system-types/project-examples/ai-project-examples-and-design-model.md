@@ -1,14 +1,12 @@
 ---
 draft: false
 toc: true
-title: "AI Project Examples And Design Model"
+title: "Reasoning About AI Projects Through Worked Examples"
 aliases:
   - "/ai/var/ai-product-types/"
 description: "An activity and its intended result provide a starting unit for AI design; eight product cases help separate capabilities, workflow relationships, product scope, and implementation choices."
-linkTitle: "AI Project Examples And Design Model"
+linkTitle: "Worked Examples"
 ---
-# Reasoning about AI projects through worked examples
-
 ## Specific cases
 
 
@@ -118,7 +116,7 @@ The initial sketch includes several possible AI products:
 
 - A closed-set task assistant and a chatbot.
 - A support assistant that provides information about the system and the user's account.
-- Reporting and analytical support for auditors, producing preliminary reports with appropriate invariants, as in [[analysis-1]].
+- Reporting and analytical support for auditors, producing preliminary reports with appropriate invariants, as in &#91;&#91;analysis-1&#93;&#93;.
 - A medical copilot that translates clients' transcripts and checks receipts.
 - An agentic system that schedules meetings, uses tools, emails clients, or helps coordinate work.
 - An analytical engine with complex rules, forecasting, and multiple pipelines that can support applications built on top of it. It may also provide SQL or DSL environments where agents can produce insights.

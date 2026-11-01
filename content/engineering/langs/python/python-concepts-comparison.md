@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Python data model, annotations, and Pydantic"
+title: "Python Data Model, Annotations, and Pydantic"
 description: "Explain Python's runtime class creation, annotations, and dataclasses, and trace how Pydantic builds schemas and calls its Rust validation engine."
-linkTitle: "Python data model and Pydantic"
+linkTitle: "Data Model and Pydantic"
 ---
 
 These notes connect runtime class creation, annotation metadata, and Pydantic's use of a Rust extension. The central distinction is between describing a type and executing code that interprets or enforces that description.

@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Apache Kafka Study Notes"
 description: "Study Kafka topics, partitions, producers, consumer groups, offsets, rebalancing, delivery semantics, and failure handling when designing event pipelines."
-title: "Kafka"
 linkTitle: "Kafka"
 ---
 Kafka is a distributed system consisting of **servers** and **clients** that communicate via a high-performance [TCP network protocol](https://kafka.apache.org/protocol.html).

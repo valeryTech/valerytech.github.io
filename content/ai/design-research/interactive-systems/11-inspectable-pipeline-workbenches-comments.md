@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Inspectable Pipeline Workbenches"
 description: "A critique requires revision-specific records and scoped intervention judgments, distinguishing evidence visibility from support guarantees and inspection from replay, with explicit comparison conditions still needed."
-title: "11 Inspectable Pipeline Workbenches Comments"
-linkTitle: "11 Inspectable Pipeline Workbenches Comments"
+linkTitle: "Workbenches Comments"
 ---
-# Comments on inspectable pipeline workbenches
-
 
 The comments are new analysis of the [retained workbench model]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}). The artifact vocabulary, RAG example, interaction lists, and architecture remain unchanged. They are proposals rather than an implemented record schema or execution protocol.
 

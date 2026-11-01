@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Language thesis"
+title: "Language Thesis for LLM Programming"
 description: "Papers and essays on why AI may increase the value of typed languages and formal verification, distinguishing research results from predictions about adoption."
-linkTitle: "Language thesis"
+linkTitle: "Language Thesis"
 ---
 
 Final response from the **Language thesis** sub-agent in [Research LLM Programming Languages]({{< ref "ai/design-research/input/research-llm-programming-languages/conversation" >}}). Captured on 2026-04-29 from the signed-in sub-agent viewer. Wording, URLs, headings, lists, and tables are preserved; rich-text formatting is converted to Markdown. Retrieved-reference IDs are retained as written in the report.

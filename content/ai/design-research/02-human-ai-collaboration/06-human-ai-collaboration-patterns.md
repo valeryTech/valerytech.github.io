@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
-title: "06 Human-AI Collaboration Patterns"
+title: "2.6 Human-AI Collaboration Patterns"
 description: "Derives and compares elicitation, delegation, proposal/review, coaching, shared reasoning, and joint construction, with practitioner examples, failure modes, and responsibility-based guidance for changing modes."
-linkTitle: "06 Human-AI Collaboration Patterns"
+weight: "60"
+linkTitle: "2.6 Collaboration Patterns"
 ---
-# Human-AI collaboration patterns
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

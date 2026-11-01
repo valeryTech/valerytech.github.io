@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "LLM-Specific Review Guide"
 description: "Review AI-assisted changes for invented APIs, unsupported assumptions, unnecessary complexity, weak tests, and unverified execution claims."
-linkTitle: "LLM-Specific Review Guide"
+linkTitle: "LLM-Specific Review"
 ---
 ## Purpose
 

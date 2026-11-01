@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Formal Verification for LLM, Human, and Software Systems"
 description: "A referenced review of formal verification for systems with LLMs, people, software, and data, focusing on verified control boundaries, proof assistants, and adoption."
-title: "Formal Verification With References"
-linkTitle: "Formal Verification With References"
+linkTitle: "Verification Report"
 ---
-# Formal Verification for Systems Combining LLMs, Humans, Software, and Data
-
 ## Executive summary
 
 

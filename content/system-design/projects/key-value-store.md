@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Key-Value Store"
+title: "Key-Value Store System Design"
 description: "Key-value-store notes: write-through, write-around, and write-back cache policies, and a Dynamo-style design with consistent hashing, quorums, hinted handoff, anti-entropy, gossip, and version vectors."
 linkTitle: "Key-Value Store"
 ---

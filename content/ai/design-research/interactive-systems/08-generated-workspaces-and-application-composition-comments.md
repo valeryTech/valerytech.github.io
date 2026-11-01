@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Generated Workspaces and Application Composition"
 description: "A critique tests temporary-workspace cost claims against review, validation, maintenance, and recovery, distinguishing familiar controls, cross-application semantic agreement, and retained work from disposable interface views."
-title: "08 Generated Workspaces And Application Composition Comments"
-linkTitle: "08 Generated Workspaces And Application Composition Comments"
+linkTitle: "Generated Workspaces Comments"
 ---
-# Comments on generated workspaces and application composition
-
 
 The comments are new analysis of the [retained consequences]({{< ref "ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition" >}}). The passage's claims about costs and future software remain hypotheses rather than accepted design requirements or measured outcomes.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Test Strategy Foundations and the Practical Test Pyramid"
 description: "Build a test portfolio from product intent, invariants, contracts, quality scenarios, and risks, using the practical test pyramid to balance feedback speed and diagnostic value."
-title: "Test Strategy Foundations"
 linkTitle: "Test Strategy Foundations"
 ---
-# Test Strategy Foundations and the Practical Test Pyramid (Refactored)
-
 
 This document combines the earlier "meta-way" and "preparation" notes into one practical playbook. It follows the main ideas of *The Practical Test Pyramid*: fast feedback, narrow rather than broad integration tests, contracts that reduce reliance on end-to-end tests, and avoiding duplication.
 

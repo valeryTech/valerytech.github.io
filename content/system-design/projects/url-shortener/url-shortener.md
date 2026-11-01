@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener"
+title: "URL Shortener: Working Design"
 description: "A working URL-shortener design covering requirements, redirect and creation APIs, data ownership, read/write flows, uniqueness, caching, consistency, and deep-dive choices."
 document_status: "canonical"
-linkTitle: "URL Shortener"
+linkTitle: "Working Design"
 ---
 
 Working design for the core loop: create a short link and resolve it to the original URL. The [case index]({{< ref "system-design/projects/url-shortener" >}}) links the NFR explorations, product context, implementation experiments, and earlier design variants.

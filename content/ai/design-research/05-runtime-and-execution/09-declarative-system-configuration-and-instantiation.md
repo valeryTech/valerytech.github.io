@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.9 Declarative System Configuration and Instantiation"
 description: "Proposes resolving versioned AI components into immutable runnable system revisions, with one lifecycle interface and separate environment bindings for production, evaluation, replay, and expert experimentation."
-title: "09 Declarative System Configuration And Instantiation"
-linkTitle: "09 Declarative System Configuration And Instantiation"
+weight: "90"
+linkTitle: "5.9 Declarative Configuration"
 ---
-# Declarative system configuration and instantiation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

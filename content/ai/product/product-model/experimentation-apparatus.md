@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Decision Records for Uncertainty"
 description: "A proposed record system for AI uncertainty preserves approach decisions, problem reformulations, and possibility judgments, linking experiment logs to durable reasons for continuing, changing, or abandoning work."
-title: "Experimentation Apparatus"
-linkTitle: "Experimentation Apparatus"
+linkTitle: "Decision Records"
 ---
-# Decision records for uncertainty
-
 
 The apparatus should use records in the same family as ADRs: lightweight, durable, and focused on decisions. They should capture *why* something was stopped or reformulated, not only what was tried. Ordinary experiment trackers and model cards rarely preserve the reasoning behind a change in direction.
 

@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "TikTok: Requirements-Gathering Example"
 description: "A TikTok requirements-gathering example demonstrating how to clarify objects, relationships, mutability, access patterns, and important system qualities."
-linkTitle: "TikTok: Requirements-Gathering Example"
+linkTitle: "TikTok"
 ---
-# TikTok
-
 
 Requirements-focused example associated with the [interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}). It illustrates objects, relations, mutability, and access patterns rather than a complete design.
 

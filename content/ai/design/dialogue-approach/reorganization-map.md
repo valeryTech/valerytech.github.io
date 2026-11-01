@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Dialogue Approach: Reorganization Map"
 description: "An audit of the dialogue collection’s topic split, linking retained source snapshots to new notes and recording citation, table, heading, and export-format cleanup."
-title: "Reorganization Map"
 linkTitle: "Reorganization Map"
 ---
-# Dialogue approach: reorganization map
-
 
 Reorganized on 2026-04-09. Source ranges refer to the exact text snapshots, before formatting cleanup.
 

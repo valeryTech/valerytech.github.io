@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "System Design"
+title: "System Design in the Delivery Framework"
 description: "A system-design activity and artifact checklist connecting objectives, requirements, domain models, contracts, architecture, risk, migration, validation, and operational ownership."
 linkTitle: "System Design"
 ---

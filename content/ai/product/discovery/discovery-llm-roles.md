@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Discovery LLM Roles"
+title: "LLM Roles in Discovery"
 description: "An exploration brief gives an LLM purpose, discretion, and a definition of useful progress, while a separate note carries the current situation. Making an example concrete need not settle the product direction."
-linkTitle: "Discovery LLM Roles"
+linkTitle: "LLM Roles"
 ---
-# LLM roles in discovery
-
 
 A compact exploration brief should communicate **what the agent is contributing to, what counts as progress, and how much judgment it should exercise**, while leaving room for its design, software, and domain knowledge.
 

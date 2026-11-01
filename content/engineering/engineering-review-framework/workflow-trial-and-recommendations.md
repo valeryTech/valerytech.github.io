@@ -4,7 +4,7 @@ toc: true
 title: "Engineering Quality Assessment and Trial"
 description: "Engineering assessment of review quality: behavioral properties, failure reasoning, design justification, test strength, and false positives."
 document_status: "proposal"
-linkTitle: "Engineering Quality Assessment and Trial"
+linkTitle: "Quality Assessment and Trial"
 ---
 
 Assessment date: 2026-04-20.

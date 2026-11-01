@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Original mock-interview observations"
+title: "Original Mock-Interview Observations"
 description: "Archived observations from mock interviews on problem framing, technical depth, concurrency, quantification, trade-offs, and interviewer collaboration."
 document_status: "archived"
-linkTitle: "Original mock-interview observations"
+linkTitle: "Mock-Interview Observations"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/interview/mock-interviews" >}}). Numerical targets and technical claims below retain their original draft context.

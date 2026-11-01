@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Principles from Torres and Cagan"
 description: "A working synthesis generalizes Cagan’s risk profiles and Torres’s testable assumptions into principles for proportional learning and commitment, with discovery, delivery, and observation as recurring work modes."
-title: "Principles From Products"
-linkTitle: "Principles From Products"
+linkTitle: "Torres and Cagan Principles"
 ---
 
 Torres and Cagan should be major inputs to this system. Their contribution is different from Agile, Kanban, or Deming: they provide a model for deciding **how much learning is needed before committing resources**, based on the risk of being wrong.

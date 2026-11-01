@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "3.3 Declarative Programming Model"
 description: "Proposes jointly edited declarative programs that define spaces of valid behavior, expressing delegation, review, and shared reasoning as constraints while retaining DSL programs as enduring artifacts."
-title: "03 Declarative Programming Model"
-linkTitle: "03 Declarative Programming Model"
+weight: "30"
+linkTitle: "3.3 Declarative Programming Model"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

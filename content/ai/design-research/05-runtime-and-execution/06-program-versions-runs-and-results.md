@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.6 Program Versions, Runs, and Results"
 description: "Proposes immutable program revisions, run traces, repair histories, and acceptance gates, separating task, procedure, and provenance graphs and tracking how goal changes affect dependent work."
-title: "06 Program Versions Runs And Results"
-linkTitle: "06 Program Versions Runs And Results"
+weight: "60"
+linkTitle: "5.6 Versions, Runs, Results"
 ---
-# Program versions, runs, and results
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

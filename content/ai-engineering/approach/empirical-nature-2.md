@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "AI Products Need Evals, Not Just Tests"
 description: "A clear product target can still leave reliability uncertain. The delivery loop combines enforceable safeguards, realistic cases, trace inspection, expert judgment, regression checks, and scoped release decisions."
-linkTitle: "AI Products Need Evals, Not Just Tests"
+linkTitle: "Evals, Not Just Tests"
 ---
 
 _A practical principle for designing, building, and operating AI products_

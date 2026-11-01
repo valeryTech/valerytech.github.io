@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Product Vocabulary For AI Engineers"
+title: "Product Vocabulary for an AI Engineer"
 description: "A working glossary adapts three Product Talk articles into product definitions, conversational phrases, and engineering-to-product translations, distinguishing outcomes, opportunities, roadmap uncertainty, discovery evidence, and AI behavior quality."
-linkTitle: "Product Vocabulary For AI Engineers"
+linkTitle: "Product Vocabulary"
 ---
-# Product Vocabulary for an AI Engineer
-
 
 A working glossary derived from three Teresa Torres / Product Talk articles:
 

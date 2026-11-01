@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.7 Comments on Collaboration Framework Research Routes"
 description: "Critiques competing prototype sequences and specifies what comparable tasks, authority-change failures, and human inspection studies would need to show before selecting collaboration primitives."
-title: "07 Collaboration Framework Research Routes Comments"
-linkTitle: "07 Collaboration Framework Research Routes Comments"
+weight: "71"
+linkTitle: "0.7 Comments"
 ---
-# Collaboration framework research routes: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

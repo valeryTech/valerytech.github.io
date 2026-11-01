@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Research LLM Programming Languages"
+title: "LLM Programming Languages Research"
 description: "The source conversation and three complete sub-agent reports on programming languages, formal verification, capabilities, and enforceable properties in LLM systems."
-linkTitle: "Research LLM Programming Languages"
+linkTitle: "LLM Programming Languages"
 ---
 
 Exported on 2026-04-29 from a shared ChatGPT conversation, with the three completed reports recovered from its signed-in sub-agent viewer.

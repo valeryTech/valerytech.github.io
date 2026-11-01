@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.10 Comments on Publishing and Versions"
 description: "Clarifies logical names, releases, commits, artifacts, and aliases, identifying missing publication enforcement and separating coordinated repository changes from permission to deploy or run a system."
-title: "10 Configuration Publishing And Version Identity Comments"
-linkTitle: "10 Configuration Publishing And Version Identity Comments"
+weight: "101"
+linkTitle: "5.10 Comments"
 ---
-# Comments on configuration publishing and version identity
-
 
 New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) preserves the complete Git, repository, selection, and component-version exchanges. The recommendations remain proposals for the application under discussion.
 

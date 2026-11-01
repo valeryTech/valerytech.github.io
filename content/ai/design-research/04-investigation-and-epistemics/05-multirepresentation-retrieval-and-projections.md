@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "4.5 Multi-Representation Retrieval and Projections"
 description: "Proposes matching structured query and document representations while retaining retrieval signals and candidate histories, using pivotable views, editable information needs, and coverage ledgers for investigation."
-title: "05 Multirepresentation Retrieval And Projections"
-linkTitle: "05 Multirepresentation Retrieval And Projections"
+weight: "50"
+linkTitle: "4.5 Multi-Representation Retrieval"
 ---
-# Multi-representation retrieval and projections
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Interactions"
+title: "User-System Interactions"
 linkTitle: "Interactions"
 ---

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "AHA Programming 💡"
+title: "AHA Programming: Avoid Hasty Abstractions"
 description: "Compare DRY, WET, and AHA to decide when duplication is acceptable and when repeated code justifies an abstraction."
 linkTitle: "AHA Programming"
 ---

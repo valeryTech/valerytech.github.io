@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "System Design Practice Review Rubric"
+title: "Senior System Design Practice Review Rubric"
 description: "A personal senior-level practice rubric with weighted criteria, behavioral rating scales, interview timing, scoring guidance, and capacity-estimation patterns."
 linkTitle: "Practice Review Rubric"
 ---
-# Senior System Design Practice Review Rubric
-
 
 Personal practice rubric. The proposed weights, gates, and pass labels have not been calibrated as an assessment instrument. The filename reflects the earlier note title; the material does not establish an official OpenAI hiring rubric. Use the [interview index]({{< ref "system-design/interview" >}}) for related practice notes.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "A Reference Example Is Not Ground Truth"
 description: "An approved report can hide an untested definition of good behavior. Separate verifiable facts, binding requirements, reference examples, and evaluator judgments before using an eval result to justify a product decision."
-title: "Reference Example Is Not Ground Truth"
-linkTitle: "Reference Example Is Not Ground Truth"
+linkTitle: "Reference Examples"
 ---
-# A reference example is not ground truth
-
 
 An eval uses selected cases, criteria, and a person or system to examine a stated claim. It can provide useful evidence. It does not decide what a good product is.
 

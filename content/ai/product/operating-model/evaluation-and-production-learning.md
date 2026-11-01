@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Evaluation and Production Learning"
 description: "Evaluate the behavior promised to users as models, prompts, and architecture change. A gap can call for an engineering fix or a new product decision about what good behavior should mean."
-title: "Evaluation And Production Learning"
-linkTitle: "Evaluation And Production Learning"
+linkTitle: "Evaluation and Learning"
 ---
 
 > **Status:** Deferred note. Evaluation is kept separate from the current operating model and is not developed here yet.

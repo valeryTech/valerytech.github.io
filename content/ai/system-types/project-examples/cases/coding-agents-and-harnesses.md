@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Coding Agents and Software Engineering Workspaces"
 description: "A coding agent's engineering loop links repository changes to execution feedback and review; harnesses manage tools, context, permissions, and session state as the work moves toward integration and delivery."
-title: "Coding Agents And Harnesses"
-linkTitle: "Coding Agents And Harnesses"
+linkTitle: "Coding Agents"
 ---
-# Coding agents and software engineering workspaces
-
 
 Coding agents assist with or perform software engineering work by interacting directly with repositories, development tools, and executable environments.
 

@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Hello Interview Delivery Framework"
 description: "Hello Interview’s timed delivery framework, moving from requirements, entities, and interfaces to a complete high-level design and focused deep dives."
-linkTitle: "Hello Interview Delivery Framework"
+linkTitle: "Hello Interview"
 ---
 
 Source framework retained as a separate approach. Compare it with the [other frameworks]({{< ref "system-design/interview/frameworks" >}}); use the [NFR guide]({{< ref "system-design/nfr/non-functional-requirements" >}}) when interpreting the example quality targets.

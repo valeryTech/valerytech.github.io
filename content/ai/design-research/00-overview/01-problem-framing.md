@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.1 Original Framing Question"
 description: "The original question about framing collaboration among humans, models, and software while balancing useful constraints with architectural freedom."
-title: "01 Problem Framing"
-linkTitle: "01 Problem Framing"
+weight: "10"
+linkTitle: "0.1 Original Framing Question"
 ---
-# Original framing question
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

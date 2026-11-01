@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Failure Understanding: Discovering and Structuring How AI Products Fail"
+title: "Failure Understanding: How AI Products Fail"
 description: "A copy of the V1 failure-understanding method: compare trace-linked incidents, code recurring patterns, and test category boundaries to build a failure model; optionally prepare selected behaviors for repeatable assessment."
-linkTitle: "Failure Understanding"
+linkTitle: "Failure Understanding Draft"
 ---
 ## Purpose
 

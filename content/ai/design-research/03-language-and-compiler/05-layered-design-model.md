@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "3.5 Layered Design Model"
 description: "Develops staged mediation from ambiguous intent to committed effects, placing each check at the earliest suitable layer while separating representation, authority, isolation, validation, and commitment."
-title: "05 Layered Design Model"
-linkTitle: "05 Layered Design Model"
+weight: "50"
+linkTitle: "3.5 Layered Design Model"
 ---
 
 Open research topic: a layered design model for the technical architecture of AI agents.

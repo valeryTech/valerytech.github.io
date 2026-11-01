@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Related Work"
+title: "Related Work on Code Graphs and Coding Agents"
 description: "Research and systems close to the code intelligence design, from code property graphs and graph-guided coding agents to studies of history, runtime evidence and structural tools as LLM context, and the narrower claims that remain after them."
 linkTitle: "Related Work"
 ---

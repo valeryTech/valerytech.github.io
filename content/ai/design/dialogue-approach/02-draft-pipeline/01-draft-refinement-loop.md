@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Draft Refinement Loop"
 description: "A Quick Add architecture centered on a persistent transaction draft, repeatedly enriched, grounded, repaired, and validated before user-confirmed typed execution."
-title: "01 Draft Refinement Loop"
-linkTitle: "01 Draft Refinement Loop"
+linkTitle: "Draft Refinement Loop"
 ---
-# Draft refinement loop
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

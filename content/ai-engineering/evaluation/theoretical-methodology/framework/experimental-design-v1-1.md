@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Experimental Design v1.1 (LLM / Agentic Systems)"
+title: "Experimental Design v1.1 for LLM and Agentic Systems"
 description: "Paired offline runs, randomized A/B tests, and switchbacks answer different comparison problems. Precommitted endpoints, clustering, contamination controls, and decision margins determine what their results can support."
 linkTitle: "Experimental Design v1.1"
 ---

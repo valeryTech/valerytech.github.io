@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "3.6 Language and Formalism Choices"
 description: "Compares Haskell and Scala for discovering DSL algebras, then proposes a shared semantic core with complementary Lean proofs, TLA+ behavior models, Datalog rules, and Cedar authorization."
-title: "06 Language And Formalism Choices"
-linkTitle: "06 Language And Formalism Choices"
+weight: "60"
+linkTitle: "3.6 Language and Formalism Choices"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

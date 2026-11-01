@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Language, Mindset, and Discipline in AI Products"
 description: "Building an AI product also develops the practice behind it: shared cases sharpen expectations, experiments examine assumptions, and team support lets findings change the work."
-title: "Language Mindset Discipline 0"
-linkTitle: "Language Mindset Discipline 0"
+linkTitle: "Language and Mindset"
 ---
-# Language, mindset, and discipline in AI product development
-
 
 I see AI product engineering as a practice that is still taking shape. It brings together knowledge from software engineering, machine learning, experimentation, product development, domain expertise, and operations. We have established knowledge to use in these areas. How we combine it into a dependable way of building AI products still needs examination and development.
 

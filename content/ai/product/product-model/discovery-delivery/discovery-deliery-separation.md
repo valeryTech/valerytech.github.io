@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Separating Discovery and Delivery"
 description: "An earlier source-backed argument for separating learning prototypes from enduring production commitments, deriving different AI-platform needs from concurrent discovery and delivery responsibilities."
-title: "Discovery Deliery Separation"
-linkTitle: "Discovery Deliery Separation"
+linkTitle: "Separation"
 ---
 
 Working interpretation: **Discovery vs Delivery is a better model than "citizens / agents / experts."** It describes the purpose and risk of the work instead of assigning capabilities to roles.

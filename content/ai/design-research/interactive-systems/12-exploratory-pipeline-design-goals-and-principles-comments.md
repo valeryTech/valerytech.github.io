@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Exploratory Pipeline Design Goals and Principles"
 description: "A critique rejects the proposed automation conditions as sufficient release rules, requiring tested generalization, evaluator checks, separate runtime-review purposes, explicit authority, and defined replay behavior."
-title: "12 Exploratory Pipeline Design Goals And Principles Comments"
-linkTitle: "12 Exploratory Pipeline Design Goals And Principles Comments"
+linkTitle: "Design Goals Comments"
 ---
-# Comments on exploratory pipeline design goals and principles
-
 
 The comments are new analysis of the [complete third formulation]({{< ref "ai/design-research/interactive-systems/12-exploratory-pipeline-design-goals-and-principles" >}}). The original label marking the formulation for analysis remains unchanged. The goals, non-goals, principles, operating loop, objective, and manifesto remain a proposal rather than an accepted checklist.
 

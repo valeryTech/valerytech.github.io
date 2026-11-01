@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Rearrangement Record for In-Model Notes"
 description: "Decisions about team accountability, discovery interfaces, and solution states shaped the operating-model split. This record maps source passages to their destinations and explains which conceptual alternatives were preserved."
-title: "In Model Etc Rearrangement"
-linkTitle: "In Model Etc Rearrangement"
+linkTitle: "In-Model Rearrangement"
 ---
-# Rearrangement record for `in-model-etc.md`
-
 
 This is an editorial record. It explains how the source text was arranged. It is not part of the source text.
 

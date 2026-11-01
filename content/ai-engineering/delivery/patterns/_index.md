@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Patterns"
+title: "AI Platform Patterns"
 linkTitle: "Patterns"
 ---

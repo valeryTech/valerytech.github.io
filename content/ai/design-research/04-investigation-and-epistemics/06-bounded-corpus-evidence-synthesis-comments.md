@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "4.6 Comments on Evidence Synthesis over a Bounded Corpus"
 description: "Separates original corpus-synthesis requirements from proposed guarantees, emphasizing that screening is not completeness and source precedence needs an inspectable task-specific policy rather than a universal score."
-title: "06 Bounded Corpus Evidence Synthesis Comments"
-linkTitle: "06 Bounded Corpus Evidence Synthesis Comments"
+weight: "61"
+linkTitle: "4.6 Comments"
 ---
-# Comments on evidence synthesis over a bounded corpus
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.8 Prompt Text, Composition, and Registry"
 description: "A design dialogue narrows prompt management to named text versions, ordinary diffs, online editing, checked references, rendered output, and traceable history, initially excluding variables."
-title: "08 Prompt Text Composition And Registry"
-linkTitle: "08 Prompt Text Composition And Registry"
+weight: "80"
+linkTitle: "5.8 Prompt Registry"
 ---
-# Prompt text, composition, and registry
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

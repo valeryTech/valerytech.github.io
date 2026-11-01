@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "AI-Assisted Analysis And Investigation Systems"
+title: "AI-Assisted Analysis and Investigation Systems"
 description: "Predefined assessment can produce findings that redirect an investigation; audit examples show why workpapers need links among observations, calculations, hypotheses, evidence gaps, and expert judgments."
-linkTitle: "AI-Assisted Analysis And Investigation Systems"
+linkTitle: "Analysis and Investigation"
 ---
 ## Two Modes or Regimes
 

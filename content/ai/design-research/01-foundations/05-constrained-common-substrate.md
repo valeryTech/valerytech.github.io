@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "1.5 Constrained Common Substrate"
 description: "Proposes typed contributions carrying provenance, authority, guarantees, and obligations, with proposal distinct from commitment and separate records for verification, acceptance, revision, and external effects."
-title: "05 Constrained Common Substrate"
-linkTitle: "05 Constrained Common Substrate"
+weight: "50"
+linkTitle: "1.5 Constrained Common Substrate"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

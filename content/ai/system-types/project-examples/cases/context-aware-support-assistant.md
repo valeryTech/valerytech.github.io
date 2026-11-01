@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Context-Aware Support Assistant"
 description: "A support assistant can diagnose a case from product rules and authorized account observations, then hand a correction to a bounded workflow whose permissions remain independent of the conversation."
-title: "Context Aware Support Assistant"
-linkTitle: "Context Aware Support Assistant"
+linkTitle: "Support Assistant"
 ---
-# Context-aware support assistant
-
 
 Design question: Should context-aware support be considered a separate case?
 

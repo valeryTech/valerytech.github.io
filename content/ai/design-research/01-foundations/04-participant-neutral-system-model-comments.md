@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.4 Comments on Participant-Neutral System Model"
 description: "Clarifies that goal stewardship, verification, state keeping, and recovery are work roles rather than separate agents; each still requires explicit evidence, authority, and failure rules."
-title: "04 Participant Neutral System Model Comments"
-linkTitle: "04 Participant Neutral System Model Comments"
+weight: "41"
+linkTitle: "1.4 Comments"
 ---
-# Participant-neutral system model: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [model note]({{< ref "ai/design-research/01-foundations/04-participant-neutral-system-model" >}}) preserves its earlier architecture discussion and the complete added passage on roles in long-running work. The comments focus on the added passage and do not independently verify the earlier architectural or literature claims.
 

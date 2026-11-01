@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Discovery, Prototyping, and Sensemaking: Document Map"
 description: "The reading path starts with the inquiry model and LLM role, then connects sensemaking theory to interactive examples. Annotations explain how discovery, pipeline, and retrieval notes can support the next exploration."
-title: "Map"
-linkTitle: "Map"
+linkTitle: "Document Map"
 ---
-# Discovery, prototyping, and sensemaking: document map
-
 
 The focus is developing our understanding and mental models through exploration. LLMs can make possibilities concrete quickly: small implementations, interfaces, examples, and variations we can play with. A prototype can be disposable while the questions, distinctions, and knowledge it produces remain useful.
 

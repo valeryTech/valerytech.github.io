@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Requirements and Quality Targets"
+title: "Requirements and Quality Targets in Review"
 description: "Define functional behavior, quality targets, constraints, workload assumptions, and verification criteria before assessing implementation."
-linkTitle: "Requirements and Quality Targets"
+linkTitle: "Requirements and Targets"
 ---
 ## Purpose
 

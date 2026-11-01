@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.12 Research Terms and Levels of Analysis"
 description: "Proposes a working dictionary separating task capability from understanding, grounding, agency, autonomy, and meaning, with analysis levels that distinguish model behavior from whole-system claims."
-title: "12 Research Terms And Levels Of Analysis"
-linkTitle: "12 Research Terms And Levels Of Analysis"
+weight: "120"
+linkTitle: "1.12 Terms and Levels"
 ---
-# Research terms and levels of analysis
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

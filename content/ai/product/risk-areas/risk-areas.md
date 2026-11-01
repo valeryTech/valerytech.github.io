@@ -1,15 +1,12 @@
 ---
 draft: false
 toc: true
+title: "Naming the Solution-Risk Dimensions"
 description: "Value, usability, feasibility, and viability describe areas to investigate rather than four testable claims. These arguments derive concrete risks and assumptions, define the boundaries, and identify uncertainty the four omit."
-title: "Risk Areas"
-linkTitle: "Risk Areas"
+linkTitle: "Naming Risk Dimensions"
 ---
 
 <a id="part-1"></a>
-
-# Naming the solution-risk dimensions
-
 
 > **Status:** Early working notes. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. These notes are retained as source material and may contain positions that were not selected.
 

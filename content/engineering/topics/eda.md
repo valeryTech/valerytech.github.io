@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "EDA"
+title: "Event-Driven Architecture Resources"
 description: "Collected event-driven architecture resources, patterns, and excerpts for exploring pub/sub, events, and messaging-based system design."
-linkTitle: "EDA"
+linkTitle: "Event-Driven Architecture"
 ---
 ## EDA
 

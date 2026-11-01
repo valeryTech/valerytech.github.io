@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Product Framework"
+title: "AI Product Framework"
 linkTitle: "Product Framework"
 ---

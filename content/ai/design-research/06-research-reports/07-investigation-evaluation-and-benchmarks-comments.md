@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.7 Comments on Investigation Evaluation and Benchmarks"
 description: "A critique of the multiagent evidence experiment distinguishing undisclosed, unregistered, and unused evidence, and requiring ground truth and controlled ablations to assess provenance, dissent, and contradiction handling."
-title: "07 Investigation Evaluation And Benchmarks Comments"
-linkTitle: "07 Investigation Evaluation And Benchmarks Comments"
+weight: "71"
+linkTitle: "6.7 Comments"
 ---
-# Investigation evaluation and benchmarks: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [evaluation note]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}) preserves its earlier benchmark proposal and the imported multiagent evidence passage. The comments focus on the added proposal, and they do not independently verify the earlier benchmark descriptions.
 

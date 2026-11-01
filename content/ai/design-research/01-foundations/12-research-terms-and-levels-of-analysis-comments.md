@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.12 Comments on Research Terms and Levels of Analysis"
 description: "Examines revisions and disputed definitions in the working dictionary, emphasizing explicit units of analysis and limits on inferring understanding, learning, autonomy, or causal relationships."
-title: "12 Research Terms And Levels Of Analysis Comments"
-linkTitle: "12 Research Terms And Levels Of Analysis Comments"
+weight: "121"
+linkTitle: "1.12 Comments"
 ---
-# Research terms and levels of analysis: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

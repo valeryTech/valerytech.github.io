@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "A Strict Evidence Filter for Trend Claims"
 description: "Working source-selection guidance weighs AI capability claims by measurable artifacts, baselines, repeated runs, and builder/operator evidence, proposing a claim ledger that separates trend sensing from demonstrated production results."
-title: "Sources Critical"
-linkTitle: "Sources Critical"
+linkTitle: "Evidence Filter"
 ---
 
 Proposed correction to the earlier trend assessment: apply a strict evidence filter. That assessment mixed engineering evidence with vendor claims. An OpenAI or Anthropic engineering post can tell us what they're building; it cannot, by itself, tell us where the industry is going.

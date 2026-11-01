@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Twenty research problems for AI systems design"
+title: "Twenty Research Problems for AI Systems Design"
 description: "A research agenda connecting twenty foundational problems to end-to-end prototypes, language comparisons, and evidence about construction, composition, human understanding, and change over time."
-linkTitle: "Twenty research problems for AI systems design"
+linkTitle: "Twenty Research Problems"
 ---
 
 The next step is to make the proposed principles concrete enough to challenge. We can build small, complete systems in several languages, observe where their representations help or fail, and use those observations to revise the conceptual account.

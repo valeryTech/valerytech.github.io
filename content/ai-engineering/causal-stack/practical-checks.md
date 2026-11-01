@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Learning through real product use"
+title: "Learning Through Real Product Use"
 description: "Start from an existing customer job, build one usable path, inspect real attempts, compare changes, and observe repeat use. Record which investigation questions improve decisions and how much effort the guide adds."
-linkTitle: "Learning through real product use"
+linkTitle: "Learning from Real Use"
 ---
 
 Choose a product because there is a customer job worth improving. Use these notes to investigate difficulties encountered while delivering that improvement.

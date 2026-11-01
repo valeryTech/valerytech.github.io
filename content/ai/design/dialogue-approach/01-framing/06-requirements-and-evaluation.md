@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Requirements and Evaluation for Task Assistants"
 description: "Extends assistant requirements and evaluation beyond conversation quality to resource selection, proposed changes, authority, correction effort, recovery, and final application state."
-title: "06 Requirements And Evaluation"
-linkTitle: "06 Requirements And Evaluation"
+linkTitle: "Requirements and Evaluation"
 ---
-# Requirements and evaluation for task assistants
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

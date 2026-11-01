@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "AI Engineering Evidence Protocol"
 description: "A productivity claim must account for supervision, review, correction, and later rework. The protocol sets evidence requirements for AI evaluations, including baselines, failure cases, and uncertainty."
-title: "In Protocol"
-linkTitle: "In Protocol"
+linkTitle: "Evidence Protocol"
 ---
-# AI Engineering Evidence Protocol
-
 
 AI engineering needs an evidence culture because probabilistic systems are easy to evaluate poorly. Reports of heavy coding-agent adoption or high merged-PR counts do not establish better engineering outcomes. Overengineering, hallucinated assumptions, and downstream maintenance costs require explicit investigation.
 

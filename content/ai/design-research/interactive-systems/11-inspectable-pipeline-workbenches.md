@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Inspectable Pipeline Workbenches"
 description: "A proposed pipeline laboratory links scenarios, variants, stage artifacts, interventions, judgments, and traces; its RAG example records why evidence is selected, reordered, expanded, or judged insufficient."
-title: "11 Inspectable Pipeline Workbenches"
-linkTitle: "11 Inspectable Pipeline Workbenches"
+linkTitle: "Pipeline Workbenches"
 ---
-# Inspectable pipeline workbenches
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

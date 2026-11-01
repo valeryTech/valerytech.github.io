@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Assessing the Ecosystem-Tension Method"
 description: "A critique strengthens ecosystem-tension opportunity analysis with stricter classifications, outcome-centered maps, causal and economic evidence, unilateral buyers, paid tests, and explicit kill criteria before infrastructure ambitions."
-title: "Market Research Analysis"
-linkTitle: "Market Research Analysis"
+linkTitle: "Ecosystem-Tension Method"
 ---
 ## Assessment
 

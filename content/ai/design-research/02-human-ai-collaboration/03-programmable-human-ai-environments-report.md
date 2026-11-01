@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
-title: "03 Programmable Human-AI Environments Report"
+title: "2.3 Programmable Environments for Human-AI Collaboration"
 description: "A literature synthesis proposing a programming model and trusted runtime for heterogeneous collaboration, separating generated proposals, authenticated approvals, durable shared state, and external effects."
-linkTitle: "03 Programmable Human-AI Environments Report"
+weight: "30"
+linkTitle: "2.3 Programmable Environments"
 ---
-# Programmable environments for heterogeneous human-AI collaboration
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

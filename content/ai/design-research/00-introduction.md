@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "AI systems design: purpose and reading map"
+title: "AI Systems Design: Purpose and Reading Map"
 description: "Why these working notes are being shared, what they aim to offer practitioners, and how to navigate the earlier DSL exploration, reorganized research, source conversations, and next stage of work."
-linkTitle: "AI systems design: purpose and reading map"
+linkTitle: "Purpose and Reading Map"
 ---
 
 I am sharing these working notes to help people reason about systems that combine humans, conventional software, data, models, and LLMs. The collection records an investigation in progress: questions, proposed explanations, designs, objections, and changes in direction. I plan to develop a more coherent set of notes and, later, a set of research papers. The notebook makes the exploration available now; the later synthesis will explain my considered position, and the papers will develop focused scholarly contributions. These forms can build on the same ideas while serving different reading needs.

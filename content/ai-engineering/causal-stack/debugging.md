@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Debugging a failed customer task"
+title: "Debugging a Failed Customer Task"
 aliases:
   - "/ai-engineering/causal-stack/layer-2/product-fault-families/"
   - "/ai-engineering/evaluation/causal-stack/layer-2/product-fault-families/"
@@ -12,7 +12,7 @@ aliases:
   - "/ai-engineering/causal-stack/layer-2/failure-operators/"
   - "/ai-engineering/evaluation/causal-stack/layer-2/failure-operators/"
 description: "Follow a failed task through intent, evidence, meaning, state, and tool effects. The first visible mismatch guides competing explanations and focused checks before choosing a fix or changing supported scope."
-linkTitle: "Debugging a failed customer task"
+linkTitle: "Debugging a Failed Task"
 ---
 
 Start from a [case]({{< ref "ai-engineering/causal-stack/cases" >}}). Establish what an acceptable result would have been and why the difference mattered to the customer.

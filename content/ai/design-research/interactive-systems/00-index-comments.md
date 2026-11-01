@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on the Interactive Systems Collection"
 description: "Editorial guidance preserves the move from fixed graphs to composable operations and separates displayed views, shared state, interpreted intent, evidence guarantees, and runtime review from design learning."
-title: "00 Index Comments"
-linkTitle: "00 Index Comments"
+linkTitle: "Collection Comments"
 ---
-# Comments on the interactive systems collection
-
 
 The comments below were added on 2026-04-01. They are separate from the retained user and LLM text.
 

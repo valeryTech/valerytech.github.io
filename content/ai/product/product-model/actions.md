@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Product Model Actions"
 description: "A product-management research agenda combines reference links with a critique of Cagan’s model, emphasizing decision authority, strategic constraints, deployability, and context when adapting it to AI engineering."
-title: "Actions"
 linkTitle: "Actions"
 ---
 

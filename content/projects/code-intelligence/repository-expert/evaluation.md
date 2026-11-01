@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Repository Expert: Evaluation"
 description: "How to test the repository expert, with a stratified golden dataset, retrieval and generation metrics, code-specific checks, release gates and a tiered pipeline."
-linkTitle: "Repository Expert: Evaluation"
+linkTitle: "Evaluation"
 ---
 
 The evaluation turns the [requirements]({{< ref "projects/code-intelligence/repository-expert/requirements" >}}) into tests. It measures retrieval and generation separately, so that a failure can be traced to the layer that caused it, and it treats the repository as a directed graph rather than a set of independent documents. Whether code structure helps at all is a separate research question, covered in the [thesis and evaluation plan]({{< ref "projects/code-intelligence/thesis-and-evaluation" >}}); its datasets can feed the golden set here.

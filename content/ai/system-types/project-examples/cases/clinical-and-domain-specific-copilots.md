@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Clinical and Domain-Specific Copilots"
 description: "Clinical examples separate meaning preservation, professional acceptance, and authorized record changes; a statement accepted for documentation may still lack a basis for another clinical decision."
-title: "Clinical And Domain Specific Copilots"
-linkTitle: "Clinical And Domain Specific Copilots"
+linkTitle: "Domain Copilots"
 ---
-# Copilots
-
 ## Exploring the clinical work copilot
 
 

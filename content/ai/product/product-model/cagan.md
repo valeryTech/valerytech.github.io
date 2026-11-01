@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Cagan's Delivery Principles"
 description: "Working interpretation of Cagan’s delivery principles derives small changes, fast feedback, and safe recovery from customer protection, responsiveness, and trust, treating deployment frequency as supporting evidence."
-title: "Cagan"
-linkTitle: "Cagan"
+linkTitle: "Delivery Principles"
 ---
-# Delivery principles
-
 
 The company and its customers need reliable, consistent, and frequent delivery.
 

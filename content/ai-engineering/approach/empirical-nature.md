@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "AI Systems Require Behavioral Evidence"
 description: "Learned components limit what implementation inspection can establish. An escalation example links requirements, mechanism assurance, behavioral evidence, and decisions about the scope a product can support."
-linkTitle: "AI Systems Require Behavioral Evidence"
+linkTitle: "Behavioral Evidence"
 ---
 
 This note defines a working principle for designing, evaluating, and operating AI systems.
@@ -143,7 +143,7 @@ Engineering rule:
 ## References and Connections
 
 
-This supports the idea that **experimentation is not outside AI engineering**. It is the base layer because the only reliable way to improve an AI system is to run controlled experiments and measure what changes. See [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
+This supports the idea that **experimentation is not outside AI engineering**. It is the base layer because the only reliable way to improve an AI system is to run controlled experiments and measure what changes. See [Disciplined AI experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
 
 ## Assurance System
 

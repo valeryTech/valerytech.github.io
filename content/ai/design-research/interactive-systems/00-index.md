@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Interactive Systems and Interfaces"
 description: "A reading map for proposed interactive investigation systems, connecting shared state, composable operations, hybrid interfaces, and pipeline design while keeping original dialogues, later corrections, and editorial commentary distinct."
-title: "00 Index"
-linkTitle: "00 Index"
+linkTitle: "Collection Index"
 ---
-# Interactive systems and interfaces
-
 
 The collection concerns systems where people can inspect and change intermediate work through conversation, direct controls, and coordinated views. The scope includes applications without AI, although the first notes come from an investigation-system dialogue.
 

@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Interview phrase collection before the refactor"
+title: "Interview Phrase Collection Before the Refactor"
 description: "Archived interview phrases, synonym lists, and transcript fragments for stating assumptions, discussing trade-offs, handling uncertainty, and navigating disagreement."
 document_status: "archived"
-linkTitle: "Interview phrase collection before the refactor"
+linkTitle: "Interview Phrases"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/interview/phrases" >}}). Numerical targets and technical claims below retain their original draft context.

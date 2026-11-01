@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Business, Product, and Feature Context"
 description: "Frame a software change through its business problem, intended users, expected outcome, scope, constraints, and success measures."
-linkTitle: "Business, Product, and Feature Context"
+linkTitle: "Business and Product Context"
 ---
 ## Purpose
 

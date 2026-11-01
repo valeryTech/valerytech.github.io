@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Computationalism and Related Positions"
 description: "A conceptual analysis distinguishing computational models, computationalism, functionalism, and computational ontology, followed by a proposed curriculum for testing accounts of cognition through implemented behavioral models."
-title: "Computationalism"
 linkTitle: "Computationalism"
 ---
 

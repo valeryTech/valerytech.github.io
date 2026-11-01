@@ -5,8 +5,6 @@ title: "Data Flywheel"
 description: "A governed data flywheel converting product use into traceable evidence and reusable learning assets, connecting curation, interpretation, system changes, release, and production feedback."
 linkTitle: "Data Flywheel"
 ---
-## Data Flywheel
-
 
 The **Data Flywheel** is the recurring mechanism through which AI-product usage generates data, that data is transformed into trusted learning assets, and those assets are used to improve the AI system and the product.
 

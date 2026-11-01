@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-description: "Work can advance through user questions, permitted transitions, new evidence, artifact revisions, or delegated steps; comparing those rules helps distinguish operating regimes from deployment permissions."
 title: "Operating Regimes"
+description: "Work can advance through user questions, permitted transitions, new evidence, artifact revisions, or delegated steps; comparing those rules helps distinguish operating regimes from deployment permissions."
 linkTitle: "Operating Regimes"
 ---
 ## Two Modes or Regimes

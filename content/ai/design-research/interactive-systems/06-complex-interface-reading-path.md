@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Complex Interface Reading Path"
 description: "A saved research dialogue shifts from UI theory to builders’ editor architectures, using tldraw, ProseMirror, Figma, and xi to examine state, transactions, synchronization, and costly asynchronous boundaries."
-title: "06 Complex Interface Reading Path"
-linkTitle: "06 Complex Interface Reading Path"
+linkTitle: "Complex Interface Reading Path"
 ---
-# Complex interface reading path
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

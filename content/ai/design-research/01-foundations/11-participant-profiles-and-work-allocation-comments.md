@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.11 Comments on Participant Profiles and Work Allocation"
 description: "Reviews task-dependent participant profiles, distinguishing capability from authority, memory from learning, and grounding from common ground before using profiles to justify allocation or verification."
-title: "11 Participant Profiles And Work Allocation Comments"
-linkTitle: "11 Participant Profiles And Work Allocation Comments"
+weight: "111"
+linkTitle: "1.11 Comments"
 ---
-# Participant profiles and work allocation: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

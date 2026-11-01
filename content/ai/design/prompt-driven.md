@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Prompt-Specified Systems and Prompt-Only Enforcement"
 description: "Trust in prompt-specified systems depends on requirement classes, acceptance boundaries, and evidence. A knowledge-assistant example turns those distinctions into an architecture review method."
-title: "Prompt Driven"
-linkTitle: "Prompt Driven"
+linkTitle: "Prompt-Specified Systems"
 ---
-# Prompt-Specified Systems and Prompt-Only Enforcement
-
 
 A **prompt-specified system** is one in which prompts specify a substantial part of the system's functional behavior and an LLM interprets that specification at runtime. The prompts may describe analysis steps, transformations, decision criteria, domain rules, workflows, constraints, or output structure.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Methodological Foundations for AI Engineering"
 description: "Empirical software engineering, causal inference, and mixed methods give AI claims a testable basis. A critique of Zalando’s agent report separates operational observations from causal evidence."
-title: "In Methodology"
-linkTitle: "In Methodology"
+linkTitle: "Methodological Foundations"
 ---
-# Methodological foundations for AI engineering
-
 
 An evidence methodology for AI engineering can build on established scientific traditions, adapted to stochastic systems and human participation.
 

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Solution States and Terms: Alternative"
 description: "Distinguish an idea, prototype, effective solution, and production product from the work done on them. The state vocabulary also asks why being worth building does not establish that a business outcome will follow."
-title: "Solution States And Terms Alternative"
-linkTitle: "Solution States And Terms Alternative"
+linkTitle: "Solution States and Terms"
 ---
 
 > **Editorial note:** This proposal depends on `solution-as-central-object.md`. Its state names are not part of the current model.

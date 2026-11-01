@@ -1,15 +1,13 @@
 ---
 draft: false
 toc: true
+title: "3.11 Behavioral Compilation and Specification"
 description: "Proposes treating LLM solutions as provisional witnesses for contract-governed program synthesis, distinguishing instance solutions, reusable procedures, guarded reuse, independent verification, and explicit acceptance."
-title: "11 Behavioral Compilation And Specification"
-linkTitle: "11 Behavioral Compilation And Specification"
+weight: "110"
+linkTitle: "3.11 Behavioral Compilation"
 ---
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
-
-# Behavioral compilation and specification
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

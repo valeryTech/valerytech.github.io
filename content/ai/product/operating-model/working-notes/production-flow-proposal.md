@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-description: "Progress in AI delivery is clearer when it names supported situations and behavior thresholds. Product bets become production commitments and slices that cycle through implementation, evaluation, release, and observation."
 title: "Production Flow Proposal"
+description: "Progress in AI delivery is clearer when it names supported situations and behavior thresholds. Product bets become production commitments and slices that cycle through implementation, evaluation, release, and observation."
 linkTitle: "Production Flow Proposal"
 ---
 ## 8. The delivery object

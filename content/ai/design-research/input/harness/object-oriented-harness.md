@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design"
+title: "Object-Oriented Harness: Evolving Agent Harnesses"
 description: "A formatted paper on evolving agent harness hierarchies through inheritance and routing, including the training method, evaluation, ablations, and limitations."
-linkTitle: "Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design"
+linkTitle: "Object-Oriented Harness"
 ---
 
 Source: [Li et al. 2026](/sources/ai-engineering/harness/li-2026-object-oriented-harness.pdf.enc), *Object-Oriented Harness* ([arXiv:2610.28380](https://arxiv.org/abs/2610.28380)).

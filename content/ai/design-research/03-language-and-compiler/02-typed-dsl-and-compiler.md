@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "02 Typed DSL And Compiler"
+title: "3.2 Typed DSL and Compiler"
 description: "Proposes typed intermediate programs with explicit effects, extensible operator contracts, compositional guarantees, and structured compiler feedback, separating static admissibility from empirical task correctness."
-linkTitle: "02 Typed DSL And Compiler"
+weight: "20"
+linkTitle: "3.2 Typed DSL and Compiler"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

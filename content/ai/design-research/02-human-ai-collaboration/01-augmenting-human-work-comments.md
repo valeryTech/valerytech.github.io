@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "2.1 Comments on Augmenting Human Work"
 description: "Reviews the shift toward shared work and co-writing, distinguishing active roles from agency, faithful rewriting from developing claims, and intended augmentation from demonstrated benefit."
-title: "01 Augmenting Human Work Comments"
-linkTitle: "01 Augmenting Human Work Comments"
+weight: "11"
+linkTitle: "2.1 Comments"
 ---
-# Augmenting human work: comments
-
 
 New commentary by Codex, added on 2026-04-01. The comments primarily explain the newly imported [framing dialogue]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}#from-conversational-interfaces-to-collaborative-work). They do not independently verify the earlier note's literature or product claims.
 

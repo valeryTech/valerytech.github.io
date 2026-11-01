@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Framework Factors v1.2 (Failure Drivers and Required Controls)"
+title: "Framework Factors v1.2: Failure Drivers and Controls"
 description: "From input shift to unsafe tool access, failure drivers become reviewable requirements through observable signals, required artifacts, validation methods, owners, and release controls scaled to risk."
 linkTitle: "Framework Factors v1.2"
 ---

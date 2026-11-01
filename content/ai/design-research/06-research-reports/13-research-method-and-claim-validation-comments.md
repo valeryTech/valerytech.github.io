@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.13 Comments on Research Method and Claim Validation"
 description: "A critique of the claim-validation proposal distinguishing claim types from confidence levels, source traceability from evidential support, and LLM behavior as experimental data from generated synthesis as authority."
-title: "13 Research Method And Claim Validation Comments"
-linkTitle: "13 Research Method And Claim Validation Comments"
+weight: "131"
+linkTitle: "6.13 Comments"
 ---
-# Research method and claim validation: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

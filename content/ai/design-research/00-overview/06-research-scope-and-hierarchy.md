@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.6 Research Scope and Hierarchy"
 description: "Distinguishes a general theory of guarantee-preserving composition, a method for deriving semantic boundaries, and separate investigation, behavioral-compilation, and human-collaboration research tracks."
-title: "06 Research Scope And Hierarchy"
-linkTitle: "06 Research Scope And Hierarchy"
+weight: "60"
+linkTitle: "0.6 Research Scope and Hierarchy"
 ---
-# Research scope and hierarchy
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

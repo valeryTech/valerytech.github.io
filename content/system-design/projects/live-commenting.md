@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Live Commenting"
+title: "Live Commenting System Design"
 description: "A queued live-commenting design prompt, linking to push-versus-pull discussion and the template for developing a full case."
 linkTitle: "Live Commenting"
 ---

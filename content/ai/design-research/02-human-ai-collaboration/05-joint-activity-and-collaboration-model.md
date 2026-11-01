@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "2.5 Joint Activity and Collaboration Model"
 description: "Proposes six recurring collaboration mechanics and dynamic allocation of information, execution, judgment, and authority, with explicit responsibility ownership and handoff examples for human-AI work."
-title: "05 Joint Activity And Collaboration Model"
-linkTitle: "05 Joint Activity And Collaboration Model"
+weight: "50"
+linkTitle: "2.5 Joint Activity Model"
 ---
-# Joint activity and collaboration model
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

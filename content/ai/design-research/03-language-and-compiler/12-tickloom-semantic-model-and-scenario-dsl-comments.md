@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
-title: "12 Tickloom Semantic Model And Scenario DSL Comments"
+title: "3.12 Comments on the Tickloom Case Study"
 description: "Critiques Tickloom reliability claims by separating valid declarations, faithful test scenarios, deterministic executions, protocol correctness, and coverage of possible distributed-system interleavings."
-linkTitle: "12 Tickloom Semantic Model And Scenario DSL Comments"
+weight: "121"
+linkTitle: "3.12 Comments"
 ---
-# Comments on the Tickloom case study
-
 
 The comments were added by Codex on 2026-03-30 at the user's request. They explain the sibling [case-study note]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}) and record open questions. They are new commentary, not part of the captured article or an agreed implementation specification.
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Code Representation"
+title: "Code Representation for Retrieval and Reasoning"
 description: "How to model code for retrieval and reasoning, from AST units and repository graphs to compiler-grade analysis and the code property graph."
 linkTitle: "Code Representation"
 ---

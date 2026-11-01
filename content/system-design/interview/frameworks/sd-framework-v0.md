@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Personal Requirements-First Framework Draft"
+title: "Personal Requirements-First Interview Framework"
 description: "A personal framework experiment prioritizing core user value, enabling features, quality requirements, interview phrasing, and follow-up design constraints."
-linkTitle: "Personal Requirements-First Framework Draft"
+linkTitle: "Requirements-First Draft"
 ---
 
 Personal framework experiment, retained alongside the [other frameworks]({{< ref "system-design/interview/frameworks" >}}). The scripts and architecture examples are draft proposals; see [NFR reasoning]({{< ref "system-design/nfr/non-functional-requirements" >}}) and the [URL-shortener alternatives]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}) for contextualized targets.

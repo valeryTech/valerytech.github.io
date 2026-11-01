@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.7 Constraint, Guarantee, and Composition Models"
 description: "Formalizes the search for least restrictive constraints preserving guarantees under compatible composition and replacement, with proposal-and-commit, CRDT, capability, and extension-set models."
-title: "07 Constraint Guarantee And Composition Models"
-linkTitle: "07 Constraint Guarantee And Composition Models"
+weight: "70"
+linkTitle: "1.7 Constraint and Composition"
 ---
-# Constraint, guarantee, and composition models
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

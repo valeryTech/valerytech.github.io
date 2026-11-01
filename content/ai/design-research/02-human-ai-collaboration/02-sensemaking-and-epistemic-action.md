@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "2.2 Sensemaking and Epistemic Action"
 description: "Connects investigation to epistemic action and sensemaking: people and AI revise representations, hypotheses, and beliefs, with stable interface projections making the underlying computation inspectable."
-title: "02 Sensemaking And Epistemic Action"
-linkTitle: "02 Sensemaking And Epistemic Action"
+weight: "20"
+linkTitle: "2.2 Sensemaking"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

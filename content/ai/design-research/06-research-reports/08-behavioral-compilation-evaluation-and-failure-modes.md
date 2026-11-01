@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.8 Behavioral Compilation Evaluation and Failure Modes"
 description: "A behavioral-compilation failure analysis separating teacher imitation from task correctness, addressing underdetermination and semantic equivalence, and proposing transformed transcript cases to test source fidelity and revision handling."
-title: "08 Behavioral Compilation Evaluation And Failure Modes"
-linkTitle: "08 Behavioral Compilation Evaluation And Failure Modes"
+weight: "80"
+linkTitle: "6.8 Compilation Failure Modes"
 ---
-# Behavioral compilation evaluation and failure modes
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

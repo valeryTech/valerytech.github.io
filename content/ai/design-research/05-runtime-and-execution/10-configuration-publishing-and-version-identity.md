@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.10 Configuration Publishing and Version Identity"
 description: "Proposes Git-managed desired configuration with independent component versions and immutable resolved artifacts, recording both friendly selectors and exact runtime identity across production and evaluation."
-title: "10 Configuration Publishing And Version Identity"
-linkTitle: "10 Configuration Publishing And Version Identity"
+weight: "100"
+linkTitle: "5.10 Publishing and Versions"
 ---
-# Configuration publishing and version identity
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

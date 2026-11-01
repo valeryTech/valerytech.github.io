@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Deriving an Optimal Architecture"
 description: "A research note assembles established architecture assessment, experimental design, design-space exploration, and optimization methods into a candidate process for choosing agentic RAG architectures under uncertainty."
-title: "In Design Modeling"
-linkTitle: "In Design Modeling"
+linkTitle: "Optimal Architecture"
 ---
-## deriving optimal architecture
-
 
 Scope: set aside predictions and macroeconomics for now. Investigate the discovery and decision process for deriving an optimal architecture from given parameters.
 

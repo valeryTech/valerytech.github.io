@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Interactive Investigation Principles"
 description: "A route through the interactive-investigation position paper, seven principles, and worked retrieval examples, with commentary and research destinations outside the published website."
-title: "Joint And Collap Principles"
-linkTitle: "Joint And Collap Principles"
+linkTitle: "Investigation Principles"
 ---
-# Interactive investigation principles
-
 
 This note indexes principles for interactive investigation and their worked retrieval examples. The source material was reorganized on 2026-04-01.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "AI Systems Classification"
+title: "Classification of AI Systems and Components"
 description: "Classify both an AI deployment and its components, record what each may observe or change, and attach named properties to their boundaries, distinguishing runtime enforcement, testing, formal proof, and certification."
-linkTitle: "AI Systems Classification"
+linkTitle: "Systems and Components"
 ---
-# Classification of AI Systems and Components: Features, Components, Invariants, and a Practical Taxonomy
-
 ## Executive summary and scope
 
 

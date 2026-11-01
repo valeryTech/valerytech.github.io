@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Agent guarantees"
+title: "Agent Guarantees"
 description: "Research comparing capabilities, runtime enforcement, and information-flow controls for LLM agents, with examples and limits of enforceable permissions."
-linkTitle: "Agent guarantees"
+linkTitle: "Agent Guarantees"
 ---
 
 Final response from the **Agent guarantees** sub-agent in [Research LLM Programming Languages]({{< ref "ai/design-research/input/research-llm-programming-languages/conversation" >}}). Captured on 2026-04-29 from the signed-in sub-agent viewer. Wording, URLs, headings, lists, and tables are preserved; rich-text formatting is converted to Markdown. Retrieved-reference IDs are retained as written in the report.

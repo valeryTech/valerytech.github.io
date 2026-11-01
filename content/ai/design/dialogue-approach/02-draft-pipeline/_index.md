@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "02 Draft Pipeline"
-linkTitle: "02 Draft Pipeline"
+title: "Draft Pipeline for Task Assistance"
+linkTitle: "Draft Pipeline"
 ---

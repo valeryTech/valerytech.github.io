@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Engineering Delivery Techniques Guide"
 description: "Choose delivery techniques by uncertainty and lifecycle stage, specifying scope, real versus simplified parts, completion evidence, lifespan, and the next decision."
 document_status: "draft"
-title: "Engineering Delivery Techniques Guide"
-linkTitle: "Engineering Delivery Techniques Guide"
+linkTitle: "Techniques Guide"
 ---
 
 **Audience:** engineering teams, engineering leads, product leads, technical program managers

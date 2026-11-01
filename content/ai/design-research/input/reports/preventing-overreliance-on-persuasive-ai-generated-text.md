@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Preventing Overreliance On Persuasive AI-Generated Text"
+title: "Preventing Overreliance on Persuasive AI-Generated Text"
 description: "A research report examining overreliance on persuasive AI text, evidence on cognitive and behavioral harms, intervention strategies, and proposed interface safeguards."
-linkTitle: "Preventing Overreliance On Persuasive AI-Generated Text"
+linkTitle: "Preventing Overreliance"
 ---
 
 > Export note: Source links were recovered from the original report's citation panels. Citation groups retain every source for which a URL could be identified; additional source IDs without an exposed URL are marked unresolved. The exact original groups are preserved in the [citation metadata](/ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text.assets/preventing-overreliance-on-persuasive-ai-generated-text-citations.json).

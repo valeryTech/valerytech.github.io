@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on the Design Research Document Map"
 description: "Reviews gaps and evidence behind the conceptual document map, preserving distinctions among protocols, authority, interpretation, and evaluation while proposing question-based navigation and links to interactive systems."
-title: "Document Map Comments"
 linkTitle: "Document Map Comments"
 ---
-# Comments on the design research document map
-
 
 Date: 2026-04-01. The comments are new editorial analysis for the [document map]({{< ref "ai/design-research/document-map" >}}). The relationships suggest ways to read the collection, and they do not select an architecture or establish a research result.
 

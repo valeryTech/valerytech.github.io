@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Collaborative Writing and Text Assembly"
 description: "A critique of fragment-based writing requires whole-text coherence review and revision-specific acceptance, keeping selection mechanics open and preserving the removal remark as historical context rather than a deletion instruction."
-title: "14 Collaborative Writing And Text Assembly Comments"
-linkTitle: "14 Collaborative Writing And Text Assembly Comments"
+linkTitle: "Writing Comments"
 ---
-# Collaborative writing and text assembly: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

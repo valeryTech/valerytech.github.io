@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "3.13 Domain Semantics and Operation Contracts"
 description: "Argues that API schemas need business definitions and discoverable operation contracts, using account meaning and refunds to connect inputs, preconditions, effects, authority, and retry requirements."
-title: "13 Domain Semantics And Operation Contracts"
-linkTitle: "13 Domain Semantics And Operation Contracts"
+weight: "130"
+linkTitle: "3.13 Operation Contracts"
 ---
-# Domain semantics and operation contracts
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Agentic Operations and Coordination Systems"
 description: "Selecting the next action and coordinating dependencies are separate capabilities; recruiting shows why work may need persistent goals, waits, exception handling, and verification beyond a successful tool call."
-title: "Agentic Operations And Coordination"
-linkTitle: "Agentic Operations And Coordination"
+linkTitle: "Agentic Operations"
 ---
-# Agentic operations and coordination systems
-
 
 **Agentic operations and coordination systems** is the proposed working name for this case.
 

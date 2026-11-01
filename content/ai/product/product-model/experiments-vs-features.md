@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Experiments vs Features"
+title: "Experiments vs. Features"
 description: "Collected practitioner arguments for AI roadmaps organized around capability funnels and timeboxed experiments, emphasizing evaluation infrastructure, stakeholder decision points, failure sharing, and reliability evidence."
-linkTitle: "Experiments vs Features"
+linkTitle: "Experiments vs. Features"
 ---
 # Resources
 

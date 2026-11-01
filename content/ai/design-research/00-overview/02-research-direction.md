@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.2 Research Direction and Proposed Investigation Paper"
 description: "Proposes testing executable epistemic contracts in a narrow investigation paper, then generalizing toward shared heterogeneous computation with explicit authority, provenance, and commitment."
-title: "02 Research Direction"
-linkTitle: "02 Research Direction"
+weight: "20"
+linkTitle: "0.2 Research Direction"
 ---
-# Research direction and proposed investigation paper
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

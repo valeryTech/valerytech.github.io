@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Schema Pack v1.3 — Normative Contracts for Framework Artifacts"
+title: "Schema Pack v1.3: Contracts for Framework Artifacts"
 description: "Records for traces, estimates, comparisons, gates, and incidents carry shared identity and provenance rules. The catalog specifies required fields, measurement coverage, and compatibility across those interfaces."
 linkTitle: "Schema Pack v1.3"
 ---
-# Schema Pack v1.3 -- Normative Contracts for Framework Artifacts
-
 
 This document defines the canonical data contracts for the framework. These schemas are **normative**:
 

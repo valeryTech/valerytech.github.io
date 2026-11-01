@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Capability Claims and Empirical Method"
 description: "Maps the capability notes onto notes on evidence appraisal, experimentation, evaluation, causal investigation, agent capability discovery, design science, and research method: shared ideas, broken analogies, and a protocol for capability studies."
-linkTitle: "Capability Claims and Empirical Method"
+linkTitle: "Empirical Method"
 ---
 
 The capability notes conclude that "the model can reason" or "the model understands" is not an observation. It is a hypothesis about a hidden property, and an empirical study has to test it. [05]({{< ref "ai/capabilities/05-measuring-dispositions" >}}) sets out what to measure. It does not say how to run the study: how to state the claim, preregister the measures, control the comparison, validate the scorer, appraise the evidence, and report it.

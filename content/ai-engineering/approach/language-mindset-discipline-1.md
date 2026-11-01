@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Language, Mindset, and Discipline: Second Version"
 description: "A practical engineering stance for discovery and delivery: make supported behavior explicit, test consequential assumptions, preserve the reasoning, and give findings a route into product commitments."
-title: "Language Mindset Discipline 1"
-linkTitle: "Language Mindset Discipline 1"
+linkTitle: "Language and Mindset v2"
 ---
-# Language, mindset, and discipline in AI product development
-
 
 My approach comes from building and operating systems, investigating their behavior, and turning that experience into engineering practices and frameworks I have applied across teams. This work connects product discovery, architecture, evaluation, delivery, and learning from production.
 

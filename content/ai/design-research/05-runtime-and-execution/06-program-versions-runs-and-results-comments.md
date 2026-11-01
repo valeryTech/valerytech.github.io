@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.6 Comments on Program Versions, Runs, and Results"
 description: "Clarifies distinct program, goal, run, artifact, and acceptance records, questioning history-link rules, stale dependencies, retry semantics, and downstream reuse under changed inputs or policies."
-title: "06 Program Versions Runs And Results Comments"
-linkTitle: "06 Program Versions Runs And Results Comments"
+weight: "61"
+linkTitle: "5.6 Comments"
 ---
-# Comments on program versions, runs, and results
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

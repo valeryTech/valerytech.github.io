@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Building a Starting Set of User Inputs for AI Evaluation"
 description: "Build evaluation inputs by mapping real requests to meaningful variation and generating missing situations from reviewed tuples, then add fixtures and balance cases against product guarantees and risk."
-linkTitle: "Starting Evaluation Inputs"
+linkTitle: "Starting Inputs"
 ---
 
 This guide addresses building a representative set of **user inputs**. These inputs form one component of the evaluation dataset and define the portion of the query space that should cover the important ways users may interact with the application.

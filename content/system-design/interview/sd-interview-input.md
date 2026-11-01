@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Collected System Design Interview Comments"
 description: "Collected practitioner discussions about system design interviews, seniority expectations, technical depth, trade-offs, cost, delivery constraints, and candidate evaluation."
-linkTitle: "Collected System Design Interview Comments"
+linkTitle: "Collected Comments"
 ---
 
 Source excerpts and practitioner opinions, with their original discussion context. Use the [interview index]({{< ref "system-design/interview" >}}) for working practice notes.

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "General Purpose AI Assistant"
+title: "General-Purpose AI Assistant"
 description: "Users can refine goals through open-ended assistance and move into a supported workflow when they want to act; context can carry across the transition while operation permissions stay under application control."
-linkTitle: "General Purpose AI Assistant"
+linkTitle: "General-Purpose Assistant"
 ---
-# General-purpose AI assistant
-
 
 A general-purpose AI assistant supports a broad, open-ended range of user requests, including questions, explanations, reasoning, exploration, content creation, and problem-solving. Users can define, refine, and change their goals during interaction.
 

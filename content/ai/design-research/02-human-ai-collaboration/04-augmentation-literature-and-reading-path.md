@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "2.4 Augmentation Literature and Reading Path"
 description: "Maps augmentation research from Bush, Licklider, and Engelbart through mixed initiative and Co-STORM, tracing the boundaries exposed by collaboration, workflow, provenance, and runtime traditions."
-title: "04 Augmentation Literature And Reading Path"
-linkTitle: "04 Augmentation Literature And Reading Path"
+weight: "40"
+linkTitle: "2.4 Augmentation Literature"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

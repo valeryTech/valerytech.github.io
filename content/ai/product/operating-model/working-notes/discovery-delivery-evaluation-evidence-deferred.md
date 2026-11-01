@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Deferred Evidence About Evaluation"
 description: "Torres turns production traces into failure categories and human-labeled cases. LLM judges are checked against those labels, and regression measurements guide releases while emails still receive human review."
-title: "Discovery Delivery Evaluation Evidence Deferred"
-linkTitle: "Discovery Delivery Evaluation Evidence Deferred"
+linkTitle: "Deferred Evaluation Evidence"
 ---
-# Deferred evidence about evaluation
-
 
 > **Editorial note:** Evaluation is being handled separately, so this source passage has not been placed in the operating model. Teresa Torres is introduced in [`discovery-delivery-practitioner-evidence.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}). The passage comes from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Its wording has been edited for grammar and flow. The edit is intended to preserve the original claims. The citation is unchanged.
 

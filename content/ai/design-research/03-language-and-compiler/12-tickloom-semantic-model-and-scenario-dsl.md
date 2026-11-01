@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
-title: "12 Tickloom Semantic Model And Scenario DSL"
+title: "3.12 Tickloom Semantic Model and Scenario DSL"
 description: "A captured Tickloom case study shows how compute, network, storage, and clock abstractions ground generated quorum-store code and a constrained Java DSL for reproducible failure scenarios."
-linkTitle: "12 Tickloom Semantic Model And Scenario DSL"
+weight: "120"
+linkTitle: "3.12 Tickloom Model and DSL"
 ---
-# Tickloom semantic model and scenario DSL
-
 
 <!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 

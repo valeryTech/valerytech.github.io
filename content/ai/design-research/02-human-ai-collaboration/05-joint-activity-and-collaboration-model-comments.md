@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "2.5 Comments on Joint Activity and Collaboration Model"
 description: "Critiques a six-mechanic collaboration model, distinguishing common ground from stored context, contribution acceptance from effect authority, and recorded responsibility transfers from successful handoffs."
-title: "05 Joint Activity And Collaboration Model Comments"
-linkTitle: "05 Joint Activity And Collaboration Model Comments"
+weight: "51"
+linkTitle: "2.5 Comments"
 ---
-# Joint activity and collaboration model: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

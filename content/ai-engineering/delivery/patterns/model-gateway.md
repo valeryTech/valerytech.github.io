@@ -1,15 +1,12 @@
 ---
 draft: false
 toc: true
+title: "Model Gateway Overview"
 description: "Collected model-gateway designs progress from a general control-and-data-plane pattern to hybrid financial architectures, culminating in a single-organization proposal with data-class routing, action mediation, and audit controls."
-title: "Model Gateway"
 linkTitle: "Model Gateway"
 ---
 
 <a id="introducing"></a>
-
-# Model gateway overview
-
 
 A **model gateway** (for LLM-based workflows) is the **control plane + data plane layer** that sits between applications or agents and one or more model providers (internal models, OpenAI/Anthropic/GCP/Azure, fine-tunes, embeddings, rerankers, tool models). It standardizes how model calls are _invoked_, _secured_, _routed_, _observed_, and _governed_--similar in spirit to an API gateway / service mesh, but specialized for probabilistic inference and prompt-driven systems.
 

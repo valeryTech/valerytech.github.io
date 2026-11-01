@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Exploratory Design Inquiry"
 description: "Inquiry can begin before a problem is defined. Reflection, sensemaking, concept expansion, and co-evolution explain how research, prototypes, and comparisons reshape understanding and support selective commitment."
-title: "Discovery Rewritten"
-linkTitle: "Discovery Rewritten"
+linkTitle: "Exploratory Design Inquiry"
 ---
-# Exploratory design inquiry
-
 
 > Working research synthesis. This document reorganizes the current notes around the conceptual model that emerged from them. It separates the broad inquiry model from specific prototyping methods. Claims and references below come from the existing research notes and have not been re-verified in this rewrite.
 

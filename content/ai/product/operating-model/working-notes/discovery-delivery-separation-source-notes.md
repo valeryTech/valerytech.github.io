@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Source Notes from Discovery-Delivery Separation"
 description: "A sequence of business people building, agents coding, and engineers approving can reduce engineering to cleanup. These passages ask how ownership, evidence, controls, and prototype reuse should inform a production commitment."
-title: "Discovery Delivery Separation Source Notes"
-linkTitle: "Discovery Delivery Separation Source Notes"
+linkTitle: "Separation Source Notes"
 ---
-# Source notes from `discovery-deliery-separation.md`
-
 
 > **Editorial note:** This file keeps source material that does not belong in the current argument. The passages have been edited for grammar and flow. The edits are intended to preserve their meaning. The original wording is preserved in `7c21461:ai/product-model/in/discovery-deliery-separation.md`.
 

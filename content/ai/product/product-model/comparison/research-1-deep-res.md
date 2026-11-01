@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Torres and Cagan: A Comparative Analysis"
 description: "A broader comparative research report places Cagan’s organizational model alongside Torres’s team discovery habits, evaluates supporting evidence and critiques, and proposes a hybrid adoption path beyond the earlier AI-focused survey."
-title: "Research 1 Deep Res"
-linkTitle: "Research 1 Deep Res"
+linkTitle: "Comparative Analysis"
 ---
-# Teresa Torres and Marty Cagan (SVPG): A Comparative Analysis of Product Management Approaches
-
 ## Executive summary
 
 

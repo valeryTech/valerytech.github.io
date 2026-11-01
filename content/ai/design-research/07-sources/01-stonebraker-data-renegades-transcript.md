@@ -1,16 +1,15 @@
 ---
 draft: false
 toc: true
-title: "Data Renegades | Ep. #11, Contrarian Bets and AI Skepticism with Michael Stonebraker"
+title: "7.1 Michael Stonebraker on Data Renegades, Episode 11"
 description: "A captured Michael Stonebraker interview tracing Ingres and Postgres, extensible data types, commercialization, research incentives, and practical career advice, with technical runtime exchanges linked separately."
-linkTitle: "Data Renegades | Ep. #11, Contrarian Bets and AI Skepticism with Michael Stonebraker"
+weight: "10"
+linkTitle: "7.1 Stonebraker Interview"
 ---
+
 light mode
 
 <!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
-
-# Stonebraker interview source
-
 
 The source note retains the original episode metadata, database history, research and career discussion, and interview closing. The technical exchanges are now together in [Database-centered runtime]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#specialized-engines-and-dbos-from-the-stonebraker-interview). All passages remain attributed to the captured Data Renegades interview with CL Kao and Michael Stonebraker.
 

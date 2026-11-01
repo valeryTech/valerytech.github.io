@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Dialogue Approach: Sources and References"
 description: "An annotated source guide and bibliography for the task-assistance framing, explaining what practitioner platforms, mixed-initiative research, and dialogue frameworks contribute and where source access was limited."
-title: "02 Sources And References"
-linkTitle: "02 Sources And References"
+linkTitle: "Sources and References"
 ---
-# Sources and references
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

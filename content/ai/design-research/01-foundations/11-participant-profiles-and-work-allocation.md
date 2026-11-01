@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.11 Participant Profiles and Work Allocation"
 description: "Uses evolving human, LLM, and software capability profiles to derive augmentation, delegation, verification, grounding, mixed initiative, escalation, and autonomy proportional to reversibility."
-title: "11 Participant Profiles And Work Allocation"
-linkTitle: "11 Participant Profiles And Work Allocation"
+weight: "110"
+linkTitle: "1.11 Participant Profiles"
 ---
-# Participant profiles and work allocation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

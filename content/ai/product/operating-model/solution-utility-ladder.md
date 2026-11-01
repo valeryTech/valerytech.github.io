@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-description: "Valid output is only one claim about a solution. Build a ladder through job completion, improvement over alternatives, and the intended change, while recording coverage and production conditions separately."
 title: "Solution Utility Ladder"
+description: "Valid output is only one claim about a solution. Build a ladder through job completion, improvement over alternatives, and the intended change, while recording coverage and production conditions separately."
 linkTitle: "Solution Utility Ladder"
 ---
 

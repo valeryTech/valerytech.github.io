@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "04 DSL As Mediation Layer"
+title: "3.4 DSL as a Mediation Layer"
 description: "Proposes whole-program DSL mediation through a deterministic runner and registered adapters, treating sandboxing separately and assigning transactions, retries, and staged commitment to execution infrastructure."
-linkTitle: "04 DSL As Mediation Layer"
+weight: "40"
+linkTitle: "3.4 DSL as Mediation Layer"
 ---
 ## dsl as layer in some ladder
 

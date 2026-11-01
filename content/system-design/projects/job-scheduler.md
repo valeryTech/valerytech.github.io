@@ -5,8 +5,6 @@ title: "Job Scheduler: Requirements Draft"
 description: "An early job-scheduler requirements draft covering jobs, schedules, manual execution, status questions, security, availability, and unresolved workload assumptions, with a first design sketch."
 linkTitle: "Job Scheduler"
 ---
-# Job Scheduler
-
 
 Early requirements, open questions, and a first design sketch.
 

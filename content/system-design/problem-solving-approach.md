@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Problem-Solving Checklist"
+title: "System Design Problem-Solving Checklist"
 description: "A reusable checklist for framing a design problem, tracing behavior, comparing alternatives, checking failures, and evaluating the complete system."
 linkTitle: "Problem-Solving Checklist"
 ---

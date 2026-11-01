@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "RFC: AI Systems Framework — Overview and Adoption (v1)"
+title: "RFC: AI Systems Framework Overview and Adoption (v1)"
 description: "Teams can coordinate product-specific quality decisions through shared evidence artifacts. This adoption RFC connects runtime records and comparisons to release gates, incident response, ownership, and rollout criteria."
 linkTitle: "Overview and Adoption RFC"
 ---
-# RFC: AI Systems Framework -- Overview and Adoption (v1)
-
 
 **Status:** Draft
 

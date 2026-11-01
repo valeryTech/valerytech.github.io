@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Deriving Capabilities from Tasks"
 description: "Using the capability account to design a system: start from purpose and tasks, identify what makes the tasks hard, derive the capabilities, and test each link from task demand to mechanism."
-linkTitle: "Deriving Capabilities from Tasks"
+linkTitle: "Deriving from Tasks"
 ---
 
 The earlier notes treat capabilities as things to understand and measure. This note turns the account around for building a system. If a capability is a disposition that varies with task demands, then the tasks and their demands have to be described before the capability can be defined. Reasoning belongs in the capability layer; the system's purpose and task model come first.

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Perspective: Long-Running Delegated Work"
 description: "An initial agent-platform outlook is reworked into a computational-platform proposal centered on typed programs, durable authoritative state, contracts, provenance, and verification, with harnesses treated as replaceable execution policies."
-title: "Perspective Topics"
-linkTitle: "Perspective Topics"
+linkTitle: "Long-Running Work"
 ---
-## perspective
-
 
 Working forecast as of August 2026: put **long-running delegated work + the harness/runtime needed to support it** at the center of the 2026 -> 2027 shift.
 

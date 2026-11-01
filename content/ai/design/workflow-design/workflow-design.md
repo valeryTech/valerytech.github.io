@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Designing AI Workflows"
 description: "Inspectable retrieval, context, and review decisions let people shape a workflow before automating it. Traces and explicit action limits support a path from recommendations to approved or bounded execution."
-title: "Workflow Design"
-linkTitle: "Workflow Design"
+linkTitle: "Designing Workflows"
 ---
-## Designing workflows
-
 
 An interaction-point design approach exposes uncertain workflow decisions as inspectable artifacts before automating them. These decisions include retrieval candidates, context assembly, validation, review judgments, and failure labels. This supports comparison of variants, captures domain feedback as traces, and turns stable patterns into evaluation criteria, operational controls, or automated policies.
 

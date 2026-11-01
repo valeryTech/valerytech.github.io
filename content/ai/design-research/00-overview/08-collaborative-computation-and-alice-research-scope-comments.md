@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.8 Comments on Alice Research Scope"
 description: "Clarifies that coordinating existing participants and explaining emergent cognition require separate experiments; proposed artificial-universe conditions do not establish agency or constrain the collaboration runtime."
-title: "08 Collaborative Computation And Alice Research Scope Comments"
-linkTitle: "08 Collaborative Computation And Alice Research Scope Comments"
+weight: "81"
+linkTitle: "0.8 Comments"
 ---
-# Collaborative computation and Alice research scope: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [scope note]({{< ref "ai/design-research/00-overview/08-collaborative-computation-and-alice-research-scope" >}}) preserves the complete final reply. The comments explain its placement and limits, rather than adopting the reply's theory.
 

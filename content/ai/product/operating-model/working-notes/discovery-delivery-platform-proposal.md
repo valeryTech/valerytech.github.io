@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "A Platform Proposal for Discovery and Delivery"
 description: "AI prototyping platforms need easy experimentation and explicit decisions about production use. The proposal examines sandbox access, engineering controls, and the danger of treating a working prototype as a supported system."
-title: "Discovery Delivery Platform Proposal"
-linkTitle: "Discovery Delivery Platform Proposal"
+linkTitle: "Platform Proposal"
 ---
-# A platform proposal for discovery and delivery
-
 
 > **Editorial note:** The file title, the heading marked as editorial, and all comments are editorial. The passages with source-unit markers come from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Their wording has been edited for grammar and flow. This is a platform proposal, not the current definition of discovery and delivery.
 

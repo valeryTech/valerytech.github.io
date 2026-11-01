@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Exploratory Pipeline Design and Progressive Automation"
 description: "Successive design proposals use inspectable pipeline artifacts, targeted interventions, traces, and controlled comparisons to discover uncertain algorithmic decisions before formalizing reusable policies, extending the initial RAG example."
-title: "10 Exploratory Pipeline Design And Progressive Automation"
-linkTitle: "10 Exploratory Pipeline Design And Progressive Automation"
+linkTitle: "Exploratory Pipelines"
 ---
-# Exploratory pipeline design and progressive automation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

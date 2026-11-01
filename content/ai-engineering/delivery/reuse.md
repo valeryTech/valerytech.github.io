@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Platform Components and Reuse"
 description: "Reusable AI infrastructure separates common access, retrieval, tool, and evaluation capabilities from application workflows, with a build plan that establishes attribution, versioning, and policy before agent orchestration."
-title: "Reuse"
 linkTitle: "Reuse"
 ---
 

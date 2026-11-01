@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Intent-Driven Architecture"
 description: "Frame architecture through user needs and jobs to be done, using domain language, DSLs, DDD practices, use cases, and decision records to preserve intent."
-linkTitle: "Intent-Driven Architecture"
+linkTitle: "Intent-Driven"
 ---
 
 User needs, Jobs-to-be-Done (JTBD), and other product concerns can provide the starting point for reasoning about a software system. Structural diagrams, including C4 views, show how a system is organized. They can leave the forces, factors, and context behind that design unexplained. They do not by themselves explain why a component exists. An interaction such as "the user sends an email and the system responds" still needs to explain which problem the interaction solves.

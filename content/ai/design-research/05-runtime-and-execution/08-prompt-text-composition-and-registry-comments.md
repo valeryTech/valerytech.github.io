@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.8 Comments on Prompt Text, Composition, and Registry"
 description: "Traces corrections from a broad registry to expert-editable text, then identifies unresolved reference-rendering, source-map, version-retention, publication, and production-authority rules."
-title: "08 Prompt Text Composition And Registry Comments"
-linkTitle: "08 Prompt Text Composition And Registry Comments"
+weight: "81"
+linkTitle: "5.8 Comments"
 ---
-# Comments on prompt text, composition, and registry
-
 
 New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry" >}}) preserves the original exchanges without rewriting them. The comments explain the changes in scope and identify questions for a later design.
 

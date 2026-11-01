@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Analytical Engines and Programmable Environments"
 description: "A calculation engine can run established pipelines while people or agents construct new SQL, DSL, or code analyses, making procedure construction, controlled execution, and result validation separate design concerns."
-title: "Analytical Engines And Programmable Environments"
-linkTitle: "Analytical Engines And Programmable Environments"
+linkTitle: "Analytical Engines"
 ---
 
 Initial scope: analytical engines with complex rules, forecasting, and multiple pipelines can support applications built on top of them. Programmable environments using SQL or DSLs may also let agents produce insights.

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Shared Investigation State and Views"
 description: "An initial proposal makes matrices, graphs, and reports projections of common investigation objects, with people and agents coordinating through a shared blackboard and an inspectable contribution history."
-title: "01 Shared Investigation State And Views"
-linkTitle: "01 Shared Investigation State And Views"
+linkTitle: "Shared State and Views"
 ---
-# Shared investigation state and views
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

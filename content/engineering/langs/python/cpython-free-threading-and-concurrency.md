@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "CPython free threading and concurrency"
+title: "CPython Free Threading and Concurrency"
 description: "Explain CPython free threading, the GIL, synchronization of shared data, and the differences between threads, processes, isolated interpreters, and asynchronous tasks."
-linkTitle: "CPython concurrency"
+linkTitle: "CPython Concurrency"
 ---
 
 Free threading changes where Python code can execute in parallel. Locks, executors, asynchronous tasks, and experimental concurrency models address different concerns above that runtime capability.

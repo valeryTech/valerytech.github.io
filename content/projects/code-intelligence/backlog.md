@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Backlog"
+title: "Code Intelligence Backlog"
 description: "Planned work for the code-intelligence project that is not scheduled yet, each item written as a plan with its question, prerequisites, steps and a done condition."
 linkTitle: "Backlog"
 ---

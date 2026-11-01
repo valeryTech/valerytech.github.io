@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Premature Abstraction in Software Design"
 description: "Recognize speculative generalization, model concrete workflows first, and use design probes before committing to shared abstractions."
-title: "Premature Abstraction"
 linkTitle: "Premature Abstraction"
 ---
 

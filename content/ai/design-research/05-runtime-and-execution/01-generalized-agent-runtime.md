@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "5.1 Generalized Agent Runtime"
 description: "Proposes durable typed execution around probabilistic operations, combining recorded outcomes, localized failures, controlled adaptation, and guarded program reuse with fallback when applicability assumptions fail."
-title: "01 Generalized Agent Runtime"
-linkTitle: "01 Generalized Agent Runtime"
+weight: "10"
+linkTitle: "5.1 Generalized Agent Runtime"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

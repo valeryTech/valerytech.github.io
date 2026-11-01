@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Instrumentation v1.2 — Production Discipline for LLM / Agentic Systems"
+title: "Instrumentation v1.2: Production Discipline for LLM Systems"
 description: "A compact record for every episode captures identity, routing, termination, budgets, and failures. Detailed traces are sampled by importance, with field and retention rules for diagnosis under logging limits."
 linkTitle: "Instrumentation v1.2"
 ---
-# Instrumentation v1.2 -- Production Discipline for LLM / Agentic Systems
-
 
 **AI Systems Framework**
 

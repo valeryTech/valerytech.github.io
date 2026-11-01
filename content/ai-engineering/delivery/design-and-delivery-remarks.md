@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Design and Delivery Framework: Principles and Remarks"
 description: "Companion principles for the delivery framework: work backwards, retain feedback between phases, establish deterministic tool contracts, and place domain invariants deliberately."
-linkTitle: "Framework Principles and Remarks"
+linkTitle: "Principles and Remarks"
 ---
 
 - Many existing AI-engineering approaches, including evaluation-centered approaches such as Hamel's, concentrate primarily on evals. This framework is intended to provide a broader end-to-end system view: product framing, system design, implementation, evaluation, release, and operation, grounded in a concrete project and codebase.

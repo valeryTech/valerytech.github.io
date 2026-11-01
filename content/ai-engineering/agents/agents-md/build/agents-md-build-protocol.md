@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Building AGENTS.md with minimalism, modularity, and evidence-based iteration"
+title: "Building AGENTS.md with Minimalism and Evidence"
 description: "An incremental protocol for adding and removing AGENTS.md modules using observed failures, explicit admission criteria, practical measurements, and a minimal core."
-linkTitle: "AGENTS.md Build Protocol"
+linkTitle: "Build Protocol"
 ---
-# Building `AGENTS.md` with minimalism, modularity, and evidence-based iteration
-
 
 This document specifies a **protocol** for creating and evolving `AGENTS.md` in an agent-first repository. The emphasis is on:
 

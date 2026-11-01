@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Implicit Knowledge"
+title: "Implicit Knowledge in Software Repositories"
 description: "The four kinds of context that static analysis misses, repository-mining signals, and cheap precomputed indices that bring them into retrieval."
 linkTitle: "Implicit Knowledge"
 ---

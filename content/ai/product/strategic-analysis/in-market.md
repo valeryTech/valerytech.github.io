@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Market Notes: AI and Software Firms"
 description: "Exploratory economic scenarios model workload migration among frontier APIs, cheaper providers, hosted open weights, and local inference, separating task quality and failure cost from provider-financing and price forecasts."
-title: "In Market"
-linkTitle: "In Market"
+linkTitle: "Market Notes"
 ---
 
 <!-- Original excerpt boundary: +++ -->

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Consistency"
+title: "Consistency Requirements in System Design"
 description: "The requirement side of consistency: design questions about visibility after writes, staleness, invariants, and partitions, a per-operation checklist, and pointers to the models, CAP, and PACELC in the distributed-systems notes."
 linkTitle: "Consistency"
 ---

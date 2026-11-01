@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "System One, Decision Models, and Jev: First Principles"
 description: "A first-principles comparison of probabilistic decision models and dual-process cognition, examining Jev, bounded inference, uncertainty, and testable engineering claims."
-title: "System One Decision Models First Principles With References"
-linkTitle: "System One Decision Models First Principles With References"
+linkTitle: "First-Principles Analysis"
 ---
-# System One, decision models, and Jev: a first-principles analysis
-
 ## Executive summary
 
 

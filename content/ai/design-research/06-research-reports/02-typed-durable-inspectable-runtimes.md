@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.2 Typed, Durable, Inspectable Runtimes for Investigation"
 description: "A saved investigation-runtime survey proposing certificate-carrying epistemic contracts for coverage, provenance, authority, conflicts, and abstention, while distinguishing enforceable execution obligations from uncertain semantic evidence recall."
-title: "02 Typed Durable Inspectable Runtimes"
-linkTitle: "02 Typed Durable Inspectable Runtimes"
+weight: "20"
+linkTitle: "6.2 Typed Durable Runtimes"
 ---
-# Typed, Durable, Inspectable Runtimes for LLM-Based Investigation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

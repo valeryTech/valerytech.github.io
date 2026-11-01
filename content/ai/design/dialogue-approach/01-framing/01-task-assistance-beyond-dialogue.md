@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Task Assistance Beyond Dialogue"
 description: "Argues that user tasks, domain state, and authorized action should organize AI assistance, with dialogue and visual controls serving as ways to coordinate that work."
-title: "01 Task Assistance Beyond Dialogue"
-linkTitle: "01 Task Assistance Beyond Dialogue"
+linkTitle: "Beyond Dialogue"
 ---
-# Task assistance beyond dialogue
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

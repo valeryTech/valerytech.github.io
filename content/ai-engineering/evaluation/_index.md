@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Evaluation"
+title: "Evaluating AI Products"
 aliases:
   - "/contributions/from-uncertainty-to-commitment/"
 description: "AI evaluation notes on choosing cases, recording evidence, making judgments, investigating failures, and using findings to change a product or its implementation."

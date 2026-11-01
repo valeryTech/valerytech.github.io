@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Scalability reading notes"
+title: "Scalability Reading Notes"
 description: "Archived scalability definitions and reading excerpts covering scaling strategies, partitioning, queues, caching, CQRS, stateless services, autoscaling, and performance trade-offs."
 document_status: "archived"
-linkTitle: "Scalability reading notes"
+linkTitle: "Scalability Reading Notes"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/nfr/scalability" >}}). Numerical targets and technical claims below retain their original draft context.

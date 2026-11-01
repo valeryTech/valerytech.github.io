@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Strategic Analysis"
+title: "Strategic Analysis of AI Products"
 linkTitle: "Strategic Analysis"
 ---

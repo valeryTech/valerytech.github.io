@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.7 Investigation Evaluation and Benchmarks"
 description: "A proposed investigation benchmark with frozen corpora, critical evidence, source precedence, conflicts, and abstention, plus controlled comparisons testing whether typed evidence contracts reduce omissions beyond extra computation."
-title: "07 Investigation Evaluation And Benchmarks"
-linkTitle: "07 Investigation Evaluation And Benchmarks"
+weight: "70"
+linkTitle: "6.7 Investigation Evaluation"
 ---
-# Investigation evaluation and benchmarks
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

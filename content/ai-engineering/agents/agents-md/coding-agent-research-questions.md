@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Research agenda: AGENTS.md and reliable coding-agent autonomy"
+title: "Research Agenda: AGENTS.md and Coding-Agent Autonomy"
 description: "Study when repository instructions earn their recurring cost: eight questions connect loading, placement, length, failure remedies, maintenance, and escalation to accepted changes and total human effort."
-linkTitle: "Coding-Agent Research Agenda"
+linkTitle: "Research Agenda"
 ---
-# Research agenda: `AGENTS.md` and reliable coding-agent autonomy
-
 
 **Document type:** Research questions
 

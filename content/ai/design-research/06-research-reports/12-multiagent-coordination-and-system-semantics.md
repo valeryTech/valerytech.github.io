@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.12 Multiagent Coordination and System Semantics"
 description: "A dialogue interpreting Anthropic multiagent failures as motivation for shared coordination semantics, then critiquing agency and understanding claims through system configuration, prior institutions research, and construct validity."
-title: "12 Multiagent Coordination And System Semantics"
-linkTitle: "12 Multiagent Coordination And System Semantics"
+weight: "120"
+linkTitle: "6.12 Multiagent Coordination"
 ---
-# Multiagent coordination and system semantics
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

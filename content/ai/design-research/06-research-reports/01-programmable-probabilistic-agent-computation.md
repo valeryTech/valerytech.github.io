@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.1 Programmable Probabilistic Agent Computation"
 description: "A saved research survey comparing formal agent contracts, deterministic kernels, query planning, and durable workflows, proposing compositional semantics for neural effects, authority, provenance, recovery, and live program adaptation."
-title: "01 Programmable Probabilistic Agent Computation"
-linkTitle: "01 Programmable Probabilistic Agent Computation"
+weight: "10"
+linkTitle: "6.1 Probabilistic Computation"
 ---
-# Programmable Probabilistic Agent Computation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

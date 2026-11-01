@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.9 Verification and Acceptance"
 description: "Separates compiler admissibility, execution verification, acceptance of an exact artifact for a purpose, and authorization of external effects, with distinct diagnostics and counterexamples for repair."
-title: "09 Verification And Acceptance"
-linkTitle: "09 Verification And Acceptance"
+weight: "90"
+linkTitle: "1.9 Verification and Acceptance"
 ---
-# Verification and acceptance
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

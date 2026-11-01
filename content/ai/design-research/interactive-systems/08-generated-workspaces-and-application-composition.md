@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Generated Workspaces and Application Composition"
 description: "A speculative argument proposes language-driven capability composition and temporary review interfaces, lowering the economic threshold for one-off software while retaining domain operations, semantics, and business constraints."
-title: "08 Generated Workspaces And Application Composition"
-linkTitle: "08 Generated Workspaces And Application Composition"
+linkTitle: "Generated Workspaces"
 ---
-# Generated workspaces and application composition
-
 
 The retained passage proposes consequences of interpreting language requests through existing operations. It discusses interface design costs, temporary tools and review interfaces, and composition across applications. The economic and architectural claims remain hypotheses rather than measured results or accepted product requirements.
 

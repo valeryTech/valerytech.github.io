@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "URL Shortener: Requirements and Product Context"
 description: "URL-shortener requirements and product perspectives connecting core value, enabling features, optional enhancements, user stories, redirect flows, and business context."
-linkTitle: "URL Shortener: Requirements and Product Context"
+linkTitle: "Requirements and Context"
 ---
 
 Additional requirements and product-framing perspectives. The [case index]({{< ref "system-design/projects/url-shortener" >}}) connects these proposals to the working design and NFR explorations.

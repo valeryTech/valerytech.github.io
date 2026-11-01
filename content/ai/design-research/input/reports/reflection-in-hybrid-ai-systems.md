@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Reflection In Hybrid AI Systems"
+title: "Reflection in Hybrid AI Systems"
 description: "A research report on reflection in systems combining people, LLMs, data, and classical models, covering system representations, monitoring, and architectural approaches."
-linkTitle: "Reflection In Hybrid AI Systems"
+linkTitle: "Reflection in Hybrid Systems"
 ---
-# Reflection in Hybrid AI Systems Combining LLMs, Data, and Classical Models
-
 
 > Export note: Source links were recovered from the original report's citation panels. Citation groups retain every source for which a URL could be identified; additional source IDs without an exposed URL are marked unresolved. The exact original groups are preserved in the [citation metadata](/ai/design-research/input/reports/reflection-in-hybrid-ai-systems.assets/reflection-in-hybrid-ai-systems-citations.json).
 

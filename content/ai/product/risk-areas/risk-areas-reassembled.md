@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "SVPG Risk Dimensions and Continuous Discovery, Reassembled"
 description: "Risk dimensions cover ways a solution can fail; opportunity trees organize the choices around it. This synthesis explains how concrete assumptions, explicit Ethics, and evidence connect the two while keeping their roles distinct."
-title: "Risk Areas Reassembled"
-linkTitle: "Risk Areas Reassembled"
+linkTitle: "Reassembled Report"
 ---
-# SVPG's Solution Risk Dimensions and Teresa Torres's Continuous Discovery Model
-
 
 > **Status:** Research synthesis and supporting material. The canonical guidance is [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}). This document preserves source comparisons, alternative terms, citations, and the reasoning from which the shorter model was developed.
 

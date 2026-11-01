@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Repository Expert: Deployment"
 description: "Distribution patterns for the repository expert, from a stateless local CLI to a shared retrieval service, with the scaling stages and the interfaces to fix early."
-linkTitle: "Repository Expert: Deployment"
+linkTitle: "Deployment"
 ---
 
 How the repository expert is distributed follows from three choices:

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Testing Notes"
+title: "Earlier Test Strategy Notes"
 description: "Earlier test-strategy notes connecting risk, change cost, testability, system contracts, evidence, and the practical test pyramid, including preparation checklists."
 linkTitle: "Testing Notes"
 ---

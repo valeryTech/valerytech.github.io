@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "How LLMs Change the Modelling and Management of User-System Interactions and Workflows"
+title: "How LLMs Change User-System Interactions and Workflows"
 description: "Examines how LLMs move interaction structure into downstream workflows, tool contracts, permissions, memory, and evaluation, comparing four architectures and their operational risks."
-linkTitle: "LLMs and User-System Workflows"
+linkTitle: "LLMs and Workflows"
 ---
 ## Executive summary
 

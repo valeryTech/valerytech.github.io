@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Project Understanding and Ownership"
 description: "Accepting changes before closing understanding gaps compounds comprehension debt. Human ownership keeps the project model, design judgment, and accountability connected as agents accelerate implementation."
-linkTitle: "Project Understanding and Ownership"
+linkTitle: "Project Ownership"
 ---
-# Project understanding
-
 
 Project understanding and manageability remain essential when working with LLM-based coding agents.
 

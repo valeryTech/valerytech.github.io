@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Four-Step System Design Outline"
 description: "A four-step interview outline covering scope, high-level design, deep dives, and wrap-up, with expected artifacts and agreement checkpoints."
-linkTitle: "Four-Step System Design Outline"
+linkTitle: "Four-Step Outline"
 ---
 
 Alternative interview outline. Its four stages and artifact checkpoints are retained; see the [framework comparison]({{< ref "system-design/interview/frameworks" >}}) for the other approaches.

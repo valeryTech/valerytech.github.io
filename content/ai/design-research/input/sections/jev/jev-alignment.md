@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Jev Research Alignment with Kahneman's System 1"
 description: "An assessment of how Jev research uses Kahneman's System 1 concept, distinguishing bounded fast decisions from automatic cognition, language, and world models."
-title: "Jev Alignment"
-linkTitle: "Jev Alignment"
+linkTitle: "Kahneman Alignment"
 ---
 ## Alignment assessment: JEV research vs. Kahneman's actual talk
 

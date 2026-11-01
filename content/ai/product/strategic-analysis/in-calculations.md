@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Frontier-Model Economics and Architecture"
 description: "A working architecture-decision model moves from support-agent economics to workload-conditioned evaluation, comparing structures, components, and adaptive routing policies through constrained multi-objective search and Pareto trade-offs."
-title: "In Calculations"
-linkTitle: "In Calculations"
+linkTitle: "Model Economics"
 ---
 
 <a id="question-about-frontier-models"></a>

@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "1.3 Behavioral Types and Protocols"
 description: "Compares session-type choreography with information protocols and social commitments, proposing hybrid work-unit contracts checked at interaction boundaries for opaque human and LLM participants."
-title: "03 Behavioral Types And Protocols"
-linkTitle: "03 Behavioral Types And Protocols"
+weight: "30"
+linkTitle: "1.3 Behavioral Types and Protocols"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

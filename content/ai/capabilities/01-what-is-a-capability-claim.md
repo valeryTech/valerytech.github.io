@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "What a Capability Claim Says"
 description: "The starting problem: words like reasoning, planning, and agentic capability are used to describe LLMs without saying what kind of property they name or what evidence would support the claim."
-linkTitle: "What a Capability Claim Says"
+linkTitle: "Capability Claims"
 ---
 
 We say that a model "can reason", "has strong planning", or "has better agentic capabilities". These sentences sound like reports of a measurement. Usually it is not clear what they claim.

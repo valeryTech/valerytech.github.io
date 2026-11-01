@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Design Science: Artefact Evaluation"
 description: "A design-science source chapter on selecting artifact evaluation goals, contexts, strategies, and methods, distinguishing artificial efficacy tests from naturalistic effectiveness studies."
-linkTitle: "Design Science: Artefact Evaluation"
+linkTitle: "Artefact Evaluation"
 ---
-# Evaluate Artefact
-
 
 Source: [Johannesson and Perjons 2021](/sources/research-methods/design-science/johannesson-2021-introduction-to-design-science.pdf.enc), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)).
 

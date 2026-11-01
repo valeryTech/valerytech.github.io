@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "02 LLM-Operated Investigation Runtime"
+title: "4.2 LLM-Operated Investigation Runtime"
 description: "Proposes LLM-authored investigations over a small typed algebra, separating logical evidence operations from physical retrieval and reusing existing durable runtimes while testing contract semantics."
-linkTitle: "02 LLM-Operated Investigation Runtime"
+weight: "20"
+linkTitle: "4.2 Investigation Runtime"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

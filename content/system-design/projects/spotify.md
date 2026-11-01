@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Spotify"
+title: "Spotify System Design"
 description: "A queued Spotify design prompt, with links to related transcript fragments and the template for recording an independent design."
 linkTitle: "Spotify"
 ---

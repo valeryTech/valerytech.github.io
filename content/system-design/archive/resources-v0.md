@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Original system-design resource catalog"
+title: "Original System Design Resource Catalog"
 description: "The original catalog of system design courses, guides, communities, technical talks, engineering blogs, and papers, including unreviewed source comments."
 document_status: "archived"
-linkTitle: "Original system-design resource catalog"
+linkTitle: "Resource Catalog"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. [Return to the working note]({{< ref "system-design/resources" >}}). Technical claims and numerical assumptions retain their original draft context.

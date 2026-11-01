@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Ambiguity in AI Systems"
 description: "Defines ambiguity as the gap between specified and plausible system behavior, distinguishing its sources and matching clarification, constraints, and controls to task risk."
-linkTitle: "Ambiguity in AI Systems"
+linkTitle: "Ambiguity"
 ---
 ## Purpose
 

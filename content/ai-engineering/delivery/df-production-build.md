@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Production Build, Evaluation, and Release"
 description: "Specifies production build objectives, hardening activities, experiment questions, outputs, and readiness evidence, including conditions that require returning to implementation."
-linkTitle: "Production Build, Evaluation, and Release"
+linkTitle: "Production Build"
 ---
-## 5. Production Build (and Experimentation)
-
 ### Objective
 
 
@@ -89,7 +87,7 @@ Determine whether the product addresses the intended problem, conforms to its re
 
 Evaluation supports a release decision rather than producing a single quality score. It assembles evidence across product effectiveness, behavioural performance, system properties, safety, security, operations, and organizational readiness. It must distinguish a system that satisfies its specification from a product that improves the intended practice.
 
-See [Design Science Evaluation]({{< ref "ai-engineering/delivery/design-science-evaluation" >}}) for detailed evaluation guidance.
+See [Design science: artefact evaluation]({{< ref "ai-engineering/delivery/design-science-evaluation" >}}) for detailed evaluation guidance.
 
 ## Library sources
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Security in AI System Design"
 description: "Security in AI design asks which access, information, and authority boundaries survive hostile inputs, separating behavioral detection, architectural enforcement, and evidence checks by the properties each can support."
-title: "Security Aspect"
-linkTitle: "Security Aspect"
+linkTitle: "Security"
 ---
-# Security in AI system design
-
 
 Security should have **an explicit place in the design framework**, with its own threat models, controls, and evaluation.
 

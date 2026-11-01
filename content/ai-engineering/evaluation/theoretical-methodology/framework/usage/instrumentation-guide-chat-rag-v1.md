@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Instrumentation Guide for Chat + RAG (v1)"
+title: "Instrumentation Guide for Chat and RAG (v1)"
 description: "Diagnosing a RAG answer requires knowing what was retrieved, what entered the prompt, and what the answer cited. Stage records connect that evidence to versions, missingness, sampling, and conformance checks."
-linkTitle: "Chat + RAG Instrumentation"
+linkTitle: "Chat and RAG Instrumentation"
 ---
 
 **Status:** Draft

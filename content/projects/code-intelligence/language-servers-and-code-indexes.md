@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Language Servers and Code Indexes"
 description: "Where code structure comes from in practice, from tree-sitter and live language servers to precomputed indexes (LSIF, SCIP, stack graphs, Kythe, Glean) and analysis databases (CodeQL, Joern), with costs, limits and use as agent tools."
-linkTitle: "Language Servers and Code Indexes"
+linkTitle: "Language Servers and Indexes"
 ---
 
 The other design notes assume that symbols, references, types and call relations are available. This note is about where they actually come from, what each source can and cannot answer, and what it costs to run. It is the practical side of [code representation]({{< ref "projects/code-intelligence/code-representation" >}}), and it decides how the ablation ladder in the [thesis and evaluation plan]({{< ref "projects/code-intelligence/thesis-and-evaluation" >}}) gets built (conditions B1 to B3, and the structural tools in A1).

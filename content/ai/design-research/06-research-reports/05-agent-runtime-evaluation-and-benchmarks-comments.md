@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.5 Comments on the Agent-Runtime Evaluation Plans"
 description: "A critique separating investigation quality, runtime enforcement, and program correctness, with requirements for matched comparisons, reproducible histories, and independent expected outcomes."
-title: "05 Agent Runtime Evaluation And Benchmarks Comments"
-linkTitle: "05 Agent Runtime Evaluation And Benchmarks Comments"
+weight: "51"
+linkTitle: "6.5 Comments"
 ---
-# Comments on the evaluation plans
-
 
 These comments were added by Codex on 2026-03-30 at the user's request. They concern the three related evaluation notes. They are new commentary, not part of the original dialogues, observed results, or an agreed experiment specification.
 

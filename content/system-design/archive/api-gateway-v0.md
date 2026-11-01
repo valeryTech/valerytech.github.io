@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Original API-gateway notes"
+title: "Original API Gateway Notes"
 description: "Archived API gateway notes on request routing, shared middleware, adoption trade-offs, implementation options, and supporting sources."
 document_status: "archived"
-linkTitle: "Original API-gateway notes"
+linkTitle: "API Gateway Notes"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. [Return to the working note]({{< ref "system-design/elements/api-gateway" >}}). Technical claims and numerical assumptions retain their original draft context.

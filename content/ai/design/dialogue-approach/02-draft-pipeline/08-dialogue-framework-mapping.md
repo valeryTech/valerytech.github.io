@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Mapping the Draft Model to Dialogue Frameworks"
 description: "Maps Quick Add’s draft manager, slots, repair, validation, confirmation, and fulfillment to frame-based dialogue, Rasa, and Lex, highlighting added provenance and execution boundaries."
-title: "08 Dialogue Framework Mapping"
-linkTitle: "08 Dialogue Framework Mapping"
+linkTitle: "Dialogue Framework Mapping"
 ---
-# Mapping the draft model to dialogue frameworks
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

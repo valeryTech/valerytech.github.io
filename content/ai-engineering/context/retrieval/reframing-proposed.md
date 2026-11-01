@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Context-to-Task Alignment and Evidence Workflows"
 description: "An evidence workflow separates source identity, acquisition routes, collection, and support judgments, retaining gaps and exact operation inputs so an inquiry can evolve or finish with discovery."
-linkTitle: "Context-to-Task Alignment and Evidence Workflows"
+linkTitle: "Evidence Workflows"
 ---
 
 This proposal develops an evidence workflow for knowledge-intensive tasks: finding, inspecting, collecting, comparing, and using source material. It specializes the [domain model]({{< ref "ai-engineering/context/retrieval/model" >}}), while the [main framing]({{< ref "ai-engineering/context/retrieval/reframing" >}}) remains a separate draft. The [editorial review]({{< ref "ai-engineering/context/retrieval/reframing-session-review" >}}) records the reasons for these distinctions.

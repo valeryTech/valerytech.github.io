@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Discipline in AI: annotated reading map"
+title: "Discipline in AI: Annotated Reading Map"
 description: "An annotated map of notes on AI engineering as an emerging practice, scientific mindset, disciplined experimentation, evaluation, and organizational support."
-linkTitle: "Discipline in AI: annotated reading map"
+linkTitle: "Discipline Reading Map"
 ---
 
 Checked against local file contents on 20 October 2026. Links point to the relevant passages as they stood on that date. Descriptions summarize the sources; comments are my assessment of their usefulness, overlap, and draft quality.

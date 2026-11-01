@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Exploratory Pipelines and Progressive Automation"
 description: "A critique distinguishes useful runtime review from design learning, preserves automatic baselines as testable choices, and requires interpretation and evaluation before repeated interventions become reusable policies."
-title: "10 Exploratory Pipeline Design And Progressive Automation Comments"
-linkTitle: "10 Exploratory Pipeline Design And Progressive Automation Comments"
+linkTitle: "Exploratory Pipelines Comments"
 ---
-# Comments on exploratory pipeline design and progressive automation
-
 
 The comments are new analysis of the [retained method formulations]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}). They are separate from the source text and do not establish an accepted engineering method or implementation plan.
 

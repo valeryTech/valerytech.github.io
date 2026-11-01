@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Coding-Agent Reflection Notes"
 description: "Use focused experiments before committing to a design; counter agent overengineering with conventional architecture, canonical documents, and workstream notes that survive session changes."
-linkTitle: "Coding-Agent Reflection Notes"
+linkTitle: "Reflection Notes"
 ---
 # Goals
 
@@ -73,7 +73,7 @@ Humans know which files are sensitive. Agents do not.
 
 Agents often follow local code style. Usually good, but dangerous if old code is deprecated.
 
-others in [Agents Md]({{< ref "ai-engineering/agents/agents-md/agents-md" >}}#assumptions)
+others in [AGENTS.md: Assumptions]({{< ref "ai-engineering/agents/agents-md/agents-md" >}}#assumptions)
 
 # Workflow and ...
 
@@ -111,7 +111,7 @@ Python scaffold: uv. #todo Add the remaining tools and the intended reference li
 # Context Management
 
 
-[Agents Md]({{< ref "ai-engineering/agents/agents-md/agents-md" >}})
+[AGENTS.md guide]({{< ref "ai-engineering/agents/agents-md/agents-md" >}})
 
 # Documentation
 

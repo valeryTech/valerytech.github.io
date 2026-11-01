@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Feature Teams and Empowered Teams"
 description: "Feature teams and empowered teams allocate solution choices and outcome responsibility differently. Their inputs, feedback loops, and response to a failed first release reveal the consequences."
-title: "Feature Team And Empowered Team"
-linkTitle: "Feature Team And Empowered Team"
+linkTitle: "Feature vs. Empowered Teams"
 ---
 
 > **Editorial note:** This is a comparison from the source note. Its claim that the team is accountable for the customer or business result is not settled in the current operating model.

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Capabilities"
+title: "AI Capabilities"
 description: "What it means to say an LLM has a capability such as reasoning or understanding, treated as a disposition, and what empirical evidence would support that claim."
 linkTitle: "Capabilities"
 ---

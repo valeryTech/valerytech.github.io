@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Comparison"
-linkTitle: "Comparison"
+title: "Torres and Cagan Comparison"
+linkTitle: "Torres and Cagan"
 ---

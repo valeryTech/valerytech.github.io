@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "4.5 Comments on Multi-Representation Retrieval"
 description: "Critiques editable query interpretations and retrieval projections, distinguishing generated representations from evidence judgments, confirmed intent from permission, and screening records from completeness guarantees."
-title: "05 Multirepresentation Retrieval And Projections Comments"
-linkTitle: "05 Multirepresentation Retrieval And Projections Comments"
+weight: "51"
+linkTitle: "4.5 Comments"
 ---
-# Multi-representation retrieval and projections: comments
-
 
 New commentary by Codex, added on 2026-04-01. The comments primarily concern the newly imported [interactive RAG and query-understanding examples]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#interactive-rag-and-query-understanding). The initial question and reply remain unchanged above that section. The comments are interpretation, not original dialogue or verified results.
 

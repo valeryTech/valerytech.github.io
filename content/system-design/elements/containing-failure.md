@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Containing Failure"
+title: "Containing Failure in Distributed Systems"
 description: "Design question hub on stopping a slow or failing dependency from spreading: timeouts, retries with backoff, circuit breakers, bulkheads, load shedding, back pressure, degraded operation, and testing these controls with fault injection."
 linkTitle: "Containing Failure"
 ---

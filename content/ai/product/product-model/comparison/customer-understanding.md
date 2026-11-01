@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Customer Understanding: Torres and Cagan"
 description: "A source-linked comparison contrasts Torres’s story-interview, snapshot, and opportunity pipeline with SVPG’s broader customer, behavioral, market, and solution evidence, emphasizing context and switching behavior."
-title: "Customer Understanding"
 linkTitle: "Customer Understanding"
 ---
 

@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Repository Expert: Roadmap"
 description: "The read-only repository expert as a staged build, from a manual-context CLI to an indexed, code-aware and continuously updated system, with the artifacts each stage produces."
-linkTitle: "Repository Expert: Roadmap"
+linkTitle: "Roadmap"
 ---
 
 The repository expert is the narrow, buildable entry point into [Code Intelligence]({{< ref "projects/code-intelligence" >}}): a tool that answers questions about one codebase. Instead of grepping for hours to understand how `UserAuth` interacts with `BillingService`, you ask it.

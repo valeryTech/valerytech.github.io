@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Lean Startup, Cagan, and Torres: A Comparative Synthesis"
 description: "A comparative research synthesis connects Lean Startup’s business-learning loop, Cagan’s risk-based commitment, and Torres’s assumption-testing structure, separating shared principles from evidence gaps, contextual limits, and proposed extensions."
-title: "Lean Startup Cagan Torres Report"
-linkTitle: "Lean Startup Cagan Torres Report"
+linkTitle: "Lean Startup Synthesis"
 ---
-# Lean Startup, Marty Cagan, and Teresa Torres: A Comparative Synthesis of Their Product Decision Models
-
 ## Executive summary
 
 

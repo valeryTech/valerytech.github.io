@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Snowflake ID"
+title: "Snowflake ID Generation"
 description: "A source collection for studying Snowflake identifier generation, its implementation, and comparisons with UUIDs in system design."
 linkTitle: "Snowflake ID"
 ---

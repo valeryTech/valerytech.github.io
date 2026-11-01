@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "State Definition v1.1 (LLM / Agentic Systems)"
+title: "State Definition v1.1 for LLM and Agentic Systems"
 description: "A system’s identity and its measured behavior are different objects. State keys track configuration, inputs, dependencies, and evaluators; estimates and delta reports add outcomes, uncertainty, and comparison context."
 linkTitle: "State Definition v1.1"
 ---

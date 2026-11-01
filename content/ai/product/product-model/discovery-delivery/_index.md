@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Discovery Delivery"
-linkTitle: "Discovery Delivery"
+title: "Discovery and Delivery Notes"
+linkTitle: "Discovery and Delivery"
 ---

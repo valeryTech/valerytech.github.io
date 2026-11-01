@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comparing Names for SVPG's Four Product Risk Areas"
 description: "Choosing a taxonomy means choosing what receives attention and what the team records. Practitioner comparisons examine separate buyer value and usability, optional Ethics/Safety, and corporate Strategic Fit."
-title: "Risk Areas Comparisons"
-linkTitle: "Risk Areas Comparisons"
+linkTitle: "Risk Area Comparisons"
 ---
-# Naming and Operationalizing SVPG's Four Product Risk Areas
-
 
 > **Status:** Supporting comparison, not canonical guidance. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. This document preserves alternative names, the four-dimensions-with-optional-Ethics position, the practitioner survey, and the history behind the overlapping terms.
 

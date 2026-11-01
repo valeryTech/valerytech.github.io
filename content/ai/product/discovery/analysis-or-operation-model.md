@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Exploratory Design Inquiry: Operation Model"
 description: "The object of inquiry is an evolving situation model: frames, observations, questions, possibilities, and commitments. Research, reframing, prototypes, or comparison are selected for what they can reveal next."
-title: "Analysis Or Operation Model"
-linkTitle: "Analysis Or Operation Model"
+linkTitle: "Operation Model"
 ---
-# Exploratory design inquiry: operation model
-
 
 > Status: provisional. This document captures the current model of the work. It intentionally does **not** define exact iteration mechanics, stage gates, templates, or a fixed procedure. Those should be derived later from repeated practice, reflection, and further grounding in theory.
 

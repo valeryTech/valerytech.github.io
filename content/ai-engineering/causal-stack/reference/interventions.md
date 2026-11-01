@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Possible interventions"
+title: "Possible Interventions"
 aliases:
   - "/ai-engineering/causal-stack/layer-3-control-families/"
   - "/ai-engineering/evaluation/causal-stack/layer-3-control-families/"
@@ -12,7 +12,7 @@ aliases:
   - "/ai-engineering/causal-stack/layer-3-semantic-fault-view/"
   - "/ai-engineering/evaluation/causal-stack/layer-3-semantic-fault-view/"
 description: "A diagnosed boundary suggests changes to compare, from source selection and context assembly to permissions, retries, and recovery. Each option carries a check, a cost, and a limit on what it can establish."
-linkTitle: "Possible interventions"
+linkTitle: "Possible Interventions"
 ---
 
 Choose an intervention after identifying a concrete problem with the [debugging guide]({{< ref "ai-engineering/causal-stack/debugging" >}}). These are options to evaluate, not required components of every AI product.

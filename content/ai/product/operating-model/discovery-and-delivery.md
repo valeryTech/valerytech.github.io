@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Discovery and Delivery"
 description: "Building to answer a question and building behavior people rely on can happen together. The decision, evidence needed, and obligations involved determine whether the work is discovery, delivery, or both."
-title: "Discovery And Delivery"
-linkTitle: "Discovery And Delivery"
+linkTitle: "Discovery and Delivery"
 ---
 
 Discovery and delivery are two kinds of work. They are distinguished by their main purpose, not by when they happen.

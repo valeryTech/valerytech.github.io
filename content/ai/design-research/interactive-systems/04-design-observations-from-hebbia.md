@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Design Observations Prompted by Hebbia"
 description: "The author’s original Hebbia reaction values visible, adjustable pipelines for domain experts and proposes extending them into hybrid workspaces and collaborative investigation with teams of agents."
-title: "04 Design Observations From Hebbia"
-linkTitle: "04 Design Observations From Hebbia"
+linkTitle: "Hebbia Observations"
 ---
-# Design observations prompted by Hebbia
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Conceptual Alignment and Contract Discipline in RAG Systems"
+title: "Conceptual Alignment and Contract Discipline in RAG"
 description: "A request can serve unchanged as a query while the roles remain distinct. Explicit input and output contracts expose who interprets the task, selects evidence, judges context, and checks the outcome."
 linkTitle: "RAG Concepts and Contracts"
 ---

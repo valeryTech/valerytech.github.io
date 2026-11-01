@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Approach to build and maintain AGENTS.md"
+title: "Approach to Building and Maintaining AGENTS.md"
 description: "A proposed authoring and maintenance standard for map-like AGENTS.md files, with canonical documentation, progressive disclosure, enforcement, ownership, verification metadata, and lint checks."
-linkTitle: "Approach to build and maintain AGENTS.md"
+linkTitle: "Build Approach"
 ---
-# Approach to build and maintain `AGENTS.md`
-
 
 This document describes a practical approach for designing, authoring, and maintaining an `AGENTS.md` file in an "agent-first" repository. It is written to be adopted as an internal standard and adapted per-repo.
 

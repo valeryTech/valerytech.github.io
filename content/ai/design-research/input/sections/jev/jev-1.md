@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Jev: TypeSafe AI's Decision Model"
 description: "An introduction to Jev as a probabilistic decision model for bounded software tasks, covering typed answers, uncertainty, related approaches, and integration patterns."
-title: "Jev 1"
-linkTitle: "Jev 1"
+linkTitle: "Jev Overview"
 ---
 **Jev is TypeSafe AI's model for making bounded decisions inside software.** You give it context, a question, and a defined answer space. It returns values and probability estimates that your code can use directly. A useful mental model is a **general-purpose, promptable classifier**: you describe the classification task at request time, without training a separate model for each task. [TypeSafe](https://docs.typesafe.ai/introduction)
 

@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Dialogue Approach"
+title: "Dialogue Approach to Task Assistance"
 linkTitle: "Dialogue Approach"
 ---

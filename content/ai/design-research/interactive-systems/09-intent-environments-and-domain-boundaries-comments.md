@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Intent Environments and Domain Boundaries"
 description: "A critique keeps the LLM’s architecture and forecasts provisional, distinguishing domain authority, interpretation agreement, plan checks, concrete authorization, and cross-provider transaction behavior behind generated interfaces."
-title: "09 Intent Environments And Domain Boundaries Comments"
-linkTitle: "09 Intent Environments And Domain Boundaries Comments"
+linkTitle: "Intent Environments Comments"
 ---
-# Comments on intent environments and domain boundaries
-
 
 The comments are new analysis of the [retained architecture reply]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries" >}}). They concern the related passages linked from the note and do not form part of the original reply or an accepted implementation specification.
 

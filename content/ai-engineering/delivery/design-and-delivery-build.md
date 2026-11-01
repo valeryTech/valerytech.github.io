@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Design and Delivery Framework: Development Notes"
 description: "Development notes for configuring the delivery framework around starting state, transformation intent, uncertainty, and risk, with particular attention to brownfield migration and legacy AI."
-linkTitle: "Design and Delivery Framework: Development Notes"
+linkTitle: "Development Notes"
 ---
 # Build
 

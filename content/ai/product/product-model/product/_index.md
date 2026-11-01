@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Product"
-linkTitle: "Product"
+title: "Product Method Comparisons"
+linkTitle: "Method Comparisons"
 ---

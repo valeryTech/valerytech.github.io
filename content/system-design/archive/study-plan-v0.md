@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Preparation notes before the refactor"
+title: "System Design Preparation Notes Before the Refactor"
 description: "The original preparation plan connecting technical foundations, toolbox development, repeated practice, mock interviews, communities, and broader engineering disciplines."
 document_status: "archived"
-linkTitle: "Preparation notes before the refactor"
+linkTitle: "Preparation Notes"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/interview/study-and-practice" >}}). Numerical targets and technical claims below retain their original draft context.

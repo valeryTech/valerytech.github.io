@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Architecture Toolbox"
 description: "Hub for the heuristics used to reason about architecture and design: the three laws of software architecture, balanced coupling, ETC, YAGNI, simple design, and named design principles, with how they relate and when each applies."
-linkTitle: "Architecture Toolbox"
+linkTitle: "Toolbox"
 ---
 
 This is the practical toolbox from [Software Architecture]({{< ref "engineering/architecture/architecture" >}}#practicality-lens): ideas of several kinds (laws, values, models, principles, heuristics) collected so they can be used together. Principles sometimes conflict, so the real question is how to balance them for the problem at hand, not which one to follow.

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Representations, composition, and understanding in AI systems"
+title: "Representations, Composition, and Understanding in AI"
 description: "A conceptual research note on how representations guide construction, constraints support composition, and explicit models can help people develop understanding, with candidate principles and open questions."
-linkTitle: "Representations, composition, and understanding in AI systems"
+linkTitle: "Representation and Composition"
 ---
 
 As people do more work with generative models, an important design question concerns the representations through which that work happens. A language, domain model, diagram, or partial program can shape what people and models can express, which combinations they can construct, and what they can understand about the result.

@@ -84,12 +84,12 @@ Plan comparisons around the conditions that could change their interpretation. T
 # Connections
 
 
-- [Ebse]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/ebse" >}}) - Empirical Software Engineering
-- [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
-- [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}})
+- [Evidence-based software engineering]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/ebse" >}}) - Empirical Software Engineering
+- [Exploratory design]({{< ref "engineering/eng-exp/exploratory-design" >}})
+- [AI systems require behavioral evidence]({{< ref "ai-engineering/approach/empirical-nature" >}})
 - [model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}})
-- [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}})
-- [Harness And Platform]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})
+- [Why use an evaluation harness?]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}})
+- [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})
 - [product behavior guide]({{< ref "ai-engineering/causal-stack" >}})
 - science method
 

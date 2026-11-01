@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "AI Evaluation Guide"
 description: "The AI evaluation guide routes practical questions to methods for case design, evidence capture, failure analysis, evaluator validation, controlled comparisons, and learning from real use."
-linkTitle: "AI Evaluation Guide"
+linkTitle: "Guide"
 ---
 
 > **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**

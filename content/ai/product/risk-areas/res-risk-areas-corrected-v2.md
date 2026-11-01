@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Naming and Operationalizing SVPG's Four Product Risk Areas"
 description: "Practitioners manage uncertainty through risk categories, assumptions, design lenses, or hypotheses. This survey compares those choices and derives a chain from product-risk dimensions through tests to evidence and decisions."
-title: "Res Risk Areas Corrected V2"
-linkTitle: "Res Risk Areas Corrected V2"
+linkTitle: "Naming Risk Areas"
 ---
-# Naming and Operationalizing SVPG's Four Product Risk Areas
-
 
 > **Status:** Source research report. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. This report is retained for its comparisons, sources, and alternative terminology.
 

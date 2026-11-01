@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-description: "Apply shared engineering goals across programming paradigms, using design techniques appropriate to the language, code, and actual dependencies."
 title: "Software Engineering Principles"
-linkTitle: "Software Engineering Principles"
+description: "Apply shared engineering goals across programming paradigms, using design techniques appropriate to the language, code, and actual dependencies."
+linkTitle: "Principles"
 ---
 ## Purpose
 

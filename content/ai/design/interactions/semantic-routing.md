@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Semantic Routing and Mixed-Initiative Interaction"
 description: "Uses a recipe workflow to connect semantic routing, mixed-initiative clarification, and candidate selection before expensive generation."
-linkTitle: "Semantic Routing and Mixed-Initiative Interaction"
+linkTitle: "Semantic Routing"
 ---
 
 The recipe workflow combines the **Router Pattern** (architecture) with **Mixed-Initiative Interaction** (UX).

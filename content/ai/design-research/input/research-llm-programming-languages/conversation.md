@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Research LLM Programming Languages — Conversation"
+title: "LLM Programming Languages: Research Conversation"
 description: "A source conversation about expressive languages, inspectable specifications, and enforceable properties in systems with people, software, and LLMs."
-linkTitle: "Research LLM Programming Languages — Conversation"
+linkTitle: "Research Conversation"
 ---
-# Research LLM Programming Languages
-
 
 Exported on 2026-04-29 from a shared ChatGPT conversation. The user message, three assistant progress updates, and final response are preserved. Citation widgets are converted to numbered footnotes with their source titles and URLs; their original groups are recorded in [conversation-citations.json](/ai/design-research/input/research-llm-programming-languages/conversation.assets/conversation-citations.json).
 

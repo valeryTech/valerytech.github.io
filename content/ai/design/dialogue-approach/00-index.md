@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Dialogue Approach: Reading Map"
 description: "A reading map from task-assistance framing and authority to hybrid interaction and Quick Add’s concrete transaction-draft architecture, with research comparisons and sources."
-title: "00 Index"
-linkTitle: "00 Index"
+linkTitle: "Reading Map"
 ---
-# Dialogue approach: reading map
-
 
 The organizing idea is **human-AI task assistance**: domain state and task completion provide the frame, and dialogue is one way to coordinate the work. The transaction-draft pipeline is a concrete Quick Add example within that broader frame.
 

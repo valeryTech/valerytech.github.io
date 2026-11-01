@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.5 Trusted Effect Boundaries"
 description: "Examines non-bypassable mediation of consequential actions, separating untrusted language data, provenance, task capability, authenticated authority, and authorization of concrete operation arguments from model-generated requests."
-title: "05 Trusted Effect Boundaries"
-linkTitle: "05 Trusted Effect Boundaries"
+weight: "50"
+linkTitle: "5.5 Trusted Effect Boundaries"
 ---
-# Trusted effect boundaries
-
 
 <!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 

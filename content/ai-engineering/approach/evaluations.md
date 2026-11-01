@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Evaluation in AI Product Development"
 description: "Evaluation connects product decisions with a maintained capability to inspect behavior, develop shared criteria, compare changes, and learn from production while preserving the limits of the evidence."
-title: "Evaluations"
-linkTitle: "Evaluations"
+linkTitle: "Evaluation"
 ---
-# Evaluation in AI Product Development
-
 
 Evaluation is a maintained capability for understanding and characterizing how an AI product actually behaves and for turning observations of that behavior into justified evidence.
 
@@ -70,7 +68,7 @@ That decision starts from a candidate solution, the evidence supporting it, the 
 
 The next question is what the team is prepared to support. Evaluation helps establish the behavioral part of that commitment. It provides evidence about what the system currently does, where its boundaries appear to be, and which important uncertainties remain.
 
-Architecture, controls, release engineering, and operations provide the means to fulfill the commitment. A production commitment could be framed also as an [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
+Architecture, controls, release engineering, and operations provide the means to fulfill the commitment. A production commitment could be framed also as an [solution utility ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
 
 ## Evaluation during delivery
 

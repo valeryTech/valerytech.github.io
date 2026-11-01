@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Review of the Interactive Systems Collection"
 description: "A collection review identifies missing relationships between view edits, revisions, jobs, interventions, and result use, proposing a worked asynchronous example and comparison agenda without merging the source models."
-title: "00 Collection Review Comments"
-linkTitle: "00 Collection Review Comments"
+linkTitle: "Collection Review"
 ---
-# Review of the interactive systems collection
-
 
 Date: 2026-04-01. The review is new editorial analysis, separate from the retained dialogues. The recommendations and example below are proposals for discussion, not an accepted system design.
 

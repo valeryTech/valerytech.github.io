@@ -5,7 +5,7 @@ title: "Evidence Model for AI Evaluation"
 aliases:
   - "/contributions/evaluation-evidence/"
 description: "Cases specify situations, executions produce trajectories, and traces capture partial evidence; these distinctions anchor judgeability, failure models, operational checks, and causal diagnosis."
-linkTitle: "Evidence Model for AI Evaluation"
+linkTitle: "Evidence Model"
 ---
 ## Purpose
 

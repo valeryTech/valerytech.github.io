@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "3.10 Program Authoring and Typed Planning"
 description: "Proposes human and agent authoring over one typed program model, with introspection, compiler-guided repair, type-directed planning, and candidate intent compiled from natural-language requests."
-title: "10 Program Authoring And Typed Planning"
-linkTitle: "10 Program Authoring And Typed Planning"
+weight: "100"
+linkTitle: "3.10 Authoring and Typed Planning"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

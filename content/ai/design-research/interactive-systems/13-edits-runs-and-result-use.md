@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Relationships Between Edits, Runs, and Result Use"
 description: "New design commentary proposes revision-bound edits, exact run inputs, scoped interventions, and purpose-specific acceptance, using out-of-order retrieval and synthesis to separate historical display from current result use."
-title: "13 Edits Runs And Result Use"
-linkTitle: "13 Edits Runs And Result Use"
+linkTitle: "Edits, Runs, Result Use"
 ---
-# Proposed relationships between edits, runs, and result use
-
 
 Date: 2026-04-01. The note is new design commentary, not retained dialogue. Its rules are a proposed starting point for discussion, not accepted requirements or an implemented system.
 

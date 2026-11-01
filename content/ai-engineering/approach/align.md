@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Aligning on AI Product Engineering"
 description: "The work and support I seek in AI product engineering: hands-on responsibility, room to apply and develop judgment, and time, access, and authority to turn findings into product decisions."
-title: "Align"
-linkTitle: "Align"
+linkTitle: "Aligning on the Work"
 ---
-# Aligning on AI product engineering
-
 
 I want to build useful AI products, take responsibility for their behavior in production, and help improve how a team develops them. I'm looking for a hands-on role that can use the judgment I have developed and give me substantive work through which to develop it further.
 

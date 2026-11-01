@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Evidence-Based Software Engineering"
 description: "Evidence-based software engineering connects answerable questions, literature search, critical appraisal, practitioner expertise, and stakeholder values, then evaluates the effects of the chosen practice."
-linkTitle: "Evidence-Based Software Engineering"
+linkTitle: "EBSE"
 ---
 ## Overview of Evidence-Based Software Engineering
 

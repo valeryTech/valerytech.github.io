@@ -1,14 +1,12 @@
 ---
 draft: false
 toc: true
+title: "AI Practitioner Positions"
 description: "Maps AI practitioner roles by what they produce, how success is judged, and risks owned, with contrasting research and industry perspectives for discussion."
-title: "Practitioner Types"
-linkTitle: "Practitioner Types"
+linkTitle: "Practitioner Positions"
 ---
 
 <a id="positions"></a>
-
-# AI practitioner positions
 
 ### **I. Core Research & Science (The Theoretical Engine)**
 
@@ -392,7 +390,7 @@ A later alternative focuses on formal planning versus emergent orchestration, an
 
 A proposed discussion of academic and industrial AI-agent approaches after LLMs would bring together four people representing *distinct, conflicting, yet complementary paradigms*.
 
-See Panel Organization at [[discussion-1-setup]]
+See Panel Organization at discussion setup
 
 ## Library sources
 

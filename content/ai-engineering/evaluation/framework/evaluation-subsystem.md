@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Evaluation Subsystem"
 description: "An AI evaluation subsystem connects cases and live runs to inspectable traces, reliable judgments, comparisons, and findings through people, data, tools, and practices that grow with repeated evidence needs."
-linkTitle: "Evaluation Subsystem"
+linkTitle: "Subsystem"
 ---
 ## Purpose
 

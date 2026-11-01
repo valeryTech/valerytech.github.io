@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.9 Comments on Declarative Configuration"
 description: "Distinguishes authored configuration, resolved system revisions, environment bindings, instances, and runs, explaining why configuration identity does not establish reproduced behavior or safe isolation."
-title: "09 Declarative System Configuration And Instantiation Comments"
-linkTitle: "09 Declarative System Configuration And Instantiation Comments"
+weight: "91"
+linkTitle: "5.9 Comments"
 ---
-# Comments on declarative system configuration and instantiation
-
 
 New commentary by Codex, added on 2026-04-01. The [dialogue note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the initial DC requirements and later SC requirements as complete separate formulations. Neither list is an implemented interface or an adopted specification.
 

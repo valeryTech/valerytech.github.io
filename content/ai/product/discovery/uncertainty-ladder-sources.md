@@ -1,14 +1,12 @@
 ---
 draft: false
 toc: true
+title: "Uncertainty Ladder: Sources and Earlier Draft"
 description: "Research support for the uncertainty ladder, from a dialogue-derived draft. An AI project may lack evidence of possibility, a working recipe, feasibility, reliability or user value; the ladder links each to probes, diagnosis, progress and planning."
-title: "Uncertainty Ladder Sources"
-linkTitle: "Uncertainty Ladder Sources"
+linkTitle: "Ladder Sources"
 ---
 
 > **Note:** Research support, not canonical guidance. The working note is [`uncertainty-ladder.md`]({{< ref "ai/product/discovery/uncertainty-ladder" >}}). This text came from a dialogue with a chatbot (Grok) and keeps the longer treatment of research methods for possibility and the framework comparison.
-
-# Uncertainty ladder: sources and earlier draft
 
 ## Hamel's point about roadmaps
 

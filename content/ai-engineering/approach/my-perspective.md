@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
+title: "My Perspective on AI Engineering"
 aliases:
   - "/ai-engineering/my-perspective/"
 description: "My approach to AI engineering treats behavior as a system concern, combining evaluation with architecture, team practices, and production learning so evidence can guide changes and supported scope."
-title: "My Perspective"
 linkTitle: "My Perspective"
 ---
 # Opening Statement
@@ -36,7 +36,7 @@ Putting these pieces in place is not enough. Each of these practices has to acco
 
 Evaluation plays a central role in this engineering system. It combines a technical subsystem with the methods and discipline needed to identify the behaviours and failure modes that matter, translate them into evaluation criteria and representative test cases, and interpret what the evidence supports. Lessons from experimentation and production feed back into evaluation and guide changes to the system.
 
-**Evaluation provides evidence for product and engineering decisions; the surrounding engineering practices provide the means to act on those decisions.** My approach includes both. More info is in [Evaluations]({{< ref "ai-engineering/approach/evaluations" >}}).
+**Evaluation provides evidence for product and engineering decisions; the surrounding engineering practices provide the means to act on those decisions.** My approach includes both. More info is in [Evaluation in AI product development]({{< ref "ai-engineering/approach/evaluations" >}}).
 
 ## Enabling principles
 

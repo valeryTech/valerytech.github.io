@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Versioning and Composing Declarative AI System Configurations"
+title: "Versioning and Composing Declarative Configurations"
 description: "Develops configuration identity and composition through logical versions, Git revisions, immutable resolved artifacts, dependency locks, deployment pointers, and separate evaluation plans."
-linkTitle: "Configuration Versions and Composition"
+linkTitle: "Versions and Composition"
 ---
 ## Tags and runtime identity
 

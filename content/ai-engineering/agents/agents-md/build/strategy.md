@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Building and Maintaining Minimal AGENTS.md"
+title: "Building and Maintaining a Minimal AGENTS.md"
 description: "A lightweight strategy for evolving AGENTS.md through testable section hypotheses, phased additions, context-cost checks, removal criteria, and a separate rationale log."
-linkTitle: "Building and Maintaining Minimal AGENTS.md"
+linkTitle: "Minimal AGENTS.md"
 ---
 
 Treat `AGENTS.md` as a **small control surface**. Two principles guide this approach:

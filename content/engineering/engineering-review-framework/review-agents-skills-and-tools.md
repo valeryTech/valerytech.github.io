@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Review Agents, Skills, and Tools"
 description: "Support review with agents, reusable skills, agentic workflows, and tools, choosing their roles according to the review question."
-linkTitle: "Review Agents, Skills, and Tools"
+linkTitle: "Agents, Skills, and Tools"
 ---
 ## Purpose
 

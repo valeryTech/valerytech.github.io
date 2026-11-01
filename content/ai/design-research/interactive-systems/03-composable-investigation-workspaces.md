@@ -1,14 +1,12 @@
 ---
 draft: false
 toc: true
+title: "Composable Investigation Workspaces"
 aliases:
   - "/contributions/investigation-composition/"
 description: "A dialogue on typed investigation operations, provenance-preserving composition, inspectable nested blocks, and evidence constraints, with visual graphs derived from dependencies."
-title: "03 Composable Investigation Workspaces"
-linkTitle: "03 Composable Investigation Workspaces"
+linkTitle: "Composable Workspaces"
 ---
-# Composable investigation workspaces
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

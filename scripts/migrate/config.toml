@@ -32,6 +32,10 @@ source_root_kind = "external"
 source_subtree = "topics/functional-programming"
 target_subtree = "functional-programming"
 root_index_source = "functional-programming.md"
+exclude = [
+  # Vault-only links and history of the section.
+  "/provenance.md",
+]
 
 [[imports]]
 name = "type-driven-design"
@@ -42,6 +46,8 @@ root_index_source = "type-driven-design.md"
 exclude = [
   # Inboxes are not publication sources.
   "/input/**",
+  # Vault-only links and history of the section.
+  "/provenance.md",
 ]
 
 [[imports]]

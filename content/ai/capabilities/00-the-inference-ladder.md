@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "The Inference Ladder"
 description: "The section on one page: a capability is never observed, a score only indicates it, and between the two lies a ladder of inferences, each with its own way to fail. With a glossary across philosophy, psychometrics, and AI evaluation."
-linkTitle: "The Inference Ladder"
+linkTitle: "Inference Ladder"
 ---
 
 A capability is a hidden property. Nobody has seen one. What anyone has seen is a model producing an output on an item, under one configuration, in one run. Everything said about the model beyond that, from "scored 78%" to "can reason", is inferred.

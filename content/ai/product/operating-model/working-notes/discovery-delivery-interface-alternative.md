@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Discovery-Delivery Interface: Earlier Version"
 description: "Turning a discovered solution into production software requires more than a prototype. This interface combines a defined solution, investment evidence, shared understanding, and requirements the prototype cannot show."
-title: "Discovery Delivery Interface Alternative"
-linkTitle: "Discovery Delivery Interface Alternative"
+linkTitle: "Interface Alternative"
 ---
 
 > **Editorial note:** This is the earlier four-part version. Read it with [`discovery-and-delivery.md`]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}). The same team does both kinds of work, and the interface is not a handoff.

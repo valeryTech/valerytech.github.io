@@ -4,7 +4,7 @@ toc: true
 title: "Making System Design Decisions"
 description: "System design turns intended behavior into components, data ownership, interactions, and failure rules. Consequential assumptions get focused checks, and decisions record what implementation must preserve or reconsider."
 lastmod: "2026-04-19"
-linkTitle: "System Design Decisions"
+linkTitle: "Making System Design Decisions"
 ---
 
 A useful system design explains how the change will work, why the important choices fit the requirements, and what implementation must preserve.

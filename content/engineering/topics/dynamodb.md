@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "DynamoDB"
+title: "DynamoDB Study Notes"
 description: "Study access-pattern-driven DynamoDB modeling, single-table design, consistency, global tables, limits, APIs, and change streams."
 linkTitle: "DynamoDB"
 ---

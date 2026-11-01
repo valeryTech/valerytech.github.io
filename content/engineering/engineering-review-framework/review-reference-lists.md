@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Engineering Review Reference Lists"
 description: "Reference lists for business context, requirements, engineering principles, technical review, testing, AI-specific risks, and review tools."
-title: "Review Reference Lists"
-linkTitle: "Review Reference Lists"
+linkTitle: "Reference Lists"
 ---
-# Engineering Review Reference Lists
-
 ## Purpose
 
 

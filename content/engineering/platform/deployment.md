@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Deployment"
+title: "Deployment and Progressive Delivery"
 description: "How software reaches an environment and then its users: deployment principles, separating deployment from release, progressive delivery, environments, and choosing a deployment platform."
 linkTitle: "Deployment"
 ---

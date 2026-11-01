@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Interactive Systems Reassembly Map"
 description: "A historical reconstruction audit maps original dialogue ranges to reorganized notes, recording extraction stages, relocations, added commentary, checksums, and preservation checks without validating the retained design or product claims."
-title: "Reassembly Map"
 linkTitle: "Reassembly Map"
 ---
-# Interactive systems reassembly map
-
 
 Public-edition note, 2026-04-28: Private source locations and machine-specific audit details are omitted or replaced with neutral archive labels. Historical coordinates and checksums describe earlier snapshots, not the edited public files.
 

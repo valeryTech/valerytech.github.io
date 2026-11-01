@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Public Chat Room: Interview Report"
 description: "An interview report on a public chat-room design, highlighting message delivery, caching, client tracking, and an unresolved burst-handling problem."
-linkTitle: "Public Chat Room: Interview Report"
+linkTitle: "Public Chat Room"
 ---
-# Public Chat Room
-
 
 Collected interview report with an unresolved question about bursts exceeding a fixed message buffer. The report is preserved below; compare it with the [messaging questions]({{< ref "system-design/elements/messaging" >}}).
 

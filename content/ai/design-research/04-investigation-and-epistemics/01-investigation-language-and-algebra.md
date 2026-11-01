@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "4.1 Investigation Language and Algebra"
 description: "Proposes an investigation abstract machine combining evidence operations, dataflow, iteration, provenance, and epistemic contracts, with reusable programs shared by visual editors, engineers, and agents."
-title: "01 Investigation Language And Algebra"
-linkTitle: "01 Investigation Language And Algebra"
+weight: "10"
+linkTitle: "4.1 Language and Algebra"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

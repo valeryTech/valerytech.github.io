@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Building a Production Readiness Model and Framework"
 description: "Working rationale for deriving a readiness model and framework, emphasizing joint design of software and operations and testing capabilities rather than checking that mechanisms exist."
-linkTitle: "Building the Readiness Model and Framework"
+linkTitle: "Building the Model"
 ---
 
 To build a useful framework for AI production readiness, I first needed a conceptual model of "production-ready" grounded in software engineering.

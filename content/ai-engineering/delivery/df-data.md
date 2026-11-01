@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Data Foundation -- Cross-Cutting Workstream"
+title: "Data Foundation: A Cross-Cutting Workstream"
 description: "Defines the cross-cutting data foundation for AI delivery, covering trustworthy source and evaluation data, synthetic-data validation, sufficiency, production shifts, and evidence traceability."
-linkTitle: "Data Foundation -- Cross-Cutting Workstream"
+linkTitle: "Data Foundation"
 ---
 ## Definition
 

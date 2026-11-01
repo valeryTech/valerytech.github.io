@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Interviewing.io System Design Framework"
 description: "Interviewing.io’s three-stage framework for deriving a design from requirements, objects, access patterns, data types, APIs, scale, storage, and services."
-linkTitle: "Interviewing.io System Design Framework"
+linkTitle: "Interviewing.io"
 ---
 
 Detailed three-stage source framework, retained independently from the [other approaches]({{< ref "system-design/interview/frameworks" >}}). The [concise companion]({{< ref "system-design/interview/frameworks/sd-algo-interviewing-io" >}}) provides a shorter review outline.

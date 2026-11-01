@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Graph Learning and World Model"
+title: "Graph Learning and a World Model for Code"
 description: "Research directions beyond deterministic retrieval, with graph machine learning as a probabilistic overlay and a world model that simulates what-if scenarios."
-linkTitle: "Graph Learning and World Model"
+linkTitle: "Graph Learning"
 ---
 
 The deterministic graph in [software knowledge graph]({{< ref "projects/code-intelligence/software-knowledge-graph" >}}) answers questions about facts: who calls X, which commit changed Y. Two research directions go further. Graph machine learning adds pattern recognition over the graph, and a world model adds dynamics, so that the system can predict and run counterfactuals.

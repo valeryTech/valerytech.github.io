@@ -4,7 +4,7 @@ toc: true
 title: "AI Platform Capability Map"
 description: "A reference model and capability map for an enterprise AI platform, with build-or-buy positions, identity and evaluation as platform concerns, a KPI scorecard, a five-level maturity model, a build sequence, and landscapes for surveying the ecosystem."
 document_status: "draft"
-linkTitle: "Capability Map"
+linkTitle: "AI Platform Capability Map"
 ---
 
 **Question:** which capabilities should an internal AI platform provide, which should it build rather than buy, and in what order?

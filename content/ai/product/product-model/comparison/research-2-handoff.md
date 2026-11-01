@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Further Research Handoff: Torres and Cagan"
 description: "A follow-on research brief prioritizes unresolved links between strategy and team discovery, especially problem-selection authority, prioritization, outcome causality, and judgment, with source lists and expected comparison outputs."
-title: "Research 2 Handoff"
-linkTitle: "Research 2 Handoff"
+linkTitle: "Research Handoff"
 ---
-# Further Research Handoff: Teresa Torres and Marty Cagan / SVPG
-
 ## Status
 
 

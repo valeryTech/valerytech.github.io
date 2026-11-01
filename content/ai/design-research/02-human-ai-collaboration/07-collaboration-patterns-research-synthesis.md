@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "2.7 Collaboration Patterns: A Research Synthesis"
 description: "A research synthesis distinguishing six collaboration modes from handoff transitions and underlying mechanics, arguing that joint performance and calibrated review matter more than AI accuracy alone."
-title: "07 Collaboration Patterns Research Synthesis"
-linkTitle: "07 Collaboration Patterns Research Synthesis"
+weight: "70"
+linkTitle: "2.7 Patterns Synthesis"
 ---
-# Human-AI Collaboration Patterns: A Practitioner and Research Synthesis
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.12 Comments on Multiagent Coordination"
 description: "A methodological review requiring coordination behavior to be attributed to explicit model/scaffold/environment configurations, limiting claims about proposed enforcement mechanisms, internal cognition, emerging agency, and institutional motives."
-title: "12 Multiagent Coordination And System Semantics Comments"
-linkTitle: "12 Multiagent Coordination And System Semantics Comments"
+weight: "121"
+linkTitle: "6.12 Comments"
 ---
-# Multiagent coordination and system semantics: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

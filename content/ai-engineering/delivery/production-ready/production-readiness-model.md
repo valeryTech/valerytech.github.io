@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Production Readiness Model"
 description: "Defines readiness as evidenced sufficiency for a specified production use across the system, technical environment, and responsible organization, within explicit uncertainty and residual risk."
-linkTitle: "Production Readiness Model"
+linkTitle: "Readiness Model"
 ---
 ## Definition
 

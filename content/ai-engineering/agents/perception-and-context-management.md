@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Perception and Context Management in Coding Agents"
 description: "A coding agent can access the right file and still lose the needed fact. Separate observation and state estimation from selection, compression, and memory to diagnose access, interpretation, and salience failures."
-linkTitle: "Perception and Context Management"
+linkTitle: "Perception and Context"
 ---
 ## Executive summary
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Jev and System One Decision Models"
 description: "A referenced review of Jev decision models, covering typed probabilistic questions, published evidence, alternatives, software integration, and evaluation practices."
-title: "Jev System One With References"
-linkTitle: "Jev System One With References"
+linkTitle: "Jev and System One"
 ---
-# Jev and System One decision models: motivation, principles, evidence, alternatives, and practical use
-
 ## Executive summary
 
 

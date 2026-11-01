@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Sources of Variability in AI Projects"
 description: "Systems differ in where their variability lives: in the request, in the flow of work, or in the data processed; locating it shows where the difficulty, failure modes, and test effort concentrate."
-title: "Sources Of Variability"
-linkTitle: "Sources Of Variability"
+linkTitle: "Sources of Variability"
 ---
 
 Design question: Where does the variability a system must handle actually come from?
@@ -60,7 +60,7 @@ The predefined audit report is the clearest case of variability concentrated on 
 
 **Difficulty and failure modes follow the high-variability axis.**
 
-- High request variability puts the risk in interpretation: misread intent, unhandled [Ambiguity]({{< ref "ai/design/ambiguity" >}}), wrong routing, clarification that comes too late or too often.
+- High request variability puts the risk in interpretation: misread intent, unhandled [ambiguity]({{< ref "ai/design/ambiguity" >}}), wrong routing, clarification that comes too late or too often.
 - High flow variability puts the risk in control: wrong step selection, lost state, loops, unrecoverable partial actions, permissions crossed mid-trajectory.
 - High data variability puts the risk in evidence handling: unnoticed gaps, invented comparators, overstated conclusions from thin or contradictory data, scope that silently widens, and plausible narratives filling what the data does not show.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Rebuild AGENTS.md As A Thin Contract Over A Central Agent Handbook"
+title: "AGENTS.md as a Thin Contract over an Agent Handbook"
 description: "A migration proposal replacing a large agent instruction file with a thin root contract and central handbook, including routing, governance, and validation checks."
-linkTitle: "AGENTS.md and the Agent Handbook"
+linkTitle: "Thin Contract and Handbook"
 ---
-# Rebuild `AGENTS.md` As A Thin Contract Over A Central Agent Handbook
-
 ## Summary
 
 

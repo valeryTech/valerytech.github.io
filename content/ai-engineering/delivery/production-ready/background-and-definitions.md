@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Background and Review of Production-Readiness Definitions"
 description: "Reviews competing production-readiness definitions, distinguishing intended-use sufficiency, system properties, organizational capability, assessment criteria, and the mechanisms used to establish readiness."
-linkTitle: "Production Readiness: Definitions"
+linkTitle: "Definitions"
 ---
 ## Scope and terminology
 

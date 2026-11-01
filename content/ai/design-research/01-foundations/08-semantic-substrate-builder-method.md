@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.8 Semantic Substrate Builder Method"
 description: "Proposes starting from desired guarantees, deriving the narrowest enforceable semantic constraints, and testing unknown components and replacements while discovering domain abstractions through implementation."
-title: "08 Semantic Substrate Builder Method"
-linkTitle: "08 Semantic Substrate Builder Method"
+weight: "80"
+linkTitle: "1.8 Substrate Builder Method"
 ---
-# Semantic substrate builder method
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

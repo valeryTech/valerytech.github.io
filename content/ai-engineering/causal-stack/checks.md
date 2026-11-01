@@ -1,12 +1,12 @@
 ---
 draft: false
 toc: true
-title: "Focused checks for AI product behavior"
+title: "Focused Checks for AI Product Behavior"
 aliases:
   - "/ai-engineering/causal-stack/layer-2/evaluation-method-reference/"
   - "/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-reference/"
 description: "Focused checks turn a product question into cases, a judgment rule, and an interpretable comparison. Recipes cover evidence use, variation, exact meaning, tool effects, fallback, and continued customer outcomes."
-linkTitle: "Focused checks for AI product behavior"
+linkTitle: "Focused Checks"
 ---
 
 Choose a check from a [case]({{< ref "ai-engineering/causal-stack/cases" >}}) or a [claim]({{< ref "ai-engineering/causal-stack/claims" >}}). State the decision it informs. A method name such as "grounding evaluation" is incomplete until the inputs, expected behavior, judgment rule, and recorded result are specified.

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Visual Explanations From LLMs"
+title: "Visual Explanations from LLMs: Approaches and Principles"
 description: "Asking LLMs for diagrams, interactive pages, and animated explainers instead of text: related approaches from explorable explanations, multimedia learning, generative UI, and video agents, the evidence, and shared principles."
-linkTitle: "Visual Explanations From LLMs"
+linkTitle: "Visual Explanations"
 ---
-# Visual explanations from LLMs: approaches and principles
-
 
 Researched on 2026-11-05 as a follow-up to the exported conversation [Karpathy Visual Prompts Practices]({{< ref "ai/design/generated-instruments/karpathy-visual-explanation-prompts" >}}). On the same day the papers saved in the library were read in full and this note was corrected against them. The web pages (Victor, Case, Distill, Willison, coverage of Karpathy's posts) were read once through page fetches. Karpathy's three posts were read in full through mirrors (x.com blocks automated reading); their main ideas are in the [exported thread]({{< ref "ai/design/generated-instruments/karpathy-visual-explanation-prompts" >}}#sources-behind-the-thread). Why the form of a representation matters, from cognitive science, is in the [section index]({{< ref "ai/design/generated-instruments" >}}).
 

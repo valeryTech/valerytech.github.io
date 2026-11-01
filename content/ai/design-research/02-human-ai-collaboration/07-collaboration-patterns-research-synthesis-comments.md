@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "2.7 Comments on Patterns Synthesis"
 description: "Questions evidence behind the proposed modes, transitions, and mechanics taxonomy, noting that diverse studies and product examples do not establish common definitions or effective oversight."
-title: "07 Collaboration Patterns Research Synthesis Comments"
-linkTitle: "07 Collaboration Patterns Research Synthesis Comments"
+weight: "71"
+linkTitle: "2.7 Comments"
 ---
-# Collaboration patterns research synthesis: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [synthesis note]({{< ref "ai/design-research/02-human-ai-collaboration/07-collaboration-patterns-research-synthesis" >}}) retains original LLM text. The comments explain placement and questions for later work, rather than adopting the source's findings.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Action Policy, Readiness, and Execution Gates"
 description: "Separates parser, validator, action policy, and executor, distinguishing a draft ready for review from a confirmed action authorized to change backend state."
-title: "03 Action Policy And Execution Gates"
-linkTitle: "03 Action Policy And Execution Gates"
+linkTitle: "Execution Gates"
 ---
-# Action policy, readiness, and execution gates
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

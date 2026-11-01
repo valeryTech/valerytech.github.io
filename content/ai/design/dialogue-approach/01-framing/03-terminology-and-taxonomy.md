@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Terminology and Taxonomy"
 description: "Maps assistant, copilot, agent, workflow, dialogue, and mixed initiative onto different descriptive axes, using practitioner examples to explain why they are overlapping terms."
-title: "03 Terminology And Taxonomy"
-linkTitle: "03 Terminology And Taxonomy"
+linkTitle: "Terminology and Taxonomy"
 ---
-# Terminology and taxonomy
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

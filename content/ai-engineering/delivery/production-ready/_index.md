@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Production Ready"
-linkTitle: "Production Ready"
+title: "AI Production Readiness"
+linkTitle: "Production Readiness"
 ---

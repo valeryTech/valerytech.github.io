@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Alternative Views of the Production Commitment Boundary"
 description: "Production code can be used to test an idea without committing to ship it. WorkOS and Mehta help distinguish the question a prototype answers from the responsibility accepted for an enduring system."
-title: "Production Commitment Boundary Alternative"
-linkTitle: "Production Commitment Boundary Alternative"
+linkTitle: "Commitment Boundary Views"
 ---
-# Alternative views of the production commitment boundary
-
 
 > **Editorial note:** This is the earlier boundary formulation. The next paragraph comes from line 21 of `HEAD:ai/product-model/mindset.md`, and its wording has been edited for grammar and flow. The current model treats production commitment as a change in obligations, not as the end of discovery and the start of delivery.
 

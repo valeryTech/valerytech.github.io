@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Rearrangement Record for Discovery-Delivery Separation"
 description: "Purpose, participant roles, AI autonomy, and platform controls were intertwined in one source. This rearrangement record separates those questions and explains the decisions, provenance, and preservation checks behind the split."
-title: "Discovery Delivery Separation Rearrangement"
-linkTitle: "Discovery Delivery Separation Rearrangement"
+linkTitle: "Separation Rearrangement"
 ---
-# Rearrangement record for `discovery-deliery-separation.md`
-
 
 This editorial record explains how the source text was arranged. It is not part of the source text.
 

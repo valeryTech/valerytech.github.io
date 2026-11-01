@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Beyond RAG: Context-to-Task Alignment"
 description: "RAG is one pattern in a task-centered architecture: determine what the user needs, align retrieval with source representations, and build context for decisions, actions, and verified outcomes."
-linkTitle: "Beyond RAG: Context-to-Task Alignment"
+linkTitle: "Beyond RAG"
 ---
 
 Goal: treat RAG as one pattern within context-augmented task systems, rather than as the whole architecture.

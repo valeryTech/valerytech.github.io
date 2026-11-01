@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Interviewing.io Interview Notes"
+title: "Interviewing.io System Design Interview Notes"
 description: "Interviewing.io guidance and personal annotations on interview types, assessment signals, problem navigation, technical depth, pacing, collaboration, and common mistakes."
-linkTitle: "Interviewing.io Interview Notes"
+linkTitle: "Interviewing.io Notes"
 ---
 
 Source notes and personal annotations on system-design interviewing. Use the [interview index]({{< ref "system-design/interview" >}}) for the organized communication and practice notes.

@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "5.3 Resource-Aware Investigation Planning"
 description: "Proposes explicit investigation budgets and logical-to-physical planning across cost, latency, coverage, and uncertainty, including when reusable compiled procedures justify their initial synthesis expense."
-title: "03 Resource Aware Investigation Planning"
-linkTitle: "03 Resource Aware Investigation Planning"
+weight: "30"
+linkTitle: "5.3 Resource-Aware Planning"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Stable Interface Components"
 description: "A proposal limits dynamic workspaces to familiar composable controls, then considers task-specific projections and domain-supplied components, preserving a stable interaction grammar while alternating language with direct manipulation."
-title: "02 Stable Interface Components"
-linkTitle: "02 Stable Interface Components"
+linkTitle: "Stable Interface Components"
 ---
-# Stable interface components
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

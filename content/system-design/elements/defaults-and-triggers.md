@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Defaults and Triggers"
+title: "Defaults and Triggers for Design Choices"
 description: "A prototyping path through the design question hubs: the default option to start with, the signal that it no longer fits, the option to move to, and the technique that tests the move."
 document_status: "draft"
 linkTitle: "Defaults and Triggers"

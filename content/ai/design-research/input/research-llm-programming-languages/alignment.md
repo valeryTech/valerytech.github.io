@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Programming languages and the design research program"
+title: "Programming Languages and the Design Research Program"
 description: "An alignment review connecting programming-language research to the wider design program, identifying existing overlap, useful additions, limits, and possible studies of enforcement and understanding."
-linkTitle: "Programming languages and the design research program"
+linkTitle: "Research Program Alignment"
 ---
 
 Editorial analysis by Codex, 2026-04-29. This note compares the [exported conversation and reports]({{< ref "ai/design-research/input/research-llm-programming-languages" >}}) with the wider collection. It distinguishes existing ideas, additional precedents, and proposed research questions. The source-check scope is recorded below; the exported text remains unchanged.

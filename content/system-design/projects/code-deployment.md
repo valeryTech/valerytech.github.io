@@ -5,8 +5,6 @@ title: "Code Deployment System: Requirements Sketch"
 description: "A partial code-deployment design sketch covering release artifacts, deployment operations, status APIs, completion targets, and example workload assumptions."
 linkTitle: "Code Deployment"
 ---
-# Code Deployment System
-
 
 Partial example from the [interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}). Developers tag a release; the system packages the code and deploys it to servers.
 

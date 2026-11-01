@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "4.6 Evidence Synthesis over a Bounded Corpus"
 description: "Defines requirements and proposed contracts for bounded-corpus synthesis where omission matters, exposing screening gaps, supporting and conflicting evidence, source-precedence policies, qualified findings, and abstention."
-title: "06 Bounded Corpus Evidence Synthesis"
-linkTitle: "06 Bounded Corpus Evidence Synthesis"
+weight: "60"
+linkTitle: "4.6 Bounded-Corpus Synthesis"
 ---
-# Evidence synthesis over a bounded corpus
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
@@ -233,4 +232,4 @@ The [retrieval methods]({{< ref "ai/design-research/04-investigation-and-epistem
 
 The promising gap is task-specific context assembly: selecting authoritative, sufficient evidence for a decision (or for other task) while exposing provenance, conflicts, missing support, and abstaining when warranted.
 
-links: sem-rag, semantic search, [Reframing]({{< ref "ai-engineering/context/retrieval/reframing" >}}) retrieval,
+links: sem-rag, semantic search, [reframing]({{< ref "ai-engineering/context/retrieval/reframing" >}}) retrieval,

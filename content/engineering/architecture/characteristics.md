@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Architectural Characteristics"
 description: "Compare operational, structural, cloud, and cross-cutting quality characteristics when discussing architectural requirements and trade-offs."
-linkTitle: "Architectural Characteristics"
+linkTitle: "Characteristics"
 ---
-# Architectural Characteristics (Partially) Listed
-
 
 Source: [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*.
 

@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-description: "Five kinds of unknown stand between an idea and its intended effect: whether it can be done, how, within constraints, in the real environment, and to any effect. For one claim, the ladder names which are open and what evidence would close each."
 title: "Uncertainty Ladder"
+description: "Five kinds of unknown stand between an idea and its intended effect: whether it can be done, how, within constraints, in the real environment, and to any effect. For one claim, the ladder names which are open and what evidence would close each."
 linkTitle: "Uncertainty Ladder"
 ---
 ## Purpose

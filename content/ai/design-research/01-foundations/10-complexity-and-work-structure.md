@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.10 Complexity and Work Structure"
 description: "Proposes profiling work by uncertainty, dependencies, state, coordination, authority, and recovery, treating long-running work as continuity across execution boundaries rather than elapsed time."
-title: "10 Complexity And Work Structure"
-linkTitle: "10 Complexity And Work Structure"
+weight: "100"
+linkTitle: "1.10 Complexity and Work Structure"
 ---
-# Complexity and work structure
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Collected Notes"
+title: "Collected System Design Notes"
 description: "An index of architecture and distributed-systems reading excerpts and design-review collections, connecting them to the organized system design notes."
 linkTitle: "Collected Notes"
 ---

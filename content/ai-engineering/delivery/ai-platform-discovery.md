@@ -4,7 +4,7 @@ toc: true
 title: "AI Discovery Platform"
 description: "A discovery platform for AI products is built around the loop from uncertainty to experiment, evidence, and decision, keeping prototypes and environments cheap and disposable while making evidence, failures, and decisions durable."
 document_status: "draft"
-linkTitle: "Discovery Platform"
+linkTitle: "AI Discovery Platform"
 ---
 
 **Question:** what should a platform for AI product discovery provide, given that its job is to reduce uncertainty about candidate solutions rather than to run AI applications in production?

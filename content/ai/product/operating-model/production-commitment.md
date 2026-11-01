@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Production Commitment: What Users Can Rely On"
 description: "A production promise includes limits and failure behavior as well as useful behavior. A Wallet example and commitment record make accepted uncertainty, harm controls, and ongoing responsibilities explicit."
-title: "Production Commitment"
 linkTitle: "Production Commitment"
 ---
-# Production commitment: what users can rely on
-
 
 A production commitment states what people may rely on in real use and what we accept responsibility for.
 

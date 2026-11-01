@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Time and Order"
+title: "Time and Order in Distributed Systems"
 description: "How nodes order events without a shared clock: time-of-day and monotonic clocks, drift and NTP, happens-before and Lamport clocks, vector clocks and version vectors, hybrid logical clocks, causal versus total order, leases, and fencing tokens."
 document_status: "draft"
 linkTitle: "Time and Order"

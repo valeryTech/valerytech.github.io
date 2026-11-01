@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Model of Context-Augmented Task Systems"
 description: "Working context is a bounded view of a larger investigation. This domain model links requests, requirements, source identity, assessments, and operation results so revisions and failures remain traceable."
-linkTitle: "Model of Context-Augmented Task Systems"
+linkTitle: "Context-Augmented Tasks"
 ---
 ## Task, requirements, and operation
 

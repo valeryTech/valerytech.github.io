@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Application State and Computation"
 description: "A critique separates document, interaction, job, and derived state, identifying missing change-ownership and result-freshness rules and distinguishing undo, cancellation, and replay before selecting asynchronous boundaries."
-title: "05 Application State And Computation Comments"
-linkTitle: "05 Application State And Computation Comments"
+linkTitle: "State Comments"
 ---
-# Comments on application state and computation
-
 
 The comments are new editorial analysis of the [retained architecture sketch]({{< ref "ai/design-research/interactive-systems/05-application-state-and-computation" >}}). They identify open design questions rather than changing the original example or declaring an accepted specification.
 

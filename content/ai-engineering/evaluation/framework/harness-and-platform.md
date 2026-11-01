@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Evaluation Harness and Workspace"
 description: "Controlled execution and evidence capture form the evaluation harness; the wider workspace supplies case management, trace review, version comparisons, human judgment, and production learning."
-linkTitle: "Evaluation Harness and Workspace"
+linkTitle: "Harness and Workspace"
 ---
 
 An evaluation harness provides controlled execution and evidence capture for an AI system. A wider evaluation workspace helps people organize, inspect, judge, compare, and use that evidence.

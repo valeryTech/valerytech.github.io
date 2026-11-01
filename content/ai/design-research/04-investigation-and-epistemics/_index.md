@@ -1,7 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Investigation and Epistemics"
+title: "4. Investigation and Epistemics"
 description: "Research notes on representing investigations as programs, with evidence operations, provenance, coverage, and explicit uncertainty to support inspectable findings."
-linkTitle: "Investigation and Epistemics"
+weight: "50"
+linkTitle: "4. Investigation and Epistemics"
 ---

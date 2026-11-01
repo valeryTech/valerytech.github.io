@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Language Intent and Hybrid Interaction"
 description: "A research dialogue reframes language interfaces around combinatorial requests, proposing language, examples, and direct controls that turn underspecified intent into visible, editable structure instead of repeated prompting."
-title: "07 Language Intent And Hybrid Interaction"
-linkTitle: "07 Language Intent And Hybrid Interaction"
+linkTitle: "Intent and Hybrid Interaction"
 ---
-# Language intent and hybrid interaction
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

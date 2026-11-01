@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Retrieval and Context Assembly"
+title: "Retrieval and Context Assembly for Code"
 description: "Query understanding, task-aware retrieval for code, the hybrid graph-vector-lexical triad, context expansion, packing and index freshness."
 linkTitle: "Retrieval and Context Assembly"
 ---

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Working Ideas: Workflow Evolution and Autonomy"
 description: "Open hypotheses about risk-based autonomy and evolving workflows, contrasting deterministic-first design with introducing structure after observing LLM behavior in practice."
-title: "09 Workflow Evolution And Autonomy"
-linkTitle: "09 Workflow Evolution And Autonomy"
+linkTitle: "Workflow Evolution"
 ---
-# Working ideas: workflow evolution and autonomy
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

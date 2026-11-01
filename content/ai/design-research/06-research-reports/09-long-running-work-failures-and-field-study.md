@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.9 Long-Running Work Failures and Field Study"
 description: "A proposed field study of diverse long-running tasks, using eight candidate failure categories to derive persistent state, evolving roles, authority, recovery, and a broader model of collaborative work."
-title: "09 Long Running Work Failures And Field Study"
-linkTitle: "09 Long Running Work Failures And Field Study"
+weight: "90"
+linkTitle: "6.9 Long-Running Work Failures"
 ---
-# Long-running work failures and field study
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Product Framework Notes"
 description: "Working synthesis of workflow decomposition and AI design choices, distinguishing task-level opportunity assessment, human-AI responsibility allocation, and coherent candidate workflows before selecting models or automation levels."
-title: "Notes"
 linkTitle: "Notes"
 ---
 

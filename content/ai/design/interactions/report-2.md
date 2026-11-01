@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Intent Usage in the LLM-Based Workflow Era"
 description: "A practical intent-detection guide for LLM workflows, covering routing, ambiguity, taxonomy design, classification methods, speech inputs, and evaluation without reducing intent to the whole task."
-linkTitle: "Intent Usage in the LLM-Based Workflow Era"
+linkTitle: "Intent Usage"
 ---
 ## Executive Summary
 

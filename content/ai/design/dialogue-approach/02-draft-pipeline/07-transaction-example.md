@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Transaction Example: From Utterance to Execution"
 description: "A worked expense-entry example following a transaction from utterance through draft updates, account resolution, duplicate checks, confirmation, and saving."
-title: "07 Transaction Example"
-linkTitle: "07 Transaction Example"
+linkTitle: "Transaction Example"
 ---
-# Transaction example: from utterance to execution
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

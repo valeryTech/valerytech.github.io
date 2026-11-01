@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "2.8 Comments on Collaborative-System Design Practices"
 description: "Critiques initiative, confidence, autonomy, and inspection practices, calling for explicit triggers, task scope, authority, consequence boundaries, and outcome evidence before implementing collaborative features."
-title: "08 Collaborative System Design Practices Comments"
-linkTitle: "08 Collaborative System Design Practices Comments"
+weight: "81"
+linkTitle: "2.8 Comments"
 ---
-# Collaborative-system design practices: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) retains an original question and complete LLM reply. The comments explain the arrangement and questions for later design work.
 

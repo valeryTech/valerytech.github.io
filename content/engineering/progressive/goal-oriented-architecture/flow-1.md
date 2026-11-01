@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Architecture Grounded in User Goals"
 description: "Research notes on how user goals and workflows can ground architectural responsibilities and provide context beyond structural diagrams."
-linkTitle: "Architecture Grounded in User Goals"
+linkTitle: "Grounded in User Goals"
 ---
 
 The research question is which software-engineering and architectural approaches start from user needs, Jobs-to-be-Done (JTBD), or other product concerns when reasoning about a system. Structural diagrams, such as C4 views, may show interactions without explaining why the elements exist or which needs shape them. Those reasons include more than architectural concerns: a sequence such as a user sending an email and a system responding still needs an explanation of the problem being solved.

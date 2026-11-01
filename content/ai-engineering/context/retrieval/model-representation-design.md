@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Representation Design for Task-Relevant Retrieval"
 description: "Design searchable views around a demonstrated access problem, then recover the original material needed to read a match. Test whether added access outweighs information loss, source-mapping errors, and upkeep."
-linkTitle: "Representation Design for Task-Relevant Retrieval"
+linkTitle: "Representation Design"
 ---
 
 Representation design determines what aspects of source material become searchable and how a match can be recovered as usable source material. It starts with the information needs of a class of tasks and the limitations of the available sources.

@@ -1,14 +1,12 @@
 ---
 draft: false
 toc: true
+title: "Principles and Decision Logic for AI Product Work"
 aliases:
   - "/contributions/uncertainty-utility-commitments/"
 description: "Evidence matters when it can change a product decision. Eight principles connect the condition to improve, alternative solutions, assumptions, and production responsibilities to what the team commits to next."
-title: "Operating Model"
-linkTitle: "Operating Model"
+linkTitle: "Principles and Decision Logic"
 ---
-# Principles and Decision Logic for AI Product Work
-
 ## Purpose
 
 

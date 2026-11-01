@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Architecture principles before the refactor"
+title: "Architecture Principles Before the Refactor"
 description: "Archived principles and references covering architectural context, modularity, feedback loops, microservices, design practices, and modeling approaches."
 document_status: "archived"
-linkTitle: "Architecture principles before the refactor"
+linkTitle: "Architecture Principles"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/02-system-design" >}}). Numerical targets and technical claims below retain their original draft context.

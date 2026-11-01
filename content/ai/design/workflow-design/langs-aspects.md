@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Language choice and semantic guarantees for AI systems"
+title: "Language Choice and Semantic Guarantees for AI Systems"
 description: "Go, Scala, Haskell, and BEAM expose different trade-offs in compiler feedback and fault isolation. Semantic substrates extend the question to guarantees preserved when people, models, and programs compose behavior."
-linkTitle: "Language choice for AI systems"
+linkTitle: "Language Choice"
 ---
 
 Article under discussion: The Boring Future of AI Coding ([original article](https://metamagic.substack.com/p/the-boring-future-of-ai-coding)).

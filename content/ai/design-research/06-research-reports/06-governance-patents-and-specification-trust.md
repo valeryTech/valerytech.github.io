@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "6.6 Governance, Patents, and Specification Trust"
 description: "A saved governance discussion mapping nearby patent claims and proposing auditable approvals, privacy-aware traces, and policy-version controls, while questioning who validates specifications that verifiers enforce."
-title: "06 Governance Patents And Specification Trust"
-linkTitle: "06 Governance Patents And Specification Trust"
+weight: "60"
+linkTitle: "6.6 Governance and Patents"
 ---
 ## Patents, legal and ethical considerations
 

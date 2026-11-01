@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "WhatsApp"
+title: "WhatsApp System Design"
 description: "A queued WhatsApp design prompt linking to the case template and practice catalog; no independent design has been recorded."
 linkTitle: "WhatsApp"
 ---

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Discovery Vocabulary"
 description: "Design knowledge, inquiry artifacts, and the eventual product are different outcomes. A vocabulary and taxonomy clarify how sketches, frames, prototypes, observations, rationale, and decisions contribute to each."
-title: "Dictionary"
-linkTitle: "Dictionary"
+linkTitle: "Vocabulary"
 ---
-# Discovery vocabulary
-
 
 The primary thing is an **evolving model of the design situation**: what the situation is, possible ways to frame it, what you know, what remains unclear, possible directions, constraints, and provisional commitments.
 

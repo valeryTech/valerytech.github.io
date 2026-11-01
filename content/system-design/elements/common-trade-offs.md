@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Common Trade-offs"
+title: "Common Trade-offs in System Design"
 description: "The trade-offs that recur across system design problems: what each side gains and costs, the signal that tips the choice, and the hub where the decision is made."
 document_status: "draft"
 linkTitle: "Common Trade-offs"

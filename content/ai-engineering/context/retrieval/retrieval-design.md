@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Retrieval Design: Simple Baselines, Interactive Experiments, and Shared Work"
+title: "Retrieval Design: Baselines, Experiments, and Shared Work"
 description: "Separate improvements to the current inquiry from policies for future runs. Use small retrieval baselines, inspectable interventions, and whole-task comparisons to decide which operations to automate."
 linkTitle: "Retrieval Design"
 ---

@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "URL Shortener: Consistency and NFR Draft"
 description: "An extended URL-shortener draft exploring user workloads, replication, propagation delay, transactional outbox, PACELC, read scaling, latency tiers, and availability."
-linkTitle: "URL Shortener: Consistency and NFR Draft"
+linkTitle: "Consistency and NFR Draft"
 ---
 
 Extended exploration of user archetypes, consistency, replication, the transactional outbox, PACELC, and read-path targets. Retained alongside the [other NFR proposals]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}); numerical examples are provisional.

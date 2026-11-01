@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "RAG Reframing: Editorial Review of the Companion Documents"
+title: "RAG Reframing: Editorial Review of the Companion Notes"
 description: "An editorial map of the retrieval companions explains why assembly is bounded to operation inputs, discovery can be an outcome, and evidence judgments require a stated basis, while main-framing choices remain open."
-linkTitle: "RAG Reframing: Editorial Review"
+linkTitle: "Reframing Review"
 ---
 
 Review date: 2026-04-19.

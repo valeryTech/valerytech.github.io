@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.10 Comments on Interactive Investigation Position Paper"
 description: "A critique of the interactive-investigation paper proposal requiring source-to-principle support, scoped novelty claims, user studies of understanding and correction, and measurement of inspection costs alongside possible benefits."
-title: "10 Interactive Investigation Position Paper Comments"
-linkTitle: "10 Interactive Investigation Position Paper Comments"
+weight: "101"
+linkTitle: "6.10 Comments"
 ---
-# Interactive investigation position paper: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [paper note]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}) preserves original LLM text. The comments explain placement and design questions, rather than presenting the proposed paper as completed research.
 

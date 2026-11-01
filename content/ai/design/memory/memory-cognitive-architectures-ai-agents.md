@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Memory Cognitive Architectures AI Agents"
+title: "Memory in Cognitive Architectures and AI Agents"
 description: "A research synthesis proposing immutable episodes, revisable temporal beliefs, and offline consolidation for personalized agents, with safeguards against reflection echoes, adversarial evaluations, and a graduate curriculum."
-linkTitle: "Memory Cognitive Architectures AI Agents"
+linkTitle: "Memory Architectures"
 ---
-# Memory in Cognitive Architectures and AI Agents: From Human Memory Models to Reflective and Self-Managing Agent Memory
-
 ## Executive summary
 
 

@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "3.13 Comments on Domain Semantics and Operation Contracts"
 description: "Questions ownership and versioning of business definitions and refund contracts, distinguishing advertised operation descriptions from enforced authorization, current preconditions, idempotency, and confirmed external outcomes."
-title: "13 Domain Semantics And Operation Contracts Comments"
-linkTitle: "13 Domain Semantics And Operation Contracts Comments"
+weight: "131"
+linkTitle: "3.13 Comments"
 ---
-# Comments on domain semantics and operation contracts
-
 
 The comments are new analysis of the [retained domain and operation passage]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}). The original examples and research descriptions remain unchanged, and the comments do not specify an accepted implementation.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "05 Interaction Forms And Hybrid UI"
+title: "Interaction Forms and Hybrid UI"
 description: "Matches interaction forms to task needs: language for intent, structured views for review, direct controls for precision, and explicit confirmation for consequential actions."
-linkTitle: "05 Interaction Forms And Hybrid UI"
+linkTitle: "Interaction Forms"
 ---
-# Interaction forms and hybrid UI
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

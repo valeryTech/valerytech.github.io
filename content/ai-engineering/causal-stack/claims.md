@@ -1,12 +1,12 @@
 ---
 draft: false
 toc: true
-title: "Claims to check in product work"
+title: "Claims to Check in Product Work"
 aliases:
   - "/ai-engineering/causal-stack/layer-1b-final-scheme/"
   - "/ai-engineering/evaluation/causal-stack/layer-1b-final-scheme/"
 description: "A definition, incident explanation, and product recommendation need different support. Scoped expectations, counterexamples, and revision rules let product evidence strengthen, narrow, or overturn engineering claims."
-linkTitle: "Claims to check in product work"
+linkTitle: "Claims to Check"
 ---
 
 A claim states something we expect to hold within a specified setting. It becomes useful when evidence for or against it can change a decision.

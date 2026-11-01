@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "1.4 Participant-Neutral System Model"
 description: "Proposes a shared typed-state architecture where opaque participants contribute proposals and artifacts, while a runtime validates authority, contracts, and invariants before committing transitions and effects."
-title: "04 Participant Neutral System Model"
-linkTitle: "04 Participant Neutral System Model"
+weight: "40"
+linkTitle: "1.4 Participant-Neutral Model"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

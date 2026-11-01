@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "03 Research"
-linkTitle: "03 Research"
+title: "Dialogue Approach Research"
+linkTitle: "Research"
 ---

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Dialogue Systems and Mixed-Initiative Interaction"
 description: "Connects the classical dialogue pipeline and task-oriented dialogue research to mixed-initiative HCI, explaining when conversation is the research object and when a broader task model helps."
-title: "04 Dialogue And Mixed Initiative"
-linkTitle: "04 Dialogue And Mixed Initiative"
+linkTitle: "Mixed-Initiative Interaction"
 ---
-# Dialogue systems and mixed-initiative interaction
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

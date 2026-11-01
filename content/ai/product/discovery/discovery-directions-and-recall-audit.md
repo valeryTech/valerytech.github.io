@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Discovery Directions and Recall Audit"
+title: "Discovery Directions Map and Recall Audit"
 description: "A cross-topic map of bottom-up learning across AI projects, LLM workflow design, grounded failure analysis, and discovery with LLMs, with search coverage and limits as of 2026-05-01."
-linkTitle: "Discovery Directions and Recall Audit"
+linkTitle: "Directions and Recall Audit"
 ---
-# Discovery notes: directions map and recall audit
-
 
 Audit date: 2026-05-01. This report describes the local notes as they stand on that date. It does not independently verify research findings, and it leaves the source notes unchanged.
 

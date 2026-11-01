@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Features and Behaviors: Vocabulary"
 description: "One transaction-capture feature contains many promises: preserve input, expose ambiguity, validate rules, require confirmation, and save once. Distinguishing feature, scope, behavior, and commitment makes those promises visible."
-title: "Feature Behavior Vocabulary"
-linkTitle: "Feature Behavior Vocabulary"
+linkTitle: "Feature Vocabulary"
 ---
 ## 3. Feature is still useful, but it is not the delivery unit
 

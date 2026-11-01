@@ -57,9 +57,11 @@ Hugo's `.LinkTitle` falls back to `title`, and the importer copies `title` into
    (`root_index_source`), that note's front matter names the section; for a
    synthesized root, `section_title` in `scripts/migrate/config.toml` does.
 6. **Match or drop the leading `#` heading.** The importer removes a first-line
-   `# Heading` that matches `title`, ignoring case and spacing, and the page then
-   shows `title` as its heading. A heading that differs stays in the body and
-   replaces the title heading, so the page shows one name and navigation another.
+   `# Heading` that matches `title`, ignoring case and spacing. The page shows
+   `title` as its heading unless the body opens with its own `# Heading`; a
+   heading that differs from `title` would then replace it, so the page shows one
+   name and navigation another. `#` headings further down, used for a note's main
+   parts, stay in place below the title.
 7. **Label wiki links.** `[[recursion-and-folds]]` renders as "Recursion And
    Folds", built from the file name, not the target's title. Write
    `[[recursion-and-folds|Recursion and folds]]` when the text matters.

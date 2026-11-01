@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Conceptual Model for AI Evaluation"
 description: "Product intent, configured AI systems, execution evidence, and decision needs meet in an evaluation model with distinct feedback routes for product improvement, evaluation knowledge, and infrastructure."
-linkTitle: "Conceptual Model for AI Evaluation"
+linkTitle: "Conceptual Model"
 ---
 ## Purpose and scope
 

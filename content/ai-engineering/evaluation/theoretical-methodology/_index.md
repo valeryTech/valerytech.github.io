@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Theoretical Methodology"
+title: "Theoretical Methodology for AI Evaluation"
 description: "An early, theoretical attempt to structure how AI and ML systems could be estimated, compared, and built from evidence. It has not been tested in practice."
 linkTitle: "Theoretical Methodology"
 ---

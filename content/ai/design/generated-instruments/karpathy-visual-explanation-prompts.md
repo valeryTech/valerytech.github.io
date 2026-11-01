@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Karpathy Visual Prompts Practices"
+title: "Karpathy's Visual Explanation Prompts"
 description: "A conversation about Andrej Karpathy's advice to ask LLMs for diagrams, interactive HTML, and animated explainers instead of text, with prompting practices and a reusable prompt."
 linkTitle: "Karpathy Visual Prompts"
 ---

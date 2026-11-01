@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Engineering Lifecycle Techniques"
 description: "Choose spikes, proofs of concept, prototypes, walking skeletons, vertical slices, and rollout techniques according to the uncertainty being resolved."
-linkTitle: "Engineering Lifecycle Techniques"
+linkTitle: "Lifecycle Techniques"
 ---
 These techniques map well to different **engineering lifecycle goals**. The important point is that they are not interchangeable: each answers a different kind of question.
 

@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Intent-Driven and Scenario-Driven Architecture"
 description: "Compare goal-driven and scenario-driven architecture methods, from Impact Mapping and KAOS to Domain Storytelling, EventStorming, quality scenarios, and BDD."
-linkTitle: "Intent-Driven and Scenario-Driven Architecture"
+linkTitle: "Intent and Scenarios"
 ---
 
 The relevant approach is an **intent-driven / goal-driven / scenario-driven architecture process**, rather than another architecture-view notation. It keeps each architectural element connected to the reason the system exists.

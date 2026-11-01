@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Design Research Collection Index"
 description: "A reading guide organizing constrained-composition theory, semantic-substrate design methods, and applications in investigation, behavioral compilation, and human-AI collaboration, with links to critiques and evaluation proposals."
-title: "00 Index"
-linkTitle: "00 Index"
+linkTitle: "Collection Index"
 ---
-# Design research
-
 
 Start with [the introduction and reading map]({{< ref "ai/design-research/00-introduction" >}}) for the purpose of the collection, its intended contribution to practice and understanding, and the relationship between the earlier DSL exploration and the continuation in [AI systems design]({{< ref "ai/design/ai-system-design" >}}). The detailed reading guide follows below.
 

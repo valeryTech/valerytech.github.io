@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Judgment and Findings"
+title: "Judgment and Findings in AI Evaluation"
 description: "Judging AI behavior requires applicable criteria and sufficient evidence; validated evaluators, traceable labels, and explicit denominators turn those judgments into scoped findings for product decisions."
 linkTitle: "Judgment and Findings"
 ---

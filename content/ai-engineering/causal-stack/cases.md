@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Cases from product use"
+title: "Cases from Product Use"
 description: "A case links an attempted customer job to its outcome, hidden human assistance, and supporting artifacts. Competing explanations and a next check keep observations useful without prematurely naming a cause."
-linkTitle: "Cases from product use"
+linkTitle: "Cases from Product Use"
 ---
 
 A case starts with an actual task attempt. It can be a failure, a success, an abandoned attempt, or a task that worked only because someone intervened.

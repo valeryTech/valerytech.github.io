@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.7 Collaboration Framework"
 description: "Proposes a Spring-like framework of collaboration primitives, composable interaction patterns, and runtime interceptors that turn responsibility, review, authority, observability, and recovery into application infrastructure."
-title: "07 Collaboration Framework"
-linkTitle: "07 Collaboration Framework"
+weight: "70"
+linkTitle: "5.7 Collaboration Framework"
 ---
-# Collaboration framework
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

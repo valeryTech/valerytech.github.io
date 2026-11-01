@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on Language Intent and Hybrid Interaction"
 description: "A critique separates inferred thresholds and editable interpretations from agreed intent, valid plans, domain feasibility, and action authority, showing why examples and controls leave important choices unresolved."
-title: "07 Language Intent And Hybrid Interaction Comments"
-linkTitle: "07 Language Intent And Hybrid Interaction Comments"
+linkTitle: "Hybrid Interaction Comments"
 ---
-# Comments on language intent and hybrid interaction
-
 
 The comments are new editorial analysis of the [retained dialogue]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}). They also concern its passages on [candidate plans]({{< ref "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning" >}}#natural-language-requests-and-candidate-plans) and [instruction boundaries]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}#instructions-and-untrusted-data-in-language-interfaces). They are not part of the original response or an accepted implementation specification.
 

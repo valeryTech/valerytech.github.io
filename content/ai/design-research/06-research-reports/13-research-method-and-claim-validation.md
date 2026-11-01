@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.13 Research Method and Claim Validation"
 description: "A research-method proposal separating observations, construct inferences, mechanisms, generalizations, and forecasts, with claim/evidence records, competing hypotheses, interventions, replication, and explicit limits on LLM-generated authority."
-title: "13 Research Method And Claim Validation"
-linkTitle: "13 Research Method And Claim Validation"
+weight: "130"
+linkTitle: "6.13 Method and Claim Validation"
 ---
-# Research method and claim validation
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

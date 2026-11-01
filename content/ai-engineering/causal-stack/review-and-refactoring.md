@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Causal-stack refactoring record"
+title: "Causal-Stack Refactoring Record"
 description: "The refactoring replaces overlapping layer taxonomies with cases, claims, debugging, and checks tied to customer tasks. A destination map records which material survived, how it changed, and which evidence claims remain open."
-linkTitle: "Causal-stack refactoring record"
+linkTitle: "Refactoring Record"
 ---
 
 **Refactored:** 20 October 2026.

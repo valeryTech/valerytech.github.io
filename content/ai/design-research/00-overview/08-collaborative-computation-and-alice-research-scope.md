@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.8 Collaborative Computation and Alice Research Scope"
 description: "Separates coordination among existing humans, models, and programs from Alice: an artificial-universe research proposal that studies whether agency, cognition, and communication emerge from minimal conditions."
-title: "08 Collaborative Computation And Alice Research Scope"
-linkTitle: "08 Collaborative Computation And Alice Research Scope"
+weight: "80"
+linkTitle: "0.8 Alice Research Scope"
 ---
-# Collaborative computation and Alice research scope
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

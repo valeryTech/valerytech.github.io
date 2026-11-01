@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Scalability"
+title: "Scalability in System Design"
 description: "How to state a scalability claim, link workload and bottlenecks to scaling moves (vertical scaling, duplication, partitioning, decomposition, caching, queues, autoscaling), and weigh the costs in performance, money, operability and functionality."
 document_status: "canonical"
 linkTitle: "Scalability"

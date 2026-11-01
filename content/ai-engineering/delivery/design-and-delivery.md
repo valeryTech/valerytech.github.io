@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "AI Product Design and Delivery Framework"
 description: "A configurable AI project lifecycle linking problem framing, system design, build, release, and operation with continuous data, evidence, readiness, observability, and adoption workstreams."
-linkTitle: "AI Product Design and Delivery Framework"
+linkTitle: "Design and Delivery"
 ---
 
 Building an AI product involves much more than training a model. It starts with understanding the problem and deciding whether AI is the right approach. It then includes defining the product, designing the system, preparing data, building and testing the solution, releasing it, operating it, improving it, and eventually retiring it.
@@ -15,7 +15,7 @@ This framework divides that work into two connected cycles. The Problem and Resp
 ## Where to Start
 
 
-For a new project, start by understanding the problem. Identify who is affected, what is happening today, what needs to change, and why that change matters. At this point, do not assume that AI is the right solution. See more in the [Outer Cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}).
+For a new project, start by understanding the problem. Identify who is affected, what is happening today, what needs to change, and why that change matters. At this point, do not assume that AI is the right solution. See more in the [Problem and Response Cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}).
 
 Next, consider what kind of response is needed. The answer may be a change to a process, role, policy, data, or existing software. It may also be a new AI product or a combination of several changes. Some problems may not require a technical project at all.
 
@@ -66,7 +66,7 @@ A **phase** is a configurable grouping of related activities oriented toward a d
 
 Defines the MVP, product promises, guarantees and invariants, JTBDs, and primary and supporting business use cases.
 
-Serves as the foundation for the design. See [[df-product-framing]].
+Serves as the foundation for the design. See Product framing.
 
 ## Design
 
@@ -120,12 +120,12 @@ A cross-cutting workstream is a coherent set of activities, responsibilities, ar
 
 Build an evaluation harness, use an evaluation platform, and assess whether the system works through offline and online evaluation.
 
-[Design Science Evaluation]({{< ref "ai-engineering/delivery/design-science-evaluation" >}})
+[Design science: artefact evaluation]({{< ref "ai-engineering/delivery/design-science-evaluation" >}})
 
 ### Data Foundation
 
 
-Includes synthetic data generation and data strategy. Further areas remain to be defined. See [Df Data]({{< ref "ai-engineering/delivery/df-data" >}}).
+Includes synthetic data generation and data strategy. Further areas remain to be defined. See [Data foundation]({{< ref "ai-engineering/delivery/df-data" >}}).
 
 Treat data strategy as a first-class workstream. Data Foundation ensures that an AI product is designed from evidence, evaluated against representative and risk-relevant data, operated with effective telemetry, and continuously adapted as users, data, knowledge, and model behavior change.
 
@@ -139,7 +139,7 @@ Open question: should there also be a separate component for data itself?
 ### Production Readiness
 
 
-Covers possible harm, system failure, human oversight, fallback behaviour, and recovery. See [Production Readiness Framework]({{< ref "ai-engineering/delivery/production-ready/production-readiness-framework" >}}).
+Covers possible harm, system failure, human oversight, fallback behaviour, and recovery. See [Production readiness framework]({{< ref "ai-engineering/delivery/production-ready/production-readiness-framework" >}}).
 
 **Security and Privacy**
 
@@ -202,10 +202,10 @@ It is especially prominent during Baseline and Feasibility, but may also appear 
 - operation and evolution.
 
 
-- add link and justification to the [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) and mention with roadmap management
+- add link and justification to the [experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) and mention with roadmap management
 - walking skeletons; prototyping method
 - baseline
-- add links and short references about [Combined Approach]({{< ref "ai-engineering/approach/combined-approach" >}}), [Cross Domain Mindset]({{< ref "ai-engineering/approach/cross-domain-mindset" >}})
+- add links and short references about [Structured AI development approach]({{< ref "ai-engineering/approach/combined-approach" >}}), [Cross-domain mindset]({{< ref "ai-engineering/approach/cross-domain-mindset" >}})
 
 ### Baseline implementation and experimentation
 

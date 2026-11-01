@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Saved Research Conversations"
 description: "An index of exported ChatGPT conversations and completed research reports, with navigation links, export scope, citation recovery details, and companion metadata."
-title: "Pinned Chats Index"
-linkTitle: "Pinned Chats Index"
+linkTitle: "Saved Research Conversations"
 ---
-# Saved research conversations
-
 
 Four conversations captured on 2026-04-25, edited for public release on 2026-04-28.
 

@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Databases and Access Patterns"
 description: "Study notes for matching storage types to access patterns and exploring sharding, indexing, denormalization, and database engineering resources."
-title: "Databases"
 linkTitle: "Databases"
 ---
 data access pattern

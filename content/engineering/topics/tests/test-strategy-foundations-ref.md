@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Test Strategy Playbook v3"
 description: "A detailed test-strategy playbook combining practical-pyramid mental models with evidence mapping, pipeline budgets, ownership, governance, and operational templates."
-linkTitle: "Test Strategy Playbook v3"
+linkTitle: "Playbook v3"
 ---
-# Test Strategy Playbook (v3): Practical Pyramid, Clear Mental Models, and Operational Governance
-
 
 This document is both a **teaching guide and practical playbook**. It explains how to design, manage, and run a set of software tests for modern systems, including microservices, Kafka/Kafka Streams, and Postgres.
 

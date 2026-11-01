@@ -114,7 +114,7 @@ test('Design Research keeps its sidebar reading guide and has a separate section
   assert.ok(sidebar, 'The sidebar must be present');
   assert.ok(extractLinks(sidebar).some((link) => link.pathname === '/ai/design-research/'), 'The section name opens its own overview');
   assert.equal(extractLinks(sidebar).filter((link) => link.pathname === '/ai/design-research/00-index/').length, 1, 'The introductory document remains available once');
-  assert.match(sidebar, />00 Index<\/a>/);
+  assert.match(sidebar, />Collection Index<\/a>/);
   const content = mainContent(html);
   assert.match(content, /<h1>Design Research<\/h1>/);
   assert.match(content, /Start here/);

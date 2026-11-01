@@ -1,7 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Runtime and Execution"
+title: "5. Runtime and Execution"
 description: "Design proposals for durable execution, versioned programs, configuration, and controlled effects, helping readers reason about how AI-assisted work runs and is inspected."
-linkTitle: "Runtime and Execution"
+weight: "60"
+linkTitle: "5. Runtime and Execution"
 ---

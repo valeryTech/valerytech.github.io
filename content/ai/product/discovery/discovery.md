@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Exploratory Discovery and Prototyping"
 description: "Searching personal notes provides a concrete setting for exploratory design inquiry, where cheap prototypes, research, and reframing develop understanding and change the questions worth pursuing."
-title: "Discovery"
-linkTitle: "Discovery"
+linkTitle: "Discovery and Prototyping"
 ---
-# Exploratory discovery and prototyping
-
 ## Exploratory interaction prototyping
 
 

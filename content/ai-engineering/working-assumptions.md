@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Working Assumptions"
+title: "AI Engineering Working Assumptions"
 description: "Plausible proposals are becoming abundant; good experiments and discriminating evidence remain scarce. Scoped task performance, explicit evaluators, and whole-job feedback connect alternatives to useful outcomes."
 date: "2026-03-03T00:00:00-03:00"
 lastmod: "2026-03-03T00:00:00-03:00"

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Collaboration Transfer"
 description: "A reading route through the joint-activity model, its human-AI collaboration patterns, and the reasoning behind them, with destinations in a research collection outside the published website."
-title: "Collab Transfer"
-linkTitle: "Collab Transfer"
+linkTitle: "Collaboration Transfer"
 ---
-# Collaboration transfer
-
 
 This note indexes a collaboration model and a catalog of human-AI work patterns. The source material was reorganized on 2026-04-01.
 

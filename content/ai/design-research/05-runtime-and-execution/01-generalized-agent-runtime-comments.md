@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.1 Comments on Generalized Agent Runtime"
 description: "Reviews recovery support for long-running work, distinguishing checkpoints from valid resumption and retries from safe handling of prior effects, with separate controlled and field-study evaluations."
-title: "01 Generalized Agent Runtime Comments"
-linkTitle: "01 Generalized Agent Runtime Comments"
+weight: "11"
+linkTitle: "5.1 Comments"
 ---
-# Generalized agent runtime: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [runtime note]({{< ref "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime" >}}) preserves its earlier passages and the complete added mechanism list and coding-harness example. The comments focus on the added passage and do not independently verify the earlier report or product claims.
 

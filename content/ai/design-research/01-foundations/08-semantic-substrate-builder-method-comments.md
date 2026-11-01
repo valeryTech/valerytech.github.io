@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.8 Comments on Semantic Substrate Builder Method"
 description: "Challenges direct derivation of runtime mechanisms from work complexity, calling for explicit failure conditions, composition assumptions, recovery semantics, and evidence before claiming automatic design."
-title: "08 Semantic Substrate Builder Method Comments"
-linkTitle: "08 Semantic Substrate Builder Method Comments"
+weight: "81"
+linkTitle: "1.8 Comments"
 ---
-# Semantic substrate builder method: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.6 Architectural Least Commitment and Precedents"
 description: "Surveys minimal semantic boundaries through refinement, contracts, Unix, SQL, Kubernetes, capabilities, CRDTs, and schema evolution, comparing how restrictions preserve unknown future implementations and compositions."
-title: "06 Architectural Least Commitment And Precedents"
-linkTitle: "06 Architectural Least Commitment And Precedents"
+weight: "60"
+linkTitle: "1.6 Least Commitment"
 ---
-# Architectural least commitment and precedents
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.7 Comments on Collaboration Framework"
 description: "Challenges proposed collaboration interceptors to define enforceable authority, evidence, review, handoff, and recovery rules, noting that snapshots cannot reverse every external consequence."
-title: "07 Collaboration Framework Comments"
-linkTitle: "07 Collaboration Framework Comments"
+weight: "71"
+linkTitle: "5.7 Comments"
 ---
-# Collaboration framework: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

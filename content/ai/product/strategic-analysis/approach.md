@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Strategic Analysis Approach"
 description: "A proposed opportunity-search method targets expensive, verifiable semantic workflows, combining LLM capability limits, deterministic controls, recovery, historical cases, buyer access, and a narrow automation boundary."
-title: "Approach"
 linkTitle: "Approach"
 ---
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Hybrid Architecture"
+title: "Hybrid Architecture for Code Intelligence"
 description: "A deterministic analysis core wrapped by LLM orchestration, built from primitive operations that compose into debugging, refactoring and impact-analysis workflows."
 linkTitle: "Hybrid Architecture"
 ---

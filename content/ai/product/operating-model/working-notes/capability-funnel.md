@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-description: "A query can be syntactically valid and execute successfully while still answering the wrong question. Five levels trace the gap from query generation to understanding intent and completing an analytical job."
 title: "Capability Funnel"
+description: "A query can be syntactically valid and execute successfully while still answering the wrong question. Five levels trace the gap from query generation to understanding intent and completing an analytical job."
 linkTitle: "Capability Funnel"
 ---
-## Capability funnel
-
 
 > **Status:** Superseded working note. The current model is in [`solution-utility-ladder.md`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}), which separates utility, coverage, required conditions, and production operation.
 

@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.2 Constrained Generativity and Semantic Substrate Design"
 description: "A research synthesis framing substrate design as maximal permissiveness subject to guarantees, identifying open problems in constraint synthesis, semantic interoperability, and composing authority, replication, and provenance."
-title: "02 Semantic Substrate Design Report"
-linkTitle: "02 Semantic Substrate Design Report"
+weight: "20"
+linkTitle: "1.2 Semantic Substrate Design"
 ---
-# Constrained Generativity and Semantic Substrate Design
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

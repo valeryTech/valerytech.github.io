@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "CPython, the JVM, and polymorphism"
+title: "CPython, the JVM, and Polymorphism"
 description: "Compare CPython and JVM execution, bytecode, memory management, and polymorphism, including Python's method lookup, descriptors, and operator dispatch."
-linkTitle: "CPython, JVM, and polymorphism"
+linkTitle: "CPython, JVM, Polymorphism"
 ---
 
 This note compares runtime architecture, separates annotations from validation and dispatch, and traces method lookup into CPython's C implementation.

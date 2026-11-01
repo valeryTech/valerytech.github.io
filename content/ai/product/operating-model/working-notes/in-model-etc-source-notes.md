@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Source Notes from In-Model Notes"
 description: "The fragments connect strategic problems to empowered teams, solution experiments, and production work. They retain planning questions about evidence strength, shared understanding, and the two-way flow between discovery and delivery."
-title: "In Model Etc Source Notes"
-linkTitle: "In Model Etc Source Notes"
+linkTitle: "In-Model Source Notes"
 ---
-# Source notes from `in-model-etc.md`
-
 
 > **Editorial note:** These are planning notes, repeated statements, broken references, and draft comments that were not selected for the main documents. They are kept so the rearrangement does not discard source material. They are not the current operating model. The original wording is preserved in `7c21461:ai/product-model/in/in-model-etc.md`.
 

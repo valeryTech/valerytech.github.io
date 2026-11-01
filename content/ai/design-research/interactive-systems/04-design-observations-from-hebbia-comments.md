@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on the Design Observations Prompted by Hebbia"
 description: "Editorial commentary separates the author’s Hebbia observations from proposed extensions and the LLM’s interpretations, preserving the later correction from fixed representations toward freely composed operations."
-title: "04 Design Observations From Hebbia Comments"
-linkTitle: "04 Design Observations From Hebbia Comments"
+linkTitle: "Hebbia Comments"
 ---
-# Comments on the design observations prompted by Hebbia
-
 
 The comments below are new interpretation of the [author's original observation]({{< ref "ai/design-research/interactive-systems/04-design-observations-from-hebbia" >}}). They are separate from the author's wording and the LLM's reply.
 

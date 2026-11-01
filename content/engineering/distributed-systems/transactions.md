@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Transactions"
+title: "Transactions in Distributed Systems"
 description: "What transactions guarantee and how they are built: ACID defined precisely, isolation anomalies and the mechanisms that prevent them, serializability, two-phase commit and its failure modes, Spanner and Calvin, exactly-once processing, and sagas."
 document_status: "draft"
 linkTitle: "Transactions"

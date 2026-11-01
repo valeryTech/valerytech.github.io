@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "3.3 Comments on Declarative Programming Model"
 description: "Examines whether declarative collaboration constraints permit completion, meaningful review, and controlled commitment, especially when participants amend a shared specification during ongoing execution."
-title: "03 Declarative Programming Model Comments"
-linkTitle: "03 Declarative Programming Model Comments"
+weight: "31"
+linkTitle: "3.3 Comments"
 ---
-# Declarative programming model: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

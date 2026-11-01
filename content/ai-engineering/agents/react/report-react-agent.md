@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "ReAct in Context: A Critical Historical Analysis of Reasoning-and-Acting LLM Agents"
+title: "ReAct in Context: A Critical Historical Analysis"
 description: "ReAct read as an LLM implementation of a much older agent architecture: its claims set against decades of work on planning, BDI agents, cognitive architectures, and epistemic action, and what its own and later results show."
 linkTitle: "ReAct in Context"
 ---

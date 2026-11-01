@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Extended System Design Framework Collection"
 description: "An extended collection of design steps, architectural principles, staff-level considerations, follow-up questions, technical checklists, and examples."
-linkTitle: "Extended System Design Framework Collection"
+linkTitle: "Extended Collection"
 ---
 
 Extended collection of framework steps, principles, questions, and examples. Retained as an additional perspective in the [framework comparison]({{< ref "system-design/interview/frameworks" >}}). Source statements and incomplete ideas keep their draft context.

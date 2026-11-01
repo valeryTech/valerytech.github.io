@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Practitioner Product Comparison"
 description: "Compares eight assistant products by authority, execution, proactive behavior, and UI, showing why action capability, agentic control, and conversational presentation must be described separately."
-title: "01 Practitioner Product Comparison"
-linkTitle: "01 Practitioner Product Comparison"
+linkTitle: "Product Comparison"
 ---
-# Practitioner product comparison
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

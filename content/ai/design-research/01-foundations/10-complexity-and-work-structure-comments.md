@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "1.10 Comments on Complexity and Work Structure"
 description: "Critiques unvalidated work-complexity dimensions and task taxonomies, distinguishing clock duration, continuity, coupling, goal compatibility, and distributed information before inferring runtime requirements."
-title: "10 Complexity And Work Structure Comments"
-linkTitle: "10 Complexity And Work Structure Comments"
+weight: "101"
+linkTitle: "1.10 Comments"
 ---
-# Complexity and work structure: comments
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

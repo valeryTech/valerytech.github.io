@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Stream Processing and Events"
 description: "Explore events, immutable facts, streams, denormalized views, processing patterns, and a streaming-engine example when reasoning about event-based data systems."
-title: "Stream Processing"
 linkTitle: "Stream Processing"
 ---
 # Dictionary

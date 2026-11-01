@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Goals of AI Product Delivery"
 description: "Defines user-task success as the top AI delivery goal, then derives behavioral contracts, controlled changes, failure diagnosis, and production feedback as supporting capabilities."
-title: "Goals"
 linkTitle: "Goals"
 ---
 

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "[WIP] Production Readiness Framework"
+title: "Production Readiness Framework (Draft)"
 description: "A draft organizational framework translating readiness concepts into context-specific requirements, evidence, tailored rigor, lifecycle checkpoints, responsibility, decisions, exceptions, and reassessment."
-linkTitle: "[WIP] Production Readiness Framework"
+linkTitle: "Readiness Framework"
 ---
 ## An organizational system for applying the production-readiness model
 

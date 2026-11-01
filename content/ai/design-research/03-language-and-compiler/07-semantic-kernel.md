@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "3.7 Semantic Kernel"
 description: "Proposes an audit-oriented semantic kernel that models domain artifacts and compiles validated programs, separating relational truth, behavioral rules, authority, execution, and professional judgment."
-title: "07 Semantic Kernel"
-linkTitle: "07 Semantic Kernel"
+weight: "70"
+linkTitle: "3.7 Semantic Kernel"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

@@ -1,15 +1,12 @@
 ---
 draft: false
 toc: true
+title: "Is a Separate Prompt Registry Needed?"
 description: "A sourced decision note on when shared production prompts need a registry, contrasting runtime releases, collaboration, and rollback requirements with simpler repository-based versioning."
-title: "Prompt Registry"
 linkTitle: "Prompt Registry"
 ---
 
 <a id="is-there-a-need-to-build-a-separate-prompt-registry"></a>
-
-# Is a separate prompt registry needed?
-
 
 A separate prompt registry is only needed once prompts become a shared, fast-changing production surface area (multiple apps/agents, frequent edits, non-engineering contributors, and the need for safe rollouts/rollback). Prompt registries are commonly used to decouple prompts from code so teams can version, review, and deploy prompt changes without full application redeploys.[^1][^2]
 

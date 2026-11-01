@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "AGENTS.md"
+title: "AGENTS.md Guide for Coding Agents"
 description: "Put durable local defaults in AGENTS.md, route detailed knowledge to canonical sources, and turn repeated mistakes into executable checks so autonomy improves across the user–repository–agent system."
-linkTitle: "AGENTS.md"
+linkTitle: "AGENTS.md Guide"
 ---
 # Operating Model
 

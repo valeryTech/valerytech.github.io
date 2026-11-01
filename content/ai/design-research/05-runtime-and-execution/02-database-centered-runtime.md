@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "5.2 Database-Centered Runtime"
 description: "Analyzes DBOS durability and Rubicon query planning, proposing an investigation compiler over existing databases rather than a new DBMS, alongside Stonebraker interview passages on metadata and transactions."
-title: "02 Database Centered Runtime"
-linkTitle: "02 Database Centered Runtime"
+weight: "20"
+linkTitle: "5.2 Database-Centered Runtime"
 ---
 ## Stonebraker proposition
 

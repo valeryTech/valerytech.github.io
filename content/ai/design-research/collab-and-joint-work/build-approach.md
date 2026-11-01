@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Build Approach for Joint Work"
 description: "A route from participant capabilities to work allocation, augmentation, and tests of collaborative behavior, with links into the design-research collection beyond the published website."
-title: "Build Approach"
 linkTitle: "Build Approach"
 ---
 

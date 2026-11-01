@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "4.4 Provenance and Argumentation Foundations"
 description: "Connects provenance semirings, argumentation, and W3C PROV to compositional evidence dependencies, source invalidation, disagreement, and trust-sensitive rules that govern accepted claims and effects."
-title: "04 Provenance And Argumentation Foundations"
-linkTitle: "04 Provenance And Argumentation Foundations"
+weight: "40"
+linkTitle: "4.4 Provenance and Argumentation"
 ---
 ### 1. Provenance semirings may be directly useful
 

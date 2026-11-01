@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Golden Paths and Engineering Checkpoints"
 description: "Collected notes on golden paths for RAG, agents, and evaluation harnesses, connecting platform templates and engineering checkpoints to observable outcomes."
-linkTitle: "Golden Paths and Engineering Checkpoints"
+linkTitle: "Golden Paths and Checkpoints"
 ---
 ## What reviewers assume by default in agentic LLM work (low-signal checkpoints)
 

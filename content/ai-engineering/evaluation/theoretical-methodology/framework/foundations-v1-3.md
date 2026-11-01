@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Foundations v1.3 — Assumptions, Invariants, Validity Threats, and Factor Mappings"
+title: "Foundations v1.3: Assumptions, Invariants, Validity Threats"
 description: "Comparisons of AI behavior depend on assumptions about data, randomness, measurement, dependencies, optimization, and observability. The validity contract connects these assumptions to safeguards and remedies when they fail."
 linkTitle: "Foundations v1.3"
 ---
-# Foundations v1.3 -- Assumptions, Invariants, Validity Threats, and Factor Mappings
-
 
 This document is the **normative comparability contract** for the framework: what must hold for measurements, deltas, monitoring, and release decisions to be interpretable in LLM / agentic systems.
 

@@ -1,14 +1,14 @@
 ---
 draft: false
 toc: true
-title: "Model and system behavior"
+title: "Model and System Behavior"
 aliases:
   - "/ai-engineering/causal-stack/layer-1a-base-llm-mechanisms/"
   - "/ai-engineering/evaluation/causal-stack/layer-1a-base-llm-mechanisms/"
   - "/ai-engineering/causal-stack/layer-1c-ai-system-causal-features/"
   - "/ai-engineering/evaluation/causal-stack/layer-1c-ai-system-causal-features/"
 description: "Model research can suggest a local check while application traces show inputs, handoffs, state, and effects. The reference separates background findings from incident attribution and tracks feedback into future evidence."
-linkTitle: "Model and system behavior"
+linkTitle: "Model and System Behavior"
 ---
 
 Use this background to form questions about a product. It does not identify the cause of an incident.

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Jev, ontologies, and confidence-based routing"
+title: "Jev, Ontologies, and Confidence-Based Routing"
 description: "A support-ticket example uses Jev confidence scores to route work among execution, model reasoning, and human review, showing why ontology definitions also need evaluation and versioning."
-linkTitle: "Jev and ontologies"
+linkTitle: "Jev and Ontologies"
 ---
 ## Feed post
 

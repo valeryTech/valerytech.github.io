@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Sources on Reflective Agent Memory"
 description: "A preliminary reading guide for reflective agent memory, linking CoALA, Generative Agents, complementary learning systems, and Soar while distinguishing historical memory concepts from consciousness claims."
-title: "Memory 1"
-linkTitle: "Memory 1"
+linkTitle: "Reflective Memory Sources"
 ---
 
 For reflective agent memory, the following sources are proposed as alternatives to an earlier Du recommendation. The Du source is not identified in this note; that attribution remains unresolved.

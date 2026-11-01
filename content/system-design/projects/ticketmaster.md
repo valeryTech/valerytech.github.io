@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Ticketmaster: Source Walkthrough and Notes"
 description: "A Ticketmaster source walkthrough covering event browsing, search, booking, reservations, concurrent purchases, high-demand traffic, and interview-level expectations."
-linkTitle: "Ticketmaster: Source Walkthrough and Notes"
+linkTitle: "Ticketmaster"
 ---
-# Ticketmaster
-
 
 Collected source walkthrough with additional notes. Compare its assumptions and choices with your own design using the [case template]({{< ref "system-design/projects/case-template" >}}).
 

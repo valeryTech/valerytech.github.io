@@ -1,5 +1,7 @@
 {{- $page := .page -}}
-{{- $needsTitle := not (findRE `<h1\b` $page.Content 1) -}}
+{{- /* Show the title unless the content opens with its own H1; notes may still use H1s
+  further down for their main parts. */ -}}
+{{- $needsTitle := not (findRE `^\s*<h1\b` (string $page.Content) 1) -}}
 <article class="article-content{{ if eq $page.Type "about" }} about-content{{ end }}" aria-label="{{ $page.Title }}">
   {{ if $needsTitle }}<h1>{{ $page.Title }}</h1>{{ end }}
   {{ $page.Content }}

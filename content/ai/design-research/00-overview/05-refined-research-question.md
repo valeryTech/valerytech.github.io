@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.5 Refined Research Question"
 description: "Critiques shared state, runtime enforcement, and open workflows as premature foundational assumptions, while preserving an earlier participant-neutral environment question as one application."
-title: "05 Refined Research Question"
-linkTitle: "05 Refined Research Question"
+weight: "50"
+linkTitle: "0.5 Refined Research Question"
 ---
-# Refined research question
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Context"
+title: "Context for AI Systems"
 description: "An AI system's output depends on the context assembled for the task. These notes cover retrieval design: interpreting the need, selecting evidence, and fitting it to the consuming step."
 linkTitle: "Context"
 sidebar:

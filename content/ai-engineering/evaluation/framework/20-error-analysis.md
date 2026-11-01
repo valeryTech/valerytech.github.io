@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Failure Understanding"
+title: "Failure Understanding in AI Evaluation"
 description: "Recurring AI failures become useful engineering knowledge when incidents are compared, category boundaries tested, and selected failure modes translated into evidence-based criteria and measurements."
 linkTitle: "Failure Understanding"
 ---

@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Baseline, Prototype, and Feasibility"
 description: "Defines a thin, instrumented end-to-end baseline for testing feasibility, establishing deterministic foundations, and comparing later changes before production hardening."
-linkTitle: "Baseline, Prototype, and Feasibility"
+linkTitle: "Baseline and Prototype"
 ---
-## 4. Baseline, Prototype, and Feasibility
-
 ### Objective
 
 

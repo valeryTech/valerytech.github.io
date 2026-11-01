@@ -4,7 +4,7 @@ toc: true
 title: "Common Mistakes in AI-Assisted Development"
 description: "Passing tests can coexist with guessed requirements, missed callers, unnecessary machinery, or an unsafe API assumption. The failure catalog pairs these patterns with concrete ways to investigate and correct them."
 lastmod: "2026-04-19"
-linkTitle: "Common Development Mistakes"
+linkTitle: "Common Mistakes"
 ---
 
 Code can look reasonable and pass tests while still solving the wrong problem or breaking something elsewhere. This list helps reviewers decide where to look.

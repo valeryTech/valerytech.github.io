@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Critical Stance and Evidence-Based Practice"
 description: "Critical empirical practice combines skepticism, practical tests, and reflection. Its vocabulary distinguishes checking a claim from examining whether the measurement and interpretation support it."
-title: "In Critical Stance"
-linkTitle: "In Critical Stance"
+linkTitle: "Critical Stance"
 ---
 
 Several related terms emphasize different aspects of evidence-based practice:

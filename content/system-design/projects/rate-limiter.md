@@ -3,10 +3,8 @@ draft: false
 toc: true
 title: "Rate Limiter: Reading and Design Outline"
 description: "A partial rate-limiter article and design outline covering throttling use cases, requirements, high-level design, estimation, and distributed algorithms."
-linkTitle: "Rate Limiter: Reading and Design Outline"
+linkTitle: "Rate Limiter"
 ---
-# Rate Limiter
-
 
 Partial article plan, source excerpts, and personal critique. Includes open tasks and questions about distributed algorithms. Return to [practice cases]({{< ref "system-design/projects" >}}).
 

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Part 0: Observations from ~60B coding-agent token events over nine months"
+title: "Observations from 60B Coding-Agent Token Events"
 description: "An account of nine months of agentic engineering, with handoffs, workstream notes, task state, and evaluation artifacts used to keep long-running work recoverable beyond one chat session."
-linkTitle: "Coding-Agent Engineering Observations"
+linkTitle: "Token Event Observations"
 ---
 
 This account draws on nine months of the author's agentic engineering work, with roughly:
@@ -22,4 +22,4 @@ Most of the usage came from heavy, high-context engineering sessions: research, 
 ## Project Understanding
 
 
-[Project Ownership]({{< ref "ai-engineering/agents/project-ownership" >}})
+[Project understanding and ownership]({{< ref "ai-engineering/agents/project-ownership" >}})

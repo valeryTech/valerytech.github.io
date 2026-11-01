@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "General Conceptual Design Model For LLM Software Systems"
+title: "Conceptual Design Model for LLM Software Systems"
 description: "A research report on LLM software design, connecting work contracts, authoritative state, candidate generation, validation, authorization, and controlled execution."
-linkTitle: "General Conceptual Design Model For LLM Software Systems"
+linkTitle: "Conceptual Design Model"
 ---
-# A General Conceptual Design Model for Software Systems That Integrate LLMs
-
 
 > Export note: Source links were recovered from the original report's citation panels. Citation groups retain every source for which a URL could be identified; additional source IDs without an exposed URL are marked unresolved. The exact original groups are preserved in the [citation metadata](/ai/design-research/input/reports/general-conceptual-design-model-for-llm-software-systems.assets/general-conceptual-design-model-for-llm-software-systems-citations.json).
 

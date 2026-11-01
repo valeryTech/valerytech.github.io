@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Replication"
+title: "Replication in Distributed Systems"
 description: "How copies of the same data stay in step across machines: single-leader replication and failover, replication logs and change data capture, replication lag, multi-leader conflicts, leaderless quorums and anti-entropy, and a comparison of strategies."
 document_status: "draft"
 linkTitle: "Replication"

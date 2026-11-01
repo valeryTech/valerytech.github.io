@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "6.4 Investigation Systems and Related Work"
 description: "An annotated map of scientific workflows, provenance, DSPy, evidence agents, and program synthesis, distinguishing executable contracts from empirical quality and reusable investigation procedures."
-title: "04 Investigation Systems And Related Work"
-linkTitle: "04 Investigation Systems And Related Work"
+weight: "40"
+linkTitle: "6.4 Investigation Systems"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

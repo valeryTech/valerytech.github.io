@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Grounding and Enrichment"
 description: "A tool-grounding example resolving merchant, account, category, date, and duplicates, with a clear division between model proposals, backend validation, user confirmation, and writes."
-title: "04 Grounding And Enrichment"
-linkTitle: "04 Grounding And Enrichment"
+linkTitle: "Grounding and Enrichment"
 ---
-# Grounding and enrichment
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

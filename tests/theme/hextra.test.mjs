@@ -33,9 +33,12 @@ test('imported notes retain the full breadcrumb chain and wiki heading targets',
   assert.match(document, attr('id', 'local-smoke-heading'));
   assert.match(document, attr('href', '#local-smoke-heading'));
   assert.match(document, /\/system-design\/elements\/elements\/#cdn/);
-  // H1 targets remain available too, including authored H1s that replace the title.
+  // A note that uses H1s for its main parts still opens with its title, and the
+  // H1 targets keep their ids.
   const authored = html('system-design/projects/rate-limiter');
-  assert.match(authored, attr('id', 'rate-limiter'));
+  const article = authored.match(/<article\b[^>]*>\s*(<h1\b[^>]*>[^<]*)/)?.[1];
+  assert.match(article ?? '', /<h1>Rate Limiter: Reading and Design Outline$/);
+  assert.match(authored, attr('id', 'sources'));
 });
 
 test('the importer callout syntax retains titles, severities, and rendered bodies', () => {

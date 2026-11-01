@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Use-Case-Specific AI Production Readiness"
 description: "Adapts production readiness to AI systems, grounding contextual sufficiency in behavioral evidence, operational capability, lifecycle support, explicit uncertainty, and accepted residual risk."
-linkTitle: "Use-Case-Specific AI Production Readiness"
+linkTitle: "Use-Case Readiness"
 ---
 
 Open questions:

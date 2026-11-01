@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "How the Discovery Approaches Relate"
 description: "A proposed interpretation of learning within an inquiry, designing workflows across cases, and learning across applications, with specific changes to clarify methods, LLM roles, and evidence for generalization."
-linkTitle: "How the Discovery Approaches Relate"
+linkTitle: "How Approaches Relate"
 ---
 
 Status: proposed interpretation and editorial changes, 2026-05-01. This analysis draws on the local notes identified in the [recall audit]({{< ref "ai/product/discovery/discovery-directions-and-recall-audit" >}}). It does not establish a new research methodology. The replacement passages below are proposals for discussion.

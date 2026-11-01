@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "5.11 Evaluation Plans and System Configuration"
 description: "Proposes an EvaluationPlan referencing a versioned system, prompt set, test suite, evaluators, runtime profile, execution settings, and captured artifacts for repeatable candidate-baseline comparisons."
-title: "11 Evaluation Plans And System Configuration"
-linkTitle: "11 Evaluation Plans And System Configuration"
+weight: "110"
+linkTitle: "5.11 Evaluation Plans"
 ---
-# Evaluation plans and system configuration
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

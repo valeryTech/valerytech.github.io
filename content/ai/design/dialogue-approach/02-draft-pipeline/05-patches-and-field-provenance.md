@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Draft Patches and Field Provenance"
 description: "Builds transaction drafts through subsystem patches and field-level provenance, explaining how explicit, inferred, defaulted, and uncertain values should appear during review."
-title: "05 Patches And Field Provenance"
-linkTitle: "05 Patches And Field Provenance"
+linkTitle: "Patches and Provenance"
 ---
-# Draft patches and field provenance
-
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
 

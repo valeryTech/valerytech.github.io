@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Development Approaches and Modes"
 description: "Distinguishes experiments, baselines, prototypes, and walking skeletons as optional development modes, choosing each according to uncertainty and the evidence needed for decisions."
-linkTitle: "Development Approaches and Modes"
+linkTitle: "Development Approaches"
 ---
 
 Development approaches are modes of work that teams can introduce when particular conditions arise.
@@ -51,7 +51,7 @@ Each experiment should connect:
 
 The output of an experiment is evidence and a decision, rather than implementation alone.
 
-See [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
+See [Disciplined AI experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
 
 ## Baseline Implementation and Experimentation
 
@@ -141,7 +141,7 @@ An AI roadmap may therefore combine:
 
 This avoids treating either experiment-based planning or feature-based planning as universally sufficient.
 
-See [Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}}) and [[roadmap-management]].
+See [Experiments vs features]({{< ref "ai/product/product-model/experiments-vs-features" >}}) and Roadmap management.
 
 ## Combined Approaches
 
@@ -159,7 +159,7 @@ For example, a team may:
 
 The framework should help teams identify which approach is appropriate for each uncertainty rather than prescribing one approach for the entire project.
 
-See [Combined Approach]({{< ref "ai-engineering/approach/combined-approach" >}}) and [Cross Domain Mindset]({{< ref "ai-engineering/approach/cross-domain-mindset" >}}).
+See [Structured AI development approach]({{< ref "ai-engineering/approach/combined-approach" >}}) and [Cross-domain mindset]({{< ref "ai-engineering/approach/cross-domain-mindset" >}}).
 
 ## Library sources
 

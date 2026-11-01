@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "5.4 Formal Models for Agent Execution"
 description: "Compares complementary execution formalisms: Petri nets for concurrency and resources, types and effects for local constraints, temporal logic for history obligations, and behavior trees for recovery."
-title: "04 Formal Models For Agent Execution"
-linkTitle: "04 Formal Models For Agent Execution"
+weight: "40"
+linkTitle: "5.4 Formal Execution Models"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

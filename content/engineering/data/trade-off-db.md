@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "SQL vs. NoSQL Trade-offs"
 description: "Interview-oriented notes for discussing SQL and NoSQL choices through consistency, data shape, scaling, and worked system-design examples."
-linkTitle: "SQL vs. NoSQL Trade-offs"
+linkTitle: "SQL vs. NoSQL"
 ---
 # relational-vs-nosql
 

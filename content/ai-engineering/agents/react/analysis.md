@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "What a ReAct Agent Is"
 description: "Separates what the ReAct paper proposed from the generic model-tool loop and the frameworks sold under its name, traces each element to earlier agent research, and proposes splitting the transcript into explicit state."
-title: "Analysis"
-linkTitle: "Analysis"
+linkTitle: "ReAct Analysis"
 ---
 
 "ReAct Agent" is not one indivisible invention. The term now refers to several different things:

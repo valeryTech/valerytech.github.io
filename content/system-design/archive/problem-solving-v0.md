@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Original problem-solving notes"
+title: "Original Problem-Solving Notes"
 description: "Archived draft questions about structuring complex design problems, considering trade-offs, and keeping end users and service clients in view."
 document_status: "archived"
-linkTitle: "Original problem-solving notes"
+linkTitle: "Problem-Solving Notes"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. [Return to the working note]({{< ref "system-design/problem-solving-approach" >}}). Technical claims and numerical assumptions retain their original draft context.

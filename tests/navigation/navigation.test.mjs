@@ -432,7 +432,7 @@ test('the header and page context share alignment guides without overflowing at 
   assert.ok(Math.abs(gap - config.layoutGapPixels) < 1);
 });
 
-const moreCollections = ['Functional Programming', 'Projects', 'Reading map', 'System Design', 'Type Driven Design'];
+const moreCollections = ['Functional Programming', 'Projects', 'Reading map', 'System Design', 'Type-Driven Design'];
 
 test('desktop and mobile sections select the same most specific direction without JavaScript', async (t) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 900 } });
@@ -634,7 +634,7 @@ test('text brightness previews, saves and restores text, headings and menus on d
       assert.equal(await color('.site-outline-popover .site-navigation-panel-header'), brightAccent);
       await page.keyboard.press('Escape');
     } else await screenshot(page, 'text-brightness-desktop-menu');
-    const chooser = await openBreadcrumbChooser(page, 'Theoretical Methodology Framework');
+    const chooser = await openBreadcrumbChooser(page, 'Framework');
     assert.equal(await chooser.panel.locator('.site-breadcrumb-chooser-group').first().evaluate(element => getComputedStyle(element).color), brightMenu);
     await page.keyboard.press('Escape');
     // The head script restores the profile before deferred settings/navigation code runs.
@@ -1518,7 +1518,7 @@ test('deep document map entries remain reachable in short windows and survive co
   const map = page.getByRole('navigation', { name: 'Document map', exact: true });
   const active = map.locator('[aria-current="location"]');
   assert.equal(await active.isVisible(), true);
-  assert.ok(await map.locator('.site-map-ancestor').count() >= 3, 'The active path retains deeply nested ancestors');
+  assert.ok(await map.locator('.site-map-ancestor').count() >= 2, 'The active path retains deeply nested ancestors');
   const levels = await map.locator('a').evaluateAll(links => {
     const widths = new Map();
     for (const link of links) {
@@ -1910,7 +1910,7 @@ test('section links retain reading guides and pinned parent links open their own
   const page = await pageFor(t, base + '/ai/design-research/');
   const navigation = page.locator('.section-nav');
   assert.equal(await navigation.getByRole('link', { name: 'Design Research', exact: true }).getAttribute('href'), '/ai/design-research/');
-  const guide = navigation.getByRole('link', { name: '00 Index', exact: true });
+  const guide = navigation.getByRole('link', { name: 'Collection Index', exact: true });
   assert.equal(await guide.count(), 1);
   await guide.click();
   await page.waitForURL(url => url.pathname === '/ai/design-research/00-index/');
@@ -1999,7 +1999,7 @@ test('a deeply nested sidebar opens the full current path and marks its parent g
   });
   assert.ok(ancestors.length >= 3);
   assert.ok(ancestors.every((group) => group.open && group.marked));
-  assert.deepEqual(ancestors.map((group) => group.label), ['Usage', 'Theoretical Methodology Framework', 'Theoretical Methodology', 'Evaluation']);
+  assert.deepEqual(ancestors.map((group) => group.label), ['Usage', 'Framework', 'Theoretical Methodology', 'Evaluation']);
   const placement = await current.evaluate(link => {
     const bounds = link.getBoundingClientRect();
     const panel = link.closest('.site-sidebar-scroll').getBoundingClientRect();
@@ -2093,7 +2093,7 @@ test('scrolling a long sidebar keeps its collection and parent section links vis
       }
       return { top: panel.top, bottom: panel.bottom, rootTop: root.top, rootBottom: root.bottom, parents };
     });
-    assert.deepEqual(context.parents.map(parent => parent.label), ['Evaluation', 'Theoretical Methodology', 'Theoretical Methodology Framework', 'Usage']);
+    assert.deepEqual(context.parents.map(parent => parent.label), ['Evaluation', 'Theoretical Methodology', 'Framework', 'Usage']);
     assert.ok(context.rootTop >= context.top);
     assert.ok(context.parents.every(parent => parent.top >= context.rootBottom - 1 && parent.bottom <= context.bottom));
     const contextGap = JSON.parse(readFileSync(new URL('../../data/ui/style.json', import.meta.url), 'utf8')).layoutGapPixels;
@@ -2654,7 +2654,7 @@ test('the scrolling outline keeps its title and parent heading stack above the a
     }
     return { top: bounds.top, bottom: bounds.bottom, titleTop: title.top, titleBottom: title.bottom, parents, currentTop: link.getBoundingClientRect().top };
   });
-  assert.ok(context.parents.length >= 3);
+  assert.ok(context.parents.length >= 2);
   assert.ok(Math.abs(context.titleTop - context.top) < 1);
   let previous = context.titleBottom;
   for (const parent of context.parents) {
@@ -2757,7 +2757,7 @@ test('scrolling updates the current heading and its ancestors, including between
   const first = '21-why-standard-observability-is-insufficient';
   const second = '22-why-ad-hoc-evaluation-is-insufficient';
   await readAt(page, first);
-  assert.equal(await page.locator('.hextra-toc a.active-ancestor').count(), 2);
+  assert.equal(await page.locator('.hextra-toc a.active-ancestor').count(), 1);
   await readAt(page, second);
   assert.equal(await page.locator(`.hextra-toc a[href="#${first}"]`).getAttribute('aria-current'), null);
   // Jump into a different section's body with its heading above the viewport.
@@ -2768,7 +2768,7 @@ test('scrolling updates the current heading and its ancestors, including between
     window.scrollTo({ top: heading.getBoundingClientRect().top + window.scrollY + 100, behavior: 'instant' });
   }, bodySection);
   await page.waitForFunction((id) => document.querySelector('.hextra-toc a[aria-current="location"]')?.hash === `#${id}`, bodySection);
-  assert.equal(await page.locator('.hextra-toc a.active-ancestor').count(), 2);
+  assert.equal(await page.locator('.hextra-toc a.active-ancestor').count(), 1);
   assert.equal(await page.locator('.hextra-toc [aria-current="location"]').count(), 1);
   await screenshot(page, 'hextra-active-outline');
 });
@@ -2777,7 +2777,7 @@ test('deep links and clicked outline entries select the exact heading below the 
   const id = 'level-3--slices-and-state-snapshots';
   const page = await pageFor(t, base + route + `#${id}`);
   await page.waitForFunction((id) => document.querySelector('.hextra-toc [aria-current="location"]')?.hash === `#${id}`, id);
-  assert.equal(await page.locator('.hextra-toc a.active-ancestor').count(), 3);
+  assert.equal(await page.locator('.hextra-toc a.active-ancestor').count(), 2);
   // Use an actual existing target rather than relying on a title's spelling.
   const destination = page.locator('.hextra-toc a[href="#8-adoption-plan-phased-rollout-with-exit-criteria"]');
   await destination.click();
@@ -2973,7 +2973,7 @@ test('breadcrumb chevrons open nonmodal child selectors with keyboard navigation
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + route, width);
     const before = await page.evaluate(() => ({ path: location.pathname, scroll: scrollY }));
-    const { button, panel } = await openBreadcrumbChooser(page, 'Theoretical Methodology Framework');
+    const { button, panel } = await openBreadcrumbChooser(page, 'Framework');
     assert.equal(await button.getAttribute('aria-expanded'), 'true');
     assert.equal(await panel.getAttribute('popover'), 'auto');
     assert.equal(await page.getByRole('dialog').count(), 0);
@@ -3072,7 +3072,7 @@ test('breadcrumb selectors switch branches, dismiss outside, and preserve parent
     await documentLink.click();
     await page.waitForURL(url => url.pathname === destination);
     assert.equal(await page.locator('.section-nav a.site-sidebar-current-document').getAttribute('href'), destination);
-    await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link', { name: 'Theoretical Methodology Framework', exact: true }).click();
+    await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link', { name: 'Framework', exact: true }).click();
     await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/');
     await root.click();
     await rootPanel.getByRole('link', { name: 'Engineering', exact: true }).click();
@@ -3137,7 +3137,7 @@ test('breadcrumb scroll hints track available items without covering keyboard fo
 
 test('breadcrumb selectors fit narrow and short screens and dismiss when static breadcrumbs scroll away', async (t) => {
   const page = await pageFor(t);
-  const { panel } = await openBreadcrumbChooser(page, 'Theoretical Methodology Framework');
+  const { panel } = await openBreadcrumbChooser(page, 'Framework');
   for (const viewport of [{ width: 390, height: 900 }, { width: 820, height: 320 }]) {
     await page.setViewportSize(viewport);
     await page.waitForFunction(() => {
@@ -3194,9 +3194,9 @@ test('breadcrumb selectors fall back to ordinary links without JavaScript or the
 test('short and deeply nested breadcrumb trails wrap on mobile and navigate to their parents', async (t) => {
   const cases = [
     { pathname: '/system-design/', labels: ['System Design'], parents: ['/'] },
-    { pathname: framework, labels: ['System Design', 'Interview Practice', 'Frameworks', 'Interviewing.io System Design Framework'], parents: ['/', '/system-design/', '/system-design/interview/', '/system-design/interview/frameworks/'] },
+    { pathname: framework, labels: ['System Design', 'Interview Practice', 'Frameworks', 'Interviewing.io'], parents: ['/', '/system-design/', '/system-design/interview/', '/system-design/interview/frameworks/'] },
     { origin: fixtureBase, pathname: '/system-design/integrated-test-pages/callouts/', labels: ['System Design', 'Migration Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
-    { pathname: route, labels: ['AI Engineering', 'Evaluation', 'Theoretical Methodology', 'Theoretical Methodology Framework', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai-engineering/', '/ai-engineering/evaluation/', '/ai-engineering/evaluation/theoretical-methodology/', '/ai-engineering/evaluation/theoretical-methodology/framework/', '/ai-engineering/evaluation/theoretical-methodology/framework/usage/'] },
+    { pathname: route, labels: ['AI Engineering', 'Evaluation', 'Theoretical Methodology', 'Framework', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai-engineering/', '/ai-engineering/evaluation/', '/ai-engineering/evaluation/theoretical-methodology/', '/ai-engineering/evaluation/theoretical-methodology/framework/', '/ai-engineering/evaluation/theoretical-methodology/framework/usage/'] },
   ];
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + cases[0].pathname, width);

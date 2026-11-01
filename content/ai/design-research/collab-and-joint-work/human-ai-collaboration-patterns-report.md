@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Human-AI Collaboration Patterns Report"
 description: "A guide to the collaboration research synthesis, pattern selection, general mechanics, and evaluation rubrics; the linked studies and catalogs sit outside the published website."
-linkTitle: "Human-AI Collaboration Patterns Report"
+linkTitle: "Patterns Report"
 ---
 
 This note indexes a [design-research]({{< ref "ai/design-research/00-index" >}}) synthesis of human-AI collaboration patterns, their mechanics, and evaluation methods.

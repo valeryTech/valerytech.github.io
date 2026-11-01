@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
+title: "2.1 Augmenting Human Work"
 description: "Proposes introducing AI into existing knowledge work through task-based allocation, substantive human decision points, independent verification, shared artifacts, and progressively expanded responsibility, including co-writing."
-title: "01 Augmenting Human Work"
-linkTitle: "01 Augmenting Human Work"
+weight: "10"
+linkTitle: "2.1 Augmenting Human Work"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

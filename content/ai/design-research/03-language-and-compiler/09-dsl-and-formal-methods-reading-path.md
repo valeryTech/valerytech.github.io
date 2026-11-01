@@ -1,9 +1,10 @@
 ---
 draft: false
 toc: true
-title: "09 DSL And Formal Methods Reading Path"
+title: "3.9 DSL and Formal Methods Reading Path"
 description: "Connects Fowler-style DSL design and verified agent research to formal ancestors including GOLOG, comparing how declared constraints, planning engines, and symbolic checks limit model-generated programs."
-linkTitle: "09 DSL And Formal Methods Reading Path"
+weight: "90"
+linkTitle: "3.9 Formal Methods Reading Path"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

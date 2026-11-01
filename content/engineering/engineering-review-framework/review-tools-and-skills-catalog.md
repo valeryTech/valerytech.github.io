@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Review Tools and Skills Catalog"
 description: "Local wrappers, unfinished review experiments, and skill collections, with short descriptions and possible uses in the Engineering Review Framework."
-linkTitle: "Review Tools and Skills Catalog"
+linkTitle: "Tools and Skills Catalog"
 ---
 
 These are current examples of the agents, skills, workflows, and harnesses described in [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}}). Other implementations can fill the same roles or address new review needs.

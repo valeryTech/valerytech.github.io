@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.9 Comments on Long-Running Work Failures and Field Study"
 description: "A critique of the long-running-work study proposal highlighting overlapping failure categories, uncertain causal attribution, undefined sampling/classification rules, and differences between field observation and controlled runtime tests."
-title: "09 Long Running Work Failures And Field Study Comments"
-linkTitle: "09 Long Running Work Failures And Field Study Comments"
+weight: "91"
+linkTitle: "6.9 Comments"
 ---
-# Long-running work failures and field study: comments
-
 
 New commentary by Codex, added on 2026-04-01. The [research note]({{< ref "ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study" >}}) preserves the complete failure taxonomy, proposed study, consolidated model, and closing definition. The comments are interpretation and review questions, not original dialogue or research results.
 

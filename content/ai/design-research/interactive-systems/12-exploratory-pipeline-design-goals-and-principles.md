@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Exploratory Pipeline Design Goals and Principles"
 description: "A third formulation, marked for analysis, organizes trace-driven pipeline engineering around inspectable decisions, structured judgments, variant comparisons, and progressive automation, proposing principles and operating loops for evaluation."
-title: "12 Exploratory Pipeline Design Goals And Principles"
-linkTitle: "12 Exploratory Pipeline Design Goals And Principles"
+linkTitle: "Pipeline Design Goals"
 ---
-# Exploratory pipeline design goals and principles
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Risk, Assumptions, and Evidence"
 description: "State what must be true, what supports it, and what failure would cost. Separating assumptions about the intended change, candidate solution, and operation keeps evidence tied to the next product commitment."
-title: "Risk Areas Model"
-linkTitle: "Risk Areas Model"
+linkTitle: "Risks, Assumptions, Evidence"
 ---
-# Risk, Assumptions, and Evidence
-
 
 This is the canonical risk model for product decisions in these notes.
 

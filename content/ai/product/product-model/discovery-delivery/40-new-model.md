@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "The New Discovery-Delivery Model"
 description: "A short conceptual refinement distinguishes discovery and delivery by their purposes and obligations, using framed decisions, bounded tests, and revisable production commitments to connect action with learning."
-title: "40 New Model"
-linkTitle: "40 New Model"
+linkTitle: "New Model"
 ---
 
 Leadership gives the team a problem and desired outcome; discovery tries to find a solution worth building; delivery creates the production solution; the team then sees whether the outcome actually happens.

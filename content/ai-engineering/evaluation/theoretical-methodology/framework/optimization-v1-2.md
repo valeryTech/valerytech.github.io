@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Optimization v1.2 — Production Discipline for LLM / Agentic Systems"
+title: "Optimization v1.2: Production Discipline for LLM Systems"
 description: "Configuration search begins with explicit objectives and hard constraints, then moves from cheap offline screening to holdout and canary confirmation. Online exploration uses approved options and circuit breakers."
 linkTitle: "Optimization v1.2"
 ---
-# Optimization v1.2 -- Production Discipline for LLM / Agentic Systems
-
 
 **AI Systems Framework**
 

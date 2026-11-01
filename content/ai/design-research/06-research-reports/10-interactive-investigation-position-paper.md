@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "6.10 Interactive Investigation Position Paper"
 description: "A position-paper proposal connecting interactive retrieval, sensemaking, mixed initiative, and provenance to editable investigation state and hypotheses about diagnosis and correction."
-title: "10 Interactive Investigation Position Paper"
-linkTitle: "10 Interactive Investigation Position Paper"
+weight: "100"
+linkTitle: "6.10 Position Paper"
 ---
-# Interactive investigation position paper
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

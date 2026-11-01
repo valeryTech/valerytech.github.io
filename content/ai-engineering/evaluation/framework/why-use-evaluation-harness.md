@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Why Use an Evaluation Harness?"
 description: "A harness becomes useful when changing models, prompts, tools, or state requires repeatable comparisons: identified cases, controlled fixtures, saved traces, and version records make regressions inspectable."
-linkTitle: "Why Use an Evaluation Harness?"
+linkTitle: "Why a Harness"
 ---
 
 AI system behavior can change when the model, prompt, tools, data, orchestration, product state, or operating conditions change. A few successful demonstrations do not show whether a change helped across the situations that matter or whether it broke an existing behavior.

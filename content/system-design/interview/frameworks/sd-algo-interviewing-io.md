@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Interviewing.io Framework: Concise Notes"
 description: "Concise interviewing.io framework notes on requirements, objects, mutability, access patterns, quality characteristics, data types, APIs, scale, and storage design."
-linkTitle: "Interviewing.io Framework: Concise Notes"
+linkTitle: "Interviewing.io Short Notes"
 ---
 
 Concise companion to the [detailed interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}). Both versions remain available in the [framework comparison]({{< ref "system-design/interview/frameworks" >}}).

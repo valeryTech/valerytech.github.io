@@ -1,12 +1,11 @@
 ---
 draft: false
 toc: true
+title: "0.7 Collaboration Framework Research Routes"
 description: "Proposes comparing collaboration APIs, proposal-and-commit kernels, declarative specifications, typed contracts, and shared artifacts on the same application to discover durable framework primitives."
-title: "07 Collaboration Framework Research Routes"
-linkTitle: "07 Collaboration Framework Research Routes"
+weight: "70"
+linkTitle: "0.7 Research Routes"
 ---
-# Collaboration framework research routes
-
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 

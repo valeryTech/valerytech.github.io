@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "A practical way to study coding-agent improvements"
+title: "A Practical Way to Study Coding-Agent Improvements"
 description: "Start with the engineering decision an investigation could change, choose a method for that question, and assess accepted work, human effort, and risk using comparisons that can revise the recommendation."
-linkTitle: "Studying Coding-Agent Improvements"
+linkTitle: "Studying Improvements"
 ---
 
 **Document type:** Conceptual methodology primer

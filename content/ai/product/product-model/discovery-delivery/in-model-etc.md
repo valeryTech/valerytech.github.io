@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "In-Model Notes: Funnel, Experiments, Timeboxes"
 description: "An evolving operating-model draft traces the shift from feature teams to outcome ownership, then refines the discovery-delivery interface around candidate solutions, supporting evidence, remaining risks, and constraints."
-title: "In Model Etc"
-linkTitle: "In Model Etc"
+linkTitle: "In-Model Notes"
 ---
 
 - Capability funnel

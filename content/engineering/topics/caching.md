@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Caching Strategies and Trade-offs"
 description: "Explore cache placement, invalidation, write strategies, freshness, eviction policies, and sharding when weighing performance against consistency and complexity."
-title: "Caching"
 linkTitle: "Caching"
 ---
 # ontology

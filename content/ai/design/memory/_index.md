@@ -1,6 +1,6 @@
 ---
 draft: false
 toc: true
-title: "Memory"
+title: "Memory in AI Agents"
 linkTitle: "Memory"
 ---

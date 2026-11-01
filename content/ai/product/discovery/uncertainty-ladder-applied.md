@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Uncertainty Ladder Applied to the Cases"
 description: "The uncertainty ladder placed on the owner's own cases: worked claim records for Wallet capture and the Still companion, the operation rung in the recruiting coordinator, and a table of open rungs. Placements are to check, not evidence."
-title: "Uncertainty Ladder Applied"
-linkTitle: "Uncertainty Ladder Applied"
+linkTitle: "Ladder Applied to Cases"
 ---
-# Uncertainty ladder applied to the cases
-
 
 This note places the [`uncertainty ladder`]({{< ref "ai/product/discovery/uncertainty-ladder" >}}) on undertakings already described elsewhere in these notes: the eight [AI project examples]({{< ref "ai/system-types/project-examples/ai-project-examples-and-design-model" >}}), the systems under test and SUT candidates, and the Wallet [`utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
 

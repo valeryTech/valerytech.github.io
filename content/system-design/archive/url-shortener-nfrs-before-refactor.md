@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Earlier URL-shortener NFR reasoning"
+title: "Earlier URL Shortener NFR Reasoning"
 description: "Archived URL-shortener quality-target proposals, availability tables, error-budget reasoning, architecture assumptions, and interview scripts preserved for comparison."
 document_status: "archived"
-linkTitle: "Earlier URL-shortener NFR reasoning"
+linkTitle: "URL Shortener NFRs"
 ---
 
 Preserved notes from before the October 19, 2026 refactor. [Return to the working note]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}). Technical claims and numerical assumptions retain their original draft context.

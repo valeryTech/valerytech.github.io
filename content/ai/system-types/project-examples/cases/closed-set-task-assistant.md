@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Closed-Set Task Assistant"
 description: "A task assistant can let the model interpret requests and navigate a state machine or constraint graph while application logic enforces valid inputs, transitions, permissions, and execution conditions."
-title: "Closed Set Task Assistant"
-linkTitle: "Closed Set Task Assistant"
+linkTitle: "Closed-Set Task Assistant"
 ---
-# Closed-set task assistant
-
 
 A closed-set task assistant helps users complete a predefined set of tasks. Its design is motivated by the need to **make LLM-based systems more reliable and limit the consequences of unpredictable model behavior**.
 

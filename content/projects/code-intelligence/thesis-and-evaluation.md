@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Thesis and Evaluation Plan"
+title: "Code Intelligence Thesis and Evaluation Plan"
 description: "The claim this project has to prove, the hypotheses that would confirm or refute it, and an experiment plan with baselines, ground truth, metrics and decision rules."
-linkTitle: "Thesis and Evaluation Plan"
+linkTitle: "Thesis and Evaluation"
 ---
 
 The other notes describe an architecture. This note states what that architecture is supposed to prove, and how to find out whether it does. It is a research plan, not product acceptance: shipping gates for the read-only product are in [repository expert evaluation]({{< ref "projects/code-intelligence/repository-expert/evaluation" >}}).

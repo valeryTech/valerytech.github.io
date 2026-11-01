@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Conceptual Design Model for LLM Systems, with References"
 description: "A referenced design model for systems integrating LLMs, organized around work contracts, explicit proposals, acceptance checks, authorization, and outcome verification."
-title: "General Conceptual Design Model With References"
-linkTitle: "General Conceptual Design Model With References"
+linkTitle: "Design Model with References"
 ---
-# A General Conceptual Design Model for Software Systems That Integrate LLMs
-
 ## Executive summary
 
 

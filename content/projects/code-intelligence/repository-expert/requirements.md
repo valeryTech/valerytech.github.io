@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Repository Expert: Requirements"
 description: "Product definition, users, functional and non-functional requirements, guardrails and failure modes for a read-only, citation-first repository expert."
-linkTitle: "Repository Expert: Requirements"
+linkTitle: "Requirements"
 ---
 
 The requirements are written so that each one can later become a measurable test (see [evaluation]({{< ref "projects/code-intelligence/repository-expert/evaluation" >}})). Stage and architecture context is in [roadmap]({{< ref "projects/code-intelligence/repository-expert/roadmap" >}}).

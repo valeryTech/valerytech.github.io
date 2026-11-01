@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Comments on the Complex Interface Reading Path"
 description: "Editorial commentary preserves the user’s shift toward practitioners and built systems, keeping architectural examples and the xi caution with their sources while treating implementation descriptions as unverified research leads."
-title: "06 Complex Interface Reading Path Comments"
-linkTitle: "06 Complex Interface Reading Path Comments"
+linkTitle: "Reading Path Comments"
 ---
-# Comments on the complex interface reading path
-
 
 Editorial context, 2026-04-20: Wording in this review and the linked research discussion has been edited for standalone reading. References to preserved or unchanged source wording describe the earlier reassembly; the review's judgments remain attributed commentary, not accepted decisions.
 

@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Capability Constructs and Validity"
 description: "How construct theory and dispositional measurement fit together: the nomological network says what a capability like reasoning means, response functions supply the evidence, and validity checks whether they agree."
-linkTitle: "Capability Constructs and Validity"
+linkTitle: "Constructs and Validity"
 ---
 
 [Measuring dispositions]({{< ref "ai/capabilities/05-measuring-dispositions" >}}) gives a way to recover how a system responds to varying demands. It does not say which of these regularities deserve a name like *reasoning*. That is a question about **constructs**.

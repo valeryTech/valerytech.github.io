@@ -4,7 +4,7 @@ toc: true
 title: "Working with a Coding Agent"
 description: "Coding-agent work needs a connected loop of defining, building, explaining, testing, and reviewing a change. Focused investigations and clear decision ownership keep the work understandable as evidence changes the plan."
 lastmod: "2026-04-19"
-linkTitle: "Working with a Coding Agent"
+linkTitle: "Working with an Agent"
 ---
 
 A coding agent can help investigate a problem, suggest designs, write code, run tests, and prepare a change for review. The workflow should help engineers understand what was done and decide whether to accept it.
