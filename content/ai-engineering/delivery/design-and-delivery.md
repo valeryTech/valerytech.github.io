@@ -139,7 +139,7 @@ Open question: should there also be a separate component for data itself?
 ### Production Readiness
 
 
-Covers possible harm, system failure, human oversight, fallback behaviour, and recovery. See Production readiness framework.
+Covers possible harm, system failure, human oversight, fallback behaviour, and recovery. See [Production readiness framework]({{< ref "ai-engineering/delivery/production-ready/production-readiness-framework" >}}).
 
 **Security and Privacy**
 
