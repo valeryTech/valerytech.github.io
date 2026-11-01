@@ -1,4 +1,4 @@
-/* Semantic palette shared with standalone redirects and the icon authoring tool. */
+/* Semantic palette shared with the icon authoring tool. */
 :root {
   /* Derived colors mix in OKLab, which blends lightness evenly instead of muddying midpoints. */
   /* One context-header surface backs the top bar, breadcrumbs, toolbar and pane headings. */

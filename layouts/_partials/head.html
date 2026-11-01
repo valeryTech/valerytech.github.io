@@ -47,8 +47,6 @@
 
   {{- $mainCss := resources.Get "css/compiled/main.css" -}}
   {{- $customCss := partial "styles/site.html" . -}}
-  {{- /* Publish the shared palette used by standalone alias redirect pages. */ -}}
-  {{- $linkPaletteURL := partialCached "styles/link-palette-url.html" . -}}
   {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
 
   {{- /* Production build */ -}}

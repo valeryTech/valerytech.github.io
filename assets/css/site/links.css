@@ -41,10 +41,3 @@ a[href],
 body > a[href="#content"]:focus-visible {
   background: var(--site-context-header);
 }
-
-/* Standalone alias pages follow the system theme without the site scripts. */
-@media (prefers-color-scheme: dark) {
-  :root[data-alias-redirect] {
-    --site-link-color: var(--site-link-color-dark);
-  }
-}

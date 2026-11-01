@@ -14,7 +14,7 @@ Hugo assembles the following `assets/css/site/` modules in this order through [s
 | `base.css`               | Fonts, descriptions, content wrapping, hidden scrollbars       |
 | `branding.css`           | Header V mark, title pairing, theme colors                     |
 | `controls.css`           | Filled controls and leading/content/action surface slots       |
-| `links.css`              | Link colors, panel foreground states, alias-redirect palette   |
+| `links.css`              | Link colors and panel foreground states                        |
 | `shell.css`              | Shared frame, page gutters and not-found layout                |
 | `header.css`             | Top-bar controls, groups and visibility                        |
 | `page-navigation.css`    | Previous/Next, article-end spacing and reading fade            |
@@ -33,9 +33,9 @@ Hugo assembles the following `assets/css/site/` modules in this order through [s
 | `layout.css`             | Shared shell width, responsive panes, density, reading measure |
 | `drawers.css`            | Navigation dialog and native outline popover                   |
 
-The local bundle is unlayered and follows the theme CSS. Keep overrides local; `themes/hextra/`, `public/`, `resources/`, and legacy `assets/scss/` are not editing surfaces. Configuration and behavior ownership are in [frontend.md](../frontend.md). The shared alias-redirect stylesheet is assembled from the same tokens and link rules.
+The local bundle is unlayered and follows the theme CSS. Keep overrides local; `themes/hextra/`, `public/`, `resources/`, and legacy `assets/scss/` are not editing surfaces. Configuration and behavior ownership are in [frontend.md](../frontend.md).
 
-[styles/tokens.html](../../layouts/_partials/styles/tokens.html) combines the three token modules before generated configuration. Hugo alias pages load only the scale, palette, configuration, and link rules; pane geometry stays in the main site bundle. The icon authoring tool reads the palette module directly.
+[styles/tokens.html](../../layouts/_partials/styles/tokens.html) combines the three token modules before generated configuration. The icon authoring tool reads the palette module directly.
 
 Use `--site-layout-gap` for the shared layout/button spacing. Keep a separate property when it has an actual override or a different role: pane gutters, content insets, control padding, and palette aliases retain their own names. One-component dimensions belong in that component's stylesheet, scoped to its container. Breadcrumb chooser bounds, table cell gaps/padding, Settings width, and brand-mark size follow this rule.
 
