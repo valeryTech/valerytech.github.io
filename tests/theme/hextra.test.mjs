@@ -62,7 +62,7 @@ test('search, math styles, reading fonts, and migrated image attachments are pub
   const math = html('ai-engineering/approach/edd');
   assert.match(math, /class=katex|class="katex"/);
   assert.match(math, /\/vendor\/katex\/katex.min.css/);
-  const illustrated = html('ai/design-research/input/ai-systems-classification-formatted');
-  assert.match(illustrated, attr('src', '/ai/design-research/input/ai-systems-classification-formatted.assets/classification-feature-prevalence.png'));
-  assert.ok(existsSync(path.join(output, 'ai/design-research/input/ai-systems-classification-formatted.assets/classification-feature-prevalence.png')));
+  const illustrated = html('ai/system-types/classification/ais-classification');
+  assert.match(illustrated, attr('src', '/ai/system-types/classification/ais-classification.assets/classification-feature-prevalence.png'));
+  assert.ok(existsSync(path.join(output, 'ai/system-types/classification/ais-classification.assets/classification-feature-prevalence.png')));
 });

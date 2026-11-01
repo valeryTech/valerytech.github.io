@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Framing and Commercializing Product Ideas"
-description: "How to turn a capability or workflow observation into a shippable product form: choosing a delivery vehicle, separating technical invention from startup commercialization, studying how ordinary products were framed and bought, and storyboarding the user's experience."
+description: "How to turn a capability or workflow observation into a product: choosing a delivery vehicle, separating invention from commercialization, studying how ordinary products were framed and bought, and storyboarding use."
 linkTitle: "Framing and Commercializing"
 ---
 

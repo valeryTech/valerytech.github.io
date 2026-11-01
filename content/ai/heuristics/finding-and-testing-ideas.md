@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Finding and Testing Product Ideas"
-description: "How to generate product ideas by crossing observed workflow problems with newly practical AI abilities, frame candidates as testable problem hypotheses, and combine customer development, opportunity mapping, and cheap demand experiments before building."
+description: "How to generate product ideas by crossing observed workflow problems with newly practical AI abilities, frame them as testable problem hypotheses, and test demand cheaply before building."
 linkTitle: "Finding and Testing Ideas"
 ---
 

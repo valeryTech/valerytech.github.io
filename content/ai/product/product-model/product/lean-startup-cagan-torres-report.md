@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Lean Startup, Cagan, and Torres: A Comparative Synthesis"
-description: "A comparative research synthesis connects Lean Startup’s business-learning loop, Cagan’s risk-based commitment, and Torres’s assumption-testing structure, separating shared principles from evidence gaps, contextual limits, and proposed extensions."
+description: "A research synthesis connecting Lean Startup's business-learning loop, Cagan's risk-based commitment and Torres's assumption testing, separating shared principles from evidence gaps, limits and proposed extensions."
 linkTitle: "Lean Startup Synthesis"
 ---
 ## Executive summary

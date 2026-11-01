@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Assessing Workflow Steps for AI"
-description: "Janna Lipenkova's method for bringing AI into an existing workflow (map the user journey, score each step on value, feasibility, and desirability, start with one step that scores well on all three, divide the work in it between people and AI), with how to measure and widen the result."
+description: "Janna Lipenkova's method for bringing AI into an existing workflow: map the user journey, score each step on value, feasibility and desirability, start with one step that scores well on all three, then measure and widen."
 linkTitle: "Workflow Assessment"
 ---
 

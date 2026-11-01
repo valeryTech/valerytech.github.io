@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "What LLMs Are Good At"
-description: "The useful abilities of LLMs for building products, in plain terms (what you give the model, what you get back, what software does next, and what to check), plus where the model sits in a product, what it may change, and when a task is worth building."
+description: "The useful abilities of LLMs for building products, in plain terms (what you give the model, what you get back, what to check), where the model sits in a product, and when a task is worth building."
 linkTitle: "LLM Abilities"
 ---
 

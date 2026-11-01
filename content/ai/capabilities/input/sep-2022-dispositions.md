@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Dispositions (Stanford Encyclopedia of Philosophy)"
-description: "Stanford Encyclopedia of Philosophy entry on dispositions such as fragility: conditional analyses and their counterexamples (finks, maskers, mimickers), the difference between dispositional and categorical properties, dispositionalism and laws of nature, and the causal bases of dispositions."
+description: "Stanford Encyclopedia of Philosophy entry on dispositions such as fragility: conditional analyses and their counterexamples, dispositional and categorical properties, dispositions and laws of nature, and causal bases."
 linkTitle: "Dispositions"
 ---
 This is a copy of "Dispositions" by Sungho Choi and Michael Fara, from [The Stanford Encyclopedia of Philosophy (Spring 2022 Edition)](https://plato.stanford.edu/archives/spr2022/entries/dispositions/), edited by Edward N. Zalta.

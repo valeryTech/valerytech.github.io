@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Failure Understanding and Error Analysis"
-description: "Turn raw traces into engineering and product knowledge through the full failure ladder—observations, failure incidents, initial and focused codes, categories, taxonomies, and failure models—while keeping operational checks and causal diagnosis on distinct paths."
+description: "Turn raw traces into engineering and product knowledge through the failure ladder, from observations and incidents to codes, categories, taxonomies and failure models, keeping operational checks and causal diagnosis apart."
 linkTitle: "Failure Understanding"
 ---
 
