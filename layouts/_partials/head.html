@@ -5,6 +5,10 @@
   {{- /* The site ships its own Light and Dark themes; first in <head> so Dark Reader sees it early.
     js/head/dark-reader.js also drops the extension's dark fallback before it paints. */}}
   <meta name="darkreader-lock" />
+  {{- /* Hold the first paint until the article is parsed, so a page arriving in chunks does not
+    show its header and sidebar beside an empty article first. Pages without the marker render
+    once parsing ends; browsers without support ignore the hint. */}}
+  <link rel="expect" href="#site-render-ready" blocking="render" />
   {{- $noindex := or (.Params.noindex | default false) (eq .Kind "404") -}}
   {{ if .Params.seo.robots -}}
     <meta name="robots" content="{{ .Params.seo.robots }}" />

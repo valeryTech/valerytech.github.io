@@ -14,11 +14,33 @@ function keepReadingPosition(update) {
   requestAnimationFrame(restore);
 }
 
-function initPaneVisibility(preferences, pane, key, name) {
+// A visible pane keeps its toggle in its heading; a hidden one moves it to its rail.
+function paneToggle(pane) {
   const toggle = document.querySelector(`[data-${pane}-toggle]`);
   const restoreSlot = document.querySelector(`[data-${pane}-restore-slot]`);
-  if (!toggle || !restoreSlot) return;
-  const heading = toggle.parentElement;
+  const heading = document.querySelector(`[data-site-pane="${pane}"] .site-pane-heading`);
+  if (!toggle || !restoreSlot || !heading) return null;
+  return {
+    toggle,
+    place(visible) {
+      const parent = visible ? heading : restoreSlot;
+      if (toggle.parentElement !== parent) parent.prepend(toggle);
+    },
+  };
+}
+
+// The saved visibility is on the root before the first paint, so a startup script can
+// put the toggle in place before the deferred scripts run.
+export function placePaneToggle(pane) {
+  paneToggle(pane)?.place(
+    document.documentElement.getAttribute(`data-${pane}-visible`) !== "false",
+  );
+}
+
+function initPaneVisibility(preferences, pane, key, name) {
+  const parts = paneToggle(pane);
+  if (!parts) return;
+  const { toggle } = parts;
 
   function sync(snapshot) {
     const visible = snapshot.display[key];
@@ -26,8 +48,7 @@ function initPaneVisibility(preferences, pane, key, name) {
     toggle.setAttribute("aria-expanded", String(visible));
     toggle.setAttribute("aria-label", label);
     toggle.title = label;
-    const parent = visible ? heading : restoreSlot;
-    if (toggle.parentElement !== parent) parent.prepend(toggle);
+    parts.place(visible);
   }
 
   toggle.addEventListener("click", () => {

@@ -20,6 +20,21 @@ export function initOutlineDisclosures(storageKey) {
   });
 }
 
+// A new page opens at its top, where the reading position is the first heading. Mark it
+// before the first paint; initOutline takes over once the deferred scripts run. Reloads,
+// history visits and deep links restore a scroll position, so they wait for initOutline.
+export function markInitialOutline() {
+  if (location.hash || window.scrollY > 0) return;
+  const [entry] = performance.getEntriesByType?.("navigation") ?? [];
+  if (entry && entry.type !== "navigate") return;
+  for (const outline of document.querySelectorAll(".site-page-outline")) {
+    const link = outline.querySelector('a[href^="#"]');
+    if (!link) continue;
+    link.classList.add("active");
+    link.setAttribute("aria-current", "location");
+  }
+}
+
 // Replace Hextra's single-heading observer with the site's reading-position
 // behavior. All outline levels share one active section and its ancestor path.
 export function initOutline(config) {

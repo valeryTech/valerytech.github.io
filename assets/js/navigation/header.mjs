@@ -1,17 +1,24 @@
+// The top bar toggle sits in the outline heading, the collapsed outline rail or, without
+// either, its floating home. The outline startup script places it before the first paint,
+// so the heading's buttons do not shift when the deferred scripts run.
+export function placeHeaderToggle() {
+  const toggle = document.querySelector("[data-header-toggle]");
+  const home = document.querySelector("[data-header-toggle-home]");
+  if (!toggle || !home) return;
+  const heading = document.querySelector("#page-outline .site-toc-title");
+  const rail = document.querySelector("[data-outline-restore-slot]");
+  const parent = [heading, rail].find((element) => element?.getClientRects().length) || home;
+  const focused = document.activeElement === toggle;
+  if (toggle.parentElement !== parent) parent.append(toggle);
+  home.hidden = parent !== home;
+  if (focused) toggle.focus({ preventScroll: true });
+}
+
 export function initHeaderVisibility(preferences) {
   const toggle = document.querySelector("[data-header-toggle]");
   const home = document.querySelector("[data-header-toggle-home]");
-  const heading = document.querySelector("#page-outline .site-toc-title");
-  const rail = document.querySelector("[data-outline-restore-slot]");
   if (!toggle || !home) return;
-
-  function placeToggle() {
-    const parent = [heading, rail].find((element) => element?.getClientRects().length) || home;
-    const focused = document.activeElement === toggle;
-    if (toggle.parentElement !== parent) parent.append(toggle);
-    home.hidden = parent !== home;
-    if (focused) toggle.focus({ preventScroll: true });
-  }
+  const placeToggle = placeHeaderToggle;
 
   function sync(snapshot) {
     const visible = snapshot.display.headerVisible;
