@@ -52,6 +52,18 @@ copyRight = "Copyright (c) 2014-2023"
     path = "{/system-design/integrated-test-pages,/system-design/integrated-test-pages/**}"
     environment = "production"
 
+# List these pages in the agent maps by title only. Their summaries quote
+# prompt text with template variables, links and `$` signs, which the map
+# Markdown would render as links and math. They have no curated descriptions,
+# so the SEO description length check skips them too.
+[[cascade]]
+  [cascade.params]
+    agent_map_descriptions = false
+  [cascade.params.seo]
+    validateDescription = false
+  [cascade.target]
+    path = "{/ai-engineering/agents/system-prompts,/ai-engineering/agents/system-prompts/**}"
+
 # Keep maps only for the article collections. Nested sections are merged in.
 [[cascade]]
   outputs = ["HTML", "RSS", "SITEMAP", "agentMap", "agentText"]

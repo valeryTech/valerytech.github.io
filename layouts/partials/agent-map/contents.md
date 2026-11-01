@@ -11,7 +11,7 @@
     {{- printf " **[%s]**" . -}}
   {{- end -}}
   {{- printf "\n\n" -}}
-  {{- with .Description -}}
+  {{- with and (ne .Params.agent_map_descriptions false) .Description -}}
     {{- if ne . "Default Description" -}}
       {{- printf "%s\n\n" (. | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 240) -}}
     {{- end -}}

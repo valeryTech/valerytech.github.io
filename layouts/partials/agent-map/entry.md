@@ -6,9 +6,10 @@
   {{- with partial "agent-map/status.html" $page -}}
     {{- printf " **[%s]**" . -}}
   {{- end -}}
-  {{- if not .compact -}}
+  {{- if and (not .compact) (ne $page.Params.agent_map_descriptions false) -}}
     {{- with partial "main/navigation-description.html" $page -}}
-      {{- printf " — %s" . -}}
+      {{- /* Plain-text summaries can contain code such as [x](app://{{id}}); escape brackets so Hugo doesn't parse them as links. */ -}}
+      {{- printf " — %s" (replace (replace . "[" "\\[") "]" "\\]") -}}
     {{- end -}}
   {{- end -}}
   {{- printf "\n" -}}

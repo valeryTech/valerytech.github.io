@@ -222,6 +222,8 @@ Set these properties in the source note's front matter:
 | `agent_map_exclude: true` | Omits the article from agent maps; the page stays published.                                            |
 | `showTitle`               | Legacy title flag; templates add a title when the body has no H1.                                       |
 
+Sections whose notes quote raw prompt text list their pages in the agent maps by title only. A `[[cascade]]` in `config/_default/hugo.toml` sets `agent_map_descriptions = false` and `seo.validateDescription = false` for them, currently `/ai-engineering/agents/system-prompts/`, and their notes don't need a `description`. Add a path to that cascade and to `titleOnly` in `tests/site-map/public-map.test.mjs` to treat another section the same way.
+
 ### Excluded notes
 
 `/Users/val/notes/projects/valery-tech/` and `/Users/val/notes/ai/ai-systems-design/` are excluded. The reading map and selected implementation pages from the former remain in `content/research/` and are edited in the repo; their retired summaries redirect through Hugo aliases. Adding a file to an excluded folder does not publish it. Imported content is committed so CI builds without the notes vault.

@@ -2,7 +2,7 @@
 {{- $title = replace (replace $title "[" "\\[") "]" "\\]" -}}
 {{- printf "# %s: section map for agents\n\n" $title -}}
 {{- printf "[Main map](%s) · [This map](%s) · [Section overview](%s)\n\n" (partial "agent-map/url.html" site.Home) (partial "agent-map/url.html" .) .RelPermalink -}}
-{{- with .Description -}}
+{{- with and (ne .Params.agent_map_descriptions false) .Description -}}
   {{- if ne . "Default Description" -}}
     {{- printf "%s\n\n" (. | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 240) -}}
   {{- end -}}

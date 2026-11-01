@@ -149,7 +149,9 @@ test('migrated documents have curated descriptions, including honest description
   assert.ok(sql, 'The SQL placeholder must remain discoverable');
   assert.match(sql, /placeholder/i, 'The description must identify the SQL page as a placeholder');
   for (const collection of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
-    const articles = files(path.join(root, 'content', collection)).filter((filename) => filename.endsWith('.md') && path.basename(filename) !== '_index.md');
+    // Sections with `agent_map_descriptions = false` in config/_default/hugo.toml are listed by title only.
+    const titleOnly = ['content/ai-engineering/agents/system-prompts/'].map((prefix) => path.join(root, prefix));
+    const articles = files(path.join(root, 'content', collection)).filter((filename) => filename.endsWith('.md') && path.basename(filename) !== '_index.md' && !titleOnly.some((prefix) => filename.startsWith(prefix)));
     assert.ok(articles.length > 0, `No articles found in ${collection}`);
     for (const filename of articles) {
       const description = readFileSync(filename, 'utf8').match(/^description: "(.+)"$/m)?.[1];
