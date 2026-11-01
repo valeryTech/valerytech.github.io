@@ -39,7 +39,7 @@ The UI module/configuration boundary is documented in [frontend.md](frontend.md)
 
 Menus come from `config/_default/menus/`; sidebar structure follows content and site-owned child grouping. Section links retain their own landing pages. `site-map.mjs` assembles the public agent maps.
 
-There is no per-URL redirect map. Hugo `aliases` cover deliberate renames; any other old address gets `layouts/404.html`, which lists the main collections and highlights the one matching the first path segment. See [frontend.md](frontend.md#not-found-page).
+There is no per-URL redirect map. Hugo `aliases` cover deliberate renames; any other old address gets `layouts/404.html`, which redirects it to the closest existing section or, outside every section, lists the main collections. See [frontend.md](frontend.md#not-found-page).
 
 ## Workflows
 

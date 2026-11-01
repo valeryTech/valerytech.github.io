@@ -56,7 +56,7 @@ Activating the link again, Close or Escape removes the reader and returns focus 
 
 ## Not-found page
 
-There is no per-URL redirect map. `layouts/404.html` lists the collections that have agent maps, in breadcrumb order, each with its description, landing page and collection map, then links the website map and the homepage. The inline `assets/js/not-found.js` reads the first segment of the missing path and moves matching collections to the top: an exact match, or a collection whose name starts with that segment and a hyphen, so `/ai/…` highlights AI and AI Engineering. It never navigates on its own. Without JavaScript or a match the full list stays in order.
+There is no per-URL redirect map. `layouts/404.html` embeds every section address as JSON, and the inline `assets/js/not-found.js` replaces a missing address with the longest section address it starts with: `/ai-engineering/old-folder/note/` opens `/ai-engineering/old-folder/` if that section exists, otherwise `/ai-engineering/`. The 404 response still returns status 404, so crawlers and readers without JavaScript see the page itself. An address outside every section, such as `/blog/post-link`, stays on the page, which lists the collections that have agent maps, in breadcrumb order, each with its description, landing page and collection map, then links the website map and the homepage. [Analytics](analytics.md#404-context) explains how a redirected visit is reported.
 
 ## Preferences and settings
 

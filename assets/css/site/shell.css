@@ -49,11 +49,6 @@ html {
   border-radius: var(--site-radius);
 }
 
-.content .site-not-found-collections li.is-match {
-  border-color: var(--site-accent);
-  background: var(--site-card-surface);
-}
-
 .site-not-found-collection {
   font-size: var(--site-text-lg);
   font-weight: 600;

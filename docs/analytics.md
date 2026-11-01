@@ -29,10 +29,11 @@ PostHog respects Do Not Track, creates no person profiles, and keeps its recorde
 | `referrer_host` | Referring hostname | Missing page referrer host |
 | `referrer_path` | Same-origin source path only | Missing page internal source |
 | `site_release` | Deployed revision | Site release |
+| `redirect_path` | Section the reader was sent to; absent when the 404 page stayed | Not saved |
 
 These fields exclude queries/fragments. An absent referrer remains `unknown`. GA4 and PostHog receive the parameters. Clarity receives the event plus `page_kind = 404` and nonempty fields as tags, capped at 255 characters; other custom events send names only.
 
-Use `requested_path` for missing-URL reports: generated `page_path` describes `/404.html`. Recovery clicks use the existing `internal_navigation` event.
+A missing address inside an existing section redirects to that section (see [frontend.md](frontend.md#not-found-page)). The 404 page then sends nothing; the section page sends `not_found_viewed` with the missing address and its referrer, saved in `sessionStorage` for up to 30 seconds, plus `redirect_path`. Its `page_path` and Clarity session are the section page. Without `sessionStorage` the redirect still happens but goes unreported. Use `requested_path` for missing-URL reports: generated `page_path` describes `/404.html` or the section page. Recovery clicks use the existing `internal_navigation` event.
 
 ## Reports
 

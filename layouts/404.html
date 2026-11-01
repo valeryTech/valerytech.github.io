@@ -4,9 +4,8 @@
   <main id="content" class="site-not-found content">
     <h1>Page not found</h1>
     <p>This address does not exist anymore. Notes move as the collections are reorganized, so the page is probably still here under a new address.</p>
-    <p class="site-not-found-match" hidden>The address points into <a href="#"></a>. Start there, or use search.</p>
     <h2>Collections</h2>
-    {{- /* The collections that have agent maps, in breadcrumb order; the script highlights the one matching the missing path. */}}
+    {{- /* The collections that have agent maps, in breadcrumb order. */}}
     <ul class="site-not-found-collections">
       {{- range partialCached "navigation/child-groups.html" (dict "nodes" site.Home.Sections) "breadcrumb-root-sections" site.Home.RelPermalink }}
         {{- if ne .key "sections" }}{{ continue }}{{ end }}
@@ -30,6 +29,10 @@
       {{- with site.GetPage "/agent-map" }}Browse the <a href="{{ .RelPermalink }}">website map</a> or return{{ else }}Return{{ end }}
       to the <a href="{{ "" | relURL }}">homepage</a>.
     </p>
+    {{- /* Every section address, so the script can send a missing address to its closest existing section. */}}
+    {{- $sections := slice }}
+    {{- range site.Pages }}{{ if .IsSection }}{{ $sections = $sections | append .RelPermalink }}{{ end }}{{ end }}
+    <script id="site-not-found-sections" type="application/json">{{ $sections | jsonify | safeJS }}</script>
     {{- $script := resources.Get "js/not-found.js" | js.Build (dict "target" "es2015" "minify" true) }}
     <script>{{ $script.Content | safeJS }}</script>
   </main>

@@ -9,6 +9,7 @@ import {
   toUrl,
 } from "./helpers.mjs";
 import { sendAnalyticsEvent } from "./emit.mjs";
+import { takeNotFoundRedirect } from "./not-found-redirect.mjs";
 
 function getLinkTargetMode(link, event) {
   if (
@@ -215,15 +216,22 @@ function initDisplayPreferenceAnalytics() {
 }
 
 function initNotFoundAnalytics() {
-  if (window.siteAnalytics?.context?.page_kind === "404") {
+  const context = window.siteAnalytics?.context;
+  if (context?.page_kind === "404") {
+    // A redirected visit is reported by the section page it lands on.
+    if (window.siteNotFoundRedirect) return;
     sendAnalyticsEvent(
       "not_found_viewed",
-      getNotFoundDetails(
-        window.location.href,
-        document.referrer,
-        window.siteAnalytics.context.site_release,
-      ),
+      getNotFoundDetails(window.location.href, document.referrer, context.site_release),
     );
+    return;
+  }
+  const redirect = takeNotFoundRedirect(window.location.origin);
+  if (redirect) {
+    sendAnalyticsEvent("not_found_viewed", {
+      ...getNotFoundDetails(redirect.href, redirect.referrer, context?.site_release),
+      redirect_path: window.location.pathname,
+    });
   }
 }
 

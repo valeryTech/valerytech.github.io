@@ -237,7 +237,7 @@ The collections come from the `cascade` rule in `config/_default/hugo.toml`. `/l
 
 ## Moving notes
 
-There is no per-URL redirect map. When moving or removing published notes, add a Hugo `aliases` entry only for an address you want to keep exactly; every other old address shows the 404 page, which points readers to the collection matching the first path segment and to the agent maps. Check the [404 reports](analytics.md#reports) when deciding whether an alias is worth it.
+There is no per-URL redirect map. When moving or removing published notes, add a Hugo `aliases` entry only for an address you want to keep exactly; every other old address redirects to its closest existing section, and an address outside every section shows the 404 page with the collections and agent maps. Check the [404 reports](analytics.md#reports) when deciding whether an alias is worth it.
 
 ## Upgrades
 

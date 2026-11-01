@@ -22,6 +22,7 @@ if (projectId) {
           "referrer_host",
           "referrer_path",
           "site_release",
+          "redirect_path",
         ]) {
           const value = parameters[key];
           if (typeof value === "string" && value.length > 0) {
