@@ -30,7 +30,7 @@ Content reports cover regular pages in the six main collections; index, homepage
 - Engagement is a coarse proxy: 10 visible seconds, an interaction, and 25% document visibility. Visible time includes idle time; short pages can start near full depth. `completed` is a depth proxy, not proof of reading.
 - Exit summaries can be lost on mobile termination or selective after back/forward-cache restores. Missing summaries are not zero reading.
 - Events lack page-view/search-attempt IDs. Use page-session units; search counts are activity, not a conversion funnel. Navigation means link activation, not confirmed arrival. Homepage cards can currently be classified as `other`.
-- Owner visits and undetected automation remain. SQL does not inherit Web Analytics bot filters. Clarity's denied storage limits continuity. Keep tool counts separate and use event properties because person profiles are disabled.
+- Reader reports exclude no-signal sessions through the `reader_sessions` view (see [session filter](analytics-queries/README.md#session-filter)); this is an estimate, and automation that scrolls or clicks still counts. Owner visits remain. SQL does not inherit Web Analytics bot filters. Clarity's denied storage limits continuity. Keep tool counts separate and use event properties because person profiles are disabled.
 
 ## Reader research draft
 

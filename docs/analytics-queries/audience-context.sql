@@ -1,5 +1,6 @@
 -- All page types; country/device from the first observed event in the window.
 -- Observed browser sessions, not people, nationality, or professional role.
+-- Excludes no-signal sessions (see reader-sessions-view.sql).
 WITH observed_sessions AS (
     SELECT
         toString(properties.$session_id) AS session_id,
@@ -17,6 +18,9 @@ WITH observed_sessions AS (
     WHERE timestamp >= now() - INTERVAL 30 DAY
       AND properties.$host = 'valery.tech'
       AND properties.$session_id IS NOT NULL
+      AND toString(properties.$session_id) NOT IN (
+          SELECT session_id FROM reader_sessions WHERE is_no_signal
+      )
       AND event IN ('$pageview', 'reader_engaged')
     GROUP BY session_id
     HAVING pageviews > 0
@@ -27,7 +31,7 @@ SELECT
     count() AS observed_sessions,
     countIf(engaged) AS engaged_sessions,
     round(100.0 * countIf(engaged) / count(), 1) AS engaged_pct,
-    sum(pageviews) AS pageviews
+    sum(pageviews) AS total_pageviews
 FROM observed_sessions
 GROUP BY country, device_type
 ORDER BY observed_sessions DESC

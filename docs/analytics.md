@@ -39,7 +39,7 @@ A missing address inside an existing section redirects to that section (see [fro
 
 | Report | Scope |
 | --- | --- |
-| [PostHog: reader journeys and content value](https://us.posthog.com/project/631264/dashboard/2254879) | Content, navigation, search/reuse, and audience context; [SQL and units](analytics-queries/README.md) |
+| [PostHog: reader journeys and content value](https://us.posthog.com/project/631264/dashboard/2254879) | Reader vs no-signal sessions, countries, content, entry/exit pages, page-to-page flows, navigation, search/reuse; [SQL, units and session filter](analytics-queries/README.md) |
 | [PostHog: 404 technical health](https://us.posthog.com/project/631264/dashboard/2254837) | Missing paths and source/release details; rolling 30 days, production hostnames |
 | [GA4: 404 URLs and referrers](https://analytics.google.com/analytics/web/?authuser=2#/analysis/a346580592p479060226/edit/PPnR5gRPSVqFV8ms3puNqA) | Standard page path/referrer dimensions, 404 title filter, production hostnames |
 | [Clarity: 404 recordings](https://clarity.microsoft.com/projects/view/yovpnq2dvg/impressions?date=Last%2030%20days&smartEvents=not_found_viewed) | Saved segment **404 visits — missing URLs**, rolling 30 days; use Today for fresh tests |
