@@ -72,9 +72,8 @@ test('only the main index and five merged collection maps are generated', () => 
     if (route === '/agent-map/') continue;
     assert.ok(extractLinks(document).some((link) => link.pathname === '/agent-map/'), `Missing main map link: ${route}`);
   }
-  assert.ok(!extractLinks(main).some((link) => link.pathname === '/blog/example-post/'));
   assert.ok(!extractLinks(main).some((link) => link.pathname === '/404.html'));
-  assert.doesNotMatch(main, /Example Post|Page not found/);
+  assert.doesNotMatch(main, /Page not found/);
   assert.ok(extractLinks(main).some((link) => link.pathname === '/topics/'));
 });
 
@@ -85,7 +84,7 @@ test('following the maps covers current published material, excluding aliases, u
     route = route.replace(/\/index\.html$/, '/');
     // Pagination repeats a collection already in the maps.
     if (/\/page\/\d+\/$/.test(route)) continue;
-    if (['/404.html', '/blog/example-post/'].includes(route)) continue;
+    if (route === '/404.html') continue;
     // Hugo aliases preserve old addresses without advertising them in the maps.
     if (isAlias(readFileSync(filename, 'utf8'))) continue;
     // HTML attachments are resources of a mapped article, not separate articles.
@@ -188,7 +187,7 @@ test('pages expose the main map in the footer and their collection map in metada
     ['index.html', '/agent-map/'],
     ['ai-engineering/working-assumptions/index.html', '/agent-map/ai-engineering/'],
     ['system-design/nfr/consistency/index.html', '/agent-map/system-design/'],
-    ['blog/example-post/index.html', '/agent-map/'],
+    ['about/index.html', '/agent-map/'],
     ['agent-map/ai/index.html', '/agent-map/ai/']
   ];
   for (const [relative, mapRoute] of pages) {
