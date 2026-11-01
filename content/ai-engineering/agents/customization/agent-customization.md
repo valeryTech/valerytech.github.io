@@ -78,7 +78,7 @@ Packages bundle parts for installing and sharing them, such as VS Code agent plu
 ## Agent Roles and Participant Roles
 
 
-[Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) describes participants by four responsibilities: who supplies information, who does the work, who judges the result, and who may commit it. Each agent role gets a level of autonomy for each type of action and a trigger that starts it ([Autonomy and Triggers for Agent Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#autonomy-and-triggers-for-agent-roles)). An agent role in the customization is how such a role becomes something a harness can run. Its instructions and skills say how it does the work, its tools and policies set what it may do, and its hooks and handoffs set when it acts and to whom it passes the work.
+[Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) describes participants by four responsibilities: who supplies information, who does the work, who judges the result, and who may commit it. Each agent role gets a level of autonomy for each type of action and a trigger that starts it ([Autonomy and Triggers for Agent Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#autonomy-and-triggers-for-agent-roles)). An agent role in the customization is how such a role becomes something a harness can run. Its instructions and skills say how it does the work, its tools and policies set what it may do, and its hooks and handoffs set when it acts and to whom it passes the work.
 
 ## Four Things Around a Session
 

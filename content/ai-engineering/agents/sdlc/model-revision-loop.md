@@ -11,13 +11,14 @@ The notes in this folder and the [Reasoning Log]({{< ref "ai-engineering/agents/
 ## What the Working Model Is
 
 
-The working model is the set of concepts we use to look at and plan engineering work with assistants. It lives in these notes:
+The working model is the set of concepts we use to look at and plan engineering work with assistants. It lives in these notes (mapped in the [SDLC index]({{< ref "ai-engineering/agents/sdlc" >}})):
 
+- [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}})
 - [Two Planes of Goals]({{< ref "ai-engineering/agents/sdlc/goal-planes" >}})
-- [Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}})
-- [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) and [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}})
-- [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) and [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}})
-- [Coordination Mechanisms Between People and Agents]({{< ref "ai-engineering/agents/environment/coordination-mechanisms" >}})
+- [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) and [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}})
+- [Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}}) and [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}})
+- [Participants and Substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) and [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}})
+- [What a Team Can Change Around an Agent Session]({{< ref "ai-engineering/agents/customization/what-can-change" >}}) and [Coordination Mechanisms Between People and Agents]({{< ref "ai-engineering/agents/environment/coordination-mechanisms" >}})
 - [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}), which describes how cases are collected
 
 The concepts start as a vocabulary and as hypotheses about what helps. Grounded theory calls such concepts sensitizing concepts: they suggest where to look, and the cases decide whether they stay.

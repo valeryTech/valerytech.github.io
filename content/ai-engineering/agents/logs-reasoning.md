@@ -68,7 +68,7 @@ Moved to [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities
 ### 7. Participants, Substrates, Processes, and Coordination
 
 
-Moved to [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}). This step separated the active participants (people and agents in their roles) from the substrates they work in (the agent runtime and the Agent Development Environment), described four nested loops of work, and listed five coordination mechanisms. The coordination mechanisms are in a separate note, [Coordination Mechanisms Between People and Agents]({{< ref "ai-engineering/agents/environment/coordination-mechanisms" >}}).
+Moved to [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}). This step separated the active participants (people and agents in their roles) from the substrates they work in (the agent runtime and the Agent Development Environment), described four nested loops of work, and listed five coordination mechanisms. The coordination mechanisms are in a separate note, [Coordination Mechanisms Between People and Agents]({{< ref "ai-engineering/agents/environment/coordination-mechanisms" >}}).
 
 ### 8. What This Means for Building `AGENTS.md`
 
@@ -151,7 +151,7 @@ The question was whether the design research notes on human-AI collaboration cou
 - **Substrates:** accepting a change into shared work differs from authorizing an effect outside it, so merge isn't the only commitment point. Task state differs from lasting knowledge, and both lack records such as a decision log, standing instructions, and who wrote and approved a change. People need a way to watch and steer the agent's work.
 - **Processes:** collaboration modes (such as delegate, propose and review, reason together) work inside each loop, and transitions (handoff, escalation, takeover, return of control) connect them. People decide at named decision points, and review needs conditions. Shared documents don't make common ground, investigation may need its own loop, and the collaboration itself can be tested.
 
-The comment files call most of this material unverified proposals, so these are ideas to test, and none of them is applied yet. The findings, with their sources and the changes they suggest, are in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#findings-from-the-design-research).
+The comment files call most of this material unverified proposals, so these are ideas to test, and none of them is applied yet. The findings, with their sources and the changes they suggest, are in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#findings-from-the-design-research).
 
 ### 14. Describing Participants by Responsibility
 
@@ -166,7 +166,7 @@ Describing every role by these four responsibilities changes the list of partici
 - **An agent role is a configuration.** It's a model, its harness configuration (tools, permissions, and what starts it), and its access to the ADE. A checker agent is independent only when its failures don't share a cause with the author's: a different context, different evidence, or a different model.
 - **Learning is a separate question.** A task can also ask who needs to learn from doing it, so that people keep their understanding of the system.
 
-The new version, with a table of roles against the four responsibilities, is in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#participants); the earlier list is kept in its appendix. Autonomy levels and triggers for agent roles, the authority layer of the substrates, and the processes aren't reworked yet.
+The new version, with a table of roles against the four responsibilities, is in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#participants); the earlier list is kept in its appendix. Autonomy levels and triggers for agent roles, the authority layer of the substrates, and the processes aren't reworked yet.
 
 ### 15. Autonomy and Triggers for Agent Roles
 
@@ -180,7 +180,7 @@ Applied to our agent roles:
 - **The level depends on the action and the evidence.** Capability, checks that would catch mistakes, reversibility, and written context raise it; consequence, ambiguity, novelty, unwritten context, and difficulty of checking lower it. This is the same rule as scaling depth in the Approach (step 12). Reported confidence doesn't raise it.
 - **Levels change one step at a time, in both directions.** The framing of a task can set a different level for that task, and the maintenance loop changes the starting levels based on measured results.
 
-The starting levels and triggers are proposals for the bottom-up cases (step 11) to test. They're in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#autonomy-and-triggers-for-agent-roles).
+The starting levels and triggers are proposals for the bottom-up cases (step 11) to test. They're in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#autonomy-and-triggers-for-agent-roles).
 
 ### 16. What the Substrates Hold
 
@@ -191,7 +191,7 @@ Step 7 described the substrates as a list of parts. The design research suggests
 - **Contributions and effects.** Accepting a contribution into shared work can be undone; authorizing an effect outside the workspace may not be. The points where work becomes shared or consequential are commitment points, and the merge is only one of them.
 - **Authority as its own layer.** Permissions, branch protection, CI gates, and deploy gates all enforce who may commit what. Seen together, they form an authority layer, where the rules are strict, while the rules for how participants work can stay open.
 
-The runtime also needs a way for people to watch and steer the agent's work, which the earlier list left out. The revised section is in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#substrates). It stays at the level of these distinctions; detailed structures, such as lists of commitment points and who authorizes each one, can wait until real tasks show which ones are needed.
+The runtime also needs a way for people to watch and steer the agent's work, which the earlier list left out. The revised section is in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#substrates). It stays at the level of these distinctions; detailed structures, such as lists of commitment points and who authorizes each one, can wait until real tasks show which ones are needed.
 
 ### 17. Keeping the Analysis Conceptual
 
@@ -326,7 +326,7 @@ The ADE reaches the agent through the execution environment, and the two can dri
 Two questions are open:
 
 - **How to structure the ADE.** The ADE note groups its parts by kind of control: guides, sensors, tools, and limits. The parts can also be grouped by kind of artifact: knowledge, instructions, working practices and workflows, skills, roles, commands and checks, harness configuration, and setup definitions. The two groupings cut across each other: a skill can be a guide or a sensor, and harness configuration holds limits as well as hooks that run sensors. Which grouping comes first is left for later.
-- **Where the execution environment sits among the substrates.** [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) has three substrates: the agent runtime, the ADE, and the authority layer. The execution environment is close to the agent runtime, but it also holds the running application, which the substrates place in the ADE as part of the subject system.
+- **Where the execution environment sits among the substrates.** [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) has three substrates: the agent runtime, the ADE, and the authority layer. The execution environment is close to the agent runtime, but it also holds the running application, which the substrates place in the ADE as part of the subject system.
 
 ### 29. Grouping the ADE by Kind of Artifact
 
@@ -408,7 +408,7 @@ Steps 1 to 31 describe a system: goals, an approach, activities, participants, p
 
 > *User note:* The task types are framed as tasks that people give an assistant. Why concentrate only on what the assistant does? Task types should be common to all participants.
 
-Step 11 defined a task type as a recurring kind of task given to an assistant, and [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) collected about fifty types on that definition. Nothing that defines a type depends on who does the task: the starting point, the output, the definition of done, and the activities are the same for a person, an agent, or both. [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) already treats a participant as a person, an agent, or an automated check, so the old definition tied the catalog to one kind of participant.
+Step 11 defined a task type as a recurring kind of task given to an assistant, and [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) collected about fifty types on that definition. Nothing that defines a type depends on who does the task: the starting point, the output, the definition of done, and the activities are the same for a person, an agent, or both. [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) already treats a participant as a person, an agent, or an automated check, so the old definition tied the catalog to one kind of participant.
 
 **What changed:**
 
@@ -491,3 +491,43 @@ Step 35 left one gap open: the agent customization is only one of the things a t
 
 - Who owns the budgets for time, tokens, and compute, which could be one more part to change?
 - When a problem comes back, which part should the team change first?
+
+### 37. Separating Workflows from Activities, and Untangling Approach, Processes, and Cycles
+
+
+Looking across `sdlc/` after steps 28 to 36 showed four tangles in the working model:
+
+- **"Workflow" meant four things without separating them:** the six-activity lifecycle (`workflows.md` and `cycles.md`), the concrete steps for one task type (`bottom-up-approach.md` and `ade.md`), a runnable multi-stage pipeline (`agent-customization.md` and `independent-verification-workflows.md`), and the process loops (`participants-and-processes.md`). In `task-types.md`, only two of the ~42 task types use all six activities, so treating the six activities as "the workflow" made every task look like a six-step waterfall.
+- **`approach.md` and `processes.md` overlapped without a stated boundary.** Six of the ten items mapped one-to-one, leaving the reader with two parallel ten-item lists.
+- **Three loop lists lived side by side:** seven cycles in `cycles.md`, step 7's four nested loops still in the body of `participants-and-processes.md`, and the three learning loops in `model-revision-loop.md`.
+- **`participants-and-processes.md` lagged behind steps 28 to 36,** still listing three substrates (`Agent runtime`, `ADE`, `Authority layer`) instead of the five layers in `what-can-change.md`.
+
+**What changed:**
+
+- **Each note in `sdlc/` owns one question**, mapped in [SDLC Index]({{< ref "ai-engineering/agents/sdlc" >}}).
+- **[Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) defines a workflow** as how participants, tools, and checks carry out a [task type]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) using the subset of [activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) that task type needs, and names the three forms a workflow can take in a team's setup: a written working practice in the ADE, a skill or agent role in the agent customization, or an orchestrated pipeline with deterministic gates.
+- **[Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}}) and [Processes]({{< ref "ai-engineering/agents/sdlc/processes" >}}) state their boundary.** The Approach covers how to reason inside a step, even when one person works alone. Processes cover what changes once work is split across people, stateless agents, and checks: six reasoning practices turn into handoffs and gates across participants, and four new coordination jobs appear (allocating autonomy, keeping human understanding, keeping continuity outside session memory, and checking whether a setup change helped). The ten processes are grouped by job with their numbering kept fixed.
+- **[Participants and Substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) aligns its substrates with steps 28 to 36** (harness, agent customization, ADE, execution environment, and authority layer) and moves step 7's four nested loops and design-research notes to the appendix, keeping its file path and heading anchors intact.
+- **[Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}) connects the vault's cycles to the three learning speeds** in [Testing and Revising the Working Model]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}}), and the superseded blueprint `sdlc-workflows-handoff.md` moved to `input/`.
+
+### 38. Reframing Workflows as a Six-Part Format and Adding a First Example
+
+
+Even after step 37, `workflows.md` was still mostly an essay contrasting good engineering with the "generate and accept" shortcut, and it still held two sections that belonged elsewhere: the five-concept organization list and the six-activity shortcut table. It did not state what a concrete workflow has to specify.
+
+**What changed:**
+
+- **Kept the filename `workflows.md`** so existing links and the published URL stay intact, and reframed it around a **six-part workflow format** for one task type: scope and starting input, steps (activity, participant, output), decision points, checks (self-checks and independent checks), backtracks, and placement in the project setup.
+- **Reassigned two sections out of `workflows.md`:** the five-concept map (*Activities, Task types, Workflows, Phases, Cycles*) moved to [SDLC Index]({{< ref "ai-engineering/agents/sdlc" >}}), and the six-activity shortcut table moved to [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}). `workflows.md` keeps a short section on the "generate and accept" shortcut because several notes link to it for that term.
+- **Created the first concrete example:** [Workflow Example: Fix a Bug]({{< ref "ai-engineering/agents/sdlc/workflow-fix-a-bug" >}}) writes out the **Fix a bug** task type in the six-part format as a draft hypothesis to test and trim on actual tasks.
+- **Renamed `participants-and-processes.md` to `participants-and-substrates.md`** using `_scripts/rename_note.py` so the filename matches its scope, updating 40 internal links across 16 files.
+
+### 39. Renaming "Frame a Ticket" to "Frame a Problem" and Adding Its Workflow
+
+
+**Frame a ticket** tied the framing task type to an issue tracker, even though framing starts from rough ideas, user feedback, chat threads, incident follow-ups, or unclear bug reports as well as tickets.
+
+**What changed:**
+
+- **Renamed the task type from `Frame a ticket` to `Frame a problem`** across [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}}), [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}), [SDLC Index]({{< ref "ai-engineering/agents/sdlc" >}}), and [Workflow Example: Fix a Bug]({{< ref "ai-engineering/agents/sdlc/workflow-fix-a-bug" >}}), matching Activity 1 (*Problem & Opportunity Framing*) and [Defining the Product Before Building]({{< ref "ai-engineering/agents/ai-assisted-development/product-framing" >}}).
+- **Created [Workflow Example: Frame a Problem]({{< ref "ai-engineering/agents/sdlc/workflow-frame-a-problem" >}})** in the six-part workflow format. This tests the format on a task that produces a document with low automated checkability (where checks rely on verifying code claims and getting owner decisions) and links directly as the prerequisite for [Workflow Example: Fix a Bug]({{< ref "ai-engineering/agents/sdlc/workflow-fix-a-bug" >}}) when expected behavior is unclear.

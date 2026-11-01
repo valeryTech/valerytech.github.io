@@ -49,7 +49,7 @@ Two more goals come from features of agents. They're conditions for reaching the
 ## Plane 2: Goals for the Agent Setup and the Environment
 
 
-The agent setup and the environment (the agent roles and the [substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) they work in) serve the Plane 1 goals and the two conditions. The participants are people, agents, and automated checks, and the [processes]({{< ref "ai-engineering/agents/sdlc/processes" >}}) come from the places where the goals meet their features. So the Plane 2 goals describe what the agent roles and the substrates have to give the participants for the processes to run:
+The agent setup and the environment (the agent roles and the [substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) they work in) serve the Plane 1 goals and the two conditions. The participants are people, agents, and automated checks, and the [processes]({{< ref "ai-engineering/agents/sdlc/processes" >}}) come from the places where the goals meet their features. So the Plane 2 goals describe what the agent roles and the substrates have to give the participants for the processes to run:
 
 1. **The agent works from the project's reality.** The sources of truth, conventions, contracts, and the task's intent are where participants look for them, and the agent's understanding of a task can be checked before other work depends on it. This serves grounding.
 2. **Work can be checked as it's done and by someone else.** Fast checks let whoever does the work catch mistakes before anyone else judges it. Independent checks have failures that don't share a cause with the author's. Results carry their evidence and say what wasn't checked. This serves producing with self-checks and independent judging.
@@ -58,7 +58,7 @@ The agent setup and the environment (the agent roles and the [substrates]({{< re
 5. **Task state lives outside any participant's memory.** The substrates keep task state and lasting knowledge, so a new session or another participant can continue the work from where it stopped. This serves keeping continuity.
 6. **The environment and autonomy change with evidence.** What tasks teach goes into lasting knowledge, checks, and commands. Each agent role's autonomy for each type of action rises or falls with evidence. Added structure stays only when it proves its value ([Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}})). This serves allocating work and autonomy, learning across tasks, and checking whether a change helped.
 
-Together these goals let assistants do as much of the work as the evidence supports while the Plane 1 goals hold. This is the combined outcome of Plane 2, and it replaces reliable autonomy. Autonomy is set for each type of action and changes with evidence ([Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#autonomy-and-triggers-for-agent-roles)), so more autonomy isn't a goal in itself.
+Together these goals let assistants do as much of the work as the evidence supports while the Plane 1 goals hold. This is the combined outcome of Plane 2, and it replaces reliable autonomy. Autonomy is set for each type of action and changes with evidence ([Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#autonomy-and-triggers-for-agent-roles)), so more autonomy isn't a goal in itself.
 
 ### Changes from the Earlier Plane 2
 
@@ -89,7 +89,7 @@ The third, fifth, and sixth goals are new. They come from the people and the sub
 - [Discovery and Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): classifying work by its purpose and using evidence to choose the next commitment.
 - [Project Ownership]({{< ref "ai-engineering/agents/project-ownership" >}}): understanding and ownership of a project built with agents, and the three debts.
 - [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}}): the processes that serve these goals.
-- [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}): the participants and the substrates that Plane 2 describes.
+- [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}): the participants and the substrates that Plane 2 describes.
 
 ## Appendix: Earlier Version from Step 4
 

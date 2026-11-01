@@ -183,14 +183,18 @@ These notes cover building workflows from experience: doing real tasks, comparin
 ## Working material in this folder
 
 
-- [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}): the six general activities, what each one produces and needs, the problem-solving cycle inside each, which activities each phase uses most, and a template for a project's version of an activity.
-- [Testing and Revising the Working Model]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}}): a loop that applies the concepts of these notes on real tasks, reflects on whether they helped, and revises them.
+- [SDLC Index]({{< ref "ai-engineering/agents/sdlc" >}}): map of how activities, task types, workflows, phases, and cycles fit together, with one question per note.
+- [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}): what a workflow is, the six-part format for specifying one, its three forms in a project setup, and the "generate and accept" shortcut.
+- [Workflow Example: Frame a Problem]({{< ref "ai-engineering/agents/sdlc/workflow-frame-a-problem" >}}): worked workflow in the six-part format for turning an unclear request, idea, or report into a short brief.
+- [Workflow Example: Fix a Bug]({{< ref "ai-engineering/agents/sdlc/workflow-fix-a-bug" >}}): worked workflow in the six-part format, ready to test on actual bug fixes.
 - [Two Planes of Goals for Engineering Work with Assistants]({{< ref "ai-engineering/agents/sdlc/goal-planes" >}}): product and engineering goals, two conditions that come from working with agents, and goals for the agent setup and the environment that serve them.
-- [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}}): what the processes need to achieve, the features of the participants and of the work that make it hard, and ten processes derived from them.
-- [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}): people and agents in their roles, the agent runtime and the Agent Development Environment they work in, and the four nested loops.
-- [Features of a Good Approach to Engineering Work]({{< ref "ai-engineering/agents/sdlc/approach" >}}): ten practices for reasoning and deciding in any task, grouped by the four parts of the problem-solving cycle, with examples for each activity.
-- [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}): seven cycles from the problem-solving cycle to the improvement cycle and the knowledge loop across projects, and how they fit together.
+- [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}): the six general activities, what each one produces and needs, the problem-solving cycle inside each, which activities each phase uses most, and a template for a project's version of an activity.
+- [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}}): recurring kinds of tasks, also listed under bottom-up learning.
+- [Features of a Good Approach to Engineering Work]({{< ref "ai-engineering/agents/sdlc/approach" >}}): ten practices for reasoning and deciding in any step, even when working alone, grouped by the four parts of the problem-solving cycle.
+- [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}): how problem solving and learning repeat at different scales--from one step inside an activity to task workflows, project phases, environment upkeep, and revising the working model.
+- [Participants and Substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}): people, agents, and checks described by four responsibilities, capability, authority, and accountability, and the five substrate layers they work in.
+- [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}}): how multi-participant work differs from solo reasoning, the features of participants and the work that make the goals hard, and ten coordination processes grouped by job.
 - [Bottom-Up Approach to Building Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}): also listed under bottom-up learning.
-- [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}): domain modeling around `AGENTS.md`: goals, the approach, workflow activities, participants, coordination, and how the vault's cycles fit together.
-- [Handoff: SDLC Workflows]({{< ref "ai-engineering/agents/sdlc/sdlc-workflows-handoff" >}}): unfinished blueprint for a fuller note on workflows and the approach.
+- [Testing and Revising the Working Model]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}}): a loop that applies the concepts of these notes on real tasks, reflects on whether they helped, and revises them.
 - [Independent Verification Workflows for Coding Agents]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}): also listed under review and verification.
+- [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}): change history of the working model, from goals and workflows through customization, environments, task types, and problems (the earlier blueprint is archived in SDLC Workflows Handoff).

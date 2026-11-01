@@ -108,7 +108,7 @@ The boundary with the harness follows which software runs a part and whether the
 
 The machine or container where a session runs isn't part of the environment. [Execution environment](#execution-environment) describes it.
 
-In [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}), the environment is one of three substrates, next to the agent runtime and the authority layer. The limits the team writes are split between two layers: permission rules are part of the agent customization, and branch protection is part of the environment. The authority layer groups the places where they're enforced.
+In [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}), the environment is one of three substrates, next to the agent runtime and the authority layer. The limits the team writes are split between two layers: permission rules are part of the agent customization, and branch protection is part of the environment. The authority layer groups the places where they're enforced.
 
 ### Execution environment
 
@@ -304,7 +304,7 @@ The engineering process is the six activities of [Engineering Activities]({{< re
 ### Code
 
 
-The code is the subject system the agents work on, and its structure is also a guide. The agent follows the patterns it finds, including poor ones, so the code teaches conventions whether or not anyone wrote them down ([Problems](#problems)). Strong types and clear module boundaries also make sensors possible, such as type checks and architecture rules ([Feedforward and feedback controls](#feedforward-and-feedback-controls)). In the substrates, the code, its data, and the running application form the subject system ([Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}})), and the running application runs in the execution environment.
+The code is the subject system the agents work on, and its structure is also a guide. The agent follows the patterns it finds, including poor ones, so the code teaches conventions whether or not anyone wrote them down ([Problems](#problems)). Strong types and clear module boundaries also make sensors possible, such as type checks and architecture rules ([Feedforward and feedback controls](#feedforward-and-feedback-controls)). In the substrates, the code, its data, and the running application form the subject system ([Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}})), and the running application runs in the execution environment.
 
 ### Project knowledge and task state
 
@@ -319,7 +319,7 @@ Working practices describe how people and agents work together, written down so 
 - **How tasks are specified:** a brief, a spec, or a task directory that states the intent and the context before the work starts ([Task directory]({{< ref "ai-engineering/agents/environment/project-knowledge" >}}#task-directory)).
 - **What done means:** the baseline checks, and the acceptance criteria for the task agreed before the work starts ([Knowledge and intent](#knowledge-and-intent)).
 - **How results are accepted:** which checks and reviews a result goes through before it's merged or deployed.
-- **How much autonomy each type of action gets**, and what starts an agent role ([Autonomy and Triggers for Agent Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#autonomy-and-triggers-for-agent-roles)).
+- **How much autonomy each type of action gets**, and what starts an agent role ([Autonomy and Triggers for Agent Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#autonomy-and-triggers-for-agent-roles)).
 - **How the environment improves:** how failures are recorded and turned into changes to the guides and sensors ([Improving the environment](#improving-the-environment)).
 - **Workflows for types of tasks:** the steps a type of task goes through, such as reproducing, diagnosing, fixing, and verifying a bug. [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) describes the workflows in general, and the [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) builds a project's version of them from its cases. A skill can carry out a workflow's steps, and commands can run its checks. A workflow that runs, such as a skill that calls an implementer role and then a reviewer role, is part of the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}).
 
@@ -340,7 +340,7 @@ Checks are the computational sensors the team writes: tests, linters, type check
 ### Repository and platform settings
 
 
-Some limits are set outside every harness, in the systems that hold the repository and run its deploys: branch protection, required review, who may deploy, and the scope of the credentials the agent gets. They hold for every agent and person, and they guard the points where work becomes shared or has an effect outside the workspace ([commitment points]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#contributions-effects-and-commitment-points)). The execution environment decides which credentials are actually there. In the substrates, the places where these settings and the harness's rules are enforced form the authority layer ([How Coding Agents Set Up and Restrict Their Environment]({{< ref "ai-engineering/agents/environment/environment-controls" >}})).
+Some limits are set outside every harness, in the systems that hold the repository and run its deploys: branch protection, required review, who may deploy, and the scope of the credentials the agent gets. They hold for every agent and person, and they guard the points where work becomes shared or has an effect outside the workspace ([commitment points]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#contributions-effects-and-commitment-points)). The execution environment decides which credentials are actually there. In the substrates, the places where these settings and the harness's rules are enforced form the authority layer ([How Coding Agents Set Up and Restrict Their Environment]({{< ref "ai-engineering/agents/environment/environment-controls" >}})).
 
 ### Setup definitions
 

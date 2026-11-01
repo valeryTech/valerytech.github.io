@@ -8,7 +8,7 @@ linkTitle: "Project Knowledge"
 
 This note describes project knowledge, the part of the [Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}}) that reduces the effort agents need to find and understand the knowledge their work requires. It was moved out of the ADE note in step 27 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}). In the terms of the ADE note, project knowledge is an inferential guide: the agent reads it and decides what it means for the task ([Feedforward and feedback controls]({{< ref "ai-engineering/agents/environment/ade" >}}#feedforward-and-feedback-controls)).
 
-That knowledge extends beyond technical documentation. It includes product vision, product framing, domain concepts, architectural principles, design decisions (like ADRs), and engineering conventions. It also includes task state, such as plans and handoffs, which belongs to one task and changes all the time ([Lasting Knowledge and Task State]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#lasting-knowledge-and-task-state)).
+That knowledge extends beyond technical documentation. It includes product vision, product framing, domain concepts, architectural principles, design decisions (like ADRs), and engineering conventions. It also includes task state, such as plans and handoffs, which belongs to one task and changes all the time ([Lasting Knowledge and Task State]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#lasting-knowledge-and-task-state)).
 
 ## Dimensions and approaches
 

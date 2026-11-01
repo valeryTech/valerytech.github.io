@@ -2,61 +2,68 @@
 draft: false
 toc: true
 title: "Engineering Workflows"
-description: "What good engineering workflows do and the reasoning they rely on, how people short-circuit them when they add software assistants, and how an assistant can help at each step of the lifecycle."
+description: "What an engineering workflow is, the six parts a workflow specifies for a task type, how workflows live in a project's setup, and why teams fall into the generate-and-accept shortcut without them."
 linkTitle: "Workflows"
 ---
 
-This note describes Plane 1 of the [goals]({{< ref "ai-engineering/agents/sdlc/goal-planes" >}}): the product, engineering, and workflow side of the work. The workflow and its reasoning apply with or without AI; the later sections cover what changes when people add software assistants. [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) defines the activities, [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}) describes the cycles they belong to, [Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}}) describes how to reason and decide in any of them, and the [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) describes how we build and test workflows from real tasks. For related notes on review, decisions, investigation, evidence, and reflection, see the [Reading Map]({{< ref "ai-engineering/agents/sdlc/reading-map" >}}).
+This note defines what an engineering workflow is, what a concrete workflow has to specify, how it lives in a project's setup, and what goes wrong when teams add coding assistants without adapting their workflows. For how all notes in this folder fit together, see the [SDLC index]({{< ref "ai-engineering/agents/sdlc" >}}).
 
-## The Baseline: What Good Engineering Workflows Actually Do
-
-
-Even before AI, building software is not just "writing code." Across [discovery-and-delivery.md]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}), [production-commitment.md]({{< ref "ai/product/operating-model/production-commitment" >}}), and [design-and-delivery.md]({{< ref "ai-engineering/delivery/design-and-delivery" >}}), engineering is a connected cycle of activities. Each activity can serve **Discovery** (reducing uncertainty that matters to a decision), **Delivery** (building, verifying, releasing, and operating behavior people can rely on), or both. There are six activities: framing, investigation, design decisions, implementation, verification and review, and release, operation, and learning. [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) defines each one, what it produces and needs, and which phases use it most.
-
-Throughout this cycle, the workflow does **two things at once**:
-
-- It produces a **working, dependable system in production**.
-- It builds and maintains the **team's understanding and ownership** of *what* the system does, *why* decisions were made, and *how* it can fail.
-
-## Activities, Phases, and Cycles
+## What a Workflow Is
 
 
-Three ideas describe how the work is organized:
+Software engineering draws on six general activities: framing, investigation, design decisions, implementation, verification and review, and release, operation, and learning ([Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}})). Almost no single task uses all six. Answering a question about the code uses investigation alone; fixing a bug uses investigation, design decisions, implementation, and verification ([Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}})).
 
-- **Activities** are kinds of work, each with its own output, context, and definition of done. [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) defines them in general terms and describes what a project's own version of an activity states.
-- **Phases** are periods in a project's life, such as design or operation. Each phase groups the activities it uses most and ends with an objective or decision. The same activity can appear in several phases.
-- **Cycles** repeat at different levels. The problem-solving cycle (frame, choose, act, and look back and learn) runs inside each activity. The project phases form a cycle of their own. The Problem and Response Cycle comes before a project, the improvement cycle runs on a product in production, and the Engineering Knowledge Loop learns across cases and projects. [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}) describes all of them.
+A **workflow** is the concrete recipe a team uses to carry out one task type with people, agents, and automated checks ([Participants and Substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}})). A task type defines the job (starting input, output, definition of done, and default delegation level); a workflow defines how participants execute that job.
 
-The "generate and accept" shortcut described below keeps only the act part of the problem-solving cycle: it skips framing, choosing, and looking back.
+Across tasks, good workflows produce two outputs at once ([Two Planes of Goals]({{< ref "ai-engineering/agents/sdlc/goal-planes" >}})):
 
-## What Goes Wrong When People Introduce Software Assistants
+- **A system people can rely on** in production.
+- **The team's understanding and ownership** of what the system does, why decisions were made, and how it can fail.
 
-
-When teams bring coding/software assistants into this lifecycle without structuring their workflow, people gravitate toward the path of least resistance:
-
-> **Vague request \(\rightarrow\) Agent generates code & tests \(\rightarrow\) Tests pass / summary sounds convincing \(\rightarrow\) Human accepts.**
-
-Instead of assisting across the lifecycle, the assistant is used to **short-circuit** it:
-
-1. **Framing and trade-offs get skipped ("Ready-fire-aim"):** Because generating code is cheap, people jump straight to implementation. When requirements are unclear, the agent silently guesses one interpretation and bakes it into the code ([common-mistakes.md]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}})).
-2. **Design decisions become accidental:** Instead of comparing alternatives and checking assumptions against the system, the agent sticks with its first idea, adds unnecessary abstractions, or patches around a wrong assumption (e.g., adding more retries when a timeout does not mean the operation failed).
-3. **Verification becomes circular:** The agent writes both the code and the tests from the same mistaken assumption (e.g., a mock that never exercises the failure mode that matters). Everything is green, giving false confidence. [Independent Verification Workflows for Coding Agents]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}) describes workflows that separate who writes the tests from who writes the code.
-4. **People shift from *cognitive offloading* to *cognitive surrender*:** As described in [project-ownership.md]({{< ref "ai-engineering/agents/project-ownership" >}}) (citing Alakmeh et al. and Osmani), developers who let the AI lead without first forming their own understanding and checking assumptions lose comprehension of the system.
-5. **Three debts accumulate simultaneously:**
-   - **Technical debt** in the code (duplicated patterns, broken boundaries, unnecessary machinery).
-   - **Comprehension (cognitive) debt** in the team (nobody can explain why the system works or what a change affects).
-   - **Intent debt** in the project (goals, constraints, and reasons for decisions were never recorded).
-
-## Shortcuts vs. Deliberate Workflow Across the Lifecycle
+## What a Workflow Specifies
 
 
-When we treat the AI as a **software assistant** across the whole workflow rather than a raw code generator, its role at each step changes:
+To be usable by people and agents, a workflow for a task type specifies six parts:
 
-| Activity                           | Suboptimal Use ("Generate & Accept" Shortcut)       | Deliberate Workflow with a Software Assistant                                                                                                                                  |
-| :--------------------------------- | :-------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1. Problem & Product Framing**   | Skip framing; paste a rough ticket and ask for code | Assistant reads existing docs/code/issues, separates current behavior from intended behavior, drafts a short brief, and flags open product questions for the owner             |
-| **2. Investigation & Feasibility** | Assume how the system/API works without checking    | Engineer asks a specific question; assistant inspects code/logs/contracts or runs a focused check/prototype and reports what was observed vs. what remains unknown             |
-| **3. System Design & Trade-offs**  | Let the agent invent abstractions while coding      | Assistant helps map affected components/callers, compares useful alternatives against constraints, and records what implementation must preserve                               |
-| **4. Implementation**              | Generate a huge diff across the repo in one go      | Assistant implements within agreed design rules, local conventions, and architecture boundaries, running fast baseline checks as it goes                                       |
-| **5. Verification & Review**       | Trust green unit tests written by the same agent    | Assistant helps trace callers and failure paths, build tests that exercise real failure modes (e.g., lost response after commit), and produce an evidence-backed review record |
-| **6. Release, Operation & Upkeep** | Merge and forget until an incident happens          | Check rollout/rollback/migration safety; investigate production traces; turn repeated mistakes or new decisions into updated contracts, checks, commands, or `AGENTS.md` rules |
+1. **Scope and starting input:** which task type the workflow covers, what must exist before work starts, and what is out of scope.
+2. **Steps:** the sequence of steps, with who does each step (person, agent role, or automated check), which activity it belongs to, and what it produces.
+3. **Decision points:** where work stops for a person to choose or approve, who owns each decision, and what evidence the person sees before deciding.
+4. **Checks:** which fast checks run during the work (self-checks) and which checks are independent of whoever produced the result.
+5. **Backtracks:** what sends work back to an earlier step when an assumption turns out to be wrong ([Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}})).
+6. **Placement:** which parts live as written practice, as a skill or command, and as an enforced gate.
+
+Start with a minimal workflow and adjust it from actual tasks, keeping only the steps and checks that prove useful ([Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}})). For complete examples written in this format, see [Workflow Example: Fix a Bug]({{< ref "ai-engineering/agents/sdlc/workflow-fix-a-bug" >}}) and [Workflow Example: Frame a Problem]({{< ref "ai-engineering/agents/sdlc/workflow-frame-a-problem" >}}).
+
+## How a Workflow Lives in a Team's Setup
+
+
+Depending on the risk of the task type and how often it repeats, a workflow takes one of three forms:
+
+1. **A written working practice** in the [Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}}) (project docs, pull request templates, and commands) that people and agents follow during a session.
+2. **A skill or agent role** in the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}) that guides or runs part of the task when invoked.
+3. **An orchestrated pipeline** where code runs stages in separate agent contexts with deterministic gates, used when the cost of a mistake justifies strict isolation ([Independent Verification Workflows]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}})).
+
+In all three forms, rules at commitment points (such as merging, deploying, or changing shared contracts) belong in the authority layer (branch protection, CI gates, permissions, and deploy controls) so they hold even if an agent skips written guidance ([What a Team Can Change]({{< ref "ai-engineering/agents/customization/what-can-change" >}})).
+
+## The "Generate and Accept" Shortcut
+
+
+When a team adds a coding assistant without adapting its workflows, people take the easiest path:
+
+> **Rough request \(\rightarrow\) Agent writes code and tests \(\rightarrow\) Tests pass and the summary sounds right \(\rightarrow\) Person accepts.**
+
+In terms of the [problem-solving cycle]({{< ref "ai-engineering/agents/sdlc/cycles" >}}), this shortcut keeps only the *act* step and skips *framing*, *choosing*, and *looking back*:
+
+1. **Framing gets skipped:** Writing code is cheap, so people jump straight to it. When a request is unclear, the agent guesses what it means and writes that guess into the code ([Common Mistakes]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}})).
+2. **Design happens by accident:** The agent commits to its first idea, adds extra layers, or patches around a wrong assumption (such as adding retries when a timeout does not mean the call failed).
+3. **Tests check the agent's own mistake:** The agent writes both the code and the tests from the same wrong assumption, so passing tests hide the defect ([Independent Verification Workflows]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}})).
+4. **Understanding and ownership fade:** People stop forming their own mental model before accepting output, and three kinds of debt build up together: **technical debt** in the code, **comprehension debt** in the team, and **intent debt** from unrecorded decisions ([Project Ownership]({{< ref "ai-engineering/agents/project-ownership" >}})).
+
+See [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}#shortcut-vs-deliberate-assistant-use-in-each-activity) for how deliberate assistant use differs from this shortcut in each of the six activities.
+
+## Examples
+
+
+- [Workflow Example: Frame a Problem]({{< ref "ai-engineering/agents/sdlc/workflow-frame-a-problem" >}}): a workflow for turning a rough request, idea, or report into a short brief before design or implementation.
+- [Workflow Example: Fix a Bug]({{< ref "ai-engineering/agents/sdlc/workflow-fix-a-bug" >}}): a lightweight workflow for a single pull request, written in the six-part format.
+- [Independent Verification Workflows]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}): orchestrated multi-stage pipelines for design and implementation with isolated agents and holdout tests.

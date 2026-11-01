@@ -52,6 +52,20 @@ Inside each activity, the reasoning goes through the four parts of the [problem-
 | **5. Verification and review** | The requirements and the failure modes that matter | Which checks would expose a wrong implementation | Run the checks independently of the author | State what was checked and what wasn't; decide to merge, request changes, or escalate |
 | **6. Release, operation, and learning** | What people may rely on, and the limits | Rollout scope and recovery plan | Release with monitoring and a way to roll back | Feed production evidence and repeated mistakes back into framing and the environment |
 
+## Shortcut vs. Deliberate Assistant Use in Each Activity
+
+
+When a team uses a coding assistant deliberately across activities, the assistant's job in each activity differs from the ["generate and accept" shortcut]({{< ref "ai-engineering/agents/sdlc/workflows" >}}):
+
+| Activity | "Generate and Accept" Shortcut | Deliberate Use with an Assistant |
+| :--- | :--- | :--- |
+| **1. Framing** | Skip framing; paste a rough ticket and ask for code | Assistant reads docs, code, and issues, separates current behavior from intended behavior, drafts a short brief, and lists open questions for the owner |
+| **2. Investigation** | Guess how the system or API works without checking | Engineer asks a clear question; assistant checks code, logs, or contracts, reproduces the bug, or runs a small test, and reports what it saw and what is still unknown |
+| **3. Design decisions** | Let the agent invent structure while writing code | Assistant finds affected parts and callers, compares options (including the simplest one), and writes down what implementation must keep true |
+| **4. Implementation** | Generate a large change across the repo in one go | Assistant makes small changes within the agreed design and project conventions, running fast checks as it goes |
+| **5. Verification and review** | Trust passing tests written by the same agent | Assistant traces callers and failure paths, writes tests for consequential failures (such as a response lost after a write), and records what was checked and what wasn't |
+| **6. Release, operation, and learning** | Merge and move on until something breaks | Check rollout, migration, and rollback steps; inspect production logs; turn repeated mistakes and new decisions into docs, checks, commands, or `AGENTS.md` rules |
+
 ## Activities in Each Phase
 
 
@@ -96,5 +110,5 @@ A short template for one activity:
 
 
 - The outputs table has no row for release and operation; its sixth row covers only upkeep.
-- The activity names differ slightly between the list, the outputs table, and the shortcut table in [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}).
+- The outputs table still uses fuller labels (such as *Investigation & Diagnosis* and *System Design & Planning*) than the short activity names used in the cycle and shortcut tables above.
 - Phase 3, baseline and prototyping, has no description in the source note, so its row above is inferred.

@@ -140,7 +140,7 @@ Every action available to an agent--whether through `task` or raw tools--has a b
 | **Tier 2: Local destructive or contract-changing** | Deletes local data volumes or changes shared API schemas/migrations | Explicit confirmation / `--dry-run` + contract diff review in CI/PR |
 | **Tier 3: External, billed, or shared state** | Cloud GPUs (`RunPod`), shared staging/prod, publishing, git push/merge | **Absent credentials in agent `.env`**; scoped/short-lived tokens; human-gated CI/CD or secret broker |
 
-*Open question in holding space:* How should ADE roles (for example, an *Investigation* or *Independent Reviewer* assistant vs. an *Implementation* assistant in [Participants & Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#roles)) bind to these tiers at the **harness/sandbox level**, with `Taskfile` naming merely mirroring those boundaries for convenience?
+*Open question in holding space:* How should ADE roles (for example, an *Investigation* or *Independent Reviewer* assistant vs. an *Implementation* assistant in [Participants & Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#roles)) bind to these tiers at the **harness/sandbox level**, with `Taskfile` naming merely mirroring those boundaries for convenience?
 
 ---
 

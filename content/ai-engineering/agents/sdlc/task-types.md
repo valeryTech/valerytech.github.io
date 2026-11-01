@@ -6,7 +6,7 @@ description: "The recurring kinds of tasks in engineering work, grouped by what 
 linkTitle: "Task Types"
 ---
 
-A task type is a recurring kind of task in engineering work, such as fixing a bug or refactoring a module, whoever does it: a person, an agent, a person and an agent together, or an automated tool such as a bot that opens pull requests for dependency upgrades. It combines several [activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) and has its own starting point, output, and definition of done. None of these depend on who does the task. Who does it is a separate question: [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) describes the participants and the four responsibilities each task assigns among them (supplying information, doing the work, judging the result, and committing it). Because the type doesn't depend on the participant, the same type can be done by different participants, and their results can be compared. The [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) uses task types as the unit for collecting and comparing cases.
+A task type is a recurring kind of task in engineering work, such as fixing a bug or refactoring a module, whoever does it: a person, an agent, a person and an agent together, or an automated tool such as a bot that opens pull requests for dependency upgrades. It combines several [activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) and has its own starting point, output, and definition of done. None of these depend on who does the task. Who does it is a separate question: [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) describes the participants and the four responsibilities each task assigns among them (supplying information, doing the work, judging the result, and committing it). Because the type doesn't depend on the participant, the same type can be done by different participants, and their results can be compared. The [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) uses task types as the unit for collecting and comparing cases.
 
 This note collects task types from two places: the agents notes, and common software engineering practice. The column "In the notes" links to the note where a type already appears; a dash means the type was added from practice. All types here are candidates. Real cases will merge, split, or drop them.
 
@@ -43,7 +43,7 @@ These tasks prepare later work. The output is a document that someone else, or a
 
 | Task type | What it is and when it's done | Activities | In the notes |
 | :--- | :--- | :--- | :--- |
-| **Frame a ticket** | Turn a request into a brief: who is affected, what should change, what the change should not do, and open questions for the owner. | Framing, investigation | [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) |
+| **Frame a problem** | Turn a rough request, idea, or reported issue into a brief: who is affected, what problem needs to be solved, what should change, what the change should not do, and open questions for the owner. | Framing, investigation | [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) |
 | **Write or revise a design document** | Write a design document or a decision record from raw material such as notes, a discussion, or a ticket. Done when the decisions, the options considered, and the open questions are written down and the owner agrees. | Framing, design | -- |
 | **Plan a change** | Break a large change into steps that can each be reviewed and merged, with the order and the checks for each step. | Design | -- |
 | **Estimate a change** | Give the size and risk of a change, with the assumptions behind the estimate. | Investigation | -- |
@@ -152,7 +152,7 @@ These tasks affect more than one team or the whole system, and a staff engineer,
 
 | Task type | What it is and when it's done | Activities | In the notes |
 | :--- | :--- | :--- | :--- |
-| **Change an API that other teams use** | Change a contract that other services or teams call, usually by adding a new version, moving the callers, and removing the old version. Done when every caller has moved and the old version is removed or has a removal date. | Framing, design, implementation, release | [Participants and processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) |
+| **Change an API that other teams use** | Change a contract that other services or teams call, usually by adding a new version, moving the callers, and removing the old version. Done when every caller has moved and the old version is removed or has a removal date. | Framing, design, implementation, release | [Participants and processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) |
 | **Remove a feature or service** | Stop offering a feature or service and remove its code and data. Done when usage data shows nobody depends on it, callers are gone, and the code and data are removed. | Investigation, design, implementation, release | -- |
 | **Reduce running cost** | Find where money goes, such as cloud resources, model tokens, or licenses, and spend less. Done when a measurement shows the saving and service levels held. | Investigation, design, implementation, verification | [Problems]({{< ref "ai-engineering/agents/problems/problems" >}}) (problem 62) |
 | **Decide whether to build or buy** | Compare building a component with buying or adopting one. The output is a recommendation with the total cost, the risks, the dependency on the vendor, and the way out if the choice turns out wrong. | Framing, investigation, design | -- |
@@ -160,7 +160,7 @@ These tasks affect more than one team or the whole system, and a staff engineer,
 | **Take stock of technical debt** | List the parts of the system that slow work down or carry risk, with the cost of keeping each one and the cost of fixing it. The output is a ranked list the team can plan from. | Investigation | -- |
 | **Review a design** | Check a design document before building starts: the options considered, the failure modes, and fit with the rest of the system. Done when the reviewer accepts it, asks for changes, or rejects it, with reasons. | Verification | -- |
 | **Plan capacity** | Estimate how load will grow and when the system will run out of capacity, and what to change before then. | Investigation, design | -- |
-| **Decide who may do which task types** | Decide which participants may take which task types, at which level of freedom, and with which checks. This covers agent roles, new team members, and outside contributors. Change the decisions as evidence comes in. | Framing, design | [Participants and processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) |
+| **Decide who may do which task types** | Decide which participants may take which task types, at which level of freedom, and with which checks. This covers agent roles, new team members, and outside contributors. Change the decisions as evidence comes in. | Framing, design | [Participants and processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) |
 
 ## Programs and Tasks of Reviewable Size
 
@@ -171,7 +171,7 @@ A simple test for size: if the result can't be reviewed as one pull request, the
 
 | Program | Tasks of reviewable size it usually breaks into |
 | :--- | :--- |
-| **Implement a large feature** | Frame a ticket, write a design document, plan a change, several Implement a feature tasks behind a feature flag, add monitoring, deploy or roll out a change |
+| **Implement a large feature** | Frame a problem, write a design document, plan a change, several Implement a feature tasks behind a feature flag, add monitoring, deploy or roll out a change |
 | **Migrate to another framework or language** | Plan a change, add tests to existing code, refactor to separate the part being moved, make a change across many call sites, deploy in stages, remove dead code |
 | **Migrate a database schema or data** | Write a design document, then separate deploys: add the new schema next to the old one, write to both, copy the old data, switch reads to the new schema, and remove the old schema |
 | **Change an API that other teams use** | Write a design document, add the new version, move each caller (one task per caller), remove the old version |
@@ -197,7 +197,7 @@ The last column gives the closest category from software maintenance. Swanson so
 | **Defect** | A repair of something users were promised and didn't get | Fix a bug, ship a hotfix, revert a change, respond to an incident, write a postmortem | Corrective |
 | **Risk** | A lower chance of a security, legal, or availability problem | Fix a security vulnerability, audit code for one concern, respond to a deprecation, upgrade a dependency, harden failure handling, add monitoring, plan capacity | Adaptive or preventive |
 | **Debt** | Faster, safer, or cheaper later work; users see no change | Refactor, remove dead code, make a change across many call sites, migrate to another framework or language, add tests to existing code, fix a flaky test, fix a broken build, add a check, write or update documentation, update project instructions, set up the development environment, remove a feature or service, reduce running cost, set a standard for the team, decide who may do which task types | Perfective or preventive |
-| **Discovery** | Knowledge for a decision about what to build | Investigate a problem, compare options, spike or prototype, frame a ticket, estimate a change, write or revise a design document, decide whether to build or buy, take stock of technical debt | None |
+| **Discovery** | Knowledge for a decision about what to build | Investigate a problem, compare options, spike or prototype, frame a problem, estimate a change, write or revise a design document, decide whether to build or buy, take stock of technical debt | None |
 
 Some task types land in different categories depending on why they are done. Improving performance is a feature when users asked for it and debt when it only lowers cost. A database migration is a feature when it supports new behavior and debt when it cleans up old data. Other task types have no category of their own in this view, because they serve another task: understanding a codebase, answering a question, finding a root cause, analyzing the impact of a change, planning, reviewing, preparing a release, and deploying. They count toward the feature, defect, risk, or debt they serve.
 
@@ -263,13 +263,13 @@ The kind of output decides how someone can tell whether the result is good. The 
 | Output | How it's checked | Task types |
 | :--- | :--- | :--- |
 | **An answer or a finding** | Each claim points to code, logs, or a check that supports it, and a person can follow the evidence | All the tasks in Understanding the Code and the System, take stock of technical debt |
-| **A document** | The owner reads it and accepts it or asks for changes | Frame a ticket, write or revise a design document, plan a change, estimate a change, write a postmortem, write or update documentation, decide whether to build or buy, plan capacity, set a standard for the team |
+| **A document** | The owner reads it and accepts it or asks for changes | Frame a problem, write or revise a design document, plan a change, estimate a change, write a postmortem, write or update documentation, decide whether to build or buy, plan capacity, set a standard for the team |
 | **A code change** | Tests, checks, and review | The tasks in Changing Behavior, Changing Structure Without Changing Behavior, Improving Properties of the System, and Tests, Builds, and Checks, most tasks in Keeping the System Current, reduce running cost |
 | **A judgment of other work** | A person decides whether to accept the judgment, and each finding can be checked against the code | All the review tasks, review a design |
 | **An action on a running system** | Someone with authority approves it first, and signals after the action show whether it worked | Deploy or roll out a change, respond to an incident, migrate a database schema or data, change infrastructure, revert a change, the last steps of removing a feature or service and of changing an API that other teams use |
 | **A change to the setup** | A later task goes better with the change | Update project instructions, set up the development environment, add a check, decide who may do which task types |
 
-An action on a running system is a [commitment point]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}): it has an effect outside the workspace, and it may not be possible to undo.
+An action on a running system is a [commitment point]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}): it has an effect outside the workspace, and it may not be possible to undo.
 
 ### Comparing the Views for Common Task Types
 
@@ -295,7 +295,7 @@ An action on a running system is a [commitment point]({{< ref "ai-engineering/ag
 ## Delegation Profiles
 
 
-A delegation profile says how far a participant who takes a task of this type may go without someone else's approval, and what evidence they give. The default in the table is for a participant without a track record on the type in this project: an agent role the team has just started to use, a new team member, or an outside contributor. The levels come from [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}): the participant can observe, suggest, prepare a result for someone else to apply, act after someone approves, or act and report. That note defines the levels for agent roles, and they fit people as well: a new team member prepares changes for review before they get the right to merge.
+A delegation profile says how far a participant who takes a task of this type may go without someone else's approval, and what evidence they give. The default in the table is for a participant without a track record on the type in this project: an agent role the team has just started to use, a new team member, or an outside contributor. The levels come from [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}): the participant can observe, suggest, prepare a result for someone else to apply, act after someone approves, or act and report. That note defines the levels for agent roles, and they fit people as well: a new team member prepares changes for review before they get the right to merge.
 
 The level in the table applies at the step where the work becomes shared or has an effect. For a code change, that step is the merge: at the level "prepare", the participant opens a pull request and someone with merge authority merges it. For an action on a running system, the step is the action itself. For an answer or a finding, the step is when someone uses it for a decision: at the level "act and report", the participant gives the answer and the person who asked reads it.
 
@@ -316,7 +316,7 @@ Two properties of a task type set its default level:
 | **Investigate run records or logs** | High | Yes | Act and report | Quotes from the records that support the explanation |
 | **Compare options** | Low | Yes | Suggest | The criteria, a source for each claim, and a recommendation |
 | **Spike or prototype** | High | Yes | Act and report | The answer, the code, and how it was run, with the code kept off the main branch |
-| **Frame a ticket** | Low | Yes | Prepare | The brief, open questions, and current behavior checked in the code |
+| **Frame a problem** | Low | Yes | Prepare | The brief, open questions, and current behavior checked in the code |
 | **Write or revise a design document** | Low | Partly | Prepare | The options, the decisions, the open questions, and which claims were checked against the code |
 | **Plan a change** | Medium | Yes | Prepare | Steps that can each be reviewed as one pull request, with a check for each |
 | **Estimate a change** | Low | Yes | Suggest | The size, the assumptions, and the unknowns with the most risk |
@@ -369,12 +369,12 @@ Two properties of a task type set its default level:
 Task type is only one input. Two bug fixes can differ more than a bug fix and a refactor: a typo in a message and a race condition in payments share a task type and need different levels. The properties of one task move the default up or down:
 
 - **Lower the level, or require a person's detailed review, when the task touches** authentication, permissions, money, security, personal data, or deletes data. [Project Ownership]({{< ref "ai-engineering/agents/project-ownership" >}}) lists the same areas.
-- **Lower the level when the goal is unclear.** Start with Frame a ticket, and assign the framed task.
+- **Lower the level when the goal is unclear.** Start with Frame a problem, and assign the framed task.
 - **Lower the level when the task touches many modules,** another team's code, or a contract other systems rely on.
 - **Lower the level when the context the task needs isn't written down.**
 - **Raise the level only with evidence:** the same participant or agent role did earlier tasks of the same type in the same project well, as measured in the next section, and checks would catch the usual mistakes. A participant's own confidence doesn't raise the level, for an agent or for a person.
 
-These rules follow the factors in [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}) and the rule for scaling depth in [Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}}): consequence, uncertainty, and reversibility.
+These rules follow the factors in [Participants and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}) and the rule for scaling depth in [Features of a Good Approach]({{< ref "ai-engineering/agents/sdlc/approach" >}}): consequence, uncertainty, and reversibility.
 
 ## Recording and Measuring by Task Type
 

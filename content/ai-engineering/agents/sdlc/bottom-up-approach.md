@@ -64,7 +64,7 @@ Candidate task types, held in a holding space until real cases test them. [Task 
 | **Fix a bug** | Investigation (reproduce the bug and find the cause), design decisions (choose a fix: guard the symptom, fix the caller, or change the contract), implementation, and verification (a regression test and nearby variations) |
 | **Find a root cause** | Investigation (competing hypotheses and checks that rule them in or out) and verification of the explanation; the result often feeds a design decision |
 | **Investigate a problem or answer a question** | Investigation; the output is a finding with evidence and a statement of what remains unknown |
-| **Frame a ticket** | Framing, with investigation of current behavior; the output is a brief with open questions for the owner |
+| **Frame a problem** | Framing, with investigation of current behavior; the output is a brief with open questions for the owner |
 | **Implement a feature** | Framing, investigation, design decisions, implementation, verification and review, and release |
 | **Refactor** | Investigation (map callers and current behavior), design decisions (the target structure and what must stay the same), implementation in small steps, and verification that behavior didn't change |
 

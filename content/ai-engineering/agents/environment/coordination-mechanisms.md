@@ -6,7 +6,7 @@ description: "Five ways people and agents keep their work coordinated in a proje
 linkTitle: "Coordination"
 ---
 
-This note holds the coordination mechanisms from step 7 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}). The rest of step 7, the participants (people and agents), the substrates they work in, and the processes they run, is in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}). The mechanisms below describe how the participants keep their work coordinated through the [Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}}) and `AGENTS.md`.
+This note holds the coordination mechanisms from step 7 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}). The rest of step 7, the participants (people and agents), the substrates they work in, and the processes they run, is in [Participants, Substrates, and Processes]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}). The mechanisms below describe how the participants keep their work coordinated through the [Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}}) and `AGENTS.md`.
 
 ## Five Coordination Mechanisms
 

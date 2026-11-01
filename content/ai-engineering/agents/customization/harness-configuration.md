@@ -76,7 +76,7 @@ The model, the reasoning effort, the compaction prompt in Codex, and size limits
 ### Outside the Harness
 
 
-Branch protection, required review, deploy rights, and the scope of credentials. They hold for every agent and person, and they're where work becomes shared or has an effect outside the workspace ([commitment points]({{< ref "ai-engineering/agents/sdlc/participants-and-processes" >}}#contributions-effects-and-commitment-points)).
+Branch protection, required review, deploy rights, and the scope of credentials. They hold for every agent and person, and they're where work becomes shared or has an effect outside the workspace ([commitment points]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#contributions-effects-and-commitment-points)).
 
 ## Three Properties That Decide Where Something Goes
 
