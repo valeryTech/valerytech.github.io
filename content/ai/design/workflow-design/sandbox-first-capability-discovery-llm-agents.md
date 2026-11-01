@@ -415,9 +415,9 @@ A sandbox is what makes that practical: **broad freedom of method inside a narro
 ## Library sources
 
 
-- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *The experimental workbench*
+- [Baltes et al. 2025](/sources/c1ccf311d88d7d8a326c7617fb00ce09.bin), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *The experimental workbench*
 
 Further reading:
 
-- [Song et al. 2025](/sources/ai-engineering/failures/song-2025-aegis-agent-environment-failures-in-llm-agents.pdf.enc), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504))
-- [Silver and Sutton 2025](/sources/ai-foundations/intelligence-and-turing/silver-2025-era-of-experience.pdf.enc), *Welcome to the Era of Experience*
+- [Song et al. 2025](/sources/d894d42a7cb05735da16ee9be1e18f4f.bin), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504))
+- [Silver and Sutton 2025](/sources/bc2821a0d16b5495cadca969371d49a9.bin), *Welcome to the Era of Experience*

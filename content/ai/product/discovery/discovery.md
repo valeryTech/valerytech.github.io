@@ -1282,7 +1282,7 @@ problem understanding ←→ possible solutions
 ```
 
 
-Exploring a possible solution changes the understanding of the problem; the changed problem suggests different solutions. Their empirical work found this pattern in creative design. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0142694X01000096 "Creativity in the design process: co-evolution of problem-solution - ScienceDirect") ([PDF](/sources/thinking-and-learning/problem-solving/dorst-2001-creativity-design-process-coevolution.pdf.enc)))
+Exploring a possible solution changes the understanding of the problem; the changed problem suggests different solutions. Their empirical work found this pattern in creative design. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0142694X01000096 "Creativity in the design process: co-evolution of problem-solution - ScienceDirect") ([PDF](/sources/476e9b65a4511a872bc3b8b48ad5516a.bin)))
 
 This challenges a hard boundary such as:
 
@@ -1521,4 +1521,4 @@ This suggests an **interactive inquiry system** in which retrieval supports an e
 ## Library sources
 
 
-- [Dalsgaard 2014](/sources/research-methods/design-science/dalsgaard-2014-pragmatism-and-design-thinking.pdf.enc), *Pragmatism and Design Thinking*
+- [Dalsgaard 2014](/sources/a11b8d7dfa81bedd04cd0decaa4072fa.bin), *Pragmatism and Design Thinking*

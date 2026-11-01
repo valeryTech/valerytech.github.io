@@ -534,4 +534,4 @@ Whether or not you ultimately decide to move some of your analytic workloads in-
 ## Library sources
 
 
-- [Shapira et al. 2021](/sources/system-design/data-systems/shapira-2021-kafka-definitive-guide-2e.pdf.enc), *Kafka: The Definitive Guide, Second Edition* -- for the Kafka books listed under *Books*: chapter 14 on stream processing with Kafka Streams, and chapters 3-4 and 8 on producers, consumers and exactly-once delivery
+- [Shapira et al. 2021](/sources/67f3e788556c28aa6e79ae20e8104ede.bin), *Kafka: The Definitive Guide, Second Edition* -- for the Kafka books listed under *Books*: chapter 14 on stream processing with Kafka Streams, and chapters 3-4 and 8 on producers, consumers and exactly-once delivery

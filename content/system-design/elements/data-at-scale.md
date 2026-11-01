@@ -165,13 +165,13 @@ One limiter keeps an exact count. When many nodes enforce one limit, they must s
 ## Library sources
 
 
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 4 on *Indexes* and *Search index*; chapter 7 on hot spots and secondary indexes; chapters 9 and 10 on *Coordination*; chapter 11 on batch processing
-- [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapters 1 and 4-8
-- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store*
-- [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- part I (chapters 2-7) on B-trees and log-structured storage; chapters 10 and 14 on leader election and consensus
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 4 on *Indexes* and *Search index*; chapter 7 on hot spots and secondary indexes; chapters 9 and 10 on *Coordination*; chapter 11 on batch processing
+- [Xu 2020](/sources/39fea06ad1d4c38d97709b95898d9c25.bin), *System Design Interview: An Insider's Guide* -- chapters 1 and 4-8
+- [DeCandia et al. 2007](/sources/da9436e162d5abe60df8b9ef9e4993ea.bin), *Dynamo: Amazon's Highly Available Key-value Store*
+- [Petrov 2019](/sources/611239aecf452fc6fb065bb3088b0326.bin), *Database Internals* -- part I (chapters 2-7) on B-trees and log-structured storage; chapters 10 and 14 on leader election and consensus
 - Educative 2023: sharded counters, distributed search, and rate limiter, *Grokking Modern System Design Interview*
-- [Manning et al. 2008](/sources/retrieval-and-knowledge/information-retrieval/manning-2008-introduction-to-information-retrieval.pdf.enc), *Introduction to Information Retrieval* -- chapters 1 and 4 on the inverted index and its construction; chapter 20 on partitioning an index by term or by document
+- [Manning et al. 2008](/sources/fc5bd5ce04c35efda55bacaa000c9802.bin), *Introduction to Information Retrieval* -- chapters 1 and 4 on the inverted index and its construction; chapter 20 on partitioning an index by term or by document
 
 Further reading:
 
-- [Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc), *Foundations of Scalable Systems: Designing Distributed Architectures*
+- [Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin), *Foundations of Scalable Systems: Designing Distributed Architectures*

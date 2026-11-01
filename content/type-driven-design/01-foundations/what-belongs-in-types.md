@@ -36,9 +36,9 @@ Each covers a gap the others leave:
 
 An analogy from building: the plan review (types) rules out whole classes of mistakes before anything is built; the inspector at the loading dock (runtime checks) examines each delivery as it arrives; the fire drill (tests) shows that particular scenarios work. [Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}) is how the second feeds the first: check once at the boundary, then let the type carry the result.
 
-Bragilevsky ([PDF](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), section 13.2.1 "Safety in Haskell programs") gives the working Haskell version of the same split: check at compile time everything that can be checked there, write tests for the other properties of the program, and handle what arrives at run time with checks and error reporting. He adds that types are weak at describing run-time input: if a user supplies a list, nothing at compile time knows how long it is.
+Bragilevsky ([PDF](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), section 13.2.1 "Safety in Haskell programs") gives the working Haskell version of the same split: check at compile time everything that can be checked there, write tests for the other properties of the program, and handle what arrives at run time with checks and error reporting. He adds that types are weak at describing run-time input: if a user supplies a list, nothing at compile time knows how long it is.
 
-**Contracts** are the fourth tool, and they sit between types and runtime checks. In Design by Contract, as *The Pragmatic Programmer* ([PDF](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), Topic 23 "Design by Contract") describes it, a routine states preconditions (what the caller must guarantee), postconditions (what the routine guarantees in return) and invariants. Two of its points carry over directly to types:
+**Contracts** are the fourth tool, and they sit between types and runtime checks. In Design by Contract, as *The Pragmatic Programmer* ([PDF](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), Topic 23 "Design by Contract") describes it, a routine states preconditions (what the caller must guarantee), postconditions (what the routine guarantees in return) and invariants. Two of its points carry over directly to types:
 
 - **A broken contract is a bug**, not a normal outcome. That's why, Thomas and Hunt say, preconditions shouldn't be used to validate user input. Input that may be wrong isn't a precondition; it's something to parse.
 - **The caller is responsible for meeting the precondition.** A refined parameter type (`sqrt(x: NonNegative)`) is a precondition the compiler enforces at every call site, and the check moves to wherever the caller first got the value.
@@ -88,7 +88,7 @@ Proposed decision procedure:
 5. See whether your language can represent it simply.
 6. If the type representation becomes much harder to understand than the invariant itself, use runtime validation/tests.
 
-Question 2 is the Design by Contract distinction above: a violation that's a bug belongs in a precondition or a type, while a violation that's a normal business outcome (the balance is too low) belongs in the result type. Question 6 is the one Maguire, an advocate of type-level programming, puts first ([PDF](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), Introduction): when in doubt, don't do it at the type level.
+Question 2 is the Design by Contract distinction above: a violation that's a bug belongs in a precondition or a type, while a violation that's a normal business outcome (the balance is too low) belongs in the result type. Question 6 is the one Maguire, an advocate of type-level programming, puts first ([PDF](/sources/405eaf932837c8349209bea8675e06e4.bin), Introduction): when in doubt, don't do it at the type level.
 
 Applied to two invariants:
 
@@ -121,7 +121,7 @@ if (resource.isOpen)
 
 When the same check appears throughout a codebase, there's often missing information in the types.
 
-In a gradually typed language the procedure also says *where* to start. Slatkin's advice for Python ([PDF](/sources/programming/language-practice/slatkin-2019-effective-python-2e.pdf.enc), Item 90) is to annotate the public APIs and the most error-prone code first, not to aim for full coverage (returns diminish), and to skip annotations for prototypes and small scripts.
+In a gradually typed language the procedure also says *where* to start. Slatkin's advice for Python ([PDF](/sources/43abd941cf44f7b45511e82c699f66f1.bin), Item 90) is to annotate the public APIs and the most error-prone code first, not to aim for full coverage (returns diminish), and to skip annotations for prototypes and small scripts.
 
 ## Where types stop matching reality
 
@@ -165,7 +165,7 @@ def withdraw(account: AccountId, amount: PositiveAmount): IO[Either[Insufficient
 
 The amount being positive is a stable fact about the value, so it goes in the type. Whether the balance covers it is a fact about the world, checked inside the transaction. What reaches the type is the *possibility* of failure, as a value the caller can't ignore. That's the usual division of labour: types for what's true of the value, runtime checks for what's true of the world, and the result type for the outcome of the check.
 
-"Facts about the value stay true" has a precondition of its own: the value must be immutable. Bloch ([PDF](/sources/programming/language-practice/bloch-2018-effective-java-3e.pdf.enc), Item 50 "Make defensive copies when needed") shows a `Period` class that checks `start <= end` in its constructor and is still broken, because the caller keeps a reference to the mutable `Date` objects and changes them afterwards. His fix is to copy the inputs *before* checking them, so another thread can't change them between the check and the copy (a time-of-check/time-of-use attack). In a language with mutable objects, a validated type is only as good as its defensive copies.
+"Facts about the value stay true" has a precondition of its own: the value must be immutable. Bloch ([PDF](/sources/99fe404f1fe77aab60731171df07c68f.bin), Item 50 "Make defensive copies when needed") shows a `Period` class that checks `start <= end` in its constructor and is still broken, because the caller keeps a reference to the mutable `Date` objects and changes them afterwards. His fix is to copy the inputs *before* checking them, so another thread can't change them between the check and the copy (a time-of-check/time-of-use attack). In a language with mutable objects, a validated type is only as good as its defensive copies.
 
 Persistent data has the same problem over a longer time span: a value checked when it was written may be read years later by code with different rules. See [Types At The Boundary]({{< ref "type-driven-design/02-parsing-and-evidence/types-at-the-boundary" >}}#evolving-types).
 
@@ -192,9 +192,9 @@ So there's a tradeoff:
 ```
 
 
-Refinement types sit below dependent types: Jhala et al. ([PDF](/sources/programming/language-theory/jhala-2020-programming-with-refinement-types.pdf.enc), chapter 1) describe them as a restricted class of dependent types whose logic is limited so that an SMT solver can do the proving automatically. That trade, less expressiveness for much less proof work, is why they're the practical step between ordinary types and full dependent types; see [Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}).
+Refinement types sit below dependent types: Jhala et al. ([PDF](/sources/c7c34c23605882ae6298a988734fef45.bin), chapter 1) describe them as a restricted class of dependent types whose logic is limited so that an SMT solver can do the proving automatically. That trade, less expressiveness for much less proof work, is why they're the practical step between ordinary types and full dependent types; see [Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}).
 
-Pierce ([PDF](/sources/programming/language-theory/pierce-2002-types-and-programming-languages.pdf.enc), chapter 1) puts the whole ladder in a wider frame: type systems are lightweight formal methods, at the opposite end from Hoare logic and other heavyweight verification, and climbing the ladder moves you along that line.
+Pierce ([PDF](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), chapter 1) puts the whole ladder in a wider frame: type systems are lightweight formal methods, at the opposite end from Hoare logic and other heavyweight verification, and climbing the ladder moves you along that line.
 
 ### Costs and failure modes
 
@@ -204,7 +204,7 @@ The approach has costs, and it can go wrong:
 - **Conversion code.** Every new type needs a constructor, serialization, and mapping at each boundary. A domain with twenty value types has twenty of each.
 - **Types that lie.** A type is only as trustworthy as the code that constructs it. A `PaidOrder` produced by a deserializer that never checks payment is worse than a plain `Order`, because readers trust it. The usual culprits are hidden constructors: a JSON decoder or derived `Read` instance, a case class's `copy` method, Java deserialization (Bloch, Item 88, calls `readObject` "effectively another public constructor"). See [Strength Of Evidence]({{< ref "type-driven-design/02-parsing-and-evidence/strength-of-evidence" >}}).
 - **Facts that expire.** A balance, a session or a lock can stop being true after it's checked, so it makes a poor type. See *Where types stop matching reality* above.
-- **Modeling too early.** When the domain is still unclear, precise types make every change touch many places. The compiler makes those changes *safe* but not *free*. Starting looser and tightening as invariants settle is often the cheaper path. Wlaschin ([PDF](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), chapter 5) offers a middle way: sketch the model with placeholder types (`type Undefined = exn`) for the parts you don't understand yet, so the shape compiles before the details exist.
+- **Modeling too early.** When the domain is still unclear, precise types make every change touch many places. The compiler makes those changes *safe* but not *free*. Starting looser and tightening as invariants settle is often the cheaper path. Wlaschin ([PDF](/sources/3165b993e939de6a47737a073d7633a4.bin), chapter 5) offers a middle way: sketch the model with placeholder types (`type Undefined = exn`) for the parts you don't understand yet, so the shape compiles before the details exist.
 - **Rejected correct programs.** The checker is conservative ([Type Systems]({{< ref "type-driven-design/01-foundations/type-systems" >}}#what-a-type-system-is)), and each workaround (a cast, `Any`, `unsafeCoerce`) is a small hole in the guarantee.
 - **Error messages.** Advanced encodings produce errors about type families or failed implications rather than about the domain. Maguire (chapter 12, "Custom Type Errors") makes the point that a type-safe library is no use if nobody can work out how to use it, and spends a chapter on custom error messages for that reason.
 - **Inconvenient interfaces.** Bragilevsky (section 13.2.1) notes that the safer an interface is, the less convenient it usually is to use: `head` on a `NonEmpty` list is safe, but the caller has to produce the `NonEmpty` first.
@@ -221,18 +221,18 @@ Related: [Type Systems]({{< ref "type-driven-design/01-foundations/type-systems"
 ## Library sources
 
 
-- [Thomas et al. 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer, 2nd Edition* -- Topic 23, "Design by Contract": preconditions as the caller's responsibility, not for input validation, and semantic invariants versus policy; on *Types, contracts, runtime checks and tests*, *A good type-system target* and *A decision procedure*
-- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth* -- section 13.2.1, "Safety in Haskell programs": types, tests and runtime checks, and safety against convenience; on *Types, contracts, runtime checks and tests* and *Costs and failure modes*
-- [Bloch 2018](/sources/programming/language-practice/bloch-2018-effective-java-3e.pdf.enc), *Effective Java, 3rd Edition* -- Item 50 on defensive copies and time-of-check/time-of-use, Item 88 on `readObject` as a hidden constructor; on *Where types stop matching reality* and *Costs and failure modes*
-- [Jhala et al. 2020](/sources/programming/language-theory/jhala-2020-programming-with-refinement-types.pdf.enc), *Programming with Refinement Types* -- chapter 1: refinement types as a restricted class of dependent types; on *The cost of stronger guarantees*
-- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types* -- the Introduction's warning against needless type-level code, and chapter 12, "Custom Type Errors"; on *A decision procedure* and *Costs and failure modes*
-- [Pierce 2002](/sources/programming/language-theory/pierce-2002-types-and-programming-languages.pdf.enc), *Types and Programming Languages* -- chapter 1 counts type systems among the lightweight formal methods, at the opposite end of the spectrum from Hoare logic and other heavyweight verification frameworks; on *The cost of stronger guarantees*
-- [Slatkin 2019](/sources/programming/language-practice/slatkin-2019-effective-python-2e.pdf.enc), *Effective Python, 2nd Edition* -- Item 90, "Consider Static Analysis via typing to Obviate Bugs": where to add type hints first; on *A decision procedure*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 5, "Modeling Unknown Types": `type Undefined = exn` as a placeholder that compiles until a function needs the real type; on *Costs and failure modes*
+- [Thomas et al. 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer, 2nd Edition* -- Topic 23, "Design by Contract": preconditions as the caller's responsibility, not for input validation, and semantic invariants versus policy; on *Types, contracts, runtime checks and tests*, *A good type-system target* and *A decision procedure*
+- [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth* -- section 13.2.1, "Safety in Haskell programs": types, tests and runtime checks, and safety against convenience; on *Types, contracts, runtime checks and tests* and *Costs and failure modes*
+- [Bloch 2018](/sources/99fe404f1fe77aab60731171df07c68f.bin), *Effective Java, 3rd Edition* -- Item 50 on defensive copies and time-of-check/time-of-use, Item 88 on `readObject` as a hidden constructor; on *Where types stop matching reality* and *Costs and failure modes*
+- [Jhala et al. 2020](/sources/c7c34c23605882ae6298a988734fef45.bin), *Programming with Refinement Types* -- chapter 1: refinement types as a restricted class of dependent types; on *The cost of stronger guarantees*
+- [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types* -- the Introduction's warning against needless type-level code, and chapter 12, "Custom Type Errors"; on *A decision procedure* and *Costs and failure modes*
+- [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- chapter 1 counts type systems among the lightweight formal methods, at the opposite end of the spectrum from Hoare logic and other heavyweight verification frameworks; on *The cost of stronger guarantees*
+- [Slatkin 2019](/sources/43abd941cf44f7b45511e82c699f66f1.bin), *Effective Python, 2nd Edition* -- Item 90, "Consider Static Analysis via typing to Obviate Bugs": where to add type hints first; on *A decision procedure*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 5, "Modeling Unknown Types": `type Undefined = exn` as a placeholder that compiles until a function needs the real type; on *Costs and failure modes*
 
 Further reading:
 
-- [Nielson et al. 1999](/sources/programming/language-theory/nielson-1999-type-and-effect-systems.pdf.enc), *Type and Effect Systems*
-- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design*
-- [Rondon et al. 2008](/sources/programming/language-theory/rondon-2008-liquid-types.pdf.enc), *Liquid Types*
-- [Siek et al. 2006](/sources/programming/language-theory/siek-2006-gradual-typing-for-functional-languages.pdf.enc), *Gradual Typing for Functional Languages*
+- [Nielson et al. 1999](/sources/7abd708cb67eaf6c1203211adf64c6a7.bin), *Type and Effect Systems*
+- [Ousterhout 2018](/sources/0a09675129a4612b2260dbb60c83b051.bin), *A Philosophy of Software Design*
+- [Rondon et al. 2008](/sources/c1ee665591c2e20039979587673830e7.bin), *Liquid Types*
+- [Siek et al. 2006](/sources/734b74265e71583aac0d576dc5cebd93.bin), *Gradual Typing for Functional Languages*

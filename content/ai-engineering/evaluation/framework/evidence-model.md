@@ -381,12 +381,12 @@ These boundaries keep the strength and limits of evaluation evidence visible.
 ## Library sources
 
 
-- [Moshkovich et al. 2025](/sources/ai-engineering/evaluation/moshkovich-2025-beyond-black-box-benchmarking.pdf.enc), *Beyond Black-Box Benchmarking* ([arXiv:2503.06745](https://arxiv.org/abs/2503.06745)) -- on *Trace*
-- [Ma et al. 2025](/sources/ai-engineering/failures/ma-2025-diagnosing-failure-root-causes-in-agentic-systems.pdf.enc), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735)) -- on *Root cause*
-- [Dong et al. 2024](/sources/ai-engineering/observability/dong-2024-agentops-enabling-observability-of-llm-agents.pdf.enc), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285)) -- on *Trace*
+- [Moshkovich et al. 2025](/sources/8c072306d90aa736730074efc3876e0a.bin), *Beyond Black-Box Benchmarking* ([arXiv:2503.06745](https://arxiv.org/abs/2503.06745)) -- on *Trace*
+- [Ma et al. 2025](/sources/357f048f04984be0de2d677e589887ac.bin), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735)) -- on *Root cause*
+- [Dong et al. 2024](/sources/2552a2fb5a7298b4623ed4e0cf224f1e.bin), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285)) -- on *Trace*
 
 Further reading:
 
-- [Zhang et al. 2025](/sources/ai-engineering/failures/zhang-2025-agentracer-who-is-inducing-failure.pdf.enc), *AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?* ([arXiv:2509.03312](https://arxiv.org/abs/2509.03312))
-- [Liu et al. 2025](/sources/ai-engineering/observability/liu-2025-observability-of-latent-states-in-generative-ai.pdf.enc), *Observability of Latent States in Generative AI Models*
-- [Rombaut et al. 2024](/sources/ai-engineering/observability/rombaut-2024-watson-cognitive-observability-framework.pdf.enc), *Watson* ([arXiv:2411.03455](https://arxiv.org/abs/2411.03455))
+- [Zhang et al. 2025](/sources/18a3b659e726bb39af8f2afb1f45e22f.bin), *AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?* ([arXiv:2509.03312](https://arxiv.org/abs/2509.03312))
+- [Liu et al. 2025](/sources/9707778c207ca0f2e56a57506db5d02e.bin), *Observability of Latent States in Generative AI Models*
+- [Rombaut et al. 2024](/sources/3ad929bb7079a6a181a4f4162e338274.bin), *Watson* ([arXiv:2411.03455](https://arxiv.org/abs/2411.03455))

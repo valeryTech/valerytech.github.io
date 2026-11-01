@@ -37,7 +37,7 @@ People with similar cognitive ability differ in rational judgment because they d
 | Metacognition | Monitoring and regulating one's own cognition | Fleur, Bredeweg and van den Bos, [Metacognition](https://www.nature.com/articles/s41539-021-00089-5) |
 | Social reasoning | Reasoning may have evolved for producing and evaluating arguments | Mercier and Sperber, [Why do humans reason?](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/why-do-humans-reason-arguments-for-an-argumentative-theory/53E3F3180014E80E8BE9FB7A2DD44049) |
 
-For measurement of intelligence and reasoning in humans, see Wilhelm and Engle's *Handbook of Understanding and Measuring Intelligence* (2005; [PDF](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc)).
+For measurement of intelligence and reasoning in humans, see Wilhelm and Engle's *Handbook of Understanding and Measuring Intelligence* (2005; [PDF](/sources/2375228c6a7957a1808fc25b83be9a33.bin)).
 
 Training results show the parts are separable. Explicit critical-thinking instruction produces measurable gains (a meta-analysis of 341 effect sizes: about \(g = 0.30\), [Abrami et al. 2015](https://doi.org/10.3102/0034654314551063)). Working-memory training shows little or no transfer to fluid intelligence ([2024 meta-analysis](https://pubmed.ncbi.nlm.nih.gov/38366265/)).
 
@@ -79,7 +79,7 @@ But more thinking does not mean monotonically better reasoning:
 
 \[\text{more thinking} \not\Rightarrow \text{better reasoning}\]
 
-Anthropic found tasks where longer reasoning lowers accuracy ([inverse scaling in test-time compute](https://alignment.anthropic.com/2025/inverse-scaling/)). Apple's controlled puzzles showed collapse as compositional complexity grows; Dellibarda Varela et al. replicate and refine two of those puzzles (Towers of Hanoi, River Crossing) and qualify the conclusions ([Dellibarda Varela et al. 2025](/sources/ai-foundations/capabilities-and-measurement/dellibarda-varela-2025-rethinking-illusion-of-thinking.pdf.enc), [arXiv:2507.01231](https://arxiv.org/abs/2507.01231)). A 2026 review separates three kinds of inference compute: extending one trajectory, sampling many, and searching over partial ones ([arXiv](https://arxiv.org/abs/2608.04001)).
+Anthropic found tasks where longer reasoning lowers accuracy ([inverse scaling in test-time compute](https://alignment.anthropic.com/2025/inverse-scaling/)). Apple's controlled puzzles showed collapse as compositional complexity grows; Dellibarda Varela et al. replicate and refine two of those puzzles (Towers of Hanoi, River Crossing) and qualify the conclusions ([Dellibarda Varela et al. 2025](/sources/86edf232a4144ab902dd5f19092c91ca.bin), [arXiv:2507.01231](https://arxiv.org/abs/2507.01231)). A 2026 review separates three kinds of inference compute: extending one trajectory, sampling many, and searching over partial ones ([arXiv](https://arxiv.org/abs/2608.04001)).
 
 So reasoning capability is better written as \(C(T, B)\), capability on a task distribution \(T\) under budget \(B\), than as one universal score. In dispositional terms, the budget is one more coordinate of \(\pi\).
 
@@ -117,7 +117,7 @@ A clean reasoning test supplies all premises and varies the required transformat
 ### 5. Metacognition may be a separate capability
 
 
-A strong reasoner should be able to tell whether it understands the problem, whether information is missing, how confident it is, which strategy to use, whether to use a tool, whether to generate alternatives, and when to stop. A 2026 survey organizes LLM metacognition around monitoring and control ([arXiv](https://arxiv.org/abs/2607.11881)); for architectures, see Nolte's review ([PDF](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), [doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5)).
+A strong reasoner should be able to tell whether it understands the problem, whether information is missing, how confident it is, which strategy to use, whether to use a tool, whether to generate alternatives, and when to stop. A 2026 survey organizes LLM metacognition around monitoring and control ([arXiv](https://arxiv.org/abs/2607.11881)); for architectures, see Nolte's review ([PDF](/sources/2af58406e13e42072bca886ec3caf534.bin), [doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5)).
 
 Gaps remain. Reasoning models can recognize that information is insufficient and still give an unsupported answer ([arXiv](https://doi.org/10.48550/arXiv.2605.28070)):
 
@@ -160,7 +160,7 @@ Human reasoning, roughly in order:
 
 AI reasoning:
 
-1. Russell and Norvig, *Artificial Intelligence: A Modern Approach*: search, constraint satisfaction, logic, probabilistic reasoning, planning. [PDF](/sources/ai-foundations/intelligence-and-turing/russell-2021-artificial-intelligence-a-modern-approach.pdf.enc)
+1. Russell and Norvig, *Artificial Intelligence: A Modern Approach*: search, constraint satisfaction, logic, probabilistic reasoning, planning. [PDF](/sources/c85f4853f67516e521a455cdea6aeedc.bin)
 2. Wei et al., chain-of-thought prompting.
 3. Yao et al., Tree of Thoughts.
 4. Lightman et al., Let's Verify Step by Step.
@@ -168,33 +168,33 @@ AI reasoning:
 6. DeepSeek-R1.
 7. Kambhampati, Stechly and Valmeekam, [(How) do reasoning models reason?](https://nyaspubs.onlinelibrary.wiley.com/doi/abs/10.1111/nyas.15339), a skeptical reading of what these results show.
 8. Liu et al. (2026), metacognition in LLMs.
-9. Sumers et al., *Cognitive Architectures for Language Agents*. [PDF](/sources/ai-foundations/cognition-and-mind/sumers-2024-cognitive-architectures-for-language-agents.pdf.enc)
+9. Sumers et al., *Cognitive Architectures for Language Agents*. [PDF](/sources/979eab1fc41b7066edf51770802bf09d.bin)
 
-Also: Kochenderfer, Wheeler and Wray, [*Algorithms for Decision Making*](https://mitpress.ublish.com/book/algorithms-for-decision-making); Pearl, [*Causality*](https://www.cambridge.org/core/books/causality/B0046844FAE10CBF274D4ACBDAEB5F5B); Sebastian Raschka, *Build a Reasoning Model (From Scratch)* ([PDF](/sources/llms/models-and-training/raschka-2025-build-a-reasoning-model-from-scratch-meap-v2.pdf.enc)) (2026), for the engineering side.
+Also: Kochenderfer, Wheeler and Wray, [*Algorithms for Decision Making*](https://mitpress.ublish.com/book/algorithms-for-decision-making); Pearl, [*Causality*](https://www.cambridge.org/core/books/causality/B0046844FAE10CBF274D4ACBDAEB5F5B); Sebastian Raschka, *Build a Reasoning Model (From Scratch)* ([PDF](/sources/f3150de6e11ff0d18db1eae975db2f98.bin)) (2026), for the engineering side.
 
 ## Library sources
 
 
-- [Cui et al. 2026](/sources/ai-foundations/capabilities-and-measurement/cui-2026-measuring-the-unmeasurable.pdf.enc), *Measuring the Unmeasurable*
-- [Lu et al. 2024](/sources/ai-foundations/capabilities-and-measurement/lu-2024-are-emergent-abilities-in-llms-just-icl.pdf.enc), *Are Emergent Abilities in Large Language Models just In-Context Learning?* ([arXiv:2309.01809](https://arxiv.org/abs/2309.01809)) -- on *4. Knowledge and reasoning have to be separated experimentally*
-- [Shojaee et al. 2025](/sources/ai-foundations/capabilities-and-measurement/shojaee-2025-illusion-of-thinking.pdf.enc), *The Illusion of Thinking* -- on *1. Capacity is partly a compute budget*
-- [Zhou et al. 2026](/sources/ai-foundations/capabilities-and-measurement/zhou-2026-general-scales.pdf.enc), *General scales unlock AI evaluation with explanatory and predictive power* ([doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2)) -- on *Evaluating reasoning as a profile*
-- [Hamilton et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/hamilton-2024-neuro-symbolic-ai-nlp-structured-review.pdf.enc), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228)) -- on *Working definition*
-- [Gao et al. 2025](/sources/retrieval-and-knowledge/rag/gao-2025-synergizing-rag-and-reasoning.pdf.enc), *Synergizing RAG and Reasoning: A Systematic Review* ([arXiv:2504.15909](https://arxiv.org/abs/2504.15909)) -- on *4. Knowledge and reasoning have to be separated experimentally*
-- [Davidson and Sternberg 2003](/sources/thinking-and-learning/problem-solving/davidson-2003-psychology-of-problem-solving.pdf.enc), *The Psychology of Problem Solving* -- on *Reasoning in human cognition*
+- [Cui et al. 2026](/sources/c0787e6b002b3193a564d0d985b75f62.bin), *Measuring the Unmeasurable*
+- [Lu et al. 2024](/sources/8d24ac43f69499f7108a7c2837faa72f.bin), *Are Emergent Abilities in Large Language Models just In-Context Learning?* ([arXiv:2309.01809](https://arxiv.org/abs/2309.01809)) -- on *4. Knowledge and reasoning have to be separated experimentally*
+- [Shojaee et al. 2025](/sources/a1b801eb54f7be4be97bca840d16bb64.bin), *The Illusion of Thinking* -- on *1. Capacity is partly a compute budget*
+- [Zhou et al. 2026](/sources/76e02efd0fb2f02796388644a91327d0.bin), *General scales unlock AI evaluation with explanatory and predictive power* ([doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2)) -- on *Evaluating reasoning as a profile*
+- [Hamilton et al. 2024](/sources/37affd9279cab197f5ec9c63c8af2c8e.bin), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228)) -- on *Working definition*
+- [Gao et al. 2025](/sources/d3f64fccb6acf62b35b4e70d7e0e588b.bin), *Synergizing RAG and Reasoning: A Systematic Review* ([arXiv:2504.15909](https://arxiv.org/abs/2504.15909)) -- on *4. Knowledge and reasoning have to be separated experimentally*
+- [Davidson and Sternberg 2003](/sources/86bdc5d428ebe1e2aa85e1413940ba8f.bin), *The Psychology of Problem Solving* -- on *Reasoning in human cognition*
 
 Further reading:
 
-- [Kearns 2025](/sources/ai-foundations/capabilities-and-measurement/kearns-2025-quantifying-construct-validity.pdf.enc), *Quantifying construct validity in large language model evaluations* ([arXiv:2602.15532](https://arxiv.org/abs/2602.15532))
-- [Mohsin et al. 2025](/sources/ai-foundations/capabilities-and-measurement/mohsin-2025-fundamental-limits-of-llms-at-scale.pdf.enc), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
-- [Baddeley et al. 2020](/sources/ai-foundations/cognition-and-mind/baddeley-2020-memory.pdf.enc), *Memory*
-- [Binz et al. 2025](/sources/ai-foundations/cognition-and-mind/binz-2025-foundation-model-of-human-cognition.pdf.enc), *A foundation model to predict and capture human cognition* ([doi:10.1038/s41586-025-09215-4](https://doi.org/10.1038/s41586-025-09215-4))
+- [Kearns 2025](/sources/b905bdbeb5794014d45a8888fc9b85bd.bin), *Quantifying construct validity in large language model evaluations* ([arXiv:2602.15532](https://arxiv.org/abs/2602.15532))
+- [Mohsin et al. 2025](/sources/52ba2872a178acfd074f7a58fbc37efa.bin), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
+- [Baddeley et al. 2020](/sources/b130452e34ab0be753e894e35327f6af.bin), *Memory*
+- [Binz et al. 2025](/sources/0207741285ce650aba6d4b4eff6e8350.bin), *A foundation model to predict and capture human cognition* ([doi:10.1038/s41586-025-09215-4](https://doi.org/10.1038/s41586-025-09215-4))
 - *Reasoning and Agency in Contemporary AI Research*, a ChatGPT Deep Research report
-- [Fleming 2020](/sources/ai-foundations/cognition-and-mind/fleming-2020-awareness-as-inference.pdf.enc), *Awareness as inference in a higher-order state space* ([doi:10.1093/nc/niz020](https://doi.org/10.1093/nc/niz020))
-- [Nobre and Gresch 2025](/sources/ai-foundations/cognition-and-mind/nobre-2025-external-and-internal-attention.pdf.enc), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
-- [Sandved-Smith et al. 2021](/sources/ai-foundations/cognition-and-mind/sandved-smith-2021-computational-phenomenology-of-mental-action.pdf.enc), *Towards a computational phenomenology of mental action* ([doi:10.1093/nc/niab018](https://doi.org/10.1093/nc/niab018))
-- [Schwieter and Wen 2022](/sources/ai-foundations/cognition-and-mind/schwieter-2022-cambridge-handbook-of-working-memory-and-language.pdf.enc), *The Cambridge Handbook of Working Memory and Language* ([doi:10.1017/9781108955638](https://doi.org/10.1017/9781108955638))
-- [Mahowald et al. 2024](/sources/language/language-and-llms/mahowald-2024-dissociating-language-and-thought-in-llms.pdf.enc), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
-- [Zheng et al. 2025](/sources/llms/models-and-training/zheng-2025-stabilizing-rl-with-llms.pdf.enc), *Stabilizing Reinforcement Learning with LLMs* ([arXiv:2512.01374](https://arxiv.org/abs/2512.01374))
-- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow*
-- [Frensch and Funke 1995](/sources/thinking-and-learning/problem-solving/frensch-1995-complex-problem-solving-european-perspective.pdf.enc), *Complex Problem Solving: The European Perspective*
+- [Fleming 2020](/sources/8d2c25f86959a22ceddaacca6e9c0c91.bin), *Awareness as inference in a higher-order state space* ([doi:10.1093/nc/niz020](https://doi.org/10.1093/nc/niz020))
+- [Nobre and Gresch 2025](/sources/e3bc15ed61f3e0330df638a73650c7bf.bin), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
+- [Sandved-Smith et al. 2021](/sources/d6797164b8651f2bb59d8b26e9c8931a.bin), *Towards a computational phenomenology of mental action* ([doi:10.1093/nc/niab018](https://doi.org/10.1093/nc/niab018))
+- [Schwieter and Wen 2022](/sources/ead1fef4c544e8e31cb255f2f93b0465.bin), *The Cambridge Handbook of Working Memory and Language* ([doi:10.1017/9781108955638](https://doi.org/10.1017/9781108955638))
+- [Mahowald et al. 2024](/sources/d3e4e4f8abb1b5705082eb2c4c76ee17.bin), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
+- [Zheng et al. 2025](/sources/36c71a2d45176db9f43db03d50458e9e.bin), *Stabilizing Reinforcement Learning with LLMs* ([arXiv:2512.01374](https://arxiv.org/abs/2512.01374))
+- [Kahneman 2011](/sources/6b0f64ff483334496619f7f55334a949.bin), *Thinking, Fast and Slow*
+- [Frensch and Funke 1995](/sources/fa071f1fee948fe9ce3ecbd3bafae933.bin), *Complex Problem Solving: The European Perspective*

@@ -14,20 +14,20 @@ Part of [distributed systems]({{< ref "engineering/distributed-systems" >}}).
 The distributed-systems books and papers in the library:
 
 - **Books:**
-  - [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems*, second edition;
-  - [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems*;
-  - [van Steen and Tanenbaum 2023](/sources/system-design/distributed-systems/vansteen-2023-distributed-systems-4th-edition.pdf.enc), *Distributed Systems*, fourth edition;
-  - [Burns 2018](/sources/system-design/distributed-systems/burns-2018-designing-distributed-systems.pdf.enc), *Designing Distributed Systems*;
-  - [Cachin et al. 2011](/sources/system-design/distributed-systems/cachin-2011-reliable-and-secure-distributed-programming.pdf.enc), *Introduction to Reliable and Secure Distributed Programming*;
-  - [Wattenhofer 2016](/sources/system-design/distributed-systems/wattenhofer-2016-principles-of-distributed-computing.pdf.enc), *Principles of Distributed Computing*, lecture notes.
+  - [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems*, second edition;
+  - [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems*;
+  - [van Steen and Tanenbaum 2023](/sources/f2bbf8813969eb53517df7404b01c885.bin), *Distributed Systems*, fourth edition;
+  - [Burns 2018](/sources/217f0c643d90d836d19e229608ed9405.bin), *Designing Distributed Systems*;
+  - [Cachin et al. 2011](/sources/ba524a2347f2a938124b8603dc085d10.bin), *Introduction to Reliable and Secure Distributed Programming*;
+  - [Wattenhofer 2016](/sources/31e8cfe1b5a2478873df1d290ecbc86b.bin), *Principles of Distributed Computing*, lecture notes.
 - **Papers:**
-  - [Lamport 1978](/sources/system-design/distributed-systems/lamport-1978-time-clocks-ordering-of-events.pdf.enc), *Time, Clocks, and the Ordering of Events in a Distributed System*;
-  - [Chandy and Misra 1984](/sources/system-design/distributed-systems/chandy-1984-drinking-philosophers-problem.pdf.enc), *The Drinking Philosophers Problem*;
-  - [Abadi 2012](/sources/system-design/distributed-systems/abadi-2012-consistency-tradeoffs-distributed-database-design.pdf.enc), PACELC;
-  - [Burckhardt 2014](/sources/system-design/distributed-systems/burckhardt-2014-principles-of-eventual-consistency-excerpt.pdf.enc), *Principles of Eventual Consistency*, excerpt;
-  - [Kleppmann 2015](/sources/system-design/distributed-systems/kleppmann-2015-critique-of-the-cap-theorem.pdf.enc), *A Critique of the CAP Theorem*;
-  - [Gotsman et al. 2016](/sources/system-design/distributed-systems/gotsman-2016-cause-im-strong-enough-consistency-choices.pdf.enc), *'Cause I'm Strong Enough*.
-- **Articles:** [Orosz and Nilsson 2024](/sources/system-design/distributed-systems/orosz-2024-debugging-distributed-systems-antithesis.pdf.enc), *How to debug large, distributed systems: Antithesis*.
+  - [Lamport 1978](/sources/374efeb6477bfa54be13f19dc15cce9b.bin), *Time, Clocks, and the Ordering of Events in a Distributed System*;
+  - [Chandy and Misra 1984](/sources/b96aa1604487a89124755ed1dad97dd4.bin), *The Drinking Philosophers Problem*;
+  - [Abadi 2012](/sources/71a1481cb1f870e715b6be7feef91e92.bin), PACELC;
+  - [Burckhardt 2014](/sources/7abc015740f3cc14b1ac9e64ffc75719.bin), *Principles of Eventual Consistency*, excerpt;
+  - [Kleppmann 2015](/sources/163a59f55b2a55b55d2b612b4b906d03.bin), *A Critique of the CAP Theorem*;
+  - [Gotsman et al. 2016](/sources/59710f6d9572a0a505cc420ab5f77304.bin), *'Cause I'm Strong Enough*.
+- **Articles:** [Orosz and Nilsson 2024](/sources/596d036a67209aca6c534ece269cdee0.bin), *How to debug large, distributed systems: Antithesis*.
 - **Elsewhere in the library:** Kleppmann and Riccomini's *Designing Data-Intensive Applications* (second edition), Petrov's *Database Internals*, and the Dynamo paper.
 
 ## Courses and lectures

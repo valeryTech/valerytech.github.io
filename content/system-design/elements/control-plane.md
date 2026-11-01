@@ -96,8 +96,8 @@ The Kubernetes notes suggest testing it: reboot a control plane node and see whe
 ## Library sources
 
 
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-reducing-scope-of-impact-cell-based-architecture.pdf.enc), *Reducing the Scope of Impact with Cell-Based Architecture* -- section "Control plane and data plane", on *Static stability* and *Seen in*
-- [Nygard 2018](/sources/software-engineering/systems-and-operations/nygard-2018-release-it-2nd-edition.pdf.enc), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- part II
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering* -- chapters 7 and 8, the platform control plane
+- [AWS 2024](/sources/7e7195dd160b0a64fe44c392ec32afaa.bin), *Reducing the Scope of Impact with Cell-Based Architecture* -- section "Control plane and data plane", on *Static stability* and *Seen in*
+- [Nygard 2018](/sources/f9167fa26feb869b87a7f0bc4edbc9b3.bin), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- part II
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- chapters 7 and 8, the platform control plane
   - Chapter notes: chapter 7, chapter 8
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*

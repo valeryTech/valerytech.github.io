@@ -952,4 +952,4 @@ For any new test, answer:
 
 Further reading:
 
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 1, "Creating a Ubiquitous Language" (each context has its own dialect, so the same word can mean different things); chapter 7, "State Machines" (states and allowed transitions as types); chapter 10, "Working with Domain Errors" (domain errors, panics and infrastructure errors, and which to model as values); on *Domain model and semantic contracts*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 1, "Creating a Ubiquitous Language" (each context has its own dialect, so the same word can mean different things); chapter 7, "State Machines" (states and allowed transitions as types); chapter 10, "Working with Domain Errors" (domain errors, panics and infrastructure errors, and which to model as values); on *Domain model and semantic contracts*

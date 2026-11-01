@@ -146,7 +146,7 @@ The [original collection]({{< ref "system-design/archive/messaging-v0" >}}) reta
 ## Library sources
 
 
-- [Schmidt and Volpicella 2024](/sources/software-engineering/systems-and-operations/schmidt-2024-aws-fundamentals.pdf.enc), *AWS Fundamentals: AWS For The Real World*
+- [Schmidt and Volpicella 2024](/sources/37a99125d274cdb06441dbca8cc2201e.bin), *AWS Fundamentals: AWS For The Real World*
 - Xu and Lam 2022, *System Design Interview: An Insider's Guide, Volume 2* -- chapter 4, a distributed message queue, on *Consumer groups and rebalancing*
 - Educative 2023: distributed task scheduler, *Grokking Modern System Design Interview* -- on *Task queues and scheduling*
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 12, stream processing
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 12, stream processing

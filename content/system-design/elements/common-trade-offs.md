@@ -50,6 +50,6 @@ The same choice appears with materialized views, leaderboards, and search indexe
 ## Library sources
 
 
-- [Weinstock and Goodenough 2006](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc), *On System Scalability* -- what scalability costs, quoted in [scalability]({{< ref "system-design/nfr/scalability" >}}#what-scalability-costs)
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 1, data systems architecture as trade-offs; chapter 2, the home-timeline case study, on *Precompute versus compute on read*
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts* -- trade-off analysis for distributed architectures
+- [Weinstock and Goodenough 2006](/sources/09470289da9930a37201c614f7ea89ea.bin), *On System Scalability* -- what scalability costs, quoted in [scalability]({{< ref "system-design/nfr/scalability" >}}#what-scalability-costs)
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 1, data systems architecture as trade-offs; chapter 2, the home-timeline case study, on *Precompute versus compute on read*
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts* -- trade-off analysis for distributed architectures

@@ -164,4 +164,4 @@ See [Structured AI development approach]({{< ref "ai-engineering/approach/struct
 ## Library sources
 
 
-- [Wilson 2022](/sources/ml-engineering/books/wilson-2022-machine-learning-engineering-in-action.pdf.enc), *Machine Learning Engineering in Action*
+- [Wilson 2022](/sources/baecdf79a3ee8600d991cc23b65c3b8a.bin), *Machine Learning Engineering in Action*

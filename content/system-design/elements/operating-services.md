@@ -124,11 +124,11 @@ No notes yet; see Newman, chapter 14.
 ## Library sources
 
 
-- [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapters 9-12
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 8-11 and 14
+- [Richardson 2019](/sources/cdfacd78fbf9383e0e2361fff5f38b30.bin), *Microservices Patterns: With Examples in Java* -- chapters 9-12
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 8-11 and 14
 - Xu 2023, *Password, Session, Cookie, Token, JWT, SSO, OAuth -- Authentication Explained*, parts 1 and 2 -- on *Password storage* and access tokens
 
 Further reading:
 
-- [Nygard 2018](/sources/software-engineering/systems-and-operations/nygard-2018-release-it-2nd-edition.pdf.enc), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- parts II-III
-- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems*
+- [Nygard 2018](/sources/f9167fa26feb869b87a7f0bc4edbc9b3.bin), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- parts II-III
+- [Beyer et al. 2016](/sources/66e3d117bdfddedf20fc8fa46d6753b0.bin), *Site Reliability Engineering: How Google Runs Production Systems*

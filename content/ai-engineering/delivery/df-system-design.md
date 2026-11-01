@@ -40,7 +40,7 @@ For a typical system, the useful design and delivery package should contain:
 ## Library sources
 
 
-- [Nazir et al. 2023](/sources/ml-engineering/se-for-ml/nazir-2023-architecting-ml-enabled-systems.pdf.enc), *Architecting ML-enabled systems*
-- [Serban and Visser 2022](/sources/ml-engineering/se-for-ml/serban-2022-adapting-software-architectures-ml-challenges.pdf.enc), *Adapting Software Architectures to Machine Learning Challenges* ([arXiv:2105.12422](https://arxiv.org/abs/2105.12422))
-- [Knodel and Naab 2016](/sources/software-engineering/architecture/knodel-2016-pragmatic-evaluation-of-software-architectures.pdf.enc), *Pragmatic Evaluation of Software Architectures*
-- [Falessi et al. 2011](/sources/software-engineering/architecture-decisions/falessi-2011-decision-making-techniques-software-architecture.pdf.enc), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812))
+- [Nazir et al. 2023](/sources/dd36a91b8097a8fc978547db2c95650b.bin), *Architecting ML-enabled systems*
+- [Serban and Visser 2022](/sources/00cecd99502bdf624a95fd7f4d034481.bin), *Adapting Software Architectures to Machine Learning Challenges* ([arXiv:2105.12422](https://arxiv.org/abs/2105.12422))
+- [Knodel and Naab 2016](/sources/d16dc82ef26ea988f0fc0c6669b4735a.bin), *Pragmatic Evaluation of Software Architectures*
+- [Falessi et al. 2011](/sources/ddf58eacb5f53833fa4bf6a8793168b6.bin), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812))

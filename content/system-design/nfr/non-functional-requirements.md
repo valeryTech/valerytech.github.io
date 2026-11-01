@@ -65,9 +65,9 @@ Original reading list:
 ## Library sources
 
 
-- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- on *Sources and further study*
-- [Hidalgo 2020](/sources/software-engineering/systems-and-operations/hidalgo-2020-implementing-service-level-objectives.pdf.enc), *Implementing Service Level Objectives* -- on *Sources and further study*
+- [Beyer et al. 2016](/sources/66e3d117bdfddedf20fc8fa46d6753b0.bin), *Site Reliability Engineering: How Google Runs Production Systems* -- on *Sources and further study*
+- [Hidalgo 2020](/sources/1bf2b1e7253dac3a97ac2e43ae0b65ee.bin), *Implementing Service Level Objectives* -- on *Sources and further study*
 
 Further reading:
 
-- [Wiegers 2022](/sources/software-engineering/craft/wiegers-2022-software-development-pearls.pdf.enc), *Software Development Pearls*
+- [Wiegers 2022](/sources/ac892f5e2943f5a4ee0e27bc889fb7cc.bin), *Software Development Pearls*

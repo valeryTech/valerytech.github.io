@@ -137,4 +137,4 @@ Use [practice]({{< ref "system-design/interview/study-and-practice" >}}#a-practi
 ## Library sources
 
 
-- [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- the pattern language the hubs follow
+- [Richardson 2019](/sources/cdfacd78fbf9383e0e2361fff5f38b30.bin), *Microservices Patterns: With Examples in Java* -- the pattern language the hubs follow

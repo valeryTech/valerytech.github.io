@@ -189,5 +189,5 @@ That's durable.
 ## Library sources
 
 
-- [Guarino et al. 2009](/sources/research-methods/ontology-and-conceptual-modeling/guarino-2009-what-is-an-ontology.pdf.enc), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3))
-- [Guizzardi and Guarino 2024](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2024-explanation-semantics-and-ontology.pdf.enc), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325))
+- [Guarino et al. 2009](/sources/454af26b66e1419abc89e9e5ceda7100.bin), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3))
+- [Guizzardi and Guarino 2024](/sources/e2b93fcc42a364423cfe6ce8c21a08cf.bin), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325))

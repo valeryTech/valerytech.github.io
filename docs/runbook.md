@@ -266,10 +266,11 @@ an `ambiguous-pdf` warning. The vault's `sources`
 folder is an absolute symlink to `/Users/val/sources`, which
 `scripts/migrate-site.sh` mounts read-only at the same path so the link resolves
 inside Docker; set `SOURCE_FILES` to mount a different folder. Linked PDFs
-leave the sections that link them: each is stored once in `content/sources/`,
-under the folders it has in the vault's `sources` (a PDF elsewhere in the vault
-keeps its vault path there), so every section shares one copy. The import owns
-`content/sources/`, so no import may target it. A PDF over 45 MB
+leave the sections that link them: each is stored once, encrypted, directly in
+`content/sources/` under an opaque name derived from its contents with a
+neutral `.bin` extension, so every section shares one copy, moving or renaming
+the PDF in the vault keeps its name, and the URL says nothing about the file.
+The import owns `content/sources/`, so no import may target it. A PDF over 45 MB
 (`MAX_PDF_BYTES` in `scripts/migrate/attachments.py`) is not copied, because the
 reader downloads a whole file before it opens; the link shows only its label
 with an `oversized-pdf` warning.

@@ -206,13 +206,13 @@ Neither a logical clock nor a linearizable generator implements locks or uniquen
 ## Library sources
 
 
-- [Lamport 1978](/sources/system-design/distributed-systems/lamport-1978-time-clocks-ordering-of-events.pdf.enc), *Time, Clocks, and the Ordering of Events in a Distributed System* ([doi:10.1145/359545.359563](https://doi.org/10.1145/359545.359563)) -- on *Happens-before and Lamport clocks* and the cost of total order in *Causal order versus total order*
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 9 on *Physical clocks* and *Leases and fencing tokens*; chapter 10 on *Hybrid logical clocks* and *ID generators and logical clocks*; chapter 6 on version vectors; chapter 13 on the limits of total ordering
-- [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems, Second Edition* -- chapter 8 on physical, logical, and vector clocks; chapter 9 on leases
-- [van Steen and Tanenbaum 2023](/sources/system-design/distributed-systems/vansteen-2023-distributed-systems-4th-edition.pdf.enc), *Distributed Systems, 4th Edition* -- chapter 5 on clock synchronization, NTP, Lamport clocks, vector clocks, and causal delivery
-- [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 2 on happened-before, clock consistency, and physical versus logical clocks
-- [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- chapter 8 on clocks and time; chapter 11 on causal consistency and vector clocks; chapter 12 on bitmap version vectors; chapter 13 on Spanner's TrueTime
-- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* ([doi:10.1145/1294261.1294281](https://doi.org/10.1145/1294261.1294281)) -- on vector clocks in *Vector clocks and version vectors*
+- [Lamport 1978](/sources/374efeb6477bfa54be13f19dc15cce9b.bin), *Time, Clocks, and the Ordering of Events in a Distributed System* ([doi:10.1145/359545.359563](https://doi.org/10.1145/359545.359563)) -- on *Happens-before and Lamport clocks* and the cost of total order in *Causal order versus total order*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 9 on *Physical clocks* and *Leases and fencing tokens*; chapter 10 on *Hybrid logical clocks* and *ID generators and logical clocks*; chapter 6 on version vectors; chapter 13 on the limits of total ordering
+- [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems, Second Edition* -- chapter 8 on physical, logical, and vector clocks; chapter 9 on leases
+- [van Steen and Tanenbaum 2023](/sources/f2bbf8813969eb53517df7404b01c885.bin), *Distributed Systems, 4th Edition* -- chapter 5 on clock synchronization, NTP, Lamport clocks, vector clocks, and causal delivery
+- [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems* -- chapter 2 on happened-before, clock consistency, and physical versus logical clocks
+- [Petrov 2019](/sources/611239aecf452fc6fb065bb3088b0326.bin), *Database Internals* -- chapter 8 on clocks and time; chapter 11 on causal consistency and vector clocks; chapter 12 on bitmap version vectors; chapter 13 on Spanner's TrueTime
+- [DeCandia et al. 2007](/sources/da9436e162d5abe60df8b9ef9e4993ea.bin), *Dynamo: Amazon's Highly Available Key-value Store* ([doi:10.1145/1294261.1294281](https://doi.org/10.1145/1294261.1294281)) -- on vector clocks in *Vector clocks and version vectors*
 
 Further reading:
 

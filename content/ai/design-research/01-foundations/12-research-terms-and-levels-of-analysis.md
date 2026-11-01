@@ -406,21 +406,21 @@ The capability column of this dictionary, what it means to say a system has a ca
 ## Library sources
 
 
-- [Vernon 2014](/sources/ai-foundations/cognition-and-mind/vernon-2014-cognitive-system.pdf.enc), *Cognitive System*
-- [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
-- [Lake and Murphy 2021](/sources/language/language-and-llms/lake-2021-word-meaning-in-minds-and-machines.pdf.enc), *Word meaning in minds and machines* ([doi:10.1037/rev0000297](https://doi.org/10.1037/rev0000297))
+- [Vernon 2014](/sources/cc297b7304fb3c2f85f53200ae4a7a15.bin), *Cognitive System*
+- [Ziemke 2022](/sources/bf0e49a2d28a89a0aa37ddf742e607eb.bin), *Embodiment in Cognitive Science and Robotics*
+- [Lake and Murphy 2021](/sources/1bbf127f1b617d88b4a0b8e4fe821695.bin), *Word meaning in minds and machines* ([doi:10.1037/rev0000297](https://doi.org/10.1037/rev0000297))
 
 Further reading:
 
-- [Anderson et al. 2026](/sources/ai-foundations/alignment-and-society/anderson-2026-agenda-game.pdf.enc), *The agenda game* ([doi:10.1007/s44382-026-00026-3](https://doi.org/10.1007/s44382-026-00026-3))
-- [Coeckelbergh and Gunkel 2025](/sources/ai-foundations/alignment-and-society/coeckelbergh-2025-communicative-ai.pdf.enc), *Communicative AI: A Critical Introduction to Large Language Models*
-- [Prasada 2026](/sources/ai-foundations/cognition-and-mind/prasada-2026-conceptual-form.pdf.enc), *Conceptual Form: The Hidden Structure of Commonsense Concepts*
-- [Rosenbloom 2026](/sources/ai-foundations/cognition-and-mind/rosenbloom-2026-on-minds.pdf.enc), *On Minds: Reflections of a Cognitive Architect*
-- [Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), *The Concept of Mind*
-- [French 2000](/sources/ai-foundations/intelligence-and-turing/french-2000-turing-test-first-50-years.pdf.enc), *The Turing Test: the first 50 years*
-- [Roitblat 2020](/sources/ai-foundations/intelligence-and-turing/roitblat-2020-algorithms-are-not-enough.pdf.enc), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
-- [Russell and Norvig 2021](/sources/ai-foundations/intelligence-and-turing/russell-2021-artificial-intelligence-a-modern-approach.pdf.enc), *Artificial Intelligence: A Modern Approach*
-- [Turing 1950](/sources/ai-foundations/intelligence-and-turing/turing-1950-computing-machinery-and-intelligence-copeland.pdf.enc), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
-- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence*
-- [Mahowald et al. 2024](/sources/language/language-and-llms/mahowald-2024-dissociating-language-and-thought-in-llms.pdf.enc), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
-- [Stojnić and Lepore 2025](/sources/language/linguistics/stojnic-2025-oxford-handbook-of-contemporary-philosophy-of-language.pdf.enc), *The Oxford Handbook of Contemporary Philosophy of Language* ([doi:10.1093/oxfordhb/9780192856852.001.0001](https://doi.org/10.1093/oxfordhb/9780192856852.001.0001))
+- [Anderson et al. 2026](/sources/85fbd015ed6e1ffc2026e57e839d8e61.bin), *The agenda game* ([doi:10.1007/s44382-026-00026-3](https://doi.org/10.1007/s44382-026-00026-3))
+- [Coeckelbergh and Gunkel 2025](/sources/0d153a4277516c4bd067c638f1c75fb2.bin), *Communicative AI: A Critical Introduction to Large Language Models*
+- [Prasada 2026](/sources/c86992ab76b2d981c02514ebec0a1d1a.bin), *Conceptual Form: The Hidden Structure of Commonsense Concepts*
+- [Rosenbloom 2026](/sources/5e6885b52d78bbf3ebdd3ffab9476a98.bin), *On Minds: Reflections of a Cognitive Architect*
+- [Ryle 1949](/sources/e858a20fa17c7e6da53dd7da8794c973.bin), *The Concept of Mind*
+- [French 2000](/sources/1f9ea75aebfedddb37b732f0366781a9.bin), *The Turing Test: the first 50 years*
+- [Roitblat 2020](/sources/aa0e252397f990ec20d128feff292a1e.bin), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
+- [Russell and Norvig 2021](/sources/c85f4853f67516e521a455cdea6aeedc.bin), *Artificial Intelligence: A Modern Approach*
+- [Turing 1950](/sources/e9e815a2347232297524af2b765de4e4.bin), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
+- [Wilhelm and Engle 2005](/sources/2375228c6a7957a1808fc25b83be9a33.bin), *Handbook of Understanding and Measuring Intelligence*
+- [Mahowald et al. 2024](/sources/d3e4e4f8abb1b5705082eb2c4c76ee17.bin), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
+- [Stojnić and Lepore 2025](/sources/cb65dd257bd834c093926f4a1d1aa31c.bin), *The Oxford Handbook of Contemporary Philosophy of Language* ([doi:10.1093/oxfordhb/9780192856852.001.0001](https://doi.org/10.1093/oxfordhb/9780192856852.001.0001))

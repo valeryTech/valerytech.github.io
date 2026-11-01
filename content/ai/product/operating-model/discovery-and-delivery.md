@@ -103,4 +103,4 @@ Do not treat discovery as complete because implementation has started. Do not tr
 ## Library sources
 
 
-- [Tan et al. 2024](/sources/ml-engineering/books/tan-2024-effective-machine-learning-teams.pdf.enc), *Effective Machine Learning Teams*
+- [Tan et al. 2024](/sources/70b69df084508ef62121bd0664a1d392.bin), *Effective Machine Learning Teams*

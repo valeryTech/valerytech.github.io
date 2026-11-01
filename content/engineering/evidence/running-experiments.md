@@ -13,7 +13,7 @@ When no existing evidence answers the question, a team can produce some. A contr
 
 Empirical software engineering already has a methodology for experiments. This is probably the strongest thing to borrow.
 
-Wohlin et al.'s _Experimentation in Software Engineering_ ([PDF](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc)), updated in 2024, describes experimentation as a five-stage process: **scoping -> planning -> execution -> analysis -> result presentation**. The new edition explicitly covers research design, A/B testing, replication, open science, validity threats, surveys, and case studies. ([Lund University](https://portal.research.lu.se/en/publications/experimentation-in-software-engineering-2024-edition/ "Experimentation in Software Engineering (2024 edition) - Lund University"))
+Wohlin et al.'s _Experimentation in Software Engineering_ ([PDF](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin)), updated in 2024, describes experimentation as a five-stage process: **scoping -> planning -> execution -> analysis -> result presentation**. The new edition explicitly covers research design, A/B testing, replication, open science, validity threats, surveys, and case studies. ([Lund University](https://portal.research.lu.se/en/publications/experimentation-in-software-engineering-2024-edition/ "Experimentation in Software Engineering (2024 edition) - Lund University"))
 
 ## Method-specific standards
 
@@ -62,9 +62,9 @@ makes the experiment considerably harder to manipulate unconsciously.
 ## Library sources
 
 
-- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* -- the experiment process and each of its steps; on *Experiments* (ch. 6, *Process* 6.3), *Scoping* (ch. 8), *Planning* (ch. 9, with *Hypothesis Formulation* 9.2) and *Analysis and Interpretation* (ch. 11)
+- [Wohlin et al. 2024](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin), *Experimentation in Software Engineering* -- the experiment process and each of its steps; on *Experiments* (ch. 6, *Process* 6.3), *Scoping* (ch. 8), *Planning* (ch. 9, with *Hypothesis Formulation* 9.2) and *Analysis and Interpretation* (ch. 11)
 
 Further reading:
 
-- [Marczyk et al. 2005](/sources/research-methods/empirical-methods/marczyk-2005-essentials-of-research-design-and-methodology.pdf.enc), *Essentials of Research Design and Methodology*
-- [Treude and Storey 2025](/sources/research-methods/empirical-methods/treude-2025-generative-ai-empirical-software-engineering.pdf.enc), *Generative AI and Empirical Software Engineering: A Paradigm Shift* -- how LLMs change the phenomena, methods and validity threats of empirical software engineering
+- [Marczyk et al. 2005](/sources/8b198ee52250fb21e5e2839e1fe56d96.bin), *Essentials of Research Design and Methodology*
+- [Treude and Storey 2025](/sources/a9ef1bb46c863ff00c25f1acda85a9c6.bin), *Generative AI and Empirical Software Engineering: A Paradigm Shift* -- how LLMs change the phenomena, methods and validity threats of empirical software engineering

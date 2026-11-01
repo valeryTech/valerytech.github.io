@@ -269,8 +269,8 @@ This is another reason the **application boundary survives as an authority bound
 ## Library sources
 
 
-- [Wang et al. 2026](/sources/ai-engineering/harness/wang-2026-agentflow-agent-dependency-graphs.pdf.enc), *AgentFlow* ([arXiv:2607.01640](https://arxiv.org/abs/2607.01640))
-- [Xavier et al. 2026](/sources/ai-engineering/harness/xavier-2026-agentproof-static-verification-agent-workflows.pdf.enc), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356))
-- [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617))
-- [Xia et al. 2025](/sources/ai-engineering/observability/xia-2025-agentops-pattern-catalogue.pdf.enc), *AgentOps Pattern Catalogue*
-- [Zheng et al. 2025](/sources/ai-engineering/observability/zheng-2025-agentsight-observability-for-ai-agents-ebpf.pdf.enc), *AgentSight: System-Level Observability for AI Agents Using eBPF* ([doi:10.1145/3766882.3767169](https://doi.org/10.1145/3766882.3767169))
+- [Wang et al. 2026](/sources/e0dea7d0c9889bb5ca3e5b0171e31c42.bin), *AgentFlow* ([arXiv:2607.01640](https://arxiv.org/abs/2607.01640))
+- [Xavier et al. 2026](/sources/ec7f81db2ffcdffa5a3e856e2b83530f.bin), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356))
+- [Zhao et al. 2026](/sources/198f92e6353d731c78479aa44631f6c7.bin), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617))
+- [Xia et al. 2025](/sources/5d52323d0205ad6713d99e680531c914.bin), *AgentOps Pattern Catalogue*
+- [Zheng et al. 2025](/sources/519d72f891bc8d3ccfd774b427658574.bin), *AgentSight: System-Level Observability for AI Agents Using eBPF* ([doi:10.1145/3766882.3767169](https://doi.org/10.1145/3766882.3767169))

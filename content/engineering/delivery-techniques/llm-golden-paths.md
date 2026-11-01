@@ -108,6 +108,6 @@ The following are necessary dependencies, not engineering achievements.
 ## Library sources
 
 
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering*
-- [Fournier and Nowland 2025](/sources/software-engineering/systems-and-operations/fournier-2025-platform-engineering.pdf.enc), *Platform Engineering*
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering*
+- [Fournier and Nowland 2025](/sources/3c79e44be07e3bb68b2346dc79796c36.bin), *Platform Engineering*
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*

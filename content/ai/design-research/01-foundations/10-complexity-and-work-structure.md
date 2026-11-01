@@ -378,5 +378,5 @@ The original reply continues with [participant roles]({{< ref "ai/design-researc
 ## Library sources
 
 
-- [Frensch and Funke 1995](/sources/thinking-and-learning/problem-solving/frensch-1995-complex-problem-solving-european-perspective.pdf.enc), *Complex Problem Solving: The European Perspective*
-- [Jonassen 2011](/sources/thinking-and-learning/problem-solving/jonassen-2011-learning-to-solve-problems.pdf.enc), *Learning to Solve Problems*
+- [Frensch and Funke 1995](/sources/fa071f1fee948fe9ce3ecbd3bafae933.bin), *Complex Problem Solving: The European Perspective*
+- [Jonassen 2011](/sources/06e645b3ebc4fd0e7568b98aa2eee1a3.bin), *Learning to Solve Problems*

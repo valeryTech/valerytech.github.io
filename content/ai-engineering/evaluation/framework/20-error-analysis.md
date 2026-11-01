@@ -421,10 +421,10 @@ These links make it possible to understand and revise the analysis when the evid
 
 
 - Shankar and Husain 2025, *Application-Centric AI Evals for Engineers and Technical PMs* -- on *Part II. Develop the Failure Model*
-- [Cemri et al. 2025](/sources/ai-engineering/failures/cemri-2025-why-do-multi-agent-llm-systems-fail.pdf.enc), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657)) -- on *8. Build the taxonomy and failure model*
-- [Ma et al. 2025](/sources/ai-engineering/failures/ma-2025-diagnosing-failure-root-causes-in-agentic-systems.pdf.enc), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735)) -- on *10. Keep cause hypotheses separate*
-- [Zhang et al. 2025](/sources/ai-engineering/failures/zhang-2025-agentracer-who-is-inducing-failure.pdf.enc), *AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?* ([arXiv:2509.03312](https://arxiv.org/abs/2509.03312)) -- on *10. Keep cause hypotheses separate*
-- [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370)) -- on *4. Record observations and failure incidents*
+- [Cemri et al. 2025](/sources/1e5df35ceba8b37f7f7f69d992345c69.bin), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657)) -- on *8. Build the taxonomy and failure model*
+- [Ma et al. 2025](/sources/357f048f04984be0de2d677e589887ac.bin), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735)) -- on *10. Keep cause hypotheses separate*
+- [Zhang et al. 2025](/sources/18a3b659e726bb39af8f2afb1f45e22f.bin), *AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?* ([arXiv:2509.03312](https://arxiv.org/abs/2509.03312)) -- on *10. Keep cause hypotheses separate*
+- [Zhu et al. 2025](/sources/0dbf97dfec54cf734dbaafd41e119a5c.bin), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370)) -- on *4. Record observations and failure incidents*
 
 Further reading:
 

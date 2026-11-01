@@ -2660,11 +2660,11 @@ The technique is correct when its output supports a concrete decision or safely 
 ## Library sources
 
 
-- [Buchgeher et al. 2023](/sources/software-engineering/architecture-decisions/buchgeher-2023-architecture-decision-records-open-source.pdf.enc), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654)) -- on *7.10 Architecture Decision Record*
-- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer* -- on *7.4 Tracer Bullet*
+- [Buchgeher et al. 2023](/sources/5c446ae84aa48fee878017f550a6970e.bin), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654)) -- on *7.10 Architecture Decision Record*
+- [Thomas and Hunt 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer* -- on *7.4 Tracer Bullet*
 
 Further reading:
 
-- [Harmel-Law 2025](/sources/software-engineering/architecture/harmel-law-2025-facilitating-software-architecture.pdf.enc), *Facilitating Software Architecture*
-- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice*
-- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture*
+- [Harmel-Law 2025](/sources/0504f0a13beb3cf493c31190f42b04e5.bin), *Facilitating Software Architecture*
+- [Kruchten et al. 2009](/sources/f16fd0f68275266c464119b582d0034f.bin), *The role of a "decision view" in software architecture practice*
+- [Tyree and Akerman 2005](/sources/9d1ceedede8bdd58eda1d3edd575acd6.bin), *Architecture Decisions: Demystifying Architecture*

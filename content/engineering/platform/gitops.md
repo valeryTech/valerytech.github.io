@@ -134,9 +134,9 @@ That is Twelve-Factor's build-release-run separation and GitOps applied to a sys
 ## Library sources
 
 
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes* -- on *Environments and promotion* and *Infrastructure in the same model*
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering* -- policy as code and the platform control plane
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes* -- on *Environments and promotion* and *Infrastructure in the same model*
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- policy as code and the platform control plane
 
 Further reading:
 
-- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, "Configuration Management": ways to ship configuration, and the skew between checked-in and running configuration
+- [Beyer et al. 2016](/sources/66e3d117bdfddedf20fc8fa46d6753b0.bin), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, "Configuration Management": ways to ship configuration, and the skew between checked-in and running configuration

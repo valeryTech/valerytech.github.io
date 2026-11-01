@@ -317,7 +317,7 @@ The two are deeply coupled, and different coding worlds shift the practical boun
 
 [^mcp-resources]: Model Context Protocol, "Server Resources," <https://modelcontextprotocol.io/specification/2025-06-18/server/resources>
 
-[^aima-agents]: Russell and Norvig, *Artificial Intelligence: A Modern Approach* ([PDF](/sources/ai-foundations/intelligence-and-turing/russell-2021-artificial-intelligence-a-modern-approach.pdf.enc)), Chapter 2, "Intelligent Agents," <https://aima.cs.berkeley.edu/4th-ed/pdfs/newchap02.pdf>
+[^aima-agents]: Russell and Norvig, *Artificial Intelligence: A Modern Approach* ([PDF](/sources/c85f4853f67516e521a455cdea6aeedc.bin)), Chapter 2, "Intelligent Agents," <https://aima.cs.berkeley.edu/4th-ed/pdfs/newchap02.pdf>
 
 [^pomdp]: Kaelbling, Littman, and Cassandra, "Planning and Acting in Partially Observable Stochastic Domains," <https://people.csail.mit.edu/lpk/papers/aij98-pomdp.pdf>
 
@@ -331,7 +331,7 @@ The two are deeply coupled, and different coding worlds shift the practical boun
 
 [^actr]: Taatgen and Anderson, "Why Do Children Learn to Say 'Broke'? A Model of Learning the Past Tense Without Feedback," ACT-R-related cognitive architecture source, <https://act-r.psy.cmu.edu/wordpress/wp-content/uploads/2012/12/849taatgen.pdf>
 
-[^coala]: Sumers et al., "Cognitive Architectures for Language Agents," ([PDF](/sources/ai-foundations/cognition-and-mind/sumers-2024-cognitive-architectures-for-language-agents.pdf.enc)) <https://arxiv.org/abs/2309.02427>
+[^coala]: Sumers et al., "Cognitive Architectures for Language Agents," ([PDF](/sources/979eab1fc41b7066edf51770802bf09d.bin)) <https://arxiv.org/abs/2309.02427>
 
 [^cot]: Wei et al., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models," <https://arxiv.org/abs/2201.11903>
 
@@ -341,7 +341,7 @@ The two are deeply coupled, and different coding worlds shift the practical boun
 
 [^realm]: Guu et al., "REALM: Retrieval-Augmented Language Model Pre-Training," <https://arxiv.org/abs/2002.08909>
 
-[^rag]: Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," <https://arxiv.org/abs/2005.11401> ([PDF](/sources/retrieval-and-knowledge/rag/lewis-2020-retrieval-augmented-generation-knowledge-intensive-nlp.pdf.enc))
+[^rag]: Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," <https://arxiv.org/abs/2005.11401> ([PDF](/sources/83adeec78d1a87569cf4b5d0e8ad9ec6.bin))
 
 [^reflexion]: Shinn et al., "Reflexion: Language Agents with Verbal Reinforcement Learning," <https://arxiv.org/abs/2303.11366>
 
@@ -396,19 +396,19 @@ The two are deeply coupled, and different coding worlds shift the practical boun
 ## Library sources
 
 
-- [Mei et al. 2025](/sources/ai-engineering/agents/mei-2025-survey-of-context-engineering-for-llms.pdf.enc), *A Survey of Context Engineering for Large Language Models* ([arXiv:2507.13334](https://arxiv.org/abs/2507.13334)) -- on *Definitions and the central distinction*
-- [Song et al. 2025](/sources/ai-engineering/failures/song-2025-aegis-agent-environment-failures-in-llm-agents.pdf.enc), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504))
-- [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370)) -- on *Failure modes and mitigation*
-- [Kotseruba and Tsotsos 2020](/sources/ai-foundations/cognition-and-mind/kotseruba-2020-40-years-of-cognitive-architectures.pdf.enc), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
+- [Mei et al. 2025](/sources/ce672d48443a0d56e51ce59cd0cf13fd.bin), *A Survey of Context Engineering for Large Language Models* ([arXiv:2507.13334](https://arxiv.org/abs/2507.13334)) -- on *Definitions and the central distinction*
+- [Song et al. 2025](/sources/d894d42a7cb05735da16ee9be1e18f4f.bin), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504))
+- [Zhu et al. 2025](/sources/0dbf97dfec54cf734dbaafd41e119a5c.bin), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370)) -- on *Failure modes and mitigation*
+- [Kotseruba and Tsotsos 2020](/sources/dbc8fc8d10a0d4d51a43964e61c1482f.bin), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
 - An Illustrated Guide to AI Agents, *O'Reilly early release, chapter 10* -- code tools, sandboxes, context management, context optimization for the LLM cache and the repository map, on *Engineering implications for coding agents* (*Compaction*, *Caching*, *Tool and resource interfaces*) and *Monorepo and large codebase work*
 
 Further reading:
 
-- [Hu et al. 2025](/sources/ai-engineering/agents/hu-2025-memory-in-the-age-of-ai-agents.pdf.enc), *Memory in the Age of AI Agents* ([arXiv:2512.13564](https://arxiv.org/abs/2512.13564))
-- [Lin et al. 2025](/sources/ai-engineering/failures/lin-2025-llm-agents-hallucinations-survey.pdf.enc), *LLM-based Agents Suffer from Hallucinations* ([arXiv:2509.18970](https://arxiv.org/abs/2509.18970))
-- [Zhou et al. 2026](/sources/ai-engineering/harness/zhou-2026-externalization-in-llm-agents.pdf.enc), *Externalization in LLM Agents* ([arXiv:2604.08224](https://arxiv.org/abs/2604.08224))
-- [Mohsin et al. 2025](/sources/ai-foundations/capabilities-and-measurement/mohsin-2025-fundamental-limits-of-llms-at-scale.pdf.enc), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
-- [Baddeley et al. 2020](/sources/ai-foundations/cognition-and-mind/baddeley-2020-memory.pdf.enc), *Memory*
-- [Nobre and Gresch 2025](/sources/ai-foundations/cognition-and-mind/nobre-2025-external-and-internal-attention.pdf.enc), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
-- [Anonymous 2025](/sources/retrieval-and-knowledge/rag/anonymous-2025-practical-code-rag-at-scale.pdf.enc), *Practical Code RAG at Scale*
-- [Fan et al. 2024](/sources/retrieval-and-knowledge/rag/fan-2024-survey-rag-meeting-llms.pdf.enc), *A Survey on RAG Meeting LLMs* ([doi:10.1145/3637528.3671470](https://doi.org/10.1145/3637528.3671470))
+- [Hu et al. 2025](/sources/701cfbbf6d7dddae4008b3c9c5af702b.bin), *Memory in the Age of AI Agents* ([arXiv:2512.13564](https://arxiv.org/abs/2512.13564))
+- [Lin et al. 2025](/sources/52025ac74c2419770ceb4b6df4045974.bin), *LLM-based Agents Suffer from Hallucinations* ([arXiv:2509.18970](https://arxiv.org/abs/2509.18970))
+- [Zhou et al. 2026](/sources/633694303a31046d598fcabe0c316bc3.bin), *Externalization in LLM Agents* ([arXiv:2604.08224](https://arxiv.org/abs/2604.08224))
+- [Mohsin et al. 2025](/sources/52ba2872a178acfd074f7a58fbc37efa.bin), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
+- [Baddeley et al. 2020](/sources/b130452e34ab0be753e894e35327f6af.bin), *Memory*
+- [Nobre and Gresch 2025](/sources/e3bc15ed61f3e0330df638a73650c7bf.bin), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
+- [Anonymous 2025](/sources/30cb49de449fbee8fd7c2c4e3a1311da.bin), *Practical Code RAG at Scale*
+- [Fan et al. 2024](/sources/10397d7b6adfb91121eb7d4872349ed5.bin), *A Survey on RAG Meeting LLMs* ([doi:10.1145/3637528.3671470](https://doi.org/10.1145/3637528.3671470))

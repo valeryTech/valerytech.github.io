@@ -188,4 +188,4 @@ This is condition A1 in the evaluation plan; hypothesis H6 asks whether it beats
 
 Further reading:
 
-- [Winters et al. 2020](/sources/software-engineering/craft/winters-2020-software-engineering-at-google.pdf.enc), *Software Engineering at Google*: the chapters on code search and static analysis describe how cross-reference indexes and analyzers run at scale
+- [Winters et al. 2020](/sources/cdc8156a74161ef8b6f12b1e2896c4d7.bin), *Software Engineering at Google*: the chapters on code search and static analysis describe how cross-reference indexes and analyzers run at scale

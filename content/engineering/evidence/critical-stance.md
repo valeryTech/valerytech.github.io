@@ -57,5 +57,5 @@ An engineering practice where claims, assumptions, and proposed solutions are sy
 ## Library sources
 
 
-- [Popper 1959](/sources/research-methods/philosophy-of-science/popper-1959-logic-of-scientific-discovery.pdf.enc), *The Logic of Scientific Discovery*
-- [Marshall 2019](/sources/thinking-and-learning/reflection-and-lessons-learned/marshall-2019-concept-of-reflection-systematic-review.pdf.enc), *The concept of reflection* ([doi:10.1080/14623943.2019.1622520](https://doi.org/10.1080/14623943.2019.1622520))
+- [Popper 1959](/sources/c68fa1c135c0f988c39d2624f0a61097.bin), *The Logic of Scientific Discovery*
+- [Marshall 2019](/sources/29b2f6315da256321f53a705ab4db392.bin), *The concept of reflection* ([doi:10.1080/14623943.2019.1622520](https://doi.org/10.1080/14623943.2019.1622520))

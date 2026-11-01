@@ -11,7 +11,7 @@ The hub's core example is a value moving through states, `DraftOrder -> Submitte
 ## Workflows as functions
 
 
-Wlaschin ([PDF](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), chapter 5, "Modeling Workflows with Functions") writes a whole business process as one function type before writing any code:
+Wlaschin ([PDF](/sources/3165b993e939de6a47737a073d7633a4.bin), chapter 5, "Modeling Workflows with Functions") writes a whole business process as one function type before writing any code:
 
 ```fsharp
 type PlaceOrder = UnvalidatedOrder -> Result<PlaceOrderEvents, PlaceOrderError>
@@ -83,7 +83,7 @@ The analogy is a form that changes as it's processed. A visa application is a dr
 ### State machines as values
 
 
-Volpe ([PDF](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), section 5.1, "Finite state machines") represents a state machine as a function from the current state and an input to the next state and an output:
+Volpe ([PDF](/sources/42ef10a33c54df6756cd49d40ee34101.bin), section 5.1, "Finite state machines") represents a state machine as a function from the current state and an input to the next state and an output:
 
 ```scala
 case class FSM[F[_], S, I, O](run: (S, I) => F[(S, O)])
@@ -97,7 +97,7 @@ case class FSM[F[_], S, I, O](run: (S, I) => F[(S, O)])
 
 When the states share all their data and differ only in what's allowed next, a type per state duplicates fields. The alternative is one type with a **phantom type parameter**: a type parameter that appears in the type but not in the data, used only to mark the state. This encoding is usually called *typestate*.
 
-Ghosh ([PDF](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), section 4.5.2, "Making illegal states unrepresentable", listing 4.13) models a loan application this way:
+Ghosh ([PDF](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), section 4.5.2, "Making illegal states unrepresentable", listing 4.13) models a loan application this way:
 
 ```scala
 case class LoanApplication[Status] private[Loans](/* the same fields in every state */)
@@ -119,8 +119,8 @@ def enrich:  Kleisli[Option, LoanApproved, LoanEnriched]
 
 Two more examples from the library:
 
-- **Wampler** ([PDF](/sources/programming/scala/wampler-2021-programming-scala-3e.pdf.enc), chapter 16, "Phantom Types") computes a payroll in steps, with `Pay[S <: Step]` marking the stage reached (`PreTaxDeductions`, `PostTaxDeductions`, `Final`). US payroll has to subtract pre-tax deductions before calculating tax and post-tax deductions after it, and the phantom parameter makes the compiler enforce that order.
-- **Bragilevsky** ([PDF](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), sections 13.2.3-13.2.4) builds a safe interface for an elevator in Haskell, where the door state and the floor are tracked in types (using singletons, see [Dependent Types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}})) so that the door can't be opened unless the elevator is level with a floor.
+- **Wampler** ([PDF](/sources/15972064071d3223586f8945de281cea.bin), chapter 16, "Phantom Types") computes a payroll in steps, with `Pay[S <: Step]` marking the stage reached (`PreTaxDeductions`, `PostTaxDeductions`, `Final`). US payroll has to subtract pre-tax deductions before calculating tax and post-tax deductions after it, and the phantom parameter makes the compiler enforce that order.
+- **Bragilevsky** ([PDF](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), sections 13.2.3-13.2.4) builds a safe interface for an elevator in Haskell, where the door state and the floor are tracked in types (using singletons, see [Dependent Types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}})) so that the door can't be opened unless the elevator is level with a floor.
 
 Typestate works best for short, local protocols (building a request, a payroll calculation, a file handle that must be opened before it's read) where the value stays in one variable. It works badly when the state comes from outside: a loan read from the database has a status column, not a static type, so it has to be parsed into one of the typed states first ([Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}})). It also can't stop you from using an old value after a transition, since nothing deletes the `LoanApplied` you already hold; preventing that needs linear or affine types, as in Rust, where a transition can consume its input.
 
@@ -199,16 +199,16 @@ This is the same method as Wlaschin's *Workflows as functions* above, at the sca
 ## Library sources
 
 
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 5, "Modeling Workflows with Functions"; chapter 7, "Modeling Workflows as Pipelines": an order as a set of states, state machines and why to use them, dependencies in public and internal functions, long-running workflows; on *Workflows as functions*, *One type per state* and *Long-running workflows*
-- [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling* -- section 4.5.2 and listing 4.13, the loan workflow with phantom types and Kleisli arrows; on *Typestate with phantom types*
-- [Wampler 2021](/sources/programming/scala/wampler-2021-programming-scala-3e.pdf.enc), *Programming Scala, 3rd Edition* -- chapter 16, "Phantom Types", the payroll example; on *Typestate with phantom types*
-- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth* -- section 13.2.3, "Dependent types and substituting them with singletons": door states as singletons, so that opening an open door doesn't compile; section 13.2.4, "Example: Safe interface for elevators": `up` and `down` need an `Elevator mx cur Closed`, and `open` needs the requested floor to be the current one; on *Typestate with phantom types*
-- [Volpe 2023](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), *Functional Event-Driven Architecture: Powered by Scala 3* -- section 5.1, "Finite state machines"; on *State machines as values*
-- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles* -- chapter 11, "Algebraic datatypes", section 11.9, "newtype", on `newtype` against type synonyms (a synonym is the same type and can't have its own instances); chapter 6, "Typeclasses", on typeclasses as what a type can do, with dispatch by type in section 6.12, "Instances are dispatched by type"; on *Type-first design*
-- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell* -- chapter 5, section "Choosing What to Export", subsection "Phantom Types and Export Lists": `User isAuthenticated` with empty, unexported `Authenticated` and `Unauthenticated` types; `authenticate :: User Unauthenticated -> String -> Maybe (User Authenticated)` is the only transition, and `getUserEmailAddress` accepts only an authenticated user; on *Typestate with phantom types*
-- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell* -- chapter 14, "Indexed Monads": an indexed monad `m i j a` carries a pre- and a post-condition, and section 14.2, "Linear Allocations", tracks open file handles at the type level so that each must be closed exactly once, with the ST trick keeping handles from leaking; on *Typestate with phantom types*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 5, "Modeling Workflows with Functions"; chapter 7, "Modeling Workflows as Pipelines": an order as a set of states, state machines and why to use them, dependencies in public and internal functions, long-running workflows; on *Workflows as functions*, *One type per state* and *Long-running workflows*
+- [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling* -- section 4.5.2 and listing 4.13, the loan workflow with phantom types and Kleisli arrows; on *Typestate with phantom types*
+- [Wampler 2021](/sources/15972064071d3223586f8945de281cea.bin), *Programming Scala, 3rd Edition* -- chapter 16, "Phantom Types", the payroll example; on *Typestate with phantom types*
+- [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth* -- section 13.2.3, "Dependent types and substituting them with singletons": door states as singletons, so that opening an open door doesn't compile; section 13.2.4, "Example: Safe interface for elevators": `up` and `down` need an `Elevator mx cur Closed`, and `open` needs the requested floor to be the current one; on *Typestate with phantom types*
+- [Volpe 2023](/sources/42ef10a33c54df6756cd49d40ee34101.bin), *Functional Event-Driven Architecture: Powered by Scala 3* -- section 5.1, "Finite state machines"; on *State machines as values*
+- [Allen et al. 2016](/sources/ef73b442d98627834d86e8f39127b0d6.bin), *Haskell Programming from First Principles* -- chapter 11, "Algebraic datatypes", section 11.9, "newtype", on `newtype` against type synonyms (a synonym is the same type and can't have its own instances); chapter 6, "Typeclasses", on typeclasses as what a type can do, with dispatch by type in section 6.12, "Instances are dispatched by type"; on *Type-first design*
+- [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell* -- chapter 5, section "Choosing What to Export", subsection "Phantom Types and Export Lists": `User isAuthenticated` with empty, unexported `Authenticated` and `Unauthenticated` types; `authenticate :: User Unauthenticated -> String -> Maybe (User Authenticated)` is the only transition, and `getUserEmailAddress` accepts only an authenticated user; on *Typestate with phantom types*
+- [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell* -- chapter 14, "Indexed Monads": an indexed monad `m i j a` carries a pre- and a post-condition, and section 14.2, "Linear Allocations", tracks open file handles at the type level so that each must be closed exactly once, with the ST trick keeping handles from leaking; on *Typestate with phantom types*
 
 Further reading:
 
-- [Noonan 2018](/sources/programming/functional-programming/noonan-2018-ghosts-of-departed-proofs.pdf.enc), *Ghosts of Departed Proofs (Functional Pearl)* -- sections 2.2, "Implementing a Safe API for Sorting and Merging", and 2.4, "Aside: On the Danger of Naming a Ghost": a phantom-typed newtype (`SortedBy comp`) with a hidden constructor, so only the library can produce the tagged value; the same pattern as the loan states, carrying a fact instead of a state; on *Typestate with phantom types*
+- [Noonan 2018](/sources/82bc6785596e6b9c5b3e2d9a2b2e9c58.bin), *Ghosts of Departed Proofs (Functional Pearl)* -- sections 2.2, "Implementing a Safe API for Sorting and Merging", and 2.4, "Aside: On the Danger of Naming a Ghost": a phantom-typed newtype (`SortedBy comp`) with a hidden constructor, so only the library can produce the tagged value; the same pattern as the loan states, carrying a fact instead of a state; on *Typestate with phantom types*
 - Płachta 2022, *Grokking Functional Programming*

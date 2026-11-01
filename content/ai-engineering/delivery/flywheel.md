@@ -480,7 +480,7 @@ Or as a single statement:
 ## Library sources
 
 
-- [Aryan 2025](/sources/ai-engineering/llmops/aryan-2025-llmops-managing-llms-in-production.pdf.enc), *LLMOps: Managing Large Language Models in Production*
-- [Desale 2025](/sources/ai-engineering/llmops/desale-2025-concept-drift-in-llms.pdf.enc), *Concept Drift in Large Language Models: Adapting the Conversation* ([doi:10.1201/9781003595533](https://doi.org/10.1201/9781003595533))
-- [Doan 2024](/sources/ai-engineering/llmops/doan-2024-essential-guide-to-llmops.pdf.enc), *Essential Guide to LLMOps*
-- [Meadows 2008](/sources/thinking-and-learning/systems-thinking/meadows-2008-thinking-in-systems.pdf.enc), *Thinking in Systems: A Primer*
+- [Aryan 2025](/sources/692a33f6628a7f155b8582752d49e5d1.bin), *LLMOps: Managing Large Language Models in Production*
+- [Desale 2025](/sources/d1942ec8339ba7be1a0c4c267c156da3.bin), *Concept Drift in Large Language Models: Adapting the Conversation* ([doi:10.1201/9781003595533](https://doi.org/10.1201/9781003595533))
+- [Doan 2024](/sources/163e77528b5d01554cbb2d3538654825.bin), *Essential Guide to LLMOps*
+- [Meadows 2008](/sources/3be936bfd9022b933c26433083c5b0e1.bin), *Thinking in Systems: A Primer*

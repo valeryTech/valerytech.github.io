@@ -120,12 +120,12 @@ Use diagrams, examples, and decision notes where they help someone build and rev
 ## Library sources
 
 
-- [Capilla et al. 2016](/sources/software-engineering/architecture-decisions/capilla-2016-software-architecture-knowledge-management.pdf.enc), *10 years of software architecture knowledge management* ([doi:10.1016/j.jss.2015.08.054](https://doi.org/10.1016/j.jss.2015.08.054)) -- on *Write down the important choices*
-- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture* -- on *Write down the important choices*
+- [Capilla et al. 2016](/sources/9205b55a215c638546426e3bddcab4f6.bin), *10 years of software architecture knowledge management* ([doi:10.1016/j.jss.2015.08.054](https://doi.org/10.1016/j.jss.2015.08.054)) -- on *Write down the important choices*
+- [Tyree and Akerman 2005](/sources/9d1ceedede8bdd58eda1d3edd575acd6.bin), *Architecture Decisions: Demystifying Architecture* -- on *Write down the important choices*
 
 Further reading:
 
-- [Jansen and Bosch 2005](/sources/software-engineering/architecture-decisions/jansen-2005-software-architecture-as-set-of-design-decisions.pdf.enc), *Software Architecture as a Set of Architectural Design Decisions*
-- [Kruchten et al. 2006](/sources/software-engineering/architecture-decisions/kruchten-2006-architectural-knowledge.pdf.enc), *Building Up and Reasoning About Architectural Knowledge*
-- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice*
-- [Tofan et al. 2013](/sources/software-engineering/architecture-decisions/tofan-2013-difficulty-of-architectural-decisions.pdf.enc), *Difficulty of Architectural Decisions*
+- [Jansen and Bosch 2005](/sources/c9fd193b0b3901dc6fdd32f621d82604.bin), *Software Architecture as a Set of Architectural Design Decisions*
+- [Kruchten et al. 2006](/sources/da5ed9f37618ef657bc19ed8252e382f.bin), *Building Up and Reasoning About Architectural Knowledge*
+- [Kruchten et al. 2009](/sources/f16fd0f68275266c464119b582d0034f.bin), *The role of a "decision view" in software architecture practice*
+- [Tofan et al. 2013](/sources/1caad42589ce79dbd5d21f186e6208e5.bin), *Difficulty of Architectural Decisions*

@@ -1359,15 +1359,15 @@ A concise boundary statement is:
 ## Library sources
 
 
-- [Guerdan et al. 2024](/sources/ai-foundations/capabilities-and-measurement/guerdan-2024-evaluating-llms-under-task-indeterminacy.pdf.enc), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
-- [Huyen 2022](/sources/ml-engineering/books/huyen-2022-designing-machine-learning-systems.pdf.enc), *Designing Machine Learning Systems* -- on *Data shifts to monitor*
+- [Guerdan et al. 2024](/sources/2478056b91cd37d03393aedc5b4b14b3.bin), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
+- [Huyen 2022](/sources/5bbe42519087c94b06ff1a96c39c6566.bin), *Designing Machine Learning Systems* -- on *Data shifts to monitor*
 
 Further reading:
 
-- [Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), *Measuring what Matters*
-- [Chizhov et al. 2025](/sources/ai-foundations/capabilities-and-measurement/chizhov-2025-what-the-hellaswag.pdf.enc), *What the HellaSwag? On the Validity of Common-Sense Reasoning Benchmarks* ([arXiv:2504.07825](https://arxiv.org/abs/2504.07825))
-- [Eriksson et al. 2025](/sources/ai-foundations/capabilities-and-measurement/eriksson-2025-can-we-trust-ai-benchmarks.pdf.enc), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
-- [Wagner-Kaiser 2026](/sources/nlp/foundations/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
-- [Crowe et al. 2025](/sources/ml-engineering/books/crowe-2025-machine-learning-production-systems.pdf.enc), *Machine Learning Production Systems*
+- [Bean et al. 2025](/sources/015e29150096f262478300d13488bbc2.bin), *Measuring what Matters*
+- [Chizhov et al. 2025](/sources/0d0f57129a2ce4bb6104c39c80966d31.bin), *What the HellaSwag? On the Validity of Common-Sense Reasoning Benchmarks* ([arXiv:2504.07825](https://arxiv.org/abs/2504.07825))
+- [Eriksson et al. 2025](/sources/5078ee4dc38d25871465fce92643eb36.bin), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
+- [Wagner-Kaiser 2026](/sources/a971bcbca65dc7fbbfd3db846ca8eb23.bin), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
+- [Crowe et al. 2025](/sources/9bdb311d9dc70483a0a6259884229758.bin), *Machine Learning Production Systems*
 - Dowling 2025, *Building Machine Learning Systems with a Feature Store*
-- [Confluent 2025](/sources/retrieval-and-knowledge/rag/confluent-2025-developers-guide-to-rag-data-streaming.pdf.enc), *The Developer's Guide to RAG with Data Streaming*
+- [Confluent 2025](/sources/58d654d85ac8cbe08a56759f02bbfc35.bin), *The Developer's Guide to RAG with Data Streaming*

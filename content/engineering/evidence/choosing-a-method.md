@@ -98,14 +98,14 @@ An experience report can describe what happened. It rarely shows what caused it.
 ## Library sources
 
 
-- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* -- choosing a research design for a question, and case studies as a related kind of study; on *Empirical Research* (ch. 2, *Selecting a Research Design* 2.1) and *Case Studies* (ch. 7)
-- [Wohlin and Rainer 2022](/sources/research-methods/empirical-methods/wohlin-2022-is-it-a-case-study-preprint.pdf.enc), *Is it a case study? A critical analysis and guidance* -- how often "case study" is mislabelled, with a checklist; on *Experience reports are not case studies*
-- [Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), *Measuring what Matters* -- recurring failures across 445 benchmarks, and a checklist; on *Benchmarks*
-- [Eriksson et al. 2025](/sources/ai-foundations/capabilities-and-measurement/eriksson-2025-can-we-trust-ai-benchmarks.pdf.enc), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559)) -- a review of benchmark critiques; on *Benchmarks*
+- [Wohlin et al. 2024](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin), *Experimentation in Software Engineering* -- choosing a research design for a question, and case studies as a related kind of study; on *Empirical Research* (ch. 2, *Selecting a Research Design* 2.1) and *Case Studies* (ch. 7)
+- [Wohlin and Rainer 2022](/sources/259b57ac164515376430c68ba4848f6b.bin), *Is it a case study? A critical analysis and guidance* -- how often "case study" is mislabelled, with a checklist; on *Experience reports are not case studies*
+- [Bean et al. 2025](/sources/015e29150096f262478300d13488bbc2.bin), *Measuring what Matters* -- recurring failures across 445 benchmarks, and a checklist; on *Benchmarks*
+- [Eriksson et al. 2025](/sources/5078ee4dc38d25871465fce92643eb36.bin), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559)) -- a review of benchmark critiques; on *Benchmarks*
 
 Further reading:
 
-- [Wohlin and Runeson 2021](/sources/research-methods/empirical-methods/wohlin-2021-guiding-selection-of-research-methodology.pdf.enc), *Guiding the selection of research methodology in industry-academia collaboration in software engineering*
-- [Silverman 2021](/sources/research-methods/empirical-methods/silverman-2021-qualitative-research-5e.pdf.enc), *Qualitative Research* -- interviews, focus groups, ethnography and document analysis
-- [Denzin and Lincoln 2018](/sources/research-methods/empirical-methods/denzin-2018-sage-handbook-of-qualitative-research.pdf.enc), *The SAGE Handbook of Qualitative Research*
-- [Gillespie et al. 2024](/sources/research-methods/philosophy-of-science/gillespie-2024-pragmatism-and-methodology.pdf.enc), *Pragmatism and Methodology* ([doi:10.1017/9781009031066](https://doi.org/10.1017/9781009031066)) -- mixing qualitative and quantitative methods
+- [Wohlin and Runeson 2021](/sources/3cfb734c3eb89c6fc1a4f131e4a9b4d0.bin), *Guiding the selection of research methodology in industry-academia collaboration in software engineering*
+- [Silverman 2021](/sources/60ad3c9172623ab4ec15bf346a7d7a31.bin), *Qualitative Research* -- interviews, focus groups, ethnography and document analysis
+- [Denzin and Lincoln 2018](/sources/22f3ac39414dd99205b2f2679dd71b89.bin), *The SAGE Handbook of Qualitative Research*
+- [Gillespie et al. 2024](/sources/a06a5565fd216fcdd8ac46c10bdb8900.bin), *Pragmatism and Methodology* ([doi:10.1017/9781009031066](https://doi.org/10.1017/9781009031066)) -- mixing qualitative and quantitative methods

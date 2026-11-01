@@ -491,11 +491,11 @@ The result is a claim limited to the stated evidence. It should say what the evi
 ## Library sources
 
 
-- [Guerdan et al. 2024](/sources/ai-foundations/capabilities-and-measurement/guerdan-2024-evaluating-llms-under-task-indeterminacy.pdf.enc), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
-- [Pita 2026](/sources/ai-foundations/capabilities-and-measurement/pita-2026-correct-codes-wrong-reasons.pdf.enc), *Correct codes for the wrong reasons? Validating LLMs as measurement instruments for theoretical constructs* ([arXiv:2606.28574](https://arxiv.org/abs/2606.28574)) -- on *Validate evaluators*
+- [Guerdan et al. 2024](/sources/2478056b91cd37d03393aedc5b4b14b3.bin), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
+- [Pita 2026](/sources/e927379435f1073f97f490f01b8bffcf.bin), *Correct codes for the wrong reasons? Validating LLMs as measurement instruments for theoretical constructs* ([arXiv:2606.28574](https://arxiv.org/abs/2606.28574)) -- on *Validate evaluators*
 
 Further reading:
 
-- [He et al. 2026](/sources/ai-foundations/alignment-and-society/he-2026-beyond-human-measure.pdf.enc), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
-- [Raschka 2025](/sources/llms/models-and-training/raschka-2025-build-a-reasoning-model-from-scratch-meap-v2.pdf.enc), *Build a Reasoning Model (From Scratch)*
-- [Reiter 2025](/sources/nlp/foundations/reiter-2025-natural-language-generation.pdf.enc), *Natural Language Generation* ([doi:10.1007/978-3-031-68582-8](https://doi.org/10.1007/978-3-031-68582-8))
+- [He et al. 2026](/sources/ec007122245e7e5a9574334e98c5c4e5.bin), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
+- [Raschka 2025](/sources/f3150de6e11ff0d18db1eae975db2f98.bin), *Build a Reasoning Model (From Scratch)*
+- [Reiter 2025](/sources/75150fd51c9544e19f3ae64bd809970c.bin), *Natural Language Generation* ([doi:10.1007/978-3-031-68582-8](https://doi.org/10.1007/978-3-031-68582-8))

@@ -400,10 +400,10 @@ Avoid re-explaining the AI risk overlay unless a finding materially changes the 
 ## Library sources
 
 
-- [Felin and Zenger 2016](/sources/thinking-and-learning/problem-solving/felin-2016-strategy-problems-theory-for-the-firm.pdf.enc), *Strategy, Problems and a Theory for the Firm* ([doi:10.1287/orsc.2015.1022](https://doi.org/10.1287/orsc.2015.1022)) -- on *2. Problem-selection authority*
+- [Felin and Zenger 2016](/sources/c00ebdda191231e7a65cb81f50f4c914.bin), *Strategy, Problems and a Theory for the Firm* ([doi:10.1287/orsc.2015.1022](https://doi.org/10.1287/orsc.2015.1022)) -- on *2. Problem-selection authority*
 
 Further reading:
 
-- [Hunt 2008](/sources/thinking-and-learning/learning/hunt-2008-pragmatic-thinking-and-learning.pdf.enc), *Pragmatic Thinking and Learning: Refactor Your "Wetware"*
-- [Hurteau and Archibald 2023](/sources/thinking-and-learning/learning/hurteau-2023-practical-wisdom-ethical-evaluation-practice-extract.pdf.enc), *Practical Wisdom for an Ethical Evaluation Practice*
-- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow*
+- [Hunt 2008](/sources/1c7410a153213be2e56be59013ed654c.bin), *Pragmatic Thinking and Learning: Refactor Your "Wetware"*
+- [Hurteau and Archibald 2023](/sources/48eb0deb2d3b3ec1ba8ce533bace8c31.bin), *Practical Wisdom for an Ethical Evaluation Practice*
+- [Kahneman 2011](/sources/6b0f64ff483334496619f7f55334a949.bin), *Thinking, Fast and Slow*

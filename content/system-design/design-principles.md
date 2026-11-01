@@ -55,13 +55,13 @@ See the [resource catalog]({{< ref "system-design/resources" >}}) for more cours
 ## Library sources
 
 
-- [Malan 2024](/sources/software-engineering/architecture/malan-2024-system-design-and-software-architecture.pdf.enc), *System Design and Software Architecture* -- on *System Design Principles*
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- on *Models and further reading*
+- [Malan 2024](/sources/03dc32f4732b19bc4efbd0397d834ee8.bin), *System Design and Software Architecture* -- on *System Design Principles*
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design* -- on *Models and further reading*
 
 Further reading:
 
-- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture*
-- [Dragoni et al. 2017](/sources/software-engineering/architecture/dragoni-2017-microservices-yesterday-today-tomorrow.pdf.enc), *Microservices: yesterday, today, and tomorrow* ([arXiv:1606.04036](https://arxiv.org/abs/1606.04036))
-- [Shahin et al. 2014](/sources/software-engineering/architecture/shahin-2014-software-architecture-visualization-techniques.pdf.enc), *A systematic review of software architecture visualization techniques* ([doi:10.1016/j.jss.2014.03.071](https://doi.org/10.1016/j.jss.2014.03.071))
-- [Beck 2023](/sources/software-engineering/craft/beck-2023-tidy-first.pdf.enc), *Tidy First? A Personal Exercise in Empirical Software Design*
-- [Montalion 2024](/sources/thinking-and-learning/systems-thinking/montalion-2024-learning-systems-thinking.pdf.enc), *Learning Systems Thinking*
+- [Brown 2026](/sources/98db09f724a7584933b9628fbab6dd54.bin), *The C4 Model: Visualizing Software Architecture*
+- [Dragoni et al. 2017](/sources/08a96eab194a02c3a45d2dff355561ee.bin), *Microservices: yesterday, today, and tomorrow* ([arXiv:1606.04036](https://arxiv.org/abs/1606.04036))
+- [Shahin et al. 2014](/sources/01d5f2119350ceab0319f4458392fb35.bin), *A systematic review of software architecture visualization techniques* ([doi:10.1016/j.jss.2014.03.071](https://doi.org/10.1016/j.jss.2014.03.071))
+- [Beck 2023](/sources/ae99c238fe03cba552ab952028d77230.bin), *Tidy First? A Personal Exercise in Empirical Software Design*
+- [Montalion 2024](/sources/4e131c4b627c9e4081b5866388a1ecc2.bin), *Learning Systems Thinking*

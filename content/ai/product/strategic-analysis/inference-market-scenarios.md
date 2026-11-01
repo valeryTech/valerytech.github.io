@@ -560,7 +560,7 @@ So for planning purposes, my central expectation is: **by 2027, model intelligen
 ## Library sources
 
 
-- [Kleijnen 2015](/sources/research-methods/modeling-and-simulation/kleijnen-2015-design-and-analysis-of-simulation-experiments.pdf.enc), *Design and Analysis of Simulation Experiments*
-- [Kleijnen 2017](/sources/research-methods/modeling-and-simulation/kleijnen-2017-design-analysis-simulation-experiments-tutorial.pdf.enc), *Design and Analysis of Simulation Experiments: Tutorial*
-- [Law 2015](/sources/research-methods/modeling-and-simulation/law-2015-simulation-modeling-and-analysis.pdf.enc), *Simulation Modeling and Analysis*
-- [Sokolowski and Banks 2010](/sources/research-methods/modeling-and-simulation/sokolowski-2010-modeling-and-simulation-fundamentals.pdf.enc), *Modeling and Simulation Fundamentals*
+- [Kleijnen 2015](/sources/2c89f046a52d2e85ede95ab9d14e7d5d.bin), *Design and Analysis of Simulation Experiments*
+- [Kleijnen 2017](/sources/87d913cc449f69dd1c37378e4ae13163.bin), *Design and Analysis of Simulation Experiments: Tutorial*
+- [Law 2015](/sources/3ef5fb54e49bef02423e3394c86b37d4.bin), *Simulation Modeling and Analysis*
+- [Sokolowski and Banks 2010](/sources/f13f1b6f187be60e7114cbb535b2d740.bin), *Modeling and Simulation Fundamentals*

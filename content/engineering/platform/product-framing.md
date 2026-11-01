@@ -193,5 +193,5 @@ The [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop"
 ## Library sources
 
 
-- [Fournier and Nowland 2025](/sources/software-engineering/systems-and-operations/fournier-2025-platform-engineering.pdf.enc), *Platform Engineering: A Guide for Technical, Product, and People Leaders* -- platform as a product, stakeholder relationships, and alignment
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering* -- chapter 3, on the organizational changes a platform needs and how to scope it
+- [Fournier and Nowland 2025](/sources/3c79e44be07e3bb68b2346dc79796c36.bin), *Platform Engineering: A Guide for Technical, Product, and People Leaders* -- platform as a product, stakeholder relationships, and alignment
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- chapter 3, on the organizational changes a platform needs and how to scope it

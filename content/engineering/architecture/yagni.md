@@ -64,6 +64,6 @@ This article provides context about yagni
 ## Library sources
 
 
-- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
-- [Doglio 2022](/sources/software-engineering/craft/doglio-2022-skills-of-successful-software-engineer.pdf.enc), *Skills of a Successful Software Engineer*
-- [Gruhn and Striemer 2018](/sources/software-engineering/process-and-agile/gruhn-2018-essence-of-software-engineering.pdf.enc), *The Essence of Software Engineering* ([doi:10.1007/978-3-319-73897-0](https://doi.org/10.1007/978-3-319-73897-0))
+- [Abrahamsson et al. 2010](/sources/edea986f585230de4a92ace2a66936f2.bin), *Agility and Architecture*
+- [Doglio 2022](/sources/da23ec77d033d9252f2b28867e508de7.bin), *Skills of a Successful Software Engineer*
+- [Gruhn and Striemer 2018](/sources/73b070633ea142b1aac0adae84164891.bin), *The Essence of Software Engineering* ([doi:10.1007/978-3-319-73897-0](https://doi.org/10.1007/978-3-319-73897-0))

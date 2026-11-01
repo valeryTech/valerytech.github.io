@@ -54,5 +54,5 @@ The framework also helps teams decide:
 ## Library sources
 
 
-- [Moshkovich et al. 2025](/sources/ai-engineering/evaluation/moshkovich-2025-beyond-black-box-benchmarking.pdf.enc), *Beyond Black-Box Benchmarking* ([arXiv:2503.06745](https://arxiv.org/abs/2503.06745))
-- [Moshkovich and Zeltyn 2025](/sources/ai-engineering/observability/moshkovich-2025-taming-uncertainty-via-automation.pdf.enc), *Taming Uncertainty via Automation* ([arXiv:2507.11277](https://arxiv.org/abs/2507.11277))
+- [Moshkovich et al. 2025](/sources/8c072306d90aa736730074efc3876e0a.bin), *Beyond Black-Box Benchmarking* ([arXiv:2503.06745](https://arxiv.org/abs/2503.06745))
+- [Moshkovich and Zeltyn 2025](/sources/0e8f2cfa0a4d162889e4e0eb14c11b3b.bin), *Taming Uncertainty via Automation* ([arXiv:2507.11277](https://arxiv.org/abs/2507.11277))

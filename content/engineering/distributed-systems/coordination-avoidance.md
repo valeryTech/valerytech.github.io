@@ -237,17 +237,17 @@ DDIA's framing of the trade-off: consistency conflates timeliness, which eventua
 ## Library sources
 
 
-- [Gotsman et al. 2016](/sources/system-design/distributed-systems/gotsman-2016-cause-im-strong-enough-consistency-choices.pdf.enc), *'Cause I'm Strong Enough* ([doi:10.1145/2837614.2837625](https://doi.org/10.1145/2837614.2837625)) -- sections 2, 4, and 6 on *Synchronizing only the operations that conflict*; section 2 on *Convergence*
-- [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems*, second edition -- chapter 11 on *Why avoid coordination*, *Convergence*, *CRDTs*, *Which programs need no coordination: CALM*, and the COPS durability window in *What is given up*
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications*, second edition -- chapter 6 on *Resolving conflicts*, *Collaborative editing: OT and CRDTs*, and *Local-first software and sync engines*; chapter 10 and chapter 13 on *What is given up*
-- [Kleppmann 2015](/sources/system-design/distributed-systems/kleppmann-2015-critique-of-the-cap-theorem.pdf.enc), *A Critique of the CAP Theorem* ([arXiv:1509.05393](https://arxiv.org/abs/1509.05393)) -- section 4 on *Why avoid coordination*
-- [Burckhardt 2014](/sources/system-design/distributed-systems/burckhardt-2014-principles-of-eventual-consistency-excerpt.pdf.enc), *Principles of Eventual Consistency*, excerpt ([doi:10.1561/2500000011](https://doi.org/10.1561/2500000011)) -- chapter 1 on *Why avoid coordination* and *Convergence*
-- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- sections 2.3 and 4.4, and section 6 (reconciliation modes and 6.3 on divergent versions) on *Resolving conflicts*
+- [Gotsman et al. 2016](/sources/59710f6d9572a0a505cc420ab5f77304.bin), *'Cause I'm Strong Enough* ([doi:10.1145/2837614.2837625](https://doi.org/10.1145/2837614.2837625)) -- sections 2, 4, and 6 on *Synchronizing only the operations that conflict*; section 2 on *Convergence*
+- [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems*, second edition -- chapter 11 on *Why avoid coordination*, *Convergence*, *CRDTs*, *Which programs need no coordination: CALM*, and the COPS durability window in *What is given up*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications*, second edition -- chapter 6 on *Resolving conflicts*, *Collaborative editing: OT and CRDTs*, and *Local-first software and sync engines*; chapter 10 and chapter 13 on *What is given up*
+- [Kleppmann 2015](/sources/163a59f55b2a55b55d2b612b4b906d03.bin), *A Critique of the CAP Theorem* ([arXiv:1509.05393](https://arxiv.org/abs/1509.05393)) -- section 4 on *Why avoid coordination*
+- [Burckhardt 2014](/sources/7abc015740f3cc14b1ac9e64ffc75719.bin), *Principles of Eventual Consistency*, excerpt ([doi:10.1561/2500000011](https://doi.org/10.1561/2500000011)) -- chapter 1 on *Why avoid coordination* and *Convergence*
+- [DeCandia et al. 2007](/sources/da9436e162d5abe60df8b9ef9e4993ea.bin), *Dynamo: Amazon's Highly Available Key-value Store* -- sections 2.3 and 4.4, and section 6 (reconciliation modes and 6.3 on divergent versions) on *Resolving conflicts*
 - Educative 2023: concurrency in collaborative editing, *Grokking Modern System Design Interview* -- *Collaborative editing: OT and CRDTs*
-- [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 9 on *Convergence* and the two CRDT variants
-- [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- chapter 11 on the CRDT examples in *CRDTs*
+- [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems* -- chapter 9 on *Convergence* and the two CRDT variants
+- [Petrov 2019](/sources/611239aecf452fc6fb065bb3088b0326.bin), *Database Internals* -- chapter 11 on the CRDT examples in *CRDTs*
 
 Further reading:
 
 - Educative 2023: evaluation of Google Docs' design, *Grokking Modern System Design Interview* -- why the design orders edits through a centralized, replicated operations queue
-- [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- chapter 12, anti-entropy: read repair, hinted handoff, Merkle trees, and gossip, the delivery side of state-based replication
+- [Petrov 2019](/sources/611239aecf452fc6fb065bb3088b0326.bin), *Database Internals* -- chapter 12, anti-entropy: read repair, hinted handoff, Merkle trees, and gossip, the delivery side of state-based replication

@@ -395,9 +395,9 @@ See Panel Organization at discussion setup
 ## Library sources
 
 
-- [Mailach et al. 2024](/sources/ai-engineering/practice/mailach-2024-themes-of-building-llm-applications-for-production.pdf.enc), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
-- [Ben Allal et al. 2025](/sources/llms/models-and-training/ben-allal-2025-smol-training-playbook.pdf.enc), *The Smol Training Playbook: The Secrets to Building World-Class LLMs*
-- [Chen et al. 2022](/sources/ml-engineering/books/chen-2022-reliable-machine-learning.pdf.enc), *Reliable Machine Learning*
-- [García 2024](/sources/ml-engineering/books/garcia-2024-full-stack-ml-engineer-handbook.pdf.enc), *Full Stack ML Engineer Handbook*
-- [Wilson 2022](/sources/ml-engineering/books/wilson-2022-machine-learning-engineering-in-action.pdf.enc), *Machine Learning Engineering in Action*
-- [Potanin et al. 2025](/sources/ml-engineering/se-for-ml/potanin-2025-data-science-competence-framework.pdf.enc), *Towards a Standardized Data Science Competence Framework* ([doi:10.5220/0013364200003932](https://doi.org/10.5220/0013364200003932))
+- [Mailach et al. 2024](/sources/74f1445f7b7d75eef262100f2e5ea5a0.bin), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
+- [Ben Allal et al. 2025](/sources/f81b0590c2e49da9317f6b527a082547.bin), *The Smol Training Playbook: The Secrets to Building World-Class LLMs*
+- [Chen et al. 2022](/sources/47ceee67b833f35bfb3326fe787cd451.bin), *Reliable Machine Learning*
+- [García 2024](/sources/679da4a24c9edde76cde4fb25fc5b283.bin), *Full Stack ML Engineer Handbook*
+- [Wilson 2022](/sources/baecdf79a3ee8600d991cc23b65c3b8a.bin), *Machine Learning Engineering in Action*
+- [Potanin et al. 2025](/sources/51692fe06ce63791659a90bef31b58af.bin), *Towards a Standardized Data Science Competence Framework* ([doi:10.5220/0013364200003932](https://doi.org/10.5220/0013364200003932))

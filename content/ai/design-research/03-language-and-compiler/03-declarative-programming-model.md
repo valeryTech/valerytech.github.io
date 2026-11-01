@@ -515,4 +515,4 @@ There is a growing trend of treating prompts as the primary source of truth. A w
 ## Library sources
 
 
-- [Wang et al. 2026](/sources/ai-engineering/harness/wang-2026-agentspex-agent-specification-execution-language.pdf.enc), *AgentSPEX: An Agent SPecification and EXecution Language* ([arXiv:2604.13346](https://arxiv.org/abs/2604.13346))
+- [Wang et al. 2026](/sources/987a0801641b20eb5023491ad849f027.bin), *AgentSPEX: An Agent SPecification and EXecution Language* ([arXiv:2604.13346](https://arxiv.org/abs/2604.13346))

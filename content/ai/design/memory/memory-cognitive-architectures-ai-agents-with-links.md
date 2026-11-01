@@ -91,7 +91,7 @@ The categories are therefore not one clean hierarchy:
 | Procedural memory | How do I perform an action or skill? | Rules, policies, reusable plans, skills | Current LLM literature sometimes calls textual "lessons" procedural memory even though they still require explicit interpretation. ([act-r-overview](https://act-r.psy.cmu.edu/)) |
 | Long-term memory | What persists beyond the current processing episode? | External store, graph, model weights | It is a duration category, not a single representational format. ([baddeley-working-memory-review-2012](https://doi.org/10.1146/annurev-psych-120710-100422)) |
 
-This matters because modern papers routinely reuse the terms while changing their computational meaning. The recent broad survey *Memory in the Age of AI Agents* argues that traditional short-term/long-term terminology alone is inadequate and instead examines memory in terms of **form, function, and dynamics**, including token-level, parametric and latent forms and factual, experiential and working functions. ([hu-memory-in-the-age-of-ai-agents-2025](https://arxiv.org/abs/2512.13564) ([PDF](/sources/ai-engineering/agents/hu-2025-memory-in-the-age-of-ai-agents.pdf.enc)); [hu-memory-in-the-age-of-ai-agents-2025-secondary-source](https://arxiv.org/abs/2512.13564))
+This matters because modern papers routinely reuse the terms while changing their computational meaning. The recent broad survey *Memory in the Age of AI Agents* argues that traditional short-term/long-term terminology alone is inadequate and instead examines memory in terms of **form, function, and dynamics**, including token-level, parametric and latent forms and factual, experiential and working functions. ([hu-memory-in-the-age-of-ai-agents-2025](https://arxiv.org/abs/2512.13564) ([PDF](/sources/701cfbbf6d7dddae4008b3c9c5af702b.bin)); [hu-memory-in-the-age-of-ai-agents-2025-secondary-source](https://arxiv.org/abs/2512.13564))
 
 ### Newell and the architectural tradition
 
@@ -104,7 +104,7 @@ Soar emerged from this program. Laird's definitive book describes Soar simultane
 
 ACT-R approaches the same objective with somewhat different commitments. Its official description divides memory into **declarative memory**, containing factual chunks, and **procedural memory**, containing productions. Buffers expose current module state, while subsymbolic equations influence retrieval latency and production selection. Thus ACT-R is deliberately both symbolic and quantitative. ([act-r-overview](https://act-r.psy.cmu.edu/))
 
-The architecture literature remained broad. Kotseruba and Tsotsos' review of roughly four decades of cognitive architectures examines memory alongside perception, attention, action selection, learning, reasoning and metareasoning, illustrating why "memory" historically sits inside a larger account of cognition rather than existing as an isolated database service. ([kotseruba-tsotsos-40-years-cognitive-architectures-2020](https://doi.org/10.1007/s10462-018-9646-y) ([PDF](/sources/ai-foundations/cognition-and-mind/kotseruba-2020-40-years-of-cognitive-architectures.pdf.enc)); [kotseruba-tsotsos-2020-secondary-source](https://doi.org/10.1007/s10462-018-9646-y))
+The architecture literature remained broad. Kotseruba and Tsotsos' review of roughly four decades of cognitive architectures examines memory alongside perception, attention, action selection, learning, reasoning and metareasoning, illustrating why "memory" historically sits inside a larger account of cognition rather than existing as an isolated database service. ([kotseruba-tsotsos-40-years-cognitive-architectures-2020](https://doi.org/10.1007/s10462-018-9646-y) ([PDF](/sources/dbc8fc8d10a0d4d51a43964e61c1482f.bin)); [kotseruba-tsotsos-2020-secondary-source](https://doi.org/10.1007/s10462-018-9646-y))
 
 ### Why memory is architectural without implying consciousness
 
@@ -857,16 +857,16 @@ That design takes the most useful idea from the human-memory analogy--the separa
 ## Library sources
 
 
-- [Baddeley et al. 2020](/sources/ai-foundations/cognition-and-mind/baddeley-2020-memory.pdf.enc), *Memory*
-- [Klinzing et al. 2019](/sources/ai-foundations/cognition-and-mind/klinzing-2019-memory-consolidation-during-sleep.pdf.enc), *Mechanisms of systems memory consolidation during sleep* ([doi:10.1038/s41593-019-0467-3](https://doi.org/10.1038/s41593-019-0467-3))
-- [Sumers et al. 2024](/sources/ai-foundations/cognition-and-mind/sumers-2024-cognitive-architectures-for-language-agents.pdf.enc), *Cognitive Architectures for Language Agents*
+- [Baddeley et al. 2020](/sources/b130452e34ab0be753e894e35327f6af.bin), *Memory*
+- [Klinzing et al. 2019](/sources/a6c2d7c0802713576787b88c257ae19d.bin), *Mechanisms of systems memory consolidation during sleep* ([doi:10.1038/s41593-019-0467-3](https://doi.org/10.1038/s41593-019-0467-3))
+- [Sumers et al. 2024](/sources/979eab1fc41b7066edf51770802bf09d.bin), *Cognitive Architectures for Language Agents*
 
 Further reading:
 
-- [Butlin et al. 2023](/sources/ai-foundations/cognition-and-mind/butlin-2023-consciousness-in-ai.pdf.enc), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
-- [Nolte et al. 2026](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
-- [Rosenbloom 2026](/sources/ai-foundations/cognition-and-mind/rosenbloom-2026-on-minds.pdf.enc), *On Minds: Reflections of a Cognitive Architect*
-- [Schwieter and Wen 2022](/sources/ai-foundations/cognition-and-mind/schwieter-2022-cambridge-handbook-of-working-memory-and-language.pdf.enc), *The Cambridge Handbook of Working Memory and Language* ([doi:10.1017/9781108955638](https://doi.org/10.1017/9781108955638))
-- [Thagard 2012](/sources/ai-foundations/cognition-and-mind/thagard-2012-cognitive-architectures.pdf.enc), *Cognitive Architectures*
-- [Vernon 2016](/sources/ai-foundations/cognition-and-mind/vernon-2016-two-ways-not-to-design-a-cognitive-architecture.pdf.enc), *Two Ways (Not) To Design a Cognitive Architecture*
-- [Vernon 2022](/sources/ai-foundations/cognition-and-mind/vernon-2022-cognitive-architectures.pdf.enc), *Cognitive Architectures*
+- [Butlin et al. 2023](/sources/77152ec24a9faa18a9649747b7c776f1.bin), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
+- [Nolte et al. 2026](/sources/2af58406e13e42072bca886ec3caf534.bin), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
+- [Rosenbloom 2026](/sources/5e6885b52d78bbf3ebdd3ffab9476a98.bin), *On Minds: Reflections of a Cognitive Architect*
+- [Schwieter and Wen 2022](/sources/ead1fef4c544e8e31cb255f2f93b0465.bin), *The Cambridge Handbook of Working Memory and Language* ([doi:10.1017/9781108955638](https://doi.org/10.1017/9781108955638))
+- [Thagard 2012](/sources/d692f57ff2ea34885a414e01ad02558f.bin), *Cognitive Architectures*
+- [Vernon 2016](/sources/55db5d6e8f3e6e7df9afa841bb9522cd.bin), *Two Ways (Not) To Design a Cognitive Architecture*
+- [Vernon 2022](/sources/05cca9881c47a3d320c525ad096490c1.bin), *Cognitive Architectures*

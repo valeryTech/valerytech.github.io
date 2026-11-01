@@ -75,4 +75,4 @@ The product questions above are engineering applications of these distinctions. 
 ## Library sources
 
 
-- [Cruse 2000](/sources/language/linguistics/cruse-2000-meaning-in-language.pdf.enc), *Meaning in Language: An Introduction to Semantics and Pragmatics*
+- [Cruse 2000](/sources/b8cd05a237ebbb2f4d5aa6c96f77701e.bin), *Meaning in Language: An Introduction to Semantics and Pragmatics*

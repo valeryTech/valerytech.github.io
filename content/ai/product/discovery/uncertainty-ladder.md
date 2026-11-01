@@ -276,12 +276,12 @@ Hamel Husain on why feature roadmaps fail for AI ([source](https://hamel.dev/blo
 ## Library sources
 
 
-- [Nahar et al. 2023](/sources/ml-engineering/se-for-ml/nahar-2023-meta-summary-challenges-ml-products.pdf.enc), *A Meta-Summary of Challenges in Building Products with ML Components* ([arXiv:2304.00078](https://arxiv.org/abs/2304.00078)) -- on *Organizational mismatch*
+- [Nahar et al. 2023](/sources/363cf81c2011feb365f56d432d8a5665.bin), *A Meta-Summary of Challenges in Building Products with ML Components* ([arXiv:2304.00078](https://arxiv.org/abs/2304.00078)) -- on *Organizational mismatch*
 
 Further reading:
 
-- [Mohsin et al. 2025](/sources/ai-foundations/capabilities-and-measurement/mohsin-2025-fundamental-limits-of-llms-at-scale.pdf.enc), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
-- [Pita 2026](/sources/ai-foundations/capabilities-and-measurement/pita-2026-correct-codes-wrong-reasons.pdf.enc), *Correct codes for the wrong reasons? Validating LLMs as measurement instruments for theoretical constructs* ([arXiv:2606.28574](https://arxiv.org/abs/2606.28574))
-- [Shojaee et al. 2025](/sources/ai-foundations/capabilities-and-measurement/shojaee-2025-illusion-of-thinking.pdf.enc), *The Illusion of Thinking*
-- [Kalinowski et al. 2024](/sources/ml-engineering/se-for-ml/kalinowski-2024-naming-the-pain-ml-enabled-systems.pdf.enc), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
-- [Popper 1959](/sources/research-methods/philosophy-of-science/popper-1959-logic-of-scientific-discovery.pdf.enc), *The Logic of Scientific Discovery*
+- [Mohsin et al. 2025](/sources/52ba2872a178acfd074f7a58fbc37efa.bin), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
+- [Pita 2026](/sources/e927379435f1073f97f490f01b8bffcf.bin), *Correct codes for the wrong reasons? Validating LLMs as measurement instruments for theoretical constructs* ([arXiv:2606.28574](https://arxiv.org/abs/2606.28574))
+- [Shojaee et al. 2025](/sources/a1b801eb54f7be4be97bca840d16bb64.bin), *The Illusion of Thinking*
+- [Kalinowski et al. 2024](/sources/a448e14caac8d1967dd9b92204d44a65.bin), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
+- [Popper 1959](/sources/c68fa1c135c0f988c39d2624f0a61097.bin), *The Logic of Scientific Discovery*

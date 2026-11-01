@@ -1376,6 +1376,6 @@ The model can therefore be summarised as:
 ## Library sources
 
 
-- [Xia et al. 2024](/sources/ai-engineering/evaluation/xia-2024-evaluation-driven-development-and-operations-of-llm-agents.pdf.enc), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768)) -- on *2. Why AI product improvement requires continuous feedback*
-- [Huyen 2022](/sources/ml-engineering/books/huyen-2022-designing-machine-learning-systems.pdf.enc), *Designing Machine Learning Systems* -- on *11. Offline and online execution planes*
-- [Murphy and Underwood 2025](/sources/ml-engineering/mlops/murphy-2025-unsolved-problems-in-mlops.pdf.enc), *Unsolved Problems in MLOps* -- on *11. Offline and online execution planes*
+- [Xia et al. 2024](/sources/b06b0ce219cd90ae62a1cfdfefcd159b.bin), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768)) -- on *2. Why AI product improvement requires continuous feedback*
+- [Huyen 2022](/sources/5bbe42519087c94b06ff1a96c39c6566.bin), *Designing Machine Learning Systems* -- on *11. Offline and online execution planes*
+- [Murphy and Underwood 2025](/sources/ef367e86799f257cbc6954868ca0c06f.bin), *Unsolved Problems in MLOps* -- on *11. Offline and online execution planes*

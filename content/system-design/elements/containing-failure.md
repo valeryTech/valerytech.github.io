@@ -82,11 +82,11 @@ A fallback is the control most worth testing this way, because it rarely runs ot
 ## Library sources
 
 
-- [Nygard 2018](/sources/software-engineering/systems-and-operations/nygard-2018-release-it-2nd-edition.pdf.enc), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- part I; chapter 17 on *Testing the controls*
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapter 12
+- [Nygard 2018](/sources/f9167fa26feb869b87a7f0bc4edbc9b3.bin), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- part I; chapter 17 on *Testing the controls*
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapter 12
 
 Further reading:
 
-- [Woods 2015](/sources/software-engineering/systems-and-operations/woods-2015-four-concepts-for-resilience.pdf.enc), *Four Concepts for Resilience and the Implications for the Future of Resilience Engineering* ([doi:10.1016/j.ress.2015.03.018](https://doi.org/10.1016/j.ress.2015.03.018))
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-reducing-scope-of-impact-cell-based-architecture.pdf.enc), *Reducing the Scope of Impact with Cell-Based Architecture*
-- [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapter 3
+- [Woods 2015](/sources/4c79054ed157b9e8c9b4d69e9b7a8ae8.bin), *Four Concepts for Resilience and the Implications for the Future of Resilience Engineering* ([doi:10.1016/j.ress.2015.03.018](https://doi.org/10.1016/j.ress.2015.03.018))
+- [AWS 2024](/sources/7e7195dd160b0a64fe44c392ec32afaa.bin), *Reducing the Scope of Impact with Cell-Based Architecture*
+- [Richardson 2019](/sources/cdfacd78fbf9383e0e2361fff5f38b30.bin), *Microservices Patterns: With Examples in Java* -- chapter 3

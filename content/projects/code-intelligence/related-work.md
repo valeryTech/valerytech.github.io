@@ -189,11 +189,11 @@ Comparisons and benchmarks:
 ## Library sources
 
 
-- [Peng et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/peng-2025-graph-rag-survey.pdf.enc), *Graph Retrieval-Augmented Generation: A Survey* ([doi:10.1145/3777378](https://doi.org/10.1145/3777378))
-- [Anonymous 2025](/sources/retrieval-and-knowledge/rag/anonymous-2025-practical-code-rag-at-scale.pdf.enc), *Practical Code RAG at Scale* -- on *Comparisons of structure, text and grep*
+- [Peng et al. 2025](/sources/537425a77dd3f372821ce85a2526e10e.bin), *Graph Retrieval-Augmented Generation: A Survey* ([doi:10.1145/3777378](https://doi.org/10.1145/3777378))
+- [Anonymous 2025](/sources/30cb49de449fbee8fd7c2c4e3a1311da.bin), *Practical Code RAG at Scale* -- on *Comparisons of structure, text and grep*
 
 Further reading:
 
-- [Bratanic and Hane 2025](/sources/retrieval-and-knowledge/knowledge-graphs/bratanic-2025-essential-graphrag.pdf.enc), *Essential GraphRAG: Knowledge Graph-Enhanced RAG*
-- [Hu et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/hu-2025-grag-graph-retrieval-augmented-generation.pdf.enc), *GRAG: Graph Retrieval-Augmented Generation*
-- [Zhang et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/zhang-2025-survey-graph-rag-customized-llms.pdf.enc), *A Survey of Graph Retrieval-Augmented Generation for Customized Large Language Models* ([arXiv:2501.13958](https://arxiv.org/abs/2501.13958))
+- [Bratanic and Hane 2025](/sources/9c476df46acc9991d16226fcd86857e2.bin), *Essential GraphRAG: Knowledge Graph-Enhanced RAG*
+- [Hu et al. 2025](/sources/f8cd141d3908871de16bdaa38e2ad3a7.bin), *GRAG: Graph Retrieval-Augmented Generation*
+- [Zhang et al. 2025](/sources/ea32e0e3c0e5eb9ab159774adfa30e0a.bin), *A Survey of Graph Retrieval-Augmented Generation for Customized Large Language Models* ([arXiv:2501.13958](https://arxiv.org/abs/2501.13958))

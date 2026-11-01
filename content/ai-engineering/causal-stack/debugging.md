@@ -76,9 +76,9 @@ Finish with a decision: fix, narrow supported scope, keep investigating, accept 
 ## Library sources
 
 
-- [Huang et al. 2023](/sources/ai-engineering/failures/huang-2023-survey-on-hallucination-in-llms.pdf.enc), *A Survey on Hallucination in Large Language Models* ([arXiv:2311.05232](https://arxiv.org/abs/2311.05232))
-- [Lin et al. 2025](/sources/ai-engineering/failures/lin-2025-llm-agents-hallucinations-survey.pdf.enc), *LLM-based Agents Suffer from Hallucinations* ([arXiv:2509.18970](https://arxiv.org/abs/2509.18970))
-- [Ma et al. 2025](/sources/ai-engineering/failures/ma-2025-diagnosing-failure-root-causes-in-agentic-systems.pdf.enc), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735))
-- [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370))
-- [Card 2017](/sources/thinking-and-learning/problem-solving/card-2017-problem-with-5-whys.pdf.enc), *The problem with "5 whys"* ([doi:10.1136/bmjqs-2016-005849](https://doi.org/10.1136/bmjqs-2016-005849))
-- [Leveson 2011](/sources/thinking-and-learning/systems-thinking/leveson-2011-applying-systems-thinking-analyze-events.pdf.enc), *Applying Systems Thinking to Analyze and Learn from Events* ([doi:10.1016/j.ssci.2009.12.021](https://doi.org/10.1016/j.ssci.2009.12.021))
+- [Huang et al. 2023](/sources/6e9cd984736f39e4b45df0660d4254f8.bin), *A Survey on Hallucination in Large Language Models* ([arXiv:2311.05232](https://arxiv.org/abs/2311.05232))
+- [Lin et al. 2025](/sources/52025ac74c2419770ceb4b6df4045974.bin), *LLM-based Agents Suffer from Hallucinations* ([arXiv:2509.18970](https://arxiv.org/abs/2509.18970))
+- [Ma et al. 2025](/sources/357f048f04984be0de2d677e589887ac.bin), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735))
+- [Zhu et al. 2025](/sources/0dbf97dfec54cf734dbaafd41e119a5c.bin), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370))
+- [Card 2017](/sources/a9c34fbeef291346c3ef11f80b0cae89.bin), *The problem with "5 whys"* ([doi:10.1136/bmjqs-2016-005849](https://doi.org/10.1136/bmjqs-2016-005849))
+- [Leveson 2011](/sources/38f382e026b8c2eef1e11425a0c19c7f.bin), *Applying Systems Thinking to Analyze and Learn from Events* ([doi:10.1016/j.ssci.2009.12.021](https://doi.org/10.1016/j.ssci.2009.12.021))

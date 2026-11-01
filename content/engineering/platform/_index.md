@@ -52,15 +52,15 @@ The [control plane and data plane]({{< ref "system-design/elements/control-plane
 ## Library sources
 
 
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering*
-- [Fournier and Nowland 2025](/sources/software-engineering/systems-and-operations/fournier-2025-platform-engineering.pdf.enc), *Platform Engineering: A Guide for Technical, Product, and People Leaders*
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering*
+- [Fournier and Nowland 2025](/sources/3c79e44be07e3bb68b2346dc79796c36.bin), *Platform Engineering: A Guide for Technical, Product, and People Leaders*
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*
 - AI agent platform book, *O'Reilly early release, chapters 1-7* -- an internal platform for AI applications and agents; chapter 2 defines a platform and lists its anti-patterns and success factors
 
 Further reading:
 
-- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, release engineering
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-reducing-scope-of-impact-cell-based-architecture.pdf.enc), *Reducing the Scope of Impact with Cell-Based Architecture* -- control plane and data plane, and static stability
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-well-architected-container-build-lens.pdf.enc), *Container Build Lens (AWS Well-Architected Framework)* -- container build and CI/CD pipelines
-- [Berberi et al. 2025](/sources/ml-engineering/mlops/berberi-2025-mlops-landscape-platforms-tools.pdf.enc), *Machine learning operations landscape: platforms and tools* ([doi:10.1007/s10462-025-11164-3](https://doi.org/10.1007/s10462-025-11164-3)) -- 16 MLOps platforms assessed by feature and adoption, with a decision flowchart
-- [Faubel and Schmid 2024](/sources/ml-engineering/mlops/faubel-2024-systematic-analysis-mlops-features-platforms.pdf.enc), *A Systematic Analysis of MLOps Features and Platforms* ([doi:10.64552/wipiec.v10i2.73](https://doi.org/10.64552/wipiec.v10i2.73)) -- MLOps platforms as an architectural design space; work in progress
+- [Beyer et al. 2016](/sources/66e3d117bdfddedf20fc8fa46d6753b0.bin), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, release engineering
+- [AWS 2024](/sources/7e7195dd160b0a64fe44c392ec32afaa.bin), *Reducing the Scope of Impact with Cell-Based Architecture* -- control plane and data plane, and static stability
+- [AWS 2024](/sources/888786943005255f919192cab2e45684.bin), *Container Build Lens (AWS Well-Architected Framework)* -- container build and CI/CD pipelines
+- [Berberi et al. 2025](/sources/f56b8454c88db743347ed2fec4565baa.bin), *Machine learning operations landscape: platforms and tools* ([doi:10.1007/s10462-025-11164-3](https://doi.org/10.1007/s10462-025-11164-3)) -- 16 MLOps platforms assessed by feature and adoption, with a decision flowchart
+- [Faubel and Schmid 2024](/sources/55b106ef70f4f319564b76561a087eff.bin), *A Systematic Analysis of MLOps Features and Platforms* ([doi:10.64552/wipiec.v10i2.73](https://doi.org/10.64552/wipiec.v10i2.73)) -- MLOps platforms as an architectural design space; work in progress

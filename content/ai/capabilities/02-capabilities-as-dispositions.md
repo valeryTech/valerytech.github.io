@@ -7,7 +7,7 @@ weight: "20"
 linkTitle: "Dispositions"
 ---
 
-The first answer to [what a capability claim says]({{< ref "ai/capabilities/01-what-is-a-capability-claim" >}}) is to name the kind of property involved. Voudouris et al. propose that capabilities and propensities are **dispositions**. ([Voudouris et al. 2026](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §2)
+The first answer to [what a capability claim says]({{< ref "ai/capabilities/01-what-is-a-capability-claim" >}}) is to name the kind of property involved. Voudouris et al. propose that capabilities and propensities are **dispositions**. ([Voudouris et al. 2026](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §2)
 
 ## Terms
 
@@ -105,6 +105,6 @@ If capabilities are dispositions, then evaluation has to infer something about u
 ## Library sources
 
 
-- [Aimar 2019](/sources/ai-foundations/capabilities-and-measurement/aimar-2019-disposition-ascriptions.pdf.enc), *Disposition ascriptions* ([doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9))
-- [Millière 2024](/sources/language/language-and-llms/milliere-2024-language-models-as-models-of-language.pdf.enc), *Language Models as Models of Language* ([arXiv:2408.07144](https://arxiv.org/abs/2408.07144))
-- [Chomsky 1965](/sources/language/linguistics/chomsky-1965-aspects-of-the-theory-of-syntax.pdf.enc), *Aspects of the Theory of Syntax*
+- [Aimar 2019](/sources/666e59fd95c8b7ae1add31356724b4ff.bin), *Disposition ascriptions* ([doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9))
+- [Millière 2024](/sources/e6f31e3cf83a46a20b3d2c39a8f61808.bin), *Language Models as Models of Language* ([arXiv:2408.07144](https://arxiv.org/abs/2408.07144))
+- [Chomsky 1965](/sources/571ccebf26f88d5a26a69181a10ef638.bin), *Aspects of the Theory of Syntax*

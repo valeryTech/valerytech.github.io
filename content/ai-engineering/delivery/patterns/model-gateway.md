@@ -1090,11 +1090,11 @@ To develop a concrete reference specification, identify the top 5 `use_case`s an
 ## Library sources
 
 
-- [Jeyaraman 2025](/sources/ai-engineering/llmops/jeyaraman-2025-llm-ops-for-finance.pdf.enc), *Large Language Models Ops for Finance* ([doi:10.1007/979-8-8688-1700-7](https://doi.org/10.1007/979-8-8688-1700-7)) -- on *Multi-tenant financial reference architecture*
+- [Jeyaraman 2025](/sources/e5045625429c18e304fb2f37cffae339.bin), *Large Language Models Ops for Finance* ([doi:10.1007/979-8-8688-1700-7](https://doi.org/10.1007/979-8-8688-1700-7)) -- on *Multi-tenant financial reference architecture*
 - AI agent platform book, *O'Reilly early release, chapters 1-7* -- on *What it means to design/build a model gateway*
 
 Further reading:
 
-- [Heiland et al. 2023](/sources/ai-engineering/practice/heiland-2023-design-patterns-for-ai-based-systems.pdf.enc), *Design Patterns for AI-based Systems* ([arXiv:2303.13173](https://arxiv.org/abs/2303.13173))
+- [Heiland et al. 2023](/sources/47873cd42a2a848d931e6798eef2815c.bin), *Design Patterns for AI-based Systems* ([arXiv:2303.13173](https://arxiv.org/abs/2303.13173))
 - Lakshmanan and Hapke 2025, *Generative AI Design Patterns*
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-reducing-scope-of-impact-cell-based-architecture.pdf.enc), *Reducing the Scope of Impact with Cell-Based Architecture*
+- [AWS 2024](/sources/7e7195dd160b0a64fe44c392ec32afaa.bin), *Reducing the Scope of Impact with Cell-Based Architecture*

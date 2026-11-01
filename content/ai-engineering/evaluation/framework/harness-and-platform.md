@@ -114,11 +114,11 @@ Case design is covered in [Coverage and Case Design]({{< ref "ai-engineering/eva
 ## Library sources
 
 
-- [Moshkovich et al. 2025](/sources/ai-engineering/evaluation/moshkovich-2025-beyond-black-box-benchmarking.pdf.enc), *Beyond Black-Box Benchmarking* ([arXiv:2503.06745](https://arxiv.org/abs/2503.06745)) -- on *Coding-agent evaluation*
+- [Moshkovich et al. 2025](/sources/8c072306d90aa736730074efc3876e0a.bin), *Beyond Black-Box Benchmarking* ([arXiv:2503.06745](https://arxiv.org/abs/2503.06745)) -- on *Coding-agent evaluation*
 
 Further reading:
 
-- [Yehudai et al. 2025](/sources/ai-engineering/evaluation/yehudai-2025-survey-on-evaluation-of-llm-based-agents.pdf.enc), *Survey on Evaluation of LLM-based Agents* ([arXiv:2503.16416](https://arxiv.org/abs/2503.16416))
-- [Chen et al. 2025](/sources/ai-engineering/observability/chen-2025-design-principles-and-guidelines-for-llm-observability.pdf.enc), *Design Principles and Guidelines for LLM Observability* ([doi:10.1145/3706599.3719914](https://doi.org/10.1145/3706599.3719914))
-- [Dong et al. 2024](/sources/ai-engineering/observability/dong-2024-agentops-enabling-observability-of-llm-agents.pdf.enc), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285))
+- [Yehudai et al. 2025](/sources/c2f29c376a7d18e6da7473c763e892e3.bin), *Survey on Evaluation of LLM-based Agents* ([arXiv:2503.16416](https://arxiv.org/abs/2503.16416))
+- [Chen et al. 2025](/sources/8ad3e7f30bf91ca5f6dd6608262e24df.bin), *Design Principles and Guidelines for LLM Observability* ([doi:10.1145/3706599.3719914](https://doi.org/10.1145/3706599.3719914))
+- [Dong et al. 2024](/sources/2552a2fb5a7298b4623ed4e0cf224f1e.bin), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285))
 - AI agent platform book, *O'Reilly early release, chapters 1-7*

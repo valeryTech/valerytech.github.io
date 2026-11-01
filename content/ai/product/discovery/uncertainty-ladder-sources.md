@@ -850,10 +850,10 @@ This framing does three useful things at once:
 ## Library sources
 
 
-- [Mohsin et al. 2025](/sources/ai-foundations/capabilities-and-measurement/mohsin-2025-fundamental-limits-of-llms-at-scale.pdf.enc), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
-- [Bossavit 2015](/sources/software-engineering/process-and-agile/bossavit-2015-leprechauns-of-software-engineering.pdf.enc), *The Leprechauns of Software Engineering* -- on *6. Related practical frameworks*
+- [Mohsin et al. 2025](/sources/52ba2872a178acfd074f7a58fbc37efa.bin), *On the Fundamental Limits of LLMs at Scale* ([arXiv:2511.12869](https://arxiv.org/abs/2511.12869))
+- [Bossavit 2015](/sources/b54da1313917791258847fb7c7102a38.bin), *The Leprechauns of Software Engineering* -- on *6. Related practical frameworks*
 
 Further reading:
 
-- [Kasser 2020](/sources/thinking-and-learning/systems-thinking/kasser-2020-systems-engineering-systemic-systematic-methodology.pdf.enc), *Systems Engineering*
-- [SEBoK 2022](/sources/thinking-and-learning/systems-thinking/sebok-2022-guide-systems-engineering-body-of-knowledge.pdf.enc), *Guide to the Systems Engineering Body of Knowledge (SEBoK)*
+- [Kasser 2020](/sources/c08d3b3f20b9918245a03f7ca84fffe4.bin), *Systems Engineering*
+- [SEBoK 2022](/sources/ae3adc768b9695d13af65d16f83a0293.bin), *Guide to the Systems Engineering Body of Knowledge (SEBoK)*

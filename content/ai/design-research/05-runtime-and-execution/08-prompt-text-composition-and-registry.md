@@ -2004,4 +2004,4 @@ That gives you a small, understandable foundation while preserving the things yo
 ## Library sources
 
 
-- [Khattab et al. 2023](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc), *DSPy* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714))
+- [Khattab et al. 2023](/sources/dce6a336b5540ff4b3606105310db867.bin), *DSPy* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714))

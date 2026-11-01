@@ -22,9 +22,10 @@ class AttachmentResolver:
     def __init__(self, roots: MigrationRoots, report: MigrationReport) -> None:
         self.roots = roots
         self.report = report
-        self._attachments_written: dict[tuple[Path, Path], PlannedAttachment] = {}
+        self._attachments_written: dict[tuple[Path | None, Path], PlannedAttachment] = {}
         self._pdf_lock: PdfLock | None = None
         self._pdf_index: dict[str, list[Path]] | None = None
+        self._pdf_outputs: dict[Path, Path] = {}
 
     def pdf_lock(self) -> PdfLock:
         # Loaded with the first PDF, so imports without PDFs need no lock file.
@@ -77,8 +78,15 @@ class AttachmentResolver:
                     source=current_note.source_rel_global.as_posix(),
                 )
                 return None
-            return candidate, build_pdf_output_rel(self.roots.source_root, candidate)
+            return candidate, self._pdf_output_rel(candidate)
         return candidate, build_attachment_output_rel(current_note, candidate.name)
+
+    def _pdf_output_rel(self, source_path: Path) -> Path:
+        # Named from the file's contents once, however many notes link it.
+        key = source_path.resolve()
+        if key not in self._pdf_outputs:
+            self._pdf_outputs[key] = build_pdf_output_rel(self.pdf_lock().name(source_path.read_bytes()))
+        return self._pdf_outputs[key]
 
     def _pdfs_by_name(self) -> dict[str, list[Path]]:
         # Built on first use; hidden folders such as .obsidian and .trash are skipped.
@@ -99,13 +107,15 @@ class AttachmentResolver:
         output_rel: Path,
         current_note: PlannedNote,
     ) -> PlannedAttachment:
-        key = (source_path.resolve(), output_rel)
+        # Copies of one PDF in two vault folders share a name, so they are written once.
+        is_pdf = source_path.suffix.lower() == ".pdf"
+        key = (None if is_pdf else source_path.resolve(), output_rel)
         if key in self._attachments_written:
             return self._attachments_written[key]
 
         destination = staging_root / output_rel
         destination.parent.mkdir(parents=True, exist_ok=True)
-        if source_path.suffix.lower() == ".pdf":
+        if is_pdf:
             destination.write_bytes(self.pdf_lock().seal(source_path.read_bytes()))
         else:
             shutil.copy2(source_path, destination)

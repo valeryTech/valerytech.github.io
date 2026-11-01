@@ -88,8 +88,8 @@ A concise evidence protocol can make these requirements repeatable across evalua
 ## Library sources
 
 
-- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *AI Engineering Evidence Protocol*
+- [Baltes et al. 2025](/sources/c1ccf311d88d7d8a326c7617fb00ce09.bin), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *AI Engineering Evidence Protocol*
 
 Further reading:
 
-- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))
+- [Wohlin et al. 2024](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))

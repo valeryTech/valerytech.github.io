@@ -6,7 +6,7 @@ description: "Compare operational, structural, cloud, and cross-cutting quality 
 linkTitle: "Characteristics"
 ---
 
-Source: [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*.
+Source: [Richards and Ford 2025](/sources/2d49b5a0c9a1eb1beeb05703a3d3d23e.bin), *Fundamentals of Software Architecture, 2nd Edition*.
 
 In the system design notes, these characteristics are the forces on each design question. Operation-specific reasoning about them lives in [non-functional requirements]({{< ref "system-design/nfr" >}}).
 

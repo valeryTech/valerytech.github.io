@@ -105,14 +105,14 @@ He also argues for not migrating when the goals do not require it.
 ## Library sources
 
 
-- [Newman 2020](/sources/system-design/microservices/newman-2020-monolith-to-microservices.pdf.enc), *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* -- on *Refactoring to services*
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- on *Architectural style*
-- [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapters 2 and 13
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- on *Where to draw boundaries*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 1, "Creating a Solution Using Bounded Contexts" (guidelines for drawing contexts, context maps, core, supportive and generic domains), and chapter 3, "Bounded Contexts as Autonomous Software Components" (monolith first, the distributed monolith) and "Contracts Between Bounded Contexts" (shared kernel, customer/supplier, conformist, anti-corruption layer); on *Where to draw boundaries*, *Refactoring to services* and *Gaps*
+- [Newman 2020](/sources/bd80be1c01a1cbf103cccdc8957f91bc.bin), *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* -- on *Refactoring to services*
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- on *Architectural style*
+- [Richardson 2019](/sources/cdfacd78fbf9383e0e2361fff5f38b30.bin), *Microservices Patterns: With Examples in Java* -- chapters 2 and 13
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design* -- on *Where to draw boundaries*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 1, "Creating a Solution Using Bounded Contexts" (guidelines for drawing contexts, context maps, core, supportive and generic domains), and chapter 3, "Bounded Contexts as Autonomous Software Components" (monolith first, the distributed monolith) and "Contracts Between Bounded Contexts" (shared kernel, customer/supplier, conformist, anti-corruption layer); on *Where to draw boundaries*, *Refactoring to services* and *Gaps*
 
 Further reading:
 
-- [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*
-- [Dragoni et al. 2017](/sources/software-engineering/architecture/dragoni-2017-microservices-yesterday-today-tomorrow.pdf.enc), *Microservices: yesterday, today, and tomorrow* ([arXiv:1606.04036](https://arxiv.org/abs/1606.04036))
+- [Richards and Ford 2025](/sources/2d49b5a0c9a1eb1beeb05703a3d3d23e.bin), *Fundamentals of Software Architecture, 2nd Edition*
+- [Dragoni et al. 2017](/sources/08a96eab194a02c3a45d2dff355561ee.bin), *Microservices: yesterday, today, and tomorrow* ([arXiv:1606.04036](https://arxiv.org/abs/1606.04036))
 - Gandhi et al. 2024, *Head First Software Architecture*

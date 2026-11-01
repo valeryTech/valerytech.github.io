@@ -524,4 +524,4 @@ The original reply continues with [runtime support]({{< ref "ai/design-research/
 ## Library sources
 
 
-- [Yu et al. 2026](/sources/ai-engineering/harness/yu-2026-shepherd-programmable-meta-agents.pdf.enc), *Shepherd* ([arXiv:2605.10913](https://arxiv.org/abs/2605.10913))
+- [Yu et al. 2026](/sources/bb381f216979cb38c7b713eba97bf8e2.bin), *Shepherd* ([arXiv:2605.10913](https://arxiv.org/abs/2605.10913))

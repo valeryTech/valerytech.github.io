@@ -56,9 +56,9 @@ Examples include data analysis, document processing, technical investigation, re
 ## Library sources
 
 
-- [He et al. 2026](/sources/ai-foundations/alignment-and-society/he-2026-beyond-human-measure.pdf.enc), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1)) -- on *Collaboration and verification*
+- [He et al. 2026](/sources/ec007122245e7e5a9574334e98c5c4e5.bin), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1)) -- on *Collaboration and verification*
 
 Further reading:
 
-- [Zhou et al. 2026](/sources/ai-engineering/harness/zhou-2026-externalization-in-llm-agents.pdf.enc), *Externalization in LLM Agents* ([arXiv:2604.08224](https://arxiv.org/abs/2604.08224))
-- [Zheng et al. 2025](/sources/ai-engineering/observability/zheng-2025-agentsight-observability-for-ai-agents-ebpf.pdf.enc), *AgentSight: System-Level Observability for AI Agents Using eBPF* ([doi:10.1145/3766882.3767169](https://doi.org/10.1145/3766882.3767169))
+- [Zhou et al. 2026](/sources/633694303a31046d598fcabe0c316bc3.bin), *Externalization in LLM Agents* ([arXiv:2604.08224](https://arxiv.org/abs/2604.08224))
+- [Zheng et al. 2025](/sources/519d72f891bc8d3ccfd774b427658574.bin), *AgentSight: System-Level Observability for AI Agents Using eBPF* ([doi:10.1145/3766882.3767169](https://doi.org/10.1145/3766882.3767169))

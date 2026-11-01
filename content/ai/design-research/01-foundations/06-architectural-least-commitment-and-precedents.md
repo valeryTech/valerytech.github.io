@@ -834,9 +834,9 @@ The definitions below are local copies of the entries used in these passages. Th
 ## Library sources
 
 
-- [Schnalke 2010](/sources/software-engineering/craft/schnalke-2010-why-unix-philosophy-still-matters.pdf.enc), *Why the Unix Philosophy still matters* -- on *Unix, least power, and independent invention*
+- [Schnalke 2010](/sources/66921adbca951765ec72028b621a72e1.bin), *Why the Unix Philosophy still matters* -- on *Unix, least power, and independent invention*
 
 Further reading:
 
-- [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316))
-- [Plotkin and Pretnar 2009](/sources/ai-engineering/harness/plotkin-2009-handlers-of-algebraic-effects.pdf.enc), *Handlers of Algebraic Effects*
+- [Bauer and Pretnar 2014](/sources/49566a54818cd0aa2c57c411fd26357f.bin), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316))
+- [Plotkin and Pretnar 2009](/sources/8a4cf6d4cfd9eb30a3bef8df6fa45fe9.bin), *Handlers of Algebraic Effects*

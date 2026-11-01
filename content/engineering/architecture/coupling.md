@@ -204,12 +204,12 @@ Where it is already used in these notes:
 ## Library sources
 
 
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- the model: Part I (coupling, complexity, modularity), Part II (module coupling, connascence, integration strength, distance, volatility), Part III (balance, rebalancing, fractal modularity, case studies)
-- [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition* -- chapter 3 (modularity: cohesion, coupling metrics, connascence), chapter 8 (component coupling), chapter 27 (reuse versus decoupling)
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts* -- chapter 2 (coupling definition, static and dynamic coupling, architecture quantum)
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design* -- the model: Part I (coupling, complexity, modularity), Part II (module coupling, connascence, integration strength, distance, volatility), Part III (balance, rebalancing, fractal modularity, case studies)
+- [Richards and Ford 2025](/sources/2d49b5a0c9a1eb1beeb05703a3d3d23e.bin), *Fundamentals of Software Architecture, 2nd Edition* -- chapter 3 (modularity: cohesion, coupling metrics, connascence), chapter 8 (component coupling), chapter 27 (reuse versus decoupling)
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts* -- chapter 2 (coupling definition, static and dynamic coupling, architecture quantum)
 
 Further reading:
 
-- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design* -- deep modules and information hiding
-- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer, 2nd Edition* -- ETC, DRY as knowledge, "Decoupled Code Is Easier to Change"
-- [Martin 2018](/sources/software-engineering/architecture/martin-2018-clean-architecture.pdf.enc), *Clean Architecture* -- component cohesion and coupling principles
+- [Ousterhout 2018](/sources/0a09675129a4612b2260dbb60c83b051.bin), *A Philosophy of Software Design* -- deep modules and information hiding
+- [Thomas and Hunt 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer, 2nd Edition* -- ETC, DRY as knowledge, "Decoupled Code Is Easier to Change"
+- [Martin 2018](/sources/0f46f5de730b51708bc07368aedb47d5.bin), *Clean Architecture* -- component cohesion and coupling principles

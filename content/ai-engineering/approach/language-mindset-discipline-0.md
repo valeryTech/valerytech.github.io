@@ -82,9 +82,9 @@ These are the conditions under which I want to help develop AI products and the 
 ## Library sources
 
 
-- [Swanson 2007](/sources/research-methods/philosophy-of-science/swanson-2007-theory-framework-for-applied-disciplines.pdf.enc), *Theory Framework for Applied Disciplines* ([doi:10.1177/1534484307303770](https://doi.org/10.1177/1534484307303770)) -- on *Language, mindset, and discipline in AI product development*
+- [Swanson 2007](/sources/785b82bf96c073143f1e17128229b6dd.bin), *Theory Framework for Applied Disciplines* ([doi:10.1177/1534484307303770](https://doi.org/10.1177/1534484307303770)) -- on *Language, mindset, and discipline in AI product development*
 
 Further reading:
 
-- [Huyen 2025](/sources/ai-engineering/practice/huyen-2025-ai-engineering.pdf.enc), *AI Engineering: Building Applications with Foundation Models*
-- [Swanson and Chermack 2013](/sources/research-methods/philosophy-of-science/swanson-2013-theory-building-in-applied-disciplines.pdf.enc), *Theory Building in Applied Disciplines*
+- [Huyen 2025](/sources/faff32abd78cc0963d6a4a913c8c129e.bin), *AI Engineering: Building Applications with Foundation Models*
+- [Swanson and Chermack 2013](/sources/fc5a3e9f5c36efccee40c21ab2ddd46c.bin), *Theory Building in Applied Disciplines*

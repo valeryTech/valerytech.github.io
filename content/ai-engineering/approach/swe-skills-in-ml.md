@@ -626,22 +626,22 @@ The learning sequence can be adapted to backend, infrastructure, product-feature
 ## Library sources
 
 
-- [Chen et al. 2022](/sources/ml-engineering/books/chen-2022-reliable-machine-learning.pdf.enc), *Reliable Machine Learning* -- on *F. Monitoring and operations for ML*
-- [Murphy and Underwood 2025](/sources/ml-engineering/mlops/murphy-2025-unsolved-problems-in-mlops.pdf.enc), *Unsolved Problems in MLOps* -- on *F. Monitoring and operations for ML*
-- [Amershi et al. 2019](/sources/ml-engineering/se-for-ml/amershi-2019-software-engineering-for-ml-case-study.pdf.enc), *Software Engineering for Machine Learning: A Case Study*
-- [Nahar et al. 2022](/sources/ml-engineering/se-for-ml/nahar-2022-collaboration-challenges-building-ml-enabled-systems.pdf.enc), *Collaboration Challenges in Building ML-Enabled Systems* ([arXiv:2110.10234](https://arxiv.org/abs/2110.10234))
+- [Chen et al. 2022](/sources/47ceee67b833f35bfb3326fe787cd451.bin), *Reliable Machine Learning* -- on *F. Monitoring and operations for ML*
+- [Murphy and Underwood 2025](/sources/ef367e86799f257cbc6954868ca0c06f.bin), *Unsolved Problems in MLOps* -- on *F. Monitoring and operations for ML*
+- [Amershi et al. 2019](/sources/46dc3be9c72de24b5c29f1031eb62cd1.bin), *Software Engineering for Machine Learning: A Case Study*
+- [Nahar et al. 2022](/sources/70096718a34b8c2286d814c4f243183f.bin), *Collaboration Challenges in Building ML-Enabled Systems* ([arXiv:2110.10234](https://arxiv.org/abs/2110.10234))
 
 Further reading:
 
-- [Mailach et al. 2024](/sources/ai-engineering/practice/mailach-2024-themes-of-building-llm-applications-for-production.pdf.enc), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
-- [Wagner-Kaiser 2026](/sources/nlp/foundations/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
-- [Huyen 2022](/sources/ml-engineering/books/huyen-2022-designing-machine-learning-systems.pdf.enc), *Designing Machine Learning Systems*
-- [Tan et al. 2024](/sources/ml-engineering/books/tan-2024-effective-machine-learning-teams.pdf.enc), *Effective Machine Learning Teams*
-- [Wilson 2022](/sources/ml-engineering/books/wilson-2022-machine-learning-engineering-in-action.pdf.enc), *Machine Learning Engineering in Action*
-- [Zinkevich 2016](/sources/ml-engineering/books/zinkevich-2016-rules-of-machine-learning.pdf.enc), *Rules of Machine Learning: Best Practices for ML Engineering*
-- [Assres et al. 2025](/sources/ml-engineering/se-for-ml/assres-2025-engineering-ml-enabled-software-systems.pdf.enc), *State-of-the-Art and Challenges of Engineering ML-Enabled Software Systems in the Deep Learning Era* ([doi:10.1145/3731597](https://doi.org/10.1145/3731597))
-- [Giray 2021](/sources/ml-engineering/se-for-ml/giray-2021-software-engineering-perspective-ml-systems.pdf.enc), *A Software Engineering Perspective on Engineering Machine Learning Systems*
-- [Haakman et al. 2021](/sources/ml-engineering/se-for-ml/haakman-2021-ai-lifecycle-models-need-revision.pdf.enc), *AI Lifecycle Models Need To Be Revised* ([arXiv:2010.02716](https://arxiv.org/abs/2010.02716))
-- [Kalinowski et al. 2024](/sources/ml-engineering/se-for-ml/kalinowski-2024-naming-the-pain-ml-enabled-systems.pdf.enc), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
-- [Martinez et al. 2021](/sources/ml-engineering/se-for-ml/martinez-2021-survey-success-factors-data-science-projects.pdf.enc), *A survey study of success factors in data science projects* ([arXiv:2201.06310](https://arxiv.org/abs/2201.06310))
-- [Nahar et al. 2023](/sources/ml-engineering/se-for-ml/nahar-2023-meta-summary-challenges-ml-products.pdf.enc), *A Meta-Summary of Challenges in Building Products with ML Components* ([arXiv:2304.00078](https://arxiv.org/abs/2304.00078))
+- [Mailach et al. 2024](/sources/74f1445f7b7d75eef262100f2e5ea5a0.bin), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
+- [Wagner-Kaiser 2026](/sources/a971bcbca65dc7fbbfd3db846ca8eb23.bin), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
+- [Huyen 2022](/sources/5bbe42519087c94b06ff1a96c39c6566.bin), *Designing Machine Learning Systems*
+- [Tan et al. 2024](/sources/70b69df084508ef62121bd0664a1d392.bin), *Effective Machine Learning Teams*
+- [Wilson 2022](/sources/baecdf79a3ee8600d991cc23b65c3b8a.bin), *Machine Learning Engineering in Action*
+- [Zinkevich 2016](/sources/903c644dfdc4b32ef0ad55c8393288d6.bin), *Rules of Machine Learning: Best Practices for ML Engineering*
+- [Assres et al. 2025](/sources/a6d86adc645ed48aefd8ad43dce69103.bin), *State-of-the-Art and Challenges of Engineering ML-Enabled Software Systems in the Deep Learning Era* ([doi:10.1145/3731597](https://doi.org/10.1145/3731597))
+- [Giray 2021](/sources/0f5f7e0ddc49ede6bd33eed16dd26a26.bin), *A Software Engineering Perspective on Engineering Machine Learning Systems*
+- [Haakman et al. 2021](/sources/5096f3d276b7e7842af543dad19e1419.bin), *AI Lifecycle Models Need To Be Revised* ([arXiv:2010.02716](https://arxiv.org/abs/2010.02716))
+- [Kalinowski et al. 2024](/sources/a448e14caac8d1967dd9b92204d44a65.bin), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
+- [Martinez et al. 2021](/sources/d7e19ea8c035ace8ea64088acb9d54f9.bin), *A survey study of success factors in data science projects* ([arXiv:2201.06310](https://arxiv.org/abs/2201.06310))
+- [Nahar et al. 2023](/sources/363cf81c2011feb365f56d432d8a5665.bin), *A Meta-Summary of Challenges in Building Products with ML Components* ([arXiv:2304.00078](https://arxiv.org/abs/2304.00078))

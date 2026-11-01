@@ -249,12 +249,12 @@ aws deployment
 ## Library sources
 
 
-- [Shore and Warden 2021](/sources/software-engineering/process-and-agile/shore-2021-art-of-agile-development-2nd-edition.pdf.enc), *The Art of Agile Development, 2nd Edition*
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
-- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, "Release Engineering": the self-service release model, hermetic builds, continuous build and deployment, and configuration management
-- [Kim et al. 2021](/sources/software-engineering/systems-and-operations/kim-2021-devops-handbook-2e.pdf.enc), *The DevOps Handbook, Second Edition* -- chapter 12, "Automate and Enable Low-Risk Releases": blue-green deployment, canary releases, feature toggles and dark launches, on *Progressive Delivery*, *Blue/Green Deployment*, *Feature Flags* and *Canary Release*; chapter 11 on continuous integration and trunk-based development
+- [Shore and Warden 2021](/sources/b1db563b810a93903d1f5277aece14f4.bin), *The Art of Agile Development, 2nd Edition*
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*
+- [Beyer et al. 2016](/sources/66e3d117bdfddedf20fc8fa46d6753b0.bin), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, "Release Engineering": the self-service release model, hermetic builds, continuous build and deployment, and configuration management
+- [Kim et al. 2021](/sources/5b8562bf89faccfe430b6176be9350e6.bin), *The DevOps Handbook, Second Edition* -- chapter 12, "Automate and Enable Low-Risk Releases": blue-green deployment, canary releases, feature toggles and dark launches, on *Progressive Delivery*, *Blue/Green Deployment*, *Feature Flags* and *Canary Release*; chapter 11 on continuous integration and trunk-based development
 
 Further reading:
 
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-well-architected-container-build-lens.pdf.enc), *Container Build Lens (AWS Well-Architected Framework)* -- best practices for container build and CI/CD pipelines by pillar, with reference architectures for securing and improving them
+- [AWS 2024](/sources/888786943005255f919192cab2e45684.bin), *Container Build Lens (AWS Well-Architected Framework)* -- best practices for container build and CI/CD pipelines by pillar, with reference architectures for securing and improving them
 - AI agent platform book, *O'Reilly early release, chapter 7* -- continuous delivery for AI: offline and online evaluation, canary releases, feature flags, and A/B tests

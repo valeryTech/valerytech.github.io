@@ -110,14 +110,14 @@ Chapter 7 (Sharding) treats these as options under sharding by hash of key, and 
 ## Library sources
 
 
-- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- sections 4.2, 4.3, and 6.2 on *Virtual nodes*, *Replication along the ring*, and *Dynamo's move to fixed partitions*
-- [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapter 5 on *Why hash mod N fails* and *Virtual nodes*; chapter 6 on *Replication along the ring*
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 7 on *What DDIA 2e says*
-- [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- chapter 13, sections "Database Partitioning" and "Consistent Hashing", on *Consistent hashing*
-- [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems* -- chapter 16 on *Why hash mod N fails* and *Consistent hashing*; chapters 18 and 20 on load balancers and external caches in *In a design*
+- [DeCandia et al. 2007](/sources/da9436e162d5abe60df8b9ef9e4993ea.bin), *Dynamo: Amazon's Highly Available Key-value Store* -- sections 4.2, 4.3, and 6.2 on *Virtual nodes*, *Replication along the ring*, and *Dynamo's move to fixed partitions*
+- [Xu 2020](/sources/39fea06ad1d4c38d97709b95898d9c25.bin), *System Design Interview: An Insider's Guide* -- chapter 5 on *Why hash mod N fails* and *Virtual nodes*; chapter 6 on *Replication along the ring*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 7 on *What DDIA 2e says*
+- [Petrov 2019](/sources/611239aecf452fc6fb065bb3088b0326.bin), *Database Internals* -- chapter 13, sections "Database Partitioning" and "Consistent Hashing", on *Consistent hashing*
+- [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems* -- chapter 16 on *Why hash mod N fails* and *Consistent hashing*; chapters 18 and 20 on load balancers and external caches in *In a design*
 - Educative 2023: ensure scalability and replication, *Grokking Modern System Design Interview* -- mod N, the ring, virtual nodes, and preference lists in a key-value store
 
 Further reading:
 
-- [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 7, a measured comparison of mod N and consistent hashing, and overpartitioning
-- [Burns 2018](/sources/system-design/distributed-systems/burns-2018-designing-distributed-systems.pdf.enc), *Designing Distributed Systems* -- chapter 5 on session tracking by consistent hashing; chapter 6 on resharding a cache and an NGINX consistent hashing proxy
+- [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems* -- chapter 7, a measured comparison of mod N and consistent hashing, and overpartitioning
+- [Burns 2018](/sources/217f0c643d90d836d19e229608ed9405.bin), *Designing Distributed Systems* -- chapter 5 on session tracking by consistent hashing; chapter 6 on resharding a cache and an NGINX consistent hashing proxy

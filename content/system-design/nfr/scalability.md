@@ -14,11 +14,11 @@ The [original reading notes]({{< ref "system-design/archive/scalability-reading-
 ## What scalability means
 
 
-There is no single agreed definition. Duboc, Rosenblum and Wicks open their paper by calling scalability "poorly defined and poorly understood": often asserted, rarely validated. Phrases like "X is a scalable system" convey little more than "X is good" ([Duboc et al. 2007](/sources/software-engineering/systems-and-operations/duboc-2007-framework-software-system-scalability.pdf.enc)).
+There is no single agreed definition. Duboc, Rosenblum and Wicks open their paper by calling scalability "poorly defined and poorly understood": often asserted, rarely validated. Phrases like "X is a scalable system" convey little more than "X is good" ([Duboc et al. 2007](/sources/8b5f8a4eb8e89e0ca0414d866502dc5d.bin)).
 
-**A working definition.** Gorton sidesteps "definition wars": scalability is a system's capability to handle growth in some dimension of its operations. His examples of dimensions are concurrent requests, data volume, the value derived from stored data, and a stable response time as load grows. Unlike physical systems, software often needs to scale *down* as well, to cut cost ([Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc)).
+**A working definition.** Gorton sidesteps "definition wars": scalability is a system's capability to handle growth in some dimension of its operations. His examples of dimensions are concurrent requests, data volume, the value derived from stored data, and a stable response time as load grows. Unlike physical systems, software often needs to scale *down* as well, to cut cost ([Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin)).
 
-**Two senses of the word.** Weinstock and Goodenough found two uses in the literature ([Weinstock and Goodenough 2006](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc)):
+**Two senses of the word.** Weinstock and Goodenough found two uses in the literature ([Weinstock and Goodenough 2006](/sources/09470289da9930a37201c614f7ea89ea.bin)):
 
 1. The ability to handle increased workload *without adding resources*: headroom in the current configuration. Informal claims ("it handled a large model quickly") usually mean this.
 2. The ability to handle increased workload *by repeatedly applying a cost-effective strategy for extending capacity*. Here what matters is the strategy for adding capacity and its cost, not the current headroom. The report concentrates on this sense.
@@ -30,14 +30,14 @@ Every system scales to some point, and none scales indefinitely, so a claim with
 
 Both papers conclude that "the system is scalable" means nothing on its own.
 
-- **Demand and response bounds** (Weinstock and Goodenough): name one or more demand measures with an allowed range and one or more response measures with an allowed range. For example: "at least 10,000 simultaneous users with response delays never exceeding 1 second". Demand measures interact: a fix that admits more users can add database entries, or take memory from the database, so the system stays slow for a different reason ([p. 9](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc)). A scalability requirement should also limit the incremental cost of handling the extra load ([p. 10, note 4](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc)).
-- **Scaling dimensions and dependent variables** (Duboc et al.): separate what grows (scaling dimensions such as concurrent users, input volume, or cluster nodes) from what is measured (dependent variables such as throughput, latency, memory, failures, or operating cost). Also list what is fixed or chosen to cope, such as the algorithm, thread-pool size, or machine configuration. Then speak of "scalability with respect to throughput" or "with respect to latency and memory consumption", never of scalability in general ([Duboc et al. 2007, §3.1](/sources/software-engineering/systems-and-operations/duboc-2007-framework-software-system-scalability.pdf.enc)).
+- **Demand and response bounds** (Weinstock and Goodenough): name one or more demand measures with an allowed range and one or more response measures with an allowed range. For example: "at least 10,000 simultaneous users with response delays never exceeding 1 second". Demand measures interact: a fix that admits more users can add database entries, or take memory from the database, so the system stays slow for a different reason ([p. 9](/sources/09470289da9930a37201c614f7ea89ea.bin)). A scalability requirement should also limit the incremental cost of handling the extra load ([p. 10, note 4](/sources/09470289da9930a37201c614f7ea89ea.bin)).
+- **Scaling dimensions and dependent variables** (Duboc et al.): separate what grows (scaling dimensions such as concurrent users, input volume, or cluster nodes) from what is measured (dependent variables such as throughput, latency, memory, failures, or operating cost). Also list what is fixed or chosen to cope, such as the algorithm, thread-pool size, or machine configuration. Then speak of "scalability with respect to throughput" or "with respect to latency and memory consumption", never of scalability in general ([Duboc et al. 2007, §3.1](/sources/8b5f8a4eb8e89e0ca0414d866502dc5d.bin)).
 
 ### How capacity grows
 
 
-- **Without adding resources** (the first sense). Tune or optimise: a better algorithm or data structure, an extra index, a faster runtime. Gorton calls this *optimization*, his second basic principle next to *replication* ([Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc)). Or **do less work**: Weinstock and Goodenough list "decreasing the services it provides when the system is heavily loaded" as a way to raise capacity without new resources ([p. 13](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc)). See *Functionality versus scalability* below.
-- **By adding resources** (the second sense). Replicate, partition, or decompose, as in the strategies below. Added units rarely add their full capacity because of overhead, and they can even slow the system at low load. Weinstock and Goodenough measure this as efficiency, the actual capacity of *n* units divided by *n* times the capacity of one. A design whose efficiency falls off slowly as units are added scales better in the second sense ([p. 14](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc)). Gorton calls systems whose capability grows exponentially while costs grow linearly *hyperscale* ([Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc)).
+- **Without adding resources** (the first sense). Tune or optimise: a better algorithm or data structure, an extra index, a faster runtime. Gorton calls this *optimization*, his second basic principle next to *replication* ([Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin)). Or **do less work**: Weinstock and Goodenough list "decreasing the services it provides when the system is heavily loaded" as a way to raise capacity without new resources ([p. 13](/sources/09470289da9930a37201c614f7ea89ea.bin)). See *Functionality versus scalability* below.
+- **By adding resources** (the second sense). Replicate, partition, or decompose, as in the strategies below. Added units rarely add their full capacity because of overhead, and they can even slow the system at low load. Weinstock and Goodenough measure this as efficiency, the actual capacity of *n* units divided by *n* times the capacity of one. A design whose efficiency falls off slowly as units are added scales better in the second sense ([p. 14](/sources/09470289da9930a37201c614f7ea89ea.bin)). Gorton calls systems whose capability grows exponentially while costs grow linearly *hyperscale* ([Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin)).
 
 ## Define what grows
 
@@ -108,7 +108,7 @@ Distinguish predictable load, such as daily traffic patterns, from unexpected sp
 ### What scalability costs
 
 
-Weinstock and Goodenough frame these as "To achieve scalability I have to give up what?" ([Weinstock and Goodenough 2006, §2.3](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc)):
+Weinstock and Goodenough frame these as "To achieve scalability I have to give up what?" ([Weinstock and Goodenough 2006, §2.3](/sources/09470289da9930a37201c614f7ea89ea.bin)):
 
 - **Performance versus scalability:** accept some performance at low load in exchange for a higher ceiling. A design tuned for best-case performance at today's load may not grow. Decide how much to give up.
 - **Cost versus scalability:** a scalable design usually costs more up front ("pay me now, or pay me later"). If demand never comes, the extra cost is wasted. If it comes and the cheaper design cannot grow, changing it may be impractical. Justifying the cost needs explicit scalability requirements and a life-cycle cost estimate under different growth scenarios.
@@ -128,10 +128,10 @@ Weinstock and Goodenough frame these as "To achieve scalability I have to give u
 ## Library sources
 
 
-- [Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc), *Foundations of Scalable Systems: Designing Distributed Architectures* -- on *What scalability means*
-- [Weinstock and Goodenough 2006](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc), *On System Scalability* -- on *What scalability means* and *What scalability costs*
-- [Duboc et al. 2007](/sources/software-engineering/systems-and-operations/duboc-2007-framework-software-system-scalability.pdf.enc), *A Framework for Characterization and Analysis of Software System Scalability* -- on *State the claim precisely*
+- [Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin), *Foundations of Scalable Systems: Designing Distributed Architectures* -- on *What scalability means*
+- [Weinstock and Goodenough 2006](/sources/09470289da9930a37201c614f7ea89ea.bin), *On System Scalability* -- on *What scalability means* and *What scalability costs*
+- [Duboc et al. 2007](/sources/8b5f8a4eb8e89e0ca0414d866502dc5d.bin), *A Framework for Characterization and Analysis of Software System Scalability* -- on *State the claim precisely*
 
 Further reading:
 
-- [Atchison 2020](/sources/software-engineering/systems-and-operations/atchison-2020-architecting-for-scale.pdf.enc), *Architecting for Scale*
+- [Atchison 2020](/sources/eaa5b8561b5aae270f729456b6b7c211.bin), *Architecting for Scale*

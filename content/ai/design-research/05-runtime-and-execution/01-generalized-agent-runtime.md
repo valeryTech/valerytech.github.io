@@ -908,6 +908,6 @@ The original reply continues with its complete [failure taxonomy, proposed field
 ## Library sources
 
 
-- [Zhang et al. 2025](/sources/ai-engineering/failures/zhang-2025-agentracer-who-is-inducing-failure.pdf.enc), *AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?* ([arXiv:2509.03312](https://arxiv.org/abs/2509.03312))
-- [Yu et al. 2026](/sources/ai-engineering/harness/yu-2026-shepherd-programmable-meta-agents.pdf.enc), *Shepherd* ([arXiv:2605.10913](https://arxiv.org/abs/2605.10913))
-- [Cassandras and Lafortune 2021](/sources/research-methods/modeling-and-simulation/cassandras-2021-introduction-to-discrete-event-systems.pdf.enc), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6))
+- [Zhang et al. 2025](/sources/18a3b659e726bb39af8f2afb1f45e22f.bin), *AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?* ([arXiv:2509.03312](https://arxiv.org/abs/2509.03312))
+- [Yu et al. 2026](/sources/bb381f216979cb38c7b713eba97bf8e2.bin), *Shepherd* ([arXiv:2605.10913](https://arxiv.org/abs/2605.10913))
+- [Cassandras and Lafortune 2021](/sources/2c2e1d2efa2e11f07ab8aee64f1875ca.bin), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6))

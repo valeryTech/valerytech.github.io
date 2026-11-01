@@ -404,4 +404,4 @@ The original research export recorded identifiers instead of source titles or UR
 ## Library sources
 
 
-- [Razzouk and Shute 2012](/sources/thinking-and-learning/problem-solving/razzouk-2012-what-is-design-thinking.pdf.enc), *What Is Design Thinking and Why Is It Important?* ([doi:10.3102/0034654312457429](https://doi.org/10.3102/0034654312457429))
+- [Razzouk and Shute 2012](/sources/76c7c7dcae2136ab8b3ac9dbb44166b9.bin), *What Is Design Thinking and Why Is It Important?* ([doi:10.3102/0034654312457429](https://doi.org/10.3102/0034654312457429))

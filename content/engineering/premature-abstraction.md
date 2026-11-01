@@ -394,13 +394,13 @@ A possible framing is an **interactive inquiry system**, where retrieval support
 ## Library sources
 
 
-- [Dresch et al. 2015](/sources/research-methods/design-science/dresch-2015-design-science-research.pdf.enc), *Design Science Research* ([doi:10.1007/978-3-319-07374-3](https://doi.org/10.1007/978-3-319-07374-3)) -- on *Equivalents in Design Science and scientific reasoning*
-- [vom Brocke et al. 2020](/sources/research-methods/design-science/vom-brocke-2020-design-science-research-cases.pdf.enc), *Design Science Research. Cases* ([doi:10.1007/978-3-030-46781-4](https://doi.org/10.1007/978-3-030-46781-4)) -- on *Equivalents in Design Science and scientific reasoning*
-- [Fowler 2019](/sources/software-engineering/craft/fowler-2019-refactoring-2nd-edition.pdf.enc), *Refactoring: Improving the Design of Existing Code, 2nd Edition*
+- [Dresch et al. 2015](/sources/793579948d2178f152744d2bba3792d1.bin), *Design Science Research* ([doi:10.1007/978-3-319-07374-3](https://doi.org/10.1007/978-3-319-07374-3)) -- on *Equivalents in Design Science and scientific reasoning*
+- [vom Brocke et al. 2020](/sources/1cedd4fae6f31bad9bb3ab61580d0f6e.bin), *Design Science Research. Cases* ([doi:10.1007/978-3-030-46781-4](https://doi.org/10.1007/978-3-030-46781-4)) -- on *Equivalents in Design Science and scientific reasoning*
+- [Fowler 2019](/sources/cf051eb31039478cf60667cda9df2c9c.bin), *Refactoring: Improving the Design of Existing Code, 2nd Edition*
 
 Further reading:
 
-- [Wieringa 2014](/sources/research-methods/design-science/wieringa-2014-design-science-methodology-front-matter.pdf.enc), *Design Science Methodology for Information Systems and Software Engineering* ([doi:10.1007/978-3-662-43839-8](https://doi.org/10.1007/978-3-662-43839-8))
-- [Doglio 2022](/sources/software-engineering/craft/doglio-2022-skills-of-successful-software-engineer.pdf.enc), *Skills of a Successful Software Engineer*
-- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design*
-- [Parrish 2019](/sources/thinking-and-learning/systems-thinking/parrish-2019-great-mental-models-general-thinking-concepts.pdf.enc), *The Great Mental Models, Volume 1: General Thinking Concepts*
+- [Wieringa 2014](/sources/466ae150a72883885f071398cd467286.bin), *Design Science Methodology for Information Systems and Software Engineering* ([doi:10.1007/978-3-662-43839-8](https://doi.org/10.1007/978-3-662-43839-8))
+- [Doglio 2022](/sources/da23ec77d033d9252f2b28867e508de7.bin), *Skills of a Successful Software Engineer*
+- [Ousterhout 2018](/sources/0a09675129a4612b2260dbb60c83b051.bin), *A Philosophy of Software Design*
+- [Parrish 2019](/sources/c79c69315dcbc14927c3df04293833c3.bin), *The Great Mental Models, Volume 1: General Thinking Concepts*

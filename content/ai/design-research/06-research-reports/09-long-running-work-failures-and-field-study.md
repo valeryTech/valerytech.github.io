@@ -215,5 +215,5 @@ That feels like a field structure worth pursuing, because it connects the practi
 ## Library sources
 
 
-- [Cemri et al. 2025](/sources/ai-engineering/failures/cemri-2025-why-do-multi-agent-llm-systems-fail.pdf.enc), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657))
-- [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370))
+- [Cemri et al. 2025](/sources/1e5df35ceba8b37f7f7f69d992345c69.bin), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657))
+- [Zhu et al. 2025](/sources/0dbf97dfec54cf734dbaafd41e119a5c.bin), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370))

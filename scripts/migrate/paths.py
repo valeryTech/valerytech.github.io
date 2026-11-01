@@ -9,6 +9,8 @@ from scripts.migrate.text import slugify
 
 # Linked PDFs live at the content root rather than inside the sections that link them.
 PDF_ROOT = Path("sources")
+# Encrypted PDFs carry a neutral extension; the site's link markup and the upload task match it.
+PDF_SUFFIX = ".bin"
 
 
 def source_import_root(roots: MigrationRoots, rule: ImportRule) -> Path:
@@ -31,16 +33,9 @@ def build_attachment_output_rel(note: PlannedNote, original_name: str) -> Path:
     return note.target_rel_content.parent / asset_dir / target_name
 
 
-def build_pdf_output_rel(source_root: Path, source_path: Path) -> Path:
-    # PDFs keep their folders from the vault's sources/ in one tree, so every section shares each copy.
-    try:
-        rel = Path(os.path.normpath(source_path)).relative_to(os.path.normpath(source_root))
-    except ValueError:
-        rel = Path(source_path.name)
-    if rel.parts[:1] == (PDF_ROOT.name,):
-        rel = rel.relative_to(PDF_ROOT.name)
-    folders = [slugify(part) for part in rel.parent.parts]
-    return PDF_ROOT.joinpath(*folders, f"{slugify(rel.stem)}.pdf.enc")
+def build_pdf_output_rel(name: str) -> Path:
+    # One flat folder of opaque names, so every section shares each copy and a URL reveals nothing.
+    return PDF_ROOT / f"{name}{PDF_SUFFIX}"
 
 
 def relative_output_from_note(note: PlannedNote, output_rel: Path) -> str:

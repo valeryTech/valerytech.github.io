@@ -413,5 +413,5 @@ The sections below continue in the linked notes with their original arguments re
 ## Library sources
 
 
-- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
-- [Wei et al. 2025](/sources/retrieval-and-knowledge/rag/wei-2025-multi-objective-agentic-rewrites.pdf.enc), *Multi-Objective Agentic Rewrites for Unstructured Data Processing* ([arXiv:2512.02289](https://arxiv.org/abs/2512.02289))
+- [Dinu et al. 2024](/sources/2a14b3704dd17a8b46067815a9b6cc54.bin), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
+- [Wei et al. 2025](/sources/504bb8f407c8039c8e9369b81fb0430e.bin), *Multi-Objective Agentic Rewrites for Unstructured Data Processing* ([arXiv:2512.02289](https://arxiv.org/abs/2512.02289))

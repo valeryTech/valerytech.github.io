@@ -12,7 +12,7 @@ const fixtureBase = process.env.FIXTURE_BASE_URL || base;
 const reference = process.env.REFERENCE_URL;
 const screenshots = process.env.SCREENSHOT_DIR;
 const route = '/ai-engineering/evaluation/theoretical-methodology/framework/usage/rfc-v1-4/';
-const framework = '/system-design/interview/frameworks/framework-iv/';
+const framework = '/system-design/interview/frameworks/interviewing-io/';
 // Reviewing the deployed site should not count as visitor activity, and the
 // preview must not reload pages when another change rebuilds the site.
 const blocked = /googletagmanager\.com|google-analytics\.com|posthog\.com|clarity\.ms|\/livereload\.js/;
@@ -3195,7 +3195,7 @@ test('short and deeply nested breadcrumb trails wrap on mobile and navigate to t
   const cases = [
     { pathname: '/system-design/', labels: ['System Design'], parents: ['/'] },
     { pathname: framework, labels: ['System Design', 'Interview Practice', 'Frameworks', 'Interviewing.io'], parents: ['/', '/system-design/', '/system-design/interview/', '/system-design/interview/frameworks/'] },
-    { origin: fixtureBase, pathname: '/system-design/integrated-test-pages/callouts/', labels: ['System Design', 'Migration Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
+    { origin: fixtureBase, pathname: '/system-design/integrated-test-pages/callouts/', labels: ['System Design', 'Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
     { pathname: route, labels: ['AI Engineering', 'Evaluation', 'Theoretical Methodology', 'Framework', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai-engineering/', '/ai-engineering/evaluation/', '/ai-engineering/evaluation/theoretical-methodology/', '/ai-engineering/evaluation/theoretical-methodology/framework/', '/ai-engineering/evaluation/theoretical-methodology/framework/usage/'] },
   ];
   for (const width of [1440, 390]) {

@@ -601,4 +601,4 @@ The next user prompt and the LLM's scope analysis are now in [Research scope and
 ## Library sources
 
 
-- [Schnalke 2010](/sources/software-engineering/craft/schnalke-2010-why-unix-philosophy-still-matters.pdf.enc), *Why the Unix Philosophy still matters* -- on *Unix adds another piece: closure under composition*
+- [Schnalke 2010](/sources/66921adbca951765ec72028b621a72e1.bin), *Why the Unix Philosophy still matters* -- on *Unix adds another piece: closure under composition*

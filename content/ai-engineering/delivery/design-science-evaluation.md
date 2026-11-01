@@ -6,7 +6,7 @@ description: "A design-science source chapter on selecting artifact evaluation g
 linkTitle: "Design Science Evaluation"
 ---
 
-Source: [Johannesson and Perjons 2021](/sources/research-methods/design-science/johannesson-2021-introduction-to-design-science.pdf.enc), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)).
+Source: [Johannesson and Perjons 2021](/sources/ca3a8a1277e3769146c225056f71a3e3.bin), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)).
 
 In order to show that they have designed and developed an appropriate artefact, researchers need to evaluate it. Without an evaluation, they cannot claim that they have produced a valuable contribution.
 

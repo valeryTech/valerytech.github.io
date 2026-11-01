@@ -68,5 +68,5 @@ Original text: [ds.md](/ai/design/dialogue-approach/01-framing/04-dialogue-and-m
 ## Library sources
 
 
-- [Jurafsky and Martin 2026](/sources/nlp/dialogue-systems/jurafsky-2026-slp3-appendix-k-frame-based-dialogue.pdf.enc), *SLP3 Appendix K: Frame-Based Dialogue Systems*
-- [Reiter 2025](/sources/nlp/foundations/reiter-2025-natural-language-generation.pdf.enc), *Natural Language Generation* ([doi:10.1007/978-3-031-68582-8](https://doi.org/10.1007/978-3-031-68582-8))
+- [Jurafsky and Martin 2026](/sources/15c773945807396b696ab2a8e25a9595.bin), *SLP3 Appendix K: Frame-Based Dialogue Systems*
+- [Reiter 2025](/sources/75150fd51c9544e19f3ae64bd809970c.bin), *Natural Language Generation* ([doi:10.1007/978-3-031-68582-8](https://doi.org/10.1007/978-3-031-68582-8))

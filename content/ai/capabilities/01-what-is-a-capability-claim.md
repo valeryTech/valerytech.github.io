@@ -46,7 +46,7 @@ Sorted by what kind of thing each word names:
 
 Only the first two rows are candidates for the kind of property the rest of this section is about. The others are either part of the measurement setup or part of what gets measured along the way.
 
-Voudouris et al. make the same point about evaluation in general: *capabilities*, *propensities*, *skills*, *values*, and *abilities* are used interchangeably, and all of them are conflated with observed performance. Evaluations rarely say what quantity they measure. ([Voudouris et al. 2026](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063))
+Voudouris et al. make the same point about evaluation in general: *capabilities*, *propensities*, *skills*, *values*, and *abilities* are used interchangeably, and all of them are conflated with observed performance. Evaluations rarely say what quantity they measure. ([Voudouris et al. 2026](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063))
 
 ## A score is not the claim
 
@@ -55,11 +55,11 @@ A benchmark score reports what happened on a fixed set of items:
 
 > The model answered 78 of 100 questions correctly.
 
-A capability claim says more. It is about questions that were not asked, harder versions of them, other phrasings, other deployments of the same model. Between the score and the claim there are several inferential steps. Reynolds names them: the result is generalized to further cases, interpreted as evidence of a capability, extrapolated to new tasks, transported to another system or site, and combined with assumptions about downstream use. Each step needs its own evidence, and evidence for one does not carry over to the next. ([Reynolds 2026, projectibility](/sources/ai-foundations/capabilities-and-measurement/reynolds-2026-projectibility.pdf.enc), [arXiv:2607.26159](https://arxiv.org/abs/2607.26159))
+A capability claim says more. It is about questions that were not asked, harder versions of them, other phrasings, other deployments of the same model. Between the score and the claim there are several inferential steps. Reynolds names them: the result is generalized to further cases, interpreted as evidence of a capability, extrapolated to new tasks, transported to another system or site, and combined with assumptions about downstream use. Each step needs its own evidence, and evidence for one does not carry over to the next. ([Reynolds 2026, projectibility](/sources/f31a48720f6829630133d42608c798d0.bin), [arXiv:2607.26159](https://arxiv.org/abs/2607.26159))
 
 Treating the score as the capability only works if the capability *is* the exact distribution of benchmark items. That assumption is almost never defended.
 
-The step from score to capability can also fail outright. A benchmark presented as measuring common-sense reasoning can contain cues that let a model score well without the intended reasoning ([Chizhov et al. 2025, "What the HellaSwag?"](/sources/ai-foundations/capabilities-and-measurement/chizhov-2025-what-the-hellaswag.pdf.enc), [arXiv:2504.07825](https://arxiv.org/abs/2504.07825)). A review of 445 LLM benchmarks found recurring problems in how authors move from an abstract capability to tasks and scores ([Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), [NeurIPS 2025](https://proceedings.neurips.cc/paper_files/paper/2025/hash/1967e0fc3aa6cbbace562f5cb8e3954e-Abstract-Datasets_and_Benchmarks_Track.html)).
+The step from score to capability can also fail outright. A benchmark presented as measuring common-sense reasoning can contain cues that let a model score well without the intended reasoning ([Chizhov et al. 2025, "What the HellaSwag?"](/sources/0d0f57129a2ce4bb6104c39c80966d31.bin), [arXiv:2504.07825](https://arxiv.org/abs/2504.07825)). A review of 445 LLM benchmarks found recurring problems in how authors move from an abstract capability to tasks and scores ([Bean et al. 2025](/sources/015e29150096f262478300d13488bbc2.bin), [NeurIPS 2025](https://proceedings.neurips.cc/paper_files/paper/2025/hash/1967e0fc3aa6cbbace562f5cb8e3954e-Abstract-Datasets_and_Benchmarks_Track.html)).
 
 ## A better starting point
 
@@ -99,17 +99,17 @@ The working dictionary in [research terms and levels of analysis]({{< ref "ai/de
 ## Library sources
 
 
-- [Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), *The Concept of Mind* -- on *The hardest case: understanding*
-- [Li et al. 2024](/sources/thinking-and-learning/reflection-and-lessons-learned/li-2024-when-hindsight-is-not-20-20.pdf.enc), *When Hindsight is Not 20/20* ([arXiv:2404.09129](https://arxiv.org/abs/2404.09129)) -- on *The words are not established properties*
+- [Ryle 1949](/sources/e858a20fa17c7e6da53dd7da8794c973.bin), *The Concept of Mind* -- on *The hardest case: understanding*
+- [Li et al. 2024](/sources/f086f05e78ede3fedf852f46eab85035.bin), *When Hindsight is Not 20/20* ([arXiv:2404.09129](https://arxiv.org/abs/2404.09129)) -- on *The words are not established properties*
 
 Further reading:
 
-- [Chang et al. 2024](/sources/ai-engineering/evaluation/chang-2024-survey-on-evaluation-of-llms.pdf.enc), *A Survey on Evaluation of Large Language Models* ([doi:10.1145/3641289](https://doi.org/10.1145/3641289))
-- [Guo et al. 2023](/sources/ai-engineering/evaluation/guo-2023-evaluating-llms-comprehensive-survey.pdf.enc), *Evaluating Large Language Models: A Comprehensive Survey* ([arXiv:2310.19736](https://arxiv.org/abs/2310.19736))
-- [Liang et al. 2023](/sources/ai-engineering/evaluation/liang-2023-holistic-evaluation-of-language-models.pdf.enc), *Holistic Evaluation of Language Models (HELM)* ([arXiv:2211.09110](https://arxiv.org/abs/2211.09110))
-- [Zhu et al. 2025](/sources/ai-engineering/evaluation/zhu-2025-best-practices-for-rigorous-agentic-benchmarks.pdf.enc), *Establishing Best Practices for Building Rigorous Agentic Benchmarks* ([arXiv:2507.02825](https://arxiv.org/abs/2507.02825))
-- [Coeckelbergh and Gunkel 2025](/sources/ai-foundations/alignment-and-society/coeckelbergh-2025-communicative-ai.pdf.enc), *Communicative AI: A Critical Introduction to Large Language Models*
-- [Eriksson et al. 2025](/sources/ai-foundations/capabilities-and-measurement/eriksson-2025-can-we-trust-ai-benchmarks.pdf.enc), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
-- [Turing 1950](/sources/ai-foundations/intelligence-and-turing/turing-1950-computing-machinery-and-intelligence-copeland.pdf.enc), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
-- [Mahowald et al. 2024](/sources/language/language-and-llms/mahowald-2024-dissociating-language-and-thought-in-llms.pdf.enc), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
-- [de la Croix and Veen 2018](/sources/thinking-and-learning/reflection-and-lessons-learned/de-la-croix-2018-reflective-zombie.pdf.enc), *The reflective zombie* ([doi:10.1007/s40037-018-0479-9](https://doi.org/10.1007/s40037-018-0479-9))
+- [Chang et al. 2024](/sources/6fdbd2f1789fc60cbbeaff5f486ac4d4.bin), *A Survey on Evaluation of Large Language Models* ([doi:10.1145/3641289](https://doi.org/10.1145/3641289))
+- [Guo et al. 2023](/sources/e9ca45ceff31ed884caf72362d20f393.bin), *Evaluating Large Language Models: A Comprehensive Survey* ([arXiv:2310.19736](https://arxiv.org/abs/2310.19736))
+- [Liang et al. 2023](/sources/a64deef37c6d2160dc12c546aef056f1.bin), *Holistic Evaluation of Language Models (HELM)* ([arXiv:2211.09110](https://arxiv.org/abs/2211.09110))
+- [Zhu et al. 2025](/sources/327b05c1d9406bc91c6b0344e7d4bbca.bin), *Establishing Best Practices for Building Rigorous Agentic Benchmarks* ([arXiv:2507.02825](https://arxiv.org/abs/2507.02825))
+- [Coeckelbergh and Gunkel 2025](/sources/0d153a4277516c4bd067c638f1c75fb2.bin), *Communicative AI: A Critical Introduction to Large Language Models*
+- [Eriksson et al. 2025](/sources/5078ee4dc38d25871465fce92643eb36.bin), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
+- [Turing 1950](/sources/e9e815a2347232297524af2b765de4e4.bin), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
+- [Mahowald et al. 2024](/sources/d3e4e4f8abb1b5705082eb2c4c76ee17.bin), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
+- [de la Croix and Veen 2018](/sources/7aabbdd25f4e7b6f03b6faf78d3edcb6.bin), *The reflective zombie* ([doi:10.1007/s40037-018-0479-9](https://doi.org/10.1007/s40037-018-0479-9))

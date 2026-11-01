@@ -17,7 +17,7 @@ Final response from the **Language design** sub-agent in [Research LLM Programmi
 
 Huiri Tan, Yikun Wang, Puyang Zhang, Shangyu Li, Jiasi Shen. 20 July 2026; arXiv preprint, in submission.
 
-- Paper: [https://arxiv.org/abs/2607.17780](https://arxiv.org/abs/2607.17780) ([PDF](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc))
+- Paper: [https://arxiv.org/abs/2607.17780](https://arxiv.org/abs/2607.17780) ([PDF](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin))
 - Author's publication listing confirming submission status: [https://hr.tan.pub/](https://hr.tan.pub/)
 - Implementation and limitations: [https://github.com/etas-project/etas](https://github.com/etas-project/etas)
 - Relevant retrieved refs: turn22academia7, turn22search3, turn23search3.

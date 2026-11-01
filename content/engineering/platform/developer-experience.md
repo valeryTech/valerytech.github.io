@@ -204,13 +204,13 @@ effectively.
 ## Library sources
 
 
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering* -- on *Platform as a product*, *Standards and enforcement*, and *Measuring it*
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- on *Platform as a product*, *Standards and enforcement*, and *Measuring it*
   - Chapter notes: chapter 1 (platform engineering versus DevOps, SRE, and developer experience), chapter 3 (measures and cognitive load), chapter 4 (developer autonomy and policy as code)
 - AI agent platform book, *O'Reilly early release, chapters 1-7* -- chapter 2 on *Golden paths* and *Self-service and its limits*; chapter 3 on *Measuring it* and *In AI work*
-- [Fournier and Nowland 2025](/sources/software-engineering/systems-and-operations/fournier-2025-platform-engineering.pdf.enc), *Platform Engineering: A Guide for Technical, Product, and People Leaders* -- on *Platform as a product*
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
+- [Fournier and Nowland 2025](/sources/3c79e44be07e3bb68b2346dc79796c36.bin), *Platform Engineering: A Guide for Technical, Product, and People Leaders* -- on *Platform as a product*
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*
 
 Further reading:
 
-- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, on *Self-service and its limits*
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 8 and 15
+- [Beyer et al. 2016](/sources/66e3d117bdfddedf20fc8fa46d6753b0.bin), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, on *Self-service and its limits*
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 8 and 15

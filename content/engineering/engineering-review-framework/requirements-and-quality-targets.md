@@ -97,4 +97,4 @@ Detailed procedures belong in the relevant testing or review guides. At this lev
 ## Library sources
 
 
-- [Wiegers 2022](/sources/software-engineering/craft/wiegers-2022-software-development-pearls.pdf.enc), *Software Development Pearls*
+- [Wiegers 2022](/sources/ac892f5e2943f5a4ee0e27bc889fb7cc.bin), *Software Development Pearls*

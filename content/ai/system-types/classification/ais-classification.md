@@ -485,7 +485,7 @@ The resulting practical rule is:
 
 [^30]: [ISO/IEC 23053:2022 - Framework for AI systems using ...](https://www.iso.org/standard/74438.html)
 
-[^31]: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) ([PDF](/sources/retrieval-and-knowledge/rag/lewis-2020-retrieval-augmented-generation-knowledge-intensive-nlp.pdf.enc))
+[^31]: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) ([PDF](/sources/83adeec78d1a87569cf4b5d0e8ad9ec6.bin))
 
 [^32]: [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
 
@@ -586,9 +586,9 @@ The resulting practical rule is:
 ## Library sources
 
 
-- [Sapkota et al. 2026](/sources/ai-engineering/agents/sapkota-2026-ai-agents-vs-agentic-ai.pdf.enc), *AI Agents vs. Agentic AI* ([doi:10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599))
-- [shown 2025](/sources/ai-engineering/evaluation/anonymous-2025-evaluating-and-regulating-agentic-ai.pdf.enc), *Evaluating and Regulating Agentic AI*
-- [Anderson et al. 2026](/sources/ai-foundations/alignment-and-society/anderson-2026-agenda-game.pdf.enc), *The agenda game* ([doi:10.1007/s44382-026-00026-3](https://doi.org/10.1007/s44382-026-00026-3))
-- [Russell 2019](/sources/ai-foundations/alignment-and-society/russell-2019-human-compatible.pdf.enc), *Human Compatible: Artificial Intelligence and the Problem of Control*
-- [Amou Najafabadi et al. 2024](/sources/ml-engineering/mlops/amou-najafabadi-2024-analysis-of-mlops-architectures.pdf.enc), *An Analysis of MLOps Architectures: A Systematic Mapping Study* ([arXiv:2406.19847](https://arxiv.org/abs/2406.19847))
-- [Sens et al. 2025](/sources/ml-engineering/se-for-ml/sens-2025-model-integration-ml-enabled-systems.pdf.enc), *A Large-Scale Study of Model Integration in ML-Enabled Software Systems* ([arXiv:2408.06226](https://arxiv.org/abs/2408.06226))
+- [Sapkota et al. 2026](/sources/587e72df2c91524830dbbc4598a30fa3.bin), *AI Agents vs. Agentic AI* ([doi:10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599))
+- [shown 2025](/sources/590f9c4c8f98e01140fffbb5edb318a9.bin), *Evaluating and Regulating Agentic AI*
+- [Anderson et al. 2026](/sources/85fbd015ed6e1ffc2026e57e839d8e61.bin), *The agenda game* ([doi:10.1007/s44382-026-00026-3](https://doi.org/10.1007/s44382-026-00026-3))
+- [Russell 2019](/sources/7ee81a6918eab54d0f98440c0f19a06a.bin), *Human Compatible: Artificial Intelligence and the Problem of Control*
+- [Amou Najafabadi et al. 2024](/sources/8071861ca0c22cbd5e03abd77f881b23.bin), *An Analysis of MLOps Architectures: A Systematic Mapping Study* ([arXiv:2406.19847](https://arxiv.org/abs/2406.19847))
+- [Sens et al. 2025](/sources/d689d27422c27c07613d0dc9650f6c36.bin), *A Large-Scale Study of Model Integration in ML-Enabled Software Systems* ([arXiv:2408.06226](https://arxiv.org/abs/2408.06226))

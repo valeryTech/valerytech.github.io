@@ -169,12 +169,12 @@ A representation is useful when its demonstrated access contribution justifies i
 ## Library sources
 
 
-- [Jiang et al. 2025](/sources/retrieval-and-knowledge/rag/jiang-2025-survey-retrieval-structuring-augmented-generation.pdf.enc), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697)) -- on *Describe a representation along independent dimensions*
+- [Jiang et al. 2025](/sources/ef4ab80ddeb8e075fe04a9d1b60b882f.bin), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697)) -- on *Describe a representation along independent dimensions*
 
 Further reading:
 
-- [Wang et al. 2024](/sources/retrieval-and-knowledge/information-retrieval/wang-2024-bert-for-information-retrieval-survey.pdf.enc), *Utilizing BERT for Information Retrieval* ([doi:10.1145/3648471](https://doi.org/10.1145/3648471))
-- [Hogan et al. 2021](/sources/retrieval-and-knowledge/knowledge-graphs/hogan-2021-knowledge-graphs.pdf.enc), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772))
-- [Hu et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/hu-2025-grag-graph-retrieval-augmented-generation.pdf.enc), *GRAG: Graph Retrieval-Augmented Generation*
-- [Mo et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/mo-2025-kggen-extracting-knowledge-graphs.pdf.enc), *KGGen*
-- [Sawarkar et al. 2024](/sources/retrieval-and-knowledge/rag/sawarkar-2024-blended-rag.pdf.enc), *Blended RAG* ([arXiv:2404.07220](https://arxiv.org/abs/2404.07220))
+- [Wang et al. 2024](/sources/42d0a21068a09f42e40df1235ba38919.bin), *Utilizing BERT for Information Retrieval* ([doi:10.1145/3648471](https://doi.org/10.1145/3648471))
+- [Hogan et al. 2021](/sources/3103330fa3d6b92e782dd6a283a2998d.bin), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772))
+- [Hu et al. 2025](/sources/f8cd141d3908871de16bdaa38e2ad3a7.bin), *GRAG: Graph Retrieval-Augmented Generation*
+- [Mo et al. 2025](/sources/e4b7dbb03b4ba0873ebe1509c27c2c19.bin), *KGGen*
+- [Sawarkar et al. 2024](/sources/6b79bcf53669376c30ca2d9784693f2f.bin), *Blended RAG* ([arXiv:2404.07220](https://arxiv.org/abs/2404.07220))

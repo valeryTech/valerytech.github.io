@@ -2,14 +2,16 @@
 {{- $scheme := $url.Scheme -}}
 {{- /* PDF links open the inline reader; without JavaScript they open the file. */ -}}
 {{- $path := lower $url.Path -}}
-{{- $isPdf := and (in (slice "" "http" "https") $scheme) (or (strings.HasSuffix $path ".pdf") (strings.HasSuffix $path ".pdf.enc")) -}}
+{{- /* Imported PDFs are encrypted under opaque names in /sources/ (see scripts/migrate/paths.py). */ -}}
+{{- $isLocked := and (eq $scheme "") (strings.HasPrefix $path "/sources/") (strings.HasSuffix $path ".bin") -}}
+{{- $isPdf := or $isLocked (and (in (slice "" "http" "https") $scheme) (strings.HasSuffix $path ".pdf")) -}}
 {{- if $isPdf }}{{ .Page.Store.Set "hasPdfReader" true }}{{ end -}}
 
 <a href="
   {{- if eq $scheme "" -}}
     {{- if strings.HasSuffix $url.Path ".md" -}}
       {{- relref .Page .Destination | safeURL -}}
-    {{- else if and $isPdf (strings.HasPrefix .Destination "/sources/") site.Params.pdfBaseURL -}}
+    {{- else if and $isLocked site.Params.pdfBaseURL -}}
       {{- /* Imported PDFs live in the R2 bucket; the preview serves them from content/sources/. */ -}}
       {{- print (strings.TrimSuffix "/" site.Params.pdfBaseURL) .Destination | safeURL -}}
     {{- else -}}
@@ -19,7 +21,8 @@
     {{- .Destination | safeURL -}}
   {{- end -}}"
   {{- with .Title }} title="{{ . | safeHTML }}"{{- end -}}
-  {{- if $isPdf }} class="site-pdf-link" data-pdf-reader{{- end -}}>
+  {{- if $isPdf }} class="site-pdf-link" data-pdf-reader{{- end -}}
+  {{- if $isLocked }} data-pdf-locked{{- end -}}>
   {{- .Text | safeHTML -}}
 </a>
 

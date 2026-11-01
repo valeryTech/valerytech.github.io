@@ -94,4 +94,4 @@ The original numbered citations link to the entries below, which point to the [s
 ## Library sources
 
 
-- [shown 2025](/sources/ai-engineering/evaluation/anonymous-2025-evaluating-and-regulating-agentic-ai.pdf.enc), *Evaluating and Regulating Agentic AI*
+- [shown 2025](/sources/590f9c4c8f98e01140fffbb5edb318a9.bin), *Evaluating and Regulating Agentic AI*

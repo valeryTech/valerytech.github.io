@@ -259,11 +259,11 @@ Without experimentation, AI engineering becomes guesswork.
 ## Library sources
 
 
-- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *System Assumptions and Constraints*
+- [Baltes et al. 2025](/sources/c1ccf311d88d7d8a326c7617fb00ce09.bin), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *System Assumptions and Constraints*
 
 Further reading:
 
-- [Magalhaes et al. 2025](/sources/ai-engineering/evaluation/magalhaes-2025-testing-the-untestable-llm-powered-software.pdf.enc), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198))
-- [Eriksson et al. 2025](/sources/ai-foundations/capabilities-and-measurement/eriksson-2025-can-we-trust-ai-benchmarks.pdf.enc), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
-- [Guerdan et al. 2024](/sources/ai-foundations/capabilities-and-measurement/guerdan-2024-evaluating-llms-under-task-indeterminacy.pdf.enc), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
-- [Reynolds 2026](/sources/ai-foundations/capabilities-and-measurement/reynolds-2026-projectibility.pdf.enc), *When benchmark inferences do not compose* ([arXiv:2607.26159](https://arxiv.org/abs/2607.26159))
+- [Magalhaes et al. 2025](/sources/3aa3fa459bc8edd6f2fc66b405e38181.bin), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198))
+- [Eriksson et al. 2025](/sources/5078ee4dc38d25871465fce92643eb36.bin), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
+- [Guerdan et al. 2024](/sources/2478056b91cd37d03393aedc5b4b14b3.bin), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
+- [Reynolds 2026](/sources/f31a48720f6829630133d42608c798d0.bin), *When benchmark inferences do not compose* ([arXiv:2607.26159](https://arxiv.org/abs/2607.26159))

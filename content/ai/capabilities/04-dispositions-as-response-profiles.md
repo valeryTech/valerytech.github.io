@@ -67,7 +67,7 @@ A disposition description is relative to a question \(q\), which fixes:
 - the admissible changes;
 - the facts held fixed.
 
-The full form is \(D(S; q)\), not \(D(S)\). Ordinary language leaves \(q\) implicit. Scientific work should state it. This matches Aimar's contextually selected modal base. ([Aimar 2019](/sources/ai-foundations/capabilities-and-measurement/aimar-2019-disposition-ascriptions.pdf.enc), [doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9))
+The full form is \(D(S; q)\), not \(D(S)\). Ordinary language leaves \(q\) implicit. Scientific work should state it. This matches Aimar's contextually selected modal base. ([Aimar 2019](/sources/666e59fd95c8b7ae1add31356724b4ff.bin), [doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9))
 
 ### 3. A chosen system boundary
 
@@ -158,7 +158,7 @@ No single author states the whole package. The pieces exist:
 | Gebharter and Fischer | Dispositions as generic causal structures in causal Bayes nets; intervening on the stimulus raises the probability of the manifestation; handles finks, masks, mimics. ([Synthese](https://link.springer.com/article/10.1007/s11229-019-02374-8)) | Aims at truth conditions; does not treat boundary, purpose, and model choice as basic. |
 | Toby Friend | Structural-equation analysis for masks, mimics, multi-track dispositions, and degrees; the closest technical match. ([Refubium](https://refubium.fu-berlin.de/handle/fub188/43110)) | Still an analysis of dispositions, not of an inquiry-defined system. |
 | Manley and Wasserman | Behavior over many fully specified C-cases; dispositions graded by proportion. ([Mind](https://academic.oup.com/mind/article-pdf/117/465/59/4044452/fzn003.pdf)) | Needs a way to define and weight proportions; no epistemology of how cases are built from evidence. |
-| Aimar | Context selects the modal base; fine-grained manifestations. ([PDF](/sources/ai-foundations/capabilities-and-measurement/aimar-2019-disposition-ascriptions.pdf.enc), [doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9)) | Existential semantics: one relevant world may be enough. The profile here is graded. |
+| Aimar | Context selects the modal base; fine-grained manifestations. ([PDF](/sources/666e59fd95c8b7ae1add31356724b4ff.bin), [doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9)) | Existential semantics: one relevant world may be enough. The profile here is graded. |
 | Nancy Cartwright | Capacities operate in concrete arrangements; "nomological machines" produce regular behavior. ([OUP](https://academic.oup.com/book/27760/chapter/197990571)) | Realist about capacities; this account stays neutral. |
 | Woodward and Pearl | Interventionist and structural-causal machinery for controlled alternatives and causal paths. ([PhilPapers](https://philpapers.org/rec/WOOEIA)) | Theories of causation, not of disposition terms. |
 | Jan C. Willems | Behavioral systems theory: a system is the set of trajectories its laws allow; open systems through interconnection. ([IEEE](https://ieeexplore.ieee.org/document/4384643/), [arXiv](https://arxiv.org/pdf/1911.10398)) | Mathematical systems theory, not a theory of ascriptions. |
@@ -190,7 +190,7 @@ Each feature has a direct counterpart in AI evaluation:
 | Feature | In an LLM evaluation |
 | --- | --- |
 | Question \(q\) | What decision the evaluation informs: deployment, comparison, a safety threshold. |
-| System boundary | Base model; model with system prompt, sampling settings, and filters; model with tools and retrieval; the full product. Voudouris et al. treat choosing among these as the first step of measurement ([§5.1](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063)). |
+| System boundary | Base model; model with system prompt, sampling settings, and filters; model with tools and retrieval; the full product. Voudouris et al. treat choosing among these as the first step of measurement ([§5.1](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063)). |
 | Scenario family | Task items placed along declared demand dimensions. |
 | Variation and invariance | Which task properties are varied, which held fixed, which excluded. |
 | Response profile | \(P(\text{correct} \mid \text{demands})\) for a capability, \(P(\text{behavior} \mid \text{incentives})\) for a propensity. |
@@ -202,4 +202,4 @@ Each feature has a direct counterpart in AI evaluation:
 ## Library sources
 
 
-- [Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), *The Concept of Mind*
+- [Ryle 1949](/sources/e858a20fa17c7e6da53dd7da8794c973.bin), *The Concept of Mind*

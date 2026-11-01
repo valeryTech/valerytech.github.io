@@ -15,6 +15,7 @@ MAGIC = b"VTL1"
 SLOT_COUNT = 60
 ITERATIONS = 100_000
 KEY_BYTES = 32
+NAME_BYTES = 16
 NONCE_BYTES = 12
 SALT_BYTES = 16
 
@@ -32,6 +33,10 @@ class PdfLock:
         # An unchanged PDF re-imports byte for byte.
         nonce = _derive(self.key, b"body", pdf)[:NONCE_BYTES]
         return self.header + nonce + AESGCM(self.key).encrypt(nonce, pdf, None)
+
+    def name(self, pdf: bytes) -> str:
+        # Keyed on the contents, so a file keeps its name when it moves and the name says nothing about it.
+        return _derive(self.key, b"name", pdf)[:NAME_BYTES].hex()
 
 
 def build_pdf_lock(key: bytes, password_template: str, iterations: int) -> PdfLock:

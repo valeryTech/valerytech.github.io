@@ -113,5 +113,5 @@ The main distinction for comparing the cases is that **agentic behavior concerns
 ## Library sources
 
 
-- [Sapkota et al. 2026](/sources/ai-engineering/agents/sapkota-2026-ai-agents-vs-agentic-ai.pdf.enc), *AI Agents vs. Agentic AI* ([doi:10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599))
-- [Tallam 2025](/sources/ai-engineering/agents/tallam-2025-from-autonomous-agents-to-integrated-systems.pdf.enc), *From Autonomous Agents to Integrated Systems, A New Paradigm* ([arXiv:2503.13754](https://arxiv.org/abs/2503.13754))
+- [Sapkota et al. 2026](/sources/587e72df2c91524830dbbc4598a30fa3.bin), *AI Agents vs. Agentic AI* ([doi:10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599))
+- [Tallam 2025](/sources/317a86220182fb8cdb5073be84a90014.bin), *From Autonomous Agents to Integrated Systems, A New Paradigm* ([arXiv:2503.13754](https://arxiv.org/abs/2503.13754))

@@ -80,7 +80,7 @@ Use those observations to retain, qualify, merge, or remove material. If the gui
 
 - [GOV.UK's moderated usability guidance](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing) describes observing task attempts and using participants' own data where feasible. It informs first-use sessions; it does not establish sustained demand.
 - [Runeson and Höst's case-study guidelines](https://link.springer.com/article/10.1007/s10664-008-9102-8) support clear questions and a traceable chain of evidence from real settings. They inform the product case records.
-- [Wieringa's design-science methodology](https://link.springer.com/book/10.1007/978-3-662-43839-8) ([PDF](/sources/research-methods/design-science/wieringa-2014-design-science-methodology-front-matter.pdf.enc)) provides the broader frame of designing an artifact and evaluating it in its intended context.
+- [Wieringa's design-science methodology](https://link.springer.com/book/10.1007/978-3-662-43839-8) ([PDF](/sources/466ae150a72883885f071398cd467286.bin)) provides the broader frame of designing an artifact and evaluating it in its intended context.
 - [Evidence-Based Software Engineering](https://ebse.webspace.durham.ac.uk/) combines appraisal of research with practical expertise and stakeholder circumstances. It informs the review of recommendations before treating them as established practice. The vault's notes on it are in [EBSE]({{< ref "engineering/evidence/ebse" >}}).
 
 The local [evaluation approach]({{< ref "ai-engineering/approach/evaluations" >}}), [experimentation note]({{< ref "ai-engineering/approach/experimentation" >}}), and [evidence protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) remain the parent methodology. The procedures here are a practical application that should itself be revised through use.
@@ -88,5 +88,5 @@ The local [evaluation approach]({{< ref "ai-engineering/approach/evaluations" >}
 ## Library sources
 
 
-- [Johannesson and Perjons 2021](/sources/research-methods/design-science/johannesson-2021-introduction-to-design-science.pdf.enc), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3))
-- [Wohlin and Rainer 2022](/sources/research-methods/empirical-methods/wohlin-2022-is-it-a-case-study-preprint.pdf.enc), *Is it a case study? A critical analysis and guidance*
+- [Johannesson and Perjons 2021](/sources/ca3a8a1277e3769146c225056f71a3e3.bin), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3))
+- [Wohlin and Rainer 2022](/sources/259b57ac164515376430c68ba4848f6b.bin), *Is it a case study? A critical analysis and guidance*

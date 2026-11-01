@@ -105,8 +105,10 @@ edits; a running preview does not rerun npm hooks.
 
 ## PDF reader
 
-`layouts/_markup/render-link.html` marks links whose path ends in `.pdf` with
-`data-pdf-reader` and flags the page, and only flagged pages render
+`layouts/_markup/render-link.html` marks links whose path ends in `.pdf`, and
+imported `/sources/*.bin` links, with `data-pdf-reader` and flags the page. It
+also marks the imported ones `data-pdf-locked`, so the reader asks for the
+password before it opens them. Only flagged pages render
 `scripts/pdf-reader.html`: a `<template>` for the reader shell and the ES module
 `assets/js/pdf-reader.mjs`. Activating a PDF link inserts a reader after the
 link's paragraph, inside its list item, or after its table. The first one loads

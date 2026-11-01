@@ -142,5 +142,5 @@ This is the main conceptual gap in the current research, and resolving it would 
 
 
 - Kahneman 2020, *Daniel Kahneman remarks at "AI Debate 2"* -- on *1. What Kahneman actually says*
-- [Nobre and Gresch 2025](/sources/ai-foundations/cognition-and-mind/nobre-2025-external-and-internal-attention.pdf.enc), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
-- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow* -- on *1. What Kahneman actually says*
+- [Nobre and Gresch 2025](/sources/e3bc15ed61f3e0330df638a73650c7bf.bin), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
+- [Kahneman 2011](/sources/6b0f64ff483334496619f7f55334a949.bin), *Thinking, Fast and Slow* -- on *1. What Kahneman actually says*

@@ -12,7 +12,7 @@ from scripts.migrate.conversion import (
 )
 from scripts.migrate.parser import parse_document
 from scripts.migrate.paths import build_pdf_output_rel
-from scripts.migrate.pdf_lock import KEY_SETTING, LOCK_FILE, MAGIC, PASSWORD_SETTING
+from scripts.migrate.pdf_lock import KEY_SETTING, LOCK_FILE, MAGIC, PASSWORD_SETTING, load_pdf_lock
 from scripts.migrate.planning import MigrationFailed
 from tests.migrate.support import FIXTURE_ROOT, make_run, make_workspace
 
@@ -288,13 +288,12 @@ class ConversionTests(unittest.TestCase):
             )
             bodies.append("\n\n".join(rendered.body_parts))
 
-        link = "Read [Smith 2025](/sources/papers/smith-2025-paper.pdf.enc)."
+        output = self.pdf_output(b"%PDF-1.7\n")
+        link = f"Read [Smith 2025](/{output})."
         self.assertEqual(bodies, [link, link, link])
-        stored = list(staging_root.rglob("*.pdf*"))
-        self.assertEqual(
-            [path.relative_to(staging_root).as_posix() for path in stored],
-            ["sources/papers/smith-2025-paper.pdf.enc"],
-        )
+        self.assertRegex(output, r"^sources/[0-9a-f]{32}\.bin$")
+        stored = [path for path in staging_root.rglob("*") if path.is_file() and "sources" in path.parts]
+        self.assertEqual([path.relative_to(staging_root).as_posix() for path in stored], [output])
         self.assertTrue(stored[0].read_bytes().startswith(MAGIC))
         self.assertNotIn(b"%PDF", stored[0].read_bytes())
         self.assertEqual(self.run.report.warnings, [])
@@ -303,9 +302,10 @@ class ConversionTests(unittest.TestCase):
         sources = self.workspace.source_root / "sources"
         for folder in ("papers", "books/one", "books/two"):
             (sources / folder).mkdir(parents=True)
-        (sources / "papers" / "Smith 2025 Paper.pdf").write_bytes(b"%PDF-1.7\n")
-        (sources / "books" / "one" / "book.pdf").write_bytes(b"%PDF-1.7\n")
-        (sources / "books" / "two" / "book.pdf").write_bytes(b"%PDF-1.7\n")
+        smith, one = b"%PDF-1.7\nsmith\n", b"%PDF-1.7\none\n"
+        (sources / "papers" / "Smith 2025 Paper.pdf").write_bytes(smith)
+        (sources / "books" / "one" / "book.pdf").write_bytes(one)
+        (sources / "books" / "two" / "book.pdf").write_bytes(b"%PDF-1.7\ntwo\n")
         (self.workspace.root / LOCK_FILE).write_text(
             f"{KEY_SETTING}={'ab' * 32}\n{PASSWORD_SETTING}=x{{minute}}\n",
             encoding="utf-8",
@@ -326,8 +326,7 @@ class ConversionTests(unittest.TestCase):
 
         self.assertEqual(
             "\n\n".join(rendered.body_parts),
-            "Read [Smith](/sources/papers/smith-2025-paper.pdf.enc), "
-            "[one](/sources/books/one/book.pdf.enc) and either.",
+            f"Read [Smith](/{self.pdf_output(smith)}), [one](/{self.pdf_output(one)}) and either.",
         )
         self.assertIn("ambiguous-pdf", [item.code for item in self.run.report.warnings])
 
@@ -342,16 +341,43 @@ class ConversionTests(unittest.TestCase):
             "see https://a.org/r. Also https://a.org/s?id=1&x=%2F.",
         )
 
-    def test_pdfs_outside_sources_keep_their_vault_folders(self) -> None:
-        root = self.workspace.source_root
-        self.assertEqual(
-            build_pdf_output_rel(root, root / "system-design/topics/../topics/Big Diagram.pdf"),
-            Path("sources/system-design/topics/big-diagram.pdf.enc"),
+    def test_one_pdf_in_two_vault_folders_is_stored_once_under_an_opaque_name(self) -> None:
+        for folder in ("sources/papers", "system-design/topics"):
+            (self.workspace.source_root / folder).mkdir(parents=True, exist_ok=True)
+            (self.workspace.source_root / folder / "Big Diagram.pdf").write_bytes(b"%PDF-1.7\ndiagram\n")
+        self.write_lock()
+        staging_root = self.workspace.work_root / "content"
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        rendered = convert_document(
+            parse_document("See [[sources/papers/Big Diagram.pdf|A]] and [[system-design/topics/Big Diagram.pdf|B]]."),
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=staging_root,
+            ),
+            self.run.config.frontmatter_defaults,
         )
+
+        output = self.pdf_output(b"%PDF-1.7\ndiagram\n")
+        self.assertEqual("\n\n".join(rendered.body_parts), f"See [A](/{output}) and [B](/{output}).")
+        self.assertNotIn("diagram", output.lower())
+        self.assertEqual(build_pdf_output_rel("ab" * 16), Path(f"sources/{'ab' * 16}.bin"))
         self.assertEqual(
-            build_pdf_output_rel(root, Path("/elsewhere/Paper.pdf")),
-            Path("sources/paper.pdf.enc"),
+            [path.relative_to(staging_root).as_posix() for path in (staging_root / "sources").iterdir()],
+            [output],
         )
+
+    def write_lock(self) -> None:
+        (self.workspace.root / LOCK_FILE).write_text(
+            f"{KEY_SETTING}={'ab' * 32}\n{PASSWORD_SETTING}=x{{minute}}\n",
+            encoding="utf-8",
+        )
+
+    def pdf_output(self, pdf: bytes) -> str:
+        """The content path the import gives a PDF with these bytes."""
+        return build_pdf_output_rel(load_pdf_lock(self.workspace.root / LOCK_FILE).name(pdf)).as_posix()
 
     def test_conversion_stops_when_pdfs_cannot_be_encrypted(self) -> None:
         sources = self.workspace.source_root / "sources"
@@ -372,7 +398,7 @@ class ConversionTests(unittest.TestCase):
                 context,
                 self.run.config.frontmatter_defaults,
             )
-        self.assertEqual(list(self.workspace.work_root.rglob("*.pdf*")), [])
+        self.assertEqual(list(self.workspace.work_root.rglob("*.bin")), [])
 
     def test_conversion_leaves_oversized_pdfs_out(self) -> None:
         books = self.workspace.source_root / "sources"

@@ -339,4 +339,4 @@ The broader interaction model answers:
 ## Library sources
 
 
-- [Vonderhaar et al. 2025](/sources/ml-engineering/se-for-ml/vonderhaar-2025-requirements-engineering-ml-product-case-study.pdf.enc), *Exploring Requirements Engineering for Machine Learning via a Product Case Study*
+- [Vonderhaar et al. 2025](/sources/3a074adf395a940898e521092e18eef4.bin), *Exploring Requirements Engineering for Machine Learning via a Product Case Study*

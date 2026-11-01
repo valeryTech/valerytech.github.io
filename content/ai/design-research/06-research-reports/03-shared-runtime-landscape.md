@@ -267,6 +267,6 @@ These definitions are local copies from the [complete original bibliography]({{<
 ## Library sources
 
 
-- [Ferrag et al. 2025](/sources/ai-engineering/agents/ferrag-2025-from-llm-reasoning-to-autonomous-ai-agents.pdf.enc), *From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review* ([arXiv:2504.19678](https://arxiv.org/abs/2504.19678))
-- [Gopinathan et al. 2026](/sources/ai-engineering/harness/gopinathan-2026-pact-choreographic-language-agentic-ecosystems.pdf.enc), *Pact: A Choreographic Language for Agentic Ecosystems* ([arXiv:2605.03143](https://arxiv.org/abs/2605.03143))
-- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
+- [Ferrag et al. 2025](/sources/01e30b02cc29b5d5e8959a660214ceaf.bin), *From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review* ([arXiv:2504.19678](https://arxiv.org/abs/2504.19678))
+- [Gopinathan et al. 2026](/sources/c54b0469f1b118079e719c38708b2871.bin), *Pact: A Choreographic Language for Agentic Ecosystems* ([arXiv:2605.03143](https://arxiv.org/abs/2605.03143))
+- [Dinu et al. 2024](/sources/2a14b3704dd17a8b46067815a9b6cc54.bin), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))

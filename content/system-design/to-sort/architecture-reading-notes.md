@@ -34,7 +34,7 @@ This also makes testing useful as a design tool #engineering
 # Fundamentals of SA & SA Hard Parts
 
 
-Source: [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts*; [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*.
+Source: [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts*; [Richards and Ford 2025](/sources/2d49b5a0c9a1eb1beeb05703a3d3d23e.bin), *Fundamentals of Software Architecture, 2nd Edition*.
 
 Because virtually every problem presents novel challenges, the real job of an architect lies in their ability to objectively determine and assess the set of trade-offs on either side of a consequential decision to resolve it as well as possible.
 
@@ -206,7 +206,7 @@ We will now continue along the same lines, and seek abstractions that can allow 
 # Hopre - Architect
 
 
-Source: [Hohpe 2017](/sources/software-engineering/architecture/hohpe-2017-37-things-one-architect-knows.pdf.enc), *37 Things One Architect Knows About IT Transformation*.
+Source: [Hohpe 2017](/sources/0371de3c81af6c31efaf60a82eff66b2.bin), *37 Things One Architect Knows About IT Transformation*.
 
 As our world is becoming more complex and difficult to understand, telling stories is one of the best ways to engage and teach.
 
@@ -236,9 +236,9 @@ Integrate early, and integrate often. Avoid the use of long-lived branches for f
 ## Library sources
 
 
-- [Fowler 2003](/sources/software-engineering/architecture/fowler-2003-who-needs-an-architect.pdf.enc), *Who Needs an Architect?* -- on *Hopre - Architect*
+- [Fowler 2003](/sources/78bfbf4e780deabc5ec452a29c46fc2c.bin), *Who Needs an Architect?* -- on *Hopre - Architect*
 
 Further reading:
 
-- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation*
-- [Malan 2022](/sources/software-engineering/architecture/malan-2022-technical-leadership-decisions.pdf.enc), *Technical Leadership and Decisions*
+- [Kazman et al. 2000](/sources/38eda7233da8012027d48c1292ec9ca2.bin), *ATAM: Method for Architecture Evaluation*
+- [Malan 2022](/sources/79b330f62fe31068010c8f554d4f5270.bin), *Technical Leadership and Decisions*

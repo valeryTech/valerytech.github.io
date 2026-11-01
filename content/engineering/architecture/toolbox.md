@@ -136,15 +136,15 @@ For a design or architecture decision:
 ## Library sources
 
 
-- [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition* -- on *Laws*
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- on *Coupling and modularity*
-- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer, 2nd Edition* -- on *The Essence of Good Design (ETC)* and DRY
-- [Shore et al. 2021](/sources/software-engineering/process-and-agile/shore-2021-art-of-agile-development-2nd-edition.pdf.enc), *The Art of Agile Development, 2nd Edition* -- on *Simple Design*
-- [Mak 2026](/sources/software-engineering/craft/mak-2026-software-design-for-python-programmers.pdf.enc), *Software Design for Python Programmers: Principles and patterns* -- the named principles with their sections (Single Responsibility 2.3.1, Open-Closed and DRY 2.3.3, Law of Demeter 5.6, Liskov Substitution 7.2, composition over inheritance 7.3.3), on *Design principles*
+- [Richards and Ford 2025](/sources/2d49b5a0c9a1eb1beeb05703a3d3d23e.bin), *Fundamentals of Software Architecture, 2nd Edition* -- on *Laws*
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design* -- on *Coupling and modularity*
+- [Thomas and Hunt 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer, 2nd Edition* -- on *The Essence of Good Design (ETC)* and DRY
+- [Shore et al. 2021](/sources/b1db563b810a93903d1f5277aece14f4.bin), *The Art of Agile Development, 2nd Edition* -- on *Simple Design*
+- [Mak 2026](/sources/e063540e34a26838f85d5c3b67951046.bin), *Software Design for Python Programmers: Principles and patterns* -- the named principles with their sections (Single Responsibility 2.3.1, Open-Closed and DRY 2.3.3, Law of Demeter 5.6, Liskov Substitution 7.2, composition over inheritance 7.3.3), on *Design principles*
 
 Further reading:
 
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts*
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts*
 - Gandhi et al. 2024, *Head First Software Architecture*
-- [Malan 2025](/sources/software-engineering/architecture/malan-2025-architecture-principles.pdf.enc), *Architecture Principles*
-- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design*
+- [Malan 2025](/sources/8e4cfc35c9bc5b1e5e2cc980c49ec3c9.bin), *Architecture Principles*
+- [Ousterhout 2018](/sources/0a09675129a4612b2260dbb60c83b051.bin), *A Philosophy of Software Design*

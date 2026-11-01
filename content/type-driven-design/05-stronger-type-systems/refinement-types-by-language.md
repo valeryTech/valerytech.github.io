@@ -52,7 +52,7 @@ Annotated[int, ValueRange(1, 100)]
 
 but Python's typing specification says ordinary type checkers may ignore that metadata. It doesn't mean the type checker proves `1 <= x <= 100`.
 
-So Python has refinement-like building blocks, but no general refinement type system. Ramalho ([PDF](/sources/programming/language-theory/ramalho-2022-fluent-python-2e.pdf.enc), chapter 8) notes the gap directly: the type system has no way to say "an integer between 1 and 1000".
+So Python has refinement-like building blocks, but no general refinement type system. Ramalho ([PDF](/sources/c09d057b50eb8836ae7e40220e951a83.bin), chapter 8) notes the gap directly: the type system has no way to say "an integer between 1 and 1000".
 
 ## TypeScript
 
@@ -168,18 +168,18 @@ Iron is a Scala 3 library for this: `val age: Int :| Positive = 42` is checked a
 {{< /callout >}}
 
 
-Both libraries appear in the library's Scala books: Volpe's *Practical FP in Scala* ([PDF](/sources/programming/scala/volpe-2021-practical-fp-in-scala-2e.pdf.enc), chapter 1) uses `refined` and validates runtime values into it, and his Scala 3 book ([PDF](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), chapter 4) uses Iron.
+Both libraries appear in the library's Scala books: Volpe's *Practical FP in Scala* ([PDF](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), chapter 1) uses `refined` and validates runtime values into it, and his Scala 3 book ([PDF](/sources/42ef10a33c54df6756cd49d40ee34101.bin), chapter 4) uses Iron.
 
 ## Library sources
 
 
-- [Sebesta 2019](/sources/programming/language-theory/sebesta-2019-concepts-of-programming-languages-12e.pdf.enc), *Concepts of Programming Languages, 12th Edition* -- section 6.15 on Ada subtypes with range constraints; on the Ada row of the table
-- [Ramalho 2022](/sources/programming/language-theory/ramalho-2022-fluent-python-2e.pdf.enc), *Fluent Python, 2nd Edition* -- chapter 8 on what Python's type hints can't say; on *Python*
-- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth* -- section 8.3.2, "Lightweight verification with LiquidHaskell", on `type Nat = {n : Int | n >= 0}` in `{-@ @-}` comments, with `addV` accepted and `subV` rejected, and checking by SMT solvers; chapter 11, "Type system advances", on data kinds, type-level literals, type families and GADTs; on *Haskell*
-- [Volpe 2021](/sources/programming/scala/volpe-2021-practical-fp-in-scala-2e.pdf.enc), *Practical FP in Scala, 2nd Edition* -- chapter 1 uses the `refined` library for refinement types and validates runtime values into them; on *Scala's terminology trap*
-- [Volpe 2023](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), *Functional Event-Driven Architecture: Powered by Scala 3* -- chapter 4 uses Iron for refinement types in Scala 3; on *Scala's terminology trap*
-- [Odersky et al. 2021](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), *Programming in Scala, 5th Edition* -- section 20.8, Scala's own "refinement types" (member refinements); on *Scala's terminology trap*
+- [Sebesta 2019](/sources/0d1e41edfd02fae6c9aa5352f2229b01.bin), *Concepts of Programming Languages, 12th Edition* -- section 6.15 on Ada subtypes with range constraints; on the Ada row of the table
+- [Ramalho 2022](/sources/c09d057b50eb8836ae7e40220e951a83.bin), *Fluent Python, 2nd Edition* -- chapter 8 on what Python's type hints can't say; on *Python*
+- [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth* -- section 8.3.2, "Lightweight verification with LiquidHaskell", on `type Nat = {n : Int | n >= 0}` in `{-@ @-}` comments, with `addV` accepted and `subV` rejected, and checking by SMT solvers; chapter 11, "Type system advances", on data kinds, type-level literals, type families and GADTs; on *Haskell*
+- [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala, 2nd Edition* -- chapter 1 uses the `refined` library for refinement types and validates runtime values into them; on *Scala's terminology trap*
+- [Volpe 2023](/sources/42ef10a33c54df6756cd49d40ee34101.bin), *Functional Event-Driven Architecture: Powered by Scala 3* -- chapter 4 uses Iron for refinement types in Scala 3; on *Scala's terminology trap*
+- [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala, 5th Edition* -- section 20.8, Scala's own "refinement types" (member refinements); on *Scala's terminology trap*
 
 Further reading:
 
-- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell* -- sections 2.2-2.4 on data kinds, promoted built-in types and type-level functions (closed type families), and section 5.2 on GADTs, the GHC features the note lists; section 2.3.2, "Natural Numbers", notes that there are no negative, fractional or floating type-level numeric literals; on *Haskell*
+- [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell* -- sections 2.2-2.4 on data kinds, promoted built-in types and type-level functions (closed type families), and section 5.2 on GADTs, the GHC features the note lists; section 2.3.2, "Natural Numbers", notes that there are no negative, fractional or floating type-level numeric literals; on *Haskell*

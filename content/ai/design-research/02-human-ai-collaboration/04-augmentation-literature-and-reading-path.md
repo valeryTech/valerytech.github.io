@@ -269,7 +269,7 @@ These definitions are local copies from the [complete original bibliography]({{<
 
 [^turn4search1]: Wil M. P. van der Aalst, "Workflow Verification: Finding Control-Flow Errors Using Petri-Net-Based Techniques," 2000. <https://doi.org/10.1007/3-540-45594-9_11> Original Deep Research source key: `turn4search1`.
 
-[^turn6academia24]: Andrej Bauer and Matija Pretnar, "Programming with Algebraic Effects and Handlers," 2012/2015. <https://arxiv.org/abs/1203.1539> ([PDF](/sources/ai-engineering/harness/bauer-2012-programming-with-algebraic-effects-handlers.pdf.enc)) Original Deep Research source key: `turn6academia24`.
+[^turn6academia24]: Andrej Bauer and Matija Pretnar, "Programming with Algebraic Effects and Handlers," 2012/2015. <https://arxiv.org/abs/1203.1539> ([PDF](/sources/9b6246e3747af2f9c2aeb0974d41c105.bin)) Original Deep Research source key: `turn6academia24`.
 
 [^turn5search2]: Gerwin Klein et al., "seL4: Formal Verification of an OS Kernel," *SOSP '09*, 2009. <https://cgi.cse.unsw.edu.au/~kleing/papers/sosp09.html> Original Deep Research source key: `turn5search2`.
 
@@ -308,6 +308,6 @@ These definitions are local copies from the [complete original bibliography]({{<
 ## Library sources
 
 
-- [Plotkin and Pretnar 2013](/sources/ai-engineering/harness/plotkin-2013-handling-algebraic-effects.pdf.enc), *Handling Algebraic Effects*
-- [Colelough and Regli 2025](/sources/retrieval-and-knowledge/neuro-symbolic/colelough-2025-neuro-symbolic-ai-in-2024-review.pdf.enc), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435))
-- [Hamilton et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/hamilton-2024-neuro-symbolic-ai-nlp-structured-review.pdf.enc), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228))
+- [Plotkin and Pretnar 2013](/sources/b9f3722ea20feb80f7f1a466a348fb96.bin), *Handling Algebraic Effects*
+- [Colelough and Regli 2025](/sources/8d49cb9cb57fe2f184120dfa46ddf052.bin), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435))
+- [Hamilton et al. 2024](/sources/37affd9279cab197f5ec9c63c8af2c8e.bin), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228))

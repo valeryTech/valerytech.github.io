@@ -402,10 +402,10 @@ The Capital One article provides an example of the chain: **JTBD -> capability -
 ## Library sources
 
 
-- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition* -- on *8. SEI: business goals -> quality scenarios -> architecture*
-- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture* -- on *Backward design derivation*
+- [Bass et al. 2021](/sources/887eb03f3c5ac3d5c24aeeb4705f0245.bin), *Software Architecture in Practice, 4th Edition* -- on *8. SEI: business goals -> quality scenarios -> architecture*
+- [Brown 2026](/sources/98db09f724a7584933b9628fbab6dd54.bin), *The C4 Model: Visualizing Software Architecture* -- on *Backward design derivation*
 
 Further reading:
 
-- [Cervantes and Kazman 2024](/sources/software-engineering/architecture/cervantes-2024-designing-software-architectures.pdf.enc), *Designing Software Architectures: A Practical Approach, 2nd Edition*
-- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation*
+- [Cervantes and Kazman 2024](/sources/b6584be4eff5ad6afd064e5012e63f75.bin), *Designing Software Architectures: A Practical Approach, 2nd Edition*
+- [Kazman et al. 2000](/sources/38eda7233da8012027d48c1292ec9ca2.bin), *ATAM: Method for Architecture Evaluation*

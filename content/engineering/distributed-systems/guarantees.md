@@ -180,15 +180,15 @@ The checklist for recording each operation's requirement (model, behavior when r
 ## Library sources
 
 
-- [Abadi 2012](/sources/system-design/distributed-systems/abadi-2012-consistency-tradeoffs-distributed-database-design.pdf.enc), *Consistency Tradeoffs in Modern Distributed Database System Design* ([doi:10.1109/MC.2012.33](https://doi.org/10.1109/MC.2012.33)) -- on *PACELC*
-- [Kleppmann 2015](/sources/system-design/distributed-systems/kleppmann-2015-critique-of-the-cap-theorem.pdf.enc), *A Critique of the CAP Theorem* ([arXiv:1509.05393](https://arxiv.org/abs/1509.05393)) -- on *What CAP proves*, *Delay sensitivity*, and the latency column of *Consistency models*
-- [Gotsman et al. 2016](/sources/system-design/distributed-systems/gotsman-2016-cause-im-strong-enough-consistency-choices.pdf.enc), *'Cause I'm Strong Enough* ([doi:10.1145/2837614.2837625](https://doi.org/10.1145/2837614.2837625)) -- on *Choosing consistency per operation*
-- [Burckhardt 2014](/sources/system-design/distributed-systems/burckhardt-2014-principles-of-eventual-consistency-excerpt.pdf.enc), *Principles of Eventual Consistency*, excerpt ([doi:10.1561/2500000011](https://doi.org/10.1561/2500000011)) -- the hierarchy of models and CAP for sequential consistency
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 6 on *Session guarantees*; chapter 8 on *Isolation levels*; chapter 10 on linearizability, its cost, and CAP
-- [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems, Second Edition* -- chapter 10 on consistency models; chapter 12 on transactions
+- [Abadi 2012](/sources/71a1481cb1f870e715b6be7feef91e92.bin), *Consistency Tradeoffs in Modern Distributed Database System Design* ([doi:10.1109/MC.2012.33](https://doi.org/10.1109/MC.2012.33)) -- on *PACELC*
+- [Kleppmann 2015](/sources/163a59f55b2a55b55d2b612b4b906d03.bin), *A Critique of the CAP Theorem* ([arXiv:1509.05393](https://arxiv.org/abs/1509.05393)) -- on *What CAP proves*, *Delay sensitivity*, and the latency column of *Consistency models*
+- [Gotsman et al. 2016](/sources/59710f6d9572a0a505cc420ab5f77304.bin), *'Cause I'm Strong Enough* ([doi:10.1145/2837614.2837625](https://doi.org/10.1145/2837614.2837625)) -- on *Choosing consistency per operation*
+- [Burckhardt 2014](/sources/7abc015740f3cc14b1ac9e64ffc75719.bin), *Principles of Eventual Consistency*, excerpt ([doi:10.1561/2500000011](https://doi.org/10.1561/2500000011)) -- the hierarchy of models and CAP for sequential consistency
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 6 on *Session guarantees*; chapter 8 on *Isolation levels*; chapter 10 on linearizability, its cost, and CAP
+- [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems, Second Edition* -- chapter 10 on consistency models; chapter 12 on transactions
 
 Further reading:
 
-- [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 9, consistency
-- [Davoudian et al. 2018](/sources/system-design/data-systems/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661)) -- consistency models and CAP as design principles of NoSQL stores
-- [Herlihy et al. 2021](/sources/programming/concurrency/herlihy-2021-art-of-multiprocessor-programming-2e.pdf.enc), *The Art of Multiprocessor Programming, Second Edition* -- chapter 3, linearizability versus sequential consistency for shared-memory objects (3.4), the origin of the strongest models in *Consistency models*
+- [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems* -- chapter 9, consistency
+- [Davoudian et al. 2018](/sources/ed8ca9d23115ca84b294330e59371e82.bin), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661)) -- consistency models and CAP as design principles of NoSQL stores
+- [Herlihy et al. 2021](/sources/c2dc25511cc36fbdc7830f6648b3e176.bin), *The Art of Multiprocessor Programming, Second Edition* -- chapter 3, linearizability versus sequential consistency for shared-memory objects (3.4), the origin of the strongest models in *Consistency models*

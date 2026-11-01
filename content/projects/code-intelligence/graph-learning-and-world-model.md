@@ -91,16 +91,16 @@ Related open idea: a library of typical incident evolution schemes that the simu
 ## Library sources
 
 
-- [Hogan et al. 2021](/sources/retrieval-and-knowledge/knowledge-graphs/hogan-2021-knowledge-graphs.pdf.enc), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772)) -- on *Link prediction for missing traceability*
-- [Negro et al. 2026](/sources/retrieval-and-knowledge/knowledge-graphs/negro-2026-knowledge-graphs-and-llms-in-action.pdf.enc), *Knowledge Graphs and LLMs in Action* -- on *Node classification for root-cause scoring*
-- [OREN et al. 2018](/sources/research-methods/modeling-and-simulation/oren-2018-shift-model-based-simulation-based-paradigm.pdf.enc), *A Shift from Model-Based to Simulation-Based Paradigm* ([doi:10.15344/2456-4451/2018/126](https://doi.org/10.15344/2456-4451/2018/126)) -- on *World model and simulation engine*
+- [Hogan et al. 2021](/sources/3103330fa3d6b92e782dd6a283a2998d.bin), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772)) -- on *Link prediction for missing traceability*
+- [Negro et al. 2026](/sources/20d5a1fccc5c92be2b0355a892dc1477.bin), *Knowledge Graphs and LLMs in Action* -- on *Node classification for root-cause scoring*
+- [OREN et al. 2018](/sources/bad031278c67c8eb505564abbdc385a8.bin), *A Shift from Model-Based to Simulation-Based Paradigm* ([doi:10.15344/2456-4451/2018/126](https://doi.org/10.15344/2456-4451/2018/126)) -- on *World model and simulation engine*
 
 Further reading:
 
-- [Hu et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/hu-2025-grag-graph-retrieval-augmented-generation.pdf.enc), *GRAG: Graph Retrieval-Augmented Generation*
-- [Law 2015](/sources/research-methods/modeling-and-simulation/law-2015-simulation-modeling-and-analysis.pdf.enc), *Simulation Modeling and Analysis*
-- [OREN et al. 2023](/sources/research-methods/modeling-and-simulation/oren-2023-body-of-knowledge-modeling-and-simulation.pdf.enc), *Body of Knowledge for Modeling and Simulation* ([doi:10.1007/978-3-031-11085-6](https://doi.org/10.1007/978-3-031-11085-6))
-- [Sargent 2017](/sources/research-methods/modeling-and-simulation/sargent-2017-evolution-of-scientific-respect-for-simulation.pdf.enc), *A Perspective on Fifty-five Years of the Evolution of Scientific Respect for Simulation*
-- [Smith and Sturrock 2024](/sources/research-methods/modeling-and-simulation/smith-2024-simio-and-simulation.pdf.enc), *Simio and Simulation: Modeling, Analysis, Applications*
-- [Sokolowski and Banks 2009](/sources/research-methods/modeling-and-simulation/sokolowski-2009-principles-of-modeling-and-simulation.pdf.enc), *Principles of Modeling and Simulation: A Multidisciplinary Approach*
-- [Zeigler et al. 2019](/sources/research-methods/modeling-and-simulation/zeigler-2019-theory-of-modeling-and-simulation.pdf.enc), *Theory of Modeling and Simulation*
+- [Hu et al. 2025](/sources/f8cd141d3908871de16bdaa38e2ad3a7.bin), *GRAG: Graph Retrieval-Augmented Generation*
+- [Law 2015](/sources/3ef5fb54e49bef02423e3394c86b37d4.bin), *Simulation Modeling and Analysis*
+- [OREN et al. 2023](/sources/046af3ca91e828c8aef906bff1364dd9.bin), *Body of Knowledge for Modeling and Simulation* ([doi:10.1007/978-3-031-11085-6](https://doi.org/10.1007/978-3-031-11085-6))
+- [Sargent 2017](/sources/b410351f463e708ce6f2d65ab393340b.bin), *A Perspective on Fifty-five Years of the Evolution of Scientific Respect for Simulation*
+- [Smith and Sturrock 2024](/sources/bfd12ec860284c550daa318c508daa9d.bin), *Simio and Simulation: Modeling, Analysis, Applications*
+- [Sokolowski and Banks 2009](/sources/50df91987a00a6edb4b833510741fc68.bin), *Principles of Modeling and Simulation: A Multidisciplinary Approach*
+- [Zeigler et al. 2019](/sources/a59bde49692bd5da9171dc7192e38992.bin), *Theory of Modeling and Simulation*

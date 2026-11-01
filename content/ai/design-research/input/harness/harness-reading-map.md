@@ -13,7 +13,7 @@ Related reading for [Object-Oriented Harness: Evolving Agent Harnesses through O
 
 | Paper | Relevance |
 |---|---|
-| Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering | Connects memory, skills, protocols, and harness engineering ([PDF](/sources/ai-engineering/harness/zhou-2026-externalization-in-llm-agents.pdf.enc)). |
+| Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering | Connects memory, skills, protocols, and harness engineering ([PDF](/sources/633694303a31046d598fcabe0c316bc3.bin)). |
 | Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (ACE) | Evolving context and reusable strategies for self-improving agents. |
 | AgentOps Pattern Catalogue: Architectural Patterns for Safe and Observable Operations of Foundation Model-Based Agents | Runtime controls, observability, isolation, and replay. |
 | Aegis: Taxonomy and Optimizations for Overcoming Agent-Environment Failures in LLM Agents | Agent-environment failures and ways to improve reliability. |
@@ -44,6 +44,6 @@ Publication note, 2026-04-28: This reading guide omits local file locations and 
 ## Library sources
 
 
-- [Song et al. 2025](/sources/ai-engineering/failures/song-2025-aegis-agent-environment-failures-in-llm-agents.pdf.enc), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504)) -- on *Papers*
-- [Li et al. 2026](/sources/ai-engineering/harness/li-2026-object-oriented-harness.pdf.enc), *Object-Oriented Harness* ([arXiv:2610.28380](https://arxiv.org/abs/2610.28380)) -- on *Suggested reading order*
-- [Xia et al. 2025](/sources/ai-engineering/observability/xia-2025-agentops-pattern-catalogue.pdf.enc), *AgentOps Pattern Catalogue* -- on *Papers*
+- [Song et al. 2025](/sources/d894d42a7cb05735da16ee9be1e18f4f.bin), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504)) -- on *Papers*
+- [Li et al. 2026](/sources/df7bd0a27eed4f8af951cc3ccb8439f6.bin), *Object-Oriented Harness* ([arXiv:2610.28380](https://arxiv.org/abs/2610.28380)) -- on *Suggested reading order*
+- [Xia et al. 2025](/sources/5d52323d0205ad6713d99e680531c914.bin), *AgentOps Pattern Catalogue* -- on *Papers*

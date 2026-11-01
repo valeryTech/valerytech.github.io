@@ -245,17 +245,17 @@ That would give us the methodological foundation both for the collaboration work
 ## Library sources
 
 
-- [Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121)) -- on *3. Construct validity is directly applicable*
-- [Lambert and Newman 2023](/sources/ai-foundations/capabilities-and-measurement/lambert-2023-construct-development-validation.pdf.enc), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
-- [Seth and Bayne 2022](/sources/ai-foundations/cognition-and-mind/seth-2022-theories-of-consciousness.pdf.enc), *Theories of consciousness* ([doi:10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4))
-- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *6. A proposed policy for using LLMs in this research*
+- [Freiesleben 2026](/sources/c84d75800beb21af8a1cc54b8f79c168.bin), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121)) -- on *3. Construct validity is directly applicable*
+- [Lambert and Newman 2023](/sources/49b689d6cd563df789695944f06ff04c.bin), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
+- [Seth and Bayne 2022](/sources/17cf0953e9fb30efde3ac01ec820c105.bin), *Theories of consciousness* ([doi:10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4))
+- [Baltes et al. 2025](/sources/c1ccf311d88d7d8a326c7617fb00ce09.bin), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *6. A proposed policy for using LLMs in this research*
 
 Further reading:
 
-- [Messeri and Crockett 2024](/sources/ai-foundations/alignment-and-society/messeri-2024-ai-and-illusions-of-understanding.pdf.enc), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
-- [Clark and Watson 2019](/sources/ai-foundations/capabilities-and-measurement/clark-2019-constructing-validity.pdf.enc), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
-- [Nolte et al. 2026](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
-- [Felderer and Travassos 2020](/sources/research-methods/empirical-methods/felderer-2020-contemporary-empirical-methods-in-software-engineering.pdf.enc), *Contemporary Empirical Methods in Software Engineering*
-- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))
-- [Fried 2020](/sources/research-methods/philosophy-of-science/fried-2020-theories-and-models.pdf.enc), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011))
-- [Popper 1959](/sources/research-methods/philosophy-of-science/popper-1959-logic-of-scientific-discovery.pdf.enc), *The Logic of Scientific Discovery*
+- [Messeri and Crockett 2024](/sources/ca1b47bae3acd109b2c5866542e96edc.bin), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
+- [Clark and Watson 2019](/sources/7fc85943e4bd06680a1aaf4f357404b6.bin), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
+- [Nolte et al. 2026](/sources/2af58406e13e42072bca886ec3caf534.bin), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
+- [Felderer and Travassos 2020](/sources/2d3e93f9d3f8e092f8131153aae98740.bin), *Contemporary Empirical Methods in Software Engineering*
+- [Wohlin et al. 2024](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))
+- [Fried 2020](/sources/b3fc13357b44cb45b100a2468bd9f252.bin), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011))
+- [Popper 1959](/sources/c68fa1c135c0f988c39d2624f0a61097.bin), *The Logic of Scientific Discovery*

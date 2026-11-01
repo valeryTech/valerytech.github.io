@@ -48,10 +48,10 @@ Choosing the measure after seeing the data is the other way a measure stops mean
 ## Library sources
 
 
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base* -- operationalization and construct validity; on *Introduction to Measurement* (ch. 5)
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base* -- operationalization and construct validity; on *Introduction to Measurement* (ch. 5)
 
 Further reading:
 
-- [Clark and Watson 2019](/sources/ai-foundations/capabilities-and-measurement/clark-2019-constructing-validity.pdf.enc), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
-- [Lambert and Newman 2023](/sources/ai-foundations/capabilities-and-measurement/lambert-2023-construct-development-validation.pdf.enc), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
-- [Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
+- [Clark and Watson 2019](/sources/7fc85943e4bd06680a1aaf4f357404b6.bin), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
+- [Lambert and Newman 2023](/sources/49b689d6cd563df789695944f06ff04c.bin), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
+- [Freiesleben 2026](/sources/c84d75800beb21af8a1cc54b8f79c168.bin), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))

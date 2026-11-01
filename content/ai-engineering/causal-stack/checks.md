@@ -131,4 +131,4 @@ For how these checks fit customer discovery and delivery, see [learning through 
 ## Library sources
 
 
-- [Winston and Just 2025](/sources/ai-engineering/failures/winston-2025-taxonomy-of-failures-in-tool-augmented-llms.pdf.enc), *A Taxonomy of Failures in Tool-Augmented LLMs*
+- [Winston and Just 2025](/sources/9109f4ba96675f41a20817c2fa3c1d1f.bin), *A Taxonomy of Failures in Tool-Augmented LLMs*

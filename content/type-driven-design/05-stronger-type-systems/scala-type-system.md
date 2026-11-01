@@ -17,7 +17,7 @@ Moved from [Type Systems]({{< ref "type-driven-design/01-foundations/type-system
 
 We pay the price for these guarantees; the compiler makes some programs a bit harder to write.
 
-Odersky et al. ([PDF](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), section 17.4, "Avoiding a types monoculture") give the everyday version: a method like `title(text: String, anchor: String, style: String)` is *stringly typed*, since nothing stops a caller from swapping the arguments, and a few tiny value classes fix it. Domain modeling with such types is in [Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#primitive-obsession-and-the-newtype-pattern).
+Odersky et al. ([PDF](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), section 17.4, "Avoiding a types monoculture") give the everyday version: a method like `title(text: String, anchor: String, style: String)` is *stringly typed*, since nothing stops a caller from swapping the arguments, and a few tiny value classes fix it. Domain modeling with such types is in [Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#primitive-obsession-and-the-newtype-pattern).
 
 ## Abstract types and type members
 
@@ -50,7 +50,7 @@ class Concrete extends Abstract:
 - **Type parameter** when the *user* of the type picks it: `List[Int]`, `Map[String, User]`.
 - **Type member** when the *implementation* fixes it and users mostly don't care. `Animal`'s `SuitableFood` below is the classic case: a cow decides what it eats, not the code that holds a cow. Members also avoid signatures like `Service[A, B, C, D]` when several types belong together, and they're what makes path-dependent types possible (below).
 
-Wampler ([PDF](/sources/programming/scala/wampler-2021-programming-scala-3e.pdf.enc), chapter 2, "Parameterized Types Versus Abstract Type Members") puts the same rule differently: a type parameter suits a type that behaves uniformly for any argument (a `Seq[A]` maps the same way whatever `A` is), while a type member suits a type that evolves in parallel with the enclosing type, so that the two must match. That pairing is sometimes called family polymorphism.
+Wampler ([PDF](/sources/15972064071d3223586f8945de281cea.bin), chapter 2, "Parameterized Types Versus Abstract Type Members") puts the same rule differently: a type parameter suits a type that behaves uniformly for any argument (a `Seq[A]` maps the same way whatever `A` is), while a type member suits a type that evolves in parallel with the enclosing type, so that the two must match. That pairing is sometimes called family polymorphism.
 
 The cost of members is visibility: the type no longer shows up in signatures, so readers and type inference have to look inside the class.
 
@@ -84,7 +84,7 @@ You write the members you need in braces, with or without a base type: `Animal {
 
 Yes, the members are checked at compile time: passing an `Int` where `{ def name: String }` is expected is a type error. What happens at runtime is the *call*. The JVM has no structural types, so calling a method or value that the base type doesn't declare goes through Java reflection: in Scala 2 behind `import scala.language.reflectiveCalls`, in Scala 3 through the `Selectable` trait (import `scala.reflect.Selectable.reflectiveSelectable` for ordinary classes). So it's checked statically and dispatched reflectively, which is slower than a normal call. Refining only a type member, as in `Animal { type SuitableFood = Grass }`, needs no reflection, because types are erased anyway.
 
-The reflection is a JVM artifact, not a property of structural typing. Pierce ([PDF](/sources/programming/language-theory/pierce-2002-types-and-programming-languages.pdf.enc), section 19.3) explains why: in a nominal language the class name doubles as a run-time tag, and method calls are dispatched through it. Go has no such constraint: an interface is satisfied by any type with the right methods, without declaring it, and calls through it are ordinary dynamic dispatch. Bodner ([PDF](/sources/programming/language-practice/bodner-2024-learning-go-2e.pdf.enc), chapter 7, "Interfaces Are Type-Safe Duck Typing") adds the design rule that goes with it: interfaces specify what callers need, so they're defined by the code that uses them. Python's `typing.Protocol` is the same idea, checked only statically (Ramalho, [PDF](/sources/programming/language-theory/ramalho-2022-fluent-python-2e.pdf.enc), chapter 13; see the grid in [Dimensions Of Type Systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}#nominal-and-structural-equivalence)).
+The reflection is a JVM artifact, not a property of structural typing. Pierce ([PDF](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), section 19.3) explains why: in a nominal language the class name doubles as a run-time tag, and method calls are dispatched through it. Go has no such constraint: an interface is satisfied by any type with the right methods, without declaring it, and calls through it are ordinary dynamic dispatch. Bodner ([PDF](/sources/9c094741f6655c74e9b828ed1b091426.bin), chapter 7, "Interfaces Are Type-Safe Duck Typing") adds the design rule that goes with it: interfaces specify what callers need, so they're defined by the code that uses them. Python's `typing.Protocol` is the same idea, checked only statically (Ramalho, [PDF](/sources/c09d057b50eb8836ae7e40220e951a83.bin), chapter 13; see the grid in [Dimensions Of Type Systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}#nominal-and-structural-equivalence)).
 
 {{< callout context="note" title="Avoid Structural Typing" icon="outline/info-circle" >}}
 When a structural type seems like a good solution to a problem, consider using a [type class](https://nrinaudo.github.io/scala-best-practices/definitions/type_class.html) instead.
@@ -93,7 +93,7 @@ When a structural type seems like a good solution to a problem, consider using a
 
 Why the advice:
 
-- **Reflection.** Calls are slower, as above. Suereth ([PDF](/sources/programming/scala/suereth-2012-scala-in-depth.pdf.enc), section 6.1.3, rule 15, "Avoid structural types") gives this reason, plus the fact that reflection isn't available on every platform Scala targets.
+- **Reflection.** Calls are slower, as above. Suereth ([PDF](/sources/4e8d2d10ca6fd931719965959de39eac.bin), section 6.1.3, rule 15, "Avoid structural types") gives this reason, plus the fact that reflection isn't available on every platform Scala targets.
 - **Matches by accident.** Two unrelated methods that happen to share a name and signature, a widget's `draw()` and a gunslinger's `draw()`, satisfy the same structural type.
 - **Can't adapt.** A structural type only accepts classes that already have the member under that exact name. A type class instance can adapt a type you don't own, even one whose method is called something else, and the opt-in is explicit (Odersky, section 23.1, "Why typeclasses?").
 
@@ -122,7 +122,7 @@ type Cow = Animal { type SuitableFood = Grass }
 ```
 
 
-In this version `Cow` is only an alias for "any animal that eats grass", not a class. The book itself does it the other way round ([PDF](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), listing 20.11 and section 20.8): `Cow` is an ordinary class, and the refinement appears where it pays off, at the place that needs grass-eaters:
+In this version `Cow` is only an alias for "any animal that eats grass", not a class. The book itself does it the other way round ([PDF](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), listing 20.11 and section 20.8): `Cow` is an ordinary class, and the refinement appears where it pays off, at the place that needs grass-eaters:
 
 ```scala
 class Cow extends Animal:
@@ -137,7 +137,7 @@ pasture.animals = Cow() :: pasture.animals   // Cow conforms; it never mentions 
 ```
 
 
-A structural bound on a type parameter works the same way. Alexander's *Scala Cookbook* ([PDF](/sources/programming/scala/alexander-2021-scala-cookbook-2e.pdf.enc), recipe 23.6, "Using Duck Typing (Structural Types)") writes `def callSpeak[A <: { def speak(): Unit }](obj: A)`, which accepts any object with a `speak()` method.
+A structural bound on a type parameter works the same way. Alexander's *Scala Cookbook* ([PDF](/sources/852fbe203cb432c7ab553608147935d9.bin), recipe 23.6, "Using Duck Typing (Structural Types)") writes `def callSpeak[A <: { def speak(): Unit }](obj: A)`, which accepts any object with a `speak()` method.
 
 ### Structural types for dynamic records
 
@@ -236,7 +236,7 @@ For example, sets are generic and take a type parameter: they are defined as Set
 **Raw Types**. A raw type is an object of a generic class or interface if its type arguments are not passed during its creation.
 
 {{< callout context="note" title="Critique" icon="outline/help-octagon" >}}
-Not quite: a raw type is a *type*, not an object. Bloch ([PDF](/sources/programming/language-practice/bloch-2018-effective-java-3e.pdf.enc), Item 26 "Don't use raw types") defines it as the name of a generic type used without any type arguments, such as `List` for `List<E>`. Java kept raw types, and erased generics, for migration compatibility with code written before generics.
+Not quite: a raw type is a *type*, not an object. Bloch ([PDF](/sources/99fe404f1fe77aab60731171df07c68f.bin), Item 26 "Don't use raw types") defines it as the name of a generic type used without any type arguments, such as `List` for `List<E>`. Java kept raw types, and erased generics, for migration compatibility with code written before generics.
 {{< /callout >}}
 
 
@@ -350,18 +350,18 @@ Compile time is only one of the costs. The others are harder error messages, a s
 ## Library sources
 
 
-- [Odersky et al. 2021](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), *Programming in Scala, 5th Edition* -- source of the text on abstract types, path-dependent types, nominal and structural subtyping (the Pasture and AnimalThatEatsGrass example, refinement types), and type parametrization; chapter 20, "Abstract Members", covers abstract types (20.6), path-dependent types (20.7), refinement types (20.8) and the currency case study (20.9); also sections 17.4-17.6 on value classes, intersection and union types, chapter 18's introduction and section 18.5, section 13.2 on erasure, section 23.1 on type classes, section 23.4 on multiversal equality and section 24.9 on `ClassTag`; on every section
-- [Wampler 2021](/sources/programming/scala/wampler-2021-programming-scala-3e.pdf.enc), *Programming Scala, 3rd Edition* -- chapter 2 on type parameters versus type members, chapter 4 on `Matchable`, chapter 6 on implicit evidence, chapter 16 on structural and union types, chapter 17 on type projections, chapter 20 on structural types and `selectDynamic`; on *Abstract types and type members*, *Nominal and structural subtyping*, *Union and intersection types*, *Path-dependent types* and *Type parameters and type tags*
-- [Suereth 2012](/sources/programming/scala/suereth-2012-scala-in-depth.pdf.enc), *Scala in Depth* -- section 6.1, "Types and paths" (path-dependent handles in 6.1.1, and rule 15, "Avoid structural types", in 6.1.3), and section 7.2 on Manifests, written for Scala 2.9; on *Nominal and structural subtyping*, *Path-dependent types* and *Type parameters and type tags*
-- [Bloch 2018](/sources/programming/language-practice/bloch-2018-effective-java-3e.pdf.enc), *Effective Java, 3rd Edition* -- Item 26 on raw types, Item 28 on arrays and generics, Item 31 on bounded wildcards, Item 33 on type tokens; on *Type parameters and type tags*
-- [Alexander 2021](/sources/programming/scala/alexander-2021-scala-cookbook-2e.pdf.enc), *Scala Cookbook, 2nd Edition* -- recipe 23.6, "Using Duck Typing (Structural Types)"; on *Trade-offs*
-- [Pierce 2002](/sources/programming/language-theory/pierce-2002-types-and-programming-languages.pdf.enc), *Types and Programming Languages* -- section 19.3, "Nominal and Structural Type Systems"; on *Nominal and structural subtyping*
-- [Bodner 2024](/sources/programming/language-practice/bodner-2024-learning-go-2e.pdf.enc), *Learning Go, 2nd Edition* -- chapter 7, "Interfaces Are Type-Safe Duck Typing"; on *Nominal and structural subtyping*
-- [Ramalho 2022](/sources/programming/language-theory/ramalho-2022-fluent-python-2e.pdf.enc), *Fluent Python, 2nd Edition* -- chapter 13, "Interfaces, Protocols, and ABCs": static duck typing with `typing.Protocol`, Python's structural typing; on *Nominal and structural subtyping*
-- [Krishnamurthi 2025](/sources/programming/language-theory/krishnamurthi-2025-programming-languages-application-interpretation-v3.pdf.enc), *Programming Languages: Application and Interpretation*, version 3 -- the chapter "Nominal Types, Structural Types, and Subtyping"; on *Nominal and structural subtyping*
-- [Milewski 2019](/sources/programming/category-theory/milewski-2019-category-theory-for-programmers-scala-edition.pdf.enc), *Category Theory for Programmers, Scala Edition* -- section 2.6, "Examples of Types": the empty type, unit and bottom; on *To study*
+- [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala, 5th Edition* -- source of the text on abstract types, path-dependent types, nominal and structural subtyping (the Pasture and AnimalThatEatsGrass example, refinement types), and type parametrization; chapter 20, "Abstract Members", covers abstract types (20.6), path-dependent types (20.7), refinement types (20.8) and the currency case study (20.9); also sections 17.4-17.6 on value classes, intersection and union types, chapter 18's introduction and section 18.5, section 13.2 on erasure, section 23.1 on type classes, section 23.4 on multiversal equality and section 24.9 on `ClassTag`; on every section
+- [Wampler 2021](/sources/15972064071d3223586f8945de281cea.bin), *Programming Scala, 3rd Edition* -- chapter 2 on type parameters versus type members, chapter 4 on `Matchable`, chapter 6 on implicit evidence, chapter 16 on structural and union types, chapter 17 on type projections, chapter 20 on structural types and `selectDynamic`; on *Abstract types and type members*, *Nominal and structural subtyping*, *Union and intersection types*, *Path-dependent types* and *Type parameters and type tags*
+- [Suereth 2012](/sources/4e8d2d10ca6fd931719965959de39eac.bin), *Scala in Depth* -- section 6.1, "Types and paths" (path-dependent handles in 6.1.1, and rule 15, "Avoid structural types", in 6.1.3), and section 7.2 on Manifests, written for Scala 2.9; on *Nominal and structural subtyping*, *Path-dependent types* and *Type parameters and type tags*
+- [Bloch 2018](/sources/99fe404f1fe77aab60731171df07c68f.bin), *Effective Java, 3rd Edition* -- Item 26 on raw types, Item 28 on arrays and generics, Item 31 on bounded wildcards, Item 33 on type tokens; on *Type parameters and type tags*
+- [Alexander 2021](/sources/852fbe203cb432c7ab553608147935d9.bin), *Scala Cookbook, 2nd Edition* -- recipe 23.6, "Using Duck Typing (Structural Types)"; on *Trade-offs*
+- [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- section 19.3, "Nominal and Structural Type Systems"; on *Nominal and structural subtyping*
+- [Bodner 2024](/sources/9c094741f6655c74e9b828ed1b091426.bin), *Learning Go, 2nd Edition* -- chapter 7, "Interfaces Are Type-Safe Duck Typing"; on *Nominal and structural subtyping*
+- [Ramalho 2022](/sources/c09d057b50eb8836ae7e40220e951a83.bin), *Fluent Python, 2nd Edition* -- chapter 13, "Interfaces, Protocols, and ABCs": static duck typing with `typing.Protocol`, Python's structural typing; on *Nominal and structural subtyping*
+- [Krishnamurthi 2025](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), *Programming Languages: Application and Interpretation*, version 3 -- the chapter "Nominal Types, Structural Types, and Subtyping"; on *Nominal and structural subtyping*
+- [Milewski 2019](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin), *Category Theory for Programmers, Scala Edition* -- section 2.6, "Examples of Types": the empty type, unit and bottom; on *To study*
 
 Further reading:
 
 - Scott et al. 2025, *Programming Language Pragmatics, 5th Edition*
-- [Volpe 2023](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), *Functional Event-Driven Architecture: Powered by Scala 3*
+- [Volpe 2023](/sources/42ef10a33c54df6756cd49d40ee34101.bin), *Functional Event-Driven Architecture: Powered by Scala 3*

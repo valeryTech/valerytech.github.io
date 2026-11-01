@@ -81,4 +81,4 @@ A control that blocks a particular bad result may be useful even while its inter
 ## Library sources
 
 
-- [Ma et al. 2025](/sources/ai-engineering/failures/ma-2025-diagnosing-failure-root-causes-in-agentic-systems.pdf.enc), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735))
+- [Ma et al. 2025](/sources/357f048f04984be0de2d677e589887ac.bin), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735))

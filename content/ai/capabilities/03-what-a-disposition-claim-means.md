@@ -18,7 +18,7 @@ The obvious reading is a counterfactual:
 
 > **Simple Conditional Analysis (SCA).** An object is disposed to \(M\) when \(C\) if and only if it would \(M\) if \(C\) were the case.
 
-Ryle, Goodman, and Quine held versions of it. ([Ryle 1949, *The Concept of Mind*](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc))
+Ryle, Goodman, and Quine held versions of it. ([Ryle 1949, *The Concept of Mind*](/sources/e858a20fa17c7e6da53dd7da8794c973.bin))
 
 ## Three kinds of counterexample
 
@@ -88,9 +88,9 @@ With a conventional word like *fragile* it is plausible that the speaker leaves 
 | Implicit qualifications of \(C\) and \(M\) | Lewis, Gundersen, Steinberg | Get specific about stimulus and manifestation. Steinberg 2010 adds an implicit *ceteris paribus*. J. and A. Steinberg 2017 place the ascription inside an implicit causal framework. |
 | The degree or threshold | Manley and Wasserman, Vetter | Context sets what proportion of relevant cases is enough (Manley and Wasserman 2008), or how much potentiality counts as "fragile" (Vetter 2015). |
 
-**Aimar** gives the cleanest semantic version. Context fixes the **modal base**: which possibilities are relevant and which features stay fixed across them. The manifestation may need a finer description, such as *breaking easily*. She separates two questions: what the sentence means, and what property, if any, makes it true. Separating them dissolves some counterexamples before the metaphysics comes in. ([Aimar 2019, "Disposition ascriptions"](/sources/ai-foundations/capabilities-and-measurement/aimar-2019-disposition-ascriptions.pdf.enc), [doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9))
+**Aimar** gives the cleanest semantic version. Context fixes the **modal base**: which possibilities are relevant and which features stay fixed across them. The manifestation may need a finer description, such as *breaking easily*. She separates two questions: what the sentence means, and what property, if any, makes it true. Separating them dissolves some counterexamples before the metaphysics comes in. ([Aimar 2019, "Disposition ascriptions"](/sources/666e59fd95c8b7ae1add31356724b4ff.bin), [doi:10.1007/s11098-018-1084-9](https://doi.org/10.1007/s11098-018-1084-9))
 
-**Ryle** goes further. Disposition sentences need not name a hidden property inside the object. They work like "inference tickets": they license predictions and explanations about what would happen in various circumstances. ([Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), [SEP: Ryle](https://plato.stanford.edu/entries/ryle/))
+**Ryle** goes further. Disposition sentences need not name a hidden property inside the object. They work like "inference tickets": they license predictions and explanations about what would happen in various circumstances. ([Ryle 1949](/sources/e858a20fa17c7e6da53dd7da8794c973.bin), [SEP: Ryle](https://plato.stanford.edu/entries/ryle/))
 
 For the line developed in these notes, the most useful next reading is Aimar, Choi, and Steinberg.
 
@@ -100,8 +100,8 @@ For the line developed in these notes, the most useful next reading is Aimar, Ch
 "The model can do multi-step arithmetic" has an implicit \(C\) and \(M\) too.
 
 - **Implicit conditions.** Which prompt format, which sampling settings, with or without tools, with or without a system prompt. A different evaluator may have different conditions in mind.
-- **Masks.** A filter or refusal layer can block a behavior the base model is capable of. Voudouris et al. use the glass in a protective box for exactly this case: the subject of measurement changed, not the disposition ([Voudouris et al. 2026](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §5.1). A badly chosen prompt format can mask a capability the same way.
-- **Mimics.** A correct answer can come from a memorized item or a dataset cue rather than from the process the capability names ([Chizhov et al. 2025](/sources/ai-foundations/capabilities-and-measurement/chizhov-2025-what-the-hellaswag.pdf.enc), [arXiv:2504.07825](https://arxiv.org/abs/2504.07825)). The output matches, the path does not. This is why \(M^*\) has to say how the answer is produced.
+- **Masks.** A filter or refusal layer can block a behavior the base model is capable of. Voudouris et al. use the glass in a protective box for exactly this case: the subject of measurement changed, not the disposition ([Voudouris et al. 2026](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §5.1). A badly chosen prompt format can mask a capability the same way.
+- **Mimics.** A correct answer can come from a memorized item or a dataset cue rather than from the process the capability names ([Chizhov et al. 2025](/sources/0d0f57129a2ce4bb6104c39c80966d31.bin), [arXiv:2504.07825](https://arxiv.org/abs/2504.07825)). The output matches, the path does not. This is why \(M^*\) has to say how the answer is produced.
 - **Finks**, by analogy: a system whose behavior changes because it detects that it is being tested would alter the disposition under the very conditions used to probe it.
 - **Vacuity.** "The model can reason, under conditions where it reasons correctly" is the LLM version of the empty \(C^*\). Conditions have to be fixed before looking at results.
 
@@ -121,5 +121,5 @@ From easiest to most demanding:
 ## Library sources
 
 
-- [Dellibarda Varela et al. 2025](/sources/ai-foundations/capabilities-and-measurement/dellibarda-varela-2025-rethinking-illusion-of-thinking.pdf.enc), *Rethinking the Illusion of Thinking* ([arXiv:2507.01231](https://arxiv.org/abs/2507.01231))
-- [Lu et al. 2024](/sources/ai-foundations/capabilities-and-measurement/lu-2024-are-emergent-abilities-in-llms-just-icl.pdf.enc), *Are Emergent Abilities in Large Language Models just In-Context Learning?* ([arXiv:2309.01809](https://arxiv.org/abs/2309.01809))
+- [Dellibarda Varela et al. 2025](/sources/86edf232a4144ab902dd5f19092c91ca.bin), *Rethinking the Illusion of Thinking* ([arXiv:2507.01231](https://arxiv.org/abs/2507.01231))
+- [Lu et al. 2024](/sources/8d24ac43f69499f7108a7c2837faa72f.bin), *Are Emergent Abilities in Large Language Models just In-Context Learning?* ([arXiv:2309.01809](https://arxiv.org/abs/2309.01809))

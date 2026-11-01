@@ -51,6 +51,6 @@ Use the [case template]({{< ref "system-design/projects/case-template" >}}) when
 ## Library sources
 
 
-- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- the design in *Dynamo-style design*
-- [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapters 5 and 6, consistent hashing and a key-value store
+- [DeCandia et al. 2007](/sources/da9436e162d5abe60df8b9ef9e4993ea.bin), *Dynamo: Amazon's Highly Available Key-value Store* -- the design in *Dynamo-style design*
+- [Xu 2020](/sources/39fea06ad1d4c38d97709b95898d9c25.bin), *System Design Interview: An Insider's Guide* -- chapters 5 and 6, consistent hashing and a key-value store
 - Educative 2023: key-value store, *Grokking Modern System Design Interview*

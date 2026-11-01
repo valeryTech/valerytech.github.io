@@ -1122,4 +1122,4 @@ A few related terms are included where they make a source term easier to use cor
 
 
 - Heath 2020, *Upstream: The Quest to Solve Problems Before They Happen*
-- [Serrat 2009](/sources/thinking-and-learning/problem-solving/serrat-2009-asking-effective-questions.pdf.enc), *Asking Effective Questions*
+- [Serrat 2009](/sources/1d7c588830b55a38210623ac63ed2b77.bin), *Asking Effective Questions*

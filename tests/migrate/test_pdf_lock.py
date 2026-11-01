@@ -52,6 +52,17 @@ class PdfLockTests(unittest.TestCase):
             build_pdf_lock(KEY, "{minute}", 1000).seal(PDF),
         )
 
+    def test_names_follow_the_contents_and_the_key_only(self) -> None:
+        lock = build_pdf_lock(KEY, "{minute}", 1000)
+        name = lock.name(PDF)
+
+        self.assertRegex(name, r"^[0-9a-f]{32}$")
+        self.assertEqual(name, build_pdf_lock(KEY, "other{minute}", 1000).name(PDF))
+        self.assertNotEqual(name, lock.name(PDF + b"\n"))
+        self.assertNotEqual(name, build_pdf_lock(bytes(32), "{minute}", 1000).name(PDF))
+        # A plain hash of a known PDF must not reveal that it is on the site.
+        self.assertNotIn(name, (hashlib.sha256(PDF).hexdigest(), hashlib.md5(PDF).hexdigest()))
+
     def test_lock_file_errors_name_the_problem(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             path = Path(temp) / ".env.pdf-reader"

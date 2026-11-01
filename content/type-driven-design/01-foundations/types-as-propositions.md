@@ -6,7 +6,7 @@ description: "The Curry-Howard reading of types: types as propositions and progr
 linkTitle: "Types as Propositions"
 ---
 
-There's a deeper theoretical basis for treating types as evidence. Under the Curry-Howard correspondence, types correspond to propositions and programs correspond to proofs. For example, function types, product types, and sum types correspond to logical implication, conjunction, and disjunction. Wadler gives a good overview in "Propositions as Types" ([PDF](/sources/programming/language-theory/wadler-2015-propositions-as-types.pdf.enc)). ([Edinburgh Research](https://www.research.ed.ac.uk/en/publications/propositions-as-types/ "Propositions as Types - University of Edinburgh Research Explorer"))
+There's a deeper theoretical basis for treating types as evidence. Under the Curry-Howard correspondence, types correspond to propositions and programs correspond to proofs. For example, function types, product types, and sum types correspond to logical implication, conjunction, and disjunction. Wadler gives a good overview in "Propositions as Types" ([PDF](/sources/e73a714dde09d48962f58768e5bd200a.bin)). ([Edinburgh Research](https://www.research.ed.ac.uk/en/publications/propositions-as-types/ "Propositions as Types - University of Edinburgh Research Explorer"))
 
 Wadler describes the correspondence at three levels: propositions as types, proofs as programs, and simplification of proofs as evaluation of programs. Pierce (section 9.4 "The Curry-Howard Correspondence") gives the working version: a proposition is provable exactly when its type has a value (is inhabited).
 
@@ -63,12 +63,12 @@ A caveat: in most languages the logic is inconsistent, because every type has a 
 ## Library sources
 
 
-- [Wadler 2015](/sources/programming/language-theory/wadler-2015-propositions-as-types.pdf.enc), *Propositions as Types* -- the Curry-Howard correspondence told through its history and natural deduction, including quantifiers, data abstraction and linear logic, and the trade-off between general recursion and a consistent logic
-- [Pierce 2002](/sources/programming/language-theory/pierce-2002-types-and-programming-languages.pdf.enc), *Types and Programming Languages* -- section 9.4, "The Curry-Howard Correspondence"; section 15.7 on untagged unions
-- [Harper 2016](/sources/programming/language-theory/harper-2016-practical-foundations-programming-languages-2e.pdf.enc), *Practical Foundations for Programming Languages, 2nd Edition* -- Part V, "Types and Propositions", and Part III on total functions
-- [Milewski 2019](/sources/programming/category-theory/milewski-2019-category-theory-for-programmers-scala-edition.pdf.enc), *Category Theory for Programmers, Scala Edition* -- chapters on products, coproducts and algebraic data types
-- [Ramalho 2022](/sources/programming/language-theory/ramalho-2022-fluent-python-2e.pdf.enc), *Fluent Python, 2nd Edition* -- chapter 15, "More About Type Hints": `typing.cast` as an assertion the checker believes
-- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell* -- section 1.4, "The Curry–Howard Isomorphism": a table matching `Either`, pairs, functions, `Void` and `()` with disjunction, conjunction, implication, false and true; section 15.5, "Dependent Pairs": Σ types as the existential quantifier; on the table of logic and types
+- [Wadler 2015](/sources/e73a714dde09d48962f58768e5bd200a.bin), *Propositions as Types* -- the Curry-Howard correspondence told through its history and natural deduction, including quantifiers, data abstraction and linear logic, and the trade-off between general recursion and a consistent logic
+- [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- section 9.4, "The Curry-Howard Correspondence"; section 15.7 on untagged unions
+- [Harper 2016](/sources/844b46f25205adfc27e60dec253a34fc.bin), *Practical Foundations for Programming Languages, 2nd Edition* -- Part V, "Types and Propositions", and Part III on total functions
+- [Milewski 2019](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin), *Category Theory for Programmers, Scala Edition* -- chapters on products, coproducts and algebraic data types
+- [Ramalho 2022](/sources/c09d057b50eb8836ae7e40220e951a83.bin), *Fluent Python, 2nd Edition* -- chapter 15, "More About Type Hints": `typing.cast` as an assertion the checker believes
+- [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell* -- section 1.4, "The Curry-Howard Isomorphism": a table matching `Either`, pairs, functions, `Void` and `()` with disjunction, conjunction, implication, false and true; section 15.5, "Dependent Pairs": Σ types as the existential quantifier; on the table of logic and types
 
 Further reading:
 

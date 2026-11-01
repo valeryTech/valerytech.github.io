@@ -574,4 +574,4 @@ The definitions below are local copies of the entries used in these passages. Th
 ## Library sources
 
 
-- [Zeigler et al. 2019](/sources/research-methods/modeling-and-simulation/zeigler-2019-theory-of-modeling-and-simulation.pdf.enc), *Theory of Modeling and Simulation*
+- [Zeigler et al. 2019](/sources/a59bde49692bd5da9171dc7192e38992.bin), *Theory of Modeling and Simulation*

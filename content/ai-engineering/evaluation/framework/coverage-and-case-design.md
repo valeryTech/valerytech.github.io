@@ -274,5 +274,5 @@ State these limits with the evaluation finding.
 ## Library sources
 
 
-- [Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), *Measuring what Matters*
+- [Bean et al. 2025](/sources/015e29150096f262478300d13488bbc2.bin), *Measuring what Matters*
 - Montgomery 2017, *Design and Analysis of Experiments*

@@ -507,8 +507,8 @@ This keeps the systemic insight while reducing the risk of building a broad laye
 ## Library sources
 
 
-- [Meadows 2008](/sources/thinking-and-learning/systems-thinking/meadows-2008-thinking-in-systems.pdf.enc), *Thinking in Systems: A Primer* -- on *4. System dynamics and Wardley Mapping*
+- [Meadows 2008](/sources/3be936bfd9022b933c26433083c5b0e1.bin), *Thinking in Systems: A Primer* -- on *4. System dynamics and Wardley Mapping*
 
 Further reading:
 
-- [Hester and Adams 2017](/sources/thinking-and-learning/systems-thinking/hester-2017-systemic-decision-making.pdf.enc), *Systemic Decision Making*
+- [Hester and Adams 2017](/sources/f1317b606a3096e39223f34b01e1a13f.bin), *Systemic Decision Making*

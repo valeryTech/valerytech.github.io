@@ -249,12 +249,12 @@ A project may:
 
 
 - Thompson 2023, *Delivering Machine Learning Projects: From Design to Deployment* -- on *Reference Phases*
-- [Haakman et al. 2021](/sources/ml-engineering/se-for-ml/haakman-2021-ai-lifecycle-models-need-revision.pdf.enc), *AI Lifecycle Models Need To Be Revised* ([arXiv:2010.02716](https://arxiv.org/abs/2010.02716))
+- [Haakman et al. 2021](/sources/5096f3d276b7e7842af543dad19e1419.bin), *AI Lifecycle Models Need To Be Revised* ([arXiv:2010.02716](https://arxiv.org/abs/2010.02716))
 
 Further reading:
 
-- [Babushkin and Kravchenko 2025](/sources/ml-engineering/books/babushkin-2025-machine-learning-system-design.pdf.enc), *Machine Learning System Design*
+- [Babushkin and Kravchenko 2025](/sources/39e0cbe26b72ead73bbe6633505b42c1.bin), *Machine Learning System Design*
 - Burkov 2020, *Machine Learning Engineering*
-- [Sens et al. 2025](/sources/ml-engineering/se-for-ml/sens-2025-model-integration-ml-enabled-systems.pdf.enc), *A Large-Scale Study of Model Integration in ML-Enabled Software Systems* ([arXiv:2408.06226](https://arxiv.org/abs/2408.06226))
-- [Serban and Visser 2022](/sources/ml-engineering/se-for-ml/serban-2022-adapting-software-architectures-ml-challenges.pdf.enc), *Adapting Software Architectures to Machine Learning Challenges* ([arXiv:2105.12422](https://arxiv.org/abs/2105.12422))
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-well-architected-migration-lens.pdf.enc), *Migration Lens*
+- [Sens et al. 2025](/sources/d689d27422c27c07613d0dc9650f6c36.bin), *A Large-Scale Study of Model Integration in ML-Enabled Software Systems* ([arXiv:2408.06226](https://arxiv.org/abs/2408.06226))
+- [Serban and Visser 2022](/sources/00cecd99502bdf624a95fd7f4d034481.bin), *Adapting Software Architectures to Machine Learning Challenges* ([arXiv:2105.12422](https://arxiv.org/abs/2105.12422))
+- [AWS 2024](/sources/65a1bd4b803395dae5942d0a3de119e1.bin), *Migration Lens*

@@ -624,9 +624,9 @@ A reliable heuristic: **if something is painful to test stably, it is almost alw
 ## Library sources
 
 
-- [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering* -- on *1. The core idea: tests as an architectural force*
-- [van Deursen and Seemann 2019](/sources/software-engineering/craft/seemann-2019-dependency-injection-principles-practices-patterns.pdf.enc), *Dependency Injection Principles, Practices, and Patterns* -- chapter 1 on the benefits of Dependency Injection, testability among them, and on placing Seams at Volatile Dependencies, on *Pattern P3: Dependency inversion for retrieval/tools*
+- [Farley 2022](/sources/974d11f571d53a0bd5809c67541d563b.bin), *Modern Software Engineering* -- on *1. The core idea: tests as an architectural force*
+- [van Deursen and Seemann 2019](/sources/4cd9e0a613fdb578e4d3843433b25795.bin), *Dependency Injection Principles, Practices, and Patterns* -- chapter 1 on the benefits of Dependency Injection, testability among them, and on placing Seams at Volatile Dependencies, on *Pattern P3: Dependency inversion for retrieval/tools*
 
 Further reading:
 
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design*
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design*

@@ -282,5 +282,5 @@ That split is close to how teams actually divide their platforms.
 
 
 - AI agent platform book, *O'Reilly early release, chapter 3* -- minimum viable platform, operationalization, and advanced building blocks
-- [Berberi et al. 2025](/sources/ml-engineering/mlops/berberi-2025-mlops-landscape-platforms-tools.pdf.enc), *Machine learning operations landscape: platforms and tools* ([doi:10.1007/s10462-025-11164-3](https://doi.org/10.1007/s10462-025-11164-3)) -- MLOps platforms compared by feature
-- [Faubel and Schmid 2024](/sources/ml-engineering/mlops/faubel-2024-systematic-analysis-mlops-features-platforms.pdf.enc), *A Systematic Analysis of MLOps Features and Platforms* ([doi:10.64552/wipiec.v10i2.73](https://doi.org/10.64552/wipiec.v10i2.73)) -- platform features as a design space
+- [Berberi et al. 2025](/sources/f56b8454c88db743347ed2fec4565baa.bin), *Machine learning operations landscape: platforms and tools* ([doi:10.1007/s10462-025-11164-3](https://doi.org/10.1007/s10462-025-11164-3)) -- MLOps platforms compared by feature
+- [Faubel and Schmid 2024](/sources/55b106ef70f4f319564b76561a087eff.bin), *A Systematic Analysis of MLOps Features and Platforms* ([doi:10.64552/wipiec.v10i2.73](https://doi.org/10.64552/wipiec.v10i2.73)) -- platform features as a design space

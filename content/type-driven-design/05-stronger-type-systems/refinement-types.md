@@ -72,7 +72,7 @@ Now the type describes relationships between inputs and outputs. That's where re
 ### Why bother
 
 
-Jhala, Seidel and Vazou's LiquidHaskell tutorial ([PDF](/sources/programming/language-theory/jhala-2020-programming-with-refinement-types.pdf.enc)) opens with a chapter called "Well-Typed Programs Do Go Wrong". Haskell's types rule out a lot, but a well-typed Haskell program can still divide by zero, look up a key that isn't in a map, take the `head` of an empty list, or, with an unchecked index, read memory it shouldn't (the tutorial reconstructs a Heartbleed-style overread in Haskell). These are the bugs refinement types target: properties of values, not of shapes.
+Jhala, Seidel and Vazou's LiquidHaskell tutorial ([PDF](/sources/c7c34c23605882ae6298a988734fef45.bin)) opens with a chapter called "Well-Typed Programs Do Go Wrong". Haskell's types rule out a lot, but a well-typed Haskell program can still divide by zero, look up a key that isn't in a map, take the `head` of an empty list, or, with an unchecked index, read memory it shouldn't (the tutorial reconstructs a Heartbleed-style overread in Haskell). These are the bugs refinement types target: properties of values, not of shapes.
 
 ### Three ideas from the tutorial
 
@@ -91,7 +91,7 @@ The checker turns each place where a value flows into a refined type into a logi
 Three consequences shape how refinement types are used:
 
 - **Tests refine values.** In the branch of `if isPositive d` the checker knows `d > 0`, but only if it knows what `isPositive` means. The tutorial ("Testing Values: Booleans and Propositions") gives the boolean function a refined result, `isPositive :: x:Int -> {v:Bool | v <=> x > 0}`, which ties the bit to the proposition it answers. That's the refinement-type fix for Harper's boolean blindness ([Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}#dont-throw-information-away)), and it needs no wrapper type: the same `Int` is simply known to be positive inside the branch.
-- **Refinements are inferred.** Liquid Types (Rondon, Kawaguchi and Jhala, [PDF](/sources/programming/language-theory/rondon-2008-liquid-types.pdf.enc)) infers refinements as conjunctions of *qualifiers*, simple predicate templates such as `0 <= v` or `v < len a`, so loop invariants and the refinements of local variables don't have to be written. In their benchmarks the annotations needed to prove array-bounds safety dropped from 31% of the program text to under 1%. When a property can't be proved, the results show where to add a qualifier, or where a run-time check is needed after all.
+- **Refinements are inferred.** Liquid Types (Rondon, Kawaguchi and Jhala, [PDF](/sources/c1ee665591c2e20039979587673830e7.bin)) infers refinements as conjunctions of *qualifiers*, simple predicate templates such as `0 <= v` or `v < len a`, so loop invariants and the refinements of local variables don't have to be written. In their benchmarks the annotations needed to prove array-bounds safety dropped from 31% of the program text to under 1%. When a property can't be proved, the results show where to add a qualifier, or where a run-time check is needed after all.
 - **Measures lift functions into the logic.** A *measure* is a total Haskell function, such as `len` or `notEmpty`, that the checker can use inside predicates (Jhala, chapter 6, "Boolean Measures"). With it, "this list is non-empty" becomes a refinement of an ordinary list, `{v:[a] | notEmpty v}`, rather than a separate `NonEmpty` type with its own functions.
 
 LiquidHaskell also checks termination by default, since a function that might not terminate could "prove" anything (see the caveat in [Types As Propositions]({{< ref "type-driven-design/01-foundations/types-as-propositions" >}})).
@@ -110,11 +110,11 @@ The power comes with practical limits:
 ## Library sources
 
 
-- [Jhala et al. 2020](/sources/programming/language-theory/jhala-2020-programming-with-refinement-types.pdf.enc), *Programming with Refinement Types: An Introduction to LiquidHaskell* -- the LiquidHaskell tutorial: chapter 1 on bugs well-typed programs still have, chapter 2 on the logic and SMT, chapter 3 on refinement types, subtyping and testing values, chapter 6 on measures, chapter 11 on assumptions and guarantees; on *What a refinement type is*, *How the checking works* and *Limits*
-- [Rondon et al. 2008](/sources/programming/language-theory/rondon-2008-liquid-types.pdf.enc), *Liquid Types* -- inference of refinement types from qualifiers, with run-time checks where proof fails; on *How the checking works* and *Limits*
-- [Volpe 2021](/sources/programming/scala/volpe-2021-practical-fp-in-scala-2e.pdf.enc), *Practical FP in Scala, 2nd Edition* -- chapter 1 uses the `refined` library for refinement types and validates runtime values into them; on *Limits*
+- [Jhala et al. 2020](/sources/c7c34c23605882ae6298a988734fef45.bin), *Programming with Refinement Types: An Introduction to LiquidHaskell* -- the LiquidHaskell tutorial: chapter 1 on bugs well-typed programs still have, chapter 2 on the logic and SMT, chapter 3 on refinement types, subtyping and testing values, chapter 6 on measures, chapter 11 on assumptions and guarantees; on *What a refinement type is*, *How the checking works* and *Limits*
+- [Rondon et al. 2008](/sources/c1ee665591c2e20039979587673830e7.bin), *Liquid Types* -- inference of refinement types from qualifiers, with run-time checks where proof fails; on *How the checking works* and *Limits*
+- [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala, 2nd Edition* -- chapter 1 uses the `refined` library for refinement types and validates runtime values into them; on *Limits*
 
 Further reading:
 
-- [Harper 2016](/sources/programming/language-theory/harper-2016-practical-foundations-programming-languages-2e.pdf.enc), *Practical Foundations for Programming Languages, 2nd Edition*
-- [Wadler 2015](/sources/programming/language-theory/wadler-2015-propositions-as-types.pdf.enc), *Propositions as Types*
+- [Harper 2016](/sources/844b46f25205adfc27e60dec253a34fc.bin), *Practical Foundations for Programming Languages, 2nd Edition*
+- [Wadler 2015](/sources/e73a714dde09d48962f58768e5bd200a.bin), *Propositions as Types*

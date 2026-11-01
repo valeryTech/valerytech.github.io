@@ -105,11 +105,11 @@ Three questions assess evaluation readiness:
 ## Library sources
 
 
-- [Magalhaes et al. 2025](/sources/ai-engineering/evaluation/magalhaes-2025-testing-the-untestable-llm-powered-software.pdf.enc), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198))
-- [Xia et al. 2024](/sources/ai-engineering/evaluation/xia-2024-evaluation-driven-development-and-operations-of-llm-agents.pdf.enc), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768))
+- [Magalhaes et al. 2025](/sources/3aa3fa459bc8edd6f2fc66b405e38181.bin), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198))
+- [Xia et al. 2024](/sources/b06b0ce219cd90ae62a1cfdfefcd159b.bin), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768))
 
 Further reading:
 
 - AI agent platform book, *O'Reilly early release, chapters 1-7*
-- [Huyen 2025](/sources/ai-engineering/practice/huyen-2025-ai-engineering.pdf.enc), *AI Engineering: Building Applications with Foundation Models*
-- [Yan et al. 2024](/sources/ai-engineering/practice/yan-2024-what-we-learned-from-building-with-llms.pdf.enc), *What We Learned from a Year of Building with LLMs*
+- [Huyen 2025](/sources/faff32abd78cc0963d6a4a913c8c129e.bin), *AI Engineering: Building Applications with Foundation Models*
+- [Yan et al. 2024](/sources/295a41eca55107b7d355fa6a3ad2f889.bin), *What We Learned from a Year of Building with LLMs*

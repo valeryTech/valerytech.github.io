@@ -531,4 +531,4 @@ yes - the step from prompt to collaboration surface is a big deal. It changes no
 ## Library sources
 
 
-- [Messeri and Crockett 2024](/sources/ai-foundations/alignment-and-society/messeri-2024-ai-and-illusions-of-understanding.pdf.enc), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
+- [Messeri and Crockett 2024](/sources/ca1b47bae3acd109b2c5866542e96edc.bin), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))

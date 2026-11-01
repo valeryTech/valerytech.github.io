@@ -162,4 +162,4 @@ Original text: [example.md](/ai/design/dialogue-approach/02-draft-pipeline/08-di
 ## Library sources
 
 
-- [Jurafsky and Martin 2026](/sources/nlp/dialogue-systems/jurafsky-2026-slp3-appendix-k-frame-based-dialogue.pdf.enc), *SLP3 Appendix K: Frame-Based Dialogue Systems* -- on *Closest matches*
+- [Jurafsky and Martin 2026](/sources/15c773945807396b696ab2a8e25a9595.bin), *SLP3 Appendix K: Frame-Based Dialogue Systems* -- on *Closest matches*

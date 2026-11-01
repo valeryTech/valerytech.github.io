@@ -235,5 +235,5 @@ The proposal is to develop the work in that order. The participant-neutral share
 ## Library sources
 
 
-- [Jaccard and Jacoby 2020](/sources/research-methods/philosophy-of-science/jaccard-2020-theory-construction-and-model-building-skills.pdf.enc), *Theory Construction and Model-Building Skills*
-- [Swanson and Chermack 2013](/sources/research-methods/philosophy-of-science/swanson-2013-theory-building-in-applied-disciplines.pdf.enc), *Theory Building in Applied Disciplines*
+- [Jaccard and Jacoby 2020](/sources/4e48dc173034e0f9c9293879dffd510d.bin), *Theory Construction and Model-Building Skills*
+- [Swanson and Chermack 2013](/sources/fc5a3e9f5c36efccee40c21ab2ddd46c.bin), *Theory Building in Applied Disciplines*

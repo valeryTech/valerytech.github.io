@@ -6,7 +6,7 @@ description: "An overview of modeling a domain with types, following Wlaschin: w
 linkTitle: "Domain Types"
 ---
 
-Domain modeling with types makes the model state which values can exist, so that invalid combinations can't be constructed. The notes in this folder follow the order of Wlaschin's *Domain Modeling Made Functional* ([PDF](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), chapters 4 to 7):
+Domain modeling with types makes the model state which values can exist, so that invalid combinations can't be constructed. The notes in this folder follow the order of Wlaschin's *Domain Modeling Made Functional* ([PDF](/sources/3165b993e939de6a47737a073d7633a4.bin), chapters 4 to 7):
 
 - [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}): product and sum types, counting a type's values, and sum types versus class hierarchies.
 - [Newtypes and simple values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}): primitive obsession, newtypes, value classes and opaque types, and simple values whose constructors enforce a rule.
@@ -45,7 +45,7 @@ Other languages draw the same line in their own terms. Bloch (Items 69-71) uses 
 ## The same ideas across languages
 
 
-*Domain Modeling Made Functional* ([PDF](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc)) uses F#, and the concepts translate to other languages:
+*Domain Modeling Made Functional* ([PDF](/sources/3165b993e939de6a47737a073d7633a4.bin)) uses F#, and the concepts translate to other languages:
 
 ```text
 F#                     Rust / Scala / TypeScript
@@ -61,17 +61,17 @@ pattern matching       match / match / switch narrowing
 Languages with weaker type systems get part of the way:
 
 - **Java** (Bloch) has enums, records, `Optional` and, since Java 17, sealed interfaces with exhaustive `switch`. Before that, a sum type was a class hierarchy (Item 23) or an enum.
-- **Go** has named types (`type UserID string`), which give name equivalence, but no sum types. Its enumerations are constants defined with `iota`, and Bodner ([PDF](/sources/programming/language-practice/bodner-2024-learning-go-2e.pdf.enc), chapter 7, "iota Is for Enumerations--Sometimes") warns that nothing stops a caller from creating values outside the set, and that inserting a constant in the middle renumbers the rest, which corrupts any values already stored. A type switch needs a `default` case because the compiler can't check exhaustiveness.
+- **Go** has named types (`type UserID string`), which give name equivalence, but no sum types. Its enumerations are constants defined with `iota`, and Bodner ([PDF](/sources/9c094741f6655c74e9b828ed1b091426.bin), chapter 7, "iota Is for Enumerations--Sometimes") warns that nothing stops a caller from creating values outside the set, and that inserting a constant in the middle renumbers the rest, which corrupts any values already stored. A type switch needs a `default` case because the compiler can't check exhaustiveness.
 - **Python** has `NewType`, frozen dataclasses, `Enum` and `Literal`, all checked only by an external type checker ([Dimensions Of Type Systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}#static-dynamic-and-gradual-checking)).
 
 ## Library sources
 
 
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- the book the domain-modeling notes follow. Here: chapter 5, "A Question of Identity" (value objects and entities) and "Aggregates"; chapter 6, "Consistency" (within and between aggregates and contexts); chapter 10, "Working with Domain Errors"; the F# side of the table in *The same ideas across languages* follows chapters 4 and 5
-- [Bloch 2018](/sources/programming/language-practice/bloch-2018-effective-java-3e.pdf.enc), *Effective Java, 3rd Edition* -- Items 69-71 on exceptions; on *Errors as values*
-- [Schwarz 2020](/sources/programming/scala/schwarz-2020-scala-3-by-example-adts-for-ddd-part-1.pdf.enc), *Scala 3 by Example: ADTs for DDD, Part 1* -- domain modeling with product and sum types, following *Domain Modeling Made Functional* with the F# originals beside the Scala 3 code; on *The same ideas across languages*
-- [Bodner 2024](/sources/programming/language-practice/bodner-2024-learning-go-2e.pdf.enc), *Learning Go, 2nd Edition* -- chapter 7 on `iota` enumerations and type switches; on *The same ideas across languages*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- the book the domain-modeling notes follow. Here: chapter 5, "A Question of Identity" (value objects and entities) and "Aggregates"; chapter 6, "Consistency" (within and between aggregates and contexts); chapter 10, "Working with Domain Errors"; the F# side of the table in *The same ideas across languages* follows chapters 4 and 5
+- [Bloch 2018](/sources/99fe404f1fe77aab60731171df07c68f.bin), *Effective Java, 3rd Edition* -- Items 69-71 on exceptions; on *Errors as values*
+- [Schwarz 2020](/sources/f1c14b872d21423c5ed67709396f62c6.bin), *Scala 3 by Example: ADTs for DDD, Part 1* -- domain modeling with product and sum types, following *Domain Modeling Made Functional* with the F# originals beside the Scala 3 code; on *The same ideas across languages*
+- [Bodner 2024](/sources/9c094741f6655c74e9b828ed1b091426.bin), *Learning Go, 2nd Edition* -- chapter 7 on `iota` enumerations and type switches; on *The same ideas across languages*
 
 Further reading:
 
-- [Percival et al. 2020](/sources/software-engineering/architecture/percival-2020-architecture-patterns-with-python.pdf.enc), *Architecture Patterns with Python* -- chapter 1 on value objects and entities in Python
+- [Percival et al. 2020](/sources/1b11fd9a1f1b2a8156524d833d153d29.bin), *Architecture Patterns with Python* -- chapter 1 on value objects and entities in Python

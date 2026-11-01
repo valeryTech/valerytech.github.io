@@ -70,8 +70,8 @@ Revisit this phase when runs are not reproducible, important evidence is missing
 ## Library sources
 
 
-- [Babushkin and Kravchenko 2025](/sources/ml-engineering/books/babushkin-2025-machine-learning-system-design.pdf.enc), *Machine Learning System Design*
-- [Zinkevich 2016](/sources/ml-engineering/books/zinkevich-2016-rules-of-machine-learning.pdf.enc), *Rules of Machine Learning: Best Practices for ML Engineering*
+- [Babushkin and Kravchenko 2025](/sources/39e0cbe26b72ead73bbe6633505b42c1.bin), *Machine Learning System Design*
+- [Zinkevich 2016](/sources/903c644dfdc4b32ef0ad55c8393288d6.bin), *Rules of Machine Learning: Best Practices for ML Engineering*
 
 Further reading:
 

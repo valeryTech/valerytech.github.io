@@ -91,4 +91,4 @@ These uses stay distinct: an inspiration for learning across projects; a workflo
 ## Library sources
 
 
-- [Romme and Wegener 2026](/sources/research-methods/design-science/romme-2026-pragmatist-underpinnings-of-design-science-preprint.pdf.enc), *The Pragmatist Underpinnings of Design Science* -- on *Generalizing from concrete experience*
+- [Romme and Wegener 2026](/sources/5aca4847ff0ae2c7458d3a56ebd5d724.bin), *The Pragmatist Underpinnings of Design Science* -- on *Generalizing from concrete experience*

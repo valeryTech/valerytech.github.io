@@ -938,4 +938,4 @@ Proposal: use this as the foundation of the methodology. The optimization algori
 ## Library sources
 
 
-- [Jansen and Bosch 2005](/sources/software-engineering/architecture-decisions/jansen-2005-software-architecture-as-set-of-design-decisions.pdf.enc), *Software Architecture as a Set of Architectural Design Decisions* -- on *3. Think in terms of architecture decisions*
+- [Jansen and Bosch 2005](/sources/c9fd193b0b3901dc6fdd32f621d82604.bin), *Software Architecture as a Set of Architectural Design Decisions* -- on *3. Think in terms of architecture decisions*

@@ -91,7 +91,7 @@ The categories are therefore not one clean hierarchy:
 | Procedural memory | How do I perform an action or skill? | Rules, policies, reusable plans, skills | Current LLM literature sometimes calls textual "lessons" procedural memory even though they still require explicit interpretation. [@act-r-overview] |
 | Long-term memory | What persists beyond the current processing episode? | External store, graph, model weights | It is a duration category, not a single representational format. [@baddeley-working-memory-review-2012] |
 
-This matters because modern papers routinely reuse the terms while changing their computational meaning. The recent broad survey *Memory in the Age of AI Agents* ([PDF](/sources/ai-engineering/agents/hu-2025-memory-in-the-age-of-ai-agents.pdf.enc)) argues that traditional short-term/long-term terminology alone is inadequate and instead examines memory in terms of **form, function, and dynamics**, including token-level, parametric and latent forms and factual, experiential and working functions. [@hu-memory-in-the-age-of-ai-agents-2025; @hu-memory-in-the-age-of-ai-agents-2025-secondary-source]
+This matters because modern papers routinely reuse the terms while changing their computational meaning. The recent broad survey *Memory in the Age of AI Agents* ([PDF](/sources/701cfbbf6d7dddae4008b3c9c5af702b.bin)) argues that traditional short-term/long-term terminology alone is inadequate and instead examines memory in terms of **form, function, and dynamics**, including token-level, parametric and latent forms and factual, experiential and working functions. [@hu-memory-in-the-age-of-ai-agents-2025; @hu-memory-in-the-age-of-ai-agents-2025-secondary-source]
 
 ### Newell and the architectural tradition
 
@@ -910,5 +910,5 @@ huang-agent-memory-tmlr-2026: turn16search10
 ## Library sources
 
 
-- [Mei et al. 2025](/sources/ai-engineering/agents/mei-2025-survey-of-context-engineering-for-llms.pdf.enc), *A Survey of Context Engineering for Large Language Models* ([arXiv:2507.13334](https://arxiv.org/abs/2507.13334))
-- [Hogan et al. 2021](/sources/retrieval-and-knowledge/knowledge-graphs/hogan-2021-knowledge-graphs.pdf.enc), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772))
+- [Mei et al. 2025](/sources/ce672d48443a0d56e51ce59cd0cf13fd.bin), *A Survey of Context Engineering for Large Language Models* ([arXiv:2507.13334](https://arxiv.org/abs/2507.13334))
+- [Hogan et al. 2021](/sources/3103330fa3d6b92e782dd6a283a2998d.bin), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772))

@@ -801,16 +801,16 @@ The original reply concludes with the complete [proposed research-artifact plan]
 ## Library sources
 
 
-- [Cemri et al. 2025](/sources/ai-engineering/failures/cemri-2025-why-do-multi-agent-llm-systems-fail.pdf.enc), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657)) -- on *5. Several Anthropic failures translate directly into framework primitives*
-- [Fried 2020](/sources/research-methods/philosophy-of-science/fried-2020-theories-and-models.pdf.enc), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011)) -- on *7. Reframing the concern about technical researchers as a research-paradigm problem*
+- [Cemri et al. 2025](/sources/1e5df35ceba8b37f7f7f69d992345c69.bin), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657)) -- on *5. Several Anthropic failures translate directly into framework primitives*
+- [Fried 2020](/sources/b3fc13357b44cb45b100a2468bd9f252.bin), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011)) -- on *7. Reframing the concern about technical researchers as a research-paradigm problem*
 
 Further reading:
 
-- [Tallam 2025](/sources/ai-engineering/agents/tallam-2025-from-autonomous-agents-to-integrated-systems.pdf.enc), *From Autonomous Agents to Integrated Systems, A New Paradigm* ([arXiv:2503.13754](https://arxiv.org/abs/2503.13754))
-- [Solomon et al. 2025](/sources/ai-engineering/observability/solomon-2025-lumimas-observability-in-multi-agent-systems.pdf.enc), *LumiMAS* ([arXiv:2508.12412](https://arxiv.org/abs/2508.12412))
-- [Coeckelbergh and Gunkel 2025](/sources/ai-foundations/alignment-and-society/coeckelbergh-2025-communicative-ai.pdf.enc), *Communicative AI: A Critical Introduction to Large Language Models*
-- [Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
-- [Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), *The Concept of Mind*
-- [Roitblat 2020](/sources/ai-foundations/intelligence-and-turing/roitblat-2020-algorithms-are-not-enough.pdf.enc), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
-- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence*
-- [Neesham et al. 2022](/sources/research-methods/philosophy-of-science/neesham-2022-handbook-of-philosophy-of-management.pdf.enc), *Handbook of Philosophy of Management* ([doi:10.1007/978-3-030-76606-1](https://doi.org/10.1007/978-3-030-76606-1))
+- [Tallam 2025](/sources/317a86220182fb8cdb5073be84a90014.bin), *From Autonomous Agents to Integrated Systems, A New Paradigm* ([arXiv:2503.13754](https://arxiv.org/abs/2503.13754))
+- [Solomon et al. 2025](/sources/5e5c8d7227f33b204567d93f8ff319aa.bin), *LumiMAS* ([arXiv:2508.12412](https://arxiv.org/abs/2508.12412))
+- [Coeckelbergh and Gunkel 2025](/sources/0d153a4277516c4bd067c638f1c75fb2.bin), *Communicative AI: A Critical Introduction to Large Language Models*
+- [Freiesleben 2026](/sources/c84d75800beb21af8a1cc54b8f79c168.bin), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
+- [Ryle 1949](/sources/e858a20fa17c7e6da53dd7da8794c973.bin), *The Concept of Mind*
+- [Roitblat 2020](/sources/aa0e252397f990ec20d128feff292a1e.bin), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
+- [Wilhelm and Engle 2005](/sources/2375228c6a7957a1808fc25b83be9a33.bin), *Handbook of Understanding and Measuring Intelligence*
+- [Neesham et al. 2022](/sources/9b49dbc47ed4af8b32b6f9e79757637c.bin), *Handbook of Philosophy of Management* ([doi:10.1007/978-3-030-76606-1](https://doi.org/10.1007/978-3-030-76606-1))

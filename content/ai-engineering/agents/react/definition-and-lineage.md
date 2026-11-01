@@ -344,14 +344,14 @@ The working conclusion is that **ReAct's enduring contribution is an accessible 
 ## Library sources
 
 
-- [Kotseruba and Tsotsos 2020](/sources/ai-foundations/cognition-and-mind/kotseruba-2020-40-years-of-cognitive-architectures.pdf.enc), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
-- [Sumers et al. 2024](/sources/ai-foundations/cognition-and-mind/sumers-2024-cognitive-architectures-for-language-agents.pdf.enc), *Cognitive Architectures for Language Agents*
-- [Russell and Norvig 2021](/sources/ai-foundations/intelligence-and-turing/russell-2021-artificial-intelligence-a-modern-approach.pdf.enc), *Artificial Intelligence: A Modern Approach*
+- [Kotseruba and Tsotsos 2020](/sources/dbc8fc8d10a0d4d51a43964e61c1482f.bin), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
+- [Sumers et al. 2024](/sources/979eab1fc41b7066edf51770802bf09d.bin), *Cognitive Architectures for Language Agents*
+- [Russell and Norvig 2021](/sources/c85f4853f67516e521a455cdea6aeedc.bin), *Artificial Intelligence: A Modern Approach*
 
 Further reading:
 
-- [Wang et al. 2025](/sources/ai-engineering/agents/wang-2025-empirical-study-of-agent-developer-practices.pdf.enc), *An Empirical Study of Agent Developer Practices in AI Agent Frameworks* ([arXiv:2512.01939](https://arxiv.org/abs/2512.01939))
-- [Nolte et al. 2026](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
-- [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
-- [Gridin 2025](/sources/llms/models-and-training/gridin-2025-practical-guide-to-llms.pdf.enc), *The Practical Guide to Large Language Models* ([doi:10.1007/979-8-8688-2216-2](https://doi.org/10.1007/979-8-8688-2216-2))
+- [Wang et al. 2025](/sources/cb48f7baea27f4113b0eee960eea5e7d.bin), *An Empirical Study of Agent Developer Practices in AI Agent Frameworks* ([arXiv:2512.01939](https://arxiv.org/abs/2512.01939))
+- [Nolte et al. 2026](/sources/2af58406e13e42072bca886ec3caf534.bin), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
+- [Ziemke 2022](/sources/bf0e49a2d28a89a0aa37ddf742e607eb.bin), *Embodiment in Cognitive Science and Robotics*
+- [Gridin 2025](/sources/d3c6541360ebf22d3d114faaa20960fe.bin), *The Practical Guide to Large Language Models* ([doi:10.1007/979-8-8688-2216-2](https://doi.org/10.1007/979-8-8688-2216-2))
 - An Illustrated Guide to AI Agents, *O'Reilly early release, chapter 6* -- ReAct by prompting, supervised fine-tuning and reinforcement learning, and reflection methods such as Self-Refine and Reflexion

@@ -7,7 +7,7 @@ weight: "50"
 linkTitle: "Measuring Dispositions"
 ---
 
-If a capability is a [response profile]({{< ref "ai/capabilities/04-dispositions-as-response-profiles" >}}) across declared scenarios, measuring it means recovering that profile from a limited set of observations. This note sets out the method, mostly following Voudouris et al. ([PDF](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §2.2 and §5).
+If a capability is a [response profile]({{< ref "ai/capabilities/04-dispositions-as-response-profiles" >}}) across declared scenarios, measuring it means recovering that profile from a limited set of observations. This note sets out the method, mostly following Voudouris et al. ([PDF](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §2.2 and §5).
 
 ## Why measure at all
 
@@ -126,15 +126,15 @@ That is already useful, because it lets us reason about contexts we have not tes
 ## Library sources
 
 
-- [Shojaee et al. 2025](/sources/ai-foundations/capabilities-and-measurement/shojaee-2025-illusion-of-thinking.pdf.enc), *The Illusion of Thinking*
-- [Zhou et al. 2026](/sources/ai-foundations/capabilities-and-measurement/zhou-2026-general-scales.pdf.enc), *General scales unlock AI evaluation with explanatory and predictive power* ([doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2))
-- [Jaccard and Jacoby 2020](/sources/research-methods/philosophy-of-science/jaccard-2020-theory-construction-and-model-building-skills.pdf.enc), *Theory Construction and Model-Building Skills* -- on *From question to measurement*
+- [Shojaee et al. 2025](/sources/a1b801eb54f7be4be97bca840d16bb64.bin), *The Illusion of Thinking*
+- [Zhou et al. 2026](/sources/76e02efd0fb2f02796388644a91327d0.bin), *General scales unlock AI evaluation with explanatory and predictive power* ([doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2))
+- [Jaccard and Jacoby 2020](/sources/4e48dc173034e0f9c9293879dffd510d.bin), *Theory Construction and Model-Building Skills* -- on *From question to measurement*
 
 Further reading:
 
-- [Liang et al. 2023](/sources/ai-engineering/evaluation/liang-2023-holistic-evaluation-of-language-models.pdf.enc), *Holistic Evaluation of Language Models (HELM)* ([arXiv:2211.09110](https://arxiv.org/abs/2211.09110))
-- [Dellibarda Varela et al. 2025](/sources/ai-foundations/capabilities-and-measurement/dellibarda-varela-2025-rethinking-illusion-of-thinking.pdf.enc), *Rethinking the Illusion of Thinking* ([arXiv:2507.01231](https://arxiv.org/abs/2507.01231))
-- [Kearns 2025](/sources/ai-foundations/capabilities-and-measurement/kearns-2025-quantifying-construct-validity.pdf.enc), *Quantifying construct validity in large language model evaluations* ([arXiv:2602.15532](https://arxiv.org/abs/2602.15532))
-- [Lambert and Newman 2023](/sources/ai-foundations/capabilities-and-measurement/lambert-2023-construct-development-validation.pdf.enc), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
-- [Fried 2020](/sources/research-methods/philosophy-of-science/fried-2020-theories-and-models.pdf.enc), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011))
-- [Popper 1959](/sources/research-methods/philosophy-of-science/popper-1959-logic-of-scientific-discovery.pdf.enc), *The Logic of Scientific Discovery*
+- [Liang et al. 2023](/sources/a64deef37c6d2160dc12c546aef056f1.bin), *Holistic Evaluation of Language Models (HELM)* ([arXiv:2211.09110](https://arxiv.org/abs/2211.09110))
+- [Dellibarda Varela et al. 2025](/sources/86edf232a4144ab902dd5f19092c91ca.bin), *Rethinking the Illusion of Thinking* ([arXiv:2507.01231](https://arxiv.org/abs/2507.01231))
+- [Kearns 2025](/sources/b905bdbeb5794014d45a8888fc9b85bd.bin), *Quantifying construct validity in large language model evaluations* ([arXiv:2602.15532](https://arxiv.org/abs/2602.15532))
+- [Lambert and Newman 2023](/sources/49b689d6cd563df789695944f06ff04c.bin), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
+- [Fried 2020](/sources/b3fc13357b44cb45b100a2468bd9f252.bin), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011))
+- [Popper 1959](/sources/c68fa1c135c0f988c39d2624f0a61097.bin), *The Logic of Scientific Discovery*

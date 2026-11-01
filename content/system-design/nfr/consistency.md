@@ -69,7 +69,7 @@ Examples connecting an access pattern to its required guarantees. Use the [URL-s
 ## Library sources
 
 
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 2 on nonfunctional requirements; chapters 6 and 10 for the models behind them
-- [Davoudian et al. 2018](/sources/system-design/data-systems/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661))
-- [Gessert et al. 2016](/sources/system-design/data-systems/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3))
-- [Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc), *Foundations of Scalable Systems: Designing Distributed Architectures*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 2 on nonfunctional requirements; chapters 6 and 10 for the models behind them
+- [Davoudian et al. 2018](/sources/ed8ca9d23115ca84b294330e59371e82.bin), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661))
+- [Gessert et al. 2016](/sources/fc53b69af61018fb92068967d9d83656.bin), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3))
+- [Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin), *Foundations of Scalable Systems: Designing Distributed Architectures*

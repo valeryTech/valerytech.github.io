@@ -231,4 +231,4 @@ Links
 ## Library sources
 
 
-- [Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc), *Foundations of Scalable Systems: Designing Distributed Architectures*
+- [Gorton 2022](/sources/8d56057f5ea547d45ca2c38acb653b0f.bin), *Foundations of Scalable Systems: Designing Distributed Architectures*

@@ -32,7 +32,6 @@ const WIDTH_STORAGE_KEY = 'site-pdf-reader-width';
 const WIDTH_MODES = ['text', 'wide'];
 // Widening is offered only when it adds at least this much room.
 const MIN_WIDEN_PX = 64;
-const LOCKED_SUFFIX = '.pdf.enc';
 const LOCK_MAGIC = 'VTL1';
 const LOCK_NONCE_BYTES = 12;
 const LOCK_SLOT_COUNT = 60;
@@ -564,7 +563,8 @@ function handleKeydown(state, event) {
 function openReader(link) {
     const reader = template.content.firstElementChild.cloneNode(true);
     const title = link.textContent.trim();
-    const locked = new URL(link.href).pathname.toLowerCase().endsWith(LOCKED_SUFFIX);
+    // The link markup flags imported PDFs, which are encrypted under opaque names.
+    const locked = link.hasAttribute('data-pdf-locked');
     const state = { link, reader, locked, closed: false, abort: new AbortController() };
     readerCount += 1;
     reader.id = `site-pdf-reader-${readerCount}`;

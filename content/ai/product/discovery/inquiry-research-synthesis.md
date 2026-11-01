@@ -557,13 +557,13 @@ The resulting working definition is:
 ## Library sources
 
 
-- [Dalsgaard 2014](/sources/research-methods/design-science/dalsgaard-2014-pragmatism-and-design-thinking.pdf.enc), *Pragmatism and Design Thinking* -- on *Wicked problems and co-evolution*
-- [Dorst and Cross 2001](/sources/thinking-and-learning/problem-solving/dorst-2001-creativity-design-process-coevolution.pdf.enc), *Creativity in the design process: co-evolution of problem-solution* -- on *Wicked problems and co-evolution*
+- [Dalsgaard 2014](/sources/a11b8d7dfa81bedd04cd0decaa4072fa.bin), *Pragmatism and Design Thinking* -- on *Wicked problems and co-evolution*
+- [Dorst and Cross 2001](/sources/476e9b65a4511a872bc3b8b48ad5516a.bin), *Creativity in the design process: co-evolution of problem-solution* -- on *Wicked problems and co-evolution*
 
 Further reading:
 
-- [Romme and Wegener 2026](/sources/research-methods/design-science/romme-2026-pragmatist-underpinnings-of-design-science-preprint.pdf.enc), *The Pragmatist Underpinnings of Design Science*
-- [Forte 2022](/sources/thinking-and-learning/learning/forte-2022-building-a-second-brain.pdf.enc), *Building a Second Brain*
+- [Romme and Wegener 2026](/sources/5aca4847ff0ae2c7458d3a56ebd5d724.bin), *The Pragmatist Underpinnings of Design Science*
+- [Forte 2022](/sources/cefca64fe98adfa5e0c94f934fda3554.bin), *Building a Second Brain*
 - Conn and McLean 2019, *Bulletproof Problem Solving: The One Skill That Changes Everything*
-- [Felin and Zenger 2016](/sources/thinking-and-learning/problem-solving/felin-2016-strategy-problems-theory-for-the-firm.pdf.enc), *Strategy, Problems and a Theory for the Firm* ([doi:10.1287/orsc.2015.1022](https://doi.org/10.1287/orsc.2015.1022))
-- [Korthagen and Vasalos 2010](/sources/thinking-and-learning/reflection-and-lessons-learned/korthagen-2010-going-to-the-core-deepening-reflection.pdf.enc), *Going to the Core* ([doi:10.1007/978-0-387-85744-2_27](https://doi.org/10.1007/978-0-387-85744-2_27))
+- [Felin and Zenger 2016](/sources/c00ebdda191231e7a65cb81f50f4c914.bin), *Strategy, Problems and a Theory for the Firm* ([doi:10.1287/orsc.2015.1022](https://doi.org/10.1287/orsc.2015.1022))
+- [Korthagen and Vasalos 2010](/sources/3a06bcf9c162b88a7ca4ce5a9de990b1.bin), *Going to the Core* ([doi:10.1007/978-0-387-85744-2_27](https://doi.org/10.1007/978-0-387-85744-2_27))

@@ -510,4 +510,4 @@ The core empirical references behind the design are Kim et al. 2025 on explanati
 ## Library sources
 
 
-- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow*
+- [Kahneman 2011](/sources/6b0f64ff483334496619f7f55334a949.bin), *Thinking, Fast and Slow*

@@ -392,7 +392,7 @@ AI delivery adds:
 ## Library sources
 
 
-- [Kim et al. 2021](/sources/software-engineering/systems-and-operations/kim-2021-devops-handbook-2e.pdf.enc), *The DevOps Handbook, Second Edition* -- the Three Ways (chapters 1-4) behind the small-batch, fast-feedback and learning principles in *Principles*; chapter 11 on continuous integration and trunk-based development, for *Build and integration*; chapter 12 on feature toggles, canary releases and dark launches, for *Release and exposure control*; chapters 14-15 on telemetry, for *Observability*
+- [Kim et al. 2021](/sources/5b8562bf89faccfe430b6176be9350e6.bin), *The DevOps Handbook, Second Edition* -- the Three Ways (chapters 1-4) behind the small-batch, fast-feedback and learning principles in *Principles*; chapter 11 on continuous integration and trunk-based development, for *Build and integration*; chapter 12 on feature toggles, canary releases and dark launches, for *Release and exposure control*; chapters 14-15 on telemetry, for *Observability*
 
 Further reading:
 

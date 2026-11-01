@@ -324,5 +324,5 @@ The key distinction:
 ## Library sources
 
 
-- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
+- [Abrahamsson et al. 2010](/sources/edea986f585230de4a92ace2a66936f2.bin), *Agility and Architecture*
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*

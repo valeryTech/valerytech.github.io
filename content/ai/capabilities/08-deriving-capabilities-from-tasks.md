@@ -113,7 +113,7 @@ Neural mechanisms suit demands for interpreting ambiguous language, judging sema
 
 These interventions show whether the component causes the improvement.
 
-For running such studies, see the guidelines for empirical software-engineering studies involving LLMs ([Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), [arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) and the [Evaluation]({{< ref "ai-engineering/evaluation" >}}) notes.
+For running such studies, see the guidelines for empirical software-engineering studies involving LLMs ([Baltes et al. 2025](/sources/c1ccf311d88d7d8a326c7617fb00ce09.bin), [arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) and the [Evaluation]({{< ref "ai-engineering/evaluation" >}}) notes.
 
 ## Summary
 
@@ -135,9 +135,9 @@ The central dependency: **capabilities are defined from the structure of the tas
 ## Library sources
 
 
-- [Cui et al. 2026](/sources/ai-foundations/capabilities-and-measurement/cui-2026-measuring-the-unmeasurable.pdf.enc), *Measuring the Unmeasurable*
-- [Zhou et al. 2026](/sources/ai-foundations/capabilities-and-measurement/zhou-2026-general-scales.pdf.enc), *General scales unlock AI evaluation with explanatory and predictive power* ([doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2))
-- [Vernon 2016](/sources/ai-foundations/cognition-and-mind/vernon-2016-two-ways-not-to-design-a-cognitive-architecture.pdf.enc), *Two Ways (Not) To Design a Cognitive Architecture*
-- [Colelough and Regli 2025](/sources/retrieval-and-knowledge/neuro-symbolic/colelough-2025-neuro-symbolic-ai-in-2024-review.pdf.enc), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435))
-- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
-- [Hamilton et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/hamilton-2024-neuro-symbolic-ai-nlp-structured-review.pdf.enc), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228))
+- [Cui et al. 2026](/sources/c0787e6b002b3193a564d0d985b75f62.bin), *Measuring the Unmeasurable*
+- [Zhou et al. 2026](/sources/76e02efd0fb2f02796388644a91327d0.bin), *General scales unlock AI evaluation with explanatory and predictive power* ([doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2))
+- [Vernon 2016](/sources/55db5d6e8f3e6e7df9afa841bb9522cd.bin), *Two Ways (Not) To Design a Cognitive Architecture*
+- [Colelough and Regli 2025](/sources/8d49cb9cb57fe2f184120dfa46ddf052.bin), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435))
+- [Dinu et al. 2024](/sources/2a14b3704dd17a8b46067815a9b6cc54.bin), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
+- [Hamilton et al. 2024](/sources/37affd9279cab197f5ec9c63c8af2c8e.bin), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228))

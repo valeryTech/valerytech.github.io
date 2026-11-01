@@ -70,14 +70,14 @@ The durable engineering work is in building systems that turn cheap variation in
 ## Library sources
 
 
-- [Silver and Sutton 2025](/sources/ai-foundations/intelligence-and-turing/silver-2025-era-of-experience.pdf.enc), *Welcome to the Era of Experience* -- on *Prefer strong reality signals*
+- [Silver and Sutton 2025](/sources/bc2821a0d16b5495cadca969371d49a9.bin), *Welcome to the Era of Experience* -- on *Prefer strong reality signals*
 
 Further reading:
 
-- [He et al. 2026](/sources/ai-foundations/alignment-and-society/he-2026-beyond-human-measure.pdf.enc), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
-- [Messeri and Crockett 2024](/sources/ai-foundations/alignment-and-society/messeri-2024-ai-and-illusions-of-understanding.pdf.enc), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
-- [Butlin et al. 2023](/sources/ai-foundations/cognition-and-mind/butlin-2023-consciousness-in-ai.pdf.enc), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
-- [French 2000](/sources/ai-foundations/intelligence-and-turing/french-2000-turing-test-first-50-years.pdf.enc), *The Turing Test: the first 50 years*
-- [Roitblat 2020](/sources/ai-foundations/intelligence-and-turing/roitblat-2020-algorithms-are-not-enough.pdf.enc), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
-- [Turing 1950](/sources/ai-foundations/intelligence-and-turing/turing-1950-computing-machinery-and-intelligence-copeland.pdf.enc), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
-- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence*
+- [He et al. 2026](/sources/ec007122245e7e5a9574334e98c5c4e5.bin), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
+- [Messeri and Crockett 2024](/sources/ca1b47bae3acd109b2c5866542e96edc.bin), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
+- [Butlin et al. 2023](/sources/77152ec24a9faa18a9649747b7c776f1.bin), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
+- [French 2000](/sources/1f9ea75aebfedddb37b732f0366781a9.bin), *The Turing Test: the first 50 years*
+- [Roitblat 2020](/sources/aa0e252397f990ec20d128feff292a1e.bin), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
+- [Turing 1950](/sources/e9e815a2347232297524af2b765de4e4.bin), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
+- [Wilhelm and Engle 2005](/sources/2375228c6a7957a1808fc25b83be9a33.bin), *Handbook of Understanding and Measuring Intelligence*

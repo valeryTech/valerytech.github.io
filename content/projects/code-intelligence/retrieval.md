@@ -121,10 +121,10 @@ A codebase changes constantly, and an index that is a few hours old can mislead 
 ## Library sources
 
 
-- [Anonymous 2025](/sources/retrieval-and-knowledge/rag/anonymous-2025-practical-code-rag-at-scale.pdf.enc), *Practical Code RAG at Scale* -- on *Task-aware retrieval*
-- [Su et al. 2025](/sources/retrieval-and-knowledge/rag/su-2025-dynamic-parametric-rag.pdf.enc), *Dynamic and Parametric Retrieval-Augmented Generation* ([doi:10.1145/3726302.3731692](https://doi.org/10.1145/3726302.3731692)) -- on *Three schools: adaptive*
+- [Anonymous 2025](/sources/30cb49de449fbee8fd7c2c4e3a1311da.bin), *Practical Code RAG at Scale* -- on *Task-aware retrieval*
+- [Su et al. 2025](/sources/07ba0f45bfdd2995be6ffcc64777dea2.bin), *Dynamic and Parametric Retrieval-Augmented Generation* ([doi:10.1145/3726302.3731692](https://doi.org/10.1145/3726302.3731692)) -- on *Three schools: adaptive*
 
 Further reading:
 
-- [Gao et al. 2023](/sources/retrieval-and-knowledge/rag/gao-2023-rag-for-llms-survey.pdf.enc), *Retrieval-Augmented Generation for Large Language Models: A Survey* ([arXiv:2312.10997](https://arxiv.org/abs/2312.10997))
-- [Gao et al. 2025](/sources/retrieval-and-knowledge/rag/gao-2025-synergizing-rag-and-reasoning.pdf.enc), *Synergizing RAG and Reasoning: A Systematic Review* ([arXiv:2504.15909](https://arxiv.org/abs/2504.15909))
+- [Gao et al. 2023](/sources/57b41d523d1c2e1414eb331b7c150eb6.bin), *Retrieval-Augmented Generation for Large Language Models: A Survey* ([arXiv:2312.10997](https://arxiv.org/abs/2312.10997))
+- [Gao et al. 2025](/sources/d3f64fccb6acf62b35b4e70d7e0e588b.bin), *Synergizing RAG and Reasoning: A Systematic Review* ([arXiv:2504.15909](https://arxiv.org/abs/2504.15909))

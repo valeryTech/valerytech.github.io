@@ -10,7 +10,7 @@ linkTitle: "Sources and History"
 
 For reflective agent memory, the following sources are proposed as alternatives to an earlier Du recommendation. The Du source is not identified in this note; that attribution remains unresolved.
 
-- **Sumers, Yao, Narasimhan, Griffiths -- _Cognitive Architectures for Language Agents_ ([PDF](/sources/ai-foundations/cognition-and-mind/sumers-2024-cognitive-architectures-for-language-agents.pdf.enc)), TMLR 2024.** Peer-reviewed; Princeton; gives a clean framework for working, episodic, semantic, and procedural memory in language agents. ([OpenReview](https://openreview.net/pdf/07475727a2787df12052196b9f2624497ef3c3bd.pdf "Published in Transactions on Machine Learning Research (02/2024)"))
+- **Sumers, Yao, Narasimhan, Griffiths -- _Cognitive Architectures for Language Agents_ ([PDF](/sources/979eab1fc41b7066edf51770802bf09d.bin)), TMLR 2024.** Peer-reviewed; Princeton; gives a clean framework for working, episodic, semantic, and procedural memory in language agents. ([OpenReview](https://openreview.net/pdf/07475727a2787df12052196b9f2624497ef3c3bd.pdf "Published in Transactions on Machine Learning Research (02/2024)"))
 - **Park et al. -- _Generative Agents_, UIST 2023.** This is a key paper for periodic reflection sessions: memories are periodically synthesized into higher-level reflections. It is an ACM UIST paper, with authors from Stanford and Google. ([DOI](https://doi.org/10.1145/3586183.3606763 "Generative Agents: Interactive Simulacra of Human Behavior | Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology"))
 - **Shinn et al. -- _Reflexion_, NeurIPS 2023.** Explicitly stores verbal reflection in episodic memory and reuses it in later attempts. ([NeurIPS Papers](https://papers.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html "Reflexion: language agents with verbal reinforcement learning"))
 - **Kumaran, Hassabis, McClelland -- _What Learning Systems do Intelligent Agents Need?_, Trends in Cognitive Sciences 2016.** Probably the strongest theoretical support for the offline "sleep/consolidation" proposal: fast episodic storage plus slower integration of structure through replay. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S1364661316300432 "What Learning Systems do Intelligent Agents Need? Complementary Learning Systems Theory Updated - ScienceDirect"))
@@ -151,11 +151,11 @@ That is why memory keeps reappearing in cognitive architectures even when the ar
 ## Library sources
 
 
-- [Baddeley et al. 2020](/sources/ai-foundations/cognition-and-mind/baddeley-2020-memory.pdf.enc), *Memory*
+- [Baddeley et al. 2020](/sources/b130452e34ab0be753e894e35327f6af.bin), *Memory*
 
 Further reading:
 
-- [Hu et al. 2025](/sources/ai-engineering/agents/hu-2025-memory-in-the-age-of-ai-agents.pdf.enc), *Memory in the Age of AI Agents* ([arXiv:2512.13564](https://arxiv.org/abs/2512.13564))
-- [Butlin et al. 2023](/sources/ai-foundations/cognition-and-mind/butlin-2023-consciousness-in-ai.pdf.enc), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
-- [Klinzing et al. 2019](/sources/ai-foundations/cognition-and-mind/klinzing-2019-memory-consolidation-during-sleep.pdf.enc), *Mechanisms of systems memory consolidation during sleep* ([doi:10.1038/s41593-019-0467-3](https://doi.org/10.1038/s41593-019-0467-3))
-- [Kotseruba and Tsotsos 2020](/sources/ai-foundations/cognition-and-mind/kotseruba-2020-40-years-of-cognitive-architectures.pdf.enc), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
+- [Hu et al. 2025](/sources/701cfbbf6d7dddae4008b3c9c5af702b.bin), *Memory in the Age of AI Agents* ([arXiv:2512.13564](https://arxiv.org/abs/2512.13564))
+- [Butlin et al. 2023](/sources/77152ec24a9faa18a9649747b7c776f1.bin), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
+- [Klinzing et al. 2019](/sources/a6c2d7c0802713576787b88c257ae19d.bin), *Mechanisms of systems memory consolidation during sleep* ([doi:10.1038/s41593-019-0467-3](https://doi.org/10.1038/s41593-019-0467-3))
+- [Kotseruba and Tsotsos 2020](/sources/dbc8fc8d10a0d4d51a43964e61c1482f.bin), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))

@@ -126,9 +126,9 @@ This systematic framework ensures that trade-offs are evaluated comprehensively,
 ## Library sources
 
 
-- [Falessi et al. 2011](/sources/software-engineering/architecture-decisions/falessi-2011-decision-making-techniques-software-architecture.pdf.enc), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812)) -- on *A Systematic Trade-Off Analysis Framework*
+- [Falessi et al. 2011](/sources/ddf58eacb5f53833fa4bf6a8793168b6.bin), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812)) -- on *A Systematic Trade-Off Analysis Framework*
 
 Further reading:
 
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts*
-- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation*
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts*
+- [Kazman et al. 2000](/sources/38eda7233da8012027d48c1292ec9ca2.bin), *ATAM: Method for Architecture Evaluation*

@@ -38,12 +38,12 @@ Architecture Decision Records (ADRs) record a decision, why it was made, its con
 ## Library sources
 
 
-- [Martin 2018](/sources/software-engineering/architecture/martin-2018-clean-architecture.pdf.enc), *Clean Architecture* -- on *Clean Architecture (Use-Case Driven Architecture)*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 1, "Understanding the Domain Through Business Events" (domain events, an Event Storming session worked through, commands triggering workflows) and "Creating a Ubiquitous Language"; chapter 2, "Fighting the Impulse to Do Database-Driven Design" and "...Class-Driven Design"; the chapter 1 sidebar "Workflows, Scenarios, and Use Cases", separating user-centric scenarios and use cases from business processes and workflows; on *DDD practices*, *Language and DSL* and *Clean Architecture (Use-Case Driven Architecture)*
+- [Martin 2018](/sources/0f46f5de730b51708bc07368aedb47d5.bin), *Clean Architecture* -- on *Clean Architecture (Use-Case Driven Architecture)*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 1, "Understanding the Domain Through Business Events" (domain events, an Event Storming session worked through, commands triggering workflows) and "Creating a Ubiquitous Language"; chapter 2, "Fighting the Impulse to Do Database-Driven Design" and "...Class-Driven Design"; the chapter 1 sidebar "Workflows, Scenarios, and Use Cases", separating user-centric scenarios and use cases from business processes and workflows; on *DDD practices*, *Language and DSL* and *Clean Architecture (Use-Case Driven Architecture)*
 
 Further reading:
 
-- [Harmel-Law 2025](/sources/software-engineering/architecture/harmel-law-2025-facilitating-software-architecture.pdf.enc), *Facilitating Software Architecture*
-- [Buchgeher et al. 2023](/sources/software-engineering/architecture-decisions/buchgeher-2023-architecture-decision-records-open-source.pdf.enc), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654))
-- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture*
-- [Jacobson et al. 2019](/sources/software-engineering/craft/jacobson-2019-essentials-of-modern-software-engineering.pdf.enc), *The Essentials of Modern Software Engineering*
+- [Harmel-Law 2025](/sources/0504f0a13beb3cf493c31190f42b04e5.bin), *Facilitating Software Architecture*
+- [Buchgeher et al. 2023](/sources/5c446ae84aa48fee878017f550a6970e.bin), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654))
+- [Tyree and Akerman 2005](/sources/9d1ceedede8bdd58eda1d3edd575acd6.bin), *Architecture Decisions: Demystifying Architecture*
+- [Jacobson et al. 2019](/sources/9b6d010e0b6bd9966283697b3a7e99f6.bin), *The Essentials of Modern Software Engineering*

@@ -602,12 +602,12 @@ The recommendation is not to declare "our runtime is a Petri net engine" yet. Bu
 ## Library sources
 
 
-- [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *Formal foundations and architectural synthesis*
-- [Khattab et al. 2023](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc), *DSPy* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714)) -- on *Formal foundations and architectural synthesis*
-- [Xavier et al. 2026](/sources/ai-engineering/harness/xavier-2026-agentproof-static-verification-agent-workflows.pdf.enc), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356)) -- on *4. Temporal logic handles properties about the execution history*
-- [Cassandras and Lafortune 2021](/sources/research-methods/modeling-and-simulation/cassandras-2021-introduction-to-discrete-event-systems.pdf.enc), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6)) -- on *1. Petri nets look especially suitable*
-- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854)) -- on *this separation*
+- [Bauer and Pretnar 2014](/sources/49566a54818cd0aa2c57c411fd26357f.bin), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *Formal foundations and architectural synthesis*
+- [Khattab et al. 2023](/sources/dce6a336b5540ff4b3606105310db867.bin), *DSPy* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714)) -- on *Formal foundations and architectural synthesis*
+- [Xavier et al. 2026](/sources/ec7f81db2ffcdffa5a3e856e2b83530f.bin), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356)) -- on *4. Temporal logic handles properties about the execution history*
+- [Cassandras and Lafortune 2021](/sources/2c2e1d2efa2e11f07ab8aee64f1875ca.bin), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6)) -- on *1. Petri nets look especially suitable*
+- [Dinu et al. 2024](/sources/2a14b3704dd17a8b46067815a9b6cc54.bin), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854)) -- on *this separation*
 
 Further reading:
 
-- [Tan et al. 2026](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780))
+- [Tan et al. 2026](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780))

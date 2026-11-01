@@ -193,11 +193,11 @@ For a custom-trained or self-hosted machine-learning model, this definition stil
 ## Library sources
 
 
-- [Vinay 2025](/sources/ai-engineering/failures/vinay-2025-failure-modes-in-llm-systems.pdf.enc), *Failure Modes in LLM Systems* -- on *Lifecycle capability*
-- [Chen et al. 2022](/sources/ml-engineering/books/chen-2022-reliable-machine-learning.pdf.enc), *Reliable Machine Learning*
+- [Vinay 2025](/sources/24c523668b468dc4bcb703579792c1a4.bin), *Failure Modes in LLM Systems* -- on *Lifecycle capability*
+- [Chen et al. 2022](/sources/47ceee67b833f35bfb3326fe787cd451.bin), *Reliable Machine Learning*
 
 Further reading:
 
-- [Aryan 2025](/sources/ai-engineering/llmops/aryan-2025-llmops-managing-llms-in-production.pdf.enc), *LLMOps: Managing Large Language Models in Production*
-- [Desale 2025](/sources/ai-engineering/llmops/desale-2025-concept-drift-in-llms.pdf.enc), *Concept Drift in Large Language Models: Adapting the Conversation* ([doi:10.1201/9781003595533](https://doi.org/10.1201/9781003595533))
-- [Jeyaraman 2025](/sources/ai-engineering/llmops/jeyaraman-2025-llm-ops-for-finance.pdf.enc), *Large Language Models Ops for Finance* ([doi:10.1007/979-8-8688-1700-7](https://doi.org/10.1007/979-8-8688-1700-7))
+- [Aryan 2025](/sources/692a33f6628a7f155b8582752d49e5d1.bin), *LLMOps: Managing Large Language Models in Production*
+- [Desale 2025](/sources/d1942ec8339ba7be1a0c4c267c156da3.bin), *Concept Drift in Large Language Models: Adapting the Conversation* ([doi:10.1201/9781003595533](https://doi.org/10.1201/9781003595533))
+- [Jeyaraman 2025](/sources/e5045625429c18e304fb2f37cffae339.bin), *Large Language Models Ops for Finance* ([doi:10.1007/979-8-8688-1700-7](https://doi.org/10.1007/979-8-8688-1700-7))

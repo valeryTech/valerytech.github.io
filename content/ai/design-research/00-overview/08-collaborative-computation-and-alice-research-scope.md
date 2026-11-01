@@ -236,9 +236,9 @@ The Alice branch is closer to **constructing and experimentally studying new for
 ## Library sources
 
 
-- [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
-- [Silver and Sutton 2025](/sources/ai-foundations/intelligence-and-turing/silver-2025-era-of-experience.pdf.enc), *Welcome to the Era of Experience*
+- [Ziemke 2022](/sources/bf0e49a2d28a89a0aa37ddf742e607eb.bin), *Embodiment in Cognitive Science and Robotics*
+- [Silver and Sutton 2025](/sources/bc2821a0d16b5495cadca969371d49a9.bin), *Welcome to the Era of Experience*
 
 Further reading:
 
-- [Vernon 2014](/sources/ai-foundations/cognition-and-mind/vernon-2014-cognitive-system.pdf.enc), *Cognitive System*
+- [Vernon 2014](/sources/cc297b7304fb3c2f85f53200ae4a7a15.bin), *Cognitive System*

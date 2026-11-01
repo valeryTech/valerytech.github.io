@@ -258,13 +258,13 @@ For each prototype, publish the question, the runnable example, its language and
 ## Library sources
 
 
-- [Johannesson and Perjons 2021](/sources/research-methods/design-science/johannesson-2021-introduction-to-design-science.pdf.enc), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)) -- on *20. Establishing what a successful prototype actually demonstrates*
-- [Wohlin and Rainer 2022](/sources/research-methods/empirical-methods/wohlin-2022-is-it-a-case-study-preprint.pdf.enc), *Is it a case study? A critical analysis and guidance* -- on *20. Establishing what a successful prototype actually demonstrates*
-- [Guizzardi and Guarino 2024](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2024-explanation-semantics-and-ontology.pdf.enc), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325)) -- on *1. Domain meaning beyond data shape*
+- [Johannesson and Perjons 2021](/sources/ca3a8a1277e3769146c225056f71a3e3.bin), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)) -- on *20. Establishing what a successful prototype actually demonstrates*
+- [Wohlin and Rainer 2022](/sources/259b57ac164515376430c68ba4848f6b.bin), *Is it a case study? A critical analysis and guidance* -- on *20. Establishing what a successful prototype actually demonstrates*
+- [Guizzardi and Guarino 2024](/sources/e2b93fcc42a364423cfe6ce8c21a08cf.bin), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325)) -- on *1. Domain meaning beyond data shape*
 
 Further reading:
 
-- [Guizzardi 2005](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2005-ontological-foundations-structural-conceptual-models.pdf.enc), *Ontological Foundations for Structural Conceptual Models*
-- [Guizzardi 2007](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2007-on-ontology-ontologies-conceptualizations.pdf.enc), *On Ontology, Ontologies, Conceptualizations, Modeling Languages, and (Meta)Models*
-- [Lukyanenko et al. 2024](/sources/research-methods/ontology-and-conceptual-modeling/lukyanenko-2024-universal-conceptual-modeling.pdf.enc), *Universal Conceptual Modeling* ([doi:10.1007/s10270-024-01207-8](https://doi.org/10.1007/s10270-024-01207-8))
-- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)* -- section 13.1.1, "Syntax and Interpretation", on one algebra with separate interpreters; section 13.4, "Operational Style and Freer Monads", where each operation is a GADT constructor with its own result type; section 13.5, "Transforming and Inspecting Computations", on inspecting and rewriting a program before it runs; on *Languages provide different ways to investigate the same problem*
+- [Guizzardi 2005](/sources/1186e2ed525a383851d801696a5a2bba.bin), *Ontological Foundations for Structural Conceptual Models*
+- [Guizzardi 2007](/sources/cadf52a991f6bb9b720e2901cdc778b1.bin), *On Ontology, Ontologies, Conceptualizations, Modeling Languages, and (Meta)Models*
+- [Lukyanenko et al. 2024](/sources/324f41254ac9e78b0d6a1c86f42594d6.bin), *Universal Conceptual Modeling* ([doi:10.1007/s10270-024-01207-8](https://doi.org/10.1007/s10270-024-01207-8))
+- [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)* -- section 13.1.1, "Syntax and Interpretation", on one algebra with separate interpreters; section 13.4, "Operational Style and Freer Monads", where each operation is a GADT constructor with its own result type; section 13.5, "Transforming and Inspecting Computations", on inspecting and rewriting a program before it runs; on *Languages provide different ways to investigate the same problem*

@@ -403,14 +403,14 @@ Working judgment: this provides a stronger foundation than inventing an "LLM arc
 ## Library sources
 
 
-- [Kleijnen 2015](/sources/research-methods/modeling-and-simulation/kleijnen-2015-design-and-analysis-of-simulation-experiments.pdf.enc), *Design and Analysis of Simulation Experiments* -- on *3. Then use Design of Experiments before optimization*
-- [Kleijnen 2017](/sources/research-methods/modeling-and-simulation/kleijnen-2017-design-analysis-simulation-experiments-tutorial.pdf.enc), *Design and Analysis of Simulation Experiments: Tutorial* -- on *9. Finally, uncertainty needs to be part of the optimization*
+- [Kleijnen 2015](/sources/2c89f046a52d2e85ede95ab9d14e7d5d.bin), *Design and Analysis of Simulation Experiments* -- on *3. Then use Design of Experiments before optimization*
+- [Kleijnen 2017](/sources/87d913cc449f69dd1c37378e4ae13163.bin), *Design and Analysis of Simulation Experiments: Tutorial* -- on *9. Finally, uncertainty needs to be part of the optimization*
 - Montgomery 2017, *Design and Analysis of Experiments* -- on *3. Then use Design of Experiments before optimization*
-- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation* -- on *2. Architecture discovery already has ATAM/QAW/CBAM*
+- [Kazman et al. 2000](/sources/38eda7233da8012027d48c1292ec9ca2.bin), *ATAM: Method for Architecture Evaluation* -- on *2. Architecture discovery already has ATAM/QAW/CBAM*
 
 Further reading:
 
-- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition*
-- [Knodel and Naab 2016](/sources/software-engineering/architecture/knodel-2016-pragmatic-evaluation-of-software-architectures.pdf.enc), *Pragmatic Evaluation of Software Architectures*
-- [Sobhy et al. 2021](/sources/software-engineering/architecture/sobhy-2021-evaluation-software-architectures-under-uncertainty.pdf.enc), *Evaluation of Software Architectures under Uncertainty* ([doi:10.1145/3464305](https://doi.org/10.1145/3464305))
-- [Falessi et al. 2011](/sources/software-engineering/architecture-decisions/falessi-2011-decision-making-techniques-software-architecture.pdf.enc), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812))
+- [Bass et al. 2021](/sources/887eb03f3c5ac3d5c24aeeb4705f0245.bin), *Software Architecture in Practice, 4th Edition*
+- [Knodel and Naab 2016](/sources/d16dc82ef26ea988f0fc0c6669b4735a.bin), *Pragmatic Evaluation of Software Architectures*
+- [Sobhy et al. 2021](/sources/1df666a1b91ecca6014f0773b3576763.bin), *Evaluation of Software Architectures under Uncertainty* ([doi:10.1145/3464305](https://doi.org/10.1145/3464305))
+- [Falessi et al. 2011](/sources/ddf58eacb5f53833fa4bf6a8793168b6.bin), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812))

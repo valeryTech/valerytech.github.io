@@ -720,4 +720,4 @@ Compare that algorithm with `PyObject_GenericGetAttr()` in [`Objects/object.c`](
 
 Further reading:
 
-- [Ike-Nwosu 2019](/sources/programming/language-practice/ike-nwosu-2019-inside-the-python-virtual-machine.pdf.enc), *Inside the Python Virtual Machine* -- compiling source to code objects (chapter 3), code objects (chapter 5) and the `ceval.c` evaluation loop (chapter 9), for *CPython and JVM architecture*; attribute lookup and the MRO (sections 4.5-4.6), for *Method lookup, MRO, and special methods*. It describes Python 3.6, before adaptive specialization
+- [Ike-Nwosu 2019](/sources/30982d6ecbde5380f0d8bea8e3073e73.bin), *Inside the Python Virtual Machine* -- compiling source to code objects (chapter 3), code objects (chapter 5) and the `ceval.c` evaluation loop (chapter 9), for *CPython and JVM architecture*; attribute lookup and the MRO (sections 4.5-4.6), for *Method lookup, MRO, and special methods*. It describes Python 3.6, before adaptive specialization

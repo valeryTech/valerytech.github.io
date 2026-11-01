@@ -147,4 +147,4 @@ The [operating model]({{< ref "ai/product/operating-model/operating-model" >}}) 
 ## Library sources
 
 
-- [Huyen 2025](/sources/ai-engineering/practice/huyen-2025-ai-engineering.pdf.enc), *AI Engineering: Building Applications with Foundation Models*
+- [Huyen 2025](/sources/faff32abd78cc0963d6a4a913c8c129e.bin), *AI Engineering: Building Applications with Foundation Models*

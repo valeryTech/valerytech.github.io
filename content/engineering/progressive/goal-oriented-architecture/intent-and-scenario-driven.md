@@ -544,12 +544,12 @@ The proposed label **architecture by successive justification** is more precise 
 ## Library sources
 
 
-- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
-- [Cervantes and Kazman 2024](/sources/software-engineering/architecture/cervantes-2024-designing-software-architectures.pdf.enc), *Designing Software Architectures: A Practical Approach, 2nd Edition* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
-- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
-- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice* -- on *8. BDD / outside-in development -- same principle at code scale*
-- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture* -- on *8. BDD / outside-in development -- same principle at code scale*
+- [Bass et al. 2021](/sources/887eb03f3c5ac3d5c24aeeb4705f0245.bin), *Software Architecture in Practice, 4th Edition* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
+- [Cervantes and Kazman 2024](/sources/b6584be4eff5ad6afd064e5012e63f75.bin), *Designing Software Architectures: A Practical Approach, 2nd Edition* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
+- [Kazman et al. 2000](/sources/38eda7233da8012027d48c1292ec9ca2.bin), *ATAM: Method for Architecture Evaluation* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
+- [Kruchten et al. 2009](/sources/f16fd0f68275266c464119b582d0034f.bin), *The role of a "decision view" in software architecture practice* -- on *8. BDD / outside-in development -- same principle at code scale*
+- [Tyree and Akerman 2005](/sources/9d1ceedede8bdd58eda1d3edd575acd6.bin), *Architecture Decisions: Demystifying Architecture* -- on *8. BDD / outside-in development -- same principle at code scale*
 
 Further reading:
 
-- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture*
+- [Brown 2026](/sources/98db09f724a7584933b9628fbab6dd54.bin), *The C4 Model: Visualizing Software Architecture*

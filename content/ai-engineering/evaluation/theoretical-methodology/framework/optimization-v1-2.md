@@ -516,7 +516,7 @@ The production controls include:
 ## Library sources
 
 
-- [Kleijnen 2015](/sources/research-methods/modeling-and-simulation/kleijnen-2015-design-and-analysis-of-simulation-experiments.pdf.enc), *Design and Analysis of Simulation Experiments*
-- [Kleijnen 2017](/sources/research-methods/modeling-and-simulation/kleijnen-2017-design-analysis-simulation-experiments-tutorial.pdf.enc), *Design and Analysis of Simulation Experiments: Tutorial*
+- [Kleijnen 2015](/sources/2c89f046a52d2e85ede95ab9d14e7d5d.bin), *Design and Analysis of Simulation Experiments*
+- [Kleijnen 2017](/sources/87d913cc449f69dd1c37378e4ae13163.bin), *Design and Analysis of Simulation Experiments: Tutorial*
 - Montgomery 2017, *Design and Analysis of Experiments*
-- [Wei et al. 2025](/sources/retrieval-and-knowledge/rag/wei-2025-multi-objective-agentic-rewrites.pdf.enc), *Multi-Objective Agentic Rewrites for Unstructured Data Processing* ([arXiv:2512.02289](https://arxiv.org/abs/2512.02289))
+- [Wei et al. 2025](/sources/504bb8f407c8039c8e9369b81fb0430e.bin), *Multi-Objective Agentic Rewrites for Unstructured Data Processing* ([arXiv:2512.02289](https://arxiv.org/abs/2512.02289))

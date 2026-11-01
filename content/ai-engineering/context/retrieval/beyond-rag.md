@@ -299,14 +299,14 @@ The context-acquisition component (ideally in the future) decides what sources a
 ## Library sources
 
 
-- [Barnett et al. 2024](/sources/retrieval-and-knowledge/rag/barnett-2024-seven-failure-points-rag-systems.pdf.enc), *Seven Failure Points When Engineering a Retrieval Augmented Generation System* ([doi:10.1145/3644815.3644945](https://doi.org/10.1145/3644815.3644945)) -- on *Many RAG Failures Are Context-Selection Failures*
-- [Gao et al. 2023](/sources/retrieval-and-knowledge/rag/gao-2023-rag-for-llms-survey.pdf.enc), *Retrieval-Augmented Generation for Large Language Models: A Survey* ([arXiv:2312.10997](https://arxiv.org/abs/2312.10997)) -- on *Toward a Better Mental Model*
-- [Lewis et al. 2020](/sources/retrieval-and-knowledge/rag/lewis-2020-retrieval-augmented-generation-knowledge-intensive-nlp.pdf.enc), *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* ([arXiv:2005.11401](https://arxiv.org/abs/2005.11401)) -- on *Beyond RAG: Context-to-Task Alignment*
+- [Barnett et al. 2024](/sources/83835376f18c0b8eb396f9cec55960d6.bin), *Seven Failure Points When Engineering a Retrieval Augmented Generation System* ([doi:10.1145/3644815.3644945](https://doi.org/10.1145/3644815.3644945)) -- on *Many RAG Failures Are Context-Selection Failures*
+- [Gao et al. 2023](/sources/57b41d523d1c2e1414eb331b7c150eb6.bin), *Retrieval-Augmented Generation for Large Language Models: A Survey* ([arXiv:2312.10997](https://arxiv.org/abs/2312.10997)) -- on *Toward a Better Mental Model*
+- [Lewis et al. 2020](/sources/83adeec78d1a87569cf4b5d0e8ad9ec6.bin), *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* ([arXiv:2005.11401](https://arxiv.org/abs/2005.11401)) -- on *Beyond RAG: Context-to-Task Alignment*
 
 Further reading:
 
-- [Fan et al. 2024](/sources/retrieval-and-knowledge/rag/fan-2024-survey-rag-meeting-llms.pdf.enc), *A Survey on RAG Meeting LLMs* ([doi:10.1145/3637528.3671470](https://doi.org/10.1145/3637528.3671470))
+- [Fan et al. 2024](/sources/10397d7b6adfb91121eb7d4872349ed5.bin), *A Survey on RAG Meeting LLMs* ([doi:10.1145/3637528.3671470](https://doi.org/10.1145/3637528.3671470))
 - Hands-On RAG, O'Reilly (ISBN 9798341621701)
-- [Jiang et al. 2025](/sources/retrieval-and-knowledge/rag/jiang-2025-survey-retrieval-structuring-augmented-generation.pdf.enc), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697))
-- [Jin et al. 2024](/sources/retrieval-and-knowledge/rag/jin-2024-flashrag-modular-toolkit-rag.pdf.enc), *FlashRAG* ([arXiv:2405.13576](https://arxiv.org/abs/2405.13576))
-- [Oche et al. 2025](/sources/retrieval-and-knowledge/rag/oche-2025-systematic-review-rag-systems.pdf.enc), *A Systematic Review of Key Retrieval-Augmented Generation (RAG) Systems* ([arXiv:2507.18910](https://arxiv.org/abs/2507.18910))
+- [Jiang et al. 2025](/sources/ef4ab80ddeb8e075fe04a9d1b60b882f.bin), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697))
+- [Jin et al. 2024](/sources/2458010cac0a292f32771944d127bf73.bin), *FlashRAG* ([arXiv:2405.13576](https://arxiv.org/abs/2405.13576))
+- [Oche et al. 2025](/sources/557b073a5971dfe15ff351f4c32e8b06.bin), *A Systematic Review of Key Retrieval-Augmented Generation (RAG) Systems* ([arXiv:2507.18910](https://arxiv.org/abs/2507.18910))

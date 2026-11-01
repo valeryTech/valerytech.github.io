@@ -70,4 +70,4 @@ Some patterns in organizational data look like the effect of a change without sh
 ## Library sources
 
 
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base* -- causal inference and threats to internal validity; on *Research Design and Causality* (8.2) and *Quasi-Experimental Design* (ch. 10)
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base* -- causal inference and threats to internal validity; on *Research Design and Causality* (8.2) and *Quasi-Experimental Design* (ch. 10)

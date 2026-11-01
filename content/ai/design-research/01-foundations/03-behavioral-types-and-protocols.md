@@ -582,5 +582,5 @@ If your eventual objective is research in this area, **Mambo -> IOSE -> behavior
 ## Library sources
 
 
-- [Gopinathan et al. 2026](/sources/ai-engineering/harness/gopinathan-2026-pact-choreographic-language-agentic-ecosystems.pdf.enc), *Pact: A Choreographic Language for Agentic Ecosystems* ([arXiv:2605.03143](https://arxiv.org/abs/2605.03143))
-- [Cassandras and Lafortune 2021](/sources/research-methods/modeling-and-simulation/cassandras-2021-introduction-to-discrete-event-systems.pdf.enc), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6))
+- [Gopinathan et al. 2026](/sources/c54b0469f1b118079e719c38708b2871.bin), *Pact: A Choreographic Language for Agentic Ecosystems* ([arXiv:2605.03143](https://arxiv.org/abs/2605.03143))
+- [Cassandras and Lafortune 2021](/sources/2c2e1d2efa2e11f07ab8aee64f1875ca.bin), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6))

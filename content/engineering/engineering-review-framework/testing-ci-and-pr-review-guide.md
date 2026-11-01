@@ -100,4 +100,4 @@ External references checked on 2026-04-20. The workflow guidance above is a reco
 ## Library sources
 
 
-- [Winters et al. 2020](/sources/software-engineering/craft/winters-2020-software-engineering-at-google.pdf.enc), *Software Engineering at Google*
+- [Winters et al. 2020](/sources/cdc8156a74161ef8b6f12b1e2896c4d7.bin), *Software Engineering at Google*

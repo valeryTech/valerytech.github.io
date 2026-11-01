@@ -137,12 +137,12 @@ The [URL-shortener NFR draft]({{< ref "system-design/projects/url-shortener/url-
 ## Library sources
 
 
-- [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapters 3-7
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapter 6
-- [Newman 2020](/sources/system-design/microservices/newman-2020-monolith-to-microservices.pdf.enc), *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* -- chapter 4
+- [Richardson 2019](/sources/cdfacd78fbf9383e0e2361fff5f38b30.bin), *Microservices Patterns: With Examples in Java* -- chapters 3-7
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapter 6
+- [Newman 2020](/sources/bd80be1c01a1cbf103cccdc8957f91bc.bin), *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* -- chapter 4
 
 Further reading:
 
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts*
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 12, "Bounded Contexts Must Own Their Data Storage" (from a separate database down to a namespace in a shared one; reporting as its own context fed by events) and "Command-Query Separation" (CQRS, separate read stores); chapter 6, "Consistency" (between contexts: asynchronous messages, with reconciliation or compensation instead of two-phase commit); on *Who owns the data*, *Queries that need several services* and *Operations that change several services*
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 12, "Bounded Contexts Must Own Their Data Storage" (from a separate database down to a namespace in a shared one; reporting as its own context fed by events) and "Command-Query Separation" (CQRS, separate read stores); chapter 6, "Consistency" (between contexts: asynchronous messages, with reconciliation or compensation instead of two-phase commit); on *Who owns the data*, *Queries that need several services* and *Operations that change several services*

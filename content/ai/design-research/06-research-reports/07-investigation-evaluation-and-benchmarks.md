@@ -171,8 +171,8 @@ The preceding framework analysis and subsequent critique remain in the [coordina
 ## Library sources
 
 
-- [Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), *Measuring what Matters*
+- [Bean et al. 2025](/sources/015e29150096f262478300d13488bbc2.bin), *Measuring what Matters*
 
 Further reading:
 
-- [Guerdan et al. 2024](/sources/ai-foundations/capabilities-and-measurement/guerdan-2024-evaluating-llms-under-task-indeterminacy.pdf.enc), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
+- [Guerdan et al. 2024](/sources/2478056b91cd37d03393aedc5b4b14b3.bin), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))

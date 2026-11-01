@@ -10,4 +10,4 @@ sidebar:
 ## Library sources
 
 
-- [Mei et al. 2025](/sources/ai-engineering/agents/mei-2025-survey-of-context-engineering-for-llms.pdf.enc), *A Survey of Context Engineering for Large Language Models* ([arXiv:2507.13334](https://arxiv.org/abs/2507.13334))
+- [Mei et al. 2025](/sources/ce672d48443a0d56e51ce59cd0cf13fd.bin), *A Survey of Context Engineering for Large Language Models* ([arXiv:2507.13334](https://arxiv.org/abs/2507.13334))

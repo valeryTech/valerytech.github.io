@@ -15,7 +15,7 @@ if [[ ! -f "${settings}" ]]; then
 fi
 
 # An empty folder would make the sync delete every PDF in the bucket.
-pdf_count="$(find "${pdf_root}" -name '*.pdf.enc' 2>/dev/null | wc -l | tr -d ' ')"
+pdf_count="$(find "${pdf_root}" -name '*.bin' 2>/dev/null | wc -l | tr -d ' ')"
 if [[ "${pdf_count}" == "0" ]]; then
   fail "No PDFs in content/sources/; run task content:migrate first"
 fi

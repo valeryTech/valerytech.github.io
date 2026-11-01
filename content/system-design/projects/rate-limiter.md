@@ -126,5 +126,5 @@ So we have two models: one metamodel that contains a broad problem analysis and 
 ## Library sources
 
 
-- [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapter 4, a rate limiter
+- [Xu 2020](/sources/39fea06ad1d4c38d97709b95898d9c25.bin), *System Design Interview: An Insider's Guide* -- chapter 4, a rate limiter
 - Educative 2023: rate limiter, *Grokking Modern System Design Interview*

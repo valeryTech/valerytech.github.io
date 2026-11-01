@@ -187,6 +187,6 @@ When this note was rewritten, no hub explained the topics below. Later the same 
 
 
 - Educative 2023, *Grokking Modern System Design Interview for Engineers and Managers* -- the sixteen building blocks in *Educative building blocks by hub*
-- [Design Gurus 2019](/sources/system-design/interviews/designgurus-2019-grokking-the-system-design-interview.pdf.enc), *Grokking the System Design Interview* -- the basics part works as a glossary of building blocks
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- the book the collection named
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapter 11, security, named in the security entry
+- [Design Gurus 2019](/sources/c7a02deda6e4efa6b8b8ec480f981ee0.bin), *Grokking the System Design Interview* -- the basics part works as a glossary of building blocks
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- the book the collection named
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapter 11, security, named in the security entry

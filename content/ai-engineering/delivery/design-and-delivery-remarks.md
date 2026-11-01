@@ -19,4 +19,4 @@ DDD guidance: decide which invariants and behavior belong inside the domain mode
 ## Library sources
 
 
-- [Royce 1970](/sources/software-engineering/process-and-agile/royce-1970-managing-development-large-software-systems.pdf.enc), *Managing the Development of Large Software Systems*
+- [Royce 1970](/sources/fc5d2cb35838539fa78fad5a122063ea.bin), *Managing the Development of Large Software Systems*

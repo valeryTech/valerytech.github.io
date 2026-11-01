@@ -64,10 +64,10 @@ See [Terraform]({{< ref "engineering/platform/terraform" >}}) for practical lear
 ## Library sources
 
 
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes* -- Crossplane and environment pipelines
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering* -- policy as code, and infrastructure pipelines and tests
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes* -- Crossplane and environment pipelines
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- policy as code, and infrastructure pipelines and tests
   - Chapter notes: chapter 4 (policy as code with Open Policy Agent), chapter 6 (pipeline levels, choosing an IaC framework, testing infrastructure code)
 
 Further reading:
 
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-well-architected-framework.pdf.enc), *AWS Well-Architected Framework*
+- [AWS 2024](/sources/2266f3d3d6f2467e22254d1f717ff39a.bin), *AWS Well-Architected Framework*

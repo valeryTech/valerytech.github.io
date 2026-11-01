@@ -665,12 +665,12 @@ The proposed **justification graph** is a promising research direction because i
 ## Library sources
 
 
-- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition* -- on *Relevant engineering approaches*
-- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture* -- on *Architecture grounded in user goals*
-- [Cervantes and Kazman 2024](/sources/software-engineering/architecture/cervantes-2024-designing-software-architectures.pdf.enc), *Designing Software Architectures: A Practical Approach, 2nd Edition* -- on *Relevant engineering approaches*
+- [Bass et al. 2021](/sources/887eb03f3c5ac3d5c24aeeb4705f0245.bin), *Software Architecture in Practice, 4th Edition* -- on *Relevant engineering approaches*
+- [Brown 2026](/sources/98db09f724a7584933b9628fbab6dd54.bin), *The C4 Model: Visualizing Software Architecture* -- on *Architecture grounded in user goals*
+- [Cervantes and Kazman 2024](/sources/b6584be4eff5ad6afd064e5012e63f75.bin), *Designing Software Architectures: A Practical Approach, 2nd Edition* -- on *Relevant engineering approaches*
 
 Further reading:
 
-- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
-- [Malan 2022](/sources/software-engineering/architecture/malan-2022-technical-leadership-decisions.pdf.enc), *Technical Leadership and Decisions*
-- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice*
+- [Abrahamsson et al. 2010](/sources/edea986f585230de4a92ace2a66936f2.bin), *Agility and Architecture*
+- [Malan 2022](/sources/79b330f62fe31068010c8f554d4f5270.bin), *Technical Leadership and Decisions*
+- [Kruchten et al. 2009](/sources/f16fd0f68275266c464119b582d0034f.bin), *The role of a "decision view" in software architecture practice*

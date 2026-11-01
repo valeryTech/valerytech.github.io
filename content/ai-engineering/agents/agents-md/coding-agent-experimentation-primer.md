@@ -128,18 +128,18 @@ This is enough to prevent vague claims and premature conclusions. The next step 
 These are methodological starting points, not evidence that any specific `AGENTS.md` recommendation works.
 
 - **Kitchenham, Dybå & Jørgensen (2004), "Evidence-based software engineering."** How to formulate answerable questions, appraise evidence, and apply findings in context. [Durham bibliography](https://ebse.webspace.durham.ac.uk/ebse-bibliography/evidence-based-software-engineering/) · [DOI](https://doi.org/10.1109/ICSE.2004.1317449)
-- **Wieringa (2014), Design Science Methodology for Information Systems and Software Engineering.** Research questions, artifact design, and evaluation in context. [Springer](https://doi.org/10.1007/978-3-662-43839-8) ([PDF](/sources/research-methods/design-science/wieringa-2014-design-science-methodology-front-matter.pdf.enc))
-- **Wohlin et al. (2024), Experimentation in Software Engineering.** A fuller reference for selecting empirical methods and running experiments. [Springer](https://doi.org/10.1007/978-3-662-69306-3) ([PDF](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc))
+- **Wieringa (2014), Design Science Methodology for Information Systems and Software Engineering.** Research questions, artifact design, and evaluation in context. [Springer](https://doi.org/10.1007/978-3-662-43839-8) ([PDF](/sources/466ae150a72883885f071398cd467286.bin))
+- **Wohlin et al. (2024), Experimentation in Software Engineering.** A fuller reference for selecting empirical methods and running experiments. [Springer](https://doi.org/10.1007/978-3-662-69306-3) ([PDF](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin))
 - **Runeson & Höst (2009), "Guidelines for conducting and reporting case study research in software engineering."** How to investigate complex real-world settings. [Open-access paper](https://doi.org/10.1007/s10664-008-9102-8)
 - **Stol, Ralph & Fitzgerald (2016), "Grounded theory in software engineering research."** What grounded theory entails and how to apply it responsibly. [University repository](https://cora.ucc.ie/handle/10468/7041)
 
 ## Library sources
 
 
-- [Dresch et al. 2015](/sources/research-methods/design-science/dresch-2015-design-science-research.pdf.enc), *Design Science Research* ([doi:10.1007/978-3-319-07374-3](https://doi.org/10.1007/978-3-319-07374-3))
-- [Denzin and Lincoln 2018](/sources/research-methods/empirical-methods/denzin-2018-sage-handbook-of-qualitative-research.pdf.enc), *The SAGE Handbook of Qualitative Research*
-- [Marczyk et al. 2005](/sources/research-methods/empirical-methods/marczyk-2005-essentials-of-research-design-and-methodology.pdf.enc), *Essentials of Research Design and Methodology*
-- [Mendez et al. 2024](/sources/research-methods/empirical-methods/mendez-2024-handbook-on-teaching-empirical-software-engineering.pdf.enc), *Handbook on Teaching Empirical Software Engineering*
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base*
-- [Wohlin and Runeson 2021](/sources/research-methods/empirical-methods/wohlin-2021-guiding-selection-of-research-methodology.pdf.enc), *Guiding the selection of research methodology in industry-academia collaboration in software engineering* ([doi:10.1016/j.infsof.2021.106678](https://doi.org/10.1016/j.infsof.2021.106678))
-- [Wohlin and Rainer 2022](/sources/research-methods/empirical-methods/wohlin-2022-is-it-a-case-study-preprint.pdf.enc), *Is it a case study? A critical analysis and guidance*
+- [Dresch et al. 2015](/sources/793579948d2178f152744d2bba3792d1.bin), *Design Science Research* ([doi:10.1007/978-3-319-07374-3](https://doi.org/10.1007/978-3-319-07374-3))
+- [Denzin and Lincoln 2018](/sources/22f3ac39414dd99205b2f2679dd71b89.bin), *The SAGE Handbook of Qualitative Research*
+- [Marczyk et al. 2005](/sources/8b198ee52250fb21e5e2839e1fe56d96.bin), *Essentials of Research Design and Methodology*
+- [Mendez et al. 2024](/sources/b6af38dfc99002789655e1059bc1901c.bin), *Handbook on Teaching Empirical Software Engineering*
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base*
+- [Wohlin and Runeson 2021](/sources/3cfb734c3eb89c6fc1a4f131e4a9b4d0.bin), *Guiding the selection of research methodology in industry-academia collaboration in software engineering* ([doi:10.1016/j.infsof.2021.106678](https://doi.org/10.1016/j.infsof.2021.106678))
+- [Wohlin and Rainer 2022](/sources/259b57ac164515376430c68ba4848f6b.bin), *Is it a case study? A critical analysis and guidance*

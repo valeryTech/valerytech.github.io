@@ -364,9 +364,9 @@ Behavioral reliability should not be the only barrier protecting an irreversible
 ## Library sources
 
 
-- [Amershi et al. 2019](/sources/ml-engineering/se-for-ml/amershi-2019-software-engineering-for-ml-case-study.pdf.enc), *Software Engineering for Machine Learning: A Case Study*
+- [Amershi et al. 2019](/sources/46dc3be9c72de24b5c29f1031eb62cd1.bin), *Software Engineering for Machine Learning: A Case Study*
 
 Further reading:
 
-- [Giray 2021](/sources/ml-engineering/se-for-ml/giray-2021-software-engineering-perspective-ml-systems.pdf.enc), *A Software Engineering Perspective on Engineering Machine Learning Systems*
-- [SEBoK 2022](/sources/thinking-and-learning/systems-thinking/sebok-2022-guide-systems-engineering-body-of-knowledge.pdf.enc), *Guide to the Systems Engineering Body of Knowledge (SEBoK)*
+- [Giray 2021](/sources/0f5f7e0ddc49ede6bd33eed16dd26a26.bin), *A Software Engineering Perspective on Engineering Machine Learning Systems*
+- [SEBoK 2022](/sources/ae3adc768b9695d13af65d16f83a0293.bin), *Guide to the Systems Engineering Body of Knowledge (SEBoK)*

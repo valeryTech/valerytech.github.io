@@ -312,7 +312,7 @@ The original Deep Research export used transient ChatGPT source identifiers. The
 
 [^turn4search1]: Wil M. P. van der Aalst, "Workflow Verification: Finding Control-Flow Errors Using Petri-Net-Based Techniques," 2000. <https://doi.org/10.1007/3-540-45594-9_11> Original Deep Research source key: `turn4search1`.
 
-[^turn6academia24]: Andrej Bauer and Matija Pretnar, "Programming with Algebraic Effects and Handlers," 2012/2015. <https://arxiv.org/abs/1203.1539> ([PDF](/sources/ai-engineering/harness/bauer-2012-programming-with-algebraic-effects-handlers.pdf.enc)) Original Deep Research source key: `turn6academia24`.
+[^turn6academia24]: Andrej Bauer and Matija Pretnar, "Programming with Algebraic Effects and Handlers," 2012/2015. <https://arxiv.org/abs/1203.1539> ([PDF](/sources/9b6246e3747af2f9c2aeb0974d41c105.bin)) Original Deep Research source key: `turn6academia24`.
 
 [^turn5search2]: Gerwin Klein et al., "seL4: Formal Verification of an OS Kernel," *SOSP '09*, 2009. <https://cgi.cse.unsw.edu.au/~kleing/papers/sosp09.html> Original Deep Research source key: `turn5search2`.
 

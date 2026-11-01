@@ -68,9 +68,9 @@ How far the estimate reaches is part of the claim too: which people, tasks and s
 ## Library sources
 
 
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base* -- p-values, effect sizes, confidence intervals and practical significance; on *Inferential Analysis* (ch. 12)
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base* -- p-values, effect sizes, confidence intervals and practical significance; on *Inferential Analysis* (ch. 12)
 
 Further reading:
 
-- [Ghasemi et al. 2025](/sources/research-methods/philosophy-of-science/ghasemi-2025-research-hypothesis-history-role-characteristics.pdf.enc), *Research Hypothesis: A Brief History, Central Role in Scientific Inquiry, and Characteristics* -- null and alternative hypotheses, Popper's falsification and Hempel's verification
-- [Popper 1959](/sources/research-methods/philosophy-of-science/popper-1959-logic-of-scientific-discovery.pdf.enc), *The Logic of Scientific Discovery*
+- [Ghasemi et al. 2025](/sources/c805de7771cea01858c0badc063222cd.bin), *Research Hypothesis: A Brief History, Central Role in Scientific Inquiry, and Characteristics* -- null and alternative hypotheses, Popper's falsification and Hempel's verification
+- [Popper 1959](/sources/c68fa1c135c0f988c39d2624f0a61097.bin), *The Logic of Scientific Discovery*

@@ -44,6 +44,6 @@ The original source reminder is the *Designing Fine-Grained Microservices* book.
 ## Library sources
 
 
-- [Atchison 2020](/sources/software-engineering/systems-and-operations/atchison-2020-architecting-for-scale.pdf.enc), *Architecting for Scale*
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-reducing-scope-of-impact-cell-based-architecture.pdf.enc), *Reducing the Scope of Impact with Cell-Based Architecture*
-- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-well-architected-framework.pdf.enc), *AWS Well-Architected Framework*
+- [Atchison 2020](/sources/eaa5b8561b5aae270f729456b6b7c211.bin), *Architecting for Scale*
+- [AWS 2024](/sources/7e7195dd160b0a64fe44c392ec32afaa.bin), *Reducing the Scope of Impact with Cell-Based Architecture*
+- [AWS 2024](/sources/2266f3d3d6f2467e22254d1f717ff39a.bin), *AWS Well-Architected Framework*

@@ -149,8 +149,8 @@ In the full design, traces are DAGs of spans with correlated logs, metrics, conf
 ## Library sources
 
 
-- [Edge et al. 2024](/sources/retrieval-and-knowledge/knowledge-graphs/edge-2024-graphrag-local-to-global-summarization.pdf.enc), *From Local to Global* ([arXiv:2404.16130](https://arxiv.org/abs/2404.16130)) -- on *Naming the approach*
+- [Edge et al. 2024](/sources/c4ed78ac2eab252a8e4ea01c6b277ab4.bin), *From Local to Global* ([arXiv:2404.16130](https://arxiv.org/abs/2404.16130)) -- on *Naming the approach*
 
 Further reading:
 
-- [Mo et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/mo-2025-kggen-extracting-knowledge-graphs.pdf.enc), *KGGen*
+- [Mo et al. 2025](/sources/e4b7dbb03b4ba0873ebe1509c27c2c19.bin), *KGGen*

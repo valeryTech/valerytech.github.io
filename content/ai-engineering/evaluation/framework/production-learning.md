@@ -217,10 +217,10 @@ Production evaluation should therefore remain connected to customer research, pr
 ## Library sources
 
 
-- [Desale 2025](/sources/ai-engineering/llmops/desale-2025-concept-drift-in-llms.pdf.enc), *Concept Drift in Large Language Models: Adapting the Conversation* ([doi:10.1201/9781003595533](https://doi.org/10.1201/9781003595533)) -- on *Detect change without calling every change drift*
+- [Desale 2025](/sources/d1942ec8339ba7be1a0c4c267c156da3.bin), *Concept Drift in Large Language Models: Adapting the Conversation* ([doi:10.1201/9781003595533](https://doi.org/10.1201/9781003595533)) -- on *Detect change without calling every change drift*
 
 Further reading:
 
-- [Xia et al. 2024](/sources/ai-engineering/evaluation/xia-2024-evaluation-driven-development-and-operations-of-llm-agents.pdf.enc), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768))
-- [Vinay 2025](/sources/ai-engineering/failures/vinay-2025-failure-modes-in-llm-systems.pdf.enc), *Failure Modes in LLM Systems*
-- [Murphy and Underwood 2025](/sources/ml-engineering/mlops/murphy-2025-unsolved-problems-in-mlops.pdf.enc), *Unsolved Problems in MLOps*
+- [Xia et al. 2024](/sources/b06b0ce219cd90ae62a1cfdfefcd159b.bin), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768))
+- [Vinay 2025](/sources/24c523668b468dc4bcb703579792c1a4.bin), *Failure Modes in LLM Systems*
+- [Murphy and Underwood 2025](/sources/ef367e86799f257cbc6954868ca0c06f.bin), *Unsolved Problems in MLOps*

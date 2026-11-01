@@ -66,4 +66,4 @@ I hope that's helpful to you. If you find yourself mired in bad abstractions, ta
 ## Library sources
 
 
-- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer*
+- [Thomas and Hunt 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer*

@@ -79,7 +79,7 @@ The API or message schema is the part of a service that other teams depend on. Q
 - Schema evolution for events, which consumers may read long after publication.
 - [Consumer-driven contract tests]({{< ref "system-design/elements/operating-services" >}}#testing) as a way to check compatibility.
 
-Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-our-apis-at-slack/), [API design articles -- Martin Fowler](https://www.martinfowler.com/tags/API%20design.html), and the communication and contract chapters of *Software Architecture: The Hard Parts* ([PDF](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc)).
+Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-our-apis-at-slack/), [API design articles -- Martin Fowler](https://www.martinfowler.com/tags/API%20design.html), and the communication and contract chapters of *Software Architecture: The Hard Parts* ([PDF](/sources/08f60e529d971e5ad6408c46accea44c.bin)).
 
 ## Leads to
 
@@ -114,10 +114,10 @@ Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-ou
 ## Library sources
 
 
-- [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 4-5
-- [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapter 3
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts* -- on *Contracts and API design*
+- [Newman 2021](/sources/af58a5432d5991ea30cd296ba11a12dc.bin), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 4-5
+- [Richardson 2019](/sources/cdfacd78fbf9383e0e2361fff5f38b30.bin), *Microservices Patterns: With Examples in Java* -- chapter 3
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts* -- on *Contracts and API design*
 
 Further reading:
 
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 3, "Communicating Between Bounded Contexts" (events over queues, DTOs serialized at the boundary) and "Contracts Between Bounded Contexts" (who owns the contract: shared kernel, consumer-driven, conformist); on *Contracts and API design*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 3, "Communicating Between Bounded Contexts" (events over queues, DTOs serialized at the boundary) and "Contracts Between Bounded Contexts" (who owns the contract: shared kernel, consumer-driven, conformist); on *Contracts and API design*

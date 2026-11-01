@@ -605,8 +605,8 @@ This sequence establishes control, adoption, debuggability, and reuse before int
 
 Further reading:
 
-- [Bandara et al. 2025](/sources/ai-engineering/agents/bandara-2025-production-grade-agentic-ai-workflows.pdf.enc), *A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows* ([arXiv:2512.08769](https://arxiv.org/abs/2512.08769))
-- [Aryan 2025](/sources/ai-engineering/llmops/aryan-2025-llmops-managing-llms-in-production.pdf.enc), *LLMOps: Managing Large Language Models in Production*
-- [Doan 2024](/sources/ai-engineering/llmops/doan-2024-essential-guide-to-llmops.pdf.enc), *Essential Guide to LLMOps*
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering*
-- [Fournier and Nowland 2025](/sources/software-engineering/systems-and-operations/fournier-2025-platform-engineering.pdf.enc), *Platform Engineering*
+- [Bandara et al. 2025](/sources/3029c0c1ac6f11a935a93679a8c41379.bin), *A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows* ([arXiv:2512.08769](https://arxiv.org/abs/2512.08769))
+- [Aryan 2025](/sources/692a33f6628a7f155b8582752d49e5d1.bin), *LLMOps: Managing Large Language Models in Production*
+- [Doan 2024](/sources/163e77528b5d01554cbb2d3538654825.bin), *Essential Guide to LLMOps*
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering*
+- [Fournier and Nowland 2025](/sources/3c79e44be07e3bb68b2346dc79796c36.bin), *Platform Engineering*

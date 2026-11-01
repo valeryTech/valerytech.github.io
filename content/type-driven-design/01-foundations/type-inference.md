@@ -44,15 +44,15 @@ The two aren't fully independent, though. The more a type system can express, th
 
 - Hindley-Milner (ML, Haskell 98) infers every type without annotations, which is why it's the standard example.
 - Full inference for System F, the polymorphic lambda calculus behind higher-rank types, is undecidable (Wells 1994; Pierce section 23.6 "Erasure, Typability, and Type Reconstruction"). That's why Haskell and Scala ask for annotations on higher-rank and polymorphic-recursive functions.
-- Type families make inference harder, and Bragilevsky ([PDF](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), section 11.6.1) advises explicit signatures, local ones too, to guide it.
-- Refinement types have the same problem. Liquid Types ([PDF](/sources/programming/language-theory/rondon-2008-liquid-types.pdf.enc)) keeps inference possible by restricting refinements to combinations of programmer-supplied predicates ("qualifiers"), which cut manual annotation in their benchmarks from 31% of the program text to under 1%.
+- Type families make inference harder, and Bragilevsky ([PDF](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), section 11.6.1) advises explicit signatures, local ones too, to guide it.
+- Refinement types have the same problem. Liquid Types ([PDF](/sources/c1ee665591c2e20039979587673830e7.bin)) keeps inference possible by restricting refinements to combinations of programmer-supplied predicates ("qualifiers"), which cut manual annotation in their benchmarks from 31% of the program text to under 1%.
 
 So language designers trade expressiveness against inference, and the boundary between the two is where annotations become mandatory.
 
 ## Library sources
 
 
-- [Pierce 2002](/sources/programming/language-theory/pierce-2002-types-and-programming-languages.pdf.enc), *Types and Programming Languages* -- section 23.6, "Erasure, Typability, and Type Reconstruction", on undecidable inference for System F
-- [Rondon et al. 2008](/sources/programming/language-theory/rondon-2008-liquid-types.pdf.enc), *Liquid Types* -- inference of refinement types from programmer-supplied qualifiers, and the drop in manual annotation
-- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth* -- section 11.5.1, "The meaning": RankNTypes makes inference impossible in general, so top-level signatures are required; section 11.6.1, "Be explicit about types": explicit types, local ones too, guide inference "particularly in the presence of type families"; on the System F and type-family bullets
-- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles* -- section 5.6, "Type inference": Haskell infers the most general type on an extended Damas-Hindley-Milner system, and declaring the types of finished code is still good practice; on the Hindley-Milner bullet
+- [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- section 23.6, "Erasure, Typability, and Type Reconstruction", on undecidable inference for System F
+- [Rondon et al. 2008](/sources/c1ee665591c2e20039979587673830e7.bin), *Liquid Types* -- inference of refinement types from programmer-supplied qualifiers, and the drop in manual annotation
+- [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth* -- section 11.5.1, "The meaning": RankNTypes makes inference impossible in general, so top-level signatures are required; section 11.6.1, "Be explicit about types": explicit types, local ones too, guide inference "particularly in the presence of type families"; on the System F and type-family bullets
+- [Allen et al. 2016](/sources/ef73b442d98627834d86e8f39127b0d6.bin), *Haskell Programming from First Principles* -- section 5.6, "Type inference": Haskell infers the most general type on an extended Damas-Hindley-Milner system, and declaring the types of finished code is still good practice; on the Hindley-Milner bullet

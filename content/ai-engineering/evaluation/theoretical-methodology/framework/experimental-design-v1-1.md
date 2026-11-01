@@ -782,5 +782,5 @@ An experiment is valid only if:
 ## Library sources
 
 
-- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))
+- [Wohlin et al. 2024](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))
 - Montgomery 2017, *Design and Analysis of Experiments*

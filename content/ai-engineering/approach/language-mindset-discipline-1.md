@@ -76,4 +76,4 @@ Related notes: [My approach to production AI engineering](https://valery.tech/ai
 ## Library sources
 
 
-- [Swanson 2007](/sources/research-methods/philosophy-of-science/swanson-2007-theory-framework-for-applied-disciplines.pdf.enc), *Theory Framework for Applied Disciplines* ([doi:10.1177/1534484307303770](https://doi.org/10.1177/1534484307303770))
+- [Swanson 2007](/sources/785b82bf96c073143f1e17128229b6dd.bin), *Theory Framework for Applied Disciplines* ([doi:10.1177/1534484307303770](https://doi.org/10.1177/1534484307303770))

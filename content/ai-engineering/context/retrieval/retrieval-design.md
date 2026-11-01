@@ -218,6 +218,6 @@ The engineering progression is: choose a small real task, expose its uncertain d
 ## Library sources
 
 
-- [Anonymous 2025](/sources/retrieval-and-knowledge/rag/anonymous-2025-practical-code-rag-at-scale.pdf.enc), *Practical Code RAG at Scale*
-- [Cuconasu et al. 2024](/sources/retrieval-and-knowledge/rag/cuconasu-2024-power-of-noise-retrieval-rag.pdf.enc), *The Power of Noise: Redefining Retrieval for RAG Systems* ([doi:10.1145/3626772.3657834](https://doi.org/10.1145/3626772.3657834))
-- [Li et al. 2025](/sources/retrieval-and-knowledge/rag/li-2025-enhancing-rag-best-practices.pdf.enc), *Enhancing Retrieval-Augmented Generation: A Study of Best Practices* ([arXiv:2501.07391](https://arxiv.org/abs/2501.07391))
+- [Anonymous 2025](/sources/30cb49de449fbee8fd7c2c4e3a1311da.bin), *Practical Code RAG at Scale*
+- [Cuconasu et al. 2024](/sources/b72257d1c0bca234d287be5eab0b26bb.bin), *The Power of Noise: Redefining Retrieval for RAG Systems* ([doi:10.1145/3626772.3657834](https://doi.org/10.1145/3626772.3657834))
+- [Li et al. 2025](/sources/361ef8507508cb08bd52f6737ae9fcc9.bin), *Enhancing Retrieval-Augmented Generation: A Study of Best Practices* ([arXiv:2501.07391](https://arxiv.org/abs/2501.07391))

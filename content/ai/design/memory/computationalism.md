@@ -287,7 +287,7 @@ The proposed sequence places a detailed philosophical investigation after the co
 
 Read roughly in this order:
 
-- Alan Turing -- _Computing Machinery and Intelligence_ ([PDF](/sources/ai-foundations/intelligence-and-turing/turing-1950-computing-machinery-and-intelligence-copeland.pdf.enc))
+- Alan Turing -- _Computing Machinery and Intelligence_ ([PDF](/sources/e9e815a2347232297524af2b765de4e4.bin))
 - David Marr -- introduction to _Vision_
 - Hilary Putnam -- functionalism
 - Jerry Fodor -- computational theory of mind
@@ -367,22 +367,22 @@ The proposed **three-resource core** is **Neuromatch Computational Neuroscience 
 ## Library sources
 
 
-- [Butlin et al. 2023](/sources/ai-foundations/cognition-and-mind/butlin-2023-consciousness-in-ai.pdf.enc), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
-- [Seth and Bayne 2022](/sources/ai-foundations/cognition-and-mind/seth-2022-theories-of-consciousness.pdf.enc), *Theories of consciousness* ([doi:10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4))
-- [Thagard 2012](/sources/ai-foundations/cognition-and-mind/thagard-2012-cognitive-architectures.pdf.enc), *Cognitive Architectures*
-- [Floridi 2004](/sources/research-methods/philosophy-of-science/floridi-2004-blackwell-guide-philosophy-computing-information.pdf.enc), *The Blackwell Guide to the Philosophy of Computing and Information* -- on *Computationalism and related positions*
+- [Butlin et al. 2023](/sources/77152ec24a9faa18a9649747b7c776f1.bin), *Consciousness in Artificial Intelligence* ([arXiv:2308.08708](https://arxiv.org/abs/2308.08708))
+- [Seth and Bayne 2022](/sources/17cf0953e9fb30efde3ac01ec820c105.bin), *Theories of consciousness* ([doi:10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4))
+- [Thagard 2012](/sources/d692f57ff2ea34885a414e01ad02558f.bin), *Cognitive Architectures*
+- [Floridi 2004](/sources/db7064319e5c69bbe78085d8205a5080.bin), *The Blackwell Guide to the Philosophy of Computing and Information* -- on *Computationalism and related positions*
 
 Further reading:
 
-- [Coeckelbergh and Gunkel 2025](/sources/ai-foundations/alignment-and-society/coeckelbergh-2025-communicative-ai.pdf.enc), *Communicative AI: A Critical Introduction to Large Language Models*
-- [Binz et al. 2025](/sources/ai-foundations/cognition-and-mind/binz-2025-foundation-model-of-human-cognition.pdf.enc), *A foundation model to predict and capture human cognition* ([doi:10.1038/s41586-025-09215-4](https://doi.org/10.1038/s41586-025-09215-4))
-- [Christensen et al. 2022](/sources/ai-foundations/cognition-and-mind/christensen-2022-neuromorphic-computing-roadmap.pdf.enc), *2022 roadmap on neuromorphic computing and engineering* ([doi:10.1088/2634-4386/ac4a83](https://doi.org/10.1088/2634-4386/ac4a83))
-- [Fleming 2020](/sources/ai-foundations/cognition-and-mind/fleming-2020-awareness-as-inference.pdf.enc), *Awareness as inference in a higher-order state space* ([doi:10.1093/nc/niz020](https://doi.org/10.1093/nc/niz020))
-- [Kotseruba and Tsotsos 2020](/sources/ai-foundations/cognition-and-mind/kotseruba-2020-40-years-of-cognitive-architectures.pdf.enc), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
-- [Rosenbloom 2026](/sources/ai-foundations/cognition-and-mind/rosenbloom-2026-on-minds.pdf.enc), *On Minds: Reflections of a Cognitive Architect*
-- [Sandved-Smith et al. 2021](/sources/ai-foundations/cognition-and-mind/sandved-smith-2021-computational-phenomenology-of-mental-action.pdf.enc), *Towards a computational phenomenology of mental action* ([doi:10.1093/nc/niab018](https://doi.org/10.1093/nc/niab018))
-- [Vernon 2014](/sources/ai-foundations/cognition-and-mind/vernon-2014-cognitive-system.pdf.enc), *Cognitive System*
-- [Vernon 2022](/sources/ai-foundations/cognition-and-mind/vernon-2022-cognitive-architectures.pdf.enc), *Cognitive Architectures*
-- [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
-- [French 2000](/sources/ai-foundations/intelligence-and-turing/french-2000-turing-test-first-50-years.pdf.enc), *The Turing Test: the first 50 years*
-- [Silver and Sutton 2025](/sources/ai-foundations/intelligence-and-turing/silver-2025-era-of-experience.pdf.enc), *Welcome to the Era of Experience*
+- [Coeckelbergh and Gunkel 2025](/sources/0d153a4277516c4bd067c638f1c75fb2.bin), *Communicative AI: A Critical Introduction to Large Language Models*
+- [Binz et al. 2025](/sources/0207741285ce650aba6d4b4eff6e8350.bin), *A foundation model to predict and capture human cognition* ([doi:10.1038/s41586-025-09215-4](https://doi.org/10.1038/s41586-025-09215-4))
+- [Christensen et al. 2022](/sources/727cfa273054997f906dba1e9e3f382b.bin), *2022 roadmap on neuromorphic computing and engineering* ([doi:10.1088/2634-4386/ac4a83](https://doi.org/10.1088/2634-4386/ac4a83))
+- [Fleming 2020](/sources/8d2c25f86959a22ceddaacca6e9c0c91.bin), *Awareness as inference in a higher-order state space* ([doi:10.1093/nc/niz020](https://doi.org/10.1093/nc/niz020))
+- [Kotseruba and Tsotsos 2020](/sources/dbc8fc8d10a0d4d51a43964e61c1482f.bin), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
+- [Rosenbloom 2026](/sources/5e6885b52d78bbf3ebdd3ffab9476a98.bin), *On Minds: Reflections of a Cognitive Architect*
+- [Sandved-Smith et al. 2021](/sources/d6797164b8651f2bb59d8b26e9c8931a.bin), *Towards a computational phenomenology of mental action* ([doi:10.1093/nc/niab018](https://doi.org/10.1093/nc/niab018))
+- [Vernon 2014](/sources/cc297b7304fb3c2f85f53200ae4a7a15.bin), *Cognitive System*
+- [Vernon 2022](/sources/05cca9881c47a3d320c525ad096490c1.bin), *Cognitive Architectures*
+- [Ziemke 2022](/sources/bf0e49a2d28a89a0aa37ddf742e607eb.bin), *Embodiment in Cognitive Science and Robotics*
+- [French 2000](/sources/1f9ea75aebfedddb37b732f0366781a9.bin), *The Turing Test: the first 50 years*
+- [Silver and Sutton 2025](/sources/bc2821a0d16b5495cadca969371d49a9.bin), *Welcome to the Era of Experience*

@@ -113,8 +113,8 @@ This is the minimal apparatus. It can later connect to richer evaluation systems
 ## Library sources
 
 
-- [Jansen and Bosch 2005](/sources/software-engineering/architecture-decisions/jansen-2005-software-architecture-as-set-of-design-decisions.pdf.enc), *Software Architecture as a Set of Architectural Design Decisions* -- on *Decision records for uncertainty*
+- [Jansen and Bosch 2005](/sources/c9fd193b0b3901dc6fdd32f621d82604.bin), *Software Architecture as a Set of Architectural Design Decisions* -- on *Decision records for uncertainty*
 
 Further reading:
 
-- [Capilla et al. 2016](/sources/software-engineering/architecture-decisions/capilla-2016-software-architecture-knowledge-management.pdf.enc), *10 years of software architecture knowledge management* ([doi:10.1016/j.jss.2015.08.054](https://doi.org/10.1016/j.jss.2015.08.054))
+- [Capilla et al. 2016](/sources/9205b55a215c638546426e3bddcab4f6.bin), *10 years of software architecture knowledge management* ([doi:10.1016/j.jss.2015.08.054](https://doi.org/10.1016/j.jss.2015.08.054))

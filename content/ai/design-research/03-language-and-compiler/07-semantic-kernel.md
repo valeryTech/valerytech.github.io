@@ -490,4 +490,4 @@ That is the proposed direction to pursue. The separate component becomes a **sma
 
 Further reading:
 
-- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell* -- section 5.2, "GADTs": a type-safe syntax tree, `data Expr a where LitInt :: Int -> Expr Int ...`, whose constructors fix their result types the way `Method i o` fixes input and output artifacts; on the Haskell algebra sketch under *audit-related*
+- [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell* -- section 5.2, "GADTs": a type-safe syntax tree, `data Expr a where LitInt :: Int -> Expr Int ...`, whose constructors fix their result types the way `Method i o` fixes input and output artifacts; on the Haskell algebra sketch under *audit-related*

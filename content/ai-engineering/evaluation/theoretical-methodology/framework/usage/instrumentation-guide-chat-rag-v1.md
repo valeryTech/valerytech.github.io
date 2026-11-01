@@ -693,4 +693,4 @@ Instrumentation must be low overhead:
 ## Library sources
 
 
-- [Barnett et al. 2024](/sources/retrieval-and-knowledge/rag/barnett-2024-seven-failure-points-rag-systems.pdf.enc), *Seven Failure Points When Engineering a Retrieval Augmented Generation System* ([doi:10.1145/3644815.3644945](https://doi.org/10.1145/3644815.3644945)) -- on *6. RAG evidence instrumentation (the core of chat+RAG)*
+- [Barnett et al. 2024](/sources/83835376f18c0b8eb396f9cec55960d6.bin), *Seven Failure Points When Engineering a Retrieval Augmented Generation System* ([doi:10.1145/3644815.3644945](https://doi.org/10.1145/3644815.3644945)) -- on *6. RAG evidence instrumentation (the core of chat+RAG)*

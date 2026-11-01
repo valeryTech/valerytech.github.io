@@ -792,7 +792,7 @@ The three docs.scala-lang.org links are chapters of the official Scala 3 Book an
 - BigPanda Engineering, "Refactoring to functional patterns in Scala": <https://medium.com/bigpanda-engineering/refactoring-to-functional-patterns-in-scala-bf81e7abfe77>
 - InfoQ presentation, "Type Functional Design": <https://www.infoq.com/presentations/Type-Functional-Design/#.WgQgsvnDY9Q>
 - SoftwareMill, "Principles of developing applications in Scala", on how to move a project to FP: <https://softwaremill.com/principles-of-developing-applications-in-scala/>
-- *Functional and Reactive Domain Modeling* (Ghosh 2017) builds domain models in Scala with algebraic data types, type classes and reactive techniques: [PDF](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc).
+- *Functional and Reactive Domain Modeling* (Ghosh 2017) builds domain models in Scala with algebraic data types, type classes and reactive techniques: [PDF](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin).
 - Videos listed with design and modelling, topics not checked:
   - <https://www.youtube.com/watch?v=2JB1_e5wZmU>
   - <https://www.youtube.com/watch?v=yan1YOXvAUM>
@@ -853,7 +853,7 @@ Scaladex (index.scala-lang.org), the official index of Scala libraries, and awes
 
 - [ ] Create a guide with examples on the most common Scala topics, using the video under Articles and discussions.
 - [ ] Read John De Goes's articles.
-- [ ] Read *Programming in Scala* section 18.5 (lower bounds) and section 18.6 (contravariance and the Liskov Substitution Principle) ([PDF](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc)).
+- [ ] Read *Programming in Scala* section 18.5 (lower bounds) and section 18.6 (contravariance and the Liskov Substitution Principle) ([PDF](/sources/6d5d72f2cd796c67b467228f976d4a33.bin)).
 - [ ] Work through the Box example on the Tour of Scala's Variances page.
 
 See also: [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}) for the type system, [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}), [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) and [Haskell]({{< ref "functional-programming/04-languages/haskell" >}}). Also [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for fs2, [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for fibers, and [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Either`.
@@ -861,20 +861,20 @@ See also: [Scala type system]({{< ref "type-driven-design/05-stronger-type-syste
 ## Library sources
 
 
-- [Odersky et al. 2021](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), *Programming in Scala (5th edition)*: source of most quoted passages (class parameters, singleton objects, string interpolation, traits, thin and rich interfaces, abstract members, variance and lower bounds).
-- [Wampler 2021](/sources/programming/scala/wampler-2021-programming-scala-3e.pdf.enc), *Programming Scala (3rd edition)*: the Scala 2 to Scala 3 changes described in this note (givens and `using`, extension methods, `export`, optional braces).
-- [Volpe 2021](/sources/programming/scala/volpe-2021-practical-fp-in-scala-2e.pdf.enc), *Practical FP in Scala (2nd edition)*: state encapsulation with `Ref` and smart constructors, newtypes and refinement types.
-- [Suereth 2012](/sources/programming/scala/suereth-2012-scala-in-depth.pdf.enc), *Scala in Depth*: Scala 2 implicits and implicit resolution, for the Implicits section; dated (Scala 2.9).
+- [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala (5th edition)*: source of most quoted passages (class parameters, singleton objects, string interpolation, traits, thin and rich interfaces, abstract members, variance and lower bounds).
+- [Wampler 2021](/sources/15972064071d3223586f8945de281cea.bin), *Programming Scala (3rd edition)*: the Scala 2 to Scala 3 changes described in this note (givens and `using`, extension methods, `export`, optional braces).
+- [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala (2nd edition)*: state encapsulation with `Ref` and smart constructors, newtypes and refinement types.
+- [Suereth 2012](/sources/4e8d2d10ca6fd931719965959de39eac.bin), *Scala in Depth*: Scala 2 implicits and implicit resolution, for the Implicits section; dated (Scala 2.9).
 - Płachta 2022, *Grokking Functional Programming*: chapters 5 and 6 are the source of the passages under Comprehensions, and chapters 8 to 10 cover `IO`, streams and concurrency with Cats Effect and fs2.
-- [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling*: chapter 2 (Scala for functional domain models: ADTs, modules), chapter 3 (algebraic API design, smart constructors) and chapter 5 (modularization).
-- [De Goes et al. 2025](/sources/programming/scala/degoes-2025-zionomicon.pdf.enc), *Zionomicon*: the ZIO book: the `ZIO[R, E, A]` type and its error channel (chapters 1 and 3), fibers (chapters 5 to 8), dependency injection with `ZLayer` (chapters 17 and 18) and ZStream (chapters 27 to 33); for the ZIO ecosystem and dependency injection.
+- [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling*: chapter 2 (Scala for functional domain models: ADTs, modules), chapter 3 (algebraic API design, smart constructors) and chapter 5 (modularization).
+- [De Goes et al. 2025](/sources/4115845a430bc3f50ff12c191a45fd53.bin), *Zionomicon*: the ZIO book: the `ZIO[R, E, A]` type and its error channel (chapters 1 and 3), fibers (chapters 5 to 8), dependency injection with `ZLayer` (chapters 17 and 18) and ZStream (chapters 27 to 33); for the ZIO ecosystem and dependency injection.
 
 Further reading:
 
-- [Alexander 2021](/sources/programming/scala/alexander-2021-scala-cookbook-2e.pdf.enc), *Scala Cookbook (2nd edition)*: source of the quoted passages on constructor parameters and on traits as interfaces.
-- [Sfregola 2021](/sources/programming/scala/sfregola-2021-get-programming-with-scala.pdf.enc), *Get Programming with Scala*
-- [Li 2020](/sources/programming/scala/li-2020-hands-on-scala-programming.pdf.enc), *Hands-on Scala Programming*
-- [Welsh and Gurnell 2020](/sources/programming/scala/welsh-2020-scala-with-cats.pdf.enc), *Scala with Cats*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 9, "Injecting Dependencies": dependencies passed as function parameters and supplied once at the top level by partial application, the functional form of option 1; on *Dependency injection*.
-- [Schwarz 2020](/sources/programming/scala/schwarz-2020-scala-3-by-example-adts-for-ddd-part-1.pdf.enc), *Scala 3 by Example: ADTs for DDD, Part 1*
-- [Volpe 2023](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), *Functional Event-Driven Architecture*
+- [Alexander 2021](/sources/852fbe203cb432c7ab553608147935d9.bin), *Scala Cookbook (2nd edition)*: source of the quoted passages on constructor parameters and on traits as interfaces.
+- [Sfregola 2021](/sources/938932d9b4e4bd1177769b29018c5ff6.bin), *Get Programming with Scala*
+- [Li 2020](/sources/a280251ad59e61862b88a946d18fae4c.bin), *Hands-on Scala Programming*
+- [Welsh and Gurnell 2020](/sources/08cab18bbc8a17a6885874831fe8c431.bin), *Scala with Cats*
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional*: chapter 9, "Injecting Dependencies": dependencies passed as function parameters and supplied once at the top level by partial application, the functional form of option 1; on *Dependency injection*.
+- [Schwarz 2020](/sources/f1c14b872d21423c5ed67709396f62c6.bin), *Scala 3 by Example: ADTs for DDD, Part 1*
+- [Volpe 2023](/sources/42ef10a33c54df6756cd49d40ee34101.bin), *Functional Event-Driven Architecture*

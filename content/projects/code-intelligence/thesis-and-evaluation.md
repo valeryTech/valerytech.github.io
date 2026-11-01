@@ -281,9 +281,9 @@ Continue to the full study if, on the de-identified issues, a structural conditi
 ## Library sources
 
 
-- [Anonymous 2025](/sources/retrieval-and-knowledge/rag/anonymous-2025-practical-code-rag-at-scale.pdf.enc), *Practical Code RAG at Scale* -- on *What the thesis does not claim*
-- [Zhu et al. 2025](/sources/ai-engineering/evaluation/zhu-2025-best-practices-for-rigorous-agentic-benchmarks.pdf.enc), *Establishing Best Practices for Building Rigorous Agentic Benchmarks* ([arXiv:2507.02825](https://arxiv.org/abs/2507.02825)) -- on *Threats to validity*
+- [Anonymous 2025](/sources/30cb49de449fbee8fd7c2c4e3a1311da.bin), *Practical Code RAG at Scale* -- on *What the thesis does not claim*
+- [Zhu et al. 2025](/sources/327b05c1d9406bc91c6b0344e7d4bbca.bin), *Establishing Best Practices for Building Rigorous Agentic Benchmarks* ([arXiv:2507.02825](https://arxiv.org/abs/2507.02825)) -- on *Threats to validity*
 
 Further reading:
 
-- [Wu et al. 2026](/sources/ai-engineering/evaluation/wu-2026-swe-together-coding-agents-interactive-sessions.pdf.enc), *SWE-Together: Evaluating Coding Agents in Interactive User Sessions*
+- [Wu et al. 2026](/sources/b6840b10b456f2ca55a96c950e563844.bin), *SWE-Together: Evaluating Coding Agents in Interactive User Sessions*

@@ -217,6 +217,6 @@ For an AI Engineering Evidence Protocol, this article exposes a useful first rul
 ## Library sources
 
 
-- [Wohlin and Rainer 2022](/sources/research-methods/empirical-methods/wohlin-2022-is-it-a-case-study-preprint.pdf.enc), *Is it a case study? A critical analysis and guidance* -- on *Assessment*
+- [Wohlin and Rainer 2022](/sources/259b57ac164515376430c68ba4848f6b.bin), *Is it a case study? A critical analysis and guidance* -- on *Assessment*
 
 The methods behind the critique, and their sources, are in the notes of [Evidence in software engineering]({{< ref "engineering/evidence" >}}).

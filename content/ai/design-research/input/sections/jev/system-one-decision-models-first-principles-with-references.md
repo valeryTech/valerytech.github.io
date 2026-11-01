@@ -865,7 +865,7 @@ Until such evidence exists, the scientifically conservative conclusion is:
 
 [^kahneman-2003]: Kahneman, D. (2003). Maps of bounded rationality: Psychology for behavioral economics. *American Economic Review*, 93(5), 1449-1475. https://doi.org/10.1257/000282803322655392
 
-[^nobre-gresch]: Nobre, A. C., & Gresch, D. (2025). How the brain shifts between external and internal attention. *Neuron*, 113(15), 2382-2398. https://doi.org/10.1016/j.neuron.2025.06.013 ([PDF](/sources/ai-foundations/cognition-and-mind/nobre-2025-external-and-internal-attention.pdf.enc)) (see Figure 2, p. 7).
+[^nobre-gresch]: Nobre, A. C., & Gresch, D. (2025). How the brain shifts between external and internal attention. *Neuron*, 113(15), 2382-2398. https://doi.org/10.1016/j.neuron.2025.06.013 ([PDF](/sources/e3bc15ed61f3e0330df638a73650c7bf.bin)) (see Figure 2, p. 7).
 
 [^marr-poggio]: Marr, D., & Poggio, T. *From Understanding Computation to Understanding Neural Circuitry*. MIT repository. https://dspace.mit.edu/entities/publication/c6722773-6065-4c2c-998c-7190be63f19a
 
@@ -905,4 +905,4 @@ Until such evidence exists, the scientifically conservative conclusion is:
 
 
 - Kahneman 2020, *Daniel Kahneman remarks at "AI Debate 2"* -- on *Kahneman's account is about automaticity, accessibility and world representation*
-- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow* -- on *Kahneman's account is about automaticity, accessibility and world representation*
+- [Kahneman 2011](/sources/6b0f64ff483334496619f7f55334a949.bin), *Thinking, Fast and Slow* -- on *Kahneman's account is about automaticity, accessibility and world representation*

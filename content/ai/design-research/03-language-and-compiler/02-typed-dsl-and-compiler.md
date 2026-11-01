@@ -1117,13 +1117,13 @@ The complete [semantic-model and scenario-DSL example]({{< ref "ai/design-resear
 ## Library sources
 
 
-- [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *5. Make effects explicit*
-- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell*: chapter 14, "Indexed Monads", actions `m i j a` with a precondition and a postcondition, where `ibind` matches one action's postcondition to the next one's precondition, and a linear file-handle protocol that won't compile when misused; section 2.2, "Data Kinds", and section 5.2, "GADTs"; on *much sharper architecture*.
-- [Noonan 2018](/sources/programming/functional-programming/noonan-2018-ghosts-of-departed-proofs.pdf.enc), *Ghosts of Departed Proofs (Functional Pearl)* ([doi:10.1145/3242744.3242755](https://doi.org/10.1145/3242744.3242755)): section 5, "Case Study #4: Arbitrary Invariants", preconditions on named values written as phantom-typed proofs (`a ~~ n ::: p`), built with natural-deduction combinators, with library-supplied axioms as the trusted part; a working Haskell form of the `Requires (n <= balance)` sketch; on *much sharper architecture*.
-- [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617)) -- on *8. Design feedback for LLM repair*
+- [Bauer and Pretnar 2014](/sources/49566a54818cd0aa2c57c411fd26357f.bin), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *5. Make effects explicit*
+- [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell*: chapter 14, "Indexed Monads", actions `m i j a` with a precondition and a postcondition, where `ibind` matches one action's postcondition to the next one's precondition, and a linear file-handle protocol that won't compile when misused; section 2.2, "Data Kinds", and section 5.2, "GADTs"; on *much sharper architecture*.
+- [Noonan 2018](/sources/82bc6785596e6b9c5b3e2d9a2b2e9c58.bin), *Ghosts of Departed Proofs (Functional Pearl)* ([doi:10.1145/3242744.3242755](https://doi.org/10.1145/3242744.3242755)): section 5, "Case Study #4: Arbitrary Invariants", preconditions on named values written as phantom-typed proofs (`a ~~ n ::: p`), built with natural-deduction combinators, with library-supplied axioms as the trusted part; a working Haskell form of the `Requires (n <= balance)` sketch; on *much sharper architecture*.
+- [Zhao et al. 2026](/sources/198f92e6353d731c78479aa44631f6c7.bin), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617)) -- on *8. Design feedback for LLM repair*
 
 Further reading:
 
-- [Bauer and Pretnar 2012](/sources/ai-engineering/harness/bauer-2012-programming-with-algebraic-effects-handlers.pdf.enc), *Programming with Algebraic Effects and Handlers* ([arXiv:1203.1539](https://arxiv.org/abs/1203.1539))
-- [Plotkin and Pretnar 2013](/sources/ai-engineering/harness/plotkin-2013-handling-algebraic-effects.pdf.enc), *Handling Algebraic Effects*
-- [Tan et al. 2026](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780))
+- [Bauer and Pretnar 2012](/sources/9b6246e3747af2f9c2aeb0974d41c105.bin), *Programming with Algebraic Effects and Handlers* ([arXiv:1203.1539](https://arxiv.org/abs/1203.1539))
+- [Plotkin and Pretnar 2013](/sources/b9f3722ea20feb80f7f1a466a348fb96.bin), *Handling Algebraic Effects*
+- [Tan et al. 2026](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780))

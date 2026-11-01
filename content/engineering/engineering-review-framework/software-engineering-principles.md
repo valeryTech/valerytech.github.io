@@ -92,14 +92,14 @@ Apply the principles to AI-generated changes with the same expectations. Additio
 ## Library sources
 
 
-- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design* -- on *What callers need to know*
+- [Ousterhout 2018](/sources/0a09675129a4612b2260dbb60c83b051.bin), *A Philosophy of Software Design* -- on *What callers need to know*
 
 Further reading:
 
-- [Malan 2025](/sources/software-engineering/architecture/malan-2025-architecture-principles.pdf.enc), *Architecture Principles*
-- [Martin 2018](/sources/software-engineering/architecture/martin-2018-clean-architecture.pdf.enc), *Clean Architecture*
-- [Doglio 2022](/sources/software-engineering/craft/doglio-2022-skills-of-successful-software-engineer.pdf.enc), *Skills of a Successful Software Engineer*
-- [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering*
-- [Fowler 2019](/sources/software-engineering/craft/fowler-2019-refactoring-2nd-edition.pdf.enc), *Refactoring: Improving the Design of Existing Code, 2nd Edition*
-- [Gähler 2025](/sources/software-engineering/craft/gahler-2025-software-engineering-made-easy.pdf.enc), *Software Engineering Made Easy*
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design*
+- [Malan 2025](/sources/8e4cfc35c9bc5b1e5e2cc980c49ec3c9.bin), *Architecture Principles*
+- [Martin 2018](/sources/0f46f5de730b51708bc07368aedb47d5.bin), *Clean Architecture*
+- [Doglio 2022](/sources/da23ec77d033d9252f2b28867e508de7.bin), *Skills of a Successful Software Engineer*
+- [Farley 2022](/sources/974d11f571d53a0bd5809c67541d563b.bin), *Modern Software Engineering*
+- [Fowler 2019](/sources/cf051eb31039478cf60667cda9df2c9c.bin), *Refactoring: Improving the Design of Existing Code, 2nd Edition*
+- [Gähler 2025](/sources/074f87f8132505789815e5f8200ef187.bin), *Software Engineering Made Easy*
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design*

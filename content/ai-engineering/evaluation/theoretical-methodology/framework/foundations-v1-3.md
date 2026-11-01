@@ -456,7 +456,7 @@ This prevents the framework from producing false confidence.
 ## Library sources
 
 
-- [He et al. 2026](/sources/ai-foundations/alignment-and-society/he-2026-beyond-human-measure.pdf.enc), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
-- [Pita 2026](/sources/ai-foundations/capabilities-and-measurement/pita-2026-correct-codes-wrong-reasons.pdf.enc), *Correct codes for the wrong reasons? Validating LLMs as measurement instruments for theoretical constructs* ([arXiv:2606.28574](https://arxiv.org/abs/2606.28574))
-- [Marczyk et al. 2005](/sources/research-methods/empirical-methods/marczyk-2005-essentials-of-research-design-and-methodology.pdf.enc), *Essentials of Research Design and Methodology*
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base*
+- [He et al. 2026](/sources/ec007122245e7e5a9574334e98c5c4e5.bin), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
+- [Pita 2026](/sources/e927379435f1073f97f490f01b8bffcf.bin), *Correct codes for the wrong reasons? Validating LLMs as measurement instruments for theoretical constructs* ([arXiv:2606.28574](https://arxiv.org/abs/2606.28574))
+- [Marczyk et al. 2005](/sources/8b198ee52250fb21e5e2839e1fe56d96.bin), *Essentials of Research Design and Methodology*
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base*

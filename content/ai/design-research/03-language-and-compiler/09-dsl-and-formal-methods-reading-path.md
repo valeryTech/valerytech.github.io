@@ -212,4 +212,4 @@ If we pursue this, the proposal is to start by studying **GOLOG/IndiGolog + MAPG
 ## Library sources
 
 
-- [Colelough and Regli 2025](/sources/retrieval-and-knowledge/neuro-symbolic/colelough-2025-neuro-symbolic-ai-in-2024-review.pdf.enc), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435))
+- [Colelough and Regli 2025](/sources/8d49cb9cb57fe2f184120dfa46ddf052.bin), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435))

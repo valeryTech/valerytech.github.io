@@ -1493,4 +1493,4 @@ It asks:
 ## Library sources
 
 
-- [Freed et al. 2025](/sources/ai-engineering/practice/freed-2025-effective-conversational-ai.pdf.enc), *Effective Conversational AI*
+- [Freed et al. 2025](/sources/88911fed4ab5167e4282b4d9fb6729ff.bin), *Effective Conversational AI*

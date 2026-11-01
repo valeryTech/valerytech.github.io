@@ -747,4 +747,4 @@ retrieval quality benefits from domain-specific extraction, query rewriting, and
 ## Library sources
 
 
-- [Jiang et al. 2025](/sources/retrieval-and-knowledge/rag/jiang-2025-survey-retrieval-structuring-augmented-generation.pdf.enc), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697))
+- [Jiang et al. 2025](/sources/ef4ab80ddeb8e075fe04a9d1b60b882f.bin), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697))

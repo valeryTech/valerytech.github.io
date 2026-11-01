@@ -75,11 +75,11 @@ The boolean flag, the pair of year parameters that only made sense together, and
 ## Library sources
 
 
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 6, "Capturing Business Rules in the Type System"; chapter 7, "Modeling Each Step in the Workflow with Types" (`Sent | NotSent` instead of a `bool`); chapter 13, "Change 2: Adding Support for VIP Customers" (store the input to a rule; separate `VipStatus` and loyalty-card choices); on the introduction, the booleans paragraph and the two chapter 13 rules
-- [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling* -- section 4.5.2, "Making illegal states unrepresentable", and its footnote crediting Minsky
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- chapter 6, "Connascence": connascence of value and the two-booleans example
+- [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional* -- chapter 6, "Capturing Business Rules in the Type System"; chapter 7, "Modeling Each Step in the Workflow with Types" (`Sent | NotSent` instead of a `bool`); chapter 13, "Change 2: Adding Support for VIP Customers" (store the input to a rule; separate `VipStatus` and loyalty-card choices); on the introduction, the booleans paragraph and the two chapter 13 rules
+- [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling* -- section 4.5.2, "Making illegal states unrepresentable", and its footnote crediting Minsky
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design* -- chapter 6, "Connascence": connascence of value and the two-booleans example
 - Płachta 2022, *Grokking Functional Programming* -- chapter 7, "Requirements as types": the `YearsActive` ADT and `SearchCondition`; on *A flag plus an optional value* and *Behaviour as data*
-- [Odersky et al. 2021](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), *Programming in Scala, 5th Edition* -- chapter 19, enums as enumerated and algebraic data types in Scala 3; on *A flag plus an optional value*
+- [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala, 5th Edition* -- chapter 19, enums as enumerated and algebraic data types in Scala 3; on *A flag plus an optional value*
 
 Further reading:
 

@@ -232,13 +232,13 @@ Kleppmann and Riccomini add the operational costs of frameworks such as Temporal
 ## Library sources
 
 
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 11 (*Batch Processing in Distributed Systems*, *MapReduce*, *Dataflow Engines*, *Shuffling Data*, *Joins and Grouping*, *Serving Derived Data*) on *Splitting the work* and *Batch processing*; chapter 12 (*Reasoning About Time*, *Stream Joins*, *Fault Tolerance*) on *Stream processing*; chapter 5 (*Durable Execution and Workflows*) on *Durable execution*
-- [Burns 2018](/sources/system-design/distributed-systems/burns-2018-designing-distributed-systems.pdf.enc), *Designing Distributed Systems* -- chapters 6 (*Sharded Services*), 7 (*Scatter/Gather*), 10 (*Work Queue Systems*), 11 (*Event-Driven Batch Processing*), and 12 (*Coordinated Batch Processing*) on *Splitting the work*
-- [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 11 (*Durable executions*) on *Durable execution*; chapter 4, sections 4.4 and 4.5, on exactly-once processing semantics and idempotence in *Fault tolerance and exactly-once*
-- [van Steen and Tanenbaum 2023](/sources/system-design/distributed-systems/vansteen-2023-distributed-systems-4th-edition.pdf.enc), *Distributed Systems, Fourth Edition* -- chapter 8, section 8.6.2 (*Checkpointing*) on *Consistent checkpoints*
-- [Chandy and Misra 1984](/sources/system-design/distributed-systems/chandy-1984-drinking-philosophers-problem.pdf.enc), *The Drinking Philosophers Problem* -- sections 1-3 and 6 on *Resource conflicts without a coordinator*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapter 11 (*Batch Processing in Distributed Systems*, *MapReduce*, *Dataflow Engines*, *Shuffling Data*, *Joins and Grouping*, *Serving Derived Data*) on *Splitting the work* and *Batch processing*; chapter 12 (*Reasoning About Time*, *Stream Joins*, *Fault Tolerance*) on *Stream processing*; chapter 5 (*Durable Execution and Workflows*) on *Durable execution*
+- [Burns 2018](/sources/217f0c643d90d836d19e229608ed9405.bin), *Designing Distributed Systems* -- chapters 6 (*Sharded Services*), 7 (*Scatter/Gather*), 10 (*Work Queue Systems*), 11 (*Event-Driven Batch Processing*), and 12 (*Coordinated Batch Processing*) on *Splitting the work*
+- [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems* -- chapter 11 (*Durable executions*) on *Durable execution*; chapter 4, sections 4.4 and 4.5, on exactly-once processing semantics and idempotence in *Fault tolerance and exactly-once*
+- [van Steen and Tanenbaum 2023](/sources/f2bbf8813969eb53517df7404b01c885.bin), *Distributed Systems, Fourth Edition* -- chapter 8, section 8.6.2 (*Checkpointing*) on *Consistent checkpoints*
+- [Chandy and Misra 1984](/sources/b96aa1604487a89124755ed1dad97dd4.bin), *The Drinking Philosophers Problem* -- sections 1-3 and 6 on *Resource conflicts without a coordinator*
 
 Further reading:
 
-- [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems* -- section 23.2 on why a consumer can only simulate exactly-once processing with idempotent messages
+- [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems* -- section 23.2 on why a consumer can only simulate exactly-once processing with idempotent messages
 - Educative 2023: distributed task scheduler, *Grokking Modern System Design Interview* -- retries, idempotent tasks, checkpoints for long tasks, and dead-letter queues

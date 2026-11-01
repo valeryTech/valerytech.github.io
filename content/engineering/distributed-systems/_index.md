@@ -67,13 +67,13 @@ The [reading list]({{< ref "engineering/distributed-systems/reading" >}}) has co
 ## Library sources
 
 
-- [Vitillo 2021](/sources/system-design/distributed-systems/vitillo-2021-understanding-distributed-systems.pdf.enc), *Understanding Distributed Systems, Second Edition* -- part II, coordination, for most notes here
-- [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems*
-- [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapters 6-12
-- [Cachin et al. 2011](/sources/system-design/distributed-systems/cachin-2011-reliable-and-secure-distributed-programming.pdf.enc), *Introduction to Reliable and Secure Distributed Programming, Second Edition*
-- [van Steen and Tanenbaum 2023](/sources/system-design/distributed-systems/vansteen-2023-distributed-systems-4th-edition.pdf.enc), *Distributed Systems, Fourth Edition*
+- [Vitillo 2021](/sources/ad3d4e8b5cefd65937e33aaa96a1f034.bin), *Understanding Distributed Systems, Second Edition* -- part II, coordination, for most notes here
+- [Tornow 2025](/sources/70c0d56c1ae98a9f558a6a07dc87c787.bin), *Think Distributed Systems*
+- [Kleppmann and Riccomini 2026](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), *Designing Data-Intensive Applications, Second Edition* -- chapters 6-12
+- [Cachin et al. 2011](/sources/ba524a2347f2a938124b8603dc085d10.bin), *Introduction to Reliable and Secure Distributed Programming, Second Edition*
+- [van Steen and Tanenbaum 2023](/sources/f2bbf8813969eb53517df7404b01c885.bin), *Distributed Systems, Fourth Edition*
 
 Further reading:
 
-- [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- part II, distributed systems
-- [Wattenhofer 2016](/sources/system-design/distributed-systems/wattenhofer-2016-principles-of-distributed-computing.pdf.enc), *Principles of Distributed Computing* -- lecture notes on consensus, Byzantine agreement, and quorum systems
+- [Petrov 2019](/sources/611239aecf452fc6fb065bb3088b0326.bin), *Database Internals* -- part II, distributed systems
+- [Wattenhofer 2016](/sources/31e8cfe1b5a2478873df1d290ecbc86b.bin), *Principles of Distributed Computing* -- lecture notes on consensus, Byzantine agreement, and quorum systems

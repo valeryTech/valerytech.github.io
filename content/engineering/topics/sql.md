@@ -9,4 +9,4 @@ linkTitle: "SQL"
 ## Library sources
 
 
-- [LearnSQL 2020](/sources/system-design/data-systems/learnsql-2020-sql-cheat-sheets.pdf.enc), *SQL Cheat Sheets*
+- [LearnSQL 2020](/sources/dafe82d337664e03121d79e4aeaf5437.bin), *SQL Cheat Sheets*

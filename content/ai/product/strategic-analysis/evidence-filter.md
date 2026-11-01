@@ -224,5 +224,5 @@ That is probably the methodology we should use for the whole 2026/27 source map:
 ## Library sources
 
 
-- [Mailach et al. 2024](/sources/ai-engineering/practice/mailach-2024-themes-of-building-llm-applications-for-production.pdf.enc), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
-- [Denzin and Lincoln 2018](/sources/research-methods/empirical-methods/denzin-2018-sage-handbook-of-qualitative-research.pdf.enc), *The SAGE Handbook of Qualitative Research*
+- [Mailach et al. 2024](/sources/74f1445f7b7d75eef262100f2e5ea5a0.bin), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
+- [Denzin and Lincoln 2018](/sources/22f3ac39414dd99205b2f2679dd71b89.bin), *The SAGE Handbook of Qualitative Research*

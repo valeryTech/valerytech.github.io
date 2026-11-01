@@ -57,4 +57,4 @@ I aim to move quickly by shortening the path from an important question to credi
 ## Library sources
 
 
-- [Nahar et al. 2022](/sources/ml-engineering/se-for-ml/nahar-2022-collaboration-challenges-building-ml-enabled-systems.pdf.enc), *Collaboration Challenges in Building ML-Enabled Systems* ([arXiv:2110.10234](https://arxiv.org/abs/2110.10234))
+- [Nahar et al. 2022](/sources/70096718a34b8c2286d814c4f243183f.bin), *Collaboration Challenges in Building ML-Enabled Systems* ([arXiv:2110.10234](https://arxiv.org/abs/2110.10234))

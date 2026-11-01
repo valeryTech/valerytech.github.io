@@ -86,7 +86,7 @@ For each row, the builder could record the requirement, formal property, enforce
 
 A candidate contribution is **a method for choosing and revising representations and enforcement boundaries from the properties a collaborative system needs**, supported by worked cases and evidence about its usefulness.
 
-The language literature raises the bar for claims about typed agents, explicit effects, or approval protocols alone. [ETAS](https://arxiv.org/abs/2607.17780) ([PDF](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc)) already treats model calls, approvals, policies, and traces as language elements. Its [repository](https://github.com/etas-project/etas) describes an experimental implementation with incomplete protocol and concurrency work. These are relevant precedents and possible experimental foundations, not a reason to select a new language immediately.
+The language literature raises the bar for claims about typed agents, explicit effects, or approval protocols alone. [ETAS](https://arxiv.org/abs/2607.17780) ([PDF](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin)) already treats model calls, approvals, policies, and traces as language elements. Its [repository](https://github.com/etas-project/etas) describes an experimental implementation with incomplete protocol and concurrency work. These are relevant precedents and possible experimental foundations, not a reason to select a new language immediately.
 
 Two bounded studies could connect the material to the existing program:
 
@@ -111,4 +111,4 @@ The separate conceptual note [Representations, composition, and understanding]({
 ## Library sources
 
 
-- [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617))
+- [Zhao et al. 2026](/sources/198f92e6353d731c78479aa44631f6c7.bin), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617))

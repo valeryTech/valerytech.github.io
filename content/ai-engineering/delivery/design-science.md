@@ -6,7 +6,7 @@ description: "Design-science source material covering problem explication, requi
 linkTitle: "Design Science Method"
 ---
 
-Source: [Johannesson and Perjons 2021](/sources/research-methods/design-science/johannesson-2021-introduction-to-design-science.pdf.enc), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)).
+Source: [Johannesson and Perjons 2021](/sources/ca3a8a1277e3769146c225056f71a3e3.bin), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3)).
 
 ## Problem explication
 

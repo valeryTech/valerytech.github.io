@@ -123,6 +123,6 @@ The golden-path notes make the template-versus-chassis choice explicitly. They a
 ## Library sources
 
 
-- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer* -- tracer bullets
-- [Newman 2020](/sources/system-design/microservices/newman-2020-monolith-to-microservices.pdf.enc), *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* -- on *Boundaries*
-- [Nygard 2018](/sources/software-engineering/systems-and-operations/nygard-2018-release-it-2nd-edition.pdf.enc), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- on *Containing failure*
+- [Thomas and Hunt 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer* -- tracer bullets
+- [Newman 2020](/sources/bd80be1c01a1cbf103cccdc8957f91bc.bin), *Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith* -- on *Boundaries*
+- [Nygard 2018](/sources/f9167fa26feb869b87a7f0bc4edbc9b3.bin), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- on *Containing failure*

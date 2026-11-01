@@ -341,7 +341,7 @@ Or more compactly:
 ### 4. DSPy, GEPA, and TextGrad optimize compound model programs
 
 
-**DSPy** represents model pipelines as programs and "compiles" them by optimizing prompts, demonstrations, and sometimes model weights against a metric. Its optimizers can collect execution traces, retain successful demonstrations, generate instructions, and search over candidate configurations. [arXiv](https://arxiv.org/abs/2310.03714) ([PDF](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc))
+**DSPy** represents model pipelines as programs and "compiles" them by optimizing prompts, demonstrations, and sometimes model weights against a metric. Its optimizers can collect execution traces, retain successful demonstrations, generate instructions, and search over candidate configurations. [arXiv](https://arxiv.org/abs/2310.03714) ([PDF](/sources/dce6a336b5540ff4b3606105310db867.bin))
 
 **GEPA** samples complete trajectories containing reasoning, tool calls, and tool outputs, reflects on failures, and evolves the prompts of a compound system. **TextGrad** propagates textual feedback through a computation graph to improve its components. [arXiv](https://arxiv.org/abs/2507.19457)
 
@@ -496,8 +496,8 @@ That's abstract enough to connect to existing CS theory, while still mapping dir
 ## Library sources
 
 
-- [Mo et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/mo-2025-kggen-extracting-knowledge-graphs.pdf.enc), *KGGen*
+- [Mo et al. 2025](/sources/e4b7dbb03b4ba0873ebe1509c27c2c19.bin), *KGGen*
 
 Further reading:
 
-- [Mokhov et al. 2020](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc), *Build Systems a la Carte: Theory and Practice*: workflow tools are build systems in this paper's sense; section 3.5, "Monadic Tasks", on dynamic dependencies, which a step that "may discover a new question" needs; section 8.3, "Impure Computations", on non-deterministic and volatile tasks and what they do to caching and correctness, the paper's version of the "mostly deterministic" contrast; section 8.5, "Iterative Computations", on bounded repeated passes; on *2. Scientific workflow systems and existing runtime solutions*.
+- [Mokhov et al. 2020](/sources/968bcf5644f3dbb1736d59b47f1717c1.bin), *Build Systems a la Carte: Theory and Practice*: workflow tools are build systems in this paper's sense; section 3.5, "Monadic Tasks", on dynamic dependencies, which a step that "may discover a new question" needs; section 8.3, "Impure Computations", on non-deterministic and volatile tasks and what they do to caching and correctness, the paper's version of the "mostly deterministic" contrast; section 8.5, "Iterative Computations", on bounded repeated passes; on *2. Scientific workflow systems and existing runtime solutions*.

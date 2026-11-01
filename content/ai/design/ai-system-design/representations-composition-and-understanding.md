@@ -151,9 +151,9 @@ The companion [Twenty research problems for AI systems design]({{< ref "ai/desig
 ## Library sources
 
 
-- [Guizzardi and Guarino 2024](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2024-explanation-semantics-and-ontology.pdf.enc), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325)) -- on *The concepts we need to keep distinct*
+- [Guizzardi and Guarino 2024](/sources/e2b93fcc42a364423cfe6ce8c21a08cf.bin), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325)) -- on *The concepts we need to keep distinct*
 
 Further reading:
 
-- [Messeri and Crockett 2024](/sources/ai-foundations/alignment-and-society/messeri-2024-ai-and-illusions-of-understanding.pdf.enc), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
-- [Storey et al. 2023](/sources/research-methods/ontology-and-conceptual-modeling/storey-2023-conceptual-modeling-topics-themes-trends.pdf.enc), *Conceptual Modeling: Topics, Themes, and Technology Trends* ([doi:10.1145/3589338](https://doi.org/10.1145/3589338))
+- [Messeri and Crockett 2024](/sources/ca1b47bae3acd109b2c5866542e96edc.bin), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
+- [Storey et al. 2023](/sources/80de5a55ceb1432a861df48bff092afe.bin), *Conceptual Modeling: Topics, Themes, and Technology Trends* ([doi:10.1145/3589338](https://doi.org/10.1145/3589338))

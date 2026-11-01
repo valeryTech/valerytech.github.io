@@ -276,14 +276,14 @@ Its main output is a small project brief that provides a clear starting point fo
 ## Library sources
 
 
-- [Zinkevich 2016](/sources/ml-engineering/books/zinkevich-2016-rules-of-machine-learning.pdf.enc), *Rules of Machine Learning: Best Practices for ML Engineering* -- on *3. Choose a response*
-- [Chevallier 2016](/sources/thinking-and-learning/problem-solving/chevallier-2016-strategic-thinking-complex-problem-solving.pdf.enc), *Strategic Thinking in Complex Problem Solving* -- on *The Cycle*
+- [Zinkevich 2016](/sources/903c644dfdc4b32ef0ad55c8393288d6.bin), *Rules of Machine Learning: Best Practices for ML Engineering* -- on *3. Choose a response*
+- [Chevallier 2016](/sources/653e8cb4b8ea4b17693fe5cd76adfcc6.bin), *Strategic Thinking in Complex Problem Solving* -- on *The Cycle*
 
 Further reading:
 
-- [Babushkin and Kravchenko 2025](/sources/ml-engineering/books/babushkin-2025-machine-learning-system-design.pdf.enc), *Machine Learning System Design*
+- [Babushkin and Kravchenko 2025](/sources/39e0cbe26b72ead73bbe6633505b42c1.bin), *Machine Learning System Design*
 - Burkov 2020, *Machine Learning Engineering*
 - Thompson 2023, *Delivering Machine Learning Projects: From Design to Deployment*
-- [Kalinowski et al. 2024](/sources/ml-engineering/se-for-ml/kalinowski-2024-naming-the-pain-ml-enabled-systems.pdf.enc), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
+- [Kalinowski et al. 2024](/sources/a448e14caac8d1967dd9b92204d44a65.bin), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
 - Conn and McLean 2019, *Bulletproof Problem Solving: The One Skill That Changes Everything*
-- [Potthoff 2020](/sources/thinking-and-learning/problem-solving/potthoff-2020-applied-problem-solving-healthcare-management-chapter-3.pdf.enc), *Applied Problem-Solving in Healthcare Management, Chapter 3* ([doi:10.1891/9780826165657.0003](https://doi.org/10.1891/9780826165657.0003))
+- [Potthoff 2020](/sources/b38894bcaf0aed832490ad4d276b979b.bin), *Applied Problem-Solving in Healthcare Management, Chapter 3* ([doi:10.1891/9780826165657.0003](https://doi.org/10.1891/9780826165657.0003))

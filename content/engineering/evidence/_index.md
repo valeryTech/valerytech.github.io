@@ -13,16 +13,16 @@ The question is older than AI tools and does not depend on them. Claims that cod
 ## Principles
 
 
-1. **Say exactly what is claimed.** Name the outcome, population, intervention, comparison and time, and say whether the claim is descriptive, associational, causal or speculative. → [Stating a claim]({{< ref "engineering/evidence/stating-claims" >}})
-2. **Argue that the measure measures the thing.** A count stands for a concept such as productivity only with an argument that it does, and a count that becomes a target stops measuring. → [Measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}})
-3. **A causal claim needs a comparison.** Name the experiment that would settle the claim, then look for confounders and for patterns that only look like effects. → [Causal claims need a comparison]({{< ref "engineering/evidence/causal-claims" >}})
-4. **Fix what counts before looking.** Choose the primary outcome, exclusions and analysis before the data is seen. → [Preregistration]({{< ref "engineering/evidence/running-experiments" >}}#preregistration)
-5. **Report how big, how sure and how far.** An effect estimate with its uncertainty, its practical significance and the population it covers, not a verdict. → [Reporting an estimate]({{< ref "engineering/evidence/stating-claims" >}}#reporting-an-estimate), [Four kinds of validity]({{< ref "engineering/evidence/validity" >}})
-6. **Match the method to the question.** Benchmarks, experiments, case studies, longitudinal studies and reviews each answer a different kind of question. → [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}})
-7. **Look past the moment of change.** Some costs appear months after the change that caused them. → [Longitudinal studies]({{< ref "engineering/evidence/choosing-a-method" >}}#longitudinal-studies)
-8. **One study is a finding.** Confidence comes from replication and synthesis, and repetition by citation is not replication. → [Replication and synthesis]({{< ref "engineering/evidence/ebse" >}}#replication-and-synthesis), [Claims without evidence]({{< ref "engineering/evidence/claims-without-evidence" >}})
-9. **Evidence informs a decision, and the decision is checked.** Evidence is combined with expertise and the circumstances of use, and the result is evaluated afterwards. → [Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}})
-10. **Question the evidence too.** Ask whether the metric fits, whether the study was biased and what was left out, and revise. → [Critical stance]({{< ref "engineering/evidence/critical-stance" >}})
+1. **Say exactly what is claimed.** Name the outcome, population, intervention, comparison and time, and say whether the claim is descriptive, associational, causal or speculative. -> [Stating a claim]({{< ref "engineering/evidence/stating-claims" >}})
+2. **Argue that the measure measures the thing.** A count stands for a concept such as productivity only with an argument that it does, and a count that becomes a target stops measuring. -> [Measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}})
+3. **A causal claim needs a comparison.** Name the experiment that would settle the claim, then look for confounders and for patterns that only look like effects. -> [Causal claims need a comparison]({{< ref "engineering/evidence/causal-claims" >}})
+4. **Fix what counts before looking.** Choose the primary outcome, exclusions and analysis before the data is seen. -> [Preregistration]({{< ref "engineering/evidence/running-experiments" >}}#preregistration)
+5. **Report how big, how sure and how far.** An effect estimate with its uncertainty, its practical significance and the population it covers, not a verdict. -> [Reporting an estimate]({{< ref "engineering/evidence/stating-claims" >}}#reporting-an-estimate), [Four kinds of validity]({{< ref "engineering/evidence/validity" >}})
+6. **Match the method to the question.** Benchmarks, experiments, case studies, longitudinal studies and reviews each answer a different kind of question. -> [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}})
+7. **Look past the moment of change.** Some costs appear months after the change that caused them. -> [Longitudinal studies]({{< ref "engineering/evidence/choosing-a-method" >}}#longitudinal-studies)
+8. **One study is a finding.** Confidence comes from replication and synthesis, and repetition by citation is not replication. -> [Replication and synthesis]({{< ref "engineering/evidence/ebse" >}}#replication-and-synthesis), [Claims without evidence]({{< ref "engineering/evidence/claims-without-evidence" >}})
+9. **Evidence informs a decision, and the decision is checked.** Evidence is combined with expertise and the circumstances of use, and the result is evaluated afterwards. -> [Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}})
+10. **Question the evidence too.** Ask whether the metric fits, whether the study was biased and what was left out, and revise. -> [Critical stance]({{< ref "engineering/evidence/critical-stance" >}})
 
 ## Notes
 
@@ -72,13 +72,13 @@ The question is older than AI tools and does not depend on them. Claims that cod
 ## Library sources
 
 
-- [Bossavit 2015](/sources/software-engineering/process-and-agile/bossavit-2015-leprechauns-of-software-engineering.pdf.enc), *The Leprechauns of Software Engineering* -- folklore that spreads by citation; on *Why you should care about empirical results* (ch. 3) and *A new model of inquiry* (ch. 15)
-- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* -- the standard text on empirical studies and experiments in software engineering, cited across the principles and practices notes
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base* -- measurement, causality, validity and inference, cited in the principles notes
-- [Felderer and Travassos 2020](/sources/research-methods/empirical-methods/felderer-2020-contemporary-empirical-methods-in-software-engineering.pdf.enc), *Contemporary Empirical Methods in Software Engineering* -- study strategies, data analysis and evidence synthesis; on *The Evolution of Empirical Methods in Software Engineering*
+- [Bossavit 2015](/sources/b54da1313917791258847fb7c7102a38.bin), *The Leprechauns of Software Engineering* -- folklore that spreads by citation; on *Why you should care about empirical results* (ch. 3) and *A new model of inquiry* (ch. 15)
+- [Wohlin et al. 2024](/sources/c07438c70e29bb5bfa57fbc2bc8ae6b6.bin), *Experimentation in Software Engineering* -- the standard text on empirical studies and experiments in software engineering, cited across the principles and practices notes
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base* -- measurement, causality, validity and inference, cited in the principles notes
+- [Felderer and Travassos 2020](/sources/2d3e93f9d3f8e092f8131153aae98740.bin), *Contemporary Empirical Methods in Software Engineering* -- study strategies, data analysis and evidence synthesis; on *The Evolution of Empirical Methods in Software Engineering*
 
 Further reading:
 
-- [Mendez et al. 2024](/sources/research-methods/empirical-methods/mendez-2024-handbook-on-teaching-empirical-software-engineering.pdf.enc), *Handbook on Teaching Empirical Software Engineering*
-- [Wohlin and Runeson 2021](/sources/research-methods/empirical-methods/wohlin-2021-guiding-selection-of-research-methodology.pdf.enc), *Guiding the selection of research methodology in industry-academia collaboration in software engineering*
-- [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering* -- software engineering framed as empirical learning and managing complexity
+- [Mendez et al. 2024](/sources/b6af38dfc99002789655e1059bc1901c.bin), *Handbook on Teaching Empirical Software Engineering*
+- [Wohlin and Runeson 2021](/sources/3cfb734c3eb89c6fc1a4f131e4a9b4d0.bin), *Guiding the selection of research methodology in industry-academia collaboration in software engineering*
+- [Farley 2022](/sources/974d11f571d53a0bd5809c67541d563b.bin), *Modern Software Engineering* -- software engineering framed as empirical learning and managing complexity

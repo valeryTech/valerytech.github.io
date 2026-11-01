@@ -219,4 +219,4 @@ Use this model in proportion to the task: a direct lookup needs a small set of c
 ## Library sources
 
 
-- [Gao et al. 2025](/sources/retrieval-and-knowledge/rag/gao-2025-synergizing-rag-and-reasoning.pdf.enc), *Synergizing RAG and Reasoning: A Systematic Review* ([arXiv:2504.15909](https://arxiv.org/abs/2504.15909))
+- [Gao et al. 2025](/sources/d3f64fccb6acf62b35b4e70d7e0e588b.bin), *Synergizing RAG and Reasoning: A Systematic Review* ([arXiv:2504.15909](https://arxiv.org/abs/2504.15909))

@@ -556,8 +556,8 @@ kubekloud
 ## Library sources
 
 
-- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
-- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering* -- chapter 7, a managed EKS cluster as the platform's control plane base, with add-ons, OIDC integration, and a test strategy (chapter notes)
+- [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*
+- [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- chapter 7, a managed EKS cluster as the platform's control plane base, with add-ons, OIDC integration, and a test strategy (chapter notes)
 
 Further reading:
 

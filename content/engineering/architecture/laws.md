@@ -173,10 +173,10 @@ Chapter 27 of *Fundamentals* adds the mechanics:
 ## Library sources
 
 
-- [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition* -- chapter 1 (the laws stated), chapter 27 (the laws revisited, with the worked examples above), chapter 4 (least worst architecture)
-- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts* -- chapters 1-2 (no best practices; the three-step trade-off analysis), chapter 15 (trade-off techniques)
+- [Richards and Ford 2025](/sources/2d49b5a0c9a1eb1beeb05703a3d3d23e.bin), *Fundamentals of Software Architecture, 2nd Edition* -- chapter 1 (the laws stated), chapter 27 (the laws revisited, with the worked examples above), chapter 4 (least worst architecture)
+- [Ford et al. 2022](/sources/08f60e529d971e5ad6408c46accea44c.bin), *Software Architecture: The Hard Parts* -- chapters 1-2 (no best practices; the three-step trade-off analysis), chapter 15 (trade-off techniques)
 
 Further reading:
 
 - Gandhi et al. 2024, *Head First Software Architecture* -- a teaching-oriented version of the first two laws
-- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- trade-off analysis for coupling; see [Coupling and Modularity]({{< ref "engineering/architecture/coupling" >}})
+- [Khononov 2025](/sources/d01916d843bdf15a2ab54159c7c865bf.bin), *Balancing Coupling in Software Design* -- trade-off analysis for coupling; see [Coupling and Modularity]({{< ref "engineering/architecture/coupling" >}})

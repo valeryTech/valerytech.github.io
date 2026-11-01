@@ -46,4 +46,4 @@ AWS API Gateway, Kong, NGINX, Apigee, and Traefik. Compare their relevant behavi
 ## Library sources
 
 
-- [Schmidt and Volpicella 2024](/sources/software-engineering/systems-and-operations/schmidt-2024-aws-fundamentals.pdf.enc), *AWS Fundamentals: AWS For The Real World*
+- [Schmidt and Volpicella 2024](/sources/37a99125d274cdb06441dbca8cc2201e.bin), *AWS Fundamentals: AWS For The Real World*

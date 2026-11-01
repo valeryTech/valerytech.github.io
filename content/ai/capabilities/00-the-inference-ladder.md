@@ -82,12 +82,12 @@ The correspondences: \(v\), \(M\), and \(Y\) are the observed behavior. \(C\) an
 ## Library sources
 
 
-- [Chizhov et al. 2025](/sources/ai-foundations/capabilities-and-measurement/chizhov-2025-what-the-hellaswag.pdf.enc), *What the HellaSwag? On the Validity of Common-Sense Reasoning Benchmarks* ([arXiv:2504.07825](https://arxiv.org/abs/2504.07825))
-- [Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
-- [Reynolds 2026](/sources/ai-foundations/capabilities-and-measurement/reynolds-2026-projectibility.pdf.enc), *When benchmark inferences do not compose* ([arXiv:2607.26159](https://arxiv.org/abs/2607.26159))
-- [Gemini Team 2023](/sources/llms/models-and-training/gemini-team-2023-gemini-family-of-multimodal-models.pdf.enc), *Gemini: A Family of Highly Capable Multimodal Models* ([arXiv:2312.11805](https://arxiv.org/abs/2312.11805)) -- on *The ladder*
+- [Chizhov et al. 2025](/sources/0d0f57129a2ce4bb6104c39c80966d31.bin), *What the HellaSwag? On the Validity of Common-Sense Reasoning Benchmarks* ([arXiv:2504.07825](https://arxiv.org/abs/2504.07825))
+- [Freiesleben 2026](/sources/c84d75800beb21af8a1cc54b8f79c168.bin), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
+- [Reynolds 2026](/sources/f31a48720f6829630133d42608c798d0.bin), *When benchmark inferences do not compose* ([arXiv:2607.26159](https://arxiv.org/abs/2607.26159))
+- [Gemini Team 2023](/sources/d5dc40f1f37f37cbdbce1c78c79ec2c4.bin), *Gemini: A Family of Highly Capable Multimodal Models* ([arXiv:2312.11805](https://arxiv.org/abs/2312.11805)) -- on *The ladder*
 
 Further reading:
 
-- [Clark and Watson 2019](/sources/ai-foundations/capabilities-and-measurement/clark-2019-constructing-validity.pdf.enc), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
-- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence*
+- [Clark and Watson 2019](/sources/7fc85943e4bd06680a1aaf4f357404b6.bin), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
+- [Wilhelm and Engle 2005](/sources/2375228c6a7957a1808fc25b83be9a33.bin), *Handbook of Understanding and Measuring Intelligence*

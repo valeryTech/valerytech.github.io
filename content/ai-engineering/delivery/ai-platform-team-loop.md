@@ -80,5 +80,5 @@ Spotify and Doctolib appear closest to operating this way.
 ## Library sources
 
 
-- [Tan, Leung, and Colls 2024](/sources/ml-engineering/books/tan-2024-effective-machine-learning-teams.pdf.enc), *Effective Machine Learning Teams* -- part I, dual-track delivery and continuous discovery
+- [Tan, Leung, and Colls 2024](/sources/70b69df084508ef62121bd0664a1d392.bin), *Effective Machine Learning Teams* -- part I, dual-track delivery and continuous discovery
 - AI agent platform book, *O'Reilly early release, chapter 3* -- minimum viable platform capabilities and the 30-minute productive benchmark

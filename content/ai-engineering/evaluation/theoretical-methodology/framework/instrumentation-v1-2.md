@@ -512,9 +512,9 @@ The production controls include:
 ## Library sources
 
 
-- [Vinay 2025](/sources/ai-engineering/failures/vinay-2025-failure-modes-in-llm-systems.pdf.enc), *Failure Modes in LLM Systems*
-- [Dong et al. 2024](/sources/ai-engineering/observability/dong-2024-agentops-enabling-observability-of-llm-agents.pdf.enc), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285))
-- [Parker et al. 2020](/sources/software-engineering/systems-and-operations/parker-2020-distributed-tracing-in-practice.pdf.enc), *Distributed Tracing in Practice* -- chapters 2 and 4 on the span model and instrumentation practice, for *2.2 Detailed spans*; chapter 14 and appendix B on context propagation, for *3.1 Partial traces*; chapter 6 on overhead, costs and sampling, for *6. Sampling strategy*
+- [Vinay 2025](/sources/24c523668b468dc4bcb703579792c1a4.bin), *Failure Modes in LLM Systems*
+- [Dong et al. 2024](/sources/2552a2fb5a7298b4623ed4e0cf224f1e.bin), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285))
+- [Parker et al. 2020](/sources/730f4cb5de968d219a331f63eb0e39be.bin), *Distributed Tracing in Practice* -- chapters 2 and 4 on the span model and instrumentation practice, for *2.2 Detailed spans*; chapter 14 and appendix B on context propagation, for *3.1 Partial traces*; chapter 6 on overhead, costs and sampling, for *6. Sampling strategy*
 
 Further reading:
 

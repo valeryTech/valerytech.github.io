@@ -30,14 +30,14 @@ A statistical model can always find structure in data. That does not show that t
 - **statistical fit**, and
 - **construct validity**.
 
-A factor that predicts several benchmark scores may be useful while being a mix of knowledge, task familiarity, language skill, and other things rather than "reasoning". The criticism of AI evaluation is not that it uses latent variables. It is that it often treats a statistically inferred score as a capability without the theory or causal evidence to justify that reading. Voudouris et al. make this criticism of latent-variable methods directly ([§4](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063)).
+A factor that predicts several benchmark scores may be useful while being a mix of knowledge, task familiarity, language skill, and other things rather than "reasoning". The criticism of AI evaluation is not that it uses latent variables. It is that it often treats a statistically inferred score as a capability without the theory or causal evidence to justify that reading. Voudouris et al. make this criticism of latent-variable methods directly ([§4](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063)).
 
 ## The nomological network
 
 
 Cronbach and Meehl (1955) introduced the **nomological network**: before claiming a test measures a construct, specify what the construct should relate to, what it should be distinct from, and which observable behaviors should change as it changes.
 
-Freiesleben applies this to LLM benchmarks. A construct such as reasoning gets its meaning from its relations to narrower tasks and to neighboring constructs (working memory, knowledge, processing speed), not from one benchmark score. The network should be built before the benchmark. His running example is the Cattell-Horn-Carroll (CHC) model, where narrow tasks sit beneath broad abilities. ([Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), [arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
+Freiesleben applies this to LLM benchmarks. A construct such as reasoning gets its meaning from its relations to narrower tasks and to neighboring constructs (working memory, knowledge, processing speed), not from one benchmark score. The network should be built before the benchmark. His running example is the Cattell-Horn-Carroll (CHC) model, where narrow tasks sit beneath broad abilities. ([Freiesleben 2026](/sources/c84d75800beb21af8a1cc54b8f79c168.bin), [arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
 
 So a nomological definition would not say:
 
@@ -208,39 +208,39 @@ Candidate subconstructs: deductive, inductive, abductive, causal, analogical, qu
 
 Core path, from "what do we mean by LLM reasoning?" to a measurement and validation framework:
 
-1. **Freiesleben (2026)**, construct validity for LLM benchmarks through nomological networks; covers content, convergent, discriminant, concurrent, and criterion validity. [PDF](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), [arXiv:2603.15121](https://arxiv.org/abs/2603.15121)
-2. **Bean et al. (NeurIPS 2025)**, *Measuring What Matters*: a review of 445 LLM benchmarks with eight recommendations. [PDF](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), [NeurIPS](https://proceedings.neurips.cc/paper_files/paper/2025/hash/1967e0fc3aa6cbbace562f5cb8e3954e-Abstract-Datasets_and_Benchmarks_Track.html)
-3. **Zhou et al. (Nature 2026)**, *General scales*: 18 demand scales applied across 63 tasks and 15 LLMs, with benchmark sensitivity and specificity. The closest working example of independently defined demands. [PDF](/sources/ai-foundations/capabilities-and-measurement/zhou-2026-general-scales.pdf.enc), [doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2), [open access](https://pmc.ncbi.nlm.nih.gov/articles/PMC13043289/)
+1. **Freiesleben (2026)**, construct validity for LLM benchmarks through nomological networks; covers content, convergent, discriminant, concurrent, and criterion validity. [PDF](/sources/c84d75800beb21af8a1cc54b8f79c168.bin), [arXiv:2603.15121](https://arxiv.org/abs/2603.15121)
+2. **Bean et al. (NeurIPS 2025)**, *Measuring What Matters*: a review of 445 LLM benchmarks with eight recommendations. [PDF](/sources/015e29150096f262478300d13488bbc2.bin), [NeurIPS](https://proceedings.neurips.cc/paper_files/paper/2025/hash/1967e0fc3aa6cbbace562f5cb8e3954e-Abstract-Datasets_and_Benchmarks_Track.html)
+3. **Zhou et al. (Nature 2026)**, *General scales*: 18 demand scales applied across 63 tasks and 15 LLMs, with benchmark sensitivity and specificity. The closest working example of independently defined demands. [PDF](/sources/76e02efd0fb2f02796388644a91327d0.bin), [doi:10.1038/s41586-026-10303-2](https://doi.org/10.1038/s41586-026-10303-2), [open access](https://pmc.ncbi.nlm.nih.gov/articles/PMC13043289/)
 4. **Cronbach and Meehl (1955)**, *Construct Validity in Psychological Tests*, the origin of the nomological network.
 
 Failure cases and critiques:
 
-- **Chizhov et al. (2025)**, *What the HellaSwag?*: a common-sense benchmark that can be solved through cues. [PDF](/sources/ai-foundations/capabilities-and-measurement/chizhov-2025-what-the-hellaswag.pdf.enc), [arXiv:2504.07825](https://arxiv.org/abs/2504.07825)
-- **Reynolds (2026)**, projectibility: why the inferences from benchmark to claim do not compose. [PDF](/sources/ai-foundations/capabilities-and-measurement/reynolds-2026-projectibility.pdf.enc), [arXiv:2607.26159](https://arxiv.org/abs/2607.26159)
+- **Chizhov et al. (2025)**, *What the HellaSwag?*: a common-sense benchmark that can be solved through cues. [PDF](/sources/0d0f57129a2ce4bb6104c39c80966d31.bin), [arXiv:2504.07825](https://arxiv.org/abs/2504.07825)
+- **Reynolds (2026)**, projectibility: why the inferences from benchmark to claim do not compose. [PDF](/sources/f31a48720f6829630133d42608c798d0.bin), [arXiv:2607.26159](https://arxiv.org/abs/2607.26159)
 
 Measurement practice from psychology and the organizational sciences:
 
-- **Clark and Watson (2019)**, *Constructing Validity*: scale construction. [PDF](/sources/ai-foundations/capabilities-and-measurement/clark-2019-constructing-validity.pdf.enc), [doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626)
-- **Lambert and Newman (2023)**, construct development in three steps: define, operationalize, validate. [PDF](/sources/ai-foundations/capabilities-and-measurement/lambert-2023-construct-development-validation.pdf.enc), [doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374)
+- **Clark and Watson (2019)**, *Constructing Validity*: scale construction. [PDF](/sources/7fc85943e4bd06680a1aaf4f357404b6.bin), [doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626)
+- **Lambert and Newman (2023)**, construct development in three steps: define, operationalize, validate. [PDF](/sources/49b689d6cd563df789695944f06ff04c.bin), [doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374)
 
 Applied to LLMs:
 
-- **Kearns (2025)**, quantifying construct validity in LLM evaluations. [PDF](/sources/ai-foundations/capabilities-and-measurement/kearns-2025-quantifying-construct-validity.pdf.enc), [arXiv:2602.15532](https://arxiv.org/abs/2602.15532)
-- **Cui et al. (2026)**, *Measuring the Unmeasurable*: latent cognitive capabilities of LLMs. [PDF](/sources/ai-foundations/capabilities-and-measurement/cui-2026-measuring-the-unmeasurable.pdf.enc)
-- **Pita et al. (2026)**, *Correct codes for the wrong reasons?*: validating LLMs as measurement instruments for theoretical constructs. [PDF](/sources/ai-foundations/capabilities-and-measurement/pita-2026-correct-codes-wrong-reasons.pdf.enc), [arXiv:2606.28574](https://arxiv.org/abs/2606.28574)
+- **Kearns (2025)**, quantifying construct validity in LLM evaluations. [PDF](/sources/b905bdbeb5794014d45a8888fc9b85bd.bin), [arXiv:2602.15532](https://arxiv.org/abs/2602.15532)
+- **Cui et al. (2026)**, *Measuring the Unmeasurable*: latent cognitive capabilities of LLMs. [PDF](/sources/c0787e6b002b3193a564d0d985b75f62.bin)
+- **Pita et al. (2026)**, *Correct codes for the wrong reasons?*: validating LLMs as measurement instruments for theoretical constructs. [PDF](/sources/e927379435f1073f97f490f01b8bffcf.bin), [arXiv:2606.28574](https://arxiv.org/abs/2606.28574)
 
 ## Library sources
 
 
-- [Zhu et al. 2025](/sources/ai-engineering/evaluation/zhu-2025-best-practices-for-rigorous-agentic-benchmarks.pdf.enc), *Establishing Best Practices for Building Rigorous Agentic Benchmarks* ([arXiv:2507.02825](https://arxiv.org/abs/2507.02825))
-- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence* -- on *Latent variables and the validity question*
-- [Mahowald et al. 2024](/sources/language/language-and-llms/mahowald-2024-dissociating-language-and-thought-in-llms.pdf.enc), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011)) -- on *Building a construct of LLM reasoning*
-- [Fried 2020](/sources/research-methods/philosophy-of-science/fried-2020-theories-and-models.pdf.enc), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011)) -- on *Latent variables and the validity question*
+- [Zhu et al. 2025](/sources/327b05c1d9406bc91c6b0344e7d4bbca.bin), *Establishing Best Practices for Building Rigorous Agentic Benchmarks* ([arXiv:2507.02825](https://arxiv.org/abs/2507.02825))
+- [Wilhelm and Engle 2005](/sources/2375228c6a7957a1808fc25b83be9a33.bin), *Handbook of Understanding and Measuring Intelligence* -- on *Latent variables and the validity question*
+- [Mahowald et al. 2024](/sources/d3e4e4f8abb1b5705082eb2c4c76ee17.bin), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011)) -- on *Building a construct of LLM reasoning*
+- [Fried 2020](/sources/b3fc13357b44cb45b100a2468bd9f252.bin), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011)) -- on *Latent variables and the validity question*
 
 Further reading:
 
-- [Chang et al. 2024](/sources/ai-engineering/evaluation/chang-2024-survey-on-evaluation-of-llms.pdf.enc), *A Survey on Evaluation of Large Language Models* ([doi:10.1145/3641289](https://doi.org/10.1145/3641289))
-- [Fedorenko et al. 2024](/sources/language/language-and-llms/fedorenko-2024-language-is-a-tool-for-communication.pdf.enc), *Language is primarily a tool for communication rather than thought* ([doi:10.1038/s41586-024-07522-w](https://doi.org/10.1038/s41586-024-07522-w))
-- [Hanna et al. 2025](/sources/language/language-and-llms/hanna-2025-formal-and-functional-mechanisms-dissociated.pdf.enc), *Are formal and functional linguistic mechanisms dissociated in language models?* ([arXiv:2503.11302](https://arxiv.org/abs/2503.11302))
-- [Trochim et al. 2016](/sources/research-methods/empirical-methods/trochim-2016-research-methods-essential-knowledge-base.pdf.enc), *Research Methods: The Essential Knowledge Base*
-- [Jaccard and Jacoby 2020](/sources/research-methods/philosophy-of-science/jaccard-2020-theory-construction-and-model-building-skills.pdf.enc), *Theory Construction and Model-Building Skills*
+- [Chang et al. 2024](/sources/6fdbd2f1789fc60cbbeaff5f486ac4d4.bin), *A Survey on Evaluation of Large Language Models* ([doi:10.1145/3641289](https://doi.org/10.1145/3641289))
+- [Fedorenko et al. 2024](/sources/b973412a112912a6d83e065823e98424.bin), *Language is primarily a tool for communication rather than thought* ([doi:10.1038/s41586-024-07522-w](https://doi.org/10.1038/s41586-024-07522-w))
+- [Hanna et al. 2025](/sources/7d99051e9c9171b66ec427609a4106f6.bin), *Are formal and functional linguistic mechanisms dissociated in language models?* ([arXiv:2503.11302](https://arxiv.org/abs/2503.11302))
+- [Trochim et al. 2016](/sources/95c4dfddb0a330d19ccec7a9579c993f.bin), *Research Methods: The Essential Knowledge Base*
+- [Jaccard and Jacoby 2020](/sources/4e48dc173034e0f9c9293879dffd510d.bin), *Theory Construction and Model-Building Skills*
