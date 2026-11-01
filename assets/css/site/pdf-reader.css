@@ -1,0 +1,268 @@
+/* PDF links and the inline reader they open; PDF.js supplies the page layers. */
+.site-pdf-link::after {
+  content: "PDF";
+  /* An inline block keeps the link underline off the badge. */
+  display: inline-block;
+  margin-inline-start: var(--site-space-1);
+  font-family: var(--site-navigation-font-family);
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--site-muted);
+}
+
+.content .site-pdf-reader {
+  --site-pdf-reader-action-size: calc(var(--site-control-height) - 2 * var(--site-layout-gap));
+  /* Sepia pages keep the same warm paper in Light and Dark. */
+  --site-pdf-reader-sepia-background: #f4ecd8;
+  --site-pdf-reader-sepia-foreground: #5b4636;
+  margin-block: var(--site-space-4);
+  /* The script measures both offsets: the start reaches back to the text's edge
+     from a list item, and the end reaches the article area when widened. */
+  margin-inline-start: calc(-1 * var(--site-pdf-reader-start, 0px));
+  inline-size: calc(100% + var(--site-pdf-reader-start, 0px) + var(--site-pdf-reader-end, 0px));
+  max-inline-size: none;
+  overflow: hidden;
+  border-radius: var(--site-radius);
+  background: var(--site-card-surface);
+}
+
+.site-pdf-reader-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--site-space-3);
+  min-block-size: var(--site-control-height);
+  padding-block: calc((var(--site-control-height) - var(--site-pdf-reader-action-size)) / 2);
+  padding-inline: var(--site-space-4) var(--site-layout-gap);
+  font-family: var(--site-navigation-font-family);
+  font-size: var(--site-navigation-text-size);
+  line-height: 1.5;
+}
+
+.content .site-pdf-reader [hidden] {
+  display: none;
+}
+
+.content .site-pdf-reader-bar p {
+  margin: 0;
+}
+
+.site-pdf-reader-title {
+  flex: 1 1 12rem;
+  min-inline-size: 0;
+  font-weight: 600;
+  color: var(--site-heading-foreground);
+  overflow-wrap: anywhere;
+}
+
+.site-pdf-reader-status {
+  color: var(--site-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.site-pdf-reader-actions {
+  display: flex;
+  margin-inline-start: auto;
+}
+
+.content .site-pdf-reader-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--site-pdf-reader-action-size);
+  block-size: var(--site-pdf-reader-action-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--site-radius);
+  background: transparent;
+  color: var(--site-control-foreground);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content .site-pdf-reader-action:is(:hover, :focus-visible) {
+  background: var(--site-card-hover);
+  color: var(--site-accent);
+}
+
+.site-pdf-reader-action:focus-visible,
+.site-pdf-reader-scroller:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+.site-pdf-reader-action .site-surface-leading {
+  --site-surface-leading-size: var(--site-space-4);
+  display: block;
+}
+
+.site-pdf-reader:not([data-width="wide"]) [data-pdf-width-icon="wide"],
+.site-pdf-reader[data-width="wide"] [data-pdf-width-icon="text"] {
+  display: none;
+}
+
+.site-pdf-reader-action .site-control-icon {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.site-pdf-reader-viewport {
+  position: relative;
+  block-size: min(75vh, 60rem);
+}
+
+.site-pdf-reader:is([data-state="error"], [data-state="locked"]) .site-pdf-reader-viewport,
+.site-pdf-reader[data-state="locked"] .site-pdf-reader-find {
+  display: none;
+}
+
+/* A locked reader offers only its password row and Close. */
+.site-pdf-reader[data-state="locked"] .site-pdf-reader-actions > :not([data-pdf-action="close"]) {
+  display: none;
+}
+
+/* PDF.js requires an absolutely positioned scroll container. */
+.site-pdf-reader-scroller {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+}
+
+/* The one visible scrollbar on the site, so long documents can be dragged.
+   Styled WebKit scrollbars stay visible even where the system overlays them;
+   Chromium uses them only while the standard properties stay auto. */
+.site-pdf-reader .site-pdf-reader-scroller {
+  scrollbar-width: auto;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .site-pdf-reader .site-pdf-reader-scroller {
+    scrollbar-width: thin;
+    scrollbar-color: var(--site-muted) transparent;
+  }
+}
+
+.site-pdf-reader .site-pdf-reader-scroller::-webkit-scrollbar {
+  display: block;
+  inline-size: var(--site-space-3);
+  block-size: var(--site-space-3);
+  background: transparent;
+}
+
+.site-pdf-reader .site-pdf-reader-scroller::-webkit-scrollbar-thumb {
+  /* A transparent border insets the pill from the track's edges. */
+  border: calc(var(--site-space-1) / 2) solid transparent;
+  border-radius: var(--site-space-3);
+  background: var(--site-muted) padding-box;
+  /* Long documents would otherwise shrink the thumb below a comfortable grip. */
+  min-block-size: var(--site-space-10);
+}
+
+.site-pdf-reader .site-pdf-reader-scroller::-webkit-scrollbar-thumb:hover {
+  background-color: var(--site-foreground);
+}
+
+.site-pdf-reader .site-pdf-reader-scroller::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.site-pdf-reader .pdfViewer.removePageBorders .page {
+  margin-block: 0 var(--site-layout-gap);
+}
+
+/* Inverted pages flip the rendered canvas only, so text selection and search
+   highlights keep their colors; the hue turn keeps figures' hues recognizable. */
+.site-pdf-reader[data-colors="invert"] .canvasWrapper {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* The password row shares the find row's layout. */
+.site-pdf-reader-find,
+.site-pdf-reader-unlock {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-1);
+  padding: 0 var(--site-layout-gap) var(--site-layout-gap) var(--site-space-4);
+  font-family: var(--site-navigation-font-family);
+  font-size: var(--site-navigation-text-size);
+}
+
+.content .site-pdf-reader-find-input,
+.content .site-pdf-reader-unlock-input {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  block-size: var(--site-pdf-reader-action-size);
+  padding-inline: var(--site-space-3);
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-page-background);
+  color: var(--site-foreground);
+  font: inherit;
+}
+
+.site-pdf-reader-find-input:focus-visible,
+.site-pdf-reader-unlock-input:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+.content .site-pdf-reader-find-status,
+.content .site-pdf-reader-unlock-status {
+  margin: 0 var(--site-space-2);
+  color: var(--site-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* The document's own contents open over the pages and close after a jump. */
+.site-pdf-reader-outline {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: 1;
+  inline-size: min(20rem, 85%);
+  overflow: auto;
+  padding: var(--site-layout-gap);
+  background: var(--site-card-surface);
+  box-shadow: var(--site-floating-shadow);
+  font-family: var(--site-navigation-font-family);
+  font-size: var(--site-navigation-text-size);
+}
+
+.content .site-pdf-reader-outline ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.content .site-pdf-reader-outline ul ul {
+  padding-inline-start: var(--site-space-4);
+}
+
+.content .site-pdf-reader-outline li {
+  margin: 0;
+}
+
+.content .site-pdf-reader-outline button {
+  display: block;
+  inline-size: 100%;
+  padding: var(--site-space-2) var(--site-space-3);
+  border: 0;
+  border-radius: var(--site-radius);
+  background: transparent;
+  color: var(--site-nav-foreground);
+  text-align: start;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.content .site-pdf-reader-outline button:is(:hover, :focus-visible) {
+  background: var(--site-card-hover);
+  color: var(--site-accent);
+}
+
+.site-pdf-reader-outline button:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}

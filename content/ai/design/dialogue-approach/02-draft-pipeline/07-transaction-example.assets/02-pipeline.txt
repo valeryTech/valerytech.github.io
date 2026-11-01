@@ -1,0 +1,842 @@
+
+Yes. That is the better conceptualization.
+
+Instead of:
+
+> "Should this utterance produce a saveable draft, ask a question, show a warning, or route elsewhere?"
+
+Model it as:
+
+> **The system maintains a structured action draft and iteratively enriches, validates, repairs, and confirms it until it becomes executable -- or determines that it cannot/should not be executed.**
+
+This is a stronger model because it supports multi-step behavior: asking the user, using app APIs, applying defaults, checking duplicates, resolving categories, and validating before execution.
+
+# 1. New mental model
+## Old model: one-shot parse
+
+```text
+User utterance
+→ Parse
+→ Decide outcome
+```
+
+Example:
+
+```text
+"Coffee yesterday"
+→ missing amount
+→ ask question
+```
+
+This works, but it is too limited.
+
+## Better model: draft refinement loop
+
+```text
+User utterance
+→ Create initial draft
+→ Enrich draft
+→ Validate draft
+→ Identify gaps / risks
+→ Ask user or use tools
+→ Update draft
+→ Repeat until ready
+→ Confirm
+→ Execute typed action
+```
+
+So the central object is no longer the raw utterance. The central object is the **draft action**.
+
+# 2. Suggested terminology
+
+I would call this:
+
+```text
+Draft-centric action pipeline
+```
+
+or more formally:
+
+```text
+Execution-gated typed action pipeline
+```
+
+In NLP / AI terms, it combines:
+
+| Concept                        | Meaning in your app                                                       |
+| ------------------------------ | ------------------------------------------------------------------------- |
+| Task-oriented NLU              | Understanding the user's command                                          |
+| Intent detection               | Is this create expense, income, transfer, edit draft, query, etc.?        |
+| Slot filling                   | Filling amount, date, category, account, merchant, note                   |
+| Dialogue state tracking        | Keeping the current draft across turns                                    |
+| Grounding                      | Mapping "groceries" or "Chase" to real app objects                        |
+| Tool use                       | Calling APIs to fetch accounts, categories, recent transactions, defaults |
+| Actionability                  | Whether the draft has enough valid data to proceed                        |
+| Execution gating               | Blocking execution until criteria are satisfied                           |
+| Human-in-the-loop confirmation | User confirms before save                                                 |
+| Typed action execution         | Backend performs `create_transaction`                                     |
+
+The most important terms for your product spec are probably:
+
+```text
+structured draft
+draft state
+draft refinement
+readiness criteria
+execution gate
+action policy
+```
+
+# 3. Central object: structured draft
+
+The parser should not just output a final transaction. It should output and maintain a **draft**.
+
+Example:
+
+```json
+{
+  "draft_id": "draft_123",
+  "action": "create_transaction",
+  "status": "incomplete",
+  "source_text": "Coffee yesterday",
+  "transaction": {
+    "type": "expense",
+    "amount": null,
+    "currency": "USD",
+    "date": "2026-06-22",
+    "category": {
+      "id": "coffee",
+      "label": "Coffee",
+      "confidence": 0.86,
+      "source": "inferred_from_text"
+    },
+    "account_id": {
+      "value": "default_cash",
+      "confidence": 0.62,
+      "source": "default"
+    },
+    "merchant": null,
+    "note": "coffee"
+  },
+  "missing_fields": ["amount"],
+  "warnings": [],
+  "next_step": {
+    "type": "ask_user",
+    "question": "How much was the coffee?"
+  }
+}
+```
+
+Then the user says:
+
+```text
+4.50
+```
+
+The system updates the same draft:
+
+```json
+{
+  "draft_id": "draft_123",
+  "status": "ready_for_confirmation",
+  "transaction": {
+    "type": "expense",
+    "amount": 4.50,
+    "currency": "USD",
+    "date": "2026-06-22",
+    "category": {
+      "id": "coffee",
+      "label": "Coffee",
+      "confidence": 0.86
+    },
+    "account_id": {
+      "value": "default_cash",
+      "confidence": 0.62
+    },
+    "note": "coffee"
+  },
+  "missing_fields": [],
+  "warnings": [],
+  "next_step": {
+    "type": "show_confirmation"
+  }
+}
+```
+
+This lets the system behave as a **stateful assistant**, not a stateless parser.
+
+# 4. Draft lifecycle
+
+You can define clear draft states.
+
+```text
+empty
+→ initialized
+→ partially_filled
+→ enriched
+→ validated
+→ ready_for_confirmation
+→ confirmed
+→ executed
+```
+
+Also include failure/escape states:
+
+```text
+needs_clarification
+blocked
+unsupported
+cancelled
+expired
+```
+
+A practical state model:
+
+|State|Meaning|
+|---|---|
+|`initialized`|User utterance created a candidate action|
+|`partially_filled`|Some slots are missing|
+|`enriching`|System is using tools/defaults/history to fill fields|
+|`needs_clarification`|User input is required|
+|`validated`|Backend accepts the draft shape and values|
+|`ready_for_confirmation`|User can save with one tap|
+|`confirmed`|User explicitly approved|
+|`executed`|Backend created the transaction|
+|`blocked`|Cannot proceed safely|
+|`unsupported`|Utterance is not a create-transaction command|
+
+This is cleaner than treating every user message as a separate parse event.
+
+# 5. The refinement loop
+
+The pipeline becomes:
+
+```text
+1. Interpret utterance
+2. Initialize or update draft
+3. Extract candidate fields
+4. Normalize fields
+5. Ground fields against user data
+6. Enrich missing/low-confidence fields using tools
+7. Validate draft
+8. Score readiness
+9. Choose next action
+10. Repeat or execute after confirmation
+```
+
+In compact form:
+
+```text
+Utterance
+→ Draft update
+→ Draft enrichment
+→ Draft validation
+→ Readiness check
+→ Next action
+```
+
+The system keeps cycling through this loop until one of these outcomes happens:
+
+```text
+ready_for_confirmation
+needs_user_clarification
+blocked
+unsupported
+cancelled
+executed
+```
+
+# 6. Action policy
+
+You need a separate component called the **action policy**.
+
+The parser should not decide everything. It should produce draft state. The action policy decides the next step.
+
+Example policy:
+
+```text
+If required fields are missing → ask clarification
+If required fields are present but low confidence → show confirmation with warning
+If duplicate risk is high → show duplicate warning
+If unsupported intent → route away from Quick Add
+If valid and complete → show confirmation
+If user confirms → execute typed backend action
+```
+
+Example:
+
+```json
+{
+  "draft_status": "needs_clarification",
+  "reason": "missing_required_field",
+  "missing_fields": ["amount"],
+  "next_action": {
+    "type": "ask_user",
+    "question": "How much was it?"
+  }
+}
+```
+
+Another:
+
+```json
+{
+  "draft_status": "ready_for_confirmation",
+  "warnings": [
+    {
+      "type": "possible_duplicate",
+      "message": "Similar coffee expense from today already exists."
+    }
+  ],
+  "next_action": {
+    "type": "show_confirmation"
+  }
+}
+```
+
+This separation is important:
+
+```text
+NLU/parser = what does the user seem to mean?
+Validator = is the draft structurally and legally valid?
+Action policy = what should the app do next?
+Executor = perform the backend action after confirmation
+```
+
+# 7. Readiness criteria
+
+You need to define what it means for a draft to be "ready."
+
+For a simple expense, readiness might require:
+
+```text
+intent is create_transaction
+type is known
+amount is present and valid
+currency is present and supported
+date is present and valid
+account is present and belongs to user
+category is present or explicit uncategorized fallback is allowed
+duplicate risk is below threshold or warning is shown
+user has not rejected the draft
+backend validation passed
+```
+
+Separate readiness into levels.
+
+## Level 1: Structurally complete
+
+The transaction has all required fields.
+
+```text
+amount
+type
+date
+currency
+account
+```
+
+## Level 2: Grounded
+
+Fields map to real app objects.
+
+```text
+category label → category_id
+account phrase → account_id
+currency → supported currency
+```
+
+## Level 3: Validated
+
+Backend accepts it.
+
+```text
+amount > 0
+date is allowed
+account belongs to user
+category belongs to user
+transaction type is allowed
+```
+
+## Level 4: Safe to present
+
+Warnings are either absent or displayable.
+
+```text
+possible duplicate
+low category confidence
+unusual amount
+future date
+ambiguous merchant
+```
+
+## Level 5: Executable
+
+User has confirmed.
+
+```text
+requires_confirmation = false only for explicitly enabled auto-save cases
+```
+
+For MVP, execution should require confirmation.
+
+# 8. Tool use in the pipeline
+
+This model makes tool/API usage natural.
+
+The draft can call tools to resolve uncertainty.
+
+|Need|Tool/API|
+|---|---|
+|User categories|`list_categories`|
+|User accounts|`list_accounts`|
+|Merchant memory|`lookup_merchant_mapping`|
+|Recent transactions|`find_similar_transactions`|
+|Defaults|`get_user_defaults`|
+|Currency|`get_default_currency`|
+|Date normalization|deterministic date parser|
+|Duplicate detection|transaction similarity service|
+|Category learning|correction history|
+
+Example:
+
+```text
+User: "Whole Foods 42 yesterday on Chase"
+```
+
+Pipeline:
+
+```text
+Extract:
+- merchant candidate: Whole Foods
+- amount: 42
+- date: yesterday
+- account phrase: Chase
+
+Use tools:
+- account lookup: Chase → acc_chase_sapphire
+- merchant memory: Whole Foods → groceries
+- duplicate check: no duplicate
+
+Validate:
+- amount valid
+- date valid
+- account belongs to user
+- category exists
+
+Result:
+- ready_for_confirmation
+```
+
+The model is:
+
+```text
+The LLM proposes.
+Tools ground.
+Backend validates.
+User confirms.
+Executor writes.
+```
+
+# 9. Draft as an accumulating object
+
+A useful way to design this is with a patch model.
+
+Each step emits a patch to the draft.
+
+Initial utterance:
+
+```json
+{
+  "patch_source": "nlu",
+  "updates": {
+    "amount": 42,
+    "merchant": "Whole Foods",
+    "date": "2026-06-22"
+  }
+}
+```
+
+Merchant memory:
+
+```json
+{
+  "patch_source": "merchant_mapping",
+  "updates": {
+    "category_id": "groceries"
+  }
+}
+```
+
+Account resolver:
+
+```json
+{
+  "patch_source": "account_grounding",
+  "updates": {
+    "account_id": "acc_chase_sapphire"
+  }
+}
+```
+
+Duplicate checker:
+
+```json
+{
+  "patch_source": "duplicate_detection",
+  "warnings": []
+}
+```
+
+This gives you observability: you know which subsystem filled which field.
+
+That matters for debugging and for learning from corrections.
+
+# 10. Draft field provenance
+
+Each field should carry provenance.
+
+Example:
+
+```json
+{
+  "amount": {
+    "value": 42,
+    "confidence": 0.99,
+    "source": "explicit_user_text",
+    "raw_span": "42"
+  },
+  "category": {
+    "id": "groceries",
+    "confidence": 0.91,
+    "source": "merchant_memory",
+    "raw_span": "Whole Foods"
+  },
+  "account_id": {
+    "value": "acc_chase",
+    "confidence": 0.78,
+    "source": "account_grounding",
+    "raw_span": "Chase"
+  },
+  "date": {
+    "value": "2026-06-22",
+    "confidence": 0.99,
+    "source": "relative_date_parser",
+    "raw_span": "yesterday"
+  }
+}
+```
+
+This supports better UX:
+
+```text
+Explicit fields can be shown normally.
+Inferred fields can be shown as suggestions.
+Low-confidence fields can be highlighted.
+Defaulted fields can be visually subtle but editable.
+```
+
+Example confirmation card:
+
+```text
+Expense · $42 · Groceries · Yesterday · Chase
+```
+
+With maybe:
+
+```text
+Category suggested from Whole Foods
+```
+
+# 11. Clarification as draft repair
+
+In this model, asking a question is not a separate fallback. It is a **draft repair operation**.
+
+Example:
+
+```text
+User: "Lunch yesterday"
+```
+
+Draft:
+
+```json
+{
+  "type": "expense",
+  "amount": null,
+  "date": "2026-06-22",
+  "category": "dining",
+  "missing_fields": ["amount"]
+}
+```
+
+Policy:
+
+```json
+{
+  "next_action": "ask_user",
+  "question": "How much was lunch?"
+}
+```
+
+User:
+
+```text
+18
+```
+
+Patch:
+
+```json
+{
+  "amount": 18
+}
+```
+
+Then readiness check runs again.
+
+This is exactly the **slot-filling dialogue** pattern:
+
+```text
+System fills known slots.
+System asks for missing required slots.
+User answers.
+System updates the frame.
+```
+
+# 12. Better product framing
+
+You can phrase it this way in your product/architecture doc:
+
+```text
+Quick Add creates a structured transaction draft from natural language. The system incrementally fills and validates the draft using NLU, user defaults, account/category data, merchant memory, and duplicate checks. If the draft is incomplete or risky, the system asks for clarification or shows warnings. A transaction is executable only after the draft satisfies readiness criteria and the user confirms it.
+```
+
+This is more robust than:
+
+```text
+AI parses text into transaction.
+```
+
+# 13. Recommended architecture diagram
+
+```text
+User utterance
+   ↓
+Input normalizer
+   ↓
+NLU parser
+   ↓
+Draft manager  ←→ Dialogue state
+   ↓
+Enrichment tools
+   ├─ category resolver
+   ├─ account resolver
+   ├─ user defaults
+   ├─ merchant memory
+   ├─ recent transaction lookup
+   └─ duplicate detector
+   ↓
+Validation service
+   ↓
+Readiness scorer / action policy
+   ├─ ask clarification
+   ├─ show warning
+   ├─ show confirmation
+   ├─ route elsewhere
+   └─ block
+   ↓
+User confirmation
+   ↓
+Typed action executor
+   ↓
+create_transaction
+```
+
+The key architectural move is putting **Draft Manager** in the center.
+
+# 14. Draft manager responsibilities
+
+The draft manager owns:
+
+```text
+current draft state
+field provenance
+missing fields
+confidence scores
+warnings
+dialogue context
+patch history
+readiness status
+next action
+```
+
+It receives inputs from:
+
+```text
+NLU parser
+user corrections
+tool results
+backend validator
+duplicate detector
+manual edits
+```
+
+It produces:
+
+```text
+confirmation card data
+clarification questions
+validation errors
+executable typed action
+```
+
+This becomes your orchestration layer.
+
+# 15. Example: full lifecycle
+
+User says:
+
+```text
+Coffee yesterday
+```
+
+Initial draft:
+
+```json
+{
+  "status": "needs_clarification",
+  "transaction": {
+    "type": "expense",
+    "amount": null,
+    "date": "2026-06-22",
+    "category": "coffee",
+    "note": "coffee"
+  },
+  "missing_fields": ["amount"],
+  "next_action": {
+    "type": "ask_user",
+    "question": "How much was the coffee?"
+  }
+}
+```
+
+User says:
+
+```text
+4.50
+```
+
+Updated draft:
+
+```json
+{
+  "status": "enriching",
+  "transaction": {
+    "type": "expense",
+    "amount": 4.50,
+    "date": "2026-06-22",
+    "category": "coffee",
+    "account_id": null
+  }
+}
+```
+
+Tool fills default account:
+
+```json
+{
+  "account_id": "default_cash",
+  "source": "user_default"
+}
+```
+
+Duplicate checker finds similar transaction:
+
+```json
+{
+  "warnings": [
+    {
+      "type": "possible_duplicate",
+      "similar_transaction_id": "txn_789"
+    }
+  ]
+}
+```
+
+Policy decides:
+
+```json
+{
+  "status": "ready_for_confirmation",
+  "next_action": "show_confirmation",
+  "requires_confirmation": true
+}
+```
+
+User taps Save.
+
+Executor receives:
+
+```json
+{
+  "action": "create_transaction",
+  "transaction": {
+    "type": "expense",
+    "amount": 4.50,
+    "currency": "USD",
+    "date": "2026-06-22",
+    "category_id": "coffee",
+    "account_id": "default_cash",
+    "note": "coffee"
+  }
+}
+```
+
+Backend writes.
+
+# 16. Important distinction: draft-ready vs execution-ready
+
+Do not collapse these.
+
+A draft can be **ready for confirmation** without being silently executable.
+
+```text
+ready_for_confirmation = enough to show user
+execution_ready = user confirmed + backend validation passed
+```
+
+For MVP:
+
+```text
+LLM never executes
+draft manager never executes
+frontend never directly writes
+backend executor only writes after explicit confirmation
+```
+
+This is your safety boundary.
+
+# 17. Practical terminology I would use in the spec
+
+Use this vocabulary:
+
+```text
+Transaction Draft
+Draft Manager
+Draft Patch
+Field Provenance
+Draft Readiness
+Execution Gate
+Action Policy
+Clarification Loop
+Grounding Service
+Validation Service
+Typed Action Executor
+```
+
+The main line:
+
+```text
+Quick Add is a draft-centric NLU system. It transforms user utterances into structured transaction drafts, incrementally enriches and validates them, and only executes a typed action after readiness criteria and user confirmation are satisfied.
+```

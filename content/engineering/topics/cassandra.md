@@ -5,6 +5,9 @@ description: "Reading notes on Cassandra consistency and availability trade-offs
 title: "Cassandra"
 linkTitle: "Cassandra"
 ---
+
+Source: [Carpenter and Hewitt 2022](/sources/software-engineering/databases/carpenter-2022-cassandra-definitive-guide.pdf.enc), *Cassandra: The Definitive Guide, Revised Third Edition*.
+
 But as we'll see later, scaling data stores means making certain trade-offs among data consistency, node availability, and partition tolerance. Cassandra is frequently called "eventually consistent," which is a bit misleading. Out of the box, Cassandra trades some consistency in order to achieve total availability. But Cassandra is more accurately termed "tuneably consistent," which means it allows you to easily decide the
 
 level of consistency you require, in balance with the level of availability.

@@ -117,7 +117,7 @@
 .content .section-map-description {
   margin-block: var(--site-space-2) var(--site-space-3);
   font-size: var(--site-text-md);
-  color: var(--site-muted);
+  color: var(--site-body-foreground);
 }
 
 .section-map-disclosure {
@@ -132,10 +132,10 @@
   gap: var(--site-nav-chevron-gap);
   padding: var(--site-space-3) var(--site-space-4);
   border-radius: var(--site-radius);
-  background: var(--site-card-surface);
+  background: var(--site-control-background);
   list-style: none;
   cursor: pointer;
-  color: var(--site-context-foreground);
+  color: var(--site-control-foreground);
   font-size: var(--site-text-base);
   font-weight: 500;
   line-height: var(--site-line-ui);
@@ -154,8 +154,8 @@
   flex-shrink: 0;
   width: var(--site-nav-chevron-size);
   height: var(--site-nav-chevron-size);
-  border-block-start: 1.5px solid currentColor;
-  border-inline-end: 1.5px solid currentColor;
+  border-block-start: var(--site-chevron-stroke-width) solid currentColor;
+  border-inline-end: var(--site-chevron-stroke-width) solid currentColor;
   transform: rotate(45deg);
   opacity: 0.75;
 }
@@ -179,6 +179,7 @@
 
 .section-map-disclosure > summary:hover {
   background: var(--site-card-hover);
+  color: var(--site-accent);
 }
 
 .section-map-contents {

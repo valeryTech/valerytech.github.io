@@ -89,4 +89,17 @@ Apply the principles to AI-generated changes with the same expectations. Additio
 - Type-driven design -- expressing domain states, constraints, workflows, and errors through types.
 - Module-design guidance -- evaluating abstractions by the capability they provide and the knowledge required of callers.
 
-jota.feldmann@virtasant.com
+## Library sources
+
+
+- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design* -- on *What callers need to know*
+
+Further reading:
+
+- [Malan 2025](/sources/software-engineering/architecture/malan-2025-architecture-principles.pdf.enc), *Architecture Principles*
+- [Martin 2018](/sources/software-engineering/architecture/martin-2018-clean-architecture.pdf.enc), *Clean Architecture*
+- [Doglio 2022](/sources/software-engineering/craft/doglio-2022-skills-of-successful-software-engineer.pdf.enc), *Skills of a Successful Software Engineer*
+- [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering*
+- [Fowler 2019](/sources/software-engineering/craft/fowler-2019-refactoring-2nd-edition.pdf.enc), *Refactoring: Improving the Design of Existing Code, 2nd Edition*
+- [Gähler 2025](/sources/software-engineering/craft/gahler-2025-software-engineering-made-easy.pdf.enc), *Software Engineering Made Easy*
+- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design*

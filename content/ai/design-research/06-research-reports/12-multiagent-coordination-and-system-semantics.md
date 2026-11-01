@@ -334,10 +334,10 @@ The recommendation is not to say they "have not read existing literature," becau
 
 But the final abstraction is strikingly under-positioned relative to existing multi-agent systems research. For example:
 
-- Shoham and Tennenholtz were formally studying computational "social laws" that guarantee coexistence of multiple programs in 1995. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/000437029400007N?utm_source=chatgpt.com "On social laws for artificial agent societies: off-line design - ScienceDirect"))
-- Electronic-institution work explicitly models rules governing what agents are permitted and forbidden to do, with operational semantics for shared institutions. ([AAAI](https://s.aaai.org/Library/AAAI/2004/aaai04-153.php?utm_source=chatgpt.com "Engineering Open Multi-Agent Systems as Electronic Institutions"))
-- Algorithmic mechanism design has studied distributed computation where participants have their own objectives since at least 2001. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S089982569990790X?utm_source=chatgpt.com "Algorithmic Mechanism Design - ScienceDirect"))
-- There is a continuing research community literally called "Coordination, Organizations, Institutions, Norms and Ethics for Governance of Multi-Agent Systems"; its 29th workshop happened in 2025. ([Springer](https://link.springer.com/book/10.1007/978-3-032-17542-7?utm_source=chatgpt.com "Coordination, Organizations, Institutions, Norms, and Ethics for Governance of Multi-Agent Systems XVIII: International Workshop, COINE 2025, Detroit, MI, USA, May 20, 2025, Revised Selected Papers | Springer Nature Link"))
+- Shoham and Tennenholtz were formally studying computational "social laws" that guarantee coexistence of multiple programs in 1995. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/000437029400007N "On social laws for artificial agent societies: off-line design - ScienceDirect"))
+- Electronic-institution work explicitly models rules governing what agents are permitted and forbidden to do, with operational semantics for shared institutions. ([AAAI](https://s.aaai.org/Library/AAAI/2004/aaai04-153.php "Engineering Open Multi-Agent Systems as Electronic Institutions"))
+- Algorithmic mechanism design has studied distributed computation where participants have their own objectives since at least 2001. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S089982569990790X "Algorithmic Mechanism Design - ScienceDirect"))
+- There is a continuing research community literally called "Coordination, Organizations, Institutions, Norms and Ethics for Governance of Multi-Agent Systems"; its 29th workshop happened in 2025. ([Springer](https://link.springer.com/book/10.1007/978-3-032-17542-7 "Coordination, Organizations, Institutions, Norms, and Ethics for Governance of Multi-Agent Systems XVIII: International Workshop, COINE 2025, Detroit, MI, USA, May 20, 2025, Revised Selected Papers | Springer Nature Link"))
 
 So when Anthropic concludes that we need norms, reputation, recourse, redesigned environments, interaction mechanisms, and mechanism design, much of the conceptual territory already has decades of work behind it. ([anthropic.com](https://www.anthropic.com/research/multiagent-systems "Patterns and problems in multiagent systems \ Anthropic"))
 
@@ -767,9 +767,9 @@ That distinction is important.
 
 The LLM analysis regards the author's concern as having some support.
 
-Dario Amodei publicly predicted in February 2025 that by 2026-27 AI capabilities might resemble a "country of geniuses in a datacenter." ([Anthropic](https://www.anthropic.com/news/paris-ai-summit?utm_source=chatgpt.com "Statement from Dario Amodei on the Paris AI Action Summit \ Anthropic")) Anthropic's current 2026 safety roadmap explicitly reasons about "powerful AI" potentially appearing within 1-2 years. ([Anthropic](https://www.anthropic.com/responsible-scaling-policy/roadmap?utm_source=chatgpt.com "Frontier Safety Roadmap \ Anthropic")) Anthropic also explicitly frames frontier AI in geopolitical terms, including maintaining a democratic/U.S. advantage and national-security deployment. ([Anthropic](https://www.anthropic.com/news/statement-department-of-war?_bhlid=c78032050b59d9f5dd114018425c9fd0a0569dc4&utm_source=chatgpt.com "Statement from Dario Amodei on our discussions with the Department of War \ Anthropic"))
+Dario Amodei publicly predicted in February 2025 that by 2026-27 AI capabilities might resemble a "country of geniuses in a datacenter." ([Anthropic](https://www.anthropic.com/news/paris-ai-summit "Statement from Dario Amodei on the Paris AI Action Summit \ Anthropic")) Anthropic's current 2026 safety roadmap explicitly reasons about "powerful AI" potentially appearing within 1-2 years. ([Anthropic](https://www.anthropic.com/responsible-scaling-policy/roadmap "Frontier Safety Roadmap \ Anthropic")) Anthropic also explicitly frames frontier AI in geopolitical terms, including maintaining a democratic/U.S. advantage and national-security deployment. ([Anthropic](https://www.anthropic.com/news/statement-department-of-war "Statement from Dario Amodei on our discussions with the Department of War \ Anthropic"))
 
-Google DeepMind still describes itself as building toward AGI, and in August 2026 Google publicly described Demis Hassabis as having said that we are in the "foothills of the singularity." ([Google DeepMind](https://deepmind.google/blog/10-years-of-alphago/?utm_source=chatgpt.com "AlphaGo at 10: How AI Innovation Is Paving the Path to AGI -- Google DeepMind")) OpenAI likewise continues to organize company strategy around AGI, which its charter defines as highly autonomous systems outperforming humans at most economically valuable work. ([OpenAI](https://openai.com/charter/?utm_source=chatgpt.com "OpenAI Charter | OpenAI"))
+Google DeepMind still describes itself as building toward AGI, and in August 2026 Google publicly described Demis Hassabis as having said that we are in the "foothills of the singularity." ([Google DeepMind](https://deepmind.google/blog/10-years-of-alphago/ "AlphaGo at 10: How AI Innovation Is Paving the Path to AGI -- Google DeepMind")) OpenAI likewise continues to organize company strategy around AGI, which its charter defines as highly autonomous systems outperforming humans at most economically valuable work. ([OpenAI](https://openai.com/charter/ "OpenAI Charter | OpenAI"))
 
 So there is clearly a strong institutional narrative:
 
@@ -798,3 +798,20 @@ That is a hypothesis about bias worth studying, not something proposed as a fact
 <!-- The terminology critique continues with the proposed research artifacts. -->
 
 The original reply concludes with the complete [proposed research-artifact plan]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}#proposed-research-artifacts). Its opening [terms and levels of analysis]({{< ref "ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis" >}}) remain separate from the earlier framework analysis. The source overview (archived source 009) links the complete sequence.
+
+## Library sources
+
+
+- [Cemri et al. 2025](/sources/ai-engineering/failures/cemri-2025-why-do-multi-agent-llm-systems-fail.pdf.enc), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657)) -- on *5. Several Anthropic failures translate directly into framework primitives*
+- [Fried 2020](/sources/research-methods/philosophy-of-science/fried-2020-theories-and-models.pdf.enc), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011)) -- on *7. Reframing the concern about technical researchers as a research-paradigm problem*
+
+Further reading:
+
+- [Tallam 2025](/sources/ai-engineering/agents/tallam-2025-from-autonomous-agents-to-integrated-systems.pdf.enc), *From Autonomous Agents to Integrated Systems, A New Paradigm* ([arXiv:2503.13754](https://arxiv.org/abs/2503.13754))
+- [Solomon et al. 2025](/sources/ai-engineering/observability/solomon-2025-lumimas-observability-in-multi-agent-systems.pdf.enc), *LumiMAS* ([arXiv:2508.12412](https://arxiv.org/abs/2508.12412))
+- [Coeckelbergh and Gunkel 2025](/sources/ai-foundations/alignment-and-society/coeckelbergh-2025-communicative-ai.pdf.enc), *Communicative AI: A Critical Introduction to Large Language Models*
+- [Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121))
+- [Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), *The Concept of Mind*
+- [Roitblat 2020](/sources/ai-foundations/intelligence-and-turing/roitblat-2020-algorithms-are-not-enough.pdf.enc), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
+- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence*
+- [Neesham et al. 2022](/sources/research-methods/philosophy-of-science/neesham-2022-handbook-of-philosophy-of-management.pdf.enc), *Handbook of Philosophy of Management* ([doi:10.1007/978-3-030-76606-1](https://doi.org/10.1007/978-3-030-76606-1))

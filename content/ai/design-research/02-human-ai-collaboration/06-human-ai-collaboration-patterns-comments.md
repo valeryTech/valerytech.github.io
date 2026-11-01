@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "06 Human-AI Collaboration Patterns Comments"
 description: "Compares successive pattern taxonomies, questioning classification and selection rules while distinguishing shared reasoning from joint construction and handoff transitions from ongoing collaboration modes."
-title: "06 Human Ai Collaboration Patterns Comments"
-linkTitle: "06 Human Ai Collaboration Patterns Comments"
+linkTitle: "06 Human-AI Collaboration Patterns Comments"
 ---
 # Human-AI collaboration patterns: comments
 

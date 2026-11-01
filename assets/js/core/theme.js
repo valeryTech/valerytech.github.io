@@ -17,8 +17,8 @@
 
     function render() {
         setTheme(theme);
+        document.documentElement.dataset.themePreference = theme;
         for (const button of buttons) {
-            button.parentElement.dataset.theme = theme;
             const label = (mode) => button.querySelector(`.site-theme-icon[data-theme-choice="${mode}"]`).dataset.themeLabel;
             const description = `Theme: ${label(theme)}. Switch to ${label(nextTheme())}.`;
             button.setAttribute('aria-label', description);

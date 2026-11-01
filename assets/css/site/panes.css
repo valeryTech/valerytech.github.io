@@ -27,22 +27,23 @@
 }
 
 .site-outline-rail {
+  /* The collapsed outline fits the header's Theme and Settings buttons above it. */
+  width: var(--site-outline-rail-width);
   padding-inline: var(--site-pane-gutter);
 }
 
 .site-outline-rail .site-pane-rail-header {
-  align-self: flex-start;
+  /* Collapsed controls sit on the right pane's outer edge. */
+  align-self: flex-end;
   width: calc(2 * var(--site-control-padding-inline) + var(--site-surface-leading-size));
 }
 
 .site-outline-rail .site-pane-rail-header:has(> .site-header-toggle) {
+  /* Center each round control under one header button. */
+  align-self: stretch;
   width: auto;
-  gap: var(--site-layout-gap);
-  padding-inline-end: var(--site-space-2);
-}
-
-.site-outline-rail .site-pane-rail-header > .site-outline-toggle {
-  width: calc(2 * var(--site-control-padding-inline) + var(--site-surface-leading-size));
+  justify-content: space-between;
+  padding-inline: var(--site-round-control-inset);
 }
 
 .site-pane-toggle {
@@ -70,14 +71,68 @@
   background: var(--site-context-header);
 }
 
-.site-pane-toggle:hover {
-  background: var(--site-card-hover);
-  color: var(--site-link-color);
+.site-pane-heading:has(> .site-pane-toggle) {
+  /* The circle is the leading slot; its inset matches the space above and below it. */
+  --site-surface-leading-size: var(--site-round-control-size);
+  --site-surface-inset: var(--site-round-control-inset);
+  --site-surface-gap: var(--site-round-control-gap);
 }
 
-.site-pane-toggle:focus-visible {
-  outline: var(--site-focus-width) solid var(--site-accent);
-  outline-offset: var(--site-focus-offset);
+:is(.site-pane-heading, .site-pane-rail-header) > .site-pane-toggle {
+  /* Match the top-bar toggle: a bare chevron in the leading slot. */
+  inline-size: var(--site-round-control-size);
+  block-size: var(--site-round-control-size);
+  min-height: 0;
+  align-self: center;
+  color: var(--site-control-foreground);
+}
+
+/* The bulk section toggle follows a pane heading's title as a trailing circle
+   mirroring the leading toggle's inset; the outline's top-bar toggle comes after it. */
+.site-pane-heading:has(> .site-bulk-toggle:not([hidden])) {
+  --site-surface-inset-end: var(--site-round-control-inset);
+  grid-template-columns: var(--site-surface-leading-size) minmax(0, 1fr) auto;
+}
+
+.site-pane-heading:has(> .site-bulk-toggle:not([hidden])):has(> .site-header-toggle) {
+  grid-template-columns: var(--site-surface-leading-size) minmax(0, 1fr) auto auto;
+}
+
+.site-pane-heading:has(> .site-bulk-toggle:not([hidden])) > .site-header-toggle {
+  grid-column: 4;
+}
+
+/* The popover header keeps its title first and its close button last. */
+.site-navigation-panel-header > .site-bulk-toggle {
+  margin-inline-start: auto;
+}
+
+.site-bulk-toggle {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  inline-size: var(--site-round-control-size);
+  block-size: var(--site-round-control-size);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--site-control-foreground);
+  cursor: pointer;
+}
+
+.site-bulk-toggle[hidden] {
+  display: none;
+}
+
+/* Show only the icon of the action the next activation performs. */
+.site-bulk-toggle:not([data-action="collapse"]) [data-bulk-icon="collapse"],
+.site-bulk-toggle:not([data-action="restore"]) [data-bulk-icon="restore"],
+.site-bulk-toggle:not([data-action="expand"]) [data-bulk-icon="expand"] {
+  display: none;
 }
 
 .site-pane-toggle [data-pane-icon="show"],

@@ -6,15 +6,28 @@
 
 .site-breadcrumb-root {
   flex-shrink: 0;
+  gap: var(--site-space-1);
 }
 
 .site-breadcrumb-home {
   border-radius: var(--site-radius);
 }
 
+/* A smaller house leaves room inside the shared 24px hover circle. */
+.site-breadcrumb-home .site-control-icon {
+  inline-size: var(--site-space-4);
+  block-size: var(--site-space-4);
+}
+
+.site-breadcrumb-home .site-control-icon path {
+  stroke-width: var(--site-chevron-stroke-width);
+  vector-effect: non-scaling-stroke;
+}
+
 .breadcrumb ol > li {
   display: inline-flex;
   align-items: center;
+  gap: var(--site-space-3);
   min-height: var(--site-space-6);
   max-width: 100%;
 }
@@ -36,19 +49,25 @@
 
 .site-breadcrumb-separator::before,
 .site-breadcrumb-trigger::before {
+  /* A rotated corner sits off its box center; this shift centers the drawn chevron. */
+  --site-chevron-offset: calc(
+    (var(--site-nav-chevron-size) - var(--site-chevron-stroke-width)) * 0.3536
+  );
   content: "";
   display: inline-block;
   width: var(--site-nav-chevron-size);
   height: var(--site-nav-chevron-size);
-  border-block-start: 1.5px solid currentColor;
-  border-inline-end: 1.5px solid currentColor;
+  border-block-start: var(--site-chevron-stroke-width) solid currentColor;
+  border-inline-end: var(--site-chevron-stroke-width) solid currentColor;
   transform: rotate(45deg);
+  translate: calc(-1 * var(--site-chevron-offset)) 0;
   opacity: 0.6;
 }
 
 .breadcrumb:dir(rtl) .site-breadcrumb-separator::before,
 .breadcrumb:dir(rtl) .site-breadcrumb-trigger::before {
   transform: rotate(-45deg);
+  translate: var(--site-chevron-offset) 0;
 }
 
 .breadcrumb li[aria-current="page"] > .site-breadcrumb-separator::before,
@@ -84,6 +103,7 @@
 
 .site-breadcrumb-trigger[aria-expanded="true"]::before {
   transform: rotate(135deg);
+  translate: 0 calc(-1 * var(--site-chevron-offset));
   opacity: 1;
 }
 
@@ -216,8 +236,13 @@
   overflow-wrap: anywhere;
 }
 
-.site-breadcrumb-chooser a:is(:hover, [aria-current="page"]) {
+.site-breadcrumb-chooser a[aria-current="page"] {
   background: var(--site-card-surface);
+}
+
+.site-breadcrumb-chooser a:hover {
+  background: var(--site-card-hover);
+  color: var(--site-accent);
 }
 
 .site-breadcrumb-chooser a:is([aria-current="page"], [data-current-branch]) {

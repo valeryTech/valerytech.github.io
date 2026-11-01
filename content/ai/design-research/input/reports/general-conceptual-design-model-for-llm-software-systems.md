@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "General Conceptual Design Model For LLM Software Systems"
 description: "A research report on LLM software design, connecting work contracts, authoritative state, candidate generation, validation, authorization, and controlled execution."
-title: "General Conceptual Design Model For Llm Software Systems"
-linkTitle: "General Conceptual Design Model For Llm Software Systems"
+linkTitle: "General Conceptual Design Model For LLM Software Systems"
 ---
 # A General Conceptual Design Model for Software Systems That Integrate LLMs
 
@@ -766,20 +766,20 @@ gantt
     dateFormat YYYY-MM-DD
 
     section Specification
-    Work contracts and outcome predicates       :a1, 2026-11-02, 7d
-    Capability and authorization model           :a2, 2026-11-05, 7d
+    Work contracts and outcome predicates       :a1, 2026-05-02, 7d
+    Capability and authorization model           :a2, 2026-05-05, 7d
 
     section Environment
-    Shared simulated tools and state             :b1, 2026-11-09, 10d
-    Fault and adversarial injection              :b2, 2026-11-16, 7d
+    Shared simulated tools and state             :b1, 2026-05-09, 10d
+    Fault and adversarial injection              :b2, 2026-05-16, 7d
 
     section Architectures
-    Direct tool-calling agent                    :c1, 2026-11-16, 8d
-    Structured workflow agent                    :c2, 2026-11-16, 10d
-    Typed DSL and interpreter                    :c3, 2026-11-16, 14d
+    Direct tool-calling agent                    :c1, 2026-05-16, 8d
+    Structured workflow agent                    :c2, 2026-05-16, 10d
+    Typed DSL and interpreter                    :c3, 2026-05-16, 14d
 
     section Evaluation
-    Pilot and grader validation                  :d1, 2026-11-30, 7d
+    Pilot and grader validation                  :d1, 2026-05-30, 7d
     Main repeated-trial experiment               :d2, 2026-12-07, 10d
     Adversarial and failure experiments          :d3, 2026-12-10, 10d
 
@@ -1067,17 +1067,17 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 ## Citation links
 
 
-[^1]: [Ai Project Examples And Design Model \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/>).
+[^1]: [AI Project Examples And Design Model \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>).
 
 [^2]: [ReAct: Synergizing Reasoning and Acting in Language Models](<https://arxiv.org/abs/2210.03629>).
 
-[^3]: [Analytical Engines And Programmable Environments \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/>).
+[^3]: [Analytical Engines And Programmable Environments \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/>).
 
-[^4]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/>).
+[^4]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
 
 [^5]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](<https://arxiv.org/abs/2406.13352>).
 
-[^6]: [Agentic Operations And Coordination \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/>).
+[^6]: [Agentic Operations And Coordination \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/>).
 
 [^7]: [Zanzibar: Google's Consistent, Global Authorization System](<https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/>).
 
@@ -1109,15 +1109,15 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^21]: [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](<https://arxiv.org/abs/2306.05685>).
 
-[^22]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/>).
+[^22]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
 
 [^23]: [Structured model outputs \| OpenAI API](<https://developers.openai.com/api/docs/guides/structured-outputs>).
 
 [^24]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](<https://arxiv.org/abs/2406.13352>).
 
-[^25]: [Ai Assisted Analysis And Investigation Systems \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/>).
+[^25]: [AI-Assisted Analysis And Investigation Systems \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/>).
 
-[^26]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/>).
+[^26]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
 
 [^27]: [Sapien: A Stateful Policy Engine for Autonomous AI Agents](<https://arxiv.org/html/2610.00797v1>).
 

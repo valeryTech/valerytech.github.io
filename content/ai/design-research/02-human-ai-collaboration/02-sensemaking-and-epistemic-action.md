@@ -13,7 +13,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The initial distinction maps almost exactly onto a line of research that separates **acting on the world** from **acting to improve what we know about the world**.
 
-A particularly useful starting point is Kirsh & Maglio's distinction between **pragmatic action** and **epistemic action**. Pragmatic actions move you toward an external goal; epistemic actions expose information, reduce uncertainty, or make reasoning easier. ([DOI](https://doi.org/10.1207/s15516709cog1804_1?utm_source=chatgpt.com "On Distinguishing Epistemic from Pragmatic Action - Kirsh - 1994 - Cognitive Science - Wiley Online Library"))
+A particularly useful starting point is Kirsh & Maglio's distinction between **pragmatic action** and **epistemic action**. Pragmatic actions move you toward an external goal; epistemic actions expose information, reduce uncertainty, or make reasoning easier. ([DOI](https://doi.org/10.1207/s15516709cog1804_1 "On Distinguishing Epistemic from Pragmatic Action - Kirsh - 1994 - Cognitive Science - Wiley Online Library"))
 
 So a human-AI collaboration can have an explicitly epistemic objective:
 
@@ -37,7 +37,7 @@ Several research traditions fit this.
 
 The working interpretation is that **sensemaking** is closest to the proposed approach.
 
-Russell, Stefik, Pirolli & Card's classic definition is very relevant: sensemaking involves searching for a useful **representation** and encoding information into that representation so that questions become answerable. The representation itself is part of the work. ([Mark Stefik](https://www.markstefik.com/wp-content/uploads/2014/04/1993-Cost-Structure-of-Sensemaking1.pdf?utm_source=chatgpt.com "INTERCHI'93 -- 24-29 April 1993"))
+Russell, Stefik, Pirolli & Card's classic definition is very relevant: sensemaking involves searching for a useful **representation** and encoding information into that representation so that questions become answerable. The representation itself is part of the work. ([Mark Stefik](https://www.markstefik.com/wp-content/uploads/2014/04/1993-Cost-Structure-of-Sensemaking1.pdf "INTERCHI'93 -- 24-29 April 1993"))
 
 That gives you a different interaction loop from the normal agent model:
 

@@ -85,7 +85,7 @@ The interesting part is that we have been trying to build versions of this archi
 
 This surprised me when following the literature.
 
-Read the 2004 W3C OWL-S proposal. Its goal was explicitly to let software agents **discover, invoke, compose and monitor services automatically**. A service was described in three pieces: what it does, how it behaves, and how to invoke it. ([W3C](https://www.w3.org/submissions/OWL-S/?utm_source=chatgpt.com "OWL-S: Semantic Markup for Web Services"))
+Read the 2004 W3C OWL-S proposal. Its goal was explicitly to let software agents **discover, invoke, compose and monitor services automatically**. A service was described in three pieces: what it does, how it behaves, and how to invoke it. ([W3C](https://www.w3.org/submissions/OWL-S/ "OWL-S: Semantic Markup for Web Services"))
 
 Sycara et al. were already writing in 2003 about automatic discovery and composition:
 
@@ -102,7 +102,7 @@ monitor results
 ```
 
 
-They identified essentially the same problem we're talking about now: syntactic APIs aren't sufficient because an agent needs to understand what an operation _means_. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1570826803000039?utm_source=chatgpt.com "Automated discovery, interaction and composition of Semantic Web services - ScienceDirect"))
+They identified essentially the same problem we're talking about now: syntactic APIs aren't sufficient because an agent needs to understand what an operation _means_. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1570826803000039 "Automated discovery, interaction and composition of Semantic Web services - ScienceDirect"))
 
 That's very close to:
 
@@ -123,7 +123,7 @@ execute
 
 So why didn't we get this world in 2005?
 
-One major problem was semantic annotation. Computers required very precise ontologies describing everything. Ontology engineering proved expensive, specialized, and difficult to maintain. Research continued to describe ontology construction as complex and time-consuming, and real-world adoption of semantic web services remained limited. ([South African Computer Journal](https://sacj.cs.uct.ac.za/index.php/sacj/article/view/185?utm_source=chatgpt.com "iSemServ: A model-driven approach for developing semantic web services | South African Computer Journal"))
+One major problem was semantic annotation. Computers required very precise ontologies describing everything. Ontology engineering proved expensive, specialized, and difficult to maintain. Research continued to describe ontology construction as complex and time-consuming, and real-world adoption of semantic web services remained limited. ([South African Computer Journal](https://sacj.cs.uct.ac.za/index.php/sacj/article/view/185 "iSemServ: A model-driven approach for developing semantic web services | South African Computer Journal"))
 
 LLMs change this equation.
 
@@ -359,7 +359,7 @@ A clean one might suddenly become accessible through thousands of workflows nobo
 
 Current agents remain far from reliable enough to own arbitrary workflows.
 
-τ-bench explicitly evaluates agents interacting with tools while following domain rules. Its initial results found large inconsistency even when models had clearly specified APIs and policy documents. ([arXiv](https://arxiv.org/abs/2406.12045?utm_source=chatgpt.com "\(τ\)-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains"))
+τ-bench explicitly evaluates agents interacting with tools while following domain rules. Its initial results found large inconsistency even when models had clearly specified APIs and policy documents. ([arXiv](https://arxiv.org/abs/2406.12045 "\(τ\)-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains"))
 
 That tells me the likely route forward isn't merely:
 
@@ -459,6 +459,14 @@ The saved LLM forecast assigns low confidence to the stronger claim that autonom
 
 The historical connection proposed for further investigation is especially useful: **Semantic Web Services + capability security + program synthesis + HCI are converging into one architecture because of LLMs.** Those four fields each solved a different part of the problem long before modern LLMs appeared.
 
-For reading, the strongest starting set is Rastogi et al.'s Schema-Guided Dialogue work [AAAI paper](https://ojs.aaai.org/index.php/AAAI/article/view/6394?utm_source=chatgpt.com); the OWL-S service ontology [W3C OWL-S specification](https://www.w3.org/submissions/OWL-S/?utm_source=chatgpt.com); Sycara et al. on automatic service discovery and composition [CMU publication](https://publications.ri.cmu.edu/automated-discovery-interaction-and-composition-of-semantic-web-services?utm_source=chatgpt.com); Gulwani's Flash Fill work [Microsoft Research paper page](https://www.microsoft.com/en-us/research/publication/automating-string-processing-spreadsheets-using-input-output-examples/?utm_source=chatgpt.com); Miller, Yee and Shapiro on capability security [Capability Myths Demolished](https://www.erights.org/elib/capability/duals/?utm_source=chatgpt.com); τ-bench on tool-using agent reliability [τ-bench paper](https://arxiv.org/abs/2406.12045?utm_source=chatgpt.com); and Google's Generative UI work [Generative UI paper](https://generativeui.github.io/static/pdfs/paper.pdf?utm_source=chatgpt.com).
+For reading, the strongest starting set is Rastogi et al.'s Schema-Guided Dialogue work [AAAI paper](https://ojs.aaai.org/index.php/AAAI/article/view/6394); the OWL-S service ontology [W3C OWL-S specification](https://www.w3.org/submissions/OWL-S/); Sycara et al. on automatic service discovery and composition [CMU publication](https://publications.ri.cmu.edu/automated-discovery-interaction-and-composition-of-semantic-web-services); Gulwani's Flash Fill work [Microsoft Research paper page](https://www.microsoft.com/en-us/research/publication/automating-string-processing-spreadsheets-using-input-output-examples/); Miller, Yee and Shapiro on capability security [Capability Myths Demolished](https://www.erights.org/elib/capability/duals/); τ-bench on tool-using agent reliability [τ-bench paper](https://arxiv.org/abs/2406.12045); and Google's Generative UI work [Generative UI paper](https://generativeui.github.io/static/pdfs/paper.pdf).
 
 The next useful step would be to **design this architecture ourselves as if we were building an operating system for intent-driven software**: define the capability format, semantic model, IR, permission model, runtime and UI protocol, and then run several concrete workflows through it. That should expose which parts actually require an LLM and which parts are conventional computer science.
+
+## Library sources
+
+
+- [Guarino et al. 2009](/sources/research-methods/ontology-and-conceptual-modeling/guarino-2009-what-is-an-ontology.pdf.enc), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3))
+- [Guizzardi 2007](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2007-on-ontology-ontologies-conceptualizations.pdf.enc), *On Ontology, Ontologies, Conceptualizations, Modeling Languages, and (Meta)Models*
+- [Lukyanenko et al. 2024](/sources/research-methods/ontology-and-conceptual-modeling/lukyanenko-2024-universal-conceptual-modeling.pdf.enc), *Universal Conceptual Modeling* ([doi:10.1007/s10270-024-01207-8](https://doi.org/10.1007/s10270-024-01207-8))
+- [Storey et al. 2023](/sources/research-methods/ontology-and-conceptual-modeling/storey-2023-conceptual-modeling-topics-themes-trends.pdf.enc), *Conceptual Modeling: Topics, Themes, and Technology Trends* ([doi:10.1145/3589338](https://doi.org/10.1145/3589338))

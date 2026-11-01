@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Sandbox-First Capability Discovery LLM Agents"
 description: "Agent capability depends on the environment as well as the model. A minimal sandbox, general tools, repeated trials, and component ablations test which added workflow structures improve results."
-title: "Sandbox First Capability Discovery Llm Agents"
-linkTitle: "Sandbox First Capability Discovery Llm Agents"
+linkTitle: "Sandbox-First Capability Discovery LLM Agents"
 ---
 # Sandbox-First Capability Discovery for LLM Agents
 
@@ -358,6 +358,8 @@ The following experiments would test the proposed method directly.
 
 The third and sixth experiments test two central assumptions of the method: whether general primitives already support work that might otherwise require a custom implementation, and whether a recurring need is stable enough to justify a shared component.
 
+The capability record above (model, environment, tools, instructions, budget, task class, reliability) is the engineering form of the response-profile account in [Dispositions as response profiles]({{< ref "ai/capabilities/04-dispositions-as-response-profiles" >}}). What it does not yet do is vary a property of the task class and record how reliability changes; [Measuring dispositions]({{< ref "ai/capabilities/05-measuring-dispositions" >}}) describes that step, and [Capability claims and empirical method]({{< ref "ai/capabilities/empirical-method-map" >}}) maps the two accounts onto each other.
+
 ### Prioritised bibliography
 
 
@@ -411,3 +413,13 @@ A sandbox is what makes that practical: **broad freedom of method inside a narro
 17. <a id="ref-17"></a> [METR -- Measuring AI Ability to Complete Long Tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
 18. <a id="ref-18"></a> [Google Research -- Towards a Science of Scaling Agent Systems](https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/)
 19. <a id="ref-19"></a> [Anthropic -- Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
+
+## Library sources
+
+
+- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *The experimental workbench*
+
+Further reading:
+
+- [Song et al. 2025](/sources/ai-engineering/failures/song-2025-aegis-agent-environment-failures-in-llm-agents.pdf.enc), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504))
+- [Silver and Sutton 2025](/sources/ai-foundations/intelligence-and-turing/silver-2025-era-of-experience.pdf.enc), *Welcome to the Era of Experience*

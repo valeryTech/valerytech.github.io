@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Walking Skeleton: Workflow Validation"
 description: "Choose one narrow end-to-end workflow to validate architectural boundaries, data contracts, observability, and failure handling before expanding functionality."
-title: "Delivery Skeleton 2 In"
 linkTitle: "Walking Skeleton: Workflow Validation"
 ---
 # Delivery Technique: Architectural Walking Skeleton

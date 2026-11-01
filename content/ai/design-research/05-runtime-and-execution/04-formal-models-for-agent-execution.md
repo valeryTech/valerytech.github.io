@@ -19,7 +19,7 @@ TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The working interpretation is that "neuro-symbolic" describes the system, but **Colored Petri Nets + type/effect systems + temporal logic** may give you a much richer computational foundation than LangGraph's generic state/nodes/edges model.
 
-LangGraph already has durable execution, shared state, dynamic `Send`, subgraphs, interrupts and checkpointing, so we shouldn't dismiss it as primitive. Its abstraction is intentionally generic, though: application semantics mostly live inside node code and state schemas. ([Docs by LangChain](https://docs.langchain.com/oss/python/langgraph/graph-api?utm_source=chatgpt.com "Graph API overview - Docs by LangChain"))
+LangGraph already has durable execution, shared state, dynamic `Send`, subgraphs, interrupts and checkpointing, so we shouldn't dismiss it as primitive. Its abstraction is intentionally generic, though: application semantics mostly live inside node code and state schemas. ([Docs by LangChain](https://docs.langchain.com/oss/python/langgraph/graph-api "Graph API overview - Docs by LangChain"))
 
 The proposal is to investigate a stronger machine.
 
@@ -100,7 +100,7 @@ Approval<Human>
 
 before it can fire.
 
-This is already being explored specifically for long-running agent systems. HASH, for example, is experimenting with Petri nets as an orchestration formalism for multi-agent AI because they give explicit concurrency, decomposition and control. ([HASH](https://hash.ai/blog/petri-nets-for-agentic-ai?utm_source=chatgpt.com "Petri Net-Powered Agents - HASH Blog"))
+This is already being explored specifically for long-running agent systems. HASH, for example, is experimenting with Petri nets as an orchestration formalism for multi-agent AI because they give explicit concurrency, decomposition and control. ([HASH](https://hash.ai/blog/petri-nets-for-agentic-ai "Petri Net-Powered Agents - HASH Blog"))
 
 That makes Petri nets much more interesting to me than simply inventing a richer graph API.
 
@@ -236,7 +236,7 @@ RollbackAvailable
 
 This gives the compiler static reasoning that a bare graph representation doesn't provide.
 
-Recent work on agent verification is already heading in this direction: LLMs synthesize candidate structured programs/specifications, while symbolic systems reject invalid ones. AutoSpec+ uses an LLM for specification generation and a symbolic verifier as a deterministic critic. ([ACL Anthology](https://aclanthology.org/2026.acl-demo.66/?utm_source=chatgpt.com "Formally Specifying the Intended Behavior of the Program: LLM-Driven Neuro-Symbolic Program Specification Synthesis - ACL Anthology"))
+Recent work on agent verification is already heading in this direction: LLMs synthesize candidate structured programs/specifications, while symbolic systems reject invalid ones. AutoSpec+ uses an LLM for specification generation and a symbolic verifier as a deterministic critic. ([ACL Anthology](https://aclanthology.org/2026.acl-demo.66/ "Formally Specifying the Intended Behavior of the Program: LLM-Driven Neuro-Symbolic Program Specification Synthesis - ACL Anthology"))
 
 ### 4. Temporal logic handles properties about the execution history
 
@@ -277,7 +277,7 @@ always(
 
 This is where LTL/CTL and model checking become useful.
 
-Current agent-verification research is explicitly treating the LLM as a nondeterministic component inside a formally observable transition system and applying temporal-logic checking to the surrounding orchestration. ([Preprints](https://www.preprints.org/manuscript/202604.1029?utm_source=chatgpt.com "AgentVerify: Compositional Formal Verification of AI Agent Safety Properties via LTL Model Checking[v1] | Preprints.org"))
+Current agent-verification research is explicitly treating the LLM as a nondeterministic component inside a formally observable transition system and applying temporal-logic checking to the surrounding orchestration. ([Preprints](https://www.preprints.org/manuscript/202604.1029 "AgentVerify: Compositional Formal Verification of AI Agent Safety Properties via LTL Model Checking[v1] | Preprints.org"))
 
 That's almost exactly the architecture we're discussing.
 
@@ -294,7 +294,7 @@ Things like CSP, π-calculus and actor semantics are powerful for:
 - synchronization;
 - distributed protocols.
 
-There is current formal work explicitly combining concurrency theory with epistemic models for dynamic multi-agent systems. ([Springer](https://link.springer.com/article/10.1007/s10849-026-09461-3?utm_source=chatgpt.com "Bridging concurrency theory and epistemic models: a formal framework for dynamic multi-agent systems | Journal of Logic, Language and Information | Springer Nature Link"))
+There is current formal work explicitly combining concurrency theory with epistemic models for dynamic multi-agent systems. ([Springer](https://link.springer.com/article/10.1007/s10849-026-09461-3 "Bridging concurrency theory and epistemic models: a formal framework for dynamic multi-agent systems | Journal of Logic, Language and Information | Springer Nature Link"))
 
 But the recommendation is not to make users write π-calculus.
 
@@ -325,7 +325,7 @@ continue
 
 Behavior trees encode that very nicely.
 
-Recent work combines LLM planning with formal planners and behavior trees specifically because flat LLM-generated plans become difficult to manage for long-horizon execution. ([arXiv](https://arxiv.org/abs/2603.01113?utm_source=chatgpt.com "From Dialogue to Execution: Mixture-of-Agents Assisted Interactive Planning for Behavior Tree-Based Long-Horizon Robot Execution"))
+Recent work combines LLM planning with formal planners and behavior trees specifically because flat LLM-generated plans become difficult to manage for long-horizon execution. ([arXiv](https://arxiv.org/abs/2603.01113 "From Dialogue to Execution: Mixture-of-Agents Assisted Interactive Planning for Behavior Tree-Based Long-Horizon Robot Execution"))
 
 One tentative proposal is to treat a behavior tree as another compilable sublanguage:
 
@@ -597,3 +597,16 @@ and every mutation goes back through the compiler/verifier.
 The working interpretation is that **Colored Petri Nets deserve the deepest investigation next**. They give us several things we've independently discovered we need--typed state, concurrency, joins, resources, long-running computation, formal analysis and a visual representation--in one mature formalism.
 
 The recommendation is not to declare "our runtime is a Petri net engine" yet. But the proposal is to try to express 5-10 difficult agent workflows as Colored Petri Nets and see where the formalism breaks. Whatever can't be expressed cleanly would tell us what additional algebra the language actually needs.
+
+## Library sources
+
+
+- [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *Formal foundations and architectural synthesis*
+- [Khattab et al. 2023](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc), *DSPy* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714)) -- on *Formal foundations and architectural synthesis*
+- [Xavier et al. 2026](/sources/ai-engineering/harness/xavier-2026-agentproof-static-verification-agent-workflows.pdf.enc), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356)) -- on *4. Temporal logic handles properties about the execution history*
+- [Cassandras and Lafortune 2021](/sources/research-methods/modeling-and-simulation/cassandras-2021-introduction-to-discrete-event-systems.pdf.enc), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6)) -- on *1. Petri nets look especially suitable*
+- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854)) -- on *this separation*
+
+Further reading:
+
+- [Tan et al. 2026](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780))

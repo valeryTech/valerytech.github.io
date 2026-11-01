@@ -29,4 +29,8 @@
     {{- $outline = printf `<nav id="TableOfContents">%s</nav>` (partial "navigation/outline-list.html" .) | safeHTML -}}
   {{- end -}}
 {{- end -}}
+{{- /* Headings with subheadings get a row holding their disclosure and link, like
+   sidebar sections. The startup script reveals the button before the first paint. */ -}}
+{{- $branch := `<li class="site-outline-branch"><div class="site-outline-row"><button type="button" class="site-outline-branch-toggle" aria-controls="toc-branch-${1}" aria-expanded="true" hidden></button><a href="#${1}">${2}</a></div>${3}<ul id="toc-branch-${1}">` -}}
+{{- $outline = replaceRE `<li><a href="#([^"]+)">((?:[^<]|<[^/]|</[^a])*)</a>(\s*)<ul>` $branch (string $outline) | safeHTML -}}
 {{- return $outline -}}

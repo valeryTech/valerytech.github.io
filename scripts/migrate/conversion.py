@@ -42,6 +42,8 @@ MARKDOWN_LINK_RE = re.compile(
 ESCAPED_WIKI_LINK_RE = re.compile(r"\\\[\\\[(.*?)\\\]\\\]")
 BLOCK_MATH_RE = re.compile(r"(?<!\\)\$\$(?!\$)(.+?)(?<!\\)\$\$(?!\$)", re.DOTALL)
 BACKTICK_RUN_RE = re.compile(r"`+")
+URL_RE = re.compile(r"https?://[^\s<>()\[\]\"'`]+")
+URL_TRAILING_PUNCTUATION = ".,;:!?"
 
 
 def normalize_math_delimiters(text: str) -> str:
@@ -188,6 +190,12 @@ def rewrite_inline_links(text: str, ctx: RenderContext) -> str:
         target = (match.group(2) or "").strip()
         heading = (match.group(3) or "").strip()
         label = (match.group(4) or "").strip()
+        if match.group(4) is not None:
+            # Inside a table Obsidian escapes the label's pipe as \|.
+            if heading:
+                heading = heading.removesuffix("\\")
+            else:
+                target = target.removesuffix("\\")
 
         if is_embed:
             ctx.report.add_warning(
@@ -282,8 +290,12 @@ def render_link_target(
         f"Could not resolve {original}",
         source=ctx.note.source_rel_global.as_posix(),
     )
-    if fallback_label is not None and Path(target).suffix:
-        return fallback_label
+    if fallback_label is not None:
+        if Path(target).suffix:
+            return fallback_label
+    elif label:
+        # An unpublished wiki link shows its label, never raw wiki syntax.
+        return label
     return original
 
 
@@ -320,8 +332,25 @@ def is_local_markdown_target(target: str) -> bool:
     return stripped.endswith(".md")
 
 
+def strip_tracking_parameters(text: str) -> str:
+    # Links copied from chat answers carry utm_source=chatgpt.com; other parameters stay as written.
+    def clean(match: re.Match[str]) -> str:
+        url = match.group(0)
+        trailing = len(url) - len(url.rstrip(URL_TRAILING_PUNCTUATION))
+        url, ending = (url[:-trailing], url[-trailing:]) if trailing else (url, "")
+        base, has_query, rest = url.partition("?")
+        if not has_query or "utm_" not in rest.lower():
+            return match.group(0)
+        query, has_fragment, fragment = rest.partition("#")
+        kept = [item for item in query.split("&") if item and not item.lower().startswith("utm_")]
+        cleaned = base + ("?" + "&".join(kept) if kept else "")
+        return cleaned + has_fragment + fragment + ending
+
+    return URL_RE.sub(clean, text)
+
+
 def rewrite_markdown_text(text: str, ctx: RenderContext) -> str:
-    return rewrite_inline_links(normalize_math_delimiters(text), ctx)
+    return strip_tracking_parameters(rewrite_inline_links(normalize_math_delimiters(text), ctx))
 
 
 def convert_embed(block: Embed, ctx: RenderContext) -> str:

@@ -1,35 +1,49 @@
 /* Semantic palette shared with standalone redirects and the icon authoring tool. */
 :root {
-  /* Semantic colors: breadcrumbs, context stacks, and tables evolve independently. */
+  /* Derived colors mix in OKLab, which blends lightness evenly instead of muddying midpoints. */
+  /* One context-header surface backs the top bar, breadcrumbs, toolbar and pane headings. */
   --site-page-background: #fff;
   --site-foreground: #0f172a;
   --site-body-foreground: var(--site-foreground);
   --site-heading-foreground: var(--site-foreground);
-  --site-breadcrumb-background: var(--site-context-header);
   --site-context-header: #ced9e6;
   --site-context-surface: #eff2f6;
   --site-muted: #64748b;
   --site-nav-foreground: var(--site-muted);
-  --site-nav-context-foreground: var(--site-link-color);
+  /* Top navigation, pane headings and breadcrumbs share one label color. */
+  --site-nav-context-foreground: var(--site-context-foreground);
   --site-border: #e2e8f0;
   --site-panel: #f8fafc;
-  --site-accent: #2563eb;
-  --site-link-color-light: #3c5a7c;
-  --site-link-color-dark: #8fafce;
+  /* The accent colors focus rings, hover and current labels; fills keep the base hue. */
+  --site-accent: var(--site-link-color);
+  /* The base blue per profile; Dark links are white, so the hue lives on in fills and the mark. */
+  --site-link-tint-light: #3c5a7c;
+  --site-link-tint-dark: #8fafce;
+  --site-link-color-light: var(--site-link-tint-light);
+  --site-link-color-dark: #fff;
   --site-link-color: var(--site-link-color-light);
+  /* Fills tint with the base link hue, so edited link or accent colors never muddy them. */
+  --site-fill-tint: var(--site-link-tint-light);
   --site-nav-selected-surface: color-mix(
-    in srgb,
-    var(--site-link-color) 12%,
+    in oklab,
+    var(--site-fill-tint) 12%,
     var(--site-page-background)
   );
-  --site-nav-state-layer: color-mix(in srgb, var(--site-link-color) 8%, transparent);
   --site-table-surface: #f5f7fa;
   --site-table-header: #dbeafe;
+  /* Status text such as palette contrast warnings; matches the warning callouts. */
+  --site-warning-foreground: #92400e;
   --site-context-foreground: var(--site-link-color);
-  --site-control-background: var(--site-breadcrumb-background);
+  --site-control-background: var(--site-context-header);
   --site-control-foreground: var(--site-context-foreground);
-  --site-card-surface: color-mix(in srgb, var(--site-accent) 8%, var(--site-panel));
-  --site-card-hover: color-mix(in srgb, var(--site-accent) 12%, var(--site-panel));
+  --site-card-surface: color-mix(in oklab, var(--site-fill-tint) 8%, var(--site-panel));
+  --site-card-hover: color-mix(in oklab, var(--site-fill-tint) 12%, var(--site-panel));
+  /* Code blocks keep Hextra's primary tint over the page, now as one solid, editable role. */
+  --site-code-surface: color-mix(
+    in oklab,
+    var(--hx-color-primary-700, #005dc7) 5%,
+    var(--site-page-background)
+  );
   --site-floating-shadow-color: rgb(15 23 42 / 20%);
   --site-dialog-shadow-color: rgb(0 0 0 / 25%);
   --site-dialog-backdrop: rgb(0 0 0 / 45%);
@@ -43,23 +57,20 @@
   --site-foreground: #f3f4f6;
   --site-body-foreground: #c7c7c7;
   --site-heading-foreground: #ddd;
-  --site-context-header: #1e232f;
-  --site-context-surface: #141a20;
+  --site-context-header: #1c1b2f;
+  --site-context-surface: #1b1c2e;
   --site-muted: #a3a3a3;
-  --site-nav-context-foreground: var(--site-nav-foreground);
   --site-border: #303030;
-  --site-panel: #171717;
-  --site-accent: #93c5fd;
+  --site-panel: #151524;
   --site-link-color: var(--site-link-color-dark);
-  --site-nav-selected-surface: color-mix(
-    in srgb,
-    var(--site-link-color) 26%,
-    var(--site-page-background)
-  );
-  /* Preserve selected-label contrast when the state layer brightens this fill. */
-  --site-nav-state-layer: color-mix(in srgb, var(--site-link-color) 4%, transparent);
+  --site-fill-tint: var(--site-link-tint-dark);
+  /* Dark sets one fixed indigo for the current section and every hover. */
+  --site-nav-selected-surface: #272743;
+  --site-card-hover: #272743;
+  --site-code-surface: #1b1c2e;
   --site-table-surface: #1c1c20;
   --site-table-header: #263f60;
+  --site-warning-foreground: #fde68a;
 }
 
 .dark[data-text-brightness="bright"] {
@@ -67,5 +78,5 @@
   --site-heading-foreground: #fff;
   --site-muted: #c7c7c7;
   --site-nav-foreground: var(--site-body-foreground);
-  --site-link-color-dark: #b7d2eb;
+  --site-link-tint-dark: #b7d2eb;
 }

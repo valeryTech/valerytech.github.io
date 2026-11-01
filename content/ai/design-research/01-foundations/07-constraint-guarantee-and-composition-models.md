@@ -571,3 +571,8 @@ The definitions below are local copies of the entries used in these passages. Th
 [^turn7search0]: [A Relational Model of Data for Large Shared Data Banks](https://research.ibm.com/publications/a-relational-model-of-data-for-large-shared-data-banks)
 
 [^turn10search16]: [Ledger -- Hyperledger Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-2.4/ledger.html)
+
+## Library sources
+
+
+- [Zeigler et al. 2019](/sources/research-methods/modeling-and-simulation/zeigler-2019-theory-of-modeling-and-simulation.pdf.enc), *Theory of Modeling and Simulation*

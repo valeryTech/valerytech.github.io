@@ -1,63 +1,38 @@
-# Knowledge Base Publishing System
+# valery.tech
 
-This repository is the system that transforms, previews, builds, and deploys a
-Markdown-based knowledge base. It is a Hugo site built with the Hextra
-theme, with the content tree in-repo under `content/`.
+Source for [valery.tech](https://valery.tech), Valery Yuda's public notes on
+evaluating AI systems, designing applications with language models, software
+engineering and system design. Most articles are imported from a private
+Markdown notes vault; the rest are written here. The site is built with
+[Hugo](https://gohugo.io/) and the [Hextra](https://imfing.github.io/hextra/)
+theme and deployed to GitHub Pages.
 
-The main source inputs are:
+## Quickstart
 
-- `content/` for authored Markdown
-- `layouts/`, `config/`, and `assets/` for local presentation and build behavior
-
-Generated output such as `public/` and `resources/` is disposable build
-artifact, not an authoring surface.
-
-## Theme checkout
-
-Hextra v0.13.0 is pinned as a Git submodule under `themes/hextra/`.
-After cloning or switching to this branch, initialize it before running Hugo:
+Everything runs in Docker; the host needs only Docker, `git` and
+[Task](https://taskfile.dev/).
 
 ```bash
-git submodule update --init --recursive
+task repo:init
 ```
-
-GitHub Actions checks out the submodule automatically. Site-specific presentation
-is in `assets/css/site/`; Hextra's compiled CSS ships with the theme. See the
-[styling guide](docs/styling.md) for tokens and component conventions.
-The [color reference](docs/colors.md) lists exact profile values and counts;
-the [visual identity specification](docs/visual-identity.md) records design decisions.
-The [frontend conventions](docs/frontend.md) cover feature modules, configuration,
-and dependency boundaries.
-
-## Local workflow
-
-Local work runs in Docker, with `make` as the main contributor entrypoint. You
-do not need a system-wide Hugo or Node installation.
-
-Preview locally:
 
 ```bash
-make up
+task site:up
 ```
 
-This runs `make migrate` first to import the latest notes and refresh the agent
-maps, then starts the preview. If migration fails, preview startup stops.
+`task repo:init` checks out the theme, builds the toolchain image and checks the
+host. `task site:up` imports the latest notes and serves the preview at
+`http://localhost:1313`. `task` lists the other tasks.
 
-Build the site:
+## Documentation
 
-```bash
-make build
-```
-
-Production deploys run through GitHub Actions to GitHub Pages for `valery.tech`.
-
-Migration and builds generate [legacy URL redirects](docs/legacy-url-redirects.md)
-for reviewed production 404 visits. Missing coverage and broken internal links
-stop the build; unvisited historical URLs need no mapping.
-
-For more detail:
-
-- [Public agent map](https://valery.tech/agent-map/) for a short HTML index and selected documents; five collection maps list all articles grouped by subsection. `make migrate` assembles their Markdown sources, then Hugo renders the HTML during preview or build. Builds also refresh the sources automatically.
-- [docs/runbook.md](docs/runbook.md) for local workflows and note imports
-- [docs/infra.md](docs/infra.md) for Docker, toolchain, CI, and deployment
-- [docs/architecture.md](docs/architecture.md) for repo structure and content placement
+- [Runbook](docs/runbook.md): setup, commands, checks, note imports and upgrades
+- [Architecture](docs/architecture.md): what the site is and which files own what
+- [Infrastructure](docs/infra.md): Docker image, build pipeline, CI and deployment
+- [Frontend](docs/frontend.md): UI modules, configuration and behavior
+- [Design guides](docs/design/README.md): brand and style guides, read before
+  changing UI: [visual identity](docs/design/visual-identity.md),
+  [styling](docs/design/styling.md) and [colors](docs/design/colors.md)
+- [Dependencies](docs/dependencies.md): version authorities and upgrade notes
+- [Analytics](docs/analytics.md)
+- [AGENTS.md](AGENTS.md): rules for coding agents working in this repository

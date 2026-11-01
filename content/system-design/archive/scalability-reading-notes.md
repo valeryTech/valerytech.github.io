@@ -18,6 +18,8 @@ Why scalability problems start with organizations and people, not technology, an
 # Definitions
 
 
+Source: [Weinstock and Goodenough 2006](/sources/software-engineering/systems-and-operations/weinstock-2006-on-system-scalability.pdf.enc), *On System Scalability*.
+
 Definition. What is it that we really mean by scalability? A service is said to be scalable if when we increase the resources in a system, it results in increased performance in a manner *proportional* to resources added. Increasing performance in general means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.
 
 Our review of the literature showed two main uses of the term scalability:
@@ -33,7 +35,7 @@ Capacity.
 
 books:
 
-*Foundations of Scalable Systems: Designing Distributed Architectures* by Ian Gorton, "O'Reilly Media, Inc.", 2022
+*Foundations of Scalable Systems: Designing Distributed Architectures* ([PDF](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc)) by Ian Gorton, "O'Reilly Media, Inc.", 2022
 
 highscalability.com
 
@@ -361,3 +363,8 @@ Generally, you should aim for **maximal throughput** with **acceptable latency**
 
 
 Here should be analysis of CAP theorem
+
+## Library sources
+
+
+- [Duboc et al. 2007](/sources/software-engineering/systems-and-operations/duboc-2007-framework-software-system-scalability.pdf.enc), *A Framework for Characterization and Analysis of Software System Scalability*

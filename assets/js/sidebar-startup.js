@@ -1,6 +1,8 @@
-import { initSectionNavigation } from './navigation/sections.mjs';
+import { sections } from '@params';
+import { initSectionNavigation, initSectionToggles } from './navigation/sections.mjs';
 
 // Run beside the rendered sidebar, before deferred scripts and the first paint.
+initSectionToggles(sections.storageKey);
 initSectionNavigation();
 
 // Breadcrumbs follow the sidebar in the HTML. Measure their wrapping as soon as

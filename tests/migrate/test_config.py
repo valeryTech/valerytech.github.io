@@ -29,6 +29,31 @@ class MigrationConfigTests(unittest.TestCase):
             {Path("topics"): 10, Path("topics/api"): 20},
         )
 
+    def test_import_excludes_extend_default_excludes(self) -> None:
+        self.write_config(
+            """
+            [defaults]
+            exclude = ["**/templates/**"]
+
+            [[imports]]
+            name = "ai"
+            source_root_kind = "external"
+            source_subtree = "ai"
+            target_subtree = "ai"
+            exclude = ["drafts/**"]
+
+            [[imports]]
+            name = "engineering"
+            source_root_kind = "external"
+            source_subtree = "engineering"
+            target_subtree = "engineering"
+            """
+        )
+
+        ai, engineering = load_config(self.workspace.config_path).imports
+        self.assertEqual(ai.exclude, ("**/templates/**", "drafts/**"))
+        self.assertEqual(engineering.exclude, ("**/templates/**",))
+
     def test_section_title_must_be_non_empty(self) -> None:
         self.write_config(
             """

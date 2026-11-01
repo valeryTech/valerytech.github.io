@@ -521,3 +521,8 @@ The working interpretation is that **intent evolution** deserves to become a fir
 <!-- The long-running-work dialogue continues with runtime support. -->
 
 The original reply continues with [runtime support]({{< ref "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime" >}}#runtime-support-for-long-running-work), then the complete [failure taxonomy and field study]({{< ref "ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study" >}}).
+
+## Library sources
+
+
+- [Yu et al. 2026](/sources/ai-engineering/harness/yu-2026-shepherd-programmable-meta-agents.pdf.enc), *Shepherd* ([arXiv:2605.10913](https://arxiv.org/abs/2605.10913))

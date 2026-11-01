@@ -121,7 +121,7 @@ implicitly to the LLM
 ```
 
 
-There is a mature methodological reason to care about this. Research in other fields treats inference across levels as dangerous: conclusions about individuals do not automatically follow from group-level observations, and vice versa. ([Sage Journals](https://journals.sagepub.com/doi/10.1177/0013916591234002?utm_source=chatgpt.com "Units of Analysis and the Psychometrics of Environmental Assessment Scales - James M. Richards, Denise C. Gottfredson, Gary D. Gottfredson, 1991"))
+There is a mature methodological reason to care about this. Research in other fields treats inference across levels as dangerous: conclusions about individuals do not automatically follow from group-level observations, and vice versa. ([Sage Journals](https://journals.sagepub.com/doi/10.1177/0013916591234002 "Units of Analysis and the Psychometrics of Environmental Assessment Scales - James M. Richards, Denise C. Gottfredson, Gary D. Gottfredson, 1991"))
 
 For our purposes, this becomes something like:
 
@@ -401,3 +401,27 @@ The key convention proposed for the top of the shared dictionary is:
 > **We use "intelligence" narrowly for task-solving capability. Intelligence alone does not imply understanding, grounding, agency, autonomy, meaning, selfhood, or consciousness.**
 
 That one sentence would eliminate a large fraction of the ambiguity in discussions like the Wei talk.
+
+The capability column of this dictionary, what it means to say a system has a capability and what evidence would support it, is developed in [Capabilities]({{< ref "ai/capabilities" >}}). [What a capability claim says]({{< ref "ai/capabilities/01-what-is-a-capability-claim" >}}) returns to the understanding entry above.
+
+## Library sources
+
+
+- [Vernon 2014](/sources/ai-foundations/cognition-and-mind/vernon-2014-cognitive-system.pdf.enc), *Cognitive System*
+- [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
+- [Lake and Murphy 2021](/sources/language/language-and-llms/lake-2021-word-meaning-in-minds-and-machines.pdf.enc), *Word meaning in minds and machines* ([doi:10.1037/rev0000297](https://doi.org/10.1037/rev0000297))
+
+Further reading:
+
+- [Anderson et al. 2026](/sources/ai-foundations/alignment-and-society/anderson-2026-agenda-game.pdf.enc), *The agenda game* ([doi:10.1007/s44382-026-00026-3](https://doi.org/10.1007/s44382-026-00026-3))
+- [Coeckelbergh and Gunkel 2025](/sources/ai-foundations/alignment-and-society/coeckelbergh-2025-communicative-ai.pdf.enc), *Communicative AI: A Critical Introduction to Large Language Models*
+- [Prasada 2026](/sources/ai-foundations/cognition-and-mind/prasada-2026-conceptual-form.pdf.enc), *Conceptual Form: The Hidden Structure of Commonsense Concepts*
+- [Rosenbloom 2026](/sources/ai-foundations/cognition-and-mind/rosenbloom-2026-on-minds.pdf.enc), *On Minds: Reflections of a Cognitive Architect*
+- [Ryle 1949](/sources/ai-foundations/cognition-and-mind/ryle-1949-concept-of-mind.pdf.enc), *The Concept of Mind*
+- [French 2000](/sources/ai-foundations/intelligence-and-turing/french-2000-turing-test-first-50-years.pdf.enc), *The Turing Test: the first 50 years*
+- [Roitblat 2020](/sources/ai-foundations/intelligence-and-turing/roitblat-2020-algorithms-are-not-enough.pdf.enc), *Algorithms Are Not Enough: Creating General Artificial Intelligence*
+- [Russell and Norvig 2021](/sources/ai-foundations/intelligence-and-turing/russell-2021-artificial-intelligence-a-modern-approach.pdf.enc), *Artificial Intelligence: A Modern Approach*
+- [Turing 1950](/sources/ai-foundations/intelligence-and-turing/turing-1950-computing-machinery-and-intelligence-copeland.pdf.enc), *Computing Machinery and Intelligence* ([doi:10.1093/oso/9780198250791.003.0017](https://doi.org/10.1093/oso/9780198250791.003.0017))
+- [Wilhelm and Engle 2005](/sources/ai-foundations/intelligence-and-turing/wilhelm-2005-handbook-of-understanding-and-measuring-intelligence.pdf.enc), *Handbook of Understanding and Measuring Intelligence*
+- [Mahowald et al. 2024](/sources/language/language-and-llms/mahowald-2024-dissociating-language-and-thought-in-llms.pdf.enc), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
+- [Stojnić and Lepore 2025](/sources/language/linguistics/stojnic-2025-oxford-handbook-of-contemporary-philosophy-of-language.pdf.enc), *The Oxford Handbook of Contemporary Philosophy of Language* ([doi:10.1093/oxfordhb/9780192856852.001.0001](https://doi.org/10.1093/oxfordhb/9780192856852.001.0001))

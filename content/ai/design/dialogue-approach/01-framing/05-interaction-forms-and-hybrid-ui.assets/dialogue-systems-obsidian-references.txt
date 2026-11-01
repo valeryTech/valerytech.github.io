@@ -1,0 +1,395 @@
+# Dialogue systems versus broader human–AI task assistants
+
+## Executive summary
+
+**Yes — it is defensible to call “dialogue system” misleading when it is used as the top-level category for the kind of system you are describing.** The term is still useful for a system, subsystem, or research problem in which turn-taking natural-language interaction is central. It becomes too narrow for modern assistants whose main purpose is to help a person accomplish work across application state, APIs, workflows, direct manipulation, generated interfaces, notifications, and background activity.
+
+The clearest pattern in practitioner sources from roughly 2016–2026 is a move **up one level of abstraction**. Older platforms were commonly described through *dialogue*, *intents*, *slots*, and *conversation flows*. Current product families increasingly use **assistant, copilot, agent, action, skill, workflow, tool, and app**. Conversation remains important, but it is increasingly treated as one way of expressing intent and coordinating work. Google’s own older conversation-design guidance already said that conversation is “inherently multimodal”; Amazon says Alexa should be “voice-first, but not voice-only”; Apple combines Siri with system-wide actions, snippets, Spotlight and on-screen context; Microsoft explicitly moves complex work from chat into a side-by-side workspace; OpenAI’s Apps SDK separately exposes an app’s **chat behaviour and UI**; IBM separates conversational interaction from skills and automations. [1](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers")
+
+The shift is even clearer in 2025–2026 product language. Google describes Gemini as a personal AI assistant that interacts with apps and services and, by 2026, as increasingly **agentic and proactive**. Microsoft describes Copilot taking “multi-step, app-native actions” directly on documents and calls it a collaborator that helps get work done. Apple describes Siri AI as helping users find information **and take action across apps**. Slack says people “team up with agents” to get work done. Amazon describes Alexa+ as a personal AI assistant “that gets things done”. These are descriptions of **purpose and agency**, rather than of dialogue architecture. [2](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/ "The Assistant experience on mobile is upgrading to Gemini \| Google")
+
+This does **not** mean dialogue has become irrelevant. The more precise distinction is:
+
+> **Dialogue is an interaction form, not necessarily a single modality.** A dialogue can itself use speech, text, visual cards, buttons and other modalities. What should usually sit above it in the taxonomy is the **assistance relationship and task model**: what the system helps the user accomplish, what it is authorised to do, and how task execution is controlled.
+
+That distinction is close to where your earlier analysis was heading: separate the assistant’s capabilities and process control from its particular interface. [^original-file]
+
+My recommendation is therefore to use **AI task assistant** or, where collaboration is important, **human–AI task assistance system** as the broad practitioner category. Define a particular system along three layers:
+
+**assistance purpose and authority → domain/task execution → interaction and surfaces.**
+
+“Dialogue system”, “conversational UI”, “workflow-based”, “mixed-initiative”, “copilot”, and “agent” then describe different properties within those layers rather than competing names for the whole thing.
+
+## What practitioners actually call these systems
+
+Over the last decade, industry terminology has gradually separated **the product role**, **what it can do**, and **how the user interacts with it**.
+
+Google’s historical Assistant material is a useful starting point. Its conversation-design guide explicitly defines conversation design as a design language and says that its core concerns are “the flow of the conversation and its underlying logic”. At the same time, it warns against equating conversation with speech: conversation is “inherently multimodal”, incorporating interaction design, visual design, motion, audio and writing. [3](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers") This is broader than “a text chatbot”, but it still places **conversation at the organising centre of the UX**.
+
+The terminology around the current Gemini product has moved considerably. In March 2025 Google described an assistant as something that should be personal, aware of the surrounding world and able to interact with existing apps and services. Google then framed the replacement of the classic mobile Google Assistant by Gemini as a change in what assistance itself can mean. By May 2026 it was explicitly talking about an increasingly **agentic**, proactive assistant, including daily briefs and an agent working on tasks over time. [4](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/ "The Assistant experience on mobile is upgrading to Gemini \| Google")
+
+Microsoft shows a similar evolution. Current Copilot documentation still describes chat as an important interface, but its product vocabulary centres on **Copilot, agents, actions, tools, apps and workflows**. In Office, Copilot now performs multi-step edits directly in application canvases. Microsoft's own description says the early product was comparatively passive because it could answer questions without reliably commanding applications; the newer system can act on documents, worksheets and presentations while keeping the user able to review changes. [5](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft")
+
+IBM makes the separation almost explicit. watsonx Orchestrate describes assistants in terms of knowledge, toolsets and behaviour. Its assistant builder can answer questions, guide people through existing digital journeys, or complete tasks on their behalf. IBM calls this **“Show, Tell, Do”** and separately describes skills and automations that invoke back-end systems. [6](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder "AI Assistant Builder — watsonx Orchestrate \| IBM") Rasa goes further architecturally: CALM explicitly “separates language from logic”; the model understands the request while structured, versioned flows determine what happens. [7](https://rasa.com/calm "Rasa CALM \| Rasa")
+
+The vocabulary therefore maps better as follows:
+
+| Term | What it primarily names | Typical overlap | Recommended interpretation |
+|---|---|---|---|
+| **Dialogue system** | A system organised around sequences of linguistic interaction | Task-oriented dialogue, spoken dialogue, chat | Use where turn-taking dialogue is structurally central, or for the dialogue component of a larger assistant. Academic use remains strong. [8](https://aclanthology.org/2023.findings-acl.464/ "Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System \| ACL Anthology") |
+| **Task-oriented dialogue system** | Dialogue intended to accomplish defined user goals | Intents, slots, dialogue state, APIs/databases | Established academic category. It can execute tasks, but it still assumes dialogue as the organising interaction. [9](https://aclanthology.org/2023.findings-acl.464/ "Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System \| ACL Anthology") |
+| **Conversational UI / conversational interface** | An interface in which natural-language interaction is prominent | Chatbots, voice UI, assistants | Best treated as an **interaction pattern**, not as a capability class. NN/g explicitly defines an AI chatbot as a conversational interface. [10](https://www.nngroup.com/articles/ai-chat-not-the-answer/ "AI Chat Is Not (Always) the Answer \| Nielsen Norman Group") |
+| **Assistant / virtual assistant** | A product role: helping a person | Siri, Gemini, Alexa, Erica, enterprise assistants | Broad and increasingly multimodal/action-capable. It says little about autonomy or implementation. [11](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/ "Siri AI, a profoundly more capable and personal assistant, is here \| Apple") |
+| **Copilot** | Embedded assistance alongside a person doing work | Chat, canvas manipulation, suggestions, agents | Practitioner/product term implying human involvement. It has no stable technical boundary. Microsoft's implementation now spans chat and direct app actions. [5](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft") |
+| **Agent** | A system given some capacity to choose actions or pursue a goal | Tools, planning, autonomy, background execution | Current practitioner term, but highly overloaded: implementations range from controlled flows with tools to substantially autonomous processes. Google, Slack, IBM and Rasa all use it somewhat differently. [12](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/ "The Gemini app becomes more agentic, delivering proactive, 24/7 help \| Google") |
+| **Action / skill / tool** | A capability available to a system | API operation, domain command, function | Usually below the assistant level. IBM calls executable automations “skills”; Alexa traditionally maps intents to actions; Apple exposes app actions through App Intents. [13](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder "AI Assistant Builder — watsonx Orchestrate \| IBM") |
+| **Workflow / flow-based assistant** | How task execution is controlled | Deterministic business process, structured task | An architectural property. Rasa Flows and Dialogflow CX are examples; it does not imply any particular UI. [14](https://rasa.com/calm "Rasa CALM \| Rasa") |
+| **Mixed-initiative** | How initiative is distributed between human and system | Suggestions, automation, intervention, direct manipulation | An interaction/control relationship, not a product type. Its HCI meaning is substantially broader than chat. [15](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/ "Principles of Mixed-Initiative User Interfaces \| Microsoft Research") |
+| **Hybrid / multimodal interface** | Combination of interaction forms or modalities | Dialogue + form/table/canvas/touch | UI description. Amazon, Google, Apple and Microsoft all explicitly combine conversational interaction with visual/direct controls. [16](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design") |
+| **Task assistant** | Assistance organised around user work or goals | Workflow assistant, copilot, action-capable assistant | Useful practitioner umbrella, although it is less standardised as an academic label. Microsoft Research also uses “task assistance” for systems that combine AI, perception and procedural guidance. [17](https://www.microsoft.com/en-us/research/blog/sigma-an-open-source-mixed-reality-system-for-research-on-physical-task-assistance/?lang=ja "SIGMA: An open-source mixed-reality system for research on physical task assistance \| Microsoft Research") |
+
+The important finding is that **these terms are not clean synonyms**. They mostly describe different axes. Calling something a *conversational agent* tells us very little about whether it can change application state. Calling it *workflow-based* tells us very little about whether the user interacts by speech, forms or direct manipulation. Calling it *mixed-initiative* tells us how control is shared, while leaving both its task domain and interface open.
+
+That is why trying to select one term from this list as the universal “class” creates confusion.
+
+## Academic categories and where practitioners diverge
+
+Academic dialogue-system research and current practitioner architecture still overlap considerably, but they put their conceptual boundaries in different places.
+
+**Task-oriented dialogue is fundamentally goal-centred, but dialogue remains the research object.** Recent ACL work characterises task-oriented dialogue systems as helping users achieve defined goals by tracking conversational state and producing suitable responses. Other work notes that conventional TOD systems rely on domain-specific APIs or databases. So the academic category has never meant “mere conversation”: back-end operations and structured domain state have long been part of it. [9](https://aclanthology.org/2023.findings-acl.464/ "Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System \| ACL Anthology")
+
+That explains why a wallet assistant that identifies `change_transaction_category`, obtains parameters and invokes an API can legitimately be studied as a task-oriented dialogue system **when the interaction is organised as dialogue**. Modern TOD research still studies dialogue state, structured ontologies, intent detection and slot labelling, even as end-to-end models replace some classical modules. [18](https://aclanthology.org/2023.tacl-1.5/ "OPAL: Ontology-Aware Pretrained Language Model for End-to-End Task-Oriented Dialogue \| ACL Anthology")
+
+The limitation appears when the product stops being organised primarily as dialogue. Consider:
+
+> User selects three transactions → AI recognises a pattern → application proposes “make recurring” → a structured editor opens → user modifies dates directly → application validates → user presses Confirm → assistant later sends a notification.
+
+There may be a sentence of natural language at the beginning and another at the end. Classifying the **whole system** as a dialogue system privileges a small part of the interaction over its resource model, action semantics, workflow, state transition, approval mechanism and direct-manipulation UI.
+
+Academic **mixed-initiative interaction** provides a broader foundation. The classic HCI account treats mixed initiative as combining automation with direct user control and allowing human and machine to contribute at suitable points. Microsoft's continuing research describes situated interaction as collaboration over both verbal and non-verbal channels, and its SIGMA task-assistance project combines step-based procedures, LLM answers, vision and spatial interaction. [19](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/ "Principles of Mixed-Initiative User Interfaces \| Microsoft Research") This maps closely to the system you have been conceptualising.
+
+There is therefore a useful division:
+
+| Research/practice tradition | Primary unit of analysis | Where your broader assistant fits |
+|---|---|---|
+| **Task-oriented dialogue** | Goal-directed sequence of conversational turns and dialogue state | Covers the natural-language coordination part well; too narrow when interaction moves substantially into direct UI or proactive execution. [20](https://aclanthology.org/2023.emnlp-main.363/ "End-to-end Task-oriented Dialogue: A Survey of Tasks, Methods, and Future Directions \| ACL Anthology") |
+| **Conversational UX** | How people communicate with systems using conversational conventions | Useful for language, turn-taking, repair and persona. Google explicitly broadens it to multimodal conversation. [3](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers") |
+| **Mixed-initiative HCI** | Allocation of initiative and control between user and automation | Strong match for systems that suggest, prepare, ask, wait, execute and allow direct correction. [15](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/ "Principles of Mixed-Initiative User Interfaces \| Microsoft Research") |
+| **Assistant platforms** | Product that mediates information, applications and actions | Increasingly closest to the broad product architecture: Siri, Gemini, Alexa+, Copilot, ChatGPT apps, Slack agents. [21](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/ "Siri AI, a profoundly more capable and personal assistant, is here \| Apple") |
+| **Workflow / process architectures** | Controlled execution of a business task | Captures bounded, auditable execution particularly well; Rasa explicitly separates language interpretation from deterministic flows. [7](https://rasa.com/calm "Rasa CALM \| Rasa") |
+| **Agent architectures** | Goal pursuit and action selection, often through tools | Captures increasing machine initiative, but current practitioner terminology has no stable autonomy threshold. [22](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/ "The Gemini app becomes more agentic, delivering proactive, 24/7 help \| Google") |
+
+This produces an important apparent contradiction. **Academics are correct to call many assistants dialogue systems**, because the research question may genuinely concern dialogue state or language-based task completion. **Practitioners are also correct to stop using dialogue as the main product category**, because the deployed product increasingly coordinates work through several interaction mechanisms.
+
+The level of abstraction differs.
+
+A useful analogy is a web application. “HTTP application” could be technically meaningful when studying its communication protocol, while being a poor top-level classification of an accounting product. In the same way, “dialogue system” may accurately describe a core interaction mechanism without adequately describing **what the overall system is for**.
+
+## Product comparison
+
+The current products make the shift particularly visible. The table intentionally compares what vendors themselves emphasise rather than trying to impose one academic definition.
+
+| Product family                | Primary purpose in vendor framing                                                                                                                                                                                                                                                                                                             | Modalities and surfaces                                                                                                                                                                                                                                                                                                     | Task execution                                                                                                                                                                                                                                                                                                                                                                        | Proactive behaviour                                                                                                                                                                                                                                                                                                                              | UI / API integration                                                                                                                                                                                                                                                                                                                                                            | Practitioner language                                                                                                                                                                                                                                                                                                 |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Google Assistant → Gemini** | Personal AI assistance across information, productivity and everyday tasks. Google says an assistant should interact with the apps and services a person already uses. [23](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/ "The Assistant experience on mobile is upgrading to Gemini \| Google") | Text, voice, camera/screen sharing, visual answers and interactive UI across phones and other devices. [24](https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/ "Google’s Gemini app hits 1 billion monthly active users \| Google")                                                       | Gemini can perform app actions; Google reported automation across 40+ popular apps in 2026 and introduced Spark for longer-running work. [25](https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/ "Google’s Gemini app hits 1 billion monthly active users \| Google")                                                                               | Strong: proactive daily briefs and agent/background activity are explicit parts of the 2026 direction. [26](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/ "The Gemini app becomes more agentic, delivering proactive, 24/7 help \| Google")                                                               | Connected Google apps/services; Android system integration; agent status can appear through Android Halo. [27](https://blog.google/products-and-platforms/platforms/android/android-halo/ "Android Halo helps you stay in sync with your AI agent \| Google")                                                                                                                   | **assistant, personal AI assistant, agentic, agent**. The classic mobile Google Assistant was upgraded into Gemini. [23](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/ "The Assistant experience on mobile is upgrading to Gemini \| Google")                            |
+| **Apple Siri AI**             | Help users find information and “get things done throughout the day”. [28](https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/ "Apple introduces Siri AI, a profoundly more capable and personal assistant \| Apple")                                                           | Voice, Siri app, system UI, Spotlight/context menus, on-screen awareness, visual intelligence and interactive snippets. [29](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/ "Siri AI, a profoundly more capable and personal assistant, is here \| Apple")        | System-wide and cross-app actions: Apple gives examples such as finding information in messages/email, editing and sharing photos, or adding information to other apps. [30](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/ "Siri AI, a profoundly more capable and personal assistant, is here \| Apple")                  | Contextual suggestions exist across Apple's assistant architecture; Siri AI is deeply integrated into system context, though its current public framing centres more on contextual action than autonomous background work. [31](https://developer.apple.com/design/human-interface-guidelines/siri/ "Siri \| Apple Developer Documentation")     | App Intents expose app entities and actions to Siri and other system experiences; snippets provide compact interactive UI. [32](https://developer.apple.com/documentation/AppIntents/AppIntent "AppIntent \| Apple Developer Documentation")                                                                                                                                    | **personal assistant, conversational assistant, app actions, App Intents, snippets**. [28](https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/ "Apple introduces Siri AI, a profoundly more capable and personal assistant \| Apple")                   |
+| **Amazon Alexa+**             | A “personal AI assistant that gets things done”. [33](https://www.aboutamazon.com/news/devices/alexa-plus-canada-launch "Alexa+ now fully available across Canada, free for Prime members \| Amazon")                                                                                                                                         | Voice, Alexa app, web, smart displays and touch. Amazon now supports experiences where browsing and purchasing can be done by voice, touch, or both. [34](https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us "How to get Alexa Plus free with Prime membership \| Amazon")                 | Smart-home control, shopping and services; classic Alexa skills expose intents/actions while Alexa+ expands multi-service task completion. [35](https://www.aboutamazon.com/news/devices/alexa-plus-samsung-bmw-bosch-oura-integrations "Amazon’s Alexa+ expands to Samsung TVs, BMWs, Oura rings and more \| Amazon")                                                                | Proactive Events are an explicit Alexa Skills API capability; routines and notifications extend interaction outside a request-response turn. [36](https://developer.amazon.com/en-US/docs/alexa/smapi/proactive-events-api.html "About Proactive Events \| Alexa Skills Kit")                                                                    | Skills/APIs plus visual Presentation Language and device integrations. Amazon's design rule is “voice-first, but not voice-only”. [37](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design")                                                                                                              | **assistant, skill, intent, action, multimodal, voice-first**. [38](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design")                                                                                                                       |
+| **Microsoft 365 Copilot**     | Collaborator for getting work done inside work applications. [5](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft")                            | Chat, inline widgets, side-by-side workspace and the application's own document/canvas UI. [39](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") | Multi-step, app-native actions directly in Word, Excel and PowerPoint; agents and workflows extend this to business processes. [40](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft") | Copilot Actions can automate repetitive work; Microsoft also frames agents as operating within business processes. [41](https://www.microsoft.com/en-us/copilot/blog/2024/11/19/introducing-copilot-actions-new-agents-and-tools-to-empower-it-teams/ "Introducing Microsoft Copilot actions, new agents, and tools to empower IT \| Microsoft") | Deep integration with Office canvases, MCP apps, tools and enterprise APIs. Complex editing is deliberately moved into a structured workspace. [42](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") | **Copilot, collaborator, agent, action, workflow, tool, app**. [43](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft") |
+| **ChatGPT Apps**              | Bring external capabilities, data and applications into ChatGPT so users can accomplish work in context. [44](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk "Build with the Apps SDK \| OpenAI Help Center")                                                                                                           | Natural language plus interactive interfaces embedded in chat. [45](https://openai.com/fil-PH/index/introducing-apps-in-chatgpt/ "Introducing apps in ChatGPT and the new Apps SDK \| OpenAI")                                                                                                                              | Apps connect to external tools/data and back ends via MCP; developers define app logic as well as UI. [46](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk "Build with the Apps SDK \| OpenAI Help Center")                                                                                                                                                      | ChatGPT can surface an app contextually; the Apps model itself is chiefly interaction-driven rather than an assertion that every app runs proactively. [45](https://openai.com/fil-PH/index/introducing-apps-in-chatgpt/ "Introducing apps in ChatGPT and the new Apps SDK \| OpenAI")                                                           | Apps SDK explicitly separates and supports **chat behaviour, UI, and backend connectivity**. [46](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk "Build with the Apps SDK \| OpenAI Help Center")                                                                                                                                                         | **app, chat, interface, tool, MCP, action**. This is a clear example of chat becoming a host for richer application interaction. [47](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk "Build with the Apps SDK \| OpenAI Help Center")                                                           |
+| **Slack AI agents**           | “Team up with agents so you can get work done faster”, embedding AI in collaborative work. [48](https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack "Work with AI agents in Slack \| Slack")                                                                                                                          | Channels, DMs, agent sessions and Slack work surfaces. [48](https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack "Work with AI agents in Slack \| Slack")                                                                                                                                            | Capabilities vary by agent; Slack's agent model supports agents that suggest or take actions inside the flow of work. [49](https://slack.com/ai-agents "Slack AI Agents with Agentforce & Agentic AI \| Slack")                                                                                                                                                                       | Depends on the agent and associated workflows; Slack Workflow Builder also supports AI-generated workflows and agent-related steps. [50](https://slack.com/help/articles/32843655109395-Use-AI-to-build-Slack-workflows "Use AI to build Slack workflows \| Slack")                                                                              | Slack objects, app scopes, workflows and third-party/Salesforce agents. [51](https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack "Work with AI agents in Slack \| Slack")                                                                                                                                                                               | **agent, assistant, teammate, workflow**. [48](https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack "Work with AI agents in Slack \| Slack")                                                                                                                                                   |
+| **Intercom Fin**              | Resolve customer-support work across channels and hand off when appropriate. [52](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained "Fin AI Agent explained \| Intercom Help")                                                                                                                                         | Messenger/chat, phone/voice, Slack and Discord; workflows may use structured interaction as well as messages. [52](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained "Fin AI Agent explained \| Intercom Help")                                                                                      | Fin can participate in Workflows for triage and other automated support processes, with human handoff. [53](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained "Fin AI Agent explained \| Intercom Help")                                                                                                                                                       | Strong: Intercom supports proactive Fin conversations triggered by behavioural signals such as failed actions or abandoned checkout. [52](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained "Fin AI Agent explained \| Intercom Help")                                                                                    | Workflows, support systems, analytics integrations and human support queues. [52](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained "Fin AI Agent explained \| Intercom Help")                                                                                                                                                                           | **AI Agent, conversation, Workflow, automation, handoff**. [52](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained "Fin AI Agent explained \| Intercom Help")                                                                                                                                   |
+| **Bank of America Erica**     | Financial self-service and account management within digital banking.                                                                                                                                                                                                                                                                         | Voice, text and screen interaction inside the banking application. [54](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement")                                                                                                                                | Can expose account balances, initiate transfers and pay bills; capabilities depend on account/customer eligibility. [54](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement")                                                                                                                                         | Explicitly proactive: Erica may initiate an interaction or surface suggestions and financial insights, such as an upcoming card payment. [54](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement")                                                                               | Embedded in Bank of America's digital banking state and transaction functions; screen information is part of the confirmation process. [54](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement")                                                                                                                | **Virtual Financial Assistant, bot, AI, intent**. Notably, its current terms say it uses predefined responses rather than a generative LLM. [54](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement")                                                 |
+
+Several observations follow from this comparison.
+
+First, **action capability does not imply agentic architecture**. Erica can initiate transfers and payments while Bank of America explicitly describes an intent-analysis and predefined-response system. [54](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement") Conversely, a research or investigative agent might autonomously choose many steps while having no permission to change authoritative business data.
+
+Second, **a hybrid UI does not make a system less conversational** in vendor terminology. Amazon explicitly includes touch in a voice-first experience; Google calls conversation inherently multimodal; Microsoft keeps conversation as the source of intent while opening a parallel workspace; Apple says its visual snippets should make sense visually alongside voice interaction. [55](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design")
+
+Third, the newest products increasingly cross a boundary that traditional dialogue-system terminology does not naturally express: **they continue doing work outside the immediate turn**. Google's proactive briefs and Spark, Intercom's behavioural triggers, Alexa's proactive events and Erica's unsolicited account insights are all examples. [56](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/ "The Gemini app becomes more agentic, delivering proactive, 24/7 help \| Google") A turn-taking model of dialogue alone cannot adequately describe that behaviour.
+
+## Dialogue, hybrid UI, and direct interaction
+
+Practitioner guidance strongly supports treating interaction form as a design choice made **within a task**, sometimes changing from step to step.
+
+The strongest current example is Microsoft's Copilot UI guidance. Microsoft recommends inline conversational widgets for previews, confirmations, simple actions and quick decisions. It explicitly says that when a task involves multi-step editing, iteration, comparison, persistent state, tables, canvases, dashboards or structured inputs, designers should move into a side-by-side workspace while preserving conversational context. It also warns designers never to rely on model-generated text alone to communicate application state. [39](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn")
+
+That is almost exactly the architecture you were describing for a wallet:
+
+**“Change these subscriptions.”**
+
+→ language establishes the goal  
+→ assistant identifies the relevant records  
+→ table shows proposed changes  
+→ user directly edits two rows  
+→ validation runs  
+→ confirmation control authorises execution  
+→ backend changes state  
+→ assistant explains the outcome
+
+Calling that entire interaction a *dialogue* obscures much of what is happening. Calling dialogue **one coordination mechanism inside a task-assistance interaction** handles it cleanly.
+
+Amazon arrives at the same conclusion from a voice-first direction. Its Alexa design guide says that touch should be used where voice is poorly suited, giving long lists as an example, and says a display can make information easier to present and tasks easier to accomplish through touch. [37](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design")
+
+Apple's snippet guidance follows a similar pattern. Siri tasks can produce compact interactive views with buttons and other controls; Apple advises designers to communicate a snippet's purpose visually and not depend on dialogue text for the UI to make sense. Its WWDC material likewise describes interactive snippets as useful for quick, routine tasks while recognising dialogue as particularly important in voice-first contexts. [57](https://developer.apple.com/design/human-interface-guidelines/snippets "Snippets \| Apple Developer Documentation")
+
+NN/g reaches the broader UX conclusion directly. It defines AI chat as a **conversational interface**, then argues that teams should start from user needs rather than defaulting to chat. Its alternatives include personalisation, predictive assistance and automation, and it states that AI need not be conversational or even visible in the interface to add value. [10](https://www.nngroup.com/articles/ai-chat-not-the-answer/ "AI Chat Is Not (Always) the Answer \| Nielsen Norman Group")
+
+Taken together, practitioner guidance supports these design choices:
+
+| Task property | Interaction to prioritise | Why |
+|---|---|---|
+| User has an ambiguous, high-level goal | **Dialogue / natural language** | Good for articulating intent without knowing the application's command structure; allows clarification and contextual follow-up. Google and Microsoft both place value on this flexibility. [58](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers") |
+| User needs a quick explanation or simple action | **Dialogue with compact controls** | A short answer plus Confirm/Edit/Apply preserves conversational continuity without forcing unnecessary navigation. [59](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") |
+| User must choose from many comparable objects | **Structured visual UI** | Lists, tables and visible alternatives reduce the cost of repeatedly articulating choices in language. Amazon explicitly recommends touch for cases such as long lists. [37](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design") |
+| User must make precise edits | **Direct manipulation / form / canvas** | Persistent visible state and precise input are more suitable than serial conversation. Microsoft recommends an expanded workspace for editing, configuration and structured input. [39](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") |
+| Action has significant consequences | **Proposal + explicit review/confirmation UI** | People need to see what is about to change and retain final control. Microsoft's current guidance explicitly requires visibility, confirmation for sensitive operations and transparent outcomes. [39](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") |
+| System notices a condition before the user asks | **Proactive notification or contextual suggestion** | There need not be a dialogue turn until the person decides to engage. Erica, Fin, Alexa and Gemini all provide examples. [60](https://secure.bankofamerica.com/login/enroll/displaysa.go "Bank of America \| Online Banking \| Service Agreement") |
+| Task takes time or can run in the background | **Agent/status surface + resumable interaction** | Continuous turn-taking would be artificial; progress/state should remain visible while the task proceeds. Google's Android Halo is explicitly designed to expose agent status without interrupting the user's current activity. [61](https://blog.google/products-and-platforms/platforms/android/android-halo/ "Android Halo helps you stay in sync with your AI agent \| Google") |
+
+A particularly useful practitioner pattern can therefore be expressed as:
+
+> **Language for intent → structured representation for review → direct interaction for precision → explicit authority for consequential action → language or UI for explanation and recovery.**
+
+This is not a rule that conversation should always appear first. Selection of an object, a detected event, a button or an application state can initiate exactly the same task. Rasa's separation between language and business logic is relevant here: an LLM can interpret language where needed while structured flows determine execution. [7](https://rasa.com/calm "Rasa CALM \| Rasa")
+
+This also clarifies a subtle terminology issue. I would **not** call dialogue simply a “modality”. Speech, text, touch and visual display are modalities. Dialogue is better understood as an **interaction structure** — often turn-taking communication — which can span several modalities. Google explicitly uses this broader interpretation when it calls conversation inherently multimodal. [3](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers")
+
+## Recommended terminology and three-layer model
+
+For practitioner work, I recommend the following definition:
+
+> **AI task assistant:** an interactive AI system that helps a person understand, decide about, prepare, or carry out tasks in a domain by interpreting user intent and context, using defined or dynamically selected capabilities, and coordinating task execution with the person through one or more interaction forms. Those forms can include natural-language dialogue, direct manipulation, structured or generated interfaces, and proactive interactions.
+
+Where you specifically want to emphasise cooperation, **human–AI task assistance system** is an even more neutral research term. “Task assistant” should be understood broadly enough to include an informational task such as explaining an electricity bill and an action task such as changing a recurring payment.
+
+I would classify each system using three layers.
+
+```mermaid
+flowchart TB
+    A["Assistance purpose and authority<br/><br/>What is the user's task?<br/>Inform • explain • recommend • prepare • execute • delegate<br/>Who may initiate and who authorises change?"]
+
+    B["Domain and execution model<br/><br/>Resources / entities / state<br/>Actions • skills • tools • APIs<br/>Rules • permissions • workflows • planners<br/>Preconditions • effects • confirmation"]
+
+    C["Interaction and surfaces<br/><br/>Dialogue • direct manipulation • generated / embedded UI<br/>Forms • buttons • tables • canvas • notifications<br/>Text • voice • visual • touch"]
+
+    A --> B
+    B --> C
+
+    C1["A single task may move<br/>between interaction forms"]
+    C --> C1
+```
+
+**The first layer — assistance purpose and authority — classifies what relationship the system has to the user's work.** A practical capability progression is **inform → recommend → prepare → execute → delegate**. Initiative is a separate property: reactive, suggestive/proactive, or delegated. This layer distinguishes your Fuse-style informational assistant from an assistant that can prepare or commit state changes even when both use exactly the same chat component.
+
+**The second layer — domain and execution model — describes what the system knows how to operate on and how work happens.** This is where your resource/domain model, ontology, task catalogue, action definitions, tools, permissions, workflows and planners belong. Rasa's “language versus logic” split, IBM's skills and automations, Apple's App Intents and Alexa's action/intents all provide practitioner precedents for keeping executable capabilities conceptually distinct from the conversation itself. [62](https://rasa.com/calm "Rasa CALM \| Rasa")
+
+The same layer lets you distinguish two architectures that are frequently conflated:
+
+`supported task → prescribed application flow → execution`
+
+versus
+
+`user goal → model chooses/composes actions → observes results → adapts plan`.
+
+Both may use the same domain APIs. The first is primarily **workflow-based assistance**; the second has greater **agentic process control**.
+
+**The third layer — interaction and surfaces — says how the collaboration occurs at a particular moment.** It includes dialogue but does not privilege it. A user might start a task through text, inspect a proposal in a table, change one parameter with a form control, approve it with a button and later receive a notification. Current Microsoft, Apple, Amazon, Google and OpenAI interfaces all contain variants of this pattern. [63](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn")
+
+This model also tells us where the common names belong:
+
+**assistant / copilot / agent** mostly describe layer one and the amount of initiative;  
+**workflow / skill / action / tool** mostly describe layer two;  
+**dialogue / conversational UI / multimodal / hybrid UI** mostly describe layer three;  
+**mixed-initiative** cuts across layers one and three because it specifies how initiative and control pass between human and machine.
+
+That is much cleaner than making “dialogue system”, “copilot”, “workflow assistant” and “agent” mutually exclusive classes.
+
+## Open debates and practical implications
+
+There is still no stable practitioner vocabulary for these systems. Several ambiguities are likely to persist.
+
+**“Agent” has become broader than a technical definition.** IBM uses agent language alongside explicit toolsets and guardrails; Rasa markets agents whose consequential logic may still be defined by deterministic flows; Slack uses “agent” for AI participants that behave like workplace teammates; Google uses “agentic” for increasing action-taking and background behaviour. [64](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder "AI Assistant Builder — watsonx Orchestrate \| IBM") Consequently, “agent” alone does not tell a designer how freely a model chooses steps, what state it may change, or when human approval is required.
+
+**“Copilot” is semantically useful but technically weak.** It communicates a collaborative relationship and usually implies a person remains involved. Microsoft's own Copilot now ranges from answering questions to applying multi-step edits directly in an application's canvas, so the term no longer corresponds to a single automation level. [5](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft")
+
+**“Conversational” can mean either language-first interaction or a much broader interaction philosophy.** Google says conversation itself is multimodal; Microsoft calls its rich widgets extensions of conversation; Amazon describes multimodal experiences as complementing voice. That means one practitioner's “conversational system” may already include buttons, cards and direct interaction that another practitioner would call a hybrid interface. [65](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers")
+
+**There is also a real design disagreement about whether conversation should remain the organising surface.** Microsoft's current Copilot UI guidance is explicitly “conversation-first”, even while adding richer workspaces. [39](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") NN/g takes the stronger position that teams should question whether chat belongs in the product at all and consider non-conversational AI interventions. [10](https://www.nngroup.com/articles/ai-chat-not-the-answer/ "AI Chat Is Not (Always) the Answer \| Nielsen Norman Group") Both positions are internally coherent: one concerns designing applications *inside a conversational host*; the other asks whether the product should use a conversational host in the first place.
+
+These ambiguities have concrete implications for requirements. “Build a dialogue system” encourages requirements such as supported utterances, dialogue states, fallbacks and response generation. “Build a task assistant” forces additional questions: **what user outcomes are supported; what domain objects can be inspected or changed; what actions exist; when are they valid; how much process control belongs to the model; when may the system initiate work; what must the user review; and which interaction surface is appropriate at each point?** Practitioner platforms increasingly expose exactly these concerns through actions, skills, tools, workflows, permissions and structured UI. [66](https://rasa.com/calm "Rasa CALM \| Rasa")
+
+The same change affects evaluation. A dialogue-centred evaluation naturally focuses on understanding, response quality, turns, dialogue state and goal completion — all established concerns in task-oriented dialogue research. [8](https://aclanthology.org/2023.findings-acl.464/ "Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System \| ACL Anthology") A broader task assistant also needs evaluation of **correct target/resource selection, correctness of proposed state changes, authorisation, unintended side effects, human correction effort, visibility of state, confirmation behaviour, recovery, task duration, proactive-intervention quality and final application state**. Microsoft's insistence on explicit state and reviewable actions, and Rasa's insistence on inspectable business logic, are practitioner signals pointing in this direction. [67](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn")
+
+For naming, I would therefore use:
+
+> **Human–AI task assistance** as the conceptual area; **AI task assistant** as the system/product category; **informational, advisory, action-preparing, supervised-execution, or delegated** to describe authority; **workflow-based or agentic** to describe execution control; and **dialogue, direct UI, hybrid, or proactive** to describe interaction.
+
+Under that terminology, your wallet example could be described precisely as a **mixed-initiative, workflow-based AI task assistant with supervised state-changing actions and a hybrid interface**. A Fuse-style read-only product could be an **informational task assistant with read-only domain access and a conversational interface**. Neither has to change category merely because one screen happens to use chat and another uses a form.
+
+That is the central reason I would avoid **“dialogue system” as your top-level term**. The phrase remains valid within NLP and for conversation-centred products, but it makes the interaction mechanism sound like the defining purpose. The broader systems emerging in practice are better understood as systems for **human–AI coordination around tasks and state**, with dialogue available when it is a useful way to coordinate that work.
+
+## Sources and limitations
+
+The research prioritised official platform documentation, product announcements and design guidance from Google, Microsoft, Apple, Amazon, IBM, OpenAI, Slack/ Salesforce and Bank of America; it then used Rasa, Intercom and Nielsen Norman Group as practitioner perspectives, with ACL and Microsoft Research for the academic comparison. Most practitioner evidence is from 2016–2026, with Horvitz's 1999 mixed-initiative work retained as a foundational exception because the term's original HCI meaning is directly relevant. [15](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/ "Principles of Mixed-Initiative User Interfaces \| Microsoft Research")
+
+| Source | Why it is useful |
+|---|---|
+| **Google — Conversation Design** | A strong historical practitioner statement of the conversation-centred view, while explicitly arguing that conversation can be multimodal. It exposes both the strength and the limitation of “dialogue” as the organising concept. [3](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers") |
+| **Google — Google Assistant to Gemini / 2026 Gemini direction** | Documents the vocabulary shift from natural-language assistant towards a personal, app-integrated, proactive and agentic assistant. [4](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/ "The Assistant experience on mobile is upgrading to Gemini \| Google") |
+| **Microsoft — Copilot MCP UI guidelines** | The clearest current practitioner treatment of dialogue and structured UI as complementary: inline chat for simple work; dedicated workspace for editing, comparison and persistent state. [39](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines "User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot \| Microsoft Learn") |
+| **Microsoft — agentic Copilot in Office** | Explicitly frames the evolution from answering/suggesting towards changing the application canvas and completing multi-step work. [5](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/ "Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available \| Microsoft") |
+| **Apple — Siri AI and App Intents/snippets guidance** | Shows an assistant built around personal context and task completion while integrating language with application actions, system context and compact direct UI. [68](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/ "Siri AI, a profoundly more capable and personal assistant, is here \| Apple") |
+| **Amazon — Alexa multimodal design / Alexa+** | Provides one of the most concise practitioner formulations: “voice-first, but not voice-only”; current Alexa+ framing has moved towards a personal AI assistant that gets things done. [38](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal "Be Multimodal \| Amazon Alexa Design") |
+| **IBM watsonx Orchestrate** | Separates information, guidance and doing work, and distinguishes conversational interaction from executable skills and automation. [6](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder "AI Assistant Builder — watsonx Orchestrate \| IBM") |
+| **OpenAI — Apps SDK** | Explicitly gives developers control over both chat behaviour and interface while connecting to external back ends, demonstrating conversation plus interactive application UI as separate concerns. [46](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk "Build with the Apps SDK \| OpenAI Help Center") |
+| **Rasa CALM** | Architecturally explicit separation of language interpretation from structured business logic and flows. Particularly relevant to your closed-task/workflow idea. [7](https://rasa.com/calm "Rasa CALM \| Rasa") |
+| **Nielsen Norman Group — AI Chat Is Not (Always) the Answer** | Practitioner UX argument for treating chat as one possible interface and starting from the user problem; explicitly discusses non-conversational AI alternatives. [10](https://www.nngroup.com/articles/ai-chat-not-the-answer/ "AI Chat Is Not (Always) the Answer \| Nielsen Norman Group") |
+| **ACL task-oriented dialogue research** | Establishes why “task-oriented dialogue” remains academically legitimate: dialogue systems can be goal-directed, API-backed and structured around domain state. [20](https://aclanthology.org/2023.emnlp-main.363/ "End-to-end Task-oriented Dialogue: A Survey of Tasks, Methods, and Future Directions \| ACL Anthology") |
+| **Microsoft mixed-initiative and situated-interaction research** | Supplies the broader HCI category in which automated assistance, direct manipulation, verbal/non-verbal channels and shared initiative coexist. [15](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/ "Principles of Mixed-Initiative User Interfaces \| Microsoft Research") |
+
+A few source-access limitations are worth recording. Apple's Human Interface Guidelines are heavily JavaScript-rendered in the web crawler; indexed official HIG material, WWDC material and Apple Newsroom pages were therefore used together. Some Google Assistant conversation-design documentation remains online even though the corresponding Conversational Actions platform has been sunset; I use it as **historical practitioner evidence**, not as a description of Google's current platform. [69](https://developers.google.com/assistant/conversation-design/what-is-conversation-design "Conversation Design \| Google for Developers") OpenAI's current Apps SDK documentation was available through the official Help Centre and official OpenAI pages. [46](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk "Build with the Apps SDK \| OpenAI Help Center")
+
+Overall, the evidence supports a fairly strong conclusion: **“dialogue system” is a good name for a dialogue-centred interaction system or subsystem; it is an increasingly poor umbrella for human–AI systems whose defining job is to help people understand, decide, manipulate and change domain state across multiple interfaces.** The practitioner vocabulary is converging, imperfectly, on separating the **assistant/agent role**, the **actions/workflows/tools that do the work**, and the **conversation/UI surfaces through which humans collaborate with it**.
+
+## References
+
+1. [Conversation Design | Google for Developers](https://developers.google.com/assistant/conversation-design/what-is-conversation-design)
+
+2. [The Assistant experience on mobile is upgrading to Gemini | Google](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/)
+
+3. [Conversation Design | Google for Developers](https://developers.google.com/assistant/conversation-design/what-is-conversation-design)
+
+4. [The Assistant experience on mobile is upgrading to Gemini | Google](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/)
+
+5. [Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available | Microsoft](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/)
+
+6. [AI Assistant Builder — watsonx Orchestrate | IBM](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder)
+
+7. [Rasa CALM | Rasa](https://rasa.com/calm)
+
+8. [Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System | ACL Anthology](https://aclanthology.org/2023.findings-acl.464/)
+
+9. [Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System | ACL Anthology](https://aclanthology.org/2023.findings-acl.464/)
+
+10. [AI Chat Is Not (Always) the Answer | Nielsen Norman Group](https://www.nngroup.com/articles/ai-chat-not-the-answer/)
+
+11. [Siri AI, a profoundly more capable and personal assistant, is here | Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)
+
+12. [The Gemini app becomes more agentic, delivering proactive, 24/7 help | Google](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+
+13. [AI Assistant Builder — watsonx Orchestrate | IBM](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder)
+
+14. [Rasa CALM | Rasa](https://rasa.com/calm)
+
+15. [Principles of Mixed-Initiative User Interfaces | Microsoft Research](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/)
+
+16. [Be Multimodal | Amazon Alexa Design](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal)
+
+17. [SIGMA: An open-source mixed-reality system for research on physical task assistance | Microsoft Research](https://www.microsoft.com/en-us/research/blog/sigma-an-open-source-mixed-reality-system-for-research-on-physical-task-assistance/?lang=ja)
+
+18. [OPAL: Ontology-Aware Pretrained Language Model for End-to-End Task-Oriented Dialogue | ACL Anthology](https://aclanthology.org/2023.tacl-1.5/)
+
+19. [Principles of Mixed-Initiative User Interfaces | Microsoft Research](https://www.microsoft.com/en-us/research/publication/principles-mixed-initiative-user-interfaces/)
+
+20. [End-to-end Task-oriented Dialogue: A Survey of Tasks, Methods, and Future Directions | ACL Anthology](https://aclanthology.org/2023.emnlp-main.363/)
+
+21. [Siri AI, a profoundly more capable and personal assistant, is here | Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)
+
+22. [The Gemini app becomes more agentic, delivering proactive, 24/7 help | Google](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+
+23. [The Assistant experience on mobile is upgrading to Gemini | Google](https://blog.google/products-and-platforms/products/gemini/google-assistant-gemini-mobile/)
+
+24. [Google’s Gemini app hits 1 billion monthly active users | Google](https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/)
+
+25. [Google’s Gemini app hits 1 billion monthly active users | Google](https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/)
+
+26. [The Gemini app becomes more agentic, delivering proactive, 24/7 help | Google](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+
+27. [Android Halo helps you stay in sync with your AI agent | Google](https://blog.google/products-and-platforms/platforms/android/android-halo/)
+
+28. [Apple introduces Siri AI, a profoundly more capable and personal assistant | Apple](https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/)
+
+29. [Siri AI, a profoundly more capable and personal assistant, is here | Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)
+
+30. [Siri AI, a profoundly more capable and personal assistant, is here | Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)
+
+31. [Siri | Apple Developer Documentation](https://developer.apple.com/design/human-interface-guidelines/siri/)
+
+32. [AppIntent | Apple Developer Documentation](https://developer.apple.com/documentation/AppIntents/AppIntent)
+
+33. [Alexa+ now fully available across Canada, free for Prime members | Amazon](https://www.aboutamazon.com/news/devices/alexa-plus-canada-launch)
+
+34. [How to get Alexa Plus free with Prime membership | Amazon](https://www.aboutamazon.com/news/devices/alexa-plus-available-free-prime-members-us)
+
+35. [Amazon’s Alexa+ expands to Samsung TVs, BMWs, Oura rings and more | Amazon](https://www.aboutamazon.com/news/devices/alexa-plus-samsung-bmw-bosch-oura-integrations)
+
+36. [About Proactive Events | Alexa Skills Kit](https://developer.amazon.com/en-US/docs/alexa/smapi/proactive-events-api.html)
+
+37. [Be Multimodal | Amazon Alexa Design](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal)
+
+38. [Be Multimodal | Amazon Alexa Design](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal)
+
+39. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+
+40. [Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available | Microsoft](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/)
+
+41. [Introducing Microsoft Copilot actions, new agents, and tools to empower IT | Microsoft](https://www.microsoft.com/en-us/copilot/blog/2024/11/19/introducing-copilot-actions-new-agents-and-tools-to-empower-it-teams/)
+
+42. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+
+43. [Copilot’s agentic capabilities in Word, Excel, and PowerPoint are generally available | Microsoft](https://www.microsoft.com/en-us/copilot/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/)
+
+44. [Build with the Apps SDK | OpenAI Help Center](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk)
+
+45. [Introducing apps in ChatGPT and the new Apps SDK | OpenAI](https://openai.com/fil-PH/index/introducing-apps-in-chatgpt/)
+
+46. [Build with the Apps SDK | OpenAI Help Center](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk)
+
+47. [Build with the Apps SDK | OpenAI Help Center](https://help.openai.com/en/articles/12515353-build-with-the-apps-sdk)
+
+48. [Work with AI agents in Slack | Slack](https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack)
+
+49. [Slack AI Agents with Agentforce & Agentic AI | Slack](https://slack.com/ai-agents)
+
+50. [Use AI to build Slack workflows | Slack](https://slack.com/help/articles/32843655109395-Use-AI-to-build-Slack-workflows)
+
+51. [Work with AI agents in Slack | Slack](https://slack.com/help/articles/33076000248851-Work-with-AI-agents-in-Slack)
+
+52. [Fin AI Agent explained | Intercom Help](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained)
+
+53. [Fin AI Agent explained | Intercom Help](https://www.intercom.com/help/en/articles/7120684-fin-ai-agent-explained)
+
+54. [Bank of America | Online Banking | Service Agreement](https://secure.bankofamerica.com/login/enroll/displaysa.go)
+
+55. [Be Multimodal | Amazon Alexa Design](https://developer.amazon.com/en-US/alexa/alexa-haus/design-principles/be-multimodal)
+
+56. [The Gemini app becomes more agentic, delivering proactive, 24/7 help | Google](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+
+57. [Snippets | Apple Developer Documentation](https://developer.apple.com/design/human-interface-guidelines/snippets)
+
+58. [Conversation Design | Google for Developers](https://developers.google.com/assistant/conversation-design/what-is-conversation-design)
+
+59. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+
+60. [Bank of America | Online Banking | Service Agreement](https://secure.bankofamerica.com/login/enroll/displaysa.go)
+
+61. [Android Halo helps you stay in sync with your AI agent | Google](https://blog.google/products-and-platforms/platforms/android/android-halo/)
+
+62. [Rasa CALM | Rasa](https://rasa.com/calm)
+
+63. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+
+64. [AI Assistant Builder — watsonx Orchestrate | IBM](https://www.ibm.com/products/watsonx-orchestrate/ai-assistant-builder)
+
+65. [Conversation Design | Google for Developers](https://developers.google.com/assistant/conversation-design/what-is-conversation-design)
+
+66. [Rasa CALM | Rasa](https://rasa.com/calm)
+
+67. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+
+68. [Siri AI, a profoundly more capable and personal assistant, is here | Apple](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/)
+
+69. [Conversation Design | Google for Developers](https://developers.google.com/assistant/conversation-design/what-is-conversation-design)
+
+[^original-file]: The original document included a ChatGPT-internal file citation with no public URL. The supplied PDF can be opened in Obsidian using `[[Dialogue systems versus broader human–AI task assistants.pdf|the original PDF]]` once it is added to the same vault.

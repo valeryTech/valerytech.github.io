@@ -34,7 +34,7 @@ legacy `outline/...` icons map to configured native icons. Direct native
 
 Change [conversion.py](../scripts/migrate/conversion.py), the adapter, and/or
 configuration according to the affected contract. Run migration regressions,
-`make build`, and inspect `/system-design/integrated-test-pages/callouts/` in both
+`task site:build`, and inspect `/system-design/integrated-test-pages/callouts/` in both
 profiles. The catalog source is under the configured external notes tree at
 `system-design/integrated-test-pages/callouts.md`.
 

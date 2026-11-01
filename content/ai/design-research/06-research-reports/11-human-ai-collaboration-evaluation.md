@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "11 Human-AI Collaboration Evaluation"
 description: "A proposed evaluation checklist for the human–AI unit, combining pattern-specific hidden-fact/error tests with audits of grounding, directability, review, authorization, recovery, appropriate reliance, and complementary performance."
-title: "11 Human Ai Collaboration Evaluation"
-linkTitle: "11 Human Ai Collaboration Evaluation"
+linkTitle: "11 Human-AI Collaboration Evaluation"
 ---
 # Human-AI collaboration evaluation
 

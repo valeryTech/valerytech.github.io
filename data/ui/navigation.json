@@ -12,7 +12,11 @@
     "minimumDistancePixels": 48,
     "directionRatio": 1.5
   },
+  "sections": {
+    "storageKey": "site-sidebar-sections"
+  },
   "outline": {
+    "storageKey": "site-outline-sections",
     "minimumReadingLinePixels": 120,
     "readingViewportFraction": 0.35,
     "bottomTolerancePixels": 2,

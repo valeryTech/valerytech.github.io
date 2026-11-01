@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Trade-off Analysis"
 description: "Structure trade-off analysis by defining goals and criteria, comparing alternatives, quantifying attributes, recording a decision, and validating it iteratively."
-title: "Trade Offs"
 linkTitle: "Trade-off Analysis"
 ---
 # A Systematic Trade-Off Analysis Framework
@@ -124,3 +124,13 @@ This systematic framework ensures that trade-offs are evaluated comprehensively,
 - Language for discussing trade-offs: vocabulary, sentence patterns, and worked discussions for presenting the analysis, examining evidence, and reaching a decision.
 - [Reasoning about non-functional requirements]({{< ref "system-design/nfr/non-functional-requirements" >}}): connect a user need to a measurable target, an assumption, and a design consequence.
 - [System-design interview communication]({{< ref "system-design/interview/phrases" >}}): a compact set of prompts for explaining choices during an interview.
+
+## Library sources
+
+
+- [Falessi et al. 2011](/sources/software-engineering/architecture-decisions/falessi-2011-decision-making-techniques-software-architecture.pdf.enc), *Decision-making techniques for software architecture design* ([doi:10.1145/1978802.1978812](https://doi.org/10.1145/1978802.1978812)) -- on *A Systematic Trade-Off Analysis Framework*
+
+Further reading:
+
+- [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts*
+- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation*

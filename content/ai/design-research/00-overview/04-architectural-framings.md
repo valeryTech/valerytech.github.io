@@ -189,3 +189,8 @@ There are several useful ways to reason about such a system.
 
 
     That is where neuro-symbolic representation fits: symbolic structures give us a machine-readable program/state/contract; neural components can generate and manipulate that structure. The runtime can then lower the logical program into Petri nets, dataflow, durable workflows, SQL, model calls, tools, humans, etc. The sources already propose exactly this layered separation.
+
+## Library sources
+
+
+- [Schnalke 2010](/sources/software-engineering/craft/schnalke-2010-why-unix-philosophy-still-matters.pdf.enc), *Why the Unix Philosophy still matters*

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Reflection In Hybrid AI Systems"
 description: "A research report on reflection in systems combining people, LLMs, data, and classical models, covering system representations, monitoring, and architectural approaches."
-title: "Reflection In Hybrid Ai Systems"
-linkTitle: "Reflection In Hybrid Ai Systems"
+linkTitle: "Reflection In Hybrid AI Systems"
 ---
 # Reflection in Hybrid AI Systems Combining LLMs, Data, and Classical Models
 
@@ -1118,3 +1118,23 @@ The research supports five design principles.
 [^52]: Unresolved additional source from the original report (reference ID: `turn14search17`). Its URL was not exposed in the citation panel.
 
 [^53]: Unresolved additional source from the original report (reference ID: `turn20search14`). Its URL was not exposed in the citation panel.
+
+## Library sources
+
+
+- [Nolte et al. 2026](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
+- [Hogan et al. 2021](/sources/retrieval-and-knowledge/knowledge-graphs/hogan-2021-knowledge-graphs.pdf.enc), *Knowledge Graphs* ([doi:10.1145/3447772](https://doi.org/10.1145/3447772)) -- on *Graphs and ontologies*
+- [Colelough and Regli 2025](/sources/retrieval-and-knowledge/neuro-symbolic/colelough-2025-neuro-symbolic-ai-in-2024-review.pdf.enc), *Neuro-Symbolic AI in 2024: A Systematic Review* ([arXiv:2501.05435](https://arxiv.org/abs/2501.05435)) -- on *Metacognition in AI*
+- [Li et al. 2024](/sources/thinking-and-learning/reflection-and-lessons-learned/li-2024-when-hindsight-is-not-20-20.pdf.enc), *When Hindsight is Not 20/20* ([arXiv:2404.09129](https://arxiv.org/abs/2404.09129)) -- on *Self-confirming reflection*
+
+Further reading:
+
+- [Fleming 2020](/sources/ai-foundations/cognition-and-mind/fleming-2020-awareness-as-inference.pdf.enc), *Awareness as inference in a higher-order state space* ([doi:10.1093/nc/niz020](https://doi.org/10.1093/nc/niz020))
+- [Sandved-Smith et al. 2021](/sources/ai-foundations/cognition-and-mind/sandved-smith-2021-computational-phenomenology-of-mental-action.pdf.enc), *Towards a computational phenomenology of mental action* ([doi:10.1093/nc/niab018](https://doi.org/10.1093/nc/niab018))
+- [Law 2015](/sources/research-methods/modeling-and-simulation/law-2015-simulation-modeling-and-analysis.pdf.enc), *Simulation Modeling and Analysis*
+- [OREN et al. 2023](/sources/research-methods/modeling-and-simulation/oren-2023-body-of-knowledge-modeling-and-simulation.pdf.enc), *Body of Knowledge for Modeling and Simulation* ([doi:10.1007/978-3-031-11085-6](https://doi.org/10.1007/978-3-031-11085-6))
+- [Zeigler et al. 2019](/sources/research-methods/modeling-and-simulation/zeigler-2019-theory-of-modeling-and-simulation.pdf.enc), *Theory of Modeling and Simulation*
+- [Edge et al. 2024](/sources/retrieval-and-knowledge/knowledge-graphs/edge-2024-graphrag-local-to-global-summarization.pdf.enc), *From Local to Global* ([arXiv:2404.16130](https://arxiv.org/abs/2404.16130))
+- [Mo et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/mo-2025-kggen-extracting-knowledge-graphs.pdf.enc), *KGGen*
+- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
+- [Hamilton et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/hamilton-2024-neuro-symbolic-ai-nlp-structured-review.pdf.enc), *Is neuro-symbolic AI meeting its promises in natural language processing? A structured review* ([doi:10.3233/SW-223228](https://doi.org/10.3233/SW-223228))

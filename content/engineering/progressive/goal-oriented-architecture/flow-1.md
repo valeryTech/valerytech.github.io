@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Architecture Grounded in User Goals"
 description: "Research notes on how user goals and workflows can ground architectural responsibilities and provide context beyond structural diagrams."
-title: "Flow 1"
 linkTitle: "Architecture Grounded in User Goals"
 ---
-# Architecture grounded in user goals
-
 
 The research question is which software-engineering and architectural approaches start from user needs, Jobs-to-be-Done (JTBD), or other product concerns when reasoning about a system. Structural diagrams, such as C4 views, may show interactions without explaining why the elements exist or which needs shape them. Those reasons include more than architectural concerns: a sequence such as a user sending an email and a system responding still needs an explanation of the problem being solved.
 
@@ -661,3 +659,16 @@ If no such path exists, `E` carries a **justification debt**.
 This gives a concrete test for whether a concept belongs in the architecture, going beyond general advice to keep the design simple.
 
 The proposed **justification graph** is a promising research direction because it could become both a reasoning technique and an architecture-description model.
+
+## Library sources
+
+
+- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition* -- on *Relevant engineering approaches*
+- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture* -- on *Architecture grounded in user goals*
+- [Cervantes and Kazman 2024](/sources/software-engineering/architecture/cervantes-2024-designing-software-architectures.pdf.enc), *Designing Software Architectures: A Practical Approach, 2nd Edition* -- on *Relevant engineering approaches*
+
+Further reading:
+
+- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
+- [Malan 2022](/sources/software-engineering/architecture/malan-2022-technical-leadership-decisions.pdf.enc), *Technical Leadership and Decisions*
+- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice*

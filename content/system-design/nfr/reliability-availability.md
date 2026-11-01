@@ -28,7 +28,22 @@ The original notes also identify primary-replica and multi-primary replication a
 
 A failover plan needs explanation as well as redundant boxes in the diagram. Review it against the [NFR measurement questions]({{< ref "system-design/nfr/non-functional-requirements" >}}).
 
+## Patterns that address this
+
+
+- **Behavior at the call site** (timeouts, retries, circuit breakers, bulkheads, load shedding, degraded operation): [containing failure]({{< ref "system-design/elements/containing-failure" >}}).
+- **Removing unhealthy instances from traffic** (health checks, service discovery): [the request path]({{< ref "system-design/elements/request-path" >}}#service-discovery).
+- **Replication arrangements and failover data loss:** [data at scale]({{< ref "system-design/elements/data-at-scale" >}}).
+- **Keeping a request path available while other services are down** (self-contained services, asynchronous messaging): [boundaries]({{< ref "system-design/elements/boundaries" >}}#where-to-draw-boundaries) and [communication]({{< ref "system-design/elements/communication" >}}).
+
 ## Further study
 
 
 The original source reminder is the *Designing Fine-Grained Microservices* book. For SLOs, service availability, and reliability reading, use the [NFR source list]({{< ref "system-design/nfr/non-functional-requirements" >}}#sources-and-further-study).
+
+## Library sources
+
+
+- [Atchison 2020](/sources/software-engineering/systems-and-operations/atchison-2020-architecting-for-scale.pdf.enc), *Architecting for Scale*
+- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-reducing-scope-of-impact-cell-based-architecture.pdf.enc), *Reducing the Scope of Impact with Cell-Based Architecture*
+- [AWS 2024](/sources/software-engineering/systems-and-operations/aws-2024-well-architected-framework.pdf.enc), *AWS Well-Architected Framework*

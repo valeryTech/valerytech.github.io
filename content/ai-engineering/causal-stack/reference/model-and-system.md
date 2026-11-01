@@ -77,3 +77,8 @@ A trace can show what input reached a call, which action was attempted, and what
 Do not infer an attention failure from an omitted fact, a competence boundary from one failure, or accurate probability calibration from confident language. Write the observation precisely, consider alternatives, and choose a [check]({{< ref "ai-engineering/causal-stack/checks" >}}).
 
 A control that blocks a particular bad result may be useful even while its internal model cause remains unknown. Keep that engineering decision separate from the explanatory claim.
+
+## Library sources
+
+
+- [Ma et al. 2025](/sources/ai-engineering/failures/ma-2025-diagnosing-failure-root-causes-in-agentic-systems.pdf.enc), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735))

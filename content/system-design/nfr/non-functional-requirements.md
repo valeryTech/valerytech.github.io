@@ -31,13 +31,15 @@ For example, "fast redirects" needs a scope and measurement: the URL-shortener d
 | Availability and reliability | Which requests must succeed? What downtime or partial failure can users tolerate? Where is success measured? | [Reliability and availability]({{< ref "system-design/nfr/reliability-availability" >}}) |
 | Consistency | What must a client see after a write? Which state changes require coordination? What delay or staleness is acceptable? | [Consistency]({{< ref "system-design/nfr/consistency" >}}) |
 | Durability and integrity | Which acknowledged data must survive? How would loss or corruption be detected and recovered? | [Dropbox case]({{< ref "system-design/projects/dropbox/dropbox" >}}) |
-| Security | Who can perform each operation? What data or execution needs protection? | [Building-block study gaps]({{< ref "system-design/elements/elements" >}}#topics-to-develop) |
+| Security | Who can perform each operation? What data or execution needs protection? | [Security in operating services]({{< ref "system-design/elements/operating-services" >}}#security) |
 | Environment and cost | What device, bandwidth, infrastructure, budget, or delivery constraints apply? | [Design principles]({{< ref "system-design/02-system-design" >}}) |
 
 ## Use NFRs throughout the design
 
 
 Establish the important requirements early. While tracing the initial design, note where each one creates a concern. Use deep dives to resolve the important concerns and update the design.
+
+Each quality acts as a force on the design questions in the [pattern map]({{< ref "system-design/elements/elements" >}}): the hubs list which qualities push their options one way or another.
 
 Quantify a requirement when the number helps distinguish choices. If the value is unknown, state a provisional assumption, explain why it matters, and check how a different value would change the decision. Keep estimates tied to an architectural question.
 
@@ -59,3 +61,13 @@ Original reading list:
 - [The Calculus of Service Availability -- ACM](https://cacm.acm.org/practice/the-calculus-of-service-availability/) and [paper](https://dl.acm.org/doi/pdf/10.1145/3080202).
 - "Thinking about Availability in Large Service Infrastructures."
 - [PACELC overview](https://en.wikipedia.org/wiki/PACELC_design_principle).
+
+## Library sources
+
+
+- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- on *Sources and further study*
+- [Hidalgo 2020](/sources/software-engineering/systems-and-operations/hidalgo-2020-implementing-service-level-objectives.pdf.enc), *Implementing Service Level Objectives* -- on *Sources and further study*
+
+Further reading:
+
+- [Wiegers 2022](/sources/software-engineering/craft/wiegers-2022-software-development-pearls.pdf.enc), *Software Development Pearls*

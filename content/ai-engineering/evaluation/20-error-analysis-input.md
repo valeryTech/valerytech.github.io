@@ -23,7 +23,7 @@ The main result is a **failure model**. It describes:
 
 The method draws on initial coding, focused coding, constant comparison, theoretical sampling, and saturation reasoning. These ideas are used as practical tools for product and engineering work.
 
-The [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}) defines the concepts used here. The main path is:
+The [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) defines the concepts used here. The main path is:
 
 ```text
 trace + observation + evaluation basis
@@ -409,8 +409,8 @@ These links make it possible to understand and revise the analysis when the evid
 ## Related documents
 
 
-- [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}) defines the evidence, failure, operational, and diagnostic concepts.
-- [Conceptual Model]({{< ref "ai-engineering/evaluation/v1/conceptualization" >}}) explains how failure knowledge supports evaluation and product work.
-- [Evaluation Cases]({{< ref "ai-engineering/evaluation/v1/10-user-inputs" >}}) covers case and coverage design.
-- [Judgment and Findings]({{< ref "ai-engineering/evaluation/v1/30-judgment-and-findings" >}}) covers criteria, evaluators, labels, measurements, and findings.
-- [Production Learning]({{< ref "ai-engineering/evaluation/v1/production-learning" >}}) explains how evidence from real use returns to product and evaluation work.
+- [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) defines the evidence, failure, operational, and diagnostic concepts.
+- [Conceptual Model]({{< ref "ai-engineering/evaluation/framework/conceptualization" >}}) explains how failure knowledge supports evaluation and product work.
+- [Evaluation Cases]({{< ref "ai-engineering/evaluation/framework/10-user-inputs" >}}) covers case and coverage design.
+- [Judgment and Findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}) covers criteria, evaluators, labels, measurements, and findings.
+- [Production Learning]({{< ref "ai-engineering/evaluation/framework/production-learning" >}}) explains how evidence from real use returns to product and evaluation work.

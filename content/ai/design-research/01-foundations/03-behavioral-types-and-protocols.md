@@ -8,9 +8,9 @@ linkTitle: "03 Behavioral Types And Protocols"
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-The working interpretation is that the relevant research area already exists, but it is split across several communities. The strongest established framing for the stated goal is **Joint Cognitive Systems / Cognitive Systems Engineering**: treat the human, agents, tools, and environment as one system whose behavior you design. Hollnagel and Woods explicitly argue for studying human-machine interaction as the behavior of a unified system. ([Routledge](https://www.routledge.com/Joint-Cognitive-Systems-Foundations-of-Cognitive-Systems-Engineering/Hollnagel-Woods/p/book/9780849328213?utm_source=chatgpt.com "Joint Cognitive Systems: Foundations of Cognitive Systems Engineering"))
+The working interpretation is that the relevant research area already exists, but it is split across several communities. The strongest established framing for the stated goal is **Joint Cognitive Systems / Cognitive Systems Engineering**: treat the human, agents, tools, and environment as one system whose behavior you design. Hollnagel and Woods explicitly argue for studying human-machine interaction as the behavior of a unified system. ([Routledge](https://www.routledge.com/Joint-Cognitive-Systems-Foundations-of-Cognitive-Systems-Engineering/Hollnagel-Woods/p/book/9780849328213 "Joint Cognitive Systems: Foundations of Cognitive Systems Engineering"))
 
-There's also a connection to our previous discussion about types that is especially relevant: **behavioral types**. Ordinary types describe values; behavioral types describe permitted interactions over time. Session types and behavioral contracts can specify protocols such as "A requests -> B accepts/rejects -> if accepted B eventually reports completion," and mechanically check whether components are compatible. ([eprints IMT Lucca](https://eprints.imtlucca.it/3695/?utm_source=chatgpt.com "Foundations of Session Types and Behavioural Contracts - IMT Institutional Repository")) Interface Automata takes a similar approach, modeling assumptions about inputs and guarantees about outputs, including their allowed ordering. ([ResearchGate](https://www.researchgate.net/publication/2881209_Interface_Automata?utm_source=chatgpt.com "Interface automata"))
+There's also a connection to our previous discussion about types that is especially relevant: **behavioral types**. Ordinary types describe values; behavioral types describe permitted interactions over time. Session types and behavioral contracts can specify protocols such as "A requests -> B accepts/rejects -> if accepted B eventually reports completion," and mechanically check whether components are compatible. ([eprints IMT Lucca](https://eprints.imtlucca.it/3695/ "Foundations of Session Types and Behavioural Contracts - IMT Institutional Repository")) Interface Automata takes a similar approach, modeling assumptions about inputs and guarantees about outputs, including their allowed ordering. ([ResearchGate](https://www.researchgate.net/publication/2881209_Interface_Automata "Interface automata"))
 
 The proposal is to map the relevant traditions this way:
 
@@ -86,7 +86,7 @@ GUARANTEE:
 ```
 
 
-Contracts can compose: if one component's guarantees satisfy another component's assumptions, larger systems can be reasoned about incrementally. That's precisely the purpose of contract-based design research. ([University of Trento IRIS](https://iris.unitn.it/handle/11572/225821?utm_source=chatgpt.com "Contracts for System Design"))
+Contracts can compose: if one component's guarantees satisfy another component's assumptions, larger systems can be reasoned about incrementally. That's precisely the purpose of contract-based design research. ([University of Trento IRIS](https://iris.unitn.it/handle/11572/225821 "Contracts for System Design"))
 
 LLMs introduce a complication: the agent implementation is probabilistic and cannot generally be statically proved to obey such a specification.
 
@@ -109,7 +109,7 @@ allow / reject / ask / recover
 ```
 
 
-That leads directly to **runtime verification**: monitor execution traces against formal behavioral properties. Runtime verification is already used for autonomous systems where complete static verification isn't practical. ([Springer Nature](https://link.springer.com/article/10.1007/s10703-019-00337-w?utm_source=chatgpt.com "A survey of challenges for runtime verification from advanced application domains (beyond software) | Formal Methods in System Design | Springer Nature Link")) There is now explicit work proposing this combination for LLM-based autonomy as well. ([arXiv](https://arxiv.org/abs/2511.14435?utm_source=chatgpt.com "Watchdogs and Oracles: Runtime Verification Meets Large Language Models for Autonomous Systems"))
+That leads directly to **runtime verification**: monitor execution traces against formal behavioral properties. Runtime verification is already used for autonomous systems where complete static verification isn't practical. ([Springer Nature](https://link.springer.com/article/10.1007/s10703-019-00337-w "A survey of challenges for runtime verification from advanced application domains (beyond software) | Formal Methods in System Design | Springer Nature Link")) There is now explicit work proposing this combination for LLM-based autonomy as well. ([arXiv](https://arxiv.org/abs/2511.14435 "Watchdogs and Oracles: Runtime Verification Meets Large Language Models for Autonomous Systems"))
 
 A proposed methodology for collaborative LLM systems would define six things:
 
@@ -122,7 +122,7 @@ A proposed methodology for collaborative LLM systems would define six things:
 
 Then the LLM is one implementation mechanism inside this system. It isn't the architecture.
 
-Recent LLM research is beginning to describe this explicitly. The 2026 ACL survey _LLM-Based Human-Agent Collaboration and Interaction Systems_ organizes systems around environment/profiling, human feedback, interaction types, orchestration, and communication. ([ACL Anthology](https://aclanthology.org/2026.findings-acl.1811/?utm_source=chatgpt.com "LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey - ACL Anthology")) Multi-agent LLM surveys similarly classify collaboration by actors, topology, roles, strategies and coordination protocols. ([arXiv](https://arxiv.org/abs/2501.06322?utm_source=chatgpt.com "Multi-Agent Collaboration Mechanisms: A Survey of LLMs"))
+Recent LLM research is beginning to describe this explicitly. The 2026 ACL survey _LLM-Based Human-Agent Collaboration and Interaction Systems_ organizes systems around environment/profiling, human feedback, interaction types, orchestration, and communication. ([ACL Anthology](https://aclanthology.org/2026.findings-acl.1811/ "LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey - ACL Anthology")) Multi-agent LLM surveys similarly classify collaboration by actors, topology, roles, strategies and coordination protocols. ([arXiv](https://arxiv.org/abs/2501.06322 "Multi-Agent Collaboration Mechanisms: A Survey of LLMs"))
 
 My assessment, though, is that the older literature is currently more useful for **design theory**. A lot of LLM-agent work starts with "multiple LLMs exchanging messages" and then studies orchestration. Joint Cognitive Systems starts with a harder question:
 
@@ -134,7 +134,7 @@ A very good reading path would therefore be:
 
 **Hollnagel & Woods -> Klein/Feltovich/Bradshaw/Woods -> Grosz & Kraus -> Horvitz -> behavioral types/session types -> contract-based design -> runtime verification -> current LLM human-agent work.**
 
-In particular, the proposal is to start with _Joint Cognitive Systems_ and _Common Ground and Coordination in Joint Activity_. Then read the behavioral-types survey. Those three together give you a useful bridge from **human teamwork -> system behavior -> machine-checkable interaction protocols**. ([Routledge](https://www.routledge.com/Joint-Cognitive-Systems-Foundations-of-Cognitive-Systems-Engineering/Hollnagel-Woods/p/book/9780849328213?utm_source=chatgpt.com "Joint Cognitive Systems: Foundations of Cognitive Systems Engineering"))
+In particular, the proposal is to start with _Joint Cognitive Systems_ and _Common Ground and Coordination in Joint Activity_. Then read the behavioral-types survey. Those three together give you a useful bridge from **human teamwork -> system behavior -> machine-checkable interaction protocols**. ([Routledge](https://www.routledge.com/Joint-Cognitive-Systems-Foundations-of-Cognitive-Systems-Engineering/Hollnagel-Woods/p/book/9780849328213 "Joint Cognitive Systems: Foundations of Cognitive Systems Engineering"))
 
 The working interpretation is that there is a promising research/programming-model idea sitting at that intersection: something like a **behavioral type system for joint human-agent systems**, where the "types" express roles, authority, commitments, information state and allowed interaction traces, while an LLM supplies flexible behavior within those constraints. That would give you a principled way to talk about the behavior of an agentic system beyond prompts, tools, and workflows.
 
@@ -204,11 +204,11 @@ Agent:
 ```
 
 
-This is the central construction technique in multiparty session types. Global protocols are projected into local behavioral types, and local implementations can then be checked against them. ([PLS Lab](https://www.pls-lab.org/MPST?utm_source=chatgpt.com "Multiparty Session Types | PLS Lab"))
+This is the central construction technique in multiparty session types. Global protocols are projected into local behavioral types, and local implementations can then be checked against them. ([PLS Lab](https://www.pls-lab.org/MPST "Multiparty Session Types | PLS Lab"))
 
-Scribble is an actual protocol language built around this approach: define roles and a global protocol, validate it, then project it to local protocols. ([PLS Lab](https://www.pls-lab.org/Scribble_%28MPSTs%29?utm_source=chatgpt.com "Scribble (MPSTs) | PLS Lab"))
+Scribble is an actual protocol language built around this approach: define roles and a global protocol, validate it, then project it to local protocols. ([PLS Lab](https://www.pls-lab.org/Scribble_%28MPSTs%29 "Scribble (MPSTs) | PLS Lab"))
 
-There is also substantial work on embedding the resulting behavioral states into ordinary language type systems. For example, StMungo turns Scribble protocols into typestate specifications for Java; other work generates endpoint APIs whose types represent the current protocol state. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7281875/?utm_source=chatgpt.com "Typechecking Java Protocols with [St]Mungo - PMC"))
+There is also substantial work on embedding the resulting behavioral states into ordinary language type systems. For example, StMungo turns Scribble protocols into typestate specifications for Java; other work generates endpoint APIs whose types represent the current protocol state. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7281875/ "Typechecking Java Protocols with [St]Mungo - PMC"))
 
 So this is already quite close to:
 
@@ -290,7 +290,7 @@ protocol conformance
 ```
 
 
-The 2016 survey _Behavioral Types in Programming Languages_ is probably the single best overview of this design space; it explicitly covers interfaces, protocols, contracts, choreography, representation in programming languages, design methodologies, and monitoring. ([Enlighten Publications](https://eprints.gla.ac.uk/121537/?utm_source=chatgpt.com "Behavioral types in programming languages"))
+The 2016 survey _Behavioral Types in Programming Languages_ is probably the single best overview of this design space; it explicitly covers interfaces, protocols, contracts, choreography, representation in programming languages, design methodologies, and monitoring. ([Enlighten Publications](https://eprints.gla.ac.uk/121537/ "Behavioral types in programming languages"))
 
 ### 3. Refinement is particularly important
 
@@ -319,7 +319,7 @@ P' =
 
 You want to know whether `P'` is still substitutable for `P` from the rest of the system's perspective.
 
-Protocol-refinement research explicitly studies this question. In multi-agent systems, Christie, Chopra, and Singh define refinement so that safety and liveness properties are preserved when one protocol replaces another. ([IFAAMAS](https://aamas.csc.liv.ac.uk/Proceedings/aamas2020/pdfs/p258.pdf?utm_source=chatgpt.com "Refinement for Multiagent Protocols"))
+Protocol-refinement research explicitly studies this question. In multi-agent systems, Christie, Chopra, and Singh define refinement so that safety and liveness properties are preserved when one protocol replaces another. ([IFAAMAS](https://aamas.csc.liv.ac.uk/Proceedings/aamas2020/pdfs/p258.pdf "Refinement for Multiagent Protocols"))
 
 That's an important feature for the proposed system because you could imagine an engineering process like:
 
@@ -376,7 +376,7 @@ There may be hundreds of valid interaction traces.
 
 That is exactly the problem studied in the **social commitments / Interaction-Oriented Software Engineering (IOSE)**literature.
 
-IOSE explicitly argues that autonomous participants shouldn't be modeled as components controlled by a central machine. Instead, systems should be specified through their observable interactions and protocols. ([arXiv](https://arxiv.org/abs/1211.4123?utm_source=chatgpt.com "Interaction-Oriented Software Engineering: Concepts and Principles"))
+IOSE explicitly argues that autonomous participants shouldn't be modeled as components controlled by a central machine. Instead, systems should be specified through their observable interactions and protocols. ([arXiv](https://arxiv.org/abs/1211.4123 "Interaction-Oriented Software Engineering: Concepts and Principles"))
 
 A commitment might conceptually look like:
 
@@ -399,7 +399,7 @@ That distinction is very relevant to LLMs.
 
 This gets close to the system you appear to be thinking about.
 
-The **Clouseau** approach starts from a specification of social commitments and synthesizes an executable communication protocol. The authors prove that the generated protocol is correct, safe, and live. ([AAAI](https://aaai.org/papers/07244-clouseau-generating-communication-protocols-from-commitments/?utm_source=chatgpt.com "Clouseau: Generating Communication Protocols from Commitments - AAAI"))
+The **Clouseau** approach starts from a specification of social commitments and synthesizes an executable communication protocol. The authors prove that the generated protocol is correct, safe, and live. ([AAAI](https://aaai.org/papers/07244-clouseau-generating-communication-protocols-from-commitments/ "Clouseau: Generating Communication Protocols from Commitments - AAAI"))
 
 Conceptually:
 
@@ -414,13 +414,13 @@ local agent behavior
 ```
 
 
-Then in 2025 the same research line introduced **Mambo**, which is explicitly a methodology for engineering multi-agent interaction protocols from reusable **requirement patterns**, together with a verification procedure. ([IJCAI](https://www.ijcai.org/proceedings/2025/5?utm_source=chatgpt.com "Requirement Patterns for Engineering Multiagent Interaction Protocols | IJCAI"))
+Then in 2025 the same research line introduced **Mambo**, which is explicitly a methodology for engineering multi-agent interaction protocols from reusable **requirement patterns**, together with a verification procedure. ([IJCAI](https://www.ijcai.org/proceedings/2025/5 "Requirement Patterns for Engineering Multiagent Interaction Protocols | IJCAI"))
 
 That paper is particularly relevant to the research question because it asks essentially:
 
 > How do we systematically go from interaction requirements to a valid protocol?
 
-The broader 2020 comparison of protocol languages is also useful. It compares session types/Scribble, trace-based approaches, hierarchical state machines, and information-causality-based protocols, then extracts design principles for protocol languages. ([arXiv](https://arxiv.org/abs/1901.08441?utm_source=chatgpt.com "An Evaluation of Communication Protocol Languages for Engineering Multiagent Systems"))
+The broader 2020 comparison of protocol languages is also useful. It compares session types/Scribble, trace-based approaches, hierarchical state machines, and information-causality-based protocols, then extracts design principles for protocol languages. ([arXiv](https://arxiv.org/abs/1901.08441 "An Evaluation of Communication Protocol Languages for Engineering Multiagent Systems"))
 
 ### 6. LLMs change where the "type checking" occurs
 
@@ -460,13 +460,13 @@ So the architecture becomes:
 ```
 
 
-This isn't merely hypothetical. Session-type research has formal results about what can and cannot be enforced through runtime monitors, including soundness and completeness properties. ([DROPS](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2021.20?utm_source=chatgpt.com "On the Monitorability of Session Types, in Theory and Practice"))
+This isn't merely hypothetical. Session-type research has formal results about what can and cannot be enforced through runtime monitors, including soundness and completeness properties. ([DROPS](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2021.20 "On the Monitorability of Session Types, in Theory and Practice"))
 
-Hybrid verification also already exists: statically check what can be statically checked and put runtime checks around the rest. ([Imperial College London Documentation](https://www.doc.ic.ac.uk/~rhu/scribble/index.html?utm_source=chatgpt.com "Hybrid Session Verification through Endpoint API Generation"))
+Hybrid verification also already exists: statically check what can be statically checked and put runtime checks around the rest. ([Imperial College London Documentation](https://www.doc.ic.ac.uk/~rhu/scribble/index.html "Hybrid Session Verification through Endpoint API Generation"))
 
-Recent LLM-agent work has started moving explicitly in this direction. **Agent-C**, for example, specifies temporal constraints such as "authentication must happen before accessing sensitive data" and enforces them around LLM agent actions at runtime. ([arXiv](https://arxiv.org/abs/2512.23738?utm_source=chatgpt.com "Enforcing Temporal Constraints for LLM Agents"))
+Recent LLM-agent work has started moving explicitly in this direction. **Agent-C**, for example, specifies temporal constraints such as "authentication must happen before accessing sensitive data" and enforces them around LLM agent actions at runtime. ([arXiv](https://arxiv.org/abs/2512.23738 "Enforcing Temporal Constraints for LLM Agents"))
 
-There's even a 2026 proposal for a protocol language specifically describing responsibility boundaries, approval gates, and governance constraints between human and AI participants in software development. It's early work, but conceptually very close to what we're discussing. ([arXiv](https://arxiv.org/abs/2606.20615?utm_source=chatgpt.com "Specifying AI-SDLC Processes: A Protocol Language for Human-Agent Boundaries"))
+There's even a 2026 proposal for a protocol language specifically describing responsibility boundaries, approval gates, and governance constraints between human and AI participants in software development. It's early work, but conceptually very close to what we're discussing. ([arXiv](https://arxiv.org/abs/2606.20615 "Specifying AI-SDLC Processes: A Protocol Language for Human-Agent Boundaries"))
 
 <a id="7-i-think-the-promising-design-is-a-hybrid-behavioral-type"></a>
 
@@ -577,3 +577,9 @@ static checking     runtime monitors
 That is much closer to a programming model for collaborative intelligent systems than current "prompt + agent loop + tools" frameworks.
 
 If your eventual objective is research in this area, **Mambo -> IOSE -> behavioral-types survey -> MPST/Scribble -> Clouseau -> runtime session monitoring** is the proposed reading sequence. It gets you from requirements engineering all the way down to enforceable behavior.
+
+## Library sources
+
+
+- [Gopinathan et al. 2026](/sources/ai-engineering/harness/gopinathan-2026-pact-choreographic-language-agentic-ecosystems.pdf.enc), *Pact: A Choreographic Language for Agentic Ecosystems* ([arXiv:2605.03143](https://arxiv.org/abs/2605.03143))
+- [Cassandras and Lafortune 2021](/sources/research-methods/modeling-and-simulation/cassandras-2021-introduction-to-discrete-event-systems.pdf.enc), *Introduction to Discrete Event Systems* ([doi:10.1007/978-3-030-72274-6](https://doi.org/10.1007/978-3-030-72274-6))

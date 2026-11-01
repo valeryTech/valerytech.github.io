@@ -127,3 +127,8 @@ Before/after observations can be confounded by learning or changing workload. Us
 Use a short product-log entry: question; cases and comparison; judgment rule; result and limitations; decision. Link it from the relevant claim. Preserve negative and inconclusive results.
 
 For how these checks fit customer discovery and delivery, see [learning through real product use]({{< ref "ai-engineering/causal-stack/practical-checks" >}}).
+
+## Library sources
+
+
+- [Winston and Just 2025](/sources/ai-engineering/failures/winston-2025-taxonomy-of-failures-in-tool-augmented-llms.pdf.enc), *A Taxonomy of Failures in Tool-Augmented LLMs*

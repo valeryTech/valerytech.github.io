@@ -139,7 +139,7 @@ Several established practices overlap with this style.
 ### 1. Design Science Research
 
 
-Design Science Research treats artifacts as vehicles for inquiry. The artifact may be a construct, model, method, or implementation, and its value must be demonstrated through evaluation. Hevner et al.'s design-science guidelines explicitly frame design as artifact creation plus rigorous evaluation of utility, quality, and efficacy. ([WISE](https://wise.vub.ac.be/sites/default/files/thesis_info/design_science.pdf?utm_source=chatgpt.com "Design Science in Information Systems Research"))
+Design Science Research treats artifacts as vehicles for inquiry. The artifact may be a construct, model, method, or implementation, and its value must be demonstrated through evaluation. Hevner et al.'s design-science guidelines explicitly frame design as artifact creation plus rigorous evaluation of utility, quality, and efficacy. ([WISE](https://wise.vub.ac.be/sites/default/files/thesis_info/design_science.pdf "Design Science in Information Systems Research"))
 
 This maps closely to the proposal:
 
@@ -157,7 +157,7 @@ For DocForge, the artifact is not only the final QA system. It may be a retrieva
 ### 2. Research through Design / reflective practice
 
 
-This is the idea that design activity itself generates knowledge. You do not fully understand the problem before building; you build partial artifacts to think with. Schön's reflective-practitioner frame is relevant here: practitioners reason through action, observe the situation's response, and adjust their framing while working. ([Ragged University](https://raggeduniversity.co.uk/wp-content/uploads/2025/03/1_x_Donald-A.-Schon-The-Reflective-Practitioner_-How-Professionals-Think-In-Action-Basic-Books-1984_redactedaa_compressed3.pdf?utm_source=chatgpt.com "Donald A, Schon - The Reflective Practitioner"))
+This is the idea that design activity itself generates knowledge. You do not fully understand the problem before building; you build partial artifacts to think with. Schön's reflective-practitioner frame is relevant here: practitioners reason through action, observe the situation's response, and adjust their framing while working. ([Ragged University](https://raggeduniversity.co.uk/wp-content/uploads/2025/03/1_x_Donald-A.-Schon-The-Reflective-Practitioner_-How-Professionals-Think-In-Action-Basic-Books-1984_redactedaa_compressed3.pdf "Donald A, Schon - The Reflective Practitioner"))
 
 In the proposed terminology:
 
@@ -173,7 +173,7 @@ A context assembly interface is therefore not just a convenience. It is a way to
 ### 3. Participatory / co-design
 
 
-Participatory design treats users and domain experts as participants in shaping the system, not merely subjects who validate finished designs. Recent design literature describes participatory design as an iterative, flexible process involving stakeholders, often end users. ([Cambridge University Press & Assessment](https://www.cambridge.org/core/journals/design-science/article/participatory-design-a-systematic-review-and-insights-for-future-practice/C310A25B481980BE14AD4B38C0EE46D1?utm_source=chatgpt.com "Participatory design: a systematic review and insights for ..."))
+Participatory design treats users and domain experts as participants in shaping the system, not merely subjects who validate finished designs. Recent design literature describes participatory design as an iterative, flexible process involving stakeholders, often end users. ([Cambridge University Press & Assessment](https://www.cambridge.org/core/journals/design-science/article/participatory-design-a-systematic-review-and-insights-for-future-practice/C310A25B481980BE14AD4B38C0EE46D1 "Participatory design: a systematic review and insights for ..."))
 
 For this design context, this does not need to mean a broad democratic design process. The useful kernel is:
 
@@ -189,7 +189,7 @@ In RAG terms, when a user says "this passage is relevant but not sufficient," th
 ### 4. Action Research
 
 
-Action research is explicitly intervention-based: the team changes a real situation, observes the effect, reflects, and revises. Common formulations use cycles such as diagnosis, action planning, action taking, evaluation, and specifying learning. ([ResearchGate](https://www.researchgate.net/publication/337496478_Action_Research_as_Research_Methodology_in_Software_Engineering?utm_source=chatgpt.com "Action Research as Research Methodology in Software ..."))
+Action research is explicitly intervention-based: the team changes a real situation, observes the effect, reflects, and revises. Common formulations use cycles such as diagnosis, action planning, action taking, evaluation, and specifying learning. ([ResearchGate](https://www.researchgate.net/publication/337496478_Action_Research_as_Research_Methodology_in_Software_Engineering "Action Research as Research Methodology in Software ..."))
 
 That fits the engineering process you are describing:
 
@@ -207,7 +207,7 @@ This is especially relevant when the thing being built changes the work practice
 ### 5. Continuous discovery and Lean Startup
 
 
-Continuous discovery and Lean Startup are product-development versions of the same epistemic stance: reduce assumptions by running small learning loops. Continuous discovery emphasizes regular customer touchpoints and small research activities in pursuit of product outcomes. ([Product Talk](https://www.producttalk.org/getting-started-with-discovery/?srsltid=AfmBOop96c7-3EtHv2R7onyiZvnZvoUls76gtQSNxyO9rUp9QeRTMg_z&utm_source=chatgpt.com "Everyone Can Do Continuous Discovery--Even You! ...")) Lean Startup frames progress as validated learning under uncertainty and emphasizes Build-Measure-Learn feedback loops. ([The Lean Startup](https://theleanstartup.com/principles?utm_source=chatgpt.com "The Lean Startup | Methodology"))
+Continuous discovery and Lean Startup are product-development versions of the same epistemic stance: reduce assumptions by running small learning loops. Continuous discovery emphasizes regular customer touchpoints and small research activities in pursuit of product outcomes. ([Product Talk](https://www.producttalk.org/getting-started-with-discovery/ "Everyone Can Do Continuous Discovery--Even You! ...")) Lean Startup frames progress as validated learning under uncertainty and emphasizes Build-Measure-Learn feedback loops. ([The Lean Startup](https://theleanstartup.com/principles "The Lean Startup | Methodology"))
 
 For this design problem, the equivalent is:
 
@@ -221,7 +221,7 @@ Then automate.
 ### 6. Experimental / empirical software engineering
 
 
-This is the engineering discipline of testing methods, tools, and processes through systematic observation, measurement, and experiments. Empirical software engineering is commonly defined around systematic observation, measurement, and experimentation. ([Nature](https://www.nature.com/nature-index/topics/l3/empirical-software-engineering?utm_source=chatgpt.com "Empirical Software Engineering"))
+This is the engineering discipline of testing methods, tools, and processes through systematic observation, measurement, and experiments. Empirical software engineering is commonly defined around systematic observation, measurement, and experimentation. ([Nature](https://www.nature.com/nature-index/topics/l3/empirical-software-engineering "Empirical Software Engineering"))
 
 For DocForge, this suggests treating algorithm choices as hypotheses:
 
@@ -614,3 +614,19 @@ Automate the stable patterns.
 
 
 That is the broader engineering practice you are pointing at.
+
+## Library sources
+
+
+- [Barnett et al. 2024](/sources/retrieval-and-knowledge/rag/barnett-2024-seven-failure-points-rag-systems.pdf.enc), *Seven Failure Points When Engineering a Retrieval Augmented Generation System* ([doi:10.1145/3644815.3644945](https://doi.org/10.1145/3644815.3644945)) -- on *2. What kind of problem this actually is*
+
+Further reading:
+
+- [Dalsgaard 2014](/sources/research-methods/design-science/dalsgaard-2014-pragmatism-and-design-thinking.pdf.enc), *Pragmatism and Design Thinking*
+- [Dresch et al. 2015](/sources/research-methods/design-science/dresch-2015-design-science-research.pdf.enc), *Design Science Research* ([doi:10.1007/978-3-319-07374-3](https://doi.org/10.1007/978-3-319-07374-3))
+- [Johannesson and Perjons 2021](/sources/research-methods/design-science/johannesson-2021-introduction-to-design-science.pdf.enc), *An Introduction to Design Science* ([doi:10.1007/978-3-030-78132-3](https://doi.org/10.1007/978-3-030-78132-3))
+- [vom Brocke et al. 2020](/sources/research-methods/design-science/vom-brocke-2020-design-science-research-cases.pdf.enc), *Design Science Research. Cases* ([doi:10.1007/978-3-030-46781-4](https://doi.org/10.1007/978-3-030-46781-4))
+- [Wieringa 2014](/sources/research-methods/design-science/wieringa-2014-design-science-methodology-front-matter.pdf.enc), *Design Science Methodology for Information Systems and Software Engineering* ([doi:10.1007/978-3-662-43839-8](https://doi.org/10.1007/978-3-662-43839-8))
+- [Mendez et al. 2024](/sources/research-methods/empirical-methods/mendez-2024-handbook-on-teaching-empirical-software-engineering.pdf.enc), *Handbook on Teaching Empirical Software Engineering*
+- [Wohlin and Runeson 2021](/sources/research-methods/empirical-methods/wohlin-2021-guiding-selection-of-research-methodology.pdf.enc), *Guiding the selection of research methodology in industry-academia collaboration in software engineering* ([doi:10.1016/j.infsof.2021.106678](https://doi.org/10.1016/j.infsof.2021.106678))
+- [Gao et al. 2023](/sources/retrieval-and-knowledge/rag/gao-2023-rag-for-llms-survey.pdf.enc), *Retrieval-Augmented Generation for Large Language Models: A Survey* ([arXiv:2312.10997](https://arxiv.org/abs/2312.10997))

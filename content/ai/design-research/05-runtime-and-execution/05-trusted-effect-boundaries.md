@@ -173,7 +173,7 @@ That means the beautiful property that makes natural language useful--
 
 also creates a security problem.
 
-Willison's writing on prompt injection makes this point well. Current models cannot reliably treat arbitrary language as both potentially hostile data and executable instruction without external trust boundaries. ([Simon Willison's Weblog](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/?utm_source=chatgpt.com "The lethal trifecta for AI agents: private data, untrusted content, and external communication"))
+Willison's writing on prompt injection makes this point well. Current models cannot reliably treat arbitrary language as both potentially hostile data and executable instruction without external trust boundaries. ([Simon Willison's Weblog](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/ "The lethal trifecta for AI agents: private data, untrusted content, and external communication"))
 
 So high-authority systems will still need:
 
@@ -225,9 +225,9 @@ please use these responsibly
 
 is not a security model.
 
-Capability-security research identified the underlying issue decades ago: avoid giving a component ambient authority that it doesn't need. Give it specific authority over specific resources for specific operations. Miller, Yee and Shapiro's capability work is particularly relevant here. ([ResearchGate](https://www.researchgate.net/publication/2927483_Capability_Myths_Demolished?utm_source=chatgpt.com "(PDF) Capability Myths Demolished"))
+Capability-security research identified the underlying issue decades ago: avoid giving a component ambient authority that it doesn't need. Give it specific authority over specific resources for specific operations. Miller, Yee and Shapiro's capability work is particularly relevant here. ([ResearchGate](https://www.researchgate.net/publication/2927483_Capability_Myths_Demolished "(PDF) Capability Myths Demolished"))
 
-There's already 2026 research finding the corresponding problem in LLM frameworks: exposing a tool to a model and checking whether it may generally use that tool is different from authorizing the actual operation and its concrete arguments. ([arXiv](https://arxiv.org/abs/2606.28679?utm_source=chatgpt.com "Capability Gates Are Not Authorization: Confused-Deputy Failures in LLM Agent Frameworks"))
+There's already 2026 research finding the corresponding problem in LLM frameworks: exposing a tool to a model and checking whether it may generally use that tool is different from authorizing the actual operation and its concrete arguments. ([arXiv](https://arxiv.org/abs/2606.28679 "Capability Gates Are Not Authorization: Confused-Deputy Failures in LLM Agent Frameworks"))
 
 For example:
 
@@ -266,3 +266,12 @@ DENIED
 The security property must live outside the model.
 
 This is another reason the **application boundary survives as an authority boundary**.
+
+## Library sources
+
+
+- [Wang et al. 2026](/sources/ai-engineering/harness/wang-2026-agentflow-agent-dependency-graphs.pdf.enc), *AgentFlow* ([arXiv:2607.01640](https://arxiv.org/abs/2607.01640))
+- [Xavier et al. 2026](/sources/ai-engineering/harness/xavier-2026-agentproof-static-verification-agent-workflows.pdf.enc), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356))
+- [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617))
+- [Xia et al. 2025](/sources/ai-engineering/observability/xia-2025-agentops-pattern-catalogue.pdf.enc), *AgentOps Pattern Catalogue*
+- [Zheng et al. 2025](/sources/ai-engineering/observability/zheng-2025-agentsight-observability-for-ai-agents-ebpf.pdf.enc), *AgentSight: System-Level Observability for AI Agents Using eBPF* ([doi:10.1145/3766882.3767169](https://doi.org/10.1145/3766882.3767169))

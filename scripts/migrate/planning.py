@@ -4,7 +4,7 @@ from pathlib import Path
 
 from scripts.migrate.models import ImportRule, MigrationConfig, MigrationPlan, PlannedNote
 from scripts.migrate.models.config import SidebarWeight
-from scripts.migrate.paths import note_to_ref, source_import_root
+from scripts.migrate.paths import PDF_ROOT, note_to_ref, source_import_root
 from scripts.migrate.runtime import MigrationRoots
 from scripts.migrate.text import humanize_slug, slugify
 
@@ -16,6 +16,17 @@ class MigrationFailed(RuntimeError):
 def matches_any(rel_path: Path, patterns: tuple[str, ...]) -> bool:
     posix = rel_path.as_posix()
     for pattern in patterns:
+        # A leading / anchors the pattern at the import root: "/input/**" excludes
+        # the top-level inbox but not design-research/input.
+        if pattern.startswith("/"):
+            anchored = pattern[1:]
+            if anchored.endswith("/**"):
+                directory = Path(anchored[:-3]).parts
+                if len(rel_path.parts) > len(directory) and rel_path.parts[: len(directory)] == directory:
+                    return True
+            elif posix == anchored:
+                return True
+            continue
         if rel_path.match(pattern) or posix == pattern:
             return True
         # pathlib's ** matches one path component here, not an entire subtree.
@@ -85,13 +96,15 @@ def build_migration_plan(
 ) -> MigrationPlan:
     notes: list[PlannedNote] = []
     seen_targets: dict[Path, Path] = {}
-    managed_targets: list[Path] = []
+    managed_targets: list[Path] = [PDF_ROOT]
 
     for rule in config.imports:
         import_root = source_import_root(roots, rule)
         if not import_root.exists():
             raise MigrationFailed(f"Missing source subtree: {import_root}")
         validate_selection_paths(import_root, rule)
+        if rule.target_subtree.parts[:1] == PDF_ROOT.parts:
+            raise MigrationFailed(f"Target {rule.target_subtree.as_posix()} is the PDF folder")
 
         managed_targets.append(rule.target_subtree)
         for source_path in sorted(import_root.rglob("*.md")):

@@ -1,3 +1,4 @@
+import { initDisclosures } from "./disclosures.mjs";
 import { sidebarParents, updatePinnedRows } from "./hierarchy.mjs";
 
 function rowHeight(element) {
@@ -5,6 +6,20 @@ function rowHeight(element) {
       element.getBoundingClientRect().height +
         (parseFloat(getComputedStyle(element).marginBottom) || 0)
     : 0;
+}
+
+// Section chevrons become disclosures before the first paint; the current
+// page's branch still opens on arrival.
+export function initSectionToggles(storageKey) {
+  const tree = document.querySelector(".section-nav");
+  if (!tree || tree.hasAttribute("data-section-toggles")) return;
+  tree.setAttribute("data-section-toggles", "");
+  initDisclosures({
+    toggles: [...tree.querySelectorAll(".site-sidebar-section-toggle")],
+    bulkButtons: [...tree.querySelectorAll("[data-sidebar-bulk]")],
+    storageKey,
+    keepOpen: (toggle) => toggle.closest(".sidebar-group").matches(".active, .active-ancestor"),
+  });
 }
 
 // Shared by the parser-time initializer and subsequent sticky-layout updates.

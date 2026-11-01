@@ -212,3 +212,9 @@ The deeper abstraction may eventually be **persistent collaborative work**:
 Then "long-running agent" becomes only one implementation of that much broader thing.
 
 That feels like a field structure worth pursuing, because it connects the practical engineering questions people currently ask--"How do you retry it? Where does it run?"--to the harder questions that appear once the system is actually trusted with work over hours, days, or indefinitely.
+
+## Library sources
+
+
+- [Cemri et al. 2025](/sources/ai-engineering/failures/cemri-2025-why-do-multi-agent-llm-systems-fail.pdf.enc), *Why Do Multi-Agent LLM Systems Fail?* ([arXiv:2503.13657](https://arxiv.org/abs/2503.13657))
+- [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370))

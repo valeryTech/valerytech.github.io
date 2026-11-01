@@ -12,8 +12,8 @@
     "format": "prettier **/** -w -c",
     "format:styles": "prettier \"assets/css/site/**/*.css\" --write",
     "lint:styles": "prettier \"assets/css/site/**/*.css\" --check",
-    "format:ui": "prettier \"assets/js/{custom.js,navigation/*.mjs,settings/*.mjs,preferences/*.{js,mjs},analytics/{emit,engagement,interactions}.mjs}\" \"data/{ui/*.json,callouts.json,analytics.json}\" \"scripts/{*ui-config.mjs,ui-config/*.mjs}\" --write",
-    "lint:ui": "prettier \"assets/js/{custom.js,navigation/*.mjs,settings/*.mjs,preferences/*.{js,mjs},analytics/{emit,engagement,interactions}.mjs}\" \"data/{ui/*.json,callouts.json,analytics.json}\" \"scripts/{*ui-config.mjs,ui-config/*.mjs}\" --check",
+    "format:ui": "prettier \"assets/js/{custom.js,pdf-reader.mjs,navigation/*.mjs,settings/*.mjs,preferences/*.{js,mjs},analytics/{emit,engagement,interactions}.mjs}\" \"data/{ui/*.json,callouts.json,analytics.json}\" \"scripts/{*ui-config.mjs,ui-config/*.mjs}\" --write",
+    "lint:ui": "prettier \"assets/js/{custom.js,pdf-reader.mjs,navigation/*.mjs,settings/*.mjs,preferences/*.{js,mjs},analytics/{emit,engagement,interactions}.mjs}\" \"data/{ui/*.json,callouts.json,analytics.json}\" \"scripts/{*ui-config.mjs,ui-config/*.mjs}\" --check",
     "check:config": "node scripts/check-ui-config.mjs",
     "test:ui": "node --test tests/config/*.test.mjs tests/preferences/*.test.mjs",
     "lint": "npm run lint:descriptions",
@@ -25,19 +25,21 @@
     "test:analytics": "node --test tests/analytics/*.test.mjs",
     "test:seo": "node --test tests/seo/*.test.mjs",
     "test:site-map": "node --test tests/site-map/*.test.mjs",
-    "test:redirects": "node --test tests/redirects/*.test.mjs",
     "test:theme": "node --test tests/theme/*.test.mjs",
     "preview": "vite preview --outDir public",
-    "test:navigation": "node --test tests/navigation/*.test.mjs"
+    "test:navigation": "node --test --test-timeout=60000 tests/navigation/*.test.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.3.0",
     "@fontsource/ibm-plex-sans": "^5.3.0",
     "@fontsource/jost": "^5.3.0",
     "@microsoft/clarity": "^1.0.2",
+    "@noble/ciphers": "2.4.0",
+    "@noble/hashes": "2.4.0",
     "flexsearch": "0.8.212",
     "js-cookie": "^3.0.8",
     "katex": "0.18.4",
+    "pdfjs-dist": "6.5.438",
     "posthog-js": "^1.444.0"
   },
   "devDependencies": {

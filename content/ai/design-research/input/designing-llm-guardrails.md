@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Designing LLM Guardrails"
 description: "A conversation exploring guardrails against overreliance on fluent AI text, including explicit interaction modes, independent checks, and links to a research report."
-title: "Designing Llm Guardrails"
-linkTitle: "Designing Llm Guardrails"
+linkTitle: "Designing LLM Guardrails"
 ---
 
 Publication note, 2026-04-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
@@ -26,7 +26,7 @@ Let's define interaction guardrails, such as explicit modes inspired by Vim, to 
 
 I'd make **generating text a temporary, explicit action, followed by a separate decision about whether to rely on it**. That's the useful part of the Vim analogy: each mode allows different actions.
 
-Reading fluent text and assuming that it contains sound reasoning is a concern that research supports. In a controlled study with 308 participants, explanations increased people's reliance on both correct and incorrect LLM answers. Asking for a longer explanation can therefore make a bad answer more convincing. That applies to my answers too. [arxiv.org](<https://arxiv.org/abs/2502.08554?utm_source=chatgpt.com>)
+Reading fluent text and assuming that it contains sound reasoning is a concern that research supports. In a controlled study with 308 participants, explanations increased people's reliance on both correct and incorrect LLM answers. Asking for a longer explanation can therefore make a bad answer more convincing. That applies to my answers too. [arxiv.org](<https://arxiv.org/abs/2502.08554>)
 
 ### A proposed mode system
 
@@ -40,7 +40,7 @@ Reading fluent text and assuming that it contains sound reasoning is a concern t
 
 `Esc` should always stop generation and return control to you. The current mode should stay visible.
 
-There is some support for adding this kind of deliberate effort: one experiment found that interventions requiring more active engagement reduced overreliance on AI, although they didn't eliminate it and users disliked the added friction. The particular mode system above would still need testing. [eecs.harvard.edu](<https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca21trust.pdf?utm_source=chatgpt.com>)
+There is some support for adding this kind of deliberate effort: one experiment found that interventions requiring more active engagement reduced overreliance on AI, although they didn't eliminate it and users disliked the added friction. The particular mode system above would still need testing. [eecs.harvard.edu](<https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca21trust.pdf>)
 
 ### Rules that address the problem you noticed
 
@@ -78,11 +78,11 @@ Use stronger checks for consequential decisions and lighter checks for creative 
 ### Mental health needs a separate safeguard
 
 
-Overreliance on polished text alone should not be treated as evidence of psychosis. Psychosis involves changes in thoughts or perceptions that can make it difficult to recognize what is real; accepting an unconvincing explanation does not, by itself, establish that. [National Institute of Mental Health (NIMH)](<https://www.nimh.nih.gov/health/publications/understanding-psychosis?utm_source=chatgpt.com>)
+Overreliance on polished text alone should not be treated as evidence of psychosis. Psychosis involves changes in thoughts or perceptions that can make it difficult to recognize what is real; accepting an unconvincing explanation does not, by itself, establish that. [National Institute of Mental Health (NIMH)](<https://www.nimh.nih.gov/health/publications/understanding-psychosis>)
 
-Clinical case reports do describe chatbots appearing to reinforce delusional beliefs. They raise concerns, but they don't establish how often this happens or demonstrate that a mode system prevents it. **I'd describe this proposal as guardrails against overreliance, without claiming clinical protection.** [Springer Nature Link](<https://link.springer.com/article/10.1186/s12888-026-08137-3?utm_source=chatgpt.com>)
+Clinical case reports do describe chatbots appearing to reinforce delusional beliefs. They raise concerns, but they don't establish how often this happens or demonstrate that a mode system prevents it. **I'd describe this proposal as guardrails against overreliance, without claiming clinical protection.** [Springer Nature Link](<https://link.springer.com/article/10.1186/s12888-026-08137-3>)
 
-For wellbeing, I'd add a separate stopping rule: if use starts displacing sleep, becomes difficult to stop, or increases distress, step away from the conversation. If you're having difficulty telling what's real, involve a trusted person and seek professional support promptly. Sleep disruption and difficulty distinguishing reality are among the warning signs NIMH identifies. [National Institute of Mental Health (NIMH)](<https://www.nimh.nih.gov/health/publications/understanding-psychosis?utm_source=chatgpt.com>)
+For wellbeing, I'd add a separate stopping rule: if use starts displacing sleep, becomes difficult to stop, or increases distress, step away from the conversation. If you're having difficulty telling what's real, involve a trusted person and seek professional support promptly. Sleep disruption and difficulty distinguishing reality are among the warning signs NIMH identifies. [National Institute of Mental Health (NIMH)](<https://www.nimh.nih.gov/health/publications/understanding-psychosis>)
 
 For an actual product, output limits, explicit continuation, and stopping controls should be enforced by the interface. A prompt can request these behaviors, but the model's willingness to follow the prompt shouldn't be the only safeguard.
 
@@ -208,7 +208,6 @@ For a public website, I'd frame the problem this way:
 That suggests a practical guardrail to test: **an important conversation should have a planned step outside the chat.** Before starting, decide what would resolve the question--a reproducible test, a primary source, or another person's assessment. Let the model help prepare that step. Leave the question unresolved until the relevant evidence arrives.
 
 For your mode system, this means adding an explicit **outside-check step**. A second generated explanation should not, by itself, count as completing the check.
-
 
 ---
 

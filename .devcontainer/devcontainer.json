@@ -7,8 +7,14 @@
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "mounts": [
-    "source=valerytech-node-modules,target=/workspace/node_modules,type=volume"
+    "source=valerytech-node-modules,target=/workspace/node_modules,type=volume",
+    "source=valerytech-uv-venv,target=/opt/uv-venv,type=volume"
   ],
+  "containerEnv": {
+    "BROWSER_CHANNEL": "chromium",
+    "UV_PROJECT_ENVIRONMENT": "/opt/uv-venv",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
   "forwardPorts": [1313],
   "postCreateCommand": "/usr/local/bin/dev-entrypoint true",
   "postStartCommand": "/usr/local/bin/dev-entrypoint true"

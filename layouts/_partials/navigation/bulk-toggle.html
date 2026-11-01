@@ -1,0 +1,6 @@
+{{- /* Pane headings cycle their branches; the startup script reveals the button when the pane has branches, and each icon shows the next action. */ -}}
+<button type="button" class="site-bulk-toggle" data-{{ .pane }}-bulk data-action="collapse" aria-label="Collapse all sections" title="Collapse all sections" hidden>
+  {{ partial "components/control-icon.html" (dict "name" "chevron-double-up" "attributes" `data-bulk-icon="collapse"`) }}
+  {{ partial "components/control-icon.html" (dict "name" "reply" "attributes" `data-bulk-icon="restore"`) }}
+  {{ partial "components/control-icon.html" (dict "name" "chevron-double-down" "attributes" `data-bulk-icon="expand"`) }}
+</button>

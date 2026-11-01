@@ -20,7 +20,13 @@
         {{ end }}
       </fieldset>
     {{ end }}
-    <button type="button" class="site-settings-reset" data-settings-reset>{{ $settings.resetLabel }}</button>
+    <div class="site-settings-actions">
+      <button type="button" class="site-settings-reset" data-settings-reset>{{ $settings.resetLabel }}</button>
+      <button type="button" class="site-settings-reset" data-settings-export>{{ $settings.exportLabel }}</button>
+      <button type="button" class="site-settings-reset" data-settings-import>{{ $settings.importLabel }}</button>
+      <input type="file" accept="application/json,.json" data-settings-import-file hidden />
+    </div>
+    <p class="site-settings-help">{{ $settings.transferHelp }}</p>
   </fieldset>
   <p class="site-settings-status" role="status" aria-label="Settings status">{{ $settings.messages.requiresJavaScript }}</p>
 </form>

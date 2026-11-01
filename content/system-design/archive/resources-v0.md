@@ -60,7 +60,7 @@ Not full course. Has mock interview videos, guides..
 ## Distributed Systems Course
 
 
-from [Distributed-systems sources]({{< ref "engineering/topics/distributed-systems" >}}#sources)
+from [Distributed-systems sources]({{< ref "engineering/distributed-systems/reading" >}})
 
 ## Engineering Courses
 
@@ -105,7 +105,7 @@ add map link
 
 communication and protocols
 
-"Fundamentals of Backend Communications and Protocols" by [Hussein Nasser](https://coursehunter.net/source/hussein-nasser "Hussein Nasser")
+"Fundamentals of Backend Communications and Protocols" by Hussein Nasser
 
 [Database resources]({{< ref "engineering/data/databases" >}}#resources)
 

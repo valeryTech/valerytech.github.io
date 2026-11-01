@@ -62,8 +62,14 @@ B-Trees, B+ trees
 # resources
 
 
-"Fundamentals of Database Engineering" course by [Hussein Nasser](https://coursehunter.net/source/hussein-nasser "Hussein Nasser")
+"Fundamentals of Database Engineering" course by Hussein Nasser
 
 "Relational Databases" by Oz Nova
 
-<https://coursehunter.net/course/osnovy-relyacionnyh-baz-dannyh>
+## Library sources
+
+
+- [Chen and Lee 2019](/sources/software-engineering/databases/chen-2019-introduction-of-nosql-databases.pdf.enc), *An Introduction of NoSQL Databases Based on Their Categories and Application Industries*
+- [Gessert et al. 2016](/sources/software-engineering/databases/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3))
+- [LearnSQL 2020](/sources/software-engineering/databases/learnsql-2020-sql-cheat-sheets.pdf.enc), *SQL Cheat Sheets*
+- [Xu 2023](/sources/software-engineering/databases/xu-2023-key-steps-in-database-selection-process.pdf.enc), *Key Steps in the Database Selection Process*

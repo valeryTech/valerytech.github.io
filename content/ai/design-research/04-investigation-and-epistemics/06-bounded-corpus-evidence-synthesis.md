@@ -37,7 +37,7 @@ Additional concern: Source authority may need explicit justification. Search sys
 
 Requirement and personal motivation: The pipeline should consider all supplied documents. The author reports that chats, including GPT Pro, frequently omit critical facts, principles, and practices present in the documents.
 
-The loop could repeat, using principles from the author's retrieval reframing: https://valery.tech/ai-engineering/retrieval/reframing/
+The loop could repeat, using principles from the author's retrieval reframing: https://valery.tech/ai-engineering/context/retrieval/reframing/
 
 ## analysis
 
@@ -220,7 +220,7 @@ So when two pieces of evidence conflict, the output could say:
 
 That's far more useful than ranking something higher because its author has a lot of citations or LinkedIn engagement.
 
-The need for this sort of provenance is showing up independently in current work on compliance and AI assurance. Recent research explicitly frames traceability, evidence integrity and reasoning provenance as conditions for AI-generated material to be usable in audits. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0950584926001217?utm_source=chatgpt.com "AI in control: Rethinking cybersecurity compliance and auditing - ScienceDirect"))
+The need for this sort of provenance is showing up independently in current work on compliance and AI assurance. Recent research explicitly frames traceability, evidence integrity and reasoning provenance as conditions for AI-generated material to be usable in audits. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0950584926001217 "AI in control: Rethinking cybersecurity compliance and auditing - ScienceDirect"))
 
 ## Task-specific context assembly
 
@@ -233,4 +233,4 @@ The [retrieval methods]({{< ref "ai/design-research/04-investigation-and-epistem
 
 The promising gap is task-specific context assembly: selecting authoritative, sufficient evidence for a decision (or for other task) while exposing provenance, conflicts, missing support, and abstaining when warranted.
 
-links: sem-rag, semantic search, [Reframing]({{< ref "ai-engineering/retrieval/reframing" >}}) retrieval,
+links: sem-rag, semantic search, [Reframing]({{< ref "ai-engineering/context/retrieval/reframing" >}}) retrieval,

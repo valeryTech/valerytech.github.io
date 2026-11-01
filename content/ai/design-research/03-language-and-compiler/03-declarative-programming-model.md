@@ -510,3 +510,8 @@ The following closing section comes from the captured article ["DSLs Enable Reli
 
 
 There is a growing trend of treating prompts as the primary source of truth. A well-designed DSL fundamentally changes this dynamic. One of the key advantages I observe of working with DSLs is that the generated program itself often becomes the artifact that humans maintain. Because a DSL is dense, expressive, and largely free of incidental boilerplate, it captures the essential intent of the solution in a form that remains readable long after generation. If an LLM generates a Tickloom failure scenario from a natural language request, the resulting scenario is already expressed in the vocabulary of the domain. If the scenario needs to change next month, there is no need to recover the original prompt and regenerate everything. The DSL has enough context for LLM to know the intent and work with it. The enduring asset is not the prompt, but the DSL and the semantic model.
+
+## Library sources
+
+
+- [Wang et al. 2026](/sources/ai-engineering/harness/wang-2026-agentspex-agent-specification-execution-language.pdf.enc), *AgentSPEX: An Agent SPecification and EXecution Language* ([arXiv:2604.13346](https://arxiv.org/abs/2604.13346))

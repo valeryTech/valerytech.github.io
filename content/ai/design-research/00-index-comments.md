@@ -73,7 +73,7 @@ Novelty arguments, benchmark descriptions, and claims about named systems remain
 
 The local separation note (archived source 001) contains UC-1 properties and distinguishes a draft from publication. It is relevant source context, but it does not identify or replace the originally attached domain-model document. The [evaluation comments]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks-comments" >}}) record the limits of that check.
 
-The old [sensemaking redirect]({{< ref "ai/architecture-dsl-like/sensemaking" >}}) names `02-sensemaking-and-epistemic-partnership`. The current destination is [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}). This review records the stale redirect without changing the legacy note.
+The old [sensemaking redirect]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) names `02-sensemaking-and-epistemic-partnership`. The current destination is [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}). This review records the stale redirect without changing the legacy note.
 
 ## Suggested next decision
 

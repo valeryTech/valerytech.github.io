@@ -28,7 +28,7 @@ An MVP or proof of concept can help test assumptions about requirements and cons
 
 For each important flow, show who calls whom, what information crosses the boundary, and which component owns the state. These questions connect the diagram to behavior.
 
-Microservices bring particular questions about inter-process communication, state ownership, consistency across services, independent deployment, and distributed tracing. Use these questions to examine a service boundary before adding it to a design.
+Microservices bring particular questions about inter-process communication, state ownership, consistency across services, independent deployment, and distributed tracing. Use these questions to examine a service boundary before adding it to a design. Each has a hub: [boundaries]({{< ref "system-design/elements/boundaries" >}}), [communication]({{< ref "system-design/elements/communication" >}}), [data across services]({{< ref "system-design/elements/data-across-services" >}}), and [operating services]({{< ref "system-design/elements/operating-services" >}}).
 
 Modularity concerns what can change independently as well as how the system is divided. See [The Golden Age of Modularity](https://vladikk.com/2025/03/30/golden-age-of-modularity/).
 
@@ -37,15 +37,29 @@ Modularity concerns what can change independently as well as how the system is d
 
 Name the problem, the constraints, the plausible alternatives, and the consequence of each choice. Select an approach and state what evidence or change in requirements would make you revisit it.
 
-Use the [problem-solving checklist]({{< ref "system-design/frameworks/problem-solving-approach" >}}) alongside any of the [interview frameworks]({{< ref "system-design/frameworks" >}}). Keep a practical toolbox and use short questions or flash cards to recall it during design work.
+Use the [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}) alongside any of the [interview frameworks]({{< ref "system-design/interview/frameworks" >}}). Keep a practical toolbox and use short questions or flash cards to recall it during design work.
 
 ## Models and further reading
 
 
 - **Architecture views:** [C4 model](https://c4model.com/) and the [Zachman framework](https://en.wikipedia.org/wiki/Zachman_Framework); the original notes also mention TOGAF.
-- **Distributed-system topics to study:** consistency models, the CAP theorem, and the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem). Follow the [building-block map]({{< ref "system-design/elements/elements" >}}) for related topics.
+- **Distributed-system topics to study:** consistency models, the CAP theorem, and the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem). Follow the [pattern map]({{< ref "system-design/elements/elements" >}}) for related topics.
 - **Architecture writers:** [Ruth Malan](https://www.ruthmalan.com/), Vlad Khononov's "Balancing," [Diana Montalion](https://www.youtube.com/watch?v=m7cWdYVAzX0), and [Christian Posta](https://blog.christianposta.com/).
 - **Operational and cost perspectives:** [The Frugal Architect](https://thefrugalarchitect.com/) and the [AWS Architecture Center](https://aws.amazon.com/architecture).
 - **Engineering case studies:** Netflix's [distributed counter](https://netflixtechblog.com/netflixs-distributed-counter-abstraction-8d0c45eb66b2), [data gateway](https://netflixtechblog.medium.com/data-gateway-a-platform-for-growing-and-protecting-the-data-tier-f1ed8db8f5c6), and [adaptive concurrency limits](https://medium.com/@NetflixTechBlog/performance-under-load-3e6fa9a60581).
 
 See the [resource catalog]({{< ref "system-design/resources" >}}) for more courses, talks, and papers. The [earlier principles note]({{< ref "system-design/archive/architecture-principles-v0" >}}) preserves the original wording and links.
+
+## Library sources
+
+
+- [Malan 2024](/sources/software-engineering/architecture/malan-2024-system-design-and-software-architecture.pdf.enc), *System Design and Software Architecture* -- on *System Design Principles*
+- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- on *Models and further reading*
+
+Further reading:
+
+- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture*
+- [Dragoni et al. 2017](/sources/software-engineering/architecture/dragoni-2017-microservices-yesterday-today-tomorrow.pdf.enc), *Microservices: yesterday, today, and tomorrow* ([arXiv:1606.04036](https://arxiv.org/abs/1606.04036))
+- [Shahin et al. 2014](/sources/software-engineering/architecture/shahin-2014-software-architecture-visualization-techniques.pdf.enc), *A systematic review of software architecture visualization techniques* ([doi:10.1016/j.jss.2014.03.071](https://doi.org/10.1016/j.jss.2014.03.071))
+- [Beck 2023](/sources/software-engineering/craft/beck-2023-tidy-first.pdf.enc), *Tidy First? A Personal Exercise in Empirical Software Design*
+- [Montalion 2024](/sources/thinking-and-learning/systems-thinking/montalion-2024-learning-systems-thinking.pdf.enc), *Learning Systems Thinking*

@@ -25,11 +25,15 @@ function fixture(t) {
     mkdirSync(path.dirname(destination), { recursive: true });
     copyFileSync(path.join(repository, 'layouts', filename), destination);
   }
-  for (const name of ['sidebar', 'sidebar-toggle', 'breadcrumb', 'main/mobile-toc', 'pane-toggle', 'navigation/back-to-top', 'navigation/outline-map', 'utils/icon']) {
+  for (const name of ['sidebar', 'sidebar-toggle', 'breadcrumb', 'main/mobile-toc', 'pane-toggle', 'navigation/back-to-top', 'navigation/bulk-toggle', 'navigation/outline-map', 'utils/icon']) {
     const destination = path.join(root, 'layouts/_partials', `${name}.html`);
     mkdirSync(path.dirname(destination), { recursive: true });
     writeFileSync(destination, '');
   }
+  mkdirSync(path.join(root, 'assets/js'), { recursive: true });
+  writeFileSync(path.join(root, 'assets/js/outline-startup.js'), '');
+  mkdirSync(path.join(root, 'data/ui'), { recursive: true });
+  copyFileSync(path.join(repository, 'data/ui/navigation.json'), path.join(root, 'data/ui/navigation.json'));
   mkdirSync(path.join(root, 'layouts/partials/sidebar'), { recursive: true });
   writeFileSync(path.join(root, 'layouts/partials/sidebar/section-menu.html'), '');
   writeFileSync(path.join(root, 'layouts/baseof.html'), '{{ block "main" . }}{{ end }}');
@@ -137,9 +141,9 @@ test('overview outlines include authored and generated headings with stable nest
   assert.match(html, /class="section-overview"/);
   const outline = html.match(/<nav id="TableOfContents">([\s\S]*?)<\/nav>/)?.[1];
   assert.ok(outline);
-  assert.match(outline, /href="#introduction">Introduction<\/a><ul><li><a href="#a-closer-look">/);
+  assert.match(outline, /href="#introduction">Introduction<\/a><\/div><ul id="toc-branch-introduction"><li><a href="#a-closer-look">/);
   assert.match(outline, /href="#section-index-title">Explore this section/);
-  assert.match(outline, /Group &amp; examples<\/a><ul><li><a[^>]*>Nested group/);
+  assert.match(outline, /Group &amp; examples<\/a><\/div><ul[^>]*><li><a[^>]*>Nested group/);
   for (const [, id] of outline.matchAll(/href="#([^"]+)"/g)) {
     assert.match(html, new RegExp(`<h[1-6] id="${id}"`));
   }

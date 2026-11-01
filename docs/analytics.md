@@ -64,9 +64,8 @@ For general reporting, use GA4 Traffic acquisition, Pages and screens, and Path
 exploration. Navigation breakdowns can use event-scoped `source_path`,
 `destination_path`, and `navigation_area` definitions if configured.
 
-Review positive production 404 counts before adding
-[redirect traffic evidence and mappings](legacy-url-redirects.md). Keep provider
-counts separate. Browser analytics misses blocked or non-JavaScript requests;
+Review positive production 404 counts before adding a Hugo alias for a moved
+note. Keep provider counts separate. Browser analytics misses blocked or non-JavaScript requests;
 owner visits and unrecognized automation can remain. Country or low engagement
 alone does not identify bots or professional demographics.
 
@@ -76,7 +75,7 @@ Reader engagement thresholds and the sampling interval live in
 `data/analytics.json`. `assets/js/analytics/engagement.mjs` consumes this policy;
 `assets/js/analytics/interactions.mjs` translates UI actions into the existing
 event contract. `npm run check:config` validates the policy before preview/build,
-and `npm run test:analytics` checks active/background time and event delivery.
+and `test:analytics` (part of `task quality:test`) checks active/background time and event delivery.
 
 Set these GitHub repository **variables** under Settings → Secrets and variables
 → Actions. They are public browser configuration, not credentials.
@@ -99,7 +98,7 @@ For a local production build, the Docker wrapper forwards Hugo overrides:
 ```sh
 HUGOxPARAMSxANALYTICSxPOSTHOGTOKEN=phc_example \
 HUGOxPARAMSxANALYTICSxPOSTHOGHOST=https://us.i.posthog.com \
-HUGOxPARAMSxANALYTICSxCLARITYID=example make build
+HUGOxPARAMSxANALYTICSxCLARITYID=example task site:build
 ```
 
 Keep PostHog replay off and Clarity cookies off by default. In GA4, retain
@@ -109,7 +108,7 @@ data. Reserve DebugView for targeted tests.
 
 ## Verification
 
-Run `make verify`. For browser verification, serve a production build with a
+Run `task site:verify`. For browser verification, serve a production build with a
 real 404 fallback and a marked release such as `404-e2e-YYYY-MM-DD`. Follow an
 internal broken link, an external broken link, and a direct missing URL. Check
 all five context fields in PostHog and GA4 Realtime and the tags/recording in

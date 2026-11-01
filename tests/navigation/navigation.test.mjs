@@ -1,15 +1,23 @@
 import assert from 'node:assert/strict';
-import { before, after, test } from 'node:test';
+import { before, after, describe, test as register } from 'node:test';
 import { createRequire } from 'node:module';
 import { mkdirSync, readFileSync } from 'node:fs';
+import { availableParallelism } from 'node:os';
 import path from 'node:path';
 
 const { chromium, webkit, devices } = createRequire(import.meta.url)('playwright-core');
 const base = process.env.BASE_URL || 'http://localhost:1313';
 const reference = process.env.REFERENCE_URL;
 const screenshots = process.env.SCREENSHOT_DIR;
-const route = '/ai/other/methodology-v1-3/usage/rfc-v1-4/';
-const framework = '/system-design/frameworks/framework-iv/';
+const route = '/ai-engineering/evaluation/theoretical-methodology/framework/usage/rfc-v1-4/';
+const framework = '/system-design/interview/frameworks/framework-iv/';
+// Reviewing the deployed site should not count as visitor activity, and the
+// preview must not reload pages when another change rebuilds the site.
+const blocked = /googletagmanager\.com|google-analytics\.com|posthog\.com|clarity\.ms|\/livereload\.js/;
+// Every test opens its own browser context, so tests run side by side.
+const concurrency = Number(process.env.NAVIGATION_CONCURRENCY) || Math.min(6, Math.max(1, availableParallelism() - 1));
+const tests = [];
+const test = (...args) => tests.push(args);
 let browser;
 
 before(async () => {
@@ -35,14 +43,13 @@ async function pageFor(t, url = base + route, width = 1440, device = {}) {
   const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce', ...device });
   page.setDefaultTimeout(8000);
   t.after(() => page.close());
-  // Reviewing the deployed site should not count as visitor activity.
-  await page.route(/googletagmanager\.com|google-analytics\.com|posthog\.com|clarity\.ms/, (request) => request.abort());
+  await page.route(blocked, request => request.abort());
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   if (new URL(url).origin === new URL(base).origin) {
     t.after(() => assert.deepEqual(errors, [], 'No navigation JavaScript errors'));
   }
-  const response = await page.goto(url, { waitUntil: 'networkidle' });
+  const response = await page.goto(url, { waitUntil: 'load' });
   assert.equal(response.status(), 200, url);
   return page;
 }
@@ -63,6 +70,11 @@ async function chooseSetting(scope, label, value) {
     await button.click();
   }
   assert.equal(await button.getAttribute('value'), value, label);
+}
+
+// A hidden top bar keeps its tools in a floating column, so check the bar itself.
+async function topBarVisible(page) {
+  return page.locator('#site-header').evaluate(header => getComputedStyle(header).visibility === 'visible');
 }
 
 async function settleLayout(page) {
@@ -108,8 +120,8 @@ test('the theme button cycles through Light, Dark and System with saved and keyb
 
     async function expectMode(mode, dark) {
       await page.waitForFunction(({ mode, dark }) => {
-        const button = document.querySelector('.hextra-theme-toggle');
-        return button.parentElement.dataset.theme === mode && document.documentElement.classList.contains('dark') === dark;
+        const root = document.documentElement;
+        return root.dataset.themePreference === mode && root.classList.contains('dark') === dark;
       }, { mode, dark });
       assert.equal(await trigger.locator('.site-theme-icon:visible').count(), 1, 'Only the current mode occupies the icon frame');
       assert.ok(await trigger.locator(`[data-theme-choice="${mode}"]`).first().isVisible());
@@ -126,7 +138,7 @@ test('the theme button cycles through Light, Dark and System with saved and keyb
     await trigger.press('Enter');
     await expectMode('dark', true);
     assert.equal(await page.evaluate(() => localStorage.getItem('color-theme')), 'dark');
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     await expectMode('dark', true);
 
     await trigger.press('Space');
@@ -135,7 +147,7 @@ test('the theme button cycles through Light, Dark and System with saved and keyb
     assert.equal(await page.evaluate(() => localStorage.getItem('color-theme')), 'system');
     await page.emulateMedia({ colorScheme: 'dark' });
     await expectMode('system', true);
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     await expectMode('system', true);
     await screenshot(page, `theme-cycle-${width}-${height}`);
     await page.emulateMedia({ colorScheme: 'light' });
@@ -145,7 +157,7 @@ test('the theme button cycles through Light, Dark and System with saved and keyb
     await expectMode('light', false);
     await page.emulateMedia({ colorScheme: 'dark' });
     await expectMode('light', false);
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     await expectMode('light', false);
     assert.deepEqual(await trigger.boundingBox(), bounds, 'Theme changes keep the button and shared header alignment fixed');
     assert.ok(bounds.y + bounds.height <= height, 'The theme control stays within the viewport');
@@ -155,13 +167,13 @@ test('the theme button cycles through Light, Dark and System with saved and keyb
 test('the top bar toggle keeps its state across pages and stays in the expanded or collapsed outline heading', async (t) => {
   const page = await pageFor(t);
   const toggle = page.locator('[data-header-toggle]');
-  const header = page.getByRole('navigation', { name: 'Primary', exact: true });
   assert.equal(await toggle.getAttribute('aria-label'), 'Hide top bar');
   assert.equal(await toggle.evaluate(button => button.parentElement.classList.contains('site-toc-title')), true);
   const before = await page.locator('.breadcrumb').boundingBox();
   const headerHeight = await page.locator('#site-header').evaluate(element => element.getBoundingClientRect().height);
   await toggle.press('Enter');
-  assert.equal(await header.isVisible(), false);
+  assert.equal(await topBarVisible(page), false);
+  assert.ok(await page.locator('.site-header-tools').isVisible(), 'Header tools stay reachable while the bar is hidden');
   assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
   assert.equal(await toggle.getAttribute('aria-label'), 'Show top bar');
   assert.equal(await toggle.evaluate(button => button === document.activeElement), true);
@@ -175,19 +187,19 @@ test('the top bar toggle keeps its state across pages and stays in the expanded 
   await page.getByRole('button', { name: 'Hide page outline', exact: true }).click();
   assert.equal(await toggle.evaluate(button => button.parentElement.hasAttribute('data-outline-restore-slot')), true);
   assert.equal(await toggle.isVisible(), true);
-  await page.reload({ waitUntil: 'networkidle' });
-  assert.equal(await header.isVisible(), false);
+  await page.reload({ waitUntil: 'load' });
+  assert.equal(await topBarVisible(page), false);
   assert.equal(await toggle.isVisible(), true);
   await toggle.press('Space');
-  assert.equal(await header.isVisible(), true);
+  assert.equal(await topBarVisible(page), true);
   await page.getByRole('button', { name: 'Show page outline', exact: true }).click();
   await toggle.click();
   await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link', { name: 'Usage', exact: true }).click();
-  await page.waitForURL(url => url.pathname === '/ai/other/methodology-v1-3/usage/');
+  await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/usage/');
   await toggle.waitFor({ state: 'visible' });
-  assert.equal(await header.isVisible(), false, 'Following a link preserves the hidden top bar');
+  assert.equal(await topBarVisible(page), false, 'Following a link preserves the hidden top bar');
   await toggle.click();
-  assert.equal(await header.isVisible(), true);
+  assert.equal(await topBarVisible(page), true);
 });
 
 test('the top bar can always be restored on compact layouts and pages without an outline', async (t) => {
@@ -201,28 +213,28 @@ test('the top bar can always be restored on compact layouts and pages without an
       await page.locator('.site-header-preferences .site-settings-link').click();
       await page.getByRole('dialog', { name: 'Site settings' }).getByLabel('Show top bar', { exact: true }).uncheck();
       await page.locator('[data-settings-close]').click();
-      await page.waitForFunction(() => document.activeElement?.matches('[data-header-toggle]'));
-      assert.equal(await toggle.evaluate(button => button === document.activeElement), true, 'Closing Settings focuses the restore button when the bar is hidden');
+      await page.waitForFunction(() => document.activeElement?.matches('.site-header-preferences .site-settings-link'));
+      assert.ok(await page.locator('.site-header-preferences .site-settings-link').isVisible(), 'Closing Settings returns focus to Settings, which stays reachable while the bar is hidden');
     } else {
       await toggle.click();
     }
-    assert.equal(await page.locator('#site-header').isVisible(), false);
+    assert.equal(await topBarVisible(page), false);
     const before = await toggle.boundingBox();
     assert.ok(before.x >= 0 && before.y >= 0 && before.x + before.width <= viewport.width && before.y + before.height <= viewport.height);
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     await toggle.click();
-    assert.equal(await page.locator('#site-header').isVisible(), true);
+    assert.equal(await topBarVisible(page), true);
     if (viewport.width < 768) {
       assert.equal(await toggle.isVisible(), false);
       assert.equal(await page.locator('.site-header-preferences .site-settings-link').evaluate(button => button === document.activeElement), true, 'Restoring the mobile bar returns focus to Settings');
     }
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   }
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   assert.equal(await toggle.evaluate(button => button.parentElement.hasAttribute('data-header-toggle-home')), true);
   await toggle.click();
   await page.locator('[data-settings-reset]').click();
-  assert.equal(await page.locator('#site-header').isVisible(), true, 'Reset restores the default visible bar');
+  assert.equal(await topBarVisible(page), true, 'Reset restores the default visible bar');
 
   const context = await browser.newContext({ javaScriptEnabled: false });
   t.after(() => context.close());
@@ -235,8 +247,10 @@ test('the top bar can always be restored on compact layouts and pages without an
 
 test('context headings share one configured minimum height and shrink again after resizing', async (t) => {
   const config = JSON.parse(readFileSync(new URL('../../data/ui/style.json', import.meta.url), 'utf8'));
-  const page = await pageFor(t);
-  const selectors = ['.breadcrumb', '.sidebar-root > a', '.site-toc-title', '.site-sidebar-toggle', '.site-outline-toggle'];
+  // A wrapped trail stacks several control rows, so use a page whose trail stays on one line.
+  const page = await pageFor(t, base + '/ai-engineering/approach/edd/');
+  // Pane toggles are round controls centered in these headings, so they keep their own size.
+  const selectors = ['.breadcrumb', '.sidebar-root > a', '.site-toc-title'];
   assert.equal(await page.locator('.breadcrumb').evaluate(element => parseFloat(getComputedStyle(element).minHeight)), config.contextHeaderMinHeightPixels);
 
   async function expectHeight(height) {
@@ -259,11 +273,18 @@ test('context headings share one configured minimum height and shrink again afte
     await expectHeight(larger);
     await page.evaluate(() => document.documentElement.style.removeProperty('--site-context-header-min-height'));
     await expectHeight(original);
-    assert.ok(await page.locator('.sidebar-root > [data-sidebar-toggle]').evaluate(button => {
-      const heading = button.parentElement.getBoundingClientRect();
-      const bounds = button.getBoundingClientRect();
-      return Math.abs(bounds.top + bounds.height / 2 - heading.top - heading.height / 2) < 1;
-    }), 'The collapse control stays centered in the navigation heading');
+    for (const toggle of ['.sidebar-root > [data-sidebar-toggle]', '.site-toc-title > [data-outline-toggle]']) {
+      assert.ok(await page.locator(toggle).evaluate(button => {
+        const heading = button.parentElement.getBoundingClientRect();
+        const bounds = button.getBoundingClientRect();
+        // The size token is a calc() expression, so resolve it through a probe.
+        const probe = document.body.appendChild(document.createElement('div'));
+        probe.style.cssText = 'position: absolute; inline-size: var(--site-round-control-size);';
+        const round = probe.getBoundingClientRect().width;
+        probe.remove();
+        return Math.abs(bounds.top + bounds.height / 2 - heading.top - heading.height / 2) < 1 && Math.abs(bounds.width - round) < 1 && Math.abs(bounds.height - round) < 1;
+      }), `${toggle}: the round collapse control stays centered in its heading`);
+    }
   }
 });
 
@@ -313,7 +334,7 @@ test('the header and page context share alignment guides without overflowing at 
           firstLinkLeft: links[0]?.left,
           lastLinkRight: links.at(-1)?.right,
           searchLeft: search.left,
-          preferencesLeft: rect('.site-header-preferences').left,
+          preferencesRight: rect('.site-header-preferences').right,
           searchLabelVisible: document.querySelector('.hextra-search-trigger-label').getClientRects().length > 0,
           searchRight: search.right,
           searchCentered: Math.abs(search.top + search.height / 2 - headerContentCenter) < 1,
@@ -323,7 +344,7 @@ test('the header and page context share alignment guides without overflowing at 
           crumbRight: crumb.right,
           crumbTextLeft: textLeft('.breadcrumb ol > li:first-child > a'),
           crumbRootRight: rect('.site-breadcrumb-root').right,
-          crumbIconLeft: rect('.site-breadcrumb-home svg').left,
+          crumbIconCenter: (rect('.site-breadcrumb-home').left + rect('.site-breadcrumb-home').right) / 2,
           crumbGap: parseFloat(getComputedStyle(document.querySelector('.breadcrumb')).columnGap),
           headerBottom: header.bottom,
           rootTop: rect('.sidebar-root').top,
@@ -335,7 +356,7 @@ test('the header and page context share alignment guides without overflowing at 
           outlineLeft: rect('.site-toc-title').left,
           outlineRight: rect('.site-toc-title').right,
           outlineTextLeft: textLeft('.site-toc-title-label'),
-          outlineIconLeft: rect('.site-outline-toggle [data-pane-icon="hide"] svg').left,
+          outlineIconCenter: (rect('.site-outline-toggle').left + rect('.site-outline-toggle').right) / 2,
           searchLeadingLeft: rect('.hextra-search-trigger-icon').left,
           searchTextLeft: textLeft('.hextra-search-trigger-label'),
         };
@@ -357,9 +378,9 @@ test('the header and page context share alignment guides without overflowing at 
         assert.ok(Math.abs(layout.brandCenter - layout.rootActionCenter) < 1, 'The Home control aligns with the leading sidebar action');
         assert.ok(Math.abs(layout.sectionsLeft - layout.brandRight - layout.headerGap) < 1 && layout.continuousLinks, 'Sections form one continuous surface after the Home control');
         assert.ok(Math.abs(layout.sectionsRight - layout.crumbRight) < 1, 'The shared sections bar ends on the breadcrumb guide');
-        assert.ok(Math.abs((layout.crumbIconLeft - layout.crumbLeft) - (layout.outlineIconLeft - layout.outlineLeft)) < 1, 'Breadcrumb and outline icons share the same leading inset');
-        assert.ok(Math.abs(layout.preferencesLeft - layout.outlineLeft) < 1, 'Preferences and search together share the outline heading’s start');
-        assert.ok(Math.abs(layout.searchRight - layout.outlineRight) < 1, 'Search follows the visible outline card’s right edge');
+        assert.ok(Math.abs((layout.crumbIconCenter - layout.crumbLeft) - (layout.outlineIconCenter - layout.outlineLeft)) < 1, 'Breadcrumb and outline circles share the same leading inset');
+        assert.ok(Math.abs(layout.searchLeft - layout.outlineLeft) < 1, 'Search and preferences together share the outline heading’s start');
+        assert.ok(Math.abs(layout.preferencesRight - layout.outlineRight) < 1, 'Preferences follow the visible outline card’s right edge');
         assert.ok(Math.abs(layout.crumbTop - layout.outlineTop) < 1, 'Outline title and breadcrumbs share a top edge');
         assert.ok(Math.abs((layout.crumbLeft - layout.rootRight) - (layout.outlineLeft - layout.crumbRight)) < 1, 'Breadcrumbs have the same gap to both navigation panes');
         if (layout.searchLabelVisible) {
@@ -370,16 +391,16 @@ test('the header and page context share alignment guides without overflowing at 
     }
     const documentSearchRight = await page.locator('.hextra-search-trigger').evaluate(element => element.getBoundingClientRect().right);
     const documentBrandLeft = await page.locator('.site-brand-link').evaluate(element => element.getBoundingClientRect().left);
-    await page.goto(base + '/', { waitUntil: 'networkidle' });
-    const home = await page.evaluate(() => ({ title: document.querySelector('main h1').getBoundingClientRect().left, contentLeft: document.querySelector('main').getBoundingClientRect().left, contentInset: parseFloat(getComputedStyle(document.querySelector('main')).paddingInlineStart), brand: document.querySelector('.site-brand-link').getBoundingClientRect().left, contentRight: document.querySelector('.homepage-details').getBoundingClientRect().right, searchRight: document.querySelector('.hextra-search-trigger').getBoundingClientRect().right }));
+    await page.goto(base + '/', { waitUntil: 'load' });
+    const home = await page.evaluate(() => ({ title: document.querySelector('main h1').getBoundingClientRect().left, contentLeft: document.querySelector('main').getBoundingClientRect().left, contentInset: parseFloat(getComputedStyle(document.querySelector('main')).paddingInlineStart), brand: document.querySelector('.site-brand-link').getBoundingClientRect().left, contentRight: document.querySelector('.homepage-details').getBoundingClientRect().right, searchRight: document.querySelector('.hextra-search-trigger').getBoundingClientRect().right, toolsRight: document.querySelector('.site-header-preferences').getBoundingClientRect().right }));
     assert.ok(Math.abs(home.brand - documentBrandLeft) < 1, `${width}px: the Home control stays in place between document and homepage`);
     assert.ok(Math.abs(home.title - home.contentLeft - home.contentInset) < 1, `${width}px: homepage content retains its reading inset`);
     assert.ok(Math.abs(home.searchRight - documentSearchRight) < 1, `${width}px: search stays in place between document and homepage`);
-    if (width >= 1280) assert.ok(Math.abs(home.contentRight - home.searchRight) < 1, `${width}px: homepage content follows the search and outline right guide`);
+    if (width >= 1280) assert.ok(Math.abs(home.contentRight - home.toolsRight) < 1, `${width}px: homepage content follows the header tools and outline right guide`);
     await screenshot(page, `aligned-home-${width}`);
     if (width >= 1280) {
       for (const path of ['/ai-engineering/', '/about/']) {
-        await page.goto(base + path, { waitUntil: 'networkidle' });
+        await page.goto(base + path, { waitUntil: 'load' });
         const edges = await page.evaluate(() => {
           const search = document.querySelector('.hextra-search-trigger').getBoundingClientRect();
           const outline = document.querySelector('.site-toc-title')?.getBoundingClientRect();
@@ -388,17 +409,17 @@ test('the header and page context share alignment guides without overflowing at 
             breadcrumb: document.querySelector('.breadcrumb').getBoundingClientRect().right,
             search: search.right,
             searchLeft: search.left,
-            preferencesLeft: document.querySelector('.site-header-preferences').getBoundingClientRect().left,
+            tools: document.querySelector('.site-header-preferences').getBoundingClientRect().right,
             outline: outline?.width ? { left: outline.left, right: outline.right } : null,
             overflow: document.documentElement.scrollWidth > innerWidth,
           };
         });
         assert.equal(edges.overflow, false, `${width}px ${path}: no horizontal overflow`);
         if (edges.outline) {
-          assert.ok(Math.abs(edges.outline.left - edges.preferencesLeft) < 1 && Math.abs(edges.outline.right - edges.search) < 1, `${width}px ${path}: preferences and search follow the section outline surface`);
+          assert.ok(Math.abs(edges.outline.left - edges.searchLeft) < 1 && Math.abs(edges.outline.right - edges.tools) < 1, `${width}px ${path}: search and preferences follow the section outline surface`);
           assert.ok(edges.content <= edges.breadcrumb && edges.breadcrumb < edges.outline.left, `${width}px ${path}: section content and breadcrumbs clear the outline`);
         } else {
-          assert.ok(Math.abs(edges.content - edges.search) < 1 && Math.abs(edges.breadcrumb - edges.search) < 1, `${width}px ${path}: full-width content and breadcrumbs share the search right guide`);
+          assert.ok(Math.abs(edges.content - edges.tools) < 1 && Math.abs(edges.breadcrumb - edges.tools) < 1, `${width}px ${path}: full-width content and breadcrumbs share the header tools right guide`);
         }
       }
     }
@@ -409,36 +430,46 @@ test('the header and page context share alignment guides without overflowing at 
   assert.ok(Math.abs(gap - config.layoutGapPixels) < 1);
 });
 
+const moreCollections = ['Blog', 'Projects', 'Reading map', 'Topics'];
+
 test('desktop and mobile sections select the same most specific direction without JavaScript', async (t) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 900 } });
   t.after(() => context.close());
   const page = await context.newPage();
-  await page.route(/googletagmanager\.com|google-analytics\.com|posthog\.com|clarity\.ms/, request => request.abort());
+  await page.route(blocked, request => request.abort());
   for (const [path, section, state] of [
     ['/', null, null],
     ['/ai-engineering/approach/edd/', 'AI Engineering', 'true'],
     ['/ai-engineering/evaluation/', 'Evaluation', 'page'],
-    ['/ai-engineering/evaluation/v2/failure-understanding/', 'Evaluation', 'true'],
+    ['/ai-engineering/evaluation/framework/20-error-analysis/', 'Evaluation', 'true'],
     ['/ai/design-research/', 'AI', 'true'],
-    ['/engineering/topics/api/', 'Engineering', 'true'],
+    ['/engineering/topics/caching/', 'Engineering', 'true'],
     ['/system-design/projects/ticketmaster/', 'System Design', 'true'],
+    ['/projects/', 'Projects', 'page'],
   ]) {
     const response = await page.goto(base + path);
     assert.equal(response.status(), 200);
     const sections = page.getByRole('group', { name: 'Sections', exact: true });
+    const drawer = page.locator('.mobile-site-nav');
     assert.ok(await sections.isVisible());
-    for (const navigation of [sections, page.locator('.mobile-site-nav')]) {
-      assert.equal(await navigation.locator('a').count(), 5);
+    assert.equal(await sections.locator('a').count(), 5);
+    assert.equal(await drawer.locator('a').count(), 5 + moreCollections.length);
+    // The header's More control carries the selection for collections it lists.
+    const inMore = moreCollections.includes(section);
+    for (const [navigation, label, value] of [
+      [sections, inMore ? 'More collections' : section, inMore ? 'true' : state],
+      [drawer, section, state],
+    ]) {
       const current = navigation.locator('[aria-current]');
       assert.equal(await current.count(), section ? 1 : 0, path);
       if (section) {
-        assert.equal((await current.textContent()).trim(), section);
-        assert.equal(await current.getAttribute('aria-current'), state);
+        assert.equal(await current.evaluate(element => element.getAttribute('aria-label') || element.textContent.trim()), label);
+        assert.equal(await current.getAttribute('aria-current'), value);
       }
     }
     assert.deepEqual(
-      await page.locator('.mobile-site-nav a').evaluateAll(links => links.map(link => link.getAttribute('href'))),
-      await sections.locator('a').evaluateAll(links => links.map(link => link.getAttribute('href'))),
+      await drawer.locator('a').evaluateAll(links => links.map(link => link.getAttribute('href'))),
+      await page.locator('.site-header-links > a, #site-more-collections a').evaluateAll(links => links.map(link => link.getAttribute('href'))),
     );
   }
   await page.getByRole('group', { name: 'Sections', exact: true }).getByRole('link', { name: 'Evaluation', exact: true }).click();
@@ -471,7 +502,7 @@ test('math uses the local KaTeX stylesheet and loads its display fonts', async (
 test('the font button cycles choices that persist and restore independently of the deferred controls', async (t) => {
   const page = await pageFor(t, base + '/');
   await page.context().addCookies([{ name: 'font-preference', value: 'avenir', url: base }]);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'system');
   const button = page.locator('#fontPreference');
   assert.equal(await button.getAttribute('aria-label'), 'Font: System. Switch to Jost.');
@@ -500,7 +531,7 @@ test('the font button cycles choices that persist and restore independently of t
   }]);
   // The head script must restore a saved choice even if the deferred bundle fails.
   await page.route(/\/js\/custom[^/]*\.js(?:\?|$)/, request => request.abort());
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal(await page.locator('#fontPreference').count(), 0);
   assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
   assert.match(await page.locator('body').evaluate(element => getComputedStyle(element).fontFamily), /Jost/);
@@ -527,11 +558,10 @@ test('text brightness previews, saves and restores text, headings and menus on d
     };
     const expectMenuColors = async expected => {
       const selectors = [
-        '.site-header-links > a:not([aria-current]):not(:hover):not(:focus-visible)',
-        '.section-nav a:not([aria-current]):not(:hover):not(:focus-visible)',
-        '.site-sidebar-section-row',
+        '.section-nav :not(.sidebar-root) > a:not([aria-current]):not(:hover):not(:focus-visible)',
+        // Pinned parents use the context colors, like the breadcrumb.
+        '.site-sidebar-section-row:not(.site-pinned)',
         '.site-page-outline a:not([aria-current]):not(:hover):not(:focus-visible)',
-        '.site-toc-title',
       ];
       await page.waitForFunction(({ selectors, expected }) => selectors.every(selector => {
         const element = document.querySelector(selector);
@@ -541,11 +571,15 @@ test('text brightness previews, saves and restores text, headings and menus on d
     };
     const softMenu = 'rgb(163, 163, 163)';
     const brightMenu = 'rgb(229, 229, 229)';
-    const softAccent = 'rgb(143, 175, 206)';
-    const brightAccent = 'rgb(183, 210, 235)';
+    // Dark links and navigation labels are white in both brightness profiles.
+    const softAccent = 'rgb(255, 255, 255)';
+    const brightAccent = 'rgb(255, 255, 255)';
     const expectAccentColors = async expected => {
       for (const selector of [
         '.breadcrumb',
+        // Top navigation labels and pane headings share the breadcrumb color.
+        '.site-header-links > a:not([aria-current]):not(:hover):not(:focus-visible)',
+        '.site-toc-title',
         '.breadcrumb a',
         '.site-header-preferences .site-settings-link',
         '.site-header-preferences .hextra-theme-toggle',
@@ -570,7 +604,7 @@ test('text brightness previews, saves and restores text, headings and menus on d
     assert.equal((await displayCookie(page)).textBrightness, 'bright');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await screenshot(page, 'text-brightness-settings-' + width);
-    await page.goto(base + route, { waitUntil: 'networkidle' });
+    await page.goto(base + route, { waitUntil: 'load' });
     await expectArticleColors(bright);
     await expectMenuColors(brightMenu);
     await expectAccentColors(brightAccent);
@@ -591,24 +625,24 @@ test('text brightness previews, saves and restores text, headings and menus on d
     if (width === 390) {
       await page.getByRole('button', { name: 'Menu', exact: true }).click();
       assert.equal(await color('.mobile-site-nav a'), brightMenu);
-      assert.equal(await color('.site-navigation-panel-header'), brightMenu);
+      assert.equal(await color('.site-navigation-panel-header'), brightAccent);
       await screenshot(page, 'text-brightness-mobile-menu');
       await page.keyboard.press('Escape');
       await page.locator('.site-outline-trigger').click();
-      assert.equal(await color('.site-outline-popover .site-navigation-panel-header'), brightMenu);
+      assert.equal(await color('.site-outline-popover .site-navigation-panel-header'), brightAccent);
       await page.keyboard.press('Escape');
     } else await screenshot(page, 'text-brightness-desktop-menu');
-    const chooser = await openBreadcrumbChooser(page, 'Methodology v1.3');
+    const chooser = await openBreadcrumbChooser(page, 'Theoretical Methodology Framework');
     assert.equal(await chooser.panel.locator('.site-breadcrumb-chooser-group').first().evaluate(element => getComputedStyle(element).color), brightMenu);
     await page.keyboard.press('Escape');
     // The head script restores the profile before deferred settings/navigation code runs.
     await page.route(/\/js\/custom[^/]*\.js(?:\?|$)/, request => request.abort());
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     await expectArticleColors(bright);
     await expectMenuColors(brightMenu);
     await expectAccentColors(brightAccent);
     await page.unroute(/\/js\/custom[^/]*\.js(?:\?|$)/);
-    await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+    await page.goto(base + '/settings/', { waitUntil: 'load' });
     await page.emulateMedia({ colorScheme: 'light' });
     await page.waitForFunction(() => !document.documentElement.classList.contains('dark'));
     assert.deepEqual(await previewColors(), light);
@@ -710,7 +744,7 @@ test('the settings page offers editable reading and navigation preferences on de
     await page.locator('#fontPreference').click();
     assert.equal(await cycleSetting(settings, 'Font').getAttribute('value'), 'system');
     await chooseSetting(settings, 'Font', 'jost');
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     assert.equal(await cycleSetting(settings, 'Font').getAttribute('value'), 'jost');
     assert.equal(await cycleSetting(settings, 'Breadcrumbs').getAttribute('value'), 'static');
     assert.equal(await cycleSetting(settings, 'Article text size').getAttribute('value'), 'larger');
@@ -819,7 +853,7 @@ test('the reusable settings form stays synchronized with pane resizing and the f
   await dialog.getByRole('button', { name: 'Reset to site defaults' }).click();
   assert.deepEqual(await paneWidths(page), defaults);
   await page.keyboard.press('Escape');
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   const fullPage = page.locator('#site-settings');
   await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
   await chooseSetting(dialog, 'Font', 'jost');
@@ -851,7 +885,7 @@ test('mobile settings opens from the header and returns focus without opening na
 test('settings links retain page navigation when the dialog API is unavailable', async (t) => {
   const page = await pageFor(t, base + '/');
   await page.context().addInitScript(() => { HTMLDialogElement.prototype.showModal = undefined; });
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
   await page.waitForURL(url => url.pathname === '/settings/');
   assert.equal(await cycleSetting(page.getByRole('form', { name: 'Site settings' }), 'Font').isEnabled(), true);
@@ -862,9 +896,9 @@ test('breadcrumb settings control visibility and sticky clearance on deeply link
   const id = 'level-3--slices-and-state-snapshots';
   let stickyClearance;
   for (const mode of ['sticky', 'static', 'hidden']) {
-    if (mode !== 'sticky') await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+    if (mode !== 'sticky') await page.goto(base + '/settings/', { waitUntil: 'load' });
     await chooseSetting(page.getByRole('form', { name: 'Site settings' }), 'Breadcrumbs', mode);
-    await page.goto(base + route + '#' + id, { waitUntil: 'networkidle' });
+    await page.goto(base + route + '#' + id, { waitUntil: 'load' });
     const layout = await page.evaluate(id => {
       const heading = document.getElementById(id);
       const crumb = document.querySelector('.site-breadcrumb-sticky');
@@ -896,18 +930,18 @@ test('reading and parent-stack preferences restore before the deferred bundle an
   await settings.getByLabel('Keep parent sections visible').uncheck();
   await settings.getByRole('slider', { name: 'Left navigation width' }).focus();
   await page.keyboard.press('End');
-  await page.goto(base + route, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'load' });
   assert.equal(await page.locator('.site-sticky-section').first().evaluate(element => getComputedStyle(element).position), 'relative');
   assert.equal(await page.locator('.hextra-toc .site-toc-parent').first().evaluate(element => getComputedStyle(element).position), 'relative');
   await page.route(/\/js\/custom[^/]*\.js(?:\?|$)/, request => request.abort());
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal(await page.locator('html').getAttribute('data-breadcrumbs'), 'hidden');
   assert.equal(await page.locator('html').getAttribute('data-font-preference'), 'jost');
   assert.equal(await page.locator('html').getAttribute('data-pin-ancestors'), 'false');
   assert.equal(await page.locator('.article-content > p:not(.page-description)').first().evaluate(element => getComputedStyle(element).fontSize), '18px');
   await page.unroute(/\/js\/custom[^/]*\.js(?:\?|$)/);
   await page.context().addCookies([{ name: 'unrelated', value: 'keep', url: base }]);
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   await settings.getByRole('button', { name: 'Reset to site defaults' }).click();
   assert.equal(await cycleSetting(settings, 'Font').getAttribute('value'), 'system');
   assert.equal(await cycleSetting(settings, 'Breadcrumbs').getAttribute('value'), 'sticky');
@@ -918,7 +952,7 @@ test('reading and parent-stack preferences restore before the deferred bundle an
   const cookies = await page.context().cookies();
   assert.ok(cookies.some(cookie => cookie.name === 'unrelated'));
   assert.ok(cookies.every(cookie => !['font-preference', 'navigation-widths', 'display-preferences'].includes(cookie.name)));
-  await page.goto(base + route, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'load' });
   assert.equal(await page.locator('html').getAttribute('data-breadcrumbs'), 'sticky');
   assert.equal(await page.locator('.site-sticky-section').first().evaluate(element => getComputedStyle(element).position), 'sticky');
   assert.deepEqual(await paneWidths(page), desktopPaneDefaults());
@@ -930,7 +964,7 @@ test('settings remain usable when cookies are blocked and explain unsaved change
     get() { throw new DOMException('Cookies blocked', 'SecurityError'); },
     set() { throw new DOMException('Cookies blocked', 'SecurityError'); },
   }));
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   const settings = page.getByRole('form', { name: 'Site settings' });
   await chooseSetting(settings, 'Breadcrumbs', 'hidden');
   assert.equal(await page.locator('html').getAttribute('data-breadcrumbs'), 'hidden');
@@ -949,7 +983,7 @@ test('saved pane widths and breadcrumb geometry are stable before the navigation
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     t.after(() => assert.deepEqual(errors, [], 'No navigation JavaScript errors'));
-    await page.route(/googletagmanager\.com|google-analytics\.com|posthog\.com|clarity\.ms/, request => request.abort());
+    await page.route(blocked, request => request.abort());
     await page.context().addCookies([{ name: 'navigation-widths', value: encodeURIComponent('{"sidebar":448,"outline":448}'), url: base }]);
     let release;
     const deferred = new Promise(resolve => { release = resolve; });
@@ -975,7 +1009,7 @@ test('saved pane widths and breadcrumb geometry are stable before the navigation
     const before = await geometry();
     assert.equal(before.overflow, false, `${width}px: initial layout fits the window`);
     release();
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     const after = await geometry();
     assert.deepEqual(after, before, `${width}px: initializing navigation cannot move the article or resize its context`);
     await screenshot(page, `stable-initial-layout-${width}`);
@@ -993,7 +1027,7 @@ test('layout settings persist width, density and outline choices independently o
   await chooseSetting(form, 'Page outline', 'prefer');
   await chooseSetting(form, 'Article text size', 'larger');
   await page.setViewportSize({ width: 700, height: 900 });
-  await page.goto(base + route, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'load' });
   assert.ok(await page.locator('#page-outline').isVisible(), 'Prefer visible keeps the outline beside the article at smaller widths');
   assert.equal(await page.locator('.site-outline-trigger').isVisible(), false);
   assert.equal(await page.locator('html').getAttribute('data-density'), 'compact');
@@ -1007,11 +1041,11 @@ test('layout settings persist width, density and outline choices independently o
   await chooseSetting(dialog, 'Interface density', 'comfortable');
   assert.equal(await fontSize(), '20px');
   await page.keyboard.press('Escape');
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal(await page.locator('html').getAttribute('data-outline'), 'hidden');
   assert.equal(await page.locator('html').getAttribute('data-site-width'), 'standard');
   assert.equal(await page.locator('html').getAttribute('data-density'), 'comfortable');
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   await page.getByRole('button', { name: 'Reset to site defaults' }).click();
   assert.equal(await page.locator('html').getAttribute('data-site-width'), 'wide');
   assert.equal(await page.locator('html').getAttribute('data-density'), 'auto');
@@ -1021,7 +1055,7 @@ test('layout settings persist width, density and outline choices independently o
 test('responsive layouts keep outline access at zoom-equivalent widths and preserve enlarged text', async (t) => {
   const page = await pageFor(t);
   await page.context().addCookies([{ name: 'display-preferences', value: encodeURIComponent('{"textSize":"larger"}'), url: base }]);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   for (const zoom of [0.75, 1, 1.25, 1.5, 1.75, 2, 4]) {
     const width = Math.round(1440 / zoom);
     await page.setViewportSize({ width, height: Math.round(900 / zoom) });
@@ -1095,8 +1129,8 @@ test('header preferences and search share the fitted outline width and growth li
       const preferences = document.querySelector('.site-header-preferences').getBoundingClientRect();
       const sections = document.querySelector('.site-header-links').getBoundingClientRect();
       const breadcrumb = document.querySelector('.breadcrumb').getBoundingClientRect();
-      return Math.abs(search.right - preferences.left - Math.min(heading.width, maxWidth)) < 1 &&
-        Math.abs(search.right - heading.right) < 1 && Math.abs(sections.right - breadcrumb.right) < 1;
+      return Math.abs(preferences.right - search.left - Math.min(heading.width, maxWidth)) < 1 &&
+        Math.abs(preferences.right - heading.right) < 1 && Math.abs(sections.right - breadcrumb.right) < 1;
     }, maxWidth);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   }
@@ -1123,7 +1157,7 @@ test('header preferences and search share the fitted outline width and growth li
   assert.equal(await settings.getByRole('slider', { name: 'Left navigation width' }).getAttribute('min'), '192', 'The left navigation retains its own minimum');
   await page.keyboard.press('Escape');
   await page.context().addCookies([{ name: 'navigation-widths', value: encodeURIComponent('{"outline":1}'), url: base }]);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal((await paneWidths(page)).outline, minimumWidth, 'Restored widths cannot bypass the minimum');
   await expectAlignment();
   await dragPane(page, right, -48);
@@ -1138,7 +1172,7 @@ test('header preferences and search share the fitted outline width and growth li
   await left.press('End');
   await page.setViewportSize({ width: 1280, height: 900 });
   await expectAlignment();
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   await expectAlignment();
   for (const width of [1152, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
@@ -1179,7 +1213,7 @@ test('the outline expands 60% farther while respecting reading space and saved w
       const dialog = page.getByRole('dialog', { name: 'Site settings', exact: true });
       assert.ok(Math.abs(Number(await dialog.getByRole('slider', { name: 'Page outline width' }).getAttribute('max')) - expandedCap) < 1, 'Settings exposes the same expanded cap');
       await page.keyboard.press('Escape');
-      await page.reload({ waitUntil: 'networkidle' });
+      await page.reload({ waitUntil: 'load' });
       assert.equal((await paneWidths(page)).outline, maximum);
       assert.equal((await savedPaneWidths(page)).outline, maximum);
     }
@@ -1189,7 +1223,7 @@ test('the outline expands 60% farther while respecting reading space and saved w
 
 test('default columns follow the configured proportions across screen and zoom-equivalent widths', async (t) => {
   const { layout } = JSON.parse(readFileSync(new URL('../../data/ui/style.json', import.meta.url), 'utf8'));
-  const page = await pageFor(t, base + '/ai/operating-model/solution-utility-ladder/', 2048);
+  const page = await pageFor(t, base + '/ai/product/operating-model/solution-utility-ladder/', 2048);
   for (const siteWidth of ['wide', 'standard']) {
     await page.evaluate(value => {
       document.documentElement.dataset.siteWidth = value;
@@ -1249,12 +1283,12 @@ test('both navigation panes resize independently and keep their widths across pa
   assert.equal(cookie.secure, new URL(base).protocol === 'https:');
   assert.ok(cookie.expires > Date.now() / 1000 + 86400);
   assert.equal(await page.evaluate(() => localStorage.getItem('site-navigation-widths')), null);
-  await page.goto(base + framework, { waitUntil: 'networkidle' });
+  await page.goto(base + framework, { waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), resized);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), resized);
   await page.evaluate(() => localStorage.setItem('site-navigation-widths', JSON.stringify({ sidebar: 448, outline: 448 })));
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), resized);
   await screenshot(page, 'resized-panes');
   await right.dblclick();
@@ -1264,7 +1298,7 @@ test('both navigation panes resize independently and keep their widths across pa
   assert.deepEqual(await paneWidths(page), defaults);
   assert.equal(await paneCookie(page), undefined);
   assert.equal(await page.evaluate(() => localStorage.getItem('site-navigation-widths')), null);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), defaults);
   await page.setViewportSize({ width: 1280, height: 900 });
   await settleLayout(page);
@@ -1298,20 +1332,21 @@ test('the left navigation collapses to an aligned rail and restores its width an
     assert.equal(await page.locator('.site-header-tools [data-sidebar-toggle]').count(), 0);
     assert.equal(await show.evaluate(element => element === document.activeElement), true);
     const rail = await page.locator('.site-sidebar-rail').boundingBox();
+    const card = await page.locator('.site-sidebar-rail .site-pane-rail-header').boundingBox();
     const button = await show.boundingBox();
     const breadcrumb = await page.locator('.breadcrumb').boundingBox();
     const inset = await page.locator('.site-sidebar-rail').evaluate(element => parseFloat(getComputedStyle(element).paddingInlineStart));
-    assert.equal(rail.width, button.width + 2 * inset, 'The collapsed rail reserves one control and equal outer spacing');
-    assert.ok(button.x >= rail.x && button.x + button.width <= rail.x + rail.width);
-    assert.ok(Math.abs(button.y - breadcrumb.y) < 1 && Math.abs(button.height - breadcrumb.height) < 1, 'The reopen button shares the breadcrumb row');
+    assert.equal(rail.width, card.width + 2 * inset, 'The collapsed rail reserves one control and equal outer spacing');
+    assert.ok(Math.abs(card.y - breadcrumb.y) < 1 && Math.abs(card.height - breadcrumb.height) < 1, 'The reopen card shares the breadcrumb row');
+    assert.ok(Math.abs(button.x + button.width / 2 - card.x - card.width / 2) < 1 && Math.abs(button.y + button.height / 2 - card.y - card.height / 2) < 1, 'The round reopen button is centered in its card');
     assert.equal(await show.getAttribute('aria-expanded'), 'false');
     assert.ok((await page.locator('.site-article-column').boundingBox()).width > mainWidth);
     assert.deepEqual(await savedPaneWidths(page), widths);
     assert.equal((await displayCookie(page)).sidebarVisible, false);
     assert.deepEqual(await headerPositions(), header, 'Brand, section navigation and search stay anchored when the pane collapses');
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     assert.equal(await sidebar.isVisible(), false);
-    await page.goto(base + '/ai/', { waitUntil: 'networkidle' });
+    await page.goto(base + '/ai/', { waitUntil: 'load' });
     assert.equal(await sidebar.isVisible(), false);
     await page.getByRole('button', { name: 'Show left navigation', exact: true }).click();
     await sidebar.waitFor({ state: 'visible' });
@@ -1325,7 +1360,7 @@ test('the left navigation collapses to an aligned rail and restores its width an
   }
 });
 
-test('the page outline collapses without moving the content edges and restores independently of the left menu', async (t) => {
+test('the page outline collapses to the header buttons, widens the content and restores independently of the left menu', async (t) => {
   for (const width of [1440, 1024, 768]) {
     const page = await pageFor(t, base + route, width);
     const outline = page.locator('#page-outline');
@@ -1333,7 +1368,7 @@ test('the page outline collapses without moving the content edges and restores i
     const widths = await savedPaneWidths(page);
     const hide = page.getByRole('button', { name: 'Hide page outline', exact: true });
     const outlineBounds = await outline.boundingBox();
-    const buttonBounds = await hide.boundingBox();
+    const titleBounds = await page.locator('.site-toc-title').boundingBox();
     const contentEdges = () => page.locator('.site-article-column, .breadcrumb').evaluateAll(elements => elements.map(element => {
       const bounds = element.getBoundingClientRect();
       return { left: bounds.left, right: bounds.right };
@@ -1346,16 +1381,29 @@ test('the page outline collapses without moving the content edges and restores i
     const show = page.getByRole('button', { name: 'Show page outline', exact: true });
     assert.equal(await show.evaluate(element => element === document.activeElement), true);
     await page.waitForFunction(() => {
-      const button = document.querySelector('[data-outline-toggle]').getBoundingClientRect();
+      const card = document.querySelector('.site-outline-rail .site-pane-rail-header').getBoundingClientRect();
       const breadcrumb = document.querySelector('.breadcrumb').getBoundingClientRect();
-      return Math.abs(button.top - breadcrumb.top) < 1 && Math.abs(button.height - breadcrumb.height) < 1;
+      return Math.abs(card.top - breadcrumb.top) < 1 && Math.abs(card.height - breadcrumb.height) < 1;
     });
     const rail = await page.locator('.site-outline-rail').boundingBox();
     const breadcrumb = await page.locator('.breadcrumb').boundingBox();
-    assert.equal(rail.width, outlineBounds.width, 'Collapsing preserves the outline column width');
-    assert.deepEqual(await contentEdges(), expandedEdges, 'Article and breadcrumb edges stay fixed');
+    assert.ok(rail.width < outlineBounds.width, 'Collapsing narrows the outline column');
+    const collapsedEdgesBefore = await contentEdges();
+    for (const [index, edges] of collapsedEdgesBefore.entries()) {
+      assert.equal(edges.left, expandedEdges[index].left, 'Article and breadcrumb keep their left edge');
+      assert.ok(edges.right > expandedEdges[index].right, 'Article and breadcrumb widen into the freed space');
+    }
     const showBounds = await show.boundingBox();
-    assert.ok(Math.abs(showBounds.x + showBounds.width / 2 - buttonBounds.x - buttonBounds.width / 2) < 1, 'The reopen icon stays in the same horizontal position');
+    const card = await page.locator('.site-outline-rail .site-pane-rail-header').boundingBox();
+    assert.ok(Math.abs(card.x + card.width - titleBounds.x - titleBounds.width) < 1, 'The collapsed controls sit on the outline pane’s outer edge');
+    if (width >= 1024) {
+      const theme = await page.locator('.site-header-preferences .hextra-theme-toggle').boundingBox();
+      const settings = await page.locator('.site-header-preferences .site-settings-link').boundingBox();
+      assert.ok(Math.abs(card.x - theme.x) < 1 && Math.abs(card.x + card.width - settings.x - settings.width) < 1, 'The collapsed rail is as wide as the Theme and Settings buttons above it');
+      const topBar = await page.locator('.site-outline-rail .site-header-toggle').boundingBox();
+      assert.ok(Math.abs(showBounds.x + showBounds.width / 2 - theme.x - theme.width / 2) < 1, 'The reopen control centers under Theme');
+      assert.ok(Math.abs(topBar.x + topBar.width / 2 - settings.x - settings.width / 2) < 1, 'The top-bar control centers under Settings');
+    }
     assert.ok(showBounds.x > breadcrumb.x + breadcrumb.width, 'The outline reopens from the right side of the breadcrumb row');
     assert.equal((await displayCookie(page)).outlineVisible, false);
     assert.deepEqual(await savedPaneWidths(page), widths);
@@ -1363,15 +1411,14 @@ test('the page outline collapses without moving the content edges and restores i
       await page.getByRole('button', { name: 'Hide left navigation', exact: true }).click();
       assert.equal(await page.locator('.site-sidebar-rail').isVisible(), true);
     }
-    await page.reload({ waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'load' });
     assert.equal(await page.locator('.site-outline-rail [data-outline-toggle]').isVisible(), true);
-    const collapsedEdges = await contentEdges();
     await show.click();
     assert.equal(await outline.isVisible(), true);
     assert.equal(await page.locator('.site-outline-rail').isVisible(), false);
     assert.equal(await hide.evaluate(element => element === document.activeElement), true);
     assert.deepEqual(await savedPaneWidths(page), widths);
-    assert.deepEqual(await contentEdges(), collapsedEdges, 'Reopening also preserves the content edges');
+    if (width !== 1440) assert.deepEqual(await contentEdges(), expandedEdges, 'Reopening restores the content edges');
     if (width === 1440) assert.equal(await page.locator('.site-sidebar-rail').isVisible(), true);
     await screenshot(page, `outline-restored-${width}`);
   }
@@ -1496,7 +1543,7 @@ test('deep document map entries remain reachable in short windows and survive co
   // Follow the active heading as a native link so the same deep link is restored.
   await map.locator(`a[href="#${id}"]`).click();
   await page.waitForURL(url => decodeURIComponent(url.hash.slice(1)) === id);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal(await map.isVisible(), true);
   // Reading-position restoration belongs to the browser. In particular, WebKit
   // can reload at the page top, so the map must agree with the full outline.
@@ -1517,14 +1564,14 @@ test('a collapsed outline keeps mobile access and explicit Hidden layout still r
   await page.keyboard.press('Escape');
   await page.setViewportSize({ width: 1440, height: 900 });
   assert.equal(await page.locator('.site-outline-rail').isVisible(), true);
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   await chooseSetting(page, 'Page outline', 'hidden');
-  await page.goto(base + route, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'load' });
   assert.equal(await page.locator('#page-outline').isVisible(), false);
   assert.equal(await page.locator('.site-outline-rail').isVisible(), false);
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   await page.getByRole('button', { name: 'Reset to site defaults' }).click();
-  await page.goto(base + route, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'load' });
   assert.equal(await page.locator('#page-outline').isVisible(), true);
 });
 
@@ -1551,7 +1598,7 @@ test('sidebar visibility stays synchronized with Settings and focus returns to t
 test('a saved hidden sidebar leaves the mobile drawer available and blocked cookies do not prevent toggling', async (t) => {
   const page = await pageFor(t, base + route, 390);
   await page.context().addCookies([{ name: 'display-preferences', value: encodeURIComponent(JSON.stringify({ sidebarVisible: false })), url: base }]);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.equal(await page.locator('[data-sidebar-toggle]').isVisible(), false);
   await page.locator('.hextra-hamburger-menu').click();
   assert.ok(await page.locator('.section-nav').isVisible());
@@ -1564,7 +1611,7 @@ test('a saved hidden sidebar leaves the mobile drawer available and blocked cook
     get() { throw new DOMException('Cookies blocked', 'SecurityError'); },
     set() { throw new DOMException('Cookies blocked', 'SecurityError'); },
   }));
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   await page.getByRole('button', { name: 'Hide left navigation', exact: true }).click();
   assert.equal(await page.locator('[data-site-pane="sidebar"]').isVisible(), false);
   await page.getByRole('button', { name: 'Show left navigation', exact: true }).click();
@@ -1578,12 +1625,12 @@ test('a saved hidden sidebar leaves the mobile drawer available and blocked cook
 test('existing pane widths migrate to a cookie and remain after legacy storage is cleared', async (t) => {
   const page = await pageFor(t);
   await page.evaluate(() => localStorage.setItem('site-navigation-widths', JSON.stringify({ sidebar: 336, outline: 328 })));
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
   assert.deepEqual(await savedPaneWidths(page), { sidebar: 336, outline: 328 });
   assert.equal(await page.evaluate(() => localStorage.getItem('site-navigation-widths')), null);
   await page.evaluate(() => localStorage.clear());
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
 });
 
@@ -1638,7 +1685,7 @@ test('saved pane widths fit narrow windows without changing the mobile drawer or
   await page.getByRole('separator', { name: 'Page outline width' }).focus();
   await page.keyboard.press('End');
   const preferred = await savedPaneWidths(page);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   for (const width of [1280, 820, 768]) {
     await page.setViewportSize({ width, height: 900 });
     await page.waitForFunction(() => document.documentElement.scrollWidth <= innerWidth && document.querySelector('.site-article-column').getBoundingClientRect().width >= 384);
@@ -1657,7 +1704,7 @@ test('saved pane widths fit narrow windows without changing the mobile drawer or
 test('pane resizing works with malformed cookies and retains legacy settings if cookies are blocked', async (t) => {
   const page = await pageFor(t);
   await page.context().addCookies([{ name: 'navigation-widths', value: encodeURIComponent('{broken'), url: base }]);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), desktopPaneDefaults());
   await page.context().clearCookies();
   await page.evaluate(() => localStorage.setItem('site-navigation-widths', JSON.stringify({ sidebar: 336, outline: 328 })));
@@ -1667,7 +1714,7 @@ test('pane resizing works with malformed cookies and retains legacy settings if 
       set() { throw new DOMException('Cookies blocked', 'SecurityError'); },
     });
   });
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   assert.deepEqual(await paneWidths(page), { sidebar: 336, outline: 328 });
   assert.deepEqual(await page.evaluate(() => JSON.parse(localStorage.getItem('site-navigation-widths'))), { sidebar: 336, outline: 328 });
   await page.getByRole('separator', { name: 'Site navigation width' }).focus();
@@ -1688,10 +1735,13 @@ test('settings remain understandable when JavaScript is unavailable', async (t) 
   assert.equal(await page.getByText('Enable JavaScript to change your site settings.').isVisible(), true);
 });
 
-test('the sidebar distinguishes section links with fixed chevrons that navigate to their pages', async (t) => {
+test('sidebar section chevrons expand and collapse branches while their labels navigate', async (t) => {
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + '/ai-engineering/', width);
-    if (width === 390) await page.getByRole('button', { name: 'Menu', exact: true }).click();
+    const openMenu = async () => {
+      if (width === 390) await page.getByRole('button', { name: 'Menu', exact: true }).click();
+    };
+    await openMenu();
     const navigation = page.locator('.section-nav');
     assert.equal(await navigation.locator('.sidebar-root > a').textContent(), 'AI Engineering');
     assert.equal(await navigation.locator('.sidebar-root + .sidebar-tree').count(), 1);
@@ -1699,31 +1749,159 @@ test('the sidebar distinguishes section links with fixed chevrons that navigate 
     assert.equal(await navigation.getByRole('list', { name: 'Documents', exact: true }).getByRole('link', { name: 'Working Assumptions', exact: true }).count(), 1);
     assert.equal(await navigation.locator('.sidebar-overview').count(), 0);
     assert.equal(await navigation.locator('.site-sidebar-current-document').count(), 0);
-    assert.equal(await navigation.locator('.site-sidebar-section-row button').count(), 0, 'Section rows remain direct links without disclosure buttons');
     await screenshot(page, `grouped-sidebar-${width}`);
     const evaluation = navigation.locator('.site-sidebar-section-row').filter({ has: page.locator('a[href="/ai-engineering/evaluation/"]') });
-    const link = evaluation.getByRole('link', { name: 'Evaluation', exact: true });
-    const marker = await link.evaluate(link => {
-      const style = getComputedStyle(link, '::before');
-      return { width: style.width, border: style.borderTopWidth, background: style.backgroundColor, clip: style.clipPath, transform: style.transform };
+    const branch = evaluation.locator(':scope + .list-nested');
+    const expand = evaluation.getByRole('button', { name: 'Expand Evaluation', exact: true });
+    assert.equal(await expand.getAttribute('aria-expanded'), 'false');
+    assert.equal(await expand.getAttribute('aria-controls'), await branch.getAttribute('id'));
+    const chevron = () => evaluation.locator('.site-sidebar-section-toggle').evaluate(button => {
+      const style = getComputedStyle(button, '::before');
+      return { width: style.width, border: style.borderTopWidth, transform: style.transform };
     });
-    assert.equal(marker.width, '6px');
-    assert.ok(parseFloat(marker.border) > 0, 'The section marker has a visible stroke');
-    assert.equal(marker.background, 'rgba(0, 0, 0, 0)');
-    assert.equal(marker.clip, 'none');
-    assert.equal(await evaluation.locator(':scope + .list-nested').isVisible(), false);
-    // Click the chevron itself: the whole row is one navigation link.
-    await link.click({ position: { x: 11, y: 16 } });
+    const closed = await chevron();
+    assert.equal(closed.width, '6px');
+    assert.ok(parseFloat(closed.border) > 0, 'The section chevron has a visible stroke');
+    assert.equal(await evaluation.locator('a').evaluate(link => getComputedStyle(link, '::before').content), 'none', 'The button replaces the decorative chevron');
+    const alignment = await evaluation.evaluate(row => {
+      const nav = row.closest('.section-nav');
+      const heading = nav.querySelector('.sidebar-root');
+      const left = element => element.getBoundingClientRect().left;
+      const label = link => left(link) + parseFloat(getComputedStyle(link).paddingInlineStart);
+      // Measure the collapsed branch without changing its saved state.
+      const branch = row.nextElementSibling;
+      branch.hidden = false;
+      const child = branch.querySelector(':scope > li > a, :scope > li > .site-sidebar-section-row > a');
+      const step = label(child) - label(row.querySelector('a'));
+      branch.hidden = true;
+      return {
+        toggle: left(row.querySelector('button')) - left(heading.querySelector('button')),
+        label: label(row.querySelector('a')) - left(heading.querySelector('.site-sidebar-title')),
+        step,
+      };
+    });
+    // The drawer heading has no pane toggle, so compare against it only inline.
+    if (width === 1440) assert.ok(Math.abs(alignment.toggle) < 0.5, 'Top-level section chevrons line up with the pane heading toggle');
+    if (width === 1440) assert.ok(Math.abs(alignment.label) < 0.5, 'Top-level section labels line up with the pane heading title');
+    assert.ok(alignment.step > 0 && alignment.step < 20, 'Each nested level steps in by less than the previous 21px indent');
+    assert.equal(await branch.isVisible(), false);
+    // The chevron gutter is a disclosure: it opens the branch without navigating.
+    await evaluation.locator('a').click({ position: { x: 24, y: 16 }, force: true });
+    assert.equal(new URL(page.url()).pathname, '/ai-engineering/');
+    assert.equal(await branch.isVisible(), true);
+    const collapse = evaluation.getByRole('button', { name: 'Collapse Evaluation', exact: true });
+    assert.equal(await collapse.getAttribute('aria-expanded'), 'true');
+    assert.notEqual((await chevron()).transform, closed.transform, 'The chevron turns toward the open branch');
+    await screenshot(page, `sidebar-section-expanded-${width}`);
+    await page.reload({ waitUntil: 'load' });
+    await openMenu();
+    assert.equal(await branch.isVisible(), true, 'An expanded section stays open for the tab session');
+    await collapse.click();
+    assert.equal(await branch.isVisible(), false);
+    await evaluation.getByRole('link', { name: 'Evaluation', exact: true }).click();
     await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/');
-    if (width === 390) await page.getByRole('button', { name: 'Menu', exact: true }).click();
+    await openMenu();
     const sectionLink = page.locator('.section-nav a[aria-current="page"]');
     assert.equal(await sectionLink.getAttribute('href'), '/ai-engineering/evaluation/');
-    assert.equal(await sectionLink.evaluate(link => getComputedStyle(link, '::before').transform), marker.transform, 'The chevron stays fixed on the current section');
-    assert.equal(await sectionLink.locator('..').locator(':scope + .list-nested').isVisible(), true);
+    assert.equal(await sectionLink.locator('..').locator(':scope + .list-nested').isVisible(), true, 'The current section opens on arrival even after it was collapsed');
     assert.equal(await page.locator('.section-nav .site-sidebar-current-document').count(), 0);
     await navigation.locator('.sidebar-root > a').click();
     await page.waitForURL(url => url.pathname === '/ai-engineering/');
   }
+});
+
+test('the sidebar heading cycles collapse all, restore and expand all, and remembers changes made in between', async (t) => {
+  const page = await pageFor(t, base + '/ai-engineering/');
+  const navigation = page.locator('.section-nav');
+  const bulk = navigation.locator('.sidebar-root [data-sidebar-bulk]');
+  const open = () => navigation.locator('.site-sidebar-section-toggle[aria-expanded="true"] + a').allTextContents();
+  const toggle = (name) => navigation.locator('.site-sidebar-section-row').filter({ has: page.getByRole('link', { name, exact: true }) }).locator('.site-sidebar-section-toggle');
+  const step = async (label) => {
+    assert.equal(await bulk.getAttribute('aria-label'), label);
+    await bulk.click();
+  };
+  const all = await navigation.locator('.site-sidebar-section-toggle').count();
+  await toggle('Evaluation').click();
+  assert.deepEqual(await open(), ['Evaluation']);
+  await step('Collapse all sections');
+  assert.deepEqual(await open(), []);
+  assert.equal(await navigation.locator('.list-nested:visible').count(), 0, 'Every branch is collapsed');
+  // A change after collapsing becomes the arrangement the next cycle restores.
+  await toggle('Context').click();
+  assert.equal(await bulk.getAttribute('aria-label'), 'Collapse all sections', 'A manual change starts the cycle over');
+  await page.reload({ waitUntil: 'load' });
+  assert.deepEqual(await open(), ['Context'], 'The intermediate arrangement lasts for the tab session');
+  await step('Collapse all sections');
+  assert.deepEqual(await open(), []);
+  await step('Restore sections');
+  assert.deepEqual(await open(), ['Context']);
+  await step('Expand all sections');
+  assert.equal((await open()).length, all);
+  await screenshot(page, 'sidebar-expanded-all');
+  await step('Collapse all sections');
+  assert.deepEqual(await open(), []);
+  await step('Restore sections');
+  assert.deepEqual(await open(), ['Context'], 'Expand all does not replace the restored arrangement');
+  assert.equal(new URL(page.url()).pathname, '/ai-engineering/', 'The cycle never navigates');
+  await page.goto(base + route, { waitUntil: 'load' });
+  assert.ok(await navigation.locator('a[aria-current="page"]').isVisible(), 'The current document still opens on arrival');
+});
+
+test('outline headings share the sidebar disclosures, heading cycle and saved branches', async (t) => {
+  const page = await pageFor(t, base + framework);
+  const outline = page.locator('#TableOfContents');
+  const popover = page.locator('#mobileTableOfContents');
+  const title = page.locator('.hextra-toc .site-toc-title');
+  const parent = outline.locator(':scope > ul > li.site-outline-branch').first();
+  const link = parent.locator(':scope > .site-outline-row > a');
+  const name = (await link.textContent()).trim();
+  const children = parent.locator(':scope > ul');
+  const collapse = parent.getByRole('button', { name: `Collapse ${name}`, exact: true });
+  assert.equal(await collapse.getAttribute('aria-controls'), await children.getAttribute('id'));
+  const alignment = await page.evaluate(() => {
+    const heading = document.querySelector('.hextra-toc .site-toc-title');
+    const row = document.querySelector('#TableOfContents > ul > li > .site-outline-row');
+    const left = element => element.getBoundingClientRect().left;
+    const link = row.querySelector('a');
+    return {
+      toggle: left(row.querySelector('button')) - left(heading.querySelector('.site-pane-toggle')),
+      label: left(link) + parseFloat(getComputedStyle(link).paddingInlineStart) - left(heading.querySelector('.site-toc-title-label')),
+    };
+  });
+  assert.ok(Math.abs(alignment.toggle) < 0.5, 'Top-level outline chevrons line up with the heading toggle');
+  assert.ok(Math.abs(alignment.label) < 0.5, 'Top-level outline labels line up with the heading title');
+  await collapse.click();
+  assert.equal(await children.isVisible(), false);
+  assert.equal(new URL(page.url()).hash, '', 'Collapsing does not follow the heading link');
+  const twin = popover.locator(`.site-outline-row > a[href="${await link.getAttribute('href')}"]`).locator('..').locator('button');
+  assert.equal(await twin.getAttribute('aria-expanded'), 'false', 'The outline popover follows the same branch state');
+  // Reading inside a collapsed branch marks its visible parent heading.
+  const child = await children.locator('a').first().getAttribute('href');
+  await page.evaluate(hash => { history.replaceState(null, '', hash); document.getElementById(decodeURIComponent(hash.slice(1))).scrollIntoView(); }, child);
+  await page.waitForFunction(() => document.querySelector('#TableOfContents > ul > li.site-outline-branch > .site-outline-row > a')?.classList.contains('active-ancestor'));
+  await page.evaluate(() => history.replaceState(null, '', location.pathname));
+  await page.reload({ waitUntil: 'load' });
+  assert.equal(await children.isVisible(), false, 'Collapsed outline branches last for the tab session');
+  const bulk = title.locator('[data-outline-bulk]');
+  const open = () => outline.locator('.site-outline-branch-toggle[aria-expanded="true"]').count();
+  const all = await outline.locator('.site-outline-branch-toggle').count();
+  const before = await open();
+  assert.equal(await bulk.getAttribute('aria-label'), 'Collapse all sections');
+  await bulk.click();
+  assert.equal(await open(), 0);
+  assert.equal(await bulk.getAttribute('aria-label'), 'Restore sections');
+  await bulk.click();
+  assert.equal(await open(), before);
+  assert.equal(await children.isVisible(), false, 'Restore keeps the collapsed branch');
+  await bulk.click();
+  assert.equal(await open(), all);
+  assert.equal(await bulk.getAttribute('aria-label'), 'Collapse all sections');
+  await screenshot(page, 'outline-expanded-all');
+  // A deep link opens the branches around its heading on arrival.
+  await bulk.click();
+  await page.evaluate(hash => { location.hash = hash; }, child);
+  await page.reload({ waitUntil: 'load' });
+  assert.equal(await children.isVisible(), true);
 });
 
 test('section links retain reading guides and pinned parent links open their own overviews', async (t) => {
@@ -1735,13 +1913,13 @@ test('section links retain reading guides and pinned parent links open their own
   await guide.click();
   await page.waitForURL(url => url.pathname === '/ai/design-research/00-index/');
   assert.equal(await navigation.locator('a.site-sidebar-current-document').getAttribute('href'), '/ai/design-research/00-index/');
-  await page.goto(base + route, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'load' });
   await page.locator('.site-sidebar-scroll').evaluate(panel => { panel.scrollTop = panel.scrollHeight; });
-  const parent = navigation.locator('.site-sidebar-section-row').filter({ has: page.locator('a[href="/ai/other/"]') });
+  const parent = navigation.locator('.site-sidebar-section-row').filter({ has: page.locator('a[href="/ai-engineering/evaluation/theoretical-methodology/"]') });
   await page.waitForFunction(() => document.querySelector('.sidebar-group.depth-1.active-ancestor > .site-sidebar-section-row')?.classList.contains('site-pinned'));
   await screenshot(page, 'linked-parent-stack');
-  await parent.getByRole('link', { name: 'Other', exact: true }).click();
-  await page.waitForURL(url => url.pathname === '/ai/other/');
+  await parent.getByRole('link', { name: 'Theoretical Methodology', exact: true }).click();
+  await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/');
   assert.equal(await navigation.locator('.site-sidebar-current-document').count(), 0);
 });
 
@@ -1764,7 +1942,7 @@ test('without JavaScript section links still navigate and reveal the current bra
 
 test('clicking a sidebar link paints its final menu before deferred scripts load', async (t) => {
   for (const width of [1440, 1024]) {
-    const page = await pageFor(t, base + '/ai/other/methodology-v1-3/usage/', width);
+    const page = await pageFor(t, base + '/ai-engineering/evaluation/theoretical-methodology/framework/usage/', width);
     let release;
     const gate = new Promise(resolve => { release = resolve; });
     await page.route(/\/js\/custom\.[^/]+\.js$/, async request => {
@@ -1795,7 +1973,7 @@ test('clicking a sidebar link paints its final menu before deferred scripts load
     } finally {
       release();
     }
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
     await settleLayout(page);
     const ready = await menu();
     assert.ok(initial.scroll > 0 && initial.currentBottom <= initial.panelBottom, 'The selected document is visible before the deferred controller runs');
@@ -1819,7 +1997,7 @@ test('a deeply nested sidebar opens the full current path and marks its parent g
   });
   assert.ok(ancestors.length >= 3);
   assert.ok(ancestors.every((group) => group.open && group.marked));
-  assert.deepEqual(ancestors.map((group) => group.label), ['Usage', 'Methodology v1.3', 'Other']);
+  assert.deepEqual(ancestors.map((group) => group.label), ['Usage', 'Theoretical Methodology Framework', 'Theoretical Methodology', 'Evaluation']);
   const placement = await current.evaluate(link => {
     const bounds = link.getBoundingClientRect();
     const panel = link.closest('.site-sidebar-scroll').getBoundingClientRect();
@@ -1913,7 +2091,7 @@ test('scrolling a long sidebar keeps its collection and parent section links vis
       }
       return { top: panel.top, bottom: panel.bottom, rootTop: root.top, rootBottom: root.bottom, parents };
     });
-    assert.deepEqual(context.parents.map(parent => parent.label), ['Other', 'Methodology v1.3', 'Usage']);
+    assert.deepEqual(context.parents.map(parent => parent.label), ['Evaluation', 'Theoretical Methodology', 'Theoretical Methodology Framework', 'Usage']);
     assert.ok(context.rootTop >= context.top);
     assert.ok(context.parents.every(parent => parent.top >= context.rootBottom - 1 && parent.bottom <= context.bottom));
     const contextGap = JSON.parse(readFileSync(new URL('../../data/ui/style.json', import.meta.url), 'utf8')).layoutGapPixels;
@@ -1923,7 +2101,7 @@ test('scrolling a long sidebar keeps its collection and parent section links vis
     const parent = page.locator('.section-nav .sidebar-group.depth-1.active-ancestor > .site-sidebar-section-row > a');
     await parent.focus();
     await page.keyboard.press('Enter');
-    await page.waitForURL(url => url.pathname === '/ai/other/');
+    await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/');
   }
 });
 
@@ -1957,7 +2135,7 @@ test('layout spacing controls the shell while article spacing stays independent'
           const right = document.querySelector('.site-toc-title');
           const leftBox = left.getClientRects().length ? left.getBoundingClientRect() : null;
           const rightBox = right.getClientRects().length ? right.getBoundingClientRect() : null;
-          const controls = ['.hextra-theme-toggle', '.site-settings-link', '.hextra-search-trigger'].map(selector => document.querySelector(selector).getBoundingClientRect());
+          const controls = ['.hextra-search-trigger', '.hextra-theme-toggle', '.site-settings-link'].map(selector => document.querySelector(selector).getBoundingClientRect());
           return {
             gaps: contexts.map(({ header, body }) => ({
               article: header.matches('.breadcrumb'),
@@ -2013,7 +2191,7 @@ test('breadcrumbs stay below the top bar and deep-linked headings stay below the
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await screenshot(page, `sticky-breadcrumb-${width}`);
     await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link').last().click();
-    assert.equal(new URL(page.url()).pathname, '/ai/other/methodology-v1-3/usage/');
+    assert.equal(new URL(page.url()).pathname, '/ai-engineering/evaluation/theoretical-methodology/framework/usage/');
   }
 });
 
@@ -2132,7 +2310,7 @@ test('previous and next stay at the article end while the reading fringe fades t
 
 test('notes without outlines reserve the usual column and align short-page navigation with side controls', async (t) => {
   for (const width of [390, 768, 1024, 1440]) {
-    const page = await pageFor(t, base + '/engineering/architecture/changeability/', width);
+    const page = await pageFor(t, base + '/engineering/topics/security/', width);
     const referencePage = await pageFor(t, base + route, width);
     const outlineWidth = await referencePage.locator('#page-outline').evaluate(element => element.getBoundingClientRect().width);
     const expectedMain = await referencePage.locator('.site-main').boundingBox();
@@ -2166,7 +2344,7 @@ test('empty outline columns preserve saved widths and release their space when t
   const page = await pageFor(t);
   await dragPane(page, page.getByRole('separator', { name: 'Page outline width' }), -32);
   const width = await page.locator('#page-outline').evaluate(element => element.getBoundingClientRect().width);
-  await page.goto(base + '/engineering/architecture/changeability/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/engineering/topics/security/', { waitUntil: 'load' });
   const placeholder = page.locator('.site-outline-placeholder');
   assert.ok(Math.abs(await placeholder.evaluate(element => element.getBoundingClientRect().width) - width) < 1);
   await page.evaluate(() => {
@@ -2214,7 +2392,8 @@ test('bottom controls share colors, breadcrumb edges and the unified spacing', a
         const gaps = [prevBox.top === nextBox.top ? nextBox.left - prevBox.right : nextBox.top - prevBox.bottom];
         const sectionGaps = [];
         const search = document.querySelector('.hextra-search-trigger');
-        const content = [previous, next, back, search,
+        // Scroll to top is an icon-only square holding a round icon, so it has no text row to match.
+        const content = [previous, next, search,
           breadcrumb.querySelector('ol'), document.querySelector('.sidebar-root > a'),
           document.querySelector('.site-toc-title-label')].filter(visible);
         const presentation = element => {
@@ -2223,7 +2402,9 @@ test('bottom controls share colors, breadcrumb edges and the unified spacing', a
         };
         const iconControls = [previous, next, theme, settings, back, search,
           document.querySelector('.sidebar-root'), document.querySelector('.site-toc-title')].filter(visible);
-        if (visible(back) && nextBox.top === back.getBoundingClientRect().top) sectionGaps.push(back.getBoundingClientRect().left - nextBox.right);
+        // Scroll to top sits at the footer's outer end, so the section gap is measured to the footer itself.
+        const footer = back.closest('.site-toc-controls');
+        if (visible(back) && nextBox.top === back.getBoundingClientRect().top) sectionGaps.push(footer.getBoundingClientRect().left - nextBox.right);
         return {
           edges: [prevBox.left - crumb.left, nextBox.right - crumb.right],
           gaps,
@@ -2246,6 +2427,8 @@ test('bottom controls share colors, breadcrumb edges and the unified spacing', a
             const left = box.left + parseFloat(style.paddingLeft);
             const right = box.right - parseFloat(style.paddingRight);
             const frame = icon.closest('.site-surface-leading').getBoundingClientRect();
+            // Round controls draw a smaller chevron inside the same 24px frame.
+            const round = Boolean(icon.closest('.site-pane-toggle, .site-header-toggle, .site-back-to-top'));
             const artwork = icon.getBBox();
             const artworkCenter = new DOMPoint(artwork.x + artwork.width / 2, artwork.y + artwork.height / 2).matrixTransform(icon.getScreenCTM());
             const control = element.getBoundingClientRect();
@@ -2262,9 +2445,10 @@ test('bottom controls share colors, breadcrumb edges and the unified spacing', a
             return {
               width: right - left,
               height: box.height - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom),
+              round,
               leading: !firstText || right <= firstText.left,
-              borderGap: left - element.getBoundingClientRect().left,
-              textGap: firstText ? firstText.left - right : null,
+              borderGap: frame.left - element.getBoundingClientRect().left,
+              textGap: firstText ? firstText.left - frame.right : null,
               centeredInFrame: Math.abs(box.left + box.right - frame.left - frame.right) < 1 && Math.abs(box.top + box.bottom - frame.top - frame.bottom) < 1,
               artworkCenteredInFrame: Math.abs(artworkCenter.x - frame.left - frame.width / 2) < 0.1 && Math.abs(artworkCenter.y - frame.top - frame.height / 2) < 0.1,
               centerOffset: (left + right - control.left - control.right) / 2,
@@ -2275,9 +2459,10 @@ test('bottom controls share colors, breadcrumb edges and the unified spacing', a
             document.querySelector('.sidebar-root'), document.querySelector('.site-toc-title')]
             .filter(visible).flatMap(element => {
               const label = element.querySelector(':scope > .site-control-label, :scope > .site-surface-content');
-              const action = element.querySelector(':scope > .site-header-toggle');
-              const actionWidth = action && visible(action) ? action.getBoundingClientRect().width + parseFloat(getComputedStyle(element).columnGap) : 0;
-              return label && visible(label) ? [element.getBoundingClientRect().right - label.getBoundingClientRect().right - actionWidth] : [];
+              const action = [...element.querySelectorAll(':scope > :is(.site-header-toggle, .site-bulk-toggle)')].filter(visible).at(-1);
+              // A trailing action ends the label row at its 24px round circle.
+              const end = action ? action.getBoundingClientRect().right : label?.getBoundingClientRect().right;
+              return label && visible(label) ? [element.getBoundingClientRect().right - end] : [];
             }),
           overflow: document.documentElement.scrollWidth - innerWidth,
         };
@@ -2289,11 +2474,11 @@ test('bottom controls share colors, breadcrumb edges and the unified spacing', a
       assert.ok(controls.labelColors.every(color => color === controls.foreground), 'Article titles inherit the shared foreground');
       assert.ok(controls.presentation.every(style => JSON.stringify(style) === JSON.stringify(controls.referencePresentation)), 'Filled controls share typography and vertical padding with the context row');
       assert.ok(controls.heights.every(height => Math.abs(height - controls.heights[0]) < 1), 'Single-line filled controls share one height');
-      assert.ok(controls.icons.every(icon => icon.width === 20 && icon.height === 20 && icon.leading), 'Control icons have one size and precede their labels');
+      assert.ok(controls.icons.every(icon => icon.width === (icon.round ? 12 : 20) && icon.height === icon.width && icon.leading), 'Control icons have one size, round-control chevrons another, and precede their labels');
       assert.ok(controls.icons.every(icon => icon.centeredInFrame), 'Artwork stays centered in the shared icon frame');
       assert.ok(controls.icons.every(icon => icon.artworkCenteredInFrame), 'The visible symbols are centered horizontally and vertically inside their frames');
       const labelledIcons = controls.icons.filter(icon => icon.textGap !== null);
-      assert.ok(labelledIcons.every(icon => Math.abs(icon.borderGap - labelledIcons[0].borderGap) < 1 && Math.abs(icon.textGap - labelledIcons[0].textGap) < 1), 'Labelled controls share border-to-icon and icon-to-text spacing');
+      assert.ok(labelledIcons.every(icon => Math.abs(icon.borderGap - labelledIcons[0].borderGap) < 1 && Math.abs(icon.textGap - labelledIcons[0].textGap) < 1), 'Labelled controls share border-to-frame and frame-to-text spacing');
       assert.ok(controls.icons.filter(icon => icon.textGap === null).every(icon => Math.abs(icon.centerOffset) < 1), 'Icon-only controls center their frame between both edges');
       assert.ok(controls.icons.every(icon => icon.chevronAspect === null || icon.chevronAspect < 0.6), 'Left and right chevrons retain their narrow proportions');
       assert.ok(controls.endInsets.every(inset => Math.abs(inset - 12) < 1), 'Labels share a trailing inset instead of different compact-button padding');
@@ -2406,9 +2591,9 @@ test('scroll to top stays available outside the outline scroller and aligns with
     }
     const edges = await button.evaluate(button => {
       const box = button.getBoundingClientRect(), title = document.querySelector('.site-toc-title').getBoundingClientRect();
-      return { left: box.left - title.left, width: box.width, height: box.height };
+      return { right: box.right - title.right, width: box.width, height: box.height };
     });
-    assert.ok(Math.abs(edges.left) < 1, 'The action shares the outline heading left edge');
+    assert.ok(Math.abs(edges.right) < 1, 'The action shares the outline heading’s outer edge');
     assert.ok(Math.abs(edges.width - edges.height) < 1, 'The icon-only action is square');
     await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' }));
     await page.waitForFunction(() => Math.abs(document.getElementById('backToTop').getBoundingClientRect().bottom - document.querySelector('.page-nav').getBoundingClientRect().bottom) < 1);
@@ -2459,7 +2644,7 @@ test('the scrolling outline keeps its title and parent heading stack above the a
     const title = panel.querySelector('.site-toc-title').getBoundingClientRect();
     const parents = [];
     for (let item = link.closest('li').parentElement.closest('li'); item; item = item.parentElement.closest('li')) {
-      const parent = item.querySelector(':scope > a');
+      const parent = item.querySelector(':scope > a, :scope > .site-outline-row');
       if (parent) {
         const rect = parent.getBoundingClientRect();
         parents.unshift({ top: rect.top, bottom: rect.bottom });
@@ -2532,31 +2717,14 @@ test('the page outline includes all six heading levels with nested indentation a
     }));
     assert.deepEqual(structure.outlineIds, structure.headingIds);
     assert.ok(structure.nested >= 4);
-    for (const pinned of [true, false]) {
-      await page.evaluate(pinned => { document.documentElement.dataset.pinAncestors = String(pinned); }, pinned);
-      const guideEnds = await page.locator('.hextra-toc li > ul').evaluateAll(lists => lists.map(list => {
-        const items = [...list.children];
-        if (items.length === 1) return { single: true, hidden: getComputedStyle(items[0], '::before').content === 'none' };
-        const first = items[0], last = items.at(-1);
-        const firstLink = first.querySelector(':scope > a'), lastLink = last.querySelector(':scope > a');
-        if (!firstLink || !lastLink) return null;
-        const firstLineCenter = link => {
-          const style = getComputedStyle(link);
-          return link.getBoundingClientRect().top + parseFloat(style.paddingTop) + parseFloat(style.lineHeight) / 2;
-        };
-        const firstGuide = getComputedStyle(first, '::before'), lastGuide = getComputedStyle(last, '::before');
-        const joins = items.slice(0, -1).map((item, index) => {
-          const guide = getComputedStyle(item, '::before'), next = items[index + 1], nextGuide = getComputedStyle(next, '::before');
-          return item.getBoundingClientRect().top + parseFloat(guide.top) + parseFloat(guide.height) - next.getBoundingClientRect().top - parseFloat(nextGuide.top);
-        });
-        return {
-          continuous: joins.every(gap => Math.abs(gap) < 0.5),
-          start: first.getBoundingClientRect().top + parseFloat(firstGuide.top) - firstLineCenter(firstLink),
-          end: last.getBoundingClientRect().top + parseFloat(lastGuide.top) + parseFloat(lastGuide.height) - firstLineCenter(lastLink),
-        };
-      }).filter(Boolean));
-      assert.ok(guideEnds.every(guide => guide.single ? guide.hidden : guide.continuous && Math.abs(guide.start) < 0.5 && Math.abs(guide.end) < 0.5), 'Guides connect first text lines continuously and single-item groups have no dangling line');
-    }
+    // Like the sidebar, each branch guide descends from its heading's chevron.
+    const guides = await page.locator('.hextra-toc li.site-outline-branch > ul').evaluateAll(lists => lists.map(list => {
+      const toggle = list.previousElementSibling.querySelector('button').getBoundingClientRect();
+      const guide = list.getBoundingClientRect().left + parseFloat(getComputedStyle(list).borderInlineStartWidth) / 2;
+      return guide - (toggle.left + toggle.width / 2);
+    }));
+    assert.ok(guides.length);
+    assert.ok(guides.every(offset => Math.abs(offset) < 0.5), 'Branch guides are centered under their heading chevrons');
     await page.evaluate(() => { document.documentElement.dataset.pinAncestors = 'true'; });
     const sixthLevel = page.locator('.article-content h6[id]');
     const deepestHeading = await sixthLevel.count() ? sixthLevel.first() : page.locator('.article-content h5[id]').first();
@@ -2566,20 +2734,17 @@ test('the page outline includes all six heading levels with nested indentation a
     const outline = await page.locator(`.hextra-toc a[href="#${deepest}"]`).evaluate((link) => {
       let item = link.closest('li');
       let parent;
-      while (!parent && (item = item.parentElement.closest('li'))) parent = item.querySelector(':scope > a');
-      const itemWithGuide = link.parentElement;
-      const guide = getComputedStyle(itemWithGuide, '::before');
+      while (!parent && (item = item.parentElement.closest('li'))) parent = item.querySelector(':scope > a, :scope > .site-outline-row > a');
+      const label = element => element.getBoundingClientRect().left + parseFloat(getComputedStyle(element).paddingInlineStart);
       const marker = getComputedStyle(link, '::before');
       return {
-        left: link.getBoundingClientRect().left,
-        parentLeft: parent?.getBoundingClientRect().left,
-        guideVisible: guide.content !== 'none',
-        guideCenter: itemWithGuide.getBoundingClientRect().left + parseFloat(guide.left) + parseFloat(guide.width) / 2,
-        markerCenter: link.getBoundingClientRect().left + parseFloat(marker.left) + parseFloat(marker.width) / 2,
+        label: label(link),
+        parentLabel: parent && label(parent),
+        markerEnd: link.getBoundingClientRect().left + parseFloat(marker.left) + parseFloat(marker.width),
       };
     });
-    assert.ok(outline.left > outline.parentLeft, 'Child headings are visibly indented');
-    if (outline.guideVisible) assert.ok(Math.abs(outline.guideCenter - outline.markerCenter) < 0.5, 'The nesting guide and selected heading indicator share a vertical centerline');
+    assert.ok(outline.label > outline.parentLabel, 'Child headings are visibly indented');
+    assert.ok(outline.markerEnd < outline.label, 'The selected heading indicator sits before its label');
     assert.ok(await page.locator('.hextra-toc a.active-ancestor').count() >= 2);
     await screenshot(page, pathname === framework ? 'hextra-outline' : 'hextra-six-level-outline');
   }
@@ -2703,7 +2868,7 @@ test('right-edge touch swipes open the mobile outline at the current heading eve
     for (const hiddenHeader of [false, true]) {
       if (hiddenHeader) {
         await page.context().addCookies([{ name: 'display-preferences', value: encodeURIComponent(JSON.stringify({ headerVisible: false })), url: base }]);
-        await page.reload({ waitUntil: 'networkidle' });
+        await page.reload({ waitUntil: 'load' });
         assert.equal(await page.locator('#site-header').isVisible(), false);
       }
       await readAt(page, id);
@@ -2747,16 +2912,16 @@ test('outline swipes leave reading gestures, other dialogs, and inline or hidden
   assert.equal(await panel.isVisible(), false, 'The navigation drawer stays in control');
   await page.getByRole('button', { name: 'Close navigation', exact: true }).click();
   await page.context().addCookies([{ name: 'display-preferences', value: encodeURIComponent(JSON.stringify({ outline: 'hidden' })), url: base }]);
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   await swipeTouch(page, { x: 382, y: 500 }, { x: 270, y: 500 });
   assert.equal(await panel.isVisible(), false, 'Explicitly hiding the outline also disables its gesture');
   await page.context().clearCookies();
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   await swipeTouch(page, { x: 1432, y: 500 }, { x: 1320, y: 500 });
   assert.equal(await panel.isVisible(), false, 'Desktop keeps the inline outline');
   await page.setViewportSize({ width: 390, height: 900 });
-  await page.goto(base + '/settings/', { waitUntil: 'networkidle' });
+  await page.goto(base + '/settings/', { waitUntil: 'load' });
   await swipeTouch(page, { x: 382, y: 500 }, { x: 270, y: 500 });
   assert.equal(await panel.count(), 0, 'Pages without headings have no outline to open');
 });
@@ -2806,16 +2971,16 @@ test('breadcrumb chevrons open nonmodal child selectors with keyboard navigation
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + route, width);
     const before = await page.evaluate(() => ({ path: location.pathname, scroll: scrollY }));
-    const { button, panel } = await openBreadcrumbChooser(page, 'Methodology v1.3');
+    const { button, panel } = await openBreadcrumbChooser(page, 'Theoretical Methodology Framework');
     assert.equal(await button.getAttribute('aria-expanded'), 'true');
     assert.equal(await panel.getAttribute('popover'), 'auto');
     assert.equal(await page.getByRole('dialog').count(), 0);
     assert.equal(await panel.getByRole('heading', { name: 'Documents', exact: true }).count(), 1);
     assert.equal(await panel.getByRole('heading', { name: 'Sections', exact: true }).count(), 1);
     const branch = panel.locator('a[data-current-branch]');
-    assert.equal(await branch.getAttribute('href'), '/ai/other/methodology-v1-3/usage/');
+    assert.equal(await branch.getAttribute('href'), '/ai-engineering/evaluation/theoretical-methodology/framework/usage/');
     assert.equal(await branch.evaluate(element => element === document.activeElement), true);
-    assert.ok((await panel.locator('a').evaluateAll(links => links.map(link => link.pathname))).every(path => path.startsWith('/ai/other/methodology-v1-3/')));
+    assert.ok((await panel.locator('a').evaluateAll(links => links.map(link => link.pathname))).every(path => path.startsWith('/ai-engineering/evaluation/theoretical-methodology/framework/')));
     await page.keyboard.press('Home');
     const links = panel.locator('a');
     assert.equal(await links.first().evaluate(element => element === document.activeElement), true);
@@ -2839,8 +3004,39 @@ test('breadcrumb chevrons open nonmodal child selectors with keyboard navigation
     await button.press('ArrowDown');
     await panel.waitFor({ state: 'visible' });
     await panel.getByRole('link', { name: 'Usage', exact: true }).click();
-    await page.waitForURL(url => url.pathname === '/ai/other/methodology-v1-3/usage/');
+    await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/usage/');
   }
+});
+
+test('the header More control lists the collections the section bar leaves out', async (t) => {
+  const page = await pageFor(t, base + '/projects/', 1440);
+  const sections = page.getByRole('group', { name: 'Sections', exact: true });
+  const button = sections.getByRole('button', { name: 'More collections', exact: true });
+  const panel = page.locator('#site-more-collections');
+  assert.equal(await button.getAttribute('aria-current'), 'true');
+  await button.click();
+  await panel.waitFor({ state: 'visible' });
+  assert.equal(await button.getAttribute('aria-expanded'), 'true');
+  assert.equal(await panel.locator('.site-breadcrumb-chooser-group').count(), 0);
+  assert.deepEqual(await panel.locator('a').allTextContents(), moreCollections);
+  const current = panel.locator('a[aria-current="page"]');
+  assert.equal((await current.textContent()).trim(), 'Projects');
+  assert.equal(await current.evaluate(element => element === document.activeElement), true);
+  const barBox = await page.locator('.site-header-links').boundingBox();
+  const popupBox = await panel.boundingBox();
+  assert.ok(popupBox.y >= barBox.y + barBox.height, 'The list opens below the section bar');
+  assert.ok(popupBox.x + popupBox.width <= 1440, 'The list stays inside the viewport');
+  await screenshot(page, 'header-more-collections');
+  await page.keyboard.press('Escape');
+  await panel.waitFor({ state: 'hidden' });
+  assert.equal(await button.evaluate(element => element === document.activeElement), true);
+  await button.press('ArrowDown');
+  await panel.waitFor({ state: 'visible' });
+  await panel.getByRole('link', { name: 'Topics', exact: true }).click();
+  await page.waitForURL(url => url.pathname === '/topics/');
+  assert.equal(await page.getByRole('button', { name: 'More collections', exact: true }).getAttribute('aria-current'), 'true');
+  await page.goto(base + '/ai/');
+  assert.equal(await page.getByRole('button', { name: 'More collections', exact: true }).getAttribute('aria-current'), null);
 });
 
 test('breadcrumb selectors switch branches, dismiss outside, and preserve parent and document links', async (t) => {
@@ -2853,18 +3049,18 @@ test('breadcrumb selectors switch branches, dismiss outside, and preserve parent
     assert.deepEqual(await rootPanel.locator('.site-breadcrumb-chooser-group').allTextContents(), ['Sections']);
     const sections = await rootPanel.locator('a').evaluateAll(links => links.map(link => new URL(link.href).pathname));
     assert.ok(sections.length > 0 && sections.every(path => path.split('/').filter(Boolean).length === 1), 'The home chooser contains only top-level sections');
-    assert.equal(await rootPanel.locator('a[data-current-branch]').getAttribute('href'), '/ai/');
+    assert.equal(await rootPanel.locator('a[data-current-branch]').getAttribute('href'), '/ai-engineering/');
     await screenshot(page, `breadcrumb-root-chooser-${width}`);
-    const ai = await openBreadcrumbChooser(page, 'AI');
+    const collection = await openBreadcrumbChooser(page, 'AI Engineering');
     assert.equal(await root.getAttribute('aria-expanded'), 'false');
     assert.equal(await rootPanel.isVisible(), false);
-    const other = await openBreadcrumbChooser(page, 'Other');
+    const ancestor = await openBreadcrumbChooser(page, 'Theoretical Methodology');
     assert.equal(await page.locator('.site-breadcrumb-chooser:popover-open').count(), 1);
-    assert.equal(await ai.button.getAttribute('aria-expanded'), 'false');
-    assert.equal(await ai.panel.isVisible(), false);
+    assert.equal(await collection.button.getAttribute('aria-expanded'), 'false');
+    assert.equal(await collection.panel.isVisible(), false);
     await page.mouse.click(width - 4, 896);
-    await other.panel.waitFor({ state: 'hidden' });
-    assert.equal(await other.button.getAttribute('aria-expanded'), 'false');
+    await ancestor.panel.waitFor({ state: 'hidden' });
+    assert.equal(await ancestor.button.getAttribute('aria-expanded'), 'false');
     const { panel } = await openBreadcrumbChooser(page, 'Usage');
     const current = panel.locator('a[aria-current="page"]');
     assert.equal(await current.getAttribute('href'), route);
@@ -2874,8 +3070,8 @@ test('breadcrumb selectors switch branches, dismiss outside, and preserve parent
     await documentLink.click();
     await page.waitForURL(url => url.pathname === destination);
     assert.equal(await page.locator('.section-nav a.site-sidebar-current-document').getAttribute('href'), destination);
-    await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link', { name: 'Methodology v1.3', exact: true }).click();
-    await page.waitForURL(url => url.pathname === '/ai/other/methodology-v1-3/');
+    await page.getByRole('navigation', { name: 'Breadcrumb', exact: true }).getByRole('link', { name: 'Theoretical Methodology Framework', exact: true }).click();
+    await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/');
     await root.click();
     await rootPanel.getByRole('link', { name: 'Engineering', exact: true }).click();
     await page.waitForURL(url => url.pathname === '/engineering/');
@@ -2939,7 +3135,7 @@ test('breadcrumb scroll hints track available items without covering keyboard fo
 
 test('breadcrumb selectors fit narrow and short screens and dismiss when static breadcrumbs scroll away', async (t) => {
   const page = await pageFor(t);
-  const { panel } = await openBreadcrumbChooser(page, 'Methodology v1.3');
+  const { panel } = await openBreadcrumbChooser(page, 'Theoretical Methodology Framework');
   for (const viewport of [{ width: 390, height: 900 }, { width: 820, height: 320 }]) {
     await page.setViewportSize(viewport);
     await page.waitForFunction(() => {
@@ -2965,7 +3161,7 @@ test('breadcrumb selectors fit narrow and short screens and dismiss when static 
   await screenshot(page, 'breadcrumb-chooser-short-dark');
   await page.context().addCookies([{ name: 'display-preferences', value: encodeURIComponent(JSON.stringify({ breadcrumbs: 'static' })), url: base }]);
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   const staticChooser = await openBreadcrumbChooser(page, 'Usage');
   await page.evaluate(() => window.scrollTo({ top: 1400, behavior: 'instant' }));
   await staticChooser.panel.waitFor({ state: 'hidden' });
@@ -2975,13 +3171,13 @@ test('breadcrumb selectors fit narrow and short screens and dismiss when static 
 test('breadcrumb selectors fall back to ordinary links without JavaScript or the Popover API', async (t) => {
   const page = await pageFor(t);
   await page.context().addInitScript(() => { HTMLElement.prototype.showPopover = undefined; });
-  await page.reload({ waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'load' });
   const breadcrumb = page.getByRole('navigation', { name: 'Breadcrumb', exact: true });
   assert.equal(await breadcrumb.getByRole('button').count(), 0);
   assert.equal(await breadcrumb.getAttribute('data-choosers'), null);
   assert.equal(await page.locator('.site-breadcrumb-chooser:visible').count(), 0);
   await breadcrumb.getByRole('link', { name: 'Usage', exact: true }).click();
-  await page.waitForURL(url => url.pathname === '/ai/other/methodology-v1-3/usage/');
+  await page.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/usage/');
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 } });
   t.after(() => context.close());
   const noScript = await context.newPage();
@@ -2990,20 +3186,20 @@ test('breadcrumb selectors fall back to ordinary links without JavaScript or the
   assert.equal(await noScriptTrail.getByRole('button').count(), 0);
   assert.equal(await noScript.locator('.site-breadcrumb-chooser:visible').count(), 0);
   await noScriptTrail.getByRole('link', { name: 'Usage', exact: true }).click();
-  await noScript.waitForURL(url => url.pathname === '/ai/other/methodology-v1-3/usage/');
+  await noScript.waitForURL(url => url.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/usage/');
 });
 
 test('short and deeply nested breadcrumb trails wrap on mobile and navigate to their parents', async (t) => {
   const cases = [
     { pathname: '/system-design/', labels: ['System Design'], parents: ['/'] },
-    { pathname: '/system-design/frameworks/framework-iv/', labels: ['System Design', 'Frameworks', 'Interviewing.io System Design Framework'], parents: ['/', '/system-design/', '/system-design/frameworks/'] },
+    { pathname: framework, labels: ['System Design', 'Interview Practice', 'Frameworks', 'Interviewing.io System Design Framework'], parents: ['/', '/system-design/', '/system-design/interview/', '/system-design/interview/frameworks/'] },
     { pathname: '/system-design/integrated-test-pages/callouts/', labels: ['System Design', 'Migration Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
-    { pathname: route, labels: ['AI', 'Other', 'Methodology v1.3', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai/', '/ai/other/', '/ai/other/methodology-v1-3/', '/ai/other/methodology-v1-3/usage/'] },
+    { pathname: route, labels: ['AI Engineering', 'Evaluation', 'Theoretical Methodology', 'Theoretical Methodology Framework', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai-engineering/', '/ai-engineering/evaluation/', '/ai-engineering/evaluation/theoretical-methodology/', '/ai-engineering/evaluation/theoretical-methodology/framework/', '/ai-engineering/evaluation/theoretical-methodology/framework/usage/'] },
   ];
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + cases[0].pathname, width);
     for (const { pathname, labels, parents } of cases) {
-      await page.goto(base + pathname, { waitUntil: 'networkidle' });
+      await page.goto(base + pathname, { waitUntil: 'load' });
       const breadcrumb = page.getByRole('navigation', { name: 'Breadcrumb', exact: true });
       assert.deepEqual(await breadcrumb.locator('li').allTextContents(), labels);
       const home = breadcrumb.getByRole('link', { name: 'Home', exact: true });
@@ -3117,7 +3313,7 @@ test('overview outline links reveal nested browse headings and skip collapsed he
     const active = document.querySelector('#page-outline [aria-current="location"]');
     return active && document.getElementById(decodeURIComponent(active.hash.slice(1))).getClientRects().length > 0;
   });
-  await page.goto(`${base}/engineering/#${id}`, { waitUntil: 'networkidle' });
+  await page.goto(`${base}/engineering/#${id}`, { waitUntil: 'load' });
   assert.equal(await page.locator(`[id="${id}"]`).isVisible(), true, 'Direct nested links reveal their group');
 });
 
@@ -3145,4 +3341,8 @@ test('the expanded outline preserves deployed heading paths while adding deeper 
     await screenshot(local, `hextra-comparison-${index}`);
     await screenshot(deployed, `deployed-comparison-${index}`);
   }
+});
+
+describe('navigation', { concurrency }, () => {
+  for (const args of tests) register(...args);
 });

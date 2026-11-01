@@ -68,7 +68,6 @@ Example wording for the proposed design:
 
 # Consistency
 
-#todo add PACELC and other tools perspective and reasoning
 
 - **Requirement**: The system will favor **Availability over strong Consistency (AP in the CAP theorem)**.
 - **Architectural Implication**: A newly created or updated link does not need to be globally visible instantaneously. A brief propagation delay (seconds) is acceptable. This allows for the use of **eventual consistency** models in caches and read replicas, which simplifies achieving high availability and low latency in a distributed environment.

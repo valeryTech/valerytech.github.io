@@ -1,0 +1,67 @@
+
+The closest existing family is **frame-based task-oriented dialogue**, where the system maintains a structured frame or slots, fills them over multiple turns, validates them, and only proceeds once the information is complete enough for the task. Your updated model is also very close to the typed-action pattern already implied in your spec, where natural language produces a transaction draft, the backend validates it, and execution only happens after confirmation.[^1][^2][^3]
+
+## Closest matches
+
+The strongest conceptual match is **frame-based dialogue systems**: the user has a task, the system tracks a structured representation of that task, fills missing slots, and asks follow-up questions when required. In your case, the "frame" is the transaction draft, and your refinement loop is essentially a productized form of dialogue state tracking plus slot filling.[^2][^4]
+
+A second close match is **frame tracking**, which extends plain slot filling by keeping track of frames over time rather than treating each utterance as a one-shot parse. That maps well to your idea that "4.50" should update the existing draft rather than create a new interpretation from scratch.[^3]
+
+## Product analogs
+
+| Existing approach | Why it is similar |
+| :-- | :-- |
+| Frame-based dialogue systems | They are built around task completion through structured frames and slot filling rather than free-form chat.[^2] |
+| Dialogue state tracking | DST explicitly maintains slot values across turns and is responsible for extracting and preserving state over the dialogue.[^4] |
+| Rasa Forms | Rasa forms collect required slots, validate extracted values, and keep prompting until the form is complete enough to proceed.[^5] |
+| Amazon Lex slot elicitation + confirmation | Lex uses slots to gather required fields and supports a confirmation prompt after slot values are filled to verify the action before proceeding.[^6][^7] |
+| Memory-enhanced frame tracking | This line of work models dialogue as operating over the list of frames created so far, not just the latest user message.[^3] |
+
+## Where your framing is stronger
+
+What you have is more robust than classic slot filling because your draft is not just a bag of fields; it also carries **status, provenance, warnings, readiness, and next-step policy**. Traditional form systems usually emphasize collecting required values, while your design explicitly separates parsing, grounding, validation, policy, confirmation, and execution boundaries.[^5][^7][^1]
+
+That separation is especially close to production assistant architecture: Rasa distinguishes slot collection and validation, and Lex distinguishes slot completion from confirmation, but your model goes further by making the draft itself the orchestrated object and by keeping execution behind a typed backend boundary. In other words, this is less "chatbot form filling" and more **execution-gated stateful command completion**.[^7][^1][^2][^5]
+
+## Best labels
+
+If you want terminology that will sound familiar to people from NLP and conversational systems, the safest label is **frame-based, task-oriented dialogue with dialogue state tracking and slot filling**. If you want product/architecture language, **draft-centric action pipeline** or **execution-gated typed action pipeline** is clearer and better aligned with your transaction-confirmation boundary.[^4][^1][^2]
+
+A concise way to position it in a spec would be: "Quick Add uses a frame-based dialogue pattern in which the system maintains a transaction draft, incrementally fills and validates it, and executes a typed action only after readiness and confirmation." Would you like a second pass that maps your components one-by-one to Rasa/Lex/DST terminology so you can reuse established naming in the design doc?[^1][^2][^5][^7][^4]
+
+<span style="display:none">[^10][^11][^12][^13][^14][^15][^16][^8][^9]</span>
+
+<div align="center">⁂</div>
+
+[^1]: 02-add-feature.md
+
+[^2]: https://web.stanford.edu/~jurafsky/slp3/K.pdf
+
+[^3]: https://aclanthology.org/W17-2626/
+
+[^4]: https://www.ijcai.org/proceedings/2022/0607.pdf
+
+[^5]: https://rasa.com/docs/rasa/forms/
+
+[^6]: https://docs.aws.amazon.com/lexv2/latest/dg/intent-slots.html
+
+[^7]: https://docs.aws.amazon.com/lexv2/latest/dg/intent-confirm.html
+
+[^8]: https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-confirmation.html
+
+[^9]: https://www.scribd.com/document/984655140/Frame-Based-Dialogue-Systems
+
+[^10]: https://forum.rasa.com/t/forms-and-slot-validations-in-rasa-pro/66897
+
+[^11]: https://www.youtube.com/watch?v=CKn4ZBh9PpY
+
+[^12]: https://learning.rasa.com/archive/rasa-forms-2/validation/
+
+[^13]: https://aws.amazon.com/about-aws/whats-new/2023/08/amazon-lex-confirmation-slot-type/
+
+[^14]: https://velog.io/@brightalot/자연어처리-Frame-based-Dialogue-System
+
+[^15]: https://dev.to/petr7555/rasa-custom-forms-3d20
+
+[^16]: https://stackoverflow.com/questions/55706446/play-a-message-to-the-user-after-confirmation-prompt-like-please-wait-while-w
+

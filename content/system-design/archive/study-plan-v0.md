@@ -7,14 +7,14 @@ document_status: "archived"
 linkTitle: "Preparation notes before the refactor"
 ---
 
-Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/system-design" >}}). Numerical targets and technical claims below retain their original draft context.
+Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/interview/study-and-practice" >}}). Numerical targets and technical claims below retain their original draft context.
 
 <!-- Original note follows. -->
 
 # What to Learn
 
 {{< callout context="note" title="Advice" icon="outline/info-circle" >}}
-Use the [study and practice approach]({{< ref "system-design/system-design" >}}).
+Use the [study and practice approach]({{< ref "system-design/interview/study-and-practice" >}}).
 {{< /callout >}}
 
 
@@ -185,11 +185,11 @@ you can discuss some project on leetcode, for example
 # Fundamentals & Distributed Systems
 
 
-[Distributed systems]({{< ref "engineering/topics/distributed-systems" >}})
+[Distributed systems]({{< ref "engineering/distributed-systems/reading" >}})
 
 # Microservices
 
 
-[Microservices]({{< ref "engineering/topics/microservices" >}})
+[Microservices]({{< ref "system-design/elements/boundaries" >}})
 
 # Other

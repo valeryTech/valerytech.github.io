@@ -34,7 +34,7 @@
 }
 
 .hextra-search-dialog .hextra-search-input-kbd:focus-visible {
-  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline: var(--site-focus-width) solid var(--site-accent);
   outline-offset: var(--site-focus-offset);
   box-shadow: none;
 }
@@ -70,7 +70,7 @@ dialog.hextra-search-dialog::backdrop {
 }
 
 .hextra-search-dialog .hextra-search-input-kbd:hover {
-  color: var(--site-link-color);
+  color: var(--site-accent);
 }
 
 .hextra-search-dialog .hextra-search-results > li > a[role="option"] {

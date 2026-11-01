@@ -32,6 +32,14 @@
     <span class="site-settings-width-reference" data-pane-size-reference="{{ $field.key }}" aria-hidden="true"></span>
     {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
   </div>
+{{- else if eq $field.type "palette" -}}
+  <div>
+    <button type="button" id="{{ $id }}" class="site-settings-cycle site-control" data-palette-open aria-haspopup="dialog" aria-controls="site-palette" {{ with $field.help }}aria-describedby="{{ $id }}-help"{{ end }} hidden>
+      <span class="site-control-label">{{ $field.label }}</span>
+      <span class="site-surface-actions">{{ partial "utils/icon.html" (dict "name" "color-swatch" "attributes" "height=20") }}</span>
+    </button>
+    {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
+  </div>
 {{- else -}}
   {{ errorf "Unsupported settings field type: %s" $field.type }}
 {{- end -}}

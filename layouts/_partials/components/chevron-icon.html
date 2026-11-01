@@ -1,7 +1,7 @@
 {{- /* Center the original narrow artwork without changing its size or shape. */ -}}
 {{- $class := "site-control-icon" -}}
 {{- with .svgClass }}{{ $class = printf "%s %s" $class . }}{{ end -}}
-{{- $viewBoxes := dict "chevron-left" "-0.5 0 24 24" "chevron-right" "0.5 0 24 24" "chevron-up" "0 -0.5 24 24" -}}
+{{- $viewBoxes := dict "chevron-left" "-0.5 0 24 24" "chevron-right" "0.5 0 24 24" "chevron-up" "0 -0.5 24 24" "chevron-down" "0 0.5 24 24" "chevron-double-up" "0 -0.5 24 24" "chevron-double-down" "0 0.5 24 24" -}}
 {{- $viewBox := (index $viewBoxes .name) | default "0 0 24 24" -}}
 {{- $icon := partial "utils/icon.html" (dict "name" .name "attributes" (printf `class="%s" width="20" height="20" focusable="false"` $class)) -}}
 {{- replace $icon `viewBox="0 0 24 24"` (printf `viewBox="%s"` $viewBox) | safeHTML -}}

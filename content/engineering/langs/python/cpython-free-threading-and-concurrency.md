@@ -6,8 +6,6 @@ description: "Explain CPython free threading, the GIL, synchronization of shared
 linkTitle: "CPython concurrency"
 ---
 
-Original conversation: [Shared ChatGPT thread](https://chatgpt.com/share/6ad808db-6ebc-83e9-879c-e45756ee7384)
-
 Free threading changes where Python code can execute in parallel. Locks, executors, asynchronous tasks, and experimental concurrency models address different concerns above that runtime capability.
 
 Related: [CPython, the JVM, and polymorphism]({{< ref "engineering/langs/python/cpython-jvm-comparison-and-polymorphism" >}}) · [Python data model and native extensions]({{< ref "engineering/langs/python/python-concepts-comparison" >}}).

@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Intent-Driven Architecture"
 description: "Frame architecture through user needs and jobs to be done, using domain language, DSLs, DDD practices, use cases, and decision records to preserve intent."
-title: "In Intent Driven"
 linkTitle: "Intent-Driven Architecture"
 ---
-# Intent-driven architecture
-
 
 User needs, Jobs-to-be-Done (JTBD), and other product concerns can provide the starting point for reasoning about a software system. Structural diagrams, including C4 views, show how a system is organized. They can leave the forces, factors, and context behind that design unexplained. They do not by themselves explain why a component exists. An interaction such as "the user sends an email and the system responds" still needs to explain which problem the interaction solves.
 
@@ -34,3 +32,15 @@ Popularized by Robert C. Martin (Uncle Bob) and echoing Ivar Jacobson's earlier 
 
 
 Architecture Decision Records (ADRs) record a decision, why it was made, its context, and its consequences. They keep those choices connected to product and domain concerns.
+
+## Library sources
+
+
+- [Martin 2018](/sources/software-engineering/architecture/martin-2018-clean-architecture.pdf.enc), *Clean Architecture* -- on *Clean Architecture (Use-Case Driven Architecture)*
+
+Further reading:
+
+- [Harmel-Law 2025](/sources/software-engineering/architecture/harmel-law-2025-facilitating-software-architecture.pdf.enc), *Facilitating Software Architecture*
+- [Buchgeher et al. 2023](/sources/software-engineering/architecture-decisions/buchgeher-2023-architecture-decision-records-open-source.pdf.enc), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654))
+- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture*
+- [Jacobson et al. 2019](/sources/software-engineering/craft/jacobson-2019-essentials-of-modern-software-engineering.pdf.enc), *The Essentials of Modern Software Engineering*

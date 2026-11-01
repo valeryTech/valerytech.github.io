@@ -89,3 +89,8 @@ The original numbered citations link to the entries below, which point to the [s
 - <a id="ref-48"></a>[Reference 48]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-48)
 - <a id="ref-49"></a>[Reference 49]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-49)
 - <a id="ref-50"></a>[Reference 50]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-50)
+
+## Library sources
+
+
+- [shown 2025](/sources/ai-engineering/evaluation/anonymous-2025-evaluating-and-regulating-agentic-ai.pdf.enc), *Evaluating and Regulating Agentic AI*

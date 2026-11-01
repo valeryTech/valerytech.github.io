@@ -801,20 +801,20 @@ gantt
     dateFormat YYYY-MM-DD
 
     section Specification
-    Work contracts and outcome predicates       :a1, 2026-11-02, 7d
-    Capability and authorization model           :a2, 2026-11-05, 7d
+    Work contracts and outcome predicates       :a1, 2026-05-02, 7d
+    Capability and authorization model           :a2, 2026-05-05, 7d
 
     section Environment
-    Shared simulated tools and state             :b1, 2026-11-09, 10d
-    Fault and adversarial injection              :b2, 2026-11-16, 7d
+    Shared simulated tools and state             :b1, 2026-05-09, 10d
+    Fault and adversarial injection              :b2, 2026-05-16, 7d
 
     section Architectures
-    Direct tool-calling agent                    :c1, 2026-11-16, 8d
-    Structured workflow agent                    :c2, 2026-11-16, 10d
-    Typed DSL and interpreter                    :c3, 2026-11-16, 14d
+    Direct tool-calling agent                    :c1, 2026-05-16, 8d
+    Structured workflow agent                    :c2, 2026-05-16, 10d
+    Typed DSL and interpreter                    :c3, 2026-05-16, 14d
 
     section Evaluation
-    Pilot and grader validation                  :d1, 2026-11-30, 7d
+    Pilot and grader validation                  :d1, 2026-05-30, 7d
     Main repeated-trial experiment               :d2, 2026-12-07, 10d
     Adversarial and failure experiments          :d3, 2026-12-10, 10d
 
@@ -1128,19 +1128,19 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 ## References
 
 
-[^1]: [Ai Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/)
+[^1]: [AI Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/)
 
-[^2]: [Ai Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/)
+[^2]: [AI Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/)
 
 [^3]: [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
 
-[^4]: [Analytical Engines And Programmable Environments | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/)
+[^4]: [Analytical Engines And Programmable Environments | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/)
 
-[^5]: [Coding Agents And Harnesses | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/)
+[^5]: [Coding Agents And Harnesses | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/)
 
 [^6]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352)
 
-[^7]: [Agentic Operations And Coordination | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/)
+[^7]: [Agentic Operations And Coordination | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/)
 
 [^8]: [Zanzibar: Google's Consistent, Global Authorization System](https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/)
 
@@ -1164,7 +1164,7 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^18]: [StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows](https://arxiv.org/abs/2403.11322)
 
-[^19]: [Analytical Engines And Programmable Environments | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/)
+[^19]: [Analytical Engines And Programmable Environments | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/)
 
 [^20]: [Specification](https://json-schema.org/specification)
 
@@ -1178,7 +1178,7 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^25]: [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685)
 
-[^26]: [Coding Agents And Harnesses | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/)
+[^26]: [Coding Agents And Harnesses | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/)
 
 [^27]: [Structured model outputs | OpenAI API](https://developers.openai.com/api/docs/guides/structured-outputs)
 
@@ -1190,9 +1190,9 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^31]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352)
 
-[^32]: [Ai Assisted Analysis And Investigation Systems | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/)
+[^32]: [AI-Assisted Analysis And Investigation Systems | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/)
 
-[^33]: [Coding Agents And Harnesses | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/)
+[^33]: [Coding Agents And Harnesses | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/)
 
 [^34]: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
 
@@ -1204,7 +1204,7 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^38]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352)
 
-[^39]: [Ai Assisted Analysis And Investigation Systems | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/)
+[^39]: [AI-Assisted Analysis And Investigation Systems | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/)
 
 [^40]: [Structured model outputs | OpenAI API](https://developers.openai.com/api/docs/guides/structured-outputs)
 
@@ -1212,11 +1212,11 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^42]: [Language choice and semantic guarantees for AI systems | Systems & Engineering](https://valery.tech/ai/design/workflow-design/langs-aspects/)
 
-[^43]: [Ai Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/)
+[^43]: [AI Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/)
 
 [^44]: [Trustworthy agents in practice](https://www.anthropic.com/research/trustworthy-agents)
 
-[^45]: [Ai Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/)
+[^45]: [AI Project Examples And Design Model | Systems & Engineering](https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/)
 
 [^46]: [Trustworthy agents in practice](https://www.anthropic.com/research/trustworthy-agents)
 

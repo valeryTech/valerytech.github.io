@@ -17,6 +17,8 @@ HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 CALLOUT_START_RE = re.compile(r"^>?\s*\[!(\w+)\](?:[+-])?\s*(.*)$")
 EMBED_LINE_RE = re.compile(r"^!\[\[([^\]]+)\]\]\s*$")
 FENCE_START_RE = re.compile(r"^(\s*)(`{3,}|~{3,})(.*)$")
+# An Obsidian tag at the start of a line, such as #todo, where a heading would need a space.
+TAG_LINE_RE = re.compile(r"^#[A-Za-z][\w/-]*(?:\s|$)")
 
 
 def parse_simple_frontmatter(raw: str) -> dict[str, Any]:
@@ -129,6 +131,11 @@ def parse_document(content: str) -> Document:
                 caption = lines[index + 1][2:].strip()
                 index += 1
             blocks.append(Embed(target=target, caption=caption))
+            index += 1
+            continue
+
+        if TAG_LINE_RE.match(line):
+            # Tag lines file a note in the vault and are not meant for readers.
             index += 1
             continue
 

@@ -607,7 +607,7 @@ user query
 ```
 
 
-Conversational-search research already establishes that underspecified queries can benefit from mixed-initiative clarification. ([aclanthology.org](https://aclanthology.org/2022.dialdoc-1.7/?utm_source=chatgpt.com "Conversational Search with Mixed-Initiative - Asking Good Clarification Questions backed-up by Passage Retrieval - ACL Anthology"))
+Conversational-search research already establishes that underspecified queries can benefit from mixed-initiative clarification. ([aclanthology.org](https://aclanthology.org/2022.dialdoc-1.7/ "Conversational Search with Mixed-Initiative - Asking Good Clarification Questions backed-up by Passage Retrieval - ACL Anthology"))
 
 Our extension is:
 
@@ -638,7 +638,7 @@ That is where direct manipulation, mixed initiative, interactive IR, and LLM que
 ## Bounded-corpus retrieval pipeline
 
 
-The following retained passage comes from the semantic-engineering dialogue. It retains the proposed document representations and the complete iterative retrieval pipeline.
+The following retained passage comes from the [semantic-engineering dialogue]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}). It retains the proposed document representations and the complete iterative retrieval pipeline.
 
 The [requirements and evidence-contract note]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}) retains the author's request, coverage ledger, and authority discussion. Its [separate comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}) distinguish a recorded screening pass from a completeness guarantee.
 
@@ -670,7 +670,7 @@ original
 
 Then query processing becomes iterative.
 
-The author's retrieval reframing is relevant here: it describes retrieval as context-to-task alignment, where representation, retrieval unit, matching strategy, authority rules and orchestration are separate design decisions. ([Tech Foundations](https://valery.tech/ai-engineering/retrieval/reframing/ "Reframing | Tech Foundations"))
+The author's retrieval reframing is relevant here: it describes retrieval as context-to-task alignment, where representation, retrieval unit, matching strategy, authority rules and orchestration are separate design decisions. ([Tech Foundations](https://valery.tech/ai-engineering/context/retrieval/reframing/ "Reframing | Tech Foundations"))
 
 The proposal is to extend that into something like:
 
@@ -732,15 +732,20 @@ The proposal is to extend that into something like:
 ```
 
 
-The recurring retrieval loop is useful because the first retrieval pass can reveal vocabulary and distinctions that weren't present in the user's query. That follows directly from the author's context-to-task alignment framing. ([Tech Foundations](https://valery.tech/ai-engineering/retrieval/reframing/ "Reframing | Tech Foundations"))
+The recurring retrieval loop is useful because the first retrieval pass can reveal vocabulary and distinctions that weren't present in the user's query. That follows directly from the author's context-to-task alignment framing. ([Tech Foundations](https://valery.tech/ai-engineering/context/retrieval/reframing/ "Reframing | Tech Foundations"))
 
 ## Retrieval methods for context assembly
 
 
-The source sketch names domain-specific extraction, query rewriting, and multiple document representations. The original sentence remains a proposal without supporting measurements in the sketch.
+The [source sketch]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}) names domain-specific extraction, query rewriting, and multiple document representations. The original sentence remains a proposal without supporting measurements in the sketch.
 
 The [evidence-contract statement]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}#task-specific-context-assembly) is retained separately. Read the [comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}#task-specific-context-assembly) for the grouping.
 
 <!-- Context-assembly retrieval sketch begins below. -->
 
 retrieval quality benefits from domain-specific extraction, query rewriting, and multiple document representations.
+
+## Library sources
+
+
+- [Jiang et al. 2025](/sources/retrieval-and-knowledge/rag/jiang-2025-survey-retrieval-structuring-augmented-generation.pdf.enc), *A Survey on Retrieval And Structuring Augmented Generation with Large Language Models* ([arXiv:2509.10697](https://arxiv.org/abs/2509.10697))

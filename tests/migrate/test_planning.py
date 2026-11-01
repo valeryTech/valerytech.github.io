@@ -39,6 +39,16 @@ class PlanningTests(unittest.TestCase):
         self.assertTrue(should_include(Path("topics/published.md"), includes, excludes))
         self.assertTrue(should_include(Path("topics/coordination-notes.md"), includes, excludes))
 
+    def test_rooted_exclusions_skip_only_the_top_level_directory(self) -> None:
+        includes = ("*.md", "**/*.md")
+        excludes = ("/input/**", "/draft.md")
+        self.assertFalse(should_include(Path("input/note.md"), includes, excludes))
+        self.assertFalse(should_include(Path("input/deep/note.md"), includes, excludes))
+        self.assertFalse(should_include(Path("draft.md"), includes, excludes))
+        self.assertTrue(should_include(Path("design-research/input/note.md"), includes, excludes))
+        self.assertTrue(should_include(Path("notes/draft.md"), includes, excludes))
+        self.assertTrue(should_include(Path("input.md"), includes, excludes))
+
     def test_build_plan_skips_markdown_named_directories_but_imports_their_notes(self) -> None:
         directory = self.workspace.source_root / "system-design/topics/agents.md"
         directory.mkdir()
@@ -55,6 +65,19 @@ class PlanningTests(unittest.TestCase):
         duplicate.write_text("# Duplicate\n", encoding="utf-8")
         with self.assertRaises(MigrationFailed):
             build_migration_plan(make_run(self.workspace).config, make_run(self.workspace).roots)
+
+    def test_imports_cannot_target_the_pdf_folder(self) -> None:
+        self.write_config(
+            """
+            [[imports]]
+            name = "papers"
+            source_root_kind = "external"
+            source_subtree = "system-design"
+            target_subtree = "sources/papers"
+            """
+        )
+        with self.assertRaisesRegex(MigrationFailed, "PDF folder"):
+            make_run(self.workspace)
 
     def test_opt_in_folder_selection_includes_descendants_and_root_index(self) -> None:
         self.write_config(
@@ -131,7 +154,7 @@ class PlanningTests(unittest.TestCase):
         with self.assertRaises(MigrationFailed):
             build_migration_plan(config, make_run(self.workspace).roots)
 
-    def test_public_ai_import_includes_research_sections_and_var(self) -> None:
+    def test_public_ai_import_includes_research_sections_and_system_types(self) -> None:
         manifest = Path(__file__).resolve().parents[2] / "scripts/migrate/config.toml"
         config = load_config(manifest)
         ai_rule = next(rule for rule in config.imports if rule.name == "ai")
@@ -148,25 +171,18 @@ class PlanningTests(unittest.TestCase):
                 path.mkdir(parents=True, exist_ok=True)
 
         public_notes = {
-            "ai-system-design/overview.md",
-            "architecture-dsl-like/research-direction.md",
+            "design/ai-system-design/overview.md",
+            "design-research/00-overview/02-research-direction.md",
             "design-research/00-index.md",
             "design-research/03-language-and-compiler/mechanism.md",
-            "var/01-was/ai-product-types.md",
-            "var/01-was/practitioner_guide_seven_ai_product_types.md",
-            "var/01-was/ai-product-types-improvement-proposal.md",
-            "var/02-ai-project-examples/ai-project-examples-and-design-model.md",
-            "var/02-ai-project-examples/cases/coding-agents-and-harnesses.md",
-            "var/ai-systems-classification/ais-classification.md",
-            "var/reuse.md",
-            "system-evaluation/review-flow-specification.md",
-            "other/methodology/ebse.md",
-            "other/methodology-v1.3/usage/ai-systems-framework-developer-guide-v1.md",
-            "other/methodology-v1.3/change-detection-v1.2.md",
-            "other/methodology-v1.3/slices-definition-v1.1.md",
+            "product/operating-model/operating-model.md",
+            "system-types/project-examples/ai-project-examples-and-design-model.md",
+            "system-types/project-examples/cases/coding-agents-and-harnesses.md",
+            "system-types/classification/ais-classification.md",
         }
         private_notes = {
-            "other/private-note.md",
+            "product/product-model/in/private-note.md",
+            "input/private-note.md",
         }
         for relative in public_notes | private_notes:
             path = import_root / relative
@@ -174,9 +190,9 @@ class PlanningTests(unittest.TestCase):
             path.write_text("# Note\n", encoding="utf-8")
 
         # A public source may refer to an unselected note without publishing it.
-        (import_root / "var/01-was/ai-product-types.md").write_text(
-            "# Product archetypes\n\n"
-            "[Private note](../../other/private-note.md)\n",
+        (import_root / "system-types/project-examples/ai-project-examples-and-design-model.md").write_text(
+            "# Project examples\n\n"
+            "[Private note](../../product/product-model/in/private-note.md)\n",
             encoding="utf-8",
         )
         plan = build_migration_plan(config, make_run(self.workspace).roots)
@@ -185,10 +201,9 @@ class PlanningTests(unittest.TestCase):
 
         self.assertTrue(public_notes <= selected)
         self.assertTrue(private_notes.isdisjoint(selected))
-        self.assertEqual(targets["var/01-was/ai-product-types.md"], "ai/var/01-was/ai-product-types")
         self.assertEqual(
-            targets["var/01-was/practitioner_guide_seven_ai_product_types.md"],
-            "ai/var/practitioner-guide-seven-ai-product-types",
+            targets["system-types/project-examples/ai-project-examples-and-design-model.md"],
+            "ai/system-types/project-examples/ai-project-examples-and-design-model",
         )
 
     def test_synthetic_index_frontmatter_accepts_title_override(self) -> None:

@@ -101,3 +101,15 @@ Three questions assess evaluation readiness:
 1. **"Is there a Golden Dataset?"** (If no, start curating 20 high-quality examples today).
 2. **"Are inputs and outputs logged?"** (Raw data supports future datasets).
 3. **"Is there a regression test?"** (Can a prompt change be checked for regressions?).
+
+## Library sources
+
+
+- [Magalhaes et al. 2025](/sources/ai-engineering/evaluation/magalhaes-2025-testing-the-untestable-llm-powered-software.pdf.enc), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198))
+- [Xia et al. 2024](/sources/ai-engineering/evaluation/xia-2024-evaluation-driven-development-and-operations-of-llm-agents.pdf.enc), *Evaluation-Driven Development and Operations of LLM Agents* ([arXiv:2411.13768](https://arxiv.org/abs/2411.13768))
+
+Further reading:
+
+- AI agent platform book, *O'Reilly early release, chapters 1-7*
+- [Huyen 2025](/sources/ai-engineering/practice/huyen-2025-ai-engineering.pdf.enc), *AI Engineering: Building Applications with Foundation Models*
+- [Yan et al. 2024](/sources/ai-engineering/practice/yan-2024-what-we-learned-from-building-with-llms.pdf.enc), *What We Learned from a Year of Building with LLMs*

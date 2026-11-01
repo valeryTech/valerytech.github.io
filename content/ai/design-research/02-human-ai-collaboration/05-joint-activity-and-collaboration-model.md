@@ -14,7 +14,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The retained LLM passages develop a collaboration model from joint activity, common ground, coordination, and teamwork. The earlier principles, later coverage reasoning, and compact model remain together. The sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments" >}}) explain the placement and limits.
 
-[Augmenting human work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}) provides the wider allocation and decision-point discussion. [Collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) continues the original source with specific interaction patterns. The [source redirect]({{< ref "ai/collab-and-joint-work/collab-transfer" >}}) links both parts.
+[Augmenting human work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}) provides the wider allocation and decision-point discussion. [Collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) continues the original source with specific interaction patterns. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/collab-transfer" >}}) links both parts.
 
 <a id="retained-dialogue"></a>
 
@@ -150,10 +150,10 @@ The proposal is to verify it by triangulating established collaboration research
 
 The saved LLM review reports comparing four fairly independent traditions:
 
-- Clark & Brennan's work on **common ground**: collaborators have to coordinate both what they are doing and how they are doing it, and continually update shared understanding. ([CMU School of Computer Science](https://www.cs.cmu.edu/~illah/CLASSDOCS/Clark91.pdf?utm_source=chatgpt.com "GROUNDING IN COMMUNICATION"))
-- Klein et al.'s work on **joint activity**, including human-automation teams: joint work requires commitment to the joint activity, mutual predictability, mutual directability, and common ground. ([ResearchGate](https://www.researchgate.net/publication/227992178_Common_Ground_and_Coordination_in_Joint_Activity?utm_source=chatgpt.com "(PDF) Common Ground and Coordination in Joint Activity"))
-- Team research from Marks et al. and Salas et al.: teams plan, set goals, coordinate action, monitor progress and one another, provide backup, adapt, communicate, and maintain shared models and trust. ([studylib.net](https://studylib.net/doc/8897423/a-temporally-based-framework-and-taxonomy-of-team-processes?utm_source=chatgpt.com "Team Processes: Framework & Taxonomy"))
-- Coordination/CSCW research: collaboration involves managing dependencies between activities and continually "meshing" distributed tasks and efforts when reality diverges from the plan. ([Bishtref](https://bishtref.com/articles/10.1145/174666.174668?utm_source=chatgpt.com "The interdisciplinary study of coordination (1994)"))
+- Clark & Brennan's work on **common ground**: collaborators have to coordinate both what they are doing and how they are doing it, and continually update shared understanding. ([CMU School of Computer Science](https://www.cs.cmu.edu/~illah/CLASSDOCS/Clark91.pdf "GROUNDING IN COMMUNICATION"))
+- Klein et al.'s work on **joint activity**, including human-automation teams: joint work requires commitment to the joint activity, mutual predictability, mutual directability, and common ground. ([ResearchGate](https://www.researchgate.net/publication/227992178_Common_Ground_and_Coordination_in_Joint_Activity "(PDF) Common Ground and Coordination in Joint Activity"))
+- Team research from Marks et al. and Salas et al.: teams plan, set goals, coordinate action, monitor progress and one another, provide backup, adapt, communicate, and maintain shared models and trust. ([studylib.net](https://studylib.net/doc/8897423/a-temporally-based-framework-and-taxonomy-of-team-processes "Team Processes: Framework & Taxonomy"))
+- Coordination/CSCW research: collaboration involves managing dependencies between activities and continually "meshing" distributed tasks and efforts when reality diverges from the plan. ([Bishtref](https://bishtref.com/articles/10.1145/174666.174668 "The interdisciplinary study of coordination (1994)"))
 
 The proposed synthesis of those traditions is intended to clarify the earlier list.
 
@@ -176,7 +176,7 @@ For AI this gives questions like:
 > What remains the user's responsibility?
 > What can AI do autonomously?
 
-This corresponds quite closely to Klein et al.'s "Basic Compact." ([ResearchGate](https://www.researchgate.net/publication/3454232_Ten_Challenges_for_Making_Automation_a_Team_Player_in_Joint_Human-Agent_Activity?utm_source=chatgpt.com "(PDF) Ten Challenges for Making Automation a \"Team Player\" in Joint Human-Agent Activity"))
+This corresponds quite closely to Klein et al.'s "Basic Compact." ([ResearchGate](https://www.researchgate.net/publication/3454232_Ten_Challenges_for_Making_Automation_a_Team_Player_in_Joint_Human-Agent_Activity "(PDF) Ten Challenges for Making Automation a \"Team Player\" in Joint Human-Agent Activity"))
 
 ### 2. Maintain common ground
 
@@ -189,7 +189,7 @@ And they need mechanisms to repair that understanding:
 
 `explain -> acknowledge -> clarify -> correct`
 
-Clark and Brennan treat this continual grounding as foundational to collective action. ([CMU School of Computer Science](https://www.cs.cmu.edu/~illah/CLASSDOCS/Clark91.pdf?utm_source=chatgpt.com "GROUNDING IN COMMUNICATION"))
+Clark and Brennan treat this continual grounding as foundational to collective action. ([CMU School of Computer Science](https://www.cs.cmu.edu/~illah/CLASSDOCS/Clark91.pdf "GROUNDING IN COMMUNICATION"))
 
 For AI, this gives us things such as context awareness, clarification, confirmation, memory of decisions, and making assumptions explicit.
 
@@ -212,7 +212,7 @@ Once the goal is shared, somebody still has to organize the work:
 
 `reassign when necessary`
 
-Malone and Crowston's very general definition of coordination is essentially **managing dependencies among activities**. ([Bishtref](https://bishtref.com/articles/10.1145/174666.174668?utm_source=chatgpt.com "The interdisciplinary study of coordination (1994)"))
+Malone and Crowston's very general definition of coordination is essentially **managing dependencies among activities**. ([Bishtref](https://bishtref.com/articles/10.1145/174666.174668 "The interdisciplinary study of coordination (1994)"))
 
 This suggests that "handoffs" from our previous list are one instance of a larger category: **coordination**.
 
@@ -233,7 +233,7 @@ And they need ways to influence one another:
 > Change direction.
 > Let me handle this part.
 
-Klein et al. call out **mutual predictability** and **mutual directability** as requirements for joint activity. ([ResearchGate](https://www.researchgate.net/publication/227992178_Common_Ground_and_Coordination_in_Joint_Activity?utm_source=chatgpt.com "(PDF) Common Ground and Coordination in Joint Activity"))
+Klein et al. call out **mutual predictability** and **mutual directability** as requirements for joint activity. ([ResearchGate](https://www.researchgate.net/publication/227992178_Common_Ground_and_Coordination_in_Joint_Activity "(PDF) Common Ground and Coordination in Joint Activity"))
 
 This is where several of our AI concepts fit:
 
@@ -286,7 +286,7 @@ Good collaboration therefore needs:
 
 `detect breakdown -> surface it -> diagnose -> repair/replan -> continue`
 
-This comes through strongly in both CSCW's "articulation work" and teamwork research on adaptability and backup behavior. Schmidt and Bannon argue that real work requires ongoing adjustment because contingencies cannot all be planned in advance. ([Welcome to DTU Research Database](https://orbit.dtu.dk/en/publications/taking-cscw-seriously-supporting-articulation-work/?utm_source=chatgpt.com "Taking CSCW seriously. Supporting articulation work - Welcome to DTU Research Database")) Salas et al. similarly include adaptability and backup behavior among their core teamwork components. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.1177/1046496405277134 "Is there a "Big Five" in Teamwork? - Eduardo Salas, Dana E. Sims, C. Shawn Burke, 2005"))
+This comes through strongly in both CSCW's "articulation work" and teamwork research on adaptability and backup behavior. Schmidt and Bannon argue that real work requires ongoing adjustment because contingencies cannot all be planned in advance. ([Welcome to DTU Research Database](https://orbit.dtu.dk/en/publications/taking-cscw-seriously-supporting-articulation-work/ "Taking CSCW seriously. Supporting articulation work - Welcome to DTU Research Database")) Salas et al. similarly include adaptability and backup behavior among their core teamwork components. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.1177/1046496405277134 "Is there a "Big Five" in Teamwork? - Eduardo Salas, Dana E. Sims, C. Shawn Burke, 2005"))
 
 For AI that includes clarification, disagreement, correction, escalation, undo, retries, alternative plans, and admitting inability.
 
@@ -315,7 +315,7 @@ COLLABORATION
 ```
 
 
-Then there are **conditions that make those mechanics work well**, such as trust. Salas et al. explicitly treat mutual trust, shared mental models, and closed-loop communication as coordinating mechanisms supporting teamwork. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.1177/1046496405277134?utm_source=chatgpt.com "Is there a "Big Five" in Teamwork? - Eduardo Salas, Dana E. Sims, C. Shawn Burke, 2005")) Psychological safety is particularly relevant to human teams because it supports speaking up, admitting mistakes, and learning. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.2307/2666999?utm_source=chatgpt.com "Psychological Safety and Learning Behavior in Work Teams - Amy Edmondson, 1999")) The recommendation is not to mix these into the same taxonomy as "handoff" or "review," though.
+Then there are **conditions that make those mechanics work well**, such as trust. Salas et al. explicitly treat mutual trust, shared mental models, and closed-loop communication as coordinating mechanisms supporting teamwork. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.1177/1046496405277134 "Is there a "Big Five" in Teamwork? - Eduardo Salas, Dana E. Sims, C. Shawn Burke, 2005")) Psychological safety is particularly relevant to human teams because it supports speaking up, admitting mistakes, and learning. ([Sage Journals](https://journals.sagepub.com/doi/pdf/10.2307/2666999 "Psychological Safety and Learning Behavior in Work Teams - Amy Edmondson, 1999")) The recommendation is not to mix these into the same taxonomy as "handoff" or "review," though.
 
 And this gives us a way to test completeness.
 

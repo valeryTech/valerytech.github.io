@@ -25,11 +25,11 @@ The working interpretation is that there is a publishable paper here, but the pr
 
 There is evidence for a real gap, but it seems to come from several mechanisms.
 
-First, the relevant knowledge is split across fields. Interactive IR, information seeking, HCI, visual analytics, end-user programming, mixed-initiative systems, provenance, and AI have developed partly separate research traditions. Work on interactive IR has explicitly noted the limited overlap between system-oriented IR, interactive IR, and information-seeking research. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0306457307000489?utm_source=chatgpt.com "On the role of user-centred evaluation in the advancement of interactive information retrieval - ScienceDirect"))
+First, the relevant knowledge is split across fields. Interactive IR, information seeking, HCI, visual analytics, end-user programming, mixed-initiative systems, provenance, and AI have developed partly separate research traditions. Work on interactive IR has explicitly noted the limited overlap between system-oriented IR, interactive IR, and information-seeking research. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S0306457307000489 "On the role of user-centred evaluation in the advancement of interactive information retrieval - ScienceDirect"))
 
-Second, the dominant evaluation methods often favor systems that are easier to measure offline. Classical IR evaluation reduces the problem to something like `query -> ranking -> relevance`, while interactive systems involve reformulation, learning, changing goals, and different users. Interactive evaluation is richer but also substantially more expensive and harder to reproduce. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0306457322001182?utm_source=chatgpt.com "Toward Cranfield-inspired reusability assessment in interactive information retrieval evaluation - ScienceDirect")) Bates identified the underlying mismatch decades ago: real information needs change as people encounter information, while classical retrieval evaluation tends to assume a stable need. ([GSEIS Pages](https://pages.gseis.ucla.edu/faculty/bates/berrypicking.html?utm_source=chatgpt.com "The Design of Browsing and Berrypicking Techniques"))
+Second, the dominant evaluation methods often favor systems that are easier to measure offline. Classical IR evaluation reduces the problem to something like `query -> ranking -> relevance`, while interactive systems involve reformulation, learning, changing goals, and different users. Interactive evaluation is richer but also substantially more expensive and harder to reproduce. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0306457322001182 "Toward Cranfield-inspired reusability assessment in interactive information retrieval evaluation - ScienceDirect")) Bates identified the underlying mismatch decades ago: real information needs change as people encounter information, while classical retrieval evaluation tends to assume a stable need. ([GSEIS Pages](https://pages.gseis.ucla.edu/faculty/bates/berrypicking.html "The Design of Browsing and Berrypicking Techniques"))
 
-Third, there is an organizational boundary. A study of 21 industry practitioners across 14 organizations found that conventional separation between AI engineering and UX design breaks down for Human-AI systems: interface requirements affect model behavior, data, and system components, so teams created ad-hoc representations to communicate across those boundaries. ([arXiv](https://arxiv.org/abs/2207.01749?utm_source=chatgpt.com "Human-AI Guidelines in Practice: Leaky Abstractions as an Enabler in Collaborative Software Teams")) This is quite close to the author's concern about practitioners and organizational decision-making, but it suggests a structural problem beyond people simply not reading HCI literature.
+Third, there is an organizational boundary. A study of 21 industry practitioners across 14 organizations found that conventional separation between AI engineering and UX design breaks down for Human-AI systems: interface requirements affect model behavior, data, and system components, so teams created ad-hoc representations to communicate across those boundaries. ([arXiv](https://arxiv.org/abs/2207.01749 "Human-AI Guidelines in Practice: Leaky Abstractions as an Enabler in Collaborative Software Teams")) This is quite close to the author's concern about practitioners and organizational decision-making, but it suggests a structural problem beyond people simply not reading HCI literature.
 
 Fourth, many of these ideas cost more to implement. A chat product needs:
 
@@ -57,7 +57,7 @@ persistent state
 
 That engineering-cost explanation is my inference, rather than something the literature above directly establishes.
 
-And there is an important counterexample: when researchers have actually built systems around these principles, the results often look a lot like what impressed you about Matrix. **AI Chains**, for example, let people inspect and modify intermediate LLM operations; in its 20-person study, chaining improved task outcomes and increased transparency, controllability, and the users' sense of collaboration. Users could compare alternative branches and debug individual steps. ([DOI](https://doi.org/10.1145/3491102.3517582?utm_source=chatgpt.com "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts | Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems"))
+And there is an important counterexample: when researchers have actually built systems around these principles, the results often look a lot like what impressed you about Matrix. **AI Chains**, for example, let people inspect and modify intermediate LLM operations; in its 20-person study, chaining improved task outcomes and increased transparency, controllability, and the users' sense of collaboration. Users could compare alternative branches and debug individual steps. ([DOI](https://doi.org/10.1145/3491102.3517582 "AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts | Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems"))
 
 So the working interpretation is that the paper's motivating question could be:
 
@@ -172,21 +172,21 @@ The proposal is to keep this section deliberately concise and organized by _desi
 
 You have good anchor sources.
 
-Shneiderman gives visible objects and rapid, incremental, reversible interaction. ([UMD Computer Science](https://www.cs.umd.edu/~ben/papers/Shneiderman1983Direct.pdf?utm_source=chatgpt.com "Direct manipulation systems offer the satisfying experience of operating on visible objects. The computer becomes transparent, and users can concentrate on their tasks."))
+Shneiderman gives visible objects and rapid, incremental, reversible interaction. ([UMD Computer Science](https://www.cs.umd.edu/~ben/papers/Shneiderman1983Direct.pdf "Direct manipulation systems offer the satisfying experience of operating on visible objects. The computer becomes transparent, and users can concentrate on their tasks."))
 
-Horvitz gives mixed initiative as a coupling of automation and direct manipulation, with each participant contributing when appropriate. ([DOI](https://doi.org/10.1145/302979.303030?utm_source=chatgpt.com "Principles of mixed-initiative user interfaces | Proceedings of the SIGCHI conference on Human Factors in Computing Systems"))
+Horvitz gives mixed initiative as a coupling of automation and direct manipulation, with each participant contributing when appropriate. ([DOI](https://doi.org/10.1145/302979.303030 "Principles of mixed-initiative user interfaces | Proceedings of the SIGCHI conference on Human Factors in Computing Systems"))
 
-Bates gives the evolving information need. ([GSEIS Pages](https://pages.gseis.ucla.edu/faculty/bates/berrypicking.html?utm_source=chatgpt.com "The Design of Browsing and Berrypicking Techniques"))
+Bates gives the evolving information need. ([GSEIS Pages](https://pages.gseis.ucla.edu/faculty/bates/berrypicking.html "The Design of Browsing and Berrypicking Techniques"))
 
-Interactive IR has explicitly studied query reformulation and interfaces for helping users alter their queries. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0306457300000558?utm_source=chatgpt.com "Iterative exploration, design and evaluation of support for query reformulation in interactive information retrieval - ScienceDirect"))
+Interactive IR has explicitly studied query reformulation and interfaces for helping users alter their queries. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0306457300000558 "Iterative exploration, design and evaluation of support for query reformulation in interactive information retrieval - ScienceDirect"))
 
-Nardi and Miller give us an especially useful precedent for the computational surface: a small number of high-level, domain-specific operations combined with strong visual structure. ([Miramontes Interactive](https://www.miramontes.com/writing/spreadsheet-eup/?utm_source=chatgpt.com "Spreadsheets and end-user programming: Jim Miller / Miramontes Interactive"))
+Nardi and Miller give us an especially useful precedent for the computational surface: a small number of high-level, domain-specific operations combined with strong visual structure. ([Miramontes Interactive](https://www.miramontes.com/writing/spreadsheet-eup/ "Spreadsheets and end-user programming: Jim Miller / Miramontes Interactive"))
 
-Distributed-representation research makes an even deeper claim: the form of an external representation affects what information can be perceived and what processes and structures can be discovered. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/0364021394900213?utm_source=chatgpt.com "Representations in distributed cognitive tasks - ScienceDirect"))
+Distributed-representation research makes an even deeper claim: the form of an external representation affects what information can be perceived and what processes and structures can be discovered. ([ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/0364021394900213 "Representations in distributed cognitive tasks - ScienceDirect"))
 
-Interactive ML demonstrates the value of letting users inject knowledge during model construction rather than confining them to preparing input before an automated process. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S1071581901904999?utm_source=chatgpt.com "Interactive machine learning: letting users build classifiers - ScienceDirect"))
+Interactive ML demonstrates the value of letting users inject knowledge during model construction rather than confining them to preparing input before an automated process. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S1071581901904999 "Interactive machine learning: letting users build classifiers - ScienceDirect"))
 
-And W3C PROV gives an established formal vocabulary for tracing entities, activities, agents, uses, generations, and derivations. ([W3C](https://www.w3.org/TR/prov-primer/?utm_source=chatgpt.com "PROV Model Primer"))
+And W3C PROV gives an established formal vocabulary for tracing entities, activities, agents, uses, generations, and derivations. ([W3C](https://www.w3.org/TR/prov-primer/ "PROV Model Primer"))
 
 ### 3. Synthesize the literature into principles
 
@@ -271,7 +271,7 @@ provenance recovery
 ```
 
 
-That also connects back to the historical problem: interactive IR evaluation has long argued that ranking metrics alone don't capture user effectiveness and usefulness. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/030645739290007M?utm_source=chatgpt.com "Evaluation measures for interactive information retrieval - ScienceDirect"))
+That also connects back to the historical problem: interactive IR evaluation has long argued that ranking metrics alone don't capture user effectiveness and usefulness. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/030645739290007M "Evaluation measures for interactive information retrieval - ScienceDirect"))
 
 So the working interpretation is that the publication should make one central argument:
 

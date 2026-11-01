@@ -44,7 +44,7 @@ The research question:
 
 > Can we make properties such as evidence coverage, provenance, authority resolution, contradiction handling, and abstention part of a program's semantics, and does enforcing those properties improve the reliability of LLM investigations?
 
-That is sharper than "a compiler for agents." Generic typed-plan compilation is already being explored by PlanCompiler; temporal verification of agent control flow by AgentVerify; explicit query algebra and cost-based execution by RUBICON; and LLM proposal + symbolic rejection by AutoSpec+. ([arXiv](https://arxiv.org/abs/2604.13092?utm_source=chatgpt.com "PlanCompiler: A Deterministic Compilation Architecture for Structured Multi-Step LLM Pipelines"))
+That is sharper than "a compiler for agents." Generic typed-plan compilation is already being explored by PlanCompiler; temporal verification of agent control flow by AgentVerify; explicit query algebra and cost-based execution by RUBICON; and LLM proposal + symbolic rejection by AutoSpec+. ([arXiv](https://arxiv.org/abs/2604.13092 "PlanCompiler: A Deterministic Compilation Architecture for Structured Multi-Step LLM Pipelines"))
 
 The proposed distinction in the research notes is explicit: conclusions should only be constructible when the investigation has satisfied declared epistemic requirements.
 
@@ -87,7 +87,7 @@ The theorem is conditional: it concerns properties of the computation around pro
 
 That gives the paper three contributions that fit together: a computational model, an implementation, and empirical evidence.
 
-The specific recommendation is to **not make Colored Petri Nets the headline of paper 1**. They're worth experimenting with as an execution semantics or lowering target--the notes identify good reasons for them--but "agents on Petri nets" is already being explored publicly. ([HASH](https://hash.ai/blog/petri-nets-for-agentic-ai?utm_source=chatgpt.com "Petri Net-Powered Agents - HASH Blog")) If Petri nets turn out to be essential to a theorem or capability, they can become part of the paper. Otherwise they're an implementation choice.
+The specific recommendation is to **not make Colored Petri Nets the headline of paper 1**. They're worth experimenting with as an execution semantics or lowering target--the notes identify good reasons for them--but "agents on Petri nets" is already being explored publicly. ([HASH](https://hash.ai/blog/petri-nets-for-agentic-ai "Petri Net-Powered Agents - HASH Blog")) If Petri nets turn out to be essential to a theorem or capability, they can become part of the paper. Otherwise they're an implementation choice.
 
 Likewise, leave the optimizer mostly out. Once you prove that `coverage=complete` and `coverage=best_effort` are meaningfully different program contracts, a second paper can ask how to choose the cheapest physical plan satisfying a contract. That is where the proposed cost/quality optimizer becomes a substantial research problem. The research notes already formulate exactly that compiler problem as epistemic requirements + resource budget + available operators -> physical plan.
 
@@ -148,7 +148,7 @@ If the underlying abstractions are good, the generalization will happen naturall
 ## reframing
 
 
-according to [Problem Framing]({{< ref "ai/architecture-dsl-like/dsl-approach/problem-framing" >}})
+according to [problem-framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}})
 
 TODO: Clarify the original `XX` marker; no further text is recorded here.
 

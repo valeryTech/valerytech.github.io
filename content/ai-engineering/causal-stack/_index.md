@@ -34,7 +34,9 @@ Keep detailed cases and results with the product. Link them to relevant claims h
 - [Model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}}): scoped background facts, research findings, and limits of causal attribution.
 - [Possible interventions]({{< ref "ai-engineering/causal-stack/reference/interventions" >}}): changes to consider after identifying a concrete problem, with checks and costs.
 
-The product methodology remains in [Evaluation in AI Product Development]({{< ref "ai/approach/evaluations" >}}) and [Disciplined AI Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}). This guide supplies practical investigation steps within that approach.
+The product methodology remains in [Evaluation in AI Product Development]({{< ref "ai-engineering/approach/evaluations" >}}) and [Disciplined AI Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}). This guide supplies practical investigation steps within that approach.
+
+[Capability claims and empirical method]({{< ref "ai/capabilities/empirical-method-map" >}}) compares the separations kept here with the levels of claim in the capability notes, from observed behavior to a claim about what a system can do.
 
 ## Keep four things separate
 

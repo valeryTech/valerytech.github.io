@@ -109,7 +109,6 @@
 }
 
 [data-site-pane],
-.site-outline-rail,
 .site-outline-placeholder {
   flex-shrink: 1;
   min-width: var(--site-pane-min-width);
@@ -128,7 +127,6 @@
 }
 
 [data-site-pane="outline"],
-.site-outline-rail,
 .site-outline-placeholder {
   min-width: var(--site-header-tools-min-width);
   max-width: max(var(--site-header-tools-min-width), var(--site-outline-effective-max));

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "02 Typed DSL And Compiler"
 description: "Proposes typed intermediate programs with explicit effects, extensible operator contracts, compositional guarantees, and structured compiler feedback, separating static admissibility from empirical task correctness."
-title: "02 Typed Dsl And Compiler"
-linkTitle: "02 Typed Dsl And Compiler"
+linkTitle: "02 Typed DSL And Compiler"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
@@ -69,9 +69,9 @@ LLM repairs candidate
 
 That feedback loop can be fast and deterministic. The model doesn't have to "understand" whether its plan is safe. It just has to search for a program accepted by the verifier.
 
-This is close to several existing research directions. LLM+P, for example, translates natural language into PDDL and then delegates planning to a classical planner; the planner provides feasibility/correctness properties that the LLM itself cannot reliably provide. ([arxiv.org](https://arxiv.org/abs/2304.11477?utm_source=chatgpt.com "LLM+P: Empowering Large Language Models with Optimal Planning Proficiency")) Tom Silver, Leslie Kaelbling, Joshua Tenenbaum and collaborators have also used program generation plus automated validation/debugging, where validation errors are fed back to the LLM. ([ojs.aaai.org](https://ojs.aaai.org/index.php/AAAI/article/view/30006?utm_source=chatgpt.com "Generalized Planning in PDDL Domains with Pretrained Large Language Models | Proceedings of the AAAI Conference on Artificial Intelligence")) A 2026 ICSE paper from Eunsuk Kang, Christian Kästner and collaborators goes further toward your safety use case: tool capabilities, information flows and allowed sequences are represented formally and checked independently of the LLM. ([DOI](https://doi.org/10.1145/3786582.3786839?utm_source=chatgpt.com "Towards Verifiably Safe Tool Use for LLM Agents | Proceedings of the IEEE/ACM 48th International Conference on Software Engineering"))
+This is close to several existing research directions. LLM+P, for example, translates natural language into PDDL and then delegates planning to a classical planner; the planner provides feasibility/correctness properties that the LLM itself cannot reliably provide. ([arxiv.org](https://arxiv.org/abs/2304.11477 "LLM+P: Empowering Large Language Models with Optimal Planning Proficiency")) Tom Silver, Leslie Kaelbling, Joshua Tenenbaum and collaborators have also used program generation plus automated validation/debugging, where validation errors are fed back to the LLM. ([ojs.aaai.org](https://ojs.aaai.org/index.php/AAAI/article/view/30006 "Generalized Planning in PDDL Domains with Pretrained Large Language Models | Proceedings of the AAAI Conference on Artificial Intelligence")) A 2026 ICSE paper from Eunsuk Kang, Christian Kästner and collaborators goes further toward your safety use case: tool capabilities, information flows and allowed sequences are represented formally and checked independently of the LLM. ([DOI](https://doi.org/10.1145/3786582.3786839 "Towards Verifiably Safe Tool Use for LLM Agents | Proceedings of the IEEE/ACM 48th International Conference on Software Engineering"))
 
-There is even a July 2026 article by Unmesh Joshi making almost exactly the DSL argument: DSL grammar, types, invariants and compiler diagnostics can form the harness around an LLM, with the model iteratively repairing rejected programs. ([martinfowler.com](https://www.martinfowler.com/articles/llm-and-dsls.html?utm_source=chatgpt.com "DSLs Enable Reliable Use of LLMs"))
+There is even a July 2026 article by Unmesh Joshi making almost exactly the DSL argument: DSL grammar, types, invariants and compiler diagnostics can form the harness around an LLM, with the model iteratively repairing rejected programs. ([martinfowler.com](https://www.martinfowler.com/articles/llm-and-dsls.html "DSLs Enable Reliable Use of LLMs"))
 
 Where Scala/Haskell becomes particularly useful is that the DSL can encode much more than syntax.
 
@@ -144,7 +144,7 @@ You can encode several classes of restrictions this way:
 - **Irreversibility:** distinguish `Preview` from `Commit`.
 - **Authority:** some actions require a capability token supplied by the runtime rather than synthesizable by the LLM.
 
-Haskell is particularly attractive because GADTs, DataKinds, indexed monads and refinement systems such as Liquid Haskell let you push substantial state-machine semantics into types. Liquid/refinement types can discharge predicates through SMT solvers, giving you a middle ground between an ordinary compiler and a theorem prover. ([ntaylor.ca](https://ntaylor.ca/posts/liquid-types/?utm_source=chatgpt.com "An Invitation to Liquid Types: Unifying Type Theory and Model Checking -- Nathan Taylor"))
+Haskell is particularly attractive because GADTs, DataKinds, indexed monads and refinement systems such as Liquid Haskell let you push substantial state-machine semantics into types. Liquid/refinement types can discharge predicates through SMT solvers, giving you a middle ground between an ordinary compiler and a theorem prover. ([ntaylor.ca](https://ntaylor.ca/posts/liquid-types/ "An Invitation to Liquid Types: Unifying Type Theory and Model Checking -- Nathan Taylor"))
 
 For example, conceptually:
 
@@ -514,7 +514,7 @@ That is probably a better optimization target than making the DSL pleasant for h
 ### Effects need their own vocabulary
 
 
-Koka is almost a laboratory for one piece of the proposed theory. Its function type includes the effects a function can cause; it also uses handlers to separate requesting an effect from interpreting it. ([Koka](https://koka-lang.github.io/koka/doc/index.html?utm_source=chatgpt.com "The Koka Programming Language"))
+Koka is almost a laboratory for one piece of the proposed theory. Its function type includes the effects a function can cause; it also uses handlers to separate requesting an effect from interpreting it. ([Koka](https://koka-lang.github.io/koka/doc/index.html "The Koka Programming Language"))
 
 Unison does something similar with abilities:
 
@@ -523,7 +523,7 @@ Input ->{Network, Storage, Exception} Output
 ```
 
 
-and an empty ability set means those abilities aren't available. ([Unison](https://www.unison-lang.org/docs/language-reference/abilities-and-ability-handlers/?utm_source=chatgpt.com "Abilities and ability handlers · Unison programming language"))
+and an empty ability set means those abilities aren't available. ([Unison](https://www.unison-lang.org/docs/language-reference/abilities-and-ability-handlers/ "Abilities and ability handlers · Unison programming language"))
 
 For the proposed system the proposal is to go one step further.
 
@@ -1117,3 +1117,15 @@ The complete [semantic-model and scenario-DSL example]({{< ref "ai/design-resear
 
 
 The [NoSQL, optimizer, and transaction exchange]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#nosql-sql-optimizers-and-transactions-from-the-interview) is now beside the other database interview passages. The speaker labels and source attribution remain unchanged.
+
+## Library sources
+
+
+- [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *5. Make effects explicit*
+- [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617)) -- on *8. Design feedback for LLM repair*
+
+Further reading:
+
+- [Bauer and Pretnar 2012](/sources/ai-engineering/harness/bauer-2012-programming-with-algebraic-effects-handlers.pdf.enc), *Programming with Algebraic Effects and Handlers* ([arXiv:1203.1539](https://arxiv.org/abs/1203.1539))
+- [Plotkin and Pretnar 2013](/sources/ai-engineering/harness/plotkin-2013-handling-algebraic-effects.pdf.enc), *Handling Algebraic Effects*
+- [Tan et al. 2026](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780))

@@ -1,2 +1,2 @@
-{{- $script := resources.Get "js/sidebar-startup.js" | js.Build (dict "target" "es2015" "minify" true) -}}
+{{- $script := resources.Get "js/sidebar-startup.js" | js.Build (dict "target" "es2015" "minify" true "params" (dict "sections" hugo.Data.ui.navigation.sections)) -}}
 <script>{{ $script.Content | safeJS }}</script>

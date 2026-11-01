@@ -1,3 +1,19 @@
+// Toggling a pane reflows the article; keep the passage at the reading line in place.
+function keepReadingPosition(update) {
+  const line = innerHeight * 0.35;
+  const anchor = [...document.querySelectorAll(".article-content > *")].find(
+    (element) => element.getBoundingClientRect().bottom > line,
+  );
+  const top = anchor?.getBoundingClientRect().top;
+  update();
+  if (!anchor) return;
+  const restore = () =>
+    window.scrollBy({ top: anchor.getBoundingClientRect().top - top, behavior: "instant" });
+  restore();
+  // Pane widths settle through resize observers in the next frame.
+  requestAnimationFrame(restore);
+}
+
 function initPaneVisibility(preferences, pane, key, name) {
   const toggle = document.querySelector(`[data-${pane}-toggle]`);
   const restoreSlot = document.querySelector(`[data-${pane}-restore-slot]`);
@@ -15,12 +31,13 @@ function initPaneVisibility(preferences, pane, key, name) {
   }
 
   toggle.addEventListener("click", () => {
-    preferences.set(`display.${key}`, !preferences.get(`display.${key}`));
+    keepReadingPosition(() =>
+      preferences.set(`display.${key}`, !preferences.get(`display.${key}`)),
+    );
     toggle.focus({ preventScroll: true });
   });
   preferences.subscribe(sync);
   sync(preferences.snapshot());
-  toggle.hidden = false;
 }
 
 export function initSidebarVisibility(preferences) {

@@ -11,10 +11,6 @@ target = "static"
 files = ["**/*.assets/*.html", "**/*.assets/*.htm"]
 
 [[mounts]]
-source = ".generated/redirects"
-target = "static"
-
-[[mounts]]
 source = "static"
 target = "static"
 
@@ -94,3 +90,34 @@ target = "static/fonts/ibm-plex-mono-latin-700-italic.woff2"
 [[mounts]]
 source = "node_modules/@fontsource/ibm-plex-mono/LICENSE"
 target = "static/fonts/ibm-plex-mono-LICENSE.txt"
+
+# The PDF reader loads PDF.js from these files only when a reader opens.
+[[mounts]]
+source = "node_modules/pdfjs-dist/build"
+target = "static/vendor/pdfjs/build"
+files = ["pdf.min.mjs", "pdf.worker.min.mjs"]
+
+[[mounts]]
+source = "node_modules/pdfjs-dist/web"
+target = "static/vendor/pdfjs/web"
+files = ["pdf_viewer.mjs", "pdf_viewer.css", "images/**"]
+
+[[mounts]]
+source = "node_modules/pdfjs-dist/cmaps"
+target = "static/vendor/pdfjs/cmaps"
+
+[[mounts]]
+source = "node_modules/pdfjs-dist/standard_fonts"
+target = "static/vendor/pdfjs/standard_fonts"
+
+[[mounts]]
+source = "node_modules/pdfjs-dist/wasm"
+target = "static/vendor/pdfjs/wasm"
+
+[[mounts]]
+source = "node_modules/pdfjs-dist/iccs"
+target = "static/vendor/pdfjs/iccs"
+
+[[mounts]]
+source = "node_modules/pdfjs-dist/LICENSE"
+target = "static/vendor/pdfjs/LICENSE"

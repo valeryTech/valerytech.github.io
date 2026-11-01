@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Testing Notes"
 description: "Earlier test-strategy notes connecting risk, change cost, testability, system contracts, evidence, and the practical test pyramid, including preparation checklists."
-title: "Tests"
 linkTitle: "Testing Notes"
 ---
 # meta-way

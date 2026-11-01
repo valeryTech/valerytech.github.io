@@ -31,7 +31,12 @@ RUN . /tmp/versions.env && \
     wget --quiet "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/${archive}" && \
     tar -xzf "${archive}" -C /opt && \
     ln -s /opt/dart-sass/sass /usr/local/bin/sass && \
-    rm -f "${archive}" /tmp/versions.env
+    rm -f "${archive}"
+
+# Browser checks run here, never on the host; the version must match package.json.
+RUN . /tmp/versions.env && \
+    npx --yes "playwright-core@${PLAYWRIGHT_VERSION}" install --with-deps chromium && \
+    rm -rf /var/lib/apt/lists/* /tmp/versions.env
 
 COPY .devcontainer/dev-entrypoint.sh /usr/local/bin/dev-entrypoint
 RUN chmod 0755 /usr/local/bin/dev-entrypoint

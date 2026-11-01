@@ -676,9 +676,9 @@ Then conventional software handles calendars, permissions, collision detection a
 
 The language model's task ends where precision becomes mandatory.
 
-SayCan is almost a textbook demonstration of this principle. The LLM knows that cleaning a spill might involve finding something absorbent and bringing it to the spill. The robot's learned skills determine which actions are actually feasible. ([arXiv](https://arxiv.org/abs/2204.01691?utm_source=chatgpt.com "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"))
+SayCan is almost a textbook demonstration of this principle. The LLM knows that cleaning a spill might involve finding something absorbent and bringing it to the spill. The robot's learned skills determine which actions are actually feasible. ([arXiv](https://arxiv.org/abs/2204.01691 "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances"))
 
-PICARD showed a similar idea in a different domain: constrain model decoding so that generated SQL actually belongs to the SQL grammar. ([ACL Anthology](https://aclanthology.org/2021.emnlp-main.779/?utm_source=chatgpt.com "PICARD: Parsing Incrementally for Constrained Auto-Regressive Decoding from Language Models - ACL Anthology"))
+PICARD showed a similar idea in a different domain: constrain model decoding so that generated SQL actually belongs to the SQL grammar. ([ACL Anthology](https://aclanthology.org/2021.emnlp-main.779/ "PICARD: Parsing Incrementally for Constrained Auto-Regressive Decoding from Language Models - ACL Anthology"))
 
 This pattern keeps appearing.
 
@@ -790,11 +790,11 @@ prompt → giant agent loop → hope
 ## Generated code and the proposed final abstraction
 
 
-Code as Policies demonstrated something powerful: an LLM can translate instructions into programs that compose existing APIs, including loops, conditionals and calculations. ([arXiv](https://arxiv.org/abs/2209.07753?utm_source=chatgpt.com "Code as Policies: Language Model Programs for Embodied Control"))
+Code as Policies demonstrated something powerful: an LLM can translate instructions into programs that compose existing APIs, including loops, conditionals and calculations. ([arXiv](https://arxiv.org/abs/2209.07753 "Code as Policies: Language Model Programs for Embodied Control"))
 
 But there is a much older precedent that may point toward the safer long-term form: Flash Fill.
 
-Gulwani's programming-by-example work takes a few examples and synthesizes a program inside a restricted language. That restriction is important. The resulting search space and semantics are controlled, and ambiguities can be surfaced to the user. ([Microsoft](https://www.microsoft.com/en-us/research/publication/automating-string-processing-spreadsheets-using-input-output-examples/?lang=ko-kr&utm_source=chatgpt.com "Automating String Processing in Spreadsheets using Input-Output Examples - Microsoft Research"))
+Gulwani's programming-by-example work takes a few examples and synthesizes a program inside a restricted language. That restriction is important. The resulting search space and semantics are controlled, and ambiguities can be surfaced to the user. ([Microsoft](https://www.microsoft.com/en-us/research/publication/automating-string-processing-spreadsheets-using-input-output-examples/?lang=ko-kr "Automating String Processing in Spreadsheets using Input-Output Examples - Microsoft Research"))
 
 The LLM forecast is:
 

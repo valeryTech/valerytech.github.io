@@ -7,7 +7,7 @@
   (dict "value" "dark" "label" ((T "dark") | default "Dark") "icon" "moon")
   (dict "value" "system" "label" ((T "system") | default "System") "icon" "contrast")
 -}}
-<div class="site-theme-control hx:flex" data-theme="{{ site.Params.theme.default | default "system" }}">
+<div class="site-theme-control hx:flex">
   <button type="button" class="hextra-theme-toggle site-control{{ if and $extraClass (ne $extraClass "site-control") }} {{ $extraClass }}{{ end }}{{ if $hideLabel }} site-control-icon-only{{ end }}" title="{{ $changeTheme }}" aria-label="{{ $changeTheme }}">
     {{- range $choices -}}
       {{ partial "components/control-icon.html" (dict "name" .icon "class" "site-theme-icon" "attributes" (printf `data-theme-choice="%s" data-theme-label="%s"` .value (.label | htmlEscape))) }}

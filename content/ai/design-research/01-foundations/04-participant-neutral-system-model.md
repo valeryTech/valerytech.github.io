@@ -251,7 +251,7 @@ token = typed artifact
 ```
 
 
-Recent LLM blackboard systems have independently rediscovered this pattern. One 2025 study reports agents operating over a shared blackboard with dynamic selection; another applies the pattern to data-lake information discovery and reports better results than master/slave MAS baselines. ([arXiv](https://arxiv.org/abs/2507.01701?utm_source=chatgpt.com "Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture"))
+Recent LLM blackboard systems have independently rediscovered this pattern. One 2025 study reports agents operating over a shared blackboard with dynamic selection; another applies the pattern to data-lake information discovery and reports better results than master/slave MAS baselines. ([arXiv](https://arxiv.org/abs/2507.01701 "Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture"))
 
 So these aren't unrelated theories. They may compose neatly.
 

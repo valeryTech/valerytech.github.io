@@ -123,9 +123,7 @@ The revised research questions should be:
 6. Alternative architectures: Could a generative language model performing one forward pass be a closer computational analogy to System 1 than a specialised classification head?
 7. Falsifiable tests: What experiments would distinguish a model that merely makes fast decisions from one that exhibits the richer cognitive properties Kahneman attributes to System 1?
 
-The attached Nobre and Gresch paper adds another relevant dimension: cognition involves shifting attention between external sensory information and internal representations. Its Figure 2 (page 7) presents competing possibilities involving supervisory control and distributed competition. This is useful for questioning whether a software architecture with an explicit decision router is a plausible cognitive analogy. The paper does not itself establish the System 1/System 2 mapping.
-
-How-the-brain-shifts-between-external-and-internal.pdf
+A 2025 paper by Nobre and Gresch on external and internal attention adds another relevant dimension: cognition involves shifting attention between external sensory information and internal representations. Its Figure 2 (page 7) presents competing possibilities involving supervisory control and distributed competition. This is useful for questioning whether a software architecture with an explicit decision router is a plausible cognitive analogy. The paper does not itself establish the System 1/System 2 mapping.
 
 ## Recommendation
 
@@ -139,3 +137,10 @@ The central hypothesis to test is:
 Fast probabilistic decision-making may be one capability of System 1, but it is insufficient to characterize System 1 as Kahneman describes it.
 
 This is the main conceptual gap in the current research, and resolving it would make the next round substantially more rigorous.
+
+## Library sources
+
+
+- Kahneman 2020, *Daniel Kahneman remarks at "AI Debate 2"* -- on *1. What Kahneman actually says*
+- [Nobre and Gresch 2025](/sources/ai-foundations/cognition-and-mind/nobre-2025-external-and-internal-attention.pdf.enc), *How the brain shifts between external and internal attention* ([doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013))
+- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow* -- on *1. What Kahneman actually says*

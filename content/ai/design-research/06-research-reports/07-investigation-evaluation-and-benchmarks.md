@@ -168,3 +168,12 @@ That is a stronger motivation than presenting epistemic contracts primarily as a
 <!-- The surrounding framework analysis remains in its report. -->
 
 The preceding framework analysis and subsequent critique remain in the [coordination report]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}). Its complete complexity comparison joins the [complexity note]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure" >}}#coordination-and-epistemic-refinements).
+
+## Library sources
+
+
+- [Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), *Measuring what Matters*
+
+Further reading:
+
+- [Guerdan et al. 2024](/sources/ai-foundations/capabilities-and-measurement/guerdan-2024-evaluating-llms-under-task-indeterminacy.pdf.enc), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))

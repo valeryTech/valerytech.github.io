@@ -21,16 +21,6 @@ chapter from SD interview insider's guide
 
 <https://www.mailgun.com/blog/it-and-engineering/gubernator-cloud-native-distributed-rate-limiting-microservices/>
 
-**todo:**
-
-review video and
-
-discuss Rate Limiter with Vladimir
-
-write paper and place it to my site
-
-communicate with other people and get feedback about my composed solution
-
 # structure of the article
 
 
@@ -98,6 +88,26 @@ We need to decide between availability and performance trade-offs.
 
 What we need is a centralized and synchronous storage system and an algorithm that can leverage it to compute the current rate for each client. An in-memory cache (like Memcached or Redis) is ideal. *But not all rate-limiting algorithms can be implemented with every caching system.* So let's see what kind of algorithm exists.
 
+## Enforcement across nodes
+
+
+The hub lists four ways for several nodes to share one limit: a central store, an owner node, a local share, and local counts synchronized periodically. See [rate limiting across nodes]({{< ref "system-design/elements/data-at-scale" >}}#rate-limiting-across-nodes). For this case:
+
+- **Central store, as the default:** a Redis cluster partitioned by client key. Each check runs one Lua script that reads, updates, and sets the expiry of the client's bucket atomically, so two nodes cannot both admit the last request. The cost is one round trip, under a millisecond in the same zone, per request.
+- **Algorithm and store fit:** a token bucket needs two fields per client (tokens and last refill time) and works with any store that runs an atomic script. A sliding-window log needs a sorted set of timestamps per client, which is exact but grows with the limit; a sliding-window counter approximates it with two counters.
+- **When Redis is unreachable:** fail open with a local limit per node, the global limit divided by the node count, so an outage of the limiter does not become an outage of the API.
+- **Hot clients:** one client's key lands on one Redis shard. For a very large client, keep a small local allowance per node and refill it from the central bucket in batches.
+
+## Limits by tier
+
+
+The critique above is right that a limiter also enforces contracts: a free plan gets less than a paid one.
+
+- Key each limit by client and tier, and read the tier's limits from configuration, so changing a plan needs no deployment.
+- Apply several limits at once, such as 10 requests per second for bursts and 10,000 per day as a quota. Reject when any limit is exhausted.
+- Return 429 with `Retry-After` and the remaining-quota headers, so well-behaved clients back off instead of retrying at once.
+- A paid tier may get a softer response at its limit, such as queueing or a short grace allowance instead of rejection.
+
 ## Wrapping Up
 
 
@@ -114,3 +124,9 @@ Follow up:
 performance optimization
 
 So we have two models: one metamodel that contains a broad problem analysis and the part containing things mostly belonging to the SD interview process.
+
+## Library sources
+
+
+- [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapter 4, a rate limiter
+- Educative 2023: rate limiter, *Grokking Modern System Design Interview*

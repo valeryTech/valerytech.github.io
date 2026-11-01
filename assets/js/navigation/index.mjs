@@ -7,7 +7,7 @@ import { initPaneResize } from "./resize.mjs";
 import { initHeaderAlignment, initHeaderVisibility } from "./header.mjs";
 import { initPaneViewport } from "./pane-viewport.mjs";
 import { initSidebarVisibility, initOutlineVisibility } from "./sidebar-visibility.mjs";
-import { initBreadcrumbNavigation } from "./breadcrumbs.mjs";
+import { initBreadcrumbNavigation, initSectionChooser } from "./choosers.mjs";
 import { initNavigationDrawer, initOutlinePopover } from "./drawers.mjs";
 
 export function initNavigation(config, preferences) {
@@ -23,6 +23,7 @@ export function initNavigation(config, preferences) {
   initOutlineMap();
   initSectionNavigation();
   initBreadcrumbNavigation();
+  initSectionChooser();
   initStickyNavigation();
   initReadingFade();
   initSidebarFade();

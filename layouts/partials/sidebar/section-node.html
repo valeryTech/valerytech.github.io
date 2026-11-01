@@ -16,10 +16,14 @@
 {{- end -}}
 <li class="sidebar-item depth-{{ $depth }}{{ if $hasChildren }} sidebar-group{{ else }} sidebar-leaf{{ end }}{{ if $isCurrent }} active{{ end }}{{ if $isAncestor }} active-ancestor{{ end }}">
   {{- if $hasChildren -}}
+    {{- $branchId := printf "site-sidebar-branch-%s" (substr (md5 $page.RelPermalink) 0 10) -}}
+    {{- $action := cond $isOpen "Collapse" "Expand" -}}
     <div class="site-sidebar-section-row">
+      {{- /* The startup script reveals the disclosure; without it the chevron stays decorative. */ -}}
+      <button type="button" class="site-sidebar-section-toggle" aria-controls="{{ $branchId }}" aria-expanded="{{ $isOpen }}" aria-label="{{ $action }} {{ $label }}" title="{{ $action }} {{ $label }}" hidden></button>
       <a{{ if $isCurrent }} class="hextra-sidebar-active-item" aria-current="page"{{ end }} href="{{ $page.RelPermalink }}">{{ $label }}</a>
     </div>
-    <ul class="list-nested"{{ if not $isOpen }} hidden{{ end }}>
+    <ul id="{{ $branchId }}" class="list-nested"{{ if not $isOpen }} hidden{{ end }}>
       {{ partial "sidebar/section-items.html" (dict "nodes" $page.Pages "entryPage" (partial "main/section-entry-page.html" $page) "currentPage" $currentPage "depth" (add $depth 1)) }}
     </ul>
   {{- else -}}

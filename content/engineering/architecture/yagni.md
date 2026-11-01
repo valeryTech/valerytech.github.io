@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "YAGNI"
 description: "A reading list and open questions about applying YAGNI, balancing future needs with simplicity, and understanding its relationship to XP practices."
 document_status: "draft"
-title: "Yagni"
 linkTitle: "YAGNI"
 ---
 description
@@ -60,3 +60,10 @@ This article provides context about yagni
 "Right providing that you imagine the usual development world where the enabling practices of XP aren't in place. However when the balance between planned and evolutionary design alters, then YAGNI becomes good practice (and only then)."
 
 "The Trip-Packing Dilemma" pdf article by
+
+## Library sources
+
+
+- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
+- [Doglio 2022](/sources/software-engineering/craft/doglio-2022-skills-of-successful-software-engineer.pdf.enc), *Skills of a Successful Software Engineer*
+- [Gruhn and Striemer 2018](/sources/software-engineering/process-and-agile/gruhn-2018-essence-of-software-engineering.pdf.enc), *The Essence of Software Engineering* ([doi:10.1007/978-3-319-73897-0](https://doi.org/10.1007/978-3-319-73897-0))

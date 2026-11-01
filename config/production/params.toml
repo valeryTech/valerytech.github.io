@@ -1,0 +1,2 @@
+# Address of the R2 bucket that `task content:pdfs:upload` fills; PDF links point here.
+pdfBaseURL = "https://pub-1925441defb94e0bb6a2ada0fef70ca0.r2.dev"

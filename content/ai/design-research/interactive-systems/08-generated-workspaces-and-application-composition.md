@@ -130,7 +130,7 @@ workflow
 
 for a task that may only happen once.
 
-Google's generative-UI research is directly heading here: the system constructs task-specific interactive experiences at runtime, and Google says these ideas are now appearing in Search and Gemini. ([Google Research](https://research.google/blog/generative-ui-a-rich-custom-visual-interactive-user-experience-for-any-prompt/?authuser=6&hl=sr&utm_source=chatgpt.com "Generative UI: A rich, custom, visual interactive user experience for any prompt"))
+Google's generative-UI research is directly heading here: the system constructs task-specific interactive experiences at runtime, and Google says these ideas are now appearing in Search and Gemini. ([Google Research](https://research.google/blog/generative-ui-a-rich-custom-visual-interactive-user-experience-for-any-prompt/?authuser=6&hl=sr "Generative UI: A rich, custom, visual interactive user experience for any prompt"))
 
 That could be one of the largest long-term effects.
 
@@ -212,7 +212,7 @@ with a model performing some of the schema matching dynamically.
 
 This is one reason tool-using models are more important to me than autonomous "agents."
 
-Toolformer and ReAct are early demonstrations of the underlying mechanism. ([arXiv](https://arxiv.org/abs/2302.04761?utm_source=chatgpt.com "Toolformer: Language Models Can Teach Themselves to Use Tools"))
+Toolformer and ReAct are early demonstrations of the underlying mechanism. ([arXiv](https://arxiv.org/abs/2302.04761 "Toolformer: Language Models Can Teach Themselves to Use Tools"))
 
 ## Economics of small and temporary workflows
 
@@ -293,6 +293,6 @@ This, to me, is a much bigger idea than "AI coding makes engineers faster."
 
 It means the **minimum economic size of a software problem falls dramatically**.
 
-Flash Fill was already a tiny example: a user demonstrates a transformation that would not justify hiring a programmer, and a program is synthesized for that specific need. ([Microsoft](https://www.microsoft.com/en-us/research/publication/automating-string-processing-spreadsheets-using-input-output-examples/?lang=ko-kr&utm_source=chatgpt.com "Automating String Processing in Spreadsheets using Input-Output Examples - Microsoft Research"))
+Flash Fill was already a tiny example: a user demonstrates a transformation that would not justify hiring a programmer, and a program is synthesized for that specific need. ([Microsoft](https://www.microsoft.com/en-us/research/publication/automating-string-processing-spreadsheets-using-input-output-examples/?lang=ko-kr "Automating String Processing in Spreadsheets using Input-Output Examples - Microsoft Research"))
 
 LLMs potentially extend that from string manipulation to heterogeneous software systems.

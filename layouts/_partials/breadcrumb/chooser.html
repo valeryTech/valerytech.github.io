@@ -1,14 +1,16 @@
 {{- $entry := .entry -}}
 {{- $currentPage := .currentPage -}}
 <nav id="{{ $entry.id }}" class="site-breadcrumb-chooser" popover="auto" aria-labelledby="{{ $entry.id }}-title">
-  <p class="site-breadcrumb-chooser-title" id="{{ $entry.id }}-title">In {{ $entry.label }}</p>
+  <p class="site-breadcrumb-chooser-title" id="{{ $entry.id }}-title">{{ $entry.title | default (printf "In %s" $entry.label) }}</p>
   <div class="site-breadcrumb-scroll-hint site-breadcrumb-scroll-up" aria-hidden="true">
     {{ partial "components/chevron-icon.html" (dict "name" "chevron-up") }}
   </div>
   {{- range $entry.groups -}}
-    {{- $label := cond (eq .key "sections") "Sections" "Documents" -}}
-    <section aria-labelledby="{{ $entry.id }}-{{ .key }}">
-      <h2 class="site-breadcrumb-chooser-group" id="{{ $entry.id }}-{{ .key }}">{{ $label }}</h2>
+    {{- /* An empty label leaves a single list under the chooser title. */ -}}
+    {{- $label := cond (isset . "label") .label (cond (eq .key "sections") "Sections" "Documents") -}}
+    {{- $headingId := printf "%s-%s" $entry.id .key -}}
+    <section{{ if $label }} aria-labelledby="{{ $headingId }}"{{ end }}>
+      {{- with $label }}<h2 class="site-breadcrumb-chooser-group" id="{{ $headingId }}">{{ . }}</h2>{{ end -}}
       <ul>
         {{- range .nodes -}}
           {{- $child := .Page -}}

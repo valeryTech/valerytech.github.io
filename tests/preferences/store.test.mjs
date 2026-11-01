@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readUiConfig } from "../../scripts/ui-config.mjs";
 import { createPreferenceStore } from "../../assets/js/preferences/store.mjs";
+import { exportSettings, importSettings } from "../../assets/js/settings/transfer.mjs";
 
 function browser(t, { blocked = false, initial = {}, legacy = {} } = {}) {
   const jar = new Map(
@@ -14,6 +15,14 @@ function browser(t, { blocked = false, initial = {}, legacy = {} } = {}) {
     getAttribute: (key) => attributes.get(key),
     setAttribute: (key, value) => attributes.set(key, String(value)),
   };
+  const elements = new Map();
+  document.head = { append: (element) => elements.set(element.id, element) };
+  document.getElementById = (id) => elements.get(id) ?? null;
+  document.createElement = () => ({
+    remove() {
+      elements.delete(this.id);
+    },
+  });
   Object.defineProperty(document, "cookie", {
     get() {
       return [...jar].map(([key, value]) => `${key}=${value}`).join("; ");
@@ -34,6 +43,7 @@ function browser(t, { blocked = false, initial = {}, legacy = {} } = {}) {
     location: { protocol: "https:" },
     localStorage: {
       getItem: (key) => storage.get(key) ?? null,
+      setItem: (key, value) => storage.set(key, String(value)),
       removeItem: (key) => storage.delete(key),
     },
   };
@@ -45,7 +55,7 @@ function browser(t, { blocked = false, initial = {}, legacy = {} } = {}) {
       else delete globalThis[key];
     });
   }
-  return { document, jar, storage };
+  return { document, elements, jar, storage };
 }
 
 test("one preference controller normalizes saved values and migrates existing pane storage", (t) => {
@@ -152,4 +162,73 @@ test("reset restores configured defaults in one notification and preserves unrel
   assert.equal(preferences.get("display.outlineVisible"), true);
   assert.deepEqual(preferences.snapshot().widths, {});
   assert.deepEqual([...jar.keys()], ["unrelated"]);
+});
+
+test("palette colors save to their own cookie, restore before paint and reset with the rest", (t) => {
+  const config = readUiConfig().ui;
+  const { elements, jar } = browser(t);
+  const preferences = createPreferenceStore(config);
+  assert.deepEqual(preferences.get("palette"), { light: {}, dark: {} });
+  const palette = preferences.get("palette");
+  palette.dark["heading-foreground"] = "#FFCC66";
+  palette.light["page-background"] = "#fffff0";
+  palette.light["--not-a-token"] = "#000000";
+  assert.equal(preferences.set("palette", palette), true);
+  assert.equal(
+    decodeURIComponent(jar.get(config.palette.cookie.name)),
+    "light=page-background:fffff0&dark=heading-foreground:ffcc66",
+  );
+  assert.match(
+    elements.get("site-palette-overrides").textContent,
+    /--site-heading-foreground: #ffcc66/,
+  );
+  const restored = createPreferenceStore(config);
+  assert.deepEqual(restored.get("palette"), {
+    light: { "page-background": "#fffff0" },
+    dark: { "heading-foreground": "#ffcc66" },
+  });
+  restored.get("palette").dark.muted = "#000000";
+  assert.equal(restored.get("palette").dark.muted, undefined, "reads are copies");
+  assert.equal(restored.reset(), true);
+  assert.equal(jar.has(config.palette.cookie.name), false);
+  assert.equal(elements.has("site-palette-overrides"), false);
+});
+
+test("settings export round-trips preferences and merges named palettes on import", (t) => {
+  const config = readUiConfig().ui;
+  const { jar, storage } = browser(t);
+  const source = createPreferenceStore(config);
+  source.set("font", "jost");
+  source.set("display.breadcrumbs", "hidden");
+  source.setWidths({ sidebar: 320 });
+  source.set("palette", { light: {}, dark: { muted: "#aaaaaa" } });
+  storage.set(
+    config.palette.presetsStorageKey,
+    JSON.stringify([{ name: "Night", light: {}, dark: { muted: "#aaaaaa" } }]),
+  );
+  const file = JSON.stringify(exportSettings(source, config.palette, new Date(0)));
+  assert.equal(JSON.parse(file).exportedAt, "1970-01-01T00:00:00.000Z");
+
+  source.reset();
+  storage.set(
+    config.palette.presetsStorageKey,
+    JSON.stringify([
+      { name: "night", light: { muted: "#111111" }, dark: {} },
+      { name: "Paper", light: { "page-background": "#fbf7ef" }, dark: {} },
+    ]),
+  );
+  const target = createPreferenceStore(config);
+  assert.equal(importSettings(file, target, config.palette), true);
+  assert.equal(target.get("font"), "jost");
+  assert.equal(target.get("display.breadcrumbs"), "hidden");
+  assert.equal(target.get("widths.sidebar"), 320);
+  assert.deepEqual(target.get("palette").dark, { muted: "#aaaaaa" });
+  assert.ok(jar.has(config.palette.cookie.name));
+  assert.deepEqual(
+    JSON.parse(storage.get(config.palette.presetsStorageKey)).map((preset) => preset.name),
+    ["Night", "Paper"],
+  );
+  for (const broken of ["not json", "{}", '{"format":"valerytech-site-settings","version":2}'])
+    assert.throws(() => importSettings(broken, target, config.palette));
+  assert.equal(target.get("font"), "jost", "a rejected file changes nothing");
 });

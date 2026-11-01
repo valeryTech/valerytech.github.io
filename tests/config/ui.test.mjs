@@ -103,6 +103,19 @@ test("pane resizing requires a legacy storage key and a usable keyboard step", (
   assert.throws(() => validateUiConfig(config), /resize keyboardStepPixels/);
 });
 
+test("sidebar and outline disclosures require separate storage keys", () => {
+  for (const owner of ["sections", "outline"]) {
+    for (const value of ["", " ", undefined]) {
+      const config = readUiConfig();
+      config.ui.navigation[owner].storageKey = value;
+      assert.throws(() => validateUiConfig(config), new RegExp(`${owner} storageKey`));
+    }
+  }
+  const config = readUiConfig();
+  config.ui.navigation.outline.storageKey = config.ui.navigation.sections.storageKey;
+  assert.throws(() => validateUiConfig(config), /storage keys must be distinct/);
+});
+
 test("preference cookies require separate valid names and positive lifetimes", () => {
   const config = readUiConfig();
   config.ui.navigation.resize.cookie.name = config.ui.fonts.cookie.name;

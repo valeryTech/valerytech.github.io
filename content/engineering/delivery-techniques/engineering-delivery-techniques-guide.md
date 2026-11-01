@@ -13,6 +13,8 @@ linkTitle: "Engineering Delivery Techniques Guide"
 
 **Purpose:** help teams choose and apply the right delivery technique based on the type of uncertainty, risk, or lifecycle phase they are dealing with.
 
+**Related:** the [system design flow]({{< ref "system-design" >}}) pairs these techniques with design questions. Its [pattern map]({{< ref "system-design/elements/elements" >}}#patterns-and-techniques-share-one-record) compares the technique record below with the record kept for a design pattern.
+
 ## 1. Purpose
 
 
@@ -2654,3 +2656,15 @@ If the work is meant to validate product value, make it usable enough for real u
 If the work is meant for production rollout, define exposure, monitoring, rollback, and cleanup.
 
 The technique is correct when its output supports a concrete decision or safely advances the system to the next lifecycle phase.
+
+## Library sources
+
+
+- [Buchgeher et al. 2023](/sources/software-engineering/architecture-decisions/buchgeher-2023-architecture-decision-records-open-source.pdf.enc), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654)) -- on *7.10 Architecture Decision Record*
+- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer* -- on *7.4 Tracer Bullet*
+
+Further reading:
+
+- [Harmel-Law 2025](/sources/software-engineering/architecture/harmel-law-2025-facilitating-software-architecture.pdf.enc), *Facilitating Software Architecture*
+- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice*
+- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture*

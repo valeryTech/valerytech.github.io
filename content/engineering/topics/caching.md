@@ -227,3 +227,8 @@ Links
 <https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/>
 
 <https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642>
+
+## Library sources
+
+
+- [Gorton 2022](/sources/software-engineering/systems-and-operations/gorton-2022-foundations-of-scalable-systems.pdf.enc), *Foundations of Scalable Systems: Designing Distributed Architectures*

@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Design Pressure Toward Modularity"
 description: "Use contract-driven evaluation and testing to encourage modularity, replayability, explicit interfaces, and diagnosable failures in RAG and function-calling systems."
-title: "Design Pressure"
 linkTitle: "Design Pressure Toward Modularity"
 ---
 # Design Pressure Toward Modularity in LLM Systems
@@ -11,6 +11,8 @@ linkTitle: "Design Pressure Toward Modularity"
 
 
 This document explains **why** and **how** an evaluation and test system should push LLM products toward a more modular design. It focuses on **RAG + function calling** systems. It is a detailed technical reference meant to preserve the research and be read again later.
+
+The module boundaries, contracts, observability, and gradual release it asks for correspond to system design patterns; see [same patterns in other domains]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains).
 
 ## 1. The core idea: tests as an architectural force
 
@@ -620,3 +622,12 @@ A well-designed LLM evaluation/test system is an architectural tool:
 - It replaces "prompt hope" with deterministic guardrails and measurable objectives.
 
 A reliable heuristic: **if something is painful to test stably, it is almost always poorly modularized or incorrectly coupled to volatile dependencies.**
+
+## Library sources
+
+
+- [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering* -- on *1. The core idea: tests as an architectural force*
+
+Further reading:
+
+- [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design*

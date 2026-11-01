@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Designing LLM Systems"
 description: "A conversation and research overview about integrating LLMs into work systems, covering candidate representations, domain models, controlled execution, and verification."
-title: "Designing Llm Systems"
-linkTitle: "Designing Llm Systems"
+linkTitle: "Designing LLM Systems"
 ---
 
 Publication note, 2026-04-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
@@ -21,11 +21,11 @@ Now let's reason about these things.
 
 First, we have systems with people, code, data, and the usual components, and now we also have LLMs. LLMs have a set of features, including unreliability and the ability to generate text. Formally, they generate text, but what can they produce through that text? They can propose actions, process information, and perform familiar NLP tasks, but they can also produce structured output.
 
-[https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/>) Then, regarding AI system types, maybe we should reason from a common perspective. Later, or even now, we could consider a specific example, such as an agentic application.
+[https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>) Then, regarding AI system types, maybe we should reason from a common perspective. Later, or even now, we could consider a specific example, such as an agentic application.
 
 So one direction is security and limiting LLM unreliability. We could identify different ways to achieve this, including through system architecture. We could introduce software graphs as a kind of harness. We also need to understand what else we can use. It could be type modeling within a language, or perhaps giving the LLM a specific set of tools in a sandbox or another restricted environment. It could also involve different guardrails, automatic judges, and other classifiers. For example, with Jev, we could use models to assess what the system or LLM proposes. So this is one direction.
 
-And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs—what else? We need to find out. Let's analyze my product or problem framing conceptually.
+And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs--what else? We need to find out. Let's analyze my product or problem framing conceptually.
 
 ---
 
@@ -45,7 +45,7 @@ However, I would introduce a more fundamental question before exploring specific
 
 **What role does an LLM play in a software system, and what makes its generated output useful?**
 
-Your existing [AI project examples and design model](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/?utm_source=chatgpt.com>) provides a useful starting point. It separates activities, capabilities, workflows, products, and implementations. It also recognizes that one product can combine several kinds of AI-assisted work. [Systems & Engineering](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/?utm_source=chatgpt.com>)
+Your existing [AI project examples and design model](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>) provides a useful starting point. It separates activities, capabilities, workflows, products, and implementations. It also recognizes that one product can combine several kinds of AI-assisted work. [Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>)
 
 I'd preserve that separation and develop an additional model specifically for designing systems around generative components.
 
@@ -107,7 +107,7 @@ This gives us a common foundation for both of your directions.
 
 I would avoid treating unreliability as one problem.
 
-Different failures require different mechanisms. Your existing security note already separates task reliability, epistemic reliability, security, and safety. That distinction is important for architecture. [Systems & Engineering](<https://valery.tech/ai/var/security-aspect/?utm_source=chatgpt.com>)
+Different failures require different mechanisms. Your existing security note already separates task reliability, epistemic reliability, security, and safety. That distinction is important for architecture. [Systems & Engineering](<https://valery.tech/ai/design/security-aspect/>)
 
 Consider these separate questions:
 
@@ -126,7 +126,7 @@ A distinction here is between **properties we can enforce mechanically and prope
 
 For example:
 
-A JSON Schema can enforce structural properties, within its supported constraints. It cannot establish that the generated values accurately reflect the user's intention. [OpenAI Developers](<https://developers.openai.com/api/docs/guides/structured-outputs?utm_source=chatgpt.com>)
+A JSON Schema can enforce structural properties, within its supported constraints. It cannot establish that the generated values accurately reflect the user's intention. [OpenAI Developers](<https://developers.openai.com/api/docs/guides/structured-outputs>)
 
 A tool permission system can prevent a model from accessing a resource without authorization. It cannot guarantee that an authorized operation is appropriate for the user's goal.
 
@@ -149,7 +149,7 @@ A runtime can independently reject an unauthorized tool call.
 
 A sandbox can restrict which resources are accessible, even when a model generates an unsafe command.
 
-This is closely related to capability-based security. For example, the CaMeL research uses explicit data-flow and control-flow policies to protect an agent against prompt injection without assuming that the model itself is immune. [IEEE Xplore](<https://ieeexplore.ieee.org/abstract/document/11691650?utm_source=chatgpt.com>)
+This is closely related to capability-based security. For example, the CaMeL research uses explicit data-flow and control-flow policies to protect an agent against prompt injection without assuming that the model itself is immune. [IEEE Xplore](<https://ieeexplore.ieee.org/abstract/document/11691650>)
 
 The general design principle is that the strength of a guarantee depends on where and how it is enforced.
 
@@ -214,7 +214,7 @@ The useful capability is a combination of generation, execution, observation, an
 
 This explains why the environment around an LLM can substantially change what it can accomplish.
 
-Your [sandbox-first capability discovery](<https://valery.tech/ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents/?utm_source=chatgpt.com>) notes already develop this point: providing general-purpose tools in a controlled environment can expose capabilities that a narrowly prescribed workflow would prevent the model from using. [Systems & Engineering](<https://valery.tech/ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents/?utm_source=chatgpt.com>)
+Your [sandbox-first capability discovery](<https://valery.tech/ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents/>) notes already develop this point: providing general-purpose tools in a controlled environment can expose capabilities that a narrowly prescribed workflow would prevent the model from using. [Systems & Engineering](<https://valery.tech/ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents/>)
 
 #### An important design tension
 
@@ -265,7 +265,7 @@ The same mechanism increases expressiveness within a domain and makes certain pr
 
 However, neither a DSL nor a type system automatically establishes that a generated solution satisfies the user's underlying intention.
 
-Your existing work on [constrained generativity and semantic substrates](<https://valery.tech/ai/design/workflow-design/langs-aspects/?utm_source=chatgpt.com>) already explores this idea. It also identifies a crucial engineering cost: creating comprehensive semantic contracts can require more effort than the benefits justify. [Systems & Engineering](<https://valery.tech/ai/design/workflow-design/langs-aspects/?utm_source=chatgpt.com>)
+Your existing work on [constrained generativity and semantic substrates](<https://valery.tech/ai/design/workflow-design/langs-aspects/>) already explores this idea. It also identifies a crucial engineering cost: creating comprehensive semantic contracts can require more effort than the benefits justify. [Systems & Engineering](<https://valery.tech/ai/design/workflow-design/langs-aspects/>)
 
 That suggests we should investigate how much formal structure is actually necessary for a particular system.
 
@@ -526,7 +526,7 @@ Your existing project classification can supply the application cases. Your oper
 ## User -- turn 2
 
 
-[Deep research](<https://chatgpt.com/settings/plugins-settings/apps/connector_openai_deep_research>) Okay, let's develop this as a general design model. We need to work at the conceptual level first, and then we could rebuild the systems—for example, the different types in our examples—from the ground up using this model. Let's do some deep research on this.
+[Deep research](<https://chatgpt.com/settings/plugins-settings/apps/connector_openai_deep_research>) Okay, let's develop this as a general design model. We need to work at the conceptual level first, and then we could rebuild the systems--for example, the different types in our examples--from the ground up using this model. Let's do some deep research on this.
 
 ---
 
@@ -548,7 +548,7 @@ Deep Research will present its research plan and deliver the full report in the 
 ## User -- turn 3
 
 
-Analyze the report. How could we start building the system from the ground up? Maybe we could begin with conceptualization. What are the main building blocks of the system—perhaps modes? What are the features of these building blocks? How could we combine them?
+Analyze the report. How could we start building the system from the ground up? Maybe we could begin with conceptualization. What are the main building blocks of the system--perhaps modes? What are the features of these building blocks? How could we combine them?
 
 ---
 
@@ -890,7 +890,6 @@ This separation gives us a clearer foundation than starting with agents, workflo
 The first concrete deliverable should be a **conceptual metamodel**: a precise definition of the building blocks, their independent properties, and their allowed relationships.
 
 Once we have that, we can derive operating modes and architectures systematically, and then test whether the model can explain the different AI systems without introducing special cases for each one.
-
 
 ---
 

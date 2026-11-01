@@ -99,9 +99,9 @@ requires approval when ...
 ```
 
 
-There is good historical evidence for this direction. Google's Schema-Guided Dialogue work explicitly supplied models with descriptions of intents and parameters and tested generalization to completely unseen APIs. A single model could then operate against a dynamic set of services without retraining for each service. ([AAAI Publications](https://ojs.aaai.org/index.php/AAAI/article/view/6394?utm_source=chatgpt.com "Towards Scalable Multi-Domain Conversational Agents: The Schema-Guided Dialogue Dataset | Proceedings of the AAAI Conference on Artificial Intelligence"))
+There is good historical evidence for this direction. Google's Schema-Guided Dialogue work explicitly supplied models with descriptions of intents and parameters and tested generalization to completely unseen APIs. A single model could then operate against a dynamic set of services without retraining for each service. ([AAAI Publications](https://ojs.aaai.org/index.php/AAAI/article/view/6394 "Towards Scalable Multi-Domain Conversational Agents: The Schema-Guided Dialogue Dataset | Proceedings of the AAAI Conference on Artificial Intelligence"))
 
-And a current 2026 line of research is seeing the same phenomenon in enterprise data. One recent study found that giving frontier models explicit business semantics substantially improved natural-language analytics compared with giving them only the physical database schema. Another system introduces a semantic intermediate representation and deterministically compiles it to SQL. These are recent preprints, so the proposal is to treat the exact numbers cautiously, but the architectural result is persuasive. ([arXiv](https://arxiv.org/abs/2604.25149?utm_source=chatgpt.com "Semantic Layers for Reliable LLM-Powered Data Analytics: A Paired Benchmark of Accuracy and Hallucination Across Three Frontier Models"))
+And a current 2026 line of research is seeing the same phenomenon in enterprise data. One recent study found that giving frontier models explicit business semantics substantially improved natural-language analytics compared with giving them only the physical database schema. Another system introduces a semantic intermediate representation and deterministically compiles it to SQL. These are recent preprints, so the proposal is to treat the exact numbers cautiously, but the architectural result is persuasive. ([arXiv](https://arxiv.org/abs/2604.25149 "Semantic Layers for Reliable LLM-Powered Data Analytics: A Paired Benchmark of Accuracy and Hallucination Across Three Frontier Models"))
 
 So there's a subtle inversion here.
 
@@ -173,11 +173,11 @@ idempotency:
 ```
 
 
-This starts looking surprisingly similar to OWL-S's old notion of inputs, outputs, preconditions and effects. ([W3C](https://www.w3.org/submissions/OWL-S/?utm_source=chatgpt.com "OWL-S: Semantic Markup for Web Services"))
+This starts looking surprisingly similar to OWL-S's old notion of inputs, outputs, preconditions and effects. ([W3C](https://www.w3.org/submissions/OWL-S/ "OWL-S: Semantic Markup for Web Services"))
 
 But natural-language descriptions can carry much of the fuzzy meaning while formal fields carry properties where correctness matters.
 
-Current MCP is an early, incomplete version of this direction. A server can expose discoverable tools with JSON Schema input and output contracts; the July 28, 2026 protocol revision expanded those tool definitions to full JSON Schema 2020-12. ([Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-01-28/?utm_source=chatgpt.com "The 2026-01-28 Specification | Model Context Protocol Blog"))
+Current MCP is an early, incomplete version of this direction. A server can expose discoverable tools with JSON Schema input and output contracts; the July 28, 2026 protocol revision expanded those tool definitions to full JSON Schema 2020-12. ([Model Context Protocol Blog](https://blog.modelcontextprotocol.io/posts/2026-01-28/ "The 2026-01-28 Specification | Model Context Protocol Blog"))
 
 The recommendation is not to bet that MCP specifically dominates computing twenty years from now.
 
@@ -186,3 +186,9 @@ The proposal is to bet on its underlying abstraction:
 > **Software dynamically advertises machine-readable capabilities to an intent interpreter.**
 
 That's durable.
+
+## Library sources
+
+
+- [Guarino et al. 2009](/sources/research-methods/ontology-and-conceptual-modeling/guarino-2009-what-is-an-ontology.pdf.enc), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3))
+- [Guizzardi and Guarino 2024](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2024-explanation-semantics-and-ontology.pdf.enc), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325))

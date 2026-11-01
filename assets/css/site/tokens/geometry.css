@@ -36,6 +36,19 @@
     var(--site-control-icon-size) + 2 * var(--site-control-icon-frame-padding)
   );
   --site-surface-action-size: var(--site-space-8);
+  /* Round controls use the 24px circle of breadcrumb hovers, centered in the control
+     height, and draw their chevrons at the breadcrumb chevron size. */
+  --site-round-control-size: var(--site-surface-leading-size);
+  --site-round-control-icon-size: 0.75rem;
+  --site-round-control-inset: calc(
+    (var(--site-control-height) - var(--site-round-control-size)) / 2
+  );
+  /* A ring larger than the square icon frame would overhang it; the gap shrinks by that
+     much so labels keep the shared icon-to-text distance. */
+  --site-round-control-overhang: calc(
+    (var(--site-round-control-size) - var(--site-surface-leading-size)) / 2
+  );
+  --site-round-control-gap: calc(var(--site-surface-gap) - var(--site-round-control-overhang));
   --site-breadcrumb-inset: var(--site-space-4);
   --site-pane-controls-height: calc(var(--site-control-height) + 2 * var(--site-layout-gap));
   --site-pane-viewport-height: calc(100dvh - var(--hextra-navbar-height));
@@ -69,6 +82,7 @@
   --site-nav-indent: 0.625rem;
   --site-nav-compact-indent: 0.375rem;
   --site-nav-chevron-size: 0.375rem;
+  --site-chevron-stroke-width: 1.5px;
   --site-nav-chevron-gap: 0.625rem;
   --site-nav-current-marker-width: 0.1875rem;
   --site-nav-current-marker-gap: var(--site-space-2);
@@ -80,6 +94,9 @@
       var(--site-nav-current-marker-gap)
   );
   --site-pane-rail-width: calc(var(--site-control-height) + 2 * var(--site-layout-gap));
+  --site-outline-rail-width: calc(
+    2 * var(--site-header-icon-button-size) + var(--site-layout-gap) + 2 * var(--site-pane-gutter)
+  );
   --site-pane-min-width: 12rem;
   --site-pane-max-width: 28rem;
   --site-pane-compact-max-width: 14rem;

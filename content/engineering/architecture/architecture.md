@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Software Architecture"
 description: "A working outline of software architecture concepts, quality characteristics, decisions, practices, and resources for developing architectural judgment."
 document_status: "draft"
-title: "Architecture"
 linkTitle: "Software Architecture"
 ---
 [Draft]
@@ -47,7 +47,9 @@ driving forces
 # Toolbox
 
 
-One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in the [Toolbox]({{< ref "engineering/architecture/toolbox" >}}#laws) section.
+The [system design flow]({{< ref "system-design" >}}) is a working version of this toolbox for system-level choices: design questions with their options, paired with lifecycle techniques.
+
+One notable example is provided by Mark Richards and Neal Ford, who identified several universally applicable ideas about software architecture and codified them as "laws." You can find more details about these laws in [Laws of Software Architecture]({{< ref "engineering/architecture/laws" >}}), and their application to module and service boundaries in [Coupling and Modularity]({{< ref "engineering/architecture/coupling" >}}). The [Architecture Toolbox]({{< ref "engineering/architecture/toolbox" >}}) collects these with the other heuristics.
 
 common principles
 
@@ -67,7 +69,7 @@ list of characteristics, applicability, mapping to the parts of the system, defi
 # Decisions
 
 
-paper "Decision-Making Techniques for Software Architecture Design: A Comparative Survey"
+paper "Decision-Making Techniques for Software Architecture Design: A Comparative Survey" ([PDF](/sources/software-engineering/architecture-decisions/falessi-2011-decision-making-techniques-software-architecture.pdf.enc))
 
 Software architects must understand and analyze software systems deeply, in all their complexity, and must make important trade-off decisions, sometimes with incomplete information (analyze). Software architects make exactly the kinds of decisions that AI cannot, evaluating trade-offs within complex, changing contexts.
 
@@ -236,3 +238,27 @@ other resources to read:
 <http://onsites.fyi/blog/article/apple-ict2-software-engineer-interview-questions>
 
 <https://interviewing.io/blog/technical-interview-performance-is-kind-of-arbitrary-heres-the-data>
+
+## Library sources
+
+
+- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
+- [Harmel-Law 2025](/sources/software-engineering/architecture/harmel-law-2025-facilitating-software-architecture.pdf.enc), *Facilitating Software Architecture* -- on *Decisions*
+- [Malan 2025](/sources/software-engineering/architecture/malan-2025-architecture-principles.pdf.enc), *Architecture Principles* -- on *Practicality Lens*
+- [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*
+
+Further reading:
+
+- [Brown 2022](/sources/software-engineering/architecture/brown-2022-software-architecture-for-developers.pdf.enc), *Software Architecture for Developers*
+- [Fowler 2003](/sources/software-engineering/architecture/fowler-2003-who-needs-an-architect.pdf.enc), *Who Needs an Architect?*
+- [Hohpe 2017](/sources/software-engineering/architecture/hohpe-2017-37-things-one-architect-knows.pdf.enc), *37 Things One Architect Knows About IT Transformation*
+- [Mekni et al. 2017](/sources/software-engineering/architecture/mekni-2017-software-architecture-methodology-agile-environments.pdf.enc), *Software Architecture Methodology in Agile Environments* ([doi:10.4172/2165-7866.1000195](https://doi.org/10.4172/2165-7866.1000195))
+- [Yépez et al. 2024](/sources/software-engineering/architecture/pantoja-yepez-2024-training-software-architects.pdf.enc), *Training software architects suiting software industry needs* ([doi:10.1007/s10639-023-12149-x](https://doi.org/10.1007/s10639-023-12149-x))
+- [Bhat et al. 2020](/sources/software-engineering/architecture-decisions/bhat-2020-evolution-of-architectural-decision-making.pdf.enc), *The Evolution of Architectural Decision Making as a Key Focus Area of Software Architecture Research*
+- [Buchgeher et al. 2023](/sources/software-engineering/architecture-decisions/buchgeher-2023-architecture-decision-records-open-source.pdf.enc), *Using Architecture Decision Records in Open Source Projects* ([doi:10.1109/ACCESS.2023.3287654](https://doi.org/10.1109/ACCESS.2023.3287654))
+- [Demir et al. 2024](/sources/software-engineering/architecture-decisions/ozdes-demir-2024-factors-architectural-decision-making.pdf.enc), *Factors affecting architectural decision-making process and challenges in software projects* ([doi:10.1002/smr.2703](https://doi.org/10.1002/smr.2703))
+- [Pretorius et al. 2024](/sources/software-engineering/architecture-decisions/pretorius-2024-when-rationality-meets-intuition.pdf.enc), *When rationality meets intuition* ([doi:10.1002/smr.2664](https://doi.org/10.1002/smr.2664))
+- [Tofan et al. 2013](/sources/software-engineering/architecture-decisions/tofan-2013-difficulty-of-architectural-decisions.pdf.enc), *Difficulty of Architectural Decisions*
+- [Tofan et al. 2014](/sources/software-engineering/architecture-decisions/tofan-2014-past-future-software-architectural-decisions.pdf.enc), *Past and future of software architectural decisions*
+- [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering*
+- [Gruhn and Striemer 2018](/sources/software-engineering/process-and-agile/gruhn-2018-essence-of-software-engineering.pdf.enc), *The Essence of Software Engineering* ([doi:10.1007/978-3-319-73897-0](https://doi.org/10.1007/978-3-319-73897-0))

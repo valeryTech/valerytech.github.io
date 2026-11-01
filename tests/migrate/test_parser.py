@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from scripts.migrate.models import Callout, FencedCode, Heading
+from scripts.migrate.models import Callout, FencedCode, Heading, MarkdownChunk
 from scripts.migrate.parser import parse_document
 from tests.migrate.support import FIXTURE_ROOT
 
@@ -20,6 +20,15 @@ class ParserTests(unittest.TestCase):
         self.assertTrue(any(isinstance(block, FencedCode) for block in document.blocks))
         self.assertTrue(any(isinstance(block, Callout) for block in document.blocks))
         self.assertTrue(any(isinstance(block, Heading) and block.text == "Local Heading" for block in document.blocks))
+
+    def test_parse_document_drops_tag_lines_outside_code(self) -> None:
+        document = parse_document(
+            "# Ladder\n#ai-eng/collection How are problems framed?\n#todo\nText #inline stays.\n"
+            "#1 rule stays.\n```\n#todo in code\n```\n"
+        )
+        self.assertEqual(document.blocks[0], Heading(level=1, text="Ladder"))
+        self.assertEqual(document.blocks[1], MarkdownChunk(text="Text #inline stays.\n#1 rule stays."))
+        self.assertEqual(document.blocks[2], FencedCode(fence="```", info="", text="#todo in code"))
 
 
 if __name__ == "__main__":

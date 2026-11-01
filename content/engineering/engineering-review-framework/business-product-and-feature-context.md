@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Business, Product, and Feature Context"
 description: "Frame a software change through its business problem, intended users, expected outcome, scope, constraints, and success measures."
-title: "Business Product And Feature Context"
 linkTitle: "Business, Product, and Feature Context"
 ---
-# Business, Product, and Feature Context
-
 ## Purpose
 
 
@@ -75,7 +73,7 @@ The amount of framing should fit the change. A small correction may need only a 
 ## Related notes
 
 
-- Product Vocabulary for an AI Engineer -- distinctions between user opportunities, solutions, outputs, and outcomes.
+- [Product Vocabulary for an AI Engineer]({{< ref "ai/product/product-model/product-vocabulary-for-ai-engineers" >}}#1-core-product-reasoning) -- distinctions between user opportunities, solutions, outputs, and outcomes.
 
 ## Related documents
 

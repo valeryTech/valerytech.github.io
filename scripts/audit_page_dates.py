@@ -1,6 +1,8 @@
 """Audit page date metadata without modifying content.
 
-Run: python3 -m scripts.audit_page_dates --csv .migration/reports/page-dates.csv
+Run in Docker:
+    task docker:run -- uv run --frozen python -m scripts.audit_page_dates \
+        --csv .migration/reports/page-dates.csv
 
 Git dates describe the first commit adding the current path. They do not prove
 when a page went live, and a moved page may have an earlier history elsewhere.

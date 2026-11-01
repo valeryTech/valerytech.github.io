@@ -1,14 +1,14 @@
 ---
 draft: false
 toc: true
+title: "03 Epistemic Contracts For RAG"
 description: "Proposes typestate and runtime certificates for evidence coverage, authority, conflicts, and provenance, allowing qualified findings or abstention while limiting soundness claims to explicit operator assumptions."
-title: "03 Epistemic Contracts For Rag"
-linkTitle: "03 Epistemic Contracts For Rag"
+linkTitle: "03 Epistemic Contracts For RAG"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
-here we're not talking about feedback loops, optimization, and other questions arisen in the common discussion in [Dsl Ai]({{< ref "ai/architecture-dsl-like/dsl-approach/dsl-ai" >}})
+here we're not talking about feedback loops, optimization, and other questions arisen in the common discussion in [dsl-ai]({{< ref "ai/design-research/03-language-and-compiler/02-typed-dsl-and-compiler" >}})
 
 later we should extract a set of underlying principles and framings:
 

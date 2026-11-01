@@ -726,3 +726,9 @@ The most important practical insight is this:
 [^52]: OpenAI Codex Cloud documentation. https://developers.openai.com/codex/cloud
 
 [^53]: OpenAI Codex app documentation. https://developers.openai.com/codex/app
+
+## Library sources
+
+
+- [Zhou et al. 2026](/sources/ai-engineering/harness/zhou-2026-externalization-in-llm-agents.pdf.enc), *Externalization in LLM Agents* ([arXiv:2604.08224](https://arxiv.org/abs/2604.08224))
+- [Russell and Norvig 2021](/sources/ai-foundations/intelligence-and-turing/russell-2021-artificial-intelligence-a-modern-approach.pdf.enc), *Artificial Intelligence: A Modern Approach*

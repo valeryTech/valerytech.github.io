@@ -16,6 +16,8 @@ The retained reply proposes how to test concepts, distinguish types of claims, a
 
 The reply begins with [research terms and levels of analysis]({{< ref "ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis" >}}). [Provenance and argumentation]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}) concerns recording derivations and support relations, while the present proposal concerns whether evidence supports an interpretation. The existing [collaboration evaluation]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) and [runtime evaluation]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks" >}}) address more specific study questions.
 
+The construct-validity argument of section 3 is developed, with the dispositional measurement it was missing, in [Capability constructs and validity]({{< ref "ai/capabilities/06-capability-constructs-and-validity" >}}); the whole chain from observation to construct is in [The inference ladder]({{< ref "ai/capabilities/00-the-inference-ladder" >}}).
+
 ## Research practices and claim records
 
 ### 3. Construct validity is directly applicable
@@ -27,7 +29,7 @@ A construct is something such as:
 
 `trust`, `understanding`, `intelligence`, `reflection`, `autonomy`.
 
-You cannot directly observe most of these. You observe measurements and behaviors and then infer the construct. Construct-validation work goes back at least to Cronbach and Meehl's classic 1955 treatment. ([Psych Classics](https://psychclassics.yorku.ca/Cronbach/construct.htm?utm_source=chatgpt.com "Classics in the History of Psychology -- Cronbach & Meehl (1955)"))
+You cannot directly observe most of these. You observe measurements and behaviors and then infer the construct. Construct-validation work goes back at least to Cronbach and Meehl's classic 1955 treatment. ([Psych Classics](https://psychclassics.yorku.ca/Cronbach/construct.htm "Classics in the History of Psychology -- Cronbach & Meehl (1955)"))
 
 For AI research, the question becomes:
 
@@ -129,13 +131,13 @@ Putting those statements in different columns makes the epistemic jump visible.
 
 We don't need to invent scientific rigor from scratch. The proposal is to combine practices from several fields into one protocol:
 
-1. **Scoping review before strong novelty claims.** Use an adapted PRISMA-ScR process: define search terms, databases, inclusion/exclusion rules, related traditions, and what was actually searched. Scoping reviews are specifically intended to map the extent of existing literature. ([PRISMA statement](https://www.prisma-statement.org/scoping?utm_source=chatgpt.com "Scoping -- PRISMA statement")) This would likely have caught much of the multi-agent institutions, social laws, mechanism design, CSCW, organizational science and distributed-systems prior art before making broad "emergent society" claims.
+1. **Scoping review before strong novelty claims.** Use an adapted PRISMA-ScR process: define search terms, databases, inclusion/exclusion rules, related traditions, and what was actually searched. Scoping reviews are specifically intended to map the extent of existing literature. ([PRISMA statement](https://www.prisma-statement.org/scoping "Scoping -- PRISMA statement")) This would likely have caught much of the multi-agent institutions, social laws, mechanism design, CSCW, organizational science and distributed-systems prior art before making broad "emergent society" claims.
 2. **Operational definitions and construct validation.** Every important theoretical term gets observable criteria, competing interpretations, and evidence that would weaken the interpretation.
-3. **Pre-registration.** State hypotheses, measures, exclusions and analysis decisions before seeing the result. For important experiments, Registered Reports go further: peer review happens before results are known, which removes a large incentive to reinterpret the experiment around an exciting outcome. ([Center for Open Science](https://www.cos.io/initiatives/registered-reports?utm_source=chatgpt.com "Registered Reports"))
+3. **Pre-registration.** State hypotheses, measures, exclusions and analysis decisions before seeing the result. For important experiments, Registered Reports go further: peer review happens before results are known, which removes a large incentive to reinterpret the experiment around an exciting outcome. ([Center for Open Science](https://www.cos.io/initiatives/registered-reports "Registered Reports"))
 4. **Ablation and intervention.** If you say the "agent learned," vary memory persistence. If you say model intelligence caused coordination, hold the model fixed and change the scaffold; then hold the scaffold fixed and change models. If you say communication caused conformity, remove communication while preserving every other relevant variable.
 5. **Competing hypotheses.** Before an experiment, write at least two plausible explanations. For Anthropic's "turf war," one might be psychological/social; another might be concurrent controllers with incompatible target states and overlapping write authority. Design an experiment that distinguishes them.
-6. **Adversarial collaboration.** Researchers with competing theories agree on experiments in advance. This is an established practice, recently used even in the major IIT-versus-GNWT consciousness test. ([Nature](https://www.nature.com/articles/d41586-025-01379-3?utm_source=chatgpt.com "Make science more collegial: why the time for 'adversarial collaboration' has come | Nature")) It seems particularly suitable for AGI research because terminology and worldview differences are enormous.
-7. **Independent/multiple analysis.** Give the same data and research question to independent analysts. Current large-scale work shows that reasonable analytical choices can materially alter results. ([Nature](https://www.nature.com/articles/s41586-025-09844-9?utm_source=chatgpt.com "Investigating the analytical robustness of the social and behavioural sciences | Nature")) That seems especially important for qualitative interpretation of agent trajectories.
+6. **Adversarial collaboration.** Researchers with competing theories agree on experiments in advance. This is an established practice, recently used even in the major IIT-versus-GNWT consciousness test. ([Nature](https://www.nature.com/articles/d41586-025-01379-3 "Make science more collegial: why the time for 'adversarial collaboration' has come | Nature")) It seems particularly suitable for AGI research because terminology and worldview differences are enormous.
+7. **Independent/multiple analysis.** Give the same data and research question to independent analysts. Current large-scale work shows that reasonable analytical choices can materially alter results. ([Nature](https://www.nature.com/articles/s41586-025-09844-9 "Investigating the analytical robustness of the social and behavioural sciences | Nature")) That seems especially important for qualitative interpretation of agent trajectories.
 8. **Replication across models, scaffolds and labs.** A phenomenon that disappears when the system prompt changes slightly probably belongs to a different theoretical category from one invariant across architectures and environments.
 9. **Explicit negative evidence.** Record which claimed properties were tested and failed. Current AI papers often accumulate demonstrations of capabilities much more readily than evidence against their preferred interpretation.
 10. **Source and inference provenance when LLMs assist research.** LLMs can search, generate hypotheses, find counterarguments and propose classifications. But every substantive factual claim should terminate in a primary source or experimental evidence. LLM-generated synthesis should never become evidence for another LLM-generated synthesis.
@@ -240,3 +242,21 @@ If it works, we should be able to say very precisely:
 > and here is an experiment that would discriminate between the interpretations.
 
 That would give us the methodological foundation both for the collaboration work and, later, for Alice--where conceptual discipline will be even more important because terms such as `entity`, `life`, `agency`, `meaning`, `understanding`, `reflection`, and `intelligence` are themselves part of what the research is trying to explain.
+
+## Library sources
+
+
+- [Freiesleben 2026](/sources/ai-foundations/capabilities-and-measurement/freiesleben-2026-nomological-networks.pdf.enc), *Establishing Construct Validity in LLM Capability Benchmarks Requires Nomological Networks* ([arXiv:2603.15121](https://arxiv.org/abs/2603.15121)) -- on *3. Construct validity is directly applicable*
+- [Lambert and Newman 2023](/sources/ai-foundations/capabilities-and-measurement/lambert-2023-construct-development-validation.pdf.enc), *Construct Development and Validation in Three Practical Steps* ([doi:10.1177/10944281221115374](https://doi.org/10.1177/10944281221115374))
+- [Seth and Bayne 2022](/sources/ai-foundations/cognition-and-mind/seth-2022-theories-of-consciousness.pdf.enc), *Theories of consciousness* ([doi:10.1038/s41583-022-00587-4](https://doi.org/10.1038/s41583-022-00587-4))
+- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *6. A proposed policy for using LLMs in this research*
+
+Further reading:
+
+- [Messeri and Crockett 2024](/sources/ai-foundations/alignment-and-society/messeri-2024-ai-and-illusions-of-understanding.pdf.enc), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))
+- [Clark and Watson 2019](/sources/ai-foundations/capabilities-and-measurement/clark-2019-constructing-validity.pdf.enc), *Constructing Validity* ([doi:10.1037/pas0000626](https://doi.org/10.1037/pas0000626))
+- [Nolte et al. 2026](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
+- [Felderer and Travassos 2020](/sources/research-methods/empirical-methods/felderer-2020-contemporary-empirical-methods-in-software-engineering.pdf.enc), *Contemporary Empirical Methods in Software Engineering*
+- [Wohlin et al. 2024](/sources/research-methods/empirical-methods/wohlin-2024-experimentation-in-software-engineering.pdf.enc), *Experimentation in Software Engineering* ([doi:10.1007/978-3-662-69306-3](https://doi.org/10.1007/978-3-662-69306-3))
+- [Fried 2020](/sources/research-methods/philosophy-of-science/fried-2020-theories-and-models.pdf.enc), *Theories and Models* ([doi:10.1080/1047840X.2020.1854011](https://doi.org/10.1080/1047840X.2020.1854011))
+- [Popper 1959](/sources/research-methods/philosophy-of-science/popper-1959-logic-of-scientific-discovery.pdf.enc), *The Logic of Scientific Discovery*

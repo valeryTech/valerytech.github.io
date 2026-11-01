@@ -4,28 +4,62 @@ toc: true
 title: "System Design"
 aliases:
   - "/system-design/about/"
-description: "A navigation map connecting system design principles, interview frameworks, technical building blocks, quality requirements, practice cases, and learning resources."
+description: "System design as a pattern flow for designing and prototyping systems: context, forces, design questions and their options, techniques that test a choice, decisions with triggers, and cases. Interview preparation is one route through it."
 linkTitle: "System Design"
 ---
 
-These notes connect architectural reasoning, interview preparation, technical building blocks, and worked design exercises. Start with the question you are trying to answer.
+These notes treat system design as a pattern flow you can walk while prototyping, reviewing, or explaining a system. Each step asks a question, offers options, and records what the chosen option leads to. A trigger records when to revisit a decision.
 
-| I want to... | Start here |
+Interview preparation is one route through the same flow, compressed into an hour.
+
+## The flow
+
+```mermaid
+flowchart TD
+  C[Context and goal] --> F[Forces]
+  F --> P[Structure patterns: design question hubs]
+  F --> T[Process techniques: spike, POC, walking skeleton]
+  P <--> T
+  P --> M[Mechanisms]
+  T --> D[Decision and trigger]
+  M --> X[Cases]
+  D --> X
+  D -. trigger fires .-> F
+```
+
+
+Structure patterns say *what to build*. Process techniques say *how to learn whether it is right*. A prototype is where the two meet: a walking skeleton carries the default choices, and a spike or proof of concept tests the risky one.
+
+| Step | Question it answers | Notes |
+| --- | --- | --- |
+| Context and goal | What outcome, for whom, inside which boundary? | [Design principles]({{< ref "system-design/02-system-design" >}}#start-with-the-context), [backward design]({{< ref "engineering/progressive/backward-design-der" >}}), [goal-oriented architecture]({{< ref "engineering/progressive/goal-oriented-architecture/flow-1" >}}) |
+| Forces | Which qualities and constraints decide this design? | [Non-functional requirements]({{< ref "system-design/nfr" >}}), [catalog of architectural characteristics]({{< ref "engineering/architecture/characteristics" >}}) |
+| Structure patterns | Which option answers this design question, and what does it lead to? | [Pattern map]({{< ref "system-design/elements/elements" >}}), [hubs by question]({{< ref "system-design/elements" >}}) |
+| Process techniques | Which technique resolves the riskiest open question? | [Lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}), [delivery techniques guide]({{< ref "engineering/delivery-techniques/engineering-delivery-techniques-guide" >}}) |
+| Decision and trigger | What did we choose, why, and what would make us revisit it? | [Compare choices]({{< ref "system-design/02-system-design" >}}#compare-choices-in-their-setting), [trade-off analysis]({{< ref "engineering/topics/trade-offs" >}}), [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}), [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) |
+| Mechanisms | How does this component actually work? | [Engineering topic notes]({{< ref "system-design/elements/elements" >}}#where-detail-lives), [platform and delivery]({{< ref "engineering/platform" >}}) |
+| Cases | Where has this been applied? | [Practice cases]({{< ref "system-design/projects" >}}), [AI and RAG designs]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains) |
+
+## Routes
+
+
+| I want to... | Path through the flow |
 | --- | --- |
-| Plan my preparation and practice | [Study and practice]({{< ref "system-design/system-design" >}}) |
-| Think through architectural choices | [Design principles]({{< ref "system-design/02-system-design" >}}) |
-| Choose an interview structure | [Framework comparison]({{< ref "system-design/frameworks" >}}) |
-| Define quality requirements and trade-offs | [Non-functional requirements]({{< ref "system-design/nfr" >}}) |
-| Find a component or pattern | [Building blocks]({{< ref "system-design/elements" >}}) |
-| Work through a design problem | [Practice cases]({{< ref "system-design/projects" >}}) |
-| Improve communication or review a mock | [Interview practice]({{< ref "system-design/interview" >}}) |
-| Find courses, books, and talks | [Resources]({{< ref "system-design/resources" >}}) |
+| Prototype a system quickly | [Defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) -> the hub for the riskiest question -> a [technique]({{< ref "engineering/architecture/techniques" >}}) to test it -> record the decision with the [case template]({{< ref "system-design/projects/case-template" >}}). |
+| Review or improve a design | [Design principles]({{< ref "system-design/02-system-design" >}}) -> [forces]({{< ref "system-design/nfr" >}}) for the operations that matter -> the costs and *Leads to* of the relevant [hubs]({{< ref "system-design/elements" >}}) -> [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}). |
+| Design an AI or RAG system | [Same patterns in other domains]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains) -> the RAG runtime layers and the [testable boundary map]({{< ref "engineering/eng-exp/design-pressure" >}}) -> the matching hubs. |
+| Prepare for an interview | [Interview preparation]({{< ref "system-design/interview" >}}): study plan, frameworks, communication, and mock review. |
+| Practice on a case | [Practice cases]({{< ref "system-design/projects" >}}) with the [case template]({{< ref "system-design/projects/case-template" >}}). |
+| Find courses, books, and talks | [Resources]({{< ref "system-design/resources" >}}). |
 
-## How the notes fit together
+## How the folders map to the flow
 
 
-Use a framework to structure a design conversation, the technical notes to reason about specific decisions, and the cases to test whether you can apply that reasoning. Return to the fundamentals when a case exposes a gap.
+- [`elements/`]({{< ref "system-design/elements" >}}): structure patterns as design questions, the [pattern map]({{< ref "system-design/elements/elements" >}}), and [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
+- [`nfr/`]({{< ref "system-design/nfr" >}}): forces.
+- [`projects/`]({{< ref "system-design/projects" >}}): cases.
+- [`interview/`]({{< ref "system-design/interview" >}}): the interview route.
+- Top level: [design principles]({{< ref "system-design/02-system-design" >}}), the [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}), and [resources]({{< ref "system-design/resources" >}}).
+- Process techniques and mechanisms live in the [engineering notes]({{< ref "engineering" >}}); the flow links to them rather than copying them.
 
-The frameworks remain separate: [Hello Interview]({{< ref "system-design/frameworks/framework-hi" >}}), [interviewing.io]({{< ref "system-design/frameworks/framework-iv" >}}), the [four-step outline]({{< ref "system-design/to-sort/sd-algorithm" >}}), and the [personal requirements-first draft]({{< ref "system-design/frameworks/sd-framework-v0" >}}). The comparison explains their different emphases.
-
-Source walkthroughs, personal designs, and unfinished prompts are labeled in the section indexes. [Collected notes]({{< ref "system-design/to-sort" >}}) retain additional framework variants and reading material; [the archive]({{< ref "system-design/archive" >}}) preserves notes rewritten during this refactor.
+[Collected notes]({{< ref "system-design/to-sort" >}}) keep reading excerpts and design-review material. [The archive]({{< ref "system-design/archive" >}}) preserves earlier versions of rewritten notes.

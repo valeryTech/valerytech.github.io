@@ -31,7 +31,7 @@ Review an attempt to identify what to practice next. Separate what the candidate
 | Collaboration | Did the candidate invite feedback and respond to prompts? |
 | Pacing | Were low-level details deferred until the core design was complete? |
 
-Use the [practice rubric]({{< ref "system-design/sd-signals-openai" >}}) for a more detailed review. Treat the interpretation of a single interview as an observation rather than proof of a level or universal hiring criterion.
+Use the [practice rubric]({{< ref "system-design/interview/sd-signals-openai" >}}) for a more detailed review. Treat the interpretation of a single interview as an observation rather than proof of a level or universal hiring criterion.
 
 ## Observations from earlier mocks
 

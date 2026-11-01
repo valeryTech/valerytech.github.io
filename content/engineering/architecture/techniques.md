@@ -1,11 +1,13 @@
 ---
 draft: false
 toc: true
+title: "Engineering Lifecycle Techniques"
 description: "Choose spikes, proofs of concept, prototypes, walking skeletons, vertical slices, and rollout techniques according to the uncertainty being resolved."
-title: "Techniques"
 linkTitle: "Engineering Lifecycle Techniques"
 ---
 These techniques map well to different **engineering lifecycle goals**. The important point is that they are not interchangeable: each answers a different kind of question.
+
+In the [system design flow]({{< ref "system-design" >}}), these techniques are the process half. Structure patterns say what to build; these techniques test whether a choice is right. [Defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) pairs each design question with a technique.
 
 ## Engineering lifecycle techniques by goal
 
@@ -259,3 +261,9 @@ Choose the technique based on the risk you are trying to reduce:
 |"We need to deliver safely"|Feature Flag / Canary|
 |"We need to make the system safer to operate"|Hardening|
 |"We need to make future work easier"|Refactoring / Architecture Runway|
+
+## Library sources
+
+
+- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer*
+- [Shore and Warden 2021](/sources/software-engineering/process-and-agile/shore-2021-art-of-agile-development-2nd-edition.pdf.enc), *The Art of Agile Development, 2nd Edition*

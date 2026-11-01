@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "DynamoDB"
 description: "Study access-pattern-driven DynamoDB modeling, single-table design, consistency, global tables, limits, APIs, and change streams."
-title: "Dynamodb"
 linkTitle: "DynamoDB"
 ---
 # Differences between relational data design and NoSQL
@@ -162,8 +162,6 @@ Item-based actions: `GetItem, PutItem, UpdateItem, DeleteItem`
 # Sources
 
 
-<https://coursehunter.net/book/kniga-dynamodb>
-
 <https://www.youtube.com/watch?v=HaEPXoXVf2k> #todo
 
 <https://www.youtube.com/watch?v=yNOVamgIXGQ>
@@ -224,3 +222,13 @@ consistency
 <https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/?trk=feed_main-feed-card_reshare_feed-article-content>
 
 <https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/?trk=feed_main-feed-card_reshare_feed-article-content>
+
+## Library sources
+
+
+- [DeBrie 2020](/sources/software-engineering/databases/dynamodb-book-course/thedynamodb-book.pdf.enc), *The DynamoDB Book* -- on *Data Modeling*
+
+Further reading:
+
+- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store*
+- [Schmidt and Volpicella 2024](/sources/software-engineering/systems-and-operations/schmidt-2024-aws-fundamentals.pdf.enc), *AWS Fundamentals: AWS For The Real World*

@@ -1,6 +1,14 @@
+{{- $theme := site.Params.theme.default | default "system" -}}
 {{- $script := resources.Get "js/preferences/restore-preferences.js" | js.Build (dict
   "target" "es2015"
   "minify" true
-  "params" (dict "fonts" hugo.Data.ui.fonts "display" hugo.Data.ui.display "navigation" hugo.Data.ui.navigation)
+  "params" (dict "fonts" hugo.Data.ui.fonts "display" hugo.Data.ui.display "navigation" hugo.Data.ui.navigation "palette" (dict "cookie" hugo.Data.ui.palette.cookie "groups" hugo.Data.ui.palette.groups) "theme" $theme)
 ) -}}
 <script>{{ $script.Content | safeJS }}</script>
+{{- /* Without scripts the pane toggles and header More list cannot act and no saved theme is restored. */}}
+<noscript>
+  <style>
+    .site-pane-toggle, .site-header-more { display: none !important; }
+    :root .hextra-theme-toggle [data-theme-choice="{{ $theme }}"] { display: inline-flex; }
+  </style>
+</noscript>

@@ -1,14 +1,16 @@
 ---
 draft: false
 toc: true
+title: "Requirements and Quality Targets"
 description: "Define functional behavior, quality targets, constraints, workload assumptions, and verification criteria before assessing implementation."
-title: "Requirements And Quality Targets"
 linkTitle: "Requirements and Quality Targets"
 ---
 ## Purpose
 
 
 Keep the expected behavior, quality, and constraints of a software change explicit. This note supports the requirements component of the Engineering Review Framework, including whether the relevant requirements have been defined at all.
+
+For how quality targets shape design choices, see [non-functional requirements]({{< ref "system-design/nfr" >}}) in the system design notes.
 
 ## Whether requirements exist
 
@@ -91,3 +93,8 @@ Detailed procedures belong in the relevant testing or review guides. At this lev
 
 
 [Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Business, Product, and Feature Context]({{< ref "engineering/engineering-review-framework/business-product-and-feature-context" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [Testing, CI, and PR Review Guide]({{< ref "engineering/engineering-review-framework/testing-ci-and-pr-review-guide" >}})
+
+## Library sources
+
+
+- [Wiegers 2022](/sources/software-engineering/craft/wiegers-2022-software-development-pearls.pdf.enc), *Software Development Pearls*

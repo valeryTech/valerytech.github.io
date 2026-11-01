@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "08 Typed DSL Project Candidates"
 description: "Compares six candidate DSL experiments, favoring iterative RAG with explicit evidence state, bounded loops, coverage conditions, and budgets before broader query planning or software repair."
-title: "08 Typed Dsl Project Candidates"
-linkTitle: "08 Typed Dsl Project Candidates"
+linkTitle: "08 Typed DSL Project Candidates"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

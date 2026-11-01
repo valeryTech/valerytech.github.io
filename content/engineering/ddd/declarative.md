@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Declarative Design"
 description: "Research notes connecting declarative specifications, execution engines, domain models, DSLs, and semantic modeling, with a list of contributors to study."
-title: "Declarative"
 linkTitle: "Declarative Design"
 ---
 ## Sources, to read
@@ -67,3 +67,12 @@ Some Ladder in progression:
 
 - [Domain-Specific Languages (DSLs) | SE@RWTH](https://se-rwth.github.io/research/Domain-Specific-Languages/)
 ```
+
+## Library sources
+
+
+- [Guarino et al. 2009](/sources/research-methods/ontology-and-conceptual-modeling/guarino-2009-what-is-an-ontology.pdf.enc), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3)) -- on *Influential Contributors*
+
+Further reading:
+
+- [Guizzardi 2007](/sources/research-methods/ontology-and-conceptual-modeling/guizzardi-2007-on-ontology-ontologies-conceptualizations.pdf.enc), *On Ontology, Ontologies, Conceptualizations, Modeling Languages, and (Meta)Models*

@@ -10,6 +10,8 @@ Corrective principle:
 
 Model the concrete domain first. Extract shared workflow concepts only after multiple real workflows force the abstraction to exist.
 
+The same principle applies at service scale: start with one deployable unit and split only when a force demands it. See [architecture style and service boundaries]({{< ref "system-design/elements/boundaries" >}}).
+
 These terms are used publicly in software engineering, but they differ in how well known and precise they are.
 
 |Term|Public usage|Status|
@@ -388,3 +390,17 @@ InquiryState {
 At the very beginning, many of these may be empty or vague.
 
 A possible framing is an **interactive inquiry system**, where retrieval supports an evolving inquiry rather than treating each query as an isolated search request.
+
+## Library sources
+
+
+- [Dresch et al. 2015](/sources/research-methods/design-science/dresch-2015-design-science-research.pdf.enc), *Design Science Research* ([doi:10.1007/978-3-319-07374-3](https://doi.org/10.1007/978-3-319-07374-3)) -- on *Equivalents in Design Science and scientific reasoning*
+- [vom Brocke et al. 2020](/sources/research-methods/design-science/vom-brocke-2020-design-science-research-cases.pdf.enc), *Design Science Research. Cases* ([doi:10.1007/978-3-030-46781-4](https://doi.org/10.1007/978-3-030-46781-4)) -- on *Equivalents in Design Science and scientific reasoning*
+- [Fowler 2019](/sources/software-engineering/craft/fowler-2019-refactoring-2nd-edition.pdf.enc), *Refactoring: Improving the Design of Existing Code, 2nd Edition*
+
+Further reading:
+
+- [Wieringa 2014](/sources/research-methods/design-science/wieringa-2014-design-science-methodology-front-matter.pdf.enc), *Design Science Methodology for Information Systems and Software Engineering* ([doi:10.1007/978-3-662-43839-8](https://doi.org/10.1007/978-3-662-43839-8))
+- [Doglio 2022](/sources/software-engineering/craft/doglio-2022-skills-of-successful-software-engineer.pdf.enc), *Skills of a Successful Software Engineer*
+- [Ousterhout 2018](/sources/software-engineering/craft/ousterhout-2018-philosophy-of-software-design.pdf.enc), *A Philosophy of Software Design*
+- [Parrish 2019](/sources/thinking-and-learning/systems-thinking/parrish-2019-great-mental-models-general-thinking-concepts.pdf.enc), *The Great Mental Models, Volume 1: General Thinking Concepts*

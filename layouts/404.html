@@ -3,8 +3,35 @@
   {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
   <main id="content" class="site-not-found content">
     <h1>Page not found</h1>
-    <p>The requested page does not exist or has moved.</p>
-    <a href="{{ "" | relURL }}">Return to the homepage</a>
+    <p>This address does not exist anymore. Notes move as the collections are reorganized, so the page is probably still here under a new address.</p>
+    <p class="site-not-found-match" hidden>The address points into <a href="#"></a>. Start there, or use search.</p>
+    <h2>Collections</h2>
+    {{- /* The collections that have agent maps, in breadcrumb order; the script highlights the one matching the missing path. */}}
+    <ul class="site-not-found-collections">
+      {{- range partialCached "navigation/child-groups.html" (dict "nodes" site.Home.Sections) "breadcrumb-root-sections" site.Home.RelPermalink }}
+        {{- if ne .key "sections" }}{{ continue }}{{ end }}
+        {{- range .nodes }}
+          {{- with .Page }}
+            {{- if not (.OutputFormats.Get "agentMap") }}{{ continue }}{{ end }}
+      <li data-collection="{{ .Section }}">
+        <a class="site-not-found-collection" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- with site.GetPage (printf "/agent-map/%s" .Section) }}
+        <a class="site-not-found-map" href="{{ .RelPermalink }}">Collection map</a>
+        {{- end }}
+        {{- with .Description }}
+        <p>{{ . }}</p>
+        {{- end }}
+      </li>
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </ul>
+    <p>
+      {{- with site.GetPage "/agent-map" }}Browse the <a href="{{ .RelPermalink }}">website map</a> or return{{ else }}Return{{ end }}
+      to the <a href="{{ "" | relURL }}">homepage</a>.
+    </p>
+    {{- $script := resources.Get "js/not-found.js" | js.Build (dict "target" "es2015" "minify" true) }}
+    <script>{{ $script.Content | safeJS }}</script>
   </main>
 </div>
 {{ end }}

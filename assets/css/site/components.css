@@ -3,6 +3,12 @@
   border-radius: var(--site-radius);
 }
 
+/* One solid palette role replaces Hextra's translucent primary tint and contrast filter. */
+:root .content pre:not(.not-prose pre) {
+  background-color: var(--site-code-surface);
+  filter: none;
+}
+
 .content .hextra-code-block pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

@@ -1,0 +1,61 @@
+{{- $palette := hugo.Data.ui.palette -}}
+<template id="site-palette-template">
+  <section id="site-palette" class="site-palette not-prose" popover="manual" role="dialog" aria-labelledby="site-palette-title" aria-describedby="site-palette-description">
+    <header class="site-palette-header" data-palette-drag>
+      <div class="site-palette-heading">
+        <h2 id="site-palette-title">{{ $palette.title }} <span class="site-palette-profile" data-palette-profile></span></h2>
+        <p id="site-palette-description">{{ $palette.description }}</p>
+      </div>
+      <button type="button" class="site-settings-close" data-palette-close aria-label="Close {{ lower $palette.title }}" title="Close">
+        {{ partial "utils/icon.html" (dict "name" "x" "attributes" "height=20") }}
+      </button>
+    </header>
+    <div class="site-palette-body">
+      <fieldset class="site-palette-group site-palette-presets">
+        <legend>{{ $palette.presetLabel }}</legend>
+        <select id="site-palette-preset" class="site-palette-select" data-palette-preset aria-label="{{ $palette.presetLabel }}">
+          <option value="" data-palette-custom hidden>{{ $palette.customLabel }}</option>
+          <optgroup label="{{ $palette.sitePresetsLabel }}">
+            {{ range $palette.presets }}<option value="site:{{ .id }}">{{ .label }}</option>{{ end }}
+          </optgroup>
+          <optgroup label="{{ $palette.savedPresetsLabel }}" data-palette-saved hidden></optgroup>
+        </select>
+        <div class="site-palette-save">
+          <input type="text" class="site-palette-name" data-palette-name maxlength="40" aria-label="{{ $palette.presetNameLabel }}" placeholder="{{ $palette.presetNameLabel }}" />
+          <button type="button" class="site-control" data-palette-save>
+            <span class="site-control-label">{{ $palette.saveLabel }}</span>
+          </button>
+          <button type="button" class="site-control" data-palette-delete hidden>
+            <span class="site-control-label">{{ $palette.deleteLabel }}</span>
+          </button>
+        </div>
+      </fieldset>
+      {{ range $palette.groups }}
+        <fieldset class="site-palette-group">
+          <legend>{{ .title }}</legend>
+          {{ range .tokens }}
+            {{ $id := printf "site-palette-%s" .token }}
+            <div class="site-palette-row" data-palette-token="{{ .token }}"{{ with .contrast }} data-palette-against="{{ .against }}" data-palette-minimum="{{ .minimum }}"{{ end }}>
+              <input id="{{ $id }}" type="color" class="site-palette-swatch"{{ with .contrast }} aria-describedby="{{ $id }}-contrast"{{ end }} />
+              <label for="{{ $id }}">{{ .label }}</label>
+              {{ with .contrast }}<span id="{{ $id }}-contrast" class="site-palette-contrast" data-palette-contrast></span>{{ end }}
+              <output for="{{ $id }}" class="site-palette-value"></output>
+              <button type="button" class="site-palette-revert" data-palette-revert aria-label="Restore default {{ lower .label }}" title="Restore default" hidden>
+                {{ partial "utils/icon.html" (dict "name" "reply" "attributes" "height=16") }}
+              </button>
+            </div>
+          {{ end }}
+        </fieldset>
+      {{ end }}
+    </div>
+    <footer class="site-palette-footer">
+      <button type="button" class="site-control" data-palette-copy>
+        <span class="site-control-label">{{ $palette.copyLabel }}</span>
+      </button>
+      <button type="button" class="site-control" data-palette-reset>
+        <span class="site-control-label">{{ $palette.resetLabel }}</span>
+      </button>
+      <p class="site-palette-status" role="status"></p>
+    </footer>
+  </section>
+</template>

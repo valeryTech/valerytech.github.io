@@ -6,6 +6,8 @@ description: "A formatted paper on evolving agent harness hierarchies through in
 linkTitle: "Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design"
 ---
 
+Source: [Li et al. 2026](/sources/ai-engineering/harness/li-2026-object-oriented-harness.pdf.enc), *Object-Oriented Harness* ([arXiv:2610.28380](https://arxiv.org/abs/2610.28380)).
+
 Formatted copy of the [original paper](https://arxiv.org/html/2610.28380), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 **Authors**

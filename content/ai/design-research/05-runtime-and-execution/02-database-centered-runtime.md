@@ -263,9 +263,9 @@ A possible research direction is something like an **epistemic extension of quer
 
 **DBOS gives us the execution model.**
 
-DBOS's original proposition is to keep system state in database tables and change it transactionally, obtaining durability, concurrency control, recovery, logging and inspectability from the DBMS. ([Stanford MAST Lab](https://mast.stanford.edu/pubs/dbos_a_proposal_for_a_data_centric_operating_system/?utm_source=chatgpt.com "DBOS: a DBMS-oriented operating system | Stanford MAST Lab"))
+DBOS's original proposition is to keep system state in database tables and change it transactionally, obtaining durability, concurrency control, recovery, logging and inspectability from the DBMS. ([Stanford MAST Lab](https://mast.stanford.edu/pubs/dbos_a_proposal_for_a_data_centric_operating_system/ "DBOS: a DBMS-oriented operating system | Stanford MAST Lab"))
 
-And DBOS has since become directly relevant to long-running workflows. Its current implementation uses Postgres-backed durable workflows that resume from completed steps after failures; recent releases also expose queryable workflow state and support durable streams useful for long-running LLM operations. ([DBOS](https://www.dbos.dev/blog/new-in-dbos-july-2026?utm_source=chatgpt.com "What's New in DBOS - July 2026 | DBOS"))
+And DBOS has since become directly relevant to long-running workflows. Its current implementation uses Postgres-backed durable workflows that resume from completed steps after failures; recent releases also expose queryable workflow state and support durable streams useful for long-running LLM operations. ([DBOS](https://www.dbos.dev/blog/new-in-dbos-july-2026 "What's New in DBOS - July 2026 | DBOS"))
 
 That maps very cleanly to an investigation:
 
@@ -419,7 +419,7 @@ with native operators/indexes.
 
 But that should be an empirical conclusion after we understand the workload.
 
-Stonebraker himself is a good example here: even DBOS did not argue that one storage engine should handle everything. Its research architecture described a **polystore** with different DBMSs suited to OLTP and OLAP behind a common interface. ([VLDB](https://vldb.org/cidrdb/papers/2022/p26-li.pdf?utm_source=chatgpt.com "A Progress Report on DBOS:   A Database-oriented Operating System"))
+Stonebraker himself is a good example here: even DBOS did not argue that one storage engine should handle everything. Its research architecture described a **polystore** with different DBMSs suited to OLTP and OLAP behind a common interface. ([VLDB](https://vldb.org/cidrdb/papers/2022/p26-li.pdf "A Progress Report on DBOS:   A Database-oriented Operating System"))
 
 That's likely the right instinct for us too.
 
@@ -665,6 +665,6 @@ We're asking whether **evidence-seeking investigation deserves the same treatmen
 
 > a language, algebra, optimizer, execution engine, cost model, correctness contracts, inspectable intermediate state, and durable computation.
 
-The saved LLM analysis regarded Rubicon as the strongest evidence it had found that database researchers were independently moving in this general direction. The proposed research opportunity would be to take it from **heterogeneous enterprise querying** into **evidence, knowledge, and defensible investigation**. ([arxiv.org](https://arxiv.org/abs/2604.21413?utm_source=chatgpt.com "An Alternate Agentic AI Architecture (It's About the Data)"))
+The saved LLM analysis regarded Rubicon as the strongest evidence it had found that database researchers were independently moving in this general direction. The proposed research opportunity would be to take it from **heterogeneous enterprise querying** into **evidence, knowledge, and defensible investigation**. ([arxiv.org](https://arxiv.org/abs/2604.21413 "An Alternate Agentic AI Architecture (It's About the Data)"))
 
 rubicon: https://github.com/fabian-wenz/rubicon

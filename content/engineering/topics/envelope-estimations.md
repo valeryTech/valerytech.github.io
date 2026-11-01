@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Back-of-the-Envelope Estimates"
 description: "Use back-of-the-envelope estimates and common performance numbers to reason about capacity and judge whether a proposed design can meet its requirements."
-title: "Envelope Estimations"
 linkTitle: "Back-of-the-Envelope Estimates"
 ---
 # Sources

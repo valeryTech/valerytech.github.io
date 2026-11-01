@@ -1,4 +1,4 @@
-## Infrastructure
+# Infrastructure
 
 ### Purpose
 
@@ -12,22 +12,17 @@ This site is built by Hugo with the pinned Hextra Git submodule. Node/npm
 provides analytics libraries, self-hosted search/math/font assets, and build scripts.
 Hextra ships compiled CSS, so local builds do not compile Tailwind or Bootstrap.
 
-The repo also includes a small Python subsystem for content migration. That
-tooling is isolated with `uv`, but it still runs through Docker rather than
-requiring host-side Python package installation.
+The repo also includes a small Python subsystem for content migration, isolated
+with `uv` in the same container.
 
-The command boundary is:
+The command layers are:
 
-- `make` for contributor-facing local tasks
-- `npm` for app-level Hugo commands
-- Docker/devcontainer for local execution
-
-The app-level entrypoints remain:
-
-- `npm run dev`
-- `npm run build`
-- `npm run format`
-- `npm run create`
+- [Task](https://taskfile.dev/) on the host, the only contributor entrypoint;
+  `Taskfile.yml` groups tasks into `repo:`, `docker:`, `site:`, `content:` and
+  `quality:` namespaces, and each wraps `docker compose run` or `exec`
+- npm scripts in `package.json`, which run Hugo, Prettier, Node tests and the map
+  script inside the container
+- the `site` service image, shared by Compose and the devcontainer
 
 The main authored inputs are `content/`, `layouts/`, `assets/`, `static/`, and
 `config/`. Hugo writes the generated site to `public/` and generated asset/cache
@@ -37,47 +32,44 @@ Some `content/` subtrees are regenerated from external notes instead of being
 edited directly. The committed migration manifest in `scripts/migrate/config.toml`
 defines which sections are managed that way.
 
-Contributor-facing command usage lives in
-[docs/runbook.md](/Users/val/projects/website/valerytech.github.io/docs/runbook.md).
+Contributor-facing command usage lives in the [runbook](runbook.md).
 
 ### Shared toolchain
 
 The [dependency update record](dependencies.md) lists the current package/action
 upgrades, compatibility decisions, and verification commands.
 
-Pinned versions live in `.infra/versions.env`:
-
-- `NODE_VERSION=26.13.0` (LTS)
-- `NPM_VERSION=12.2.1`
-- `HUGO_VERSION=0.169.0`
-- `DART_SASS_VERSION=1.107.0`
-- `UV_VERSION=0.13.6`
-- `N_VERSION=11.0.0` (container Node installer)
-
-That file is the source of truth for both local containers and GitHub Actions, so
-the local preview/build path and the production deploy path run on the same Hugo,
-Node, npm, and Dart Sass versions.
+[.infra/versions.env](../.infra/versions.env) pins Node, npm, Hugo, Dart Sass,
+`uv`, the `n` Node installer and the Playwright browser. It is the source of truth
+for both the image and GitHub Actions, so local and deployed builds run the same
+Hugo, Node, npm and Dart Sass versions.
 
 ### Local runtime
 
-Local work is isolated in Docker. Host-level Hugo or Node installation is not part
-of the supported workflow.
+Local work is isolated in Docker; nothing is installed on the host.
 
-- `Makefile` is the primary contributor-facing entrypoint
-- `make up` completes migration and agent-map regeneration before starting preview
+- `Taskfile.yml` is the contributor-facing entrypoint
+- `task site:up` completes migration and agent-map regeneration before starting preview
 - `compose.yaml` builds the image from `.devcontainer/Dockerfile`
 - the `site` service runs `npm run dev -- --bind=0.0.0.0`
 - the repo is bind-mounted into `/workspace`
-- `node_modules` lives in the named Docker volume `valerytech-node-modules`
+- `node_modules` lives in the named Docker volume `valerytech-node-modules`; the
+  host directory is only its empty mount point
+- `UV_PROJECT_ENVIRONMENT` places the migration environment in the
+  `valerytech-uv-venv` volume at `/opt/uv-venv`, outside the checkout, and `PYTHONDONTWRITEBYTECODE` keeps `__pycache__` out of
+  the checkout
+- `BROWSER_CHANNEL=chromium` selects the image's Playwright Chromium
+- `HUGO_MEMORYLIMIT=2` caps Hugo's cache at 2 GB; without it the preview
+  server grew to 9.6 GB of RAM after 6 hours of rebuilds
 
 The dev command sets `--baseURL=http://localhost:1313/`, so local preview
 renders internal links against localhost instead of the production domain.
-For LAN access, set `PREVIEW_BASE_URL=http://mbp.local:1313/` in the local `.env`
-file, using your Mac's local hostname, and recreate the preview container. With
-OrbStack, also enable `docker.expose_ports_to_lan` and restart OrbStack.
+`PREVIEW_BASE_URL` in `.env` overrides it for LAN access; see the
+[runbook](runbook.md#preview).
 
 `.devcontainer/Dockerfile` installs the pinned Node, npm, Hugo, and Dart Sass
-versions into the image. It also installs `uv` for the migration pipeline.
+versions into the image. It also installs `uv` for the migration pipeline and
+Playwright's Chromium with its system libraries for the navigation checks.
 The container includes `libatomic1`, required by the Node 26 Linux binaries.
 `.devcontainer/dev-entrypoint.sh` is the bootstrap guard for local runs: it
 hashes `package-lock.json`, runs `npm ci` when dependencies are missing or
@@ -95,7 +87,7 @@ The theme is pinned to Hextra v0.13.0 under `themes/hextra/`. Initialize it with
 submodule checkout. `layouts/_partials/styles/site.html` assembles the ordered
 `assets/css/site/` modules into one local CSS resource. Hextra's compiled CSS is
 combined with that resource and fingerprinted in production. Formatting and UI
-conventions are described in the [styling guide](styling.md). Dart Sass remains
+conventions are described in the [styling guide](design/styling.md). Dart Sass remains
 available in the shared toolchain but is not used by the Hextra build.
 
 FlexSearch comes from the local npm package, and KaTeX styles/fonts and Jost
@@ -110,12 +102,14 @@ newer standalone KaTeX releases exist. See the
 ### Repo task scripts
 
 Repo-owned scripts hold reusable task logic instead of embedding longer logic in
-the `Makefile` or CI workflows:
+`Taskfile.yml` or CI workflows:
 
 - `scripts/build-site.sh` is the shared production build wrapper
 - `scripts/verify-site.sh` builds the site, starts preview if needed, and checks
   core routes
 - `scripts/clean-generated.sh` removes disposable generated outputs
+- `scripts/check-host.sh` backs `task repo:doctor`: it checks host prerequisites
+  and reports, or with `--fix` removes, host installs in the checkout
 - `scripts/migrate-site.sh` runs the Docker-wrapped migration entrypoint
 - `scripts/site-map.mjs` assembles generated Markdown for the six HTML navigation
   maps after migration and before npm preview/build; it uses the existing Node and
@@ -146,7 +140,7 @@ instead of trying to preserve prior generated output in place.
 Operator-facing migration usage lives in
 [the runbook](runbook.md#migration).
 Callout-specific migration behavior lives in
-[docs/callouts.md](/Users/val/projects/website/valerytech.github.io/docs/callouts.md).
+[callouts.md](callouts.md).
 
 ### CI and deployment
 
@@ -176,16 +170,17 @@ pnpm-specific config is not part of the supported workflow.
 
 ### Navigation checks
 
-`npm run test:navigation` uses Playwright Core and an installed Chrome browser
-against `BASE_URL` (default `http://localhost:1313`). These browser checks cover
+`task quality:test:navigation` runs `npm run test:navigation` in the preview container,
+using Playwright Core and the image's Chromium against `BASE_URL` (default
+`http://localhost:1313`). These browser checks cover
 the current page and its ancestors in the section menu, nested H1–H6 outlines,
 scroll highlighting, direct heading links, active-outline visibility, and
 mobile/tablet navigation. They also check short and deep breadcrumb trails and
 all ten imported callout styles in light, dark, desktop, and mobile layouts.
-Set `BROWSER_ENGINE=webkit` after `npx playwright-core install webkit` to check
-the Safari rendering engine. An image-based occlusion check catches page content
+Set `BROWSER_ENGINE=webkit` after installing WebKit in the container (see the
+runbook) to check the Safari rendering engine. An image-based occlusion check catches page content
 showing through the top bar or around rounded breadcrumb corners during scrolling.
-The static route checks in `make verify` remain
+The static route checks in `task site:verify` remain
 independent of browser installation.
 
 The page outline uses Hugo's `TableOfContents`, preserving its nested lists and
@@ -209,5 +204,6 @@ not authoring locations, and should not be tracked in git.
 Other disposable local artifacts include `hugo_stats.json` and
 `.hugo_build.lock`.
 
-The migration workspace under `.migration/`, including the Docker-managed
-`.migration/.venv/` created by `uv`, is also disposable and ignored.
+The migration workspace under `.migration/` (staged output and reports) is also
+disposable and ignored. Installed state lives in the `valerytech-node-modules` and
+`valerytech-uv-venv` volumes; `task docker:reset` deletes both.

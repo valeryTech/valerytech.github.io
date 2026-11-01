@@ -1,9 +1,19 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
 
-from scripts.migrate.conversion import RenderContext, convert_document, normalize_math_delimiters
+from scripts.migrate.attachments import MAX_PDF_BYTES
+from scripts.migrate.conversion import (
+    RenderContext,
+    convert_document,
+    normalize_math_delimiters,
+    strip_tracking_parameters,
+)
 from scripts.migrate.parser import parse_document
+from scripts.migrate.paths import build_pdf_output_rel
+from scripts.migrate.pdf_lock import KEY_SETTING, LOCK_FILE, MAGIC, PASSWORD_SETTING
+from scripts.migrate.planning import MigrationFailed
 from tests.migrate.support import FIXTURE_ROOT, make_run, make_workspace
 
 
@@ -232,6 +242,158 @@ class ConversionTests(unittest.TestCase):
 
         self.assertEqual("\n\n".join(rendered.body_parts), "Missing data and Missing PDF")
         self.assertEqual(len(self.run.report.warnings), 2)
+
+    def test_conversion_shows_labels_of_unpublished_wiki_links(self) -> None:
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        rendered = convert_document(
+            parse_document("See [[drafts/private-note|the draft]] and [[2]]."),
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=self.workspace.work_root / "content",
+            ),
+            self.run.config.frontmatter_defaults,
+        )
+
+        self.assertEqual("\n\n".join(rendered.body_parts), "See the draft and [[2]].")
+
+    def test_conversion_stores_each_linked_pdf_once_in_its_sources_folder(self) -> None:
+        papers = self.workspace.source_root / "sources" / "papers"
+        papers.mkdir(parents=True)
+        (papers / "Smith 2025 Paper.pdf").write_bytes(b"%PDF-1.7\n")
+        (self.workspace.root / LOCK_FILE).write_text(
+            f"{KEY_SETTING}={'ab' * 32}\n{PASSWORD_SETTING}=x{{minute}}\n",
+            encoding="utf-8",
+        )
+        staging_root = self.workspace.work_root / "content"
+        bodies = []
+        for target_ref in (
+            "system-design/topics/api",
+            "system-design/topics/caching",
+            "system-design/integrated-test-pages/migration-smoke",
+        ):
+            note = next(note for note in self.run.plan.notes if note.target_ref == target_ref)
+            rendered = convert_document(
+                parse_document("Read [[sources/papers/Smith 2025 Paper.pdf|Smith 2025]]."),
+                RenderContext(
+                    note=note,
+                    note_index=self.run.note_index,
+                    attachment_resolver=self.run.attachment_resolver,
+                    report=self.run.report,
+                    staging_root=staging_root,
+                ),
+                self.run.config.frontmatter_defaults,
+            )
+            bodies.append("\n\n".join(rendered.body_parts))
+
+        link = "Read [Smith 2025](/sources/papers/smith-2025-paper.pdf.enc)."
+        self.assertEqual(bodies, [link, link, link])
+        stored = list(staging_root.rglob("*.pdf*"))
+        self.assertEqual(
+            [path.relative_to(staging_root).as_posix() for path in stored],
+            ["sources/papers/smith-2025-paper.pdf.enc"],
+        )
+        self.assertTrue(stored[0].read_bytes().startswith(MAGIC))
+        self.assertNotIn(b"%PDF", stored[0].read_bytes())
+        self.assertEqual(self.run.report.warnings, [])
+
+    def test_pdfs_linked_by_file_name_are_found_anywhere_in_the_vault(self) -> None:
+        sources = self.workspace.source_root / "sources"
+        for folder in ("papers", "books/one", "books/two"):
+            (sources / folder).mkdir(parents=True)
+        (sources / "papers" / "Smith 2025 Paper.pdf").write_bytes(b"%PDF-1.7\n")
+        (sources / "books" / "one" / "book.pdf").write_bytes(b"%PDF-1.7\n")
+        (sources / "books" / "two" / "book.pdf").write_bytes(b"%PDF-1.7\n")
+        (self.workspace.root / LOCK_FILE).write_text(
+            f"{KEY_SETTING}={'ab' * 32}\n{PASSWORD_SETTING}=x{{minute}}\n",
+            encoding="utf-8",
+        )
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        # The second link is written as it is inside a table.
+        rendered = convert_document(
+            parse_document("Read [[Smith 2025 Paper.pdf|Smith]], [[one/book.pdf\\|one]] and [[book.pdf|either]]."),
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=self.workspace.work_root / "content",
+            ),
+            self.run.config.frontmatter_defaults,
+        )
+
+        self.assertEqual(
+            "\n\n".join(rendered.body_parts),
+            "Read [Smith](/sources/papers/smith-2025-paper.pdf.enc), "
+            "[one](/sources/books/one/book.pdf.enc) and either.",
+        )
+        self.assertIn("ambiguous-pdf", [item.code for item in self.run.report.warnings])
+
+    def test_links_lose_tracking_parameters_only(self) -> None:
+        self.assertEqual(
+            strip_tracking_parameters(
+                "[A](https://a.org/p?utm_source=chatgpt.com), "
+                "[B](https://a.org/q?id=3&utm_source=chatgpt.com#part), "
+                "see https://a.org/r?utm_source=chatgpt.com. Also https://a.org/s?id=1&x=%2F."
+            ),
+            "[A](https://a.org/p), [B](https://a.org/q?id=3#part), "
+            "see https://a.org/r. Also https://a.org/s?id=1&x=%2F.",
+        )
+
+    def test_pdfs_outside_sources_keep_their_vault_folders(self) -> None:
+        root = self.workspace.source_root
+        self.assertEqual(
+            build_pdf_output_rel(root, root / "system-design/topics/../topics/Big Diagram.pdf"),
+            Path("sources/system-design/topics/big-diagram.pdf.enc"),
+        )
+        self.assertEqual(
+            build_pdf_output_rel(root, Path("/elsewhere/Paper.pdf")),
+            Path("sources/paper.pdf.enc"),
+        )
+
+    def test_conversion_stops_when_pdfs_cannot_be_encrypted(self) -> None:
+        sources = self.workspace.source_root / "sources"
+        sources.mkdir()
+        (sources / "paper.pdf").write_bytes(b"%PDF-1.7\n")
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        context = RenderContext(
+            note=note,
+            note_index=self.run.note_index,
+            attachment_resolver=self.run.attachment_resolver,
+            report=self.run.report,
+            staging_root=self.workspace.work_root / "content",
+        )
+
+        with self.assertRaisesRegex(MigrationFailed, LOCK_FILE):
+            convert_document(
+                parse_document("Read [[sources/paper.pdf|The Paper]]."),
+                context,
+                self.run.config.frontmatter_defaults,
+            )
+        self.assertEqual(list(self.workspace.work_root.rglob("*.pdf*")), [])
+
+    def test_conversion_leaves_oversized_pdfs_out(self) -> None:
+        books = self.workspace.source_root / "sources"
+        books.mkdir()
+        with (books / "book.pdf").open("wb") as book:
+            book.truncate(MAX_PDF_BYTES + 1)
+        note = next(note for note in self.run.plan.notes if note.target_ref == "system-design/topics/api")
+        rendered = convert_document(
+            parse_document("Read [[sources/book.pdf|The Book]]."),
+            RenderContext(
+                note=note,
+                note_index=self.run.note_index,
+                attachment_resolver=self.run.attachment_resolver,
+                report=self.run.report,
+                staging_root=self.workspace.work_root / "content",
+            ),
+            self.run.config.frontmatter_defaults,
+        )
+
+        self.assertEqual("\n\n".join(rendered.body_parts), "Read The Book.")
+        self.assertIn("oversized-pdf", [item.code for item in self.run.report.warnings])
 
     def test_normalize_math_delimiters_rewrites_balanced_math_and_preserves_literal_dollars(self) -> None:
         text = (

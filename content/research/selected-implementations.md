@@ -37,7 +37,7 @@ Inspect the mechanisms:
 - [Runner coordination](https://github.com/valery-judah/wallet-evals/blob/bf4d014baa87be6b7a35dc953e3db8985154d3b3/src/wallet_evals/runner/service.py): identity establishment, adaptive-choice checks, capture, and persistence.
 - [Runner tests](https://github.com/valery-judah/wallet-evals/blob/bf4d014baa87be6b7a35dc953e3db8985154d3b3/tests/test_runner.py): attributable results, adaptive evidence bounds, failure handling, and private role context omitted from the serialized trace.
 
-Related note: [Evidence model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}).
+Related note: [Evidence model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}).
 
 ## sem-rag: answers and citations
 
@@ -52,6 +52,6 @@ Inspect the mechanisms:
 - [Citation rendering](https://github.com/valery-judah/sem-rag/blob/faa5cd06ef30e4f6ef156092153a94743faf5681/src/doc_forge/query/citation_rendering.py): provenance-derived references and checks on contributing documents.
 - [Support-policy tests](https://github.com/valery-judah/sem-rag/blob/faa5cd06ef30e4f6ef156092153a94743faf5681/tests/query/test_query_stage6.py) and [generation/citation tests](https://github.com/valery-judah/sem-rag/blob/faa5cd06ef30e4f6ef156092153a94743faf5681/tests/query/test_query_stage7.py): partial coverage, conflict, abstention, and citation contracts.
 
-The default support judge uses structural heuristics; it does not establish that a passage supports a claim. Related notes: [Context-to-task alignment]({{< ref "ai-engineering/retrieval/reframing" >}}) and [Evidence model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}).
+The default support judge uses structural heuristics; it does not establish that a passage supports a claim. Related notes: [Context-to-task alignment]({{< ref "ai-engineering/context/retrieval/reframing" >}}) and [Evidence model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}).
 
 *Source review: 29 October 2026. Links pin the inspected revisions. Code and test sources were read; the test suites were not run. No product outcomes were measured in this review.*

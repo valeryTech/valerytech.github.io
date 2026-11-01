@@ -7,6 +7,7 @@
       <div class="site-toc-title site-surface-row site-context-surface site-pane-heading site-pinned site-pinned-first site-pinned-last">
         {{ partial "pane-toggle.html" (dict "pane" "outline") }}
         <span class="site-toc-title-label site-surface-content">On this page</span>
+        {{ partial "navigation/bulk-toggle.html" (dict "pane" "outline") }}
       </div>
       {{ $outline }}
     </div>

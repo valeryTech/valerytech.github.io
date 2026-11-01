@@ -1,17 +1,25 @@
 {{- $url := urls.Parse .Destination -}}
 {{- $scheme := $url.Scheme -}}
+{{- /* PDF links open the inline reader; without JavaScript they open the file. */ -}}
+{{- $path := lower $url.Path -}}
+{{- $isPdf := and (in (slice "" "http" "https") $scheme) (or (strings.HasSuffix $path ".pdf") (strings.HasSuffix $path ".pdf.enc")) -}}
+{{- if $isPdf }}{{ .Page.Store.Set "hasPdfReader" true }}{{ end -}}
 
 <a href="
   {{- if eq $scheme "" -}}
     {{- if strings.HasSuffix $url.Path ".md" -}}
       {{- relref .Page .Destination | safeURL -}}
+    {{- else if and $isPdf (strings.HasPrefix .Destination "/sources/") site.Params.pdfBaseURL -}}
+      {{- /* Imported PDFs live in the R2 bucket; the preview serves them from content/sources/. */ -}}
+      {{- print (strings.TrimSuffix "/" site.Params.pdfBaseURL) .Destination | safeURL -}}
     {{- else -}}
       {{- .Destination | safeURL -}}
     {{- end -}}
   {{- else -}}
     {{- .Destination | safeURL -}}
   {{- end -}}"
-  {{- with .Title }} title="{{ . | safeHTML }}"{{- end -}}>
+  {{- with .Title }} title="{{ . | safeHTML }}"{{- end -}}
+  {{- if $isPdf }} class="site-pdf-link" data-pdf-reader{{- end -}}>
   {{- .Text | safeHTML -}}
 </a>
 

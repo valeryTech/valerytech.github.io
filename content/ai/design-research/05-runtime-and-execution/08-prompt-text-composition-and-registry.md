@@ -2001,3 +2001,8 @@ Git repository
 
 
 That gives you a small, understandable foundation while preserving the things you care about: human editing, normal diffs, immutable versions, traceable history, modular composition, and deterministic rendering.
+
+## Library sources
+
+
+- [Khattab et al. 2023](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc), *DSPy* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714))

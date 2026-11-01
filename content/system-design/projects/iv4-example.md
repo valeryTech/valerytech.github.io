@@ -6,6 +6,6 @@ description: "A source pointer to an end-to-end interviewing.io example demonstr
 linkTitle: "Worked Example Source"
 ---
 
-[Part four of the interviewing.io guide](https://interviewing.io/guides/system-design-interview/part-four) contains an end-to-end example of the [three-stage framework]({{< ref "system-design/frameworks/framework-iv" >}}).
+[Part four of the interviewing.io guide](https://interviewing.io/guides/system-design-interview/part-four) contains an end-to-end example of the [three-stage framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}).
 
 This note is a source pointer; an independent design is not yet recorded here. See [practice cases]({{< ref "system-design/projects" >}}).

@@ -104,27 +104,27 @@ TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The saved LLM review reports searching across AI planning, operating systems, programming languages, Internet architecture, and current agent systems. It identifies an intellectual lineage for this stance, but no single established term covering the whole idea.
 
-The closest direct precedent may be **least-commitment planning**. In classical AI planning, the principle is to avoid fixing ordering, bindings, or implementation choices until they become necessary. Stefik's MOLGEN work explicitly argued that a planner needs to keep options open because early decisions have consequences elsewhere; Weld later systematized this as least-commitment planning. ([ScienceDirect](https://www.sciencedirect.com/science/chapter/edited-volume/pii/B9780934613033500234?utm_source=chatgpt.com "Planning and Meta-Planning (MOLGEN: Part 2) - ScienceDirect"))
+The closest direct precedent may be **least-commitment planning**. In classical AI planning, the principle is to avoid fixing ordering, bindings, or implementation choices until they become necessary. Stefik's MOLGEN work explicitly argued that a planner needs to keep options open because early decisions have consequences elsewhere; Weld later systematized this as least-commitment planning. ([ScienceDirect](https://www.sciencedirect.com/science/chapter/edited-volume/pii/B9780934613033500234 "Planning and Meta-Planning (MOLGEN: Part 2) - ScienceDirect"))
 
-Even closer to the initial premise is Veloso and Stone's 1995 FLECS work. They found that least commitment worked better for some planning problems while eager commitment worked better for others. Their response was essentially: stop assuming a universally best strategy, and build something that lets different strategies be explored. They explicitly describe the "futility of trying to find a universally successful planning strategy." ([UT Austin Computer Science](https://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-jair-flecs.html?utm_source=chatgpt.com "Peter Stone: FLECS: Planning with a Flexible Commitment Strategy"))
+Even closer to the initial premise is Veloso and Stone's 1995 FLECS work. They found that least commitment worked better for some planning problems while eager commitment worked better for others. Their response was essentially: stop assuming a universally best strategy, and build something that lets different strategies be explored. They explicitly describe the "futility of trying to find a universally successful planning strategy." ([UT Austin Computer Science](https://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-jair-flecs.html "Peter Stone: FLECS: Planning with a Flexible Commitment Strategy"))
 
 That is close to the proposed principle:
 
 > We don't know which architecture will win for which problem class.
 
-SICP generalizes the same principle beyond planning. Abelson and Sussman describe data abstraction itself as **the principle of least commitment**: the abstraction boundary lets the system defer choosing a concrete representation and can even allow multiple representations to coexist. ([Source Academy](https://sicp.sourceacademy.org/split_py/chapters/2.4.2.html?utm_source=chatgpt.com "2.4.2   Tagged data - SICP Comparison Edition"))
+SICP generalizes the same principle beyond planning. Abelson and Sussman describe data abstraction itself as **the principle of least commitment**: the abstraction boundary lets the system defer choosing a concrete representation and can even allow multiple representations to coexist. ([Source Academy](https://sicp.sourceacademy.org/split_py/chapters/2.4.2.html "2.4.2   Tagged data - SICP Comparison Edition"))
 
 So there is precedent for extending "least commitment" from decisions inside a plan to decisions inside system design.
 
-The second major lineage is **mechanism-policy separation** in operating systems. Wulf's HYDRA work argues that putting policy into the substrate makes systems difficult to experiment with and adapt; the substrate should provide mechanisms while leaving complex decisions to higher-level designers. ([CSE Web](https://cseweb.ucsd.edu/classes/wi19/cse221-a/papers/wulf74.pdf?utm_source=chatgpt.com "2. Separation of mechanism and policy. Among the major causes of our inability to experiment with, and adapt, existing operating systems is their failure to properly separate mechanisms from policies. (Hansen [1] has presented cogent arguments for this separation.) Such separation contributes to the flexibility of the system, for it leaves the complex decisions in the hands of the person who should make them--the higher-level system designer."))
+The second major lineage is **mechanism-policy separation** in operating systems. Wulf's HYDRA work argues that putting policy into the substrate makes systems difficult to experiment with and adapt; the substrate should provide mechanisms while leaving complex decisions to higher-level designers. ([CSE Web](https://cseweb.ucsd.edu/classes/wi19/cse221-a/papers/wulf74.pdf "2. Separation of mechanism and policy. Among the major causes of our inability to experiment with, and adapt, existing operating systems is their failure to properly separate mechanisms from policies. (Hansen [1] has presented cogent arguments for this separation.) Such separation contributes to the flexibility of the system, for it leaves the complex decisions in the hands of the person who should make them--the higher-level system designer."))
 
-The Exokernel project takes this much further. Its starting observation is that conventional operating systems constrain applications by fixing abstractions such as virtual memory and IPC. The exokernel therefore securely exposes low-level resources and lets applications implement, specialize, or replace higher-level abstractions themselves. ([EECG](https://www.eecg.utoronto.ca/~yuan/teaching/gradOS/papers/exokernel.pdf?utm_source=chatgpt.com "Exokernel: An Operating System Architecture for Application-Level Resource Management"))
+The Exokernel project takes this much further. Its starting observation is that conventional operating systems constrain applications by fixing abstractions such as virtual memory and IPC. The exokernel therefore securely exposes low-level resources and lets applications implement, specialize, or replace higher-level abstractions themselves. ([EECG](https://www.eecg.utoronto.ca/~yuan/teaching/gradOS/papers/exokernel.pdf "Exokernel: An Operating System Architecture for Application-Level Resource Management"))
 
 L4's **minimality principle** is an even cleaner formulation:
 
 > A concept should live in the kernel only when moving it outside would make required functionality impossible.
 
-The explicit reason for moving things outside is to permit **competing implementations**. ([Microkernel Dude](https://microkerneldude.org/2020/03/11/sel4-design-principles/?utm_source=chatgpt.com "seL4 Design Principles | microkerneldude"))
+The explicit reason for moving things outside is to permit **competing implementations**. ([Microkernel Dude](https://microkerneldude.org/2020/03/11/sel4-design-principles/ "seL4 Design Principles | microkerneldude"))
 
 That gives you a very useful test for the proposed substrate:
 
@@ -132,7 +132,7 @@ That gives you a very useful test for the proposed substrate:
 
 This might be one of the best design tests for the author's project.
 
-The third lineage is the Internet's **narrow waist / hourglass architecture**. The Internet succeeds partly because a relatively small common layer sits between many implementations below and many applications above. Micah Beck formalizes the idea as supporting diversity on both sides by keeping the spanning layer simple and general. ([ResearchGate](https://www.researchgate.net/publication/305638436_On_the_Hourglass_Model?utm_source=chatgpt.com "(PDF) On the Hourglass Model"))
+The third lineage is the Internet's **narrow waist / hourglass architecture**. The Internet succeeds partly because a relatively small common layer sits between many implementations below and many applications above. Micah Beck formalizes the idea as supporting diversity on both sides by keeping the spanning layer simple and general. ([ResearchGate](https://www.researchgate.net/publication/305638436_On_the_Hourglass_Model "(PDF) On the Hourglass Model"))
 
 That's very close to what you have been calling the thin waist:
 
@@ -157,13 +157,13 @@ Saltzer, Reed, and Clark's later commentary on the end-to-end principle contains
 
 > "impose a structure on the design space, rather than solving the design problem."
 
-([Massachusetts Institute of Technology](https://web.mit.edu/~saltzer/www/publications/endtoend/ANe2ecomment.html?utm_source=chatgpt.com "Active Networking and End-To-End Arguments"))
+([Massachusetts Institute of Technology](https://web.mit.edu/~saltzer/www/publications/endtoend/ANe2ecomment.html "Active Networking and End-To-End Arguments"))
 
 The working interpretation is that that's very close to what you were reaching for with "ground theory."
 
 The aim is to **structure a design space**, rather than select a point in that space.
 
-There is another useful lineage in Kiczales's **Open Implementation** work. Its premise is that substrate designers often cannot know which implementation strategy will suit every application. Instead of adding ever more features, the substrate exposes disciplined ways for builders to inspect and control implementation choices. ([ResearchGate](https://www.researchgate.net/publication/3247116_Beyond_the_Black_Box_Open_Implementation?utm_source=chatgpt.com "(PDF) Beyond the Black Box: Open Implementation"))
+There is another useful lineage in Kiczales's **Open Implementation** work. Its premise is that substrate designers often cannot know which implementation strategy will suit every application. Instead of adding ever more features, the substrate exposes disciplined ways for builders to inspect and control implementation choices. ([ResearchGate](https://www.researchgate.net/publication/3247116_Beyond_the_Black_Box_Open_Implementation "(PDF) Beyond the Black Box: Open Implementation"))
 
 So:
 
@@ -193,11 +193,11 @@ application chooses / specializes
 
 Again, very close.
 
-Current agent work shows pieces of the same instinct, though the saved review regards it as generally narrower. A2A explicitly wants agents built with different frameworks and by different vendors to interoperate through a common language. ([Google Open Source Blog](https://opensource.googleblog.com/2026/04/meet-the-a2family.html?utm_source=chatgpt.com "Meet the A2Family")) MCP similarly emphasizes composable servers, a small required core, capability negotiation, and independent evolution. ([Model Context Protocol](https://modelcontextprotocol.io/specification/2025-06-18/architecture?utm_source=chatgpt.com "Architecture - Model Context Protocol"))
+Current agent work shows pieces of the same instinct, though the saved review regards it as generally narrower. A2A explicitly wants agents built with different frameworks and by different vendors to interoperate through a common language. ([Google Open Source Blog](https://opensource.googleblog.com/2026/04/meet-the-a2family.html "Meet the A2Family")) MCP similarly emphasizes composable servers, a small required core, capability negotiation, and independent evolution. ([Model Context Protocol](https://modelcontextprotocol.io/specification/2025-06-18/architecture "Architecture - Model Context Protocol"))
 
 But these standards still make fairly substantial architectural commitments: MCP has host/client/server roles; A2A assumes agents communicating through tasks and messages. They're **framework-agnostic inside an architecture**, which is weaker than the proposed design stance.
 
-A recent example closer to the proposed enforcement boundary is Faramesh: it is explicitly protocol- and framework-agnostic and introduces a mandatory authorization boundary between an agent's proposed action and execution. ([arXiv](https://arxiv.org/abs/2601.17744?utm_source=chatgpt.com "Faramesh: A Protocol-Agnostic Execution Control Plane for Autonomous Agent Systems")) That's close to the `proposal -> validate -> commit` proposal, but it focuses specifically on authorization of agent effects.
+A recent example closer to the proposed enforcement boundary is Faramesh: it is explicitly protocol- and framework-agnostic and introduces a mandatory authorization boundary between an agent's proposed action and execution. ([arXiv](https://arxiv.org/abs/2601.17744 "Faramesh: A Protocol-Agnostic Execution Control Plane for Autonomous Agent Systems")) That's close to the `proposal -> validate -> commit` proposal, but it focuses specifically on authorization of agent effects.
 
 So the proposal is to place the proposed stance at the intersection of these traditions:
 
@@ -267,7 +267,7 @@ evaluation = evidence about which architectures work
 
 This is where the author's "we don't know what we don't know" premise becomes a scientific position rather than a slogan. You expect new organizational forms to be discovered, so the system should make discovering them possible.
 
-One terminology point: The recommendation is not to use **grounded theory** for this. That term already names a specific qualitative research methodology in which theories are induced from empirical data. ([APA Dictionary](https://dictionary.apa.org/grounded-theory?utm_source=chatgpt.com "APA Dictionary of Psychology")) **Design-space theory**, **semantic substrate**, **least-commitment substrate**, or **architectural least commitment** are much closer to what you mean.
+One terminology point: The recommendation is not to use **grounded theory** for this. That term already names a specific qualitative research methodology in which theories are induced from empirical data. ([APA Dictionary](https://dictionary.apa.org/grounded-theory "APA Dictionary of Psychology")) **Design-space theory**, **semantic substrate**, **least-commitment substrate**, or **architectural least commitment** are much closer to what you mean.
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
@@ -831,3 +831,13 @@ The definitions below are local copies of the entries used in these passages. Th
 [^turn19search2]: [State-Aware Runtime for Long-Horizon LLM Agents: A Conceptual Framework and Research Agenda](https://www.cambridge.org/engage/coe/article-details/6a78e51a810b9dcc82ea7f02)
 
 [^turn10search4]: [Overview and basic concepts -- CometBFT ABCI++](https://docs.cosmos.network/cometbft/latest/spec/abci/Outline)
+
+## Library sources
+
+
+- [Schnalke 2010](/sources/software-engineering/craft/schnalke-2010-why-unix-philosophy-still-matters.pdf.enc), *Why the Unix Philosophy still matters* -- on *Unix, least power, and independent invention*
+
+Further reading:
+
+- [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316))
+- [Plotkin and Pretnar 2009](/sources/ai-engineering/harness/plotkin-2009-handlers-of-algebraic-effects.pdf.enc), *Handlers of Algebraic Effects*

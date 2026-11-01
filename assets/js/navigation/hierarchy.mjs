@@ -3,7 +3,8 @@ export function outlineParents(link) {
   const parents = [];
   let item = link.closest("li");
   while ((item = item?.parentElement.closest("li"))) {
-    const parent = item.querySelector(":scope > a");
+    // Headings with subheadings wrap their link in a row beside the disclosure.
+    const parent = item.querySelector(":scope > a, :scope > .site-outline-row > a");
     if (parent) parents.unshift(parent);
   }
   return parents;

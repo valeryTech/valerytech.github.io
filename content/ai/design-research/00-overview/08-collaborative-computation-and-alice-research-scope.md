@@ -233,3 +233,13 @@ So the revised proposal is to keep the research map as two major independent bra
 They share an interest in systems, state, time, interaction and emergence, but they ask fundamentally different questions.
 
 The Alice branch is closer to **constructing and experimentally studying new forms of intelligent existence** than to improving current AI agents. That distinction should stay explicit in the research notes.
+
+## Library sources
+
+
+- [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
+- [Silver and Sutton 2025](/sources/ai-foundations/intelligence-and-turing/silver-2025-era-of-experience.pdf.enc), *Welcome to the Era of Experience*
+
+Further reading:
+
+- [Vernon 2014](/sources/ai-foundations/cognition-and-mind/vernon-2014-cognitive-system.pdf.enc), *Cognitive System*

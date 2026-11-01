@@ -9,7 +9,7 @@ const html = (route) => readFileSync(path.join(output, route, 'index.html'), 'ut
 const attr = (name, value) => new RegExp(`${name}=(?:"${value}"|'${value}'|${value}(?=[\\s>]))`);
 
 test('Hextra renders one main landmark and title on the primary page types', () => {
-  for (const route of ['', 'about', 'ai', 'engineering/topics/api', 'privacy', 'agent-map', 'settings']) {
+  for (const route of ['', 'about', 'ai', 'engineering/distributed-systems/hashing', 'privacy', 'agent-map', 'settings']) {
     const document = html(route);
     assert.match(document, /hextra-nav-container/);
     assert.match(document, /hextra-search-dialog/);
@@ -31,8 +31,8 @@ test('imported notes retain the full breadcrumb chain and wiki heading targets',
   assert.match(document, attr('href', '#local-smoke-heading'));
   assert.match(document, /\/system-design\/elements\/elements\/#cdn/);
   // H1 targets remain available too, including authored H1s that replace the title.
-  const authored = html('engineering/topics/api');
-  assert.match(authored, attr('id', 'api-design-research-topics'));
+  const authored = html('system-design/projects/rate-limiter');
+  assert.match(authored, attr('id', 'rate-limiter'));
 });
 
 test('the importer callout syntax retains titles, severities, and rendered bodies', () => {

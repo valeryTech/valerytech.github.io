@@ -35,8 +35,6 @@ The IDs identify files. O means overview, F means foundations, C means collabora
 
 The relationship table connects 71 of 72 content notes through 81 authored relationships. The 11 topic diagrams show 59 content notes. Coverage describes navigation, not completeness of the research or strength of its evidence.
 
-Catalogue entries without conceptual arrows: [O03]({{< ref "ai/design-research/00-overview/03-original-index-notes" >}}). Their explicit links remain in the catalogue and data snapshot.
-
 The sibling [map comments]({{< ref "ai/design-research/document-map-comments" >}}) explain the reviewed gaps, the historical index, and the remaining work. The comments are separate editorial analysis and are excluded from relationship extraction.
 
 ## Topic diagrams
@@ -450,7 +448,6 @@ The explicit-link column lists all distinct outgoing links to content notes in t
 |---|---|---|
 | O01: [Original framing question]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}) | [O06]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) | No sibling. |
 | O02: [Research direction]({{< ref "ai/design-research/00-overview/02-research-direction" >}}) | [O06]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) | No sibling. |
-| O03: [Original index notes]({{< ref "ai/design-research/00-overview/03-original-index-notes" >}}) | None recorded. | No sibling. |
 | O04: [Architectural framings]({{< ref "ai/design-research/00-overview/04-architectural-framings" >}}) | [O01]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}), [O06]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) | No sibling. |
 | O05: [Refined research question]({{< ref "ai/design-research/00-overview/05-refined-research-question" >}}) | [O06]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) | No sibling. |
 | O06: [Research scope and hierarchy]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) | [C02]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}), [F01]({{< ref "ai/design-research/01-foundations/01-constrained-generativity" >}}), [F04]({{< ref "ai/design-research/01-foundations/04-participant-neutral-system-model" >}}), [F07]({{< ref "ai/design-research/01-foundations/07-constraint-guarantee-and-composition-models" >}}), [F08]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}), [I01]({{< ref "ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra" >}}), [L11]({{< ref "ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification" >}}), [O01]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}), [O02]({{< ref "ai/design-research/00-overview/02-research-direction" >}}), [O04]({{< ref "ai/design-research/00-overview/04-architectural-framings" >}}), [O05]({{< ref "ai/design-research/00-overview/05-refined-research-question" >}}) | No sibling. |

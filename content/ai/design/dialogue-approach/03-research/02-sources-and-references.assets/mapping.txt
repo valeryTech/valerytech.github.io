@@ -1,0 +1,106 @@
+
+Yes -- your components map **cleanly** onto classic task-oriented dialogue terminology, with Rasa and Lex providing concrete product analogs for different layers of the loop.[^1][^2]
+
+## Core mapping
+
+At the highest level, your **transaction draft** corresponds to the dialogue **frame/state**: frame-based systems define a frame with slots the system needs to complete the task, and dialogue state tracking is responsible for maintaining that state over turns. In Rasa, this looks like the evolving set of form slots plus `requested_slot` and `active_loop`; in Lex, it looks like the current intent with its slot values and next dialog step.[^2][^3][^1]
+
+| Your component                              | General DST term                          | Rasa term                                                            | Lex term                                                            |
+| :------------------------------------------ | :---------------------------------------- | :------------------------------------------------------------------- | :------------------------------------------------------------------ |
+| Transaction Draft                           | Dialogue state / frame                    | Form state plus slots.[^1]                                           | Intent state plus slot values.[^2]                                  |
+| `action: create_transaction`                | Intent / task schema                      | Triggering intent that activates a form.[^1]                         | Intent.[^2]                                                         |
+| Fields like amount, date, account, category | Slots / slot-value pairs                  | Slots.[^1]                                                           | Slots.[^2]                                                          |
+| Draft Manager                               | Dialogue state tracker / dialogue manager | Form loop logic with validation and slot updates.[^1]                | Dialog manager plus code-hook-controlled next steps.[^2]            |
+| Missing fields                              | Unfilled required slots                   | `required_slots` not yet filled.[^1]                                 | Required slots still to elicit.[^2]                                 |
+| `next_step.ask_user`                        | Slot elicitation                          | `utter_ask_*` or `action_ask_*` for requested slot.[^1]              | Slot prompt / `ElicitSlot` behavior.[^2][^4]                        |
+| Readiness check                             | Dialogue policy / completion condition    | Form deactivates when all required slots are filled.[^1]             | Move to confirmation or fulfillment after slots are filled.[^2][^5] |
+| Confirmation card                           | Intent confirmation                       | Custom submit/confirmation step after form completion.[^1]           | Confirmation prompt / `ConfirmIntent`.[^5][^6]                      |
+| Typed backend execution                     | Fulfillment / action execution            | Submit action or downstream custom action after form completion.[^1] | Fulfillment step after confirmation.[^5]                            |
+
+## State and loop
+
+Your **draft lifecycle** maps most naturally to dialogue state tracking plus a dialogue manager that chooses the next action from the current state. DST literature defines the state as the accumulated slot-value representation over the full conversation, not just what was said in the last turn, which is exactly why your draft object is the right center of gravity.[^7][^3][^2]
+
+For Rasa specifically, `active_loop` is the closest analog to your refinement loop, because a form stays active until enough information is collected, and `requested_slot` marks the exact field currently being elicited. In Lex, the equivalent is the configured conversation path where the system elicits required slots, optionally branches, and then moves to confirmation and fulfillment.[^4][^8][^1][^2]
+
+## Validation and repair
+
+```
+Your **enrich, validate, repair** phases split across standard components rather than belonging to one monolithic parser. In Rasa, extraction and validation happen during the form via slot mappings, `extract_<slot>`, and `validate_<form_name>` or `validate_<slot>` methods; invalid values can be reset to `None`, causing the system to ask again. In Lex, slot capture can invoke a Lambda dialog code hook to validate or normalize values and determine the next step after each capture attempt.[^5][^1][^2]
+```
+
+That means your "clarification as draft repair" maps directly to **re-elicitation after failed validation**. Your "blocked" or "unsupported" states map to Rasa unhappy paths or form deactivation, and to Lex failure responses, conditional branches, or routing back to intent elicitation.[^1][^2]
+
+## Tool grounding
+
+Your **grounding services** do not have a single first-class name in classic DST, but they fit as business-logic-backed slot resolution and validation. In Rasa, this is usually custom extraction/validation code inside forms; in Lex, it is primarily dialog code hooks and conditional branching attached to slot capture or confirmation.[^2][^5][^1]
+
+A useful way to label your modules is:
+
+- Category/account resolver -> custom slot extraction or slot resolution layer.[^1][^2]
+- Duplicate detector -> validation/business rule layer before confirmation.[^5][^1]
+- Defaults/history enrichment -> dialogue-context-informed slot filling or business-logic enrichment.[^3][^1]
+- Provenance/confidence -> not a standard Rasa/Lex primitive, but an **observability extension** on top of DST state.[^1]
+
+## Recommended terminology
+
+For a design doc, I'd describe your stack in two vocabularies at once so both NLP and product people can read it easily.[^2][^1]
+
+- **NLP/conversational AI:** task-oriented dialogue, frame-based state, slot filling, dialogue state tracking, slot elicitation, validation, confirmation, fulfillment.[^3][^2]
+- **Product/architecture:** transaction draft, draft manager, enrichment, readiness criteria, action policy, execution gate, typed action executor.[^1]
+
+A tight mapping sentence would be: "The draft manager is effectively a dialogue state tracker plus policy layer; it maintains the transaction frame, elicits and validates missing slots, and only hands off to fulfillment once the draft is confirmation-ready."[^5][^2][^1]
+
+## One nuance
+
+The only place your design is **strictly richer** than default Rasa/Lex terminology is field provenance, patch history, and explicit separation between `ready_for_confirmation` and `execution_ready`. Classic frameworks support slot collection, validation, and confirmation, but your draft object adds a more modern orchestration layer for explainability, observability, and safe typed execution boundaries.[^5][^1]
+
+A practical renamed component set could be:
+
+- Draft Manager -> Dialogue State Tracker + Policy Orchestrator.[^3][^2]
+- Missing fields -> Required unfilled slots.[^2][^1]
+- Clarification loop -> Slot elicitation loop.[^4][^1]
+- Readiness scorer -> Policy/completion gate.[^7][^5]
+- Confirm step -> Intent confirmation.[^5]
+- Executor -> Fulfillment / typed action execution.[^1][^5]
+
+Would you like a next pass in the form of a **component-by-component glossary table** you can paste directly into the spec?[^1]
+
+<span style="display:none">[^10][^11][^12][^13][^14][^15][^16][^17][^9]</span>
+
+<div align="center">⁂</div>
+
+[^1]: 02-add-feature.md
+
+[^2]: https://web.stanford.edu/~jurafsky/slp3/K.pdf
+
+[^3]: https://www.ijcai.org/proceedings/2022/0607.pdf
+
+[^4]: https://docs.aws.amazon.com/lexv2/latest/dg/paths-nextstep.html
+
+[^5]: https://rasa.com/docs/rasa/forms/
+
+[^6]: https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html
+
+[^7]: https://talep.lis-lab.fr/seminars/2022-01-13-jacqmin.pdf
+
+[^8]: https://dev.to/petr7555/rasa-requestedslot-4ai7
+
+[^9]: https://learning.rasa.com/archive/rasa-forms-3/from-text/
+
+[^10]: https://www.arxiv.org/pdf/2011.09553v1.pdf
+
+[^11]: https://www.youtube.com/watch?v=U3an88fjFRc
+
+[^12]: https://medium.com/velotio-perspectives/amazon-lex-aws-lambda-beyond-hello-world-1403c1825e72
+
+[^13]: https://www.emergentmind.com/topics/dialogue-state-tracking-dst
+
+[^14]: https://learning.rasa.com/archive/conversational-ai-2/basic-forms/
+
+[^15]: https://docs.aws.amazon.com/pt_br/sdk-for-ruby/v3/api/Aws/Lex/Types/IntentSummary.html
+
+[^16]: https://forum.rasa.com/t/rasa-is-matching-intent-in-active-loop/60818
+
+[^17]: https://www.scribd.com/document/967763483/AWS-Lex-Bot-Developer-Deep-Technical-Round
+

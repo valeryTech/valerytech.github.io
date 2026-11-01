@@ -279,9 +279,9 @@ class MigrationPipelineTests(unittest.TestCase):
                 selection_paths = ["target.md"]
             '''))
         self.assertEqual(self.run_pipeline("sync"), 0)
-        self.assertIn(
-            "[[shared/deep/target|Root target]]", external_source.read_text(encoding="utf-8"),
-        )
+        external_text = external_source.read_text(encoding="utf-8")
+        self.assertIn("\nRoot target\n", external_text)
+        self.assertNotIn("{{< ref", external_text)
         self.assertIn(
             '[Root target]({{< ref "repo-docs/target" >}})',
             repo_source.read_text(encoding="utf-8"),

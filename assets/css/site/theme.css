@@ -7,8 +7,9 @@
   display: none;
 }
 
-.site-theme-control[data-theme="light"] > .hextra-theme-toggle [data-theme-choice="light"],
-.site-theme-control[data-theme="dark"] > .hextra-theme-toggle [data-theme-choice="dark"],
-.site-theme-control[data-theme="system"] > .hextra-theme-toggle [data-theme-choice="system"] {
+/* The head preference script sets the attribute, so the icon is right on first paint. */
+:root[data-theme-preference="light"] .hextra-theme-toggle [data-theme-choice="light"],
+:root[data-theme-preference="dark"] .hextra-theme-toggle [data-theme-choice="dark"],
+:root[data-theme-preference="system"] .hextra-theme-toggle [data-theme-choice="system"] {
   display: inline-flex;
 }

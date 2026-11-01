@@ -3,7 +3,9 @@ name = "valerytech-migrate"
 version = "0.1.0"
 description = "Content migration pipeline for external notes into Hugo content"
 requires-python = ">=3.11,<3.13"
-dependencies = []
+dependencies = [
+    "cryptography>=50",
+]
 
 [tool.uv]
 package = false

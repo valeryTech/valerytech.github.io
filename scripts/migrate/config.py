@@ -123,7 +123,8 @@ def load_config(config_path: Path) -> MigrationConfig:
                 selection_mode=selection_mode,
                 selection_paths=selection_paths,
                 include=_as_tuple(entry.get("include"), default_include),
-                exclude=_as_tuple(entry.get("exclude"), default_exclude),
+                # Import excludes extend the defaults so no import can silently drop them.
+                exclude=default_exclude + _as_tuple(entry.get("exclude"), tuple()),
                 root_index_source=(
                     str(entry["root_index_source"])
                     if entry.get("root_index_source") is not None

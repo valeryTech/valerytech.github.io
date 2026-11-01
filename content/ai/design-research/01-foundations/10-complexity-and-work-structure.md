@@ -296,7 +296,7 @@ The working interpretation is that the key reframing is:
 
 **"Long-running agent" is too implementation-centered. The real object is long-running work.**
 
-Sandboxing, retries, checkpointing, durable execution, context management, etc. are necessary runtime machinery. Current production systems emphasize exactly those concerns. ([LangChain](https://www.langchain.com/blog/runtime-behind-production-deep-agents?utm_source=chatgpt.com "The Runtime Behind Production Deep Agents")) But they don't tell us what kind of work is being performed, how the goal evolves, who should participate, or what "progress" means.
+Sandboxing, retries, checkpointing, durable execution, context management, etc. are necessary runtime machinery. Current production systems emphasize exactly those concerns. ([LangChain](https://www.langchain.com/blog/runtime-behind-production-deep-agents "The Runtime Behind Production Deep Agents")) But they don't tell us what kind of work is being performed, how the goal evolves, who should participate, or what "progress" means.
 
 The proposal is to structure the field in five layers.
 
@@ -375,3 +375,9 @@ The same "long-running runtime" supports both, but the work semantics differ.
 <!-- The long-running-work dialogue continues with participant roles. -->
 
 The original reply continues with [participant roles]({{< ref "ai/design-research/01-foundations/04-participant-neutral-system-model" >}}#roles-in-long-running-work), then [goal revisions]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#goal-revisions-and-dependent-work), [runtime support]({{< ref "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime" >}}#runtime-support-for-long-running-work), and the proposed [failure taxonomy and field study]({{< ref "ai/design-research/06-research-reports/09-long-running-work-failures-and-field-study" >}}).
+
+## Library sources
+
+
+- [Frensch and Funke 1995](/sources/thinking-and-learning/problem-solving/frensch-1995-complex-problem-solving-european-perspective.pdf.enc), *Complex Problem Solving: The European Perspective*
+- [Jonassen 2011](/sources/thinking-and-learning/problem-solving/jonassen-2011-learning-to-solve-problems.pdf.enc), *Learning to Solve Problems*

@@ -16,8 +16,6 @@ Preserved notes from before the October 19, 2026 refactor. [Return to the workin
 
 <https://microservices.io/patterns/data/saga.html>
 
-coursehunter
-
 <https://www.youtube.com/watch?v=SbL3a9YOW7s>
 
 <https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html>

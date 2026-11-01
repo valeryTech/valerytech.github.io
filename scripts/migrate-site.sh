@@ -22,10 +22,19 @@ fi
 
 log "Running migration ${command_name} from ${source_notes}"
 
+# The vault links its PDF folder with an absolute symlink, so mount that folder
+# at the same path for the link to resolve inside the container.
+default_source_files="/Users/val/sources"
+source_files="${SOURCE_FILES:-${default_source_files}}"
+source_files_mount=()
+if [[ -d "${source_files}" ]]; then
+  source_files_mount=(-v "${source_files}:${source_files}:ro")
+fi
+
 docker compose run --rm \
   -e SOURCE_NOTES=/source-notes \
-  -e UV_PROJECT_ENVIRONMENT=.migration/.venv \
   -v "$(cd "${source_notes}" && pwd):/source-notes:ro" \
+  "${source_files_mount[@]}" \
   site \
   uv run --frozen python -m scripts.migrate \
     --source-root /source-notes \

@@ -410,3 +410,9 @@ The sections below continue in the linked notes with their original arguments re
   - [Research gaps and recommended agenda](#research-gaps-and-recommended-agenda)
     - [Key works I would cite first](#key-works-i-would-cite-first)
   - [References](#references)
+
+## Library sources
+
+
+- [Dinu et al. 2024](/sources/retrieval-and-knowledge/neuro-symbolic/dinu-2024-symbolicai-logic-based-generative-models-solvers.pdf.enc), *SymbolicAI* ([arXiv:2402.00854](https://arxiv.org/abs/2402.00854))
+- [Wei et al. 2025](/sources/retrieval-and-knowledge/rag/wei-2025-multi-objective-agentic-rewrites.pdf.enc), *Multi-Objective Agentic Rewrites for Unstructured Data Processing* ([arXiv:2512.02289](https://arxiv.org/abs/2512.02289))

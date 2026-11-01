@@ -24,6 +24,49 @@ html {
 }
 
 .site-not-found {
-  margin: 5rem auto;
+  inline-size: 100%;
+  max-inline-size: 48rem;
+  margin: var(--site-space-12) auto;
   padding: var(--site-space-6);
+}
+
+.site-not-found-collections {
+  display: grid;
+  gap: var(--site-space-3);
+  margin: var(--site-space-4) 0 var(--site-space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.content .site-not-found-collections li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--site-space-1) var(--site-space-4);
+  margin: 0;
+  padding: var(--site-space-4) var(--site-space-5);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+}
+
+.content .site-not-found-collections li.is-match {
+  border-color: var(--site-accent);
+  background: var(--site-card-surface);
+}
+
+.site-not-found-collection {
+  font-size: var(--site-text-lg);
+  font-weight: 600;
+}
+
+.site-not-found-map {
+  margin-inline-start: auto;
+  font-size: var(--site-text-sm);
+}
+
+.content .site-not-found-collections p {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--site-muted);
+  font-size: var(--site-text-md);
 }

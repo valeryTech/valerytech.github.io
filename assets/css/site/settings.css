@@ -245,7 +245,6 @@
 }
 
 .site-settings-reset {
-  justify-self: start;
   padding: var(--site-space-3) var(--site-space-4);
   border-radius: var(--site-radius);
   background: var(--site-panel);
@@ -287,4 +286,271 @@
   .site-settings-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* Floating palette editor: a non-modal top-layer panel that leaves the page usable. */
+.site-palette {
+  --site-palette-inset: var(--site-layout-gap);
+  --site-palette-swatch-size: var(--site-space-8);
+  position: fixed;
+  inset: auto var(--site-palette-inset) var(--site-palette-inset) auto;
+  display: none;
+  flex-direction: column;
+  width: min(22rem, calc(100% - 2 * var(--site-palette-inset)));
+  max-height: min(40rem, calc(100dvh - 2 * var(--site-palette-inset)));
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  background: var(--site-page-background);
+  color: var(--site-body-foreground);
+  box-shadow: var(--site-floating-shadow);
+  font-size: var(--site-text-sm);
+  line-height: var(--site-line-ui);
+  color-scheme: light;
+  overflow: hidden;
+}
+
+.dark .site-palette {
+  color-scheme: dark;
+}
+
+.site-palette:popover-open {
+  display: flex;
+}
+
+.site-palette.site-palette-placed {
+  inset: auto;
+}
+
+.site-palette,
+.site-palette * {
+  transition: none;
+}
+
+.site-palette-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--site-space-3);
+  padding: var(--site-space-3) var(--site-space-3) var(--site-space-3) var(--site-space-4);
+  background: var(--site-context-header);
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+
+.site-palette-header h2 {
+  margin: 0;
+  color: var(--site-heading-foreground);
+  font-size: var(--site-text-base);
+  font-weight: 600;
+}
+
+.site-palette-profile {
+  color: var(--site-context-foreground);
+  font-weight: 500;
+}
+
+.site-palette-header p {
+  margin-top: var(--site-space-1);
+  color: var(--site-muted);
+  font-size: var(--site-text-xs);
+}
+
+.site-palette-header .site-settings-close {
+  width: var(--site-control-height);
+  cursor: pointer;
+}
+
+.site-palette-body {
+  display: grid;
+  gap: var(--site-space-4);
+  padding: var(--site-space-3) var(--site-space-4);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.site-palette-group {
+  display: grid;
+  gap: var(--site-space-1);
+  min-width: 0;
+  border: 0;
+}
+
+.site-palette-group > legend {
+  margin-bottom: var(--site-space-1);
+  color: var(--site-heading-foreground);
+  font-weight: 600;
+}
+
+.site-palette-row {
+  display: grid;
+  grid-template-columns: var(--site-palette-swatch-size) minmax(0, 1fr) auto var(--site-space-8);
+  align-items: center;
+  gap: var(--site-space-3);
+  min-height: var(--site-space-10);
+}
+
+.site-palette-row label {
+  overflow-wrap: anywhere;
+}
+
+.site-palette-contrast {
+  grid-column: 2 / 4;
+  grid-row: 2;
+  margin-block-start: calc(-1 * var(--site-space-2));
+  color: var(--site-muted);
+  font-size: var(--site-text-xs);
+}
+
+.site-palette-contrast[data-palette-low] {
+  color: var(--site-warning-foreground);
+  font-weight: 600;
+}
+
+.site-palette-row[data-palette-changed] label {
+  color: var(--site-heading-foreground);
+  font-weight: 600;
+}
+
+.site-palette-swatch {
+  width: var(--site-palette-swatch-size);
+  height: var(--site-palette-swatch-size);
+  padding: 0;
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  background: none;
+  cursor: pointer;
+}
+
+.site-palette-swatch::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.site-palette-swatch::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--site-radius) - 1px);
+}
+
+.site-palette-swatch::-moz-color-swatch {
+  border: 0;
+  border-radius: calc(var(--site-radius) - 1px);
+}
+
+.site-palette-value {
+  grid-area: 1 / 3;
+  color: var(--site-muted);
+  font-family: var(--site-code-font-family);
+  font-size: var(--site-text-xs);
+}
+
+.site-palette-revert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 4;
+  width: var(--site-space-8);
+  height: var(--site-space-8);
+  border-radius: var(--site-radius);
+  color: var(--site-accent);
+  cursor: pointer;
+}
+
+.site-palette-revert[hidden] {
+  display: none;
+}
+
+.site-palette-revert:hover {
+  background: var(--site-card-hover);
+}
+
+.site-palette-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-layout-gap);
+  padding: var(--site-space-3) var(--site-space-4);
+  border-top: 1px solid var(--site-border);
+}
+
+.site-palette-footer .site-control {
+  flex: 1 1 auto;
+}
+
+.site-palette-status {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--site-muted);
+  font-size: var(--site-text-xs);
+}
+
+.site-palette-status:empty {
+  display: none;
+}
+
+.site-palette :is(input, button, select):focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+@media (width < 40rem) {
+  /* Phones keep the upper half of the page in view above a bottom sheet. */
+  .site-palette {
+    inset: auto 0 0;
+    width: 100%;
+    max-height: 50dvh;
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  .site-palette-header {
+    cursor: auto;
+  }
+}
+
+.site-settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-layout-gap);
+}
+
+.site-settings-actions + .site-settings-help {
+  margin-top: calc(-1 * var(--site-space-4));
+}
+
+.site-palette-presets {
+  gap: var(--site-layout-gap);
+}
+
+.site-palette-select,
+.site-palette-name {
+  min-width: 0;
+  min-height: var(--site-control-height);
+  padding-inline: var(--site-space-3);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  background: var(--site-panel);
+  color: var(--site-foreground);
+  font: inherit;
+}
+
+.site-palette-select {
+  width: 100%;
+  cursor: pointer;
+}
+
+.site-palette-save {
+  display: flex;
+  gap: var(--site-layout-gap);
+}
+
+.site-palette-name {
+  flex: 1;
+}
+
+.site-palette-save .site-control {
+  flex: none;
+}
+
+.site-palette-save .site-control[hidden] {
+  display: none;
 }

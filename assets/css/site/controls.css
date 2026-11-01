@@ -63,11 +63,11 @@
     [aria-expanded="true"]
   ) {
   background: var(--site-card-hover);
-  color: var(--site-link-color);
+  color: var(--site-accent);
 }
 
 :is(.site-control, .site-surface-row):is(button, a[href]):focus-visible {
-  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline: var(--site-focus-width) solid var(--site-accent);
   outline-offset: var(--site-focus-offset);
   box-shadow: none;
 }
@@ -79,6 +79,73 @@
   inline-size: var(--site-control-icon-size);
   block-size: var(--site-control-icon-size);
   stroke-width: 1.5;
+}
+
+/* Round controls draw their chevrons like the breadcrumb chevrons; so does the section bar's More chevron. */
+:is(.site-pane-toggle, .site-header-toggle, .site-back-to-top, .site-bulk-toggle, .site-header-more)
+  .site-control-icon {
+  inline-size: var(--site-round-control-icon-size);
+  block-size: var(--site-round-control-icon-size);
+}
+
+:is(.site-pane-toggle, .site-header-toggle, .site-back-to-top, .site-bulk-toggle, .site-header-more)
+  .site-control-icon
+  path {
+  stroke-width: var(--site-chevron-stroke-width);
+  vector-effect: non-scaling-stroke;
+}
+
+/* Pane heading, rail and back-to-top controls hover like the section bar's More chevron:
+   no resting fill, then a rounded square inset by the layout gap from the control
+   height. The square also widens the hit area to the full control. */
+:is(.site-pane-heading, .site-pane-rail-header, .site-navigation-panel-header)
+  > :is(.site-pane-toggle, .site-bulk-toggle, .site-header-toggle),
+.site-back-to-top {
+  position: relative;
+  isolation: isolate;
+}
+
+:is(.site-pane-heading, .site-pane-rail-header, .site-navigation-panel-header)
+  > :is(.site-pane-toggle, .site-bulk-toggle, .site-header-toggle)::after,
+.site-back-to-top::after {
+  content: "";
+  position: absolute;
+  inset: calc(
+    var(--site-round-control-size) / 2 + var(--site-layout-gap) - var(--site-control-height) / 2
+  );
+  z-index: -1;
+  border-radius: var(--site-radius);
+}
+
+.site-back-to-top::after {
+  inset: var(--site-layout-gap);
+}
+
+:is(.site-pane-heading, .site-pane-rail-header, .site-navigation-panel-header)
+  > :is(.site-pane-toggle, .site-bulk-toggle, .site-header-toggle):is(:hover, :focus-visible),
+.site-back-to-top:is(:hover, :focus-visible) {
+  color: var(--site-accent);
+}
+
+:is(.site-pane-heading, .site-pane-rail-header, .site-navigation-panel-header)
+  > :is(.site-pane-toggle, .site-bulk-toggle, .site-header-toggle):is(
+    :hover,
+    :focus-visible
+  )::after,
+.site-back-to-top:is(:hover, :focus-visible)::after {
+  background: var(--site-card-hover);
+}
+
+:is(.site-pane-heading, .site-pane-rail-header, .site-navigation-panel-header)
+  > :is(.site-pane-toggle, .site-bulk-toggle, .site-header-toggle):focus-visible {
+  outline: none;
+}
+
+:is(.site-pane-heading, .site-pane-rail-header, .site-navigation-panel-header)
+  > :is(.site-pane-toggle, .site-bulk-toggle, .site-header-toggle):focus-visible::after,
+.site-back-to-top:focus-visible::after {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
 }
 
 .site-pane-heading {

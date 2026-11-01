@@ -32,7 +32,7 @@
 }
 
 :root[data-pin-ancestors="false"]
-  :is(.section-nav .site-sticky-section, .hextra-toc a.site-toc-parent) {
+  :is(.section-nav .site-sticky-section, .hextra-toc .site-toc-parent) {
   position: relative;
   top: auto;
 }
@@ -40,6 +40,8 @@
 .breadcrumb {
   position: relative;
   --site-surface-min-height: var(--site-control-height);
+  /* The trail starts 12px after the chooser circle, like every later label. */
+  --site-surface-gap: var(--site-space-3);
   /* Keep the surface edges while sharing the control's leading icon/text slots. */
   inline-size: calc(
     100% + var(--site-breadcrumb-inset) +
@@ -48,14 +50,15 @@
   margin-inline: calc(-1 * var(--site-breadcrumb-inset))
     calc(-1 * var(--site-breadcrumb-outset-end, var(--site-breadcrumb-inset)));
   padding-block: 0;
-  background: var(--site-breadcrumb-background);
+  background: var(--site-context-header);
   color: var(--site-context-foreground);
 }
 
 .breadcrumb ol {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--site-space-1);
+  /* Labels sit 12px from each circle, so 8px pill padding stays 4px clear of it. */
+  gap: var(--site-space-1) var(--site-space-3);
   margin: 0;
   color: inherit;
   font-size: var(--site-navigation-text-size);
@@ -65,9 +68,44 @@
   font-weight: 600;
 }
 
-.breadcrumb a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+/* The hover surface fills the crumb row; offset padding keeps the label in place. */
+.breadcrumb li > a[href] {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  margin-inline: calc(-1 * var(--site-space-2));
+  padding-inline: var(--site-space-2);
+  border-radius: var(--site-radius);
+}
+
+.breadcrumb a[href]:hover {
+  background: var(--site-card-hover);
+  color: var(--site-accent);
+}
+
+/* The sidebar tree and page outline share one geometry. Top-level chevrons use
+   the pane heading's round-control slot, so their circles and labels line up with
+   the heading toggle and title. Nested levels start the circle at the row edge to
+   keep each level's step small. */
+.section-nav,
+.site-page-outline {
+  --site-tree-chevron-inset: var(--site-round-control-inset);
+}
+
+:is(.section-nav .list-nested, .site-page-outline li > ul) {
+  --site-tree-chevron-inset: 0px;
+}
+
+.section-nav,
+.site-page-outline,
+:is(.section-nav .list-nested, .site-page-outline li > ul) {
+  --site-nav-label-inset: calc(
+    var(--site-tree-chevron-inset) + var(--site-round-control-size) + var(--site-round-control-gap)
+  );
+  --site-nav-marker-inset: calc(
+    var(--site-nav-label-inset) - var(--site-nav-current-marker-width) -
+      var(--site-nav-current-marker-gap)
+  );
 }
 
 .section-nav {
@@ -76,7 +114,7 @@
     calc(100cqw - 2 * var(--site-pane-gutter)),
     calc(100% + var(--site-pane-gutter))
   );
-  font-size: var(--site-navigation-text-size);
+  font-size: var(--site-pane-text-size);
   line-height: var(--site-line-ui);
 }
 
@@ -86,10 +124,29 @@
   margin: 0;
 }
 
-.section-nav .list-nested {
-  margin-inline-start: var(--site-nav-indent);
-  padding-inline-start: var(--site-nav-indent);
+:is(.section-nav .list-nested, .site-page-outline li > ul) {
+  /* Each branch guide descends from its parent's chevron; compact density drops
+     the gap that follows it. */
+  margin-inline-start: calc((var(--site-round-control-size) - 1px) / 2);
+  padding-inline-start: calc(var(--site-nav-indent) - var(--site-nav-compact-indent));
   border-inline-start: 1px solid var(--site-border);
+}
+
+/* Branches without subbranches have no chevrons to align with, so their labels
+   keep the narrower document gutter and sit closer to the branch guide. */
+:is(
+  .section-nav .list-nested:not(:has(> .sidebar-group)),
+  .site-page-outline li > ul:not(:has(> .site-outline-branch))
+) {
+  --site-nav-label-inset: calc(
+    var(--site-nav-padding-inline) + var(--site-nav-chevron-size) + var(--site-nav-chevron-gap)
+  );
+}
+
+:is(.section-nav .depth-1 > .list-nested, .site-page-outline nav > ul > li > ul) {
+  margin-inline-start: calc(
+    var(--site-round-control-inset) + (var(--site-round-control-size) - 1px) / 2
+  );
 }
 
 .section-nav a {
@@ -107,7 +164,7 @@
   margin: 0 0 var(--site-space-2);
   padding-inline-start: var(--site-nav-label-inset);
   color: var(--site-nav-foreground);
-  font-size: var(--site-text-xs);
+  font-size: var(--site-pane-label-size);
   font-weight: 600;
 }
 
@@ -115,15 +172,21 @@
   margin-block-start: var(--site-space-3);
 }
 
-.site-sidebar-section-row {
+.site-sidebar-section-row,
+.site-outline-row {
   position: relative;
   margin-bottom: var(--site-stack-gap);
   border-radius: var(--site-radius);
   color: var(--site-nav-foreground);
 }
 
-.site-sidebar-section-row > a {
+:is(.site-sidebar-section-row, .site-outline-row) > a {
   position: relative;
+}
+
+/* The row carries the gap below outline links that have a disclosure. */
+.site-page-outline .site-outline-row > a {
+  margin-block: 0;
 }
 
 /* Reserve the section marker gutter on document links to align sibling labels. */
@@ -134,12 +197,15 @@
 .site-sidebar-section-row > a::before {
   content: "";
   position: absolute;
-  inset-inline-start: var(--site-nav-padding-inline);
+  inset-inline-start: calc(
+    var(--site-tree-chevron-inset) +
+      (var(--site-round-control-size) - var(--site-nav-chevron-size)) / 2
+  );
   top: calc(var(--site-nav-padding-block) + 0.5em);
   width: var(--site-nav-chevron-size);
   height: var(--site-nav-chevron-size);
-  border-block-start: 1.5px solid currentColor;
-  border-inline-end: 1.5px solid currentColor;
+  border-block-start: var(--site-chevron-stroke-width) solid currentColor;
+  border-inline-end: var(--site-chevron-stroke-width) solid currentColor;
   transform: rotate(45deg);
   opacity: 0.75;
 }
@@ -148,7 +214,99 @@
   transform: rotate(-45deg);
 }
 
-.section-nav a:hover {
+/* Open branches point their chevron down, with or without the disclosure button. */
+.sidebar-group:has(> .list-nested:not([hidden])) > .site-sidebar-section-row > a::before {
+  transform: rotate(135deg);
+}
+
+.sidebar-group:has(> .list-nested:not([hidden])) > .site-sidebar-section-row > a:dir(rtl)::before {
+  transform: rotate(-135deg);
+}
+
+/* The startup script turns the chevron gutter into a disclosure; the label still navigates. */
+.site-sidebar-section-row:has(> .site-sidebar-section-toggle:not([hidden])) > a::before {
+  content: none;
+}
+
+.site-sidebar-section-toggle,
+.site-outline-branch-toggle {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 1;
+  /* Center the circle on the first label line. */
+  inset-block-start: calc(
+    var(--site-nav-padding-block) + (1lh - var(--site-round-control-size)) / 2
+  );
+  inline-size: var(--site-round-control-size);
+  block-size: var(--site-round-control-size);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: var(--site-pane-text-size);
+  line-height: var(--site-line-ui);
+  cursor: pointer;
+}
+
+.site-sidebar-section-toggle,
+.site-outline-branch-toggle {
+  inset-inline-start: var(--site-tree-chevron-inset);
+}
+
+.site-sidebar-section-toggle[hidden],
+.site-outline-branch-toggle[hidden] {
+  display: none;
+}
+
+.site-sidebar-section-toggle::before,
+.site-outline-branch-toggle::before {
+  content: "";
+  width: var(--site-nav-chevron-size);
+  height: var(--site-nav-chevron-size);
+  border-block-start: var(--site-chevron-stroke-width) solid currentColor;
+  border-inline-end: var(--site-chevron-stroke-width) solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.75;
+  /* Turn with the disclosure state, without inherited transitions. */
+  transition: none;
+}
+
+.site-sidebar-section-toggle[aria-expanded="true"]::before,
+.site-outline-branch-toggle[aria-expanded="true"]::before {
+  transform: rotate(135deg);
+}
+
+.site-sidebar-section-toggle:dir(rtl)::before,
+.site-outline-branch-toggle:dir(rtl)::before {
+  transform: rotate(-45deg);
+}
+
+.site-sidebar-section-toggle[aria-expanded="true"]:dir(rtl)::before,
+.site-outline-branch-toggle[aria-expanded="true"]:dir(rtl)::before {
+  transform: rotate(-135deg);
+}
+
+.site-sidebar-section-toggle:hover,
+.site-outline-branch-toggle:hover {
+  background: var(--site-card-hover);
+}
+
+.site-sidebar-section-toggle:is(:hover, :focus-visible)::before,
+.site-outline-branch-toggle:is(:hover, :focus-visible)::before {
+  opacity: 1;
+}
+
+.site-sidebar-section-toggle:focus-visible,
+.site-outline-branch-toggle:focus-visible {
+  outline: var(--site-focus-width) solid currentColor;
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+/* Both panes fill a hovered link like their current item; pinned rows keep their surface. */
+.section-nav a:hover,
+.site-page-outline a:not(.site-pinned > a):hover {
   background: var(--site-panel);
 }
 
@@ -185,6 +343,8 @@
   padding-block: var(--site-layout-gap);
   display: flex;
   align-items: center;
+  /* Scroll to top sits on the outer edge, under the heading's trailing toggle. */
+  justify-content: flex-end;
   flex-shrink: 0;
   min-height: var(--site-pane-controls-height);
   background: var(--site-page-background);
@@ -213,54 +373,10 @@
   font-weight: var(--site-control-font-weight);
 }
 
-.site-page-outline {
-  --site-outline-guide-width: 1px;
-  --site-outline-first-line-center: calc(
-    var(--site-nav-padding-block) + var(--site-navigation-text-size) * var(--site-line-ui) / 2
-  );
-}
-
 .site-page-outline ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.site-page-outline li > ul {
-  margin-inline-start: var(--site-nav-indent);
-  padding-inline-start: var(--site-nav-indent);
-  border-inline-start: var(--site-outline-guide-width) solid transparent;
-}
-
-.site-page-outline li > ul > li {
-  position: relative;
-}
-
-/* Connect sibling first lines on the same axis as their selection indicators. */
-.site-page-outline li > ul > li::before {
-  content: "";
-  position: absolute;
-  inset-block: 0 calc(-1 * var(--site-stack-gap));
-  inset-inline-start: calc(
-    var(--site-nav-marker-inset) +
-      (var(--site-nav-current-marker-width) - var(--site-outline-guide-width)) / 2
-  );
-  width: var(--site-outline-guide-width);
-  background: var(--site-border);
-  pointer-events: none;
-}
-
-.site-page-outline li > ul > li:first-child::before {
-  inset-block-start: var(--site-outline-first-line-center);
-}
-
-.site-page-outline li > ul > li:last-child::before {
-  inset-block-end: auto;
-  height: var(--site-outline-first-line-center);
-}
-
-.site-page-outline li > ul > li:only-child::before {
-  content: none;
 }
 
 .site-page-outline a {
@@ -269,7 +385,7 @@
   padding-inline-start: var(--site-nav-label-inset);
   margin-block: 0 var(--site-stack-gap);
   border-radius: var(--site-radius);
-  font-size: var(--site-navigation-text-size);
+  font-size: var(--site-pane-text-size);
   line-height: var(--site-line-ui);
   overflow-wrap: anywhere;
 }
@@ -299,13 +415,26 @@
   width: var(--site-nav-current-marker-width);
   height: 70%;
   border-radius: var(--site-radius);
-  background: var(--site-link-color);
+  background: var(--site-accent);
 }
 
 .site-back-to-top {
+  /* A square control holding a bare icon, like a heading card and its toggle. */
   inline-size: var(--site-control-height);
   block-size: var(--site-control-height);
   flex-shrink: 0;
+  padding: 0;
+}
+
+.site-back-to-top > .site-surface-leading {
+  inline-size: var(--site-round-control-size);
+  block-size: var(--site-round-control-size);
+}
+
+.site-toc-controls > button.site-back-to-top:is(:hover, :focus-visible) {
+  /* Only the inset square reacts, as heading toggles do inside their card. */
+  background: var(--site-control-background);
+  outline: none;
 }
 
 /* Original tree controls form the stack; JS supplies measured offsets and depth. */
@@ -380,7 +509,7 @@
 }
 
 .section-nav .site-sticky-section,
-.hextra-toc a.site-toc-parent {
+.hextra-toc .site-toc-parent {
   position: sticky;
   top: var(--site-sticky-offset, 0px);
   z-index: calc(var(--site-layer-stack-parent) - var(--site-sticky-depth, 0));
@@ -395,10 +524,6 @@
 .section-nav :is(a, .site-sidebar-section-row),
 .hextra-toc a {
   scroll-margin-block-start: calc(var(--site-sticky-offset, 0px) + var(--site-space-2));
-}
-
-.hextra-toc a.site-toc-parent.active {
-  background: var(--site-panel);
 }
 
 .section-nav .site-pinned,
@@ -426,7 +551,8 @@
   border-end-end-radius: var(--site-radius);
 }
 
-.section-nav :is(.sidebar-root, .site-sidebar-section-row).site-pinned > a {
+.section-nav :is(.sidebar-root, .site-sidebar-section-row).site-pinned > a,
+.hextra-toc .site-outline-row.site-pinned > a {
   background: transparent;
 }
 
@@ -478,7 +604,7 @@ a.site-pinned:hover {
   }
 
   .section-nav .site-sticky-section,
-  .hextra-toc a.site-toc-parent {
+  .hextra-toc .site-toc-parent {
     position: relative;
     top: auto;
   }

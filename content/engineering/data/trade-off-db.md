@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "SQL vs. NoSQL Trade-offs"
 description: "Interview-oriented notes for discussing SQL and NoSQL choices through consistency, data shape, scaling, and worked system-design examples."
-title: "Trade Off Db"
 linkTitle: "SQL vs. NoSQL Trade-offs"
 ---
 # relational-vs-nosql
@@ -48,3 +48,14 @@ Let's say this is mainly a querying system. Doctors enter a list of symptoms and
 
 
 Amazon is a good example of a system where we might want to use both of these. We'd want to have consistency for product transactions, while being flexible about the data in our product catalog. It wouldn't be crazy to suggest using a relational database to keep track of purchases and stock, while using a non-relational database for the product catalog.
+
+## Library sources
+
+
+- [Gessert et al. 2016](/sources/software-engineering/databases/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3)) -- on *relational-vs-nosql*
+- [Xu 2023](/sources/software-engineering/databases/xu-2023-key-steps-in-database-selection-process.pdf.enc), *Key Steps in the Database Selection Process* -- on *relational-vs-nosql*
+
+Further reading:
+
+- [Chen and Lee 2019](/sources/software-engineering/databases/chen-2019-introduction-of-nosql-databases.pdf.enc), *An Introduction of NoSQL Databases Based on Their Categories and Application Industries*
+- [Davoudian et al. 2018](/sources/software-engineering/databases/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661))

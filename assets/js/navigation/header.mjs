@@ -38,9 +38,10 @@ export function initHeaderAlignment() {
   const header = document.querySelector(".site-header");
   const panes = [
     ...document.querySelectorAll(
-      ".site-page-layout > #page-outline, .site-page-layout > .site-outline-rail, .site-page-layout > .site-outline-placeholder",
+      ".site-page-layout > #page-outline, .site-page-layout > .site-outline-placeholder",
     ),
   ];
+  const rail = document.querySelector(".site-page-layout > .site-outline-rail");
   if (!header || !panes.length) return;
 
   function sync() {
@@ -49,10 +50,11 @@ export function initHeaderAlignment() {
     if (pane) {
       // Use the fitted width, including when the other pane squeezes the outline.
       header.style.setProperty(property, `${pane.getBoundingClientRect().width}px`);
-    } else header.style.removeProperty(property);
+    } else if (!rail?.getClientRects().length) header.style.removeProperty(property);
+    // The narrow collapsed rail keeps the last outline width, so the header stays put.
   }
 
   const observer = new ResizeObserver(sync);
-  for (const pane of panes) observer.observe(pane);
+  for (const pane of [...panes, rail].filter(Boolean)) observer.observe(pane);
   sync();
 }

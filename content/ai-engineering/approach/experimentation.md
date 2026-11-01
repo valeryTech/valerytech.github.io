@@ -84,12 +84,12 @@ Plan comparisons around the conditions that could change their interpretation. T
 # Connections
 
 
-- [Ebse]({{< ref "ai/other/methodology/ebse" >}}) - Empirical Software Engineering
+- [Ebse]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/ebse" >}}) - Empirical Software Engineering
 - [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [Empirical Nature]({{< ref "ai-engineering/approach/empirical-nature" >}})
 - [model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}})
-- [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}})
-- [Harness And Platform]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}})
+- [Why Use Evaluation Harness]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}})
+- [Harness And Platform]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})
 - [product behavior guide]({{< ref "ai-engineering/causal-stack" >}})
 - science method
 
@@ -159,7 +159,7 @@ But production experimentation may reveal:
 
 AI systems need both offline evaluation and online experimentation because the real system includes users, product flows, traffic patterns, latency budgets, and failure modes.
 
-This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) rather than relying only on benchmark deltas or isolated demos.
+This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}}) rather than relying only on benchmark deltas or isolated demos.
 
 ### 4. Data changes over time
 
@@ -251,6 +251,18 @@ AI systems improve through iteration:
 6. Deploy cautiously.
 7. Monitor production outcomes.
 
-This is the operational loop that [evaluation harnesses]({{< ref "ai-engineering/evaluation/v1/why-use-evaluation-harness" >}}) and [evaluation platforms]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}}) are meant to support.
+This is the operational loop that [evaluation harnesses]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}}) and [evaluation platforms]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) are meant to support.
 
 Without experimentation, AI engineering becomes guesswork.
+
+## Library sources
+
+
+- [Baltes et al. 2025](/sources/research-methods/empirical-methods/baltes-2025-empirical-studies-se-llms.pdf.enc), *Guidelines for Empirical Studies in Software Engineering involving Large Language Models* ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)) -- on *System Assumptions and Constraints*
+
+Further reading:
+
+- [Magalhaes et al. 2025](/sources/ai-engineering/evaluation/magalhaes-2025-testing-the-untestable-llm-powered-software.pdf.enc), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198))
+- [Eriksson et al. 2025](/sources/ai-foundations/capabilities-and-measurement/eriksson-2025-can-we-trust-ai-benchmarks.pdf.enc), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
+- [Guerdan et al. 2024](/sources/ai-foundations/capabilities-and-measurement/guerdan-2024-evaluating-llms-under-task-indeterminacy.pdf.enc), *A Framework for Evaluating LLMs Under Task Indeterminacy* ([arXiv:2411.13760](https://arxiv.org/abs/2411.13760))
+- [Reynolds 2026](/sources/ai-foundations/capabilities-and-measurement/reynolds-2026-projectibility.pdf.enc), *When benchmark inferences do not compose* ([arXiv:2607.26159](https://arxiv.org/abs/2607.26159))

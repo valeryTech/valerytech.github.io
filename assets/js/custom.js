@@ -11,7 +11,7 @@ function initSite() {
   preferences.apply();
   initFontPreference(ui.fonts, preferences);
   initNavigation(ui.navigation, preferences);
-  initSettings(ui.settings, preferences);
+  initSettings(ui.settings, preferences, ui.palette);
   initInteractionAnalytics();
   initReaderEngagementAnalytics(engagement);
 }

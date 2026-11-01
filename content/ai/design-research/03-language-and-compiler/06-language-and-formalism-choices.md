@@ -30,7 +30,7 @@ execution / validation / analysis / compilation
 ```
 
 
-That is almost exactly the territory of typed embedded DSLs and **final-tagless** encodings. The final-tagless approach was developed specifically to represent typed object languages in a typed host language while supporting multiple interpreters. ([Cambridge University Press](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/finally-tagless-partially-evaluated-tagless-staged-interpreters-for-simpler-typed-languages/7B2DC44A2127EBBA71ADE63809D9425F?utm_source=chatgpt.com "Finally tagless, partially evaluated: Tagless staged interpreters for simpler typed languages | Journal of Functional Programming | Cambridge Core"))
+That is almost exactly the territory of typed embedded DSLs and **final-tagless** encodings. The final-tagless approach was developed specifically to represent typed object languages in a typed host language while supporting multiple interpreters. ([Cambridge University Press](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/finally-tagless-partially-evaluated-tagless-staged-interpreters-for-simpler-typed-languages/7B2DC44A2127EBBA71ADE63809D9425F "Finally tagless, partially evaluated: Tagless staged interpreters for simpler typed languages | Journal of Functional Programming | Cambridge Core"))
 
 For example, the proposed system might begin with an algebra:
 
@@ -70,7 +70,7 @@ System DryRun
 
 This is directly aligned with the proposal that the **same composition can be given different meanings while its admissible structure stays fixed**.
 
-Haskell's GADTs, type families and type-level data also let you encode richer state and capability constraints in the type system. GHC explicitly supports GADTs for type refinement, type families for type-indexed computation, and `DataKinds`for promoting domain concepts to the type level. ([GHC GitLab](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/gadt.html?utm_source=chatgpt.com "6.4.9. Generalised Algebraic Data Types (GADTs) -- Glasgow Haskell Compiler 9.15.20260306 User's Guide"))
+Haskell's GADTs, type families and type-level data also let you encode richer state and capability constraints in the type system. GHC explicitly supports GADTs for type refinement, type families for type-indexed computation, and `DataKinds`for promoting domain concepts to the type level. ([GHC GitLab](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/gadt.html "6.4.9. Generalised Algebraic Data Types (GADTs) -- Glasgow Haskell Compiler 9.15.20260306 User's Guide"))
 
 For instance:
 
@@ -136,7 +136,7 @@ Scala has an exceptionally strong toolkit for making embedded DSLs feel like nat
 - `inline`,
 - quoted macros and compiler metaprogramming.
 
-Scala's own documentation specifically identifies context functions as a tool for concise domain-specific languages, and Scala 3's metaprogramming facilities allow libraries to inspect and generate typed programs at compile time. ([Scala Documentation](https://docs.scala-lang.org/scala3/new-in-scala3.html?utm_source=chatgpt.com "New in Scala 3 | Scala Documentation"))
+Scala's own documentation specifically identifies context functions as a tool for concise domain-specific languages, and Scala 3's metaprogramming facilities allow libraries to inspect and generate typed programs at compile time. ([Scala Documentation](https://docs.scala-lang.org/scala3/new-in-scala3.html "New in Scala 3 | Scala Documentation"))
 
 So Scala could give you something much closer to:
 
@@ -166,7 +166,7 @@ opaque type Committed[A] = A
 ```
 
 
-The representation can remain hidden while the runtime representation is cheap. ([Scala Documentation](https://docs.scala-lang.org/scala3/book/types-opaque-types.html?utm_source=chatgpt.com "Opaque Types | Scala 3 -- Book | Scala Documentation"))
+The representation can remain hidden while the runtime representation is cheap. ([Scala Documentation](https://docs.scala-lang.org/scala3/book/types-opaque-types.html "Opaque Types | Scala 3 -- Book | Scala Documentation"))
 
 ### The deeper difference
 
@@ -454,7 +454,7 @@ The crucial part would be a dedicated **semantic IR** between those layers.
 ### Proposal to keep Rust separate from the language of the theory
 
 
-Rust is attractive because it is itself an example of the proposed principle: ownership restricts programs and lets the compiler guarantee memory properties. ([Rust Documentation](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html?highlight=garbage%2Ccollector&utm_source=chatgpt.com "What is Ownership? - The Rust Programming Language"))
+Rust is attractive because it is itself an example of the proposed principle: ownership restricts programs and lets the compiler guarantee memory properties. ([Rust Documentation](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html?highlight=garbage%2Ccollector "What is Ownership? - The Rust Programming Language"))
 
 And one tentative proposal is to implement the runtime in Rust.
 
@@ -483,7 +483,7 @@ The proposed role for Rust is the **machine enforcing the semantics**, rather th
 
 There is an appealing correspondence with what you're trying to do.
 
-Lean has a deliberately tiny trusted kernel: complex automation produces proof terms, while the small kernel checks whether those terms obey the core theory. ([Lean Language](https://lean-lang.org/doc/reference/latest?utm_source=chatgpt.com "The Lean Language Reference"))
+Lean has a deliberately tiny trusted kernel: complex automation produces proof terms, while the small kernel checks whether those terms obey the core theory. ([Lean Language](https://lean-lang.org/doc/reference/latest "The Lean Language Reference"))
 
 That's almost the architectural principle you're investigating:
 
@@ -498,7 +498,7 @@ large space of things builders may construct
 ```
 
 
-And dependent types let types express fairly strong invariants about values and programs. ([Lean Prover](https://leanprover.github.io/functional_programming_in_lean/dependent-types.html?utm_source=chatgpt.com "Programming with Dependent Types - Functional Programming in Lean"))
+And dependent types let types express fairly strong invariants about values and programs. ([Lean Prover](https://leanprover.github.io/functional_programming_in_lean/dependent-types.html "Programming with Dependent Types - Functional Programming in Lean"))
 
 The recommendation is not to necessarily expose Lean to ordinary builders. The proposal is to use it to define and test the **meaning of the substrate**.
 
@@ -533,7 +533,7 @@ Then other languages compile into this representation.
 ### For system behavior, TLA+ is hard to avoid
 
 
-The proposed theory deals directly with **sets of possible behaviors**. That's exactly TLA+'s native viewpoint: a specification denotes acceptable behaviors of a system. ([Leslie Lamport's Home Page](https://lamport.azurewebsites.net/pubs/spec-book-chap.pdf?utm_source=chatgpt.com "Chapter 7
+The proposed theory deals directly with **sets of possible behaviors**. That's exactly TLA+'s native viewpoint: a specification denotes acceptable behaviors of a system. ([Leslie Lamport's Home Page](https://lamport.azurewebsites.net/pubs/spec-book-chap.pdf "Chapter 7
 
 TLA+
 
@@ -555,7 +555,7 @@ refinement
 ```
 
 
-and it explicitly supports composing specifications. ([Leslie Lamport's Home Page](https://lamport.azurewebsites.net/tla/book-02-02-27.pdf?utm_source=chatgpt.com "Specifying Systems"))
+and it explicitly supports composing specifications. ([Leslie Lamport's Home Page](https://lamport.azurewebsites.net/tla/book-02-02-27.pdf "Specifying Systems"))
 
 So for questions like:
 
@@ -597,7 +597,7 @@ requires_human_approval(Action) :-
 
 That's relational reasoning.
 
-Datalog is deliberately restricted, declarative, recursive, and well suited to program analysis, security and graph problems. ([Soufflé](https://souffle-lang.github.io/tutorial?utm_source=chatgpt.com "Tutorial | Soufflé • A Datalog Synthesis Tool for Static Analysis")) Soufflé also has explicit provenance support that can explain why a tuple was derived, which maps directly onto the research interest in causal/provenance reasoning. ([Soufflé](https://souffle-lang.github.io/provenance?utm_source=chatgpt.com "Provenance | Soufflé • A Datalog Synthesis Tool for Static Analysis"))
+Datalog is deliberately restricted, declarative, recursive, and well suited to program analysis, security and graph problems. ([Soufflé](https://souffle-lang.github.io/tutorial "Tutorial | Soufflé • A Datalog Synthesis Tool for Static Analysis")) Soufflé also has explicit provenance support that can explain why a tuple was derived, which maps directly onto the research interest in causal/provenance reasoning. ([Soufflé](https://souffle-lang.github.io/provenance "Provenance | Soufflé • A Datalog Synthesis Tool for Static Analysis"))
 
 A possible substrate would let builders use a Datalog-like fragment for:
 
@@ -669,7 +669,7 @@ in context C?
 ```
 
 
-It separates authorization from business logic, and its restricted semantics make it analyzable. ([Cedar Policy Language Reference Guide](https://docs.cedarpolicy.com/?utm_source=chatgpt.com "What is Cedar? | Cedar Policy Language Reference Guide"))
+It separates authorization from business logic, and its restricted semantics make it analyzable. ([Cedar Policy Language Reference Guide](https://docs.cedarpolicy.com/ "What is Cedar? | Cedar Policy Language Reference Guide"))
 
 That is precisely the broader design principle applied to a language.
 
@@ -694,9 +694,9 @@ They don't necessarily need visibly different syntaxes. They can be facets of on
 ### WIT is almost exactly the right lower boundary, but too weak semantically
 
 
-The WebAssembly Component Model is quite relevant. WIT defines typed imports, exports, interfaces and "worlds" across implementation languages. ([GitHub](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md?utm_source=chatgpt.com "component-model/design/mvp/WIT.md at main · WebAssembly/component-model · GitHub"))
+The WebAssembly Component Model is quite relevant. WIT defines typed imports, exports, interfaces and "worlds" across implementation languages. ([GitHub](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md "component-model/design/mvp/WIT.md at main · WebAssembly/component-model · GitHub"))
 
-Importantly, its own documentation explicitly says that WIT defines **contracts between components but does not define behavior**. ([Component Model](https://component-model.bytecodealliance.org/design/wit.html?utm_source=chatgpt.com "WIT Reference - The WebAssembly Component Model"))
+Importantly, its own documentation explicitly says that WIT defines **contracts between components but does not define behavior**. ([Component Model](https://component-model.bytecodealliance.org/design/wit.html "WIT Reference - The WebAssembly Component Model"))
 
 That's a useful dividing line.
 
@@ -742,7 +742,7 @@ Builder syntax                    small custom DSL
 ```
 
 
-Koka and Unison would be **language-design references**, especially for effects, rather than production dependencies. Koka itself currently describes v3 as a research language and says it isn't ready for production use. ([Koka](https://koka-lang.github.io/?utm_source=chatgpt.com "The Koka Programming Language"))
+Koka and Unison would be **language-design references**, especially for effects, rather than production dependencies. Koka itself currently describes v3 as a research language and says it isn't ready for production use. ([Koka](https://koka-lang.github.io/ "The Koka Programming Language"))
 
 The long-term thing you may actually be designing is therefore not "a better programming language."
 

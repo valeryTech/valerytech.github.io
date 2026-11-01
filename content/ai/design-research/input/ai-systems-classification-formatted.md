@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "AI Systems Classification Formatted"
 description: "A taxonomy of AI systems by purpose, authority, data, human control, architecture, and assurance, with component roles and a practical classification framework."
-title: "Ai Systems Classification Formatted"
-linkTitle: "Ai Systems Classification Formatted"
+linkTitle: "AI Systems Classification Formatted"
 ---
 # Classification of AI Systems and Components: Features, Components, Invariants, and a Practical Taxonomy
 

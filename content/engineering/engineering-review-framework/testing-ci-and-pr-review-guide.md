@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Testing, CI, and PR Review Guide"
 description: "Combine tests, CI, author preparation, and human review to assess software changes, with clear expectations and evidence from executed checks."
-title: "Testing Ci And Pr Review Guide"
 linkTitle: "Testing, CI, and PR Review Guide"
 ---
-# Testing, CI, and PR Review Guide
-
 ## Purpose
 
 
@@ -98,3 +96,8 @@ External references checked on 2026-04-20. The workflow guidance above is a reco
 
 
 [Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}) · [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}})
+
+## Library sources
+
+
+- [Winters et al. 2020](/sources/software-engineering/craft/winters-2020-software-engineering-at-google.pdf.enc), *Software Engineering at Google*

@@ -50,7 +50,7 @@ displayPoweredBy = false
   [seo.description.length]
     min = 110
     max = 250
-    errorLevel = "warning" # make lint treats scoped editorial warnings as errors
+    errorLevel = "warning" # task quality:lint treats scoped editorial warnings as errors
   [seo.title]
     separator = " | "
     suffix = ""

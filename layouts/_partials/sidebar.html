@@ -9,7 +9,7 @@
 <aside id="site-navigation" {{ if $docs }}data-site-pane="sidebar"{{ else if .displayPlaceholder }}data-sidebar-placeholder{{ end }} class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $desktopClass }}" aria-label="Site navigation">
   <div class="site-sidebar-scroll hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow">
     <nav class="mobile-site-nav hx:md:hidden" aria-label="Collections">
-      {{- partial "navigation/section-links.html" $page -}}
+      {{- partial "navigation/section-links.html" (dict "page" $page "nav" (partial "navigation/section-entries.html" $page) "includeMore" true) -}}
     </nav>
     {{ if $docs }}{{ partial "sidebar/section-menu.html" $page }}{{ end }}
   </div>

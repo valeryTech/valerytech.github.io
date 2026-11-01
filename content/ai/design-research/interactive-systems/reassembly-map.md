@@ -24,7 +24,7 @@ The mapping and whole-file checksums in stage 1 describe its historical snapshot
 
 Date: 2026-04-01. The user approved splitting documents one at a time and separating Hebbia-specific material from general design ideas.
 
-The source was visual-programming-env.md. Before the split, it contained 1469 lines and 32,504 bytes. Its SHA-256 checksum was `441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68`.
+The source was [visual-programming-env.md]({{< ref "ai/design-research/interactive-systems/00-index" >}}). Before the split, it contained 1469 lines and 32,504 bytes. Its SHA-256 checksum was `441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68`.
 
 Only that source dialogue was split in this pass. The other Hebbia inputs and the other candidate dialogues remain available for separate passes.
 
@@ -217,7 +217,7 @@ Only new navigation and separate comments were written around the unchanged sour
 ## Stage 4: semantic-engineering dialogue
 
 
-Date: 2026-04-01. The pass continues with semantic-eng.md. The complete source was read before the split.
+Date: 2026-04-01. The pass continues with [semantic-eng.md]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}). The complete source was read before the split.
 
 Before the split, the source contained 439 logical lines and 17,434 bytes. The final line had no newline. Its SHA-256 checksum was `798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee`.
 
@@ -288,7 +288,7 @@ No files were staged or committed.
 ## Stage 5: task-specific context assembly
 
 
-Date: 2026-04-01. The source was task-specific-context-assembly.md, a short sketch without speaker labels. It contained eight logical lines and 690 bytes, and its final line had no newline. Its SHA-256 checksum was `fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697`.
+Date: 2026-04-01. The source was [task-specific-context-assembly.md]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}), a short sketch without speaker labels. It contained eight logical lines and 690 bytes, and its final line had no newline. Its SHA-256 checksum was `fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697`.
 
 ### Mapping
 

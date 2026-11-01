@@ -18,7 +18,7 @@ The status below describes the notes, not a judgment that a design is complete o
 | [URL shortener]({{< ref "system-design/projects/url-shortener" >}}) | Personal design, NFR explorations, implementation notes, and earlier alternatives. Read/write paths, redirects, identifiers, and caching. |
 | [Dropbox]({{< ref "system-design/projects/dropbox" >}}) | Personal preparation notes plus a source walkthrough. Large files, metadata, synchronization, and sharing. |
 | [Ticketmaster]({{< ref "system-design/projects/ticketmaster" >}}) | Source walkthrough with additional notes. Booking, reservations, contention, and high-demand events. |
-| [Rate limiter]({{< ref "system-design/projects/rate-limiter" >}}) | Reading notes and design outline, including distributed-algorithm questions. |
+| [Rate limiter]({{< ref "system-design/projects/rate-limiter" >}}) | Reading notes and design outline, with enforcement across nodes and limits by tier. |
 | [Instagram]({{< ref "system-design/projects/instagram" >}}) | Collected discussion and prompts for further processing. |
 
 ## Focused and partial exercises
@@ -28,9 +28,9 @@ The status below describes the notes, not a judgment that a design is complete o
 | --- | --- |
 | [TikTok]({{< ref "system-design/projects/tik-tok" >}}) | Requirements-gathering example: objects, mutability, and access patterns. |
 | [Code deployment]({{< ref "system-design/projects/code-deployment" >}}) | Requirements, artifact types, API, and scale assumptions. |
-| [Job scheduler]({{< ref "system-design/projects/job-scheduler" >}}) | Early requirements and open workload questions. |
+| [Job scheduler]({{< ref "system-design/projects/job-scheduler" >}}) | Early requirements, open workload questions, and a first design sketch with leases and a single active scheduler. |
 | [Public chat room]({{< ref "system-design/projects/chat-room" >}}) | Interview report with an unresolved burst-handling question. |
-| [Key-value store]({{< ref "system-design/projects/key-value-store" >}}) | Short notes on cache write policies and trade-offs. |
+| [Key-value store]({{< ref "system-design/projects/key-value-store" >}}) | Cache write policies and a Dynamo-style design: consistent hashing, quorums, hinted handoff, anti-entropy, and version vectors. |
 | [interviewing.io worked example]({{< ref "system-design/projects/iv4-example" >}}) | Source pointer to the guide's end-to-end example. |
 
 ## Queued prompts
@@ -41,5 +41,6 @@ These entries do not yet contain a design: [interviewing.io product]({{< ref "sy
 ## Reusable technical material
 
 
+- [Building blocks by design question]({{< ref "system-design/elements" >}}): each hub lists the cases that use its patterns.
 - [Messaging and events]({{< ref "system-design/elements/messaging" >}}).
 - [Snowflake ID sources]({{< ref "system-design/projects/infra/slowflake-id" >}}).

@@ -6,7 +6,7 @@ description: "A template for recording a design exercise’s context, requiremen
 linkTitle: "Case Template"
 ---
 
-Copy the sections useful for the exercise. Use any [framework]({{< ref "system-design/frameworks" >}}) to conduct the design; this template records its outcome.
+Copy the sections useful for the exercise. Use any [framework]({{< ref "system-design/interview/frameworks" >}}) to conduct the design; this template records its outcome.
 
 ## Context and scope
 
@@ -31,7 +31,9 @@ Components, state ownership, and a concrete end-to-end trace for each core opera
 ## Decisions and deep dives
 
 
-For each difficult choice: requirement, alternatives, selected approach, trade-off, and reason to revisit. Include only the estimates that inform these decisions.
+For each difficult choice: the design question it answers (see the [pattern map]({{< ref "system-design/elements/elements" >}})), the requirement, the alternatives, the selected pattern or approach, the trade-off, and the reason to revisit. Include only the estimates that inform these decisions.
+
+Naming the question and the pattern lets the hub list this case under *Seen in cases*.
 
 ## Failure and recovery
 

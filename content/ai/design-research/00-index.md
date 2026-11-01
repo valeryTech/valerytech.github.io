@@ -8,7 +8,7 @@ linkTitle: "00 Index"
 # Design research
 
 
-Start with [the introduction and reading map]({{< ref "ai/design-research/00-introduction" >}}) for the purpose of the collection, its intended contribution to practice and understanding, and the relationship between the earlier DSL exploration and the continuation in [AI systems design]({{< ref "ai/ai-system-design" >}}). The detailed reading guide follows below.
+Start with [the introduction and reading map]({{< ref "ai/design-research/00-introduction" >}}) for the purpose of the collection, its intended contribution to practice and understanding, and the relationship between the earlier DSL exploration and the continuation in [AI systems design]({{< ref "ai/design/ai-system-design" >}}). The detailed reading guide follows below.
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
 
@@ -52,7 +52,7 @@ The path is a reading order, not a required research sequence. The [original fra
 
 - [Original framing question]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}): the user prompt that began the problem-framing dialogue.
 - [Research direction]({{< ref "ai/design-research/00-overview/02-research-direction" >}}): the proposed investigation paper, its limits, and the later proposal for shared heterogeneous computation.
-- [Original index notes]({{< ref "ai/design-research/00-overview/03-original-index-notes" >}}): the short index from the former note set.
+- Original index notes: the short index from the former note set.
 - [Architectural framings]({{< ref "ai/design-research/00-overview/04-architectural-framings" >}}): possible ways to frame the collaborative-system application.
 - [Refined research question]({{< ref "ai/design-research/00-overview/05-refined-research-question" >}}): the later critique of architectural assumptions and the earlier participant-neutral environment question.
 - [Research scope and hierarchy]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}): the retained scope dialogue, the proposed general theory and builder method, the application tracks, and the development of the question.

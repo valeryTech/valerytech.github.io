@@ -11,13 +11,25 @@ services:
       - --bind=0.0.0.0
       - --baseURL=${PREVIEW_BASE_URL:-http://localhost:1313/}
     entrypoint: ["/usr/local/bin/dev-entrypoint"]
+    environment:
+      # Navigation checks use the Chromium baked into the image.
+      BROWSER_CHANNEL: chromium
+      # Keep uv's environment and Python bytecode out of the bind-mounted checkout.
+      UV_PROJECT_ENVIRONMENT: /opt/uv-venv
+      PYTHONDONTWRITEBYTECODE: "1"
+      # Hugo's cache defaults to a quarter of the VM's memory and the long-running preview grows past it.
+      HUGO_MEMORYLIMIT: "2"
     ports:
       - "1313:1313"
     volumes:
       - .:/workspace
+      # npm needs node_modules inside the project, so the host keeps an empty mount point.
       - valerytech-node-modules:/workspace/node_modules
+      - valerytech-uv-venv:/opt/uv-venv
     working_dir: /workspace
 
 volumes:
   valerytech-node-modules:
     name: valerytech-node-modules
+  valerytech-uv-venv:
+    name: valerytech-uv-venv

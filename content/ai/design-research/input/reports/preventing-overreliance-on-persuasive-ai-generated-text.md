@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Preventing Overreliance On Persuasive AI-Generated Text"
 description: "A research report examining overreliance on persuasive AI text, evidence on cognitive and behavioral harms, intervention strategies, and proposed interface safeguards."
-title: "Preventing Overreliance On Persuasive Ai Generated Text"
-linkTitle: "Preventing Overreliance On Persuasive Ai Generated Text"
+linkTitle: "Preventing Overreliance On Persuasive AI-Generated Text"
 ---
-# Preventing Overreliance on Persuasive AI-Generated Text
-
 
 > Export note: Source links were recovered from the original report's citation panels. Citation groups retain every source for which a URL could be identified; additional source IDs without an exposed URL are marked unresolved. The exact original groups are preserved in the [citation metadata](/ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text.assets/preventing-overreliance-on-persuasive-ai-generated-text-citations.json).
 
@@ -508,3 +506,8 @@ The core empirical references behind the design are Kim et al. 2025 on explanati
 [^39]: Unresolved additional source from the original report (reference ID: `turn17search12`). Its URL was not exposed in the citation panel.
 
 [^40]: Unresolved additional source from the original report (reference ID: `turn16search4`). Its URL was not exposed in the citation panel.
+
+## Library sources
+
+
+- [Kahneman 2011](/sources/thinking-and-learning/learning/kahneman-2011-thinking-fast-and-slow.pdf.enc), *Thinking, Fast and Slow*

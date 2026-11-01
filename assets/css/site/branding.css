@@ -29,7 +29,7 @@
 }
 
 .site-brand-link:focus-visible {
-  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline: var(--site-focus-width) solid var(--site-accent);
   outline-offset: calc(-1 * var(--site-focus-width));
 }
 
@@ -53,5 +53,6 @@
 }
 
 .site-brand-secondary {
-  color: var(--site-link-color);
+  /* The mark keeps the base blue in both profiles, matching the favicon. */
+  color: var(--site-fill-tint);
 }

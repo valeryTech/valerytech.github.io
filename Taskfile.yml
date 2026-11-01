@@ -1,0 +1,159 @@
+version: "3"
+
+# Every task runs its tools in the `site` container; the host runs only Docker, git and Task.
+vars:
+  RUN: docker compose run --rm site
+  EXEC: docker compose exec site
+
+tasks:
+  default:
+    desc: Show the task catalog
+    cmds:
+      - task: help
+
+  help:
+    desc: Show the task catalog
+    cmds:
+      - task --list
+
+  repo:init:
+    desc: Check out the theme, build the toolchain image and link agent docs
+    cmds:
+      - git submodule update --init --recursive
+      - task: docker:build
+      - task: repo:agent-docs
+      - task: repo:doctor
+
+  repo:doctor:
+    desc: Check host prerequisites and report host installs (pass -- --fix to remove them)
+    cmds:
+      - bash scripts/check-host.sh {{.CLI_ARGS}}
+
+  repo:agent-docs:
+    desc: Link the shared ~/agent-docs directory into this repository
+    cmds:
+      - |
+        if [ -e agent-docs ] || [ -L agent-docs ]; then
+          echo "Keeping existing agent-docs entry."
+        elif [ -d "$HOME/agent-docs" ]; then
+          ln -s "$HOME/agent-docs" agent-docs
+        else
+          echo "No shared ~/agent-docs directory. Skipping link."
+        fi
+
+  repo:clean:
+    desc: Remove generated site output, agent maps and Hugo caches
+    cmds:
+      - bash scripts/clean-generated.sh
+
+  docker:build:
+    desc: Rebuild the toolchain image after changing .infra/ or .devcontainer/
+    cmds:
+      - docker compose build site
+
+  docker:shell:
+    desc: Open a shell in a fresh toolchain container
+    interactive: true
+    cmds:
+      - "{{.RUN}} bash"
+
+  docker:run:
+    desc: Run a command in a fresh toolchain container (task docker:run -- npm outdated)
+    interactive: true
+    cmds:
+      - "{{.RUN}} {{.CLI_ARGS}}"
+
+  docker:reset:
+    desc: Stop the preview and delete the npm and uv volumes; the next run reinstalls them
+    prompt: Delete the valerytech-node-modules and valerytech-uv-venv volumes?
+    cmds:
+      - docker compose down --volumes
+
+  site:up:
+    desc: Import notes and refresh maps, then serve the preview at http://localhost:1313
+    cmds:
+      - task: content:migrate
+      - docker compose up site
+
+  site:down:
+    desc: Stop the preview
+    cmds:
+      - docker compose down
+
+  site:build:
+    desc: Run the production build and its output checks
+    cmds:
+      - bash scripts/build-site.sh
+
+  site:verify:
+    desc: Build, then check the 404 page, core routes and agent maps in the preview
+    cmds:
+      - bash scripts/verify-site.sh
+
+  site:maps:
+    desc: Assemble Markdown sources for the HTML agent maps
+    cmds:
+      - "{{.RUN}} npm run maps"
+
+  site:maps:check:
+    desc: Check all agent maps without rewriting them
+    cmds:
+      - "{{.RUN}} npm run maps -- --check"
+
+  site:hugo-version:
+    desc: Print the container's Hugo version
+    cmds:
+      - "{{.RUN}} hugo version"
+
+  content:migrate:
+    desc: Regenerate managed content from the external notes (SOURCE_NOTES, MIGRATE_CONFIG)
+    cmds:
+      - bash scripts/migrate-site.sh sync
+
+  content:migrate:check:
+    desc: Validate migration mappings and stage output without replacing content
+    cmds:
+      - bash scripts/migrate-site.sh check
+
+  content:pdfs:upload:
+    desc: Mirror content/sources/ to the R2 bucket before pushing (pass -- --dry-run to preview)
+    cmds:
+      - bash scripts/upload-pdfs.sh {{.CLI_ARGS}}
+
+  quality:fmt:
+    desc: Format the repository with Prettier
+    cmds:
+      - "{{.RUN}} npm run format"
+
+  quality:fmt:check:
+    desc: Check site CSS, UI scripts and UI data formatting, as CI does
+    cmds:
+      - "{{.RUN}} sh -c 'npm run lint:styles && npm run lint:ui'"
+
+  quality:lint:
+    desc: Check editorial descriptions are 110-250 characters
+    cmds:
+      - "{{.RUN}} npm run lint"
+
+  quality:test:
+    desc: Run configuration, preference and analytics tests
+    cmds:
+      - "{{.RUN}} sh -c 'npm run check:config && npm run test:ui && npm run test:analytics'"
+
+  quality:test:navigation:
+    desc: Run browser navigation checks in the running preview (start it with task site:up)
+    cmds:
+      - "{{.EXEC}} npm run test:navigation"
+
+  quality:test:migrate:
+    desc: Run the migration pipeline unit tests
+    cmds:
+      - "{{.RUN}} uv run --frozen python -m unittest discover -s tests/migrate"
+
+  quality:verify:
+    desc: Run the read-only checks that need no preview
+    cmds:
+      - task: quality:fmt:check
+      - task: quality:test
+      - task: quality:test:migrate
+      - task: quality:lint

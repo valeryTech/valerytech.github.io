@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "11 Human-AI Collaboration Evaluation Comments"
 description: "A critique distinguishing task completion, learning, decision quality, and complementarity in collaboration studies, with matched baselines, realistic error/control cases, behavioral interruption checks, and explicit recovery limits."
-title: "11 Human Ai Collaboration Evaluation Comments"
-linkTitle: "11 Human Ai Collaboration Evaluation Comments"
+linkTitle: "11 Human-AI Collaboration Evaluation Comments"
 ---
 # Human-AI collaboration evaluation: comments
 

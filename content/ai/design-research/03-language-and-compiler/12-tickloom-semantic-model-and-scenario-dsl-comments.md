@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "12 Tickloom Semantic Model And Scenario DSL Comments"
 description: "Critiques Tickloom reliability claims by separating valid declarations, faithful test scenarios, deterministic executions, protocol correctness, and coverage of possible distributed-system interleavings."
-title: "12 Tickloom Semantic Model And Scenario Dsl Comments"
-linkTitle: "12 Tickloom Semantic Model And Scenario Dsl Comments"
+linkTitle: "12 Tickloom Semantic Model And Scenario DSL Comments"
 ---
 # Comments on the Tickloom case study
 

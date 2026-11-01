@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "02 LLM-Operated Investigation Runtime"
 description: "Proposes LLM-authored investigations over a small typed algebra, separating logical evidence operations from physical retrieval and reusing existing durable runtimes while testing contract semantics."
-title: "02 Llm Operated Investigation Runtime"
-linkTitle: "02 Llm Operated Investigation Runtime"
+linkTitle: "02 LLM-Operated Investigation Runtime"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.
@@ -114,7 +114,7 @@ Edges
 ```
 
 
-Nodes transform state; edges determine subsequent computation. It supports cycles, dynamic workers, shared state, persistence, human intervention and multi-agent workflows. ([Docs by LangChain](https://docs.langchain.com/oss/javascript/langgraph/graph-api?utm_source=chatgpt.com "Graph API overview - Docs by LangChain"))
+Nodes transform state; edges determine subsequent computation. It supports cycles, dynamic workers, shared state, persistence, human intervention and multi-agent workflows. ([Docs by LangChain](https://docs.langchain.com/oss/javascript/langgraph/graph-api "Graph API overview - Docs by LangChain"))
 
 That's close to the proposed runtime layer:
 

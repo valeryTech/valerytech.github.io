@@ -1,6 +1,9 @@
 /* Header controls and visibility; responsive column fitting lives in layout.css. */
 .hextra-nav-container {
   background: var(--site-page-background);
+  /* Hextra's reduced-motion rule gives every property a 0.01ms transition; visibility would
+     then switch a frame late, and focus could not move into the restored bar. */
+  transition-property: none;
 }
 
 .hextra-nav-container::after {
@@ -19,6 +22,50 @@
 }
 
 :root[data-header-visible="false"] .hextra-nav-container {
+  /* Collapse the bar but keep its tools reachable as a floating column. */
+  position: fixed;
+  visibility: hidden;
+}
+
+:root[data-header-visible="false"] .site-header-tools {
+  --site-tools-float-offset: 0px;
+  position: fixed;
+  inset-inline-end: max(var(--site-layout-gap), env(safe-area-inset-right));
+  inset-block-end: calc(
+    max(var(--site-layout-gap), env(safe-area-inset-bottom)) + var(--site-tools-float-offset)
+  );
+  flex-direction: column;
+  inline-size: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  visibility: visible;
+}
+
+:root[data-header-visible="false"]:has([data-header-toggle-home]:not([hidden])) .site-header-tools {
+  /* Stack above the floating "Show top bar" button. */
+  --site-tools-float-offset: calc(var(--site-control-height) + var(--site-layout-gap));
+}
+
+:root[data-header-visible="false"] .site-header-preferences {
+  flex-direction: column;
+}
+
+:root[data-header-visible="false"]
+  :is(.site-header-tools > button, .site-header-preferences .site-header-icon-button) {
+  flex: none;
+  justify-content: center;
+  inline-size: var(--site-control-height);
+  block-size: var(--site-control-height);
+  min-block-size: var(--site-control-height);
+  padding: 0;
+  background: var(--site-control-background);
+  box-shadow: var(--site-floating-shadow);
+}
+
+:root[data-header-visible="false"]
+  .hextra-search-trigger
+  :is(.hextra-search-trigger-label, .hextra-search-trigger-kbd) {
   display: none;
 }
 
@@ -27,17 +74,17 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  inline-size: var(--site-space-8);
-  block-size: var(--site-space-8);
+  inline-size: var(--site-round-control-size);
+  block-size: var(--site-round-control-size);
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: var(--site-context-surface);
+  background: transparent;
   color: var(--site-control-foreground);
   cursor: pointer;
 }
 
-.site-header-toggle:hover {
+.site-header-toggle-fallback > .site-header-toggle:hover {
   background: var(--site-card-hover);
 }
 
@@ -51,6 +98,7 @@
 }
 
 .site-toc-title:has(> .site-header-toggle) {
+  --site-surface-inset-end: var(--site-round-control-inset);
   grid-template-columns: var(--site-surface-leading-size) minmax(0, 1fr) auto;
 }
 
@@ -123,7 +171,16 @@
 }
 
 .site-header-tools > .hextra-hamburger-menu {
+  /* The menu closes the row at the right edge, after search. */
+  order: 1;
   align-items: center;
+  background: var(--site-context-header);
+  color: var(--site-nav-context-foreground);
+}
+
+.site-header-tools > .hextra-hamburger-menu:hover {
+  background: var(--site-card-hover);
+  color: var(--site-accent);
 }
 
 .site-header-preferences {

@@ -1,12 +1,16 @@
 ---
 draft: false
 toc: true
+title: "Architectural Characteristics"
 description: "Compare operational, structural, cloud, and cross-cutting quality characteristics when discussing architectural requirements and trade-offs."
-title: "Characteristics"
 linkTitle: "Architectural Characteristics"
 ---
 # Architectural Characteristics (Partially) Listed
 
+
+Source: [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*.
+
+In the system design notes, these characteristics are the forces on each design question. Operation-specific reasoning about them lives in [non-functional requirements]({{< ref "system-design/nfr" >}}).
 
 Architectural characteristics exist along a broad spectrum of complexity, ranging from low-level code characteristics (such as modularity) to sophisticated operational concerns (such as scalability and elasticity). There is no true universal standard, though people have attempted to codify one. Instead, each organization interprets these terms for itself. Additionally, because the software ecosystem changes so fast, new concepts, terms, measures, and verifications are constantly appearing, providing new opportunities to define architectural characteristics.
 

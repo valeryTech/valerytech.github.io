@@ -1,4 +1,24 @@
+import { initDisclosures } from "./disclosures.mjs";
 import { headingId, outlineParents } from "./hierarchy.mjs";
+
+// The page outline's disclosures share one state per page with its popover copy
+// and apply before the first paint. A deep-linked heading's branches open on arrival.
+export function initOutlineDisclosures(storageKey) {
+  const outlines = [...document.querySelectorAll(".site-page-outline")];
+  const target = location.hash;
+  initDisclosures({
+    toggles: outlines.flatMap((outline) => [
+      ...outline.querySelectorAll(".site-outline-branch-toggle"),
+    ]),
+    bulkButtons: [...document.querySelectorAll("[data-outline-bulk]")],
+    storageKey: `${storageKey}:${location.pathname}`,
+    keepOpen: (toggle) =>
+      Boolean(target) &&
+      [...document.getElementById(toggle.getAttribute("aria-controls")).querySelectorAll("a")].some(
+        (link) => link.hash === target,
+      ),
+  });
+}
 
 // Replace Hextra's single-heading observer with the site's reading-position
 // behavior. All outline levels share one active section and its ancestor path.
@@ -22,6 +42,9 @@ export function initOutline(config) {
   let scheduled = false;
 
   function keepVisible(link) {
+    // A collapsed branch keeps its nearest visible heading in view instead.
+    link = [link, ...outlineParents(link).reverse()].find((item) => item.getClientRects().length);
+    if (!link) return;
     const panel = link.closest(".site-toc-scroll");
     if (!panel || !panel.getClientRects().length) return;
     const bounds = panel.getBoundingClientRect();

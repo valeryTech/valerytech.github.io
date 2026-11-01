@@ -1,0 +1,31 @@
+{{- /* Header directions plus the top-level collections the menu leaves out; the longest
+  matching prefix across both lists selects one. */ -}}
+{{- $current := strings.TrimSuffix "/" .RelPermalink -}}
+{{- $entries := slice -}}
+{{- $paths := slice -}}
+{{- range site.Menus.main -}}
+  {{- if in (slice "search" "theme-toggle") .Params.type }}{{ continue }}{{ end -}}
+  {{- $href := .URL -}}
+  {{- with .PageRef }}{{ $href = relLangURL (strings.TrimPrefix "/" .) }}{{ end -}}
+  {{- $path := strings.TrimSuffix "/" $href -}}
+  {{- $entries = $entries | append (dict "item" . "href" $href "path" $path "external" (strings.HasPrefix $href "http")) -}}
+  {{- $paths = $paths | append $path -}}
+{{- end -}}
+{{- /* Reuse the breadcrumb's top-level order so both lists stay identical. */ -}}
+{{- $more := slice -}}
+{{- range partialCached "navigation/child-groups.html" (dict "nodes" site.Home.Sections) "breadcrumb-root-sections" site.Home.RelPermalink -}}
+  {{- if ne .key "sections" }}{{ continue }}{{ end -}}
+  {{- range .nodes -}}
+    {{- $path := strings.TrimSuffix "/" .Page.RelPermalink -}}
+    {{- if not (in $paths $path) }}{{ $more = $more | append (dict "node" . "href" .Page.RelPermalink "path" $path) }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $selected := "" -}}
+{{- range $entries | append $more -}}
+  {{- if and .path (not .external) (or (eq $current .path) (strings.HasPrefix $current (printf "%s/" .path))) -}}
+    {{- if gt (len .path) (len $selected) }}{{ $selected = .path }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $moreSelected := false -}}
+{{- range $more }}{{ if eq .path $selected }}{{ $moreSelected = true }}{{ end }}{{ end -}}
+{{- return dict "current" $current "entries" $entries "more" $more "selected" $selected "moreSelected" $moreSelected -}}

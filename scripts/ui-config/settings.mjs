@@ -4,9 +4,30 @@ export function validateSettingsConfig(ui) {
   const settings = ui.settings;
   const text = (value, label) =>
     assert.ok(typeof value === "string" && value.trim(), `${label} must be nonempty text`);
-  for (const key of ["title", "description", "previewHeading", "previewText", "resetLabel"])
+  for (const key of [
+    "title",
+    "description",
+    "previewHeading",
+    "previewText",
+    "resetLabel",
+    "exportLabel",
+    "importLabel",
+    "exportFileName",
+    "transferHelp",
+  ])
     text(settings[key], `settings ${key}`);
-  for (const key of ["requiresJavaScript", "ready", "saved", "saveFailed", "reset", "resetFailed"])
+  for (const key of [
+    "requiresJavaScript",
+    "ready",
+    "saved",
+    "saveFailed",
+    "reset",
+    "resetFailed",
+    "exported",
+    "imported",
+    "importSaveFailed",
+    "importFailed",
+  ])
     text(settings.messages?.[key], `settings message ${key}`);
   assert.ok(Array.isArray(settings.sections) && settings.sections.length, "settings need sections");
   const ids = new Set();
@@ -33,6 +54,11 @@ export function validateSettingsConfig(ui) {
       keys.add(field.key);
       text(field.label, "settings field label");
       if (field.help !== undefined) text(field.help, "settings field help");
+      if (field.key === "palette") {
+        assert.equal(field.type, "palette", "the palette setting opens the palette editor");
+        assert.equal(field.source, undefined, "the palette setting uses ui.palette");
+        continue;
+      }
       if (["widths.sidebar", "widths.outline"].includes(field.key)) {
         assert.equal(field.type, "range", "pane settings must use range controls");
         assert.equal(

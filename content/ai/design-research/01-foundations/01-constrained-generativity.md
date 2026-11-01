@@ -77,7 +77,7 @@ And that can make the space of useful systems built above it much larger.
 ### DDIA is exactly one instance
 
 
-Kleppmann describes distributed algorithms as taking unreliable communication and building stronger guarantees on top of it. ([Martin Kleppmann's Website](https://martin.kleppmann.com/2022/10/12/verifying-distributed-systems-isabelle.html?utm_source=chatgpt.com "Verifying distributed systems with Isabelle/HOL -- Martin Kleppmann's blog")) TCP is the canonical concrete example: IP datagrams are the underlying mechanism, while TCP presents applications with a reliable, ordered byte stream. ([IETF](https://www.ietf.org/rfc/rfc9293.pdf?utm_source=chatgpt.com "RFC 9293: Transmission Control Protocol (TCP)"))
+Kleppmann describes distributed algorithms as taking unreliable communication and building stronger guarantees on top of it. ([Martin Kleppmann's Website](https://martin.kleppmann.com/2022/10/12/verifying-distributed-systems-isabelle.html "Verifying distributed systems with Isabelle/HOL -- Martin Kleppmann's blog")) TCP is the canonical concrete example: IP datagrams are the underlying mechanism, while TCP presents applications with a reliable, ordered byte stream. ([IETF](https://www.ietf.org/rfc/rfc9293.pdf "RFC 9293: Transmission Control Protocol (TCP)"))
 
 So the transformation is approximately:
 
@@ -120,7 +120,7 @@ The proposal is to call that part **semantic strengthening** or **guarantee ampl
 
 Dijkstra's argument wasn't basically "goto syntax is ugly."
 
-He argued that rigid sequencing disciplines were needed so we could make statements about program execution from the structure of the program. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD268.html?utm_source=chatgpt.com "E.W. Dijkstra Archive: Structured programming (EWD268)")) His broader concern was finding the subclass of programs that are intellectually manageable and whose correctness can be established compositionally. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD288.html?utm_source=chatgpt.com "E.W.Dijkstra Archive: Concern for Correctness as a Guiding Principle for Program Composition. (EWD 288)"))
+He argued that rigid sequencing disciplines were needed so we could make statements about program execution from the structure of the program. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD268.html "E.W. Dijkstra Archive: Structured programming (EWD268)")) His broader concern was finding the subclass of programs that are intellectually manageable and whose correctness can be established compositionally. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD288.html "E.W.Dijkstra Archive: Concern for Correctness as a Guiding Principle for Program Composition. (EWD 288)"))
 
 Consider:
 
@@ -159,7 +159,7 @@ function {
 
 becomes a meaningful boundary.
 
-Nathaniel Smith makes exactly this connection in his structured-concurrency analysis: unrestricted spawning breaks the ability to treat functions as black boxes with respect to control flow; structured concurrency restricts task lifetimes and restores local reasoning, resource cleanup and error propagation. ([Vorpus](https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/?utm_source=chatgpt.com "Notes on structured concurrency, or: Go statement considered harmful -- njs blog"))
+Nathaniel Smith makes exactly this connection in his structured-concurrency analysis: unrestricted spawning breaks the ability to treat functions as black boxes with respect to control flow; structured concurrency restricts task lifetimes and restores local reasoning, resource cleanup and error propagation. ([Vorpus](https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/ "Notes on structured concurrency, or: Go statement considered harmful -- njs blog"))
 
 This is a very important formulation for this research direction:
 
@@ -197,7 +197,7 @@ You have removed a large class of programs you could have written.
 
 But you've gained substitution, caching, parallel evaluation, deterministic replay, easier testing, and algebraic reasoning.
 
-Backus's 1978 Turing lecture is especially relevant here. His goal was to replace a very permissive state-transition style with combining forms possessing useful algebraic laws, specifically so that high-level programs could be composed into still higher-level programs and reasoned about mathematically. ([IBM Research](https://research.ibm.com/publications/can-programming-be-liberated-from-the-von-neumann-style-a-functional-style-and-its-algebra-of-programs?utm_source=chatgpt.com "Can Programming Be Liberated from the von Neumann Style? A Functional Style and Its Algebra of Programs for CACM - IBM Research"))
+Backus's 1978 Turing lecture is especially relevant here. His goal was to replace a very permissive state-transition style with combining forms possessing useful algebraic laws, specifically so that high-level programs could be composed into still higher-level programs and reasoned about mathematically. ([IBM Research](https://research.ibm.com/publications/can-programming-be-liberated-from-the-von-neumann-style-a-functional-style-and-its-algebra-of-programs "Can Programming Be Liberated from the von Neumann Style? A Functional Style and Its Algebra of Programs for CACM - IBM Research"))
 
 His argument is surprisingly close to the proposed principle:
 
@@ -225,7 +225,7 @@ stdin → program → stdout
 
 and programs that don't care who produced their input or who consumes their output.
 
-McIlroy's original principle explicitly says to expect a program's output to become the input of another, **as yet unknown**, program. ([Textbook of Linux](https://www.textbookoflinux.com/references/mcilroy1978.html?utm_source=chatgpt.com "M. Douglas McIlroy, Elliot N. Pinson, & Berkley A. Tague (1978) -- References -- Textbook of Linux")) Kleppmann points out that the shell performs the wiring, leaving individual tools loosely coupled and ignorant of their neighbors. ([Martin Kleppmann's Website](https://martin.kleppmann.com/2015/08/05/kafka-samza-unix-philosophy-distributed-data.html?utm_source=chatgpt.com "Kafka, Samza, and the Unix philosophy of distributed data -- Martin Kleppmann's blog"))
+McIlroy's original principle explicitly says to expect a program's output to become the input of another, **as yet unknown**, program. ([Textbook of Linux](https://www.textbookoflinux.com/references/mcilroy1978.html "M. Douglas McIlroy, Elliot N. Pinson, & Berkley A. Tague (1978) -- References -- Textbook of Linux")) Kleppmann points out that the shell performs the wiring, leaving individual tools loosely coupled and ignorant of their neighbors. ([Martin Kleppmann's Website](https://martin.kleppmann.com/2015/08/05/kafka-samza-unix-philosophy-distributed-data.html "Kafka, Samza, and the Unix philosophy of distributed data -- Martin Kleppmann's blog"))
 
 This gives us something beyond constraint:
 
@@ -267,7 +267,7 @@ The boundary is designed so that unknown `X`s can participate.
 ### Relational databases may be an even better analogy
 
 
-Codd's relational model deliberately protects users from physical representation; applications should continue working when storage representations and access paths change. ([DOI](https://doi.org/10.1145/362384.362685?utm_source=chatgpt.com "A relational model of data for large shared data banks | Communications of the ACM"))
+Codd's relational model deliberately protects users from physical representation; applications should continue working when storage representations and access paths change. ([DOI](https://doi.org/10.1145/362384.362685 "A relational model of data for large shared data banks | Communications of the ACM"))
 
 A declarative query gives up the ability to prescribe:
 
@@ -286,7 +286,7 @@ I want this relation.
 ```
 
 
-That restriction buys the database the freedom to choose a physical execution plan. Modern query optimizers can choose among physically different plans that have the same logical semantics. ([Springer](https://link.springer.com/article/10.1007/s00778-021-00676-3?utm_source=chatgpt.com "Data dependencies for query optimization: a survey | The VLDB Journal | Springer Nature Link"))
+That restriction buys the database the freedom to choose a physical execution plan. Modern query optimizers can choose among physically different plans that have the same logical semantics. ([Springer](https://link.springer.com/article/10.1007/s00778-021-00676-3 "Data dependencies for query optimization: a survey | The VLDB Journal | Springer Nature Link"))
 
 So:
 
@@ -330,7 +330,7 @@ Tim Berners-Lee's **Principle of Least Power** is very relevant:
 
 > choose the least powerful language suitable for the task.
 
-The W3C's argument is that unrestricted expressive power can make information harder to analyze, reuse and transform; deliberately weaker languages expose more structure to other machinery. ([W3C](https://www.w3.org/2001/tag/doc/leastPower-2006-01-23.html?utm_source=chatgpt.com "The Principle of Least Power"))
+The W3C's argument is that unrestricted expressive power can make information harder to analyze, reuse and transform; deliberately weaker languages expose more structure to other machinery. ([W3C](https://www.w3.org/2001/tag/doc/leastPower-2006-01-23.html "The Principle of Least Power"))
 
 That's one axis of the proposed principle.
 
@@ -438,7 +438,7 @@ The constraints make it possible to say:
 
 > **I can reason about this component using its boundary contract and the relevant local state.**
 
-Dijkstra explicitly connects structure and abstraction to keeping the required amount of reasoning manageable. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD288.html?utm_source=chatgpt.com "E.W.Dijkstra Archive: Concern for Correctness as a Guiding Principle for Program Composition. (EWD 288)"))
+Dijkstra explicitly connects structure and abstraction to keeping the required amount of reasoning manageable. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD288.html "E.W.Dijkstra Archive: Concern for Correctness as a Guiding Principle for Program Composition. (EWD 288)"))
 
 That's probably more fundamental than "simplicity."
 
@@ -447,7 +447,7 @@ That's probably more fundamental than "simplicity."
 
 There is an adjacent literature that actually uses **generativity** for systems designed so that people can create unanticipated extensions.
 
-Zittrain defines generativity as a system's capacity for unanticipated change through contributions from varied participants. ([Yupnet](https://yupnet.org/zittrain/2008/03/01/chapter-4-the-generative-pattern/?utm_source=chatgpt.com "The Future of the Internet--And How to Stop It » Chapter 4: The Generative Pattern")) A systematic review of generative architectures describes them as being **designed for incompleteness**, with the whole system not knowable in advance; stable rules and boundary resources coexist with decentralized extension. ([Wiley Online Library](https://onlinelibrary.wiley.com/doi/full/10.1111/ijmr.12277?utm_source=chatgpt.com "Generativity: A systematic review and conceptual framework - Thomas - 2022 - International Journal of Management Reviews - Wiley Online Library"))
+Zittrain defines generativity as a system's capacity for unanticipated change through contributions from varied participants. ([Yupnet](https://yupnet.org/zittrain/2008/03/01/chapter-4-the-generative-pattern/ "The Future of the Internet--And How to Stop It » Chapter 4: The Generative Pattern")) A systematic review of generative architectures describes them as being **designed for incompleteness**, with the whole system not knowable in advance; stable rules and boundary resources coexist with decentralized extension. ([Wiley Online Library](https://onlinelibrary.wiley.com/doi/full/10.1111/ijmr.12277 "Generativity: A systematic review and conceptual framework - Thomas - 2022 - International Journal of Management Reviews - Wiley Online Library"))
 
 That gets quite close to your "we don't know what we don't know."
 
@@ -515,7 +515,7 @@ The core idea is:
 
 There are several established concepts underneath this.
 
-In formal methods, the closest concept is **refinement**. A specification can be viewed as a set of allowed behaviors. A stronger specification allows fewer behaviors. An implementation refines a specification when its observable behaviors fall within the behaviors permitted by that specification. This gives you a precise version of "constraints -> guarantees." ([eCommons](https://ecommons.cornell.edu/bitstreams/f2c57ea0-1b95-4b32-9a68-48ae2ee83c3d/download?utm_source=chatgpt.com "QUANTIFICATION AND FORMALIZATION OF"))
+In formal methods, the closest concept is **refinement**. A specification can be viewed as a set of allowed behaviors. A stronger specification allows fewer behaviors. An implementation refines a specification when its observable behaviors fall within the behaviors permitted by that specification. This gives you a precise version of "constraints -> guarantees." ([eCommons](https://ecommons.cornell.edu/bitstreams/f2c57ea0-1b95-4b32-9a68-48ae2ee83c3d/download "QUANTIFICATION AND FORMALIZATION OF"))
 
 So, schematically:
 
@@ -551,13 +551,13 @@ applications can ignore many lower-level failure modes
 
 The lower layer has many possible behaviors: dropped packets, crashes, reorderings, duplicate delivery, etc. The abstraction layer hides or eliminates some of those observable behaviors and exposes a stronger contract.
 
-With Unix, the restriction is mostly at the **interface**. A tool agrees to communicate through a small, uniform interface such as `stdin`/`stdout`. That gives an individual program fewer ways of interacting with its environment, but it gives the system far more opportunities for composition. Kleppmann explicitly identifies the uniform Unix interface as the reason arbitrary tools can be piped together. ([Martin Kleppmann's Website](https://martin.kleppmann.com/2015/08/05/kafka-samza-unix-philosophy-distributed-data.html?utm_source=chatgpt.com "Kafka, Samza, and the Unix philosophy of distributed data -- Martin Kleppmann's blog"))
+With Unix, the restriction is mostly at the **interface**. A tool agrees to communicate through a small, uniform interface such as `stdin`/`stdout`. That gives an individual program fewer ways of interacting with its environment, but it gives the system far more opportunities for composition. Kleppmann explicitly identifies the uniform Unix interface as the reason arbitrary tools can be piped together. ([Martin Kleppmann's Website](https://martin.kleppmann.com/2015/08/05/kafka-samza-unix-philosophy-distributed-data.html "Kafka, Samza, and the Unix philosophy of distributed data -- Martin Kleppmann's blog"))
 
 So there's a useful apparent paradox:
 
 > **Local expressive power is sacrificed to gain global compositional power.**
 
-That also describes structured programming. `goto` gives a programmer more possible control-flow graphs. Removing unrestricted `goto` reduces that space, making program execution easier to understand and reason about; that was central to Dijkstra's argument. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD215.html?utm_source=chatgpt.com "E.W. Dijkstra Archive: A Case against the GO TO Statement. (EWD215)"))
+That also describes structured programming. `goto` gives a programmer more possible control-flow graphs. Removing unrestricted `goto` reduces that space, making program execution easier to understand and reason about; that was central to Dijkstra's argument. ([UT Austin Computer Science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD215.html "E.W. Dijkstra Archive: A Case against the GO TO Statement. (EWD215)"))
 
 Immutability does the same thing to state:
 
@@ -574,7 +574,7 @@ far fewer possible interactions
 ```
 
 
-And declarative languages provide an especially clear example. SQL gives you less control over _how_ a query executes. Because you surrender that freedom, the database gains freedom to reorder joins, select indexes, parallelize execution, etc. This is closely related to the W3C's established **Rule of Least Power**: use the least powerful language sufficient for the job, because restricting expressiveness can make information easier to analyze and reuse. ([W3C](https://www.w3.org/2001/tag/doc/leastPower?utm_source=chatgpt.com "The Rule of Least Power"))
+And declarative languages provide an especially clear example. SQL gives you less control over _how_ a query executes. Because you surrender that freedom, the database gains freedom to reorder joins, select indexes, parallelize execution, etc. This is closely related to the W3C's established **Rule of Least Power**: use the least powerful language sufficient for the job, because restricting expressiveness can make information easier to analyze and reuse. ([W3C](https://www.w3.org/2001/tag/doc/leastPower "The Rule of Least Power"))
 
 The working interpretation is that the deepest formulation of the proposed principle is therefore:
 
@@ -598,3 +598,8 @@ That last chain is probably the closest technical formulation of the unresolved 
 
 
 The next user prompt and the LLM's scope analysis are now in [Research scope and hierarchy]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#analyse-problem). The dialogue proposes a general theory, a builder method, and a collaborative-system application. The original prompt, construction-rule argument, inverse design problem, and final proposed question remain together there.
+
+## Library sources
+
+
+- [Schnalke 2010](/sources/software-engineering/craft/schnalke-2010-why-unix-philosophy-still-matters.pdf.enc), *Why the Unix Philosophy still matters* -- on *Unix adds another piece: closure under composition*

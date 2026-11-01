@@ -157,7 +157,7 @@ updated environment
 ```
 
 
-Google's 2026 Generative UI work is a concrete demonstration. Their dynamically generated interactive interfaces were strongly preferred to normal LLM text output, although human-designed interfaces still performed best. ([Generative UI](https://generativeui.github.io/static/pdfs/paper.pdf?utm_source=chatgpt.com "Generative UI: LLMs are Effective UI Generators"))
+Google's 2026 Generative UI work is a concrete demonstration. Their dynamically generated interactive interfaces were strongly preferred to normal LLM text output, although human-designed interfaces still performed best. ([Generative UI](https://generativeui.github.io/static/pdfs/paper.pdf "Generative UI: LLMs are Effective UI Generators"))
 
 There is an important distinction here, though.
 
@@ -180,7 +180,7 @@ LLM decides when and where to use it
 ```
 
 
-MCP Apps now implements the second model: tools can expose interactive forms, dashboards, visualizations and workflows that render inside an AI host, with the UI sandboxed from the containing application. ([Model Context Protocol](https://modelcontextprotocol.io/extensions/apps/overview?utm_source=chatgpt.com "MCP Apps - Model Context Protocol"))
+MCP Apps now implements the second model: tools can expose interactive forms, dashboards, visualizations and workflows that render inside an AI host, with the UI sandboxed from the containing application. ([Model Context Protocol](https://modelcontextprotocol.io/extensions/apps/overview "MCP Apps - Model Context Protocol"))
 
 The LLM hypothesis is that a mature architecture combines them.
 

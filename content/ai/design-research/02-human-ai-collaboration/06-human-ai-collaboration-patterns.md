@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "06 Human-AI Collaboration Patterns"
 description: "Derives and compares elicitation, delegation, proposal/review, coaching, shared reasoning, and joint construction, with practitioner examples, failure modes, and responsibility-based guidance for changing modes."
-title: "06 Human Ai Collaboration Patterns"
-linkTitle: "06 Human Ai Collaboration Patterns"
+linkTitle: "06 Human-AI Collaboration Patterns"
 ---
 # Human-AI collaboration patterns
 
@@ -14,7 +14,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The retained LLM passages distinguish collaboration mechanics from interaction patterns. They preserve the shared reasoning loop, the complete Teresa-attributed discussion, and the later responsibility-based derivation. The sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments" >}}) explain the changing lists and their limits.
 
-The [collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains the opening source and general mechanics. [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) discusses understanding as an outcome. The [source redirect]({{< ref "ai/collab-and-joint-work/collab-transfer" >}}) links both parts.
+The [collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains the opening source and general mechanics. [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) discusses understanding as an outcome. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/collab-transfer" >}}) links both parts.
 
 <a id="retained-dialogue"></a>
 

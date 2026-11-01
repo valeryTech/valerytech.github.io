@@ -218,12 +218,12 @@ Six approaches are especially relevant to the proposed design.
 
 | Candidate | Typing | Composability | Runtime model | Learning / adaptation | Tooling maturity | Example |
 |---|---|---|---|---|---|---|
-| **ETAS** | **Very strong:** value types, effect rows, typed traces, policies/specs | **Very high:** effects + handlers + flows | Custom Rust compiler/interpreter | Low today; optimisation representation is future work | Early research prototype | [repo](https://github.com/etas-project/etas), [paper PDF](https://arxiv.org/pdf/2607.17780) |
-| **Shepherd** | Strong typed task I/O and typed effect events | **Very high:** agents/executions treated as first-class functional objects | Python runtime + reversible process/filesystem trace | **High:** supervision, counterfactual optimisation, Tree-RL | Research prototype, substantial implementation | [repo](https://github.com/shepherd-agents/shepherd), [experiments](https://github.com/shepherd-agents/shepherd-experiments), [PDF](https://arxiv.org/pdf/2605.10913) |
-| **Lacuna** | **Very strong host-language checking** around `agent[T]` and available capabilities | High; ordinary Scala control flow and recursive holes | Compile generated Scala fragments before execution | Medium: compiler-feedback retries and recursive LLM calls | Early Scala research prototype | [repo](https://github.com/noti0na1/lacuna), [PDF](https://arxiv.org/pdf/2605.28617) |
+| **ETAS** | **Very strong:** value types, effect rows, typed traces, policies/specs | **Very high:** effects + handlers + flows | Custom Rust compiler/interpreter | Low today; optimisation representation is future work | Early research prototype | [repo](https://github.com/etas-project/etas), [paper PDF](https://arxiv.org/pdf/2607.17780) ([local PDF](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc)) |
+| **Shepherd** | Strong typed task I/O and typed effect events | **Very high:** agents/executions treated as first-class functional objects | Python runtime + reversible process/filesystem trace | **High:** supervision, counterfactual optimisation, Tree-RL | Research prototype, substantial implementation | [repo](https://github.com/shepherd-agents/shepherd), [experiments](https://github.com/shepherd-agents/shepherd-experiments), [PDF](https://arxiv.org/pdf/2605.10913) ([local PDF](/sources/ai-engineering/harness/yu-2026-shepherd-programmable-meta-agents.pdf.enc)) |
+| **Lacuna** | **Very strong host-language checking** around `agent[T]` and available capabilities | High; ordinary Scala control flow and recursive holes | Compile generated Scala fragments before execution | Medium: compiler-feedback retries and recursive LLM calls | Early Scala research prototype | [repo](https://github.com/noti0na1/lacuna), [PDF](https://arxiv.org/pdf/2605.28617) ([local PDF](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc)) |
 | **Pydantic AI / Graph** | Strong pragmatic Python typing + runtime schemas | High library-level composition | Python agent loop / typed graph; durable integrations available | Low as a harness optimiser | **High relative to research systems** | [repo](https://github.com/pydantic/pydantic-ai) |
-| **AgentSPEX** | Typed workflow steps, explicit workflow/state structure | High via workflows/submodules | Declarative YAML + execution harness | Low; workflows currently authored rather than evolved | Early, but includes visual authoring/inspection | [repo](https://github.com/ScaleML/AgentSPEX), [PDF](https://arxiv.org/pdf/2604.13346) |
-| **DSPy** | Declarative signatures; weaker static guarantees than ETAS/Lacuna | **Very high** module/program composition | Python program/compiler model | **Very high:** metric-driven optimisers | **High in the research ecosystem** | [repo](https://github.com/stanfordnlp/dspy), [PDF](https://arxiv.org/pdf/2310.03714) |
+| **AgentSPEX** | Typed workflow steps, explicit workflow/state structure | High via workflows/submodules | Declarative YAML + execution harness | Low; workflows currently authored rather than evolved | Early, but includes visual authoring/inspection | [repo](https://github.com/ScaleML/AgentSPEX), [PDF](https://arxiv.org/pdf/2604.13346) ([local PDF](/sources/ai-engineering/harness/wang-2026-agentspex-agent-specification-execution-language.pdf.enc)) |
+| **DSPy** | Declarative signatures; weaker static guarantees than ETAS/Lacuna | **Very high** module/program composition | Python program/compiler model | **Very high:** metric-driven optimisers | **High in the research ecosystem** | [repo](https://github.com/stanfordnlp/dspy), [PDF](https://arxiv.org/pdf/2310.03714) ([local PDF](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc)) |
 
 The entries above reflect different goals and therefore should not be read as one leaderboard. ETAS targets programming-language semantics and policy reasoning; Shepherd targets reversible higher-order agent execution; Lacuna targets safe model-generated code; Pydantic AI targets practical typed application development; AgentSPEX targets explicit portable workflow specification; DSPy targets optimisation of declarative LM programs. [^17]
 
@@ -266,7 +266,7 @@ The lesson for the new design is broader than Scala: **LLM-generated harness cha
 
 For multi-agent systems, **Plumbing** is a useful emerging experiment. Its `.plumb` programs specify components, typed messages and routes; the runtime constructs channels and checks values crossing component boundaries. The resulting coordination graph can itself be nested as a component. [^22]
 
-[Pact](https://arxiv.org/abs/2605.03143) takes a more formal multi-party direction: choreographic programming plus explicit agent choices/preferences, with protocols mapped to games so coordination strategies can be reasoned about. [^23]
+[Pact](https://arxiv.org/abs/2605.03143) ([PDF](/sources/ai-engineering/harness/gopinathan-2026-pact-choreographic-language-agentic-ecosystems.pdf.enc)) takes a more formal multi-party direction: choreographic programming plus explicit agent choices/preferences, with protocols mapped to games so coordination strategies can be reasoned about. [^23]
 
 These suggest that multi-agent coordination should have **typed channels/protocols at the harness level**, instead of relying solely on natural-language role prompts.
 
@@ -1020,7 +1020,7 @@ A positive result would establish something stronger than a new framework: it wo
 
 **OO-Harness**
 
-- Paper: [arXiv HTML](https://arxiv.org/html/2610.28380)
+- Paper: [arXiv HTML](https://arxiv.org/html/2610.28380) ([PDF](/sources/ai-engineering/harness/li-2026-object-oriented-harness.pdf.enc))
 - PDF: [arXiv PDF](https://arxiv.org/pdf/2610.28380) [^1]
 
 **ETAS -- An Effect-Typed Language for Agent Systems**
@@ -1069,9 +1069,9 @@ A positive result would establish something stronger than a new framework: it wo
 **Foundations for algebraic effects**
 
 - Plotkin & Pretnar, *Handlers of Algebraic Effects*: [PDF](https://homepages.inf.ed.ac.uk/gdp/publications/Effect_Handlers.pdf) [^42]
-- Plotkin & Pretnar, *Handling Algebraic Effects*: [PDF](https://homepages.inf.ed.ac.uk/gdp/publications/handling-algebraic-effects.pdf) [^43]
-- Bauer & Pretnar, *Programming with Algebraic Effects and Handlers*: [PDF](https://arxiv.org/pdf/1203.1539) [^44]
-- Bauer & Pretnar, *An Effect System for Algebraic Effects and Handlers*: [arXiv](https://arxiv.org/abs/1306.6316) [^45]
+- Plotkin & Pretnar, *Handling Algebraic Effects* ([local PDF](/sources/ai-engineering/harness/plotkin-2013-handling-algebraic-effects.pdf.enc)): [PDF](https://homepages.inf.ed.ac.uk/gdp/publications/handling-algebraic-effects.pdf) [^43]
+- Bauer & Pretnar, *Programming with Algebraic Effects and Handlers*: [PDF](https://arxiv.org/pdf/1203.1539) ([local PDF](/sources/ai-engineering/harness/bauer-2012-programming-with-algebraic-effects-handlers.pdf.enc)) [^44]
+- Bauer & Pretnar, *An Effect System for Algebraic Effects and Handlers*: [arXiv](https://arxiv.org/abs/1306.6316) ([PDF](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc)) [^45]
 - Koka, a practical language with algebraic data types and a polymorphic type-and-effect system: [official documentation](https://koka-lang.github.io/koka/doc/book.html) [^46]
 
 **Production functional-effect systems useful as implementation substrates**
@@ -1108,9 +1108,9 @@ The numbered references follow the citations and source links in the supplied PD
 
 [^11]: [ETAS: An Effect-Typed Language for Agent Systems](https://arxiv.org/pdf/2607.17780)
 
-[^12]: [Agentproof: Static Verification of Agent Workflow Graphs](https://arxiv.org/abs/2603.20356)
+[^12]: [Agentproof: Static Verification of Agent Workflow Graphs](https://arxiv.org/abs/2603.20356) ([PDF](/sources/ai-engineering/harness/xavier-2026-agentproof-static-verification-agent-workflows.pdf.enc))
 
-[^13]: [AgentFlow: Building Agent Dependency Graphs for Static ...](https://arxiv.org/html/2607.01640v1)
+[^13]: [AgentFlow: Building Agent Dependency Graphs for Static ...](https://arxiv.org/html/2607.01640v1) ([PDF](/sources/ai-engineering/harness/wang-2026-agentflow-agent-dependency-graphs.pdf.enc))
 
 [^14]: [Effect | Production Grade TypeScript](https://effect.website/)
 

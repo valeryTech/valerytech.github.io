@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Backward Design and Independent Verification"
 description: "Work backward from product outcomes to required behavior, then independently design verification around consequential failures and observable results."
-title: "Backward Design And Independent Verification"
 linkTitle: "Backward Design and Independent Verification"
 ---
 

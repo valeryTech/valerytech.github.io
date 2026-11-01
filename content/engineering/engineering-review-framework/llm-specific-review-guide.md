@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "LLM-Specific Review Guide"
 description: "Review AI-assisted changes for invented APIs, unsupported assumptions, unnecessary complexity, weak tests, and unverified execution claims."
-title: "Llm Specific Review Guide"
 linkTitle: "LLM-Specific Review Guide"
 ---
-# LLM-Specific Review Guide
-
 ## Purpose
 
 
@@ -78,8 +76,8 @@ External references checked on 2026-04-20. The concern list and application guid
 ## Related notes
 
 
-- [Project Understanding]({{< ref "ai-engineering/coding-agents/comprehension" >}}) -- why maintainers need to understand accepted changes even when an agent can generate and explain them.
-- [Idiosyncrasy in Agent-Ready Systems]({{< ref "ai-engineering/coding-agents/idiosyncrasy" >}}) -- recognizing hidden conventions and surprising structure that can mislead both humans and agents.
+- [Project Understanding]({{< ref "ai-engineering/agents/comprehension" >}}) -- why maintainers need to understand accepted changes even when an agent can generate and explain them.
+- [Idiosyncrasy in Agent-Ready Systems]({{< ref "ai-engineering/agents/idiosyncrasy" >}}) -- recognizing hidden conventions and surprising structure that can mislead both humans and agents.
 
 ## Related documents
 

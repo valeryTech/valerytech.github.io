@@ -66,7 +66,7 @@ Consider these questions:
 
 A general language model can handle such tasks, but the application ultimately needs a label, score, or probability. TypeSafe's design targets that narrower interface directly. Its documentation includes routing, citation checking, entity matching, and guardrail workflows. [TypeSafe](https://docs.typesafe.ai/llms.txt)
 
-The distinction is useful, but **structured output alone is not new**. General language models can already use constrained decoding to produce schema-valid outputs, including valid enum values. Jev's proposed advantage therefore depends on its speed, cost, decision quality, and probability estimates--not merely its ability to return valid JSON. [OpenAI](https://openai.com/index/introducing-structured-outputs-in-the-api/?utm_source=chatgpt.com)
+The distinction is useful, but **structured output alone is not new**. General language models can already use constrained decoding to produce schema-valid outputs, including valid enum values. Jev's proposed advantage therefore depends on its speed, cost, decision quality, and probability estimates--not merely its ability to return valid JSON. [OpenAI](https://openai.com/index/introducing-structured-outputs-in-the-api/)
 
 ### Generating a sequence can be unnecessary work
 
@@ -106,7 +106,7 @@ A conceptual formulation is:
 
 Here, \(x\) is the supplied context, \(q\) is the question, and \(A\) is the allowed answer set.
 
-This is a classification problem with the task definition supplied as part of the input. Earlier zero-shot classifiers already used natural-language descriptions to support changing labels; GLiClass, for example, performs classification over supplied labels without generating an answer sentence. [arXiv](https://arxiv.org/abs/2508.07662?utm_source=chatgpt.com)
+This is a classification problem with the task definition supplied as part of the input. Earlier zero-shot classifiers already used natural-language descriptions to support changing labels; GLiClass, for example, performs classification over supplied labels without generating an answer sentence. [arXiv](https://arxiv.org/abs/2508.07662)
 
 An open implementation shows how this can work mechanically. **Kev**, a Jev-inspired model family, adds a small decision head to a pretrained Qwen model. The head scores candidate answers and produces a distribution. This is a documented implementation of the general idea, not proof of Jev's proprietary architecture. [GitHub](https://github.com/jaredpalmer/kev)
 
@@ -185,12 +185,12 @@ These are the most relevant comparisons:
 |---|---|---|
 |**Kev**|Open Jev-inspired decision models with typed questions, candidate probabilities, and a compatible API.|When you need local deployment, access to weights, or task-specific training. [GitHub](https://github.com/jaredpalmer/kev)|
 |**Open-Jev**|An independent implementation of a similar decision interface and training pipeline. It does not reproduce TypeSafe's private model.|When you want to inspect or modify the implementation and evaluation process. [GitHub](https://github.com/Zefan-Cai/Open-Jev)|
-|**GLiClass**|A zero-shot text classifier that accepts labels at inference time and scores them efficiently. It predates Jev.|For text classification with changing labels; it is a close conceptual baseline. [arXiv](https://arxiv.org/abs/2508.07662?utm_source=chatgpt.com)|
+|**GLiClass**|A zero-shot text classifier that accepts labels at inference time and scores them efficiently. It predates Jev.|For text classification with changing labels; it is a close conceptual baseline. [arXiv](https://arxiv.org/abs/2508.07662)|
 |**SetFit**|A sentence-embedding model combined with a classifier, designed to learn from relatively few labeled examples.|For a stable, repeated task where you can provide training examples. [Hugging Face](https://huggingface.co/docs/setfit/en/conceptual_guides/setfit)|
-|**RouteLLM**|A specialized decision system that selects between language models to balance cost and response quality.|When the specific problem is model routing. [arXiv](https://arxiv.org/abs/2406.18665?utm_source=chatgpt.com)|
-|**LLMs with structured outputs**|General language models constrained to produce values matching a schema.|When the decision needs substantial reasoning, flexible extraction, or generated content in the same workflow. [OpenAI Developers](https://developers.openai.com/api/docs/guides/structured-outputs?utm_source=chatgpt.com)|
+|**RouteLLM**|A specialized decision system that selects between language models to balance cost and response quality.|When the specific problem is model routing. [arXiv](https://arxiv.org/abs/2406.18665)|
+|**LLMs with structured outputs**|General language models constrained to produce values matching a schema.|When the decision needs substantial reasoning, flexible extraction, or generated content in the same workflow. [OpenAI Developers](https://developers.openai.com/api/docs/guides/structured-outputs)|
 
-The main distinction from a conventional fixed-label classifier is the ability to describe new tasks and answer sets through the request. That flexibility already exists in earlier zero-shot classification systems. Jev's additional proposition is a general decision service optimized around typed questions, probabilities, and efficient execution. [arXiv](https://arxiv.org/abs/2508.07662?utm_source=chatgpt.com)
+The main distinction from a conventional fixed-label classifier is the ability to describe new tasks and answer sets through the request. That flexibility already exists in earlier zero-shot classification systems. Jev's additional proposition is a general decision service optimized around typed questions, probabilities, and efficient execution. [arXiv](https://arxiv.org/abs/2508.07662)
 
 ## 5. What the evidence supports
 

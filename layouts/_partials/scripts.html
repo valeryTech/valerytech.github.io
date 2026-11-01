@@ -1,4 +1,5 @@
 {{ partial "settings/dialog.html" . }}
+{{ partial "settings/palette.html" . }}
 {{ partial "navigation-dialog.html" . }}
 
 {{/* Core scripts (theme, menu, tabs, etc.) */}}
@@ -25,6 +26,11 @@
 {{/* Medium Zoom */}}
 {{- if (.Store.Get "hasImageZoom") -}}
   {{- partial "scripts/medium-zoom.html" . -}}
+{{- end -}}
+
+{{/* PDF reader */}}
+{{- if (.Store.Get "hasPdfReader") -}}
+  {{- partial "scripts/pdf-reader.html" . -}}
 {{- end -}}
 
 {{ partial "footer/script-footer-custom.html" . }}

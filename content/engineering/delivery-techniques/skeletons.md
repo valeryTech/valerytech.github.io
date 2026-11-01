@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Golden Paths and Engineering Checkpoints"
 description: "Collected notes on golden paths for RAG, agents, and evaluation harnesses, connecting platform templates and engineering checkpoints to observable outcomes."
-title: "Skeletons"
 linkTitle: "Golden Paths and Engineering Checkpoints"
 ---
 ## What reviewers assume by default in agentic LLM work (low-signal checkpoints)
@@ -89,6 +89,8 @@ The goal of these templates is to reduce **Time to Failure**.
 2. **Opinionated Stack:** Pick **one** stack and stick to it. Do not make the template support Chroma AND Pinecone AND Weaviate. Pick one. Change the choice later if the need arises. Flexibility is the enemy of speed here.
 3. **Environment Variables:** Templates must assume a `.env` file structure. Hardcoding keys creates technical debt from the start.
 
+In microservice terms, these are service templates rather than a microservice chassis. See [operating services]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns).
+
 # Engineering checkpoints
 
 
@@ -100,3 +102,10 @@ The following are necessary dependencies, not engineering achievements.
 - **"Used LangChain / LlamaIndex":** These are standard abstraction layers. Using them shows familiarity with documentation. It does not show an understanding of how tensors or state move through the system.
 - **"Connected to Vector DB":** This is now standard plumbing. It is the "SQL query" of the AI stack.
 - **"Chat Interface":** Building a Streamlit wrapper around an API call is the modern "Hello World."
+
+## Library sources
+
+
+- [Chankramath et al. 2026](/sources/software-engineering/systems-and-operations/chankramath-2026-effective-platform-engineering.pdf.enc), *Effective Platform Engineering*
+- [Fournier and Nowland 2025](/sources/software-engineering/systems-and-operations/fournier-2025-platform-engineering.pdf.enc), *Platform Engineering*
+- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*

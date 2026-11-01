@@ -109,17 +109,38 @@
           "type": "range"
         }
       ]
+    },
+    {
+      "id": "colors",
+      "title": "Colors",
+      "layout": "stack",
+      "fields": [
+        {
+          "key": "palette",
+          "label": "Edit color palette",
+          "type": "palette",
+          "help": "Adjust backgrounds, text, headings, breadcrumbs, and navigation for the current theme in a floating panel that leaves the page visible. Changes preview live and are saved in this browser."
+        }
+      ]
     }
   ],
   "previewHeading": "Reading preview",
   "previewText": "Good explanations connect ideas, evidence, and decisions. Adjust the font, spacing, and brightness until this text feels comfortable to read.",
   "resetLabel": "Reset to site defaults",
+  "exportLabel": "Export settings",
+  "importLabel": "Import settings",
+  "exportFileName": "valerytech-settings.json",
+  "transferHelp": "Export saves your reading, layout, navigation and color choices, including named palettes, to a file you can import in another browser.",
   "messages": {
     "requiresJavaScript": "Enable JavaScript to change your site settings.",
     "ready": "Changes are saved automatically in this browser.",
     "saved": "Settings saved.",
     "saveFailed": "Applied to this page. Your browser could not save these settings.",
     "reset": "Site defaults restored.",
-    "resetFailed": "Defaults applied to this page. Your browser could not save these settings."
+    "resetFailed": "Defaults applied to this page. Your browser could not save these settings.",
+    "exported": "Settings exported.",
+    "imported": "Settings imported and saved.",
+    "importSaveFailed": "Settings imported for this page. Your browser could not save them.",
+    "importFailed": "That file is not a settings export from this site."
   }
 }

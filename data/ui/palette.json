@@ -1,0 +1,274 @@
+{
+  "cookie": {
+    "name": "palette-preferences",
+    "maxAgeSeconds": 31536000
+  },
+  "presetsStorageKey": "site-palette-presets",
+  "maxSavedPresets": 12,
+  "title": "Color palette",
+  "description": "Changes apply to the theme in view. Switch Light or Dark in the header to edit the other.",
+  "groups": [
+    {
+      "title": "Text",
+      "tokens": [
+        {
+          "token": "page-background",
+          "label": "Page background"
+        },
+        {
+          "token": "foreground",
+          "label": "Main text",
+          "contrast": { "against": "page-background", "minimum": 4.5 }
+        },
+        {
+          "token": "body-foreground",
+          "label": "Body text",
+          "contrast": { "against": "page-background", "minimum": 4.5 }
+        },
+        {
+          "token": "heading-foreground",
+          "label": "Headings",
+          "contrast": { "against": "page-background", "minimum": 4.5 }
+        },
+        {
+          "token": "muted",
+          "label": "Secondary text",
+          "contrast": { "against": "page-background", "minimum": 4.5 }
+        },
+        {
+          "token": "link-color",
+          "label": "Links and selection",
+          "contrast": { "against": "page-background", "minimum": 4.5 }
+        },
+        {
+          "token": "accent",
+          "label": "Focus and control accent",
+          "contrast": { "against": "nav-selected-surface", "minimum": 4.5 }
+        }
+      ]
+    },
+    {
+      "title": "Navigation",
+      "tokens": [
+        {
+          "token": "context-foreground",
+          "label": "Navigation labels and breadcrumbs",
+          "contrast": { "against": "context-header", "minimum": 4.5 }
+        },
+        {
+          "token": "context-header",
+          "label": "Navigation bars"
+        },
+        {
+          "token": "context-surface",
+          "label": "Navigation parents"
+        },
+        {
+          "token": "nav-foreground",
+          "label": "Menu text",
+          "contrast": { "against": "page-background", "minimum": 4.5 }
+        },
+        {
+          "token": "nav-selected-surface",
+          "label": "Current section"
+        }
+      ]
+    },
+    {
+      "title": "Surfaces",
+      "tokens": [
+        {
+          "token": "panel",
+          "label": "Panels"
+        },
+        {
+          "token": "card-surface",
+          "label": "Cards"
+        },
+        {
+          "token": "card-hover",
+          "label": "Hover surfaces"
+        },
+        {
+          "token": "code-surface",
+          "label": "Code blocks"
+        },
+        {
+          "token": "border",
+          "label": "Borders"
+        },
+        {
+          "token": "table-header",
+          "label": "Table header"
+        },
+        {
+          "token": "table-surface",
+          "label": "Table body"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "site",
+      "label": "Site colors",
+      "light": {},
+      "dark": {}
+    },
+    {
+      "id": "warm-paper",
+      "label": "Warm paper",
+      "light": {
+        "page-background": "#fbf7ef",
+        "foreground": "#2b2620",
+        "muted": "#6f6458",
+        "link-color": "#8a5a2b",
+        "accent": "#b4632a",
+        "context-header": "#e8dcc6",
+        "context-surface": "#f3ece0",
+        "panel": "#f5efe3",
+        "border": "#e6dccb",
+        "table-header": "#efe2cb",
+        "table-surface": "#f6f0e5"
+      },
+      "dark": {
+        "page-background": "#1a1612",
+        "foreground": "#efe6d8",
+        "body-foreground": "#d8cdbd",
+        "heading-foreground": "#f3e9da",
+        "muted": "#a89b8a",
+        "link-color": "#d9b38a",
+        "accent": "#e0a46b",
+        "context-header": "#2c241c",
+        "context-surface": "#211b15",
+        "panel": "#201b16",
+        "border": "#3a3128",
+        "table-header": "#3d2f22",
+        "table-surface": "#221c17"
+      }
+    },
+    {
+      "id": "forest",
+      "label": "Forest",
+      "light": {
+        "page-background": "#f7faf7",
+        "foreground": "#14241b",
+        "muted": "#5c6f63",
+        "link-color": "#2f6b4f",
+        "accent": "#2f8f5b",
+        "context-header": "#cfe0d4",
+        "context-surface": "#edf3ee",
+        "panel": "#f1f6f2",
+        "border": "#dbe6de",
+        "table-header": "#d6eadc",
+        "table-surface": "#f2f7f3"
+      },
+      "dark": {
+        "page-background": "#0f1512",
+        "foreground": "#e6efe9",
+        "body-foreground": "#c5d2ca",
+        "heading-foreground": "#dde8e1",
+        "muted": "#9aaba1",
+        "link-color": "#8fc7a8",
+        "accent": "#7fd1a4",
+        "context-header": "#1b2a22",
+        "context-surface": "#121c17",
+        "panel": "#141b17",
+        "border": "#2a372f",
+        "table-header": "#24402f",
+        "table-surface": "#17201b"
+      }
+    },
+    {
+      "id": "high-contrast",
+      "label": "High contrast",
+      "light": {
+        "page-background": "#ffffff",
+        "foreground": "#000000",
+        "body-foreground": "#000000",
+        "heading-foreground": "#000000",
+        "muted": "#333333",
+        "link-color": "#0040a0",
+        "accent": "#0040ff",
+        "context-header": "#d0d7e2",
+        "context-surface": "#eef1f5",
+        "border": "#767676"
+      },
+      "dark": {
+        "page-background": "#000000",
+        "foreground": "#ffffff",
+        "body-foreground": "#ffffff",
+        "heading-foreground": "#ffffff",
+        "muted": "#d0d0d0",
+        "nav-foreground": "#f0f0f0",
+        "link-color": "#9cc8ff",
+        "accent": "#ffd24d",
+        "context-header": "#1a2333",
+        "context-surface": "#0d1118",
+        "panel": "#0d0d0d",
+        "border": "#8a8a8a"
+      }
+    },
+    {
+      "id": "energetic",
+      "label": "Energetic",
+      "light": {},
+      "dark": {
+        "context-header": "#1a0a53",
+        "context-surface": "#1a0a53",
+        "nav-foreground": "#d6d6d6",
+        "nav-selected-surface": "#b51a00",
+        "panel": "#1a0a53",
+        "card-hover": "#d95000"
+      }
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "light": {},
+      "dark": {
+        "page-background": "#262624",
+        "foreground": "#faf9f5",
+        "body-foreground": "#c2c0b6",
+        "heading-foreground": "#ebe9e1",
+        "muted": "#a6a39a",
+        "link-color": "#d97757",
+        "accent": "#e8906f",
+        "context-foreground": "#e5e3da",
+        "context-header": "#1f1e1d",
+        "context-surface": "#30302e",
+        "nav-selected-surface": "#3a3936",
+        "panel": "#1f1e1d",
+        "card-surface": "#2b2b29",
+        "card-hover": "#3a3936",
+        "code-surface": "#1f1e1d",
+        "border": "#3e3e38",
+        "table-header": "#3a3936",
+        "table-surface": "#2b2b29"
+      }
+    }
+  ],
+  "presetLabel": "Preset",
+  "customLabel": "Custom colors",
+  "sitePresetsLabel": "Site presets",
+  "savedPresetsLabel": "Saved in this browser",
+  "presetNameLabel": "Palette name",
+  "saveLabel": "Save",
+  "deleteLabel": "Delete",
+  "resetLabel": "Reset this theme",
+  "copyLabel": "Copy CSS",
+  "contrastText": "{ratio}:1 on {against}",
+  "contrastWarning": "{ratio}:1 on {against}, below {minimum}:1",
+  "messages": {
+    "saved": "Saved in this browser.",
+    "saveFailed": "Applied to this page. Your browser could not save the palette.",
+    "reset": "Theme colors restored.",
+    "copied": "CSS copied. Paste it into tokens/colors.css to make it the default.",
+    "copyFailed": "Your browser blocked the clipboard.",
+    "applied": "Preset applied to Light and Dark.",
+    "presetSaved": "Palette saved in this browser.",
+    "presetDeleted": "Saved palette deleted. The colors stay applied.",
+    "presetNameRequired": "Name the palette before saving.",
+    "presetsFull": "Delete a saved palette before adding another."
+  }
+}

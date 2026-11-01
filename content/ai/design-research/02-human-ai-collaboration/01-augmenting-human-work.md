@@ -27,7 +27,7 @@ One terminology point from the working dictionary: if **intelligence = capacity 
 
 > **LLMs have substantial task-solving intelligence, while their grounding, persistent agency, autonomy, and reliable world modeling are much weaker.**
 
-The LLM critique also rejects requiring the claim that LLMs have _no_ world model. There is evidence that language models encode structured representations of space, time, and other state, while controlled evaluations also find major failures in causal, spatial, temporal, and physical prediction. So the proposal is to treat world-model quality as an empirical capability that can improve, not a binary architectural assumption. ([ICLR Proceedings](https://proceedings.iclr.cc/paper_files/paper/2024/hash/0a6059857ae5c82ea9726ee9282a7145-Abstract-Conference.html?utm_source=chatgpt.com "Language Models Represent Space and Time"))
+The LLM critique also rejects requiring the claim that LLMs have _no_ world model. There is evidence that language models encode structured representations of space, time, and other state, while controlled evaluations also find major failures in causal, spatial, temporal, and physical prediction. So the proposal is to treat world-model quality as an empirical capability that can improve, not a binary architectural assumption. ([ICLR Proceedings](https://proceedings.iclr.cc/paper_files/paper/2024/hash/0a6059857ae5c82ea9726ee9282a7145-Abstract-Conference.html "Language Models Represent Space and Time"))
 
 ### Allocate work based on task properties
 
@@ -69,7 +69,7 @@ verification difficulty ↑
 
 This also handles future generations of models. You don't redesign your organization every time model capability changes. You update capability evaluations and therefore change which work units meet the threshold for delegation.
 
-That matters because autonomous task length is already moving quickly. METR's 2026 measurements show frontier agents completing increasingly long software tasks, while reliability still declines substantially as task duration increases; their February-March 2026 evaluation estimated about a 12-hour human-equivalent horizon at 50% success and about 1.5 hours at 80%, with substantial measurement uncertainty. ([Metr](https://metr.org/blog/2026-05-19-frontier-risk-report/?utm_source=chatgpt.com "Frontier Risk Report (February to March 2026) - METR"))
+That matters because autonomous task length is already moving quickly. METR's 2026 measurements show frontier agents completing increasingly long software tasks, while reliability still declines substantially as task duration increases; their February-March 2026 evaluation estimated about a 12-hour human-equivalent horizon at 50% success and about 1.5 hours at 80%, with substantial measurement uncertainty. ([Metr](https://metr.org/blog/2026-05-19-frontier-risk-report/ "Frontier Risk Report (February to March 2026) - METR"))
 
 ### Human decision points should be designed as decision points
 
@@ -90,7 +90,7 @@ AI does something
 
 The human becomes a slow validation API.
 
-Research on generative-AI workflows already identifies this shift from production to constant evaluation as a source of lost productivity. Humans can also become anchored on plausible AI output and accept errors. ([Microsoft](https://www.microsoft.com/en-us/research/publication/ironies-of-generative-ai-understanding-and-mitigating-productivity-loss-in-human-ai-interaction/?lang=ko-kr&utm_source=chatgpt.com "Ironies of Generative AI: Understanding and Mitigating Productivity Loss in Human-AI Interaction - Microsoft Research"))
+Research on generative-AI workflows already identifies this shift from production to constant evaluation as a source of lost productivity. Humans can also become anchored on plausible AI output and accept errors. ([Microsoft](https://www.microsoft.com/en-us/research/publication/ironies-of-generative-ai-understanding-and-mitigating-productivity-loss-in-human-ai-interaction/?lang=ko-kr "Ironies of Generative AI: Understanding and Mitigating Productivity Loss in Human-AI Interaction - Microsoft Research"))
 
 Instead, use humans when there is an actual decision:
 
@@ -141,7 +141,7 @@ production impact is difficult to reverse
 ```
 
 
-For particularly consequential decisions, the proposal is to consider having the person form an initial judgment from the evidence before revealing the model recommendation. That reduces the chance that "human oversight" becomes simple agreement with the machine. Automation bias remains a documented problem even when users know AI can make errors. ([PLOS](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0298037&utm_source=chatgpt.com "Putting a human in the loop: Increasing uptake, but decreasing accuracy of automated decision-making | PLOS One"))
+For particularly consequential decisions, the proposal is to consider having the person form an initial judgment from the evidence before revealing the model recommendation. That reduces the chance that "human oversight" becomes simple agreement with the machine. Automation bias remains a documented problem even when users know AI can make errors. ([PLOS](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0298037 "Putting a human in the loop: Increasing uptake, but decreasing accuracy of automated decision-making | PLOS One"))
 
 ### Verification deserves its own subsystem
 
@@ -214,9 +214,9 @@ Don't start by designing an autonomous organization. Start with the existing hum
 
 The transition criterion shouldn't be "people feel comfortable with it." Measure outcome quality, failure severity, human time including review time, escalation rate, override rate, cost, and performance when conditions differ from the normal case.
 
-Microsoft's human-AI interaction work reaches a similar practical conclusion: systems should clearly communicate capability boundaries, support correction and dismissal, scope themselves when uncertain, and give users control over their behavior. ([Microsoft](https://www.microsoft.com/en-us/research/blog/guidelines-for-human-ai-interaction-design/?utm_source=chatgpt.com "Guidelines for human-AI interaction design - Microsoft Research"))
+Microsoft's human-AI interaction work reaches a similar practical conclusion: systems should clearly communicate capability boundaries, support correction and dismissal, scope themselves when uncertain, and give users control over their behavior. ([Microsoft](https://www.microsoft.com/en-us/research/blog/guidelines-for-human-ai-interaction-design/ "Guidelines for human-AI interaction design - Microsoft Research"))
 
-The Joint Activity literature is particularly relevant. Klein, Woods, Bradshaw, Hoffman and Feltovich wrote _Ten Challenges for Making Automation a "Team Player"_ in 2004. Their requirements include **mutual predictability, directability, and common ground**. That paper reads surprisingly well as a critique of present-day LLM agents. ([IEEE Xplore](https://ieeexplore.ieee.org/document/1363742/?utm_source=chatgpt.com "Ten challenges for making automation a \"team player\" in joint human-agent activity | IEEE Journals & Magazine | IEEE Xplore"))
+The Joint Activity literature is particularly relevant. Klein, Woods, Bradshaw, Hoffman and Feltovich wrote _Ten Challenges for Making Automation a "Team Player"_ in 2004. Their requirements include **mutual predictability, directability, and common ground**. That paper reads surprisingly well as a critique of present-day LLM agents. ([IEEE Xplore](https://ieeexplore.ieee.org/document/1363742/ "Ten challenges for making automation a \"team player\" in joint human-agent activity | IEEE Journals & Magazine | IEEE Xplore"))
 
 For example, consider a coding system consisting of you and an agent. A typical LLM architecture thinks approximately:
 
@@ -283,9 +283,9 @@ How do we recover if the participants' models diverge?
 
 Those are classic joint-activity questions, not specifically LLM questions.
 
-Barbara Grosz and Sarit Kraus's **SharedPlans** work is another strong foundation. It formalizes collaboration in terms of beliefs, intentions, partial plans, individual responsibilities and joint activity. Importantly, it handles cases where collaborators don't yet know the complete plan. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/0004370295001034?utm_source=chatgpt.com "Collaborative plans for complex group action - ScienceDirect")) That's highly applicable to agentic software engineering, research, operations, etc., where the plan develops during execution.
+Barbara Grosz and Sarit Kraus's **SharedPlans** work is another strong foundation. It formalizes collaboration in terms of beliefs, intentions, partial plans, individual responsibilities and joint activity. Importantly, it handles cases where collaborators don't yet know the complete plan. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/0004370295001034 "Collaborative plans for complex group action - ScienceDirect")) That's highly applicable to agentic software engineering, research, operations, etc., where the plan develops during execution.
 
-There is then the question of **initiative**. Eric Horvitz's mixed-initiative work studied systems where either the human or machine may take initiative depending on context, uncertainty, expected value and cost. ([DOI](https://doi.org/10.1145/302979.303030?utm_source=chatgpt.com "Principles of mixed-initiative user interfaces | Proceedings of the SIGCHI conference on Human Factors in Computing Systems")) This gives a much richer model than a fixed "human-in-the-loop" checkpoint.
+There is then the question of **initiative**. Eric Horvitz's mixed-initiative work studied systems where either the human or machine may take initiative depending on context, uncertainty, expected value and cost. ([DOI](https://doi.org/10.1145/302979.303030 "Principles of mixed-initiative user interfaces | Proceedings of the SIGCHI conference on Human Factors in Computing Systems")) This gives a much richer model than a fixed "human-in-the-loop" checkpoint.
 
 For example:
 
@@ -434,7 +434,7 @@ Further research question for AI tools in software engineering, research, and kn
 ## From conversational interfaces to collaborative work
 
 
-The following retained question and response from the [build-approach source]({{< ref "ai/collab-and-joint-work/build-approach" >}}) distinguish collaboration, active participation, and augmentation. The [participant profiles]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) retain the preceding model and later revision. The [design-practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) continues the framework, and the sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}) explain the placement.
+The following retained question and response from the [build-approach source]({{< ref "ai/design-research/collab-and-joint-work/build-approach" >}}) distinguish collaboration, active participation, and augmentation. The [participant profiles]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) retain the preceding model and later revision. The [design-practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) continues the framework, and the sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}) explain the placement.
 
 ## first part (to rewrite)
 
@@ -492,7 +492,7 @@ So one tentative proposal is to organize the overall idea as:
 
 If you need one umbrella phrase for the whole shift, **"from conversational interfaces to collaborative systems"** is probably the clearest. "Conversational" describes the current UI paradigm; "collaborative system" describes the deeper product model you're moving toward.
 
-The [source redirect]({{< ref "ai/collab-and-joint-work/build-approach" >}}) links the initial profiles, design practices, and later revision. The mapping log records the complete split.
+The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/build-approach" >}}) links the initial profiles, design practices, and later revision. The mapping log records the complete split.
 
 ## From rewriting prompts to a shared writing workspace
 
@@ -526,3 +526,8 @@ collaborative surface.. first we could make it with Matrix
 
 
 yes - the step from prompt to collaboration surface is a big deal. It changes not only mechanich, but the mindset, points of view, really the mental model.
+
+## Library sources
+
+
+- [Messeri and Crockett 2024](/sources/ai-foundations/alignment-and-society/messeri-2024-ai-and-illusions-of-understanding.pdf.enc), *Artificial intelligence and illusions of understanding in scientific research* ([doi:10.1038/s41586-024-07146-0](https://doi.org/10.1038/s41586-024-07146-0))

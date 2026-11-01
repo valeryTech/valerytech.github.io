@@ -220,3 +220,8 @@ Every stable manual pattern can become policy.
 
 
 That means you want event sourcing or at least structured trace capture early. Otherwise the team will manually discover useful behavior and lose it.
+
+## Library sources
+
+
+- [Shankar et al. 2025](/sources/retrieval-and-knowledge/rag/shankar-2025-steering-semantic-data-processing-docwrangler.pdf.enc), *Steering Semantic Data Processing With DocWrangler* ([doi:10.1145/3746059.3747625](https://doi.org/10.1145/3746059.3747625))

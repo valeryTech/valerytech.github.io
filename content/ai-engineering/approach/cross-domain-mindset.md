@@ -620,3 +620,26 @@ One way to apply this:
 	- One experiment/metrics investigation (Theme 1).
 
 The learning sequence can be adapted to backend, infrastructure, product-feature, or data-intensive work by selecting projects that exercise the relevant gaps.
+
+## Library sources
+
+
+- [Chen et al. 2022](/sources/ml-engineering/books/chen-2022-reliable-machine-learning.pdf.enc), *Reliable Machine Learning* -- on *F. Monitoring and operations for ML*
+- [Murphy and Underwood 2025](/sources/ml-engineering/mlops/murphy-2025-unsolved-problems-in-mlops.pdf.enc), *Unsolved Problems in MLOps* -- on *F. Monitoring and operations for ML*
+- [Amershi et al. 2019](/sources/ml-engineering/se-for-ml/amershi-2019-software-engineering-for-ml-case-study.pdf.enc), *Software Engineering for Machine Learning: A Case Study*
+- [Nahar et al. 2022](/sources/ml-engineering/se-for-ml/nahar-2022-collaboration-challenges-building-ml-enabled-systems.pdf.enc), *Collaboration Challenges in Building ML-Enabled Systems* ([arXiv:2110.10234](https://arxiv.org/abs/2110.10234))
+
+Further reading:
+
+- [Mailach et al. 2024](/sources/ai-engineering/practice/mailach-2024-themes-of-building-llm-applications-for-production.pdf.enc), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
+- [Wagner-Kaiser 2026](/sources/llms/nlp/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
+- [Huyen 2022](/sources/ml-engineering/books/huyen-2022-designing-machine-learning-systems.pdf.enc), *Designing Machine Learning Systems*
+- [Tan et al. 2024](/sources/ml-engineering/books/tan-2024-effective-machine-learning-teams.pdf.enc), *Effective Machine Learning Teams*
+- [Wilson 2022](/sources/ml-engineering/books/wilson-2022-machine-learning-engineering-in-action.pdf.enc), *Machine Learning Engineering in Action*
+- [Zinkevich 2016](/sources/ml-engineering/books/zinkevich-2016-rules-of-machine-learning.pdf.enc), *Rules of Machine Learning: Best Practices for ML Engineering*
+- [Assres et al. 2025](/sources/ml-engineering/se-for-ml/assres-2025-engineering-ml-enabled-software-systems.pdf.enc), *State-of-the-Art and Challenges of Engineering ML-Enabled Software Systems in the Deep Learning Era* ([doi:10.1145/3731597](https://doi.org/10.1145/3731597))
+- [Giray 2021](/sources/ml-engineering/se-for-ml/giray-2021-software-engineering-perspective-ml-systems.pdf.enc), *A Software Engineering Perspective on Engineering Machine Learning Systems*
+- [Haakman et al. 2021](/sources/ml-engineering/se-for-ml/haakman-2021-ai-lifecycle-models-need-revision.pdf.enc), *AI Lifecycle Models Need To Be Revised* ([arXiv:2010.02716](https://arxiv.org/abs/2010.02716))
+- [Kalinowski et al. 2024](/sources/ml-engineering/se-for-ml/kalinowski-2024-naming-the-pain-ml-enabled-systems.pdf.enc), *Naming the Pain in Machine Learning-Enabled Systems Engineering*
+- [Martinez et al. 2021](/sources/ml-engineering/se-for-ml/martinez-2021-survey-success-factors-data-science-projects.pdf.enc), *A survey study of success factors in data science projects* ([arXiv:2201.06310](https://arxiv.org/abs/2201.06310))
+- [Nahar et al. 2023](/sources/ml-engineering/se-for-ml/nahar-2023-meta-summary-challenges-ml-products.pdf.enc), *A Meta-Summary of Challenges in Building Products with ML Components* ([arXiv:2304.00078](https://arxiv.org/abs/2304.00078))

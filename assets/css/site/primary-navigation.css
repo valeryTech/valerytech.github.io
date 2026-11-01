@@ -10,7 +10,7 @@
   overflow-x: auto;
 }
 
-.site-header-links > a,
+.site-header-links > :is(a, .site-header-more),
 .mobile-site-nav > a {
   display: inline-flex;
   align-items: center;
@@ -28,12 +28,38 @@
   transition: none;
 }
 
-.site-header-links > a {
+.site-header-links > :is(a, .site-header-more) {
   flex: 1 0 0;
   min-inline-size: max-content;
   block-size: 100%;
   padding-inline: var(--site-space-2);
   white-space: nowrap;
+}
+
+/* An icon-only chevron opens the collections the bar leaves out; it fits the icon instead of sharing width. */
+.site-header-links > .site-header-more {
+  flex: 0 0 auto;
+  min-inline-size: var(--site-control-height);
+  padding-inline: var(--site-space-3);
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Rendered before scripts load so the bar keeps its width; browsers without popovers omit it. */
+@supports not selector(:popover-open) {
+  .site-header-links > .site-header-more {
+    display: none;
+  }
+}
+
+.site-header-more .site-control-icon {
+  transform: rotate(180deg);
+}
+
+.site-header-more[aria-expanded="true"] .site-control-icon {
+  transform: none;
 }
 
 .mobile-site-nav {
@@ -55,7 +81,7 @@
 }
 
 /* Use the shared layout gap around the selection; keep the full link clickable. */
-.site-header-links > a::after,
+.site-header-links > :is(a, .site-header-more)::after,
 .mobile-site-nav > a::after {
   content: "";
   position: absolute;
@@ -66,12 +92,12 @@
   transition: none;
 }
 
-.site-header-links > a::after {
+.site-header-links > :is(a, .site-header-more)::after {
   /* Large configured gaps must still leave room for the label. */
   inset-block: min(var(--site-layout-gap), calc((100% - 1lh) / 2));
 }
 
-.site-header-links > a + a::before {
+.site-header-links > a + :is(a, .site-header-more)::before {
   content: "";
   position: absolute;
   inset-inline-start: 0;
@@ -82,42 +108,43 @@
   pointer-events: none;
 }
 
-.site-header-links > a:is(:hover, :focus-visible),
+.site-header-links > :is(a, .site-header-more):is(:hover, :focus-visible),
+.site-header-more[aria-expanded="true"],
 .mobile-site-nav > a:is(:hover, :focus-visible) {
-  color: var(--site-link-color);
+  color: var(--site-accent);
 }
 
-.site-header-links > a:is(:hover, :focus-visible)::after,
+/* Hover and focus share the site hover surface, including over the current section. */
+.site-header-links > :is(a, .site-header-more):is(:hover, :focus-visible)::after,
+.site-header-more[aria-expanded="true"]::after,
 .mobile-site-nav > a:is(:hover, :focus-visible)::after {
-  background: var(--site-nav-state-layer);
+  background: var(--site-card-hover);
 }
 
-.site-header-links > a:focus-visible,
+.site-header-links > :is(a, .site-header-more):focus-visible,
 .mobile-site-nav > a[href]:focus-visible {
   outline: none;
   box-shadow: none;
 }
 
-.site-header-links > a:focus-visible::after,
+.site-header-links > :is(a, .site-header-more):focus-visible::after,
 .mobile-site-nav > a:focus-visible::after {
-  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline: var(--site-focus-width) solid var(--site-accent);
   outline-offset: calc(-1 * var(--site-focus-width));
 }
 
-.site-header-links > a[aria-current],
+.site-header-links > :is(a, .site-header-more)[aria-current],
 .mobile-site-nav > a[aria-current] {
-  color: var(--site-link-color);
+  color: var(--site-accent);
   font-weight: 600;
 }
 
-.site-header-links > a[aria-current]::after,
-.mobile-site-nav > a[aria-current]::after {
+.site-header-links
+  > :is(a, .site-header-more)[aria-current]:not(
+    :hover,
+    :focus-visible,
+    [aria-expanded="true"]
+  )::after,
+.mobile-site-nav > a[aria-current]:not(:hover, :focus-visible)::after {
   background: var(--site-nav-selected-surface);
-}
-
-.site-header-links > a[aria-current]:is(:hover, :focus-visible)::after,
-.mobile-site-nav > a[aria-current]:is(:hover, :focus-visible)::after {
-  background:
-    linear-gradient(var(--site-nav-state-layer), var(--site-nav-state-layer)),
-    var(--site-nav-selected-surface);
 }

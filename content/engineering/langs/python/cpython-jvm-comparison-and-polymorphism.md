@@ -6,8 +6,6 @@ description: "Compare CPython and JVM execution, bytecode, memory management, an
 linkTitle: "CPython, JVM, and polymorphism"
 ---
 
-Original conversation: [Shared ChatGPT thread](https://chatgpt.com/share/6ad807c9-e3fc-83e9-baa5-63e44b7c1be7)
-
 This note compares runtime architecture, separates annotations from validation and dispatch, and traces method lookup into CPython's C implementation.
 
 For runtime class creation, import order, and the Python-to-Rust boundary in Pydantic, see [Python data model, annotations, and Pydantic]({{< ref "engineering/langs/python/python-concepts-comparison" >}}). For the GIL and parallel execution, see [Free threading and concurrency]({{< ref "engineering/langs/python/cpython-free-threading-and-concurrency" >}}).

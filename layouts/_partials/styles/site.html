@@ -1,6 +1,6 @@
 {{- /* Explicit order keeps tokens first and avoids browser-side CSS imports. */ -}}
 {{- $styles := slice (partialCached "styles/tokens.html" .) (partialCached "styles/configuration.html" .) -}}
-{{- range slice "base" "branding" "controls" "links" "shell" "header" "page-navigation" "footer" "primary-navigation" "panes" "outline-map" "navigation" "breadcrumbs" "search" "theme" "components" "collections" "settings" "layout" "drawers" -}}
+{{- range slice "base" "branding" "controls" "links" "shell" "header" "page-navigation" "footer" "primary-navigation" "panes" "outline-map" "navigation" "breadcrumbs" "search" "theme" "components" "pdf-reader" "collections" "settings" "layout" "drawers" -}}
   {{- $styles = $styles | append (resources.Get (printf "css/site/%s.css" .)) -}}
 {{- end -}}
 {{- return ($styles | resources.Concat "css/custom.css") -}}

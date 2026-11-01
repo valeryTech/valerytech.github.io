@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Backward Design Derivation"
 description: "Trace user needs through outcomes, workflows, capabilities, and system responsibilities; compare JTBD, requirements engineering, Wardley Mapping, and related methods."
-title: "Backward Design Der"
 linkTitle: "Backward Design Derivation"
 ---
-# Backward design derivation
-
 
 **Backward design derivation** starts with a user need and works out which responsibilities and design choices are needed to meet it:
 
@@ -41,22 +39,15 @@ Their JTBD formulation is:
 
 They map each **action** to a business capability and decide which system should provide it. Doing this for every JTBD produces an initial architecture plan. They also use EventStorming and identified pain points. ([Capital One](https://www.capitalone.com/tech/software-engineering/leveraging-jtbd/ "Leveraging Jobs to Be Done to Start a Target Architecture | Capital One"))
 
-The chain explains why an architectural element is needed:
+The chain explains why an architectural element is needed. *Why does `AccountDetailsService` exist?*
 
-```text
-Why does AccountDetailsService exist?
-
-Customer-support agent
-    ↓ has job
-Answer a customer's question during a call
-    ↓ requires
-See relevant account information quickly
-    ↓ requires capability
-Retrieve customer account details
-    ↓ assigned to
-Customer Account System
-    ↓ architectural realization
-API / read model / datastore / authorization / etc.
+```mermaid
+flowchart TD
+    agent(["Customer-support agent"]) -->|has job| job["Answer a customer's question during a call"]
+    job -->|requires| info["See relevant account information quickly"]
+    info -->|requires capability| capability["Retrieve customer account details"]
+    capability -->|assigned to| system["Customer Account System"]
+    system -->|architectural realization| realization["API / read model / datastore / authorization / etc."]
 ```
 
 
@@ -69,24 +60,18 @@ The Capital One article is one of the first sources to read for this approach.
 
 Research in requirements engineering describes related methods.
 
-Utrecht University researchers proposed **Jobs-to-be-Done Oriented Requirements Engineering**, giving Job Stories a defined structure. Each requirement includes the **situation, motivation, and expected outcome**, so a feature stays connected to its purpose. ([Utrecht University](https://research-portal.uu.nl/en/publications/jobs-to-be-done-oriented-requirements-engineering-a-method-for-de/ "Jobs-to-be-Done Oriented Requirements Engineering: A Method For Defining Job Stories
-
--  Utrecht University"))
+Utrecht University researchers proposed **Jobs-to-be-Done Oriented Requirements Engineering**, giving Job Stories a defined structure. Each requirement includes the **situation, motivation, and expected outcome**, so a feature stays connected to its purpose. ([Utrecht University](https://research-portal.uu.nl/en/publications/jobs-to-be-done-oriented-requirements-engineering-a-method-for-de/ "Jobs-to-be-Done Oriented Requirements Engineering: A Method For Defining Job Stories - Utrecht University"))
 
 A related Utrecht line of work developed **RE4SA -- Requirements Engineering for Software Architecture**. RE4SA directly links requirements to architectural elements. It connects epic stories and user stories to modules and features to keep requirements and architecture in agreement. ([Utrecht University Repository](https://dspace.library.uu.nl/handle/1874/396208 "Explicit Alignment of Requirements and Architecture in Agile Development"))
 
 Put the two together conceptually:
 
-```text
-JTBD
-  ↓
-Job Story
-  ↓
-Requirement / Epic / Feature
-  ↓
-Architectural responsibility
-  ↓
-Module / service / component
+```mermaid
+flowchart TD
+    jtbd(["JTBD"]) --> jobStory["Job Story"]
+    jobStory --> requirement["Requirement / Epic / Feature"]
+    requirement --> responsibility["Architectural responsibility"]
+    responsibility --> module["Module / service / component"]
 ```
 
 
@@ -108,27 +93,16 @@ GRL models stakeholder goals and intentions. UCM models scenarios of how a syste
 
 Conceptually:
 
-```text
-                 WHY
-                  │
-          ┌───────▼────────┐
-          │ Goal / softgoal│
-          │ stakeholders   │
-          │ alternatives   │
-          └───────┬────────┘
-                  │
-                 HOW
-                  │
-          ┌───────▼────────┐
-          │ Scenario / UCM │
-          │ actor behaviour│
-          │ responsibilities
-          └───────┬────────┘
-                  │
-          ┌───────▼────────┐
-          │ Components /   │
-          │ architecture   │
-          └────────────────┘
+```mermaid
+flowchart TD
+    subgraph why["WHY: GRL goal model"]
+        goals["Goals and softgoals, stakeholders, alternatives"]
+    end
+    subgraph how["HOW: UCM scenario model"]
+        scenarios["Scenarios, actor behaviour, responsibilities"]
+    end
+    goals --> scenarios
+    scenarios --> components["Components / architecture"]
 ```
 
 
@@ -151,17 +125,14 @@ The landscape is explicitly **anchored on the user and their needs**. ([learnwar
 
 So:
 
-```text
-User
- │
- └─ Need
-     │
-     ├─ Capability A
-     │   ├─ Capability C
-     │   └─ Capability D
-     │
-     └─ Capability B
-         └─ Capability E
+```mermaid
+flowchart TD
+    user(["User"]) --> need["Need"]
+    need --> capA["Capability A"]
+    need --> capB["Capability B"]
+    capA --> capC["Capability C"]
+    capA --> capD["Capability D"]
+    capB --> capE["Capability E"]
 ```
 
 
@@ -173,20 +144,17 @@ This keeps the reason for each capability and dependency visible.
 
 Wardley Mapping then adds another dimension: whether each capability is genesis/custom/product/commodity. That supports decisions such as:
 
-```text
-user need
-   ↓
-capability
-   ↓
-dependency
-   ↓
-should we invent / build / buy / outsource / commoditize this?
+```mermaid
+flowchart TD
+    userNeed(["User need"]) --> capability["Capability"]
+    capability --> dependency["Dependency"]
+    dependency --> sourcing{"Invent, build, buy, outsource, or commoditize?"}
 ```
 
 
 It does not model runtime software behaviour in detail. It belongs **above architecture**, especially when deciding boundaries, ownership, build-vs-buy choices, platforms, and which capabilities make the product different.
 
-## 5. Problem Frames / Architectural Frames
+### 5. Problem Frames / Architectural Frames
 
 
 Michael Jackson's **Problem Frames** tradition starts from this principle:
@@ -195,13 +163,10 @@ software exists to produce some required effect **in a world outside the softwar
 
 The approach explicitly separates:
 
-```text
-problem world
-domain properties
-requirement
-machine/software
-```
-
+- **problem world**
+- **domain properties**
+- **requirement**
+- **machine / software**
 
 Jackson describes software development problems as being about the real environment in which the system must have its effect. ([Oro](https://oro.open.ac.uk/7513/ "Open Research Online"))
 
@@ -211,80 +176,58 @@ This keeps architectural reasoning connected to the problem being solved.
 
 Instead of:
 
-```text
-Browser → API Gateway → Service → DB
+```mermaid
+flowchart LR
+    browser["Browser"] --> gateway["API Gateway"] --> service["Service"] --> db[("DB")]
 ```
 
 
 the derivation begins with:
 
-```text
-A customer must be able to recover access to their account
-                  ↓
-Which part of the real world must change?
-                  ↓
-What phenomena can our software observe/control?
-                  ↓
-What must the machine guarantee?
-                  ↓
-What architecture realizes that guarantee?
+```mermaid
+flowchart TD
+    problem(["A customer must be able to recover access to their account"])
+    problem --> worldChange["Which part of the real world must change?"]
+    worldChange --> phenomena["What phenomena can our software observe / control?"]
+    phenomena --> guarantee["What must the machine guarantee?"]
+    guarantee --> architecture["What architecture realizes that guarantee?"]
 ```
 
 
 It uses less product-management language than JTBD, but gives more attention to **problem context**.
 
-## 6. Impact Mapping
+### 6. Impact Mapping
 
 
 Impact Mapping comes before architecture. Its structure is well suited to explaining the goals and behavior that architecture needs to support:
 
-```text
-GOAL
- ↓
-ACTORS
- ↓
-IMPACTS / behaviour changes
- ↓
-DELIVERABLES
+```mermaid
+flowchart LR
+    goal(["GOAL"]) --> actors["ACTORS"] --> impacts["IMPACTS (behaviour changes)"] --> deliverables["DELIVERABLES"]
 ```
 
 
 Its purpose is to show how technical deliverables are expected to change actor behaviour, and how those changes support business goals. ([Impact Mapping](https://www.impactmapping.org/drawing.html "Drawing impact maps"))
 
-So instead of:
+So instead of a bare task like *"Implement notification service"*, the reasoning becomes:
 
-```text
-Implement notification service
-```
-
-
-the reasoning becomes:
-
-```text
-Goal:
-Reduce abandoned applications
-
-Actor:
-Applicant
-
-Desired impact:
-Returns and completes an interrupted application
-
-Possible deliverable:
-Reminder notifications
-
-Architectural consequence:
-Notification capability
- ├─ scheduling
- ├─ template rendering
- ├─ preferences
- └─ provider integration
+```mermaid
+flowchart TD
+    goal(["Goal: Reduce abandoned applications"])
+    goal --> actor["Actor: Applicant"]
+    actor --> impact["Desired impact: Returns and completes an interrupted application"]
+    impact --> deliverable["Possible deliverable: Reminder notifications"]
+    deliverable --> notification["Architectural consequence: Notification capability"]
+    notification -->|includes| scheduling["Scheduling"]
+    notification -->|includes| templates["Template rendering"]
+    notification -->|includes| preferences["Preferences"]
+    notification -->|includes| providers["Provider integration"]
 ```
 
 
 Impact Mapping stops before architecture. But as the **top layer of an architecture model**, it's very good.
 
-## 7. Domain Storytelling + DDD
+### 7. Domain Storytelling + DDD
 
 
 **Domain Storytelling** starts from actual domain actors performing activities with work objects. Its stated goal is to make business processes and domain knowledge concrete, then use that understanding to develop business software. ([Domain Storytelling](https://domainstorytelling.org/ "Domain Storytelling"))
@@ -293,18 +236,13 @@ The method can help develop requirements, user-story maps, domain models, and DD
 
 The derivation can proceed through:
 
-```text
-Human/domain story
-      ↓
-Business process
-      ↓
-Domain concepts and responsibilities
-      ↓
-Subdomains
-      ↓
-Bounded contexts
-      ↓
-Software boundaries
+```mermaid
+flowchart TD
+    story(["Human / domain story"]) --> process["Business process"]
+    process --> concepts["Domain concepts and responsibilities"]
+    concepts --> subdomains["Subdomains"]
+    subdomains --> contexts["Bounded contexts"]
+    contexts --> boundaries["Software boundaries"]
 ```
 
 
@@ -320,7 +258,7 @@ JTBD or Impact Mapping can supply that upstream rationale.
 
 EventStorming belongs roughly in the same family: it is explicitly a collaborative exploration method for complex business domains. ([EventStorming](https://www.eventstorming.com/ "EventStorming"))
 
-## 8. SEI: business goals -> quality scenarios -> architecture
+### 8. SEI: business goals -> quality scenarios -> architecture
 
 
 Another group of methods examines **architectural forces**: the needs and constraints that shape a design.
@@ -329,20 +267,13 @@ SEI's **Quality Attribute Workshop / ATAM** methods start with **business and mi
 
 For example:
 
-```text
-Business concern:
-Customers abandon checkout when response is slow
-       ↓
-Quality goal:
-Checkout latency
-       ↓
-Scenario:
-At peak traffic, checkout confirmation completes in < 2 s
-       ↓
-Architectural forces:
-capacity, caching, consistency, failure modes, topology...
-       ↓
-Architectural decisions
+```mermaid
+flowchart TD
+    concern(["Business concern: Customers abandon checkout when response is slow"])
+    concern --> qualityGoal["Quality goal: Checkout latency"]
+    qualityGoal --> scenario["Scenario: At peak traffic, checkout confirmation completes in under 2 s"]
+    scenario --> forces["Architectural forces: capacity, caching, consistency, failure modes, topology, ..."]
+    forces --> decisions["Architectural decisions"]
 ```
 
 
@@ -354,7 +285,7 @@ The reason for the mechanism can be traced to a concrete quality-attribute scena
 
 It doesn't solve the functional/JTBD side by itself.
 
-## 9. arc42 -- useful as the envelope around all of this
+### 9. arc42 -- useful as the envelope around all of this
 
 
 arc42 is worth distinguishing from C4.
@@ -374,8 +305,9 @@ For this purpose, arc42 provides a more complete **document structure** than C4 
 
 But it doesn't impose strong traceability such as:
 
-```text
-JTBD-17 → Scenario-4 → Capability-X → Service-Y → ADR-23
+```mermaid
+flowchart LR
+    jtbd17(["JTBD-17"]) --> scenario4["Scenario-4"] --> capabilityX["Capability-X"] --> serviceY["Service-Y"] --> adr23["ADR-23"]
 ```
 
 
@@ -386,39 +318,23 @@ Such links need to be added explicitly.
 
 One proposed way to combine these methods is a **causal architecture model**:
 
-```text
-          PRODUCT / PROBLEM WORLD
-
-               User / Actor
-                    │
-                    ▼
-             Need / JTBD
-                    │
-                    ▼
-          Desired outcome
-                    │
-                    ▼
-       Behaviour / Impact / Goal
-                    │
-                    ▼
-       Scenario / Domain story
-                    │
-                    ▼
-           Required capability
-                    │
-                    ▼
-         System responsibility
-                    │
-                    ▼
-       ┌──── Architectural ────┐
-       │       decision        │
-       ▼                       ▼
-  Component                Quality
-  / service                mechanism
-       │                       │
-       └───────────┬───────────┘
-                   ▼
-            Implementation
+```mermaid
+flowchart TD
+    subgraph problemWorld["Product / problem world"]
+        user(["User / Actor"]) --> need["Need / JTBD"]
+        need --> outcome["Desired outcome"]
+        outcome --> behaviour["Behaviour / Impact / Goal"]
+        behaviour --> scenario["Scenario / Domain story"]
+    end
+    subgraph solution["Solution / architecture"]
+        capability["Required capability"] --> responsibility["System responsibility"]
+        responsibility --> decision{"Architectural decision"}
+        decision --> component["Component / service"]
+        decision --> mechanism["Quality mechanism"]
+        component --> implementation(["Implementation"])
+        mechanism --> implementation
+    end
+    scenario --> capability
 ```
 
 
@@ -440,18 +356,13 @@ or:
 
 and walk:
 
-```text
-Kafka topic
-  ↑ because
-asynchronous processing
-  ↑ because
-checkout must remain available if fulfillment is degraded
-  ↑ because
-checkout availability scenario Q-03
-  ↑ because
-customers must be able to place orders
-  ↑ because
-JTBD: acquire product when needed
+```mermaid
+flowchart BT
+    kafka(["Kafka topic"]) -->|because| async["Asynchronous processing"]
+    async -->|because| availability["Checkout must remain available if fulfillment is degraded"]
+    availability -->|because| scenarioQ03["Checkout availability scenario Q-03"]
+    scenarioQ03 -->|because| orders["Customers must be able to place orders"]
+    orders -->|because| jtbd["JTBD: acquire product when needed"]
 ```
 
 
@@ -462,35 +373,39 @@ This explains the reasons behind the architecture.
 
 C4 can describe the structure at the lower end of this reasoning chain:
 
-```text
-JTBD / Impact Mapping
-        ↓
-Domain Storytelling / EventStorming
-        ↓
-Capabilities + quality-attribute scenarios
-        ↓
-Architecture decisions
-        ↓
-C4
+```mermaid
+flowchart TD
+    jtbd(["JTBD / Impact Mapping"]) --> discovery["Domain Storytelling / EventStorming"]
+    discovery --> capabilities["Capabilities + quality-attribute scenarios"]
+    capabilities --> decisions["Architecture decisions"]
+    decisions --> c4(["C4"])
 ```
 
 
 Record the links between the levels:
 
-```text
-JTBD-12
-  └─ DomainStory-07
-      ├─ Capability-CustomerIdentity
-      │   ├─ ADR-018
-      │   └─ C4:System.Identity
-      └─ Capability-AccountRecovery
-          ├─ ADR-027
-          └─ C4:Container.RecoveryService
-```
-
+- `JTBD-12`
+  - `DomainStory-07`
+    - `Capability-CustomerIdentity`
+      - `ADR-018`
+      - `C4:System.Identity`
+    - `Capability-AccountRecovery`
+      - `ADR-027`
+      - `C4:Container.RecoveryService`
 
 For a more formal approach, **URN** is the closest existing model found in this comparison that combines goals and scenarios.
 
 A lighter practical approach combines **JTBD -> Impact Mapping -> Domain Storytelling/EventStorming -> capabilities -> arc42/C4**, with **QAW-style quality scenarios** supplying the non-functional architectural forces.
 
 The Capital One article provides an example of the chain: **JTBD -> capability -> system -> target architecture**. ([Capital One](https://www.capitalone.com/tech/software-engineering/leveraging-jtbd/ "Leveraging Jobs to Be Done to Start a Target Architecture | Capital One"))
+
+## Library sources
+
+
+- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition* -- on *8. SEI: business goals -> quality scenarios -> architecture*
+- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture* -- on *Backward design derivation*
+
+Further reading:
+
+- [Cervantes and Kazman 2024](/sources/software-engineering/architecture/cervantes-2024-designing-software-architectures.pdf.enc), *Designing Software Architectures: A Practical Approach, 2nd Edition*
+- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation*

@@ -1,8 +1,8 @@
 # Selected reading links in the short /agent-map/ index.
 # Published technical documents are discoverable through their section maps.
 main_documents = [
-  "/ai-engineering/evaluation/v1/ai-evaluation",
-  "/ai-engineering/evaluation/v1/evidence-model",
+  "/ai-engineering/evaluation/framework/ai-evaluation",
+  "/ai-engineering/evaluation/framework/evidence-model",
   "/ai-engineering/working-assumptions",
   "/ai-engineering/approach/empirical-nature",
 ]

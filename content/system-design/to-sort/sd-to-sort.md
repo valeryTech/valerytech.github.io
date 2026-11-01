@@ -32,6 +32,8 @@ This also makes testing useful as a design tool #engineering
 # Fundamentals of SA & SA Hard Parts
 
 
+Source: [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts*; [Richards and Ford 2025](/sources/software-engineering/architecture/richards-2025-fundamentals-of-software-architecture.pdf.enc), *Fundamentals of Software Architecture, 2nd Edition*.
+
 Because virtually every problem presents novel challenges, the real job of an architect lies in their ability to objectively determine and assess the set of trade-offs on either side of a consequential decision to resolve it as well as possible.
 
 ## Other
@@ -202,6 +204,8 @@ We will now continue along the same lines, and seek abstractions that can allow 
 # Hopre - Architect
 
 
+Source: [Hohpe 2017](/sources/software-engineering/architecture/hohpe-2017-37-things-one-architect-knows.pdf.enc), *37 Things One Architect Knows About IT Transformation*.
+
 As our world is becoming more complex and difficult to understand, telling stories is one of the best ways to engage and teach.
 
 An architect shouldn't ignore production issues, which provide valuable feedback into possible architectural weaknesses.
@@ -226,3 +230,13 @@ As I converse with colleagues about what distinguishes a great architect, we oft
 
 
 Integrate early, and integrate often. Avoid the use of long-lived branches for feature development, and consider trunk-based devel‐ opment instead. If you really have to use branches, keep them short!
+
+## Library sources
+
+
+- [Fowler 2003](/sources/software-engineering/architecture/fowler-2003-who-needs-an-architect.pdf.enc), *Who Needs an Architect?* -- on *Hopre - Architect*
+
+Further reading:
+
+- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation*
+- [Malan 2022](/sources/software-engineering/architecture/malan-2022-technical-leadership-decisions.pdf.enc), *Technical Leadership and Decisions*

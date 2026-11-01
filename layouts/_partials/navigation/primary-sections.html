@@ -1,3 +1,17 @@
+{{- $nav := partial "navigation/section-entries.html" . -}}
 <div class="site-header-links" role="group" aria-label="Sections">
-  {{- partial "navigation/section-links.html" . -}}
+  {{- partial "navigation/section-links.html" (dict "page" . "nav" $nav) -}}
+  {{- with $nav.more -}}
+    <button type="button" class="site-header-more" data-section-chooser popovertarget="site-more-collections" aria-controls="site-more-collections" aria-expanded="false" aria-label="More collections" title="More collections"{{ if $nav.moreSelected }} aria-current="true"{{ end }}>
+      {{- partial "components/chevron-icon.html" (dict "name" "chevron-up") -}}
+    </button>
+  {{- end -}}
 </div>
+{{- with $nav.more -}}
+  {{- $nodes := slice -}}
+  {{- range . }}{{ $nodes = $nodes | append .node }}{{ end -}}
+  {{- partial "breadcrumb/chooser.html" (dict
+    "entry" (dict "id" "site-more-collections" "title" "More collections" "groups" (slice (dict "key" "sections" "label" "" "nodes" $nodes)))
+    "currentPage" $
+  ) -}}
+{{- end -}}

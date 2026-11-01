@@ -6,8 +6,6 @@ description: "Explain Python's runtime class creation, annotations, and dataclas
 linkTitle: "Python data model and Pydantic"
 ---
 
-Original conversation: [Shared ChatGPT thread](https://chatgpt.com/share/6ad8073c-4f48-83ea-9bd2-b4b1d81fe800)
-
 These notes connect runtime class creation, annotation metadata, and Pydantic's use of a Rust extension. The central distinction is between describing a type and executing code that interprets or enforces that description.
 
 Related: [CPython, the JVM, and polymorphism]({{< ref "engineering/langs/python/cpython-jvm-comparison-and-polymorphism" >}}) · [Free threading and concurrency]({{< ref "engineering/langs/python/cpython-free-threading-and-concurrency" >}}).

@@ -17,15 +17,22 @@ These notes cover how to test AI system behavior, interpret the evidence, and de
 
 | Topic | Read |
 | --- | --- |
-| Purpose and scope | [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}) |
-| Test situations | [Coverage and case design]({{< ref "ai-engineering/evaluation/v1/coverage-and-case-design" >}}) |
-| Executions, traces, and what they establish | [Evidence model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}) |
-| Criteria and conclusions | [Judgment and findings]({{< ref "ai-engineering/evaluation/v1/30-judgment-and-findings" >}}) |
-| Investigating failures | [Failure understanding]({{< ref "ai-engineering/evaluation/v2/failure-understanding" >}}) |
-| Acting on findings | [Failure understanding as product feedback]({{< ref "ai-engineering/evaluation/v2/failures-putting-into-use" >}}) |
-| Evaluation infrastructure | [Harness and platform]({{< ref "ai-engineering/evaluation/v1/harness-and-platform" >}}) |
+| Purpose and scope | [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/ai-evaluation" >}}) |
+| Test situations | [Coverage and case design]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) |
+| Executions, traces, and what they establish | [Evidence model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) |
+| Criteria and conclusions | [Judgment and findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}) |
+| Investigating failures | [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}) |
+| Acting on findings | [AI product improvement system]({{< ref "ai-engineering/evaluation/framework/product-improvement-system-revised" >}}) |
+| Learning from production | [Production learning]({{< ref "ai-engineering/evaluation/framework/production-learning" >}}) |
+| Evaluation infrastructure | [Harness and platform]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) |
 
-## Two collections
+## Collections
 
 
-[V1]({{< ref "ai-engineering/evaluation/v1" >}}) covers cases, evidence, judgments, and findings. [V2]({{< ref "ai-engineering/evaluation/v2" >}}) develops the connection between evaluation and product improvement. Both contain current reading paths; V2 does not replace every V1 note.
+- [Evaluation framework]({{< ref "ai-engineering/evaluation/framework" >}}) -- cases, evidence, judgments, findings, and the harness that produces them.
+- [Theoretical methodology]({{< ref "ai-engineering/evaluation/theoretical-methodology" >}}) -- an early, untested attempt at methods for appraising claims and comparing system versions.
+
+## See also
+
+
+- [Capabilities]({{< ref "ai/capabilities" >}}) -- what a capability claim says, why a score is not the claim, and the disposition and construct account behind evaluating along declared demands rather than benchmark averages.

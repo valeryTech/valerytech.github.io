@@ -695,3 +695,14 @@ The goal is not to replace every feature with an experiment. It is to avoid maki
 
 
 > **Do not infer that an AI product works from its architecture, prompts, or implementation alone. Define the quality bar, run the complete product on cases that matter, inspect the failures, and use the results to decide what to improve and what is ready to ship.**
+
+## Library sources
+
+
+- [Magalhaes et al. 2025](/sources/ai-engineering/evaluation/magalhaes-2025-testing-the-untestable-llm-powered-software.pdf.enc), *Testing the Untestable? An Empirical Study on the Testing Process of LLM-Powered Software Systems* ([arXiv:2508.00198](https://arxiv.org/abs/2508.00198)) -- on *Three ways to make an AI product reliable*
+
+Further reading:
+
+- Shankar and Husain 2025, *Application-Centric AI Evals for Engineers and Technical PMs*
+- Wille and Torres 2025, *AI Evals podcast transcript*
+- [Yan et al. 2024](/sources/ai-engineering/practice/yan-2024-what-we-learned-from-building-with-llms.pdf.enc), *What We Learned from a Year of Building with LLMs*

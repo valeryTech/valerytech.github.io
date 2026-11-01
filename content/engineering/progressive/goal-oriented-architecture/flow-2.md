@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Intent-Driven and Scenario-Driven Architecture"
 description: "Compare goal-driven and scenario-driven architecture methods, from Impact Mapping and KAOS to Domain Storytelling, EventStorming, quality scenarios, and BDD."
-title: "Flow 2"
 linkTitle: "Intent-Driven and Scenario-Driven Architecture"
 ---
-# Intent-driven and scenario-driven architecture
-
 
 The relevant approach is an **intent-driven / goal-driven / scenario-driven architecture process**, rather than another architecture-view notation. It keeps each architectural element connected to the reason the system exists.
 
@@ -540,3 +538,16 @@ product outcome
 
 
 The proposed label **architecture by successive justification** is more precise for this synthesis than "working backwards" or "user-centered architecture": each step adds only the concepts needed to meet a requirement already established at the level above.
+
+## Library sources
+
+
+- [Bass et al. 2021](/sources/software-engineering/architecture/bass-2021-software-architecture-in-practice.pdf.enc), *Software Architecture in Practice, 4th Edition* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
+- [Cervantes and Kazman 2024](/sources/software-engineering/architecture/cervantes-2024-designing-software-architectures.pdf.enc), *Designing Software Architectures: A Practical Approach, 2nd Edition* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
+- [Kazman et al. 2000](/sources/software-engineering/architecture/kazman-2000-atam-method-architecture-evaluation.pdf.enc), *ATAM: Method for Architecture Evaluation* -- on *5. SEI QAW + Attribute-Driven Design -- probably the closest actual architecture methodology*
+- [Kruchten et al. 2009](/sources/software-engineering/architecture-decisions/kruchten-2009-decision-view-software-architecture-practice.pdf.enc), *The role of a "decision view" in software architecture practice* -- on *8. BDD / outside-in development -- same principle at code scale*
+- [Tyree and Akerman 2005](/sources/software-engineering/architecture-decisions/tyree-2005-architecture-decisions-demystifying-architecture.pdf.enc), *Architecture Decisions: Demystifying Architecture* -- on *8. BDD / outside-in development -- same principle at code scale*
+
+Further reading:
+
+- [Brown 2026](/sources/software-engineering/architecture/brown-2026-c4-model.pdf.enc), *The C4 Model: Visualizing Software Architecture*

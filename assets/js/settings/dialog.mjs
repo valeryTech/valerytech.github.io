@@ -1,6 +1,6 @@
 import { initSettingsForm } from "./form.mjs";
 
-export function initSettingsDialog(preferences, config) {
+export function initSettingsDialog(preferences, config, palette) {
   const template = document.getElementById("site-settings-dialog-template");
   if (
     !template ||
@@ -76,7 +76,7 @@ export function initSettingsDialog(preferences, config) {
     opener = link;
     document.documentElement.classList.add("site-settings-open");
     dialog.showModal();
-    form ??= initSettingsForm(dialog.querySelector("form"), preferences, config);
+    form ??= initSettingsForm(dialog.querySelector("form"), preferences, config, palette);
     form.refresh();
   });
 }

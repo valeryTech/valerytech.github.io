@@ -358,3 +358,13 @@ A change to any of these can improve one slice and degrade another. Without vers
 - Which production signals trigger investigation, restriction, or rollback?
 
 Behavioral reliability should not be the only barrier protecting an irreversible action.
+
+## Library sources
+
+
+- [Amershi et al. 2019](/sources/ml-engineering/se-for-ml/amershi-2019-software-engineering-for-ml-case-study.pdf.enc), *Software Engineering for Machine Learning: A Case Study*
+
+Further reading:
+
+- [Giray 2021](/sources/ml-engineering/se-for-ml/giray-2021-software-engineering-perspective-ml-systems.pdf.enc), *A Software Engineering Perspective on Engineering Machine Learning Systems*
+- [SEBoK 2022](/sources/thinking-and-learning/systems-thinking/sebok-2022-guide-systems-engineering-body-of-knowledge.pdf.enc), *Guide to the Systems Engineering Body of Knowledge (SEBoK)*

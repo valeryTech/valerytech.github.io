@@ -12,17 +12,17 @@
           {{ partial "utils/icon.html" (dict "name" "menu-alt-2" "attributes" "height=20") }}
         </button>
       {{ end }}
+      {{- range site.Menus.main -}}
+        {{- if eq .Params.type "search" -}}
+          {{ partial "search.html" (dict "icon" .Params.icon) }}
+        {{- end -}}
+      {{- end -}}
       <div class="site-header-preferences" role="group" aria-label="Site preferences">
         {{ partial "theme-toggle.html" (dict "class" "site-header-icon-button" "hideLabel" true) }}
         <a class="site-settings-link site-control site-control-icon-only site-header-icon-button" href="{{ "settings/" | relURL }}" aria-label="Settings" title="Settings" data-site-settings-open>
           {{ partial "components/control-icon.html" (dict "name" "settings") }}
         </a>
       </div>
-      {{- range site.Menus.main -}}
-        {{- if eq .Params.type "search" -}}
-          {{ partial "search.html" (dict "icon" .Params.icon) }}
-        {{- end -}}
-      {{- end -}}
     </div>
   </nav>
 </div>

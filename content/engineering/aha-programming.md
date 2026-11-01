@@ -62,3 +62,8 @@ A few years ago, I was hired to review a company's codebase and I used a tool ca
 I feel like a measured and pragmatic approach to software principles is important. That's why I prefer `AHA` over `DRY` or `WET`. It's intended to help you be mindful of your abstractions without giving hard-fast rules to when it is or isn't ok to abstract some code into a function or module.
 
 I hope that's helpful to you. If you find yourself mired in bad abstractions, take heart! Sandi gives you some good steps for how to get out of that! [Just read her blog post](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction). Good luck!
+
+## Library sources
+
+
+- [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer*

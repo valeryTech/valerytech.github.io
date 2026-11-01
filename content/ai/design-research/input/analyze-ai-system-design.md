@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Analyze AI System Design"
 description: "A conversation about designing systems with people, software, data, and LLMs, separating generative capabilities from workflow control, validation, and authority."
-title: "Analyze Ai System Design"
-linkTitle: "Analyze Ai System Design"
+linkTitle: "Analyze AI System Design"
 ---
 
 Publication note, 2026-04-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
@@ -19,11 +19,11 @@ Now let's reason about these things.
 
 First, we have systems with people, code, data, and the usual components, and now we also have LLMs. LLMs have a set of features, including unreliability and the ability to generate text. Formally, they generate text, but what can they produce through that text? They can propose actions, process information, and perform familiar NLP tasks, but they can also produce structured output.
 
-[https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/](<https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/>) Then, regarding AI system types, maybe we should reason from a common perspective. Later, or even now, we could consider a specific example, such as an agentic application.
+[https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>) Then, regarding AI system types, maybe we should reason from a common perspective. Later, or even now, we could consider a specific example, such as an agentic application.
 
 So one direction is security and limiting LLM unreliability. We could identify different ways to achieve this, including through system architecture. We could introduce software graphs as a kind of harness. We also need to understand what else we can use. It could be type modeling within a language, or perhaps giving the LLM a specific set of tools in a sandbox or another restricted environment. It could also involve different guardrails, automatic judges, and other classifiers. For example, with Jev, we could use models to assess what the system or LLM proposes. So this is one direction.
 
-And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs—what else? We need to find out. Let's analyze my product or problem framing conceptually.
+And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs--what else? We need to find out. Let's analyze my product or problem framing conceptually.
 
 ---
 
@@ -90,9 +90,9 @@ Your list mixes several kinds of mechanisms. I'd organize them by the part of th
 
 This makes room for more than defensive controls.
 
-A tool interface, for example, is also a way to make a task easier for the model: useful operation names, clear arguments, and informative results can change how successfully it works. Anthropic's tool-design guidance explicitly treats these interface choices as things to develop and evaluate. [anthropic.com](<https://www.anthropic.com/research/writing-tools-for-agents?utm_source=chatgpt.com>)
+A tool interface, for example, is also a way to make a task easier for the model: useful operation names, clear arguments, and informative results can change how successfully it works. Anthropic's tool-design guidance explicitly treats these interface choices as things to develop and evaluate. [anthropic.com](<https://www.anthropic.com/research/writing-tools-for-agents>)
 
-A sandbox provides another example. Restricting filesystem and network access can permit more independent execution within those boundaries. The restriction can increase usable autonomy. [anthropic.com](<https://www.anthropic.com/research/claude-code-sandboxing?utm_source=chatgpt.com>)
+A sandbox provides another example. Restricting filesystem and network access can permit more independent execution within those boundaries. The restriction can increase usable autonomy. [anthropic.com](<https://www.anthropic.com/research/claude-code-sandboxing>)
 
 So the relationship between your directions is not necessarily a tradeoff. A mechanism can improve both. Whether it does so for a particular task needs evidence.
 
@@ -132,7 +132,7 @@ That last point is useful: a representation should allow the system to express m
 
 However, enforcement depends on implementation. A type definition included in a prompt is guidance. A checked runtime representation can reject outputs that violate its encoded rules.
 
-Even schema-conforming output can contain incorrect values or unsupported claims. OpenAI's Structured Outputs documentation explicitly distinguishes schema adherence from remaining content mistakes. [OpenAI API](<https://developers.openai.com/api/docs/guides/structured-outputs?utm_source=chatgpt.com>)
+Even schema-conforming output can contain incorrect values or unsupported claims. OpenAI's Structured Outputs documentation explicitly distinguishes schema adherence from remaining content mistakes. [OpenAI API](<https://developers.openai.com/api/docs/guides/structured-outputs>)
 
 #### DSLs: what operations and compositions can be expressed?
 
@@ -179,7 +179,7 @@ They can improve results, but their presence does not establish that the model w
 
 Classifiers, LLM judges, and human reviewers can assess relevance, meaning, plausibility, intent, and other properties that are difficult to encode completely.
 
-Their judgments can also be wrong. Research on LLM judges documents limitations such as position bias, verbosity bias, and limited reasoning ability. A judge therefore needs evaluation against the particular decisions you intend to delegate to it. [arxiv.org](<https://arxiv.org/abs/2306.05685?utm_source=chatgpt.com>)
+Their judgments can also be wrong. Research on LLM judges documents limitations such as position bias, verbosity bias, and limited reasoning ability. A judge therefore needs evaluation against the particular decisions you intend to delegate to it. [arxiv.org](<https://arxiv.org/abs/2306.05685>)
 
 #### Enforcement controls a specified boundary
 
@@ -217,7 +217,7 @@ The surrounding system could provide:
 - An explicit record of hypotheses, observations, and unresolved questions.
 - A way for the person to correct the investigation or request another comparison.
 
-The model chooses a query, receives actual results, and revises its next step. That dynamic selection is the agentic part. The distinction between predefined workflows and agents that choose subsequent steps is also used in Anthropic's architectural account. [anthropic.com](<https://www.anthropic.com/engineering/building-effective-agents?utm_source=chatgpt.com>)
+The model chooses a query, receives actual results, and revises its next step. That dynamic selection is the agentic part. The distinction between predefined workflows and agents that choose subsequent steps is also used in Anthropic's architectural account. [anthropic.com](<https://www.anthropic.com/engineering/building-effective-agents>)
 
 A general version of that arrangement looks like this:
 
@@ -247,7 +247,7 @@ A remaining limitation is equally explicit: **correctly executed queries do not 
 ### 6. Connect this to product types through a separate design profile
 
 
-I couldn't retrieve the exact URL you supplied. I did find your current [practitioner guide to seven AI product archetypes](<https://valery.tech/ai/var/practitioner-guide-seven-ai-product-types/?utm_source=chatgpt.com>), which separates the primary work from deployment decisions. That separation fits this framing. [Systems & Engineering](<https://valery.tech/ai/var/practitioner-guide-seven-ai-product-types/?utm_source=chatgpt.com>)
+I couldn't retrieve the exact URL you supplied. I did find your current practitioner guide to seven AI product archetypes (since removed from the site), which separates the primary work from deployment decisions. That separation fits this framing.
 
 I would keep two descriptions of a system:
 
@@ -297,14 +297,14 @@ The eight case notes are grouped in `cases/`. These are concrete examples for an
 
 | # | Case | Primary work | Examples |
 | --- | --- | --- | --- |
-| 1 | **[Closed-set task assistant](https://valery.tech/ai/var/02-ai-project-examples/cases/closed-set-task-assistant/)** | Supports predefined tasks with architectural guardrails; the application enforces valid transitions, permissions, and operations. | Booking, account recovery, form completion, predefined customer-service tasks. |
-| 2 | **[General-purpose AI assistant](https://valery.tech/ai/var/02-ai-project-examples/cases/general-purpose-ai-assistant/)** | Supports open-ended questions, reasoning, explanations, exploration, and content creation, with the option to enter bounded workflows. | Questions, writing, brainstorming, explanation, document analysis. |
-| 3 | **[Context-aware support assistant](https://valery.tech/ai/var/02-ai-project-examples/cases/context-aware-support-assistant/)** | Helps users understand and diagnose issues using product knowledge, authorized account information, operational state, and support history. | Billing explanations, configuration diagnosis, account troubleshooting, escalation. |
-| 4 | **[AI-assisted analysis and investigation systems](https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/)** | Develops questions, evidence, claims, and contradictions into findings or a better understanding. | Audit preparation, due diligence, policy research, incident investigation. |
-| 5 | **[Clinical and domain-specific work copilots](https://valery.tech/ai/var/02-ai-project-examples/cases/clinical-and-domain-specific-copilots/)** | Helps professionals develop or check work products under domain requirements. | Clinical notes, transcript translation, contract review, receipt classification. |
-| 6 | **[Agentic operations and coordination systems](https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/)** | Pursues delegated objectives by selecting steps, using permitted tools, coordinating participants, and handling exceptions. | Scheduling, customer follow-up, recruiting, onboarding coordination. |
-| 7 | **[Analytical engines and programmable environments](https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/)** | Provides computational engines for predefined pipelines and environments where people or agents construct new analyses. | Forecasting, optimization, scenario planning, SQL or DSL analysis. |
-| 8 | **[Coding agents and software engineering workspaces](https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/)** | Develops and revises software in repositories and executable environments, using execution feedback and verification to guide subsequent steps. | Repository-level coding agents, code review and test loops, delegated software changes. |
+| 1 | **[Closed-set task assistant](https://valery.tech/ai/system-types/project-examples/cases/closed-set-task-assistant/)** | Supports predefined tasks with architectural guardrails; the application enforces valid transitions, permissions, and operations. | Booking, account recovery, form completion, predefined customer-service tasks. |
+| 2 | **[General-purpose AI assistant](https://valery.tech/ai/system-types/project-examples/cases/general-purpose-ai-assistant/)** | Supports open-ended questions, reasoning, explanations, exploration, and content creation, with the option to enter bounded workflows. | Questions, writing, brainstorming, explanation, document analysis. |
+| 3 | **[Context-aware support assistant](https://valery.tech/ai/system-types/project-examples/cases/context-aware-support-assistant/)** | Helps users understand and diagnose issues using product knowledge, authorized account information, operational state, and support history. | Billing explanations, configuration diagnosis, account troubleshooting, escalation. |
+| 4 | **[AI-assisted analysis and investigation systems](https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/)** | Develops questions, evidence, claims, and contradictions into findings or a better understanding. | Audit preparation, due diligence, policy research, incident investigation. |
+| 5 | **[Clinical and domain-specific work copilots](https://valery.tech/ai/system-types/project-examples/cases/clinical-and-domain-specific-copilots/)** | Helps professionals develop or check work products under domain requirements. | Clinical notes, transcript translation, contract review, receipt classification. |
+| 6 | **[Agentic operations and coordination systems](https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/)** | Pursues delegated objectives by selecting steps, using permitted tools, coordinating participants, and handling exceptions. | Scheduling, customer follow-up, recruiting, onboarding coordination. |
+| 7 | **[Analytical engines and programmable environments](https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/)** | Provides computational engines for predefined pipelines and environments where people or agents construct new analyses. | Forecasting, optimization, scenario planning, SQL or DSL analysis. |
+| 8 | **[Coding agents and software engineering workspaces](https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/)** | Develops and revises software in repositories and executable environments, using execution feedback and verification to guide subsequent steps. | Repository-level coding agents, code review and test loops, delegated software changes. |
 
 ### Case summaries
 
@@ -361,7 +361,7 @@ The closed-set task assistant emphasizes architectural guardrails for a predefin
 ### Related design concepts
 
 
-[Operating regimes](https://valery.tech/ai/var/02-ai-project-examples/operating-regimes/) examines how work progresses and is controlled through open-ended interaction, bounded workflows, investigation, collaborative artifact work, and delegated execution. These candidate regimes can coexist within a product, with relevant state preserved and permissions enforced when moving between them.
+[Operating regimes](https://valery.tech/ai/system-types/project-examples/operating-regimes/) examines how work progresses and is controlled through open-ended interaction, bounded workflows, investigation, collaborative artifact work, and delegated execution. These candidate regimes can coexist within a product, with relevant state preserved and permissions enforced when moving between them.
 
 ### Initial design model
 

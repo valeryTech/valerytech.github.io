@@ -23,7 +23,7 @@ The [research hierarchy]({{< ref "ai/design-research/00-overview/06-research-sco
 | [Builder method]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}) | Work requirements lead to candidate contracts, boundaries, and enforcement mechanisms. | A useful mechanism taxonomy that can become a practical design worksheet. |
 | [Program authoring and typed planning]({{< ref "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning" >}}) | Types and diagnostics help construct and revise programs. | Research on supplying relevant type context and constraining generation before a complete program exists. |
 | [Trusted effect boundaries]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) | Authority comes from trusted mechanisms, and consequential actions must pass their checks. | Additional precedents for tracked capabilities, information flow, and approval protocols. |
-| [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) and [verification]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}) | A representation can support inquiry, while acceptance and authorization remain distinct. | A hypothesis about using specifications and counterexamples in human–LLM dialogue; this is an extension proposed here. |
+| [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) and [verification]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}) | A representation can support inquiry, while acceptance and authorization remain distinct. | A hypothesis about using specifications and counterexamples in human-LLM dialogue; this is an extension proposed here. |
 
 Several ideas already have a home. CaMeL and AgentSpec appear in the trusted-boundary note. ETAS is discussed extensively in the [typed functional harness report]({{< ref "ai/design-research/input/harness/type-oriented-functional-harnesses-with-references" >}}). Typed holes, compiler feedback, information-flow types, and proposal/commit separation also appear in the language notes. The new sources make parts of that discussion more concrete; repeated generated summaries are not independent confirmation.
 
@@ -77,7 +77,7 @@ Consider an illustrative requirement: a research assistant may analyze private d
 | The report supports its claims | Evidence references, task-specific validation, and appropriate review | Valid references alone do not establish that the evidence supports the claims. |
 | The user understands the result and its limits | Inspectable evidence, alternatives, and explanations of constraints | This requires observations of understanding and decisions, separate from runtime checks. |
 
-The [Hard-KLAIM publisher abstract](https://www.sciencedirect.com/science/article/pii/S2352220826000830) reports a mechanized trace-safety result covering exact approval binding, capability non-amplification, and provenance under explicit boundary assumptions. It is a close precedent for the approval row. Its guarantee concerns represented traces at the agent–tool–workflow boundary, and depends on authoritative declarations and faithful adapters.
+The [Hard-KLAIM publisher abstract](https://www.sciencedirect.com/science/article/pii/S2352220826000830) reports a mechanized trace-safety result covering exact approval binding, capability non-amplification, and provenance under explicit boundary assumptions. It is a close precedent for the approval row. Its guarantee concerns represented traces at the agent-tool-workflow boundary, and depends on authoritative declarations and faithful adapters.
 
 For each row, the builder could record the requirement, formal property, enforcement point, trusted assumptions, known bypasses, counterexample, and evidence. This extends the existing method into something practitioners could use to explain and review a design. It also makes the cost of a constraint visible: a policy may block a useful operation, require escalation, or make a workflow harder to express.
 
@@ -86,7 +86,7 @@ For each row, the builder could record the requirement, formal property, enforce
 
 A candidate contribution is **a method for choosing and revising representations and enforcement boundaries from the properties a collaborative system needs**, supported by worked cases and evidence about its usefulness.
 
-The language literature raises the bar for claims about typed agents, explicit effects, or approval protocols alone. [ETAS](https://arxiv.org/abs/2607.17780) already treats model calls, approvals, policies, and traces as language elements. Its [repository](https://github.com/etas-project/etas) describes an experimental implementation with incomplete protocol and concurrency work. These are relevant precedents and possible experimental foundations, not a reason to select a new language immediately.
+The language literature raises the bar for claims about typed agents, explicit effects, or approval protocols alone. [ETAS](https://arxiv.org/abs/2607.17780) ([PDF](/sources/ai-engineering/harness/tan-2026-etas-effect-typed-language-agent-systems.pdf.enc)) already treats model calls, approvals, policies, and traces as language elements. Its [repository](https://github.com/etas-project/etas) describes an experimental implementation with incomplete protocol and concurrency work. These are relevant precedents and possible experimental foundations, not a reason to select a new language immediately.
 
 Two bounded studies could connect the material to the existing program:
 
@@ -100,10 +100,15 @@ The forecast that strong languages will become more popular remains separate fro
 ## Reading and verification scope
 
 
-Read the [agent-guarantees report]({{< ref "ai/design-research/input/research-llm-programming-languages/agent-guarantees" >}}) alongside the trusted-boundary note; use [language design]({{< ref "ai/design-research/input/research-llm-programming-languages/language-design" >}}) as a mechanism checklist; use [language thesis]({{< ref "ai/design-research/input/research-llm-programming-languages/language-thesis" >}}) for the adjacent argument about generating and checking software. Continue the practical synthesis in [AI systems design]({{< ref "ai/ai-system-design" >}}).
+Read the [agent-guarantees report]({{< ref "ai/design-research/input/research-llm-programming-languages/agent-guarantees" >}}) alongside the trusted-boundary note; use [language design]({{< ref "ai/design-research/input/research-llm-programming-languages/language-design" >}}) as a mechanism checklist; use [language thesis]({{< ref "ai/design-research/input/research-llm-programming-languages/language-thesis" >}}) for the adjacent argument about generating and checking software. Continue the practical synthesis in [AI systems design]({{< ref "ai/design/ai-system-design" >}}).
 
 For this review, primary-source checks covered the relevant TACIT and Fides passages, the typed-holes and type-constrained-generation abstracts, the ETAS abstract and repository status, and the publisher-indexed Hard-KLAIM abstract. TACIT distinguishes proofs for its base capture-checking system from a further soundness argument needed for its safe mode. Hard-KLAIM's proof artifact was not independently checked here. The [LSL publisher material](https://doi.org/10.1145/3832776) supports its placement as a language research roadmap. The remaining bibliography, adoption predictions, and benchmark results were not comprehensively audited or reproduced.
 
 This note is later analysis, separate from the exported reports and their manifest. Its proposed contribution and studies remain open to revision.
 
-The separate conceptual note [Representations, composition, and understanding]({{< ref "ai/ai-system-design/representations-composition-and-understanding" >}}) develops candidate foundations for this direction: the constructive role of representations, preservation under composition, shared inquiry, and the role of incompleteness and revision.
+The separate conceptual note [Representations, composition, and understanding]({{< ref "ai/design/ai-system-design/representations-composition-and-understanding" >}}) develops candidate foundations for this direction: the constructive role of representations, preservation under composition, shared inquiry, and the role of incompleteness and revision.
+
+## Library sources
+
+
+- [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617))

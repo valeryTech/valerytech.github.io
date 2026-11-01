@@ -45,13 +45,6 @@ No cited paper, product, legal claim, patent, or benchmark was independently ver
 | [Governance and specification trust]({{< ref "ai/design-research/06-research-reports/06-governance-patents-and-specification-trust" >}}) | The audit-access discussion connects to permission boundaries. The legal and patent material is not validated by the mapping pass. |
 | [Interactive investigation paper]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}) | The proposed principles connect to evolving needs and retrieval examples. The study agenda concerns user understanding as well as evidence quality. |
 
-## Keep the original index as historical navigation
-
-
-The [original index]({{< ref "ai/design-research/00-overview/03-original-index-notes" >}}) contains short pointers to behavioral types, type systems, and domain modeling. It remains the only content entry without an authored conceptual arrow.
-
-The original index already has explicit outside references in the catalogue and snapshot. Adding an arrow merely to include every file would add little explanation. A later review may add a connection if a specific reading question needs one.
-
 ## Distinctions the new diagrams retain
 
 

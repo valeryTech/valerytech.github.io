@@ -1,0 +1,62 @@
+{{- /* Pages with PDF links get the reader shell and its module; PDF.js loads when a reader opens. */ -}}
+<template id="site-pdf-reader-template">
+  <section class="site-pdf-reader">
+    <div class="site-pdf-reader-bar">
+      <p class="site-pdf-reader-title"></p>
+      <p class="site-pdf-reader-status" aria-live="polite"></p>
+      <div class="site-pdf-reader-actions">
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="outline" aria-label="Contents" title="Contents" aria-expanded="false" hidden>
+          {{- partial "components/control-icon.html" (dict "name" "list") -}}
+        </button>
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="find" aria-label="Find in PDF" title="Find in PDF" aria-expanded="false">
+          {{- partial "components/control-icon.html" (dict "name" "search") -}}
+        </button>
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="colors">
+          {{- partial "components/control-icon.html" (dict "name" "contrast") -}}
+        </button>
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="zoom-out" aria-label="Zoom out" title="Zoom out">
+          {{- partial "components/control-icon.html" (dict "name" "minus") -}}
+        </button>
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="zoom-in" aria-label="Zoom in" title="Zoom in">
+          {{- partial "components/control-icon.html" (dict "name" "plus") -}}
+        </button>
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="width" hidden>
+          {{- partial "components/control-icon.html" (dict "name" "widen" "attributes" "data-pdf-width-icon=\"text\"") -}}
+          {{- partial "components/control-icon.html" (dict "name" "narrow" "attributes" "data-pdf-width-icon=\"wide\"") -}}
+        </button>
+        <a class="site-pdf-reader-action" data-pdf-action="open" target="_blank" rel="noopener" aria-label="Open the PDF in a new tab" title="Open in a new tab">
+          {{- partial "components/control-icon.html" (dict "name" "external") -}}
+        </a>
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="close" aria-label="Close the reader" title="Close">
+          {{- partial "components/control-icon.html" (dict "name" "close") -}}
+        </button>
+      </div>
+    </div>
+    <form class="site-pdf-reader-unlock" hidden>
+      <input class="site-pdf-reader-unlock-input" type="password" placeholder="Password" aria-label="Password" autocomplete="off" spellcheck="false">
+      <p class="site-pdf-reader-unlock-status" aria-live="polite"></p>
+      <button type="submit" class="site-pdf-reader-action" aria-label="Unlock" title="Unlock">
+        {{- partial "components/control-icon.html" (dict "name" "check") -}}
+      </button>
+    </form>
+    <div class="site-pdf-reader-find" role="search" hidden>
+      <input class="site-pdf-reader-find-input" type="search" placeholder="Find in PDF" aria-label="Find in PDF" autocomplete="off" spellcheck="false">
+      <p class="site-pdf-reader-find-status" aria-live="polite"></p>
+      <button type="button" class="site-pdf-reader-action" data-pdf-action="find-previous" aria-label="Previous match" title="Previous match (Shift+Enter)">
+        {{- partial "components/control-icon.html" (dict "name" "chevron-up") -}}
+      </button>
+      <button type="button" class="site-pdf-reader-action" data-pdf-action="find-next" aria-label="Next match" title="Next match (Enter)">
+        {{- partial "components/control-icon.html" (dict "name" "chevron-down") -}}
+      </button>
+      <button type="button" class="site-pdf-reader-action" data-pdf-action="find-close" aria-label="Close find" title="Close find">
+        {{- partial "components/control-icon.html" (dict "name" "close") -}}
+      </button>
+    </div>
+    <div class="site-pdf-reader-viewport">
+      <nav class="site-pdf-reader-outline" aria-label="PDF contents" hidden></nav>
+      <div class="site-pdf-reader-scroller" tabindex="0"><div class="pdfViewer"></div></div>
+    </div>
+  </section>
+</template>
+{{- $js := resources.Get "js/pdf-reader.mjs" | js.Build (dict "format" "esm" "target" "es2020" "minify" true) | fingerprint }}
+<script type="module" src="{{ $js.RelPermalink }}"></script>

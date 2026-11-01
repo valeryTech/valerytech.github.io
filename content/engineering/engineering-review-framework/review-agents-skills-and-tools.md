@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Review Agents, Skills, and Tools"
 description: "Support review with agents, reusable skills, agentic workflows, and tools, choosing their roles according to the review question."
-title: "Review Agents Skills And Tools"
 linkTitle: "Review Agents, Skills, and Tools"
 ---
-# Review Agents, Skills, and Tools
-
 ## Purpose
 
 
@@ -98,7 +96,7 @@ External references checked on 2026-04-20. Local tool and skill sources are link
 ## Related notes
 
 
-- [AGENTS.md guidance]({{< ref "ai-engineering/coding-agents/agents-md/agents-md" >}}) -- giving agents concise project context, canonical references, and validation commands.
+- [AGENTS.md guidance]({{< ref "ai-engineering/agents/agents-md/agents-md" >}}) -- giving agents concise project context, canonical references, and validation commands.
 
 ## Related documents
 

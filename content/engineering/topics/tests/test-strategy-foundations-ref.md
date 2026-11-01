@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Test Strategy Playbook v3"
 description: "A detailed test-strategy playbook combining practical-pyramid mental models with evidence mapping, pipeline budgets, ownership, governance, and operational templates."
-title: "Test Strategy Foundations Ref"
 linkTitle: "Test Strategy Playbook v3"
 ---
 # Test Strategy Playbook (v3): Practical Pyramid, Clear Mental Models, and Operational Governance

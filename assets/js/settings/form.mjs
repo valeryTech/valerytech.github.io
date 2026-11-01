@@ -1,4 +1,7 @@
-export function initSettingsForm(form, preferences, config) {
+import { PRESETS_CHANGE } from "./palette.mjs";
+import { exportSettings, importSettings } from "./transfer.mjs";
+
+export function initSettingsForm(form, preferences, config, palette) {
   const controls = form.querySelector("[data-settings-controls]");
   const status = form.querySelector('[role="status"]');
   const inputs = [...form.querySelectorAll("[data-preference]")];
@@ -95,6 +98,32 @@ export function initSettingsForm(form, preferences, config) {
   }
   form.querySelector("[data-settings-reset]").addEventListener("click", () => {
     status.textContent = preferences.reset() ? config.messages.reset : config.messages.resetFailed;
+  });
+  form.querySelector("[data-settings-export]").addEventListener("click", () => {
+    const file = new Blob([JSON.stringify(exportSettings(preferences, palette), null, 2)], {
+      type: "application/json",
+    });
+    const link = Object.assign(document.createElement("a"), {
+      href: URL.createObjectURL(file),
+      download: config.exportFileName,
+    });
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(link.href));
+    status.textContent = config.messages.exported;
+  });
+  const importFile = form.querySelector("[data-settings-import-file]");
+  form.querySelector("[data-settings-import]").addEventListener("click", () => importFile.click());
+  importFile.addEventListener("change", async () => {
+    const [file] = importFile.files;
+    importFile.value = "";
+    if (!file) return;
+    try {
+      const saved = importSettings(await file.text(), preferences, palette);
+      document.dispatchEvent(new CustomEvent(PRESETS_CHANGE));
+      status.textContent = saved ? config.messages.imported : config.messages.importSaveFailed;
+    } catch {
+      status.textContent = config.messages.importFailed;
+    }
   });
   form.addEventListener("submit", (event) => event.preventDefault());
   preferences.subscribe(refresh);

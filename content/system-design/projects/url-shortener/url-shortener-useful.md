@@ -151,7 +151,6 @@ Briefly state the core problem and goal to establish the purpose of the system.
 
 ### **Step 2: Explain the "How" (The Core Technical Flow)**
 
-#todo refactor this to HLD + Deep Dives approach from Hello Interview Framework
 
 Connect the prepared technical design and proposed flow to the user and business goals established in Step 1.
 

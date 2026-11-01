@@ -4,24 +4,24 @@ a[href],
   color: var(--site-link-color);
 }
 
-/* Panel labels stay neutral; interaction and the current item use the link accent. */
+/* Panel labels stay neutral; interaction and the current item use the accent. */
 :is(.section-nav, .mobile-site-nav, .site-page-outline) a[href] {
   color: var(--site-nav-foreground);
 }
 
 /* Filled light-mode context rows need a darker foreground than ordinary labels. */
 .section-nav .site-pinned a[href],
-.site-page-outline a.site-pinned[href] {
+.site-page-outline .site-pinned a[href] {
   color: var(--site-nav-context-foreground);
 }
 
 :is(.section-nav, .mobile-site-nav, .site-page-outline)
   a[href]:is(:hover, :focus-visible, [aria-current="page"], [aria-current="location"]) {
-  color: var(--site-link-color);
+  color: var(--site-accent);
 }
 
 :is(.section-nav, .mobile-site-nav, .site-page-outline) a[href]:focus-visible {
-  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline: var(--site-focus-width) solid var(--site-accent);
   outline-offset: calc(-1 * var(--site-focus-width));
   box-shadow: none;
 }
@@ -39,12 +39,12 @@ a[href],
 }
 
 body > a[href="#content"]:focus-visible {
-  background: var(--site-breadcrumb-background);
+  background: var(--site-context-header);
 }
 
-/* Standalone legacy pages follow the system theme without the site scripts. */
+/* Standalone alias pages follow the system theme without the site scripts. */
 @media (prefers-color-scheme: dark) {
-  :root:is([data-legacy-redirect], [data-alias-redirect]) {
+  :root[data-alias-redirect] {
     --site-link-color: var(--site-link-color-dark);
   }
 }

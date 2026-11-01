@@ -6,8 +6,6 @@ description: "Go, Scala, Haskell, and BEAM expose different trade-offs in compil
 linkTitle: "Language choice for AI systems"
 ---
 
-Source discussion: [BEAM languages explained](https://chatgpt.com/share/6ad81a28-376c-83e9-a239-5d008ce09749).
-
 Article under discussion: The Boring Future of AI Coding ([original article](https://metamagic.substack.com/p/the-boring-future-of-ai-coding)).
 
 This note connects language choice with a proposed semantic substrate for AI systems. It develops the research proposal first, then compares Go, Scala, Haskell, and BEAM for AI-generated code. The architectural choices and adoption predictions are proposals and qualitative assessments, rather than demonstrated results.

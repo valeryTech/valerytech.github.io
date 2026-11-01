@@ -8,7 +8,6 @@ const root = fileURLToPath(new URL('../../', import.meta.url));
 const output = path.join(root, 'public');
 const normalize = (route) => decodeURIComponent(route).replace(/\/$/, '') || '/';
 const origin = 'https://valery.tech';
-const redirectPaths = new Set(Object.keys(JSON.parse(readFileSync(path.join(root, 'data/redirects.json'), 'utf8')).redirects).map(normalize));
 const extractLinks = (document) => [...document.matchAll(/\bhref=(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)]
   .map((match) => new URL((match[1] ?? match[2] ?? match[3]).replaceAll('&amp;', '&'), origin));
 const extractMarkdownLinks = (document) => [...document.matchAll(/\]\(([^)]+)\)/g)].map((match) => new URL(match[1], origin));
@@ -64,8 +63,9 @@ test('only the main index and five merged collection maps are generated', () => 
   const expected = ['/agent-map/', '/agent-map/ai/', '/agent-map/ai-engineering/', '/agent-map/engineering/', '/agent-map/system-design/', '/agent-map/projects/'];
   assert.deepEqual([...maps.keys()].sort(), expected.sort());
   const ai = extractLinks(maps.get('/agent-map/ai/'));
-  assert.ok(ai.some((link) => link.pathname === '/ai/discovery/analysis-or-operation-model/'));
-  assert.ok(ai.some((link) => link.pathname === '/ai/other/methodology-v1-3/usage/rfc-v1-4/'));
+  assert.ok(ai.some((link) => link.pathname === '/ai/product/discovery/analysis-or-operation-model/'));
+  const aiEngineering = extractLinks(maps.get('/agent-map/ai-engineering/'));
+  assert.ok(aiEngineering.some((link) => link.pathname === '/ai-engineering/evaluation/theoretical-methodology/framework/usage/rfc-v1-4/'));
   assert.ok(!ai.some((link) => link.pathname === '/agent-map/ai/discovery/'));
   assert.ok(!ai.some((link) => link.pathname.startsWith('/system-design/')));
   for (const [route, document] of maps) {
@@ -78,7 +78,7 @@ test('only the main index and five merged collection maps are generated', () => 
   assert.ok(extractLinks(main).some((link) => link.pathname === '/topics/'));
 });
 
-test('following the maps covers current published material, excluding redirects, utilities and templates', () => {
+test('following the maps covers current published material, excluding aliases, utilities and templates', () => {
   for (const document of maps.values()) assert.doesNotMatch(document, /\{\{/);
   for (const filename of files(output).filter((filename) => filename.endsWith('.html'))) {
     let route = `/${path.relative(output, filename).split(path.sep).join('/')}`;
@@ -86,8 +86,6 @@ test('following the maps covers current published material, excluding redirects,
     // Pagination repeats a collection already in the maps.
     if (/\/page\/\d+\/$/.test(route)) continue;
     if (['/404.html', '/blog/example-post/'].includes(route)) continue;
-    // Explanatory legacy pages are utilities, not current collection documents.
-    if (redirectPaths.has(normalize(route))) continue;
     // Hugo aliases preserve old addresses without advertising them in the maps.
     if (isAlias(readFileSync(filename, 'utf8'))) continue;
     // HTML attachments are resources of a mapped article, not separate articles.
@@ -101,11 +99,11 @@ test('following the maps covers current published material, excluding redirects,
 
 test('maps distinguish preferred entry points, published drafts, and archived history without guessing from version names', () => {
   const systemDesign = maps.get('/agent-map/system-design/');
-  assert.match(systemDesign, /href=["']?\/system-design\/system-design\/["']?>[^<]+<\/a> <strong>\[Canonical\]<\/strong>/);
+  assert.match(systemDesign, /href=["']?\/system-design\/interview\/study-and-practice\/["']?>[^<]+<\/a> <strong>\[Canonical\]<\/strong>/);
   assert.match(systemDesign, /href=["']?\/system-design\/archive\/study-plan-v0\/["']?>[^<]+<\/a> <strong>\[Archived\]<\/strong>/);
   const engineering = maps.get('/agent-map/engineering/');
   assert.match(engineering, /href=["']?\/engineering\/architecture\/architecture\/["']?>[^<]+<\/a> <strong>\[Draft\]<\/strong>/);
-  const versioned = maps.get('/agent-map/ai-engineering/').match(/<li><a href=["']?\/ai-engineering\/evaluation\/v1\/guide\/["']?>[\s\S]*?<\/li>/)?.[0];
+  const versioned = maps.get('/agent-map/ai-engineering/').match(/<li><a href=["']?\/ai-engineering\/evaluation\/framework\/guide\/["']?>[\s\S]*?<\/li>/)?.[0];
   assert.ok(versioned, 'Versioned documents remain discoverable');
   assert.doesNotMatch(versioned, /\[(Canonical|Archived|Draft)\]/);
 });
@@ -172,7 +170,7 @@ test('Hugo renders the assembled Markdown and retains the text download URLs', (
     assert.deepEqual(extractLinks(document).map((link) => link.pathname), extractMarkdownLinks(markdown).map((link) => link.pathname), `HTML should preserve all Markdown navigation links: ${route}`);
     assert.doesNotMatch(document, /^# |\]\(\//m, `Map must be rendered HTML: ${route}`);
   }
-  assert.match(maps.get('/agent-map/system-design/'), /Design questions and study references for specifying visibility after writes/);
+  assert.match(maps.get('/agent-map/system-design/'), /The requirement side of consistency: design questions about visibility after writes/);
 });
 
 test('all map links lead directly to current pages and expose no legacy or repository navigation', () => {
@@ -180,7 +178,6 @@ test('all map links lead directly to current pages and expose no legacy or repos
   for (const link of links) {
     assert.equal(link.origin, origin, `Unexpected external navigation link: ${link}`);
     assert.ok(statSync(outputFile(link.pathname)).isFile(), `Missing destination: ${link}`);
-    assert.ok(!redirectPaths.has(normalize(link.pathname)), `Legacy redirect in map: ${link}`);
     assert.ok(!isAlias(readFileSync(outputFile(link.pathname), 'utf8')), `Alias in map: ${link}`);
   }
   for (const document of maps.values()) assert.doesNotMatch(document, /Legacy URLs and redirects|\/Users\/|SOURCE_NOTES|\.\.\/content\/|file:\/\//);

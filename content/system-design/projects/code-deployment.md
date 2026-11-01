@@ -8,7 +8,7 @@ linkTitle: "Code Deployment"
 # Code Deployment System
 
 
-Partial example from the [interviewing.io framework]({{< ref "system-design/frameworks/framework-iv" >}}). Developers tag a release; the system packages the code and deploys it to servers.
+Partial example from the [interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}). Developers tag a release; the system packages the code and deploys it to servers.
 
 ## Requirements and example constraints
 

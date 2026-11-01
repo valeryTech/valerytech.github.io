@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
+title: "Walking Skeleton: Definition and Examples"
 description: "Define an architectural walking skeleton, its acceptance criteria and lifespan, with document-QA examples and alternative formulations of the first delivery slice."
-title: "Delivery Skeleton 1 In"
 linkTitle: "Walking Skeleton: Definition and Examples"
 ---
 # Delivery Technique: Architectural Walking Skeleton
@@ -320,3 +320,9 @@ The key distinction:
 **Walking skeleton** sounds executable but may understate architecture work.
 
 **Architectural walking skeleton** says both: runnable slice + architectural foundation.
+
+## Library sources
+
+
+- [Abrahamsson et al. 2010](/sources/software-engineering/architecture/abrahamsson-2010-agility-and-architecture.pdf.enc), *Agility and Architecture*
+- [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*

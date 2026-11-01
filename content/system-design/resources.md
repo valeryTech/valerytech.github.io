@@ -6,14 +6,14 @@ description: "A catalog of system design courses, guides, topic maps, technical 
 linkTitle: "Resources"
 ---
 
-A catalog of the courses, guides, talks, papers, and communities collected in these notes. Choose a source for a specific study question and bring it back into the [practice loop]({{< ref "system-design/system-design" >}}#a-practice-loop).
+A catalog of the courses, guides, talks, papers, and communities collected in these notes. Choose a source for a specific study question and bring it back into the [practice loop]({{< ref "system-design/interview/study-and-practice" >}}#a-practice-loop).
 
 ## Courses and structured material
 
 
-- **Hello Interview:** [delivery-framework notes]({{< ref "system-design/frameworks/framework-hi" >}}), [worked cases]({{< ref "system-design/projects" >}}), and the [collected video channel](https://www.youtube.com/@hello_interview).
+- **Hello Interview:** [delivery-framework notes]({{< ref "system-design/interview/frameworks/framework-hi" >}}), [worked cases]({{< ref "system-design/projects" >}}), and the [collected video channel](https://www.youtube.com/@hello_interview).
 - **System Design for Interviews and Beyond:** [course](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) and [video series](https://www.youtube.com/@SystemDesignInterview/videos). The original notes emphasize learning the thought process as well as the concepts.
-- **interviewing.io:** [framework notes]({{< ref "system-design/frameworks/framework-iv" >}}), [interview guidance]({{< ref "system-design/interview/iw-io-interview" >}}), and the [worked-example guide](https://interviewing.io/guides/system-design-interview/part-four#chapter-one).
+- **interviewing.io:** [framework notes]({{< ref "system-design/interview/frameworks/framework-iv" >}}), [interview guidance]({{< ref "system-design/interview/iw-io-interview" >}}), and the [worked-example guide](https://interviewing.io/guides/system-design-interview/part-four#chapter-one).
 - **AlgoExpert:** fundamentals and examples courses, plus "Systems Design Interview Tips."
 - **Zero To Mastery:** "Master the Coding Interview: System Design + Architecture (Part 1)."
 - **DesignGurus:** [system-design interview playbook](https://www.designgurus.io/path/system-design-interview-playbook).
@@ -43,10 +43,10 @@ The preparation notes highlight the roadmap's categories and its senior/staff-le
 ## Related technical study
 
 
-- [Distributed-systems notes]({{< ref "engineering/topics/distributed-systems" >}}), including their source collection.
+- [Distributed-systems notes]({{< ref "engineering/distributed-systems" >}}) and their [reading list]({{< ref "engineering/distributed-systems/reading" >}}).
 - [Database notes]({{< ref "engineering/data/databases" >}}).
-- [Microservices notes]({{< ref "engineering/topics/microservices" >}}).
-- **Hussein Nasser:** "Fundamentals of Backend Communications and Protocols" and "Fundamentals of Backend Engineering"; [collected course-source page](https://coursehunter.net/source/hussein-nasser).
+- [Architecture style and service boundaries]({{< ref "system-design/elements/boundaries" >}}), including microservices reading.
+- **Hussein Nasser:** "Fundamentals of Backend Communications and Protocols" and "Fundamentals of Backend Engineering".
 - [Architecture principles and engineering blogs]({{< ref "system-design/02-system-design" >}}#models-and-further-reading).
 - [NFR and SLO reading list]({{< ref "system-design/nfr/non-functional-requirements" >}}#sources-and-further-study).
 
@@ -91,3 +91,12 @@ Paper reading queue: Amazon Dynamo, Google MapReduce, Google GFS, and Facebook T
 The original preparation plan suggests peer mocks, Discord communities, forums, meetups, LeetCode discussions, and the [collected PM Interview community link](https://launchpass.com/pminterview).
 
 The [original resource catalog]({{< ref "system-design/archive/resources-v0" >}}) retains the earlier ordering, quotations, and unreviewed comments.
+
+## Library sources
+
+
+- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- on *Technical blogs and papers*
+
+Further reading:
+
+- [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems*

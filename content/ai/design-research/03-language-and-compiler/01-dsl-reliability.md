@@ -89,7 +89,7 @@ This generates a slide spec YAML like following:
 
 It's important to note that even if the prompt is saying create a slide YAML, it's not any random YAML spec. Because the tool to generate the powerpoint presentation and the YAML specification understood by the tool is used as a context in the prompt, the LLM is able to generate the correct YAML spec which can be directly used by the tool to generate the powerpoint presentation.
 
-The full YAML spec can be viewed at [this Github repo](https://github.com/unmeshjoshi/MADSPlantUMLSteps/blob/main/src/presentation/deterministic-simulation-testing.yaml)
+The full YAML spec can be viewed at [this GitHub repo](https://github.com/unmeshjoshi/MADSPlantUMLSteps/blob/main/src/presentation/deterministic-simulation-testing.yaml)
 
 Notice that the LLM played two different parts in this single example. First it was a co-designer -- helping shape the step-marked PlantUML extension and the slide YAML on top of existing PlantUML tooling. Then, once that small DSL existed, it became the natural-language interface that turns an English request into a valid spec. We will come back to this division of labour at the end of the article.
 

@@ -36,7 +36,7 @@ The later [composition question and reply]({{< ref "ai/design-research/interacti
 
 The opening critique develops the interpretation that Matrix combines a data model, execution, inspection, and control. It also distinguishes an execution graph from an evidence graph. The elaboration is the LLM's response, not the author's original statement.
 
-The section labelled "hebbia - interesting" in the semantic-engineering note contains selected descriptions that also occur in the product analysis. The selection suggests interest, but the descriptions should not be relabelled as the author's exact speech. The complete selection now follows the Matrix execution case note, with its source and selection label preserved.
+The section labelled "hebbia - interesting" in the [semantic-engineering note]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}) contains selected descriptions that also occur in the product analysis. The selection suggests interest, but the descriptions should not be relabelled as the author's exact speech. The complete selection now follows the Matrix execution case note, with its source and selection label preserved.
 
 ## Placement
 

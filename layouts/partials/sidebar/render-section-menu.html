@@ -23,6 +23,7 @@
     <div class="sidebar-root site-surface-row site-context-surface site-pane-heading site-pinned site-pinned-first site-pinned-last{{ if $isCurrent }} active{{ end }}{{ if $isAncestor }} active-ancestor{{ end }}">
       {{ partial "sidebar-toggle.html" . }}
       <a class="site-surface-content{{ if $isCurrent }} hextra-sidebar-active-item{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ .RelPermalink }}" title="{{ .LinkTitle }}"><span class="site-sidebar-title">{{ .LinkTitle }}</span></a>
+      {{ partial "navigation/bulk-toggle.html" (dict "pane" "sidebar") }}
     </div>
   {{- end -}}
   <ul class="sidebar-tree">

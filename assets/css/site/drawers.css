@@ -9,7 +9,7 @@
 
 .site-outline-trigger:hover {
   background: var(--site-card-hover);
-  color: var(--site-link-color);
+  color: var(--site-accent);
 }
 
 .site-navigation-open {
@@ -80,7 +80,7 @@ dialog.site-navigation-drawer[open] {
 
 .site-outline-trigger:focus-visible,
 .site-navigation-panel-close:focus-visible {
-  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline: var(--site-focus-width) solid var(--site-accent);
   outline-offset: calc(-1 * var(--site-focus-width));
   box-shadow: none;
 }

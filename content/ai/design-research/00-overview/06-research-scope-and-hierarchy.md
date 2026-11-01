@@ -56,12 +56,12 @@ LLM recommendations, literature summaries, formal claims, and experimental plans
 ## Scope proposal
 
 
-The following argument was moved from the end of the constrained-generativity note. The original `[another](#another)` reference points back to the [broader-principle discussion]({{< ref "ai/design-research/01-foundations/01-constrained-generativity" >}}#another). The original `[Problem Framing]({{< ref "ai/architecture-dsl-like/dsl-approach/problem-framing" >}})` reference concerns the [framing prompt]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}) and the architecture developed from it.
+The following argument was moved from the end of the constrained-generativity note. The original `[another](#another)` reference points back to the [broader-principle discussion]({{< ref "ai/design-research/01-foundations/01-constrained-generativity" >}}#another). The original `[problem-framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}})` reference concerns the [framing prompt]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}) and the architecture developed from it.
 
 ## analyse problem
 
 
-Scope question: Analyze the problem formulations in [Problem Framing]({{< ref "ai/architecture-dsl-like/dsl-approach/problem-framing" >}}) and [another](#another).
+Scope question: Analyze the problem formulations in [problem-framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}) and [another](#another).
 
 TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
@@ -232,3 +232,9 @@ And it gives you a clean hierarchy of terms:
 **Human/AI programmable environment** -- one system family built using the theory.
 
 The proposal is to develop the work in that order. The participant-neutral shared runtime from the second file then becomes a strong worked example, not the definition of the problem.
+
+## Library sources
+
+
+- [Jaccard and Jacoby 2020](/sources/research-methods/philosophy-of-science/jaccard-2020-theory-construction-and-model-building-skills.pdf.enc), *Theory Construction and Model-Building Skills*
+- [Swanson and Chermack 2013](/sources/research-methods/philosophy-of-science/swanson-2013-theory-building-in-applied-disciplines.pdf.enc), *Theory Building in Applied Disciplines*

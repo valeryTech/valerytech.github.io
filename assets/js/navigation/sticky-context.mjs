@@ -12,16 +12,17 @@ export function initStickyNavigation() {
   const outlineLinks = [...(outline?.querySelectorAll("a") || [])];
   let scheduled = false;
 
-  for (const link of outlineLinks) {
-    if (link.parentElement.querySelector(":scope > ul")) link.classList.add("site-toc-parent");
-  }
+  // Headings with subheadings stick as their row, keeping the disclosure beside the link.
+  const outlineRows = [...(outline?.querySelectorAll(".site-outline-row") || [])];
+  for (const row of outlineRows) row.classList.add("site-toc-parent");
+  const stickyRow = (link) => link.closest(".site-outline-row") ?? link;
   const outlinePaths = new Map(outlineLinks.map((link) => [link, outlineParents(link)]));
   const panes = [
     { panel: tree?.closest(".site-sidebar-scroll"), root, rows: sectionRows },
     {
       panel: outline?.closest(".site-toc-scroll"),
       root: title,
-      rows: outlineLinks.filter((link) => link.classList.contains("site-toc-parent")),
+      rows: outlineRows,
     },
   ].filter((pane) => pane.panel && pane.root);
   let pinsScheduled = false;
@@ -63,14 +64,16 @@ export function initStickyNavigation() {
       getComputedStyle(document.documentElement).getPropertyValue("--site-stack-parents").trim() !==
       "0";
     measureSidebarContext(tree, stackParents);
-    const heights = new Map(outlineLinks.map((element) => [element, rowHeight(element)]));
-    for (const [element, parents] of outlinePaths) {
+    const heights = new Map(outlineLinks.map((link) => [link, rowHeight(stickyRow(link))]));
+    for (const [link, parents] of outlinePaths) {
       const offset = (stackParents ? parents : []).reduce(
         (sum, parent) => sum + heights.get(parent),
         titleHeight,
       );
-      element.style.setProperty("--site-sticky-offset", `${offset}px`);
-      element.style.setProperty("--site-sticky-depth", `${parents.length}`);
+      for (const element of new Set([link, stickyRow(link)])) {
+        element.style.setProperty("--site-sticky-offset", `${offset}px`);
+        element.style.setProperty("--site-sticky-depth", `${parents.length}`);
+      }
     }
     updatePins();
     document.dispatchEvent(new Event("site:navigation-layout"));

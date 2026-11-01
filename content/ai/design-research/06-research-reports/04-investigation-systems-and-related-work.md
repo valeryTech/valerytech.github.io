@@ -37,7 +37,7 @@ Several subjects merit particularly careful study.
 
 Look at **Nextflow, CWL and Snakemake**.
 
-Nextflow explicitly describes itself as a DSL for data-driven computational pipelines built around a dataflow model. ([GitHub](https://github.com/nextflow-io/nextflow?utm_source=chatgpt.com "GitHub - nextflow-io/nextflow: A DSL for data-driven computational pipelines · GitHub"))
+Nextflow explicitly describes itself as a DSL for data-driven computational pipelines built around a dataflow model. ([GitHub](https://github.com/nextflow-io/nextflow "GitHub - nextflow-io/nextflow: A DSL for data-driven computational pipelines · GitHub"))
 
 CWL has basically the philosophy we independently arrived at:
 
@@ -56,9 +56,9 @@ provenance + reproducibility
 ```
 
 
-CWL explicitly argues that workflow abstraction provides scaling, automation and provenance, with portable/reusable individual components. ([Common Workflow Language (CWL)](https://www.commonwl.org/features/?utm_source=chatgpt.com "Features | Common Workflow Language (CWL)"))
+CWL explicitly argues that workflow abstraction provides scaling, automation and provenance, with portable/reusable individual components. ([Common Workflow Language (CWL)](https://www.commonwl.org/features/ "Features | Common Workflow Language (CWL)"))
 
-And CWLProv records execution provenance using W3C PROV. ([GitHub](https://github.com/common-workflow-language/cwlprov?utm_source=chatgpt.com "GitHub - common-workflow-language/cwlprov: Profile for provenance research object of a CWL workflow run · GitHub"))
+And CWLProv records execution provenance using W3C PROV. ([GitHub](https://github.com/common-workflow-language/cwlprov "GitHub - common-workflow-language/cwlprov: Profile for provenance research object of a CWL workflow run · GitHub"))
 
 This gives us a very useful precedent.
 
@@ -110,7 +110,7 @@ That's potentially research territory by itself.
 ### 3. DSPy is extremely close to the "programming language for LM computation" part
 
 
-DSPy explicitly describes LM systems as **computational graphs composed of declarative modules**, and introduces compilation/optimization of those programs. ([ICLR Proceedings](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html?utm_source=chatgpt.com "DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines"))
+DSPy explicitly describes LM systems as **computational graphs composed of declarative modules**, and introduces compilation/optimization of those programs. ([ICLR Proceedings](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html "DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines"))
 
 Conceptually:
 
@@ -189,7 +189,7 @@ That database/compiler model remains one of the strongest architectural directio
 
 This surprised me somewhat.
 
-Palantir's current AIP Logic is a visual environment where functions consist of **blocks with inputs and outputs**, and blocks can read/write semantic objects, perform calculations, call functions or LLMs, loop and branch. Outputs feed subsequent blocks. ([Palantir](https://www.palantir.com/docs/foundry/logic/overview?utm_source=chatgpt.com "AIP Logic • Overview • Palantir"))
+Palantir's current AIP Logic is a visual environment where functions consist of **blocks with inputs and outputs**, and blocks can read/write semantic objects, perform calculations, call functions or LLMs, loop and branch. Outputs feed subsequent blocks. ([Palantir](https://www.palantir.com/docs/foundry/logic/overview "AIP Logic • Overview • Palantir"))
 
 They also have an Ontology underneath:
 
@@ -202,9 +202,9 @@ functions
 ```
 
 
-and the same layer is accessible to humans and AI. Palantir explicitly describes this as enabling hybrid human-AI workflows. ([Palantir](https://www.palantir.com/docs/foundry/platform-overview?utm_source=chatgpt.com "Platform overview • Overview • Palantir"))
+and the same layer is accessible to humans and AI. Palantir explicitly describes this as enabling hybrid human-AI workflows. ([Palantir](https://www.palantir.com/docs/foundry/platform-overview "Platform overview • Overview • Palantir"))
 
-Then they have **Workflow Lineage**, which gives an interactive graph showing functions, models, applications, inputs and downstream dependencies. ([Palantir](https://www.palantir.com/docs/foundry/workflow-lineage/overview?utm_source=chatgpt.com "Workflow Lineage • Overview • Palantir"))
+Then they have **Workflow Lineage**, which gives an interactive graph showing functions, models, applications, inputs and downstream dependencies. ([Palantir](https://www.palantir.com/docs/foundry/workflow-lineage/overview "Workflow Lineage • Overview • Palantir"))
 
 So conceptually they have:
 
@@ -292,7 +292,7 @@ LLM traces → coding agent → reusable symbolic program
 ```
 
 
-The difference is scope. ReaComp focuses on program-synthesis benchmarks with clear executable semantics. The proposal applies the same transformation to richer outputs: text, claims, citations, domain entities, tool operations, and branches in a larger graph. The proposed target may also remain hybrid, containing both deterministic operations and model calls. [arXiv](https://arxiv.org/abs/2605.05485?utm_source=chatgpt.com)
+The difference is scope. ReaComp focuses on program-synthesis benchmarks with clear executable semantics. The proposal applies the same transformation to richer outputs: text, claims, citations, domain entities, tool operations, and branches in a larger graph. The proposed target may also remain hybrid, containing both deterministic operations and model calls. [arXiv](https://arxiv.org/abs/2605.05485)
 
 ### 2. Transductive and inductive program synthesis gives the right formal vocabulary
 
@@ -302,7 +302,7 @@ The difference is scope. ReaComp focuses on program-synthesis benchmarks with cl
 - a transductive model predicts outputs directly for concrete inputs;
 - an inductive model generates a reusable program.
 
-The transductive model then constrains and refines the inductive search. This is mathematically close to the proposal. The first LLM in the proposed design is the transductive solver; the second agent is the inductive synthesizer. [arXiv](https://arxiv.org/abs/2505.14744?utm_source=chatgpt.com)
+The transductive model then constrains and refines the inductive search. This is mathematically close to the proposal. The first LLM in the proposed design is the transductive solver; the second agent is the inductive synthesizer. [arXiv](https://arxiv.org/abs/2505.14744)
 
 This distinction is important:
 
@@ -327,7 +327,7 @@ The proposed architecture explicitly places both inside one runtime.
 3. returning a counterexample when it fails;
 4. synthesizing a new candidate that handles all accumulated counterexamples.
 
-That is the clean formal model for the proposed compiler and verification loops. The major difference is that classical CEGIS usually has a precise logical specification and a sound verifier. The proposed system operates partly over open-ended semantics, so some counterexamples will be produced by tests, evidence checks, other models, or people. [EECS at UC Berkeley](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-177.html?utm_source=chatgpt.com)
+That is the clean formal model for the proposed compiler and verification loops. The major difference is that classical CEGIS usually has a precise logical specification and a sound verifier. The proposed system operates partly over open-ended semantics, so some counterexamples will be produced by tests, evidence checks, other models, or people. [EECS at UC Berkeley](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-177.html)
 
 A suitable description is therefore:
 
@@ -340,9 +340,9 @@ Or more compactly:
 ### 4. DSPy, GEPA, and TextGrad optimize compound model programs
 
 
-**DSPy** represents model pipelines as programs and "compiles" them by optimizing prompts, demonstrations, and sometimes model weights against a metric. Its optimizers can collect execution traces, retain successful demonstrations, generate instructions, and search over candidate configurations. [arXiv](https://arxiv.org/abs/2310.03714?utm_source=chatgpt.com)
+**DSPy** represents model pipelines as programs and "compiles" them by optimizing prompts, demonstrations, and sometimes model weights against a metric. Its optimizers can collect execution traces, retain successful demonstrations, generate instructions, and search over candidate configurations. [arXiv](https://arxiv.org/abs/2310.03714) ([PDF](/sources/ai-engineering/harness/khattab-2023-dspy-compiling-declarative-language-model-calls.pdf.enc))
 
-**GEPA** samples complete trajectories containing reasoning, tool calls, and tool outputs, reflects on failures, and evolves the prompts of a compound system. **TextGrad** propagates textual feedback through a computation graph to improve its components. [arXiv](https://arxiv.org/abs/2507.19457?utm_source=chatgpt.com)
+**GEPA** samples complete trajectories containing reasoning, tool calls, and tool outputs, reflects on failures, and evolves the prompts of a compound system. **TextGrad** propagates textual feedback through a computation graph to improve its components. [arXiv](https://arxiv.org/abs/2507.19457)
 
 These systems are close in optimization structure:
 
@@ -356,7 +356,7 @@ The difference is that DSPy generally starts from a developer-authored program s
 ### 5. DreamCoder, LILO, and ReGAL address cumulative abstraction
 
 
-**DreamCoder** solves tasks by synthesizing programs and periodically extends its DSL with reusable abstractions discovered across solutions. **LILO** combines LLM-guided synthesis, symbolic compression, and automatic documentation to create readable domain-specific libraries. **ReGAL** refactors existing programs into reusable functions and verifies the transformations by execution. [arXiv](https://arxiv.org/abs/2006.08381?utm_source=chatgpt.com)
+**DreamCoder** solves tasks by synthesizing programs and periodically extends its DSL with reusable abstractions discovered across solutions. **LILO** combines LLM-guided synthesis, symbolic compression, and automatic documentation to create readable domain-specific libraries. **ReGAL** refactors existing programs into reusable functions and verifies the transformations by execution. [arXiv](https://arxiv.org/abs/2006.08381)
 
 This line of work becomes relevant after the proposed system has synthesized many node-level programs. The programs should eventually be compressed into reusable operations:
 
@@ -373,7 +373,7 @@ Without this step, the system repeatedly synthesizes similar workflows from scra
 ### 6. Voyager and Code as Policies compile language into executable skills
 
 
-**Voyager** generates executable code skills, improves them using execution errors and self-verification, and stores successful programs in a growing skill library. **Code as Policies** generates executable robot policy code that composes available APIs and conventional programming constructs. [arXiv](https://arxiv.org/abs/2305.16291?utm_source=chatgpt.com)
+**Voyager** generates executable code skills, improves them using execution errors and self-verification, and stores successful programs in a growing skill library. **Code as Policies** generates executable robot policy code that composes available APIs and conventional programming constructs. [arXiv](https://arxiv.org/abs/2305.16291)
 
 These systems demonstrate the value of using code as the persistent representation of learned behavior:
 
@@ -388,14 +388,14 @@ They differ from the proposal because the environment supplies relatively direct
 ### 7. Logic-LM, PAL, and LMQL cover the executable-reasoning substrate
 
 
-**Logic-LM** translates natural-language problems into symbolic formulations, executes them with a solver, and uses solver errors to repair the formalization. **PAL** has an LLM produce a runnable program as the reasoning representation and delegates execution to a Python interpreter. **LMQL** combines model prompting with scripting, control flow, and output constraints. [arXiv](https://arxiv.org/abs/2305.12295?utm_source=chatgpt.com)
+**Logic-LM** translates natural-language problems into symbolic formulations, executes them with a solver, and uses solver errors to repair the formalization. **PAL** has an LLM produce a runnable program as the reasoning representation and delegates execution to a Python interpreter. **LMQL** combines model prompting with scripting, control flow, and output constraints. [arXiv](https://arxiv.org/abs/2305.12295)
 
 These approaches assume a predefined execution model. The proposed approach goes one level higher: it attempts to infer the execution model or procedure from direct task performance.
 
 ### 8. Code-generation agents demonstrate the compiler-feedback loop
 
 
-AlphaCodium, Self-Debugging, LEVER, SWE-agent, and related coding systems generate programs, run compilers or tests, inspect failures, and revise the program. [arXiv](https://arxiv.org/abs/2401.08500?utm_source=chatgpt.com)
+AlphaCodium, Self-Debugging, LEVER, SWE-agent, and related coding systems generate programs, run compilers or tests, inspect failures, and revise the program. [arXiv](https://arxiv.org/abs/2401.08500)
 
 They validate the practical value of:
 
@@ -413,22 +413,22 @@ Their correctness oracle is usually much stronger than yours because software te
 ### 9. Graph and durable runtimes solve the execution part
 
 
-AutoGen GraphFlow supports sequential, parallel, conditional, and looping agent graphs. Temporal provides persistent, replayable workflow execution across failures. These systems can implement the runtime substrate for the proposed DAG, retries, long-running tasks, and human review, but they do not infer the workflow from behavioral demonstrations. [Microsoft GitHub](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/graph-flow.html?utm_source=chatgpt.com)
+AutoGen GraphFlow supports sequential, parallel, conditional, and looping agent graphs. Temporal provides persistent, replayable workflow execution across failures. These systems can implement the runtime substrate for the proposed DAG, retries, long-running tasks, and human review, but they do not infer the workflow from behavioral demonstrations. [Microsoft GitHub](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/graph-flow.html)
 
 ### 9. Recent AI research is starting to approach the same concerns
 
 
 There are several signals from 2025-26.
 
-OpenScholar uses retrieval plus iterative self-feedback to synthesize scientific literature with source attribution, and explicitly evaluates answer coverage and citation accuracy. ([Nature](https://www.nature.com/articles/s41586-025-10072-4?utm_source=chatgpt.com "Synthesizing scientific literature with retrieval-augmented language models | Nature"))
+OpenScholar uses retrieval plus iterative self-feedback to synthesize scientific literature with source attribution, and explicitly evaluates answer coverage and citation accuracy. ([Nature](https://www.nature.com/articles/s41586-025-10072-4 "Synthesizing scientific literature with retrieval-augmented language models | Nature"))
 
-A 2025 paper studies **document-level attribution in RAG**, including cases where documents are redundant, complementary or synergistic--which gets close to our question of how individual evidence contributes to a conclusion. ([arXiv](https://arxiv.org/abs/2507.04480?utm_source=chatgpt.com "Source Attribution in Retrieval-Augmented Generation"))
+A 2025 paper studies **document-level attribution in RAG**, including cases where documents are redundant, complementary or synergistic--which gets close to our question of how individual evidence contributes to a conclusion. ([arXiv](https://arxiv.org/abs/2507.04480 "Source Attribution in Retrieval-Augmented Generation"))
 
-A July 2026 paper called **HIERARCHRAG** explicitly argues that flattening a corpus into a knowledge graph can destroy provenance and silently merge contradictory sources. It proposes preserving claim-level provenance through a hierarchical graph. It's very new, so the proposal is to treat it as exploratory work, but the problem statement is almost exactly one part of ours. ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7042057&utm_source=chatgpt.com "HIERARCHRAG: A Three-Layer Hierarchical Knowledge Graph for Provenance-Aware Retrieval-Augmented Generation by Luigi Barbato, Francesco Gargiulo :: SSRN"))
+A July 2026 paper called **HIERARCHRAG** explicitly argues that flattening a corpus into a knowledge graph can destroy provenance and silently merge contradictory sources. It proposes preserving claim-level provenance through a hierarchical graph. It's very new, so the proposal is to treat it as exploratory work, but the problem statement is almost exactly one part of ours. ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7042057 "HIERARCHRAG: A Three-Layer Hierarchical Knowledge Graph for Provenance-Aware Retrieval-Augmented Generation by Luigi Barbato, Francesco Gargiulo :: SSRN"))
 
-And the 2026 Nature paper on **Robin** shows an actual multi-agent scientific process where literature search, hypothesis generation, experimental analysis, and subsequent hypothesis refinement form a continuous loop. ([DOI](https://doi.org/10.1038/s41586-026-10652-y?utm_source=chatgpt.com "A multi-agent system for automating scientific discovery | Nature"))
+And the 2026 Nature paper on **Robin** shows an actual multi-agent scientific process where literature search, hypothesis generation, experimental analysis, and subsequent hypothesis refinement form a continuous loop. ([DOI](https://doi.org/10.1038/s41586-026-10652-y "A multi-agent system for automating scientific discovery | Nature"))
 
-There is even a 2026 perspective on MCP-native AI scientist ecosystems that argues for specialized workers communicating through explicit **information contracts**, with shared provenance linking high-level conclusions back to raw executions. ([Frontiers](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1820375/full?utm_source=chatgpt.com "Frontiers | Building MCP-native hierarchical AI scientist ecosystems: a perspective on scaling multi-agent scientific discovery"))
+There is even a 2026 perspective on MCP-native AI scientist ecosystems that argues for specialized workers communicating through explicit **information contracts**, with shared provenance linking high-level conclusions back to raw executions. ([Frontiers](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1820375/full "Frontiers | Building MCP-native hierarchical AI scientist ecosystems: a perspective on scaling multi-agent scientific discovery"))
 
 So several communities are converging on pieces of this.
 
@@ -491,3 +491,8 @@ And this makes me more positive about the direction, because the pieces have str
 > **What is the right computational model for evidence-seeking investigations performed jointly by humans and probabilistic agents?**
 
 That's abstract enough to connect to existing CS theory, while still mapping directly onto a product.
+
+## Library sources
+
+
+- [Mo et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/mo-2025-kggen-extracting-knowledge-graphs.pdf.enc), *KGGen*

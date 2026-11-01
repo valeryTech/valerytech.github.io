@@ -72,3 +72,13 @@ For a behavioral change, choose the smallest plausible intervention and compare 
 Prioritize by customer consequence, recurrence, and the cost of learning enough to act. One serious failure can justify immediate containment without establishing its population frequency.
 
 Finish with a decision: fix, narrow supported scope, keep investigating, accept a documented limitation, or stop the approach. Preserve the case for regression checks and revisit customer outcomes after release.
+
+## Library sources
+
+
+- [Huang et al. 2023](/sources/ai-engineering/failures/huang-2023-survey-on-hallucination-in-llms.pdf.enc), *A Survey on Hallucination in Large Language Models* ([arXiv:2311.05232](https://arxiv.org/abs/2311.05232))
+- [Lin et al. 2025](/sources/ai-engineering/failures/lin-2025-llm-agents-hallucinations-survey.pdf.enc), *LLM-based Agents Suffer from Hallucinations* ([arXiv:2509.18970](https://arxiv.org/abs/2509.18970))
+- [Ma et al. 2025](/sources/ai-engineering/failures/ma-2025-diagnosing-failure-root-causes-in-agentic-systems.pdf.enc), *Diagnosing Failure Root Causes in Platform-Orchestrated Agentic Systems* ([arXiv:2509.23735](https://arxiv.org/abs/2509.23735))
+- [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370))
+- [Card 2017](/sources/thinking-and-learning/problem-solving/card-2017-problem-with-5-whys.pdf.enc), *The problem with "5 whys"* ([doi:10.1136/bmjqs-2016-005849](https://doi.org/10.1136/bmjqs-2016-005849))
+- [Leveson 2011](/sources/thinking-and-learning/systems-thinking/leveson-2011-applying-systems-thinking-analyze-events.pdf.enc), *Applying Systems Thinking to Analyze and Learn from Events* ([doi:10.1016/j.ssci.2009.12.021](https://doi.org/10.1016/j.ssci.2009.12.021))

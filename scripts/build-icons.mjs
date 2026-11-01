@@ -26,7 +26,7 @@ const palette = Object.fromEntries(
         theme,
         {
             primary: color(block, 'foreground'),
-            secondary: color(light, `link-color-${theme}`),
+            secondary: color(light, `link-tint-${theme}`),
             surface: color(block, 'context-header')
         }
     ])
@@ -34,11 +34,18 @@ const palette = Object.fromEntries(
 const title = read('config/_default/hugo.toml').match(/^title\s*=\s*"([^"]+)"/m)?.[1];
 if (!title) throw new Error('The site title must be configured.');
 const escapedTitle = title.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
-const rules = (colors) =>
-    `.site-brand-primary{color:${colors.primary}}.site-brand-secondary{color:${colors.secondary}}.site-brand-tile{fill:${colors.surface}}`;
+const canvas = color(light, 'page-background');
+const rules = (colors, tileFill) =>
+    `.site-brand-primary{color:${colors.primary}}.site-brand-secondary{color:${colors.secondary}}.site-brand-tile{fill:${tileFill}}`;
 
-function svg({ theme = 'light', tile = false, rounded = true, scale = 1 } = {}) {
-    const style = rules(palette[theme]);
+function svg({
+    theme = 'light',
+    tile = false,
+    tileFill = palette[theme].surface,
+    rounded = true,
+    scale = 1
+} = {}) {
+    const style = rules(palette[theme], tileFill);
     const inset = (100 - 100 * scale) / 2;
     const mark =
         scale === 1 ? geometry : (
@@ -55,8 +62,9 @@ const temp = mkdtempSync(path.join(tmpdir(), 'valery-icons-'));
 try {
     write('static/branding/mark-light.svg', svg());
     write('static/branding/mark-dark.svg', svg({ theme: 'dark' }));
-    // One dark badge stays legible when the browser chooses or caches any format.
-    write('static/favicon.svg', svg({ theme: 'dark', tile: true }));
+    // One white badge stays legible on light or dark browser chrome, whichever format is chosen.
+    const tabIcon = { tile: true, tileFill: canvas };
+    write('static/favicon.svg', svg(tabIcon));
     const monochrome = geometry.replaceAll(/ class="[^"]+"/g, '');
     write(
         'static/mask-icon.svg',
@@ -65,7 +73,7 @@ try {
 
     function png(file, size, options) {
         const input = path.join(temp, 'icon.svg');
-        writeFileSync(input, svg({ theme: 'dark', tile: true, ...options }));
+        writeFileSync(input, svg(options));
         execFileSync('rsvg-convert', [
             '--width',
             String(size),
@@ -76,12 +84,14 @@ try {
             input
         ]);
     }
-    for (const size of [16, 32, 48]) png(`favicon-${size}x${size}.png`, size);
-    png('favicon.png', 512);
-    png('apple-touch-icon.png', 180, { rounded: false, scale: 0.85 });
-    png('icon-192.png', 192, { rounded: false, scale: 0.85 });
-    png('icon-512.png', 512, { rounded: false, scale: 0.85 });
-    png('icon-maskable-512.png', 512, { rounded: false, scale: 0.7 });
+    for (const size of [16, 32, 48]) png(`favicon-${size}x${size}.png`, size, tabIcon);
+    png('favicon.png', 512, tabIcon);
+    // App icons keep the dark tile: iOS and maskable launchers fill transparency themselves.
+    const appIcon = { theme: 'dark', tile: true, rounded: false };
+    png('apple-touch-icon.png', 180, { ...appIcon, scale: 0.85 });
+    png('icon-192.png', 192, { ...appIcon, scale: 0.85 });
+    png('icon-512.png', 512, { ...appIcon, scale: 0.85 });
+    png('icon-maskable-512.png', 512, { ...appIcon, scale: 0.7 });
     execFileSync(
         'magick',
         [16, 32, 48]

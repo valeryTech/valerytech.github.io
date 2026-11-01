@@ -10,9 +10,9 @@ Final response from the **Agent guarantees** sub-agent in [Research LLM Programm
 
 ---
 
-## Best match: the user’s thesis is already an explicit research proposal
+## Best match: the user's thesis is already an explicit research proposal
 
-### 1. Martin Odersky et al., “Securing Agents With Tracked Capabilities” — CAIS 2026, published May 26, 2026
+### 1. Martin Odersky et al., "Securing Agents With Tracked Capabilities" -- CAIS 2026, published May 26, 2026
 
 
 Authors: Martin Odersky, Yaoyu Zhao, Yichen Xu, Oliver Bračevac, Cao Nguyen Pham, all EPFL.
@@ -23,7 +23,7 @@ Primary sources:
 - [Accessible full paper](https://arxiv.org/html/2603.00991v2)
 - [TACIT implementation](https://github.com/lampepfl/tacit)
 
-The arXiv title is “Tracking Capabilities for Safer Agents”; the full text explicitly identifies the changed publication title.
+The arXiv title is "Tracking Capabilities for Safer Agents"; the full text explicitly identifies the changed publication title.
 
 This is almost exactly the requested idea: agents produce Scala 3 programs; a type system tracks access to resources and effects; a compiler checks that generated actions stay within granted authority. The paper explicitly advocates strong expressive typing, enforceable contracts, and modular reasoning independent of model behavior.
 
@@ -37,7 +37,7 @@ Limits: it does not establish output truth or functional correctness; timing and
 
 Useful retrieved refs: turn11search0, turn13view1, turn19view1.
 
-### 2. Edoardo Debenedetti et al., “Defeating Prompt Injections by Design” — first posted March 24, 2025; SaTML 2026
+### 2. Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" -- first posted March 24, 2025; SaTML 2026
 
 
 Authors: Edoardo Debenedetti, Ilia Shumailov, Tianqi Fan, Jamie Hayes, Nicholas Carlini, Daniel Fabian, Christoph Kern, Chongyang Shi, Andreas Terzis, Florian Tramèr.
@@ -54,10 +54,10 @@ Limits: trusted user request and uncompromised initial memory; no guarantee that
 
 Useful refs: turn2search1, turn2search2, turn7view2.
 
-### 3. Haoyu Wang, Christopher M. Poskitt, Jun Sun, “AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents” — ICSE 2026
+### 3. Haoyu Wang, Christopher M. Poskitt, Jun Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents" -- ICSE 2026
 
 
-First preprint March 24, 2025; conference April 12–18, 2026.
+First preprint March 24, 2025; conference April 12-18, 2026.
 
 Primary sources:
 
@@ -67,13 +67,13 @@ Primary sources:
 
 A small domain-specific language defines triggers, predicates, and enforcement actions. Examples include blocking an operation or requiring human inspection before an agent modifies sensitive information. Policies are external to the LLM, inspectable, modular, and evaluated at execution checkpoints.
 
-This is a strong example for “agent should not delete something” or “deletion requires approval.”
+This is a strong example for "agent should not delete something" or "deletion requires approval."
 
 Limits: reliability depends on the written rules, their predicates, and interception coverage. Some enforcement options themselves use LLM reflection, so the framework as a whole should not be described as guaranteeing arbitrary semantic safety. The paper explicitly lacks analysis of dangerous longer action trajectories.
 
 Useful refs: turn2search4, turn13view3, turn15view3.
 
-### 4. Manuel Costa et al., “Securing AI Agents with Information-Flow Control” — May 29, 2025; revised September 3, 2025
+### 4. Manuel Costa et al., "Securing AI Agents with Information-Flow Control" -- May 29, 2025; revised September 3, 2025
 
 
 Authors: Manuel Costa, Boris Köpf, Aashish Kolluri, Andrew Paverd, Mark Russinovich, Ahmed Salem, Shruti Tople, Lukas Wutschitz, Santiago Zanella-Béguelin.
@@ -93,7 +93,7 @@ Limits: trustworthy labeling, tool wrappers, policy definitions, and configurati
 
 Useful refs: turn7view1, turn13view2, turn19view2.
 
-### 5. Santiago Zanella-Béguelin et al., “Information-flow control: Moving toward secure, autonomous agents” — Microsoft, June 16, 2026
+### 5. Santiago Zanella-Béguelin et al., "Information-flow control: Moving toward secure, autonomous agents" -- Microsoft, June 16, 2026
 
 
 Authors: Santiago Zanella-Béguelin, Shruti Tople, Mark Russinovich, Aashish Kolluri, Boris Köpf, Manuel Costa.
@@ -104,7 +104,7 @@ Primary author blog:
 
 A readable explanation by the Fides research team. It explains three steps: label data, propagate labels through derived results, and check policies before acting. It connects these mechanisms to tool permissions, private data, human approvals, and implementations using MCP and agent frameworks.
 
-Particularly relevant to the user’s broader people + software + LLMs point: labels represent who may read data; software maintains those labels; people authorize exceptional sharing; the model supplies task judgments inside those controls.
+Particularly relevant to the user's broader people + software + LLMs point: labels represent who may read data; software maintains those labels; people authorize exceptional sharing; the model supplies task judgments inside those controls.
 
 Useful ref: turn19view3.
 

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
+import { validatePaletteConfig } from "./ui-config/palette.mjs";
 import { validateSettingsConfig } from "./ui-config/settings.mjs";
 
 export function readUiConfig() {
@@ -141,6 +142,21 @@ export function validateUiConfig({ ui, callouts, analytics }) {
     "navigation resize keyboardStepPixels must be a positive integer",
   );
 
+  for (const [name, owner] of [
+    ["sections", ui.navigation.sections],
+    ["outline", ui.navigation.outline],
+  ]) {
+    assert.ok(
+      typeof owner?.storageKey === "string" && owner.storageKey.trim(),
+      `navigation ${name} storageKey must be a nonempty string`,
+    );
+  }
+  assert.notEqual(
+    ui.navigation.sections.storageKey,
+    ui.navigation.outline.storageKey,
+    "navigation sections and outline storage keys must be distinct",
+  );
+
   const swipe = ui.navigation.swipe;
   for (const key of ["edgeWidthPixels", "minimumDistancePixels"]) {
     assert.ok(
@@ -172,6 +188,7 @@ export function validateUiConfig({ ui, callouts, analytics }) {
   }
 
   validateSettingsConfig(ui);
+  validatePaletteConfig(ui);
 
   assert.ok(
     callouts.types && Object.keys(callouts.types).length,

@@ -14,7 +14,7 @@ The question they attack is essentially:
 
 > If a database result is produced by a computation over many inputs, can provenance propagate through the computation algebraically?
 
-And the answer is yes. Their framework applies provenance annotations compositionally through relational algebra and even Datalog. ([UC Davis Computer Science](https://www.cs.ucdavis.edu/~green/papers/pods07.pdf?utm_source=chatgpt.com "Provenance Semirings"))
+And the answer is yes. Their framework applies provenance annotations compositionally through relational algebra and even Datalog. ([UC Davis Computer Science](https://www.cs.ucdavis.edu/~green/papers/pods07.pdf "Provenance Semirings"))
 
 Imagine:
 
@@ -66,7 +66,7 @@ of downstream conclusions?
 
 This is probably the theoretical area proposed for initial investigation in the research discussion.
 
-There's even continuing work around database provenance and formal verification; ProvSQL, for example, implements provenance-aware relational querying based on the semiring framework. ([ProvSQL](https://provsql.org/lean-docs/Provenance.html?utm_source=chatgpt.com "Provenance"))
+There's even continuing work around database provenance and formal verification; ProvSQL, for example, implements provenance-aware relational querying based on the semiring framework. ([ProvSQL](https://provsql.org/lean-docs/Provenance.html "Provenance"))
 
 ### 7. Argumentation theory is relevant to the claim/evidence graph
 
@@ -91,7 +91,7 @@ attacks
 ```
 
 
-between arguments. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0888613X13000509?utm_source=chatgpt.com "Bipolarity in argumentation graphs: Towards a better understanding - ScienceDirect"))
+between arguments. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0888613X13000509 "Bipolarity in argumentation graphs: Towards a better understanding - ScienceDirect"))
 
 That's very close to our:
 
@@ -170,7 +170,7 @@ quoted-from
 ```
 
 
-It also has the concept of a **Plan**, where an activity follows a predefined workflow. ([W3C](https://www.w3.org/TR/prov-primer/?utm_source=chatgpt.com "PROV Model Primer"))
+It also has the concept of a **Plan**, where an activity follows a predefined workflow. ([W3C](https://www.w3.org/TR/prov-primer/ "PROV Model Primer"))
 
 You can almost directly map:
 

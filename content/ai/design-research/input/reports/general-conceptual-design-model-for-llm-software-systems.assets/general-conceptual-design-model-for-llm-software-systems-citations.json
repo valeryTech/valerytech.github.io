@@ -4,32 +4,32 @@
   "citation_format": "Every original citation group is reconstructed from identifiable source URLs. Unresolved secondary source IDs have separate footnotes; exact original groups are retained per occurrence.",
   "numbered_sources": {
     "1": {
-      "title": "Ai Project Examples And Design Model | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+      "title": "AI Project Examples And Design Model | Systems & Engineering",
+      "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
     },
     "3": {
       "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+      "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
     },
     "4": {
       "title": "Coding Agents And Harnesses | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
     },
     "22": {
       "title": "Coding Agents And Harnesses | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
     },
     "26": {
       "title": "Coding Agents And Harnesses | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+      "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
     },
     "6": {
       "title": "Agentic Operations And Coordination | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+      "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
     },
     "25": {
-      "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
-      "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+      "title": "AI-Assisted Analysis And Investigation Systems | Systems & Engineering",
+      "url": "https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
     },
     "30": {
       "title": "Language choice and semantic guarantees for AI systems | Systems & Engineering",
@@ -129,8 +129,8 @@
       "occurrence": 1,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0"
@@ -144,8 +144,8 @@
       "occurrence": 2,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0",
@@ -183,7 +183,7 @@
       "displayed_citation": 3,
       "primary_source": {
         "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
       },
       "original_reference_ids": [
         "turn21view1"
@@ -198,7 +198,7 @@
       "displayed_citation": 4,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2"
@@ -230,7 +230,7 @@
       "displayed_citation": 6,
       "primary_source": {
         "title": "Agentic Operations And Coordination | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
       },
       "original_reference_ids": [
         "turn20view0"
@@ -333,8 +333,8 @@
       "occurrence": 13,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0"
@@ -419,7 +419,7 @@
       "displayed_citation": 3,
       "primary_source": {
         "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
       },
       "original_reference_ids": [
         "turn21view1"
@@ -464,7 +464,7 @@
       "displayed_citation": 3,
       "primary_source": {
         "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
       },
       "original_reference_ids": [
         "turn21view1"
@@ -479,7 +479,7 @@
       "displayed_citation": 3,
       "primary_source": {
         "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
       },
       "original_reference_ids": [
         "turn21view1",
@@ -532,7 +532,7 @@
       "displayed_citation": 4,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2"
@@ -670,7 +670,7 @@
       "displayed_citation": 4,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2"
@@ -715,7 +715,7 @@
       "displayed_citation": 22,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2",
@@ -774,7 +774,7 @@
       "displayed_citation": 3,
       "primary_source": {
         "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
       },
       "original_reference_ids": [
         "turn21view1"
@@ -891,7 +891,7 @@
       "displayed_citation": 6,
       "primary_source": {
         "title": "Agentic Operations And Coordination | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
       },
       "original_reference_ids": [
         "turn20view0"
@@ -905,8 +905,8 @@
       "occurrence": 47,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0",
@@ -939,8 +939,8 @@
       "occurrence": 49,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0"
@@ -954,8 +954,8 @@
       "occurrence": 50,
       "displayed_citation": 25,
       "primary_source": {
-        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+        "title": "AI-Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
       },
       "original_reference_ids": [
         "turn21view0"
@@ -970,7 +970,7 @@
       "displayed_citation": 6,
       "primary_source": {
         "title": "Agentic Operations And Coordination | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
       },
       "original_reference_ids": [
         "turn20view0"
@@ -985,7 +985,7 @@
       "displayed_citation": 3,
       "primary_source": {
         "title": "Analytical Engines And Programmable Environments | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/analytical-engines-and-programmable-environments/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/"
       },
       "original_reference_ids": [
         "turn21view1"
@@ -1000,7 +1000,7 @@
       "displayed_citation": 26,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2",
@@ -1081,7 +1081,7 @@
       "displayed_citation": 6,
       "primary_source": {
         "title": "Agentic Operations And Coordination | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
       },
       "original_reference_ids": [
         "turn20view0"
@@ -1095,8 +1095,8 @@
       "occurrence": 59,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0"
@@ -1110,8 +1110,8 @@
       "occurrence": 60,
       "displayed_citation": 25,
       "primary_source": {
-        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+        "title": "AI-Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
       },
       "original_reference_ids": [
         "turn21view0"
@@ -1125,8 +1125,8 @@
       "occurrence": 61,
       "displayed_citation": 25,
       "primary_source": {
-        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+        "title": "AI-Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
       },
       "original_reference_ids": [
         "turn21view0"
@@ -1141,7 +1141,7 @@
       "displayed_citation": 6,
       "primary_source": {
         "title": "Agentic Operations And Coordination | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
       },
       "original_reference_ids": [
         "turn20view0"
@@ -1171,7 +1171,7 @@
       "displayed_citation": 4,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2"
@@ -1239,7 +1239,7 @@
       "displayed_citation": 6,
       "primary_source": {
         "title": "Agentic Operations And Coordination | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/agentic-operations-and-coordination/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/"
       },
       "original_reference_ids": [
         "turn20view0"
@@ -1253,8 +1253,8 @@
       "occurrence": 69,
       "displayed_citation": 25,
       "primary_source": {
-        "title": "Ai Assisted Analysis And Investigation Systems | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
+        "title": "AI-Assisted Analysis And Investigation Systems | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/"
       },
       "original_reference_ids": [
         "turn21view0",
@@ -1398,8 +1398,8 @@
       "occurrence": 78,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0"
@@ -1413,8 +1413,8 @@
       "occurrence": 79,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0"
@@ -1443,8 +1443,8 @@
       "occurrence": 81,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0",
@@ -1499,7 +1499,7 @@
       "displayed_citation": 4,
       "primary_source": {
         "title": "Coding Agents And Harnesses | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/cases/coding-agents-and-harnesses/"
+        "url": "https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/"
       },
       "original_reference_ids": [
         "turn21view2"
@@ -1532,8 +1532,8 @@
       "occurrence": 86,
       "displayed_citation": 1,
       "primary_source": {
-        "title": "Ai Project Examples And Design Model | Systems & Engineering",
-        "url": "https://valery.tech/ai/var/02-ai-project-examples/ai-project-examples-and-design-model/"
+        "title": "AI Project Examples And Design Model | Systems & Engineering",
+        "url": "https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/"
       },
       "original_reference_ids": [
         "turn19view0",

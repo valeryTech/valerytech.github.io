@@ -252,8 +252,6 @@ The most common ways that candidates fail with this competency are:
 - Focusing on uninteresting/trivial aspects of the problem vs the most important ones.
 - Getting stuck on a particular piece of the problem and not being able to move forward.
 
-#todo implement and use in practice a structured approach to breaking down complex problems [Approach]({{< ref "system-design/frameworks/problem-solving-approach" >}})
-
 ## High-Level Design
 
 
@@ -484,7 +482,6 @@ Say the generic name of the component, not the brand name unless you are very fa
 
 A good interviewer also looks for red flags. Over-engineering is a real disease of many engineers as they delight in design purity and ignore tradeoffs. They are often unaware of the compounding costs of over-engineered systems, and many companies pay a high price for that ignorance. You certainly do not want to demonstrate this tendency in a system design interview. Other red flags include narrow mindedness, stubbornness, etc.
 
-#todo and other engineering / architect practices and methods
 
 Over-engineering or making rigid design choices.
 

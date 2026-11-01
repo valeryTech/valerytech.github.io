@@ -2,6 +2,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{- /* The site ships its own Light and Dark themes; first in <head> so Dark Reader sees it early.
+    js/head/dark-reader.js also drops the extension's dark fallback before it paints. */}}
+  <meta name="darkreader-lock" />
   {{- $noindex := .Params.noindex | default false -}}
   {{ if .Params.seo.robots -}}
     <meta name="robots" content="{{ .Params.seo.robots }}" />
@@ -33,9 +36,14 @@
   {{- partial "schema.html" . -}}
   {{- partial "twitter_cards.html" . -}}
 
+  {{- /* Fetch the navigation font before CSS parsing so menus first paint in Plex, not the fallback. */ -}}
+  {{- range slice "400" "500" "600" "700" }}
+    <link rel="preload" href="{{ printf "fonts/ibm-plex-sans-latin-%s-normal.woff2" . | relURL }}" as="font" type="font/woff2" crossorigin />
+  {{- end }}
+
   {{- $mainCss := resources.Get "css/compiled/main.css" -}}
   {{- $customCss := partial "styles/site.html" . -}}
-  {{- /* Publish the shared palette used by standalone legacy redirect pages. */ -}}
+  {{- /* Publish the shared palette used by standalone alias redirect pages. */ -}}
   {{- $linkPaletteURL := partialCached "styles/link-palette-url.html" . -}}
   {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
 

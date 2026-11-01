@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
+title: "Modeling Hybrid AI Systems"
 description: "A short research request about representing systems that combine people, LLMs, data, and classical models, with a link to the completed report on reflection."
-title: "Modeling Hybrid Ai Systems"
-linkTitle: "Modeling Hybrid Ai Systems"
+linkTitle: "Modeling Hybrid AI Systems"
 ---
 
 Publication note, 2026-04-28: This dialogue is edited for public release. Private source links and account metadata are omitted; personal details may be generalized.
@@ -33,7 +33,6 @@ It will compare approaches including knowledge graphs, ontologies, digital twins
 The final report will include academic and industry references, a comparison of approaches, a proposed system representation, and practical recommendations.
 
 Deep Research will present its research plan and continue with the investigation.
-
 
 ---
 

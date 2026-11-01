@@ -1,0 +1,8 @@
+
+The first task is to convert the speech signals of the *user utterance* into natural language text by using an automatic speech recognition module. The text is then passed through a natural language understanding module that converts the natural language utterance into a semantic representation that the system can process easily. The next step involves the dialogue management module which decides the next course of action in the conversation such as whether to access a heterogeneous source of knowledge like a database, knowledge graph or documents and deciding the content of the response. Once the content of the dialogue is determined by the dialogue manager, a natural language generation module converts the semantic response into a natural language response. Finally, a text-to-speech module converts the text into speech (Jurafsky; Martin, 2000; McTear, 2020).
+
+## Advices
+
+- CQRS but for agentic workflows. In the read we could make more autonomous objects because there are less risk. Perhaps in future we could use risk as one of the factors for the level of the agentness and autonomy
+- we could say that building only on guardrails is antipattern similar to the 'business logic on exceptions'. Like it should be in the main code
+- the previous code could bring us to more broad question: how to start llm-workflow building and how evolve them? we could start from fully deterministic flows and then introduce LLM where need; or we could start with full LLM and introduce more structured (guardrails, graphs, etc) where required; second one is like grounded theory where some features are emerging from practice (bottom up) and first is top-down (kind of restrict and fragile, closing our eyes on possible ideas)

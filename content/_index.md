@@ -15,7 +15,7 @@ seo:
 
 I build and explore complex systems that bring together people, software, data, and different forms of AI. My focus is how these parts work together: how responsibilities are shared, how information flows, and how the system's behavior and results can be evaluated and improved.
 
-AI can play different roles across [different types of projects]({{< ref "ai/var/02-ai-project-examples/ai-project-examples-and-design-model" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
+AI can play different roles across [different types of projects]({{< ref "ai/system-types/project-examples/ai-project-examples-and-design-model" >}}), from assistants and copilots to investigation tools, delegated operations, and analytical or decision systems. These pages collect practical guides, design explorations, and ideas I am still working through.
 
 {{< callout context="note" title="Why I share these notes" icon="outline/info-circle" >}}
 I share these notes because I believe they can contribute to the development of AI engineering as a discipline. Many contain original observations, ideas, and insights that could be useful to other engineers, even in an unfinished form.
@@ -50,8 +50,8 @@ Some are working drafts, open questions, or conversations with LLMs. I don't wan
 
 ## Selected notes
 
-- [AI Evaluation]({{< ref "ai-engineering/evaluation/v1/ai-evaluation" >}}): what an evaluation should help you decide.
-- [Evidence Model]({{< ref "ai-engineering/evaluation/v1/evidence-model" >}}): what a run records and what that evidence supports.
+- [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/ai-evaluation" >}}): what an evaluation should help you decide.
+- [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}): what a run records and what that evidence supports.
 
 </aside>
 <div class="homepage-details not-prose">

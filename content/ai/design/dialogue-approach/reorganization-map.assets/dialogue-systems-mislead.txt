@@ -1,0 +1,94 @@
+
+Could we say that the dialogue system term is kind of misleading? Because we are solving some task, user task, or collaborate with him, and dialogue is just one of the form of this collaboration first. And then also it's dialogue consists like the extended in text, mostly in text form. But we can use also the other things like interfaces, hybrid interfaces, etc.
+
+---
+
+Yes. I think "dialogue system" is a potentially misleading term for the broader class of AI systems you're describing. It emphasizes the form of interaction, while the defining purpose of these systems is to help users accomplish tasks.
+
+Your argument has two distinct parts, and both are important.
+
+### 1. Dialogue is a means of collaboration, not its purpose
+
+In your wallet example, the user wants to understand a transaction, manage expenses, or change something in the application.
+
+The system might:
+
+- Interpret the user's goal and current context.
+- Retrieve information and reason about it.
+- Propose a change to the application's state.
+- Collaborate with the user to review and revise the proposal.
+- Execute an authorized operation and verify its outcome.
+
+Dialogue may help coordinate these activities, but task completion and collaboration are the organizing concepts.
+
+This distinction becomes even clearer when an assistant can proactively identify a problem or suggest an action without waiting for a conversational request.
+
+### 2. Dialogue is only one interaction mechanism
+
+Your second point concerns the interface.
+
+The same task might involve natural-language conversation, structured forms, buttons, interactive tables, visualizations, or an existing application screen.
+
+For example, an assistant might detect a recurring payment, show an editable expense form, and let the user confirm it with a button.
+
+The human and AI are still collaborating on the task, even though the interaction doesn't require a textual dialogue.
+
+### 3. Why researchers still use the term
+
+There is an important qualification: in academic literature, dialogue doesn't necessarily mean text. Dialogue systems can use speech and multimodal interaction.
+
+Also, task-oriented dialogue systems explicitly aim to complete tasks, including retrieving information and executing operations through APIs. So the term is legitimate within that research tradition.
+
+![](https://www.google.com/s2/favicons?domain=https://link.springer.com&sz=32)
+
+Springer Nature Link
+
++1
+
+The limitation is its scope. It makes conversational exchange central to how the system is defined.
+
+An alternative research tradition is mixed-initiative interaction, which studies how humans and computers collaborate through automation, direct manipulation, and shared control. Horvitz's work established this framing well before modern LLM assistants.
+
+![](https://www.google.com/s2/favicons?domain=https://doi.org&sz=32)
+
+DOI
+
++1
+
+### 4. A better conceptual hierarchy
+
+I would organize your idea into three layers:
+
+Task and domain layer
+
+User goals, resources, domain state, permitted operations
+
+Assistance and collaboration layer
+
+Reasoning, planning, workflows, proposals, authorization, execution
+
+Interaction layer
+
+Dialogue
+
+Hybrid UI
+
+Direct UI
+
+Under this model, dialogue is one possible interaction mechanism. Your common foundation for Fuse Energy, financial assistants, and other application assistants lives primarily in the first two layers.
+
+### 5. What I would call the broader class
+
+AI-assisted task systems is a reasonable descriptive umbrella, though it isn't a standardized research category.
+
+Mixed-initiative task assistants is more specific when humans and AI can both propose actions and steer their completion.
+
+Workflow-based task assistants describes the narrower architecture you originally proposed, with a predefined task catalog and controlled execution.
+
+My preferred framing for your broader vision is:
+
+> A human-AI collaborative system that helps users understand and change domain state to accomplish tasks, using whichever interaction mechanisms best support the work.
+
+This definition includes read-only assistance, proposed actions, controlled workflows, and delegated execution.
+
+It also suggests a useful research direction: treat dialogue as one form of human-AI collaboration within task-oriented systems, while making the domain model, actions, and shared task state the central abstractions.

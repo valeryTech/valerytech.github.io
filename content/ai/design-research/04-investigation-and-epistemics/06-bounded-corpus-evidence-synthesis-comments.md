@@ -58,7 +58,7 @@ The early Hebbia comparison bundles claims under a citation that the separate pr
 ## Task-specific context assembly
 
 
-The short sketch has no speaker labels. Its sentences remain saved statements rather than being assigned to the author or the LLM.
+The [short sketch]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}) has no speaker labels. Its sentences remain saved statements rather than being assigned to the author or the LLM.
 
 The [opening statement and related links]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis" >}}#task-specific-context-assembly) concern the evidence needed for a task. The [retrieval sentence]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#retrieval-methods-for-context-assembly) names methods for finding the evidence. A method can improve retrieval without establishing that the evidence is sufficient or that every relevant passage was found. The sketch provides no measurements for its retrieval claim.
 
