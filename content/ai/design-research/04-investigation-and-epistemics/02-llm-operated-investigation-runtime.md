@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "4.2 LLM-Operated Investigation Runtime"
+aliases:
+  - "/ai/architecture-dsl-like/investigation-lang-alg-llm-layer/"
 description: "Proposes LLM-authored investigations over a small typed algebra, separating logical evidence operations from physical retrieval and reusing existing durable runtimes while testing contract semantics."
 weight: "20"
 linkTitle: "4.2 Investigation Runtime"

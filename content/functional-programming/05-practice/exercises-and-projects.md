@@ -33,7 +33,7 @@ H-99 and S-99 are ports of the same problem list, the Ninety-Nine Prolog Problem
 - Scala Exercises: <https://www.scala-exercises.org/>, source at <https://github.com/scala-exercises/scala-exercises>. It brings the Scala Koans to the web, with hundreds of exercises in 42 categories on the basics of the language. Originally built by 47 Degrees; the old address <http://scala-exercises.47deg.com/> is the same site.
 - Scala Advent of Code (Scala Center): <https://scalacenter.github.io/scala-advent-of-code/>, source at <https://github.com/scalacenter/scala-advent-of-code>
 - S-99, Ninety-Nine Scala Problems: <http://aperiodic.net/phil/scala/s-99>
-- Exercism, community-driven Scala exercises: <http://exercism.io/languages/scala/exercises>. This is an old address; Exercism has since moved to exercism.org.
+- Exercism, community-driven Scala exercises: <https://exercism.org/tracks/scala/exercises>
 - dehun/learn-fp, a learn-by-doing FP course in Scala covering type classes, functors, applicatives, monads, monad transformers and the free monad: <https://github.com/dehun/learn-fp/>
 
 ### Other collections
@@ -43,10 +43,10 @@ H-99 and S-99 are ports of the same problem list, the Ninety-Nine Prolog Problem
 
 Queued to do:
 
-- [ ] Utrecht University FP course, 2019 exercises: <http://www.cs.uu.nl/docs/vakken/fp/2019/exercises.html>
+- [ ] Utrecht University FP course, 2019 exercises: [archived copy](https://web.archive.org/web/20230302062937/http://www.cs.uu.nl/docs/vakken/fp/2019/exercises.html) (the original page is gone)
 - [ ] Gist by oskarkv: <https://gist.github.com/oskarkv/3168ea3f8d7530ccd94c97c19aafe266>. The jot "learn a haskell" sat next to it; it probably means *Learn You a Haskell for Great Good!*, but it may also have been a label for this gist (needs checking).
 - [ ] Drew University (Burd), exercises to accompany *Introduction to Functional Programming*: <https://users.drew.edu/bburd/functionalprogramming/ExercisesToAccompanyIntroductionToFunctionalProgramming.pdf>
-- [ ] University of Innsbruck, FP course, winter semester 2015: <http://cl-informatik.uibk.ac.at/teaching/ws15/fp/content.php>
+- [ ] University of Innsbruck, FP course, winter semester 2015: [archived copy](https://web.archive.org/web/20250917105748/http://cl-informatik.uibk.ac.at/teaching/ws15/fp/content.php) (the original page is gone)
 
 ## Specific problems
 
@@ -55,11 +55,11 @@ Queued to do:
 
 - **Write a List type as an ADT.** A list is either empty or a head followed by another list. In Haskell, `data List a = Nil | Cons a (List a)`. In Scala 3, an `enum` with two cases; make it covariant (`+A`) so that `MyList[Nothing]` works as the empty list for every element type.
 
-```scala
+  ```scala
   enum MyList[+A]:
     case Empty
     case Cons(head: A, tail: MyList[A])
-```
+  ```
 
 - **Add `headOption` and `tailOption`, and use them in your code.** The point is totality: `head` on an empty list has no sensible answer and throws, while `headOption: Option[A]` and `tailOption: Option[MyList[A]]` put the empty case in the type. Notice how `Option` forces every caller to decide what happens for the empty list, and how `for` comprehensions over `Option` keep that readable.
 - **Write a recursive `toString`.** Build the string for the tail and put the head in front, taking care with the separator so there is no trailing comma. Try it on a list of 100,000 elements: a plain recursive version overflows the stack on the JVM. Fix it with an accumulator and `@tailrec`, or write it as a `foldLeft`. See [Writing recursive functions]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#writing-recursive-functions).
@@ -112,7 +112,7 @@ The book then points ahead to Monad:
 - **State and Reader monads.** Reader is a function from a shared, read-only environment, `newtype Reader r a = Reader (r -> a)`, used for configuration and dependencies. State is a function from a state to a result and a new state, `newtype State s a = State (s -> (a, s))`. Write both newtypes yourself with their `Functor`, `Applicative` and `Monad` instances, then use State for a stack or a counter and Reader for passing a configuration through several functions. See [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader) and [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}).
 - **Build a toy effect system** (#project). Start by describing console programs as data and writing the interpreter separately:
 
-```haskell
+  ```haskell
   data Console a
     = Done a
     | PrintLine String (Console a)
@@ -122,7 +122,7 @@ The book then points ahead to Monad:
   run (Done a)        = pure a
   run (PrintLine s k) = putStrLn s >> run k
   run (ReadLine k)    = getLine >>= run . k
-```
+  ```
 
 
   Next steps: give `Console` a `Monad` instance so programs can use `do` notation; write a second, pure interpreter that takes a list of input lines and returns the output, for tests; then generalise the structure, which leads to the free monad. Comparing that with a tagless final version of the same program covers the two main designs. More in [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems). This project is also on the list in Project Ideas.

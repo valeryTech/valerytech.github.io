@@ -65,7 +65,8 @@ The question is older than AI tools and does not depend on them. Claims that cod
 
 - [AI systems require behavioral evidence]({{< ref "ai-engineering/approach/behavioral-evidence" >}}) -- the AI-specific case: why the quality of an AI system has to be shown by observing its behavior.
 - [Disciplined AI experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) -- what a useful AI experiment names, from the decision to the judgment rule.
-- [A practical way to study coding-agent improvements]({{< ref "ai-engineering/agents/agents-md/coding-agent-experimentation-primer" >}}) -- EBSE, experiments, case studies, design science and grounded theory applied to `AGENTS.md`.
+- [A practical way to study coding-agent improvements]({{< ref "ai-engineering/agents/ade/agents-md/evaluation/coding-agent-experimentation-primer" >}}) -- EBSE, experiments, case studies, design science and grounded theory applied to `AGENTS.md`.
+- [Why it is hard to tell whether AGENTS.md works]({{< ref "ai-engineering/agents/ade/agents-md/evaluation/agents-md-verification" >}}) -- the same limit for agent instructions: neither reading `AGENTS.md` nor running static checks on it shows whether it works.
 - [Capability claims and empirical method]({{< ref "ai/capabilities/empirical-method-map" >}}) -- where these ideas reappear across the AI notes.
 - [Engineering experiments]({{< ref "engineering/eng-exp" >}}) -- exploratory design and experiments as a way to learn about a system.
 

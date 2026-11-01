@@ -80,7 +80,7 @@ Other starting points:
 
 
 - [Critical stance and evidence-based practice]({{< ref "engineering/evidence/critical-stance" >}}) -- EBSE among its neighbouring terms, and scrutiny of the evidence itself.
-- [A practical way to study coding-agent improvements]({{< ref "ai-engineering/agents/agents-md/coding-agent-experimentation-primer" >}}) -- EBSE as the first method for testing `AGENTS.md` recommendations: check the existing evidence before running new evaluations.
+- [A practical way to study coding-agent improvements]({{< ref "ai-engineering/agents/ade/agents-md/evaluation/coding-agent-experimentation-primer" >}}) -- EBSE as the first method for testing `AGENTS.md` recommendations: check the existing evidence before running new evaluations.
 - [Claims to check in product work]({{< ref "ai-engineering/causal-stack/claims" >}}) and [Learning through real product use]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}) -- EBSE as the broader method behind reviewing recommendations before treating them as established practice.
 - [Capability claims and empirical method]({{< ref "ai/capabilities/empirical-method-map" >}}) -- EBSE as the outer loop around a capability study, and "productivity" as a construct in the same position as "reasoning".
 

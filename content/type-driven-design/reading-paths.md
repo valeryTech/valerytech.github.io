@@ -173,7 +173,7 @@ The first four should provide a precise practical model. The later three explain
 ## Type theory and refinement types
 
 
-A suggested starting point for systematic study is Pierce's _Types and Programming Languages_ ([PDF](/sources/61c011d4c2037767a1b6df1b6fde20de.bin)). ([MIT Press](https://mitpress.ublish.com/book/types-and-programming-languages "Types and Programming Languages | The MIT Press")) Then read Wadler's _Propositions as Types_ ([PDF](/sources/e73a714dde09d48962f58768e5bd200a.bin)) for the logical perspective, ([Edinburgh Research](https://www.research.ed.ac.uk/en/publications/propositions-as-types/ "Propositions as Types - University of Edinburgh Research Explorer")) and _Parse, Don't Validate_ (HTML) for the direct software-design consequence. ([Lexi Lambda](https://lexi-lambda.github.io/ "Alexis King's Blog")) After that, topics like refinement types, effects, linear types, and session types make much more sense.
+A suggested starting point for systematic study is Pierce's _Types and Programming Languages_ ([PDF](/sources/61c011d4c2037767a1b6df1b6fde20de.bin)). ([MIT Press](https://mitpress.mit.edu/9780262162098/types-and-programming-languages/ "Types and Programming Languages | The MIT Press")) Then read Wadler's _Propositions as Types_ ([PDF](/sources/e73a714dde09d48962f58768e5bd200a.bin)) for the logical perspective, ([Edinburgh Research](https://www.research.ed.ac.uk/en/publications/propositions-as-types/ "Propositions as Types - University of Edinburgh Research Explorer")) and _Parse, Don't Validate_ (HTML) for the direct software-design consequence. ([Lexi Lambda](https://lexi-lambda.github.io/ "Alexis King's Blog")) After that, topics like refinement types, effects, linear types, and session types make much more sense.
 
 For refinement types specifically, there are good books and courses, but surprisingly few books focus only on refinement types. Most teach them as part of type systems, dependent types, or program verification.
 
@@ -194,9 +194,9 @@ A path for a software engineer:
    Read this if TAPL makes you wonder, "Okay, but how do we actually prove that a type system is sound?" It's an interactive textbook where the definitions and proofs are machine-checked in Rocq/Coq. Volume 2 covers operational semantics and static type systems.
    It teaches concepts such as the classic:
 
-```text
+   ```text
    type safety = progress + preservation
-```
+   ```
 
    This is one of the key ideas behind static type-system theory.
 5. **Programming Language Foundations in Agda -- Wadler, Kokke, Siek**

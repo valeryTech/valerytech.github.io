@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "4.1 Investigation Language and Algebra"
+aliases:
+  - "/ai/architecture-dsl-like/investigation-lang-alg/"
 description: "Proposes an investigation abstract machine combining evidence operations, dataflow, iteration, provenance, and epistemic contracts, with reusable programs shared by visual editors, engineers, and agents."
 weight: "10"
 linkTitle: "4.1 Language and Algebra"

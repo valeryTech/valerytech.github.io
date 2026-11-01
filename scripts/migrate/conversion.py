@@ -390,7 +390,7 @@ def convert_block(block: object, ctx: RenderContext) -> str:
         return f'{"#" * block.level} {rewrite_markdown_text(block.text, ctx)}'
     if isinstance(block, FencedCode):
         opener = f"{block.fence}{block.info}" if block.info else block.fence
-        return f"{opener}\n{block.text}\n{block.fence}"
+        return f"{block.indent}{opener}\n{block.text}\n{block.indent}{block.fence}"
     if isinstance(block, Callout):
         context, icon = callout_presentation(block.kind)
         title = escape_shortcode(block.title or block.kind.title())

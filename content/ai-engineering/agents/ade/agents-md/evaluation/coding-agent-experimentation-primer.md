@@ -2,6 +2,9 @@
 draft: false
 toc: true
 title: "A Practical Way to Study Coding-Agent Improvements"
+aliases:
+  - "/ai-engineering/agents/agents-md/evaluation/coding-agent-experimentation-primer/"
+  - "/ai-engineering/agents/agents-md/coding-agent-experimentation-primer/"
 description: "Start with the engineering decision an investigation could change, choose a method for that question, and assess accepted work, human effort, and risk using comparisons that can revise the recommendation."
 linkTitle: "Studying Improvements"
 ---
@@ -17,7 +20,7 @@ linkTitle: "Studying Improvements"
 ## Purpose
 
 
-The goal is to improve the **user-repository-agent system**: its instructions, documentation, tools, validation, and human interaction. Evaluation should establish whether a change helps, for which tasks, and at what cost. A useful research cycle is:
+The goal is to improve the **user-repository-agent system**: its instructions, documentation, tools, validation, and human interaction. Evaluation should establish whether a change helps, for which tasks, and at what cost. For instructions such as `AGENTS.md`, only agent behavior can show this ([why]({{< ref "ai-engineering/agents/ade/agents-md/evaluation/agents-md-verification" >}})). A useful research cycle is:
 
 ```mermaid
 flowchart TB

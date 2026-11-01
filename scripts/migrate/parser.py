@@ -85,6 +85,7 @@ def parse_document(content: str) -> Document:
         fence_match = FENCE_START_RE.match(line)
         if fence_match:
             flush_buffer()
+            indent = fence_match.group(1)
             fence = fence_match.group(2)
             info = fence_match.group(3).strip()
             index += 1
@@ -97,7 +98,7 @@ def parse_document(content: str) -> Document:
                 index += 1
             if index < len(lines):
                 index += 1
-            blocks.append(FencedCode(fence=fence, info=info, text="\n".join(code_lines)))
+            blocks.append(FencedCode(fence=fence, info=info, text="\n".join(code_lines), indent=indent))
             continue
 
         if line.startswith("    ") or line.startswith("\t"):

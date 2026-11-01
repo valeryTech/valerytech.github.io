@@ -1,8 +1,6 @@
 # CSS audit and refactor
 
-Reviewed the active `assets/css/site/` bundle, Hugo assembly, generated
-configuration, JavaScript property reads/writes, alias-redirect palette, and icon
-authoring consumer. Legacy `assets/scss/` is outside the active bundle.
+Reviewed the active `assets/css/site/` bundle, Hugo assembly, generated configuration, JavaScript property reads/writes, alias-redirect palette, and icon authoring consumer. Legacy `assets/scss/` is outside the active bundle.
 
 ## Unused and redundant values
 
@@ -12,19 +10,13 @@ Removed three properties with no consumers:
 - `--site-bottom-control-foreground`
 - `--site-pane-label-guide`
 
-Removed `--site-scrollbar-thumb` and its search-result `scrollbar-color` rule:
-native scrollbar chrome is hidden throughout the site. The color reference now
-counts the remaining palette roles.
+Removed `--site-scrollbar-thumb` and its search-result `scrollbar-color` rule: native scrollbar chrome is hidden throughout the site. The color reference now counts the remaining palette roles.
 
-Removed the unassigned `--site-surface-inset-start` fallback. Shared controls
-already use `--site-surface-inset`; the trailing inset remains a supported local
-override. Removed the duplicate `.page-nav-title` declarations because its
-existing `.site-control-label` class supplies the same layout.
+Removed the unassigned `--site-surface-inset-start` fallback. Shared controls already use `--site-surface-inset`; the trailing inset remains a supported local override. Removed the duplicate `.page-nav-title` declarations because its existing `.site-control-label` class supplies the same layout.
 
 ## Canonical values
 
-These aliases had no independent overrides. Their consumers now use the value
-that owns the actual policy:
+These aliases had no independent overrides. Their consumers now use the value that owns the actual policy:
 
 | Retired property                    | Canonical property              |
 | ----------------------------------- | ------------------------------- |
@@ -39,9 +31,7 @@ that owns the actual policy:
 | `--site-control-padding-inline-end` | `--site-control-padding-inline` |
 | `--site-header-item-inset`          | `--site-space-2`                |
 
-Palette aliases such as context/control foregrounds and backgrounds remain:
-they describe different visual roles. Pane gutters, surface insets, and
-header button dimensions retain their actual component overrides.
+Palette aliases such as context/control foregrounds and backgrounds remain: they describe different visual roles. Pane gutters, surface insets, and header button dimensions retain their actual component overrides.
 
 ## Names and ownership
 
@@ -55,36 +45,19 @@ header button dimensions retain their actual component overrides.
 | `--site-tile-gap`                | `--site-table-cell-gap`           | Only table cells consume it.                                                |
 | `--site-table-padding-block`     | `--site-table-cell-padding-block` | Distinguishes cell padding from table margins.                              |
 
-Breadcrumb chooser bounds, Settings maximum width, table cell geometry, and
-brand-mark size now live with their owning components. Their numerical values
-are unchanged.
+Breadcrumb chooser bounds, Settings maximum width, table cell geometry, and brand-mark size now live with their owning components. Their numerical values are unchanged.
 
-The old `tokens.css` source is split into `tokens/scale.css`, `tokens/colors.css`,
-and `tokens/geometry.css`. `styles/tokens.html` assembles them into one Hugo
-resource before generated configuration. There are no runtime CSS imports.
-Hugo alias pages omit pane geometry; the icon authoring script reads the palette
-module directly.
+The old `tokens.css` source is split into `tokens/scale.css`, `tokens/colors.css`, and `tokens/geometry.css`. `styles/tokens.html` assembles them into one Hugo resource before generated configuration. There are no runtime CSS imports. Hugo alias pages omit pane geometry; the icon authoring script reads the palette module directly.
 
-`controls.css` replaces the vague `alignment.css` name. The shared `.site-frame`
-belongs to `shell.css`. The former shell's header, footer, and article-end
-navigation each have a dedicated module. `layout.css` continues to own responsive
-column fitting and CSS modes consumed by controllers.
+`controls.css` replaces the vague `alignment.css` name. The shared `.site-frame` belongs to `shell.css`. The former shell's header, footer, and article-end navigation each have a dedicated module. `layout.css` continues to own responsive column fitting and CSS modes consumed by controllers.
 
 ## Properties retained after tracing consumers
 
-`--site-sidebar-mode` and `--site-outline-mode` are read through the constructed
-name `--site-${name}-mode` in `navigation/drawers.mjs`. They are active even
-though a literal-name CSS scan reports no consumers.
+`--site-sidebar-mode` and `--site-outline-mode` are read through the constructed name `--site-${name}-mode` in `navigation/drawers.mjs`. They are active even though a literal-name CSS scan reports no consumers.
 
-Pane widths, sticky offsets, breadcrumb heights, chooser coordinates, Settings
-header height, and map/pane viewport measurements are supplied by JavaScript.
-Their CSS fallbacks are necessary before enhancement and during resizing.
-Configuration-generated radius, layout widths, reading measure, and fractions
-also remain in the Hugo configuration partial.
+Pane widths, sticky offsets, breadcrumb heights, chooser coordinates, Settings header height, and map/pane viewport measurements are supplied by JavaScript. Their CSS fallbacks are necessary before enhancement and during resizing. Configuration-generated radius, layout widths, reading measure, and fractions also remain in the Hugo configuration partial.
 
-Generated pane-toggle/resizer classes and optional wordmark, footer, dialog,
-popover, print, and preference rules remain. Absence from a screenshot alone is
-insufficient evidence that a selector is unused.
+Generated pane-toggle/resizer classes and optional wordmark, footer, dialog, popover, print, and preference rules remain. Absence from a screenshot alone is insufficient evidence that a selector is unused.
 
 ## Value review
 
@@ -101,13 +74,9 @@ The values below remain in place; their ownership and references are simpler.
 | 20% sidebar / 25% outline                    | `data/ui/style.json`                                 | Retain automatic proportions within the existing min/max bounds.                    |
 | 12–28rem sidebar / 1.6× outline maximum      | `tokens/geometry.css`                                | Retain responsive limits and manual resizing.                                       |
 
-Equal numeric values are not automatically one role: table-cell padding and
-navigation text size remain independent, as do palette foregrounds and surfaces.
-Actual component overrides and CSS/JS interfaces remain explicit.
+Equal numeric values are not automatically one role: table-cell padding and navigation text size remain independent, as do palette foregrounds and surfaces. Actual component overrides and CSS/JS interfaces remain explicit.
 
-Component media queries now use the same 40/48/64rem boundaries as the shell,
-replacing mixed pixel/rem thresholds. Their default-font transition points are
-preserved, and they now follow the browser's default font size consistently.
+Component media queries now use the same 40/48/64rem boundaries as the shell, replacing mixed pixel/rem thresholds. Their default-font transition points are preserved, and they now follow the browser's default font size consistently.
 
 Validation completed:
 
@@ -117,7 +86,4 @@ Validation completed:
 - Scoped CSS formatting, configuration validation, and the minified production build passed.
 - Icon palette inputs were unchanged, and the authoring script passed its syntax check.
 
-The navigation-font update that landed during this audit is preserved. For the
-refactor comparison, that font was held at its baseline value in the browser:
-all 24 page/theme/viewport screenshots were pixel-identical. The live preview
-continues to use the updated navigation font.
+The navigation-font update that landed during this audit is preserved. For the refactor comparison, that font was held at its baseline value in the browser: all 24 page/theme/viewport screenshots were pixel-identical. The live preview continues to use the updated navigation font.

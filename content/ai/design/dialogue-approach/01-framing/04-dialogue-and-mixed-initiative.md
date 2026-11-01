@@ -7,12 +7,12 @@ weight: "40"
 linkTitle: "Mixed-Initiative Interaction"
 ---
 
-[Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})
+[Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}}) · Research hub: Dialogue systems
 
 ## Classical dialogue pipeline
 
 
-The first task is to convert the speech signals of the *user utterance* into natural language text by using an automatic speech recognition module. The text is then passed through a natural language understanding module that converts the natural language utterance into a semantic representation that the system can process easily. The next step involves the dialogue management module which decides the next course of action in the conversation such as whether to access a heterogeneous source of knowledge like a database, knowledge graph or documents and deciding the content of the response. Once the content of the dialogue is determined by the dialogue manager, a natural language generation module converts the semantic response into a natural language response. Finally, a text-to-speech module converts the text into speech (Jurafsky; Martin, 2000; McTear, 2020).
+A classical dialogue system runs speech recognition, language understanding into a semantic frame, dialogue management (state tracking and the choice of the next act, including database or API access), language generation and speech synthesis (Jurafsky; Martin, 2000; McTear, 2020). The components, their evaluation and their history are covered in Frame-based and closed-set task dialogue.
 
 ## Why researchers still use the term
 

@@ -33,6 +33,7 @@ class FencedCode:
     fence: str
     info: str
     text: str
+    indent: str = ""
 
 
 Block = MarkdownChunk | Heading | Callout | Embed | FencedCode

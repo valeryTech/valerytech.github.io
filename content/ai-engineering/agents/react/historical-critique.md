@@ -454,4 +454,4 @@ Further reading:
 - [Vernon 2022](/sources/05cca9881c47a3d320c525ad096490c1.bin), *Cognitive Architectures*
 - [Silver and Sutton 2025](/sources/bc2821a0d16b5495cadca969371d49a9.bin), *Welcome to the Era of Experience*
 - [Mahowald et al. 2024](/sources/d3e4e4f8abb1b5705082eb2c4c76ee17.bin), *Dissociating language and thought in large language models* ([doi:10.1016/j.tics.2024.01.011](https://doi.org/10.1016/j.tics.2024.01.011))
-- An Illustrated Guide to AI Agents, *O'Reilly early release, chapter 6* -- a current textbook account of ReAct (prompting, fine-tuning, reinforcement learning) and its reflection successors (Self-Refine, Reflexion)
+- *An Illustrated Guide to AI Agents*, *O'Reilly early release, chapter 6* -- a current textbook account of ReAct (prompting, fine-tuning, reinforcement learning) and its reflection successors (Self-Refine, Reflexion)

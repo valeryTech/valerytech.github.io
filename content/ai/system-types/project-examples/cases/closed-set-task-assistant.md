@@ -29,3 +29,7 @@ For example, a booking assistant can determine which information is missing, pre
 The defining principle is **flexibility within enforced boundaries**. The LLM can influence how a task progresses, while the surrounding architecture restricts what it can execute and ensures that required conditions are met.
 
 **Examples:** Booking assistants, account recovery workflows, form completion, and other systems supporting a bounded set of operations.
+
+---
+
+In dialogue-systems terms, this is the simplest task-oriented system and the LLM-era form of frame-based dialogue. See Frame-based and closed-set task dialogue for the classical design and its descendants, and the Dialogue systems hub for the wider section.

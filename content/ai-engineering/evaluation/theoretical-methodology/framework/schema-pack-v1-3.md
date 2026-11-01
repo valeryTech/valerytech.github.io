@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "Schema Pack v1.3: Contracts for Framework Artifacts"
+aliases:
+  - "/ai/methodology-v1-3/schema-pack-v1-3/"
 description: "Records for traces, estimates, comparisons, gates, and incidents carry shared identity and provenance rules. The catalog specifies required fields, measurement coverage, and compatibility across those interfaces."
 linkTitle: "Schema Pack v1.3"
 ---

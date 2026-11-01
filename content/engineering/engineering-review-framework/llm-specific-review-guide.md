@@ -76,8 +76,7 @@ External references checked on 2026-04-20. The concern list and application guid
 ## Related notes
 
 
-- [Project Understanding]({{< ref "ai-engineering/agents/project-ownership" >}}#ownership) -- why maintainers need to understand accepted changes even when an agent can generate and explain them.
-- [Idiosyncrasy in Agent-Ready Systems]({{< ref "ai-engineering/agents/idiosyncrasy" >}}) -- recognizing hidden conventions and surprising structure that can mislead both humans and agents.
+- [Project Understanding]({{< ref "ai-engineering/agents/project-ownership" >}}#what-owners-need-to-understand) -- why maintainers need to understand accepted changes even when an agent can generate and explain them.
 
 ## Related documents
 

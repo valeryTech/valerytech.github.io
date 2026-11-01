@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "System Design Interview Frameworks"
+aliases:
+  - "/system-design/frameworks/"
 description: "A comparison of competing system design interview frameworks, their stages and emphases, and shared reasoning tools for trying them in practice."
 linkTitle: "Frameworks"
 ---

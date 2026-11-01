@@ -96,7 +96,7 @@ External references checked on 2026-04-20. Local tool and skill sources are link
 ## Related notes
 
 
-- [AGENTS.md guidance]({{< ref "ai-engineering/agents/agents-md/agents-md" >}}) -- giving agents concise project context, canonical references, and validation commands.
+- [AGENTS.md guidance]({{< ref "ai-engineering/agents/ade/agents-md/agents-md" >}}) -- giving agents concise project context, canonical references, and validation commands.
 
 ## Related documents
 

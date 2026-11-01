@@ -147,6 +147,8 @@ Engineering rule:
 
 This supports the idea that **experimentation is not outside AI engineering**. It is the base layer because the only reliable way to improve an AI system is to run controlled experiments and measure what changes. See [Disciplined AI experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
 
+The same limit applies to the instructions given to coding agents: [Why it is hard to tell whether AGENTS.md works]({{< ref "ai-engineering/agents/ade/agents-md/evaluation/agents-md-verification" >}}).
+
 ## Assurance System
 
 ### Lens 1: Assurance Chain

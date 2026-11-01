@@ -52,14 +52,14 @@ The proposal is to run the project like this:
 1. **Define a very small language.** Maybe `search`, `screen`, `extract`, `support`, `contradict`, `resolve_authority`, `verify_coverage`, `synthesize`, and `abstain`. Don't build the visual environment, multi-agent system, Petri-net runtime, custom DB, or optimizer yet.
 2. **Give values epistemic types/effects.** For example:
 
-```text
+    ```text
     EvidenceSet<
         coverage = Complete,
         provenance = Exact,
         authority = Verified,
         conflicts = Resolved
     >
-```
+    ```
 
 
     and make `FinalFinding` impossible to produce from weaker evidence. This is already the strongest compiler idea in your notes.

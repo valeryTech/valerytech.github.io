@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "Goals of AI Product Delivery"
+aliases:
+  - "/ai-engineering/evaluation/v2/ai-evaluation-goals/"
 description: "Defines user-task success as the top AI delivery goal, then derives behavioral contracts, controlled changes, failure diagnosis, and production feedback as supporting capabilities."
 linkTitle: "Goals"
 ---
