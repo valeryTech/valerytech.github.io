@@ -27,6 +27,24 @@ target_subtree = "engineering"
 include = ["**/*.md", "*.md"]
 
 [[imports]]
+name = "functional-programming"
+source_root_kind = "external"
+source_subtree = "topics/functional-programming"
+target_subtree = "functional-programming"
+root_index_source = "functional-programming.md"
+
+[[imports]]
+name = "type-driven-design"
+source_root_kind = "external"
+source_subtree = "topics/type-driven-design"
+target_subtree = "type-driven-design"
+root_index_source = "type-driven-design.md"
+exclude = [
+  # Inboxes are not publication sources.
+  "/input/**",
+]
+
+[[imports]]
 name = "ai"
 source_root_kind = "external"
 source_subtree = "ai"
@@ -76,7 +94,7 @@ source_root_kind = "external"
 source_subtree = "projects"
 target_subtree = "projects"
 selection_mode = "opt-in"
-selection_paths = ["ai-dev-foundation", "code-assistant.md"]
+selection_paths = ["ai-dev-foundation", "code-intelligence"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 

@@ -29,12 +29,35 @@ copyRight = "Copyright (c) 2014-2023"
   home = ["HTML", "RSS", "searchIndex", "agentMap", "agentText"]
   section = ["HTML", "RSS", "SITEMAP"]
 
-# Keep maps only for the five main collections. Nested sections are merged in.
+# Keep archived notes and unsorted collections out of search results and sitemaps.
+# They stay published and linked; "follow" lets crawlers reach current pages
+# through them.
+[[cascade]]
+  [cascade.params.seo]
+    robots = "noindex, follow"
+  [cascade.sitemap]
+    disable = true
+  [cascade.target]
+    path = "{/system-design/archive,/system-design/archive/**,/system-design/to-sort,/system-design/to-sort/**,/functional-programming/to-sort}"
+
+# Migration test pages are regression fixtures, not reading material. The
+# production build neither renders nor lists them; the preview and the fixture
+# build (`npm run build:fixtures`) keep them for the theme and navigation tests.
+[[cascade]]
+  [cascade.build]
+    list = "never"
+    render = "never"
+    publishResources = false
+  [cascade.target]
+    path = "{/system-design/integrated-test-pages,/system-design/integrated-test-pages/**}"
+    environment = "production"
+
+# Keep maps only for the article collections. Nested sections are merged in.
 [[cascade]]
   outputs = ["HTML", "RSS", "SITEMAP", "agentMap", "agentText"]
   [cascade.target]
     kind = "section"
-    path = "{/ai,/ai-engineering,/engineering,/system-design,/projects}"
+    path = "{/ai,/ai-engineering,/engineering,/system-design,/projects,/functional-programming,/type-driven-design}"
 
 [outputFormats.searchIndex]
   mediaType = "application/json"

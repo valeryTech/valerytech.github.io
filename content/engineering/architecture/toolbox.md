@@ -140,6 +140,7 @@ For a design or architecture decision:
 - [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- on *Coupling and modularity*
 - [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer, 2nd Edition* -- on *The Essence of Good Design (ETC)* and DRY
 - [Shore et al. 2021](/sources/software-engineering/process-and-agile/shore-2021-art-of-agile-development-2nd-edition.pdf.enc), *The Art of Agile Development, 2nd Edition* -- on *Simple Design*
+- [Mak 2026](/sources/software-engineering/craft/mak-2026-software-design-for-python-programmers.pdf.enc), *Software Design for Python Programmers: Principles and patterns* -- the named principles with their sections (Single Responsibility 2.3.1, Open-Closed and DRY 2.3.3, Law of Demeter 5.6, Liskov Substitution 7.2, composition over inheritance 7.3.3), on *Design principles*
 
 Further reading:
 

@@ -69,7 +69,7 @@ B-Trees, B+ trees
 ## Library sources
 
 
-- [Chen and Lee 2019](/sources/software-engineering/databases/chen-2019-introduction-of-nosql-databases.pdf.enc), *An Introduction of NoSQL Databases Based on Their Categories and Application Industries*
-- [Gessert et al. 2016](/sources/software-engineering/databases/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3))
-- [LearnSQL 2020](/sources/software-engineering/databases/learnsql-2020-sql-cheat-sheets.pdf.enc), *SQL Cheat Sheets*
-- [Xu 2023](/sources/software-engineering/databases/xu-2023-key-steps-in-database-selection-process.pdf.enc), *Key Steps in the Database Selection Process*
+- [Chen and Lee 2019](/sources/system-design/data-systems/chen-2019-introduction-of-nosql-databases.pdf.enc), *An Introduction of NoSQL Databases Based on Their Categories and Application Industries*
+- [Gessert et al. 2016](/sources/system-design/data-systems/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3))
+- [LearnSQL 2020](/sources/system-design/data-systems/learnsql-2020-sql-cheat-sheets.pdf.enc), *SQL Cheat Sheets*
+- [Xu 2023](/sources/system-design/data-systems/xu-2023-key-steps-in-database-selection-process.pdf.enc), *Key Steps in the Database Selection Process*

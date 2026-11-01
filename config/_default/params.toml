@@ -1,6 +1,6 @@
 description = "Working notes on software, AI systems, cognition, and human-agent systems."
 images = ["cover.png"]
-mainSections = ["projects", "system-design", "engineering", "ai-engineering", "ai"]
+mainSections = ["projects", "system-design", "engineering", "ai-engineering", "ai", "functional-programming", "type-driven-design"]
 
 [sectionIndexes]
 "/ai/design-research/" = "/ai/design-research/00-index"

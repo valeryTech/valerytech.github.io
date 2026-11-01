@@ -42,7 +42,7 @@ The [control plane and data plane]({{< ref "system-design/elements/control-plane
 
 - **System design:** the [operating services]({{< ref "system-design/elements/operating-services" >}}) hub lists deployment, cross-cutting concerns, observability, security, and testing as design choices. These notes hold the mechanisms behind them. The [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) note gives the default for a prototype.
 - **Delivery techniques:** feature flags, canaries, pilots, and hardening are in the [lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}). Golden-path templates for RAG, agents, and evaluation are in the [golden-path notes]({{< ref "engineering/delivery-techniques/skeletons" >}}).
-- **Declarative design:** [declarative design]({{< ref "engineering/ddd/declarative" >}}) describes the specification-plus-engine idea that GitOps and Kubernetes rely on.
+- **Declarative design:** [declarative design]({{< ref "type-driven-design/declarative-design" >}}) describes the specification-plus-engine idea that GitOps and Kubernetes rely on.
 - **AI systems:**
   - [declarative system configuration]({{< ref "ai/design/declarative-configs/declarative-system-config" >}}) applies the same model to AI system definitions;
   - [model gateway designs]({{< ref "ai-engineering/delivery/patterns/model-gateway" >}}) apply the control plane split to model access;

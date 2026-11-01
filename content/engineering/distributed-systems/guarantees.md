@@ -190,4 +190,5 @@ The checklist for recording each operation's requirement (model, behavior when r
 Further reading:
 
 - [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 9, consistency
-- [Davoudian et al. 2018](/sources/software-engineering/databases/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661)) -- consistency models and CAP as design principles of NoSQL stores
+- [Davoudian et al. 2018](/sources/system-design/data-systems/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661)) -- consistency models and CAP as design principles of NoSQL stores
+- [Herlihy et al. 2021](/sources/programming/concurrency/herlihy-2021-art-of-multiprocessor-programming-2e.pdf.enc), *The Art of Multiprocessor Programming, Second Edition* -- chapter 3, linearizability versus sequential consistency for shared-memory objects (3.4), the origin of the strongest models in *Consistency models*

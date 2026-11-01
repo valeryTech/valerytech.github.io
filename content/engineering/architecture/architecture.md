@@ -262,3 +262,4 @@ Further reading:
 - [Tofan et al. 2014](/sources/software-engineering/architecture-decisions/tofan-2014-past-future-software-architectural-decisions.pdf.enc), *Past and future of software architectural decisions*
 - [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering*
 - [Gruhn and Striemer 2018](/sources/software-engineering/process-and-agile/gruhn-2018-essence-of-software-engineering.pdf.enc), *The Essence of Software Engineering* ([doi:10.1007/978-3-319-73897-0](https://doi.org/10.1007/978-3-319-73897-0))
+- Keeling 2017, *Design It! From Programmer to Software Architect* -- Activity 20, architecture decision records, Activity 26, paths not taken, and chapter 11 on explaining the rationale for decisions, on *Decisions* and *ADRs*

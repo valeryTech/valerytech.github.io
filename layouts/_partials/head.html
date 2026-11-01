@@ -5,7 +5,7 @@
   {{- /* The site ships its own Light and Dark themes; first in <head> so Dark Reader sees it early.
     js/head/dark-reader.js also drops the extension's dark fallback before it paints. */}}
   <meta name="darkreader-lock" />
-  {{- $noindex := .Params.noindex | default false -}}
+  {{- $noindex := or (.Params.noindex | default false) (eq .Kind "404") -}}
   {{ if .Params.seo.robots -}}
     <meta name="robots" content="{{ .Params.seo.robots }}" />
   {{ else if and (hugo.IsProduction) (not $noindex) -}}

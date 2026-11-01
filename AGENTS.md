@@ -9,6 +9,8 @@
 - `docs/design/` - brand and style guides: `visual-identity.md`, `styling.md`,
   `colors.md`
 - `docs/dependencies.md` - version authorities and upgrade notes
+- `docs/titles.md` - how to write `title` and `linkTitle` for notes, sections
+  and repo-authored pages
 - [`../creds/`](../creds/README.md) - private notes kept outside the
   repository; read them when a task needs them, and never copy anything from
   them into tracked files, commit messages or PRs
@@ -27,6 +29,13 @@
 - Use the existing tokens instead of new literal values. When a change alters a
   recorded decision, token or color, update the matching guide in the same
   change.
+
+## Content changes
+
+- When writing or importing notes, adding a collection or naming a section,
+  follow the [page title rules](docs/titles.md): set `title` and `linkTitle` in
+  the source front matter instead of relying on file names, and check the new
+  pages' titles after `task content:migrate:check`.
 
 ## Commands
 

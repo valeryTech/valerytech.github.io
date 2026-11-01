@@ -267,3 +267,7 @@ Choose the technique based on the risk you are trying to reduce:
 
 - [Thomas and Hunt 2020](/sources/software-engineering/craft/thomas-2020-pragmatic-programmer-2nd-edition.pdf.enc), *The Pragmatic Programmer*
 - [Shore and Warden 2021](/sources/software-engineering/process-and-agile/shore-2021-art-of-agile-development-2nd-edition.pdf.enc), *The Art of Agile Development, 2nd Edition*
+
+Further reading:
+
+- Keeling 2017, *Design It! From Programmer to Software Architect* -- Activity 27, "Prototype to Learn or Decide", and chapter 3 on how much to design up front and letting risk guide design, on *Spike vs POC* and *POC vs Prototype*

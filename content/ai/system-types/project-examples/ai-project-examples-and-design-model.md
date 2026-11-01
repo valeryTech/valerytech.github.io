@@ -82,6 +82,8 @@ The closed-set task assistant emphasizes architectural guardrails for a predefin
 
 [Operating regimes]({{< ref "ai/system-types/project-examples/operating-regimes" >}}) examines how work progresses and is controlled through open-ended interaction, bounded workflows, investigation, collaborative artifact work, and delegated execution. These candidate regimes can coexist within a product, with relevant state preserved and permissions enforced when moving between them.
 
+[Sources of variability]({{< ref "ai/system-types/project-examples/sources-of-variability" >}}) separates three axes that are easy to merge under "complexity": how variable the request is, how much of the flow is decided at runtime, and how much the data differs between runs. A predefined audit report sits low on the first two and high on the third, which is why its difficulty and its test data concentrate on data scenarios.
+
 <a id="other"></a>
 
 ## Initial design model

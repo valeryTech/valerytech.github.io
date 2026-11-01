@@ -400,6 +400,7 @@ The two are deeply coupled, and different coding worlds shift the practical boun
 - [Song et al. 2025](/sources/ai-engineering/failures/song-2025-aegis-agent-environment-failures-in-llm-agents.pdf.enc), *Aegis* ([arXiv:2508.19504](https://arxiv.org/abs/2508.19504))
 - [Zhu et al. 2025](/sources/ai-engineering/failures/zhu-2025-where-llm-agents-fail-and-how-they-can-learn.pdf.enc), *Where LLM Agents Fail and How They Can Learn From Failures* ([arXiv:2509.25370](https://arxiv.org/abs/2509.25370)) -- on *Failure modes and mitigation*
 - [Kotseruba and Tsotsos 2020](/sources/ai-foundations/cognition-and-mind/kotseruba-2020-40-years-of-cognitive-architectures.pdf.enc), *40 years of cognitive architectures* ([doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y))
+- An Illustrated Guide to AI Agents, *O'Reilly early release, chapter 10* -- code tools, sandboxes, context management, context optimization for the LLM cache and the repository map, on *Engineering implications for coding agents* (*Compaction*, *Caching*, *Tool and resource interfaces*) and *Monorepo and large codebase work*
 
 Further reading:
 

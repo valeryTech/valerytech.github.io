@@ -8,8 +8,10 @@ systems are evaluated, how applications are designed around language models, and
 the engineering and system design underneath.
 
 - **Collections:** AI, AI Engineering (with Evaluation), Engineering, System
-  Design and Projects hold the articles. Research, Blog and Topics hold
-  repo-authored material, alongside the About, Content Use, Privacy and Settings
+  Design, Functional Programming, Type-driven Design and Projects hold the
+  articles. The header lists AI Engineering, AI, Engineering and Evaluation; the
+  others sit behind More collections. Research holds repo-authored
+  material, alongside the About, Content Use, Privacy and Settings
   pages.
 - **Readers:** people browse with section menus, page outlines, search and saved
   reading preferences (theme, font, text size, breadcrumbs and pane layout). Agents get HTML agent maps and

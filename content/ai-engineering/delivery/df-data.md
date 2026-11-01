@@ -1367,7 +1367,7 @@ Further reading:
 - [Bean et al. 2025](/sources/ai-foundations/capabilities-and-measurement/bean-2025-measuring-what-matters.pdf.enc), *Measuring what Matters*
 - [Chizhov et al. 2025](/sources/ai-foundations/capabilities-and-measurement/chizhov-2025-what-the-hellaswag.pdf.enc), *What the HellaSwag? On the Validity of Common-Sense Reasoning Benchmarks* ([arXiv:2504.07825](https://arxiv.org/abs/2504.07825))
 - [Eriksson et al. 2025](/sources/ai-foundations/capabilities-and-measurement/eriksson-2025-can-we-trust-ai-benchmarks.pdf.enc), *Can We Trust AI Benchmarks? An Interdisciplinary Review of Current Issues in AI Evaluation* ([arXiv:2502.06559](https://arxiv.org/abs/2502.06559))
-- [Wagner-Kaiser 2026](/sources/llms/nlp/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
+- [Wagner-Kaiser 2026](/sources/nlp/foundations/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
 - [Crowe et al. 2025](/sources/ml-engineering/books/crowe-2025-machine-learning-production-systems.pdf.enc), *Machine Learning Production Systems*
 - Dowling 2025, *Building Machine Learning Systems with a Feature Store*
 - [Confluent 2025](/sources/retrieval-and-knowledge/rag/confluent-2025-developers-guide-to-rag-data-streaming.pdf.enc), *The Developer's Guide to RAG with Data Streaming*

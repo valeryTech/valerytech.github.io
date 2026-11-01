@@ -7,6 +7,8 @@ import path from 'node:path';
 
 const { chromium, webkit, devices } = createRequire(import.meta.url)('playwright-core');
 const base = process.env.BASE_URL || 'http://localhost:1313';
+// Migration test pages are left out of production builds; CI serves them from the fixture build.
+const fixtureBase = process.env.FIXTURE_BASE_URL || base;
 const reference = process.env.REFERENCE_URL;
 const screenshots = process.env.SCREENSHOT_DIR;
 const route = '/ai-engineering/evaluation/theoretical-methodology/framework/usage/rfc-v1-4/';
@@ -290,7 +292,7 @@ test('context headings share one configured minimum height and shrink again afte
 
 test('the header and page context share alignment guides without overflowing at smaller widths', async (t) => {
   const config = JSON.parse(readFileSync(new URL('../../data/ui/style.json', import.meta.url), 'utf8'));
-  const collections = ['AI Engineering', 'AI', 'Engineering', 'Evaluation', 'System Design'];
+  const collections = ['AI Engineering', 'AI', 'Engineering', 'Evaluation'];
   for (const width of [1920, 1440, 1280, 1152, 1024, 960, 820, 768, 390, 320]) {
     const spacing = width < 384 ? Math.min(config.layoutGapPixels, 8) : config.layoutGapPixels;
     const page = await pageFor(t, base + framework, width);
@@ -430,7 +432,7 @@ test('the header and page context share alignment guides without overflowing at 
   assert.ok(Math.abs(gap - config.layoutGapPixels) < 1);
 });
 
-const moreCollections = ['Blog', 'Projects', 'Reading map', 'Topics'];
+const moreCollections = ['Functional Programming', 'Projects', 'Reading map', 'System Design', 'Type Driven Design'];
 
 test('desktop and mobile sections select the same most specific direction without JavaScript', async (t) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 900 } });
@@ -452,8 +454,8 @@ test('desktop and mobile sections select the same most specific direction withou
     const sections = page.getByRole('group', { name: 'Sections', exact: true });
     const drawer = page.locator('.mobile-site-nav');
     assert.ok(await sections.isVisible());
-    assert.equal(await sections.locator('a').count(), 5);
-    assert.equal(await drawer.locator('a').count(), 5 + moreCollections.length);
+    assert.equal(await sections.locator('a').count(), 4);
+    assert.equal(await drawer.locator('a').count(), 4 + moreCollections.length);
     // The header's More control carries the selection for collections it lists.
     const inMore = moreCollections.includes(section);
     for (const [navigation, label, value] of [
@@ -3032,8 +3034,8 @@ test('the header More control lists the collections the section bar leaves out',
   assert.equal(await button.evaluate(element => element === document.activeElement), true);
   await button.press('ArrowDown');
   await panel.waitFor({ state: 'visible' });
-  await panel.getByRole('link', { name: 'Topics', exact: true }).click();
-  await page.waitForURL(url => url.pathname === '/topics/');
+  await panel.getByRole('link', { name: 'Reading map', exact: true }).click();
+  await page.waitForURL(url => url.pathname === '/research/');
   assert.equal(await page.getByRole('button', { name: 'More collections', exact: true }).getAttribute('aria-current'), 'true');
   await page.goto(base + '/ai/');
   assert.equal(await page.getByRole('button', { name: 'More collections', exact: true }).getAttribute('aria-current'), null);
@@ -3193,13 +3195,13 @@ test('short and deeply nested breadcrumb trails wrap on mobile and navigate to t
   const cases = [
     { pathname: '/system-design/', labels: ['System Design'], parents: ['/'] },
     { pathname: framework, labels: ['System Design', 'Interview Practice', 'Frameworks', 'Interviewing.io System Design Framework'], parents: ['/', '/system-design/', '/system-design/interview/', '/system-design/interview/frameworks/'] },
-    { pathname: '/system-design/integrated-test-pages/callouts/', labels: ['System Design', 'Migration Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
+    { origin: fixtureBase, pathname: '/system-design/integrated-test-pages/callouts/', labels: ['System Design', 'Migration Test Pages', 'Callouts'], parents: ['/', '/system-design/', '/system-design/integrated-test-pages/'] },
     { pathname: route, labels: ['AI Engineering', 'Evaluation', 'Theoretical Methodology', 'Theoretical Methodology Framework', 'Usage', 'Overview and Adoption RFC'], parents: ['/', '/ai-engineering/', '/ai-engineering/evaluation/', '/ai-engineering/evaluation/theoretical-methodology/', '/ai-engineering/evaluation/theoretical-methodology/framework/', '/ai-engineering/evaluation/theoretical-methodology/framework/usage/'] },
   ];
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + cases[0].pathname, width);
-    for (const { pathname, labels, parents } of cases) {
-      await page.goto(base + pathname, { waitUntil: 'load' });
+    for (const { origin = base, pathname, labels, parents } of cases) {
+      await page.goto(origin + pathname, { waitUntil: 'load' });
       const breadcrumb = page.getByRole('navigation', { name: 'Breadcrumb', exact: true });
       assert.deepEqual(await breadcrumb.locator('li').allTextContents(), labels);
       const home = breadcrumb.getByRole('link', { name: 'Home', exact: true });
@@ -3218,7 +3220,7 @@ test('short and deeply nested breadcrumb trails wrap on mobile and navigate to t
 
 test('all ten imported callout styles retain their titles, icons, lists and code in light/dark and mobile layouts', async (t) => {
   const pathname = '/system-design/integrated-test-pages/callouts/';
-  const page = await pageFor(t, base + pathname);
+  const page = await pageFor(t, fixtureBase + pathname);
   const titles = ['Note', 'Tip', 'Caution', 'Danger', 'Important', 'Radiation hazard', 'Info', 'Question', 'Thumbup', 'Thumbdown'];
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 900 });

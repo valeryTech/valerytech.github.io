@@ -308,3 +308,11 @@ That would potentially favor Scala and Haskell more than the author's prediction
 6. [Security Best Practices for Go Developers - The Go Programming Language](https://go.dev/doc/security/best-practices)
 7. [Go Fuzzing - The Go Programming Language](https://go.dev/doc/security/fuzz/)
 8. [Go Wiki: PanicAndRecover - The Go Programming Language](https://go.dev/wiki/PanicAndRecover)
+
+## Library sources
+
+
+Further reading:
+
+- [Harsanyi 2022](/sources/programming/language-practice/harsanyi-2022-100-go-mistakes.pdf.enc), *100 Go Mistakes and How to Avoid Them* -- chapter 7 on error management, starting with panicking (#48), and chapters 8-9 on goroutines, data races and the Go memory model, on Go in *Language trade-offs for AI-generated code*
+- [Bodner 2024](/sources/programming/language-practice/bodner-2024-learning-go-2e.pdf.enc), *Learning Go, Second Edition* -- chapter 7 on types, methods and interfaces, chapter 9 on errors and panics, and chapter 12 on concurrency, on Go in *Language trade-offs for AI-generated code*

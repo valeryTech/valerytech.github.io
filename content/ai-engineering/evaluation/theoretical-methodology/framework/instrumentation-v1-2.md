@@ -516,3 +516,8 @@ The production controls include:
 
 - [Vinay 2025](/sources/ai-engineering/failures/vinay-2025-failure-modes-in-llm-systems.pdf.enc), *Failure Modes in LLM Systems*
 - [Dong et al. 2024](/sources/ai-engineering/observability/dong-2024-agentops-enabling-observability-of-llm-agents.pdf.enc), *AgentOps: Enabling Observability of LLM Agents* ([arXiv:2411.05285](https://arxiv.org/abs/2411.05285))
+- [Parker et al. 2020](/sources/software-engineering/systems-and-operations/parker-2020-distributed-tracing-in-practice.pdf.enc), *Distributed Tracing in Practice* -- chapters 2 and 4 on the span model and instrumentation practice, for *2.2 Detailed spans*; chapter 14 and appendix B on context propagation, for *3.1 Partial traces*; chapter 6 on overhead, costs and sampling, for *6. Sampling strategy*
+
+Further reading:
+
+- Observability Engineering, 2nd edition, *O'Reilly early release, chapter 4* -- getting started with instrumentation

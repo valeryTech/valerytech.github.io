@@ -212,7 +212,7 @@ Neither a logical clock nor a linearizable generator implements locks or uniquen
 - [van Steen and Tanenbaum 2023](/sources/system-design/distributed-systems/vansteen-2023-distributed-systems-4th-edition.pdf.enc), *Distributed Systems, 4th Edition* -- chapter 5 on clock synchronization, NTP, Lamport clocks, vector clocks, and causal delivery
 - [Tornow 2025](/sources/system-design/distributed-systems/tornow-2025-think-distributed-systems.pdf.enc), *Think Distributed Systems* -- chapter 2 on happened-before, clock consistency, and physical versus logical clocks
 - [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- chapter 8 on clocks and time; chapter 11 on causal consistency and vector clocks; chapter 12 on bitmap version vectors; chapter 13 on Spanner's TrueTime
-- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* ([doi:10.1145/1294261.1294281](https://doi.org/10.1145/1294261.1294281)) -- on vector clocks in *Vector clocks and version vectors*
+- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* ([doi:10.1145/1294261.1294281](https://doi.org/10.1145/1294261.1294281)) -- on vector clocks in *Vector clocks and version vectors*
 
 Further reading:
 

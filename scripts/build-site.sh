@@ -13,6 +13,10 @@ build_on_host() {
   export TZ="${TZ:-Etc/UTC}"
   log "Running production build"
   npm run build
+  log "Building the migration test pages for the fixture checks"
+  npm run build:fixtures
+  log "Verifying that only reading material is published"
+  npm run test:publication
   log "Verifying page description policy"
   npm run test:seo
   log "Verifying the public agent map"

@@ -34,5 +34,6 @@ host. `task site:up` imports the latest notes and serves the preview at
   changing UI: [visual identity](docs/design/visual-identity.md),
   [styling](docs/design/styling.md) and [colors](docs/design/colors.md)
 - [Dependencies](docs/dependencies.md): version authorities and upgrade notes
+- [Page titles](docs/titles.md): how to write `title` and `linkTitle`
 - [Analytics](docs/analytics.md)
 - [AGENTS.md](AGENTS.md): rules for coding agents working in this repository

@@ -482,4 +482,4 @@ Taken together, the sources support a fairly precise conclusion: **the common fo
 ## Library sources
 
 
-- [Productboard 2020](/sources/thinking-and-learning/problem-solving/productboard-2020-product-discovery-playbook.pdf.enc), *The Product Discovery Playbook*
+- [Productboard 2020](/sources/thinking-and-learning/product-discovery/productboard-2020-product-discovery-playbook.pdf.enc), *The Product Discovery Playbook*

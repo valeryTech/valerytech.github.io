@@ -54,13 +54,13 @@ test('the main map stays short and links to section maps and selected documents'
   assert.ok(extractLinks(main).length < 40, 'Main map should not become a full article inventory');
   assert.match(main, /<h2\b[^>]*>Main documents<\/h2>/);
   assert.match(main, /\/ai-engineering\/working-assumptions\//);
-  for (const section of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
+  for (const section of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects', 'functional-programming', 'type-driven-design']) {
     assert.ok(extractLinks(main).some((link) => link.pathname === `/agent-map/${section}/`));
   }
 });
 
-test('only the main index and five merged collection maps are generated', () => {
-  const expected = ['/agent-map/', '/agent-map/ai/', '/agent-map/ai-engineering/', '/agent-map/engineering/', '/agent-map/system-design/', '/agent-map/projects/'];
+test('only the main index and seven merged collection maps are generated', () => {
+  const expected = ['/agent-map/', '/agent-map/ai/', '/agent-map/ai-engineering/', '/agent-map/engineering/', '/agent-map/system-design/', '/agent-map/projects/', '/agent-map/functional-programming/', '/agent-map/type-driven-design/'];
   assert.deepEqual([...maps.keys()].sort(), expected.sort());
   const ai = extractLinks(maps.get('/agent-map/ai/'));
   assert.ok(ai.some((link) => link.pathname === '/ai/product/discovery/analysis-or-operation-model/'));
@@ -74,7 +74,8 @@ test('only the main index and five merged collection maps are generated', () => 
   }
   assert.ok(!extractLinks(main).some((link) => link.pathname === '/404.html'));
   assert.doesNotMatch(main, /Page not found/);
-  assert.ok(extractLinks(main).some((link) => link.pathname === '/topics/'));
+  assert.ok(extractLinks(main).some((link) => link.pathname === '/research/'));
+  assert.ok(!extractLinks(main).some((link) => ['/blog/', '/topics/'].includes(link.pathname)));
 });
 
 test('following the maps covers current published material, excluding aliases, utilities and templates', () => {
@@ -123,7 +124,7 @@ test('Design Research keeps its sidebar reading guide and has a separate section
 });
 
 test('collection indexes present grouped notes with the same descriptions as their assembled maps', () => {
-  for (const section of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects']) {
+  for (const section of ['ai', 'ai-engineering', 'engineering', 'system-design', 'projects', 'functional-programming', 'type-driven-design']) {
     const html = mainContent(readFileSync(outputFile(`/${section}/`), 'utf8'));
     assert.equal((html.match(/<h1\b/g) || []).length, 1, section);
     assert.match(html, /Explore this section/);

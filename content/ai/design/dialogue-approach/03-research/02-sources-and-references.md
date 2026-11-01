@@ -121,4 +121,4 @@ Original text: [dialogue-systems-obsidian-references.md](/ai/design/dialogue-app
 ## Library sources
 
 
-- [Jurafsky and Martin 2026](/sources/llms/nlp/jurafsky-2026-slp3-appendix-k-frame-based-dialogue.pdf.enc), *SLP3 Appendix K: Frame-Based Dialogue Systems* -- on *Dialogue-framework bibliography*
+- [Jurafsky and Martin 2026](/sources/nlp/dialogue-systems/jurafsky-2026-slp3-appendix-k-frame-based-dialogue.pdf.enc), *SLP3 Appendix K: Frame-Based Dialogue Systems* -- on *Dialogue-framework bibliography*

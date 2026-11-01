@@ -279,4 +279,4 @@ Original text: [02-pipeline.md](/ai/design/dialogue-approach/02-draft-pipeline/0
 ## Library sources
 
 
-- [Jurafsky and Martin 2026](/sources/llms/nlp/jurafsky-2026-slp3-appendix-k-frame-based-dialogue.pdf.enc), *SLP3 Appendix K: Frame-Based Dialogue Systems*
+- [Jurafsky and Martin 2026](/sources/nlp/dialogue-systems/jurafsky-2026-slp3-appendix-k-frame-based-dialogue.pdf.enc), *SLP3 Appendix K: Frame-Based Dialogue Systems*

@@ -86,7 +86,7 @@ Apply the principles to AI-generated changes with the same expectations. Additio
 - [AHA Programming]({{< ref "engineering/aha-programming" >}}) -- when duplication is preferable to a poorly understood abstraction.
 - [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) -- speculative generality, wrong abstractions, and learning from concrete cases before generalizing.
 - SOLID notes -- working notes on responsibility, extension points, and protecting components from changes elsewhere.
-- Type-driven design -- expressing domain states, constraints, workflows, and errors through types.
+- [Type-driven design]({{< ref "type-driven-design" >}}) -- expressing domain states, constraints, workflows, and errors through types.
 - Module-design guidance -- evaluating abstractions by the capability they provide and the knowledge required of callers.
 
 ## Library sources

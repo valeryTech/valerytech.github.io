@@ -95,7 +95,7 @@ The [original resource catalog]({{< ref "system-design/archive/resources-v0" >}}
 ## Library sources
 
 
-- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- on *Technical blogs and papers*
+- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- on *Technical blogs and papers*
 
 Further reading:
 

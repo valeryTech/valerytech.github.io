@@ -13,7 +13,8 @@ WITH page_sessions AS (
       AND properties.$host = 'valery.tech'
       AND properties.page_kind = 'page'
       AND properties.content_section IN (
-          'ai-engineering', 'ai', 'system-design', 'engineering', 'projects', 'blog'
+          'ai-engineering', 'ai', 'system-design', 'engineering', 'projects',
+          'functional-programming', 'type-driven-design'
       )
       AND properties.$session_id IS NOT NULL
       AND event IN (

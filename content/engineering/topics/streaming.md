@@ -530,3 +530,8 @@ To implement the session recording, we're going to use an open source library ca
 We could implement all of this in our existing `/js` endpoint, but to improve readability for this tutorial, we will create a new endpoint called `record.js`.
 
 Whether or not you ultimately decide to move some of your analytic workloads in-house, we hope this course provided some useful experience with Hono, Redpanda, and Clickhouse. The skills you built here can be applied to a wide range of use cases, and familiarity with the core components (a data collector, a streaming layer, and a real-time analytics database) will ensure a smooth journey for whatever you decide to build next.
+
+## Library sources
+
+
+- [Shapira et al. 2021](/sources/system-design/data-systems/shapira-2021-kafka-definitive-guide-2e.pdf.enc), *Kafka: The Definitive Guide, Second Edition* -- for the Kafka books listed under *Books*: chapter 14 on stream processing with Kafka Streams, and chapters 3-4 and 8 on producers, consumers and exactly-once delivery

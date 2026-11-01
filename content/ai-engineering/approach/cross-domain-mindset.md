@@ -632,7 +632,7 @@ The learning sequence can be adapted to backend, infrastructure, product-feature
 Further reading:
 
 - [Mailach et al. 2024](/sources/ai-engineering/practice/mailach-2024-themes-of-building-llm-applications-for-production.pdf.enc), *Themes of Building LLM-based Applications for Production* ([arXiv:2411.08574](https://arxiv.org/abs/2411.08574))
-- [Wagner-Kaiser 2026](/sources/llms/nlp/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
+- [Wagner-Kaiser 2026](/sources/nlp/foundations/wagner-kaiser-2026-teaching-computers-to-read.pdf.enc), *Teaching Computers to Read* ([doi:10.1201/9781003389057](https://doi.org/10.1201/9781003389057))
 - [Huyen 2022](/sources/ml-engineering/books/huyen-2022-designing-machine-learning-systems.pdf.enc), *Designing Machine Learning Systems*
 - [Tan et al. 2024](/sources/ml-engineering/books/tan-2024-effective-machine-learning-teams.pdf.enc), *Effective Machine Learning Teams*
 - [Wilson 2022](/sources/ml-engineering/books/wilson-2022-machine-learning-engineering-in-action.pdf.enc), *Machine Learning Engineering in Action*

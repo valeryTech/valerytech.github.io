@@ -714,3 +714,10 @@ Compare that algorithm with `PyObject_GenericGetAttr()` in [`Objects/object.c`](
 17. [Descriptor Guide -- Python 3.14.8 documentation](https://docs.python.org/3.14/howto/descriptor.html)
 18. [3. Data model -- Python 3.15.0 documentation](https://docs.python.org/3.15/reference/datamodel.html)
 19. [Chapter 6. The Java Virtual Machine Instruction Set](https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html)
+
+## Library sources
+
+
+Further reading:
+
+- [Ike-Nwosu 2019](/sources/programming/language-practice/ike-nwosu-2019-inside-the-python-virtual-machine.pdf.enc), *Inside the Python Virtual Machine* -- compiling source to code objects (chapter 3), code objects (chapter 5) and the `ceval.c` evaluation loop (chapter 9), for *CPython and JVM architecture*; attribute lookup and the MRO (sections 4.5-4.6), for *Method lookup, MRO, and special methods*. It describes Python 3.6, before adaptive specialization

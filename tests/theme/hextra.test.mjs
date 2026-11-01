@@ -6,6 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 const output = fileURLToPath(new URL('../../public/', import.meta.url));
 const html = (route) => readFileSync(path.join(output, route, 'index.html'), 'utf8');
+// Migration test pages stay out of production; `npm run build:fixtures` renders them here.
+const fixtures = fileURLToPath(new URL('../../.generated/fixture-site/', import.meta.url));
+const fixtureHtml = (route) => readFileSync(path.join(fixtures, route, 'index.html'), 'utf8');
 const attr = (name, value) => new RegExp(`${name}=(?:"${value}"|'${value}'|${value}(?=[\\s>]))`);
 
 test('Hextra renders one main landmark and title on the primary page types', () => {
@@ -20,7 +23,7 @@ test('Hextra renders one main landmark and title on the primary page types', () 
 });
 
 test('imported notes retain the full breadcrumb chain and wiki heading targets', () => {
-  const document = html('system-design/integrated-test-pages/migration-smoke');
+  const document = fixtureHtml('system-design/integrated-test-pages/migration-smoke');
   const breadcrumb = document.match(/<nav\b[^>]*class=(?:"breadcrumb[^"]*"|'breadcrumb[^']*'|breadcrumb(?=[\s>]))[^>]*>([\s\S]*?)<\/nav>/)?.[1];
   assert.ok(breadcrumb);
   assert.match(breadcrumb, /Home/);
@@ -36,7 +39,7 @@ test('imported notes retain the full breadcrumb chain and wiki heading targets',
 });
 
 test('the importer callout syntax retains titles, severities, and rendered bodies', () => {
-  const document = html('system-design/integrated-test-pages/callouts');
+  const document = fixtureHtml('system-design/integrated-test-pages/callouts');
   for (const title of ['Note', 'Tip', 'Caution', 'Danger']) {
     assert.match(document, new RegExp(`site-callout-title[^>]*><strong>${title}</strong>`));
   }

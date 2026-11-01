@@ -252,6 +252,7 @@ aws deployment
 - [Shore and Warden 2021](/sources/software-engineering/process-and-agile/shore-2021-art-of-agile-development-2nd-edition.pdf.enc), *The Art of Agile Development, 2nd Edition*
 - [Salatino 2024](/sources/software-engineering/systems-and-operations/salatino-2024-platform-engineering-on-kubernetes.pdf.enc), *Platform Engineering on Kubernetes*
 - [Beyer et al. 2016](/sources/software-engineering/systems-and-operations/beyer-2016-site-reliability-engineering.pdf.enc), *Site Reliability Engineering: How Google Runs Production Systems* -- chapter 8, "Release Engineering": the self-service release model, hermetic builds, continuous build and deployment, and configuration management
+- [Kim et al. 2021](/sources/software-engineering/systems-and-operations/kim-2021-devops-handbook-2e.pdf.enc), *The DevOps Handbook, Second Edition* -- chapter 12, "Automate and Enable Low-Risk Releases": blue-green deployment, canary releases, feature toggles and dark launches, on *Progressive Delivery*, *Blue/Green Deployment*, *Feature Flags* and *Canary Release*; chapter 11 on continuous integration and trunk-based development
 
 Further reading:
 

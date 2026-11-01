@@ -388,3 +388,12 @@ AI delivery adds:
 
 
 - Marty Cagan (Silicon Valley Product Group): the delivery principles draw on his product-delivery writing. No specific work is recorded for them. For his view of discovery, see the [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}#sources).
+
+## Library sources
+
+
+- [Kim et al. 2021](/sources/software-engineering/systems-and-operations/kim-2021-devops-handbook-2e.pdf.enc), *The DevOps Handbook, Second Edition* -- the Three Ways (chapters 1-4) behind the small-batch, fast-feedback and learning principles in *Principles*; chapter 11 on continuous integration and trunk-based development, for *Build and integration*; chapter 12 on feature toggles, canary releases and dark launches, for *Release and exposure control*; chapters 14-15 on telemetry, for *Observability*
+
+Further reading:
+
+- Observability Engineering, 2nd edition, *O'Reilly early release, chapters 1-4* -- what observability is and why it differs from monitoring (chapter 1), and validating developer intent in production (chapter 2), on *Observability*

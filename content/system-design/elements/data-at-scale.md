@@ -167,7 +167,7 @@ One limiter keeps an exact count. When many nodes enforce one limit, they must s
 
 - [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 4 on *Indexes* and *Search index*; chapter 7 on hot spots and secondary indexes; chapters 9 and 10 on *Coordination*; chapter 11 on batch processing
 - [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapters 1 and 4-8
-- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store*
+- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store*
 - [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- part I (chapters 2-7) on B-trees and log-structured storage; chapters 10 and 14 on leader election and consensus
 - Educative 2023: sharded counters, distributed search, and rate limiter, *Grokking Modern System Design Interview*
 - [Manning et al. 2008](/sources/retrieval-and-knowledge/information-retrieval/manning-2008-introduction-to-information-retrieval.pdf.enc), *Introduction to Information Retrieval* -- chapters 1 and 4 on the inverted index and its construction; chapter 20 on partitioning an index by term or by document

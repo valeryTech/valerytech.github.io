@@ -104,14 +104,16 @@ newer standalone KaTeX releases exist. See the
 Repo-owned scripts hold reusable task logic instead of embedding longer logic in
 `Taskfile.yml` or CI workflows:
 
-- `scripts/build-site.sh` is the shared production build wrapper
+- `scripts/build-site.sh` is the shared production build wrapper; it also builds
+  the migration test pages into `.generated/fixture-site/` and runs the
+  publication, SEO, agent-map and theme tests
 - `scripts/verify-site.sh` builds the site, starts preview if needed, and checks
   core routes
 - `scripts/clean-generated.sh` removes disposable generated outputs
 - `scripts/check-host.sh` backs `task repo:doctor`: it checks host prerequisites
   and reports, or with `--fix` removes, host installs in the checkout
 - `scripts/migrate-site.sh` runs the Docker-wrapped migration entrypoint
-- `scripts/site-map.mjs` assembles generated Markdown for the six HTML navigation
+- `scripts/site-map.mjs` assembles generated Markdown for the eight HTML navigation
   maps after migration and before npm preview/build; it uses the existing Node and
   Hugo toolchain, including on CI
 
@@ -154,7 +156,9 @@ to `master`.
   requests via `scripts/build-site.sh --host`
 - CI runs `npm run lint:styles` to check the site CSS formatting
 - after the build, CI installs Playwright's Chromium and runs the navigation
-  browser tests against Vite's preview of the minified `public/` artifact
+  browser tests against Vite's preview of the minified `public/` artifact; the
+  migration test pages, which production leaves out, come from a second preview
+  of `.generated/fixture-site/`
 - failed CI runs retain navigation screenshots as a downloadable artifact
 - `.github/workflows/deploy.yml` uses the same build wrapper before uploading
   `public/` to GitHub Pages

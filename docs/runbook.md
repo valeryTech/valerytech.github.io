@@ -123,9 +123,35 @@ required set.
   description lint in one go.
 - `task quality:test:migrate` covers the importer.
 - `task site:build` regenerates `public/` and `resources/` the way CI and GitHub
-  Pages do, then runs the SEO, agent-map and theme tests.
-- `task site:verify` also checks the 404 page, the core routes and the six agent maps
+  Pages do, builds the migration test pages into `.generated/fixture-site/`, then
+  runs the publication, SEO, agent-map and theme tests.
+- `task site:verify` also checks the 404 page, the core routes and the eight agent maps
   in the running preview, starting and stopping it if needed.
+
+### Indexing
+
+A `[[cascade]]` in `config/_default/hugo.toml` marks `/system-design/archive/`,
+`/system-design/to-sort/` and `/functional-programming/to-sort/` as
+`seo.robots: "noindex, follow"` and removes them from the sitemaps. The pages stay
+published and linked. To keep another section out of search, add its path to that
+cascade. The 404 page is always `noindex`. `layouts/robots.txt` allows everything
+and points crawlers to `/sitemap.xml`.
+
+### Unpublished fixtures
+
+The migration test pages under `/system-design/integrated-test-pages/` are
+regression fixtures. A second `[[cascade]]`, limited to the `production`
+environment, stops Hugo rendering or listing them, so the deployed site, its
+sitemaps, search index and agent maps leave them out. The preview from
+`task site:up` still shows them, and `npm run build:fixtures` builds the site with
+them into `.generated/fixture-site/` for the theme tests and, in CI, the
+navigation tests (`FIXTURE_BASE_URL`).
+
+`tests/publication/` checks the production build: these fixtures and the
+retired Blog and Topics collections render nothing and are linked from nowhere,
+every header, More collections, drawer and footer link opens a page, and each
+linked collection has notes or an introduction. To bring back a collection, add
+its content and remove it from `retired` in that test.
 
 ### Page descriptions
 
@@ -191,6 +217,7 @@ docker compose exec -e BROWSER_ENGINE=webkit site npm run test:navigation
 The [migration config](../scripts/migrate/config.toml) selects which source notes
 are imported and where they land under `content/`. Each import replaces its
 managed `content/` files, so edit those notes in the source, not in the repo.
+Name each note and section as [page titles](titles.md) describes.
 
 `include` and `exclude` patterns match against the end of a path, so `input/**`
 skips every `input` folder at any depth. A leading `/` anchors a pattern at the
@@ -308,13 +335,13 @@ publish it. Imported content is committed so CI builds without the notes vault.
 
 ## Agent maps
 
-`scripts/site-map.mjs` uses Hugo's page inventory to assemble six Markdown sources
+`scripts/site-map.mjs` uses Hugo's page inventory to assemble eight Markdown sources
 under `content/agent-map/`, which Hugo renders with `layouts/agent-map.html`:
 
 - `/agent-map/` is the short main index: Evaluation, AI and AI Engineering, the
   reading map, code examples, section maps and selected notes from
   `data/agent_navigation.toml`.
-- `/agent-map/{ai,ai-engineering,engineering,system-design,projects}/` list each
+- `/agent-map/{ai,ai-engineering,engineering,system-design,projects,functional-programming,type-driven-design}/` list each
   collection grouped by subsection, linking current pages only.
 
 The collections come from the `cascade` rule in `config/_default/hugo.toml`.

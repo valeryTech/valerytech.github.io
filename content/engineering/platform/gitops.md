@@ -26,7 +26,7 @@ A declarative system has two parts:
 - a **specification** that states what should be true;
 - an **engine** that works out how to make it true and keeps it true.
 
-The [declarative design notes]({{< ref "engineering/ddd/declarative" >}}) describe the same split, with desired-state systems as one family alongside query languages and functional programs.
+The [declarative design notes]({{< ref "type-driven-design/declarative-design" >}}) describe the same split, with desired-state systems as one family alongside query languages and functional programs.
 
 Kubernetes is the common example. Controllers compare the desired state of each resource with the actual state of the cluster and adjust the cluster to close the gap, in a loop that never ends. See [maintaining desired state]({{< ref "engineering/platform/kubernetes" >}}#maintaining-desired-state) and [declarativity]({{< ref "engineering/platform/kubernetes" >}}#declarativity) in the Kubernetes notes. The general pattern is the [control plane]({{< ref "system-design/elements/control-plane" >}}).
 

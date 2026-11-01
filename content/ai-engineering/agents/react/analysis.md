@@ -352,3 +352,4 @@ Further reading:
 - [Nolte et al. 2026](/sources/ai-foundations/cognition-and-mind/nolte-2026-metacognitive-architectures-review.pdf.enc), *How metacognitive architectures remember their own thoughts* ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5))
 - [Ziemke 2022](/sources/ai-foundations/cognition-and-mind/ziemke-2022-embodiment-in-cognitive-science-and-robotics.pdf.enc), *Embodiment in Cognitive Science and Robotics*
 - [Gridin 2025](/sources/llms/models-and-training/gridin-2025-practical-guide-to-llms.pdf.enc), *The Practical Guide to Large Language Models* ([doi:10.1007/979-8-8688-2216-2](https://doi.org/10.1007/979-8-8688-2216-2))
+- An Illustrated Guide to AI Agents, *O'Reilly early release, chapter 6* -- ReAct by prompting, supervised fine-tuning and reinforcement learning, and reflection methods such as Self-Refine and Reflexion

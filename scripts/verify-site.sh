@@ -18,6 +18,8 @@ ROUTES=(
   "/agent-map/engineering/"
   "/agent-map/system-design/"
   "/agent-map/projects/"
+  "/agent-map/functional-programming/"
+  "/agent-map/type-driven-design/"
   "/llms.txt"
   "/site-map.md"
   "/ai/llms.txt"
@@ -92,7 +94,7 @@ for route in "${ROUTES[@]}"; do
   check_route "$route"
 done
 
-for map_path in "" "/ai" "/ai-engineering" "/engineering" "/system-design" "/projects"; do
+for map_path in "" "/ai" "/ai-engineering" "/engineering" "/system-design" "/projects" "/functional-programming" "/type-driven-design"; do
   html_route="/agent-map${map_path}/"
   html_content_type="$(curl -fsS -o /dev/null -w '%{content_type}' "${BASE_URL}${html_route}")"
   if [[ "${html_content_type}" != text/html* ]]; then

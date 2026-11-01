@@ -498,4 +498,4 @@ Further reading:
 
 - [He et al. 2026](/sources/ai-foundations/alignment-and-society/he-2026-beyond-human-measure.pdf.enc), *Beyond Human Measure: ASI Should Be Guided by Open-World Alignment* ([doi:10.20944/preprints202604.1749.v1](https://doi.org/10.20944/preprints202604.1749.v1))
 - [Raschka 2025](/sources/llms/models-and-training/raschka-2025-build-a-reasoning-model-from-scratch-meap-v2.pdf.enc), *Build a Reasoning Model (From Scratch)*
-- [Reiter 2025](/sources/llms/nlp/reiter-2025-natural-language-generation.pdf.enc), *Natural Language Generation* ([doi:10.1007/978-3-031-68582-8](https://doi.org/10.1007/978-3-031-68582-8))
+- [Reiter 2025](/sources/nlp/foundations/reiter-2025-natural-language-generation.pdf.enc), *Natural Language Generation* ([doi:10.1007/978-3-031-68582-8](https://doi.org/10.1007/978-3-031-68582-8))

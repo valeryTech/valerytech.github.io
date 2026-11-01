@@ -20,13 +20,16 @@
     "lint:descriptions": "HUGOxPARAMSxSEOxDESCRIPTIONxLENGTHxERRORLEVEL=error hugo --environment production --renderToMemory --noBuildLock --logLevel error",
     "prebuild": "npm run check:config && node scripts/site-map.mjs",
     "build": "hugo --minify --gc --cleanDestinationDir",
+    "build:fixtures": "HUGO_ENVIRONMENT=development HUGO_ENV=development hugo --environment development --minify --cleanDestinationDir --logLevel error --destination .generated/fixture-site",
     "maps": "node scripts/site-map.mjs",
     "build:icons": "node scripts/build-icons.mjs",
     "test:analytics": "node --test tests/analytics/*.test.mjs",
     "test:seo": "node --test tests/seo/*.test.mjs",
     "test:site-map": "node --test tests/site-map/*.test.mjs",
     "test:theme": "node --test tests/theme/*.test.mjs",
+    "test:publication": "node --test tests/publication/*.test.mjs",
     "preview": "vite preview --outDir public",
+    "preview:fixtures": "vite preview --outDir .generated/fixture-site",
     "test:navigation": "node --test --test-timeout=60000 tests/navigation/*.test.mjs"
   },
   "dependencies": {

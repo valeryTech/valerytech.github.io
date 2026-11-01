@@ -226,9 +226,9 @@ consistency
 ## Library sources
 
 
-- [DeBrie 2020](/sources/software-engineering/databases/dynamodb-book-course/thedynamodb-book.pdf.enc), *The DynamoDB Book* -- on *Data Modeling*
+- [DeBrie 2020](/sources/system-design/data-systems/dynamodb-book-course/thedynamodb-book.pdf.enc), *The DynamoDB Book* -- on *Data Modeling*
 
 Further reading:
 
-- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store*
+- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store*
 - [Schmidt and Volpicella 2024](/sources/software-engineering/systems-and-operations/schmidt-2024-aws-fundamentals.pdf.enc), *AWS Fundamentals: AWS For The Real World*

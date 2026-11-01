@@ -627,6 +627,7 @@ A reliable heuristic: **if something is painful to test stably, it is almost alw
 
 
 - [Farley 2022](/sources/software-engineering/craft/farley-2022-modern-software-engineering.pdf.enc), *Modern Software Engineering* -- on *1. The core idea: tests as an architectural force*
+- [van Deursen and Seemann 2019](/sources/software-engineering/craft/seemann-2019-dependency-injection-principles-practices-patterns.pdf.enc), *Dependency Injection Principles, Practices, and Patterns* -- chapter 1 on the benefits of Dependency Injection, testability among them, and on placing Seams at Volatile Dependencies, on *Pattern P3: Dependency inversion for retrieval/tools*
 
 Further reading:
 

@@ -52,10 +52,10 @@ Amazon is a good example of a system where we might want to use both of these. W
 ## Library sources
 
 
-- [Gessert et al. 2016](/sources/software-engineering/databases/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3)) -- on *relational-vs-nosql*
-- [Xu 2023](/sources/software-engineering/databases/xu-2023-key-steps-in-database-selection-process.pdf.enc), *Key Steps in the Database Selection Process* -- on *relational-vs-nosql*
+- [Gessert et al. 2016](/sources/system-design/data-systems/gessert-2016-nosql-database-systems-survey-and-decision-guidance.pdf.enc), *NoSQL database systems: a survey and decision guidance* ([doi:10.1007/s00450-016-0334-3](https://doi.org/10.1007/s00450-016-0334-3)) -- on *relational-vs-nosql*
+- [Xu 2023](/sources/system-design/data-systems/xu-2023-key-steps-in-database-selection-process.pdf.enc), *Key Steps in the Database Selection Process* -- on *relational-vs-nosql*
 
 Further reading:
 
-- [Chen and Lee 2019](/sources/software-engineering/databases/chen-2019-introduction-of-nosql-databases.pdf.enc), *An Introduction of NoSQL Databases Based on Their Categories and Application Industries*
-- [Davoudian et al. 2018](/sources/software-engineering/databases/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661))
+- [Chen and Lee 2019](/sources/system-design/data-systems/chen-2019-introduction-of-nosql-databases.pdf.enc), *An Introduction of NoSQL Databases Based on Their Categories and Application Industries*
+- [Davoudian et al. 2018](/sources/system-design/data-systems/davoudian-2018-survey-on-nosql-stores.pdf.enc), *A Survey on NoSQL Stores* ([doi:10.1145/3158661](https://doi.org/10.1145/3158661))

@@ -110,7 +110,7 @@ Chapter 7 (Sharding) treats these as options under sharding by hash of key, and 
 ## Library sources
 
 
-- [DeCandia et al. 2007](/sources/software-engineering/databases/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- sections 4.2, 4.3, and 6.2 on *Virtual nodes*, *Replication along the ring*, and *Dynamo's move to fixed partitions*
+- [DeCandia et al. 2007](/sources/system-design/data-systems/decandia-2007-dynamo-amazons-key-value-store.pdf.enc), *Dynamo: Amazon's Highly Available Key-value Store* -- sections 4.2, 4.3, and 6.2 on *Virtual nodes*, *Replication along the ring*, and *Dynamo's move to fixed partitions*
 - [Xu 2020](/sources/system-design/interviews/xu-2020-system-design-interview-an-insiders-guide.pdf.enc), *System Design Interview: An Insider's Guide* -- chapter 5 on *Why hash mod N fails* and *Virtual nodes*; chapter 6 on *Replication along the ring*
 - [Kleppmann and Riccomini 2026](/sources/system-design/data-systems/kleppmann-2026-designing-data-intensive-applications-2nd-edition.pdf.enc), *Designing Data-Intensive Applications, Second Edition* -- chapter 7 on *What DDIA 2e says*
 - [Petrov 2019](/sources/system-design/data-systems/petrov-2019-database-internals.pdf.enc), *Database Internals* -- chapter 13, sections "Database Partitioning" and "Consistent Hashing", on *Consistent hashing*

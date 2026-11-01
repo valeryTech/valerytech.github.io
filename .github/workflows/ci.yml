@@ -43,11 +43,15 @@ jobs:
         env:
           BROWSER_CHANNEL: chromium
           BASE_URL: http://127.0.0.1:4173
+          FIXTURE_BASE_URL: http://127.0.0.1:4174
           SCREENSHOT_DIR: .generated/navigation-review
         run: |
           npm run preview -- --host 127.0.0.1 --port 4173 > "$RUNNER_TEMP/navigation-preview.log" 2>&1 &
           preview_pid=$!
-          trap 'kill "$preview_pid"' EXIT
+          # Migration test pages are left out of production, so they come from the fixture build.
+          npm run preview:fixtures -- --host 127.0.0.1 --port 4174 > "$RUNNER_TEMP/fixture-preview.log" 2>&1 &
+          fixture_pid=$!
+          trap 'kill "$preview_pid" "$fixture_pid"' EXIT
           npm run test:navigation
 
       - name: Upload navigation screenshots on failure

@@ -19,11 +19,6 @@
   weight = 20
 
 [[main]]
-  name = "System Design"
-  pageRef = "/system-design/"
-  weight = 25
-
-[[main]]
 name = "Search"
 weight = 90
 [main.params]
