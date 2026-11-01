@@ -8,31 +8,31 @@ linkTitle: "Streaming Resources"
 # Sources and Links
 
 
-<https://systemdesignschool.io/fundamentals/stream-processing>
+[Stream Processing: Windowing, Event Time, and Delivery Guarantees](https://systemdesignschool.io/fundamentals/stream-processing)
 
-<https://aws.amazon.com/what-is/batch-processing/>
+[What is Batch Processing?](https://aws.amazon.com/what-is/batch-processing/)
 
 <https://www.youtube.com/watch?v=1xgBQTF24mU>
 
 really interesting analysis
 
-<https://www.reddit.com/r/ExperiencedDevs/comments/183f70f/tradeoffs_between_batch_processing_and_streaming/>
+[r/ExperiencedDevs: tradeoffs between batch processing and streaming](https://www.reddit.com/r/ExperiencedDevs/comments/183f70f/tradeoffs_between_batch_processing_and_streaming/)
 
 reviews:
 
-<https://www.kai-waehner.de/blog/2023/12/21/the-data-streaming-landscape-2024/>
+[The Data Streaming Landscape 2024](https://www.kai-waehner.de/blog/2023/12/21/the-data-streaming-landscape-2024/)
 
 kai has also various use cases review
 
-<https://www.kai-waehner.de/blog/2024/11/28/data-streaming-in-healthcare-and-pharma-use-cases-cardinal-health/>
+[Data Streaming in Healthcare and Pharma: Use Cases and Insights from Cardinal Health](https://www.kai-waehner.de/blog/2024/11/28/data-streaming-in-healthcare-and-pharma-use-cases-cardinal-health/)
 
-<https://www.kai-waehner.de/blog/2022/04/04/real-time-analytics-machine-learning-with-apache-kafka-in-the-healthcare-industry/>
+[Real Time Analytics with Apache Kafka in the Healthcare Industry](https://www.kai-waehner.de/blog/2022/04/04/real-time-analytics-machine-learning-with-apache-kafka-in-the-healthcare-industry/)
 
-<https://www.kai-waehner.de/blog/2022/03/28/apache-kafka-data-streaming-healthcare-industry/>
+[Apache Kafka in the Healthcare Industry](https://www.kai-waehner.de/blog/2022/03/28/apache-kafka-data-streaming-healthcare-industry/)
 
 kappa vs lambda
 
-<https://www.kai-waehner.de/blog/2021/09/23/real-time-kappa-architecture-mainstream-replacing-batch-lambda/>
+[Kappa Architecture is Mainstream Replacing Lambda](https://www.kai-waehner.de/blog/2021/09/23/real-time-kappa-architecture-mainstream-replacing-batch-lambda/)
 
 <https://www.youtube.com/watch?v=j7D29eyysDw>
 
@@ -44,19 +44,19 @@ kafka summit conference
 
 product RedPanda documentation
 
-<https://www.redpanda.com/blog/streaming-data-examples-best-practices-tools>
+[What is streaming data? Examples & use cases](https://www.redpanda.com/blog/streaming-data-examples-best-practices-tools)
 
-<https://www.redpanda.com/blog/data-streaming-architecture>
+[What is a data streaming architecture?](https://www.redpanda.com/blog/data-streaming-architecture)
 
-<https://www.redpanda.com/blog/batch-vs-streaming-data-processing>
+[Batch vs. streaming data processing](https://www.redpanda.com/blog/batch-vs-streaming-data-processing)
 
-<https://www.redpanda.com/blog/kafka-stream-processors>
+[Compatible Kafka stream processors you can use with Redpanda](https://www.redpanda.com/blog/kafka-stream-processors)
 
 and many tutorials here
 
-<https://www.redpanda.com/blog/monetize-real-time-ads-gaming>
+[Unlocking profit: monetize in-game ads and purchases in real time](https://www.redpanda.com/blog/monetize-real-time-ads-gaming)
 
-<https://www.redpanda.com/blog/build-inventory-management-flink-mongodb-redpanda>
+[Build an inventory monitoring system with Flink and MongoDB](https://www.redpanda.com/blog/build-inventory-management-flink-mongodb-redpanda)
 
 **Blogs**
 
@@ -91,9 +91,9 @@ also there is a topic of some foundations: `foundations-streaming` library and t
 # Community & Events
 
 
-<https://www.redpanda.com/streamfest> #todo register
+[The Agentic Data Summit (Redpanda)](https://www.redpanda.com/streamfest) #todo register
 
-register fro <https://events.confluent.io/5thingsyouneedtoknow2025>
+register fro [5 things you need to know, Confluent event 2025](https://events.confluent.io/5thingsyouneedtoknow2025)
 
 # Actions
 
@@ -194,9 +194,9 @@ these are example of
 # Dynamic Pricing Use Case
 
 
-<https://www.kai-waehner.de/blog/2024/11/14/a-new-era-in-dynamic-pricing-real-time-data-streaming-with-apache-kafka-and-flink/>
+[A New Era in Dynamic Pricing: Real-Time Data Streaming with Apache Kafka and Flink](https://www.kai-waehner.de/blog/2024/11/14/a-new-era-in-dynamic-pricing-real-time-data-streaming-with-apache-kafka-and-flink/)
 
-<https://www.confluent.io/events/kafka-summit-apac-2021/kafka-tiered-storage/>
+[Kafka Tiered Storage (Kafka Summit APAC 2021)](https://www.confluent.io/events/kafka-summit-apac-2021/kafka-tiered-storage/)
 
 # RedPanda
 
@@ -233,7 +233,7 @@ Grafana's ability to combine data from multiple sources also means we can integr
 
 Benefits
 
-One of the key strengths of this architecture is its flexibility in deployment options. Each component - from Hono to Grafana - can be self-hosted or used as a managed service, allowing you to choose the approach that best fits your needs and resources.
+One of the key strengths of this architecture is its flexibility in deployment options. Each component -- from Hono to Grafana -- can be self-hosted or used as a managed service, allowing you to choose the approach that best fits your needs and resources.
 
 This flexibility extends to the data collection layer, where companies can implement custom tracking solutions or integrate with existing analytics libraries. By providing this freedom, we ensure that our analytics platform can adapt to various privacy requirements, regulatory needs, and scaling demands. If you aim to run every component in-house, you can do that. If you want to minimize overhead for certain pieces (e.g. Redpanda or Clickhouse), you can swap in their cloud offerings.
 
@@ -260,6 +260,7 @@ source ~/.bash_profile
 git clone https://github.com/redpanda-data-university/rp-use-cases-web-analytics.git -b instruqt
 cd rp-use-cases-web-analytics
 ```
+
 
 **Create the ingestion endpoints**
 
@@ -324,6 +325,7 @@ alias rpk="docker exec -ti redpanda-1 rpk"
 rpk topic consume website_visits
 ```
 
+
 Now that the page visit data is flowing through Redpanda, we can do a couple of things with it:
 
 Write the data to a data warehouse to visualize and query the data
@@ -344,13 +346,14 @@ We've included a Clickhouse deployment in the `docker-compose.yaml` file, so it 
 
 then create database
 
-```
+```sql
 CREATE DATABASE analytics;
 ```
 
+
 Next, create a Clickhouse table that uses the Kafka table engine to read data from Redpanda into Clickhouse. The columns in the DDL statement below correspond to the field names in the payload we constructed in Chapter 1.
 
-```
+```sql
 CREATE OR REPLACE TABLE analytics.web_kafka (
     url String,
     ip String,
@@ -374,11 +377,12 @@ CREATE OR REPLACE TABLE analytics.web_kafka (
     kafka_num_consumers = 1;
 ```
 
+
 A materialized view is a special type of view that stores the results of a query physically in the database, unlike a regular view which does not store any data and only represents a query. Materialized views in ClickHouse are used to improve query performance by precomputing and storing the results of complex queries, which can then be queried directly instead of recomputing the results each time the query is run.
 
 Finally, set up a materialized view to query the data. Run the following command to DDL statement to create thie view:
 
-```
+```sql
 CREATE MATERIALIZED VIEW analytics.web
 ENGINE = Memory
 AS
@@ -388,21 +392,24 @@ SETTINGS
 stream_like_engine_allow_direct_select = 1;
 ```
 
+
 With the table and materialized view setup, the data can now flow from Redpanda into Clickhouse. Open the Marketing Website again and click around a few pages. Then go back to the Clickhouse UI, and run the following query:
 
-```
+```sql
 SELECT * FROM analytics.web LIMIT 10
 ```
+
 
 You should see multiple rows of data.
 
 You can also run aggregate queries like the following:
 
-```
+```sql
 SELECT COUNT() as count, country
 FROM analytics.web
 GROUP BY country
 ```
+
 
 Note
 
@@ -422,12 +429,13 @@ Next, click **Dashboards** in the left navigation, then click **+ Create dashboa
 
 Select your new Clickhouse connection, and then from the SQL Editor tab, type in the following query:
 
-```
+```sql
 SELECT timestamp AS time, country, count() AS requests
 FROM analytics.web
 GROUP BY country, timestamp
 ORDER BY timestamp
 ```
+
 
 And that's all there is to start visualizing your data. From here, you have limitless possibilities thanks to Grafana's wide range of chart / visualization types.
 
@@ -485,7 +493,7 @@ As mentioned in the previous section, certain metadata messages that occur at th
 
 Next, you'll need to create a new table in Clickhouse for storing the session recordings. Run the following DDL statement from your local Clickhouse UI to create the table:
 
-```
+```sql
 CREATE OR REPLACE TABLE analytics.recordings_kafka (
     id String,
     page_title String,
@@ -499,11 +507,12 @@ CREATE OR REPLACE TABLE analytics.recordings_kafka (
     kafka_num_consumers = 1;
 ```
 
+
 The `analytics.recordings_kafka` table uses the Kafka engine to read session recordings from a Redpanda topic called `session_recordings`. The fields names correspond to the following values:
 
 Finally, create a materialized view that we can use to query the session recording data.
 
-```
+```sql
 CREATE MATERIALIZED VIEW analytics.recordings
 ENGINE = Memory
 AS
@@ -516,6 +525,7 @@ FROM analytics.recordings_kafka
 SETTINGS
 stream_like_engine_allow_direct_select = 1;
 ```
+
 
 Session Recording: Hono Updates
 

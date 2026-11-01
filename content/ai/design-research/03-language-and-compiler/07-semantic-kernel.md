@@ -208,8 +208,6 @@ Review
 
 Trying to encode all of PCAOB methodology into type-level Haskell would produce an elaborate system that is difficult to evolve.
 
-<a id="so-i-would-design-three-levels"></a>
-
 ### Three proposed design levels
 
 
@@ -308,8 +306,6 @@ required guarantee produced?
 
 Different theories/languages answer different questions.
 
-<a id="one-distinction-i-think-may-become-fundamental"></a>
-
 ### A potentially fundamental distinction
 
 
@@ -362,8 +358,6 @@ what may change the world
 
 
 This is cleaner than asking one programming language to express all three equally well.
-
-<a id="i-would-keep-the-kernel-separate-from-execution"></a>
 
 ### Proposal to keep the kernel separate from execution
 
@@ -423,8 +417,6 @@ A pure core is particularly valuable because it becomes easy to test exhaustivel
 
 
 The complete [semantic-model and scenario-DSL example]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}) is now in one case-study note. The following implementation roadmap resumes the original kernel design dialogue.
-
-<a id="one-further-design-choice-id-make"></a>
 
 ### A further proposed design choice
 

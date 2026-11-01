@@ -42,4 +42,4 @@ The original sketch includes only these states; failure and recovery behavior re
 - Deployment volume: thousands of artifacts daily.
 - Targets: hundreds of machines.
 
-These are example interviewer answers, not measurements. Continue with the [case template]({{< ref "system-design/projects/case-template" >}}) to explain the design and its trade-offs.
+These are example interviewer answers, not measurements. Continue with the [Case Template]({{< ref "system-design/projects/case-template" >}}) to explain the design and its trade-offs.

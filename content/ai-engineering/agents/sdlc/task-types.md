@@ -16,7 +16,7 @@ The note has five parts after the list of types:
 - **Views of Task Types** sorts the same types from the product, behavior, architecture, and output points of view.
 - **Delegation Profiles** gives each type a default level of freedom for a participant without a track record on it, whether an agent or a new team member, and the evidence any participant has to give, and says how one task's risk changes the default.
 - **Recording and Measuring by Task Type** describes how to label work with its type and what to measure per type.
-- **Problems Task Types Help With** connects these parts to the [problems]({{< ref "ai-engineering/agents/problems/problems" >}}) that team leads, architects, and engineering managers raise about work with agents.
+- **Problems Task Types Help With** connects these parts to the [Problems]({{< ref "ai-engineering/agents/problems/problems" >}}) that team leads, architects, and engineering managers raise about work with agents.
 
 The activities column uses the short names of the six activities: framing, investigation, design, implementation, verification (verification and review), and release (release, operation and learning).
 

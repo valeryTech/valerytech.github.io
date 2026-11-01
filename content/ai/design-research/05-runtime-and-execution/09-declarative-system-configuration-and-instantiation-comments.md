@@ -35,7 +35,7 @@ A later design needs to identify which dependencies are captured fixtures, immut
 ## The runtime interface needs further rules
 
 
-The proposed start, readiness, request, output, trace, and termination operations do not define retries, cancellation, partial readiness, cleanup after failure, persistence, or resource limits. The application-state comments identify related execution questions.
+The proposed start, readiness, request, output, trace, and termination operations do not define retries, cancellation, partial readiness, cleanup after failure, persistence, or resource limits.
 
 Isolation also needs an enforceable effect boundary. Running the production configuration in an expert workspace must not silently grant production credentials or permission for production writes. The [trusted-effect discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) remains separate from the instance lifecycle.
 
@@ -44,4 +44,4 @@ Isolation also needs an enforceable effect boundary. Running the production conf
 
 The next [publishing note]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) discusses selecting and retaining resolved revisions. The [evaluation-plan note]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}) discusses how a consumer could name the system and test conditions.
 
-The audit records unchanged source ranges. The split adopts no storage format, runtime implementation, or guarantee of reproducible outcomes.
+The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) records unchanged source ranges. The split adopts no storage format, runtime implementation, or guarantee of reproducible outcomes.

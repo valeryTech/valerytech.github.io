@@ -242,8 +242,8 @@ The problems list holds this problem as [its own group in layer 3]({{< ref "ai-e
 - [Premature Abstraction in Software Design]({{< ref "engineering/premature-abstraction" >}}): concrete workflows first, then generalization supported by evidence.
 - [A Practical Way to Study Coding-Agent Improvements]({{< ref "ai-engineering/agents/evaluation/coding-agent-experimentation-primer" >}}): choosing a study method for a coding-agent question, with grounded theory among the methods.
 - Grounded Theory in AI Failure Analysis: failure analysis as an adaptation of grounded theory, with sampling and saturation problems.
-- [Failure Understanding in AI Evaluation]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}): comparing incidents to build failure categories and turn them into criteria.
-- Reflective Practice: learning from experience and challenging assumptions.
+- [Failure Understanding in AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v2/failure-understanding" >}}): comparing incidents to build failure categories and turn them into criteria.
+- [[reflective_practice]]: learning from experience and challenging assumptions.
 - Grounded theory sources: Glaser and Strauss, Charmaz, Birks and Mills, and a grounded theory study of software testing.
 
 ## References

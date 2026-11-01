@@ -14,7 +14,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The proposal is to make **resource consumption part of the semantics of the language**, because some investigation operators may differ by orders of magnitude in cost and latency.
 
-It isn't unique to this domain--databases and scientific workflows also have expensive operators--but LLM/retrieval computations make it much more visible because cost can be data-dependent and probabilistic.
+It isn't unique to this domain -- databases and scientific workflows also have expensive operators -- but LLM/retrieval computations make it much more visible because cost can be data-dependent and probabilistic.
 
 For example, these two operations may have the same logical type:
 

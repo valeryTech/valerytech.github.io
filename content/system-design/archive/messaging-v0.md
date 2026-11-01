@@ -14,47 +14,47 @@ Preserved notes from before the March 19, 2026 refactor. [Return to the working 
 # Sources
 
 
-<https://microservices.io/patterns/data/saga.html>
+[Microservices Pattern: Saga](https://microservices.io/patterns/data/saga.html)
 
 <https://www.youtube.com/watch?v=SbL3a9YOW7s>
 
-<https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html>
+[About Eventuate Tram](https://eventuate.io/docs/manual/eventuate-tram/latest/about-eventuate-tram.html)
 
 <https://www.youtube.com/watch?v=gA2-eqDVSng>
 
-<https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/>
+[Let's Architect! Designing event-driven architectures](https://aws.amazon.com/blogs/architecture/lets-architect-designing-event-driven-architectures/)
 
-<https://aws.amazon.com/messaging/>
+[AWS Messaging](https://aws.amazon.com/messaging/)
 
-<https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/>
+[Choosing between messaging services for serverless applications](https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/)
 
-<https://aws.amazon.com/event-driven-architecture/>
+[Event-Driven Architecture (AWS)](https://aws.amazon.com/event-driven-architecture/)
 
 <https://www.youtube.com/watch?v=28B4L1fnnGM>
 
-<https://www.youtube.com/@CodeOpinion/>
+[CodeOpinion YouTube channel](https://www.youtube.com/@CodeOpinion/)
 
 <https://www.youtube.com/watch?v=A_mstzRGfIE>
 
-<https://www.developertoarchitect.com/lessons/lesson165.html>
+[Lesson 165 - Event-Driven Architecture (July 17, 2023)](https://www.developertoarchitect.com/lessons/lesson165.html)
 
-<https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47>
+[6 Event-Driven Architecture Patterns -- Part 1](https://medium.com/wix-engineering/6-event-driven-architecture-patterns-part-1-93758b253f47)
 
 event tips:
 
 <https://www.youtube.com/watch?v=9r9WDzzTcr0>
 
-<https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures>
+[Good and hard parts of event architectures (Serverless Land)](https://serverlessland.com/event-driven-architecture/visuals/good-and-hard-parts-of-event-architectures)
 
-<https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures>
+[The (Continued) Rise of Event-Driven Architectures](https://www.aklivity.io/post/the-continued-rise-of-event-driven-architectures)
 
-<https://www.infoq.com/presentations/event-driven-arch-challenges/>
+[Event-Based Architectures: the Hard Parts](https://www.infoq.com/presentations/event-driven-arch-challenges/)
 
-<https://www.equalexperts.com/blog/tech-focus/event-driven-architecture-the-good-the-bad-and-the-ugly/>
+[Event driven architecture: the good, the bad, and the ugly](https://www.equalexperts.com/blog/tech-focus/event-driven-architecture-the-good-the-bad-and-the-ugly/)
 
-<https://serverlessland.com/event-driven-architecture/visuals/common-issued-with-eda>
+[Common issues with EDA (Serverless Land)](https://serverlessland.com/event-driven-architecture/visuals/common-issued-with-eda)
 
-common <https://www.developertoarchitect.com/resources.html>
+common [Resources (Developer to Architect)](https://www.developertoarchitect.com/resources.html)
 
 topics:
 
@@ -66,7 +66,7 @@ managing distributed models
 
 frameworks:
 
-<https://eventuate.io/>
+[Eventuate](https://eventuate.io/)
 
 patterns
 
@@ -109,7 +109,7 @@ Architectural Charateristics:
 
 
 - Integration (definition?) (protocol, format, data schema & evolution)
-- Data Stream - continuous flow of data. Some examples of data streams include sensor data, activity logs from web browsers, and financial transaction logs. General Characteristics of Data Streams: time sensitive, continuous, heterogeneous, imperfect.
+- Data Stream -- continuous flow of data. Some examples of data streams include sensor data, activity logs from web browsers, and financial transaction logs. General Characteristics of Data Streams: time sensitive, continuous, heterogeneous, imperfect.
 
 # Messaging models
 

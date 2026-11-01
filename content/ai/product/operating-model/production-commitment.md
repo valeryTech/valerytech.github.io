@@ -58,7 +58,7 @@ Write each part separately.
 
 Do not use one of these parts as a substitute for another. A useful behavior is not necessarily safe to operate. An observable and recoverable system is not necessarily useful. Wide coverage does not compensate for weak behavior.
 
-The [`solution-utility-ladder.md`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) describes how to make claims about useful behavior more precise. The [`risk model`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) explains the three areas of assumptions.
+The [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) describes how to make claims about useful behavior more precise. The [`risk model`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) explains the three areas of assumptions.
 
 ## State the limits
 

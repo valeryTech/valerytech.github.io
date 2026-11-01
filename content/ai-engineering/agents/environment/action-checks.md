@@ -58,10 +58,10 @@ Rules decide first in every agent. In the three agents that have a model-based c
 
 
 - **Integration tools in Auto mode.** Only with the `integrationToolAutoApprovals` experiment and the session owner's opt-in (`packages/cloud-agents/src/server/integration-tool-auto-evaluation.ts:790-817`).
-  - **Code runs first.** A credential-shaped argument always goes to a person, and an identifier never seen in the session marks the target as unverified (`:545-574`).
-  - **The model** (TypeSafe's Jev, no general model allowed) answers scored questions: risk, whether the call only reads, whether it matches the request, whether the user authorized it, whether untrusted content steered it, whether it sends private data out (`:62-149`).
-  - **Thresholds** turn the scores into "run" or "ask". The call runs only when the injection, exfiltration and guidance scores are all at most 0.2 and the call is routine, harmless or authorized (`:152-182`, `:381-437`).
-  - **Without a judgment model** the answer is "ask". In a task with the owner away, "ask" becomes a denial with a reason (`packages/sdk/src/server/lib/task-tool-approvals.ts:567-615`).
+	- **Code runs first.** A credential-shaped argument always goes to a person, and an identifier never seen in the session marks the target as unverified (`:545-574`).
+	- **The model** (TypeSafe's Jev, no general model allowed) answers scored questions: risk, whether the call only reads, whether it matches the request, whether the user authorized it, whether untrusted content steered it, whether it sends private data out (`:62-149`).
+	- **Thresholds** turn the scores into "run" or "ask". The call runs only when the injection, exfiltration and guidance scores are all at most 0.2 and the call is routine, harmless or authorized (`:152-182`, `:381-437`).
+	- **Without a judgment model** the answer is "ask". In a task with the owner away, "ask" becomes a denial with a reason (`packages/sdk/src/server/lib/task-tool-approvals.ts:567-615`).
 - **Commits.** A git hook runs `judgement check --staged` in each task checkout and judges the staged diff against the repository's `.judgement/rules.json` (`apps/worker/src/run-task/repository-judgement.ts:19-23`, `packages/types/src/judge-policy.ts:3-4`). Without a rules file it passes with no model call.
 
 ### A model's own label
@@ -98,18 +98,18 @@ The Claude Code docs say a Bash rule "isn't a security boundary": `/usr/bin/curl
 
 
 - **Inside or outside the workspace.**
-  - Codex checks every patch target, including move destinations, against the writable roots (`core/src/safety.rs:67-180`). A patch inside them is approved and still written under the sandbox.
-  - OpenCode asks for `external_directory`, but resolves paths by text only, so a symlink inside the project that points outside counts as inside (`file-access.ts:68-137`).
-  - Zoo Code marks a path as outside the workspace; the mark only changes whether it is approved automatically.
-  - Cline confines only relative paths and accepts any absolute path, and its tool schema asks the model for absolute paths (`sdk/packages/core/src/extensions/tools/editor.ts:28-65`).
+	- Codex checks every patch target, including move destinations, against the writable roots (`core/src/safety.rs:67-180`). A patch inside them is approved and still written under the sandbox.
+	- OpenCode asks for `external_directory`, but resolves paths by text only, so a symlink inside the project that points outside counts as inside (`file-access.ts:68-137`).
+	- Zoo Code marks a path as outside the workspace; the mark only changes whether it is approved automatically.
+	- Cline confines only relative paths and accepts any absolute path, and its tool schema asks the model for absolute paths (`sdk/packages/core/src/extensions/tools/editor.ts:28-65`).
 - **Protected files.**
-  - Codex keeps `.git`, `.agents`, `.codex` and `.aws` read-only inside writable roots, so a patch touching them asks (`protocol/src/permissions.rs:50-61`).
-  - Zoo Code always asks before writing `.rooignore`, `.roomodes`, `.roorules*`, `.clinerules*`, `.roo/**`, `.vscode/**`, `*.code-workspace`, `.rooprotected`, `AGENTS.md` and `AGENT.md` (`src/core/protect/RooProtectedController.ts:15-26`).
-  - OpenCode, Cline and Claude Code have no fixed list. Claude Code relies on `Edit` deny rules.
+	- Codex keeps `.git`, `.agents`, `.codex` and `.aws` read-only inside writable roots, so a patch touching them asks (`protocol/src/permissions.rs:50-61`).
+	- Zoo Code always asks before writing `.rooignore`, `.roomodes`, `.roorules*`, `.clinerules*`, `.roo/**`, `.vscode/**`, `*.code-workspace`, `.rooprotected`, `AGENTS.md` and `AGENT.md` (`src/core/protect/RooProtectedController.ts:15-26`).
+	- OpenCode, Cline and Claude Code have no fixed list. Claude Code relies on `Edit` deny rules.
 - **Ignore files.**
-  - Zoo Code's `.rooignore` blocks reads and edits. It blocks a command only when the command starts with a read command such as `cat`, `grep` or `sed` and names an ignored file; chains aren't split for this check (`src/core/ignore/RooIgnoreController.ts:123-172`).
-  - Cline's `.clineignore` isn't enforced in the source; the controller is never created. The docs offer an example PreToolUse hook.
-  - Claude Code has no ignore file. Its `Read` and `Edit` rules also apply to file commands such as `cat`, `head`, `sed` and to redirect targets, but not to scripts that open files themselves.
+	- Zoo Code's `.rooignore` blocks reads and edits. It blocks a command only when the command starts with a read command such as `cat`, `grep` or `sed` and names an ignored file; chains aren't split for this check (`src/core/ignore/RooIgnoreController.ts:123-172`).
+	- Cline's `.clineignore` isn't enforced in the source; the controller is never created. The docs offer an example PreToolUse hook.
+	- Claude Code has no ignore file. Its `Read` and `Edit` rules also apply to file commands such as `cat`, `head`, `sed` and to redirect targets, but not to scripts that open files themselves.
 - **`.env` files.** OpenCode asks before reading `*.env` and `*.env.*` with the read tool, but `grep` is checked on its pattern, so the rule doesn't cover it. Roomote's plugin refuses `read` of `.env*`, but not `cat .env` through bash.
 - **Per-role limits.** Zoo Code's `fileRegex` limits which files a mode may edit, tested against the raw path. OpenCode's plan agent may edit only its plan folder. Cline's Plan mode removes the edit tools.
 - **Redirects.** OpenCode treats a redirect target such as `> file` only as part of the command text; it never checks it as a file write.
@@ -118,17 +118,17 @@ The Claude Code docs say a Bash rule "isn't a security boundary": `/usr/bin/curl
 
 
 - **Codex** sends traffic through its network proxy (`network-proxy/src/runtime.rs:898-938`):
-  - An explicit deny wins.
-  - Private and local addresses are blocked unless allowlisted.
-  - Limited mode allows only GET, HEAD and OPTIONS.
-  - Unknown hosts go to hooks, then the reviewer, then the user; an approval can't override a deny or the local block.
-  - `require_escalated` bypasses the proxy.
+	- An explicit deny wins.
+	- Private and local addresses are blocked unless allowlisted.
+	- Limited mode allows only GET, HEAD and OPTIONS.
+	- Unknown hosts go to hooks, then the reviewer, then the user; an approval can't override a deny or the local block.
+	- `require_escalated` bypasses the proxy.
 - **Claude Code** sends sandboxed commands through a proxy with allowed and denied domains. A command that reaches an unknown host waits for a decision.
 - **OpenCode** asks for `webfetch` on the URL and checks each redirect against deny rules only. It has no block on private addresses (`tool/plugin/webfetch.ts:71-167`).
 - **MCP tool approval.**
-  - Codex has per-tool modes (`Auto`, `Prompt`, `Writes`, `Approve`). `Auto` relies on the server's read-only, destructive and open-world hints (`core/src/mcp_tool_call.rs:2801-2829`).
-  - Zoo Code has per-tool `alwaysAllow` lists and per-mode `allowedMcpServers`.
-  - Roomote fingerprints each approved integration call. The API proxy consumes the approval, so one approval runs exactly one call (`packages/db/src/lib/integration-tool-approvals.ts:66-74`, `:218-233`). Roomote shows `readOnlyHint` to people but never uses it to decide. Tasks can't make GitHub writes through MCP.
+	- Codex has per-tool modes (`Auto`, `Prompt`, `Writes`, `Approve`). `Auto` relies on the server's read-only, destructive and open-world hints (`core/src/mcp_tool_call.rs:2801-2829`).
+	- Zoo Code has per-tool `alwaysAllow` lists and per-mode `allowedMcpServers`.
+	- Roomote fingerprints each approved integration call. The API proxy consumes the approval, so one approval runs exactly one call (`packages/db/src/lib/integration-tool-approvals.ts:66-74`, `:218-233`). Roomote shows `readOnlyHint` to people but never uses it to decide. Tasks can't make GitHub writes through MCP.
 
 ## Hooks
 
@@ -140,9 +140,9 @@ Every agent except Roomote lets a team add its own checks as hooks before a tool
 - **OpenCode.** `tool.execute.before` can reject a call or change its input. `permission.evaluate` can change any decision, including to allow; managed policy uses it to deny.
 - **Zoo Code.** No user hooks for tool calls.
 - **Cline.**
-  - `PreToolUse` can cancel the run, add context or replace the input.
-  - A returned `review` value is parsed but never used.
-  - Hook timeouts and errors let the call through (`sdk/packages/core/src/hooks/hook-file-hooks.ts:415-454`, `:577-606`).
+	- `PreToolUse` can cancel the run, add context or replace the input.
+	- A returned `review` value is parsed but never used.
+	- Hook timeouts and errors let the call through (`sdk/packages/core/src/hooks/hook-file-hooks.ts:415-454`, `:577-606`).
 
 ## Limits on a run
 
@@ -170,12 +170,17 @@ Every agent except Roomote lets a team add its own checks as hooks before a tool
 - **Model-based checks sit behind rules.** No agent lets a model override a deny rule. The model replaces the person for decisions the rules leave open.
 - **The reviewer is a separate model with a narrow view.** Codex marks tool output as untrusted, and Claude Code leaves tool results out. Both try to keep the content an agent reads from steering the check on what it does. Roomote adds a scored question about whether untrusted content steered the call.
 - **Command parsing is the main deterministic technique, and the weakest point.** The agents differ most in how they split a command and what they do with a command they can't parse:
-  - Codex treats it as one unit.
-  - Claude Code asks.
-  - OpenCode refuses.
-  - Zoo Code reports an error.
+	- Codex treats it as one unit.
+	- Claude Code asks.
+	- OpenCode refuses.
+	- Zoo Code reports an error.
 - **Built-in risky-command lists are short.** Codex checks only forced `rm`, OpenCode and Roomote have none, Zoo Code's guard is off by default, and Cline's list applies only in Plan mode. The protection against a harmful command comes from the sandbox or from a person.
 - **Docs and source can disagree.** Cline's docs describe the `requires_approval` flag and `.clineignore` enforcement, and the source has neither. Checks are worth reading in the source before relying on them.
+
+## Related notes
+
+
+- [Trusted effect boundaries]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) sets out the general design these checks belong to: a boundary outside the model that authorizes each concrete operation before it has an effect.
 
 ## Sources
 

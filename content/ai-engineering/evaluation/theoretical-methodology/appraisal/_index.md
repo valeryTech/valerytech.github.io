@@ -16,8 +16,8 @@ A useful combination is:
 
 Together, these traditions support a coherent evidence discipline for AI engineering. In the vault they are in:
 
-- evidence-based software engineering: [EBSE]({{< ref "engineering/evidence/ebse" >}});
-- empirical software engineering: [Running an experiment]({{< ref "engineering/evidence/running-experiments" >}}) and [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}});
+- evidence-based software engineering: [Ebse]({{< ref "engineering/evidence/ebse" >}});
+- empirical software engineering: [Running an experiment]({{< ref "engineering/evidence/running-experiments" >}}) and [Choosing A Method]({{< ref "engineering/evidence/choosing-a-method" >}});
 - causal inference: [Causal claims need a comparison]({{< ref "engineering/evidence/causal-claims" >}});
 - open science: [preregistration]({{< ref "engineering/evidence/running-experiments" >}}#preregistration) and [reproducibility]({{< ref "engineering/evidence/validity" >}}#reproducibility);
 - qualitative methods: [case studies and qualitative methods]({{< ref "engineering/evidence/choosing-a-method" >}}#case-studies-and-qualitative-methods).
@@ -41,4 +41,4 @@ Interestingly, there is already movement specifically in this direction for AI. 
 
 These traditions provide a substantial methodological foundation.
 
-A coherent AI-engineering methodology can **combine the scientific machinery** from these disciplines--hypothesis formulation, construct definition, experimental units, randomization, controls, confounders, power, effect sizes, causal diagrams, preregistration, replication, validity analysis, triangulation, etc.--and turn it into a coherent methodology specifically for evaluating GenAI and agentic software systems. This supplies concrete mechanisms for an AI Engineering Evidence Protocol.
+A coherent AI-engineering methodology can **combine the scientific machinery** from these disciplines -- hypothesis formulation, construct definition, experimental units, randomization, controls, confounders, power, effect sizes, causal diagrams, preregistration, replication, validity analysis, triangulation, etc. -- and turn it into a coherent methodology specifically for evaluating GenAI and agentic software systems. This supplies concrete mechanisms for an AI Engineering Evidence Protocol.

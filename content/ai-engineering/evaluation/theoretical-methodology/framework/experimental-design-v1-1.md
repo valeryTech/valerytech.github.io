@@ -609,42 +609,27 @@ next_actions:
 ### 14.1 Pre-run checklist
 
 
--[] Episode boundaries defined (if relevant).
-
--[] Estimand declared; regime conditioning declared.
-
--[] Randomization unit and analysis unit declared.
-
--[] Ruler fingerprint frozen; anchor set health thresholds defined.
-
--[] Variant cache keying isolated.
-
--[] Retrieval index snapshot frozen or versioned.
-
--[] Missingness policy set.
-
--[] Primary endpoints, guardrails, budgets, Tier-1 slices predeclared.
-
--[] Margins δ justified.
-
--[] Stopping rule predeclared (fixed horizon or sequential plan).
-
--[] Logging and assignment recorded.
+- [ ] Episode boundaries defined (if relevant).
+- [ ] Estimand declared; regime conditioning declared.
+- [ ] Randomization unit and analysis unit declared.
+- [ ] Ruler fingerprint frozen; anchor set health thresholds defined.
+- [ ] Variant cache keying isolated.
+- [ ] Retrieval index snapshot frozen or versioned.
+- [ ] Missingness policy set.
+- [ ] Primary endpoints, guardrails, budgets, Tier-1 slices predeclared.
+- [ ] Margins δ justified.
+- [ ] Stopping rule predeclared (fixed horizon or sequential plan).
+- [ ] Logging and assignment recorded.
 
 ### 14.2 Post-run checklist
 
 
--[] Traffic mix checks across variants.
-
--[] Tool health incidents logged and regime-conditioned metrics reported.
-
--[] Ruler health reported; thresholds satisfied or verdict INCONCLUSIVE.
-
--[] Contamination checks executed and documented.
-
--[] Report includes estimates, CIs, n, method, and decisions.
-
--[] Verdict computed mechanically from gate policy.
+- [ ] Traffic mix checks across variants.
+- [ ] Tool health incidents logged and regime-conditioned metrics reported.
+- [ ] Ruler health reported; thresholds satisfied or verdict INCONCLUSIVE.
+- [ ] Contamination checks executed and documented.
+- [ ] Report includes estimates, CIs, n, method, and decisions.
+- [ ] Verdict computed mechanically from gate policy.
 
 ## 15. Worked examples (end-to-end)
 
@@ -677,6 +662,7 @@ endpoints:
 inference:
   method_defaults: {continuous_mean: paired_bootstrap}
 ```
+
 
 **Analysis:**
 
@@ -736,6 +722,7 @@ inference:
     check: true
     method: "HAC_if_needed"
 ```
+
 
 **Analysis:**
 

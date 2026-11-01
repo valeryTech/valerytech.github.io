@@ -760,7 +760,7 @@ The Data Foundation workstream should therefore inform:
 
 A proposed workstream principle is:
 
-> **Every material production failure should become observable, classifiable, reproducible, and--where appropriate--represented in the evaluation system.**
+> **Every material production failure should become observable, classifiable, reproducible, and -- where appropriate -- represented in the evaluation system.**
 
 And a second principle:
 

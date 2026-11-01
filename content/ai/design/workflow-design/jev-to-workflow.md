@@ -38,11 +38,9 @@ Jev classifies tickets against those categories.
 
 Based on its confidence, your agent can:
 
-1\. High confidence -> Execute an action.
-
-2\. Medium confidence -> Escalate to an LLM.
-
-3\. Low confidence -> Request human review.
+1. High confidence -> Execute an action.
+2. Medium confidence -> Escalate to an LLM.
+3. Low confidence -> Request human review.
 
 So expensive reasoning is reserved for cases that need it.
 

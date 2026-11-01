@@ -146,7 +146,7 @@ For most systems 20% of the data accounts for 80% of the reads. So using LRU wil
 
 With a write-through cache, the cache is updated at the same time as the state in the origin. "At the same time" is where write-through caches get tricky, of course. Implementing a write-through mechanism on a server-side cache is somewhat straightforward, as you could update a database and an in-memory cache within the same transaction without too much difficulty. If the cache is elsewhere, it's more difficult to reason about what "at the same time" means in terms of these entries being updated.
 
-Due to this difficulty, you'd typically see write-through caching being used in a microservice architecture on the server side. The benefits are pretty clear -- the win‐ dow in which a client might see stale data could be practically eliminated. This is bal‐ anced against the fact that server-side caches may well be less generally useful, limiting the circumstances in which a write-through cache would be effective in microservices.
+Due to this difficulty, you'd typically see write-through caching being used in a microservice architecture on the server side. The benefits are pretty clear -- the window in which a client might see stale data could be practically eliminated. This is balanced against the fact that server-side caches may well be less generally useful, limiting the circumstances in which a write-through cache would be effective in microservices.
 
 ## Write-behind (write-back)
 
@@ -196,9 +196,9 @@ If you're experiencing slow writes, a quick fix is async writes to the database.
 
 In both of these patterns, there is an obvious disadvantage. Here we are writing all the data to the cache, which might not even be read. Hence, we are overloading the cache (or cache memory) with expensive calls that might not even be required. For example, there are some accounts on Twitter that are not followed by many people. If we put every tweet in the cache from these unpopular accounts, it will take up expensive memory. Also, if the database goes down before the data is written to the database, this causes inconsistency.
 
-<https://redisson.org/glossary/write-through-and-write-behind-caching.html>
+[Write-Through vs Write-Back Cache: Differences](https://redisson.org/glossary/write-through-and-write-behind-caching.html)
 
-<https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/>
+[r/AskProgramming: why use a writethrough cache in distributed](https://www.reddit.com/r/AskProgramming/comments/16bkua0/why_use_a_writethrough_cache_in_distributed/)
 
 # in-memory type
 
@@ -210,7 +210,7 @@ As example of this solution we can pick Redis.
 
 While the LFU method may seem like an intuitive approach to memory management it is not without faults. Consider an item in memory which is referenced repeatedly for a short period of time and is not accessed again for an extended period of time. Due to how rapidly it was just accessed its counter has increased drastically even though it will not be used again for a decent amount of time. This leaves other blocks which may actually be used more frequently susceptible to purging simply because they were accessed through a different method.[3](https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-3)
 
-Moreover, new items that just entered the cache are subject to being removed very soon again, because they start with a low counter, even though they might be used very frequently after that. Due to major issues like these, an explicit LFU system is fairly uncommon; instead, there are hybrids that utilize LFU concepts. <https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-4>
+Moreover, new items that just entered the cache are subject to being removed very soon again, because they start with a low counter, even though they might be used very frequently after that. Due to major issues like these, an explicit LFU system is fairly uncommon; instead, there are hybrids that utilize LFU concepts. [Least frequently used](https://en.wikipedia.org/wiki/Least_frequently_used#cite_note-4)
 
 Processes when working with cache
 
@@ -227,11 +227,11 @@ Cache warming
 
 Links
 
-<https://levelup.gitconnected.com/3-caching-problems-every-developer-should-know-1449f07e9166>
+[3 Caching Problems Every Developer Should Know](https://levelup.gitconnected.com/3-caching-problems-every-developer-should-know-1449f07e9166)
 
-<https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/>
+[Caching: What could go wrong?](https://devblogs.microsoft.com/buckh/caching-what-could-go-wrong/)
 
-<https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642>
+[Cache warming: Agility for a stateful service](https://netflixtechblog.com/cache-warming-agility-for-a-stateful-service-2d3b1da82642)
 
 ## Library sources
 

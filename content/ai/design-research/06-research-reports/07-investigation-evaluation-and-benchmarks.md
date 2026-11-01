@@ -115,8 +115,6 @@ Those numbers are illustrative, not observed results. The scientific claim becom
 
 The following retained passage proposes a separate comparison involving unreliable reports and private evidence. It extends the investigation questions without selecting or running an experiment. The dedicated [comments]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks-comments" >}}) distinguish the proposal from measured results and from complete disclosure of private information.
 
-<a id="6-the-epistemic-experiments-are-highly-relevant-to-your-first-paper"></a>
-
 ### 6. Epistemic experiments and the proposed first paper
 
 

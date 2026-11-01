@@ -128,7 +128,7 @@ Capability and risk are two different views of a candidate solution. Keep them s
 
 The capability profile asks: how far does the solution get toward completing the user's job?
 
-It is built on a capability funnel: progressive levels from basic operation toward solving the user's job. The funnel is an evaluation model attached to the evolving solution, not another lifecycle phase; see the [capability funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) note. For a query assistant:
+It is built on a capability funnel: progressive levels from basic operation toward solving the user's job. The funnel is an evaluation model attached to the evolving solution, not another lifecycle phase; see the [Capability Funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) note. For a query assistant:
 
 ```text
 L5  User completes the analytical job
@@ -486,7 +486,7 @@ At the commit decision, what passes to delivery by default is:
 
 The prototype can serve as "prototype as spec", in Cagan's term, while delivery still builds the production-quality implementation ([Build To Learn FAQ](https://www.svpg.com/build-to-learn-faq/)).
 
-The commit point is a conceptual interface inside the same cross-functional team, not a handoff. Discovery and delivery are continuous activities, and learning flows both ways; see [discovery and delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}).
+The commit point is a conceptual interface inside the same cross-functional team, not a handoff. Discovery and delivery are continuous activities, and learning flows both ways; see [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}).
 
 The same boundary applies to agents:
 
@@ -527,14 +527,14 @@ Then let repeated experiments show which shared abstractions are actually missin
 - [AI product design and delivery framework]({{< ref "ai-engineering/delivery/design-and-delivery" >}}): the project lifecycle from framing to operation, with evaluation and evidence as a cross-cutting workstream.
 - [Problem and response cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}): framing the problem and desired outcome before choosing a response.
 - [Reusable AI infrastructure]({{< ref "ai-engineering/delivery/reuse" >}}): shared platform primitives for production AI systems.
-- [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}): controlled execution, trace review, version comparison, and human judgment.
-- [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}): turning recurring failures into failure modes and criteria.
+- [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace): controlled execution, trace review, version comparison, and human judgment.
+- [Failure understanding]({{< ref "ai-engineering/evaluation/framework-v2/failure-understanding" >}}): turning recurring failures into failure modes and criteria.
 - [AI products need evals, not just tests]({{< ref "ai-engineering/approach/evals-not-just-tests" >}}): evals as behavioral evidence, with a lightweight experiment record and the capability funnel.
 - [Operating-model draft]({{< ref "ai/product/product-model/discovery-delivery/empowered-team-draft" >}}): the solution as central object, the experiment as primary unit of work, and the discovery-delivery interface.
-- [Capability funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}): the query-assistant levels; superseded by the [solution utility ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
-- [Discovery and delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): two kinds of work distinguished by purpose, with information moving both ways.
-- [Experiments vs features]({{< ref "ai/product/product-model/experiments-vs-features" >}}): practitioner arguments for timeboxed experiments, capability funnels, and sharing failures.
-- Companion platform notes: [AI platform capabilities]({{< ref "ai-engineering/delivery/ai-platform-capabilities" >}}), [AI platform team loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}}), and [delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}) for the delivery side.
+- [Capability Funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}): the query-assistant levels; superseded by the [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
+- [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): two kinds of work distinguished by purpose, with information moving both ways.
+- [Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}}): practitioner arguments for timeboxed experiments, capability funnels, and sharing failures.
+- Companion platform notes: [Ai Platform Capabilities]({{< ref "ai-engineering/delivery/ai-platform-capabilities" >}}), [Ai Platform Team Loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}}), and [Delivery Capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}) for the delivery side.
 
 ## Sources
 

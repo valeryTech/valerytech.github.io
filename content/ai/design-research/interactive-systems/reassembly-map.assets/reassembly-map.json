@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "snapshotRole": "Historical stage 1 locations and checksums. A later extraction changed the first destination and navigation stub; currentMapping records the current complete dialogue mapping.",
+  "currentMapping": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+  "description": "First interactive-systems reassembly pass. Original dialogue moved unchanged with move_text.py.",
+  "source": {
+    "path": "projects/input/hebbia-sem/visual-programming-env.md",
+    "originalLines": 1469,
+    "originalBytes": 32504,
+    "originalSha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+    "currentRole": "navigation stub",
+    "stubLines": 11,
+    "stubBytes": 1089,
+    "stubSha256": "ea5680612cbd8b589625c37cfeb1de20fb5dd9440866f47ade676474ad4d9bfa"
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        179
+      ],
+      "destination": "projects/input/hebbia-sem/matrix-interface-observations.md",
+      "description": "Hebbia Matrix observations and initial critique",
+      "lines": 179,
+      "bytes": 4644,
+      "sha256": "e11888fe9791134b6eadca95b2261ab24d2ec62fd7939de283e17f11ff8d801c",
+      "prefixBytes": 1116,
+      "prefixLines": 12,
+      "prefixSha256": "a40d353e9fa29777e80d469b05c3ae8791928885d74ae958a863b04c10d60ea7",
+      "destinationLines": [
+        13,
+        191
+      ],
+      "destinationBytes": 5760,
+      "destinationSha256": "c8c190ea6eb1a265e92cb262323d48f1ec69582c29a3fc6fb3074f29fe220dad"
+    },
+    {
+      "sourceLines": [
+        180,
+        408
+      ],
+      "destination": "ai/interactive-systems/01-shared-investigation-state-and-views.md",
+      "description": "Shared state, coordinated views, and participants",
+      "lines": 229,
+      "bytes": 4063,
+      "sha256": "b55224138baf7ec87f8e68c55802fbb26daa207a6033ad9f1b4a56f35c89e8fe",
+      "prefixBytes": 865,
+      "prefixLines": 12,
+      "prefixSha256": "eac5e9d5b315735fbd6380eacb3a30e30ec14f0ba1303c1d092f0fc024ec1db0",
+      "destinationLines": [
+        13,
+        241
+      ],
+      "destinationBytes": 4928,
+      "destinationSha256": "75f6741d09ad2adb12d50b5d953c1687d3600f13c418f4fd31e555ba593db549"
+    },
+    {
+      "sourceLines": [
+        409,
+        484
+      ],
+      "destination": "ai/interactive-systems/02-stable-interface-components.md",
+      "description": "Stable interaction grammar and composable interface components",
+      "lines": 76,
+      "bytes": 2393,
+      "sha256": "0b3dc43627b89038e1daefde37ee9c10084783cc95c547d9a2d248c08fbbf88d",
+      "prefixBytes": 788,
+      "prefixLines": 12,
+      "prefixSha256": "01528f648b2fab7f9ebac1bf716f88f59e898241711063ccc852491fd12e4da9",
+      "destinationLines": [
+        13,
+        88
+      ],
+      "destinationBytes": 3181,
+      "destinationSha256": "54898077c65cdb2b209eb9f186faf856048ca04fe3c36d013348b9c5fccaad69"
+    },
+    {
+      "sourceLines": [
+        485,
+        1050
+      ],
+      "destination": "ai/interactive-systems/03-composable-investigation-workspaces.md",
+      "description": "User correction, typed operations, progressive inspection, and composition",
+      "lines": 566,
+      "bytes": 11386,
+      "sha256": "3c78370aa0c8c9f384d49eb26760d8b9722f776cffc82afd8edba69c69d741d4",
+      "prefixBytes": 1248,
+      "prefixLines": 14,
+      "prefixSha256": "9c4b7ab1ce280c52b1eaa45866a47ebe8d579ef3db604d10bef786000dc65fe0",
+      "destinationLines": [
+        15,
+        580
+      ],
+      "destinationBytes": 12634,
+      "destinationSha256": "31e909d183e80f7b98d66a760903fb066bd0616825e1055fae766eb2a617ff5d"
+    },
+    {
+      "sourceLines": [
+        1051,
+        1469
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "description": "Complete multi-representation retrieval dialogue and inspection projections",
+      "lines": 419,
+      "bytes": 10018,
+      "sha256": "5d2857e78449cb21a7b9da16329999afd24efad9a5c91aacffe75ff4772a723b",
+      "prefixBytes": 1312,
+      "prefixLines": 14,
+      "prefixSha256": "e0ce33dde23b2329a223ecfd62e3bcc2bf38acf5f205b3d389654990b0b23c0a",
+      "destinationLines": [
+        15,
+        433
+      ],
+      "destinationBytes": 11330,
+      "destinationSha256": "df573977188870f75140dfb6985a89dd7ce235c1b949d9ea9fc0704d7620d53e"
+    }
+  ],
+  "moveOrder": [
+    {
+      "dryRunVerified": true,
+      "applyFlag": "--apply",
+      "postMoveBytesVerified": true
+    },
+    {
+      "dryRunVerified": true,
+      "applyFlag": "--apply",
+      "postMoveBytesVerified": true
+    },
+    {
+      "dryRunVerified": true,
+      "applyFlag": "--apply",
+      "postMoveBytesVerified": true
+    },
+    {
+      "dryRunVerified": true,
+      "applyFlag": "--apply",
+      "postMoveBytesVerified": true
+    },
+    {
+      "dryRunVerified": true,
+      "applyFlag": "--apply",
+      "postMoveBytesVerified": true
+    }
+  ],
+  "verification": {
+    "reconstructionMatchesOriginal": true,
+    "reconstructedLines": 1469,
+    "reconstructedBytes": 32504,
+    "reconstructedSha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+    "sourceEmptyBeforeStub": true,
+    "baselineFilesUnchangedImmediatelyAfterMoves": 60,
+    "baselineFilesStillUnchangedAtAudit": 58,
+    "checkedLinksBeforeAuditFiles": 155,
+    "finalLocalLinksChecked": 164,
+    "finalMissingLocalLinks": 0
+  },
+  "navigation": [
+    {
+      "path": "ai/design-research/00-index.md",
+      "originalSha256": "44420ca9b95283de37d715547bab7e3722dc92b4a2b9f279257f67b4ba189ef5",
+      "currentSha256": "b1d320bb1dd0d1fac565ff80e7ff289eb665f36374ededcaf10d56f469aff8aa",
+      "addedParagraphs": [
+        "The sibling [interactive systems collection](../interactive-systems/00-index.md) separates interface proposals from language, runtime, and evidence-contract research. Its first split keeps the Hebbia case in the project input folder and the retrieval-model dialogue in the investigation section below.",
+        "The investigation section also includes [multi-representation retrieval and projections](04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md), imported from the visual-programming dialogue. The complete question and reply develop document and query representations, candidate histories, and inspection views. Its [split audit](../interactive-systems/reassembly-map.md) is maintained with the interactive systems collection."
+      ],
+      "otherIndexEditsObserved": true
+    }
+  ],
+  "observedOtherWorkspaceChanges": [
+    {
+      "path": "ai/design-research/01-foundations/08-semantic-substrate-builder-method.md",
+      "beforeBytes": 21819,
+      "beforeSha256": "64ae5006d0f11cbd6344d9a89498508e83d256a2e4e130344982aef7665764a1",
+      "currentBytes": 23394,
+      "currentSha256": "c983e5438625edd829481269aceabee2b833ca5914e0f6c3902080cb6d6253a2",
+      "matchesBefore": false
+    }
+  ],
+  "scopeNote": "Unrelated complexity-note changes appeared during the pass and were preserved. The source reconstruction and moved-passage checks are independent of those changes.",
+  "unchangedHebbiaInputs": [
+    {
+      "path": "projects/input/hebbia-sem/goodbye-rag-how-hebbia-solved-information-retrieval-for-llms.md",
+      "beforeBytes": 16347,
+      "beforeSha256": "9be02e10ecbf0c84066176adab9c05bbb2280d67185999bae4445e0914186e1d",
+      "currentBytes": 16347,
+      "currentSha256": "9be02e10ecbf0c84066176adab9c05bbb2280d67185999bae4445e0914186e1d",
+      "matchesBefore": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/semantic-eng.md",
+      "beforeBytes": 17434,
+      "beforeSha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+      "currentBytes": 17434,
+      "currentSha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+      "matchesBefore": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/hebbia-analysis-1.md",
+      "beforeBytes": 30899,
+      "beforeSha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+      "currentBytes": 30899,
+      "currentSha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+      "matchesBefore": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/task-specific-context-assembly.md",
+      "beforeBytes": 690,
+      "beforeSha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+      "currentBytes": 690,
+      "currentSha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+      "matchesBefore": true
+    }
+  ],
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

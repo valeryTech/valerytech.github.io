@@ -31,4 +31,4 @@ The unit of readiness consists of:
 
 - **Defined system or change**. The technical artifact or change being considered for production use. Depending on scope, this may include: an application or service; a feature or release; a machine-learning model; an infrastructure component.
 - **Technical production environment**. The technical environment in which the system is deployed, executed, observed, controlled, and recovered.
--  **Responsible organization**. The teams and organizational arrangements required to own, operate, support, and make decisions about the system. Depending on context, this may include: technical and operational ownership; operational knowledge; staffing and support coverage; incident responsibilities; escalation paths;
+- **Responsible organization**. The teams and organizational arrangements required to own, operate, support, and make decisions about the system. Depending on context, this may include: technical and operational ownership; operational knowledge; staffing and support coverage; incident responsibilities; escalation paths;

@@ -5,9 +5,6 @@ title: "AI Practitioner Roles: Taxonomy and Panel Notes"
 description: "Maps AI practitioner roles by what they produce, how success is judged, and risks owned, with contrasting research and industry perspectives for discussion."
 linkTitle: "Practitioner Roles"
 ---
-
-<a id="positions"></a>
-
 ### **I. Core Research & Science (The Theoretical Engine)**
 
 
@@ -144,14 +141,10 @@ _Focus: High-level direction, education, and mentorship._
 93. **Director of MLOps**
 94. **Founder / CTO (AI Startup)**
 
-<a id="taxonomy"></a>
-
 # Practical role taxonomy
 
 
 This taxonomy groups AI roles by their work, outputs, and measures of success, beyond academic job titles.
-
-<a id="1-a-minimal-set-of-axes-use-these-to-classify-any-ai-person"></a>
 
 ## 1. A minimal set of axes for classifying AI roles
 
@@ -307,8 +300,6 @@ Role types can be defined as stable combinations of these axes.
 - **Core skills:** problem framing, metric design, stakeholder management
 - **Success metrics:** shipped outcomes, KPI movement, clarity of scope, stakeholder alignment
 
-<a id="3-a-compact-map-you-can-reuse"></a>
-
 ## 3. A compact reusable map
 
 
@@ -341,7 +332,7 @@ Possible extension: a rubric for classifying people and roles in a team, includi
 # Specific Persons List
 
 
-<https://profiles.ucl.ac.uk/28069-steve-fleming/publications>
+[Steve Fleming publications (UCL profile)](https://profiles.ucl.ac.uk/28069-steve-fleming/publications)
 
 Demis Hassabis (DeepMind), Ray Kurzweil (Google), Geoffrey Hinton (Univ. of Toronto and Google), Rodney Brooks (Rethink Robotics), Yann LeCun (Facebook) , Fei-Fei Li (Stanford and Google), Yoshua Bengio (Univ. of Montreal), Andrew Ng (AI Fund), Daphne Koller (Stanford), Stuart Russell (UC Berkeley), Nick Bostrom (Univ. of Oxford), Barbara Grosz (Harvard), David Ferrucci (Elemental Cognition), James Manyika (McKinsey), Judea Pearl (UCLA), Josh Tenenbaum (MIT), Rana el Kaliouby (Affectiva), Daniela Rus (MIT), Jeff Dean (Google), Cynthia Breazeal (MIT), Oren Etzioni (Allen Institute for AI), Gary Marcus (NYU), and Bryan Johnson (Kernel).
 
@@ -353,8 +344,6 @@ Thanks to Saleema Amershi, Yoshua Bengio, Giuseppe Carenini, Jeff Clune, Mel Com
 
 
 Open question: which researchers or practitioners would provide contrasting perspectives in a generated discussion about differences in concepts and methods between academic and industrial AI-agent work, especially after the rise of LLMs?
-
-<a id="gemini-thinking-flow"></a>
 
 ## Generated panel-design alternatives (Gemini)
 

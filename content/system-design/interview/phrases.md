@@ -94,4 +94,4 @@ For the source discussion, see [interviewing.io's communication guide](https://i
 ## Related practice
 
 
-For a larger phrasebook with vocabulary distinctions, worked dialogues, and language for workplace design reviews, see Language for discussing trade-offs. The English collection connects it to speaking practice, sentence structures, and personal rewrites.
+For a larger phrasebook with vocabulary distinctions, worked dialogues, and language for workplace design reviews, see [[language-for-discussing-trade-offs]]. The English collection connects it to speaking practice, sentence structures, and personal rewrites.

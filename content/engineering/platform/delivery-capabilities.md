@@ -377,10 +377,10 @@ AI delivery adds:
 
 
 - [Platform and delivery]({{< ref "engineering/platform" >}}): the index for this folder.
-- [AI platform discovery]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}): the upstream Discovery side, which hands Delivery a candidate solution, evidence, risks, and constraints.
+- [Ai Platform Discovery]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}): the upstream Discovery side, which hands Delivery a candidate solution, evidence, risks, and constraints.
 - [Deployment]({{< ref "engineering/platform/deployment" >}}#progressive-delivery): progressive delivery, the mechanisms behind release and exposure control.
-- [GitOps]({{< ref "engineering/platform/gitops" >}}): versioned, reviewable changes to declared state, with rollback as a revert.
-- [Developer experience]({{< ref "engineering/platform/developer-experience" >}}): the platform as a product, and measuring delivery with DORA.
+- [Gitops]({{< ref "engineering/platform/gitops" >}}): versioned, reviewable changes to declared state, with rollback as a revert.
+- [Developer Experience]({{< ref "engineering/platform/developer-experience" >}}): the platform as a product, and measuring delivery with DORA.
 - [Engineering lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}): spikes, prototypes, walking skeletons, and rollout techniques, chosen by the uncertainty they resolve.
 - [AI product design and delivery framework]({{< ref "ai-engineering/delivery/design-and-delivery" >}}): an AI project lifecycle from build through release and operation.
 

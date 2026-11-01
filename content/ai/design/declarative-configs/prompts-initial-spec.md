@@ -371,20 +371,20 @@ Proposed starting requirements:
 
     or by an immutable digest.
 3. **Human-friendly history.** An expert can open a prompt and see:
-    - current production version
-    - previous versions
-    - who changed it
-    - when
-    - change description
-    - textual diff between any two versions
+	- current production version
+	- previous versions
+	- who changed it
+	- when
+	- change description
+	- textual diff between any two versions
 4. **Production always points to an exact version.** Something like `production` may be a convenient mutable label, but an actual deployment records `support/refund-answer@17` plus its digest.
 5. **Composition remains text-oriented.** If prompts are assembled from pieces, experts must be able to see both:
-    - the pieces
-    - the exact final assembled text sent to the LLM
+	- the pieces
+	- the exact final assembled text sent to the LLM
 6. **Every part of assembled text has provenance.** Given some text in the final prompt, the system can tell the expert where it came from.
 7. **Diff operates at two levels.**
-    - **source diff**: what somebody edited
-    - **assembled diff**: what changed in the final text the LLM receives
+	- **source diff**: what somebody edited
+	- **assembled diff**: what changed in the final text the LLM receives
 8. **Version lineage is visible.** Experts should be able to understand something like:
 
 ```text

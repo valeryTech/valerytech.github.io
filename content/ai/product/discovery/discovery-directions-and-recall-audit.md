@@ -24,11 +24,11 @@ These groupings of overlapping notes are interpretive. They are not existing, mu
 
 | Direction | What is being discovered? | Best starting points |
 | --- | --- | --- |
-| Bottom-up learning across AI projects | Which concepts, tools, practices, and abstractions recur across concrete applications, and under which conditions? | [AI Project Foundation]({{< ref "projects/ai-dev-foundation/starter-kit-and-foundation" >}}), [Premature abstraction]({{< ref "engineering/premature-abstraction" >}}) |
-| Empirical capability and workflow design | What can the agent do, how should the work be organized, and which structure or automation helps? | [Sandbox-first capability discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}), [Workflow evolution]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}), Exploratory pipeline design |
-| Grounded-theory-inspired failure understanding | Which failures recur, what distinguishes them, and how should those observations inform evaluation and product work? | Grounded Theory in AI Failure Analysis, [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}) |
+| Bottom-up learning across AI projects | Which concepts, tools, practices, and abstractions recur across concrete applications, and under which conditions? | [AI Project Foundation]({{< ref "projects/ai-dev-foundation/starter-kit-and-foundation" >}}), [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) |
+| Empirical capability and workflow design | What can the agent do, how should the work be organized, and which structure or automation helps? | [Sandbox-first capability discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}), [Workflow evolution]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}), [Exploratory pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) |
+| Grounded-theory-inspired failure understanding | Which failures recur, what distinguishes them, and how should those observations inform evaluation and product work? | Grounded Theory in AI Failure Analysis, [Failure understanding]({{< ref "ai-engineering/evaluation/framework-v2/failure-understanding" >}}) |
 | Discovery and sensemaking with LLMs | What is the situation, which questions matter, and which possibilities become visible through inquiry? | [Operation model]({{< ref "ai/product/discovery/analysis-or-operation-model" >}}), [LLM roles]({{< ref "ai/product/discovery/discovery-llm-roles" >}}), [Discovery map]({{< ref "ai/product/discovery/map" >}}) |
-| Product discovery, evidence, and commitments | What should be pursued, what evidence is needed, and what can people reasonably rely on? | [Discovery and delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}), [Problem and response cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}) |
+| Product discovery, evidence, and commitments | What should be pursued, what evidence is needed, and what can people reasonably rely on? | [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}), [Problem and response cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}) |
 
 The first four match the topic most closely. The fifth is a substantial neighboring collection, useful for connecting inquiry to product work without making it a mandatory stage sequence.
 
@@ -38,9 +38,9 @@ The first four match the topic most closely. The fifth is a substantial neighbor
 
 
 - [AI Project Foundation]({{< ref "projects/ai-dev-foundation/starter-kit-and-foundation" >}}): the strongest match to the bottom-up, grounded-theory approach. It compares experience across applications rather than assuming a universal framework.
-- [Premature abstraction]({{< ref "engineering/premature-abstraction" >}}): argues for concrete workflows first, followed by evidence-supported generalization. Includes design-science and scientific-reasoning analogies.
+- [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}): argues for concrete workflows first, followed by evidence-supported generalization. Includes design-science and scientific-reasoning analogies.
 - [Critical empirical practice]({{< ref "engineering/evidence/critical-stance" >}}): connects testing, scrutiny of measurements, reflection, and revising interpretations. This supplies an orientation shared by several directions.
-- Reflective practice: broader background on learning from experience and challenging assumptions; supporting material rather than an LLM-specific method.
+- [[reflective_practice]]: broader background on learning from experience and challenging assumptions; supporting material rather than an LLM-specific method.
 - [Design science method]({{< ref "ai-engineering/delivery/design-science" >}}): source material on problems, requirements, constructing artifacts, demonstration, and evaluation. Its problem-explication framing differs from the open-ended inquiry note; the two are not the same procedure.
 
 ### Learning how a workflow should work
@@ -48,10 +48,10 @@ The first four match the topic most closely. The fifth is a substantial neighbor
 
 - [Workflow evolution and autonomy]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}): the direct comparison between deterministic-first and LLM-first development, invoking bottom-up emergence and grounded theory. Framed as an open design question.
 - [Sandbox-first capability discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}): a proposed engineering method for observing behavior under a broad tool environment, then adding structure where experiments justify it.
-- Exploratory pipeline design: inspect uncertain stage decisions, intervene, compare, and progressively formalize policies. The source labels these as proposals.
-- Inspectable pipeline workbenches: concrete proposed artifacts for scenarios, variants, stages, interventions, judgments, and traces.
-- [Retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}): an especially useful bridge. It distinguishes improving the **current investigation** from learning policies for **future workflows**. Repeated interventions suggest hypotheses; they do not automatically justify general rules.
-- Design observations prompted by Hebbia and comments: relevant material that only the metadata review surfaces, with no hits under the initial keywords. The author's observations concern visible, adjustable processes and collaborative investigation; they are not validated claims about the external product.
+- [Exploratory pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}): inspect uncertain stage decisions, intervene, compare, and progressively formalize policies. The source labels these as proposals.
+- [Inspectable pipeline workbenches]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}): concrete proposed artifacts for scenarios, variants, stages, interventions, judgments, and traces.
+- [Retrieval Design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}): an especially useful bridge. It distinguishes improving the **current investigation** from learning policies for **future workflows**. Repeated interventions suggest hypotheses; they do not automatically justify general rules.
+- [Design observations prompted by Hebbia]({{< ref "ai/design-research/interactive-systems/04-design-observations-from-hebbia" >}}): relevant material that only the metadata review surfaces, with no hits under the initial keywords. The author's observations concern visible, adjustable processes and collaborative investigation; they are not validated claims about the external product.
 - [Behavioral compilation and specification]({{< ref "ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification" >}}): an adjacent architecture proposal for using provisional LLM solutions to inform independently checked executable procedures. Related to progressive formalization, but more specific than general discovery.
 - [Development approaches and modes]({{< ref "ai-engineering/delivery/df-development-approach" >}}): distinguishes experiments, baselines, prototypes, and walking skeletons as optional modes chosen for the current uncertainty.
 
@@ -59,10 +59,10 @@ The first four match the topic most closely. The fifth is a substantial neighbor
 
 
 - Grounded Theory in AI Failure Analysis: methodological analysis of trace collection, coding, category formation, sampling, measurement, and their limits.
-- [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}): develops an evidence-linked failure model before operationalization and measurement. It distinguishes observed divergence from established root cause.
+- [Failure understanding]({{< ref "ai-engineering/evaluation/framework-v2/failure-understanding" >}}): develops an evidence-linked failure model before operationalization and measurement. It distinguishes observed divergence from established root cause.
 - Roles of error analysis: broader interpretations including specification discovery, oracle construction, ontology building, and causal hypotheses.
 - Open-coding source chapter and error-analysis course chapter: supporting source material from the full-text search. The audit covers their outlines and matching passages, not the full chapters.
-- Exploring Agent-Assisted Qualitative Analysis: a separate use of grounded theory, where agents assist with qualitative analysis itself. The audit covers the opening methodology and experiment setup. This connects discovery with LLMs to coding and interpretation, beyond failure analysis.
+- [[Exploring Agent-Assisted Qualitative Analysis]]: a separate use of grounded theory, where agents assist with qualitative analysis itself. The audit covers the opening methodology and experiment setup. This connects discovery with LLMs to coding and interpretation, beyond failure analysis.
 - Grounded theory links: a small reference stub, not a developed synthesis.
 
 These uses stay distinct: an inspiration for learning across projects; a workflow-evolution analogy; a particular failure-analysis method; and agents assisting qualitative research.
@@ -82,7 +82,7 @@ These uses stay distinct: an inspiration for learning across projects; a workflo
 ### Connecting discovery to product work
 
 
-- [Discovery and delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): distinguishes work by purpose and obligations, and permits discovery and delivery to coexist.
+- [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): distinguishes work by purpose and obligations, and permits discovery and delivery to coexist.
 - [Problem and response cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}): connects problem framing, response selection, project work, and revisiting assumptions.
 - [AI uncertainty ladder]({{< ref "ai/product/discovery/uncertainty-ladder" >}}): distinguishes questions about possibility and feasibility and connects them to planning. The audit covers the opening sections. Its assertions about traditional software are claims in the note, not conclusions this audit verifies.
 - [Experiments versus features]({{< ref "ai/product/product-model/experiments-vs-features" >}}): collected practitioner arguments about capability funnels, experiments, and roadmaps.

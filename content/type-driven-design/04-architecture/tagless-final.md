@@ -107,10 +107,10 @@ Further reading:
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell* -- chapter 13, "Building Applications with Many Effects", subsection "Tagless Final Encoding", on `mtl` style as tagless final over monad transformers, with the trade-off against direct style: flexibility, dependency injection and test stacks, against losing control over which effects run, worse error messages and longer compile times; on *In brief*
 - [Rosien 2021](/sources/26d28e80e57cc7f4abab6120e2fa075d.bin), *Essential Effects* -- Appendix B, "Abstracting effects with typeclasses", refactoring concrete `IO` to `F[_]: Monad` for effect polymorphism and error reduction (restricting what an implementation can invoke to the type-class methods); on *In brief*
 - [Serrano Mena 2022](/sources/5c1001bd2c4b75b2ff640e61358fc71a.bin), *Haskell: Almost Standard Libraries* -- section 22.2, "Architecture: classes, AppM, and RIO", weighing `mtl` constraint lists (pruned with `-Wredundant-constraint`, at the cost of `ConstraintKinds` aliases and weaker cross-module GHC specialization) against concrete `AppM` stacks and `RIO`; on *In brief* and *In practice*
-- Oleg Kiselyov, "Tagless-Final Style" lecture notes: <https://okmij.org/ftp/tagless-final/course/index.html#lecture>
-- Daniel Ciocîrlan (Rock the JVM), "Tagless Final in Scala": <https://blog.rockthejvm.com/tagless-final/> and video <https://www.youtube.com/watch?v=m3Qh-MmWpbM>
-- Adam Warski (SoftwareMill), "Final Tagless Seen Alive": <https://blog.softwaremill.com/final-tagless-seen-alive-79a8d884691d>
-- John De Goes, "Tagless Horror": <https://degoes.net/articles/tagless-horror>
-- Awesome Tagless Final repository: <https://github.com/tofu-tf/awesome-tagless-final>
+- Oleg Kiselyov, "Tagless-Final Style" lecture notes: [Tagless-Final Style lecture notes (Oleg Kiselyov)](https://okmij.org/ftp/tagless-final/course/index.html#lecture)
+- Daniel Ciocîrlan (Rock the JVM), "[Tagless Final in Scala](https://blog.rockthejvm.com/tagless-final/)" and video [Tagless Final in Scala video (Rock the JVM)](https://www.youtube.com/watch?v=m3Qh-MmWpbM)
+- Adam Warski (SoftwareMill), "[Final Tagless Seen Alive](https://blog.softwaremill.com/final-tagless-seen-alive-79a8d884691d)"
+- John De Goes, "[Tagless Horror](https://degoes.net/articles/tagless-horror)"
+- [Awesome Tagless Final repository](https://github.com/tofu-tf/awesome-tagless-final)
 - Additional Scala tutorials and discussions: [Scalac](https://scalac.io/blog/tagless-final-pattern-for-scala-code/), [Baeldung](https://www.baeldung.com/scala/tagless-final-pattern), and [r/scala discussion](https://www.reddit.com/r/scala/comments/s6ih9p/can_you_give_a_brief_understanding_on_tagless/)
 - On the expression problem: [Wikipedia](https://en.wikipedia.org/wiki/Expression_problem) and Eli Bendersky on [the expression problem and its solutions](https://eli.thegreenplace.net/2016/the-expression-problem-and-its-solutions/) and [the Composite and Interpreter design patterns](https://eli.thegreenplace.net/2016/on-the-composite-and-interpreter-design-patterns)

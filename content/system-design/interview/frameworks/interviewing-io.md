@@ -324,7 +324,7 @@ But even in these rare cases, *it helps to start thinking* about the API in term
 
 Look at the access patterns you defined in the functional requirements to write your API. For example:
 
-```txt
+```text
 1
 2  getTweets:
 3    GET /{accountId}/tweets?nextPageToken={token}
@@ -362,14 +362,15 @@ We've seen online resources that spend so much time showing you how to calculate
 
 Use some nice round numbers to make the math easy. In fact, exclusively use powers of ten to make your life even easier. How far off can you be from the closest power of ten? When in doubt, just guess higher -- it's called **margin of safety**. For our Twitter example we can go for these numbers:
 
-```txt
+```text
 Reads/minute: 100k
 Writes/minute: 1k
 ```
 
+
 Finally, what's the volume of data we need to store? Go back to your "data types" (section 2.1) and think about how big these can get and multiply that by the number of writes/minute to get how much data you need to store per minute.
 
-```txt
+```text
 1
 2  Structured data (tweets, accounts): 100 KB each
 3  Media (images, videos): 10MB each
@@ -378,11 +379,13 @@ Finally, what's the volume of data we need to store? Go back to your "data types
 6
 ```
 
+
 Again, it does not matter at all if you get these numbers right as long as you are in the ballpark. Please don't spend too much time on this. Just use powers of ten, and when in doubt, pick the higher number. This makes our final math super easy:
 
-```txt
+```text
 2  1k writes/minute with an average size of 1MB each = 1k * 1MB = 1000MB = 1GB/m
 ```
+
 
 So we'll need to store around a gigabyte of data per minute.
 
@@ -651,7 +654,7 @@ Finally, for code execution, we'd probably want to execute the code in isolation
 
 ##### Data Types
 
-```
+```text
 1
 2  User: id, name, surname, pseduonym, availability. (Structured data)
 3  Interview: id, interviewer_id, interviewee_id, video_recording_id, programming_lang, (Structured data)
@@ -663,7 +666,7 @@ Finally, for code execution, we'd probably want to execute the code in isolation
 
 ##### REST API
 
-```
+```text
 1
 2  putAvailability:
 3    POST /users/{userId}/availability

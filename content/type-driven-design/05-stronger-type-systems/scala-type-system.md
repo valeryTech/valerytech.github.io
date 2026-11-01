@@ -67,7 +67,7 @@ The most type-driven passage in Odersky's book is the currency case study (secti
 
 [type parameters vs type members](https://typelevel.org/blog/2015/07/13/type-members-parameters.html)
 
-<https://stackoverflow.com/questions/1154571/scala-abstract-types-vs-generics>
+[Scala abstract types vs generics (Stack Overflow)](https://stackoverflow.com/questions/1154571/scala-abstract-types-vs-generics)
 
 ## Nominal and structural subtyping
 
@@ -103,7 +103,7 @@ Odersky's own advice (section 20.8) is to try nominal types first with any new d
 
 Scala's member refinements are not the predicate refinement types of [Refinement Types By Language]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types-by-language" >}}#scalas-terminology-trap).
 
-<https://stackoverflow.com/questions/75149674/what-is-a-difference-between-refinement-type-and-anonymous-subclass-in-scala-3>
+[Refinement type vs anonymous subclass in Scala 3 (Stack Overflow)](https://stackoverflow.com/questions/75149674/what-is-a-difference-between-refinement-type-and-anonymous-subclass-in-scala-3)
 
 ### Trade-offs
 
@@ -183,11 +183,11 @@ This is the use case structural types are good at: typed dot access to data whos
 Wampler (chapter 20, "Structural Types Revisited") shows that the trust goes further than the one cast: the compiler turns `person.name` into `person.selectDynamic("name").asInstanceOf[String]`, so every field access is a cast as well.
 
 
-<https://www.baeldung.com/scala/structural-types>
+[How To Use Structural Types in Scala](https://www.baeldung.com/scala/structural-types)
 
-<https://docs.scala-lang.org/scala3/book/types-structural.html>
+[Structural Types (Scala Documentation)](https://docs.scala-lang.org/scala3/book/types-structural.html)
 
-<https://docs.scala-lang.org/scala3/reference/changed-features/structural-types.html>
+[Programmatic Structural Types](https://docs.scala-lang.org/scala3/reference/changed-features/structural-types.html)
 
 ## Union and intersection types
 
@@ -278,7 +278,7 @@ Sources for this section: the quotation on type parametrization is the introduct
 ## Multiversal equality
 
 
-Scala 2 let you compare any two values with `==`, so `"hello" == Option("hello")` compiled and was always false, a bug that tends to appear when a refactoring changes a `String` to an `Option[String]`. Scala 3's multiversal equality (Odersky, section 23.4) rejects that comparison at compile time using `CanEqual[-L, -R]`. By default, for migration compatibility, Scala 3 still allows `L == R` without a `CanEqual[L, R]` when neither type has a reflexive `CanEqual` instance (so two plain case classes `Apple` and `Orange` still compare as `false`), but as soon as either type defines a reflexive instance--as standard-library types like `String` do--unrelated comparisons are rejected; `import scala.language.strictEquality` (or `-language:strictEquality`) closes the fallback for every type, requiring `derives CanEqual` or an explicit given. `CanEqual` has no methods; it only grants permission, so it's another form of type evidence. Its main use in domain modeling is keeping distinct identifier types from being compared ([Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#scala-value-classes-and-opaque-types)).
+Scala 2 let you compare any two values with `==`, so `"hello" == Option("hello")` compiled and was always false, a bug that tends to appear when a refactoring changes a `String` to an `Option[String]`. Scala 3's multiversal equality (Odersky, section 23.4) rejects that comparison at compile time using `CanEqual[-L, -R]`. By default, for migration compatibility, Scala 3 still allows `L == R` without a `CanEqual[L, R]` when neither type has a reflexive `CanEqual` instance (so two plain case classes `Apple` and `Orange` still compare as `false`), but as soon as either type defines a reflexive instance -- as standard-library types like `String` do -- unrelated comparisons are rejected; `import scala.language.strictEquality` (or `-language:strictEquality`) closes the fallback for every type, requiring `derives CanEqual` or an explicit given. `CanEqual` has no methods; it only grants permission, so it's another form of type evidence. Its main use in domain modeling is keeping distinct identifier types from being compared ([Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#scala-value-classes-and-opaque-types)).
 
 ## To study
 
@@ -299,7 +299,7 @@ The common confusion is `Unit` versus `Nothing`: a `Unit` function returns, with
 
 Moved from [To Sort]({{< ref "functional-programming/05-practice/to-sort" >}}) on 2026-04-05, and from [What Belongs In Types]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}) to this note the same day. The **Explanation** and **Critique** callouts are commentary added that day; the rest is the original note text.
 
-[https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html)
+[FP Modeling (Scala Documentation)](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html)
 
 How deep do you want to encode your contracts.
 
@@ -308,7 +308,7 @@ The question behind this list: each invariant can be checked by a test, by a run
 {{< /callout >}}
 
 
-[Refined](https://github.com/fthomas/refined) let's you constrain your primitive types ([https://github.com/fthomas/refined#provided-predicates](https://github.com/fthomas/refined#provided-predicates)) at compile time rather than runtime with assert.
+[Refined](https://github.com/fthomas/refined) let's you constrain your primitive types ([provided predicates list in refined](https://github.com/fthomas/refined#provided-predicates)) at compile time rather than runtime with assert.
 
 {{< callout context="note" title="Critique" icon="outline/help-octagon" >}}
 Only literals can be checked at compile time. A value that arrives at runtime (user input, JSON, a database row) still has to be validated at runtime; refined does this with functions that return an `Either`, so the check happens once at the boundary and the rest of the code receives the refined type. Refined's compile-time literal checks rely on Scala 2 macros; for Scala 3, Iron is the commonly used refinement-types library. Worth checking against the current refined documentation. See [Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}#limits).

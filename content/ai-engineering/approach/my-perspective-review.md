@@ -367,7 +367,7 @@ The document does not state a position on:
 - continue, pivot, narrow, or stop decisions;
 - separating product intent from implementation uncertainty.
 
-This may be intentional--the document is focused on engineering rather than portfolio management. But if it is used to align with companies about **AI development generally**, this is one of the most important practical consequences of the thesis.
+This may be intentional -- the document is focused on engineering rather than portfolio management. But if it is used to align with companies about **AI development generally**, this is one of the most important practical consequences of the thesis.
 
 ## Tone and presentation
 

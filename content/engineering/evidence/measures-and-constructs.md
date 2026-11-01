@@ -27,7 +27,7 @@ the immediate scientific question becomes:
 
 > Does merged-PR count actually measure engineering productivity?
 
-The SIGSOFT standards explicitly warn against bad proxy variables and unvalidated operationalizations--for example, using a simple observable metric as a proxy for a more complex construct. ([ACM SIGSOFT](https://www2.sigsoft.org/EmpiricalStandards/docs/standards "Standards | Empirical Standards"))
+The SIGSOFT standards explicitly warn against bad proxy variables and unvalidated operationalizations -- for example, using a simple observable metric as a proxy for a more complex construct. ([ACM SIGSOFT](https://www2.sigsoft.org/EmpiricalStandards/docs/standards "Standards | Empirical Standards"))
 
 That seems like a foundational rule:
 
@@ -41,7 +41,7 @@ Developer productivity is particularly vulnerable to construct problems. The SPA
 ## A measure that becomes a target
 
 
-Once a count is used to judge people or tools, the work changes to move the count. The [evidence protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) gives the example: once merged PRs become a target, splitting work into agent-friendly PRs can increase the count without increasing useful output. A measure that was a fair proxy before it became a target may not be one afterwards.
+Once a count is used to judge people or tools, the work changes to move the count. The [Evidence Protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) gives the example: once merged PRs become a target, splitting work into agent-friendly PRs can increase the count without increasing useful output. A measure that was a fair proxy before it became a target may not be one afterwards.
 
 Choosing the measure after seeing the data is the other way a measure stops meaning what it says. [Preregistration]({{< ref "engineering/evidence/running-experiments" >}}#preregistration) fixes it in advance.
 

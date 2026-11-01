@@ -28,8 +28,6 @@ The important proposed change after reading it is this: the current framework pr
 
 The first reply's complete complexity comparison is in [complexity and work structure]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure" >}}#coordination-and-epistemic-refinements). The framework analysis continues below with its original section numbering.
 
-<a id="2-the-paper-strongly-supports-your-frameworks-abstraction-level"></a>
-
 ### 2. The paper as support for the proposed framework abstraction
 
 
@@ -134,8 +132,6 @@ humans / models / software / tools
 
 The existing runtime proposal already points toward the second layer through authority, evidence, recovery, explicit commitment, and shared state. The Anthropic paper suggests that this layer is more central than the current `framework.md` makes it appear.
 
-<a id="4-your-proposal--commitment-idea-becomes-stronger"></a>
-
 ### 4. Consequences for the `proposal ≠ commitment` proposal
 
 
@@ -238,8 +234,6 @@ That is exactly the kind of distinction the proposed framework is trying to form
 
 The first reply's complete unreliable-evidence experiment proposal is in [investigation evaluation]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}#multiagent-evidence-experiment-proposal). The broader research framing and complete second reply continue below.
 
-<a id="7-the-paper-also-supports-your-broader-research-direction-rewrite"></a>
-
 ### 7. The paper and the broader research-direction proposal
 
 
@@ -279,8 +273,6 @@ The proposal is to add **coordination mechanisms** explicitly:
 > **Leave participant behavior open-ended. Make shared state transitions, authority, effects, provenance, coordination mechanisms, and required invariants part of the semantics of the environment.**
 
 Because Anthropic's major contribution here is showing that correct local behavior does not imply acceptable global behavior.
-
-<a id="8-the-main-conceptual-adjustment-i-would-make"></a>
 
 ### 8. Proposed conceptual adjustment
 
@@ -723,8 +715,6 @@ The complete [Alice reply]({{< ref "ai/design-research/00-overview/08-collaborat
 
 The complete critique below continues the [research-method reply]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}#research-practices-and-claim-records). It distinguishes criticism of a research frame from claims about individual researchers and considers institutional framing as a possible source of bias. The passage is a separate saved reply, not part of the earlier article or an established account of researchers' motives. The sibling [comments]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics-comments" >}}#research-paradigms-and-institutional-framing) explain the placement and limits.
 
-<a id="7-your-concern-about-technical-researchers-is-better-expressed-as-a-research-paradigm-problem"></a>
-
 ### 7. Reframing the concern about technical researchers as a research-paradigm problem
 
 
@@ -758,8 +748,6 @@ Those are theory-heavy questions. They require apparatus from cognitive science,
 The author's Wei note reaches essentially this conclusion. It calls his research orientation "capability-first empirical AI research": define measurable behavior, optimize it and see how far it goes. It also explicitly says that he has worked on grounding, so the issue isn't ignorance; foundational questions get bracketed by the research frame.
 
 That distinction is important.
-
-<a id="8-there-is-a-documented-institutional-political-framing-pressure-but-we-should-be-precise"></a>
 
 ### 8. Institutional and political framing pressure, with limits on the claim
 

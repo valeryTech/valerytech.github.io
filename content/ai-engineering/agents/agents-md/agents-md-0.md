@@ -6,7 +6,7 @@ description: "The root AGENTS.md is loaded in every session, so every line costs
 linkTitle: "Design"
 ---
 
-> This is initial version of agents.md file - see more in [Logs Reasoning]({{< ref "ai-engineering/agents/logs-reasoning" >}})
+> This is initial version of agents.md file -- see more in [Logs Reasoning]({{< ref "ai-engineering/agents/logs-reasoning" >}})
 
 ## What the root `AGENTS.md` is
 
@@ -73,7 +73,7 @@ A good system lets users delegate well-scoped (or not so well-scoped) tasks and 
 
 The design of `AGENTS.md` rests on the following assumptions.
 
-It targets modern coding agents -- Codex, Claude Code, Cursor-style agents, and similar systems--that already have strong general engineering knowledge, tool-use capabilities, default policies, and learned conventions.
+It targets modern coding agents -- Codex, Claude Code, Cursor-style agents, and similar systems -- that already have strong general engineering knowledge, tool-use capabilities, default policies, and learned conventions.
 
 The premises follow the [system's three processes](#the-system-around-the-file): session, review, and maintenance. Each premise links to the [design rules](#design-rules) it supports. All are working hypotheses. The research agenda (WIP) records the supporting evidence for each premise and the questions that could confirm or revise it.
 
@@ -232,7 +232,7 @@ Write `AGENTS.md` as onboarding context for a capable engineer who can explore t
 
 Every line of the root file competes with task-relevant context, including source files, diffs, test output, error logs, design documents, and user instructions. Include an instruction in the root file only if it meets three criteria:
 
-- **It is short enough to follow.** The instruction should fit in a few lines without losing the detail needed for correct execution, such as "Run tools with `uv run`. Do not use `pip`." Guidance requiring steps, conditions, or exceptions--such as how to write a migration without locking a table--belongs in canonical documentation, linked from the root file ([example]({{< ref "ai-engineering/agents/agents-md/agents-md-fixes-and-changes" >}}#something-that-takes-explaining)).
+- **It is short enough to follow.** The instruction should fit in a few lines without losing the detail needed for correct execution, such as "Run tools with `uv run`. Do not use `pip`." Guidance requiring steps, conditions, or exceptions -- such as how to write a migration without locking a table -- belongs in canonical documentation, linked from the root file ([example]({{< ref "ai-engineering/agents/agents-md/agents-md-fixes-and-changes" >}}#something-that-takes-explaining)).
 - **It applies to many tasks.** Instructions specific to one package, domain, or feature belong closer to the relevant code, where they do not consume context in unrelated sessions.
 - **It is stable.** Put frequently changing guidance in nested files or domain documentation ([Separate stable root rules from changing domain knowledge]({{< ref "ai-engineering/agents/agents-md/agents-md-fixes-and-changes" >}}#separate-stable-root-rules-from-changing-domain-knowledge)).
 
@@ -247,9 +247,9 @@ The root file should direct agents to authoritative sources without duplicating 
 
 `AGENTS.md` should not contain all project knowledge. It should direct agents to relevant information when they need it. This is progressive disclosure: the root file loads in every session, while detailed information is loaded only when relevant to the task.
 
-Commands are a common source of duplication. The README covers basic setup--installation, environment creation, and local execution--and links to the runbook. The runbook contains the complete command reference and operational procedures. `AGENTS.md` links to both. Include commands in `AGENTS.md` only when they specify required agent behavior: baseline checks ([Define done and when to ask](#define-done-and-when-to-ask)) or corrections to generic defaults, such as using `uv` instead of `pip` ([Add only project-specific defaults](#add-only-project-specific-defaults)). If no runbook exists, create one instead of adding the command reference to the root file.
+Commands are a common source of duplication. The README covers basic setup -- installation, environment creation, and local execution -- and links to the runbook. The runbook contains the complete command reference and operational procedures. `AGENTS.md` links to both. Include commands in `AGENTS.md` only when they specify required agent behavior: baseline checks ([Define done and when to ask](#define-done-and-when-to-ask)) or corrections to generic defaults, such as using `uv` instead of `pip` ([Add only project-specific defaults](#add-only-project-specific-defaults)). If no runbook exists, create one instead of adding the command reference to the root file.
 
-A task runner, such as Go Task or Make, gives each workflow a name. With commands grouped by namespace and a catalog the agent can print, such as `task help`, the root file needs one line for commands. [Command layer]({{< ref "ai-engineering/agents/environment/command-layer" >}}) describes how the projects name and group commands and what that gives agents ([What the command layer gives agents]({{< ref "ai-engineering/agents/environment/command-layer" >}}#what-the-command-layer-gives-agents)).
+A task runner, such as Go Task or Make, gives each workflow a name. With commands grouped by namespace and a catalog the agent can print, such as `task help`, the root file needs one line for commands. [Command Layer]({{< ref "ai-engineering/agents/environment/command-layer" >}}) describes how the projects name and group commands and what that gives agents ([What the command layer gives agents]({{< ref "ai-engineering/agents/environment/command-layer" >}}#what-the-command-layer-gives-agents)).
 
 #### Name the sources of truth
 

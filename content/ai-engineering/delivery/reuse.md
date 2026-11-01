@@ -12,8 +12,6 @@ Connect this with AI design through modularity and APIs. #todo Identify the rema
 
 Related: the [AI platform capability map]({{< ref "ai-engineering/delivery/ai-platform-capabilities" >}}) (capability map, scorecard, maturity model), the [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}}) (capabilities derived from what teams do), and the [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}).
 
-<a id="platform-primitives-set"></a>
-
 # Platform primitives
 
 
@@ -178,8 +176,6 @@ A proposed reusable enterprise AI platform has **seven core products**:
 7. **Developer SDKs and Blueprints**
 
 That gives application teams a standard path to build AI features while preserving centralized control over cost, quality, security, and compliance.
-
-<a id="build-additional"></a>
 
 # Additional build-sequence proposal
 

@@ -26,8 +26,6 @@ Open question: Which corresponding features should describe human participants?
 
 Next question: Which existing or new system-building approaches follow from these participant features, including a move toward augmentation?
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 > I suspect this participant model could actually sit one level above the earlier principles. "Collaboration", "active AI", and "augmentation" then become consequences of how these participant types differ, rather than principles we chose arbitrarily.
 
 The working interpretation is that this is the stronger route: define the participants by their structural properties first, then derive system design principles from those properties.
@@ -354,8 +352,6 @@ So:
 
 That separation is useful.
 
-<a id="2-id-also-revise-the-human-description"></a>
-
 ### 2. Revised description of human participants
 
 
@@ -405,8 +401,6 @@ This also avoids saying that software is "less intelligent" than an LLM, which d
 
 A calculator has extremely strong capability and competence for arithmetic. It simply has a much narrower capability distribution.
 
-<a id="4-i-would-change-the-dimensions-of-the-participant-model"></a>
-
 ## 4. Proposed changes to the participant-model dimensions
 
 
@@ -442,8 +436,6 @@ For example:
 - accountability belongs mainly to the social/organizational structure.
 
 An LLM may be capable of sending a payment instruction. Whether it **may** do that is an authority question.
-
-<a id="5-this-changes-how-we-derive-system-approaches"></a>
 
 ## 5. Consequences for deriving system approaches
 

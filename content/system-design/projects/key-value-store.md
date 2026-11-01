@@ -39,14 +39,14 @@ The standard design for a distributed key-value store with `put(key, value)` and
 - **Quorum values per workload:** W = 1 for fast writes that tolerate loss, R = 1 for fast reads that tolerate staleness.
 - **Conflict handling:** whether the application can merge versions, such as a shopping cart taking the union of items, decides whether version vectors are worth their cost.
 
-The mechanisms are explained in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}): [coordination and logical clocks]({{< ref "system-design/elements/data-at-scale" >}}#coordination), [indexes and storage engines]({{< ref "system-design/elements/data-at-scale" >}}#indexes), and consistent hashing in the options table.
+The mechanisms are explained in [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}): [coordination and logical clocks]({{< ref "system-design/elements/data-at-scale" >}}#coordination), [indexes and storage engines]({{< ref "system-design/elements/data-at-scale" >}}#indexes), and consistent hashing in the options table.
 
 ## Questions to develop
 
 
 Clarify the failure behavior, consistency, and workload that would favor each cache write policy, and how the policies above apply when the store is used as a cache.
 
-Use the [case template]({{< ref "system-design/projects/case-template" >}}) when developing a full store design.
+Use the [Case Template]({{< ref "system-design/projects/case-template" >}}) when developing a full store design.
 
 ## Library sources
 

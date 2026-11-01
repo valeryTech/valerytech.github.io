@@ -27,11 +27,11 @@ It is important to note that this is not a one-size-fits-all solution. The advan
 
 [LLMs make it really easy to build custom tools](https://www.martinfowler.com/articles/exploring-gen-ai/16-building-custom-tooling-with-llms.html). While teaching distributed systems, I frequently need to create presentations which mostly have diagrams explaining distributed operations in a cluster. UML Sequence diagrams have been great for that but showing a full sequence diagram while explaining the flow of messages through the cluster is not very useful. I needed a tool to show a sequence diagram step by step in a powerpoint presentation. With the help of LLMs I was able to build a tool which processes a YAML describing the presentation structure with references to the PlantUML diagrams and generates a powerpoint presentation. The PlantUML diagrams are marked with steps, and the tool generates a separate slide for each step. This made it really easy to create diagram-rich presentations.
 
-Generate a PlantUML sequence diagram showing a cluster of three nodes athens, byzantium and cyrene. Put a box to mark the cluster. Actor Alice sends a message "title", "After Dawn" to athens, Athens sends message to itself. Put a note to show state 'title: After Dawn'. Athens sends message to byzantium which fails. Athens sends to cyrene. Put a note placed to the right of cyrene. athens then checks with isQuorumReached and returning a synchronous Success arrow back to Alice. Put a '\[step\] marker after each message.
+Generate a PlantUML sequence diagram showing a cluster of three nodes athens, byzantium and cyrene. Put a box to mark the cluster. Actor Alice sends a message "title", "After Dawn" to athens, Athens sends message to itself. Put a note to show state 'title: After Dawn'. Athens sends message to byzantium which fails. Athens sends to cyrene. Put a note placed to the right of cyrene. athens then checks with isQuorumReached and returning a synchronous Success arrow back to Alice. Put a '[step] marker after each message.
 
 This prompt generates the following PlantUML code with step markers:
 
-```
+```plantuml
 @startuml
 actor Alice
 
@@ -79,7 +79,7 @@ Create a slide YAML referring to the diagram 'quorum-write' with a title 'Quorum
 
 This generates a slide spec YAML like following:
 
-```
+```yaml
 - slide:
     title: "Quorum Write Example"
     diagram: "quorum-write"

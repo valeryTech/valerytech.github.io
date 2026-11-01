@@ -287,8 +287,6 @@ where each step reduces the set of acceptable behaviors until execution becomes 
 
 That also gives you a formal way to think about collaborative programming.
 
-<a id="id-distinguish-three-declarative-layers"></a>
-
 ### Three proposed declarative layers
 
 

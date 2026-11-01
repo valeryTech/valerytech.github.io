@@ -15,11 +15,11 @@ Part of [Evidence in software engineering]({{< ref "engineering/evidence" >}}).
 
 Essays and discussions arguing that prescribed development methodologies do not deliver what they promise:
 
-- <https://www.reddit.com/r/programming/comments/xl4k9/why_software_development_methodologies_suck/>
-- <https://www.thoughtworks.com/insights/blog/why-software-development-methodologies-suck>
-- <https://continuousdelivery.com/2012/08/why-software-development-methodologies-suck/>
-- <https://typicalprogrammer.com/why-dont-software-development-methodologies-work> -- funny, with interesting analogues
-- <https://zwischenzugs.com/2017/10/15/my-20-year-experience-of-software-development-methodologies/>
+- [r/programming: why software development methodologies suck](https://www.reddit.com/r/programming/comments/xl4k9/why_software_development_methodologies_suck/)
+- [Why Software Development Methodologies Suck](https://www.thoughtworks.com/insights/blog/why-software-development-methodologies-suck)
+- [Why Software Development Methodologies Suck](https://continuousdelivery.com/2012/08/why-software-development-methodologies-suck/)
+- [Why don't software development methodologies work (Typical Programmer)](https://typicalprogrammer.com/why-dont-software-development-methodologies-work) -- funny, with interesting analogues
+- [My 20-Year Experience of Software Development Methodologies](https://zwischenzugs.com/2017/10/15/my-20-year-experience-of-software-development-methodologies/)
 
 The waterfall model is an example of a methodology argued over without going back to the source. Royce's 1970 paper describes the staged sequence and then says of it, "I believe in this concept, but the implementation described above is risky and invites failure". He goes on to add iteration and feedback. The software engineering notes link more agile and waterfall critiques.
 
@@ -28,7 +28,7 @@ The waterfall model is an example of a methodology argued over without going bac
 
 Bossavit calls the claims that circulate without evidence "leprechauns". He follows each one back through its citations, among them the cone of uncertainty, the 10x programmer, the waterfall and the rising cost of defects.
 
-- <https://www.reddit.com/r/programming/comments/2luryq/the_leprechauns_of_software_engineering/>
+- [r/programming: the leprechauns of software engineering](https://www.reddit.com/r/programming/comments/2luryq/the_leprechauns_of_software_engineering/)
 
 ## Library sources
 

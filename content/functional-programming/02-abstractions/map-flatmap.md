@@ -41,14 +41,14 @@ One information-losing operation is lawful: `opt.map(_ => ())` (Cats calls it `v
 
 The key property is
 
-```
+```text
 map(id) = id
 ```
 
 
 If `f` does nothing to ordinary values, its extension should do nothing to the `Option` either. The second law is
 
-```
+```text
 map(g ∘ f) = map(g) ∘ map(f)
 ```
 
@@ -59,7 +59,7 @@ In Scala syntax these read `opt.map(identity) == opt` and `opt.map(f andThen g) 
 
 How the ideas fit together:
 
-```
+```text
 "preserves Some/None"
     ↓
 structure/context preservation
@@ -104,14 +104,14 @@ None.flatMap(parse)        // None: parse is never called
 
 The progression is:
 
-```
+```text
 map
 A => B
 
 "I can definitely produce B if you give me A."
 ```
 
-```
+```text
 flatMap
 A => Option[B]
 

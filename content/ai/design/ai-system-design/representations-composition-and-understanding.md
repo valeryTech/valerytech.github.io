@@ -113,7 +113,7 @@ The three initial contributions describe different relationships around a repres
 | Constraint and composition | Under which rules do chosen properties survive combination and change? | Individually acceptable parts produce an acceptable whole. |
 | Representation and understanding | How does making distinctions explicit affect people's ability to reason and revise? | A visible or machine-checkable artifact is understood by its readers. |
 
-One possible contribution of the program is a conceptual account connecting these relationships. It would explain how the same representation can support construction, carry obligations for composition, and provide an object for inquiry--while showing where these roles conflict.
+One possible contribution of the program is a conceptual account connecting these relationships. It would explain how the same representation can support construction, carry obligations for composition, and provide an object for inquiry -- while showing where these roles conflict.
 
 For instance, a language optimized for mechanical checking may be difficult for a domain expert to interpret. A flexible notation may support exploration while leaving some properties unspecified. Different views of the same model may help, but their correspondence becomes another conceptual obligation: are participants actually examining the same claim?
 

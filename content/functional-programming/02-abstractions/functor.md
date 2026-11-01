@@ -130,7 +130,7 @@ It breaks the composition law as well: `fmap f . fmap g` reverses twice, which c
 
 In Haskell the two laws aren't independent. Because of parametricity, any `fmap` that satisfies the identity law also satisfies the composition law, and a type has at most one lawful `Functor` instance. That is why `deriving Functor` can always choose the instance for you. (Strictly, these results ignore `undefined` and `seq`.)
 
-The compiler doesn't enforce the laws, so you have to ensure them yourself. It takes some effort at first, but after a couple of instances it starts to feel natural. Besides proving them by hand with equational reasoning, you can test them with property-based testing: QuickCheck properties such as `fmap id x == x` for random `x`, or ready-made law suites such as the `checkers` package for Haskell and `cats-laws` with Discipline for Scala. See [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}).
+The compiler doesn't enforce the laws, so you have to ensure them yourself. It takes some effort at first, but after a couple of instances it starts to feel natural. Besides proving them by hand with equational reasoning, you can test them with property-based testing: QuickCheck properties such as `fmap id x == x` for random `x`, or ready-made law suites such as the `checkers` package for Haskell and `cats-laws` with Discipline for Scala. See [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}).
 
 If a type obeys both laws, calling `fmap` on a value of that type only maps the function over it, nothing more, and the type has the same fundamental mapping behaviour as every other functor. That leads to more abstract and extensible code: we can use the laws to reason about behaviour every functor must have, and write functions that work reliably on any functor.
 
@@ -162,15 +162,15 @@ fmap :: (a -> b) -> (r -> a) -> (r -> b)
 
 Mapping a function over a function has to produce a function, just as mapping over a `Maybe` produces a `Maybe` and mapping over a list produces a list. Given a way to turn `a` into `b` and a way to turn `r` into `a`, the only thing you can build is a way to turn `r` into `b`: run `g` first, then `f`. Parametricity leaves no other choice, so the type alone tells you that `fmap` for functions is composition. For example, `fmap (+1) (*2) 5` is `(+1) ((*2) 5)`, which is `11`.
 
-In this functor the "context" is a value of type `r` that hasn't been supplied yet. Reader is this functor (plus `Applicative` and `Monad`) under another name; see [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader). Proving the functor laws for this instance is an exercise in [Exercises and projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}).
+In this functor the "context" is a value of type `r` that hasn't been supplied yet. Reader is this functor (plus `Applicative` and `Monad`) under another name; see [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader). Proving the functor laws for this instance is an exercise in [Exercises And Projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}).
 
 ## Further links
 
 
 What a functor is, where it can be used, and how to implement your own instances:
 
-- Serokell, "What's that typeclass: Functor": <https://serokell.io/blog/whats-that-typeclass-functor>
-- Michael Snoyman, "Functors, applicatives and monads" (2017): <https://www.snoyman.com/blog/2017/01/functors-applicatives-and-monads/>
+- Serokell, "[What's that typeclass: Functor](https://serokell.io/blog/whats-that-typeclass-functor)"
+- Michael Snoyman, "[Functors, applicatives and monads](https://www.snoyman.com/blog/2017/01/functors-applicatives-and-monads/)" (2017)
 
 ## Open tasks
 
@@ -178,7 +178,7 @@ What a functor is, where it can be used, and how to implement your own instances
 - [ ] Formulate in my own words which problems Functor solves and how; a first version is in [Why Functor is useful](#why-functor-is-useful).
 - [ ] Identify the "material from guy..." noted next to these links and add the author's name or a link.
 
-See also: [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}) for the same laws on Scala's `Option`, [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}) and [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}) for the next steps up, [Type classes]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#type-classes), [Category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}) for functors in the mathematical sense, [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) for checking the laws, and [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}).
+See also: [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}) for the same laws on Scala's `Option`, [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}) and [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}) for the next steps up, [Type classes]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#type-classes), [Category Theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}) for functors in the mathematical sense, [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) for checking the laws, and [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}).
 
 ## Library sources
 

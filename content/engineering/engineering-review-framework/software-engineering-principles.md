@@ -32,7 +32,7 @@ Use the shared goals across functional, object-oriented, procedural, and mixed c
 - **Cohesive responsibilities.** Give a function, type, or module a coherent purpose. Keep behavior and knowledge that change together close together.
 - **Separation of concerns.** Give different concerns clear boundaries so that their details do not become unnecessarily mixed together.
 - **High cohesion, low coupling.** Keep related behavior together and limit dependencies between unrelated parts.
-- **Information hiding.** Expose the behavior and data consumers need while limiting dependence on internal representation and implementation choices. Functions, modules, types, and objects can all provide useful boundaries. - **Explicit state and effects.** Make dependencies on mutable state, time, randomness, and I/O understandable. Keep ownership, ordering, and failure behavior clear.
+- **Information hiding.** Expose the behavior and data consumers need while limiting dependence on internal representation and implementation choices. Functions, modules, types, and objects can all provide useful boundaries. -- **Explicit state and effects.** Make dependencies on mutable state, time, randomness, and I/O understandable. Keep ownership, ordering, and failure behavior clear.
 
 ### What abstraction levels mean here
 
@@ -78,15 +78,15 @@ Some duplication may be acceptable while the shared concept is unclear. A depend
 
 Simplicity includes satisfying correctness, security, and operational requirements. Required validation, recovery behavior, or compatibility support remains part of the solution even when it adds code.
 
-Apply the principles to AI-generated changes with the same expectations. Additional AI-specific risks are collected in the reference lists and explained in the [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}).
+Apply the principles to AI-generated changes with the same expectations. Additional AI-specific risks are collected in the reference lists and explained in the [Llm Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}).
 
 ## Related notes
 
 
-- [AHA Programming]({{< ref "engineering/aha-programming" >}}) -- when duplication is preferable to a poorly understood abstraction.
+- [Aha Programming]({{< ref "engineering/aha-programming" >}}) -- when duplication is preferable to a poorly understood abstraction.
 - [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) -- speculative generality, wrong abstractions, and learning from concrete cases before generalizing.
 - SOLID notes -- working notes on responsibility, extension points, and protecting components from changes elsewhere.
-- [Type-driven design]({{< ref "type-driven-design" >}}) -- expressing domain states, constraints, workflows, and errors through types.
+- [Type Driven Design]({{< ref "type-driven-design" >}}) -- expressing domain states, constraints, workflows, and errors through types.
 - Module-design guidance -- evaluating abstractions by the capability they provide and the knowledge required of callers.
 
 ## Library sources

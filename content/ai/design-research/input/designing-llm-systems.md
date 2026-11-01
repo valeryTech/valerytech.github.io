@@ -25,7 +25,7 @@ First, we have systems with people, code, data, and the usual components, and no
 
 So one direction is security and limiting LLM unreliability. We could identify different ways to achieve this, including through system architecture. We could introduce software graphs as a kind of harness. We also need to understand what else we can use. It could be type modeling within a language, or perhaps giving the LLM a specific set of tools in a sandbox or another restricted environment. It could also involve different guardrails, automatic judges, and other classifiers. For example, with Jev, we could use models to assess what the system or LLM proposes. So this is one direction.
 
-And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs--what else? We need to find out. Let's analyze my product or problem framing conceptually.
+And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs -- what else? We need to find out. Let's analyze my product or problem framing conceptually.
 
 ---
 
@@ -526,7 +526,7 @@ Your existing project classification can supply the application cases. Your oper
 ## User -- turn 2
 
 
-[Deep research](<https://chatgpt.com/settings/plugins-settings/apps/connector_openai_deep_research>) Okay, let's develop this as a general design model. We need to work at the conceptual level first, and then we could rebuild the systems--for example, the different types in our examples--from the ground up using this model. Let's do some deep research on this.
+[Deep research](<https://chatgpt.com/settings/plugins-settings/apps/connector_openai_deep_research>) Okay, let's develop this as a general design model. We need to work at the conceptual level first, and then we could rebuild the systems -- for example, the different types in our examples -- from the ground up using this model. Let's do some deep research on this.
 
 ---
 
@@ -548,7 +548,7 @@ Deep Research will present its research plan and deliver the full report in the 
 ## User -- turn 3
 
 
-Analyze the report. How could we start building the system from the ground up? Maybe we could begin with conceptualization. What are the main building blocks of the system--perhaps modes? What are the features of these building blocks? How could we combine them?
+Analyze the report. How could we start building the system from the ground up? Maybe we could begin with conceptualization. What are the main building blocks of the system -- perhaps modes? What are the features of these building blocks? How could we combine them?
 
 ---
 

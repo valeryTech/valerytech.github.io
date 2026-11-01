@@ -23,8 +23,6 @@ The original reply's five-layer sequence is preserved through the following link
 
 The existing [runtime evaluation plan]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks" >}}) proposes controlled execution tests. The retained passage below instead proposes studying recurring structures in work from practice. Neither proposal is selected or carried out by the reassembly.
 
-<a id="retained-failure-taxonomy-and-study-proposal"></a>
-
 ## Failure taxonomy and study proposal
 
 
@@ -120,9 +118,7 @@ unbounded retries
 ```
 
 
-This isn't purely theoretical. The recent HORIZON study finds that planning- and memory-related failures become increasingly important as task horizon grows, and explicitly distinguishes instruction, false-assumption, environment, planning and other failure categories. ([arXiv](https://arxiv.org/abs/2604.11978 "The Long-Horizon Task Mirage? Diagnosing Where and Why Agentic Systems Break")) Practitioners also report oversight occurring at several stages--before execution, through co-planning, during live monitoring, and after the fact--rather than through one generic "human-in-the-loop" checkpoint. ([arXiv](https://arxiv.org/abs/2606.05391 "[2606.05391] Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents"))
-
-<a id="how-id-study-this-from-practice"></a>
+This isn't purely theoretical. The recent HORIZON study finds that planning- and memory-related failures become increasingly important as task horizon grows, and explicitly distinguishes instruction, false-assumption, environment, planning and other failure categories. ([arXiv](https://arxiv.org/abs/2604.11978 "The Long-Horizon Task Mirage? Diagnosing Where and Why Agentic Systems Break")) Practitioners also report oversight occurring at several stages -- before execution, through co-planning, during live monitoring, and after the fact -- rather than through one generic "human-in-the-loop" checkpoint. ([arXiv](https://arxiv.org/abs/2606.05391 "[2606.05391] Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents"))
 
 ### Proposed field study
 
@@ -210,7 +206,7 @@ The deeper abstraction may eventually be **persistent collaborative work**:
 
 Then "long-running agent" becomes only one implementation of that much broader thing.
 
-That feels like a field structure worth pursuing, because it connects the practical engineering questions people currently ask--"How do you retry it? Where does it run?"--to the harder questions that appear once the system is actually trusted with work over hours, days, or indefinitely.
+That feels like a field structure worth pursuing, because it connects the practical engineering questions people currently ask -- "How do you retry it? Where does it run?" -- to the harder questions that appear once the system is actually trusted with work over hours, days, or indefinitely.
 
 ## Library sources
 

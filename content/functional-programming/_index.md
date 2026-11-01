@@ -13,16 +13,16 @@ Notes on programming with pure functions and composition. They cover evaluation 
 
 The notes sit in five subfolders that match the sections below, in reading order. Notes marked *(new)* were written from the library books they cite; the others grew out of earlier study notes. Each note ends with the library sources it draws on.
 
-Start with [FP reading paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}}) to pick a route through the books.
+Start with [Fp Reading Paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}}) to pick a route through the books.
 
 ## Foundations
 
 
-- [Pure functions and effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}): referential transparency, side effects, immutability, and the functional core with an imperative shell.
-- [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}): reduction and the substitution model, the Church-Rosser property, thunks and non-strict semantics, space leaks, and call-by-name in Scala.
-- [Lambda calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}): binding, function application and β-reduction, reduction strategies, Church encodings, and interactive tools.
-- [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}): lambdas and closures, returning functions as API design, currying and partial application, the loan pattern, and pipelines.
-- [Recursion and folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}): rules for writing recursive functions, map as abstracted recursion, `foldl` and `foldr` and their types, Foldable, and combinators built from folds.
+- [Pure Functions And Effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}): referential transparency, side effects, immutability, and the functional core with an imperative shell.
+- [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}): reduction and the substitution model, the Church-Rosser property, thunks and non-strict semantics, space leaks, and call-by-name in Scala.
+- [Lambda Calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}): binding, function application and β-reduction, reduction strategies, Church encodings, and interactive tools.
+- [Functions And Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}): lambdas and closures, returning functions as API design, currying and partial application, the loan pattern, and pipelines.
+- [Recursion And Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}): rules for writing recursive functions, map as abstracted recursion, `foldl` and `foldr` and their types, Foldable, and combinators built from folds.
 
 ## Abstractions
 
@@ -33,18 +33,18 @@ Start with [FP reading paths]({{< ref "functional-programming/05-practice/fp-rea
 - [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}) *(new)*: `traverse`, `sequenceA` and `traverse_`, how the applicative decides the behaviour, laws, and the essence of the iterator pattern.
 - [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}): binding pure functions together, and the Option, Writer, State, Reader and IO monads.
 - [Semigroup and monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}): associative combination, the identity element, the Haskell classes and their laws.
-- [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}): parametric and type-class polymorphism, type classes in Haskell and Scala, higher-kinded types, GADTs, and type-level programming.
-- [Category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}): why it is worth knowing, purity and denotational semantics, natural transformations, and links for learning it.
+- [Type Classes And Polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}): parametric and type-class polymorphism, type classes in Haskell and Scala, higher-kinded types, GADTs, and type-level programming.
+- [Category Theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}): why it is worth knowing, purity and denotational semantics, natural transformations, and links for learning it.
 
 ## Building programs
 
 
 - [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) *(new)*: why not exceptions, `Option`, `Either` and `Try`, fail-fast versus accumulating validation, typed errors in effect types, and converting at boundaries.
-- [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) *(new)*: effects as values, the effect pattern, a toy IO, Haskell `IO`, Cats Effect 3, ZIO, and a comparison of the three; also the former Cats note.
-- [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) *(new)*: monad transformers, mtl-style classes, service handles and `ReaderT`, free monads, tagless final, ZIO layers, and when to pick which.
+- [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) *(new)*: effects as values, the effect pattern, a toy IO, Haskell `IO`, Cats Effect 3, ZIO, and a comparison of the three; also the former Cats note.
+- [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) *(new)*: monad transformers, mtl-style classes, service handles and `ReaderT`, free monads, tagless final, ZIO layers, and when to pick which.
 - [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) *(new)*: lazy lists, why laziness gives modularity, effectful pull-based streams (fs2, conduit, pipes), resource safety, backpressure, and stream fusion.
 - [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) *(new)*: deterministic parallelism in Haskell, threads and STM, fibers in Cats Effect and ZIO, and purely functional parallelism as a design exercise.
-- [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) *(new)*: properties instead of examples, generators and shrinking, where good properties come from, and testing type-class laws.
+- [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) *(new)*: properties instead of examples, generators and shrinking, where good properties come from, and testing type-class laws.
 
 ## Languages
 
@@ -55,22 +55,22 @@ Start with [FP reading paths]({{< ref "functional-programming/05-practice/fp-rea
 ## Practice and study
 
 
-- [FP reading paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}}): goal-ordered routes through the library (Scala, Haskell, application design, theory), followed by the original article, course and talk links.
+- [Fp Reading Paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}}): goal-ordered routes through the library (Scala, Haskell, application design, theory), followed by the original article, course and talk links.
 - [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}): Haskell examples: a Collatz step counter, replacing partial functions with types that carry the guarantee, and wholemeal programming.
-- [Exercises and projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}): exercise collections, specific problems, learning tasks, and project ideas.
+- [Exercises And Projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}): exercise collections, specific problems, learning tasks, and project ideas.
 - [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}): a dated log from November and December 2023 on folds, fusion, unfolds, laziness and traversals.
 - [FP links to sort]({{< ref "functional-programming/05-practice/to-sort" >}}): unfiled links, open questions and todos, grouped by where they should end up.
 
 ## Related material elsewhere
 
 
-The [type-driven design]({{< ref "type-driven-design" >}}) section holds the typed-modeling material that used to sit in these notes:
+The [Type Driven Design]({{< ref "type-driven-design" >}}) section holds the typed-modeling material that used to sit in these notes:
 
-- [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}): effects kept out of the domain, and modules as algebras with interpreters.
-- [Effects, interpreters and wiring]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}): Reader and Kleisli, free monads, ZIO and algebraic effects; [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}) has a note of its own.
-- [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}) and [Newtypes and simple values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}): product and sum types and newtypes, moved from `haskell.md` and `scala.md`; the folder's overview, including type-first design moved from `haskell.md`, is [Domain modeling with types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}).
-- [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}): abstract types, nominal and structural subtyping, and refined types, moved from `scala.md`.
-- [Declarative design]({{< ref "type-driven-design/04-architecture/declarative-design" >}}): functional programming as one of the declarative sub-paradigms.
+- [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}): effects kept out of the domain, and modules as algebras with interpreters.
+- [Effects, interpreters and wiring]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}): Reader and Kleisli, free monads, ZIO and algebraic effects; [Tagless Final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}) has a note of its own.
+- [Algebraic Data Types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}) and [Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}): product and sum types and newtypes, moved from `haskell.md` and `scala.md`; the folder's overview, including type-first design moved from `haskell.md`, is [Domain Modeling With Types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}).
+- [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}): abstract types, nominal and structural subtyping, and refined types, moved from `scala.md`.
+- [Declarative Design]({{< ref "type-driven-design/04-architecture/declarative-design" >}}): functional programming as one of the declarative sub-paradigms.
 
 Other notes:
 

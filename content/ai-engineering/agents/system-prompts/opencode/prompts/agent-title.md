@@ -28,6 +28,6 @@ Examples:
 
 "compare the new cache layer with the v1 one in packages/legacy" -> New cache layer vs v1
 
-"Investigate https://github.com/acme/app/issues/412, don't make edits" -> Issue #412
+"Investigate [acme/app issue #412 on GitHub](https://github.com/acme/app/issues/412), don't make edits" -> Issue #412
 
 "hey" -> Greeting

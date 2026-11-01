@@ -27,11 +27,11 @@ flowchart LR
 | Note | Question it answers |
 | --- | --- |
 | [System models and failures]({{< ref "engineering/distributed-systems/system-models" >}}) | What can go wrong, and what does an algorithm assume about it? |
-| [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}) | How do nodes agree on the order of events without a shared clock? |
+| [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}) | How do nodes agree on the order of events without a shared clock? |
 | [Consistency guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}) | What can a replicated system promise, and what does each promise cost? Includes CAP and PACELC. |
-| [Broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}) | How do nodes agree on a value or an order of operations when some may fail? |
-| [Coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}) | When can replicas proceed without agreeing, and what do they give up? |
-| [Distributed computation]({{< ref "engineering/distributed-systems/distributed-computation" >}}) | How is a computation split across machines, and how is the result kept correct when parts fail? |
+| [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}) | How do nodes agree on a value or an order of operations when some may fail? |
+| [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}) | When can replicas proceed without agreeing, and what do they give up? |
+| [Distributed Computation]({{< ref "engineering/distributed-systems/distributed-computation" >}}) | How is a computation split across machines, and how is the result kept correct when parts fail? |
 | [Verification]({{< ref "engineering/distributed-systems/verification" >}}) | How do you gain confidence that a distributed protocol or system is correct? |
 
 **Mechanism notes:**
@@ -57,12 +57,12 @@ The [reading list]({{< ref "engineering/distributed-systems/reading" >}}) has co
 ## How it connects
 
 
-- **Data at scale:** replication, partitioning, hashing, coordination services, and Dynamo-style stores appear as options in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}). The [coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination) section is the short version of the consensus and time notes.
-- **Consistency requirements:** the requirement side, deciding what each operation needs, is in [consistency]({{< ref "system-design/nfr/consistency" >}}). It links back here for the models and theorems.
-- **Across services:** sagas and the transactional outbox in [data across services]({{< ref "system-design/elements/data-across-services" >}}) are what replaces distributed transactions between services.
-- **Messaging:** consumer-group rebalancing and task scheduling in [messaging]({{< ref "system-design/elements/messaging" >}}) rely on leases, idempotency, and at-least-once delivery.
-- **Failure handling:** [containing failure]({{< ref "system-design/elements/containing-failure" >}}) covers timeouts and retries in callers; [system models]({{< ref "engineering/distributed-systems/system-models" >}}) covers why a timeout cannot tell a slow node from a dead one.
-- **Control planes:** Kubernetes keeps its state in etcd, a consensus store; see the [control plane]({{< ref "system-design/elements/control-plane" >}}).
+- **Data at scale:** replication, partitioning, hashing, coordination services, and Dynamo-style stores appear as options in [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}). The [coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination) section is the short version of the consensus and time notes.
+- **Consistency requirements:** the requirement side, deciding what each operation needs, is in [Consistency]({{< ref "system-design/nfr/consistency" >}}). It links back here for the models and theorems.
+- **Across services:** sagas and the transactional outbox in [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}) are what replaces distributed transactions between services.
+- **Messaging:** consumer-group rebalancing and task scheduling in [Messaging]({{< ref "system-design/elements/messaging" >}}) rely on leases, idempotency, and at-least-once delivery.
+- **Failure handling:** [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}) covers timeouts and retries in callers; [System Models]({{< ref "engineering/distributed-systems/system-models" >}}) covers why a timeout cannot tell a slow node from a dead one.
+- **Control planes:** Kubernetes keeps its state in etcd, a consensus store; see the [Control Plane]({{< ref "system-design/elements/control-plane" >}}).
 
 ## Library sources
 

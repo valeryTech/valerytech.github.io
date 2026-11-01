@@ -17,9 +17,9 @@ Scope questions: How should products that analyze complex information and provid
 
 **"Reporting and audit assistant" is too narrow** for the work considered here. The report is one possible result of the work. The more fundamental purpose is to help people understand complex information, discover relevant patterns, evaluate evidence, and develop findings they can use.
 
-The audit example makes this distinction concrete. analytical.md describes a system where users select from predefined analyses, but the underlying accounting data can vary enormously. The complexity comes from interpreting the data and its relationships, even though the user interaction may be as simple as clicking a button.
+The audit example makes this distinction concrete. [[analytical]] describes a system where users select from predefined analyses, but the underlying accounting data can vary enormously. The complexity comes from interpreting the data and its relationships, even though the user interaction may be as simple as clicking a button.
 
-The other documents expand the purpose: identifying changes, connecting findings, distinguishing observations from interpretations, finding missing evidence, and directing auditors toward further investigation. The draft report records a preliminary assessment; the auditor remains responsible for professional judgment. analysis-1.md
+The other documents expand the purpose: identifying changes, connecting findings, distinguishing observations from interpretations, finding missing evidence, and directing auditors toward further investigation. The draft report records a preliminary assessment; the auditor remains responsible for professional judgment. [[analysis-1]]
 
 **AI-assisted analysis and investigation** is a proposed working name for the broader area. It may contain several meaningfully different kinds of products. Those differences need examination before treating it as a single category.
 
@@ -49,9 +49,9 @@ Both may eventually produce the same report.
 
 The difficulty may come from the volume of records, the number of information sources, the relationships between records, or the domain knowledge required to understand them.
 
-The audit example examines journal-entry sources, preparers, account pairings, timing, and posting patterns. Each analysis provides part of the picture. The system must connect relevant findings to develop a more complete understanding. prompts-input.md
+The audit example examines journal-entry sources, preparers, account pairings, timing, and posting patterns. Each analysis provides part of the picture. The system must connect relevant findings to develop a more complete understanding. [[prompts-input]]
 
-A significant design question is what information is actually available. A summarized analytical view may reveal a pattern but lack the underlying transactions needed to explain it. analysis-2.md
+A significant design question is what information is actually available. A summarized analytical view may reveal a pattern but lack the underlying transactions needed to explain it. [[analysis-2]]
 
 #### Findings and justified interpretations
 
@@ -60,7 +60,7 @@ The system performs more than extraction or summarization.
 
 Consider a new source of journal entries that coincides with a new account pairing and concentrated year-end activity. The system might establish those observations and suggest that they warrant investigation. It cannot conclude from those facts alone that an accounting error or new transaction process exists.
 
-This supports a useful distinction among **observations, derived results, interpretations, hypotheses, and unresolved questions**. The application needs to preserve the relationships between them, including the supporting data and calculations. These distinctions are explicit in the audit prompts. prompts-input.md
+This supports a useful distinction among **observations, derived results, interpretations, hypotheses, and unresolved questions**. The application needs to preserve the relationships between them, including the supporting data and calculations. These distinctions are explicit in the audit prompts. [[prompts-input]]
 
 #### Investigation and developing understanding
 
@@ -78,7 +78,7 @@ The audit example also highlights a distinct risk.
 
 A closed-set task assistant controls the risk of unintended operations. An analytical assistant can cause problems through **incorrect conclusions, omitted findings, or misleading prioritization**, even when it has only read access.
 
-The assurance notes describe a concern about *attention shadowing*: when the system highlights some findings, the user may overlook other relevant matters that the system failed to surface. assurance.md
+The assurance notes describe a concern about *attention shadowing*: when the system highlights some findings, the user may overlook other relevant matters that the system failed to surface. [[assurance]]
 
 This raises concrete engineering questions about evidence traceability, quantitative correctness, coverage, uncertainty, and how the system communicates limitations.
 
@@ -118,7 +118,7 @@ An open question is whether **analytical assessment and investigation are genuin
 ## Coexistence within one analytical process
 
 
-**Predefined analysis, open-ended investigation, and synthesis can coexist within one product--and even within the same analytical process.**
+**Predefined analysis, open-ended investigation, and synthesis can coexist within one product -- and even within the same analytical process.**
 
 In the audit example:
 
@@ -147,3 +147,9 @@ These are candidate characteristics supported by this example, rather than a com
 A useful distinction from the closed-set task assistant case is: **the system can have a predefined set of available analytical operations while still supporting open-ended investigation.** The flexibility lies in the questions asked, the evidence examined, and the way the investigation develops.
 
 The proposed approach does not yet separate reporting, analytical assessment, and investigation into three product types. Instead, it examines how they relate within one system and what additional requirements arise with more exploratory work. This provides a concrete basis for understanding which parts can be combined and what each addition costs architecturally.
+
+## Related notes
+
+
+- [Phased]({{< ref "projects/phased" >}}) ([GitHub](https://github.com/valery-judah/phased)) prototypes this analytical-assessment workflow on two-year Accounts Payable summary views, testing *attention shadowing*, table `grain`, and decoupled five-stage evaluation in code.
+- Assurance product framing works from an audit example too and asks what an auditor must establish and what the system must guarantee before deciding where LLMs belong.

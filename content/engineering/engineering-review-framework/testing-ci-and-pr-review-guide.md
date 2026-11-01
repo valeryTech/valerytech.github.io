@@ -24,7 +24,7 @@ Choose tests according to the behavior and risk involved. The supporting referen
 
 Base expected results on the requirements and supported behavior. Include useful regression coverage for a bug fix and relevant boundary or failure cases for new behavior. Review test expectations, setup, and assertions as part of the change. Google's guidance treats test validity and maintainability as review concerns in their own right.[1]
 
-A test suite does not need every test type for every change. Use a combination that can establish the important behavior without unnecessary duplication or fragile setup. Numerical quality targets belong to the [Requirements and Quality Targets]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}}) note and the project's requirements.
+A test suite does not need every test type for every change. Use a combination that can establish the important behavior without unnecessary duplication or fragile setup. Numerical quality targets belong to the [Requirements And Quality Targets]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}}) note and the project's requirements.
 
 [Independent verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}#2-design-verification-independently) derives expected behavior, reliability properties, and consequential failure scenarios separately from the proposed implementation. It distinguishes deciding what to verify from making those checks executable with real system knowledge.
 
@@ -95,7 +95,7 @@ External references checked on 2026-04-20. The workflow guidance above is a reco
 ## Related documents
 
 
-[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}) · [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}})
+[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [Llm Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}) · [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}})
 
 ## Library sources
 

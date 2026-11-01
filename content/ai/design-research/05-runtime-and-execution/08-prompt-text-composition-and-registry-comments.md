@@ -39,11 +39,11 @@ Deterministic rendering also requires a defined renderer version and reference-r
 
 The dialogue proposes unchanged published versions and editable drafts, but it does not define publication enforcement, competing edits, review, or retention of referenced content. Permission to edit or publish a prompt is separate from permission to promote it into production or run tools with external effects. The [trusted-effect discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) retains the related authority distinctions.
 
-The workbench note concerns inspection and intervention. The [configuration note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) concerns starting a selected system revision. Links connect the proposals without adopting one shared schema.
+The [workbench note]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}) concerns inspection and intervention. The [configuration note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) concerns starting a selected system revision. Links connect the proposals without adopting one shared schema.
 
 ## Source accounting and limits
 
 
-The prompt-registry archive (archived source 014) remains unchanged. Its body is an exact prefix of the longer configuration dialogue's body. The audit maps both histories to the shared retained text, which was imported once.
+The prompt-registry archive (archived source 014) remains unchanged. Its body is an exact prefix of the longer configuration dialogue's body. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) maps both histories to the shared retained text, which was imported once.
 
 Saved product descriptions and template-library claims were not independently verified. Plain-writing guided only the new commentary and navigation, not the retained source text.

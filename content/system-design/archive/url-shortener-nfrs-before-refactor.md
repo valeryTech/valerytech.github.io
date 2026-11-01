@@ -30,12 +30,12 @@ Preserved notes from before the March 19, 2026 refactor. [Return to the working 
 
 
 - **Availability (Resolve -- CV):** v1 **99.9%** measured at the edge (successful redirects / total resolves). Error budget ≈ 0.1%.
-- **Latency (Resolve -- CV):** p95 **< 100 ms** end‑to‑end for cached redirects.
+- **Latency (Resolve -- CV):** p95 **< 100 ms** end-to-end for cached redirects.
 - **Consistency:** **Availability > Consistency** for resolve; creation can be eventually consistent globally. (numbers?)
-- **Scalability:** Keyspace sufficient for ≥ **1B** links (e.g., random base62 length≥6). Read‑heavy ratio; design read path for high QPS (addition) handle **tens of thousands QPS** read peaks.
-- **Security/Abuse:** Basic anti‑abuse: rate limits per IP/key, blocklist of malicious domains, reserved aliases.
+- **Scalability:** Keyspace sufficient for ≥ **1B** links (e.g., random base62 length≥6). Read-heavy ratio; design read path for high QPS (addition) handle **tens of thousands QPS** read peaks.
+- **Security/Abuse:** Basic anti-abuse: rate limits per IP/key, blocklist of malicious domains, reserved aliases.
 - **Observability (min):** Metrics for resolve success rate, latency; structured errors for create.
-> **Upgrade path (only if needed):** 99.99% Resolve ⇒ multi‑region active/active + edge KV + dependency SLOs.
+> **Upgrade path (only if needed):** 99.99% Resolve ⇒ multi-region active/active + edge KV + dependency SLOs.
 
 Traceability to Non-Functional Requirements (why FR choices matter)
 

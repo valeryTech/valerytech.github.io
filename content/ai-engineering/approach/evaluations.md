@@ -68,7 +68,7 @@ That decision starts from a candidate solution, the evidence supporting it, the 
 
 The next question is what the team is prepared to support. Evaluation helps establish the behavioral part of that commitment. It provides evidence about what the system currently does, where its boundaries appear to be, and which important uncertainties remain.
 
-Architecture, controls, release engineering, and operations provide the means to fulfill the commitment. A production commitment could be framed also as an [solution utility ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
+Architecture, controls, release engineering, and operations provide the means to fulfill the commitment. A production commitment could be framed also as an [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
 
 ## Evaluation during delivery
 

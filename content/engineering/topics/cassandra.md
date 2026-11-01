@@ -19,11 +19,11 @@ Eventual consistency is one of several consistency models available to architect
 
 Apache Spark + Cassandra
 
-connector: <https://github.com/datastax/spark-cassandra-connector>
+connector: [datastax/spark-cassandra-connector (GitHub)](https://github.com/datastax/spark-cassandra-connector)
 
-<https://opencredo.com/blogs/new-blog-series-spark-the-pragmatic-bits/>
+[New Blog Series: Spark - The Pragmatic Bits](https://opencredo.com/blogs/new-blog-series-spark-the-pragmatic-bits/)
 
-<https://opencredo.com/blogs/data-analytics-using-cassandra-and-spark/>
+[Data Analytics using Cassandra and Spark](https://opencredo.com/blogs/data-analytics-using-cassandra-and-spark/)
 
 <https://www.youtube.com/watch?v=o3TCpSWySJo>
 

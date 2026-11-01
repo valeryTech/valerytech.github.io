@@ -23,9 +23,9 @@ CPG-based slicing is the default context builder: `(query, seed nodes) -> slice`
 1. **Ingestion and modeling.** CPG builder (Tree-sitter or existing CPG tooling); trace collector (OpenTelemetry-style traces and logs); SDLC graph constructor (Git, PRs, tickets, docs). An offline job extracts docstrings, signatures, test names and PR descriptions and generates a short summary per symbol (purpose, intent, risks), stored as node properties.
 2. **Graph and index.** The software knowledge graph in a property-graph database (Neo4j, JanusGraph, Neptune), plus vector and lexical indices keyed by the same node IDs.
 3. **Analysis services.** Stateless services that operate on the graph and return graph slices with metadata:
-   - *Program slicing*: backward slices of data dependencies or forward slices of effects from a seed node.
-   - *Data-flow and taint tracking*: from a source (user input, deserialization) to optional sinks (database writes, network calls), for security and privacy questions.
-   - *Type and invariant annotation*: type checkers (Pyright, mypy, TypeScript) plus lightweight rule engines for security rules and coding standards, as in static-analysis-plus-LLM hybrids.
+	- *Program slicing*: backward slices of data dependencies or forward slices of effects from a seed node.
+	- *Data-flow and taint tracking*: from a source (user input, deserialization) to optional sinks (database writes, network calls), for security and privacy questions.
+	- *Type and invariant annotation*: type checkers (Pyright, mypy, TypeScript) plus lightweight rule engines for security rules and coding standards, as in static-analysis-plus-LLM hybrids.
 4. **Orchestration and reasoning.** The hybrid control loop below.
 5. **Experience.** Task-specific flows: investigate an incident, propose a refactor, plan a change.
 
@@ -103,5 +103,5 @@ Delivering one of these end to end would test the combination better than buildi
 - LLMxCPG, CPG-based slicing for LLM vulnerability detection: [arXiv:2507.16585](https://arxiv.org/abs/2507.16585)
 - Panta, hybrid static and dynamic analysis for LLM test generation: [arXiv:2503.13580](https://arxiv.org/abs/2503.13580)
 - Hybrid automated program repair with LLMs (TOSEM): [doi:10.1145/3715004](https://doi.org/10.1145/3715004)
-- Trace-RAG for debugging: <https://debugg.ai/resources/trace-rag-for-code-debugging-ai-grounding-fixes-in-production-evidence>
-- Rule engine and LLM hybrids for safer code generation: <https://hackernoon.com/rule-engine-llm-hybrid-architectures-for-safer-code-generation>
+- [Trace-RAG for debugging](https://debugg.ai/resources/trace-rag-for-code-debugging-ai-grounding-fixes-in-production-evidence)
+- [Rule engine and LLM hybrids for safer code generation](https://hackernoon.com/rule-engine-llm-hybrid-architectures-for-safer-code-generation)

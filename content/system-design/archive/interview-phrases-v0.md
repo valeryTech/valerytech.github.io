@@ -82,7 +82,7 @@ Weak interview candidates are scared to ever utter the phrase "I don't know." St
 
 Before we tell you exactly what words to say, let's unpack a concept. There are different levels of "not knowing." Sometimes you have no clue. Sometimes you have a clue. And other times, you're certain.
 
-<https://interviewing.io/guides/system-design-interview/part-two#c-exactly-what-words-to-say-in-specific-scenarios>
+[interviewing.io guide, part two: exactly what words to say in specific scenarios](https://interviewing.io/guides/system-design-interview/part-two#c-exactly-what-words-to-say-in-specific-scenarios)
 
 # Questions
 

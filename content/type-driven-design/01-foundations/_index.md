@@ -9,10 +9,10 @@ linkTitle: "Foundations"
 # Foundations
 
 
-What a type system proves and how, and how to decide which properties are worth putting into types. Part of [Type-driven design]({{< ref "type-driven-design" >}}).
+What a type system proves and how, and how to decide which properties are worth putting into types. Part of [Type Driven Design]({{< ref "type-driven-design" >}}).
 
-- [Type systems]({{< ref "type-driven-design/01-foundations/type-systems" >}}): Pierce's definition, soundness and conservativity, and what type systems buy.
-- [Dimensions of type systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}): static, dynamic and gradual checking; safety and what "strong" means; nominal and structural equivalence.
-- [Type inference]({{< ref "type-driven-design/01-foundations/type-inference" >}}): inference as ergonomics, and where it stops as type systems get more expressive.
-- [Types as propositions]({{< ref "type-driven-design/01-foundations/types-as-propositions" >}}): the Curry-Howard correspondence and how far ordinary languages honour it.
+- [Type Systems]({{< ref "type-driven-design/01-foundations/type-systems" >}}): Pierce's definition, soundness and conservativity, and what type systems buy.
+- [Dimensions Of Type Systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}): static, dynamic and gradual checking; safety and what "strong" means; nominal and structural equivalence.
+- [Type Inference]({{< ref "type-driven-design/01-foundations/type-inference" >}}): inference as ergonomics, and where it stops as type systems get more expressive.
+- [Types As Propositions]({{< ref "type-driven-design/01-foundations/types-as-propositions" >}}): the Curry-Howard correspondence and how far ordinary languages honour it.
 - [What belongs in the type system]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}): types, contracts, runtime checks and tests; good targets; a decision procedure; where types stop matching reality; costs and failure modes.

@@ -31,7 +31,7 @@ For the method of analysing a single trade-off (objectives, criteria, alternativ
 | Latency versus throughput | Each item is handled at once. | Batching cuts round trips and cost per item. | The latency budget against the cost per call. | [Scalability]({{< ref "system-design/nfr/scalability" >}}#trade-offs-to-revisit) |
 | Stateless versus stateful services | Instances can be added, replaced, and load balanced freely. | No extra hop to a store; state stays near the computation. | Whether the state can live in a shared store within the latency budget. | [Horizontal duplication]({{< ref "system-design/nfr/scalability" >}}#horizontal-duplication) |
 | Managed versus self-hosted | Less operations work and a faster start. | Control, cost at large scale, and no lock-in. | The team's operating capacity and the scale at which the managed price exceeds the cost of running it. | [Deployment]({{< ref "system-design/elements/operating-services" >}}#deployment) |
-| Simple now versus general for later | Less to build and understand. | No rework when the anticipated need arrives. | Evidence that the need will arrive, and the cost of the move when it does. | [Defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) |
+| Simple now versus general for later | Less to build and understand. | No rework when the anticipated need arrives. | Evidence that the need will arrive, and the cost of the move when it does. | [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) |
 
 ## Precompute versus compute on read
 
@@ -44,7 +44,7 @@ The same choice appears with materialized views, leaderboards, and search indexe
 
 
 - In a design, name the trade-off, the side chosen, and the signal from the requirements that chose it. That is one sentence per decision.
-- Record the signal that would reverse the choice as a trigger; see [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
+- Record the signal that would reverse the choice as a trigger; see [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
 - Most trade-offs are decided per operation, not per system. A booking and a feed in the same product can sit on opposite sides.
 
 ## Library sources

@@ -372,8 +372,8 @@ This is essential for deciding PASS/FAIL/INCONCLUSIVE.
 ### Offline/Online aggregation
 
 
-- Tier‑1 slice matrix (small and gate-safe)
-- Tier‑2 diagnostic regimes and driver metrics
+- Tier-1 slice matrix (small and gate-safe)
+- Tier-2 diagnostic regimes and driver metrics
 - Uncertainty and sample sizes
 
 ### Decision artifacts
@@ -399,7 +399,7 @@ This is essential for deciding PASS/FAIL/INCONCLUSIVE.
 
 - RFC: AI Systems Framework -- Overview and Adoption
 - Instrumentation Guide for Chat + RAG
-- Tier‑1 slice catalog for chat+RAG
+- Tier-1 slice catalog for chat+RAG
 - Fingerprinting spec
 - Change detection spec
 - Gates policy spec

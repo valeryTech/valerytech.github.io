@@ -36,7 +36,7 @@ Using the Tickloom Replica abstraction, implement a quorum-based key-value store
 
 This high level description produces code like following:
 
-```
+```java
 @Override
 protected Map<MessageType, Handler> initialiseHandlers() {
     return Map.of(
@@ -106,7 +106,7 @@ The article's closing discussions of [LLM roles during design and use]({{< ref "
 
 Implementing the algorithm is one thing; exercising it is another. The subtle bugs in distributed systems live in specific orderings: a write that replicates to one node before a reader's quorum shifts, a partition that heals at just the wrong moment, two coordinators whose clocks have drifted apart. Writing such a scenario directly against the testkit involves juggling futures, and manual `tick()` loops. Here is a clock-skew scenario written that way:
 
-```
+```java
 Cluster cluster = new Cluster()
         .withProcessIds(Arrays.asList(ATHENS, BYZANTIUM, CYRENE))
         .useSimulatedNetwork()
@@ -146,7 +146,7 @@ The intent -- "Bob writes through Byzantium, Alice writes through Athens, a read
 
 So on top of the semantic model I built an internal DSL whose vocabulary is the vocabulary of the scenario itself -- servers, clients, who is connected to whom, what each client does, and which faults are in effect while it does it. The same scenario becomes:
 
-```
+```java
 Scenario<QuorumReplicaClient> scenario =                        
                 QuorumStepBuilder.scenario("LWW lost update via server clock skew")
                 .servers(ATHENS, BYZANTIUM, CYRENE)
@@ -175,7 +175,7 @@ Using the Tickloom scenario DSL, write a scenario reproducing the DDIA §10.6 no
 
 yields a scenario that stays entirely within the DSL's constrained vocabulary:
 
-```
+```java
 Scenario<QuorumReplicaClient> scenario =
         QuorumStepBuilder.scenario("Non-linearizable quorum read")
                 .servers(ATHENS, BYZANTIUM, CYRENE)

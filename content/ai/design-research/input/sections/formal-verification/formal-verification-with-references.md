@@ -73,7 +73,7 @@ The following are operational definitions suitable for engineering. They intenti
 
 | Goal | Formalization | Useful measurable properties |
 |---|---|---|
-| **Safety** | Define a set of bad states or events \(B\). A deterministic invariant is \( \forall\tau\in Traces(\mathcal S),\, G\,\neg B \). Temporal forms can require, for example, that a dangerous action is never executed before authorization. | Number of reachable violating states; percentage of privileged transitions covered by the invariant; runtime violation/block rate; false-permit and false-reject rates of the enforcement layer; time from risky proposal to intervention. |
+| **Safety** | Define a set of bad states or events \(B\). A deterministic invariant is \(\forall\tau\in Traces(\mathcal S),\, G\,\neg B\). Temporal forms can require, for example, that a dangerous action is never executed before authorization. | Number of reachable violating states; percentage of privileged transitions covered by the invariant; runtime violation/block rate; false-permit and false-reject rates of the enforcement layer; time from risky proposal to intervention. |
 | **Robustness** | For a permitted perturbation relation \(R_\delta(x,x')\), require preservation of an invariant or bounded output difference: \(R_\delta(x,x')\Rightarrow d(O(x),O(x'))\le\epsilon\). For an agent, the more useful property is often "security-relevant decisions remain invariant under untrusted-context perturbations." | Certified input radius for tractable neural components; worst-case policy violation over an explicit perturbation set; percentage of security-sensitive decisions invariant to prompt/document perturbations; counterexamples found. Marabou is an example of a verifier that can prove a specified neural property over an analyzed region or return a violating input. [^16] |
 | **Specification conformance** | Use pre/postconditions \(P(s,a)\Rightarrow Q(s,a,s')\), a refinement relation between implementation and abstract model, or temporal formulas such as `request -> F response`. | Percentage of critical APIs with checked pre/postconditions; proof-obligation pass rate; state-machine properties proved; escaped counterexamples; contract coverage of privileged transitions. |
 | **Data provenance** | Represent artifacts and transformations as a provenance graph. A derived artifact is acceptable only if its lineage consists of approved sources and transformations and the bound identifiers/hashes correspond to what execution consumed. | Percentage of production outputs with complete machine-replayable lineage; number of missing or unverifiable lineage edges; fraction of model inputs bound to immutable versions; replay success rate. |
@@ -489,114 +489,114 @@ Formal verification is strongest where a system crosses from uncertain reasoning
 ## References
 
 
-[^1]: LeanDojo: Theorem Proving with Retrieval-Augmented Language Models. <https://arxiv.org/abs/2306.15626>
+[^1]: LeanDojo: Theorem Proving with Retrieval-Augmented Language Models. [arXiv:2306.15626](https://arxiv.org/abs/2306.15626)
 
-[^2]: CoqPyt: Proof Navigation in Python in the Era of LLMs. <https://arxiv.org/html/2405.04282v1>
+[^2]: CoqPyt: Proof Navigation in Python in the Era of LLMs. [arXiv:2405.04282v1](https://arxiv.org/abs/2405.04282v1)
 
-[^3]: FVEL: Interactive Formal Verification Environment with Large Language Models via Theorem Proving. <https://arxiv.org/abs/2406.14408>
+[^3]: FVEL: Interactive Formal Verification Environment with Large Language Models via Theorem Proving. [arXiv:2406.14408](https://arxiv.org/abs/2406.14408)
 
-[^4]: Zhe Hou, Vibe Coding an LLM-powered Theorem Prover (Isabellm), 2026. <https://arxiv.org/abs/2601.04653>
+[^4]: Zhe Hou, Vibe Coding an LLM-powered Theorem Prover (Isabellm), 2026. [arXiv:2601.04653](https://arxiv.org/abs/2601.04653)
 
-[^5]: AWS, Introducing Cedar Analysis: Open Source Tools for Verifying Authorization Policies. <https://aws.amazon.com/blogs/opensource/introducing-cedar-analysis-open-source-tools-for-verifying-authorization-policies/>
+[^5]: AWS, [Introducing Cedar Analysis: Open Source Tools for Verifying Authorization Policies](https://aws.amazon.com/blogs/opensource/introducing-cedar-analysis-open-source-tools-for-verifying-authorization-policies/).
 
-[^6]: Cedar formal specification and analysis implementation (Lean). <https://github.com/cedar-policy/cedar-spec>
+[^6]: Cedar formal specification and analysis implementation (Lean). [cedar-policy/cedar-spec on GitHub](https://github.com/cedar-policy/cedar-spec)
 
-[^7]: Leslie Lamport, TLA+ resources. <https://lamport.azurewebsites.net/tla/tla.html>
+[^7]: Leslie Lamport, TLA+ resources. [My TLA+ Home Page](https://lamport.azurewebsites.net/tla/tla.html)
 
-[^8]: Apalache: The Symbolic Model Checker for TLA+. <https://apalache-mc.org/>
+[^8]: [Apalache: The Symbolic Model Checker for TLA+](https://apalache-mc.org/).
 
-[^9]: Spin: Formal Verification. <https://spinroot.com/>
+[^9]: Spin: Formal Verification. [Spin: Formal Verification](https://spinroot.com/)
 
-[^10]: nuXmv: A Symbolic Model Checker. <https://es-static.fbk.eu/tools/nuxmv/>
+[^10]: [nuXmv: A Symbolic Model Checker](https://es-static.fbk.eu/tools/nuxmv/).
 
-[^11]: PRISM: Probabilistic Symbolic Model Checker. <https://www.prismmodelchecker.org/>
+[^11]: [PRISM: Probabilistic Symbolic Model Checker](https://www.prismmodelchecker.org/).
 
-[^12]: Storm: A Modern Probabilistic Model Checker. <https://www.stormchecker.org/>
+[^12]: [Storm: A Modern Probabilistic Model Checker](https://www.stormchecker.org/).
 
-[^13]: AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents. <https://arxiv.org/abs/2503.18666>
+[^13]: AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents. [arXiv:2503.18666](https://arxiv.org/abs/2503.18666)
 
-[^14]: AgentSpec implementation. <https://github.com/haoyuwang99/AgentSpec>
+[^14]: AgentSpec implementation. [haoyuwang99/AgentSpec on GitHub](https://github.com/haoyuwang99/AgentSpec)
 
-[^15]: Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization. <https://arxiv.org/abs/2403.04651>
+[^15]: Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization. [arXiv:2403.04651](https://arxiv.org/abs/2403.04651)
 
-[^16]: Marabou: Neural Network Verification. <https://github.com/NeuralNetworkVerification/Marabou>
+[^16]: [Marabou: Neural Network Verification](https://github.com/NeuralNetworkVerification/Marabou).
 
-[^17]: Vehicle: A Toolkit for Enforcing Logical Specifications on Neural Networks. <https://drops.dagstuhl.de/entities/artifact/10.4230/artifacts.23126/gotoContentUri/0>
+[^17]: [Vehicle: A Toolkit for Enforcing Logical Specifications on Neural Networks](https://drops.dagstuhl.de/entities/artifact/10.4230/artifacts.23126/gotoContentUri/0).
 
-[^18]: The Vehicle Tutorial: Neural Network Verification with Vehicle. <https://research.birmingham.ac.uk/en/publications/the-vehicle-tutorial-neural-network-verification-with-vehicle/>
+[^18]: [The Vehicle Tutorial: Neural Network Verification with Vehicle](https://research.birmingham.ac.uk/en/publications/the-vehicle-tutorial-neural-network-verification-with-vehicle/).
 
-[^19]: Pro2Guard: Proactive Runtime Enforcement of LLM Agent Safety via Probabilistic Model Checking. <https://arxiv.org/abs/2508.00500>
+[^19]: Pro2Guard: Proactive Runtime Enforcement of LLM Agent Safety via Probabilistic Model Checking. [arXiv:2508.00500](https://arxiv.org/abs/2508.00500)
 
-[^20]: seL4: What the Proofs Assume. <https://sel4.systems/Verification/assumptions.html>
+[^20]: [seL4: What the Proofs Assume](https://sel4.systems/Verification/assumptions.html).
 
-[^21]: Lean Programming Language, official website. <https://lean-lang.org/>
+[^21]: Lean Programming Language, official website. [Lean Programming Language](https://lean-lang.org/)
 
-[^22]: Mathlib: Mathematical Library for Lean 4. <https://github.com/leanprover-community/mathlib4>
+[^22]: [Mathlib: Mathematical Library for Lean 4](https://github.com/leanprover-community/mathlib4).
 
-[^23]: Lean 4.33.0 Release Notes (2026-02-10). <https://lean-lang.org/doc/reference/latest/releases/v4.33.0/>
+[^23]: [Lean 4.33.0 Release Notes](https://lean-lang.org/doc/reference/latest/releases/v4.33.0/) (2026-02-10).
 
-[^24]: Reservoir: Lean Package Registry. <https://reservoir.lean-lang.org/packages>
+[^24]: [Reservoir: Lean Package Registry](https://reservoir.lean-lang.org/packages).
 
-[^25]: LeanDojo-v2: AI-Assisted Theorem Proving in Lean 4. <https://github.com/lean-dojo/LeanDojo-v2>
+[^25]: [LeanDojo-v2: AI-Assisted Theorem Proving in Lean 4](https://github.com/lean-dojo/LeanDojo-v2).
 
-[^26]: Lean Programming Language: Frequently Asked Questions. <https://lean-lang.org/faq/>
+[^26]: [Lean Programming Language: Frequently Asked Questions](https://lean-lang.org/faq/).
 
-[^27]: The Rocq Prover, official website. <https://rocq-prover.org/>
+[^27]: [The Rocq Prover, official website](https://rocq-prover.org/).
 
-[^28]: CompCert C: A Trustworthy Compiler. <https://compcert.org/man/manual001.html>
+[^28]: [CompCert C: A Trustworthy Compiler](https://compcert.org/man/manual001.html).
 
-[^29]: The Rocq Prover Reference Manual. <https://rocq-prover.org/refman>
+[^29]: [The Rocq Prover Reference Manual](https://rocq-prover.org/refman).
 
-[^30]: The Rocq Prover: Program Extraction. <https://rocq-prover.org/doc/V9.2.0/refman/addendum/extraction.html>
+[^30]: [The Rocq Prover: Program Extraction](https://rocq-prover.org/doc/V9.2.0/refman/addendum/extraction.html).
 
-[^31]: MetaRocq: Formalizing Rocq in Rocq. <https://github.com/MetaRocq/metarocq>
+[^31]: [MetaRocq: Formalizing Rocq in Rocq](https://github.com/MetaRocq/metarocq).
 
-[^32]: Archive of Formal Proofs (Isabelle/HOL). <https://www.isa-afp.org/>
+[^32]: [Archive of Formal Proofs](https://www.isa-afp.org/) (Isabelle/HOL).
 
-[^33]: seL4 Proofs. <https://sel4.systems/Verification/proofs.html>
+[^33]: [seL4 Proofs](https://sel4.systems/Verification/proofs.html).
 
-[^34]: Isabelle Proof Assistant, official website. <https://isabelle.in.tum.de/>
+[^34]: [Isabelle Proof Assistant, official website](https://isabelle.in.tum.de/).
 
-[^35]: Agda Language Reference: Cubical Agda. <https://agda.readthedocs.io/en/latest/language/cubical.html>
+[^35]: [Agda Language Reference: Cubical Agda](https://agda.readthedocs.io/en/latest/language/cubical.html).
 
-[^36]: Agda Language Reference: Reflection. <https://agda.readthedocs.io/en/latest/language/reflection.html>
+[^36]: [Agda Language Reference: Reflection](https://agda.readthedocs.io/en/latest/language/reflection.html).
 
-[^37]: Agda Standard Library. <https://github.com/agda/agda-stdlib>
+[^37]: [Agda Standard Library](https://github.com/agda/agda-stdlib).
 
-[^38]: Agda Language Reference: Compilers. <https://agda.readthedocs.io/en/latest/tools/compilers.html>
+[^38]: [Agda Language Reference: Compilers](https://agda.readthedocs.io/en/latest/tools/compilers.html).
 
-[^39]: HOL: Higher Order Logic Theorem Prover (HOL4). <https://hol-theorem-prover.org/about>
+[^39]: [HOL: Higher Order Logic Theorem Prover (HOL4)](https://hol-theorem-prover.org/about).
 
-[^40]: CakeML: A Verified Implementation of ML. <https://cakeml.org/>
+[^40]: [CakeML: A Verified Implementation of ML](https://cakeml.org/).
 
-[^41]: CakeML Verified Compiler and Proof Source. <https://github.com/CakeML/cakeml>
+[^41]: [CakeML Verified Compiler and Proof Source](https://github.com/CakeML/cakeml).
 
-[^42]: HOL Light Theorem Prover. <https://hol-light.github.io/>
+[^42]: [HOL Light Theorem Prover](https://hol-light.github.io/).
 
-[^43]: AWS s2n-bignum: Verified Cryptographic Arithmetic. <https://github.com/awslabs/s2n-bignum/>
+[^43]: [AWS s2n-bignum: Verified Cryptographic Arithmetic](https://github.com/awslabs/s2n-bignum/).
 
-[^44]: F*: A Proof-Oriented Programming Language. <https://fstar-lang.org/tutorial/book/intro.html>
+[^44]: [F*: A Proof-Oriented Programming Language](https://fstar-lang.org/tutorial/book/intro.html).
 
-[^45]: F*: Verifying Imperative Programs with Functional Programming. <https://fstar-lang.org/tfp2019/tfp2019.html>
+[^45]: [F*: Verifying Imperative Programs with Functional Programming](https://fstar-lang.org/tfp2019/tfp2019.html).
 
-[^46]: Project Everest: Verified Systems Software. <https://project-everest.github.io/>
+[^46]: [Project Everest: Verified Systems Software](https://project-everest.github.io/).
 
-[^47]: VeriGuard: Enhancing LLM Agent Safety via Verified Code Generation. <https://arxiv.org/abs/2510.05156>
+[^47]: VeriGuard: Enhancing LLM Agent Safety via Verified Code Generation. [arXiv:2510.05156](https://arxiv.org/abs/2510.05156)
 
-[^48]: SENTINEL: A Multi-Level Formal Framework for Safety Evaluation of LLM-based Embodied Agents. <https://arxiv.org/abs/2510.12985>
+[^48]: SENTINEL: A Multi-Level Formal Framework for Safety Evaluation of LLM-based Embodied Agents. [arXiv:2510.12985](https://arxiv.org/abs/2510.12985)
 
-[^49]: PRISM Manual. <https://prismmodelchecker.org/manual/Main/AllOnOnePage>
+[^49]: [PRISM Manual](https://prismmodelchecker.org/manual/Main/AllOnOnePage).
 
-[^50]: Cedar Policy Language, official project website. <https://cedarpolicy.com/>
+[^50]: [Cedar Policy Language, official project website](https://cedarpolicy.com/).
 
-[^51]: AWS, Why Policy in Amazon Bedrock AgentCore Chose Cedar for Securing Agentic Workflows. <https://aws.amazon.com/blogs/security/why-policy-in-amazon-bedrock-agentcore-chose-cedar-for-securing-agentic-workflows/>
+[^51]: AWS, [Why Policy in Amazon Bedrock AgentCore Chose Cedar for Securing Agentic Workflows](https://aws.amazon.com/blogs/security/why-policy-in-amazon-bedrock-agentcore-chose-cedar-for-securing-agentic-workflows/).
 
-[^52]: Microsoft, Online Z3 Guide. <https://microsoft.github.io/z3guide/docs/logic/intro/>
+[^52]: Microsoft, [Online Z3 Guide](https://microsoft.github.io/z3guide/docs/logic/intro/).
 
-[^53]: cvc5: Proof Production. <https://cvc5.github.io/docs/latest/proofs/proofs.html>
+[^53]: [cvc5: Proof Production](https://cvc5.github.io/docs/latest/proofs/proofs.html).
 
-[^54]: FVEL Research Project and Dataset. <https://fveler.github.io/>
+[^54]: [FVEL Research Project and Dataset](https://fveler.github.io/).
 
-[^55]: seL4 Verified Configurations. <https://docs.sel4.systems/projects/sel4/verified-configurations.html>
+[^55]: [seL4 Verified Configurations](https://docs.sel4.systems/projects/sel4/verified-configurations.html).
 
-[^56]: Vehicle Tutorial and documentation. <https://vehicle-lang.github.io/tutorial/>
+[^56]: [Vehicle Tutorial and documentation](https://vehicle-lang.github.io/tutorial/).

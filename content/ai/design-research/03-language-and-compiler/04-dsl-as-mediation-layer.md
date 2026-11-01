@@ -15,8 +15,6 @@ A further layer gives the agent tools and service APIs. Open question: Where do 
 
 Next proposed layer: Introduce a DSL with adapters to tools, APIs, and other services as needed. The AI agent writes programs in the DSL, while a separate runner agent handles execution.
 
-<a id="answer"></a>
-
 # Proposed analysis
 
 

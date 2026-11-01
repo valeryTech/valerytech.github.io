@@ -23,7 +23,7 @@ Most AI platform maps start from components: a gateway, a vector database, an ev
 | Operate | Is it working in production? | Traces, quality monitoring, latency and cost, alerts, audit, rate limits |
 | Learn and iterate | What should we change next? | Production feedback turned into evaluation datasets, replay, experiment history, A/B testing |
 
-The first three rows are the subject of the [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}). The last three match the [delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}).
+The first three rows are the subject of the [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}). The last three match the [Delivery Capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}).
 
 ## The definition that follows
 
@@ -41,14 +41,14 @@ The approach combines platform as a product, Team Topologies, and AI product dis
 
 
 - **Spotify ML Platform:**
-  - starts from the ML practitioner's end-to-end journey;
-  - connected the workflow from experimentation to production as a walking skeleton: support the complete path first, then deepen individual capabilities based on observed needs;
-  - used practitioner research to find gaps in the journey.
+	- starts from the ML practitioner's end-to-end journey;
+	- connected the workflow from experimentation to production as a walking skeleton: support the complete path first, then deepen individual capabilities based on observed needs;
+	- used practitioner research to find gaps in the journey.
 - **Shopify Merlin:** describes the platform as a developer journey: create project -> prototype -> productionize -> automate -> iterate. It introduces each infrastructure capability in terms of what the team needs at that step.
 - **Doctolib Data & AI Platform:**
-  - platform product managers continuously interview feature teams, co-build proofs of concept, and observe where teams get stuck;
-  - those problems become an opportunity backlog, then platform capabilities and reusable accelerators;
-  - the stated goal is to take a feature team from an AI use case to a running product through guided, reusable paths.
+	- platform product managers continuously interview feature teams, co-build proofs of concept, and observe where teams get stuck;
+	- those problems become an opportunity backlog, then platform capabilities and reusable accelerators;
+	- the stated goal is to take a feature team from an AI use case to a running product through guided, reusable paths.
 - **Thoughtworks, *Effective Machine Learning Teams*:** the broader method. It combines product discovery, experimental ML development, continuous delivery, and Team Topologies, and discusses dual-track discovery and delivery and the organizational structures around ML delivery.
 
 Spotify and Doctolib appear closest to operating this way.
@@ -63,7 +63,7 @@ Spotify and Doctolib appear closest to operating this way.
 
 
 - [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}): discover, prototype, and validate as a platform of their own.
-- [Delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}): productionize, operate, and learn.
+- [Delivery Capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}): productionize, operate, and learn.
 - [AI platform capability map]({{< ref "ai-engineering/delivery/ai-platform-capabilities" >}}): the component-first view.
 - [Platform primitives]({{< ref "ai-engineering/delivery/reuse" >}}): reusable components and a build order.
 - [Development approaches and modes]({{< ref "ai-engineering/delivery/df-development-approach" >}}): walking skeletons and prototypes as development modes.

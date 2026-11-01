@@ -6,7 +6,7 @@ description: "SVPG’s risk taxonomy and Torres’s opportunity trees address di
 linkTitle: "Risk and Continuous Discovery"
 ---
 
-> **Status:** Source research report. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model and [`risk-areas-reassembled.md`]({{< ref "ai/product/risk-areas/risk-areas-reassembled" >}}) for the supporting synthesis.
+> **Status:** Source research report. See [Risk Areas Model]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model and [Risk Areas Reassembled]({{< ref "ai/product/risk-areas/risk-areas-reassembled" >}}) for the supporting synthesis.
 
 ## Executive summary
 

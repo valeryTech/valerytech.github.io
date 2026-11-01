@@ -12,13 +12,13 @@ The eight case notes are grouped in `cases/`. These are concrete examples for an
 
 | # | Case | Primary work | Examples |
 | --- | --- | --- | --- |
-| 1 | **[Closed-set task assistant]({{< ref "ai/system-types/project-examples/cases/closed-set-task-assistant" >}})** | Supports predefined tasks with architectural guardrails; the application enforces valid transitions, permissions, and operations. | Booking, account recovery, form completion, predefined customer-service tasks. |
-| 2 | **[General-purpose AI assistant]({{< ref "ai/system-types/project-examples/cases/general-purpose-ai-assistant" >}})** | Supports open-ended questions, reasoning, explanations, exploration, and content creation, with the option to enter bounded workflows. | Questions, writing, brainstorming, explanation, document analysis. |
-| 3 | **[Context-aware support assistant]({{< ref "ai/system-types/project-examples/cases/context-aware-support-assistant" >}})** | Helps users understand and diagnose issues using product knowledge, authorized account information, operational state, and support history. | Billing explanations, configuration diagnosis, account troubleshooting, escalation. |
-| 4 | **[AI-assisted analysis and investigation systems]({{< ref "ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems" >}})** | Develops questions, evidence, claims, and contradictions into findings or a better understanding. | Audit preparation, due diligence, policy research, incident investigation. |
+| 1 | **[Closed Set Task Assistant]({{< ref "ai/system-types/project-examples/cases/closed-set-task-assistant" >}})** | Supports predefined tasks with architectural guardrails; the application enforces valid transitions, permissions, and operations. | Booking, account recovery, form completion, predefined customer-service tasks. |
+| 2 | **[General Purpose Ai Assistant]({{< ref "ai/system-types/project-examples/cases/general-purpose-ai-assistant" >}})** | Supports open-ended questions, reasoning, explanations, exploration, and content creation, with the option to enter bounded workflows. | Questions, writing, brainstorming, explanation, document analysis. |
+| 3 | **[Context Aware Support Assistant]({{< ref "ai/system-types/project-examples/cases/context-aware-support-assistant" >}})** | Helps users understand and diagnose issues using product knowledge, authorized account information, operational state, and support history. | Billing explanations, configuration diagnosis, account troubleshooting, escalation. |
+| 4 | **[Ai Assisted Analysis And Investigation Systems]({{< ref "ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems" >}})** | Develops questions, evidence, claims, and contradictions into findings or a better understanding. | Audit preparation, due diligence, policy research, incident investigation. |
 | 5 | **[Clinical and domain-specific work copilots]({{< ref "ai/system-types/project-examples/cases/clinical-and-domain-specific-copilots" >}})** | Helps professionals develop or check work products under domain requirements. | Clinical notes, transcript translation, contract review, receipt classification. |
 | 6 | **[Agentic operations and coordination systems]({{< ref "ai/system-types/project-examples/cases/agentic-operations-and-coordination" >}})** | Pursues delegated objectives by selecting steps, using permitted tools, coordinating participants, and handling exceptions. | Scheduling, customer follow-up, recruiting, onboarding coordination. |
-| 7 | **[Analytical engines and programmable environments]({{< ref "ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments" >}})** | Provides computational engines for predefined pipelines and environments where people or agents construct new analyses. | Forecasting, optimization, scenario planning, SQL or DSL analysis. |
+| 7 | **[Analytical Engines And Programmable Environments]({{< ref "ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments" >}})** | Provides computational engines for predefined pipelines and environments where people or agents construct new analyses. | Forecasting, optimization, scenario planning, SQL or DSL analysis. |
 | 8 | **[Coding agents and software engineering workspaces]({{< ref "ai/system-types/project-examples/cases/coding-agents-and-harnesses" >}})** | Develops and revises software in repositories and executable environments, using execution feedback and verification to guide subsequent steps. | Repository-level coding agents, code review and test loops, delegated software changes. |
 
 ## Case summaries
@@ -26,22 +26,22 @@ The eight case notes are grouped in `cases/`. These are concrete examples for an
 
 These examples can overlap and coexist within one product.
 
-### 1. [Closed-set task assistant]({{< ref "ai/system-types/project-examples/cases/closed-set-task-assistant" >}})
+### 1. [Closed Set Task Assistant]({{< ref "ai/system-types/project-examples/cases/closed-set-task-assistant" >}})
 
 
 Helps users complete a predefined set of tasks while application logic enforces permitted operations, valid inputs, permissions, and execution conditions. The LLM can interpret requests, collect missing information, and guide users through a state machine or constraint graph, providing conversational or hybrid interaction within enforced boundaries.
 
-### 2. [General-purpose AI assistant]({{< ref "ai/system-types/project-examples/cases/general-purpose-ai-assistant" >}})
+### 2. [General Purpose Ai Assistant]({{< ref "ai/system-types/project-examples/cases/general-purpose-ai-assistant" >}})
 
 
 Supports open-ended questions, explanations, reasoning, exploration, content creation, and problem-solving as users refine or change their goals. It can operate in a restricted exploratory mode and transition into bounded workflows when the user wants to perform a supported operation. The application preserves relevant context while separately controlling workflow state, available operations, and authorization.
 
-### 3. [Context-aware support assistant]({{< ref "ai/system-types/project-examples/cases/context-aware-support-assistant" >}})
+### 3. [Context Aware Support Assistant]({{< ref "ai/system-types/project-examples/cases/context-aware-support-assistant" >}})
 
 
 Helps users understand and diagnose issues using product knowledge, authorized account information, current system state, and support history. In the proposed architecture, the assistant has read-only access to business systems; corrections are handed off to separate bounded workflows that enforce their own permissions and execution conditions. It remains a separate case for analysis.
 
-### 4. [AI-assisted analysis and investigation systems]({{< ref "ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems" >}})
+### 4. [Ai Assisted Analysis And Investigation Systems]({{< ref "ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems" >}})
 
 
 Helps people develop a supported understanding of complex information through predefined analyses, evolving investigations, and synthesis into findings or workpapers. Findings remain connected to evidence, calculations, assumptions, and unresolved questions, while experts review interpretations and decide which conclusions are justified.
@@ -56,7 +56,7 @@ Assists specialized professional work that depends on domain knowledge, rules, a
 
 Supports delegated objectives by selecting and adapting steps, using permitted tools, and managing dependencies across people, services, and time. Depending on scope, ongoing work may require durable state, human intervention, recovery, and verification of external outcomes; action selection and coordination are related capabilities that can coexist.
 
-### 7. [Analytical engines and programmable environments]({{< ref "ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments" >}})
+### 7. [Analytical Engines And Programmable Environments]({{< ref "ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments" >}})
 
 
 Provides computational capabilities for data processing, domain rules, forecasting, simulation, and optimization. Predefined pipelines can coexist with environments where people or agents construct analyses using SQL, DSLs, or code, with controlled execution and attention to correctness, provenance, reproducibility, assumptions, and uncertainty.
@@ -76,11 +76,9 @@ The closed-set task assistant emphasizes architectural guardrails for a predefin
 ## Related design concepts
 
 
-[Operating regimes]({{< ref "ai/system-types/project-examples/operating-regimes" >}}) examines how work progresses and is controlled through open-ended interaction, bounded workflows, investigation, collaborative artifact work, and delegated execution. These candidate regimes can coexist within a product, with relevant state preserved and permissions enforced when moving between them.
+[Operating Regimes]({{< ref "ai/system-types/project-examples/operating-regimes" >}}) examines how work progresses and is controlled through open-ended interaction, bounded workflows, investigation, collaborative artifact work, and delegated execution. These candidate regimes can coexist within a product, with relevant state preserved and permissions enforced when moving between them.
 
-[Sources of variability]({{< ref "ai/system-types/project-examples/sources-of-variability" >}}) separates three axes that are easy to merge under "complexity": how variable the request is, how much of the flow is decided at runtime, and how much the data differs between runs. A predefined audit report sits low on the first two and high on the third, which is why its difficulty and its test data concentrate on data scenarios.
-
-<a id="other"></a>
+[Sources Of Variability]({{< ref "ai/system-types/project-examples/sources-of-variability" >}}) separates three axes that are easy to merge under "complexity": how variable the request is, how much of the flow is decided at runtime, and how much the data differs between runs. A predefined audit report sits low on the first two and high on the third, which is why its difficulty and its test data concentrate on data scenarios.
 
 ## Initial design model
 
@@ -105,8 +103,6 @@ The main terms in this model are:
 
 Open question: how should the product surface fit into this model?
 
-<a id="initial-thought"></a>
-
 ### Initial product sketch
 
 
@@ -114,7 +110,7 @@ The initial sketch includes several possible AI products:
 
 - A closed-set task assistant and a chatbot.
 - A support assistant that provides information about the system and the user's account.
-- Reporting and analytical support for auditors, producing preliminary reports with appropriate invariants, as in &#91;&#91;analysis-1&#93;&#93;.
+- Reporting and analytical support for auditors, producing preliminary reports with appropriate invariants, as in [\[analysis-1]\].
 - A medical copilot that translates clients' transcripts and checks receipts.
 - An agentic system that schedules meetings, uses tools, emails clients, or helps coordinate work.
 - An analytical engine with complex rules, forecasting, and multiple pipelines that can support applications built on top of it. It may also provide SQL or DSL environments where agents can produce insights.

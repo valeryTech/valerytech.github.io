@@ -194,7 +194,7 @@ maybe in the next time I should start with Write Path because I forgot about dif
 
 analysis and trade-offs
 
-the thing with 301 - it's not reversible
+the thing with 301 -- it's not reversible
 
 **If you don't want the redirect to be cached**
 
@@ -291,11 +291,11 @@ Deep Dives for URL-shortener
 
 Hi Evan, Our DB writes are not very high write throughput, even if we assume some peak it won't cross 1K QPS. Why not use simple auto increment id and take base62 encoding on it? One potential problem with this approach is our counter metrics are exposed outside but it's not a big deal though. You will have less moving parts in the system. What am I missing?
 
--> I think the problem here is that when the RDB is sharded, it is impossible to keep a global counter - each RDB shard has its own auto increment, if one is down, the new instance wont be able to know which new id to start from.
+-> I think the problem here is that when the RDB is sharded, it is impossible to keep a global counter -- each RDB shard has its own auto increment, if one is down, the new instance wont be able to know which new id to start from.
 
 -> Yes, this setup seems quite fine to me too.
 
-**At which point should we pass from auto-incremented ID to a Redis counter** (..?) - this would be nice to have this idea discussed above as it's the simplest of all.
+**At which point should we pass from auto-incremented ID to a Redis counter** (..?) -- this would be nice to have this idea discussed above as it's the simplest of all.
 
 A single Postgres DB with the right hardware, and read replicas, could handle an heavy load quite well.
 

@@ -12,7 +12,7 @@ Why you need to understand what is Software Architecture and how to use it conce
 
 **TL;DR:** This page presents various foundational concepts, principles, methods, patterns, heuristics, and best practices related to software architecture.
 
-<https://handbook.gitlab.com/handbook/engineering/architecture/>
+[GitLab handbook: architecture](https://handbook.gitlab.com/handbook/engineering/architecture/)
 
 # Definition
 
@@ -79,13 +79,13 @@ add link to decision making framework
 
 decisions withing a more broad context of businness discource
 
-<https://www.reddit.com/r/softwarearchitecture/comments/1ad40ia/how_can_i_become_better_in_architectural_decision/>
+[r/softwarearchitecture: how can I become better in architectural decision](https://www.reddit.com/r/softwarearchitecture/comments/1ad40ia/how_can_i_become_better_in_architectural_decision/)
 
-<https://en.wikipedia.org/wiki/Architectural_decision>
+[Architectural decision](https://en.wikipedia.org/wiki/Architectural_decision)
 
-<https://adr.github.io/>
+[Architectural Decision Records (ADRs)](https://adr.github.io/)
 
-<https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file>
+[joelparkerhenderson/architecture-decision-record (GitHub)](https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file)
 
 ## ADRs
 
@@ -105,7 +105,7 @@ Barry O'reilly and residual theory
 # Sources
 
 
-<https://martinfowler.com/architecture/>
+[Software Architecture Guide](https://martinfowler.com/architecture/)
 
 <https://www.youtube.com/watch?v=DngAZyWMGR0>
 
@@ -127,19 +127,19 @@ war stories, reflections
 
 "# Fundamentals of Software Architecture: A Modern Engineering Approach" 2nd Edition by Mark Richards, Neal Ford
 
-<https://www.youtube.com/watch?v=bmSAYlu0NcY>
+[r/softwarearchitecture megathread: software architecture books and resources](https://www.youtube.com/watch?v=bmSAYlu0NcY)
 
 interesting
 
-"What Software Architects Do That Programmers DON'T" <https://www.youtube.com/watch?v=IwrvE-wHm84>
+"[What Software Architects Do That Programmers DON'T](https://www.youtube.com/watch?v=IwrvE-wHm84)"
 
 Barry
 
 <https://www.youtube.com/watch?v=H8ZOp8ayluU>
 
-<https://www.youtube.com/watch?v=36I_eW8K1EY> interesting advices and reflections
+[YouTube video: advice and reflections](https://www.youtube.com/watch?v=36I_eW8K1EY) interesting advices and reflections
 
-<https://www.reddit.com/r/architecture/comments/16crcsv/architecture_vs_software_engineering/>
+[r/architecture: architecture vs software engineering](https://www.reddit.com/r/architecture/comments/16crcsv/architecture_vs_software_engineering/)
 
 <https://www.youtube.com/watch?v=wQYRl--58zM>
 
@@ -155,23 +155,23 @@ Barry
 
 <https://www.youtube.com/watch?v=9Az0q2XHtH8>
 
-<https://www.cloudwaydigital.com/>
+[CloudWay Digital](https://www.cloudwaydigital.com/)
 
-<https://www.youtube.com/watch?v=_CXPDDRn6to> agility and architecture
+[YouTube video: agility and architecture](https://www.youtube.com/watch?v=_CXPDDRn6to) agility and architecture
 
-<https://www.youtube.com/watch?v=CXCkDKM0OX0> hopre and farley
+[YouTube video: hopre and farley](https://www.youtube.com/watch?v=CXCkDKM0OX0) hopre and farley
 
 <https://www.youtube.com/watch?v=aCiejroMUmc>
 
 paper "Agility and Architecture" by Babel
 
-<https://levelup.gitconnected.com/from-software-developer-to-software-architect-roadmap-to-success-695951521d9b>
+[From Software Developer to Software Architect -- Roadmap to Success](https://levelup.gitconnected.com/from-software-developer-to-software-architect-roadmap-to-success-695951521d9b)
 
-<https://github.com/justinamiller/SoftwareArchitect>
+[justinamiller/SoftwareArchitect (GitHub)](https://github.com/justinamiller/SoftwareArchitect)
 
-<https://levelup.gitconnected.com/software-architecture-things-that-no-one-has-told-you-c098bbb70a61>
+[Software Architecture -- Things That No One Has Told You](https://levelup.gitconnected.com/software-architecture-things-that-no-one-has-told-you-c098bbb70a61)
 
-<https://www.thoughtworks.com/insights/topic/architecture>
+[Architecture Insights (Thoughtworks)](https://www.thoughtworks.com/insights/topic/architecture)
 
 "Good Enough Architecture"
 
@@ -179,49 +179,49 @@ paper "Agility and Architecture" by Babel
 
 katas, practice
 
-<https://fundamentalsofsoftwarearchitecture.com/katas/list.html>
+[List of Architecture Katas](https://fundamentalsofsoftwarearchitecture.com/katas/list.html)
 
-<https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/>
+[r/softwarearchitecture megathread: software architecture books and resources](https://www.reddit.com/r/softwarearchitecture/comments/16usw23/megathread_software_architecture_books_resources/)
 
-<https://martinfowler.com/architecture/>
+[Software Architecture Guide](https://martinfowler.com/architecture/)
 
-<https://roadmap.sh/software-design-architecture>
+[Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
 
-<https://roadmap.sh/software-architect>
+[Software Architect Roadmap](https://roadmap.sh/software-architect)
 
-<https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/>
+[The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
 
 # Common dev practices
 
 
-<https://www.youtube.com/@HealthyDev/videos>
+[HealthyDev YouTube channel](https://www.youtube.com/@HealthyDev/videos)
 
 <https://www.youtube.com/watch?v=2ClljZaK6_A>
 
-<https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/>
+[Architecture Design Documents (GitLab Handbook)](https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/)
 
 other
 
-<https://awesome-architecture.com/>
+[Awesome Architecture](https://awesome-architecture.com/)
 
 Simon Brown videos
 
 - <https://www.youtube.com/watch?v=9Az0q2XHtH8>
 - and book
 
-<https://learn.microsoft.com/en-us/azure/architecture/patterns/>
+[Cloud Design Patterns (Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/)
 
 Vsevolodovich (?)
 
-<https://www.youtube.com/@architectureweekly/videos>
+[architectureweekly YouTube channel](https://www.youtube.com/@architectureweekly/videos)
 
 also it has some system design interviews
 
-and blog <https://blog.vvsevolodovich.dev/>
+and blog [vvsevolodovich.dev blog](https://blog.vvsevolodovich.dev/)
 
 book "Cloud Native Spring in Action" contains in its first chapters good material about cloud native and what does it mean
 
-<https://www.thoughtworks.com/insights/blog/architecture/software-architecture-decisions-andrew-harmel-law>
+[Software architecture decisions: who should be involved?](https://www.thoughtworks.com/insights/blog/architecture/software-architecture-decisions-andrew-harmel-law)
 
 to sort
 
@@ -229,15 +229,15 @@ to sort
 
 architecture
 
-<https://www.infoq.com/articles/architecture-experimentation/>
+[Software Architecture and the Art of Experimentation](https://www.infoq.com/articles/architecture-experimentation/)
 
-<https://www.industrialempathy.com/posts/design-docs-at-google/>
+[Design Docs at Google](https://www.industrialempathy.com/posts/design-docs-at-google/)
 
 other resources to read:
 
-<http://onsites.fyi/blog/article/apple-ict2-software-engineer-interview-questions>
+[Apple ICT2 Software Engineer 2026 Interview Questions](http://onsites.fyi/blog/article/apple-ict2-software-engineer-interview-questions)
 
-<https://interviewing.io/blog/technical-interview-performance-is-kind-of-arbitrary-heres-the-data>
+[Technical interview performance is kind of arbitrary. Here's the data](https://interviewing.io/blog/technical-interview-performance-is-kind-of-arbitrary-heres-the-data)
 
 ## Library sources
 

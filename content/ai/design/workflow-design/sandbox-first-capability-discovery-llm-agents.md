@@ -142,7 +142,7 @@ Sandbox-First does not replace ordinary software-engineering principles. Several
 | **Harness engineering** | Improve the environment, tools, feedback and information surrounding the model. | Becomes especially important *after* discovery exposes bottlenecks. OpenAI reports that an underspecified environment initially limited its agents; engineering the surrounding environment became a major part of the work. ([OpenAI 2026a](#openai-2026-harness)) |
 | **Agent-oriented tool design** | Design tools based on how models actually use them, then evaluate and revise them. | Provides the feedback loop after the baseline: prototype -> observe traces -> evaluate -> improve interfaces. Anthropic explicitly recommends this experimental cycle. ([Anthropic 2025b](#anthropic-2025-tools)) |
 
-The **Bitter Lesson** deserves careful wording. Sutton's argument is that AI history repeatedly favoured general methods able to absorb more computation--especially search and learning--over hand-coded human knowledge. ([Sutton 2019](#sutton-2019)) It does **not** prove that an agent graph is bad or that specialised tools are bad.
+The **Bitter Lesson** deserves careful wording. Sutton's argument is that AI history repeatedly favoured general methods able to absorb more computation -- especially search and learning -- over hand-coded human knowledge. ([Sutton 2019](#sutton-2019)) It does **not** prove that an agent graph is bad or that specialised tools are bad.
 
 The connection is narrower:
 
@@ -195,7 +195,7 @@ The opposite is also true:
 
 τ-bench and Anthropic's evaluation guidance both emphasise repeated trials. Anthropic recommends evaluating final environment state where possible, isolating trials and avoiding graders that unnecessarily require one particular action sequence. ([Yao et al. 2024](#yao-2024-tau-bench); [Anthropic 2026b](#anthropic-2026-evals))
 
-Those two statements--**failure does not establish inability; success does not establish reliability**--are probably among the most important foundations for capability-discovery engineering.
+Those two statements -- **failure does not establish inability; success does not establish reliability** -- are probably among the most important foundations for capability-discovery engineering.
 
 ## The experimental workbench
 
@@ -273,7 +273,7 @@ Test: compare a goal-based prompt against a prompt requiring a particular plan o
 ### Give general tools before specialised workflows
 
 
-**Begin with useful primitives--files, code, shell, data access and APIs--and see what the agent can compose from them.**
+**Begin with useful primitives -- files, code, shell, data access and APIs -- and see what the agent can compose from them.**
 
 Why: CodeAct and LLM-in-Sandbox both show that executable environments let models combine basic operations into higher-level behaviour. Anthropic's code-execution work similarly finds advantages in letting agents filter, chain and transform tool results programmatically. ([Wang et al. 2024](#wang-2024-codeact); [Cheng et al. 2026](#cheng-2026); [Anthropic 2025c](#anthropic-2025-code-execution))
 
@@ -304,7 +304,7 @@ Test: repeat the same tasks and perturb wording, data and starting conditions.
 
 Why: architecture effects are conditional. Google's 180-configuration study found that multi-agent approaches helped some task structures and hurt others. Anthropic's long-running-agent work likewise added specific harness mechanisms in response to observed long-horizon failures. ([Kim et al. 2025](#kim-2025-scaling); [Anthropic 2025d](#anthropic-2025-harnesses))
 
-Test: run an ablation--remove the component--and see what changes.
+Test: run an ablation -- remove the component -- and see what changes.
 
 These rules produce **progressive formalisation**:
 
@@ -386,7 +386,7 @@ And the shortest version of its underlying law is:
 
 > **When capability is unknown, preserve the space in which capability can be discovered.**
 
-A sandbox is what makes that practical: **broad freedom of method inside a narrow boundary of consequences**. The research from Cheng et al. makes that more than a software-design analogy--their minimal, exploratory computer environment actually elicited useful behaviours that had not been encoded as predefined workflows. ([Cheng et al. 2026](#cheng-2026))
+A sandbox is what makes that practical: **broad freedom of method inside a narrow boundary of consequences**. The research from Cheng et al. makes that more than a software-design analogy -- their minimal, exploratory computer environment actually elicited useful behaviours that had not been encoded as predefined workflows. ([Cheng et al. 2026](#cheng-2026))
 
 ## Library sources
 

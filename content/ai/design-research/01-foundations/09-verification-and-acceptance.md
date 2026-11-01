@@ -79,7 +79,7 @@ A compiler can establish things such as:
 
 Compilation establishes **well-formedness**, not task correctness.
 
-```
+```text
 ProgramCandidate
     ↓ compile
 CompiledProgram | CompileRejected(diagnostics)
@@ -90,7 +90,7 @@ CompiledProgram | CompileRejected(diagnostics)
 
 Only execution and verification can establish whether the program actually solves the problem:
 
-```
+```text
 CompiledProgram
     ↓ execute
 RunRecord
@@ -118,7 +118,7 @@ The cited domain-modeling guide's separation of **resolution, validation, and ex
 
 For example:
 
-```
+```text
 CompilationOutcome =
     Compiled(compiled_program)
   | CompileRejected(diagnostics)
@@ -133,7 +133,7 @@ VerificationOutcome =
 
 This is safer than:
 
-```
+```json
 {
   "status": "failed",
   "program": null,

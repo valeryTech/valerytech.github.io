@@ -18,16 +18,16 @@ Input: $ARGUMENTS
 Based on the input provided, determine which type of review to perform:
 
 1. **No arguments (default)**: Review all uncommitted changes
-   - Run: `git diff` for unstaged changes
-   - Run: `git diff --cached` for staged changes
-   - Run: `git status --short` to identify untracked (net new) files
+	- Run: `git diff` for unstaged changes
+	- Run: `git diff --cached` for staged changes
+	- Run: `git status --short` to identify untracked (net new) files
 2. **Commit hash** (40-char SHA or short hash): Review that specific commit
-   - Run: `git show $ARGUMENTS`
+	- Run: `git show $ARGUMENTS`
 3. **Branch name**: Compare current branch to the specified branch
-   - Run: `git diff $ARGUMENTS...HEAD`
+	- Run: `git diff $ARGUMENTS...HEAD`
 4. **PR URL or number** (contains "github.com" or "pull" or looks like a PR number): Review the pull request
-   - Run: `gh pr view $ARGUMENTS` to get PR context
-   - Run: `gh pr diff $ARGUMENTS` to get the diff
+	- Run: `gh pr view $ARGUMENTS` to get PR context
+	- Run: `gh pr diff $ARGUMENTS` to get the diff
 
 Use best judgement when processing input.
 
@@ -36,7 +36,7 @@ Use best judgement when processing input.
 ## Gathering Context
 
 
-**Diffs alone are not enough.** After getting the diff, read the entire file(s) being modified to understand the full context. Code that looks wrong in isolation may be correct given surrounding logic--and vice versa.
+**Diffs alone are not enough.** After getting the diff, read the entire file(s) being modified to understand the full context. Code that looks wrong in isolation may be correct given surrounding logic -- and vice versa.
 
 - Use the diff to identify which files changed
 - Use `git status --short` to identify untracked files, then read their full contents
@@ -48,7 +48,7 @@ Use best judgement when processing input.
 ## What to Look For
 
 
-**Bugs** - Your primary focus.
+**Bugs** -- Your primary focus.
 
 - Logic errors, off-by-one mistakes, incorrect conditionals
 - If-else guards: missing guards, incorrect branching, unreachable code paths
@@ -56,17 +56,17 @@ Use best judgement when processing input.
 - Security issues: injection, auth bypass, data exposure
 - Broken error handling that swallows failures, throws unexpectedly or returns error types that are not caught.
 
-**Structure** - Does the code fit the codebase?
+**Structure** -- Does the code fit the codebase?
 
 - Does it follow existing patterns and conventions?
 - Are there established abstractions it should use but doesn't?
 - Excessive nesting that could be flattened with early returns or extraction
 
-**Performance** - Only flag if obviously problematic.
+**Performance** -- Only flag if obviously problematic.
 
 - O(n²) on unbounded data, N+1 queries, blocking I/O on hot paths
 
-**Behavior Changes** - If a behavioral change is introduced, raise it (especially if it's possibly unintentional).
+**Behavior Changes** -- If a behavioral change is introduced, raise it (especially if it's possibly unintentional).
 
 ---
 
@@ -75,9 +75,9 @@ Use best judgement when processing input.
 
 **Be certain.** If you're going to call something a bug, you need to be confident it actually is one.
 
-- Only review the changes - do not review pre-existing code that wasn't modified
-- Don't flag something as a bug if you're unsure - investigate first
-- Don't invent hypothetical problems - if an edge case matters, explain the realistic scenario where it breaks
+- Only review the changes -- do not review pre-existing code that wasn't modified
+- Don't flag something as a bug if you're unsure -- investigate first
+- Don't invent hypothetical problems -- if an edge case matters, explain the realistic scenario where it breaks
 - If you need more context to be sure, use the tools below to get it
 
 **Don't be a zealot about style.** When checking code against conventions:
@@ -93,9 +93,9 @@ Use best judgement when processing input.
 
 Use these to inform your review:
 
-- **Explore agent** - Find how existing code handles similar problems. Check patterns, conventions, and prior art before claiming something doesn't fit.
-- **Available documentation and code-search tools** - Verify correct usage of libraries/APIs before flagging something as wrong.
-- **Web Search** - Research best practices if you're unsure about a pattern.
+- **Explore agent** -- Find how existing code handles similar problems. Check patterns, conventions, and prior art before claiming something doesn't fit.
+- **Available documentation and code-search tools** -- Verify correct usage of libraries/APIs before flagging something as wrong.
+- **Web Search** -- Research best practices if you're unsure about a pattern.
 
 If you're uncertain about something and can't verify it with these tools, say "I'm not sure about X" rather than flagging it as a definite issue.
 

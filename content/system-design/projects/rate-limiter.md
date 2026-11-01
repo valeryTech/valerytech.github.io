@@ -15,9 +15,9 @@ Partial article plan, source excerpts, and personal critique. Includes open task
 
 chapter from SD interview insider's guide
 
-<https://medium.com/criteo-engineering/distributed-rate-limiting-algorithms-a35f7e24783>
+[Distributed Rate-Limiting Algorithms](https://medium.com/criteo-engineering/distributed-rate-limiting-algorithms-a35f7e24783)
 
-<https://www.mailgun.com/blog/it-and-engineering/gubernator-cloud-native-distributed-rate-limiting-microservices/>
+[Gubernator: Cloud-native distributed rate limiting for microservices](https://www.mailgun.com/blog/it-and-engineering/gubernator-cloud-native-distributed-rate-limiting-microservices/)
 
 # structure of the article
 

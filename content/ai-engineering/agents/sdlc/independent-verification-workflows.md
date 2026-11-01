@@ -20,7 +20,7 @@ When a coding agent writes code and then writes tests for it, both come from the
 - A self-review by the same agent confirms its own assumptions.
 - The agent claims it ran checks without running them, or weakens tests and fixtures until they pass.
 
-The same pattern appears in evaluation data. [Coverage and Case Design for AI Evaluation]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) notes that generated cases can be repetitive or shaped by the generating model, and [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework/10-user-inputs" >}}) derives coverage from product guarantees, risks, and meaningful variation before generating any input. Generating expected outputs together with synthetic inputs carries the generator's assumptions into the evaluation set. Tests written after faulty code carry the coder's assumptions into the test suite in the same way. The harness notes cite an empirical study in which independently generated tests found more faults than tests generated after a faulty implementation; the link to the paper is missing from the saved notes.
+The same pattern appears in evaluation data. [Coverage and Case Design for AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/coverage-and-case-design" >}}) notes that generated cases can be repetitive or shaped by the generating model, and [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework-v2/cases-and-coverage" >}}) derives coverage from product guarantees, risks, and meaningful variation before generating any input. Generating expected outputs together with synthetic inputs carries the generator's assumptions into the evaluation set. Tests written after faulty code carry the coder's assumptions into the test suite in the same way. The harness notes cite an empirical study in which independently generated tests found more faults than tests generated after a faulty implementation; the link to the paper is missing from the saved notes.
 
 ## Three rules
 
@@ -143,18 +143,18 @@ The stage prompts in `$rws` came from the harness, which is why `_correction.md`
 ## Limitations to keep in mind
 
 
-[Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) lists the limits of this approach. A wrong framing propagates into both design and tests. Fresh context is only one kind of separation: different agents can share the same assumptions, and separate processes don't automatically produce independent evidence. Isolation can also remove facts a test needs, which leads to unrealistic mocks or missed consumers. Passing checks support only the scenarios they cover.
+[Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) lists the limits of this approach. A wrong framing propagates into both design and tests. Fresh context is only one kind of separation: different agents can share the same assumptions, and separate processes don't automatically produce independent evidence. Isolation can also remove facts a test needs, which leads to unrealistic mocks or missed consumers. Passing checks support only the scenarios they cover.
 
 ## Related notes
 
 
-- [Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}): the approach in the review framework; its source links point to this harness.
+- [Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}): the approach in the review framework; its source links point to this harness.
 - [Engineering Review Framework: Assessment and Trial]({{< ref "engineering/engineering-review-framework/workflow-trial-and-recommendations" >}}): a trial on a payment-retry change, with proposed revisions to property, failure, and test reasoning.
-- [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}}) and the [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}): where `agent-harness` and `rws` fit among other review tools.
+- [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}}) and the [Review Tools And Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}): where `agent-harness` and `rws` fit among other review tools.
 - [Testing a Change During Review]({{< ref "ai-engineering/agents/ai-assisted-development/testing-during-review" >}}): a worked example of a test that misses the failure that matters.
-- [Common Mistakes in AI-Assisted Development]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}}) and the [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}): the failures these workflows try to catch.
-- [Coverage and Case Design for AI Evaluation]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) and [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework/10-user-inputs" >}}): the evaluation-set method the verification design copies.
-- [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) and the [Reading Map]({{< ref "ai-engineering/agents/sdlc/reading-map" >}}).
+- [Common Mistakes in AI-Assisted Development]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}}) and the [Llm Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}): the failures these workflows try to catch.
+- [Coverage and Case Design for AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/coverage-and-case-design" >}}) and [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework-v2/cases-and-coverage" >}}): the evaluation-set method the verification design copies.
+- [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) and the [reading-map]({{< ref "ai-engineering/agents/sdlc/reading-map" >}}).
 
 ## Sources
 
@@ -163,4 +163,4 @@ Local files inspected on 2026-11-14:
 
 - Harness: README, product concepts, architecture.
 - Harness investigation: verification-engineering branch (LLM failure modes, three kinds of tests, breaker, deterministic gates), dual-track orchestration (visible and holdout intents), verification analyst and test strategist (holdout attacker, mutation thought experiment), per-task loop.
-- `$rws`: SKILL.md, shared verification rules, workflow critic, architecture critic, repair, handoff.
+- `$rws`: SKILL.md, shared verification rules, workflow critic, architecture critic, repair, [[handoff]].

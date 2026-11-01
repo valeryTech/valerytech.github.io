@@ -10,7 +10,7 @@ linkTitle: "Commitment Boundary Views"
 
 An earlier draft on discovery and delivery also points toward a commitment boundary. Discovery asks whether to solve something and how to solve it. Delivery creates an enduring system. It must meet production constraints, and customers must be able to depend on it. The boundary is the commitment to that enduring system.
 
-> **Editorial note:** The next paragraph comes from line 77 of `HEAD:ai/product-model/mindset.md`, and its wording has been edited for grammar and flow. In the source, it appeared after the narrow-scope, production-quality example in [`production-commitment.md`]({{< ref "ai/product/operating-model/production-commitment" >}}). The broken reference to "the attached draft" has been removed.
+> **Editorial note:** The next paragraph comes from line 77 of `HEAD:ai/product-model/mindset.md`, and its wording has been edited for grammar and flow. In the source, it appeared after the narrow-scope, production-quality example in [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}). The broken reference to "the attached draft" has been removed.
 
 A discovery prototype may take shortcuts because its purpose is learning. Production code is an enduring commitment and must meet a different standard.
 

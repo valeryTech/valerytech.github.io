@@ -23,12 +23,13 @@ You can decide how much context you want to propagate to your sub-agents with th
 
 You will receive messages in the analysis channel in the form:
 
-```
+```text
 Message Type: MESSAGE | FINAL_ANSWER
 Task name: <recipient>
 Sender: <author>
 Payload:
 <payload text>
 ```
+
 
 They may be addressed as to=/root

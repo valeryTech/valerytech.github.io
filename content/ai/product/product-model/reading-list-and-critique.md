@@ -12,24 +12,24 @@ For example, Marty Cagan's normative model could serve as a reference.
 
 Resurces:
 
-- https://www.svpg.com/ai-resource-guide/
-- https://www.svpg.com/build-to-learn-vs-build-to-earn/
-- https://www.svpg.com/four-big-risks/
-- https://www.svpg.com/the-product-operating-model-an-introduction/
-- https://www.svpg.com/discovery-problem-vs-solution/
+- [Product in the AI Era: AI Resource Guide](https://www.svpg.com/ai-resource-guide/)
+- [Build to Learn vs Build to Earn](https://www.svpg.com/build-to-learn-vs-build-to-earn/)
+- [The Four Big Risks](https://www.svpg.com/four-big-risks/)
+- [The Product Operating Model: An Introduction](https://www.svpg.com/the-product-operating-model-an-introduction/)
+- [Discovery -- Problem vs. Solution](https://www.svpg.com/discovery-problem-vs-solution/)
 
 other
 
-- https://blog.logrocket.com/product-management/product-discovery-vs-delivery/
-- https://www.thoughtworks.com/en-us/insights/decoder/d/dual-track-development
-- https://www.thoughtworks.com/en-us/insights/blog/understanding-how-design-thinking-lean-and-agile-work-together
-- https://www.productboard.com/glossary/product-prioritization-frameworks/
+- [Product discovery vs. delivery: How to uncover what your users need](https://blog.logrocket.com/product-management/product-discovery-vs-delivery/)
+- [Dual-track development (Thoughtworks Decoder)](https://www.thoughtworks.com/en-us/insights/decoder/d/dual-track-development)
+- [Understanding how Design Thinking, Lean and Agile Work Together](https://www.thoughtworks.com/en-us/insights/blog/understanding-how-design-thinking-lean-and-agile-work-together)
+- [Product Prioritization Frameworks (Productboard)](https://www.productboard.com/glossary/product-prioritization-frameworks/)
 - interesting: Tim Herbig article on [Product Discovery](https://herbig.co/product-discovery/):
-- as well interesting https://herbig.co/product-discovery-problem-space/
+- as well interesting [How to focus on the Problem Space by Killing your Idea Backlog](https://herbig.co/product-discovery-problem-space/)
 
 Personalities: Teresa Torres;
 
-- https://medium.com/@amydunn92/1-the-two-phases-discovery-and-delivery-81d42ccc5e6c
+- [The Two Product Phases: Discovery and Delivery (Medium)](https://medium.com/@amydunn92/1-the-two-phases-discovery-and-delivery-81d42ccc5e6c)
 
 This article from Mind the Product discusses how to decide [when to apply discovery, delivery, or both](https://www.mindtheproduct.com/product-discovery-or-product-delivery-how-do-you-decide/). It presents a helpful concept, the Uncertainty Rubric. Answer the questions below, then review the rubric to determine the position on the certainty scale. See also the [Product Discovery Playbook](https://www.productboard.com/wp-content/uploads/2021/03/The-Product-Discovery-Playbook.pdf).
 
@@ -38,7 +38,7 @@ This article from Mind the Product discusses how to decide [when to apply discov
 
 Resources:
 
-- https://www.reddit.com/r/ProductManagement/comments/1mo26vv/why_is_this_sub_so_sour_about_marty_cagan/ <- this one is important
+- [Reddit thread: why is this sub so sour about Marty Cagan](https://www.reddit.com/r/ProductManagement/comments/1mo26vv/why_is_this_sub_so_sour_about_marty_cagan/) <- this one is important
 
 _Inspired_ is valuable as a **normative model** of empowered product teams, but it is often too Silicon Valley-centric, under-specified about organizational power, and weak on contexts where discovery is expensive, constrained, or not the main bottleneck (?).
 
@@ -76,7 +76,7 @@ _Inspired_ is valuable as a **normative model** of empowered product teams, but 
 
 For an AI product, Cagan's framework can be translated into:
 
-```
+```latex
 \text{Product bet} =
 \text{desirable} \land
 \text{usable} \land

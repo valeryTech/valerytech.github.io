@@ -11,8 +11,6 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 Initial design question: How should a system of people and LLM-based agents collaborate, and on what kinds of tasks? The author's framing asks how the features of people and current and future LLMs should affect the design. It initially proposes that LLMs lack a world model and have capabilities rather than intelligence; the response below questions both assumptions. The introduction strategy is to augment workflows initially performed by people and identify explicit points for human decisions.
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 <!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
 The [joint activity and collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) develops a related taxonomy with its original reasoning. [Human-AI collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) keeps the complete interaction-pattern discussion separate from the general model.
@@ -195,8 +193,6 @@ A powerful rule for choosing tasks is therefore:
 > **AI delegation works especially well when producing the result is expensive but checking the result is cheap and reliable.**
 
 If a human needs as much expertise, time, and concentration to verify an answer as they would have needed to create it, you may simply have moved the work around.
-
-<a id="how-i-would-introduce-it-into-an-existing-organization"></a>
 
 ### Proposed introduction into an existing organization
 
@@ -446,8 +442,6 @@ Example proposal: Replace the 'query-answer' model of a prompt-and-answer UI wit
 
 Additional proposal: Give AI an active role and augment human work. These are distinct principles and should be analyzed separately.
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The proposal is to separate this into two related mindset shifts, because they lead to different design principles.
 
 The first is about the product itself:
@@ -493,14 +487,14 @@ So one tentative proposal is to organize the overall idea as:
 
 If you need one umbrella phrase for the whole shift, **"from conversational interfaces to collaborative systems"** is probably the clearest. "Conversational" describes the current UI paradigm; "collaborative system" describes the deeper product model you're moving toward.
 
-The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/work-allocation-route" >}}) links the initial profiles, design practices, and later revision. The mapping log records the complete split.
+The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/work-allocation-route" >}}) links the initial profiles, design practices, and later revision. The [mapping log]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#related-notes-pass-5-participant-profiles-and-design-practices) records the complete split.
 
 ## From rewriting prompts to a shared writing workspace
 
 
-The following passage from the co-writer sketch (archived source 010) keeps the proposed meaning requirements, communication support, task context, Matrix idea, and closing reflection together. The earlier workflow and complete examples remain a separate application case.
+The following passage from the co-writer sketch (archived source 010) keeps the proposed meaning requirements, communication support, task context, Matrix idea, and closing reflection together. The earlier [workflow and complete examples]({{< ref "ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly" >}}) remain a separate application case.
 
-The saved sketch does not label speakers, so the arrangement does not assign every sentence to the author or an LLM. The [sibling comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}#co-writer-meaning-and-collaboration) distinguish faithful rewriting from developing an idea. The split audit records the original order.
+The saved sketch does not label speakers, so the arrangement does not assign every sentence to the author or an LLM. The [sibling comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}#co-writer-meaning-and-collaboration) distinguish faithful rewriting from developing an idea. The [split audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#co-writer-sketches) records the original order.
 
 <!-- Co-writer communication source begins below. -->
 
@@ -509,11 +503,11 @@ The saved sketch does not label speakers, so the arrangement does not assign eve
 
   If left blank, Gemini would infer the domain. The prompt would require it to:
 
-  1. Identify the domain and central argument.
-  2. Preserve the writer's intended claim.
-  3. Improve domain terminology and conceptual precision.
-  4. Clearly distinguish faithful rewrites from alternatives that extend the idea.
-  5. Avoid silently inventing facts.
+1. Identify the domain and central argument.
+2. Preserve the writer's intended claim.
+3. Improve domain terminology and conceptual precision.
+4. Clearly distinguish faithful rewrites from alternatives that extend the idea.
+5. Avoid silently inventing facts.
 
 And we're coming to the point that it's not text rewriter only. It could be helper in communication... communication facilitator..
 
@@ -526,7 +520,7 @@ collaborative surface.. first we could make it with Matrix
 ## reflections
 
 
-yes - the step from prompt to collaboration surface is a big deal. It changes not only mechanich, but the mindset, points of view, really the mental model.
+yes -- the step from prompt to collaboration surface is a big deal. It changes not only mechanich, but the mindset, points of view, really the mental model.
 
 ## Library sources
 

@@ -7,10 +7,10 @@ weight: "50"
 linkTitle: "Practice and Study"
 ---
 
-Reading paths, exercises, refactoring examples, the study log and links still to file. Part of [Functional programming]({{< ref "functional-programming" >}}).
+Reading paths, exercises, refactoring examples, the study log and links still to file. Part of [Functional Programming]({{< ref "functional-programming" >}}).
 
-- [FP reading paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}})
+- [Fp Reading Paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}})
 - [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}})
-- [Exercises and projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}})
+- [Exercises And Projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}})
 - [FP study log]({{< ref "functional-programming/05-practice/study-log" >}})
 - [FP links to sort]({{< ref "functional-programming/05-practice/to-sort" >}})

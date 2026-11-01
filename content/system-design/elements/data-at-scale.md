@@ -16,7 +16,7 @@ The microservices pattern language does not cover this question; it assumes each
 - **Data size and throughput:** what grows, and which resource runs out first. See [scalability]({{< ref "system-design/nfr/scalability" >}}#define-what-grows) and [capacity estimates]({{< ref "engineering/topics/envelope-estimations" >}}).
 - **Latency:** distance to the data and the number of round trips.
 - **Availability and durability:** copies on several machines survive failures. They must be kept in agreement.
-- **Consistency:** every copy, whether a replica, a cache, an index, or a view, can be stale. Decide what each operation may observe; see [consistency]({{< ref "system-design/nfr/consistency" >}}).
+- **Consistency:** every copy, whether a replica, a cache, an index, or a view, can be stale. Decide what each operation may observe; see [Consistency]({{< ref "system-design/nfr/consistency" >}}).
 - **Skew:** real workloads concentrate on hot keys, hot partitions, and peak hours.
 - **Coordination:** every decision that several nodes must agree on costs round trips and fails when nodes cannot reach each other.
 
@@ -25,18 +25,18 @@ The microservices pattern language does not cover this question; it assumes each
 
 | Pattern | Mechanism | Fits when | Costs and what it leads to |
 | --- | --- | --- | --- |
-| Replication | Keep copies on several nodes: single-leader, multi-leader, or leaderless. | Read scaling, availability, or data close to users. | Replication lag and its read anomalies; with asynchronous replication, failover can lose acknowledged writes. See [replication]({{< ref "engineering/distributed-systems/replication" >}}). |
-| Partitioning (sharding) | Split data across nodes by key range or by hash of a key. | The data or write load exceeds one node. | The partition key decides the load distribution; hot keys, cross-partition queries, secondary indexes, rebalancing. See [partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}). |
-| Consistent or rendezvous hashing | Map keys to nodes so that a membership change moves only a small share of keys. | Caches and stores whose node set changes. | Uneven load without virtual nodes or weighting. See [hashing]({{< ref "engineering/distributed-systems/hashing" >}}). |
+| Replication | Keep copies on several nodes: single-leader, multi-leader, or leaderless. | Read scaling, availability, or data close to users. | Replication lag and its read anomalies; with asynchronous replication, failover can lose acknowledged writes. See [Replication]({{< ref "engineering/distributed-systems/replication" >}}). |
+| Partitioning (sharding) | Split data across nodes by key range or by hash of a key. | The data or write load exceeds one node. | The partition key decides the load distribution; hot keys, cross-partition queries, secondary indexes, rebalancing. See [Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}). |
+| Consistent or rendezvous hashing | Map keys to nodes so that a membership change moves only a small share of keys. | Caches and stores whose node set changes. | Uneven load without virtual nodes or weighting. See [Hashing]({{< ref "engineering/distributed-systems/hashing" >}}). |
 | Hot-key splitting (sharded counters) | Split one hot key into N sub-keys, such as `likes:post42#0` to `likes:post42#7`. Each write goes to one sub-key; a read sums them, or reads a total that a background job refreshes. Salting a hot partition key is the same idea. | One value receives more writes than one partition can absorb, such as likes or views on a viral post. | Reads fan out to N keys or see a slightly stale total; choosing N. Whether a user has already liked a post needs a separate set keyed by user, which also makes the like idempotent. For unique counts, HyperLogLog trades exactness for small, fixed memory. |
-| Caching | Keep frequently read data closer to the reader: client, CDN, application cache, or database cache. Write policies include cache-aside, write-through, write-around, and write-back. | Read-heavy access with tolerable staleness. | Invalidation, cache stampedes, cold starts, and data loss with write-back. See [caching]({{< ref "engineering/topics/caching" >}}). |
-| Storage choice | Match the storage model to the access patterns: relational, key-value, wide-column, document, or object storage. | Always; decide from objects, relations, mutability, and access patterns. | Each model makes some queries cheap and others expensive. See [databases]({{< ref "engineering/data/databases" >}}), [database trade-offs]({{< ref "engineering/data/trade-off-db" >}}), and [key-value stores and data grids](#key-value-stores-and-data-grids). |
+| Caching | Keep frequently read data closer to the reader: client, CDN, application cache, or database cache. Write policies include cache-aside, write-through, write-around, and write-back. | Read-heavy access with tolerable staleness. | Invalidation, cache stampedes, cold starts, and data loss with write-back. See [Caching]({{< ref "engineering/topics/caching" >}}). |
+| Storage choice | Match the storage model to the access patterns: relational, key-value, wide-column, document, or object storage. | Always; decide from objects, relations, mutability, and access patterns. | Each model makes some queries cheap and others expensive. See [Databases]({{< ref "engineering/data/databases" >}}), [database trade-offs]({{< ref "engineering/data/trade-off-db" >}}), and [key-value stores and data grids](#key-value-stores-and-data-grids). |
 | Indexes | Extra structures that let a read find rows without a full scan: B-trees, LSM trees, hash indexes, and secondary indexes. See [indexes](#indexes). | A query filters or sorts by something other than the primary key. | Every index slows writes and takes storage. In a partitioned store, a secondary index is either local or global, with different costs. |
 | Search index | An inverted index kept as a derived view of the system of record. See [search index](#search-index). | Full-text, fuzzy, faceted, or relevance-ranked queries that the primary store cannot serve. | The index lags the source; another cluster to run; reindexing when the mapping changes. |
 | Unique ID generation | Generate identifiers without a single coordination point: Snowflake-style IDs (timestamp, worker, sequence), UUIDs, or pre-allocated ranges. | IDs must be unique across many writers, sometimes roughly time-ordered. | Clock dependence and ordering; ID size; range allocation needs coordination. See [Snowflake ID sources]({{< ref "system-design/projects/infra/snowflake-id" >}}). |
-| Rate limiting | Bound request rates per client or tier: token bucket, leaky bucket, fixed or sliding window counters. | Protect capacity and share it fairly. | With several enforcing nodes, they must share the count; see [rate limiting across nodes](#rate-limiting-across-nodes). See the [rate limiter]({{< ref "system-design/projects/rate-limiter" >}}). |
+| Rate limiting | Bound request rates per client or tier: token bucket, leaky bucket, fixed or sliding window counters. | Protect capacity and share it fairly. | With several enforcing nodes, they must share the count; see [rate limiting across nodes](#rate-limiting-across-nodes). See the [Rate_limiter]({{< ref "system-design/projects/rate-limiter" >}}). |
 | Scatter-gather | Send the request to every relevant partition in parallel and merge the results. | The answer needs data from all partitions: a search, a top-k, or a query by a value that is not the partition key. | The response waits for the slowest partition, so tail latency grows with the number of partitions. See [scatter-gather and tail latency](#scatter-gather-and-tail-latency). |
-| Batch processing (MapReduce, dataflow) | Map over every partition, shuffle the output by key, and reduce each group, off the request path. Spark and other dataflow engines generalize the model. | Derived datasets, analytics, index builds, and backfills over the whole dataset. | Results are minutes to hours old. Because the input is immutable, a job can be rerun after a bug fix, which makes batch the safe way to rebuild derived data. The streaming counterpart is in [stream processing]({{< ref "engineering/topics/stream-processing" >}}). |
+| Batch processing (MapReduce, dataflow) | Map over every partition, shuffle the output by key, and reduce each group, off the request path. Spark and other dataflow engines generalize the model. | Derived datasets, analytics, index builds, and backfills over the whole dataset. | Results are minutes to hours old. Because the input is immutable, a job can be rerun after a bug fix, which makes batch the safe way to rebuild derived data. The streaming counterpart is in [Stream_processing]({{< ref "engineering/topics/stream-processing" >}}). |
 | Coordination service | A small replicated store built on consensus, such as etcd or ZooKeeper, offering leases, locks, membership, and configuration. See [coordination](#coordination). | Leader election, membership, or a lock that must hold across nodes. | Another critical dependency; every write waits for a majority. Avoiding coordination is usually better. |
 
 Partitioning and replication answer different questions and are usually combined: partitioning spreads the load, and replication keeps each partition available.
@@ -86,10 +86,10 @@ When a request fans out to N partitions, its latency is the latency of the slowe
 ## Coordination
 
 
-Coordination is slow and fails when nodes cannot reach each other, so the options come in order. The theory is in [time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}), [broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}), and [coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}).
+Coordination is slow and fails when nodes cannot reach each other, so the options come in order. The theory is in [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}), [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}), and [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}).
 
 1. **Avoid it.** Give each key one writer by partitioning, so no two nodes need to agree.
-2. **Use a coordination service.** etcd and ZooKeeper provide leader election, membership, locks, and configuration on top of consensus. Kubernetes keeps its state in etcd; see the [control plane]({{< ref "system-design/elements/control-plane" >}}).
+2. **Use a coordination service.** etcd and ZooKeeper provide leader election, membership, locks, and configuration on top of consensus. Kubernetes keeps its state in etcd; see the [Control Plane]({{< ref "system-design/elements/control-plane" >}}).
 3. **Do not implement consensus yourself.**
 
 **Mechanisms:**
@@ -126,22 +126,22 @@ One limiter keeps an exact count. When many nodes enforce one limit, they must s
 ## Leads to
 
 
-- Every copy creates a consistency question: [consistency]({{< ref "system-design/nfr/consistency" >}}).
+- Every copy creates a consistency question: [Consistency]({{< ref "system-design/nfr/consistency" >}}).
 - Propagating changes to caches, replicas, and search indexes reliably leads to the [outbox and change data capture]({{< ref "system-design/elements/data-across-services" >}}#publishing-changes-reliably).
 - Stateless instances behind a [load balancer]({{< ref "system-design/elements/request-path" >}}#load-balancer) move state into these stores.
 - Failover of a primary leads to [reliability and availability]({{< ref "system-design/nfr/reliability-availability" >}}).
 - Scatter-gather leads to [timeouts and degraded results]({{< ref "system-design/elements/containing-failure" >}}).
-- A coordination service is the state store of a [control plane]({{< ref "system-design/elements/control-plane" >}}).
+- A coordination service is the state store of a [Control Plane]({{< ref "system-design/elements/control-plane" >}}).
 
 ## Seen in cases
 
 
 - [URL shortener]({{< ref "system-design/projects/url-shortener" >}}): key generation, caching of redirects, replication, and failover with possible loss of recent writes.
-- [Key-value store]({{< ref "system-design/projects/key-value-store" >}}): cache write policies and a Dynamo-style design.
+- [Key Value Store]({{< ref "system-design/projects/key-value-store" >}}): cache write policies and a Dynamo-style design.
 - [Dropbox]({{< ref "system-design/projects/dropbox" >}}): large objects, metadata, and synchronization.
 - [Ticketmaster]({{< ref "system-design/projects/ticketmaster" >}}): event search served from Elasticsearch, kept in sync with PostgreSQL through change data capture.
-- [Job scheduler]({{< ref "system-design/projects/job-scheduler" >}}): due jobs claimed with leases, and a single active scheduler.
-- [Rate limiter]({{< ref "system-design/projects/rate-limiter" >}}) and [Snowflake IDs]({{< ref "system-design/projects/infra/snowflake-id" >}}): focused applications.
+- [Job Scheduler]({{< ref "system-design/projects/job-scheduler" >}}): due jobs claimed with leases, and a single active scheduler.
+- [Rate_limiter]({{< ref "system-design/projects/rate-limiter" >}}) and [Snowflake IDs]({{< ref "system-design/projects/infra/snowflake-id" >}}): focused applications.
 
 ## Gaps
 

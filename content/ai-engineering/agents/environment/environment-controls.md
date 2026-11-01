@@ -84,9 +84,9 @@ There are two kinds of limits:
 
 - **The sandbox** confines Bash commands only: filesystem writes are limited to the workspace and temporary directories, and network traffic goes through a proxy with allowed and denied domains. File tools, hooks and MCP servers run outside it.
 - **Permission rules** cover all tools:
-  - modes: default, `acceptEdits`, `plan`, `auto`, `dontAsk`, `bypassPermissions`
-  - allow, ask and deny lists with patterns such as `Read(./.env)`, `Edit(/src/**)` and `Bash(npm run *)`
-  - managed settings that override the user and the project
+	- modes: default, `acceptEdits`, `plan`, `auto`, `dontAsk`, `bypassPermissions`
+	- allow, ask and deny lists with patterns such as `Read(./.env)`, `Edit(/src/**)` and `Bash(npm run *)`
+	- managed settings that override the user and the project
 
 There is no ignore file; the docs point to `Read` deny rules instead. Checkpoints are taken before each turn and restored with `/rewind`. Sub-agents limit their tools with `tools` and `disallowedTools`.
 
@@ -151,17 +151,17 @@ The whole sandbox is the workspace. Repositories are listed in `REPOSITORIES.md`
 
 - **Only two local agents confine anything.** Codex and Claude Code use OS sandboxes. OpenCode, Zoo Code and Cline rely on approvals. Cloud runners confine by infrastructure: Roomote, Claude Code on the web, and Cline's cloud agents.
 - **Rules cover only the harness's own tools.** An ignore file keeps a file out of the read tool, but a shell command can still print it:
-  - Zoo Code refuses commands that touch ignored files.
-  - Cline doesn't enforce `.clineignore` itself; a team has to install the example hook.
-  - Claude Code relies on deny rules for files and on the sandbox for commands, and its sandbox doesn't cover file tools.
+	- Zoo Code refuses commands that touch ignored files.
+	- Cline doesn't enforce `.clineignore` itself; a team has to install the example hook.
+	- Claude Code relies on deny rules for files and on the sandbox for commands, and its sandbox doesn't cover file tools.
 - **Preparation exists where a server owns the machine.** Local agents inherit the developer's machine. Codex has a model of remote environments with provisioning states, and OpenCode 2.x has the `WorkspaceDriver` extension point without an implementation. Only hosted or self-hosted runners have setup definitions.
 - **Two agents protect their own instruction files.** Codex keeps `.git`, `.agents`, `.codex` and `.aws` read-only. Zoo Code always asks before writing `.roo/**`, `.vscode/**`, `AGENTS.md` and its mode files. The agent can't change its own rules without someone seeing it.
 - **Only Zoo Code limits tools to certain files per mode.** `fileRegex` on the edit group restricts a mode to matching files. OpenCode's plan agent is a narrower case of the same idea: it can edit only its plan folder.
 - **Undo takes three forms.** IDE agents keep shadow-git checkpoints (Claude Code, Cline, Zoo Code). OpenCode has snapshots with revert. Codex dropped its undo feature, and Roomote relies on branches and pull requests.
 - **Secret handling varies the most.**
-  - Codex and Claude Code filter or mask variables.
-  - Roomote keeps service keys behind a proxy but leaves some tokens in the shell.
-  - OpenCode and Zoo Code pass the environment through unchanged.
+	- Codex and Claude Code filter or mask variables.
+	- Roomote keeps service keys behind a proxy but leaves some tokens in the shell.
+	- OpenCode and Zoo Code pass the environment through unchanged.
 
 ## What a repository can supply
 

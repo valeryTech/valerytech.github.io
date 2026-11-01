@@ -25,8 +25,8 @@ Proposed primary requirement: **Reconstructible System Manifest**.
 A few important refinements from the methodology:
 
 - Keep `C` and `E_fixed` separate inside the manifest:
-    - `C`: models, prompts, routing, tools, retrieval settings, policies, budgets.
-    - `E_fixed`: runtimes, external service contracts, schemas, endpoints, infrastructure dependencies.
+	- `C`: models, prompts, routing, tools, retrieval settings, policies, budgets.
+	- `E_fixed`: runtimes, external service contracts, schemas, endpoints, infrastructure dependencies.
 - Compute separate `C_fingerprint` and `E_fixed_fingerprint`; combine them into the `DeploymentKey`.
 - Do not put observed conditions such as latency, service health, or rate limiting in the manifest. Those belong to `E_observed`.
 - Store secrets only as references.
@@ -81,8 +81,8 @@ The environment needs three related artifacts:
 - Each experimental change is shown as a semantic diff from the production baseline.
 - Runs occur in an isolated environment; mutating tools are disabled, simulated, or require an explicit safe mode.
 - The expert can choose between:
-    - **Live mode:** invoke current non-production dependencies.
-    - **Replay mode:** use captured retrieval results and tool responses from the production episode.
+	- **Live mode:** invoke current non-production dependencies.
+	- **Replay mode:** use captured retrieval results and tool responses from the production episode.
 - Each run records the effective configuration, input, dependency fixtures, random seed where applicable, trace, output, and all relevant fingerprints.
 - A saved experiment can be opened and rerun by another authorized person.
 - Sensitive production data is redacted or access-controlled.
@@ -727,3 +727,10 @@ resolved system artifact
 Avoid Git submodules for this design. They tend to make the coordination problem visible to every contributor without actually removing it.
 
 One dedicated `ai-config` monorepo is probably the simpler starting point. Split later when organizational boundaries make the split useful, while keeping the registry/version model stable.
+
+## Related notes
+
+
+- [Declarative specifications and engines]({{< ref "type-driven-design/04-architecture/declarative-design" >}}) covers desired-state systems such as Terraform and Kubernetes and lists four senses of "declarative", which bears on the open question about Helm and Terraform.
+- [Fingerprinting specification v1.3]({{< ref "ai-engineering/evaluation/theoretical-methodology/framework/fingerprinting-spec-v1-3" >}}) defines how `C_fingerprint` and the fixed dependency fingerprint are computed; it is the fingerprint specification these requirements extend.
+- [Design research 5.9: declarative system configuration and instantiation]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) holds the same requirement drafts (SC-1 to SC-9) arranged as a dialogue, with a sibling comments note.

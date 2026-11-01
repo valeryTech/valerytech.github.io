@@ -111,7 +111,7 @@ The result can be used almost like a time-of-day timestamp, with ordering consis
 
 
 - **Causal order** respects -> and leaves concurrent events unordered, so different replicas may apply concurrent events in different orders. It needs no coordination. With vector clocks, a process delays delivering a message m from process i until m is the next message expected from i and the process has delivered everything i had delivered before sending m (van Steen and Tanenbaum 2023). Causally consistent stores buffer early updates in the same way until their dependencies arrive (Petrov 2019, chapter 11). Causal consistency is the strongest model that never waits for the network; see [consistency models]({{< ref "engineering/distributed-systems/guarantees" >}}#consistency-models).
-- **Total order** puts every pair of events in one sequence that all nodes share. Assigning one is cheap: Lamport timestamps do it with no extra messages. Knowing that it is final is not: before acting on its own timestamp, a node must know that no other node will produce a lower one, which means hearing from every node, and one failed or unreachable node stops everything (Lamport 1978; DDIA chapter 10). A fault-tolerant total order is total order broadcast, which is equivalent to consensus; see [broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}).
+- **Total order** puts every pair of events in one sequence that all nodes share. Assigning one is cheap: Lamport timestamps do it with no extra messages. Knowing that it is final is not: before acting on its own timestamp, a node must know that no other node will produce a lower one, which means hearing from every node, and one failed or unreachable node stops everything (Lamport 1978; DDIA chapter 10). A fault-tolerant total order is total order broadcast, which is equivalent to consensus; see [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}).
 
 DDIA (chapter 13) draws the practical consequence. A totally ordered log usually passes through one leader, so it is bounded by one machine's throughput, and it does not span shards, regions with their own leaders, independent services, or clients that work offline. Where events have no causal link, the missing total order costs nothing. Where they do, the dependency has to be captured explicitly, for example by logging the ID of the event the user saw before acting and referencing it from later events.
 
@@ -180,10 +180,10 @@ Neither a logical clock nor a linearizable generator implements locks or uniquen
 ## Related notes
 
 
-- [System models]({{< ref "engineering/distributed-systems/system-models" >}}): the timing assumptions (synchronous, partially synchronous, asynchronous) that decide whether clocks and timeouts can be trusted.
+- [System Models]({{< ref "engineering/distributed-systems/system-models" >}}): the timing assumptions (synchronous, partially synchronous, asynchronous) that decide whether clocks and timeouts can be trusted.
 - [Consistency guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}): causal consistency and linearizability, the guarantees these orderings implement.
-- [Broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): total order broadcast, with Raft terms and Paxos ballots acting as fencing tokens.
-- [Coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): what replicas can do with causal order alone.
+- [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): total order broadcast, with Raft terms and Paxos ballots acting as fencing tokens.
+- [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): what replicas can do with causal order alone.
 - [Replication]({{< ref "engineering/distributed-systems/replication" >}}): the multi-leader and leaderless conflicts that version vectors and LWW resolve.
 - [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}): MVCC snapshots, which need transaction IDs consistent with causality.
 

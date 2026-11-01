@@ -134,7 +134,7 @@ In Haskell every function is curried already: `add x y = x + y` has type `Int ->
 
 Currying is not used for its own sake. The point is partial application: building specialized functions from general ones. The two are often confused. Currying is the transformation of the function's type; partial application is supplying some of the arguments, and it can be done without currying.
 
-- Stack Overflow, "Two ways of currying in Scala; what's the use case for each": <https://stackoverflow.com/questions/4915027/two-ways-of-currying-in-scala-whats-the-use-case-for-each>
+- Stack Overflow, "[Two ways of currying in Scala; what's the use case for each](https://stackoverflow.com/questions/4915027/two-ways-of-currying-in-scala-whats-the-use-case-for-each)"
 
 ### Placeholder syntax
 
@@ -278,11 +278,11 @@ Each stage is a small function you can test alone. The Haskell version of the id
 ### Composing functions with different effects
 
 
-- Scala Users forum, "Composing functions involving different effects": <https://users.scala-lang.org/t/composing-functions-involving-different-effects/6194/10>
+- Scala Users forum, "[Composing functions involving different effects](https://users.scala-lang.org/t/composing-functions-involving-different-effects/6194/10)"
 
 The problem in the thread's title: `f: A => Option[B]` and `g: B => Either[E, C]` don't compose with `andThen`, because the output of `f` isn't the input of `g`. Functions of the form `A => F[B]` compose with `flatMap` (Kleisli composition) only when they share the same `F`. Mixing effects means converting one into the other first, for example `f(a).toRight(err).flatMap(g)`, or using a monad transformer or an effect type that covers both (see [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems)).
 
-See also: [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala) for by-name parameters in control structures, [Recursion and folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}) for higher-order functions over lists, [Wholemeal programming]({{< ref "functional-programming/05-practice/functional-refactoring" >}}#wholemeal-programming) for pipelines in Haskell, [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}) for `fmap`, [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for composing functions that return `Option` or `Either`, and [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for monad transformers.
+See also: [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala) for by-name parameters in control structures, [Recursion And Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}) for higher-order functions over lists, [Wholemeal programming]({{< ref "functional-programming/05-practice/functional-refactoring" >}}#wholemeal-programming) for pipelines in Haskell, [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}) for `fmap`, [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for composing functions that return `Option` or `Either`, and [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for monad transformers.
 
 ## Library sources
 

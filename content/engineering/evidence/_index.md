@@ -14,34 +14,34 @@ The question is older than AI tools and does not depend on them. Claims that cod
 
 
 1. **Say exactly what is claimed.** Name the outcome, population, intervention, comparison and time, and say whether the claim is descriptive, associational, causal or speculative. -> [Stating a claim]({{< ref "engineering/evidence/stating-claims" >}})
-2. **Argue that the measure measures the thing.** A count stands for a concept such as productivity only with an argument that it does, and a count that becomes a target stops measuring. -> [Measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}})
+2. **Argue that the measure measures the thing.** A count stands for a concept such as productivity only with an argument that it does, and a count that becomes a target stops measuring. -> [Measures And Constructs]({{< ref "engineering/evidence/measures-and-constructs" >}})
 3. **A causal claim needs a comparison.** Name the experiment that would settle the claim, then look for confounders and for patterns that only look like effects. -> [Causal claims need a comparison]({{< ref "engineering/evidence/causal-claims" >}})
 4. **Fix what counts before looking.** Choose the primary outcome, exclusions and analysis before the data is seen. -> [Preregistration]({{< ref "engineering/evidence/running-experiments" >}}#preregistration)
 5. **Report how big, how sure and how far.** An effect estimate with its uncertainty, its practical significance and the population it covers, not a verdict. -> [Reporting an estimate]({{< ref "engineering/evidence/stating-claims" >}}#reporting-an-estimate), [Four kinds of validity]({{< ref "engineering/evidence/validity" >}})
-6. **Match the method to the question.** Benchmarks, experiments, case studies, longitudinal studies and reviews each answer a different kind of question. -> [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}})
+6. **Match the method to the question.** Benchmarks, experiments, case studies, longitudinal studies and reviews each answer a different kind of question. -> [Choosing A Method]({{< ref "engineering/evidence/choosing-a-method" >}})
 7. **Look past the moment of change.** Some costs appear months after the change that caused them. -> [Longitudinal studies]({{< ref "engineering/evidence/choosing-a-method" >}}#longitudinal-studies)
-8. **One study is a finding.** Confidence comes from replication and synthesis, and repetition by citation is not replication. -> [Replication and synthesis]({{< ref "engineering/evidence/ebse" >}}#replication-and-synthesis), [Claims without evidence]({{< ref "engineering/evidence/claims-without-evidence" >}})
+8. **One study is a finding.** Confidence comes from replication and synthesis, and repetition by citation is not replication. -> [Replication and synthesis]({{< ref "engineering/evidence/ebse" >}}#replication-and-synthesis), [Claims Without Evidence]({{< ref "engineering/evidence/claims-without-evidence" >}})
 9. **Evidence informs a decision, and the decision is checked.** Evidence is combined with expertise and the circumstances of use, and the result is evaluated afterwards. -> [Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}})
-10. **Question the evidence too.** Ask whether the metric fits, whether the study was biased and what was left out, and revise. -> [Critical stance]({{< ref "engineering/evidence/critical-stance" >}})
+10. **Question the evidence too.** Ask whether the metric fits, whether the study was biased and what was left out, and revise. -> [Critical Stance]({{< ref "engineering/evidence/critical-stance" >}})
 
 ## Notes
 
 
 **The problem**
 
-- [Claims without evidence]({{< ref "engineering/evidence/claims-without-evidence" >}}) -- essays on why software methodologies fail to deliver what they promise, and Bossavit's account of software engineering "facts" that spread by citation alone.
+- [Claims Without Evidence]({{< ref "engineering/evidence/claims-without-evidence" >}}) -- essays on why software methodologies fail to deliver what they promise, and Bossavit's account of software engineering "facts" that spread by citation alone.
 
 **Principles**
 
 - [Stating a claim]({{< ref "engineering/evidence/stating-claims" >}}) -- what a precise claim names, four kinds of claim, evidence rather than proof, and reporting an estimate.
-- [Measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}) -- metrics as operationalizations, the dimensions of productivity, and measures that become targets.
+- [Measures And Constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}) -- metrics as operationalizations, the dimensions of productivity, and measures that become targets.
 - [Causal claims need a comparison]({{< ref "engineering/evidence/causal-claims" >}}) -- the target trial, confounders, and six patterns that look like effects.
 - [Four kinds of validity]({{< ref "engineering/evidence/validity" >}}) -- construct, internal, external and conclusion validity, plus reproducibility.
 - [Critical stance and evidence-based practice]({{< ref "engineering/evidence/critical-stance" >}}) -- the vocabulary around empirical, evidence-based and hypothesis-driven engineering, and why measuring a metric is not yet an answer.
 
 **Practices**
 
-- [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}}) -- which method answers which claim: benchmarks, case studies, mixed methods, longitudinal studies, and why an experience report is not a case study.
+- [Choosing A Method]({{< ref "engineering/evidence/choosing-a-method" >}}) -- which method answers which claim: benchmarks, case studies, mixed methods, longitudinal studies, and why an experience report is not a case study.
 - [Running an experiment]({{< ref "engineering/evidence/running-experiments" >}}) -- the five-stage experiment process, method-specific standards, and preregistration.
 - [Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}}) -- the five steps for using evidence, the skill and lifecycle factors, and how replication and synthesis build confidence.
 

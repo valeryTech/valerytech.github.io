@@ -71,11 +71,11 @@ In Scala, bind is `flatMap`, and `for` comprehensions are sugar for `flatMap` an
 
 Brent Yorgey's 2009 post, linked below, is the one that named the "monad tutorial fallacy". It and the two-wrongs article go with the quote above.
 
-- Video on monads: <https://www.youtube.com/watch?v=C2w45qRc3aU>
-- Haskell Wiki, Monad tutorials timeline: <https://wiki.haskell.org/Monad_tutorials_timeline>
-- Haskell Wiki, All About Monads: <https://wiki.haskell.org/All_About_Monads>
-- two-wrongs, "The 'what are monads' fallacy": <https://two-wrongs.com/the-what-are-monads-fallacy>
-- Brent Yorgey, "Abstraction, intuition, and the 'monad tutorial fallacy'" (2009): <https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/>
+- [Video on monads](https://www.youtube.com/watch?v=C2w45qRc3aU)
+- Haskell Wiki, [Monad tutorials timeline](https://wiki.haskell.org/Monad_tutorials_timeline)
+- Haskell Wiki, [All About Monads](https://wiki.haskell.org/All_About_Monads)
+- two-wrongs, "[The 'what are monads' fallacy](https://two-wrongs.com/the-what-are-monads-fallacy)"
+- Brent Yorgey, "[Abstraction, intuition, and the 'monad tutorial fallacy'](https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/)" (2009)
 
 ### `map`, `flatMap` and for expressions in Scala
 
@@ -147,8 +147,8 @@ runWriter (half 8 >>= half)  -- (2,["halving 8","halving 4"])
 
 Caveat: Writer is a poor fit for application logging. The log only becomes available when the whole computation finishes, and the classic lazy and strict implementations can build up large unevaluated logs (space leaks). The `transformers` package added a continuation-passing variant (`Control.Monad.Trans.Writer.CPS`) for that reason. Writer works well for small accumulations such as collecting warnings or counting steps.
 
-- Philip Schwarz, Writer monad slides: <https://speakerdeck.com/philipschwarz/writer-monad>
-- Haskell Wiki, All About Monads, the Writer monad: <https://wiki.haskell.org/All_About_Monads#The_Writer_monad>
+- Philip Schwarz, [Writer monad slides](https://speakerdeck.com/philipschwarz/writer-monad)
+- Haskell Wiki, [All About Monads, the Writer monad](https://wiki.haskell.org/All_About_Monads#The_Writer_monad)
 
 ## State
 
@@ -186,18 +186,18 @@ Philip Schwarz's State slides were also noted as kept "in projects". The *State 
 
 Haskell:
 
-- brandon.si, "The State monad: a tutorial for the confused": <http://brandon.si/code/the-state-monad-a-tutorial-for-the-confused/>
-- Hugo Peters, blog post 13: <https://hugopeters.me/posts/13/>
-- Reddit, "How to get into State monad": <https://www.reddit.com/r/haskell/comments/wtgq7o/how_to_get_into_state_monad/>
+- brandon.si, "[The State monad: a tutorial for the confused](http://brandon.si/code/the-state-monad-a-tutorial-for-the-confused/)"
+- Hugo Peters, blog post 13: [Demystifying the state monad (Hugo Peters)](https://hugopeters.me/posts/13/)
+- Reddit, "[How to get into State monad](https://www.reddit.com/r/haskell/comments/wtgq7o/how_to_get_into_state_monad/)"
 
 Scala:
 
-- Scala.io talk on the State monad (slides, dgalichet): <https://www.slideshare.net/dgalichet/scalaio-statemonad?from_search=2>
-- earldouglas.com, State monad talk slides: <https://earldouglas.com/talks/state-monad/slides.html#(1)>
-- Medium, "State monad unlocked": <https://afsal-taj06.medium.com/state-monad-unlocked-e946becf0f6f>
-- Cats documentation, the `State` data type (the reference for the Scala version): <https://typelevel.org/cats/datatypes/state.html>
-- Philip Schwarz, "From Scala monadic effects to Unison algebraic effects" (slides): <https://www.slideshare.net/pjschwarz/from-scala-monadic-effects-to-unison-algebraic-effects>
-- blog.tmorris.net, "Memoisation with State using Scala": <https://blog.tmorris.net/posts/memoisation-with-state-using-scala/index.html>
+- Scala.io talk on the State monad (slides, dgalichet): [Playing with State Monad (Scala.io talk slides)](https://www.slideshare.net/dgalichet/scalaio-statemonad?from_search=2)
+- earldouglas.com, [State monad talk slides](https://earldouglas.com/talks/state-monad/slides.html#(1))
+- Medium, "[State monad unlocked](https://afsal-taj06.medium.com/state-monad-unlocked-e946becf0f6f)"
+- Cats documentation, the `State` data type (the reference for the Scala version): [State data type (Cats documentation)](https://typelevel.org/cats/datatypes/state.html)
+- Philip Schwarz, "[From Scala monadic effects to Unison algebraic effects](https://www.slideshare.net/pjschwarz/from-scala-monadic-effects-to-unison-algebraic-effects)" (slides)
+- blog.tmorris.net, "[Memoisation with State using Scala](https://blog.tmorris.net/posts/memoisation-with-state-using-scala/index.html)"
 
 ## Reader
 
@@ -227,13 +227,13 @@ Still to do:
 
 Links:
 
-- ssanj, "Functor, Applicative and Monad instances for Reader" (2018): <https://blog.ssanj.net/posts/2018-03-05-functor-applicative-and-monad-instances-for-reader.html>
-- twopoint718, a gist (topic not checked): <https://gist.github.com/twopoint718/c02164137c6fca9e0c4c>
-- Stack Overflow, "What can the Reader monad do that applicative functions cannot?": <https://stackoverflow.com/questions/55797418/what-can-the-reader-monad-do-that-applicative-functions-cannot>
-- Stack Overflow, "Is there any intuition to understand join two functions in monad?": <https://stackoverflow.com/questions/32323680/is-there-any-intuition-to-understand-join-two-functions-in-monad>
-- Dollar Shave Club engineering, "The Reader monad: example, motivation": <https://engineering.dollarshaveclub.com/the-reader-monad-example-motivation-542c54ccfaa8>
-- dev.to, "Grokking the Reader monad": <https://dev.to/choc13/grokking-the-reader-monad-4f45>
-- Reddit, "What are the other use cases of the Either monad?" (about Either, not Reader): <https://www.reddit.com/r/functionalprogramming/comments/myz9ju/what_are_the_other_use_cases_of_the_either_monad/>
+- ssanj, "[Functor, Applicative and Monad instances for Reader](https://blog.ssanj.net/posts/2018-03-05-functor-applicative-and-monad-instances-for-reader.html)" (2018)
+- twopoint718, a gist (topic not checked): [An article about the Reader type (Gist)](https://gist.github.com/twopoint718/c02164137c6fca9e0c4c)
+- Stack Overflow, "[What can the Reader monad do that applicative functions cannot?](https://stackoverflow.com/questions/55797418/what-can-the-reader-monad-do-that-applicative-functions-cannot)"
+- Stack Overflow, "[Is there any intuition to understand join two functions in monad?](https://stackoverflow.com/questions/32323680/is-there-any-intuition-to-understand-join-two-functions-in-monad)"
+- Dollar Shave Club engineering, "[The Reader monad: example, motivation](https://engineering.dollarshaveclub.com/the-reader-monad-example-motivation-542c54ccfaa8)"
+- dev.to, "[Grokking the Reader monad](https://dev.to/choc13/grokking-the-reader-monad-4f45)"
+- Reddit, "[What are the other use cases of the Either monad?](https://www.reddit.com/r/functionalprogramming/comments/myz9ju/what_are_the_other_use_cases_of_the_either_monad/)" (about Either, not Reader)
 
 ## IO
 
@@ -254,7 +254,7 @@ A widely repeated quote attributed to Odersky (the original source needs checkin
 
 It sits in tension with the description model. Under that model the function returning `IO` *is* pure; the impurity is in executing the description. The quote is right in a looser sense: the type `IO` marks which code will have effects when it runs.
 
-In short, if you want to write for expressions that mix pure functions and I/O functions in a compositional style, the IO monad provides a solution. In Scala this means an effect type such as Cats Effect's `IO` or ZIO's `ZIO`. Scala's standard library has none: `Future` starts running as soon as it is created, so it is not a description in this sense. See [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
+In short, if you want to write for expressions that mix pure functions and I/O functions in a compositional style, the IO monad provides a solution. In Scala this means an effect type such as Cats Effect's `IO` or ZIO's `ZIO`. Scala's standard library has none: `Future` starts running as soon as it is created, so it is not a description in this sense. See [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
 
 ### IO as a context
 
@@ -292,18 +292,18 @@ main = interact (map toUpper)
 
 This processes a file of any size in constant memory, and reacts line by line when the input is a terminal.
 
-Caveat: lazy I/O is convenient for small scripts but widely discouraged elsewhere. When the reading happens depends on when the string is evaluated, so file handles can stay open longer than expected or be closed before the data is read, and I/O errors surface inside pure code. Larger programs use strict reads (`Data.Text.IO`, `Data.ByteString`) or a streaming library such as `conduit`, `pipes` or `streaming`; in Scala the counterpart is fs2. For the strictness side see [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}).
+Caveat: lazy I/O is convenient for small scripts but widely discouraged elsewhere. When the reading happens depends on when the string is evaluated, so file handles can stay open longer than expected or be closed before the data is read, and I/O errors surface inside pure code. Larger programs use strict reads (`Data.Text.IO`, `Data.ByteString`) or a streaming library such as `conduit`, `pipes` or `streaming`; in Scala the counterpart is fs2. For the strictness side see [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}).
 
 ### Links
 
 
-- Typelevel blog, "An IO monad for Cats" (2017): <https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html>
-- Underscore, "Monadic IO: laziness makes you free" (2015): <https://underscore.io/blog/posts/2015/04/28/monadic-io-laziness-makes-you-free.html>
-- Video on IO: <https://www.youtube.com/watch?v=tYH5UsahYQU>
-- Haskell Wiki, Introduction to IO: <https://wiki.haskell.org/Introduction_to_IO>
-- blynn, Haskell IO notes (crypto.stanford.edu): <https://crypto.stanford.edu/~blynn/haskell/io.html>
+- Typelevel blog, "[An IO monad for Cats](https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html)" (2017)
+- Underscore, "[Monadic IO: laziness makes you free](https://underscore.io/blog/posts/2015/04/28/monadic-io-laziness-makes-you-free.html)" (2015)
+- [Video on IO](https://www.youtube.com/watch?v=tYH5UsahYQU)
+- Haskell Wiki, [Introduction to IO](https://wiki.haskell.org/Introduction_to_IO)
+- blynn, Haskell IO notes (crypto.stanford.edu): [Haskell notes: a problem with I/O](https://crypto.stanford.edu/~blynn/haskell/io.html)
 
-See also: [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for free monads and monad transformers, [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}), [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}) and [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}).
+See also: [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for free monads and monad transformers, [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}), [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}) and [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}).
 
 ## Library sources
 

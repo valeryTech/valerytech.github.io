@@ -17,8 +17,6 @@ how would you named and formulated this build approach and stance: we don't know
 
 We don't know what we don't know
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The proposal is to call the stance **architectural least commitment**.
 
 The broader build approach could be:
@@ -84,7 +82,7 @@ There is also a useful connection to the classic **mechanism-policy separation**
 
 One possible formulation of the research stance is:
 
-> **Architectural least commitment.** Because the effective organization of heterogeneous human, model, and software computation is not known a priori, we avoid making a particular coordination architecture part of the computational model. We instead identify the minimal shared semantics required for safe composition--state, authority, effects, provenance, identity, obligations, and invariants--and allow arbitrary architectures to be constructed within those constraints.
+> **Architectural least commitment.** Because the effective organization of heterogeneous human, model, and software computation is not known a priori, we avoid making a particular coordination architecture part of the computational model. We instead identify the minimal shared semantics required for safe composition -- state, authority, effects, provenance, identity, obligations, and invariants -- and allow arbitrary architectures to be constructed within those constraints.
 
 And there is an even stronger sentence underneath it:
 
@@ -98,8 +96,6 @@ The proposal is to use **architectural least commitment** for the principle and 
 
 
 The research outline considers exact precedents and nearby design traditions: AI planning, operating systems, Internet architecture, programming languages, and software architecture. The key test is whether they preserve unknown future architectures by fixing only a minimal semantic substrate.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The saved LLM review reports searching across AI planning, operating systems, programming languages, Internet architecture, and current agent systems. It identifies an intellectual lineage for this stance, but no single established term covering the whole idea.
 
@@ -115,7 +111,7 @@ SICP generalizes the same principle beyond planning. Abelson and Sussman describ
 
 So there is precedent for extending "least commitment" from decisions inside a plan to decisions inside system design.
 
-The second major lineage is **mechanism-policy separation** in operating systems. Wulf's HYDRA work argues that putting policy into the substrate makes systems difficult to experiment with and adapt; the substrate should provide mechanisms while leaving complex decisions to higher-level designers. ([CSE Web](https://cseweb.ucsd.edu/classes/wi19/cse221-a/papers/wulf74.pdf "2. Separation of mechanism and policy. Among the major causes of our inability to experiment with, and adapt, existing operating systems is their failure to properly separate mechanisms from policies. (Hansen [1] has presented cogent arguments for this separation.) Such separation contributes to the flexibility of the system, for it leaves the complex decisions in the hands of the person who should make them--the higher-level system designer."))
+The second major lineage is **mechanism-policy separation** in operating systems. Wulf's HYDRA work argues that putting policy into the substrate makes systems difficult to experiment with and adapt; the substrate should provide mechanisms while leaving complex decisions to higher-level designers. ([CSE Web](https://cseweb.ucsd.edu/classes/wi19/cse221-a/papers/wulf74.pdf "2. Separation of mechanism and policy. Among the major causes of our inability to experiment with, and adapt, existing operating systems is their failure to properly separate mechanisms from policies. (Hansen [1] has presented cogent arguments for this separation.) Such separation contributes to the flexibility of the system, for it leaves the complex decisions in the hands of the person who should make them -- the higher-level system designer."))
 
 The Exokernel project takes this much further. Its starting observation is that conventional operating systems constrain applications by fixing abstractions such as virtual memory and IPC. The exokernel therefore securely exposes low-level resources and lets applications implement, specialize, or replace higher-level abstractions themselves. ([EECG](https://www.eecg.utoronto.ca/~yuan/teaching/gradOS/papers/exokernel.pdf "Exokernel: An Operating System Architecture for Application-Level Resource Management"))
 

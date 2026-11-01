@@ -310,7 +310,7 @@ For any new rule, apply the refresh's scope test: if it isn't about the app-plat
 - [Platform and delivery]({{< ref "engineering/platform" >}}): the platform side of the contract.
 - [Operating services]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns): externalized configuration, health checks, and telemetry as system design choices.
 - [GitOps]({{< ref "engineering/platform/gitops" >}}#secrets): where secrets go when configuration lives in Git.
-- [Developer experience]({{< ref "engineering/platform/developer-experience" >}}): the narrow-conduit idea applied to platform teams.
+- [Developer Experience]({{< ref "engineering/platform/developer-experience" >}}): the narrow-conduit idea applied to platform teams.
 
 ## Sources
 

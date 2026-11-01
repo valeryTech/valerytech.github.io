@@ -124,14 +124,14 @@ Repeated rejections lower a cluster's search priority, allowing evolution to exp
 2. Cluster tasks from these records into \(\{\mathcal{D}_{c}\}\).
 3. Initialize \(\mathcal{T}_{H}\) and \(H_{c}\leftarrow H_{0}\).
 4. For \(i=1,\ldots,T\):
-   - Review clusters; adjust task assignments if needed.
-   - \(\pi\) chooses a cluster \(c\) and parent in \(\mathcal{T}_{H}\).
-   - Build subclass \(H^{\prime}\); override or add methods.
-   - Run \(H^{\prime}\) on \(\mathcal{D}_{c}\); collect scores and feedback.
-   - Compare task outcomes; apply acceptance checks.
-   - Retain accepted \(H^{\prime}\); update \(H_{c}\) if preferred.
-   - Update cluster priority from acceptance history.
-   - Store outcomes; distill enabled lessons.
+	- Review clusters; adjust task assignments if needed.
+	- \(\pi\) chooses a cluster \(c\) and parent in \(\mathcal{T}_{H}\).
+	- Build subclass \(H^{\prime}\); override or add methods.
+	- Run \(H^{\prime}\) on \(\mathcal{D}_{c}\); collect scores and feedback.
+	- Compare task outcomes; apply acceptance checks.
+	- Retain accepted \(H^{\prime}\); update \(H_{c}\) if preferred.
+	- Update cluster priority from acceptance history.
+	- Store outcomes; distill enabled lessons.
 
 **Output:** Freeze \(\mathcal{T}_{H}\), \(\{H_{c}\}\), records, and lessons.
 

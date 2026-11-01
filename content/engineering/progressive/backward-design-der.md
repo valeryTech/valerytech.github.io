@@ -385,13 +385,13 @@ flowchart TD
 Record the links between the levels:
 
 - `JTBD-12`
-  - `DomainStory-07`
-    - `Capability-CustomerIdentity`
-      - `ADR-018`
-      - `C4:System.Identity`
-    - `Capability-AccountRecovery`
-      - `ADR-027`
-      - `C4:Container.RecoveryService`
+	- `DomainStory-07`
+		- `Capability-CustomerIdentity`
+			- `ADR-018`
+			- `C4:System.Identity`
+		- `Capability-AccountRecovery`
+			- `ADR-027`
+			- `C4:Container.RecoveryService`
 
 For a more formal approach, **URN** is the closest existing model found in this comparison that combines goals and scenarios.
 

@@ -297,9 +297,7 @@ We should segregate our read
 
 traffic from write traffic. Since we will have multiple copies of each video, we can
 
-distribute our read traffic on different servers. For metadata, we can have master-
-
-slave configurations where writes will go to master first and then gets applied at all
+distribute our read traffic on different servers. For metadata, we can have master-slave configurations where writes will go to master first and then gets applied at all
 
 the slaves. Such configurations can cause some staleness in data, e.g., when a new
 

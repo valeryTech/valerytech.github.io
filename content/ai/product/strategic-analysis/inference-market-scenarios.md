@@ -16,12 +16,10 @@ The SaaS model, where companies embed themselves in employee workflows and often
 
 "Unless they make a stark, 180-degree pivot to rebuild the exact same thing from scratch, they're going to slowly fail," Zhu said. "What that means is that investors would rather just bet on new entrepreneurs at lower valuations rather than double down on older startups." #idea search for SaaS companies
 
-<a id="model-prompt"></a>
-
 ## Initial model request
 
 
-Model objective: analyze possible consequences and scenarios raised by https://garymarcus.substack.com/p/breaking-openais-unraveling-has-begun
+Model objective: analyze possible consequences and scenarios raised by [BREAKING: OpenAI's unraveling has begun (Substack)](https://garymarcus.substack.com/p/breaking-openais-unraveling-has-begun)
 
 Initial proposal: include model quality and token cost. Some local models can already perform simple tasks; an OpenAI bankruptcy could push workloads toward local or private open-weight models. Token costs could also decline.
 
@@ -150,9 +148,9 @@ plus the expected error cost.
 
 Utilization is critical.
 
-A \(3,000-\)10,000 GPU sitting idle can be much more expensive than Luna. A heavily utilized GPU can become extremely cheap.
+A \$3,000-$10,000 GPU sitting idle can be much more expensive than Luna. A heavily utilized GPU can become extremely cheap.
 
-One 2026 study measured electricity-only inference around \(0.001-\)0.04/M tokens and estimated consumer hardware could break even against API use within months at sufficiently high volume. ([arXiv](https://arxiv.org/abs/2601.09527 "[2601.09527] Private LLM Inference on Consumer Blackwell GPUs: A Practical Guide for Cost-Effective Local Deployment in SMEs"))
+One 2026 study measured electricity-only inference around \$0.001-$0.04/M tokens and estimated consumer hardware could break even against API use within months at sufficiently high volume. ([arXiv](https://arxiv.org/abs/2601.09527 "[2601.09527] Private LLM Inference on Consumer Blackwell GPUs: A Practical Guide for Cost-Effective Local Deployment in SMEs"))
 
 So we need:
 
@@ -303,6 +301,7 @@ lower R&D
   -> more migration
 ```
 
+
 That's the possible "unraveling" loop we actually want to test.
 
 It may turn out to be weak. It may also turn out to be strongly self-reinforcing.
@@ -332,8 +331,6 @@ That's very different from:
 
 The latter should probably be an extreme scenario, not our default bankruptcy outcome.
 
-<a id="9-i-would-start-with-five-scenarios"></a>
-
 ### 9. Proposed starting scenarios
 
 
@@ -346,8 +343,6 @@ The latter should probably be an extreme scenario, not our default bankruptcy ou
 |AI capital shock|OpenAI problems damage confidence in the whole AI investment chain|Capex falls, frontier progress slows, local/open-weight importance rises|
 
 The last one is close to the systemic consequence Marcus raises. His article explicitly suggests that an OpenAI failure could spread beyond the company. ([Gary Marcus](https://garymarcus.substack.com/p/breaking-openais-unraveling-has-begun "BREAKING: OpenAI's unraveling has begun - by Gary Marcus"))
-
-<a id="10-the-output-i-want-from-the-model"></a>
 
 ### 10. Proposed model outputs
 
@@ -533,8 +528,6 @@ There is already evidence for this routing architecture. Sub-32B open models rea
 **Long-running autonomous agents.** Extrapolation needs caution here. METR continues to find approximately a seven-month doubling in the human-equivalent length of software/research tasks that frontier agents can complete at 50% reliability. Mathematically, that is about **3.3× more task horizon per year** and ~11× over two years if the trend continues. ([METR](https://metr.org/blog/2026-1-29-time-horizon-1-1/ "Time Horizon 1.1")) But METR says measurements above 16 hours are currently unreliable, and the benchmark consists mostly of clean, verifiable software/ML/security tasks. Real organizational work is messier. ([METR](https://metr.org/time-horizons/ "Task-Completion Time Horizons of Frontier AI Models - METR")) The forecast allows for large gains without predicting literally that a 2028 agent can autonomously operate a project for weeks.
 
 **High-trust factual work.** This will lag. Smaller open models can have impressive reasoning/agent scores while remaining substantially worse at factual recall and hallucination avoidance. ([Artificial Analysis](https://artificialanalysis.ai/articles/sub-32b-open-weights "Sub-32B Open Weights")) Retrieval, citations, deterministic checks and domain-specific verification will therefore remain useful even after general benchmark parity.
-
-<a id="what-i-would-design-around"></a>
 
 ### Proposed design assumptions
 

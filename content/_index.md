@@ -46,12 +46,22 @@ Some are working drafts, open questions, or conversations with LLMs. I don't wan
 >}}
 {{< /card-grid >}}
 
+{{< card-grid >}}
+{{< link-card
+  title="Phased: current project"
+  description="Building an AI product together with its evaluation subsystem, for AI engineers and product managers."
+  href="/projects/phased/"
+>}}
+{{< /card-grid >}}
+
 </div>
 
 ## Selected notes
 
-- [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/introduction" >}}): what an evaluation should help you decide.
-- [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}): what a run records and what that evidence supports.
+- [Evaluation concepts](https://github.com/valery-judah/phased/blob/main/docs/evaluation/evaluation-concepts.md): the words for each stage of an experiment in Phased, from the question to the finding.
+- [Run model](https://github.com/valery-judah/phased/blob/main/docs/evaluation/run-model.md): what a run is in Phased, how it goes, and what its record must hold.
+- [AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/introduction" >}}): what an evaluation should help you decide.
+- [Evidence Model]({{< ref "ai-engineering/evaluation/framework-v1/evidence-model" >}}): what a run records and what that evidence supports.
 
 </aside>
 <div class="homepage-details not-prose">

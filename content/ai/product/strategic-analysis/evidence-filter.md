@@ -8,8 +8,6 @@ linkTitle: "Evidence Filter"
 
 Proposed correction to the earlier trend assessment: apply a strict evidence filter. That assessment mixed engineering evidence with vendor claims. An OpenAI or Anthropic engineering post can tell us what they're building; it cannot, by itself, tell us where the industry is going.
 
-<a id="the-filter-id-use"></a>
-
 ### Proposed evidence filter
 
 
@@ -32,8 +30,6 @@ Proposed requirement before calling something a trend: **triangulation across th
 **measurement + hands-on practitioner + production adopter.**
 
 That cuts out most of the noise.
-
-<a id="people-i-would-actually-follow"></a>
 
 ### Suggested practitioner and research sources
 
@@ -108,8 +104,6 @@ Stronger evidence comes from an engineering team whose primary business is elsew
 Suggested production-adopter sources include engineering teams at companies such as **Uber, LinkedIn, DoorDash, Netflix, Cloudflare, Block, GitHub, Shopify, Spotify and similar large product organizations**.
 
 At AI Engineer 2026, for example, Uber presented closed-loop evals, LinkedIn presented its agent skills approach, and the New York Times discussed on-device agentic AI. This assessment treats these presentations as more informative than a startup pitch for an "agent operating system." ([AI Engineer](https://www.ai.engineer/worldsfair/schedule "Schedule · AI Engineer World's Fair 2026"))
-
-<a id="applying-this-filter-to-the-trends-we-discussed"></a>
 
 ### Applying the filter to the platform trends
 

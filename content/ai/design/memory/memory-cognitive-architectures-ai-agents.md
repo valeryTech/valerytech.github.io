@@ -16,9 +16,9 @@ The second is the **experimental psychology and neuroscience tradition**. Atkins
 
 These traditions increasingly converged. The 2017 "Standard Model of the Mind," for example, explicitly tried to identify common computational principles across AI, cognitive science, neuroscience, and robotics, using architectures including ACT-R and Soar as evidence. [@laird-lebiere-rosenbloom-standard-model-mind-2017]
 
-**Consciousness is not the reason memory is part of a cognitive architecture.** ACT-R and Soar are computational theories and do not require phenomenal consciousness. Tulving did connect *episodic recollection* to a particular kind of self-aware consciousness--"autonoetic" awareness of oneself in subjective time--but that is a much narrower theoretical claim than "anything conscious must have memory." [@act-r-overview; @laird-soar-cognitive-architecture-2012; @tulving-episodic-memory-mind-to-brain-2002]
+**Consciousness is not the reason memory is part of a cognitive architecture.** ACT-R and Soar are computational theories and do not require phenomenal consciousness. Tulving did connect *episodic recollection* to a particular kind of self-aware consciousness -- "autonoetic" awareness of oneself in subjective time -- but that is a much narrower theoretical claim than "anything conscious must have memory." [@act-r-overview; @laird-soar-cognitive-architecture-2012; @tulving-episodic-memory-mind-to-brain-2002]
 
-The current LLM-agent literature is replaying this history at high speed. The field started with largely **storage-oriented memory**--chat logs, retrieval, vector databases and summaries--then added **reflection and consolidation**, and is now moving toward **memory as an adaptive policy**: the agent decides what to retain, revise, compress, forget, retrieve, or abstract into reusable experience. The 2026 ACL survey *From Storage to Experience* explicitly describes this evolution as **Storage -> Reflection -> Experience**; a 2026 TMLR survey focuses on the transition toward self-evolving, long-horizon memory. [@luo-storage-to-experience-2026; @huang-agent-memory-second-half-2026]
+The current LLM-agent literature is replaying this history at high speed. The field started with largely **storage-oriented memory** -- chat logs, retrieval, vector databases and summaries -- then added **reflection and consolidation**, and is now moving toward **memory as an adaptive policy**: the agent decides what to retain, revise, compress, forget, retrieve, or abstract into reusable experience. The 2026 ACL survey *From Storage to Experience* explicitly describes this evolution as **Storage -> Reflection -> Experience**; a 2026 TMLR survey focuses on the transition toward self-evolving, long-horizon memory. [@luo-storage-to-experience-2026; @huang-agent-memory-second-half-2026]
 
 That gives a useful conceptual sequence:
 
@@ -247,7 +247,7 @@ This is not a ranking; it identifies research lineages that make the literature 
 | **Yongfeng Zhang and collaborators** | Associate Professor, Rutgers Computer Science | Personalized systems, recommender systems and newer agent-memory structures | Xu et al., *A-MEM*. [@yongfeng-zhang-rutgers-profile; @xu-a-mem-agentic-memory-2025] |
 | **Julian McAuley and collaborators** | Professor of CSE, UC San Diego | Personalization and the recent benchmark line around memory agents | *MemoryAgentBench*; collaborator on *MemoryArena*. [@julian-mcauley-ucsd-profile; @julian-mcauley-memory-research-secondary-source; @hu-memoryagentbench-2025; @he-memoryarena-2026] |
 
-The important intellectual connections run across these institutional boundaries. Newell and Anderson represent the classical architectural question--*what fixed machinery makes cognition possible?* McClelland and CLS ask *how can a learner retain specifics while extracting stable structure?* The current agent community is asking the corresponding engineering question: *what persistent machinery should surround a foundation model so that experience changes future behavior reliably?* This synthesis is an interpretation of the cited traditions. [@laird-lebiere-rosenbloom-standard-model-mind-2017; @mcclelland-mcnaughton-oreilly-cls-1995; @luo-storage-to-experience-2026]
+The important intellectual connections run across these institutional boundaries. Newell and Anderson represent the classical architectural question -- *what fixed machinery makes cognition possible?* McClelland and CLS ask *how can a learner retain specifics while extracting stable structure?* The current agent community is asking the corresponding engineering question: *what persistent machinery should surround a foundation model so that experience changes future behavior reliably?* This synthesis is an interpretation of the cited traditions. [@laird-lebiere-rosenbloom-standard-model-mind-2017; @mcclelland-mcnaughton-oreilly-cls-1995; @luo-storage-to-experience-2026]
 
 ## Architecture patterns, reflection, and evaluation
 
@@ -326,8 +326,6 @@ This architecture is a synthesis proposed in this note, rather than a direct rep
 | **Parametric memory** | Very cheap to "retrieve" once learned | Poor provenance, difficult deletion/update, training cost and interference | Broad reusable skills or domain knowledge; poor choice for volatile client facts |
 
 The first seven patterns are directly represented, in different combinations, by Generative Agents, MemGPT, MemoryBank, A-MEM, Zep, Mem0 and LightMem. AgeMem represents the explicit move toward learning the memory-management policy itself. [@park-generative-agents-2023; @packer-memgpt-2023; @zhong-memorybank-2024; @rasmussen-zep-temporal-knowledge-graph-2025; @chhikara-mem0-2025; @xu-a-mem-agentic-memory-2025; @fang-lightmem-2026; @yu-agentic-memory-2026]
-
-<a id="your-sleep-proposal"></a>
 
 ### Proposed offline "sleep" process
 
@@ -525,8 +523,6 @@ Level F   Can it selectively forget while preserving unrelated knowledge?
 
 Current benchmarks distribute themselves across these levels rather than providing one complete evaluation. LongMemEval reaches strongly into A-D; MemBench explicitly includes reflective memory; MemoryAgentBench adds selective forgetting and test-time learning; MemoryArena makes behavioral consequences central. [@wu-longmemeval-2025; @tan-membench-2025; @hu-memoryagentbench-2025; @he-memoryarena-2026]
 
-<a id="adversarial-tests-i-would-add"></a>
-
 ### Proposed adversarial tests
 
 
@@ -632,7 +628,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Priority: essential.** The title closely matches the research question. It updates CLS and explicitly connects the theory to intelligent agents, structured knowledge and generalization. [@kumaran-hassabis-mcclelland-cls-2016]
 
-**Brodt et al. -- "Sleep--A Brain-State Serving Systems Memory Consolidation" (2023).**
+**Brodt et al. -- "Sleep -- A Brain-State Serving Systems Memory Consolidation" (2023).**
 
 **Priority: high. Peer-reviewed *Neuron* review.** Use it for the neuroscience behind replay and systems consolidation. It gives a much firmer basis for discussing "sleep" than anthropomorphic analogies in agent papers. [@brodt-sleep-systems-memory-consolidation-2023]
 
@@ -684,7 +680,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Wu et al. -- "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory" (ICLR 2025).**
 
-**Priority: essential.** Its five competencies--information extraction, multi-session reasoning, temporal reasoning, knowledge updates and abstention--are close to a minimal functional specification for personalized conversational memory. [@wu-longmemeval-2025; @wu-longmemeval-openreview-2025]
+**Priority: essential.** Its five competencies -- information extraction, multi-session reasoning, temporal reasoning, knowledge updates and abstention -- are close to a minimal functional specification for personalized conversational memory. [@wu-longmemeval-2025; @wu-longmemeval-openreview-2025]
 
 **Tan et al. -- "MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-Based Agents" (Findings of ACL 2025).**
 
@@ -692,7 +688,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Hu, Wang & McAuley -- "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions" / MemoryAgentBench (2025).**
 
-**Priority: very high.** Its four competencies--accurate retrieval, test-time learning, long-range understanding and selective forgetting--capture things that plain recall benchmarks miss. [@hu-memoryagentbench-2025]
+**Priority: very high.** Its four competencies -- accurate retrieval, test-time learning, long-range understanding and selective forgetting -- capture things that plain recall benchmarks miss. [@hu-memoryagentbench-2025]
 
 **He et al. -- "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks" (2026).**
 
@@ -717,7 +713,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Priority: reference work, second reading. Preprint in the source checked here.** Its forms/functions/dynamics framework is useful for distinguishing agent memory from RAG, context engineering and general model memory, and for recognizing that "memory" can exist as tokens, external structures, learned parameters or latent state. [@hu-memory-in-the-age-of-ai-agents-2025; @hu-memory-in-the-age-of-ai-agents-2025-secondary-source]
 
-The recommendation is to **prioritize the peer-reviewed surveys above generic recent arXiv surveys**, then go directly to original papers whenever a survey makes an architectural or performance claim. That ordering avoids allowing one survey's taxonomy--or its citation network--to determine the view of the field.
+The recommendation is to **prioritize the peer-reviewed surveys above generic recent arXiv surveys**, then go directly to original papers whenever a survey makes an architectural or performance claim. That ordering avoids allowing one survey's taxonomy -- or its citation network -- to determine the view of the field.
 
 ### Condensed reading order
 
@@ -797,7 +793,7 @@ For the client-understanding problem, the proposed architecture is therefore:
 
 The critical invariant is that the bottom process **may revise the semantic model but cannot rewrite history**. Every semantic conclusion should remain traceable to the episodic evidence that caused it, and the system should be permitted to remain uncertain or contradictory when the evidence does not justify a single coherent answer.
 
-That design takes the most useful idea from the human-memory analogy--the separation between experience and consolidation--while preserving something biological memory does not naturally provide but software can: **explicit provenance, reversible updates, and auditable belief revision**. [@mcclelland-mcnaughton-oreilly-cls-1995; @kumaran-hassabis-mcclelland-cls-2016; @park-generative-agents-2023; @rasmussen-zep-temporal-knowledge-graph-2025; @wu-longmemeval-2025]
+That design takes the most useful idea from the human-memory analogy -- the separation between experience and consolidation -- while preserving something biological memory does not naturally provide but software can: **explicit provenance, reversible updates, and auditable belief revision**. [@mcclelland-mcnaughton-oreilly-cls-1995; @kumaran-hassabis-mcclelland-cls-2016; @park-generative-agents-2023; @rasmussen-zep-temporal-knowledge-graph-2025; @wu-longmemeval-2025]
 
 <!--
 

@@ -6,7 +6,7 @@ description: "Empirical software engineering already has a method for experiment
 linkTitle: "Running an Experiment"
 ---
 
-When no existing evidence answers the question, a team can produce some. A controlled experiment is the strongest design for a [causal claim]({{< ref "engineering/evidence/causal-claims" >}}), and [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}}) covers the others. Part of [Evidence in software engineering]({{< ref "engineering/evidence" >}}).
+When no existing evidence answers the question, a team can produce some. A controlled experiment is the strongest design for a [causal claim]({{< ref "engineering/evidence/causal-claims" >}}), and [Choosing A Method]({{< ref "engineering/evidence/choosing-a-method" >}}) covers the others. Part of [Evidence in software engineering]({{< ref "engineering/evidence" >}}).
 
 ## The experiment process
 

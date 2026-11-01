@@ -7,7 +7,7 @@ weight: "40"
 linkTitle: "Languages"
 ---
 
-Language notes and resources for the two languages used in this section. Part of [Functional programming]({{< ref "functional-programming" >}}).
+Language notes and resources for the two languages used in this section. Part of [Functional Programming]({{< ref "functional-programming" >}}).
 
 - [Haskell]({{< ref "functional-programming/04-languages/haskell" >}})
 - [Scala]({{< ref "functional-programming/04-languages/scala" >}})

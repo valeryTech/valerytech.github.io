@@ -203,7 +203,7 @@ minimal generative conditions
 
 If something that deserves the name `agent`, `language`, `reflection`, `society`, or even `intelligence` appears downstream, that is the result.
 
-There is one later connection. If Alice eventually produces multiple persistent autonomous beings, then coordination, institutions, trust, norms, authority and culture become endogenous phenomena of that universe. At that point Anthropic-like questions become relevant--but you can ask the much deeper question of whether these mechanisms **emerge**, how they emerge, and which environmental conditions produce them.
+There is one later connection. If Alice eventually produces multiple persistent autonomous beings, then coordination, institutions, trust, norms, authority and culture become endogenous phenomena of that universe. At that point Anthropic-like questions become relevant -- but you can ask the much deeper question of whether these mechanisms **emerge**, how they emerge, and which environmental conditions produce them.
 
 So the revised proposal is to keep the research map as two major independent branches:
 

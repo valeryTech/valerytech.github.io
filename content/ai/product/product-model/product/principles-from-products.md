@@ -8,7 +8,7 @@ linkTitle: "Torres and Cagan Principles"
 
 Torres and Cagan should be major inputs to this system. Their contribution is different from Agile, Kanban, or Deming: they provide a model for deciding **how much learning is needed before committing resources**, based on the risk of being wrong.
 
-Teresa Torres does not advocate a sequential `discovery -> delivery` process. She explicitly argues that teams should be "discovering and delivering all the time." ([Product Talk](https://www.producttalk.org/time-in-product-discovery/ "How Much Time Should You Spend in Product Discovery?")) Cagan makes the conceptual distinction more strongly. Discovery and delivery are therefore **two modes of work that can run concurrently**.
+Teresa Torres does not advocate a sequential `discovery -> delivery` process. She explicitly argues that teams should be "discovering and delivering all the time." ([Torres 2018](#torres-2018)) Cagan makes the conceptual distinction more strongly. Discovery and delivery are therefore **two modes of work that can run concurrently**.
 
 The underlying logic is something like:
 
@@ -30,21 +30,21 @@ The underlying logic is something like:
 
 This closely matches the emerging architecture.
 
-### Cagan: discovery as risk reduction
+## Cagan: discovery as risk reduction
 
 
-Cagan's framing is particularly clear. Discovery determines whether a solution is worth building before the full cost of building it is paid. He explicitly says discovery should tackle the important risks early and that different work has a different **risk profile**. The four risks are not equally important for every change. ([Silicon Valley Product Group](https://www.svpg.com/four-big-risks/ "The Four Big Risks - Silicon Valley Product Group : Silicon Valley Product Group"))
+Cagan's framing is particularly clear. Discovery determines whether a solution is worth building before the full cost of building it is paid. He explicitly says discovery should tackle the important risks early and that different work has a different **risk profile**. The four risks are not equally important for every change. ([Cagan 2017](#cagan-2017))
 
 His four risks are:
 
 - **Value:** Will people choose, use, or pay for it?
 - **Usability:** Can they successfully use it?
 - **Feasibility:** Can the team build and operate it with the available technology, skills, and time?
-- **Viability:** Does it work for the business and its broader constraints? ([Silicon Valley Product Group](https://www.svpg.com/four-big-risks/ "The Four Big Risks - Silicon Valley Product Group : Silicon Valley Product Group"))
+- **Viability:** Does it work for the business and its broader constraints? ([Cagan 2017](#cagan-2017))
 
 The important idea for this framework is **risk profile**, rather than those exact four categories.
 
-Cagan explicitly says different initiatives have different significant risks. A minor change may warrant almost no discovery; another may have one dominant uncertainty that should be investigated before anything else. ([Silicon Valley Product Group](https://www.svpg.com/discovery-judgement/ "Discovery - Judgement - Silicon Valley Product Group : Silicon Valley Product Group"))
+Cagan explicitly says different initiatives have different significant risks. A minor change may warrant almost no discovery; another may have one dominant uncertainty that should be investigated before anything else. ([Cagan 2020](#cagan-2020))
 
 A possible principle is:
 
@@ -70,7 +70,7 @@ It also connects to an earlier principle:
 
 These may eventually form one larger principle.
 
-### Torres: turn "risk" into testable assumptions
+## Torres: turn "risk" into testable assumptions
 
 
 Torres provides something that Cagan's four risks do not provide as directly: a mechanism for turning an abstract risk into **something concrete that can be investigated**.
@@ -81,9 +81,9 @@ She defines assumptions as beliefs that need to be true for an idea to succeed, 
 - viability;
 - feasibility;
 - usability;
-- ethical assumptions. ([Product Talk](https://www.producttalk.org/five-types-of-assumptions/ "Evaluating Solutions: The 5 Types of Assumptions that Underlie Our Ideas"))
+- ethical assumptions. ([Torres 2023](#torres-2023))
 
-She explicitly compares this to Cagan and says they are conceptually talking about essentially the same thing. Her reason for talking about **assumptions** is practical: saying "there is viability risk" does not identify what to test; enumerating the assumptions underneath that risk does. ([Product Talk](https://www.producttalk.org/five-types-of-assumptions/ "Evaluating Solutions: The 5 Types of Assumptions that Underlie Our Ideas"))
+She explicitly compares this to Cagan and says they are conceptually talking about essentially the same thing. Her reason for talking about **assumptions** is practical: saying "there is viability risk" does not identify what to test; enumerating the assumptions underneath that risk does. ([Torres 2023](#torres-2023))
 
 That distinction is useful for this model.
 
@@ -127,7 +127,7 @@ This is compatible with the principle **make uncertainty explicit and resolve it
 ### Torres also provides a strong problem/outcome structure
 
 
-Her Opportunity Solution Tree starts from a **desired outcome**, moves through customer opportunities/problems, explores multiple possible solutions, and then tests the assumptions underlying those solutions. ([Product Talk](https://www.producttalk.org/discovering-solutions/ "Discovering Solutions: Quickly Determine Which Ideas Will Work (And Which Won't)"))
+Her Opportunity Solution Tree starts from a **desired outcome**, moves through customer opportunities/problems, explores multiple possible solutions, and then tests the assumptions underlying those solutions. ([Torres 2022](#torres-2022))
 
 Abstracted away from product management, the logic is:
 
@@ -151,12 +151,12 @@ This matches the earlier discussion of:
 - make assumptions explicit;
 - use evidence to converge.
 
-Torres also explicitly calls **externalizing thinking**, outcome focus, and collaborative decision-making guiding principles of continuous discovery. ([Product Talk](https://www.producttalk.org/no-single-right-way/ "Why There's No Single "Right" Way to Do Discovery: Part 1")) This connects directly with the "share your work" and visibility themes.
+Torres also explicitly calls **externalizing thinking**, outcome focus, and collaborative decision-making guiding principles of continuous discovery. ([Torres 2021](#torres-2021)) This connects directly with the "share your work" and visibility themes.
 
 ## Why this becomes stronger for AI
 
 
-Cagan himself now argues that AI products tend to make the existing product risks more demanding. His AI product-management treatment covers probabilistic outputs, data quality, acceptable error rates, model limitations, trust, explainability, latency/cost tradeoffs, privacy, copyright, bias, abuse, regulation, and ethical consequences. ([Silicon Valley Product Group](https://www.svpg.com/ai-product-management/ "AI Product Management - Silicon Valley Product Group : Silicon Valley Product Group"))
+Cagan himself now argues that AI products tend to make the existing product risks more demanding. His AI product-management treatment covers probabilistic outputs, data quality, acceptable error rates, model limitations, trust, explainability, latency/cost tradeoffs, privacy, copyright, bias, abuse, regulation, and ethical consequences. ([Cagan and Nika 2024](#cagan-2024))
 
 The four categories still map surprisingly well.
 
@@ -169,9 +169,9 @@ The four categories still map surprisingly well.
 
 This framework should **not require those four categories**.
 
-Cagan himself says the higher-order point is to use a risk taxonomy and that other taxonomies can work. ([Silicon Valley Product Group](https://www.svpg.com/product-risk-taxonomies/ "Article: Product Risk Taxonomy : Silicon Valley Product Group"))
+Cagan himself says the higher-order point is to use a risk taxonomy and that other taxonomies can work. ([Cagan 2023](#cagan-2023))
 
-Torres also explicitly pulls **ethics** into its own assumption category because surfacing neglected assumptions can be more useful than maintaining a minimal taxonomy. ([Product Talk](https://www.producttalk.org/five-types-of-assumptions/ "Evaluating Solutions: The 5 Types of Assumptions that Underlie Our Ideas"))
+Torres also explicitly pulls **ethics** into its own assumption category because surfacing neglected assumptions can be more useful than maintaining a minimal taxonomy. ([Torres 2023](#torres-2023))
 
 For AI, a risk profile could visibly expose categories such as:
 
@@ -329,3 +329,15 @@ This gives the emerging framework a clearer causal chain:
 **Torres and Cagan together provide the strongest precedent so far for the "epistemic" part of this system.** Deming provides the deeper theory of knowledge, while Torres and Cagan make it operational: _what remains uncertain, what could make this fail, and what is the cheapest useful evidence available before further commitment?_
 
 One consequence is that **"discovery" may not belong as a principle**. It may be better treated as a fundamental mode of work enabled by several principles: problem orientation, explicit uncertainty, risk-based commitment, experimentation, and feedback.
+
+## References
+
+
+- Cagan, M. (2017). [The Four Big Risks](https://www.svpg.com/four-big-risks/). Silicon Valley Product Group. ^cagan-2017
+- Cagan, M. (2020). [Discovery - Judgement](https://www.svpg.com/discovery-judgement/). Silicon Valley Product Group. ^cagan-2020
+- Cagan, M. (2023). [Product Risk Taxonomy](https://www.svpg.com/product-risk-taxonomies/). Silicon Valley Product Group. ^cagan-2023
+- Cagan, M., & Nika, M. (2024). [AI Product Management](https://www.svpg.com/ai-product-management/). Silicon Valley Product Group. ^cagan-2024
+- Torres, T. (2018). [How Much Time Should You Spend in Product Discovery?](https://www.producttalk.org/time-in-product-discovery/). Product Talk. ^torres-2018
+- Torres, T. (2021). [Why There's No Single "Right" Way to Do Discovery: Part 1](https://www.producttalk.org/no-single-right-way/). Product Talk. ^torres-2021
+- Torres, T. (2022). [Discovering Solutions: Quickly Determine Which Ideas Will Work (And Which Won't)](https://www.producttalk.org/discovering-solutions/). Product Talk. ^torres-2022
+- Torres, T. (2023). [Evaluating Solutions: The 5 Types of Assumptions that Underlie Our Ideas](https://www.producttalk.org/five-types-of-assumptions/). Product Talk. ^torres-2023

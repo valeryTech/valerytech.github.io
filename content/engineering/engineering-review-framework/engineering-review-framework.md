@@ -17,8 +17,8 @@ The framework covers the problem being solved, the requirements, the implementat
 
 - **Engineering Review Framework** -- this document: purpose, main components, and the top-level checklist.
 - **[Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}})** -- supporting lists of engineering principles and review topics for each component.
-- **[Framework Rationale and Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})** -- why the framework is organized this way and how to use it during development and review.
-- **[Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}})** -- two supporting approaches: derive needed behavior from product outcomes, and design checks independently around important failures.
+- **[Framework Rationale And Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})** -- why the framework is organized this way and how to use it during development and review.
+- **[Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}})** -- two supporting approaches: derive needed behavior from product outcomes, and design checks independently around important failures.
 
 The seven component notes are linked from the main checklist below. Each explains its area without requiring the reader to reconstruct earlier discussions.
 
@@ -27,7 +27,7 @@ The seven component notes are linked from the main checklist below. Each explain
 
 - [ ] [Business, product, and feature context]({{< ref "engineering/engineering-review-framework/business-product-and-feature-context" >}})
 - [ ] [Functional and non-functional requirements]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}})
-- [ ] [Software engineering principles]({{< ref "engineering/engineering-review-framework/software-engineering-principles" >}})
+- [ ] [Software Engineering Principles]({{< ref "engineering/engineering-review-framework/software-engineering-principles" >}})
 - [ ] [Technical review checklists]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}})
 - [ ] [Testing, CI, and PR review]({{< ref "engineering/engineering-review-framework/testing-ci-and-pr-review-guide" >}})
 - [ ] [LLM-specific risks]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}})

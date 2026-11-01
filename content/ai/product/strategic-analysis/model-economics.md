@@ -5,9 +5,6 @@ title: "Frontier-Model Economics and Architecture"
 description: "A working architecture-decision model moves from support-agent economics to workload-conditioned evaluation, comparing structures, components, and adaptive routing policies through constrained multi-objective search and Pareto trade-offs."
 linkTitle: "Architecture Economics"
 ---
-
-<a id="question-about-frontier-models"></a>
-
 ## Open question about frontier-model economics
 
 
@@ -533,8 +530,6 @@ Another architecture could fall:
 because it depends heavily on frontier reasoning.
 
 That distinction is far more useful for our broader scenario analysis.
-
-<a id="the-model-id-build"></a>
 
 ### Proposed model
 

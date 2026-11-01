@@ -13,8 +13,8 @@ This question appears as soon as a design has more than one service with its own
 ## Forces
 
 
-- **Independent change:** a service whose schema is private can change it without coordinating with other teams. This pushes toward private data. See [boundaries]({{< ref "system-design/elements/boundaries" >}}).
-- **Consistency:** an invariant spanning two services can no longer be enforced by one local transaction. Decide what each operation needs to observe. See [consistency]({{< ref "system-design/nfr/consistency" >}}) and [transactions]({{< ref "engineering/distributed-systems/transactions" >}}).
+- **Independent change:** a service whose schema is private can change it without coordinating with other teams. This pushes toward private data. See [Boundaries]({{< ref "system-design/elements/boundaries" >}}).
+- **Consistency:** an invariant spanning two services can no longer be enforced by one local transaction. Decide what each operation needs to observe. See [Consistency]({{< ref "system-design/nfr/consistency" >}}) and [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}).
 - **Query latency and availability:** a query that calls several services waits for the slowest and fails when any of them fails. A local copy removes the calls but serves data that may be stale.
 - **Simplicity:** a shared database is the simplest arrangement to build and the hardest to change later.
 
@@ -62,7 +62,7 @@ Ordering the steps this way limits how much needs compensation.
 
 | Pattern | Mechanism | Fits when | Costs and what it leads to |
 | --- | --- | --- | --- |
-| API composition | A composer (a client, the [API gateway]({{< ref "system-design/elements/api-gateway" >}}), or a service) calls the owning services and joins the results in memory. | Result sets are small, the owners are available, and the data must be current. | Latency of several calls; availability depends on every owner; large in-memory joins are inefficient. |
+| API composition | A composer (a client, the [Api_gateway]({{< ref "system-design/elements/api-gateway" >}}), or a service) calls the owning services and joins the results in memory. | Result sets are small, the owners are available, and the data must be current. | Latency of several calls; availability depends on every owner; large in-memory joins are inefficient. |
 | CQRS | A separate query model, such as a materialized view, is kept up to date by subscribing to the owners' [domain events](#representing-change). | Queries join many sources, need a different store (search, analytics), or the read load differs greatly from the write load. | The view lags behind the owners, so clients may read stale data; more infrastructure; event handlers must be [idempotent]({{< ref "system-design/elements/communication" >}}#idempotent-consumer). |
 | Command-side replica | A service that implements a command keeps a queryable copy of another service's data, updated from its events. | A command must validate against another service's data without a synchronous call. | The copy is stale by the replication delay, and the service now depends on another service's event contract. |
 
@@ -84,7 +84,7 @@ Describe the purpose of an event and the state it represents before choosing the
 - **integration events:** events published across a boundary, as distinct from events used inside one domain.
 - **workflow events:** events that drive the steps of a process.
 
-Event sourcing is a question of how state is persisted and reconstructed. Keep it distinct from the choice of queue or broker in [messaging]({{< ref "system-design/elements/messaging" >}}).
+Event sourcing is a question of how state is persisted and reconstructed. Keep it distinct from the choice of queue or broker in [Messaging]({{< ref "system-design/elements/messaging" >}}).
 
 ## Publishing changes reliably
 
@@ -104,10 +104,10 @@ The [URL-shortener NFR draft]({{< ref "system-design/projects/url-shortener/url-
 ## Leads to
 
 
-- Sagas and replicas communicate by messaging, so you need delivery semantics and ordering. See [communication]({{< ref "system-design/elements/communication" >}}) and [messaging]({{< ref "system-design/elements/messaging" >}}).
+- Sagas and replicas communicate by messaging, so you need delivery semantics and ordering. See [Communication]({{< ref "system-design/elements/communication" >}}) and [Messaging]({{< ref "system-design/elements/messaging" >}}).
 - At-least-once publication leads to [idempotent consumers]({{< ref "system-design/elements/communication" >}}#idempotent-consumer).
-- Views and replicas introduce staleness: specify what each operation may observe in [consistency]({{< ref "system-design/nfr/consistency" >}}).
-- Frequent cross-service invariants suggest revisiting the [boundaries]({{< ref "system-design/elements/boundaries" >}}).
+- Views and replicas introduce staleness: specify what each operation may observe in [Consistency]({{< ref "system-design/nfr/consistency" >}}).
+- Frequent cross-service invariants suggest revisiting the [Boundaries]({{< ref "system-design/elements/boundaries" >}}).
 
 ## Seen in cases
 

@@ -297,6 +297,7 @@ slices:
     required_fields: ["retrieval_events[].hit_count"]
 ```
 
+
 The estimator computes membership per episode, then aggregates metrics per slice.
 
 ## 12. How to add a slice (checklist)

@@ -72,7 +72,7 @@ TLA+ (the Temporal Logic of Actions), Leslie Lamport's specification language, i
 - **Liveness property:** something that eventually happens, such as "every request eventually gets a response".
 - **Error trace:** when a property fails, the model checker returns the behavior, a sequence of states, that violates it.
 
-DDIA adds that safety must hold in every situation the system model allows, while liveness may be promised only under conditions, such as a majority of nodes staying up and the network eventually recovering. [System models]({{< ref "engineering/distributed-systems/system-models" >}}) covers those assumptions.
+DDIA adds that safety must hold in every situation the system model allows, while liveness may be promised only under conditions, such as a majority of nodes staying up and the network eventually recovering. [System Models]({{< ref "engineering/distributed-systems/system-models" >}}) covers those assumptions.
 
 Lamport's PlusCal is an algorithm language, closer to pseudocode, that translates into TLA+, and TLC is the model checker usually run on TLA+ specifications. The DynamoDB paper cites Lamport's *Specifying Systems* and the PlusCal paper for its replication-protocol specification.
 
@@ -147,18 +147,18 @@ Every technique checks against a system model, and DDIA warns that reality break
 ## In a design
 
 
-A design review should ask for a specification when the design introduces or changes a protocol whose correctness depends on ordering or failure timing: a new replication or commit protocol, leader election or leases, a change to quorum membership, a dual write or cross-store migration like Vitillo's example, or any feature that touches the replication protocol, which DynamoDB adds to its TLA+ specification before shipping. The specification states the invariants and liveness properties, and the review checks that they match the requirement recorded in [consistency]({{< ref "system-design/nfr/consistency" >}}). The [control plane]({{< ref "system-design/elements/control-plane" >}}) deserves the same scrutiny as the data plane; DynamoDB verified both.
+A design review should ask for a specification when the design introduces or changes a protocol whose correctness depends on ordering or failure timing: a new replication or commit protocol, leader election or leases, a change to quorum membership, a dual write or cross-store migration like Vitillo's example, or any feature that touches the replication protocol, which DynamoDB adds to its TLA+ specification before shipping. The specification states the invariants and liveness properties, and the review checks that they match the requirement recorded in [Consistency]({{< ref "system-design/nfr/consistency" >}}). The [Control Plane]({{< ref "system-design/elements/control-plane" >}}) deserves the same scrutiny as the data plane; DynamoDB verified both.
 
 The failure-handling controls themselves (timeouts, retries, circuit breakers, fallbacks) are checked by making them fire: see [testing the controls]({{< ref "system-design/elements/containing-failure" >}}#testing-the-controls) for fault injection at the network layer and as chaos experiments. When a design lets operations choose different consistency levels, list the integrity invariants and check that each operation's choice preserves them, with the per-operation reasoning of Gotsman et al.
 
 ## Related notes
 
 
-- [System models]({{< ref "engineering/distributed-systems/system-models" >}}): the fault and timing assumptions every check is relative to.
+- [System Models]({{< ref "engineering/distributed-systems/system-models" >}}): the fault and timing assumptions every check is relative to.
 - [Consistency guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}#consistency-models): the models that history checkers test against.
-- [Broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): the protocols most often specified and model checked.
-- [Coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): the designs whose invariants a consistency proof rule checks.
-- [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}): the clocks that simulation replaces and that clock-skew scenarios exercise.
+- [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): the protocols most often specified and model checked.
+- [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): the designs whose invariants a consistency proof rule checks.
+- [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}): the clocks that simulation replaces and that clock-skew scenarios exercise.
 - [Containing failure]({{< ref "system-design/elements/containing-failure" >}}#testing-the-controls): fault injection for timeouts, retries, and fallbacks.
 - [Tickloom semantic model and scenario DSL]({{< ref "ai/design-research/03-language-and-compiler/12-tickloom-semantic-model-and-scenario-dsl" >}}): a deterministic tick-loop framework and fault-scenario DSL for distributed-system code.
 - [Reading list]({{< ref "engineering/distributed-systems/reading" >}}#specification-and-verification): TLA+ and verification resources.
@@ -175,7 +175,7 @@ The failure-handling controls themselves (timeouts, retries, circuit breakers, f
 ## Sources
 
 
-- Kleppmann, *Verifying distributed systems with Isabelle/HOL*, 2022 (<https://martin.kleppmann.com/2022/10/12/verifying-distributed-systems-isabelle.html>).
+- Kleppmann, *[Verifying distributed systems with Isabelle/HOL](https://martin.kleppmann.com/2022/10/12/verifying-distributed-systems-isabelle.html)*, 2022.
 - Lamport, [The TLA+ Home Page](https://lamport.azurewebsites.net/tla/tla.html) and [Industrial Use of TLA+](https://lamport.azurewebsites.net/tla/industrial-use.html).
 - Lamport, *Specifying Systems*, Addison-Wesley, 2002, and *The PlusCal Algorithm Language*, ICTAC 2009 -- both cited by the DynamoDB paper.
 - Gotsman, Yang, Ferreira, Najafzadeh, and Shapiro, *'Cause I'm Strong Enough: Reasoning about Consistency Choices in Distributed Systems*, POPL 2016 ([doi:10.1145/2837614.2837625](https://doi.org/10.1145/2837614.2837625)).

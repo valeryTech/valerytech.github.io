@@ -49,7 +49,7 @@ A fallback is the control most worth testing this way, because it rarely runs ot
 
 - Retries and redelivery lead to [idempotency]({{< ref "system-design/elements/communication" >}}#idempotent-consumer).
 - A degraded mode needs a definition of what the client observes. Record it with the [NFRs]({{< ref "system-design/nfr/non-functional-requirements" >}}) for the affected operation.
-- Asynchronous [messaging]({{< ref "system-design/elements/messaging" >}}) removes some synchronous dependencies altogether, at the cost of eventual consistency.
+- Asynchronous [Messaging]({{< ref "system-design/elements/messaging" >}}) removes some synchronous dependencies altogether, at the cost of eventual consistency.
 - A [service mesh]({{< ref "system-design/elements/request-path" >}}#between-services-sidecar-and-service-mesh) can apply timeouts, retries, and circuit breaking outside application code.
 - Detecting these failures needs [metrics, tracing, and health checks]({{< ref "system-design/elements/operating-services" >}}#observability).
 

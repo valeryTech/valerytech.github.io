@@ -31,10 +31,10 @@ A failover plan needs explanation as well as redundant boxes in the diagram. Rev
 ## Patterns that address this
 
 
-- **Behavior at the call site** (timeouts, retries, circuit breakers, bulkheads, load shedding, degraded operation): [containing failure]({{< ref "system-design/elements/containing-failure" >}}).
+- **Behavior at the call site** (timeouts, retries, circuit breakers, bulkheads, load shedding, degraded operation): [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}).
 - **Removing unhealthy instances from traffic** (health checks, service discovery): [the request path]({{< ref "system-design/elements/request-path" >}}#service-discovery).
-- **Replication arrangements and failover data loss:** [data at scale]({{< ref "system-design/elements/data-at-scale" >}}).
-- **Keeping a request path available while other services are down** (self-contained services, asynchronous messaging): [boundaries]({{< ref "system-design/elements/boundaries" >}}#where-to-draw-boundaries) and [communication]({{< ref "system-design/elements/communication" >}}).
+- **Replication arrangements and failover data loss:** [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}).
+- **Keeping a request path available while other services are down** (self-contained services, asynchronous messaging): [boundaries]({{< ref "system-design/elements/boundaries" >}}#where-to-draw-boundaries) and [Communication]({{< ref "system-design/elements/communication" >}}).
 
 ## Further study
 

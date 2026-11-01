@@ -10,9 +10,9 @@ linkTitle: "Experiments vs. Features"
 # Input
 
 
-downloaded video "Stop Managing AI Projects Like Traditional Software" and https://www.youtube.com/watch?v=R_HnI9oTv3c
+downloaded video "Stop Managing AI Projects Like Traditional Software" and [Stop Managing AI Projects Like Traditional Software (YouTube video)](https://www.youtube.com/watch?v=R_HnI9oTv3c)
 
-https://www.youtube.com/watch?v=k98gDjYbSaU Failure is a funnel, also downloaded
+[Failure is a funnel (YouTube video)](https://www.youtube.com/watch?v=k98gDjYbSaU) Failure is a funnel, also downloaded
 
 ## 6. AI Roadmaps Should Count Experiments, Not Features
 
@@ -40,7 +40,7 @@ Successful teams structure their roadmaps around experiments rather than feature
 
 [Eugene Yan](https://eugeneyan.com/), an applied scientist at Amazon, describes an approach to ML project planning with leadership. Although originally developed for traditional machine learning, the process applies equally well to modern LLM development:
 
-> "Here's a common timeline. First, I take two weeks to do a data feasibility analysis, i.e., 'Do I have the right data?' \[...\] Then I take an additional month to do a technical feasibility analysis, i.e., 'Can AI solve this?' After that, if it still works I'll spend six weeks building a prototype we can A/B test."
+> "Here's a common timeline. First, I take two weeks to do a data feasibility analysis, i.e., 'Do I have the right data?' [...] Then I take an additional month to do a technical feasibility analysis, i.e., 'Can AI solve this?' After that, if it still works I'll spend six weeks building a prototype we can A/B test."
 
 While LLMs might not require the same kind of feature engineering or model training as traditional ML, the underlying principle remains the same: time-box exploration, establish clear decision points, and prove feasibility before committing to full implementation. This approach gives leadership confidence that resources will not be wasted on open-ended exploration, while giving the team freedom to learn and adapt.
 
@@ -89,7 +89,7 @@ A content moderation project provides a simplified example of an experiment-base
 The roadmap did not promise specific features or capabilities. Instead, it committed to a systematic exploration of possible approaches, with regular check-ins to assess progress and pivot if necessary.
 
 The results were telling:
-> "For the first two to three months, nothing worked. \[...\] And then \[a breakthrough\] came out. \[...\] Within a month, that problem was solved. So you can see that in the first quarter or even four months, it was going nowhere. \[...\] But then you can also see that all of a sudden, some new technology comes along, some new paradigm, some new reframing comes along that just \[solves\] 80% of \[the problem\]."
+> "For the first two to three months, nothing worked. [...] And then [a breakthrough] came out. [...] Within a month, that problem was solved. So you can see that in the first quarter or even four months, it was going nowhere. [...] But then you can also see that all of a sudden, some new technology comes along, some new paradigm, some new reframing comes along that just [solves] 80% of [the problem]."
 
 This pattern of long periods of apparent failure followed by breakthroughs is common in AI development. Traditional feature-based roadmaps would have killed the project after months of "failure," missing the eventual breakthrough.
 

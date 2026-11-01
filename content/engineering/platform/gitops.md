@@ -28,7 +28,7 @@ A declarative system has two parts:
 
 The [declarative design notes]({{< ref "type-driven-design/04-architecture/declarative-design" >}}) describe the same split, with desired-state systems as one family alongside query languages and functional programs.
 
-Kubernetes is the common example. Controllers compare the desired state of each resource with the actual state of the cluster and adjust the cluster to close the gap, in a loop that never ends. See [maintaining desired state]({{< ref "engineering/platform/kubernetes" >}}#maintaining-desired-state) and [declarativity]({{< ref "engineering/platform/kubernetes" >}}#declarativity) in the Kubernetes notes. The general pattern is the [control plane]({{< ref "system-design/elements/control-plane" >}}).
+Kubernetes is the common example. Controllers compare the desired state of each resource with the actual state of the cluster and adjust the cluster to close the gap, in a loop that never ends. See [maintaining desired state]({{< ref "engineering/platform/kubernetes" >}}#maintaining-desired-state) and [declarativity]({{< ref "engineering/platform/kubernetes" >}}#declarativity) in the Kubernetes notes. The general pattern is the [Control Plane]({{< ref "system-design/elements/control-plane" >}}).
 
 **Imperative versus declarative changes:**
 
@@ -73,7 +73,7 @@ Each environment gets its own declaration, usually as a shared base plus per-env
 
 Promotion is a change to the next environment's declaration, made through a pull request. Rollback is a revert.
 
-This follows the [Twelve-Factor]({{< ref "engineering/platform/twelve-factor" >}}) split:
+This follows the [Twelve Factor]({{< ref "engineering/platform/twelve-factor" >}}) split:
 
 - what is the same everywhere belongs in the build artifact;
 - what varies per deploy belongs in configuration.
@@ -83,7 +83,7 @@ Salatino's book builds this as *environment pipelines*: separate pipelines that 
 ## Secrets
 
 
-Secrets cannot sit in a Git repository in plain text, so GitOps makes the [Twelve-Factor]({{< ref "engineering/platform/twelve-factor" >}}) secrets problem sharper. The common options:
+Secrets cannot sit in a Git repository in plain text, so GitOps makes the [Twelve Factor]({{< ref "engineering/platform/twelve-factor" >}}) secrets problem sharper. The common options:
 
 - **Encrypted in Git:** Sealed Secrets or SOPS store ciphertext that only the cluster can decrypt.
 - **Referenced from Git:** an operator, such as External Secrets, reads a declared reference and fetches the value from a secret manager at runtime.
@@ -93,7 +93,7 @@ The second matches the Twelve-Factor note's advice: keep secrets apart from conf
 ## Infrastructure in the same model
 
 
-[Infrastructure as code]({{< ref "engineering/platform/infrastructure-as-code" >}}) tools such as Terraform are declarative but usually run as push: someone runs `plan` and `apply`, and a state file records what exists.
+[Infrastructure As Code]({{< ref "engineering/platform/infrastructure-as-code" >}}) tools such as Terraform are declarative but usually run as push: someone runs `plan` and `apply`, and a state file records what exists.
 
 Crossplane brings cloud infrastructure into the Kubernetes reconciliation model, so infrastructure resources can be declared and reconciled like workloads. Salatino uses it for multi-cloud infrastructure.
 
@@ -120,9 +120,9 @@ That is Twelve-Factor's build-release-run separation and GitOps applied to a sys
 ## Leads to
 
 
-- [Control plane]({{< ref "system-design/elements/control-plane" >}}): the reconciler is a control plane, and its outage must not stop the running system.
-- [Developer experience]({{< ref "engineering/platform/developer-experience" >}}): pull requests as the interface to the platform.
-- [Deployment]({{< ref "engineering/platform/deployment" >}}): progressive delivery on top of declared state, for example traffic weights managed by a controller.
+- [Control Plane]({{< ref "system-design/elements/control-plane" >}}): the reconciler is a control plane, and its outage must not stop the running system.
+- [Developer Experience]({{< ref "engineering/platform/developer-experience" >}}): pull requests as the interface to the platform.
+- [deployment]({{< ref "engineering/platform/deployment" >}}): progressive delivery on top of declared state, for example traffic weights managed by a controller.
 
 ## Sources
 

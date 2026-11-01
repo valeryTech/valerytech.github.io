@@ -6,7 +6,7 @@ description: "Choosing a taxonomy means choosing what receives attention and wha
 linkTitle: "Risk Area Comparisons"
 ---
 
-> **Status:** Supporting comparison, not canonical guidance. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. This document preserves alternative names, the four-dimensions-with-optional-Ethics position, the practitioner survey, and the history behind the overlapping terms.
+> **Status:** Supporting comparison, not canonical guidance. See [Risk Areas Model]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. This document preserves alternative names, the four-dimensions-with-optional-Ethics position, the practitioner survey, and the history behind the overlapping terms.
 
 ## Recommended naming conventions
 

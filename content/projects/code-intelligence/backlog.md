@@ -43,28 +43,28 @@ Own repositories are best: models are less likely to have memorized them, and th
 
 
 1. **Choose and pin the repositories.** Pick a commit per repository, list its environments, and write down the command that renders each environment's configuration (`helm template`, `kustomize build`, `docker compose config`, Terraform variable files per workspace).
-   - Output: a short card per repository with the commit, the environments, the render commands and the configuration formats present.
+	- Output: a short card per repository with the commit, the environments, the render commands and the configuration formats present.
 2. **Build the gold configuration.** Render each environment and extract the effective key-value pairs. The gold comes from rendering, not from B5's parser, so that the ground truth does not share B5's mistakes.
-   - Output: one table per environment, with key, value and defining file.
+	- Output: one table per environment, with key, value and defining file.
 3. **Survey the keys.** List the keys that code reads and tag each by name indirection: the same literal in every layer, a transformed name (case, prefix, nesting, framework binding rules), or a templated chain.
-   - Output: a key inventory with indirection tags and counts per tag. If transformed and templated keys are too few, stop and choose another repository.
+	- Output: a key inventory with indirection tags and counts per tag. If transformed and templated keys are too few, stop and choose another repository.
 4. **Write the items**, about 50, balanced across the indirection tags as far as the repositories allow:
-   - *Value questions*: "What is the value of X in environment E, and where is it set?" The gold is from step 2.
-   - *Reader questions*: "Which code is affected if configuration key K changes?" Gold read sites are labeled by hand and, where possible, checked by changing the value and running the tests.
-   - *History items*: commits that change both code and configuration. Given the code part of the change, which configuration files had to change, and the reverse. The commit is the gold. Filter out large commits, mass renames and formatting-only commits, as for the co-change matrix in [implicit knowledge]({{< ref "projects/code-intelligence/implicit-knowledge" >}}).
-   - Output: an item file with the question, type, environment, indirection tag, gold, and the commit at which history is cut.
+	- *Value questions*: "What is the value of X in environment E, and where is it set?" The gold is from step 2.
+	- *Reader questions*: "Which code is affected if configuration key K changes?" Gold read sites are labeled by hand and, where possible, checked by changing the value and running the tests.
+	- *History items*: commits that change both code and configuration. Given the code part of the change, which configuration files had to change, and the reverse. The commit is the gold. Filter out large commits, mass renames and formatting-only commits, as for the co-change matrix in [implicit knowledge]({{< ref "projects/code-intelligence/implicit-knowledge" >}}).
+	- Output: an item file with the question, type, environment, indirection tag, gold, and the commit at which history is cut.
 5. **Build condition B5.**
-   - Parse YAML, JSON, TOML, `.env`, Helm values and Terraform variables into a map from keys to definitions, per environment.
-   - Find configuration reads in code with tree-sitter queries (`os.getenv`, `process.env`, settings accessors).
-   - Link read sites to keys and keys to definitions, including known transformations (environment-variable naming, nested paths, template references).
-   - In retrieval, add the definitions of every key that retrieved code reads. For agents, add the tools `config_lookup(key)` and `config_readers(key)`.
-   - Check B5's links against the key inventory from step 3 before running any model, so that a linking bug is not read as a null result.
-   - Output: the B5 index, its link precision and recall per indirection tag, and the two tools.
+	- Parse YAML, JSON, TOML, `.env`, Helm values and Terraform variables into a map from keys to definitions, per environment.
+	- Find configuration reads in code with tree-sitter queries (`os.getenv`, `process.env`, settings accessors).
+	- Link read sites to keys and keys to definitions, including known transformations (environment-variable naming, nested paths, template references).
+	- In retrieval, add the definitions of every key that retrieved code reads. For agents, add the tools `config_lookup(key)` and `config_readers(key)`.
+	- Check B5's links against the key inventory from step 3 before running any model, so that a linking bug is not read as a null result.
+	- Output: the B5 index, its link precision and recall per indirection tag, and the two tools.
 6. **Run the conditions.** B0, B0 + B5, A0, and A0 + config tools, with the same model and token budget as the pilot (16k), and history cut at each item's commit. B1 to B3 are left out on purpose, to isolate the configuration effect.
 7. **Analyze.**
-   - Accuracy per condition and indirection tag, with confidence intervals.
-   - Error analysis that separates linking failures (B5 missed the key) from use failures (the value was in context and the model ignored or misread it).
-   - For the agent conditions, steps and tokens as well as success.
+	- Accuracy per condition and indirection tag, with confidence intervals.
+	- Error analysis that separates linking failures (B5 missed the key) from use failures (the value was in context and the model ignored or misread it).
+	- For the agent conditions, steps and tokens as well as success.
 
 ### Prediction and refutation
 

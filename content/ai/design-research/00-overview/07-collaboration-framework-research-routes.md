@@ -15,8 +15,6 @@ The retained analysis and routes sections propose ways to investigate a collabor
 
 The sibling [comments]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes-comments" >}}) explain the arrangement and limits. The [research-scope note]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) distinguishes application choices from the general theory. The [framework proposal]({{< ref "ai/design-research/05-runtime-and-execution/07-collaboration-framework" >}}) supplies related software examples. The source redirect (archived source 002) links both parts.
 
-<a id="retained-analysis-and-routes"></a>
-
 ## Analysis and proposed routes
 
 ## analysis
@@ -232,8 +230,6 @@ One combination appears particularly promising:
 <!-- The declarative pattern examples continue in the programming-model note. -->
 
 The complete section on [collaboration patterns as declarative constraints]({{< ref "ai/design-research/03-language-and-compiler/03-declarative-programming-model" >}}#collaboration-patterns-as-declarative-constraints) is retained in the programming-model note. It belongs between the proposed layered architecture above and the investigation proposal below.
-
-<a id="how-i-would-investigate-it"></a>
 
 ### Proposed investigation method
 
@@ -485,8 +481,6 @@ That is exactly where the declarative notes end up.
 
 This is likely the strongest long-term model, but the recommendation is not to start here because you could spend a long time designing a language before knowing the right primitives.
 
-<a id="i-would-combine-them-in-this-order"></a>
-
 ## Proposed order for combining the routes
 
 
@@ -553,8 +547,6 @@ The API helps you **discover the vocabulary**.
 The runtime forces you to **give that vocabulary precise semantics**.
 
 The declarative layer eventually lets you **compose those semantics without fixing the workflow**.
-
-<a id="a-fourth-route-id-run-as-a-research-spike"></a>
 
 ### A fourth route proposed as a research spike
 

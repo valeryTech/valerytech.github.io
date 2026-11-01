@@ -26,7 +26,7 @@ How to be sure that all trade-offs are considered?
 
 Many engineers skip defining the problem clearly, *leading to over-engineering or missing critical trade-offs* later.
 
-Also constantly? add client perspective - will it be convenient for a user. Make an assumptions about user. #todo learn UX
+Also constantly? add client perspective -- will it be convenient for a user. Make an assumptions about user. #todo learn UX
 
 Consider also services as clients?
 

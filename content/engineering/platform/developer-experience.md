@@ -51,7 +51,7 @@ The [golden-path notes]({{< ref "engineering/delivery-techniques/llm-golden-path
 - **Copy, don't share:** prefer scaffolding copied into a project over a large internal library. In microservice terms, a [service template rather than a chassis]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns).
 - **One opinionated stack:** pick one stack per template; flexibility slows teams down here.
 
-Golden paths are the platform's version of [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}): a default that covers most cases, with a known way off the path.
+Golden paths are the platform's version of [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}): a default that covers most cases, with a known way off the path.
 
 The AI agent platform book (chapter 2) describes templates as walking skeletons for common application patterns. They cover the lifecycle from development through evaluation, deployment, and monitoring, and the platform encourages them rather than forcing them. The book calls the opposite the *golden cage*: a golden path that allows no deviation, so teams cannot solve problems the platform did not anticipate.
 
@@ -69,7 +69,7 @@ The AI agent platform book (chapter 2) lists ways self-service fails:
 - **Backlog coupling:** teams wait on the platform team's backlog before they can deliver.
 - **Enforcing mandates instead of winning adoption:** a mandate often hides user needs the platform does not meet.
 
-[GitOps]({{< ref "engineering/platform/gitops" >}}) gives self-service a reviewable interface: a team changes a declaration through a pull request, and the platform applies it.
+[Gitops]({{< ref "engineering/platform/gitops" >}}) gives self-service a reviewable interface: a team changes a declaration through a pull request, and the platform applies it.
 
 ## Standards and enforcement
 
@@ -84,7 +84,7 @@ The [engineering operating model]({{< ref "engineering/platform/standards-layers
 **How the platform carries it:**
 
 - **Layer 2:** templates, CI checks, and [policy as code]({{< ref "engineering/platform/infrastructure-as-code" >}}#modules-policy-and-review).
-- **Layer 3:** the app-platform contract in [Twelve-Factor]({{< ref "engineering/platform/twelve-factor" >}}): configuration, health and readiness, telemetry, and identity.
+- **Layer 3:** the app-platform contract in [Twelve Factor]({{< ref "engineering/platform/twelve-factor" >}}): configuration, health and readiness, telemetry, and identity.
 
 ## Measuring it
 
@@ -115,9 +115,9 @@ The same ideas appear in the AI engineering notes:
 ## Leads to
 
 
-- [Control plane]({{< ref "system-design/elements/control-plane" >}}): a platform is managed through one.
-- [Operating services]({{< ref "system-design/elements/operating-services" >}}): the per-service needs a platform solves once.
-- [GitOps]({{< ref "engineering/platform/gitops" >}}) and [infrastructure as code]({{< ref "engineering/platform/infrastructure-as-code" >}}): the mechanisms behind self-service.
+- [Control Plane]({{< ref "system-design/elements/control-plane" >}}): a platform is managed through one.
+- [Operating Services]({{< ref "system-design/elements/operating-services" >}}): the per-service needs a platform solves once.
+- [Gitops]({{< ref "engineering/platform/gitops" >}}) and [Infrastructure As Code]({{< ref "engineering/platform/infrastructure-as-code" >}}): the mechanisms behind self-service.
 
 ## Collected excerpts
 
@@ -157,9 +157,7 @@ that to happen, there needs to be a strong central team building and supporting 
 
 DevOps ecosystem in which all the other teams operate.
 
-Instead of calling this team operations, we like the name developer productivity engi‐
-
-neering. Some organizations call this role platform engineer or maybe even DevOps
+Instead of calling this team operations, we like the name developer productivity engineering. Some organizations call this role platform engineer or maybe even DevOps
 
 engineer. The point is that these teams do whatever is necessary to help other software
 
@@ -167,9 +165,7 @@ engineering teams do their work better and faster: operating infrastructure, bui
 
 tools, busting problems.
 
-And while developer productivity engineering remains a specialist skill set, the engi‐
-
-neers themselves may move outward into the organization to bring that expertise
+And while developer productivity engineering remains a specialist skill set, the engineers themselves may move outward into the organization to bring that expertise
 
 where it's needed.
 
@@ -184,11 +180,7 @@ Out of the box, all it
 
 really gives you is the ability to run container workloads. Most folks using Kubernetes
 
-end up assembling their own platform by installing supporting software such as ser‐
-
-vice meshes, message brokers, log aggregation tools, and more. In larger organiza‐
-
-tions, this ends up being the responsibility of a platform engineering team, who put
+end up assembling their own platform by installing supporting software such as service meshes, message brokers, log aggregation tools, and more. In larger organizations, this ends up being the responsibility of a platform engineering team, who put
 
 this platform together and manage it, and help developers use the platform
 
@@ -205,7 +197,7 @@ effectively.
 
 
 - [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- on *Platform as a product*, *Standards and enforcement*, and *Measuring it*
-  - Chapter notes: chapter 1 (platform engineering versus DevOps, SRE, and developer experience), chapter 3 (measures and cognitive load), chapter 4 (developer autonomy and policy as code)
+	- Chapter notes: chapter 1 (platform engineering versus DevOps, SRE, and developer experience), chapter 3 (measures and cognitive load), chapter 4 (developer autonomy and policy as code)
 - AI agent platform book, *O'Reilly early release, chapters 1-7* -- chapter 2 on *Golden paths* and *Self-service and its limits*; chapter 3 on *Measuring it* and *In AI work*
 - [Fournier and Nowland 2025](/sources/3c79e44be07e3bb68b2346dc79796c36.bin), *Platform Engineering: A Guide for Technical, Product, and People Leaders* -- on *Platform as a product*
 - [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*

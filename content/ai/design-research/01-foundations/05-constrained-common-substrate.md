@@ -73,15 +73,13 @@ This also leads me to a slightly different name for the research object. "Neuro-
 
 A provisional framing is the broader question as:
 
-> How do we build programmable environments in which heterogeneous intelligent and non-intelligent participants--humans, generative models, deterministic software and tools--can collaborate freely, while shared state, authority, effects, provenance and required invariants remain explicit and enforceable?
+> How do we build programmable environments in which heterogeneous intelligent and non-intelligent participants -- humans, generative models, deterministic software and tools -- can collaborate freely, while shared state, authority, effects, provenance and required invariants remain explicit and enforceable?
 
 And then the narrower technical thesis is:
 
 > **Constrain the common computational substrate; leave intelligence and generative behavior pluggable.**
 
 The working interpretation is that that is a better foundation for the direction than assuming the fundamental object is an LLM agent surrounded by tools.
-
-<a id="what-i-would-change-in-the-generalization"></a>
 
 ### Proposed changes to the generalization
 
@@ -118,8 +116,6 @@ Humans, LLMs and deterministic programs can all occupy the first layer. The runt
 This also fits the working dictionary better. The working definition of intelligence is merely task-solving capability, while agency requires persistence and effects on the participant's future relationship with its environment.
 
 So neither "intelligent/non-intelligent" nor "agent/non-agent" needs to determine the architecture.
-
-<a id="the-key-abstraction-i-would-take-forward"></a>
 
 ### Proposed key abstraction
 
@@ -245,7 +241,7 @@ For the proposed system this includes:
 
 Every material result should be traceable through:
 
-```
+```text
 result statement
 → derived assertion
 → execution step
@@ -266,7 +262,7 @@ There may be several provenance types:
 
 The system must keep these distinct:
 
-```
+```text
 model proposed
 compiler accepted
 program executed
@@ -330,7 +326,7 @@ A generated result or accepted artifact should not automatically produce an exte
 
 For example:
 
-```
+```text
 AcceptedReport
 ≠ SentReport
 

@@ -168,4 +168,9 @@ The exact form will depend on the question. The important parts are:
 
 An eval is evidence about a stated claim. It is not a verdict that the model or product is good.
 
-This applies the decision logic in [`operating-model.md`]({{< ref "ai/product/operating-model/operating-model" >}}): state the claim and the decision before choosing the evidence, and keep the limits of that evidence visible.
+This applies the decision logic in [Operating Model]({{< ref "ai/product/operating-model/operating-model" >}}): state the claim and the decision before choosing the evidence, and keep the limits of that evidence visible.
+
+## Related notes
+
+
+- [Verification and acceptance]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}) treats comparison with a reference as one kind of check among several, alongside structural, provenance, behavioral and robustness checks.

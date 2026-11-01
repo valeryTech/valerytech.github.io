@@ -21,39 +21,39 @@ relation with minimalism
 
 relation with other concepts
 
-<https://martinfowler.com/bliki/Yagni.html>
+[YAGNI (Martin Fowler)](https://martinfowler.com/bliki/Yagni.html)
 
-<https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it>
+[You aren't gonna need it](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)
 
-<https://wiki.c2.com/?YouArentGonnaNeedIt>
+[You Aren't Gonna Need It (C2 wiki)](https://wiki.c2.com/?YouArentGonnaNeedIt)
 
-<https://wiki.c2.com/?YagniIsBologna>
+[Yagni is bologna (C2 wiki)](https://wiki.c2.com/?YagniIsBologna)
 
-<https://wiki.c2.com/?EconomicsOfYagni>
+[Economics of YAGNI (C2 wiki)](https://wiki.c2.com/?EconomicsOfYagni)
 
-<https://wiki.c2.com/?YagniAndReuse>
+[YAGNI and reuse (C2 wiki)](https://wiki.c2.com/?YagniAndReuse)
 
-<https://wiki.c2.com/?OaooBalancesYagni>
+[Oaoo balances YAGNI (C2 wiki)](https://wiki.c2.com/?OaooBalancesYagni)
 
-<https://www.whilenotdeadlearn.com/blog/2011/03/yagni-abuse>
+[YAGNI Abuse](https://www.whilenotdeadlearn.com/blog/2011/03/yagni-abuse)
 
-<https://hackernoon.com/why-yagni-matters-in-software-development-and-architecture>
+[Why YAGNI matters in Software Development and Architecture](https://hackernoon.com/why-yagni-matters-in-software-development-and-architecture)
 
-<https://ronjeffries.com/articles/019-01ff/iter-yagni-skimp/>
+[YAGNI, yes. Skimping, no. Technical Debt? Not even.](https://ronjeffries.com/articles/019-01ff/iter-yagni-skimp/)
 
-<https://www.meltstudio.co/post/engineering-principles-yagni>
+[Engineering principles: YAGNI (Melt Studio)](https://www.meltstudio.co/post/engineering-principles-yagni)
 
-<https://enterprisecraftsmanship.com/posts/yagni-revisited/>
+[YAGNI revisited](https://enterprisecraftsmanship.com/posts/yagni-revisited/)
 
-<https://www.reddit.com/r/ExperiencedDevs/comments/so34ur/architecture_design_how_to_decide_what_is_yagni/>
+[r/ExperiencedDevs: architecture design, how to decide what is YAGNI](https://www.reddit.com/r/ExperiencedDevs/comments/so34ur/architecture_design_how_to_decide_what_is_yagni/)
 
-<https://wiki.c2.com/?YouArentGonnaNeedIt>
+[You Aren't Gonna Need It (C2 wiki)](https://wiki.c2.com/?YouArentGonnaNeedIt)
 
-<https://www.reddit.com/r/programming/comments/1bmicj0/3_software_development_principles_i_wish_i_knew/>
+[r/programming: 3 software development principles I wish I knew](https://www.reddit.com/r/programming/comments/1bmicj0/3_software_development_principles_i_wish_i_knew/)
 
 analyse, esp this one: "People confuse YAGNI with, "We don't need it right now," all the time. If there's one common thread I see among software engineers, it's that they don't think long term. They don't think like an owner of whatever the problem is. Then the stakeholders come back asking for something that an owner would have told you was obviously coming, and they have coded themselves into a wall where a major re-architecture is needed to facilitate that future requirement."
 
-relation with XP <https://www.martinfowler.com/articles/designDead.html>
+relation with XP [Is Design Dead?](https://www.martinfowler.com/articles/designDead.html)
 
 This article provides context about yagni
 

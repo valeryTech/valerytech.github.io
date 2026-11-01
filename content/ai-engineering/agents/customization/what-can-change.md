@@ -6,7 +6,7 @@ description: "Everything a team can change that affects an agent session, from t
 linkTitle: "What Can Change"
 ---
 
-The result of an agent session depends on more than the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}). The task, the model, the harness, the project, the machine the session runs on, and the people involved all affect it, and a team can change each of them. This note lists them in one place and points to the notes that describe each part. It was written in step 36 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}), after step 35 sorted the agent customization into four kinds of parts and left the other parts unlisted.
+The result of an agent session depends on more than the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}). The task, the model, the harness, the project, the machine the session runs on, and the people involved all affect it, and a team can change each of them. This note lists them in one place and points to the notes that describe each part. It was written in step 36 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}), after step 35 sorted the agent customization into four kinds of parts and left the other parts unlisted.
 
 ## The Parts
 

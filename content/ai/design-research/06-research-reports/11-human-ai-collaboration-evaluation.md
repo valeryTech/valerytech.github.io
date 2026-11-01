@@ -46,7 +46,7 @@ A design is not ready merely because the happy path works. For each important wo
 
 **Observability.** During a long task, can the user tell what the agent is currently doing, what it has done, and what it intends to do next? Recent human-agent communication research identifies these as distinct communication challenges before, during, and after execution. [^32]
 
-**Directability.** Interrupt the system midstream with a changed constraint. Does subsequent behavior actually change? Anthropic's deployed data--experienced users increasingly monitoring and interrupting autonomous runs--makes this an especially important modern agent requirement. [^12]
+**Directability.** Interrupt the system midstream with a changed constraint. Does subsequent behavior actually change? Anthropic's deployed data -- experienced users increasingly monitoring and interrupting autonomous runs -- makes this an especially important modern agent requirement. [^12]
 
 **Reviewability.** Introduce an AI error that is plausible rather than obvious. Can the human detect it with the evidence and representation the interface supplies? Google's explanation guidance stresses *calibrating* trust rather than maximizing trust, while Microsoft's work similarly frames appropriate reliance as the target. [^29][^11]
 

@@ -59,8 +59,6 @@ The agent can exercise substantial flexibility in constructing analyses without 
 
 This is related to the execution boundaries of closed-set task assistants. Here, though, the permitted environment might support a much richer computational language than a small set of named tasks.
 
-<a id="3-proposed-section"></a>
-
 ## 3. Candidate product description
 
 ### 7. Analytical engines and programmable environments
@@ -86,8 +84,6 @@ Results may be consumed directly by people, explored interactively, or exposed t
 
 **Examples:** Forecasting systems, optimization and decision engines, analytical platforms, programmable data-analysis workbenches, and environments where AI agents construct and execute analytical procedures.
 
-<a id="4-how-this-relates-to-our-previous-examples"></a>
-
 ## 4. Relationship to the investigation case
 
 
@@ -100,8 +96,6 @@ This case also examines the **computational environment that makes complex analy
 An investigation workspace may use such an environment. A forecasting engine may provide results to an application that has no investigation interface at all.
 
 Also, **platform** describes how widely those analytical functions are made available. A complex analytical engine can serve one application, while a comparatively simple engine can serve many products.
-
-<a id="5-what-i-would-leave-for-our-later-discussion"></a>
 
 ## 5. Scope of analytical work and coordination
 

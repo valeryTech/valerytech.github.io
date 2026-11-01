@@ -443,7 +443,7 @@ test('desktop and mobile sections select the same most specific direction withou
     ['/', null, null],
     ['/ai-engineering/approach/edd/', 'AI Engineering', 'true'],
     ['/ai-engineering/evaluation/', 'Evaluation', 'page'],
-    ['/ai-engineering/evaluation/framework/20-error-analysis/', 'Evaluation', 'true'],
+    ['/ai-engineering/evaluation/framework-v1/20-error-analysis/', 'Evaluation', 'true'],
     ['/ai/design-research/', 'AI', 'true'],
     ['/engineering/topics/caching/', 'Engineering', 'true'],
     ['/system-design/projects/ticketmaster/', 'System Design', 'true'],

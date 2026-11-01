@@ -201,7 +201,7 @@ Three useful starting references are Houde & Hill for thinking about prototypes,
 
 **Design knowledge** is a broad established term for what is learned through exploration.
 
-In HCI, prototypes are explicitly treated as tools for generating knowledge about a **design space**--the possible forms the system and interaction could take. Lim, Stolterman, and Tenenberg describe prototypes as supporting reflection while exploring that space, and Beaudouin-Lafon & Mackay similarly describe prototyping as expanding and contracting a design space while learning about the system. ([KAIST](https://pure.kaist.ac.kr/en/publications/the-anatomy-of-prototypes-prototypes-as-filters-prototypes-as-man/ "The anatomy of prototypes: Prototypes as filters, prototypes as manifestations of design ideas - Korea Advanced Institute of Science and Technology"))
+In HCI, prototypes are explicitly treated as tools for generating knowledge about a **design space** -- the possible forms the system and interaction could take. Lim, Stolterman, and Tenenberg describe prototypes as supporting reflection while exploring that space, and Beaudouin-Lafon & Mackay similarly describe prototyping as expanding and contracting a design space while learning about the system. ([KAIST](https://pure.kaist.ac.kr/en/publications/the-anatomy-of-prototypes-prototypes-as-filters-prototypes-as-man/ "The anatomy of prototypes: Prototypes as filters, prototypes as manifestations of design ideas - Korea Advanced Institute of Science and Technology"))
 
 Three levels make the meaning of design knowledge more specific:
 
@@ -450,7 +450,7 @@ C. lexical first, semantic on demand
 ```
 
 
-Trying all three against the _same_ searches--`DSL`, `monads`, `distributed transactions`, etc.--makes differences visible.
+Trying all three against the _same_ searches--`DSL`, `monads`, `distributed transactions`, etc. -- makes differences visible.
 
 The principle is something like:
 
@@ -1223,7 +1223,7 @@ So the conceptual core could be:
 
 > **Exploratory design inquiry is the iterative construction and revision of an understanding of a design situation and its possibility space.**
 
-Prototypes, research, sketches, experiments, conversations, and examples are then **inquiry moves**--ways to perturb the current understanding and see what becomes visible.
+Prototypes, research, sketches, experiments, conversations, and examples are then **inquiry moves** -- ways to perturb the current understanding and see what becomes visible.
 
 ## Foundations and adjacent approaches
 
@@ -1337,7 +1337,7 @@ Discover is explicitly about understanding the issue instead of assuming the pro
 
 It is a useful broad shape, though possibly too coarse to describe the detailed inquiry process.
 
-Another adjacent tradition is **effectuation**. It comes from entrepreneurship under genuine uncertainty, where even the eventual goal may not be known. Instead of choosing a goal and optimizing toward it, you begin with available means--what you know, who you know, what you can do--take affordable actions, encounter contingencies and commitments, and allow goals to emerge. ([Effectuation](https://effectuation.org/research-papers-inception-2011 "Research Papers Inception to 2011"))
+Another adjacent tradition is **effectuation**. It comes from entrepreneurship under genuine uncertainty, where even the eventual goal may not be known. Instead of choosing a goal and optimizing toward it, you begin with available means -- what you know, who you know, what you can do -- take affordable actions, encounter contingencies and commitments, and allow goals to emerge. ([Effectuation](https://effectuation.org/research-papers-inception-2011 "Research Papers Inception to 2011"))
 
 That gives a different starting model:
 

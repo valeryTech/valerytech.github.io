@@ -8,4 +8,4 @@ linkTitle: "Online File Storage"
 
 Design prompt queued; no independent design recorded yet. The [Dropbox case]({{< ref "system-design/projects/dropbox" >}}) contains related preparation and a walkthrough.
 
-Use the [case template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).
+Use the [Case Template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).

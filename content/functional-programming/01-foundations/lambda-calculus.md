@@ -30,14 +30,14 @@ Two consequences matter in practice:
 
 Application and β-reduction are related but not the same thing. Application is a piece of syntax: writing `t u` side by side. β-reduction is the one computation rule, and it says what an application means when its left side is a lambda:
 
-```
+```text
 (λx.t) u  ->  t[x := u]
 ```
 
 
 That is, replace every free `x` in `t` with `u`, renaming bound variables where needed to avoid capture. For example:
 
-```
+```text
 (λx.x x) (λy.y)  ->  (λy.y) (λy.y)  ->  λy.y
 ```
 
@@ -51,9 +51,9 @@ An application whose left side is not a lambda, such as `x u` with a free variab
 
 > More precisely, curry and apply are [adjoint functors](https://en.wikipedia.org/wiki/Adjoint_functors "Adjoint functors").
 
-That is a loose shorthand: `curry` and `apply` are not themselves functors. The precise statement is about a category with products and function types, a cartesian closed category such as an idealised category of types and functions. There, pairing with `B` (`A ↦ A × B`, the functor `− × B`) is left adjoint to taking functions out of `B` (`C ↦ B ⇒ C`, the functor `B ⇒ −`). The adjunction is the one-to-one correspondence between arrows `A × B -> C` and arrows `A -> (B ⇒ C)`; `curry` and `uncurry` witness it, and `apply: (B ⇒ C) × B -> C` is its counit. See [Category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}) and [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application).
+That is a loose shorthand: `curry` and `apply` are not themselves functors. The precise statement is about a category with products and function types, a cartesian closed category such as an idealised category of types and functions. There, pairing with `B` (`A ↦ A × B`, the functor `− × B`) is left adjoint to taking functions out of `B` (`C ↦ B ⇒ C`, the functor `B ⇒ −`). The adjunction is the one-to-one correspondence between arrows `A × B -> C` and arrows `A -> (B ⇒ C)`; `curry` and `uncurry` witness it, and `apply: (B ⇒ C) × B -> C` is its counit. See [Category Theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}) and [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application).
 
-- Wikipedia, "Apply": <https://en.wikipedia.org/wiki/Apply>
+- Wikipedia, "Apply": [Function application (Wikipedia)](https://en.wikipedia.org/wiki/Apply)
 
 ## Reduction strategies
 
@@ -66,7 +66,7 @@ A term can contain several redexes (reducible applications). A reduction strateg
 - **Call-by-value**: reduce an argument to a value before substituting it, and don't reduce inside lambda bodies. This is what most languages do.
 - **Call-by-need**: call-by-name with sharing, so each argument is evaluated at most once. This is lazy evaluation, as in Haskell.
 
-The strategies can differ in whether they finish at all. Take `Ω = (λx.x x) (λx.x x)`, which reduces to itself forever. Then `(λx.λy.y) Ω` reduces to `λy.y` under call-by-name, because the argument is discarded unevaluated, but loops under call-by-value, which tries to evaluate `Ω` first. The Church-Rosser theorem guarantees that whenever two strategies both reach a normal form, it is the same one. See [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}).
+The strategies can differ in whether they finish at all. Take `Ω = (λx.x x) (λx.x x)`, which reduces to itself forever. Then `(λx.λy.y) Ω` reduces to `λy.y` under call-by-name, because the argument is discarded unevaluated, but loops under call-by-value, which tries to evaluate `Ω` first. The Church-Rosser theorem guarantees that whenever two strategies both reach a normal form, it is the same one. See [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}).
 
 ## Church encodings
 
@@ -78,7 +78,7 @@ The pure lambda calculus has only functions, so data is encoded as functions tha
 
 A Church boolean takes two arguments and returns one of them:
 
-```
+```text
 true  = λt.λf.t
 false = λt.λf.f
 if    = λb.λx.λy.b x y
@@ -95,7 +95,7 @@ For example, `and true false = true false true = false`.
 
 The Church numeral `n` applies a function `n` times:
 
-```
+```text
 0    = λf.λx.x
 1    = λf.λx.f x
 2    = λf.λx.f (f x)
@@ -103,14 +103,14 @@ succ = λn.λf.λx.f (n f x)
 ```
 
 
-The same idea in a typed language is a fold: a Church-encoded list is its own `foldr` (see [Recursion and folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}})).
+The same idea in a typed language is a fold: a Church-encoded list is its own `foldr` (see [Recursion And Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}})).
 
 ### Recursion
 
 
 Lambda terms have no names, so a function can't call itself directly. A fixed-point combinator supplies the recursive call:
 
-```
+```text
 Y = λf.(λx.f (x x)) (λx.f (x x))
 Y R  →  (λx.R (x x)) (λx.R (x x))  →  R ((λx.R (x x)) (λx.R (x x)))  =  R (Y R)
 ```
@@ -123,20 +123,20 @@ So `R` receives its own recursive call as its first argument. Rojas (section 4, 
 
 Introductions and references:
 
-- Stanford Encyclopedia of Philosophy, "The Lambda Calculus": <https://plato.stanford.edu/entries/lambda-calculus/>
-- OpenDSA, Programming Languages book, chapter on syntax: <https://opendsa-server.cs.vt.edu/OpenDSA/Books/PL/html/Syntax.html>
-- University of Wisconsin CS704 course notes: <https://pages.cs.wisc.edu/~horwitz/CS704-NOTES/>
-- CS704 notes, chapter 1, lambda calculus, marked as a source of examples or exercises: <https://pages.cs.wisc.edu/~horwitz/CS704-NOTES/1.LAMBDA-CALCULUS.html>
-- Reddit r/haskell, "How to get an understanding of lambda calculus": <https://www.reddit.com/r/haskell/comments/c3ahcd/how_get_a_understanding_of_lambada_calculus/>
+- Stanford Encyclopedia of Philosophy, "[The Lambda Calculus](https://plato.stanford.edu/entries/lambda-calculus/)"
+- OpenDSA, Programming Languages book, chapter on syntax: [Syntax of the Lambda Calculus (OpenDSA)](https://opendsa-server.cs.vt.edu/OpenDSA/Books/PL/html/Syntax.html)
+- University of Wisconsin CS704 course notes: [University of Wisconsin CS704 course notes](https://pages.cs.wisc.edu/~horwitz/CS704-NOTES/)
+- CS704 notes, chapter 1, lambda calculus, marked as a source of examples or exercises: [CS704 notes, chapter 1: lambda calculus](https://pages.cs.wisc.edu/~horwitz/CS704-NOTES/1.LAMBDA-CALCULUS.html)
+- Reddit r/haskell, "[How to get an understanding of lambda calculus](https://www.reddit.com/r/haskell/comments/c3ahcd/how_get_a_understanding_of_lambada_calculus/)"
 
 Online tools, topics not checked:
 
-- lambdacalc.io: <https://lambdacalc.io/>
-- Lambda Machine: <https://lambda-machine.com/>
+- lambdacalc.io: [lambdacalc.io](https://lambdacalc.io/)
+- Lambda Machine: [Lambda Machine](https://lambda-machine.com/)
 
 For working through reductions by hand, Rojas 1997 ([PDF](/sources/6cdd15e9eea3ac6741f1d3ac57cce6c5.bin)) and Sestoft 2002 ([PDF](/sources/55183c5cf7fa57638ba1ff493dfe555e.bin)) are a good pair. Rojas covers β-reduction, Church encodings and the Y combinator in nine pages; Sestoft compares the reduction strategies above precisely.
 
-See also: [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) for reduction, the Church-Rosser theorem and lazy evaluation, [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application), and [Category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}).
+See also: [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) for reduction, the Church-Rosser theorem and lazy evaluation, [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application), and [Category Theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}).
 
 ## Library sources
 

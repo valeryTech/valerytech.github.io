@@ -282,7 +282,7 @@ The DSL will add much more value if provenance is represented in its semantics r
 
 Conceptually, the language should distinguish:
 
-```
+```text
 RawText
 ModelGeneratedText
 SourceArtifact

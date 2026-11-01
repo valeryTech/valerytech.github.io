@@ -6,7 +6,7 @@ description: "Examines how LLMs move interaction structure into downstream workf
 linkTitle: "LLMs and Workflows"
 ---
 
-Part of [Dialogue systems]({{< ref "dialogue-systems" >}}). The component view of the same shift is in [LLMs as components]({{< ref "dialogue-systems/llms-as-components" >}}); the pre-LLM architecture is in [Frame-based dialogue]({{< ref "dialogue-systems/frame-based-dialogue" >}}).
+Part of [Dialogue Systems]({{< ref "dialogue-systems" >}}). The component view of the same shift is in [Llms As Components]({{< ref "dialogue-systems/llms-as-components" >}}); the pre-LLM architecture is in [Frame Based Dialogue]({{< ref "dialogue-systems/frame-based-dialogue" >}}).
 
 ## Executive summary
 

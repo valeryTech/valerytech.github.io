@@ -11,7 +11,7 @@ Part of [distributed systems]({{< ref "engineering/distributed-systems" >}}).
 
 **Question:** what can a replicated system promise about the values clients read and write, and what does each promise cost?
 
-Every copy of data, whether a replica, a cache, or an index, can disagree with the others for a while. A guarantee names which disagreements a client may observe. Stronger guarantees hide more of them and cost more waiting on the network. The requirement side, deciding what each operation of a design needs, is in [consistency]({{< ref "system-design/nfr/consistency" >}}).
+Every copy of data, whether a replica, a cache, or an index, can disagree with the others for a while. A guarantee names which disagreements a client may observe. Stronger guarantees hide more of them and cost more waiting on the network. The requirement side, deciding what each operation of a design needs, is in [Consistency]({{< ref "system-design/nfr/consistency" >}}).
 
 ## Consistency models
 
@@ -64,7 +64,7 @@ Isolation levels restrict what concurrent transactions may observe of each other
 | Serializable | Every race condition: the result equals some serial order of the transactions. | Nothing, at the cost of serial execution, two-phase locking, or aborts under serializable snapshot isolation. |
 | Strict serializability | Everything serializability prevents, and the serial order also respects real time. | Nothing; it combines serializability with linearizability. |
 
-Level names are not portable. "Repeatable read" means snapshot isolation in some databases and something weaker in others, so check what a given database actually provides. **Write skew** is the anomaly to watch for: two transactions each read the same data, decide based on it, and write different objects, as when two doctors both leave an on-call rota that requires at least one of them. Mechanics and examples are in [transactions]({{< ref "engineering/distributed-systems/transactions" >}}).
+Level names are not portable. "Repeatable read" means snapshot isolation in some databases and something weaker in others, so check what a given database actually provides. **Write skew** is the anomaly to watch for: two transactions each read the same data, decide based on it, and write different objects, as when two doctors both leave an on-call rota that requires at least one of them. Mechanics and examples are in [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}).
 
 ## CAP and PACELC
 
@@ -146,16 +146,16 @@ In a design: list the invariants, then for each pair of operations ask whether r
 ## In a design
 
 
-The checklist for recording each operation's requirement (model, behavior when replicas are unreachable, delay sensitivity, invariants) is in [consistency]({{< ref "system-design/nfr/consistency" >}}#in-a-design). The consensus behind operations that must synchronize is in [broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}), and the alternatives that avoid it are in [coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}).
+The checklist for recording each operation's requirement (model, behavior when replicas are unreachable, delay sensitivity, invariants) is in [consistency]({{< ref "system-design/nfr/consistency" >}}#in-a-design). The consensus behind operations that must synchronize is in [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}), and the alternatives that avoid it are in [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}).
 
 ## Related notes
 
 
-- [System models]({{< ref "engineering/distributed-systems/system-models" >}}): the fault and timing assumptions every guarantee depends on.
-- [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}): the clocks and orderings that causal and linearizable systems are built from.
+- [System Models]({{< ref "engineering/distributed-systems/system-models" >}}): the fault and timing assumptions every guarantee depends on.
+- [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}): the clocks and orderings that causal and linearizable systems are built from.
 - [Replication]({{< ref "engineering/distributed-systems/replication" >}}): replication logs, lag, and the read anomalies these guarantees rule out.
 - [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}): the mechanisms behind the isolation levels.
-- [Data at scale]({{< ref "system-design/elements/data-at-scale" >}}): where replicas, caches, and indexes create the copies that disagree.
+- [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}): where replicas, caches, and indexes create the copies that disagree.
 
 ## Gaps
 

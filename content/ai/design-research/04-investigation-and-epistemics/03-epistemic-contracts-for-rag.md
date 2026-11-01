@@ -630,7 +630,7 @@ The passages below come from the [typed investigation report]({{< ref "ai/design
 
 **λ_A** is the strongest warning against presenting "typed agents" as the contribution. Agent composition, probabilistic choice and bounded iterative behaviour already have a typed-calculus treatment. The proposed research gap is to make *evidence state* and *admissibility of conclusions* part of the calculus: for example, `Evidence<Screened, Provenanced, AuthorityChecked>` and a finalisation rule that consumes appropriate certificates.
 
-**Lean4Agent** goes further toward actual agent verification by modelling workflows and trajectories in a dependent-type language. Its key lesson is methodological: formal guarantees must state the assumptions under which semantic consistency is proved. A first paper on the proposed system should similarly state operator assumptions explicitly--for example, a `screen_all` physical operator can guarantee execution over a corpus snapshot, while an `llm_relevant` predicate cannot deterministically guarantee semantic recall.
+**Lean4Agent** goes further toward actual agent verification by modelling workflows and trajectories in a dependent-type language. Its key lesson is methodological: formal guarantees must state the assumptions under which semantic consistency is proved. A first paper on the proposed system should similarly state operator assumptions explicitly -- for example, a `screen_all` physical operator can guarantee execution over a corpus snapshot, while an `llm_relevant` predicate cannot deterministically guarantee semantic recall.
 
 **PlanCompiler** is the closest direct empirical precedent for the "move errors into compilation" thesis. It establishes that typed plans plus static graph validation can materially outperform free-form generation on structured workflows. It leaves the research opening you care about because its type errors concern workflow schemas and persistence boundaries rather than provenance, source precedence, evidence sufficiency or justified abstention.
 
@@ -718,3 +718,8 @@ This deliberately does **not** prove that an LLM correctly judged semantic entai
 
 
 The [initial verification stack]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}#5-verification-must-not-be-similarity-to-the-previous-output) and [later independent relations]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}#7-verify-through-several-independent-relations) are now in the shared verification note. The evidence-specific contracts, certificates, and conditional structural-soundness claim remain here.
+
+## Related notes
+
+
+- RAG metrics input lists measures of whether an answer is supported by its evidence, including faithfulness, citation accuracy and unsupported-claim rate.

@@ -208,16 +208,16 @@ Maintain for each task:
 ## 8. Interviewer Checklist (run-of-show)
 
 
--  Read the starter prompt verbatim; confirm we'll timebox phases.
--  Capture SLOs and constraints before diving into architecture.
--  Get 2-3 core APIs and a minimal entity model on the board.
--  Ask for the hot read/write paths and back-pressure handling.
--  Require quick capacity math; identify the first bottleneck.
--  Ask for the consistency and idempotency story on writes.
--  Cover failure modes and degradation strategy.
--  Touch on observability, deploy/rollback, and top cost driver.
--  Close with MVP -> vNext and 2 explicit trade-offs accepted.
--  Score each construct using BARS; apply gates; record one concrete example per construct.
+- Read the starter prompt verbatim; confirm we'll timebox phases.
+- Capture SLOs and constraints before diving into architecture.
+- Get 2-3 core APIs and a minimal entity model on the board.
+- Ask for the hot read/write paths and back-pressure handling.
+- Require quick capacity math; identify the first bottleneck.
+- Ask for the consistency and idempotency story on writes.
+- Cover failure modes and degradation strategy.
+- Touch on observability, deploy/rollback, and top cost driver.
+- Close with MVP -> vNext and 2 explicit trade-offs accepted.
+- Score each construct using BARS; apply gates; record one concrete example per construct.
 
 ## 9. Candidate Primer (send with invite)
 
@@ -230,7 +230,7 @@ Maintain for each task:
 
 ## 10. Scoring Sheet (template)
 
-```
+```text
 Candidate: ___________   Date: _______   Role: Senior SWE
 Task ID: ______________   Interviewer: _______________
 A. Framing & Reqs (15%):     1 2 3 4 5  | Notes: ___________________________

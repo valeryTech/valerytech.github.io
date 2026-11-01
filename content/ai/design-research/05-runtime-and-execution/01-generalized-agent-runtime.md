@@ -679,13 +679,13 @@ The durable-execution part of the research programme does not need to be invente
 
 | Project | Scope / formalism | Runtime and durability | Verification | HITL | Evaluation/usage orientation | Licence |
 |---|---|---|---|---|---|---|
-| [**Temporal**](https://github.com/temporalio/temporal) | General durable workflow programming | Event-history replay; long-running workflows; nondeterministic I/O isolated into activities | Runtime determinism/replay discipline, not domain semantic verification | Strong: workflows can wait on external events/humans | Production distributed workflows and explicit AI-agent reference architecture | **MIT**. [17](#ref-17), [25](#ref-25) [25](#ref-25) |
-| [**DBOS**](https://github.com/dbos-inc/dbos-transact-py) | Database-backed durable execution | Workflow state/checkpoints persisted in Postgres; completed model/tool steps can be reused after recovery | Transaction/recovery semantics; application contracts remain the developer's job | Supported through durable workflows/events | Explicit LLM/agent integrations and durable streams | **MIT** for DBOS Transact Python. [18](#ref-18), [26](#ref-26), [27](#ref-27) [26](#ref-26) |
-| [**LangGraph**](https://github.com/langchain-ai/langgraph) | Stateful graph abstraction for agent programs | Checkpointed state/threads, persistence, resumability, fault tolerance | Graph/state structure, but no general formal contract system | **Strong** interrupts and resume primitives | Agent orchestration | **MIT**. [28](#ref-28), [29](#ref-29) [30](#ref-30) |
-| [**Restate**](https://github.com/restatedev/restate) | Durable services/workflows | Durable invocations, state, timers and exactly-once-oriented communication semantics | Infrastructure-level execution guarantees | Supported | General durable applications including agents | **Business Source License 1.1**, therefore source-available rather than currently OSI-open-source; versions convert to Apache-2.0 after the stated four-year change period. [31](#ref-31) [31](#ref-31) |
-| [**DSPy**](https://github.com/stanfordnlp/dspy) | Declarative LM programming + compiler optimisation | Ordinary program execution; no durable-workflow semantics | Empirical metric optimisation | Application-defined | Prompt/model/program optimisation | **MIT**. [11](#ref-11) [12](#ref-12) |
+| [**Temporal**](https://github.com/temporalio/temporal) | General durable workflow programming | Event-history replay; long-running workflows; nondeterministic I/O isolated into activities | Runtime determinism/replay discipline, not domain semantic verification | Strong: workflows can wait on external events/humans | Production distributed workflows and explicit AI-agent reference architecture | **MIT**. ([Temporal Technologies: AI agent reference architecture](#temporal-ai-reference-architecture); [Temporal Technologies: temporal repository](#temporal-repository)) |
+| [**DBOS**](https://github.com/dbos-inc/dbos-transact-py) | Database-backed durable execution | Workflow state/checkpoints persisted in Postgres; completed model/tool steps can be reused after recovery | Transaction/recovery semantics; application contracts remain the developer's job | Supported through durable workflows/events | Explicit LLM/agent integrations and durable streams | **MIT** for DBOS Transact Python. ([DBOS: AI quickstart](#dbos-ai-quickstart); [DBOS: dbos-transact-py](#dbos-transact-py); [DBOS: Vercel AI SDK](#dbos-vercel-ai-sdk)) |
+| [**LangGraph**](https://github.com/langchain-ai/langgraph) | Stateful graph abstraction for agent programs | Checkpointed state/threads, persistence, resumability, fault tolerance | Graph/state structure, but no general formal contract system | **Strong** interrupts and resume primitives | Agent orchestration | **MIT**. ([LangChain: Persistence](#langchain-persistence); [LangChain: Interrupts](#langchain-interrupts); [LangChain: langgraph repository](#langchain-langgraph)) |
+| [**Restate**](https://github.com/restatedev/restate) | Durable services/workflows | Durable invocations, state, timers and exactly-once-oriented communication semantics | Infrastructure-level execution guarantees | Supported | General durable applications including agents | **Business Source License 1.1**, therefore source-available rather than currently OSI-open-source; versions convert to Apache-2.0 after the stated four-year change period. ([Restate](#restate-repository)) |
+| [**DSPy**](https://github.com/stanfordnlp/dspy) | Declarative LM programming + compiler optimisation | Ordinary program execution; no durable-workflow semantics | Empirical metric optimisation | Application-defined | Prompt/model/program optimisation | **MIT**. ([Khattab et al. 2024](#khattab-2024); [Stanford NLP](#stanford-nlp-dspy)) |
 
-Temporal's AI-agent architecture is especially relevant to a subtle problem: **replay of stochastic computation**. Temporal recommends keeping workflow orchestration deterministic while placing model calls, tool calls, database reads and other nondeterministic I/O in Activities. During recovery, recorded results can be replayed rather than asking the model to regenerate an allegedly "same" answer. [17](#ref-17) DBOS's current agent integrations apply a related idea by checkpointing model/tool steps so a recovered workflow does not have to repeat every completed model call. [18](#ref-18), [27](#ref-27)
+Temporal's AI-agent architecture is especially relevant to a subtle problem: **replay of stochastic computation**. Temporal recommends keeping workflow orchestration deterministic while placing model calls, tool calls, database reads and other nondeterministic I/O in Activities. During recovery, recorded results can be replayed rather than asking the model to regenerate an allegedly "same" answer. ([Temporal Technologies: AI agent reference architecture](#temporal-ai-reference-architecture)) DBOS's current agent integrations apply a related idea by checkpointing model/tool steps so a recovered workflow does not have to repeat every completed model call. ([DBOS: AI quickstart](#dbos-ai-quickstart); [DBOS: Vercel AI SDK](#dbos-vercel-ai-sdk))
 
 That gives the proposed research programme a useful semantic distinction:
 
@@ -698,7 +698,7 @@ rerun(neural inference)
 
 A durable runtime should normally replay the **recorded value and model provenance** from an already committed neural operation. A deliberate recomputation should be a different operation, producing a new version of that value and a new provenance edge. This becomes important whenever a provider silently updates a model, sampling is nondeterministic, external data changes or a prompt depends on current state.
 
-DBOS also supplies a systems precedent for treating computation state as database state. Its foundational DBOS work proposes building system facilities over transactional database state, and the current workflow system uses that idea for durable application execution. [32](#ref-32), [18](#ref-18) That matches the proposal for an inspectable runtime where completed computation, budgets, provenance, agent state and dependencies remain queryable rather than disappearing into an in-memory agent loop. [16](#ref-16)
+DBOS also supplies a systems precedent for treating computation state as database state. Its foundational DBOS work proposes building system facilities over transactional database state, and the current workflow system uses that idea for durable application execution. ([Skiadopoulos et al. 2021](#skiadopoulos-2021); [DBOS: AI quickstart](#dbos-ai-quickstart)) That matches the proposal for an inspectable runtime where completed computation, budgets, provenance, agent state and dependencies remain queryable rather than disappearing into an in-memory agent loop. ([Project note: db-approach](#note-db-approach))
 
 The main missing layer across these runtimes is semantic. Temporal can faithfully resume:
 
@@ -707,7 +707,7 @@ RefundCustomer(order=42)
 ```
 
 
-but the generic runtime does not know that refunding requires verified identity, policy eligibility and a financial-authority capability. LangGraph can checkpoint an `EvidenceSet`, but it does not know that a `FinalFinding` should be unconstructible from evidence with incomplete provenance. DBOS can ensure a workflow step survives process failure, but that is different from proving the step was epistemically or organisationally legitimate. [17](#ref-17), [18](#ref-18), [28](#ref-28)
+but the generic runtime does not know that refunding requires verified identity, policy eligibility and a financial-authority capability. LangGraph can checkpoint an `EvidenceSet`, but it does not know that a `FinalFinding` should be unconstructible from evidence with incomplete provenance. DBOS can ensure a workflow step survives process failure, but that is different from proving the step was epistemically or organisationally legitimate. ([Temporal Technologies: AI agent reference architecture](#temporal-ai-reference-architecture); [DBOS: AI quickstart](#dbos-ai-quickstart); [LangChain: Persistence](#langchain-persistence))
 
 That is a promising implementation strategy for research: **compile onto an existing durable runtime** and make the new contribution the language, effects, contracts, provenance and verification semantics.
 
@@ -731,24 +731,24 @@ This keeps the paper focused on the semantic contribution and avoids spending mo
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
-## Citation links added during reassembly
+## References
 
 
-The original numbered citations link to the entries below, which point to the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
+These entries are copied from the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
 
-- <a id="ref-11"></a>[Reference 11]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-11)
-- <a id="ref-12"></a>[Reference 12]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-12)
-- <a id="ref-16"></a>[Reference 16]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-16)
-- <a id="ref-17"></a>[Reference 17]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-17)
-- <a id="ref-18"></a>[Reference 18]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-18)
-- <a id="ref-25"></a>[Reference 25]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-25)
-- <a id="ref-26"></a>[Reference 26]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-26)
-- <a id="ref-27"></a>[Reference 27]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-27)
-- <a id="ref-28"></a>[Reference 28]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-28)
-- <a id="ref-29"></a>[Reference 29]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-29)
-- <a id="ref-30"></a>[Reference 30]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-30)
-- <a id="ref-31"></a>[Reference 31]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-31)
-- <a id="ref-32"></a>[Reference 32]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-32)
+- DBOS, Inc. [dbos-inc/dbos-transact-py](https://github.com/dbos-inc/dbos-transact-py). GitHub repository; MIT License. ^dbos-transact-py
+- DBOS. [AI Quickstart](https://docs.dbos.dev/ai/ai-quickstart). DBOS documentation. ^dbos-ai-quickstart
+- DBOS. [Use DBOS With the Vercel AI SDK](https://docs.dbos.dev/integrations/vercel-ai). DBOS documentation. ^dbos-vercel-ai-sdk
+- Khattab, Omar, et al. (2024). [DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html). ICLR 2024. ^khattab-2024
+- LangChain. [Interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts). LangGraph documentation. ^langchain-interrupts
+- LangChain. [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph). GitHub repository; MIT License. ^langchain-langgraph
+- LangChain. [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence). LangGraph documentation. ^langchain-persistence
+- Project note (user-provided). *db-approach.md*. ^note-db-approach
+- Restate. [restatedev/restate](https://github.com/restatedev/restate). GitHub repository; Business Source License 1.1, with the repository-specified change license/date terms. ^restate-repository
+- Skiadopoulos, Athinagoras, et al. (2021). [DBOS: a DBMS-oriented operating system](https://mast.stanford.edu/pubs/dbos_a_proposal_for_a_data_centric_operating_system/). PVLDB. doi:10.14778/3485450.3485454. ^skiadopoulos-2021
+- Stanford NLP. [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy). GitHub repository; MIT License. ^stanford-nlp-dspy
+- Temporal Technologies. [AI Agent Reference Architecture](https://go.temporal.io/platform-hub/ai-engineering/ai-reference-architecture). Temporal Platform Hub. ^temporal-ai-reference-architecture
+- Temporal Technologies. [temporalio/temporal](https://github.com/temporalio/temporal). GitHub repository; MIT License. ^temporal-repository
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
@@ -781,7 +781,7 @@ Tracing JIT implementations explicitly use guards and return to interpreted exec
 
 The corresponding proposed architecture would be:
 
-```
+```text
 General interpreter:
     capable LLM using tools
 
@@ -806,7 +806,7 @@ Deoptimization:
 
 This suggests a tiered runtime:
 
-```
+```text
 Tier 0 — Direct generative execution
     General, flexible, expensive, difficult to inspect
 
@@ -820,7 +820,7 @@ Tier 2 — Symbolic or deterministic implementation
 
 A node does not need to move immediately from "LLM" to "ordinary code." Compilation can be progressive:
 
-```
+```text
 one large model call
 → several typed model operations
 → deterministic preprocessing and model interpretation
@@ -840,7 +840,7 @@ A synthesized program will usually be valid for a region of the input space, not
 
 It should therefore have explicit applicability conditions:
 
-```
+```text
 supports:
     text documents with recoverable citations
     question type = comparative analysis

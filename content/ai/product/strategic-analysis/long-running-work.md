@@ -124,7 +124,7 @@ Google now has Agent Memory Bank; Microsoft has persistent agent memory with exp
 
 What did we learn about _how to perform this job_?
 
-This is particularly interesting. Microsoft now explicitly separates procedural memory--learned ways of completing tasks--from remembering facts, and has introduced STATE-Bench to measure whether experience improves later agent behavior. ([Microsoft for Developers](https://devblogs.microsoft.com/foundry/memory-build2026/ "Making agent memory more reliable, transparent, and production-ready | Microsoft Foundry Blog"))
+This is particularly interesting. Microsoft now explicitly separates procedural memory -- learned ways of completing tasks -- from remembering facts, and has introduced STATE-Bench to measure whether experience improves later agent behavior. ([Microsoft for Developers](https://devblogs.microsoft.com/foundry/memory-build2026/ "Making agent memory more reliable, transparent, and production-ready | Microsoft Foundry Blog"))
 
 That overlaps heavily with another major trend: **skills**.
 
@@ -300,8 +300,6 @@ OpenAI is emphasizing boundaries, approvals and agent-native audit telemetry for
 
 Forecast: **agent identity, delegated authorization and policy enforcement** may be major enterprise platform work through 2027.
 
-<a id="8-mcpa2a-matter-but-i-think-they-become-boring-infrastructure"></a>
-
 ### 8. MCP/A2A as ordinary infrastructure
 
 
@@ -324,8 +322,6 @@ Multiple agents are useful for:
 But a swarm of persistent personas isn't inherently better architecture.
 
 The forecast is that **A2A/MCP become protocols**, much like HTTP or OAuth: important plumbing that isn't where most product differentiation sits.
-
-<a id="my-2027-platform-picture"></a>
 
 ## Proposed 2027 platform picture
 

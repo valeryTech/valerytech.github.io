@@ -8,4 +8,4 @@ linkTitle: "Spotify"
 
 Design prompt queued; no design recorded yet. Related transcript fragments remain in the [original phrase collection]({{< ref "system-design/archive/interview-phrases-v0" >}}).
 
-Use the [case template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).
+Use the [Case Template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).

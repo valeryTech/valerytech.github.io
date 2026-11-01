@@ -15,9 +15,9 @@ Link destinations and Markdown formatting are maintained as the surrounding note
 
 | Preserved material | Working note |
 | --- | --- |
-| [Preparation plan and field map]({{< ref "system-design/archive/study-plan-v0" >}}) | [Study and practice]({{< ref "system-design/interview/study-and-practice" >}}) |
-| [Architecture principles]({{< ref "system-design/archive/architecture-principles-v0" >}}) | [Design principles]({{< ref "system-design/design-principles" >}}) |
-| [Building-block collection]({{< ref "system-design/archive/building-blocks-v0" >}}) | [Pattern map]({{< ref "system-design/elements/pattern-map" >}}) |
+| [Preparation plan and field map]({{< ref "system-design/archive/study-plan-v0" >}}) | [Study And Practice]({{< ref "system-design/interview/study-and-practice" >}}) |
+| [Architecture principles]({{< ref "system-design/archive/architecture-principles-v0" >}}) | [Design Principles]({{< ref "system-design/design-principles" >}}) |
+| [Building-block collection]({{< ref "system-design/archive/building-blocks-v0" >}}) | [Pattern Map]({{< ref "system-design/elements/pattern-map" >}}) |
 | [Scalability excerpts and sources]({{< ref "system-design/archive/scalability-reading-notes" >}}) | [Scalability]({{< ref "system-design/nfr/scalability" >}}) |
 | [Phrase collection and transcripts]({{< ref "system-design/archive/interview-phrases-v0" >}}) | [Communication phrases]({{< ref "system-design/interview/phrases" >}}) |
 | [Mock-interview observations]({{< ref "system-design/archive/mock-interview-observations-v0" >}}) | [Mock review]({{< ref "system-design/interview/mock-interviews" >}}) |

@@ -183,4 +183,4 @@ There are a few considerations for this step:
 
 main source:
 
-<https://interviewing.io/guides/system-design-interview/part-three>
+[A 3-Step Framework to Nail Your System Design Interview](https://interviewing.io/guides/system-design-interview/part-three)

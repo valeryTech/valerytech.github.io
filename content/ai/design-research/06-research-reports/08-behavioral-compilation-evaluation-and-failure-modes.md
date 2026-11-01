@@ -90,15 +90,15 @@ One result can be explained by infinitely many programs.
 
 For example, all of these programs satisfy one observed case:
 
-```
+```python
 return observed_answer
 ```
 
-```
+```python
 return lookup[input_hash]
 ```
 
-```
+```python
 return actually_solve_the_problem(input)
 ```
 
@@ -125,7 +125,7 @@ If the first LLM generates the answer and another LLM checks whether the program
 
 There are two separate objectives:
 
-```
+```text
 Teacher fidelity:
     Does the program reproduce the teacher's behavior?
 
@@ -184,7 +184,7 @@ The source includes:
 
 A focused experiment could be:
 
-```
+```text
 Input:
   immutable transcript revision
   utterances and source spans

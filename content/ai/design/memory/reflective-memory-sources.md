@@ -40,7 +40,7 @@ Psychology was developing a similar decomposition. The influential Atkinson-Shif
 
 AI cognitive architectures then imported and formalized these distinctions.
 
-ACT and later ACT-R, associated with John Anderson, distinguish things like declarative knowledge and procedural knowledge. Declarative memory contains facts and experiences; procedural memory contains production rules--roughly, knowledge of what to do.
+ACT and later ACT-R, associated with John Anderson, distinguish things like declarative knowledge and procedural knowledge. Declarative memory contains facts and experiences; procedural memory contains production rules -- roughly, knowledge of what to do.
 
 Soar, associated with Allen Newell and later John Laird, similarly has working memory, procedural memory, semantic memory, and episodic memory. The explicit goal was a "unified theory of cognition": one architecture that could explain reasoning, learning, planning, problem solving, and memory together.
 

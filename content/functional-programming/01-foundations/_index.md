@@ -7,10 +7,10 @@ weight: "10"
 linkTitle: "Foundations"
 ---
 
-Purity, evaluation, the lambda calculus, functions and recursion: the ideas everything else in the section builds on. Part of [Functional programming]({{< ref "functional-programming" >}}).
+Purity, evaluation, the lambda calculus, functions and recursion: the ideas everything else in the section builds on. Part of [Functional Programming]({{< ref "functional-programming" >}}).
 
-- [Pure functions and effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}})
-- [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})
-- [Lambda calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}})
-- [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}})
-- [Recursion and folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}})
+- [Pure Functions And Effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}})
+- [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})
+- [Lambda Calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}})
+- [Functions And Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}})
+- [Recursion And Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}})

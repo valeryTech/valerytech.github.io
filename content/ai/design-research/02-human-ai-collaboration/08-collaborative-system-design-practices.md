@@ -20,8 +20,6 @@ The [participant profiles]({{< ref "ai/design-research/01-foundations/11-partici
 
 Design question: Which practices follow from these principles and approaches, and how could they help build such systems?
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The proposal is to treat the three shifts as a design framework:
 
 - interaction -> collaboration

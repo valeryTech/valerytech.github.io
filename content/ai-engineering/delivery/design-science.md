@@ -48,7 +48,7 @@ The sub-activity Outline Artefact starts by choosing which artefact type should 
 
 In other cases, it can be more difficult to choose the artefact type to be designed. For example, if IT systems need to be integrated to make a business process more efficient, a solution might be a method for integrating IT systems, a model of an integration architecture, or an instantiation in the form of an integration tool.
 
-When the artefact type has been chosen, the artefact is to be described in broad overview, focusing on its overall structure and main functions. This description should be kept brief and include only as much detail as is needed to formulate requirements--adding too much detail may hamper creativity when designing the artefact.
+When the artefact type has been chosen, the artefact is to be described in broad overview, focusing on its overall structure and main functions. This description should be kept brief and include only as much detail as is needed to formulate requirements -- adding too much detail may hamper creativity when designing the artefact.
 
 ## Design and Develop Artefact
 
@@ -75,7 +75,7 @@ The previous sub-activity, Imagine and Brainstorm, can be seen as setting up a s
 
 The design decisions that narrow the solution space may be more or less well founded. To describe and justify how such decisions are taken, various models for organisational decision-making can be used, for example, the rational decision-making, the bounded rationality, and the garbage can model. In the *rational decision-making model*, all relevant ideas are evaluated in depth in order to identify the optimal one.
 
-However, in practice, not all relevant ideas are carefully evaluated. Instead, decisions are often based on so-called *bounded rationality*, which means that decision makers stop the decision-making process when they have identified one or more sufficiently good ideas. The reason for doing so is usually that it is not worth exploring more ideas or collecting more information for making a more informed decision--it would be too expensive and time consuming.
+However, in practice, not all relevant ideas are carefully evaluated. Instead, decisions are often based on so-called *bounded rationality*, which means that decision makers stop the decision-making process when they have identified one or more sufficiently good ideas. The reason for doing so is usually that it is not worth exploring more ideas or collecting more information for making a more informed decision -- it would be too expensive and time consuming.
 
 And sometimes, decisions are made without even considering any alternative solutions at all. This way of making decisions is articulated in the *garbage can model*, which states that decisions are made on an ad hoc basis by matching problems and available solutions without any deeper discussions, often in a meeting but sometimes simply around a coffee machine. Moreover, many times decisions are made in a group. Therefore, the chosen solution is sometimes a compromise to satisfy several individuals in the group. Such compromises may make decisions easier to implement in an organisation since they recognize the needs and interests of many stakeholders in the organisation.
 
@@ -94,7 +94,7 @@ The form of a sketch depends upon the type of artefact at hand. If the artefact 
 
 Before developing the final artefact, a prototype may be constructed. There is not much agreement on what should count as a prototype, but it can be seen as an early form of the final artefact, focusing on certain of its aspects. For example, a prototype of an artefact may be a drawing on a paper focusing on the artefact's major components and their relationships, a physical model focusing on the artefact's aesthetic appearance, or a software application focusing on the artefact's user friendliness. By experimenting with the prototype, the designers can learn about the design challenges for developing the final artefact. Users can also more easily provide relevant feedback through inspecting and using the prototype.
 
-Designing and developing an artefact is a process of reusing and adapting parts from existing solutions, inventing new elements, and combining them in an innovative way. In order to clarify how the new solution builds upon and differs from existing ones, a researcher needs to analyse the latter ones by studying previous work, both theoretical and practical. Even if the solution being designed is highly original, the researcher still needs to relate and compare it to existing solutions--there are always similarities worth highlighting.
+Designing and developing an artefact is a process of reusing and adapting parts from existing solutions, inventing new elements, and combining them in an innovative way. In order to clarify how the new solution builds upon and differs from existing ones, a researcher needs to analyse the latter ones by studying previous work, both theoretical and practical. Even if the solution being designed is highly original, the researcher still needs to relate and compare it to existing solutions -- there are always similarities worth highlighting.
 
 Modern design and development methods provide different instruments to support the design and development process. One such instrument that has been shown to be effective is *pair design*, based on the agile practice of pair programming, in which two designers work together to simultaneously develop an artefact. Typically, one designer makes a design decision, such as introducing an activity into a method, and the other designer immediately reviews it and suggests possible improvements or potential problems. Another instrument is the *walk-through*, a kind of peer review, in which a designer leads members of a development team and other stakeholders through an artefact. The participants can ask questions, point out problems, suggest alternative solutions, or provide feedback in any other form.
 
@@ -116,7 +116,7 @@ There are many ways to skin a cat. And there are also many ways to reason and ta
 - *Goal.* A goal can be defined as a desirable state that people want to achieve. Alternatively, a goal is a desirable state that people have decided to try to achieve.
 - *Design goal.* High-level requirements are sometimes called design goals.
 
-There is no right or wrong here, only different ways of conceptualising and defining. And if you are familiar with one way of talking, it should not be difficult to switch to another way--they are all about the same design phenomena.
+There is no right or wrong here, only different ways of conceptualising and defining. And if you are familiar with one way of talking, it should not be difficult to switch to another way -- they are all about the same design phenomena.
 
 ## Demonstrate Artefact
 
@@ -131,7 +131,7 @@ The fourth activity of the method framework is Demonstrate Artefact, which illus
 
 The answer to this question will consist primarily of descriptive knowledge describing how the artefact works in one situation, but also explanatory knowledge explaining why the artefact works.
 
-A demonstration shows that the artefact can, in fact, solve some aspects of a problem in one illustrative or real-life case. A demonstration can be seen as a weak form of evaluation--if the artefact can address a problem in one case it might be able to do so in other cases as well. Moreover, a demonstration can also help communicate the idea behind the artefact to an audience in a vivid and convincing way.
+A demonstration shows that the artefact can, in fact, solve some aspects of a problem in one illustrative or real-life case. A demonstration can be seen as a weak form of evaluation -- if the artefact can address a problem in one case it might be able to do so in other cases as well. Moreover, a demonstration can also help communicate the idea behind the artefact to an audience in a vivid and convincing way.
 
 ## Evaluate Artefact
 

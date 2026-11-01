@@ -100,9 +100,9 @@ Cagan's Four Big Risks makes the missing uncertainty clearer. Before investing h
 - **Value:** will customers choose it?
 - **Usability:** can users use it?
 - **Feasibility:** can we build it with our technology, skills and time?
-- **Viability:** does it work for the business? ([Silicon Valley Product Group](https://www.svpg.com/four-big-risks/ "The Four Big Risks - Silicon Valley Product Group : Silicon Valley Product Group"))
+- **Viability:** does it work for the business? ([Cagan 2017](#cagan-2017))
 
-The feature-team system deals with these asymmetrically. Designers and engineers may address usability and feasibility while executing the feature. Value and business viability are largely assumptions embedded in the original stakeholder request. ([Silicon Valley Product Group](https://www.svpg.com/product-vs-feature-teams/ "Article: Product vs Feature Teams : Silicon Valley Product Group"))
+The feature-team system deals with these asymmetrically. Designers and engineers may address usability and feasibility while executing the feature. Value and business viability are largely assumptions embedded in the original stakeholder request. ([Cagan 2019](#cagan-2019))
 
 A second problem is **the cost of learning**. A team may need to build most or all of the production feature before learning that the original solution was wrong.
 
@@ -124,7 +124,7 @@ customers
 ```
 
 
-Cagan argues that discovery and delivery shouldn't be performed by separate groups for the same reason: the people obtaining the learning need to stay involved in turning that learning into the solution. Otherwise information gets handed off and engineers become implementers of other people's decisions. ([Silicon Valley Product Group](https://www.svpg.com/discovery-delivery/ "Discovery - Delivery - Silicon Valley Product Group : Silicon Valley Product Group"))
+Cagan argues that discovery and delivery shouldn't be performed by separate groups for the same reason: the people obtaining the learning need to stay involved in turning that learning into the solution. Otherwise information gets handed off and engineers become implementers of other people's decisions. ([Cagan 2020c](#cagan-2020c))
 
 Then there's a fourth problem that follows from the first three:
 
@@ -157,7 +157,7 @@ That is a legitimate operating system. Its weakness is that efficient production
 
 Now change the system boundary.
 
-Leadership still decides **which problems are important**. Empowerment does not mean teams choose whatever problems interest them. SVPG puts problem selection and team assignment explicitly with product leadership, based on product strategy. ([Silicon Valley Product Group](https://www.svpg.com/team-objectives-summary/ "Team Objectives - Summary - Silicon Valley Product Group : Silicon Valley Product Group"))
+Leadership still decides **which problems are important**. Empowerment does not mean teams choose whatever problems interest them. SVPG puts problem selection and team assignment explicitly with product leadership, based on product strategy. ([Cagan 2020b](#cagan-2020b))
 
 The flow becomes:
 
@@ -204,7 +204,7 @@ Measure outcome
 ```
 
 
-SVPG describes discovery and delivery as two continuous activities of the **same cross-functional team**. PM and design tend to spend more time in discovery and engineers more in delivery, but all three participate in both. ([Silicon Valley Product Group](https://www.svpg.com/discovery-delivery/ "Discovery - Delivery - Silicon Valley Product Group : Silicon Valley Product Group"))
+SVPG describes discovery and delivery as two continuous activities of the **same cross-functional team**. PM and design tend to spend more time in discovery and engineers more in delivery, but all three participate in both. ([Cagan 2020c](#cagan-2020c))
 
 Its system model becomes:
 
@@ -218,7 +218,7 @@ Its system model becomes:
 | **Feedback**                        | Continuous discovery plus post-release outcome measurement                                                        |
 | **Accountability**                  | Team is accountable for solving the assigned problem / achieving the necessary result                             |
 
-Cagan summarizes the input as a leader explaining the strategic context, the problem the team needs to solve, and how success will be measured. ([Silicon Valley Product Group](https://www.svpg.com/team-objectives-summary/ "Team Objectives - Summary - Silicon Valley Product Group : Silicon Valley Product Group"))
+Cagan summarizes the input as a leader explaining the strategic context, the problem the team needs to solve, and how success will be measured. ([Cagan 2020b](#cagan-2020b))
 
 ### 4. The transformation is a change in where decisions happen
 
@@ -259,7 +259,7 @@ Product team:
 
 So "empowerment" isn't simply autonomy. It is a **transfer of solution decision rights together with outcome accountability**.
 
-Leadership retains strategic choices. The team gets tactical solution choices. SVPG describes product strategy as deciding what problems to solve, discovery as finding a solution, and delivery as building that solution. ([Silicon Valley Product Group](https://www.svpg.com/product-strategy-overview/ "Product Strategy - Overview - Silicon Valley Product Group : Silicon Valley Product Group"))
+Leadership retains strategic choices. The team gets tactical solution choices. SVPG describes product strategy as deciding what problems to solve, discovery as finding a solution, and delivery as building that solution. ([Cagan 2020a](#cagan-2020a))
 
 ### 5. How each change addresses an old-model problem
 
@@ -281,8 +281,6 @@ We can now make the causal mapping explicit:
 | Stakeholder and team can blame each other          | Decision authority and accountability move together  | The group choosing the solution also owns its result                           |
 
 The article's discussion of "time to money" follows directly from this last part. Cagan's claim isn't simply that empowered engineers code faster. The proposed speedup comes from moving multiple iterations into inexpensive discovery before committing to production implementation.
-
-<a id="6-so-i-would-model-the-transformation-this-way"></a>
 
 ### 6. Proposed transformation model
 
@@ -321,7 +319,7 @@ Or in one sentence:
 
 > **The old system manages the flow of solutions into engineering; the empowered-team system manages the flow of problems through discovery and delivery until they produce outcomes.**
 
-This is a possible foundation for modeling the wider Product Operating Model, because it also shows where the other dimensions connect. **Product strategy supplies the problems; empowered teams turn problems into solutions; discovery manages uncertainty around those solutions; delivery turns validated ideas into production changes; outcome measurement closes the loop.** ([Silicon Valley Product Group](https://www.svpg.com/product-strategy-overview/ "Product Strategy - Overview - Silicon Valley Product Group : Silicon Valley Product Group"))
+This is a possible foundation for modeling the wider Product Operating Model, because it also shows where the other dimensions connect. **Product strategy supplies the problems; empowered teams turn problems into solutions; discovery manages uncertainty around those solutions; delivery turns validated ideas into production changes; outcome measurement closes the loop.** ([Cagan 2020a](#cagan-2020a))
 
 The next useful step would be to model the **four risks as gates/feedback loops inside this system**, because that shows much more precisely what "discovery" actually does and why PM, design, and engineering have to work together.
 
@@ -364,12 +362,12 @@ We can now place a candidate solution at the Discovery-Delivery interface and as
 
 <!-- Draft marker: +++ -->
 
-Open drafting task: revise the description of what happens at this point. Original unfinished comment: "to change - because th".
+Open drafting task: revise the description of what happens at this point. Original unfinished comment: "to change -- because th".
 
 - Discovery asks: Do we have enough evidence that this is the solution worth building?
 - Delivery asks: Can we turn this into the production-quality solution customers can depend on?
 
-Cagan describes the transition as: once the team has evidence that it knows the solution it needs, engineers build the production-quality software. In the newer material, the prototype is the primary way the discovered solution is communicated--"prototype as spec"--with use cases and non-functional requirements supplementing it where needed
+Cagan describes the transition as: once the team has evidence that it knows the solution it needs, engineers build the production-quality software. In the newer material, the prototype is the primary way the discovered solution is communicated -- "prototype as spec" -- with use cases and non-functional requirements supplementing it where needed
 
 So our interface can be modeled as:
 
@@ -420,14 +418,14 @@ When engineers have interacted with the discovery prototype, asked questions, an
 
 **4. Additional delivery requirements.** The prototype doesn't necessarily encode everything required for production.
 
-A PRD may supplement the prototype with things that are hard to represent there--for example specific use cases and non-functional requirements such as expected scale. The warning is that the PRD supplements discovery; it doesn't replace discovery.
+A PRD may supplement the prototype with things that are hard to represent there -- for example specific use cases and non-functional requirements such as expected scale. The warning is that the PRD supplements discovery; it doesn't replace discovery.
 
 ## Discovery
 
 ## Capability funnel
 
 
-Capability funnel is a progressive levels of utility for an AI system, beginning with basic operation and ending with fully solving the user's job. We could say it's practical way to show increasing utility across several dimensions--syntax, execution, relevance, intent, and job completion.
+Capability funnel is a progressive levels of utility for an AI system, beginning with basic operation and ending with fully solving the user's job. We could say it's practical way to show increasing utility across several dimensions -- syntax, execution, relevance, intent, and job completion.
 
 We won't use "funnel" for the path from problems to possible solutions. That structure is better described as an **option tree**, **solution space**, or simply a decision process.
 
@@ -450,7 +448,7 @@ Potential solution:
 
 The central value path could be:
 
-```
+```text
 User question
      │
      ▼
@@ -475,7 +473,7 @@ Give user a useful answer
 
 So the funnel:
 
-```
+```text
 User job:
 Get a trustworthy answer from company data without depending on an analyst.
 
@@ -507,7 +505,7 @@ The more useful central concept is **solution**.
 
 And we could present the model as Discovery and Delivery are activities. The phase transformations happen to the solution.
 
-```
+```text
 ACTIVITIES                         STATES OF THE SOLUTION
 
 Discovery ───────────────┐         idea
@@ -549,7 +547,7 @@ Cagan explicitly says the ultimate test of whether the problem was solved and th
 
 We should stop making "feature" our main lifecycle object.
 
-# Some Additional Remarks
+## Some Additional Remarks
 
 
 Interface refinement proposal: simplify the current four-part interface because its items are different kinds of things.
@@ -651,3 +649,12 @@ Problem + desired outcome
 
 
 Proposed level of detail for the main model: explain prototype-as-spec, NFRs, experiment design, evidence strength, and individual risk tests in supporting material about how the interface works.
+
+## References
+
+
+- Cagan, M. (2017). [The Four Big Risks](https://www.svpg.com/four-big-risks/). Silicon Valley Product Group. ^cagan-2017
+- Cagan, M. (2019). [Product vs Feature Teams](https://www.svpg.com/product-vs-feature-teams/). Silicon Valley Product Group. ^cagan-2019
+- Cagan, M. (2020a). [Product Strategy - Overview](https://www.svpg.com/product-strategy-overview/). Silicon Valley Product Group. ^cagan-2020a
+- Cagan, M. (2020b). [Team Objectives - Summary](https://www.svpg.com/team-objectives-summary/). Silicon Valley Product Group. ^cagan-2020b
+- Cagan, M. (2020c). [Discovery - Delivery](https://www.svpg.com/discovery-delivery/). Silicon Valley Product Group. ^cagan-2020c

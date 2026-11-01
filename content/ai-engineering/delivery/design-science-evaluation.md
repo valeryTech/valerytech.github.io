@@ -71,7 +71,7 @@ Fig. 9.1 Evaluate Artefact
 ### 9.3.1 Analyse Evaluation Context
 
 
-The context of the evaluation needs to be investigated and characterised before selecting the goals and the strategy for the evaluation. The reason for doing this is very practical--in any project, you will never have all the resources you would like to have, and you need to adapt to this fact. The first step is to understand your project's resource constraints, in particular in terms of time, people, competence, budget, and access to users or organisations.
+The context of the evaluation needs to be investigated and characterised before selecting the goals and the strategy for the evaluation. The reason for doing this is very practical -- in any project, you will never have all the resources you would like to have, and you need to adapt to this fact. The first step is to understand your project's resource constraints, in particular in terms of time, people, competence, budget, and access to users or organisations.
 
 ### 9.3.2 Select Evaluation Goals and Strategy
 
@@ -94,7 +94,7 @@ Research strategies and methods for different evaluation strategies [adapted fro
 
 ../images/325625_2_En_9_Chapter/325625_2_En_9_Figb_HTML.png
 
-An ex ante evaluation sometimes consists of arguments provided by the researchers who developed the artefact. In this case, they evaluate it by reasoning and arguing that it fulfils the defined requirements and can solve the explicated problem; this form of evaluation is called *informed argument*. A common line of reasoning is to claim that the artefact fulfils a requirement because it has a certain structure. For example, it could be argued that a new Massive Multiplayer Online Role Playing Game (MMORPG) is easy to learn because its interface is similar to that of World of Warcraft, which is well known to many players. Informed argument is obviously a weak form of evaluation, as it may easily be biased due to the backgrounds and interests of the researchers--there is a high risk of false positives. However, informed argument is inexpensive and is often used when evaluating highly innovative and still immature artefacts. Researchers may also use informed argument at informal presentations or research workshops. Based on feedback from other researchers, the artefact can then be refined before a stronger form of evaluation is carried out. Thus, informed argument can be very useful for formative evaluations.
+An ex ante evaluation sometimes consists of arguments provided by the researchers who developed the artefact. In this case, they evaluate it by reasoning and arguing that it fulfils the defined requirements and can solve the explicated problem; this form of evaluation is called *informed argument*. A common line of reasoning is to claim that the artefact fulfils a requirement because it has a certain structure. For example, it could be argued that a new Massive Multiplayer Online Role Playing Game (MMORPG) is easy to learn because its interface is similar to that of World of Warcraft, which is well known to many players. Informed argument is obviously a weak form of evaluation, as it may easily be biased due to the backgrounds and interests of the researchers -- there is a high risk of false positives. However, informed argument is inexpensive and is often used when evaluating highly innovative and still immature artefacts. Researchers may also use informed argument at informal presentations or research workshops. Based on feedback from other researchers, the artefact can then be refined before a stronger form of evaluation is carried out. Thus, informed argument can be very useful for formative evaluations.
 
 ### 9.3.3 Design and Carry Out Evaluation
 
@@ -106,21 +106,21 @@ In this activity, researchers design the evaluation in detail. For example, they
 
 - The question answered by the *Evaluate Artefact* activity is: How well does the artefact solve the explicated problem and fulfil the defined requirements?
 - The *goals of an evaluation* include:
-  - To determine to what extent an artefact is effective for solving the explicated problem.
-  - To determine to what extent an artefact fulfils the identified requirements.
-  - To investigate knowledge about the artefact, for example, about its structure, function, underlying kernel theories, and implementation principles.
-  - To compare the artefact with other artefacts.
-  - To investigate the side effects of using the artefact.
+	- To determine to what extent an artefact is effective for solving the explicated problem.
+	- To determine to what extent an artefact fulfils the identified requirements.
+	- To investigate knowledge about the artefact, for example, about its structure, function, underlying kernel theories, and implementation principles.
+	- To compare the artefact with other artefacts.
+	- To investigate the side effects of using the artefact.
 - An evaluation can be either formative or summative:
-  - A *formative evaluation* means that the artefact is evaluated for the purpose of improving the artefact.
-  - A *summative evaluation* means that the artefact is evaluated to give a final assessment of its utility.
+	- A *formative evaluation* means that the artefact is evaluated for the purpose of improving the artefact.
+	- A *summative evaluation* means that the artefact is evaluated to give a final assessment of its utility.
 - An *evaluation strategy* has to be chosen. This choice can be seen as a combination of ex ante or ex post, on the one side, and naturalistic or artificial, on the other.
 - An evaluation strategy can be ex ante or ex post:
-  - An *ex ante evaluation* means that the artefact is evaluated without being used, or even without being fully developed.
-  - An *ex post evaluation* means that the artefact is evaluated after it has been employed.
+	- An *ex ante evaluation* means that the artefact is evaluated without being used, or even without being fully developed.
+	- An *ex post evaluation* means that the artefact is evaluated after it has been employed.
 - An evaluation strategy can be naturalistic or artificial:
-  - A *naturalistic evaluation* means that the artefact is evaluated in the real world, i.e. within the practice for which it is intended.
-  - An *artificial evaluation* means that the artefact is evaluated in a contrived and artificial setting, e.g. in a laboratory.
+	- A *naturalistic evaluation* means that the artefact is evaluated in the real world, i.e. within the practice for which it is intended.
+	- An *artificial evaluation* means that the artefact is evaluated in a contrived and artificial setting, e.g. in a laboratory.
 - The chosen evaluation strategy will affect the selection of research strategies and research methods to be applied in the evaluation.
 - An *informed argument* is an ex ante, artificial evaluation in which researchers provide a line of reasoning to show that an artefact can solve the explicated problem and fulfil the defined requirements.
 
@@ -137,7 +137,7 @@ References
 
 1. Akoka J et al (2017) Evaluating knowledge types in design science research: an integrated framework. In: Designing the digital transformation, May 2017. Springer, Cham, pp 201-217[Crossref](https://doi.org/10.1007/978-3-319-59144-5_12)
 2. Clements P, Kazman R, Klein M (2001) Evaluating software architectures: methods and case studies, 1st edn. Addison-Wesley Professional, Boston
-3. Dix A (2009) HCI 3e - Ch 9: Evaluation techniques. [http://​www.​slideshare.​net/​alanjohndix/​hci-3e-ch-9-evaluation-techniques](http://www.slideshare.net/alanjohndix/hci-3e-ch-9-evaluation-techniques). Accessed 26 June 2014
+3. Dix A (2009) HCI 3e - Ch 9: Evaluation techniques. [HCI 3e - Ch 9: Evaluation techniques](http://www.slideshare.net/alanjohndix/hci-3e-ch-9-evaluation-techniques). Accessed 26 June 2014
 4. Ge M, Helfert M (2014). A Design science oriented framework for experimental research in information quality. In: Liu K et al (eds) Service science and knowledge innovation. IFIP advances in information and communication technology. Springer, Berlin, Heidelberg, pp 145-154
 5. Mettler T, Eurich M, Winter R (2014) On the use of experiments in design science research: a proposition of an evaluation framework. In: Communications of the association for information systems, vol 34(10), pp 223-240
 6. Moody DL (2005) Theoretical and practical issues in evaluating the quality of conceptual models: current state and future directions. Data Knowl Eng 55(3):243-276[Crossref](https://doi.org/10.1016/j.datak.2004.12.005)

@@ -6,7 +6,7 @@ description: "A query can be syntactically valid and execute successfully while 
 linkTitle: "Capability Funnel"
 ---
 
-> **Status:** Superseded working note. The current model is in [`solution-utility-ladder.md`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}), which separates utility, coverage, required conditions, and production operation.
+> **Status:** Superseded working note. The current model is in [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}), which separates utility, coverage, required conditions, and production operation.
 
 The capability funnel shows progressive levels of utility for an AI system, from basic operation to fully solving the user's job. It shows progress across syntax, execution, relevance, intent, and job completion.
 
@@ -31,7 +31,7 @@ Potential solution:
 
 The central value path could be:
 
-```
+```text
 User question
      │
      ▼
@@ -56,7 +56,7 @@ Give user a useful answer
 
 The resulting funnel:
 
-```
+```text
 User job:
 Get a trustworthy answer from company data without depending on an analyst.
 

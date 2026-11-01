@@ -6,7 +6,7 @@ description: "An early, theoretical attempt to structure how AI and ML systems c
 linkTitle: "Theoretical Methodology"
 ---
 {{< callout context="note" title="Status" icon="outline/info-circle" >}}
-This is an early attempt to put structure around estimating and building AI and ML systems. It is theoretical and has not been checked in practice. For the evaluation approach in use, start with the [Evaluation Framework]({{< ref "ai-engineering/evaluation/framework" >}}).
+This is an early attempt to put structure around estimating and building AI and ML systems. It is theoretical and has not been checked in practice. For the evaluation approach in use, start with the [Evaluation Framework]({{< ref "ai-engineering/evaluation/framework-v2" >}}).
 {{< /callout >}}
 
 

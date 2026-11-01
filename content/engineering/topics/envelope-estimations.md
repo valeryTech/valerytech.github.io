@@ -8,7 +8,7 @@ linkTitle: "Envelope Estimates"
 # Sources
 
 
-<https://www.hellointerview.com/blog/mastering-estimation> #todo
+[System Design Interview Fundamentals: Mastering Estimation](https://www.hellointerview.com/blog/mastering-estimation) #todo
 
 # How to do it
 
@@ -29,7 +29,7 @@ Reads/minute: 100k
 
 Writes/minute: 1k
 
-<https://www.reddit.com/r/ExperiencedDevs/comments/19e19jn/what_is_the_point_of_back_of_the_envelope/>
+[r/ExperiencedDevs: what is the point of back of the envelope](https://www.reddit.com/r/ExperiencedDevs/comments/19e19jn/what_is_the_point_of_back_of_the_envelope/)
 
 DAU (daily active users), QPS (query per seconds)
 

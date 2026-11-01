@@ -12,7 +12,7 @@ A stream is a sequence whose elements are produced on demand, possibly forever. 
 ## Lazy lists as streams
 
 
-In Haskell every list is already a stream. Because evaluation is non-strict (see [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})), a list cell is built only when someone looks at it, so infinite lists are ordinary values:
+In Haskell every list is already a stream. Because evaluation is non-strict (see [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})), a list cell is built only when someone looks at it, so infinite lists are ordinary values:
 
 ```haskell
 nats :: [Integer]
@@ -54,7 +54,7 @@ def unfold[A, S](state: S)(f: S => Option[(A, S)]): LazyList[A] =
 
 Haskell's `Data.List.unfoldr` has the same shape.
 
-Two cautions carry over from [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}). A memoised lazy list keeps every forced element alive for as long as something references its head, so `val xs = hugeLazyList; xs.foreach(...); xs.size` holds the whole thing in memory. And sharing is fragile: Pilquist notes that a self-referential `ones = cons(1, ones)` runs in constant memory while the `unfold` version does not, and that even `xs.map(x => x)` destroys sharing (ch. 5, footnote 9).
+Two cautions carry over from [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}). A memoised lazy list keeps every forced element alive for as long as something references its head, so `val xs = hugeLazyList; xs.foreach(...); xs.size` holds the whole thing in memory. And sharing is fragile: Pilquist notes that a self-referential `ones = cons(1, ones)` runs in constant memory while the `unfold` version does not, and that even `xs.map(x => x)` destroys sharing (ch. 5, footnote 9).
 
 ## Why laziness gives modularity
 
@@ -125,7 +125,7 @@ Bragilevsky gives the requirements the Haskell community settled on (ch. 14.1): 
 
 Plachta's chapter on streams sets the scene by comparing Java streams and Python generators. They are already lazy and support separation of concerns (the consumer that calls `limit(3)` knows nothing about how elements are made) and inversion of control (a function receives a stream instead of calling a data source). But they treat pure and impure producers alike: `Stream.generate(() -> apiCall())` runs the side effect each time an element is pulled, with no type-level trace of it. And a Java `Stream` can be consumed only once (Plachta, ch. 9).
 
-A functional stream is an immutable value describing a stream-processing program, just as an `IO` value describes an effectful program. Nothing runs until it is compiled into an effect and that effect is run. In fs2 the type `Stream[F, O]` says it all: `F` is the effect type and `O` the output type, so `Stream[Pure, Int]` makes integers without effects and `Stream[IO, BigDecimal]` may perform `IO` effects while producing (Plachta, ch. 9). See [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for `IO` itself.
+A functional stream is an immutable value describing a stream-processing program, just as an `IO` value describes an effectful program. Nothing runs until it is compiled into an effect and that effect is run. In fs2 the type `Stream[F, O]` says it all: `F` is the effect type and `O` the output type, so `Stream[Pure, Int]` makes integers without effects and `Stream[IO, BigDecimal]` may perform `IO` effects while producing (Plachta, ch. 9). See [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for `IO` itself.
 
 ```scala
 import cats.effect.IO
@@ -241,7 +241,7 @@ The concurrency combinators (`concurrently`, `merge`, `parJoin`, `parEvalMap`) r
 
 Further reading on fs2:
 
-- Rock the JVM blog, fs2 article: <https://blog.rockthejvm.com/fs2/>
+- Rock the JVM blog, fs2 article: [fs2 article (Rock the JVM blog)](https://blog.rockthejvm.com/fs2/)
 
 ## Haskell: conduit, pipes and streaming
 
@@ -365,7 +365,7 @@ List functions are defined as `map f = unstream . maps f . stream`, and one rewr
 
 Fusion connects back to the start of this note. A lazy list already interleaves its stages (Pilquist's "first-class loops"), but it still allocates a cell and a thunk per element per stage. Fusion removes even that. Effectful streaming libraries mostly don't rely on compiler fusion. conduit calls its `.|` operator "fusion", meaning composing two components into one, not deforestation. fs2 instead pays its per-step overhead once per chunk. Kiselyov et al. (2017, [PDF](/sources/200c5a9ac1e608ab2bd4c0c46d7bb323.bin)) reach fused, hand-written-quality code by staging instead of by optimiser rewrites.
 
-See also: [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}).
+See also: [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds), [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}).
 
 ## Library sources
 

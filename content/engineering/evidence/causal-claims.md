@@ -58,7 +58,7 @@ Without that framing, organizational data can have dozens of confounders: differ
 ## Patterns that look like effects
 
 
-Some patterns in organizational data look like the effect of a change without showing it. Each of these appears in the [Zalando case critique]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/zalando-case-critique" >}}):
+Some patterns in organizational data look like the effect of a change without showing it. Each of these appears in the [Zalando Case Critique]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/zalando-case-critique" >}}):
 
 - **A change after a date.** Many things change in the same period as the one being studied. Temporal coincidence provides a hypothesis, not a counterfactual.
 - **Shares of a whole.** When categories sum to 100%, a fall in one raises the combined share of the others. A change in shares does not show whether any absolute count changed.

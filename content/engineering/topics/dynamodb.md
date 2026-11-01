@@ -65,7 +65,7 @@ At a high level, these steps are:
 
 Joins are already in a table.
 
-<https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/>
+[Creating a single-table design with Amazon DynamoDB](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/)
 
 # Core Concepts
 
@@ -74,7 +74,7 @@ Key Terms:
 
 - Table
 - Item. Individual record. Analogs: Document in MongoDB, Row in RDB
-- Primary key. We have 2 different types - Simple (partition key) and Composite (partition key + sort key)
+- Primary key. We have 2 different types -- Simple (partition key) and Composite (partition key + sort key)
 - Attributes
 
 There are two types of keys:
@@ -168,38 +168,38 @@ Item-based actions: `GetItem, PutItem, UpdateItem, DeleteItem`
 
 <https://www.youtube.com/watch?v=FQrN5aJWa_U>
 
-<https://www.dynamodbguide.com/what-is-dynamo-db>
+[What is DynamoDB?](https://www.dynamodbguide.com/what-is-dynamo-db)
 
-<https://aws.amazon.com/dynamodb/>
+[Amazon DynamoDB (AWS)](https://aws.amazon.com/dynamodb/)
 
-<https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html>
+[What is Amazon DynamoDB?](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
 
 data modeling:
 
 - <https://www.youtube.com/watch?v=yNOVamgIXGQ>
 - <https://www.youtube.com/watch?v=p8phVh6HRkQ>
-- <https://www.gomomento.com/blog/what-really-matters-in-dynamodb-data-modeling>
+- [What really matters in DynamoDB data modeling?](https://www.gomomento.com/blog/what-really-matters-in-dynamodb-data-modeling)
 - <https://www.youtube.com/watch?v=DIQVJqiSUkE> #todo
 
 <https://www.youtube.com/watch?v=HaEPXoXVf2k> #todo watch
 
-<https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-relational-modeling.html>
+[Best practices for modeling relational data in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-relational-modeling.html)
 
-<https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html>
+[NoSQL design for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html)
 
-<https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-modeling-nosql.html>
+[First steps for modeling relational data in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-modeling-nosql.html)
 
-<https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/>
+[Creating a single-table design with Amazon DynamoDB](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/)
 
 projects:
 
-<https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-1/>
+[Building serverless applications with streaming data: Part 1](https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-1/)
 
 Indexes:
 
-<https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html>
+[Using Global Secondary Indexes in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html)
 
-<https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html>
+[Local secondary indexes (DynamoDB)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html)
 
 <https://www.youtube.com/watch?v=xfxBhvGpoa0> #todo
 
@@ -211,17 +211,17 @@ Global Tables
 
 architecture
 
-<https://brooker.co.za/blog/2022/07/12/dynamodb.html>
+[The DynamoDB paper](https://brooker.co.za/blog/2022/07/12/dynamodb.html)
 
 <https://www.youtube.com/watch?v=0iGR8GnIItQ>
 
-<https://www.alexdebrie.com/posts/dynamodb-paper/>
+[Key Takeaways from the DynamoDB Paper](https://www.alexdebrie.com/posts/dynamodb-paper/)
 
 consistency
 
-<https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/?trk=feed_main-feed-card_reshare_feed-article-content>
+[Understanding Eventual Consistency in DynamoDB](https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/?trk=feed_main-feed-card_reshare_feed-article-content)
 
-<https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/?trk=feed_main-feed-card_reshare_feed-article-content>
+[Understanding Eventual Consistency in DynamoDB](https://www.alexdebrie.com/posts/dynamodb-eventual-consistency/?trk=feed_main-feed-card_reshare_feed-article-content)
 
 ## Library sources
 

@@ -54,7 +54,7 @@ Two qualifications for Haskell:
 
 The fundamental theorem about reduction is the Church-Rosser theorem: every terminating reduction path gives the same result.
 
-It is a theorem about the lambda calculus. If an expression can be reduced in two different ways, both results can be reduced further to a common expression. So an expression has at most one fully reduced form, its *normal form*. A companion result, the normalization theorem, says that always reducing the leftmost outermost redex first (normal order) reaches that normal form whenever one exists. Non-strict evaluation is built on that strategy, with two differences: Haskell never reduces under a lambda, so it stops at weak head normal form rather than full normal form, and call-by-need evaluates a shared argument once (Sestoft 2002, sections 4 and 5). See [Lambda calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}).
+It is a theorem about the lambda calculus. If an expression can be reduced in two different ways, both results can be reduced further to a common expression. So an expression has at most one fully reduced form, its *normal form*. A companion result, the normalization theorem, says that always reducing the leftmost outermost redex first (normal order) reaches that normal form whenever one exists. Non-strict evaluation is built on that strategy, with two differences: Haskell never reduces under a lambda, so it stops at weak head normal form rather than full normal form, and call-by-need evaluates a shared argument once (Sestoft 2002, sections 4 and 5). See [Lambda Calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}).
 
 The usual consequences, with corrections:
 
@@ -157,12 +157,12 @@ Edward Z. Yang's series on the Haskell heap pictures thunks as wrapped presents 
 
 The series fills the gap the substitution model leaves: it shows sharing and memory use, which explain both why laziness can be fast and where space leaks come from.
 
-- The Haskell Heap: <http://blog.ezyang.com/2011/04/the-haskell-heap/>
-- Evaluation on the Haskell Heap: <http://blog.ezyang.com/2011/04/evaluation-on-the-haskell-heap/>
-- IO evaluates the Haskell Heap: <http://blog.ezyang.com/2011/04/io-evaluates-the-haskell-heap/>
-- Implementing the Haskell Heap in Python, v1: <http://blog.ezyang.com/2011/04/implementing-the-haskell-heap-in-python-v1/>
-- Functions produce the Haskell Heap: <http://blog.ezyang.com/2011/04/functions-produce-the-haskell-heap/>
-- How the Grinch stole the Haskell Heap: <http://blog.ezyang.com/2011/04/how-the-grinch-stole-the-haskell-heap/>
+- [The Haskell Heap](http://blog.ezyang.com/2011/04/the-haskell-heap/)
+- [Evaluation on the Haskell Heap](http://blog.ezyang.com/2011/04/evaluation-on-the-haskell-heap/)
+- [IO evaluates the Haskell Heap](http://blog.ezyang.com/2011/04/io-evaluates-the-haskell-heap/)
+- [Implementing the Haskell Heap in Python, v1](http://blog.ezyang.com/2011/04/implementing-the-haskell-heap-in-python-v1/)
+- [Functions produce the Haskell Heap](http://blog.ezyang.com/2011/04/functions-produce-the-haskell-heap/)
+- [How the Grinch stole the Haskell Heap](http://blog.ezyang.com/2011/04/how-the-grinch-stole-the-haskell-heap/)
 
 ## Costs of laziness: space leaks
 
@@ -196,8 +196,8 @@ The main method is heap profiling. The tools work at different levels:
 
 Links:
 
-- Haskell Wiki, "Memory leak": <https://wiki.haskell.org/Memory_leak>
-- Stack Overflow, "Haskell: how to detect lazy memory leaks", on detection with heap profiling: <https://stackoverflow.com/questions/61666819/haskell-how-to-detect-lazy-memory-leaks>
+- Haskell Wiki, "[Memory leak](https://wiki.haskell.org/Memory_leak)"
+- Stack Overflow, "[Haskell: how to detect lazy memory leaks](https://stackoverflow.com/questions/61666819/haskell-how-to-detect-lazy-memory-leaks)", on detection with heap profiling
 - [ ] Expand this section along the outline of a Discourse discussion of space leaks: the problem, symptoms, tools, methods, and best practices for avoiding them.
 
 ## Call-by-name in Scala
@@ -229,7 +229,7 @@ Use by-name for things the callee may not need or must control: default values, 
 
 - **Lazy streams**, with a qualification. By-name alone would recompute the rest of the stream on every access. `LazyList` takes its tail by name and immediately stores it in a `lazy val`, which turns it into call-by-need. See [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}).
 - **Things that can fail**, or more generally APIs that decide whether and when to evaluate their argument. `Try(expr)` and `Future(expr)` evaluate it inside an exception handler or on another thread; `opt.getOrElse(default)` builds `default` only when it is needed; `require(cond, message)` builds the message only when the check fails.
-- Rock the JVM, "3 tricks for CBN": <https://blog.rockthejvm.com/3-tricks-for-CBN/>
+- Rock the JVM, "[3 tricks for CBN](https://blog.rockthejvm.com/3-tricks-for-CBN/)"
 
 ### Call-by-name is not lazy evaluation
 
@@ -246,9 +246,9 @@ def twiceLazily(x: => Long): Unit =
 
 Sources for the distinction (tpolecat's post is the most careful of the three):
 
-- Stack Overflow, "Call-by-name in Scala vs lazy evaluation in Haskell": <https://stackoverflow.com/questions/41785985/call-by-name-in-scala-vs-lazy-evaluation-in-haskell>
-- GeeksforGeeks, "Scala lazy evaluation": <https://www.geeksforgeeks.org/scala-lazy-evaluation/>
-- tpolecat, "Call-by-name" (2014): <https://tpolecat.github.io/2014/06/26/call-by-name.html>
+- Stack Overflow, "[Call-by-name in Scala vs lazy evaluation in Haskell](https://stackoverflow.com/questions/41785985/call-by-name-in-scala-vs-lazy-evaluation-in-haskell)"
+- GeeksforGeeks, "[Scala lazy evaluation](https://www.geeksforgeeks.org/scala-lazy-evaluation/)"
+- tpolecat, "[Call-by-name](https://tpolecat.github.io/2014/06/26/call-by-name.html)" (2014)
 
 ## Working through an evaluation by hand
 
@@ -271,7 +271,7 @@ myDrop n xs = if n <= 0 || null xs
 
 A hand evaluation in that style, showing lazy evaluation of `if` and `||` along the way:
 
-```
+```text
 myDrop 2 "abcd"
 = if 2 <= 0 || null "abcd" then "abcd" else myDrop (2 - 1) (tail "abcd")
 = if False || False then ... else ...        -- both tests evaluated
@@ -290,21 +290,21 @@ myDrop 2 "abcd"
 
 Substitution and the evaluation model:
 
-- gilmi, "Substitution and equational reasoning" (2020): <https://gilmi.me/blog/post/2020/10/01/substitution-and-equational-reasoning>
-- Cunningham, *Exploring Languages with Interpreters and Functional Programming*, chapter 8, Evaluation Model, HTML: <https://john.cs.olemiss.edu/~hcc/csci450/ELIFP/Ch08/08_Evaluation_Model.html>
-- The same chapter as PDF: <https://john.cs.olemiss.edu/~hcc/docs/ELIFP/Ch08/08_Evaluation_Model.pdf> ([PDF](/sources/03f5a1670784f5bcdf040f3e142fb3f3.bin))
-- *Real World Haskell*, chapter 2, Types and functions: <https://book.realworldhaskell.org/read/types-and-functions.html>
+- gilmi, "[Substitution and equational reasoning](https://gilmi.me/blog/post/2020/10/01/substitution-and-equational-reasoning)" (2020)
+- Cunningham, *Exploring Languages with Interpreters and Functional Programming*, chapter 8, Evaluation Model, HTML: [Exploring Languages with Interpreters and Functional Programming, chapter 8 (HTML)](https://john.cs.olemiss.edu/~hcc/csci450/ELIFP/Ch08/08_Evaluation_Model.html)
+- The same chapter as PDF: [Exploring Languages chapter 8 (PDF copy)](https://john.cs.olemiss.edu/~hcc/docs/ELIFP/Ch08/08_Evaluation_Model.pdf) ([PDF](/sources/03f5a1670784f5bcdf040f3e142fb3f3.bin))
+- *Real World Haskell*, chapter 2, Types and functions: [Real World Haskell, chapter 2: Types and functions](https://book.realworldhaskell.org/read/types-and-functions.html)
 
 Laziness, thunks and `seq`:
 
-- Haskell Wiki, "Thunk": <https://wiki.haskell.org/Thunk>
-- Haskell Wiki, "Non-strict semantics": <https://wiki.haskell.org/Non-strict_semantics>
-- Stack Overflow, "What does seq actually do in Haskell?": <https://stackoverflow.com/questions/66943741/what-does-seq-actually-do-in-haskell>
-- CIS 194 (spring 2013), lecture 6, laziness: <https://www.seas.upenn.edu/~cis1940/spring13/lectures/06-laziness.html>
-- Video on laziness: <https://www.youtube.com/watch?v=fSqE-HSh_NU>
+- Haskell Wiki, "[Thunk](https://wiki.haskell.org/Thunk)"
+- Haskell Wiki, "[Non-strict semantics](https://wiki.haskell.org/Non-strict_semantics)"
+- Stack Overflow, "[What does seq actually do in Haskell?](https://stackoverflow.com/questions/66943741/what-does-seq-actually-do-in-haskell)"
+- [CIS 194 (spring 2013), lecture 6, laziness](https://www.seas.upenn.edu/~cis1940/spring13/lectures/06-laziness.html)
+- [Video on laziness](https://www.youtube.com/watch?v=fSqE-HSh_NU)
 - Controlling evaluation, chapter 11 of Serrano Mena's library book ([PDF](/sources/5c1001bd2c4b75b2ff640e61358fc71a.bin))
 
-See also: [Lambda calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}) for reduction and normal forms, [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) for `foldl'` and `seq`, [Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency), and the [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}) entries on bang patterns and the worker-wrapper construct (29.11.23). Also [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for `LazyList` and effectful streams, and [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for parallelism in practice.
+See also: [Lambda Calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}) for reduction and normal forms, [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) for `foldl'` and `seq`, [Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency), and the [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}) entries on bang patterns and the worker-wrapper construct (29.11.23). Also [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for `LazyList` and effectful streams, and [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for parallelism in practice.
 
 ## Library sources
 

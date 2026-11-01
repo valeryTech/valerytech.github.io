@@ -71,7 +71,7 @@ This example is more useful to the model than a code-output claim such as "devel
 
 <!-- end-source-unit: DDS-10 -->
 
-> **Editorial comment:** This example supports using AI to extend human analysis without giving it the final decision. The following paragraph in the source concerns evaluation. It is preserved separately in [`discovery-delivery-evaluation-evidence-deferred.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}).
+> **Editorial comment:** This example supports using AI to extend human analysis without giving it the final decision. The following paragraph in the source concerns evaluation. It is preserved separately in [Discovery Delivery Evaluation Evidence Deferred]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}).
 
 <!-- source-unit: DDS-12; source-lines: 96-114 -->
 
@@ -223,4 +223,4 @@ A useful reading order begins with Cagan's **Build to Learn vs Build to Earn** a
 
 <!-- end-source-unit: DDS-24 -->
 
-> **Editorial comment:** This is the source author's suggested reading order. The citations remain with the claims, but their accuracy was not checked during this rearrangement. The Torres evaluation passage is in [`discovery-delivery-evaluation-evidence-deferred.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}).
+> **Editorial comment:** This is the source author's suggested reading order. The citations remain with the claims, but their accuracy was not checked during this rearrangement. The Torres evaluation passage is in [Discovery Delivery Evaluation Evidence Deferred]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}).

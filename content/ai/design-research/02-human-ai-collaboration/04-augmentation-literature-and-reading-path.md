@@ -43,7 +43,7 @@ If the stated goal is to study **"Augmenting Human Work" as a research topic**, 
 
 Engelbart -> Jarrahi -> Raisch/Krakowski -> Dell'Acqua/Brynjolfsson -> Shao gives a particularly coherent reading path from the original idea to current AI agents.
 
-There are some concrete system traditions here. Pirolli & Card studied intelligence analysts and modeled their work as iterating between **information foraging** and **sensemaking**--collecting evidence, organizing it, generating hypotheses, testing them, and restructuring the representation. ([ResearchGate](https://www.researchgate.net/publication/215439203_The_sensemaking_process_and_leverage_points_for_analyst_technology_as_identified_through_cognitive_task_analysis "(PDF) The sensemaking process and leverage points for analyst technology as identified through cognitive task analysis")) More recent visual-analytics systems explicitly combine machine learning with this process. For example, _Cosmos_ lets an analyst spatially organize text evidence; the machine interprets those manipulations and retrieves/reorganizes information in response. The human and machine are effectively manipulating a shared conceptual model. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S2214579618302995 "Interactive Visual Analytics for Sensemaking with Big Text - ScienceDirect"))
+There are some concrete system traditions here. Pirolli & Card studied intelligence analysts and modeled their work as iterating between **information foraging** and **sensemaking** -- collecting evidence, organizing it, generating hypotheses, testing them, and restructuring the representation. ([ResearchGate](https://www.researchgate.net/publication/215439203_The_sensemaking_process_and_leverage_points_for_analyst_technology_as_identified_through_cognitive_task_analysis "(PDF) The sensemaking process and leverage points for analyst technology as identified through cognitive task analysis")) More recent visual-analytics systems explicitly combine machine learning with this process. For example, _Cosmos_ lets an analyst spatially organize text evidence; the machine interprets those manipulations and retrieves/reorganizes information in response. The human and machine are effectively manipulating a shared conceptual model. ([ScienceDirect](https://www.sciencedirect.com/science/article/pii/S2214579618302995 "Interactive Visual Analytics for Sensemaking with Big Text - ScienceDirect"))
 
 Another tradition may be especially relevant to the author's use of "epistemological": **knowledge building and epistemic agency**.
 
@@ -69,8 +69,6 @@ That distinction becomes important with AI. You could build an AI that gives the
 The AI's contribution here isn't primarily an answer. It's helping maintain and manipulate an **epistemic state**: beliefs, evidence, hypotheses, uncertainties, causal relations, questions, and disagreements.
 
 And this is starting to become an explicit Human-AI research area. A 2026 paper actually proposes the term **Sensemaking AI**, arguing for AI that supports collective meaning-making while preserving people's ability to interpret and revise the situation themselves. ([Springer](https://link.springer.com/article/10.1140/epjds/s13688-026-00634-5 "Sensemaking AI: Introducing a research and design agenda for human-AI networks | EPJ Data Science | Springer Nature Link")) A 2026 HCI thesis uses the term **Collaborative Sensemaking with AI** and includes a system called _InsightBridge_ designed to align mental models during interviews through shared information synthesis. ([CSE HKUST](https://cse.hkust.edu.hk/pg/defenses/Summer26/jlijj-09-06-2026.html "Collaborative Sensemaking with AI: From In-Situ Context to Human Understanding | HKUST CSE")) There is also emerging work using terms such as **epistemic partnership**, **epistemic relationships**, and **knowledge-building AI**. ([arXiv](https://arxiv.org/abs/2508.03673 "Classifying Epistemic Relationships in Human-AI Interaction: An Exploratory Approach"))
-
-<a id="5-co-storm-is-very-close-to-your-collaborative-investigation-idea"></a>
 
 ### 5. Co-STORM and the collaborative investigation proposal
 
@@ -229,81 +227,81 @@ The latest protocol work also shows that the abstraction is still moving. MCP's 
 
 These definitions are local copies from the [complete original bibliography]({{< ref "ai/design-research/02-human-ai-collaboration/03-programmable-human-ai-environments-report" >}}#references). They were added so the imported sections can be read on their own. They are not part of the moved source text.
 
-[^turn3search1]: Lee D. Erman, Frederick Hayes-Roth, Victor R. Lesser, and D. Raj Reddy, "The HEARSAY-II Speech Understanding System: Integrating Knowledge to Resolve Uncertainty," *ACM Computing Surveys* 12(2), 1980. <https://doi.org/10.1145/356810.356816> Original Deep Research source key: `turn3search1`.
+[^turn3search1]: Lee D. Erman, Frederick Hayes-Roth, Victor R. Lesser, and D. Raj Reddy, "The HEARSAY-II Speech Understanding System: Integrating Knowledge to Resolve Uncertainty," *ACM Computing Surveys* 12(2), 1980. [doi:10.1145/356810.356816](https://doi.org/10.1145/356810.356816) Original Deep Research source key: `turn3search1`.
 
-[^turn4search2]: Wil M. P. van der Aalst, "The Application of Petri Nets to Workflow Management," *Journal of Circuits, Systems and Computers* 8(1), 1998. <https://doi.org/10.1142/S0218126698000043> Original Deep Research source key: `turn4search2`.
+[^turn4search2]: Wil M. P. van der Aalst, "The Application of Petri Nets to Workflow Management," *Journal of Circuits, Systems and Computers* 8(1), 1998. [doi:10.1142/S0218126698000043](https://doi.org/10.1142/S0218126698000043) Original Deep Research source key: `turn4search2`.
 
-[^turn7search0]: Eric Horvitz, "Principles of Mixed-Initiative User Interfaces," *CHI '99*, 1999. <https://doi.org/10.1145/302979.303030> Original Deep Research source key: `turn7search0`.
+[^turn7search0]: Eric Horvitz, "Principles of Mixed-Initiative User Interfaces," *CHI '99*, 1999. [doi:10.1145/302979.303030](https://doi.org/10.1145/302979.303030) Original Deep Research source key: `turn7search0`.
 
-[^turn6search0]: John M. Lucassen and David K. Gifford, "Polymorphic Effect Systems," *POPL '88*, 1988. <https://doi.org/10.1145/73560.73564> Original Deep Research source key: `turn6search0`.
+[^turn6search0]: John M. Lucassen and David K. Gifford, "Polymorphic Effect Systems," *POPL '88*, 1988. [doi:10.1145/73560.73564](https://doi.org/10.1145/73560.73564) Original Deep Research source key: `turn6search0`.
 
-[^turn14search0]: W3C, *PROV-DM: The PROV Data Model*, W3C Recommendation, 2013. <https://www.w3.org/TR/prov-dm/> Original Deep Research source key: `turn14search0`.
+[^turn14search0]: W3C, *[PROV-DM: The PROV Data Model](https://www.w3.org/TR/prov-dm/)*, W3C Recommendation, 2013. Original Deep Research source key: `turn14search0`.
 
-[^turn18search12]: Trieu H. Trinh et al., "Solving olympiad geometry without human demonstrations," *Nature* 625, 2024. <https://doi.org/10.1038/s41586-023-06747-5> Original Deep Research source key: `turn18search12`.
+[^turn18search12]: Trieu H. Trinh et al., "Solving olympiad geometry without human demonstrations," *Nature* 625, 2024. [doi:10.1038/s41586-023-06747-5](https://doi.org/10.1038/s41586-023-06747-5) Original Deep Research source key: `turn18search12`.
 
-[^turn18search1]: Bernardino Romera-Paredes et al., "Mathematical discoveries from program search with large language models," *Nature* 625, 2024. <https://doi.org/10.1038/s41586-023-06924-6> Original Deep Research source key: `turn18search1`.
+[^turn18search1]: Bernardino Romera-Paredes et al., "Mathematical discoveries from program search with large language models," *Nature* 625, 2024. [doi:10.1038/s41586-023-06924-6](https://doi.org/10.1038/s41586-023-06924-6) Original Deep Research source key: `turn18search1`.
 
-[^turn18search0]: Alexander Novikov et al., "AlphaEvolve: A coding agent for scientific and algorithmic discovery," 2025. <https://arxiv.org/abs/2506.13131> Original Deep Research source key: `turn18search0`.
+[^turn18search0]: Alexander Novikov et al., "AlphaEvolve: A coding agent for scientific and algorithmic discovery," 2025. [arXiv:2506.13131](https://arxiv.org/abs/2506.13131) Original Deep Research source key: `turn18search0`.
 
-[^turn8academia3]: Bo Liu et al., "LLM+P: Empowering Large Language Models with Optimal Planning Proficiency," 2023. <https://arxiv.org/abs/2304.11477> Original Deep Research source key: `turn8academia3`.
+[^turn8academia3]: Bo Liu et al., "LLM+P: Empowering Large Language Models with Optimal Planning Proficiency," 2023. [arXiv:2304.11477](https://arxiv.org/abs/2304.11477) Original Deep Research source key: `turn8academia3`.
 
-[^turn21search0]: Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" (CaMeL), 2025; revised for IEEE SaTML 2026. <https://arxiv.org/abs/2503.18813> Original Deep Research source key: `turn21search0`.
+[^turn21search0]: Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" (CaMeL), 2025; revised for IEEE SaTML 2026. [arXiv:2503.18813](https://arxiv.org/abs/2503.18813) Original Deep Research source key: `turn21search0`.
 
-[^turn17search0]: Dennis M. Ritchie and Ken Thompson, "The UNIX Time-Sharing System," *Communications of the ACM* 17(7), 1974. <https://doi.org/10.1145/361011.361061> Original Deep Research source key: `turn17search0`.
+[^turn17search0]: Dennis M. Ritchie and Ken Thompson, "The UNIX Time-Sharing System," *Communications of the ACM* 17(7), 1974. [doi:10.1145/361011.361061](https://doi.org/10.1145/361011.361061) Original Deep Research source key: `turn17search0`.
 
-[^turn5search3]: NIST, *Glossary of Computer Security Terminology*, NISTIR 4659, including the reference-monitor definition. <https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4659.pdf> Original Deep Research source key: `turn5search3`.
+[^turn5search3]: NIST, *[Glossary of Computer Security Terminology](https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4659.pdf)*, NISTIR 4659, including the reference-monitor definition. Original Deep Research source key: `turn5search3`.
 
-[^turn17search7]: Dennis M. Ritchie, "The Evolution of the Unix Time-sharing System," 1979/1984 historical account. <https://pdos.csail.mit.edu/6.828/2009/readings/ritchie79evolution.html> Original Deep Research source key: `turn17search7`.
+[^turn17search7]: Dennis M. Ritchie, "[The Evolution of the Unix Time-sharing System](https://pdos.csail.mit.edu/6.828/2009/readings/ritchie79evolution.html)," 1979/1984 historical account. Original Deep Research source key: `turn17search7`.
 
-[^turn2search1]: Artur S. d'Avila Garcez, Krysia B. Broda, and Dov M. Gabbay, *Neural-Symbolic Learning Systems: Foundations and Applications*, Springer, 2002. <https://doi.org/10.1007/978-1-4471-0211-3> Original Deep Research source key: `turn2search1`.
+[^turn2search1]: Artur S. d'Avila Garcez, Krysia B. Broda, and Dov M. Gabbay, *Neural-Symbolic Learning Systems: Foundations and Applications*, Springer, 2002. [doi:10.1007/978-1-4471-0211-3](https://doi.org/10.1007/978-1-4471-0211-3) Original Deep Research source key: `turn2search1`.
 
-[^turn2academia38]: Artur d'Avila Garcez and Luis C. Lamb, "Neurosymbolic AI: The 3rd Wave," 2020. <https://arxiv.org/abs/2012.05876> Original Deep Research source key: `turn2academia38`.
+[^turn2academia38]: Artur d'Avila Garcez and Luis C. Lamb, "Neurosymbolic AI: The 3rd Wave," 2020. [arXiv:2012.05876](https://arxiv.org/abs/2012.05876) Original Deep Research source key: `turn2academia38`.
 
-[^turn7search3]: Norbert Wiener, *Cybernetics or Control and Communication in the Animal and the Machine*, 1948. <https://direct.mit.edu/books/oa-monograph/4581/Cybernetics-or-Control-and-Communication-in-the> Original Deep Research source key: `turn7search3`.
+[^turn7search3]: Norbert Wiener, *[Cybernetics or Control and Communication in the Animal and the Machine](https://direct.mit.edu/books/oa-monograph/4581/Cybernetics-or-Control-and-Communication-in-the)*, 1948. Original Deep Research source key: `turn7search3`.
 
-[^turn0search0]: H. Penny Nii, "Blackboard Application Systems, Blackboard Systems and a Knowledge Engineering Perspective," *AI Magazine* 7(3), 1986. <https://doi.org/10.1609/aimag.v7i3.550> Original Deep Research source key: `turn0search0`.
+[^turn0search0]: H. Penny Nii, "Blackboard Application Systems, Blackboard Systems and a Knowledge Engineering Perspective," *AI Magazine* 7(3), 1986. [doi:10.1609/aimag.v7i3.550](https://doi.org/10.1609/aimag.v7i3.550) Original Deep Research source key: `turn0search0`.
 
-[^turn16search0]: Michael Wooldridge, *An Introduction to MultiAgent Systems*, 2nd ed., Wiley, 2009. <https://www.wiley-vch.de/en/areas-interest/computing-computer-sciences/an-introduction-to-multiagent-systems-978-0-470-51946-2> Original Deep Research source key: `turn16search0`.
+[^turn16search0]: Michael Wooldridge, *[An Introduction to MultiAgent Systems](https://www.wiley-vch.de/en/areas-interest/computing-computer-sciences/an-introduction-to-multiagent-systems-978-0-470-51946-2)*, 2nd ed., Wiley, 2009. Original Deep Research source key: `turn16search0`.
 
-[^turn2search10]: FIPA, *Abstract Architecture Specification*. <https://www.fipa.org/specs/fipa00001/> Original Deep Research source key: `turn2search10`.
+[^turn2search10]: FIPA, *[Abstract Architecture Specification](https://www.fipa.org/specs/fipa00001/)*. Original Deep Research source key: `turn2search10`.
 
-[^turn4search1]: Wil M. P. van der Aalst, "Workflow Verification: Finding Control-Flow Errors Using Petri-Net-Based Techniques," 2000. <https://doi.org/10.1007/3-540-45594-9_11> Original Deep Research source key: `turn4search1`.
+[^turn4search1]: Wil M. P. van der Aalst, "Workflow Verification: Finding Control-Flow Errors Using Petri-Net-Based Techniques," 2000. [doi:10.1007/3-540-45594-9_11](https://doi.org/10.1007/3-540-45594-9_11) Original Deep Research source key: `turn4search1`.
 
-[^turn6academia24]: Andrej Bauer and Matija Pretnar, "Programming with Algebraic Effects and Handlers," 2012/2015. <https://arxiv.org/abs/1203.1539> ([PDF](/sources/9b6246e3747af2f9c2aeb0974d41c105.bin)) Original Deep Research source key: `turn6academia24`.
+[^turn6academia24]: Andrej Bauer and Matija Pretnar, "Programming with Algebraic Effects and Handlers," 2012/2015. [arXiv:1203.1539](https://arxiv.org/abs/1203.1539) ([PDF](/sources/9b6246e3747af2f9c2aeb0974d41c105.bin)) Original Deep Research source key: `turn6academia24`.
 
-[^turn5search2]: Gerwin Klein et al., "seL4: Formal Verification of an OS Kernel," *SOSP '09*, 2009. <https://cgi.cse.unsw.edu.au/~kleing/papers/sosp09.html> Original Deep Research source key: `turn5search2`.
+[^turn5search2]: Gerwin Klein et al., "[seL4: Formal Verification of an OS Kernel](https://cgi.cse.unsw.edu.au/~kleing/papers/sosp09.html)," *SOSP '09*, 2009. Original Deep Research source key: `turn5search2`.
 
-[^turn7search6]: Eric Horvitz, "Principles of Mixed-Initiative User Interfaces," *CHI '99*, 1999. <https://doi.org/10.1145/302979.303030> Original Deep Research source key: `turn7search6`.
+[^turn7search6]: Eric Horvitz, "Principles of Mixed-Initiative User Interfaces," *CHI '99*, 1999. [doi:10.1145/302979.303030](https://doi.org/10.1145/302979.303030) Original Deep Research source key: `turn7search6`.
 
-[^turn3search12]: Victor R. Lesser, Richard D. Fennell, Lee D. Erman, and D. Raj Reddy, "Organization of the HEARSAY-II Speech Understanding System." <https://mas.cs.umass.edu/pub/paper_detail.php/280> Original Deep Research source key: `turn3search12`.
+[^turn3search12]: Victor R. Lesser, Richard D. Fennell, Lee D. Erman, and D. Raj Reddy, "[Organization of the HEARSAY-II Speech Understanding System](https://mas.cs.umass.edu/pub/paper_detail.php/280)." Original Deep Research source key: `turn3search12`.
 
-[^turn2search2]: FIPA, *ACL Message Structure Specification*. <https://www.fipa.org/specs/fipa00061/> Original Deep Research source key: `turn2search2`.
+[^turn2search2]: FIPA, *[ACL Message Structure Specification](https://www.fipa.org/specs/fipa00061/)*. Original Deep Research source key: `turn2search2`.
 
-[^turn2search4]: FIPA, *Agent Management Specification*. <https://www.fipa.org/specs/fipa00023/> Original Deep Research source key: `turn2search4`.
+[^turn2search4]: FIPA, *[Agent Management Specification](https://www.fipa.org/specs/fipa00023/)*. Original Deep Research source key: `turn2search4`.
 
-[^turn4search0]: Wil M. P. van der Aalst, "Workflow Verification: Finding Control-Flow Errors Using Petri-Net-Based Techniques," 2000; includes compositional verification. <https://doi.org/10.1007/3-540-45594-9_11> Original Deep Research source key: `turn4search0`.
+[^turn4search0]: Wil M. P. van der Aalst, "Workflow Verification: Finding Control-Flow Errors Using Petri-Net-Based Techniques," 2000; includes compositional verification. [doi:10.1007/3-540-45594-9_11](https://doi.org/10.1007/3-540-45594-9_11) Original Deep Research source key: `turn4search0`.
 
-[^turn5search7]: seL4 Foundation, "Verification / Proofs," official seL4 verification documentation. <https://sel4.systems/Verification/proofs.html> Original Deep Research source key: `turn5search7`.
+[^turn5search7]: seL4 Foundation, "Verification / Proofs," official seL4 verification documentation. [seL4 Proofs](https://sel4.systems/Verification/proofs.html) Original Deep Research source key: `turn5search7`.
 
-[^turn8academia0]: Shunyu Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models," 2022/ICLR 2023. <https://arxiv.org/abs/2210.03629> Original Deep Research source key: `turn8academia0`.
+[^turn8academia0]: Shunyu Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models," 2022/ICLR 2023. [arXiv:2210.03629](https://arxiv.org/abs/2210.03629) Original Deep Research source key: `turn8academia0`.
 
-[^turn18academia34]: Luca Beurer-Kellner, Marc Fischer, and Martin Vechev, "Prompting Is Programming: A Query Language for Large Language Models" (LMQL), 2022/PLDI 2023. <https://arxiv.org/abs/2212.06094> Original Deep Research source key: `turn18academia34`.
+[^turn18academia34]: Luca Beurer-Kellner, Marc Fischer, and Martin Vechev, "Prompting Is Programming: A Query Language for Large Language Models" (LMQL), 2022/PLDI 2023. [arXiv:2212.06094](https://arxiv.org/abs/2212.06094) Original Deep Research source key: `turn18academia34`.
 
-[^turn19search2]: Omar Khattab et al., "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines," ICLR 2024. <https://arxiv.org/abs/2310.03714> Original Deep Research source key: `turn19search2`.
+[^turn19search2]: Omar Khattab et al., "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines," ICLR 2024. [arXiv:2310.03714](https://arxiv.org/abs/2310.03714) Original Deep Research source key: `turn19search2`.
 
-[^turn9academia14]: Qingyun Wu et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation," 2023. <https://arxiv.org/abs/2308.08155> Original Deep Research source key: `turn9academia14`.
+[^turn9academia14]: Qingyun Wu et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation," 2023. [arXiv:2308.08155](https://arxiv.org/abs/2308.08155) Original Deep Research source key: `turn9academia14`.
 
-[^turn21academia49]: Hussein Mozannar et al., "Magentic-UI: Towards Human-in-the-loop Agentic Systems," Microsoft Research, 2025. <https://www.microsoft.com/en-us/research/publication/magentic-ui-report/> Original Deep Research source key: `turn21academia49`.
+[^turn21academia49]: Hussein Mozannar et al., "[Magentic-UI: Towards Human-in-the-loop Agentic Systems](https://www.microsoft.com/en-us/research/publication/magentic-ui-report/)," Microsoft Research, 2025. Original Deep Research source key: `turn21academia49`.
 
-[^turn20academia24]: Haoyu Wang, Christopher M. Poskitt, and Jun Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents," ICSE 2026. <https://doi.org/10.1145/3744916.3764546> Original Deep Research source key: `turn20academia24`.
+[^turn20academia24]: Haoyu Wang, Christopher M. Poskitt, and Jun Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents," ICSE 2026. [doi:10.1145/3744916.3764546](https://doi.org/10.1145/3744916.3764546) Original Deep Research source key: `turn20academia24`.
 
-[^turn20search4]: Yu He et al., "AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations," USENIX Security 2026. <https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu> Original Deep Research source key: `turn20search4`.
+[^turn20search4]: Yu He et al., "[AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations](https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu)," USENIX Security 2026. Original Deep Research source key: `turn20search4`.
 
-[^turn15search3]: Agent2Agent (A2A) Protocol, current specification and core concepts. <https://a2a-protocol.org/latest/topics/key-concepts/> Original Deep Research source key: `turn15search3`.
+[^turn15search3]: Agent2Agent (A2A) Protocol, current specification and core concepts. [Core Concepts (A2A Protocol)](https://a2a-protocol.org/latest/topics/key-concepts/) Original Deep Research source key: `turn15search3`.
 
-[^turn14search2]: Model Context Protocol maintainers, "The 2026-01-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-01-28/> Original Deep Research source key: `turn14search2`.
+[^turn14search2]: Model Context Protocol maintainers, "[The 2026-01-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-01-28/)," 28 July 2026. Original Deep Research source key: `turn14search2`.
 
-[^turn14search10]: Model Context Protocol maintainers, "The 2026-01-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/> Original Deep Research source key: `turn14search10`.
+[^turn14search10]: Model Context Protocol maintainers, "[The 2026-01-28 MCP Specification Release Candidate](https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/)," including the Tasks extension redesign. Original Deep Research source key: `turn14search10`.
 
 ## Library sources
 

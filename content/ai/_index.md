@@ -15,6 +15,7 @@ Notes on designing AI systems and understanding how people work with them: what 
 - [System types]({{< ref "ai/system-types" >}}) -- worked cases, operating regimes, and system classification.
 - [Design]({{< ref "ai/design" >}}) -- workflows, interaction, prompt enforcement, and semantic guarantees.
 - [Design research]({{< ref "ai/design-research" >}}) -- the research notebook, with reading maps, dialogues, and proposals.
+- [Heuristics]({{< ref "ai/heuristics" >}}) -- short rules for working out what can be built with LLMs, where to look for ideas, and whether an idea is good enough to build.
 - [Capabilities]({{< ref "ai/capabilities" >}}) -- what it means for an LLM to have a capability, treated as a disposition, and what evidence supports the claim.
 
 ## Topics

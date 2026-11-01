@@ -52,3 +52,8 @@ Start with [Task assistance beyond dialogue]({{< ref "ai/design/dialogue-approac
 The six original filenames now point to their new locations. Exact originals are preserved as text snapshots in `_originals/`, so they do not duplicate the topic notes in the Markdown graph. The [reorganization map]({{< ref "ai/design/dialogue-approach/reorganization-map" >}}) records the source sections and their destinations.
 
 This pass rearranges the material and cleans export formatting. It keeps the original design proposals and research claims; it does not revalidate the external sources.
+
+## Related notes
+
+
+- The wallet transaction capture workflow describes transaction capture in the wallet project as a workflow around a transaction candidate, the object these notes call a draft.

@@ -56,7 +56,7 @@ When are two types the same? Sebesta (section 6.15 "Type Equivalence") gives the
 - **Name equivalence**: two types are the same only if they have the same name. A `Celsius` and a `Fahrenheit` that both wrap a float are different types, and mixing them is an error.
 - **Structure equivalence**: two types are the same if they have the same shape. `Celsius` and `Fahrenheit` would be interchangeable, which is exactly the bug you wanted to prevent.
 
-Every newtype in this section relies on name equivalence. Sebesta's examples show how old the idea is: Ada's derived type `type Celsius is new Float` is a newtype, and Ada's `subtype Small is Integer range 0..99` is a range-constrained type checked at run time, an early relative of [refinement types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}). C's `typedef` is the counterexample: it creates only an alias, so it gives no protection.
+Every newtype in this section relies on name equivalence. Sebesta's examples show how old the idea is: Ada's derived type `type Celsius is new Float` is a newtype, and Ada's `subtype Small is Integer range 0..99` is a range-constrained type checked at run time, an early relative of [Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}). C's `typedef` is the counterexample: it creates only an alias, so it gives no protection.
 
 Pierce (section 19.3 "Nominal and Structural Type Systems") adds a practical reason most mainstream languages are nominal: the type names double as run-time tags, which makes casts, `instanceof` and pattern matching cheap. Structural systems are more flexible and closer to the mathematics. Ramalho (chapter 13, "The Typing Map") lays out the whole space as a grid:
 

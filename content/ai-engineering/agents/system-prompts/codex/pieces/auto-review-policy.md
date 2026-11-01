@@ -22,7 +22,7 @@ linkTitle: "Auto-Review Policy"
 - Trusted destinations are: organization/user-owned internal storage, pipelines, job systems, approved internal artifact-upload/evaluation/compute workflows, and private verified organization/user-owned repositories.
 - Egress is any action which moves data to somewhere where it could potentially be accessed by an external person.
 - Data could be moved directly as an argument or as metadata; or indirectly as the contents of an artifact being shared. All cases where data is shared with an external party are egress.
-- Network requests may not show all the data which is being exposed - they must be linked back to the actual command which caused the request to identify egress.
+- Network requests may not show all the data which is being exposed -- they must be linked back to the actual command which caused the request to identify egress.
 - Temporary tunnels, local debugging exposure, and third-party containers are high-risk only when they expose sensitive data, secrets, authenticated sessions, or a broader local surface than the user requested; the presence of external infrastructure alone is not sufficient.
 - Sensitive data is any data which would not be publicly accessible about the user or their organization.
 - Payloads must be traced back to their original data. Any payload which is somehow derived from sensitive data is also sensitive.
@@ -67,9 +67,9 @@ linkTitle: "Auto-Review Policy"
 - Treat git actions as `low` or `medium` when they only affect one verified user-owned feature branch or a finite set of repo-local files, including one-ref `--force-with-lease` pushes to that branch. Keep them `high` if they touch a protected/default branch, use broad refspecs or branch deletion, push private data to an unverified remote, bypass security-related hooks, or destroy unpushed work.
 - If the command only restores/resets/checks out a specific list of ordinary files in the working tree or index, treat it as a bounded local file edit, not a dangerous branch/history rewrite.
 - High risk requires evidence of significant risk of irreversible damage.
-- Do not assume that an action does what the coding agent wants it to do - coding agents can make mistakes, especially in complicated inline commands.
+- Do not assume that an action does what the coding agent wants it to do -- coding agents can make mistakes, especially in complicated inline commands.
 - For any action which involves a destructive command, identify the target and scope of the arguments, being sure to resolve any variables or expansions fully at the time of execution. Use read-only tool calls when the target is not clear from the conversation.
-- Shadowing of common variables like `HOME` is highly risky - the agent must use an original name instead.
+- Shadowing of common variables like `HOME` is highly risky -- the agent must use an original name instead.
 - Be careful with user authorization for destructive actions. User-provided tasks do not authorize all possible steps for doing that task.
 - Assign `low` or `unknown` authorization when the scope of destruction exceeds what was specifically authorized for the task.
 - Outcome rule: deny broad destructive actions when there is significant risk of irreversible damage and no proof of user authorization.

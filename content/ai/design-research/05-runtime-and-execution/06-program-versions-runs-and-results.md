@@ -23,7 +23,7 @@ The following sections 11 and 12 come from the initial behavioral-compilation an
 
 A refined lifecycle could be:
 
-```
+```text
 0. Ingest ProblemBundle
 1. Validate domain structures and source identities
 2. Frame the task and construct TaskSpec
@@ -63,7 +63,7 @@ One modification is especially important: **source support and scope should be d
 
 A likely minimal domain vocabulary is:
 
-```
+```text
 ProblemBundle
 TaskSpec
 SourceArtifact
@@ -143,7 +143,7 @@ The following sections come from [Behavioral compilation and specification]({{< 
 
 Represents what depends on what conceptually:
 
-```
+```text
 frame problem
 ├── analyze source A
 ├── analyze source B
@@ -156,7 +156,7 @@ frame problem
 
 Represents actual operations:
 
-```
+```text
 retrieve
 → LLM call
 → parser
@@ -170,7 +170,7 @@ retrieve
 
 Represents why the result is supportable:
 
-```
+```text
 source span
 → extracted evidence
 → claim
@@ -190,14 +190,14 @@ Treating them as separate typed graphs will prevent many future ambiguities.
 
 A logical repair process contains a cycle:
 
-```
+```text
 synthesize → compile → diagnose → repair → synthesize
 ```
 
 
 But the persisted execution history should remain an append-only DAG by representing each attempt as a new immutable node:
 
-```
+```text
 ProgramAttempt_1
 → CompileFailure_1
 → ProgramAttempt_2
@@ -243,7 +243,7 @@ Without bounded termination, a compiler-repair loop can consume arbitrary resour
 
 These require different join semantics:
 
-```
+```text
 AllOf
 AnyOf
 BestOf
@@ -258,7 +258,7 @@ A generic list of outputs will make the graph semantics unclear. The relationshi
 
 Similarly, downstream progression must have a typed gate:
 
-```
+```text
 Advance when:
 - every required child is accepted;
 - at least one alternative is accepted;
@@ -277,7 +277,7 @@ The opening passage comes from the [abstraction analysis]({{< ref "ai/design-res
 
 The control process contains cycles:
 
-```
+```text
 generate program
 → compile
 → run
@@ -288,7 +288,7 @@ generate program
 
 The persisted history can still be a DAG:
 
-```
+```text
 Program v1
 → Compile failure
 → Program v2
@@ -325,7 +325,7 @@ The following material comes from the reanalysis in [Behavioral compilation and 
 
 Execution should produce an immutable `ExecutionRun`:
 
-```
+```text
 ExecutionRun
 ├── problem revision
 ├── program revision
@@ -345,7 +345,7 @@ The run does not modify the source history or overwrite previous attempts.
 
 A repair creates:
 
-```
+```text
 ProgramRevision 1
 → CompileDiagnostic 1
 → ProgramRevision 2
@@ -368,7 +368,7 @@ One generic DAG will conflate different meanings.
 
 Represents conceptual dependencies:
 
-```
+```text
 analyze sources A and B
 → reconcile findings
 → produce conclusion
@@ -379,7 +379,7 @@ analyze sources A and B
 
 Represents executable operations:
 
-```
+```text
 retrieve
 → interpret
 → validate
@@ -392,7 +392,7 @@ retrieve
 
 Represents derivation and revision:
 
-```
+```text
 SourceRevision
 → InterpretationProposal
 → ProgramRevision
@@ -406,7 +406,7 @@ These graphs can reference one another, but their edge semantics differ.
 
 A downstream task should normally depend on an acceptance decision, not merely on the existence of an output:
 
-```
+```text
 Task B requires:
   artifact X
   accepted for purpose Y
@@ -417,7 +417,7 @@ Task B requires:
 
 Branch joins also need explicit semantics:
 
-```
+```text
 all_of
 any_of
 first_accepted

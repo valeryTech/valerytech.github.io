@@ -469,8 +469,6 @@ Recent LLM-agent work has started moving explicitly in this direction. **Agent-C
 
 There's even a 2026 proposal for a protocol language specifically describing responsibility boundaries, approval gates, and governance constraints between human and AI participants in software development. It's early work, but conceptually very close to what we're discussing. ([arXiv](https://arxiv.org/abs/2606.20615 "Specifying AI-SDLC Processes: A Protocol Language for Human-Agent Boundaries"))
 
-<a id="7-i-think-the-promising-design-is-a-hybrid-behavioral-type"></a>
-
 ### 7. A hybrid behavioral type as a promising design
 
 

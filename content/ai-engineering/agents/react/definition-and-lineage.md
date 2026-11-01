@@ -71,7 +71,7 @@ The following parts are reasonably classified as LLM-era contributions:
 - Demonstrating that natural-language intermediate state can improve tool selection and recovery compared with action-only prompting.
 - Making the intermediate textual state directly editable by a person.
 
-The broader principles--agents receiving observations, taking actions, tracking goals, gathering information, monitoring execution, and revising plans--have long foundations.
+The broader principles -- agents receiving observations, taking actions, tracking goals, gathering information, monitoring execution, and revising plans -- have long foundations.
 
 A precise verdict is therefore:
 

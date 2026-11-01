@@ -253,7 +253,7 @@ Cats' `Parallel` type class pairs a monad with a related applicative. For `Eithe
 ## Typed errors in effect types
 
 
-Real programs fail inside effects such as `IO`, database calls and async work, not only in pure functions. The error can be part of the effect type. See [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for the effect types themselves.
+Real programs fail inside effects such as `IO`, database calls and async work, not only in pure functions. The error can be part of the effect type. See [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for the effect types themselves.
 
 **MonadError** abstracts "a monad that can fail with `E`". The two core operations are `throwError`/`raiseError`, which fails, and `catchError`/`handleErrorWith`, which recovers. In Haskell's mtl the class is `MonadError e m | m -> e`: the monad fixes the error type (Bragilevsky, ch. 7.2.1). In Cats it is `MonadError[F[_], E]` with extras such as `handleError` and `ensure`, and instances for `Either`, `Try` and `Future`. The `Try` and `Future` instances always use `Throwable` (Welsh and Gurnell, ch. 4.5). The book marks MonadError as optional: you only need it to write code that works for any error-handling monad.
 
@@ -347,7 +347,7 @@ The two ideas fit together like this:
 - Accumulating types suit parsing at the boundary, where a user wants every problem with a form at once. Fail-fast types suit the steps after it, which depend on earlier results.
 - Once input is parsed, the core receives domain types and needs fewer error cases. The error handling sits at the edge.
 
-See also: [Option]({{< ref "functional-programming/02-abstractions/monads" >}}#option), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}), [Semigroup and monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Parse, don't validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}), [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}), [Domain modeling with types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}).
+See also: [Option]({{< ref "functional-programming/02-abstractions/monads" >}}#option), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}), [Semigroup and monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}), [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Parse, don't validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}), [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}), [Domain Modeling With Types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}).
 
 ## Library sources
 

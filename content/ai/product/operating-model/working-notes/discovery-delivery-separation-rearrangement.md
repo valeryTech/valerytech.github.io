@@ -27,7 +27,7 @@ This editorial record explains how the source text was arranged. It is not part 
 ## Selected position
 
 
-The current position remains the one stated in [`operating-model.md`]({{< ref "ai/product/operating-model/operating-model" >}}):
+The current position remains the one stated in [Operating Model]({{< ref "ai/product/operating-model/operating-model" >}}):
 
 - Discovery and delivery are concurrent kinds of work defined mainly by purpose.
 - A production commitment changes the obligations attached to a solution.
@@ -48,11 +48,11 @@ These questions are related, but they are not one scale. The rearrangement separ
 
 | File | Role |
 |---|---|
-| [`discovery-delivery-practitioner-evidence.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}) | Practitioner examples and the source author's conclusions about AI use. |
-| [`production-commitment-boundary-alternative.md`]({{< ref "ai/product/operating-model/working-notes/production-commitment-boundary-alternative" >}}) | Earlier boundary formulations, prototype purpose, production context, and the effect of a production commitment. |
-| [`discovery-delivery-platform-proposal.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-platform-proposal" >}}) | A proposed platform design kept outside the current model. |
-| [`discovery-delivery-evaluation-evidence-deferred.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}) | Evaluation evidence held for the separate evaluation section. |
-| [`discovery-delivery-separation-source-notes.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-separation-source-notes" >}}) | The removed role-model comparison and the remaining future research question. |
+| [Discovery Delivery Practitioner Evidence]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}) | Practitioner examples and the source author's conclusions about AI use. |
+| [Production Commitment Boundary Alternative]({{< ref "ai/product/operating-model/working-notes/production-commitment-boundary-alternative" >}}) | Earlier boundary formulations, prototype purpose, production context, and the effect of a production commitment. |
+| [Discovery Delivery Platform Proposal]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-platform-proposal" >}}) | A proposed platform design kept outside the current model. |
+| [Discovery Delivery Evaluation Evidence Deferred]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-evaluation-evidence-deferred" >}}) | Evaluation evidence held for the separate evaluation section. |
+| [Discovery Delivery Separation Source Notes]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-separation-source-notes" >}}) | The removed role-model comparison and the remaining future research question. |
 
 ## Source disposition
 

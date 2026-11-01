@@ -64,8 +64,6 @@ is evidence that the model can produce a self-explanation.
 
 It is not yet evidence of a persistent metacognitive process changing its own future cognition.
 
-<a id="4-we-should-explicitly-distinguish-observation-from-interpretation"></a>
-
 ### 4. Distinguishing observation from interpretation
 
 
@@ -123,8 +121,6 @@ norms/reputation/social pressure
 
 Putting those statements in different columns makes the epistemic jump visible.
 
-<a id="5-there-are-established-practices-we-can-borrow"></a>
-
 ### 5. Relevant established research practices
 
 
@@ -142,8 +138,6 @@ We don't need to invent scientific rigor from scratch. The proposal is to combin
 10. **Source and inference provenance when LLMs assist research.** LLMs can search, generate hypotheses, find counterarguments and propose classifications. But every substantive factual claim should terminate in a primary source or experimental evidence. LLM-generated synthesis should never become evidence for another LLM-generated synthesis.
 
 That last point is especially relevant now.
-
-<a id="6-i-would-make-an-explicit-policy-for-using-llms-in-our-own-research"></a>
 
 ### 6. A proposed policy for using LLMs in this research
 
@@ -192,8 +186,6 @@ The original reply continues with [research paradigms and institutional framing]
 
 The final passage follows the critique and proposes linked research records. Its complete five-artifact list remains a proposal, and the reassembly does not create or adopt the listed dictionary, ontology, claim record, method, or evidence ledger.
 
-<a id="what-i-would-build-next"></a>
-
 ### Proposed next research artifacts
 
 
@@ -240,7 +232,7 @@ If it works, we should be able to say very precisely:
 
 > and here is an experiment that would discriminate between the interpretations.
 
-That would give us the methodological foundation both for the collaboration work and, later, for Alice--where conceptual discipline will be even more important because terms such as `entity`, `life`, `agency`, `meaning`, `understanding`, `reflection`, and `intelligence` are themselves part of what the research is trying to explain.
+That would give us the methodological foundation both for the collaboration work and, later, for Alice -- where conceptual discipline will be even more important because terms such as `entity`, `life`, `agency`, `meaning`, `understanding`, `reflection`, and `intelligence` are themselves part of what the research is trying to explain.
 
 ## Library sources
 

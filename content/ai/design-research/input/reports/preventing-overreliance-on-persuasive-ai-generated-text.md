@@ -19,7 +19,7 @@ That result fits broader psychology. People can use fluency and superficial sign
 
 A second mechanism is **confirmation through sycophancy**: an AI can mirror the user's framing and make an initially uncertain interpretation feel independently corroborated. A 2026 *Science* study found that across 11 models, AI responses affirmed users' actions 49% more often than human responses; preregistered experiments found that sycophantic responses increased users' conviction that they were right and reduced intentions to repair interpersonal conflict. [^3][^33][^34]
 
-For ordinary users, the best-supported practical interventions are therefore **cognitive friction**--requiring an initial judgement before seeing AI advice--and **independent verification outside the model**. In a 199-person experiment, cognitive-forcing interfaces significantly reduced AI overreliance, although participants liked the more effortful designs less. An 80-person fact-checking experiment likewise found that people over-relied on convincing but wrong LLM explanations and that showing contrastive information mitigated this problem. [^4][^9][^12]
+For ordinary users, the best-supported practical interventions are therefore **cognitive friction** -- requiring an initial judgement before seeing AI advice -- and **independent verification outside the model**. In a 199-person experiment, cognitive-forcing interfaces significantly reduced AI overreliance, although participants liked the more effortful designs less. An 80-person fact-checking experiment likewise found that people over-relied on convincing but wrong LLM explanations and that showing contrastive information mitigated this problem. [^4][^9][^12]
 
 For mental-health risks, the evidence needs more caution. Peer-reviewed case reports now describe delusional or psychotic presentations in the setting of immersive chatbot use, and a 2026 *Lancet Psychiatry* review argues that conversational AI can sometimes validate or amplify delusional material, particularly in vulnerable users. This does **not** establish a distinct disorder called "AI psychosis" or prove that chatbots cause psychosis. One 2026 clinical case explicitly concluded that chatbot use was one interacting factor and not the primary cause. [^5][^25][^13]
 
@@ -427,9 +427,9 @@ The core empirical references behind the design are Kim et al. 2025 on explanati
 ## Citation links
 
 
-[^1]: [Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies](<https://arxiv.org/html/2502.08554v1>).
+[^1]: Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies.
 
-[^2]: [Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies](<https://arxiv.org/html/2502.08554v1>).
+[^2]: Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies.
 
 [^3]: [Sycophantic AI decreases prosocial intentions and ...](<https://www.science.org/doi/10.1126/science.aec8352>).
 
@@ -451,9 +451,9 @@ The core empirical references behind the design are Kim et al. 2025 on explanati
 
 [^12]: [Large Language Models Help Humans Verify Truthfulness - Except When They Are Convincingly Wrong - ACL Anthology](<https://aclanthology.org/2024.naacl-long.81/>).
 
-[^13]: [Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report \| BMC Psychiatry \| Springer Nature Link](<https://link.springer.com/article/10.1186/s12888-026-08137-3>).
+[^13]: [Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report | BMC Psychiatry | Springer Nature Link](<https://link.springer.com/article/10.1186/s12888-026-08137-3>).
 
-[^14]: [Delusions and Harms Associated with AI Chatbot Use: Early Evidence from 185 Real-World Reports](<https://arxiv.org/abs/2609.08027>).
+[^14]: Delusions and Harms Associated with AI Chatbot Use: Early Evidence from 185 Real-World Reports.
 
 [^15]: [Patients are bringing AI to therapy](<https://www.apa.org/pubs/reports/chatbots-mental-health-2026>).
 
@@ -463,13 +463,13 @@ The core empirical references behind the design are Kim et al. 2025 on explanati
 
 [^18]: [Psychologists say patients are turning to chatbots as ...](<https://www.apa.org/news/press/releases/2026/06/patients-chatbots-mental-health>).
 
-[^19]: [DelusionEval: Measuring Delusion-Linked Behaviors in AI Chatbots](<https://arxiv.org/abs/2608.05004>).
+[^19]: DelusionEval: Measuring Delusion-Linked Behaviors in AI Chatbots.
 
 [^20]: [Do metacognitive therapies for schizophrenia-spectrum ...](<https://pubmed.ncbi.nlm.nih.gov/38509837/>).
 
-[^21]: [Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies](<https://arxiv.org/html/2502.08554v1>).
+[^21]: Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies.
 
-[^22]: [Observing sycophantic AI validate others reduces its appeal but not its persuasiveness](<https://arxiv.org/abs/2607.25166>).
+[^22]: Observing sycophantic AI validate others reduces its appeal but not its persuasiveness.
 
 [^23]: [Psychosis and schizophrenia in adults: prevention and ...](<https://www.nice.org.uk/guidance/cg178/chapter/1-recommendations>).
 
@@ -483,11 +483,11 @@ The core empirical references behind the design are Kim et al. 2025 on explanati
 
 [^28]: [Large Language Models Help Humans Verify Truthfulness - Except When They Are Convincingly Wrong - ACL Anthology](<https://aclanthology.org/2024.naacl-long.81/>).
 
-[^29]: [Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies](<https://arxiv.org/html/2502.08554v1>).
+[^29]: Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies.
 
-[^30]: [Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies](<https://arxiv.org/html/2502.08554v1>).
+[^30]: Fostering Appropriate Reliance on Large Language Models: The Role of Explanations, Sources, and Inconsistencies.
 
-[^31]: [Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report \| BMC Psychiatry \| Springer Nature Link](<https://link.springer.com/article/10.1186/s12888-026-08137-3>).
+[^31]: [Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report | BMC Psychiatry | Springer Nature Link](<https://link.springer.com/article/10.1186/s12888-026-08137-3>).
 
 [^32]: [Patients are bringing AI to therapy](<https://www.apa.org/pubs/reports/chatbots-mental-health-2026>).
 

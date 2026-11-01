@@ -23,9 +23,9 @@ When `ux_verifier` is available, delegate visual checks to it instead of driving
 - Start the app (for example `bun run dev &`) and wait until it's serving.
 - Open web apps in a normal Chromium window so screenshots look like a real browser:
   `chromium --new-window http://localhost:5173 --remote-debugging-port=9222 --window-position=0,0 --window-size=1280,800 --force-device-scale-factor=1 --user-data-dir="$(mktemp -d)" --no-first-run --no-default-browser-check --disable-features=Translate --disable-gpu --no-sandbox &`
-  - `--remote-debugging-port=9222` exposes the Chrome DevTools Protocol, so you can inspect the DOM, console, and network when a screenshot alone doesn't explain a problem.
-  - A fixed position and size, plus `--force-device-scale-factor=1`, keep screenshot pixels equal to click coordinates.
-  - A fresh `--user-data-dir` and the first-run flags keep restore prompts and popups out of screenshots. `--disable-gpu` and `--no-sandbox` are needed in this container.
+	- `--remote-debugging-port=9222` exposes the Chrome DevTools Protocol, so you can inspect the DOM, console, and network when a screenshot alone doesn't explain a problem.
+	- A fixed position and size, plus `--force-device-scale-factor=1`, keep screenshot pixels equal to click coordinates.
+	- A fresh `--user-data-dir` and the first-run flags keep restore prompts and popups out of screenshots. `--disable-gpu` and `--no-sandbox` are needed in this container.
 - Drive the app with xdotool: `key`, `type --delay 40 --`, `mousemove X Y click 1` (buttons 4 and 5 scroll). Find the window with `xdotool search --sync --onlyvisible --class chromium | tail -1` and focus it with `xdotool windowfocus --sync <id>`.
 - Take screenshots of the whole display, for example `import -window root /tmp/cu-shots/03-filtered.png`, so every frame has the same size and framing. Wait about half a second after each action so the UI settles. To look closely at one area, crop a copy instead of capturing a region.
 - Take a fresh screenshot before every click and click in that screenshot's coordinates; layouts move. If a click misses, look again before retrying.

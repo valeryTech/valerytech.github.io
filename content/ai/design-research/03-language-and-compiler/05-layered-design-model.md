@@ -17,8 +17,6 @@ Question: Which general principles can be drawn from a sequence of abstraction l
 
 Open question: Which other principles belong in this model?
 
-<a id="answer"></a>
-
 # Proposed analysis
 
 

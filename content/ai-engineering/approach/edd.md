@@ -8,7 +8,7 @@ linkTitle: "EDD"
 ## Resources
 
 
-https://cookbook.openai.com/examples/partners/eval_driven_system_design/receipt_inspection
+[Eval Driven System Design - From Prototype to Production](https://cookbook.openai.com/examples/partners/eval_driven_system_design/receipt_inspection)
 
 Related approaches: evaluation-driven system design and system delivery.
 

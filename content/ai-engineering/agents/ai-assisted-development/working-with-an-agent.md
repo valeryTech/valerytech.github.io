@@ -77,4 +77,4 @@ Look at the resulting changes and the effort needed to understand and review the
 
 Adjust the workflow around those problems. More generated code or longer documents do not by themselves mean better engineering.
 
-Continue with [product framing]({{< ref "ai-engineering/agents/ai-assisted-development/product-framing" >}}), [system design]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}}), [the review process]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}}), and [testing during review]({{< ref "ai-engineering/agents/ai-assisted-development/testing-during-review" >}}).
+Continue with [product-framing]({{< ref "ai-engineering/agents/ai-assisted-development/product-framing" >}}), [system design]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}}), [the review process]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}}), and [Testing During Review]({{< ref "ai-engineering/agents/ai-assisted-development/testing-during-review" >}}).

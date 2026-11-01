@@ -139,8 +139,6 @@ Those boundaries could be:
 
 The system must preserve the work across them.
 
-<a id="i-would-separate-intrinsic-and-induced-complexity"></a>
-
 ### Intrinsic and induced complexity
 
 
@@ -221,7 +219,7 @@ rather than:
 
 `agent -> list of reliability features`.
 
-The working interpretation is that this direction also connects very naturally to the framework idea. The framework could potentially let developers describe the **complexity structure of the work**--dependencies, uncertainty, authority, volatility, recovery requirements--and derive some collaboration/runtime behavior from it automatically.
+The working interpretation is that this direction also connects very naturally to the framework idea. The framework could potentially let developers describe the **complexity structure of the work** -- dependencies, uncertainty, authority, volatility, recovery requirements -- and derive some collaboration/runtime behavior from it automatically.
 
 <!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
@@ -229,8 +227,6 @@ The working interpretation is that this direction also connects very naturally t
 
 
 The following retained passage extends the proposed profile with coupling, goal compatibility, behavioral correlation, and different sources of uncertainty. It comes from the [multiagent coordination dialogue]({{< ref "ai/design-research/06-research-reports/12-multiagent-coordination-and-system-semantics" >}}). The sibling [comments]({{< ref "ai/design-research/01-foundations/10-complexity-and-work-structure-comments" >}}#imported-coordination-and-epistemic-refinements) distinguish the proposal from a validated measure.
-
-<a id="1-anthropic-provides-evidence-for-your-complexity-framing"></a>
 
 ### 1. Anthropic as evidence for the proposed complexity framing
 

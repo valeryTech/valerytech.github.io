@@ -31,7 +31,7 @@ These notes are about how we understand what LLMs can do. Their one-sentence ver
 
 Main texts:
 
-- [Dispositions](https://plato.stanford.edu/archives/spr2022/entries/dispositions/), Stanford Encyclopedia of Philosophy, Spring 2022 edition.
+- [Dispositions]({{< ref "ai/capabilities/input/sep-2022-dispositions" >}}) ([SEP](https://plato.stanford.edu/archives/spr2022/entries/dispositions/)), Choi and Fara, Stanford Encyclopedia of Philosophy, Spring 2022 edition.
 - [Measuring What AI Systems Might Do](/sources/a7b1db57e43f6200e8de28a3f4e6e12d.bin) ([arXiv:2603.00063](https://arxiv.org/abs/2603.00063)), Voudouris et al. 2026.
 
 The papers cited in these notes:
@@ -42,3 +42,7 @@ The papers cited in these notes:
 - Benchmark critiques: [Chizhov et al. 2025](/sources/0d0f57129a2ce4bb6104c39c80966d31.bin) ([arXiv:2504.07825](https://arxiv.org/abs/2504.07825)), [Reynolds 2026](/sources/f31a48720f6829630133d42608c798d0.bin) ([arXiv:2607.26159](https://arxiv.org/abs/2607.26159)), [Dellibarda Varela et al. 2025](/sources/86edf232a4144ab902dd5f19092c91ca.bin) ([arXiv:2507.01231](https://arxiv.org/abs/2507.01231)).
 - Cognitive architectures: [Nolte 2026](/sources/2af58406e13e42072bca886ec3caf534.bin) ([doi:10.1007/s10462-026-11669-5](https://doi.org/10.1007/s10462-026-11669-5)), [Sumers et al. 2024](/sources/979eab1fc41b7066edf51770802bf09d.bin).
 - Empirical method: [Baltes et al. 2025](/sources/c1ccf311d88d7d8a326c7617fb00ce09.bin) ([arXiv:2508.15503](https://arxiv.org/abs/2508.15503)).
+
+Other saved articles:
+
+- [The shelf life of LLM findings]({{< ref "ai/capabilities/input/shelf-life" >}}) ([web](https://zou-group.github.io/llm-claims-shelf-life/)), Queen and Zou 2026.

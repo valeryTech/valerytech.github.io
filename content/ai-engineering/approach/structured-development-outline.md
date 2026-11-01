@@ -12,11 +12,11 @@ Structured AI development approach:
 - Evaluation harness and platform
 - Methodology and operating model
 - Observability and test pyramid
-- Experimentation and scientific foundation as well as [experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) approach to delivery
+- Experimentation and scientific foundation as well as [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) approach to delivery
 - Architecture and engineering principles
 - Cross-functional alignment with shared taxonomies and tools (frameworks, patterns, delivery)
 
-Design approach: [exploratory design]({{< ref "engineering/eng-exp/exploratory-design" >}}).
+Design approach: [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}}).
 
 The central idea is integrative: the eval harness/test pyramid, observability, and the [product behavior guide]({{< ref "ai-engineering/causal-stack" >}}) are complementary parts of one AI delivery system, together giving a fuller picture of failure modes, evaluation, and operational control.
 

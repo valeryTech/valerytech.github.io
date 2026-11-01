@@ -174,7 +174,7 @@ The representation can remain hidden while the runtime representation is cheap. 
 
 The proposal is to summarize Haskell vs Scala for the author's project this way:
 
-||Haskell|Scala 3|
+| |Haskell|Scala 3|
 |---|---|---|
 |Discovering the algebra|**Excellent**|Very good|
 |Encoding constraints in types|**Excellent**|Excellent|
@@ -339,7 +339,7 @@ At that point the programming language is almost emerging directly from the theo
 
 Both can work, but they lead to somewhat different tradeoffs.
 
-||Haskell|Scala 3|
+| |Haskell|Scala 3|
 |---|---|---|
 |Algebraic modeling|Excellent|Very good|
 |GADTs / phantom types|Excellent|Good|
@@ -357,8 +357,6 @@ If this were a relatively isolated **workflow-language compiler / semantic servi
 If it needs to live naturally inside a larger JVM enterprise environment, one tentative proposal is to choose Scala 3.
 
 The architecture matters much more than the language.
-
-<a id="my-choice"></a>
 
 ### Proposed language choice
 
@@ -449,8 +447,6 @@ My current preferred stack would be:
 |Application/component code|Any language|Python, Rust, TS, Go, models, humans, etc. shouldn't determine substrate semantics|
 
 The crucial part would be a dedicated **semantic IR** between those layers.
-
-<a id="i-would-not-make-rust-the-language-of-the-theory"></a>
 
 ### Proposal to keep Rust separate from the language of the theory
 
@@ -722,8 +718,6 @@ protocol
 And compile the resulting component boundary down to Wasm.
 
 That would let someone write a component in Python, Rust, JavaScript, Go, etc., while the substrate still controls the meaningful boundary.
-
-<a id="if-we-had-to-start-implementing-tomorrow"></a>
 
 ### Proposed initial implementation
 

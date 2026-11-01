@@ -46,7 +46,7 @@ Convergence is not automatic. Gotsman et al. (2016) give a bank account where in
 ## Resolving conflicts
 
 
-Two writes are concurrent when neither was aware of the other when it was made, however far apart in time they happened (DDIA). Detecting this needs causality tracking. On a single replica, a version number per key works: a client reads the key with its version, writes back with that version, and the server overwrites values at or below it while keeping higher ones as siblings. With several replicas accepting writes, each replica keeps its own counter, and the collection is a version vector; DDIA notes that version vectors, not vector clocks, are the right structure for comparing replica states. See [time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}).
+Two writes are concurrent when neither was aware of the other when it was made, however far apart in time they happened (DDIA). Detecting this needs causality tracking. On a single replica, a version number per key works: a client reads the key with its version, writes back with that version, and the server overwrites values at or below it while keeping higher ones as siblings. With several replicas accepting writes, each replica keeps its own counter, and the collection is a version vector; DDIA notes that version vectors, not vector clocks, are the right structure for comparing replica states. See [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}).
 
 | Strategy | How it works | What it costs | Used by |
 | --- | --- | --- | --- |
@@ -204,8 +204,8 @@ DDIA's framing of the trade-off: consistency conflates timeliness, which eventua
 
 
 - [Guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}): the consistency models, delay sensitivity, and the short version of per-operation consistency.
-- [Broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): what the coordination avoided here costs, and total order broadcast.
-- [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}): happens-before, Lamport timestamps, and version vectors used to detect concurrency.
+- [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): what the coordination avoided here costs, and total order broadcast.
+- [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}): happens-before, Lamport timestamps, and version vectors used to detect concurrency.
 - [Replication]({{< ref "engineering/distributed-systems/replication" >}}): multi-leader and leaderless replication, where conflicts arise.
 - [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}): isolation and write skew, the single-node form of concurrent invariant violations.
 - [Verification]({{< ref "engineering/distributed-systems/verification" >}}): other ways to check that a protocol preserves its invariants.

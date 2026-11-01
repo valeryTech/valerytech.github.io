@@ -72,4 +72,4 @@ The provisional scale notes, 100 billion jobs per day, would be about 1.2 millio
 
 - Educative 2023: distributed task scheduler, *Grokking Modern System Design Interview*
 
-Continue with the [case template]({{< ref "system-design/projects/case-template" >}}).
+Continue with the [Case Template]({{< ref "system-design/projects/case-template" >}}).

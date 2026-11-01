@@ -31,8 +31,6 @@ The closest conceptual map is:
 
 Several subjects merit particularly careful study.
 
-<a id="2-scientific-workflow-systems-already-solved-a-lot-of-your-runtime-problem"></a>
-
 ### 2. Scientific workflow systems and existing runtime solutions
 
 
@@ -183,8 +181,6 @@ doesn't prescribe whether PostgreSQL uses a sequential scan, B-tree or hash join
 
 That database/compiler model remains one of the strongest architectural directions here.
 
-<a id="4-palantir-may-be-the-product-i-would-study-next"></a>
-
 ### 4. Palantir as a candidate for further study
 
 
@@ -288,7 +284,7 @@ As of February 2026, the closest work identified by the saved review is **ReaCom
 
 ReaComp gives a coding agent a collection of LLM reasoning traces. The coding agent writes a reusable symbolic solver over constrained DSLs. The resulting solver then handles new instances without LLM calls. This is nearly the proposed central transition:
 
-```
+```text
 LLM traces → coding agent → reusable symbolic program
 ```
 
@@ -307,7 +303,7 @@ The transductive model then constrains and refines the inductive search. This is
 
 This distinction is important:
 
-```
+```text
 Transductive capability:
     solve this instance
 
@@ -347,12 +343,12 @@ Or more compactly:
 
 These systems are close in optimization structure:
 
-```
+```text
 program → execute → score or critique → modify program
 ```
 
 
-The difference is that DSPy generally starts from a developer-authored program skeleton. The proposal allows the structure of the program itself--its operations, branches, tools, intermediate artifacts, and decomposition--to be inferred from direct model behavior.
+The difference is that DSPy generally starts from a developer-authored program skeleton. The proposal allows the structure of the program itself -- its operations, branches, tools, intermediate artifacts, and decomposition -- to be inferred from direct model behavior.
 
 ### 5. DreamCoder, LILO, and ReGAL address cumulative abstraction
 
@@ -361,7 +357,7 @@ The difference is that DSPy generally starts from a developer-authored program s
 
 This line of work becomes relevant after the proposed system has synthesized many node-level programs. The programs should eventually be compressed into reusable operations:
 
-```
+```text
 many executions
 → repeated subgraphs
 → learned reusable abstractions
@@ -400,7 +396,7 @@ AlphaCodium, Self-Debugging, LEVER, SWE-agent, and related coding systems genera
 
 They validate the practical value of:
 
-```
+```text
 generate
 → compile
 → execute
@@ -423,7 +419,7 @@ There are several signals from 2025-26.
 
 OpenScholar uses retrieval plus iterative self-feedback to synthesize scientific literature with source attribution, and explicitly evaluates answer coverage and citation accuracy. ([Nature](https://www.nature.com/articles/s41586-025-10072-4 "Synthesizing scientific literature with retrieval-augmented language models | Nature"))
 
-A 2025 paper studies **document-level attribution in RAG**, including cases where documents are redundant, complementary or synergistic--which gets close to our question of how individual evidence contributes to a conclusion. ([arXiv](https://arxiv.org/abs/2507.04480 "Source Attribution in Retrieval-Augmented Generation"))
+A 2025 paper studies **document-level attribution in RAG**, including cases where documents are redundant, complementary or synergistic -- which gets close to our question of how individual evidence contributes to a conclusion. ([arXiv](https://arxiv.org/abs/2507.04480 "Source Attribution in Retrieval-Augmented Generation"))
 
 A July 2026 paper called **HIERARCHRAG** explicitly argues that flattening a corpus into a knowledge graph can destroy provenance and silently merge contradictory sources. It proposes preserving claim-level provenance through a hierarchical graph. It's very new, so the proposal is to treat it as exploratory work, but the problem statement is almost exactly one part of ours. ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7042057 "HIERARCHRAG: A Three-Layer Hierarchical Knowledge Graph for Provenance-Aware Retrieval-Augmented Generation by Luigi Barbato, Francesco Gargiulo :: SSRN"))
 

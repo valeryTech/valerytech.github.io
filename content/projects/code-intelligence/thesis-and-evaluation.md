@@ -275,7 +275,7 @@ Continue to the full study if, on the de-identified issues, a structural conditi
 - CrossCodeEval: [arXiv:2310.11248](https://arxiv.org/abs/2310.11248)
 - RepoBench: [arXiv:2306.03091](https://arxiv.org/abs/2306.03091)
 - CodeRAG-Bench: [arXiv:2406.14497](https://arxiv.org/abs/2406.14497)
-- Long Code Arena: <https://openreview.net/forum?id=twV78Ytnve>
+- [Long Code Arena](https://openreview.net/forum?id=twV78Ytnve)
 - Colin Flaherty, *RAG in the age of agents: SWE-Bench as a case study*, a course talk on agentic retrieval and SWE-bench.
 
 ## Library sources

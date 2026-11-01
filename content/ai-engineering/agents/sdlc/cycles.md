@@ -18,13 +18,13 @@ The vault describes several cycles that repeat at different scales: one problem 
 | [Six engineering activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) | framing; investigation; design decisions; implementation; verification and review; release, operation, and learning | Across a full change (a [task workflow]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) runs the subset a [task type]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) needs) |
 | [Project Design and Delivery Cycle]({{< ref "ai-engineering/delivery/design-and-delivery" >}}) | product and artifact framing; design; baseline and prototyping; build, product evaluation, and release; operation and evolution | One project |
 | [Problem and Response Cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}) | understand the problem; define the desired outcome; choose a response; define the project and review the results | Before and around a project |
-| [Improvement cycle]({{< ref "ai-engineering/evaluation/framework/product-improvement-system-revised" >}}) | probe and observe; build understanding; decide what should change; implement and validate; deploy and verify the effect | A running product |
+| [Improvement cycle]({{< ref "ai-engineering/evaluation/framework-v2/commitments-and-claims" >}}#the-improvement-cycle) | probe and observe; build understanding; decide what should change; implement and validate; deploy and verify the effect | A running product |
 | Engineering Knowledge Loop | local loop on one case; cross-project loop that compares cases, generalizes within limits, and codifies what holds | Across cases and projects |
 
 ## The Problem-Solving Cycle
 
 
-The problem-solving framework and the recurring commitment pattern in [Discovery and Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) share the same four-step shape:
+The problem-solving framework and the recurring commitment pattern in [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) share the same four-step shape:
 
 1. **Frame:** State the problem or decision, what is known, what is assumed, and what evidence could change the choice.
 2. **Choose:** Generate options or hypotheses, compare their trade-offs within constraints, check the uncertainty that would flip the choice, and decide. This is the decision point, and it has an owner.
@@ -42,6 +42,6 @@ The ["generate and accept" shortcut]({{< ref "ai-engineering/agents/sdlc/workflo
 - **Across one task:** A [task type]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) combines the activities it needs into a [workflow]({{< ref "ai-engineering/agents/sdlc/workflows" >}}). Looking back at the end of implementation or review can route work back to an earlier activity when an assumption fails.
 - **Across one project and product:** Project phases group the activities they use most toward a milestone decision ([Activities in Each Phase]({{< ref "ai-engineering/agents/sdlc/activities" >}}#activities-in-each-phase)). The Problem and Response Cycle sits before and around the project to decide whether the project is the right response, and the improvement cycle repeats after release on the running product.
 - **Learning at three levels with assistants:** As [Testing and Revising the Working Model]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}}) summarizes, learning from tasks runs at three nested speeds:
-  1. *Inside one task* (the problem-solving cycle adjusts what we do next in the session).
-  2. *Across tasks in one project* (learning across tasks and checking whether a change helped--processes 9 and 10 in [Processes]({{< ref "ai-engineering/agents/sdlc/processes" >}})--update the project's docs, checks, commands, skills, and `AGENTS.md`).
-  3. *Across cases and projects* (the [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) and the [model revision loop]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}})--the current form of the Engineering Knowledge Loop--compare cases and revise shared workflows and concepts).
+	1. *Inside one task* (the problem-solving cycle adjusts what we do next in the session).
+	2. *Across tasks in one project* (learning across tasks and checking whether a change helped -- processes 9 and 10 in [Processes]({{< ref "ai-engineering/agents/sdlc/processes" >}})--update the project's docs, checks, commands, skills, and `AGENTS.md`).
+	3. *Across cases and projects* (the [Bottom Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) and the [Model Revision Loop]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}})--the current form of the Engineering Knowledge Loop -- compare cases and revise shared workflows and concepts).

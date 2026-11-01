@@ -7,7 +7,7 @@ weight: "10"
 linkTitle: "Frame-Based Dialogue"
 ---
 
-Part of [Dialogue systems]({{< ref "dialogue-systems" >}}).
+Part of [Dialogue Systems]({{< ref "dialogue-systems" >}}).
 
 A **task-based** (task-oriented) dialogue system helps a user complete a specific task, such as booking travel or setting an alarm. Most such systems have been **frame-based**: a frame is a knowledge structure that represents the user's task, made of **slots** that each take values of a given type. A set of frames is the system's **domain ontology**. The design comes from the GUS travel-planning system (Bobrow et al. 1977). ([Jurafsky & Martin 2026](#jurafsky-2026), Historical Notes) Jurafsky and Martin call it "the dominant industrial paradigm for dialogue systems for over 30 years". ([Jurafsky & Martin 2026](#jurafsky-2026), Appendix K, intro and Historical Notes)
 
@@ -151,7 +151,7 @@ Two distinctions from the same discussion matter for design:
 - **Closed task space vs closed toolset.** Two assistants with the same permitted APIs can differ in task model. "Change this transaction's category" is a defined task with a known flow. "Help me reduce unnecessary spending" asks the system to decide how to combine operations. The first is a workflow and the second an agent, in Anthropic's terms. ([Anthropic 2024](#anthropic-2024-agents))
 - **A fixed task catalog doesn't mean a fixed sequence of steps.** A system can support five tasks and still allow several paths through each.
 
-Modern task-oriented research keeps the frame concepts while replacing modules with end-to-end models. It still studies dialogue state, structured ontologies, intent detection and slot labelling ([Chen et al. 2023](#chen-2023)), and back-end APIs and databases have always been part of the category ([Jurafsky & Martin 2026](#jurafsky-2026), K.1.3; [Rastogi et al. 2020](#rastogi-2020)). Where LLMs and agent loops fit into this structure is the subject of [LLMs as components]({{< ref "dialogue-systems/llms-as-components" >}}). Systems that split the work across several specialist modules under one manager are covered in [Modular dialogue architectures]({{< ref "dialogue-systems/modular-dialogue-architectures" >}}). How the pre-LLM intent -> entities -> slots -> policy decomposition moved into workflows and tool contracts is covered in [How LLMs change user-system interactions]({{< ref "dialogue-systems/llms-and-interactions" >}}).
+Modern task-oriented research keeps the frame concepts while replacing modules with end-to-end models. It still studies dialogue state, structured ontologies, intent detection and slot labelling ([Chen et al. 2023](#chen-2023)), and back-end APIs and databases have always been part of the category ([Jurafsky & Martin 2026](#jurafsky-2026), K.1.3; [Rastogi et al. 2020](#rastogi-2020)). Where LLMs and agent loops fit into this structure is the subject of [Llms As Components]({{< ref "dialogue-systems/llms-as-components" >}}). Systems that split the work across several specialist modules under one manager are covered in [Modular Dialogue Architectures]({{< ref "dialogue-systems/modular-dialogue-architectures" >}}). How the pre-LLM intent -> entities -> slots -> policy decomposition moved into workflows and tool contracts is covered in [How LLMs change user-system interactions]({{< ref "dialogue-systems/llms-and-interactions" >}}).
 
 ## Related notes
 

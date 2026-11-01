@@ -14,7 +14,7 @@ The thing being evaluated is the whole system. The agent is one part of it.
 
 The problems collected in this log are listed, without the discussion, in [Problems in Engineering Work with Agents]({{< ref "ai-engineering/agents/problems/problems" >}}).
 
-The general evaluation framework is in [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/introduction" >}}). The log continues step 32 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}).
+The general evaluation framework is in [AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v2" >}}). The log continues step 32 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}).
 
 ## The Problem
 

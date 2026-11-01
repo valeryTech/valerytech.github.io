@@ -47,7 +47,7 @@ Questions to work through as the notes grow:
 - [Frame-based and closed-set task dialogue]({{< ref "dialogue-systems/frame-based-dialogue" >}}): frames, slots and a fixed task catalog; NLU, dialogue acts, state tracking, policy and generation; task-success and PARADISE evaluation; POMDPs; closed task sets as schemas, flows and skills.
 - [Intent usage in the LLM-based workflow era]({{< ref "dialogue-systems/intent-usage" >}}): intent detection (the NLU stage) as routing in LLM products, covering taxonomy design, classification methods and evaluation.
 - [LLMs and agents as components]({{< ref "dialogue-systems/llms-as-components" >}}): where an LLM or agent loop sits in the pipeline, three integration patterns, and what the evidence says about state, control and multi-turn reliability.
-- [Modular dialogue architectures]({{< ref "dialogue-systems/modular-dialogue-architectures" >}}): specialist modules under a central manager, from Alexa Prize generator-and-ranker designs to LLM systems; early routing, late arbitration and fusion; clem:todd's modular vs monolithic comparison.
+- [Modular Dialogue Architectures]({{< ref "dialogue-systems/modular-dialogue-architectures" >}}): specialist modules under a central manager, from Alexa Prize generator-and-ranker designs to LLM systems; early routing, late arbitration and fusion; clem:todd's modular vs monolithic comparison.
 - [How LLMs change user-system interactions]({{< ref "dialogue-systems/llms-and-interactions" >}}): from intent, entity and slot pipelines to workflows, tool contracts and permissions, and four LLM-era architectures.
 
 ## Research conversation
@@ -59,11 +59,11 @@ Research continuation (ChatGPT, 2026-11-11) is the conversation this research st
 
 
 - [Dialogue approach: reading map]({{< ref "ai/design/dialogue-approach/00-index" >}}): task assistance with dialogue as one interaction form, and the Quick Add draft pipeline. The most relevant notes:
-  - [Dialogue systems and mixed-initiative interaction]({{< ref "ai/design/dialogue-approach/01-framing/04-dialogue-and-mixed-initiative" >}}): research categories against practitioner categories, and mixed initiative
-  - [Terminology and taxonomy]({{< ref "ai/design/dialogue-approach/01-framing/03-terminology-and-taxonomy" >}}): assistant, copilot, agent, workflow and dialogue
-  - [Mapping the draft model to dialogue frameworks]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/08-dialogue-framework-mapping" >}}): frames, DST, Rasa and Lex
-  - [Clarification as draft repair]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/06-clarification-as-draft-repair" >}})
-  - [Requirements and evaluation for task assistants]({{< ref "ai/design/dialogue-approach/01-framing/06-requirements-and-evaluation" >}})
+	- [Dialogue systems and mixed-initiative interaction]({{< ref "ai/design/dialogue-approach/01-framing/04-dialogue-and-mixed-initiative" >}}): research categories against practitioner categories, and mixed initiative
+	- [Terminology and taxonomy]({{< ref "ai/design/dialogue-approach/01-framing/03-terminology-and-taxonomy" >}}): assistant, copilot, agent, workflow and dialogue
+	- [Mapping the draft model to dialogue frameworks]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/08-dialogue-framework-mapping" >}}): frames, DST, Rasa and Lex
+	- [Clarification as draft repair]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/06-clarification-as-draft-repair" >}})
+	- [Requirements and evaluation for task assistants]({{< ref "ai/design/dialogue-approach/01-framing/06-requirements-and-evaluation" >}})
 - Grounded NLU and Semantic processing stages: the NLU and ASR-correction side of the pipeline
 - [Interactions]({{< ref "ai/design/interactions" >}}): intents, semantic routing and user-system interaction
 - Classifying assistant types

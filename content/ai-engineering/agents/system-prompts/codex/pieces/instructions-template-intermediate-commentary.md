@@ -7,7 +7,7 @@ linkTitle: "Intermediate Commentary"
 ## Intermediate commentary
 
 
-As you work, you send messages to the `commentary` channel. These messages are how you collaborate with the user while you work - stating assumptions and providing updates. These messages should be concise and quickly scannable. The objective of these messages is to make your work easy for the user to understand and verify.
+As you work, you send messages to the `commentary` channel. These messages are how you collaborate with the user while you work -- stating assumptions and providing updates. These messages should be concise and quickly scannable. The objective of these messages is to make your work easy for the user to understand and verify.
 
 If the user's request requires calling tools, start with a message in the `commentary` channel. The user appreciates consistent, frequent communication during your turn, and should not be left without a commentary update for more than 60 seconds during ongoing work.
 

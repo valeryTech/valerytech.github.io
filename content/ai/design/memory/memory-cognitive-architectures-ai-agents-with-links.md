@@ -16,9 +16,9 @@ The second is the **experimental psychology and neuroscience tradition**. Atkins
 
 These traditions increasingly converged. The 2017 "Standard Model of the Mind," for example, explicitly tried to identify common computational principles across AI, cognitive science, neuroscience, and robotics, using architectures including ACT-R and Soar as evidence. ([laird-lebiere-rosenbloom-standard-model-mind-2017](https://doi.org/10.1609/aimag.v38i4.2744))
 
-**Consciousness is not the reason memory is part of a cognitive architecture.** ACT-R and Soar are computational theories and do not require phenomenal consciousness. Tulving did connect *episodic recollection* to a particular kind of self-aware consciousness--"autonoetic" awareness of oneself in subjective time--but that is a much narrower theoretical claim than "anything conscious must have memory." ([act-r-overview](https://act-r.psy.cmu.edu/); [laird-soar-cognitive-architecture-2012](https://mitpress.mit.edu/9780262538534/the-soar-cognitive-architecture/); [tulving-episodic-memory-mind-to-brain-2002](https://doi.org/10.1146/annurev.psych.53.100901.135114))
+**Consciousness is not the reason memory is part of a cognitive architecture.** ACT-R and Soar are computational theories and do not require phenomenal consciousness. Tulving did connect *episodic recollection* to a particular kind of self-aware consciousness -- "autonoetic" awareness of oneself in subjective time -- but that is a much narrower theoretical claim than "anything conscious must have memory." ([act-r-overview](https://act-r.psy.cmu.edu/); [laird-soar-cognitive-architecture-2012](https://mitpress.mit.edu/9780262538534/the-soar-cognitive-architecture/); [tulving-episodic-memory-mind-to-brain-2002](https://doi.org/10.1146/annurev.psych.53.100901.135114))
 
-The current LLM-agent literature is replaying this history at high speed. The field started with largely **storage-oriented memory**--chat logs, retrieval, vector databases and summaries--then added **reflection and consolidation**, and is now moving toward **memory as an adaptive policy**: the agent decides what to retain, revise, compress, forget, retrieve, or abstract into reusable experience. The 2026 ACL survey *From Storage to Experience* explicitly describes this evolution as **Storage -> Reflection -> Experience**; a 2026 TMLR survey focuses on the transition toward self-evolving, long-horizon memory. ([luo-storage-to-experience-2026](https://aclanthology.org/2026.findings-acl.2069/); [huang-agent-memory-second-half-2026](https://arxiv.org/abs/2608.00658))
+The current LLM-agent literature is replaying this history at high speed. The field started with largely **storage-oriented memory** -- chat logs, retrieval, vector databases and summaries -- then added **reflection and consolidation**, and is now moving toward **memory as an adaptive policy**: the agent decides what to retain, revise, compress, forget, retrieve, or abstract into reusable experience. The 2026 ACL survey *From Storage to Experience* explicitly describes this evolution as **Storage -> Reflection -> Experience**; a 2026 TMLR survey focuses on the transition toward self-evolving, long-horizon memory. ([luo-storage-to-experience-2026](https://aclanthology.org/2026.findings-acl.2069/); [huang-agent-memory-second-half-2026](https://arxiv.org/abs/2608.00658))
 
 That gives a useful conceptual sequence:
 
@@ -247,7 +247,7 @@ This is not a ranking; it identifies research lineages that make the literature 
 | **Yongfeng Zhang and collaborators** | Associate Professor, Rutgers Computer Science | Personalized systems, recommender systems and newer agent-memory structures | Xu et al., *A-MEM*. ([yongfeng-zhang-rutgers-profile](https://www.cs.rutgers.edu/people/professors/details/yongfeng-zhang); [xu-a-mem-agentic-memory-2025](https://arxiv.org/abs/2502.12110)) |
 | **Julian McAuley and collaborators** | Professor of CSE, UC San Diego | Personalization and the recent benchmark line around memory agents | *MemoryAgentBench*; collaborator on *MemoryArena*. ([julian-mcauley-ucsd-profile](https://profiles.ucsd.edu/julian.mcauley); [julian-mcauley-memory-research-secondary-source](https://profiles.ucsd.edu/julian.mcauley); [hu-memoryagentbench-2025](https://arxiv.org/abs/2507.05257); [he-memoryarena-2026](https://arxiv.org/abs/2602.16313)) |
 
-The important intellectual connections run across these institutional boundaries. Newell and Anderson represent the classical architectural question--*what fixed machinery makes cognition possible?* McClelland and CLS ask *how can a learner retain specifics while extracting stable structure?* The current agent community is asking the corresponding engineering question: *what persistent machinery should surround a foundation model so that experience changes future behavior reliably?* This synthesis is an interpretation of the cited traditions. ([laird-lebiere-rosenbloom-standard-model-mind-2017](https://doi.org/10.1609/aimag.v38i4.2744); [mcclelland-mcnaughton-oreilly-cls-1995](https://doi.org/10.1037/0033-295X.102.3.419); [luo-storage-to-experience-2026](https://aclanthology.org/2026.findings-acl.2069/))
+The important intellectual connections run across these institutional boundaries. Newell and Anderson represent the classical architectural question -- *what fixed machinery makes cognition possible?* McClelland and CLS ask *how can a learner retain specifics while extracting stable structure?* The current agent community is asking the corresponding engineering question: *what persistent machinery should surround a foundation model so that experience changes future behavior reliably?* This synthesis is an interpretation of the cited traditions. ([laird-lebiere-rosenbloom-standard-model-mind-2017](https://doi.org/10.1609/aimag.v38i4.2744); [mcclelland-mcnaughton-oreilly-cls-1995](https://doi.org/10.1037/0033-295X.102.3.419); [luo-storage-to-experience-2026](https://aclanthology.org/2026.findings-acl.2069/))
 
 ## Architecture patterns, reflection, and evaluation
 
@@ -326,8 +326,6 @@ This architecture is a synthesis proposed in this note, rather than a direct rep
 | **Parametric memory** | Very cheap to "retrieve" once learned | Poor provenance, difficult deletion/update, training cost and interference | Broad reusable skills or domain knowledge; poor choice for volatile client facts |
 
 The first seven patterns are directly represented, in different combinations, by Generative Agents, MemGPT, MemoryBank, A-MEM, Zep, Mem0 and LightMem. AgeMem represents the explicit move toward learning the memory-management policy itself. ([park-generative-agents-2023](https://doi.org/10.1145/3586183.3606763); [packer-memgpt-2023](https://arxiv.org/abs/2310.08560); [zhong-memorybank-2024](https://ojs.aaai.org/index.php/AAAI/article/view/29946); [rasmussen-zep-temporal-knowledge-graph-2025](https://arxiv.org/abs/2501.13956); [chhikara-mem0-2025](https://arxiv.org/abs/2504.19413); [xu-a-mem-agentic-memory-2025](https://arxiv.org/abs/2502.12110); [fang-lightmem-2026](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html); [yu-agentic-memory-2026](https://aclanthology.org/2026.acl-long.981/))
-
-<a id="your-sleep-proposal"></a>
 
 ### Proposed offline "sleep" process
 
@@ -525,8 +523,6 @@ Level F   Can it selectively forget while preserving unrelated knowledge?
 
 Current benchmarks distribute themselves across these levels rather than providing one complete evaluation. LongMemEval reaches strongly into A-D; MemBench explicitly includes reflective memory; MemoryAgentBench adds selective forgetting and test-time learning; MemoryArena makes behavioral consequences central. ([wu-longmemeval-2025](https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html); [tan-membench-2025](https://aclanthology.org/2025.findings-acl.989/); [hu-memoryagentbench-2025](https://arxiv.org/abs/2507.05257); [he-memoryarena-2026](https://arxiv.org/abs/2602.16313))
 
-<a id="adversarial-tests-i-would-add"></a>
-
 ### Proposed adversarial tests
 
 
@@ -632,7 +628,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Priority: essential.** The title closely matches the research question. It updates CLS and explicitly connects the theory to intelligent agents, structured knowledge and generalization. ([kumaran-hassabis-mcclelland-cls-2016](https://doi.org/10.1016/j.tics.2016.05.004))
 
-**Brodt et al. -- "Sleep--A Brain-State Serving Systems Memory Consolidation" (2023).**
+**Brodt et al. -- "Sleep -- A Brain-State Serving Systems Memory Consolidation" (2023).**
 
 **Priority: high. Peer-reviewed *Neuron* review.** Use it for the neuroscience behind replay and systems consolidation. It gives a much firmer basis for discussing "sleep" than anthropomorphic analogies in agent papers. ([brodt-sleep-systems-memory-consolidation-2023](https://doi.org/10.1016/j.neuron.2023.03.005))
 
@@ -684,7 +680,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Wu et al. -- "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory" (ICLR 2025).**
 
-**Priority: essential.** Its five competencies--information extraction, multi-session reasoning, temporal reasoning, knowledge updates and abstention--are close to a minimal functional specification for personalized conversational memory. ([wu-longmemeval-2025](https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html); [wu-longmemeval-openreview-2025](https://openreview.net/forum?id=pZiyCaVuti))
+**Priority: essential.** Its five competencies -- information extraction, multi-session reasoning, temporal reasoning, knowledge updates and abstention -- are close to a minimal functional specification for personalized conversational memory. ([wu-longmemeval-2025](https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html); [wu-longmemeval-openreview-2025](https://openreview.net/forum?id=pZiyCaVuti))
 
 **Tan et al. -- "MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-Based Agents" (Findings of ACL 2025).**
 
@@ -692,7 +688,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Hu, Wang & McAuley -- "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions" / MemoryAgentBench (2025).**
 
-**Priority: very high.** Its four competencies--accurate retrieval, test-time learning, long-range understanding and selective forgetting--capture things that plain recall benchmarks miss. ([hu-memoryagentbench-2025](https://arxiv.org/abs/2507.05257))
+**Priority: very high.** Its four competencies -- accurate retrieval, test-time learning, long-range understanding and selective forgetting -- capture things that plain recall benchmarks miss. ([hu-memoryagentbench-2025](https://arxiv.org/abs/2507.05257))
 
 **He et al. -- "MemoryArena: Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks" (2026).**
 
@@ -717,7 +713,7 @@ This curriculum assumes roughly one substantial paper or book section plus one i
 
 **Priority: reference work, second reading. Preprint in the source checked here.** Its forms/functions/dynamics framework is useful for distinguishing agent memory from RAG, context engineering and general model memory, and for recognizing that "memory" can exist as tokens, external structures, learned parameters or latent state. ([hu-memory-in-the-age-of-ai-agents-2025](https://arxiv.org/abs/2512.13564); [hu-memory-in-the-age-of-ai-agents-2025-secondary-source](https://arxiv.org/abs/2512.13564))
 
-The recommendation is to **prioritize the peer-reviewed surveys above generic recent arXiv surveys**, then go directly to original papers whenever a survey makes an architectural or performance claim. That ordering avoids allowing one survey's taxonomy--or its citation network--to determine the view of the field.
+The recommendation is to **prioritize the peer-reviewed surveys above generic recent arXiv surveys**, then go directly to original papers whenever a survey makes an architectural or performance claim. That ordering avoids allowing one survey's taxonomy -- or its citation network -- to determine the view of the field.
 
 ### Condensed reading order
 
@@ -797,62 +793,62 @@ For the client-understanding problem, the proposed architecture is therefore:
 
 The critical invariant is that the bottom process **may revise the semantic model but cannot rewrite history**. Every semantic conclusion should remain traceable to the episodic evidence that caused it, and the system should be permitted to remain uncertain or contradictory when the evidence does not justify a single coherent answer.
 
-That design takes the most useful idea from the human-memory analogy--the separation between experience and consolidation--while preserving something biological memory does not naturally provide but software can: **explicit provenance, reversible updates, and auditable belief revision**. ([mcclelland-mcnaughton-oreilly-cls-1995](https://doi.org/10.1037/0033-295X.102.3.419); [kumaran-hassabis-mcclelland-cls-2016](https://doi.org/10.1016/j.tics.2016.05.004); [park-generative-agents-2023](https://doi.org/10.1145/3586183.3606763); [rasmussen-zep-temporal-knowledge-graph-2025](https://arxiv.org/abs/2501.13956); [wu-longmemeval-2025](https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html))
+That design takes the most useful idea from the human-memory analogy -- the separation between experience and consolidation -- while preserving something biological memory does not naturally provide but software can: **explicit provenance, reversible updates, and auditable belief revision**. ([mcclelland-mcnaughton-oreilly-cls-1995](https://doi.org/10.1037/0033-295X.102.3.419); [kumaran-hassabis-mcclelland-cls-2016](https://doi.org/10.1016/j.tics.2016.05.004); [park-generative-agents-2023](https://doi.org/10.1145/3586183.3606763); [rasmussen-zep-temporal-knowledge-graph-2025](https://arxiv.org/abs/2501.13956); [wu-longmemeval-2025](https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html))
 
 ## Citation links
 
 
-- `act-r-overview`: https://act-r.psy.cmu.edu/
-- `atkinson-shiffrin-1968-secondary-source`: https://www.sciencedirect.com/science/article/abs/pii/S0749596X23000785
-- `atkinson-shiffrin-human-memory-1968`: https://doi.org/10.1016/S0079-7421(08)60422-3
-- `baddeley-eysenck-anderson-memory-4e-2025`: https://www.routledge.com/Memory/Baddeley-Eysenck-Anderson/p/book/9781003453536
-- `baddeley-working-memory-review-2012`: https://doi.org/10.1146/annurev-psych-120710-100422
-- `brodt-sleep-systems-memory-consolidation-2023`: https://doi.org/10.1016/j.neuron.2023.03.005
-- `chhikara-mem0-2025`: https://arxiv.org/abs/2504.19413
-- `fang-lightmem-2026`: https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html
-- `fang-lightmem-openreview-2026`: https://openreview.net/forum?id=dyJ0GWpjJB
-- `he-memoryarena-2026`: https://arxiv.org/abs/2602.16313
-- `hu-memory-in-the-age-of-ai-agents-2025`: https://arxiv.org/abs/2512.13564
-- `hu-memory-in-the-age-of-ai-agents-2025-secondary-source`: https://arxiv.org/abs/2512.13564
-- `hu-memoryagentbench-2025`: https://arxiv.org/abs/2507.05257
-- `huang-agent-memory-second-half-2026`: https://arxiv.org/abs/2608.00658
-- `huang-agent-memory-tmlr-2026`: https://arxiv.org/abs/2608.00658
-- `julian-mcauley-memory-research-secondary-source`: https://profiles.ucsd.edu/julian.mcauley
-- `julian-mcauley-ucsd-profile`: https://profiles.ucsd.edu/julian.mcauley
-- `karthik-narasimhan-princeton-profile`: https://www.cs.princeton.edu/people/profile/karthikn
-- `kotseruba-tsotsos-2020-secondary-source`: https://doi.org/10.1007/s10462-018-9646-y
-- `kotseruba-tsotsos-40-years-cognitive-architectures-2020`: https://doi.org/10.1007/s10462-018-9646-y
-- `kumaran-hassabis-mcclelland-cls-2016`: https://doi.org/10.1016/j.tics.2016.05.004
-- `kumaran-hassabis-mcclelland-cls-2016-secondary-source`: https://pubmed.ncbi.nlm.nih.gov/27315762/
-- `laird-lebiere-rosenbloom-standard-model-mind-2017`: https://doi.org/10.1609/aimag.v38i4.2744
-- `laird-soar-cognitive-architecture-2012`: https://mitpress.mit.edu/9780262538534/the-soar-cognitive-architecture/
-- `luo-storage-to-experience-2026`: https://aclanthology.org/2026.findings-acl.2069/
-- `mcclelland-mcnaughton-oreilly-cls-1995`: https://doi.org/10.1037/0033-295X.102.3.419
-- `michael-bernstein-stanford-profile`: https://profiles.stanford.edu/michael-bernstein
-- `newell-unified-theories-of-cognition-1990`: https://books.google.com/books/about/Unified_Theories_of_Cognition.html?id=sjQJAAAAIAAJ
-- `packer-memgpt-2023`: https://arxiv.org/abs/2310.08560
-- `park-generative-agents-2023`: https://doi.org/10.1145/3586183.3606763
-- `park-generative-agents-2023-secondary-source`: https://research.google/pubs/generative-agents-interactive-simulacra-of-human-behavior/
-- `princeton-nlp-agent-research-profile`: https://nlp.cs.princeton.edu/
-- `procedural-replay-nature-neuroscience-2026`: https://doi.org/10.1038/s41593-026-02362-5
-- `rasmussen-zep-temporal-knowledge-graph-2025`: https://arxiv.org/abs/2501.13956
-- `shinn-reflexion-2023`: https://papers.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html
-- `sleep-dependent-consolidation-experimental-study`: https://doi.org/10.1038/s41593-023-01381-w
-- `soar-architecture-secondary-source`: https://soar.eecs.umich.edu/
-- `staresina-sleep-rhythms-memory-consolidation-2024`: https://doi.org/10.1016/j.tics.2024.02.002
-- `tan-membench-2025`: https://aclanthology.org/2025.findings-acl.989/
-- `tulving-elements-of-episodic-memory-1983`: https://books.google.com/books/about/Elements_of_Episodic_Memory.html?id=485uvoB4A4YC
-- `tulving-episodic-memory-mind-to-brain-2002`: https://doi.org/10.1146/annurev.psych.53.100901.135114
-- `tulving-episodic-semantic-memory-secondary-source`: https://books.google.com/books/about/Elements_of_Episodic_Memory.html?id=485uvoB4A4YC
-- `wu-longmemeval-2025`: https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html
-- `wu-longmemeval-openreview-2025`: https://openreview.net/forum?id=pZiyCaVuti
-- `xu-a-mem-agentic-memory-2025`: https://arxiv.org/abs/2502.12110
-- `xu-a-mem-openreview-2026`: https://openreview.net/forum?id=FiM0M8gcct
-- `yongfeng-zhang-rutgers-profile`: https://www.cs.rutgers.edu/people/professors/details/yongfeng-zhang
-- `yu-agentic-memory-2026`: https://aclanthology.org/2026.acl-long.981/
-- `zhang-survey-memory-llm-agents-tois-2025`: https://doi.org/10.1145/3748302
-- `zhong-memorybank-2024`: https://ojs.aaai.org/index.php/AAAI/article/view/29946
-- `zhong-memorybank-aaai-2024`: https://doi.org/10.1609/aaai.v38i17.29946
+- `act-r-overview`: [ACT-R overview](https://act-r.psy.cmu.edu/)
+- `atkinson-shiffrin-1968-secondary-source`: [Atkinson and Shiffrin 1968, secondary source (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0749596X23000785)
+- `atkinson-shiffrin-human-memory-1968`: [doi:10.1016/S0079-7421(08)60422-3](https://doi.org/10.1016/S0079-7421(08)60422-3)
+- `baddeley-eysenck-anderson-memory-4e-2025`: [Memory, 4th edition (Routledge)](https://www.routledge.com/Memory/Baddeley-Eysenck-Anderson/p/book/9781003453536)
+- `baddeley-working-memory-review-2012`: [doi:10.1146/annurev-psych-120710-100422](https://doi.org/10.1146/annurev-psych-120710-100422)
+- `brodt-sleep-systems-memory-consolidation-2023`: [doi:10.1016/j.neuron.2023.03.005](https://doi.org/10.1016/j.neuron.2023.03.005)
+- `chhikara-mem0-2025`: [arXiv:2504.19413](https://arxiv.org/abs/2504.19413)
+- `fang-lightmem-2026`: [LightMem: Lightweight and Efficient Memory-Augmented Generation](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html)
+- `fang-lightmem-openreview-2026`: [LightMem on OpenReview](https://openreview.net/forum?id=dyJ0GWpjJB)
+- `he-memoryarena-2026`: [arXiv:2602.16313](https://arxiv.org/abs/2602.16313)
+- `hu-memory-in-the-age-of-ai-agents-2025`: [arXiv:2512.13564](https://arxiv.org/abs/2512.13564)
+- `hu-memory-in-the-age-of-ai-agents-2025-secondary-source`: [arXiv:2512.13564](https://arxiv.org/abs/2512.13564)
+- `hu-memoryagentbench-2025`: [arXiv:2507.05257](https://arxiv.org/abs/2507.05257)
+- `huang-agent-memory-second-half-2026`: [arXiv:2608.00658](https://arxiv.org/abs/2608.00658)
+- `huang-agent-memory-tmlr-2026`: [arXiv:2608.00658](https://arxiv.org/abs/2608.00658)
+- `julian-mcauley-memory-research-secondary-source`: [Julian Mcauley (UCSD Profiles)](https://profiles.ucsd.edu/julian.mcauley)
+- `julian-mcauley-ucsd-profile`: [Julian Mcauley (UCSD Profiles)](https://profiles.ucsd.edu/julian.mcauley)
+- `karthik-narasimhan-princeton-profile`: [Karthik Narasimhan (Princeton profile)](https://www.cs.princeton.edu/people/profile/karthikn)
+- `kotseruba-tsotsos-2020-secondary-source`: [doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y)
+- `kotseruba-tsotsos-40-years-cognitive-architectures-2020`: [doi:10.1007/s10462-018-9646-y](https://doi.org/10.1007/s10462-018-9646-y)
+- `kumaran-hassabis-mcclelland-cls-2016`: [doi:10.1016/j.tics.2016.05.004](https://doi.org/10.1016/j.tics.2016.05.004)
+- `kumaran-hassabis-mcclelland-cls-2016-secondary-source`: [Kumaran, Hassabis and McClelland 2016, secondary source (PubMed)](https://pubmed.ncbi.nlm.nih.gov/27315762/)
+- `laird-lebiere-rosenbloom-standard-model-mind-2017`: [doi:10.1609/aimag.v38i4.2744](https://doi.org/10.1609/aimag.v38i4.2744)
+- `laird-soar-cognitive-architecture-2012`: [The Soar Cognitive Architecture (MIT Press)](https://mitpress.mit.edu/9780262538534/the-soar-cognitive-architecture/)
+- `luo-storage-to-experience-2026`: [From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](https://aclanthology.org/2026.findings-acl.2069/)
+- `mcclelland-mcnaughton-oreilly-cls-1995`: [doi:10.1037/0033-295X.102.3.419](https://doi.org/10.1037/0033-295X.102.3.419)
+- `michael-bernstein-stanford-profile`: [Michael Bernstein (Stanford profile)](https://profiles.stanford.edu/michael-bernstein)
+- `newell-unified-theories-of-cognition-1990`: [Unified Theories of Cognition (Google Books)](https://books.google.com/books/about/Unified_Theories_of_Cognition.html?id=sjQJAAAAIAAJ)
+- `packer-memgpt-2023`: [arXiv:2310.08560](https://arxiv.org/abs/2310.08560)
+- `park-generative-agents-2023`: [doi:10.1145/3586183.3606763](https://doi.org/10.1145/3586183.3606763)
+- `park-generative-agents-2023-secondary-source`: [Generative Agents: Interactive Simulacra of Human Behavior](https://research.google/pubs/generative-agents-interactive-simulacra-of-human-behavior/)
+- `princeton-nlp-agent-research-profile`: [Princeton NLP group homepage](https://nlp.cs.princeton.edu/)
+- `procedural-replay-nature-neuroscience-2026`: [doi:10.1038/s41593-026-02362-5](https://doi.org/10.1038/s41593-026-02362-5)
+- `rasmussen-zep-temporal-knowledge-graph-2025`: [arXiv:2501.13956](https://arxiv.org/abs/2501.13956)
+- `shinn-reflexion-2023`: [Reflexion: language agents with verbal reinforcement learning](https://papers.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html)
+- `sleep-dependent-consolidation-experimental-study`: [doi:10.1038/s41593-023-01381-w](https://doi.org/10.1038/s41593-023-01381-w)
+- `soar-architecture-secondary-source`: [Soar homepage](https://soar.eecs.umich.edu/)
+- `staresina-sleep-rhythms-memory-consolidation-2024`: [doi:10.1016/j.tics.2024.02.002](https://doi.org/10.1016/j.tics.2024.02.002)
+- `tan-membench-2025`: [MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-based Agents](https://aclanthology.org/2025.findings-acl.989/)
+- `tulving-elements-of-episodic-memory-1983`: [Elements of Episodic Memory (Google Books)](https://books.google.com/books/about/Elements_of_Episodic_Memory.html?id=485uvoB4A4YC)
+- `tulving-episodic-memory-mind-to-brain-2002`: [doi:10.1146/annurev.psych.53.100901.135114](https://doi.org/10.1146/annurev.psych.53.100901.135114)
+- `tulving-episodic-semantic-memory-secondary-source`: [Elements of Episodic Memory (Google Books)](https://books.google.com/books/about/Elements_of_Episodic_Memory.html?id=485uvoB4A4YC)
+- `wu-longmemeval-2025`: [LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory](https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html)
+- `wu-longmemeval-openreview-2025`: [LongMemEval on OpenReview](https://openreview.net/forum?id=pZiyCaVuti)
+- `xu-a-mem-agentic-memory-2025`: [arXiv:2502.12110](https://arxiv.org/abs/2502.12110)
+- `xu-a-mem-openreview-2026`: [A-Mem on OpenReview](https://openreview.net/forum?id=FiM0M8gcct)
+- `yongfeng-zhang-rutgers-profile`: [Yongfeng Zhang (Rutgers profile)](https://www.cs.rutgers.edu/people/professors/details/yongfeng-zhang)
+- `yu-agentic-memory-2026`: [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://aclanthology.org/2026.acl-long.981/)
+- `zhang-survey-memory-llm-agents-tois-2025`: [doi:10.1145/3748302](https://doi.org/10.1145/3748302)
+- `zhong-memorybank-2024`: [MemoryBank (AAAI)](https://ojs.aaai.org/index.php/AAAI/article/view/29946)
+- `zhong-memorybank-aaai-2024`: [doi:10.1609/aaai.v38i17.29946](https://doi.org/10.1609/aaai.v38i17.29946)
 
 ## Library sources
 

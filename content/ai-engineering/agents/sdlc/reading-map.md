@@ -11,15 +11,15 @@ This map collects notes related to [Engineering Workflows]({{< ref "ai-engineeri
 ## Engineering lifecycle
 
 
-- [Discovery and Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): the decision, the evidence needed, and the obligations involved decide whether work is discovery, delivery, or both.
+- [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): the decision, the evidence needed, and the obligations involved decide whether work is discovery, delivery, or both.
 - [Principles and Decision Logic for AI Product Work]({{< ref "ai/product/operating-model/operating-model" >}}): eight principles that connect the condition to improve, alternatives, assumptions, and production responsibilities to the next commitment.
 - [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}): a production promise includes limits and failure behavior; a commitment record makes accepted uncertainty explicit.
 - [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}): steps from valid output to job completion, improvement over alternatives, and the intended change.
 - [AI Product Design and Delivery Framework]({{< ref "ai-engineering/delivery/design-and-delivery" >}}): a lifecycle that links problem framing, system design, build, release, and operation.
 - [Problem and Response Cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}): frame the problem and desired outcome before choosing a response, and define evidence that may require revising or stopping the project.
-- [AI Product Improvement System]({{< ref "ai-engineering/evaluation/framework/product-improvement-system-revised" >}}): the improvement cycle on a running product: probe and observe, build understanding, decide what should change, implement and validate, and verify the effect.
+- [AI product improvement loops]({{< ref "ai-engineering/evaluation/framework-v2/commitments-and-claims" >}}#three-feedback-routes): the improvement cycle on a running product: probe and observe, build understanding, decide what should change, implement and validate, and verify the effect.
 - [Goals of AI Product Delivery]({{< ref "ai-engineering/approach/goals" >}}): user-task success as the top goal, with contracts, controlled changes, failure diagnosis, and production feedback as supporting capabilities.
-- [Engineering Delivery Techniques Guide]({{< ref "engineering/delivery-techniques/engineering-delivery-techniques-guide" >}}): choose a delivery technique by uncertainty and lifecycle stage.
+- [Engineering_delivery_techniques_guide]({{< ref "engineering/delivery-techniques/engineering-delivery-techniques-guide" >}}): choose a delivery technique by uncertainty and lifecycle stage.
 - [Walking Skeleton: Workflow Validation]({{< ref "engineering/delivery-techniques/walking-skeleton-workflow-validation" >}}): one narrow end-to-end workflow to check boundaries, contracts, observability, and failure handling first.
 
 ## Discovery, uncertainty, and prototyping
@@ -77,17 +77,17 @@ The framework in [topics/engineering/engineering-review-framework]({{< ref "engi
 - [Software Engineering Principles]({{< ref "engineering/engineering-review-framework/software-engineering-principles" >}}): shared engineering goals across paradigms, with design techniques that fit the language and dependencies.
 - [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}): logic, APIs, state, data, dependencies, security, and operability.
 - [Testing, CI, and PR Review Guide]({{< ref "engineering/engineering-review-framework/testing-ci-and-pr-review-guide" >}}): how tests, CI, author preparation, and human review combine.
-- [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}): invented APIs, unsupported assumptions, weak tests, and unverified execution claims in AI-assisted changes.
-- [Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}): work backward from outcomes to required behavior, then design checks around consequential failures.
+- [Llm Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}): invented APIs, unsupported assumptions, weak tests, and unverified execution claims in AI-assisted changes.
+- [Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}): work backward from outcomes to required behavior, then design checks around consequential failures.
 - [Engineering Review Framework: Assessment and Trial]({{< ref "engineering/engineering-review-framework/workflow-trial-and-recommendations" >}}): a trial on a payment-retry change and five proposed revisions to the framework.
 - [Review Agents, Skills, and Tools]({{< ref "engineering/engineering-review-framework/review-agents-skills-and-tools" >}}): roles for agents, skills, and tools, chosen by the review question.
-- [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}): local wrappers, review experiments, and the EML, Ponytail, and Matt Pocock skill collections.
+- [Review Tools And Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}): local wrappers, review experiments, and the EML, Ponytail, and Matt Pocock skill collections.
 - [Engineering Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}): reference lists for each review layer.
 
 ## Skills for each workflow activity
 
 
-The [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}) describes these skills in the context of review. The table below groups the same skills by the six activities in [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}). Links point to local checkouts under `~/projects`. Several skills edit files, commit, or publish tracker items, so check a skill's workflow before using it. Most of these skills support review and implementation. For discovery and prototyping, use EML prototype, which answers one decision-relevant question with the smallest credible runnable artifact, together with Pocock prototype and research and EML experiment.
+The [Review Tools And Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}) describes these skills in the context of review. The table below groups the same skills by the six activities in [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}). Links point to local checkouts under `~/projects`. Several skills edit files, commit, or publish tracker items, so check a skill's workflow before using it. Most of these skills support review and implementation. For discovery and prototyping, use EML prototype, which answers one decision-relevant question with the smallest credible runnable artifact, together with Pocock prototype and research and EML experiment.
 
 | Activity | Skills | What they help with |
 | :--- | :--- | :--- |
@@ -106,7 +106,7 @@ The [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-fr
 - [Common Trade-offs in System Design]({{< ref "system-design/elements/common-trade-offs" >}}): recurring trade-offs, what each side gains and costs, and the signal that tips the choice.
 - [System Design Problem-Solving Checklist]({{< ref "system-design/problem-solving-checklist" >}}): framing a design problem, tracing behavior, comparing alternatives, and checking failures.
 - [Backward Design]({{< ref "engineering/progressive/backward-design-der" >}}): trace user needs through outcomes, workflows, capabilities, and system responsibilities.
-- [Intent-Driven Architecture]({{< ref "engineering/progressive/intent-driven-architecture" >}}): domain language, use cases, and decision records that keep intent in the architecture.
+- [Intent Driven Architecture]({{< ref "engineering/progressive/intent-driven-architecture" >}}): domain language, use cases, and decision records that keep intent in the architecture.
 - [Design Science Method]({{< ref "ai-engineering/delivery/design-science" >}}): excerpts on problem explication, requirements, alternative designs, and design rationale.
 - [Premature Abstraction in Software Design]({{< ref "engineering/premature-abstraction" >}}): speculative generality and the wrong abstraction.
 - [Ambiguity in AI Systems]({{< ref "ai/design/ambiguity" >}}): the gap between specified and plausible behavior, and how to match clarification and controls to risk.
@@ -119,7 +119,7 @@ The [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-fr
 - [Cases from Product Use]({{< ref "ai-engineering/causal-stack/cases" >}}): a case links an attempted job to its outcome, with competing explanations and a next check.
 - [Claims to Check in Product Work]({{< ref "ai-engineering/causal-stack/claims" >}}): scoped expectations, counterexamples, and revision rules for engineering claims.
 - [Focused Checks for AI Product Behavior]({{< ref "ai-engineering/causal-stack/checks" >}}): turn a product question into cases, a judgment rule, and a comparison.
-- Hypothesis: working notes on hypothesis-driven design decisions.
+- [[hypothesis]]: working notes on hypothesis-driven design decisions.
 - Problem-solving framework v0.1: framing, possible solutions, acting on the best one, and looking back.
 - 5 Whys: distinguishing claims from facts in root-cause analysis.
 - [Investigation and Epistemics]({{< ref "ai/design-research/04-investigation-and-epistemics" >}}): research notes on investigations with evidence operations, provenance, and explicit uncertainty.
@@ -133,12 +133,12 @@ The [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-fr
 - [Disciplined AI Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}): an experiment names the decision, baseline, change, cases, and judgment rule.
 - [AI Engineering Working Assumptions]({{< ref "ai-engineering/working-assumptions" >}}): plausible proposals are cheap; good experiments and discriminating evidence are scarce.
 - [A Reference Example Is Not Ground Truth]({{< ref "ai/product/operating-model/reference-example-is-not-ground-truth" >}}): separate facts, requirements, reference examples, and evaluator judgments.
-- [Judgment and Findings in AI Evaluation]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}): criteria, evidence, and explicit denominators for scoped findings.
+- [Judgment and Findings in AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/30-judgment-and-findings" >}}): criteria, evidence, and explicit denominators for scoped findings.
 
 ## Reflection and learning from experience
 
 
-- Reflective Practice: definitions, levels, and practical strategies for reflection.
+- [[reflective_practice]]: definitions, levels, and practical strategies for reflection.
 - Engineering Knowledge Loop: how repeated delivery experience becomes reusable engineering knowledge, with a local problem-solving loop and a cross-project learning loop.
 - Experiential Learning Cycle: source notes on experiential learning, reflective practice, and inductive and abductive learning.
 - [Learning Through Real Product Use]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}): build one usable path, inspect real attempts, compare changes, and record which questions improved decisions.
@@ -148,7 +148,7 @@ The [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-fr
 ## Bottom-up learning and grounded theory
 
 
-These notes cover building workflows from experience: doing real tasks, comparing the cases, and generalizing what holds. Start with the [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}), which describes our approach. The Engineering Knowledge Loop and Reflective Practice are listed under reflection, [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) under decisions, and the [Discovery Directions Map]({{< ref "ai/product/discovery/discovery-directions-and-recall-audit" >}}) under discovery. The approach uses grounded theory and Sandbox-First Capability Discovery as methods; the AI Project Foundation and the Engineering Knowledge Loop are earlier notes on the same idea.
+These notes cover building workflows from experience: doing real tasks, comparing the cases, and generalizing what holds. Start with the [Bottom Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}), which describes our approach. The Engineering Knowledge Loop and [[reflective_practice]] are listed under reflection, [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}) under decisions, and the [Discovery Directions Map]({{< ref "ai/product/discovery/discovery-directions-and-recall-audit" >}}) under discovery. The approach uses grounded theory and Sandbox-First Capability Discovery as methods; the AI Project Foundation and the Engineering Knowledge Loop are earlier notes on the same idea.
 
 - [Bottom-Up Approach to Building Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}): real tasks of a few task types, a minimal starting setup, case records, comparison across cases, and added structure that has to prove its value.
 - [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}}): recurring kinds of tasks in engineering work, whoever does them, grouped by what they start from and produce, with views, delegation profiles, and measures for each type.
@@ -157,7 +157,7 @@ These notes cover building workflows from experience: doing real tasks, comparin
 - [Working Ideas: Workflow Evolution and Autonomy]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}): starting deterministic and adding the LLM, or starting with the LLM and adding structure after observing its behavior.
 - [A Practical Way to Study Coding-Agent Improvements]({{< ref "ai-engineering/agents/evaluation/coding-agent-experimentation-primer" >}}): choosing a study method for a coding-agent question, with grounded theory among the methods.
 - Grounded Theory in AI Failure Analysis: failure analysis as an adaptation of grounded theory, with sampling and saturation problems.
-- [Failure Understanding in AI Evaluation]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}): comparing incidents to build failure categories and turn them into criteria.
+- [Failure Understanding in AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v2/failure-understanding" >}}): comparing incidents to build failure categories and turn them into criteria.
 - Grounded theory sources: Glaser and Strauss, Charmaz, Birks and Mills, and a grounded theory study of software testing.
 
 ## Agent environment and AGENTS.md
@@ -191,10 +191,10 @@ These notes cover building workflows from experience: doing real tasks, comparin
 - [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}): the six general activities, what each one produces and needs, the problem-solving cycle inside each, which activities each phase uses most, and a template for a project's version of an activity.
 - [Task Types in Engineering Work]({{< ref "ai-engineering/agents/sdlc/task-types" >}}): recurring kinds of tasks, also listed under bottom-up learning.
 - [Features of a Good Approach to Engineering Work]({{< ref "ai-engineering/agents/sdlc/approach" >}}): ten practices for reasoning and deciding in any step, even when working alone, grouped by the four parts of the problem-solving cycle.
-- [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}): how problem solving and learning repeat at different scales--from one step inside an activity to task workflows, project phases, environment upkeep, and revising the working model.
-- [Participants and Substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}): people, agents, and checks described by four responsibilities, capability, authority, and accountability, and the five substrate layers they work in.
+- [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}): how problem solving and learning repeat at different scales -- from one step inside an activity to task workflows, project phases, environment upkeep, and revising the working model.
+- [Participants And Substrates]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}): people, agents, and checks described by four responsibilities, capability, authority, and accountability, and the five substrate layers they work in.
 - [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}}): how multi-participant work differs from solo reasoning, the features of participants and the work that make the goals hard, and ten coordination processes grouped by job.
 - [Bottom-Up Approach to Building Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}): also listed under bottom-up learning.
 - [Testing and Revising the Working Model]({{< ref "ai-engineering/agents/sdlc/model-revision-loop" >}}): a loop that applies the concepts of these notes on real tasks, reflects on whether they helped, and revises them.
 - [Independent Verification Workflows for Coding Agents]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}): also listed under review and verification.
-- [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}): change history of the working model, from goals and workflows through customization, environments, task types, and problems (the earlier blueprint is archived in SDLC Workflows Handoff).
+- [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}): change history of the working model, from goals and workflows through customization, environments, task types, and problems (the earlier blueprint is archived in [[sdlc-workflows-handoff]]).

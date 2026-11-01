@@ -7,7 +7,7 @@ linkTitle: "Readme"
 # Roomote system prompts
 
 
-Copied by [`../extract.py`](/ai-engineering/agents/system-prompts/roomote/readme.assets/extract.py) from <https://github.com/RooCodeInc/Roomote>, commit `6c8d4c3f0d` (2026-11-13). The prompts live in `packages/cloud-agents/src/`.
+Copied by [`../extract.py`](/ai-engineering/agents/system-prompts/roomote/readme.assets/extract.py) from [RooCodeInc/Roomote on GitHub](https://github.com/RooCodeInc/Roomote), commit `6c8d4c3f0d` (2026-11-13). The prompts live in `packages/cloud-agents/src/`.
 
 ## Source and license
 
@@ -34,15 +34,15 @@ Roomote runs its tasks inside a coding harness such as OpenCode. Its own prompt 
 
 | File | Use |
 | --- | --- |
-| [system-direct-user.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/system-direct-user" >}}) | a task working directly with a user |
-| [system-orchestrator.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/system-orchestrator" >}}) | a task delegated by an orchestrator, which gets the report |
-| [private-session-task.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/private-session-task" >}}) | added for private sessions |
-| [compact.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/compact" >}}) | prompt for compacting the context when a task resumes |
-| [multi-agent.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/multi-agent" >}}) | section about starting other agents during a task |
-| [subagent-explore.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-explore" >}}) | read-only code search subagent; `<jevgrep skill path>` stands in for a path filled at run time |
-| [subagent-proof-judge.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-proof-judge" >}}) | subagent in the sandbox that checks the screenshots of visual proof |
-| [subagent-judge-fast.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-judge-fast" >}}) | review subagent of the Fast agent, which has no workspace |
-| [subagent-advisor-fast.md]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-advisor-fast" >}}) | advisor subagent of the Fast agent |
+| [System Direct User]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/system-direct-user" >}}) | a task working directly with a user |
+| [System Orchestrator]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/system-orchestrator" >}}) | a task delegated by an orchestrator, which gets the report |
+| [Private Session Task]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/private-session-task" >}}) | added for private sessions |
+| [Compact]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/compact" >}}) | prompt for compacting the context when a task resumes |
+| [Multi Agent]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/multi-agent" >}}) | section about starting other agents during a task |
+| [Subagent Explore]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-explore" >}}) | read-only code search subagent; `<jevgrep skill path>` stands in for a path filled at run time |
+| [Subagent Proof Judge]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-proof-judge" >}}) | subagent in the sandbox that checks the screenshots of visual proof |
+| [Subagent Judge Fast]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-judge-fast" >}}) | review subagent of the Fast agent, which has no workspace |
+| [Subagent Advisor Fast]({{< ref "ai-engineering/agents/system-prompts/roomote/prompts/subagent-advisor-fast" >}}) | advisor subagent of the Fast agent |
 
 The advisor also has a sandbox version, which differs from the Fast version in one paragraph. It was not copied.
 

@@ -80,7 +80,7 @@ A separate review session gives the implementation another look, but may still s
 ## Current examples and experiments
 
 
-The [Review Tools and Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}) contains concrete examples of these roles, including existing skills, wrappers, and experimental workflows. It can grow as other implementations are developed or evaluated.
+The [Review Tools And Skills Catalog]({{< ref "engineering/engineering-review-framework/review-tools-and-skills-catalog" >}}) contains concrete examples of these roles, including existing skills, wrappers, and experimental workflows. It can grow as other implementations are developed or evaluated.
 
 The current agent-harness investigation explores separate agents with scoped context for design, verification, and review. It is unfinished. Its mechanisms and proposed uses are examples to investigate; adopting the framework does not depend on completing that project.
 
@@ -101,4 +101,4 @@ External references checked on 2026-04-20. Local tool and skill sources are link
 ## Related documents
 
 
-[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Software Engineering Principles]({{< ref "engineering/engineering-review-framework/software-engineering-principles" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [Testing, CI, and PR Review Guide]({{< ref "engineering/engineering-review-framework/testing-ci-and-pr-review-guide" >}}) · [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}})
+[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}) · [Review Reference Lists]({{< ref "engineering/engineering-review-framework/review-reference-lists" >}}) · [Software Engineering Principles]({{< ref "engineering/engineering-review-framework/software-engineering-principles" >}}) · [Technical Review Guide]({{< ref "engineering/engineering-review-framework/technical-review-guide" >}}) · [Testing, CI, and PR Review Guide]({{< ref "engineering/engineering-review-framework/testing-ci-and-pr-review-guide" >}}) · [Llm Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}})

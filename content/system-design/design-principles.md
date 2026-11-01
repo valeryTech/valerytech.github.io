@@ -28,7 +28,7 @@ An MVP or proof of concept can help test assumptions about requirements and cons
 
 For each important flow, show who calls whom, what information crosses the boundary, and which component owns the state. These questions connect the diagram to behavior.
 
-Microservices bring particular questions about inter-process communication, state ownership, consistency across services, independent deployment, and distributed tracing. Use these questions to examine a service boundary before adding it to a design. Each has a hub: [boundaries]({{< ref "system-design/elements/boundaries" >}}), [communication]({{< ref "system-design/elements/communication" >}}), [data across services]({{< ref "system-design/elements/data-across-services" >}}), and [operating services]({{< ref "system-design/elements/operating-services" >}}).
+Microservices bring particular questions about inter-process communication, state ownership, consistency across services, independent deployment, and distributed tracing. Use these questions to examine a service boundary before adding it to a design. Each has a hub: [Boundaries]({{< ref "system-design/elements/boundaries" >}}), [Communication]({{< ref "system-design/elements/communication" >}}), [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}), and [Operating Services]({{< ref "system-design/elements/operating-services" >}}).
 
 Modularity concerns what can change independently as well as how the system is divided. See [The Golden Age of Modularity](https://vladikk.com/2025/03/30/golden-age-of-modularity/).
 
@@ -37,13 +37,13 @@ Modularity concerns what can change independently as well as how the system is d
 
 Name the problem, the constraints, the plausible alternatives, and the consequence of each choice. Select an approach and state what evidence or change in requirements would make you revisit it.
 
-Use the [problem-solving checklist]({{< ref "system-design/problem-solving-checklist" >}}) alongside any of the [interview frameworks]({{< ref "system-design/interview/frameworks" >}}). Keep a practical toolbox and use short questions or flash cards to recall it during design work.
+Use the [Problem Solving Checklist]({{< ref "system-design/problem-solving-checklist" >}}) alongside any of the [interview frameworks]({{< ref "system-design/interview/frameworks" >}}). Keep a practical toolbox and use short questions or flash cards to recall it during design work.
 
 ## Models and further reading
 
 
 - **Architecture views:** [C4 model](https://c4model.com/) and the [Zachman framework](https://en.wikipedia.org/wiki/Zachman_Framework); the original notes also mention TOGAF.
-- **Distributed-system topics to study:** consistency models, the CAP theorem, and the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem). Follow the [pattern map]({{< ref "system-design/elements/pattern-map" >}}) for related topics.
+- **Distributed-system topics to study:** consistency models, the CAP theorem, and the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem). Follow the [Pattern Map]({{< ref "system-design/elements/pattern-map" >}}) for related topics.
 - **Architecture writers:** [Ruth Malan](https://www.ruthmalan.com/), Vlad Khononov's "Balancing," [Diana Montalion](https://www.youtube.com/watch?v=m7cWdYVAzX0), and [Christian Posta](https://blog.christianposta.com/).
 - **Operational and cost perspectives:** [The Frugal Architect](https://thefrugalarchitect.com/) and the [AWS Architecture Center](https://aws.amazon.com/architecture).
 - **Engineering case studies:** Netflix's [distributed counter](https://netflixtechblog.com/netflixs-distributed-counter-abstraction-8d0c45eb66b2), [data gateway](https://netflixtechblog.medium.com/data-gateway-a-platform-for-growing-and-protecting-the-data-tier-f1ed8db8f5c6), and [adaptive concurrency limits](https://medium.com/@NetflixTechBlog/performance-under-load-3e6fa9a60581).

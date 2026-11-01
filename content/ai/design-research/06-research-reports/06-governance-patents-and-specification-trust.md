@@ -13,15 +13,15 @@ The patent landscape confirms that companies are already claiming parts of LLM-d
 
 | Patent family / publication | Relevant subject | Relationship to this programme |
 |---|---|---|
-| [Citibank -- US20250348707A1 / US12536406B2](https://patents.google.com/patent/US20250348707A1/en) | Dynamic AI-agent orchestration using an LLM gateway/router; routing based on context, constraints and runtime factors | Adjacent to dynamic physical-plan/agent routing and orchestration; reported priority 11 Apr 2024 and grant in Jan 2026. [43](#ref-43) |
-| [JPMorgan -- US12061970B1](https://patents.google.com/patent/US12061970B1/en) | LLM-driven orchestration of task-specific ML agents, including checking/verification arrangements | Adjacent to planner/orchestrator and specialist-agent execution. [44](#ref-44) |
-| [JPMorgan -- US12399691B2](https://patents.google.com/patent/US12399691B2/en) | Automatic workflow generation by LLMs, executable workflow/API structure and modification based on feedback | Particularly relevant to LLM-generated and interactively modified agent programs. [45](#ref-45) |
-| [US20240289545A1](https://patents.google.com/patent/US20240289545A1/en) | Hierarchical plan generation/execution, working memory and dynamic control flow for LLM systems | Adjacent to program synthesis and dynamic plans. [46](#ref-46) |
-| [Citibank -- US12111754B1](https://patents.google.com/patent/US12111754B1/en) | Dynamic validation of AI applications against compliance requirements | Adjacent to compiled/runtime compliance checking. [47](#ref-47) |
+| [Citibank -- US20250348707A1 / US12536406B2](https://patents.google.com/patent/US20250348707A1/en) | Dynamic AI-agent orchestration using an LLM gateway/router; routing based on context, constraints and runtime factors | Adjacent to dynamic physical-plan/agent routing and orchestration; reported priority 11 Apr 2024 and grant in Jan 2026. ([Citibank: orchestration patents](#citibank-orchestration-patents)) |
+| [JPMorgan -- US12061970B1](https://patents.google.com/patent/US12061970B1/en) | LLM-driven orchestration of task-specific ML agents, including checking/verification arrangements | Adjacent to planner/orchestrator and specialist-agent execution. ([JPMorgan Chase: orchestration patent](#jpmorgan-orchestration-patent)) |
+| [JPMorgan -- US12399691B2](https://patents.google.com/patent/US12399691B2/en) | Automatic workflow generation by LLMs, executable workflow/API structure and modification based on feedback | Particularly relevant to LLM-generated and interactively modified agent programs. ([JPMorgan Chase: workflow generation patent](#jpmorgan-workflow-patent)) |
+| [US20240289545A1](https://patents.google.com/patent/US20240289545A1/en) | Hierarchical plan generation/execution, working memory and dynamic control flow for LLM systems | Adjacent to program synthesis and dynamic plans. ([US20240289545A1](#patent-us20240289545a1)) |
+| [Citibank -- US12111754B1](https://patents.google.com/patent/US12111754B1/en) | Dynamic validation of AI applications against compliance requirements | Adjacent to compiled/runtime compliance checking. ([Citibank: compliance validation patent](#citibank-compliance-patent)) |
 
 The proper conclusion from these results is modest: **there are active claim areas near workflow synthesis, orchestration, routing and automated compliance validation**. A commercial product should have patent counsel compare the actual independent claims against the eventual architecture. A paper or open-source release does not retroactively neutralise earlier patent filings, although public disclosure can of course become prior art against later claims.
 
-On regulation, the architecture is directionally aligned with several requirements regulators increasingly care about. The EU AI Act entered into force on 1 August 2024, with much of the Regulation becoming applicable on 2 August 2026; the Act and Commission material place substantial emphasis on risk management, technical documentation, logging, traceability, accuracy/robustness/cybersecurity and human oversight for regulated high-risk systems. [48](#ref-48), [49](#ref-49) NIST's Generative AI Profile similarly frames risk management as a lifecycle problem rather than a one-time model test. [50](#ref-50) Exact obligations depend on role, use case and jurisdiction, so the runtime should make regulatory policies configurable rather than hard-code one legal interpretation.
+On regulation, the architecture is directionally aligned with several requirements regulators increasingly care about. The EU AI Act entered into force on 1 August 2024, with much of the Regulation becoming applicable on 2 August 2026; the Act and Commission material place substantial emphasis on risk management, technical documentation, logging, traceability, accuracy/robustness/cybersecurity and human oversight for regulated high-risk systems. ([European Commission 2024](#european-commission-2024-ai-act-entry); [European Commission: Article 14](#european-commission-ai-act-article-14)) NIST's Generative AI Profile similarly frames risk management as a lifecycle problem rather than a one-time model test. ([Autio et al. 2024](#autio-2024)) Exact obligations depend on role, use case and jurisdiction, so the runtime should make regulatory policies configurable rather than hard-code one legal interpretation.
 
 A typed/durable agent runtime could make compliance evidence easier to produce:
 
@@ -40,7 +40,7 @@ whether a human intervened
 
 But inspectability creates its own privacy and security problem. A complete event log can contain prompts, customer information, source documents, credentials, model outputs and inferred sensitive information. The design therefore needs retention limits, access control, secret redaction, separation of content from tamper-evident hashes/metadata and explicit data-class effects. The fact that a trace is valuable for audit does not mean every participant should be allowed to read the trace.
 
-**Human-in-the-loop should have formal semantics.** "Human reviewed this" is weak if the human did not have the information, authority or time required to make a decision. Article 14 of the EU AI Act explicitly addresses effective human oversight and intervention mechanisms for relevant high-risk systems. [49](#ref-49) In the language, an approval could therefore be a capability-bearing value:
+**Human-in-the-loop should have formal semantics.** "Human reviewed this" is weak if the human did not have the information, authority or time required to make a decision. Article 14 of the EU AI Act explicitly addresses effective human oversight and intervention mechanisms for relevant high-risk systems. ([European Commission: Article 14](#european-commission-ai-act-article-14)) In the language, an approval could therefore be a capability-bearing value:
 
 ```text
 Approval<
@@ -59,7 +59,7 @@ There is also an ethical limit to verification:
 
 > **A program can provably comply with a bad policy.**
 
-A discriminatory rule, an incomplete safety specification or an incorrect authority hierarchy can be enforced perfectly. Formal verification establishes a relationship between implementation and specification; it does not establish that the specification is morally, legally or factually correct. This is especially important if LLMs are allowed to generate policies/specifications themselves. AutoSpec+ and SEVerA show useful neural-proposal/symbolic-check loops, but a symbolic verifier can only check the formal properties it has been given. [15](#ref-15), [5](#ref-5)
+A discriminatory rule, an incomplete safety specification or an incorrect authority hierarchy can be enforced perfectly. Formal verification establishes a relationship between implementation and specification; it does not establish that the specification is morally, legally or factually correct. This is especially important if LLMs are allowed to generate policies/specifications themselves. AutoSpec+ and SEVerA show useful neural-proposal/symbolic-check loops, but a symbolic verifier can only check the formal properties it has been given. ([Wen et al. 2026b](#wen-2026b); [Banerjee et al. 2026](#banerjee-2026))
 
 That creates a second-order research problem:
 
@@ -75,21 +75,21 @@ Those questions belong inside the broad programme, especially for self-modifying
 
 <!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 
-## Citation links added during reassembly
+## References
 
 
-The original numbered citations link to the entries below, which point to the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
+These entries are copied from the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
 
-- <a id="ref-5"></a>[Reference 5]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-5)
-- <a id="ref-15"></a>[Reference 15]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-15)
-- <a id="ref-43"></a>[Reference 43]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-43)
-- <a id="ref-44"></a>[Reference 44]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-44)
-- <a id="ref-45"></a>[Reference 45]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-45)
-- <a id="ref-46"></a>[Reference 46]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-46)
-- <a id="ref-47"></a>[Reference 47]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-47)
-- <a id="ref-48"></a>[Reference 48]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-48)
-- <a id="ref-49"></a>[Reference 49]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-49)
-- <a id="ref-50"></a>[Reference 50]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-50)
+- Autio, Chloe, et al. (2024). [Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile](https://doi.org/10.6028/NIST.AI.600-1). NIST AI 600-1. doi:10.6028/NIST.AI.600-1. ^autio-2024
+- Banerjee, Debangshu, Changming Xu, and Gagandeep Singh (2026). [SEVerA: Verified Synthesis of Self-Evolving Agents](https://arxiv.org/abs/2603.25111). arXiv:2603.25111. ^banerjee-2026
+- Citibank. [US12111754B1](https://patents.google.com/patent/US12111754B1/en). U.S. patent concerning dynamic validation of AI applications against compliance requirements. ^citibank-compliance-patent
+- Citibank. [US20250348707A1](https://patents.google.com/patent/US20250348707A1/en) / [US12536406B2](https://patents.google.com/patent/US12536406B2/en). U.S. patent family concerning dynamic AI-agent orchestration. ^citibank-orchestration-patents
+- European Commission (2024). [AI Act enters into force](https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en), 1 August 2024; see also the Commission [AI Act regulatory framework](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) for the application timeline. ^european-commission-2024-ai-act-entry
+- European Commission, AI Act Service Desk. [Article 14: Human oversight](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14). Regulation (EU) 2024/1689. ^european-commission-ai-act-article-14
+- JPMorgan Chase. [US12061970B1](https://patents.google.com/patent/US12061970B1/en). U.S. patent concerning LLM-driven orchestration of task-specific machine-learning agents. ^jpmorgan-orchestration-patent
+- JPMorgan Chase. [US12399691B2](https://patents.google.com/patent/US12399691B2/en). U.S. patent concerning automatic workflow generation using large language models. ^jpmorgan-workflow-patent
+- [US20240289545A1](https://patents.google.com/patent/US20240289545A1/en). U.S. patent application concerning hierarchical plan generation/execution and dynamic control flow for LLM systems. ^patent-us20240289545a1
+- Wen, Cheng, et al. (2026b). [Formally Specifying the Intended Behavior of the Program: LLM-Driven Neuro-Symbolic Program Specification Synthesis](https://aclanthology.org/2026.acl-demo.66/). ACL 2026 System Demonstrations (AutoSpec+). ^wen-2026b
 
 ## Library sources
 

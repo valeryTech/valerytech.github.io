@@ -50,7 +50,7 @@ A related point: a system implements reuse through coupling. An organization can
 
 Trade-off analysis is not done once. A decision depends on dozens of variables (complexity, team experience, budget, team topology, schedule pressure), and small differences between situations can tip the result. Teams that tried to set one default for all cases, such as choreography for every distributed workflow, found it worked in some cases and failed badly in others.
 
-Defaults are still useful as a starting point if each one names the condition that should reopen it. See [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
+Defaults are still useful as a starting point if each one names the condition that should reopen it. See [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
 
 ### Worked example: shared library or shared service
 

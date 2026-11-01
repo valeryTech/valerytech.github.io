@@ -44,7 +44,7 @@ In conventional work, rungs 1 and 2 are usually closed before planning begins, a
 
 **Not a process.** The ladder says what kind of unknown is in the way. The [`risk model`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) says how to turn it into an assumption, a consequence, evidence, and a decision.
 
-**Not the solution utility ladder.** The [`solution utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) names what one solution must do, as progressively stronger claims (U1 to U7). This ladder names what is unknown about getting there. Any utility claim can be open at any rung: a U3 claim may be open at possibility, a U2 claim open only at feasibility.
+**Not the solution utility ladder.** The [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) names what one solution must do, as progressively stronger claims (U1 to U7). This ladder names what is unknown about getting there. Any utility claim can be open at any rung: a U3 claim may be open at possibility, a U2 claim open only at feasibility.
 
 **Not a rank of maturity.** "The project is on rung 4" is rarely true. Most undertakings are a mix: some claims closed through operation, others still open at approach.
 
@@ -223,13 +223,13 @@ The pressure is not the problem. Treating early-rung work as late-rung delivery 
 ## Relation to the other notes
 
 
-| Rung | In the [`risk model`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) | In the [`utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) and [`production commitment`]({{< ref "ai/product/operating-model/production-commitment" >}}) |
+| Rung | In the [`risk model`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) | In the [`utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) and [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}) |
 | --- | --- | --- |
 | Possibility, approach, feasibility | Feasibility dimension, as assumptions. Rungs 1 and 2 are "whether" and "how" in the risk model's definition of learning work. | Mostly enabling claims U1 to U4, one claim at a time. |
 | Operation | Production and operation area. Assumption form before the commitment; obligation form after it. | A production commitment does not close this rung. It accepts the remaining uncertainty within limits and states what will be observed. |
 | Value | Value dimension and the intended change, kept separate. | U6 and U7. |
 
-Work on an open rung is discovery. Work to meet an obligation on a closed one is delivery ([`discovery-and-delivery.md`]({{< ref "ai/product/operating-model/discovery-and-delivery" >}})). The same concern moves from one to the other when its rung closes.
+Work on an open rung is discovery. Work to meet an obligation on a closed one is delivery ([Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}})). The same concern moves from one to the other when its rung closes.
 
 The capability notes ask the same per-claim question from the other side. Their [`inference ladder`]({{< ref "ai/capabilities/00-the-inference-ladder" >}}) names what is inferred in saying a system can do something. [`Capability claims and empirical method`]({{< ref "ai/capabilities/empirical-method-map" >}}) lines up the two ladders rung by rung.
 
@@ -271,7 +271,7 @@ For a product team, possibility is relative to the models it can call. The exist
 ## Sources
 
 
-Hamel Husain on why feature roadmaps fail for AI ([source](https://hamel.dev/blog/posts/field-guide/)). Bryan Bischof's capability funnel ([`experiments-vs-features.md`]({{< ref "ai/product/product-model/experiments-vs-features" >}})), which in these notes became the [`capability funnel`]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) working note and then the [`solution utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}). Eugene Yan's time-boxed, experiment-based roadmaps, also in [`experiments-vs-features.md`]({{< ref "ai/product/product-model/experiments-vs-features" >}}). The earlier dialogue-derived draft of this note, with its longer treatment of research methods for possibility and the comparison with established frameworks, is kept as research support in [`uncertainty-ladder-sources.md`]({{< ref "ai/product/discovery/uncertainty-ladder-sources" >}}).
+Hamel Husain on why feature roadmaps fail for AI ([source](https://hamel.dev/blog/posts/field-guide/)). Bryan Bischof's capability funnel ([Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}})), which in these notes became the [Capability Funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) working note and then the [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}). Eugene Yan's time-boxed, experiment-based roadmaps, also in [Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}}). The earlier dialogue-derived draft of this note, with its longer treatment of research methods for possibility and the comparison with established frameworks, is kept as research support in [Uncertainty Ladder Sources]({{< ref "ai/product/discovery/uncertainty-ladder-sources" >}}).
 
 ## Library sources
 

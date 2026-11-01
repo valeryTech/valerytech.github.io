@@ -10,7 +10,7 @@ Representation design determines what aspects of source material become searchab
 
 A **retrieval representation** is a searchable view: a passage, normalized field, embedding, summary, generated question, table object, or relationship linked to the material it represents. Its usefulness depends on the access it enables, the information it loses or adds, and the reliability of source recovery.
 
-This is one contribution to [context-to-task alignment]({{< ref "ai-engineering/context/retrieval/model" >}}). A successful match still needs interpretation, selection, and assessment before it can support a downstream operation. The [contract note]({{< ref "ai-engineering/context/retrieval/conceptual-alignment" >}}) separates those responsibilities, and [retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}) describes how to compare candidate methods.
+This is one contribution to [context-to-task alignment]({{< ref "ai-engineering/context/retrieval/model" >}}). A successful match still needs interpretation, selection, and assessment before it can support a downstream operation. The [contract note]({{< ref "ai-engineering/context/retrieval/conceptual-alignment" >}}) separates those responsibilities, and [Retrieval Design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}) describes how to compare candidate methods.
 
 ## Start with a task family and an access problem
 

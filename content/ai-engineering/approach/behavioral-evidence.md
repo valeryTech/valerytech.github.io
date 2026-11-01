@@ -62,7 +62,7 @@ In a product investigation, inspect the relevant inputs, source material, state,
 
 In conventional software, components often expose explicit semantics:
 
-```
+```text
 validated input
 + known algorithm
 + explicit branch conditions
@@ -83,7 +83,7 @@ input
 
 Even if every surrounding component is understood, the model's contribution cannot usually be summarized as a stable, complete contract such as:
 
-```
+```text
 For every supported input satisfying P, the model will produce an output satisfying Q.
 ```
 
@@ -134,7 +134,7 @@ This includes:
 - what cost, latency, and reliability envelope is acceptable;
 - which failures require restriction, human review, or rollback.
 
-Detailed evaluation methodology--including statistical treatment, dataset governance, evaluator calibration, and monitoring design--belongs in the evaluation framework. This note establishes why behavioral evidence is necessary and how it relates to implementation assurance and operational decisions. The general case, that any claim about engineering practice needs evidence, is in [Evidence in software engineering]({{< ref "engineering/evidence" >}}).
+Detailed evaluation methodology -- including statistical treatment, dataset governance, evaluator calibration, and monitoring design -- belongs in the evaluation framework. This note establishes why behavioral evidence is necessary and how it relates to implementation assurance and operational decisions. The general case, that any claim about engineering practice needs evidence, is in [Evidence in software engineering]({{< ref "engineering/evidence" >}}).
 
 Engineering rule:
 

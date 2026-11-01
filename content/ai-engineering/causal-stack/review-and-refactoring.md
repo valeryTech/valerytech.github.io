@@ -38,11 +38,11 @@ These names are historical identifiers. The files have been removed; their usefu
 | `layer-0-alt.md` | [Language and interaction]({{< ref "ai-engineering/causal-stack/reference/language" >}}) |
 | `layer-1a-base-llm-mechanisms.md` | [Model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}}) |
 | `layer-1b-final-scheme.md` | [Claims]({{< ref "ai-engineering/causal-stack/claims" >}}) and scoped model background |
-| `layer-1c-ai-system-causal-features.md` | [Model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}}) and [checks]({{< ref "ai-engineering/causal-stack/checks" >}}) |
-| `layer-2/product-fault-families.md` | [Cases]({{< ref "ai-engineering/causal-stack/cases" >}}) and [debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}) |
+| `layer-1c-ai-system-causal-features.md` | [Model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}}) and [Checks]({{< ref "ai-engineering/causal-stack/checks" >}}) |
+| `layer-2/product-fault-families.md` | [cases]({{< ref "ai-engineering/causal-stack/cases" >}}) and [Debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}) |
 | `layer-2/failure-operators.md` | [Debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}#use-precise-descriptions) |
 | `layer-2/fault-family-index.md` | [Debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}) |
-| `layer-2/semantic-fault-family-index.md` | [Debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}) and [checks]({{< ref "ai-engineering/causal-stack/checks" >}}) |
+| `layer-2/semantic-fault-family-index.md` | [Debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}) and [Checks]({{< ref "ai-engineering/causal-stack/checks" >}}) |
 | `layer-2/evaluation-method-reference.md` | [Checks]({{< ref "ai-engineering/causal-stack/checks" >}}) |
 | `layer-3-control-families.md` | [Possible interventions]({{< ref "ai-engineering/causal-stack/reference/interventions" >}}) |
 | `layer-3-controls-and-faults.md` | [Possible interventions]({{< ref "ai-engineering/causal-stack/reference/interventions" >}}) |

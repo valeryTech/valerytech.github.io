@@ -15,18 +15,14 @@ Read the [sibling comments]({{< ref "ai/design-research/05-runtime-and-execution
 
 The preceding [configuration and instantiation discussion]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) defines the proposed resolved revision. The dialogue continues in [evaluation plans and system configuration]({{< ref "ai/design-research/05-runtime-and-execution/11-evaluation-plans-and-system-configuration" >}}). The earlier [prompt discussion]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry" >}}) retains its own publication examples.
 
-The original source overview (archived source 015) links the complete split. The audit records the original range and checksum.
+The original source overview (archived source 015) links the complete split. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) records the original range and checksum.
 
 <!-- Configuration publishing and version identity source begins below. -->
-
-<a id="user"></a>
 
 ## Author requirement or open question
 
 
 Open question: Should configurations also be stored in Git, using a GitOps-like approach?
-
-<a id="assistant"></a>
 
 ## LLM proposal
 
@@ -183,14 +179,10 @@ So the proposal is to describe the requirement as:
 
 That is essentially GitOps, but applied to an AI system definition rather than only infrastructure.
 
-<a id="user-1"></a>
-
 ## Author requirement or open question
 
 
 Author context and question: A previous single-repository setup caused problems. Would separate repositories create more coordination work?
-
-<a id="assistant-1"></a>
 
 ## LLM proposal
 
@@ -287,14 +279,10 @@ Another proposal is to avoid Git submodules for this. They tend to make the coor
 
 So: one dedicated `ai-config` monorepo is probably the simpler starting point. Split later when organizational boundaries make the split useful, while keeping the registry/version model stable.
 
-<a id="user-2"></a>
-
 ## Author requirement or open question
 
 
 Open question: How should a SUT version be selected for startup? Would a tag serve this purpose?
-
-<a id="assistant-2"></a>
 
 ## LLM proposal
 
@@ -405,14 +393,10 @@ prompts/support/refund-policy@8
 
 and each published system version resolves to one immutable built artifact.
 
-<a id="user-3"></a>
-
 ## Author requirement or open question
 
 
 Open question: How should configuration versions for several components be managed within one repository?
-
-<a id="assistant-3"></a>
 
 ## LLM proposal
 

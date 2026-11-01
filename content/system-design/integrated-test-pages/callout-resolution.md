@@ -117,6 +117,7 @@ The quotes are kept. The bold, code and wiki link show as literal text, because 
 
 {{< /callout >}}
 
+
 The import makes the line above a callout with an empty body and leaves this line below it. Obsidian shows both lines as plain text.
 
 A paragraph line directly above a callout.

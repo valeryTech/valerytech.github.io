@@ -38,7 +38,7 @@ Description: Practical Advices
 ## Course of Michail Smarchok
 
 
-- ["System Design for Interviews and Beyond"](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) course and [youtube videos](<https://www.youtube.com/@SystemDesignInterview/videos>) video serie containing examples.
+- ["System Design for Interviews and Beyond"](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) course and [youtube videos]([SystemDesignInterview YouTube channel](https://www.youtube.com/@SystemDesignInterview/videos)) video serie containing examples.
 
 "In this video-based course, we will take you on a journey to learn the *fundamental concepts* of system design. ... In addition to the knowledge and understanding of system design concepts, this course will teach you *the thought process behind system design*. We will discuss the questions you should ask yourself when designing a system and how to evaluate available options. ... "
 
@@ -69,11 +69,11 @@ from [Distributed-systems sources]({{< ref "engineering/distributed-systems/read
 
 guides
 
-<https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/>
+[Preparing for the Systems Design and Coding Interview](https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/)
 
-<https://github.com/Sairyss/system-design-patterns>
+[Sairyss/system-design-patterns on GitHub](https://github.com/Sairyss/system-design-patterns)
 
-<https://interviewing.io/guides/system-design-interview/part-four#chapter-one>
+[System Design Examples: 4 Problems & Solutions](https://interviewing.io/guides/system-design-interview/part-four#chapter-one)
 
 interview process guides
 
@@ -81,20 +81,20 @@ interview guide +
 
 interviewing.io
 
-<https://www.tryexponent.com/blog/system-design-interview-guide>
+[System design interview guide (Aced)](https://www.tryexponent.com/blog/system-design-interview-guide)
 
 ## SD Fightclub Guide
 
 
-<https://github.com/systemdesignfightclub/SDFC/tree/main>
+[systemdesignfightclub/SDFC on GitHub](https://github.com/systemdesignfightclub/SDFC/tree/main)
 
-and videos: <https://www.youtube.com/@SDFC/videos>
+and videos: [System Design Fight Club YouTube videos](https://www.youtube.com/@SDFC/videos)
 
 Stopped 1 year ago
 
-very interesting videos <https://systemdesignfightclub.com>
+very interesting videos [System Design Fight Club](https://systemdesignfightclub.com)
 
-roadmap and resource map: <https://github.com/systemdesignfightclub/SDFC?tab=readme-ov-file>
+roadmap and resource map: [systemdesignfightclub/SDFC on GitHub](https://github.com/systemdesignfightclub/SDFC?tab=readme-ov-file)
 
 map <https://camo.githubusercontent.com/c325f72420c916f47a8ca1b1df91c28b853f557722e5f7846abe1e58618b0ac3/68747470733a2f2f692e696d6775722e636f6d2f786346564a61762e706e67>
 
@@ -133,37 +133,37 @@ someone doesn't recommend
 ## FightClub
 
 
-<https://www.tryexponent.com/courses/system-design-interviews/company-engineering-blogs>
+[Company engineering blogs (Aced)](https://www.tryexponent.com/courses/system-design-interviews/company-engineering-blogs)
 
 Also there are another materials:
 
 - "Systems Design Interview Tips" by Algoexpert.
-- [System Design Patterns](<https://github.com/Sairyss/system-design-patterns>) project has interesting cirriculim with examples.
+- [System Design Patterns]([Sairyss/system-design-patterns on GitHub](https://github.com/Sairyss/system-design-patterns)) project has interesting cirriculim with examples.
 - Designgurus website has a set of SD [courses playbook](https://www.designgurus.io/path/system-design-interview-playbook).
 - Bytebytego has many useful materials
 
-king of guide <https://github.com/ashishps1/awesome-system-design-resources>
+king of guide [ashishps1/awesome-system-design-resources on GitHub](https://github.com/ashishps1/awesome-system-design-resources)
 
 no name, materials
 
-<https://www.systemdesignhandbook.com/blog/best-system-design-courses/>
+[10 Best System Design Courses to Crack the Interview (2027)](https://www.systemdesignhandbook.com/blog/best-system-design-courses/)
 
-<https://www.systemdesignhandbook.com>
+[System Design Handbook](https://www.systemdesignhandbook.com)
 
 ## Other (2)
 
 
-<https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2>
+[Facebook system design interview: 4 must-watched videos (mlengineer.io)](https://mlengineer.io/facebook-system-design-interview-4-must-watched-videos-212e07d4fbc2)
 
-Scaling Instagram Infrastructure - <https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s>
+[Scaling Instagram Infrastructure](https://www.youtube.com/watch?v=hnpzNAPiC0E&t=669s)
 
-Scaling Facebook Live Videos to a Billion Users - <https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s>
+[Scaling Facebook Live Videos to a Billion Users](https://www.youtube.com/watch?v=IO4teCbHvZw&t=1692s)
 
-Building Real Time Infrastructure at Facebook - Facebook - SRECon2017 - <https://www.youtube.com/watch?v=ODkEWsO5I30>
+[Building Real Time Infrastructure at Facebook - Facebook - SRECon2017](https://www.youtube.com/watch?v=ODkEWsO5I30)
 
-USENIX ATC '13 - TAO: Facebook's Distributed Data Store for the Social Graph - <https://www.youtube.com/watch?v=sNIvHttFjdI>
+USENIX ATC '13 - [TAO: Facebook's Distributed Data Store for the Social Graph](https://www.youtube.com/watch?v=sNIvHttFjdI)
 
-<https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html>
+[Hints for Distributed Systems Design](https://muratbuffalo.blogspot.com/2023/10/hints-for-distributed-systems-design.html)
 
 # useful_videos
 
@@ -176,31 +176,31 @@ common overview
 
 channels with useful videos:
 
-<https://www.youtube.com/@hello_interview> staff engineer
+[Hello Interview YouTube channel](https://www.youtube.com/@hello_interview) staff engineer
 
-<https://www.youtube.com/@irtizahafiz>
+[irtizahafiz YouTube channel](https://www.youtube.com/@irtizahafiz)
 
-<https://www.youtube.com/@interviewpen> ??
+[interviewpen YouTube channel](https://www.youtube.com/@interviewpen) ??
 
-<https://www.youtube.com/@ByteByteGo>
+[ByteByteGo YouTube channel](https://www.youtube.com/@ByteByteGo)
 
 # Tecnical and Company Blogs
 
 # Papers
 
 
-<https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/>
+[Kafka Streams for Confluent Platform](https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/)
 
-<https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be>
+[System Design Interview: All or None, Ordered Peer-to-Peer Broadcast](https://levelup.gitconnected.com/system-design-interview-all-or-none-ordered-peer-to-peer-broadcast-45b33fb2f6be)
 
-sla, slo and other: <https://sre.google/sre-book/service-level-objectives/>
+sla, slo and other: [Google SRE book chapter on service level objectives](https://sre.google/sre-book/service-level-objectives/)
 
 papers:
 
-- Amazon - Dynamo paper
-- Google - Map-reduce paper
-- Google - GFS paper
-- Facebook - TAO paper
+- Amazon -- Dynamo paper
+- Google -- Map-reduce paper
+- Google -- GFS paper
+- Facebook -- TAO paper
 - Jeff Dean's talk at Stanford: /watch?v=modXC5IWTJI
 - Building Billion user Load Balancer at Facebook: /watch?v=bxhYNfFeVF4
 - Netflix Guide to Microservices: /watch?v=CZ3wIuvmHeM

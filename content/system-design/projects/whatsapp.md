@@ -8,4 +8,4 @@ linkTitle: "WhatsApp"
 
 Design prompt queued; no design recorded yet.
 
-Use the [case template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).
+Use the [Case Template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).

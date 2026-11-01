@@ -8,8 +8,6 @@ linkTitle: "Computationalism"
 
 The question is whether intelligence, cognition, and related properties can be understood as manifestations of computation, or as computations themselves.
 
-<a id="xx"></a>
-
 ## Computationalism and related positions
 
 
@@ -57,8 +55,6 @@ There is a major unresolved problem here: **what makes a physical process genuin
 If the proposed idea is roughly **"intelligence, cognition, personality, perception, perhaps consciousness are higher-level manifestations of an underlying process of state transformation/calculation"**, the recommended starting points are **computationalism**, **computational functionalism**, and **pancomputationalism**. For the still stronger idea that _everything ultimately consists of computation_, **digital physics / computational ontology** is the closer term.
 
 Consciousness is the difficult boundary case: there are computational theories of consciousness, but the claim that computation by itself is sufficient for subjective experience is much more disputed than the claim that perception, reasoning, learning, or memory are computational.
-
-<a id="curriculum"></a>
 
 ## Proposed curriculum
 

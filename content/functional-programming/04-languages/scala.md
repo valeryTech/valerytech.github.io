@@ -29,9 +29,9 @@ Two common confusions, both found in job descriptions such as "Framework: ZIO, C
 ### Effect libraries
 
 
-The `IO` libraries are Cats Effect `IO`, ZIO and Monix. Monix provides `Task` (an effect type) and `Observable` (reactive streams). Its `Task` predates Cats Effect 3 and was one of the main effect types in the Cats Effect 2 era. Monix has not kept pace since Cats Effect 3 appeared, so new code usually chooses Cats Effect `IO` or ZIO; check the project's current status before adopting it. See [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
+The `IO` libraries are Cats Effect `IO`, ZIO and Monix. Monix provides `Task` (an effect type) and `Observable` (reactive streams). Its `Task` predates Cats Effect 3 and was one of the main effect types in the Cats Effect 2 era. Monix has not kept pace since Cats Effect 3 appeared, so new code usually chooses Cats Effect `IO` or ZIO; check the project's current status before adopting it. See [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
 
-- Ziverge, "ZIO in 2025": <https://www.ziverge.com/post/zio-in-2025>
+- Ziverge, "[ZIO in 2025](https://www.ziverge.com/post/zio-in-2025)"
 
 ### Other common libraries
 
@@ -331,7 +331,7 @@ yield "" + c + n + "-" + color
 ### Maps
 
 
-> You can control the properties of the maps you use in your program in a more fine-grained way - you could specify a particular implementation, or provide a default value for the map, or you could override any other method of the map you create.
+> You can control the properties of the maps you use in your program in a more fine-grained way -- you could specify a particular implementation, or provide a default value for the map, or you could override any other method of the map you create.
 >
 > *Programming in Scala*, on associative maps
 
@@ -437,8 +437,8 @@ object App extends UserService with UserRepo:
 
 Unlike `extends`, `UserService` doesn't become a subtype of `UserRepo`. Self-types are the basis of the "cake pattern" for dependency injection, which most Scala teams have since abandoned as heavy and hard to follow. Constructor parameters do the same job more plainly (see [Dependency injection](#dependency-injection)).
 
-- Yadu Krishnan, "Self type in Scala": <https://yadukrishnan.live/self-type-in-scala>
-- Rock the JVM, self-types: <https://blog.rockthejvm.com/self-types/>
+- Yadu Krishnan, "[Self type in Scala](https://yadukrishnan.live/self-type-in-scala)"
+- Rock the JVM, self-types: [Self-types (Rock the JVM)](https://blog.rockthejvm.com/self-types/)
 
 ## Abstract members
 
@@ -557,7 +557,7 @@ shout"hello $name" // "HELLO ANN"
 
 In Scala 2 the same is an `implicit class` wrapping `StringContext`, with `sc.s(args: _*)`.
 
-- Rock the JVM, how to create your own string interpolator: <https://blog.rockthejvm.com/how-to-create-your-own-string-interpolator/>
+- Rock the JVM, how to create your own string interpolator: [How to create your own string interpolator (Rock the JVM)](https://blog.rockthejvm.com/how-to-create-your-own-string-interpolator/)
 
 ## Encapsulation
 
@@ -592,7 +592,7 @@ object Counter:
 ```
 
 
-Creating a `Ref` is itself an effect, so `make` returns `IO[Counter]`, and each run of `make` creates a new counter. See [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}).
+Creating a `Ref` is itself an effect, so `make` returns `IO[Counter]`, and each run of `make` creates a new counter. See [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}).
 
 ### Exports
 
@@ -619,8 +619,8 @@ Scala 3 splits Scala 2's single `implicit` keyword by purpose:
 
 Material written for Scala 2 maps onto these one by one.
 
-- Li Haoyi, "Implicit design patterns in Scala": <https://www.lihaoyi.com/post/ImplicitDesignPatternsinScala.html>
-- An implicit in use, boolean operators for `Option`s (Coderwall): <https://coderwall.com/p/6lwybw/boolean-operators-for-options>
+- Li Haoyi, "[Implicit design patterns in Scala](https://www.lihaoyi.com/post/ImplicitDesignPatternsinScala.html)"
+- An implicit in use, boolean operators for `Option`s (Coderwall): [Boolean operators for Options (Coderwall)](https://coderwall.com/p/6lwybw/boolean-operators-for-options)
 
 ### Implicit classes and extension methods
 
@@ -661,7 +661,7 @@ The main options in Scala, from plainest to most structured:
 2. The cake pattern with self-types (see [Self-types](#self-types)).
 3. The Reader monad (see [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader)) or context parameters (`using`).
 4. The effect libraries' own mechanisms, such as ZIO's `ZLayer` or Cats Effect `Resource`s composed in `main`.
-- Dependency injection in Scala, a guide: <http://di-in-scala.github.io/>
+- Dependency injection in Scala, a guide: [Dependency Injection in Scala using MacWire](http://di-in-scala.github.io/)
 
 ## Types
 
@@ -670,17 +670,17 @@ The main options in Scala, from plainest to most structured:
 
   > If a type contains type parameters, we say that it is a parameterised type, or a polymorphic type. If a function or value's type contains type parameters, we call it polymorphic.
   >
-  > *Real World Haskell*, "Types and functions" (near the end): <https://book.realworldhaskell.org/read/types-and-functions.html>
+  > *Real World Haskell*, "Types and functions" (near the end): [Real World Haskell: Types and functions](https://book.realworldhaskell.org/read/types-and-functions.html)
 
 - **Type constructors and higher-kinded types.** `List` is a type constructor: given a type `Int` it produces the type `List[Int]`. A higher-kinded type abstracts over type constructors, as in `trait Functor[F[_]]`. See [Higher-kinded types]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#higher-kinded-types).
-- **Structural subtyping and path-dependent types**: see [Nominal and structural subtyping]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping) and [Path-dependent types]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#path-dependent-types). The rest of the type system is in [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}).
+- **Structural subtyping and path-dependent types**: see [Nominal and structural subtyping]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping) and [Path-dependent types]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#path-dependent-types). The rest of the type system is in [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}).
 - **Newtypes and refinement types**: value classes and opaque types are in [Primitive obsession and the newtype pattern]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#primitive-obsession-and-the-newtype-pattern); refinement types and Iron in [Scala's terminology trap]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types-by-language" >}}#scalas-terminology-trap).
 
 Links on types:
 
-- Stack Overflow, "What is type and what is type constructor in Scala": <https://stackoverflow.com/questions/45300288/what-is-type-and-what-is-type-constructor-in-scala>
-- Rock the JVM, Scala types and kinds: <https://blog.rockthejvm.com/scala-types-kinds/>
-- Typelevel blog, "More types than classes" (types vs classes): <https://typelevel.org/blog/2017/02/13/more-types-than-classes.html>
+- Stack Overflow, "[What is type and what is type constructor in Scala](https://stackoverflow.com/questions/45300288/what-is-type-and-what-is-type-constructor-in-scala)"
+- Rock the JVM, Scala types and kinds: [Scala types and kinds (Rock the JVM)](https://blog.rockthejvm.com/scala-types-kinds/)
+- Typelevel blog, "More types than classes" (types vs classes): [More types than classes (Typelevel blog)](https://typelevel.org/blog/2017/02/13/more-types-than-classes.html)
 
 ## Functions and functional abstractions
 
@@ -694,7 +694,7 @@ Eta-expansion turns a method into a function value: given `def inc(x: Int) = x +
 
 Partial functions are a different thing from partial application. A partially applied function fixes some arguments: `val add5 = add(5, _)`. A `PartialFunction[A, B]` is defined only for some inputs, is written as a `{ case ... }` literal, and is what `collect` takes. Currying and partial application are in [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application).
 
-- Alvin Alexander, *Functional Programming, Simplified*, how to write functions with multiple parameter groups: <https://alvinalexander.com/scala/fp-book/how-to-write-functions-multiple-parameter-groups/>
+- Alvin Alexander, *Functional Programming, Simplified*, how to write functions with multiple parameter groups: [How to write and use Scala functions that have multiple parameter groups](https://alvinalexander.com/scala/fp-book/how-to-write-functions-multiple-parameter-groups/)
 
 ### Call-by-name
 
@@ -738,7 +738,7 @@ Scala material on these topics lives in the concept notes:
 - Copy-and-return style and persistent data structures: [Immutability and functional methods]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#immutability-and-functional-methods)
 - Partially applied functions and closures: [Lambdas, closures and scope]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#lambdas-closures-and-scope) and [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application)
 - Custom control structures (the loan pattern): [Custom control structures]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#custom-control-structures)
-- Lazy evaluation and call-by-name: [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})
+- Lazy evaluation and call-by-name: [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})
 - Functional combinators: [Functional combinators]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#functional-combinators)
 - `Option`: [Option]({{< ref "functional-programming/02-abstractions/monads" >}}#option)
 
@@ -750,65 +750,65 @@ Scala material on these topics lives in the concept notes:
 - *Functional Programming in Scala* (2nd edition, Pilquist et al. 2023) is the core exercise-driven course on functional programming in Scala 3, building functional data structures, combinator libraries, type classes (`Monoid`, `Functor`, `Applicative`, `Monad`, `Traverse`), `IO` and pull-based streams from scratch ([PDF](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin)).
 - *Grokking Functional Programming* (Płachta 2022) teaches functional programming in Scala 3; the comprehension and parsing passages above come from it (PDF).
 - *Creative Scala*, a free book by Dave Gurnell and Noel Welsh, teaches Scala and functional programming through drawing pictures with the Doodle library. The same authors wrote *Scala with Cats* (see Library sources).
-  - <https://www.creativescala.org/>
-  - Its parser case study: <https://www.creativescala.org/case-study-parser/>
+	- [Creative Scala](https://www.creativescala.org/)
+	- Its parser case study: [Case Study: Parsing (Creative Scala)](https://www.creativescala.org/case-study-parser/)
 - Alvin Alexander's articles and books: the *Scala Cookbook* (in the library) and *Functional Programming, Simplified*, whose online version is the alvinalexander.com fp-book link above.
 
 ### Exercises and example code
 
 
-- S-99, "Ninety-Nine Scala Problems", Phil Gold's Scala adaptation of the Prolog problem set P-99: list, arithmetic, logic, tree and graph exercises. The solutions on the site are written in old Scala 2 style. <https://aperiodic.net/phil/scala/s-99/>
-- John De Goes, LambdaConf 2014 intro game: <https://github.com/jdegoes/lambdaconf-2014-introgame>
-- absent1706/saga-framework: <https://github.com/absent1706/saga-framework>
-- scala-pet-store, an example application: <https://github.com/pauljamescleary/scala-pet-store>
+- S-99, "Ninety-Nine Scala Problems", Phil Gold's Scala adaptation of the Prolog problem set P-99: list, arithmetic, logic, tree and graph exercises. The solutions on the site are written in old Scala 2 style. [S-99: Ninety-Nine Scala Problems](https://aperiodic.net/phil/scala/s-99/)
+- John De Goes, LambdaConf 2014 intro game: [LambdaConf 2014 intro game (jdegoes)](https://github.com/jdegoes/lambdaconf-2014-introgame)
+- [absent1706/saga-framework](https://github.com/absent1706/saga-framework)
+- scala-pet-store, an example application: [pauljamescleary/scala-pet-store on GitHub](https://github.com/pauljamescleary/scala-pet-store)
 
-More exercises and project ideas are in [Exercises and projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}).
+More exercises and project ideas are in [Exercises And Projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}).
 
 ### Articles and discussions
 
 
-- John De Goes's articles: <https://degoes.net/articles/>
-- Reddit r/haskell, "What about Scala 3?": <https://www.reddit.com/r/haskell/comments/wp4h72/what_about_scala_3/>
-- Video for a guide to the most common Scala topics (see Open tasks): <https://www.youtube.com/watch?v=1uw1Qb1wrNk>
+- John De Goes's articles: [John De Goes's articles](https://degoes.net/articles/)
+- Reddit r/haskell, "[What about Scala 3?](https://www.reddit.com/r/haskell/comments/wp4h72/what_about_scala_3/)"
+- Video for a guide to the most common Scala topics (see Open tasks): [Guide to the most common Scala topics (video)](https://www.youtube.com/watch?v=1uw1Qb1wrNk)
 
 ## Design, architecture and talks
 
 ### Vanilla Scala
 
 
-- Functional World #9, "Breaking framework chains with vanilla Scala": <https://www.youtube.com/watch?v=U67BAeH3cxo>
+- Functional World #9, "[Breaking framework chains with vanilla Scala](https://www.youtube.com/watch?v=U67BAeH3cxo)"
 
 ### Design and modelling
 
 
-The three docs.scala-lang.org links are chapters of the official Scala 3 Book and the shortest starting point for modelling with case classes, enums and ADTs in Scala 3. See also [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
+The three docs.scala-lang.org links are chapters of the official Scala 3 Book and the shortest starting point for modelling with case classes, enums and ADTs in Scala 3. See also [Algebraic Data Types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
 
-- Scala 3 Book, FP domain modelling: <https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html>
-- Scala 3 Book, ADTs and GADTs: <https://docs.scala-lang.org/scala3/book/types-adts-gadts.html>
-- Scala 3 Book, domain modelling tools: <https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html>
-- Thoughtworks, "Domain-driven design in functional programming": <https://www.thoughtworks.com/en-cn/insights/blog/architecture/domain-driven-design-in-functional-programming>
-- Rock the JVM, algebraic data types: <https://blog.rockthejvm.com/algebraic-data-types/>
-- BigPanda Engineering, "Refactoring to functional patterns in Scala": <https://medium.com/bigpanda-engineering/refactoring-to-functional-patterns-in-scala-bf81e7abfe77>
-- InfoQ presentation, "Type Functional Design": <https://www.infoq.com/presentations/Type-Functional-Design/#.WgQgsvnDY9Q>
-- SoftwareMill, "Principles of developing applications in Scala", on how to move a project to FP: <https://softwaremill.com/principles-of-developing-applications-in-scala/>
+- Scala 3 Book, FP domain modelling: [FP domain modelling (Scala 3 Book)](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html)
+- Scala 3 Book, ADTs and GADTs: [ADTs and GADTs (Scala 3 Book)](https://docs.scala-lang.org/scala3/book/types-adts-gadts.html)
+- Scala 3 Book, domain modelling tools: [Domain modelling tools (Scala 3 Book)](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html)
+- Thoughtworks, "[Domain-driven design in functional programming](https://www.thoughtworks.com/en-cn/insights/blog/architecture/domain-driven-design-in-functional-programming)"
+- Rock the JVM, algebraic data types: [Algebraic data types (Rock the JVM)](https://blog.rockthejvm.com/algebraic-data-types/)
+- BigPanda Engineering, "[Refactoring to functional patterns in Scala](https://medium.com/bigpanda-engineering/refactoring-to-functional-patterns-in-scala-bf81e7abfe77)"
+- InfoQ presentation, "[Type Functional Design](https://www.infoq.com/presentations/Type-Functional-Design/#.WgQgsvnDY9Q)"
+- SoftwareMill, "Principles of developing applications in Scala", on how to move a project to FP: [Principles of developing applications in Scala (SoftwareMill)](https://softwaremill.com/principles-of-developing-applications-in-scala/)
 - *Functional and Reactive Domain Modeling* (Ghosh 2017) builds domain models in Scala with algebraic data types, type classes and reactive techniques: [PDF](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin).
 - Videos listed with design and modelling, topics not checked:
-  - <https://www.youtube.com/watch?v=2JB1_e5wZmU>
-  - <https://www.youtube.com/watch?v=yan1YOXvAUM>
-  - <https://www.youtube.com/watch?v=b3qUNnJYXb4>
-  - <https://www.youtube.com/watch?v=6GA9cXgidBs>
-  - <https://www.youtube.com/watch?v=WZBuelv_cxQ>
-  - <https://www.youtube.com/watch?v=-qf8yteuxPs>
+	- <https://www.youtube.com/watch?v=2JB1_e5wZmU>
+	- <https://www.youtube.com/watch?v=yan1YOXvAUM>
+	- <https://www.youtube.com/watch?v=b3qUNnJYXb4>
+	- <https://www.youtube.com/watch?v=6GA9cXgidBs>
+	- <https://www.youtube.com/watch?v=WZBuelv_cxQ>
+	- <https://www.youtube.com/watch?v=-qf8yteuxPs>
 
 ### Twitter's server stack
 
 
 Twitter's server stack (Finagle, Finatra, twitter-server, util) is built on Twitter's own `com.twitter.util.Future`, not Scala's `Future` or an effect system. Check that it is still maintained before studying it as a model.
 
-- twitter-server: <https://github.com/twitter/twitter-server>
-- Finatra: <https://github.com/twitter/finatra>
-- util: <https://github.com/twitter/util>
-- iago2: <https://github.com/twitter/iago2>
+- [twitter-server](https://github.com/twitter/twitter-server)
+- [Finatra](https://github.com/twitter/finatra)
+- util: [twitter/util on GitHub](https://github.com/twitter/util)
+- [iago2](https://github.com/twitter/iago2)
 
 ## Sources
 
@@ -816,34 +816,34 @@ Twitter's server stack (Finagle, Finatra, twitter-server, util) is built on Twit
 
 
 - Rock the JVM (Daniel Ciocîrlan), whose blog and YouTube channel are behind many links in this note:
-  - Blog: <https://blog.rockthejvm.com/>
-  - YouTube: <https://www.youtube.com/@rockthejvm>
-  - "Scala & Functional Programming for Beginners" course code: <https://github.com/rockthejvm/udemy-scala-beginners>
+	- Blog: [Rock the JVM blog](https://blog.rockthejvm.com/)
+	- YouTube: [Rock the JVM YouTube channel](https://www.youtube.com/@rockthejvm)
+	- "Scala & Functional Programming for Beginners" course code: [Scala & Functional Programming for Beginners (course code)](https://github.com/rockthejvm/udemy-scala-beginners)
 - Courses on Coursehunter (Russian titles):
-  - Scala 3 and the basics of functional programming: <https://coursehunter.net/course/scala-3-i-osnovy-funkcionalnogo-programmirovaniya>
-  - Advanced Scala 3 and functional programming: <https://coursehunter.net/course/prodvinutyy-scala-3-i-funkcionalnoe-programmirovanie>
-  - Scala Applied, parts 1 to 3: <https://coursehunter.net/course/scala-applied-chast-1>, <https://coursehunter.net/course/scala-applied-chast-2>, <https://coursehunter.net/course/scala-applied-chast-3>
-- Twitter's Scala School, written for early Scala 2 and not updated since, so its syntax and library advice are dated: <https://twitter.github.io/scala_school/index.html>
-- Baeldung, functional programming series in Scala: <https://www.baeldung.com/scala/functional-programming-series>
-- "Functional Structures in Scala", YouTube playlist: <https://www.youtube.com/playlist?list=PLFrwDVdSrYE6dy14XCmUtRAJuhCxuzJp0>
-- Philip Schwarz, who publishes slide decks on functional programming in Scala (several are in the library): <https://twitter.com/philip_schwarz?lang=en>
+	- Scala 3 and the basics of functional programming: [Scala 3 и основы функционального программирования](https://coursehunter.net/course/scala-3-i-osnovy-funkcionalnogo-programmirovaniya)
+	- Advanced Scala 3 and functional programming: [Продвинутый Scala 3 и функциональное программирование](https://coursehunter.net/course/prodvinutyy-scala-3-i-funkcionalnoe-programmirovanie)
+	- Scala Applied, parts 1 to 3: [Scala Applied, часть 1](https://coursehunter.net/course/scala-applied-chast-1), [Scala Applied, часть 2](https://coursehunter.net/course/scala-applied-chast-2), [Scala Applied, часть 3](https://coursehunter.net/course/scala-applied-chast-3)
+- Twitter's Scala School, written for early Scala 2 and not updated since, so its syntax and library advice are dated: [Twitter's Scala School](https://twitter.github.io/scala_school/index.html)
+- Baeldung, functional programming series in Scala: [Scala Functional Programming Tutorial (Baeldung)](https://www.baeldung.com/scala/functional-programming-series)
+- "Functional Structures in Scala", YouTube playlist: [Functional Structures in Scala (YouTube playlist)](https://www.youtube.com/playlist?list=PLFrwDVdSrYE6dy14XCmUtRAJuhCxuzJp0)
+- Philip Schwarz, who publishes slide decks on functional programming in Scala (several are in the library): [Philip Schwarz on X](https://twitter.com/philip_schwarz?lang=en)
 
 ### Finding libraries
 
 
 Scaladex (index.scala-lang.org), the official index of Scala libraries, and awesome-scala are the two places to look for a library by topic.
 
-- awesome-scala: <https://github.com/lauris/awesome-scala>
-- Scaladex, awesome list: <https://index.scala-lang.org/awesome>
-- Scaladex, libraries tagged akka: <https://index.scala-lang.org/search?q=*&topics=akka>
+- [awesome-scala](https://github.com/lauris/awesome-scala)
+- Scaladex, awesome list: [Scaladex awesome list](https://index.scala-lang.org/awesome)
+- Scaladex, libraries tagged akka: [Scaladex libraries tagged akka](https://index.scala-lang.org/search?q=*&topics=akka)
 
 ### Communities, companies and people
 
 
-- Scala users forum: <https://users.scala-lang.org/>
-- Reddit r/scala: <https://www.reddit.com/r/scala/>
-- Tinkoff, Scala interview page: <https://www.tinkoff.ru/career/it/interview/scala/>
-- Signify Technology: <https://www.signifytechnology.com/>
+- Scala users forum: [Scala Users forum](https://users.scala-lang.org/)
+- [Reddit r/scala](https://www.reddit.com/r/scala/)
+- Tinkoff, Scala interview page: [Tinkoff Scala interview page](https://www.tinkoff.ru/career/it/interview/scala/)
+- [Signify Technology](https://www.signifytechnology.com/)
 - SoftwareMill, a Scala consultancy that maintains Tapir, sttp and other open-source Scala libraries.
 - People to follow: Adam Warski (SoftwareMill), Marcin Baraniecki.
 
@@ -855,7 +855,7 @@ Scaladex (index.scala-lang.org), the official index of Scala libraries, and awes
 - [ ] Read *Programming in Scala* section 18.5 (lower bounds) and section 18.6 (contravariance and the Liskov Substitution Principle) ([PDF](/sources/6d5d72f2cd796c67b467228f976d4a33.bin)).
 - [ ] Work through the Box example on the Tour of Scala's Variances page.
 
-See also: [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}) for the type system, [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}), [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) and [Haskell]({{< ref "functional-programming/04-languages/haskell" >}}). Also [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for fs2, [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for fibers, and [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Either`.
+See also: [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}) for the type system, [Type Classes And Polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Functions And Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}), [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) and [Haskell]({{< ref "functional-programming/04-languages/haskell" >}}). Also [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for fs2, [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for fibers, and [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Either`.
 
 ## Library sources
 

@@ -17,33 +17,33 @@ H-99 and S-99 are ports of the same problem list, the Ninety-Nine Prolog Problem
 ### Haskell
 
 
-- H-99, Ninety-Nine Haskell Problems: <https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems>
-- JD95/haskell-problem-sets: <https://github.com/JD95/haskell-problem-sets>
-- AskElle (ideas.science.uu.nl): <https://ideas.science.uu.nl/AskElle/>
-- Educative answers, Haskell exercises: <https://www.educative.io/answers>
+- H-99, [Ninety-Nine Haskell Problems](https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems)
+- [JD95/haskell-problem-sets](https://github.com/JD95/haskell-problem-sets)
+- AskElle (ideas.science.uu.nl): [Ask-Elle](https://ideas.science.uu.nl/AskElle/)
+- Educative answers, Haskell exercises: [Educative Haskell exercises](https://www.educative.io/answers)
 - [ ] Work through the CIS 194 exercises.
 
 ### Scala
 
 
 - Li Haoyi, *Hands-on Scala Programming* ([Li 2020](/sources/a280251ad59e61862b88a946d18fae4c.bin)), project-based.
-- Coursehunter course, Scala and functional programming practice: <https://coursehunter.net/course/scala-i-funkcionalnogo-programmirovaniya-praktika>
-- Scala Exercises: <https://www.scala-exercises.org/>, source at <https://github.com/scala-exercises/scala-exercises>. It brings the Scala Koans to the web, with hundreds of exercises in 42 categories on the basics of the language. Originally built by 47 Degrees; the old address <http://scala-exercises.47deg.com/> is the same site.
-- Scala Advent of Code (Scala Center): <https://scalacenter.github.io/scala-advent-of-code/>, source at <https://github.com/scalacenter/scala-advent-of-code>
-- S-99, Ninety-Nine Scala Problems: <http://aperiodic.net/phil/scala/s-99>
-- Exercism, community-driven Scala exercises: <https://exercism.org/tracks/scala/exercises>
-- dehun/learn-fp, a learn-by-doing FP course in Scala covering type classes, functors, applicatives, monads, monad transformers and the free monad: <https://github.com/dehun/learn-fp/>
+- Coursehunter course, Scala and functional programming practice: [Scala и функциональное программирование: практика](https://coursehunter.net/course/scala-i-funkcionalnogo-programmirovaniya-praktika)
+- [Scala Exercises](https://www.scala-exercises.org/), source at [scala-exercises/scala-exercises on GitHub](https://github.com/scala-exercises/scala-exercises). It brings the Scala Koans to the web, with hundreds of exercises in 42 categories on the basics of the language. Originally built by 47 Degrees; the old address [Scala Exercises (old address)](http://scala-exercises.47deg.com/) is the same site.
+- Scala Advent of Code (Scala Center): [Scala Advent of Code (Scala Center)](https://scalacenter.github.io/scala-advent-of-code/), source at [scalacenter/scala-advent-of-code on GitHub](https://github.com/scalacenter/scala-advent-of-code)
+- S-99, [Ninety-Nine Scala Problems](http://aperiodic.net/phil/scala/s-99)
+- Exercism, community-driven Scala exercises: [Exercism Scala exercises](https://exercism.org/tracks/scala/exercises)
+- dehun/learn-fp, a learn-by-doing FP course in Scala covering type classes, functors, applicatives, monads, monad transformers and the free monad: [dehun/learn-fp: FP course in Scala](https://github.com/dehun/learn-fp/)
 
 ### Other collections
 
 
-- Earl Douglas, exercises: <https://earldouglas.com/posts/exercises.html>
+- Earl Douglas, exercises: [Programming Exercises (Earl Douglas)](https://earldouglas.com/posts/exercises.html)
 
 Queued to do:
 
 - [ ] Utrecht University FP course, 2019 exercises: [archived copy](https://web.archive.org/web/20230302062937/http://www.cs.uu.nl/docs/vakken/fp/2019/exercises.html) (the original page is gone)
-- [ ] Gist by oskarkv: <https://gist.github.com/oskarkv/3168ea3f8d7530ccd94c97c19aafe266>. The jot "learn a haskell" sat next to it; it probably means *Learn You a Haskell for Great Good!*, but it may also have been a label for this gist (needs checking).
-- [ ] Drew University (Burd), exercises to accompany *Introduction to Functional Programming*: <https://users.drew.edu/bburd/functionalprogramming/ExercisesToAccompanyIntroductionToFunctionalProgramming.pdf>
+- [ ] Gist by oskarkv: [Gist by oskarkv (exercises.org)](https://gist.github.com/oskarkv/3168ea3f8d7530ccd94c97c19aafe266). The jot "learn a haskell" sat next to it; it probably means *Learn You a Haskell for Great Good!*, but it may also have been a label for this gist (needs checking).
+- [ ] Drew University (Burd), exercises to accompany *Introduction to Functional Programming*: [Exercises to accompany Introduction to Functional Programming (Drew University)](https://users.drew.edu/bburd/functionalprogramming/ExercisesToAccompanyIntroductionToFunctionalProgramming.pdf)
 - [ ] University of Innsbruck, FP course, winter semester 2015: [archived copy](https://web.archive.org/web/20250917105748/http://cl-informatik.uibk.ac.at/teaching/ws15/fp/content.php) (the original page is gone)
 
 ## Specific problems
@@ -78,7 +78,7 @@ Write these yourself, in Haskell:
 ### Functor (Serokell)
 
 
-Haskell exercises from Serokell, "What's that typeclass: Functor": <https://serokell.io/blog/whats-that-typeclass-functor>
+Haskell exercises from Serokell, "[What's that typeclass: Functor](https://serokell.io/blog/whats-that-typeclass-functor)"
 
 - **Implement `Functor` for several types.** The article's list of types was not copied. Good candidates, roughly in order of difficulty: a custom `Maybe`, a custom list, a binary tree, `Either e`, the pair `((,) a)` and the function type `(( -> ) r)`. For the last three, work out from the kind why only the last type parameter can be mapped.
 - **Implement `(<$)` for `Maybe a`.** `(<$) :: a -> f b -> f a` replaces every value inside the functor with a constant and keeps the structure. Decide what happens to `Nothing` and to `Just`, then check your answer against the default definition in `base`, which writes it in terms of `fmap` and `const`.
@@ -106,7 +106,7 @@ The book then points ahead to Monad:
 ## Learning tasks
 
 
-- **Implement `sum`, `product` and `length` in Haskell, and test them.** Property-based testing with QuickCheck fits well: compare against the Prelude versions, and check laws such as `sum (xs ++ ys) == sum xs + sum ys` and `length (xs ++ ys) == length xs + length ys`. Then try the functions on `[1..10^7]`. A naive `foldl` or a non-strict accumulator builds up thunks and uses far more memory than needed, which is why `foldl'` exists. See [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds), [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) and [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}).
+- **Implement `sum`, `product` and `length` in Haskell, and test them.** Property-based testing with QuickCheck fits well: compare against the Prelude versions, and check laws such as `sum (xs ++ ys) == sum xs + sum ys` and `length (xs ++ ys) == length xs + length ys`. Then try the functions on `[1..10^7]`. A naive `foldl` or a non-strict accumulator builds up thunks and uses far more memory than needed, which is why `foldl'` exists. See [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds), [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) and [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}).
 - **State and Reader monads.** Reader is a function from a shared, read-only environment, `newtype Reader r a = Reader (r -> a)`, used for configuration and dependencies. State is a function from a state to a result and a new state, `newtype State s a = State (s -> (a, s))`. Write both newtypes yourself with their `Functor`, `Applicative` and `Monad` instances, then use State for a stack or a counter and Reader for passing a configuration through several functions. See [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader) and [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}).
 - **Build a toy effect system** (#project). Start by describing console programs as data and writing the interpreter separately:
 
@@ -149,26 +149,26 @@ For the game idea, Hughes 1990 (Library sources) has an alpha-beta game-playing 
 ### Games
 
 
-- Andrea/FunctionalProgrammingInGames: <https://github.com/Andrea/FunctionalProgrammingInGames>
-- unclebob/spacewar, a game: <https://github.com/unclebob/spacewar>, with the Clean Coder blog post "Spacewar" (2021): <https://blog.cleancoder.com/uncle-bob/2021/11/28/Spacewar.html>
-- Devsisters tech blog, Scala for game server development: <https://tech.devsisters.com/posts/scala-for-game-server-development/>
-- jdegoes/lambdaconf-2014-introgame, a "find out" game: <https://github.com/jdegoes/lambdaconf-2014-introgame>
+- [Andrea/FunctionalProgrammingInGames](https://github.com/Andrea/FunctionalProgrammingInGames)
+- unclebob/spacewar, a game: [unclebob/spacewar on GitHub](https://github.com/unclebob/spacewar), with the Clean Coder blog post "Spacewar" (2021): [Spacewar blog post (Clean Coder, 2021)](https://blog.cleancoder.com/uncle-bob/2021/11/28/Spacewar.html)
+- Devsisters tech blog, Scala for game server development: [Scala for game server development (Devsisters)](https://tech.devsisters.com/posts/scala-for-game-server-development/)
+- jdegoes/lambdaconf-2014-introgame, a "find out" game: [LambdaConf 2014 find-out game (jdegoes)](https://github.com/jdegoes/lambdaconf-2014-introgame)
 
 ### Reference applications in Scala
 
 
 These are complete applications to read rather than exercises. pfps-shopping-cart is the application built in Volpe's *Practical FP in Scala* (tagless final with Cats, Cats Effect and fs2; see Library sources), and pfps-examples holds the book's smaller examples. scala-pet-store (noted as "scala-petshop") is another full application. Reading one alongside the book and then rebuilding a small slice of it yourself works better than copying it.
 
-- gvolpe/pfps-shopping-cart: <https://github.com/gvolpe/pfps-shopping-cart>
-- gvolpe/pfps-examples: <https://github.com/gvolpe/pfps-examples>
-- pauljamescleary/scala-pet-store: <https://github.com/pauljamescleary/scala-pet-store>
+- [gvolpe/pfps-shopping-cart](https://github.com/gvolpe/pfps-shopping-cart)
+- [gvolpe/pfps-examples](https://github.com/gvolpe/pfps-examples)
+- [pauljamescleary/scala-pet-store](https://github.com/pauljamescleary/scala-pet-store)
 
 ### Refactor a plain first version
 
 
 Write a plain first version of a project, then refactor it in small steps towards the structures, tools, libraries and patterns of Scala and FP, keeping each step as a separate commit to compare. Typical steps: `null` to `Option`, exceptions to `Either`, loops to `map` and folds, mutable state to values passed through functions, duplicated logic to type classes, and side effects pushed to the edge with `IO`. See [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}).
 
-See also: coding katas, [Recursion and folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems), [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}), Project Ideas.
+See also: coding katas, [Recursion And Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems), [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}), Project Ideas.
 
 ## Library sources
 

@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "stage": 9,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Split exploratory-design material into earlier method formulations, an inspectable workbench model and complete RAG example, and the complete third goals-and-principles proposal. Original wording, markers, examples, citations, and line endings remain unchanged.",
+  "source": {
+    "path": "topics/engineering/eng-exp/exploratory-design.md",
+    "absolutePath": "archived source 031",
+    "originalLines": 1315,
+    "originalBytes": 40096,
+    "originalSha256": "c0588f3696a3a97967e7c1d22c32f4c0bd2b51c74439b6c782f7189f0f8f9b17",
+    "originalFinalNewline": false,
+    "currentRole": "navigation stub",
+    "stubLines": 9,
+    "stubBytes": 1829,
+    "stubSha256": "0925b8a82d4d3af7c078d77807503fe2bc587dd25db380ed31de53d9c73826ec",
+    "stubFinalNewline": true
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        453
+      ],
+      "destination": "ai/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation.md",
+      "description": "Opening context and labelled requests, complete first answer, and second formulation through the engineering framing",
+      "lines": 453,
+      "bytes": 19929,
+      "sha256": "653e66cff6fb01d94e2ce9f405ce4109fcd177d674d9b6fbd8df381a207d726a",
+      "finalNewline": true,
+      "fenceMarkers": 46,
+      "anchor": "<!-- Exploratory pipeline design source begins below. -->",
+      "destinationLines": [
+        14,
+        466
+      ]
+    },
+    {
+      "sourceLines": [
+        454,
+        637
+      ],
+      "destination": "ai/interactive-systems/11-inspectable-pipeline-workbenches.md",
+      "description": "Complete artifact model, RAG example, runtime/design-time lists, and architecture proposal",
+      "lines": 184,
+      "bytes": 4613,
+      "sha256": "c956f1e09e02713049dd5af797eda7a4e70a7cce46c2c43e58374accd46c8bf7",
+      "finalNewline": true,
+      "fenceMarkers": 20,
+      "anchor": "<!-- Inspectable pipeline workbench source begins below. -->",
+      "destinationLines": [
+        14,
+        197
+      ]
+    },
+    {
+      "sourceLines": [
+        638,
+        718
+      ],
+      "destination": "ai/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation.md",
+      "description": "Second formulation's interaction criteria, complete anti-pattern list, and closing formulations",
+      "lines": 81,
+      "bytes": 3114,
+      "sha256": "3ae3336b98803a14b39d0a9f14572a8f2b100be2ab298fd98519cd92c8f2d779",
+      "finalNewline": true,
+      "fenceMarkers": 10,
+      "anchor": "<!-- Exploratory pipeline design source begins below. -->",
+      "destinationLines": [
+        467,
+        547
+      ]
+    },
+    {
+      "sourceLines": [
+        719,
+        1315
+      ],
+      "destination": "ai/interactive-systems/12-exploratory-pipeline-design-goals-and-principles.md",
+      "description": "Complete third formulation, including the original to-analyse label, goals, non-goals, ten principles, loops, objective, and manifesto",
+      "lines": 597,
+      "bytes": 12440,
+      "sha256": "dbaf86ad930a5f8a318010866d1b3a13d4cbf5ca1b65916dc7ac637483c2f592",
+      "finalNewline": false,
+      "fenceMarkers": 84,
+      "anchor": "<!-- Exploratory pipeline goals and principles source begins below. -->",
+      "destinationLines": [
+        14,
+        610
+      ]
+    }
+  ],
+  "prefixes": {
+    "ai/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation.md": {
+      "lines": 13,
+      "bytes": 1953,
+      "sha256": "52225dffe2bbfc2ae0c1506918e541097915d59e3d855a9e821f734ee3f4e989",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null
+    },
+    "ai/interactive-systems/11-inspectable-pipeline-workbenches.md": {
+      "lines": 13,
+      "bytes": 1791,
+      "sha256": "6375f33ab5cf0fd43a4b49006fbaf5442d136d300298957fae80d4f2bc962a82",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null
+    },
+    "ai/interactive-systems/12-exploratory-pipeline-design-goals-and-principles.md": {
+      "lines": 13,
+      "bytes": 1873,
+      "sha256": "acbdf817eba9fa63811d69b2c51ef7a2df0e78e526ea0c8f61be3ac3082c85f2",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null
+    }
+  },
+  "existingDestinations": [],
+  "destinations": [
+    {
+      "path": "ai/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation.md",
+      "lines": 547,
+      "bytes": 24996,
+      "sha256": "15e844c22cd5faf7a024a030a6ad53094d3d85f598a3c93643a31bc7e53ae9b2",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/interactive-systems/11-inspectable-pipeline-workbenches.md",
+      "lines": 197,
+      "bytes": 6404,
+      "sha256": "cb3c5d60b6f5805b3262f2745ef22b9c7181e94a8d282baf87dce02cf20e7e6f",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/interactive-systems/12-exploratory-pipeline-design-goals-and-principles.md",
+      "lines": 610,
+      "bytes": 14313,
+      "sha256": "0113a3198241abc04fb7079b257a4278a8374928f139681ea01c49669b14c107",
+      "finalNewline": false,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    }
+  ],
+  "moveOrder": [
+    {
+      "originalSourceLines": [
+        719,
+        1315
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 27656,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        638,
+        718
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 24542,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        454,
+        637
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 19929,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        1,
+        453
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "editorialFiles": [
+    "ai/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments.md",
+    "ai/interactive-systems/11-inspectable-pipeline-workbenches-comments.md",
+    "ai/interactive-systems/12-exploratory-pipeline-design-goals-and-principles-comments.md",
+    "ai/interactive-systems/00-index.md",
+    "ai/interactive-systems/00-index-comments.md"
+  ],
+  "linkedExistingNotes": [
+    "ai/design-research/01-foundations/08-semantic-substrate-builder-method.md",
+    "ai/design-research/00-overview/07-collaboration-framework-research-routes.md",
+    "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results.md",
+    "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments.md",
+    "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks.md",
+    "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+    "ai/interactive-systems/05-application-state-and-computation.md"
+  ],
+  "verification": {
+    "reconstructedLines": 1315,
+    "reconstructedBytes": 40096,
+    "reconstructedSha256": "c0588f3696a3a97967e7c1d22c32f4c0bd2b51c74439b6c782f7189f0f8f9b17",
+    "allPassagesByteIdentical": true,
+    "sourceRangesCoverOriginalExactlyOnce": true,
+    "omittedOrDuplicatedBytes": 0,
+    "allCodeBlocksWhole": true,
+    "completeCodeBlocks": 80,
+    "sourceFinalNewlinePreserved": true,
+    "priorMappings": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "lines": 173,
+        "bytes": 14749,
+        "sha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/07-nlp-interface-reassembly.json",
+        "lines": 764,
+        "bytes": 23745,
+        "sha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/08-intent-architecture-reassembly.json",
+        "lines": 962,
+        "bytes": 28361,
+        "sha256": "e8073fcd06535419dcb4f0dfb652baae6a4f36ba9765cd07052967b68ee40aac",
+        "passagesVerified": 9
+      }
+    ],
+    "sourceWasEmptyAfterMoves": true,
+    "originalPathRetained": true,
+    "sourceTextRewritten": false,
+    "claimsIndependentlyVerified": false,
+    "selectedPendingListCompleted": true,
+    "localLinkVerification": {
+      "filesChecked": 10,
+      "localLinksChecked": 246,
+      "headingAnchorsChecked": 36,
+      "broken": []
+    },
+    "finalReconstructions": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "lines": 173,
+        "bytes": 14749,
+        "sha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/07-nlp-interface-reassembly.json",
+        "lines": 764,
+        "bytes": 23745,
+        "sha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/08-intent-architecture-reassembly.json",
+        "lines": 962,
+        "bytes": 28361,
+        "sha256": "e8073fcd06535419dcb4f0dfb652baae6a4f36ba9765cd07052967b68ee40aac",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/09-exploratory-design-reassembly.json",
+        "lines": 1315,
+        "bytes": 40096,
+        "sha256": "c0588f3696a3a97967e7c1d22c32f4c0bd2b51c74439b6c782f7189f0f8f9b17",
+        "passagesVerified": 4
+      }
+    ],
+    "editorialWhitespaceVerification": {
+      "prefixFilesChecked": 3,
+      "wholeEditorialFilesChecked": 7,
+      "issues": []
+    },
+    "gitIndexVerification": {
+      "scope": [
+        "ai/interactive-systems",
+        "topics/engineering/eng-exp/exploratory-design.md"
+      ],
+      "entriesBefore": 27,
+      "entriesAfter": 27,
+      "beforeSha256": "1bde3bfdb3b7ffa91d3de743554f9f6fe6693bbcc6bf765e97f46b9d037a2b1d",
+      "afterSha256": "1bde3bfdb3b7ffa91d3de743554f9f6fe6693bbcc6bf765e97f46b9d037a2b1d",
+      "indexEntriesUnchanged": true,
+      "stagingUnstagingOrCommitOperationsPerformedByThisPass": 0,
+      "snapshotRole": "Existing staged entries were captured before the pass. The index is observed, not modified by this pass."
+    },
+    "baselineVerification": {
+      "snapshotRole": "Observed shared-workspace snapshot. Unrelated changes are reported, not reverted.",
+      "baselineFiles": 133,
+      "intendedPaths": [
+        "ai/interactive-systems/00-index.md",
+        "ai/interactive-systems/00-index-comments.md",
+        "ai/interactive-systems/reassembly-map.md",
+        "topics/engineering/eng-exp/exploratory-design.md"
+      ],
+      "intendedBaselineChanges": 4,
+      "filesOutsideIntendedEdits": 129,
+      "unchangedFilesOutsideIntendedEdits": 121,
+      "externalChanges": [
+        {
+          "path": "ai/design-research/00-index.md",
+          "previousSha256": "f4549ac6ab4b06d30e5209a5d8f5cc4fa95f06743d157574cc9e8ae12b22a3d4",
+          "currentSha256": "c753b02536c2abf18b0e8aa3d556f4843a3c99426246d7cb259ffda2ffe5c37b",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/01-foundations/04-participant-neutral-system-model.md",
+          "previousSha256": "e33ada284880e33f1af4b3fa441e3bfa8ec0d8172e877c091f5496f0fae81233",
+          "currentSha256": "af263da8fa740e059789283dcb3269d1acac71b1c08c8b9a76bb2341da302605",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/01-foundations/10-complexity-and-work-structure-comments.md",
+          "previousSha256": "23dabeb8e8c1eff39c821841906b39bc8084af6ba61a496e847963d7f969e567",
+          "currentSha256": "0f409375dbaa28cfb0a78b6ff4cf0315c8eb67a39db856c14d56bc2e2266f826",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/01-foundations/10-complexity-and-work-structure.md",
+          "previousSha256": "12436357e672a6c45169a5f04887c11ea03b383d81fe73d7d91e0c060f74ea50",
+          "currentSha256": "6bb46287abd24ba07691721fbaa54f61432b4a1f7bb811a371fd6736cf662d3c",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/05-runtime-and-execution/01-generalized-agent-runtime.md",
+          "previousSha256": "c862df726f0c44b19ea8d023f62ed8aa111d5f1be30eab62a7cd4dec2681e0dc",
+          "currentSha256": "42038fa78a951a2e7c9ee990a78502e155efba311f2cb63cc8aac098e1144d33",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments.md",
+          "previousSha256": "9e639681e6a6412e5013a14b998a4fc0325fe54e546e87229575bbe74251df68",
+          "currentSha256": "8c4544e40863f7e35f77d5460ed22278863dd594a267d1a5c3d2fb9a74f89792",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results.md",
+          "previousSha256": "3c23915f962e5b5b576977b42e3b80b2e085e78f581a9eebf4804e93ba2d22fa",
+          "currentSha256": "dc27793c3cd573b4661eb8913cc4458ff0c2b41455c612c85eee63e2c1e82315",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/reassembly-map.md",
+          "previousSha256": "7f4b8a616d73d0dae3cf3ae0f378ad5a415918b41c780b1da15591a2e75eff0c",
+          "currentSha256": "767645240cc69d2d772bf3eb87b77417762378f77056842a1a7064920fd48c26",
+          "editedOrRevertedByThisPass": false
+        }
+      ]
+    },
+    "scopedGitDiffCheck": {
+      "exitCode": 0,
+      "passed": true
+    }
+  },
+  "audit": "ai/interactive-systems/reassembly-map.md#stage-9-exploratory-pipeline-design",
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

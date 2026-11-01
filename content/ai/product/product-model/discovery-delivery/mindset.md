@@ -321,8 +321,6 @@ The intended behavior can remain stable while all of those change.
 
 And sometimes production evidence tells us the intended behavior itself was wrong. Then the finding goes back into Discovery.
 
-<a id="8-the-delivery-object-i-would-use"></a>
-
 ## 8. Proposed delivery object
 
 

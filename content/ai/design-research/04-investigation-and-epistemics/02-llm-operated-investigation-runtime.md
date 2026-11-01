@@ -101,8 +101,6 @@ flowchart LR
 
 The compiler should not pretend to establish facts that only runtime execution can know. It should establish that the accepted physical plan is capable of producing all required certificates, and the finaliser should check those certificates after execution. This design is consistent with the separation between formal workflow checks in PlanCompiler/Lean4Agent and runtime uncertainty in probabilistic systems such as TRAQ.
 
-<a id="6-langgraph-already-gives-you-part-of-the-abstract-machine"></a>
-
 ### 6. LangGraph provides part of the abstract machine
 
 

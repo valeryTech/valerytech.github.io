@@ -6,7 +6,7 @@ description: "Primitive obsession and the newtype pattern, Scala value classes a
 linkTitle: "Newtypes"
 ---
 
-Wrapping primitives in types of their own, and giving those types constructors that enforce a rule. Part of [Domain modeling with types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}); how much such a type guarantees is in [Strength Of Evidence]({{< ref "type-driven-design/02-parsing-and-evidence/strength-of-evidence" >}}).
+Wrapping primitives in types of their own, and giving those types constructors that enforce a rule. Part of [Domain Modeling With Types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}); how much such a type guarantees is in [Strength Of Evidence]({{< ref "type-driven-design/02-parsing-and-evidence/strength-of-evidence" >}}).
 
 ## Primitive obsession and the newtype pattern
 

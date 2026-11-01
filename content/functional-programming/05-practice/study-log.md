@@ -39,7 +39,7 @@ allF p = foldr (\x acc -> p x && acc) True
 
 The start value of a fold must be the identity of the combining operator: `False` for `||`, `True` for `&&`. Starting `or` from `True` makes it return `True` for every list, including `[]`.
 
-- [ ] Correct the initial accumulator error in `or` on the Bob string approach page: <https://exercism.org/tracks/haskell/exercises/bob/approaches/string>. The page itself hasn't been re-checked; the rule above is what the fix should follow.
+- [ ] Correct the initial accumulator error in `or` on the Bob string approach page: [Exercism Haskell: Bob, Using String approach](https://exercism.org/tracks/haskell/exercises/bob/approaches/string). The page itself hasn't been re-checked; the rule above is what the fix should follow.
 
 ### `any` through `or` and `map`, and the fusion law
 
@@ -76,11 +76,11 @@ Fusion in Richard Bird's *Pearls of Functional Algorithm Design* (2010): the boo
 
 Links on fusion and equational reasoning:
 
-- Reddit r/haskell, "foldr and fusion laws": <https://www.reddit.com/r/haskell/comments/167lmt/foldr_and_fusion_laws/>
-- Hinze et al., fusion laws (IFL 2010): <https://www.cs.ox.ac.uk/ralf.hinze/publications/IFL10.pdf> ([PDF](/sources/37b227134139d4d368dca162e78b91f5.bin))
-- Reddit r/haskellquestions, "Fusion and fission law of fold": <https://www.reddit.com/r/haskellquestions/comments/382e1p/fusion_and_fission_law_of_fold/>
-- A GitHub gist, topic not checked: <https://gist.github.com/regiskuckaertz/63c60151ef85670312d1d1f92490de2e>
-- My Haskell Journal, "An exercise in equational reasoning": <https://myhaskelljournal.com/an-exercise-in-equational-reasoning/>
+- Reddit r/haskell, "[foldr and fusion laws](https://www.reddit.com/r/haskell/comments/167lmt/foldr_and_fusion_laws/)"
+- Hinze et al., fusion laws (IFL 2010): [Hinze et al., fusion laws (IFL 2010)](https://www.cs.ox.ac.uk/ralf.hinze/publications/IFL10.pdf) ([PDF](/sources/37b227134139d4d368dca162e78b91f5.bin))
+- Reddit r/haskellquestions, "[Fusion and fission law of fold](https://www.reddit.com/r/haskellquestions/comments/382e1p/fusion_and_fission_law_of_fold/)"
+- A GitHub gist, topic not checked: [Practicing derivations (GitHub gist)](https://gist.github.com/regiskuckaertz/63c60151ef85670312d1d1f92490de2e)
+- My Haskell Journal, "[An exercise in equational reasoning](https://myhaskelljournal.com/an-exercise-in-equational-reasoning/)"
 
 ### Testing: hspec and tasty
 
@@ -123,7 +123,7 @@ Other tools: pattern matching instead of partial functions, `readMaybe` from `Te
 
 `foldMap :: (Foldable t, Monoid m) => (a -> m) -> t a -> m` maps each element into a monoid and combines the results with `<>`. Choosing the monoid chooses the fold: `getSum (foldMap Sum xs)` is `sum`, `getAny (foldMap (Any . p) xs)` is `any p`, `foldMap (\x -> [x])` is `toList`. See the 1.12.23 entry on folds and monoids.
 
-- Wikipedia, "Fold (higher-order function)": <https://en.wikipedia.org/wiki/Fold_(higher-order_function)>
+- Wikipedia, "[Fold (higher-order function)](https://en.wikipedia.org/wiki/Fold_(higher-order_function))"
 
 ### Composable folds: the `foldl` package
 
@@ -157,11 +157,11 @@ fold (Fold step begin done) = done . foldl' step begin
 
 The real library uses a strict pair instead of a tuple. `foldl'` forces the accumulator only to weak head normal form, so with a lazy tuple both components would grow into chains of thunks (see [Costs of laziness: space leaks]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#costs-of-laziness-space-leaks)).
 
-- Haskell Discourse, "Composing or piping multiple folds": <https://discourse.haskell.org/t/composing-or-piping-multiple-folds/1439>
-- Haskell for all, "Composable streaming folds" (2013): <https://www.haskellforall.com/2013/08/composable-streaming-folds.html>
-- `Control.Foldl` documentation, foldl 1.4.15: <https://hackage.haskell.org/package/foldl-1.4.15/docs/Control-Foldl.html>
-- deque.blog, "Beautiful code: Control.Fold" (2017): <https://deque.blog/2017/01/13/beautiful-code-control-fold/>
-- Haskell for all, on foldl 1.0.0 and composable streaming folds (2013): <https://www.haskellforall.com/2013/08/foldl-100-composable-streaming-and.html>
+- Haskell Discourse, "[Composing or piping multiple folds](https://discourse.haskell.org/t/composing-or-piping-multiple-folds/1439)"
+- Haskell for all, "Composable streaming folds" (2013): [Composable streaming folds (Haskell for All, 2013)](https://www.haskellforall.com/2013/08/composable-streaming-folds.html)
+- `Control.Foldl` documentation, foldl 1.4.15: [Control.Foldl documentation (foldl 1.4.15)](https://hackage.haskell.org/package/foldl-1.4.15/docs/Control-Foldl.html)
+- deque.blog, "Beautiful code: Control.Fold" (2017): [Beautiful Code: Control.Foldl](https://deque.blog/2017/01/13/beautiful-code-control-fold/)
+- Haskell for all, on foldl 1.0.0 and composable streaming folds (2013): [foldl-1.0.0: Composable, streaming, and efficient left folds](https://www.haskellforall.com/2013/08/foldl-100-composable-streaming-and.html)
 
 ## 24.11.23
 
@@ -191,7 +191,7 @@ collatz n
 
 `unfoldr :: (b -> Maybe (a, b)) -> b -> [a]`, from `Data.List`, is the dual of `foldr`. Starting from a seed, the function either says stop (`Nothing`) or gives the next element and the next seed: `unfoldr (\n -> if n > 10 then Nothing else Just (n, n + 1)) 1` is `[1 .. 10]`. Its implementation is under 27.11.23.
 
-- kseo.github.io, "Unfold and fold" (2016): <https://kseo.github.io/posts/2016-12-12-unfold-and-fold.html>
+- kseo.github.io, "Unfold and fold" (2016): [Unfold and fold (kseo, 2016)](https://kseo.github.io/posts/2016-12-12-unfold-and-fold.html)
 - YouTube playlist, topic not checked: <https://www.youtube.com/watch?v=S_HSt6jEtWM&list=PLD8gywOEY4HaG5VSrKVnHxCptlJv2GAn7&index=1>
 
 ## 25.11.23
@@ -199,7 +199,7 @@ collatz n
 
 - [x] Collatz example.
 - [x] Refactoring example with Collatz, now in [Collatz]({{< ref "functional-programming/05-practice/functional-refactoring" >}}#collatz).
-- [ ] Explore the different methods on the CPSC 449 "Evolution" page, and Collatz with them: <https://pages.cpsc.ucalgary.ca/~robin/class/449/Evolution.htm>
+- [ ] Explore the different methods on the CPSC 449 "Evolution" page, and Collatz with them: [The Evolution of a Haskell Programmer (CPSC 449)](https://pages.cpsc.ucalgary.ca/~robin/class/449/Evolution.htm)
 
 ## 26.11.23
 
@@ -284,11 +284,11 @@ and `map f = unfold null (f . head) tail`.
 
 Origami programming ([PDF](/sources/8750c095920302e17588058b6c7a4fd6.bin)) is Jeremy Gibbons's chapter in *The Fun of Programming* (2003; book). Folds and unfolds are the "origami" of functional programming: the chapter shows them for lists, natural numbers and rose trees (a single generic definition for all datatypes is left out of scope, section 3.1), with their laws (fusion among them) and the hylomorphisms you get by composing an unfold with a fold.
 
-- Conal Elliott, "Folds and unfolds all around us" (talk slides): <http://conal.net/talks/folds-and-unfolds.pdf> ([PDF](/sources/132018bb8c1d444e5d126368b7d230fc.bin))
-- WorksHub, "Anamorphisms, aka unfolds, explained": <https://functional.works-hub.com/learn/number-anamorphisms-aka-unfolds-explained-50e1a>
-- thealmarty.com, "Anamorphisms, aka unfolds, explained" (2022): <https://thealmarty.com/2022/09/06/anamorphisms-aka-unfolds-explained/>
+- Conal Elliott, "Folds and unfolds all around us" (talk slides): [Folds and unfolds all around us (Conal Elliott, talk slides)](http://conal.net/talks/folds-and-unfolds.pdf) ([PDF](/sources/132018bb8c1d444e5d126368b7d230fc.bin))
+- WorksHub, "[Anamorphisms, aka unfolds, explained](https://functional.works-hub.com/learn/number-anamorphisms-aka-unfolds-explained-50e1a)"
+- thealmarty.com, "Anamorphisms, aka unfolds, explained" (2022): [Anamorphisms, aka unfolds, explained (thealmarty.com, 2022)](https://thealmarty.com/2022/09/06/anamorphisms-aka-unfolds-explained/)
 
-Someone said that fold and unfold are particular forms of recursion and corecursion (Wikipedia, "Corecursion": <https://en.wikipedia.org/wiki/Corecursion>). That is the right phrase:
+Someone said that fold and unfold are particular forms of recursion and corecursion (Wikipedia, "[Corecursion](https://en.wikipedia.org/wiki/Corecursion)"). That is the right phrase:
 
 - A fold is structural recursion. It consumes data, each recursive call is on a direct substructure, so on finite input it always terminates.
 - An unfold is corecursion. It produces data one constructor at a time from a seed. It needn't terminate, but it is productive, delivering each piece in finite time: `iterate f = unfoldr (\x -> Just (x, f x))` produces an infinite list.
@@ -297,8 +297,8 @@ Folds capture structural recursion, not all recursion. Quicksort, for example, r
 
 An unfold is an anamorphism and a fold is a catamorphism:
 
-- Wikipedia, "Anamorphism": <https://en.wikipedia.org/wiki/Anamorphism>
-- Wikipedia, "Catamorphism": <https://en.wikipedia.org/wiki/Catamorphism>
+- Wikipedia, "[Anamorphism](https://en.wikipedia.org/wiki/Anamorphism)"
+- Wikipedia, "[Catamorphism](https://en.wikipedia.org/wiki/Catamorphism)"
 
 The names come from category theory and were popularised for programmers by Meijer, Fokkinga and Paterson (1991) ([PDF](/sources/36627dc30e95e8d847bcf4342043e960.bin), section 2; the library copy has only the first 5 pages). For a recursive type described by a "base functor" `f`, the catamorphism takes an algebra `f a -> a` that handles one layer, and the anamorphism takes a coalgebra `a -> f a` that produces one layer; the general definitions are below. For lists the catamorphism is `foldr`. `foldl` is not directly a catamorphism; it can be expressed as a `foldr` that builds a function.
 
@@ -314,8 +314,8 @@ Yes to both. These are the two families of "shortcut fusion", both removing inte
 
 Stream fusion (Coutts, Leshchinskiy and Stewart, 2007) builds on the second idea. A list becomes a non-recursive stepper, `data Stream a = forall s. Stream (s -> Step a s) s`, with `data Step a s = Done | Yield a s | Skip s`. `Skip` lets `filter` drop an element without a recursive loop, so every stage stays non-recursive and GHC can inline the whole pipeline into one loop. The `vector` library uses stream fusion.
 
-- danilafe.com, "Haskell catamorphisms": <https://danilafe.com/blog/haskell_catamorphisms/>
-- HaskellWiki, "Catamorphisms": <https://wiki.haskell.org/Catamorphisms>
+- danilafe.com, "Haskell catamorphisms": [Generalizing Folds in Haskell (danilafe.com)](https://danilafe.com/blog/haskell_catamorphisms/)
+- HaskellWiki, "[Catamorphisms](https://wiki.haskell.org/Catamorphisms)"
 
 ### Base functors: lists with an extra `r` parameter
 
@@ -348,8 +348,8 @@ countdown n = ConsF n (n - 1)
 
 An algebra describes what to do with one layer once the `r` positions already hold results. `Mu`, in the linked Stack Overflow question, is another encoding of the fixed point, `newtype Mu f = Mu (forall a. (f a -> a) -> a)`: a value represented by its own catamorphism.
 
-- Stack Overflow, "How to write a Show instance for Mu recursive types": <https://stackoverflow.com/questions/50946004/how-to-write-a-show-instance-for-mu-recursive-types/50950944>
-- A GitHub gist, maybe related to the list usage in the Collatz function (topic not checked): <https://gist.github.com/beala/d871ae8397167e7035f218a25ddf87dd>
+- Stack Overflow, "[How to write a Show instance for Mu recursive types](https://stackoverflow.com/questions/50946004/how-to-write-a-show-instance-for-mu-recursive-types/50950944)"
+- A GitHub gist, maybe related to the list usage in the Collatz function (topic not checked): [Elegant memoization in Haskell with laziness (GitHub gist)](https://gist.github.com/beala/d871ae8397167e7035f218a25ddf87dd)
 
 ### Laziness and trees
 
@@ -360,16 +360,16 @@ Trees in `containers`: `Data.Tree` is a rose tree, `data Tree a = Node { rootLab
 
 John Hughes's paper *Why Functional Programming Matters* ([PDF](/sources/a88f5c889d6f70309316ef0660f67635.bin)) argues that the power of functional languages lies in modularity, and that two kinds of "glue" provide it: higher-order functions, which let you reuse recursion patterns such as folds, and lazy evaluation, which lets a producer and a consumer be written separately and still run in step. His examples include numerical algorithms built on lazy infinite lists and game-tree search over a lazily generated tree, which makes it a good companion to the unfold and tree topics above.
 
-- usrsb.in, "Selling laziness": <http://www.usrsb.in/selling-laziness.html>
-- The Morning Paper, on "Why functional programming matters" (2016): <https://blog.acolyer.org/2016/09/14/why-functional-programming-matters/>
-- rampion/tree-traversals, GitHub repository: <https://github.com/rampion/tree-traversals>
+- usrsb.in, "[Selling laziness](http://www.usrsb.in/selling-laziness.html)"
+- The Morning Paper, on "Why functional programming matters" (2016): [Why Functional Programming Matters (The Morning Paper, 2016)](https://blog.acolyer.org/2016/09/14/why-functional-programming-matters/)
+- rampion/tree-traversals, GitHub repository: [rampion/tree-traversals on GitHub](https://github.com/rampion/tree-traversals)
 
 ## 28.11.23
 
 
-- Elliott's folds and unfolds talk again: <http://conal.net/talks/folds-and-unfolds.pdf> ([PDF](/sources/132018bb8c1d444e5d126368b7d230fc.bin))
+- Elliott's folds and unfolds talk again: [Folds and unfolds all around us (Elliott talk slides)](http://conal.net/talks/folds-and-unfolds.pdf) ([PDF](/sources/132018bb8c1d444e5d126368b7d230fc.bin))
 - Origami.
-- The Haskell CIS 194 course: the University of Pennsylvania's introductory Haskell course. The Spring 2013 version by Brent Yorgey is the one usually recommended for self-study (its lectures are linked from [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})).
+- The Haskell CIS 194 course: the University of Pennsylvania's introductory Haskell course. The Spring 2013 version by Brent Yorgey is the one usually recommended for self-study (its lectures are linked from [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})).
 
 Technique, from the course (also on slide 10 of Elliott's talk, [PDF](/sources/132018bb8c1d444e5d126368b7d230fc.bin)): replace control structures by data structures and standard combining forms, as in `fact n = product [1..n]`. Instead of a loop with a counter and an accumulator, build the data the loop would walk over (`[1..n]`) and hand it to a standard combinator (`product`). This is Hughes's "glue" again, and CIS 194 calls the style wholemeal programming. Laziness keeps it cheap: the list is produced on demand, and with optimisation GHC can often fuse it away completely.
 
@@ -453,7 +453,7 @@ Every call is now a tail call, and "what happens next" is an ordinary value, so 
 
 Caveat: CPS doesn't make recursion cheaper by itself. The pending multiplications move from the stack into a chain of `n` closures on the heap.
 
-- Haskell Wikibook, "Continuation passing style": <https://en.wikibooks.org/wiki/Haskell/Continuation_passing_style>
+- Haskell Wikibook, "[Continuation passing style](https://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)"
 
 ### Forcing evaluation and worker/wrapper
 
@@ -462,7 +462,7 @@ Forcing evaluation with bang patterns is covered in [Costs of laziness: space le
 
 The worker/wrapper construct: the wrapper is the function with the public interface, `collatz :: Integer -> Maybe Integer`, which checks the input. The worker is a local helper, usually called `go`, with extra parameters such as an accumulator or step counter, which does the recursion. The Collatz code in [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}) already has this shape. The Exercism Collatz approach is about this source-level idiom:
 
-- Exercism, Collatz conjecture, worker-wrapper approach: <https://exercism.org/tracks/haskell/exercises/collatz-conjecture/approaches/worker-wrapper>
+- Exercism, Collatz conjecture, worker-wrapper approach: [Collatz Conjecture, worker-wrapper approach (Exercism Haskell)](https://exercism.org/tracks/haskell/exercises/collatz-conjecture/approaches/worker-wrapper)
 
 The term has a second meaning. GHC's worker/wrapper transformation is a compiler optimisation that splits a function the same way automatically, for example so the worker can take unboxed `Int#` arguments that strictness analysis has shown are always needed, while the small wrapper is inlined at call sites. Gill and Hutton's 2009 paper gives the general theory.
 
@@ -471,7 +471,7 @@ The term has a second meaning. GHC's worker/wrapper transformation is a compiler
 
 Open question for today: what do I want to work on?
 
-A course? H. Conrad Cunningham's CSci 450 course notes, the same source as the evaluation-model chapter ([ch. 8 PDF](/sources/03f5a1670784f5bcdf040f3e142fb3f3.bin)) quoted in [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}): <https://john.cs.olemiss.edu/~hcc/csci450/notes/450lectureNotes.html>
+A course? H. Conrad Cunningham's CSci 450 course notes, the same source as the evaluation-model chapter ([ch. 8 PDF](/sources/03f5a1670784f5bcdf040f3e142fb3f3.bin)) quoted in [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}): [CSci 450 lecture notes (H. Conrad Cunningham, Fall 2018)](https://john.cs.olemiss.edu/~hcc/csci450/notes/450lectureNotes.html)
 
 ### Traversable and short-circuiting
 
@@ -489,8 +489,8 @@ traverse check ([1, 2, -3] ++ [4 ..])     -- Nothing
 
 Short-circuiting is a property of the applicative, not of `traverse`. With `IO` or `State`, every element's effect runs, so traversing an infinite list never finishes. With an error-accumulating applicative such as `Validation`, the traversal deliberately continues so it can collect all errors.
 
-- `Data.Traversable` documentation, base 4.19.0.0: <https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Traversable.html#g:4>
-- Stack Overflow, "Can someone explain the traverse function in Haskell?": <https://stackoverflow.com/questions/7460809/can-someone-explain-the-traverse-function-in-haskell>
+- `Data.Traversable` documentation, base 4.19.0.0: [Data.Traversable documentation (base 4.19.0.0)](https://hackage.haskell.org/package/base-4.19.0.0/docs/Data-Traversable.html#g:4)
+- Stack Overflow, "[Can someone explain the traverse function in Haskell?](https://stackoverflow.com/questions/7460809/can-someone-explain-the-traverse-function-in-haskell)"
 
 ### The iterator pattern paper
 
@@ -511,7 +511,7 @@ Gibbons and Oliveira's *The Essence of the Iterator Pattern* (2009) argues that 
 
 Instances of `Monoid`, and how to investigate them. In GHCi, `:info Monoid` (or `:i Monoid`) prints the class and every instance currently in scope; importing more modules shows more. The Haddock page for `Data.Monoid` lists the instances in base. Common ones: lists (`[]` and `++`), `Sum` and `Product`, `Any` and `All`, `First` and `Last`, `Ordering` (for chaining comparisons), `Maybe a` when `a` is a `Semigroup`, functions `a -> b` when `b` is a monoid, tuples of monoids, and `Map` with left-biased union.
 
-- Further reading on monoids, Typeclassopedia: <https://wiki.haskell.org/Typeclassopedia#Monoid>
+- Further reading on monoids, Typeclassopedia: [Typeclassopedia, monoids section (HaskellWiki)](https://wiki.haskell.org/Typeclassopedia#Monoid)
 
 ### Applicative and Monad
 
@@ -525,7 +525,7 @@ The jot said Applicative is "almost the same" as Monad, except that effects cann
 ### Haskell programming: list functions and folds
 
 
-- [ ] Write all the list functions recursively and with folds: <http://wiki.haskell.org/How_to_work_on_lists>
+- [ ] Write all the list functions recursively and with folds: [How to work on lists (HaskellWiki)](http://wiki.haskell.org/How_to_work_on_lists)
 
 Good warm-ups with folds:
 
@@ -567,7 +567,7 @@ Folds and monoids: `foldMap` folds with a monoid. Associativity means the elemen
 
 A workable order is functor, then applicative, then monad, then traversable, since `Traversable` is defined in terms of `Applicative`. Notes on these topics already exist in [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds), and on domain modelling in [Domain modeling in Haskell and Scala]({{< ref "functional-programming/05-practice/to-sort" >}}#domain-modeling-in-haskell-and-scala).
 
-See also: [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) and [Functional combinators]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#functional-combinators) for folds, [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) for laziness, thunks and bang patterns, [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}) for Collatz and partial functions, [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}) and [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid) for the 1.12.23 topics, and [Learning tasks]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}#learning-tasks).
+See also: [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) and [Functional combinators]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#functional-combinators) for folds, [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) for laziness, thunks and bang patterns, [Refactoring functional code]({{< ref "functional-programming/05-practice/functional-refactoring" >}}) for Collatz and partial functions, [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}) and [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid) for the 1.12.23 topics, and [Learning tasks]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}#learning-tasks).
 
 ## Library sources
 

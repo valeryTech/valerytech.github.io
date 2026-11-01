@@ -154,7 +154,7 @@ The example also has separate conditions that are not ladder levels:
 
 It also has separate operating needs, including latency, reliability, cost, observation, versioning, rollback, recovery, and maintenance.
 
-This is a draft example, not a claim that the solution has passed these levels. The project-specific reasoning remains in the Wallet `utility-ladder.md`.
+This is a draft example, not a claim that the solution has passed these levels. The project-specific reasoning remains in the Wallet [[utility-ladder]].
 
 ## Use coverage and utility together
 
@@ -179,7 +179,7 @@ This makes two kinds of change visible:
 
 The ladder helps define useful behavior. It does not decide whether that behavior is ready for production.
 
-A [`production commitment`]({{< ref "ai/product/operating-model/production-commitment" >}}) defines what users can rely on within stated situations, then adds the conditions and responsibilities required for real use:
+A [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}) defines what users can rely on within stated situations, then adds the conditions and responsibilities required for real use:
 
 ```text
 production commitment

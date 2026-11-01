@@ -86,5 +86,5 @@ Enriched with a symbol table, types, file paths, ownership, complexity and churn
 ## References
 
 
-- Tree-sitter-based code graph RAG prototype: <https://github.com/vitali87/code-graph-rag>
+- [Tree-sitter-based code graph RAG prototype](https://github.com/vitali87/code-graph-rag)
 - CodeRAG (bigraph retrieval for repository-level code generation): [arXiv:2504.10046](https://arxiv.org/abs/2504.10046)

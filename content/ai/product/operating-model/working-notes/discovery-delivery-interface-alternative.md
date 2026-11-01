@@ -6,12 +6,12 @@ description: "Turning a discovered solution into production software requires mo
 linkTitle: "Interface Alternative"
 ---
 
-> **Editorial note:** This is the earlier four-part version. Read it with [`discovery-and-delivery.md`]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}). The same team does both kinds of work, and the interface is not a handoff.
+> **Editorial note:** This is the earlier four-part version. Read it with [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}). The same team does both kinds of work, and the interface is not a handoff.
 
 - Discovery asks whether there is enough evidence that this is the solution worth building.
 - Delivery asks whether the team can turn the selected solution into a production-quality solution that customers can depend on.
 
-Cagan describes the transition as: once the team has evidence that it knows the solution it needs, engineers build the production-quality software. In the newer material, the prototype is the primary way the discovered solution is communicated--"prototype as spec"--with use cases and non-functional requirements supplementing it where needed
+Cagan describes the transition as: once the team has evidence that it knows the solution it needs, engineers build the production-quality software. In the newer material, the prototype is the primary way the discovered solution is communicated -- "prototype as spec" -- with use cases and non-functional requirements supplementing it where needed
 
 The interface can be modeled as:
 
@@ -40,4 +40,4 @@ When engineers have interacted with the discovery prototype, asked questions, an
 
 **4. Additional delivery requirements.** The prototype doesn't necessarily encode everything required for production.
 
-A PRD may supplement the prototype with things that are hard to represent there--for example specific use cases and non-functional requirements such as expected scale. The warning is that the PRD supplements discovery; it doesn't replace discovery.
+A PRD may supplement the prototype with things that are hard to represent there -- for example specific use cases and non-functional requirements such as expected scale. The warning is that the PRD supplements discovery; it doesn't replace discovery.

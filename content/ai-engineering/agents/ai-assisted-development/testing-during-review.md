@@ -98,7 +98,7 @@ Use examples that cover the jobs and failures the product needs to handle. Repea
 
 Keep the comparison fair. Changing the judge can change the score even when the product is unchanged. A different document set can make the task easier or harder. A few difficult examples can reveal bugs without telling you how often users will encounter them.
 
-See [Evaluation in AI Product Development]({{< ref "ai-engineering/approach/evaluations" >}}) and [choosing evaluation cases]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) for more detail.
+See [Evaluation in AI Product Development]({{< ref "ai-engineering/approach/evaluations" >}}) and [choosing evaluation cases]({{< ref "ai-engineering/evaluation/framework-v1/coverage-and-case-design" >}}) for more detail.
 
 ## Keep enough information to reproduce a failure
 

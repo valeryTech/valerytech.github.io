@@ -125,14 +125,14 @@ The pattern (property graph plus vector search plus graph-guided retrieval) is s
 **What remains, after the 2026-04-05 search.** Both research claims are *partly covered*. Their remaining parts are narrower than first stated.
 
 1. **History, configuration and runtime evidence for the same question.** Commit history, co-change and runtime traces are already used as LLM context, with gains that are real but uneven: they shrink with stronger models (HAFixAgent), naive traces help only sometimes (Haque et al.), and root-cause analysis over real telemetry stays poor (OpenRCA). Earlier versions of this note also wrongly said the systems above work only on the code at one commit; AutoCodeRover already uses test coverage. What still looks open:
-   - configuration and infrastructure values linked to code as context for impact and "why" questions;
-   - combining history, configuration and runtime evidence in one assistant for open developer questions rather than benchmark repair;
-   - controlled comparisons of which kind of evidence helps which kind of question.
+	- configuration and infrastructure values linked to code as context for impact and "why" questions;
+	- combining history, configuration and runtime evidence in one assistant for open developer questions rather than benchmark repair;
+	- controlled comparisons of which kind of evidence helps which kind of question.
 2. **A per-level ladder against strong baselines.** Individual levels and file-count splits have been studied separately, and *Code Isn't Memory* already compares a structural index with an agentic-grep baseline split by gold-file count. What still looks open:
-   - a cumulative ladder (syntax, then symbols, then call and data flow, then history) under one model and task set; no study found ablates data flow for agents or localization;
-   - each level measured against both a tuned lexical baseline and a grep agent;
-   - splits by lexical overlap between the question and the gold code, where only proxies exist (location hints, leakage, grep precision);
-   - samples large enough per stratum: existing splits rest on a few dozen items or vendor benchmarks.
+	- a cumulative ladder (syntax, then symbols, then call and data flow, then history) under one model and task set; no study found ablates data flow for agents or localization;
+	- each level measured against both a tuned lexical baseline and a grep agent;
+	- splits by lexical overlap between the question and the gold code, where only proxies exist (location hints, leakage, grep precision);
+	- samples large enough per stratum: existing splits rest on a few dozen items or vendor benchmarks.
 3. **A read-only, citation-first assistant** with explicit grounding and abstention rules ([repository expert requirements]({{< ref "projects/code-intelligence/repository-expert/requirements" >}})). This is product discipline rather than research novelty, kept because it makes answers checkable.
 
 **What this project does not claim.** A new analysis technique, a new graph model, or that structure helps on every task. Local completion is a known case where it adds little, and *Code Isn't Memory* suggests that against a good grep agent the gain is mostly in cost and in multi-file tasks.
@@ -142,7 +142,7 @@ The pattern (property graph plus vector search plus graph-guided retrieval) is s
 
 Code structure and agents:
 
-- Aider repository map: <https://aider.chat/docs/repomap.html>
+- [Aider repository map](https://aider.chat/docs/repomap.html)
 - AutoCodeRover: [arXiv:2404.05427](https://arxiv.org/abs/2404.05427)
 - Agentless: [arXiv:2407.01489](https://arxiv.org/abs/2407.01489)
 - RepoGraph: [arXiv:2410.14684](https://arxiv.org/abs/2410.14684)
@@ -154,11 +154,11 @@ Code structure and agents:
 - Code Researcher: [arXiv:2506.11060](https://arxiv.org/abs/2506.11060)
 - LLMxCPG: [arXiv:2507.16585](https://arxiv.org/abs/2507.16585)
 - Monitor-guided decoding: [arXiv:2306.10763](https://arxiv.org/abs/2306.10763)
-- Serena: <https://github.com/oraios/serena>; Claude Code LSP tool: <https://code.claude.com/docs/en/tools-reference.md>
-- CodeGraphContext: <https://github.com/CodeGraphContext/CodeGraphContext>
-- Copilot Autofix: <https://docs.github.com/en/code-security/responsible-use/responsible-use-autofix-code-scanning>
-- NS-Slicer: <https://aashishyadavally.github.io/assets/pdf/pub-oopsla2024.pdf>; SliceMate: [arXiv:2507.18957](https://arxiv.org/abs/2507.18957)
-- LlamaIndex property graph index: <https://developers.llamaindex.ai/python/framework/module_guides/indexing/lpg_index_guide/>; LangChain Graph RAG: <https://docs.langchain.com/oss/python/integrations/retrievers/graph_rag>
+- [Serena](https://github.com/oraios/serena); [Claude Code LSP tool](https://code.claude.com/docs/en/tools-reference.md)
+- [CodeGraphContext](https://github.com/CodeGraphContext/CodeGraphContext)
+- [Copilot Autofix](https://docs.github.com/en/code-security/responsible-use/responsible-use-autofix-code-scanning)
+- [NS-Slicer](https://aashishyadavally.github.io/assets/pdf/pub-oopsla2024.pdf); SliceMate: [arXiv:2507.18957](https://arxiv.org/abs/2507.18957)
+- [LlamaIndex property graph index](https://developers.llamaindex.ai/python/framework/module_guides/indexing/lpg_index_guide/); [LangChain Graph RAG](https://docs.langchain.com/oss/python/integrations/retrievers/graph_rag)
 
 History, runtime and configuration:
 
@@ -182,7 +182,7 @@ Comparisons and benchmarks:
 - Does a Language Server Save Tokens for Coding Agents?: [arXiv:2608.13568](https://arxiv.org/abs/2608.13568)
 - SWE-Master: [arXiv:2602.03411](https://arxiv.org/abs/2602.03411); Codebase-Memory: [arXiv:2603.27277](https://arxiv.org/abs/2603.27277); deterministic anchoring: [arXiv:2606.26979](https://arxiv.org/abs/2606.26979)
 - SWE-agent: [arXiv:2405.15793](https://arxiv.org/abs/2405.15793)
-- Cursor, *Improving agent with semantic search*: <https://cursor.com/blog/semsearch>
+- Cursor, *[Improving agent with semantic search](https://cursor.com/blog/semsearch)*
 - Deep Agentic Search for Repository-Level Code QA: [arXiv:2608.01507](https://arxiv.org/abs/2608.01507); ContextBench: [arXiv:2602.05892](https://arxiv.org/abs/2602.05892)
 - SWE-PolyBench: [arXiv:2504.08703](https://arxiv.org/abs/2504.08703); SWE-bench Pro: [arXiv:2509.16941](https://arxiv.org/abs/2509.16941); SWE-Bench+: [arXiv:2410.06992](https://arxiv.org/abs/2410.06992); SWE-Bench Illusion: [arXiv:2506.12286](https://arxiv.org/abs/2506.12286); RepoMirage: [arXiv:2605.26177](https://arxiv.org/abs/2605.26177)
 

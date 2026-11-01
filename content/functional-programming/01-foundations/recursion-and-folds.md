@@ -151,7 +151,7 @@ These are the list-only signatures. Since GHC 7.10 the Prelude's folds work on a
 
 Folds on lists are structural transformations. A list `[1,2,3]` is the tree `1 : (2 : (3 : []))`, and the two folds turn it into two different trees:
 
-```
+```text
   list             foldr f z         foldl f z
    :                  f                   f
   / \                / \                 / \
@@ -165,7 +165,7 @@ Folds on lists are structural transformations. A list `[1,2,3]` is the tree `1 :
 
 `foldr` keeps the shape of the list: it replaces every `:` with `f` and the final `[]` with `z`, giving `f 1 (f 2 (f 3 z))`. It associates to the right. `foldl` builds the mirror image, nested to the left with `z` innermost, giving `f (f (f z 1) 2) 3`. With `f` written infix:
 
-```
+```text
 foldl f z [x1, x2, ..., xn] = (... ((z `f` x1) `f` x2) `f` ...) `f` xn
 foldr f z [x1, x2, ..., xn] = x1 `f` (x2 `f` ... (xn `f` z) ...)
 ```
@@ -186,7 +186,7 @@ foldl f z (x:xs) = foldl f (f z x) xs
 
 **The problem with `foldr` on a strict operation.** A trace of a sum:
 
-```
+```text
 foldr (+) 0 [1..1000000]
 --> 1 + foldr (+) 0 [2..1000000]
 --> 1 + (2 + foldr (+) 0 [3..1000000])
@@ -206,7 +206,7 @@ foldl' f z (x:xs) = let y = f z x in seq y (foldl' f y xs)
 
 `seq y rest` evaluates `y` before returning `rest`, so the accumulator is a computed value at every step and no chain of thunks builds up. Strictly, `seq` only promises to be strict in both arguments, not an order of evaluation; `pseq` from `Control.Parallel` is the one that guarantees `y` first (Takenobu 2016, section 6, "Sequential order"). For `foldl'` the difference doesn't matter. This is `foldl'` from `Data.List` and `Data.Foldable`. "Relying on the optimizer" refers to GHC's strictness analysis, which, with `-O`, often makes plain `foldl (+) 0` strict on its own. It doesn't apply in GHCi or without optimization, which is why `foldl'` is the safe choice.
 
-`seq` is not a hint: it guarantees the evaluation. It only evaluates to weak head normal form, though. With a pair as the accumulator, `foldl'` evaluates the pair constructor but not its components, which can still grow as thunks (see [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})).
+`seq` is not a hint: it guarantees the evaluation. It only evaluates to weak head normal form, though. With a pair as the accumulator, `foldl'` evaluates the pair constructor but not its components, which can still grow as thunks (see [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})).
 
 In practice: use `foldr` to build lazy results or stop early (`map`, `filter`, `any`, `concat`), `foldl'` to compute one strict value (sums, counts, maxima), and plain `foldl` almost never.
 
@@ -275,17 +275,17 @@ divideAll 100 [2, 0, 5] -- Nothing: the first failure stops the fold
 
 The best single reading on the universal property and on how much can be written as a fold is Hutton's tutorial, *A tutorial on the universality and expressiveness of fold* ([PDF](/sources/ef79cb2cda8798acfb994029dcd0acce.bin)).
 
-- Haskell wiki, Fold: <https://wiki.haskell.org/Fold>
-- Haskell wiki, Foldr Foldl Foldl': <https://wiki.haskell.org/Foldr_Foldl_Foldl%27>
-- Haskell wiki, Foldl as foldr: <https://wiki.haskell.org/Foldl_as_foldr>
-- Monday Morning Haskell, "First try: fold" (2022): <https://mmhaskell.com/blog/2022/4/7/first-try-fold>
-- Monday Morning Haskell, "Using scans to accumulate" (2022): <https://mmhaskell.com/blog/2022/4/14/using-scans-to-accumulate>
-- Well-Typed, "Fixing foldl" (2014): <https://well-typed.com/blog/2014/04/fixing-foldl/>
+- Haskell wiki, Fold: [Fold (HaskellWiki)](https://wiki.haskell.org/Fold)
+- Haskell wiki, Foldr Foldl Foldl': [Foldr Foldl Foldl' (HaskellWiki)](https://wiki.haskell.org/Foldr_Foldl_Foldl%27)
+- Haskell wiki, Foldl as foldr: [Foldl as foldr (HaskellWiki)](https://wiki.haskell.org/Foldl_as_foldr)
+- Monday Morning Haskell, "[First try: fold](https://mmhaskell.com/blog/2022/4/7/first-try-fold)" (2022)
+- Monday Morning Haskell, "[Using scans to accumulate](https://mmhaskell.com/blog/2022/4/14/using-scans-to-accumulate)" (2022)
+- Well-Typed, "[Fixing foldl](https://well-typed.com/blog/2014/04/fixing-foldl/)" (2014)
 
 ## Functional combinators
 
 
-- Stack Overflow, "Explanation of combinators for the working man": <https://stackoverflow.com/questions/7533837/explanation-of-combinators-for-the-working-man>
+- Stack Overflow, "[Explanation of combinators for the working man](https://stackoverflow.com/questions/7533837/explanation-of-combinators-for-the-working-man)"
 
 "Combinator" has two senses. In the strict sense, from combinatory logic, a combinator is a function with no free variables, defined only in terms of its arguments. In Scala usage it has come to mean any higher-order function for building larger computations from smaller ones, such as `map`, `filter` and `fold`.
 
@@ -318,7 +318,7 @@ Caveat: the example is only stack-safe because the standard library implements `
 - [ ] Review the explanation under [foldr and foldl](#foldr-and-foldl) of the two list shapes the folds produce and how their different mechanisms produce them. #todo
 - [ ] Fold study outline: definition, problems, applications, corner cases, types, type deconstruction. Most of it is covered above (definition and problems under foldr and foldl, applications under Using folds, types under Structure of a fold, corner cases under Corner cases); "type deconstruction" may refer to the type-driven reading under Structure of a fold (needs checking).
 
-See also: [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}) for higher-order functions and pipelines, [Wholemeal programming]({{< ref "functional-programming/05-practice/functional-refactoring" >}}#wholemeal-programming) for replacing explicit recursion with list functions, [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) for thunks and `seq`, [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}) and [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), and [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}) for `traverse`, the effectful relative of folds.
+See also: [Functions And Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}) for higher-order functions and pipelines, [Wholemeal programming]({{< ref "functional-programming/05-practice/functional-refactoring" >}}#wholemeal-programming) for replacing explicit recursion with list functions, [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}) for thunks and `seq`, [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}) and [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), and [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}) for `traverse`, the effectful relative of folds.
 
 ## Library sources
 

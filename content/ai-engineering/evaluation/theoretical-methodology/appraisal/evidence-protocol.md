@@ -26,16 +26,16 @@ The supporting evidence should cover:
 4. **Define metrics before looking at the result.** Otherwise it's extremely easy to find a metric that moved in the desired direction.
 5. **Have a baseline or control.** Compare comparable work with and without the agent. Ideally randomize tasks or engineers where practical.
 6. **Measure downstream effects.** At minimum, include:
-    - engineer time per completed task
-    - reviewer time
-    - number of review iterations
-    - defects after merge
-    - rollbacks/reverts
-    - production incidents
-    - rework during the following weeks/months
-    - test failures or regressions
-    - complexity/size of the resulting change
-    - infrastructure and model cost
+	- engineer time per completed task
+	- reviewer time
+	- number of review iterations
+	- defects after merge
+	- rollbacks/reverts
+	- production incidents
+	- rework during the following weeks/months
+	- test failures or regressions
+	- complexity/size of the resulting change
+	- infrastructure and model cost
 7. **Report failures.** What percentage of tasks did the agent fail? Where did humans abandon the generated solution? What classes of task consistently produced bad code?
 8. **Preserve the experiment.** Dataset/task set, model version, prompts, configuration, evaluation procedure, and ideally enough artifacts for another engineer to reproduce the result.
 9. **Separate observation from explanation.** "Lead time dropped 18%" is evidence. "The agent understands the architecture" is an interpretation requiring separate evidence.

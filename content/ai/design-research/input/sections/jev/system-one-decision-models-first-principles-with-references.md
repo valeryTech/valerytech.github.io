@@ -24,7 +24,7 @@ than as text generation. The resulting probabilities can be combined with an exp
 
 **The strongest theoretical reading of Jev is therefore:** a *prompt-conditioned probabilistic decision model optimised for bounded inference under compute, latency and interface constraints*. This is a more precise description than "machine System 1".
 
-TypeSafe explicitly says its "System One" name was inspired by Kahneman's contrast between fast intuitive and slow deliberate thought. It presents Jev as returning typed probabilistic decisions in parallel, without autoregressive string generation, and describes RLCD--"Reinforcement Learning for Calibrated Decisions"--as its training approach. The public material also says there is a new architecture and sampler. However, the exact Jev architecture, parameter count, representation scheme, candidate readout, RLCD reward/objective, training corpus, optimisation algorithm and calibration procedure remain undisclosed in the primary material reviewed here. [^typesafe-home][^typesafe-intro]
+TypeSafe explicitly says its "System One" name was inspired by Kahneman's contrast between fast intuitive and slow deliberate thought. It presents Jev as returning typed probabilistic decisions in parallel, without autoregressive string generation, and describes RLCD -- "Reinforcement Learning for Calibrated Decisions" -- as its training approach. The public material also says there is a new architecture and sampler. However, the exact Jev architecture, parameter count, representation scheme, candidate readout, RLCD reward/objective, training corpus, optimisation algorithm and calibration procedure remain undisclosed in the primary material reviewed here. [^typesafe-home][^typesafe-intro]
 
 That distinction is important because **Kahneman's own account of System 1 is richer than "one fast forward pass"**. In the supplied talk he says the essential distinction is between cognition that *happens to you* and cognition that *you deliberately do*. He explicitly places high-level automatised skills, language, common-sense causality, surprise, counterfactual thought and a representation capable of something resembling world simulation inside System 1. He also warns that equating System 1 with non-symbolic machine learning and System 2 with symbolic reasoning is "seriously imperfect". [^kahneman-talk]
 
@@ -49,7 +49,7 @@ The independent Jev literature, all very recent and mostly preprint-level, reinf
 
 **In other words: Jev's value does not depend on proving that it is cognitively System 1.** The stronger case comes from decision theory and resource constraints.
 
-The earlier supplied Jev research correctly identified the engineering pattern--typed decisions, probabilities, confidence routing and code-controlled workflows--but it leaned too heavily on "fast bounded decision" as the meaning of System 1. [^previous-jev-report] The cognitive-science evidence supports a more careful separation.
+The earlier supplied Jev research correctly identified the engineering pattern -- typed decisions, probabilities, confidence routing and code-controlled workflows -- but it leaned too heavily on "fast bounded decision" as the meaning of System 1. [^previous-jev-report] The cognitive-science evidence supports a more careful separation.
 
 ## System One and System Two across cognitive science
 
@@ -117,7 +117,7 @@ That question is much closer to Kahneman than "Can we classify something in one 
 ## A first-principles theory of decision systems
 
 
-Marr's framework is helpful because it prevents us from confusing the goal of a system with the algorithm or hardware that happens to implement it. Marr distinguishes the **computational level**--what problem is being solved and why--from the **algorithmic level**--representations and procedures--and the **implementation level**--physical realisation. Marr and Poggio's earlier formulation actually separated computation, algorithms, mechanisms and hardware into four nearly independent descriptions; Marr's later *Vision* established the familiar three-level presentation. [^marr-poggio][^marr-vision]
+Marr's framework is helpful because it prevents us from confusing the goal of a system with the algorithm or hardware that happens to implement it. Marr distinguishes the **computational level** -- what problem is being solved and why -- from the **algorithmic level** -- representations and procedures -- and the **implementation level** -- physical realisation. Marr and Poggio's earlier formulation actually separated computation, algorithms, mechanisms and hardware into four nearly independent descriptions; Marr's later *Vision* established the familiar three-level presentation. [^marr-poggio][^marr-vision]
 
 Applied to Jev:
 
@@ -292,7 +292,7 @@ E[L(D,Y)]
 
 This is a better theoretical foundation for Jev than literal cognitive dualism.
 
-TypeSafe's central proposition--accept somewhat bounded inference in exchange for very low decision cost and latency--can be interpreted directly as **resource-rational architecture design**. TypeSafe currently lists Jev at \$0.042 per million input tokens with no output-token charge and advertises roughly 70-500 ms service latency for its intended workloads; these are provider claims and should be measured on the actual workload. [^typesafe-home][^typesafe-intro] A TypeSafe case study reported an 88% cost reduction and roughly halved screening time after replacing a small generative model in one candidate-screening stage, while recall was statistically indistinguishable in its offline comparison. This is useful production evidence but comes from the vendor and customer rather than an independent controlled study. [^case-study]
+TypeSafe's central proposition -- accept somewhat bounded inference in exchange for very low decision cost and latency -- can be interpreted directly as **resource-rational architecture design**. TypeSafe currently lists Jev at $0.042 per million input tokens with no output-token charge and advertises roughly 70-500 ms service latency for its intended workloads; these are provider claims and should be measured on the actual workload. [^typesafe-home][^typesafe-intro] A TypeSafe case study reported an 88% cost reduction and roughly halved screening time after replacing a small generative model in one candidate-screening stage, while recall was statistically indistinguishable in its offline comparison. This is useful production evidence but comes from the vendor and customer rather than an independent controlled study. [^case-study]
 
 ## Jev and comparable decision systems
 
@@ -323,7 +323,7 @@ Ratings such as "reasoning strength" below describe the architectural role, not 
 
 | System | Main capability | Openness | Probability / calibration model | Reasoning strength | Latency and cost | Best fit |
 |---|---|---|---|---|---|---|
-| **Jev / TypeSafe System One** | Runtime-defined Choice/Noul/Score-style semantic decisions; multiple questions over shared state | Closed weights and internals | Native probabilities; TypeSafe says RLCD targets calibration. Independent results show useful but task-dependent calibration. [^typesafe-home][^jev-benchmark][^sys1cal] | Strong on bounded direct decisions; current evidence shows weaknesses in multi-update/intermediate-state tasks. [^jev-limits] | Hosted; vendor advertises 70-500 ms and \$0.042/M input tokens, output free. [^typesafe-intro][^typesafe-home] | High-volume routing, semantic gates, ranking, scoring, moderation, cheap fallback decisions |
+| **Jev / TypeSafe System One** | Runtime-defined Choice/Noul/Score-style semantic decisions; multiple questions over shared state | Closed weights and internals | Native probabilities; TypeSafe says RLCD targets calibration. Independent results show useful but task-dependent calibration. [^typesafe-home][^jev-benchmark][^sys1cal] | Strong on bounded direct decisions; current evidence shows weaknesses in multi-update/intermediate-state tasks. [^jev-limits] | Hosted; vendor advertises 70-500 ms and $0.042/M input tokens, output free. [^typesafe-intro][^typesafe-home] | High-volume routing, semantic gates, ranking, scoring, moderation, cheap fallback decisions |
 | **Kev** | Jev-compatible local typed decision family built over Qwen; option-scoring head | Open, Apache-2.0 | Checkpoints ship fitted temperature calibration; full candidate probabilities | Similar direct-decision architecture; capability scales with base model and size | Self-hosted. Repo reports tens of ms of model time for some GPU workloads; hardware and serving dominate real cost. [^kev] | Privacy/local use, custom fine-tuning, studying decision-head architectures |
 | **Open-Jev** | Independent Jev-inspired candidate scoring with 2B/9B/27B variants | Open implementation and training recipe; base weights separately required | Soft cross-entropy + Brier term; held-out temperature calibration | Direct candidate inference; its authors do not claim reproduction of Jev's private RLCD | Self-hosted; measured latency ranges strongly with context/candidate count, making hardware-normalised comparison essential. [^open-jev] | Reproducible research, custom training, architecture experiments |
 | **GLiClass** | Dynamic-label, zero/few-shot sequence classification without text generation | Open research implementation | Calibration is not its defining contribution; measure or calibrate separately | Designed for classification rather than multi-step scratchpad reasoning | Lightweight classifier architecture intended to avoid generative-LLM inference overhead. [^gliclass] | Changing label taxonomies, zero-shot/multi-label classification |
@@ -470,7 +470,7 @@ Evaluate the same decision using:
 4. generative model allowed internal/test-time reasoning;
 5. deterministic causal or symbolic oracle where applicable.
 
-If direct models match the oracle on causal and counterfactual tasks without intermediate computation, that would be evidence that complex judgement has become **compiled into direct inference**--a machine analogue of an automatised skill.
+If direct models match the oracle on causal and counterfactual tasks without intermediate computation, that would be evidence that complex judgement has become **compiled into direct inference** -- a machine analogue of an automatised skill.
 
 If additional sequential compute systematically closes the gap, the evidence supports a different boundary: some problem classes require iterative computation under these architectures.
 
@@ -833,73 +833,73 @@ Until such evidence exists, the scientifically conservative conclusion is:
 ## References
 
 
-[^typesafe-home]: TypeSafe AI. *System One Models and Jev* (official site). https://typesafe.ai/
+[^typesafe-home]: TypeSafe AI. *System One Models and Jev* (official site). [TypeSafe AI website](https://typesafe.ai/)
 
-[^proper-scoring]: Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. *Journal of the American Statistical Association*. https://doi.org/10.1198/016214506000001437
+[^proper-scoring]: Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. *Journal of the American Statistical Association*. [doi:10.1198/016214506000001437](https://doi.org/10.1198/016214506000001437)
 
-[^selective-classification]: Geifman, Y., & El-Yaniv, R. (2017). Selective classification for deep neural networks. *NeurIPS*. https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html
+[^selective-classification]: Geifman, Y., & El-Yaniv, R. (2017). Selective classification for deep neural networks. *NeurIPS*. [Selective classification for deep neural networks](https://papers.neurips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html)
 
-[^resource-rationality]: Griffiths, T. L., Lieder, F., & Goodman, N. D. (2015). Rational use of cognitive resources: Levels of analysis between the computational and the algorithmic. *Topics in Cognitive Science*. https://doi.org/10.1111/tops.12142
+[^resource-rationality]: Griffiths, T. L., Lieder, F., & Goodman, N. D. (2015). Rational use of cognitive resources: Levels of analysis between the computational and the algorithmic. *Topics in Cognitive Science*. [doi:10.1111/tops.12142](https://doi.org/10.1111/tops.12142)
 
-[^typesafe-intro]: TypeSafe AI. *Introducing System One Models & Jev* (launch article). https://typesafe.ai/blog/introducing-system-one-models-and-jev
+[^typesafe-intro]: TypeSafe AI. *Introducing System One Models & Jev* (launch article). [Introducing System One Models & Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 
 [^kahneman-talk]: Daniel Kahneman, previously supplied talk about System 1 and System 2. **Original source unresolved:** the talk itself was cited as an uploaded file in the original report but is not among the two files provided for this conversion; its exact title and URL cannot be established here. For a related public discussion, see [Daniel Kahneman on Bias (2013 interview)](https://www.socialsciencespace.com/2013/01/daniel-kahneman-on-bias/); that interview has not been identified as the cited talk.
 
-[^evans-stanovich]: Evans, J. St. B. T., & Stanovich, K. E. (2013). Dual-process theories of higher cognition: Advancing the debate. *Perspectives on Psychological Science*. https://doi.org/10.1177/1745691612460685
+[^evans-stanovich]: Evans, J. St. B. T., & Stanovich, K. E. (2013). Dual-process theories of higher cognition: Advancing the debate. *Perspectives on Psychological Science*. [doi:10.1177/1745691612460685](https://doi.org/10.1177/1745691612460685)
 
-[^keren-schul]: Keren, G., & Schul, Y. (2009). Two is not always better than one: A critical evaluation of two-system theories. *Perspectives on Psychological Science*. https://doi.org/10.1111/j.1745-6924.2009.01164.x
+[^keren-schul]: Keren, G., & Schul, Y. (2009). Two is not always better than one: A critical evaluation of two-system theories. *Perspectives on Psychological Science*. [doi:10.1111/j.1745-6924.2009.01164.x](https://doi.org/10.1111/j.1745-6924.2009.01164.x)
 
-[^melnikoff-bargh]: Melnikoff, D. E., & Bargh, J. A. *The Mythical Number Two* (Stanford Graduate School of Business publication page). https://www.gsb.stanford.edu/faculty-research/publications/mythical-number-two
+[^melnikoff-bargh]: Melnikoff, D. E., & Bargh, J. A. *The Mythical Number Two* (Stanford Graduate School of Business publication page). [The Mythical Number Two](https://www.gsb.stanford.edu/faculty-research/publications/mythical-number-two)
 
-[^jev-benchmark]: *Evaluating and Benchmarking the System One Model Jev* (2026). arXiv:2609.37647. https://arxiv.org/abs/2609.37647
+[^jev-benchmark]: *Evaluating and Benchmarking the System One Model Jev* (2026). arXiv:2609.37647. [arXiv:2609.37647](https://arxiv.org/abs/2609.37647)
 
-[^sys1cal]: *Jev thinks "I don't know," but doesn't say it: Introducing Sys1Cal-v1 Dataset for Probability Calibration* (2026). arXiv:2609.35342. https://arxiv.org/abs/2609.35342
+[^sys1cal]: *Jev thinks "I don't know," but doesn't say it: Introducing Sys1Cal-v1 Dataset for Probability Calibration* (2026). arXiv:2609.35342. [arXiv:2609.35342](https://arxiv.org/abs/2609.35342)
 
-[^prob-coherence]: *Beyond Calibration: Do a Typed-Decision Model's Probabilities Obey the Probability Axioms?* (2026). arXiv:2609.33209. https://arxiv.org/abs/2609.33209
+[^prob-coherence]: *Beyond Calibration: Do a Typed-Decision Model's Probabilities Obey the Probability Axioms?* (2026). arXiv:2609.33209. [arXiv:2609.33209](https://arxiv.org/abs/2609.33209)
 
-[^jev-limits]: *What Can't Jev Decide? Probing the Limits of One-Pass Decision Models* (2026). arXiv:2610.24929. https://arxiv.org/abs/2610.24929
+[^jev-limits]: *What Can't Jev Decide? Probing the Limits of One-Pass Decision Models* (2026). arXiv:2610.24929. [arXiv:2610.24929](https://arxiv.org/abs/2610.24929)
 
 [^previous-jev-report]: Earlier user-supplied Jev research report, *Jev and System One decision models: motivation, principles, evidence, alternatives, and practical use*. [Markdown copy]({{< ref "ai/design-research/input/sections/jev/jev-engineering-assessment" >}}). This is a separate document cited by the source report.
 
-[^kahneman-frederick]: Kahneman, D., & Frederick, S. (2002). Representativeness revisited: Attribute substitution in intuitive judgment. In *Heuristics and Biases*. Cambridge University Press. https://www.cambridge.org/core/books/abs/heuristics-and-biases/representativeness-revisited-attribute-substitution-in-intuitive-judgment/AAB5D933A3F944CFB5CB02265D376C8F
+[^kahneman-frederick]: Kahneman, D., & Frederick, S. (2002). Representativeness revisited: Attribute substitution in intuitive judgment. In *Heuristics and Biases*. Cambridge University Press. [Representativeness Revisited: Attribute Substitution in Intuitive Judgment](https://www.cambridge.org/core/books/abs/heuristics-and-biases/representativeness-revisited-attribute-substitution-in-intuitive-judgment/AAB5D933A3F944CFB5CB02265D376C8F)
 
-[^kahneman-2003]: Kahneman, D. (2003). Maps of bounded rationality: Psychology for behavioral economics. *American Economic Review*, 93(5), 1449-1475. https://doi.org/10.1257/000282803322655392
+[^kahneman-2003]: Kahneman, D. (2003). Maps of bounded rationality: Psychology for behavioral economics. *American Economic Review*, 93(5), 1449-1475. [doi:10.1257/000282803322655392](https://doi.org/10.1257/000282803322655392)
 
-[^nobre-gresch]: Nobre, A. C., & Gresch, D. (2025). How the brain shifts between external and internal attention. *Neuron*, 113(15), 2382-2398. https://doi.org/10.1016/j.neuron.2025.06.013 ([PDF](/sources/e3bc15ed61f3e0330df638a73650c7bf.bin)) (see Figure 2, p. 7).
+[^nobre-gresch]: Nobre, A. C., & Gresch, D. (2025). How the brain shifts between external and internal attention. *Neuron*, 113(15), 2382-2398. [doi:10.1016/j.neuron.2025.06.013](https://doi.org/10.1016/j.neuron.2025.06.013) ([PDF](/sources/e3bc15ed61f3e0330df638a73650c7bf.bin)) (see Figure 2, p. 7).
 
-[^marr-poggio]: Marr, D., & Poggio, T. *From Understanding Computation to Understanding Neural Circuitry*. MIT repository. https://dspace.mit.edu/entities/publication/c6722773-6065-4c2c-998c-7190be63f19a
+[^marr-poggio]: Marr, D., & Poggio, T. *From Understanding Computation to Understanding Neural Circuitry*. MIT repository. [From Understanding Computation to Understanding Neural Circuitry](https://dspace.mit.edu/entities/publication/c6722773-6065-4c2c-998c-7190be63f19a)
 
-[^marr-vision]: Marr, D. *Vision: A Computational Investigation into the Human Representation and Processing of Visual Information*. MIT Press. https://mitpress.mit.edu/9780262288989/vision/
+[^marr-vision]: Marr, D. *Vision: A Computational Investigation into the Human Representation and Processing of Visual Information*. MIT Press. [Vision: A Computational Investigation into the Human Representation and Processing of Visual Information](https://mitpress.mit.edu/9780262288989/vision/)
 
-[^ng-jordan]: Ng, A. Y., & Jordan, M. I. (2001). On discriminative vs. generative classifiers: A comparison of logistic regression and naive Bayes. *NeurIPS*. https://papers.nips.cc/paper_files/paper/2001/hash/7b7a53e239400a13bd6be6c91c4f6c4e-Abstract.html
+[^ng-jordan]: Ng, A. Y., & Jordan, M. I. (2001). On discriminative vs. generative classifiers: A comparison of logistic regression and naive Bayes. *NeurIPS*. [On Discriminative vs. Generative Classifiers: A comparison of logistic regression and naive Bayes](https://papers.nips.cc/paper_files/paper/2001/hash/7b7a53e239400a13bd6be6c91c4f6c4e-Abstract.html)
 
-[^kev]: Palmer, J. *Kev: Open Jev-like decision models* (code and model documentation). https://github.com/jaredpalmer/kev
+[^kev]: Palmer, J. *Kev: Open Jev-like decision models* (code and model documentation). [jaredpalmer/kev on GitHub](https://github.com/jaredpalmer/kev)
 
-[^open-jev]: Cai, Z. *Open-Jev* (implementation and training documentation). https://github.com/Zefan-Cai/Open-Jev
+[^open-jev]: Cai, Z. *Open-Jev* (implementation and training documentation). [Zefan-Cai/Open-Jev on GitHub](https://github.com/Zefan-Cai/Open-Jev)
 
-[^structured-outputs]: OpenAI. *Structured model outputs* (API documentation). https://developers.openai.com/api/docs/guides/structured-outputs
+[^structured-outputs]: OpenAI. *Structured model outputs* (API documentation). [Structured model outputs (OpenAI API)](https://developers.openai.com/api/docs/guides/structured-outputs)
 
-[^guo-calibration]: Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On calibration of modern neural networks. *ICML*. https://proceedings.mlr.press/v70/guo17a.html
+[^guo-calibration]: Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On calibration of modern neural networks. *ICML*. [On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a.html)
 
-[^case-study]: TypeSafe AI. *How Jack & Jill Cut Candidate Screening Costs By 88% With Jev* (vendor case study). https://typesafe.ai/blog/jack-jill-jev-case-study
+[^case-study]: TypeSafe AI. *How Jack & Jill Cut Candidate Screening Costs By 88% With Jev* (vendor case study). [How Jack & Jill Cut Candidate Screening Costs By 88% With Jev](https://typesafe.ai/blog/jack-jill-jev-case-study)
 
-[^jev-114]: TypeSafe AI. *Jev: For the builders AND dreamers* (Jev 1.14 announcement). https://typesafe.ai/blog/jev-1-14
+[^jev-114]: TypeSafe AI. *Jev: For the builders AND dreamers* (Jev 1.14 announcement). [Jev: For the builders AND dreamers](https://typesafe.ai/blog/jev-1-14)
 
-[^prompt-injection]: *From Detection to Decision: Calibration and Deferral for Prompt-Injection Detection* (2026). arXiv:2610.20907. https://arxiv.org/abs/2610.20907
+[^prompt-injection]: *From Detection to Decision: Calibration and Deferral for Prompt-Injection Detection* (2026). arXiv:2610.20907. [arXiv:2610.20907](https://arxiv.org/abs/2610.20907)
 
-[^agent-controller]: *Good Judgment, Bad Advice: Decision-Model Controllers Raise Agent Cost Without Improving Success* (2026). arXiv:2610.24649. https://arxiv.org/abs/2610.24649
+[^agent-controller]: *Good Judgment, Bad Advice: Decision-Model Controllers Raise Agent Cost Without Improving Success* (2026). arXiv:2610.24649. [arXiv:2610.24649](https://arxiv.org/abs/2610.24649)
 
-[^gliclass]: *GLiClass: Generalist Lightweight Model for Sequence Classification Tasks* (2025). arXiv:2508.07662. https://arxiv.org/abs/2508.07662
+[^gliclass]: *GLiClass: Generalist Lightweight Model for Sequence Classification Tasks* (2025). arXiv:2508.07662. [arXiv:2508.07662](https://arxiv.org/abs/2508.07662)
 
-[^setfit]: *Efficient Few-Shot Learning Without Prompts* (2022). arXiv:2209.11055. https://arxiv.org/abs/2209.11055
+[^setfit]: *Efficient Few-Shot Learning Without Prompts* (2022). arXiv:2209.11055. [arXiv:2209.11055](https://arxiv.org/abs/2209.11055)
 
-[^routellm]: *RouteLLM: Learning to Route LLMs with Preference Data* (2024/2025). arXiv:2406.18665. https://arxiv.org/abs/2406.18665
+[^routellm]: *RouteLLM: Learning to Route LLMs with Preference Data* (2024/2025). arXiv:2406.18665. [arXiv:2406.18665](https://arxiv.org/abs/2406.18665)
 
-[^cladder]: *CLadder: Assessing Causal Reasoning in Language Models* (2023). *NeurIPS*. https://proceedings.neurips.cc/paper_files/paper/2023/hash/631bb9434d718ea309af82566347d607-Abstract-Conference.html
+[^cladder]: *CLadder: Assessing Causal Reasoning in Language Models* (2023). *NeurIPS*. [CLadder: Assessing Causal Reasoning in Language Models](https://proceedings.neurips.cc/paper_files/paper/2023/hash/631bb9434d718ea309af82566347d607-Abstract-Conference.html)
 
-[^causal-representations]: Schölkopf, B., et al. *Toward Causal Representation Learning*. *Proceedings of the IEEE*. https://proceedingsoftheieee.ieee.org/toward-causal-representation-learning/
+[^causal-representations]: Schölkopf, B., et al. *Toward Causal Representation Learning*. *Proceedings of the IEEE*. [Toward Causal Representation Learning](https://proceedingsoftheieee.ieee.org/toward-causal-representation-learning/)
 
-[^political-replications]: *JEV versus LLMs: Accuracy, Cost and Calibration on Seven Political Science Replications* (2026). arXiv:2610.06625. https://arxiv.org/abs/2610.06625
+[^political-replications]: *JEV versus LLMs: Accuracy, Cost and Calibration on Seven Political Science Replications* (2026). arXiv:2610.06625. [arXiv:2610.06625](https://arxiv.org/abs/2610.06625)
 
 ## Library sources
 

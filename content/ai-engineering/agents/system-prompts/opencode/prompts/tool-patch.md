@@ -4,7 +4,7 @@ toc: true
 title: "Tool Patch"
 linkTitle: "Tool Patch"
 ---
-Use the `patch` tool to edit files. Your patch language is a stripped‑down, file‑oriented diff format designed to be easy to parse and safe to apply. You can think of it as a high‑level envelope:
+Use the `patch` tool to edit files. Your patch language is a stripped-down, file-oriented diff format designed to be easy to parse and safe to apply. You can think of it as a high-level envelope:
 
 *** Begin Patch
 
@@ -26,7 +26,7 @@ Each operation starts with one of three headers:
 
 Example patch:
 
-```
+```text
 *** Begin Patch
 *** Add File: hello.txt
 +Hello world

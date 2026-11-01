@@ -8,7 +8,7 @@ linkTitle: "Boundaries"
 
 **Question:** should the system be one deployable unit or several, where should the boundaries go, and how do you move from one arrangement to the other?
 
-Every other hub in this section depends on this answer. Once a design has several services, it needs answers for [data across services]({{< ref "system-design/elements/data-across-services" >}}), [communication]({{< ref "system-design/elements/communication" >}}), [the request path]({{< ref "system-design/elements/request-path" >}}), [containing failure]({{< ref "system-design/elements/containing-failure" >}}), and [operating services]({{< ref "system-design/elements/operating-services" >}}).
+Every other hub in this section depends on this answer. Once a design has several services, it needs answers for [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}), [Communication]({{< ref "system-design/elements/communication" >}}), [the request path]({{< ref "system-design/elements/request-path" >}}), [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}), and [Operating Services]({{< ref "system-design/elements/operating-services" >}}).
 
 ## Forces
 
@@ -75,9 +75,9 @@ He also argues for not migrating when the goals do not require it.
 ## Leads to
 
 
-- Private data per service leads to [data across services]({{< ref "system-design/elements/data-across-services" >}}).
-- Services that call each other lead to [communication]({{< ref "system-design/elements/communication" >}}) and [the request path]({{< ref "system-design/elements/request-path" >}}).
-- More deployable units lead to [operating services]({{< ref "system-design/elements/operating-services" >}}) and [containing failure]({{< ref "system-design/elements/containing-failure" >}}).
+- Private data per service leads to [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}).
+- Services that call each other lead to [Communication]({{< ref "system-design/elements/communication" >}}) and [the request path]({{< ref "system-design/elements/request-path" >}}).
+- More deployable units lead to [Operating Services]({{< ref "system-design/elements/operating-services" >}}) and [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}).
 
 ## Seen in cases
 

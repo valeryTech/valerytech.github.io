@@ -6,16 +6,14 @@ description: "Study Kubernetes architecture, pods, deployments, replica sets, re
 linkTitle: "Kubernetes"
 ---
 
-Part of [platform and delivery]({{< ref "engineering/platform" >}}). Kubernetes is a desired-state system: its control plane reconciles declared resources against the cluster. For the general pattern, see [control plane]({{< ref "system-design/elements/control-plane" >}}); for keeping the declarations in Git, see [GitOps]({{< ref "engineering/platform/gitops" >}}).
+Part of [platform and delivery]({{< ref "engineering/platform" >}}). Kubernetes is a desired-state system: its control plane reconciles declared resources against the cluster. For the general pattern, see [Control Plane]({{< ref "system-design/elements/control-plane" >}}); for keeping the declarations in Git, see [Gitops]({{< ref "engineering/platform/gitops" >}}).
 
 # Architecture
 
 
 Kubernetes architectures have many variations. For example, many
 
-clusters run kube-apiserver, kube-scheduler, and kube-controller-
-
-manager as containers. This means the control-plane may also run
+clusters run kube-apiserver, kube-scheduler, and kube-controller-manager as containers. This means the control-plane may also run
 
 a container-runtime, kubelet, and kube-proxy.
 
@@ -70,13 +68,9 @@ commands while the node is down.
 
 run less software and Undifferentiated heavy lifting
 
-It's probably fair to say that Fargate makes sense for simple, self-contained, long-
+It's probably fair to say that Fargate makes sense for simple, self-contained, long-running compute tasks or batch jobs (such as data crunching) that don't require
 
-running compute tasks or batch jobs (such as data crunching) that don't require
-
-much customization or integration with other services. It's also ideal for build con‐
-
-tainers, which tend to be short-lived, and for any situation where the overhead of
+much customization or integration with other services. It's also ideal for build containers, which tend to be short-lived, and for any situation where the overhead of
 
 managing worker nodes isn't justified.
 
@@ -93,16 +87,14 @@ trying to reconcile the actual state with the desired state.
 
 scheduler
 
-<https://jvns.ca/blog/2017/07/27/how-does-the-kubernetes-scheduler-work/>
+[How does the Kubernetes scheduler work?](https://jvns.ca/blog/2017/07/27/how-does-the-kubernetes-scheduler-work/)
 
 ## Declarativity
 
 
 Because Kubernetes is inherently a declarative system, continuously reconciling actual
 
-state with desired state, all you need to do is change the desired state -- the Deploy‐
-
-ment spec -- and Kubernetes will do the rest. How do you do that?
+state with desired state, all you need to do is change the desired state -- the Deployment spec -- and Kubernetes will do the rest. How do you do that?
 
 resources are data
 
@@ -110,9 +102,7 @@ helm and artifact hub
 
 managing resources
 
-That's where Kubernetes resource requests and limits come in. Kubernetes under‐
-
-stands how to manage two kinds of resources: CPU and memory. There are other
+That's where Kubernetes resource requests and limits come in. Kubernetes understands how to manage two kinds of resources: CPU and memory. There are other
 
 important types of resources, too, such as network bandwidth, disk I/O operations
 
@@ -195,9 +185,7 @@ distribution of containers
 
 At first, it might seem tempting to wrap both the web server and the Git synchronizer
 
-into a single container. After closer inspection, however, the reasons for the separa‐
-
-tion become clear. First, the two containers have significantly different requirements
+into a single container. After closer inspection, however, the reasons for the separation become clear. First, the two containers have significantly different requirements
 
 in terms of resource usage. Take, for example, memory: because the web server is
 
@@ -247,9 +235,7 @@ observed or current state.
 
 Resources are requested per container, not per Pod. The total
 
-resources requested by the Pod is the sum of all resources reques‐
-
-ted by all containers in the Pod because the different containers
+resources requested by the Pod is the sum of all resources requested by all containers in the Pod because the different containers
 
 often have very different CPU requirements.
 
@@ -319,7 +305,7 @@ done in a somewhat ad hoc manner via object annotations.
 
 kubectl
 
-aliases <https://ahmet.im/blog/kubectl-aliases/index.html>
+aliases [Fun with kubectl aliases](https://ahmet.im/blog/kubectl-aliases/index.html)
 
 jq and playground with it
 
@@ -328,6 +314,7 @@ generating resource manifests
 ```bash
 kubectl create deployment demo --image=cloudnatived/demo:hello --dry-run=client -o yaml >deployment.yaml
 ```
+
 
 If you've been using imperative kubectl commands to manage your cluster up to
 
@@ -379,7 +366,7 @@ properly.
 
 init containers
 
-<https://www.baeldung.com/linux/kubernetes-init-containers>
+[Init Containers in Kubernetes](https://www.baeldung.com/linux/kubernetes-init-containers)
 
 Labels
 
@@ -431,9 +418,7 @@ to make it do anything, you then need to write a program that communicates with
 
 the Kubernetes API. This is easy to do, as we saw in "Building Your Own Kubernetes
 
-Tools" on page 132. Such a program is called an Operator (perhaps because it auto‐
-
-mates the kinds of actions that a human operator might perform).
+Tools" on page 132. Such a program is called an Operator (perhaps because it automates the kinds of actions that a human operator might perform).
 
 You can see lots of examples of Operators built and maintained by the community in
 
@@ -463,9 +448,7 @@ mesh. A service mesh is responsible for managing more complex network operations
 
 such as rate-limiting and encrypting network traffic between microservices. Service
 
-mesh tools can also add metrics and logging for requests flowing through the net‐
-
-work, keeping track of how long requests are taking, or tracing where a request
+mesh tools can also add metrics and logging for requests flowing through the network, keeping track of how long requests are taking, or tracing where a request
 
 started and what path it took through the various microservices along the way. Some
 
@@ -543,15 +526,15 @@ and hands-on experience
 ## kube exercises
 
 
-<https://github.com/eficode-academy/kubernetes-katas>
+[eficode-academy/kubernetes-katas (GitHub)](https://github.com/eficode-academy/kubernetes-katas)
 
-<https://github.com/eficode-academy/kubernetes-katas/blob/master/cheatsheet.md>
+[Kubernetes katas cheatsheet](https://github.com/eficode-academy/kubernetes-katas/blob/master/cheatsheet.md)
 
-<https://github.com/eficode-academy/helm-katas>
+[eficode-academy/helm-katas (GitHub)](https://github.com/eficode-academy/helm-katas)
 
 kubekloud
 
-<https://github.com/kubernetes/community>
+[kubernetes/community (GitHub)](https://github.com/kubernetes/community)
 
 ## Library sources
 

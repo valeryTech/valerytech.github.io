@@ -21,9 +21,9 @@ The Calendly case is useful because it distinguishes a conventional workflow fro
 | Agent-assisted scheduling | Interpret a request, resolve missing details, select an appropriate scheduling operation, handle changes. | The model can determine the next step within an allowed scope. |
 | Recruiting coordinator | Communicate with candidates, identify interviewers, arrange multiple meetings, resolve conflicts, chase feedback, update the hiring process. | The system manages dependencies, participants, and evolving work over time. |
 
-The recruiting example is particularly useful. Scheduling is only one operation within a larger process. The Calendly case describes how scheduling, communication, interviewer selection, feedback collection, and applicant-tracking updates can fit into that process. calendly-case.md
+The recruiting example is particularly useful. Scheduling is only one operation within a larger process. The Calendly case describes how scheduling, communication, interviewer selection, feedback collection, and applicant-tracking updates can fit into that process. [[calendly-case]]
 
-The SaaS analysis adds another example: business operations involving emails, documents, approvals, deadlines, and updates across several existing systems. in-market-saas.md
+The SaaS analysis adds another example: business operations involving emails, documents, approvals, deadlines, and updates across several existing systems. [[in-market-saas]]
 
 ## 2. What characteristics emerge?
 
@@ -39,8 +39,6 @@ The SaaS analysis adds another example: business operations involving emails, do
 **Controlled execution and accountability.** Tool calls can have external consequences. The system needs to distinguish proposed actions, authorized actions, attempted execution, and verified results.
 
 These observations don't establish mandatory features of every agentic product. They help explain the additional requirements that emerge when moving from a single transaction to delegated, ongoing work.
-
-<a id="3-proposed-section"></a>
 
 ## 3. Candidate product description
 
@@ -86,8 +84,6 @@ The system can return control to people when a decision exceeds its delegated sc
 Meeting coordination, recruiting operations, customer follow-up, onboarding, administrative processing, and cross-application business workflows.
 
 These systems may combine flexible agent planning, deterministic workflow execution, predefined task operations, human approval, and persistent coordination within one product.
-
-<a id="4-how-this-connects-to-our-earlier-examples"></a>
 
 ## 4. Relationship to other cases
 

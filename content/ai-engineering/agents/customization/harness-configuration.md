@@ -6,7 +6,7 @@ description: "What a team can set when it can't change its coding harness: instr
 linkTitle: "Harness Configuration"
 ---
 
-This note looks at a constrained situation: the team uses a harness it can't change, such as Claude Code, Codex, or Factory's Droid, and can only set what the harness reads. It lists what the team can set, describes each part by three properties, and draws the consequences for a minimal `AGENTS.md`. It was written in step 25 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}). Most of what it lists makes up the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), and the command layer, checks, git hooks, CI, and branch protection are part of the [Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}}).
+This note looks at a constrained situation: the team uses a harness it can't change, such as Claude Code, Codex, or Factory's Droid, and can only set what the harness reads. It lists what the team can set, describes each part by three properties, and draws the consequences for a minimal `AGENTS.md`. It was written in step 25 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}). Most of what it lists makes up the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), and the command layer, checks, git hooks, CI, and branch protection are part of the [Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}}).
 
 ## The Constraint
 

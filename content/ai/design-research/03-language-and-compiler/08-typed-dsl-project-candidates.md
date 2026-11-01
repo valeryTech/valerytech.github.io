@@ -14,8 +14,6 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 Initial project question: Which examples could test the proposed approach? The author wants to avoid a system with a closed set of capabilities. Candidate starting points include query processing with loops and exit criteria, or RAG.
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The working interpretation is that iterative query processing / RAG is a better starting point than a capability-control system, because it gives us real planning, loops, intermediate state, exit criteria, optimization, and measurable outcomes.
 
 The proposal is to structure the DSL so the core language is small, while the set of domain operators is extensible. Think more like SQL + UDFs or a compiler IR:

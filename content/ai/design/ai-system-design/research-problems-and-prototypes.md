@@ -46,7 +46,7 @@ How should a system respond when a valid formalization exposes a problem with th
 
 **Prototype comparison:** Begin with an ambiguous request such as "compare the most reliable designs." Expose the proposed meaning of reliability, examples, and consequences. Allow the user to change the criterion after seeing a counterexample, and carry the revision through to a new result.
 
-**What we could learn:** Whether the interaction helps participants identify their actual question and preserve the reasons for changing it. A useful outcome may be a better formulation. Basis: language intent and hybrid interaction and its comments on intent agreement.
+**What we could learn:** Whether the interaction helps participants identify their actual question and preserve the reasons for changing it. A useful outcome may be a better formulation. [Basis: language intent and hybrid interaction]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}).
 
 ### 4. Constraints that enable useful construction
 
@@ -160,7 +160,7 @@ Under what conditions can independently produced work be merged? Conflict may co
 
 **Prototype comparison:** Let two contributors revise a design analysis from the same starting point. Introduce one compatible pair of edits, one direct conflict, and one pair that is structurally mergeable but semantically inconsistent. Compare automatic merging, explicit alternatives, and review of the combined result.
 
-**What we could learn:** Which changes can commute, what a merge must preserve, and when disagreement should remain visible. Successful coordination includes reaching a usable result as well as avoiding an invalid combination. Basis: composable investigation workspaces and [collaboration framework research routes]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes" >}}).
+**What we could learn:** Which changes can commute, what a merge must preserve, and when disagreement should remain visible. Successful coordination includes reaching a usable result as well as avoiding an invalid combination. [Basis: composable investigation workspaces]({{< ref "ai/design-research/interactive-systems/03-composable-investigation-workspaces" >}}) and [collaboration framework research routes]({{< ref "ai/design-research/00-overview/07-collaboration-framework-research-routes" >}}).
 
 ### 16. Continuity when goals, evidence, and programs change
 
@@ -169,7 +169,7 @@ What remains valid after a revision? Understanding can evolve while earlier work
 
 **Prototype comparison:** Finish an investigation, then separately change its question, a source, an operation, or its configuration. Resume the work and decide which results can be reused. Include a computation that finishes after the inputs have changed.
 
-**What we could learn:** Which dependencies matter, how to distinguish a historical result from a current one, and how much work can be retained without carrying obsolete assumptions forward. [Basis: program versions, runs, and results]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}), its [comments]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments" >}}), and application-state analysis.
+**What we could learn:** Which dependencies matter, how to distinguish a historical result from a current one, and how much work can be retained without carrying obsolete assumptions forward. [Basis: program versions, runs, and results]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) and its [comments]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results-comments" >}}).
 
 ## Recovery, reusable behavior, and warranted claims
 
@@ -198,7 +198,7 @@ How can observations of human corrections improve a system without treating ever
 
 **Prototype comparison:** Let people intervene in evidence selection or classification. Record the circumstances and reasons, derive a candidate policy, and compare its behavior on unseen cases. Preserve the ability to correct it when the task changes.
 
-**What we could learn:** Which decisions become repeatable, where automation increases mistakes or reduces useful engagement, and which interventions retain their own purpose. Observed approvals do not grant future authority. Basis: exploratory pipeline design and progressive automation and the critique of its proposed conditions.
+**What we could learn:** Which decisions become repeatable, where automation increases mistakes or reduces useful engagement, and which interventions retain their own purpose. Observed approvals do not grant future authority. [Basis: exploratory pipeline design and progressive automation]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}).
 
 ### 20. Establishing what a successful prototype actually demonstrates
 

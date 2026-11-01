@@ -6,7 +6,7 @@ description: "Ten practices for reasoning and deciding in any engineering task, 
 linkTitle: "Approach"
 ---
 
-This note describes the Approach: the reasoning and decision-making practices for any engineering task, such as framing a feature, investigating an incident, fixing a bug, designing a system, reviewing a change, or releasing it. [Goals]({{< ref "ai-engineering/agents/sdlc/goal-planes" >}}) say why we work, [activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) and [task types]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) say what we work on, and the Approach says how to reason inside each step. These ten practices hold even when one engineer works alone without an assistant; [Processes]({{< ref "ai-engineering/agents/sdlc/processes" >}}) describes what has to happen once the work is split across people, stateless agents, and automated checks. They started as step 5 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}); step 12 there explains why they're grouped by the problem-solving cycle. The [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) treats them as hypotheses that real tasks test.
+This note describes the Approach: the reasoning and decision-making practices for any engineering task, such as framing a feature, investigating an incident, fixing a bug, designing a system, reviewing a change, or releasing it. [Goals]({{< ref "ai-engineering/agents/sdlc/goal-planes" >}}) say why we work, [Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}) and [Task Types]({{< ref "ai-engineering/agents/sdlc/task-types" >}}) say what we work on, and the Approach says how to reason inside each step. These ten practices hold even when one engineer works alone without an assistant; [Processes]({{< ref "ai-engineering/agents/sdlc/processes" >}}) describes what has to happen once the work is split across people, stateless agents, and automated checks. They started as step 5 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reasoning" >}}); step 12 there explains why they're grouped by the problem-solving cycle. The [Bottom Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) treats them as hypotheses that real tasks test.
 
 ## Why Assistants Need This
 
@@ -23,10 +23,10 @@ The features are grouped by the four parts of the [problem-solving cycle]({{< re
 
 1. **Start from the outcome.** State what result is needed and how we'll know we have it. Derive what the work needs from that outcome, and question anything the outcome doesn't need. For a feature, the outcome is a change in what users can do; for a bug fix, the correct behavior; for an investigation, an answer that a decision depends on; for a review, a decision to merge, request changes, or escalate.
 2. **Separate what is known, what is assumed, and what is unknown.**
-   - **Agreed constraints:** what must hold, such as requirements, contracts, and limits.
-   - **Observed facts:** what was seen, and where. Current behavior can include bugs, so it can differ from intended behavior.
-   - **Assumptions:** what we believe without having checked, and what breaks if it's false.
-   - **Open questions:** unknowns whose answer could change the next decision.
+	- **Agreed constraints:** what must hold, such as requirements, contracts, and limits.
+	- **Observed facts:** what was seen, and where. Current behavior can include bugs, so it can differ from intended behavior.
+	- **Assumptions:** what we believe without having checked, and what breaks if it's false.
+	- **Open questions:** unknowns whose answer could change the next decision.
 
 ### Choose
 
@@ -46,7 +46,7 @@ The features are grouped by the four parts of the [problem-solving cycle]({{< re
 
 8. **Check the result independently of the explanation.** Treat explanations, from a person or an agent, as claims to check. Base the checks on the outcome and on the failures that matter, with nearby variations, so they don't repeat the author's assumption. State what was checked and what remains unchecked.
 9. **When an assumption fails, revisit the decisions that depend on it.** Trace which decisions rest on the failed assumption and revise them. Don't pile retries, locks, or local patches around a broken premise. The revision can send work to an earlier part of the cycle or to an earlier activity: a design assumption that fails during implementation goes back to design.
-10. **Record what was learned where the next task will find it.** Decisions, contracts, findings, and repeated mistakes go where the team and the agent will look: decision records, docs, checks, commands, or `AGENTS.md`. This keeps the team's understanding, which is the second output of the [engineering workflow]({{< ref "ai-engineering/agents/sdlc/workflows" >}}), and gives the Engineering Knowledge Loop and the [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) cases to compare.
+10. **Record what was learned where the next task will find it.** Decisions, contracts, findings, and repeated mistakes go where the team and the agent will look: decision records, docs, checks, commands, or `AGENTS.md`. This keeps the team's understanding, which is the second output of the [engineering workflow]({{< ref "ai-engineering/agents/sdlc/workflows" >}}), and gives the Engineering Knowledge Loop and the [Bottom Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) cases to compare.
 
 ### Across All Parts: Scaling the Depth
 
@@ -56,7 +56,7 @@ Scale the depth of each feature to the consequence, uncertainty, and reversibili
 ## The Features in Each Activity
 
 
-The table shows what each feature looks like in each of the six [activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}). [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}#the-cycle-inside-each-activity) shows the four parts of the cycle in each activity.
+The table shows what each feature looks like in each of the six [Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}). [Engineering Activities]({{< ref "ai-engineering/agents/sdlc/activities" >}}#the-cycle-inside-each-activity) shows the four parts of the cycle in each activity.
 
 | Feature | Framing | Investigation | Design decisions | Implementation | Verification and review | Release and operation |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -76,15 +76,15 @@ The table shows what each feature looks like in each of the six [activities]({{<
 
 Notes on review and design:
 
-- [review-process.md]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}}): eight review steps in lifecycle order. Step 1 resolves an unclear requirement with the responsible person, and step 4 asks whether a simpler approach would be better.
-- [code-review.md]({{< ref "ai-engineering/agents/ai-assisted-development/code-review" >}}): follows the chain from the problem to the affected system, the design, and the implementation, and treats explanations as claims to check.
-- [system-design-decisions.md]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}}) and [common-mistakes.md]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}}): comparing useful alternatives, testing consequential assumptions, recording what implementation must preserve, and avoiding sticking with the first solution or patching around a broken assumption.
-- [Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}), especially [framework-rationale-and-use.md]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}}) (gather enough context to choose a solution, keep assumptions visible, and scale the depth to consequence and reversibility) and [backward-design-and-independent-verification.md]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) (work backward from outcomes to necessary conditions, and verify independently around consequential failure scenarios).
+- [Review Process]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}}): eight review steps in lifecycle order. Step 1 resolves an unclear requirement with the responsible person, and step 4 asks whether a simpler approach would be better.
+- [Code Review]({{< ref "ai-engineering/agents/ai-assisted-development/code-review" >}}): follows the chain from the problem to the affected system, the design, and the implementation, and treats explanations as claims to check.
+- [System Design Decisions]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}}) and [Common Mistakes]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}}): comparing useful alternatives, testing consequential assumptions, recording what implementation must preserve, and avoiding sticking with the first solution or patching around a broken assumption.
+- [Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}}), especially [Framework Rationale And Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}}) (gather enough context to choose a solution, keep assumptions visible, and scale the depth to consequence and reversibility) and [Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) (work backward from outcomes to necessary conditions, and verify independently around consequential failure scenarios).
 
 General notes:
 
 - Problem-solving framework: the four parts of the cycle, with trade-off analysis and the decision in the second part.
-- [Discovery and Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): frame before acting, learn after acting, and use evidence to choose the next commitment.
+- [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): frame before acting, learn after acting, and use evidence to choose the next commitment.
 - [My Perspective on AI Engineering]({{< ref "ai-engineering/approach/my-perspective" >}}): the enabling principles, including honesty about what we know and willingness to learn and change.
 - [AI Engineering Working Assumptions]({{< ref "ai-engineering/working-assumptions" >}}): LLMs generate proposals, and evidence decides which ones to keep.
 - [Cycles in Engineering Work]({{< ref "ai-engineering/agents/sdlc/cycles" >}}): the problem-solving cycle and the other cycles of engineering work.
@@ -96,17 +96,17 @@ This is step 5 of the [Reasoning Log]({{< ref "ai-engineering/agents/logs-reason
 
 > *User note:* We need to introduce the features of a good approach: explicit decision points, considering different options, choosing between them, and explicitly considering trade-offs. This isn't only for software design. We also use these elements (explicit decisions and the analysis of several options or hypotheses) when we resolve bugs, search for something, or investigate.
 
-Between **Goals** (*why* we work) and **Activities** (*what* we work on) sits **The Approach**: the reasoning and decision-making discipline that governs *how* we work with an assistant in any task--whether framing a feature, investigating an incident, resolving a bug, designing a system, or reviewing a change.
+Between **Goals** (*why* we work) and **Activities** (*what* we work on) sits **The Approach**: the reasoning and decision-making discipline that governs *how* we work with an assistant in any task -- whether framing a feature, investigating an incident, resolving a bug, designing a system, or reviewing a change.
 
 ### A. Where This Connects to Existing Notes in the Vault
 
 
 Previously, no single note in the vault covered SDLC phases, explicit decision points, and multi-option/trade-off analysis together across all activities. Pieces of this discipline appear in several places:
 
-- **[review-process.md]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}})** walks through eight review steps in lifecycle order (*agree on what should change \(\rightarrow\) read the relevant system \(\rightarrow\) find affected parts \(\rightarrow\) check design \(\rightarrow\) check implementation \(\rightarrow\) test important behavior \(\rightarrow\) check deployment and recovery \(\rightarrow\) write review conclusion*). Step 1 makes the explicit-decision rule clear: if an unclear requirement would lead to different implementations, resolve it with the responsible person rather than quietly picking whichever reading fits the code already written. Step 4 asks whether a simpler approach would be better.
-- **[code-review.md]({{< ref "ai-engineering/agents/ai-assisted-development/code-review" >}})** follows the same chain from problem \(\rightarrow\) affected system \(\rightarrow\) design and implementation, and adds the rule to **treat explanations as claims to check** because code, tests, and PR descriptions can all repeat the same mistaken assumption.
-- **[system-design-decisions.md]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}})** and **[common-mistakes.md]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}})** cover comparing useful alternatives, testing consequential assumptions, recording what implementation must preserve, and avoiding the trap of sticking with the first solution or patching around a broken assumption.
-- **[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}})**--especially **[framework-rationale-and-use.md]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})** ("Before implementation": gather enough context and requirements to choose a solution, keep assumptions visible, scale depth to consequence and reversibility) and **[backward-design-and-independent-verification.md]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}})** (work backward from outcomes to necessary conditions; verify independently around consequential failure scenarios).
+- **[Review Process]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}})** walks through eight review steps in lifecycle order (*agree on what should change \(\rightarrow\) read the relevant system \(\rightarrow\) find affected parts \(\rightarrow\) check design \(\rightarrow\) check implementation \(\rightarrow\) test important behavior \(\rightarrow\) check deployment and recovery \(\rightarrow\) write review conclusion*). Step 1 makes the explicit-decision rule clear: if an unclear requirement would lead to different implementations, resolve it with the responsible person rather than quietly picking whichever reading fits the code already written. Step 4 asks whether a simpler approach would be better.
+- **[Code Review]({{< ref "ai-engineering/agents/ai-assisted-development/code-review" >}})** follows the same chain from problem \(\rightarrow\) affected system \(\rightarrow\) design and implementation, and adds the rule to **treat explanations as claims to check** because code, tests, and PR descriptions can all repeat the same mistaken assumption.
+- **[System Design Decisions]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}})** and **[Common Mistakes]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}})** cover comparing useful alternatives, testing consequential assumptions, recording what implementation must preserve, and avoiding the trap of sticking with the first solution or patching around a broken assumption.
+- **[Engineering Review Framework]({{< ref "engineering/engineering-review-framework/engineering-review-framework" >}})** -- especially **[Framework Rationale And Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})** ("Before implementation": gather enough context and requirements to choose a solution, keep assumptions visible, scale depth to consequence and reversibility) and **[Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}})** (work backward from outcomes to necessary conditions; verify independently around consequential failure scenarios).
 
 Unifying these elements here turns them into a general cross-lifecycle approach for human-agent collaboration.
 
@@ -115,36 +115,36 @@ Unifying these elements here turns them into a general cross-lifecycle approach 
 
 By default, an LLM is a **single-path completion engine**: given a prompt, it picks the first plausible interpretation, commits to the first plausible hypothesis or design, treats unverified assumptions as facts, buries trade-offs inside fluent output, and writes checks that confirm its own assumption.
 
-A good approach counteracts that single-path bias at every step--not only in architecture, but in **bug resolution, investigation, product framing, implementation, and review**.
+A good approach counteracts that single-path bias at every step -- not only in architecture, but in **bug resolution, investigation, product framing, implementation, and review**.
 
 ### C. Seven Core Features of a Good Approach
 
 
 1. **Separate What Is Known from What Is Assumed**
-   - Explicitly distinguish:
-     - **Agreed requirements / invariants** (what must hold)
-     - **Observed facts / current behavior** (what the system actually does today, which may include bugs)
-     - **Assumptions / hypotheses** (what we think is true, and what breaks if it is false)
-     - **Open questions** (unknowns that could change the next decision)
+		- Explicitly distinguish:
+			- **Agreed requirements / invariants** (what must hold)
+			- **Observed facts / current behavior** (what the system actually does today, which may include bugs)
+			- **Assumptions / hypotheses** (what we think is true, and what breaks if it is false)
+			- **Open questions** (unknowns that could change the next decision)
 2. **Generate Multiple Options or Hypotheses (Avoid Single-Path Tunnel Vision)**
-   - Never jump straight to the first plausible code change or explanation.
-   - In **design**, compare genuinely useful alternatives, always including the *simplest/smallest change* that can do the job.
-   - In **investigation and bug resolution**, list competing hypotheses for the root cause and competing options for the fix (e.g., local symptom guard vs. fixing the caller vs. revising the contract/design).
+		- Never jump straight to the first plausible code change or explanation.
+		- In **design**, compare genuinely useful alternatives, always including the *simplest/smallest change* that can do the job.
+		- In **investigation and bug resolution**, list competing hypotheses for the root cause and competing options for the fix (e.g., local symptom guard vs. fixing the caller vs. revising the contract/design).
 3. **Analyze Trade-Offs Explicitly**
-   - Compare options against the criteria that matter for the situation: correctness under failure, blast radius, compatibility, operational/rollback risk, added complexity, and cost/effort.
+		- Compare options against the criteria that matter for the situation: correctness under failure, blast radius, compatibility, operational/rollback risk, added complexity, and cost/effort.
 4. **Run Targeted Checks to Resolve Consequential Uncertainty Before Committing**
-   - When different answers to an open question or assumption would change the choice between options, run a focused check first (inspect the contract, run a query/reproducer, build a small prototype, or test timeout behavior) rather than building a full solution on a guess.
+		- When different answers to an open question or assumption would change the choice between options, run a focused check first (inspect the contract, run a query/reproducer, build a small prototype, or test timeout behavior) rather than building a full solution on a guess.
 5. **Make Decision Points and Ownership Explicit**
-   - Treat decisions as explicit stops rather than letting the agent silently slide from ambiguity into implementation:
-     - *What decision is being made now, and which option is chosen?*
-     - *Who owns it?* (Routine local choices stay with the assistant/implementer; unclear requirements, architecture trade-offs, contract changes, and risk acceptance go to the responsible person with options and trade-offs stated.)
-     - *What must downstream work preserve, and what would make us reconsider?*
-6. **Work Backward from Outcomes and Verify Independently** *(cf. [backward-design-and-independent-verification.md]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}))*
-   - **Backward derivation:** Derive necessary conditions and responsibilities from the intended outcome and workflow, questioning unnecessary machinery.
-   - **Independent verification:** Treat explanations (whether from a person or an agent) as claims to check. Design checks around consequential failure modes and nearby variations, and explicitly state **what was checked and what remains unchecked**.
+		- Treat decisions as explicit stops rather than letting the agent silently slide from ambiguity into implementation:
+			- *What decision is being made now, and which option is chosen?*
+			- *Who owns it?* (Routine local choices stay with the assistant/implementer; unclear requirements, architecture trade-offs, contract changes, and risk acceptance go to the responsible person with options and trade-offs stated.)
+			- *What must downstream work preserve, and what would make us reconsider?*
+6. **Work Backward from Outcomes and Verify Independently** *(cf. [Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}))*
+		- **Backward derivation:** Derive necessary conditions and responsibilities from the intended outcome and workflow, questioning unnecessary machinery.
+		- **Independent verification:** Treat explanations (whether from a person or an agent) as claims to check. Design checks around consequential failure modes and nearby variations, and explicitly state **what was checked and what remains unchecked**.
 7. **Revisit Earlier Decisions When Evidence Disproves an Assumption (Proportional Rigor)**
-   - When an investigation, implementation detail, or test disproves an assumption, trace which decisions depend on it and revise them--rather than piling on retries, locks, or local patches around a broken premise ([common-mistakes.md]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}})).
-   - Scale the depth of all these steps to the **consequence, uncertainty, and reversibility** of the work ([framework-rationale-and-use.md]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})).
+		- When an investigation, implementation detail, or test disproves an assumption, trace which decisions depend on it and revise them -- rather than piling on retries, locks, or local patches around a broken premise ([Common Mistakes]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}})).
+		- Scale the depth of all these steps to the **consequence, uncertainty, and reversibility** of the work ([Framework Rationale And Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}})).
 
 ### D. How These Features Apply Beyond System Design (Across Activities)
 

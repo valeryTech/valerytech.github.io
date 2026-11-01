@@ -25,9 +25,9 @@ Kafka + Schema ~ Rest + Json
 # Sources
 
 
-<https://gist.github.com/aviflax/7f453a41a06a200a2f5d>
+[Resources for Learning Stream Data Processing](https://gist.github.com/aviflax/7f453a41a06a200a2f5d)
 
-<https://medium.com/microservicegeeks/best-books-on-apache-kafka-and-event-stream-processing-c0d267e352bd>
+[Best books on Apache Kafka and Event Stream Processing](https://medium.com/microservicegeeks/best-books-on-apache-kafka-and-event-stream-processing-c0d267e352bd)
 
 # Events etc
 
@@ -52,7 +52,7 @@ streaming pipelines
 
 5 principles of modern data flow:
 
-1. Streaming - reality is real time: organization really wants to what is going on right now.
+1. Streaming -- reality is real time: organization really wants to what is going on right now.
 2. Decentralized
 3. Declarative (ksqlDB SQL syntax)
 4. Developer-Oriented (ksqlDB pipelines as code, can be checked into git)
@@ -79,7 +79,7 @@ definition from DDD
 
 The big advantage of storing raw event data is that you have maximum flexibility for analysis. For example, you can trace the sequence of pages that one person visited over the course of their session. You can't do that if you've squashed all the events into counters. That sort of analysis is really important for some offline processing tasks such as training a recommender system (e.g., "people who bought X also bought Y"). For such use cases, it's best to simply keep all the raw events so that you can later feed them all into your shiny new machine-learning system.
 
-On the other hand, the aggregated data is the form in which it's ideal to read data from the database. If a customer is looking at the contents of their shopping cart, they are not interested in the entire history of modifications that led to the current state: they only want to know what's in the cart right now. An analytics application normally doesn't need to show the user the full list of all page views - only the aggregated summary in the form of a chart. Thus, when you're reading, you can get the best performance if the history of changes has already been squashed together into a single object representing the current state.
+On the other hand, the aggregated data is the form in which it's ideal to read data from the database. If a customer is looking at the contents of their shopping cart, they are not interested in the entire history of modifications that led to the current state: they only want to know what's in the cart right now. An analytics application normally doesn't need to show the user the full list of all page views -- only the aggregated summary in the form of a chart. Thus, when you're reading, you can get the best performance if the history of changes has already been squashed together into a single object representing the current state.
 
 In general, the form of data that's best optimized for writing is not the same as the form that is best optimized for reading. It can thus make sense to separate the way you write to your system from the way you read from it (this idea is sometimes known as command-query responsibility segregation, or CQRS).
 
@@ -88,7 +88,7 @@ In general, the form of data that's best optimized for writing is not the same a
 
 From the Twitter and Facebook examples we can see a certain pat tern: the input events, corresponding to the buttons in the user interface, are quite simple. They are immutable facts, we can simply store them all, and we can treat them as the source of truth.
 
-You can derive everything that you can see on a website - that is, everything that you read from the database - from those raw events. There is a process that derives those aggregates from the raw events, and which updates the caches when new events come in, and that process is entirely deterministic. You could, if necessary, re-run it from scratch: if you feed in the entire history of everything that ever happened on the site, you can reconstruct every cache entry to be exactly as it was before. The database you read from is just a cached view of the event log.
+You can derive everything that you can see on a website -- that is, everything that you read from the database -- from those raw events. There is a process that derives those aggregates from the raw events, and which updates the caches when new events come in, and that process is entirely deterministic. You could, if necessary, re-run it from scratch: if you feed in the entire history of everything that ever happened on the site, you can reconstruct every cache entry to be exactly as it was before. The database you read from is just a cached view of the event log.
 
 The beautiful thing about this separation between source of truth and caches is that in your caches, you can denormalize data to your heart's content. In regular databases, it is often considered best practice to normalize data, because if something changes, you then only need to change it one place. Normalization makes writes fast and simple, but it means you must do more work (joins) at read time. To speed up reads, you can denormalize data; that is, duplicate information in various places so that it can be read faster.
 
@@ -102,7 +102,7 @@ I'm not saying that this duplication of data is bad -- far from it. Caching, ind
 # Stream processing
 
 > A key characteristic of stream processing is that the events are processed as soon as (or almost as soon as) they are available. This is to minimize the latency between the original event's entrance into the streaming system and the end result from processing the event. In most cases, the latency varies from a few milliseconds to seconds, which can be considered real-time or near real-time; hence, stream processing is also called real-time processing.
-This is definition from Grokking - What is real-time here? We can do batching with near-real timings as well.
+This is definition from Grokking -- What is real-time here? We can do batching with near-real timings as well.
 
 We would like streaming systems to process the events and generate results as soon as possible after the events are collected. This is desirable because it allows the results to be available with minimal delays and the proper reactions to be performed in time. Their real-time nature makes streaming systems very useful in many scenarios, such as the laboratory and the website, where low-latency results are desired.
 
@@ -132,7 +132,7 @@ simple streaming engine
 
 Job, also known as a Pipeline or a Topology, is an implementation of a streaming system. A job is composed of components (sources and operators) and streams connecting the components.
 
-<https://developer.confluent.io/patterns/> - event streaming patterns from Confluent
+[Event streaming patterns (Confluent)](https://developer.confluent.io/patterns/) - event streaming patterns from Confluent
 
 microservices patterns in java
 

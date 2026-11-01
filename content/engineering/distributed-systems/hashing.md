@@ -35,7 +35,7 @@ With one position per node, the basic ring has three problems (Xu, Dynamo). Rand
 ### Replication along the ring
 
 
-Dynamo stores each key on its owner (the coordinator) and on the next N-1 nodes clockwise, so each node holds the arc between its Nth predecessor and itself. The nodes responsible for a key form its preference list, which holds more than N nodes so that writes can fall through to later entries when earlier ones are down. With virtual nodes, the next N positions may belong to fewer than N machines, so the preference list skips positions whose physical node is already on it (Dynamo, Xu, Educative). Xu adds placing replicas in different data centers. What those replicas do with reads and writes (quorums, hinted handoff) is in [replication]({{< ref "engineering/distributed-systems/replication" >}}).
+Dynamo stores each key on its owner (the coordinator) and on the next N-1 nodes clockwise, so each node holds the arc between its Nth predecessor and itself. The nodes responsible for a key form its preference list, which holds more than N nodes so that writes can fall through to later entries when earlier ones are down. With virtual nodes, the next N positions may belong to fewer than N machines, so the preference list skips positions whose physical node is already on it (Dynamo, Xu, Educative). Xu adds placing replicas in different data centers. What those replicas do with reads and writes (quorums, hinted handoff) is in [Replication]({{< ref "engineering/distributed-systems/replication" >}}).
 
 ### Dynamo's move to fixed partitions
 
@@ -73,12 +73,12 @@ Chapter 7 (Sharding) treats these as options under sharding by hash of key, and 
 - **Fixed number of shards:** create many more shards than nodes (the example is 1,000 shards on 10 nodes), map a key to shard `hash(key) % 1,000`, and track separately which node holds which shard. Adding a node moves whole shards to it; the key-to-shard mapping never changes. Citus, Riak, Elasticsearch, and Couchbase work this way. The limits: no more nodes than shards, an expensive resharding if the count was wrong, and shard size that grows with the dataset.
 - **Hash-range sharding:** each shard owns a contiguous range of hash values and splits when it grows too large (YugabyteDB, DynamoDB). Cassandra and ScyllaDB use a variant: the hash range is cut into a number of ranges proportional to the node count (16 per node by default in Cassandra, 256 in ScyllaDB) with random boundaries, and a joining node takes parts of existing ranges.
 - **The term:** DDIA 2e defines a consistent hashing algorithm by two properties: each shard gets roughly the same number of keys, and a change in the number of shards moves as few keys as possible. "Consistent" here has nothing to do with replica consistency or ACID consistency; chapter 8 lists it among at least five meanings of the word. Cassandra's scheme is close to the original definition, while rendezvous and jump consistent hashing are other algorithms with the same properties. The difference: the ring variant gives a new node pieces of a few existing ranges, while rendezvous and jump hashing give it individual keys scattered across all nodes. DDIA says the better choice depends on the application.
-- **Keys versus load:** even key distribution does not mean even load. A hot key, such as a celebrity's user ID, still overloads its node, and needs range-based isolation or key splitting; see [partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}).
+- **Keys versus load:** even key distribution does not mean even load. A hot key, such as a celebrity's user ID, still overloads its node, and needs range-based isolation or key splitting; see [Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}).
 
 ## In a design
 
 
-- **Partitioned stores:** a Dynamo-style store uses a ring with virtual nodes and walks it for replicas, as in the [key-value store case]({{< ref "system-design/projects/key-value-store" >}}#dynamo-style-design). Many databases instead keep a fixed set of partitions and a partition map; rebalancing and request routing for both are in [partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}).
+- **Partitioned stores:** a Dynamo-style store uses a ring with virtual nodes and walks it for replicas, as in the [key-value store case]({{< ref "system-design/projects/key-value-store" >}}#dynamo-style-design). Many databases instead keep a fixed set of partitions and a partition map; rebalancing and request routing for both are in [Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}).
 - **Caches:** clients hash keys to cache servers so that growing the pool keeps most keys on the same server and the hit ratio holds (Xu, Vitillo, Burns). NGINX exposes this as `hash $request_uri consistent` (Burns).
 - **Load balancers:** hashing a session cookie or client address keeps a user on one backend across scaling events (Vitillo, Burns); see [load balancer]({{< ref "system-design/elements/request-path" >}}#load-balancer).
 - **Choosing:** rendezvous fits small node sets, weighted nodes, and cases where a failed node's keys must spread evenly; a ring with virtual nodes fits large, changing node sets; fixed partitions fit when a coordination service can hold the map. The [options table]({{< ref "system-design/elements/data-at-scale" >}}#options) lists consistent or rendezvous hashing as the option for caches and stores whose node set changes.
@@ -100,8 +100,8 @@ Chapter 7 (Sharding) treats these as options under sharding by hash of key, and 
 ## Sources
 
 
-- <https://randorithms.com/2020/12/26/rendezvous-hashing.html>: rendezvous hashing as a per-key ranking of servers, the weighting formula, failover, and why node additions suit caches better than stores.
-- <https://akshatm.svbtle.com/consistent-hash-rings-theory-and-implementation>: the ring with a Python implementation over sorted positions.
+- [Rendezvous Hashing Explained](https://randorithms.com/2020/12/26/rendezvous-hashing.html): rendezvous hashing as a per-key ranking of servers, the weighting formula, failover, and why node additions suit caches better than stores.
+- [Consistent Hash Rings Explained Simply](https://akshatm.svbtle.com/consistent-hash-rings-theory-and-implementation): the ring with a Python implementation over sorted positions.
 - interviewing.io: noted as additional reading on consistent hashing; no specific page recorded.
 - Karger, Lehman, Leighton, Panigrahy, Levine, and Lewin 1997, *Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web*, STOC ([doi:10.1145/258533.258660](https://doi.org/10.1145/258533.258660)).
 - Thaler and Ravishankar 1998, *Using Name-Based Mappings to Increase Hit Rates*, IEEE/ACM Transactions on Networking ([doi:10.1109/90.663936](https://doi.org/10.1109/90.663936)).

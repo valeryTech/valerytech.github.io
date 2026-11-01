@@ -24,7 +24,7 @@ The closest work falls into five groups. **PlanCompiler, λ_A, Lean4Agent and Zi
 
 **Temporal, DBOS and LangGraph** already solve much of the engineering problem of durable execution: persistent state, failure recovery, replay/checkpointing, human pauses and long-running workflows. HASH's Petri-net work additionally shows that Petri nets are being explored as an explicit, inspectable control model for agent systems. Their missing layer is epistemic semantics: they durably execute computation, but they do not document a general mechanism by which an unresolved source conflict or incomplete corpus screening makes a `FinalFinding` unconstructable.
 
-Finally, **PaperQA2, OpenScholar, STORM/Co-STORM and Hebbia Matrix** demonstrate that evidence-seeking workflows benefit from iterative retrieval, source-linked synthesis, contradiction detection, decomposition and inspectable intermediate state. More specialised work isolates individual epistemic dimensions: RA-RAG estimates source reliability, FaithfulRAG explicitly models fact-level conflicts, and TRAQ supplies an end-to-end *statistical* correctness guarantee for RAG through conformal prediction. None of these sources documents the complete five-contract model--coverage, provenance, authority, contradictions and abstention--as compositional program semantics.
+Finally, **PaperQA2, OpenScholar, STORM/Co-STORM and Hebbia Matrix** demonstrate that evidence-seeking workflows benefit from iterative retrieval, source-linked synthesis, contradiction detection, decomposition and inspectable intermediate state. More specialised work isolates individual epistemic dimensions: RA-RAG estimates source reliability, FaithfulRAG explicitly models fact-level conflicts, and TRAQ supplies an end-to-end *statistical* correctness guarantee for RAG through conformal prediction. None of these sources documents the complete five-contract model -- coverage, provenance, authority, contradictions and abstention -- as compositional program semantics.
 
 That leaves a credible first-paper gap. The proposal is to formulate it more narrowly than "a new agent runtime":
 
@@ -117,11 +117,11 @@ The table shows an important asymmetry. Programming-languages work is strongest 
 
 The annotations below continue in the linked notes with their original arguments retained and wording edited.
 
-- <a id="formal-languages-and-verification"></a>[Formal languages and verification]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}#formal-languages-and-verification)
-- <a id="provenance-query-processing-and-scientific-workflows"></a>[Provenance, query processing and scientific workflows]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}#provenance-query-processing-and-scientific-workflows)
-- <a id="durable-and-inspectable-execution"></a>[Durable and inspectable execution]({{< ref "ai/design-research/04-investigation-and-epistemics/02-llm-operated-investigation-runtime" >}}#durable-and-inspectable-execution)
-- <a id="investigation-and-evidence-systems"></a>[Investigation and evidence systems]({{< ref "ai/design-research/06-research-reports/04-investigation-systems-and-related-work" >}}#investigation-and-evidence-systems)
-- <a id="benchmarks-and-datasets"></a>[Benchmarks and datasets]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}#benchmarks-and-datasets)
+- [Formal languages and verification]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}#formal-languages-and-verification) ^formal-languages-and-verification
+- [Provenance, query processing and scientific workflows]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}#provenance-query-processing-and-scientific-workflows) ^provenance-query-processing-and-scientific-workflows
+- [Durable and inspectable execution]({{< ref "ai/design-research/04-investigation-and-epistemics/02-llm-operated-investigation-runtime" >}}#durable-and-inspectable-execution) ^durable-and-inspectable-execution
+- [Investigation and evidence systems]({{< ref "ai/design-research/06-research-reports/04-investigation-systems-and-related-work" >}}#investigation-and-evidence-systems) ^investigation-and-evidence-systems
+- [Benchmarks and datasets]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}#benchmarks-and-datasets) ^benchmarks-and-datasets
 
 ## Gaps and direction for a first paper
 
@@ -136,9 +136,9 @@ The proposed gap to defend is:
 
 The formal model, compiler example, and evaluation design continue in the linked notes.
 
-- <a id="the-formal-core"></a>[The formal core]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}#the-formal-core)
-- <a id="the-compiler-and-optimiser"></a>[The compiler and optimiser]({{< ref "ai/design-research/05-runtime-and-execution/03-resource-aware-investigation-planning" >}}#the-compiler-and-optimiser)
-- <a id="the-evaluation"></a>[The evaluation]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}#the-evaluation)
+- [The formal core]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}#the-formal-core) ^the-formal-core
+- [The compiler and optimiser]({{< ref "ai/design-research/05-runtime-and-execution/03-resource-aware-investigation-planning" >}}#the-compiler-and-optimiser) ^the-compiler-and-optimiser
+- [The evaluation]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}#the-evaluation) ^the-evaluation
 
 ### What looks most novel
 
@@ -191,45 +191,45 @@ My strongest recommendation is therefore to make the first paper about **epistem
 ## References
 
 
-1. Qin Liu. **λ_A: A Typed Lambda Calculus for LLM Agent Composition** (2026). https://arxiv.org/abs/2604.11767
-2. Ruida Wang, Jerry Huang, Pengcheng Wang, Xuanqing Liu, Luyang Kong, Tong Zhang. **Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory** (2026). https://arxiv.org/abs/2606.06523
-3. Pranav Harikumar. **PlanCompiler: A Deterministic Compilation Architecture for Structured Multi-Step LLM Pipelines** (2026). https://arxiv.org/abs/2604.13092
-4. Benedikt Bollig. **Causal Past Logic for Runtime Verification of Distributed LLM Agent Workflows** (2026). https://arxiv.org/abs/2605.20923
-5. **ZipperGen** project. https://zippergen.io/
-6. Cheng Wen et al. **Formally Specifying the Intended Behavior of the Program: LLM-Driven Neuro-Symbolic Program Specification Synthesis (AutoSpec+)** (ACL 2026 Demo). https://aclanthology.org/2026.acl-demo.66/
-7. Philipp Schröer, Kevin Batz, Umut Yiğit Dural, Darion Haase, Benjamin Lucien Kaminski, Joost-Pieter Katoen, Christoph Matheja. **Caesar: A Deductive Verifier for Probabilistic Programs** (2026). https://arxiv.org/abs/2605.15827
-8. Gilles Barthe et al. **An Assertion-Based Program Logic for Probabilistic Programs (Ellora)** (2018). https://arxiv.org/abs/1803.05535
-9. Todd J. Green, Grigoris Karvounarakis, Val Tannen. **Provenance Semirings** (PODS 2007). https://www.cs.ucdavis.edu/~green/papers/pods07.pdf
-10. **ProvSQL: Provenance and Probability for PostgreSQL**. https://provsql.org/
-11. W3C Provenance Working Group. **PROV-O: The PROV Ontology** (2013). https://www.w3.org/TR/prov-o/
-12. **Common Workflow Language (CWL)**. https://www.commonwl.org/
-13. Omar Khattab et al. **DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines** (2024). https://arxiv.org/abs/2310.03714
-14. **DSPy Assertions: Computational Constraints for Self-Refining Language Model Pipelines**. https://arxiv.org/abs/2312.13382
-15. Fabian Wenz, Felix Treutwein, Kai Arenja, Çağatay Demiralp, Michael Stonebraker. **An Alternate Agentic AI Architecture (It's About the Data) / RUBICON** (2026). https://arxiv.org/abs/2604.21413
-16. **LangGraph** documentation. https://docs.langchain.com/oss/python/langgraph/overview
-17. **Temporal** durable execution platform. https://temporal.io/
-18. Michael Stonebraker et al. **DBOS** research project and runtime. https://dbos-project.github.io/ and https://docs.dbos.dev/
-19. HASH. **Petri Net-Powered Agents** (2026). https://hash.ai/blog/petri-nets-for-agentic-ai
-20. Michael D. Skarlinski et al. **Language agents achieve superhuman synthesis of scientific knowledge / PaperQA2** (2024). https://arxiv.org/abs/2409.13740
-21. **PaperQA** repository. https://github.com/Future-House/paper-qa
-22. **OpenScholar: Synthesizing scientific literature with retrieval-augmented language models**. Nature (2026). https://www.nature.com/articles/s41586-025-10072-4
-23. Yijia Shao et al. **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models (STORM)** (2024). https://arxiv.org/abs/2402.14207
-24. **STORM / Co-STORM** repository. https://github.com/stanford-oval/storm
-25. **Hebbia Matrix** product. https://www.hebbia.com/product
-26. Jeongyeon Hwang et al. **Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG)** (EMNLP 2025). https://aclanthology.org/2025.emnlp-main.1738/
-27. Qinggang Zhang et al. **FaithfulRAG: Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation** (ACL 2025). https://aclanthology.org/2025.acl-long.1062/
-28. Shuo Li, Sangdon Park, Insup Lee, Osbert Bastani. **TRAQ: Trustworthy Retrieval Augmented Question Answering via Conformal Prediction** (NAACL 2024). https://aclanthology.org/2024.naacl-long.210/
-29. Tianyu Gao et al. **Enabling Large Language Models to Generate Text with Citations (ALCE)** (EMNLP 2023). https://aclanthology.org/2023.emnlp-main.398/
-30. **ALCE** repository. https://github.com/princeton-nlp/ALCE
-31. **Benchmarking Large Language Models in Retrieval-Augmented Generation (RGB)**. https://arxiv.org/abs/2309.01431
-32. **RGB** repository. https://github.com/chen700564/RGB
-33. **RAGTruth** dataset. https://github.com/ParticleMedia/RAGTruth
-34. **MAGIC: A Multi-Hop and Graph-Based Benchmark for Inter-Context Conflicts in Retrieval-Augmented Generation** (Findings of EMNLP 2025). https://aclanthology.org/2025.findings-emnlp.466/
-35. **RARE: Retrieval-Aware Robustness Evaluation for Retrieval-Augmented Generation Systems** (2025). https://arxiv.org/abs/2506.00789
-36. **DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents** (2025). https://arxiv.org/abs/2506.11763
-37. **DeepResearch Bench II: Diagnosing Deep Research Agents via Rubrics from Expert Report** (2026). https://arxiv.org/abs/2601.08536
-38. **DeepScholar-Bench: A Live Benchmark and Automated Evaluation for Generative Research Synthesis** (2025). https://arxiv.org/abs/2508.20033
-39. **PaSa: An LLM Agent for Comprehensive Academic Paper Search** (2025). https://arxiv.org/abs/2501.10120
+1. Qin Liu. **λ_A: A Typed Lambda Calculus for LLM Agent Composition** (2026). [arXiv:2604.11767](https://arxiv.org/abs/2604.11767)
+2. Ruida Wang, Jerry Huang, Pengcheng Wang, Xuanqing Liu, Luyang Kong, Tong Zhang. **Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory** (2026). [arXiv:2606.06523](https://arxiv.org/abs/2606.06523)
+3. Pranav Harikumar. **PlanCompiler: A Deterministic Compilation Architecture for Structured Multi-Step LLM Pipelines** (2026). [arXiv:2604.13092](https://arxiv.org/abs/2604.13092)
+4. Benedikt Bollig. **Causal Past Logic for Runtime Verification of Distributed LLM Agent Workflows** (2026). [arXiv:2605.20923](https://arxiv.org/abs/2605.20923)
+5. **ZipperGen** project. [ZipperGen project](https://zippergen.io/)
+6. Cheng Wen et al. **Formally Specifying the Intended Behavior of the Program: LLM-Driven Neuro-Symbolic Program Specification Synthesis (AutoSpec+)** (ACL 2026 Demo). [Formally Specifying the Intended Behavior of the Program (AutoSpec+)](https://aclanthology.org/2026.acl-demo.66/)
+7. Philipp Schröer, Kevin Batz, Umut Yiğit Dural, Darion Haase, Benjamin Lucien Kaminski, Joost-Pieter Katoen, Christoph Matheja. **Caesar: A Deductive Verifier for Probabilistic Programs** (2026). [arXiv:2605.15827](https://arxiv.org/abs/2605.15827)
+8. Gilles Barthe et al. **An Assertion-Based Program Logic for Probabilistic Programs (Ellora)** (2018). [arXiv:1803.05535](https://arxiv.org/abs/1803.05535)
+9. Todd J. Green, Grigoris Karvounarakis, Val Tannen. **[Provenance Semirings](https://www.cs.ucdavis.edu/~green/papers/pods07.pdf)** (PODS 2007).
+10. **[ProvSQL: Provenance and Probability for PostgreSQL](https://provsql.org/)**.
+11. W3C Provenance Working Group. **[PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/)** (2013).
+12. **[Common Workflow Language (CWL)](https://www.commonwl.org/)**.
+13. Omar Khattab et al. **DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines** (2024). [arXiv:2310.03714](https://arxiv.org/abs/2310.03714)
+14. **DSPy Assertions: Computational Constraints for Self-Refining Language Model Pipelines**. [arXiv:2312.13382](https://arxiv.org/abs/2312.13382)
+15. Fabian Wenz, Felix Treutwein, Kai Arenja, Çağatay Demiralp, Michael Stonebraker. **An Alternate Agentic AI Architecture (It's About the Data) / RUBICON** (2026). [arXiv:2604.21413](https://arxiv.org/abs/2604.21413)
+16. **LangGraph** documentation. [LangGraph overview (Docs by LangChain)](https://docs.langchain.com/oss/python/langgraph/overview)
+17. **Temporal** durable execution platform. [Durable Execution Solutions (Temporal)](https://temporal.io/)
+18. Michael Stonebraker et al. **DBOS** research project and runtime. [DBOS research project and runtime](https://dbos-project.github.io/) and [Welcome to DBOS (DBOS Docs)](https://docs.dbos.dev/)
+19. HASH. **[Petri Net-Powered Agents](https://hash.ai/blog/petri-nets-for-agentic-ai)** (2026).
+20. Michael D. Skarlinski et al. **Language agents achieve superhuman synthesis of scientific knowledge / PaperQA2** (2024). [arXiv:2409.13740](https://arxiv.org/abs/2409.13740)
+21. **PaperQA** repository. [Future-House/paper-qa on GitHub](https://github.com/Future-House/paper-qa)
+22. **[OpenScholar: Synthesizing scientific literature with retrieval-augmented language models](https://www.nature.com/articles/s41586-025-10072-4)**. Nature (2026).
+23. Yijia Shao et al. **Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models (STORM)** (2024). [arXiv:2402.14207](https://arxiv.org/abs/2402.14207)
+24. **STORM / Co-STORM** repository. [stanford-oval/storm on GitHub](https://github.com/stanford-oval/storm)
+25. **Hebbia Matrix** product. [Hebbia Matrix](https://www.hebbia.com/product)
+26. Jeongyeon Hwang et al. **[Retrieval-Augmented Generation with Estimation of Source Reliability (RA-RAG)](https://aclanthology.org/2025.emnlp-main.1738/)** (EMNLP 2025).
+27. Qinggang Zhang et al. **[FaithfulRAG: Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation](https://aclanthology.org/2025.acl-long.1062/)** (ACL 2025).
+28. Shuo Li, Sangdon Park, Insup Lee, Osbert Bastani. **[TRAQ: Trustworthy Retrieval Augmented Question Answering via Conformal Prediction](https://aclanthology.org/2024.naacl-long.210/)** (NAACL 2024).
+29. Tianyu Gao et al. **[Enabling Large Language Models to Generate Text with Citations (ALCE)](https://aclanthology.org/2023.emnlp-main.398/)** (EMNLP 2023).
+30. **ALCE** repository. [princeton-nlp/ALCE on GitHub](https://github.com/princeton-nlp/ALCE)
+31. **Benchmarking Large Language Models in Retrieval-Augmented Generation (RGB)**. [arXiv:2309.01431](https://arxiv.org/abs/2309.01431)
+32. **RGB** repository. [chen700564/RGB on GitHub](https://github.com/chen700564/RGB)
+33. **RAGTruth** dataset. [ParticleMedia/RAGTruth on GitHub](https://github.com/ParticleMedia/RAGTruth)
+34. **[MAGIC: A Multi-Hop and Graph-Based Benchmark for Inter-Context Conflicts in Retrieval-Augmented Generation](https://aclanthology.org/2025.findings-emnlp.466/)** (Findings of EMNLP 2025).
+35. **RARE: Retrieval-Aware Robustness Evaluation for Retrieval-Augmented Generation Systems** (2025). [arXiv:2506.00789](https://arxiv.org/abs/2506.00789)
+36. **DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents** (2025). [arXiv:2506.11763](https://arxiv.org/abs/2506.11763)
+37. **DeepResearch Bench II: Diagnosing Deep Research Agents via Rubrics from Expert Report** (2026). [arXiv:2601.08536](https://arxiv.org/abs/2601.08536)
+38. **DeepScholar-Bench: A Live Benchmark and Automated Evaluation for Generative Research Synthesis** (2025). [arXiv:2508.20033](https://arxiv.org/abs/2508.20033)
+39. **PaSa: An LLM Agent for Comprehensive Academic Paper Search** (2025). [arXiv:2501.10120](https://arxiv.org/abs/2501.10120)
 40. User-provided note: **compiler-approach.md**.
 41. User-provided note: **startup-operating-environment.md**.
 42. User-provided note: **startup.md**.
@@ -243,16 +243,16 @@ My strongest recommendation is therefore to make the first paper about **epistem
 - [Research claim and taxonomy](#research-claim-and-taxonomy)
 - [Comparative landscape](#comparative-landscape)
 - [Annotated relationship to the proposed research](#annotated-relationship-to-the-proposed-research)
-  - [Formal languages and verification](#formal-languages-and-verification)
-  - [Provenance, query processing and scientific workflows](#provenance-query-processing-and-scientific-workflows)
-  - [Durable and inspectable execution](#durable-and-inspectable-execution)
-  - [Investigation and evidence systems](#investigation-and-evidence-systems)
+	- [Formal languages and verification](#formal-languages-and-verification)
+	- [Provenance, query processing and scientific workflows](#provenance-query-processing-and-scientific-workflows)
+	- [Durable and inspectable execution](#durable-and-inspectable-execution)
+	- [Investigation and evidence systems](#investigation-and-evidence-systems)
 - [Benchmarks and datasets](#benchmarks-and-datasets)
 - [Gaps and direction for a first paper](#gaps-and-direction-for-a-first-paper)
-  - [The formal core](#the-formal-core)
-  - [The compiler and optimiser](#the-compiler-and-optimiser)
-  - [The evaluation](#the-evaluation)
-  - [What looks most novel](#what-looks-most-novel)
+	- [The formal core](#the-formal-core)
+	- [The compiler and optimiser](#the-compiler-and-optimiser)
+	- [The evaluation](#the-evaluation)
+	- [What looks most novel](#what-looks-most-novel)
 - [References](#references)
 
 ### Works and systems

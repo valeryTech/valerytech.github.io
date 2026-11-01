@@ -7,7 +7,7 @@ linkTitle: "Lifecycle Techniques"
 ---
 These techniques map well to different **engineering lifecycle goals**. The important point is that they are not interchangeable: each answers a different kind of question.
 
-In the [system design flow]({{< ref "system-design" >}}), these techniques are the process half. Structure patterns say what to build; these techniques test whether a choice is right. [Defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) pairs each design question with a technique.
+In the [system design flow]({{< ref "system-design" >}}), these techniques are the process half. Structure patterns say what to build; these techniques test whether a choice is right. [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) pairs each design question with a technique.
 
 ## Engineering lifecycle techniques by goal
 

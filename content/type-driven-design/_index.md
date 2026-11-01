@@ -56,17 +56,17 @@ The approach has costs, and it can go wrong: conversion code at every boundary, 
 ## Notes in this section
 
 
-The notes sit in five subfolders, in reading order; each folder has an index. Start with [Reading paths]({{< ref "type-driven-design/reading-paths" >}}) to pick a route through the sources.
+The notes sit in five subfolders, in reading order; each folder has an index. Start with [Reading Paths]({{< ref "type-driven-design/reading-paths" >}}) to pick a route through the sources.
 
 ### Foundations
 
 
 [Folder index]({{< ref "type-driven-design/01-foundations" >}}). What a type system proves, and what to put in one.
 
-- [Type systems]({{< ref "type-driven-design/01-foundations/type-systems" >}}): Pierce's definition, soundness and conservativity, and what type systems buy.
-- [Dimensions of type systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}): static, dynamic and gradual checking; safety and what "strong" means; nominal and structural equivalence.
-- [Type inference]({{< ref "type-driven-design/01-foundations/type-inference" >}}): inference as ergonomics, and its limits.
-- [Types as propositions]({{< ref "type-driven-design/01-foundations/types-as-propositions" >}}): the Curry-Howard correspondence and what it means for ordinary code.
+- [Type Systems]({{< ref "type-driven-design/01-foundations/type-systems" >}}): Pierce's definition, soundness and conservativity, and what type systems buy.
+- [Dimensions Of Type Systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}): static, dynamic and gradual checking; safety and what "strong" means; nominal and structural equivalence.
+- [Type Inference]({{< ref "type-driven-design/01-foundations/type-inference" >}}): inference as ergonomics, and its limits.
+- [Types As Propositions]({{< ref "type-driven-design/01-foundations/types-as-propositions" >}}): the Curry-Howard correspondence and what it means for ordinary code.
 - [What belongs in the type system]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}): types, contracts, runtime checks and tests; good targets; a decision procedure; where types stop matching reality; costs and failure modes.
 
 ### Parsing and evidence
@@ -76,44 +76,44 @@ The notes sit in five subfolders, in reading order; each folder has an index. St
 
 - [Parse, don't validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}): shotgun parsing, partial functions made total, where to parse, and where it gets harder.
 - [How strong the evidence is]({{< ref "type-driven-design/02-parsing-and-evidence/strength-of-evidence" >}}): constructive and encapsulated types, names that are not type safety, hidden constructors, ghosts of departed proofs.
-- [Types at the boundary]({{< ref "type-driven-design/02-parsing-and-evidence/types-at-the-boundary" >}}): trust boundaries, DTOs and serialization, the database as a boundary, evolving types, and tolerant readers.
+- [Types At The Boundary]({{< ref "type-driven-design/02-parsing-and-evidence/types-at-the-boundary" >}}): trust boundaries, DTOs and serialization, the database as a boundary, evolving types, and tolerant readers.
 
 ### Domain modeling
 
 
 [Folder index]({{< ref "type-driven-design/03-domain-modeling" >}}). Types that say which values and states can exist.
 
-- [Domain modeling with types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}): overview, type-first design, the same ideas across languages, values and entities, errors as values.
-- [Newtypes and simple values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}): primitive obsession, newtypes and opaque types, constrained simple values.
-- [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}): product and sum types, counting values, sums versus tagged classes and hierarchies.
+- [Domain Modeling With Types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}): overview, type-first design, the same ideas across languages, values and entities, errors as values.
+- [Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}): primitive obsession, newtypes and opaque types, constrained simple values.
+- [Algebraic Data Types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}): product and sum types, counting values, sums versus tagged classes and hierarchies.
 - [Making illegal states unrepresentable]({{< ref "type-driven-design/03-domain-modeling/illegal-states-unrepresentable" >}}): business rules as choice types, booleans, a flag plus an optional value, behaviour as data.
-- [Workflows and states]({{< ref "type-driven-design/03-domain-modeling/workflows-and-states" >}}): workflows as function types, one type per state, state machines, typestate with phantom types, and long-running workflows.
+- [Workflows And States]({{< ref "type-driven-design/03-domain-modeling/workflows-and-states" >}}): workflows as function types, one type per state, state machines, typestate with phantom types, and long-running workflows.
 
 ### Architecture
 
 
 [Folder index]({{< ref "type-driven-design/04-architecture" >}}). From a typed domain to a program.
 
-- [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}): Ghosh's principles, keeping effects out of the domain, modules as algebras with laws, composing effectful operations, commands and events.
+- [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}): Ghosh's principles, keeping effects out of the domain, modules as algebras with laws, composing effectful operations, commands and events.
 - [Effects, interpreters and wiring]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}): Reader and Kleisli, free monads, ZIO, algebraic effects, and embedded DSLs.
-- [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}): the encoding, rules for using it, two critiques, and the expression problem.
-- [Declarative design]({{< ref "type-driven-design/04-architecture/declarative-design" >}}): declarative specifications and engines, four senses of "declarative", DSLs, and semantic modeling.
+- [Tagless Final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}): the encoding, rules for using it, two critiques, and the expression problem.
+- [Declarative Design]({{< ref "type-driven-design/04-architecture/declarative-design" >}}): declarative specifications and engines, four senses of "declarative", DSLs, and semantic modeling.
 
 ### Stronger type systems
 
 
 [Folder index]({{< ref "type-driven-design/05-stronger-type-systems" >}}). Predicates in types, types that depend on values, and Scala.
 
-- [Refinement types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}): predicates in types, how the checking works, and limits.
-- [Refinement types by language]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types-by-language" >}}): what Python, TypeScript, Haskell, Rust, Ada and Scala offer, and Scala's terminology trap.
+- [Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}): predicates in types, how the checking works, and limits.
+- [Refinement Types By Language]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types-by-language" >}}): what Python, TypeScript, Haskell, Rust, Ada and Scala offer, and Scala's terminology trap.
 - [Towards dependent types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}}): the progression from ordinary to dependent types.
-- [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}): abstract types and the currency case study, nominal and structural subtyping, union and intersection types, path-dependent types, type tags, multiversal equality, and encoding contracts in Scala.
+- [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}): abstract types and the currency case study, nominal and structural subtyping, union and intersection types, path-dependent types, type tags, multiversal equality, and encoding contracts in Scala.
 
 ### Across the section
 
 
-- [Reading paths]({{< ref "type-driven-design/reading-paths" >}}): a map of every source with where it's held, and curricula for practical type-driven design, runtime checks and type evidence, and type theory.
-- [Provenance]({{< ref "engineering/evidence/provenance" >}}): raw input, related private material, and the history of the notes.
+- [Reading Paths]({{< ref "type-driven-design/reading-paths" >}}): a map of every source with where it's held, and curricula for practical type-driven design, runtime checks and type evidence, and type theory.
+- provenance: raw input, related private material, and the history of the notes.
 
 ## Sources in the library
 
@@ -230,10 +230,10 @@ Works the notes recommend or quote that have no local copy, in the library or el
 
 Sections inside larger notes:
 
-- [Recursion and folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}): the "Type-Driven Approach" reading of fold signatures under `## Folds`.
-- [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}): `## Type classes`, and the link-only sections `## GADTs` and `## Type-level programming`. The "scala sealed trait as ADTs" jot is in [FP links to sort]({{< ref "functional-programming/05-practice/to-sort" >}}) under `## Topics to study`.
+- [Recursion And Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}): the "Type-Driven Approach" reading of fold signatures under `## Folds`.
+- [Type Classes And Polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}): `## Type classes`, and the link-only sections `## GADTs` and `## Type-level programming`. The "scala sealed trait as ADTs" jot is in [FP links to sort]({{< ref "functional-programming/05-practice/to-sort" >}}) under `## Topics to study`.
 - [CPython, the JVM, and polymorphism]({{< ref "engineering/langs/python/cpython-jvm-comparison-and-polymorphism" >}}): `## Runtime validation and annotation-based dispatch` (static checking vs Pydantic validation at boundaries).
-- [Intent-driven architecture]({{< ref "engineering/progressive/intent-driven-architecture" >}}): `## DDD practices` (strategic DDD, Event Storming).
+- [Intent Driven Architecture]({{< ref "engineering/progressive/intent-driven-architecture" >}}): `## DDD practices` (strategic DDD, Event Storming).
 
 Applied in projects:
 

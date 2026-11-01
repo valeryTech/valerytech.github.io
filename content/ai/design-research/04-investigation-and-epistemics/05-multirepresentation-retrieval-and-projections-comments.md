@@ -16,8 +16,6 @@ The first example describes retrieval through several query and document represe
 
 The [paper proposal]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}) retains the motivation, literature review, principles, and evaluation agenda. Its [comments]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper-comments" >}}) explain why the proposed user study differs from the existing investigation benchmark.
 
-The earlier interactive-systems comments already distinguish recorded screening from evidence completeness. The new examples do not remove that distinction.
-
 ## Representation labels are not evidence judgments
 
 
@@ -41,7 +39,7 @@ The [program and execution record note]({{< ref "ai/design-research/05-runtime-a
 
 Coordinated views require rules for how an edit changes shared state. Merely drawing a matrix, graph, or checkbox does not establish consistent updates across interpretations and evidence.
 
-The interactive-systems collection provides related proposals for state and views. A later design should distinguish changing a view from changing an interpretation, retrieval plan, or accepted evidence judgment.
+The [interactive-systems collection]({{< ref "ai/design-research/00-index" >}}) provides related proposals for state and views. A later design should distinguish changing a view from changing an interpretation, retrieval plan, or accepted evidence judgment.
 
 Some edits can be reversed locally, while already performed external effects may not be reversible. Correction and undo therefore need an explicit scope rather than a general promise that the process can always be undone.
 
@@ -52,4 +50,4 @@ The reply suggests that correcting an exposed interpretation may be faster than 
 
 The [evaluation agenda]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}#evaluation-agenda-and-closing-argument) proposes checking retrieval success, error diagnosis, recovery cost, and understanding. Increased visibility alone does not establish improvement in any of those outcomes.
 
-The mapping log distinguishes the new import from the initial dialogue. Original text and literature attributions remain unchanged, and no implementation is selected by the arrangement.
+The [mapping log]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#related-notes-pass-3-interactive-investigation-position-paper) distinguishes the new import from the initial dialogue. Original text and literature attributions remain unchanged, and no implementation is selected by the arrangement.

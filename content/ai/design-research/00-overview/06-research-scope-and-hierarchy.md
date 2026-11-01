@@ -50,8 +50,6 @@ The links distinguish the stages of the argument, rather than treating every rec
 
 LLM recommendations, literature summaries, formal claims, and experimental plans remain proposals or source material unless separately verified. Rearranging the notes does not verify their external claims.
 
-<a id="retained-scope-dialogue"></a>
-
 ## Scope proposal
 
 
@@ -62,8 +60,6 @@ The following argument was moved from the end of the constrained-generativity no
 
 Scope question: Analyze the problem formulations in [problem-framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}) and [another](#another).
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The working interpretation is that the material becomes stronger if you separate three things that are currently mixed together:
 
 1. a general theory of how systems become composable,
@@ -71,8 +67,6 @@ The working interpretation is that the material becomes stronger if you separate
 3. one concrete architecture for human/LLM/software collaboration.
 
 The first file is close to (1). The second file jumps fairly quickly to (3).
-
-<a id="1-your-core-research-object-should-be-the-construction-rule"></a>
 
 ### 1. The construction rule as the proposed core research object
 
@@ -175,8 +169,6 @@ In plain terms:
 > **Impose as little semantic discipline as possible while still obtaining the guarantees the system needs.**
 
 That is stronger than simply saying "constraints are good." Excess constraints destroy generativity too.
-
-<a id="6-i-would-therefore-reframe-the-research-question"></a>
 
 ### 6. Proposed reframing of the research question
 

@@ -13,8 +13,6 @@ Personal framework experiment, retained alongside the [other frameworks]({{< ref
 
 Draft gap: a general functional-requirements section has not yet been written.
 
-<a id="8-one-minute-script-you-can-say-verbatim"></a>
-
 ## 8. One-minute interview script
 
 
@@ -95,8 +93,6 @@ This script states the priorities and targets clearly and honestly, leaving time
 
 - Introduce increased numerical requirements in a follow-up, preventing the interviewee from anticipating these conditions and thereby simulating a real-world scenario.
 - Encrypt these numerical parameters within the initial conditions.
-
-<a id="analysis-of-your-ideas"></a>
 
 ### Analysis of the Two Approaches
 

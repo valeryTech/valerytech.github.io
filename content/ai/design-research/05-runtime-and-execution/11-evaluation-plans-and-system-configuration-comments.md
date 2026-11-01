@@ -23,7 +23,7 @@ An evaluation plan can remain unchanged across several runs, while each run has 
 
 The closing source qualification allows execution settings to affect system behavior. A later boundary rule needs to state how concurrency, timeouts, retries, budgets, and environment bindings enter comparisons. Keeping a setting outside system identity does not make the setting irrelevant to the result.
 
-Captured prompts, retrieval data, and tool responses can help explain a result. Capture settings need retention, access, and redaction rules for sensitive data. New live calls and use of recorded responses must remain distinguishable, as the workbench comments explain.
+Captured prompts, retrieval data, and tool responses can help explain a result. Capture settings need retention, access, and redaction rules for sensitive data. New live calls and use of recorded responses must remain distinguishable.
 
 ## Configuration does not establish evaluation validity
 
@@ -35,6 +35,6 @@ A comparison needs stated tasks, scoring rules, conditions, and treatment of fai
 ## Audit and limits
 
 
-The [configuration and instantiation note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the proposed shared runtime interface. The audit records the final exchange's original range and checksum.
+The [configuration and instantiation note]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}) retains the proposed shared runtime interface. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) records the final exchange's original range and checksum.
 
 The split adopts no evaluation schema, sample size, scoring method, reliability target, or runtime implementation. The new comments remain separate from the preserved proposal.

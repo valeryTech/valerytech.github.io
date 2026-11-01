@@ -10,7 +10,7 @@ linkTitle: "Framework Draft"
 ## 1. Purpose
 
 
-The production-readiness framework turns the [production-readiness model]({{< ref "ai-engineering/delivery/production-ready/production-readiness-model" >}}) into repeatable engineering and decision practice.
+The production-readiness framework turns the [Production Readiness Model]({{< ref "ai-engineering/delivery/production-ready/production-readiness-model" >}}) into repeatable engineering and decision practice.
 
 The model answers:
 

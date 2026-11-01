@@ -24,7 +24,7 @@ This is an editorial record. It explains how the source text was arranged. It is
 ## Place in the model
 
 
-The current position is in [`operating-model.md`]({{< ref "ai/product/operating-model/operating-model" >}}). It says that product leadership selects a strategic problem and desired outcome, while the product team owns solution decisions and takes part in both discovery and delivery.
+The current position is in [Operating Model]({{< ref "ai/product/operating-model/operating-model" >}}). It says that product leadership selects a strategic problem and desired outcome, while the product team owns solution decisions and takes part in both discovery and delivery.
 
 The source also contains comparisons, older versions, and proposals that do not belong in the current position. They are kept in separate files.
 
@@ -35,13 +35,13 @@ The unit here is one problem and the work around possible solutions. This materi
 
 | File | Role |
 |---|---|
-| [`feature-team-and-empowered-team.md`]({{< ref "ai/product/operating-model/comparisons/feature-team-and-empowered-team" >}}) | Comparison. It explains the change from a feature team to an empowered team. It contains a stronger outcome-accountability claim than the current model. |
-| [`discovery-and-delivery.md`]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) | Selected explanation of discovery, delivery, and their interface. |
-| [`capability-funnel.md`]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) | Working proposal for evaluating levels of AI product utility. |
+| [Feature Team And Empowered Team]({{< ref "ai/product/operating-model/comparisons/feature-team-and-empowered-team" >}}) | Comparison. It explains the change from a feature team to an empowered team. It contains a stronger outcome-accountability claim than the current model. |
+| [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) | Selected explanation of discovery, delivery, and their interface. |
+| [Capability Funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) | Working proposal for evaluating levels of AI product utility. |
 | `solution-as-central-object.md` | Working proposal that treats the solution, rather than the feature, as the main object. |
-| [`solution-states-and-terms-alternative.md`]({{< ref "ai/product/operating-model/working-notes/solution-states-and-terms-alternative" >}}) | Alternative state sequence and vocabulary. |
+| [Solution States And Terms Alternative]({{< ref "ai/product/operating-model/working-notes/solution-states-and-terms-alternative" >}}) | Alternative state sequence and vocabulary. |
 | `experiment-as-primary-unit-alternative.md` | Alternative claim about the experiment and feature as units of work. |
-| [`discovery-delivery-interface-alternative.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-interface-alternative" >}}) | Earlier four-part interface. |
+| [Discovery Delivery Interface Alternative]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-interface-alternative" >}}) | Earlier four-part interface. |
 | [`in-model-etc-source-notes.md`]({{< ref "ai/product/operating-model/working-notes/empowered-team-draft-source-notes" >}}) | Planning text, broken references, repeated text, revision comments, and placeholders. |
 
 ## Source disposition

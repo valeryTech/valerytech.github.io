@@ -22,11 +22,7 @@ Additional research question: How does the Unix approach structure a design spac
 
 Related examples: Higher-level programming languages introduce constraints, such as removing go to, and immutability introduces another restriction. Could these constraints support more powerful and complex systems?
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 This is broader than architectural least commitment. The proposed common pattern is: **remove degrees of freedom at a lower layer so that stronger guarantees and richer composition become possible at a higher layer**. The analysis compares DDIA/distributed systems, Unix, structured programming, types/immutability, and protocol design, then proposes a name for the general stance.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The working interpretation is that the concept is broader than "architectural least commitment." The recurring pattern across the examples in the research notes is:
 
@@ -337,8 +333,6 @@ But "least power" doesn't capture DDIA well, because TCP isn't primarily restric
 
 So the recommendation is not to use it as the umbrella term.
 
-<a id="i-think-there-are-three-operations-underneath-your-idea"></a>
-
 ### Three proposed underlying operations
 
 
@@ -446,7 +440,7 @@ That's probably more fundamental than "simplicity."
 
 There is an adjacent literature that actually uses **generativity** for systems designed so that people can create unanticipated extensions.
 
-Zittrain defines generativity as a system's capacity for unanticipated change through contributions from varied participants. ([Yupnet](https://yupnet.org/zittrain/2008/03/01/chapter-4-the-generative-pattern/ "The Future of the Internet--And How to Stop It » Chapter 4: The Generative Pattern")) A systematic review of generative architectures describes them as being **designed for incompleteness**, with the whole system not knowable in advance; stable rules and boundary resources coexist with decentralized extension. ([Wiley Online Library](https://onlinelibrary.wiley.com/doi/full/10.1111/ijmr.12277 "Generativity: A systematic review and conceptual framework - Thomas - 2022 - International Journal of Management Reviews - Wiley Online Library"))
+Zittrain defines generativity as a system's capacity for unanticipated change through contributions from varied participants. ([Yupnet](https://yupnet.org/zittrain/2008/03/01/chapter-4-the-generative-pattern/ "The Future of the Internet -- And How to Stop It » Chapter 4: The Generative Pattern")) A systematic review of generative architectures describes them as being **designed for incompleteness**, with the whole system not knowable in advance; stable rules and boundary resources coexist with decentralized extension. ([Wiley Online Library](https://onlinelibrary.wiley.com/doi/full/10.1111/ijmr.12277 "Generativity: A systematic review and conceptual framework - Thomas - 2022 - International Journal of Management Reviews - Wiley Online Library"))
 
 That gets quite close to your "we don't know what we don't know."
 

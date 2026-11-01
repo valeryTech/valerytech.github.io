@@ -22,8 +22,8 @@ The [interviewing.io framework]({{< ref "system-design/interview/frameworks/inte
 ## Patterns that address this
 
 
-- **Consistency across services** (sagas, API composition, CQRS views, command-side replicas, the transactional outbox): [data across services]({{< ref "system-design/elements/data-across-services" >}}).
-- **Consistency of copies within one store** (replication lag, cache staleness): [data at scale]({{< ref "system-design/elements/data-at-scale" >}}).
+- **Consistency across services** (sagas, API composition, CQRS views, command-side replicas, the transactional outbox): [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}).
+- **Consistency of copies within one store** (replication lag, cache staleness): [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}).
 - **Duplicate processing** under retries and at-least-once delivery: [idempotent consumer]({{< ref "system-design/elements/communication" >}}#idempotent-consumer).
 
 ## Models and theorems
@@ -47,7 +47,7 @@ For each important operation, record:
 3. Whether its latency depends on network delay, and which delay: within a datacenter or across regions.
 4. The invariants it can break, and the operations it conflicts with.
 
-The [coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination) section covers the consensus behind operations that must synchronize; [coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}) covers the operations that need not.
+The [coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination) section covers the consensus behind operations that must synchronize; [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}) covers the operations that need not.
 
 ## Study backlog
 

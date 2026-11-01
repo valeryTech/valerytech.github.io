@@ -15,25 +15,19 @@ Read the [sibling comments]({{< ref "ai/design-research/05-runtime-and-execution
 
 The preceding [publishing and version discussion]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}) explains how the referenced artifacts could be selected. Related [runtime evaluation]({{< ref "ai/design-research/06-research-reports/05-agent-runtime-evaluation-and-benchmarks" >}}) and [investigation evaluation]({{< ref "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks" >}}) address separate research questions.
 
-The original source overview (archived source 015) links the complete split. The audit records the original range and checksum.
+The original source overview (archived source 015) links the complete split. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) records the original range and checksum.
 
 <!-- Evaluation plans and system configuration source begins below. -->
-
-<a id="user"></a>
 
 ## Author requirement or open question
 
 
 Author requirement and question: Add a meta-configuration that includes a test suite and a SUT with the prompt-set version and other properties. Which additional properties belong here?
 
-<a id="assistant-reasoning"></a>
-
 ## LLM rationale for the proposal
 
 
 The proposal is to separate immutable SUT metadata from per-run settings. Besides suite and prompt versions, the proposal is to include model/runtime config, tool and retrieval snapshots, evaluator versions, dataset revision, seeds, limits, environment, overrides, artifacts, and pass criteria.
-
-<a id="assistant"></a>
 
 ## LLM proposal
 

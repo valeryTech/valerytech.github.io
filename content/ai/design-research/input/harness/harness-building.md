@@ -621,111 +621,111 @@ The most important practical insight is this:
 ## Footnotes
 
 
-[^1]: Martin Fowler, "Harness engineering for coding agent users." https://martinfowler.com/articles/harness-engineering.html
+[^1]: Martin Fowler, "[Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)."
 
-[^2]: LangChain, "The Anatomy of an Agent Harness." https://www.langchain.com/blog/the-anatomy-of-an-agent-harness
+[^2]: LangChain, "[The Anatomy of an Agent Harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness)."
 
-[^3]: OpenAI, "Unrolling the Codex agent loop." https://openai.com/index/unrolling-the-codex-agent-loop/
+[^3]: OpenAI, "[Unrolling the Codex agent loop](https://openai.com/index/unrolling-the-codex-agent-loop/)."
 
-[^4]: LangChain, "Your harness, your memory." https://www.langchain.com/blog/your-harness-your-memory
+[^4]: LangChain, "[Your harness, your memory](https://www.langchain.com/blog/your-harness-your-memory)."
 
-[^5]: Russell and Norvig, AIMA, Chapter 2: Intelligent Agents. https://aima.cs.berkeley.edu/4th-ed/pdfs/newchap02.pdf
+[^5]: Russell and Norvig, AIMA, Chapter 2: Intelligent Agents. [Artificial Intelligence: A Modern Approach, Chapter 2 (PDF)](https://aima.cs.berkeley.edu/4th-ed/pdfs/newchap02.pdf)
 
-[^6]: NASA NTRS, Hayes-Roth adaptive intelligent systems PDF. https://ntrs.nasa.gov/api/citations/19970037819/downloads/19970037819.pdf
+[^6]: NASA NTRS, Hayes-Roth adaptive intelligent systems PDF. [Hayes-Roth adaptive intelligent systems (NASA NTRS PDF)](https://ntrs.nasa.gov/api/citations/19970037819/downloads/19970037819.pdf)
 
-[^7]: GitHub Docs, "About Copilot CLI." https://docs.github.com/copilot/concepts/agents/about-copilot-cli
+[^7]: GitHub Docs, "[About Copilot CLI](https://docs.github.com/copilot/concepts/agents/about-copilot-cli)."
 
-[^8]: Rao and Georgeff, "BDI Agents: From Theory to Practice." https://cdn.aaai.org/ICMAS/1995/ICMAS95-042.pdf
+[^8]: Rao and Georgeff, "[BDI Agents: From Theory to Practice](https://cdn.aaai.org/ICMAS/1995/ICMAS95-042.pdf)."
 
-[^9]: Johnson and Hayes-Roth, "Integrating Diverse Reasoning Methods in the BB1 Blackboard Control Architecture." https://cdn.aaai.org/AAAI/1987/AAAI87-006.pdf
+[^9]: Johnson and Hayes-Roth, "[Integrating Diverse Reasoning Methods in the BB1 Blackboard Control Architecture](https://cdn.aaai.org/AAAI/1987/AAAI87-006.pdf)."
 
-[^10]: IBM, "An architectural blueprint for autonomic computing." https://users.cs.fiu.edu/~sadjadi/Teaching/Autonomic%20Grid%20Computing/CIS-6612-Summer-2006/AC-Blueprint-WhitePaper-V7.pdf
+[^10]: IBM, "[An architectural blueprint for autonomic computing](https://users.cs.fiu.edu/~sadjadi/Teaching/Autonomic%20Grid%20Computing/CIS-6612-Summer-2006/AC-Blueprint-WhitePaper-V7.pdf)."
 
-[^11]: Soar cognitive architecture homepage. https://soar.eecs.umich.edu/
+[^11]: Soar cognitive architecture homepage. [Soar cognitive architecture homepage](https://soar.eecs.umich.edu/)
 
-[^12]: Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models." https://arxiv.org/abs/2210.03629
+[^12]: Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models." [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)
 
-[^13]: Schick et al., "Toolformer: Language Models Can Teach Themselves to Use Tools." https://arxiv.org/abs/2302.04761
+[^13]: Schick et al., "Toolformer: Language Models Can Teach Themselves to Use Tools." [arXiv:2302.04761](https://arxiv.org/abs/2302.04761)
 
-[^14]: Shinn et al., "Reflexion: Language Agents with Verbal Reinforcement Learning." https://arxiv.org/abs/2303.11366
+[^14]: Shinn et al., "Reflexion: Language Agents with Verbal Reinforcement Learning." [arXiv:2303.11366](https://arxiv.org/abs/2303.11366)
 
-[^15]: Madaan et al., "Self-Refine." https://arxiv.org/abs/2303.17651
+[^15]: Madaan et al., "Self-Refine." [arXiv:2303.17651](https://arxiv.org/abs/2303.17651)
 
-[^16]: Yao et al., "Tree of Thoughts." https://arxiv.org/abs/2305.10601
+[^16]: Yao et al., "Tree of Thoughts." [arXiv:2305.10601](https://arxiv.org/abs/2305.10601)
 
-[^17]: Zhou et al., "Language Agent Tree Search." https://arxiv.org/abs/2310.04406
+[^17]: Zhou et al., "Language Agent Tree Search." [arXiv:2310.04406](https://arxiv.org/abs/2310.04406)
 
-[^18]: Wang et al., "Voyager." https://arxiv.org/abs/2305.16291
+[^18]: Wang et al., "Voyager." [arXiv:2305.16291](https://arxiv.org/abs/2305.16291)
 
-[^19]: Yang et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering." https://arxiv.org/abs/2405.15793
+[^19]: Yang et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering." [arXiv:2405.15793](https://arxiv.org/abs/2405.15793)
 
-[^20]: Zhang et al., "AutoCodeRover: Autonomous Program Improvement." https://arxiv.org/abs/2404.05427
+[^20]: Zhang et al., "AutoCodeRover: Autonomous Program Improvement." [arXiv:2404.05427](https://arxiv.org/abs/2404.05427)
 
-[^21]: Xia et al., "Agentless: Demystifying LLM-based Software Engineering Agents." https://arxiv.org/abs/2407.01489
+[^21]: Xia et al., "Agentless: Demystifying LLM-based Software Engineering Agents." [arXiv:2407.01489](https://arxiv.org/abs/2407.01489)
 
-[^22]: Wang et al., "Executable Code Actions Elicit Better LLM Agents" / CodeAct. https://arxiv.org/abs/2402.01030
+[^22]: Wang et al., "Executable Code Actions Elicit Better LLM Agents" / CodeAct. [arXiv:2402.01030](https://arxiv.org/abs/2402.01030)
 
-[^23]: OpenHands paper on OpenReview. https://openreview.net/forum?id=OJd3ayDDoF
+[^23]: OpenHands paper on OpenReview. [OpenHands paper (OpenReview)](https://openreview.net/forum?id=OJd3ayDDoF)
 
-[^24]: LangChain Docs, Deep Agents harness capabilities. https://docs.langchain.com/oss/python/deepagents/harness
+[^24]: LangChain Docs, Deep Agents harness capabilities. [Deep Agents overview (Docs by LangChain)](https://docs.langchain.com/oss/python/deepagents/harness)
 
-[^25]: LangChain, Deep Agents overview. https://www.langchain.com/deep-agents
+[^25]: LangChain, Deep Agents overview. [Deep Agents: Open Source Agent Harness](https://www.langchain.com/deep-agents)
 
-[^26]: LangChain, "The Runtime Behind Production Deep Agents." https://www.langchain.com/blog/runtime-behind-production-deep-agents
+[^26]: LangChain, "The Runtime Behind Production Deep Agents." [The Runtime Behind Production Deep Agents](https://www.langchain.com/blog/runtime-behind-production-deep-agents)
 
-[^27]: OpenAI Codex CLI documentation. https://developers.openai.com/codex/cli
+[^27]: OpenAI Codex CLI documentation. [Codex CLI documentation (OpenAI)](https://developers.openai.com/codex/cli)
 
-[^28]: OpenAI, "Unlocking the Codex harness." https://openai.com/index/unlocking-the-codex-harness/
+[^28]: OpenAI, "[Unlocking the Codex harness](https://openai.com/index/unlocking-the-codex-harness/)."
 
-[^29]: OpenAI, "Harness engineering: leveraging Codex in an agent-first world." https://openai.com/index/harness-engineering/
+[^29]: OpenAI, "[Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)."
 
-[^30]: Anthropic, Claude Code documentation. https://code.claude.com/docs/en/overview
+[^30]: Anthropic, Claude Code documentation. [Claude Code overview (Claude Code Docs)](https://code.claude.com/docs/en/overview)
 
-[^31]: GitHub Docs, custom instructions for GitHub Copilot. https://docs.github.com/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot
+[^31]: GitHub Docs, custom instructions for GitHub Copilot. [Adding repository custom instructions for GitHub Copilot](https://docs.github.com/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot)
 
-[^32]: GitHub Docs, build guardrails for Copilot coding agent. https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails
+[^32]: GitHub Docs, build guardrails for Copilot coding agent. [Building a secure cloud environment for agents in your enterprise](https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails)
 
-[^33]: OpenHands runtime README. https://github.com/OpenHands/OpenHands/blob/main/openhands/runtime/README.md
+[^33]: [OpenHands runtime README](https://github.com/OpenHands/OpenHands/blob/main/openhands/runtime/README.md).
 
-[^34]: Aider documentation. https://aider.chat/docs/
+[^34]: [Aider documentation](https://aider.chat/docs/).
 
-[^35]: Aider, lint and test integration. https://aider.chat/docs/usage/lint-test.html
+[^35]: Aider, lint and test integration. [Linting and testing (Aider docs)](https://aider.chat/docs/usage/lint-test.html)
 
-[^36]: Continue documentation: custom providers. https://docs.continue.dev/customize/custom-providers
+[^36]: Continue documentation: custom providers. [Continue custom providers documentation](https://docs.continue.dev/customize/custom-providers)
 
-[^37]: Continue documentation: rules. https://docs.continue.dev/customize/deep-dives/rules
+[^37]: Continue documentation: rules. [How to Create and Manage Rules in Continue](https://docs.continue.dev/customize/deep-dives/rules)
 
-[^38]: AutoGPT repository. https://github.com/significant-gravitas/autogpt
+[^38]: AutoGPT repository. [Significant-Gravitas/AutoGPT on GitHub](https://github.com/significant-gravitas/autogpt)
 
-[^39]: BabyAGI repository. https://github.com/yoheinakajima/babyagi
+[^39]: BabyAGI repository. [yoheinakajima/babyagi on GitHub](https://github.com/yoheinakajima/babyagi)
 
-[^40]: SWE-bench paper. https://arxiv.org/abs/2310.06770
+[^40]: SWE-bench paper. [arXiv:2310.06770](https://arxiv.org/abs/2310.06770)
 
-[^41]: SWE-bench Verified. https://www.swebench.com/verified.html
+[^41]: [SWE-bench Verified](https://www.swebench.com/verified.html).
 
-[^42]: Terminal-Bench project. https://www.tbench.ai/
+[^42]: Terminal-Bench project. [Terminal-Bench project](https://www.tbench.ai/)
 
-[^43]: Terminal-Bench repository. https://github.com/harbor-framework/terminal-bench
+[^43]: Terminal-Bench repository. [harbor-framework/terminal-bench on GitHub](https://github.com/harbor-framework/terminal-bench)
 
-[^44]: τ-bench paper. https://arxiv.org/abs/2406.12045
+[^44]: τ-bench paper. [arXiv:2406.12045](https://arxiv.org/abs/2406.12045)
 
-[^45]: Deep Agents GitHub repository. https://github.com/langchain-ai/deepagents
+[^45]: Deep Agents GitHub repository. [langchain-ai/deepagents on GitHub](https://github.com/langchain-ai/deepagents)
 
-[^46]: LangGraph repository. https://github.com/langchain-ai/langgraph
+[^46]: LangGraph repository. [langchain-ai/langgraph on GitHub](https://github.com/langchain-ai/langgraph)
 
-[^47]: OpenHands project site. https://openhands.dev/
+[^47]: OpenHands project site. [OpenHands: Open Source AI Coding Agent Platform](https://openhands.dev/)
 
-[^48]: SWE-agent repository. https://github.com/swe-agent/swe-agent
+[^48]: SWE-agent repository. [SWE-agent/SWE-agent on GitHub](https://github.com/swe-agent/swe-agent)
 
-[^49]: AutoGPT Agent Blocks announcement. https://agpt.co/blog/introducing-agent-blocks
+[^49]: AutoGPT Agent Blocks announcement. [Introducing Agent Blocks](https://agpt.co/blog/introducing-agent-blocks)
 
-[^50]: BabyAGI project site. https://babyagi.org/
+[^50]: BabyAGI project site. [BabyAGI](https://babyagi.org/)
 
-[^51]: OpenAI Codex CLI features. https://developers.openai.com/codex/cli/features
+[^51]: OpenAI Codex CLI features. [Codex CLI features (OpenAI)](https://developers.openai.com/codex/cli/features)
 
-[^52]: OpenAI Codex Cloud documentation. https://developers.openai.com/codex/cloud
+[^52]: OpenAI Codex Cloud documentation. [Codex Cloud documentation (OpenAI)](https://developers.openai.com/codex/cloud)
 
-[^53]: OpenAI Codex app documentation. https://developers.openai.com/codex/app
+[^53]: OpenAI Codex app documentation. [Codex app documentation (OpenAI)](https://developers.openai.com/codex/app)
 
 ## Library sources
 

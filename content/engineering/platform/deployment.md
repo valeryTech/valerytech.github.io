@@ -6,7 +6,7 @@ description: "How software reaches an environment and then its users: deployment
 linkTitle: "Deployment"
 ---
 
-Part of [platform and delivery]({{< ref "engineering/platform" >}}). This note covers how software reaches an environment and then its users. For deployment options as design choices, see [operating services]({{< ref "system-design/elements/operating-services" >}}#deployment). For what the application must provide to the platform, see [Twelve-Factor]({{< ref "engineering/platform/twelve-factor" >}}). For the capabilities a delivery system needs, from change management through recovery and learning, see [delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}).
+Part of [platform and delivery]({{< ref "engineering/platform" >}}). This note covers how software reaches an environment and then its users. For deployment options as design choices, see [operating services]({{< ref "system-design/elements/operating-services" >}}#deployment). For what the application must provide to the platform, see [Twelve Factor]({{< ref "engineering/platform/twelve-factor" >}}). For the capabilities a delivery system needs, from change management through recovery and learning, see [Delivery Capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}).
 
 ## Definition and measures
 
@@ -15,7 +15,7 @@ Definition:
 
 Software deployment is the process of making software available for use on a system by users and other programs.
 
-<https://codefresh.io/learn/software-deployment/>
+[Software Deployment in 2026: 7 Strategies & 5 Steps with Checklist](https://codefresh.io/learn/software-deployment/)
 
 metrics
 
@@ -67,15 +67,11 @@ Use a platform that maintains your microservice in a defined state, launching ne
 
 techniques
 
-These organizations make use of techniques like feature toggles, canary releases, par‐
-
-allel runs, and more, which we'll detail in this section. This shift in how we
+These organizations make use of techniques like feature toggles, canary releases, parallel runs, and more, which we'll detail in this section. This shift in how we
 
 think about releasing functionality falls under the banner of what is called progressive
 
-delivery. Functionality is released to users in a controlled manner; instead of a big-
-
-bang deployment, we can be smart about who sees what functionality -- for example,
+delivery. Functionality is released to users in a controlled manner; instead of a big-bang deployment, we can be smart about who sees what functionality -- for example,
 
 by rolling out a new version of our software to a subset of our users.
 
@@ -87,13 +83,9 @@ deployment from that of release.
 
 These ideas can work well together (we've already
 
-touched on how you could use feature toggles to implement a can‐
+touched on how you could use feature toggles to implement a canary rollout for example), but you probably want to ease yourself in.
 
-ary rollout for example), but you probably want to ease yourself in.
-
-To start off, just remember to separate the two concepts of deploy‐
-
-ment and release. Next, start looking for ways to help you deploy
+To start off, just remember to separate the two concepts of deployment and release. Next, start looking for ways to help you deploy
 
 your software more frequently, but in a safe manner. Work with
 
@@ -123,17 +115,14 @@ Also, Fully managed solutions exist for managing feature toggles, including Laun
 
 ### Canary Release
 
-When I first did a canary release we controlled the rollout manually. We could con‐
 
-figure the percentage of our traffic seeing the new functionality, and over a period of
+When I first did a canary release we controlled the rollout manually. We could configure the percentage of our traffic seeing the new functionality, and over a period of
 
 a week we gradually increased this until everyone saw the new functionality. Over the
 
 week, we kept an eye on our error rates, bug reports, and the like. Nowadays, it's
 
-more common to see this process handled in an automated fashion. Tools like Spin‐
-
-naker for example have the ability to automatically ramp up calls based on metrics,
+more common to see this process handled in an automated fashion. Tools like Spinnaker for example have the ability to automatically ramp up calls based on metrics,
 
 such as increasing the percentage of calls to a new microservice version if the error
 
@@ -156,17 +145,11 @@ In addition, I shared my own guidelines for selecting the right deployment platf
 1. If it ain't broke, don't fix it.
 2. Give up as much control as you feel happy with, then give away just a little bit
 
-more. If you can offload all your work to a good PaaS like Heroku (or FaaS plat‐
-
-form), then do it and be happy. Do you really need to tinker with every last
+more. If you can offload all your work to a good PaaS like Heroku (or FaaS platform), then do it and be happy. Do you really need to tinker with every last
 
 setting?
 
-1. Containerizing your microservices is not pain-free, but is a really good compro‐
-
-mise around cost of isolation and has some fantastic benefits for local develop‐
-
-ment, while still giving you a degree of control over what happens. Expect
+1. Containerizing your microservices is not pain-free, but is a really good compromise around cost of isolation and has some fantastic benefits for local development, while still giving you a degree of control over what happens. Expect
 
 Kubernetes in your future.
 
@@ -193,11 +176,11 @@ See [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}). The excerpt abo
 ## AWS Deployment
 
 
-<https://pipelines.devops.aws.dev/>
+[Deployment Pipeline Reference Architecture](https://pipelines.devops.aws.dev/)
 
-<https://pipelines.devops.aws.dev/application-pipeline/>
+[Application pipeline (Deployment Pipeline Reference Architecture)](https://pipelines.devops.aws.dev/application-pipeline/)
 
-<https://pipelines.devops.aws.dev/dynamic-configuration-pipeline/>
+[Dynamic configuration pipeline (Deployment Pipeline Reference Architecture)](https://pipelines.devops.aws.dev/dynamic-configuration-pipeline/)
 
 ## To sort
 
@@ -231,17 +214,17 @@ refactor:
 
 It was simply a matter of writing a script to disable the autoscaling group as part of the cluster shutdown to fix the problem in the future.
 
-<https://codefresh.io/learn/software-deployment/>
+[Software Deployment in 2026: 7 Strategies & 5 Steps with Checklist](https://codefresh.io/learn/software-deployment/)
 
-<https://codefresh.io/learn/software-deployment/the-software-deployment-process-steps-importance-and-best-practices/>
+[Software deployment process steps, importance and best practices (Codefresh)](https://codefresh.io/learn/software-deployment/the-software-deployment-process-steps-importance-and-best-practices/)
 
-<https://codefresh.io/learn/software-deployment/aws-blue`-green-deployment-with-fargate-eks-and-beanstalk/>
+[Blue/green deployments: how they work, pros and cons, and 8 critical best practices](https://codefresh.io/learn/software-deployment/aws-blue`-green-deployment-with-fargate-eks-and-beanstalk/)
 
 aws deployment
 
-<https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/welcome.html>
+[Overview of Deployment Options on AWS](https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/welcome.html)
 
-<https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/welcome.html>
+[DevOps Guidance (AWS)](https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/welcome.html)
 
 ## Library sources
 

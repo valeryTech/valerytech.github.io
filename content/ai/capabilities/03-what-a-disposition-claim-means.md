@@ -9,7 +9,7 @@ linkTitle: "Disposition Claims"
 
 [Capabilities as dispositions]({{< ref "ai/capabilities/02-capabilities-as-dispositions" >}}) says a capability claim is a claim about what a system would do. This note asks what such a claim says exactly. The philosophy of dispositions has worked on this for decades, and the results transfer to LLMs almost directly.
 
-The main source is the [SEP entry on dispositions](https://plato.stanford.edu/archives/spr2022/entries/dispositions/), sections 1.1 to 1.5.
+The main source is the [SEP entry on dispositions]({{< ref "ai/capabilities/input/sep-2022-dispositions" >}}) ([web](https://plato.stanford.edu/archives/spr2022/entries/dispositions/)), sections 1.1 to 1.5.
 
 ## The simple conditional analysis
 
@@ -114,7 +114,7 @@ From easiest to most demanding:
 
 1. Toby Friend and Samuel Kimpton-Nye, *Dispositions and Powers* (Cambridge Elements, 2023). Short, current, open access. [Cambridge](https://www.cambridge.org/core/elements/dispositions-and-powers/B5E3BD78798365332743236ED9913C34)
 2. Stephen Mumford, *Dispositions*. The full-length book closest to the SEP entry: conditional analyses, the dispositional/categorical distinction, dispositions as causes. [OUP](https://academic.oup.com/book/5754)
-3. The [SEP entry](https://plato.stanford.edu/archives/spr2022/entries/dispositions/).
+3. The [SEP entry]({{< ref "ai/capabilities/input/sep-2022-dispositions" >}}) ([web](https://plato.stanford.edu/archives/spr2022/entries/dispositions/)).
 4. Neil E. Williams, *The Powers Metaphysic* (2019), which argues for a powers-based metaphysics. [OUP](https://academic.oup.com/book/35233). Alexander Bird, *Nature's Metaphysics*, a defense of dispositional essentialism. [OUP](https://academic.oup.com/book/8067)
 5. Barbara Vetter, *Potentiality: From Dispositions to Modality*, dispositions as what an object *can* do. [OUP](https://academic.oup.com/book/26364). George Molnar, *Powers*. [OUP](https://academic.oup.com/book/1620)
 

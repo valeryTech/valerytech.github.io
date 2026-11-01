@@ -23,7 +23,7 @@ Local sources inspected on 2026-04-20. Descriptions reflect the current source f
 ### What isolation currently means
 
 
-The framework's [Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) note summarizes the two approaches explored in the harness and links to the original investigation, including failure-based coverage and independent test authorship. [Independent Verification Workflows for Coding Agents]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}) describes both workflows and their current state.
+The framework's [Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) note summarizes the two approaches explored in the harness and links to the original investigation, including failure-based coverage and independent test authorship. [Independent Verification Workflows for Coding Agents]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}) describes both workflows and their current state.
 
 In `agent-harness`, the worker adapter starts an ephemeral process for each stage. Design and review roles use read-only access; implementation roles can write. Some verification roles receive behavioral requirements without the implementation plan, and critics receive separate inputs.
 

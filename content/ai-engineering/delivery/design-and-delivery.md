@@ -202,7 +202,7 @@ It is especially prominent during Baseline and Feasibility, but may also appear 
 - operation and evolution.
 
 
-- add link and justification to the [experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) and mention with roadmap management
+- add link and justification to the [Experimentation]({{< ref "ai-engineering/approach/experimentation" >}}) and mention with roadmap management
 - walking skeletons; prototyping method
 - baseline
 - add links and short references about [Structured AI development approach]({{< ref "ai-engineering/approach/structured-development-outline" >}}), [Cross-domain mindset]({{< ref "ai-engineering/approach/swe-skills-in-ml" >}})

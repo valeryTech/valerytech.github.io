@@ -13,7 +13,7 @@ Evidence supports or refutes a claim, so the first step is a claim precise enoug
 
 "This practice improves productivity" names nothing that would let anyone check it. A claim that can be checked names:
 
-- **the outcome**: what changed, and how it was measured (see [Measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}));
+- **the outcome**: what changed, and how it was measured (see [Measures And Constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}));
 - **the population**: which people, teams, codebases, tasks and period;
 - **the intervention**: what exactly was done or used;
 - **the comparison**: compared with what (see [Causal claims need a comparison]({{< ref "engineering/evidence/causal-claims" >}}));
@@ -31,7 +31,7 @@ Statements in a report differ in what they assert, and each kind needs different
 - **Causal**: one thing produced another. "The tool made PRs larger." This needs a counterfactual.
 - **Speculative**: an explanation or forecast that has not been tested.
 
-Labelling each important statement this way is the first rule drawn from the [Zalando case critique]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/zalando-case-critique" >}}). Most of that report was descriptive or associational, while words such as "impact" and "reduced" implied causal claims.
+Labelling each important statement this way is the first rule drawn from the [Zalando Case Critique]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/zalando-case-critique" >}}). Most of that report was descriptive or associational, while words such as "impact" and "reduced" implied causal claims.
 
 The same rule applies within one result. In the evidence protocol's example, "Lead time dropped 18%" is an observation, and "the agent understands the architecture" is an interpretation that needs evidence of its own.
 

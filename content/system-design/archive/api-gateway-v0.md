@@ -41,17 +41,17 @@ However, it's equally important to recognize when an API Gateway might be overki
 
 (good one)
 
-<https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway>
+[API Gateway Deep Dive for System Design Interviews](https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway)
 
 other to sort:
 
 <https://www.youtube.com/watch?v=1vjOv_f9L8I>
 
-<https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway>
+[API gateways (Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/microservices/design/gateway)
 
-<https://microservices.io/patterns/apigateway.html>
+[Microservices Pattern: API Gateway / Backends for Frontends](https://microservices.io/patterns/apigateway.html)
 
-<https://aws.amazon.com/api-gateway/resources/>
+[Amazon API Gateway Resources](https://aws.amazon.com/api-gateway/resources/)
 
 # Common API Gateway Solutions
 

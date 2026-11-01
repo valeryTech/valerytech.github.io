@@ -36,3 +36,8 @@ Three implications for the related collections:
 3. **In [design research]({{< ref "ai/design-research/00-index" >}}), security could become a distinct research strand.** Its existing foundation is [trusted effect boundaries]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}), connected to epistemic contracts and [verification and acceptance]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}). That strand would ask which boundaries continue to hold when model behavior or external content is adversarial.
 
 A useful shared research question would be: **Which properties can the surrounding system enforce despite unreliable model behavior, and which properties remain dependent on the quality of model judgment?**
+
+## Related notes
+
+
+- [How coding agents check actions]({{< ref "ai-engineering/agents/environment/action-checks" >}}) describes how six coding agents enforce limits on commands, file actions and network calls, and which of their checks are deterministic and which use a model.

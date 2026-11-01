@@ -57,7 +57,7 @@ build and replay scenarios
 
 questions from internet:
 
-<https://www.projectpro.io/article/kafka-interview-questions-and-answers/438#mcetoc_1g6amq60m3qp>
+[100+ Kafka Interview Questions and Answers for 2025](https://www.projectpro.io/article/kafka-interview-questions-and-answers/438#mcetoc_1g6amq60m3qp)
 
 # Use cases
 
@@ -179,11 +179,11 @@ Two settings to influence the batching mechanism:
 
 `linger.ms` - how long to wait until we send a batch (for example `5ms`)
 
-`batch.size` -  maximum number of bytes that will be included into a batch (for example 32KB or 64KB)
+`batch.size` -- maximum number of bytes that will be included into a batch (for example 32KB or 64KB)
 
 For a message to be successfully written into a Kafka topic, a producer must specify a level of acknowledgment (acks).
 
-<https://strimzi.io/blog/2020/10/15/producer-tuning/>
+[Optimizing Kafka producers](https://strimzi.io/blog/2020/10/15/producer-tuning/)
 
 - also you should use producer compression
 
@@ -210,7 +210,7 @@ The benefit of leveraging a Kafka consumer group is that the consumers within th
 ## Partition Assignment
 
 
-Kafka Clients allows you to implement your own partition assignment strategies for consumers. This can be very useful to adapt to specific deployment scenarios, such as the failover example we used in this post. In addition, the ability to transmit user data to the consumer leader during rebalancing can be leveraged to implement more complex and stateful algorithms, such as one developed for Kafka Stream (<https://medium.com/streamthoughts/understanding-kafka-partition-assignment-strategies-and-how-to-write-your-own-custom-assignor-ebeda1fc06f3>)
+Kafka Clients allows you to implement your own partition assignment strategies for consumers. This can be very useful to adapt to specific deployment scenarios, such as the failover example we used in this post. In addition, the ability to transmit user data to the consumer leader during rebalancing can be leveraged to implement more complex and stateful algorithms, such as one developed for Kafka Stream ([Understanding Kafka partition assignment strategies and how to write your own custom assignor](https://medium.com/streamthoughts/understanding-kafka-partition-assignment-strategies-and-how-to-write-your-own-custom-assignor-ebeda1fc06f3))
 
 ## Static Group Membership
 
@@ -248,7 +248,7 @@ Strategies:
 - Eager Rebalance. By default, consumers perform eager rebalancing, which means that all consumers stop consuming from Apache Kafka and give up the membership of their partitions. During this period of time, the entire consumer group stops processing, this is also called a *"stop the world"* event. They will rejoin the consumer group and get a new partition assignment, but *don't necessarily "get back"* the partitions that were previously assigned to them.
 - Cooperative rebalances. These (also called incremental rebalances) typically involve reassigning only a small subset of the partitions from one consumer to another, and allowing consumers to continue processing records from all the partitions that are not reassigned. This is achieved by rebalancing in two or more phases.
 
-<https://medium.com/streamthoughts/apache-kafka-rebalance-protocol-or-the-magic-behind-your-streams-applications-e94baf68e4f2>
+[Apache Kafka Rebalance Protocol, or the magic behind your streams applications](https://medium.com/streamthoughts/apache-kafka-rebalance-protocol-or-the-magic-behind-your-streams-applications-e94baf68e4f2)
 
 **Rebalance Listeners**
 
@@ -289,7 +289,7 @@ This means that to be in an "at-least-once" processing use case (the most desira
 
 In that (rare) case, you must disable `enable.auto.commit`, and most likely most processing to a separate thread, and then from time to time call `.commitSync()` or `.commitAsync()`with the correct offsets manually.
 
-(<https://www.conduktor.io/kafka/delivery-semantics-for-kafka-consumers#Automatic-Offset-Committing-Strategy-4>)
+([Kafka Delivery Semantics Explained](https://www.conduktor.io/kafka/delivery-semantics-for-kafka-consumers#Automatic-Offset-Committing-Strategy-4))
 
 ## Faults and Errors processing
 
@@ -299,17 +299,17 @@ In a distributed system, consumers might encounter all sorts of issues including
 ## Offset management
 
 
-<https://docs.confluent.io/3.0.0/clients/consumer.html#detailed-examples>
+[Consumer detailed examples (Confluent documentation)](https://docs.confluent.io/3.0.0/clients/consumer.html#detailed-examples)
 
 ## Consumer Advanced Topics
 
 
-<https://www.conduktor.io/kafka/advanced-kafka-consumer-with-java>
+[Advanced Kafka Consumer in Java](https://www.conduktor.io/kafka/advanced-kafka-consumer-with-java)
 
 # Exactly one semantics
 
 
-<https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/>
+[Exactly-once Semantics is Possible: Here's How Apache Kafka Does it](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/)
 
 and add some from definitive guide
 
@@ -336,7 +336,7 @@ However, Kafka does not limit you to just hash partitions, and sometimes there a
 
 sources
 
-<https://www.learningjournal.guru/courses/kafka/kafka-foundation-training/custom-partitioner/>
+[Kafka custom partitioner (Learning Journal)](https://www.learningjournal.guru/courses/kafka/kafka-foundation-training/custom-partitioner/)
 
 # Reprocessing
 
@@ -345,9 +345,9 @@ DLQs can keep service delays from blocking the processing of your messages. For 
 
 Dead letter & reprocessing:
 
-<https://www.confluent.io/blog/kafka-connect-deep-dive-error-handling-dead-letter-queues/>
+[Kafka Connect Deep Dive -- Error Handling and Dead Letter Queues](https://www.confluent.io/blog/kafka-connect-deep-dive-error-handling-dead-letter-queues/)
 
-<https://eng.uber.com/reliable-reprocessing/>
+[Reliable reprocessing (Uber Engineering)](https://eng.uber.com/reliable-reprocessing/)
 
 en: Utilizing these properties, the Uber Insurance Engineering team extended Kafka's role in our existing event-driven architecture by using non-blocking request reprocessing and dead letter queues (DLQ) to achieve decoupled, observable error-handling without disrupting real-time traffic.
 
@@ -373,9 +373,9 @@ Optimum performance involves the consideration of two key measures: latency and 
 
 **How to Choose the Number of Partitions**
 
-<https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/>
+[How to Choose the Number of Topics/Partitions in a Kafka Cluster?](https://www.confluent.io/blog/how-choose-number-topics-partitions-kafka-cluster/)
 
-<https://www.conduktor.io/kafka/kafka-topics-choosing-the-replication-factor-and-partitions-count>
+[Kafka topics: choosing the replication factor and partitions count](https://www.conduktor.io/kafka/kafka-topics-choosing-the-replication-factor-and-partitions-count)
 
 The first thing to understand is that a topic partition is the unit of parallelism in Kafka. On both the producer and the broker side, writes to different partitions can be done fully in parallel. So expensive operations such as compression can utilize more hardware resources. On the consumer side, Kafka always gives a single partition's data to one consumer thread. Thus, the degree of parallelism in the consumer (within a consumer group) is bounded by the number of partitions being consumed. Therefore, in general, the more partitions there are in a Kafka cluster, the higher the throughput one can achieve.
 
@@ -412,41 +412,41 @@ it's an easy data processing and tranformation library within Kafka.
 
 intro
 
-<https://kafka.apache.org/intro>
+[Apache Kafka introduction](https://kafka.apache.org/intro)
 
-<https://www.conduktor.io/kafka/>
+[Learn Apache Kafka (Conduktor Kafkademy)](https://www.conduktor.io/kafka/)
 
-<https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/>
+[Exactly-once Semantics is Possible: Here's How Apache Kafka Does it](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/)
 
-<https://www.confluent.io/blog/5-things-every-kafka-developer-should-know/>
+[Top 5 Things Every Apache Kafka Developer Should Know](https://www.confluent.io/blog/5-things-every-kafka-developer-should-know/)
 
-<https://developer.confluent.io/podcast/if-streaming-is-the-answer-why-are-we-still-doing-batch/>
+[If Streaming Is the Answer, Why Are We Still Doing Batch?](https://developer.confluent.io/podcast/if-streaming-is-the-answer-why-are-we-still-doing-batch/)
 
-<https://www.confluent.io/blog/transactions-apache-kafka/>
+[Transactions in Apache Kafka](https://www.confluent.io/blog/transactions-apache-kafka/)
 
 conferences
 
 Kafka Summit
 
-<https://www.confluent.io/events/kafka-summit-london-2022/>
+[Kafka Summit London 2022](https://www.confluent.io/events/kafka-summit-london-2022/)
 
 use cases
 
-<https://www.confluent.io/blog/area/technology/?categories=use-cases>
+[Apache Kafka, Flink, and Data Streaming Articles](https://www.confluent.io/blog/area/technology/?categories=use-cases)
 
 docs
 
-<https://kafka.apache.org/documentation.html#theproducer>
+[Apache Kafka producer documentation](https://kafka.apache.org/documentation.html#theproducer)
 
-<https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html>
+[KafkaConsumer (Kafka 3.0.2 API)](https://kafka.apache.org/30/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html)
 
 courses
 
-<https://developer.confluent.io/learn-kafka/> #courses/kafka
+[Learn Apache Kafka® & Flink®](https://developer.confluent.io/learn-kafka/) #courses/kafka
 
-<https://developer.confluent.io/learn-kafka/apache-kafka/events/> #courses/kafka
+[What You'll Learn in This Apache Kafka® 101 Course](https://developer.confluent.io/learn-kafka/apache-kafka/events/) #courses/kafka
 
-Flink vs Kafka <https://www.youtube.com/watch?v=Wqko7MunKZs>
+[Flink vs Kafka](https://www.youtube.com/watch?v=Wqko7MunKZs)
 
 # Questions (interview)
 
@@ -477,9 +477,9 @@ What does serdes mean?
 
 Explain the format of a Kafka message?
 
-<https://a-great-day-out-with.github.io/kafka/index.html>
+[A Great Day Out With... Apache Kafka](https://a-great-day-out-with.github.io/kafka/index.html)
 
-deep kafka audit and interesting topic: <https://www.redpanda.com/blog/redpanda-official-jepsen-report-and-analysis>
+deep kafka audit and interesting topic: [Redpanda's official Jepsen report: What we fixed, and what we shouldn't](https://www.redpanda.com/blog/redpanda-official-jepsen-report-and-analysis)
 
 ## Library sources
 

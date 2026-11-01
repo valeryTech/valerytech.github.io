@@ -15,14 +15,14 @@ A reference note on the Haskell language: a study path, the toolchain and librar
 The plan is a mix of books, one cumulative project, exercises and a real project.
 
 - **Books.** *Effective Haskell* by Rebecca Skinner (Pragmatic Bookshelf, 2023; [PDF](/sources/47da28f54846d377221bfd47a62316ff.bin)) as a practical main course, with the other books under [Books](#books). *Yet Another Haskell Tutorial* (YAHT) by Hal Daumé III is also worth a look; the Wikibooks version under [Tutorials and wikis](#tutorials-and-wikis) is an edited copy of it, and it predates much of today's tooling and libraries.
-- **A cumulative series.** "Learn Haskell by building": a series of cumulative assignments that gradually introduce the language, tooling and idioms. A good model for its structure is the free book *Learn Haskell by building a blog generator* (<https://learn-haskell.blog/>, under [Courses](#courses)), which grows one project step by step and introduces tooling along the way.
+- **A cumulative series.** "Learn Haskell by building": a series of cumulative assignments that gradually introduce the language, tooling and idioms. A good model for its structure is the free book *Learn Haskell by building a blog generator* ([Learn Haskell by building a blog generator](https://learn-haskell.blog/), under [Courses](#courses)), which grows one project step by step and introduces tooling along the way.
 - **Exercises.** The tasks from "GPiN". The abbreviation needs checking: it may mean Graham Hutton's *Programming in Haskell*, whose chapters end with exercises, or *Get Programming with Haskell* by Will Kurt, which other notes in the vault abbreviate as GPWH.
 - **Projects.** A time-management tool (tasks, time tracking, a calendar) is a good first real project, because it needs persistence, parsing, dates and a user interface. More ideas are in [Project ideas]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}#project-ideas).
 - **Effects.** Get fluent with the monad [transformers](http://hackage.haskell.org/package/transformers) and [mtl](https://hackage.haskell.org/package/mtl) libraries:
-  - `transformers` defines the concrete monad transformers (`ReaderT`, `StateT`, `WriterT`, `ExceptT`, `MaybeT`) and `lift`, which moves an action from the inner monad up one layer.
-  - `mtl` builds on it with type classes such as `MonadReader`, `MonadState` and `MonadError`. With them, `get` or `ask` works at any depth of a stack without manual lifting, and functions can be written against a capability instead of a concrete stack: `tick :: MonadState Int m => m ()`.
-  - Caveat: transformers and mtl are worth learning, but no longer the only mainstream way to structure effects. Many applications use a single `ReaderT Env IO` (the pattern `rio` is built around, see [Standard library alternatives](#standard-library-alternatives)), and effect libraries such as `effectful` or `polysemy` are common alternatives (see [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems) and [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}})).
-  - A practical trap: the ordinary `WriterT` leaks space. `StateT`, or the CPS writer in `Control.Monad.Trans.Writer.CPS`, avoids it.
+	- `transformers` defines the concrete monad transformers (`ReaderT`, `StateT`, `WriterT`, `ExceptT`, `MaybeT`) and `lift`, which moves an action from the inner monad up one layer.
+	- `mtl` builds on it with type classes such as `MonadReader`, `MonadState` and `MonadError`. With them, `get` or `ask` works at any depth of a stack without manual lifting, and functions can be written against a capability instead of a concrete stack: `tick :: MonadState Int m => m ()`.
+	- Caveat: transformers and mtl are worth learning, but no longer the only mainstream way to structure effects. Many applications use a single `ReaderT Env IO` (the pattern `rio` is built around, see [Standard library alternatives](#standard-library-alternatives)), and effect libraries such as `effectful` or `polysemy` are common alternatives (see [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems) and [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}})).
+	- A practical trap: the ordinary `WriterT` leaks space. `StateT`, or the CPS writer in `Control.Monad.Trans.Writer.CPS`, avoids it.
 - **The Prelude.** A common piece of advice is "don't use the Prelude and make your own type classes". It mixes two things. Replacing the Prelude ([Custom Prelude](#custom-prelude)) means importing safer, more complete defaults, such as `Text` instead of `String` and total instead of partial functions. Defining your own type classes is rarely a good idea when learning: write your own `Functor` or `Monad` as an exercise (the point of the fp-course under [Courses](#courses)), but use the standard ones in real code so that libraries interoperate. Most learners are better off with the standard Prelude until its limits actually bother them.
 
 Tasks:
@@ -47,8 +47,8 @@ The tooling landscape has shifted since that toolset was the default. GHCup is t
 
 `rio`, from FP Complete, describes itself as a standard library for Haskell:
 
-- <https://www.fpcomplete.com/haskell/library/rio/>
-- <https://github.com/commercialhaskell/rio>
+- [rio library (FP Complete)](https://www.fpcomplete.com/haskell/library/rio/)
+- [commercialhaskell/rio (GitHub)](https://github.com/commercialhaskell/rio)
 
 It is a Prelude replacement that re-exports `Text`, `ByteString`, containers and safe exception handling, and it is built around the `RIO env a` monad, a `ReaderT env IO` for application environments. It is one answer to the problem described in [The cost of choice](#the-cost-of-choice), and one option for a [Custom Prelude](#custom-prelude). "Commercial Haskell" is the name of the GitHub organisation (`commercialhaskell`, which also hosts Stack), not of the library.
 
@@ -154,7 +154,7 @@ pythagorean n = do
 ### Parser combinators
 
 
-Monadic parser combinators: <https://hackage.haskell.org/package/parsec>
+Monadic parser combinators: [parsec (Hackage)](https://hackage.haskell.org/package/parsec)
 
 A parser combinator library represents a parser as a value, roughly `String -> Maybe (a, String)`, and builds big parsers from small ones with `Functor`, `Applicative`, `Monad` and `Alternative`. "Monadic parser combinators" is also the title of a well-known 1996 report by Graham Hutton and Erik Meijer that builds such a library from scratch.
 
@@ -163,13 +163,13 @@ A parser combinator library represents a parser as a value, roughly `String -> M
 ### Effect libraries
 
 
-`eff` (<https://github.com/hasura/eff>) is Alexis King's effect library, designed around delimited continuations that she added to GHC as primitive operations. It aims to make algebraic effects fast. As far as I know it stayed experimental (needs checking). The effect libraries in wider use are `effectful`, `polysemy`, `fused-effects` and `bluefin`. See [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems).
+`eff` ([hasura/eff (GitHub)](https://github.com/hasura/eff)) is Alexis King's effect library, designed around delimited continuations that she added to GHC as primitive operations. It aims to make algebraic effects fast. As far as I know it stayed experimental (needs checking). The effect libraries in wider use are `effectful`, `polysemy`, `fused-effects` and `bluefin`. See [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems).
 
 ### Streaming and abstraction libraries
 
 
-- `conduit` (<https://github.com/snoyberg/conduit>) and `pipes` (<https://github.com/Gabriella439/pipes>) are the two classic streaming libraries, for processing data in constant memory with interleaved effects. `streaming` and `streamly` are later alternatives.
-- Edward Kmett (<https://github.com/ekmett>) is the author of `lens` and many of the abstraction libraries, such as `comonad`, `free` and `profunctors`.
+- `conduit` ([snoyberg/conduit (GitHub)](https://github.com/snoyberg/conduit)) and `pipes` ([Gabriella439/pipes (GitHub)](https://github.com/Gabriella439/pipes)) are the two classic streaming libraries, for processing data in constant memory with interleaved effects. `streaming` and `streamly` are later alternatives.
+- Edward Kmett ([Edward Kmett's GitHub profile](https://github.com/ekmett)) is the author of `lens` and many of the abstraction libraries, such as `comonad`, `free` and `profunctors`.
 - `category-extras` is long deprecated. Kmett split it into separate packages such as `comonad`, `free`, `semigroupoids`, `kan-extensions`, `adjunctions` and `recursion-schemes`; use those instead.
 
 ## Language notes
@@ -285,7 +285,7 @@ This defines exactly the usual `data Maybe a = Nothing | Just a`. `Just` is a fu
 ### Lambda lifting
 
 
-Lambda lifting (<https://wiki.haskell.org/Lambda_lifting>) turns a local function that uses variables from its surrounding scope into a top-level function that takes those variables as extra parameters, so no closure has to be allocated:
+Lambda lifting ([Lambda lifting](https://wiki.haskell.org/Lambda_lifting)) turns a local function that uses variables from its surrounding scope into a top-level function that takes those variables as extra parameters, so no closure has to be allocated:
 
 ```haskell
 f x = map g [1, 2, 3] where g y = x + y
@@ -387,7 +387,7 @@ On avoiding the terms of imperative languages; the footnote link points to Pober
 > - preferring `pure` over `return` [5](https://www.poberezkin.com/posts/2021-04-21-what-i-wish-somebody-told-me-when-i-was-learning-Haskell.html#fn5) would both save you typing and help switching mindset.
 > - "names" are not "variables", they are not "assigned", they are "bound" to values.
 
-A related phrase, source not recorded: "It is tempting to say 'called', but the functions are not 'called' in functional languages - they are _evaluated_ and combined in bigger transformations, until the whole program is constructed."
+A related phrase, source not recorded: "It is tempting to say 'called', but the functions are not 'called' in functional languages -- they are _evaluated_ and combined in bigger transformations, until the whole program is constructed."
 
 This is useful as a nudge, not as dogma:
 
@@ -398,14 +398,14 @@ This is useful as a nudge, not as dogma:
 ### Tips, cheatsheets and style
 
 
-- fp-course cheatsheet: <https://github.com/system-f/fp-course/blob/master/CHEATSHEET.md>
-- Another cheatsheet (PDF): <http://cheatsheet.codeslower.com/CheatSheet.pdf>
-- quchen, useful techniques: <https://github.com/quchen/articles/blob/master/useful_techniques.md>
-- Haskell wiki, programming tips: <https://wiki.haskell.org/Haskell_programming_tips>
-- HaskellTips on Twitter: <https://twitter.com/HaskellTips>
-- Poberezkin, "What I wish somebody told me when I was learning Haskell": <https://www.poberezkin.com/posts/2021-04-21-what-i-wish-somebody-told-me-when-i-was-learning-Haskell.html>
-- Kowainik style guide: <https://kowainik.github.io/posts/2019-02-06-style-guide>
-- Haskell in production, fast iteration: <https://blog.sumtypeofway.com/posts/fast-iteration-with-haskell.html>
+- fp-course cheatsheet: [system-f/fp-course cheatsheet](https://github.com/system-f/fp-course/blob/master/CHEATSHEET.md)
+- Another cheatsheet (PDF): [CodeSlower Haskell cheatsheet (PDF)](http://cheatsheet.codeslower.com/CheatSheet.pdf)
+- quchen, useful techniques: [quchen, useful techniques](https://github.com/quchen/articles/blob/master/useful_techniques.md)
+- Haskell wiki, programming tips: [Haskell programming tips (HaskellWiki)](https://wiki.haskell.org/Haskell_programming_tips)
+- HaskellTips on Twitter: [HaskellTips on X](https://twitter.com/HaskellTips)
+- Poberezkin, "[What I wish somebody told me when I was learning Haskell](https://www.poberezkin.com/posts/2021-04-21-what-i-wish-somebody-told-me-when-i-was-learning-Haskell.html)"
+- Kowainik style guide: [Kowainik Haskell style guide](https://kowainik.github.io/posts/2019-02-06-style-guide)
+- Haskell in production, fast iteration: [Towards Faster Iteration in Industrial Haskell](https://blog.sumtypeofway.com/posts/fast-iteration-with-haskell.html)
 
 ## Resources
 
@@ -421,130 +421,130 @@ The library also has *Haskell Programming from First Principles*, a full beginne
 ### Tutorials and wikis
 
 
-- Haskell Wikibook, useful: <https://en.wikibooks.org/wiki/Haskell>
-- Typeclassopedia, useful: <https://wiki.haskell.org/Typeclassopedia>. By Brent Yorgey, it explains the standard type classes (`Functor`, `Applicative`, `Monad`, `Foldable`, `Traversable` and others) and their laws, and is best read after a first tutorial.
-- School of Haskell, hosted by FP Complete: <https://www.schoolofhaskell.com/>
-- *A Gentle Introduction to Haskell*: <https://www.haskell.org/tutorial/index.html>. Written for Haskell 98; the quotes around "gentle" are deserved, since it assumes experience with another functional language.
-- *Yet Another Haskell Tutorial* (Wikibooks): <https://en.wikibooks.org/wiki/Yet_Another_Haskell_Tutorial/>
-- Haskell wiki: <https://wiki.haskell.org> and <http://wiki.haskell.org/Haskell>
-- Middlebury, Haskell guides: <https://www.cs.middlebury.edu/~pjohnson/guides/haskell>
+- Haskell Wikibook, useful: [Haskell (Wikibooks)](https://en.wikibooks.org/wiki/Haskell)
+- [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia), useful. By Brent Yorgey, it explains the standard type classes (`Functor`, `Applicative`, `Monad`, `Foldable`, `Traversable` and others) and their laws, and is best read after a first tutorial.
+- School of Haskell, hosted by FP Complete: [School of Haskell (FP Complete)](https://www.schoolofhaskell.com/)
+- *[A Gentle Introduction to Haskell](https://www.haskell.org/tutorial/index.html)*. Written for Haskell 98; the quotes around "gentle" are deserved, since it assumes experience with another functional language.
+- *[Yet Another Haskell Tutorial](https://en.wikibooks.org/wiki/Yet_Another_Haskell_Tutorial/)* (Wikibooks)
+- Haskell wiki: [HaskellWiki](https://wiki.haskell.org) and [HaskellWiki Haskell page](http://wiki.haskell.org/Haskell)
+- [Middlebury, Haskell guides](https://www.cs.middlebury.edu/~pjohnson/guides/haskell)
 
 Lists of other sources:
 
-- Haskell wiki, Learning Haskell (links to resources): <https://wiki.haskell.org/Learning_Haskell>
-- Haskell wiki, Tutorials: <https://wiki.haskell.org/Tutorials>
-- Haskell wiki, Blog articles: <https://wiki.haskell.org/Blog_articles>
-- bitemyapp/learnhaskell, specific topics: <https://github.com/bitemyapp/learnhaskell/blob/master/specific_topics.md>
-- chemouna/HaskellResources, also various topics: <https://github.com/chemouna/HaskellResources>
-- Class Central, best free Haskell courses: <https://www.classcentral.com/report/best-free-haskell-courses/>
+- Haskell wiki, [Learning Haskell (links to resources)](https://wiki.haskell.org/Learning_Haskell)
+- Haskell wiki, Tutorials: [Tutorials (HaskellWiki)](https://wiki.haskell.org/Tutorials)
+- Haskell wiki, Blog articles: [Blog articles (HaskellWiki)](https://wiki.haskell.org/Blog_articles)
+- bitemyapp/learnhaskell, specific topics: [bitemyapp/learnhaskell: specific topics](https://github.com/bitemyapp/learnhaskell/blob/master/specific_topics.md)
+- chemouna/HaskellResources, also various topics: [chemouna/HaskellResources (GitHub)](https://github.com/chemouna/HaskellResources)
+- Class Central, best free Haskell courses: [9 Best Free Haskell Courses for 2026](https://www.classcentral.com/report/best-free-haskell-courses/)
 
 ### Courses
 
 
 To start, CIS 194 (spring 2013) and the University of Helsinki MOOC are the most self-contained, with exercises.
 
-- CIS 194 by Brent Yorgey: <https://www.seas.upenn.edu/~cis1940/spring13/>
-- CS240H, Winter 2016, "Functional systems in Haskell" (Stanford): <http://www.scs.stanford.edu/16wi-cs240h/>
-- *Learn Haskell by building a blog generator*, an HTTP hello-world style project, with a video: <https://learn-haskell.blog/>
-- FP Complete, learn: <https://www.fpcomplete.com/haskell/learn/>
-- FP Complete, syllabus: <https://www.fpcomplete.com/haskell/syllabus/>
-- Erik Meijer, *Functional Programming Fundamentals* (Channel 9 lectures): <https://learn.microsoft.com/en-us/shows/c9-lectures-erik-meijer-functional-programming-fundamentals/>
-- system-f/fp-course, exercises in which you implement the standard type classes and a parser yourself: <https://github.com/system-f/fp-course>
-- University of Helsinki MOOC: <https://haskell.mooc.fi/>
-- Functional programming at NSU (CS club, Novosibirsk, spring 2020): <https://compsciclub.ru/courses/func-prog/nsk/2020-spring/>
-- *What I Wish I Knew When Learning Haskell* by Stephen Diehl: <https://github.com/sdiehl/wiwinwlh>. Not a course but a long reference on the language, extensions and ecosystem, useful for "what should I learn".
-- Programming languages course, possibly with exercises: <https://ggbaker.ca/prog-langs/>
-- FutureLearn, functional programming in Haskell: <https://www.futurelearn.com/courses/functional-programming-haskell>
-- University of Calgary, CPSC 521 web notes: <https://pages.cpsc.ucalgary.ca/~robin/class/521/webnotes.html>
-- University of Calgary, CPSC 449 web notes: <https://pages.cpsc.ucalgary.ca/~robin/class/449/webnotes.html>
-- H. Conrad Cunningham, *Exploring Languages with Interpreters and Functional Programming* (ELIFP), with material on the reduction model: <https://john.cs.olemiss.edu/~hcc/csci450/ELIFP/>. Its evaluation-model chapter is quoted in [Substitution model and equational reasoning]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#substitution-model-and-equational-reasoning).
-- Princeton COS 441 (2011): <https://www.cs.princeton.edu/~dpw/cos441-11/>
-- Chalmers, Advanced Functional Programming (2015), lectures: <https://www.cse.chalmers.se/edu/year/2015/course/afp/lectures.html>
+- [CIS 194 by Brent Yorgey](https://www.seas.upenn.edu/~cis1940/spring13/)
+- CS240H, Winter 2016, "[Functional systems in Haskell](http://www.scs.stanford.edu/16wi-cs240h/)" (Stanford)
+- *[Learn Haskell by building a blog generator](https://learn-haskell.blog/)*, an HTTP hello-world style project, with a video
+- FP Complete, learn: [FP Complete Haskell learning page](https://www.fpcomplete.com/haskell/learn/)
+- FP Complete, syllabus: [FP Complete Haskell syllabus](https://www.fpcomplete.com/haskell/syllabus/)
+- Erik Meijer, *[Functional Programming Fundamentals](https://learn.microsoft.com/en-us/shows/c9-lectures-erik-meijer-functional-programming-fundamentals/)* (Channel 9 lectures)
+- system-f/fp-course, exercises in which you implement the standard type classes and a parser yourself: [system-f/fp-course (GitHub)](https://github.com/system-f/fp-course)
+- University of Helsinki MOOC: [Haskell MOOC (University of Helsinki)](https://haskell.mooc.fi/)
+- [Functional programming at NSU (CS club, Novosibirsk, spring 2020)](https://compsciclub.ru/courses/func-prog/nsk/2020-spring/)
+- *[What I Wish I Knew When Learning Haskell](https://github.com/sdiehl/wiwinwlh)* by Stephen Diehl. Not a course but a long reference on the language, extensions and ecosystem, useful for "what should I learn".
+- Programming languages course, possibly with exercises: [CMPT 383 lecture notes](https://ggbaker.ca/prog-langs/)
+- FutureLearn, [functional programming in Haskell](https://www.futurelearn.com/courses/functional-programming-haskell)
+- University of Calgary, CPSC 521 web notes: [CPSC 521 Foundations of Functional Programming (University of Calgary)](https://pages.cpsc.ucalgary.ca/~robin/class/521/webnotes.html)
+- University of Calgary, CPSC 449 web notes: [CPSC 449 web notes (University of Calgary)](https://pages.cpsc.ucalgary.ca/~robin/class/449/webnotes.html)
+- H. Conrad Cunningham, *Exploring Languages with Interpreters and Functional Programming* (ELIFP), with material on the reduction model: [Exploring Languages with Interpreters and Functional Programming (ELIFP)](https://john.cs.olemiss.edu/~hcc/csci450/ELIFP/). Its evaluation-model chapter is quoted in [Substitution model and equational reasoning]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#substitution-model-and-equational-reasoning).
+- [Princeton COS 441 (2011)](https://www.cs.princeton.edu/~dpw/cos441-11/)
+- Chalmers, [Advanced Functional Programming (2015), lectures](https://www.cse.chalmers.se/edu/year/2015/course/afp/lectures.html)
 
 ### Video
 
 
-- Graham Hutton's channel, playlists: <https://www.youtube.com/@haskellhutt/playlists>
+- Graham Hutton's channel, playlists: [Graham Hutton's Haskell playlists on YouTube](https://www.youtube.com/@haskellhutt/playlists)
 - *Haskell for Imperative Programmers*, a YouTube series by Philipp Hagenlocker (no link saved).
-- awesome-haskell-videos: <https://github.com/andys8/awesome-haskell-videos>
-- *The Haskell Unfolder*, a series by Well-Typed presented by Edsko de Vries and Andres Löh: <https://www.youtube.com/playlist?list=PLD8gywOEY4HaG5VSrKVnHxCptlJv2GAn7>
-- Data61 fp-course, plus videos about games: <https://www.youtube.com/playlist?list=PLly9WMAVMrayYo2c-1E_rIRwBXG_FbLBW>
+- awesome-haskell-videos: [andys8/awesome-haskell-videos (GitHub)](https://github.com/andys8/awesome-haskell-videos)
+- *[The Haskell Unfolder](https://www.youtube.com/playlist?list=PLD8gywOEY4HaG5VSrKVnHxCptlJv2GAn7)*, a series by Well-Typed presented by Edsko de Vries and Andres Löh
+- Data61 fp-course, plus videos about games: [Data61 fp-course videos (YouTube playlist)](https://www.youtube.com/playlist?list=PLly9WMAVMrayYo2c-1E_rIRwBXG_FbLBW)
 
 ### Roadmaps
 
 
-- soupi, Haskell study plan: <https://github.com/soupi/haskell-study-plan>
-- Stack Overflow, "Getting started with Haskell": <https://stackoverflow.com/questions/1012573/getting-started-with-haskell>
-- Reddit, "Complete roadmap from total novice to Haskell...": <https://www.reddit.com/r/haskell/comments/2ali12/complete_roadmap_from_total_novice_to_haskell/>
-- Reddit comment, a checklist: <https://www.reddit.com/r/haskell/comments/el25ft/comment/fdfdh9q/>
-- William Yao, "Road to proficient" (2020): <https://williamyaoh.com/posts/2020-01-11-road-to-proficient.html>
+- soupi, Haskell study plan: [soupi/haskell-study-plan (GitHub)](https://github.com/soupi/haskell-study-plan)
+- Stack Overflow, "[Getting started with Haskell](https://stackoverflow.com/questions/1012573/getting-started-with-haskell)"
+- Reddit, "[Complete roadmap from total novice to Haskell](https://www.reddit.com/r/haskell/comments/2ali12/complete_roadmap_from_total_novice_to_haskell/)..."
+- Reddit comment, a checklist: [r/haskell comment with a checklist](https://www.reddit.com/r/haskell/comments/el25ft/comment/fdfdh9q/)
+- William Yao, "[Road to proficient](https://williamyaoh.com/posts/2020-01-11-road-to-proficient.html)" (2020)
 
 Several of these are old (the Stack Overflow question dates from about 2009), so their tooling advice, such as installing the Haskell Platform, is out of date: the Platform is deprecated and GHCup replaced it. The advice about what to learn and in what order ages much better.
 
 ### Blogs
 
 
-- Haskell pages at crypto.stanford.edu (blynn): <https://crypto.stanford.edu/~blynn/haskell/>
-- Planet Haskell, aggregates blogs: <http://planet.haskell.org/>
-- Serokell blog, Haskell: <https://serokell.io/blog/haskell>
-- Serokell blog, programming: <https://serokell.io/blog/programming>
-- mmhaskell.com: <https://mmhaskell.com/>
-- Matt Parsons, programming: <https://www.parsonsmatt.org/programming/>
-- David Luposchainsky (quchen), articles: <https://github.com/quchen/articles/tree/master>
-- tmorris, presentations: <https://presentations.tmorris.net/>
-- defmacro.org: <https://www.defmacro.org/>
-- Poberezkin, posts: <https://www.poberezkin.com/posts/>
-- Alvin Alexander, Haskell: <https://alvinalexander.com/haskell/>
-- Brian McKenna, YouTube channel: <https://www.youtube.com/@BrianMcKennaPuffnfresh>
-- Freckle tech blog: <https://tech.freckle.com/>
-- Well-Typed blog: <https://www.well-typed.com/blog/>
-- zelenya on dev.to: <https://dev.to/zelenya>
-- jelv.is blog: <https://jelv.is/blog/>
+- Haskell pages at crypto.stanford.edu (blynn): [Haskell Fan Site](https://crypto.stanford.edu/~blynn/haskell/)
+- Planet Haskell, aggregates blogs: [Planet Haskell](http://planet.haskell.org/)
+- Serokell blog, Haskell: [Serokell blog: Haskell](https://serokell.io/blog/haskell)
+- Serokell blog, programming: [Serokell blog: Programming](https://serokell.io/blog/programming)
+- mmhaskell.com: [Monday Morning Haskell](https://mmhaskell.com/)
+- Matt Parsons, programming: [Matt Parsons on programming](https://www.parsonsmatt.org/programming/)
+- David Luposchainsky (quchen), articles: [quchen/articles on GitHub](https://github.com/quchen/articles/tree/master)
+- tmorris, presentations: [Presentations by Tony Morris](https://presentations.tmorris.net/)
+- defmacro.org: [defmacro.org](https://www.defmacro.org/)
+- Poberezkin, posts: [Poberezkin posts](https://www.poberezkin.com/posts/)
+- Alvin Alexander, Haskell: [Alvin Alexander's Haskell posts](https://alvinalexander.com/haskell/)
+- Brian McKenna, YouTube channel: [Brian McKenna YouTube channel](https://www.youtube.com/@BrianMcKennaPuffnfresh)
+- Freckle tech blog: [Freckle Education tech blog](https://tech.freckle.com/)
+- Well-Typed blog: [Well-Typed blog](https://www.well-typed.com/blog/)
+- zelenya on dev.to: [zelenya on DEV Community](https://dev.to/zelenya)
+- jelv.is blog: [jelv.is blog](https://jelv.is/blog/)
 
 ### Topic links
 
 
-- Visualisation of `map` and folds: <https://stevekrouse.com/hs.js/>
+- Visualisation of `map` and folds: [Visualisation of map and folds (hs.js)](https://stevekrouse.com/hs.js/)
 - Stack Overflow questions which, judging by their titles, are about the function instance `( -> ) r` of `Applicative` and `Monad`, the reader monad in disguise, where `join f x = f x x` (see [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader)):
-  - <https://stackoverflow.com/questions/38778320/r-applicative-functor>
-  - <https://stackoverflow.com/questions/40131562/how-to-interpret-bind-of-the-function-instance/40136614#40136614>
-  - <https://stackoverflow.com/questions/32323680/is-there-any-intuition-to-understand-join-two-functions-in-monad>
-- Freckle, a Haskell refactoring step-through (2023): <https://tech.freckle.com/2023/10/31/haskell-refactoring-step-through/>
-- Parsing and parsers, video: <https://www.youtube.com/watch?v=r_Enynu_TV0>
-- Lambda lifting, Haskell wiki: <https://wiki.haskell.org/Lambda_lifting> (see [Lambda lifting](#lambda-lifting))
-- The evolution of a Haskell programmer: <https://willamette.edu/~fruehr/haskell/evolution.html>
+	- [Stack Overflow: r applicative functor](https://stackoverflow.com/questions/38778320/r-applicative-functor)
+	- [Stack Overflow: how to interpret bind of the function instance](https://stackoverflow.com/questions/40131562/how-to-interpret-bind-of-the-function-instance/40136614#40136614)
+	- [Stack Overflow: is there any intuition to understand join two functions in monad](https://stackoverflow.com/questions/32323680/is-there-any-intuition-to-understand-join-two-functions-in-monad)
+- Freckle, a Haskell refactoring step-through (2023): [Haskell Refactoring Step-Through](https://tech.freckle.com/2023/10/31/haskell-refactoring-step-through/)
+- Parsing and parsers, video: [Parsing and parsers (video)](https://www.youtube.com/watch?v=r_Enynu_TV0)
+- Lambda lifting, Haskell wiki: [Lambda lifting (HaskellWiki)](https://wiki.haskell.org/Lambda_lifting) (see [Lambda lifting](#lambda-lifting))
+- The evolution of a Haskell programmer: [The Evolution of a Haskell Programmer](https://willamette.edu/~fruehr/haskell/evolution.html)
 
 ### Project lists
 
 
-- Serokell, best Haskell open-source projects: <https://serokell.io/blog/best-haskell-open-source-projects>
-- Wadler, real-world uses of functional languages: <https://homepages.inf.ed.ac.uk/wadler/realworld/>
-- krispo/awesome-haskell: <https://github.com/krispo/awesome-haskell>
-- uhub/awesome-haskell: <https://github.com/uhub/awesome-haskell>
-- Haskell wiki, Haskell in industry: <https://wiki.haskell.org/Haskell_in_industry>
-- Habr, Typeable: <https://habr.com/ru/companies/typeable/articles/595289/>
-- Habr, topic not checked: <https://habr.com/ru/articles/496370/>
+- Serokell, best Haskell open-source projects: [29 Awesome Open-Source Haskell Projects](https://serokell.io/blog/best-haskell-open-source-projects)
+- Wadler, real-world uses of functional languages: [Functional Programming in the Real World](https://homepages.inf.ed.ac.uk/wadler/realworld/)
+- [krispo/awesome-haskell](https://github.com/krispo/awesome-haskell)
+- [uhub/awesome-haskell](https://github.com/uhub/awesome-haskell)
+- Haskell wiki, Haskell in industry: [Haskell in industry (HaskellWiki)](https://wiki.haskell.org/Haskell_in_industry)
+- Habr, Typeable: [А вы знаете, где используется Haskell?](https://habr.com/ru/companies/typeable/articles/595289/)
+- Habr, topic not checked: [Habr article](https://habr.com/ru/articles/496370/)
 
 ### Notable projects
 
 
-- Unison, a programming language implemented in Haskell (BayHac 2017): <https://wiki.haskell.org/BayHac2017/Unison>
-- Edward Kmett, cellular automata, part 1 (School of Haskell): <https://www.schoolofhaskell.com/user/edwardk/cellular-automata/part-1>
-- simplexmq: <https://github.com/simplex-chat/simplexmq/tree/master>
+- Unison, a programming language implemented in Haskell (BayHac 2017): [BayHac2017/Unison (HaskellWiki)](https://wiki.haskell.org/BayHac2017/Unison)
+- Edward Kmett, cellular automata, part 1 (School of Haskell): [Part I: From Theory to Pretty Pictures](https://www.schoolofhaskell.com/user/edwardk/cellular-automata/part-1)
+- [simplexmq](https://github.com/simplex-chat/simplexmq/tree/master)
 - Libraries with their own entries above: `conduit`, `pipes`, `parsec`, `eff` and Edward Kmett's packages.
 
 ### Games
 
 
-- Swarm, a game: <https://github.com/swarm-game/swarm/>
-- Games in Haskell (blynn): <https://crypto.stanford.edu/~blynn/play/>
-- A game in Haskell, video: <https://www.youtube.com/watch?v=1MNTerD8IuI>
-- Sudoku solver (literate Haskell, Nottingham): <http://www.cs.nott.ac.uk/~pszgmh/sudoku.lhs>
+- Swarm, a game: [swarm-game/swarm on GitHub](https://github.com/swarm-game/swarm/)
+- Games in Haskell (blynn): [Let's Play: games in Haskell (blynn)](https://crypto.stanford.edu/~blynn/play/)
+- A game in Haskell, video: [A game in Haskell (video)](https://www.youtube.com/watch?v=1MNTerD8IuI)
+- Sudoku solver (literate Haskell, Nottingham): [Sudoku solver in literate Haskell (Nottingham)](http://www.cs.nott.ac.uk/~pszgmh/sudoku.lhs)
 
 See also:
 
-- [Functional programming]({{< ref "functional-programming" >}}) for the section overview, [FP reading paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}}) for general FP reading, [Exercises and projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}) for Haskell exercises and project ideas, and [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}) for dated study notes on folds and laziness.
-- [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for transformers and mtl, and [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}).
+- [Functional Programming]({{< ref "functional-programming" >}}) for the section overview, [Fp Reading Paths]({{< ref "functional-programming/05-practice/fp-reading-paths" >}}) for general FP reading, [Exercises And Projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}) for Haskell exercises and project ideas, and [FP study log]({{< ref "functional-programming/05-practice/study-log" >}}) for dated study notes on folds and laziness.
+- [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for transformers and mtl, and [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}).
 - Category theory: [Category theory: Resources]({{< ref "functional-programming/02-abstractions/category-theory" >}}#resources) for links and [Purity and category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}#purity-and-category-theory) for Milewski's passage on purity.
 - Evaluation: [Working through an evaluation by hand]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#working-through-an-evaluation-by-hand) for the `myDrop` model of function application, and [Costs of laziness: space leaks]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#costs-of-laziness-space-leaks) for memory leaks.
 - Functions: [Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#composition) for `$` and composition, [Lambdas, closures and scope]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#lambdas-closures-and-scope), and [Returning functions and API design]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#returning-functions-and-api-design) for returning functions and argument order.

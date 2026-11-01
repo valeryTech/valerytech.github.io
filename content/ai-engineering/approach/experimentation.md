@@ -86,16 +86,16 @@ Plan comparisons around the conditions that could change their interpretation. T
 
 - [Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}}) - Empirical Software Engineering
 - [Evidence in software engineering]({{< ref "engineering/evidence" >}}) - principles for claims, measures, comparisons and methods
-- [Exploratory design]({{< ref "engineering/eng-exp/exploratory-design" >}})
+- [Exploratory Design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [AI systems require behavioral evidence]({{< ref "ai-engineering/approach/behavioral-evidence" >}})
 - [model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}})
-- [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})
+- [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace)
 - [product behavior guide]({{< ref "ai-engineering/causal-stack" >}})
 - science method
 
 Treude and Storey (2025) note that generative AI forces software engineering to adapt traditional empirical research methods to capture the new, probabilistic dynamics of AI tools. Because AI models act as "general-purpose technologies," developers are shifting from writing code to designing, evaluating, and refining experimental solutions. This necessitates the exact kind of structured experimentation pipelines
 
-Treude, C., & Storey, M.-A. (2025). Generative AI and Empirical Software Engineering: A Paradigm Shift. arXiv. https://doi.org/10.48550/arxiv.2502.08108
+Treude, C., & Storey, M.-A. (2025). Generative AI and Empirical Software Engineering: A Paradigm Shift. arXiv. [doi:10.48550/arxiv.2502.08108](https://doi.org/10.48550/arxiv.2502.08108)
 
 # Reasoning
 
@@ -159,7 +159,7 @@ But production experimentation may reveal:
 
 AI systems need both offline evaluation and online experimentation because the real system includes users, product flows, traffic patterns, latency budgets, and failure modes.
 
-This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) rather than relying only on benchmark deltas or isolated demos.
+This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace) rather than relying only on benchmark deltas or isolated demos.
 
 ### 4. Data changes over time
 
@@ -251,7 +251,7 @@ AI systems improve through iteration:
 6. Deploy cautiously.
 7. Monitor production outcomes.
 
-This is the operational loop that [evaluation harnesses and platforms]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) are meant to support.
+This is the operational loop that [evaluation harnesses and platforms]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace) are meant to support—implemented as a runnable five-stage prototype in [Phased]({{< ref "projects/phased" >}}) ([GitHub](https://github.com/valery-judah/phased)).
 
 Without experimentation, AI engineering becomes guesswork.
 

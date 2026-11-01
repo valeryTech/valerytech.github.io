@@ -15,18 +15,14 @@ Read the [sibling comments]({{< ref "ai/design-research/05-runtime-and-execution
 
 The preceding [prompt discussion]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry" >}}) explains the text and reference model. The dialogue continues in [configuration publishing and version identity]({{< ref "ai/design-research/05-runtime-and-execution/10-configuration-publishing-and-version-identity" >}}). Related [program and run history]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) remains separate.
 
-The original source overview (archived source 015) links the complete split. The audit records the original range and checksum.
+The original source overview (archived source 015) links the complete split. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) records the original range and checksum.
 
 <!-- Declarative system configuration and instantiation source begins below. -->
-
-<a id="user"></a>
 
 ## Author requirement or open question
 
 
 Author request: Define a minimal set of requirements for declarative AI-system configuration.
-
-<a id="assistant"></a>
 
 ## LLM proposal
 
@@ -145,14 +141,10 @@ deterministic identity
 
 And prompts fit into it as one component type, with their own text-first versioning and recursive `@prompt` references.
 
-<a id="user-1"></a>
-
 ## Author requirement or open question
 
 
 Additional author requirement: Identify what is needed to build or configure a system. For evaluation, the evaluation subsystem should be able to start the system, run a set of requests, and collect data. Domain experts should also be able to use the same system configuration as production.
-
-<a id="assistant-1"></a>
 
 ## LLM proposal
 

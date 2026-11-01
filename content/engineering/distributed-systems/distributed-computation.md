@@ -18,7 +18,7 @@ A computation too large or too slow for one machine is split into tasks that run
 
 Every distributed computation makes three choices:
 
-- **Partition the input:** divide data or requests into shards, by hash of a key or by range, so tasks run independently. The key decides which records meet in the same task, and a skewed key creates a hot shard ([partitioning]({{< ref "engineering/distributed-systems/partitioning" >}})).
+- **Partition the input:** divide data or requests into shards, by hash of a key or by range, so tasks run independently. The key decides which records meet in the same task, and a skewed key creates a hot shard ([Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}})).
 - **Place computation near the data:** a distributed filesystem such as HDFS lets the scheduler run a task on a machine holding a replica of its input, which saves bandwidth when the code is smaller than the data. Object stores keep storage and compute apart: more network traffic, but each side scales independently, and fast datacenter networks make that acceptable (Kleppmann and Riccomini 2026).
 - **Combine partial results:** a root merges answers from leaves, a reducer merges values per key, or a barrier waits for every task before the next stage. A partial result must carry what the merge needs: Burns (2018) merges per-town histograms of family size only after weighting each by the town's population.
 
@@ -117,7 +117,7 @@ Batch gets correct output despite retries because output is visible only when a 
 
 - **Microbatching** (Spark Streaming) cuts the stream into batches of about one second and treats each as a batch job. Smaller batches cost scheduling overhead; larger ones delay results. It imposes a processing-time tumbling window equal to the batch size.
 - **Checkpointing** (Flink) injects barriers into the stream that trigger rolling checkpoints of operator state to durable storage. After a crash, an operator restarts from its latest checkpoint and discards output produced since, without a fixed window size.
-- **Atomic commit** makes outputs, state changes, and input acknowledgments (including consumer offsets) take effect together. Google Cloud Dataflow, VoltDB, and Kafka do this with transactions kept inside the framework and amortized over several messages ([transactions]({{< ref "engineering/distributed-systems/transactions" >}})).
+- **Atomic commit** makes outputs, state changes, and input acknowledgments (including consumer offsets) take effect together. Google Cloud Dataflow, VoltDB, and Kafka do this with transactions kept inside the framework and amortized over several messages ([Transactions]({{< ref "engineering/distributed-systems/transactions" >}})).
 - **Idempotent writes** store the input offset with each value written, so a replayed write is recognized. This assumes replay in the same order, deterministic processing, and no concurrent writer; failover to a new node needs fencing ([coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination)).
 - **State recovery:** keep state in a replicated remote store (slow per message), keep it local and replicate it periodically (Flink snapshots to a distributed filesystem, Kafka Streams writes a compacted changelog topic, VoltDB processes each input on several nodes), or rebuild short-window state by replaying input.
 
@@ -187,22 +187,22 @@ Kleppmann and Riccomini add the operational costs of frameworks such as Temporal
 - **State the time semantics:** event or processing time, the window type, and the late-event policy (drop and count, or correct and retract).
 - **Draw the exactly-once boundary:** list every external side effect and give each a transactional sink or an idempotency key ([idempotent consumer]({{< ref "system-design/elements/communication" >}}#idempotent-consumer), [publishing changes reliably]({{< ref "system-design/elements/data-across-services" >}}#publishing-changes-reliably)).
 - **Partition for parallelism and order:** stream partitions bound both parallelism and ordering, and partitions move between consumers on rebalance ([consumer groups and rebalancing]({{< ref "system-design/elements/messaging" >}}#consumer-groups-and-rebalancing)).
-- **Treat the scheduler as a control plane:** a job orchestrator's resource manager and scheduler are centralized, which Kleppmann and Riccomini note can limit scalability and availability; YARN and Kubernetes keep cluster state in ZooKeeper or etcd ([control plane]({{< ref "system-design/elements/control-plane" >}})). Task leases need fencing tokens ([coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination)).
+- **Treat the scheduler as a control plane:** a job orchestrator's resource manager and scheduler are centralized, which Kleppmann and Riccomini note can limit scalability and availability; YARN and Kubernetes keep cluster state in ZooKeeper or etcd ([Control Plane]({{< ref "system-design/elements/control-plane" >}})). Task leases need fencing tokens ([coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination)).
 
 ## Related notes
 
 
-- [System models]({{< ref "engineering/distributed-systems/system-models" >}}): crash-stop and partial failure, the faults these mechanisms tolerate.
-- [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}): the clocks behind event time, and timestamp-based mutual exclusion.
+- [System Models]({{< ref "engineering/distributed-systems/system-models" >}}): crash-stop and partial failure, the faults these mechanisms tolerate.
+- [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}): the clocks behind event time, and timestamp-based mutual exclusion.
 - [Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}): how input is sharded and where hot keys come from.
 - [Replication]({{< ref "engineering/distributed-systems/replication" >}}): replicated input blocks and replicated operator state.
 - [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}): the atomic commit behind transactional stream output.
-- [Broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): the coordination services that hold scheduler and cluster state.
-- [Coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): merging partial results without agreement, as a reduce does.
+- [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): the coordination services that hold scheduler and cluster state.
+- [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): merging partial results without agreement, as a reduce does.
 - [Guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}): what readers of derived output can expect.
 - [Verification]({{< ref "engineering/distributed-systems/verification" >}}): testing that recovery actually produces equivalent results.
-- [Stream processing]({{< ref "engineering/topics/stream-processing" >}}) and [streaming]({{< ref "engineering/topics/streaming" >}}): earlier collected notes and links on event streaming.
-- System design hubs: [messaging]({{< ref "system-design/elements/messaging" >}}) and [data at scale]({{< ref "system-design/elements/data-at-scale" >}}).
+- [Stream_processing]({{< ref "engineering/topics/stream-processing" >}}) and [Streaming]({{< ref "engineering/topics/streaming" >}}): earlier collected notes and links on event streaming.
+- System design hubs: [Messaging]({{< ref "system-design/elements/messaging" >}}) and [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}).
 
 ## Gaps
 

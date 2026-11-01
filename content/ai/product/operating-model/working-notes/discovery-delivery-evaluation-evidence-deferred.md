@@ -6,7 +6,7 @@ description: "Torres turns production traces into failure categories and human-l
 linkTitle: "Deferred Evaluation Evidence"
 ---
 
-> **Editorial note:** Evaluation is being handled separately, so this source passage has not been placed in the operating model. Teresa Torres is introduced in [`discovery-delivery-practitioner-evidence.md`]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}). The passage comes from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Its wording has been edited for grammar and flow. The edit is intended to preserve the original claims. The citation is unchanged.
+> **Editorial note:** Evaluation is being handled separately, so this source passage has not been placed in the operating model. Teresa Torres is introduced in [Discovery Delivery Practitioner Evidence]({{< ref "ai/product/operating-model/working-notes/discovery-delivery-practitioner-evidence" >}}). The passage comes from `7c21461:ai/product-model/in/discovery-deliery-separation.md`. Its wording has been edited for grammar and flow. The edit is intended to preserve the original claims. The citation is unchanged.
 
 <!-- source-unit: DDS-11; source-lines: 94 -->
 

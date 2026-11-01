@@ -108,8 +108,6 @@ Opportunity Solution Trees connect a desired outcome to observed customer proble
 
 The tension map explains **where value might exist**. JTBD and discovery methods test **whether anyone is ready to change and pay**.
 
-<a id="how-i-would-change-the-method"></a>
-
 ## Proposed method changes
 
 ### 1. Define "market tension" more strictly
@@ -471,8 +469,6 @@ Portable companion identity specifications.
 The portable identity layer remains the long-term possibility. Behavioral regression testing is the more credible first product because one platform can buy and use it independently.
 
 The same rule applies to the SaaS work. "Safe agent action infrastructure" is a plausible platform direction. A first product should control one costly transaction type, for one buyer, in one system of record. General infrastructure can emerge from repeated implementations.
-
-<a id="what-i-would-retain"></a>
 
 ## Elements to retain
 

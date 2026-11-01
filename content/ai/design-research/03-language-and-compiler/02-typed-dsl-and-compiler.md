@@ -14,11 +14,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 Initial proposal: Design a DSL in a language such as Scala or Haskell. An agent would generate a plan or program in this DSL, allowing the compiler to check and verify it and provide fast feedback.
 
-TODO: Clarify the original `XX` marker; no further text is recorded here.
-
 That is a much sharper architecture than a generic "agent with guardrails." The key idea is to make the LLM generate a typed intermediate program, then let the compiler and verifier reject invalid states before anything executes. The following analysis connects the idea to existing work and illustrates a possible DSL.
-
-TODO: Clarify the original `XX` marker; no further text is recorded here.
 
 This is one of the possible architectures for LLM agents to estimate.
 
@@ -228,7 +224,7 @@ ExecutePayment(...)
 ```
 
 
-The final interpreter might only be 2-5k lines and therefore becomes part of the **trusted computing base**. Everything above it--including the LLM--can be treated as potentially wrong.
+The final interpreter might only be 2-5k lines and therefore becomes part of the **trusted computing base**. Everything above it -- including the LLM -- can be treated as potentially wrong.
 
 This leads to a useful way of thinking about the LLM:
 
@@ -261,14 +257,12 @@ That's essentially **counterexample-guided synthesis**, except an LLM is doing t
 
 This may be a more productive framing for reliable agents than trying to make the LLM itself increasingly obedient. The research question becomes: **what DSL and type/effect system lets us express enough useful agent behavior while keeping verification cheap and decidable?**
 
-That brings programming-language research--types, effects, refinement types, model checking, abstract interpretation, capability systems and program synthesis--directly into LLM agent design.
+That brings programming-language research -- types, effects, refinement types, model checking, abstract interpretation, capability systems and program synthesis -- directly into LLM agent design.
 
 ## concentration
 
 
 Scope constraint: First examine the desired properties of the DSL and its underlying machinery, including fast feedback. A declarative approach could be introduced later.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The proposal is to separate the design into three layers: the DSL itself, the compiler/verifier underneath it, and the execution model. That prevents us from putting too much policy into syntax.
 
@@ -314,7 +308,7 @@ PaymentDraft
 
 The LLM cannot skip `PaymentApproved` because there is no valid transition.
 
-5. No hidden side effects. Reading, network access, money movement, filesystem changes, external communication--all visible in the program.
+5. No hidden side effects. Reading, network access, money movement, filesystem changes, external communication -- all visible in the program.
 6. Bounded control flow. Initially, the proposal is to avoid unrestricted recursion and arbitrary loops. Give the language things such as:
 
 ```text
@@ -828,8 +822,6 @@ The deeper question becomes:
 
 Where would you count for effect properties or other like time execution which also could vary, or quality of answer and model parameters number. Perhaps we should not introduce this now
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The recommendation is not to put all of those into the core effect system yet. They are different kinds of properties, and combining them early will make the DSL harder to reason about.
 
 The proposal is to separate them into four categories.
@@ -1087,7 +1079,7 @@ It cannot, by itself, establish:
 
 This distinction should be visible in the result types:
 
-```
+```text
 CompilationResult =
     CompiledProgram
   | CompileRejected

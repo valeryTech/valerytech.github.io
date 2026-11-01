@@ -138,6 +138,6 @@ This is cleaner than treating every user message as a separate parse event.
 
 ---
 
-Related: [Draft patches and field provenance]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/05-patches-and-field-provenance" >}}) · [Clarification as draft repair]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/06-clarification-as-draft-repair" >}}) · [Action policy, readiness, and execution gates]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/03-action-policy-and-execution-gates" >}}).
+Related: [Draft patches and field provenance]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/05-patches-and-field-provenance" >}}) · [Clarification as draft repair]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/06-clarification-as-draft-repair" >}}) · [Action policy, readiness, and execution gates]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/03-action-policy-and-execution-gates" >}}) · [Workflows and states]({{< ref "type-driven-design/03-domain-modeling/workflows-and-states" >}}), which models a value that moves through states with one type per state.
 
 Original text: [02-pipeline.md](/ai/design/dialogue-approach/02-draft-pipeline/02-draft-state-and-lifecycle.assets/02-pipeline.txt).

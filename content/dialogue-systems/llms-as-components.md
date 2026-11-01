@@ -7,7 +7,7 @@ weight: "20"
 linkTitle: "LLMs as Components"
 ---
 
-Part of [Dialogue systems]({{< ref "dialogue-systems" >}}).
+Part of [Dialogue Systems]({{< ref "dialogue-systems" >}}).
 
 This note treats the LLM as a **component of a dialogue system**, not as a replacement for the idea. The question for any design is which jobs of the classical architecture the LLM takes over, which stay explicit, and what is lost or gained in each case.
 

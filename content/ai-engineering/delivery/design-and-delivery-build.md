@@ -70,7 +70,7 @@ Premature feature commitments can lead to unsupported promises, low-quality rele
 ### Fragmented methods and artifacts
 
 
-Teams may know many useful practices--product discovery, prototyping, evaluation, red teaming, system design, experimentation, and monitoring--but remain unsure:
+Teams may know many useful practices -- product discovery, prototyping, evaluation, red teaming, system design, experimentation, and monitoring -- but remain unsure:
 
 - which method to use;
 - when to use it;
@@ -111,7 +111,7 @@ At minimum, it should define:
 - criteria for proceeding, iterating, pivoting, pausing, or stopping;
 - the relationships between product value, AI capability, system behavior, evaluation, risk, and operation.
 
-The framework should make the reasoning behind the product traceable--from the original user or business problem through design decisions, capability assumptions, evaluations, implementation, and production controls.
+The framework should make the reasoning behind the product traceable -- from the original user or business problem through design decisions, capability assumptions, evaluations, implementation, and production controls.
 
 ## Supporting Guidance the Framework May Provide
 
@@ -159,7 +159,7 @@ Teams may change the order, depth, methods, and artifacts according to:
 - available evidence and existing systems;
 - project size and organizational context.
 
-Specific modes of work--such as experimentation, prototyping, baseline implementation, and incremental delivery--are described separately as **Approach Moments**. They can be introduced wherever their conditions apply.
+Specific modes of work -- such as experimentation, prototyping, baseline implementation, and incremental delivery -- are described separately as **Approach Moments**. They can be introduced wherever their conditions apply.
 
 ## Typical Problems When Working with AI
 
@@ -198,7 +198,7 @@ The references below provide concrete examples and deeper treatments for the lif
 ### Evaluation, observability, and operation
 
 
-- [Evaluation harness and platform]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) separates controlled execution and evidence capture from comparison, analysis, and release decisions.
+- [Evaluation harness and platform]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace) separates controlled execution and evidence capture from comparison, analysis, and release decisions.
 - [Production instrumentation]({{< ref "ai-engineering/evaluation/theoretical-methodology/framework/instrumentation-v1-2" >}}) defines the trace contract, sampling, retention, integrity checks, and phased adoption needed for comparable operational evidence.
 
 # Core assessment

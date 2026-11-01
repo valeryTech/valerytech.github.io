@@ -14,7 +14,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 ## Scope of the general research question
 
 
-The later critique below separates the general theory from the earlier human, model, and program environment question. The [revised broad research question]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#6-i-would-therefore-reframe-the-research-question) and proposed hierarchy are now in the overview. Both formulations remain dialogue proposals, and the reassembly does not establish their claims.
+The later critique below separates the general theory from the earlier human, model, and program environment question. The [revised broad research question]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#6-proposed-reframing-of-the-research-question) and proposed hierarchy are now in the overview. Both formulations remain dialogue proposals, and the reassembly does not establish their claims.
 
 ### 3. The second problem framing is currently too solution-shaped
 
@@ -64,6 +64,6 @@ The resulting proposal is to sharpen the question to:
 
 If the absence of fixed orchestration is essential, the proposal is to make it even more explicit:
 
-> **How do we design programmable shared environments where heterogeneous participants--humans, models and programs--can coordinate without a fixed workflow, while every state transition and external effect has explicit authority and provenance and must preserve runtime-enforced invariants?**
+> **How do we design programmable shared environments where heterogeneous participants -- humans, models and programs -- can coordinate without a fixed workflow, while every state transition and external effect has explicit authority and provenance and must preserve runtime-enforced invariants?**
 
 That, to me, is the clearest research position. It makes the object of study the **environment and its transition semantics**, while most current work makes the agent, workflow, communication protocol, information store, or governance layer the object of study.

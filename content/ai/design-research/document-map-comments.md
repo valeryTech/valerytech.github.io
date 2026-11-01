@@ -6,7 +6,7 @@ description: "Reviews gaps and evidence behind the conceptual document map, pres
 linkTitle: "Document Map Comments"
 ---
 
-Date: 2026-04-01. The comments are new editorial analysis for the [document map]({{< ref "ai/design-research/document-map" >}}). The relationships suggest ways to read the collection, and they do not select an architecture or establish a research result.
+Date: 2026-04-01. The comments are new editorial analysis for the [Document Map]({{< ref "ai/design-research/document-map" >}}). The relationships suggest ways to read the collection, and they do not select an architecture or establish a research result.
 
 ## Scope of the pass
 
@@ -68,10 +68,10 @@ The known heading warning remains in the [retained scope dialogue]({{< ref "ai/d
 ## Remaining work
 
 
-First, prepare a companion map for the interactive-systems collection. Then add explicit connections between the collections without merging their catalogues or treating every linked source as a design requirement.
+First, prepare a companion map for the [interactive-systems collection]({{< ref "ai/design-research/00-index" >}}). Then add explicit connections between the collections without merging their catalogues or treating every linked source as a design requirement.
 
 Second, add navigation by design question. The useful questions concern agreement on intent, editable state, permitted operations, preserved properties, result use, and evaluation. Each question should identify its unresolved choices as well as its reading links.
 
 Third, distinguish retained dialogue, author requirements, model proposals, captured examples, new analysis, and experiment plans where the distinction helps a reader. Labels may need to apply to sections because one note can contain several kinds of material. No blanket status is assigned to a whole dialogue by the current pass.
 
-The interactive collection review and edits, runs, and result-use proposal provide material for the next mapping pass. Their relationship rules remain proposals. No original text needs to move to make those connections visible.
+The [edits, runs, and result-use proposal]({{< ref "ai/design-research/interactive-systems/13-edits-runs-and-result-use" >}}) provides material for the next mapping pass. Its relationship rules remain proposals. No original text needs to move to make those connections visible.

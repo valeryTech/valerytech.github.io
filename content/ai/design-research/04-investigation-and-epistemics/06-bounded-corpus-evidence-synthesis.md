@@ -15,7 +15,7 @@ The author's original requirements come first. The original "analysis" heading m
 
 The complete [representation and iterative-retrieval pipeline]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#bounded-corpus-retrieval-pipeline) is retained separately. The related [epistemic-contract note]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}) develops compiler obligations and runtime checks.
 
-The source overview links the product descriptions and market hypotheses kept outside this note. Read the [separate comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}) for the grouping and limitations. The audit map records the original order.
+The source overview links the product descriptions and market hypotheses kept outside this note. Read the [separate comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}) for the grouping and limitations. The [audit map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-4-semantic-engineering-dialogue) records the original order.
 
 ## Retained source
 
@@ -36,12 +36,12 @@ Additional concern: Source authority may need explicit justification. Search sys
 
 Requirement and personal motivation: The pipeline should consider all supplied documents. The author reports that chats, including GPT Pro, frequently omit critical facts, principles, and practices present in the documents.
 
-The loop could repeat, using principles from the author's retrieval reframing: https://valery.tech/ai-engineering/context/retrieval/reframing/
+The loop could repeat, using principles from the author's retrieval reframing: [Retrieval reframing on valery.tech](https://valery.tech/ai-engineering/context/retrieval/reframing/)
 
 ## analysis
 
 
-The "authority justification" concern changes the product materially. A useful system would have to explain why a source outranks another source--e.g. governing standard > official design doc > meeting note > personal blog--and expose contradictions instead of silently averaging them together. That is much closer to an audit/research system than a chatbot.
+The "authority justification" concern changes the product materially. A useful system would have to explain why a source outranks another source--e.g. governing standard > official design doc > meeting note > personal blog -- and expose contradictions instead of silently averaging them together. That is much closer to an audit/research system than a chatbot.
 
 The working interpretation is that there is a product here, but the proposal is to define the niche much more narrowly than "semantic search over private documents."
 
@@ -164,8 +164,6 @@ It should say:
 > No contradiction was found in 735/738 documents. Three documents could not be completely evaluated.
 
 That is a much stronger trust model.
-
-<a id="authority-is-potentially-your-second-major-differentiator"></a>
 
 ## Authority as a potential second major differentiator
 

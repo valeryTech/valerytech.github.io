@@ -74,7 +74,7 @@ The API is the primary interface that users will interact with. It's important t
 
 Starting with uploading a file, we might have an endpoint like this:
 
-```
+```text
 POST /files
 Request:
 {
@@ -83,17 +83,19 @@ Request:
 }
 ```
 
+
 To download a file, our endpoint can be:
 
-```
+```text
 GET /files/{fileId} -> File & FileMetadata
 ```
+
 
 Be aware that your APIs may change or evolve as you progress. In this case, our upload and download APIs actually evolve significantly as we weigh the trade-offs of various approaches in our high-level design (more on this later). You can proactively communicate this to your interviewer by saying, "I am going to outline some simple APIs, but may come back and improve them as we delve deeper into the design."
 
 Lastly, we need a way for clients to query for changes to files on the remote server. This way we know which files need to be synced to the local device.
 
-```
+```text
 GET /files/{fileId}/changes -> FileMetadata[]
 ```
 
@@ -120,6 +122,7 @@ Our schema will be a simple document and can start with something like this:
     "uploadedBy": "user1"
   }
 ```
+
 
 As for how we store the file itself, we have a few options. Let's take a look at the trade-offs of each.
 
@@ -158,7 +161,7 @@ Presigned URLs are URLs that give the user permission to upload a file to a spec
 
 1. Request a pre-signed URL from our backend (which generates the URL using the S3 SDK) and save the file metadata in our database with a status of "uploading."
 
- ```
+ ```text
  POST /files/presigned-url -> PresignedUrl
  Request:
  {
@@ -200,7 +203,7 @@ A better approach is to allow the user to download the file directly from Blob S
 
 1. Request a presigned download URL from our backend
 
-```
+```text
 GET /files/{fileId}/presigned-url -> PresignedUrl
 ```
 
@@ -241,7 +244,7 @@ The main consideration here in an interview is how you can make this process fas
 
 Our cache entry would be a simple key-value pair like this:
 
-```
+```text
 user1:["fileId1", "fileId2"]
 ```
 
@@ -249,7 +252,7 @@ user1:["fileId1", "fileId2"]
 
 ##### Approach
 
-```
+```text
 | userId (PK) | fileId (SK) |
 |-------------|-------------|
 | user1       | fileId1     |
@@ -276,7 +279,7 @@ To do this, we need a client-side sync agent that:
 1. Monitors the local Dropbox folder for changes using OS-specific file system events (like FileSystemWatcher on Windows or FSEvents on macOS)
 2. When it detects a change, it queues the modified file for upload locally
 3. It then uses our upload API to send the changes to the server along with updated metadata
-4. Conflicts are resolved using a "last write wins" strategy - meaning if two users edit the same file, the most recent edit will be the one that's saved
+4. Conflicts are resolved using a "last write wins" strategy -- meaning if two users edit the same file, the most recent edit will be the one that's saved
 
 Versioning is out of scope for this write-up, but note that you would typically not overwrite the only file. Instead, you'd add a new file (or at least the new chunks) and update a version number and pointer on the metadata.
 
@@ -294,7 +297,7 @@ For Dropbox, we can use a hybrid approach. We can classify files into two catego
 - **Fresh files**: Files that have been recently edited (within the last few hours). For these, we maintain a WebSocket connection to ensure near real-time sync.
 - **Stale files**: Files that haven't been modified in a while. For these, we can fall back to periodic polling since immediate updates are less critical.
 
-This hybrid approach gives us the best of both worlds - real-time updates for active files while conserving resources for inactive ones.
+This hybrid approach gives us the best of both worlds -- real-time updates for active files while conserving resources for inactive ones.
 
 Sync
 
@@ -326,7 +329,7 @@ This is, in some sense, the meat of the problem and where I usually end up spend
 
 Before we go deep on solutions, let's take a moment to acknowledge the limitations that come with uploading a large file via a single POST request.
 
-- **Timeouts**: Web servers and clients typically have timeout settings to prevent indefinite waiting for a response. A single POST request for a 50GB file could easily exceed these timeouts. In fact, this may be an appropriate time to do some quick math in the interview. If we have a 50GB file and an internet connection of 100Mbps, how long will it take to upload the file? 50GB \* 8 bits/byte / 100Mbps = 4000 seconds then 4000 seconds / 60 seconds/minute / 60 minutes/hour = 1.11 hours. That's a long time to wait without any response from the server.
+- **Timeouts**: Web servers and clients typically have timeout settings to prevent indefinite waiting for a response. A single POST request for a 50GB file could easily exceed these timeouts. In fact, this may be an appropriate time to do some quick math in the interview. If we have a 50GB file and an internet connection of 100Mbps, how long will it take to upload the file? 50GB * 8 bits/byte / 100Mbps = 4000 seconds then 4000 seconds / 60 seconds/minute / 60 minutes/hour = 1.11 hours. That's a long time to wait without any response from the server.
 - **Browser and Server Limitation**: In most cases, it's not even possible to upload a 50GB file via a single POST request due to limitations configured in the browser or on the server. Both browsers and web servers often impose limits on the size of a request payload. For instance, popular web servers like Apache and NGINX have configurable limits, but the default is typically set to less than 2GB. Most modern services, like Amazon API Gateway, have default limits that are much lower and cannot be increased. This is just 10MB in the case of Amazon API Gateway which we are using in our design.
 - **Network Interruptions**: Large files are more susceptible to network interruptions. If a user is uploading a 50GB file and their internet connection drops, they will have to start the upload from scratch.
 - **User Experience**: Users are effectively blind to the progress of their upload. They have no idea how long it will take or if it's even working.
@@ -362,6 +365,7 @@ The next question is: **how will we handle resumable uploads?** We need to keep 
 }
 ```
 
+
 When the user resumes the upload, we can check the chunks field to see which chunks have been uploaded and which haven't. We can then start uploading the chunks that haven't been uploaded yet. This way, the user doesn't have to start the upload from scratch if they lose their internet connection or close the browser.
 
 **But how should we ensure this chunks field is kept in sync with the actual chunks that have been uploaded?**
@@ -377,7 +381,7 @@ The most obvious approach is to use the client to orchestrate chunk statuses. So
 2. S3 responds to each chunk upload with a success message.
 3. Upon success, the client sends a PATCH request to our backend to update the chunks field in the FileMetadata table.
 
-```
+```text
 PATCH /files/{fileId}/chunks
 Request:
 {
@@ -400,7 +404,7 @@ The issue here is that we are trusting the client to keep the chunks field in sy
 
 A better approach is to implement server-side verification of chunk uploads using ETags. Since S3 event notifications don't trigger for individual multipart upload parts (only when the complete object is finalized), we need to leverage S3's multipart upload API more directly.
 
-Each chunk gets an ETag upon successful upload, which the client can include in the PATCH request to our backend. Our backend can then verify these ETags by calling S3's ListParts API, providing an efficient way to validate multiple chunks at once. This approach balances user experience with data integrity - we accept client updates for real-time progress tracking to provide immediate feedback, but periodically verify chunk status server-side before marking the overall file as "uploaded".
+Each chunk gets an ETag upon successful upload, which the client can include in the PATCH request to our backend. Our backend can then verify these ETags by calling S3's ListParts API, providing an efficient way to validate multiple chunks at once. This approach balances user experience with data integrity -- we accept client updates for real-time progress tracking to provide immediate feedback, but periodically verify chunk status server-side before marking the overall file as "uploaded".
 
 In short, we trust but verify.
 
@@ -431,7 +435,7 @@ How can you support large files?
 ### 2. How can we make uploads, downloads, and syncing as fast as possible?
 
 
-We've already touched on a few ways to speed up both download and upload respectively, but there is still more we can do to make the system as fast as possible. To recap, for download we used a CDN to cache the file closer to the user. This made it so that the file doesn't have to travel as far to get to the user, reducing latency and speeding up download times. For upload, chunking, beyond being useful for resumable uploads, also plays a significant role in speeding up the upload process. While bandwidth is fixed (put another way, the pipe is only so big), we can use chunking to make the most of the bandwidth we have. By sending multiple chunks in parallel, and utilizing adaptive chunk sizes based on network conditions, we can maximize the use of available bandwidth. The same chunking approach can be used for syncing files - when a file changes, we can identify which chunks have changed and only sync those chunks rather than the entire file, making syncing much faster.
+We've already touched on a few ways to speed up both download and upload respectively, but there is still more we can do to make the system as fast as possible. To recap, for download we used a CDN to cache the file closer to the user. This made it so that the file doesn't have to travel as far to get to the user, reducing latency and speeding up download times. For upload, chunking, beyond being useful for resumable uploads, also plays a significant role in speeding up the upload process. While bandwidth is fixed (put another way, the pipe is only so big), we can use chunking to make the most of the bandwidth we have. By sending multiple chunks in parallel, and utilizing adaptive chunk sizes based on network conditions, we can maximize the use of available bandwidth. The same chunking approach can be used for syncing files -- when a file changes, we can identify which chunks have changed and only sync those chunks rather than the entire file, making syncing much faster.
 
 Beyond that which we've already discussed, **we can also utilize compression to speed up both uploads and downloads**. Compression reduces the size of the file, which means fewer bytes need to be transferred. We can compress a file on the client before uploading it and then decompress it on the server after it's uploaded. We can also compress the file on the server before sending it to the client and then rely on the client to decompress it.
 

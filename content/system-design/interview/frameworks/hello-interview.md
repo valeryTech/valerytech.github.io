@@ -79,7 +79,7 @@ Coming up with non-functional requirements can be challenging, especially if you
 ## Capacity Estimation
 
 
-Many guides you've read will suggest doing back-of-the-envelope calculations at this stage. We believe this is *often* unnecessary. Instead, perform calculations only if they will directly influence your design. In most scenarios, you're dealing with a large, distributed system - and it's reasonable to assume as much. Many candidates will calculate storage, DAU, and QPS, only to conclude, "ok, so it's a lot. Got it." As interviewers, we gain nothing from this except that you can perform basic arithmetic.
+Many guides you've read will suggest doing back-of-the-envelope calculations at this stage. We believe this is *often* unnecessary. Instead, perform calculations only if they will directly influence your design. In most scenarios, you're dealing with a large, distributed system -- and it's reasonable to assume as much. Many candidates will calculate storage, DAU, and QPS, only to conclude, "ok, so it's a lot. Got it." As interviewers, we gain nothing from this except that you can perform basic arithmetic.
 
 Our suggestion is to explain to the interviewer that you would like to skip on estimations upfront and that you will do math while designing when/if necessary. When would it be necessary? Imagine you are designing a TopK system for trending topics in FB posts. You would want to estimate the number of topics you would expect to see, as this will influence whether you can use a single instance of a data structure like a min-heap or if you need to shard it across multiple instances, which will have a big impact on your design.
 > Regardless of how you end up using it in the interview, [learning to estimate relevant quantities quickly](https://www.hellointerview.com/blog/mastering-estimation) will help you *quick reason through design trade-offs in your design*. Don't worry if you're not good at mental arithmetic under pressure, most people aren't.
@@ -117,7 +117,7 @@ You have a quick decision to make here -- do you want to design a RESTful API or
 
 **Wire Protocol**: If you're communicating over websockets or raw TCP sockets, you'll want to define the wire protocol. This is the format of the data that will be sent over the network, usually in the format of messages.
 
-Don't overthink this. Bias toward creating a REST API. Use GraphQL only if you really need clients to fetch only the requested data (no over- or under- fetching). If you're going to use websockets, you'll want to describe the wire protocol.
+Don't overthink this. Bias toward creating a REST API. Use GraphQL only if you really need clients to fetch only the requested data (no over- or under-fetching). If you're going to use websockets, you'll want to describe the wire protocol.
 
 For Twitter, we would choose REST and would have the following endpoints. Notice how we can use our core entities as the objects that are exchanged via the API.
 

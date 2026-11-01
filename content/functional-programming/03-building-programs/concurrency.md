@@ -36,7 +36,7 @@ Purity gives three concrete benefits, each grounded in the sources:
 2. **Safe asynchronous cancellation.** Pure code can be stopped at any point and its partial work thrown away, because it hasn't changed anything. Pure code also can't poll for a cancellation flag. So in Haskell cancellation is asynchronous by default, and only `IO` code that updates state needs protecting (Marlow, ch. 9).
 3. **Retryable transactions.** STM works by running a transaction optimistically and rerunning it on conflict. That is sound only if the transaction has no other effects, which the `STM` type enforces (Marlow, ch. 10; De Goes et al., ch. 21.5).
 
-What purity does not give is automatic speedup. Data dependencies in a pure program are easy to see, so you might expect the compiler to parallelise it. In practice it can't, because parallelism pays only when the work gained outweighs the overhead of creating tasks, and compile-time analysis can't judge that well. Marlow calls fully automatic parallelisation "still a pipe dream" (Marlow, Part I introduction). This is the practical answer to the old claim, discussed under Church-Rosser in [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), that functional languages would win parallel programming because evaluation order doesn't matter: order independence makes parallelism safe, but you still have to say where it is worth having.
+What purity does not give is automatic speedup. Data dependencies in a pure program are easy to see, so you might expect the compiler to parallelise it. In practice it can't, because parallelism pays only when the work gained outweighs the overhead of creating tasks, and compile-time analysis can't judge that well. Marlow calls fully automatic parallelisation "still a pipe dream" (Marlow, Part I introduction). This is the practical answer to the old claim, discussed under Church-Rosser in [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), that functional languages would win parallel programming because evaluation order doesn't matter: order independence makes parallelism safe, but you still have to say where it is worth having.
 
 Two problems remain the programmer's even in pure code (Marlow, Part I introduction):
 
@@ -255,7 +255,7 @@ Why must `STM` be a separate monad, not `IO`? Because the runtime may run a tran
 ## Fibers in Cats Effect and ZIO
 
 
-Scala's effect libraries reach similar designs through `IO` values. See [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for the effect types themselves.
+Scala's effect libraries reach similar designs through `IO` values. See [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for the effect types themselves.
 
 ### Fibers versus threads
 
@@ -417,9 +417,9 @@ The same idea appears in each source as a law:
 - Pilquist's `Par`: `fork(x) == x` (Pilquist et al., ch. 7.3.2).
 - ZIO: the fork/join identity law, `effect.fork.flatMap(_.join) == effect`. Because every ZIO concurrency operator is built on fork and join, `a.zipPar(b)` should give the same result as `a.zip(b)`, and `foreachPar` as `foreach`, provided the effects themselves don't race on shared state. Structured concurrency is what makes the law hold (De Goes et al., ch. 7.1).
 
-Each law lets you reason about the parallel program as if it were sequential. Each also comes with a fine-print exception: a strategy can be less defined than the original, a bounded pool can deadlock `fork`, and parallel effects that share a `Ref` are only as deterministic as their updates. Such laws are best used as property tests (see [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}})), as Pilquist's next chapter does when it tests `fork(x) == x` (Pilquist et al., ch. 8, "Testing Par").
+Each law lets you reason about the parallel program as if it were sequential. Each also comes with a fine-print exception: a strategy can be less defined than the original, a bounded pool can deadlock `fork`, and parallel effects that share a `Ref` are only as deterministic as their updates. Such laws are best used as property tests (see [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}})), as Pilquist's next chapter does when it tests `fork(x) == x` (Pilquist et al., ch. 8, "Testing Par").
 
-See also: [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}), [Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), Concepts.
+See also: [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}), [Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), Concepts.
 
 ## Library sources
 

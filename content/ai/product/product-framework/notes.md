@@ -6,6 +6,8 @@ description: "Working synthesis of workflow decomposition and AI design choices,
 linkTitle: "Lipenkova Notes"
 ---
 
+A shorter description of the method, with its questions and how it connects to the other heuristics, is in [Assessing workflow steps for AI]({{< ref "ai/heuristics/workflow-assessment" >}}).
+
 Proposed stage set:
 
 1. **Model the Current Task and Workflow**
@@ -86,7 +88,7 @@ For each stage or task, the book asks whether AI use is attractive along three d
 
 The current journey is transformed into an **AI opportunity assessment matrix**. In the example, "report composition" becomes the selected opportunity because it scores well on value, feasibility, and desirability.
 
-Working interpretation: this identifies the **candidate solution space**--the set of coherent future AI-enabled workflows or system configurations.
+Working interpretation: this identifies the **candidate solution space** -- the set of coherent future AI-enabled workflows or system configurations.
 
 Possible next step: construct a set of future workflows or other representations.
 
@@ -95,9 +97,9 @@ Possible next step: construct a set of future workflows or other representations
 
 Decide which work should be automated and which should remain human work. How it should be automated?
 
-So, we estimate each step - E(f_i). But perhaps we should introduce other factors and parameters here? Context parameters, function space parameters?, system-wide parameters?
+So, we estimate each step -- E(f_i). But perhaps we should introduce other factors and parameters here? Context parameters, function space parameters?, system-wide parameters?
 
-Source excerpt from Lipenkova:
+Source excerpt from [[lipenkova]]:
 
 When integrating AI into a product, consider the appropriate interface type (graphical, conversational, or hybrid) and degree of automation (assisted, augmented, or autonomous intelligence). These decisions should be aligned with your business strategy, resources, and team expertise.
 
@@ -105,9 +107,9 @@ Furthermore, you should optimize human-AI collaboration by using both strengths,
 
 Assess those candidates using:
 
-    - value;
-    - feasibility;
-    - desirability.
+- value;
+- feasibility;
+- desirability.
 
 # var
 

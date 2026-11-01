@@ -23,14 +23,14 @@ First, we have systems with people, code, data, and the usual components, and no
 
 So one direction is security and limiting LLM unreliability. We could identify different ways to achieve this, including through system architecture. We could introduce software graphs as a kind of harness. We also need to understand what else we can use. It could be type modeling within a language, or perhaps giving the LLM a specific set of tools in a sandbox or another restricted environment. It could also involve different guardrails, automatic judges, and other classifiers. For example, with Jev, we could use models to assess what the system or LLM proposes. So this is one direction.
 
-And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs--what else? We need to find out. Let's analyze my product or problem framing conceptually.
+And the next direction is: could we use the strengths of LLMs, such as text generation? It has downsides, but it also has benefits. For example, LLMs can analyze known structured information and propose different ways for us to achieve a goal. We need to understand how to support and make use of these benefits. It could involve type modeling, domain modeling, DSLs -- what else? We need to find out. Let's analyze my product or problem framing conceptually.
 
 ---
 
 ## Assistant -- turn 1
 
 
-I'd keep your starting point: **the unit we're designing is the whole system--people, conventional software, data, and LLMs.** Then I'd frame the central question like this:
+I'd keep your starting point: **the unit we're designing is the whole system -- people, conventional software, data, and LLMs.** Then I'd frame the central question like this:
 
 > Which parts of the work should we delegate to an LLM, and what must the surrounding system provide, check, and control to make that contribution useful?
 
@@ -179,7 +179,7 @@ They can improve results, but their presence does not establish that the model w
 
 Classifiers, LLM judges, and human reviewers can assess relevance, meaning, plausibility, intent, and other properties that are difficult to encode completely.
 
-Their judgments can also be wrong. Research on LLM judges documents limitations such as position bias, verbosity bias, and limited reasoning ability. A judge therefore needs evaluation against the particular decisions you intend to delegate to it. [arxiv.org](<https://arxiv.org/abs/2306.05685>)
+Their judgments can also be wrong. Research on LLM judges documents limitations such as position bias, verbosity bias, and limited reasoning ability. A judge therefore needs evaluation against the particular decisions you intend to delegate to it. arxiv.org
 
 #### Enforcement controls a specified boundary
 
@@ -279,7 +279,7 @@ Then, for a particular product, add whose work is being improved, what outcome t
 
 The design should be assessed on both objectives: whether people complete the intended work, and whether failures remain within acceptable limits. Include the effort required to inspect and correct results, along with cost and time.
 
-That gives you a way to evaluate every proposed mechanism--including a harness, a DSL, an additional judge, or a new tool: **what responsibility does it carry, what useful behavior does it enable, what property does it enforce or assess, and what uncertainty remains?**
+That gives you a way to evaluate every proposed mechanism -- including a harness, a DSL, an additional judge, or a new tool: **what responsibility does it carry, what useful behavior does it enable, what property does it enforce or assess, and what uncertainty remains?**
 
 ---
 
@@ -311,42 +311,42 @@ The eight case notes are grouped in `cases/`. These are concrete examples for an
 
 These examples can overlap and coexist within one product.
 
-#### 1\. Closed-set task assistant
+#### 1. Closed-set task assistant
 
 
 Helps users complete a predefined set of tasks while application logic enforces permitted operations, valid inputs, permissions, and execution conditions. The LLM can interpret requests, collect missing information, and guide users through a state machine or constraint graph, providing conversational or hybrid interaction within enforced boundaries.
 
-#### 2\. General-purpose AI assistant
+#### 2. General-purpose AI assistant
 
 
 Supports open-ended questions, explanations, reasoning, exploration, content creation, and problem-solving as users refine or change their goals. It can operate in a restricted exploratory mode and transition into bounded workflows when the user wants to perform a supported operation. The application preserves relevant context while separately controlling workflow state, available operations, and authorization.
 
-#### 3\. Context-aware support assistant
+#### 3. Context-aware support assistant
 
 
 Helps users understand and diagnose issues using product knowledge, authorized account information, current system state, and support history. In the proposed architecture, the assistant has read-only access to business systems; corrections are handed off to separate bounded workflows that enforce their own permissions and execution conditions. It remains a separate case for analysis.
 
-#### 4\. AI-assisted analysis and investigation systems
+#### 4. AI-assisted analysis and investigation systems
 
 
 Helps people develop a supported understanding of complex information through predefined analyses, evolving investigations, and synthesis into findings or workpapers. Findings remain connected to evidence, calculations, assumptions, and unresolved questions, while experts review interpretations and decide which conclusions are justified.
 
-#### 5\. Clinical and domain-specific work copilots
+#### 5. Clinical and domain-specific work copilots
 
 
 Assists specialized professional work that depends on domain knowledge, rules, and judgment. The clinical example explores information interpretation, documentation, and defined checks, emphasizing preservation of domain meaning, professional review, acceptance for a specific purpose, and separately authorized changes to external records.
 
-#### 6\. Agentic operations and coordination systems
+#### 6. Agentic operations and coordination systems
 
 
 Supports delegated objectives by selecting and adapting steps, using permitted tools, and managing dependencies across people, services, and time. Depending on scope, ongoing work may require durable state, human intervention, recovery, and verification of external outcomes; action selection and coordination are related capabilities that can coexist.
 
-#### 7\. Analytical engines and programmable environments
+#### 7. Analytical engines and programmable environments
 
 
 Provides computational capabilities for data processing, domain rules, forecasting, simulation, and optimization. Predefined pipelines can coexist with environments where people or agents construct analyses using SQL, DSLs, or code, with controlled execution and attention to correctness, provenance, reproducibility, assumptions, and uncertainty.
 
-#### 8\. Coding agents and software engineering workspaces
+#### 8. Coding agents and software engineering workspaces
 
 
 Assists with or performs software engineering work by inspecting and modifying repositories, executing commands, and using tests and application behavior to guide revisions. A harness connects the model to tools, context, execution controls, and session state. The case also examines how specification, experimentation, feedback, review, and integration contribute to a delivered feature and maintainable system.
@@ -365,7 +365,7 @@ The closed-set task assistant emphasizes architectural guardrails for a predefin
 
 ### Initial design model
 
-#### 1\. The starting unit: an activity and its result
+#### 1. The starting unit: an activity and its result
 
 
 An activity is a meaningful piece of work with an intended result. Examples include explaining a charge, producing a reviewed translation, comparing scenarios, and completing a booking. A result can be an explanation, an artifact, a decision, or a confirmed change in a business system.
@@ -393,7 +393,7 @@ The initial sketch includes several possible AI products:
 
 - A closed-set task assistant and a chatbot.
 - A support assistant that provides information about the system and the user's account.
-- Reporting and analytical support for auditors, producing preliminary reports with appropriate invariants, as in &#91;&#91;analysis-1&#93;&#93;.
+- Reporting and analytical support for auditors, producing preliminary reports with appropriate invariants, as in [\[analysis-1]\].
 - A medical copilot that translates clients' transcripts and checks receipts.
 - An agentic system that schedules meetings, uses tools, emails clients, or helps coordinate work.
 - An analytical engine with complex rules, forecasting, and multiple pipelines that can support applications built on top of it. It may also provide SQL or DSL environments where agents can produce insights.
@@ -405,7 +405,7 @@ The initial sketch includes several possible AI products:
 
 With this text, I'd anchor our earlier discussion in **the activity and its intended result**. Your model already separates the work from product scope and implementation choices.
 
-The main addition I'd make is **how responsibility is allocated between people, models, and conventional software--and how their contributions become an acceptable result**. That gives your two directions a concrete place in the model.
+The main addition I'd make is **how responsibility is allocated between people, models, and conventional software -- and how their contributions become an acceptable result**. That gives your two directions a concrete place in the model.
 
 ### 1. Keep the existing concepts as related views of the system
 

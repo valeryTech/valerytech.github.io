@@ -47,7 +47,7 @@ It had four structural limitations.
 ### 1. It centered the AI system too narrowly
 
 
-The [production-readiness model]({{< ref "ai-engineering/delivery/production-ready/production-readiness-model" >}}) makes the readiness subject the combination of:
+The [production-readiness-model]({{< ref "ai-engineering/delivery/production-ready/production-readiness-model" >}}) makes the readiness subject the combination of:
 
 1. The system or change
 2. Its production environment

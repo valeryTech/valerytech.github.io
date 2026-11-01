@@ -12,7 +12,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 ## Executive summary
 
 
-There is **no single, settled practitioner taxonomy of human-AI collaboration patterns**. The field is converging, but different traditions describe different layers of the problem. Google PAIR and Microsoft HAX mostly formulate **interaction mechanics**--feedback, correction, explanations, supervision, control, graceful failure, and automation levels. Modern agent products from OpenAI, Anthropic, and GitHub increasingly embody **work-allocation patterns** such as delegation, plan/review, monitoring/intervention, and explicit handoff. HCI papers, meanwhile, use terms such as *AI-first assistance*, *AI-follow assistance*, *dialogic engagement*, *mixed initiative*, *co-creation*, and *delegation*. Teamwork and joint-activity research supplies the deeper requirements: common ground, mutual predictability, mutual directability, performance monitoring, backup behavior, and adaptability. [^1][^2][^3][^4][^5]
+There is **no single, settled practitioner taxonomy of human-AI collaboration patterns**. The field is converging, but different traditions describe different layers of the problem. Google PAIR and Microsoft HAX mostly formulate **interaction mechanics** -- feedback, correction, explanations, supervision, control, graceful failure, and automation levels. Modern agent products from OpenAI, Anthropic, and GitHub increasingly embody **work-allocation patterns** such as delegation, plan/review, monitoring/intervention, and explicit handoff. HCI papers, meanwhile, use terms such as *AI-first assistance*, *AI-follow assistance*, *dialogic engagement*, *mixed initiative*, *co-creation*, and *delegation*. Teamwork and joint-activity research supplies the deeper requirements: common ground, mutual predictability, mutual directability, performance monitoring, backup behavior, and adaptability. [^1][^2][^3][^4][^5]
 
 The first-principles taxonomy is therefore **substantially right**, but the proposal is to refactor it slightly. The research suggests **six primary collaboration modes**, plus **handoff/escalation as a transition pattern rather than a peer mode**:
 
@@ -56,7 +56,7 @@ The original report summary and complete bibliography remain here. The report is
 - The [joint-activity model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}#research-synthesis-of-collaboration-mechanics) retains the general mechanics, consolidated model, complete workflow, and closing argument.
 - The [collaboration evaluation note]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}}) retains the pattern tests, collaboration audit, and review rubric.
 
-The [original source redirect]({{< ref "ai/design-research/collab-and-joint-work/human-ai-collaboration-patterns-report" >}}) links all destinations. The mapping log records the original ranges and checksums.
+The [original source redirect]({{< ref "ai/design-research/collab-and-joint-work/human-ai-collaboration-patterns-report" >}}) links all destinations. The [mapping log]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#related-notes-pass-4-collaboration-patterns-research-synthesis) records the original ranges and checksums.
 
 ## Citation index added during reassembly
 

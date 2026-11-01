@@ -119,7 +119,7 @@ This systematic framework ensures that trade-offs are evaluated comprehensively,
 ## Related notes
 
 
-- Language for discussing trade-offs: vocabulary, sentence patterns, and worked discussions for presenting the analysis, examining evidence, and reaching a decision.
+- [[language-for-discussing-trade-offs]]: vocabulary, sentence patterns, and worked discussions for presenting the analysis, examining evidence, and reaching a decision.
 - [Reasoning about non-functional requirements]({{< ref "system-design/nfr/non-functional-requirements" >}}): connect a user need to a measurable target, an assumption, and a design consequence.
 - [System-design interview communication]({{< ref "system-design/interview/phrases" >}}): a compact set of prompts for explaining choices during an interview.
 

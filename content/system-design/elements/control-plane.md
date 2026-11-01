@@ -8,7 +8,7 @@ linkTitle: "Control Plane"
 
 **Question:** how do you change and manage a system -- its configuration, routing, policies, and capacity -- without putting that work on the path that serves requests?
 
-Pattern note in the [pattern map]({{< ref "system-design/elements/pattern-map" >}}). It touches several hubs: [the request path]({{< ref "system-design/elements/request-path" >}}), [containing failure]({{< ref "system-design/elements/containing-failure" >}}), and [operating services]({{< ref "system-design/elements/operating-services" >}}).
+Pattern note in the [Pattern Map]({{< ref "system-design/elements/pattern-map" >}}). It touches several hubs: [the request path]({{< ref "system-design/elements/request-path" >}}), [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}), and [Operating Services]({{< ref "system-design/elements/operating-services" >}}).
 
 ## The split
 
@@ -39,7 +39,7 @@ The model-gateway designs give the reason in one line: request throughput should
 | Configuration shipped with the release | No separate control plane; configuration is part of each deploy. | Few changes, small systems. | Every change is a deploy. |
 | Push distribution | The control plane sends new configuration to each data plane instance. | Few instances; changes must propagate quickly. | The control plane tracks every instance and must handle partial pushes. |
 | Pull or watch | Data plane instances poll for or subscribe to configuration changes. | Many instances. | Propagation delay; instances may run different versions for a while. |
-| Desired state and reconciliation | Declare the desired state; controllers repeatedly compare it with actual state and act to close the gap. | Long-lived resources such as workloads, infrastructure, and certificates. | State converges over time rather than immediately; reconcilers can fight manual changes. See [GitOps]({{< ref "engineering/platform/gitops" >}}). |
+| Desired state and reconciliation | Declare the desired state; controllers repeatedly compare it with actual state and act to close the gap. | Long-lived resources such as workloads, infrastructure, and certificates. | State converges over time rather than immediately; reconcilers can fight manual changes. See [Gitops]({{< ref "engineering/platform/gitops" >}}). |
 
 ## Static stability
 
@@ -59,32 +59,32 @@ The Kubernetes notes suggest testing it: reboot a control plane node and see whe
 ## Leads to
 
 
-- Distributing configuration is replication, so it raises the same staleness questions as [data across services]({{< ref "system-design/elements/data-across-services" >}}) and [consistency]({{< ref "system-design/nfr/consistency" >}}).
+- Distributing configuration is replication, so it raises the same staleness questions as [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}) and [Consistency]({{< ref "system-design/nfr/consistency" >}}).
 - A control plane outage is a failure to [contain]({{< ref "system-design/elements/containing-failure" >}}).
-- Configuration changes are releases: version them, roll them out gradually, and keep rollback simple. See [deployment]({{< ref "engineering/platform/deployment" >}}#progressive-delivery) and [GitOps]({{< ref "engineering/platform/gitops" >}}).
-- A platform is managed through a control plane; see [developer experience]({{< ref "engineering/platform/developer-experience" >}}).
+- Configuration changes are releases: version them, roll them out gradually, and keep rollback simple. See [deployment]({{< ref "engineering/platform/deployment" >}}#progressive-delivery) and [Gitops]({{< ref "engineering/platform/gitops" >}}).
+- A platform is managed through a control plane; see [Developer Experience]({{< ref "engineering/platform/developer-experience" >}}).
 
 ## Seen in
 
 
 - **Kubernetes:**
-  - control plane: the API server, the etcd store, the scheduler, and controllers;
-  - data plane: the kubelet and workloads on each node.
-  - See [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}#control-plane).
+	- control plane: the API server, the etcd store, the scheduler, and controllers;
+	- data plane: the kubelet and workloads on each node.
+	- See [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}#control-plane).
 - **Service mesh:** a control plane configures sidecar proxies that carry the traffic. See [the request path]({{< ref "system-design/elements/request-path" >}}#between-services-sidecar-and-service-mesh).
 - **Feature flags:** flag rules are managed centrally and evaluated in each service's SDK; the managed services in the [deployment notes]({{< ref "engineering/platform/deployment" >}}#feature-flags) work this way.
-- **Cell-based architecture:** the control plane provisions, migrates, deploys, and monitors cells, and tells the cell router where to send traffic. The router and the cells are the data plane. See [containing failure]({{< ref "system-design/elements/containing-failure" >}}).
+- **Cell-based architecture:** the control plane provisions, migrates, deploys, and monitors cells, and tells the cell router where to send traffic. The router and the cells are the data plane. See [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}).
 - **Engineering platforms:** Chankramath et al. build a platform's control plane in two steps:
-  - chapter 7 lays the base: a cloud account baseline, a transit network, customer identity, and a managed Kubernetes cluster;
-  - chapter 8 adds services such as pipeline orchestration, extensions such as a service mesh and operators, and management APIs for teams and namespaces.
+	- chapter 7 lays the base: a cloud account baseline, a transit network, customer identity, and a managed Kubernetes cluster;
+	- chapter 8 adds services such as pipeline orchestration, extensions such as a service mesh and operators, and management APIs for teams and namespaces.
 - **AI and RAG:**
-  - [model gateway designs]({{< ref "ai-engineering/delivery/patterns/model-gateway" >}}): the data plane handles authentication, policy, routing, retries, and caching on each request; the control plane holds tenant configs, the model registry, routing rules, the prompt registry, and policy bundles.
-  - [reusable AI infrastructure]({{< ref "ai-engineering/delivery/reuse" >}}): the gateway as the control plane for model access.
+	- [model gateway designs]({{< ref "ai-engineering/delivery/patterns/model-gateway" >}}): the data plane handles authentication, policy, routing, retries, and caching on each request; the control plane holds tenant configs, the model registry, routing rules, the prompt registry, and policy bundles.
+	- [reusable AI infrastructure]({{< ref "ai-engineering/delivery/reuse" >}}): the gateway as the control plane for model access.
 
 ## Gaps
 
 
-- No case in the [practice cases]({{< ref "system-design/projects" >}}) designs a control plane explicitly. The [code deployment]({{< ref "system-design/projects/code-deployment" >}}) and [rate limiter]({{< ref "system-design/projects/rate-limiter" >}}) cases are candidates.
+- No case in the [practice cases]({{< ref "system-design/projects" >}}) designs a control plane explicitly. The [Code_deployment]({{< ref "system-design/projects/code-deployment" >}}) and [Rate_limiter]({{< ref "system-design/projects/rate-limiter" >}}) cases are candidates.
 - Configuration validation and staged rollout of configuration, as distinct from code.
 
 ## Sources
@@ -99,5 +99,5 @@ The Kubernetes notes suggest testing it: reboot a control plane node and see whe
 - [AWS 2024](/sources/7e7195dd160b0a64fe44c392ec32afaa.bin), *Reducing the Scope of Impact with Cell-Based Architecture* -- section "Control plane and data plane", on *Static stability* and *Seen in*
 - [Nygard 2018](/sources/f9167fa26feb869b87a7f0bc4edbc9b3.bin), *Release It! Design and Deploy Production-Ready Software, Second Edition* -- part II
 - [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- chapters 7 and 8, the platform control plane
-  - Chapter notes: chapter 7, chapter 8
+	- Chapter notes: chapter 7, chapter 8
 - [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes*

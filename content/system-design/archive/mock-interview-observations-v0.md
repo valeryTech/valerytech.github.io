@@ -15,7 +15,7 @@ problem: global counter.
 
 <https://www.youtube.com/watch?v=V1HlNh4IhUo>
 
-<https://systemdesign.one/distributed-counter-system-design/>
+[Distributed Counter System Design](https://systemdesign.one/distributed-counter-system-design/)
 
 ac analyzing signals:
 
@@ -77,11 +77,11 @@ examples: push/pull in live commenting, save/process photos on instagram surfing
 
 spikes
 
-push/pull and dt, frequency, numbers considerations. (example - I cannot use pull - dt < 100 ms)
+push/pull and dt, frequency, numbers considerations. (example -- I cannot use pull -- dt < 100 ms)
 
 fan-out
 
-<https://codemia.io/blog/path/Re-evaluating-Fan-Out-on-Write-vs-Fan-Out-on-Read-Under-Celebrity-Traffic-Spikes-2025>
+[Fan-Out on Write vs Fan-Out on Read: How Twitter and Instagram Build News Feeds](https://codemia.io/blog/path/Re-evaluating-Fan-Out-on-Write-vs-Fan-Out-on-Read-Under-Celebrity-Traffic-Spikes-2025)
 
 coordination
 
@@ -97,7 +97,7 @@ eventual consistency patterns
 
 consistensy model
 
-<https://www.scylladb.com/glossary/consistency-models/>
+[What are Consistency Models? Definition & FAQs](https://www.scylladb.com/glossary/consistency-models/)
 
 21.12.23
 

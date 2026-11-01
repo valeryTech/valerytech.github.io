@@ -216,7 +216,7 @@ Reviewing each lifecycle phase reveals transferable strengths and learning needs
 
 Another mental model:
 
-||**Domain-general**|**ML/LLM-specific**|
+| |**Domain-general**|**ML/LLM-specific**|
 |---|---|---|
 |**Conceptual**|Product thinking, architecture, API design, comms, teamwork|Probability, statistics, data thinking, generative model behavior|
 |**Operational**|Coding, testing, deployment, SRE thinking, code review|Training, evaluation frameworks, data pipelines, LLM orchestration, safety|

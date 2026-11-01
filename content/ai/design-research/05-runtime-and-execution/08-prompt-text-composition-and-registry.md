@@ -13,13 +13,11 @@ The sequence of proposals and author corrections follows the prompt discussion f
 
 The final request starts with named prompt versions, online editing, rendered text, prompt references, traceable history, and no variables. Earlier proposals remain part of the discussion rather than an accepted feature list. Read the [sibling comments]({{< ref "ai/design-research/05-runtime-and-execution/08-prompt-text-composition-and-registry-comments" >}}) for the changes in scope and open rendering rules.
 
-The dialogue continues in [declarative system configuration and instantiation]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}). Related inspectable workbenches and [program and run history]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) retain their separate models.
+The dialogue continues in [declarative system configuration and instantiation]({{< ref "ai/design-research/05-runtime-and-execution/09-declarative-system-configuration-and-instantiation" >}}). Related [inspectable workbenches]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}) and [program and run history]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}) retain their separate models.
 
-The original source overview (archived source 015) links the complete split. The unchanged prompt-registry archive (archived source 014) contains the same opening discussion under a different title. The audit records both source identities and the shared text without a second import.
+The original source overview (archived source 015) links the complete split. The unchanged prompt-registry archive (archived source 014) contains the same opening discussion under a different title. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#declarative-system-configuration-dialogue) records both source identities and the shared text without a second import.
 
 <!-- Prompt text, composition, and registry source begins below. -->
-
-<a id="user"></a>
 
 ## Author requirement or open question
 
@@ -43,8 +41,8 @@ The proposal is to define one primary requirement: **Reconstructible System Mani
 A few important refinements from the methodology:
 
 - Keep `C` and `E_fixed` separate inside the manifest:
-  - `C`: models, prompts, routing, tools, retrieval settings, policies, budgets.
-  - `E_fixed`: runtimes, external service contracts, schemas, endpoints, infrastructure dependencies.
+	- `C`: models, prompts, routing, tools, retrieval settings, policies, budgets.
+	- `E_fixed`: runtimes, external service contracts, schemas, endpoints, infrastructure dependencies.
 - Compute separate `C_fingerprint` and `E_fixed_fingerprint`; combine them into the `DeploymentKey`.
 - Do not put observed conditions such as latency, service health, or rate limiting in the manifest. Those belong to `E_observed`.
 - Store secrets only as references.
@@ -99,8 +97,8 @@ You need three related artifacts:
 - Each experimental change is shown as a semantic diff from the production baseline.
 - Runs occur in an isolated environment; mutating tools are disabled, simulated, or require an explicit safe mode.
 - The expert can choose between:
-  - **Live mode:** invoke current non-production dependencies.
-  - **Replay mode:** use captured retrieval results and tool responses from the production episode.
+	- **Live mode:** invoke current non-production dependencies.
+	- **Replay mode:** use captured retrieval results and tool responses from the production episode.
 - Each run records the effective configuration, input, dependency fixtures, random seed where applicable, trace, output, and all relevant fingerprints.
 - A saved experiment can be opened and rerun by another authorized person.
 - Sensitive production data is redacted or access-controlled.
@@ -123,14 +121,10 @@ The resulting proposal is to name the capability **Production Workbench**, with 
 
 Exact output reproduction should not be promised because models and live dependencies can be nondeterministic. The defensible promise is to reconstruct the recorded controllable conditions, preserve the original execution evidence, and clearly report any conditions that could not be recreated.
 
-<a id="assistant-reasoning"></a>
-
 ## LLM rationale for the proposal
 
 
-The LLM rationale frames the proposal as a declarative, versioned prompt registry: immutable prompt modules, composable assemblies, dependency locking, semantic diffs, lineage trees, environment aliases, validation, and reproducible resolution--borrowing Terraform and Helm's strongest patterns.
-
-<a id="assistant"></a>
+The LLM rationale frames the proposal as a declarative, versioned prompt registry: immutable prompt modules, composable assemblies, dependency locking, semantic diffs, lineage trees, environment aliases, validation, and reproducible resolution -- borrowing Terraform and Helm's strongest patterns.
 
 ## LLM proposal
 
@@ -142,8 +136,6 @@ The central requirement should be:
 > **PR-1 -- Reconstructible Prompt Graph:** Every prompt used by a runnable system shall resolve from a named, versioned declarative specification into a complete immutable prompt artifact. The resolved artifact shall contain the exact prompt structure, all referenced prompt components, resolved versions, parameters, and dependency identities required to reconstruct it deterministically. The system shall expose its composition graph, provenance, semantic diff, and content fingerprint.
 
 That gives you the equivalent of the Terraform idea of "configuration -> dependency resolution -> locked concrete result", while keeping prompts understandable to domain experts.
-
-<a id="i-would-use-three-representations"></a>
 
 ##### Three proposed representations
 
@@ -213,8 +205,6 @@ The lock would resolve this to something like:
 
 
 The lock should also preserve the complete assembled structure, so resolving it never requires asking the registry what "`^3.0` currently means."
-
-<a id="requirements-i-would-put-around-pr-1"></a>
 
 ##### Proposed supporting requirements for PR-1
 
@@ -315,8 +305,6 @@ customer-support/answer@2.4.0
 
 
 The digest is authoritative.
-
-<a id="composition-is-where-i-would-borrow-from-terraform-more-than-helm"></a>
 
 ##### Composition principles drawn from Terraform and Helm
 
@@ -511,14 +499,10 @@ That keeps the original `C_fingerprint` meaningful: the system fingerprint inclu
 
 The next proposed definition is the **prompt object model/schema** itself: `Prompt`, `PromptFragment`, references, inputs, composition rules, version resolution, and what exactly gets hashed. That's where several architectural mistakes can be prevented early.
 
-<a id="user-1"></a>
-
 ## Author requirement or open question
 
 
 Author correction: The prompt is text sent to the LLM, and domain experts work with that text.
-
-<a id="assistant-1"></a>
 
 ## LLM proposal
 
@@ -536,20 +520,20 @@ So the proposal is to start with these requirements:
 
    or by an immutable digest.
 3. **Human-friendly history.** An expert can open a prompt and see:
-   - current production version
-   - previous versions
-   - who changed it
-   - when
-   - change description
-   - textual diff between any two versions
+	- current production version
+	- previous versions
+	- who changed it
+	- when
+	- change description
+	- textual diff between any two versions
 4. **Production always points to an exact version.** Something like `production` may be a convenient mutable label, but an actual deployment records `support/refund-answer@17` plus its digest.
 5. **Composition remains text-oriented.** If prompts are assembled from pieces, experts must be able to see both:
-   - the pieces
-   - the exact final assembled text sent to the LLM
+	- the pieces
+	- the exact final assembled text sent to the LLM
 6. **Every part of assembled text has provenance.** Given some text in the final prompt, the system can tell the expert where it came from.
 7. **Diff operates at two levels.**
-   - **source diff**: what somebody edited
-   - **assembled diff**: what changed in the final text the LLM receives
+	- **source diff**: what somebody edited
+	- **assembled diff**: what changed in the final text the LLM receives
 8. **Version lineage is visible.** Experts should be able to understand something like:
 
 ```text
@@ -681,14 +665,10 @@ The lock could record:
 
 The working interpretation is that the next useful step is to define the **requirements for prompt management from the domain expert's point of view**, before deciding anything about JSON/YAML, APIs, or storage. That should tell us whether we actually need branching, composition, variables, aliases, approval flows, and so on.
 
-<a id="user-2"></a>
-
 ## Author requirement or open question
 
 
 Open question: How should the requirements change if prompts will later be assembled from modular parts?
-
-<a id="assistant-2"></a>
 
 ## LLM proposal
 
@@ -827,14 +807,10 @@ And for diffing:
 
 That avoids a future migration from a "text registry" into a completely different "prompt graph registry." You can start with single-file prompts now, while the model already supports modular prompts later.
 
-<a id="user-3"></a>
-
 ## Author requirement or open question
 
 
 Open question: Could TOML describe prompt assembly?
-
-<a id="assistant-3"></a>
 
 ## LLM proposal
 
@@ -1044,14 +1020,10 @@ Prompt
 
 The working interpretation is that TOML is cleaner than YAML here because this format should stay relatively constrained. YAML becomes more attractive if you expect the assembly language itself to become very complex, which the proposal seeks to avoid.
 
-<a id="user-4"></a>
-
 ## Author requirement or open question
 
 
 Author correction and question: `${variable}` may simply be text. Could Git or another text diff provide an adequate understanding of changes?
-
-<a id="assistant-4"></a>
 
 ## LLM proposal
 
@@ -1221,21 +1193,15 @@ Git
 
 The working interpretation is that this is a better starting point than building a dedicated versioning model. The proposed registry may initially be little more than an index over Git: logical prompt name -> repository/path -> revision, plus production pointers and resolved fingerprints.
 
-<a id="user-5"></a>
-
 ## Author requirement or open question
 
 
 Research question: Which approaches exist for assembling prompts?
 
-<a id="assistant-reasoning-1"></a>
-
 ## LLM rationale for the proposal
 
 
 The LLM rationale compares six approaches: interpolation, text partials, full template languages, structured messages, manifests, and programmatic builders. It also notes staged formatting, since filling some values early and others at runtime can be useful.
-
-<a id="assistant-5"></a>
 
 ## LLM proposal
 
@@ -1608,8 +1574,6 @@ resolved-text diff
 
 That looks like the smallest design that still gives you modularity, versioning, provenance, and production reproducibility. The proposal is to avoid Jinja-style control flow until you find a concrete prompt that can't be expressed cleanly with **text + includes + variables**.
 
-<a id="user-6"></a>
-
 ## Author requirement or open question
 
 
@@ -1627,14 +1591,10 @@ Open question: How should the prompt specification be represented?
 
 Open question: What should contain all prompts? Could the system parse a Git repository containing them?
 
-<a id="assistant-reasoning-2"></a>
-
 ## LLM rationale for the proposal
 
 
 The LLM rationale recommends a Git-native layout with immutable versioned prompt files, explicit metadata, and line-based links such as `@link-to-prompt support/refund-policy@7`. A parser can resolve links, render expanded text, and retain commit history for every revision.
-
-<a id="assistant-6"></a>
 
 ## LLM proposal
 
@@ -1698,9 +1658,6 @@ When answering...             <refund-policy text>
 @prompt support/refund...
 ```
 
-
-<a id="where-i-would-keep-the-prompts"></a>
-
 ##### Proposed prompt storage
 
 
@@ -1763,8 +1720,6 @@ The path is the identity.
 
 That has a nice side effect: prompt files remain clean documents that experts can read directly.
 
-<a id="git-then-gives-you-most-of-the-history-system"></a>
-
 ##### Git as the proposed history system
 
 
@@ -1800,8 +1755,6 @@ History
 
 
 Internally that is backed by Git commits.
-
-<a id="one-distinction-i-would-make-now"></a>
 
 ##### An initial proposed distinction
 
@@ -1918,8 +1871,6 @@ a@1 → b@2 → c@4 → a@1
 
 fails publication.
 
-<a id="id-keep-the-grammar-tiny"></a>
-
 ##### A deliberately small proposed grammar
 
 
@@ -1946,8 +1897,6 @@ No macros.
 Just text and references.
 
 That is enough to establish whether modular prompts are useful before creating a template language.
-
-<a id="one-thing-i-would-change-in-the-directory-structure-later"></a>
 
 ##### A possible later directory change
 

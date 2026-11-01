@@ -183,7 +183,7 @@ Draw only critical components.
 {{< /callout >}}
 
 
-no premature optimization - follow the steps in this interview SD framework
+no premature optimization -- follow the steps in this interview SD framework
 
 prioritization of the components to further process
 
@@ -201,7 +201,7 @@ Here is one way to get unstuck during a system design interview: consider the im
 
 (invention point of view)
 
-"When you have a desired outcome (a truly portable laptop computer) but no clear solution in sight, that's when you brainstorm, try crazy stuff, improvise, and keep 'building your way forward' until you come up with something that works. You know it when you see it. A great design comes together in a way that can't be solved with equations and spreadsheets and data analysis. It has a look and feel all of its own - a beautiful aesthetic that speaks to you."
+"When you have a desired outcome (a truly portable laptop computer) but no clear solution in sight, that's when you brainstorm, try crazy stuff, improvise, and keep 'building your way forward' until you come up with something that works. You know it when you see it. A great design comes together in a way that can't be solved with equations and spreadsheets and data analysis. It has a look and feel all of its own -- a beautiful aesthetic that speaks to you."
 
 Be prepared to adapt. Be flexible and ready to adjust your design based on feedback from the interviewer.
 
@@ -213,7 +213,7 @@ Each company (and sometimes, each interviewer) will conduct a system design inte
 ## Product Design
 
 
-Product design interviews (sometimes called "Product Architecture" interviews, or ambiguously "System Design" interviews) are the most common type of system design interview. In these interviews, you'll be asked to design a system behind a product. For example, you might be asked to design the backend for a chat application, or the backend for a ride sharing application. Often these interviews are described in terms of a "use case" - for example, "design the backend for a chat application that supports 1:1 and group chats" and frequently referred to by the most noteworthy company that uses that use case. For example, "design the backend for a chat application like Slack".
+Product design interviews (sometimes called "Product Architecture" interviews, or ambiguously "System Design" interviews) are the most common type of system design interview. In these interviews, you'll be asked to design a system behind a product. For example, you might be asked to design the backend for a chat application, or the backend for a ride sharing application. Often these interviews are described in terms of a "use case" -- for example, "design the backend for a chat application that supports 1:1 and group chats" and frequently referred to by the most noteworthy company that uses that use case. For example, "design the backend for a chat application like Slack".
 
 ## Infrastructure Design
 
@@ -518,7 +518,7 @@ system evaluation
 - What are their **key expectations**? (low latency, reliability, security, ease of use)
 - How does user behavior **impact system design**? (e.g., peak traffic patterns, read vs. write ratios)
 
-Possible addition: apply the product approach used in the [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener" >}}) notes.
+Possible addition: apply the product approach used in the [Url Shortener]({{< ref "system-design/projects/url-shortener/url-shortener" >}}) notes.
 
 # back-of-the-envelope estimations
 
@@ -537,7 +537,7 @@ link to envelope estimations
 # Other (2)
 
 
-<https://www.reddit.com/r/ExperiencedDevs/comments/1i57tmt/deleted_by_user/>
+[Reddit thread on r/ExperiencedDevs (deleted by user)](https://www.reddit.com/r/ExperiencedDevs/comments/1i57tmt/deleted_by_user/)
 
 - **Interview Preparation:**
 	- [Preparing for the Systems Design and Coding Interviews](https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/)

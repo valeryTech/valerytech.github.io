@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "stage": 4,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "source": {
+    "path": "projects/input/hebbia-sem/semantic-eng.md",
+    "originalLines": 439,
+    "originalBytes": 17434,
+    "originalSha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+    "originalFinalNewline": false,
+    "currentRole": "navigation stub",
+    "stubLines": 10,
+    "stubBytes": 1655,
+    "stubSha256": "32e19603efee285dd3e7b0adeea6fe17a1070d20896bea18bf8493451056c9dc"
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        16
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "anchor": "<!-- Semantic-engineering contract source begins below. -->",
+      "description": "Author's closed-corpus requirements",
+      "lines": 16,
+      "bytes": 1110,
+      "sha256": "74e698c501459427e29eb8335a263f738dbdab9684726fb8c8efffe8056cd3cd",
+      "destinationLines": [
+        14,
+        29
+      ]
+    },
+    {
+      "sourceLines": [
+        17,
+        50
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "anchor": "<!-- Selected Matrix descriptions begin below. -->",
+      "description": "Selected Hebbia descriptions, marked interesting",
+      "lines": 34,
+      "bytes": 1334,
+      "sha256": "aca51d51f5b26342cf66e8029d57f6c2d843d87c9ae471e40d14c7db065ae2f9",
+      "destinationLines": [
+        148,
+        181
+      ]
+    },
+    {
+      "sourceLines": [
+        51,
+        87
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "anchor": "<!-- Semantic-engineering contract source begins below. -->",
+      "description": "Opening LLM evidence-synthesis framing",
+      "lines": 37,
+      "bytes": 1253,
+      "sha256": "be0bb041871410a161af05e2f9b428f4f03b0277aa3858c84fd3bf7e84fa2707",
+      "destinationLines": [
+        30,
+        66
+      ]
+    },
+    {
+      "sourceLines": [
+        88,
+        107
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "anchor": "<!-- Semantic-engineering product hypotheses begin below. -->",
+      "description": "Competitor comparison and market-gap hypothesis",
+      "lines": 20,
+      "bytes": 2908,
+      "sha256": "da3639f3676ec4eb2472720024cf20115f9d5676926845dd86b88621fbd344d3",
+      "destinationLines": [
+        14,
+        33
+      ]
+    },
+    {
+      "sourceLines": [
+        108,
+        190
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "anchor": "<!-- Semantic-engineering contract source begins below. -->",
+      "description": "Coverage ledger and proposed outcome states",
+      "lines": 83,
+      "bytes": 1406,
+      "sha256": "4cee79a1e060ff2a90ec1b5c90628c18190a4fcc0c2b007f438a649505e8e94c",
+      "destinationLines": [
+        67,
+        149
+      ]
+    },
+    {
+      "sourceLines": [
+        191,
+        277
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "anchor": "<!-- Bounded-corpus retrieval pipeline begins below. -->",
+      "description": "Document representations and iterative retrieval pipeline",
+      "lines": 87,
+      "bytes": 3266,
+      "sha256": "6878942042391c5a15f1bf7366a79f89a50c306ff47bba171fa46cebd7eefca2",
+      "destinationLines": [
+        602,
+        688
+      ]
+    },
+    {
+      "sourceLines": [
+        278,
+        327
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "anchor": "<!-- Semantic-engineering contract source begins below. -->",
+      "description": "Inspectable authority and conflict policy",
+      "lines": 50,
+      "bytes": 1464,
+      "sha256": "c0bb5ce577afe059ca2c22cb2f6b78979984c08bebee69024c70e06eedfb0ebe",
+      "destinationLines": [
+        150,
+        199
+      ]
+    },
+    {
+      "sourceLines": [
+        328,
+        439
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "anchor": "<!-- Semantic-engineering product hypotheses begin below. -->",
+      "description": "Markets, complete governance example, analogues, and MVP",
+      "lines": 112,
+      "bytes": 4693,
+      "sha256": "da3426c9cf889579738501088b253d68fc052c1b205322d49da1edc4b308c474",
+      "destinationLines": [
+        34,
+        145
+      ]
+    }
+  ],
+  "prefixes": {
+    "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md": {
+      "lines": 13,
+      "bytes": 1242,
+      "sha256": "765370bc0df9f16378560ebbdcb3c24f44995e4753cd69ee4071dc69e58ca864",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    },
+    "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md": {
+      "lines": 147,
+      "bytes": 6069,
+      "sha256": "1229434957e84a74b18dd3893077059ae4c4132ff75e905c7ddae4bd1e2857ca",
+      "previousLines": 140,
+      "previousBytes": 5384,
+      "previousSha256": "cf4d71a03cfbf9f6ed2d6375d5514ecba846ec25c805ce56435d6c343abf1868",
+      "previousContentsByteIdentical": true
+    },
+    "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md": {
+      "lines": 13,
+      "bytes": 1183,
+      "sha256": "652ff0e0b315aae45a2186a4bf1faaf9ae47efdfd951b06b52f427f50a595069",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md": {
+      "lines": 601,
+      "bytes": 16800,
+      "sha256": "a5b560e9c5062c142f6e4dd11fc2bdcdcca08cfbde114fe20e66061a7b7f8da3",
+      "previousLines": 594,
+      "previousBytes": 16172,
+      "previousSha256": "9a0e594553738dce8496beafdbec8ebf1217d18ea542261d4cfc6a77cdf8d6e3",
+      "previousContentsByteIdentical": true
+    }
+  },
+  "existingDestinations": [
+    {
+      "path": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "previousLines": 140,
+      "previousBytes": 5384,
+      "previousSha256": "cf4d71a03cfbf9f6ed2d6375d5514ecba846ec25c805ce56435d6c343abf1868",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "previousLines": 594,
+      "previousBytes": 16172,
+      "previousSha256": "9a0e594553738dce8496beafdbec8ebf1217d18ea542261d4cfc6a77cdf8d6e3",
+      "previousContentsByteIdentical": true
+    }
+  ],
+  "moveOrder": [
+    {
+      "originalSourceLines": [
+        328,
+        439
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 12741,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        278,
+        327
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 11277,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        191,
+        277
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 8011,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        108,
+        190
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 6605,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        88,
+        107
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 3697,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        51,
+        87
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 2444,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        17,
+        50
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 1110,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        1,
+        16
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "verification": {
+    "reconstructedLines": 439,
+    "reconstructedBytes": 17434,
+    "reconstructedSha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+    "byteForByteMatch": true,
+    "sourceCoverageExact": true,
+    "omittedOrDuplicatedBytes": 0,
+    "sourceBytesAfterMoves": 0,
+    "dryRunsNonMutating": true,
+    "everyAppliedMoveVerified": true,
+    "codeFencesNotDivided": true,
+    "existingDestinationContentsPreserved": true,
+    "unrelatedBaselineChanges": [],
+    "unrelatedBaselineUnchangedCount": 90,
+    "sourceStubCreatedAfterMoves": true,
+    "finalMappedPassagesVerified": true,
+    "navigation": {
+      "localLinksChecked": 245,
+      "headingAnchorsChecked": 21,
+      "missingLinks": 0
+    },
+    "unexpectedBaselineChangesAtFinalCheck": [],
+    "priorPasses": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "reconstructedBytes": 30899,
+        "reconstructedSha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "retainedPassagesVerified": true
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "reconstructedBytes": 32504,
+        "reconstructedSha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "retainedPassagesVerified": true
+      }
+    ]
+  },
+  "description": "Semantic-engineering document regrouped into requirements and evidence contracts, selected Hebbia descriptions, iterative retrieval, and separate product hypotheses. All original passages moved unchanged with move_text.py.",
+  "destinations": [
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "prefixLines": 13,
+      "prefixBytes": 1242,
+      "prefixSha256": "765370bc0df9f16378560ebbdcb3c24f44995e4753cd69ee4071dc69e58ca864",
+      "lines": 199,
+      "bytes": 6475,
+      "sha256": "d15547e86f90a58eeb3f65deece89fed361e2b84e37a001c1961289861dd9368",
+      "finalNewline": true,
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "prefixLines": 147,
+      "prefixBytes": 6069,
+      "prefixSha256": "1229434957e84a74b18dd3893077059ae4c4132ff75e905c7ddae4bd1e2857ca",
+      "lines": 181,
+      "bytes": 7403,
+      "sha256": "2314e021438c3d4754b2d51f5ee605ce1ff73395bd0cd0e75c51593b7dacdf5b",
+      "finalNewline": true,
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "prefixLines": 13,
+      "prefixBytes": 1183,
+      "prefixSha256": "652ff0e0b315aae45a2186a4bf1faaf9ae47efdfd951b06b52f427f50a595069",
+      "lines": 145,
+      "bytes": 8784,
+      "sha256": "8cb75a80bfd260121e11dd852990dbb0039311a17a18a43f953a1958eda654fe",
+      "finalNewline": false,
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "prefixLines": 601,
+      "prefixBytes": 16800,
+      "prefixSha256": "a5b560e9c5062c142f6e4dd11fc2bdcdcca08cfbde114fe20e66061a7b7f8da3",
+      "lines": 688,
+      "bytes": 20066,
+      "sha256": "f6cee6b05d5ad357acb0ab0103ea4cf9e1cf2c2588f29a8a78f6a01684019ee2",
+      "finalNewline": true,
+      "previousContentsByteIdentical": true
+    }
+  ],
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

@@ -61,7 +61,7 @@ A forward proxy acts on behalf of clients; a reverse proxy acts on behalf of ser
 | Pattern | Mechanism | Fits when | Costs and what it leads to |
 | --- | --- | --- | --- |
 | Direct client-to-service calls | Each client calls the services it needs. | One service, or internal clients only. | Clients depend on the internal service layout; many round trips over slow networks. |
-| [API gateway]({{< ref "system-design/elements/api-gateway" >}}) | A single entry point routes requests to services and may compose responses and apply shared policies. | Several services behind one external API. | Another component and hop to operate; one team can become a bottleneck for every API change. |
+| [Api_gateway]({{< ref "system-design/elements/api-gateway" >}}) | A single entry point routes requests to services and may compose responses and apply shared policies. | Several services behind one external API. | Another component and hop to operate; one team can become a bottleneck for every API change. |
 | Backends for frontends | One gateway per kind of client, such as mobile, web, or third-party, usually owned by the team building that client. | Clients need different data shapes, protocols, or release schedules. | Duplication across the gateways. |
 
 A gateway that combines responses from several services is doing [API composition]({{< ref "system-design/elements/data-across-services" >}}#queries-that-need-several-services).
@@ -94,15 +94,15 @@ A mesh is an alternative to putting the same concerns in a shared library; see [
 
 - Every synchronous hop needs [timeouts, retries, and circuit breakers]({{< ref "system-design/elements/containing-failure" >}}).
 - The gateway is a natural place to authenticate and pass an [access token]({{< ref "system-design/elements/operating-services" >}}#security) to services.
-- Rate limiting at the edge leads to the [rate limiter]({{< ref "system-design/projects/rate-limiter" >}}) case.
-- Stateless instances behind a load balancer move state elsewhere: [data at scale]({{< ref "system-design/elements/data-at-scale" >}}).
+- Rate limiting at the edge leads to the [Rate_limiter]({{< ref "system-design/projects/rate-limiter" >}}) case.
+- Stateless instances behind a load balancer move state elsewhere: [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}).
 
 ## Seen in cases
 
 
 - [Ticketmaster]({{< ref "system-design/projects/ticketmaster" >}}): an API gateway routes to the event and booking services and can take on authentication, rate limiting, and logging.
 - [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener-additional" >}}): edge and regional caches in front of a stateless redirect service behind a load balancer.
-- [Rate limiter]({{< ref "system-design/projects/rate-limiter" >}}): enforcement placed on the request path.
+- [Rate_limiter]({{< ref "system-design/projects/rate-limiter" >}}): enforcement placed on the request path.
 - **AI and RAG:** the request-and-routing module in the [boundary map]({{< ref "engineering/eng-exp/design-pressure" >}}) and layers 0-2 of the RAG runtime. They normalize the request, apply tenant policy and feature flags, and choose an execution path with its budgets.
 
 ## Gaps

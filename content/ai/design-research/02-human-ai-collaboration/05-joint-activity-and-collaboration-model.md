@@ -15,8 +15,6 @@ The retained LLM passages develop a collaboration model from joint activity, com
 
 [Augmenting human work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}) provides the wider allocation and decision-point discussion. [Collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) continues the original source with specific interaction patterns. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/joint-activity-route" >}}) links both parts.
 
-<a id="retained-dialogue"></a>
-
 ## Development of the proposal
 
 
@@ -98,7 +96,7 @@ And **repair** is probably underexplored. Human collaborators constantly repair 
 
 > "When you say 'conversion,' do you mean checkout conversion or signup conversion?"
 
-That is more than clarification. It is maintaining **common ground**--a shared understanding of what the team is talking about.
+That is more than clarification. It is maintaining **common ground** -- a shared understanding of what the team is talking about.
 
 Another useful one is **handoff design**. Good collaboration doesn't mean both parties participate equally in every step:
 
@@ -142,8 +140,6 @@ The last one may be especially important. Collaboration isn't just "AI explains 
 You can't prove you've found _all_ collaboration mechanics, but you can get much closer by triangulating several established collaboration theories and checking whether new sources keep adding new categories. The proposal is to treat this as a coverage/saturation exercise, not a brainstorming exercise.
 
 A first finding from the literature is that our previous list was still mixing levels. "Shared goal" is a precondition, "handoff" is a coordination mechanism, and "trust" is an enabling condition. We should separate those before judging completeness.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The proposal is to verify it by triangulating established collaboration research, then checking whether additional frameworks keep adding new categories. We can't prove absolute completeness, but we can get to a point where the taxonomy is stable.
 
@@ -527,7 +523,7 @@ That formulation is strongly consistent across the otherwise fragmented bodies o
 
 The resulting design mindset is less "Where can we insert AI?" and more:
 
-> **What kind of collaboration does this work actually require--and what must each participant be able to know, contribute, inspect, challenge, commit, and recover from for that collaboration to succeed?**
+> **What kind of collaboration does this work actually require -- and what must each participant be able to know, contribute, inspect, challenge, commit, and recover from for that collaboration to succeed?**
 
 <!-- Navigation added during reassembly on 2026-04-01. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 

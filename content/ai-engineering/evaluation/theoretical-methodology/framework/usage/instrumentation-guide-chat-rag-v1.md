@@ -14,7 +14,7 @@ linkTitle: "Chat and RAG Instrumentation"
 
 **Audience:** Product engineers, ML/LLM engineers, SRE/oncall, data/analytics, security/privacy
 
-**Applies to:** Chatbots with Retrieval‑Augmented Generation (RAG). Tool-using agents are out of scope except where noted.
+**Applies to:** Chatbots with Retrieval-Augmented Generation (RAG). Tool-using agents are out of scope except where noted.
 
 ## 0. What this guide is and is not
 
@@ -25,7 +25,7 @@ This guide describes **what to instrument** and **how to instrument it** so that
 
 - reconstruct what happened in an episode (end-to-end traceability),
 - attribute regressions (config vs input-mix vs environment vs measurement),
-- support Tier‑1 slice gating and Tier‑2 diagnostic regimes,
+- support Tier-1 slice gating and Tier-2 diagnostic regimes,
 - drive monitoring ChangePackets and release GateReports without relying on ad hoc transcript archaeology,
 - operate under privacy, security, and cost constraints.
 
@@ -176,7 +176,7 @@ Normalize at the emission point to keep downstream attribution stable.
 ## 5. Provenance capture (what versions produced this behavior)
 
 
-Provenance is required to reproduce and attribute changes. The instrumentation MUST capture **immutable identifiers**--not "latest."
+Provenance is required to reproduce and attribute changes. The instrumentation MUST capture **immutable identifiers** -- not "latest."
 
 ### 5.1 Configuration provenance (C-plane)
 
@@ -374,10 +374,10 @@ Emit numeric drivers:
 
 These drivers are used by change detection attribution; they should be stable and versioned.
 
-## 10. Tier‑1 slices and labelers (instrumentation requirements)
+## 10. Tier-1 slices and labelers (instrumentation requirements)
 
 
-Tier‑1 slices must be **pre-treatment, input-defined**. For chat+RAG, Tier‑1 typically includes:
+Tier-1 slices must be **pre-treatment, input-defined**. For chat+RAG, Tier-1 typically includes:
 
 - `all`
 - `non_english`
@@ -388,7 +388,7 @@ Tier‑1 slices must be **pre-treatment, input-defined**. For chat+RAG, Tier‑1
 - `domain_code`
 - `retrieval_required` (ONLY if it is an input label, not a routing outcome)
 
-### 10.1 Required logging to compute Tier‑1 slices
+### 10.1 Required logging to compute Tier-1 slices
 
 
 Log the inputs required by these predicates:
@@ -401,7 +401,7 @@ Log the inputs required by these predicates:
 ### 10.2 Labeler coupling rule (critical)
 
 
-If the labeler is produced by the same model/router under test, the slice becomes post‑treatment and is NOT Tier‑1 safe.
+If the labeler is produced by the same model/router under test, the slice becomes post-treatment and is NOT Tier-1 safe.
 
 **Operational implication:** labelers must be:
 
@@ -426,7 +426,7 @@ For each EpisodeRecord, emit:
 The aggregation pipeline must compute:
 
 - coverage rate per required field
-- missingness by Tier‑1 slice and by key regimes (e.g., retrieval_empty)
+- missingness by Tier-1 slice and by key regimes (e.g., retrieval_empty)
 - exclusion rates and reasons
 
 **Why:** missingness is often correlated with failures. Failing to measure it can hide regressions and lead to incident misattribution.
@@ -461,7 +461,7 @@ Implement redaction before data leaves the production boundary:
 
 
 - Tail-based sampling: capture a high fraction of failures, timeouts, policy blocks, retrieval_empty, and latency tails.
-- Stratified sampling: ensure coverage across Tier‑1 slices (avoid "all exemplars are English and short").
+- Stratified sampling: ensure coverage across Tier-1 slices (avoid "all exemplars are English and short").
 - Record sampling decisions in EpisodeRecord (`exemplar.sampled=true`, `exemplar.reason`).
 
 ## 13. Implementation recipes (how to instrument without chaos)
@@ -543,7 +543,7 @@ Instrumentation must be low overhead:
 
 1. **Index snapshot not versioned:** retrieval regressions cannot be attributed.
 	- Fix: log immutable `index_snapshot_id`; stop using "current index" pointers.
-2. **Retrieval_required coupled to router:** Tier‑1 gating becomes biased.
+2. **Retrieval_required coupled to router:** Tier-1 gating becomes biased.
 	- Fix: compute retrieval_required via frozen classifier or explicit UI mode.
 3. **No context selection record:** the record cannot establish whether evidence was provided to the model.
 	- Fix: log selected chunk IDs and token budget/truncation.
@@ -685,7 +685,7 @@ Instrumentation must be low overhead:
 5. Emit standard regime flags and driver metrics
 6. Emit missingness and exclusion counters
 7. Implement exemplar sampling pipeline (tail + stratified) with RBAC/retention
-8. Integrate slice labelers (frozen/versioned) required for Tier‑1
+8. Integrate slice labelers (frozen/versioned) required for Tier-1
 9. Add CI conformance tests and golden episode replay
 
 **End of document.**

@@ -141,7 +141,7 @@ An AI roadmap may therefore combine:
 
 This avoids treating either experiment-based planning or feature-based planning as universally sufficient.
 
-See [Experiments vs features]({{< ref "ai/product/product-model/experiments-vs-features" >}}) and Roadmap management.
+See [Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}}) and [[roadmap-management]].
 
 ## Combined Approaches
 

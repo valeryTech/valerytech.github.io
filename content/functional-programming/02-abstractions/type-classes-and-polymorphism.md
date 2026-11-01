@@ -105,9 +105,9 @@ Both declare a set of operations that a type must provide, and both can supply d
 ### Links on polymorphism
 
 
-- CIS 194 (UPenn, spring 2013), lecture 5, type classes: <https://www.seas.upenn.edu/~cis1940/spring13/lectures/05-type-classes.html>
-- Wikipedia, Polymorphism (computer science): <https://en.wikipedia.org/wiki/Polymorphism_(computer_science)>
-- BalmungSan, a gist (topic not checked): <https://gist.github.com/BalmungSan/c19557030181c0dc36533f3de7d7abf4>
+- [CIS 194 (UPenn, spring 2013), lecture 5, type classes](https://www.seas.upenn.edu/~cis1940/spring13/lectures/05-type-classes.html)
+- Wikipedia, [Polymorphism (computer science)](https://en.wikipedia.org/wiki/Polymorphism_(computer_science))
+- BalmungSan, a gist (topic not checked): [Polymorphism in Scala (gist)](https://gist.github.com/BalmungSan/c19557030181c0dc36533f3de7d7abf4)
 
 ## Type classes
 
@@ -236,12 +236,12 @@ Combined with `Generic`, these let you derive instances of your own classes. Sca
 
 The Typeclassopedia, Brent Yorgey's tour of the standard Haskell classes from `Functor` and `Applicative` through `Monad`, `Monoid`, `Foldable` and `Traversable`, is the one to read once the basics above are clear. The Scala 3 reference page shows the `given`/`using` encoding used in the examples here.
 
-- Scala 3 reference, type classes: <https://docs.scala-lang.org/scala3/reference/contextual/type-classes.html>
-- alexn.org, "OOP vs type classes, part 1: ideology" (2022): <https://alexn.org/blog/2022/05/13/oop-vs-type-classes-part-1-ideology/>
-- John De Goes, "Principled typeclasses": <https://degoes.net/articles/principled-typeclasses>
-- Haskell Wiki, Typeclassopedia: <https://wiki.haskell.org/Typeclassopedia>
-- Andrew Gibiansky, "Haskell typeclasses": <https://andrew.gibiansky.com/blog/haskell/haskell-typeclasses/>
-- Stack Overflow, "Typeclasses and overloading, what is the connection?": <https://stackoverflow.com/questions/47971360/typeclasses-and-overloading-what-is-the-connection>
+- Scala 3 reference, type classes: [Implementing Type classes (Scala 3 reference)](https://docs.scala-lang.org/scala3/reference/contextual/type-classes.html)
+- alexn.org, "[OOP vs type classes, part 1: ideology](https://alexn.org/blog/2022/05/13/oop-vs-type-classes-part-1-ideology/)" (2022)
+- John De Goes, "[Principled typeclasses](https://degoes.net/articles/principled-typeclasses)"
+- Haskell Wiki, [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia)
+- Andrew Gibiansky, "[Haskell typeclasses](https://andrew.gibiansky.com/blog/haskell/haskell-typeclasses/)"
+- Stack Overflow, "[Typeclasses and overloading, what is the connection?](https://stackoverflow.com/questions/47971360/typeclasses-and-overloading-what-is-the-connection)"
 
 ## Higher-kinded types
 
@@ -275,11 +275,11 @@ A constructor with two parameters must be partially applied to fit `F[_]`, which
 
 The Scala 3 kind-polymorphism page covers the next step, `AnyKind`, for code that abstracts over kinds themselves.
 
-- Stack Overflow, "What is a higher kinded type in Scala?": <https://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala>
-- the same question, a specific answer: <https://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala/6417328#6417328>
-- Wikipedia, Kind (type theory): <https://en.wikipedia.org/wiki/Kind_%28type_theory%29>
-- Scala 3 reference, kind polymorphism: <https://docs.scala-lang.org/scala3/reference/other-new-features/kind-polymorphism.html>
-- An HKT problem, Stack Overflow, "Scala methods and higher-kinded type parameters": <https://stackoverflow.com/questions/56240426/scala-methods-and-higher-kinded-type-parameters>
+- Stack Overflow, "[What is a higher kinded type in Scala?](https://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala)"
+- the same question, a specific answer: [Answer on higher kinded types in Scala (Stack Overflow)](https://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala/6417328#6417328)
+- Wikipedia, [Kind (type theory)](https://en.wikipedia.org/wiki/Kind_%28type_theory%29)
+- Scala 3 reference, [kind polymorphism](https://docs.scala-lang.org/scala3/reference/other-new-features/kind-polymorphism.html)
+- An HKT problem, Stack Overflow, "[Scala methods and higher-kinded type parameters](https://stackoverflow.com/questions/56240426/scala-methods-and-higher-kinded-type-parameters)"
 
 ## GADTs
 
@@ -324,7 +324,7 @@ eval (If c t e)  = if eval c then eval t else eval e
 
 Maguire's observation is that the essential feature is type equality, not the syntax. Each constructor carries a constraint such as `a ~ Int`, which must be proved when the constructor is applied and becomes available when it is matched. The ordinary alternative is an untyped `Expr` plus a separate type-checking pass that can fail at run time.
 
-- Scala 3 book, ADTs and GADTs: <https://docs.scala-lang.org/scala3/book/types-adts-gadts.html>
+- Scala 3 book, [ADTs and GADTs](https://docs.scala-lang.org/scala3/book/types-adts-gadts.html)
 
 ## Type-level programming
 
@@ -392,19 +392,19 @@ The extra typing pays where an error is expensive and the invariant is fixed and
 - Maguire, *Thinking with Types*, is the dedicated book: ch. 2 kinds and data kinds, ch. 5 GADTs, ch. 9 and 10 type families, ch. 15 dependent types.
 - Bragilevsky, *Haskell in Depth*, ch. 11 and 13, covers the same ground with larger examples.
 - Skinner, *Effective Haskell* ([PDF](/sources/47da28f54846d377221bfd47a62316ff.bin)), ch. 15, is a shorter, applied introduction inside a general Haskell book.
-- Video playlist (topic not checked; filed under type-level programming): <https://www.youtube.com/playlist?list=PLmtsMNDRU0ByOQoz6lnihh6CtMrErNax7>
+- Video playlist (topic not checked; filed under type-level programming): [Video playlist on type-level programming](https://www.youtube.com/playlist?list=PLmtsMNDRU0ByOQoz6lnihh6CtMrErNax7)
 
 ## Tagless final
 
 
-Tagless final combines the two ideas above: program logic is written against an abstract effect type `F[_]` (a higher-kinded parameter), and the operations it may use are type-class constraints on `F`. A concrete effect type such as `IO`, or a simple one for tests, is substituted only at the edge of the program. It is covered in [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}).
+Tagless final combines the two ideas above: program logic is written against an abstract effect type `F[_]` (a higher-kinded parameter), and the operations it may use are type-class constraints on `F`. A concrete effect type such as `IO`, or a simple one for tests, is substituted only at the edge of the program. It is covered in [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}).
 
 ## Open tasks
 
 
 - [ ] Study polymorphism systematically: for each kind of polymorphism, compare in Haskell and Scala how the polymorphic interface is declared, how a type opts in (an instance, a subclass), how a caller requests it (a type parameter, a constraint, a supertype) and how the compiler picks the implementation.
 
-See also: [Nominal and structural subtyping]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping) and [Type parameters and type tags]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#type-parameters-and-type-tags), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid), [Category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for type classes in Scala, [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}), and [Towards dependent types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}}) for dependent types.
+See also: [Nominal and structural subtyping]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping) and [Type parameters and type tags]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#type-parameters-and-type-tags), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid), [Category Theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}), [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) for type classes in Scala, [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Traversable and traverse]({{< ref "functional-programming/02-abstractions/traversable" >}}), and [Towards dependent types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}}) for dependent types.
 
 ## Library sources
 

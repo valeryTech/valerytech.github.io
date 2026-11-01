@@ -84,9 +84,9 @@ Related open idea: a library of typical incident evolution schemes that the simu
 
 - Cited for GNN root-cause scoring: [arXiv:2404.04496](https://arxiv.org/abs/2404.04496)
 - Cited for structural subgraph retrieval and pruning: [arXiv:2405.16506](https://arxiv.org/abs/2405.16506)
-- CIRCA, causal inference for root-cause analysis (KDD 2022): <https://netman.aiops.org/wp-content/uploads/2022/08/KDD22-CIRCA.pdf>
-- World models: <https://worldmodels.github.io>
-- A gentle introduction to graph neural networks: <https://distill.pub/2021/gnn-intro>
+- [CIRCA](https://netman.aiops.org/wp-content/uploads/2022/08/KDD22-CIRCA.pdf), causal inference for root-cause analysis (KDD 2022)
+- [World models](https://worldmodels.github.io)
+- [A gentle introduction to graph neural networks](https://distill.pub/2021/gnn-intro)
 
 ## Library sources
 

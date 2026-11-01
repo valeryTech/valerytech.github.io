@@ -10,7 +10,7 @@ Here, _Agent Development Environment_ is a proposed architectural term, not a fo
 
 **The harness determines how the agent operates. The development environment determines what resources, conventions, and feedback are available for doing engineering work.**
 
-This note assumes the situation in [What a Team Can Set in a Harness It Doesn't Change]({{< ref "ai-engineering/agents/customization/harness-configuration" >}}): the team uses a harness it doesn't change. What the team builds goes into two places: the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), which turns the harness into the team's agents and is shared across projects, and this environment, which is the project and what it gives every participant. The note defines the environment, describes its parts as feedforward and feedback controls, says which goals they serve, lists the parts, and gives principles for building them. The command layer has its own section at the end, and project knowledge has its own note, [Project Knowledge in the Agent Development Environment]({{< ref "ai-engineering/agents/environment/project-knowledge" >}}). The environment is a different thing from the execution environment, the machine or container where a session runs ([Execution environment](#execution-environment)). The earlier version of this note is kept as ade-0.
+This note assumes the situation in [What a Team Can Set in a Harness It Doesn't Change]({{< ref "ai-engineering/agents/customization/harness-configuration" >}}): the team uses a harness it doesn't change. What the team builds goes into two places: the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), which turns the harness into the team's agents and is shared across projects, and this environment, which is the project and what it gives every participant. The note defines the environment, describes its parts as feedforward and feedback controls, says which goals they serve, lists the parts, and gives principles for building them. The command layer has its own section at the end, and project knowledge has its own note, [Project Knowledge in the Agent Development Environment]({{< ref "ai-engineering/agents/environment/project-knowledge" >}}). The environment is a different thing from the execution environment, the machine or container where a session runs ([Execution environment](#execution-environment)). The earlier version of this note is kept as [[ade-0]].
 
 ## Definitions and boundaries
 
@@ -82,7 +82,7 @@ The last column lines up only roughly. The environment in this note includes the
 ### Agent Development Environment
 
 
-The *Agent Development Environment* is the project and what it gives the people and agents working in it. Together with the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), it makes up what Böckeler calls the outer harness, and it includes the methodological harness of Diaz et al. This note uses a separate term for three reasons. The environment is designed to behave the same whichever harness runs the agent. It includes setup definitions as well as guides and sensors. And it includes the working practices the team writes down, such as how tasks are specified and how results are accepted.
+The *Agent Development Environment* is the project and what it gives the people and agents working in it. Together with the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), it makes up what Böckeler calls the outer harness, and it includes the methodological harness of Diaz et al. This note uses a separate term for three reasons. The environment is designed to behave the same whichever harness runs the agent. It includes setup definitions as well as guides and sensors. And it includes the working practices the team writes down, such as how tasks are specified and how results are accepted.
 
 The environment has these parts, grouped by kind of artifact, which [What the environment contains](#what-the-environment-contains) describes:
 
@@ -94,7 +94,7 @@ The environment has these parts, grouped by kind of artifact, which [What the en
 - **Repository and platform settings**: branch protection, required review, deploy rights, and the scope of credentials.
 - **Setup definitions**, which prepare the execution environment.
 
-Instruction files such as `AGENTS.md`, skills, agent roles, and harness settings are the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), a layer of its own: the team writes it for a harness, assembles it from layers, and shares it across projects. The project's own part of it, such as its `AGENTS.md` and its `.claude/` folder, lives in the project's repository next to the environment.
+Instruction files such as `AGENTS.md`, skills, agent roles, and harness settings are the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), a layer of its own: the team writes it for a harness, assembles it from layers, and shares it across projects. The project's own part of it, such as its `AGENTS.md` and its `.claude/` folder, lives in the project's repository next to the environment.
 
 For example, the agent doesn't need to decide where temporary scripts belong. The project defines that convention. It doesn't need to discover how to run tests. The project exposes a standard command. It doesn't need every engineering convention copied into its initial context. It can access shared documentation when relevant.
 
@@ -152,7 +152,7 @@ Each control is also computational or inferential:
 | **Guides** | Types and module boundaries in the code, code generators and code mods, bootstrap scripts, code navigation through a language server | `AGENTS.md`, docs, skills, specs, the instructions of an agent role |
 | **Sensors** | Tests, linters, type checks, structural tests, and the hooks and CI jobs that run them | Review agents and review skills, a model judging the result |
 
-Human review is one more sensor. The harness also has guides of its own, such as its system prompt. The controls the team adds come from two layers: `AGENTS.md`, skills, and reviewer roles are part of the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), and the code, docs, tests, and linters are part of the environment.
+Human review is one more sensor. The harness also has guides of its own, such as its system prompt. The controls the team adds come from two layers: `AGENTS.md`, skills, and reviewer roles are part of the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}), and the code, docs, tests, and linters are part of the environment.
 
 **When the controls run.** Böckeler's rule is to keep quality left: run each check as early as its cost allows, because a problem found early costs less to fix. Fast sensors, such as linters, fast tests, and a basic review agent, run during the session and before a commit. Slow sensors, such as mutation testing and a broader review, run after integration, where the fast ones run again. Other sensors run continuously, outside any one change, such as dead-code detection and dependency scanners, and some watch the running system (Böckeler 2026). [Feedback and checks](#feedback-and-checks) turns this into principles.
 
@@ -221,7 +221,7 @@ The parts below are grouped by kind of artifact: what the team writes and keeps.
 
 ### The broader architecture
 
-```
+```text
 Agentic Software Engineering
 │
 ├── Agent Runtime
@@ -321,7 +321,7 @@ Working practices describe how people and agents work together, written down so 
 - **How results are accepted:** which checks and reviews a result goes through before it's merged or deployed.
 - **How much autonomy each type of action gets**, and what starts an agent role ([Autonomy and Triggers for Agent Roles]({{< ref "ai-engineering/agents/sdlc/participants-and-substrates" >}}#autonomy-and-triggers-for-agent-roles)).
 - **How the environment improves:** how failures are recorded and turned into changes to the guides and sensors ([Improving the environment](#improving-the-environment)).
-- **Workflows for types of tasks:** the steps a type of task goes through, such as reproducing, diagnosing, fixing, and verifying a bug. [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) describes the workflows in general, and the [Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) builds a project's version of them from its cases. A skill can carry out a workflow's steps, and commands can run its checks. A workflow that runs, such as a skill that calls an implementer role and then a reviewer role, is part of the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}).
+- **Workflows for types of tasks:** the steps a type of task goes through, such as reproducing, diagnosing, fixing, and verifying a bug. [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}) describes the workflows in general, and the [Bottom Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}}) builds a project's version of them from its cases. A skill can carry out a workflow's steps, and commands can run its checks. A workflow that runs, such as a skill that calls an implementer role and then a reviewer role, is part of the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}).
 
 [Processes Derived from the Goals and the Participants]({{< ref "ai-engineering/agents/sdlc/processes" >}}) describes the processes these practices support.
 
@@ -330,7 +330,7 @@ Working practices describe how people and agents work together, written down so 
 
 - **The command layer:** named commands for setup, checks, running the application, diagnostics, and remote operations. The rest of the environment uses commands more than any other tool: checks, setup definitions, hooks, and CI all run them. [Command layer](#command-layer) at the end of this note describes it.
 - **Scripts and command-line tools** in the repository or installed by the setup, which the agent runs through the shell. A script that people or agents run more than once usually becomes a command.
-- **MCP servers**, which give the agent tools for systems outside the repository, such as a ticket system or a database. The server can serve several harnesses, and each harness's connection to it is part of the [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}) ([Tools and Commands]({{< ref "ai-engineering/agents/customization/harness-configuration" >}}#tools-and-commands)).
+- **MCP servers**, which give the agent tools for systems outside the repository, such as a ticket system or a database. The server can serve several harnesses, and each harness's connection to it is part of the [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}) ([Tools and Commands]({{< ref "ai-engineering/agents/customization/harness-configuration" >}}#tools-and-commands)).
 
 ### Checks
 
@@ -397,7 +397,7 @@ In terms of controls, the command layer is how the environment runs its computat
 
 The command layer adds no new concept. It is ordinary tooling that most projects have in some form. It belongs in this note because many other parts of the environment reach the agent through it: checks run as commands, the local application starts and stops through commands, setup creates the shared links through a command, and the runbook's procedures name commands. The same commands serve the developer working locally, the agent, and the git hooks.
 
-[Command layer]({{< ref "ai-engineering/agents/environment/command-layer" >}}) describes it in detail across eight projects, comparing how agents and developers use the command line and how commands are structured, isolated, and documented. This section summarizes what it consists of and what it gives the rest of the environment.
+[Command Layer]({{< ref "ai-engineering/agents/environment/command-layer" >}}) describes it in detail across eight projects, comparing how agents and developers use the command line and how commands are structured, isolated, and documented. This section summarizes what it consists of and what it gives the rest of the environment.
 
 ### What it consists of
 

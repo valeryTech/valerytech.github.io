@@ -10,7 +10,7 @@ linkTitle: "Solution States and Terms"
 
 Discovery and Delivery can be presented as activities, while the transformations apply to the solution.
 
-```
+```text
 ACTIVITIES                         STATES OF THE SOLUTION
 
 Discovery ───────────────┐         idea

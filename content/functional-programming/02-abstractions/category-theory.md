@@ -21,7 +21,7 @@ Most of the constructions it lists have direct counterparts in functional progra
 - **Category**: types as objects and functions as arrows, with `.` (or `andThen`) as composition and `id` as identity.
 - **Functor**: a type constructor with a lawful `map`, such as `List` or `Option` ([Functor]({{< ref "functional-programming/02-abstractions/functor" >}})).
 - **Natural transformation**: a polymorphic function between two functors, such as `headOption: List[A] => Option[A]`, which works the same way for every `A` ([Natural transformations](#natural-transformations)).
-- **Adjunction**: currying. Functions `(A, B) => C` correspond one to one with functions `A => (B => C)` (see [Lambda calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}})).
+- **Adjunction**: currying. Functions `(A, B) => C` correspond one to one with functions `A => (B => C)` (see [Lambda Calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}})).
 - **Representable functor**: a functor isomorphic to functions from a fixed type, such as `R => A`, the Reader type.
 - **Limits** show up in programming mostly in their simplest forms: product types (pairs, records) and the terminal object (`Unit`).
 
@@ -58,7 +58,7 @@ Related names in Cats:
 
 Associativity is one of the axioms of a category, together with identity. Composition must satisfy `h . (g . f) == (h . g) . f`, and identity arrows must satisfy `id . f == f == f . id`. Associativity means you never need to say how a chain of compositions is grouped. The same property is what makes a monoid useful: `(a <> b) <> c == a <> (b <> c)` lets a fold, or a parallel reduction, group the work however it likes (see [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid)).
 
-- Wikipedia, "Associative property": <https://en.wikipedia.org/wiki/Associative_property>
+- Wikipedia, "[Associative property](https://en.wikipedia.org/wiki/Associative_property)"
 
 Commutativity (`a <> b == b <> a`) is an extra property on top of that. It lets you also reorder the elements, for example to combine partial results in whatever order they arrive.
 
@@ -71,20 +71,20 @@ For a programmer, Milewski's *Category Theory for Programmers* is the usual star
 
 Learning:
 
-- Bartosz Milewski, *Category Theory for Programmers*, the preface of the blog series: <https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/> ([PDF](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin))
-- *Category Theory for Programmers* on GitBook: <https://ctfpis.gitbook.io/project/category-theory-for-programmers>
-- Wikibooks, Haskell, "Category theory": <https://en.wikibooks.org/wiki/Haskell/Category_theory>
-- Gabriella439, LambdaConf slides on categories: <https://github.com/Gabriella439/slides/blob/main/lambdaconf/category/category.md>
-- Math3ma, "What is category theory, anyway?": <https://www.math3ma.com/blog/what-is-category-theory-anyway>
-- prathyvsh/category-theory-resources, a list of resources: <https://github.com/prathyvsh/category-theory-resources>
+- Bartosz Milewski, *Category Theory for Programmers*, the preface of the blog series: [Category Theory for Programmers: The Preface (Bartosz Milewski)](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/) ([PDF](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin))
+- *[Category Theory for Programmers](https://ctfpis.gitbook.io/project/category-theory-for-programmers)* on GitBook
+- Wikibooks, Haskell, "[Category theory](https://en.wikibooks.org/wiki/Haskell/Category_theory)"
+- Gabriella439, [LambdaConf slides on categories](https://github.com/Gabriella439/slides/blob/main/lambdaconf/category/category.md)
+- Math3ma, "[What is category theory, anyway?](https://www.math3ma.com/blog/what-is-category-theory-anyway)"
+- [prathyvsh/category-theory-resources](https://github.com/prathyvsh/category-theory-resources), a list of resources
 - Eugenia Cheng, *How to Bake Pi: Easy recipes for understanding complex maths* (2015): a popular-mathematics book that introduces the ideas behind category theory, abstraction and generalisation, through cooking analogies. It was published in the US with a different subtitle. Her later *The Joy of Abstraction* (Library sources) covers the same ground in much more depth and gets as far as functors, natural transformations and the Yoneda lemma.
 
 Reference definitions rather than places to learn from:
 
-- Wikipedia, "Category theory": <https://en.wikipedia.org/wiki/Category_theory>
-- Wolfram MathWorld, "Category": <https://mathworld.wolfram.com/Category.html>
+- Wikipedia, "[Category theory](https://en.wikipedia.org/wiki/Category_theory)"
+- Wolfram MathWorld, "[Category](https://mathworld.wolfram.com/Category.html)"
 
-See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Why monads]({{< ref "functional-programming/02-abstractions/monads" >}}#why-monads), [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid), [Lambda calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}) for currying and the curry/apply adjunction, and [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}).
+See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Why monads]({{< ref "functional-programming/02-abstractions/monads" >}}#why-monads), [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid), [Lambda Calculus]({{< ref "functional-programming/01-foundations/lambda-calculus" >}}) for currying and the curry/apply adjunction, and [Type Classes And Polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}).
 
 ## Library sources
 

@@ -375,11 +375,11 @@ OpenCode has no OS sandbox. Its `SECURITY.md` says so: OpenCode "does **not** sa
 - **Order**: agent rules, then session rules. Rules from config are added after the built-in rules.
 - **Default rules** (`packages/schema/src/agent.ts:46-51`): allow everything, ask before reading `*.env` and `*.env.*`, allow `*.env.example`.
 - **Built-in agents** (`plugin/agent.ts:52-116`, `plugin/plan.ts:34-40`):
-  - **build** (default): the default rules plus `question` allowed
-  - **plan**: `question` allowed, edits denied except in `~/.opencode/plan`
-  - **general** (sub-agent): `question` and `subagent` denied
-  - **explore** (sub-agent): everything denied, then shell, grep, glob, webfetch, websearch, read and `external_directory` allowed, `subagent` denied
-  - **compaction**, **title**, **summary**: hidden; title and summary deny everything
+	- **build** (default): the default rules plus `question` allowed
+	- **plan**: `question` allowed, edits denied except in `~/.opencode/plan`
+	- **general** (sub-agent): `question` and `subagent` denied
+	- **explore** (sub-agent): everything denied, then shell, grep, glob, webfetch, websearch, read and `external_directory` allowed, `subagent` denied
+	- **compaction**, **title**, **summary**: hidden; title and summary deny everything
 - **Asking.** An `ask` publishes a `permission.asked` event to clients. The user replies `once`, `always` or `reject`. `reject` fails every pending request in the session and returns the user's message as feedback. `always` stores the request's save patterns per project in SQLite (`permission.ts:229-366`). Most tools save `*`; shell saves the command prefix plus ` *`.
 - **`external_directory`.** Paths outside the working directory or worktree need this permission. The default allow-everything rule covers it (`file-access.ts:90-137`).
 - **Managed policy** (`config/plugin/policy.ts`). Policies can deny the use of tools, providers, MCP servers, skills, web search and plugins. Tool policy is enforced through a built-in `permission.evaluate` hook.

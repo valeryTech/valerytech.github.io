@@ -114,9 +114,9 @@ A codebase changes constantly, and an index that is a few hours old can mislead 
 
 
 - *Practical Code RAG at Scale: Task-Aware Retrieval Design Choices under Compute Budgets*: [arXiv:2510.20609](https://arxiv.org/abs/2510.20609)
-- CodeRAG-Bench: [arXiv:2406.14497](https://arxiv.org/abs/2406.14497), <https://code-rag-bench.github.io>
+- CodeRAG-Bench: [arXiv:2406.14497](https://arxiv.org/abs/2406.14497), [CodeRAG-Bench project page](https://code-rag-bench.github.io)
 - CodeRAG, bigraph retrieval for real-world code generation: [arXiv:2504.10046](https://arxiv.org/abs/2504.10046)
-- Long Code Arena: <https://openreview.net/forum?id=twV78Ytnve>
+- [Long Code Arena](https://openreview.net/forum?id=twV78Ytnve)
 
 ## Library sources
 

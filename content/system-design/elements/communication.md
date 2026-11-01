@@ -45,7 +45,7 @@ Choosing one of these determines who depends on whom.
 | Pattern | Mechanism | Fits when | Costs and what it leads to |
 | --- | --- | --- | --- |
 | Remote procedure invocation | The client sends a request and waits for the reply: REST, gRPC, GraphQL. | The caller needs the answer to continue; simple queries; clients outside the system. | Temporal coupling and added latency; requires [discovery]({{< ref "system-design/elements/request-path" >}}#service-discovery) and [timeouts, retries, and circuit breakers]({{< ref "system-design/elements/containing-failure" >}}). |
-| Messaging | Services exchange messages through a broker: a queue, publish/subscribe, or a stream. The sender does not wait for processing. | Work can complete later; several consumers react to one event; bursts must be buffered; long-running workflows such as [sagas]({{< ref "system-design/elements/data-across-services" >}}#operations-that-change-several-services). | A broker to operate; eventual consistency; duplicate delivery requires [idempotent consumers](#idempotent-consumer); end-to-end tracing is harder. Details in [messaging]({{< ref "system-design/elements/messaging" >}}). |
+| Messaging | Services exchange messages through a broker: a queue, publish/subscribe, or a stream. The sender does not wait for processing. | Work can complete later; several consumers react to one event; bursts must be buffered; long-running workflows such as [sagas]({{< ref "system-design/elements/data-across-services" >}}#operations-that-change-several-services). | A broker to operate; eventual consistency; duplicate delivery requires [idempotent consumers](#idempotent-consumer); end-to-end tracing is harder. Details in [Messaging]({{< ref "system-design/elements/messaging" >}}). |
 | Domain-specific protocol | Use the protocol standard for the domain: SMTP for email, media streaming protocols for video. | The domain already has a protocol and an ecosystem around it. | Specialized infrastructure and expertise. |
 
 ## Push versus poll
@@ -53,7 +53,7 @@ Choosing one of these determines who depends on whom.
 
 When a client needs updates, it can poll for changes or the server can push them over a long-lived connection (WebSocket, server-sent events, long polling). Pushing reduces the delay before the client sees a change. It costs connection state on the server and a way to route a message to the server holding the connection.
 
-The original notes add that a system sometimes needs to switch between the two. The [chat-room]({{< ref "system-design/projects/chat-room" >}}) and [live commenting]({{< ref "system-design/projects/live-commenting" >}}) cases depend on this choice.
+The original notes add that a system sometimes needs to switch between the two. The [Chat Room]({{< ref "system-design/projects/chat-room" >}}) and [Live Commenting]({{< ref "system-design/projects/live-commenting" >}}) cases depend on this choice.
 
 ## Idempotent consumer
 
@@ -84,8 +84,8 @@ Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-ou
 ## Leads to
 
 
-- Synchronous calls need a way to find instances and survive failures: [request path]({{< ref "system-design/elements/request-path" >}}) and [containing failure]({{< ref "system-design/elements/containing-failure" >}}).
-- Messaging needs delivery, ordering, and retention decisions: [messaging]({{< ref "system-design/elements/messaging" >}}).
+- Synchronous calls need a way to find instances and survive failures: [Request Path]({{< ref "system-design/elements/request-path" >}}) and [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}).
+- Messaging needs delivery, ordering, and retention decisions: [Messaging]({{< ref "system-design/elements/messaging" >}}).
 - Events that carry state lead to the replica and CQRS choices in [data across services]({{< ref "system-design/elements/data-across-services" >}}#queries-that-need-several-services).
 - Asynchronous flows need correlation IDs and [distributed tracing]({{< ref "system-design/elements/operating-services" >}}#observability).
 
@@ -95,7 +95,7 @@ Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-ou
 - [Public chat room]({{< ref "system-design/projects/chat-room" >}}): message delivery and an unresolved question about bursts exceeding a fixed buffer.
 - [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener-additional" >}}): an asynchronous bus for cache invalidation, replication, and expiry jobs alongside the synchronous redirect path.
 - [Ticketmaster]({{< ref "system-design/projects/ticketmaster" >}}): the payment processor notifies the booking service of the payment result rather than the booking service waiting on it.
-- **AI and RAG:** [design pressure]({{< ref "engineering/eng-exp/design-pressure" >}}) treats tools and retrieval as APIs with versioning, compatibility rules, error semantics, and normalization rules.
+- **AI and RAG:** [Design Pressure]({{< ref "engineering/eng-exp/design-pressure" >}}) treats tools and retrieval as APIs with versioning, compatibility rules, error semantics, and normalization rules.
 
 ## Gaps
 
@@ -109,7 +109,7 @@ Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-ou
 
 - [Remote procedure invocation](https://microservices.io/patterns/communication-style/rpi.html), [messaging](https://microservices.io/patterns/communication-style/messaging.html), [domain-specific protocol](https://microservices.io/patterns/communication-style/domain-specific.html), [idempotent consumer](https://microservices.io/patterns/communication-style/idempotent-consumer.html) -- microservices.io.
 - Richardson 2019, chapter 3. Newman 2021, chapters 4 and 5.
-- Detailed notes: [messaging]({{< ref "system-design/elements/messaging" >}}), [Kafka]({{< ref "engineering/topics/kafka" >}}), [streaming]({{< ref "engineering/topics/streaming" >}}), [EDA resources]({{< ref "engineering/topics/event-driven-architecture" >}}).
+- Detailed notes: [Messaging]({{< ref "system-design/elements/messaging" >}}), [Kafka]({{< ref "engineering/topics/kafka" >}}), [Streaming]({{< ref "engineering/topics/streaming" >}}), [EDA resources]({{< ref "engineering/topics/event-driven-architecture" >}}).
 
 ## Library sources
 

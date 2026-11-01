@@ -73,8 +73,6 @@ Open questions: What distinguishes the first two regimes? What other regimes cou
 
 Before defining more regimes, the basis for the first two needs to be clear.
 
-<a id="1-why-did-we-identify-two-regimes"></a>
-
 ### 1. Basis for the two regimes
 
 
@@ -185,8 +183,6 @@ This is an illustration of possible composition, not a required architecture.
 A delegated coordinator might invoke a bounded scheduling workflow. An investigation could generate a report that the user collaboratively edits. A user might suspend any of these and return to open-ended interaction.
 
 The application would need to preserve each workflow's relevant state and enforce the rules of the receiving regime. Context transfer does not automatically transfer permissions.
-
-<a id="5-a-conceptual-problem-we-should-resolve"></a>
 
 ### 5. An unresolved conceptual distinction
 

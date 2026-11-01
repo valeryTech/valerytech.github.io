@@ -145,11 +145,11 @@ Other common instances:
 ## Further links
 
 
-- Typeclassopedia, the Semigroup section: <https://wiki.haskell.org/Typeclassopedia#Semigroup>
-- Wikipedia, Semigroup: <https://en.wikipedia.org/wiki/Semigroup>
+- Typeclassopedia, the Semigroup section: [Typeclassopedia: Semigroup section](https://wiki.haskell.org/Typeclassopedia#Semigroup)
+- Wikipedia, [Semigroup](https://en.wikipedia.org/wiki/Semigroup)
 - Haskell Wiki, `Data.Semigroup`: <https://wiki.haskell.org/Data.Semigroup>
 
-See also: [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}) (an applicative can be described as a monoidal functor), [Category theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}), [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}), and [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) for checking the laws.
+See also: [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}) (an applicative can be described as a monoidal functor), [Category Theory]({{< ref "functional-programming/02-abstractions/category-theory" >}}), [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}), and [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) for checking the laws.
 
 ## Library sources
 

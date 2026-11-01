@@ -419,7 +419,7 @@ For this, we need to move state (for instance user session data) out of the web 
 ## example. IgotAnOffer interview with exMeta senior
 
 
-topic: "Design Google Search". link: <https://www.youtube.com/watch?v=CsXrdpjCVFA>
+topic: "Design Google Search". link: [Design Google Search video on YouTube](https://www.youtube.com/watch?v=CsXrdpjCVFA)
 
 interesting: interviewee start HLD with introducing an tier-based system. These tiers include: Web Tier, App Tier, Cache Tier, Data Tier, Batch compute platform (crawler), and Access Tier. Components include:
 
@@ -429,7 +429,7 @@ interesting: interviewee start HLD with introducing an tier-based system. These 
 
 to read, view ?
 
-<https://interviewing.io/blog/never-written-code-but-passed-google-system-design>
+[I've never written code, but I just passed a Google system design interview.](https://interviewing.io/blog/never-written-code-but-passed-google-system-design)
 
 # Model
 
@@ -447,9 +447,9 @@ Role: Any external services your system interacts with.
 
 🔹 Considerations:
 
-- Reliability & SLAs - Can you handle downtime of third-party services?
-- Latency & Performance - Are there rate limits or high response times?
-- Security & Compliance - Are APIs handling sensitive data?
+- Reliability & SLAs -- Can you handle downtime of third-party services?
+- Latency & Performance -- Are there rate limits or high response times?
+- Security & Compliance -- Are APIs handling sensitive data?
 
 # Second Level (iteration) Structures
 
@@ -802,71 +802,71 @@ System design interviews assess architecture skills, trade-off analysis, scalabi
 
 
 1. Over-Engineering Bias - Designing for extreme scale before confirming actual requirements.
-2. Feature Creep Bias - Adding unnecessary complexity by focusing on rare edge cases too early.
-3. Familiarity Bias - Favoring technologies or architectures you already know instead of evaluating alternatives.
+2. Feature Creep Bias -- Adding unnecessary complexity by focusing on rare edge cases too early.
+3. Familiarity Bias -- Favoring technologies or architectures you already know instead of evaluating alternatives.
 4. Not-Invented-Here Bias - Preferring to build custom solutions instead of using existing tools or frameworks.
-5. Shiny Object Syndrome - Choosing new or trendy technologies over proven, stable solutions.
+5. Shiny Object Syndrome -- Choosing new or trendy technologies over proven, stable solutions.
 6. Monolith vs. Microservices Bias - Defaulting to microservices without considering the benefits of monolithic architectures.
 7. Cloud-Native Assumption - Assuming every system must be cloud-based, ignoring on-premise or hybrid solutions.
-8. Scaling Prematurely Bias - Optimizing for millions of users when the system does not need it.
-9. Reinventing the Wheel Bias - Designing new algorithms or protocols when reliable ones already exist.
+8. Scaling Prematurely Bias -- Optimizing for millions of users when the system does not need it.
+9. Reinventing the Wheel Bias -- Designing new algorithms or protocols when reliable ones already exist.
 10. The "Best Tool" Bias - Believing that a single database, programming language, or framework is the best for all situations.
 
 ## 2. Decision-Making & Trade-Off Biases
 
 
-1. Confirmation Bias - Seeking only evidence that supports your initial design choices while ignoring contradictions.
-2. Recency Bias - Overweighting the latest trends or experiences instead of considering older, well-established solutions.
-3. Sunk Cost Fallacy - Sticking with a bad design choice because you've already invested time in it.
-4. Status Quo Bias - Resisting changes to an existing design, even when improvements are evident.
-5. Optimism Bias - Underestimating system failures and assuming everything will work as expected.
-6. Pessimism Bias - Assuming worst-case scenarios for every decision, leading to overcomplicated designs.
-7. Risk Aversion Bias - Avoiding any risk in design, even when a higher-risk approach would provide better performance.
-8. Authority Bias - Blindly following the interviewer's suggestions without critically evaluating them.
-9. Groupthink Bias - Defaulting to conventional or widely accepted architectures without questioning their applicability.
-10. Default Bias - Accepting the first reasonable solution without exploring alternatives.
+1. Confirmation Bias -- Seeking only evidence that supports your initial design choices while ignoring contradictions.
+2. Recency Bias -- Overweighting the latest trends or experiences instead of considering older, well-established solutions.
+3. Sunk Cost Fallacy -- Sticking with a bad design choice because you've already invested time in it.
+4. Status Quo Bias -- Resisting changes to an existing design, even when improvements are evident.
+5. Optimism Bias -- Underestimating system failures and assuming everything will work as expected.
+6. Pessimism Bias -- Assuming worst-case scenarios for every decision, leading to overcomplicated designs.
+7. Risk Aversion Bias -- Avoiding any risk in design, even when a higher-risk approach would provide better performance.
+8. Authority Bias -- Blindly following the interviewer's suggestions without critically evaluating them.
+9. Groupthink Bias -- Defaulting to conventional or widely accepted architectures without questioning their applicability.
+10. Default Bias -- Accepting the first reasonable solution without exploring alternatives.
 
 ## 3. Scalability & Performance Biases
 
 
-1. Big Data Bias - Assuming that all systems require distributed storage and advanced data partitioning.
-2. Strong Consistency Bias - Over-prioritizing data consistency at the expense of availability and scalability.
-3. Eventual Consistency Bias - Assuming that every large-scale system should prioritize availability over consistency.
+1. Big Data Bias -- Assuming that all systems require distributed storage and advanced data partitioning.
+2. Strong Consistency Bias -- Over-prioritizing data consistency at the expense of availability and scalability.
+3. Eventual Consistency Bias -- Assuming that every large-scale system should prioritize availability over consistency.
 4. Zero-Downtime Bias - Designing for zero downtime even when some downtime would be acceptable.
-5. Latency Insensitivity Bias - Ignoring real-world latency issues in distributed systems.
-6. Throughput Overhead Bias - Assuming higher throughput is always better without considering cost.
-7. Redundancy Overkill Bias - Adding too much replication or backups, leading to unnecessary resource consumption.
-8. Caching Dependency Bias - Relying too heavily on caching without considering cache invalidation complexities.
+5. Latency Insensitivity Bias -- Ignoring real-world latency issues in distributed systems.
+6. Throughput Overhead Bias -- Assuming higher throughput is always better without considering cost.
+7. Redundancy Overkill Bias -- Adding too much replication or backups, leading to unnecessary resource consumption.
+8. Caching Dependency Bias -- Relying too heavily on caching without considering cache invalidation complexities.
 9. Over-Sharding Bias - Assuming sharding is necessary even for small-scale applications.
-10. Premature Optimization Bias - Optimizing performance before identifying real bottlenecks.
+10. Premature Optimization Bias -- Optimizing performance before identifying real bottlenecks.
 
 ## 4. Security & Reliability Biases
 
 
-1. Perceived Security Bias - Assuming a system is secure just because best practices were followed.
-2. Compliance Overhead Bias - Overcomplicating security measures when simple protections would suffice.
-3. Single Point of Failure Neglect - Forgetting to address failure points in system design.
-4. Overconfidence in Failover Mechanisms - Assuming that redundancy alone guarantees high availability.
-5. Observability Blindness - Ignoring the need for logging, monitoring, and real-time alerts.
-6. False Sense of API Security - Assuming that API authentication alone prevents abuse.
-7. Ignoring User Privacy Bias - Not considering data privacy regulations like GDPR and HIPAA.
-8. Firewall and Perimeter Bias - Relying solely on network security measures instead of a zero-trust approach.
-9. Ignoring Insider Threat Bias - Assuming security risks come only from external threats.
+1. Perceived Security Bias -- Assuming a system is secure just because best practices were followed.
+2. Compliance Overhead Bias -- Overcomplicating security measures when simple protections would suffice.
+3. Single Point of Failure Neglect -- Forgetting to address failure points in system design.
+4. Overconfidence in Failover Mechanisms -- Assuming that redundancy alone guarantees high availability.
+5. Observability Blindness -- Ignoring the need for logging, monitoring, and real-time alerts.
+6. False Sense of API Security -- Assuming that API authentication alone prevents abuse.
+7. Ignoring User Privacy Bias -- Not considering data privacy regulations like GDPR and HIPAA.
+8. Firewall and Perimeter Bias -- Relying solely on network security measures instead of a zero-trust approach.
+9. Ignoring Insider Threat Bias -- Assuming security risks come only from external threats.
 10. Trusting Third-Party Services Blindly - Failing to account for the risks of API rate limits, outages, or security vulnerabilities in third-party integrations.
 
 ## 5. Communication & Collaboration Biases
 
 
-1. Jargon Overuse Bias - Using overly technical language without confirming if the interviewer understands it.
-2. Excessive Detail Bias - Spending too much time on low-level implementation details instead of high-level architecture.
-3. Lack of Clarification Bias - Assuming system requirements without asking enough questions.
-4. Rigid Thinking Bias - Refusing to adapt your design after receiving feedback.
-5. Presentation Bias - Prioritizing how an idea sounds rather than how well it works.
-6. Overconfidence Bias - Overstating your expertise or making definitive statements without verifying facts.
-7. Underconfidence Bias - Hesitating to make firm design decisions out of fear of being wrong.
-8. Linear Thinking Bias - Failing to think in terms of parallelism, concurrency, or event-driven architectures.
-9. Ignoring Business Requirements Bias - Focusing purely on technical design while neglecting business needs.
-10. Time Mismanagement Bias - Spending too much time on one part of the system and running out of time for critical sections.
+1. Jargon Overuse Bias -- Using overly technical language without confirming if the interviewer understands it.
+2. Excessive Detail Bias -- Spending too much time on low-level implementation details instead of high-level architecture.
+3. Lack of Clarification Bias -- Assuming system requirements without asking enough questions.
+4. Rigid Thinking Bias -- Refusing to adapt your design after receiving feedback.
+5. Presentation Bias -- Prioritizing how an idea sounds rather than how well it works.
+6. Overconfidence Bias -- Overstating your expertise or making definitive statements without verifying facts.
+7. Underconfidence Bias -- Hesitating to make firm design decisions out of fear of being wrong.
+8. Linear Thinking Bias -- Failing to think in terms of parallelism, concurrency, or event-driven architectures.
+9. Ignoring Business Requirements Bias -- Focusing purely on technical design while neglecting business needs.
+10. Time Mismanagement Bias -- Spending too much time on one part of the system and running out of time for critical sections.
 - A strong candidate actively challenges their biases and remains flexible in their approach.
 
 # **Naming an Approach That Accounts for Users and Their Needs**

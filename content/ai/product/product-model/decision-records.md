@@ -10,7 +10,7 @@ The apparatus should use records in the same family as ADRs: lightweight, durabl
 
 A practical apparatus has the following parts.
 
-### 1. Core record types
+## 1. Core record types
 
 
 Three specialized records, all short and ADR-like in spirit:
@@ -59,7 +59,7 @@ Required fields:
 
 These three cover the critical moments: adopting/killing methods, changing the problem, and updating belief about possibility.
 
-### 2. Supporting log (not a full tracking system)
+## 2. Supporting log (not a full tracking system)
 
 
 **Experiment Log entries** that are forced to feed the records above.
@@ -75,7 +75,7 @@ Minimal required fields per significant experiment:
 
 The log is the raw material; the AR / RR / PJ records are the durable decisions.
 
-### 3. Lightweight protocol (the actual operating rule)
+## 3. Lightweight protocol (the actual operating rule)
 
 
 - Any decision to **kill an approach** requires a completed Approach Record.
@@ -85,7 +85,7 @@ The log is the raw material; the AR / RR / PJ records are the durable decisions.
 - They live in the same place the team already looks for technical decisions (next to ADRs or in the same docs system).
 - Review is lightweight: the record is the review. No separate ceremony unless the decision has large resource consequences.
 
-### 4. Naming and placement
+## 4. Naming and placement
 
 
 Avoid soft process language. Treat them as engineering artifacts:
@@ -97,7 +97,7 @@ Avoid soft process language. Treat them as engineering artifacts:
 
 The set can be called **Decision Records for Uncertainty**, or each record type can keep its own name. The important point is that the records are first-class, searchable, and linked.
 
-### 5. Why this works
+## 5. Why this works
 
 
 ADRs capture architectural choice under relatively stable requirements.

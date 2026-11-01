@@ -348,10 +348,10 @@ Each tool has an exposure: `Direct`, `Deferred`, `DeferredModelOnly`, `DirectMod
 2. **Parallelism**: tools that support parallel runs take a read lock, the rest take a write lock (`core/src/tools/parallel.rs:298-310`). `exec_command`, `write_stdin`, `view_image`, `tool_search` and the MCP resource tools are parallel.
 3. **Registry dispatch** (`core/src/tools/registry.rs:760`): look up the tool, check the payload type, resolve the environment, run PreToolUse hooks, run the guardian review if configured, call the handler, run PostToolUse hooks (they can block or replace the result), emit telemetry.
 4. **Orchestrator** (`core/src/tools/orchestrator.rs:125`), used by `exec_command` and `apply_patch`:
-   1. Gets the approval requirement from exec policy rules (`core/src/exec_policy.rs:345`).
-   2. Asks for approval in this order: PermissionRequest hooks, the guardian auto-reviewer, then the user.
-   3. Picks the sandbox: Seatbelt on macOS, seccomp plus bubblewrap on Linux, a restricted token or MXC on Windows, or none.
-   4. Runs the command. If the sandbox denies it, Codex can ask again and retry without the sandbox.
+	1. Gets the approval requirement from exec policy rules (`core/src/exec_policy.rs:345`).
+	2. Asks for approval in this order: PermissionRequest hooks, the guardian auto-reviewer, then the user.
+	3. Picks the sandbox: Seatbelt on macOS, seccomp plus bubblewrap on Linux, a restricted token or MXC on Windows, or none.
+	4. Runs the command. If the sandbox denies it, Codex can ask again and retry without the sandbox.
 5. The result becomes a response item and is added to history.
 
 ### Approval and sandbox settings
@@ -376,9 +376,9 @@ Each tool has an exposure: `Direct`, `Deferred`, `DeferredModelOnly`, `DirectMod
 - Sub-agents are started with the multi-agent tools. The v2 path is `tools/handlers/multi_agents_v2/spawn.rs:124`, then `thread_spawn::spawn` (`core/src/thread_spawn.rs:99`).
 - The child config applies an agent role (`core/src/agent/role.rs`). A role can change only a few settings, and it can't replace the base instructions ([Agent roles]({{< ref "ai-engineering/agents/harnesses/codex-base-instructions" >}}#agent-roles)). The session source is set to `SubAgent` with the parent, depth and agent path.
 - `spawn_agent_internal` (`core/src/agent/control/spawn.rs:659`):
-  1. Reserves a slot within the `max_threads` and depth limits.
-  2. Prepares forked or fresh history.
-  3. Calls `ThreadManager::spawn_child_thread`, the same spawn path as a normal session, with inherited auth, exec policy and cache key.
-  4. Sends the first input.
+	1. Reserves a slot within the `max_threads` and depth limits.
+	2. Prepares forked or fresh history.
+	3. Calls `ThreadManager::spawn_child_thread`, the same spawn path as a normal session, with inherited auth, exec policy and cache key.
+	4. Sends the first input.
 - When the child's turn ends, the parent gets a completion message (`core/src/agent/control/completion.rs:28`).
 - Sub-agents do not run memory extraction.

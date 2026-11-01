@@ -17,24 +17,24 @@ The [original topic collection]({{< ref "system-design/archive/building-blocks-v
 | Hub | Question |
 | --- | --- |
 | [Architecture style and service boundaries]({{< ref "system-design/elements/boundaries" >}}) | One deployable unit or several? Where do the boundaries go? How do you migrate? |
-| [Data across services]({{< ref "system-design/elements/data-across-services" >}}) | Who owns the data? How do operations and queries span services? How are changes published reliably? |
+| [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}) | Who owns the data? How do operations and queries span services? How are changes published reliably? |
 | [Service communication]({{< ref "system-design/elements/communication" >}}) | Synchronous or asynchronous? Which mechanism? How are duplicates handled? |
 | [The request path]({{< ref "system-design/elements/request-path" >}}) | How does a request reach a healthy instance of the right service? |
-| [Containing failure]({{< ref "system-design/elements/containing-failure" >}}) | How do you stop a slow or failing dependency from spreading? |
-| [Data at scale]({{< ref "system-design/elements/data-at-scale" >}}) | How do you store and serve more than one machine can? |
-| [Operating services]({{< ref "system-design/elements/operating-services" >}}) | What does each service need to be deployed, configured, observed, secured, and tested? |
+| [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}) | How do you stop a slow or failing dependency from spreading? |
+| [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}) | How do you store and serve more than one machine can? |
+| [Operating Services]({{< ref "system-design/elements/operating-services" >}}) | What does each service need to be deployed, configured, observed, secured, and tested? |
 
 **Where the microservices.io groups went:**
 
 | microservices.io group | Hub |
 | --- | --- |
 | Architectural style, service boundaries, refactoring to services | [Boundaries]({{< ref "system-design/elements/boundaries" >}}) |
-| Service collaboration, transactional messaging | [Data across services]({{< ref "system-design/elements/data-across-services" >}}) |
+| Service collaboration, transactional messaging | [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}) |
 | Communication styles | [Communication]({{< ref "system-design/elements/communication" >}}) |
-| External API, service discovery | [Request path]({{< ref "system-design/elements/request-path" >}}) |
-| Reliability | [Containing failure]({{< ref "system-design/elements/containing-failure" >}}), extended with Nygard's and Newman's patterns |
-| Deployment, cross-cutting concerns, observability, security, testing, UI design | [Operating services]({{< ref "system-design/elements/operating-services" >}}) |
-| *(not covered)* | [Data at scale]({{< ref "system-design/elements/data-at-scale" >}}): replication, partitioning, caching, identifiers, rate limiting |
+| External API, service discovery | [Request Path]({{< ref "system-design/elements/request-path" >}}) |
+| Reliability | [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}), extended with Nygard's and Newman's patterns |
+| Deployment, cross-cutting concerns, observability, security, testing, UI design | [Operating Services]({{< ref "system-design/elements/operating-services" >}}) |
+| *(not covered)* | [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}): replication, partitioning, caching, identifiers, rate limiting |
 
 ## Hub and pattern format
 
@@ -49,7 +49,7 @@ The [original topic collection]({{< ref "system-design/archive/building-blocks-v
 6. **Gaps:** what is not yet understood or written.
 7. **Sources:** the pattern pages and book chapters.
 
-**A single pattern** gets its own note only when there is substantial material for it, as with the [API gateway]({{< ref "system-design/elements/api-gateway" >}}) and [messaging]({{< ref "system-design/elements/messaging" >}}). Until then it lives as a row in its hub. For such a note, record:
+**A single pattern** gets its own note only when there is substantial material for it, as with the [Api_gateway]({{< ref "system-design/elements/api-gateway" >}}) and [Messaging]({{< ref "system-design/elements/messaging" >}}). Until then it lives as a row in its hub. For such a note, record:
 
 1. The problem it solves and a concrete use case.
 2. How it works, including the important request or data flow.
@@ -70,7 +70,7 @@ Four chains run through the hubs. Each step is a consequence of the one before.
 3. **Running many services:** [more deployable units]({{< ref "system-design/elements/boundaries" >}}) -> [a deployment platform]({{< ref "system-design/elements/operating-services" >}}#deployment) -> [a chassis or a service mesh]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns) -> [distributed tracing]({{< ref "system-design/elements/operating-services" >}}#observability).
 4. **Growing one service's data:** [growth]({{< ref "system-design/nfr/scalability" >}}) -> [replication, partitioning, and caching]({{< ref "system-design/elements/data-at-scale" >}}) -> [consistency questions]({{< ref "system-design/nfr/consistency" >}}) -> [reliable propagation to caches and replicas]({{< ref "system-design/elements/data-across-services" >}}#publishing-changes-reliably).
 
-For prototyping, [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) gives one starting option per hub, the signal to move past it, and the technique that tests the move. [Common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}) lists the pairs that recur across hubs.
+For prototyping, [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) gives one starting option per hub, the signal to move past it, and the technique that tests the move. [Common Trade Offs]({{< ref "system-design/elements/common-trade-offs" >}}) lists the pairs that recur across hubs.
 
 ## Same patterns in other domains
 
@@ -79,14 +79,14 @@ The same forces recur at other scales and in other kinds of systems. Some rows b
 
 | System design pattern | In the engineering notes | In AI and RAG designs |
 | --- | --- | --- |
-| Start with one deployable unit and split when a force demands it ([boundaries]({{< ref "system-design/elements/boundaries" >}})) | Model concrete workflows before committing to shared abstractions: [premature abstraction]({{< ref "engineering/premature-abstraction" >}}), [YAGNI]({{< ref "engineering/architecture/yagni" >}}), [AHA]({{< ref "engineering/aha-programming" >}}). The same force acts at module scale, as in Khononov's view of coupling at every scale. | Independently testable modules in the [boundary map for a RAG and tool assistant]({{< ref "engineering/eng-exp/design-pressure" >}}) |
-| Contracts between services and consumer-driven contract tests ([communication]({{< ref "system-design/elements/communication" >}}#contracts-and-api-design), [testing]({{< ref "system-design/elements/operating-services" >}}#testing)) | Contracts and invariants in the [test strategy]({{< ref "engineering/topics/tests/test-strategy-foundations" >}}) | Tools and retrieval treated as versioned APIs with error semantics; tests as an architectural force ([design pressure]({{< ref "engineering/eng-exp/design-pressure" >}})) |
-| One entry point that routes and applies shared policies ([request path]({{< ref "system-design/elements/request-path" >}})) | n/a | The request-and-routing module of the boundary map; layers 0-2 of the RAG runtime: normalization, policy, routing and planning |
-| Bounded retries, fallbacks, and caps ([containing failure]({{< ref "system-design/elements/containing-failure" >}})) | n/a | Bounded retries in the tool runtime; fallback or repair after invariant checks; the recursion limit in the deterministic agent template |
+| Start with one deployable unit and split when a force demands it ([Boundaries]({{< ref "system-design/elements/boundaries" >}})) | Model concrete workflows before committing to shared abstractions: [Premature Abstraction]({{< ref "engineering/premature-abstraction" >}}), [Yagni]({{< ref "engineering/architecture/yagni" >}}), [AHA]({{< ref "engineering/aha-programming" >}}). The same force acts at module scale, as in Khononov's view of coupling at every scale. | Independently testable modules in the [boundary map for a RAG and tool assistant]({{< ref "engineering/eng-exp/design-pressure" >}}) |
+| Contracts between services and consumer-driven contract tests ([communication]({{< ref "system-design/elements/communication" >}}#contracts-and-api-design), [testing]({{< ref "system-design/elements/operating-services" >}}#testing)) | Contracts and invariants in the [test strategy]({{< ref "engineering/topics/tests/test-strategy-foundations" >}}) | Tools and retrieval treated as versioned APIs with error semantics; tests as an architectural force ([Design Pressure]({{< ref "engineering/eng-exp/design-pressure" >}})) |
+| One entry point that routes and applies shared policies ([Request Path]({{< ref "system-design/elements/request-path" >}})) | n/a | The request-and-routing module of the boundary map; layers 0-2 of the RAG runtime: normalization, policy, routing and planning |
+| Bounded retries, fallbacks, and caps ([Containing Failure]({{< ref "system-design/elements/containing-failure" >}})) | n/a | Bounded retries in the tool runtime; fallback or repair after invariant checks; the recursion limit in the deterministic agent template |
 | System of record versus a derived view ([data across services]({{< ref "system-design/elements/data-across-services" >}}#queries-that-need-several-services)) | n/a | "Authoritative tools beat doc retrieval" in the RAG runtime; the index with freshness targets, versioning, and invalidation. Reading the index as a CQRS-style read model is an interpretation. |
-| Service template versus microservice chassis; externalized configuration ([operating services]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns)) | [Golden paths]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}), which prefer copied scaffolding to an internal library; [Twelve-Factor]({{< ref "engineering/platform/twelve-factor" >}}); the service-readiness layer of the [operating model]({{< ref "engineering/platform/standards-layers" >}}) | The observable RAG, deterministic agent, and eval harness templates |
+| Service template versus microservice chassis; externalized configuration ([operating services]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns)) | [Golden paths]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}), which prefer copied scaffolding to an internal library; [Twelve Factor]({{< ref "engineering/platform/twelve-factor" >}}); the service-readiness layer of the [operating model]({{< ref "engineering/platform/standards-layers" >}}) | The observable RAG, deterministic agent, and eval harness templates |
 | Gradual release and change tracking ([operating services]({{< ref "system-design/elements/operating-services" >}}#deployment)) | Feature flags, canaries, and dark launches in the [lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}) and [deployment notes]({{< ref "engineering/platform/deployment" >}}) | Blast-radius control through versioned prompts, models, indexes, and tool schemas released behind flags |
-| Start simple and move on when a trigger fires ([defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}})) | Choose the technique by the risk being reduced ([lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}#a-useful-decision-rule)) | The hierarchy of needs in the RAG runtime: no AI, then an LLM transformation, then a system of record, then retrieval, then ask or abstain |
+| Start simple and move on when a trigger fires ([Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}})) | Choose the technique by the risk being reduced ([lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}#a-useful-decision-rule)) | The hierarchy of needs in the RAG runtime: no AI, then an LLM transformation, then a system of record, then retrieval, then ask or abstain |
 
 ## Patterns and techniques share one record
 
@@ -107,9 +107,9 @@ That shared shape is what lets the [flow]({{< ref "system-design" >}}) alternate
 
 
 - **Hubs** in this folder answer *which option, and why*.
-- **Pattern notes** in this folder ([API gateway]({{< ref "system-design/elements/api-gateway" >}}), [messaging]({{< ref "system-design/elements/messaging" >}}), [control plane]({{< ref "system-design/elements/control-plane" >}})) hold an option or a cross-hub pattern that has grown beyond a table row.
-- **Platform notes** in [platform and delivery]({{< ref "engineering/platform" >}}) hold the mechanisms behind [operating services]({{< ref "system-design/elements/operating-services" >}}): Twelve-Factor, deployment, infrastructure as code, Kubernetes, GitOps, and developer experience.
-- **Engineering topic notes** hold how a mechanism works: [Kafka]({{< ref "engineering/topics/kafka" >}}), [DynamoDB]({{< ref "engineering/topics/dynamodb" >}}), [partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}), [replication]({{< ref "engineering/distributed-systems/replication" >}}), [caching]({{< ref "engineering/topics/caching" >}}), [transactions]({{< ref "engineering/distributed-systems/transactions" >}}), [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}), and [distributed systems]({{< ref "engineering/distributed-systems/reading" >}}).
+- **Pattern notes** in this folder ([Api_gateway]({{< ref "system-design/elements/api-gateway" >}}), [Messaging]({{< ref "system-design/elements/messaging" >}}), [Control Plane]({{< ref "system-design/elements/control-plane" >}})) hold an option or a cross-hub pattern that has grown beyond a table row.
+- **Platform notes** in [platform and delivery]({{< ref "engineering/platform" >}}) hold the mechanisms behind [Operating Services]({{< ref "system-design/elements/operating-services" >}}): Twelve-Factor, deployment, infrastructure as code, Kubernetes, GitOps, and developer experience.
+- **Engineering topic notes** hold how a mechanism works: [Kafka]({{< ref "engineering/topics/kafka" >}}), [Dynamodb]({{< ref "engineering/topics/dynamodb" >}}), [Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}), [Replication]({{< ref "engineering/distributed-systems/replication" >}}), [Caching]({{< ref "engineering/topics/caching" >}}), [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}), [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}), and [distributed systems]({{< ref "engineering/distributed-systems/reading" >}}).
 - **Distributed-systems notes** in [distributed systems]({{< ref "engineering/distributed-systems" >}}) hold the theory behind the data hubs: system models, time and order, consistency guarantees and CAP, consensus, coordination avoidance, distributed computation, and verification.
 - **Quality requirements** live in the [NFR notes]({{< ref "system-design/nfr" >}}), which link to the hubs that address each quality.
 
@@ -118,7 +118,7 @@ That shared shape is what lets the [flow]({{< ref "system-design" >}}) alternate
 
 Common design templates, such as a CRUD service and a management interface, do not fit a single hub yet. The control plane now has its own [pattern note]({{< ref "system-design/elements/control-plane" >}}). Each hub lists its own gaps.
 
-Each hub's options table holds the trade-offs for its own question. The ones that recur across hubs, such as consistency versus latency, SQL versus NoSQL, and push versus pull, are collected in [common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}), with the signal that tips each one.
+Each hub's options table holds the trade-offs for its own question. The ones that recur across hubs, such as consistency versus latency, SQL versus NoSQL, and push versus pull, are collected in [Common Trade Offs]({{< ref "system-design/elements/common-trade-offs" >}}), with the signal that tips each one.
 
 Use [practice]({{< ref "system-design/interview/study-and-practice" >}}#a-practice-loop) to decide which gap to study next.
 

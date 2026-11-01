@@ -11,19 +11,19 @@ Extended exploration of user archetypes, consistency, replication, the transacti
 Other to consider:
 
 - Document how deactivate/expire signals propagate to caches and storage to bound staleness and avoid serving dead links beyond the intended window
-- Adopt cache‑aside on the app with optional background warm on create, and define stale‑on‑error behavior for resilience during short origin disruptions
-- Specify edge and regional cache TTLs for hot keys, negative‑cache TTLs for 404/410, and cache‑bust rules on deactivate/expire to ensure user‑visible correctness with minimal origin hits
-- Observability: Emit edge and app metrics for success rate, latency (p95/p99), dependency health, and burn‑rate, add synthetic checks for top links, and define alert thresholds aligned to SLOs.
-- Provide concise runbooks for cache hot‑key misses, regional degradations, store throttling, and rollback procedures to accelerate MTTR within the error budget
+- Adopt cache-aside on the app with optional background warm on create, and define stale-on-error behavior for resilience during short origin disruptions
+- Specify edge and regional cache TTLs for hot keys, negative-cache TTLs for 404/410, and cache-bust rules on deactivate/expire to ensure user-visible correctness with minimal origin hits
+- Observability: Emit edge and app metrics for success rate, latency (p95/p99), dependency health, and burn-rate, add synthetic checks for top links, and define alert thresholds aligned to SLOs.
+- Provide concise runbooks for cache hot-key misses, regional degradations, store throttling, and rollback procedures to accelerate MTTR within the error budget
 - Capture cutover mechanics such as DNS/health‑based routing, data replication mode, and rollback safety so the path to 99.99% is real but gated
 
 API and contract polish
 
-- Add versioning guidance, structured error taxonomy, idempotency keys for create, and rate‑limit headers to make client integration predictable and safe under retries
+- Add versioning guidance, structured error taxonomy, idempotency keys for create, and rate-limit headers to make client integration predictable and safe under retries
 
 Testing and resilience:
 
-- Define load test profiles for peak QPS and cache‑hit ratios that map to the latency SLO, and introduce lightweight chaos tests against cache and store failures to validate graceful degradation.
+- Define load test profiles for peak QPS and cache-hit ratios that map to the latency SLO, and introduce lightweight chaos tests against cache and store failures to validate graceful degradation.
 - Add canary and rollback guidance to reduce blast radius on changes that affect the hot redirect path
 - Add safe defaults for TTLs, retries, and backoff policies to prevent thundering herds during partial outages
 

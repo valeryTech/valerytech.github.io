@@ -11,15 +11,13 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 <!-- Editorial navigation added on 2026-04-01. The retained passage begins below. -->
 
-The complete question and reply follow the composable-workspace dialogue. The user asks how multiple document and query representations could support retrieval and inspection without making a dense cube the physical storage model.
+The complete question and reply follow the [composable-workspace dialogue]({{< ref "ai/design-research/interactive-systems/03-composable-investigation-workspaces" >}}). The user asks how multiple document and query representations could support retrieval and inspection without making a dense cube the physical storage model.
 
-The passage is kept in the investigation collection because it develops representations, retrieval passes, candidate histories, and coverage records. The interactive systems index includes it in the dialogue's reading order because the proposed inspection views also belong to interface design.
+The passage is kept in the investigation collection because it develops representations, retrieval passes, candidate histories, and coverage records. The [interactive systems index]({{< ref "ai/design-research/00-index" >}}) includes it in the dialogue's reading order because the proposed inspection views also belong to interface design.
 
-Related notes cover [investigation algebra]({{< ref "ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra" >}}), [epistemic contracts]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}), and [provenance]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}). The comments explain the difference between a recorded screening operation and evidence completeness.
+Related notes cover [investigation algebra]({{< ref "ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra" >}}), [epistemic contracts]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}), and [provenance]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}).
 
-The reassembly map records the original range and checksums. The original heading is retained below.
-
-<a id="original-dialogue"></a>
+The [Reassembly Map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}) records the original range and checksums. The original heading is retained below.
 
 ## Initial questions and proposals
 
@@ -33,8 +31,6 @@ The author's existing approach uses tree-like structures with summaries and hypo
 The author also processes a query into several representations. Search could then return several results rather than one.
 
 Open analogy: Would this resemble OLAP cubes or another structure?
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The LLM response supports the OLAP-cube analogy with a caveat: use it mainly as a logical model and inspection surface. It tentatively advises against physically storing retrieval as one giant dense cube because the cross-product explodes.
 

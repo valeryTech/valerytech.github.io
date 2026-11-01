@@ -8,7 +8,7 @@ linkTitle: "Risks, Assumptions, Evidence"
 
 This is the canonical risk model for product decisions in these notes.
 
-It explains how to turn uncertainty into specific assumptions, gather evidence for a decision, and decide what to commit to next. It complements the broader [`operating model`]({{< ref "ai/product/operating-model/operating-model" >}}).
+It explains how to turn uncertainty into specific assumptions, gather evidence for a decision, and decide what to commit to next. It complements the broader [Operating Model]({{< ref "ai/product/operating-model/operating-model" >}}).
 
 The model has three parts:
 
@@ -97,7 +97,7 @@ Value and intended change are also different. Value asks whether someone will ch
 
 Record the link from solution behavior to the intended change as a separate assumption, not as part of the Value dimension.
 
-The [`solution utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) can make claims about one solution more precise. It does not replace this wider scan.
+The [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}) can make claims about one solution more precise. It does not replace this wider scan.
 
 ### 3. Production and operation
 
@@ -153,7 +153,7 @@ Do not investigate every uncertain assumption. Start with the ones that could ch
 ## Learning and implementation
 
 
-Work done mainly to reduce uncertainty is learning work. Work done mainly to meet a known product or production obligation is implementation work. The same concern may produce both kinds of work. The difference is their purpose, not when they happen. See [`discovery-and-delivery.md`]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}).
+Work done mainly to reduce uncertainty is learning work. Work done mainly to meet a known product or production obligation is implementation work. The same concern may produce both kinds of work. The difference is their purpose, not when they happen. See [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}).
 
 ## Decision loop
 
@@ -199,12 +199,12 @@ Before increasing evidence work, ask whether the next commitment can be smaller,
 
 A decision to continue should state what is being committed to next. It may be another investigation, an implementation step, a limited release, or supported production use. Evidence can justify a limited commitment without removing all uncertainty. The evidence needed depends on the possible consequences, scale, reversibility, and ability to detect failure.
 
-For production use, record what people may rely on, the obligations that apply, the uncertainty being accepted, and how the commitment can be limited, observed, and reconsidered. Use the practical [`production commitment`]({{< ref "ai/product/operating-model/production-commitment" >}}) template.
+For production use, record what people may rely on, the obligations that apply, the uncertainty being accepted, and how the commitment can be limited, observed, and reconsidered. Use the practical [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}) template.
 
 ## Production evidence
 
 
-Production may provide evidence about product behavior, Usability, Value, the intended change, or the broader result. Evidence for one does not establish the others. Production also shows whether its obligations and harm limits hold. See [`Production is part of learning`]({{< ref "ai/product/operating-model/operating-model" >}}#8-production-is-part-of-learning) and the [`solution utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
+Production may provide evidence about product behavior, Usability, Value, the intended change, or the broader result. Evidence for one does not establish the others. Production also shows whether its obligations and harm limits hold. See [`Production is part of learning`]({{< ref "ai/product/operating-model/operating-model" >}}#8-production-is-part-of-learning) and the [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
 
 ## Compact record
 
@@ -243,4 +243,4 @@ Keep the record proportional to the decision. A small reversible choice may need
 ## Supporting material
 
 
-The longer [`risk-areas-reassembled.md`]({{< ref "ai/product/risk-areas/risk-areas-reassembled" >}}) explains the source frameworks, differences in terminology, and the reasoning behind this model. It is research support, not the canonical operating guidance.
+The longer [Risk Areas Reassembled]({{< ref "ai/product/risk-areas/risk-areas-reassembled" >}}) explains the source frameworks, differences in terminology, and the reasoning behind this model. It is research support, not the canonical operating guidance.

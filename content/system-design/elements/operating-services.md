@@ -28,7 +28,7 @@ Interviews usually touch this only briefly. It grows with the number of services
 | Serverless deployment | The platform runs code per request or event. | Spiky or low traffic; no servers to manage. | Cold starts, execution limits, platform lock-in. |
 | Service deployment platform | An automated platform provides a service abstraction: deploy, scale, discover, roll out. | Many services. | Platform to adopt and operate. |
 
-Release techniques such as blue/green deployment, canary releases, feature flags, and parallel runs are in the [deployment notes]({{< ref "engineering/platform/deployment" >}}). Platform details are in [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}), [infrastructure as code]({{< ref "engineering/platform/infrastructure-as-code" >}}), and [GitOps]({{< ref "engineering/platform/gitops" >}}); the [platform and delivery]({{< ref "engineering/platform" >}}) notes collect them. The [code deployment case]({{< ref "system-design/projects/code-deployment" >}}) designs such a system.
+Release techniques such as blue/green deployment, canary releases, feature flags, and parallel runs are in the [deployment notes]({{< ref "engineering/platform/deployment" >}}). Platform details are in [Kubernetes]({{< ref "engineering/platform/kubernetes" >}}), [Infrastructure As Code]({{< ref "engineering/platform/infrastructure-as-code" >}}), and [Gitops]({{< ref "engineering/platform/gitops" >}}); the [platform and delivery]({{< ref "engineering/platform" >}}) notes collect them. The [code deployment case]({{< ref "system-design/projects/code-deployment" >}}) designs such a system.
 
 ## Cross-cutting concerns
 
@@ -96,27 +96,27 @@ No notes yet; see Newman, chapter 14.
 
 - Health checks feed [the request path]({{< ref "system-design/elements/request-path" >}}#service-discovery).
 - Tracing is what makes [asynchronous communication]({{< ref "system-design/elements/communication" >}}) diagnosable.
-- Access tokens are issued at the [API gateway]({{< ref "system-design/elements/api-gateway" >}}).
+- Access tokens are issued at the [Api_gateway]({{< ref "system-design/elements/api-gateway" >}}).
 - Contract tests protect the [contracts]({{< ref "system-design/elements/communication" >}}#contracts-and-api-design) between services.
-- A deployment platform, a mesh, and feature flags are each managed through a [control plane]({{< ref "system-design/elements/control-plane" >}}).
+- A deployment platform, a mesh, and feature flags are each managed through a [Control Plane]({{< ref "system-design/elements/control-plane" >}}).
 - Solving these needs once for every team is [platform engineering]({{< ref "engineering/platform/developer-experience" >}}).
 
 ## Seen in cases
 
 
-- [Code deployment]({{< ref "system-design/projects/code-deployment" >}}): a case about building the deployment system itself.
-- **AI and RAG:** the [golden-path templates]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}) (observable RAG, deterministic agent, eval harness) are service templates. They choose copied scaffolding over a shared library and read configuration from the environment. [Design pressure]({{< ref "engineering/eng-exp/design-pressure" >}}) asks for observability by design, replayable runs, and gradual release of versioned prompts, models, indexes, and tool schemas.
+- [Code_deployment]({{< ref "system-design/projects/code-deployment" >}}): a case about building the deployment system itself.
+- **AI and RAG:** the [golden-path templates]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}) (observable RAG, deterministic agent, eval harness) are service templates. They choose copied scaffolding over a shared library and read configuration from the environment. [Design Pressure]({{< ref "engineering/eng-exp/design-pressure" >}}) asks for observability by design, replayable runs, and gradual release of versioned prompts, models, indexes, and tool schemas.
 
 ## Sources
 
 
 - microservices.io pattern groups:
-  - deployment: [multiple services per host](https://microservices.io/patterns/deployment/multiple-services-per-host.html), [service per host](https://microservices.io/patterns/deployment/single-service-per-host.html), [service per VM](https://microservices.io/patterns/deployment/service-per-vm.html), [service per container](https://microservices.io/patterns/deployment/service-per-container.html), [serverless](https://microservices.io/patterns/deployment/serverless-deployment.html), [deployment platform](https://microservices.io/patterns/deployment/service-deployment-platform.html);
-  - cross-cutting concerns: [microservice chassis](https://microservices.io/patterns/microservice-chassis.html), [externalized configuration](https://microservices.io/patterns/externalized-configuration.html), [service template](https://microservices.io/patterns/service-template.html);
-  - observability: [log aggregation](https://microservices.io/patterns/observability/application-logging.html), [application metrics](https://microservices.io/patterns/observability/application-metrics.html), [audit logging](https://microservices.io/patterns/observability/audit-logging.html), [distributed tracing](https://microservices.io/patterns/observability/distributed-tracing.html), [exception tracking](https://microservices.io/patterns/observability/exception-tracking.html), [health check API](https://microservices.io/patterns/observability/health-check-api.html), [log deployments and changes](https://microservices.io/patterns/observability/log-deployments-and-changes.html);
-  - security: [access token](https://microservices.io/patterns/security/access-token.html);
-  - testing: [contract tests](https://microservices.io/patterns/testing/service-integration-contract-test.html), [component test](https://microservices.io/patterns/testing/service-component-test.html);
-  - UI: [server-side page fragment composition](https://microservices.io/patterns/ui/server-side-page-fragment-composition.html), [client-side UI composition](https://microservices.io/patterns/ui/client-side-ui-composition.html).
+	- deployment: [multiple services per host](https://microservices.io/patterns/deployment/multiple-services-per-host.html), [service per host](https://microservices.io/patterns/deployment/single-service-per-host.html), [service per VM](https://microservices.io/patterns/deployment/service-per-vm.html), [service per container](https://microservices.io/patterns/deployment/service-per-container.html), [serverless](https://microservices.io/patterns/deployment/serverless-deployment.html), [deployment platform](https://microservices.io/patterns/deployment/service-deployment-platform.html);
+	- cross-cutting concerns: [microservice chassis](https://microservices.io/patterns/microservice-chassis.html), [externalized configuration](https://microservices.io/patterns/externalized-configuration.html), [service template](https://microservices.io/patterns/service-template.html);
+	- observability: [log aggregation](https://microservices.io/patterns/observability/application-logging.html), [application metrics](https://microservices.io/patterns/observability/application-metrics.html), [audit logging](https://microservices.io/patterns/observability/audit-logging.html), [distributed tracing](https://microservices.io/patterns/observability/distributed-tracing.html), [exception tracking](https://microservices.io/patterns/observability/exception-tracking.html), [health check API](https://microservices.io/patterns/observability/health-check-api.html), [log deployments and changes](https://microservices.io/patterns/observability/log-deployments-and-changes.html);
+	- security: [access token](https://microservices.io/patterns/security/access-token.html);
+	- testing: [contract tests](https://microservices.io/patterns/testing/service-integration-contract-test.html), [component test](https://microservices.io/patterns/testing/service-component-test.html);
+	- UI: [server-side page fragment composition](https://microservices.io/patterns/ui/server-side-page-fragment-composition.html), [client-side UI composition](https://microservices.io/patterns/ui/client-side-ui-composition.html).
 - Richardson 2019: chapters 9-10 (testing), 11 (production-ready services), 12 (deployment).
 - Newman 2021: chapters 8 (deployment), 9 (testing), 10 (observability), 11 (security), 14 (user interfaces).
 - [Password Storage Cheat Sheet -- OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html): algorithms and current cost parameters.

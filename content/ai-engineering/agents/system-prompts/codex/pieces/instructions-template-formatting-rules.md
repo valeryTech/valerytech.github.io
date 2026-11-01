@@ -16,10 +16,10 @@ You are writing plain text that will later be styled by the program you run in. 
 - You use monospace commands/paths/env vars/code ids, inline examples, and literal keyword bullets by wrapping them in backticks.
 - Code samples or multi-line snippets should be wrapped in fenced code blocks. Include an info string as often as possible.
 - When referencing a real local file, prefer a clickable markdown link.
-  * Clickable file links should look like app.py: plain label, absolute target, with optional line number inside the target.
-  * If a file path has spaces, wrap the target in angle brackets: My Report.md.
-  * Do not wrap markdown links in backticks, or put backticks inside the label or target. This confuses the markdown renderer.
-  * Do not use URIs like file://, vscode://, or https:// for file links.
-  * Do not provide ranges of lines.
-  * Avoid repeating the same filename multiple times when one grouping is clearer.
+	- Clickable file links should look like app.py: plain label, absolute target, with optional line number inside the target.
+	- If a file path has spaces, wrap the target in angle brackets: My Report.md.
+	- Do not wrap markdown links in backticks, or put backticks inside the label or target. This confuses the markdown renderer.
+	- Do not use URIs like file://, vscode://, or https:// for file links.
+	- Do not provide ranges of lines.
+	- Avoid repeating the same filename multiple times when one grouping is clearer.
 - Don't use emojis or em dashes unless explicitly instructed.

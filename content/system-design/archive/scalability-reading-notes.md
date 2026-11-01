@@ -39,19 +39,19 @@ books:
 
 highscalability.com
 
-<https://systemdesignprimer.netlify.app/getting-started>
+[System Design Primer: getting started](https://systemdesignprimer.netlify.app/getting-started)
 
 Designing Fine-Grained Microservices Book
 
-<https://www.lecloud.net/tagged/scalability/chrono>
+[Scalability posts on lecloud.net](https://www.lecloud.net/tagged/scalability/chrono)
 
-some slides - <https://www.slideshare.net/jboner/scalability-availability-stability-patterns>
+some slides - [Scalability, Availability & Stability Patterns](https://www.slideshare.net/jboner/scalability-availability-stability-patterns)
 
-<http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>
+[Scalable System Design Patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
 
-<https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf>
+[CMU SEI technical note 2006_004_001 (PDF)](https://resources.sei.cmu.edu/asset_files/TechnicalNote/2006_004_001_14681.pdf)
 
-<https://github.com/binhnguyennus/awesome-scalability>
+[binhnguyennus/awesome-scalability on GitHub](https://github.com/binhnguyennus/awesome-scalability)
 
 # Common
 
@@ -105,9 +105,9 @@ More often than not, partitioning will be done by the subsystem you rely on. For
 
 Source:
 
-<https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning>
+[Data partitioning recommendations for reliability](https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning)
 
-<https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding>
+[Sharding Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding)
 
 ## Horizontal partitioning (sharding)
 
@@ -118,13 +118,13 @@ The most important factor is the choice of a sharding key. It can be difficult t
 
 sharding
 
-<https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6>
+[How sharding works (Medium)](https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6)
 
 facebook shard manager paper
 
-<https://kousiknath.medium.com/all-things-sharding-techniques-and-real-life-examples-in-nosql-data-storage-systems-3e8beb98830a>
+[All Things Sharding: Techniques and Real-Life Examples in NoSQL Data Storage Systems](https://kousiknath.medium.com/all-things-sharding-techniques-and-real-life-examples-in-nosql-data-storage-systems-3e8beb98830a)
 
-<https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/>
+[Scaling services with Shard Manager](https://engineering.fb.com/2020/08/24/production-engineering/scaling-services-with-shard-manager/)
 
 ## Vertical partitioning
 
@@ -164,7 +164,7 @@ It can help to maximize scalability because both the number of queues and the nu
 
 It can help to control costs because the number of service instances deployed only have to be adequate to meet average load rather than the peak load.
 
-link: <https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling>
+link: [Queue-Based Load Leveling Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
 
 ## Priority queue
 
@@ -177,7 +177,7 @@ It allows applications to meet business requirements that require the prioritiza
 
 The multiple message queue approach can help maximize application performance and scalability by partitioning messages based on processing requirements. For example, you can prioritize critical tasks so that they're handled by receivers that run immediately, and less important background tasks can be handled by receivers that are scheduled to run at times that are less busy.
 
-link: <https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue>
+link: [Priority Queue Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/priority-queue)
 
 # Caching
 
@@ -187,9 +187,7 @@ You can use cache to reduce load on a target system (which data cache holds). Th
 # CQRS
 
 
-The Command Query Responsibility Segregation (CQRS) pattern refers to an alter‐
-
-nate model for storing and querying information. Rather than our having a single
+The Command Query Responsibility Segregation (CQRS) pattern refers to an alternate model for storing and querying information. Rather than our having a single
 
 model for how we both manipulate and retrieve data, as is common, responsibilities
 
@@ -211,11 +209,7 @@ replicas can do in the data tier, although due to the large number of different 
 
 CQRS can be implemented, this is a simplification.
 
-Personally, although I see value in the CQRS pattern in some situations, it's a com‐
-
-plex pattern to execute well. I've spoken to very smart people who have hit not insig‐
-
-nificant issues in making CQRS work. As such, if you are considering CQRS as a way
+Personally, although I see value in the CQRS pattern in some situations, it's a complex pattern to execute well. I've spoken to very smart people who have hit not insignificant issues in making CQRS work. As such, if you are considering CQRS as a way
 
 to help scale your application, regard it as one of the harder forms of scaling you'd
 
@@ -223,11 +217,7 @@ need to implement, and perhaps try some of the easier stuff first.
 
 One final note on CQRS and event sourcing: from the point of view of a microservice
 
-architecture, the decision to use or not use these techniques is an internal implemen‐
-
-tation detail of a microservice. If you've decided to implement a microservice by split‐
-
-ting responsibility for reads and writes across different processes and models, for
+architecture, the decision to use or not use these techniques is an internal implementation detail of a microservice. If you've decided to implement a microservice by splitting responsibility for reads and writes across different processes and models, for
 
 example, this should be invisible to consumers of the microservice. If inbound
 
@@ -289,9 +279,7 @@ might mean picking new data stores that can handle the load better. It could als
 
 mean adopting new techniques, such as moving from synchronous request-response
 
-to event-based systems, adopting new deployment platforms, changing whole tech‐
-
-nology stacks, or everything in between.
+to event-based systems, adopting new deployment platforms, changing whole technology stacks, or everything in between.
 
 There is a danger that people will see the need to rearchitect when certain scaling
 
@@ -303,15 +291,11 @@ want to build, nor do we know if it will be successful. We need to be able to ra
 
 experiment and understand what capabilities we need to build. If we tried building
 
-for massive scale up front, we'd end up front-loading a huge amount of work to pre‐
-
-pare for load that may never come, while diverting effort away from more important
+for massive scale up front, we'd end up front-loading a huge amount of work to prepare for load that may never come, while diverting effort away from more important
 
 activities, like understanding if anyone will actually want to use our product. Eric
 
-Ries tells the story of spending six months building a product that no one ever down‐
-
-loaded. He reflected that he could have put up a link on a web page that 404'd when
+Ries tells the story of spending six months building a product that no one ever downloaded. He reflected that he could have put up a link on a web page that 404'd when
 
 people clicked on it to see if there was any demand, spent six months on the beach
 

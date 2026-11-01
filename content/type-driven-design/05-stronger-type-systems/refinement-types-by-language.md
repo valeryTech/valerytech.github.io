@@ -6,7 +6,7 @@ description: "What Python, TypeScript, Haskell, Rust, Ada and Scala offer in pla
 linkTitle: "By Language"
 ---
 
-[Refinement types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}) explains what they are. This note covers what each language offers: true refinement types through a library or tool, or the nearest native feature.
+[Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}) explains what they are. This note covers what each language offers: true refinement types through a library or tool, or the nearest native feature.
 
 Support in common languages:
 
@@ -80,7 +80,7 @@ Rust has no general logical refinement types built into the language. Its extern
 In Scala, the phrase "refinement type" has two different meanings:
 
 1. **Structural member refinements (Scala's official language term).** In the Scala specification and *Programming in Scala* (Odersky et al., [PDF](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), section 20.8), a refinement type narrows a base type by specifying or adding members in braces, such as `SomeType { type Element = String }`. That feature is covered in [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping).
-2. **Predicate refinement types (the type-theory term, via libraries).** A base type endowed with a predicate that holds for every element--expressing preconditions on function arguments and postconditions on return types--is provided in Scala by libraries rather than the core compiler: **Iron** in Scala 3 (Volpe, [PDF](/sources/42ef10a33c54df6756cd49d40ee34101.bin), section 4.1.3) and **`refined`** in Scala 2 (Volpe, [PDF](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), chapter 1).
+2. **Predicate refinement types (the type-theory term, via libraries).** A base type endowed with a predicate that holds for every element -- expressing preconditions on function arguments and postconditions on return types -- is provided in Scala by libraries rather than the core compiler: **Iron** in Scala 3 (Volpe, [PDF](/sources/42ef10a33c54df6756cd49d40ee34101.bin), section 4.1.3) and **`refined`** in Scala 2 (Volpe, [PDF](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), chapter 1).
 
 With Iron in Scala 3:
 
@@ -107,6 +107,6 @@ Further reading:
 
 - [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell* -- sections 2.2-2.4 on data kinds, promoted built-in types and type-level functions (closed type families), and section 5.2 on GADTs, the GHC features the note lists; section 2.3.2, "Natural Numbers", notes that there are no negative, fractional or floating type-level numeric literals; on *Haskell*
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell* -- chapter 15, "Programming with Types", on `DataKinds`, type-level naturals and strings, open and closed type and data families, and GADTs; on *Haskell*
-- Iron (type constraints for Scala 3): <https://github.com/Iltotore/iron>
+- Iron (type constraints for Scala 3): [Iron: strong type constraints for Scala](https://github.com/Iltotore/iron)
 - `refined` (type-level predicate refinements for Scala): <https://github.com/fthomas/refined> and Frank Thomas's talk <http://fthomas.github.io/talks/2016-05-04-refined>
 - Scala tutorials on refined types: [Rock the JVM](https://blog.rockthejvm.com/refined-types/), [Marcin Sitko on building refinement types in Scala 3](https://msitko.pl/blog/build-your-own-refinement-types-in-scala3.html), and [Contentsquare engineering blog](https://engineering.contentsquare.com/2021/scala-refined-types/)

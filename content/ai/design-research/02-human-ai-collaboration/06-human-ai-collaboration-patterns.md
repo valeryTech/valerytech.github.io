@@ -15,8 +15,6 @@ The retained LLM passages distinguish collaboration mechanics from interaction p
 
 The [collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains the opening source and general mechanics. [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) discusses understanding as an outcome. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/joint-activity-route" >}}) links both parts.
 
-<a id="retained-dialogue"></a>
-
 ## Development of the proposal
 
 ## Collaboration Patterns
@@ -352,7 +350,7 @@ Delegation therefore transfers **execution responsibility**, not necessarily fin
 
 **Key mechanics.** Delegation requires explicit scope, success criteria, tool and data boundaries, progress observability, interruptibility, outcome verification, and clear authority limits. For consequential actions, permissions should ideally be based on capability and consequence rather than indiscriminate approval prompts. Anthropic's sandboxing work illustrates the principle of defining a boundary inside which the agent can work more freely, rather than asking for every action individually. [^25]
 
-**Common failure modes.** Under-specified goals cause an agent to optimize the wrong thing; hidden intermediate actions can create side effects; long-running work can drift from intent; too many confirmations lead to approval fatigue; too few leave users unable to intervene. Anthropic reports that Claude Code users approved about 93% of permission prompts before the company introduced a more automated permission architecture--an illustration of why "human approval on every action" can degenerate into ritual rather than meaningful oversight. [^26] Anthropic has also documented a long-horizon agent failure mode in which implementation appeared complete even though end-to-end testing was insufficient. [^27]
+**Common failure modes.** Under-specified goals cause an agent to optimize the wrong thing; hidden intermediate actions can create side effects; long-running work can drift from intent; too many confirmations lead to approval fatigue; too few leave users unable to intervene. Anthropic reports that Claude Code users approved about 93% of permission prompts before the company introduced a more automated permission architecture -- an illustration of why "human approval on every action" can degenerate into ritual rather than meaningful oversight. [^26] Anthropic has also documented a long-horizon agent failure mode in which implementation appeared complete even though end-to-end testing was insufficient. [^27]
 
 **How to verify it.** Evaluate *end-to-end outcome completion*, not merely plausible intermediate output. Include hidden side-effect tests, permission-boundary tests, interruption tests, partial-failure recovery, and independent verification of completion. Compare not only AI-only success but also human time saved, review burden, intervention frequency, and undetected failure rate. Delegation studies suggest that information about both task conditions and AI capability is important for people to allocate work effectively. [^28][^13]
 
@@ -396,7 +394,7 @@ A **critic** optimizes the work product; a **coach** additionally optimizes the 
 
 **Key mechanics.** Critique requires clear evaluation criteria, localization of the issue, rationale or evidence, actionable feedback, user ownership of revision, and a way to challenge the critique. Coaching additionally requires calibration to the user's skill and goal, progressive assistance, and feedback that promotes learning rather than merely fixing the immediate artifact. [^16][^29]
 
-**Common failure modes.** AI critique can be confidently wrong, generic, overwhelming, or biased toward stylistic conformity. It can also become disguised delegation: the "coach" eventually does the entire task. Conversely, excessive friction designed to force learning can frustrate users whose real objective is simply task completion. The intended outcome--better artifact versus stronger human capability--therefore has to be explicit.
+**Common failure modes.** AI critique can be confidently wrong, generic, overwhelming, or biased toward stylistic conformity. It can also become disguised delegation: the "coach" eventually does the entire task. Conversely, excessive friction designed to force learning can frustrate users whose real objective is simply task completion. The intended outcome -- better artifact versus stronger human capability -- therefore has to be explicit.
 
 **How to verify it.** Seed known defects and measure critique precision/recall; track whether the user can identify and correct issues after feedback; for genuine coaching, measure transfer to a later unassisted task rather than only improvement of the AI-assisted artifact. Compare against direct-answer conditions. Study-design research around cognitive forcing likewise shows that interventions intended to make users think can reduce overreliance while also carrying usability costs, so both quality and user burden need measurement. [^30]
 

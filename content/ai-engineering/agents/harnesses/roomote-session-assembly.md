@@ -35,8 +35,8 @@ Roomote pins the npm package `opencode-ai` at 1.18.30 (`apps/worker/Dockerfile:1
 
 
 - **Session agent.** The model loop runs in whichever control-plane process owns the turn: the API, the web app, or the queue worker. It never runs in a sandbox (`fast-agent-service.ts:2016`, `:6711`).
-  - It uses a shared pool of `opencode serve` processes, keyed by a hash of the command, environment and config (`packages/cloud-agents/src/server/opencode-runtime.ts:922`, `:1162`). A server stops after 10 idle minutes (`opencode-runtime.ts:67`).
-  - Conversations are kept apart by directory: each one gets `tmp/roomote-fast-opencode/<sha256(sessionId)>` with its own `opencode.json`, rewritten every turn (`fast-agent-native-tool-bridge.ts:1620`, `:1729-1778`).
+	- It uses a shared pool of `opencode serve` processes, keyed by a hash of the command, environment and config (`packages/cloud-agents/src/server/opencode-runtime.ts:922`, `:1162`). A server stops after 10 idle minutes (`opencode-runtime.ts:67`).
+	- Conversations are kept apart by directory: each one gets `tmp/roomote-fast-opencode/<sha256(sessionId)>` with its own `opencode.json`, rewritten every turn (`fast-agent-native-tool-bridge.ts:1620`, `:1729-1778`).
 - **Task agent.** One `opencode serve --hostname 127.0.0.1 --port <free port>` per task, inside the sandbox (`apps/worker/src/sandbox-server/lib/harnesses/opencode-server/start.ts:202-212`). The worker waits up to 90 seconds for `GET /global/health` (`start.ts:85`).
 
 ## Session turn
@@ -273,10 +273,10 @@ Plugins are written as files into `$HOME/.config/opencode/plugins/` (`agent-home
 - **Service.** gbrain on its own Postgres database with 1536-dimension vectors, switched on by `deployment_settings.brain_enabled` (`.docker/gbrain/entrypoint.sh:26`, `schema.ts:355`). Default models: `gpt-5.6-luna` for writing and `text-embedding-3-small` for embeddings (`packages/sdk/src/server/lib/brain-inference.ts:30-40`).
 - **Sources indexed**: Slack directory and public channels, people directories, Rippling, Discord, Notion, Granola, GitHub issues, Linear issues, task memories and pull-request facts (`brain-collectors.ts:406-417`). Code is not indexed.
 - **Writing.** Only the server writes, through outbox tables drained into the Brain (`apps/bullmq/src/scheduled-jobs/brain-outbox-drain.ts:268-276`).
-  - The agents can save memories directly: `save_memory` in the session, `save_task_memory` in the task.
-  - After each session turn, a judgment model decides whether the turn holds something to keep (threshold 0.8), and a small model writes at most 3 facts (`fast-agent-post-turn-memory.ts:30-41`, `:169-304`).
-  - After each standard task turn, the same kind of check (threshold 0.7) writes a task memory, unless the agent already saved one (`packages/cloud-agents/src/server/task-run-memory-distillation.ts:45-114`, `:291-400`).
-  - Before any text leaves the deployment for the check, a scrubber removes credentials, emails, numbers shaped like SSNs, valid card numbers and phone numbers (`memory-check-scrub.ts:50-55`).
+	- The agents can save memories directly: `save_memory` in the session, `save_task_memory` in the task.
+	- After each session turn, a judgment model decides whether the turn holds something to keep (threshold 0.8), and a small model writes at most 3 facts (`fast-agent-post-turn-memory.ts:30-41`, `:169-304`).
+	- After each standard task turn, the same kind of check (threshold 0.7) writes a task memory, unless the agent already saved one (`packages/cloud-agents/src/server/task-run-memory-distillation.ts:45-114`, `:291-400`).
+	- Before any text leaves the deployment for the check, a scrubber removes credentials, emails, numbers shaped like SSNs, valid card numbers and phone numbers (`memory-check-scrub.ts:50-55`).
 - **Reading.** Through a read-only proxy that allows `query`, `search`, `entity`, `synthesize`, `list_pages` and `get_page` (`apps/api/src/handlers/mcp/gbrain.ts:29-45`). The prompts tell the agent to query memory first (`packages/types/src/brain.ts:409-469`). Nothing is put into the context automatically.
 
 {{< callout context="note" title="Docs and code differ" icon="outline/info-circle" >}}
@@ -348,9 +348,9 @@ How they reach OpenCode:
 - **Git.** A credential helper, `~/.roomote/git-credential-roomote.sh`, reads the token from a file on each call and refreshes it every 45 minutes (`apps/worker/src/lib/github-token.ts:43-160`, `apps/worker/src/run-task/polling/github-token-refresh.ts:10-12`). Providers other than GitHub and GitLab go through a local proxy.
 - **Service API keys** never enter the sandbox. The sandbox gets substitute tokens (`rses_...`) and a proxy URL. The API checks each request against the live run, allows only HTTPS and the grant's methods (GET and HEAD by default), never follows redirects, and checks responses for echoed credentials (`apps/api/src/handlers/credential-egress/CONTRACT.md:12-188`).
 - **What the shell can see.** Token variables are removed from the harness environment (`apps/worker/src/run-task/harnesses/harness-command-env.ts:9-19`), but:
-  - `GH_TOKEN` is exported into every bash command again through `BASH_ENV` and a `gh` wrapper (`github-token.ts:48-57`, `:162-190`).
-  - The run token `ROOMOTE_CLOUD_TOKEN` stays in the environment (`run-task.ts:795`, `agent-home.ts:1108-1118`).
-  - The substitute service tokens and deployment variables are visible.
+	- `GH_TOKEN` is exported into every bash command again through `BASH_ENV` and a `gh` wrapper (`github-token.ts:48-57`, `:162-190`).
+	- The run token `ROOMOTE_CLOUD_TOKEN` stays in the environment (`run-task.ts:795`, `agent-home.ts:1108-1118`).
+	- The substitute service tokens and deployment variables are visible.
 
   The tool-safety plugin blocks only the obvious ways to print them and redacts them from output.
 
@@ -359,9 +359,9 @@ How they reach OpenCode:
 
 - **User.** Tasks run as `roomote` with passwordless sudo and membership in the docker group (`apps/worker/Dockerfile:109-113`), so the agent can act as root inside the sandbox.
 - **Docker network** (`apps/controller/src/compute-providers/docker-sandbox-security.ts`):
-  - Outbound internet by default, or no network with `DOCKER_WORKER_EGRESS_POLICY=none` (`packages/env/src/index.ts:122`).
-  - With internet, link-local, carrier-grade NAT and metadata ranges are blocked, plus private ranges and the bridge gateway when a separate control network is used.
-  - Workers drop the `NET_ADMIN` and `NET_RAW` capabilities.
+	- Outbound internet by default, or no network with `DOCKER_WORKER_EGRESS_POLICY=none` (`packages/env/src/index.ts:122`).
+	- With internet, link-local, carrier-grade NAT and metadata ranges are blocked, plus private ranges and the bridge gateway when a separate control network is used.
+	- Workers drop the `NET_ADMIN` and `NET_RAW` capabilities.
 - **Docker-in-Docker.** Environments with Docker projects get a privileged `docker:28-dind` container next to the task, reached over TCP without TLS (`spawn-docker-worker.ts:68`, `:403-428`).
 - **Azure** allows outbound traffic with partial inspection (`packages/compute-providers/src/adapters/azure.ts:839-842`). No outbound rules were found for Modal, E2B, Daytona, Blaxel or Box.
 - **The controller's Docker access** goes through a socket proxy that allows containers, exec, images, networks and volumes (`deploy/compose/docker-compose.prod.yml:380-405`). The separate Docker compute compose file mounts the raw socket.

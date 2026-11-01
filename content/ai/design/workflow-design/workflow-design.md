@@ -13,8 +13,6 @@ An interaction-point design approach exposes uncertain workflow decisions as ins
 
 **Augmentation** is about helping a human perform the work better or faster. The AI may draft, summarize, recommend, retrieve, classify, or prepare options, while the human remains the actor.
 
-<a id="some-example-of-moving-the-ladder"></a>
-
 ## Example of progressively increasing autonomy
 
 

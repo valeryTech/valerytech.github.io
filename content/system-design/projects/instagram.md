@@ -6,7 +6,7 @@ description: "Collected critiques of Instagram design examples, exploring interv
 linkTitle: "Instagram"
 ---
 
-Collected discussion and critique for further review. These comments reflect their original contexts; use the [case template]({{< ref "system-design/projects/case-template" >}}) to develop an independent design.
+Collected discussion and critique for further review. These comments reflect their original contexts; use the [Case Template]({{< ref "system-design/projects/case-template" >}}) to develop an independent design.
 
 # Interesting Example
 
@@ -36,8 +36,8 @@ I'm not versed in evaluating design interview questions. However, in a general d
 You also have lots of interesting sub-problems to talk about:
 
 - Getting the feed to the user fast has a lot of smart optimizations. Finding the best story with all the signals and the possible choices in extremely fast times offers lots of opportunities for optimization strategies. E.g., what about pushing content to the app before the user even opens the app? Would you re-order the newsfeed in the app based on signals you can get by how the user is currently interacting?
-- Designing a CDN that serves so much media across the entire world also has lots of interesting sub problems - or simply to only explain the high level working of a CDN.
-- The social graph used to be a big point of discussion - how friends are connected to friends and so on. How that is modeled and signal is extracted could be an interesting sub discussion.
+- Designing a CDN that serves so much media across the entire world also has lots of interesting sub problems -- or simply to only explain the high level working of a CDN.
+- The social graph used to be a big point of discussion -- how friends are connected to friends and so on. How that is modeled and signal is extracted could be an interesting sub discussion.
 - What is the journey of an image? You might pre-process it in the app so that the upload is a smaller file size. You might re-process it again on the server in a pipeline. You might extract signal from the photo to figure out what it is about. You probably need a queue to scan/review images for really bad content (e.g. dead bodies or crime). You might want to push it out to different tiers of the CDN. To be fancy, if you know that the user's friend in Paris is going to look at the post, can you push the image already into the CDN cache near Paris?
 
 I would have imagined if you were to spend an actual hour to doing a high-level design of Instagram, there'd be a lot bigger considerations and systems/pipelines that need to be designed rather than thinking about the columns of the post table.
@@ -58,21 +58,21 @@ see CDN and load balancers
 make blueprints of HLD
 
 - sharding algorithm
-- instagram sharding: <https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c>
-- instagram caching <https://instagram-engineering.com/making-instagram-com-faster-part-3-cache-first-6f3f130b9669>
-- instagram caching and promises: <https://instagram-engineering.com/thundering-herds-promises-82191c8af57d>
-- moving to multiple data centers: <https://medium.com/instagram-engineering/instagration-pt-2-scaling-our-infrastructure-to-multiple-data-centers-5745cbad7834>
-- scaling instagram <https://www.youtube.com/watch?v=hnpzNAPiC0E>
+- instagram sharding: [Sharding IDs at Instagram](https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c)
+- instagram caching [Making Instagram.com faster, part 3: cache first](https://instagram-engineering.com/making-instagram-com-faster-part-3-cache-first-6f3f130b9669)
+- instagram caching and promises: [Thundering herds and promises (Instagram Engineering)](https://instagram-engineering.com/thundering-herds-promises-82191c8af57d)
+- moving to multiple data centers: [Instagration Pt. 2: Scaling our infrastructure to multiple data centers](https://medium.com/instagram-engineering/instagration-pt-2-scaling-our-infrastructure-to-multiple-data-centers-5745cbad7834)
+- scaling instagram [Scaling Instagram video on YouTube](https://www.youtube.com/watch?v=hnpzNAPiC0E)
 
-some calculations: <https://medium.com/interviewnoodle/instagram-system-architecture-fdbec22e48ee>
+some calculations: [Instagram System Architecture](https://medium.com/interviewnoodle/instagram-system-architecture-fdbec22e48ee)
 
-article <https://instagram-engineering.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-adf2e22da2ad>
+article [What powers Instagram: hundreds of instances, dozens of technologies](https://instagram-engineering.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-adf2e22da2ad)
 
-article one: <https://towardsdatascience.com/system-design-analysis-of-instagram-51cd25093971>
+article one: [System Design Analysis of Instagram](https://towardsdatascience.com/system-design-analysis-of-instagram-51cd25093971)
 
-scaling instagram from founder <https://www.youtube.com/watch?v=bLyv8zKa5DU>
+scaling instagram from founder [Scaling Instagram from founder video on YouTube](https://www.youtube.com/watch?v=bLyv8zKa5DU)
 
-some technical details <https://www.youtube.com/watch?v=E708csv4XgY>
+some technical details [Instagram technical details video on YouTube](https://www.youtube.com/watch?v=E708csv4XgY)
 
 - All the web and async servers run in a distributed environment and are stateless.
 

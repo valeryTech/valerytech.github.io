@@ -9,7 +9,7 @@ linkTitle: "5.2 Database-Centered Runtime"
 ## Stonebraker proposition
 
 
-Yes--**Michael Stonebraker** is the person. The relevant ideas are his **DBOS** proposal and his newer **Rubicon** approach to LLM-assisted data access. He does _not_ advocate putting an unconstrained LLM agent in charge of the database; he argues for letting the database/SQL system orchestrate work and using LLMs only for parts they handle well.[[heavybit](https://www.heavybit.com/library/podcasts/data-renegades/ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker)]
+Yes -- **Michael Stonebraker** is the person. The relevant ideas are his **DBOS** proposal and his newer **Rubicon** approach to LLM-assisted data access. He does _not_ advocate putting an unconstrained LLM agent in charge of the database; he argues for letting the database/SQL system orchestrate work and using LLMs only for parts they handle well.[[heavybit](https://www.heavybit.com/library/podcasts/data-renegades/ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker)]
 
 ## DBOS: database as runtime
 
@@ -31,7 +31,7 @@ Stonebraker's view is notably skeptical of mainstream agentic AI:
 
 - Public text-to-SQL benchmarks can show roughly 80%-plus accuracy, but he reports about **10% accuracy** when applying the touted models to an MIT Oracle warehouse with approximately **1,400 tables**.[[heavybit](https://www.heavybit.com/library/podcasts/data-renegades/ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker)]
 - Providing the correct `FROM` clause and join predicates raised results only to the 30%-plus range in that example.[[heavybit](https://www.heavybit.com/library/podcasts/data-renegades/ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker)]
-- He attributes the gap to proprietary/unseen data, idiosyncratic local terms, messy and overlapping schemas, obscure column names, materialized views, and long production queries--rather than short, clean benchmark queries.[[heavybit](https://www.heavybit.com/library/podcasts/data-renegades/ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker)]
+- He attributes the gap to proprietary/unseen data, idiosyncratic local terms, messy and overlapping schemas, obscure column names, materialized views, and long production queries -- rather than short, clean benchmark queries.[[heavybit](https://www.heavybit.com/library/podcasts/data-renegades/ep-11-contrarian-bets-and-ai-skepticism-with-michael-stonebraker)]
 
 So his claim is **not** "agents will operate the database autonomously." It is closer to:
 
@@ -46,7 +46,7 @@ For multi-source questions, his team's direction is to convert heterogeneous res
 
 Illustration:
 
-```
+```latex
 \text{User request} \rightarrow
 \text{human/metadata-guided schema selection} \rightarrow
 \text{SQL-style plan and joins} \rightarrow
@@ -71,8 +71,6 @@ DBOS gives a natural runtime model for agents and workflows: each step can be a 
 
 But Stonebraker's key warning is that **database durability does not make an LLM's reasoning reliable**. DBOS can make an agent execution traceable and recoverable; Rubicon aims to make the data-retrieval portion more accurate by replacing free-form agent orchestration with explicit metadata plus SQL-style planning.
 
-<a id="answer"></a>
-
 # Proposed analysis
 
 
@@ -80,9 +78,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The working interpretation is that Stonebraker's direction is highly relevant here. The proposal is to separate three decisions: what should be delegated to an existing DBMS, what belongs in our investigation runtime/compiler, and whether any new storage/index structure is justified by requirements existing systems can't express.
 
-The strongest conclusion from Rubicon is that we probably **shouldn't build a database first**. We should build a new _logical layer_--types, algebra, compiler, provenance and epistemic contracts--then compile it onto existing data/search/workflow engines. Rubicon itself makes almost exactly this move: wrappers normalize heterogeneous sources into logical relations, then a query processor handles joins, source selection and cost-aware execution.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
+The strongest conclusion from Rubicon is that we probably **shouldn't build a database first**. We should build a new _logical layer_ -- types, algebra, compiler, provenance and epistemic contracts -- then compile it onto existing data/search/workflow engines. Rubicon itself makes almost exactly this move: wrappers normalize heterogeneous sources into logical relations, then a query processor handles joins, source selection and cost-aware execution.
 
 Stonebraker's direction is probably the best systems precedent we've found so far.
 
@@ -93,8 +89,6 @@ My recommendation would be:
 That is also quite close to where Rubicon is going. Its 2026 paper explicitly introduces a small AQL algebra, source wrappers, materialized intermediate results, and database-style cost optimization; retrieval itself becomes an operator inside query processing. ([arxiv.org](https://arxiv.org/abs/2604.21413 "An Alternate Agentic AI Architecture (It's About the Data)"))
 
 The proposed extension beyond Rubicon is from an **enterprise data integration/query system** to an **evidence-seeking computation system**.
-
-<a id="the-architecture-i-would-use"></a>
 
 ### Proposed architecture
 
@@ -299,8 +293,6 @@ as completed durable computation.
 
 This is particularly important because, as you pointed out earlier, some operators can be expensive.
 
-<a id="i-would-make-postgres-the-initial-kernel"></a>
-
 ## Postgres as the proposed initial "kernel"
 
 
@@ -372,8 +364,6 @@ and recursive SQL can take you a long way.
 
 Likewise, you don't need an OLAP database simply because some UI behaves like a cube.
 
-<a id="when-would-i-actually-build-a-database"></a>
-
 ## When would a new database be justified?
 
 
@@ -426,9 +416,6 @@ That's likely the right instinct for us too.
 
 ## What to build and what to reuse
 
-
-<a id="so-id-draw-the-boundary-like-this"></a>
-
 ### Proposed boundary
 
 ```text
@@ -471,4 +458,4 @@ We're asking whether **evidence-seeking investigation deserves the same treatmen
 
 The saved LLM analysis regarded Rubicon as the strongest evidence it had found that database researchers were independently moving in this general direction. The proposed research opportunity would be to take it from **heterogeneous enterprise querying** into **evidence, knowledge, and defensible investigation**. ([arxiv.org](https://arxiv.org/abs/2604.21413 "An Alternate Agentic AI Architecture (It's About the Data)"))
 
-rubicon: https://github.com/fabian-wenz/rubicon
+rubicon: [fabian-wenz/rubicon on GitHub](https://github.com/fabian-wenz/rubicon)

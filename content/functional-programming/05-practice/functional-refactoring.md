@@ -101,7 +101,7 @@ Once the pieces have names, a useful test is whether each one can be described i
 
 `head` fails on an empty list. There are two ways to make it total.
 
-The first is `safeHead :: [a] -> Maybe a`, which returns `Nothing` for `[]` and makes every caller handle that case. The second is to move the check into a type. The CIS 194 lecture on recursion patterns and polymorphism (<https://www.seas.upenn.edu/~cis1940/spring13/lectures/03-rec-poly.html>) puts it this way:
+The first is `safeHead :: [a] -> Maybe a`, which returns `Nothing` for `[]` and makes every caller handle that case. The second is to move the check into a type. The CIS 194 lecture on recursion patterns and polymorphism ([CIS 194 lecture on recursion patterns and polymorphism](https://www.seas.upenn.edu/~cis1940/spring13/lectures/03-rec-poly.html)) puts it this way:
 
 > OK, but what if we know that we will only use `head` in situations where we are _guaranteed_ to have a non-empty list? In such a situation, it is really annoying to get back a `Maybe a`, since we have to expend effort dealing with a case which we "know" cannot actually happen.
 >
@@ -167,7 +167,7 @@ A common misconception is that the pipeline makes three passes and builds two in
 
 - [ ] Write up the Collatz refactoring as a step-by-step worked example: how to do it, and how to spot the code that needs it.
 
-See also: [Writing recursive functions]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#writing-recursive-functions) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) for the recursion patterns used here, [Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#composition) for pipelines, [Parse, don't validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}) for the design rule behind `NonEmptyList`, [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Maybe` and `Either`, [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) for checking that a refactoring keeps the behaviour, and [Exercises and projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}) for a refactoring project.
+See also: [Writing recursive functions]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#writing-recursive-functions) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) for the recursion patterns used here, [Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#composition) for pipelines, [Parse, don't validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}) for the design rule behind `NonEmptyList`, [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Maybe` and `Either`, [Property Based Testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}) for checking that a refactoring keeps the behaviour, and [Exercises And Projects]({{< ref "functional-programming/05-practice/exercises-and-projects" >}}) for a refactoring project.
 
 ## Library sources
 

@@ -18,7 +18,7 @@ The first answer to [what a capability claim says]({{< ref "ai/capabilities/01-w
 - **Ascription.** The act of attributing something to something. A *disposition ascription* is a statement that attributes a disposition: "this glass is fragile", "this model is good at arithmetic".
 - **Categorical property.** A property that is present and observable now, such as shape or color.
 
-The standard philosophical reference is the [Stanford Encyclopedia of Philosophy entry on dispositions](https://plato.stanford.edu/archives/spr2022/entries/dispositions/) (Spring 2022 edition).
+The standard philosophical reference is the [Stanford Encyclopedia of Philosophy entry on dispositions]({{< ref "ai/capabilities/input/sep-2022-dispositions" >}}) ([web](https://plato.stanford.edu/archives/spr2022/entries/dispositions/), Spring 2022 edition).
 
 ## Fragility and mathematical capability
 

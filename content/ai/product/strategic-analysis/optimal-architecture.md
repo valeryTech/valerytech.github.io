@@ -10,8 +10,6 @@ Scope: set aside predictions and macroeconomics for now. Investigate the discove
 
 Open question: which established approaches and methods, including optimization methods, apply? The design process spans several disciplines: system design, architecture, LLMs and agents, and retrieval.
 
-<a id="ans"></a>
-
 ## Established methods and proposed combination
 
 
@@ -349,8 +347,6 @@ change in outcome / change in parameter
 
 
 or global methods such as Sobol indices can tell us which uncertain inputs actually drive system behavior. ([arXiv](https://arxiv.org/abs/1710.08072 "Global Sensitivity Analysis via Multi-Fidelity Polynomial Chaos Expansion"))
-
-<a id="what-i-think-our-process-should-look-like"></a>
 
 ### Proposed process
 

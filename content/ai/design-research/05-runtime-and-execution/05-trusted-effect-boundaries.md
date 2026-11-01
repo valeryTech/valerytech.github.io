@@ -37,7 +37,7 @@ This implies that **authority needs a representation distinct from content**. Tr
 
 There is also an important naming collision with the attached dictionary. There, **capability** means ability to perform a task. In security literature, a **security capability** is an authority-bearing mechanism. These should remain separate terms in the design vocabulary. [^turn0file0] [^turn5search2]
 
-CaMeL is one of the clearest attempts to apply this older security logic directly to LLM agents. It assumes a trusted user query, extracts explicit control and data flow from that query, ensures that untrusted data subsequently retrieved cannot modify program flow, and carries security-capability/provenance information into tool-policy decisions. The revised paper reports completing 77% of AgentDojo tasks with its provable-security conditions, compared with 84% for the undefended system. [^turn21search0] Its significance is architectural: it treats the underlying LLM as potentially vulnerable and builds the guarantee around it. Its limitations follow from its threat model--trusted initial intent, representable control/data dependencies, policy completeness and side channels--and the additional machinery has a utility/cost price. [^turn21search0][^turn21search8]
+CaMeL is one of the clearest attempts to apply this older security logic directly to LLM agents. It assumes a trusted user query, extracts explicit control and data flow from that query, ensures that untrusted data subsequently retrieved cannot modify program flow, and carries security-capability/provenance information into tool-policy decisions. The revised paper reports completing 77% of AgentDojo tasks with its provable-security conditions, compared with 84% for the undefended system. [^turn21search0] Its significance is architectural: it treats the underlying LLM as potentially vulnerable and builds the guarantee around it. Its limitations follow from its threat model -- trusted initial intent, representable control/data dependencies, policy completeness and side channels -- and the additional machinery has a utility/cost price. [^turn21search0][^turn21search8]
 
 AgentSpec tackles a related problem as **runtime enforcement**. It provides a small domain-specific language in which triggers, predicates and enforcement actions specify rules over agent behaviour. The authors evaluate the mechanism on code execution, embodied agents and autonomous-driving scenarios, reporting strong prevention/compliance results with millisecond-scale enforcement overhead in their test settings. Their experiments with LLM-generated policies are revealing: automatically generated rules achieve high but imperfect precision/recall, separating the trustworthiness of the enforcement mechanism from the correctness/completeness of the policy being enforced. [^turn20academia24] That separation is exactly analogous to an OS kernel correctly enforcing a bad ACL.
 
@@ -84,60 +84,60 @@ No single "verifier" answers all of these. Treating them as separate kinds of ev
 
 These definitions are local copies from the [complete original bibliography]({{< ref "ai/design-research/02-human-ai-collaboration/03-programmable-human-ai-environments-report" >}}#references). They were added so the imported sections can be read on their own. They are not part of the moved source text.
 
-[^turn4search2]: Wil M. P. van der Aalst, "The Application of Petri Nets to Workflow Management," *Journal of Circuits, Systems and Computers* 8(1), 1998. <https://doi.org/10.1142/S0218126698000043> Original Deep Research source key: `turn4search2`.
+[^turn4search2]: Wil M. P. van der Aalst, "The Application of Petri Nets to Workflow Management," *Journal of Circuits, Systems and Computers* 8(1), 1998. [doi:10.1142/S0218126698000043](https://doi.org/10.1142/S0218126698000043) Original Deep Research source key: `turn4search2`.
 
-[^turn6search0]: John M. Lucassen and David K. Gifford, "Polymorphic Effect Systems," *POPL '88*, 1988. <https://doi.org/10.1145/73560.73564> Original Deep Research source key: `turn6search0`.
+[^turn6search0]: John M. Lucassen and David K. Gifford, "Polymorphic Effect Systems," *POPL '88*, 1988. [doi:10.1145/73560.73564](https://doi.org/10.1145/73560.73564) Original Deep Research source key: `turn6search0`.
 
-[^turn14search0]: W3C, *PROV-DM: The PROV Data Model*, W3C Recommendation, 2013. <https://www.w3.org/TR/prov-dm/> Original Deep Research source key: `turn14search0`.
+[^turn14search0]: W3C, *[PROV-DM: The PROV Data Model](https://www.w3.org/TR/prov-dm/)*, W3C Recommendation, 2013. Original Deep Research source key: `turn14search0`.
 
 [^turn0file0]: Project working dictionary supplied to the Deep Research run as `dictionary.md` (user-provided source; no external URL). Original Deep Research source key: `turn0file0`.
 
-[^turn21search3]: Temporal, "AI Agent Reference Architecture," current product/reference documentation. <https://go.temporal.io/platform-hub/ai-engineering/ai-reference-architecture> Original Deep Research source key: `turn21search3`.
+[^turn21search3]: Temporal, "[AI Agent Reference Architecture](https://go.temporal.io/platform-hub/ai-engineering/ai-reference-architecture)," current product/reference documentation. Original Deep Research source key: `turn21search3`.
 
-[^turn21search0]: Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" (CaMeL), 2025; revised for IEEE SaTML 2026. <https://arxiv.org/abs/2503.18813> Original Deep Research source key: `turn21search0`.
+[^turn21search0]: Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" (CaMeL), 2025; revised for IEEE SaTML 2026. [arXiv:2503.18813](https://arxiv.org/abs/2503.18813) Original Deep Research source key: `turn21search0`.
 
-[^turn5search3]: NIST, *Glossary of Computer Security Terminology*, NISTIR 4659, including the reference-monitor definition. <https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4659.pdf> Original Deep Research source key: `turn5search3`.
+[^turn5search3]: NIST, *[Glossary of Computer Security Terminology](https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4659.pdf)*, NISTIR 4659, including the reference-monitor definition. Original Deep Research source key: `turn5search3`.
 
-[^turn5search2]: Gerwin Klein et al., "seL4: Formal Verification of an OS Kernel," *SOSP '09*, 2009. <https://cgi.cse.unsw.edu.au/~kleing/papers/sosp09.html> Original Deep Research source key: `turn5search2`.
+[^turn5search2]: Gerwin Klein et al., "[seL4: Formal Verification of an OS Kernel](https://cgi.cse.unsw.edu.au/~kleing/papers/sosp09.html)," *SOSP '09*, 2009. Original Deep Research source key: `turn5search2`.
 
-[^turn5search7]: seL4 Foundation, "Verification / Proofs," official seL4 verification documentation. <https://sel4.systems/Verification/proofs.html> Original Deep Research source key: `turn5search7`.
+[^turn5search7]: seL4 Foundation, "Verification / Proofs," official seL4 verification documentation. [seL4 Proofs](https://sel4.systems/Verification/proofs.html) Original Deep Research source key: `turn5search7`.
 
-[^turn20search0]: Kai Greshake et al., "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection," 2023. <https://arxiv.org/abs/2302.12173> Original Deep Research source key: `turn20search0`.
+[^turn20search0]: Kai Greshake et al., "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection," 2023. [arXiv:2302.12173](https://arxiv.org/abs/2302.12173) Original Deep Research source key: `turn20search0`.
 
-[^turn20search3]: Edoardo Debenedetti et al., "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents," NeurIPS 2024. <https://arxiv.org/abs/2406.13352> Original Deep Research source key: `turn20search3`.
+[^turn20search3]: Edoardo Debenedetti et al., "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents," NeurIPS 2024. [arXiv:2406.13352](https://arxiv.org/abs/2406.13352) Original Deep Research source key: `turn20search3`.
 
-[^turn20search6]: Qiusi Zhan, Zhixiang Liang, Zifan Ying, and Daniel Kang, "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents," Findings of ACL 2024. <https://aclanthology.org/2024.findings-acl.624/> Original Deep Research source key: `turn20search6`.
+[^turn20search6]: Qiusi Zhan, Zhixiang Liang, Zifan Ying, and Daniel Kang, "[InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents](https://aclanthology.org/2024.findings-acl.624/)," Findings of ACL 2024. Original Deep Research source key: `turn20search6`.
 
-[^turn5search4]: seL4 Foundation, "Verification Assumptions," official documentation of proof scope and assumptions. <https://sel4.systems/Verification/assumptions.html> Original Deep Research source key: `turn5search4`.
+[^turn5search4]: seL4 Foundation, "[Verification Assumptions](https://sel4.systems/Verification/assumptions.html)," official documentation of proof scope and assumptions. Original Deep Research source key: `turn5search4`.
 
-[^turn14search6]: Ravi S. Sandhu, Edward J. Coyne, Hal L. Feinstein, and Charles E. Youman, "Role-Based Access Control Models," *IEEE Computer* 29(2), 1996. <https://csrc.nist.gov/csrc/media/projects/role-based-access-control/documents/sandhu96.pdf> Original Deep Research source key: `turn14search6`.
+[^turn14search6]: Ravi S. Sandhu, Edward J. Coyne, Hal L. Feinstein, and Charles E. Youman, "[Role-Based Access Control Models](https://csrc.nist.gov/csrc/media/projects/role-based-access-control/documents/sandhu96.pdf)," *IEEE Computer* 29(2), 1996. Original Deep Research source key: `turn14search6`.
 
-[^turn21search8]: Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" (CaMeL), 2025; revised for IEEE SaTML 2026. <https://arxiv.org/abs/2503.18813> Original Deep Research source key: `turn21search8`.
+[^turn21search8]: Edoardo Debenedetti et al., "Defeating Prompt Injections by Design" (CaMeL), 2025; revised for IEEE SaTML 2026. [arXiv:2503.18813](https://arxiv.org/abs/2503.18813) Original Deep Research source key: `turn21search8`.
 
-[^turn20academia24]: Haoyu Wang, Christopher M. Poskitt, and Jun Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents," ICSE 2026. <https://doi.org/10.1145/3744916.3764546> Original Deep Research source key: `turn20academia24`.
+[^turn20academia24]: Haoyu Wang, Christopher M. Poskitt, and Jun Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents," ICSE 2026. [doi:10.1145/3744916.3764546](https://doi.org/10.1145/3744916.3764546) Original Deep Research source key: `turn20academia24`.
 
-[^turn20search4]: Yu He et al., "AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations," USENIX Security 2026. <https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu> Original Deep Research source key: `turn20search4`.
+[^turn20search4]: Yu He et al., "[AttriGuard: Defeating Indirect Prompt Injection in LLM Agents via Causal Attribution of Tool Invocations](https://www.usenix.org/conference/usenixsecurity26/presentation/he-yu)," USENIX Security 2026. Original Deep Research source key: `turn20search4`.
 
-[^turn20academia25]: Wei Zhao, Zhe Li, Peixin Zhang, and Jun Sun, "ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection," 2026. <https://arxiv.org/abs/2604.11790> Original Deep Research source key: `turn20academia25`.
+[^turn20academia25]: Wei Zhao, Zhe Li, Peixin Zhang, and Jun Sun, "ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection," 2026. [arXiv:2604.11790](https://arxiv.org/abs/2604.11790) Original Deep Research source key: `turn20academia25`.
 
-[^turn20academia26]: Haoyu Wang, Christopher M. Poskitt, Jun Sun, and Jiali Wei, "Pro2Guard: Proactive Runtime Enforcement of LLM Agent Safety via Probabilistic Model Checking," 2025. <https://arxiv.org/abs/2508.00500> Original Deep Research source key: `turn20academia26`.
+[^turn20academia26]: Haoyu Wang, Christopher M. Poskitt, Jun Sun, and Jiali Wei, "Pro2Guard: Proactive Runtime Enforcement of LLM Agent Safety via Probabilistic Model Checking," 2025. [arXiv:2508.00500](https://arxiv.org/abs/2508.00500) Original Deep Research source key: `turn20academia26`.
 
-[^turn15search3]: Agent2Agent (A2A) Protocol, current specification and core concepts. <https://a2a-protocol.org/latest/topics/key-concepts/> Original Deep Research source key: `turn15search3`.
+[^turn15search3]: Agent2Agent (A2A) Protocol, current specification and core concepts. [Core Concepts (A2A Protocol)](https://a2a-protocol.org/latest/topics/key-concepts/) Original Deep Research source key: `turn15search3`.
 
-[^turn15search1]: Agent2Agent (A2A) Protocol, current enterprise/security and authorization guidance. <https://a2a-protocol.org/latest/topics/enterprise-ready/> Original Deep Research source key: `turn15search1`.
+[^turn15search1]: Agent2Agent (A2A) Protocol, current enterprise/security and authorization guidance. [Enterprise Features (A2A Protocol)](https://a2a-protocol.org/latest/topics/enterprise-ready/) Original Deep Research source key: `turn15search1`.
 
-[^turn14search2]: Model Context Protocol maintainers, "The 2026-01-28 Specification," 28 July 2026. <https://blog.modelcontextprotocol.io/posts/2026-01-28/> Original Deep Research source key: `turn14search2`.
+[^turn14search2]: Model Context Protocol maintainers, "[The 2026-01-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-01-28/)," 28 July 2026. Original Deep Research source key: `turn14search2`.
 
-[^turn14search10]: Model Context Protocol maintainers, "The 2026-01-28 MCP Specification Release Candidate," including the Tasks extension redesign. <https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/> Original Deep Research source key: `turn14search10`.
+[^turn14search10]: Model Context Protocol maintainers, "[The 2026-01-28 MCP Specification Release Candidate](https://blog.modelcontextprotocol.io/posts/2026-01-28-release-candidate/)," including the Tasks extension redesign. Original Deep Research source key: `turn14search10`.
 
-[^turn14search9]: Model Context Protocol, experimental Tasks specification (2025-11-25), security considerations for task isolation and authorization-context binding. <https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks> Original Deep Research source key: `turn14search9`.
+[^turn14search9]: Model Context Protocol, experimental Tasks specification (2025-11-25), security considerations for task isolation and authorization-context binding. [Tasks (Model Context Protocol specification)](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks) Original Deep Research source key: `turn14search9`.
 
 ## Instructions and untrusted data in language interfaces
 
 
 The following passage from the natural-language interface dialogue (archived source 011) retains the full email example and proposed safeguards. Its statements about models and security remain saved LLM claims rather than independently checked findings from the split.
 
-The language-intent note retains the opening request and general argument. Read the comments for the relation between interpreted intent and permission to act. The audit map records the original range.
+The [language-intent note]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) retains the opening request and general argument. The [audit map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-7-natural-language-interface-dialogue) records the original range.
 
 <!-- Natural-language instruction-boundary passage begins below. -->
 
@@ -194,7 +194,7 @@ Natural language cannot replace those.
 
 The following passage from the language-interface architecture reply (archived source 012) retains the complete authority example and proposed refusal of a refund. The distinction concerns permission for the concrete operation and its arguments rather than general access to a tool. The passage remains a saved proposal, not an implemented security guarantee.
 
-The architecture overview retains the overall model. The related [operation contract]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}) is separate from authority to execute it. Read the architecture comments for identity, arguments, and the effect boundary. The stage 8 audit records the original range.
+The [architecture overview]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries" >}}) retains the overall model. The related [operation contract]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}) is separate from authority to execute it. The [stage 8 audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-8-language-interfaces-and-architecture) records the original range.
 
 <!-- Concrete-operation authorization passage begins below. -->
 

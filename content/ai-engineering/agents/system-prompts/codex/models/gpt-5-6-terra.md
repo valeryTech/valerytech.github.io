@@ -7,35 +7,35 @@ linkTitle: "GPT-5.6 Terra"
 ## model_messages.instructions_template
 
 
-- [instructions_template__intro.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-intro" >}}) (shared by 6 models)
-- [instructions_template__personality.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-personality" >}}) (shared by 6 models)
-- [instructions_template__writing-style.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-writing-style" >}}) (shared by 6 models)
-- [instructions_template__technical-communication.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-technical-communication" >}}) (shared by 4 models)
-- [instructions_template__working-with-the-user.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-working-with-the-user" >}}) (shared by 6 models)
-- [instructions_template__intermediate-commentary.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-intermediate-commentary" >}}) (shared by 6 models)
-- [instructions_template__final-answer.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-final-answer" >}}) (shared by 6 models)
-- [instructions_template__rules-for-getting-work-done.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-rules-for-getting-work-done" >}}) (shared by 6 models)
-- [instructions_template__file-editing-constraints.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-file-editing-constraints" >}}) (shared by 6 models)
-- [instructions_template__autonomy-and-persistence.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-autonomy-and-persistence" >}}) (shared by 4 models)
-- [instructions_template__destructive-actions.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-destructive-actions" >}}) (shared by 6 models)
-- [instructions_template__using-skills.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-using-skills" >}}) (shared by 5 models)
+- [Instructions_template__intro]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-intro" >}}) (shared by 6 models)
+- [Instructions_template__personality]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-personality" >}}) (shared by 6 models)
+- [Instructions_template__writing Style]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-writing-style" >}}) (shared by 6 models)
+- [Instructions_template__technical Communication]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-technical-communication" >}}) (shared by 4 models)
+- [Instructions_template__working With The User]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-working-with-the-user" >}}) (shared by 6 models)
+- [Instructions_template__intermediate Commentary]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-intermediate-commentary" >}}) (shared by 6 models)
+- [Instructions_template__final Answer]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-final-answer" >}}) (shared by 6 models)
+- [Instructions_template__rules For Getting Work Done]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-rules-for-getting-work-done" >}}) (shared by 6 models)
+- [Instructions_template__file Editing Constraints]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-file-editing-constraints" >}}) (shared by 6 models)
+- [Instructions_template__autonomy And Persistence]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-autonomy-and-persistence" >}}) (shared by 4 models)
+- [Instructions_template__destructive Actions]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-destructive-actions" >}}) (shared by 6 models)
+- [Instructions_template__using Skills]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/instructions-template-using-skills" >}}) (shared by 5 models)
 
 ## model_messages.token_budget.reminder_message_template
 
 
-- [token_budget__reminder_message_template.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/token-budget-reminder-message-template" >}}) (shared by 9 models)
+- [Token_budget__reminder_message_template]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/token-budget-reminder-message-template" >}}) (shared by 9 models)
 
 ## model_messages.token_budget.guidance_message
 
 
-- [token_budget__guidance_message.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/token-budget-guidance-message" >}}) (shared by 9 models)
+- [Token_budget__guidance_message]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/token-budget-guidance-message" >}}) (shared by 9 models)
 
 ## model_messages.token_budget.auto_compact_fallback_prompt
 
 
-- [token_budget__auto_compact_fallback_prompt.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/token-budget-auto-compact-fallback-prompt" >}}) (shared by 9 models)
+- [Token_budget__auto_compact_fallback_prompt]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/token-budget-auto-compact-fallback-prompt" >}}) (shared by 9 models)
 
 ## upgrade.migration_markdown
 
 
-- [upgrade__migration_markdown.md]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/upgrade-migration-markdown" >}}) (shared by 3 models)
+- [Upgrade__migration_markdown]({{< ref "ai-engineering/agents/system-prompts/codex/pieces/upgrade-migration-markdown" >}}) (shared by 3 models)

@@ -11,8 +11,6 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 Initial question: Could investigation be represented as abstract computation on a machine and connected to more fundamental theory without excessive abstraction? Would a DSL provide a useful way to enter this domain?
 
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
-
 The working interpretation is that there's a useful level of theory here, and it sits somewhere between "workflow builder" and "formal calculus."
 
 The proposal is to model it as an abstract machine for investigations.
@@ -497,8 +495,6 @@ Then humans and agents run that program repeatedly over new questions and new co
 
 That starts to look like an actual domain-specific computing environment rather than another research UI.
 
-<a id="where-i-think-a-new-theory-actually-belongs"></a>
-
 ## A proposed place for new theory
 
 
@@ -578,8 +574,6 @@ Perhaps:
 > investigation algebra
 
 would be the least presumptuous working name.
-
-<a id="one-place-where-i-would-depart-from-rubicon"></a>
 
 ## A proposed departure from Rubicon
 

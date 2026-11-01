@@ -163,12 +163,12 @@ Atomic commitment looks like binary consensus but is stricter: one abort vote fo
 
 - **Non-blocking commit:** three-phase commit assumes bounded delays, which practical networks do not provide. The practical fix is to replace the single-node coordinator with a consensus group (DDIA). Cachin et al. build non-blocking atomic commit from a broadcast of votes plus one uniform consensus on commit or abort.
 - **Two-phase commit over consensus groups:** Spanner runs two-phase commit between shard leaders, and each participant is a Paxos group, so a participant survives the loss of some of its replicas (Petrov).
-- **Across services:** a saga avoids atomic commit, accepting visible intermediate states and compensations; see [operations that change several services]({{< ref "system-design/elements/data-across-services" >}}#operations-that-change-several-services). Atomicity on a single node is in [transactions]({{< ref "engineering/distributed-systems/transactions" >}}).
+- **Across services:** a saga avoids atomic commit, accepting visible intermediate states and compensations; see [operations that change several services]({{< ref "system-design/elements/data-across-services" >}}#operations-that-change-several-services). Atomicity on a single node is in [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}).
 
 ## Coordination services in practice
 
 
-Chubby (Burrows 2006), ZooKeeper, etcd, and Consul hold small, slowly changing data in memory, replicated by consensus over a fixed set of usually three or five nodes, on behalf of another distributed system (DDIA). Kubernetes keeps its state in etcd; see the [control plane]({{< ref "system-design/elements/control-plane" >}}). They offer:
+Chubby (Burrows 2006), ZooKeeper, etcd, and Consul hold small, slowly changing data in memory, replicated by consensus over a fixed set of usually three or five nodes, on behalf of another distributed system (DDIA). Kubernetes keeps its state in etcd; see the [Control Plane]({{< ref "system-design/elements/control-plane" >}}). They offer:
 
 - **Locks and leases:** built on the linearizable compare-and-set that consensus provides; of several clients racing for a lease, one wins.
 - **Fencing tokens:** a number that grows with every grant (zxid and cversion in ZooKeeper, the revision in etcd, a sequencer with a lock generation number in Chubby). A lease alone cannot guarantee mutual exclusion, because its holder can pause past expiry, so the protected resource rejects older tokens (Vitillo; DDIA; Design Gurus 2021); see [leases and fencing tokens]({{< ref "engineering/distributed-systems/time-and-order" >}}#leases-and-fencing-tokens).
@@ -197,18 +197,18 @@ Most systems should use one of these, or a database that runs consensus internal
 - Run three or five voters in separate failure domains; Chubby places its replicas on different racks.
 - Put a fencing token on every lease-protected resource, and design for an occasional second leader (Vitillo).
 - Give client commands unique IDs so retries are safe; see [idempotent consumer]({{< ref "system-design/elements/communication" >}}#idempotent-consumer).
-- Decide per operation whether linearizability is required ([consistency requirements]({{< ref "system-design/nfr/consistency" >}})); where it is not, [coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}) is cheaper.
+- Decide per operation whether linearizability is required ([consistency requirements]({{< ref "system-design/nfr/consistency" >}})); where it is not, [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}) is cheaper.
 
 ## Related notes
 
 
-- [System models]({{< ref "engineering/distributed-systems/system-models" >}}): the failure and timing assumptions behind FLP and partial synchrony.
-- [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}): happened-before and vector clocks, which causal broadcast uses.
+- [System Models]({{< ref "engineering/distributed-systems/system-models" >}}): the failure and timing assumptions behind FLP and partial synchrony.
+- [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}): happened-before and vector clocks, which causal broadcast uses.
 - [Guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}#consistency-models): linearizability, which consensus provides, and [PACELC]({{< ref "engineering/distributed-systems/guarantees" >}}#pacelc).
 - [Replication]({{< ref "engineering/distributed-systems/replication" >}}): single-leader replication and failover, which consensus makes safe.
 - [Transactions]({{< ref "engineering/distributed-systems/transactions" >}}): atomicity on one node, which atomic commit extends across nodes.
 - [Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}}): one consensus group per partition.
-- [Coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): when replicas can proceed without agreeing.
+- [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): when replicas can proceed without agreeing.
 - [Verification]({{< ref "engineering/distributed-systems/verification" >}}#specification-and-model-checking): consensus protocols are the usual targets of specification and model checking.
 
 ## Gaps

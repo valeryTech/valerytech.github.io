@@ -57,7 +57,7 @@ multilevel index
 
 B-Trees, B+ trees
 
-<https://jepsen.io/analyses>
+[Jepsen analyses](https://jepsen.io/analyses)
 
 # resources
 

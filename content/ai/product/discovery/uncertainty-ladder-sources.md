@@ -6,12 +6,12 @@ description: "Research support for the uncertainty ladder, from a dialogue-deriv
 linkTitle: "Ladder Sources"
 ---
 
-> **Note:** Research support, not canonical guidance. The working note is [`uncertainty-ladder.md`]({{< ref "ai/product/discovery/uncertainty-ladder" >}}). This text came from a dialogue with a chatbot (Grok) and keeps the longer treatment of research methods for possibility and the framework comparison.
+> **Note:** Research support, not canonical guidance. The working note is [Uncertainty Ladder]({{< ref "ai/product/discovery/uncertainty-ladder" >}}). This text came from a dialogue with a chatbot (Grok) and keeps the longer treatment of research methods for possibility and the framework comparison.
 
 ## Hamel's point about roadmaps
 
 
-Excerpt from Hamel Husain's [field guide](https://hamel.dev/blog/posts/field-guide/), captured in `input-field-guide.md` and [`experiments-vs-features.md`]({{< ref "ai/product/product-model/experiments-vs-features" >}}):
+Excerpt from Hamel Husain's [field guide](https://hamel.dev/blog/posts/field-guide/), captured in [[input-field-guide]] and [Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}}):
 
 > If you've worked in software development, you're familiar with traditional roadmaps: a list of features with target delivery dates. Teams commit to shipping specific functionality by specific deadlines, and success is measured by how closely they hit those targets.
 >
@@ -19,7 +19,7 @@ Excerpt from Hamel Husain's [field guide](https://hamel.dev/blog/posts/field-gui
 >
 > I've watched teams commit to roadmaps like "Launch sentiment analysis by Q2" or "Deploy agent-based customer support by end of year," only to discover that the technology simply isn't ready to meet their quality bar. They either ship something subpar to hit the deadline or miss the deadline entirely. Either way, trust erodes.
 >
-> The fundamental problem is that traditional roadmaps assume we know what's possible. With conventional software, that's often true - given enough time and resources, you can build most features reliably. With AI, especially at the cutting edge, you're constantly testing the boundaries of what's feasible.
+> The fundamental problem is that traditional roadmaps assume we know what's possible. With conventional software, that's often true -- given enough time and resources, you can build most features reliably. With AI, especially at the cutting edge, you're constantly testing the boundaries of what's feasible.
 
 Hamel's argument emphasizes feasibility: whether a proposed plan or project can work in practice. A [feasibility study](https://en.wikipedia.org/wiki/Feasibility_study) investigates this before a larger investment.
 
@@ -44,27 +44,27 @@ Committing to "Ship agentic customer support by Q3" or "Launch reliable sentimen
 ### What Hamel's article recommends instead
 
 
-1. **Capability funnels** (Bryan Bischof's framing; see `roadmap-citation.md` for a commentary on his talk, and the [`capability funnel`]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) working note)
+1. **Capability funnels** (Bryan Bischof's framing; see [[roadmap-citation]] for a commentary on his talk, and the [Capability Funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}) working note)
    Break the desired outcome into progressive levels of usefulness rather than a binary "feature shipped." Example for a query assistant:
-   - Can generate syntactically valid queries
-   - Can generate queries that execute without errors
-   - Can generate queries that return relevant results
-   - Can generate queries that match user intent
-   - Can generate near-optimal queries that solve the user's actual job
+	- Can generate syntactically valid queries
+	- Can generate queries that execute without errors
+	- Can generate queries that return relevant results
+	- Can generate queries that match user intent
+	- Can generate near-optimal queries that solve the user's actual job
 
    Progress becomes visible even when the final level is not yet reached.
 2. **Experiment-based roadmaps with hard time-boxes**
-   Eugene Yan's pattern (originally from traditional ML, still highly relevant; see [`experiments-vs-features.md`]({{< ref "ai/product/product-model/experiments-vs-features" >}})):
-   - Short data-feasibility window
-   - Technical-feasibility window
-   - Prototype / A-B window
+   Eugene Yan's pattern (originally from traditional ML, still highly relevant; see [Experiments Vs Features]({{< ref "ai/product/product-model/experiments-vs-features" >}})):
+	- Short data-feasibility window
+	- Technical-feasibility window
+	- Prototype / A-B window
    At each gate you decide: continue, pivot, or kill. Leadership gets clear decision points instead of open-ended "we're exploring agents."
 3. **Evaluation infrastructure as the real foundation**
    Without trustworthy offline (and later online) evaluation, you cannot tell whether an experiment moved the needle. The teams that later move fastest usually invested heavily here first (GitHub Copilot's large-scale offline evaluation against existing test suites is a classic example).
 4. **Cultural shift toward visible learning**
    Normalize sharing failures (Eugene's "fifteen-five" updates and no-prep sharing sessions). Long periods that look like failure followed by sudden jumps are common; hiding the failures kills learning speed.
 
-How these connect to the ladder: each level of Bischof's funnel is a separate claim, and each can be open at a different rung (the funnel became the [`solution utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}})). Yan's windows map roughly onto rungs: data feasibility onto possibility and approach, technical feasibility onto feasibility, and the prototype / A-B window onto value. Evaluation infrastructure and error analysis are what make the rungs readable at all: error analysis is the tool that tells a structural failure from a fixable one.
+How these connect to the ladder: each level of Bischof's funnel is a separate claim, and each can be open at a different rung (the funnel became the [Solution Utility Ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}})). Yan's windows map roughly onto rungs: data feasibility onto possibility and approach, technical feasibility onto feasibility, and the prototype / A-B window onto value. Evaluation infrastructure and error analysis are what make the rungs readable at all: error analysis is the tool that tells a structural failure from a fixable one.
 
 ### Practical implication
 
@@ -722,7 +722,7 @@ Early-rung AI work requires practices suited to possibility and approach uncerta
 ## Open areas for development
 
 
-Several of these gaps are now partly addressed in [`uncertainty-ladder.md`]({{< ref "ai/product/discovery/uncertainty-ladder" >}}): per-claim records, evidence that closes each rung, boundary tests, and the organizational changes.
+Several of these gaps are now partly addressed in [Uncertainty Ladder]({{< ref "ai/product/discovery/uncertainty-ladder" >}}): per-claim records, evidence that closes each rung, boundary tests, and the organizational changes.
 
 The conceptual frame includes the ladder, complementary dimensions, diagnostic signals, and organizational mismatch. The operating practices needed to use it at scale remain largely unspecified.
 

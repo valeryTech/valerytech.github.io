@@ -1,0 +1,48 @@
+---
+draft: false
+toc: true
+title: "AI Evaluation Reading Guide"
+description: "The AI evaluation guide routes practical questions to methods for case design, evidence capture, failure analysis, evaluator validation, controlled comparisons, and learning from real use."
+linkTitle: "Reading Guide"
+---
+
+> **Evaluation shows how the product actually behaves in defined situations, so teams can make better product decisions.**
+
+Start with [AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/introduction" >}}) for the overall model.
+
+Then use the document that matches the current question:
+
+| Need                                                                                   | Document                                                        |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Understand how product intent, system behavior, decision needs, and evaluation connect | [Conceptual Model for AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/conceptualization" >}})      |
+| Understand the purpose and limits of evaluation                                        | [Goals of AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v1/conceptualization" >}}#evaluation-goals)             |
+| Distinguish cases, executions, traces, judgments, and findings                         | [Evidence Model]({{< ref "ai-engineering/evaluation/framework-v1/evidence-model" >}})                             |
+| Choose situations, inputs, cases, samples, and datasets                                | [Coverage And Case Design]({{< ref "ai-engineering/evaluation/framework-v1/coverage-and-case-design" >}})         |
+| Build a starting set of test data                                                      | [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework-v1/10-user-inputs" >}})     |
+| Define criteria, choose evaluators, and produce findings                               | [Judgment and Findings]({{< ref "ai-engineering/evaluation/framework-v1/30-judgment-and-findings" >}})            |
+| Find recurring failures in reviewed traces                                             | [Failure Analysis]({{< ref "ai-engineering/evaluation/framework-v1/20-error-analysis" >}})                        |
+| Design the tools and practices that produce evaluation evidence                        | [Evaluation Subsystem]({{< ref "ai-engineering/evaluation/framework-v1/evaluation-subsystem" >}})                 |
+| Learn from observed production behavior                                                | [Production Learning]({{< ref "ai-engineering/evaluation/framework-v1/production-learning" >}})                   |
+
+The documents follow one reasoning chain:
+
+```text
+question that matters
+        ↓
+the required behavior and any rule for judging it
+        ↓
+situations to test or production runs to sample
+        ↓
+run or observe the product
+        ↓
+record what happened
+        ↓
+judge it when a clear rule exists
+        ↓
+explain what the evidence shows and does not show
+        ↓
+decision
+```
+
+
+This is not a required project sequence. Discovery and delivery may use any part of the evaluation practice when it serves the current decision.

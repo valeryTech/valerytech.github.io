@@ -13,8 +13,6 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The retained LLM response explores possible framings for the [original prompt]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}). The alternatives concern a family of collaborative systems, while the [research-scope note]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) separates that application from the general theory and builder method.
 
-<a id="retained-response"></a>
-
 ## Proposed framing
 
 

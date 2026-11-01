@@ -8,7 +8,7 @@ linkTitle: "Research Conversation"
 
 Exported on 2026-04-29 from a shared ChatGPT conversation. The user message, three assistant progress updates, and final response are preserved. Citation widgets are converted to numbered footnotes with their source titles and URLs; their original groups are recorded in [conversation-citations.json](/ai/design-research/input/research-llm-programming-languages/conversation.assets/conversation-citations.json).
 
-Separate sub-agent final responses: [Language thesis]({{< ref "ai/design-research/input/research-llm-programming-languages/language-thesis" >}}), [Agent guarantees]({{< ref "ai/design-research/input/research-llm-programming-languages/agent-guarantees" >}}), and [Language design]({{< ref "ai/design-research/input/research-llm-programming-languages/language-design" >}}).
+Separate sub-agent final responses: [Language Thesis]({{< ref "ai/design-research/input/research-llm-programming-languages/language-thesis" >}}), [Agent Guarantees]({{< ref "ai/design-research/input/research-llm-programming-languages/agent-guarantees" >}}), and [Language Design]({{< ref "ai/design-research/input/research-llm-programming-languages/language-design" >}}).
 
 ---
 

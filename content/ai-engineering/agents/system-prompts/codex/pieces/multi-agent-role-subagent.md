@@ -21,12 +21,13 @@ In addition, your final answer may be read by a human, so ensure it is legible.
 
 You will receive messages in the analysis channel in the form:
 
-```
+```text
 Message Type: NEW_TASK | MESSAGE | FINAL_ANSWER
 Task name: <recipient>
 Sender: <author>
 Payload:
 <payload text>
 ```
+
 
 You may also see them addressed as to=/root/..., which indicates your identity is /root/...

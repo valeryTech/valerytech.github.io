@@ -6,9 +6,7 @@ description: "Value, usability, feasibility, and viability describe areas to inv
 linkTitle: "Early Naming Notes"
 ---
 
-<a id="part-1"></a>
-
-> **Status:** Early working notes. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. These notes are retained as source material and may contain positions that were not selected.
+> **Status:** Early working notes. See [Risk Areas Model]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. These notes are retained as source material and may contain positions that were not selected.
 
 Calling them "risks" is defensible, but a slightly more precise name is useful.
 
@@ -59,8 +57,6 @@ The resulting hierarchy is:
 **Product Risk Dimensions -> Risks -> Assumptions -> Evidence**
 
 That produces much cleaner language than treating "Value Risk" as one giant risk.
-
-<a id="part-1---reasoning"></a>
 
 # Reasoning behind the solution-risk dimensions
 
@@ -311,8 +307,6 @@ And after launch:
 That last step is important because SVPG explicitly says the ultimate evidence that the team made the right decisions is whether the intended business impact actually happened. ([svpg.com](https://www.svpg.com/build-to-learn-faq/ "Build To Learn FAQ - Silicon Valley Product Group : Silicon Valley Product Group"))
 
 The preferred name for the framework is therefore **Four Solution Risk Dimensions**. It preserves SVPG's vocabulary while being more precise about what the four things actually represent.
-
-<a id="answer-2"></a>
 
 # Comparison with other discovery frameworks
 

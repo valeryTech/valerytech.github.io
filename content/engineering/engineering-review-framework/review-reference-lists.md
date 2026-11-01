@@ -30,7 +30,7 @@ Supporting note: [Business, Product, and Feature Context]({{< ref "engineering/e
 ## 2. Functional and non-functional requirements
 
 
-Supporting note: [Requirements and Quality Targets]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}}).
+Supporting note: [Requirements And Quality Targets]({{< ref "engineering/engineering-review-framework/requirements-and-quality-targets" >}}).
 
 - Whether the relevant requirements have been defined
 - Functional behavior and acceptance criteria
@@ -138,7 +138,7 @@ CI means continuous integration; PR means pull request.
 ## 6. LLM-specific risks
 
 
-Supporting note: [LLM-Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}).
+Supporting note: [Llm Specific Review Guide]({{< ref "engineering/engineering-review-framework/llm-specific-review-guide" >}}).
 
 LLM means large language model. These topics apply to AI-assisted implementation and review.
 
@@ -176,6 +176,6 @@ Introduce or adapt support for a concrete review need. The [tool and skill catal
 ## Related guidance
 
 
-[Framework Rationale and Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}}) explains how to use these lists and choose the depth of review.
+[Framework Rationale And Use]({{< ref "engineering/engineering-review-framework/framework-rationale-and-use" >}}) explains how to use these lists and choose the depth of review.
 
-[Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) explains outcome-based derivation, independent test design, and their limitations.
+[Backward Design And Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) explains outcome-based derivation, independent test design, and their limitations.

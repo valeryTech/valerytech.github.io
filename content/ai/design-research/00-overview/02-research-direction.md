@@ -20,8 +20,6 @@ The [research-scope note]({{< ref "ai/design-research/00-overview/06-research-sc
 
 External literature and novelty claims in the dialogue have not been independently verified during reassembly.
 
-<a id="retained-dialogue"></a>
-
 ## Development of the proposal
 
 
@@ -30,8 +28,6 @@ The proposal is to treat this as a research project first, with the startup as a
 The current literature changes the positioning. A generic "LLM proposes a typed plan, compiler validates it" paper would now overlap heavily with PlanCompiler; formal control-flow verification overlaps AgentVerify; explicit query algebra overlaps RUBICON.
 
 The part in the research notes that still looks like the sharper research contribution is **epistemic contracts as executable program semantics**: coverage, provenance, authority, contradiction handling, abstention, and resource limits. The research notes already identify that boundary clearly.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The proposal is to publish it. But the proposal is to reduce the first paper to one falsifiable claim and resist publishing the entire "agent operating environment" vision at once.
 
@@ -86,7 +82,7 @@ The theorem is conditional: it concerns properties of the computation around pro
 
 That gives the paper three contributions that fit together: a computational model, an implementation, and empirical evidence.
 
-The specific recommendation is to **not make Colored Petri Nets the headline of paper 1**. They're worth experimenting with as an execution semantics or lowering target--the notes identify good reasons for them--but "agents on Petri nets" is already being explored publicly. ([HASH](https://hash.ai/blog/petri-nets-for-agentic-ai "Petri Net-Powered Agents - HASH Blog")) If Petri nets turn out to be essential to a theorem or capability, they can become part of the paper. Otherwise they're an implementation choice.
+The specific recommendation is to **not make Colored Petri Nets the headline of paper 1**. They're worth experimenting with as an execution semantics or lowering target -- the notes identify good reasons for them -- but "agents on Petri nets" is already being explored publicly. ([HASH](https://hash.ai/blog/petri-nets-for-agentic-ai "Petri Net-Powered Agents - HASH Blog")) If Petri nets turn out to be essential to a theorem or capability, they can become part of the paper. Otherwise they're an implementation choice.
 
 Likewise, leave the optimizer mostly out. Once you prove that `coverage=complete` and `coverage=best_effort` are meaningfully different program contracts, a second paper can ask how to choose the cheapest physical plan satisfying a contract. That is where the proposed cost/quality optimizer becomes a substantial research problem. The research notes already formulate exactly that compiler problem as epistemic requirements + resource budget + available operators -> physical plan.
 
@@ -149,8 +145,6 @@ If the underlying abstractions are good, the generalization will happen naturall
 
 according to [problem-framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}})
 
-TODO: Clarify the original `XX` marker; no further text is recorded here.
-
 The proposal is to make one substantial change to `research-direction.md`: keep the first paper almost exactly as it is, but change the umbrella research program.
 
 The file currently generalizes toward:
@@ -162,8 +156,6 @@ The later critique is that this still puts too much weight on the LLM/agent. The
 > the computation consists of heterogeneous participants contributing to a shared world, while the runtime controls what becomes authoritative state and what can affect the external world.
 
 That follows directly from the distinction in the newer notes between opaque component behavior and constrained system behavior. Participants can generate arbitrary candidates; accepted state transitions go through permissions and checks.
-
-<a id="what-i-would-keep"></a>
 
 ### Elements proposed for retention
 
@@ -185,8 +177,6 @@ So the proposal is to preserve:
 `epistemic contracts -> compiler/runtime enforcement -> empirical improvement`
 
 and build that before the larger platform.
-
-<a id="i-would-reorganize-the-seven-research-areas"></a>
 
 ### Proposed reorganization of the seven research areas
 
@@ -211,8 +201,6 @@ The proposal is to structure the research program approximately as:
     Given a valid logical operation, choose models, search strategies, people, tools, parallelism, etc. The existing "query optimization for probabilistic computation" fits here.
 
 The LLM-specific questions then cut across these areas. They don't define the architecture.
-
-<a id="and-i-would-make-the-research-sequence-concrete"></a>
 
 ### Proposed research sequence
 

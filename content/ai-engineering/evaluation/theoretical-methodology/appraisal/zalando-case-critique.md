@@ -6,7 +6,7 @@ description: "Zalando's report on agentic engineering is a useful experience rep
 linkTitle: "Zalando Case Critique"
 ---
 
-This note reads one engineering report against the principles in [Evidence in software engineering]({{< ref "engineering/evidence" >}}): [kinds of claim]({{< ref "engineering/evidence/stating-claims" >}}), [measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}), [causal claims]({{< ref "engineering/evidence/causal-claims" >}}) and [validity]({{< ref "engineering/evidence/validity" >}}). Part of [Evidence appraisal]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal" >}}).
+This note reads one engineering report against the principles in [Evidence in software engineering]({{< ref "engineering/evidence" >}}): [kinds of claim]({{< ref "engineering/evidence/stating-claims" >}}), [Measures And Constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}), [Causal Claims]({{< ref "engineering/evidence/causal-claims" >}}) and [Validity]({{< ref "engineering/evidence/validity" >}}). Part of [Evidence appraisal]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal" >}}).
 
 ## Assessment
 

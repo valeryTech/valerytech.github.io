@@ -10,7 +10,7 @@ linkTitle: "Engineering Assessment"
 
 **Jev is best understood as a general-purpose probabilistic decision model for bounded questions inside software.** A request supplies a `state`, one or more typed questions, and the allowed answer space. Jev returns probability distributions and typed values without generating an explanatory text response. TypeSafe currently exposes three main decision primitives: `Choice`, `Noul`, and `Score`; several questions can share the same state and are evaluated separately. TypeSafe positions this as an alternative to using an autoregressive language model for small classification, routing, verification, scoring, and policy decisions. [^1][^2]
 
-As of **26 March 2026**, the current production release is **Jev 1.14.0**, released on 14 March 2026 at **US\$0.042 per million input tokens**, with output tokens unmetered. The important evidence caveat is that almost all independent research available so far evaluates **Jev 1.13**, so claims about 1.14 should not be inferred from those results without a fresh evaluation. [^2]
+As of **26 March 2026**, the current production release is **Jev 1.14.0**, released on 14 March 2026 at **US$0.042 per million input tokens**, with output tokens unmetered. The important evidence caveat is that almost all independent research available so far evaluates **Jev 1.13**, so claims about 1.14 should not be inferred from those results without a fresh evaluation. [^2]
 
 The core design makes sense for a specific class of problems:
 
@@ -43,7 +43,7 @@ The empirical picture is promising but narrower than TypeSafe's launch marketing
 | Claim | What the evidence supports | Assessment |
 |---|---|---|
 | **Fast** | An independent political-science study measured roughly **0.09-0.27 s per decision** for Jev 1.13 versus 0.75-1.04 s for its commercial LLM comparator in those experiments. | Strong evidence for low latency on bounded tasks, although geography, batching and rate limits affect measurements. [^5] |
-| **Cheap** | A 346,009-request independent benchmark cost under \$10. But another study found **no price advantage over a low-cost LLM at batch pricing** on six of seven tasks. | Workload-dependent. The vendor's headline hundreds-fold savings should not be generalised. [^6][^5] |
+| **Cheap** | A 346,009-request independent benchmark cost under $10. But another study found **no price advantage over a low-cost LLM at batch pricing** on six of seven tasks. | Workload-dependent. The vendor's headline hundreds-fold savings should not be generalised. [^6][^5] |
 | **Calibrated** | Jev often had good ECE and useful confidence ranking. In one study it was better calibrated than GPT-6 Luna token probabilities, but **not consistently better than Qwen3.8-27B**. | Supported as a useful property, not as a universal advantage. [^6][^5] |
 | **Competitive accuracy** | Jev 1.13 performed strongly on many classification, routing and multiple-choice datasets and beat one-pass Qwen3.8-27B on 27/37 benchmark datasets. | Strong evidence for one-pass bounded decisions; comparison does **not** establish parity with reasoning-enabled frontier LLMs. [^6] |
 | **Cannot hallucinate** | Its answer type can be constrained so it cannot invent an invalid enum/type. | The broad wording is misleading. It can still choose a valid but wrong answer, trust stale information or be manipulated by adversarial state. [^7][^8][^9] |
@@ -354,7 +354,7 @@ Bars in each group are, in order, **all cases**, **top 80% by confidence**, and 
 
 For binary tasks, the benchmark exposed another subtlety: **good ranking does not imply a good 0.5 operating threshold**. On UNFAIR-ToS, tuning thresholds on held-out training data raised micro-F1 from about **0.50 to 0.75**. ToxicChat jailbreak detection similarly improved after threshold selection. This supports treating thresholds as part of the application configuration, not as universal constants supplied by the model. [^6]
 
-The cost result was also concrete. The benchmark processed roughly **218 million input tokens** and 346,009 requests for **\$9.15**, averaging roughly 630 input tokens per request. It ran in about 5¼ hours under the study's concurrency and rate limits. These are compelling economics for bulk classification, but they should be compared against the actual alternative for the workload rather than against the price of a frontier reasoning model by default. [^6]
+The cost result was also concrete. The benchmark processed roughly **218 million input tokens** and 346,009 requests for **$9.15**, averaging roughly 630 input tokens per request. It ran in about 5¼ hours under the study's concurrency and rate limits. These are compelling economics for bulk classification, but they should be compared against the actual alternative for the workload rather than against the price of a frontier reasoning model by default. [^6]
 
 That point is reinforced by Denney and DiGiuseppe's **5 March 2026** study reproducing seven political-science applications. They found Jev broadly competitive with their LLM comparisons and clearly faster, with sequential timings of about **0.09-0.27 seconds per decision** versus **0.75-1.04 seconds** for GPT-6 Luna and **0.39-0.87 seconds** for their hosted Qwen route. But GPT-6 Luna using batch pricing was cheaper on six of seven primary tasks; Jev was generally cheaper under Luna's standard real-time pricing. [^5]
 
@@ -389,7 +389,7 @@ Jev sits between three established categories: zero-shot classifiers, specialise
 | **Structured-output LLM** | Autoregressive LLM performs generation/reasoning while constrained to a JSON schema. [^4] | Far more flexible; handles reasoning, extraction and generation; schema-valid outputs can still be guaranteed. | More inference work for small decisions; schema validity does not imply semantic correctness; calibrated candidate distributions usually are not the main API abstraction. [^4] | The answer requires multi-step reasoning, synthesis, generation, open-ended extraction, or tool use. |
 | **RouteLLM** | Learns a router from preference data that chooses between a stronger/costlier and weaker/cheaper LLM. [^22] | Directly optimises a cost/quality routing problem; peer-reviewed work showed >2× savings in some benchmark settings. | Specialised to model selection; requires routing data/objective; not a general semantic-decision API. | Your main question is "which downstream model should answer this prompt?" |
 
-**Kev is the closest operational substitute.** Its current repository documents a System One-compatible API and an explicit architecture. Current checkpoints combine a Qwen backbone with a decision head; the head scores candidates and a softmax produces the distribution. The repository's current 27B model is trained differently from the smaller LoRA variants, so "Kev" is itself now a family rather than one architecture. Its transparency is valuable because experiments can distinguish backbone, decision head, data and calibration choices--something impossible with Jev today. [^19]
+**Kev is the closest operational substitute.** Its current repository documents a System One-compatible API and an explicit architecture. Current checkpoints combine a Qwen backbone with a decision head; the head scores candidates and a softmax produces the distribution. The repository's current 27B model is trained differently from the smaller LoRA variants, so "Kev" is itself now a family rather than one architecture. Its transparency is valuable because experiments can distinguish backbone, decision head, data and calibration choices -- something impossible with Jev today. [^19]
 
 Kev also illustrates an important point about Jev's product proposition: **you do not need proprietary machinery to obtain a one-pass bounded probability interface**. What remains to be established empirically is whether TypeSafe's training and serving stack gives better quality, calibration, throughput or economics than open implementations for a given workload.
 
@@ -397,7 +397,7 @@ Kev also illustrates an important point about Jev's product proposition: **you d
 
 **GLiClass occupies a slightly older conceptual niche:** flexible classification without generative decoding. Its authors explicitly motivate it with the inefficiency of using generative LLMs for zero-shot classification and the limitations of conventional cross-encoders or embedding systems when labels change dynamically. It therefore provides an important baseline against which "decision model" novelty should be assessed. [^11]
 
-The main difference is interface and scope. A Jev request can bundle heterogeneous questions--"which department?", "does this contain evidence?", "how severe?"--over one state. GLiClass is designed primarily around sequence classification. For a straightforward dynamic label problem, GLiClass may be the cleaner open baseline.
+The main difference is interface and scope. A Jev request can bundle heterogeneous questions -- "which department?", "does this contain evidence?", "how severe?" -- over one state. GLiClass is designed primarily around sequence classification. For a straightforward dynamic label problem, GLiClass may be the cleaner open baseline.
 
 **SetFit represents the opposite trade-off.** Rather than describe a new task to a generic model at runtime, you fine-tune a small embedding model using labelled examples. Its original paper uses contrastive sentence-transformer training followed by a classification head and reports strong few-shot performance with far fewer parameters than the large prompt-based systems of the time. [^21]
 
@@ -519,7 +519,7 @@ questions = {
 ```
 
 
-TypeSafe says questions are evaluated separately against the shared state, and this is one of the main intended efficiency advantages. Dependent questions--for example "given the department selected above, which specialist?"--should be a separate program step because the later question logically depends on the earlier answer. [^1]
+TypeSafe says questions are evaluated separately against the shared state, and this is one of the main intended efficiency advantages. Dependent questions -- for example "given the department selected above, which specialist?" -- should be a separate program step because the later question logically depends on the earlier answer. [^1]
 
 A particularly good architecture for retrieval-augmented generation is:
 
@@ -698,50 +698,50 @@ Key primary and independent sources used in this research:
 ## References
 
 
-[^1]: TypeSafe, "Introduction," *TypeSafe Documentation*. [https://docs.typesafe.ai/introduction](https://docs.typesafe.ai/introduction).
+[^1]: TypeSafe, "Introduction," *TypeSafe Documentation*. [Introduction (TypeSafe)](https://docs.typesafe.ai/introduction).
 
-[^2]: TypeSafe, "Models," *TypeSafe Documentation*. [https://docs.typesafe.ai/models](https://docs.typesafe.ai/models).
+[^2]: TypeSafe, "Models," *TypeSafe Documentation*. [Models (TypeSafe)](https://docs.typesafe.ai/models).
 
-[^3]: TypeSafe, "How to Build with TypeSafe," *TypeSafe Documentation*. [https://docs.typesafe.ai/concepts/how-to-build-with-system-one](https://docs.typesafe.ai/concepts/how-to-build-with-system-one).
+[^3]: TypeSafe, "How to Build with TypeSafe," *TypeSafe Documentation*. [How to build with TypeSafe](https://docs.typesafe.ai/concepts/how-to-build-with-system-one).
 
-[^4]: OpenAI, "Structured Model Outputs," *API Documentation*. [https://developers.openai.com/api/docs/guides/structured-outputs](https://developers.openai.com/api/docs/guides/structured-outputs).
+[^4]: OpenAI, "Structured Model Outputs," *API Documentation*. [Structured model outputs (OpenAI API)](https://developers.openai.com/api/docs/guides/structured-outputs).
 
-[^5]: Denney and DiGiuseppe, "JEV versus LLMs: Accuracy, Cost and Calibration on Seven Political Science Replications" (2026). [https://arxiv.org/abs/2610.06625](https://arxiv.org/abs/2610.06625).
+[^5]: Denney and DiGiuseppe, "JEV versus LLMs: Accuracy, Cost and Calibration on Seven Political Science Replications" (2026). [arXiv:2610.06625](https://arxiv.org/abs/2610.06625).
 
-[^6]: Deußer, Sparrenberg, and Sifa, "Evaluating and Benchmarking the System One Model Jev" (2026). [https://arxiv.org/abs/2609.37647](https://arxiv.org/abs/2609.37647).
+[^6]: Deußer, Sparrenberg, and Sifa, "Evaluating and Benchmarking the System One Model Jev" (2026). [arXiv:2609.37647](https://arxiv.org/abs/2609.37647).
 
-[^7]: TypeSafe, "Introducing System One Models & Jev," *TypeSafe Blog*. [https://typesafe.ai/blog/introducing-system-one-models-and-jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev).
+[^7]: TypeSafe, "Introducing System One Models & Jev," *TypeSafe Blog*. [Introducing System One Models & Jev (TypeSafe AI blog)](https://typesafe.ai/blog/introducing-system-one-models-and-jev).
 
-[^8]: TypeSafe, "Jev 1.13 Jaggedness," *TypeSafe Documentation*. [https://docs.typesafe.ai/model-jaggedness/jev-1.13](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
+[^8]: TypeSafe, "Jev 1.13 Jaggedness," *TypeSafe Documentation*. [Model jaggedness (TypeSafe)](https://docs.typesafe.ai/model-jaggedness/jev-1.13).
 
-[^9]: Yang et al., "What Can't Jev Decide? Probing the Limits of One-Pass Decision Models" (2026). [https://arxiv.org/abs/2610.24929](https://arxiv.org/abs/2610.24929).
+[^9]: Yang et al., "What Can't Jev Decide? Probing the Limits of One-Pass Decision Models" (2026). [arXiv:2610.24929](https://arxiv.org/abs/2610.24929).
 
-[^10]: TypeSafe, "AI Primer," *TypeSafe Documentation*. [https://docs.typesafe.ai/introduction/machine-learning-primer](https://docs.typesafe.ai/introduction/machine-learning-primer).
+[^10]: TypeSafe, "AI Primer," *TypeSafe Documentation*. [AI primer (TypeSafe)](https://docs.typesafe.ai/introduction/machine-learning-primer).
 
-[^11]: "GLiClass: Generalist Lightweight Model for Sequence Classification Tasks" (2025). [https://arxiv.org/abs/2508.07662](https://arxiv.org/abs/2508.07662).
+[^11]: "GLiClass: Generalist Lightweight Model for Sequence Classification Tasks" (2025). [arXiv:2508.07662](https://arxiv.org/abs/2508.07662).
 
-[^12]: Geifman and El-Yaniv, "Selective Classification for Deep Neural Networks," *NeurIPS* (2017). [https://papers.nips.cc/paper/7073-selective-classification-for-deep-neural-networks](https://papers.nips.cc/paper/7073-selective-classification-for-deep-neural-networks).
+[^12]: Geifman and El-Yaniv, "Selective Classification for Deep Neural Networks," *NeurIPS* (2017). [Selective Classification for Deep Neural Networks](https://papers.nips.cc/paper/7073-selective-classification-for-deep-neural-networks).
 
-[^13]: Geifman and El-Yaniv, "SelectiveNet: A Deep Neural Network with an Integrated Reject Option," *ICML* (2019). [https://proceedings.mlr.press/v97/geifman19a.html](https://proceedings.mlr.press/v97/geifman19a.html).
+[^13]: Geifman and El-Yaniv, "SelectiveNet: A Deep Neural Network with an Integrated Reject Option," *ICML* (2019). [SelectiveNet: A Deep Neural Network with an Integrated Reject Option](https://proceedings.mlr.press/v97/geifman19a.html).
 
-[^14]: TypeSafe, "Confidence," *TypeSafe Documentation*. [https://docs.typesafe.ai/confidence](https://docs.typesafe.ai/confidence).
+[^14]: TypeSafe, "Confidence," *TypeSafe Documentation*. [Confidence (TypeSafe)](https://docs.typesafe.ai/confidence).
 
-[^15]: TypeSafe, "Score," *TypeSafe Documentation*. [https://docs.typesafe.ai/primitives/score](https://docs.typesafe.ai/primitives/score).
+[^15]: TypeSafe, "Score," *TypeSafe Documentation*. [Score (TypeSafe)](https://docs.typesafe.ai/primitives/score).
 
-[^16]: Guo et al., "On Calibration of Modern Neural Networks," *ICML* (2017). [https://proceedings.mlr.press/v70/guo17a.html](https://proceedings.mlr.press/v70/guo17a.html).
+[^16]: Guo et al., "On Calibration of Modern Neural Networks," *ICML* (2017). [On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a.html).
 
-[^17]: Gneiting and Raftery, "Strictly Proper Scoring Rules, Prediction, and Estimation" (2007). [https://stat.uw.edu/research/tech-reports/strictly-proper-scoring-rules-prediction-and-estimation](https://stat.uw.edu/research/tech-reports/strictly-proper-scoring-rules-prediction-and-estimation).
+[^17]: Gneiting and Raftery, "Strictly Proper Scoring Rules, Prediction, and Estimation" (2007). [Strictly Proper Scoring Rules, Prediction, and Estimation](https://stat.uw.edu/research/tech-reports/strictly-proper-scoring-rules-prediction-and-estimation).
 
-[^18]: Cai et al., *Open-Jev*, project repository. [https://github.com/Zefan-Cai/Open-Jev](https://github.com/Zefan-Cai/Open-Jev).
+[^18]: Cai et al., *Open-Jev*, project repository. [Zefan-Cai/Open-Jev on GitHub](https://github.com/Zefan-Cai/Open-Jev).
 
-[^19]: Palmer et al., *Kev: Jev-like Decision Models*, project repository. [https://github.com/jaredpalmer/kev](https://github.com/jaredpalmer/kev).
+[^19]: Palmer et al., *Kev: Jev-like Decision Models*, project repository. [jaredpalmer/kev on GitHub](https://github.com/jaredpalmer/kev).
 
-[^20]: "Good Judgment, Bad Advice: Decision-Model Controllers Raise Agent Cost Without Improving Success" (2026). [https://arxiv.org/abs/2610.24649](https://arxiv.org/abs/2610.24649).
+[^20]: "Good Judgment, Bad Advice: Decision-Model Controllers Raise Agent Cost Without Improving Success" (2026). [arXiv:2610.24649](https://arxiv.org/abs/2610.24649).
 
-[^21]: "Efficient Few-Shot Learning Without Prompts" (2022). [https://arxiv.org/abs/2209.11055](https://arxiv.org/abs/2209.11055).
+[^21]: "Efficient Few-Shot Learning Without Prompts" (2022). [arXiv:2209.11055](https://arxiv.org/abs/2209.11055).
 
-[^22]: "RouteLLM: Learning to Route LLMs from Preference Data," *ICLR* (2025). [https://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html).
+[^22]: "RouteLLM: Learning to Route LLMs from Preference Data," *ICLR* (2025). [RouteLLM: Learning to Route LLMs from Preference Data](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html).
 
-[^23]: TypeSafe, "Classifying RAG Passages," *TypeSafe Documentation*. [https://docs.typesafe.ai/cookbooks/classifying_rag_passages](https://docs.typesafe.ai/cookbooks/classifying_rag_passages).
+[^23]: TypeSafe, "Classifying RAG Passages," *TypeSafe Documentation*. [Classifying RAG passages (TypeSafe)](https://docs.typesafe.ai/cookbooks/classifying_rag_passages).
 
-[^24]: TypeSafe, "Advanced Usage," *TypeSafe Python SDK Documentation*. [https://docs.typesafe.ai/sdk/python/usage/advanced](https://docs.typesafe.ai/sdk/python/usage/advanced).
+[^24]: TypeSafe, "Advanced Usage," *TypeSafe Python SDK Documentation*. [Advanced usage (TypeSafe)](https://docs.typesafe.ai/sdk/python/usage/advanced).

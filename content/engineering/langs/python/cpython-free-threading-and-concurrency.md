@@ -144,7 +144,7 @@ Its goal is to let developers express tasks and their data dependencies while a 
 
 [bocpy](https://microsoft.github.io/bocpy/) is the prototype associated with this work. Treat the summit discussion as an exploration of programming models, rather than an announcement that BOC is a standard-library API.
 
-The distinction is between **execution capabilities**--threads, processes, and isolated interpreters--and **programming models** that coordinate task lifetimes and access to data. Free threading changes the former; it does not determine which higher-level model an application should use.
+The distinction is between **execution capabilities** -- threads, processes, and isolated interpreters -- and **programming models** that coordinate task lifetimes and access to data. Free threading changes the former; it does not determine which higher-level model an application should use.
 
 **Sources**
 

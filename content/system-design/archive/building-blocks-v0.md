@@ -18,7 +18,7 @@ Before the March 19, 2026 refactor, this note collected four kinds of material:
 - a template for describing a pattern;
 - short entries on components.
 
-The refactor moved each topic into a hub of the [pattern map]({{< ref "system-design/elements/pattern-map" >}}). This version, rewritten on April 4, 2026, records what the collection held and where each part lives now. The original wording is in git history.
+The refactor moved each topic into a hub of the [Pattern Map]({{< ref "system-design/elements/pattern-map" >}}). This version, rewritten on April 4, 2026, records what the collection held and where each part lives now. The original wording is in git history.
 
 ## How sources divide the material
 
@@ -59,7 +59,7 @@ A component list says what exists, but it does not say when to use a component o
 | --- | --- |
 | APIs | [Contracts and API design]({{< ref "system-design/elements/communication" >}}#contracts-and-api-design) |
 | Databases: SQL versus NoSQL | Storage choice in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) |
-| Scaling | [Scalability]({{< ref "system-design/nfr/scalability" >}}) and [data at scale]({{< ref "system-design/elements/data-at-scale" >}}) |
+| Scaling | [Scalability]({{< ref "system-design/nfr/scalability" >}}) and [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}) |
 | CAP theorem | [CAP and PACELC]({{< ref "engineering/distributed-systems/guarantees" >}}#cap-and-pacelc) |
 | Web authentication and basic security | [Security]({{< ref "system-design/elements/operating-services" >}}#security) |
 | Load balancers | [Load balancer]({{< ref "system-design/elements/request-path" >}}#load-balancer) |
@@ -86,7 +86,7 @@ Educative designs each building block once, as a small system with its own requi
 | Service monitoring | [Observability]({{< ref "system-design/elements/operating-services" >}}#observability) | Patterns listed |
 | Distributed caching | Caching in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) | Options row |
 | Distributed messaging queue | [Messaging]({{< ref "system-design/elements/messaging" >}}) | Pattern note |
-| Publish-subscribe system | [Messaging]({{< ref "system-design/elements/messaging" >}}) and [communication]({{< ref "system-design/elements/communication" >}}) | Pattern note |
+| Publish-subscribe system | [Messaging]({{< ref "system-design/elements/messaging" >}}) and [Communication]({{< ref "system-design/elements/communication" >}}) | Pattern note |
 | Rate limiter | [Rate limiting across nodes]({{< ref "system-design/elements/data-at-scale" >}}#rate-limiting-across-nodes) and the [rate limiter case]({{< ref "system-design/projects/rate-limiter" >}}) | Section and case |
 | Blob store | Object storage under storage choice in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) | Named only |
 | Distributed search | [Search index]({{< ref "system-design/elements/data-at-scale" >}}#search-index) | Section |
@@ -101,14 +101,14 @@ Educative designs each building block once, as a small system with its own requi
 | --- | --- |
 | Building blocks | The [hubs]({{< ref "system-design/elements/pattern-map" >}}#the-hubs) |
 | Reasoning about non-functional requirements | [NFR guide]({{< ref "system-design/nfr/non-functional-requirements" >}}) |
-| Common trade-offs, kept in one list and refined with practice | [Common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}) |
-| Asynchronous patterns, communication, and protocols | [Communication]({{< ref "system-design/elements/communication" >}}) and [messaging]({{< ref "system-design/elements/messaging" >}}). The collection proposed communication and protocols as a category of its own; it became the communication hub. |
+| Common trade-offs, kept in one list and refined with practice | [Common Trade Offs]({{< ref "system-design/elements/common-trade-offs" >}}) |
+| Asynchronous patterns, communication, and protocols | [Communication]({{< ref "system-design/elements/communication" >}}) and [Messaging]({{< ref "system-design/elements/messaging" >}}). The collection proposed communication and protocols as a category of its own; it became the communication hub. |
 | Distributed coordination, transactions, and sagas | [Operations that change several services]({{< ref "system-design/elements/data-across-services" >}}#operations-that-change-several-services) and [coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination) |
 | Common technical problems | [Practice cases]({{< ref "system-design/projects" >}}) |
-| Data and databases | [Data at scale]({{< ref "system-design/elements/data-at-scale" >}}) |
+| Data and databases | [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}) |
 | API construction | [Contracts and API design]({{< ref "system-design/elements/communication" >}}#contracts-and-api-design) |
 | Vector clocks | [Coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination) |
-| Stateless services and idempotent APIs as the basis of scalability | Stateless instances in [scalability]({{< ref "system-design/nfr/scalability" >}}); [idempotent consumer]({{< ref "system-design/elements/communication" >}}#idempotent-consumer) |
+| Stateless services and idempotent APIs as the basis of scalability | Stateless instances in [Scalability]({{< ref "system-design/nfr/scalability" >}}); [idempotent consumer]({{< ref "system-design/elements/communication" >}}#idempotent-consumer) |
 | MapReduce and scatter-gather | Batch processing and scatter-gather in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options), with [tail latency]({{< ref "system-design/elements/data-at-scale" >}}#scatter-gather-and-tail-latency) |
 | Consistent hashing | Partitioning in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) |
 
@@ -137,17 +137,17 @@ The added field is what links one pattern to the next, which turns a catalog int
 | CDN | A definition: distributed proxy servers serve content from locations closer to users. Two gains: users get content from nearby data centers, and origin servers skip the requests the CDN fulfills. | [CDN]({{< ref "system-design/elements/request-path" >}}#cdn) |
 | Load balancer | Purpose: redundancy, reliability, and performance. Terms: the policy, or server selection strategy, and the backend pool. Policies: random, round robin, weighted round robin, load- or timeout-based, least connections, IP hashing, path-based, and combinations. Levels: L4 and L7. Service discovery: a static file of addresses is hard to keep current, so servers register with a coordination service such as etcd or ZooKeeper under a time-to-live and drop out when they stop renewing. Examples: NGINX and HAProxy. | [Load balancer]({{< ref "system-design/elements/request-path" >}}#load-balancer) and [service discovery]({{< ref "system-design/elements/request-path" >}}#service-discovery) |
 | Proxy | A forward proxy acts for clients and a reverse proxy for servers. Uses: filtering, logging, caching, load balancing, and changing requests and responses. | [Proxy]({{< ref "system-design/elements/request-path" >}}#proxy) |
-| API gateway | A link, with a to-do on trade-offs. | [API gateway]({{< ref "system-design/elements/api-gateway" >}}) and [external API]({{< ref "system-design/elements/request-path" >}}#external-api) |
+| API gateway | A link, with a to-do on trade-offs. | [Api_gateway]({{< ref "system-design/elements/api-gateway" >}}) and [external API]({{< ref "system-design/elements/request-path" >}}#external-api) |
 | Pub/sub | A to-do on operational problems such as consumer rebalancing. | [Consumer groups and rebalancing]({{< ref "system-design/elements/messaging" >}}#consumer-groups-and-rebalancing) |
 | Asynchronism | Message queues and task queues. | [Messaging]({{< ref "system-design/elements/messaging" >}}) and [task queues and scheduling]({{< ref "system-design/elements/messaging" >}}#task-queues-and-scheduling) |
 | Sidecar | Functionality split out of the application into a separate process. | [Sidecar and service mesh]({{< ref "system-design/elements/request-path" >}}#between-services-sidecar-and-service-mesh) |
-| Service mesh | Moves the complexity of many services into an infrastructure layer: load balancing, discovery, traffic management, circuit breaking, telemetry, and fault injection. | [Sidecar and service mesh]({{< ref "system-design/elements/request-path" >}}#between-services-sidecar-and-service-mesh), [control plane]({{< ref "system-design/elements/control-plane" >}}), and fault injection in [testing the controls]({{< ref "system-design/elements/containing-failure" >}}#testing-the-controls) |
+| Service mesh | Moves the complexity of many services into an infrastructure layer: load balancing, discovery, traffic management, circuit breaking, telemetry, and fault injection. | [Sidecar and service mesh]({{< ref "system-design/elements/request-path" >}}#between-services-sidecar-and-service-mesh), [Control Plane]({{< ref "system-design/elements/control-plane" >}}), and fault injection in [testing the controls]({{< ref "system-design/elements/containing-failure" >}}#testing-the-controls) |
 | Distributed computation | A heading only. | Batch processing and scatter-gather in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) |
 | Key-value store | In-memory data grids, as a heading. | [Key-value stores and data grids]({{< ref "system-design/elements/data-at-scale" >}}#key-value-stores-and-data-grids) and the [key-value store case]({{< ref "system-design/projects/key-value-store" >}}) |
 | Rate limiting | Distributing the limiter is the hard part; limits per tier are harder still. | [Rate limiting across nodes]({{< ref "system-design/elements/data-at-scale" >}}#rate-limiting-across-nodes) and the [rate limiter case]({{< ref "system-design/projects/rate-limiter" >}}#limits-by-tier) |
 | Security | Security as a trade-off between total safety, a wall, and total convenience, a hole in the wall. Authentication, which establishes who is calling, separated from authorization. Two checks at a door, the peephole and a password, as the picture for multi-factor authentication. Storing password hashes, salting, and rainbow tables. Sources: Newman and the interviewing.io guide. | [Security]({{< ref "system-design/elements/operating-services" >}}#security), including password storage |
 | Sequencer | A link to Educative's lesson. | Unique ID generation in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) |
-| Templates | Hello Interview's simple CRUD service pattern, the DesignGurus master template, and the control plane with other frameworks used in production. | [Not yet placed]({{< ref "system-design/elements/pattern-map" >}}#not-yet-placed) and the [control plane]({{< ref "system-design/elements/control-plane" >}}) |
+| Templates | Hello Interview's simple CRUD service pattern, the DesignGurus master template, and the control plane with other frameworks used in production. | [Not yet placed]({{< ref "system-design/elements/pattern-map" >}}#not-yet-placed) and the [Control Plane]({{< ref "system-design/elements/control-plane" >}}) |
 
 ## Topics filled after the rewrite
 
@@ -169,7 +169,7 @@ When this note was rewritten, no hub explained the topics below. Later the same 
 | Consumer rebalancing | [Consumer groups and rebalancing]({{< ref "system-design/elements/messaging" >}}#consumer-groups-and-rebalancing) |
 | Task queues and distributed task scheduling | [Task queues and scheduling]({{< ref "system-design/elements/messaging" >}}#task-queues-and-scheduling) and the [job scheduler case]({{< ref "system-design/projects/job-scheduler" >}}#a-design-sketch) |
 | Password hashing, salting, and rainbow tables | [Security]({{< ref "system-design/elements/operating-services" >}}#security) |
-| One list of common trade-offs | [Common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}) |
+| One list of common trade-offs | [Common Trade Offs]({{< ref "system-design/elements/common-trade-offs" >}}) |
 
 ## Sources
 

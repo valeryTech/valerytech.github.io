@@ -17,7 +17,7 @@ For hybrid AI, a useful engineering definition is:
 
 > **A system is reflective when it explicitly represents some aspect of its own operation, evaluates that representation against goals, evidence, or constraints, and uses the result to causally alter subsequent computation or behaviour.**
 
-This definition requires three functions: **reification**--turning internal activity into explicit data; **meta-evaluation**--reasoning about that data; and **feedback**--making the evaluation affect subsequent state or actions. Under this definition, logging is observability but is not reflection by itself; asking an LLM to "think again" becomes reflection only when the resulting critique participates in a control loop. This interpretation closely connects classical computational reflection, architectures such as MIDCA, and contemporary systems such as Reflexion. [^2][^10][^11]
+This definition requires three functions: **reification** -- turning internal activity into explicit data; **meta-evaluation** -- reasoning about that data; and **feedback** -- making the evaluation affect subsequent state or actions. Under this definition, logging is observability but is not reflection by itself; asking an LLM to "think again" becomes reflection only when the resulting critique participates in a control loop. This interpretation closely connects classical computational reflection, architectures such as MIDCA, and contemporary systems such as Reflexion. [^2][^10][^11]
 
 The main conclusion of the research is that **reflection should be modelled as a system property, not as an LLM prompting technique**. The strongest architecture for a hybrid system is therefore an explicit reflective control plane around heterogeneous components:
 
@@ -31,7 +31,7 @@ This decomposition is consistent with the systems view behind MRKL and with late
 
 The evidence also argues against treating ungrounded LLM self-critique as a verifier. Self-Refine reported substantial gains from iterative same-model feedback on its evaluated tasks, while subsequent analyses found that **intrinsic prompted self-correction is inconsistent and can make answers worse; reliable external feedback is a much stronger condition for successful correction**. This distinction is fundamental for hybrid architecture design. [^4][^8]
 
-The recommended design is therefore **asymmetric reflection**: use generative models where ambiguity and semantic interpretation are unavoidable, and progressively move evaluation towards components with stronger semantics--retrieval evidence, executable tests, statistical models, causal models, constraint solvers, theorem provers, simulators, or human approval--as consequence severity increases. SatLM illustrates the underlying benefit and limitation precisely: the solver can guarantee correctness relative to the generated specification, while correctness of the specification itself remains a separate problem. [^5]
+The recommended design is therefore **asymmetric reflection**: use generative models where ambiguity and semantic interpretation are unavoidable, and progressively move evaluation towards components with stronger semantics -- retrieval evidence, executable tests, statistical models, causal models, constraint solvers, theorem provers, simulators, or human approval -- as consequence severity increases. SatLM illustrates the underlying benefit and limitation precisely: the solver can guarantee correctness relative to the generated specification, while correctness of the specification itself remains a separate problem. [^5]
 
 For representation, there is no universal reflective formalism. A practical system normally combines several:
 
@@ -92,7 +92,7 @@ Computational reflection gave the idea an operational interpretation. Maes's 198
 
 Two concepts from software reflection are particularly important for hybrid AI.
 
-**Reification** converts normally implicit computational properties--control state, methods, environment, execution structure, or configuration--into explicit objects. **Causal connection** means changes made through the reflective representation affect the underlying computation. Without that connection, the representation is merely diagnostic information. [^2]
+**Reification** converts normally implicit computational properties -- control state, methods, environment, execution structure, or configuration -- into explicit objects. **Causal connection** means changes made through the reflective representation affect the underlying computation. Without that connection, the representation is merely diagnostic information. [^2]
 
 That gives a useful test for AI systems. An execution trace stored only for dashboards is telemetry. The same trace becomes part of reflection when a controller examines it, diagnoses a failure and changes routing, retrieval, constraints, memory, prompts, models, or actions as a result.
 
@@ -174,7 +174,7 @@ The upper levels increase adaptability and also enlarge the safety and verificat
 
 Reflection creates an explicit place to represent **what the system believes happened**: which data were used, which modules were invoked, which constraints were applied, why a candidate was rejected and what changed after failure. Ontologies help by assigning formal meanings to entities and relations; OWL provides formally defined semantics for classes, properties, individuals and axioms. [^13]
 
-Interpretability is nevertheless conditional on the representation being faithful. A fluent LLM-generated explanation is not evidence that the explanation corresponds to the mechanism that produced the answer. For hybrid systems, stronger interpretability comes from recording observable artefacts--queries, returned records, model versions, solver constraints, proofs, program execution, state transitions and environmental outcomes--alongside textual explanations.
+Interpretability is nevertheless conditional on the representation being faithful. A fluent LLM-generated explanation is not evidence that the explanation corresponds to the mechanism that produced the answer. For hybrid systems, stronger interpretability comes from recording observable artefacts -- queries, returned records, model versions, solver constraints, proofs, program execution, state transitions and environmental outcomes -- alongside textual explanations.
 
 ### Controllability
 
@@ -1015,7 +1015,7 @@ The research supports five design principles.
 
 [^2]: [Concepts and experiments in computational reflection](<https://dl.acm.org/doi/10.1145/38807.38821>).
 
-[^3]: [MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning](<https://arxiv.org/abs/2205.00445>).
+[^3]: MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning.
 
 [^4]: [Self-Refine: Iterative Refinement with Self-Feedback](<https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html>).
 
@@ -1029,9 +1029,9 @@ The research supports five design principles.
 
 [^9]: [Metacognition in computation: A selected research review](<https://www.sciencedirect.com/science/article/pii/S0004370205001530>).
 
-[^10]: [MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy \| Proceedings of the AAAI Conference on Artificial Intelligence](<https://ojs.aaai.org/index.php/AAAI/article/view/9886>).
+[^10]: [MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence](<https://ojs.aaai.org/index.php/AAAI/article/view/9886>).
 
-[^11]: [Reflexion: Language Agents with Verbal Reinforcement Learning](<https://arxiv.org/abs/2303.11366>).
+[^11]: Reflexion: Language Agents with Verbal Reinforcement Learning.
 
 [^12]: [GEPA optimization - DSPy](<https://dspy.ai/current/getting-started/gepa-optimization/>).
 
@@ -1043,7 +1043,7 @@ The research supports five design principles.
 
 [^16]: [Teams -- AutoGen](<https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/tutorial/teams.html>).
 
-[^17]: [Self-Evolving World Models for LLM Agent Planning - arXiv](<https://arxiv.org/html/2606.30639v1>).
+[^17]: Self-Evolving World Models for LLM Agent Planning - arXiv.
 
 [^18]: [PAL: Program-aided Language Models](<https://proceedings.mlr.press/v202/gao23f.html>).
 
@@ -1063,9 +1063,9 @@ The research supports five design principles.
 
 [^26]: [CriticEval: Evaluating Large-scale Language Model as Critic](<https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html>).
 
-[^27]: [AgentBench: Evaluating LLMs as Agents](<https://arxiv.org/abs/2308.03688>).
+[^27]: AgentBench: Evaluating LLMs as Agents.
 
-[^28]: [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](<https://arxiv.org/abs/2306.05685>).
+[^28]: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.
 
 [^29]: [FActScore: Fine-grained Atomic Evaluation of Factual ...](<https://aclanthology.org/2023.emnlp-main.741/>).
 
@@ -1073,33 +1073,33 @@ The research supports five design principles.
 
 [^31]: [Selective Classification for Deep Neural Networks](<https://papers.neurips.cc/paper/7073-selective-classification-for-deep-neural-networks>).
 
-[^32]: [AgentBench: Evaluating LLMs as Agents](<https://arxiv.org/abs/2308.03688>).
+[^32]: AgentBench: Evaluating LLMs as Agents.
 
-[^33]: [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](<https://arxiv.org/abs/2302.12173>).
+[^33]: Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.
 
-[^34]: [Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile \| NIST](<https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence>).
+[^34]: [Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile | NIST](<https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence>).
 
 [^35]: [SatLM: Satisfiability-Aided Language Models Using Declarative Prompting](<https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html>).
 
-[^36]: [Voyager: An Open-Ended Embodied Agent with Large Language Models](<https://arxiv.org/abs/2305.16291>).
+[^36]: Voyager: An Open-Ended Embodied Agent with Large Language Models.
 
-[^37]: [AutoGen: Enabling Next-Gen LLM Applications via Multi ...](<https://arxiv.org/abs/2308.08155>).
+[^37]: AutoGen: Enabling Next-Gen LLM Applications via Multi ....
 
 [^38]: [LeanDojo: Theorem Proving with Retrieval-Augmented ...](<https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html>).
 
-[^39]: [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](<https://arxiv.org/abs/2302.12173>).
+[^39]: Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.
 
 [^40]: [OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)](<https://www.w3.org/TR/owl2-syntax/>).
 
 [^41]: [OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)](<https://www.w3.org/TR/owl2-syntax/>).
 
-[^42]: [Logic Tensor Networks](<https://arxiv.org/abs/2012.13635>).
+[^42]: Logic Tensor Networks.
 
 [^43]: [Gen.jl](<https://www.gen.dev/docs/>).
 
-[^44]: [WebArena: A Realistic Web Environment for Building Autonomous Agents](<https://arxiv.org/abs/2307.13854>).
+[^44]: WebArena: A Realistic Web Environment for Building Autonomous Agents.
 
-[^45]: [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](<https://arxiv.org/abs/2310.06770>).
+[^45]: SWE-bench: Can Language Models Resolve Real-World GitHub Issues?.
 
 [^46]: Unresolved additional source from the original report (reference ID: `turn20search21`). Its URL was not exposed in the citation panel.
 

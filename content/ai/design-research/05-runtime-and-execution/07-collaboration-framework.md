@@ -258,8 +258,6 @@ That is much stronger than telling developers:
 
 The framework turns that design principle into infrastructure.
 
-<a id="id-probably-frame-the-project-like-this"></a>
-
 ### Proposed project framing
 
 

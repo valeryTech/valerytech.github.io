@@ -1084,7 +1084,7 @@ The principal limitation of the current evidence is that **there is no published
 
 The numbered references follow the citations and source links in the supplied PDF.
 
-[^1]: [\[2610.28380\] Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design](https://arxiv.org/abs/2610.28380)
+[^1]: [\[2610.28380] Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design](https://arxiv.org/abs/2610.28380)
 
 [^2]: [pydantic-ai/docs/index.md at main · pydantic/pydantic-ai · GitHub](https://github.com/pydantic/pydantic-ai/blob/main/docs/index.md)
 

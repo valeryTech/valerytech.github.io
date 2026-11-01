@@ -119,7 +119,7 @@ do n <- readLn
 
 With `<*>` both sides already exist before anything runs, so the structure is fixed. Every monad is an applicative, but not the other way round: `ZipList`, and validation types that collect errors, have no lawful monad matching their `<*>`. Mokhov et al. 2020 ([PDF](/sources/968bcf5644f3dbb1736d59b47f1717c1.bin)) make the difference concrete for build systems: applicative builds have static dependencies, known before the build, while monadic ones have dynamic dependencies that appear during it.
 
-- Stack Overflow, "What advantage does monad give us over an applicative?": [https://stackoverflow.com/questions/17409260/what-advantage-does-monad-give-us-over-an-applicative/17412969#17412969](https://stackoverflow.com/questions/17409260/what-advantage-does-monad-give-us-over-an-applicative/17412969#17412969)
+- Stack Overflow, "What advantage does monad give us over an applicative?": [What advantage does monad give us over an applicative?](https://stackoverflow.com/questions/17409260/what-advantage-does-monad-give-us-over-an-applicative/17412969#17412969)
 
 ## Laws
 
@@ -180,11 +180,11 @@ The result is as long as the shortest list. `pure x` is the infinite list `ZipLi
 ## Further links
 
 
-- Wikibooks, Haskell, "Applicative functors": <https://en.wikibooks.org/wiki/Haskell/Applicative_functors>
-- HaskellWiki, "Applicative functor": <https://wiki.haskell.org/Applicative_functor>
-- serpentine.com, "The basics of applicative functors, put to practical work" (2008): <http://www.serpentine.com/blog/2008/02/06/the-basics-of-applicative-functors-put-to-practical-work/>
-- Ross Paterson's page for the paper that introduced applicative functors, Conor McBride and Ross Paterson's *Applicative programming with effects* (Journal of Functional Programming, 2008); read for the motivation: <https://www.staff.city.ac.uk/~ross/papers/Applicative.html>
-- Exercism forum, "Perspectives on Applicative": some explanation, further links and exercises: <https://forum.exercism.org/t/perspectives-on-applicative/4328/2>
+- Wikibooks, Haskell, "[Applicative functors](https://en.wikibooks.org/wiki/Haskell/Applicative_functors)"
+- HaskellWiki, "[Applicative functor](https://wiki.haskell.org/Applicative_functor)"
+- serpentine.com, "[The basics of applicative functors, put to practical work](http://www.serpentine.com/blog/2008/02/06/the-basics-of-applicative-functors-put-to-practical-work/)" (2008)
+- Ross Paterson's page for the paper that introduced applicative functors, Conor McBride and Ross Paterson's *Applicative programming with effects* (Journal of Functional Programming, 2008); read for the motivation: [Applicative Programming with Effects (Ross Paterson's page)](https://www.staff.city.ac.uk/~ross/papers/Applicative.html)
+- Exercism forum, "[Perspectives on Applicative](https://forum.exercism.org/t/perspectives-on-applicative/4328/2)": some explanation, further links and exercises
 
 ## Open tasks
 

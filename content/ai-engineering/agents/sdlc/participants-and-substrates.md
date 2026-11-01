@@ -18,7 +18,7 @@ A participant is a person, an agent, or an automated check that contributes to t
 - **Judge the result:** check whether the result is right, and state what the check covered.
 - **Commit the result:** accept it into shared work (such as merging a pull request) or authorize an effect outside the workspace (such as deploying or running a migration).
 
-A handoff moves one of these responsibilities to another participant. One person often holds several roles--on a small team, the engineer steering the session may also be the reviewer and the owner--and keeping the roles distinct makes clear which responsibility is being exercised at each step.
+A handoff moves one of these responsibilities to another participant. One person often holds several roles -- on a small team, the engineer steering the session may also be the reviewer and the owner -- and keeping the roles distinct makes clear which responsibility is being exercised at each step.
 
 ### Capability, Authority, and Accountability
 
@@ -34,7 +34,7 @@ Work goes to an agent by capability. Decisions go by authority, consequence, and
 ### Roles
 
 
-People hold roles in the project. An agent role is a model combined with its [agent customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}) (instructions, skills, tools, policies, and triggers) and its access to the project environment, so the same model can fill different roles.
+People hold roles in the project. An agent role is a model combined with its [Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}}) (instructions, skills, tools, policies, and triggers) and its access to the project environment, so the same model can fill different roles.
 
 | Role | Supplies information | Does the work | Judges | Commits |
 | :--- | :--- | :--- | :--- | :--- |
@@ -54,7 +54,7 @@ Key distinctions in the table:
 - **Judging and committing are separate.** Agents and automated checks can judge; committing a merge or production effect stays with a person who holds authority.
 - **Automated checks are participants that judge.** Compilers, tests, linters, structural checks, and CI check specific properties quickly and repeatably; claims about the running system go to the app and its logs; intent and trade-offs go to the owning person.
 - **A check is independent only when its failures don't share a cause with the author's.** An independent checker agent needs a fresh context, different evidence, or a different model from the agent that wrote the change ([Independent Verification Workflows]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}})).
-- **Someone has to keep learning from doing the work.** If agents write all the code, people lose their grasp of the system--the comprehension debt described in [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}).
+- **Someone has to keep learning from doing the work.** If agents write all the code, people lose their grasp of the system -- the comprehension debt described in [Engineering Workflows]({{< ref "ai-engineering/agents/sdlc/workflows" >}}).
 
 ### Autonomy and Triggers for Agent Roles
 
@@ -63,7 +63,7 @@ An agent role's autonomy is set per type of action. Noticing a problem, deciding
 
 Each agent role also needs a trigger rule: what starts it, what its scope is, and when it stops and asks.
 
-Higher autonomy fits when the role has a track record on the task type, checks catch mistakes reliably, the action is easy to undo, and the needed context is written down. Lower autonomy fits when mistakes are costly, the goal is ambiguous, the situation is new, context is unwritten, or results are hard to check. An agent's own confidence never raises the level. Levels move up or down with evidence--open about method, strict about consequences ([Bottom-Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}})).
+Higher autonomy fits when the role has a track record on the task type, checks catch mistakes reliably, the action is easy to undo, and the needed context is written down. Lower autonomy fits when mistakes are costly, the goal is ambiguous, the situation is new, context is unwritten, or results are hard to check. An agent's own confidence never raises the level. Levels move up or down with evidence -- open about method, strict about consequences ([Bottom Up Approach]({{< ref "ai-engineering/agents/sdlc/bottom-up-approach" >}})).
 
 Sources: [Collaborative-System Design Practices]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) and [its comments]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices-comments" >}}); [Augmenting Human Work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}).
 
@@ -82,9 +82,9 @@ Steps 28-36 of the Reasoning Log refined the earlier three-part split (runtime, 
 
 - **Agent harness (runtime):** the software that runs the session loop, connects to the model and tools, manages context, and lets people watch, steer, and interrupt the agent's work ([Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}})).
 - **Agent customization:** the instructions, skills, harness settings, hooks, agent roles, and runnable workflows that turn a general harness into the team's agents across projects ([Agent Customization]({{< ref "ai-engineering/agents/customization/agent-customization" >}})).
-- **Agent Development Environment (ADE):** what the project gives every participant--the code, [project knowledge]({{< ref "ai-engineering/agents/environment/project-knowledge" >}}) and task state, written working practices and workflows, [commands]({{< ref "ai-engineering/agents/environment/command-layer" >}}) and tools, checks, repository settings, and setup definitions ([Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}})).
+- **Agent Development Environment (ADE):** what the project gives every participant -- the code, [Project Knowledge]({{< ref "ai-engineering/agents/environment/project-knowledge" >}}) and task state, written working practices and workflows, [commands]({{< ref "ai-engineering/agents/environment/command-layer" >}}) and tools, checks, repository settings, and setup definitions ([Agent Development Environment]({{< ref "ai-engineering/agents/environment/ade" >}})).
 - **Execution environment:** the machine or container where one session runs, holding the workspace, the running application and its local data/logs, sandbox isolation, and active credentials, prepared from the ADE's setup definitions ([Where Coding Agents Run]({{< ref "ai-engineering/agents/environment/where-agents-run" >}})).
-- **Authority layer:** the enforcement points across the harness, repository, CI, and deployment systems--permission rules, sandbox limits, branch protection, required reviews, CI gates, and deploy rights--that decide who may commit shared changes or trigger external effects.
+- **Authority layer:** the enforcement points across the harness, repository, CI, and deployment systems -- permission rules, sandbox limits, branch protection, required reviews, CI gates, and deploy rights -- that decide who may commit shared changes or trigger external effects.
 
 ### Lasting Knowledge and Task State
 
@@ -126,25 +126,25 @@ This was the step 7 description of processes before step 18 replaced it with the
 The [design research collection]({{< ref "ai/design-research/00-index" >}}) contains notes on human-AI collaboration reviewed in step 13 of the Reasoning Log ([02-human-ai-collaboration]({{< ref "ai/design-research/02-human-ai-collaboration" >}}), [collab-and-joint-work]({{< ref "ai/design-research/collab-and-joint-work" >}}), [Participant Profiles and Work Allocation]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}), and [Human-AI Collaboration Evaluation]({{< ref "ai/design-research/06-research-reports/11-human-ai-collaboration-evaluation" >}})). Most of that material comes from exploratory syntheses to be tested against cases.
 
 - **Applied in [Participants](#participants) (Findings 1-3):**
-  1. Separating roles into the four responsibilities (supply information, do work, judge, commit) and separating capability, authority, and accountability.
-  2. Counting automated checks among judging participants, and defining independence as non-overlapping failure causes.
-  3. Setting autonomy per action type (`observe`, `suggest`, `prepare`, `act after approval`, `act and report`) with explicit initiative triggers.
+	1. Separating roles into the four responsibilities (supply information, do work, judge, commit) and separating capability, authority, and accountability.
+	2. Counting automated checks among judging participants, and defining independence as non-overlapping failure causes.
+	3. Setting autonomy per action type (`observe`, `suggest`, `prepare`, `act after approval`, `act and report`) with explicit initiative triggers.
 - **Applied in [Substrates](#substrates) (Findings 4-6):**
-  4. Separating shared contributions from irreversible external effects at explicit commitment points enforced by an authority layer.
-  5. Separating task state from lasting knowledge, with provenance on shared artifacts.
-  6. Including observability and human steering in the runtime.
+	4. Separating shared contributions from irreversible external effects at explicit commitment points enforced by an authority layer.
+	5. Separating task state from lasting knowledge, with provenance on shared artifacts.
+	6. Including observability and human steering in the runtime.
 - **Reflected in [Processes]({{< ref "ai-engineering/agents/sdlc/processes" >}}) and [Coordination Mechanisms]({{< ref "ai-engineering/agents/environment/coordination-mechanisms" >}}) (Findings 7-10):**
-  7. Collaboration modes (elicit, delegate, propose and review, critique, reason together) and explicit transitions (handoff vs. escalation, takeover, return of control).
-  8. Designing human involvement around real decision points (intent, trade-offs, commitments, ambiguity, exceptions, residual risk, policy) with readable review scope so approval doesn't degrade into rubber-stamping.
-  9. Treating common ground as verified shared understanding (agent restates goal/assumptions; human confirms) rather than assuming a shared file guarantees alignment.
-  10. Testing the human-agent pair directly (e.g., planted defects, missing context, mid-session constraint changes, or handoff-only continuation).
+	7. Collaboration modes (elicit, delegate, propose and review, critique, reason together) and explicit transitions (handoff vs. escalation, takeover, return of control).
+	8. Designing human involvement around real decision points (intent, trade-offs, commitments, ambiguity, exceptions, residual risk, policy) with readable review scope so approval doesn't degrade into rubber-stamping.
+	9. Treating common ground as verified shared understanding (agent restates goal/assumptions; human confirms) rather than assuming a shared file guarantees alignment.
+	10. Testing the human-agent pair directly (e.g., planted defects, missing context, mid-session constraint changes, or handoff-only continuation).
 
 ### Earlier Version of Participants and Substrates (Step 7)
 
 
 - **Active Participants (Step 7):**
-  - *People:* Intent/Product Owner, System/Architecture Owner, Reviewer, Environment Maintainer.
-  - *Agents:* Collaborator/Executor, Independent Checker/Reviewer, Upkeep/Cleanup Agent.
+	- *People:* Intent/Product Owner, System/Architecture Owner, Reviewer, Environment Maintainer.
+	- *Agents:* Collaborator/Executor, Independent Checker/Reviewer, Upkeep/Cleanup Agent.
 - **Substrates (Step 7):**
-  - *Agent Runtime / Harness:* Model, loop, tool execution, context/memory management, mechanical permissions (`allow / ask / deny`).
-  - *ADE & Repository:* Subject system (code, schemas, data, running app), Knowledge layer (`AGENTS.md`, docs, contracts, ADRs, `tasks/<id>/`), and Command & control layer (`Taskfile`, scripts, tests, linters, hooks, CI).
+	- *Agent Runtime / Harness:* Model, loop, tool execution, context/memory management, mechanical permissions (`allow / ask / deny`).
+	- *ADE & Repository:* Subject system (code, schemas, data, running app), Knowledge layer (`AGENTS.md`, docs, contracts, ADRs, `tasks/<id>/`), and Command & control layer (`Taskfile`, scripts, tests, linters, hooks, CI).

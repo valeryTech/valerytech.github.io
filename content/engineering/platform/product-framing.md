@@ -15,7 +15,7 @@ linkTitle: "Product Framing"
 
 
 - **Predefined capabilities.** One way to start is to pick capabilities that seem useful and offer them to teams. That changes how teams work without managing the change, and gives no way to tell whether the capabilities are the right ones.
-- **Goals tied to delivery.** The main goal of an AI platform is to improve the product delivery performance of the teams that use it. Its capabilities therefore depend on how those teams design and deliver products. For example, a team that separates discovery from delivery needs different support in each; see the [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}) and [delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}).
+- **Goals tied to delivery.** The main goal of an AI platform is to improve the product delivery performance of the teams that use it. Its capabilities therefore depend on how those teams design and deliver products. For example, a team that separates discovery from delivery needs different support in each; see the [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}) and [Delivery Capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}).
 - **Shaping, not only adapting.** The platform can also shape and standardize team processes to improve delivery outcomes, rather than only adapting to the methods teams already use.
 - **Existing goals are inputs.** Management, stakeholders, and earlier commitments usually supply goals already. They may not match current reality, so a product approach examines them instead of adopting them as given.
 
@@ -80,13 +80,13 @@ These inputs were often created at different times for different reasons. Taken 
 
 
 1. **Discovery.**
-   - Interview stakeholders and users, and inspect existing goals, plans, and decisions.
-   - For each input, record where it comes from and which problem or desired outcome it represents.
+	- Interview stakeholders and users, and inspect existing goals, plans, and decisions.
+	- For each input, record where it comes from and which problem or desired outcome it represents.
 2. **Validation of inputs.** Check the inputs against current reality: user needs, business relevance, technical feasibility, dependencies, and assumptions.
 3. **Synthesis.**
-   - Group related inputs and identify recurring needs and common themes.
-   - Expose conflicts, gaps, and unclear boundaries.
-   - Separate desired outcomes from proposed solutions and implementation preferences.
+	- Group related inputs and identify recurring needs and common themes.
+	- Expose conflicts, gaps, and unclear boundaries.
+	- Separate desired outcomes from proposed solutions and implementation preferences.
 4. **Articulation.** Write a first version of the vision and goals in language that both product and engineering understand.
 5. **Validation against use.** Test the proposed framing against actual use cases and current decisions.
 6. **Alignment.** Review the framing with the people who will use it, resolve material disagreements, and agree on it as the basis for later decisions.
@@ -177,18 +177,18 @@ The same idea at different levels:
 | Evolution | Product-led platform evolution | Feed those observations back into the platform continuously |
 | Organizational shift | Platform productization | Treat the platform as a product with users, outcomes, feedback, and a roadmap |
 
-The [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}}) applies this to AI platforms by deriving capabilities from what a feature team does at each step. The [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) note makes the same move for service templates: build the template from the second service.
+The [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}}) applies this to AI platforms by deriving capabilities from what a feature team does at each step. The [Defaults And Triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) note makes the same move for service templates: build the template from the second service.
 
 ## Related notes
 
 
 - [Platform engineering and developer experience]({{< ref "engineering/platform/developer-experience" >}}): platform as a product, golden paths, and measures.
 - [Engineering operating model]({{< ref "engineering/platform/standards-layers" >}}): standards and how they are enforced.
-- [Delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}): what a delivery platform must be able to do.
+- [Delivery Capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}): what a delivery platform must be able to do.
 - AI platform notes:
-  - [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}});
-  - [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}});
-  - [AI platform capability map]({{< ref "ai-engineering/delivery/ai-platform-capabilities" >}}).
+	- [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}});
+	- [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}});
+	- [AI platform capability map]({{< ref "ai-engineering/delivery/ai-platform-capabilities" >}}).
 
 ## Library sources
 

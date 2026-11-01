@@ -67,7 +67,7 @@ The reading notes give three examples:
 - A queue distributing work among competing consumers.
 - Read replicas taking suitable read traffic away from a primary database.
 
-When discussing stateless application instances, explain where session or other required state lives and how a request can be handled by another instance. See [load balancing]({{< ref "system-design/elements/request-path" >}}#load-balancer) and [messaging]({{< ref "system-design/elements/messaging" >}}).
+When discussing stateless application instances, explain where session or other required state lives and how a request can be handled by another instance. See [load balancing]({{< ref "system-design/elements/request-path" >}}#load-balancer) and [Messaging]({{< ref "system-design/elements/messaging" >}}).
 
 ## Data partitioning
 
@@ -83,12 +83,12 @@ Partitioning and redundancy answer different questions. Describe how each partit
 
 Choose a pattern after identifying the constraint. The options and their costs are in the building-block hubs:
 
-- **Replication, partitioning, consistent hashing, and caching:** [data at scale]({{< ref "system-design/elements/data-at-scale" >}}). For caching, explain the selected data and invalidation behavior.
+- **Replication, partitioning, consistent hashing, and caching:** [Data At Scale]({{< ref "system-design/elements/data-at-scale" >}}). For caching, explain the selected data and invalidation behavior.
 - **Queue-based load leveling and priority queues:** buffer bursts and serve classes of work by their requirements. See [why put a queue between services]({{< ref "system-design/elements/messaging" >}}#why-put-a-queue-between-services).
 - **CQRS:** separate read and write models where their different needs justify the additional complexity. The reading notes discuss the relationship with event sourcing and the importance of hiding implementation details behind the service interface. See [data across services]({{< ref "system-design/elements/data-across-services" >}}#queries-that-need-several-services).
 - **Asynchronous work:** consider which work can leave the request path and what the client observes before it completes. See [service communication]({{< ref "system-design/elements/communication" >}}).
 - **Functional decomposition:** see [architecture style and service boundaries]({{< ref "system-design/elements/boundaries" >}}).
-- **Load shedding and back pressure:** protect capacity during overload. See [containing failure]({{< ref "system-design/elements/containing-failure" >}}).
+- **Load shedding and back pressure:** protect capacity during overload. See [Containing Failure]({{< ref "system-design/elements/containing-failure" >}}).
 
 ## Growth and autoscaling
 

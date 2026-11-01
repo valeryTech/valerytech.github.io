@@ -216,13 +216,14 @@ Default: SHA-256 over canonical JSON bytes.
 
 Recommended output string:
 
-```
+```text
 <type>:v1.3:<namespace>:sha256:<hex>
 ```
 
+
 Example:
 
-```
+```text
 C:v1.3:org.productA:sha256:9f2c...
 ```
 

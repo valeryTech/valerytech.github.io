@@ -26,7 +26,7 @@ Let's define interaction guardrails, such as explicit modes inspired by Vim, to 
 
 I'd make **generating text a temporary, explicit action, followed by a separate decision about whether to rely on it**. That's the useful part of the Vim analogy: each mode allows different actions.
 
-Reading fluent text and assuming that it contains sound reasoning is a concern that research supports. In a controlled study with 308 participants, explanations increased people's reliance on both correct and incorrect LLM answers. Asking for a longer explanation can therefore make a bad answer more convincing. That applies to my answers too. [arxiv.org](<https://arxiv.org/abs/2502.08554>)
+Reading fluent text and assuming that it contains sound reasoning is a concern that research supports. In a controlled study with 308 participants, explanations increased people's reliance on both correct and incorrect LLM answers. Asking for a longer explanation can therefore make a bad answer more convincing. That applies to my answers too. arxiv.org
 
 ### A proposed mode system
 
@@ -205,7 +205,7 @@ For a public website, I'd frame the problem this way:
 
 > People can know that a chatbot is unreliable while still responding to it as a knowledgeable conversation partner. When the chatbot becomes their default place to ask, discuss, and evaluate answers, independent checking and discussion with other people may fall away.
 
-That suggests a practical guardrail to test: **an important conversation should have a planned step outside the chat.** Before starting, decide what would resolve the question--a reproducible test, a primary source, or another person's assessment. Let the model help prepare that step. Leave the question unresolved until the relevant evidence arrives.
+That suggests a practical guardrail to test: **an important conversation should have a planned step outside the chat.** Before starting, decide what would resolve the question -- a reproducible test, a primary source, or another person's assessment. Let the model help prepare that step. Leave the question unresolved until the relevant evidence arrives.
 
 For your mode system, this means adding an explicit **outside-check step**. A second generated explanation should not, by itself, count as completing the check.
 
@@ -214,6 +214,6 @@ For your mode system, this means adding an explicit **outside-check step**. A se
 ## Completed research report
 
 
-[Preventing Overreliance on Persuasive AI-Generated Text]({{< ref "ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text" >}})
+[Preventing Overreliance On Persuasive Ai Generated Text]({{< ref "ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text" >}})
 
 > Export note: The following inline source controls exposed only their labels in the saved page: `npj Digital Medicine`, `doi.org`, `pubmed.ncbi.nlm.nih.gov`. Their destinations were not included in the archive.

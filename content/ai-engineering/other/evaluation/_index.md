@@ -25,8 +25,8 @@ These two notes come from `ai-engineering/evaluation/v1/` in the 2026-08-30 snap
 
 
 - [Causal Stack Layer Notes (Restored Copy)]({{< ref "ai-engineering/other/causal-stack" >}}) -- observability as a feature of AI systems (C6), as a system fault (L3S9), and as a family of controls (L3CF13 and L3-X).
-- [AI Production Readiness (Restored Copy)]({{< ref "ai-engineering/other/production-ready" >}}) -- the production-readiness notes; `building.md` has a section on observability designed for operation and intervention.
+- [AI Production Readiness]({{< ref "ai-engineering/delivery/production-ready" >}}) -- the production-readiness notes; [the building note]({{< ref "ai-engineering/delivery/production-ready/building" >}}) has a section on observability designed for operation and intervention.
 - Observability and AI Evals: Terminology -- defines AI observability as the evidence and inspection layer of the evaluation system.
-- [Evidence Model for AI Evaluation]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) -- the current note on evaluation evidence, which covers traces.
-- [Evaluation Harness and Workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) -- the current note on evaluation harnesses, with sources on LLM observability.
+- [Evidence Model for AI Evaluation]({{< ref "ai-engineering/evaluation/framework-v2/evidence-model" >}}) -- the current note on evaluation evidence, which covers traces.
+- [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace) -- the current section on evaluation harnesses, in the evaluation subsystem note, with sources on LLM observability.
 - What is a trace? -- Hamel Husain's short answer on traces.

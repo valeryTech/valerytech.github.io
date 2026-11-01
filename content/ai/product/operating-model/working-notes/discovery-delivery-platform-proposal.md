@@ -70,6 +70,7 @@ Product manager / designer / engineer / domain expert
                      └──────────→ Discovery
 ```
 
+
 <!-- end-source-unit: DDS-19 -->
 
 > **Editorial comment:** The source used "experienced engineering." This edit reads it as "experienced engineers" because the surrounding nodes name actors. The diagram can help compare what each mode needs from a platform. However, its vertical layout suggests two sequential phases. That is not the current model. Discovery and delivery can happen at the same time. Product managers, designers, engineers, and domain experts also remain involved after a production commitment.

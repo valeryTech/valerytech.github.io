@@ -56,7 +56,7 @@ The next commitment may be:
 - a narrow release;
 - supported production use.
 
-A [`production commitment`]({{< ref "ai/product/operating-model/production-commitment" >}}) adds defined obligations to product behavior in real use. It does not end discovery or begin a separate delivery phase.
+A [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}) adds defined obligations to product behavior in real use. It does not end discovery or begin a separate delivery phase.
 
 Any test involving real use still needs a production commitment that matches how many people or systems it can affect and how serious those effects could be. State what people may rely on, the limits, how the test will be observed, and how it can be stopped or withdrawn.
 

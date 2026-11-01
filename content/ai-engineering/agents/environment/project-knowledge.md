@@ -200,6 +200,11 @@ The template's `AGENTS.md` therefore names each source, says when to read it, an
 
 When assigning work, name the task directory in the request, for example "Work on `tasks/1234-export-invoices/`."
 
+## Related notes
+
+
+- [Implicit knowledge in software repositories]({{< ref "projects/code-intelligence/implicit-knowledge" >}}) covers the knowledge that is not written down: how the system runs, where it runs, how it changed over time and what the team knows.
+
 ## References
 
 

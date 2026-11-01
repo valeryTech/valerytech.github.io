@@ -6,7 +6,7 @@ description: "Risk dimensions cover ways a solution can fail; opportunity trees 
 linkTitle: "Reassembled Report"
 ---
 
-> **Status:** Research synthesis and supporting material. The canonical guidance is [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}). This document preserves source comparisons, alternative terms, citations, and the reasoning from which the shorter model was developed.
+> **Status:** Research synthesis and supporting material. The canonical guidance is [Risk Areas Model]({{< ref "ai/product/risk-areas/risk-areas-model" >}}). This document preserves source comparisons, alternative terms, citations, and the reasoning from which the shorter model was developed.
 
 > **Editorial note:** This document reassembles existing passages around one coherent argument. The source prose remains verbatim. Labeled callouts explain the ordering and the choices made where the source notes contain competing models.
 

@@ -87,9 +87,9 @@ Codex doesn't replace the saved base instructions during a session. A model swit
 
 - **Windows without incremental tools** (`gpt-5.5`, and other models and providers that don't use them). The first item of `input` keeps the original text. When the model changes, Codex adds a developer message in `<model_switch>` tags. The message says the user was using a different model and gives the new model's template (`core/src/context/model_switch_instructions.rs`). The same message appears on the first step after a resume with a different model, when the saved `Model` text differs from the current model's template.
 - **Incremental-tools windows** (the default for Responses Lite models). The base instructions are recorded in the history as a world-state section. When the model or the text changes, Codex sends an update that names the new model, carries the new text, or both. The `SuppressModelChangeAnnouncements` feature turns off the model name. In the test snapshot `incremental_tools_regular_responses`, a model switch adds three items before the next prompt, and the earlier items stay as they were:
-  1. A developer notice that starts "This is an incremental tools update".
-  2. An `additional_tools` item with only the tools that changed.
-  3. A `<model_instructions>` developer message: "The current model is `<model>`. The following instructions replace the previous base instructions:", followed by the new text.
+	1. A developer notice that starts "This is an incremental tools update".
+	2. An `additional_tools` item with only the tools that changed.
+	3. A `<model_instructions>` developer message: "The current model is `<model>`. The following instructions replace the previous base instructions:", followed by the new text.
 
   After the next compaction, the new window starts with the full tool list and the new model's base instructions.
 

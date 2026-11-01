@@ -6,7 +6,7 @@ description: "The uncertainty ladder placed on the owner's own cases: worked cla
 linkTitle: "Ladder Applied to Cases"
 ---
 
-This note places the [`uncertainty ladder`]({{< ref "ai/product/discovery/uncertainty-ladder" >}}) on undertakings already described elsewhere in these notes: the eight [AI project examples]({{< ref "ai/system-types/project-examples/ai-project-examples-and-design-model" >}}), the systems under test and SUT candidates, and the Wallet [`utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
+This note places the [Uncertainty Ladder]({{< ref "ai/product/discovery/uncertainty-ladder" >}}) on undertakings already described elsewhere in these notes: the eight [AI project examples]({{< ref "ai/system-types/project-examples/ai-project-examples-and-design-model" >}}), the systems under test and SUT candidates, and the Wallet [`utility ladder`]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
 
 The placements are a reading of the existing notes, not evidence. Where a rung is marked closed, the note says what observation closes it; where no such observation has been recorded, the rung is open whatever has been built. Every row is for the owner to confirm or move.
 
@@ -163,7 +163,7 @@ Placements are to check. "Settled" means the owner's notes already contain the o
 | Still weekly review numbers (analytical environment) | Settled | Settled, if numbers come from code | Open: every stated number matches | Low | Open | Mostly a required condition |
 | Still notes into themes (analysis) | **One property open**: themes supported by quoted notes, invariant to note order | Open | Open | Low | Open | EV: a criterion worth automating once labeled |
 | Still rules and phase answers (support) | Settled | Open: grounding in protocol definitions | Open: paraphrase and language invariance | Low | Open | GR and RF |
-| Audit analytical assessment (analysis and investigation) | **One property open**: attention shadowing. Whether coverage can be assured, or only measured, is unresolved | Open | Open: summarized views lack the underlying transactions | Open | Judgment stays with the auditor | The one case where possibility may stay open at the bar |
+| Audit analytical assessment in [Phased]({{< ref "projects/phased" >}}) (analysis and investigation) | **One property open**: attention shadowing. Whether coverage can be assured, or only measured, is unresolved | Open | Open: summarized views lack the underlying transactions | Open | Judgment stays with the auditor | The one case where possibility may stay open at the bar |
 | Context-aware support with a refund workflow (synthetic) | Settled | Settled in architecture: read-only plus bounded workflow | Open | Open | Not probeable; no real users | Synthetic cases cannot close value |
 | Coding agent on Still and Wallet (coding agent) | Settled | Open: which tasks, with which checks | Open | Open: production samples exist | Open | PS makes operation probeable now |
 | MITI-based evaluator (instrument) | **Open**: agreement with a trusted coder on boundary turns | Open | Open: TPR and TNR on held-out labels | Low | Only if the companion is pursued | On the ladder as an instrument, not a product |

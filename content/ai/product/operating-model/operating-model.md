@@ -156,11 +156,11 @@ Use three groups to look for important assumptions and obligations:
 
 1. **Problem and intended change.** Do we understand the current condition, the people affected, and why it matters? Is there a clear reason to change it? Can a product reasonably contribute to that change?
 2. **Candidate solution.** Look across five solution risk dimensions:
-   - **Value:** Will the people or customers concerned choose, adopt, buy, or keep using the solution instead of the available alternatives?
-   - **Usability:** Can the intended users understand it and complete the relevant work in realistic conditions?
-   - **Feasibility:** Can the product provide the required behavior with the available technical capabilities, data, and constraints?
-   - **Viability:** Can the solution be offered and sustained within the relevant economic, legal, commercial, and service constraints?
-   - **Harm:** Could the solution cause unacceptable harm to users, other people, systems, or the wider environment, including through safety, privacy, security, or abuse failures?
+	- **Value:** Will the people or customers concerned choose, adopt, buy, or keep using the solution instead of the available alternatives?
+	- **Usability:** Can the intended users understand it and complete the relevant work in realistic conditions?
+	- **Feasibility:** Can the product provide the required behavior with the available technical capabilities, data, and constraints?
+	- **Viability:** Can the solution be offered and sustained within the relevant economic, legal, commercial, and service constraints?
+	- **Harm:** Could the solution cause unacceptable harm to users, other people, systems, or the wider environment, including through safety, privacy, security, or abuse failures?
 3. **Production and operation.** What reliability, scale, capacity, security, privacy, observability, support, recovery, and cost conditions must hold in real use?
 
 Value and intended change are not the same. People may choose and use a solution without it producing the change sought. A solution may also produce some benefit while still not being valuable enough for people to choose it over an alternative.
@@ -169,7 +169,7 @@ The groups are prompts for finding what matters. They are not a checklist or a c
 
 The same concern may be an assumption or an obligation, depending on the decision. If uncertainty about it could invalidate a candidate solution, state it as an assumption and gather evidence. When the solution is known and the concern states a condition the product must meet in production, record it as an obligation. For example, "Can this approach meet the required response time at an acceptable cost?" is an assumption. "Keep response time within the stated limit" is an obligation.
 
-A fuller account of these groups is in [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}).
+A fuller account of these groups is in [Risk Areas Model]({{< ref "ai/product/risk-areas/risk-areas-model" >}}).
 
 **In practice:** For each important assumption, ask:
 
@@ -211,7 +211,7 @@ The aim is the cheapest credible evidence, not simply the cheapest activity. Fas
 
 Define these before seeing the result. Otherwise it is easy to reinterpret the evidence after the fact.
 
-An eval can provide evidence only about the cases and criteria it contains. It does not decide whether those cases and criteria define a good product. [`reference-example-is-not-ground-truth.md`]({{< ref "ai/product/operating-model/reference-example-is-not-ground-truth" >}}) explains this problem.
+An eval can provide evidence only about the cases and criteria it contains. It does not decide whether those cases and criteria define a good product. [Reference Example Is Not Ground Truth]({{< ref "ai/product/operating-model/reference-example-is-not-ground-truth" >}}) explains this problem.
 
 **Common mistake:** Running an experiment because experimentation is considered good practice, without saying which decision its result could change.
 
@@ -325,7 +325,7 @@ Supported scope may grow, shrink, or be withdrawn as evidence changes.
 
 **Common mistake:** Allowing an experimental artifact to become a supported system only because it already works in a production repository or environment.
 
-A practical template is in [`production-commitment.md`]({{< ref "ai/product/operating-model/production-commitment" >}}).
+A practical template is in [Production Commitment]({{< ref "ai/product/operating-model/production-commitment" >}}).
 
 ## 8. Production is part of learning
 

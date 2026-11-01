@@ -175,11 +175,11 @@ Measure the platform at several levels:
 **Evidence for measuring outcomes (unverified):**
 
 - **Adoption is wide but shallow:**
-  - Stanford's AI Index reports AI adoption at 88% of surveyed organizations and generative AI use in at least one business function at 70%. Agent deployment stays in single digits in almost every function.
-  - McKinsey finds that nearly two-thirds of organizations have not scaled AI across the enterprise, and names workflow redesign as a trait of higher performers.
+	- Stanford's AI Index reports AI adoption at 88% of surveyed organizations and generative AI use in at least one business function at 70%. Agent deployment stays in single digits in almost every function.
+	- McKinsey finds that nearly two-thirds of organizations have not scaled AI across the enterprise, and names workflow redesign as a trait of higher performers.
 - **Usage is not productivity:**
-  - Stack Overflow's 2025 survey: 84% of developers use or plan to use AI development tools, 46% distrust the accuracy of the output, and 66% name "almost right" results as a major frustration.
-  - METR's controlled study found a 19% slowdown for experienced developers on the repositories and tasks it studied. That result does not generalize to all software work, but it shows why perceived productivity and tool usage need independent outcome measures.
+	- Stack Overflow's 2025 survey: 84% of developers use or plan to use AI development tools, 46% distrust the accuracy of the output, and 66% name "almost right" results as a major frustration.
+	- METR's controlled study found a 19% slowdown for experienced developers on the repositories and tasks it studied. That result does not generalize to all software work, but it shows why perceived productivity and tool usage need independent outcome measures.
 
 ## Maturity model
 
@@ -262,7 +262,7 @@ That split is close to how teams actually divide their platforms.
 - [Model gateway designs]({{< ref "ai-engineering/delivery/patterns/model-gateway" >}}): the model access layer in detail.
 - [Team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop" >}}): capabilities derived from what teams do.
 - [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}}): the platform for the uncertain early stage.
-- [Evaluation harness and platform]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}).
+- [Evaluation harness and platform]({{< ref "ai-engineering/evaluation/framework-v2/subsystem-and-production" >}}#harness-and-wider-workspace).
 - [Platform product framing]({{< ref "engineering/platform/product-framing" >}}): deciding what the platform is for before choosing capabilities.
 - [Control plane and data plane]({{< ref "system-design/elements/control-plane" >}}).
 

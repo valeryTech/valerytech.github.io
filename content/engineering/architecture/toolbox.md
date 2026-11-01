@@ -16,7 +16,7 @@ This is the practical toolbox from [Software Architecture]({{< ref "engineering/
 | Laws of software architecture | Laws: claimed to hold for every decision | How should I reason about any architecture decision? | [Laws of Software Architecture]({{< ref "engineering/architecture/laws" >}}) |
 | Balanced coupling | Model | Is this dependency in the right place, and is it strong enough or too strong? | [Coupling and Modularity]({{< ref "engineering/architecture/coupling" >}}) |
 | ETC (easier to change) | Value | Which option leaves the system easier to change? | [below](#the-essence-of-good-design-etc) |
-| YAGNI | Heuristic | Should I build this now? | [YAGNI]({{< ref "engineering/architecture/yagni" >}}) |
+| YAGNI | Heuristic | Should I build this now? | [Yagni]({{< ref "engineering/architecture/yagni" >}}) |
 | Simple design | Practice (XP) | What is the least design that works today? | [below](#simple-design) |
 | Named design principles | Principles | SOLID, DRY, KISS, Law of Demeter, and others | [below](#design-principles) |
 | Lifecycle techniques | Techniques | How do I test whether a choice is right? | [Engineering Lifecycle Techniques]({{< ref "engineering/architecture/techniques" >}}) |
@@ -61,7 +61,7 @@ From *The Pragmatic Programmer* (Thomas and Hunt, Topic 8): **good design is eas
 - **ETC is a value, not a rule:** a guide for choosing between paths, not a check to pass. To build the habit, spend a week asking after every save, test, or bug fix: did this make the system easier or harder to change?
 - **When you cannot tell which path is easier to change:** make the code replaceable (decoupled and cohesive), and note the choice and your guess about future change. Later, when the code has to change, compare what happened with the guess.
 
-**Relationship with changeability:** ETC is the design-level version of [changeability]({{< ref "engineering/architecture/changeability" >}}). Balanced coupling makes it measurable: change is hard where strong coupling crosses a long distance in a volatile part of the system.
+**Relationship with changeability:** ETC is the design-level version of [Changeability]({{< ref "engineering/architecture/changeability" >}}). Balanced coupling makes it measurable: change is hard where strong coupling crosses a long distance in a volatile part of the system.
 
 ### One rule to rule them all
 
@@ -75,7 +75,7 @@ A passage collected earlier (source not recorded) that makes the same argument a
 ## YAGNI
 
 
-"You aren't gonna need it": don't build a capability until it is actually needed. It is the counterweight to designing for anticipated change: flexibility that is never used is cost without benefit, the "too much of a good thing" that Khononov warns about. Reading list and open questions: [YAGNI]({{< ref "engineering/architecture/yagni" >}}).
+"You aren't gonna need it": don't build a capability until it is actually needed. It is the counterweight to designing for anticipated change: flexibility that is never used is cost without benefit, the "too much of a good thing" that Khononov warns about. Reading list and open questions: [Yagni]({{< ref "engineering/architecture/yagni" >}}).
 
 ## Simple Design
 
@@ -83,12 +83,12 @@ A passage collected earlier (source not recorded) that makes the same argument a
 An Extreme Programming practice: the design should be the simplest one that works for what the system needs now, and it changes as needs change.
 
 - Read the "Simple Design" part of *The Art of Agile Development* (Shore et al.).
-- <http://www.extremeprogramming.org/rules/simple.html>
+- [Simplicity (Extreme Programming rules)](http://www.extremeprogramming.org/rules/simple.html)
 
 ### Do the simplest thing that could possibly work
 
 
-<https://wiki.c2.com/?DoTheSimplestThingThatCouldPossiblyWork>
+[Do The Simplest Thing That Could Possibly Work (C2 wiki)](https://wiki.c2.com/?DoTheSimplestThingThatCouldPossiblyWork)
 
 ## Design principles
 
@@ -98,7 +98,7 @@ An Extreme Programming practice: the design should be the simplest one that work
 | SOLID | Five object-oriented principles: single responsibility, open-closed, Liskov substitution, interface segregation, dependency inversion | Khononov reads SRP and ISP as balanced coupling; DIP inverts which side owns the contract |
 | DRY | Every piece of knowledge has one authoritative representation | Duplicated business logic is symmetric functional coupling: strong, and enforced by nothing |
 | KISS | Prefer the simplest design that works | Limits local complexity |
-| YAGNI | Don't build it until it is needed | See [YAGNI]({{< ref "engineering/architecture/yagni" >}}) |
+| YAGNI | Don't build it until it is needed | See [Yagni]({{< ref "engineering/architecture/yagni" >}}) |
 | Law of Demeter | A unit talks only to its immediate collaborators | Limits how much knowledge travels over distance |
 | Avoid premature optimization | Don't trade clarity for speed before measuring | A trade-off made without evidence (first law) |
 | Principle of least astonishment | A component should behave the way its users expect | Surprising behavior is hidden knowledge every caller has to learn |

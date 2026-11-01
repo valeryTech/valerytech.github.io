@@ -14,8 +14,8 @@ An evaluation should address four validity questions:
 
 |Validity|Question, with a coding-agent example|
 |---|---|
-|Construct validity|Does the measurement capture the claimed construct? Does "PR count" measure productivity? See [Measures and constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}).|
-|Internal validity|Did the agent cause the observed difference, or was something else responsible? See [Causal claims]({{< ref "engineering/evidence/causal-claims" >}}).|
+|Construct validity|Does the measurement capture the claimed construct? Does "PR count" measure productivity? See [Measures And Constructs]({{< ref "engineering/evidence/measures-and-constructs" >}}).|
+|Internal validity|Did the agent cause the observed difference, or was something else responsible? See [Causal Claims]({{< ref "engineering/evidence/causal-claims" >}}).|
 |External validity|Does the result apply to other engineers, repositories, tasks, models, and organizations?|
 |Conclusion validity|Do the data and statistical analysis actually support the conclusion?|
 
@@ -29,7 +29,7 @@ A coding-agent experiment could have excellent internal validity and terrible ex
 ## Reproducibility
 
 
-A fifth question sits beside the four: could someone else repeat the study? That needs the dataset or task set, the queries and selection rules, the configuration of the tools measured, and the analysis scripts. The [evidence protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) asks for the same under "preserve the experiment", and [replication]({{< ref "engineering/evidence/ebse" >}}#replication-and-synthesis) depends on it.
+A fifth question sits beside the four: could someone else repeat the study? That needs the dataset or task set, the queries and selection rules, the configuration of the tools measured, and the analysis scripts. The [Evidence Protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) asks for the same under "preserve the experiment", and [replication]({{< ref "engineering/evidence/ebse" >}}#replication-and-synthesis) depends on it.
 
 ## Applying the questions
 

@@ -7,7 +7,7 @@ linkTitle: "Jev Overview"
 ---
 **Jev is TypeSafe AI's model for making bounded decisions inside software.** You give it context, a question, and a defined answer space. It returns values and probability estimates that your code can use directly. A useful mental model is a **general-purpose, promptable classifier**: you describe the classification task at request time, without training a separate model for each task. [TypeSafe](https://docs.typesafe.ai/introduction)
 
-The motivation is straightforward: many uses of AI inside applications require a small judgment--classify, route, rank, check, or score. Jev is designed to make those judgments quickly while leaving workflow rules and actions under the application's control. [TypeSafe](https://docs.typesafe.ai/concepts/how-to-build-with-system-one)
+The motivation is straightforward: many uses of AI inside applications require a small judgment -- classify, route, rank, check, or score. Jev is designed to make those judgments quickly while leaving workflow rules and actions under the application's control. [TypeSafe](https://docs.typesafe.ai/concepts/how-to-build-with-system-one)
 
 The underlying ideas are established: probabilistic classification, constrained outputs, calibrated predictions, and software that can defer uncertain cases. Jev combines them into a hosted model and API. Its specific architecture and training method remain only partly disclosed. [Scikit-learn](https://scikit-learn.org/stable/modules/calibration.html)
 
@@ -16,14 +16,14 @@ The underlying ideas are established: probabilistic classification, constrained 
 
 Its core interface looks like this:
 
-```
+```text
 Context + question + allowed answers → probability distribution
 ```
 
 
-For example, an application could provide a support ticket and ask which team should handle it. An illustrative result--not an actual model run--might be:
+For example, an application could provide a support ticket and ask which team should handle it. An illustrative result -- not an actual model run -- might be:
 
-```
+```json
 {
   "choice": "technical",
   "probabilities": {
@@ -66,7 +66,7 @@ Consider these questions:
 
 A general language model can handle such tasks, but the application ultimately needs a label, score, or probability. TypeSafe's design targets that narrower interface directly. Its documentation includes routing, citation checking, entity matching, and guardrail workflows. [TypeSafe](https://docs.typesafe.ai/llms.txt)
 
-The distinction is useful, but **structured output alone is not new**. General language models can already use constrained decoding to produce schema-valid outputs, including valid enum values. Jev's proposed advantage therefore depends on its speed, cost, decision quality, and probability estimates--not merely its ability to return valid JSON. [OpenAI](https://openai.com/index/introducing-structured-outputs-in-the-api/)
+The distinction is useful, but **structured output alone is not new**. General language models can already use constrained decoding to produce schema-valid outputs, including valid enum values. Jev's proposed advantage therefore depends on its speed, cost, decision quality, and probability estimates -- not merely its ability to return valid JSON. [OpenAI](https://openai.com/index/introducing-structured-outputs-in-the-api/)
 
 ### Generating a sequence can be unnecessary work
 
@@ -164,7 +164,7 @@ Second, **a small output space does not imply an easy problem**. "Is this concur
 ### F. Train for useful probability estimates
 
 
-TypeSafe calls its training method **Reinforcement Learning for Calibrated Decisions--RLCD**. Its stated objective is to produce decisions with probabilities that reflect uncertainty. The public descriptions I found do not disclose a complete objective or reproducible training procedure. [TypeSafe](https://docs.typesafe.ai/introduction/machine-learning-primer)
+TypeSafe calls its training method **Reinforcement Learning for Calibrated Decisions -- RLCD**. Its stated objective is to produce decisions with probabilities that reflect uncertainty. The public descriptions I found do not disclose a complete objective or reproducible training procedure. [TypeSafe](https://docs.typesafe.ai/introduction/machine-learning-primer)
 
 The statistical motivation can nevertheless be explained without guessing that procedure.
 
@@ -212,12 +212,12 @@ My assessment is that the evidence supports evaluating Jev for fast, bounded sem
 
 A minimal integration uses the `typesafe-sdk` package and a `TYPESAFE_API_KEY` environment variable. This example follows the documented Python interface; it has not been executed against the service here. [TypeSafe](https://docs.typesafe.ai/introduction/quickstart)
 
-```
+```python
 from typesafe_sdk import Choice, TypeSafeClientwith TypeSafeClient(model="jev-1.14.0") as client:    result = client.system_one(        state={"message": "Checkout fails with a 500 error."},        questions={            "team": Choice(                instructions="Which team should handle this message?",                criteria={                    "billing": "Charges, invoices, and refunds",                    "technical": "Software failures",                    "other": "Neither category, or insufficient information",                },            )        },    )answer = result.choices["team"]print(answer.choice, answer.probabilities, answer.confidence)
 ```
 
 
-The application then decides whether to route automatically or request review. The threshold should come from evaluation on representative tickets and the cost of incorrect routing--not from copying a generic example. Pinning the model version prevents an alias update from silently changing the model used by an evaluated workflow. [TypeSafe](https://docs.typesafe.ai/confidence)
+The application then decides whether to route automatically or request review. The threshold should come from evaluation on representative tickets and the cost of incorrect routing -- not from copying a generic example. Pinning the model version prevents an alias update from silently changing the model used by an evaluated workflow. [TypeSafe](https://docs.typesafe.ai/confidence)
 
 Three application patterns are particularly relevant.
 

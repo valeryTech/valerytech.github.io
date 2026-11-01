@@ -15,8 +15,6 @@ The retained reply proposes how to describe systems without treating task perfor
 
 The [participant profiles]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) concern work allocation, and the [participant-neutral model]({{< ref "ai/design-research/01-foundations/04-participant-neutral-system-model" >}}) proposes a system architecture. Neither note establishes the definitions or evidence tests below. The sibling [comments]({{< ref "ai/design-research/01-foundations/12-research-terms-and-levels-of-analysis-comments" >}}) distinguish working conventions from accepted criteria and link the related dictionary drafts.
 
-<a id="retained-terms-and-levels-of-analysis"></a>
-
 ## Terms and levels of analysis
 
 
@@ -25,8 +23,6 @@ The working interpretation is that this is the right priority now. Before extend
 The Wei critique shows the problem particularly cleanly. His empirical argument concerns measurable task capabilities, yet the conclusion is phrased as "intelligence becoming a commodity." The author's critique points out that this compresses task competence, reasoning, grounding, understanding, agency, autonomy, and general intelligence into one term. More importantly, you noticed a second-order problem: if research progresses fastest where there is a cheap verifier, the field may gradually define intelligence in terms of exactly those things it can cheaply measure.
 
 That is a methodology problem.
-
-<a id="1-i-would-make-the-dictionary-considerably-stricter"></a>
 
 ### 1. A stricter working dictionary
 
@@ -75,8 +71,6 @@ For example:
 > "After contradictory reports were added to its context, the model became less likely to follow reports attributed to participant B."
 
 That may sound less exciting. It is also much closer to the observation.
-
-<a id="2-we-need-explicit-levels-of-analysis"></a>
 
 ### 2. Explicit levels of analysis
 

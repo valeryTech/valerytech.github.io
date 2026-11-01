@@ -6,11 +6,11 @@ description: "A conversation about Andrej Karpathy's advice to ask LLMs for diag
 linkTitle: "Karpathy Visual Prompts"
 ---
 
-Follow-up research on similar approaches, the principles they share, and checks on this thread's dates: [Visual explanations from LLMs]({{< ref "ai/design/generated-instruments/visual-explanations-from-llms" >}}).
+Follow-up research on similar approaches, the principles they share, and checks on this thread's dates: [Visual Explanations From Llms]({{< ref "ai/design/generated-instruments/visual-explanations-from-llms" >}}).
 
 The thread's citation chips are kept as numbered footnotes, listed under [Citation links](#citation-links); the links behind them were recovered from the shared page on 2026-04-05. What the three Karpathy posts actually say is summarized in [Sources behind the thread](#sources-behind-the-thread) at the end.
 
-Related: generated interfaces in language intent and hybrid interaction and generated workspaces and application composition.
+Related: generated interfaces in [language intent and hybrid interaction]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) and [generated workspaces and application composition]({{< ref "ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition" >}}).
 
 ## User -- turn 1
 
@@ -38,7 +38,7 @@ In his [March 2 post](https://x.com/karpathy/status/2105819303471976479), he des
 
 The last example refers to the mathematical animation style of 3Blue1Brown. Karpathy notes that free, locally running narration tools can also be used.
 
-He specifically recommends generating small, custom applications or videos for a single question--even when you'll discard them after you've understood the concept. [^3][^1]
+He specifically recommends generating small, custom applications or videos for a single question -- even when you'll discard them after you've understood the concept. [^3][^1]
 
 ### 2. His earlier post about HTML
 

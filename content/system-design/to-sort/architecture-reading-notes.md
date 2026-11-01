@@ -6,7 +6,7 @@ description: "Architecture and distributed-systems reading excerpts on trade-off
 linkTitle: "Reading Notes"
 ---
 
-Collected excerpts and personal annotations, grouped by source. For an organized synthesis, see [design principles]({{< ref "system-design/design-principles" >}}), [scalability]({{< ref "system-design/nfr/scalability" >}}), and the [building-block map]({{< ref "system-design/elements/pattern-map" >}}).
+Collected excerpts and personal annotations, grouped by source. For an organized synthesis, see [Design Principles]({{< ref "system-design/design-principles" >}}), [Scalability]({{< ref "system-design/nfr/scalability" >}}), and the [building-block map]({{< ref "system-design/elements/pattern-map" >}}).
 
 # Various
 
@@ -21,7 +21,7 @@ A new architect will focus on the boxes; an experienced one is more interested i
 
 Thus, the set of architectural structures is neither fixed nor limited. What is architectural depends on what is useful to reason about in your context for your system. This means that architecture *specically and intentionally omits certain information* about elements that is not useful for reasoning about the system.
 
-There is a reasoning behind the design of Kafka and Samza, which allow complex applications to be built by composing a small number of simple primitives - replicated logs and stream operators. #architecture
+There is a reasoning behind the design of Kafka and Samza, which allow complex applications to be built by composing a small number of simple primitives -- replicated logs and stream operators. #architecture
 
 Picking the right architecture = Picking the right battles + Managing trade-offs
 
@@ -56,7 +56,7 @@ Elasticity relies on services having a very small mean time to startup (MTTS), w
 
 Architects may collaborate on defining the domain or business requirements, but one key responsibility entails defining, discovering, and otherwise analyzing all the things the software must do that isn't directly related to the domain functionality: architectural characteristics (AC).
 
-When designing an application, the requirements specify what the application should do; architecture characteristics specify operational and design criteria for success, concerning how to implement the requirements and why certain choices were made. For example, a common important architecture characteristic specifies a certain level of performance for the application, which often doesn't appear in a requirements document. Even more pertinent: no requirements document states "prevent technical debt," but it is a common design consideration for archi‐ tects and developers.
+When designing an application, the requirements specify what the application should do; architecture characteristics specify operational and design criteria for success, concerning how to implement the requirements and why certain choices were made. For example, a common important architecture characteristic specifies a certain level of performance for the application, which often doesn't appear in a requirements document. Even more pertinent: no requirements document states "prevent technical debt," but it is a common design consideration for architects and developers.
 
 *Main goal:*
 
@@ -222,14 +222,14 @@ As I converse with colleagues about what distinguishes a great architect, we oft
 
 
 - *Independent Deployability.* Independent deployability is the idea that we can make a change to a microservice, deploy it, and release that change to our users, without having to deploy any other microservices. More important, it's not just the fact that we can do this; it's that this is actually how you manage deployments in your system. It's a discipline you adopt as your default release approach.
-- *Modeled Around a Business Domain.* Rolling out a feature that requires changes to more than one microservice is expensive. You need to coordinate the work across each service (and potentially across sep‐ arate teams) and carefully manage the order in which the new versions of these services are deployed. That takes a lot more work than making the same change inside a single service (or inside a monolith, for that matter). It therefore follows that we want to find ways to make cross-service changes as infrequent as possible.
+- *Modeled Around a Business Domain.* Rolling out a feature that requires changes to more than one microservice is expensive. You need to coordinate the work across each service (and potentially across separate teams) and carefully manage the order in which the new versions of these services are deployed. That takes a lot more work than making the same change inside a single service (or inside a monolith, for that matter). It therefore follows that we want to find ways to make cross-service changes as infrequent as possible.
 - *Owning Their Own State.* If a microservice wants to access data held by another microservice, it should go and ask that second microservice for the data. This gives the microservices the ability to decide what is shared and what is hidden, which allows us to clearly separate functionality that can change freely (our internal implementation) from the functionality that we want to change infrequently (the external contract that the consumers use).
 - Microservices embrace the concept of information hiding.Information hiding means hiding as much information as possible inside a component and exposing as little as possible via external interfaces. This allows for clear separation between what can change easily and what is more difficult to change. Implementation that is hidden from external parties can be changed freely as long as the networked interfaces the microservice exposes don't change in a backward-incompatible fashion. C
 
 ## CI
 
 
-Integrate early, and integrate often. Avoid the use of long-lived branches for feature development, and consider trunk-based devel‐ opment instead. If you really have to use branches, keep them short!
+Integrate early, and integrate often. Avoid the use of long-lived branches for feature development, and consider trunk-based development instead. If you really have to use branches, keep them short!
 
 ## Library sources
 

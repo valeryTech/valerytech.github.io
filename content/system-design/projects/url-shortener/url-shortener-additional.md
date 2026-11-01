@@ -61,6 +61,6 @@ Possible deep dives if one dimension needs more attention:
 
 Edge Cases
 
-- **Case sensitivity:** codes are case‑insensitive (normalize to lower)
-- **Very long URLs:** set a server‑side max length (e.g., ≤ 2,048 chars) with clear error
+- **Case sensitivity:** codes are case-insensitive (normalize to lower)
+- **Very long URLs:** set a server-side max length (e.g., ≤ 2,048 chars) with clear error
 - **Negative caching:** treat 404/410 as cacheable for a short TTL (ops consideration; influences availability but not contract)

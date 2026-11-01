@@ -93,7 +93,7 @@ Much of what practitioners read is an experience report: an organization describ
 
 The label is often applied loosely. Wohlin and Rainer checked studies labelled "case study" against the established definitions and found only about half correctly labelled, with about 40% better described as small-scale evaluations.
 
-An experience report can describe what happened. It rarely shows what caused it. The [Zalando case critique]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/zalando-case-critique" >}}) reads one in detail.
+An experience report can describe what happened. It rarely shows what caused it. The [Zalando Case Critique]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/zalando-case-critique" >}}) reads one in detail.
 
 ## Library sources
 

@@ -6,7 +6,7 @@ description: "Practitioners manage uncertainty through risk categories, assumpti
 linkTitle: "Naming Research Report"
 ---
 
-> **Status:** Source research report. See [`risk-areas-model.md`]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. This report is retained for its comparisons, sources, and alternative terminology.
+> **Status:** Source research report. See [Risk Areas Model]({{< ref "ai/product/risk-areas/risk-areas-model" >}}) for the selected model. This report is retained for its comparisons, sources, and alternative terminology.
 
 ## Executive summary
 
@@ -265,7 +265,7 @@ The arrows describe a working decomposition rather than a formal causal ontology
 
 For a one-line team standard, use:
 
-> **Product Risk Dimensions--Value, Usability, Feasibility, and Viability--are assessed by identifying specific risks, surfacing the assumptions behind them, and collecting evidence through targeted tests.**
+> **Product Risk Dimensions -- Value, Usability, Feasibility, and Viability -- are assessed by identifying specific risks, surfacing the assumptions behind them, and collecting evidence through targeted tests.**
 
 ### When to add Ethics/Safety
 
@@ -371,7 +371,7 @@ The taxonomy answers **where uncertainty may exist**. The risk explains **what m
 
 For most software product teams, the preferred team wording is therefore:
 
-> **"For each solution, identify the significant risks across four Product Risk Dimensions--Value, Usability, Feasibility and Viability. State each risk concretely, expose the assumptions behind it, and gather enough evidence to make the next decision."**
+> **"For each solution, identify the significant risks across four Product Risk Dimensions -- Value, Usability, Feasibility and Viability. State each risk concretely, expose the assumptions behind it, and gather enough evidence to make the next decision."**
 
 For an experiment board, use **Assumptions** as the individual items. For an executive or design workshop, **Desirability-Feasibility-Viability** can be simpler when the distinction between buyer value and user usability is not important. For B2B products, internal products, or products with distinct buyers and users, keep SVPG's four dimensions. Where potential harm warrants independent scrutiny, add **Ethics/Safety** explicitly instead of trusting it to remain visible inside Viability. [^svpg-taxonomy][^torres-five][^pichler-success]
 

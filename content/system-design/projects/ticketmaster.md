@@ -6,7 +6,7 @@ description: "A Ticketmaster source walkthrough covering event browsing, search,
 linkTitle: "Ticketmaster"
 ---
 
-Collected source walkthrough with additional notes. Compare its assumptions and choices with your own design using the [case template]({{< ref "system-design/projects/case-template" >}}).
+Collected source walkthrough with additional notes. Compare its assumptions and choices with your own design using the [Case Template]({{< ref "system-design/projects/case-template" >}}).
 
 Source-page metadata retained from the capture:
 
@@ -86,30 +86,33 @@ As you move onto the design, your objective is simple: create a system that meet
 
 The API for viewing events is straightforward. We create a simple GET endpoint that takes in an eventId and return the details of that event.
 
-```
+```text
 GET /events/:eventId -> Event & Venue & Performer & Ticket[]
 - tickets are to render the seat map on the Client
 ```
 
-In most instances, your interviewer will be able to read between the lines of your core entities and the requirement we're satisfying to understand the data returned by the API. They will either tell you or you can ask them if they'd like you to go into additional detail but be cautious about being over-verbose - you have a lot of ground to cover and enumerating the fields in the Event object may not be the best use of your time!
+
+In most instances, your interviewer will be able to read between the lines of your core entities and the requirement we're satisfying to understand the data returned by the API. They will either tell you or you can ask them if they'd like you to go into additional detail but be cautious about being over-verbose -- you have a lot of ground to cover and enumerating the fields in the Event object may not be the best use of your time!
 
 Next, for search, we just need a single GET endpoint that takes in a set of search parameters and returns a list of events that match those parameters.
 
-```
+```text
 GET /events/search?keyword={keyword}&start={start_date}&end={end_date}&pageSize={page_size}&page={page_number} -> Event[]
 ```
 
+
 When it comes to purchasing/booking a ticket, we have a post endpoint that takes the list of tickets and payment details and returns a bookingId.
 
-Later in the design, we'll evolve this into two separate endpoints - one for reserving a ticket and one for confirming a purchase, but this is a good starting point.
+Later in the design, we'll evolve this into two separate endpoints -- one for reserving a ticket and one for confirming a purchase, but this is a good starting point.
 
-```
+```text
 POST /bookings/:eventId -> bookingId
  {
    "ticketIds": string[],
    "paymentDetails": ...
  }
 ```
+
 
 It's ok to have simple APIs from the start that you evolve as your design progresses. As always, just communicate, "Here is a simple API to start, but as we get into the design, we'll likely need to evolve this to handle more complex scenarios."
 
@@ -135,7 +138,7 @@ Let's walk through exactly what happens when a user makes a request to <www.your
 
 Sweet, we now have the core functionality in place to view an event! But how are users supposed to find events in the first place? When users first open your site, they expect to be able to search for upcoming events. This search will be parameterized based on any combination of keywords, artists/teams, location, date, or event type.
 
-Let's start with the most basic thing you could do - we'll create a simple service which accepts search queries. This service will connect your DB and query it by filtering for the fields in the API request. This has issues, but it's a good starting point. We will dig into better options in the deep dives below.
+Let's start with the most basic thing you could do -- we'll create a simple service which accepts search queries. This service will connect your DB and query it by filtering for the fields in the API request. This has issues, but it's a good starting point. We will dig into better options in the deep dives below.
 
 Search Flow
 
@@ -348,13 +351,14 @@ WHERE name LIKE '%Taylor%'
   OR description LIKE '%Taylor%'
 ```
 
+
 Let's look at some strategies to improve search performance and ensure we meet our low latency requirements.
 
 ###### Approach
 
 
 - Create indexes on the Event, Performer, and Venues tables to improve query performance. Indexes allow for faster data retrieval by mapping the values in specific columns to their corresponding rows in the table. This speeds up search queries by reducing the number of rows that need to be scanned. We want to index the columns that are frequently used in search queries, such as event name, event date, performer name, and venue location.
-- Optimize queries to improve performance. This includes techniques like using EXPLAIN to analyze query execution plans, avoiding SELECT \* queries, and using LIMIT to restrict the number of rows returned. Additionally, using UNION instead of OR for combining multiple queries can improve performance.
+- Optimize queries to improve performance. This includes techniques like using EXPLAIN to analyze query execution plans, avoiding SELECT * queries, and using LIMIT to restrict the number of rows returned. Additionally, using UNION instead of OR for combining multiple queries can improve performance.
 
 ###### Challenges
 

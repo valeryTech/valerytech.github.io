@@ -101,7 +101,7 @@ Execution happens once, at the edge. In a Cats Effect application you extend `IO
 
 Two consequences follow. First, `IO` is "viral": a function that uses a result of an `IO` must itself return an `IO` (Plachta, ch. 8). So keep `IO` in as few functions as possible and put the logic in pure functions over plain data. Pilquist et al. (ch. 13.1) show that any impure procedure can be factored into a pure core plus an input step and an output step; this is the functional core, imperative shell of [Functional core, imperative shell]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#functional-core-imperative-shell). Second, an `IO` type on its own is a "lowest common denominator": inside it you program much as you would imperatively, so the books push towards narrower abstractions on top (Pilquist et al., ch. 13.2.2 and 13.9).
 
-Further reading on the idea: the systemfw.org post archive, <https://systemfw.org/archive.html>.
+Further reading on the idea: the systemfw.org post archive, [SystemFw FP blog post archive](https://systemfw.org/archive.html).
 
 ## Building a toy IO
 
@@ -111,7 +111,7 @@ Pilquist et al. (ch. 13) derive an `IO` step by step, and the steps explain desi
 1. **A thunk.** `IO` as a wrapper around `() => A`, with `map` and `flatMap`. It already separates description from execution and makes programs first-class values (ch. 13.2).
 2. **Stack safety.** That version overflows the stack on long `flatMap` chains, because each `unsafeRun` calls the next. The fix is to represent `FlatMap(io, f)` as a data constructor and run the program in a tail-recursive interpreter loop: *trampolining* (ch. 13.3).
 3. **Opacity and asynchrony.** A thunk is opaque: you can't inspect it, and it can only block. Generalising the trampoline gives the free monad, whose interpreter can target an asynchronous type and use non-blocking I/O (ch. 13.4 and 13.5).
-4. **Capabilities.** Instead of one algebra per effect plus free-monad plumbing, define capability traits such as `Console[F[_]]` with instances for a concrete `IO` (ch. 13.6). This is tagless final, taken up in [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}).
+4. **Capabilities.** Instead of one algebra per effect plus free-monad plumbing, define capability traits such as `Console[F[_]]` with instances for a concrete `IO` (ch. 13.6). This is tagless final, taken up in [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}).
 
 A minimal version of step 1, which is a good starting point for building your own:
 
@@ -132,8 +132,8 @@ Natural next steps are error handling, then a stack-safe `flatMap`, then concurr
 
 Links filed under "build your own effect system: there are 2 projects" (the two projects were not named; these links may be them):
 
-- Demystifying functional effect systems in Scala (Wix Engineering): <https://medium.com/wix-engineering/demystifying-functional-effect-systems-in-scala-14419039a423>
-- Introduction to Cats Effect (Baeldung): <https://www.baeldung.com/scala/cats-effects-intro>
+- [Demystifying functional effect systems in Scala](https://medium.com/wix-engineering/demystifying-functional-effect-systems-in-scala-14419039a423) (Wix Engineering)
+- [Introduction to Cats Effect](https://www.baeldung.com/scala/cats-effects-intro) (Baeldung)
 
 The chapter ends by noting what its `IO` lacks compared with Cats Effect: concurrency, cancellation and resource management (ch. 13.9). Those are what the rest of this note is about.
 
@@ -365,9 +365,9 @@ Fibers, cancellation, `Ref`, `Deferred`, queues and STM are the effect systems' 
 ### Program structure
 
 
-An `IO` that can do anything says little, so larger programs narrow it. The options are capability traits and tagless final over an abstract `F[_]` (Pilquist et al., ch. 13.6; Volpe 2021, ch. 2), free monads (Pilquist et al., ch. 13.4), monad transformer stacks (Skinner, ch. 13), and ZIO's environment and layers. Haskell also has extensible-effect libraries such as polysemy, fused-effects and effectful. How to choose between them is the subject of [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}); the domain-modeling side is in [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}).
+An `IO` that can do anything says little, so larger programs narrow it. The options are capability traits and tagless final over an abstract `F[_]` (Pilquist et al., ch. 13.6; Volpe 2021, ch. 2), free monads (Pilquist et al., ch. 13.4), monad transformer stacks (Skinner, ch. 13), and ZIO's environment and layers. Haskell also has extensible-effect libraries such as polysemy, fused-effects and effectful. How to choose between them is the subject of [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}); the domain-modeling side is in [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}).
 
-In Scala, the `eff` library (<https://github.com/atnos-org/eff>) was offered as an alternative to monad transformers. When a program needs several effects at once, say reading configuration, failing with an error and doing I/O, a transformer stack fixes the order of the layers and needs lifting between them. `eff` implements *extensible effects* instead: one `Eff` type carries an open list of effects, and each effect is handled, or interpreted, separately. It is based on Kiselyov and Ishii's "freer monad" approach (2015) (needs checking against its README). In Scala the approach stayed niche: most code that needs several effects uses tagless final over Cats Effect, or ZIO, whose environment and error parameters cover the common cases without a transformer stack.
+In Scala, the `eff` library ([atnos-org/eff (GitHub)](https://github.com/atnos-org/eff)) was offered as an alternative to monad transformers. When a program needs several effects at once, say reading configuration, failing with an error and doing I/O, a transformer stack fixes the order of the layers and needs lifting between them. `eff` implements *extensible effects* instead: one `Eff` type carries an open list of effects, and each effect is handled, or interpreted, separately. It is based on Kiselyov and Ishii's "freer monad" approach (2015) (needs checking against its README). In Scala the approach stayed niche: most code that needs several effects uses tagless final over Cats Effect, or ZIO, whose environment and error parameters cover the common cases without a transformer stack.
 
 ## Learning Cats, Cats Effect and ZIO
 
@@ -395,18 +395,18 @@ Caveat: check which major version a tutorial or overview describes. Cats Effect 
 
 Documentation and overviews:
 
-- Cats on GitHub: <https://github.com/typelevel/cats>
-- Cats resources for learners (typelevel.org): <https://typelevel.org/cats/resources_for_learners.html>
-- Cats Effect tutorial (typelevel.org): <https://typelevel.org/cats-effect/docs/tutorial>
-- Cats Effect third-party resources (typelevel.org): <https://typelevel.org/cats-effect/docs/third-party-resources>
-- Cats Effect, an overview (beyondthelines.net): <https://www.beyondthelines.net/programming/cats-effect-an-overview/#disqus_thread>. The link ends in `#disqus_thread`, so it opens at the comments rather than the start of the article.
+- Cats on GitHub: [typelevel/cats (GitHub)](https://github.com/typelevel/cats)
+- [Cats resources for learners](https://typelevel.org/cats/resources_for_learners.html) (typelevel.org)
+- [Cats Effect tutorial](https://typelevel.org/cats-effect/docs/tutorial) (typelevel.org)
+- [Cats Effect third-party resources](https://typelevel.org/cats-effect/docs/third-party-resources) (typelevel.org)
+- [Cats Effect, an overview](https://www.beyondthelines.net/programming/cats-effect-an-overview/#disqus_thread) (beyondthelines.net). The link ends in `#disqus_thread`, so it opens at the comments rather than the start of the article.
 
 The two typelevel.org pages with "resources" in their address are the projects' own lists of learning material.
 
 ### Courses
 
 
-- Cats Effect 3 course (coursehunter): <https://coursehunter.net/course/cats-effect-3>
+- [Cats Effect 3 course](https://coursehunter.net/course/cats-effect-3) (coursehunter)
 - Rock the JVM's Cats Effect course (no link recorded).
 
 If no course is at hand, Rosien's *Essential Effects* in the library covers the same ground for Cats Effect 3: the `IO` type, parallelism, fibers and cancellation, resources and testing (see Library sources).
@@ -422,57 +422,57 @@ If no course is at hand, Rosien's *Essential Effects* in the library covers the 
 ### What "effect" means
 
 
-- What "effect" and "effectful" mean in functional programming (Alvin Alexander): <https://alvinalexander.com/scala/what-effects-effectful-mean-in-functional-programming>
-- What exactly does "effectful" mean? (Stack Overflow): [https://stackoverflow.com/questions/33386622/what-exactly-does-effectful-mean](https://stackoverflow.com/questions/33386622/what-exactly-does-effectful-mean)
-- So what is an effect? (r/scala): [https://www.reddit.com/r/scala/comments/174u2gj/so_what_is_an_effect/](https://www.reddit.com/r/scala/comments/174u2gj/so_what_is_an_effect/)
-- Effect system (Wikipedia): [https://en.wikipedia.org/wiki/Effect_system](https://en.wikipedia.org/wiki/Effect_system)
+- What "effect" and "effectful" mean in functional programming (Alvin Alexander): [What effect and effectful mean in functional programming (Alvin Alexander)](https://alvinalexander.com/scala/what-effects-effectful-mean-in-functional-programming)
+- What exactly does "effectful" mean? (Stack Overflow): [What exactly does effectful mean? (Stack Overflow)](https://stackoverflow.com/questions/33386622/what-exactly-does-effectful-mean)
+- So what is an effect? (r/scala): [So what is an effect? (r/scala)](https://www.reddit.com/r/scala/comments/174u2gj/so_what_is_an_effect/)
+- Effect system (Wikipedia): [Effect system](https://en.wikipedia.org/wiki/Effect_system)
 
 ### Effect systems
 
 
-- Effect systems, a talk (earldouglas.com): [https://earldouglas.com/talks/effect-systems.html](https://earldouglas.com/talks/effect-systems.html)
-- The future of effects in Scala (SoftwareMill): [https://softwaremill.com/the-future-of-effects-in-scala/](https://softwaremill.com/the-future-of-effects-in-scala/)
-- The case against effect systems: the IO data type (alexn.org, 2022): <https://alexn.org/blog/2022/10/13/the-case-against-effect-systems-io-data-type/#isso-thread>. The `#isso-thread` anchor points at the comment thread.
-- Functional effect systems to the rescue, Scala in the City conference (Signify Technology, 2020): [https://www.signifytechnology.com/blog/2020/06/functional-effect-systems-to-the-rescue-scala-in-the-city-conference?source=google.com](https://www.signifytechnology.com/blog/2020/06/functional-effect-systems-to-the-rescue-scala-in-the-city-conference?source=google.com)
+- Effect systems, a talk (earldouglas.com): [Effect systems, a talk (earldouglas.com)](https://earldouglas.com/talks/effect-systems.html)
+- The future of effects in Scala (SoftwareMill): [The future of effects in Scala?](https://softwaremill.com/the-future-of-effects-in-scala/)
+- [The case against effect systems: the IO data type](https://alexn.org/blog/2022/10/13/the-case-against-effect-systems-io-data-type/#isso-thread) (alexn.org, 2022). The `#isso-thread` anchor points at the comment thread.
+- Functional effect systems to the rescue, Scala in the City conference (Signify Technology, 2020): [Functional effect systems to the rescue (Scala in the City, 2020)](https://www.signifytechnology.com/blog/2020/06/functional-effect-systems-to-the-rescue-scala-in-the-city-conference?source=google.com)
 - Videos on effect systems:
-  - [https://www.youtube.com/watch?v=GhERMBT7u4w](https://www.youtube.com/watch?v=GhERMBT7u4w)
-  - [https://www.youtube.com/watch?v=GZRL5Z40w60](https://www.youtube.com/watch?v=GZRL5Z40w60)
+	- [https://www.youtube.com/watch?v=GhERMBT7u4w](https://www.youtube.com/watch?v=GhERMBT7u4w)
+	- [https://www.youtube.com/watch?v=GZRL5Z40w60](https://www.youtube.com/watch?v=GZRL5Z40w60)
 
 ### ZIO
 
 
-- ZIO posts on the SoftwareMill blog (a search page): <https://softwaremill.com/blog/?search=zio>
-- Why on earth a ZIO IO monad for Scala? (Americo Vargas): <https://americovargas.medium.com/why-on-earth-a-zio-io-monad-for-scala-90768e89ab2a> ([PDF](/sources/1f40f87f29d5d7e59178edbc1c0104fa.bin))
-- Building a super easy rate limiter with ZIO (Wix Engineering): <https://medium.com/wix-engineering/building-a-super-easy-rate-limiter-with-zio-88f1ccb49776>
+- ZIO posts on the SoftwareMill blog (a search page): [ZIO posts on the SoftwareMill blog](https://softwaremill.com/blog/?search=zio)
+- [Why on earth a ZIO IO monad for Scala?](https://americovargas.medium.com/why-on-earth-a-zio-io-monad-for-scala-90768e89ab2a) (Americo Vargas) ([PDF](/sources/1f40f87f29d5d7e59178edbc1c0104fa.bin))
+- [Building a super easy rate limiter with ZIO](https://medium.com/wix-engineering/building-a-super-easy-rate-limiter-with-zio-88f1ccb49776) (Wix Engineering)
 
 ### Libraries and ecosystem
 
 
-- Video about libraries, topic not checked further: <https://www.youtube.com/watch?v=KjDG9c5zuKs>
-- Inner Product blog posts: <https://www.inner-product.com/posts/>
+- Video about libraries, topic not checked further: [Video about libraries](https://www.youtube.com/watch?v=KjDG9c5zuKs)
+- Inner Product blog posts: [Inner Product blog posts](https://www.inner-product.com/posts/)
 - Scala FP notes (niqdev):
-  - advanced: <https://niqdev.github.io/scala-fp/docs/fp-advanced>
-  - ecosystem: <https://niqdev.github.io/scala-fp/docs/fp-ecosystem>
-  - more: <https://niqdev.github.io/scala-fp/docs/fp-more>
-- Tofu, Scala libraries: <https://github.com/tofu-tf/tofu>
+	- advanced: [scala-fp: advanced](https://niqdev.github.io/scala-fp/docs/fp-advanced)
+	- ecosystem: [scala-fp: ecosystem](https://niqdev.github.io/scala-fp/docs/fp-ecosystem)
+	- more: [scala-fp: more](https://niqdev.github.io/scala-fp/docs/fp-more)
+- [Tofu, Scala libraries](https://github.com/tofu-tf/tofu)
 
 ### OOP design in Scala
 
 
-- Scala OOP design sample (alexn.org, 2022): [https://alexn.org/blog/2022/04/18/scala-oop-design-sample/](https://alexn.org/blog/2022/04/18/scala-oop-design-sample/)
+- Scala OOP design sample (alexn.org, 2022): [Scala OOFP Design Sample](https://alexn.org/blog/2022/04/18/scala-oop-design-sample/)
 
-See also: [Pure functions and effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}), [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [IO]({{< ref "functional-programming/02-abstractions/monads" >}}#io), [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}), [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}), [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}), [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}), [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Tagless final]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#tagless-final) and [Scala: Sources]({{< ref "functional-programming/04-languages/scala" >}}#sources).
+See also: [Pure Functions And Effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}), [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [IO]({{< ref "functional-programming/02-abstractions/monads" >}}#io), [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}), [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}), [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}), [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}), [Evaluation And Laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}), [Type Classes And Polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Tagless final]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#tagless-final) and [Scala: Sources]({{< ref "functional-programming/04-languages/scala" >}}#sources).
 
 ## Library sources
 
 
 - [Welsh and Gurnell 2020](/sources/08cab18bbc8a17a6885874831fe8c431.bin), *Scala with Cats*: the usual first book on Cats (see [Books](#books)).
 - [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala (2nd edition)*: a complete Cats Effect service in tagless final style (see [Books](#books)).
-  - Chapter 1 (best practices: `Ref` versus `State`, regions of sharing, error handling), chapter 2 (tagless final and capability traits, the Cats Effect 3 hierarchy change), chapter 4 (`Supervisor`) and chapter 9 (resources in the main program).
+	- Chapter 1 (best practices: `Ref` versus `State`, regions of sharing, error handling), chapter 2 (tagless final and capability traits, the Cats Effect 3 hierarchy change), chapter 4 (`Supervisor`) and chapter 9 (resources in the main program).
 - [Rosien 2021](/sources/26d28e80e57cc7f4abab6120e2fa075d.bin), *Essential Effects*: a short book on Cats Effect `IO`, fibers, cancellation and resources; a good bridge between the two books above.
-  - Chapter 1 (the effect pattern), 2 (`IO`, `IOApp`), 3 (parallelism), 4 (fibers and cancellation), 5 (thread pools and blocking), 7 (`Resource`), 9 (`Ref`, `Deferred`), appendix B (the Cats Effect 2 type classes), appendix C (changes in Cats Effect 3).
+	- Chapter 1 (the effect pattern), 2 (`IO`, `IOApp`), 3 (parallelism), 4 (fibers and cancellation), 5 (thread pools and blocking), 7 (`Resource`), 9 (`Ref`, `Deferred`), appendix B (the Cats Effect 2 type classes), appendix C (changes in Cats Effect 3).
 - [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*
-  - Chapter 13, External effects and I/O: effects versus side effects, factoring effects, a simple `IO` and its stack-safety problem, trampolining and free monads, capability traits, `IOApp`, and why `IO` alone is not enough for streaming.
+	- Chapter 13, External effects and I/O: effects versus side effects, factoring effects, a simple `IO` and its stack-safety problem, trampolining and free monads, capability traits, `IOApp`, and why `IO` alone is not enough for streaming.
 - [De Goes et al. 2025](/sources/4115845a430bc3f50ff12c191a45fd53.bin), *Zionomicon*: chapter 1 (functional effects as blueprints, the `ZIO[R, E, A]` type and aliases, comparison with `Future`), chapter 3 (errors, defects and `Cause`), 4.3 (Cats Effect interop), 5 to 8 (fibers, supervision, structured concurrency, interruption), 9 to 13 (concurrent structures), 14 and 15 (resources and `Scope`), 17 (environment and layers), 21 to 24 (STM and schedules); the foreword's "ZIO Alternatives" section.
 - Płachta 2022, *Grokking Functional Programming*: chapter 8, IO as values (`IO.pure` versus `IO.delay`, the viral `IO` type, retries as values, functional architecture); chapter 9 for streams.
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell*: chapter 7, Understanding IO, sections "Talking About IO" (three meanings of "IO"), "Performing IO in a Pure, Lazy Language" and "Running IO in Real Applications" (unsequenced actions never run, and `>>` forces effects but not result values); chapter 8, "Dealing with IO Exceptions", and the procedural shell and functional core; chapter 10, "Working with IORefs" (also `handle`); chapter 13 on `ExceptT` instead of IO exceptions, and transformers for many effects; on *IO in Haskell* and *Program structure*.

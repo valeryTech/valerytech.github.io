@@ -363,24 +363,24 @@ Avoid re-explaining the AI risk overlay unless a finding materially changes the 
 ### Marty Cagan / SVPG
 
 
-- INSPIRED, 2nd Edition
-- Product strategy overview
-- Product strategy insights
-- Outcomes are hard
+- [[INSPIRED, 2nd Edition]]
+- [[product-strategy-overview]]
+- [[product-strategy-insights]]
+- [[outcomes-are-hard]]
 - Discovery: problem versus solution
 - Discovery: judgment
 - Discovery: learning versus insights
-- Assessing product opportunities
-- The opportunity backlog
-- Framing product decisions
+- [[assessing-product-opportunities]]
+- [[the-opportunity-backlog]]
+- [[framing-product-decisions]]
 - Product discovery versus optimization
 - Market discovery versus product discovery
-- The role of analytics
-- Stakeholder management
-- Communicating product learnings
-- Product team FAQ
+- [[the-role-of-analytics]]
+- [[stakeholder-management]]
+- [[communicating-product-learnings]]
+- [[product-team-faq]]
 - Team objectives: accountability
-- Pilot teams
+- [[pilot-teams]]
 
 ## Research guardrails
 

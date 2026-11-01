@@ -69,4 +69,4 @@ The source repeats that the feature should not be the main lifecycle object. It 
 
 The source says that shared understanding matters but is a property of the continuing team, not an item passed across an interface. It repeats that the interface is two-way, that discovery mainly reduces uncertainty, and that delivery mainly creates something customers can depend on. It also notes that an "effective solution" has not proved the business result. It ends by saying that prototype-as-spec, non-functional requirements, experiment design, evidence strength, and individual risk tests can be explained below the main model.
 
-> **Editorial comment:** Most of these points now appear in [`discovery-and-delivery.md`]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) or in separate alternative notes. They remain here because the source included them in draft or repeated form.
+> **Editorial comment:** Most of these points now appear in [Discovery And Delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) or in separate alternative notes. They remain here because the source included them in draft or repeated form.

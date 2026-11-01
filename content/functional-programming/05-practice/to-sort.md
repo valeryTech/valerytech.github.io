@@ -14,19 +14,19 @@ Link labels come from the URL or the original jot; the pages themselves were not
 ## Domain modeling in Haskell and Scala
 
 
-These belong with [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}) once read.
+These belong with [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}) once read.
 
 Haskell:
 
-- Haskell at Work, video channel: <https://www.youtube.com/@HaskellatWork/videos>
-- Haskell at Work, "Domain modelling with Haskell data structures": <https://haskell-at-work.com/domain-modelling-with-haskell-data-structures/>
-- debasishg/hask, a playground repository: <https://github.com/debasishg/hask/tree/master>
-- Reddit, "How I write REST-ish services in Haskell, part 2": <https://www.reddit.com/r/haskell/comments/9wfduz/how_i_write_restish_services_in_haskell_part_2/>
-- Reddit, "Modelling a polymorphic data domain in Haskell": <https://www.reddit.com/r/haskell/comments/p681m0/modelling_a_polymorphic_data_domain_in_haskell/>
+- Haskell at Work, video channel: [Haskell at Work YouTube channel](https://www.youtube.com/@HaskellatWork/videos)
+- Haskell at Work, "[Domain modelling with Haskell data structures](https://haskell-at-work.com/domain-modelling-with-haskell-data-structures/)"
+- debasishg/hask, a playground repository: [debasishg/hask: Haskell domain modeling playground](https://github.com/debasishg/hask/tree/master)
+- Reddit, "[How I write REST-ish services in Haskell, part 2](https://www.reddit.com/r/haskell/comments/9wfduz/how_i_write_restish_services_in_haskell_part_2/)"
+- Reddit, "[Modelling a polymorphic data domain in Haskell](https://www.reddit.com/r/haskell/comments/p681m0/modelling_a_polymorphic_data_domain_in_haskell/)"
 
 Scala:
 
-- alexn.org, "Scala OOP design sample", the section on `IO` in an API as a constraint: <https://alexn.org/blog/2022/04/18/scala-oop-design-sample/#beware-io-in-our-api-is-a-constraint>
+- alexn.org, "Scala OOP design sample", the section on `IO` in an API as a constraint: [Scala OOP design sample, section on IO as a constraint](https://alexn.org/blog/2022/04/18/scala-oop-design-sample/#beware-io-in-our-api-is-a-constraint)
 
 ### Sum types with sealed traits
 
@@ -44,7 +44,7 @@ def area(s: Shape): Double = s match
 ```
 
 
-More in [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}); Schwarz 2020 (Library sources) works through the same encoding for DDD.
+More in [Algebraic Data Types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}); Schwarz 2020 (Library sources) works through the same encoding for DDD.
 
 ### State machines
 
@@ -56,13 +56,13 @@ Open question: how to write a state machine functionally.
 - Running the machine over a history of events is a fold: `events.foldLeft(initial)(step)`, or a monadic fold (`foldM` in Cats and Haskell) for the `Either` version, which stops at the first rejected event. Replaying events like this is also the core of event sourcing.
 - To have the compiler reject invalid transitions instead of rejecting them at runtime, encode the state in the type (phantom types or GADTs). Signatures get more complex.
 
-See [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds).
+See [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds).
 
 ## Lenses and optics
 
 
-- Rock the JVM, lenses: <https://blog.rockthejvm.com/lens/>
-- Medium, "Functional references: lens and other optics in Scala": <https://medium.com/zyseme-technology/functional-references-lens-and-other-optics-in-scala-e5f7e2fdafe>
+- Rock the JVM, lenses: [Lenses (Rock the JVM)](https://blog.rockthejvm.com/lens/)
+- Medium, "[Functional references: lens and other optics in Scala](https://medium.com/zyseme-technology/functional-references-lens-and-other-optics-in-scala-e5f7e2fdafe)"
 
 A lens is a composable getter and setter for one field of an immutable structure. With nested case classes, updating `person.address.street` by hand needs a `copy` at every level; lenses for each field compose into one that does the whole update. Lenses are one kind of optic: prisms focus on one case of a sum type, traversals on many elements. The usual libraries are Monocle in Scala and `lens` or `optics` in Haskell.
 
@@ -73,7 +73,7 @@ No note in this section covers optics yet. If these get read, they could start o
 
 Open question: the `Wrapper` concept and its use. The word is used in two senses.
 
-1. A newtype: `newtype Email = Email String` in Haskell, or `opaque type Email = String` in Scala 3. It is the same runtime value with a distinct type, so the compiler keeps the two apart. See [Newtypes and simple values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}).
+1. A newtype: `newtype Email = Email String` in Haskell, or `opaque type Email = String` in Scala 3. It is the same runtime value with a distinct type, so the compiler keeps the two apart. See [Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}).
 2. Functor and monad tutorials call a context type such as `Option[A]` or `Future[A]` a wrapper: a value inside some extra structure that `map` and `flatMap` work through. The box picture breaks quickly. An `IO[A]`, a parser or a function `r -> a` does not contain an `A`; it can produce one when run. "Context" or "computation" fits better. See [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}) and [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}).
 
 ## Goals and languages
@@ -85,7 +85,7 @@ Open question: the `Wrapper` concept and its use. The word is used in two senses
 - F\* (Microsoft Research and Inria) combines dependent types with an effect system and sends proof obligations to an SMT solver. Project Everest used it, for example for the verified HACL\* cryptography library.
 - Haskell has no full dependent types, but GADTs, `DataKinds` and type families approximate some of them.
 
-See [Refinement types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}) and [Towards dependent types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}}).
+See [Refinement Types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}) and [Towards dependent types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}}).
 
 **Type safety and referential transparency as the main goals.** Type safety means a well-typed program cannot hit a type error at runtime. Referential transparency means an expression can be replaced by its value without changing behaviour, which makes local reasoning, refactoring and testing straightforward ([Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency)). Both are really means: the goal is code you can understand and change without breaking it. Formal type safety is also weaker than the everyday meaning: it rules out runtime type errors, not broken invariants. How much of the invariants to put in the types is the question of [What belongs in the type system]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}).
 
@@ -98,21 +98,21 @@ These were collected together in the inbox. Pages whose topic is given were not 
 
 - Video, advice: <https://www.youtube.com/watch?v=lvlnH-uEjZA>
 - Video playlist: <https://www.youtube.com/watch?v=iC4_U_vhUSU&list=PLLrf_044z4Jr5KerLBngYLP_2I7E5vZPs>
-- Type class derivation in Scala (michalp): <https://blog.michalp.net/posts/scala/scala-derivations/>
-- Snake game (Rock the JVM): <https://blog.rockthejvm.com/snake/>
-- N-Queens, polyglot FP in Haskell and Scala, part 1 (Philip Schwarz, slides): <https://www.slideshare.net/pjschwarz/nqueens-combinatorial-problem-polyglot-fp-for-fun-and-profit-haskell-and-scala-part-1>
-- Retrying function calls in Scala (SoftwareMill): <https://softwaremill.com/retrying-function-calls-in-scala/>
-- 16 months of functional programming (Vasinov): <https://www.vasinov.com/blog/16-months-of-functional-programming/>
-- Comparing task processing approaches in Scala (Bin Wang, 2023): <https://www.binwang.me/2023-08-27-Compare-Task-Processing-Approaches-in-Scala.html>
-- Hexlet blog, self-help: <https://ru.hexlet.io/blog/posts/self-help>
-- Scala digest number 10 (Tinkoff, Habr): <https://habr.com/ru/companies/tinkoff/articles/770964/>
-- Habr, Tinkoff: <https://habr.com/ru/companies/tinkoff/articles/764768/>
-- Habr, worth reading together with the Scala comment: <https://habr.com/ru/articles/469441/>
+- Type class derivation in Scala (michalp): [Beginner's guide to derivations in Scala](https://blog.michalp.net/posts/scala/scala-derivations/)
+- Snake game (Rock the JVM): [Snake game (Rock the JVM)](https://blog.rockthejvm.com/snake/)
+- N-Queens, polyglot FP in Haskell and Scala, part 1 (Philip Schwarz, slides): [N-Queens Combinatorial Problem: Polyglot FP for Fun and Profit, Part 1](https://www.slideshare.net/pjschwarz/nqueens-combinatorial-problem-polyglot-fp-for-fun-and-profit-haskell-and-scala-part-1)
+- Retrying function calls in Scala (SoftwareMill): [Retrying function calls in Scala (SoftwareMill)](https://softwaremill.com/retrying-function-calls-in-scala/)
+- 16 months of functional programming (Vasinov): [16 Months of Functional Programming (Vasily Vasinov)](https://www.vasinov.com/blog/16-months-of-functional-programming/)
+- Comparing task processing approaches in Scala (Bin Wang, 2023): [Compare Task Processing Approaches in Scala (Bin Wang, 2023)](https://www.binwang.me/2023-08-27-Compare-Task-Processing-Approaches-in-Scala.html)
+- Hexlet blog, self-help: [Как учиться новому быстро и эффективно: лучшие Self-Help книги для разработчиков](https://ru.hexlet.io/blog/posts/self-help)
+- Scala digest number 10 (Tinkoff, Habr): [Scala Digest. Выпуск 10](https://habr.com/ru/companies/tinkoff/articles/770964/)
+- Habr, Tinkoff: [Scala Digest. Выпуск 9](https://habr.com/ru/companies/tinkoff/articles/764768/)
+- Habr, worth reading together with the Scala comment: [Сложность простоты](https://habr.com/ru/articles/469441/)
 - Habr, topics not checked:
-  - <https://habr.com/ru/articles/725462/>
-  - <https://habr.com/ru/articles/742628/>
-  - <https://habr.com/ru/articles/490112/>
-  - <https://habr.com/ru/articles/479238/>
+	- [Решение задачи о 8 ферзях на трёх уровнях Scala -- программа, типы, метапрограмма](https://habr.com/ru/articles/725462/)
+	- [Как я писал свой распределенный мессенджер на Scala/fs2 и немного lock-free](https://habr.com/ru/articles/742628/)
+	- [Монады как паттерн переиспользования кода](https://habr.com/ru/articles/490112/)
+	- [Функциональное программирование -- это не то, что нам рассказывают](https://habr.com/ru/articles/479238/)
 
 ## Study plan and todos
 
@@ -141,7 +141,7 @@ These inbox fragments now live in other notes:
 - Monadic operators and operations: [Why monads]({{< ref "functional-programming/02-abstractions/monads" >}}#why-monads)
 - How `map` and `flatMap` work in Scala: [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}})
 - Natural transformations: [Natural transformations]({{< ref "functional-programming/02-abstractions/category-theory" >}}#natural-transformations)
-- Effect systems and libraries: [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) (tagless final) and [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) (fs2)
+- Effect systems and libraries: [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Structuring Effectful Programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) (tagless final) and [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) (fs2)
 
 ## Library sources
 
@@ -151,7 +151,7 @@ These inbox fragments now live in other notes:
 - [Welsh and Gurnell 2020](/sources/08cab18bbc8a17a6885874831fe8c431.bin), *Scala with Cats*: type classes and implicit scope, functors and monads in Scala.
 - [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala (5th edition)*: givens and `using` clauses. Its section 9.1, the file matcher, is discussed in [Custom control structures]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#custom-control-structures).
 - [Rosien 2021](/sources/26d28e80e57cc7f4abab6120e2fa075d.bin), *Essential Effects*: Cats Effect `IO`, programs as values, parallelism and resources.
-- [Vargas 2023](/sources/1f40f87f29d5d7e59178edbc1c0104fa.bin), *Why on earth a ZIO IO monad for Scala?*: a saved Medium article, now used in [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
+- [Vargas 2023](/sources/1f40f87f29d5d7e59178edbc1c0104fa.bin), *Why on earth a ZIO IO monad for Scala?*: a saved Medium article, now used in [Effect Systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: final, initial and free-monad styles side by side.
 - [Milewski 2019](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin), *Category Theory for Programmers (Scala edition)*: functors and natural transformations.
 - [Serrano Mena 2022](/sources/5c1001bd2c4b75b2ff640e61358fc71a.bin), *Haskell: Almost Standard Libraries*: chapter 10, Optics. Section 10.1, "Lenses, prisms, (affine) traversals, folds", builds lenses with `makeLenses` and uses `view`, `set` and `over` (`%` in optics, `.` in lens and microlens). It covers affine traversals for fields only some constructors have (`preview`), prisms for constructors (`review`), traversals with `each`, and folds, and explains why a lens composed with a prism is only an affine traversal. Section 10.2, "Focusing on JSON documents", covers `aeson-optics` on untyped JSON; on *Lenses and optics*.

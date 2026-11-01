@@ -269,7 +269,7 @@ It does **not** necessarily imply a fixed workflow, fixed graph, deterministic p
 ### Builder questions and examples from the dialogue
 
 
-The following captured passages expand the builder method above. Their original section numbers are retained. The preceding [construction-rule discussion]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#1-your-core-research-object-should-be-the-construction-rule) is now in the overview scope dialogue.
+The following captured passages expand the builder method above. Their original section numbers are retained. The preceding [construction-rule discussion]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}#1-the-construction-rule-as-the-proposed-core-research-object) is now in the overview scope dialogue.
 
 ### 2. This changes what you give builders
 
@@ -438,7 +438,7 @@ The natural response is to iterate: refine the spec, generate code, review what 
 ## Design Is Discovered Through Implementation
 
 
-Reviewing code, particularly while we are still discovering the design, is not the same as writing it. While reviewing the generated code, we review through the chunks validating if it maps to our intent and looking for possible pitfalls. But reviewing rarely forces us to wrestle with the design decisions. Writing code, by contrast, forces us to think through concrete decisions--such as where a responsibility belongs or what boundaries should be exposed so the design can be extended further. It is in making those decisions that a design most fully reveals itself.
+Reviewing code, particularly while we are still discovering the design, is not the same as writing it. While reviewing the generated code, we review through the chunks validating if it maps to our intent and looking for possible pitfalls. But reviewing rarely forces us to wrestle with the design decisions. Writing code, by contrast, forces us to think through concrete decisions -- such as where a responsibility belongs or what boundaries should be exposed so the design can be extended further. It is in making those decisions that a design most fully reveals itself.
 
 The programming language and paradigm we code in [shapes the design insight we get](https://martinfowler.com/articles/what-is-code.html). A functional design approach or an object-oriented design approach reveals different aspects of the design, along with idioms and patterns that are natural to the paradigm.
 
@@ -447,7 +447,7 @@ So where do LLMs fit in? I see LLMs playing two roles. They are a great help whi
 ## Domain Abstractions and DSLs
 
 
-A useful way to frame this is through [Domain Driven Design](http://martinfowler.com/bliki/DomainDrivenDesign.html). Its core insight is building a shared conceptual model of the domain in code, and then using that model - which DDD calls a [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html) - both to evolve the codebase and to give the team a vocabulary to think and communicate in. Often, it is highly effective to build a domain specific language on top of that model: a constrained syntax for expressing the domain's concepts and operations. Seen this way, most development is the process of building a domain model and using it to evolve the system. The LLM plays two distinct roles depending on whether the domain model already exists. In this article, I will focus on how [Domain-Specific Languages](https://martinfowler.com/dsl.html) (DSLs) work with LLMs.
+A useful way to frame this is through [Domain Driven Design](http://martinfowler.com/bliki/DomainDrivenDesign.html). Its core insight is building a shared conceptual model of the domain in code, and then using that model -- which DDD calls a [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html) - both to evolve the codebase and to give the team a vocabulary to think and communicate in. Often, it is highly effective to build a domain specific language on top of that model: a constrained syntax for expressing the domain's concepts and operations. Seen this way, most development is the process of building a domain model and using it to evolve the system. The LLM plays two distinct roles depending on whether the domain model already exists. In this article, I will focus on how [Domain-Specific Languages](https://martinfowler.com/dsl.html) (DSLs) work with LLMs.
 
 <!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->
 

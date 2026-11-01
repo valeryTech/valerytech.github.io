@@ -17,9 +17,9 @@ Final response from the **Language design** sub-agent in [Research LLM Programmi
 
 Huiri Tan, Yikun Wang, Puyang Zhang, Shangyu Li, Jiasi Shen. 20 July 2026; arXiv preprint, in submission.
 
-- Paper: [https://arxiv.org/abs/2607.17780](https://arxiv.org/abs/2607.17780) ([PDF](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin))
-- Author's publication listing confirming submission status: [https://hr.tan.pub/](https://hr.tan.pub/)
-- Implementation and limitations: [https://github.com/etas-project/etas](https://github.com/etas-project/etas)
+- Paper: [arXiv:2607.17780](https://arxiv.org/abs/2607.17780) ([PDF](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin))
+- Author's publication listing confirming submission status: [Huiri Tan publication listing](https://hr.tan.pub/)
+- Implementation and limitations: [etas-project/etas on GitHub](https://github.com/etas-project/etas)
 - Relevant retrieved refs: turn22academia7, turn22search3, turn23search3.
 
 ETAS makes agents, tools, prompts, typed memory, human approvals, policies, and action traces explicit language elements. It distinguishes ordinary computation, nondeterministic model calls, and external actions. Its types record effects and requested-action traces; policies express allowed, forbidden, and ordered actions. Checks that depend on dynamic resources remain runtime obligations.
@@ -33,7 +33,7 @@ Maturity caveat: Do not call it a mature or fully verified platform. The author 
 
 Vincenzo Scotti, Jan Keim, Tobias Hey, Andreas Metzger, Anne Koziolek, Raffaela Mirandola. ACM Transactions on Software Engineering and Methodology, 35(9), article 279, 21 August 2026.
 
-- Primary publisher URL: [https://doi.org/10.1145/3832776](https://doi.org/10.1145/3832776)
+- Primary publisher URL: [doi:10.1145/3832776](https://doi.org/10.1145/3832776)
 - Relevant retrieved refs: turn14search0, turn16search0, turn18search1.
 
 It argues for LLM Scripting Language (LSL), making interaction structure explicit and inspectable, analyzable, and governable. It separates deterministic control flow from probabilistic generation and gives context, output constraints, and workflow paths explicit semantics. It is especially close to the user's argument that opaque model internals increase the value of inspectable surrounding software.
@@ -47,9 +47,9 @@ Suggested use: Pair this with ETAS: an established argument for the direction, f
 
 Marco Aldinucci, Andrea Bracciali, Iacopo Colonnelli, Doriana Medić, Alberto Mulone, Luca Roversi, Marco Edoardo Santimaria. Journal of Logical and Algebraic Methods in Programming; available online 9 March 2026, journal pre-proof; article 101191.
 
-- Primary publisher URL: [https://www.sciencedirect.com/science/article/pii/S2352220826000830](https://www.sciencedirect.com/science/article/pii/S2352220826000830)
-- DOI: [https://doi.org/10.1016/j.jlamp.2026.101191](https://doi.org/10.1016/j.jlamp.2026.101191)
-- Earlier manuscript: [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7139658](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7139658)
+- Primary publisher URL: [Primary publisher version on ScienceDirect](https://www.sciencedirect.com/science/article/pii/S2352220826000830)
+- DOI: [doi:10.1016/j.jlamp.2026.101191](https://doi.org/10.1016/j.jlamp.2026.101191)
+- Earlier manuscript: [Earlier manuscript on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7139658)
 - Relevant retrieved refs: turn9search0, turn14search1, turn18search0.
 
 Models an agent-tool-workflow boundary with effects, capabilities, provenance, and a proposal -> approval -> commitment -> execution protocol. It claims a mechanized Rocq proof of trace safety, including exact approval binding and no capability amplification.
@@ -69,9 +69,9 @@ This paper helps substantiate "agent cannot delete" and "human approval must app
 
 Primary URLs:
 
-- LMQL: [https://pldi23.sigplan.org/details/pldi-2023-pldi/81/Prompting-Is-Programming-A-Query-Language-for-Large-Language-Models](https://pldi23.sigplan.org/details/pldi-2023-pldi/81/Prompting-Is-Programming-A-Query-Language-for-Large-Language-Models) -- turn6search1
-- Type-constrained generation: [https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models](https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models) -- turn12view3
-- Concordat: [https://arxiv.org/abs/2610.37461](https://arxiv.org/abs/2610.37461) and [https://arxiv.org/html/2610.37461v1](https://arxiv.org/html/2610.37461v1) -- turn12view2, turn18view0
+- LMQL: [Prompting Is Programming: A Query Language for Large Language Models (PLDI 2023)](https://pldi23.sigplan.org/details/pldi-2023-pldi/81/Prompting-Is-Programming-A-Query-Language-for-Large-Language-Models) -- turn6search1
+- Type-constrained generation: [Type-Constrained Code Generation with Language Models (PLDI 2025)](https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models) -- turn12view3
+- Concordat: [arXiv:2610.37461](https://arxiv.org/abs/2610.37461) and [arXiv:2610.37461v1](https://arxiv.org/abs/2610.37461v1) -- turn12view2, turn18view0
 
 ## Taxonomy to use in the answer
 

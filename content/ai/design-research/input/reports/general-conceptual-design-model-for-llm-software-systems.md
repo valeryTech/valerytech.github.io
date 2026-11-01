@@ -215,7 +215,7 @@ Similarly, tests provide evidence over tested executions. Your coding-agent note
 ### Comparison of mechanisms
 
 
-**Legend:** **M** = mechanical for an explicitly encoded property; **E** = empirical/probabilistic; **M/E** = a mechanically checkable layer surrounds a semantic step that remains empirical; **--** = the mechanism does not directly provide that property.
+**Legend:** **M** = mechanical for an explicitly encoded property; **E** = empirical/probabilistic; **M/E** = a mechanically checkable layer surrounds a semantic step that remains empirical; ** -- ** = the mechanism does not directly provide that property.
 
 | Mechanism | Validity | Acceptance | Authorization | Execution / effects | What it actually buys |
 |---|---:|---:|---:|---:|---|
@@ -1058,44 +1058,44 @@ Those objects may be explanations, domain structures, hypotheses, plans, analyse
 
 The resulting research direction is therefore more precise than "how do we make agents reliable?" It is:
 
-> **How should a software system divide work between probabilistic generative construction and mechanically controlled semantics, authority, and execution--and which representation gives the smallest restriction needed to make that division effective?**
+> **How should a software system divide work between probabilistic generative construction and mechanically controlled semantics, authority, and execution -- and which representation gives the smallest restriction needed to make that division effective?**
 
 The direct-agent, structured-workflow, and programmable-DSL experiment provides a concrete way to test that question rather than settle it architecturally in advance.
 
 ## Citation links
 
 
-[^1]: [AI Project Examples And Design Model \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>).
+[^1]: [AI Project Examples And Design Model | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/ai-project-examples-and-design-model/>).
 
-[^2]: [ReAct: Synergizing Reasoning and Acting in Language Models](<https://arxiv.org/abs/2210.03629>).
+[^2]: ReAct: Synergizing Reasoning and Acting in Language Models.
 
-[^3]: [Analytical Engines And Programmable Environments \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/>).
+[^3]: [Analytical Engines And Programmable Environments | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/analytical-engines-and-programmable-environments/>).
 
-[^4]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
+[^4]: [Coding Agents And Harnesses | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
 
-[^5]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](<https://arxiv.org/abs/2406.13352>).
+[^5]: AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents.
 
-[^6]: [Agentic Operations And Coordination \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/>).
+[^6]: [Agentic Operations And Coordination | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/agentic-operations-and-coordination/>).
 
 [^7]: [Zanzibar: Google's Consistent, Global Authorization System](<https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/>).
 
-[^8]: [StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows](<https://arxiv.org/abs/2403.11322>).
+[^8]: StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows.
 
 [^9]: [Building Effective AI Agents](<https://www.anthropic.com/engineering/building-effective-agents>).
 
-[^10]: [AI Risk Management Framework \| NIST](<https://www.nist.gov/itl/ai-risk-management-framework>).
+[^10]: [AI Risk Management Framework | NIST](<https://www.nist.gov/itl/ai-risk-management-framework>).
 
 [^11]: [Trustworthy agents in practice](<https://www.anthropic.com/research/trustworthy-agents>).
 
-[^12]: [ReAct: Synergizing Reasoning and Acting in Language Models](<https://arxiv.org/abs/2210.03629>).
+[^12]: ReAct: Synergizing Reasoning and Acting in Language Models.
 
 [^13]: [A Vocabulary for Structural Validation of JSON](<https://json-schema.org/draft/2020-12/json-schema-validation>).
 
-[^14]: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](<https://arxiv.org/abs/2005.11401>).
+[^14]: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
 
-[^15]: [Prompting Is Programming: A Query Language for Large ...](<https://arxiv.org/abs/2212.06094>).
+[^15]: Prompting Is Programming: A Query Language for Large ....
 
-[^16]: [StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows](<https://arxiv.org/abs/2403.11322>).
+[^16]: StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows.
 
 [^17]: [Specification](<https://json-schema.org/specification>).
 
@@ -1105,25 +1105,25 @@ The direct-agent, structured-workflow, and programmable-DSL experiment provides 
 
 [^20]: [making Claude Code more secure and autonomous - Anthropic](<https://www.anthropic.com/engineering/claude-code-sandboxing>).
 
-[^21]: [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](<https://arxiv.org/abs/2306.05685>).
+[^21]: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.
 
-[^22]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
+[^22]: [Coding Agents And Harnesses | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
 
-[^23]: [Structured model outputs \| OpenAI API](<https://developers.openai.com/api/docs/guides/structured-outputs>).
+[^23]: [Structured model outputs | OpenAI API](<https://developers.openai.com/api/docs/guides/structured-outputs>).
 
-[^24]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](<https://arxiv.org/abs/2406.13352>).
+[^24]: AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents.
 
-[^25]: [AI-Assisted Analysis And Investigation Systems \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/>).
+[^25]: [AI-Assisted Analysis And Investigation Systems | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/ai-assisted-analysis-and-investigation-systems/>).
 
-[^26]: [Coding Agents And Harnesses \| Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
+[^26]: [Coding Agents And Harnesses | Systems & Engineering](<https://valery.tech/ai/system-types/project-examples/cases/coding-agents-and-harnesses/>).
 
-[^27]: [Sapien: A Stateful Policy Engine for Autonomous AI Agents](<https://arxiv.org/html/2610.00797v1>).
+[^27]: Sapien: A Stateful Policy Engine for Autonomous AI Agents.
 
 [^28]: [Demystifying evals for AI agents - Anthropic](<https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents>).
 
-[^29]: [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](<https://arxiv.org/abs/2406.13352>).
+[^29]: AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents.
 
-[^30]: [Language choice and semantic guarantees for AI systems \| Systems & Engineering](<https://valery.tech/ai/design/workflow-design/langs-aspects/>).
+[^30]: [Language choice and semantic guarantees for AI systems | Systems & Engineering](<https://valery.tech/ai/design/workflow-design/langs-aspects/>).
 
 [^31]: Unresolved additional source from the original report (reference ID: `turn21view3`). Its URL was not exposed in the citation panel.
 

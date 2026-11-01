@@ -12,11 +12,9 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 ## this separation
 
 
-The proposal is to treat "neuro-symbolic" as one useful lens, but not the whole architecture. The richer opportunity is to borrow the best machinery from several mature theories--especially ones that already model concurrency, partial failure, uncertainty, invariants, and long-running processes.
+The proposal is to treat "neuro-symbolic" as one useful lens, but not the whole architecture. The richer opportunity is to borrow the best machinery from several mature theories -- especially ones that already model concurrency, partial failure, uncertainty, invariants, and long-running processes.
 
 The working interpretation is that the most promising move is to make the system explicitly **neuro-symbolic at the operator boundary**: LLMs propose, interpret, classify, and synthesize; a symbolic runtime owns control flow, state, permissions, invariants, lineage, and resource accounting. Recent work is converging on exactly this separation for agent verification.
-
-TODO: Clarify the original `XXX` marker; no further text is recorded here.
 
 The working interpretation is that "neuro-symbolic" describes the system, but **Colored Petri Nets + type/effect systems + temporal logic** may give you a much richer computational foundation than LangGraph's generic state/nodes/edges model.
 
@@ -282,8 +280,6 @@ Current agent-verification research is explicitly treating the LLM as a nondeter
 
 That's almost exactly the architecture we're discussing.
 
-<a id="8-process-calculi-may-be-useful-but-id-keep-them-underneath"></a>
-
 ### 8. Process calculi as a possible underlying layer
 
 
@@ -345,7 +341,7 @@ rather than the universal runtime model.
 
 The proposal is to resist selecting one existing formalism and declaring it *the* theory. Different formalisms correspond to different kinds of guarantees. The architecture becomes cleaner if they compose.
 
-**Type and effect systems** are the right starting point for local, compositional properties. Classical effect systems extend ordinary types with information about what an expression may do; Lucassen and Gifford's 1988 work is an early foundational example. [19](#ref-19) For agent programs, a modern effect row might be:
+**Type and effect systems** are the right starting point for local, compositional properties. Classical effect systems extend ordinary types with information about what an expression may do; Lucassen and Gifford's 1988 work is an early foundational example. ([Lucassen and Gifford 1988](#lucassen-1988)) For agent programs, a modern effect row might be:
 
 ```text
 classify :
@@ -394,9 +390,9 @@ Finding<
 ```
 
 
-That generalises the epistemic type/effect idea in the compiler notes from investigations to arbitrary agentic computation. [2](#ref-2)
+That generalises the epistemic type/effect idea in the compiler notes from investigations to arbitrary agentic computation. ([Project note: compiler-approach](#note-compiler-approach))
 
-**Hoare-style contracts** are a good fit for state-changing operators. Hoare logic's basic idea is that an operation is related to a precondition and a postcondition; ToolGate demonstrates how naturally that maps to agent tool calls. [3](#ref-3), [20](#ref-20) A bank operation could be expressed schematically as:
+**Hoare-style contracts** are a good fit for state-changing operators. Hoare logic's basic idea is that an operation is related to a precondition and a postcondition; ToolGate demonstrates how naturally that maps to agent tool calls. ([Liu et al. 2026](#liu-2026); [Hoare 1969](#hoare-1969)) A bank operation could be expressed schematically as:
 
 ```text
 refund(order, amount)
@@ -415,7 +411,7 @@ ensures:
 
 The model may decide that `refund` is useful. The symbolic runtime decides whether the transition is legal.
 
-**Temporal logic** handles properties that cannot be decided from one operation in isolation. Pnueli's temporal-logic work supplied the classical foundation for reasoning about behaviour over execution traces; Agent-C demonstrates the direct modern application to agents. [21](#ref-21), [4](#ref-4) Examples include:
+**Temporal logic** handles properties that cannot be decided from one operation in isolation. Pnueli's temporal-logic work supplied the classical foundation for reasoning about behaviour over execution traces; Agent-C demonstrates the direct modern application to agents. ([Pnueli 1977](#pnueli-1977); [Kamath et al. 2025](#kamath-2025)) Examples include:
 
 ```text
 always(
@@ -437,7 +433,7 @@ always(
 
 Safety properties such as "payment never happens before approval" are usually easier than liveness properties such as "every started job eventually completes", because neural operators, humans and external services can stall indefinitely. That distinction should be explicit in the research programme.
 
-**Colored Petri Nets are attractive as an intermediate representation for concurrency and resources.** Petri-net workflow research has long used tokens, places and transitions to model concurrency, synchronisation, deadlock and workflow correctness. [22](#ref-22) For this project, coloured tokens could carry typed values:
+**Colored Petri Nets are attractive as an intermediate representation for concurrency and resources.** Petri-net workflow research has long used tokens, places and transitions to model concurrency, synchronisation, deadlock and workflow correctness. ([van der Aalst 1998](#van-der-aalst-1998)) For this project, coloured tokens could carry typed values:
 
 ```text
 Task<Order>
@@ -450,7 +446,7 @@ Evidence<Verified>
 
 and a transition might require a combination before firing. The proposal is to use Petri nets primarily as a **lower-level control/resource semantics**, not as the whole language. They are weaker as a natural home for rich types, authority lattices, provenance expressions, source-level abstractions and probabilistic quality contracts.
 
-**Provenance should be semantic, not just logging.** W3C PROV distinguishes entities, activities and agents and specifies relations such as derivation and generation; its constraint model gives a basis for checking whether a provenance history is consistent. [23](#ref-23), [24](#ref-24) Database provenance research goes further by making lineage compositional through query operations. For agentic programs, that suggests each value carries a derivation object:
+**Provenance should be semantic, not just logging.** W3C PROV distinguishes entities, activities and agents and specifies relations such as derivation and generation; its constraint model gives a basis for checking whether a provenance history is consistent. ([W3C 2013](#w3c-2013-prov-primer); [Cheney et al. 2013](#cheney-2013)) Database provenance research goes further by making lineage compositional through query operations. For agentic programs, that suggests each value carries a derivation object:
 
 ```text
 FinalDecision
@@ -464,7 +460,7 @@ FinalDecision
 
 For an operations agent, the same machinery could answer "which observations and model calls led to this remediation?" For a coding agent: "which requirements and repository observations caused this patch?"
 
-**The database/compiler analogy is deeper than a metaphor.** DSPy establishes a modern precedent for declaring an LM computation and compiling/optimising its implementation. [11](#ref-11) RUBICON brings explicit database algebra, source wrappers, intermediate results and optimisation into agentic data access. [10](#ref-10) The proposed separation can therefore be formalised as:
+**The database/compiler analogy is deeper than a metaphor.** DSPy establishes a modern precedent for declaring an LM computation and compiling/optimising its implementation. ([Khattab et al. 2024](#khattab-2024)) RUBICON brings explicit database algebra, source wrappers, intermediate results and optimisation into agentic data access. ([Wenz et al. 2026](#wenz-2026)) The proposed separation can therefore be formalised as:
 
 ```text
 Source program
@@ -499,7 +495,7 @@ This gives a plausible central **soundness theorem** for the programme:
 
 > If a source program type-checks under contract environment Γ, each physical operator implements the declared logical contract, and the runtime commits only verified state transitions, then every committed execution trace preserves the statically declared safety and provenance invariants.
 
-That statement deliberately does **not** prove that arbitrary model-generated semantic judgements are true. ToolGate, Agent-C and SEVerA demonstrate ways to prove or enforce properties of state, sequence or output shape/content when those properties are formally decidable; they do not turn open-ended semantic interpretation into theorem proving. [3](#ref-3), [4](#ref-4), [5](#ref-5)
+That statement deliberately does **not** prove that arbitrary model-generated semantic judgements are true. ToolGate, Agent-C and SEVerA demonstrate ways to prove or enforce properties of state, sequence or output shape/content when those properties are formally decidable; they do not turn open-ended semantic interpretation into theorem proving. ([Liu et al. 2026](#liu-2026); [Kamath et al. 2025](#kamath-2025); [Banerjee et al. 2026](#banerjee-2026))
 
 This boundary may be one of the strongest intellectual positions for the programme:
 
@@ -515,27 +511,27 @@ Certified<T, property>
 ```
 
 
-and reason about a composition containing both hard guarantees and empirical reliability targets. SEVerA's explicit separation of hard constraints from a soft optimisation objective is one useful starting point. [5](#ref-5)
+and reason about a composition containing both hard guarantees and empirical reliability targets. SEVerA's explicit separation of hard constraints from a soft optimisation objective is one useful starting point. ([Banerjee et al. 2026](#banerjee-2026))
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
-## Citation links added during reassembly
+## References
 
 
-The original numbered citations link to the entries below, which point to the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
+These entries are copied from the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
 
-- <a id="ref-2"></a>[Reference 2]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-2)
-- <a id="ref-3"></a>[Reference 3]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-3)
-- <a id="ref-4"></a>[Reference 4]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-4)
-- <a id="ref-5"></a>[Reference 5]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-5)
-- <a id="ref-10"></a>[Reference 10]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-10)
-- <a id="ref-11"></a>[Reference 11]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-11)
-- <a id="ref-19"></a>[Reference 19]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-19)
-- <a id="ref-20"></a>[Reference 20]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-20)
-- <a id="ref-21"></a>[Reference 21]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-21)
-- <a id="ref-22"></a>[Reference 22]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-22)
-- <a id="ref-23"></a>[Reference 23]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-23)
-- <a id="ref-24"></a>[Reference 24]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-24)
+- Banerjee, Debangshu, Changming Xu, and Gagandeep Singh (2026). [SEVerA: Verified Synthesis of Self-Evolving Agents](https://arxiv.org/abs/2603.25111). arXiv:2603.25111. ^banerjee-2026
+- Cheney, James, Paolo Missier, and Luc Moreau, eds. (2013). [Constraints of the PROV Data Model](https://www.w3.org/TR/prov-constraints/). W3C Recommendation. ^cheney-2013
+- Hoare, C. A. R. (1969). [An Axiomatic Basis for Computer Programming](https://doi.org/10.1145/363235.363259). *Communications of the ACM* 12(10):576-580. doi:10.1145/363235.363259. ^hoare-1969
+- Kamath, Adharsh, et al. (2025). [Enforcing Temporal Constraints for LLM Agents](https://arxiv.org/abs/2512.23738). arXiv:2512.23738 (Agent-C). ^kamath-2025
+- Khattab, Omar, et al. (2024). [DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines](https://proceedings.iclr.cc/paper_files/paper/2024/hash/f1cf02ce09757f57c3b93c0db83181e0-Abstract-Conference.html). ICLR 2024. ^khattab-2024
+- Liu, Yanming, et al. (2026). [ToolGate: Contract-Grounded and Verified Tool Execution for LLMs](https://aclanthology.org/2026.findings-acl.470/). Findings of ACL 2026. ^liu-2026
+- Lucassen, John M., and David K. Gifford (1988). [Polymorphic Effect Systems](https://doi.org/10.1145/73560.73564). POPL 1988, pp. 47-57. doi:10.1145/73560.73564. ^lucassen-1988
+- Pnueli, Amir (1977). [The Temporal Logic of Programs](https://doi.org/10.1109/SFCS.1977.32). FOCS 1977, pp. 46-57. doi:10.1109/SFCS.1977.32. ^pnueli-1977
+- Project note (user-provided). *compiler-approach.md*. ^note-compiler-approach
+- van der Aalst, W. M. P. (1998). [The Application of Petri Nets to Workflow Management](https://doi.org/10.1142/S0218126698000043). *Journal of Circuits, Systems and Computers* 8(1):21-66. doi:10.1142/S0218126698000043. ^van-der-aalst-1998
+- W3C (2013). [PROV Model Primer](https://www.w3.org/TR/prov-primer/). W3C Working Group Note. ^w3c-2013-prov-primer
+- Wenz, Fabian, Felix Treutwein, Kai Arenja, Çagatay Demiralp, and Michael Stonebraker (2026). [An Alternate Agentic AI Architecture (It's About the Data)](https://arxiv.org/abs/2604.21413). arXiv:2604.21413 (RUBICON). ^wenz-2026
 
 ## A DSL could hide almost all of that machinery
 
@@ -595,7 +591,7 @@ The LLM can manipulate the same AST:
 
 and every mutation goes back through the compiler/verifier.
 
-The working interpretation is that **Colored Petri Nets deserve the deepest investigation next**. They give us several things we've independently discovered we need--typed state, concurrency, joins, resources, long-running computation, formal analysis and a visual representation--in one mature formalism.
+The working interpretation is that **Colored Petri Nets deserve the deepest investigation next**. They give us several things we've independently discovered we need -- typed state, concurrency, joins, resources, long-running computation, formal analysis and a visual representation -- in one mature formalism.
 
 The recommendation is not to declare "our runtime is a Petri net engine" yet. But the proposal is to try to express 5-10 difficult agent workflows as Colored Petri Nets and see where the formalism breaks. Whatever can't be expressed cleanly would tell us what additional algebra the language actually needs.
 

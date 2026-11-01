@@ -25,13 +25,13 @@ The following runtime passage comes from [Programmable probabilistic agent compu
 
 Current benchmarks are fragmented by the property they measure. That is useful for this programme because the core thesis should be tested against several failure classes, not a single aggregate "agent score".
 
-**AgentDojo** was introduced at NeurIPS 2024 as a dynamic environment for tool-using agents that combines realistic user tasks with security test cases; its benchmark contains 97 tasks and 629 security cases. [33](#ref-33) **Agent Security Bench** broadens adversarial evaluation across ten scenarios, more than 400 tools and multiple attack/defence methods. [34](#ref-34) **MCP-SafetyBench**, accepted at ICLR 2026, specifically targets multi-step safety problems involving real MCP servers and cross-server attacks. [35](#ref-35) These are good tests for capabilities, taint tracking, preconditions and policy enforcement.
+**AgentDojo** was introduced at NeurIPS 2024 as a dynamic environment for tool-using agents that combines realistic user tasks with security test cases; its benchmark contains 97 tasks and 629 security cases. ([Debenedetti et al. 2024](#debenedetti-2024)) **Agent Security Bench** broadens adversarial evaluation across ten scenarios, more than 400 tools and multiple attack/defence methods. ([Zhang et al. 2024](#zhang-2024)) **MCP-SafetyBench**, accepted at ICLR 2026, specifically targets multi-step safety problems involving real MCP servers and cross-server attacks. ([Zong et al. 2026](#zong-2026)) These are good tests for capabilities, taint tracking, preconditions and policy enforcement.
 
-**τ-bench** is particularly valuable for stateful business agents because correctness is judged through interaction with simulated users and tools and can be checked against final database state. Its pass^k framing is also useful because one successful run says little about a stochastic agent's repeated reliability. [36](#ref-36) SEVerA already uses the newer τ² setting as one evaluation domain. [5](#ref-5)
+**τ-bench** is particularly valuable for stateful business agents because correctness is judged through interaction with simulated users and tools and can be checked against final database state. Its pass^k framing is also useful because one successful run says little about a stochastic agent's repeated reliability. ([Yao et al. 2024](#yao-2024)) SEVerA already uses the newer τ² setting as one evaluation domain. ([Banerjee et al. 2026](#banerjee-2026))
 
-**WebArena** supplies realistic long-horizon web tasks with executable functional evaluation; its original ICLR 2024 paper showed a very large gap between its GPT-4-based baseline and human performance. [37](#ref-37) **OSWorld** gives a real computer-use setting, while **SWE-bench** provides repository-level software-engineering tasks whose outcomes can be checked by executable tests. [38](#ref-38), [39](#ref-39) These are good settings for studying long-running state, retries, irreversible effects and recovery.
+**WebArena** supplies realistic long-horizon web tasks with executable functional evaluation; its original ICLR 2024 paper showed a very large gap between its GPT-4-based baseline and human performance. ([Zhou et al. 2024](#zhou-2024)) **OSWorld** gives a real computer-use setting, while **SWE-bench** provides repository-level software-engineering tasks whose outcomes can be checked by executable tests. ([Xie et al. 2024](#xie-2024); [Jimenez et al. 2023](#jimenez-2023)) These are good settings for studying long-running state, retries, irreversible effects and recovery.
 
-For research/investigation workloads, **ScienceAgentBench** and the proposed bounded-corpus benchmark can add the epistemic dimension: source completeness, provenance, contradiction preservation and correct abstention. [40](#ref-40) The author's startup notes already propose a benchmark with required evidence, distractors, contradictions, superseded sources and unanswerable questions. [41](#ref-41) The proposal is to keep that: general agent benchmarks rarely measure whether all critical evidence was considered.
+For research/investigation workloads, **ScienceAgentBench** and the proposed bounded-corpus benchmark can add the epistemic dimension: source completeness, provenance, contradiction preservation and correct abstention. ([Chen et al. 2024](#chen-2024)) The author's startup notes already propose a benchmark with required evidence, distractors, contradictions, superseded sources and unanswerable questions. ([Project note: startup](#note-startup)) The proposal is to keep that: general agent benchmarks rarely measure whether all critical evidence was considered.
 
 A serious first evaluation could use the following baseline ladder:
 
@@ -82,9 +82,9 @@ change tool capability
 
 and measure whether compilation/runtime verification catches the mutation. This makes "verification coverage" empirically testable.
 
-The same applies to durability. Kill the worker after each possible step, before and after external side effects, during a human pause, and around model calls. Then measure whether the recovered execution is observationally equivalent to an uninterrupted execution. Temporal's replay discipline and DBOS's durable-step model provide strong baseline implementations for these experiments. [17](#ref-17), [18](#ref-18)
+The same applies to durability. Kill the worker after each possible step, before and after external side effects, during a human pause, and around model calls. Then measure whether the recovered execution is observationally equivalent to an uninterrupted execution. Temporal's replay discipline and DBOS's durable-step model provide strong baseline implementations for these experiments. ([Temporal Technologies: AI agent reference architecture](#temporal-ai-reference-architecture); [DBOS: AI quickstart](#dbos-ai-quickstart))
 
-One limitation in the current formal-agent literature is benchmark scale. AgentVerify, for example, reports experiments over only 15 synthetic scenarios and itself finds significant remaining miss rates in difficult cases; the proposal is to treat it as evidence that temporal verification is promising, not as proof that current verification is deployment-ready. [42](#ref-42) PlanCompiler's 300 structured tasks and COVENANT's 120 workflow cases are more substantial, but they still do not jointly exercise months-long state, process crashes, concurrent actors, policy evolution, model upgrades and adversarial inputs. [7](#ref-7), [9](#ref-9)
+One limitation in the current formal-agent literature is benchmark scale. AgentVerify, for example, reports experiments over only 15 synthetic scenarios and itself finds significant remaining miss rates in difficult cases; the proposal is to treat it as evidence that temporal verification is promising, not as proof that current verification is deployment-ready. ([Fang 2026](#fang-2026)) PlanCompiler's 300 structured tasks and COVENANT's 120 workflow cases are more substantial, but they still do not jointly exercise months-long state, process crashes, concurrent actors, policy evolution, model upgrades and adversarial inputs. ([Wang et al. 2026](#wang-2026); [Harikumar 2026](#harikumar-2026))
 
 That motivates a benchmark that does not currently seem well represented:
 
@@ -94,26 +94,26 @@ A few hundred carefully specified scenarios would be more scientifically useful 
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
-## Citation links added during reassembly
+## References
 
 
-The original numbered citations link to the entries below, which point to the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
+These entries are copied from the [shared bibliography]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#references).
 
-- <a id="ref-5"></a>[Reference 5]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-5)
-- <a id="ref-7"></a>[Reference 7]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-7)
-- <a id="ref-9"></a>[Reference 9]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-9)
-- <a id="ref-17"></a>[Reference 17]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-17)
-- <a id="ref-18"></a>[Reference 18]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-18)
-- <a id="ref-33"></a>[Reference 33]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-33)
-- <a id="ref-34"></a>[Reference 34]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-34)
-- <a id="ref-35"></a>[Reference 35]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-35)
-- <a id="ref-36"></a>[Reference 36]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-36)
-- <a id="ref-37"></a>[Reference 37]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-37)
-- <a id="ref-38"></a>[Reference 38]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-38)
-- <a id="ref-39"></a>[Reference 39]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-39)
-- <a id="ref-40"></a>[Reference 40]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-40)
-- <a id="ref-41"></a>[Reference 41]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-41)
-- <a id="ref-42"></a>[Reference 42]({{< ref "ai/design-research/06-research-reports/01-programmable-probabilistic-agent-computation" >}}#ref-42)
+- Banerjee, Debangshu, Changming Xu, and Gagandeep Singh (2026). [SEVerA: Verified Synthesis of Self-Evolving Agents](https://arxiv.org/abs/2603.25111). arXiv:2603.25111. ^banerjee-2026
+- Chen, Ziru, et al. (2024). [ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery](https://arxiv.org/abs/2410.05080). arXiv:2410.05080. ^chen-2024
+- DBOS. [AI Quickstart](https://docs.dbos.dev/ai/ai-quickstart). DBOS documentation. ^dbos-ai-quickstart
+- Debenedetti, Edoardo, et al. (2024). [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352). NeurIPS 2024. arXiv:2406.13352. ^debenedetti-2024
+- Fang, Eric (2026). [AgentVerify: Compositional Formal Verification of AI Agent Safety Properties via LTL Model Checking](https://www.preprints.org/manuscript/202604.1029). Preprints.org 202604.1029. ^fang-2026
+- Harikumar, Pranav (2026). [PlanCompiler: A Deterministic Compilation Architecture for Structured Multi-Step LLM Pipelines](https://arxiv.org/abs/2604.13092). arXiv:2604.13092. ^harikumar-2026
+- Jimenez, Carlos E., et al. (2023). [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770). arXiv:2310.06770. ^jimenez-2023
+- Project note (user-provided). *startup.md*. ^note-startup
+- Temporal Technologies. [AI Agent Reference Architecture](https://go.temporal.io/platform-hub/ai-engineering/ai-reference-architecture). Temporal Platform Hub. ^temporal-ai-reference-architecture
+- Wang, Jincheng, Min Zheng, and Tao Wei (2026). [COVENANT: Natural-Language Workflow Compilation for Aligned Agent Execution](https://arxiv.org/abs/2607.25400). arXiv:2607.25400. ^wang-2026
+- Xie, Tianbao, et al. (2024). [OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments](https://proceedings.nips.cc/paper_files/paper/2024/hash/5d413e48f84dc61244b6be550f1cd8f5-Abstract-Datasets_and_Benchmarks_Track.html). NeurIPS 2024 Datasets and Benchmarks Track. ^xie-2024
+- Yao, Shunyu, Noah Shinn, Pedram Razavi, and Karthik Narasimhan (2024). [\(\tau\)-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045). arXiv:2406.12045. ^yao-2024
+- Zhang, Hanrong, et al. (2024). [Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents](https://arxiv.org/abs/2410.02644). arXiv:2410.02644. ^zhang-2024
+- Zhou, Shuyan, et al. (2024). [WebArena: A Realistic Web Environment for Building Autonomous Agents](https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-Abstract-Conference.html). ICLR 2024. ^zhou-2024
+- Zong, Xuanjun, Zhiqi Shen, Lei Wang, Yunshi Lan, and Chao Yang (2026). [MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](https://proceedings.iclr.cc/paper_files/paper/2026/hash/d46f127a80dc58cbc0732a717285c43a-Abstract-Conference.html). ICLR 2026. ^zong-2026
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 

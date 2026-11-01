@@ -198,20 +198,20 @@ If a broker's acknowledgment and the database writes for processing a message co
 
 
 - Find out which isolation level the database provides by default and what its name means there, then list the operations that can write skew under it: check-then-act on a condition, uniqueness not backed by a constraint, invariants over several rows. Give those serializable isolation, a constraint, or `FOR UPDATE` on the rows read. For single-object updates, prefer atomic operations and conditional writes, which also work in stores without multi-object transactions.
-- Keep a transaction's data in one shard where the access pattern allows it, since cross-shard transactions are slower under every scheme above ([partitioning]({{< ref "engineering/distributed-systems/partitioning" >}})).
+- Keep a transaction's data in one shard where the access pattern allows it, since cross-shard transactions are slower under every scheme above ([Partitioning]({{< ref "engineering/distributed-systems/partitioning" >}})).
 - Use distributed transactions inside one database; between different systems, use the outbox, [idempotent consumers]({{< ref "system-design/elements/communication" >}}#idempotent-consumer), and sagas instead of XA.
-- State durability as a fault model: which failures a committed write survives (process crash, disk loss, datacenter loss) and whether failover can lose acknowledged writes. See [system models]({{< ref "engineering/distributed-systems/system-models" >}}) and [consistency]({{< ref "system-design/nfr/consistency" >}}).
+- State durability as a fault model: which failures a committed write survives (process crash, disk loss, datacenter loss) and whether failover can lose acknowledged writes. See [System Models]({{< ref "engineering/distributed-systems/system-models" >}}) and [Consistency]({{< ref "system-design/nfr/consistency" >}}).
 
 ## Related notes
 
 
 - [Consistency guarantees]({{< ref "engineering/distributed-systems/guarantees" >}}): the isolation level table, and how isolation differs from consistency models.
-- [Broadcast and consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): the protocols that replicate coordinators and shards, and their comparison with 2PC.
-- [Time and order]({{< ref "engineering/distributed-systems/time-and-order" >}}): TrueTime and the timestamps MVCC and Spanner depend on.
-- [Coordination avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): invariants that need no coordination, and merging instead of locking.
-- [Distributed computation]({{< ref "engineering/distributed-systems/distributed-computation" >}}): exactly-once in stream processing, and durable execution for long workflows.
+- [Broadcast And Consensus]({{< ref "engineering/distributed-systems/broadcast-and-consensus" >}}): the protocols that replicate coordinators and shards, and their comparison with 2PC.
+- [Time And Order]({{< ref "engineering/distributed-systems/time-and-order" >}}): TrueTime and the timestamps MVCC and Spanner depend on.
+- [Coordination Avoidance]({{< ref "engineering/distributed-systems/coordination-avoidance" >}}): invariants that need no coordination, and merging instead of locking.
+- [Distributed Computation]({{< ref "engineering/distributed-systems/distributed-computation" >}}): exactly-once in stream processing, and durable execution for long workflows.
 - [Replication]({{< ref "engineering/distributed-systems/replication" >}}): replication lag and failover, which bound durability in a replicated database.
-- [Data across services]({{< ref "system-design/elements/data-across-services" >}}): sagas, the outbox, and the patterns around them.
+- [Data Across Services]({{< ref "system-design/elements/data-across-services" >}}): sagas, the outbox, and the patterns around them.
 
 ## Gaps
 
@@ -224,7 +224,7 @@ If a broker's acknowledgment and the database writes for processing a message co
 ## Sources
 
 
-- PostgreSQL Global Development Group, *Multi-Version Concurrency Control*, PostgreSQL 7.2 documentation (<https://www.postgresql.org/docs/7.2/mvcc.html>) -- on *Snapshot isolation and MVCC*.
+- PostgreSQL Global Development Group, *[Multi-Version Concurrency Control](https://www.postgresql.org/docs/7.2/mvcc.html)*, PostgreSQL 7.2 documentation -- on *Snapshot isolation and MVCC*.
 - Härder and Reuter, *Principles of Transaction-Oriented Database Recovery*, ACM Computing Surveys 15(4), 1983 ([doi:10.1145/289.291](https://doi.org/10.1145/289.291)) -- coined ACID.
 - Eswaran, Gray, Lorie, and Traiger, *The Notions of Consistency and Predicate Locks in a Database System*, CACM 19(11), 1976 ([doi:10.1145/360363.360369](https://doi.org/10.1145/360363.360369)).
 - Berenson et al., *A Critique of ANSI SQL Isolation Levels*, SIGMOD 1995 ([doi:10.1145/568271.223785](https://doi.org/10.1145/568271.223785)).

@@ -57,7 +57,7 @@ They should be modeled separately and connected through explicit artifacts.
 
 A problem instance should enter the system as more than prompt text:
 
-```
+```text
 ProblemBundle
 ├── narrative / assembled text
 ├── domain entities and state
@@ -84,7 +84,7 @@ The connected domain-modeling guidance cited by the saved analysis strongly supp
 # 2. A better interpretation of the first LLM outputs
 
 
-The first-stage LLM outputs should be called something such as **witnesses**, **demonstrations**, or **candidate solutions**--not ground truth.
+The first-stage LLM outputs should be called something such as **witnesses**, **demonstrations**, or **candidate solutions** -- not ground truth.
 
 A witness can contribute:
 
@@ -104,7 +104,7 @@ This is especially important for source-grounded work. The evaluation-support do
 
 A good first-stage output would therefore look more like:
 
-```
+```text
 CandidateWitness
 ├── proposed artifact
 ├── atomic claims
@@ -145,7 +145,7 @@ Raw chain-of-thought is neither a stable specification nor a useful semantic ora
 
 There should be an explicit stage between direct LLM solving and program synthesis:
 
-```
+```text
 candidate witnesses
         ↓
 validate and compare
@@ -164,7 +164,7 @@ The `BehaviorSpec` should combine three sources:
 
 A specification could contain:
 
-```
+```text
 BehaviorSpec
 ├── required outputs
 ├── acceptable output variants
@@ -238,7 +238,7 @@ These should not share the same acceptance criteria.
 
 A useful domain field might be:
 
-```
+```text
 SynthesisTarget =
     SolveThisInstance
   | GeneralizeAcrossTaskFamily(validation_suite)
@@ -327,7 +327,7 @@ The most precise description of the proposed idea is:
 
 The stages are:
 
-```
+```text
 problem instance + structured context
         ↓
 general model performs the task directly
@@ -353,7 +353,7 @@ This is an **extensional-to-intensional transformation**:
 
 Formally:
 
-```
+```text
 Teacher:
     T(x, s) → {(y₁, τ₁), ..., (yₙ, τₙ)}
 
@@ -409,7 +409,7 @@ A capable teacher model transfers behavior into a student. The student is a prog
 
 This is **program distillation**:
 
-```
+```text
 model behavior
 → explicit algorithm or workflow
 ```
@@ -444,7 +444,7 @@ The system uses a model to observe the behavior of a model-driven process and cr
 
 Because synthesized programs may themselves call models, this is a reflective system:
 
-```
+```text
 model
 → observes model-level behavior
 → writes a program
@@ -453,8 +453,6 @@ model
 
 
 If successful programs become new primitives, the system gradually changes the language in which it solves later problems.
-
-<a id="what-appears-distinct-in-your-combination"></a>
 
 ## What appears distinct in the proposed combination
 
@@ -485,7 +483,7 @@ That broader combination could be described as:
 
 There are at least three different targets:
 
-```
+```text
 Instance program:
     Produce this result for this problem.
 
@@ -569,7 +567,7 @@ The central current comparison is ReaComp. The principal extension in the propos
 # reanalysed
 
 
-The saved LLM reanalysis reported reading all uploaded files. It identified two files with substantive material: `01-separation.md` and `uc-1-domain-model.md`. Several others are one-line redirects to moved notes, so the uploaded copies do not include their target content--for example, `problem-framing.md` and `declarative-layer.md`. problem-framing declarative-layer
+The saved LLM reanalysis reported reading all uploaded files. It identified two files with substantive material: `01-separation.md` and `uc-1-domain-model.md`. Several others are one-line redirects to moved notes, so the uploaded copies do not include their target content -- for example, `problem-framing.md` and `declarative-layer.md`. problem-framing declarative-layer
 
 ## Main conclusion
 
@@ -578,7 +576,7 @@ The proposed architecture is coherent, but the documents change how it should be
 
 The system should not primarily be:
 
-```
+```text
 LLM result
 → synthesize a program that reproduces it
 → compare program result with LLM result
@@ -587,7 +585,7 @@ LLM result
 
 It should be:
 
-```
+```text
 problem revision + domain state + required properties
 → candidate interpretations and candidate results
 → executable behavior contract
@@ -603,8 +601,6 @@ problem revision + domain state + required properties
 The direct LLM result is a proposal, example, or witness. It is not the specification and not the authority.
 
 This follows the central method in `01-separation.md`: first state the required system property and its boundary, identify possible violations, identify the domain distinctions that must be represented, define contracts and enforcement boundaries, and only then select a combination of components. No individual model, compiler, validator, or runtime "contains" the system property. 01-separation
-
-<a id="what-your-architecture-is-actually-doing"></a>
 
 ## What the proposed architecture is actually doing
 
@@ -635,7 +631,7 @@ The files repeatedly place domain modeling before allocating behavior to a model
 
 For a generic problem, the first canonical artifact should therefore be something like:
 
-```
+```text
 ProblemRevision
 ├── purpose
 ├── scope
@@ -658,8 +654,6 @@ Otherwise the prompt and the underlying structures can drift:
 - the prompt can describe an old source revision;
 - the LLM can cite a textual label that no longer resolves;
 - the verifier can evaluate a different problem from the one shown to the model.
-
-<a id="mapping-your-stages-to-domain-roles"></a>
 
 ## Mapping the proposed stages to domain roles
 
@@ -706,7 +700,7 @@ At this point, some properties should be classified as exact invariants and othe
 
 For example:
 
-```
+```text
 Exact:
 - every citation resolves to an existing source revision;
 - no undeclared network capability is used;
@@ -728,7 +722,7 @@ The documents explicitly distinguish obligations enforceable at artifact boundar
 
 One or more models generate:
 
-```
+```text
 CandidateResult
 ├── candidate artifact
 ├── atomic claim proposals
@@ -751,7 +745,7 @@ These outputs serve several purposes:
 
 Multiple outputs should not be merged automatically. Their relationship must be explicit:
 
-```
+```text
 AlternativeResults
 ComplementaryResults
 IndependentWitnesses
@@ -779,7 +773,7 @@ This stage is missing from the original sequence and is necessary.
 
 The synthesizer should not work directly from raw candidate outputs alone. First produce something like:
 
-```
+```text
 BehaviorContract
 ├── required output properties
 ├── structural invariants
@@ -796,7 +790,7 @@ BehaviorContract
 
 Sources of this contract have different authority:
 
-```
+```text
 Domain requirements           authoritative
 Source material               authoritative within its scope
 Human or policy decisions     authoritative for a stated purpose
@@ -829,7 +823,7 @@ The procedure may include:
 
 The procedure should declare:
 
-```
+```text
 inputs
 outputs
 required capabilities
@@ -847,7 +841,7 @@ The DSL should not try to contain the whole domain model. The files explicitly t
 
 A suitable separation is:
 
-```
+```text
 Domain view
   entities, relations, constraints
 
@@ -878,8 +872,6 @@ These views can share storage while retaining different semantics.
 - [System properties]({{< ref "ai/design-research/01-foundations/05-constrained-common-substrate" >}}#general-system-properties-suggested-by-the-files)
 - [Related graphs and downstream gates]({{< ref "ai/design-research/05-runtime-and-execution/06-program-versions-runs-and-results" >}}#the-dag-should-probably-be-several-related-graphs)
 
-<a id="where-your-first-llm-stage-adds-real-value"></a>
-
 ## Where the initial LLM stage adds real value
 
 
@@ -900,7 +892,7 @@ It is less useful as an answer oracle.
 
 A strong design could use different visibility boundaries:
 
-```
+```text
 Exploration agent:
   sees full problem and sources
   proposes candidates
@@ -942,7 +934,7 @@ For a reusable program, you need:
 
 The resulting types should distinguish them:
 
-```
+```text
 SynthesisTarget =
     SolveProblemRevision
   | ImplementTaskFamily

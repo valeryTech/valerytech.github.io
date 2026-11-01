@@ -32,7 +32,7 @@ About depth:
 
 I would also say that System Design has connections to other fields, like as:
 
-```
+```text
 System Design
  │
  ├─ Foundations
@@ -56,9 +56,10 @@ System Design
      └─ Organizational Context
 ```
 
+
 The output of the SD interview is a blueprint of the system to deliver. In more common sence it would be set of signals and information to the interviewer.
 
-It's high-level - you have only approximately 45 minutes, short term (without changes in the future), without a detailed or any plan how to implement this system. Another differences to a real system delivery: absense of org context, team and project management, ( what else?)
+It's high-level -- you have only approximately 45 minutes, short term (without changes in the future), without a detailed or any plan how to implement this system. Another differences to a real system delivery: absense of org context, team and project management, ( what else?)
 
 So here is a hypothesis to check: do sofware engineering principles and laws  have some other importance profile (statistically)
 
@@ -136,20 +137,20 @@ My artifacts:
 - [Interviewing.io interview notes]({{< ref "system-design/interview/iw-io-interview" >}}) notes + checklist.v0.1
 - 'sd-interview-framework.v0' with 'frameworks' folder
 
-<https://interviewing.io/guides/system-design-interview/part-three>
+[A 3-Step Framework to Nail Your System Design Interview](https://interviewing.io/guides/system-design-interview/part-three)
 
 watch, analyze and reflect mock interviews [Mock interview review]({{< ref "system-design/interview/mock-interviews" >}})
 
 # Mock Interview Examples
 
 
-interviewing.io videos from youtube <https://www.youtube.com/watch?v=mQgKAK7y11s>
+interviewing.io videos from youtube [interviewing.io video on YouTube](https://www.youtube.com/watch?v=mQgKAK7y11s)
 
-tryexponent mock videos <https://www.youtube.com/watch?v=iyLqwyFL0Zc>
+tryexponent mock videos [tryexponent mock video on YouTube](https://www.youtube.com/watch?v=iyLqwyFL0Zc)
 
-hello interview <https://www.youtube.com/watch?v=tgSe27eoBG0> really interesting
+hello interview [Hello Interview video on YouTube](https://www.youtube.com/watch?v=tgSe27eoBG0) really interesting
 
-<https://www.hellointerview.com/>
+[Hello Interview](https://www.hellointerview.com/)
 
 <http://youtube.com/watch?v=PI0yGBT9LHo>
 
@@ -178,7 +179,7 @@ forums
 
 meet ups
 
-<https://launchpass.com/pminterview>
+[pminterview on LaunchPass](https://launchpass.com/pminterview)
 
 you can discuss some project on leetcode, for example
 

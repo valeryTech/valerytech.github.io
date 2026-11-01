@@ -22,7 +22,7 @@ The [deployment principles]({{< ref "engineering/platform/deployment" >}}#princi
 | General-purpose language | Pulumi, AWS CDK | Write code in a programming language that produces a declarative plan. | Loops and abstractions make the result harder to read in review. |
 | Reconciled in a cluster | Crossplane | Declare cloud resources as Kubernetes resources; controllers reconcile them continuously. | Requires Kubernetes as the control plane for infrastructure. |
 
-Most of these are run as *push*: someone or a pipeline runs the apply step. [GitOps]({{< ref "engineering/platform/gitops" >}}) adds continuous reconciliation.
+Most of these are run as *push*: someone or a pipeline runs the apply step. [Gitops]({{< ref "engineering/platform/gitops" >}}) adds continuous reconciliation.
 
 ## State and drift
 
@@ -41,7 +41,7 @@ This is the infrastructure side of Twelve-Factor's dev/prod parity: environments
 ## Immutable infrastructure
 
 
-Replace instead of patching: build a new image or instance and switch to it, rather than changing a running one. This extends Twelve-Factor's build, release, run separation and the container principle of image immutability to infrastructure. See [Twelve-Factor]({{< ref "engineering/platform/twelve-factor" >}}).
+Replace instead of patching: build a new image or instance and switch to it, rather than changing a running one. This extends Twelve-Factor's build, release, run separation and the container principle of image immutability to infrastructure. See [Twelve Factor]({{< ref "engineering/platform/twelve-factor" >}}).
 
 ## Modules, policy, and review
 
@@ -66,7 +66,7 @@ See [Terraform]({{< ref "engineering/platform/terraform" >}}) for practical lear
 
 - [Salatino 2024](/sources/24f4d3918f79380228576a86e50b692c.bin), *Platform Engineering on Kubernetes* -- Crossplane and environment pipelines
 - [Chankramath et al. 2026](/sources/f86bda9692a5543309568d5a8296c48b.bin), *Effective Platform Engineering* -- policy as code, and infrastructure pipelines and tests
-  - Chapter notes: chapter 4 (policy as code with Open Policy Agent), chapter 6 (pipeline levels, choosing an IaC framework, testing infrastructure code)
+	- Chapter notes: chapter 4 (policy as code with Open Policy Agent), chapter 6 (pipeline levels, choosing an IaC framework, testing infrastructure code)
 
 Further reading:
 

@@ -102,7 +102,7 @@ Much worse. Verification is delayed, causality is unclear, the environment chang
 
 Proposed search dimensions:
 
-||Easy to verify|Hard to verify|
+| |Easy to verify|Hard to verify|
 |---|--:|--:|
 |**Requires substantial semantic work**|**Best AI opportunities**|Dangerous "agent" products|
 |**Little semantic work**|Traditional software/RPA|Usually unattractive|
@@ -143,8 +143,6 @@ Opportunity value
 
 
 We don't need to treat this formula literally. It forces us to ask the right questions.
-
-<a id="4-your-evalobservability-approach-changes-which-markets-are-viable"></a>
 
 ### 4. Evals and observability change which markets are viable
 
@@ -247,8 +245,6 @@ understand counterparty
 
 LLMs are naturally useful because the underlying protocol is language.
 
-<a id="6-where-i-would-actively-avoid-the-hype"></a>
-
 ### 6. Claims to reject without evidence
 
 
@@ -334,7 +330,7 @@ Proposed startup thesis:
 
 > Companies often infer system-level properties from model-level performance. A reliable product uses the LLM for scoped task-solving, while the surrounding system supplies current data, persistent state, permissions, verification, feedback, and accountability.
 
-This follows the referenced dictionary. [Source gap: the exact dictionary and version were not linked in this note.] It defines intelligence as task-solving capability under specified conditions and explicitly says that intelligence alone does not imply understanding, grounding, agency, autonomy, learning, meaning, or consciousness. It also requires the unit of analysis--model, invocation, process, entity, or system--to be stated.
+This follows the referenced dictionary. [Source gap: the exact dictionary and version were not linked in this note.] It defines intelligence as task-solving capability under specified conditions and explicitly says that intelligence alone does not imply understanding, grounding, agency, autonomy, learning, meaning, or consciousness. It also requires the unit of analysis -- model, invocation, process, entity, or system -- to be stated.
 
 Proposed correction to the thesis: avoid depending on a categorical claim that LLMs have no understanding. The referenced dictionary defines understanding as graded and domain-specific. The commercial rule is stronger and easier to defend:
 
@@ -425,12 +421,12 @@ Examples include claims intake, freight orders, vendor onboarding, property-mana
 
 Measure:
 
-* field-level accuracy;
-* missing-information detection;
-* routing accuracy;
-* reviewer minutes per case;
-* percentage of cases processed without correction;
-* total cycle time.
+- field-level accuracy;
+- missing-information detection;
+- routing accuracy;
+- reviewer minutes per case;
+- percentage of cases processed without correction;
+- total cycle time.
 
 This is a strong starting pattern because the input is messy while the expected output is relatively clear.
 
@@ -481,13 +477,13 @@ Many SaaS providers have already added an assistant, search feature, or workflow
 
 A product or initial service could provide:
 
-* a clear system and capability boundary;
-* a test set based on real customer cases;
-* failure categories and high-risk slices;
-* traces for retrieval, tool calls, validation, and human overrides;
-* release regression gates;
-* online quality and business metrics;
-* fallback and approval policies.
+- a clear system and capability boundary;
+- a test set based on real customer cases;
+- failure categories and high-risk slices;
+- traces for retrieval, tool calls, validation, and human overrides;
+- release regression gates;
+- online quality and business metrics;
+- fallback and approval policies.
 
 This directly uses the note author's eval and observability skills. The best differentiation will come from defining what "correct" means for a particular workflow, customer type, or industry.
 
@@ -514,12 +510,12 @@ An opportunity exists when the underlying workflow is valuable but the current i
 
 Search for roles and teams that repeatedly:
 
-* read many documents before taking one action;
-* copy information between email, spreadsheets, PDFs, CRM, ERP, and ticketing systems;
-* prepare the same report or review packet repeatedly;
-* reconcile conflicting records;
-* spend time checking completeness and policy compliance;
-* handle many routine cases plus a smaller number of messy exceptions.
+- read many documents before taking one action;
+- copy information between email, spreadsheets, PDFs, CRM, ERP, and ticketing systems;
+- prepare the same report or review packet repeatedly;
+- reconcile conflicting records;
+- spend time checking completeness and policy compliance;
+- handle many routine cases plus a smaller number of messy exceptions.
 
 Useful sources include customer-support communities, software reviews, implementation consultants, job descriptions, process manuals, operations teams, and companies that have paused an AI pilot.
 
@@ -617,11 +613,11 @@ Score each dimension from 0 to 5 and multiply by the weight.
 
 Reject a candidate early when any of these are missing:
 
-* a named buyer;
-* access to representative artifacts;
-* a measurable current baseline;
-* a credible evaluation method;
-* a way to contain high-cost errors.
+- a named buyer;
+- access to representative artifacts;
+- a measurable current baseline;
+- a credible evaluation method;
+- a way to contain high-cost errors.
 
 The financial model should include review and error costs:
 
@@ -638,8 +634,6 @@ net value per case =
 
 
 A prototype that saves ten minutes but requires twelve minutes of checking has negative value even when its benchmark accuracy appears good.
-
-<a id="where-i-would-start"></a>
 
 # Proposed starting point
 
@@ -664,4 +658,4 @@ A good first thesis would be:
 
 That thesis uses current LLM strengths without requiring claims about AGI, general understanding, intrinsic agency, or autonomous learning. It also makes evals and observability part of the customer value: lower review cost, visible quality, controlled failures, and measurable business outcomes.
 
-[1]: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai "The State of AI: Global Survey 2026 | McKinsey"
+[1]: [The State of AI: Global Survey 2026 (McKinsey)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) "The State of AI: Global Survey 2026 | McKinsey"

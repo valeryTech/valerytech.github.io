@@ -8,4 +8,4 @@ linkTitle: "Live Commenting"
 
 Design prompt queued; no design recorded yet. The [mock-review notes]({{< ref "system-design/interview/mock-interviews" >}}) identify push versus pull as a question to explore.
 
-Use the [case template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).
+Use the [Case Template]({{< ref "system-design/projects/case-template" >}}) when starting an attempt. Return to [practice cases]({{< ref "system-design/projects" >}}).

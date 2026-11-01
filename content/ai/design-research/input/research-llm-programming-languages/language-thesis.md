@@ -20,7 +20,7 @@ All six below are primary sources. The first three explicitly argue that AI incr
 
 Jane Street blog, June 7, 2026.
 
- [https://blog.janestreet.com/formal-methods-at-jane-street-index/](https://blog.janestreet.com/formal-methods-at-jane-street-index/)
+ [Formal methods and the future of programming (Jane Street Blog)](https://blog.janestreet.com/formal-methods-at-jane-street-index/)
 
 Closest match for richer languages becoming more useful. Minsky says agentic coding changed Jane Street's view of formal methods sufficiently that it is building a team in the area. His argument has three parts: models reduce proof-writing costs; generated code increases the burden of verification; and precise feedback from types and proofs improves agent performance. He specifically discusses integrating modular specifications, ownership and mutability constraints, and proof techniques into its language. This supports the language-design part of the thesis, with a concrete organizational response.
 
@@ -31,7 +31,7 @@ Limit: An engineering position and reported experience, not evidence of an indus
 
 Author's blog, December 8, 2025.
 
- [https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html)
+ [Prediction: AI will make formal verification go mainstream (Martin Kleppmann)](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html)
 
 Closest match for the adoption prediction. He argues that AI simultaneously lowers the cost of formal verification and increases demand for it, because generated implementations can be paired with machine-checked proofs. He names Rocq, Isabelle, Lean, F*, and Agda and imagines humans specifying desired properties declaratively while agents produce implementations and proofs.
 
@@ -42,7 +42,7 @@ Limit: Explicitly a prediction. He also identifies the remaining problem: establ
 
 GitHub blog, January 8, 2026.
 
- [https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/)
+ [Why AI is pushing developers toward typed languages](https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/)
 
 Most direct popular article about language adoption. It argues that types provide shared contracts among developers, frameworks, and AI code generators, making code people did not personally write easier to integrate and check. It connects this argument to GitHub's reported TypeScript growth.
 
@@ -55,11 +55,11 @@ Limit: Treat the adoption explanation as an interpretation of correlated trends,
 
 Peer-reviewed, PLDI 2025 / PACMPL; published June 13, 2025.
 
- [https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models](https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models)
+ [Type-Constrained Code Generation with Language Models (PLDI 2025)](https://pldi25.sigplan.org/details/pldi-2025-papers/25/Type-Constrained-Code-Generation-with-Language-Models)
 
- [https://arxiv.org/abs/2504.09246](https://arxiv.org/abs/2504.09246)
+ [arXiv:2504.09246](https://arxiv.org/abs/2504.09246)
 
- DOI: [https://doi.org/10.1145/3729274](https://doi.org/10.1145/3729274)
+ DOI: [doi:10.1145/3729274](https://doi.org/10.1145/3729274)
 
 Authors: Niels Mündler, Jingxuan He, Hao Wang, Koushik Sen, Dawn Song, Martin Vechev.
 
@@ -74,9 +74,9 @@ Limit: Well-typedness is a specified structural property. It does not by itself 
 
 Peer-reviewed, OOPSLA 2024 / PACMPL; published October 8, 2024.
 
- [https://arxiv.org/abs/2409.00921](https://arxiv.org/abs/2409.00921)
+ [arXiv:2409.00921](https://arxiv.org/abs/2409.00921)
 
- [https://doi.org/10.1145/3689728](https://doi.org/10.1145/3689728)
+ [doi:10.1145/3689728](https://doi.org/10.1145/3689728)
 
 Authors: Andrew Blinn, Xiang Li, June Hyung Kim, Cyrus Omar.
 
@@ -91,7 +91,7 @@ Limit: Evidence about better code completion, not a universal verification or se
 
 arXiv preprint, submitted September 26, 2025.
 
- [https://arxiv.org/abs/2509.22908](https://arxiv.org/abs/2509.22908)
+ [arXiv:2509.22908](https://arxiv.org/abs/2509.22908)
 
 Authors include Sergiu Bursuc, Theodore Ehrenborg, Shaowei Lin, Lacramioara Astefanoaei, Ionel Emilian Chiosa, Jure Kukovec, Alok Singh, Oliver Butterley, Adem Bizid, Quinn Dougherty, Miranda Zhao, Max Tan, Max Tegmark.
 

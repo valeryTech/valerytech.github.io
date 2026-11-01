@@ -5,7 +5,7 @@ title: "Learning Terraform: Collected Advice"
 description: "Practical learning advice for Terraform: choose a small infrastructure goal, implement it as code, and expand through hands-on AWS exercises."
 linkTitle: "Terraform"
 ---
-Part of [platform and delivery]({{< ref "engineering/platform" >}}). Tool note for [infrastructure as code]({{< ref "engineering/platform/infrastructure-as-code" >}}).
+Part of [platform and delivery]({{< ref "engineering/platform" >}}). Tool note for [Infrastructure As Code]({{< ref "engineering/platform/infrastructure-as-code" >}}).
 
 # Advices how to learn Terraform practically
 
@@ -24,8 +24,8 @@ Then I bought a MikroTik that has a Terraform provider and again I configured al
 
 But really depends on you.. I believe best way to learn is with things useful for yourself
 
-I would not recommend Up and Running. But, Hashicorp tutorials are pretty good: [https://learn.hashicorp.com/terraform](https://learn.hashicorp.com/terraform) . And, when learning providers, such as AWS, there is a lot of helpful information in the source repository for them. For example: [https://github.com/hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) . There are full examples in those repos and useful information that supplements the documentation. But, routinely, I hit up the documentation, such as:
+I would not recommend Up and Running. But, Hashicorp tutorials are pretty good: [Terraform tutorials (HashiCorp Developer)](https://learn.hashicorp.com/terraform) . And, when learning providers, such as AWS, there is a lot of helpful information in the source repository for them. For example: [hashicorp/terraform-provider-aws (GitHub)](https://github.com/hashicorp/terraform-provider-aws) . There are full examples in those repos and useful information that supplements the documentation. But, routinely, I hit up the documentation, such as:
 
-- [https://www.terraform.io/docs/language/expressions/strings.html](https://www.terraform.io/docs/language/expressions/strings.html)
-- [https://www.terraform.io/docs/language/expressions/types.html](https://www.terraform.io/docs/language/expressions/types.html)
-- [https://registry.terraform.io/providers/hashicorp/aws/latest/docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Strings and Templates (Terraform configuration language)](https://www.terraform.io/docs/language/expressions/strings.html)
+- [Types and Values (Terraform configuration language)](https://www.terraform.io/docs/language/expressions/types.html)
+- [Terraform AWS provider documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)

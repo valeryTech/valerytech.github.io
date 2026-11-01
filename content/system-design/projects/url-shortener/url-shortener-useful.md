@@ -37,15 +37,15 @@ De-prioritized: Link Customization & Branded Domains
 
 - User authentication & account management
 - Analytics (click counts, geo, referrers)
-- Billing, quotas, multi‑tenant orgs
+- Billing, quotas, multi-tenant orgs
 - QR code generation, link previews
 
-# URL Shortener -- Interview‑Style System Requirements (v1)
+# URL Shortener -- Interview-Style System Requirements (v1)
 
 
 Example interview framing:
 
-> **Interview framing (≤5 min):** I'll lock the scope with top functional requirements prioritized by user value, quantify the key non‑functional targets for the value path, state assumptions/constraints, and mark out‑of‑scope. This will drive a lean high‑level design.
+> **Interview framing (≤5 min):** I'll lock the scope with top functional requirements prioritized by user value, quantify the key non-functional targets for the value path, state assumptions/constraints, and mark out-of-scope. This will drive a lean high-level design.
 
 ## 1. Functional Requirements (prioritized by value)
 
@@ -54,9 +54,9 @@ Example interview framing:
 
 - **CV** = Core Value (the moment users receive value)
 - **EN** = Enabler (required to support CV)
-- **EH** = Enhancement (nice‑to‑have; implement if time allows)
+- **EH** = Enhancement (nice-to-have; implement if time allows)
 
-### FR‑R (CV) -- Resolve Short URL
+### FR-R (CV) -- Resolve Short URL
 
 
 - **Actor:** Any client (browser/bot)
@@ -64,12 +64,12 @@ Example interview framing:
 - **Input:** Path param `code`
 - **Output:** HTTP redirect to original long URL
 - **Rules:**
-	- Active link -> **302 Found** (default); (can be per‑link 301 later)
+	- Active link -> **302 Found** (default); (can be per-link 301 later)
 	- Expired or deactivated -> **410 Gone**
 	- Unknown `code` -> **404 Not Found**
 	- Error bodies must not leak the original URL
 
-### FR‑C (EN) -- Create Short URL
+### FR-C (EN) -- Create Short URL
 
 
 - **Actor:** End user (anonymous or authenticated -- auth out of scope)
@@ -82,7 +82,7 @@ Example interview framing:
 	- If `expires_at` provided: link becomes inactive at that instant
 	- No automatic dedup: same `long_url` without alias can yield multiple codes
 
-### FR‑M (EH, optional) -- Link Metadata / Management
+### FR-M (EH, optional) -- Link Metadata / Management
 
 
 - **Actor:** Link owner (auth TBD)
@@ -90,22 +90,20 @@ Example interview framing:
 - **Input:** `code`
 - **Output:** Metadata JSON; success on deactivate
 - **Rules:** Deactivated links resolve as **410 Gone**
-> **Prioritization:** Implement **FR‑R** and **FR‑C** first; **FR‑M** only if time permits.
+> **Prioritization:** Implement **FR-R** and **FR-C** first; **FR-M** only if time permits.
 
 ## 2. NFRs
 
 
 - another doc
 
-<a id="3-assumptions--constraints-defaults-ill-design-to-unless-overruled"></a>
-
 ## 3. Assumptions & Constraints
 
 
 Proposed defaults, subject to revision. Review these later.
 
-- **Redirect code default:** **302** (per‑link override to 301 later)
-- **Uniqueness scope:** Alias uniqueness is **global**, **case‑insensitive**
+- **Redirect code default:** **302** (per-link override to 301 later)
+- **Uniqueness scope:** Alias uniqueness is **global**, **case-insensitive**
 - **Character policy:** `[A‑Za‑z0‑9_-]`, length ≤ 10 (configurable)
 - **URL storage:** Store exactly as submitted; no normalization/mutation
 - **Reserved aliases:** e.g., `api`, `admin`, `health`, `login`, `status`

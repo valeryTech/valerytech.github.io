@@ -6,7 +6,7 @@ description: "Evidence-based software engineering connects answerable questions,
 linkTitle: "EBSE"
 ---
 
-Part of [Evidence in software engineering]({{< ref "engineering/evidence" >}}). [Claims without evidence]({{< ref "engineering/evidence/claims-without-evidence" >}}) describes the problem EBSE responds to.
+Part of [Evidence in software engineering]({{< ref "engineering/evidence" >}}). [Claims Without Evidence]({{< ref "engineering/evidence/claims-without-evidence" >}}) describes the problem EBSE responds to.
 
 Evidence-based software engineering (EBSE) is a research approach that utilizes empirical research methods to evaluate software engineering practices, tools, and standards. It aims to integrate the best available evidence from research with practical experience in software development. It relies on observation and experimentation to gather data about software engineering techniques.
 
@@ -30,14 +30,14 @@ EBSE supplies the guiding principle:
 ## Skill and lifecycle factors
 
 
-There is an interesting detail in the original paper. The authors identified a **skill factor**--software outcomes depend heavily on the people involved--and a **lifecycle factor**--it can be difficult to know how a technology will behave after deployment. They warned that these make SE experiments particularly vulnerable to bias and incomplete conclusions. ([ResearchGate](https://www.researchgate.net/publication/4083466_Evidence-based_software_engineering "(PDF) Evidence-based software engineering"))
+There is an interesting detail in the original paper. The authors identified a **skill factor** -- software outcomes depend heavily on the people involved -- and a **lifecycle factor** -- it can be difficult to know how a technology will behave after deployment. They warned that these make SE experiments particularly vulnerable to bias and incomplete conclusions. ([ResearchGate](https://www.researchgate.net/publication/4083466_Evidence-based_software_engineering "(PDF) Evidence-based software engineering"))
 
 Coding agents amplify both problems. An expert who knows exactly when to reject an agent's output may get very different results from a junior developer. And a PR that looks successful today may produce maintenance cost six months later. [Longitudinal studies]({{< ref "engineering/evidence/choosing-a-method" >}}#longitudinal-studies) address the second.
 
 ## Using evidence and producing it
 
 
-EBSE primarily guides the consumption and synthesis of evidence. A complete methodology also needs rules for **producing** good evidence: [Choosing a method]({{< ref "engineering/evidence/choosing-a-method" >}}) and [Running an experiment]({{< ref "engineering/evidence/running-experiments" >}}).
+EBSE primarily guides the consumption and synthesis of evidence. A complete methodology also needs rules for **producing** good evidence: [Choosing A Method]({{< ref "engineering/evidence/choosing-a-method" >}}) and [Running an experiment]({{< ref "engineering/evidence/running-experiments" >}}).
 
 ## Replication and synthesis
 

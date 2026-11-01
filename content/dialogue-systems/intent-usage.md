@@ -6,7 +6,7 @@ description: "A practical intent-detection guide for LLM workflows, covering rou
 linkTitle: "Intent Usage"
 ---
 
-Part of [Dialogue systems]({{< ref "dialogue-systems" >}}). For intent detection inside the classical frame-based pipeline, see [Frame-based dialogue]({{< ref "dialogue-systems/frame-based-dialogue" >}}#nlu-domain-intent-and-slots).
+Part of [Dialogue Systems]({{< ref "dialogue-systems" >}}). For intent detection inside the classical frame-based pipeline, see [Frame-based dialogue]({{< ref "dialogue-systems/frame-based-dialogue" >}}#nlu-domain-intent-and-slots).
 
 ## Executive Summary
 

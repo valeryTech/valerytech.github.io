@@ -78,7 +78,6 @@ exclude = [
   "product/product-framework/input/**",
   "product/product-model/in/**",
   "product/product-model/in-discovery/**",
-  "capabilities/input/**",
   # Captured third-party articles and book material.
   "product/product-model/What Is Product Management Guide.md",
   "product/product-model/input-field-guide.md",
@@ -111,10 +110,10 @@ exclude = [
 [[imports]]
 name = "projects"
 source_root_kind = "external"
-source_subtree = "projects"
+source_subtree = "projects-shared"
 target_subtree = "projects"
 selection_mode = "opt-in"
-selection_paths = ["ai-dev-foundation", "code-intelligence"]
+selection_paths = ["ai-dev-foundation", "code-intelligence", "phased"]
 include = ["**/*.md", "*.md"]
 root_index_source = "_index.md"
 

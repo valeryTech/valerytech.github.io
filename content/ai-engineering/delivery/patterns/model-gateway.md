@@ -6,9 +6,7 @@ description: "Collected model-gateway designs progress from a general control-an
 linkTitle: "Model Gateway"
 ---
 
-<a id="introducing"></a>
-
-A **model gateway** (for LLM-based workflows) is the **control plane + data plane layer** that sits between applications or agents and one or more model providers (internal models, OpenAI/Anthropic/GCP/Azure, fine-tunes, embeddings, rerankers, tool models). It standardizes how model calls are _invoked_, _secured_, _routed_, _observed_, and _governed_--similar in spirit to an API gateway / service mesh, but specialized for probabilistic inference and prompt-driven systems.
+A **model gateway** (for LLM-based workflows) is the **control plane + data plane layer** that sits between applications or agents and one or more model providers (internal models, OpenAI/Anthropic/GCP/Azure, fine-tunes, embeddings, rerankers, tool models). It standardizes how model calls are _invoked_, _secured_, _routed_, _observed_, and _governed_ -- similar in spirit to an API gateway / service mesh, but specialized for probabilistic inference and prompt-driven systems.
 
 ## What it means to design/build a model gateway
 
@@ -23,7 +21,7 @@ The gateway provides a **single, opinionated interface** for:
 - **Observability**: traces, eval signals, prompt/version lineage, cost metrics
 - **Lifecycle**: prompt/model config versions, canaries, rollbacks, A/B tests
 
-A good gateway treats "an LLM call" as a **governed operation** with context, policies, and measurable outcomes--not a raw HTTP request.
+A good gateway treats "an LLM call" as a **governed operation** with context, policies, and measurable outcomes -- not a raw HTTP request.
 
 ## Main components
 
@@ -50,16 +48,16 @@ A good gateway treats "an LLM call" as a **governed operation** with context, po
 
 
 - Model selection by:
-    - **capability** (vision, tool calling, long context)
-    - **latency** (p95 targets)
-    - **cost budgets** (max $/request, max tokens)
-    - **quality tiers** (gold/silver/bronze)
-    - **region/data residency**
+	- **capability** (vision, tool calling, long context)
+	- **latency** (p95 targets)
+	- **cost budgets** (max $/request, max tokens)
+	- **quality tiers** (gold/silver/bronze)
+	- **region/data residency**
 - Supports:
-    - **fallback chains** (primary -> secondary provider)
-    - **multi-pass** (cheap draft -> expensive critique)
-    - **canaries/A-B tests** for model upgrades
-    - **specialist models** (summarizer, classifier, reranker)
+	- **fallback chains** (primary -> secondary provider)
+	- **multi-pass** (cheap draft -> expensive critique)
+	- **canaries/A-B tests** for model upgrades
+	- **specialist models** (summarizer, classifier, reranker)
 
 **Outcome:** higher availability + better cost/quality tradeoffs without app changes.
 
@@ -78,10 +76,10 @@ A good gateway treats "an LLM call" as a **governed operation** with context, po
 Not always inside the gateway, but commonly adjacent or integrated:
 
 - Standard interfaces for:
-    - embeddings
-    - vector search
-    - reranking
-    - context packing (chunking, dedupe, citation policy)
+	- embeddings
+	- vector search
+	- reranking
+	- context packing (chunking, dedupe, citation policy)
 - Enforces **context window budgets** and **source attribution**.
 
 **Outcome:** consistent RAG quality and predictable token usage.
@@ -114,10 +112,10 @@ Not always inside the gateway, but commonly adjacent or integrated:
 - Structured logs: prompt version, model version, tools used, tokens, latency.
 - Distributed tracing across: app -> gateway -> provider -> tools -> retrievers.
 - Quality signals:
-    - schema pass/fail
-    - toxicity/safety flags
-    - user feedback hooks
-    - offline eval correlation ids
+	- schema pass/fail
+	- toxicity/safety flags
+	- user feedback hooks
+	- offline eval correlation ids
 - Audit trails for regulated domains.
 
 **Outcome:** supports debugging, measurement, and evidence of compliance.
@@ -236,8 +234,6 @@ Key: every step is explicit and testable.
 
 Inputs for a concrete reference architecture and interface specification: multi-tenant or single-tenant scope, regulated domain, expected QPS and latency target, required providers, and tool-calling and RAG needs. These constraints inform the request schema and routing/policy configuration for the chosen stack.
 
-<a id="reference-architecture"></a>
-
 # Multi-tenant financial reference architecture
 
 
@@ -279,8 +275,8 @@ Versioned config + governance:
 
 - **Central control plane** (AWS is typical) replicating configs to:
 - **Data-plane clusters** in:
-    1. AWS (closest to AWS-hosted private models and egress to OpenAI/Gemini)
-    2. On-prem (closest to on-prem inference, and for highest-sensitivity workloads)
+	1. AWS (closest to AWS-hosted private models and egress to OpenAI/Gemini)
+	2. On-prem (closest to on-prem inference, and for highest-sensitivity workloads)
 
 Routing option:
 
@@ -304,18 +300,18 @@ Connectivity:
 **2) Tenant Context + Policy Decision**
 
 - Fetch tenant policy bundle (cached locally) with rules like:
-    - allowed providers by data class
-    - allowed tools
-    - max tokens, max cost, model tier constraints
-    - logging/audit requirements
+	- allowed providers by data class
+	- allowed tools
+	- max tokens, max cost, model tier constraints
+	- logging/audit requirements
 - Produce an "execution plan": {redaction required?, provider set, fallback chain, validators}
 
 **3) Data classification + redaction**
 
 - Detect PII/PCI/credentials (configurable detectors)
 - Redact/transform before:
-    - leaving the boundary (to OpenAI/Gemini)
-    - being persisted in logs/traces
+	- leaving the boundary (to OpenAI/Gemini)
+	- being persisted in logs/traces
 - For finance, default to: **log hashes + metadata**, not raw prompts
 
 **4) Context/RAG (optional but common)**
@@ -328,19 +324,19 @@ Connectivity:
 
 - Use case / tier-based routing (details in section 6)
 - Consider:
-    - latency SLO
-    - budget
-    - capability needs (tool calling, structured output, long context)
-    - risk level (external vs internal)
+	- latency SLO
+	- budget
+	- capability needs (tool calling, structured output, long context)
+	- risk level (external vs internal)
 - Apply "safe fallback" chains
 
 **6) Execution via provider adapters**
 
 - Normalize: streaming, tool calling schema, errors
 - Implement per-provider:
-    - circuit breaker
-    - retries with jitter (only for safe/idempotent calls)
-    - concurrency limits
+	- circuit breaker
+	- retries with jitter (only for safe/idempotent calls)
+	- concurrency limits
 
 **7) Output validation + post-processing**
 
@@ -353,8 +349,6 @@ Connectivity:
 - Emit trace + metrics + audit event
 - Store audit logs in **WORM/immutable** store for compliance (partitioned per tenant)
 
-<a id="4-core-components-what-you-actually-build"></a>
-
 ## 4. Core components to build
 
 ### A) Model Gateway Service (stateless)
@@ -362,17 +356,17 @@ Connectivity:
 
 - Unified API: `/chat`, `/embed`, `/rerank`, `/moderate`, `/tools/*`
 - Pluggable middleware chain:
-    - auth -> policy -> redact -> cache -> route -> execute -> validate -> log
+	- auth -> policy -> redact -> cache -> route -> execute -> validate -> log
 
 ### B) Policy Engine
 
 
 - Prefer a real policy system (OPA-like) or equivalent rules engine
 - Policies should reference:
-    - tenant, environment (prod/nonprod)
-    - data class (public/internal/confidential/restricted)
-    - provider class (external/cloud/internal/onprem)
-    - model capability requirements
+	- tenant, environment (prod/nonprod)
+	- data class (public/internal/confidential/restricted)
+	- provider class (external/cloud/internal/onprem)
+	- model capability requirements
 
 ### C) Model Registry + Capability Catalog
 
@@ -425,8 +419,6 @@ Do **not** let the LLM directly "call payments / trades / transfers" without:
 - Per-tenant prompt templates and system policies
 - Per-tenant allowed provider list (some tenants may be "on-prem only")
 
-<a id="6-routing-patterns-that-work-well-with-your-provider-mix"></a>
-
 ## 6. Routing patterns for the proposed provider mix
 
 ### Pattern 1: Data-class gated provider sets (primary control)
@@ -467,8 +459,8 @@ For 10-200 QPS with spikes:
 - Keep **interactive** calls synchronous with strict max concurrency
 - Offload **non-interactive** (summaries, report generation, backfills) to async workers via SQS/Kafka
 - When saturated: degrade gracefully:
-    - return 429 with `retry-after`
-    - or accept job + callback/webhook for async flows
+	- return 429 with `retry-after`
+	- or accept job + callback/webhook for async flows
 
 ## 7. Handling spikes (10-200 QPS) concretely
 
@@ -476,9 +468,9 @@ For 10-200 QPS with spikes:
 **Gateway scaling**
 
 - Stateless pods/instances with HPA on:
-    - in-flight requests
-    - CPU (tokenization/redaction can be CPU heavy)
-    - event loop lag (if async)
+	- in-flight requests
+	- CPU (tokenization/redaction can be CPU heavy)
+	- event loop lag (if async)
 - Pre-warm connections to external providers
 - Enforce global concurrency limits per provider to avoid cascading failures
 
@@ -491,15 +483,15 @@ For 10-200 QPS with spikes:
 **Caching**
 
 - Safe cache tiers:
-    - embeddings cache (high ROI)
-    - deterministic task cache (low temperature + strict inputs)
-    - semantic cache only for low-risk, non-sensitive prompts, tenant-scoped
+	- embeddings cache (high ROI)
+	- deterministic task cache (low temperature + strict inputs)
+	- semantic cache only for low-risk, non-sensitive prompts, tenant-scoped
 
 ## 8. Security/compliance defaults for financial workloads
 
 
 - **No raw prompt logging by default**; store:
-    - hashes, token counts, routing decisions, policy version, model version, tool calls, doc ids (for RAG)
+	- hashes, token counts, routing decisions, policy version, model version, tool calls, doc ids (for RAG)
 - **Redaction before egress** + separate "privacy budget" controls
 - **Secrets management**: per-environment keys, rotate provider credentials
 - **Data residency** enforced in policy + routing
@@ -561,9 +553,9 @@ This document describes a **single-tenant** (single organization) architecture f
 - **No tenant isolation problem** (no cross-customer data segregation), but **data-class isolation remains mandatory**(e.g., restricted vs confidential vs internal).
 - Governance is **use-case / data-class / environment** driven (not tenant-driven).
 - Default posture in finance:
-    - Minimal retention of raw prompts/outputs.
-    - Strict tool execution controls for anything that can affect funds, orders, accounts, or regulated records.
-    - Separation of prod vs non-prod.
+	- Minimal retention of raw prompts/outputs.
+	- Strict tool execution controls for anything that can affect funds, orders, accounts, or regulated records.
+	- Separation of prod vs non-prod.
 
 ## 3. High-level system context
 
@@ -582,10 +574,10 @@ This document describes a **single-tenant** (single organization) architecture f
 - **Tool/Action Gateway** (strongly recommended separate service)
 - Retrieval services (vector DB, document stores)
 - Providers:
-    - OpenAI (external)
-    - Gemini (external)
-    - Private model endpoints in AWS (internal cloud)
-    - On-prem inference (internal)
+	- OpenAI (external)
+	- Gemini (external)
+	- Private model endpoints in AWS (internal cloud)
+	- On-prem inference (internal)
 
 ## 4. Architecture overview
 
@@ -616,14 +608,14 @@ This document describes a **single-tenant** (single organization) architecture f
 A practical single-tenant hybrid topology:
 
 - **AWS Region Cluster (Gateway Data Plane A)**
-    - Lowest latency to AWS private models and egress to external providers
-    - Good for most workloads that allow cloud processing
+	- Lowest latency to AWS private models and egress to external providers
+	- Good for most workloads that allow cloud processing
 - **On-Prem Cluster (Gateway Data Plane B)**
-    - For restricted data that must not leave on-prem
-    - Also serves as resilience / fallback for internal workloads
+	- For restricted data that must not leave on-prem
+	- Also serves as resilience / fallback for internal workloads
 - **Central Control Plane (often in AWS)**
-    - Publishes signed config snapshots to both data planes
-    - Keeps authoritative audit/eval metadata (not raw prompts)
+	- Publishes signed config snapshots to both data planes
+	- Keeps authoritative audit/eval metadata (not raw prompts)
 
 Traffic routing:
 
@@ -673,22 +665,22 @@ Even single-tenant, keep explicit control fields. Example required request metad
 - Attach defaults from `use_case` profile
 3. **Classification**
 - Determine `data_class` and `risk_level` using:
-    - caller-provided value (validated)
-    - content inspection heuristics/detectors (PII/PCI/secrets)
-    - use_case defaults
+	- caller-provided value (validated)
+	- content inspection heuristics/detectors (PII/PCI/secrets)
+	- use_case defaults
 4. **Policy evaluation**
 - Decide:
-    - allowed providers/models
-    - required redaction
-    - allowed tools
-    - logging/audit requirements
-    - token/cost ceilings
-    - whether human approval is required for certain tool types
+	- allowed providers/models
+	- required redaction
+	- allowed tools
+	- logging/audit requirements
+	- token/cost ceilings
+	- whether human approval is required for certain tool types
 5. **Redaction / transformation**
 - Before egress to external providers:
-    - mask PCI/PII fields
-    - remove secrets/tokens
-    - optionally replace identifiers with consistent pseudonyms
+	- mask PCI/PII fields
+	- remove secrets/tokens
+	- optionally replace identifiers with consistent pseudonyms
 - Also redact before any persistence (logs/traces)
 6. **Context assembly (optional RAG)**
 - Enforce doc ACLs and provenance capture
@@ -700,27 +692,27 @@ Even single-tenant, keep explicit control fields. Example required request metad
 - Allocate concurrency budget and set timeouts
 8. **Provider invocation**
 - Provider adapter handles:
-    - request mapping
-    - streaming normalization
-    - retries/backoff (bounded)
-    - circuit breaker checks
+	- request mapping
+	- streaming normalization
+	- retries/backoff (bounded)
+	- circuit breaker checks
 9. **Output validation & post-processing**
 - Structured output workflows:
-    - JSON/schema validation
-    - type checks and constraints
+	- JSON/schema validation
+	- type checks and constraints
 - Safety checks:
-    - leakage detection (PII/PCI)
-    - policy compliance checks
+	- leakage detection (PII/PCI)
+	- policy compliance checks
 - Repair/escalation flow:
-    - attempt repair prompt (bounded)
-    - escalate model tier (bounded)
-    - if still failing, return safe error and log failure mode
+	- attempt repair prompt (bounded)
+	- escalate model tier (bounded)
+	- if still failing, return safe error and log failure mode
 10. **Tool calls (when applicable)**
 - Only through Tool/Action Gateway with:
-    - strict schema
-    - RBAC/policy enforcement
-    - idempotency
-    - full audit
+	- strict schema
+	- RBAC/policy enforcement
+	- idempotency
+	- full audit
 11. **Observability + Audit emission**
 - Trace spans for each stage
 - Metrics increments (latency, errors, fallbacks, tokens)
@@ -732,35 +724,35 @@ Even single-tenant, keep explicit control fields. Example required request metad
 
 
 - **Model registry**
-    - model IDs, capabilities (tool calling, max context, json mode)
-    - cost model
-    - performance hints (p50/p95, region)
-    - data-class eligibility
+	- model IDs, capabilities (tool calling, max context, json mode)
+	- cost model
+	- performance hints (p50/p95, region)
+	- data-class eligibility
 - **Routing policy**
-    - rules by `use_case`, `data_class`, and `sla_tier`
-    - fallback chains
-    - canary and experiments
+	- rules by `use_case`, `data_class`, and `sla_tier`
+	- fallback chains
+	- canary and experiments
 - **Prompt registry**
-    - versioned prompt templates (system + developer + tool schemas)
-    - prompt release notes and diffs
+	- versioned prompt templates (system + developer + tool schemas)
+	- prompt release notes and diffs
 - **Tool schema registry**
-    - allowed tools by use_case and risk_level
-    - input/output JSON schema
-    - approval requirements
+	- allowed tools by use_case and risk_level
+	- input/output JSON schema
+	- approval requirements
 - **Policy bundles**
-    - redaction requirements
-    - logging retention rules
-    - egress restrictions
-    - blocked content categories
+	- redaction requirements
+	- logging retention rules
+	- egress restrictions
+	- blocked content categories
 
 ### 8.2 GitOps-style release (recommended)
 
 
 - All configs are code-reviewed and versioned
 - CI validates:
-    - schema correctness
-    - linting for prompt policies
-    - offline eval benchmarks
+	- schema correctness
+	- linting for prompt policies
+	- offline eval benchmarks
 - Control plane publishes signed snapshots to data plane
 - Data plane caches configs locally and supports fast rollback
 
@@ -769,10 +761,10 @@ Even single-tenant, keep explicit control fields. Example required request metad
 
 - Canary by percentage of traffic or by "shadow" duplication (no user impact)
 - Automatic rollback triggers:
-    - schema failure rate spikes
-    - p95 latency regression
-    - safety violation rate
-    - tool error rate
+	- schema failure rate spikes
+	- p95 latency regression
+	- safety violation rate
+	- tool error rate
 
 ## 9. Provider integration and routing strategy
 
@@ -791,13 +783,13 @@ Even single-tenant, keep explicit control fields. Example required request metad
 Example policy mapping (illustrative):
 
 - `restricted`
-    - Allowed: on-prem only (or explicitly approved internal endpoints)
-    - Disallowed: OpenAI/Gemini
+	- Allowed: on-prem only (or explicitly approved internal endpoints)
+	- Disallowed: OpenAI/Gemini
 - `confidential`
-    - Allowed: AWS private models preferred; on-prem acceptable
-    - External providers allowed only if redacted and approved by policy profile
+	- Allowed: AWS private models preferred; on-prem acceptable
+	- External providers allowed only if redacted and approved by policy profile
 - `internal/public`
-    - Allowed: all providers; route by SLO/cost/capability
+	- Allowed: all providers; route by SLO/cost/capability
 
 ### 9.3 Tiered model ladder (cost/latency)
 
@@ -843,7 +835,7 @@ In finance, "tool calls" often map to operations with regulatory and monetary im
 
 - **Read-only tools:** account lookup, knowledge base query (lower risk)
 - **Write/side-effect tools:** trade placement, transfers, customer changes (high risk)
-    - enforce "prepare -> review -> execute" pattern when necessary
+	- enforce "prepare -> review -> execute" pattern when necessary
 
 ## 11. Retrieval (RAG) subsystem (optional but common)
 
@@ -879,10 +871,10 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 
 
 - Cache keys include:
-    - prompt version hash
-    - model version
-    - use_case
-    - policy profile
+	- prompt version hash
+	- model version
+	- use_case
+	- policy profile
 - Encrypt cache at rest
 - TTLs set by data class and policy
 
@@ -894,9 +886,9 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 - Global concurrency caps per provider endpoint
 - Per-use-case concurrency pools (interactive protected from batch)
 - Load shedding rules:
-    - return 429 for low priority when saturated
-    - degrade to cheaper model tier when allowed
-    - convert to async job for batch workflows
+	- return 429 for low priority when saturated
+	- degrade to cheaper model tier when allowed
+	- convert to async job for batch workflows
 
 ### 13.2 Retries and timeouts
 
@@ -916,9 +908,9 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 
 
 - Queue (SQS/Kafka/Rabbit) for:
-    - long summarizations
-    - report generation
-    - backfills
+	- long summarizations
+	- report generation
+	- backfills
 - Worker pool uses same gateway pipeline but different SLO profile
 
 ## 14. Security, privacy, compliance
@@ -928,9 +920,9 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 
 - Default: **do not persist raw prompts/outputs**
 - Persist:
-    - hashes, token counts, versions, routing decisions
-    - tool call metadata (and payloads only if policy permits)
-    - document IDs for RAG provenance
+	- hashes, token counts, versions, routing decisions
+	- tool call metadata (and payloads only if policy permits)
+	- document IDs for RAG provenance
 - Separate prod vs non-prod storage.
 
 ### 14.2 Encryption and keys
@@ -953,8 +945,8 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 
 - Append-only audit log store
 - Records:
-    - identity, request_id, policy version, model/provider version
-    - tool/action events with outcomes
+	- identity, request_id, policy version, model/provider version
+	- tool/action events with outcomes
 - Retention per regulatory needs
 
 ## 15. Observability and operational analytics
@@ -963,7 +955,7 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 
 
 - OpenTelemetry spans for:
-    - classification, redaction, retrieval, provider calls, validation, tool calls
+	- classification, redaction, retrieval, provider calls, validation, tool calls
 - Correlate with request_id throughout
 
 ### 15.2 Metrics (minimum set)
@@ -994,10 +986,10 @@ Single-tenant allows simpler caching, but finance constraints still apply.
 
 - Curated test sets per use_case
 - Metrics:
-    - extraction accuracy
-    - refusal correctness
-    - hallucination rate proxies (citation requirement, factual consistency checks)
-    - schema pass rate
+	- extraction accuracy
+	- refusal correctness
+	- hallucination rate proxies (citation requirement, factual consistency checks)
+	- schema pass rate
 - Gate prompt/model changes in CI
 
 ### 16.2 Online signals

@@ -13,8 +13,6 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 These initial questions concern collaboration among people, models, and software. Later analysis separates the proposed system from the [general research scope]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}).
 
-<a id="retained-prompt"></a>
-
 ## Initial questions and constraints
 
 

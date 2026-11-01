@@ -169,18 +169,18 @@ This is condition A1 in the evaluation plan; hypothesis H6 asks whether it beats
 ## References
 
 
-- Language Server Protocol specification: <https://microsoft.github.io/language-server-protocol/>
-- LSIF: <https://microsoft.github.io/language-server-protocol/overviews/lsif/overview/>
-- SCIP: <https://github.com/sourcegraph/scip>
-- Stack graphs: <https://github.com/github/stack-graphs>
-- Kythe: <https://kythe.io>
-- Glean: <https://glean.software>
-- CodeQL: <https://codeql.github.com>
-- Joern: <https://joern.io>
-- Tree-sitter: <https://tree-sitter.github.io/tree-sitter/>
-- Aider repository map: <https://aider.chat/docs/repomap.html>
-- multilspy: <https://github.com/microsoft/multilspy>; Agrawal et al., *Guiding Language Models of Code with Global Context using Monitors* (NeurIPS 2023)
-- Serena: <https://github.com/oraios/serena>
+- [Language Server Protocol specification](https://microsoft.github.io/language-server-protocol/)
+- [LSIF](https://microsoft.github.io/language-server-protocol/overviews/lsif/overview/)
+- [SCIP](https://github.com/sourcegraph/scip)
+- [Stack graphs](https://github.com/github/stack-graphs)
+- [Kythe](https://kythe.io)
+- [Glean](https://glean.software)
+- [CodeQL](https://codeql.github.com)
+- [Joern](https://joern.io)
+- [Tree-sitter](https://tree-sitter.github.io/tree-sitter/)
+- [Aider repository map](https://aider.chat/docs/repomap.html)
+- [multilspy](https://github.com/microsoft/multilspy); Agrawal et al., *Guiding Language Models of Code with Global Context using Monitors* (NeurIPS 2023)
+- [Serena](https://github.com/oraios/serena)
 - Néron et al., *A Theory of Name Resolution* (ESOP 2015), the scope-graph work behind stack graphs
 
 ## Library sources
