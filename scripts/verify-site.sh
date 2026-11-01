@@ -62,9 +62,6 @@ check_route() {
 }
 
 cd "$ROOT"
-log "Running analytics unit tests"
-docker compose run --rm site npm run test:analytics
-
 bash scripts/build-site.sh
 
 if [[ ! -f "$ROOT/public/404.html" ]]; then

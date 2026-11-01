@@ -60,7 +60,7 @@ Keep the local KaTeX package aligned with Hugo's embedded renderer: Hugo 0.169.0
 
 Repo-owned scripts hold reusable task logic instead of embedding longer logic in `Taskfile.yml` or CI workflows:
 
-- `scripts/build-site.sh` is the shared production build wrapper; it also builds the migration test pages into `.generated/fixture-site/` and runs the publication, SEO, agent-map and theme tests
+- `scripts/build-site.sh` is the shared production build wrapper; it runs the publication test, and in CI it also builds the migration test pages into `.generated/fixture-site/` and runs the SEO, agent-map and theme tests
 - `scripts/verify-site.sh` builds the site, starts preview if needed, and checks core routes
 - `scripts/clean-generated.sh` removes disposable generated outputs
 - `scripts/check-host.sh` backs `task repo:doctor`: it checks host prerequisites and reports, or with `--fix` removes, host installs in the checkout

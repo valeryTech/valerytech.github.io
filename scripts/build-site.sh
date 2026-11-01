@@ -13,10 +13,14 @@ build_on_host() {
   export TZ="${TZ:-Etc/UTC}"
   log "Running production build"
   npm run build
-  log "Building the migration test pages for the fixture checks"
-  npm run build:fixtures
   log "Verifying that only reading material is published"
   npm run test:publication
+  # The fixture build and the SEO, agent-map and theme suites are slow, so only CI runs them.
+  if [[ "${CI:-}" != "true" && "${GITHUB_ACTIONS:-}" != "true" ]]; then
+    return
+  fi
+  log "Building the migration test pages for the fixture checks"
+  npm run build:fixtures
   log "Verifying page description policy"
   npm run test:seo
   log "Verifying the public agent map"

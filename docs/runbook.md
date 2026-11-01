@@ -90,11 +90,11 @@ Stop the preview with `task site:down`, and run `task repo:clean` before a clean
 
 Run checks that match the change; [AGENTS.md](../AGENTS.md#validation) lists the required set.
 
-- `task quality:test` runs `check:config`, `test:ui` and `test:analytics`. Run it after editing `data/ui/*.json`, `data/callouts.json` or `data/analytics.json`; preview startup and production builds also run `check:config`.
+- `task quality:test` runs `check:config` and `test:ui`. Run it after editing `data/ui/*.json`, `data/callouts.json` or `data/analytics.json`; preview startup and production builds also run `check:config`. CI runs `test:analytics`; run it locally with `task docker:run -- npm run test:analytics`.
 - `task quality:fmt:check` is the formatting check CI runs.
 - `task quality:verify` runs the formatting check, both unit suites and the description lint in one go.
 - `task quality:test:migrate` covers the importer.
-- `task site:build` regenerates `public/` and `resources/` the way CI and GitHub Pages do, builds the migration test pages into `.generated/fixture-site/`, then runs the publication, SEO, agent-map and theme tests.
+- `task site:build` regenerates `public/` and `resources/` the way CI and GitHub Pages do, then runs the publication test. The fixture build and the SEO, agent-map and theme tests run only in CI; run one locally with, for example, `task docker:run -- npm run test:seo`.
 - `task site:verify` also checks the 404 page, the core routes and the eight agent maps in the running preview, starting and stopping it if needed.
 
 ### Indexing

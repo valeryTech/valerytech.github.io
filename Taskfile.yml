@@ -136,9 +136,9 @@ tasks:
       - "{{.RUN}} npm run lint"
 
   quality:test:
-    desc: Run configuration, preference and analytics tests
+    desc: Run configuration and preference tests
     cmds:
-      - "{{.RUN}} sh -c 'npm run check:config && npm run test:ui && npm run test:analytics'"
+      - "{{.RUN}} sh -c 'npm run check:config && npm run test:ui'"
 
   quality:test:navigation:
     desc: Run browser navigation checks in the running preview (start it with task site:up)
