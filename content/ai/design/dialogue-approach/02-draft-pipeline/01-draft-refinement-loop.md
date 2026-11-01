@@ -76,7 +76,7 @@ Execution-gated typed action pipeline
 ```
 
 
-In NLP / AI terms, it combines:
+In NLP / AI terms, it combines the following. ([Jurafsky & Martin 2026](#jurafsky-2026))
 
 | Concept | Meaning in Quick Add |
 | --- | --- |
@@ -240,8 +240,6 @@ executable typed action
 
 This forms the orchestration layer.
 
-<a id="practical-terminology-i-would-use-in-the-spec"></a>
-
 ## Proposed terminology for the specification
 
 
@@ -275,7 +273,7 @@ Related: [Draft state and lifecycle]({{< ref "ai/design/dialogue-approach/02-dra
 
 Original text: [02-pipeline.md](/ai/design/dialogue-approach/02-draft-pipeline/01-draft-refinement-loop.assets/02-pipeline.txt).
 
-## Library sources
+## References
 
 
-- [Jurafsky and Martin 2026](/sources/15c773945807396b696ab2a8e25a9595.bin), *SLP3 Appendix K: Frame-Based Dialogue Systems*
+- Jurafsky, D., & Martin, J. H. (2026). [Frame-Based Dialogue Systems](https://web.stanford.edu/~jurafsky/slp3/K.pdf). Appendix K of *Speech and Language Processing*, 3rd edition draft. [PDF](/sources/15c773945807396b696ab2a8e25a9595.bin). ^jurafsky-2026

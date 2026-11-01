@@ -22,7 +22,7 @@ Then use the document that matches the current question:
 | Define criteria, choose evaluators, and produce findings                               | [Judgment and Findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}})            |
 | Find recurring failures in reviewed traces                                             | [Failure Analysis]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}})                        |
 | Design the tools and practices that produce evaluation evidence                        | [Evaluation Subsystem]({{< ref "ai-engineering/evaluation/framework/evaluation-subsystem" >}})                 |
-| Decide whether repeated controlled execution is needed                                 | Why Use an Evaluation Harness? |
+| Decide whether repeated controlled execution is needed                                 | [Why Use an Evaluation Harness?]({{< ref "ai-engineering/other/evaluation/why-use-evaluation-harness" >}}) |
 | Understand controlled execution and comparison                                         | [Evaluation Harness and Workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})     |
 | Learn from observed production behavior                                                | [Production Learning]({{< ref "ai-engineering/evaluation/framework/production-learning" >}})                   |
 

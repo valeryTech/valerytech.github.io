@@ -32,4 +32,4 @@ The defining principle is **flexibility within enforced boundaries**. The LLM ca
 
 ---
 
-In dialogue-systems terms, this is the simplest task-oriented system and the LLM-era form of frame-based dialogue. See Frame-based and closed-set task dialogue for the classical design and its descendants, and the Dialogue systems hub for the wider section.
+In dialogue-systems terms, this is the simplest task-oriented system and the LLM-era form of frame-based dialogue. See [Frame-based and closed-set task dialogue]({{< ref "dialogue-systems/frame-based-dialogue" >}}#closed-task-sets-after-the-classical-pipeline) for the classical design and its descendants, and the [Dialogue systems]({{< ref "dialogue-systems" >}}) hub for the wider section.

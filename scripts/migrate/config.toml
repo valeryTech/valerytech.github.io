@@ -98,12 +98,15 @@ exclude = [
   "evaluation/cases/**",
   # An earlier copy of agents/react/analysis.md.
   "agents/react/react_report.md",
+  # The restored copy ends with private job-search notes.
+  "other/production-ready/background-and-definitions.md",
 ]
 
 [imports.sidebar_weights]
 "working-assumptions" = 1
 "evaluation" = 10
 "context" = 20
+"other" = 1000
 
 [[imports]]
 name = "projects"

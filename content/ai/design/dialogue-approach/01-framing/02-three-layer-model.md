@@ -38,7 +38,7 @@ flowchart TB
 
 **The first layer -- assistance purpose and authority -- classifies what relationship the system has to the user's work.** A practical capability progression is **inform -> recommend -> prepare -> execute -> delegate**. Initiative is a separate property: reactive, suggestive/proactive, or delegated. This layer distinguishes a Fuse-style informational assistant from an assistant that can prepare or commit state changes even when both use exactly the same chat component.
 
-**The second layer -- domain and execution model -- describes what the system knows how to operate on and how work happens.** This is where the resource/domain model, ontology, task catalogue, action definitions, tools, permissions, workflows and planners belong. Rasa's "language versus logic" split, IBM's skills and automations, Apple's App Intents and Alexa's action/intents all provide practitioner precedents for keeping executable capabilities conceptually distinct from the conversation itself. [Rasa CALM](https://rasa.com/calm)
+**The second layer -- domain and execution model -- describes what the system knows how to operate on and how work happens.** This is where the resource/domain model, ontology, task catalogue, action definitions, tools, permissions, workflows and planners belong. Rasa's "language versus logic" split, IBM's skills and automations, Apple's App Intents and Alexa's action/intents all provide practitioner precedents for keeping executable capabilities conceptually distinct from the conversation itself. ([Rasa](#rasa-calm))
 
 The same layer distinguishes two architectures that are frequently conflated:
 
@@ -50,7 +50,7 @@ versus
 
 Both may use the same domain APIs. The first is primarily **workflow-based assistance**; the second has greater **agentic process control**.
 
-**The third layer -- interaction and surfaces -- says how the collaboration occurs at a particular moment.** It includes dialogue but does not privilege it. A user might start a task through text, inspect a proposal in a table, change one parameter with a form control, approve it with a button and later receive a notification. Current Microsoft, Apple, Amazon, Google and OpenAI interfaces all contain variants of this pattern. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+**The third layer -- interaction and surfaces -- says how the collaboration occurs at a particular moment.** It includes dialogue but does not privilege it. A user might start a task through text, inspect a proposal in a table, change one parameter with a form control, approve it with a button and later receive a notification. Current Microsoft, Apple, Amazon, Google and OpenAI interfaces all contain variants of this pattern. ([Microsoft](#microsoft-mcp-ui-guidelines))
 
 This model also assigns common names to the layers:
 
@@ -92,8 +92,6 @@ Direct UI
 
 Under this model, dialogue is one possible interaction mechanism. The common foundation for Fuse Energy, financial assistants, and other application assistants lives primarily in the first two layers.
 
-<a id="what-i-would-call-the-broader-class"></a>
-
 ### Possible names for the broader class
 
 
@@ -116,3 +114,9 @@ It also suggests a useful research direction: treat dialogue as one form of huma
 Related: [Task assistance beyond dialogue]({{< ref "ai/design/dialogue-approach/01-framing/01-task-assistance-beyond-dialogue" >}}) · [Terminology and taxonomy]({{< ref "ai/design/dialogue-approach/01-framing/03-terminology-and-taxonomy" >}}) · [Action policy, readiness, and execution gates]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/03-action-policy-and-execution-gates" >}}).
 
 Original text: [dialogue-systems-obsidian-references.md](/ai/design/dialogue-approach/01-framing/02-three-layer-model.assets/dialogue-systems-obsidian-references.txt) · [dialogue-systems-mislead.md](/ai/design/dialogue-approach/01-framing/02-three-layer-model.assets/dialogue-systems-mislead.txt).
+
+## References
+
+
+- Microsoft. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines). Microsoft Learn. ^microsoft-mcp-ui-guidelines
+- Rasa. [Rasa CALM | High-Trust Conversational AI Without Hallucinations](https://rasa.com/calm). ^rasa-calm

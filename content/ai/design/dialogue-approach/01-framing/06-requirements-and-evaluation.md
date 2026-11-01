@@ -12,12 +12,12 @@ linkTitle: "Requirements and Evaluation"
 ## Requirements
 
 
-These ambiguities have concrete implications for requirements. "Build a dialogue system" encourages requirements such as supported utterances, dialogue states, fallbacks and response generation. "Build a task assistant" forces additional questions: **what user outcomes are supported; what domain objects can be inspected or changed; what actions exist; when are they valid; how much process control belongs to the model; when may the system initiate work; what must the user review; and which interaction surface is appropriate at each point?** Practitioner platforms increasingly expose exactly these concerns through actions, skills, tools, workflows, permissions and structured UI. [Rasa CALM](https://rasa.com/calm)
+These ambiguities have concrete implications for requirements. "Build a dialogue system" encourages requirements such as supported utterances, dialogue states, fallbacks and response generation. "Build a task assistant" forces additional questions: **what user outcomes are supported; what domain objects can be inspected or changed; what actions exist; when are they valid; how much process control belongs to the model; when may the system initiate work; what must the user review; and which interaction surface is appropriate at each point?** Practitioner platforms increasingly expose exactly these concerns through actions, skills, tools, workflows, permissions and structured UI. ([Rasa](#rasa-calm))
 
 ## Evaluation
 
 
-The same change affects evaluation. A dialogue-centred evaluation naturally focuses on understanding, response quality, turns, dialogue state and goal completion -- all established concerns in task-oriented dialogue research. [Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System](https://aclanthology.org/2023.findings-acl.464/) A broader task assistant also needs evaluation of **correct target/resource selection, correctness of proposed state changes, authorisation, unintended side effects, human correction effort, visibility of state, confirmation behaviour, recovery, task duration, proactive-intervention quality and final application state**. Microsoft's insistence on explicit state and reviewable actions, and Rasa's insistence on inspectable business logic, are practitioner signals pointing in this direction. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines)
+The same change affects evaluation. A dialogue-centred evaluation naturally focuses on understanding, response quality, turns, dialogue state and goal completion -- all established concerns in task-oriented dialogue research. ([Bang et al. 2023](#bang-2023)) A broader task assistant also needs evaluation of **correct target/resource selection, correctness of proposed state changes, authorisation, unintended side effects, human correction effort, visibility of state, confirmation behaviour, recovery, task duration, proactive-intervention quality and final application state**. Microsoft's insistence on explicit state and reviewable actions, and Rasa's insistence on inspectable business logic, are practitioner signals pointing in this direction. ([Microsoft](#microsoft-mcp-ui-guidelines))
 
 ## Describing a concrete system
 
@@ -35,3 +35,10 @@ This is the reason for avoiding **"dialogue system" as the top-level term for th
 Related: [Terminology and taxonomy]({{< ref "ai/design/dialogue-approach/01-framing/03-terminology-and-taxonomy" >}}) · [Three-layer model for task assistance]({{< ref "ai/design/dialogue-approach/01-framing/02-three-layer-model" >}}) · [Action policy, readiness, and execution gates]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/03-action-policy-and-execution-gates" >}}).
 
 Original text: [dialogue-systems-obsidian-references.md](/ai/design/dialogue-approach/01-framing/06-requirements-and-evaluation.assets/dialogue-systems-obsidian-references.txt).
+
+## References
+
+
+- Bang, N., Lee, J., & Koo, M.-W. (2023). [Task-Optimized Adapters for an End-to-End Task-Oriented Dialogue System](https://aclanthology.org/2023.findings-acl.464/). Findings of ACL 2023. [doi:10.18653/v1/2023.findings-acl.464](https://doi.org/10.18653/v1/2023.findings-acl.464). ^bang-2023
+- Microsoft. [User experience guidelines for MCP apps in declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-ui-widgets-guidelines). Microsoft Learn. ^microsoft-mcp-ui-guidelines
+- Rasa. [Rasa CALM | High-Trust Conversational AI Without Hallucinations](https://rasa.com/calm). ^rasa-calm
