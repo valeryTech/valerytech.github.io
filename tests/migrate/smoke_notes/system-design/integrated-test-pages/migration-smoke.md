@@ -6,9 +6,9 @@ description: "A small migration smoke page for checking resolved notes, local an
 
 This page is the repo-owned manual smoke surface for migration.
 
-- Resolved note link: [[system-design/elements/elements|System Elements]]
+- Resolved note link: [[system-design/elements/request-path|Request Path]]
 - Local heading link: [[#Local Smoke Heading]]
-- Cross-document heading link: [[system-design/elements/elements#cdn|CDN]]
+- Cross-document heading link: [[system-design/elements/request-path#cdn|CDN]]
 - Unresolved link: [[missing-note]]
 
 ## Local Smoke Heading

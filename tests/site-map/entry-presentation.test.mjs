@@ -19,6 +19,8 @@ function fixture(t) {
     copyFileSync(path.join(repository, filename), path.join(root, filename));
   }
   mkdirSync(path.join(root, 'content'), { recursive: true });
+  mkdirSync(path.join(root, 'assets/js'), { recursive: true });
+  writeFileSync(path.join(root, 'assets/js/reading-startup.js'), '');
   for (const name of ['sidebar', 'sidebar-toggle', 'toc', 'breadcrumb', 'main/docs-navigation', 'main/mobile-toc', 'navigation/has-outline']) {
     const destination = path.join(root, 'layouts/_partials', `${name}.html`);
     mkdirSync(path.dirname(destination), { recursive: true });

@@ -32,7 +32,7 @@ test('imported notes retain the full breadcrumb chain and wiki heading targets',
   assert.match(breadcrumb, /aria-current=page|aria-current="page"/);
   assert.match(document, attr('id', 'local-smoke-heading'));
   assert.match(document, attr('href', '#local-smoke-heading'));
-  assert.match(document, /\/system-design\/elements\/elements\/#cdn/);
+  assert.match(document, /\/system-design\/elements\/request-path\/#cdn/);
   // A note that uses H1s for its main parts still opens with its title, and the
   // H1 targets keep their ids.
   const authored = html('system-design/projects/rate-limiter');
@@ -63,6 +63,6 @@ test('search, math styles, reading fonts, and migrated image attachments are pub
   assert.match(math, /class=katex|class="katex"/);
   assert.match(math, /\/vendor\/katex\/katex.min.css/);
   const illustrated = html('ai/design/workflow-design/jev-to-workflow');
-  assert.match(illustrated, attr('src', '/ai/design/workflow-design/jev-to-workflow.assets/pasted-image-20261020224616.png'));
-  assert.ok(existsSync(path.join(output, 'ai/design/workflow-design/jev-to-workflow.assets/pasted-image-20261020224616.png')));
+  assert.match(illustrated, attr('src', '/ai/design/workflow-design/jev-to-workflow.assets/pasted-image-20260320224616.png'));
+  assert.ok(existsSync(path.join(output, 'ai/design/workflow-design/jev-to-workflow.assets/pasted-image-20260320224616.png')));
 });

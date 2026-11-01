@@ -32,6 +32,7 @@ function fixture(t) {
   }
   mkdirSync(path.join(root, 'assets/js'), { recursive: true });
   writeFileSync(path.join(root, 'assets/js/outline-startup.js'), '');
+  writeFileSync(path.join(root, 'assets/js/reading-startup.js'), '');
   mkdirSync(path.join(root, 'data/ui'), { recursive: true });
   copyFileSync(path.join(repository, 'data/ui/navigation.json'), path.join(root, 'data/ui/navigation.json'));
   mkdirSync(path.join(root, 'layouts/partials/sidebar'), { recursive: true });

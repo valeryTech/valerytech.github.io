@@ -103,7 +103,7 @@ test('maps distinguish preferred entry points, published drafts, and archived hi
   assert.match(systemDesign, /href=["']?\/system-design\/archive\/study-plan-v0\/["']?>[^<]+<\/a> <strong>\[Archived\]<\/strong>/);
   const engineering = maps.get('/agent-map/engineering/');
   assert.match(engineering, /href=["']?\/engineering\/architecture\/architecture\/["']?>[^<]+<\/a> <strong>\[Draft\]<\/strong>/);
-  const versioned = maps.get('/agent-map/ai-engineering/').match(/<li><a href=["']?\/ai-engineering\/evaluation\/framework\/guide\/["']?>[\s\S]*?<\/li>/)?.[0];
+  const versioned = maps.get('/agent-map/ai-engineering/').match(/<li><a href=["']?\/ai-engineering\/evaluation\/framework\/reading-guide\/["']?>[\s\S]*?<\/li>/)?.[0];
   assert.ok(versioned, 'Versioned documents remain discoverable');
   assert.doesNotMatch(versioned, /\[(Canonical|Archived|Draft)\]/);
 });
