@@ -2,45 +2,40 @@
 draft: false
 toc: true
 title: "Callout Migration Test Catalog"
-description: "A migration regression catalog testing callout contexts, Hugo alert syntax, and local aliases used by the note converter."
+description: "A migration regression catalog showing each supported vault callout kind next to its source, with the shortcode context, theme type and color it imports as."
 linkTitle: "Callouts"
 ---
 
-This page is the migration regression catalog for callouts.
-
-It covers:
-
-- Doks-documented callout contexts
-- Hugo-documented alert syntax that extends beyond Doks
-- local migration aliases handled by the current converter
+This page is the migration regression catalog for callouts. Each section shows a rendered callout and the vault source that produced it. Edge cases, such as missing titles, nested callouts and lines without a quote sign, are on the [callout resolution test note]({{< ref "system-design/integrated-test-pages/callout-resolution" >}}).
 
 Reference docs:
 
-- [Doks shortcodes: callouts](https://getdoks.org/docs/basics/shortcodes/)
+- [Obsidian callouts](https://help.obsidian.md/callouts)
 - [Hugo blockquote render hooks: alerts](https://gohugo.io/render-hooks/blockquotes/)
+- [Hextra callout shortcode](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/)
 
-## Doks catalog
+## Main kinds
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
-Doks-documented `note` callout.
+Imports as `note` and renders as the blue `info` type.
 {{< /callout >}}
 
-```
+```md
 > [!note] Note
-> Doks-documented `note` callout.
+> Imports as `note` and renders as the blue `info` type.
 ```
 
 {{< callout context="tip" title="Tip" icon="outline/rocket" >}}
-Doks-documented `tip` callout.
+Imports as `tip` and renders as the green `default` type.
 {{< /callout >}}
 
 ```md
 > [!tip] Tip
-> Doks-documented `tip` callout.
+> Imports as `tip` and renders as the green `default` type.
 ```
 
 {{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
-Doks-documented `caution` callout.
+Imports as `caution` and renders as the amber `warning` type.
 
 - First caution item
 - Second caution item
@@ -48,103 +43,107 @@ Doks-documented `caution` callout.
 
 ```md
 > [!caution] Caution
-> Doks-documented `caution` callout.
+> Imports as `caution` and renders as the amber `warning` type.
 >
 > - First caution item
 > - Second caution item
 ```
 
 {{< callout context="danger" title="Danger" icon="outline/alert-octagon" >}}
-Doks-documented `danger` callout.
+Imports as `danger` and renders as the red `error` type.
 
 ```bash
-npm create thulite@latest -- --template doks
+task site:up
 ```
 {{< /callout >}}
 
 ````md
 > [!danger] Danger
-> Doks-documented `danger` callout.
+> Imports as `danger` and renders as the red `error` type.
 >
 > ```bash
-> npm create thulite@latest -- --template doks
+> task site:up
 > ```
 ````
 
-## Hugo alert catalog
-
 {{< callout context="important" title="Important" icon="outline/alert-circle" >}}
-Hugo documents `IMPORTANT`, but Doks does not expose a separate `important` context.
-The migration currently maps it to Doks `note`.
+Imports as `important` and renders as the purple `important` type.
 {{< /callout >}}
 
 ```md
 > [!important] Important
-> Hugo documents `IMPORTANT`, but Doks does not expose a separate `important` context.
-> The migration currently maps it to Doks `note`.
+> Imports as `important` and renders as the purple `important` type.
 ```
 
-{{< callout context="caution" title="Radiation hazard" icon="outline/alert-triangle" >}}
-Hugo documents optional fold signs and custom titles in alert designators.
-The migration currently preserves the custom title, ignores the fold sign, and maps `warning` to Doks `caution`.
-{{< /callout >}}
-
-```md
-> [!warning]+ Radiation hazard
-> Hugo documents optional fold signs and custom titles in alert designators.
-> The migration currently preserves the custom title, ignores the fold sign, and maps `warning` to Doks `caution`.
-```
-
-## Local migration aliases
+## Kinds that share a type
 
 {{< callout context="note" title="Info" icon="outline/info-circle" >}}
-Local alias mapped to Doks `note`.
+Imports as `note`, like `note`.
 {{< /callout >}}
 
 ```md
 > [!info] Info
-> Local alias mapped to Doks `note`.
+> Imports as `note`, like `note`.
 ```
 
+{{< callout context="caution" title="Radiation hazard" icon="outline/alert-triangle" >}}
+Imports as `caution`, like `caution`. The custom title is kept and the fold sign is dropped.
+{{< /callout >}}
+
+```md
+> [!warning]+ Radiation hazard
+> Imports as `caution`, like `caution`. The custom title is kept and the fold sign is dropped.
+```
+
+{{< callout context="tip" title="Advice" icon="outline/rocket" >}}
+Imports as `tip`, like `tip`. `rule` does the same.
+{{< /callout >}}
+
+```md
+> [!advice] Advice
+> Imports as `tip`, like `tip`. `rule` does the same.
+```
+
+## Kinds with their own icon
+
 {{< callout context="note" title="Question" icon="outline/help-octagon" >}}
-Local alias mapped to Doks `note` with a help icon.
+Imports as `note` with a question icon.
 {{< /callout >}}
 
 ```md
 > [!question] Question
-> Local alias mapped to Doks `note` with a help icon.
+> Imports as `note` with a question icon.
 ```
 
 {{< callout context="note" title="Thumbup" icon="outline/thumb-up" >}}
-Local alias mapped to Doks `note` with a thumb-up icon.
+Imports as `note` with a thumbs-up icon.
 {{< /callout >}}
 
 ```md
 > [!thumbup] Thumbup
-> Local alias mapped to Doks `note` with a thumb-up icon.
+> Imports as `note` with a thumbs-up icon.
 ```
 
 {{< callout context="caution" title="Thumbdown" icon="outline/thumb-down" >}}
-Local alias mapped to Doks `caution` with a thumb-down icon.
+Imports as `caution` with a thumbs-down icon.
 {{< /callout >}}
 
 ```md
 > [!thumbdown] Thumbdown
-> Local alias mapped to Doks `caution` with a thumb-down icon.
+> Imports as `caution` with a thumbs-down icon.
 ```
 
 ## Mapping reference
 
 
-| Source callout | Documentation origin | Current migrated Doks context |
-| --- | --- | --- |
-| `note` | Doks, Hugo | `note` |
-| `tip` | Doks, Hugo | `tip` |
-| `caution` | Doks, Hugo | `caution` |
-| `danger` | Doks | `danger` |
-| `important` | Hugo | `note` |
-| `warning` | Hugo | `caution` |
-| `info` | local alias | `note` |
-| `question` | local alias | `note` |
-| `thumbup` | local alias | `note` |
-| `thumbdown` | local alias | `caution` |
+| Vault kind | Shortcode context | Theme type | Color | Icon |
+| --- | --- | --- | --- | --- |
+| `note`, `info` | `note` | `info` | blue | information circle |
+| `question` | `note` | `info` | blue | question mark |
+| `thumbup` | `note` | `info` | blue | thumbs up |
+| `important` | `important` | `important` | purple | exclamation circle |
+| `tip`, `advice`, `rule` | `tip` | `default` | green | light bulb |
+| `caution`, `warning` | `caution` | `warning` | amber | exclamation |
+| `thumbdown` | `caution` | `warning` | amber | thumbs down |
+| `danger` | `danger` | `error` | red | ban |
+| any other kind | `note` | `info` | blue | information circle |

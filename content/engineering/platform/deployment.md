@@ -107,6 +107,7 @@ reduce failures too.
 Deployment is what happens when you install some version of your software into a particular environment (the production environment is often implied). Release is when you make a system or some part of it (for example, a feature) available to users.
 {{< /callout >}}
 
+
 On to Progressive Delivery
 
 ### Blue/Green Deployment
@@ -121,10 +122,6 @@ With feature toggles (otherwise known as feature flags), we hide deployed functi
 Also, Fully managed solutions exist for managing feature toggles, including LaunchDarkly and Split. LaunchDarkly defines four classes of feature flags: *rollout flags*, flags in experiments, entitlement flags, and operational flags.
 
 ### Canary Release
-
-{{< callout context="tip" title="se" icon="outline/rocket" >}}
-
-{{< /callout >}}
 
 When I first did a canary release we controlled the rollout manually. We could con‐
 

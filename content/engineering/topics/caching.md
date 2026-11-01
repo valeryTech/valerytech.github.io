@@ -37,6 +37,7 @@ Generally, caching is used only in cases where the external *data doesn't change
 Generally, caching is used for *read-heavy systems*. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.
 {{< /callout >}}
 
+
 another rule
 
 The 80/20 rule: You want to store 80% of read requests in 20% of storage (or memory). Generally, these are the most popular requests.
@@ -165,6 +166,7 @@ Balancing these forces is going to come down to understanding the requirements o
 
 {{< /callout >}}
 
+
 Be careful about caching in too many places! The more caches between you and the source of fresh data, the more stale the data can be, and the harder it can be to determine the freshness of the data that a client eventually sees. It can also be more difficult to reason about where data needs to be invalidated. The trade-off around caching -- balancing freshness of data against optimization of your system for load or latency -- is a delicate one, and if you cannot easily reason about how fresh (or not) data might be, this becomes difficult.
 
 Coming back to the famous quote from Knuth earlier, premature optimization can cause issues. Caching adds complexity, and we want to add as little complexity as possible. The ideal number of places to cache is zero. Anything else should be an optimization you have to make -- but be aware of the complexity it can bring.
@@ -190,6 +192,7 @@ In these patterns, the application directly writes the data to the cache. And th
 {{< callout context="note" title="Know" icon="outline/info-circle" >}}
 If you're experiencing slow writes, a quick fix is async writes to the database.
 {{< /callout >}}
+
 
 In both of these patterns, there is an obvious disadvantage. Here we are writing all the data to the cache, which might not even be read. Hence, we are overloading the cache (or cache memory) with expensive calls that might not even be required. For example, there are some accounts on Twitter that are not followed by many people. If we put every tweet in the cache from these unpopular accounts, it will take up expensive memory. Also, if the database goes down before the data is written to the database, this causes inconsistency.
 

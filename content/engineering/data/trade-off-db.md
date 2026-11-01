@@ -22,6 +22,7 @@ At the risk of oversimplifying the decision, we can assert with confidence that 
 "Although I think a non-relational database better fits this requirement, we should also be mindful of the downsides. We'll be able to scale horizontally at the cost of not having ACID guarantees. I'm assuming there will be no need for strong consistency in the future."
 {{< /callout >}}
 
+
 So which one is a better fit for our Twitter example? Let's run our requirements through these questions:
 
 **Do we need strong consistency?** We probably don't. It's fine if after publishing a tweet, some users can see it before others. Same for likes and followers. We don't need to treat these as atomic, consistent operations. Eventual consistency works fine for our requirements.
