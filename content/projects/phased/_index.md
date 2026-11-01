@@ -99,7 +99,6 @@ To try it by hand, follow [Try it](https://github.com/valery-judah/phased#try-it
 ## Where to read more
 
 
-- [Runs, records and results: the concepts behind the evaluation in Phased](https://www.linkedin.com/pulse/runs-records-results-concepts-behind-evaluation-phased-valery-yudaev-obk5f/), an article on LinkedIn: a short introduction to the words of a run and its evaluation.
 - [The reflection](https://github.com/valery-judah/phased/blob/main/docs/reflection.md), in the repository: why the product needs an evaluation subsystem, what we advocate, and how the project is demonstrated.
 - [The repository's README](https://github.com/valery-judah/phased): how to run it, with no model and no API key.
 - [The AI evaluation framework, version 1]({{< ref "ai-engineering/evaluation/framework-v1" >}}), which the project draws on.
