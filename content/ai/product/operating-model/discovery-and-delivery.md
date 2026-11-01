@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "Discovery and Delivery"
+aliases:
+  - "/ai/approach/evaluation-discovery-delivery/"
 description: "Building to answer a question and building behavior people rely on can happen together. The decision, evidence needed, and obligations involved determine whether the work is discovery, delivery, or both."
 linkTitle: "Discovery and Delivery"
 ---

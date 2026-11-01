@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "Optimization v1.2: Production Discipline for LLM Systems"
+aliases:
+  - "/ai/methodology-v1-3/optimization-v1-2/"
 description: "Configuration search begins with explicit objectives and hard constraints, then moves from cheap offline screening to holdout and canary confirmation. Online exploration uses approved options and circuit breakers."
 linkTitle: "Optimization v1.2"
 ---

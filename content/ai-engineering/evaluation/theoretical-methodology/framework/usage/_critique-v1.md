@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "AI Systems Framework: Methodology Critique (v1)"
+aliases:
+  - "/ai/methodology-v1-3/usage/_critique-v1/"
 description: "The framework’s controls can also create fragile labels, fragmented baselines, expensive governance, and too many inconclusive results. This assessment connects those costs to mitigations and an order of adoption."
 linkTitle: "Methodology Critique"
 ---

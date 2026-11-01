@@ -4,6 +4,7 @@ toc: true
 title: "Interviewing.io Framework: Concise Notes"
 aliases:
   - "/system-design/interview/frameworks/sd-algo-interviewing-io/"
+  - "/system-design/to-sort/sd-algo-interviewing-io/"
 description: "Concise interviewing.io framework notes on requirements, objects, mutability, access patterns, quality characteristics, data types, APIs, scale, and storage design."
 linkTitle: "Interviewing.io Short Notes"
 ---
