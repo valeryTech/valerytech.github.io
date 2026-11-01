@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "YAGNI: You Aren't Gonna Need It"
+title: "YAGNI: Reading List and Open Questions"
 description: "A reading list and open questions about applying YAGNI, balancing future needs with simplicity, and understanding its relationship to XP practices."
 document_status: "draft"
 linkTitle: "YAGNI"

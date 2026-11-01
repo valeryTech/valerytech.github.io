@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Deriving Capabilities from Tasks"
 description: "Using the capability account to design a system: start from purpose and tasks, identify what makes the tasks hard, derive the capabilities, and test each link from task demand to mechanism."
+weight: "80"
 linkTitle: "Deriving from Tasks"
 ---
 

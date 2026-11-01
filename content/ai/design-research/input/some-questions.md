@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Questions to Probe the Architecture"
+title: "Questions to Probe an Agent Architecture Proposal"
 description: "Questions to put to an agent architecture proposal: what to build first and what to reuse, what its type and effect model catches, where the formal model ends, and which guarantees survive retries and partial failures."
 linkTitle: "Probing Questions"
 ---

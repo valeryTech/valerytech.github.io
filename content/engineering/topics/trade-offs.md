@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Systematic Trade-off Analysis Framework"
+title: "Trade-off Analysis Framework (ChatGPT Notes)"
 description: "Structure trade-off analysis by defining goals and criteria, comparing alternatives, quantifying attributes, recording a decision, and validating it iteratively."
 linkTitle: "Trade-off Analysis"
 ---

@@ -3,7 +3,8 @@ draft: false
 toc: true
 title: "Draft Refinement Loop"
 description: "A Quick Add architecture centered on a persistent transaction draft, repeatedly enriched, grounded, repaired, and validated before user-confirmed typed execution."
-linkTitle: "Draft Refinement Loop"
+weight: "10"
+linkTitle: "Refinement Loop"
 ---
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})

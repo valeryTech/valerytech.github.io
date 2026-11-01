@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Three-Layer Model for Task Assistance"
 description: "A three-layer model separating assistance purpose and authority, domain execution, and interaction surfaces, so initiative, workflow control, and UI choices can be described independently."
+weight: "20"
 linkTitle: "Three-Layer Model"
 ---
 

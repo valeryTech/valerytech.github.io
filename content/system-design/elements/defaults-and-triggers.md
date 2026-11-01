@@ -103,7 +103,7 @@ When these are not tested earlier, they usually land in a hardening phase.
 ## Operating services
 
 
-**Default:** configuration from the environment, structured logs with a request ID, a health check, and one deployment pipeline. A [golden-path template]({{< ref "engineering/delivery-techniques/skeletons" >}}) provides these from the first commit. See [operating services]({{< ref "system-design/elements/operating-services" >}}). For which contract to start from on a given platform, see the "How to apply today" table in the [Twelve-Factor synthesis]({{< ref "engineering/platform/twelve-factor" >}}#synthesis).
+**Default:** configuration from the environment, structured logs with a request ID, a health check, and one deployment pipeline. A [golden-path template]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}) provides these from the first commit. See [operating services]({{< ref "system-design/elements/operating-services" >}}). For which contract to start from on a given platform, see the "How to apply today" table in the [Twelve-Factor synthesis]({{< ref "engineering/platform/twelve-factor" >}}#synthesis).
 
 | Trigger | Move to | Test with |
 | --- | --- | --- |
@@ -118,7 +118,7 @@ The golden-path notes make the template-versus-chassis choice explicitly. They a
 
 
 - **RAG:** the RAG runtime layers route by a hierarchy of needs. Try no AI first, then an LLM transformation, then an authoritative system of record, then retrieval, and finally ask or abstain. The simplest option comes first, and each step is taken only when the previous one cannot answer.
-- **Interviews:** the [extended framework collection]({{< ref "system-design/interview/frameworks/sd-framework-old" >}}) advises designing a basic working system first and adding complexity only when it is justified. In an interview, the triggers become the deep dives.
+- **Interviews:** the [extended framework collection]({{< ref "system-design/interview/frameworks/extended-collection" >}}) advises designing a basic working system first and adding complexity only when it is justified. In an interview, the triggers become the deep dives.
 
 ## Library sources
 

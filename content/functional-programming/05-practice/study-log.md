@@ -5,6 +5,7 @@ title: "Functional Programming Study Log"
 aliases:
   - "/functional-programming/study-log/"
 description: "A dated study log from November and December 2023 covering folds and fusion, unfolds and origami programming, laziness and trees, traverse, continuation-passing style, monoids and monads."
+weight: "40"
 linkTitle: "Study Log"
 ---
 
@@ -73,7 +74,7 @@ Why define `any` through `or` and `map` at all? `any p = or . map p` is the defi
 
 base now defines the Foldable version through `foldMap` with the `Any` monoid, which is the same idea phrased with monoids.
 
-Fusion in Richard Bird's *Pearls of Functional Algorithm Design* (2010): the book derives efficient programs from simple specifications by equational reasoning, and the fusion law is one of its most used steps. It isn't in the library; Hutton's fold tutorial and Gibbons's origami chapter (see Library sources) introduce the same law more gently.
+Fusion in Richard Bird's *Pearls of Functional Algorithm Design* (2010): the book derives efficient programs from simple specifications by equational reasoning, and the fusion law is one of its most used steps. It isn't in the library; Hutton's fold tutorial and Gibbons's origami chapter (see Library sources) introduce the same law more gently. Bird's own textbook treatments are in the library: *Introduction to Functional Programming using Haskell* (1998), section 4.6.2, "Fusion", and Bird and Gibbons 2020, section 1.4.
 
 Links on fusion and equational reasoning:
 
@@ -283,7 +284,7 @@ and `map f = unfold null (f . head) tail`.
 ### Origami programming, folds and unfolds
 
 
-Origami programming ([PDF](/sources/programming/functional-programming/gibbons-2003-origami-programming.pdf.enc)) is Jeremy Gibbons's chapter in *The Fun of Programming* (2003). Folds and unfolds are the "origami" of functional programming: the chapter shows them for lists, trees and arbitrary datatypes, with their laws (fusion among them) and the hylomorphisms you get by composing an unfold with a fold.
+Origami programming ([PDF](/sources/programming/functional-programming/gibbons-2003-origami-programming.pdf.enc)) is Jeremy Gibbons's chapter in *The Fun of Programming* (2003; book). Folds and unfolds are the "origami" of functional programming: the chapter shows them for lists, natural numbers and rose trees (a single generic definition for all datatypes is left out of scope, section 3.1), with their laws (fusion among them) and the hylomorphisms you get by composing an unfold with a fold.
 
 - Conal Elliott, "Folds and unfolds all around us" (talk slides): <http://conal.net/talks/folds-and-unfolds.pdf> ([PDF](/sources/programming/functional-programming/elliott-2013-folds-and-unfolds-all-around-us.pdf.enc))
 - WorksHub, "Anamorphisms, aka unfolds, explained": <https://functional.works-hub.com/learn/number-anamorphisms-aka-unfolds-explained-50e1a>
@@ -301,7 +302,7 @@ An unfold is an anamorphism and a fold is a catamorphism:
 - Wikipedia, "Anamorphism": <https://en.wikipedia.org/wiki/Anamorphism>
 - Wikipedia, "Catamorphism": <https://en.wikipedia.org/wiki/Catamorphism>
 
-The names come from category theory and were popularised for programmers by Meijer, Fokkinga and Paterson (1991). For a recursive type described by a "base functor" `f`, the catamorphism takes an algebra `f a -> a` that handles one layer, and the anamorphism takes a coalgebra `a -> f a` that produces one layer; the general definitions are below. For lists the catamorphism is `foldr`. `foldl` is not directly a catamorphism; it can be expressed as a `foldr` that builds a function.
+The names come from category theory and were popularised for programmers by Meijer, Fokkinga and Paterson (1991) ([PDF](/sources/programming/functional-programming/meijer-1991-functional-programming-with-bananas-lenses.pdf.enc), section 2; the library copy has only the first 5 pages). For a recursive type described by a "base functor" `f`, the catamorphism takes an algebra `f a -> a` that handles one layer, and the anamorphism takes a coalgebra `a -> f a` that produces one layer; the general definitions are below. For lists the catamorphism is `foldr`. `foldl` is not directly a catamorphism; it can be expressed as a `foldr` that builds a function.
 
 ### Shortcut fusion and stream fusion
 
@@ -310,7 +311,7 @@ Questions: stream fusion is based on destroy/unfoldr fusion? And GHC's list fusi
 
 Yes to both. These are the two families of "shortcut fusion", both removing intermediate lists between a producer and a consumer:
 
-- **foldr/build** (Gill, Launchbury and Peyton Jones, 1993). Producers are written with `build g = g (:) []`, consumers with `foldr`, and one rewrite rule does the work: `foldr k z (build g) = g k z`. This is GHC's list fusion in `base`. It handles `map`, `filter`, `sum` and list comprehensions well, but not functions that consume two lists at once (`zip`), and left folds with accumulating parameters fuse poorly.
+- **foldr/build** (Gill, Launchbury and Peyton Jones, 1993). Producers are written with `build g = g (:) []`, consumers with `foldr`, and one rewrite rule does the work: `foldr k z (build g) = g k z`. This is GHC's list fusion in `base`. It handles `map`, `filter` and list comprehensions well, but not functions that consume two lists at once (`zip`). Left folds with accumulating parameters, such as `foldl` and the `sum` built on it, were the other gap when Svenningsson (2002, section 2.2) and Coutts et al. (2007, section 1.1) wrote. GHC 7.10 (2015) closed it by defining `foldl` through `foldr`, with the Call Arity analysis removing the extra closures ([Breitner 2014](https://www.joachim-breitner.de/publications/CallArity-TFP.pdf); GHC ticket [#7994](https://mail.haskell.org/pipermail/ghc-tickets/2014-January/009171.html)), so current GHC fuses `sum (map f xs)` too.
 - **destroy/unfoldr** (Svenningsson, 2002) is the dual: producers are unfolds, consumers are written with `destroy`, and `zip`-like functions fuse. Its weak spot is `filter`, which has to loop until it finds the next element.
 
 Stream fusion (Coutts, Leshchinskiy and Stewart, 2007) builds on the second idea. A list becomes a non-recursive stepper, `data Stream a = forall s. Stream (s -> Step a s) s`, with `data Step a s = Done | Yield a s | Skip s`. `Skip` lets `filter` drop an element without a recursive loop, so every stage stays non-recursive and GHC can inline the whole pipeline into one loop. The `vector` library uses stream fusion.
@@ -372,7 +373,7 @@ John Hughes's paper *Why Functional Programming Matters* ([PDF](/sources/program
 - Origami.
 - The Haskell CIS 194 course: the University of Pennsylvania's introductory Haskell course. The Spring 2013 version by Brent Yorgey is the one usually recommended for self-study (its lectures are linked from [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}})).
 
-Technique, from the course: replace control structures by data structures and standard combining forms, as in `fact n = product [1..n]`. Instead of a loop with a counter and an accumulator, build the data the loop would walk over (`[1..n]`) and hand it to a standard combinator (`product`). This is Hughes's "glue" again, and CIS 194 calls the style wholemeal programming. Laziness keeps it cheap: the list is produced on demand, and with optimisation GHC can often fuse it away completely.
+Technique, from the course (also on slide 10 of Elliott's talk, [PDF](/sources/programming/functional-programming/elliott-2013-folds-and-unfolds-all-around-us.pdf.enc)): replace control structures by data structures and standard combining forms, as in `fact n = product [1..n]`. Instead of a loop with a counter and an accumulator, build the data the loop would walk over (`[1..n]`) and hand it to a standard combinator (`product`). This is Hughes's "glue" again, and CIS 194 calls the style wholemeal programming. Laziness keeps it cheap: the list is produced on demand, and with optimisation GHC can often fuse it away completely.
 
 Caveat: at type `Int`, `product [1..n]` overflows silently from `n = 21` on, since 21! is larger than the largest 64-bit `Int`. Give it the type `Integer -> Integer`:
 
@@ -472,7 +473,7 @@ The term has a second meaning. GHC's worker/wrapper transformation is a compiler
 
 Open question for today: what do I want to work on?
 
-A course? H. Conrad Cunningham's CSci 450 course notes, the same source as the evaluation-model chapter quoted in [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}): <https://john.cs.olemiss.edu/~hcc/csci450/notes/450lectureNotes.html>
+A course? H. Conrad Cunningham's CSci 450 course notes, the same source as the evaluation-model chapter ([ch. 8 PDF](/sources/programming/functional-programming/cunningham-2022-exploring-languages-ch08-evaluation-model.pdf.enc)) quoted in [Evaluation and laziness]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}): <https://john.cs.olemiss.edu/~hcc/csci450/notes/450lectureNotes.html>
 
 ### Traversable and short-circuiting
 
@@ -573,22 +574,24 @@ See also: [Folds]({{< ref "functional-programming/01-foundations/recursion-and-f
 ## Library sources
 
 
-- [Hinze et al. 2010](/sources/programming/functional-programming/hinze-2010-theory-and-practice-of-fusion.pdf.enc), *Theory and Practice of Fusion*: the fusion-laws paper linked under 23.11.23.
-- [Hutton 1999](/sources/programming/functional-programming/hutton-1999-universality-and-expressiveness-of-fold.pdf.enc), *A tutorial on the universality and expressiveness of fold*: the fusion law, list functions written as folds, `dropWhile` and `foldl` through `foldr`.
+- [Hinze et al. 2010](/sources/programming/functional-programming/hinze-2010-theory-and-practice-of-fusion.pdf.enc), *Theory and Practice of Fusion*: the fusion-laws paper linked under 23.11.23; section 2, "Background: Algebras and Coalgebras", states the fold fusion law (equation 2), noting that fusing means inventing a new algebra that meets the precondition, and the functor fusion law (equation 3), which fuses a fold after a map into one fold; section 5 recasts foldr/build (5.2), destroy/unfoldr (5.3) and stream fusion with `Skip` (5.5) in one framework; on *`any` through `or` and `map`, and the fusion law* and *Shortcut fusion and stream fusion*.
+- [Hutton 1999](/sources/programming/functional-programming/hutton-1999-universality-and-expressiveness-of-fold.pdf.enc), *A tutorial on the universality and expressiveness of fold*: the fusion law, list functions written as folds, `dropWhile` and `foldl` through `foldr`; section 4's "banana split" (two folds over one list become one fold returning a pair) is the law behind the `foldl` package; on *Composable folds: the `foldl` package* (23.11.23).
 - [Gibbons 2003](/sources/programming/functional-programming/gibbons-2003-origami-programming.pdf.enc), *Origami programming*: the chapter referred to under 23.11.23 and 27.11.23.
-- [Elliott 2013](/sources/programming/functional-programming/elliott-2013-folds-and-unfolds-all-around-us.pdf.enc), *Folds and unfolds all around us*: the conal.net talk linked under 27.11.23 and 28.11.23.
+- [Elliott 2013](/sources/programming/functional-programming/elliott-2013-folds-and-unfolds-all-around-us.pdf.enc), *Folds and unfolds all around us*: the conal.net talk linked under 27.11.23 and 28.11.23; slides 15-19, "Playing with type isomorphisms" to "General regular algebraic data types – Haskell", build lists as `Fix` of a base functor and define the generic `fold`, `unfold` and `hylo`, the same construction as under *Base functors: lists with an extra `r` parameter*; slide 10, "Factorial again", has the technique under 28.11.23.
 - [Gibbons et al. 1998](/sources/programming/functional-programming/gibbons-1998-the-under-appreciated-unfold.pdf.enc), *The Under-Appreciated Unfold*: unfolds and their laws, for the `unfoldr` questions.
 - [Meijer et al. 1991](/sources/programming/functional-programming/meijer-1991-functional-programming-with-bananas-lenses.pdf.enc), *Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire*: catamorphisms, anamorphisms, hylomorphisms and paramorphisms.
-- [Svenningsson 2002](/sources/programming/functional-programming/svenningsson-2002-shortcut-fusion-accumulating-parameters.pdf.enc), *Shortcut Fusion for Accumulating Parameters and Zip-like Functions*: destroy/unfoldr fusion.
-- [Coutts et al. 2007](/sources/programming/functional-programming/coutts-2007-stream-fusion.pdf.enc), *Stream Fusion: From Lists to Streams to Nothing at All*: stream fusion, for the 27.11.23 question.
+- [Svenningsson 2002](/sources/programming/functional-programming/svenningsson-2002-shortcut-fusion-accumulating-parameters.pdf.enc), *Shortcut Fusion for Accumulating Parameters and Zip-like Functions*: section 2.2, "Limitations" (zips and accumulating parameters under foldr/build); section 3, "destroy/unfoldr" (`unfoldr`, `destroy`, the rule, and Figure 1, where `filter` needs a recursive helper); section 4, "zip fusion"; section 5, "Fusion with accumulating parameters"; on *Shortcut fusion and stream fusion*.
+- [Coutts et al. 2007](/sources/programming/functional-programming/coutts-2007-stream-fusion.pdf.enc), *Stream Fusion: From Lists to Streams to Nothing at All*: stream fusion, for the 27.11.23 question; section 1.1, "Short-cut fusion", compares build/foldr, destroy/unfoldr and stream fusion; section 2 defines `Stream`, `Step` and `Skip`; section 3, "No recursion: filter", explains why `Skip` keeps every stepper non-recursive; on *Shortcut fusion and stream fusion*.
 - [Gibbons et al. 2009](/sources/programming/functional-programming/gibbons-2009-essence-of-the-iterator-pattern.pdf.enc), *The Essence of the Iterator Pattern*: the iterator pattern paper under 30.11.23.
 - [Hughes 1990](/sources/programming/functional-programming/hughes-1990-why-functional-programming-matters.pdf.enc), *Why Functional Programming Matters*: the article under 27.11.23.
+- [Gibbons 2002](/sources/programming/functional-programming/gibbons-2002-calculating-functional-programs.pdf.enc), *Calculating Functional Programs*: section 2.7, ". . . and never the twain shall meet", explains why, with total functions on sets, data and codata differ and "unfold then fold" (quicksort, mergesort) can't be written; section 3 moves to pointed CPOs, where they coincide (3.1, "The category Cpo"); section 3.4.4 defines quicksort as `flatten . buildBST`, a hylomorphism (3.4, "Hylomorphisms"); on *Origami programming, folds and unfolds* (27.11.23).
+- [Mokhov et al. 2020](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc), *Build Systems a la Carte: Theory and Practice*: section 3.4, "The Need for Polymorphism in Task" (a `Task Applicative` has static dependencies, a `Task Monad` dynamic ones); section 3.7, "Computing Dependencies" (running an applicative task in `Const [k]` lists its dependencies without computing anything, which is impossible for a monadic task because `Const` has no `Monad` instance); on *Applicative and Monad* (1.12.23).
+- [Bird et al. 2020](/sources/programming/functional-programming/bird-2020-algorithm-design-with-haskell.pdf.enc), *Algorithm Design with Haskell*: section 1.4, "Fusion": the fusion law of `foldr` with its proof by induction, the `foldr`-`map` instance, and the finite-list proviso (exercises 1.16 and 1.17); on *`any` through `or` and `map`, and the fusion law* (23.11.23).
+- Bird 1998, *Introduction to Functional Programming using Haskell (2nd edition)*: section 4.6.2, "Fusion", states the fusion theorems for `foldr` and `foldl` with the strictness condition, and section 4.6.3 derives the fold-map fusion law `foldr f a . map g = foldr (f . g) a`, on *`any` through `or` and `map`, and the fusion law* (23.11.23); section 6.4, "Rose trees": `data Rose a = Node a [Rose a]` (the shape of `Data.Tree`), with size, height, induction, `foldRose` and `mapRose`, and depth-first and breadth-first order (6.4.2), on the `Data.Tree` paragraph of *Laziness and trees* (27.11.23); exercises 4.5.1 and 4.5.2 ask for `filter` and `takeWhile` as `foldr` and whether `dropWhile` can be a fold, and section 6.1.3, "Map and fold", writes size and height as folds over a binary tree, on *Haskell programming: list functions and folds* (1.12.23).
 
 Further reading:
 
-- [Gibbons 2002](/sources/programming/functional-programming/gibbons-2002-calculating-functional-programs.pdf.enc), *Calculating Functional Programs*
 - [Kiselyov et al. 2017](/sources/programming/functional-programming/kiselyov-2017-stream-fusion-to-completeness.pdf.enc), *Stream Fusion, to Completeness*
-- [Mokhov et al. 2020](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc), *Build Systems a la Carte: Theory and Practice*
-- [Bird et al. 2020](/sources/programming/functional-programming/bird-2020-algorithm-design-with-haskell.pdf.enc), *Algorithm Design with Haskell*
-- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*
-- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*
+- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: section 10.10, rewriting list functions (`myAnd`, `myOr`, `myAny`, `myElem`, `myReverse`) as folds, point-free where possible; sections 20.2 and 20.3, `Foldable`'s minimal definition and `foldMap` with `Sum`, `Product`, `All` and `Any`; on *`any` and `all`, recursively and as folds*, *Foldable* and *Haskell programming: list functions and folds*.
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: section 4.2, "Traversables", on `mapM` and `traverse` as one function duplicated by history, on *`traverse` and `mapM`*; section 9.2, "Nicer Code with Continuations", on `Cont r a` as `(a -> r) -> r`, callbacks and the `Cont` monad, on *Continuation-passing style*; section 3.2 on `ZipList` as an applicative without a monad, on *Applicative and Monad*.
+- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types*: section 6.4, "The Continuation Monad", on the isomorphism between `a` and `forall r. (a -> r) -> r` and on `Cont` flattening nested callbacks into `do` notation; on *Continuation-passing style*.

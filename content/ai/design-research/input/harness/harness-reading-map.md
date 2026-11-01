@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Harness Reading Map"
 description: "A reading guide to papers and articles about agent harnesses, context engineering, runtime controls, and evaluation infrastructure."
-linkTitle: "Harness Reading Map"
+linkTitle: "Reading Map"
 ---
 
 Related reading for [Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design]({{< ref "ai/design-research/input/harness/object-oriented-harness" >}}).

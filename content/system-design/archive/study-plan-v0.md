@@ -7,7 +7,7 @@ document_status: "archived"
 linkTitle: "Preparation Notes"
 ---
 
-Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/interview/study-and-practice" >}}). Numerical targets and technical claims below retain their original draft context.
+Preserved notes from before the March 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/interview/study-and-practice" >}}). Numerical targets and technical claims below retain their original draft context.
 
 <!-- Original note follows. -->
 
@@ -20,7 +20,7 @@ Use the [study and practice approach]({{< ref "system-design/interview/study-and
 
 At a high level, preparing for system design interviews is really about assembling the *right* pieces: you'll need to know some core concepts, key technologies, and common patterns. On this base, you'll establish a strategy or delivery framework for executing the interview. And finally, you'll need to *practice* to ensure you're comfortable the day of your actual interview.
 
-More detailed information and (list?) are in [Building-block map]({{< ref "system-design/elements/elements" >}})
+More detailed information and (list?) are in [Building-block map]({{< ref "system-design/elements/pattern-map" >}})
 
 About depth:
 > What's the difference between knowing the path and walking the path? How can we tell when our knowledge of a subject has become a real, applicable skill?

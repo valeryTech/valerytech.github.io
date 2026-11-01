@@ -105,7 +105,7 @@ No notes yet; see Newman, chapter 14.
 
 
 - [Code deployment]({{< ref "system-design/projects/code-deployment" >}}): a case about building the deployment system itself.
-- **AI and RAG:** the [golden-path templates]({{< ref "engineering/delivery-techniques/skeletons" >}}) (observable RAG, deterministic agent, eval harness) are service templates. They choose copied scaffolding over a shared library and read configuration from the environment. [Design pressure]({{< ref "engineering/eng-exp/design-pressure" >}}) asks for observability by design, replayable runs, and gradual release of versioned prompts, models, indexes, and tool schemas.
+- **AI and RAG:** the [golden-path templates]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}) (observable RAG, deterministic agent, eval harness) are service templates. They choose copied scaffolding over a shared library and read configuration from the environment. [Design pressure]({{< ref "engineering/eng-exp/design-pressure" >}}) asks for observability by design, replayable runs, and gradual release of versioned prompts, models, indexes, and tool schemas.
 
 ## Sources
 

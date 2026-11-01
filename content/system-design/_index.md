@@ -32,13 +32,13 @@ Structure patterns say *what to build*. Process techniques say *how to learn whe
 
 | Step | Question it answers | Notes |
 | --- | --- | --- |
-| Context and goal | What outcome, for whom, inside which boundary? | [Design principles]({{< ref "system-design/02-system-design" >}}#start-with-the-context), [backward design]({{< ref "engineering/progressive/backward-design-der" >}}), [goal-oriented architecture]({{< ref "engineering/progressive/goal-oriented-architecture/flow-1" >}}) |
+| Context and goal | What outcome, for whom, inside which boundary? | [Design principles]({{< ref "system-design/design-principles" >}}#start-with-the-context), [backward design]({{< ref "engineering/progressive/backward-design-der" >}}), [goal-oriented architecture]({{< ref "engineering/progressive/goal-oriented-architecture/grounded-in-user-goals" >}}) |
 | Forces | Which qualities and constraints decide this design? | [Non-functional requirements]({{< ref "system-design/nfr" >}}), [catalog of architectural characteristics]({{< ref "engineering/architecture/characteristics" >}}) |
-| Structure patterns | Which option answers this design question, and what does it lead to? | [Pattern map]({{< ref "system-design/elements/elements" >}}), [hubs by question]({{< ref "system-design/elements" >}}) |
+| Structure patterns | Which option answers this design question, and what does it lead to? | [Pattern map]({{< ref "system-design/elements/pattern-map" >}}), [hubs by question]({{< ref "system-design/elements" >}}) |
 | Process techniques | Which technique resolves the riskiest open question? | [Lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}), [delivery techniques guide]({{< ref "engineering/delivery-techniques/engineering-delivery-techniques-guide" >}}) |
-| Decision and trigger | What did we choose, why, and what would make us revisit it? | [Compare choices]({{< ref "system-design/02-system-design" >}}#compare-choices-in-their-setting), [trade-off analysis]({{< ref "engineering/topics/trade-offs" >}}), [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}), [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) |
-| Mechanisms | How does this component actually work? | [Engineering topic notes]({{< ref "system-design/elements/elements" >}}#where-detail-lives), [platform and delivery]({{< ref "engineering/platform" >}}) |
-| Cases | Where has this been applied? | [Practice cases]({{< ref "system-design/projects" >}}), [AI and RAG designs]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains) |
+| Decision and trigger | What did we choose, why, and what would make us revisit it? | [Compare choices]({{< ref "system-design/design-principles" >}}#compare-choices-in-their-setting), [trade-off analysis]({{< ref "engineering/topics/trade-offs" >}}), [problem-solving checklist]({{< ref "system-design/problem-solving-checklist" >}}), [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) |
+| Mechanisms | How does this component actually work? | [Engineering topic notes]({{< ref "system-design/elements/pattern-map" >}}#where-detail-lives), [platform and delivery]({{< ref "engineering/platform" >}}) |
+| Cases | Where has this been applied? | [Practice cases]({{< ref "system-design/projects" >}}), [AI and RAG designs]({{< ref "system-design/elements/pattern-map" >}}#same-patterns-in-other-domains) |
 
 ## Routes
 
@@ -46,8 +46,8 @@ Structure patterns say *what to build*. Process techniques say *how to learn whe
 | I want to... | Path through the flow |
 | --- | --- |
 | Prototype a system quickly | [Defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) -> the hub for the riskiest question -> a [technique]({{< ref "engineering/architecture/techniques" >}}) to test it -> record the decision with the [case template]({{< ref "system-design/projects/case-template" >}}). |
-| Review or improve a design | [Design principles]({{< ref "system-design/02-system-design" >}}) -> [forces]({{< ref "system-design/nfr" >}}) for the operations that matter -> the costs and *Leads to* of the relevant [hubs]({{< ref "system-design/elements" >}}) -> [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}). |
-| Design an AI or RAG system | [Same patterns in other domains]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains) -> the RAG runtime layers and the [testable boundary map]({{< ref "engineering/eng-exp/design-pressure" >}}) -> the matching hubs. |
+| Review or improve a design | [Design principles]({{< ref "system-design/design-principles" >}}) -> [forces]({{< ref "system-design/nfr" >}}) for the operations that matter -> the costs and *Leads to* of the relevant [hubs]({{< ref "system-design/elements" >}}) -> [problem-solving checklist]({{< ref "system-design/problem-solving-checklist" >}}). |
+| Design an AI or RAG system | [Same patterns in other domains]({{< ref "system-design/elements/pattern-map" >}}#same-patterns-in-other-domains) -> the RAG runtime layers and the [testable boundary map]({{< ref "engineering/eng-exp/design-pressure" >}}) -> the matching hubs. |
 | Prepare for an interview | [Interview preparation]({{< ref "system-design/interview" >}}): study plan, frameworks, communication, and mock review. |
 | Practice on a case | [Practice cases]({{< ref "system-design/projects" >}}) with the [case template]({{< ref "system-design/projects/case-template" >}}). |
 | Find courses, books, and talks | [Resources]({{< ref "system-design/resources" >}}). |
@@ -55,11 +55,11 @@ Structure patterns say *what to build*. Process techniques say *how to learn whe
 ## How the folders map to the flow
 
 
-- [`elements/`]({{< ref "system-design/elements" >}}): structure patterns as design questions, the [pattern map]({{< ref "system-design/elements/elements" >}}), and [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
+- [`elements/`]({{< ref "system-design/elements" >}}): structure patterns as design questions, the [pattern map]({{< ref "system-design/elements/pattern-map" >}}), and [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}).
 - [`nfr/`]({{< ref "system-design/nfr" >}}): forces.
 - [`projects/`]({{< ref "system-design/projects" >}}): cases.
 - [`interview/`]({{< ref "system-design/interview" >}}): the interview route.
-- Top level: [design principles]({{< ref "system-design/02-system-design" >}}), the [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}), and [resources]({{< ref "system-design/resources" >}}).
+- Top level: [design principles]({{< ref "system-design/design-principles" >}}), the [problem-solving checklist]({{< ref "system-design/problem-solving-checklist" >}}), and [resources]({{< ref "system-design/resources" >}}).
 - Process techniques and mechanisms live in the [engineering notes]({{< ref "engineering" >}}); the flow links to them rather than copying them.
 
 [Collected notes]({{< ref "system-design/to-sort" >}}) keep reading excerpts and design-review material. [The archive]({{< ref "system-design/archive" >}}) preserves earlier versions of rewritten notes.

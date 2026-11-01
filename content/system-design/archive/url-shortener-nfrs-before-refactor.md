@@ -7,7 +7,7 @@ document_status: "archived"
 linkTitle: "URL Shortener NFRs"
 ---
 
-Preserved notes from before the October 19, 2026 refactor. [Return to the working note]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}). Technical claims and numerical assumptions retain their original draft context.
+Preserved notes from before the March 19, 2026 refactor. [Return to the working note]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}). Technical claims and numerical assumptions retain their original draft context.
 
 <!-- Original note follows. -->
 

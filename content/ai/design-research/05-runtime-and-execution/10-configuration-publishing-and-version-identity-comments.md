@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "5.10 Comments on Publishing and Versions"
+title: "5.10 Comments on Configuration Publishing and Versions"
 description: "Clarifies logical names, releases, commits, artifacts, and aliases, identifying missing publication enforcement and separating coordinated repository changes from permission to deploy or run a system."
 weight: "101"
 linkTitle: "5.10 Comments"

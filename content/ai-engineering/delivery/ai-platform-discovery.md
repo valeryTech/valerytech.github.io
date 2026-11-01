@@ -4,7 +4,7 @@ toc: true
 title: "AI Discovery Platform"
 description: "A discovery platform for AI products is built around the loop from uncertainty to experiment, evidence, and decision, keeping prototypes and environments cheap and disposable while making evidence, failures, and decisions durable."
 document_status: "draft"
-linkTitle: "AI Discovery Platform"
+linkTitle: "Discovery Platform"
 ---
 
 **Question:** what should a platform for AI product discovery provide, given that its job is to reduce uncertainty about candidate solutions rather than to run AI applications in production?
@@ -29,7 +29,7 @@ Marty Cagan (SVPG) describes AI in discovery as mainly useful for rapid prototyp
 
 The platform is modeled on one loop: **uncertainty -> experiment -> evidence -> decision**.
 
-- **The evolving object is the candidate solution.** The loop runs around a solution, not a workflow around a feature. Problem, outcome, solution idea, prototype, effective solution, production solution, capability, and feature are different concepts, and the solution is the central object. See the [operating-model draft]({{< ref "ai/product/product-model/discovery-delivery/in-model-etc" >}}#central-object).
+- **The evolving object is the candidate solution.** The loop runs around a solution, not a workflow around a feature. Problem, outcome, solution idea, prototype, effective solution, production solution, capability, and feature are different concepts, and the solution is the central object. See the [operating-model draft]({{< ref "ai/product/product-model/discovery-delivery/empowered-team-draft" >}}#central-object).
 - **The experiment is the main unit of work while uncertainty is high.** The capability funnel measures how far the evolving solution has progressed toward solving the user's job.
 
 ```text
@@ -529,8 +529,8 @@ Then let repeated experiments show which shared abstractions are actually missin
 - [Reusable AI infrastructure]({{< ref "ai-engineering/delivery/reuse" >}}): shared platform primitives for production AI systems.
 - [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}): controlled execution, trace review, version comparison, and human judgment.
 - [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}): turning recurring failures into failure modes and criteria.
-- [AI products need evals, not just tests]({{< ref "ai-engineering/approach/empirical-nature-2" >}}): evals as behavioral evidence, with a lightweight experiment record and the capability funnel.
-- [Operating-model draft]({{< ref "ai/product/product-model/discovery-delivery/in-model-etc" >}}): the solution as central object, the experiment as primary unit of work, and the discovery-delivery interface.
+- [AI products need evals, not just tests]({{< ref "ai-engineering/approach/evals-not-just-tests" >}}): evals as behavioral evidence, with a lightweight experiment record and the capability funnel.
+- [Operating-model draft]({{< ref "ai/product/product-model/discovery-delivery/empowered-team-draft" >}}): the solution as central object, the experiment as primary unit of work, and the discovery-delivery interface.
 - [Capability funnel]({{< ref "ai/product/operating-model/working-notes/capability-funnel" >}}): the query-assistant levels; superseded by the [solution utility ladder]({{< ref "ai/product/operating-model/solution-utility-ladder" >}}).
 - [Discovery and delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}): two kinds of work distinguished by purpose, with information moving both ways.
 - [Experiments vs features]({{< ref "ai/product/product-model/experiments-vs-features" >}}): practitioner arguments for timeboxed experiments, capability funnels, and sharing failures.

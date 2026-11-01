@@ -19,6 +19,6 @@ linkTitle: "URL Shortener"
 - [Consistency and NFR exploration]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs-v0" >}}): reader/writer archetypes, replication, transactional outbox, PACELC, and latency tiers.
 - [Implementation experiments with coding agents]({{< ref "system-design/projects/url-shortener/url-shortener-agentic" >}}): Roo-Code and Kiro workflow notes.
 - [Earlier full design variants]({{< ref "system-design/archive/url-shortener-design-v0" >}}): preserves the read-first and write-first explanations and original open questions.
-- [Earlier key-generation review]({{< ref "system-design/to-sort/sd-reviews" >}}#tiny-url): pre-generated keys, allocation, and concurrency.
+- [Earlier key-generation review]({{< ref "system-design/to-sort/case-study-excerpts" >}}#tiny-url): pre-generated keys, allocation, and concurrency.
 
 The design files contain different assumptions. Choose a coherent set for an attempt and record it explicitly. In particular, availability percentages do not by themselves prescribe a deployment architecture, and a consistency choice needs an operation and user-visible behavior.

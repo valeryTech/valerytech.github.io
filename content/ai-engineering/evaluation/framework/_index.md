@@ -10,7 +10,7 @@ This collection follows an evaluation from the initial question to cases, record
 
 | Topic | Read |
 | --- | --- |
-| Purpose and scope | [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/ai-evaluation" >}}) |
+| Purpose and scope | [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/introduction" >}}) |
 | Situations and conditions | [Coverage and case design]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) |
 | Executions and recorded evidence | [Evidence model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) |
 | Criteria and conclusions | [Judgment and findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}) |

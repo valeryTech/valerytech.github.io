@@ -13,7 +13,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The retained LLM passages distinguish collaboration mechanics from interaction patterns. They preserve the shared reasoning loop, the complete Teresa-attributed discussion, and the later responsibility-based derivation. The sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns-comments" >}}) explain the changing lists and their limits.
 
-The [collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains the opening source and general mechanics. [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) discusses understanding as an outcome. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/collab-transfer" >}}) links both parts.
+The [collaboration model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) retains the opening source and general mechanics. [Sensemaking]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}) discusses understanding as an outcome. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/joint-activity-route" >}}) links both parts.
 
 <a id="retained-dialogue"></a>
 

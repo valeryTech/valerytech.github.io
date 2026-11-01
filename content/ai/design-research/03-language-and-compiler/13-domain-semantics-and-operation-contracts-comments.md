@@ -50,6 +50,6 @@ The claim that improved models make schemas more valuable remains the LLM's inte
 ## Audit and source claims
 
 
-The [architecture overview]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries" >}}) retains the historical precedent, complete layer list, application-boundary proposal, and closing bibliography. Its [comments]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries-comments" >}}) connect meaning, authority, interaction, and execution.
+The architecture overview retains the historical precedent, complete layer list, application-boundary proposal, and closing bibliography. Its comments connect meaning, authority, interaction, and execution.
 
-The source overview (archived source 012) links the full split, and the [stage 8 mapping]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-8-language-interfaces-and-architecture) records the original lines. No research or protocol claim was verified merely by placing the passage in the design-research collection.
+The source overview (archived source 012) links the full split, and the stage 8 mapping records the original lines. No research or protocol claim was verified merely by placing the passage in the design-research collection.

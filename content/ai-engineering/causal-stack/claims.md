@@ -89,4 +89,4 @@ Terms from the former stack such as "cooperative completion prior," "knowledge-s
 
 Prefer a checkable statement such as "the output follows the obsolete excerpt when both versions are supplied." Internal explanations require additional evidence. If knowing the internal mechanism would not change the product decision, leave that question open.
 
-For the broader method, see the [critical empirical stance]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/in-critical-stance" >}}) and [Evidence-Based Software Engineering](https://ebse.webspace.durham.ac.uk/), which combines appraisal of research with expertise and the circumstances of use.
+For the broader method, see the [critical empirical stance]({{< ref "engineering/evidence/critical-stance" >}}) and [Evidence-Based Software Engineering](https://ebse.webspace.durham.ac.uk/) ([notes]({{< ref "engineering/evidence/ebse" >}})), which combines appraisal of research with expertise and the circumstances of use.

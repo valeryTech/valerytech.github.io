@@ -150,7 +150,7 @@ Six proposed principles follow from this structure:
 - **Externalize your thinking.** Make assumptions, frames, alternatives, and questions inspectable.
 - **Keep conclusions provisional and traceable.** Preserve the path from observation -> interpretation -> hypothesis -> commitment.
 
-The [research synthesis]({{< ref "ai/product/discovery/discovery-rewritten" >}}) develops these principles in more detail.
+The [research synthesis]({{< ref "ai/product/discovery/inquiry-research-synthesis" >}}) develops these principles in more detail.
 
 The distinction between a prototype-centered process and broader inquiry can be represented as follows:
 

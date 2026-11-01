@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Test Strategy Foundations and the Practical Test Pyramid"
+title: "Test Strategy Foundations (Precursor to Playbook v3)"
 description: "Build a test portfolio from product intent, invariants, contracts, quality scenarios, and risks, using the practical test pyramid to balance feedback speed and diagnostic value."
 linkTitle: "Test Strategy Foundations"
 ---

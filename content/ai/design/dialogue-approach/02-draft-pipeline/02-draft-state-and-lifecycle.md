@@ -3,7 +3,8 @@ draft: false
 toc: true
 title: "Draft State and Lifecycle"
 description: "A proposed transaction-draft record and state machine for carrying missing fields, confidence, warnings, and next steps across user turns and tool results."
-linkTitle: "Draft State and Lifecycle"
+weight: "20"
+linkTitle: "State and Lifecycle"
 ---
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})

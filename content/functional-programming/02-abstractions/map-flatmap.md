@@ -5,6 +5,7 @@ title: "Understanding map and flatMap"
 aliases:
   - "/functional-programming/map-flatmap/"
 description: "What map preserves in a structure such as Option, the identity and composition laws behind it, and when the next step needs flatMap instead, with Scala examples."
+weight: "10"
 linkTitle: "map and flatMap"
 ---
 
@@ -160,9 +161,11 @@ See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}
 - [Welsh et al. 2020](/sources/programming/scala/welsh-2020-scala-with-cats.pdf.enc), *Scala with Cats*: the chapters on functors and monads state these laws in Scala and generalize `map` and `flatMap` beyond `Option`.
 - Płachta 2022, *Grokking Functional Programming*: chapter 5, Sequential programs: `flatten` and `flatMap` on lists, how `flatMap` can change the size of a list, nested `flatMap`s rewritten as for comprehensions, and `Option` for parsing; chapter 6 continues with `Option` and `Either`.
 - [Schwarz 2023](/sources/programming/scala/schwarz-2023-kleisli-composition-flatmap-join-map-unit.pdf.enc), *Kleisli composition, flatMap, join, map, unit*: slides showing how Kleisli composition, `flatMap`, `join` (`flatten` in Scala), `map` and `unit` can each be defined from the others, with Scala 3 code for `Option` and `List`.
+- [Allen and Moronuki 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: section 18.2, Sorry — Monad is not a burrito: fmapping a function `a -> m b` gives an extra layer `m (m b)`, `join` removes it, and bind is `fmap` followed by `join`; only Monad lets the mapped function change the structure; on *`flatMap`*.
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: section 5.1.1, "Functor Laws", reads the laws as preserving the container's structure and shows that an `fmap` returning `[]` for everything breaks `fmap id = id`, on *`map` preserves structure*, *Operations that do lose information* and *The functor laws*; sections 1.3, "Both, Maybe? I Don't Think That's an Option", and 1.4, "Two for the Price of One", derive bind for `Option` from `map` plus `flatten`, and list `flatMap` as `concat (map f xs)`, on *`flatMap`*.
 
 Further reading:
 
 - [Odersky et al. 2021](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), *Programming in Scala (5th edition)*
-- [Chiusano et al. 2013](/sources/programming/scala/chiusano-2013-functional-programming-in-scala-meap-v10.pdf.enc), *Functional Programming in Scala (MEAP version 10)*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*
+- Chiusano et al. 2013, *Functional Programming in Scala (MEAP version 10)*
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 10, Implementation: Working with Errors, section "Chaining Result-Generating Functions": `bind` adapts a function that can fail, and `map` adapts one that can't, so both fit a pipeline of `Result`s; the same split as `map` versus `flatMap` here, for `Result` instead of `Option`; on *`flatMap`*.

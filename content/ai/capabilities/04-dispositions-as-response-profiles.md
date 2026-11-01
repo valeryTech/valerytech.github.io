@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Dispositions as Response Profiles"
 description: "A working account: a disposition ascription describes a chosen system's causal response profile across a declared family of scenarios, inferred from limited evidence. Its parts, closest relatives in the literature, and the decisions it still needs."
+weight: "40"
 linkTitle: "Response Profiles"
 ---
 

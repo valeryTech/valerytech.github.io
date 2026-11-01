@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "What a Disposition Claim Means"
 description: "Why the simple counterfactual reading of 'x is disposed to M when C' fails, how the speaker's context fixes the conditions and the manifestation, and what this means for claims about LLM capabilities."
+weight: "30"
 linkTitle: "Disposition Claims"
 ---
 

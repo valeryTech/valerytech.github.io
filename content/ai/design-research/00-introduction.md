@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "AI Systems Design: Purpose and Reading Map"
+title: "Design Research: Purpose and Reading Map"
 description: "Why these working notes are being shared, what they aim to offer practitioners, and how to navigate the earlier DSL exploration, reorganized research, source conversations, and next stage of work."
 linkTitle: "Purpose and Reading Map"
 ---
@@ -27,7 +27,7 @@ The material is spread across the following places:
 | Conversations and other inputs | [Saved-conversation index]({{< ref "ai/design-research/input/pinned-chats-index" >}}) | An entry into the exported dialogues and their accompanying generated reports. The wider `input/` directory also holds earlier reports and reading material; source and authorship labels distinguish them. |
 | The next stage | [AI systems design]({{< ref "ai/design/ai-system-design" >}}) | A neighboring workspace where I intend to develop clearer explanations, worked examples, and more focused questions from this exploration. |
 
-V0 names an earlier stage of the investigation. Its material was moved into `design-research`, and some dialogues were subsequently edited for standalone reading. The [reassembly history]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}) records that reorganization. The current folder is arranged by topic, so its reading order differs from the order in which the conversations happened.
+V0 names an earlier stage of the investigation. Its material was moved into `design-research`, and some dialogues were subsequently edited for standalone reading. The reassembly history records that reorganization. The current folder is arranged by topic, so its reading order differs from the order in which the conversations happened.
 
 The DSL thread remains one part of the broader question. It explores how a language, domain model, or compiler can make certain operations expressible and certain checks possible. The collection also asks how people and software share work, how interfaces support investigation, and how a proposed explanation becomes something a person is willing to rely on. The [research-scope note]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}) explains the relationships between these questions.
 
@@ -35,7 +35,7 @@ Choose a reading route according to your interest:
 
 1. **Designing an AI system.** Begin with [Analyze AI System Design]({{< ref "ai/design-research/input/analyze-ai-system-design" >}}), which considers the whole system and the contributions assigned to an LLM. Continue with [Verification and acceptance]({{< ref "ai/design-research/01-foundations/09-verification-and-acceptance" >}}) and the [builder-method proposal]({{< ref "ai/design-research/01-foundations/08-semantic-substrate-builder-method" >}}) to examine what a design needs to establish and how mechanisms might support it.
 2. **Thinking and learning through LLM dialogue.** Start with the [guardrails conversation]({{< ref "ai/design-research/input/designing-llm-guardrails" >}}), where I question reliance on fluent generated explanations. Then compare the [initial framing]({{< ref "ai/design-research/00-overview/01-problem-framing" >}}) with its [later critique]({{< ref "ai/design-research/00-overview/05-refined-research-question" >}}). The [collection comments]({{< ref "ai/design-research/00-index-comments" >}}) provide a separate editorial review of unresolved assumptions and distinctions.
-3. **Supporting human understanding through interaction.** Read [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}), then follow the [interactive-systems map]({{< ref "ai/design-research/interactive-systems/00-index" >}}). These notes explore representations and operations through which people can inspect, compare, and revise intermediate work.
+3. **Supporting human understanding through interaction.** Read [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}), then follow the interactive-systems map. These notes explore representations and operations through which people can inspect, compare, and revise intermediate work.
 4. **Developing a research contribution.** Start with [Research scope and hierarchy]({{< ref "ai/design-research/00-overview/06-research-scope-and-hierarchy" >}}), then consult the [research-method proposal]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation" >}}) and its [critique]({{< ref "ai/design-research/06-research-reports/13-research-method-and-claim-validation-comments" >}}). The [full index]({{< ref "ai/design-research/00-index" >}}) links the separate language, investigation, runtime, and collaboration tracks and their proposed evaluations.
 
 For a broader view, the [document map]({{< ref "ai/design-research/document-map" >}}) describes relationships across the collection. You can follow a question through several notes without reading the entire archive in sequence.

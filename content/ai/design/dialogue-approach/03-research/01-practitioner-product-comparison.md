@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Practitioner Product Comparison"
+title: "AI Assistant Product Comparison"
 description: "Compares eight assistant products by authority, execution, proactive behavior, and UI, showing why action capability, agentic control, and conversational presentation must be described separately."
+weight: "10"
 linkTitle: "Product Comparison"
 ---
 

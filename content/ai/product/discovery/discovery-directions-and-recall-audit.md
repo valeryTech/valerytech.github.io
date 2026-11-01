@@ -2,11 +2,11 @@
 draft: false
 toc: true
 title: "Discovery Directions Map and Recall Audit"
-description: "A cross-topic map of bottom-up learning across AI projects, LLM workflow design, grounded failure analysis, and discovery with LLMs, with search coverage and limits as of 2026-05-01."
+description: "A cross-topic map of bottom-up learning across AI projects, LLM workflow design, grounded failure analysis, and discovery with LLMs, with search coverage and limits as of 2026-04-01."
 linkTitle: "Directions and Recall Audit"
 ---
 
-Audit date: 2026-05-01. This report describes the local notes as they stand on that date. It does not independently verify research findings, and it leaves the source notes unchanged.
+Audit date: 2026-04-01. This report describes the local notes as they stand on that date. It does not independently verify research findings, and it leaves the source notes unchanged.
 
 ## Easy-to-miss directions
 
@@ -25,7 +25,7 @@ These groupings of overlapping notes are interpretive. They are not existing, mu
 | Direction | What is being discovered? | Best starting points |
 | --- | --- | --- |
 | Bottom-up learning across AI projects | Which concepts, tools, practices, and abstractions recur across concrete applications, and under which conditions? | [AI Project Foundation]({{< ref "projects/ai-dev-foundation/starter-kit-and-foundation" >}}), [Premature abstraction]({{< ref "engineering/premature-abstraction" >}}) |
-| Empirical capability and workflow design | What can the agent do, how should the work be organized, and which structure or automation helps? | [Sandbox-first capability discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}), [Workflow evolution]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}), [Exploratory pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) |
+| Empirical capability and workflow design | What can the agent do, how should the work be organized, and which structure or automation helps? | [Sandbox-first capability discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}), [Workflow evolution]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}), Exploratory pipeline design |
 | Grounded-theory-inspired failure understanding | Which failures recur, what distinguishes them, and how should those observations inform evaluation and product work? | Grounded Theory in AI Failure Analysis, [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}) |
 | Discovery and sensemaking with LLMs | What is the situation, which questions matter, and which possibilities become visible through inquiry? | [Operation model]({{< ref "ai/product/discovery/analysis-or-operation-model" >}}), [LLM roles]({{< ref "ai/product/discovery/discovery-llm-roles" >}}), [Discovery map]({{< ref "ai/product/discovery/map" >}}) |
 | Product discovery, evidence, and commitments | What should be pursued, what evidence is needed, and what can people reasonably rely on? | [Discovery and delivery]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}), [Problem and response cycle]({{< ref "ai-engineering/delivery/outer-cycle" >}}) |
@@ -39,7 +39,7 @@ The first four match the topic most closely. The fifth is a substantial neighbor
 
 - [AI Project Foundation]({{< ref "projects/ai-dev-foundation/starter-kit-and-foundation" >}}): the strongest match to the bottom-up, grounded-theory approach. It compares experience across applications rather than assuming a universal framework.
 - [Premature abstraction]({{< ref "engineering/premature-abstraction" >}}): argues for concrete workflows first, followed by evidence-supported generalization. Includes design-science and scientific-reasoning analogies.
-- [Critical empirical practice]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/in-critical-stance" >}}): connects testing, scrutiny of measurements, reflection, and revising interpretations. This supplies an orientation shared by several directions.
+- [Critical empirical practice]({{< ref "engineering/evidence/critical-stance" >}}): connects testing, scrutiny of measurements, reflection, and revising interpretations. This supplies an orientation shared by several directions.
 - Reflective practice: broader background on learning from experience and challenging assumptions; supporting material rather than an LLM-specific method.
 - [Design science method]({{< ref "ai-engineering/delivery/design-science" >}}): source material on problems, requirements, constructing artifacts, demonstration, and evaluation. Its problem-explication framing differs from the open-ended inquiry note; the two are not the same procedure.
 
@@ -48,10 +48,10 @@ The first four match the topic most closely. The fifth is a substantial neighbor
 
 - [Workflow evolution and autonomy]({{< ref "ai/design/dialogue-approach/02-draft-pipeline/09-workflow-evolution-and-autonomy" >}}): the direct comparison between deterministic-first and LLM-first development, invoking bottom-up emergence and grounded theory. Framed as an open design question.
 - [Sandbox-first capability discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}): a proposed engineering method for observing behavior under a broad tool environment, then adding structure where experiments justify it.
-- [Exploratory pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}): inspect uncertain stage decisions, intervene, compare, and progressively formalize policies. The source labels these as proposals.
-- [Inspectable pipeline workbenches]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches" >}}): concrete proposed artifacts for scenarios, variants, stages, interventions, judgments, and traces.
+- Exploratory pipeline design: inspect uncertain stage decisions, intervene, compare, and progressively formalize policies. The source labels these as proposals.
+- Inspectable pipeline workbenches: concrete proposed artifacts for scenarios, variants, stages, interventions, judgments, and traces.
 - [Retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}): an especially useful bridge. It distinguishes improving the **current investigation** from learning policies for **future workflows**. Repeated interventions suggest hypotheses; they do not automatically justify general rules.
-- [Design observations prompted by Hebbia]({{< ref "ai/design-research/interactive-systems/04-design-observations-from-hebbia" >}}) and [comments]({{< ref "ai/design-research/interactive-systems/04-design-observations-from-hebbia-comments" >}}): relevant material that only the metadata review surfaces, with no hits under the initial keywords. The author's observations concern visible, adjustable processes and collaborative investigation; they are not validated claims about the external product.
+- Design observations prompted by Hebbia and comments: relevant material that only the metadata review surfaces, with no hits under the initial keywords. The author's observations concern visible, adjustable processes and collaborative investigation; they are not validated claims about the external product.
 - [Behavioral compilation and specification]({{< ref "ai/design-research/03-language-and-compiler/11-behavioral-compilation-and-specification" >}}): an adjacent architecture proposal for using provisional LLM solutions to inform independently checked executable procedures. Related to progressive formalization, but more specific than general discovery.
 - [Development approaches and modes]({{< ref "ai-engineering/delivery/df-development-approach" >}}): distinguishes experiments, baselines, prototypes, and walking skeletons as optional modes chosen for the current uncertainty.
 
@@ -71,11 +71,11 @@ These uses stay distinct: an inspiration for learning across projects; a workflo
 
 
 - [Operation model]({{< ref "ai/product/discovery/analysis-or-operation-model" >}}): the closest match to "prototyping, but not only." It includes research, reframing, observation, examples, comparison, sketches, and experiments as inquiry moves.
-- [Exploratory design inquiry]({{< ref "ai/product/discovery/discovery-rewritten" >}}): the conceptual synthesis, including problem setting, reflection, and co-evolution of problem understanding and possible solutions.
+- [Exploratory design inquiry]({{< ref "ai/product/discovery/inquiry-research-synthesis" >}}): the conceptual synthesis, including problem setting, reflection, and co-evolution of problem understanding and possible solutions.
 - [LLM roles in discovery]({{< ref "ai/product/discovery/discovery-llm-roles" >}}): allows the LLM to introduce possibilities and choose useful representations without treating an illustrative construction choice as a settled direction.
 - [Discovery vocabulary]({{< ref "ai/product/discovery/dictionary" >}}): distinguishes design knowledge, inquiry artifacts, and an eventual product.
 - [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}): supporting conceptual material, reached through the reading map and the document outline.
-- [Interactive investigation principles]({{< ref "ai/design-research/collab-and-joint-work/joint-and-collap-principles" >}}): a navigation note with no hits under the initial keywords, pointing into the investigation research collection.
+- [Interactive investigation principles]({{< ref "ai/design-research/collab-and-joint-work/investigation-principles-route" >}}): a navigation note with no hits under the initial keywords, pointing into the investigation research collection.
 - [Twenty research problems]({{< ref "ai/design/ai-system-design/research-problems-and-prototypes" >}}): a proposed agenda using prototype comparisons to investigate representations, evidence, joint work, and change. The audit covers the outline and matching passages. It is an agenda, not a report of completed experiments.
 - Literature discovery problem: adjacent application material with a particularly relevant distinction between an accurate result list and a complete search.
 

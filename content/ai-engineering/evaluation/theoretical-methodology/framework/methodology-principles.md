@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Methodology Principles v1.1"
+title: "Methodology Principles v1.1 for LLM and Agentic Systems"
 description: "AI improvement requires separating what was changed from shifts in inputs, dependencies, and evaluation. The principles join that distinction to uncertainty, controlled experiments, constrained optimization, and incident learning."
 linkTitle: "Methodology Principles"
 ---

@@ -750,3 +750,14 @@ The long-term thing you may actually be designing is therefore not "a better pro
 It is closer to a **multi-paradigm constraint language that compiles to a small semantic calculus**, with ordinary languages used for unconstrained computation behind its boundaries.
 
 That seems much more aligned with the theory: **use the weakest language that can express each class of decision, and compose those languages through a shared semantics.**
+
+## Library sources
+
+
+- [Gibbons et al. 2014](/sources/programming/functional-programming/gibbons-2014-folding-dsls-deep-and-shallow-embeddings.pdf.enc), *Folding Domain-Specific Languages: Deep and Shallow Embeddings*: sections 4.1, "Multiple interpretations", 4.4, "Parametrized interpretations", and 4.5, "Implicitly parametrized interpretations", one DSL given several interpretations, as folds over a deep embedding or as a shallow embedding parameterised by an algebra; section 4.5 is the type-class style of the note's `class Monad m => System m`, with one instance per interpreter; on *Scala and Haskell*.
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: section 13.2, "Final Style", an algebra written as `class Monad m => TicTacToe m` with one instance per interpretation, and section 13.1.2, "Restrictive Monads", on *Scala and Haskell*; section 14.1, "Final Style", where combining final-style algebras needs nothing beyond listing their constraints (`(Monad m, FS m, RandomGen m)`, the note's union of requirements), on *One Haskell technique deserves particular attention*; section 14.3, "Extensible Effects", an `Eff` monad over a type-level list of effects with `Member` constraints, the shape of the `Program (caps :: [Authority]) a` example in *Scala and Haskell*.
+
+Further reading:
+
+- [Granin 2025](/sources/programming/functional-programming/granin-2025-functional-design-and-architecture.pdf.enc), *Functional Design and Architecture*: sections 13.2.6, "Final tagless/mtl", and 15.2.5, "Testability of different approaches", a counterpoint to tagless final as the capability mechanism (constraint lists mix domain and domain-agnostic effects, and code can bypass the interface, so testability rates low); section 6.2, "Free monads as a functional interface", scenarios as values with several interpreters; on *One Haskell technique deserves particular attention*.
+- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell*: section 2.3.3, "Lists", on promoted type-level lists, and section 11.2, "Open Sums", which defines a `Member t ts` constraint by a type-level search through a list; section 5.2, "GADTs"; on *Scala and Haskell*.

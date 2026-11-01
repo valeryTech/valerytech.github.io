@@ -7,7 +7,7 @@ document_status: "archived"
 linkTitle: "URL Shortener Alternatives"
 ---
 
-Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/projects/url-shortener/url-shortener" >}}). Numerical targets and technical claims below retain their original draft context.
+Preserved notes from before the March 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/projects/url-shortener/url-shortener" >}}). Numerical targets and technical claims below retain their original draft context.
 
 <!-- Original note follows. -->
 

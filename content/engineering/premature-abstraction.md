@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Premature Abstraction in Software Design"
-description: "Recognize speculative generalization, model concrete workflows first, and use design probes before committing to shared abstractions."
+description: "Names for premature abstraction (speculative generality, premature generalization, YAGNI violation, wrong abstraction), their counterparts in Design Science and scientific reasoning, and a closing sketch of inquiry as an evolving information need."
 linkTitle: "Premature Abstraction"
 ---
 

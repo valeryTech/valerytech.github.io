@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Foundations of Functional Programming"
 description: "The ideas the rest of the functional programming notes build on: purity and effects, evaluation and laziness, the lambda calculus, functions and composition, and recursion and folds."
+weight: "10"
 linkTitle: "Foundations"
 ---
 

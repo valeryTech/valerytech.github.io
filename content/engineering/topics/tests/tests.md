@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Earlier Test Strategy Notes"
 description: "Earlier test-strategy notes connecting risk, change cost, testability, system contracts, evidence, and the practical test pyramid, including preparation checklists."
-linkTitle: "Testing Notes"
+linkTitle: "Earlier Notes"
 ---
 # meta-way
 
@@ -946,3 +946,10 @@ For any new test, answer:
 3. Will the failure localize quickly? If not, which artifacts will support localization?
 4. Can it be deterministic? If not, should it move to a different layer or cadence (nightly vs PR)?
 5. Does it duplicate lower-level coverage? If yes, why is the duplication justified?
+
+## Library sources
+
+
+Further reading:
+
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 1, "Creating a Ubiquitous Language" (each context has its own dialect, so the same word can mean different things); chapter 7, "State Machines" (states and allowed transitions as types); chapter 10, "Working with Domain Errors" (domain errors, panics and infrastructure errors, and which to model as values); on *Domain model and semantic contracts*

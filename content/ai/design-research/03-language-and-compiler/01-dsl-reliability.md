@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "3.1 DSLs Enable Reliable Use of LLMs"
+title: "3.1 Unmesh Joshi on DSLs for Reliable LLM Use"
 description: "A captured article argues that small validated DSLs improve LLM generation and repair, illustrated by step-marked PlantUML and YAML for diagram-rich presentations."
 weight: "10"
-linkTitle: "3.1 DSL Reliability"
+linkTitle: "3.1 Joshi on DSLs"
 ---
 
 <!-- Navigation added during reassembly on 2026-03-30. Original source text is unchanged. -->

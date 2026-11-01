@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Semantic Routing and Mixed-Initiative Interaction"
+title: "Recipe Bot Patterns: Semantic Routing and Mixed Initiative"
 description: "Uses a recipe workflow to connect semantic routing, mixed-initiative clarification, and candidate selection before expensive generation."
 linkTitle: "Semantic Routing"
 ---

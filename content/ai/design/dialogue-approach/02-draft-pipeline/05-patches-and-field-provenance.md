@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Draft Patches and Field Provenance"
 description: "Builds transaction drafts through subsystem patches and field-level provenance, explaining how explicit, inferred, defaulted, and uncertain values should appear during review."
+weight: "50"
 linkTitle: "Patches and Provenance"
 ---
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "1.2 Constrained Generativity and Semantic Substrate Design"
+title: "1.2 Semantic Substrate Design: A Research Synthesis"
 description: "A research synthesis framing substrate design as maximal permissiveness subject to guarantees, identifying open problems in constraint synthesis, semantic interoperability, and composing authority, replication, and provenance."
 weight: "20"
 linkTitle: "1.2 Semantic Substrate Design"

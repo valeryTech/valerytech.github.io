@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Memory in Cognitive Architectures and AI Agents"
+title: "Cognitive Architectures and Agent Memory: Keyed Citations"
 description: "A research synthesis proposing immutable episodes, revisable temporal beliefs, and offline consolidation for personalized agents, with safeguards against reflection echoes, adversarial evaluations, and a graduate curriculum."
-linkTitle: "Memory Architectures"
+linkTitle: "Keyed-Citation Synthesis"
 ---
 ## Executive summary
 

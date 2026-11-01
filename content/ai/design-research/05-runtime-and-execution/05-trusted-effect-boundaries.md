@@ -137,7 +137,7 @@ These definitions are local copies from the [complete original bibliography]({{<
 
 The following passage from the natural-language interface dialogue (archived source 011) retains the full email example and proposed safeguards. Its statements about models and security remain saved LLM claims rather than independently checked findings from the split.
 
-The [language-intent note]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) retains the opening request and general argument. Read the [comments]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction-comments" >}}#interpretation-and-authority-are-separate) for the relation between interpreted intent and permission to act. The [audit map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-7-natural-language-interface-dialogue) records the original range.
+The language-intent note retains the opening request and general argument. Read the comments for the relation between interpreted intent and permission to act. The audit map records the original range.
 
 <!-- Natural-language instruction-boundary passage begins below. -->
 
@@ -194,7 +194,7 @@ Natural language cannot replace those.
 
 The following passage from the language-interface architecture reply (archived source 012) retains the complete authority example and proposed refusal of a refund. The distinction concerns permission for the concrete operation and its arguments rather than general access to a tool. The passage remains a saved proposal, not an implemented security guarantee.
 
-The [architecture overview]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries" >}}) retains the overall model. The related [operation contract]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}) is separate from authority to execute it. Read the [architecture comments]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries-comments" >}}#domain-boundaries-and-operation-authority) for identity, arguments, and the effect boundary. The [stage 8 audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-8-language-interfaces-and-architecture) records the original range.
+The architecture overview retains the overall model. The related [operation contract]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}) is separate from authority to execute it. Read the architecture comments for identity, arguments, and the effect boundary. The stage 8 audit records the original range.
 
 <!-- Concrete-operation authorization passage begins below. -->
 

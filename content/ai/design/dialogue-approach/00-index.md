@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Dialogue Approach: Reading Map"
 description: "A reading map from task-assistance framing and authority to hybrid interaction and Quick Add’s concrete transaction-draft architecture, with research comparisons and sources."
+weight: "5"
 linkTitle: "Reading Map"
 ---
 

@@ -70,7 +70,7 @@ When summarizing or extracting, preserve conditions that affect the decision: ne
 
 Clark and Brennan describe communication as coordination toward sufficient shared understanding for the activity, with costs that depend on the medium. This supports treating clarification and repair as part of the interaction. It does not establish a particular AI interface design. [Grounding in Communication (1991)](https://web.stanford.edu/~clark/1990s/Clark%2C%20H.H.%20_%20Brennan%2C%20S.E.%20_Grounding%20in%20communication_%201991.pdf).
 
-The product questions above are engineering applications of these distinctions. Evaluate them through [real use]({{< ref "ai-engineering/causal-stack/practical-checks" >}}); they are not a claim that natural language always needs a formal intermediate representation.
+The product questions above are engineering applications of these distinctions. Evaluate them through [real use]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}); they are not a claim that natural language always needs a formal intermediate representation.
 
 ## Library sources
 

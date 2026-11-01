@@ -13,7 +13,7 @@ Preparation combines technical understanding, a way to structure the discussion,
 
 
 - **Foundations:** distributed systems, data and databases, architecture, and software engineering.
-- **Building blocks:** APIs, storage, caching, load balancing, messaging, and coordination. Use the [pattern map]({{< ref "system-design/elements/elements" >}}), organized by design question, to identify gaps.
+- **Building blocks:** APIs, storage, caching, load balancing, messaging, and coordination. Use the [pattern map]({{< ref "system-design/elements/pattern-map" >}}), organized by design question, to identify gaps.
 - **Quality requirements:** scalability, reliability, availability, consistency, latency, and security. Practice connecting each requirement to a specific operation and decision in the [NFR guide]({{< ref "system-design/nfr/non-functional-requirements" >}}).
 - **Design delivery:** choose a [framework]({{< ref "system-design/interview/frameworks" >}}) and become comfortable explaining the design as it develops.
 - **Collaboration:** clarify assumptions, invite feedback, make decisions, and adapt. Use [interview practice]({{< ref "system-design/interview" >}}) to review this separately from technical knowledge.
@@ -35,7 +35,7 @@ Start mock interviews early enough to discover weaknesses in communication, paci
 ## Build the toolbox through use
 
 
-Begin with a few principles, components, and patterns. For each, record the problem it solves, its mechanism, alternatives, trade-offs, and the next problem it creates. The [hub and pattern format]({{< ref "system-design/elements/elements" >}}#hub-and-pattern-format) gives a consistent shape.
+Begin with a few principles, components, and patterns. For each, record the problem it solves, its mechanism, alternatives, trade-offs, and the next problem it creates. The [hub and pattern format]({{< ref "system-design/elements/pattern-map" >}}#hub-and-pattern-format) gives a consistent shape.
 
 Select varied exercises rather than accumulating complete reference architectures. A URL shortener emphasizes read/write paths and identifiers; file storage adds large objects and synchronization; Ticketmaster introduces contention and reservations.
 
@@ -59,6 +59,6 @@ Peers, mentors, community discussions, and implementation experiments can all pr
 
 System design connects to product and UX, organizational boundaries, project constraints, and changes over time. An interview compresses this into a short conversation and usually leaves much of the implementation and organizational context unspecified.
 
-When working on a real system, extend the discussion to delivery, team ownership, migration, operation, and evolution. The [system design flow]({{< ref "system-design" >}}) covers that broader use, including prototyping with [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}). See [design principles]({{< ref "system-design/02-system-design" >}}) for the perspective and [resources]({{< ref "system-design/resources" >}}) for reading and communities.
+When working on a real system, extend the discussion to delivery, team ownership, migration, operation, and evolution. The [system design flow]({{< ref "system-design" >}}) covers that broader use, including prototyping with [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}). See [design principles]({{< ref "system-design/design-principles" >}}) for the perspective and [resources]({{< ref "system-design/resources" >}}) for reading and communities.
 
 The [original preparation notes]({{< ref "system-design/archive/study-plan-v0" >}}) retain the earlier plan, field map, hypotheses, and video references.

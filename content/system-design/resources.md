@@ -11,9 +11,9 @@ A catalog of the courses, guides, talks, papers, and communities collected in th
 ## Courses and structured material
 
 
-- **Hello Interview:** [delivery-framework notes]({{< ref "system-design/interview/frameworks/framework-hi" >}}), [worked cases]({{< ref "system-design/projects" >}}), and the [collected video channel](https://www.youtube.com/@hello_interview).
+- **Hello Interview:** [delivery-framework notes]({{< ref "system-design/interview/frameworks/hello-interview" >}}), [worked cases]({{< ref "system-design/projects" >}}), and the [collected video channel](https://www.youtube.com/@hello_interview).
 - **System Design for Interviews and Beyond:** [course](https://systemdesignthinking.thinkific.com/courses/system-design-for-interviews-and-beyond) and [video series](https://www.youtube.com/@SystemDesignInterview/videos). The original notes emphasize learning the thought process as well as the concepts.
-- **interviewing.io:** [framework notes]({{< ref "system-design/interview/frameworks/framework-iv" >}}), [interview guidance]({{< ref "system-design/interview/iw-io-interview" >}}), and the [worked-example guide](https://interviewing.io/guides/system-design-interview/part-four#chapter-one).
+- **interviewing.io:** [framework notes]({{< ref "system-design/interview/frameworks/interviewing-io" >}}), [interview guidance]({{< ref "system-design/interview/iw-io-interview" >}}), and the [worked-example guide](https://interviewing.io/guides/system-design-interview/part-four#chapter-one).
 - **AlgoExpert:** fundamentals and examples courses, plus "Systems Design Interview Tips."
 - **Zero To Mastery:** "Master the Coding Interview: System Design + Architecture (Part 1)."
 - **DesignGurus:** [system-design interview playbook](https://www.designgurus.io/path/system-design-interview-playbook).
@@ -47,7 +47,7 @@ The preparation notes highlight the roadmap's categories and its senior/staff-le
 - [Database notes]({{< ref "engineering/data/databases" >}}).
 - [Architecture style and service boundaries]({{< ref "system-design/elements/boundaries" >}}), including microservices reading.
 - **Hussein Nasser:** "Fundamentals of Backend Communications and Protocols" and "Fundamentals of Backend Engineering".
-- [Architecture principles and engineering blogs]({{< ref "system-design/02-system-design" >}}#models-and-further-reading).
+- [Architecture principles and engineering blogs]({{< ref "system-design/design-principles" >}}#models-and-further-reading).
 - [NFR and SLO reading list]({{< ref "system-design/nfr/non-functional-requirements" >}}#sources-and-further-study).
 
 ## Engineering talks and case studies

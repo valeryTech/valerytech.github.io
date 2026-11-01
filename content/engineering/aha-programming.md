@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "AHA Programming: Avoid Hasty Abstractions"
+title: "AHA Programming, by Kent C. Dodds"
 description: "Compare DRY, WET, and AHA to decide when duplication is acceptable and when repeated code justifies an abstraction."
 linkTitle: "AHA Programming"
 ---

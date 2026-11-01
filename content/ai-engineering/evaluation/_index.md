@@ -17,7 +17,7 @@ These notes cover how to test AI system behavior, interpret the evidence, and de
 
 | Topic | Read |
 | --- | --- |
-| Purpose and scope | [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/ai-evaluation" >}}) |
+| Purpose and scope | [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/introduction" >}}) |
 | Test situations | [Coverage and case design]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) |
 | Executions, traces, and what they establish | [Evidence model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) |
 | Criteria and conclusions | [Judgment and findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}) |

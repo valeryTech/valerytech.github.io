@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Human-AI Collaboration Patterns Report"
+title: "Human-AI Collaboration Patterns Report: Reading Route"
 description: "A guide to the collaboration research synthesis, pattern selection, general mechanics, and evaluation rubrics; the linked studies and catalogs sit outside the published website."
 linkTitle: "Patterns Report"
 ---

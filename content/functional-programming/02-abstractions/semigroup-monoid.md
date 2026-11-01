@@ -5,6 +5,7 @@ title: "Semigroups and Monoids"
 aliases:
   - "/functional-programming/semigroup-monoid/"
 description: "Associative combination and the identity element: definitions, laws, examples and uses of semigroups and monoids, and why the identity matters."
+weight: "60"
 linkTitle: "Semigroup and Monoid"
 ---
 
@@ -155,13 +156,14 @@ See also: [Applicative]({{< ref "functional-programming/02-abstractions/applicat
 ## Library sources
 
 
-- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: chapter 15, Monoid, Semigroup, covers the classes and their laws, why `Integer` has no single `Monoid` (the newtype wrappers), and testing the laws with QuickCheck.
+- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: chapter 15, Monoid, Semigroup, covers the classes and their laws, why `Integer` has no single `Monoid` (the newtype wrappers), and testing the laws with QuickCheck; section 15.9, Different instance, same representation, on `All` and `Any` as `Bool`'s two monoids, on *Instances*; section 15.13, Semigroup ("NonEmpty, a useful datatype"), on `NonEmpty` as a semigroup with no `Monoid` because it has no identity, on *Why the identity matters*.
 - [Welsh et al. 2020](/sources/programming/scala/welsh-2020-scala-with-cats.pdf.enc), *Scala with Cats*: chapter 2, Monoids and Semigroups, the same ideas in Scala with Cats.
 - [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth*: chapter 2, section 2.1.3, Combining turns with Semigroup and Monoid: both classes on a small example of combining the turns of a radar antenna.
-- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 6, Type Classes, section "Wrapping Types with Newtype": `Semigroup` and `Monoid` as GHCi shows them, and newtype wrappers that give one type several instances, such as combining `Maybe` values versus taking the first non-empty one.
+- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 6, Type Classes, section "Wrapping Types with Newtype": `Semigroup` and `Monoid` as GHCi shows them, `mempty` as tied to an operation rather than a type, and `Sum` and `Product` newtypes that give `Int` two monoids; on *Examples*. Section "Deriving More Things": a first-non-empty monoid for `Maybe`, then the same instance obtained with `DerivingVia`; on *Uses*.
 - [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling*: chapter 4, section 4.1.2: spotting a monoid in two folds over money in a banking model, which needs two `Monoid[Money]` instances, one for addition and one for comparison; in Scala.
 
 Further reading:
 
 - [Pilquist et al. 2023](/sources/programming/scala/pilquist-2023-functional-programming-in-scala-2e.pdf.enc), *Functional Programming in Scala (2nd edition)*
 - [Milewski 2019](/sources/programming/category-theory/milewski-2019-category-theory-for-programmers-scala-edition.pdf.enc), *Category Theory for Programmers (Scala edition)*
+- [Bird and Gibbons 2020](/sources/programming/functional-programming/bird-2020-algorithm-design-with-haskell.pdf.enc), *Algorithm Design with Haskell*: chapter 1, Functional programming, exercise and answer 1.10: `foldr (⊕) e` and `foldl (⊕) e` agree on finite lists when `⊕` is associative with identity `e`; on *Why the identity matters*.

@@ -54,10 +54,3 @@ The examples should remain examples until a separate evaluation establishes wide
 The case study uses an internal Java DSL. The earlier compiler dialogue discusses restricting generated programs and separating generation from execution.
 
 A design that uses a similar DSL as a security boundary must specify which Java constructs it accepts and how execution is isolated. The case study alone does not define that boundary, and compilation alone does not establish permission to perform external actions.
-
-## Why the interview moved to the database note
-
-
-The NoSQL exchange concerns database transactions, query optimizers, and developer experience. It is now between the [DBOS discussion]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#specialized-engines-and-dbos-from-the-stonebraker-interview) and the [text-to-SQL discussion]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#text-to-sql-rubicon-and-benchmarks-from-the-interview), in its original interview order.
-
-Stonebraker's argument about compilers is a related perspective, not evidence that the proposed agent DSL has the same guarantees as a database system. The interview claims remain attributed source material and have not been independently verified here.

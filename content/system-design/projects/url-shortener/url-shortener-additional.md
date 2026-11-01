@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "URL Shortener: Interview Checklist"
+title: "URL Shortener: Estimates, Checklist, and Design Skeleton"
 description: "Supplementary URL-shortener estimation, functional completion checks, a design skeleton, and a degradation plan for the core redirect path."
-linkTitle: "Interview Checklist"
+linkTitle: "Checklist and Skeleton"
 ---
 
 Supplementary estimation, completion checks, and design skeleton. Read alongside the [working design]({{< ref "system-design/projects/url-shortener/url-shortener" >}}) and the [alternative NFR assumptions]({{< ref "system-design/projects/url-shortener/url-shortener-nfrs" >}}).

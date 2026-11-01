@@ -7,7 +7,7 @@ document_status: "archived"
 linkTitle: "Scalability Reading Notes"
 ---
 
-Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/nfr/scalability" >}}). Numerical targets and technical claims below retain their original draft context.
+Preserved notes from before the March 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/nfr/scalability" >}}). Numerical targets and technical claims below retain their original draft context.
 
 <!-- Original note follows. -->
 

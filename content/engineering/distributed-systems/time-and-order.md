@@ -174,7 +174,7 @@ Neither a logical clock nor a linearizable generator implements locks or uniquen
 - Use the monotonic clock for timeouts, rate windows, and lease durations on one node. Use the time-of-day clock only for dates people read, or where an approximate order is harmless.
 - For conflicts in multi-leader and leaderless stores, choose between LWW, which drops one of two concurrent writes and, under skew, sequential ones too, and version vectors with a merge. See [Dynamo-style design]({{< ref "system-design/projects/key-value-store" >}}#dynamo-style-design) and [coordination]({{< ref "system-design/elements/data-at-scale" >}}#coordination).
 - Any lease, lock, or leader claim that protects data needs a fencing token checked by the storage, or a conditional write. That includes job leases in [task queues]({{< ref "system-design/elements/messaging" >}}#task-queues-and-scheduling).
-- For IDs, state which order is required: none (UUIDv4), rough creation order (Snowflake-style), causal, or real-time (a linearizable generator). See the unique ID row in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) and the [Snowflake case]({{< ref "system-design/projects/infra/slowflake-id" >}}).
+- For IDs, state which order is required: none (UUIDv4), rough creation order (Snowflake-style), causal, or real-time (a linearizable generator). See the unique ID row in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) and the [Snowflake case]({{< ref "system-design/projects/infra/snowflake-id" >}}).
 - If an anomaly would come from one user acting on two devices, or from any channel outside the system, a causal clock does not prevent it.
 
 ## Related notes

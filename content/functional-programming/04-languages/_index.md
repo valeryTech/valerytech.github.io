@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Functional Programming Languages: Haskell and Scala"
 description: "Language notes, ecosystems and learning resources for Haskell and Scala, the two languages the functional programming notes use."
+weight: "40"
 linkTitle: "Languages"
 ---
 

@@ -66,12 +66,12 @@ Start with [FP reading paths]({{< ref "functional-programming/05-practice/fp-rea
 
 The [type-driven design]({{< ref "type-driven-design" >}}) section holds the typed-modeling material that used to sit in these notes:
 
-- [Functional domain modeling]({{< ref "type-driven-design/functional-domain-modeling" >}}): effects kept out of the domain, and modules as algebras with interpreters.
-- [Effects, interpreters and wiring]({{< ref "type-driven-design/effects-and-interpreters" >}}): tagless final, Reader and Kleisli, free monads, ZIO and algebraic effects.
-- [Domain modeling with types]({{< ref "type-driven-design/domain-modeling-with-types" >}}): product and sum types and newtypes, moved from `haskell.md` and `scala.md`. Type-first design, moved from `haskell.md` too, is now in [Workflows and states]({{< ref "type-driven-design/workflows-and-states" >}}).
-- [Scala type system]({{< ref "type-driven-design/scala-type-system" >}}): abstract types, nominal and structural subtyping, and refined types, moved from `scala.md`.
-- [Declarative design]({{< ref "type-driven-design/declarative-design" >}}): functional programming as one of the declarative sub-paradigms.
+- [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}): effects kept out of the domain, and modules as algebras with interpreters.
+- [Effects, interpreters and wiring]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}): Reader and Kleisli, free monads, ZIO and algebraic effects; [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}) has a note of its own.
+- [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}) and [Newtypes and simple values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}): product and sum types and newtypes, moved from `haskell.md` and `scala.md`; the folder's overview is [Domain modeling with types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}). Type-first design, moved from `haskell.md` too, is now in [Workflows and states]({{< ref "type-driven-design/03-domain-modeling/workflows-and-states" >}}).
+- [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}): abstract types, nominal and structural subtyping, and refined types, moved from `scala.md`.
+- [Declarative design]({{< ref "type-driven-design/04-architecture/declarative-design" >}}): functional programming as one of the declarative sub-paradigms.
 
 Other notes:
 
-- [Language choice for AI systems]({{< ref "ai/design/workflow-design/langs-aspects" >}}): Go, Scala, Haskell and BEAM compared for AI systems.
+- [Language choice for AI systems]({{< ref "ai/design/workflow-design/language-choice" >}}): Go, Scala, Haskell and BEAM compared for AI systems.

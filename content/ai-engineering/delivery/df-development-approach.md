@@ -159,7 +159,7 @@ For example, a team may:
 
 The framework should help teams identify which approach is appropriate for each uncertainty rather than prescribing one approach for the entire project.
 
-See [Structured AI development approach]({{< ref "ai-engineering/approach/combined-approach" >}}) and [Cross-domain mindset]({{< ref "ai-engineering/approach/cross-domain-mindset" >}}).
+See [Structured AI development approach]({{< ref "ai-engineering/approach/structured-development-outline" >}}) and [Cross-domain mindset]({{< ref "ai-engineering/approach/swe-skills-in-ml" >}}).
 
 ## Library sources
 

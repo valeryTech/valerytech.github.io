@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "The Inference Ladder"
 description: "The section on one page: a capability is never observed, a score only indicates it, and between the two lies a ladder of inferences, each with its own way to fail. With a glossary across philosophy, psychometrics, and AI evaluation."
+weight: "5"
 linkTitle: "Inference Ladder"
 ---
 

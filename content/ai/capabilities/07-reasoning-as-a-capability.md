@@ -3,7 +3,8 @@ draft: false
 toc: true
 title: "Reasoning as a Capability"
 description: "A worked case: decomposing reasoning into capacity, representation, inference, knowledge, control, and metacognition, mapping the human literature onto LLMs, and evaluating reasoning as a capability profile rather than one score."
-linkTitle: "Reasoning as a Capability"
+weight: "70"
+linkTitle: "Reasoning"
 ---
 
 This note applies the section to one capability. [Capability constructs and validity]({{< ref "ai/capabilities/06-capability-constructs-and-validity" >}}) says a capability construct needs task families, demand dimensions, and relations to neighboring constructs. For reasoning, the human literature already offers much of that structure.
@@ -100,7 +101,7 @@ Natural-language chain of thought is one possible representation format.
 - **Tree of Thoughts**: explore, evaluate, and backtrack over candidate states ([arXiv](https://arxiv.org/abs/2305.10601)).
 - **Verifiers**: generate candidates and train a separate judge ([arXiv](https://arxiv.org/abs/2110.14168)).
 - **Process supervision**: reward intermediate steps, not only the final answer ([Let's Verify Step by Step](https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html)).
-- **ReAct**: interleave reasoning with actions that gather information ([arXiv](https://doi.org/10.48550/arXiv.2210.03629)); see also [the ReAct notes]({{< ref "ai-engineering/agents/react/analysis" >}}).
+- **ReAct**: interleave reasoning with actions that gather information ([arXiv](https://doi.org/10.48550/arXiv.2210.03629)); see also [the ReAct notes]({{< ref "ai-engineering/agents/react/definition-and-lineage" >}}).
 
 These are less about knowing more and more about procedures for using what is known. DeepSeek-R1 showed that RL with verifiable rewards produced reflection, verification, and strategy switching without human-written trajectories ([Nature](https://doi.org/10.1038/s41586-025-09422-z)). A decomposition:
 

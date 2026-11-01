@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Evaluation and Production Learning"
+title: "Evaluating Product Behavior: Deferred Note"
 description: "Evaluate the behavior promised to users as models, prompts, and architecture change. A gap can call for an engineering fix or a new product decision about what good behavior should mean."
-linkTitle: "Evaluation and Learning"
+linkTitle: "Evaluation (Deferred)"
 ---
 
 > **Status:** Deferred note. Evaluation is kept separate from the current operating model and is not developed here yet.

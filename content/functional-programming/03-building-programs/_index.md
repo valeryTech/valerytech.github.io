@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Building Functional Programs"
 description: "How real programs are built from pure functions: errors as values, effect systems, ways to structure effectful code, streams, concurrency and parallelism, and property-based testing."
+weight: "30"
 linkTitle: "Building Programs"
 ---
 

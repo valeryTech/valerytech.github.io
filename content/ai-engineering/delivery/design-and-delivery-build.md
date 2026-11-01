@@ -193,7 +193,7 @@ The references below provide concrete examples and deeper treatments for the lif
 
 
 - [User-system interactions]({{< ref "ai/design/interactions/user-system-interactions" >}}) connects JTBD and UX research to journey maps, service blueprints, requirements engineering, system capabilities, and success criteria.
-- [Context-to-task alignment]({{< ref "ai-engineering/context/retrieval/reframing" >}}) describes a task-first AI architecture built around the user's job, required context, tools, evidence, constraints, and verification signals.
+- [Context-to-task alignment]({{< ref "ai-engineering/context/retrieval/beyond-rag" >}}) describes a task-first AI architecture built around the user's job, required context, tools, evidence, constraints, and verification signals.
 
 ### Evaluation, observability, and operation
 

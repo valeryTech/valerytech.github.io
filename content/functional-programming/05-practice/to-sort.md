@@ -5,6 +5,7 @@ title: "Functional Programming Links to Sort"
 aliases:
   - "/functional-programming/to-sort/"
 description: "Unfiled functional programming links, open questions and todos, grouped by the note they should move to, from domain modelling and optics to Scala articles and the study plan."
+weight: "50"
 linkTitle: "Links to Sort"
 ---
 
@@ -15,7 +16,7 @@ Link labels come from the URL or the original jot; the pages themselves were not
 ## Domain modeling in Haskell and Scala
 
 
-These belong with [Functional domain modeling]({{< ref "type-driven-design/functional-domain-modeling" >}}) once read.
+These belong with [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}) once read.
 
 Haskell:
 
@@ -45,7 +46,7 @@ def area(s: Shape): Double = s match
 ```
 
 
-More in [Domain modeling with types]({{< ref "type-driven-design/domain-modeling-with-types" >}}); Schwarz 2020 (Library sources) works through the same encoding for DDD.
+More in [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}); Schwarz 2020 (Library sources) works through the same encoding for DDD.
 
 ### State machines
 
@@ -57,7 +58,7 @@ Open question: how to write a state machine functionally.
 - Running the machine over a history of events is a fold: `events.foldLeft(initial)(step)`, or a monadic fold (`foldM` in Cats and Haskell) for the `Either` version, which stops at the first rejected event. Replaying events like this is also the core of event sourcing.
 - To have the compiler reject invalid transitions instead of rejecting them at runtime, encode the state in the type (phantom types or GADTs). Signatures get more complex.
 
-See [Functional domain modeling]({{< ref "type-driven-design/functional-domain-modeling" >}}) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds).
+See [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}) and [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds).
 
 ## Lenses and optics
 
@@ -74,7 +75,7 @@ No note in this section covers optics yet. If these get read, they could start o
 
 Open question: the `Wrapper` concept and its use. The word is used in two senses.
 
-1. A newtype: `newtype Email = Email String` in Haskell, or `opaque type Email = String` in Scala 3. It is the same runtime value with a distinct type, so the compiler keeps the two apart. See [Domain modeling with types]({{< ref "type-driven-design/domain-modeling-with-types" >}}).
+1. A newtype: `newtype Email = Email String` in Haskell, or `opaque type Email = String` in Scala 3. It is the same runtime value with a distinct type, so the compiler keeps the two apart. See [Newtypes and simple values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}).
 2. Functor and monad tutorials call a context type such as `Option[A]` or `Future[A]` a wrapper: a value inside some extra structure that `map` and `flatMap` work through. The box picture breaks quickly. An `IO[A]`, a parser or a function `r -> a` does not contain an `A`; it can produce one when run. "Context" or "computation" fits better. See [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}) and [map and flatMap]({{< ref "functional-programming/02-abstractions/map-flatmap" >}}).
 
 ## Goals and languages
@@ -86,9 +87,9 @@ Open question: the `Wrapper` concept and its use. The word is used in two senses
 - F\* (Microsoft Research and Inria) combines dependent types with an effect system and sends proof obligations to an SMT solver. Project Everest used it, for example for the verified HACL\* cryptography library.
 - Haskell has no full dependent types, but GADTs, `DataKinds` and type families approximate some of them.
 
-See [Refinement and dependent types]({{< ref "type-driven-design/refinement-and-dependent-types" >}}).
+See [Refinement types]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types" >}}) and [Towards dependent types]({{< ref "type-driven-design/05-stronger-type-systems/dependent-types" >}}).
 
-**Type safety and referential transparency as the main goals.** Type safety means a well-typed program cannot hit a type error at runtime. Referential transparency means an expression can be replaced by its value without changing behaviour, which makes local reasoning, refactoring and testing straightforward ([Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency)). Both are really means: the goal is code you can understand and change without breaking it. Formal type safety is also weaker than the everyday meaning: it rules out runtime type errors, not broken invariants. How much of the invariants to put in the types is the question of [What belongs in the type system]({{< ref "type-driven-design/what-belongs-in-types" >}}).
+**Type safety and referential transparency as the main goals.** Type safety means a well-typed program cannot hit a type error at runtime. Referential transparency means an expression can be replaced by its value without changing behaviour, which makes local reasoning, refactoring and testing straightforward ([Referential transparency]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#referential-transparency)). Both are really means: the goal is code you can understand and change without breaking it. Formal type safety is also weaker than the everyday meaning: it rules out runtime type errors, not broken invariants. How much of the invariants to put in the types is the question of [What belongs in the type system]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}).
 
 **Metaprogramming.** Code that generates or inspects code at compile time. Scala 3 has `inline`, quoted macros and type class derivation with `derives`; Scala 2 macros cannot be used from Scala 3. Haskell has Template Haskell and `GHC.Generics`. In FP the most common use is deriving type class instances (JSON codecs, `Show`, `Eq`) instead of writing them by hand.
 
@@ -133,7 +134,7 @@ Kept as motivation:
 
 These inbox fragments now live in other notes:
 
-- Encoding contracts in types: [Encoding contracts in Scala]({{< ref "type-driven-design/scala-type-system" >}}#encoding-contracts-in-scala)
+- Encoding contracts in types: [Encoding contracts in Scala]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#encoding-contracts-in-scala)
 - Polymorphism: [Polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#polymorphism)
 - Type classes (three jots): [Type classes]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#type-classes)
 - Higher-kinded types (two jots): [Higher-kinded types]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#higher-kinded-types)
@@ -155,9 +156,11 @@ These inbox fragments now live in other notes:
 - [Vargas 2023](/sources/programming/scala/vargas-2023-why-on-earth-a-zio-io-monad.pdf.enc), *Why on earth a ZIO IO monad for Scala?*: a saved Medium article, now used in [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
 - [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: final, initial and free-monad styles side by side.
 - [Milewski 2019](/sources/programming/category-theory/milewski-2019-category-theory-for-programmers-scala-edition.pdf.enc), *Category Theory for Programmers (Scala edition)*: functors and natural transformations.
+- [Serrano Mena 2022](/sources/programming/functional-programming/serrano-mena-2022-haskell-almost-standard-libraries.pdf.enc), *Haskell: Almost Standard Libraries*: chapter 10, Optics. Section 10.1, "Lenses, prisms, (affine) traversals, folds", builds lenses with `makeLenses` and uses `view`, `set` and `over` (`%` in optics, `.` in lens and microlens). It covers affine traversals for fields only some constructors have (`preview`), prisms for constructors (`review`), traversals with `each`, and folds, and explains why a lens composed with a prism is only an affine traversal. Section 10.2, "Focusing on JSON documents", covers `aeson-optics` on untyped JSON; on *Lenses and optics*.
 
 Further reading:
 
 - [Allen and Moronuki 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*
 - [Bird and Gibbons 2020](/sources/programming/functional-programming/bird-2020-algorithm-design-with-haskell.pdf.enc), *Algorithm Design with Haskell*
 - [Nielson and Nielson 1999](/sources/programming/language-theory/nielson-1999-type-and-effect-systems.pdf.enc), *Type and Effect Systems*
+- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth*: section 13.2.3, "Dependent types and substituting them with singletons", encodes door states in types with singletons, so that closing a closed door doesn't compile, on *State machines*; section 14.2.3, "Accessing data with lenses", introduces lens, `Lens` for products and `Prism` for sums, on *Lenses and optics*; sections 12.2, "Data-type-generic programming", and 12.3, "Template Haskell and quasiquotes" (`GHC.Generics`, Template Haskell), and the opening of 13.2 (Haskell's types approximate dependent types; progress and preservation in 13.2.1), on *Goals and languages*.

@@ -20,7 +20,7 @@ The assistant should help an engineer find and understand those relationships be
 ## Positioning
 
 
-None of the building blocks is new. Code graphs, AST chunking, language-server tools for agents, graph-guided code localization and links between code and its history all exist, and several systems already combine a code graph with an LLM agent ([related work § Positioning]({{< ref "projects/code-intelligence/related-work" >}}#positioning)). A literature search on 2026-11-05 found both parts of the original bet partly covered: commit history, co-change and runtime traces are already used as LLM context, and structural indexes have already been compared with grep agents. What remains is narrower:
+None of the building blocks is new. Code graphs, AST chunking, language-server tools for agents, graph-guided code localization and links between code and its history all exist, and several systems already combine a code graph with an LLM agent ([related work § Positioning]({{< ref "projects/code-intelligence/related-work" >}}#positioning)). A literature search on 2026-04-05 found both parts of the original bet partly covered: commit history, co-change and runtime traces are already used as LLM context, and structural indexes have already been compared with grep agents. What remains is narrower:
 
 - configuration and infrastructure evidence linked to code, and history, configuration and runtime evidence combined for open developer questions rather than benchmark repair;
 - a cumulative per-level ladder (syntax, symbols, call and data flow, history) against both a tuned lexical baseline and a grep agent, split by evidence spread and by lexical overlap between question and code.

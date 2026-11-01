@@ -3,7 +3,8 @@ draft: false
 toc: true
 title: "Capabilities as Dispositions"
 description: "A capability is a disposition: a property defined by what a system would do under conditions that may never occur. The shift from actual behavior to possible behavior, and from a score to a response profile."
-linkTitle: "Capabilities as Dispositions"
+weight: "20"
+linkTitle: "Dispositions"
 ---
 
 The first answer to [what a capability claim says]({{< ref "ai/capabilities/01-what-is-a-capability-claim" >}}) is to name the kind of property involved. Voudouris et al. propose that capabilities and propensities are **dispositions**. ([Voudouris et al. 2026](/sources/ai-foundations/capabilities-and-measurement/voudouris-2026-measuring-what-ai-might-do.pdf.enc), [arXiv:2603.00063](https://arxiv.org/abs/2603.00063), §2)

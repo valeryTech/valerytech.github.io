@@ -8,9 +8,9 @@ linkTitle: "Reframing Review"
 
 Review date: 2026-04-19.
 
-This note records the rationale for revising the retrieval companion documents. It is an editorial assessment of their concepts and contracts, rather than a new architectural specification or a report of measured retrieval quality. The [main framing]({{< ref "ai-engineering/context/retrieval/reframing" >}}) remains a separate draft whose rewrite and final structure are undecided.
+This note records the rationale for revising the retrieval companion documents. It is an editorial assessment of their concepts and contracts, rather than a new architectural specification or a report of measured retrieval quality. The [main framing]({{< ref "ai-engineering/context/retrieval/beyond-rag" >}}) remains a separate draft whose rewrite and final structure are undecided.
 
-Use the [domain model]({{< ref "ai-engineering/context/retrieval/model" >}}) for shared definitions, the [contract note]({{< ref "ai-engineering/context/retrieval/conceptual-alignment" >}}) for interface responsibilities, [representation design]({{< ref "ai-engineering/context/retrieval/model-representation-design" >}}) for access-view choices, the [evidence-workflow proposal]({{< ref "ai-engineering/context/retrieval/reframing-proposed" >}}) for knowledge-intensive work, and [retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}) for experiments and work allocation.
+Use the [domain model]({{< ref "ai-engineering/context/retrieval/model" >}}) for shared definitions, the [contract note]({{< ref "ai-engineering/context/retrieval/conceptual-alignment" >}}) for interface responsibilities, [representation design]({{< ref "ai-engineering/context/retrieval/model-representation-design" >}}) for access-view choices, the [evidence-workflow proposal]({{< ref "ai-engineering/context/retrieval/evidence-workflows" >}}) for knowledge-intensive work, and [retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}) for experiments and work allocation.
 
 ## What the rename clarified
 

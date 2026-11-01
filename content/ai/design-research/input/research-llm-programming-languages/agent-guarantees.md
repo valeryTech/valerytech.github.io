@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Agent Guarantees"
+title: "Sources on Enforceable Guarantees for LLM Agents"
 description: "Research comparing capabilities, runtime enforcement, and information-flow controls for LLM agents, with examples and limits of enforceable permissions."
 linkTitle: "Agent Guarantees"
 ---

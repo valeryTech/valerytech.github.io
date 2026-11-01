@@ -19,7 +19,7 @@ Start with a customer trying to accomplish something. Use these notes to investi
 
 | Situation | Read | Produce |
 |---|---|---|
-| Starting or improving a product | [Learning through real product use]({{< ref "ai-engineering/causal-stack/practical-checks" >}}) | A customer job, current alternative, and useful first scope |
+| Starting or improving a product | [Learning through real product use]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}) | A customer job, current alternative, and useful first scope |
 | Something happened that deserves investigation | [Cases]({{< ref "ai-engineering/causal-stack/cases" >}}) | A short account linked to actual evidence |
 | A task failed or required unexpected work | [Debugging]({{< ref "ai-engineering/causal-stack/debugging" >}}) | The next useful inspection or comparison |
 | Someone proposes an explanation or practice | [Claims]({{< ref "ai-engineering/causal-stack/claims" >}}) | A scoped expectation and what would change our judgment |

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Coding-Agent Reflection Notes"
+title: "Coding-Agent Practice Notes (Working Draft)"
 description: "Use focused experiments before committing to a design; counter agent overengineering with conventional architecture, canonical documents, and workstream notes that survive session changes."
-linkTitle: "Reflection Notes"
+linkTitle: "Practice Notes (Draft)"
 ---
 # Goals
 

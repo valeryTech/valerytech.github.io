@@ -58,4 +58,4 @@ The research on [instruction hierarchy]({{< ref "ai-engineering/causal-stack/ref
 
 Measure the target failure and the work introduced by the remedy: false rejection, added questions, delay, cost, reviewer load, and maintenance.
 
-Use the [focused checks]({{< ref "ai-engineering/causal-stack/checks" >}}) for the affected behavior and the [product-use cycle]({{< ref "ai-engineering/causal-stack/practical-checks" >}}) for the customer outcome. Keep the current approach if the proposed addition has no demonstrated benefit for the decision at hand.
+Use the [focused checks]({{< ref "ai-engineering/causal-stack/checks" >}}) for the affected behavior and the [product-use cycle]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}) for the customer outcome. Keep the current approach if the proposed addition has no demonstrated benefit for the decision at hand.

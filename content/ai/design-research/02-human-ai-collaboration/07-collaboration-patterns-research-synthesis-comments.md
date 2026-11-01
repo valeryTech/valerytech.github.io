@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "2.7 Comments on Patterns Synthesis"
+title: "2.7 Comments on Collaboration Patterns Synthesis"
 description: "Questions evidence behind the proposed modes, transitions, and mechanics taxonomy, noting that diverse studies and product examples do not establish common definitions or effective oversight."
 weight: "71"
 linkTitle: "2.7 Comments"

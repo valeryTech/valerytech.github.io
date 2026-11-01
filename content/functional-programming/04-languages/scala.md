@@ -5,6 +5,7 @@ title: "Scala Language Notes and Resources"
 aliases:
   - "/functional-programming/scala/"
 description: "Scala language notes from expressions, classes, traits and variance to comprehensions, collections and implicits with their Scala 3 equivalents, plus the functional ecosystem, dependency injection, and books, talks and other resources."
+weight: "20"
 linkTitle: "Scala"
 ---
 
@@ -459,7 +460,7 @@ trait Abstract:
 ```
 
 
-A subclass fixes them with `type T = String`, a `def`, a `val` and a `var`. Abstract types are covered in [Abstract types and type members]({{< ref "type-driven-design/scala-type-system" >}}#abstract-types-and-type-members).
+A subclass fixes them with `type T = String`, a `def`, a `val` and a `var`. Abstract types are covered in [Abstract types and type members]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#abstract-types-and-type-members).
 
 ## Variances
 
@@ -674,8 +675,8 @@ The main options in Scala, from plainest to most structured:
   > *Real World Haskell*, "Types and functions" (near the end): <https://book.realworldhaskell.org/read/types-and-functions.html>
 
 - **Type constructors and higher-kinded types.** `List` is a type constructor: given a type `Int` it produces the type `List[Int]`. A higher-kinded type abstracts over type constructors, as in `trait Functor[F[_]]`. See [Higher-kinded types]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#higher-kinded-types).
-- **Structural subtyping and path-dependent types**: see [Nominal and structural subtyping]({{< ref "type-driven-design/scala-type-system" >}}#nominal-and-structural-subtyping) and [Path-dependent types]({{< ref "type-driven-design/scala-type-system" >}}#path-dependent-types). The rest of the type system is in [Scala type system]({{< ref "type-driven-design/scala-type-system" >}}).
-- **Newtypes and refinement types**: value classes and opaque types are in [Primitive obsession and the newtype pattern]({{< ref "type-driven-design/domain-modeling-with-types" >}}#primitive-obsession-and-the-newtype-pattern); refinement types and Iron in [Scala's terminology trap]({{< ref "type-driven-design/refinement-and-dependent-types" >}}#scalas-terminology-trap).
+- **Structural subtyping and path-dependent types**: see [Nominal and structural subtyping]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping) and [Path-dependent types]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#path-dependent-types). The rest of the type system is in [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}).
+- **Newtypes and refinement types**: value classes and opaque types are in [Primitive obsession and the newtype pattern]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#primitive-obsession-and-the-newtype-pattern); refinement types and Iron in [Scala's terminology trap]({{< ref "type-driven-design/05-stronger-type-systems/refinement-types-by-language" >}}#scalas-terminology-trap).
 
 Links on types:
 
@@ -734,7 +735,7 @@ In Scala 2 the extension block becomes a plain method `def flatMap[A, B](fa: F[A
 
 Scala material on these topics lives in the concept notes:
 
-- Modelling with `Option` and ADTs: [A flag plus an optional value]({{< ref "type-driven-design/domain-modeling-with-types" >}}#a-flag-plus-an-optional-value)
+- Modelling with `Option` and ADTs: [A flag plus an optional value]({{< ref "type-driven-design/03-domain-modeling/illegal-states-unrepresentable" >}}#a-flag-plus-an-optional-value)
 - Pushing impurity out of functions: [Functional core, imperative shell]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#functional-core-imperative-shell)
 - Copy-and-return style and persistent data structures: [Immutability and functional methods]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#immutability-and-functional-methods)
 - Partially applied functions and closures: [Lambdas, closures and scope]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#lambdas-closures-and-scope) and [Currying and partial application]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#currying-and-partial-application)
@@ -781,7 +782,7 @@ More exercises and project ideas are in [Exercises and projects]({{< ref "functi
 ### Design and modelling
 
 
-The three docs.scala-lang.org links are chapters of the official Scala 3 Book and the shortest starting point for modelling with case classes, enums and ADTs in Scala 3. See also [Domain modeling with types]({{< ref "type-driven-design/domain-modeling-with-types" >}}).
+The three docs.scala-lang.org links are chapters of the official Scala 3 Book and the shortest starting point for modelling with case classes, enums and ADTs in Scala 3. See also [Algebraic data types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
 
 - Scala 3 Book, FP domain modelling: <https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html>
 - Scala 3 Book, ADTs and GADTs: <https://docs.scala-lang.org/scala3/book/types-adts-gadts.html>
@@ -855,7 +856,7 @@ Scaladex (index.scala-lang.org), the official index of Scala libraries, and awes
 - [ ] Read *Programming in Scala* section 18.5 (lower bounds) and section 18.6 (contravariance and the Liskov Substitution Principle) ([PDF](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc)).
 - [ ] Work through the Box example on the Tour of Scala's Variances page.
 
-See also: [Scala type system]({{< ref "type-driven-design/scala-type-system" >}}) for the type system, [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}), [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) and [Haskell]({{< ref "functional-programming/04-languages/haskell" >}}). Also [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for fs2, [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for fibers, and [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Either`.
+See also: [Scala type system]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}) for the type system, [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Functions and composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}), [Call-by-name in Scala]({{< ref "functional-programming/01-foundations/evaluation-and-laziness" >}}#call-by-name-in-scala), [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}) and [Haskell]({{< ref "functional-programming/04-languages/haskell" >}}). Also [Structuring effectful programs]({{< ref "functional-programming/03-building-programs/structuring-effectful-programs" >}}) for tagless final, [Streams]({{< ref "functional-programming/03-building-programs/streams" >}}) for fs2, [Concurrency and parallelism]({{< ref "functional-programming/03-building-programs/concurrency" >}}) for fibers, and [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}) for `Either`.
 
 ## Library sources
 
@@ -874,5 +875,6 @@ Further reading:
 - [Sfregola 2021](/sources/programming/scala/sfregola-2021-get-programming-with-scala.pdf.enc), *Get Programming with Scala*
 - [Li 2020](/sources/programming/scala/li-2020-hands-on-scala-programming.pdf.enc), *Hands-on Scala Programming*
 - [Welsh and Gurnell 2020](/sources/programming/scala/welsh-2020-scala-with-cats.pdf.enc), *Scala with Cats*
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 9, "Injecting Dependencies": dependencies passed as function parameters and supplied once at the top level by partial application, the functional form of option 1; on *Dependency injection*.
 - [Schwarz 2020](/sources/programming/scala/schwarz-2020-scala-3-by-example-adts-for-ddd-part-1.pdf.enc), *Scala 3 by Example: ADTs for DDD, Part 1*
 - [Volpe 2023](/sources/programming/scala/volpe-2023-functional-event-driven-architecture.pdf.enc), *Functional Event-Driven Architecture*

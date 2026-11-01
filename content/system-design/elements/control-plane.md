@@ -8,7 +8,7 @@ linkTitle: "Control Plane"
 
 **Question:** how do you change and manage a system -- its configuration, routing, policies, and capacity -- without putting that work on the path that serves requests?
 
-Pattern note in the [pattern map]({{< ref "system-design/elements/elements" >}}). It touches several hubs: [the request path]({{< ref "system-design/elements/request-path" >}}), [containing failure]({{< ref "system-design/elements/containing-failure" >}}), and [operating services]({{< ref "system-design/elements/operating-services" >}}).
+Pattern note in the [pattern map]({{< ref "system-design/elements/pattern-map" >}}). It touches several hubs: [the request path]({{< ref "system-design/elements/request-path" >}}), [containing failure]({{< ref "system-design/elements/containing-failure" >}}), and [operating services]({{< ref "system-design/elements/operating-services" >}}).
 
 ## The split
 

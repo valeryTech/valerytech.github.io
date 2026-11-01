@@ -28,20 +28,20 @@ The correspondence below is a working interpretation, not a claim made by the fr
 - [Study and practice plan]({{< ref "system-design/interview/study-and-practice" >}}): what to learn, a practice loop, and how to review a mock interview.
 - [Interview frameworks]({{< ref "system-design/interview/frameworks" >}}): Hello Interview, interviewing.io, the four-step outline, a personal draft, and an extended collection, with a comparison of their emphases.
 - [Practice cases]({{< ref "system-design/projects" >}}) and the [case template]({{< ref "system-design/projects/case-template" >}}).
-- [Problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}): questions that apply inside any framework, and outside interviews.
+- [Problem-solving checklist]({{< ref "system-design/problem-solving-checklist" >}}): questions that apply inside any framework, and outside interviews.
 
 ## Communication and review
 
 
 - [Communication phrases]({{< ref "system-design/interview/phrases" >}}): clarify scope, state assumptions, compare choices, and respond to feedback.
 - [Mock-review method and observations]({{< ref "system-design/interview/mock-interviews" >}}): review a complete attempt and select the next practice target.
-- [Practice review rubric]({{< ref "system-design/interview/sd-signals-openai" >}}): a detailed scoring draft with behavioral examples. Its weights and thresholds are proposed practice tools.
+- [Practice review rubric]({{< ref "system-design/interview/practice-review-rubric" >}}): a detailed scoring draft with behavioral examples. Its weights and thresholds are proposed practice tools.
 
 ## Source material
 
 
 - [interviewing.io interview notes]({{< ref "system-design/interview/iw-io-interview" >}}): interview types, assessment dimensions, collaboration, warning signs, and technical depth.
-- [Collected interview comments]({{< ref "system-design/interview/sd-interview-input" >}}): practitioner opinions and discussion excerpts. Read them in their original context.
+- [Collected interview comments]({{< ref "system-design/interview/collected-interview-comments" >}}): practitioner opinions and discussion excerpts. Read them in their original context.
 
 ## Library sources
 

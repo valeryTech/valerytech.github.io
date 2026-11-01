@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "The Mindset Shift for AI Products"
+title: "The Delivery Mindset Shift for AI Products"
 description: "A working delivery model replaces feature completion with responsibility for bounded production behavior, using transaction capture to connect narrow scope, required quality, evaluation, and ongoing learning."
 linkTitle: "Mindset"
 ---
@@ -27,7 +27,7 @@ done
 
 Working hypothesis: this model is too weak for AI products. The hard part is often not implementing the surface. It is establishing that the system behaves well enough, within a declared scope, that we are willing to operate it.
 
-The [Discovery/Delivery draft]({{< ref "ai/product/product-model/discovery-delivery/discovery-deliery-separation" >}}) points in this direction: Discovery asks whether and how to solve something; Delivery creates an enduring system that has to satisfy production constraints and customer dependence. The boundary is the commitment to that enduring system.
+The [Discovery/Delivery draft]({{< ref "ai/product/product-model/discovery-delivery/separating-discovery-and-delivery" >}}) points in this direction: Discovery asks whether and how to solve something; Delivery creates an enduring system that has to satisfy production constraints and customer dependence. The boundary is the commitment to that enduring system.
 
 Proposed delivery model:
 
@@ -86,7 +86,7 @@ observable, recoverable, and dependable.
 ```
 
 
-This fits the distinction in the [Discovery/Delivery draft]({{< ref "ai/product/product-model/discovery-delivery/discovery-deliery-separation" >}}): a discovery prototype may take shortcuts because its purpose is learning; production code is an enduring commitment with a different standard.
+This fits the distinction in the [Discovery/Delivery draft]({{< ref "ai/product/product-model/discovery-delivery/separating-discovery-and-delivery" >}}): a discovery prototype may take shortcuts because its purpose is learning; production code is an enduring commitment with a different standard.
 
 So the "minimum" in our initial production release is mainly about **coverage**, not about dropping production obligations.
 

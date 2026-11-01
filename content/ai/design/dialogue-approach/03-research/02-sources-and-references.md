@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Dialogue Approach: Sources and References"
 description: "An annotated source guide and bibliography for the task-assistance framing, explaining what practitioner platforms, mixed-initiative research, and dialogue frameworks contribute and where source access was limited."
+weight: "20"
 linkTitle: "Sources and References"
 ---
 

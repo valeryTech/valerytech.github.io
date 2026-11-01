@@ -79,14 +79,15 @@ Plan comparisons around the conditions that could change their interpretation. T
 - **Judgment:** define acceptable behavior with the responsible users or domain reviewers. Compare automated evaluators with those judgments before relying on their scores.
 - **Cost and latency:** evaluation work grows with the cases, variants, and repetitions selected. Choose coverage according to the decision and budget; measure the cost of the resulting product workflow as well as the test run.
 - **Changing conditions:** record source, model, tool, and environment changes. Keep a stable comparison set while also adding cases from current use, so historical comparisons and new coverage remain distinguishable.
-- **Customer outcomes:** an offline behavioral improvement needs follow-up in the actual workflow. Use the [product-use cycle]({{< ref "ai-engineering/causal-stack/practical-checks" >}}) to assess correction effort, completion, and downstream rework.
+- **Customer outcomes:** an offline behavioral improvement needs follow-up in the actual workflow. Use the [product-use cycle]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}) to assess correction effort, completion, and downstream rework.
 
 # Connections
 
 
-- [Evidence-based software engineering]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/ebse" >}}) - Empirical Software Engineering
+- [Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}}) - Empirical Software Engineering
+- [Evidence in software engineering]({{< ref "engineering/evidence" >}}) - principles for claims, measures, comparisons and methods
 - [Exploratory design]({{< ref "engineering/eng-exp/exploratory-design" >}})
-- [AI systems require behavioral evidence]({{< ref "ai-engineering/approach/empirical-nature" >}})
+- [AI systems require behavioral evidence]({{< ref "ai-engineering/approach/behavioral-evidence" >}})
 - [model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}})
 - [Why use an evaluation harness?]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}})
 - [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})
@@ -100,7 +101,7 @@ Treude, C., & Storey, M.-A. (2025). Generative AI and Empirical Software Enginee
 # Reasoning
 
 
-Experimentation is necessary in AI Systems Engineering because AI systems are **[empirical systems]({{< ref "ai-engineering/approach/empirical-nature" >}})**, not purely deterministic software systems.
+Experimentation is necessary in AI Systems Engineering because AI systems are **[empirical systems]({{< ref "ai-engineering/approach/behavioral-evidence" >}})**, not purely deterministic software systems.
 
 In conventional software engineering, if the logic is correct and the tests pass, the system often behaves predictably. In AI systems, especially those using machine learning or LLMs, behavior depends on data, prompts, model versions, retrieval quality, user inputs, distribution shifts, evaluation design, and runtime context. Many important properties cannot be proven from code inspection alone.
 

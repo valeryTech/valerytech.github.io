@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Callouts"
+title: "Callout Migration Test Catalog"
 description: "A migration regression catalog testing callout contexts, Hugo alert syntax, and local aliases used by the note converter."
 linkTitle: "Callouts"
 ---

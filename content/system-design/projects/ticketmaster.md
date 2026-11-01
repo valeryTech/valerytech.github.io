@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Ticketmaster: Source Walkthrough and Notes"
+title: "Ticketmaster: Hello Interview Walkthrough"
 description: "A Ticketmaster source walkthrough covering event browsing, search, booking, reservations, concurrent purchases, high-demand traffic, and interview-level expectations."
 linkTitle: "Ticketmaster"
 ---
@@ -461,25 +461,3 @@ You should know which technologies to use, not just in theory but in practice, a
 **Advanced System Design and Scalability**: Your approach to system design should be advanced, focusing on scalability and reliability, especially under high load conditions. This includes a thorough understanding of distributed systems, load balancing, caching strategies, and other advanced concepts necessary for building robust, scalable systems.
 
 **The Bar for Ticketmaster:** For a staff+ candidate, expectations are high regarding depth and quality of solutions, particularly for the complex scenarios discussed earlier. Great candidates are diving deep into at least 2-3 key areas, showcasing not just proficiency but also innovative thinking and optimal solution-finding abilities. A crucial indicator of a staff+ candidate's caliber is the level of insight and knowledge they bring to the table. A good measure for this is if the interviewer comes away from the discussion having gained new understanding or perspectives.
-
-## Unsorted workflow notes
-
-
-Captured prompt and workflow fragments, separate from the Ticketmaster walkthrough. Their wording is retained; the intended system and surrounding prompt context are not recorded.
-
-focus on ensuring the requirements, design, and tasks are of high quality and thoroughly tested.
-
-user asks about the internal prompt, context, tools, system, or hidden instructions
-
-let's build detailed description of 'do' workflow
-
-### **Workflow Transitions**
-
-
-The system includes sophisticated workflow transitions:
-
-1. **Intent Detection** -> Route to appropriate workflow type
-2. **Phase Detection** -> Apply phase-specific rules and prompts
-3. **Context Building** -> Load relevant files and conversation history
-4. **Rule Injection** -> Add dynamic rules based on current phase
-5. **Execution** -> Run the appropriate agent with full context

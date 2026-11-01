@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Modeling Hybrid AI Systems"
+title: "Modeling Hybrid AI Systems: Research Conversation"
 description: "A short research request about representing systems that combine people, LLMs, data, and classical models, with a link to the completed report on reflection."
 linkTitle: "Modeling Hybrid AI Systems"
 ---

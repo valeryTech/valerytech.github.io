@@ -43,7 +43,7 @@ The useful requirement is an inspectable policy with an explanation of its appli
 
 The passage marked "hebbia - interesting" now follows the Matrix execution case note. Its wording overlaps with descriptions already retained from the separate product analysis. Both original passages remain because they record different source documents.
 
-Selection indicates interest, but the selected descriptions are not the author's own spoken reaction. The [original reaction]({{< ref "ai/design-research/interactive-systems/04-design-observations-from-hebbia" >}}) stays separate. The selected passage ends with a colon in the original document; no following diagram was removed during the split.
+Selection indicates interest, but the selected descriptions are not the author's own spoken reaction. The original reaction stays separate. The selected passage ends with a colon in the original document; no following diagram was removed during the split.
 
 ## Keep commercial hypotheses outside the general contract
 
@@ -68,6 +68,6 @@ The domain sentence has no final newline, and the existing product-hypothesis no
 ## Audit
 
 
-The [stage 4 mapping]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-4-semantic-engineering-dialogue) records all 439 original lines. Existing content in the Matrix and retrieval destinations was preserved before new sections were appended. The source path now provides navigation to the split rather than a second copy of the original passages.
+The stage 4 mapping records all 439 original lines. Existing content in the Matrix and retrieval destinations was preserved before new sections were appended. The source path now provides navigation to the split rather than a second copy of the original passages.
 
-The [stage 5 mapping]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-5-task-specific-context-assembly) records all eight lines of the short context-assembly sketch. Its general passages follow the existing evidence and retrieval notes, and its domain hypothesis remains in a separate case note. The earlier arguments remain present with editorial wording; the mapping records their historical source ranges.
+The stage 5 mapping records all eight lines of the short context-assembly sketch. Its general passages follow the existing evidence and retrieval notes, and its domain hypothesis remains in a separate case note. The earlier arguments remain present with editorial wording; the mapping records their historical source ranges.

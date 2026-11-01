@@ -35,7 +35,7 @@ A later design needs to identify which dependencies are captured fixtures, immut
 ## The runtime interface needs further rules
 
 
-The proposed start, readiness, request, output, trace, and termination operations do not define retries, cancellation, partial readiness, cleanup after failure, persistence, or resource limits. The [application-state comments]({{< ref "ai/design-research/interactive-systems/05-application-state-and-computation-comments" >}}) identify related execution questions.
+The proposed start, readiness, request, output, trace, and termination operations do not define retries, cancellation, partial readiness, cleanup after failure, persistence, or resource limits. The application-state comments identify related execution questions.
 
 Isolation also needs an enforceable effect boundary. Running the production configuration in an expert workspace must not silently grant production credentials or permission for production writes. The [trusted-effect discussion]({{< ref "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries" >}}) remains separate from the instance lifecycle.
 

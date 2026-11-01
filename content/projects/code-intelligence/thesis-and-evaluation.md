@@ -55,7 +55,7 @@ H7 decides how much to build. If language-server references give most of the gai
 ### What is already known
 
 
-The search of 2026-11-05 ([related work § Comparisons of structure, text and grep]({{< ref "projects/code-intelligence/related-work" >}}#comparisons-of-structure-text-and-grep)) found evidence bearing on most hypotheses:
+The search of 2026-04-05 ([related work § Comparisons of structure, text and grep]({{< ref "projects/code-intelligence/related-work" >}}#comparisons-of-structure-text-and-grep)) found evidence bearing on most hypotheses:
 
 | Hypothesis | Existing evidence | Reading |
 | --- | --- | --- |

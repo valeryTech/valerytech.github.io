@@ -27,7 +27,7 @@ Every other hub in this section depends on this answer. Once a design has severa
 | Monolithic architecture | The application is one deployable unit. It can still be modular inside. | A small team, an early product, or a domain whose boundaries are still unclear. | Every change ships together; one scaling profile; without modular discipline the code loses its internal boundaries. |
 | Microservice architecture | A collection of independently deployable, loosely coupled services, each owning its data. | Several teams need to release independently, or parts of the system have very different scaling, availability, or technology needs. | Everything in the other hubs: distributed data, communication, discovery, failure handling, deployment, and observability. |
 
-**Defining properties of microservices** (from the Newman excerpts in [collected reading]({{< ref "system-design/to-sort/sd-to-sort" >}})):
+**Defining properties of microservices** (from the Newman excerpts in [collected reading]({{< ref "system-design/to-sort/architecture-reading-notes" >}})):
 
 - **Independent deployability:** this is how releases are normally done, not only something that is possible.
 - **Modeled around a business domain:** cross-service changes are expensive, so boundaries should make them rare.
@@ -36,7 +36,7 @@ Every other hub in this section depends on this answer. Once a design has severa
 
 A **modular monolith** sits between the two: boundaries are enforced inside one deployable unit. Modularity concerns what can change independently, not only how the system is divided. See [The Golden Age of Modularity](https://vladikk.com/2025/03/30/golden-age-of-modularity/).
 
-**In an interview:** the [extended framework collection]({{< ref "system-design/interview/frameworks/sd-framework-old" >}}) advises designing a basic working system first, such as a monolith. It lists defaulting to microservices, or bringing Kafka, Kubernetes, and microservices to a small-scale problem, among common interview errors and biases. Walkthroughs often draw separate services anyway. Treat them as a logical decomposition and say whether they need to be deployed separately.
+**In an interview:** the [extended framework collection]({{< ref "system-design/interview/frameworks/extended-collection" >}}) advises designing a basic working system first, such as a monolith. It lists defaulting to microservices, or bringing Kafka, Kubernetes, and microservices to a small-scale problem, among common interview errors and biases. Walkthroughs often draw separate services anyway. Treat them as a logical decomposition and say whether they need to be deployed separately.
 
 ## Where to draw boundaries
 
@@ -109,6 +109,7 @@ He also argues for not migrating when the goals do not require it.
 - [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- on *Architectural style*
 - [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapters 2 and 13
 - [Khononov 2025](/sources/software-engineering/craft/khononov-2025-balancing-coupling-in-software-design.pdf.enc), *Balancing Coupling in Software Design* -- on *Where to draw boundaries*
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 1, "Creating a Solution Using Bounded Contexts" (guidelines for drawing contexts, context maps, core, supportive and generic domains), and chapter 3, "Bounded Contexts as Autonomous Software Components" (monolith first, the distributed monolith) and "Contracts Between Bounded Contexts" (shared kernel, customer/supplier, conformist, anti-corruption layer); on *Where to draw boundaries*, *Refactoring to services* and *Gaps*
 
 Further reading:
 

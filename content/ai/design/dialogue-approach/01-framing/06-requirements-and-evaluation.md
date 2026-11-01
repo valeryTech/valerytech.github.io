@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Requirements and Evaluation for Task Assistants"
 description: "Extends assistant requirements and evaluation beyond conversation quality to resource selection, proposed changes, authority, correction effort, recovery, and final application state."
+weight: "60"
 linkTitle: "Requirements and Evaluation"
 ---
 

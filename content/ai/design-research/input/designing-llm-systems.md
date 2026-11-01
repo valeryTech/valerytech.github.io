@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Designing LLM Systems"
+title: "Designing LLM Systems: Research Conversation"
 description: "A conversation and research overview about integrating LLMs into work systems, covering candidate representations, domain models, controlled execution, and verification."
 linkTitle: "Designing LLM Systems"
 ---

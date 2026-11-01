@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Capability Constructs and Validity"
 description: "How construct theory and dispositional measurement fit together: the nomological network says what a capability like reasoning means, response functions supply the evidence, and validity checks whether they agree."
+weight: "60"
 linkTitle: "Constructs and Validity"
 ---
 

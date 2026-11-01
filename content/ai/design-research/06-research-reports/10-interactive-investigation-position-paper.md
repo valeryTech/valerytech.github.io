@@ -15,7 +15,7 @@ The retained LLM reply proposes a position paper about interactive information w
 
 The complete [RAG and query-understanding examples]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#interactive-rag-and-query-understanding) are in the existing retrieval note. The sibling [comments]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper-comments" >}}) explain the split and its limits.
 
-The [interactive systems collection]({{< ref "ai/design-research/interactive-systems/00-index" >}}) provides related interface proposals. The [joint-activity model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) describes general collaboration mechanics, which are distinct from the principles below.
+The interactive systems collection provides related interface proposals. The [joint-activity model]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model" >}}) describes general collaboration mechanics, which are distinct from the principles below.
 
 ## Motivation, literature, and design principles
 

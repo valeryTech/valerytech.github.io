@@ -717,11 +717,11 @@ This rule assumes that the task expects percentage points: for example, 20 rathe
 
 [^1]: L. A. Agrawal, S. Tan, D. Soylu, N. Ziems, R. Khare, K. Opsahl-Ong, A. Singhvi, H. Shandilya, M. J. Ryan, M. Jiang, C. Potts, K. Sen, A. G. Dimakis, I. Stoica, D. Klein, M. Zaharia, and O. Khattab GEPA: reflective prompt evolution can outperform reinforcement learning. arXiv preprint arXiv:2507.19457. Note: Accepted to ICLR 2026 External Links: 2507.19457 Cited by: §2.
 
-[^2]: Anthropic Claude models overview. Note: Provider documentation; accessed October 10, 2026 External Links: [Claude model documentation](https://platform.claude.com/docs/en/models/overview) Cited by: §A.1.
+[^2]: Anthropic Claude models overview. Note: Provider documentation; accessed March 10, 2026 External Links: [Claude model documentation](https://platform.claude.com/docs/en/models/overview) Cited by: §A.1.
 
 [^3]: P. Furgale, S. Klingler, J. Nolan, M. Staats, G. Di Lorenzo, E. Martinez Abad, C. Schüller, R. Dinu, A. Devoto, P. Berard, G. Kaplun, E. Sarafian, R. Roveri, L. Derczynski, and R. S. Cabral NVIDIA-labs OO Agents: native Python object-oriented agents. arXiv preprint arXiv:2607.20709. External Links: 2607.20709, [arXiv:2607.20709](https://arxiv.org/abs/2607.20709) Cited by: §2.
 
-[^4]: Google Gemini API models. Note: Provider documentation; accessed October 10, 2026 External Links: [Gemini model documentation](https://ai.google.dev/gemini-api/docs/models) Cited by: §A.1.
+[^4]: Google Gemini API models. Note: Provider documentation; accessed March 10, 2026 External Links: [Gemini model documentation](https://ai.google.dev/gemini-api/docs/models) Cited by: §A.1.
 
 [^5]: S. Hu, C. Lu, and J. Clune Automated design of agentic systems. arXiv preprint arXiv:2408.08435. External Links: 2408.08435 Cited by: §1.
 

@@ -1,12 +1,12 @@
 ---
 draft: false
 toc: true
-title: "How the Discovery Approaches Relate"
+title: "Discovery Approaches: Relations and Proposed Edits"
 description: "A proposed interpretation of learning within an inquiry, designing workflows across cases, and learning across applications, with specific changes to clarify methods, LLM roles, and evidence for generalization."
-linkTitle: "How Approaches Relate"
+linkTitle: "Relations and Proposed Edits"
 ---
 
-Status: proposed interpretation and editorial changes, 2026-05-01. This analysis draws on the local notes identified in the [recall audit]({{< ref "ai/product/discovery/discovery-directions-and-recall-audit" >}}). It does not establish a new research methodology. The replacement passages below are proposals for discussion.
+Status: proposed interpretation and editorial changes, 2026-04-01. This analysis draws on the local notes identified in the [recall audit]({{< ref "ai/product/discovery/discovery-directions-and-recall-audit" >}}). It does not establish a new research methodology. The replacement passages below are proposals for discussion.
 
 ## The underlying connection
 
@@ -36,7 +36,7 @@ The most useful organizing question is: **what are we trying to change our under
 | Scale | What develops? | Example | Main notes |
 | --- | --- | --- | --- |
 | Within a concrete inquiry | Our understanding of the situation, useful questions, possibilities, and the current result. | Discover that "find my notes" involves several different information needs. | [Operation model]({{< ref "ai/product/discovery/analysis-or-operation-model" >}}), [LLM roles]({{< ref "ai/product/discovery/discovery-llm-roles" >}}) |
-| Across cases of a workflow | A model of behavior, meaningful failure categories, and candidate decisions or policies for future cases. | Investigate when search misses useful passages and compare ways of recovering them. | [Retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}), [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}), [Pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) |
+| Across cases of a workflow | A model of behavior, meaningful failure categories, and candidate decisions or policies for future cases. | Investigate when search misses useful passages and compare ways of recovering them. | [Retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}), [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}), Pipeline design |
 | Across applications | Our understanding of which tools, concepts, and practices transfer, and where they need adaptation. | Compare the evidence and review needs of note search, transaction capture, and another application before extracting shared support. | [AI Project Foundation]({{< ref "projects/ai-dev-foundation/starter-kit-and-foundation" >}}), [Premature abstraction]({{< ref "engineering/premature-abstraction" >}}) |
 
 ```mermaid
@@ -75,7 +75,7 @@ Existing domain knowledge, explicit requirements, and established invariants can
 This also clarifies the relationship between two engineering proposals:
 
 - [Sandbox-first discovery]({{< ref "ai/design/workflow-design/sandbox-first-capability-discovery-llm-agents" >}}) leaves more of the solution method open so that a prescribed sequence does not hide useful capabilities.
-- [Inspectable pipeline design]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation" >}}) exposes selected decisions so that their effects can be understood and changed.
+- Inspectable pipeline design exposes selected decisions so that their effects can be understood and changed.
 
 They address different risks. Prescribing stages too early can narrow what we discover. Leaving everything to an opaque run can make it difficult to learn which decisions matter. A useful comparison can retain an open agent baseline while making particular inputs, outputs, or interventions inspectable. The appropriate amount of structure is a design question in its own right.
 
@@ -113,11 +113,11 @@ This is why "discovery with LLMs" and "discovery about LLM systems" intersect so
 
 The [operation model]({{< ref "ai/product/discovery/analysis-or-operation-model" >}}#what-counts-as-progress) allows progress through better questions and more visible possibilities, including increased awareness of uncertainty. The [operating-model note]({{< ref "ai/product/operating-model/discovery-and-delivery" >}}) emphasizes uncertainty that matters to a decision and evidence for the next commitment.
 
-Both purposes matter. Early inquiry can reveal what the decision should even concern. A targeted experiment can answer an already clear question. The [behavioral-evidence note]({{< ref "ai-engineering/approach/empirical-nature-2" >}}) also describes a clear product target whose reliable implementation remains uncertain.
+Both purposes matter. Early inquiry can reveal what the decision should even concern. A targeted experiment can answer an already clear question. The [behavioral-evidence note]({{< ref "ai-engineering/approach/evals-not-just-tests" >}}) also describes a clear product target whose reliable implementation remains uncertain.
 
 The collection should therefore distinguish uncertainty about the situation or desired role from uncertainty about the behavior of a proposed system. These can change independently.
 
-Likewise, human judgment can remain valuable in the working system. The [pipeline commentary]({{< ref "ai/design-research/interactive-systems/10-exploratory-pipeline-design-and-progressive-automation-comments" >}}) explains that review may serve the current task or an acceptance decision, regardless of whether it teaches us how to automate later.
+Likewise, human judgment can remain valuable in the working system. The pipeline commentary explains that review may serve the current task or an acceptance decision, regardless of whether it teaches us how to automate later.
 
 ## This search as a concrete example
 

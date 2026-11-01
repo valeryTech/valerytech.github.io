@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Functional Abstractions: Functor to Monad"
 description: "The type-class abstractions of functional programming, from map and flatMap through functor, applicative, traversable and monad to monoids, polymorphism and category theory."
+weight: "20"
 linkTitle: "Abstractions"
 ---
 

@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "6.5 Comments on the Agent-Runtime Evaluation Plans"
+title: "6.5 Comments on the Three Evaluation Plans"
 description: "A critique separating investigation quality, runtime enforcement, and program correctness, with requirements for matched comparisons, reproducible histories, and independent expected outcomes."
 weight: "51"
 linkTitle: "6.5 Comments"

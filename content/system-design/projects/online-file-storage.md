@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Online File Storage System Design"
+title: "Online File Storage: Queued Design Prompt"
 description: "A queued online file storage design exercise with links to the related Dropbox case and a reusable case template; no independent design has been recorded yet."
 linkTitle: "Online File Storage"
 ---

@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Building-Block Collection Before the Refactor"
-description: "The building-block topics collected before the October 2026 refactor, rewritten as a map: how courses divide what to learn, Educative's building blocks and interviewing.io's concepts by hub, and where each original section now lives."
+description: "The building-block topics collected before the March 2026 refactor, rewritten as a map: how courses divide what to learn, Educative's building blocks and interviewing.io's concepts by hub, and where each original section now lives."
 document_status: "archived"
 linkTitle: "Building Blocks"
 ---
@@ -11,14 +11,14 @@ Part of the [system design archive]({{< ref "system-design/archive" >}}).
 
 **Question:** where did each building-block topic collected before the refactor go, and how do the course lists of building blocks map onto the design-question hubs?
 
-Before the October 19, 2026 refactor, this note collected four kinds of material:
+Before the March 19, 2026 refactor, this note collected four kinds of material:
 
 - how courses divide what to learn;
 - a study list;
 - a template for describing a pattern;
 - short entries on components.
 
-The refactor moved each topic into a hub of the [pattern map]({{< ref "system-design/elements/elements" >}}). This version, rewritten on November 4, 2026, records what the collection held and where each part lives now. The original wording is in git history.
+The refactor moved each topic into a hub of the [pattern map]({{< ref "system-design/elements/pattern-map" >}}). This version, rewritten on April 4, 2026, records what the collection held and where each part lives now. The original wording is in git history.
 
 ## How sources divide the material
 
@@ -39,8 +39,8 @@ A component list says what exists, but it does not say when to use a component o
 **Hello Interview's stages in these notes:**
 
 - **Core concepts and patterns:** the hubs and the [NFR notes]({{< ref "system-design/nfr" >}}).
-- **Key technologies:** the engineering topic notes listed in [where detail lives]({{< ref "system-design/elements/elements" >}}#where-detail-lives).
-- **Delivery framework:** the [Hello Interview framework]({{< ref "system-design/interview/frameworks/framework-hi" >}}).
+- **Key technologies:** the engineering topic notes listed in [where detail lives]({{< ref "system-design/elements/pattern-map" >}}#where-detail-lives).
+- **Delivery framework:** the [Hello Interview framework]({{< ref "system-design/interview/frameworks/hello-interview" >}}).
 - **Common problems:** the [practice cases]({{< ref "system-design/projects" >}}).
 - **Practice:** the [practice loop]({{< ref "system-design/interview/study-and-practice" >}}#a-practice-loop).
 
@@ -82,7 +82,7 @@ Educative designs each building block once, as a small system with its own requi
 | Databases | Storage choice, replication, and partitioning in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) | Options rows |
 | Key-value store | [Key-value stores and data grids]({{< ref "system-design/elements/data-at-scale" >}}#key-value-stores-and-data-grids) and the [key-value store case]({{< ref "system-design/projects/key-value-store" >}}#dynamo-style-design) | Section and a Dynamo-style design |
 | Content delivery network | [CDN]({{< ref "system-design/elements/request-path" >}}#cdn) | Short definition |
-| Sequencer | Unique ID generation in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) and the [Snowflake IDs case]({{< ref "system-design/projects/infra/slowflake-id" >}}) | Options row and case. Educative's focus on causality connects to [logical clocks]({{< ref "system-design/elements/data-at-scale" >}}#coordination). |
+| Sequencer | Unique ID generation in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) and the [Snowflake IDs case]({{< ref "system-design/projects/infra/snowflake-id" >}}) | Options row and case. Educative's focus on causality connects to [logical clocks]({{< ref "system-design/elements/data-at-scale" >}}#coordination). |
 | Service monitoring | [Observability]({{< ref "system-design/elements/operating-services" >}}#observability) | Patterns listed |
 | Distributed caching | Caching in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) | Options row |
 | Distributed messaging queue | [Messaging]({{< ref "system-design/elements/messaging" >}}) | Pattern note |
@@ -99,7 +99,7 @@ Educative designs each building block once, as a small system with its own requi
 
 | Topic | Where it lives |
 | --- | --- |
-| Building blocks | The [hubs]({{< ref "system-design/elements/elements" >}}#the-hubs) |
+| Building blocks | The [hubs]({{< ref "system-design/elements/pattern-map" >}}#the-hubs) |
 | Reasoning about non-functional requirements | [NFR guide]({{< ref "system-design/nfr/non-functional-requirements" >}}) |
 | Common trade-offs, kept in one list and refined with practice | [Common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}) |
 | Asynchronous patterns, communication, and protocols | [Communication]({{< ref "system-design/elements/communication" >}}) and [messaging]({{< ref "system-design/elements/messaging" >}}). The collection proposed communication and protocols as a category of its own; it became the communication hub. |
@@ -115,7 +115,7 @@ Educative designs each building block once, as a small system with its own requi
 ## Pattern template
 
 
-The collection described a pattern with six fields. The [pattern note format]({{< ref "system-design/elements/elements" >}}#hub-and-pattern-format) keeps five of them and adds one.
+The collection described a pattern with six fields. The [pattern note format]({{< ref "system-design/elements/pattern-map" >}}#hub-and-pattern-format) keeps five of them and adds one.
 
 | Original field | Pattern note field |
 | --- | --- |
@@ -147,7 +147,7 @@ The added field is what links one pattern to the next, which turns a catalog int
 | Rate limiting | Distributing the limiter is the hard part; limits per tier are harder still. | [Rate limiting across nodes]({{< ref "system-design/elements/data-at-scale" >}}#rate-limiting-across-nodes) and the [rate limiter case]({{< ref "system-design/projects/rate-limiter" >}}#limits-by-tier) |
 | Security | Security as a trade-off between total safety, a wall, and total convenience, a hole in the wall. Authentication, which establishes who is calling, separated from authorization. Two checks at a door, the peephole and a password, as the picture for multi-factor authentication. Storing password hashes, salting, and rainbow tables. Sources: Newman and the interviewing.io guide. | [Security]({{< ref "system-design/elements/operating-services" >}}#security), including password storage |
 | Sequencer | A link to Educative's lesson. | Unique ID generation in [data at scale]({{< ref "system-design/elements/data-at-scale" >}}#options) |
-| Templates | Hello Interview's simple CRUD service pattern, the DesignGurus master template, and the control plane with other frameworks used in production. | [Not yet placed]({{< ref "system-design/elements/elements" >}}#not-yet-placed) and the [control plane]({{< ref "system-design/elements/control-plane" >}}) |
+| Templates | Hello Interview's simple CRUD service pattern, the DesignGurus master template, and the control plane with other frameworks used in production. | [Not yet placed]({{< ref "system-design/elements/pattern-map" >}}#not-yet-placed) and the [control plane]({{< ref "system-design/elements/control-plane" >}}) |
 
 ## Topics filled after the rewrite
 

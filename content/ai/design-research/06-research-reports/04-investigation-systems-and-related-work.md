@@ -284,7 +284,7 @@ The following material comes from the abstraction analysis in [Behavioral compil
 ### 1. ReaComp is the closest direct match
 
 
-As of September 2026, the closest work identified by the saved review is **ReaComp: Compiling LLM Reasoning into Symbolic Solvers for Efficient Program Synthesis** by Atharva Naik and colleagues.
+As of February 2026, the closest work identified by the saved review is **ReaComp: Compiling LLM Reasoning into Symbolic Solvers for Efficient Program Synthesis** by Atharva Naik and colleagues.
 
 ReaComp gives a coding agent a collection of LLM reasoning traces. The coding agent writes a reusable symbolic solver over constrained DSLs. The resulting solver then handles new instances without LLM calls. This is nearly the proposed central transition:
 
@@ -497,3 +497,7 @@ That's abstract enough to connect to existing CS theory, while still mapping dir
 
 
 - [Mo et al. 2025](/sources/retrieval-and-knowledge/knowledge-graphs/mo-2025-kggen-extracting-knowledge-graphs.pdf.enc), *KGGen*
+
+Further reading:
+
+- [Mokhov et al. 2020](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc), *Build Systems a la Carte: Theory and Practice*: workflow tools are build systems in this paper's sense; section 3.5, "Monadic Tasks", on dynamic dependencies, which a step that "may discover a new question" needs; section 8.3, "Impure Computations", on non-deterministic and volatile tasks and what they do to caching and correctness, the paper's version of the "mostly deterministic" contrast; section 8.5, "Iterative Computations", on bounded repeated passes; on *2. Scientific workflow systems and existing runtime solutions*.

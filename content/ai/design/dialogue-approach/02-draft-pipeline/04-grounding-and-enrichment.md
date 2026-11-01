@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Grounding and Enrichment"
+title: "Tool Grounding and Enrichment of Transaction Drafts"
 description: "A tool-grounding example resolving merchant, account, category, date, and duplicates, with a clear division between model proposals, backend validation, user confirmation, and writes."
+weight: "40"
 linkTitle: "Grounding and Enrichment"
 ---
 

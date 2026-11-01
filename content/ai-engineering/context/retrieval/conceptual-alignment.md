@@ -10,7 +10,7 @@ Retrieval systems become difficult to reason about when the same term names diff
 
 Conceptual alignment means that these roles and their contracts have consistent meanings across the system. **Context-to-task alignment** concerns a different question: whether working context fits the requirements of the current task and consuming operation. Explicit contracts make that fit easier to assess and failures easier to locate.
 
-The [domain model]({{< ref "ai-engineering/context/retrieval/model" >}}) defines the shared vocabulary. The [evidence-workflow proposal]({{< ref "ai-engineering/context/retrieval/reframing-proposed" >}}) applies it to evolving investigations, and [retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}) describes how to inspect and compare implementations.
+The [domain model]({{< ref "ai-engineering/context/retrieval/model" >}}) defines the shared vocabulary. The [evidence-workflow proposal]({{< ref "ai-engineering/context/retrieval/evidence-workflows" >}}) applies it to evolving investigations, and [retrieval design]({{< ref "ai-engineering/context/retrieval/retrieval-design" >}}) describes how to inspect and compare implementations.
 
 ## Distinguish roles before choosing boundaries
 

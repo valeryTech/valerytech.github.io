@@ -83,7 +83,7 @@ Claim:        Drafts replies to billing-dispute tickets that support agents send
 Situation:    English-language billing tickets, current product catalogue, refunds under the agent's own limit.
 Bar:          At least 70% of drafts sent with light edits or none. No draft states a wrong refund amount.
 
-Possibility:  closed (2026-10-20): 40 of the hardest tickets from last quarter, strongest available
+Possibility:  closed (2026-03-20): 40 of the hardest tickets from last quarter, strongest available
               model, a support lead steering the prompt per ticket, cost ignored. 33 met the bar,
               none had a wrong amount.
 Approach:     open: the result depends on the lead adjusting the prompt per ticket. No fixed

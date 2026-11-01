@@ -3,7 +3,7 @@ draft: false
 toc: true
 title: "Production Readiness Framework (Draft)"
 description: "A draft organizational framework translating readiness concepts into context-specific requirements, evidence, tailored rigor, lifecycle checkpoints, responsibility, decisions, exceptions, and reassessment."
-linkTitle: "Readiness Framework"
+linkTitle: "Framework Draft"
 ---
 ## An organizational system for applying the production-readiness model
 

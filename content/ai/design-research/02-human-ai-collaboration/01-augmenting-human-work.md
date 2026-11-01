@@ -435,7 +435,7 @@ Further research question for AI tools in software engineering, research, and kn
 ## From conversational interfaces to collaborative work
 
 
-The following retained question and response from the [build-approach source]({{< ref "ai/design-research/collab-and-joint-work/build-approach" >}}) distinguish collaboration, active participation, and augmentation. The [participant profiles]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) retain the preceding model and later revision. The [design-practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) continues the framework, and the sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}) explain the placement.
+The following retained question and response from the [build-approach source]({{< ref "ai/design-research/collab-and-joint-work/work-allocation-route" >}}) distinguish collaboration, active participation, and augmentation. The [participant profiles]({{< ref "ai/design-research/01-foundations/11-participant-profiles-and-work-allocation" >}}) retain the preceding model and later revision. The [design-practices note]({{< ref "ai/design-research/02-human-ai-collaboration/08-collaborative-system-design-practices" >}}) continues the framework, and the sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}) explain the placement.
 
 ## first part (to rewrite)
 
@@ -493,14 +493,14 @@ So one tentative proposal is to organize the overall idea as:
 
 If you need one umbrella phrase for the whole shift, **"from conversational interfaces to collaborative systems"** is probably the clearest. "Conversational" describes the current UI paradigm; "collaborative system" describes the deeper product model you're moving toward.
 
-The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/build-approach" >}}) links the initial profiles, design practices, and later revision. The mapping log records the complete split.
+The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/work-allocation-route" >}}) links the initial profiles, design practices, and later revision. The mapping log records the complete split.
 
 ## From rewriting prompts to a shared writing workspace
 
 
-The following passage from the co-writer sketch (archived source 010) keeps the proposed meaning requirements, communication support, task context, Matrix idea, and closing reflection together. The earlier [workflow and complete examples]({{< ref "ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly" >}}) remain a separate application case.
+The following passage from the co-writer sketch (archived source 010) keeps the proposed meaning requirements, communication support, task context, Matrix idea, and closing reflection together. The earlier workflow and complete examples remain a separate application case.
 
-The saved sketch does not label speakers, so the arrangement does not assign every sentence to the author or an LLM. The [sibling comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}#co-writer-meaning-and-collaboration) distinguish faithful rewriting from developing an idea. The [split audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-10-co-writer-sketches) records the original order.
+The saved sketch does not label speakers, so the arrangement does not assign every sentence to the author or an LLM. The [sibling comments]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work-comments" >}}#co-writer-meaning-and-collaboration) distinguish faithful rewriting from developing an idea. The split audit records the original order.
 
 <!-- Co-writer communication source begins below. -->
 

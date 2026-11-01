@@ -79,4 +79,4 @@ State what was reviewed, the important findings, what was tested, and what remai
 
 Tie findings to the reviewed revision. A later edit may need another look. Approval of a PR also needs to follow the team's rules for merging and releasing.
 
-See [A Practical Review Process]({{< ref "ai-engineering/agents/ai-assisted-development/review-flow-specification" >}}) and [Testing a Change During Review]({{< ref "ai-engineering/agents/ai-assisted-development/review-flow" >}}).
+See [A Practical Review Process]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}}) and [Testing a Change During Review]({{< ref "ai-engineering/agents/ai-assisted-development/testing-during-review" >}}).

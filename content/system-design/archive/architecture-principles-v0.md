@@ -7,7 +7,7 @@ document_status: "archived"
 linkTitle: "Architecture Principles"
 ---
 
-Preserved notes from before the October 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/02-system-design" >}}). Numerical targets and technical claims below retain their original draft context.
+Preserved notes from before the March 19, 2026 refactor. For the organized version, see [the working note]({{< ref "system-design/design-principles" >}}). Numerical targets and technical claims below retain their original draft context.
 
 <!-- Original note follows. -->
 

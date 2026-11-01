@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Language Design for LLM Programming"
+title: "Sources on Language Design for LLM Agents"
 description: "A survey of agent-language proposals and their use of types, effects, capabilities, protocols, and traces, helping readers compare enforceable properties and limitations."
 linkTitle: "Language Design"
 ---
@@ -45,7 +45,7 @@ Suggested use: Pair this with ETAS: an established argument for the direction, f
 ### 3. Hard-KLAIM: Hardening MCP-Enabled Agentic Workflows with a Locality-Aware Type-and-Effect System for Trace Safety -- strongest formal support for agent permissions and human approval
 
 
-Marco Aldinucci, Andrea Bracciali, Iacopo Colonnelli, Doriana Medić, Alberto Mulone, Luca Roversi, Marco Edoardo Santimaria. Journal of Logical and Algebraic Methods in Programming; available online 9 October 2026, journal pre-proof; article 101191.
+Marco Aldinucci, Andrea Bracciali, Iacopo Colonnelli, Doriana Medić, Alberto Mulone, Luca Roversi, Marco Edoardo Santimaria. Journal of Logical and Algebraic Methods in Programming; available online 9 March 2026, journal pre-proof; article 101191.
 
 - Primary publisher URL: [https://www.sciencedirect.com/science/article/pii/S2352220826000830](https://www.sciencedirect.com/science/article/pii/S2352220826000830)
 - DOI: [https://doi.org/10.1016/j.jlamp.2026.101191](https://doi.org/10.1016/j.jlamp.2026.101191)
@@ -65,7 +65,7 @@ This paper helps substantiate "agent cannot delete" and "human approval must app
 | --- | --- | --- | --- |
 | Prompting Is Programming: A Query Language for Large Language Models, Luca Beurer-Kellner, Marc Fischer, Martin Vechev | PLDI 2023 | LMQL combines prompt text, ordinary scripting, control flow, and output constraints under defined language semantics. | Constrained output and orchestration do not by themselves prove factual correctness or authorization. |
 | Type-Constrained Code Generation with Language Models, Niels Mündler et al. | PLDI 2025 | Types can guide decoding, with a formal simply typed core and a TypeScript implementation. Reported reduction in compilation errors greater than half. | This is about generated-code well-typedness; it is a different issue from controlling a deployed agent's authority. |
-| Concordat: Typed Sessions for LLM Agents, Milad Sikaroudi | arXiv preprint, 27 October 2026 | Python library makes agent interfaces finite-state protocols, checks calls before side effects, reserves decisions for humans, and tracks budgets across handoffs. | Very recent, limited benchmark, not evidence of broad production reliability; only the mediated tool boundary is covered. |
+| Concordat: Typed Sessions for LLM Agents, Milad Sikaroudi | arXiv preprint, 27 March 2026 | Python library makes agent interfaces finite-state protocols, checks calls before side effects, reserves decisions for humans, and tracks budgets across handoffs. | Very recent, limited benchmark, not evidence of broad production reliability; only the mediated tool boundary is covered. |
 
 Primary URLs:
 

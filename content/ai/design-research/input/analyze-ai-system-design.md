@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Analyze AI System Design"
+title: "AI System Design: Research Conversation"
 description: "A conversation about designing systems with people, software, data, and LLMs, separating generative capabilities from workflow control, validation, and authority."
 linkTitle: "Analyze AI System Design"
 ---

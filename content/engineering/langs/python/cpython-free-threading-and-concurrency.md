@@ -138,7 +138,7 @@ There's an important distinction from Java's virtual threads: `asyncio` uses coo
 ## Experimental directions
 
 
-The [September 2026 Python Language Summit report](https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/) discusses higher-level primitives for coordinating parallel work. One model presented there was **Behavior-Oriented Concurrency (BOC)**.
+The [February 2026 Python Language Summit report](https://blog.python.org/2026/09/language-summit-2026-free-threading-post-era/) discusses higher-level primitives for coordinating parallel work. One model presented there was **Behavior-Oriented Concurrency (BOC)**.
 
 Its goal is to let developers express tasks and their data dependencies while a scheduler manages parallel execution and synchronization. The model uses ownership-aware containers called `Cown` to control access to shared state.
 
@@ -157,3 +157,10 @@ The distinction is between **execution capabilities**--threads, processes, and i
 7. [The concurrent package -- Python 3.15.0 documentation](https://docs.python.org/3/library/concurrent.html)
 8. [Coroutines and tasks -- Python 3.15.0 documentation](https://docs.python.org/3/library/asyncio-task.html?highlight=gather)
 9. [Developing with asyncio -- Python 3.15.0rc3 documentation](https://docs.python.org/3.15/library/asyncio-dev.html)
+
+## Library sources
+
+
+Further reading:
+
+- [Marlow 2013](/sources/programming/functional-programming/marlow-2013-parallel-and-concurrent-programming-in-haskell.pdf.enc), *Parallel and Concurrent Programming in Haskell*: chapter 1, "Terminology: Parallelism and Concurrency", where parallelism uses several processors for speed while concurrency structures a program as several threads of control that may run on one core; the opening of chapter 13, "Parallel Programming Using Threads", on overlapping I/O as a speedup without parallelism and on when concurrency must be used to get parallelism; on *Concurrency abstraction layers* and the closing distinction in *Experimental directions*.

@@ -106,7 +106,7 @@ So the question is not only how to build an instrument but when the indirection 
 - [Representations, composition, and understanding]({{< ref "ai/design/ai-system-design/representations-composition-and-understanding" >}}): Principle 1 (representations as instruments of construction) and Principle 4 (explicit representations as objects of shared inquiry). This section is the case where the model chooses and builds the representation per task.
 - [Amortized generation]({{< ref "ai/design/amortized-generation-problem" >}}): why making the problem structure explicit matters.
 - [Sensemaking and epistemic action]({{< ref "ai/design-research/02-human-ai-collaboration/02-sensemaking-and-epistemic-action" >}}): artifacts used in thinking.
-- [Language intent and hybrid interaction]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) and [generated workspaces and application composition]({{< ref "ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition" >}}): generated interfaces as part of system construction.
+- Language intent and hybrid interaction and generated workspaces and application composition: generated interfaces as part of system construction.
 - What LLMs are good at: converting content between forms (U3) is the basic ability this builds on.
 
 ## Library sources

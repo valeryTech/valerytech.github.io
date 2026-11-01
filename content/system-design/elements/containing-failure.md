@@ -58,8 +58,8 @@ A fallback is the control most worth testing this way, because it rarely runs ot
 
 - [URL shortener]({{< ref "system-design/projects/url-shortener/url-shortener-additional" >}}#prepare-a-degradation-plan-for-the-cv-path): a degradation plan. When the database is overloaded, serve cached redirects, cache 404/410 responses briefly, and trip circuit breakers to protect latency.
 - [Public chat room]({{< ref "system-design/projects/chat-room" >}}): an unresolved question about bursts that exceed a fixed buffer, which is a load-shedding or back-pressure decision.
-- The [extended framework collection]({{< ref "system-design/interview/frameworks/sd-framework-old" >}}) lists missing discussion of retries, circuit breakers, and database failover among the most influential interview errors.
-- **AI and RAG:** the tool runtime in the [boundary map]({{< ref "engineering/eng-exp/design-pressure" >}}) retries within bounds and normalizes errors, and the enforcement step validates invariants and then falls back or repairs. The [deterministic agent template]({{< ref "engineering/delivery-techniques/skeletons" >}}) caps recursion with a specific exception.
+- The [extended framework collection]({{< ref "system-design/interview/frameworks/extended-collection" >}}) lists missing discussion of retries, circuit breakers, and database failover among the most influential interview errors.
+- **AI and RAG:** the tool runtime in the [boundary map]({{< ref "engineering/eng-exp/design-pressure" >}}) retries within bounds and normalizes errors, and the enforcement step validates invariants and then falls back or repairs. The [deterministic agent template]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}) caps recursion with a specific exception.
 
 ## Gaps
 

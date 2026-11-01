@@ -23,7 +23,7 @@ An evaluation plan can remain unchanged across several runs, while each run has 
 
 The closing source qualification allows execution settings to affect system behavior. A later boundary rule needs to state how concurrency, timeouts, retries, budgets, and environment bindings enter comparisons. Keeping a setting outside system identity does not make the setting irrelevant to the result.
 
-Captured prompts, retrieval data, and tool responses can help explain a result. Capture settings need retention, access, and redaction rules for sensitive data. New live calls and use of recorded responses must remain distinguishable, as the [workbench comments]({{< ref "ai/design-research/interactive-systems/11-inspectable-pipeline-workbenches-comments" >}}) explain.
+Captured prompts, retrieval data, and tool responses can help explain a result. Capture settings need retention, access, and redaction rules for sensitive data. New live calls and use of recorded responses must remain distinguishable, as the workbench comments explain.
 
 ## Configuration does not establish evaluation validity
 

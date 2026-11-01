@@ -1,16 +1,16 @@
 ---
 draft: false
 toc: true
-title: "Karpathy's Visual Explanation Prompts"
+title: "Karpathy's Visual Explanation Prompts: Chat Thread"
 description: "A conversation about Andrej Karpathy's advice to ask LLMs for diagrams, interactive HTML, and animated explainers instead of text, with prompting practices and a reusable prompt."
 linkTitle: "Karpathy Visual Prompts"
 ---
 
 Follow-up research on similar approaches, the principles they share, and checks on this thread's dates: [Visual explanations from LLMs]({{< ref "ai/design/generated-instruments/visual-explanations-from-llms" >}}).
 
-The thread's citation chips are kept as numbered footnotes, listed under [Citation links](#citation-links); the links behind them were recovered from the shared page on 2026-11-05. What the three Karpathy posts actually say is summarized in [Sources behind the thread](#sources-behind-the-thread) at the end.
+The thread's citation chips are kept as numbered footnotes, listed under [Citation links](#citation-links); the links behind them were recovered from the shared page on 2026-04-05. What the three Karpathy posts actually say is summarized in [Sources behind the thread](#sources-behind-the-thread) at the end.
 
-Related: generated interfaces in [language intent and hybrid interaction]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) and [generated workspaces and application composition]({{< ref "ai/design-research/interactive-systems/08-generated-workspaces-and-application-composition" >}}).
+Related: generated interfaces in language intent and hybrid interaction and generated workspaces and application composition.
 
 ## User -- turn 1
 
@@ -20,14 +20,14 @@ I remember that Karpathy said that the LM should not write you the responses to 
 ## Assistant -- turn 1
 
 
-Yes. I found the posts you're remembering. Andrej Karpathy has discussed this several times, most explicitly on October 2, 2026, when he shared concrete prompting techniques for getting LLMs to explain things visually.
+Yes. I found the posts you're remembering. Andrej Karpathy has discussed this several times, most explicitly on March 2, 2026, when he shared concrete prompting techniques for getting LLMs to explain things visually.
 
 His broader idea is that the future of LLM interfaces is a **generative graphical interface**: the model creates a diagram, animation, interactive webpage, or video specifically for the question you're asking. [^1][^2]
 
 ### 1. The prompts Karpathy actually recommended
 
 
-In his [October 2 post](https://x.com/karpathy/status/2105819303471976479), he described four levels of explanation:
+In his [March 2 post](https://x.com/karpathy/status/2105819303471976479), he described four levels of explanation:
 
 | Format | His suggested prompt or instruction |
 | --- | --- |
@@ -102,7 +102,7 @@ If you want, I can:
 ## Sources behind the thread
 
 
-The thread cites three Karpathy posts. x.com blocks automated reading, so each was read in full through a mirror on 2026-11-05. Read in date order, they move from a prediction about interfaces (2025) to a one-line tip (May 2026) to a method (October 2026).
+The thread cites three Karpathy posts. x.com blocks automated reading, so each was read in full through a mirror on 2026-04-05. Read in date order, they move from a prediction about interfaces (2025) to a one-line tip (May 2026) to a method (March 2026).
 
 ### 1 May 2025: chatting with an LLM feels like an 80s terminal
 
@@ -126,7 +126,7 @@ The thread cites three Karpathy posts. x.com blocks automated reading, so each w
 - **Input is still missing.** Text, audio, or video alone are not enough; he wants to point and gesture at the screen.
 - **His summary:** try asking for HTML.
 
-### 2 October 2026: understanding the outputs of language models
+### 2 March 2026: understanding the outputs of language models
 
 
 [Original post](https://x.com/karpathy/status/2105819303471976479), read in full on [nitter.cf](https://nitter.cf/karpathy/status/2105819303471976479); also on [TwStalker](https://x.twstalker.com/karpathy/status/2105819303471976479). A single post, not a thread; the mirror showed no attached image, so the STE cheat sheet mentioned in coverage could not be checked there.
@@ -151,11 +151,11 @@ The thread cites three Karpathy posts. x.com blocks automated reading, so each w
 ## Citation links
 
 
-[^1]: [Andrej Karpathy, "We'll be spending a lot more time trying to understand the outputs of language models", 2 October 2026 (nitter.cf mirror)](<https://nitter.cf/karpathy/status/2105819303471976479>). Original on [x.com](<https://x.com/karpathy/status/2105819303471976479>).
+[^1]: [Andrej Karpathy, "We'll be spending a lot more time trying to understand the outputs of language models", 2 March 2026 (nitter.cf mirror)](<https://nitter.cf/karpathy/status/2105819303471976479>). Original on [x.com](<https://x.com/karpathy/status/2105819303471976479>).
 
 [^2]: [Andrej Karpathy, "Chatting with LLM feels like using an 80s computer terminal", 1 May 2025 (Jay Taylor's notes)](<https://jaytaylor.com/notes/node/1769632270000.html>). Original on [x.com](<https://x.com/karpathy/status/1917920257257459899>).
 
-[^3]: [Andrej Karpathy (@karpathy), post of 2 October 2026 (TwStalker mirror)](<https://x.twstalker.com/karpathy/status/2105819303471976479>).
+[^3]: [Andrej Karpathy (@karpathy), post of 2 March 2026 (TwStalker mirror)](<https://x.twstalker.com/karpathy/status/2105819303471976479>).
 
 [^4]: [Andrej Karpathy's post, 11 May 2026 (X to Image, truncated preview)](<https://xtoimage.com/karpathy/status/2053872850101285137>). Full text on [nitter.cf](<https://nitter.cf/karpathy/status/2053872850101285137>); original on [x.com](<https://x.com/karpathy/status/2053872850101285137>).
 

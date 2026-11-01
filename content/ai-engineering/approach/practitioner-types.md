@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "AI Practitioner Positions"
+title: "AI Practitioner Roles: Taxonomy and Panel Notes"
 description: "Maps AI practitioner roles by what they produce, how success is judged, and risks owned, with contrasting research and industry perspectives for discussion."
-linkTitle: "Practitioner Positions"
+linkTitle: "Practitioner Roles"
 ---
 
 <a id="positions"></a>

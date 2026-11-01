@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Discipline in AI Product Work"
+title: "Discipline in AI Product Work: Where to Read"
 description: "A cross-note reading map linking assumptions, proportionate experiments, evaluation, and decision records, with a distinction between experiment-led roadmaps and evidence for the next commitment."
-linkTitle: "Discipline"
+linkTitle: "Discipline Thread"
 ---
 
 A possible common thread through the notes is:

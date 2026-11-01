@@ -6,7 +6,7 @@ description: "An annotated map of notes on AI engineering as an emerging practic
 linkTitle: "Discipline Reading Map"
 ---
 
-Checked against local file contents on 20 October 2026. Links point to the relevant passages as they stood on that date. Descriptions summarize the sources; comments are my assessment of their usefulness, overlap, and draft quality.
+Checked against local file contents on 20 March 2026. Links point to the relevant passages as they stood on that date. Descriptions summarize the sources; comments are my assessment of their usefulness, overlap, and draft quality.
 
 The existing AI discipline reading map is one entry point. This document adds the broader notes on language, mindset, engineering responsibility, and developing the practice itself.
 

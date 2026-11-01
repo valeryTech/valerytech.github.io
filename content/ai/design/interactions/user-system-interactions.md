@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "User-System Interactions and Models"
+title: "Disciplines for Modeling User-System Interactions"
 description: "Maps the disciplines and artifacts needed to model interactions beyond intent labels, from journeys and service blueprints to workflow contracts, human control, policy, and evaluation."
-linkTitle: "Interactions and Models"
+linkTitle: "Modeling Disciplines"
 ---
 
 Intents are a practical abstraction for describing and managing user-system interaction. They are especially useful as a routing and control layer in LLM products, where they help decide which workflow, tool, policy, or subsystem should handle a request. However, they should not be mistaken for the full representation of user meaning, because real interactions are often ambiguous, multi-intent, contextual, and evolving.

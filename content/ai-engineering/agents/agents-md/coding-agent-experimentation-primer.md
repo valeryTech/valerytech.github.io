@@ -8,7 +8,7 @@ linkTitle: "Studying Improvements"
 
 **Document type:** Conceptual methodology primer
 
-**Date:** 18 October 2026
+**Date:** 18 March 2026
 
 **Companion to:** *Research agenda: `AGENTS.md` and reliable coding-agent autonomy*
 
@@ -73,9 +73,9 @@ A hypothesis need not specify an arbitrary percentage. A meaningful threshold ca
 
 | Approach | Core idea | Useful for this project |
 |---|---|---|
-| **Evidence-based software engineering** | Find, critically assess, and combine relevant research and practitioner evidence; check whether findings apply locally. | Updating claims in the guide before investing in new evaluations. |
-| **Controlled experiment** | Compare alternative conditions while limiting other differences. | Estimating whether a minimal file, a shorter rule, or a documentation link changes outcomes. |
-| **Case study** | Examine an agent workflow in a real project, with its surrounding context. | Understanding how instructions, code structure, tools, and humans interact in practice. |
+| **[Evidence-based software engineering]({{< ref "engineering/evidence/ebse" >}})** | Find, critically assess, and combine relevant research and practitioner evidence; check whether findings apply locally. | Updating claims in the guide before investing in new evaluations. |
+| **[Controlled experiment]({{< ref "engineering/evidence/running-experiments" >}})** | Compare alternative conditions while limiting other differences. | Estimating whether a minimal file, a shorter rule, or a documentation link changes outcomes. |
+| **[Case study]({{< ref "engineering/evidence/choosing-a-method" >}}#case-studies-and-qualitative-methods)** | Examine an agent workflow in a real project, with its surrounding context. | Understanding how instructions, code structure, tools, and humans interact in practice. |
 | **Design science** | Build or revise an artifact or working method; evaluate its usefulness in the target context; iterate. | The overall program of improving agent instructions and the surrounding workflow. |
 | **Grounded theory** | Analyze qualitative observations systematically to develop an explanation from recurring patterns. | Discovering failure mechanisms from session traces, reviews, and interviews when the testable mechanisms remain unknown. |
 

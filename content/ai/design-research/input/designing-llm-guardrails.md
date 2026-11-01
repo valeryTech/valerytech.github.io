@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Designing LLM Guardrails"
+title: "Designing LLM Guardrails: Research Conversation"
 description: "A conversation exploring guardrails against overreliance on fluent AI text, including explicit interaction modes, independent checks, and links to a research report."
 linkTitle: "Designing LLM Guardrails"
 ---

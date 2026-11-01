@@ -1,10 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Functors in Haskell and Scala"
+title: "Functors in Haskell"
 aliases:
   - "/functional-programming/functor/"
 description: "A functor as a computational context: the Functor class and fmap, kinds and type constructors, lifting, the functor laws, and instances including functions."
+weight: "20"
 linkTitle: "Functor"
 ---
 
@@ -127,6 +128,8 @@ instance Functor Rev where
 ```
 
 
+It breaks the composition law as well: `fmap f . fmap g` reverses twice, which cancels out, while `fmap (f . g)` reverses once (Serrano Mena 2021, section 5.1.1).
+
 In Haskell the two laws aren't independent. Because of parametricity, any `fmap` that satisfies the identity law also satisfies the composition law, and a type has at most one lawful `Functor` instance. That is why `deriving Functor` can always choose the instance for you. (Strictly, these results ignore `undefined` and `seq`.)
 
 The compiler doesn't enforce the laws, so you have to ensure them yourself. It takes some effort at first, but after a couple of instances it starts to feel natural. Besides proving them by hand with equational reasoning, you can test them with property-based testing: QuickCheck properties such as `fmap id x == x` for random `x`, or ready-made law suites such as the `checkers` package for Haskell and `cats-laws` with Discipline for Scala. See [Property-based testing]({{< ref "functional-programming/03-building-programs/property-based-testing" >}}).
@@ -182,13 +185,15 @@ See also: [map and flatMap]({{< ref "functional-programming/02-abstractions/map-
 ## Library sources
 
 
-- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: chapter 16, Functor, covers kinds, the laws, lawless instances, testing instances with QuickCheck and the `IO` functor, with exercises.
+- [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: chapter 16, Functor: section 16.4 on kinds, on *Kinds: `f` is a type constructor*; sections 16.5 and 16.6 on the laws and lawless instances, and 16.9 on testing instances with QuickCheck, on *Laws*; with the `IO` functor and exercises. Section 22.4, Breaking down the Functor of functions, derives `fmap = (.)` for `((->) r)` from the kind `* -> * -> *`; on *Functions: `(( -> ) r)`*.
 - [Milewski 2019](/sources/programming/category-theory/milewski-2019-category-theory-for-programmers-scala-edition.pdf.enc), *Category Theory for Programmers (Scala edition)*: chapters 7, Functors (including the reader functor `( -> ) r`), and 8, Functoriality, from the category-theory side.
 - [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth*: chapter 2, section 2.3, Abstracting computations with type classes: `Functor` as mapping over a value in a computational context, the framing used under What a functor is, followed by `Applicative`, `Monad`, `Foldable` and `Traversable`.
-- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 9, Introducing Monads, opens with "Mapping Functors" and has a section on using the functor laws; chapter 6 covers higher-kinded types, the kind `* -> *` behind `Functor`.
+- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 9, Introducing Monads, opens with "Mapping Functors". Its section "Using the Functor Laws" builds an `Outlaw` functor whose `fmap` increments a counter and so breaks both laws; on *Laws*. Chapter 6, section "Understanding Higher Kinded Types and Polymorphism", introduces kinds with `:kind` and `KindSignatures`; on *Kinds: `f` is a type constructor*.
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: section 1.5, "Functors", reads `fmap :: (a -> b) -> (f a -> f b)` as lifting a function into the functor, on *Lifting*; section 5.1.1, "Functor Laws", explains the laws as structure preservation and breaks them with two lawless list instances, one that returns `[]` and one that also reverses, on *Laws*; section 0.2, "Higher-kinded Abstraction", introduces abstraction over type constructors such as `[]`, `Set` and `Tree`, on *Kinds: `f` is a type constructor*.
 
 Further reading:
 
 - [Welsh et al. 2020](/sources/programming/scala/welsh-2020-scala-with-cats.pdf.enc), *Scala with Cats*
 - [Adamek et al. 2004](/sources/programming/category-theory/adamek-2004-abstract-and-concrete-categories-joy-of-cats.pdf.enc), *Abstract and Concrete Categories: The Joy of Cats*
 - [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling*
+- [Serrano Mena 2022](/sources/programming/functional-programming/serrano-mena-2022-haskell-almost-standard-libraries.pdf.enc), *Haskell: Almost Standard Libraries*: chapter 21, Functors, section 21.1: `fmap` read as `(a -> b) -> (f a -> f b)`, lifting a function into a functor. It then turns the arrows around to get `Contravariant` (on `Predicate`), `Bifunctor` and `Profunctor`; on *Lifting*.

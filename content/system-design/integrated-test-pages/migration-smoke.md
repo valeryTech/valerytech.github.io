@@ -8,9 +8,9 @@ linkTitle: "Smoke"
 
 This page is the repo-owned manual smoke surface for migration.
 
-- Resolved note link: [System Elements]({{< ref "system-design/elements/elements" >}})
+- Resolved note link: [Request Path]({{< ref "system-design/elements/request-path" >}})
 - Local heading link: [Local Smoke Heading](#local-smoke-heading)
-- Cross-document heading link: [CDN]({{< ref "system-design/elements/elements" >}}#cdn)
+- Cross-document heading link: [CDN]({{< ref "system-design/elements/request-path" >}}#cdn)
 - Unresolved link: [[missing-note]]
 
 ## Local Smoke Heading

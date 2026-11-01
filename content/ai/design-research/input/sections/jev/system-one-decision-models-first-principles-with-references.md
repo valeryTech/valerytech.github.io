@@ -299,7 +299,7 @@ TypeSafe's central proposition--accept somewhat bounded inference in exchange fo
 ### What Jev's evidence currently supports
 
 
-TypeSafe describes Jev as a "System One Model" that consumes structured questions and returns typed probabilistic decisions. Its launch material contrasts this with autoregressive text generation and describes multiple independent decisions as parallel. It explicitly says the name was inspired by Kahneman. [^typesafe-intro][^typesafe-home] TypeSafe released Jev 1.14 in October 2026; most of the independent studies below evaluated 1.13, so their exact quantitative results should not automatically be transferred to later versions. [^jev-114]
+TypeSafe describes Jev as a "System One Model" that consumes structured questions and returns typed probabilistic decisions. Its launch material contrasts this with autoregressive text generation and describes multiple independent decisions as parallel. It explicitly says the name was inspired by Kahneman. [^typesafe-intro][^typesafe-home] TypeSafe released Jev 1.14 in March 2026; most of the independent studies below evaluated 1.13, so their exact quantitative results should not automatically be transferred to later versions. [^jev-114]
 
 The current independent picture is nuanced:
 
@@ -728,7 +728,7 @@ rather than only:
 
 A production decision model becomes part of application semantics. Changing it can change thresholds, review rates and actions.
 
-Version-pin the model used for a validated policy, retain representative request replays, and require a regression run before moving to a new version. TypeSafe's October 2026 Jev 1.14 release itself advises workload-specific evaluation because improvements are not uniform across domains. [^jev-114]
+Version-pin the model used for a validated policy, retain representative request replays, and require a regression run before moving to a new version. TypeSafe's March 2026 Jev 1.14 release itself advises workload-specific evaluation because improvements are not uniform across domains. [^jev-114]
 
 At minimum log:
 
@@ -859,7 +859,7 @@ Until such evidence exists, the scientifically conservative conclusion is:
 
 [^jev-limits]: *What Can't Jev Decide? Probing the Limits of One-Pass Decision Models* (2026). arXiv:2610.24929. https://arxiv.org/abs/2610.24929
 
-[^previous-jev-report]: Earlier user-supplied Jev research report, *Jev and System One decision models: motivation, principles, evidence, alternatives, and practical use*. [Markdown copy]({{< ref "ai/design-research/input/sections/jev/jev-system-one-with-references" >}}). This is a separate document cited by the source report.
+[^previous-jev-report]: Earlier user-supplied Jev research report, *Jev and System One decision models: motivation, principles, evidence, alternatives, and practical use*. [Markdown copy]({{< ref "ai/design-research/input/sections/jev/jev-engineering-assessment" >}}). This is a separate document cited by the source report.
 
 [^kahneman-frederick]: Kahneman, D., & Frederick, S. (2002). Representativeness revisited: Attribute substitution in intuitive judgment. In *Heuristics and Biases*. Cambridge University Press. https://www.cambridge.org/core/books/abs/heuristics-and-biases/representativeness-revisited-attribute-substitution-in-intuitive-judgment/AAB5D933A3F944CFB5CB02265D376C8F
 

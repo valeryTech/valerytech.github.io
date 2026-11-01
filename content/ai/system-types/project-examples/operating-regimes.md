@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Operating Regimes"
+title: "Operating Regimes in AI Products"
 description: "Work can advance through user questions, permitted transitions, new evidence, artifact revisions, or delegated steps; comparing those rules helps distinguish operating regimes from deployment permissions."
 linkTitle: "Operating Regimes"
 ---

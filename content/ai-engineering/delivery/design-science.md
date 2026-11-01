@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Design Science: Problem, Requirements, and Artefact Design"
+title: "Design Science Method: Excerpts from Johannesson and Perjons"
 description: "Design-science source material covering problem explication, requirements, alternative designs, artifact construction, design rationale, demonstration, and evaluation."
 linkTitle: "Design Science Method"
 ---

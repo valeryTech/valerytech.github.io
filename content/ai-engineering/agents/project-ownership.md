@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "Project Understanding and Ownership"
+aliases:
+  - "/ai-engineering/agents/comprehension/"
 description: "Accepting changes before closing understanding gaps compounds comprehension debt. Human ownership keeps the project model, design judgment, and accountability connected as agents accelerate implementation."
 linkTitle: "Project Ownership"
 ---
@@ -30,6 +32,19 @@ This can be acceptable for throwaway scripts, experiments, migration helpers, or
 {{< callout context="note" title="Comprehension Principle" icon="outline/info-circle" >}}
 For core product code, comprehension is part of correctness.
 {{< /callout >}}
+
+
+How much understanding is required depends on the area:
+
+|Area|Required understanding|
+|---|---|
+|Throwaway scripts|Understand the contract and failure impact|
+|Internal tools|Understand inputs, outputs, and operational risk|
+|Core product logic|Understand architecture, invariants, tradeoffs, and failure modes|
+|Evaluation harness|Understand what is being measured and what is not|
+|Agent/RAG reasoning pipeline|Understand data flow, retrieval assumptions, ranking/eval logic, and semantic failure modes|
+
+Agents make adding code cheap without making the preservation of understanding equally cheap. Technical debt is then no longer only bad design accumulating over time: it becomes **unreviewed complexity accumulating at machine speed**.
 
 ## The Law of Inevitable Comprehension Collapse
 

@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Working Ideas: Workflow Evolution and Autonomy"
 description: "Open hypotheses about risk-based autonomy and evolving workflows, contrasting deterministic-first design with introducing structure after observing LLM behavior in practice."
+weight: "90"
 linkTitle: "Workflow Evolution"
 ---
 

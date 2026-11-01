@@ -5,6 +5,7 @@ title: "Functions and Composition in Haskell and Scala"
 aliases:
   - "/functional-programming/functions-and-composition/"
 description: "Functions as values in Haskell and Scala: lambdas and closures, returning functions for API design, currying and partial application, custom control structures, and composition into pipelines."
+weight: "40"
 linkTitle: "Functions and Composition"
 ---
 
@@ -289,15 +290,16 @@ See also: [Call-by-name in Scala]({{< ref "functional-programming/01-foundations
 
 
 - [Odersky et al. 2021](/sources/programming/scala/odersky-2021-programming-in-scala-5e.pdf.enc), *Programming in Scala (5th edition)*: source of the closures passage, the placeholder partial application, the loan pattern and the file matcher (the chapters on functions and closures, and on control abstraction).
-- [Allen and Moronuki 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: currying, partial application, sections and point-free composition in Haskell.
-- [Hughes 1990](/sources/programming/functional-programming/hughes-1990-why-functional-programming-matters.pdf.enc), *Why Functional Programming Matters*: higher-order functions and lazy evaluation as the "glue" for composing programs from small pieces.
+- [Allen and Moronuki 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: section 5.4, Currying (every function takes one argument; partial application, manual currying and uncurrying, sectioning), and section 7.6, Higher-order functions (`flip`), on *Currying and partial application* and *Argument order*; section 2.9, Parenthesization, on `($)`, and sections 7.8 and 7.9, Function composition and Pointfree style, on *Composition and application in Haskell*.
+- [Hughes 1990](/sources/programming/functional-programming/hughes-1990-why-functional-programming-matters.pdf.enc), *Why Functional Programming Matters*: section 3, "Gluing Functions Together", is the refactoring move under Small functions as parameters applied to `sum`, turning its parts into parameters to get `foldr` and then `map`; section 4, "Gluing Programs Together", composes whole programs as `g . f`, run on demand; on *Small functions as parameters* and *Pipelines*.
 - Płachta 2022, *Grokking Functional Programming*: chapter 4, Functions as values, is the source of the passages under Small functions as parameters and Returning functions and API design (`rankedWords`, `highScoringWords`, returning functions, multiple parameter lists and currying); chapter 5, Sequential programs, is the source of the pipeline passage under Composition.
 - [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 8, Understanding Functions: functions as values, currying, partial application, total functions and composition, in F#; chapter 9 uses partial application to bake dependencies into the steps of a pipeline.
 - [Schwarz 2023](/sources/programming/scala/schwarz-2023-kleisli-composition-flatmap-join-map-unit.pdf.enc), *Kleisli composition, flatMap, join, map, unit*: Kleisli composition (`>=>`) of functions `A => F[B]`, defined through `flatMap`; on composing functions with different effects.
+- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 1, Getting Started with Haskell, section "Writing Functions": automatic currying, partial application and η-reduction, and `flip` and backticks for supplying a later argument first. Its subsections "Composing Functions" (`($)` and `(.)`) and "Writing Functions with No Named Parameters" (pointfree style) cover the rest; on *Currying and partial application*, *Argument order* and *Composition and application in Haskell*.
 
 Further reading:
 
 - [Pilquist et al. 2023](/sources/programming/scala/pilquist-2023-functional-programming-in-scala-2e.pdf.enc), *Functional Programming in Scala (2nd edition)*
 - [Sfregola 2021](/sources/programming/scala/sfregola-2021-get-programming-with-scala.pdf.enc), *Get Programming with Scala*
 - [Wampler 2021](/sources/programming/scala/wampler-2021-programming-scala-3e.pdf.enc), *Programming Scala (3rd edition)*
-- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: section 5.3.1, "Kleisli Arrows", on `<=<`, which composes `a -> m b` arrows for one monad `m`, and section 10.1, "Combining Monads by Hand", where an evaluator over `Reader Assignment (Maybe Integer)` has to check failures by hand; on *Composing functions with different effects*.

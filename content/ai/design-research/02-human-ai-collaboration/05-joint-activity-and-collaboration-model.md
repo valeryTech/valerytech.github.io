@@ -13,7 +13,7 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 The retained LLM passages develop a collaboration model from joint activity, common ground, coordination, and teamwork. The earlier principles, later coverage reasoning, and compact model remain together. The sibling [comments]({{< ref "ai/design-research/02-human-ai-collaboration/05-joint-activity-and-collaboration-model-comments" >}}) explain the placement and limits.
 
-[Augmenting human work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}) provides the wider allocation and decision-point discussion. [Collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) continues the original source with specific interaction patterns. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/collab-transfer" >}}) links both parts.
+[Augmenting human work]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}) provides the wider allocation and decision-point discussion. [Collaboration patterns]({{< ref "ai/design-research/02-human-ai-collaboration/06-human-ai-collaboration-patterns" >}}) continues the original source with specific interaction patterns. The [source redirect]({{< ref "ai/design-research/collab-and-joint-work/joint-activity-route" >}}) links both parts.
 
 <a id="retained-dialogue"></a>
 

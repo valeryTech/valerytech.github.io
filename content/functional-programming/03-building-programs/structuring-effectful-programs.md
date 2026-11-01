@@ -5,6 +5,7 @@ title: "Structuring Effectful Functional Programs"
 aliases:
   - "/functional-programming/structuring-effectful-programs/"
 description: "Why monads don't compose and the ways around it: monad transformers, mtl-style classes, service handles and ReaderT, free monads, tagless final and ZIO layers, with their trade-offs and when to pick which."
+weight: "30"
 linkTitle: "Structuring Effectful Programs"
 ---
 
@@ -18,7 +19,7 @@ A real program rarely lives in one simple monad. A request handler reads configu
 - **Combining effects.** How do Reader, State, Either and IO become one monad you can write a single `do` block or for-comprehension in? This is where transformers and mtl come in.
 - **Abstracting dependencies.** How does business logic call "the user repository" without knowing whether it is Postgres or an in-memory map for tests? This is dependency inversion, and the answers are handles, Reader environments, interpreters of a free monad, tagless final algebras, or ZIO layers.
 
-Granin (ch. 13.2) treats all of these as kinds of *functional interface* and compares them by simplicity, boilerplate, convenience and the language features they need. Serrano Mena (ch. 13) frames the same split as *final* style (the program is written against an interface) versus *initial* style (the program is a data structure that an interpreter walks). Most of the approaches below are one of those two, plus a decision about how to combine effects.
+Granin (ch. 13.2) treats all of these as kinds of *functional interface* and compares them by simplicity, boilerplate, convenience and the language features they need. Serrano Mena (2021, ch. 13) frames the same split as *final* style (the program is written against an interface) versus *initial* style (the program is a data structure that an interpreter walks). Most of the approaches below are one of those two, plus a decision about how to combine effects.
 
 ## Why monads don't compose
 
@@ -30,9 +31,9 @@ join :: f (g (f (g a))) -> f (g a)
 ```
 
 
-and the only tools a monad offers are `return`, `fmap`, and a `join` that collapses two *adjacent* layers of the *same* monad. The layers here alternate, so nothing fits (Serrano Mena, ch. 10.3; Schwarz 2019, following *Functional Programming in Scala*).
+and the only tools a monad offers are `return`, `fmap`, and a `join` that collapses two *adjacent* layers of the *same* monad. The layers here alternate, so nothing fits (Serrano Mena 2021, ch. 10.3; Schwarz 2019, following *Functional Programming in Scala*).
 
-There are partial escapes. If you can write `swap :: g (f a) -> f (g a)`, a *distributive law*, the middle layers can be swapped and both joins applied. `Maybe` distributes over any monad, and two Readers compose because swapping is just `flip`. A well-typed `swap` is not enough, though: the result must still obey the monad laws, and lists composed with lists break associativity (Serrano Mena, ch. 10.3). Schwarz quotes the FPiS version of the same idea: if the inner monad is also `Traverse`, `sequence` provides the swap. Neither gives a generic `compose` for monads, so each combination needs code written for it. Monad transformers are that code, written once per monad.
+There are partial escapes. If you can write `swap :: g (f a) -> f (g a)`, a *distributive law*, the middle layers can be swapped and both joins applied. `Maybe` distributes over any monad, and two Readers compose because swapping is just `flip`. A well-typed `swap` is not enough, though: the result must still obey the monad laws, and lists composed with lists break associativity (Serrano Mena 2021, ch. 10.3). Schwarz quotes the FPiS version of the same idea: if the inner monad is also `Traverse`, `sequence` provides the swap. Neither gives a generic `compose` for monads, so each combination needs code written for it. Monad transformers are that code, written once per monad.
 
 ## Monad transformers
 
@@ -52,7 +53,7 @@ instance Monad m => Monad (MaybeT m) where
 ```
 
 
-The bind is `Maybe`'s bind with `m`'s plumbing threaded through. In `transformers`, the plain monads are the transformers over `Identity`: `State s = StateT s Identity`, `Reader r = ReaderT r Identity` (Serrano Mena, ch. 11.1; Bragilevsky, ch. 6.4).
+The bind is `Maybe`'s bind with `m`'s plumbing threaded through. In `transformers`, the plain monads are the transformers over `Identity`: `State s = StateT s Identity`, `Reader r = ReaderT r Identity` (Serrano Mena 2021, ch. 11.1; Bragilevsky, ch. 6.4).
 
 Stacking several gives an application monad. Here configuration, a counter, a typed error and I/O:
 
@@ -83,10 +84,10 @@ runApp app cfg = runExceptT (runStateT (runReaderT app cfg) 0)
 
 Things to notice:
 
-- **Order changes meaning.** With `ExceptT` below `StateT`, the result is `Either AppError (a, Int)`: on failure the counter is lost. Put `StateT` below `ExceptT` and you get `(Either AppError a, Int)`, which keeps the state. Serrano Mena's example is a log that survives failure or not depending on whether `WriterT` sits above or below `MaybeT` (ch. 11.1.3).
+- **Order changes meaning.** With `ExceptT` below `StateT`, the result is `Either AppError (a, Int)`: on failure the counter is lost. Put `StateT` below `ExceptT` and you get `(Either AppError a, Int)`, which keeps the state. Serrano Mena's example is a log that survives failure or not depending on whether `WriterT` sits above or below `MaybeT` (2021, ch. 11.1.3).
 - **Lifting.** With bare `transformers`, reaching the `StateT` layer from inside `ReaderT` takes `lift get`, and the layer below that `lift (lift ...)`. The mtl classes in the next section hide this. `IO` has no transformer and must sit at the bottom, reached with `liftIO` (Bragilevsky, ch. 6.2).
 - **Hiding the stack.** Bragilevsky's `du` application wraps a `ReaderT`/`WriterT`/`StateT` stack over `IO` in a `newtype` and derives `MonadReader`, `MonadWriter`, `MonadState` and `MonadIO` with `GeneralizedNewtypeDeriving`, so the rest of the code never sees the layers (ch. 6.2.4).
-- **Callbacks.** `lift` only works when the monad appears in the result type. Functions that take monadic arguments, such as `catch` or `bracket`, need *unlifting*. `MonadUnliftIO` from `unliftio` does this, but only for stacks of `ReaderT` over `IO`, because a stateful or error layer would behave differently if a callback ran twice (Serrano Mena, ch. 12.3).
+- **Callbacks.** `lift` only works when the monad appears in the result type. Functions that take monadic arguments, such as `catch` or `bracket`, need *unlifting*. `MonadUnliftIO` from `unliftio` does this, but only for stacks of `ReaderT` over `IO`, because a stateful or error layer would behave differently if a callback ran twice (Serrano Mena 2021, ch. 12.3).
 
 In Scala the common transformers are Cats' `OptionT`, `EitherT` and `Kleisli` (Cats' Reader). The textbook case is `Future[Option[A]]`: in a for-comprehension over `Future` each step gives you an `Option`, which you would otherwise unwrap by hand. `OptionT[F, A]` wraps `F[Option[A]]` and provides a `flatMap` that goes through both layers:
 
@@ -124,16 +125,16 @@ attempt :: (MonadReader Config m, MonadState Int m, MonadError AppError m, Monad
 ```
 
 
-The body is unchanged. `App` from above satisfies all four constraints, and so would any other stack that provides them. Each class needs two kinds of instance: one for the transformer that really implements the operation (`MonadReader r (ReaderT r m)`), and pass-through instances for every other transformer (`MonadReader r m => MonadReader r (MaybeT m)`). With *n* classes and *n* transformers that is roughly n² instances, which is why you use the `mtl` library instead of writing them (Serrano Mena, ch. 11.2).
+The body is unchanged. `App` from above satisfies all four constraints, and so would any other stack that provides them. Each class needs two kinds of instance: one for the transformer that really implements the operation (`MonadReader r (ReaderT r m)`), and pass-through instances for every other transformer (`MonadReader r m => MonadReader r (MaybeT m)`). With *n* classes and *n* transformers that is roughly n² instances, which is why you use the `mtl` library instead of writing them (Serrano Mena 2021, ch. 11.2).
 
-Limits worth knowing (Serrano Mena, ch. 11.2):
+Limits worth knowing (Serrano Mena 2021, ch. 11.2.1; the stack-order point is ch. 11.1.3):
 
 - `MonadReader r m` has a functional dependency `m -> r`, which helps inference but allows only one environment type per monad. Two separate `MonadReader` constraints in one signature are rejected. The usual workaround is one environment with `HasX` classes for each part.
 - The classes have few laws, so "polymorphic in `m`" says little about how the effects interact. That still depends on the order of the stack that is eventually chosen.
 
 Cats MTL is the Scala counterpart, with finer-grained classes such as `Ask` and `Stateful` instead of `MonadReader` and `MonadState`. Volpe notes that a `Stateful` constraint is usually satisfied by `StateT`, but a `Ref`-backed instance over plain `IO` is faster and easier to use. That is a sign that in Scala the constraints are what you want, not the transformers behind them (Volpe, Bonus Chapter, "MTL").
 
-mtl is tagless final for the standard effects: the class is the algebra, the instances are interpreters. Granin calls mtl a special case of final tagless (ch. 13.2.6), and Serrano Mena says final style resembles mtl but allows more than one interpretation per monad (ch. 13.2).
+mtl is tagless final for the standard effects: the class is the algebra, the instances are interpreters. Granin calls mtl a special case of final tagless (ch. 13.2.6), and Serrano Mena says final style resembles mtl but allows more than one interpretation per monad (2021, ch. 13.2).
 
 ## Passing handles: the Service Handle and ReaderT patterns
 
@@ -171,14 +172,14 @@ renameApp uid newName = do
 ```
 
 
-Granin's verdict is that this costs lifts and a run step for little gain over passing the handle, so keep it simple (ch. 13.2.3). The pattern is more often argued for on other grounds, set out in Michael Snoyman's "ReaderT design pattern" post (not in the library). Keep the stack at exactly `ReaderT Env IO`. Put mutable state in `IORef`s or `TVar`s inside `Env` instead of using `StateT` or `WriterT`. Then exceptions and concurrency behave like plain `IO`, and `MonadUnliftIO` works, since it supports only `ReaderT` over `IO` (Serrano Mena, ch. 12.3).
+Granin's verdict is that this costs lifts and a run step for little gain over passing the handle, so keep it simple (ch. 13.2.3). The pattern is more often argued for on other grounds, set out in Michael Snoyman's "ReaderT design pattern" post (not in the library; Serrano Mena 2022, ch. 22.2, summarises the pattern and the `rio` library built on it). Keep the stack at exactly `ReaderT Env IO`. Put mutable state in `IORef`s or `TVar`s inside `Env` instead of using `StateT` or `WriterT`. Then exceptions and concurrency behave like plain `IO`, and `MonadUnliftIO` works, since it supports only `ReaderT` over `IO` (Serrano Mena 2021, ch. 12.3).
 
 Ghosh uses Scala's version for dependency injection: service functions return `AccountRepository => Try[A]`, or a `Kleisli` over the repository, and the repository is supplied at the edge (ch. 3, "The Reader monad"; ch. 6.2). He notes that the language needs no DI framework for this. For Reader itself see [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader).
 
 ## Free monads
 
 
-A free monad turns a set of operations into a data type and gives you a monad over it without writing one. Each operation becomes a constructor holding its arguments and a continuation for its result. `Free` adds `Pure` (return) and nesting (bind), and an interpreter folds the tree into a real monad (Serrano Mena, ch. 13.3; Granin, ch. 6). The name comes from getting `flatMap` over the operations for free. In Haskell the type is `Control.Monad.Free` from the `free` package; Cats provides `cats.free.Free`:
+A free monad turns a set of operations into a data type and gives you a monad over it without writing one. Each operation becomes a constructor holding its arguments and a continuation for its result. `Free` adds `Pure` (return) and nesting (bind), and an interpreter folds the tree into a real monad (Serrano Mena 2021, ch. 13.3; Granin, ch. 6). The name comes from getting `flatMap` over the operations for free. In Haskell the type is `Control.Monad.Free` from the `free` package; Cats provides `cats.free.Free`:
 
 ```haskell
 {-# LANGUAGE DeriveFunctor #-}
@@ -220,7 +221,7 @@ runPure []     (Free (ReadLine k))    = runPure [] (k "")
 
 `greet` is a value. `runIO` runs it against the terminal and `runPure` against canned input. The interpreter passed to `foldFree` is a natural transformation `forall x. ConsoleF x -> IO x`.
 
-**Freer and operational.** Writing continuations into every constructor is awkward. In *operational* style each instruction is a GADT constructor indexed by its result type, with no continuation, and a generic `Program instr a` (from the `operational` package) adds `Done` and `Bind`. Because the instruction type no longer needs to be a functor, this is called the *freer* monad. Cats' and Scalaz's `Free` are freer monads in this sense (Serrano Mena, ch. 13.4):
+**Freer and operational.** Writing continuations into every constructor is awkward. In *operational* style each instruction is a GADT constructor indexed by its result type, with no continuation, and a generic `Program instr a` (from the `operational` package) adds `Done` and `Bind`. Because the instruction type no longer needs to be a functor, this is called the *freer* monad. Cats' and Scalaz's `Free` are freer monads in this sense (Serrano Mena 2021, ch. 13.3.1 and 13.4):
 
 ```scala
 import cats.free.Free
@@ -253,15 +254,15 @@ val run: IO[Unit] = greet.foldMap(toIO)
 What free monads buy:
 
 - **Programs as values.** The same program can be interpreted for production, tests, logging or a different backend. Ghosh says the strong separation of algebra from interpreter "subsumes" dependency injection (ch. 5.5.5).
-- **Inspection, with a limit.** Because the program is data, an interpreter can rewrite it before running it. Serrano Mena's example removes a `push` immediately followed by `pop` (ch. 13.5). But every bind holds a function, so you can't see past the next step without running it. Full static analysis needs free *applicatives*.
+- **Inspection, with a limit.** Because the program is data, an interpreter can rewrite it before running it. Serrano Mena's example removes a `push` immediately followed by `pop` (2021, ch. 13.5). But every bind holds a function, so you can't see past the next step without running it. Full static analysis needs free *applicatives*.
 - **Stack safety in Scala.** Interpreting through `Free` is trampolined, which keeps deep monadic recursion off the JVM stack (Ghosh, ch. 5.5.5).
 - **Clear boundaries.** Granin builds a whole framework from free monadic languages, nested into hierarchies ("hierarchical free monads"), with the interpreters as the only place that touches real subsystems (ch. 2, 6).
 
 What they cost:
 
 - **Boilerplate.** You write a data type, smart constructors and an interpreter for every language. Granin's own comparison concedes that for a simple service a handle is enough (ch. 13.2.4).
-- **Performance.** Left-nested binds re-traverse the tree, so naive `Free` is quadratic. The fixes are the codensity transformation (Serrano Mena, ch. 15.2), Church-encoded `F` from the `free` package, and the "reflection without remorse" representation (Granin, ch. 6.2). There is also interpretive overhead per instruction.
-- **Combining languages.** Two free languages in one program need a coproduct of their instruction types and injections (Serrano Mena, ch. 14.2). Generalising that gives *extensible effects*: one `Eff` monad indexed by a type-level list of effects, with handlers in place of interpreters. The book names `freer-simple`, `freer-effects` and Scala's `eff` (ch. 14.3). Later Haskell effect libraries such as `polysemy`, `fused-effects` and `effectful` continue the line (outside the library sources; check current status before choosing one).
+- **Performance.** Left-nested binds re-traverse the tree, so naive `Free` is quadratic. The fixes are the codensity transformation (Serrano Mena 2021, ch. 15.2.1), Church-encoded `F` from the `free` package (ch. 15.2.2), and the "reflection without remorse" representation (ch. 15.2.3; Granin, ch. 6.2). There is also interpretive overhead per instruction.
+- **Combining languages.** Two free languages in one program need a coproduct of their instruction types and injections (Serrano Mena 2021, ch. 14.2). Generalising that gives *extensible effects*: one `Eff` monad indexed by a type-level list of effects, with handlers in place of interpreters. The book names `freer-simple`, `freer-effects` and Scala's `eff` (ch. 14.3). Later Haskell effect libraries such as `polysemy`, `fused-effects` and `effectful` continue the line (outside the library sources; check current status before choosing one).
 
 An introductory post: Free monads are simple (Underscore, 2015), <https://underscore.io/blog/posts/2015/04/14/free-monads-are-simple.html>.
 
@@ -360,18 +361,18 @@ val (db, ok) = rename[Test](testUsers)(1L, "Bob").run(Map(1L -> User(1L, "Al")))
 ```
 
 
-Volpe's argument for paying the `F[_]` tax is parametricity. Inside `rename` the type allows only `Users`, `Log` and `Monad` operations, while a function in `IO` can do anything. He adds that Scala doesn't enforce this, since nothing stops a side effect inside `F`, so it rests on team discipline (ch. 2, "Why Tagless Final?"). Composition is easy: a program needing two algebras just has two constraints, and interpreting has no intermediate data structure, so the overhead is close to nil (Serrano Mena, ch. 13.2, 14.1).
+Volpe's argument for paying the `F[_]` tax is parametricity. Inside `rename` the type allows only `Users`, `Log` and `Monad` operations, while a function in `IO` can do anything. He adds that Scala doesn't enforce this, since nothing stops a side effect inside `F`, so it rests on team discipline (ch. 2, "Why Tagless Final?"). Composition is easy: a program needing two algebras just has two constraints, and interpreting has no intermediate data structure, so the overhead is close to nil (Serrano Mena 2021, ch. 13.2, 14.1).
 
 Two differences between Haskell and Scala. In Haskell the algebra is usually a type class, so interpreters are chosen by type, and two interpreters for the same `F` need distinct newtypes. Volpe distinguishes algebras (many interpreters) from type classes (coherent, one instance per type) for that reason (ch. 2, "Algebras"). Granin is critical of the Haskell form: business logic and instances live in the same monad `m`, so domain effects and infrastructure effects mix in one constraint list, and he ranks it below handles and free monads (ch. 13.2.6).
 
 Caveat: in Scala the style is contested. When an application only ever uses one effect type, abstracting over `F[_]` adds type parameters and constraints everywhere for flexibility that is never used. ZIO's authors, John De Goes among them, have argued against it for that reason (see [ZIO's environment and ZLayer](#zios-environment-and-zlayer)). Its strongest case is libraries meant to work with any effect type.
 
-The domain-modeling side of tagless final, with an accounts example, its costs and the expression-problem links, is in [Tagless final]({{< ref "type-driven-design/effects-and-interpreters" >}}#tagless-final) and not repeated here. [Daniel sentence]({{< ref "type-driven-design/effects-and-interpreters" >}}#daniel-sentence) covers where the style comes from, how it extends programming to interfaces, and how it differs from `F[_]` plus type classes. Oleg Kiselyov, who introduced the technique with Carette and Shan, has a course on it: <https://okmij.org/ftp/tagless-final/course/index.html#lecture>.
+The domain-modeling side of tagless final, with an accounts example, its costs and the expression-problem links, is in [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}) and not repeated here. [Daniel sentence]({{< ref "type-driven-design/04-architecture/tagless-final" >}}#daniel-sentence) covers where the style comes from, how it extends programming to interfaces, and how it differs from `F[_]` plus type classes. Oleg Kiselyov, who introduced the technique with Carette and Shan, has a course on it: <https://okmij.org/ftp/tagless-final/course/index.html#lecture>.
 
 ## Free monads versus tagless final
 
 
-The two are the initial and final encodings of the same idea: an algebra of operations with interchangeable interpreters (Serrano Mena, ch. 13; Volpe, ch. 2).
+The two are the initial and final encodings of the same idea: an algebra of operations with interchangeable interpreters (Serrano Mena 2021, ch. 13; Volpe, ch. 2).
 
 | | Free / freer monad | Tagless final |
 |---|---|---|
@@ -429,7 +430,7 @@ This is the Service Handle pattern with a dependency-graph builder on top. The t
 ## Trade-offs
 
 
-Rough guidance drawn from the sources above. Granin's own table (ch. 13.2.7) is the starting point, and he warns it is not the final word.
+Rough guidance drawn from the sources above. Granin's own table (ch. 13.2.7, table 13.1) compares simplicity, boilerplate, convenience and advanced language features, and he warns it is only a starting point, not the final word. His testability ratings (ch. 15.2.5, table 15.1) differ from the column below: final tagless/mtl, ReaderT and a service handle over `IO` are "Low", and only free monads are "Best", because only they make it impossible to bypass the interface.
 
 | Approach | Performance | Testability | Boilerplate | Familiarity needed |
 |---|---|---|---|---|
@@ -454,19 +455,24 @@ Performance statements here are qualitative. Measure before choosing on performa
 - **A library meant to work with any effect type.** Use tagless final: this is its strongest case.
 - **Many fine-grained effects with precise types in Haskell.** Consider an effect library from the extensible-effects line, and weigh how mature it is and what your team already knows. See [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}).
 
-See also: [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}), [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Higher-kinded types]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#higher-kinded-types), [Functional domain modeling]({{< ref "type-driven-design/functional-domain-modeling" >}}), [Tagless final]({{< ref "type-driven-design/effects-and-interpreters" >}}#tagless-final), [Side effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#side-effects), [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems) and [Functional core, imperative shell]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#functional-core-imperative-shell).
+See also: [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}), [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader), [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}), [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Effect systems]({{< ref "functional-programming/03-building-programs/effect-systems" >}}), [Error handling as values]({{< ref "functional-programming/03-building-programs/error-handling" >}}), [Type classes and polymorphism]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}), [Higher-kinded types]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#higher-kinded-types), [Functional domain modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}), [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}), [Side effects]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#side-effects), [Effect systems]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#effect-systems) and [Functional core, imperative shell]({{< ref "functional-programming/01-foundations/pure-functions-and-effects" >}}#functional-core-imperative-shell).
 
 ## Library sources
 
 
 - [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: ch. 10 why monads don't compose and distributive laws; ch. 11 transformers and mtl-style classes; ch. 12 lifting and `MonadUnliftIO`; ch. 13 final, initial and operational styles, free and freer monads; ch. 14 composing them and extensible effects; ch. 15 performance of free monads.
-- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth*: ch. 6 structuring programs with monad transformers (the `du` stack, newtype deriving, the `transformers` and `mtl` packages); ch. 7.2 `ExceptT`.
+- [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth*: ch. 6 structuring programs with monad transformers (the `du` stack, newtype deriving, the `transformers` and `mtl` packages); ch. 7.2 `ExceptT`; section 6.3, "What is a monad transformer?", builds `MaybeT` step by step (type, `Monad` instance, `MonadState` and `MonadIO` pass-through instances) and stacks it over `State`; on *Monad transformers*.
 - [Schwarz 2019](/sources/programming/scala/schwarz-2019-monads-do-not-compose.pdf.enc), *Monads do not Compose*: functor and applicative composition, the failed `join`, and the `Traverse` escape, after FPiS.
-- [Granin 2025](/sources/programming/functional-programming/granin-2025-functional-design-and-architecture.pdf.enc), *Functional Design and Architecture*: ch. 4.2 the Service Handle pattern; ch. 6 free monads as functional interfaces; ch. 13.2 handles, ReaderT, free monads, GADTs and final tagless/mtl compared.
+- [Granin 2025](/sources/programming/functional-programming/granin-2025-functional-design-and-architecture.pdf.enc), *Functional Design and Architecture*: ch. 4.2 the Service Handle pattern; ch. 6 free monads as functional interfaces; ch. 13.2 handles, ReaderT, free monads, GADTs and final tagless/mtl compared; ch. 15.2.5 and table 15.1, testability: free monads best, final tagless/mtl and handles over `IO` low; on *Trade-offs*.
 - [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling*: ch. 3 the Reader monad for injecting repositories; ch. 5.5 free monads for a repository algebra; ch. 6.2 stacking `Future` and `\/` with `EitherT`.
 - [Volpe 2021](/sources/programming/scala/volpe-2021-practical-fp-in-scala-2e.pdf.enc), *Practical FP in Scala (2nd edition)*: ch. 1 "About monad transformers"; ch. 2 tagless final (algebras, interpreters, programs, explicit versus implicit parameters, capability traits, parametricity); Bonus Chapter on Cats MTL.
 - [De Goes 2025](/sources/programming/scala/degoes-2025-zionomicon.pdf.enc), *Zionomicon*: Foreword on the ZIO environment, `ZLayer` and the move away from tagless final; ch. 17 the environment, layers and the Service Pattern; ch. 18 `ZEnvironment`.
 - [Carette et al. 2009](/sources/programming/dsls/carette-2009-finally-tagless-partially-evaluated.pdf.enc), *Finally Tagless, Partially Evaluated*: sections 1 to 2, the tag problem, the final encoding, and the `Symantics` interpreters.
+- Bird 1998, *Introduction to Functional Programming using Haskell (2nd edition)*: section 10.4, "Combining monads": no uniform rule combines two monads, so it defines exception and state transformers with type classes for raise and tick; section 10.4.3, "Putting it all together", stacks them both ways and shows that on a division by zero one order loses the operation count while the other keeps it; on *Monad transformers*.
+- [Allen and Moronuki 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: chapter 25, Composing types, sections 25.3 to 25.5 ("Twinplicative", "Twonad?"): `Compose` gets lawful `Functor` and `Applicative` instances, but bind for `Compose f g` needs `f (g (f (g a))) -> f (g a)`, which cannot be written, and that is why transformers exist; on *Why monads don't compose*. Chapter 26, Monad transformers: `MaybeT`'s newtype and `Monad` instance (26.2), `State s = StateT s Identity` (26.7), why the stack's lexically inner layer is structurally outer (26.8), `lift` and `liftIO` (26.9, 26.10), and `ReaderT r Maybe` against `MaybeT (Reader r)` (26.12, "Monads do not commute"); on *Monad transformers*.
+- [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 13, Building Applications with Many Effects. Section "Stacking Transformers Effectively" ("Nesting State Inside of Except", "Nesting Except Inside of StateT"): with `ExceptT` over `State`, a failed `<|>` alternative keeps the input it consumed and `many` never terminates, while with `StateT` over `Except` each alternative starts from the original state; on *Monad transformers*. Section "Building a File Archiver" ("Transforming Monads with Class", "Tagless Final Encoding", "MonadIO"): it writes `MonadState` and adds the functional dependency `| m -> s` after showing the inference failure without it, and writes `MonadError` and `MonadIO`; it calls constraint-first code tagless final and "mtl style", and weighs it against direct style: easier refactoring, reuse, dependency injection and test stacks, versus no control over which effects run, worse error messages and longer compile times; on *mtl-style classes*.
+- [Serrano Mena 2022](/sources/programming/functional-programming/serrano-mena-2022-haskell-almost-standard-libraries.pdf.enc), *Haskell: Almost Standard Libraries*: chapter 22, Effects. Section 22.1, "Stacks and classes", reads a stack's layer order off its run functions (a `MaybeT`/`ReaderT`/`State` stack for Dijkstra's algorithm). Section 22.2, "Architecture: classes, AppM, and RIO", compares mtl constraints, a concrete application monad and the ReaderT pattern with `rio` and `HasDbConnection`-style classes: sharp signatures against constraint sprawl, a growing "kitchen sink" monad, and GHC optimising concrete monads better. Section 22.3, "Effect systems", sketches polysemy, fused-effects and freer-simple; on *Monad transformers*, *Passing handles: the Service Handle and ReaderT patterns* and *Trade-offs*.
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 9, "Injecting Dependencies" and "Testing Dependencies": dependencies passed as explicit function parameters, baked in by partial application at a composition root near `main`, grouped into one record when there are too many, and replaced by plain stub functions in tests; it names the Reader and Free monads as the alternatives it skips; on *Passing handles: the Service Handle and ReaderT patterns*.
 
 Further reading:
 

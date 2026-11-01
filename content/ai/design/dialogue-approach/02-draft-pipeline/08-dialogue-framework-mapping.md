@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Mapping the Draft Model to Dialogue Frameworks"
 description: "Maps Quick Add’s draft manager, slots, repair, validation, confirmation, and fulfillment to frame-based dialogue, Rasa, and Lex, highlighting added provenance and execution boundaries."
+weight: "80"
 linkTitle: "Dialogue Framework Mapping"
 ---
 

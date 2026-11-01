@@ -46,7 +46,7 @@ A portal without the capabilities behind it is a directory.
 
 A golden path, or paved road, is a supported way to do a common task that already includes the non-functional requirements: logging, configuration, security, tracing.
 
-The [golden-path notes]({{< ref "engineering/delivery-techniques/skeletons" >}}) give three AI templates: observable RAG, deterministic agent, and eval harness. Their constraints make two choices explicit:
+The [golden-path notes]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}) give three AI templates: observable RAG, deterministic agent, and eval harness. Their constraints make two choices explicit:
 
 - **Copy, don't share:** prefer scaffolding copied into a project over a large internal library. In microservice terms, a [service template rather than a chassis]({{< ref "system-design/elements/operating-services" >}}#cross-cutting-concerns).
 - **One opinionated stack:** pick one stack per template; flexibility slows teams down here.
@@ -74,7 +74,7 @@ The AI agent platform book (chapter 2) lists ways self-service fails:
 ## Standards and enforcement
 
 
-The [engineering operating model]({{< ref "engineering/platform/operating-model" >}}) sketches four layers:
+The [engineering operating model]({{< ref "engineering/platform/standards-layers" >}}) sketches four layers:
 
 1. What engineers must do.
 2. How repositories and pipelines enforce it.

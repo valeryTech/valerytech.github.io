@@ -16,7 +16,7 @@ The first example describes retrieval through several query and document represe
 
 The [paper proposal]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper" >}}) retains the motivation, literature review, principles, and evaluation agenda. Its [comments]({{< ref "ai/design-research/06-research-reports/10-interactive-investigation-position-paper-comments" >}}) explain why the proposed user study differs from the existing investigation benchmark.
 
-The earlier [interactive-systems comments]({{< ref "ai/design-research/interactive-systems/00-index-comments" >}}#keep-inspection-separate-from-evidence-guarantees) already distinguish recorded screening from evidence completeness. The new examples do not remove that distinction.
+The earlier interactive-systems comments already distinguish recorded screening from evidence completeness. The new examples do not remove that distinction.
 
 ## Representation labels are not evidence judgments
 
@@ -41,7 +41,7 @@ The [program and execution record note]({{< ref "ai/design-research/05-runtime-a
 
 Coordinated views require rules for how an edit changes shared state. Merely drawing a matrix, graph, or checkbox does not establish consistent updates across interpretations and evidence.
 
-The [interactive-systems collection]({{< ref "ai/design-research/interactive-systems/00-index" >}}) provides related proposals for state and views. A later design should distinguish changing a view from changing an interpretation, retrieval plan, or accepted evidence judgment.
+The interactive-systems collection provides related proposals for state and views. A later design should distinguish changing a view from changing an interpretation, retrieval plan, or accepted evidence judgment.
 
 Some edits can be reversed locally, while already performed external effects may not be reversible. Correction and undo therefore need an explicit scope rather than a general promise that the process can always be undone.
 

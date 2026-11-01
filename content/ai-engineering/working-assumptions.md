@@ -3,13 +3,13 @@ draft: false
 toc: true
 title: "AI Engineering Working Assumptions"
 description: "Plausible proposals are becoming abundant; good experiments and discriminating evidence remain scarce. Scoped task performance, explicit evaluators, and whole-job feedback connect alternatives to useful outcomes."
-date: "2026-03-03T00:00:00-03:00"
-lastmod: "2026-03-03T00:00:00-03:00"
+date: "2026-02-03T00:00:00-03:00"
+lastmod: "2026-02-03T00:00:00-03:00"
 linkTitle: "Working Assumptions"
 sidebar:
   weight: 1
 ---
-## September 2026
+## February 2026
 
 
 These are hypotheses, not doctrine. I update them as evidence changes, and previous versions remain available in the site's history.

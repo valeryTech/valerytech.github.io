@@ -7,7 +7,7 @@ document_status: "archived"
 linkTitle: "Practice Rubric"
 ---
 
-Original scoring proposal, including its earlier timings and calculation shorthand. [Working rubric]({{< ref "system-design/interview/sd-signals-openai" >}}).
+Original scoring proposal, including its earlier timings and calculation shorthand. [Working rubric]({{< ref "system-design/interview/practice-review-rubric" >}}).
 
 <!-- Original note follows. -->
 

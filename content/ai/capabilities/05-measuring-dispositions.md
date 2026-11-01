@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Measuring Dispositions"
 description: "Why measure a capability at all, what a disposition-respecting measurement looks like (vary context, hold the system fixed, recover p(v | π, θ)), and how hypotheses connect theoretical concepts to variables."
+weight: "50"
 linkTitle: "Measuring Dispositions"
 ---
 

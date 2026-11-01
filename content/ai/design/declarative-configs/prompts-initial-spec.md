@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Initial Prompt Specification"
+title: "Text-Based Prompt Registry: Initial Specification"
 description: "Proposes a minimal text-based prompt registry with versioned references, dependency resolution, immutable publication, and locks, deferring richer syntax until user needs justify it."
-linkTitle: "Initial Prompt Specification"
+linkTitle: "Prompt Registry"
 ---
 
 Proposed design: keep the prompt specification almost entirely as text, with identity carried by the repository structure.

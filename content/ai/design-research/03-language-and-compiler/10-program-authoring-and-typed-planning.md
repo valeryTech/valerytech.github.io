@@ -569,7 +569,7 @@ A planning agent might manipulate the whole program.
 
 The following passage from the natural-language interface dialogue (archived source 011) compares declarative requests with ambiguous language, then proposes candidate intent and a typed plan. Its complete calendar example and research references remain unchanged. The proposal does not establish that a well-formed plan matches the user's intended meaning.
 
-The [opening argument and hybrid-interaction discussion]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) remain separate. Read the [comments]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction-comments" >}}) for assumptions, interpretation, and the relation to the existing [mediation model]({{< ref "ai/design-research/03-language-and-compiler/04-dsl-as-mediation-layer" >}}). The [audit map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-7-natural-language-interface-dialogue) records the passage's original range.
+The opening argument and hybrid-interaction discussion remain separate. Read the comments for assumptions, interpretation, and the relation to the existing [mediation model]({{< ref "ai/design-research/03-language-and-compiler/04-dsl-as-mediation-layer" >}}). The audit map records the passage's original range.
 
 <!-- Natural-language candidate-plan passage begins below. -->
 
@@ -688,7 +688,7 @@ This pattern keeps appearing.
 
 The following passage from the language-interface architecture reply (archived source 012) retains the complete customer-follow-up example, intent representation, compiler diagram, and restricted-program proposal. The model's use of the term compiler does not establish that interpretation has formal semantics or that a candidate plan matches the user's intent.
 
-The [architecture overview]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries" >}}) retains the complete stack proposal. The related [domain and operation passage]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}) describes business definitions and operation contracts. Read the [architecture comments]({{< ref "ai/design-research/interactive-systems/09-intent-environments-and-domain-boundaries-comments" >}}#interpretation-and-checking-answer-different-questions) for unresolved meanings, preview, and checking. The [stage 8 audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-8-language-interfaces-and-architecture) records the passage's original range.
+The architecture overview retains the complete stack proposal. The related [domain and operation passage]({{< ref "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts" >}}) describes business definitions and operation contracts. Read the architecture comments for unresolved meanings, preview, and checking. The stage 8 audit records the passage's original range.
 
 <!-- Intent-compilation and bounded-program passage begins below. -->
 

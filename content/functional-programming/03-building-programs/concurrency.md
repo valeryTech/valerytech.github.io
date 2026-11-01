@@ -5,6 +5,7 @@ title: "Functional Concurrency and Parallelism"
 aliases:
   - "/functional-programming/concurrency/"
 description: "Parallelism versus concurrency in functional code: deterministic parallelism with strategies and the Par monad, Haskell threads, MVar, async and STM, fibers in Cats Effect and ZIO, and laws that keep parallel code equivalent to sequential."
+weight: "50"
 linkTitle: "Concurrency and Parallelism"
 ---
 
@@ -249,7 +250,7 @@ Three operations carry the design:
 - `retry` abandons the transaction and blocks until one of the variables it read changes. Blocking on any condition takes one line.
 - `orElse` tries one transaction and, if it retries, runs the other instead. This composes blocking operations, for instance waiting on whichever of two queues has data, which is very hard with `MVar` (Marlow, ch. 10, "Merging with STM").
 
-Marlow sums up the gains as composable atomicity, composable blocking, and robustness under exceptions and cancellation, since an aborted transaction leaves no trace (Marlow, ch. 10, "Summary"). The costs: `MVar` is faster for simple cases, and STM is not fair, because when a `TVar` changes every transaction blocked on it must be rerun to see whether it can proceed (Marlow, ch. 10, "What Can We Not Do with STM?"). Long transactions that touch much state also risk being restarted repeatedly.
+Marlow sums up the gains as composable atomicity, composable blocking, and robustness under exceptions and cancellation, since an aborted transaction leaves no trace (Marlow, ch. 10, "Summary"). The costs: `MVar` is faster for simple cases, and STM is not fair, because when a `TVar` changes every transaction blocked on it must be rerun to see whether it can proceed (Marlow, ch. 10, "What Can We Not Do with STM?"). Long transactions that touch much state also risk being restarted repeatedly (Marlow, ch. 10, "Performance").
 
 Why must `STM` be a separate monad, not `IO`? Because the runtime may run a transaction many times. An effect such as printing would happen once per attempt and break the illusion that the transaction ran once. The type rules this out (De Goes et al., ch. 21.5, which makes the same argument for ZIO).
 
@@ -425,7 +426,7 @@ See also: [Effect systems]({{< ref "functional-programming/03-building-programs/
 ## Library sources
 
 
-- [Marlow 2013](/sources/programming/functional-programming/marlow-2013-parallel-and-concurrent-programming-in-haskell.pdf.enc), *Parallel and Concurrent Programming in Haskell*: ch. 1 (parallelism versus concurrency, determinism), Part I introduction (why automatic parallelisation fails, granularity), chs. 2 to 4 (`Eval`, sparks, deepseq, strategies, the identity property, the `Par` monad and its comparison with strategies), ch. 7 (threads and `MVar`), chs. 8, 9 and 11 (`async`, asynchronous exceptions, `mask`, thread leaks) and ch. 10 (STM, `retry`, `orElse`, fairness).
+- [Marlow 2013](/sources/programming/functional-programming/marlow-2013-parallel-and-concurrent-programming-in-haskell.pdf.enc), *Parallel and Concurrent Programming in Haskell*: ch. 1 (parallelism versus concurrency, determinism), Part I introduction (why automatic parallelisation fails, granularity), chs. 2 to 4 (`Eval`, sparks, deepseq, strategies, the identity property, the `Par` monad and its comparison with strategies), ch. 7 (threads and `MVar`), chs. 8, 9 and 11 (`async`, asynchronous exceptions, `mask`, thread leaks) and ch. 10 (STM, `retry`, `orElse`, fairness, and "Performance": the transaction log, validation at commit, why long transactions get re-executed).
 - Płachta 2022, *Grokking Functional Programming*: ch. 10, "Concurrent programs" (concurrency versus parallelism, `Ref`, `parSequence`, fibers, `foreverM`, `start` and `cancel`, why manual fibers are a last resort).
 - [Rosien 2021](/sources/programming/scala/rosien-2021-essential-effects.pdf.enc), *Essential Effects*: ch. 3 (no parallelism in `IO`, the `Parallel` type class, `parMapN`, `parTraverse`), ch. 4 (fibers, cancellation, rebuilding `parMapN`, racing and timeouts) and ch. 9 (`Ref`, `Deferred`, semantic blocking, concurrent state machines). The draft targets Cats Effect 2 (`ContextShift`, `cats.effect.concurrent`); Cats Effect 3 renamed or removed some of these, so the Scala snippets above use Cats Effect 3 names.
 - [De Goes et al. 2025](/sources/programming/scala/degoes-2025-zionomicon.pdf.enc), *Zionomicon*: chs. 5 to 8 (the fiber model, concurrency operators, supervision and structured concurrency, the fork/join identity law, interruption), chs. 9 and 10 (`Ref`, `Promise`), chs. 11 to 13 (`Queue`, `Hub`, `Semaphore`) and chs. 21 to 23 (STM, its limits and its implementation).
@@ -439,3 +440,4 @@ Further reading:
 - Simon Marlow, Patrick Maier, Hans-Wolfgang Loidl, Mustafa Aswad and Phil Trinder, "Seq No More: Better Strategies for Parallel Haskell" (Haskell Symposium 2010): the current design of evaluation strategies.
 - Nathaniel J. Smith, "Notes on structured concurrency, or: Go statement considered harmful" (blog post, 2018): the essay that popularised the term outside Scala.
 - The Cats Effect 3 documentation on fibers, `Supervisor` and the concurrency type classes, to update Rosien's Cats Effect 2 material.
+- [Serrano Mena 2022](/sources/programming/functional-programming/serrano-mena-2022-haskell-almost-standard-libraries.pdf.enc), *Haskell: Almost Standard Libraries*: chapter 18, Async: the introduction gives a decision tree (`async` for IO, `monad-par` for cooperating pure code, `parallel` for containers); section 18.1, "Spawning", covers `concurrently` and `race`, the `Concurrently` applicative (`<*>` waits for both, `<|>` races), `withAsync` as a bracket, why two `wait`s are not `waitBoth`, and `poll`, `waitCatch` and `link`; section 18.2, "Communication", covers `TVar` counters, contention on `TVar (Map k v)` and `stm-containers`, and unbounded `TChan`/`TQueue`; section 18.3, "Pure and parallel", covers `spawnP`/`parMap`/`runPar` and a table of strategies (`r0`, `rseq`, `rdeepseq`, `parListChunk`, `parTraversable`); on *Concurrency in Haskell: threads, MVar and async*, *Software transactional memory* and *Strategies or Par?*.

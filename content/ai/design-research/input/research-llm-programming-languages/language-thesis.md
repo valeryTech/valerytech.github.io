@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Language Thesis for LLM Programming"
+title: "Sources on Typed Languages and Verification with AI"
 description: "Papers and essays on why AI may increase the value of typed languages and formal verification, distinguishing research results from predictions about adoption."
 linkTitle: "Language Thesis"
 ---

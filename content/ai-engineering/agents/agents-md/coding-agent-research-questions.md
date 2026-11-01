@@ -8,7 +8,7 @@ linkTitle: "Research Agenda"
 
 **Document type:** Research questions
 
-**Date:** 18 October 2026
+**Date:** 18 March 2026
 
 **Basis:** *AGENTS.md -- Operating Model* (`agents-md.md`)
 

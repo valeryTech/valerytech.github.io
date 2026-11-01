@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Transaction Example: From Utterance to Execution"
 description: "A worked expense-entry example following a transaction from utterance through draft updates, account resolution, duplicate checks, confirmation, and saving."
+weight: "70"
 linkTitle: "Transaction Example"
 ---
 

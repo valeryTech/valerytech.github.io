@@ -41,7 +41,7 @@ The new comments and arrangement select no implementation or experiment.
 ## Co-writer meaning and collaboration
 
 
-The [new passage]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}#from-rewriting-prompts-to-a-shared-writing-workspace) proposes meaning requirements and then describes communication support through a shared workspace. The related [writing case]({{< ref "ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly" >}}) keeps the earlier workflow and complete examples together.
+The [new passage]({{< ref "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work" >}}#from-rewriting-prompts-to-a-shared-writing-workspace) proposes meaning requirements and then describes communication support through a shared workspace. The related writing case keeps the earlier workflow and complete examples together.
 
 The saved sketch contains no speaker labels. The phrase "If left blank" has no explicit field definition in the retained source, so the missing definition is not supplied during reassembly.
 
@@ -61,11 +61,11 @@ The sketch proposes modelling the user and names several writing tasks. It does 
 
 The examples describe intent and required context as changing during collaboration. A later design should distinguish an accepted change in intent from an unsupported assumption by the model.
 
-The [language-intent note]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}}) concerns interpreting requests for computation. The writing case concerns what a text means to its writer and intended reader, so the related problems should remain distinguishable.
+The language-intent note concerns interpreting requests for computation. The writing case concerns what a text means to its writer and intended reader, so the related problems should remain distinguishable.
 
 ### The workspace proposal does not select an implementation
 
 
 The Matrix statement and closing reflection describe a possible interface and a change in product framing. They do not establish that Matrix is required, that the AI has authority to publish text, or that the combined process improves writing.
 
-The [case comments]({{< ref "ai/design-research/interactive-systems/14-collaborative-writing-and-text-assembly-comments" >}}) address selection, assembly, and the retained examples. The [audit]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-10-co-writer-sketches) records unchanged source text and the original absence of a final newline.
+The case comments address selection, assembly, and the retained examples. The audit records unchanged source text and the original absence of a final newline.

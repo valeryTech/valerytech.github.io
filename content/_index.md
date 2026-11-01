@@ -50,7 +50,7 @@ Some are working drafts, open questions, or conversations with LLMs. I don't wan
 
 ## Selected notes
 
-- [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/ai-evaluation" >}}): what an evaluation should help you decide.
+- [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/introduction" >}}): what an evaluation should help you decide.
 - [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}): what a run records and what that evidence supports.
 
 </aside>

@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "Engineering Quality Assessment and Trial"
-description: "Engineering assessment of review quality: behavioral properties, failure reasoning, design justification, test strength, and false positives."
+title: "Engineering Review Framework: Assessment and Trial"
+description: "An assessment of the Engineering Review Framework: what it already justifies, a trial on a payment-retry change, and five proposed revisions to strengthen property, failure, design, and test reasoning."
 document_status: "proposal"
-linkTitle: "Quality Assessment and Trial"
+linkTitle: "Assessment and Trial"
 ---
 
 Assessment date: 2026-04-20.

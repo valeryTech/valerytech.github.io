@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Action Policy, Readiness, and Execution Gates"
 description: "Separates parser, validator, action policy, and executor, distinguishing a draft ready for review from a confirmed action authorized to change backend state."
+weight: "30"
 linkTitle: "Execution Gates"
 ---
 

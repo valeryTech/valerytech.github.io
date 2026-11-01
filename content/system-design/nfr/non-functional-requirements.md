@@ -32,14 +32,14 @@ For example, "fast redirects" needs a scope and measurement: the URL-shortener d
 | Consistency | What must a client see after a write? Which state changes require coordination? What delay or staleness is acceptable? | [Consistency]({{< ref "system-design/nfr/consistency" >}}) |
 | Durability and integrity | Which acknowledged data must survive? How would loss or corruption be detected and recovered? | [Dropbox case]({{< ref "system-design/projects/dropbox/dropbox" >}}) |
 | Security | Who can perform each operation? What data or execution needs protection? | [Security in operating services]({{< ref "system-design/elements/operating-services" >}}#security) |
-| Environment and cost | What device, bandwidth, infrastructure, budget, or delivery constraints apply? | [Design principles]({{< ref "system-design/02-system-design" >}}) |
+| Environment and cost | What device, bandwidth, infrastructure, budget, or delivery constraints apply? | [Design principles]({{< ref "system-design/design-principles" >}}) |
 
 ## Use NFRs throughout the design
 
 
 Establish the important requirements early. While tracing the initial design, note where each one creates a concern. Use deep dives to resolve the important concerns and update the design.
 
-Each quality acts as a force on the design questions in the [pattern map]({{< ref "system-design/elements/elements" >}}): the hubs list which qualities push their options one way or another.
+Each quality acts as a force on the design questions in the [pattern map]({{< ref "system-design/elements/pattern-map" >}}): the hubs list which qualities push their options one way or another.
 
 Quantify a requirement when the number helps distinguish choices. If the value is unknown, state a provisional assumption, explain why it matters, and check how a different value would change the decision. Keep estimates tied to an architectural question.
 

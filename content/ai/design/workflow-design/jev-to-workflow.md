@@ -1,8 +1,8 @@
 ---
 draft: false
 toc: true
-title: "Jev, Ontologies, and Confidence-Based Routing"
-description: "A support-ticket example uses Jev confidence scores to route work among execution, model reasoning, and human review, showing why ontology definitions also need evaluation and versioning."
+title: "Jev, Ontologies, and Confidence Routing: Clipped Post"
+description: "A clipped LinkedIn post: a support-ticket example uses Jev confidence scores and an ontology to route work among execution, model reasoning, and human review, noting that ontology definitions also need evals and versioning."
 linkTitle: "Jev and Ontologies"
 ---
 ## Feed post
@@ -64,4 +64,4 @@ P.S. How are you defining the decision space for your AI agents?![View image](ht
 
 Its really creative application for JEV. One thing worth adding is this doesn't just make agents smarter it makes them auditable. When every decision maps back to a defined ontology, you can trace exactly why the agent acted and that's huge for production. We applied similar logic to support tickets and escalations dropped ~40%. The confidence threshold is the real unlock. You're basically shifting the intelligence to the problem structure instead of hoping the model guesses right. 🔥... more
 
-{{< figure src="jev-to-workflow.assets/pasted-image-20261020224616.png" alt="Pasted image 20261020224616" >}}
+{{< figure src="jev-to-workflow.assets/pasted-image-20260320224616.png" alt="Pasted image 20260320224616" >}}

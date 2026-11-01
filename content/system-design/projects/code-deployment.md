@@ -6,7 +6,7 @@ description: "A partial code-deployment design sketch covering release artifacts
 linkTitle: "Code Deployment"
 ---
 
-Partial example from the [interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}). Developers tag a release; the system packages the code and deploys it to servers.
+Partial example from the [interviewing.io framework]({{< ref "system-design/interview/frameworks/interviewing-io" >}}). Developers tag a release; the system packages the code and deploys it to servers.
 
 ## Requirements and example constraints
 

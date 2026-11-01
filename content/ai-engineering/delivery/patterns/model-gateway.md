@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Model Gateway Overview"
+title: "Model Gateway: Overview and Financial Reference Designs"
 description: "Collected model-gateway designs progress from a general control-and-data-plane pattern to hybrid financial architectures, culminating in a single-organization proposal with data-class routing, action mediation, and audit controls."
 linkTitle: "Model Gateway"
 ---

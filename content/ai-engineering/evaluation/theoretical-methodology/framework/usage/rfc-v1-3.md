@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "RFC: AI Systems Framework v1.3"
+title: "RFC: AI Systems Framework v1.3 for a Single Product Team"
 description: "A product team can implement the framework as runtime, measurement, state, monitoring, and optimization layers. The RFC defines their interfaces, rollout milestones, owners, and resolutions of conflicting conventions."
-linkTitle: "Framework RFC v1.3"
+linkTitle: "Single-Team RFC v1.3"
 ---
 
 **Status:** Draft

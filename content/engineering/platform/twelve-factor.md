@@ -8,7 +8,7 @@ linkTitle: "Twelve-Factor"
 
 *Decisions, justifications and flaws of the Twelve-Factor App and the frameworks that followed it*
 
-Nov 4, 2026 · @Valery
+Apr 4, 2026 · @Valery
 
 ## Purpose and how to read
 

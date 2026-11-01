@@ -154,7 +154,7 @@ A simple initial store remains an option. The question "when would a separate co
 
 - [Requirements and product framing]({{< ref "system-design/projects/url-shortener/url-shortener-useful" >}}).
 - [Interview checklist and design skeleton]({{< ref "system-design/projects/url-shortener/url-shortener-additional" >}}).
-- [Key-generation review]({{< ref "system-design/to-sort/sd-reviews" >}}#tiny-url).
+- [Key-generation review]({{< ref "system-design/to-sort/case-study-excerpts" >}}#tiny-url).
 - [Design video](https://www.youtube.com/watch?v=Cg3XIqs_-4c).
 - [Code-generation discussion](https://www.youtube.com/watch?v=HHUi8F_qAXM).
 - [Additional design video](https://www.youtube.com/watch?v=iUU4O1sWtJA).

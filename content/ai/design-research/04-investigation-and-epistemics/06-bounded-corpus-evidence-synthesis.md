@@ -15,7 +15,7 @@ The author's original requirements come first. The original "analysis" heading m
 
 The complete [representation and iterative-retrieval pipeline]({{< ref "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections" >}}#bounded-corpus-retrieval-pipeline) is retained separately. The related [epistemic-contract note]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}) develops compiler obligations and runtime checks.
 
-The source overview links the product descriptions and market hypotheses kept outside this note. Read the [separate comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}) for the grouping and limitations. The [audit map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}#stage-4-semantic-engineering-dialogue) records the original order.
+The source overview links the product descriptions and market hypotheses kept outside this note. Read the [separate comments]({{< ref "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments" >}}) for the grouping and limitations. The audit map records the original order.
 
 ## Retained source
 
@@ -232,4 +232,4 @@ The [retrieval methods]({{< ref "ai/design-research/04-investigation-and-epistem
 
 The promising gap is task-specific context assembly: selecting authoritative, sufficient evidence for a decision (or for other task) while exposing provenance, conflicts, missing support, and abstaining when warranted.
 
-links: sem-rag, semantic search, [reframing]({{< ref "ai-engineering/context/retrieval/reframing" >}}) retrieval,
+links: sem-rag, semantic search, [reframing]({{< ref "ai-engineering/context/retrieval/beyond-rag" >}}) retrieval,

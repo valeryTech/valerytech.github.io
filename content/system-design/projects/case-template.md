@@ -31,7 +31,7 @@ Components, state ownership, and a concrete end-to-end trace for each core opera
 ## Decisions and deep dives
 
 
-For each difficult choice: the design question it answers (see the [pattern map]({{< ref "system-design/elements/elements" >}})), the requirement, the alternatives, the selected pattern or approach, the trade-off, and the reason to revisit. Include only the estimates that inform these decisions.
+For each difficult choice: the design question it answers (see the [pattern map]({{< ref "system-design/elements/pattern-map" >}})), the requirement, the alternatives, the selected pattern or approach, the trade-off, and the reason to revisit. Include only the estimates that inform these decisions.
 
 Naming the question and the pattern lets the hub list this case under *Seen in cases*.
 

@@ -274,7 +274,7 @@ Most of the early ladder is epistemic; later operational uncertainty mixes both.
 
 - **Front-end of innovation / Critical Uncertainties**: Focus on identifying and deliberately clearing the single most important unknown (often technological possibility or feasibility) before progressing.
 - **Pharmaceutical / deep-tech stage models**: Discovery -> early proof-of-mechanism -> later clinical/engineering stages. High attrition early on is treated as normal because possibility is still open.
-- **Cone of Uncertainty** (project estimation): Visualizes how uncertainty is highest at the beginning and narrows. It is a related geometric intuition, though usually applied to cost/schedule rather than possibility itself.
+- **Cone of Uncertainty** (project estimation): Visualizes how uncertainty is highest at the beginning and narrows. It is a related geometric intuition, though usually applied to cost/schedule rather than possibility itself. Bossavit traces the cone back to Boehm's 1981 diagram, which was an opinion later cited as if it were empirical; see [Claims without evidence]({{< ref "engineering/evidence/claims-without-evidence" >}}#folklore).
 
 ### Summary mapping
 

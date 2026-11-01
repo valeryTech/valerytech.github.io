@@ -120,7 +120,7 @@ The original numbered citations link to the entries below, which point to the [s
 ## Interview context for BEAVER and DAB
 
 
-The [complete text-to-SQL and benchmark exchange]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#text-to-sql-rubicon-and-benchmarks-from-the-interview) is preserved in the database runtime note. The interview connects BEAVER with RUBICON and distinguishes retrieval from action tasks. The reported results and qualifications remain attributed to the captured interview, without independent verification or updates. No benchmark passages were duplicated here.
+In the Data Renegades interview (Episode 11), Michael Stonebraker connects BEAVER with RUBICON and distinguishes retrieval tasks from action tasks. Those reported results are his and have not been independently verified or updated here.
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 

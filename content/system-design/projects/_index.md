@@ -31,7 +31,7 @@ The status below describes the notes, not a judgment that a design is complete o
 | [Job scheduler]({{< ref "system-design/projects/job-scheduler" >}}) | Early requirements, open workload questions, and a first design sketch with leases and a single active scheduler. |
 | [Public chat room]({{< ref "system-design/projects/chat-room" >}}) | Interview report with an unresolved burst-handling question. |
 | [Key-value store]({{< ref "system-design/projects/key-value-store" >}}) | Cache write policies and a Dynamo-style design: consistent hashing, quorums, hinted handoff, anti-entropy, and version vectors. |
-| [interviewing.io worked example]({{< ref "system-design/projects/iv4-example" >}}) | Source pointer to the guide's end-to-end example. |
+| [interviewing.io worked example]({{< ref "system-design/projects/interviewing-io-example" >}}) | Source pointer to the guide's end-to-end example. |
 
 ## Queued prompts
 
@@ -43,4 +43,4 @@ These entries do not yet contain a design: [interviewing.io product]({{< ref "sy
 
 - [Building blocks by design question]({{< ref "system-design/elements" >}}): each hub lists the cases that use its patterns.
 - [Messaging and events]({{< ref "system-design/elements/messaging" >}}).
-- [Snowflake ID sources]({{< ref "system-design/projects/infra/slowflake-id" >}}).
+- [Snowflake ID sources]({{< ref "system-design/projects/infra/snowflake-id" >}}).

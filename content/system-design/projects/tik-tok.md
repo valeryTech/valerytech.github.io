@@ -6,7 +6,7 @@ description: "A TikTok requirements-gathering example demonstrating how to clari
 linkTitle: "TikTok"
 ---
 
-Requirements-focused example associated with the [interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}). It illustrates objects, relations, mutability, and access patterns rather than a complete design.
+Requirements-focused example associated with the [interviewing.io framework]({{< ref "system-design/interview/frameworks/interviewing-io" >}}). It illustrates objects, relations, mutability, and access patterns rather than a complete design.
 
 Let's say you are not familiar with TikTok. What do you do next? Probably ask your interviewer, right? Even if you know the platform well, it's wise to start by clarifying rather than assuming. The flow might go something like this:
 

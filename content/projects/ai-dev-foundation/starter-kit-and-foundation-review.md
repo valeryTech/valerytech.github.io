@@ -1,12 +1,10 @@
 ---
 draft: false
 toc: true
+title: "Review of the AI Project Foundation Draft"
 description: "Review of the AI Project Foundation note: what its opening should name and promise, a plainer framing of uncertainty, fixes for the evaluation, execution, workbench and starter-kit bullets, and what discovery means."
-title: "Starter Kit And Foundation Review"
-linkTitle: "Starter Kit And Foundation Review"
+linkTitle: "Draft Review"
 ---
-# Review comments on starter-kit-and-foundation
-
 
 The wording I used was too abstract, and the long qualifications made it harder to understand the actual work. Your underscores expose three decisions that the opening tries to compress into one sentence.
 

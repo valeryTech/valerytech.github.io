@@ -17,7 +17,7 @@ The design task is to describe the behavior each operation requires before choos
 - What happens when replicas cannot communicate?
 - How will replication lag, cache invalidation, and recovery affect the chosen behavior?
 
-The [interviewing.io framework]({{< ref "system-design/interview/frameworks/framework-iv" >}}) uses the opportunity to relax requirements as a design tool. State the user-visible consequence of that relaxation.
+The [interviewing.io framework]({{< ref "system-design/interview/frameworks/interviewing-io" >}}) uses the opportunity to relax requirements as a design tool. State the user-visible consequence of that relaxation.
 
 ## Patterns that address this
 

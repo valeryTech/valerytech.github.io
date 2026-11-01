@@ -41,4 +41,4 @@ These are exercise assumptions to confirm, rather than measured workload facts.
 
 Start by solving the core client problems. A source walkthrough can describe a familiar design quickly; during preparation, work through the lower-level reasoning needed to derive the design independently.
 
-Use the [problem-solving checklist]({{< ref "system-design/problem-solving-approach" >}}) to keep the client flow visible before adding components.
+Use the [problem-solving checklist]({{< ref "system-design/problem-solving-checklist" >}}) to keep the client flow visible before adding components.

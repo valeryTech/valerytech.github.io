@@ -1114,15 +1114,12 @@ The complete [semantic-model and scenario-DSL example]({{< ref "ai/design-resear
 
 <!-- Navigation added during reassembly on 2026-03-30. Source arguments are retained with editorial wording, 2026-04-20; quoted source passages remain exact. -->
 
-## Related database interview
-
-
-The [NoSQL, optimizer, and transaction exchange]({{< ref "ai/design-research/05-runtime-and-execution/02-database-centered-runtime" >}}#nosql-sql-optimizers-and-transactions-from-the-interview) is now beside the other database interview passages. The speaker labels and source attribution remain unchanged.
-
 ## Library sources
 
 
 - [Bauer and Pretnar 2014](/sources/ai-engineering/harness/bauer-2014-effect-system-algebraic-effects-handlers.pdf.enc), *An Effect System for Algebraic Effects and Handlers* ([arXiv:1306.6316](https://arxiv.org/abs/1306.6316)) -- on *5. Make effects explicit*
+- [Maguire 2018](/sources/programming/functional-programming/maguire-2018-thinking-with-types.pdf.enc), *Thinking with Types: Type-Level Programming in Haskell*: chapter 14, "Indexed Monads", actions `m i j a` with a precondition and a postcondition, where `ibind` matches one action's postcondition to the next one's precondition, and a linear file-handle protocol that won't compile when misused; section 2.2, "Data Kinds", and section 5.2, "GADTs"; on *much sharper architecture*.
+- [Noonan 2018](/sources/programming/functional-programming/noonan-2018-ghosts-of-departed-proofs.pdf.enc), *Ghosts of Departed Proofs (Functional Pearl)* ([doi:10.1145/3242744.3242755](https://doi.org/10.1145/3242744.3242755)): section 5, "Case Study #4: Arbitrary Invariants", preconditions on named values written as phantom-typed proofs (`a ~~ n ::: p`), built with natural-deduction combinators, with library-supplied axioms as the trusted part; a working Haskell form of the `Requires (n <= balance)` sketch; on *much sharper architecture*.
 - [Zhao et al. 2026](/sources/ai-engineering/harness/zhao-2026-lacuna-safe-agents-recursive-program-holes.pdf.enc), *LACUNA: Safe Agents as Recursive Program Holes* ([arXiv:2605.28617](https://arxiv.org/abs/2605.28617)) -- on *8. Design feedback for LLM repair*
 
 Further reading:

@@ -2,6 +2,8 @@
 draft: false
 toc: true
 title: "Conceptual Design Model for LLM Software Systems"
+aliases:
+  - "/ai/design-research/input/general-conceptual-design-model-with-references/"
 description: "A research report on LLM software design, connecting work contracts, authoritative state, candidate generation, validation, authorization, and controlled execution."
 linkTitle: "Conceptual Design Model"
 ---
@@ -756,7 +758,7 @@ The experiment should attempt to falsify the following propositions.
 ### Experimental timeline
 
 
-An eight-week initial program starting after the current October 2026 research phase could look as follows:
+An eight-week initial program starting after the current March 2026 research phase could look as follows:
 
 ```mermaid
 gantt
@@ -764,26 +766,26 @@ gantt
     dateFormat YYYY-MM-DD
 
     section Specification
-    Work contracts and outcome predicates       :a1, 2026-05-02, 7d
-    Capability and authorization model           :a2, 2026-05-05, 7d
+    Work contracts and outcome predicates       :a1, 2026-04-02, 7d
+    Capability and authorization model           :a2, 2026-04-05, 7d
 
     section Environment
-    Shared simulated tools and state             :b1, 2026-05-09, 10d
-    Fault and adversarial injection              :b2, 2026-05-16, 7d
+    Shared simulated tools and state             :b1, 2026-04-09, 10d
+    Fault and adversarial injection              :b2, 2026-04-16, 7d
 
     section Architectures
-    Direct tool-calling agent                    :c1, 2026-05-16, 8d
-    Structured workflow agent                    :c2, 2026-05-16, 10d
-    Typed DSL and interpreter                    :c3, 2026-05-16, 14d
+    Direct tool-calling agent                    :c1, 2026-04-16, 8d
+    Structured workflow agent                    :c2, 2026-04-16, 10d
+    Typed DSL and interpreter                    :c3, 2026-04-16, 14d
 
     section Evaluation
-    Pilot and grader validation                  :d1, 2026-05-30, 7d
-    Main repeated-trial experiment               :d2, 2026-12-07, 10d
-    Adversarial and failure experiments          :d3, 2026-12-10, 10d
+    Pilot and grader validation                  :d1, 2026-04-30, 7d
+    Main repeated-trial experiment               :d2, 2026-05-07, 10d
+    Adversarial and failure experiments          :d3, 2026-05-10, 10d
 
     section Analysis
-    Statistical and trace analysis               :e1, 2026-12-17, 7d
-    Architecture synthesis and design revision   :e2, 2026-12-21, 7d
+    Statistical and trace analysis               :e1, 2026-05-17, 7d
+    Architecture synthesis and design revision   :e2, 2026-05-21, 7d
 ```
 
 

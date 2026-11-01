@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Slices v1.1"
+title: "Slices v1.1: Slice Types for Gating and Monitoring"
 description: "Comparing variants on requests that happened to use a tool can select different populations. Slice types separate input-defined release cohorts from execution diagnostics, with versioned predicates and promotion rules."
 linkTitle: "Slices v1.1"
 ---

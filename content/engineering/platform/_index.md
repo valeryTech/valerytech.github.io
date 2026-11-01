@@ -33,7 +33,7 @@ flowchart LR
 | [GitOps and declarative configuration]({{< ref "engineering/platform/gitops" >}}) | How are changes to a running system reviewed, recorded, reversed, and applied automatically? |
 | [Platform engineering and developer experience]({{< ref "engineering/platform/developer-experience" >}}) | How do you make the right way to ship also the easiest way? |
 | [Platform product framing]({{< ref "engineering/platform/product-framing" >}}) | What is the platform for, and how do the people who depend on it agree on that? |
-| [Engineering operating model]({{< ref "engineering/platform/operating-model" >}}) | Which standards apply, and how are they enforced and measured? |
+| [Engineering operating model]({{< ref "engineering/platform/standards-layers" >}}) | Which standards apply, and how are they enforced and measured? |
 
 The [control plane and data plane]({{< ref "system-design/elements/control-plane" >}}) pattern sits in the system design notes, because it is a structural choice with options rather than a mechanism. The diagram above uses it.
 
@@ -41,8 +41,8 @@ The [control plane and data plane]({{< ref "system-design/elements/control-plane
 
 
 - **System design:** the [operating services]({{< ref "system-design/elements/operating-services" >}}) hub lists deployment, cross-cutting concerns, observability, security, and testing as design choices. These notes hold the mechanisms behind them. The [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}) note gives the default for a prototype.
-- **Delivery techniques:** feature flags, canaries, pilots, and hardening are in the [lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}). Golden-path templates for RAG, agents, and evaluation are in the [golden-path notes]({{< ref "engineering/delivery-techniques/skeletons" >}}).
-- **Declarative design:** [declarative design]({{< ref "type-driven-design/declarative-design" >}}) describes the specification-plus-engine idea that GitOps and Kubernetes rely on.
+- **Delivery techniques:** feature flags, canaries, pilots, and hardening are in the [lifecycle techniques]({{< ref "engineering/architecture/techniques" >}}). Golden-path templates for RAG, agents, and evaluation are in the [golden-path notes]({{< ref "engineering/delivery-techniques/llm-golden-paths" >}}).
+- **Declarative design:** [declarative design]({{< ref "type-driven-design/04-architecture/declarative-design" >}}) describes the specification-plus-engine idea that GitOps and Kubernetes rely on.
 - **AI systems:**
   - [declarative system configuration]({{< ref "ai/design/declarative-configs/declarative-system-config" >}}) applies the same model to AI system definitions;
   - [model gateway designs]({{< ref "ai-engineering/delivery/patterns/model-gateway" >}}) apply the control plane split to model access;

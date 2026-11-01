@@ -183,7 +183,7 @@ The [team delivery loop]({{< ref "ai-engineering/delivery/ai-platform-team-loop"
 
 
 - [Platform engineering and developer experience]({{< ref "engineering/platform/developer-experience" >}}): platform as a product, golden paths, and measures.
-- [Engineering operating model]({{< ref "engineering/platform/operating-model" >}}): standards and how they are enforced.
+- [Engineering operating model]({{< ref "engineering/platform/standards-layers" >}}): standards and how they are enforced.
 - [Delivery capabilities]({{< ref "engineering/platform/delivery-capabilities" >}}): what a delivery platform must be able to do.
 - AI platform notes:
   - [AI discovery platform]({{< ref "ai-engineering/delivery/ai-platform-discovery" >}});

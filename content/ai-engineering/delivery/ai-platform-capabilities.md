@@ -4,7 +4,7 @@ toc: true
 title: "AI Platform Capability Map"
 description: "A reference model and capability map for an enterprise AI platform, with build-or-buy positions, identity and evaluation as platform concerns, a KPI scorecard, a five-level maturity model, a build sequence, and landscapes for surveying the ecosystem."
 document_status: "draft"
-linkTitle: "AI Platform Capability Map"
+linkTitle: "Platform Capability Map"
 ---
 
 **Question:** which capabilities should an internal AI platform provide, which should it build rather than buy, and in what order?
@@ -235,7 +235,7 @@ There is no canonical taxonomy. These landscapes serve different purposes:
 | [LF AI & Data Landscape](https://landscape.lfai.foundation/) | The open-source ecosystem | The closest thing to a maintained catalog: ML platforms, data, workflows, training, inference, governance, security, generative AI |
 | [FirstMark MAD Landscape](https://mad.firstmark.com/) | The whole commercial ecosystem | The 2025 edition maps about 1,150 companies and products across data, AI development, agents, MLOps, inference, hardware, and enterprise platforms |
 | [CNCF](https://www.cncf.io/blog/2026/08/13/llmops-and-platform-engineering-who-should-own-the-ai-pipeline/) | How an AI platform fits into platform engineering | LLMOps, Kubernetes, inference routing, GPU scheduling, platform ownership, production architecture |
-| MLOps.toys ([MLOps Community](https://mlops.community/)) | Finding tools | Traditional ML and MLOps: training orchestration, experiment tracking, serving, monitoring, feature stores. The catalog's address, `tools.mlops.community`, returned 404 in November 2026, and `mlops.toys` now points to an unrelated site. |
+| MLOps.toys ([MLOps Community](https://mlops.community/)) | Finding tools | Traditional ML and MLOps: training orchestration, experiment tracking, serving, monitoring, feature stores. The catalog's address, `tools.mlops.community`, returned 404 in April 2026, and `mlops.toys` now points to an unrelated site. |
 
 The 2025 MAD map separates several platform types:
 

@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Product Framework Notes"
+title: "Lipenkova's AI Product Method: Framework Notes"
 description: "Working synthesis of workflow decomposition and AI design choices, distinguishing task-level opportunity assessment, human-AI responsibility allocation, and coherent candidate workflows before selecting models or automation levels."
-linkTitle: "Notes"
+linkTitle: "Lipenkova Notes"
 ---
 
 Proposed stage set:

@@ -1,10 +1,10 @@
 ---
 draft: false
 toc: true
-title: "0.5 Refined Research Question"
+title: "0.5 Environment Research Question and Its Critique"
 description: "Critiques shared state, runtime enforcement, and open workflows as premature foundational assumptions, while preserving an earlier participant-neutral environment question as one application."
 weight: "50"
-linkTitle: "0.5 Refined Research Question"
+linkTitle: "0.5 Environment Question"
 ---
 
 Editorial context, 2026-04-20: The questions, constraints, proposals, disagreements, and caveats below are reformulated from the saved research discussion. LLM recommendations remain attributed proposals, not decisions by the author or independently verified findings. Technical examples and quoted source passages retain their original wording.

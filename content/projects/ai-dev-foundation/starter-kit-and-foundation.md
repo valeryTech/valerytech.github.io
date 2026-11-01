@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "AI Project Foundation"
+title: "AI Project Foundation: Working Draft"
 description: "Working notes on the AI Project Foundation: an effort to develop shared tools and practices for AI projects, starting from evaluation, system execution, and an expert workbench."
-linkTitle: "AI Project Foundation"
+linkTitle: "Working Draft"
 ---
 
 The **AI Project Foundation** is a working name for the __ we are developing to (support experimentation with AI systems, __ ) and to learn how such systems can be (developed effectively, discovered and delivered successfully(?), __ ).

@@ -6,7 +6,7 @@ description: "An index of system design building blocks organized as design ques
 linkTitle: "Building Blocks"
 ---
 
-The building blocks are organized by the design question they answer. Start with the [pattern map]({{< ref "system-design/elements/elements" >}}) for the hub format and for how the questions lead into each other.
+The building blocks are organized by the design question they answer. Start with the [pattern map]({{< ref "system-design/elements/pattern-map" >}}) for the hub format and for how the questions lead into each other.
 
 | Question | Hub |
 | --- | --- |
@@ -20,6 +20,6 @@ The building blocks are organized by the design question they answer. Start with
 
 Pattern notes with more detail: [API gateway]({{< ref "system-design/elements/api-gateway" >}}), [messaging]({{< ref "system-design/elements/messaging" >}}), and [control plane and data plane]({{< ref "system-design/elements/control-plane" >}}), which spans the request path, failure handling, and operations.
 
-To prototype, start from [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}): the default option for each question, when to move past it, and how to test the move. [Common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}) collects the choices that recur across questions, with the signal that tips each one. The pattern map also shows the [same patterns in engineering and AI/RAG notes]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains).
+To prototype, start from [defaults and triggers]({{< ref "system-design/elements/defaults-and-triggers" >}}): the default option for each question, when to move past it, and how to test the move. [Common trade-offs]({{< ref "system-design/elements/common-trade-offs" >}}) collects the choices that recur across questions, with the signal that tips each one. The pattern map also shows the [same patterns in engineering and AI/RAG notes]({{< ref "system-design/elements/pattern-map" >}}#same-patterns-in-other-domains).
 
 Quality requirements are the forces behind these choices; see [non-functional requirements]({{< ref "system-design/nfr" >}}). To apply the patterns, use the [practice cases]({{< ref "system-design/projects" >}}).

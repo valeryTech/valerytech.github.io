@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Task Assistance Beyond Dialogue"
 description: "Argues that user tasks, domain state, and authorized action should organize AI assistance, with dialogue and visual controls serving as ways to coordinate that work."
+weight: "10"
 linkTitle: "Beyond Dialogue"
 ---
 

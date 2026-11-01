@@ -13,7 +13,7 @@ linkTitle: "Techniques Guide"
 
 **Purpose:** help teams choose and apply the right delivery technique based on the type of uncertainty, risk, or lifecycle phase they are dealing with.
 
-**Related:** the [system design flow]({{< ref "system-design" >}}) pairs these techniques with design questions. Its [pattern map]({{< ref "system-design/elements/elements" >}}#patterns-and-techniques-share-one-record) compares the technique record below with the record kept for a design pattern.
+**Related:** the [system design flow]({{< ref "system-design" >}}) pairs these techniques with design questions. Its [pattern map]({{< ref "system-design/elements/pattern-map" >}}#patterns-and-techniques-share-one-record) compares the technique record below with the record kept for a design pattern.
 
 ## 1. Purpose
 

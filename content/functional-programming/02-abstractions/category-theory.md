@@ -5,6 +5,7 @@ title: "Category Theory for Functional Programmers"
 aliases:
   - "/functional-programming/category-theory/"
 description: "Why category theory is worth knowing for a programmer, how its standard constructions map onto types, functors and currying, purity and denotational semantics, natural transformations, and resources for learning it."
+weight: "80"
 linkTitle: "Category Theory"
 ---
 
@@ -93,6 +94,9 @@ See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}
 - [Milewski 2019](/sources/programming/category-theory/milewski-2019-category-theory-for-programmers-scala-edition.pdf.enc), *Category Theory for Programmers (Scala edition)*: the book behind the preface link and the purity passage, with Scala snippets next to the Haskell.
 - [Cheng 2023](/sources/programming/category-theory/cheng-2023-joy-of-abstraction.pdf.enc), *The Joy of Abstraction: An Exploration of Math, Category Theory, and Life*: a gentle but rigorous first pass, by the author of *How to Bake Pi*.
 - [Simmons 2011](/sources/programming/category-theory/simmons-2011-introduction-to-category-theory.pdf.enc), *An Introduction to Category Theory*: a slow textbook with exercises, for limits, colimits and adjunctions.
+- [Gibbons 2002](/sources/programming/functional-programming/gibbons-2002-calculating-functional-programs.pdf.enc), *Calculating Functional Programs*: section 2.7, ". . . and never the twain shall meet", argues that sets and total functions model programs badly, and section 3 moves to pointed CPOs (3.1, "The category Cpo"), at the price of strictness side conditions on the laws; section 1.4 introduces categories, functors and bifunctors for datatypes; on *Purity and category theory*.
+- [Allen and Moronuki 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: section 16.15, What if we want to do something different?, introduces natural transformations as `type Nat f g = forall a. f a -> g a`, which transform the structure but leave the contents alone and cannot inspect them; on *Natural transformations*.
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: Part V. Section 17.2, "Categories, Functors, Natural Transformations", defines categories, functors and natural transformations as data plus laws, treats a monoid as a one-object category, and gives `safeHead` as a natural transformation from lists to `Maybe`, on *Natural transformations* and *Associativity and commutativity*; section 18.1, "Adjoint Functors", gives the adjunction between `(t,)` and `(t ->)`, which is currying, on the adjunction item in *Why study it*; section 18.3, "The Kleisli Category", builds the Kleisli category of a monad, with `return` as identity and `<=<` as composition, on *Purity and category theory*.
 
 Further reading:
 

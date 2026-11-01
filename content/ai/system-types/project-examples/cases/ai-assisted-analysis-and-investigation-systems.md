@@ -5,64 +5,10 @@ title: "AI-Assisted Analysis and Investigation Systems"
 description: "Predefined assessment can produce findings that redirect an investigation; audit examples show why workpapers need links among observations, calculations, hypotheses, evidence gaps, and expert judgments."
 linkTitle: "Analysis and Investigation"
 ---
-## Two Modes or Regimes
+## Operating modes
 
 
-Design question: How can open-ended interaction and bounded workflows coexist, and how can users move between them?
-
-One proposed framing is coexistence of different operating modes within one product, with transitions that preserve context and work in progress.
-
-The important question is what changes when the operating mode changes. It might be the available operations, who controls the next step, which constraints apply, or which workflow state is active. The interface doesn't necessarily need to change.
-
-### Coexistence of open-ended interaction and bounded workflows
-
-
-A general-purpose AI assistant can combine open-ended interaction with constrained workflows within a continuous user experience.
-
-In an **open-ended mode**, users can explore questions, obtain explanations, compare alternatives, develop ideas, and decide what they want to accomplish. The LLM has flexibility in how it responds and guides the interaction, while its access to external systems can remain restricted.
-
-When a user wants to perform a supported task, the system can transition into a **bounded workflow**. The workflow defines the available operations, valid states, transitions, dependencies, and execution constraints. The LLM may help navigate this structure, but the application enforces its rules.
-
-**Transitions can be initiated in different ways.** A user may explicitly select a workflow through the interface, express an intention in natural language, or accept a workflow suggested by the assistant. The application determines whether the workflow is available, which inputs can be transferred, and what authorization is required.
-
-Movement can also occur in the opposite direction. Users may suspend a workflow to explore alternatives, ask questions, or reconsider their choices, then return to the previous workflow state. Depending on the workflow, they may navigate backward, revise inputs, or switch to another task.
-
-The system maintains the relevant workflow state independently of the conversation so that changing the interaction mode does not silently discard progress, bypass constraints, or authorize external operations.
-
-**An open-ended conversation and a bounded workflow can therefore coexist without sharing the same execution authority.** The assistant provides flexible interaction, while the application controls transitions and the operations permitted in each context.
-
-### How movement might work
-
-
-Consider a booking assistant embedded in a general-purpose assistant.
-
-```mermaid
-flowchart TD
-    open["Open-ended interaction<br/>Discuss options, ask questions, compare appointments, decide what to book."]
-
-    subgraph booking["Bounded booking workflow"]
-        select["Select appointment<br/>Available options and constraints"]
-        details["Provide required details<br/>Validated inputs; previous choices can be revised"]
-        confirm["Confirm and execute<br/>Authorized operation, verified outcome"]
-        select --> details --> confirm
-    end
-
-    open <-->|Enter, suspend, or resume| booking
-    booking -->|Return the outcome| continued["Continue open-ended interaction"]
-```
-
-
-A useful distinction is that moving between modes and moving between workflow states are two different things.
-
-A user might leave the booking workflow temporarily to ask about cancellation policies. The booking state remains intact. They can then resume the workflow.
-
-Alternatively, the user might stay within the booking workflow and navigate between predefined states, such as changing the appointment time. The LLM can help select a valid transition while application logic enforces the constraints.
-
-And there is a third possibility: a bounded workflow finishes and returns a result to the general assistant, allowing the user to continue with a different goal.
-
-A design question is how control and context transfer between different parts of a product. Those relationships can be examined before deciding whether the parts are modes, workflows, agents, or separate components.
-
-One constraint is essential: switching modes cannot itself grant additional permissions. Authorization must be enforced by the receiving workflow and by the operations it executes.
+Analysis products often combine open-ended interaction with bounded workflows. How the two can coexist, how users and control move between them, and why switching modes must not grant extra permissions is covered in [Operating Regimes in AI Products]({{< ref "ai/system-types/project-examples/operating-regimes" >}}#two-modes-or-regimes).
 
 ## Framing analysis and investigation systems
 

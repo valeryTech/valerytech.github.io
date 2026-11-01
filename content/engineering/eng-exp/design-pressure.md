@@ -10,7 +10,7 @@ linkTitle: "Design Pressure"
 
 This document explains **why** and **how** an evaluation and test system should push LLM products toward a more modular design. It focuses on **RAG + function calling** systems. It is a detailed technical reference meant to preserve the research and be read again later.
 
-The module boundaries, contracts, observability, and gradual release it asks for correspond to system design patterns; see [same patterns in other domains]({{< ref "system-design/elements/elements" >}}#same-patterns-in-other-domains).
+The module boundaries, contracts, observability, and gradual release it asks for correspond to system design patterns; see [same patterns in other domains]({{< ref "system-design/elements/pattern-map" >}}#same-patterns-in-other-domains).
 
 ## 1. The core idea: tests as an architectural force
 

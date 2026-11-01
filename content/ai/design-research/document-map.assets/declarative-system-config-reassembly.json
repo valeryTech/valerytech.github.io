@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-10-01",
+  "date": "2026-03-01",
   "description": "Four complete dialogue ranges were moved unchanged into focused runtime notes. New commentary and navigation are separate. The duplicate prompt-registry archive remains intact and its shared body was imported once.",
   "workspace": ".",
   "source": {
@@ -424,7 +424,7 @@
   },
   "audit": "reassembly-map.md#declarative-system-configuration-dialogue",
   "publicEdition": {
-    "date": "2026-10-28",
+    "date": "2026-03-28",
     "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions.",
     "privateSourceFingerprints": "omitted"
   }

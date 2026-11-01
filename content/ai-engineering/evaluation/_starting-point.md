@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Where to Start with AI Evaluation"
-description: "A practical starting sequence for AI evaluation: frame one workflow, choose a product decision, define expected behavior, run representative cases, and use the findings to guide changes."
+description: "A practical starting sequence for AI evaluation: frame one workflow, choose a product decision, define expected behavior, run representative cases and act on the findings, plus which existing evaluation notes to keep, simplify or defer."
 linkTitle: "Starting Point"
 ---
 

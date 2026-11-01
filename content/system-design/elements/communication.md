@@ -109,7 +109,7 @@ Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-ou
 
 - [Remote procedure invocation](https://microservices.io/patterns/communication-style/rpi.html), [messaging](https://microservices.io/patterns/communication-style/messaging.html), [domain-specific protocol](https://microservices.io/patterns/communication-style/domain-specific.html), [idempotent consumer](https://microservices.io/patterns/communication-style/idempotent-consumer.html) -- microservices.io.
 - Richardson 2019, chapter 3. Newman 2021, chapters 4 and 5.
-- Detailed notes: [messaging]({{< ref "system-design/elements/messaging" >}}), [Kafka]({{< ref "engineering/topics/kafka" >}}), [streaming]({{< ref "engineering/topics/streaming" >}}), [EDA resources]({{< ref "engineering/topics/eda" >}}).
+- Detailed notes: [messaging]({{< ref "system-design/elements/messaging" >}}), [Kafka]({{< ref "engineering/topics/kafka" >}}), [streaming]({{< ref "engineering/topics/streaming" >}}), [EDA resources]({{< ref "engineering/topics/event-driven-architecture" >}}).
 
 ## Library sources
 
@@ -117,3 +117,7 @@ Reading: [How Slack designs its APIs](https://slack.engineering/how-we-design-ou
 - [Newman 2021](/sources/system-design/microservices/newman-2021-building-microservices-2nd-edition.pdf.enc), *Building Microservices: Designing Fine-Grained Systems, Second Edition* -- chapters 4-5
 - [Richardson 2019](/sources/system-design/microservices/richardson-2019-microservices-patterns.pdf.enc), *Microservices Patterns: With Examples in Java* -- chapter 3
 - [Ford et al. 2022](/sources/software-engineering/architecture/ford-2022-software-architecture-the-hard-parts.pdf.enc), *Software Architecture: The Hard Parts* -- on *Contracts and API design*
+
+Further reading:
+
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional* -- chapter 3, "Communicating Between Bounded Contexts" (events over queues, DTOs serialized at the boundary) and "Contracts Between Bounded Contexts" (who owns the contract: shared kernel, consumer-driven, conformist); on *Contracts and API design*

@@ -8,7 +8,7 @@ linkTitle: "Related Work"
 
 Most parts of this design already exist, and several systems already combine two or three of them. This note maps the closest work to the parts of the design it covers, so that whatever this project still claims can be stated narrowly and checked. An earlier version of this note, drafted with an AI research assistant, called the combination new; the positioning section below replaces that claim.
 
-The systems and studies below were checked against their abstracts, papers or official documentation on 2026-11-05. Numbers are as the sources report them; items that could not be confirmed are marked.
+The systems and studies below were checked against their abstracts, papers or official documentation on 2026-04-05. Numbers are as the sources report them; items that could not be confirmed are marked.
 
 ## Code as graphs
 
@@ -122,7 +122,7 @@ The pattern (property graph plus vector search plus graph-guided retrieval) is s
 
 **What is not new.** Code graphs, symbol-level retrieval, AST chunking, program slicing with LLMs, graph-guided localization agents, language-server tools for agents, property-graph RAG, links between code and its history, and history and runtime evidence as LLM context. Single-level comparisons of structure against text or grep, and splits by number of files, also exist.
 
-**What remains, after the 2026-11-05 search.** Both research claims are *partly covered*. Their remaining parts are narrower than first stated.
+**What remains, after the 2026-04-05 search.** Both research claims are *partly covered*. Their remaining parts are narrower than first stated.
 
 1. **History, configuration and runtime evidence for the same question.** Commit history, co-change and runtime traces are already used as LLM context, with gains that are real but uneven: they shrink with stronger models (HAFixAgent), naive traces help only sometimes (Haque et al.), and root-cause analysis over real telemetry stays poor (OpenRCA). Earlier versions of this note also wrongly said the systems above work only on the code at one commit; AutoCodeRover already uses test coverage. What still looks open:
    - configuration and infrastructure values linked to code as context for impact and "why" questions;

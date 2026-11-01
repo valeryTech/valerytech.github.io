@@ -11,13 +11,13 @@ Editorial context, 2026-04-20: The questions, constraints, proposals, disagreeme
 
 <!-- Editorial navigation added on 2026-04-01. The retained passage begins below. -->
 
-The complete question and reply follow the [composable-workspace dialogue]({{< ref "ai/design-research/interactive-systems/03-composable-investigation-workspaces" >}}). The user asks how multiple document and query representations could support retrieval and inspection without making a dense cube the physical storage model.
+The complete question and reply follow the composable-workspace dialogue. The user asks how multiple document and query representations could support retrieval and inspection without making a dense cube the physical storage model.
 
-The passage is kept in the investigation collection because it develops representations, retrieval passes, candidate histories, and coverage records. The [interactive systems index]({{< ref "ai/design-research/interactive-systems/00-index" >}}) includes it in the dialogue's reading order because the proposed inspection views also belong to interface design.
+The passage is kept in the investigation collection because it develops representations, retrieval passes, candidate histories, and coverage records. The interactive systems index includes it in the dialogue's reading order because the proposed inspection views also belong to interface design.
 
-Related notes cover [investigation algebra]({{< ref "ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra" >}}), [epistemic contracts]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}), and [provenance]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}). The [comments]({{< ref "ai/design-research/interactive-systems/00-index-comments" >}}) explain the difference between a recorded screening operation and evidence completeness.
+Related notes cover [investigation algebra]({{< ref "ai/design-research/04-investigation-and-epistemics/01-investigation-language-and-algebra" >}}), [epistemic contracts]({{< ref "ai/design-research/04-investigation-and-epistemics/03-epistemic-contracts-for-rag" >}}), and [provenance]({{< ref "ai/design-research/04-investigation-and-epistemics/04-provenance-and-argumentation-foundations" >}}). The comments explain the difference between a recorded screening operation and evidence completeness.
 
-The [reassembly map]({{< ref "ai/design-research/interactive-systems/reassembly-map" >}}) records the original range and checksums. The original heading is retained below.
+The reassembly map records the original range and checksums. The original heading is retained below.
 
 <a id="original-dialogue"></a>
 

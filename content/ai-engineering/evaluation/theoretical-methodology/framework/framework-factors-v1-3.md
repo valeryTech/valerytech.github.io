@@ -1,7 +1,7 @@
 ---
 draft: false
 toc: true
-title: "Framework Factors v1.3: Operating Model for Controls"
+title: "Framework Factors v1.3: Failure Drivers and Controls"
 description: "Reliability depends on preserving acceptable behavior across runs and system changes. The operating model connects task-specific equivalence, component traces, recovery paths, and product experience to release controls."
 linkTitle: "Framework Factors v1.3"
 ---

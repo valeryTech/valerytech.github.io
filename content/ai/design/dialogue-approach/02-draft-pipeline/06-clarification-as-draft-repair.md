@@ -3,7 +3,8 @@ draft: false
 toc: true
 title: "Clarification as Draft Repair"
 description: "A slot-filling example showing clarification as a repair to an incomplete draft, followed by another readiness check."
-linkTitle: "Clarification as Draft Repair"
+weight: "60"
+linkTitle: "Clarification as Repair"
 ---
 
 [Reading map]({{< ref "ai/design/dialogue-approach/00-index" >}})

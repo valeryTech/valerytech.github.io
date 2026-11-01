@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "What a Capability Claim Says"
 description: "The starting problem: words like reasoning, planning, and agentic capability are used to describe LLMs without saying what kind of property they name or what evidence would support the claim."
+weight: "10"
 linkTitle: "Capability Claims"
 ---
 

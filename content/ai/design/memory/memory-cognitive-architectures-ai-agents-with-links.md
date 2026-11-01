@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Memory in Cognitive Architectures and AI Agents, with Links"
+title: "Cognitive Architectures and Agent Memory: Linked Citations"
 description: "The linked version of a research synthesis on evidence-preserving agent memory, connecting cognitive architectures and consolidation to temporal belief revision, reflection safeguards, benchmarks, and a graduate curriculum."
-linkTitle: "Architectures with Links"
+linkTitle: "Linked-Citation Synthesis"
 ---
 ## Executive summary
 

@@ -1179,3 +1179,11 @@ The numbered references follow the citations and source links in the supplied PD
 [^47]: [ZIO -- A type-safe, composable library for async and ...](https://github.com/zio/zio)
 
 [^48]: [Etas: An Effect-Typed Language for Agent Systems](https://arxiv.org/html/2607.17780v1)
+
+## Library sources
+
+
+Further reading:
+
+- [Granin 2025](/sources/programming/functional-programming/granin-2025-functional-design-and-architecture.pdf.enc), *Functional Design and Architecture*: sections 15.2.1, "Testable architecture", and 15.2.2, "Mocking with free monads", interpreters for real and mocked subsystems; swapping handlers restricts effects only if the program can't bypass its language, shown by an "innocent" free-monad function against a "criminal" `IO` one; on *Different handlers for the same program*.
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 7, "Modeling an Order as a Set of States" (status flags replaced by one type per state) and "State Machines", with "Why Use State Machines?" (behaviour per state, every state documented, every case considered); on *Algebraic data types*.

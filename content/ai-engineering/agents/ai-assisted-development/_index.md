@@ -19,15 +19,15 @@ The amount of work should fit the change. A small bug fix may need a focused rev
 
 
 - [Reviewing Software Changes]({{< ref "ai-engineering/agents/ai-assisted-development/code-review" >}}): what to look at beyond the diff.
-- [A Practical Review Process]({{< ref "ai-engineering/agents/ai-assisted-development/review-flow-specification" >}}): the questions to answer before recommending a merge.
-- [Testing a Change During Review]({{< ref "ai-engineering/agents/ai-assisted-development/review-flow" >}}): how to check important behavior, including a retry example.
-- [Common Mistakes in AI-Assisted Development]({{< ref "ai-engineering/agents/ai-assisted-development/delivery-flow" >}}): mistakes to look for and ways to find them.
+- [A Practical Review Process]({{< ref "ai-engineering/agents/ai-assisted-development/review-process" >}}): the questions to answer before recommending a merge.
+- [Testing a Change During Review]({{< ref "ai-engineering/agents/ai-assisted-development/testing-during-review" >}}): how to check important behavior, including a retry example.
+- [Common Mistakes in AI-Assisted Development]({{< ref "ai-engineering/agents/ai-assisted-development/common-mistakes" >}}): mistakes to look for and ways to find them.
 
 ## Preparing and building a change
 
 
-- [Defining the Product Before Building]({{< ref "ai-engineering/agents/ai-assisted-development/skill-product-framing-build" >}}): users, the job, the workflow, scope, and open questions.
-- [Making System Design Decisions]({{< ref "ai-engineering/agents/ai-assisted-development/skills-hld-build" >}}): which decisions need attention and what to record.
-- [Working with a Coding Agent]({{< ref "ai-engineering/agents/ai-assisted-development/harness" >}}): how planning, implementation, testing, and review fit together.
+- [Defining the Product Before Building]({{< ref "ai-engineering/agents/ai-assisted-development/product-framing" >}}): users, the job, the workflow, scope, and open questions.
+- [Making System Design Decisions]({{< ref "ai-engineering/agents/ai-assisted-development/system-design-decisions" >}}): which decisions need attention and what to record.
+- [Working with a Coding Agent]({{< ref "ai-engineering/agents/ai-assisted-development/working-with-an-agent" >}}): how planning, implementation, testing, and review fit together.
 
 These notes cover both ordinary application code and changes to AI features. For the latter, see [Evaluation in AI Product Development]({{< ref "ai-engineering/approach/evaluations" >}}).

@@ -1,10 +1,11 @@
 ---
 draft: false
 toc: true
-title: "Applicative Functors in Haskell and Scala"
+title: "Applicative Functors in Haskell"
 aliases:
   - "/functional-programming/applicative/"
 description: "Applying functions that sit inside a functor with pure and <*>, applicative style for independent computations, how it differs from a monad, the laws, and the Maybe, list and ZipList instances."
+weight: "30"
 linkTitle: "Applicative"
 ---
 
@@ -118,7 +119,7 @@ do n <- readLn
 ```
 
 
-With `<*>` both sides already exist before anything runs, so the structure is fixed. Every monad is an applicative, but not the other way round: `ZipList`, and validation types that collect errors, have no lawful monad matching their `<*>`. Mokhov et al. 2020 make the difference concrete for build systems: applicative builds have static dependencies, known before the build, while monadic ones have dynamic dependencies that appear during it.
+With `<*>` both sides already exist before anything runs, so the structure is fixed. Every monad is an applicative, but not the other way round: `ZipList`, and validation types that collect errors, have no lawful monad matching their `<*>`. Mokhov et al. 2020 ([PDF](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc)) make the difference concrete for build systems: applicative builds have static dependencies, known before the build, while monadic ones have dynamic dependencies that appear during it.
 
 - Stack Overflow, "What advantage does monad give us over an applicative?": [https://stackoverflow.com/questions/17409260/what-advantage-does-monad-give-us-over-an-applicative/17412969#17412969](https://stackoverflow.com/questions/17409260/what-advantage-does-monad-give-us-over-an-applicative/17412969#17412969)
 
@@ -198,17 +199,18 @@ See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}
 
 
 - [Allen et al. 2016](/sources/programming/functional-programming/allen-2016-haskell-programming-from-first-principles.pdf.enc), *Haskell Programming from First Principles*: chapter 17, Applicative, covers Functor vs. Applicative, applicatives as monoidal functors, the four laws, and the ZipList monoid.
-- [Mokhov et al. 2020](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc), *Build Systems a la Carte: Theory and Practice*: applicative tasks have static dependencies and monadic tasks dynamic ones; on the applicative-versus-monad passage.
+- [Mokhov et al. 2020](/sources/programming/functional-programming/mokhov-2020-build-systems-a-la-carte-theory-practice.pdf.enc), *Build Systems a la Carte: Theory and Practice*: section 3.4, "The Need for Polymorphism in Task" (the constraint on a task classifies it: `Applicative` for static dependencies, `Monad` for dynamic ones, with `Functor` and `Selective` as other points); section 3.5, "Monadic Tasks" (spreadsheet formulas whose dependencies depend on a cell's value); section 3.7, "Computing Dependencies" (static dependencies extracted by running the task in `Const`); on *Applicative versus monad*.
 - [Welsh et al. 2020](/sources/programming/scala/welsh-2020-scala-with-cats.pdf.enc), *Scala with Cats*: chapter 6, Semigroupal and Applicative, the Scala version with `mapN` and `Validated`.
 - [Ghosh 2017](/sources/programming/scala/ghosh-2017-functional-and-reactive-domain-modeling.pdf.enc), *Functional and Reactive Domain Modeling*: chapter 4, section 4.2.2, The Applicative Functor pattern: lifting a function of several arguments into a context, applied to validating the fields of a bank account in Scala; the same motivation as From Functor to Applicative.
 - [Skinner 2023](/sources/programming/functional-programming/skinner-2023-effective-haskell.pdf.enc), *Effective Haskell*: chapter 9, Introducing Monads, sections "Applying Applicatives" and "Using the Applicative Laws".
 - [Bragilevsky 2021](/sources/programming/functional-programming/bragilevsky-2021-haskell-in-depth.pdf.enc), *Haskell in Depth*: chapter 2, section 2.3: `Applicative` between `Functor` and `Monad`, with `IO`, `Writer` and lists compared side by side (2.3.2).
+- [Gibbons et al. 2009](/sources/programming/functional-programming/gibbons-2009-essence-of-the-iterator-pattern.pdf.enc), *The Essence of the Iterator Pattern*: section 3, "Applicative Functors": the four laws rewrite any applicative expression to `pure f <*> u1 <*> ... <*> un`, so the effects are fixed in advance, unlike with `>>=`; section 3.1, every monad gives an applicative; section 3.2, `Const` over a monoid is an applicative that is not a monad, and lists are applicative in three ways (cartesian, concatenating, zipping); section 3.3, applicatives are closed under product and composition, monads are not; on *Applicative versus monad*, *Laws* and *ZipLists*.
+- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*: chapter 3, Lifting Pure Functions: section 3.1 starts from `fmap` lifting only one-argument functions and from the duplication in `lift2`, `lift3`, ..., and arrives at `ap`; section 3.2 defines `Applicative` and gives `ZipList`, with `pure` as `repeat`, as an applicative that is not a monad; section 3.3 covers applicative style, `<*` and `*>` (3.3.1) and `ApplicativeDo`, with Haxl as the reason to prefer applicative translations (3.3.2); section 3.4 shows that applicatives are monoidal functors; on *From Functor to Applicative*, *Applicative versus monad*, *ZipLists* and *Independent computations*.
 
 Further reading:
 
 - [Gibbons et al. 2023](/sources/software-engineering/architecture/gibbons-2023-phases-in-software-architecture.pdf.enc), *Phases in Software Architecture* ([doi:10.1145/3609025.3609479](https://doi.org/10.1145/3609025.3609479))
-- [Gibbons et al. 2009](/sources/programming/functional-programming/gibbons-2009-essence-of-the-iterator-pattern.pdf.enc), *The Essence of the Iterator Pattern*
-- [Serrano Mena 2021](/sources/programming/functional-programming/serrano-mena-2021-book-of-monads-2e.pdf.enc), *Book of Monads (2nd edition)*
 - [Pilquist et al. 2023](/sources/programming/scala/pilquist-2023-functional-programming-in-scala-2e.pdf.enc), *Functional Programming in Scala (2nd edition)*
 - [Schwarz 2019](/sources/programming/scala/schwarz-2019-monads-do-not-compose.pdf.enc), *Monads do not Compose*
-- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*
+- [Wlaschin 2018](/sources/programming/functional-programming/wlaschin-2018-domain-modeling-made-functional.pdf.enc), *Domain Modeling Made Functional*: chapter 10, Implementation: Working with Errors, section "Monads and More", sub-heading "Composing in Parallel with Applicatives": a two-paragraph contrast of combining results in series (monads) with combining them independently (applicatives), with error-collecting validation as the use; on *Independent computations*.
+- [Serrano Mena 2022](/sources/programming/functional-programming/serrano-mena-2022-haskell-almost-standard-libraries.pdf.enc), *Haskell: Almost Standard Libraries*: chapter 9, Validation and parsing, section 9.2, "Parsers": an applicative `Person <$> word <* spaces <*> ...` parser; section 9.2.1, "Monadic parsing": `Monad` is needed once a parsed count decides how many words follow (`count n`); on *Applicative versus monad*.

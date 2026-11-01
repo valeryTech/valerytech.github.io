@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Practice and Study in Functional Programming"
 description: "Putting functional programming into practice: reading paths through the library, exercises and projects, refactoring examples, a dated study log, and links still to file."
+weight: "50"
 linkTitle: "Practice and Study"
 ---
 

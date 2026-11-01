@@ -3,6 +3,7 @@ draft: false
 toc: true
 title: "Interaction Forms and Hybrid UI"
 description: "Matches interaction forms to task needs: language for intent, structured views for review, direct controls for precision, and explicit confirmation for consequential actions."
+weight: "50"
 linkTitle: "Interaction Forms"
 ---
 

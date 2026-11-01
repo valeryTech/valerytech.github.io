@@ -1,9 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Declarative AI System Configuration"
+title: "Declarative AI System Configuration: Working Requirements"
 description: "Working requirements for versioned runnable AI configurations, separating system identity from environment bindings while supporting equivalent production and evaluation runs with reconstructible provenance."
-linkTitle: "Declarative Configuration"
+linkTitle: "Working Requirements"
 ---
 
 These are working requirements for configuring an AI system. Open question: should the first component be a prompt registry and prompt-management system?

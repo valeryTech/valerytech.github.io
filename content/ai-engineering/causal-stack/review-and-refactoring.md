@@ -6,7 +6,7 @@ description: "The refactoring replaces overlapping layer taxonomies with cases, 
 linkTitle: "Refactoring Record"
 ---
 
-**Refactored:** 20 October 2026.
+**Refactored:** 20 March 2026.
 
 **Purpose:** make the notes usable during future work building products and learning from real customers.
 
@@ -33,7 +33,7 @@ These names are historical identifiers. The files have been removed; their usefu
 
 | Retired file | Destination |
 |---|---|
-| `causal-stack-operating-model.md` | [Entry point]({{< ref "ai-engineering/causal-stack" >}}) and [product-use cycle]({{< ref "ai-engineering/causal-stack/practical-checks" >}}) |
+| `causal-stack-operating-model.md` | [Entry point]({{< ref "ai-engineering/causal-stack" >}}) and [product-use cycle]({{< ref "ai-engineering/causal-stack/learning-from-real-use" >}}) |
 | `layer-0-natural-language-properties.md` | [Language and interaction]({{< ref "ai-engineering/causal-stack/reference/language" >}}) |
 | `layer-0-alt.md` | [Language and interaction]({{< ref "ai-engineering/causal-stack/reference/language" >}}) |
 | `layer-1a-base-llm-mechanisms.md` | [Model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}}) |

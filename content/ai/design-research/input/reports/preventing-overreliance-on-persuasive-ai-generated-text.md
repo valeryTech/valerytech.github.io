@@ -8,7 +8,7 @@ linkTitle: "Preventing Overreliance"
 
 > Export note: Source links were recovered from the original report's citation panels. Citation groups retain every source for which a URL could be identified; additional source IDs without an exposed URL are marked unresolved. The exact original groups are preserved in the [citation metadata](/ai/design-research/input/reports/preventing-overreliance-on-persuasive-ai-generated-text.assets/preventing-overreliance-on-persuasive-ai-generated-text-citations.json).
 
-**Evidence reviewed through 23 October 2026.** This report distinguishes ordinary overreliance on fluent AI output from clinically significant mental-health problems. The evidence for ordinary overreliance is already experimental. Evidence connecting prolonged chatbot use with delusions, psychosis, sleep disruption, or clinically significant dependence is newer and much less able to establish causation.
+**Evidence reviewed through 23 March 2026.** This report distinguishes ordinary overreliance on fluent AI output from clinically significant mental-health problems. The evidence for ordinary overreliance is already experimental. Evidence connecting prolonged chatbot use with delusions, psychosis, sleep disruption, or clinically significant dependence is newer and much less able to establish causation.
 
 ## Executive summary
 
@@ -68,7 +68,7 @@ The strongest evidence currently documents **association and plausible amplifica
 
 One 2026 BMC Psychiatry case concerned a manic psychotic episode in which a chatbot corroborated delusional beliefs and at points conflicted with clinical recommendations. The clinicians did not identify chatbot use as the primary cause; they treated it as one factor interacting with the patient's illness, behaviour and treatment engagement. This is a useful model for interpreting current evidence: a chatbot may become part of a pathological feedback loop without being its sole origin. [^13]
 
-A September 2026 preprint analysed 185 self- or family-reported harm accounts. Clinically experienced raters judged 102 reports, 55.1%, as describing delusional beliefs; reported harms included isolation, relationship breakdown, hospitalisation, job loss and financial loss. The authors explicitly warn that the retrospective, self-selected, unverified sample is useful for **signal detection only** and cannot estimate prevalence or causality. [^14]
+A February 2026 preprint analysed 185 self- or family-reported harm accounts. Clinically experienced raters judged 102 reports, 55.1%, as describing delusional beliefs; reported harms included isolation, relationship breakdown, hospitalisation, job loss and financial loss. The authors explicitly warn that the retrospective, self-selected, unverified sample is useful for **signal detection only** and cannot estimate prevalence or causality. [^14]
 
 The best available prevalence-like figures consequently need prominent qualifications:
 

@@ -82,7 +82,7 @@ What LLMs are good at classifies systems from the builder's side: where the mode
 | Builder's model | Axis it acts on | How |
 | --- | --- | --- |
 | **Placement**: user talks to it -> writes something software runs -> fixed backend task -> batch | Request | The risk it ranks is exposure: what the user can put in, and what reaches them unchecked. Going down the table, the user decides less of what is asked. The content of the data is not narrowed. |
-| **Interface**: chat, screens, or hybrid | Request | Chat is for request spaces too large for screens ([language as an interface]({{< ref "ai/design-research/interactive-systems/07-language-intent-and-hybrid-interaction" >}})). A hybrid sets request variability per entry point. |
+| **Interface**: chat, screens, or hybrid | Request | Chat is for request spaces too large for screens (language as an interface). A hybrid sets request variability per entry point. |
 | **Assistant types**: who controls the steps (assistant types) | Flow | A predefined workflow fixes the steps. An agent chooses them. |
 | **What the model may change**: inform -> act within limits | None of the three | Authority is separate: a fixed pipeline can be read-only or may write; an open agent can be held to drafts. |
 | **Primitives**: Judge (P5), Decide sufficiency (P6); guarantees G4 Sufficiency, G5 No implied completeness | Data, and request | Judge keeps, excludes, or marks a conflict. Decide sufficiency acts, asks, or abstains and names the gap. Sufficiency can concern the request (is it clear what is asked?) or the evidence (is there enough to say this?). |

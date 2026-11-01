@@ -1,8 +1,9 @@
 ---
 draft: false
 toc: true
-title: "Terminology and Taxonomy"
+title: "Terminology and Taxonomy for Task Assistants"
 description: "Maps assistant, copilot, agent, workflow, dialogue, and mixed initiative onto different descriptive axes, using practitioner examples to explain why they are overlapping terms."
+weight: "30"
 linkTitle: "Terminology and Taxonomy"
 ---
 
