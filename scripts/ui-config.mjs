@@ -120,6 +120,11 @@ export function validateUiConfig({ ui, callouts, analytics }) {
       `display ${key} default must be an available option`,
     );
     for (const option of setting.options) {
+      if (option.shortLabel !== undefined)
+        assert.ok(
+          typeof option.shortLabel === "string" && option.shortLabel.trim(),
+          `display ${key} short labels must be nonempty text`,
+        );
       assert.ok(
         supported.includes(option.value),
         `display ${key} option must have styling support`,

@@ -4,41 +4,72 @@
 {{- with $field.source -}}
   {{- range split . "." -}}{{- $definition = index $definition . -}}{{- end -}}
 {{- end -}}
-{{- if eq $field.type "cycle" -}}
-  {{- $current := index (where $definition.options "value" $definition.default) 0 -}}
-  <div>
-    <label for="{{ $id }}">{{ $field.label }}</label>
-    <button type="button" id="{{ $id }}" class="site-settings-cycle site-control" data-preference="{{ $field.key }}" data-preference-label="{{ $field.label }}" value="{{ $definition.default }}" aria-label="{{ $field.label }}: {{ $current.label }}" {{ with $field.help }}aria-describedby="{{ $id }}-help"{{ end }}>
-      <span class="site-control-label">
-        {{ range $definition.options }}<span data-preference-choice="{{ .value }}"{{ if ne .value $definition.default }} hidden{{ end }}>{{ .label }}</span>{{ end }}
-      </span>
-      <span class="site-surface-actions">{{ partial "utils/icon.html" (dict "name" "refresh" "attributes" "height=20") }}</span>
-    </button>
-    {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
-  </div>
-{{- else if eq $field.type "checkbox" -}}
-  <div class="site-settings-toggle">
-    <input id="{{ $id }}" type="checkbox" data-preference="{{ $field.key }}" {{ with $field.help }}aria-describedby="{{ $id }}-help"{{ end }} {{ if $definition.default }}checked{{ end }} />
-    <div>
-      <label for="{{ $id }}">{{ $field.label }}</label>
-      {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
+{{- $help := "" -}}
+{{- with $field.help }}{{ $help = printf `<p id="%s-help" class="site-settings-help">%s</p>` $id (. | htmlEscape) | safeHTML }}{{ end -}}
+{{- $describedBy := "" -}}
+{{- with $field.help }}{{ $describedBy = printf `aria-describedby="%s-help"` $id }}{{ end -}}
+{{- if in (slice "choice" "theme") $field.type -}}
+  {{- /* Every choice shows at once as a segmented radio group; one tap selects any option. */ -}}
+  {{- $options := slice -}}
+  {{- $default := "" -}}
+  {{- if eq $field.type "theme" -}}
+    {{- $default = site.Params.theme.default | default "system" -}}
+    {{- $options = slice
+      (dict "value" "light" "label" ((T "light") | default "Light") "icon" "sun")
+      (dict "value" "dark" "label" ((T "dark") | default "Dark") "icon" "moon")
+      (dict "value" "system" "label" ((T "system") | default "System") "icon" "contrast")
+    -}}
+  {{- else -}}
+    {{- $default = $definition.default -}}
+    {{- $options = $definition.options -}}
+  {{- end -}}
+  <div class="site-settings-row site-settings-row-choice">
+    <div class="site-settings-row-text">
+      <span id="{{ $id }}-label" class="site-settings-label">{{ $field.label }}</span>
+      {{ $help }}
+    </div>
+    <div class="site-settings-segmented" role="radiogroup" aria-labelledby="{{ $id }}-label" {{ $describedBy | safeHTMLAttr }} {{ if eq $field.type "theme" }}data-theme-setting{{ else }}data-preference="{{ $field.key }}"{{ end }} data-preference-label="{{ $field.label }}">
+      {{- range $options -}}
+        {{- $short := .shortLabel | default .label -}}
+        <label class="site-settings-segment"{{ if ne $short .label }} title="{{ .label }}"{{ end }}>
+          <input type="radio" name="{{ $id }}" value="{{ .value }}"{{ if eq .value $default }} checked{{ end }}{{ if ne $short .label }} aria-label="{{ .label }}"{{ end }} />
+          <span class="site-settings-segment-label">
+            {{- with .icon }}{{ partial "components/line-icon.html" (dict "name" . "class" "site-settings-segment-icon") }}{{ end -}}
+            <span>{{ $short }}</span>
+          </span>
+        </label>
+      {{- end -}}
     </div>
   </div>
+{{- else if eq $field.type "checkbox" -}}
+  <div class="site-settings-row site-settings-row-switch">
+    <div class="site-settings-row-text">
+      <label for="{{ $id }}" class="site-settings-label">{{ $field.label }}</label>
+      {{ $help }}
+    </div>
+    <input id="{{ $id }}" class="site-settings-switch" type="checkbox" role="switch" data-preference="{{ $field.key }}" {{ $describedBy | safeHTMLAttr }} {{ if $definition.default }}checked{{ end }} />
+  </div>
 {{- else if eq $field.type "range" -}}
-  <div class="site-settings-width">
-    <label for="{{ $id }}">{{ $field.label }}</label>
-    <output for="{{ $id }}" data-preference-output="{{ $field.key }}"></output>
-    <input id="{{ $id }}" type="range" step="1" data-preference="{{ $field.key }}" {{ if $field.help }}aria-describedby="{{ $id }}-help"{{ else }}{{ with .groupHelp }}aria-describedby="{{ . }}"{{ end }}{{ end }} />
+  <div class="site-settings-row site-settings-width">
+    <div class="site-settings-row-text">
+      <label for="{{ $id }}" class="site-settings-label">{{ $field.label }}</label>
+      {{ $help }}
+    </div>
+    <div class="site-settings-slider">
+      <input id="{{ $id }}" type="range" step="1" data-preference="{{ $field.key }}" {{ if $field.help }}{{ $describedBy | safeHTMLAttr }}{{ else }}{{ with .groupHelp }}aria-describedby="{{ . }}"{{ end }}{{ end }} />
+      <output for="{{ $id }}" data-preference-output="{{ $field.key }}"></output>
+    </div>
     <span class="site-settings-width-reference" data-pane-size-reference="{{ $field.key }}" aria-hidden="true"></span>
-    {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
   </div>
 {{- else if eq $field.type "palette" -}}
-  <div>
-    <button type="button" id="{{ $id }}" class="site-settings-cycle site-control" data-palette-open aria-haspopup="dialog" aria-controls="site-palette" {{ with $field.help }}aria-describedby="{{ $id }}-help"{{ end }} hidden>
-      <span class="site-control-label">{{ $field.label }}</span>
-      <span class="site-surface-actions">{{ partial "utils/icon.html" (dict "name" "color-swatch" "attributes" "height=20") }}</span>
+  <div class="site-settings-row">
+    <div class="site-settings-row-text">
+      <span id="{{ $id }}-label" class="site-settings-label">{{ $field.label }}</span>
+      {{ $help }}
+    </div>
+    <button type="button" id="{{ $id }}" class="site-settings-button" data-palette-open aria-haspopup="dialog" aria-controls="site-palette" aria-label="Edit {{ lower $field.label }}" {{ $describedBy | safeHTMLAttr }} hidden>
+      {{ partial "utils/icon.html" (dict "name" "color-swatch" "attributes" "height=18") }}<span>Edit</span>
     </button>
-    {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
   </div>
 {{- else -}}
   {{ errorf "Unsupported settings field type: %s" $field.type }}

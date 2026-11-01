@@ -57,12 +57,15 @@ test("navigation proportions are finite percentages that leave room for the arti
 
 test("settings field definitions must reference the owning configuration and supported controls", () => {
   const config = readUiConfig();
-  config.ui.settings.sections[0].fields[1].source = "fonts";
+  const field = config.ui.settings.sections
+    .flatMap((section) => section.fields)
+    .find((candidate) => candidate.key === "display.textSize");
+  field.source = "fonts";
   assert.throws(() => validateUiConfig(config), /owning configuration source/);
-  config.ui.settings.sections[0].fields[1].source = "display.textSize";
-  config.ui.settings.sections[0].fields[1].type = "checkbox";
+  field.source = "display.textSize";
+  field.type = "checkbox";
   assert.throws(() => validateUiConfig(config), /unsupported control/);
-  config.ui.settings.sections[0].fields[1].type = "cycle";
+  field.type = "choice";
   config.ui.settings.sections[0].fields.push({ ...config.ui.settings.sections[0].fields[0] });
   assert.throws(() => validateUiConfig(config), /field keys must be unique/);
 });

@@ -51,32 +51,78 @@
     var(--site-floating-shadow-color);
 }
 
+/* Dark uses warm neutral grays with an orange link and accent, in the style of
+   Anthropic's Claude apps. Every fill is set here, so no blue fill-tint shows through. */
 .dark {
   --site-floating-shadow-color: rgb(0 0 0 / 45%);
-  --site-page-background: var(--hx-color-dark, #111);
-  --site-foreground: #f3f4f6;
-  --site-body-foreground: #c7c7c7;
-  --site-heading-foreground: #ddd;
-  --site-context-header: #1c1b2f;
-  --site-context-surface: #1b1c2e;
-  --site-muted: #a3a3a3;
-  --site-border: #303030;
-  --site-panel: #151524;
+  --site-page-background: #262624;
+  --site-foreground: #faf9f5;
+  --site-body-foreground: #c2c0b6;
+  --site-heading-foreground: #ebe9e1;
+  --site-context-header: #1f1e1d;
+  --site-context-surface: #30302e;
+  --site-muted: #a6a39a;
+  --site-border: #3e3e38;
+  --site-panel: #1f1e1d;
+  --site-link-color-dark: #d97757;
   --site-link-color: var(--site-link-color-dark);
+  --site-accent: #e8906f;
+  /* Navigation labels stay neutral; links and the accent carry the orange. */
+  --site-context-foreground: #e5e3da;
   --site-fill-tint: var(--site-link-tint-dark);
-  /* Dark sets one fixed indigo for the current section and every hover. */
-  --site-nav-selected-surface: #272743;
-  --site-card-hover: #272743;
-  --site-code-surface: #1b1c2e;
-  --site-table-surface: #1c1c20;
-  --site-table-header: #263f60;
+  --site-nav-selected-surface: #3a3936;
+  --site-card-surface: #2b2b29;
+  --site-card-hover: #3a3936;
+  --site-code-surface: #1f1e1d;
+  --site-table-surface: #2b2b29;
+  --site-table-header: #3a3936;
   --site-warning-foreground: #fde68a;
 }
 
 .dark[data-text-brightness="bright"] {
-  --site-body-foreground: #e5e5e5;
+  --site-body-foreground: #e5e3da;
   --site-heading-foreground: #fff;
-  --site-muted: #c7c7c7;
+  --site-muted: #c2c0b6;
   --site-nav-foreground: var(--site-body-foreground);
   --site-link-tint-dark: #b7d2eb;
+}
+
+/* Dark callouts tint the warm page with muted accent hues instead of Hextra's
+   cool Tailwind fills; Light keeps the classes in data/callouts.json. */
+.dark {
+  --site-callout-info-hue: #6a9bcc;
+  --site-callout-default-hue: #788c5d;
+  --site-callout-warning-hue: #d97757;
+  --site-callout-error-hue: #c4524a;
+  --site-callout-important-hue: #9b87c4;
+  --site-callout-info-surface: color-mix(
+    in oklab,
+    var(--site-callout-info-hue) 16%,
+    var(--site-page-background)
+  );
+  --site-callout-info-foreground: #d5e1ee;
+  --site-callout-default-surface: color-mix(
+    in oklab,
+    var(--site-callout-default-hue) 18%,
+    var(--site-page-background)
+  );
+  --site-callout-default-foreground: #dde4d2;
+  --site-callout-warning-surface: color-mix(
+    in oklab,
+    var(--site-callout-warning-hue) 16%,
+    var(--site-page-background)
+  );
+  --site-callout-warning-foreground: #f3d5c7;
+  --site-callout-error-surface: color-mix(
+    in oklab,
+    var(--site-callout-error-hue) 18%,
+    var(--site-page-background)
+  );
+  --site-callout-error-foreground: #f2cfca;
+  --site-callout-important-surface: color-mix(
+    in oklab,
+    var(--site-callout-important-hue) 16%,
+    var(--site-page-background)
+  );
+  --site-callout-important-foreground: #e0d8ef;
 }

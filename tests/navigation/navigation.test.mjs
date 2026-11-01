@@ -60,18 +60,18 @@ async function screenshot(page, name, options = {}) {
   if (screenshots) await page.screenshot({ ...options, path: path.join(screenshots, `${name}.png`) });
 }
 
-function cycleSetting(scope, label) {
-  return scope.getByRole('button', { name: new RegExp('^' + label + ': ') });
+// Settings with a fixed list of choices are segmented radio groups.
+function settingGroup(scope, label) {
+  return scope.getByRole('radiogroup', { name: label, exact: true });
+}
+
+function settingValue(scope, label) {
+  return settingGroup(scope, label).locator('input:checked').getAttribute('value');
 }
 
 async function chooseSetting(scope, label, value) {
-  const button = cycleSetting(scope, label);
-  const count = await button.locator('[data-preference-choice]').count();
-  for (let index = 0; index < count; index++) {
-    if (await button.getAttribute('value') === value) return;
-    await button.click();
-  }
-  assert.equal(await button.getAttribute('value'), value, label);
+  await settingGroup(scope, label).locator(`input[value="${value}"]`).check();
+  assert.equal(await settingValue(scope, label), value, label);
 }
 
 // A hidden top bar keeps its tools in a floating column, so check the bar itself.
@@ -543,7 +543,6 @@ test('text brightness previews, saves and restores text, headings and menus on d
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + '/settings/', width, width === 390 ? devices['iPhone 13'] : {});
     const settings = page.getByRole('form', { name: 'Site settings' });
-    const brightness = cycleSetting(settings, 'Text brightness');
     const color = selector => page.locator(selector).first().evaluate(element => getComputedStyle(element).color);
     const previewColors = async () => ({
       body: await color('.site-settings-preview p'),
@@ -571,33 +570,33 @@ test('text brightness previews, saves and restores text, headings and menus on d
       }), { selectors, expected });
       for (const selector of selectors) assert.equal(await color(selector), expected, selector);
     };
-    const softMenu = 'rgb(163, 163, 163)';
-    const brightMenu = 'rgb(229, 229, 229)';
-    // Dark links and navigation labels are white in both brightness profiles.
-    const softAccent = 'rgb(255, 255, 255)';
-    const brightAccent = 'rgb(255, 255, 255)';
+    const softMenu = 'rgb(166, 163, 154)';
+    const brightMenu = 'rgb(229, 227, 218)';
+    // Dark navigation labels stay warm off-white and links orange in both brightness profiles.
+    const softAccent = 'rgb(229, 227, 218)';
+    const brightAccent = 'rgb(229, 227, 218)';
+    const darkLink = 'rgb(217, 119, 87)';
     const expectAccentColors = async expected => {
       for (const selector of [
         '.breadcrumb',
         // Top navigation labels and pane headings share the breadcrumb color.
         '.site-header-links > a:not([aria-current]):not(:hover):not(:focus-visible)',
         '.site-toc-title',
-        '.breadcrumb a',
         '.site-header-preferences .site-settings-link',
         '.site-header-preferences .hextra-theme-toggle',
         '.site-header-tools .hextra-search-trigger',
-        '.article-content a',
       ]) {
         await page.waitForFunction(({ selector, expected }) => getComputedStyle(document.querySelector(selector)).color === expected, { selector, expected });
         assert.equal(await color(selector), expected, selector);
       }
+      for (const selector of ['.breadcrumb a', '.article-content a']) assert.equal(await color(selector), darkLink, selector);
     };
-    const soft = { body: 'rgb(199, 199, 199)', heading: 'rgb(221, 221, 221)' };
-    const bright = { body: 'rgb(229, 229, 229)', heading: 'rgb(255, 255, 255)' };
+    const soft = { body: 'rgb(194, 192, 182)', heading: 'rgb(235, 233, 225)' };
+    const bright = { body: 'rgb(229, 227, 218)', heading: 'rgb(255, 255, 255)' };
     await page.emulateMedia({ colorScheme: 'light' });
     await page.waitForFunction(() => !document.documentElement.classList.contains('dark'));
     const light = await previewColors();
-    assert.equal(await brightness.getAttribute('value'), 'soft');
+    assert.equal(await settingValue(settings, 'Text brightness'), 'soft');
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.waitForFunction(() => document.documentElement.classList.contains('dark'));
     assert.deepEqual(await previewColors(), soft);
@@ -612,7 +611,7 @@ test('text brightness previews, saves and restores text, headings and menus on d
     await expectAccentColors(brightAccent);
     await page.locator('.site-header-preferences .site-settings-link').click();
     const dialog = page.getByRole('dialog', { name: 'Site settings', exact: true });
-    assert.equal(await cycleSetting(dialog, 'Text brightness').getAttribute('value'), 'bright');
+    assert.equal(await settingValue(dialog, 'Text brightness'), 'bright');
     await chooseSetting(dialog, 'Text brightness', 'soft');
     await expectArticleColors(soft);
     await expectMenuColors(softMenu);
@@ -648,9 +647,9 @@ test('text brightness previews, saves and restores text, headings and menus on d
     await page.emulateMedia({ colorScheme: 'light' });
     await page.waitForFunction(() => !document.documentElement.classList.contains('dark'));
     assert.deepEqual(await previewColors(), light);
-    assert.equal(await brightness.getAttribute('value'), 'bright');
+    assert.equal(await settingValue(settings, 'Text brightness'), 'bright');
     await settings.getByRole('button', { name: 'Reset to site defaults' }).click();
-    assert.equal(await brightness.getAttribute('value'), 'soft');
+    assert.equal(await settingValue(settings, 'Text brightness'), 'soft');
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.waitForFunction(() => document.documentElement.classList.contains('dark'));
     assert.deepEqual(await previewColors(), soft);
@@ -691,35 +690,70 @@ async function displayCookie(page) {
   return cookie ? JSON.parse(decodeURIComponent(cookie.value)) : undefined;
 }
 
-test('settings cycle buttons wrap through choices with clicks, touch, Enter and Space', async (t) => {
+test('settings choices are segmented radio groups that work with clicks, touch and arrow keys', async (t) => {
   for (const width of [1440, 390]) {
     const page = await pageFor(t, base + '/settings/', width, width === 390 ? devices['iPhone 13'] : {});
     const settings = page.getByRole('form', { name: 'Site settings' });
-    const brightness = cycleSetting(settings, 'Text brightness');
     assert.equal(await settings.locator('select').count(), 0);
-    assert.equal(await brightness.getAttribute('aria-label'), 'Text brightness: Soft. Switch to Bright.');
-    assert.equal(await brightness.getAttribute('title'), await brightness.getAttribute('aria-label'));
-    assert.equal(await brightness.locator('[data-preference-choice]:visible').count(), 1);
-    await brightness.press('Enter');
-    assert.equal(await brightness.getAttribute('value'), 'bright');
-    assert.equal(await brightness.getAttribute('aria-label'), 'Text brightness: Bright. Switch to Soft.');
-    assert.equal(await brightness.evaluate(button => button === document.activeElement), true);
-    await brightness.press('Space');
-    assert.equal(await brightness.getAttribute('value'), 'soft');
+    const brightness = settingGroup(settings, 'Text brightness');
+    assert.equal(await brightness.getByRole('radio').count(), 2);
+    assert.equal(await settingValue(settings, 'Text brightness'), 'soft');
+    await brightness.getByRole('radio', { name: 'Soft' }).focus();
+    await page.keyboard.press('ArrowRight');
+    assert.equal(await settingValue(settings, 'Text brightness'), 'bright');
+    await page.keyboard.press('ArrowLeft');
+    assert.equal(await settingValue(settings, 'Text brightness'), 'soft');
     assert.match(await settings.getByRole('status', { name: 'Settings status' }).textContent(), /Text brightness: Soft/);
-    const size = cycleSetting(settings, 'Article text size');
+    const size = settingGroup(settings, 'Article text size');
     for (const value of ['large', 'larger', 'standard']) {
-      if (width === 390) await size.tap();
-      else await size.click();
-      assert.equal(await size.getAttribute('value'), value);
-      assert.equal(await size.locator('[data-preference-choice]:visible').count(), 1);
+      const option = size.locator(`label:has(input[value="${value}"])`);
+      if (width === 390) await option.tap();
+      else await option.click();
+      assert.equal(await settingValue(settings, 'Article text size'), value);
     }
     assert.equal(await page.locator('html').getAttribute('data-text-size'), 'standard');
+    assert.equal(await settingGroup(settings, 'Breadcrumbs').getByRole('radio', { name: 'Keep visible while scrolling' }).isChecked(), true);
     const bounds = await brightness.boundingBox();
-    assert.ok(bounds.height >= 48, 'Cycle buttons share the standard control target height');
+    assert.ok(bounds.height >= 40, 'Segmented choices keep a comfortable target height');
+    const theme = settingGroup(settings, 'Theme');
+    await theme.locator('label:has(input[value="dark"])').click();
+    assert.equal(await page.evaluate(() => document.documentElement.classList.contains('dark')), true);
+    assert.equal(await page.evaluate(() => localStorage.getItem('color-theme')), 'dark');
+    await page.locator('.hextra-theme-toggle').first().click();
+    assert.equal(await settingValue(settings, 'Theme'), 'system', 'The header theme button updates the Theme setting');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
-    await screenshot(page, 'settings-cycle-' + width, { fullPage: true });
+    await screenshot(page, 'settings-choices-' + width, { fullPage: true });
   }
+});
+
+test('the palette editor switches between the Light and Dark themes it edits', async (t) => {
+  const page = await pageFor(t, base + '/settings/', 1440);
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.getByRole('button', { name: 'Edit color palette' }).click();
+  const editor = page.getByRole('dialog', { name: 'Color palette' });
+  const themes = editor.getByRole('radiogroup', { name: 'Theme to edit' });
+  const background = () => editor.locator('[data-palette-token="page-background"] output').textContent();
+  assert.equal(await themes.locator('input:checked').getAttribute('value'), 'light');
+  const light = await background();
+  await themes.locator('label:has(input[value="dark"])').click();
+  await page.waitForFunction(() => document.documentElement.classList.contains('dark'));
+  assert.equal(await page.evaluate(() => localStorage.getItem('color-theme')), 'dark');
+  assert.notEqual(await background(), light, 'The editor shows the Dark profile');
+  assert.equal(await editor.isVisible(), true, 'Switching themes keeps the editor open');
+  assert.equal(await settingValue(page.getByRole('form', { name: 'Site settings' }), 'Theme'), 'dark');
+  await page.locator('.hextra-theme-toggle').first().click();
+  await themes.locator('label:has(input[value="light"])').click();
+  await page.waitForFunction(() => !document.documentElement.classList.contains('dark'));
+  assert.equal(await background(), light);
+  // Presets show at once as chips; the checked chip names the colors in use.
+  const presets = editor.getByRole('radiogroup', { name: 'Site presets' });
+  assert.equal(await editor.locator('select').count(), 0);
+  assert.equal(await presets.getByRole('radio', { name: 'Site colors' }).isChecked(), true);
+  await presets.locator('label', { hasText: 'Warm paper' }).click();
+  assert.equal(await presets.getByRole('radio', { name: 'Warm paper' }).isChecked(), true);
+  assert.notEqual(await background(), light);
+  await presets.locator('label', { hasText: 'Site colors' }).click();
+  assert.equal(await background(), light);
 });
 
 test('the settings page offers editable reading and navigation preferences on desktop and mobile', async (t) => {
@@ -744,13 +778,13 @@ test('the settings page offers editable reading and navigation preferences on de
     assert.deepEqual(await displayCookie(page), { breadcrumbs: 'static', textSize: 'larger', lineSpacing: 'roomy', pinAncestors: false });
     assert.equal(await page.locator('#fontPreference').getAttribute('aria-label'), 'Font: Jost. Switch to System.');
     await page.locator('#fontPreference').click();
-    assert.equal(await cycleSetting(settings, 'Font').getAttribute('value'), 'system');
+    assert.equal(await settingValue(settings, 'Font'), 'system');
     await chooseSetting(settings, 'Font', 'jost');
     await page.reload({ waitUntil: 'load' });
-    assert.equal(await cycleSetting(settings, 'Font').getAttribute('value'), 'jost');
-    assert.equal(await cycleSetting(settings, 'Breadcrumbs').getAttribute('value'), 'static');
-    assert.equal(await cycleSetting(settings, 'Article text size').getAttribute('value'), 'larger');
-    assert.equal(await cycleSetting(settings, 'Line spacing').getAttribute('value'), 'roomy');
+    assert.equal(await settingValue(settings, 'Font'), 'jost');
+    assert.equal(await settingValue(settings, 'Breadcrumbs'), 'static');
+    assert.equal(await settingValue(settings, 'Article text size'), 'larger');
+    assert.equal(await settingValue(settings, 'Line spacing'), 'roomy');
     assert.equal(await settings.getByLabel('Keep parent sections visible').isChecked(), false);
     assert.equal(await settings.getByRole('slider', { name: 'Left navigation width' }).inputValue(), '448');
     await page.evaluate(() => document.fonts.ready);
@@ -810,7 +844,7 @@ test('settings links open a native dialog with focus containment, dismissal and 
     assert.equal(await page.locator('#fontPreference').getAttribute('aria-label'), 'Font: Jost. Switch to System.');
     await close.click();
     await trigger.click();
-    assert.equal(await cycleSetting(form, 'Font').getAttribute('value'), 'jost');
+    assert.equal(await settingValue(form, 'Font'), 'jost');
     assert.equal(await form.getByRole('slider', { name: 'Left navigation width' }).inputValue(), '448');
     assert.ok(await dialog.evaluate(element => element.getBoundingClientRect().width <= innerWidth));
     await dialog.evaluate(element => { element.scrollTop = 0; });
@@ -822,12 +856,12 @@ test('settings links open a native dialog with focus containment, dismissal and 
       return {
         text: getComputedStyle(label).color,
         body: getComputedStyle(element).color,
-        scheme: getComputedStyle(element.querySelector('.site-settings-cycle')).colorScheme,
+        scheme: getComputedStyle(element.querySelector('.site-settings-switch')).colorScheme,
       };
     });
     assert.equal(contrast.text, contrast.body, 'Dialog labels follow the chosen body text profile');
     assert.equal(contrast.scheme, 'dark', 'Native controls follow the dialog theme');
-    assert.ok((await cycleSetting(dialog, 'Font').boundingBox()).height >= 40, 'Cycle controls keep a comfortable target height');
+    assert.ok((await settingGroup(dialog, 'Font').boundingBox()).height >= 40, 'Segmented choices keep a comfortable target height');
     await screenshot(page, `settings-dialog-${width}-dark`);
     await page.mouse.click(2, 2);
     await dialog.waitFor({ state: 'hidden' });
@@ -860,11 +894,11 @@ test('the reusable settings form stays synchronized with pane resizing and the f
   await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
   await chooseSetting(dialog, 'Font', 'jost');
   await page.keyboard.press('Escape');
-  assert.equal(await cycleSetting(fullPage, 'Font').getAttribute('value'), 'jost');
+  assert.equal(await settingValue(fullPage, 'Font'), 'jost');
   await page.locator('#fontPreference').click();
-  assert.equal(await cycleSetting(fullPage, 'Font').getAttribute('value'), 'system');
+  assert.equal(await settingValue(fullPage, 'Font'), 'system');
   await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
-  assert.equal(await cycleSetting(dialog, 'Font').getAttribute('value'), 'system');
+  assert.equal(await settingValue(dialog, 'Font'), 'system');
   assert.equal(await page.evaluate(() => { const ids = [...document.querySelectorAll('[id]')].map(element => element.id); return ids.length === new Set(ids).size; }), true, 'Page and dialog controls have unique identifiers');
 });
 
@@ -890,7 +924,7 @@ test('settings links retain page navigation when the dialog API is unavailable',
   await page.reload({ waitUntil: 'load' });
   await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
   await page.waitForURL(url => url.pathname === '/settings/');
-  assert.equal(await cycleSetting(page.getByRole('form', { name: 'Site settings' }), 'Font').isEnabled(), true);
+  assert.equal(await settingGroup(page.getByRole('form', { name: 'Site settings' }), 'Font').getByRole('radio').first().isEnabled(), true);
 });
 
 test('breadcrumb settings control visibility and sticky clearance on deeply linked pages', async (t) => {
@@ -945,9 +979,9 @@ test('reading and parent-stack preferences restore before the deferred bundle an
   await page.context().addCookies([{ name: 'unrelated', value: 'keep', url: base }]);
   await page.goto(base + '/settings/', { waitUntil: 'load' });
   await settings.getByRole('button', { name: 'Reset to site defaults' }).click();
-  assert.equal(await cycleSetting(settings, 'Font').getAttribute('value'), 'system');
-  assert.equal(await cycleSetting(settings, 'Breadcrumbs').getAttribute('value'), 'sticky');
-  assert.equal(await cycleSetting(settings, 'Article text size').getAttribute('value'), 'standard');
+  assert.equal(await settingValue(settings, 'Font'), 'system');
+  assert.equal(await settingValue(settings, 'Breadcrumbs'), 'sticky');
+  assert.equal(await settingValue(settings, 'Article text size'), 'standard');
   assert.equal(await settings.getByLabel('Keep parent sections visible').isChecked(), true);
   assert.equal(await settings.getByRole('slider', { name: 'Left navigation width' }).inputValue(), String(desktopPaneDefaults().sidebar));
   assert.equal(await settings.getByRole('status', { name: 'Settings status' }).textContent(), 'Site defaults restored.');
@@ -1733,7 +1767,7 @@ test('settings remain understandable when JavaScript is unavailable', async (t) 
   await page.getByRole('navigation', { name: 'Footer', exact: true }).getByRole('link', { name: 'Settings', exact: true }).click();
   await page.waitForURL(url => url.pathname === '/settings/');
   const settings = page.getByRole('form', { name: 'Site settings' });
-  assert.equal(await cycleSetting(settings, 'Font').isDisabled(), true);
+  assert.equal(await settingGroup(settings, 'Font').getByRole('radio').first().isDisabled(), true);
   assert.equal(await page.getByText('Enable JavaScript to change your site settings.').isVisible(), true);
 });
 

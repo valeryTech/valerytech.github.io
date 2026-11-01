@@ -194,3 +194,48 @@
     transition: none;
   }
 }
+
+/* Dark callouts use the warm callout roles from tokens/colors.css. */
+.dark
+  .content
+  .site-callout:is(
+    .site-callout-info,
+    .site-callout-default,
+    .site-callout-warning,
+    .site-callout-error,
+    .site-callout-important,
+    .site-callout-fallback
+  ) {
+  background: var(--site-callout-surface);
+  color: var(--site-callout-foreground);
+}
+
+.dark .site-callout-info {
+  --site-callout-surface: var(--site-callout-info-surface);
+  --site-callout-foreground: var(--site-callout-info-foreground);
+}
+
+.dark .site-callout-default {
+  --site-callout-surface: var(--site-callout-default-surface);
+  --site-callout-foreground: var(--site-callout-default-foreground);
+}
+
+.dark :is(.site-callout-warning, .site-callout-fallback) {
+  --site-callout-surface: var(--site-callout-warning-surface);
+  --site-callout-foreground: var(--site-callout-warning-foreground);
+}
+
+.dark .site-callout-error {
+  --site-callout-surface: var(--site-callout-error-surface);
+  --site-callout-foreground: var(--site-callout-error-foreground);
+}
+
+.dark .site-callout-important {
+  --site-callout-surface: var(--site-callout-important-surface);
+  --site-callout-foreground: var(--site-callout-important-foreground);
+}
+
+/* Links on the lighter callout surfaces use the lighter accent orange to keep 4.5:1. */
+.dark .site-callout {
+  --site-link-color: var(--site-accent);
+}

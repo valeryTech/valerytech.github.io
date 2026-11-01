@@ -4,12 +4,13 @@ import { exportSettings, importSettings } from "./transfer.mjs";
 export function initSettingsForm(form, preferences, config, palette) {
   const controls = form.querySelector("[data-settings-controls]");
   const status = form.querySelector('[role="status"]');
+  // Segmented radio groups carry data-preference; switches and sliders are inputs.
   const inputs = [...form.querySelectorAll("[data-preference]")];
-  const choices = new Map(
-    inputs
-      .filter((input) => input.type === "button")
-      .map((input) => [input, [...input.querySelectorAll("[data-preference-choice]")]]),
-  );
+  const isGroup = (input) => input.getAttribute("role") === "radiogroup";
+  const radios = (group) => [...group.querySelectorAll('input[type="radio"]')];
+  const choiceLabel = (radio) =>
+    radio.getAttribute("aria-label") || radio.closest("label").textContent.trim();
+  const themeGroup = form.querySelector("[data-theme-setting]");
   const outputs = new Map(
     [...form.querySelectorAll("[data-preference-output]")].map((output) => [
       output.dataset.preferenceOutput,
@@ -23,14 +24,6 @@ export function initSettingsForm(form, preferences, config, palette) {
     const label = `${input.value} px`;
     outputs.get(input.dataset.preference).value = label;
     input.setAttribute("aria-valuetext", label);
-  }
-
-  function nextChoice(input) {
-    const options = choices.get(input);
-    const index = options.findIndex(
-      (option) => option.dataset.preferenceChoice === preferences.get(input.dataset.preference),
-    );
-    return options[(index + 1) % options.length];
   }
 
   function refresh() {
@@ -48,18 +41,9 @@ export function initSettingsForm(form, preferences, config, palette) {
     for (const input of inputs) {
       const value = preferences.get(input.dataset.preference);
       if (input.type === "checkbox") input.checked = value;
-      else if (input.type === "button") {
-        input.value = value;
-        for (const option of choices.get(input))
-          option.hidden = option.dataset.preferenceChoice !== value;
-        const current = choices
-          .get(input)
-          .find((option) => !option.hidden)
-          .textContent.trim();
-        const next = nextChoice(input).textContent.trim();
-        const description = `${input.dataset.preferenceLabel}: ${current}. Switch to ${next}.`;
-        input.setAttribute("aria-label", description);
-        input.title = description;
+      else if (isGroup(input)) {
+        input.dataset.value = value;
+        for (const radio of radios(input)) radio.checked = radio.value === value;
       } else if (input.type === "range") {
         const bounds = dimensions.get(input.dataset.preference);
         input.min = bounds.min;
@@ -73,18 +57,33 @@ export function initSettingsForm(form, preferences, config, palette) {
   function save(input, value) {
     const saved = preferences.set(input.dataset.preference, value);
     const message = saved ? config.messages.saved : config.messages.saveFailed;
-    const choice = choices.get(input)?.find((option) => !option.hidden);
+    const choice = isGroup(input) && radios(input).find((radio) => radio.checked);
     status.textContent =
-      choice ?
-        `${input.dataset.preferenceLabel}: ${choice.textContent.trim()}. ${message}`
-      : message;
+      choice ? `${input.dataset.preferenceLabel}: ${choiceLabel(choice)}. ${message}` : message;
+  }
+
+  // Theme lives in the header theme control's localStorage preference, outside the store.
+  function refreshTheme(theme) {
+    if (!themeGroup) return;
+    themeGroup.dataset.value = theme;
+    for (const radio of radios(themeGroup)) radio.checked = radio.value === theme;
+  }
+  if (themeGroup) {
+    themeGroup.addEventListener("change", (event) => {
+      document.dispatchEvent(new CustomEvent("site:theme-set", { detail: event.target.value }));
+      status.textContent = `${themeGroup.dataset.preferenceLabel}: ${choiceLabel(event.target)}.`;
+    });
+    document.addEventListener("site:theme-change", (event) => refreshTheme(event.detail));
+    refreshTheme(
+      document.documentElement.dataset.themePreference ||
+        themeGroup.dataset.value ||
+        radios(themeGroup).find((radio) => radio.checked)?.value,
+    );
   }
 
   for (const input of inputs) {
-    if (input.type === "button") {
-      input.addEventListener("click", () =>
-        save(input, nextChoice(input).dataset.preferenceChoice),
-      );
+    if (isGroup(input)) {
+      input.addEventListener("change", (event) => save(input, event.target.value));
       continue;
     }
     if (input.type === "range") input.addEventListener("input", () => describeWidth(input));

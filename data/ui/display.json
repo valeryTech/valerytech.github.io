@@ -8,15 +8,18 @@
     "options": [
       {
         "value": "sticky",
-        "label": "Keep visible while scrolling"
+        "label": "Keep visible while scrolling",
+        "shortLabel": "Sticky"
       },
       {
         "value": "static",
-        "label": "Show at the page start"
+        "label": "Show at the page start",
+        "shortLabel": "At top"
       },
       {
         "value": "hidden",
-        "label": "Hide breadcrumbs"
+        "label": "Hide breadcrumbs",
+        "shortLabel": "Hidden"
       }
     ]
   },

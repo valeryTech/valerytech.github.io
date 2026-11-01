@@ -9,7 +9,7 @@
 {{- $icon := "" -}}
 {{- with .icons }}{{ $icon = index . $page.RelPermalink | default "" }}{{ end -}}
 {{- $iconMarkup := "" -}}
-{{- with $icon }}{{ $iconMarkup = partial "components/collection-icon.html" . }}{{ end -}}
+{{- with $icon }}{{ $iconMarkup = partial "components/line-icon.html" (dict "name" . "class" "site-collection-icon") }}{{ end -}}
 {{- $defaultOpen := false -}}
 {{- with $page.Params.sidebar -}}
   {{- if isset . "collapsed" }}{{ $defaultOpen = not .collapsed }}{{ end -}}

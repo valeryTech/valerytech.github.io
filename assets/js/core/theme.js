@@ -24,17 +24,24 @@
             button.setAttribute('aria-label', description);
             button.title = description;
         }
+        document.dispatchEvent(new CustomEvent('site:theme-change', { detail: theme }));
+    }
+
+    function choose(next) {
+        theme = next;
+        try {
+            localStorage.setItem('color-theme', theme);
+        } catch {}
+        render();
     }
 
     for (const button of buttons) {
-        button.addEventListener('click', () => {
-            theme = nextTheme();
-            try {
-                localStorage.setItem('color-theme', theme);
-            } catch {}
-            render();
-        });
+        button.addEventListener('click', () => choose(nextTheme()));
     }
+    // The settings Theme picker selects a mode directly.
+    document.addEventListener('site:theme-set', (event) => {
+        if (themes.includes(event.detail)) choose(event.detail);
+    });
 
     systemTheme.addEventListener('change', () => {
         if (theme === 'system') setTheme(theme);

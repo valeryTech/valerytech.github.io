@@ -1,0 +1,5 @@
+{{- /* One preset choice in the palette editor, drawn as a Material filter chip. */ -}}
+<label class="site-palette-chip">
+  <input type="radio" name="site-palette-preset" value="{{ .value }}" />
+  <span class="site-palette-chip-label">{{ partial "components/line-icon.html" (dict "name" "check" "class" "site-palette-chip-check") }}<span data-palette-chip-name>{{ .label }}</span></span>
+</label>

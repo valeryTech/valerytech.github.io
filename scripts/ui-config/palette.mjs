@@ -23,6 +23,7 @@ export function validatePaletteConfig(ui) {
   for (const key of [
     "title",
     "description",
+    "themeLabel",
     "presetLabel",
     "customLabel",
     "sitePresetsLabel",

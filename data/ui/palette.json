@@ -6,7 +6,8 @@
   "presetsStorageKey": "site-palette-presets",
   "maxSavedPresets": 12,
   "title": "Color palette",
-  "description": "Changes apply to the theme in view. Switch Light or Dark in the header to edit the other.",
+  "description": "Changes apply to the theme selected here. Switching it also switches the site theme.",
+  "themeLabel": "Theme to edit",
   "groups": [
     {
       "title": "Text",
@@ -18,32 +19,50 @@
         {
           "token": "foreground",
           "label": "Main text",
-          "contrast": { "against": "page-background", "minimum": 4.5 }
+          "contrast": {
+            "against": "page-background",
+            "minimum": 4.5
+          }
         },
         {
           "token": "body-foreground",
           "label": "Body text",
-          "contrast": { "against": "page-background", "minimum": 4.5 }
+          "contrast": {
+            "against": "page-background",
+            "minimum": 4.5
+          }
         },
         {
           "token": "heading-foreground",
           "label": "Headings",
-          "contrast": { "against": "page-background", "minimum": 4.5 }
+          "contrast": {
+            "against": "page-background",
+            "minimum": 4.5
+          }
         },
         {
           "token": "muted",
           "label": "Secondary text",
-          "contrast": { "against": "page-background", "minimum": 4.5 }
+          "contrast": {
+            "against": "page-background",
+            "minimum": 4.5
+          }
         },
         {
           "token": "link-color",
           "label": "Links and selection",
-          "contrast": { "against": "page-background", "minimum": 4.5 }
+          "contrast": {
+            "against": "page-background",
+            "minimum": 4.5
+          }
         },
         {
           "token": "accent",
           "label": "Focus and control accent",
-          "contrast": { "against": "nav-selected-surface", "minimum": 4.5 }
+          "contrast": {
+            "against": "nav-selected-surface",
+            "minimum": 4.5
+          }
         }
       ]
     },
@@ -53,7 +72,10 @@
         {
           "token": "context-foreground",
           "label": "Navigation labels and breadcrumbs",
-          "contrast": { "against": "context-header", "minimum": 4.5 }
+          "contrast": {
+            "against": "context-header",
+            "minimum": 4.5
+          }
         },
         {
           "token": "context-header",
@@ -66,7 +88,10 @@
         {
           "token": "nav-foreground",
           "label": "Menu text",
-          "contrast": { "against": "page-background", "minimum": 4.5 }
+          "contrast": {
+            "against": "page-background",
+            "minimum": 4.5
+          }
         },
         {
           "token": "nav-selected-surface",
@@ -223,28 +248,28 @@
       }
     },
     {
-      "id": "claude-code",
-      "label": "Claude Code",
+      "id": "indigo",
+      "label": "Indigo",
       "light": {},
       "dark": {
-        "page-background": "#262624",
-        "foreground": "#faf9f5",
-        "body-foreground": "#c2c0b6",
-        "heading-foreground": "#ebe9e1",
-        "muted": "#a6a39a",
-        "link-color": "#d97757",
-        "accent": "#e8906f",
-        "context-foreground": "#e5e3da",
-        "context-header": "#1f1e1d",
-        "context-surface": "#30302e",
-        "nav-selected-surface": "#3a3936",
-        "panel": "#1f1e1d",
-        "card-surface": "#2b2b29",
-        "card-hover": "#3a3936",
-        "code-surface": "#1f1e1d",
-        "border": "#3e3e38",
-        "table-header": "#3a3936",
-        "table-surface": "#2b2b29"
+        "page-background": "#111111",
+        "foreground": "#f3f4f6",
+        "body-foreground": "#c7c7c7",
+        "heading-foreground": "#dddddd",
+        "muted": "#a3a3a3",
+        "link-color": "#ffffff",
+        "accent": "#ffffff",
+        "context-foreground": "#ffffff",
+        "context-header": "#1c1b2f",
+        "context-surface": "#1b1c2e",
+        "nav-selected-surface": "#272743",
+        "panel": "#151524",
+        "card-surface": "#1d1f30",
+        "card-hover": "#272743",
+        "code-surface": "#1b1c2e",
+        "border": "#303030",
+        "table-header": "#263f60",
+        "table-surface": "#1c1c20"
       }
     }
   ],

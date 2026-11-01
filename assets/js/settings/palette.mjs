@@ -76,19 +76,25 @@ export function initPaletteEditor(config, preferences) {
     return preset && normalizePalette(preset, config);
   }
 
+  const presetRadios = () => [...panel.querySelectorAll('input[name="site-palette-preset"]')];
+  const checkedPreset = () => presetRadios().find((radio) => radio.checked)?.value ?? "";
+
   function renderPresets() {
-    const group = controls.select.querySelector("[data-palette-saved]");
-    group.replaceChildren(
-      ...savedPresets.map((preset) => new Option(preset.name, `saved:${preset.name}`)),
+    controls.saved.replaceChildren(
+      ...savedPresets.map((preset) => {
+        const chip = controls.chip.content.firstElementChild.cloneNode(true);
+        chip.querySelector("input").value = `saved:${preset.name}`;
+        chip.querySelector("[data-palette-chip-name]").textContent = preset.name;
+        return chip;
+      }),
     );
-    group.hidden = !savedPresets.length;
+    controls.saved.hidden = controls.savedLabel.hidden = !savedPresets.length;
   }
 
   function refresh() {
     const palette = preferences.get("palette");
     const colors = palette[profile()];
-    panel.querySelector("[data-palette-profile]").textContent =
-      profile() === "dark" ? "· Dark" : "· Light";
+    for (const radio of controls.themes) radio.checked = radio.value === profile();
     const values = Object.fromEntries(rows.map(({ token }) => [token, resolve(token)]));
     for (const { token, input, output, revert, contrast } of rows) {
       const value = values[token];
@@ -98,11 +104,11 @@ export function initPaletteEditor(config, preferences) {
       input.closest(".site-palette-row").toggleAttribute("data-palette-changed", !!colors[token]);
       if (contrast) showContrast(contrast, value, values[contrast.against]);
     }
-    const match = [...controls.select.querySelectorAll("option[value]")]
-      .map((option) => option.value)
+    const match = presetRadios()
+      .map((radio) => radio.value)
       .find((value) => value && samePalette(presetFor(value), palette));
     controls.custom.hidden = !!match;
-    controls.select.value = match ?? "";
+    for (const radio of presetRadios()) radio.checked = radio.value === (match ?? "");
     controls.remove.hidden = !match?.startsWith("saved:");
   }
 
@@ -153,7 +159,7 @@ export function initPaletteEditor(config, preferences) {
   }
 
   function drag(event) {
-    if (event.button !== 0 || event.target.closest("button") || !wide.matches) return;
+    if (event.button !== 0 || event.target.closest("button, label, input") || !wide.matches) return;
     const header = event.currentTarget;
     const box = panel.getBoundingClientRect();
     const offset = { x: event.clientX - box.left, y: event.clientY - box.top };
@@ -181,12 +187,22 @@ export function initPaletteEditor(config, preferences) {
     status = panel.querySelector('[role="status"]');
     resolve = resolver();
     controls = {
-      select: panel.querySelector("[data-palette-preset]"),
+      presets: panel.querySelector("[data-palette-preset]"),
+      saved: panel.querySelector("[data-palette-saved]"),
+      savedLabel: panel.querySelector("[data-palette-saved-label]"),
+      chip: panel.querySelector("[data-palette-chip-template]"),
       custom: panel.querySelector("[data-palette-custom]"),
       name: panel.querySelector("[data-palette-name]"),
       save: panel.querySelector("[data-palette-save]"),
       remove: panel.querySelector("[data-palette-delete]"),
+      themes: [...panel.querySelectorAll('[data-palette-theme] input[type="radio"]')],
     };
+    // The Light and Dark switch sets the site theme through core/theme.js, like the header button.
+    panel
+      .querySelector("[data-palette-theme]")
+      .addEventListener("change", (event) =>
+        document.dispatchEvent(new CustomEvent("site:theme-set", { detail: event.target.value })),
+      );
     rows = [...panel.querySelectorAll("[data-palette-token]")].map((row) => ({
       token: row.dataset.paletteToken,
       input: row.querySelector("input"),
@@ -208,10 +224,11 @@ export function initPaletteEditor(config, preferences) {
       });
     }
     renderPresets();
-    controls.select.addEventListener("change", () => {
-      const preset = presetFor(controls.select.value);
-      if (preset) commit(preset, config.messages.applied);
-    });
+    for (const group of [controls.presets, controls.saved])
+      group.addEventListener("change", (event) => {
+        const preset = presetFor(event.target.value);
+        if (preset) commit(preset, config.messages.applied);
+      });
     controls.save.addEventListener("click", () => {
       const name = controls.name.value.trim();
       if (!name) {
@@ -236,7 +253,7 @@ export function initPaletteEditor(config, preferences) {
       if (event.key === "Enter") controls.save.click();
     });
     controls.remove.addEventListener("click", () => {
-      const value = controls.select.value;
+      const value = checkedPreset();
       savePresets(
         savedPresets.filter((preset) => `saved:${preset.name}` !== value),
         config.messages.presetDeleted,
@@ -282,7 +299,10 @@ export function initPaletteEditor(config, preferences) {
     const button = event.target.closest("[data-palette-open]");
     if (!button) return;
     if (!panel) build();
-    const focus = () => controls.select.focus({ preventScroll: true });
+    const focus = () =>
+      (presetRadios().find((radio) => radio.checked) ?? presetRadios()[0]).focus({
+        preventScroll: true,
+      });
     const dialog = button.closest("dialog");
     // Close modal Settings so the page stays usable; it refocuses its opener, so refocus after.
     if (dialog?.open) {

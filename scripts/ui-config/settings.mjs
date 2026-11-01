@@ -37,10 +37,7 @@ export function validateSettingsConfig(ui) {
     assert.ok(!ids.has(section.id), "settings section ids must be unique");
     ids.add(section.id);
     text(section.title, "settings section title");
-    assert.ok(
-      ["columns", "stack"].includes(section.layout),
-      "settings section needs a supported layout",
-    );
+    text(section.icon, "settings section icon");
     if (section.help !== undefined) text(section.help, "settings section help");
     if (section.preview !== undefined)
       assert.equal(typeof section.preview, "boolean", "settings preview must be boolean");
@@ -54,6 +51,11 @@ export function validateSettingsConfig(ui) {
       keys.add(field.key);
       text(field.label, "settings field label");
       if (field.help !== undefined) text(field.help, "settings field help");
+      if (field.key === "theme") {
+        assert.equal(field.type, "theme", "the theme setting uses the theme picker");
+        assert.equal(field.source, undefined, "the theme setting uses the theme preference");
+        continue;
+      }
       if (field.key === "palette") {
         assert.equal(field.type, "palette", "the palette setting opens the palette editor");
         assert.equal(field.source, undefined, "the palette setting uses ui.palette");
@@ -87,7 +89,7 @@ export function validateSettingsConfig(ui) {
       assert.ok(definition, `settings source ${source} must exist`);
       assert.equal(
         field.type,
-        typeof definition.default === "boolean" ? "checkbox" : "cycle",
+        typeof definition.default === "boolean" ? "checkbox" : "choice",
         `settings field ${field.key} has an unsupported control`,
       );
     }

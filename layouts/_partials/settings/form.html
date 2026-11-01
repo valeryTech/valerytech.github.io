@@ -7,11 +7,11 @@
       {{ $groupHelp := "" }}
       {{ if .help }}{{ $groupHelp = printf "%s-%s-help" $prefix .id }}{{ end }}
       <fieldset class="site-settings-group">
-        <legend>{{ .title }}</legend>
-        <div class="site-settings-fields{{ if eq .layout "columns" }} site-settings-grid{{ end }}">
+        <legend>{{ partial "components/line-icon.html" (dict "name" .icon "class" "site-settings-group-icon") }}<span>{{ .title }}</span></legend>
+        <div class="site-settings-fields">
           {{ range .fields }}{{ partial "settings/field.html" (dict "field" . "prefix" $prefix "groupHelp" $groupHelp) }}{{ end }}
         </div>
-        {{ with .help }}<p id="{{ $groupHelp }}" class="site-settings-help">{{ . }}</p>{{ end }}
+        {{ with .help }}<p id="{{ $groupHelp }}" class="site-settings-help site-settings-group-help">{{ . }}</p>{{ end }}
         {{ if .preview }}
           <div class="site-settings-preview" role="region" aria-label="Reading preview">
             <h3 class="site-settings-preview-heading">{{ $settings.previewHeading }}</h3>

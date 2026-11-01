@@ -37,44 +37,6 @@
   border: 0;
 }
 
-.site-settings-group {
-  display: grid;
-  gap: var(--site-space-4);
-  padding: var(--site-space-6);
-  border-radius: var(--site-radius);
-  background: var(--site-card-surface);
-}
-
-.site-settings-group > legend {
-  float: inline-start;
-  width: 100%;
-  margin-bottom: var(--site-space-4);
-  color: var(--site-heading-foreground);
-  font-size: var(--site-text-lg);
-  font-weight: 600;
-}
-
-.site-settings label {
-  display: block;
-  font-weight: 600;
-}
-
-.site-settings-cycle {
-  inline-size: 100%;
-  block-size: auto;
-  min-block-size: var(--site-control-height);
-  margin-block-start: var(--site-space-2);
-}
-
-.site-settings-cycle .site-control-label {
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-.site-settings-cycle:disabled {
-  cursor: default;
-}
-
 .site-settings-help,
 .site-settings-status {
   margin: 0;
@@ -102,15 +64,6 @@
   font-size: var(--site-text-lg);
   font-weight: 600;
   line-height: var(--site-line-ui);
-}
-
-.site-settings-fields {
-  display: grid;
-  gap: var(--site-space-4);
-}
-
-.site-settings-width > .site-settings-help {
-  grid-column: 1 / -1;
 }
 
 .site-settings-open,
@@ -205,48 +158,18 @@
     padding: var(--site-space-4);
   }
 
+  .site-settings-dialog .site-settings-group > legend {
+    padding-block-start: var(--site-space-4);
+  }
+
   .site-settings-dialog-body {
     padding: 0 var(--site-space-4) var(--site-space-4);
   }
 }
 
-.site-settings-toggle {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--site-space-3);
-}
-
-.site-settings-toggle > input {
-  width: var(--site-space-5);
-  height: var(--site-space-5);
-  flex-shrink: 0;
-  margin-top: var(--site-space-1);
-  accent-color: var(--site-accent);
-}
-
-.site-settings-width {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: var(--site-space-2);
-}
-
-.site-settings-width > input {
-  width: 100%;
-  grid-column: 1 / -1;
-  min-height: var(--site-space-6);
-  accent-color: var(--site-accent);
-}
-
-.site-settings-width > output {
-  color: var(--site-muted);
-  font-size: var(--site-text-sm);
-  font-variant-numeric: tabular-nums;
-}
-
 .site-settings-reset {
   padding: var(--site-space-3) var(--site-space-4);
-  border-radius: var(--site-radius);
+  border-radius: 999px;
   background: var(--site-panel);
   font: inherit;
   font-weight: 600;
@@ -282,9 +205,251 @@
   white-space: nowrap;
 }
 
-@media (min-width: 40rem) {
-  .site-settings-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Material-style settings: each section is a rounded card of rows. A row puts the
+   label and its note on the start side and the control on the end side, with a
+   divider between rows. Below 40rem choice controls move under their label. */
+.site-settings,
+.site-palette {
+  --site-settings-card-radius: calc(var(--site-radius) + var(--site-space-1));
+  --site-settings-segment-height: var(--site-space-10);
+  --site-settings-switch-width: 3.25rem;
+  --site-settings-switch-height: 2rem;
+  /* Selected segments and the palette button tint the card with the accent. */
+  --site-settings-selected-surface: color-mix(
+    in oklab,
+    var(--site-accent) 20%,
+    var(--site-card-surface)
+  );
+}
+
+.site-settings-group {
+  padding: var(--site-space-2) var(--site-space-6) var(--site-space-4);
+  border-radius: var(--site-settings-card-radius);
+  background: var(--site-card-surface);
+}
+
+.site-settings-group > legend {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-3);
+  float: inline-start;
+  width: 100%;
+  padding-block: var(--site-space-4) var(--site-space-2);
+  color: var(--site-heading-foreground);
+  font-size: var(--site-text-lg);
+  font-weight: 600;
+}
+
+.site-settings-group-icon {
+  flex: none;
+  inline-size: var(--site-space-5);
+  block-size: var(--site-space-5);
+  color: var(--site-accent);
+}
+
+.site-settings-fields {
+  clear: both;
+  display: grid;
+}
+
+.site-settings-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--site-space-2) var(--site-space-6);
+  padding-block: var(--site-space-3);
+}
+
+.site-settings-row + .site-settings-row {
+  border-block-start: 1px solid var(--site-border);
+}
+
+.site-settings-label {
+  display: block;
+  color: var(--site-body-foreground);
+  font-weight: 600;
+}
+
+.site-settings-row-text > .site-settings-help {
+  margin-block-start: var(--site-space-1);
+}
+
+.site-settings-group-help {
+  margin-block: var(--site-space-2);
+}
+
+/* Segmented buttons: a pill of equal segments; the checked one takes an
+   accent-tinted fill with the main text color. */
+.site-settings-segmented {
+  display: flex;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.site-settings-segment {
+  display: flex;
+  flex: 1 1 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.site-settings-segment + .site-settings-segment {
+  border-inline-start: 1px solid var(--site-border);
+}
+
+.site-settings-segment > input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.site-settings-segment-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--site-space-2);
+  inline-size: 100%;
+  min-block-size: var(--site-settings-segment-height);
+  padding-inline: var(--site-space-4);
+  color: var(--site-nav-foreground);
+  font-size: var(--site-text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.site-settings-segment-icon {
+  flex: none;
+  inline-size: var(--site-space-4);
+  block-size: var(--site-space-4);
+}
+
+.site-settings-segment:hover .site-settings-segment-label {
+  background: var(--site-card-hover);
+}
+
+.site-settings-segment > input:checked + .site-settings-segment-label {
+  background: var(--site-settings-selected-surface);
+  color: var(--site-foreground);
+  font-weight: 600;
+}
+
+.site-settings-segment > input:focus-visible + .site-settings-segment-label {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+  border-radius: 999px;
+}
+
+.site-settings-segment > input:disabled + .site-settings-segment-label {
+  cursor: default;
+}
+
+/* Switches: a pill track with a round thumb that grows and moves to the end when on. */
+.site-settings-switch {
+  appearance: none;
+  position: relative;
+  flex: none;
+  inline-size: var(--site-settings-switch-width);
+  block-size: var(--site-settings-switch-height);
+  margin: 0;
+  border: 2px solid var(--site-muted);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.site-settings-switch::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: var(--site-space-1);
+  inline-size: var(--site-space-4);
+  block-size: var(--site-space-4);
+  border-radius: 50%;
+  background: var(--site-muted);
+  transform: translateY(-50%);
+}
+
+.site-settings-switch:checked {
+  border-color: var(--site-accent);
+  background: var(--site-accent);
+}
+
+.site-settings-switch:checked::before {
+  inset-inline-start: calc(100% - var(--site-space-6) - 2px);
+  inline-size: var(--site-space-6);
+  block-size: var(--site-space-6);
+  background: var(--site-page-background);
+}
+
+.site-settings-switch:hover:not(:disabled) {
+  box-shadow: 0 0 0 var(--site-space-2) var(--site-card-hover);
+}
+
+.site-settings-switch:disabled {
+  cursor: default;
+}
+
+/* Sliders keep the native control with an accent track and a readable value. */
+.site-settings-slider {
+  display: flex;
+  align-items: center;
+  gap: var(--site-space-3);
+  inline-size: min(20rem, 100%);
+}
+
+.site-settings-slider > input {
+  flex: 1;
+  min-inline-size: 0;
+  min-block-size: var(--site-space-6);
+  accent-color: var(--site-accent);
+}
+
+.site-settings-slider > output {
+  min-inline-size: 4.5ch;
+  color: var(--site-muted);
+  font-size: var(--site-text-sm);
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+
+/* The palette row opens the editor with a tonal pill button. */
+.site-settings-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-2);
+  min-block-size: var(--site-settings-segment-height);
+  padding-inline: var(--site-space-4) var(--site-space-5);
+  border-radius: 999px;
+  background: var(--site-settings-selected-surface);
+  color: var(--site-foreground);
+  font-size: var(--site-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-settings-button[hidden] {
+  display: none;
+}
+
+.site-settings-button:hover {
+  background: var(--site-card-hover);
+}
+
+@media (width < 40rem) {
+  .site-settings-row-choice,
+  .site-settings-width {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-settings-slider {
+    inline-size: 100%;
+  }
+
+  .site-settings-segment-label {
+    padding-inline: var(--site-space-2);
   }
 }
 
@@ -296,13 +461,14 @@
   inset: auto var(--site-palette-inset) var(--site-palette-inset) auto;
   display: none;
   flex-direction: column;
-  width: min(22rem, calc(100% - 2 * var(--site-palette-inset)));
+  width: min(24rem, calc(100% - 2 * var(--site-palette-inset)));
   max-height: min(40rem, calc(100dvh - 2 * var(--site-palette-inset)));
   margin: 0;
   padding: 0;
   border: 1px solid var(--site-border);
-  border-radius: var(--site-radius);
-  background: var(--site-page-background);
+  /* Material dialogs use a larger corner than cards. */
+  border-radius: calc(2 * var(--site-radius));
+  background: var(--site-card-surface);
   color: var(--site-body-foreground);
   box-shadow: var(--site-floating-shadow);
   font-size: var(--site-text-sm);
@@ -329,26 +495,27 @@
 }
 
 .site-palette-header {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
   gap: var(--site-space-3);
-  padding: var(--site-space-3) var(--site-space-3) var(--site-space-3) var(--site-space-4);
-  background: var(--site-context-header);
+  padding: var(--site-space-4) var(--site-space-3) var(--site-space-3) var(--site-space-5);
   cursor: move;
   touch-action: none;
   user-select: none;
 }
 
+.site-palette-themes {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  cursor: auto;
+}
+
 .site-palette-header h2 {
   margin: 0;
   color: var(--site-heading-foreground);
-  font-size: var(--site-text-base);
+  font-size: var(--site-text-lg);
   font-weight: 600;
-}
-
-.site-palette-profile {
-  color: var(--site-context-foreground);
-  font-weight: 500;
 }
 
 .site-palette-header p {
@@ -358,14 +525,21 @@
 }
 
 .site-palette-header .site-settings-close {
-  width: var(--site-control-height);
+  width: var(--site-space-10);
+  height: var(--site-space-10);
+  border-radius: 50%;
+  background: transparent;
   cursor: pointer;
+}
+
+.site-palette-header .site-settings-close:hover {
+  background: var(--site-card-hover);
 }
 
 .site-palette-body {
   display: grid;
-  gap: var(--site-space-4);
-  padding: var(--site-space-3) var(--site-space-4);
+  gap: var(--site-space-5);
+  padding: var(--site-space-2) var(--site-space-5) var(--site-space-4);
   overflow: auto;
   overscroll-behavior: contain;
 }
@@ -379,7 +553,7 @@
 
 .site-palette-group > legend {
   margin-bottom: var(--site-space-1);
-  color: var(--site-heading-foreground);
+  color: var(--site-accent);
   font-weight: 600;
 }
 
@@ -418,7 +592,7 @@
   height: var(--site-palette-swatch-size);
   padding: 0;
   border: 1px solid var(--site-border);
-  border-radius: var(--site-radius);
+  border-radius: 50%;
   background: none;
   cursor: pointer;
 }
@@ -429,12 +603,12 @@
 
 .site-palette-swatch::-webkit-color-swatch {
   border: 0;
-  border-radius: calc(var(--site-radius) - 1px);
+  border-radius: 50%;
 }
 
 .site-palette-swatch::-moz-color-swatch {
   border: 0;
-  border-radius: calc(var(--site-radius) - 1px);
+  border-radius: 50%;
 }
 
 .site-palette-value {
@@ -451,7 +625,7 @@
   grid-area: 1 / 4;
   width: var(--site-space-8);
   height: var(--site-space-8);
-  border-radius: var(--site-radius);
+  border-radius: 50%;
   color: var(--site-accent);
   cursor: pointer;
 }
@@ -472,8 +646,33 @@
   border-top: 1px solid var(--site-border);
 }
 
-.site-palette-footer .site-control {
+.site-palette-footer .site-palette-button {
   flex: 1 1 auto;
+}
+
+/* Pill buttons: outlined by default, tonal for the main action. */
+.site-palette-button {
+  min-block-size: var(--site-settings-segment-height);
+  padding-inline: var(--site-space-5);
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  color: var(--site-foreground);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-palette-button:hover {
+  background: var(--site-card-hover);
+}
+
+.site-palette-button-tonal {
+  border-color: transparent;
+  background: var(--site-settings-selected-surface);
+}
+
+.site-palette-button[hidden] {
+  display: none;
 }
 
 .site-palette-status {
@@ -505,6 +704,21 @@
   .site-palette-header {
     cursor: auto;
   }
+
+  .site-palette {
+    border-start-start-radius: calc(2 * var(--site-radius));
+    border-start-end-radius: calc(2 * var(--site-radius));
+  }
+
+  /* The description stays available to screen readers but gives its space to the colors. */
+  .site-palette-header p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
 }
 
 .site-settings-actions {
@@ -521,21 +735,98 @@
   gap: var(--site-layout-gap);
 }
 
-.site-palette-select,
 .site-palette-name {
   min-width: 0;
-  min-height: var(--site-control-height);
+  /* Same height as the Save pill beside it. */
+  min-height: var(--site-settings-segment-height);
   padding-inline: var(--site-space-3);
-  border: 1px solid var(--site-border);
+  border: 1px solid var(--site-muted);
   border-radius: var(--site-radius);
-  background: var(--site-panel);
+  background: transparent;
   color: var(--site-foreground);
   font: inherit;
 }
 
-.site-palette-select {
-  width: 100%;
+.site-palette .site-palette-name:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: -1px;
+}
+
+/* Presets are Material filter chips: outlined, and filled with a check mark when chosen. */
+.site-palette-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--site-space-2);
+}
+
+.site-palette-chips[hidden],
+.site-palette-chip[hidden],
+.site-palette-chips-heading[hidden] {
+  display: none;
+}
+
+.site-palette-chips-heading {
+  margin: var(--site-space-1) 0 0;
+  color: var(--site-muted);
+  font-size: var(--site-text-xs);
+}
+
+.site-palette-chip {
+  display: flex;
+  position: relative;
   cursor: pointer;
+}
+
+.site-palette-chip > input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.site-palette-chip-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-2);
+  min-block-size: var(--site-space-8);
+  padding-inline: var(--site-space-3);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  color: var(--site-nav-foreground);
+  font-weight: 500;
+}
+
+.site-palette-chip-check {
+  display: none;
+  flex: none;
+  inline-size: var(--site-space-4);
+  block-size: var(--site-space-4);
+}
+
+.site-palette-chip:hover .site-palette-chip-label {
+  background: var(--site-card-hover);
+}
+
+.site-palette-chip > input:checked + .site-palette-chip-label {
+  padding-inline-start: var(--site-space-2);
+  border-color: transparent;
+  background: var(--site-settings-selected-surface);
+  color: var(--site-foreground);
+  font-weight: 600;
+}
+
+.site-palette-chip > input:checked + .site-palette-chip-label .site-palette-chip-check {
+  display: block;
+}
+
+.site-palette-chip > input:focus-visible + .site-palette-chip-label {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: 1px;
+}
+
+.site-palette-chip > input:disabled {
+  cursor: default;
 }
 
 .site-palette-save {
@@ -547,10 +838,6 @@
   flex: 1;
 }
 
-.site-palette-save .site-control {
+.site-palette-save .site-palette-button {
   flex: none;
-}
-
-.site-palette-save .site-control[hidden] {
-  display: none;
 }

@@ -259,7 +259,8 @@
   block-size: var(--site-round-control-size);
 }
 
-.site-sidebar-section-row:has(> .site-sidebar-section-toggle:not([hidden])) .site-collection-marker {
+.site-sidebar-section-row:has(> .site-sidebar-section-toggle:not([hidden]))
+  .site-collection-marker {
   display: none;
 }
 
