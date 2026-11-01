@@ -2,7 +2,7 @@
 draft: false
 toc: true
 title: "Agent Development Environment"
-description: "A proposed term for what a repository gives coding agents, apart from the harness that runs them: structure, commands, docs, conventions, and feedback. Covers feedforward and feedback controls, developer experience, and project knowledge."
+description: "A proposed term for what a repository gives coding agents, apart from the harness that runs them: structure, commands, docs, conventions, and feedback. Covers feedforward and feedback controls, developer experience, project knowledge, and commands."
 linkTitle: "Development Environment"
 ---
 
@@ -100,7 +100,7 @@ The overall goal is the one the design note sets for `AGENTS.md`: increase the a
 - **Results come with evidence.** A reviewer can judge a change from check results, test output, and other evidence without reading every line.
 - **People spend their attention on the decisions that need them.** They define intent, accept results, and make product, architecture, and risk decisions.
 - **The codebase stays coherent as agents add code.** Architecture boundaries and conventions hold without constant manual cleanup.
-- **Every agent gets the same environment.** Commands, documentation, and checks work the same for Codex, Claude Code, or any other agent, so each piece of knowledge goes into the repository once.
+- **Every agent gets the same environment.** Commands, documentation, and checks work the same for Codex, Claude Code, or any other agent, so each piece of knowledge goes into the repository once. The [command layer](#command-layer) gives every agent the same named commands.
 - **Agents get only the access their tasks need.** The damage a mistaken or misled agent can do is limited, and each action can be traced to the agent that took it (OWASP).
 
 ## Principles
@@ -127,7 +127,7 @@ Böckeler sorts these controls into two kinds. She calls them guides and sensors
 ### Knowledge and intent
 
 
-- **Put the knowledge the agent needs in the repository.** Write decisions, product context, and conventions into versioned files, or give the agent another way to reach them ([Project Knowledge](#project-knowledge)).
+- **Put the knowledge the agent needs in the repository.** Write decisions, product context, and conventions into versioned files, or give the agent another way to reach them ([Project Knowledge in ADE](#project-knowledge-in-ade)).
 - **Give the agent a short entry point, and let it load details when needed.** OpenAI's team replaced a large `AGENTS.md` with a file of about 100 lines that points into a structured `docs/` directory, and checks those docs with linters and CI jobs (OpenAI 2026). The design note applies this to the root file ([Make it a map, not a manual]({{< ref "ai-engineering/agents/ade/agents-md/agents-md" >}}#make-it-a-map-not-a-manual)).
 - **Define what done means before the work starts.** A written specification of the change, kept with the code, gives the agent and the reviewer the same acceptance criteria (Diaz et al. 2026). In Anthropic's experiments, the agent writing the code and the agent checking it agreed on what done meant, and how to test it, before any code was written (Rajasekaran 2026).
 - **Store plans and progress in the repository.** Work can then continue across sessions and agents. OpenAI's team checks execution plans, with their progress and decision logs, into the repository (OpenAI 2026).
@@ -137,7 +137,7 @@ Böckeler sorts these controls into two kinds. She calls them guides and sensors
 
 - **Enforce boundaries, and leave the implementation free.** Enforce architecture rules and other invariants mechanically, through linters and structural tests, and let the agent choose how to implement within them (OpenAI 2026). A fixed architecture limits what the agent can produce, which makes its output easier to check (Böckeler 2026).
 - **Make the codebase easy to check.** Strong typing makes type checks possible, and clear module boundaries make architecture rules possible. Böckeler calls this property *harnessability*. Legacy codebases have the least of it (Böckeler 2026).
-- **Make the running application visible to the agent.** When the agent can start the application for its change, drive the UI, and query logs and metrics, it can reproduce a bug and check its own fix. OpenAI's team made the application start separately in each git worktree, with its own logs and metrics (OpenAI 2026).
+- **Make the running application visible to the agent.** When the agent can start the application for its change, drive the UI, and query logs and metrics, it can reproduce a bug and check its own fix. OpenAI's team made the application start separately in each git worktree, with its own logs and metrics (OpenAI 2026). In the projects, commands to start the local stack, show its status and logs, and stop it give the agent this access ([Command layer](#command-layer)).
 
 ### Improving the environment
 
@@ -149,7 +149,7 @@ Böckeler sorts these controls into two kinds. She calls them guides and sensors
 ### Access
 
 
-- **Give agents only the access their tasks need.** Use separate agent identities with short-lived, scoped credentials, sandboxes, and network allowlists, and require human approval for pushing, merging, and deploying (OWASP). Text in an instruction file enforces none of this ([Approval rules]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules)).
+- **Give agents only the access their tasks need.** Use separate agent identities with short-lived, scoped credentials, sandboxes, and network allowlists, and require human approval for pushing, merging, and deploying (OWASP). Text in an instruction file enforces none of this ([Approval rules]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules)). Commands grouped by risk let one permission rule cover a whole namespace, such as `infra:*` ([Command layer](#command-layer)).
 
 ## The broader architecture
 
@@ -198,6 +198,9 @@ Agentic Software Engineering
     ├── Verification and review
     └── Delivery
 ```
+
+
+Two components have their own sections below: project knowledge, under *Knowledge Management*, and the command layer, the Taskfile under *Workflow Infrastructure* ([Command layer](#command-layer)).
 
 ## Project Knowledge in ADE.
 
@@ -392,6 +395,56 @@ The template's `AGENTS.md` therefore names each source, says when to read it, an
 
 
 When assigning work, name the task directory in the request, for example "Work on `tasks/1234-export-invoices/`."
+
+## Command layer
+
+
+The *command layer* is the set of named commands a repository defines for its workflows: setup, checks, running the application, starting and stopping local services, and remote operations. A task runner keeps them in one file, `Taskfile.yml` for Go Task or `Makefile` for Make. In the architecture above, it is the Taskfile under *Workflow Infrastructure*.
+
+The command layer adds no new concept. It is ordinary tooling that most projects have in some form. It belongs in this note because many other parts of the environment reach the agent through it: checks run as commands, the local application starts and stops through commands, setup creates the shared links through a command, and the runbook's procedures name commands. The same commands serve the developer working locally, the agent, and the git hooks.
+
+[Command layer]({{< ref "ai-engineering/agents/ade/command-layer" >}}) describes it in detail, with six configurations from the projects compared side by side. This section summarizes what it consists of and what it gives the rest of the environment.
+
+### What it consists of
+
+
+- **Named commands with a catalog.** A developer or an agent runs a command by name, such as `task quality:verify`, without knowing which tools it runs, with which flags, or in which order. `task help` lists every command with a one-line description ([Finding commands]({{< ref "ai-engineering/agents/ade/command-layer" >}}#finding-commands)).
+- **Namespaces for the parts of the system.** The template starts with `repo:*`, `quality:*`, `security:*`, and `app:*`. knowledge-assistant adds `config:*`, `api:*`, `db:*`, `scenario:*`, `eval:*`, and `infra:*`, and writes down what each namespace owns and what it doesn't ([Namespaces]({{< ref "ai-engineering/agents/ade/command-layer" >}}#namespaces)).
+- **Commands built from smaller commands.** Tool calls appear only inside the task runner file. Subsystem commands, such as `db:up` and `app:dev`, each do one job for one part of the system. Scenarios, such as `scenario:local:up`, combine them into one workflow, and the smaller commands stay available for when something fails ([Subsystem commands and scenarios]({{< ref "ai-engineering/agents/ade/command-layer" >}}#subsystem-commands-and-scenarios)).
+- **Separation by risk.** Local and remote commands, read-only and changing commands, and stopping and deleting get different names, as in `infra:runpod:*` for a paid remote machine ([Keeping risky commands apart]({{< ref "ai-engineering/agents/ade/command-layer" >}}#keeping-risky-commands-apart)).
+- **Toolchains in containers.** Tools that need another toolchain, such as Node.js or Bun, run in containers behind a command. The host then needs only Python, `uv`, the task runner, and Docker ([Isolating tool dependencies]({{< ref "ai-engineering/agents/ade/command-layer" >}}#isolating-tool-dependencies)).
+- **Procedures written in terms of commands.** The runbook says when and why to run a command, and the task runner says how ([Commands and runbooks]({{< ref "ai-engineering/agents/ade/command-layer" >}}#commands-and-runbooks)).
+
+### What it gives the rest of the environment
+
+
+- **Checks.** `AGENTS.md` names one validation command, `task quality:verify`, which runs the format check, lint, type checks, and tests in order and stops at the first failure. The template's pre-commit hook runs `task security:scan:staged`, the same scan the agent can run during the session. Each check is one command that can run at any point, which makes it easier to run each check as early as its cost allows ([Feedback and checks](#feedback-and-checks)).
+- **The running application.** Commands to start, inspect, follow the logs of, and stop the local stack let the agent reproduce a bug and check its fix. A start command that returns once the services are ready lets the agent continue, and diagnostic commands, such as sem-rag's `collect-query-context`, collect the evidence for one request in one directory ([Structure and visibility](#structure-and-visibility), [Commands that start services]({{< ref "ai-engineering/agents/ade/command-layer" >}}#commands-that-start-services)).
+- **Access.** With commands grouped by risk, one permission rule covers a namespace, such as asking before any `infra:*` command. A rule matches only the command as written, so removing the access still comes first ([Access](#access)).
+- **Provisioning.** `task repo:init` syncs the dependencies, installs the git hooks, and links `agent-docs`. A `repo:tasks` command could link the task directory the same way ([Shared agent docs](#shared-agent-docs), [Task directory](#task-directory)).
+- **Knowledge.** `AGENTS.md` needs one line for commands, such as "Use `task <namespace>:<name>` for repository workflows and `task help` for the current catalog." The runbook holds the command reference ([Make it a map, not a manual]({{< ref "ai-engineering/agents/ade/agents-md/agents-md" >}}#make-it-a-map-not-a-manual)).
+- **The same environment for every agent.** Codex, Claude Code, and a developer run the same commands, and containers pin the tool versions, so a check that passes for the agent passes for the developer ([Goals](#goals)).
+- **Improving the environment.** When the agent repeats a workflow by hand and skips a step, the fix is a new command in the right namespace. The catalog lists it, and `AGENTS.md` needs no new line ([Improving the environment](#improving-the-environment)).
+
+[What the isolation gives agents]({{< ref "ai-engineering/agents/ade/command-layer" >}}#what-the-isolation-gives-agents) checks each of these against the premises and rules of the design note for `AGENTS.md`, and lists what to observe in agent sessions to find out whether they hold.
+
+### For developers
+
+
+The same commands help a developer working locally. A developer new to the repository learns its workflows from `task help`. One command starts the local stack, and one stops it. A renamed command keeps working as an alias, so scripts and habits don't break ([Renaming commands]({{< ref "ai-engineering/agents/ade/command-layer" >}}#renaming-commands)).
+
+Developers and agents differ in a few places. An agent reads the catalog in every session, needs a start command to return, can't use an interactive prompt such as `psql`, and needs its approval rules in permission settings ([Where developers and agents differ]({{< ref "ai-engineering/agents/ade/command-layer" >}}#where-developers-and-agents-differ)).
+
+### Limits
+
+
+- The agent has to know the catalog exists, so `AGENTS.md` still needs one line for it.
+- With two task runners, such as Make and Poe, there are two catalogs to read.
+- A command name hides the tools it runs, so a failure can send the agent to the task runner file to see what ran.
+- A doc that names a removed command sends the agent to an error.
+- Commands that run tools in containers fail where the agent's execution environment has no Docker.
+
+[Limits and costs]({{< ref "ai-engineering/agents/ade/command-layer" >}}#limits-and-costs) covers these in more detail.
 
 ## Sources
 

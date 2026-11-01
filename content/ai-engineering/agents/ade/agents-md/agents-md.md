@@ -255,6 +255,8 @@ The root file should direct agents to authoritative sources without duplicating 
 
 Commands are a common source of duplication. The README covers basic setup--installation, environment creation, and local execution--and links to the runbook. The runbook contains the complete command reference and operational procedures. `AGENTS.md` links to both. Include commands in `AGENTS.md` only when they specify required agent behavior: baseline checks ([Define done and when to ask](#define-done-and-when-to-ask)) or corrections to generic defaults, such as using `uv` instead of `pip` ([Add only project-specific defaults](#add-only-project-specific-defaults)). If no runbook exists, create one instead of adding the command reference to the root file.
 
+A task runner, such as Go Task or Make, gives each workflow a name. With commands grouped by namespace and a catalog the agent can print, such as `task help`, the root file needs one line for commands. [Command layer]({{< ref "ai-engineering/agents/ade/command-layer" >}}) describes how the projects name and group commands and what that gives agents ([What the isolation gives agents]({{< ref "ai-engineering/agents/ade/command-layer" >}}#what-the-isolation-gives-agents)).
+
 #### Name the sources of truth
 
 
@@ -292,7 +294,7 @@ Place fixes for agent mistakes and important project decisions where they are mo
 | Guidance for one package or domain, or guidance that changes often | A nested `AGENTS.md` or a domain doc      |
 | Something only one tool needs                                      | That tool's own file, such as `CLAUDE.md` |
 
-See [Repeated failures]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#repeated-failures) for examples of the first six cases and [Approval rules]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules) for the seventh. The following rules explain enforcement, nested files, and tool-specific instructions.
+See [Repeated failures]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#repeated-failures) for examples of the first six cases and [Approval rules]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules) for the seventh. For task targets, [Subsystem commands and scenarios]({{< ref "ai-engineering/agents/ade/command-layer" >}}#subsystem-commands-and-scenarios) shows how a workflow becomes one command built from smaller ones. The following rules explain enforcement, nested files, and tool-specific instructions.
 
 A **structural check** verifies code organization: permitted module dependencies, file locations and naming conventions, and consistency between related artifacts such as generated code and its schema. Architecture boundaries are a common example, including one-way dependencies between layers and cross-cutting concerns accessed through a single interface.
 
@@ -305,7 +307,7 @@ Eventually enforce important rules through CI, linting, scripts, tests, or struc
 
 Core principles of harness engineering are to provide clear boundaries, predictable structure, accessible tools, fast tests, and actionable feedback. Every check should report which rule failed and how to recover, since agents use failure messages to decide what to do next.
 
-Rules governing permitted actions, such as "ask before deploying," belong in permission settings. See [Approval rules in AGENTS.md]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules) for how to enforce these restrictions.
+Rules governing permitted actions, such as "ask before deploying," belong in permission settings. See [Approval rules in AGENTS.md]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules) for how to enforce these restrictions. When commands are grouped by what they can affect, such as remote operations under `infra:*`, one permission rule covers a whole group ([Keeping risky commands apart]({{< ref "ai-engineering/agents/ade/command-layer" >}}#keeping-risky-commands-apart)).
 
 #### Separate stable root rules from changing domain knowledge
 
@@ -350,4 +352,4 @@ Canonical docs, feature contracts, tests, and implementation can diverge when th
 
 Several agent tools, such as Claude Code, Codex, Factory Droid, and GitHub Copilot, may work in the same repository ([Many agents and people share the file](#many-agents-and-people-share-the-file)). They load instruction files by different rules, and each has its own permission settings. [Keep one core for all agents](#keep-one-core-for-all-agents) covers the shared instructions. Restrictions are harder to keep in sync. A restriction that one tool can enforce, such as denying a command or a web domain in Claude Code, may have no matching setting in another tool. The same rule is then enforced for one agent and only written down for another.
 
-Investigate how to keep restrictions in sync across tools: whether to keep one list of the repository's restrictions and generate each tool's settings from it, how to detect when the settings drift apart, and what to do when a tool cannot enforce a restriction. Controls outside the tools, such as removing access and requiring review, apply to every agent ([Approval rules]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules)). Also clarify which tools may work in the repository, and how the team knows which ones its members use. For a tool that cannot enforce a restriction, a line in `AGENTS.md` is the only layer left, and the agent may not follow it.
+Investigate how to keep restrictions in sync across tools: whether to keep one list of the repository's restrictions and generate each tool's settings from it, how to detect when the settings drift apart, and what to do when a tool cannot enforce a restriction. Controls outside the tools, such as removing access and requiring review, apply to every agent ([Approval rules]({{< ref "ai-engineering/agents/ade/agents-md/agents-md-examples" >}}#approval-rules)). Grouping commands by risk reduces the number of rules to keep in sync, because one rule can cover a namespace ([Keeping risky commands apart]({{< ref "ai-engineering/agents/ade/command-layer" >}}#keeping-risky-commands-apart)). Also clarify which tools may work in the repository, and how the team knows which ones its members use. For a tool that cannot enforce a restriction, a line in `AGENTS.md` is the only layer left, and the agent may not follow it.

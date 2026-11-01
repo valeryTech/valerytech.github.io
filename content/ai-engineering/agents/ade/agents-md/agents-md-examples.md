@@ -78,7 +78,7 @@ The agent writes a migration that adds an index to a large PostgreSQL table in o
 ### A workflow done by hand
 
 
-The agent runs the release steps one at a time and skips the changelog. A task target such as `task release` runs every step in order and fails when the changelog has no entry for the new version. The runbook lists the target, and `AGENTS.md` needs nothing unless agents keep releasing by hand.
+The agent runs the release steps one at a time and skips the changelog. A task target such as `task release` runs every step in order and fails when the changelog has no entry for the new version. The runbook lists the target, and `AGENTS.md` needs nothing unless agents keep releasing by hand. [Subsystem commands and scenarios]({{< ref "ai-engineering/agents/ade/command-layer" >}}#subsystem-commands-and-scenarios) shows the same pattern for starting a local stack.
 
 ### A rule about behavior
 
