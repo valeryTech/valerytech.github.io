@@ -568,7 +568,7 @@ function openReader(link) {
     const state = { link, reader, locked, closed: false, abort: new AbortController() };
     readerCount += 1;
     reader.id = `site-pdf-reader-${readerCount}`;
-    reader.setAttribute('aria-label', `${title} (PDF)`);
+    reader.setAttribute('aria-label', `${title} (document)`);
     part(reader, '.site-pdf-reader-title').textContent = title;
     // An encrypted file opens in a new tab only once it is decrypted.
     const open = part(reader, '[data-pdf-action="open"]');
@@ -608,7 +608,7 @@ function openReader(link) {
         if (state.closed) return;
         reader.dataset.state = 'error';
         part(reader, '.site-pdf-reader-unlock').hidden = true;
-        setStatus(reader, locked ? 'This PDF can’t be shown here.' : 'This PDF can’t be shown here. Open it in a new tab instead.');
+        setStatus(reader, locked ? 'This document can’t be shown here.' : 'This document can’t be shown here. Open it in a new tab instead.');
     });
 }
 

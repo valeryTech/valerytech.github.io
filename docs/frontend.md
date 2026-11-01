@@ -117,7 +117,7 @@ current page and these actions:
 
 - **Contents** appears only when the PDF has an outline. It opens the outline
   over the pages; choosing an entry jumps there and closes it.
-- **Find in PDF** (also Ctrl/Cmd+F inside the reader) opens a find row that
+- **Find in document** (also Ctrl/Cmd+F inside the reader) opens a find row that
   highlights every match, counts them, and steps with Enter/Shift+Enter or the
   arrows. Escape closes the find row first, then the outline, then the reader.
 - **Page colors** cycles Original → Site theme → Sepia → Inverted, naming the

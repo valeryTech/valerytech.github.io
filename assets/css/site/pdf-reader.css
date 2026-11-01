@@ -1,14 +1,17 @@
 /* PDF links and the inline reader they open; PDF.js supplies the page layers. */
+/* A document icon, not a format label, marks links that open the reader. */
 .site-pdf-link::after {
-  content: "PDF";
-  /* An inline block keeps the link underline off the badge. */
+  content: "";
+  /* An inline block keeps the link underline off the icon. */
   display: inline-block;
+  inline-size: 0.9em;
+  block-size: 0.9em;
   margin-inline-start: var(--site-space-1);
-  font-family: var(--site-navigation-font-family);
-  font-size: 0.75em;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--site-muted);
+  vertical-align: -0.1em;
+  background-color: var(--site-muted);
+  -webkit-mask: var(--site-pdf-link-icon) center / contain no-repeat;
+  mask: var(--site-pdf-link-icon) center / contain no-repeat;
+  --site-pdf-link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.75 2.75h-6a1 1 0 0 0-1 1v12.5a1 1 0 0 0 1 1h8.5a1 1 0 0 0 1-1V6.25z'/%3E%3Cpath d='M11.75 2.75v3.5h3.5M7.75 10.25h4.5m-4.5 3h4.5'/%3E%3C/svg%3E");
 }
 
 .content .site-pdf-reader {

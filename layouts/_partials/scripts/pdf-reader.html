@@ -8,7 +8,7 @@
         <button type="button" class="site-pdf-reader-action" data-pdf-action="outline" aria-label="Contents" title="Contents" aria-expanded="false" hidden>
           {{- partial "components/control-icon.html" (dict "name" "list") -}}
         </button>
-        <button type="button" class="site-pdf-reader-action" data-pdf-action="find" aria-label="Find in PDF" title="Find in PDF" aria-expanded="false">
+        <button type="button" class="site-pdf-reader-action" data-pdf-action="find" aria-label="Find in document" title="Find in document" aria-expanded="false">
           {{- partial "components/control-icon.html" (dict "name" "search") -}}
         </button>
         <button type="button" class="site-pdf-reader-action" data-pdf-action="colors">
@@ -24,7 +24,7 @@
           {{- partial "components/control-icon.html" (dict "name" "widen" "attributes" "data-pdf-width-icon=\"text\"") -}}
           {{- partial "components/control-icon.html" (dict "name" "narrow" "attributes" "data-pdf-width-icon=\"wide\"") -}}
         </button>
-        <a class="site-pdf-reader-action" data-pdf-action="open" target="_blank" rel="noopener" aria-label="Open the PDF in a new tab" title="Open in a new tab">
+        <a class="site-pdf-reader-action" data-pdf-action="open" target="_blank" rel="noopener" aria-label="Open in a new tab" title="Open in a new tab">
           {{- partial "components/control-icon.html" (dict "name" "external") -}}
         </a>
         <button type="button" class="site-pdf-reader-action" data-pdf-action="close" aria-label="Close the reader" title="Close">
@@ -40,7 +40,7 @@
       </button>
     </form>
     <div class="site-pdf-reader-find" role="search" hidden>
-      <input class="site-pdf-reader-find-input" type="search" placeholder="Find in PDF" aria-label="Find in PDF" autocomplete="off" spellcheck="false">
+      <input class="site-pdf-reader-find-input" type="search" placeholder="Find in document" aria-label="Find in document" autocomplete="off" spellcheck="false">
       <p class="site-pdf-reader-find-status" aria-live="polite"></p>
       <button type="button" class="site-pdf-reader-action" data-pdf-action="find-previous" aria-label="Previous match" title="Previous match (Shift+Enter)">
         {{- partial "components/control-icon.html" (dict "name" "chevron-up") -}}
@@ -53,7 +53,7 @@
       </button>
     </div>
     <div class="site-pdf-reader-viewport">
-      <nav class="site-pdf-reader-outline" aria-label="PDF contents" hidden></nav>
+      <nav class="site-pdf-reader-outline" aria-label="Document contents" hidden></nav>
       <div class="site-pdf-reader-scroller" tabindex="0"><div class="pdfViewer"></div></div>
     </div>
   </section>
