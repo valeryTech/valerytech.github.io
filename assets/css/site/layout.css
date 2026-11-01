@@ -199,7 +199,7 @@
     min-width: var(--site-reading-min-width);
   }
 
-  :root:has(.site-has-sidebar):not(:has(.site-has-outline, .site-has-outline-space)),
+  :root:has(.site-has-sidebar):not(:has(.site-has-outline, .site-has-outline-space, .site-home)),
   :root[data-outline="hidden"]:has(.site-has-sidebar) {
     --site-sidebar-mode: inline;
     --site-sidebar-inline: 1;
@@ -350,7 +350,7 @@
 
 @media (48rem <= width < 64rem) {
   /* An inline collection still needs access to the other top-level sections. */
-  :root:has(.site-has-sidebar):not(:has(.site-has-outline, .site-has-outline-space)),
+  :root:has(.site-has-sidebar):not(:has(.site-has-outline, .site-has-outline-space, .site-home)),
   :root[data-outline="hidden"]:has(.site-has-sidebar) {
     --site-header-links-display: flex;
   }

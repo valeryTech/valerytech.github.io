@@ -15,6 +15,17 @@
   "sections": {
     "storageKey": "site-sidebar-sections"
   },
+  "collectionIcons": {
+    "/ai-engineering/": "chip",
+    "/ai/": "sparkles",
+    "/dialogue-systems/": "chat",
+    "/engineering/": "wrench",
+    "/functional-programming/": "lambda",
+    "/projects/": "folder",
+    "/research/": "book",
+    "/system-design/": "diagram",
+    "/type-driven-design/": "braces"
+  },
   "outline": {
     "storageKey": "site-outline-sections",
     "minimumReadingLinePixels": 120,

@@ -1,6 +1,6 @@
 {{- $page := .context -}}
 {{- $disabled := .disableSidebar | default false -}}
-{{- $docs := in site.Params.mainSections $page.Section -}}
+{{- $docs := or (in site.Params.mainSections $page.Section) $page.IsHome -}}
 {{- $desktopClass := "hx:md:sticky" -}}
 {{- if $disabled -}}
   {{- $desktopClass = cond (.displayPlaceholder | default false) "hx:md:hidden hx:xl:block" "hx:md:hidden" -}}
@@ -11,7 +11,7 @@
     <nav class="mobile-site-nav hx:md:hidden" aria-label="Collections">
       {{- partial "navigation/section-links.html" (dict "page" $page "nav" (partial "navigation/section-entries.html" $page) "includeMore" true) -}}
     </nav>
-    {{ if $docs }}{{ partial "sidebar/section-menu.html" $page }}{{ end }}
+    {{ if $page.IsHome }}{{ partial "sidebar/home-menu.html" $page }}{{ else if $docs }}{{ partial "sidebar/section-menu.html" $page }}{{ end }}
   </div>
   <div class="site-sidebar-fade-anchor" aria-hidden="true">
     <div class="site-sidebar-fade" data-sidebar-fade hidden></div>

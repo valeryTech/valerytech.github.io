@@ -194,6 +194,75 @@
   padding-inline-start: var(--site-nav-label-inset);
 }
 
+/* Homepage collection rows put the collection icon in the disclosure slot, in
+   line with the pane heading toggle. The icon is drawn at 16px like the
+   breadcrumb house. Like the heading toggle, it has no resting fill and hovers
+   as a rounded square inset by the layout gap from the control height. An open
+   branch keeps its icon in the accent color. */
+.site-collection-icon {
+  inline-size: var(--site-space-4);
+  block-size: var(--site-space-4);
+}
+
+.site-sidebar-section-toggle.site-collection-toggle {
+  isolation: isolate;
+  border-radius: var(--site-radius);
+}
+
+.site-sidebar-section-toggle.site-collection-toggle::before {
+  content: none;
+}
+
+.site-sidebar-section-toggle.site-collection-toggle::after {
+  content: "";
+  position: absolute;
+  inset: calc(
+    var(--site-round-control-size) / 2 + var(--site-layout-gap) - var(--site-control-height) / 2
+  );
+  z-index: -1;
+  border-radius: var(--site-radius);
+}
+
+.site-sidebar-section-toggle.site-collection-toggle:is(:hover, :focus-visible) {
+  background: transparent;
+  color: var(--site-accent);
+  outline: none;
+}
+
+.site-sidebar-section-toggle.site-collection-toggle:is(:hover, :focus-visible)::after {
+  background: var(--site-card-hover);
+}
+
+.site-sidebar-section-toggle.site-collection-toggle:focus-visible::after {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+.site-sidebar-section-toggle.site-collection-toggle[aria-expanded="true"] {
+  color: var(--site-accent);
+}
+
+/* Without the disclosure, the link shows the icon in the same slot instead of a chevron. */
+.site-sidebar-section-row > a.site-sidebar-collection::before {
+  content: none;
+}
+
+.site-collection-marker {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset-inline-start: var(--site-tree-chevron-inset);
+  inset-block-start: calc(
+    var(--site-nav-padding-block) + (1lh - var(--site-round-control-size)) / 2
+  );
+  inline-size: var(--site-round-control-size);
+  block-size: var(--site-round-control-size);
+}
+
+.site-sidebar-section-row:has(> .site-sidebar-section-toggle:not([hidden])) .site-collection-marker {
+  display: none;
+}
+
 .site-sidebar-section-row > a::before {
   content: "";
   position: absolute;

@@ -31,6 +31,8 @@ The selected **C — V topology** direction comes from the [branding discussion]
 
 The mark reuses `foreground` and the blue `fill-tint`. The mark adds no palette roles. Header colors follow the selected site theme. Browser tab and bookmark icons use the Light palette in every theme: the dark V on a white `page-background` badge with rounded corners. SVG, PNG, and ICO share that treatment, so the icon stays legible on light and dark tab bars whichever format the browser chooses or caches, and with custom browser themes that differ from the system's reported color scheme. Touch and home-screen icons use the Dark palette instead: a light V on an opaque square Dark `context-header` canvas.
 
+Collection icons in the homepage menu share the control icons' drawing rules: a 20-unit grid, 1.5 stroke, round caps and joins, no fill, drawn at 16px in the navigation foreground. Each icon is its collection's expand and collapse button and hovers like the pane heading toggle: a rounded square inset by the layout gap from the control height. Current set: AI Engineering chip, AI sparkles, Dialogue Systems speech bubbles, Engineering wrench, Functional Programming lambda, Projects folder, Reading map open book, System Design three linked boxes, Type-Driven Design braces.
+
 | Use                    | Published assets                                                                 |
 | ---------------------- | -------------------------------------------------------------------------------- |
 | Transparent marks      | `/branding/mark-light.svg`, `/branding/mark-dark.svg`                            |

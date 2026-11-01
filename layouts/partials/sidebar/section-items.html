@@ -3,6 +3,7 @@
 {{- $currentPage := .currentPage -}}
 {{- $depth := .depth -}}
 {{- $initialBranch := .initialBranch -}}
+{{- $icons := .icons -}}
 {{- range $groups -}}
   {{- $label := cond (eq .key "sections") "Topics" "Documents" -}}
   {{- if $labeled -}}
@@ -11,7 +12,7 @@
       <ul aria-labelledby="sidebar-{{ .key }}-label">
   {{- end -}}
   {{- range .nodes -}}
-    {{ partial "sidebar/section-node.html" (dict "node" . "currentPage" $currentPage "depth" $depth "initialBranch" $initialBranch) }}
+    {{ partial "sidebar/section-node.html" (dict "node" . "currentPage" $currentPage "depth" $depth "initialBranch" $initialBranch "icons" $icons) }}
   {{- end -}}
   {{- if $labeled }}</ul></li>{{ end -}}
 {{- end -}}

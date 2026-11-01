@@ -1,0 +1,13 @@
+{{- /* The homepage lists the top-level collections in breadcrumb order, all folded. */ -}}
+{{- $nodes := slice -}}
+{{- range partialCached "navigation/child-groups.html" (dict "nodes" site.Home.Sections) "breadcrumb-root-sections" site.Home.RelPermalink -}}
+  {{- if eq .key "sections" }}{{ $nodes = .nodes }}{{ end -}}
+{{- end -}}
+{{- partial "sidebar/render-section-menu.html" (dict
+  "currentPage" .
+  "rootPage" .
+  "label" "Collections"
+  "nodes" $nodes
+  "folded" true
+  "icons" hugo.Data.ui.navigation.collectionIcons
+) }}
