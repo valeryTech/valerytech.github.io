@@ -13,15 +13,16 @@ A case-insensitive alert marker must start a blockquote line. Preserve its custo
 
 | Source kind                 | Shortcode context | Native type                 |
 | --------------------------- | ----------------- | --------------------------- |
-| `note`, `info`, `important` | `note`            | `info`                      |
-| `tip`                       | `tip`             | `default`                   |
+| `note`, `info`              | `note`            | `info`                      |
+| `important`                 | `important`       | `important`                 |
+| `tip`, `advice`, `rule`     | `tip`             | `default`                   |
 | `caution`, `warning`        | `caution`         | `warning`                   |
 | `danger`                    | `danger`          | `error`                     |
 | `question`                  | `note`            | `info`, question icon       |
 | `thumbup`                   | `note`            | `info`, thumbs-up icon      |
 | `thumbdown`                 | `caution`         | `warning`, thumbs-down icon |
 
-Unknown imported kinds become `note`. Unknown directly authored adapter types use the configured fallback. Native `type` is accepted alongside legacy `context`; legacy `outline/...` icons map to configured native icons. Direct native `important` remains available separately from the import mapping above.
+Unknown imported kinds become `note`. Unknown directly authored adapter types use the configured fallback. Native `type` is accepted alongside legacy `context`; legacy `outline/...` icons map to configured native icons.
 
 ## Verification
 

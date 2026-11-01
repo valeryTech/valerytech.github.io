@@ -73,7 +73,7 @@ npm create thulite@latest -- --template doks
 
 ## Hugo alert catalog
 
-{{< callout context="note" title="Important" icon="outline/info-circle" >}}
+{{< callout context="important" title="Important" icon="outline/alert-circle" >}}
 Hugo documents `IMPORTANT`, but Doks does not expose a separate `important` context.
 The migration currently maps it to Doks `note`.
 {{< /callout >}}

@@ -150,8 +150,9 @@ Whatever decision you make, explain **why**. In a system design interview, **why
 
 {{< callout context="caution" title="Reasoning your design" icon="outline/alert-triangle" >}}
 Your interviewer cares less about whether your design is good in itself, and more about whether you are able to talk about the trade-offs (positives and negatives) of your decisions.
+{{< /callout >}}
 
-[!tip] Keep it simple.
+{{< callout context="tip" title="Keep it simple." icon="outline/rocket" >}}
 The first rule of distributed systems is that you should avoid them if you don't need them! Always **consider maintenance costs**. People don't build distributed systems for fun. If all of Google could run on just one machine, you can bet they would do it.
 {{< /callout >}}
 
@@ -370,7 +371,7 @@ When faced with a choice in a design interview, it's easy to focus on the techni
 
 Suppose, for instance, that the image sharing service you're designing will require users to log in before uploading an image. In technical terms, you might want to avoid login to keep the database schema simpler, or you could introduce login to gather better metrics. An anonymous experience may be best for a public image-hosting site intended for quick turnaround and low interaction, while a logged-in experience offers the possibility of community features like commenting and sharing, personalized metrics, and the ability to restrict an upload to authorized viewers. You may want to take either approach or even both, allowing a limited anonymous experience with extra features for logged-in users.
 
-{{< callout context="note" title="User Experience" icon="outline/info-circle" >}}
+{{< callout context="important" title="User Experience" icon="outline/alert-circle" >}}
 
 {{< /callout >}}
 
@@ -461,17 +462,21 @@ Interviewers want to identify "impostors": people who just learned a few words a
 
 {{< callout context="caution" title="Don't say" icon="outline/thumb-down" >}}
 I'm going to use Cassandra..." unless you are VERY familiar with that, because the next question will be: "Why Cassandra and not some_other_db?
+{{< /callout >}}
 
-[!thumbup] Do say
+{{< callout context="note" title="Do say" icon="outline/thumb-up" >}}
 I'm going to use a NoSQL db because of [insert brief rationale].
+{{< /callout >}}
 
-[!thumbdonw] Don't say
+{{< callout context="caution" title="Don't say" icon="outline/thumb-down" >}}
 I will use Kafka..." unless you're prepared to explain how Kafka works. Don't say "I will use Kafka" unless you are prepared to talk about other types of queues, because they may ask you: "Oh, Kafka, interesting choice. Why that instead of [some other queue]?
+{{< /callout >}}
 
-[!thumbup] Do say
+{{< callout context="note" title="Do say" icon="outline/thumb-up" >}}
 I will use a queue because of [insert brief rationale].
+{{< /callout >}}
 
-[!note] Remember
+{{< callout context="note" title="Remember" icon="outline/info-circle" >}}
 Say the generic name of the component, not the brand name unless you are very familiar with it. Don't say Kafka. Instead, say "a queue".
 {{< /callout >}}
 

@@ -128,7 +128,7 @@ Think about the objects the system needs to hold and their data type. There are 
 
 2.2 What does the API look like?
 
-{{< callout context="note" title="Rule of thumb" icon="outline/info-circle" >}}
+{{< callout context="tip" title="Rule of thumb" icon="outline/rocket" >}}
 
 {{< /callout >}}
 

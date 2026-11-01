@@ -23,12 +23,14 @@ from scripts.migrate.text import humanize_slug, normalize_title, slugify_heading
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif"}
 CALLOUT_MAP = {
     "info": ("note", "outline/info-circle"),
-    "important": ("note", "outline/info-circle"),
+    "important": ("important", "outline/alert-circle"),
     "note": ("note", "outline/info-circle"),
     "question": ("note", "outline/help-octagon"),
     "thumbup": ("note", "outline/thumb-up"),
     "thumbdown": ("caution", "outline/thumb-down"),
     "tip": ("tip", "outline/rocket"),
+    "advice": ("tip", "outline/rocket"),
+    "rule": ("tip", "outline/rocket"),
     "caution": ("caution", "outline/alert-triangle"),
     "warning": ("caution", "outline/alert-triangle"),
     "danger": ("danger", "outline/alert-octagon"),

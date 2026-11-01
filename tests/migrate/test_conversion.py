@@ -6,6 +6,7 @@ from pathlib import Path
 from scripts.migrate.attachments import MAX_PDF_BYTES
 from scripts.migrate.conversion import (
     RenderContext,
+    callout_presentation,
     convert_document,
     normalize_math_delimiters,
     strip_tracking_parameters,
@@ -420,6 +421,12 @@ class ConversionTests(unittest.TestCase):
 
         self.assertEqual("\n\n".join(rendered.body_parts), "Read The Book.")
         self.assertIn("oversized-pdf", [item.code for item in self.run.report.warnings])
+
+    def test_callout_kinds_map_to_shortcode_contexts(self) -> None:
+        self.assertEqual(callout_presentation("Important"), ("important", "outline/alert-circle"))
+        self.assertEqual(callout_presentation("advice"), ("tip", "outline/rocket"))
+        self.assertEqual(callout_presentation("rule"), ("tip", "outline/rocket"))
+        self.assertEqual(callout_presentation("unknown"), ("note", "outline/info-circle"))
 
     def test_normalize_math_delimiters_rewrites_balanced_math_and_preserves_literal_dollars(self) -> None:
         text = (

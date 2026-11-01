@@ -11,6 +11,7 @@
   },
   "legacyIcons": {
     "outline/info-circle": "information-circle",
+    "outline/alert-circle": "exclamation-circle",
     "outline/help-octagon": "question-mark-circle",
     "outline/thumb-up": "thumb-up",
     "outline/thumb-down": "thumb-down",

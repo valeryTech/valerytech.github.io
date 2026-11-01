@@ -27,11 +27,13 @@ Caches can store the results of simple lookups, as in this example, but really t
 
 {{< callout context="note" title="Caching as optimization" icon="outline/info-circle" >}}
 Treat caching primarily as a performance optimization. Cache in as few places as possible to make it easier to reason about the freshness of data.
+{{< /callout >}}
 
-[!note] Data change frequency
+{{< callout context="note" title="Data change frequency" icon="outline/info-circle" >}}
 Generally, caching is used only in cases where the external *data doesn't change often* or you can replicate all the data on your systems. Also if you don't care about data consistency then cache is really useful.
+{{< /callout >}}
 
-[!note] Rule of Thumb
+{{< callout context="note" title="Rule of Thumb" icon="outline/info-circle" >}}
 Generally, caching is used for *read-heavy systems*. Popular read-heavy systems are Twitter and YouTube. Are most of their millions of users tweeting and posting videos? No, their most common users are reading tweets and watching videos.
 {{< /callout >}}
 

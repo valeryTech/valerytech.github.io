@@ -88,7 +88,7 @@ Yes, the members are checked at compile time: passing an `Int` where `{ def name
 
 The reflection is a JVM artifact, not a property of structural typing. Pierce ([PDF](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), section 19.3) explains why: in a nominal language the class name doubles as a run-time tag, and method calls are dispatched through it. Go has no such constraint: an interface is satisfied by any type with the right methods, without declaring it, and calls through it are ordinary dynamic dispatch. Bodner ([PDF](/sources/9c094741f6655c74e9b828ed1b091426.bin), chapter 7, "Interfaces Are Type-Safe Duck Typing") adds the design rule that goes with it: interfaces specify what callers need, so they're defined by the code that uses them. Python's `typing.Protocol` is the same idea, checked only statically (Ramalho, [PDF](/sources/c09d057b50eb8836ae7e40220e951a83.bin), chapter 13; see the grid in [Dimensions Of Type Systems]({{< ref "type-driven-design/01-foundations/dimensions-of-type-systems" >}}#nominal-and-structural-equivalence)).
 
-{{< callout context="note" title="Avoid Structural Typing" icon="outline/info-circle" >}}
+{{< callout context="tip" title="Avoid Structural Typing" icon="outline/rocket" >}}
 When a structural type seems like a good solution to a problem, consider using a [type class](https://nrinaudo.github.io/scala-best-practices/definitions/type_class.html) instead.
 {{< /callout >}}
 
