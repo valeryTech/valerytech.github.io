@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "A Zalando Case Critique"
-aliases:
-  - "/ai-engineering/evaluation/theoretical-methodology/appraisal/in-methodology/"
 description: "Zalando's report on agentic engineering is a useful experience report and weak evidence that coding agents improve outcomes. The critique separates operational observations from causal evidence and sketches how the central thesis could be tested."
 linkTitle: "Zalando Case Critique"
 ---

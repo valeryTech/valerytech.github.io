@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "What a ReAct Agent Is"
-aliases:
-  - "/ai-engineering/agents/react/analysis/"
 description: "Separates what the ReAct paper proposed from the generic model-tool loop and the frameworks sold under its name, traces each element to earlier agent research, and proposes splitting the transcript into explicit state."
 linkTitle: "Definition and Lineage"
 ---

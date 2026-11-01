@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functional Programming Exercises and Projects"
-aliases:
-  - "/functional-programming/exercises-and-projects/"
 description: "Exercise collections for Haskell and Scala, specific problems on lists, trees, functors and applicatives, learning tasks, and project ideas from games to reference applications."
 weight: "30"
 linkTitle: "Exercises and Projects"
@@ -178,7 +176,7 @@ See also: coding katas, [Recursion and folds]({{< ref "functional-programming/01
 - [Li 2020](/sources/a280251ad59e61862b88a946d18fae4c.bin), *Hands-on Scala Programming*: listed under Scala; project-based, ending with a file synchronizer and a small language implementation.
 - [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala (2nd edition)*: the book behind pfps-shopping-cart and pfps-examples.
 - [Allen and Moronuki 2016](/sources/ef73b442d98627834d86e8f39127b0d6.bin), *Haskell Programming from First Principles*: the standard list functions by recursion (9.12, "Chapter Exercises") and again with folds (10.10, "Rewriting functions using folds": `myOr`, `myAny`, `myElem`, `myReverse`, `myMap`, `myFilter`), on *List functions*; a `BinaryTree` with insert, map and fold (11.17, "Binary Tree"), on *Lists and trees as ADTs*; `Functor` instances for small types (16.10, "Exercises: Instances of Func"), on *Functor (Serokell)*; implementing the Reader monad (22.7) and State's instances (23.6, "Write State for yourself"), on *Learning tasks*.
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: exercise-driven; its functional data structures chapter covers the List and Tree ADT problems, and its I/O chapter builds an effect type step by step.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: exercise-driven; chapter 3, Functional data structures, covers the `List` and `Tree` ADT problems and fold exercises (3.1-3.4), chapter 6 builds `State` (6.5), chapter 11 builds `Functor` and `Monad` (11.1-11.2), and chapter 13 builds an `IO` effect type step by step.
 - [Hughes 1990](/sources/a88f5c889d6f70309316ef0660f67635.bin), *Why Functional Programming Matters*: section 5, "An Example from Artificial Intelligence", builds alpha-beta game-tree search from small lazily composed parts; relevant to the game project idea; on *Haskell project assignment*.
 - [Bird and Gibbons 2020](/sources/c4f62226daeec327477fd1a5a1e478c0.bin), *Algorithm Design with Haskell*: chapter 1 exercises with answers: a linear-time `reverse` with `foldl` (1.4), `map` and `filter` as `foldr` (1.5), `takeWhile` as a `foldr` that stops early (1.7), and when `foldr` and `foldl` agree (1.10); on *List functions*.
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: section 13.3, "Initial Style", gives the recipe the toy `Console` type follows (one constructor per operation with a continuation for its result, plus one for the final value), with its `Monad` instance and smart constructors, and exercises 13.6 (a `Functor` instance), 13.8 (a `State` interpreter for a file-system monad), 13.11 (rewriting it as a free monad) and 13.3 (a final-style version); section 6.1 and exercise 6.1 on the `State` newtype and its `Monad` instance; on *Learning tasks*.

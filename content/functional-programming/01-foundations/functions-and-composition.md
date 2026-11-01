@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functions and Composition in Haskell and Scala"
-aliases:
-  - "/functional-programming/functions-and-composition/"
 description: "Functions as values in Haskell and Scala: lambdas and closures, returning functions for API design, currying and partial application, custom control structures, and composition into pipelines."
 weight: "40"
 linkTitle: "Functions and Composition"
@@ -299,7 +297,7 @@ See also: [Call-by-name in Scala]({{< ref "functional-programming/01-foundations
 
 Further reading:
 
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 2, sections 2.3-2.5 (higher-order and polymorphic functions, and exercises 2.3-2.5 implementing `curry`, `uncurry` and `compose` by following the types), and chapter 11, section 11.4.2 (Kleisli composition `compose: (A => F[B], B => F[C]) => A => F[C]`); on *Currying and partial application*, *Pipelines* and *Composing functions with different effects*.
 - [Sfregola 2021](/sources/938932d9b4e4bd1177769b29018c5ff6.bin), *Get Programming with Scala*
 - [Wampler 2021](/sources/15972064071d3223586f8945de281cea.bin), *Programming Scala (3rd edition)*
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: section 5.3.1, "Kleisli Arrows", on `<=<`, which composes `a -> m b` arrows for one monad `m`, and section 10.1, "Combining Monads by Hand", where an evaluator over `Reader Assignment (Maybe Integer)` has to check failures by hand; on *Composing functions with different effects*.

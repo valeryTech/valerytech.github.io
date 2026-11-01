@@ -22,7 +22,7 @@ The key word is "proving." You can think of a static type checker as a small, de
 Two consequences follow:
 
 - **The checker is conservative.** Because it proves things before the program runs, it must sometimes reject programs that would behave well. Pierce's example is `if <complex test> then 5 else <type error>`: the checker rejects it even when the test is always true, because it can't know that. Every type system lives with this tension between conservativity and expressiveness: a more expressive system rejects fewer good programs, but is harder to check and to use.
-- **"Proving" has a precise meaning: soundness.** Krishnamurthi's statement of it ([PDF](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), "Soundness") is: if `e : t`, and `e` evaluates to a value `v`, then `v : t`. The checker's prediction holds. The stronger version, that the checker accepts *exactly* the programs that behave well, is impossible for a Turing-complete language (Rice's theorem), which is the formal reason for the conservativity above.
+- **"Proving" has a precise meaning: soundness.** Krishnamurthi's statement of it ([PDF](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), "Safety and Soundness", section "Soundness") is: if `e : t`, and `e` evaluates to a value `v`, then `v : t`. The checker's prediction holds. The stronger version, that the checker accepts *exactly* the programs that behave well, is impossible for a Turing-complete language (Rice's theorem), which is the formal reason for the conservativity above.
 
 For example:
 
@@ -68,7 +68,7 @@ Now callers must deal with success and failure explicitly.
 
 Languages with algebraic data types, refinement types, dependent types, etc. can push this much further.
 
-3. Safer refactoring. If you change an API, rename a field, split a variant, or change a function signature, the compiler gives you a list of affected code. In a large codebase, this is one of the biggest practical benefits.
+3. Safer refactoring. If you change an API, rename a field, split a variant, or change a function signature, the compiler gives you a list of affected code. Feathers ([PDF](/sources/241d9c43d55ce32020da4c5ffc75bc2e.bin), chapter 23, "Lean on the Compiler") names this two-step move (alter a declaration to cause compile errors, then navigate to the errors to make the changes) and warns about its main blind spot under inheritance: removing an overriding method compiles cleanly if a superclass defines the same signature. At monorepo scale, Winters et al. ([PDF](/sources/cdc8156a74161ef8b6f12b1e2896c4d7.bin), chapter 22, "Language Support") report the same divide for automated large-scale changes: static types let compiler-based tools reject invalid transformations before testing, which makes statically typed codebases much easier to migrate than dynamically typed ones.
 4. Better API design. A function like:
 
 ```haskell
@@ -101,19 +101,22 @@ A catch-all branch (`_ => ...`) switches this off for that match. *The Pragmatic
 
 For large software systems, the main practical benefits are safer refactoring, making illegal states harder to express, and turning implicit assumptions into machine-checked interfaces.
 
-The counterweight is conservativity again: the checker rejects some correct programs, and the workarounds (casts, `Any`, `as unknown as T`) switch checking off locally. Ramalho (chapter 8, "Imperfect Typing and Strong Testing") adds that type checkers report both false positives and false negatives, and that type hints say little about errors in business logic, so they complement tests rather than replace them. What each kind of check is good for is in [What Belongs In Types]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}#types-contracts-runtime-checks-and-tests).
+The counterweight is conservativity again: the checker rejects some correct programs, and the workarounds (casts, `Any`, `as unknown as T`) switch checking off locally. Ramalho ([PDF](/sources/c09d057b50eb8836ae7e40220e951a83.bin), chapter 8, "Imperfect Typing and Strong Testing") adds that type checkers report both false positives and false negatives, and that type hints say little about errors in business logic, so they complement tests rather than replace them. What each kind of check is good for is in [What Belongs In Types]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}#types-contracts-runtime-checks-and-tests).
 
 ## Library sources
 
 
 - [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- section 1.1 for the definition and conservativity, section 1.2 for language safety and the benefits list; on *What a type system is* and *Benefits*
-- [Krishnamurthi 2025](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), *Programming Languages: Application and Interpretation*, version 3 -- "Soundness": the one-directional guarantee and Rice's theorem; on *What a type system is*
+- [Krishnamurthi 2025](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), *Programming Languages: Application and Interpretation*, version 3 -- "Safety and Soundness", section "Soundness": the one-directional guarantee, why soundness lets typed programs skip run-time tag checks, and Rice's theorem; on *What a type system is* and efficiency in *Benefits*
 - [Ramalho 2022](/sources/c09d057b50eb8836ae7e40220e951a83.bin), *Fluent Python, 2nd Edition* -- chapter 8, "Imperfect Typing and Strong Testing"; on *Benefits*
-- [Nielson et al. 1999](/sources/7abd708cb67eaf6c1203211adf64c6a7.bin), *Type and Effect Systems* -- the paper cited by URL where effect systems are listed as an extension of the basic idea, in *What a type system is*
+- [Nielson et al. 1999](/sources/7abd708cb67eaf6c1203211adf64c6a7.bin), *Type and Effect Systems* -- section 1 and section 3: enriching typing judgements with effect annotations that approximate dynamic behaviour; on *What a type system is*
 - [Thomas et al. 2020](/sources/afd55006a2d41c959c6eb8f3c81eb883.bin), *The Pragmatic Programmer, 2nd Edition* -- Topic 24, "Dead Programs Tell No Lies", on default clauses; on exhaustiveness in *Benefits*
+- [Feathers 2005](/sources/241d9c43d55ce32020da4c5ffc75bc2e.bin), *Working Effectively with Legacy Code* -- chapter 23, "Lean on the Compiler": altering a declaration so type errors list the sites to update, and why inheritance can mask an unused-method check when a superclass shares the signature; on safer refactoring in *Benefits*
+- [Winters et al. 2020](/sources/cdc8156a74161ef8b6f12b1e2896c4d7.bin), *Software Engineering at Google* -- chapter 22, "Language Support": statically typed languages make automated large-scale changes much easier because compiler-based tools reject invalid transformations before testing; on safer refactoring in *Benefits*
+- [Rondon et al. 2008](/sources/c1ee665591c2e20039979587673830e7.bin), *Liquid Types* -- section 1 and section 5: inferred refinement types prove array accesses in bounds statically on DML benchmarks, removing run-time bounds-checking overhead; on efficiency in *Benefits*
 - [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types: Type-Level Programming in Haskell* -- the Introduction: `fst ("no problems", True <> 17)` as an ill-typed but well-behaved program, and C's `printf` as a function its type system can't describe, so checking is switched off for it; on the conservativity point in *What a type system is*
 
 Further reading:
 
-- Scott et al. 2025, *Programming Language Pragmatics, 5th Edition*
-- [Pretnar 2015](/sources/04ce5a56aaa9b4bf9a2da019657fe02e.bin), *An Introduction to Algebraic Effects and Handlers*
+- Scott et al. 2025, *Programming Language Pragmatics, 5th Edition* -- chapter 7, "Type Systems" (opening list and section 7.1, "Overview"): the four purposes of types (catching nonsensical operations, implicit context, compiler-checked documentation and optimization) and the denotational, structural and abstraction-based views of what a type is; on *What a type system is* and *Benefits*
+- [Pretnar 2015](/sources/04ce5a56aaa9b4bf9a2da019657fe02e.bin), *An Introduction to Algebraic Effects and Handlers* -- section 4, "Type system": computation types `A ! Δ` pair the return type `A` with an over-approximating set `Δ` of operations the computation may call, and handlers discharge handled operations from `Δ`; on effect systems in *What a type system is*

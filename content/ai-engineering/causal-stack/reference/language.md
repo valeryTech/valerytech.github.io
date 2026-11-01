@@ -2,11 +2,6 @@
 draft: false
 toc: true
 title: "Language and Interaction"
-aliases:
-  - "/ai-engineering/causal-stack/layer-0-natural-language-properties/"
-  - "/ai-engineering/evaluation/causal-stack/layer-0-natural-language-properties/"
-  - "/ai-engineering/causal-stack/layer-0-alt/"
-  - "/ai-engineering/evaluation/causal-stack/layer-0-alt/"
 description: "Ambiguity, missing information, contextual references, and corrections pose different engineering questions. Concrete examples connect target binding, clarification cost, state updates, and preservation of meaning."
 linkTitle: "Language and Interaction"
 ---

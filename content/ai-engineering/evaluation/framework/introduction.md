@@ -2,59 +2,9 @@
 draft: false
 toc: true
 title: "Introduction to AI Evaluation"
-aliases:
-  - "/ai-engineering/evaluation/v1/ai-evaluation-revised/"
-  - "/ai-engineering/evaluation/framework/ai-evaluation/"
 description: "AI evaluation starts with a question and examines whole-product behavior in defined situations, preserving the evidence and limits needed to inform discovery, delivery, and production decisions."
 linkTitle: "Introduction"
 ---
-
-Evaluation establishes what an AI product actually does in situations that matter. Teams run or observe the product, record what happens, and use the findings to make product decisions.
-
-Product behavior includes the answers people see, the tools and data the product uses, the actions it takes, and the changes it makes. Judging behavior as right or wrong requires a clear rule or expectation.
-
-Evaluation never shows everything the product could do. Running a test case shows what happened in the tested conditions. Reviewing a production sample shows what happened for the users and time period included in that sample. Tests, evaluators, and scores support the inspection and summarization of behavior. They are tools, not the goal.
-
-## Start with the question
-
-
-Evaluation begins with a question or something the team needs to learn, not with a dataset or metric.
-
-Examples include:
-
-- Can this candidate solution provide the proposed behavior?
-- Where does it fail, and which failures matter?
-- Is the evidence strong enough for the production commitment being considered?
-- Does a candidate change improve the target behavior without causing an important regression?
-- Does live behavior remain within the active production commitment?
-- Has production use revealed a new situation, failure, or mistaken assumption?
-
-The question determines which situations to examine, what to record, how to judge what happened, and what the team needs to learn from the result.
-
-## The reasoning chain
-
-```text
-Question or something the team needs to learn
-        ↓
-Behavior to examine and any rule or commitment
-used to judge it
-        ↓
-Situations or live runs to examine
-        ↓
-Run or observe the product
-        ↓
-Record what happened
-        ↓
-Judge it when a clear expectation exists
-        ↓
-Explain the result, its limits, and what is still unknown
-        ↓
-Decision
-```
-
-
-The arrows show what depends on what, not a fixed set of product phases. Exploratory work may begin before the team has a stable behavior claim or criterion. A result may also send the team back to revise the question, claim, cases, criteria, or way it records evidence.
-
 ## Framework and subsystem
 
 
@@ -83,19 +33,6 @@ Discovery and delivery can happen at the same time.
 - **Production use** shows things that pre-release tests cannot. It can reveal new inputs, failures, costs, dependencies, user responses, and mistaken intent.
 
 A production commitment changes the obligations attached to a solution. It does not end discovery. Evaluation continues because both the implementation and the understanding of the intended behavior can change.
-
-## Keep five questions separate
-
-
-Evaluation must not combine these questions into one measure:
-
-1. Does the product behave as currently claimed or promised?
-2. Can the intended users understand it and complete the relevant work?
-3. Do people choose, adopt, and continue using it instead of the available alternatives?
-4. Does its use change the user or operating condition it was meant to change?
-5. Does that change produce the wider result that was expected?
-
-The evaluation subsystem mainly examines the first question. It may preserve and compare evidence related to the other four, but usability work, customer research, product analytics, controlled experiments, and business evidence may also be required.
 
 ## A finding is not a decision
 

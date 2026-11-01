@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "System Design"
-aliases:
-  - "/system-design/about/"
 description: "System design as a pattern flow for designing and prototyping systems: context, forces, design questions and their options, techniques that test a choice, decisions with triggers, and cases. Interview preparation is one route through it."
 linkTitle: "System Design"
 ---

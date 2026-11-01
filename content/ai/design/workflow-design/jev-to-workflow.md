@@ -63,5 +63,3 @@ Sometimes it's about defining its world more clearly.
 P.S. How are you defining the decision space for your AI agents?![View image](https://media.licdn.com/dms/image/v2/D4E22AQFuBzi07QIuZQ/feedshare-image-high-res/B4EaFKz0R8JAAY-/0/1792256460234?e=1794441600&v=beta&t=aaRpGAhUyrPYixqThmlvSWNDweIJ2gPYzonUd6jp97k)
 
 Its really creative application for JEV. One thing worth adding is this doesn't just make agents smarter it makes them auditable. When every decision maps back to a defined ontology, you can trace exactly why the agent acted and that's huge for production. We applied similar logic to support tickets and escalations dropped ~40%. The confidence threshold is the real unlock. You're basically shifting the intelligence to the problem structure instead of hoping the model guesses right. 🔥... more
-
-{{< figure src="jev-to-workflow.assets/pasted-image-20260320224616.png" alt="Pasted image 20260320224616" >}}

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "System Design Problem-Solving Checklist"
-aliases:
-  - "/system-design/problem-solving-approach/"
 description: "A reusable checklist for framing a design problem, tracing behavior, comparing alternatives, checking failures, and evaluating the complete system."
 linkTitle: "Problem-Solving Checklist"
 ---

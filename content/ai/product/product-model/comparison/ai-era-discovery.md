@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Product Discovery in the AI Era: Cagan and Torres"
-aliases:
-  - "/ai/product/product-model/comparison/research-1-notes/"
 description: "An AI-focused comparative research draft combines Cagan’s product risks with Torres’s assumptions and discovery habits, proposing separate customer-evidence and AI-quality loops with risk-specific productization thresholds."
 linkTitle: "AI-Era Discovery"
 ---

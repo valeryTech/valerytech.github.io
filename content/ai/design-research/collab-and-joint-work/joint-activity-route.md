@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Joint Activity and Collaboration Patterns: Reading Route"
-aliases:
-  - "/ai/design-research/collab-and-joint-work/collab-transfer/"
 description: "A reading route through the joint-activity model, its human-AI collaboration patterns, and the reasoning behind them, with destinations in a research collection outside the published website."
 linkTitle: "Joint Activity Model"
 ---

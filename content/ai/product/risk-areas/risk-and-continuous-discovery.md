@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "SVPG Risk Dimensions and Torres's Continuous Discovery"
-aliases:
-  - "/ai/product/risk-areas/deep-research-report-citations-formatted/"
 description: "SVPG’s risk taxonomy and Torres’s opportunity trees address different parts of product discovery. An invoice-reconciliation case maps their terms and combines assumption tests, evidence, explicit Ethics, and outcome measurement."
 linkTitle: "Risk and Continuous Discovery"
 ---

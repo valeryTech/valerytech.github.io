@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Type Classes and Polymorphism in Haskell and Scala"
-aliases:
-  - "/functional-programming/type-classes-and-polymorphism/"
 description: "Kinds of polymorphism and parametricity, type classes and their Haskell and Scala encodings compared with Java interfaces, higher-kinded types, GADTs, type-level programming with singletons, and tagless final."
 weight: "70"
 linkTitle: "Type Classes and Polymorphism"
@@ -421,6 +419,7 @@ See also: [Nominal and structural subtyping]({{< ref "type-driven-design/05-stro
 - Gibbons and de Moor 2003, *The Fun of Programming*: chapter 12, Hinze, "Fun with phantom types": section 12.1, "Introducing phantom types", builds the typed expression language (`Zero`, `Succ`, `IsZero`, `If`) with constructors that carry type-equality constraints and a tag-free `eval :: Term t -> t`, with an exercise on why such functions need signatures; section 12.7, "A type equality type", encodes the constraints with a type-equality type; on *GADTs*.
 - [Serrano Mena 2022](/sources/5c1001bd2c4b75b2ff640e61358fc71a.bin), *Haskell: Almost Standard Libraries*: chapter 25, Reflection, section 25.3, "Automatic derivation, explained": `GHC.Generics` represents any data type with `U1`, `K1`, `:*:`, `:+:` and metadata `M1`, links each type to its representation through `Generic`/`Rep`, and writes a generic equality class whose pattern aeson's `GToJSON` follows; on *Deriving*.
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: introduction, section 0.1, "Type Classes", sets Haskell type classes beside Scala 2 implicits and Scala 3 `given`/`using`; section 0.2, "Higher-kinded Abstraction", abstracts over type constructors (`Container c`, `Container[C[_]]`); section 0.3, "Haskell's Newtype", uses `newtype` to give a type a second instance when Haskell rejects overlapping ones; on *Haskell and Scala encodings* and *Higher-kinded types*.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 2, sections 2.4-2.5, "Polymorphic functions: Abstracting over types" and "Following types to implementations", on parametric polymorphism and how polymorphic type signatures constrain the implementation (`partial1`, `curry`, `uncurry`, `compose`); section 10.5, "Typeclasses", on the Scala 3 encoding with a generic trait, `given` instances and `using` parameters; chapters 10-12 on higher-kinded type parameters `F[_]` (`Foldable[F[_]]`, `Functor[F[_]]`, `Monad[F[_]]`, `Applicative[F[_]]`); and section 13.6, "Capabilities", on capability traits such as `Console[F[_]]`; on *Parametric polymorphism*, *The parametricity game*, *Haskell and Scala encodings*, *Higher-kinded types* and *Tagless final*.
 - King 2019, *Parse, don't validate*: section "Parsing, not validating, in practice": where an invariant is impractical to make unrepresentable, an abstract newtype with a smart constructor "fakes" a parser, and singletons are not worth it to remove one `error "impossible"`; on *When it is worth it*.
 
 Further reading:

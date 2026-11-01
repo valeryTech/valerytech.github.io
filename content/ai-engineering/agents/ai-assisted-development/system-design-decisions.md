@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Making System Design Decisions"
-aliases:
-  - "/ai-engineering/agents/ai-assisted-development/skills-hld-build/"
 description: "System design turns intended behavior into components, data ownership, interactions, and failure rules. Consequential assumptions get focused checks, and decisions record what implementation must preserve or reconsider."
 lastmod: "2026-04-19"
 linkTitle: "Making System Design Decisions"

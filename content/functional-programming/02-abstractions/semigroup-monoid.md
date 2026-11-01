@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Semigroups and Monoids"
-aliases:
-  - "/functional-programming/semigroup-monoid/"
 description: "Associative combination and the identity element: definitions, laws, examples and uses of semigroups and monoids, and why the identity matters."
 weight: "60"
 linkTitle: "Semigroup and Monoid"
@@ -161,9 +159,9 @@ See also: [Applicative]({{< ref "functional-programming/02-abstractions/applicat
 - [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth*: chapter 2, section 2.1.3, Combining turns with Semigroup and Monoid: both classes on a small example of combining the turns of a radar antenna.
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell*: chapter 6, Type Classes, section "Wrapping Types with Newtype": `Semigroup` and `Monoid` as GHCi shows them, `mempty` as tied to an operation rather than a type, and `Sum` and `Product` newtypes that give `Int` two monoids; on *Examples*. Section "Deriving More Things": a first-non-empty monoid for `Maybe`, then the same instance obtained with `DerivingVia`; on *Uses*.
 - [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling*: chapter 4, section 4.1.2: spotting a monoid in two folds over money in a banking model, which needs two `Monoid[Money]` instances, one for addition and one for comparison; in Scala.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 10, Monoids: section 10.1 (`Monoid[A]` with `combine` and `empty`, the associativity and identity laws, instances for strings, lists, integer addition/multiplication, booleans, `Option` and endofunctions, and testing the laws), 10.2 (`foldMap` and folding lists with monoids), 10.3 (associativity enabling balanced parallel folds), 10.6 (`Foldable`) and 10.7 (composing monoids for products, maps and fused traversals); on *Law*, *monoid*, *Why the identity matters* and *Instances*.
 
 Further reading:
 
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*
 - [Milewski 2019](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin), *Category Theory for Programmers (Scala edition)*
 - [Bird and Gibbons 2020](/sources/c4f62226daeec327477fd1a5a1e478c0.bin), *Algorithm Design with Haskell*: chapter 1, Functional programming, exercise and answer 1.10: `foldr (⊕) e` and `foldl (⊕) e` agree on finite lists when `⊕` is associative with identity `e`; on *Why the identity matters*.

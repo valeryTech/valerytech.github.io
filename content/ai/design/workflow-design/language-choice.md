@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Language Choice and Semantic Guarantees for AI Systems"
-aliases:
-  - "/ai/design/workflow-design/langs-aspects/"
 description: "Go, Scala, Haskell, and BEAM expose different trade-offs in compiler feedback and fault isolation. Semantic substrates extend the question to guarantees preserved when people, models, and programs compose behavior."
 linkTitle: "Language Choice"
 ---

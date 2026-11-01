@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Project Understanding and Ownership"
-aliases:
-  - "/ai-engineering/agents/comprehension/"
 description: "Project ownership means knowing enough about a system to make and review changes safely. Coding agents can make gaps in that knowledge harder to spot: they produce working code and plausible explanations, even when key context is missing."
 linkTitle: "Project Ownership"
 ---

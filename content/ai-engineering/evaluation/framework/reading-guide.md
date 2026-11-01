@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "AI Evaluation Reading Guide"
-aliases:
-  - "/ai-engineering/evaluation/framework/guide/"
 description: "The AI evaluation guide routes practical questions to methods for case design, evidence capture, failure analysis, evaluator validation, controlled comparisons, and learning from real use."
 linkTitle: "Reading Guide"
 ---
@@ -14,19 +12,19 @@ Start with [AI Evaluation]({{< ref "ai-engineering/evaluation/framework/introduc
 
 Then use the document that matches the current question:
 
-| Need | Document |
-| --- | --- |
-| Understand how product intent, system behavior, decision needs, and evaluation connect | [Conceptual Model for AI Evaluation]({{< ref "ai-engineering/evaluation/framework/conceptualization" >}}) |
-| Understand the purpose and limits of evaluation | Goals of AI Evaluation |
-| Distinguish cases, executions, traces, judgments, and findings | [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) |
-| Choose situations, inputs, cases, samples, and datasets | [Coverage and Case Design]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}}) |
-| Build a starting set of test data | [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework/10-user-inputs" >}}) |
-| Define criteria, choose evaluators, and produce findings | [Judgment and Findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}) |
-| Find recurring failures in reviewed traces | [Failure Analysis]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}) |
-| Design the tools and practices that produce evaluation evidence | [Evaluation Subsystem]({{< ref "ai-engineering/evaluation/framework/evaluation-subsystem" >}}) |
-| Decide whether repeated controlled execution is needed | [Why Use an Evaluation Harness?]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}}) |
-| Understand controlled execution and comparison | [Evaluation Harness and Workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) |
-| Learn from observed production behavior | [Production Learning]({{< ref "ai-engineering/evaluation/framework/production-learning" >}}) |
+| Need                                                                                   | Document                                                        |
+| -------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Understand how product intent, system behavior, decision needs, and evaluation connect | [Conceptual Model for AI Evaluation]({{< ref "ai-engineering/evaluation/framework/conceptualization" >}})      |
+| Understand the purpose and limits of evaluation                                        | Goals of AI Evaluation             |
+| Distinguish cases, executions, traces, judgments, and findings                         | [Evidence Model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}})                             |
+| Choose situations, inputs, cases, samples, and datasets                                | [Coverage and Case Design]({{< ref "ai-engineering/evaluation/framework/coverage-and-case-design" >}})         |
+| Build a starting set of test data                                                      | [Building a Starting Set of User Inputs]({{< ref "ai-engineering/evaluation/framework/10-user-inputs" >}})     |
+| Define criteria, choose evaluators, and produce findings                               | [Judgment and Findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}})            |
+| Find recurring failures in reviewed traces                                             | [Failure Analysis]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}})                        |
+| Design the tools and practices that produce evaluation evidence                        | [Evaluation Subsystem]({{< ref "ai-engineering/evaluation/framework/evaluation-subsystem" >}})                 |
+| Decide whether repeated controlled execution is needed                                 | Why Use an Evaluation Harness? |
+| Understand controlled execution and comparison                                         | [Evaluation Harness and Workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})     |
+| Learn from observed production behavior                                                | [Production Learning]({{< ref "ai-engineering/evaluation/framework/production-learning" >}})                   |
 
 The documents follow one reasoning chain:
 

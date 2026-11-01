@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Perspective: Long-Running Delegated Work"
-aliases:
-  - "/ai/product/strategic-analysis/perspective-topics/"
 description: "An initial agent-platform outlook is reworked into a computational-platform proposal centered on typed programs, durable authoritative state, contracts, provenance, and verification, with harnesses treated as replaceable execution policies."
 linkTitle: "Long-Running Work"
 ---

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functional Programming Study Log"
-aliases:
-  - "/functional-programming/study-log/"
 description: "A dated study log from November and December 2023 covering folds and fusion, unfolds and origami programming, laziness and trees, traverse, continuation-passing style, monoids and monads."
 weight: "40"
 linkTitle: "Study Log"
@@ -594,4 +592,5 @@ Further reading:
 - [Kiselyov et al. 2017](/sources/200c5a9ac1e608ab2bd4c0c46d7bb323.bin), *Stream Fusion, to Completeness*
 - [Allen et al. 2016](/sources/ef73b442d98627834d86e8f39127b0d6.bin), *Haskell Programming from First Principles*: section 10.10, rewriting list functions (`myAnd`, `myOr`, `myAny`, `myElem`, `myReverse`) as folds, point-free where possible; sections 20.2 and 20.3, `Foldable`'s minimal definition and `foldMap` with `Sum`, `Product`, `All` and `Any`; on *`any` and `all`, recursively and as folds*, *Foldable* and *Haskell programming: list functions and folds*.
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: section 4.2, "Traversables", on `mapM` and `traverse` as one function duplicated by history, on *`traverse` and `mapM`*; section 9.2, "Nicer Code with Continuations", on `Cont r a` as `(a -> r) -> r`, callbacks and the `Cont` monad, on *Continuation-passing style*; section 3.2 on `ZipList` as an applicative without a monad, on *Applicative and Monad*.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: section 3.4, "Trees", writes `size`, `depth`, `map` and `fold` over a binary `Tree`, on *Haskell programming: list functions and folds* (1.12.23); section 5.4, "Infinite lazy lists and corecursion", defines `unfold` and builds `fibs`, `from`, `continually`, `map` and `take` through it, on *24.11.23* and *Implementing `unfoldr`* (27.11.23); sections 10.2, 10.6 and 10.7 cover `foldMap`, `Foldable` and product monoids that fuse two folds into one pass, on *Foldable* and *Composable folds: the `foldl` package* (23.11.23) and *Monoids* (1.12.23); sections 12.3-12.4 contrast `Applicative` with `Monad` (`ZipList`, `Validated`, and context-free versus context-sensitive parsers), on *Applicative and Monad* (1.12.23).
 - [Maguire 2018](/sources/405eaf932837c8349209bea8675e06e4.bin), *Thinking with Types*: section 6.4, "The Continuation Monad", on the isomorphism between `a` and `forall r. (a -> r) -> r` and on `Cont` flattening nested callbacks into `do` notation; on *Continuation-passing style*.

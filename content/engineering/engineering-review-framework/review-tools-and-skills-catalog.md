@@ -23,7 +23,7 @@ Local sources inspected on 2026-04-20. Descriptions reflect the current source f
 ### What isolation currently means
 
 
-The framework's [Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) note summarizes the two approaches explored in the harness and links to the original investigation, including failure-based coverage and independent test authorship.
+The framework's [Backward Design and Independent Verification]({{< ref "engineering/engineering-review-framework/backward-design-and-independent-verification" >}}) note summarizes the two approaches explored in the harness and links to the original investigation, including failure-based coverage and independent test authorship. [Independent Verification Workflows for Coding Agents]({{< ref "ai-engineering/agents/sdlc/independent-verification-workflows" >}}) describes both workflows and their current state.
 
 In `agent-harness`, the worker adapter starts an ephemeral process for each stage. Design and review roles use read-only access; implementation roles can write. Some verification roles receive behavioral requirements without the implementation plan, and critics receive separate inputs.
 
@@ -47,6 +47,7 @@ The two EML source locations below contain different skills; their directory nam
 | build-data-viewer | Builds a local viewer for evaluation datasets, coverage, cases, and provenance. Useful when reviewing an evaluation dataset or harness. |
 | product-framing | Clarifies actors, intended outcomes, workflows, capabilities, and scope. Supports business context and requirements when product intent is unclear. |
 | experiment | Defines a decision-relevant empirical question, evidence, and verdict. Supports uncertain product or quality claims; its current emphasis is product experiments. |
+| prototype | Answers one decision-relevant question with the smallest credible runnable artifact: an interaction, workflow, state model, data shape, integration boundary, failure path, or technical feasibility. Produces evidence for the decision; it does not make the decision or produce production code. Useful when a review question needs behavior exercised before a design choice. |
 
 ### Ponytail
 

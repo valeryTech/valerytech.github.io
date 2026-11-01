@@ -2,9 +2,6 @@
 draft: false
 toc: true
 title: "Focused Checks for AI Product Behavior"
-aliases:
-  - "/ai-engineering/causal-stack/layer-2/evaluation-method-reference/"
-  - "/ai-engineering/evaluation/causal-stack/layer-2/evaluation-method-reference/"
 description: "Focused checks turn a product question into cases, a judgment rule, and an interpretable comparison. Recipes cover evidence use, variation, exact meaning, tool effects, fallback, and continued customer outcomes."
 linkTitle: "Focused Checks"
 ---

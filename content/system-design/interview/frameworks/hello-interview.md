@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Hello Interview Delivery Framework"
-aliases:
-  - "/system-design/interview/frameworks/framework-hi/"
 description: "Hello Interview’s timed delivery framework, moving from requirements, entities, and interfaces to a complete high-level design and focused deep dives."
 linkTitle: "Hello Interview"
 ---

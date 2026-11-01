@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Structuring Effectful Functional Programs"
-aliases:
-  - "/functional-programming/structuring-effectful-programs/"
 description: "Why monads don't compose and the ways around it: monad transformers, mtl-style classes, service handles and ReaderT, free monads, tagless final and ZIO layers, with their trade-offs and when to pick which."
 weight: "30"
 linkTitle: "Structuring Effectful Programs"
@@ -367,7 +365,7 @@ Two differences between Haskell and Scala. In Haskell the algebra is usually a t
 
 Caveat: in Scala the style is contested. When an application only ever uses one effect type, abstracting over `F[_]` adds type parameters and constraints everywhere for flexibility that is never used. ZIO's authors, John De Goes among them, have argued against it for that reason (see [ZIO's environment and ZLayer](#zios-environment-and-zlayer)). Its strongest case is libraries meant to work with any effect type.
 
-The domain-modeling side of tagless final, with an accounts example, its costs and the expression-problem links, is in [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}) and not repeated here. [Daniel sentence]({{< ref "type-driven-design/04-architecture/tagless-final" >}}#daniel-sentence) covers where the style comes from, how it extends programming to interfaces, and how it differs from `F[_]` plus type classes. Oleg Kiselyov, who introduced the technique with Carette and Shan, has a course on it: <https://okmij.org/ftp/tagless-final/course/index.html#lecture>.
+The domain-modeling side of tagless final, with an accounts example, its costs and the expression-problem links, is in [Tagless final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}) and not repeated here. [Tagless final: In brief]({{< ref "type-driven-design/04-architecture/tagless-final" >}}#in-brief) covers where the style comes from, how it extends programming to interfaces, and how it differs from `F[_]` plus type classes. Oleg Kiselyov, who introduced the technique with Carette and Shan, has a course on it: <https://okmij.org/ftp/tagless-final/course/index.html#lecture>.
 
 ## Free monads versus tagless final
 
@@ -477,5 +475,5 @@ See also: [Monads]({{< ref "functional-programming/02-abstractions/monads" >}}),
 Further reading:
 
 - [Welsh and Gurnell 2020](/sources/08cab18bbc8a17a6885874831fe8c431.bin), *Scala with Cats*: ch. 5 monad transformers in Cats.
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: ch. 13 builds an IO type and free monads, trampolining included.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: ch. 12, exercise 12.10 and section 12.7.6, "Monad composition" (why monads don't compose in general, `composeM` when the inner monad has `Traverse`, and `OptionT`); ch. 13 builds an `IO` type and free monads (trampolining included, 13.3-13.5) and introduces capability traits such as `Console[F[_]]` (13.6).
 - [Rosien 2021](/sources/26d28e80e57cc7f4abab6120e2fa075d.bin), *Essential Effects*: Cats Effect `IO`, resources and concurrency, the runtime under a tagless final application.

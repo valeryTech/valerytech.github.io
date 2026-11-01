@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Harness-Building for Coding Agents"
-aliases:
-  - "/ai/design-research/input/harness/in-harnes-building/"
 description: "A harness converts model competence into software work through access, context, action, state, evaluation, and oversight; classical agent architectures guide its decomposition and component-level comparisons."
 linkTitle: "Coding-Agent Harnesses"
 ---

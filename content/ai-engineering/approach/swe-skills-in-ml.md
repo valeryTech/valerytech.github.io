@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Carrying Software Engineering Skills into ML and LLM Work"
-aliases:
-  - "/ai-engineering/approach/cross-domain-mindset/"
 description: "Product thinking, ownership, and software architecture carry into ML and LLM work. A lifecycle gap map connects those strengths to data literacy, statistical experiments, evaluation, and focused learning projects."
 linkTitle: "SWE Skills in ML"
 ---

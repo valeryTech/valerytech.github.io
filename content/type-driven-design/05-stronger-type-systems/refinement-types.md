@@ -11,53 +11,28 @@ A refinement type puts a predicate into a type, and a solver checks it. Part of 
 ## What a refinement type is
 
 
-In the usual PL sense, a refinement type is a base type restricted by a logical predicate:
+In the programming-languages sense, a refinement type is a base type restricted by a logical predicate:
 
 ```text
 {x : Int | x > 0}
 ```
 
 
-Read that as "an `Int` named `x` for which `x > 0` is true."
+Read that as "an `Int` named `x` for which `x > 0` is true." Where `Int` contains `-3, 0, 1, 2, ...`, `{x : Int | x > 0}` contains only `1, 2, 3, ...`. It is set-builder notation from mathematics, \(\{x \in \mathbb{Z} \mid x > 0\}\), used as a type. Another analogy is a SQL `CHECK (x > 0)` constraint, but checked by the compiler on every code path that produces an `x` instead of by the database on every insert.
 
-So:
-
-```text
-Int
-```
-
-
-contains `-3, 0, 1, 2, ...`, while
-
-```text
-{x : Int | x > 0}
-```
-
-
-contains only `1, 2, 3, ...`.
-
-It's set-builder notation from mathematics, {x ∈ ℤ | x > 0}, used as a type. Another analogy is a SQL `CHECK (x > 0)` constraint, but checked by the compiler on every code path that produces an `x`, instead of by the database on every insert.
-
-The important part is that the predicate participates in static type checking. In systems like Liquid Haskell, the compiler/checker can send these logical constraints to an SMT solver and prove them.
-
-For example:
+Because the predicate participates in static type checking, systems such as Liquid Haskell can send these constraints to an SMT solver and prove them at compile time:
 
 ```text
 type Positive = {x : Int | x > 0}
 
 divide : Int -> {d : Int | d != 0} -> Int
-```
 
-
-Then:
-
-```text
 divide 10 2   // accepted
 divide 10 0   // rejected statically
 ```
 
 
-They can get more powerful because predicates can refer to other values:
+Predicates can also refer to other values in scope, so a signature can relate inputs and outputs:
 
 ```text
 range :
@@ -67,7 +42,7 @@ range :
 ```
 
 
-Now the type describes relationships between inputs and outputs. That's where refinement types start looking like lightweight program verification.
+At that point refinement types act as lightweight program verification.
 
 ### Why bother
 
@@ -90,7 +65,7 @@ The checker turns each place where a value flows into a refined type into a logi
 
 Three consequences shape how refinement types are used:
 
-- **Tests refine values.** In the branch of `if isPositive d` the checker knows `d > 0`, but only if it knows what `isPositive` means. The tutorial ("Testing Values: Booleans and Propositions") gives the boolean function a refined result, `isPositive :: x:Int -> {v:Bool | v <=> x > 0}`, which ties the bit to the proposition it answers. That's the refinement-type fix for Harper's boolean blindness ([Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}#dont-throw-information-away)), and it needs no wrapper type: the same `Int` is simply known to be positive inside the branch.
+- **Tests refine values.** In the branch of `if isPositive d` the checker knows `d > 0`, but only if it knows what `isPositive` means. The tutorial ("Testing Values: Booleans and Propositions") gives the boolean function a refined result, `isPositive :: x:Int -> {v:Bool | v <=> x > 0}`, which ties the bit to the proposition it answers. That's the refinement-type fix for Harper's boolean blindness ([PDF](/sources/844b46f25205adfc27e60dec253a34fc.bin), section 25.2, "Boolean Blindness"; see [Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}#dont-throw-information-away)), and it needs no wrapper type: the same `Int` is simply known to be positive inside the branch.
 - **Refinements are inferred.** Liquid Types (Rondon, Kawaguchi and Jhala, [PDF](/sources/c1ee665591c2e20039979587673830e7.bin)) infers refinements as conjunctions of *qualifiers*, simple predicate templates such as `0 <= v` or `v < len a`, so loop invariants and the refinements of local variables don't have to be written. In their benchmarks the annotations needed to prove array-bounds safety dropped from 31% of the program text to under 1%. When a property can't be proved, the results show where to add a qualifier, or where a run-time check is needed after all.
 - **Measures lift functions into the logic.** A *measure* is a total Haskell function, such as `len` or `notEmpty`, that the checker can use inside predicates (Jhala, chapter 6, "Boolean Measures"). With it, "this list is non-empty" becomes a refinement of an ordinary list, `{v:[a] | notEmpty v}`, rather than a separate `NonEmpty` type with its own functions.
 
@@ -101,20 +76,22 @@ LiquidHaskell also checks termination by default, since a function that might no
 
 The power comes with practical limits:
 
-- **The logic has to stay decidable.** SMT-based checkers work well with linear arithmetic, equality and uninterpreted functions. With non-linear arithmetic (`x * y > z`) or quantifiers, the solver can time out or give up, and you end up adding hints or restructuring code to please it.
+- **The logic has to stay decidable.** SMT-based checkers work well with linear arithmetic, equality and uninterpreted functions. With non-linear arithmetic (`x * y > z`) or quantifiers, the solver can time out or give up, and you end up adding hints or restructuring code to please it. Harper ([PDF](/sources/844b46f25205adfc27e60dec253a34fc.bin), section 25.4, "Notes") puts the underlying reason cleanly: ordinary typing should be decidable, whereas refinement satisfaction in full generality isn't, which is why automatic checkers carve out a decidable fragment.
 - **Errors are failed implications.** A rejection says that some generated logical formula couldn't be proved, which takes practice to trace back to the line that's wrong.
 - **Some annotation is unavoidable.** Liquid inference finds most loop invariants and local refinements from qualifiers, so the burden is far lower than in classic program verification. What remains is writing the specifications of exported functions, adding qualifiers or measures when inference falls short, and termination arguments for recursion the checker can't see terminating.
 - **The trusted base.** Specifications for code the checker can't see, such as library functions, foreign calls or data from outside, are assumed rather than proved. Jhala's chapter 11 ("Assumptions vs Guarantees") makes the distinction explicit: an assumed specification is trusted, a verified one is checked. A wrong assumption is the refinement-type version of a type that lies ([What Belongs In Types]({{< ref "type-driven-design/01-foundations/what-belongs-in-types" >}}#costs-and-failure-modes)).
-- **Library encodings stop at literals.** Iron and `refined` check literal values at compile time, but a value that arrives at runtime still goes through a checking function (`refineEither`, `refineV`). For real input they're [Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}) with nicer syntax, not proofs.
+- **Library encodings stop at literals.** Iron (Volpe, [PDF](/sources/42ef10a33c54df6756cd49d40ee34101.bin), section 4.1.3, "Refinement types") and `refined` (Volpe, [PDF](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), chapter 1) check literal values at compile time, but a value that arrives at runtime still goes through a checking function (`refineEither`, `refineV`). For real input they're [Parse Dont Validate]({{< ref "type-driven-design/02-parsing-and-evidence/parse-dont-validate" >}}) with nicer syntax, not proofs.
 
 ## Library sources
 
 
 - [Jhala et al. 2020](/sources/c7c34c23605882ae6298a988734fef45.bin), *Programming with Refinement Types: An Introduction to LiquidHaskell* -- the LiquidHaskell tutorial: chapter 1 on bugs well-typed programs still have, chapter 2 on the logic and SMT, chapter 3 on refinement types, subtyping and testing values, chapter 6 on measures, chapter 11 on assumptions and guarantees; on *What a refinement type is*, *How the checking works* and *Limits*
 - [Rondon et al. 2008](/sources/c1ee665591c2e20039979587673830e7.bin), *Liquid Types* -- inference of refinement types from qualifiers, with run-time checks where proof fails; on *How the checking works* and *Limits*
+- [Harper 2016](/sources/844b46f25205adfc27e60dec253a34fc.bin), *Practical Foundations for Programming Languages, 2nd Edition* -- chapter 25, "Behavioral Typing": type refinements separated from structural types (25.1), boolean blindness and why a plain boolean test doesn't refine branches (25.2), refinement safety (25.3), and why refinement sits after typing and is undecidable in full generality (25.4); on *How the checking works* and *Limits*
 - [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala, 2nd Edition* -- chapter 1 uses the `refined` library for refinement types and validates runtime values into them; on *Limits*
+- [Volpe 2023](/sources/42ef10a33c54df6756cd49d40ee34101.bin), *Functional Event-Driven Architecture: Powered by Scala 3* -- section 4.1.3, "Refinement types", on Iron's compile-time literal checks and runtime validation with `refineNel`; on *Limits*
 
 Further reading:
 
-- [Harper 2016](/sources/844b46f25205adfc27e60dec253a34fc.bin), *Practical Foundations for Programming Languages, 2nd Edition*
-- [Wadler 2015](/sources/e73a714dde09d48962f58768e5bd200a.bin), *Propositions as Types*
+- [Wadler 2015](/sources/e73a714dde09d48962f58768e5bd200a.bin), *Propositions as Types* -- section 1, "Church, and the theory of computation", on why general recursion makes a logic inconsistent while terminating calculi keep proofs sound; on termination in *How the checking works*
+- Scott et al. 2025, *Programming Language Pragmatics, 5th Edition* -- section 7.1.5, "Refinement Types" (Examples 7.13-7.16), tracing refinement types from Pascal and Ada subranges to Liquid Haskell's `{d:Int | d >= 0}`; on *What a refinement type is*

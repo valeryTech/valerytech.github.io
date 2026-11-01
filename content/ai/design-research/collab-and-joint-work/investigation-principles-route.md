@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Interactive Investigation Principles: Reading Route"
-aliases:
-  - "/ai/design-research/collab-and-joint-work/joint-and-collap-principles/"
 description: "A route through the interactive-investigation position paper, seven principles, and worked retrieval examples, with commentary and research destinations outside the published website."
 linkTitle: "Investigation Principles"
 ---

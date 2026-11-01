@@ -6,7 +6,7 @@ description: "Build a test portfolio from product intent, invariants, contracts,
 linkTitle: "Test Strategy Foundations"
 ---
 
-This document combines the earlier "meta-way" and "preparation" notes into one practical playbook. It follows the main ideas of *The Practical Test Pyramid*: fast feedback, narrow rather than broad integration tests, contracts that reduce reliance on end-to-end tests, and avoiding duplication.
+This document combines the earlier "meta-way" and "preparation" notes into one practical playbook. It follows the main ideas of *The Practical Test Pyramid*: fast feedback, narrow rather than broad integration tests, contracts that reduce reliance on end-to-end tests, and avoiding duplication. ([Vocke 2018](#vocke-2018))
 
 ## 1. Why tests exist (the "meta" model)
 
@@ -425,3 +425,8 @@ A practical gate before committing to the portfolio:
 8. Testability hooks agreed (clocks/IDs, seams, hermetic infra).
 
 Once this gate is met, defining tests mainly means *mapping evidence to risks*, rather than debating test types.
+
+## References
+
+
+- Vocke, H. (2018). [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html). ^vocke-2018

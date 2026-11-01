@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Defining the Product Before Building"
-aliases:
-  - "/ai-engineering/agents/ai-assisted-development/skill-product-framing-build/"
 description: "A buildable brief identifies who needs what outcome and how they complete the job. Separating agreed requirements from existing behavior, assumptions, and open choices gives engineers and agents a basis for design."
 lastmod: "2026-04-19"
 linkTitle: "Product Framing"

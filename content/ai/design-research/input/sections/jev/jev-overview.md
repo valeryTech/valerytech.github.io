@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Jev: TypeSafe AI's Decision Model"
-aliases:
-  - "/ai/design-research/input/sections/jev/jev-1/"
 description: "An introduction to Jev as a probabilistic decision model for bounded software tasks, covering typed answers, uncertainty, related approaches, and integration patterns."
 linkTitle: "Jev Overview"
 ---

@@ -2,10 +2,6 @@
 draft: false
 toc: true
 title: "Investigating AI Product Behavior"
-aliases:
-  - "/ai-engineering/evaluation/causal-stack/"
-  - "/ai-engineering/causal-stack/causal-stack-operating-model/"
-  - "/ai-engineering/evaluation/causal-stack/causal-stack-operating-model/"
 description: "A customer task connects the investigation: record what happened, compare explanations, test a change, and follow its effect on the work. Cases, claims, and checks keep observations and decisions traceable."
 linkTitle: "Causal Stack"
 ---

@@ -2,160 +2,132 @@
 draft: false
 toc: true
 title: "Declarative Specifications and Engines"
-aliases:
-  - "/engineering/ddd/"
-  - "/engineering/ddd/declarative/"
-description: "Research notes connecting declarative specifications, execution engines, domain models, DSLs, and semantic modeling, with a list of contributors to study."
+description: "Declarative specifications and execution engines, four senses of \\\"declarative\\\", the connection to functional programming, DSLs, model-driven engineering and ontologies, and key contributors."
 linkTitle: "Declarative Specifications"
 ---
-## Sources, to read
 
-
-Influential contributors: Robert Kowalski, John McCarthy,
-
-- **Robert Kowalski** co-founded logic programming. His equation "Algorithm = Logic + Control" (1979, [PDF](/sources/8f73baad231b68edee754fb4f0a3677f.bin)) is the cleanest statement of the declarative idea: the logic says what is true, the control (the engine) decides how to search for an answer, and either can change without the other.
-- **John McCarthy** created Lisp, and in "Programs with Common Sense" (1959) proposed the Advice Taker, a program that would act on declarative statements of facts instead of procedures. That's the root of knowledge representation.
-- Worth adding: **Edgar Codd**, whose relational model (1970) is why SQL is declarative and why a query optimizer can exist, and **Paul Hudak**, "Building Domain-Specific Embedded Languages" (1996, [PDF](/sources/8fad5eba3eb55d02bad4615c3915ef79.bin)), the standard reference for embedded DSLs.
+A declarative system splits a problem into a **specification** (what must hold, with a meaning independent of how it is run) and an **engine** (which plans, schedules, optimizes or reconciles execution to satisfy that specification). Part of [Type-driven design]({{< ref "type-driven-design" >}}).
 
 ## Semantics
 
 
-The deepest idea behind declarative systems is: The specification itself has meaning independent of execution.
+The core idea behind declarative systems is that **the specification has meaning independent of execution**.
 
-A SQL query means "the set of rows that satisfy these conditions", whatever join order the optimizer picks. A Kubernetes manifest means "three replicas of this pod should be running", whatever the controller does to get there. That separation is what gives the engine its freedom: it can reorder, parallelize, cache or retry, as long as the meaning is preserved. An imperative program means only the sequence of its steps. The analogy is ordering in a restaurant: "steak, medium-rare" is a declarative spec, and the kitchen decides the steps. The formal version of "meaning independent of execution" is denotational semantics.
+Robert Kowalski's equation "Algorithm = Logic + Control" (1979, [PDF](/sources/8f73baad231b68edee754fb4f0a3677f.bin)) is the classic statement: the *logic* states what is true, the *control* (the engine) decides how to search for or compute an answer, and either can change without changing the meaning of the other. A SQL query means "the set of rows that satisfy these conditions", whatever join order the optimizer picks. A Kubernetes manifest means "three replicas of this pod should be running", whatever the controller does to get there. That separation is what gives the engine its freedom: it can reorder, parallelize, cache or retry, as long as the meaning is preserved. An imperative program means only the sequence of its steps. The analogy is ordering in a restaurant: "steak, medium-rare" is a declarative spec, and the kitchen decides the steps. The formal version of "meaning independent of execution" is denotational semantics.
 
-Declarative approaches (sub-paradigms): functional programming; query language; desired state systems <- what is interesting for our use case.
+Four major families of declarative systems appear in practice:
 
-Logic programming (Prolog, Datalog) belongs on this list too, and is the most purely declarative of them.
+- **Logic programming** (Prolog, Datalog), which states facts and rules and leaves resolution or bottom-up evaluation to the solver.
+- **Query languages** (SQL, relational algebra), where Codd's relational model (1970, [PDF](/sources/e1fd244d89c185697c85566dfc093069.bin)) removes ordering, indexing and access-path dependence from the data model so queries stated in a predicate-calculus sublanguage can be rewritten by an optimizer.
+- **Pure functional programming**, where expressions denote values rather than sequences of mutations ([Functional programming connection](#functional-programming-connection)).
+- **Desired-state systems** (Kubernetes, Terraform, Puppet), which run a reconciliation loop: observe the actual state, compare it with the desired state, act on the difference, and repeat. In Kubernetes every API object splits `Spec` (desired state) from read-only `Status` (observed state), and because controllers act on current observation rather than a step-by-step state diagram, a crashed controller simply picks up where it left off (Burns et al., [PDF](/sources/74451a26da33a5a2be9b9a3e21879578.bin), "Application-Oriented Infrastructure"). That makes them idempotent, convergent and self-healing. Two catches: the engine has to know how to get from *any* actual state to the desired one, so where it can't (a schema migration that would destroy data), the abstraction leaks and someone writes imperative steps; and when users need dynamic variation, declarative YAML or HCL files tend to grow loops and conditionals into poorly tooled "configuration is code" unless data is kept separate from programmatic generation (Burns et al., "Configuration"; Morris, [PDF](/sources/c43211da6a539df31836491ddf46d145.bin), chapter 4). See [GitOps]({{< ref "engineering/platform/gitops" >}}).
 
-Desired-state systems (Kubernetes, Terraform, Puppet) run a reconciliation loop: observe the actual state, compare it with the desired state, act on the difference, and repeat. That makes them idempotent, convergent and self-healing. The catch is that the engine has to know how to get from *any* actual state to the desired one, and where it can't (a migration that would destroy data), the abstraction leaks and someone writes imperative steps after all. See [GitOps]({{< ref "engineering/platform/gitops" >}}).
+Across all four families, the **engine / runtime** is what determines the execution plan, scheduling, optimization and reasoning:
 
-**Specification.** Formal representation of intent. <- for now we just described steps, agents, prompts; so like it's externalized imperative program;
-
-That diagnosis is the important one. A file that says "step 1: call agent A; step 2: call agent B" isn't declarative just because it's YAML: the engine has no freedom, so it's an imperative program in a data format, like a CI pipeline file. A declarative spec would state the goal and the constraints ("a summary that cites every source, within 30 seconds") and leave the plan to the engine. A quick test: could the engine reorder, parallelize, cache or skip a step without changing what the spec means? If not, the spec is imperative.
-
-Two papers in the library sharpen the critique:
-
-- **AgentSPEX** (Wang et al. 2026, [PDF](/sources/987a0801641b20eb5023491ad849f027.bin)) is a clean example of the step-file style. An agent is a YAML file of steps, loops and variables, and the interpreter iterates through the operations in order; what the engine adds is checkpointing, logging and replay, not planning. The authors' case for explicit control flow is controllability compared with a free-running ReAct agent, which is a real benefit, but it isn't declarative in the sense of *Semantics* above.
-- **Etas** (Tan et al. 2026, [PDF](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin)) points at what such files lack besides goals. A LangGraph graph shows the order of the steps but not that one of them may send an email or needs a human approval. If each step's effects were typed ([Effects And Interpreters]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}#algebraic-effects-and-effect-typing)), an engine could reorder, retry or cache exactly the steps whose effects allow it, which is the freedom the quick test asks about.
-
-**Engine / Runtime.** Determines:
-
-- execution plan
-- scheduling
-- optimization
-- reasoning
-
-Examples:
-
-- SQL optimizer
+- SQL query optimizers
 - Prolog's resolution and Datalog's bottom-up evaluation
 - Kubernetes controllers (reconciliation)
 - Terraform's plan, a diff between desired and recorded state
-- build systems such as Make and Bazel, which decide what to rebuild from the dependency graph
-- React's reconciler, which turns a description of the UI into DOM updates
+- Build systems such as Make, Shake and Bazel, which decide what to rebuild from the dependency graph (Mokhov et al., [PDF](/sources/968bcf5644f3dbb1736d59b47f1717c1.bin))
+- React's reconciler, which turns a declarative UI tree into DOM updates
+
+### Specifications versus externalized imperative step-files
+
+
+A **specification** is a formal representation of intent. Writing a workflow in YAML or JSON ("step 1: call agent A; step 2: call agent B") does not make it declarative: if the file only lists steps, agents and prompts in sequence, the engine has no freedom, so it is an externalized imperative program, like a CI pipeline file. A declarative specification would state the goal and constraints ("a summary that cites every source, within 30 seconds") and leave the plan to the engine.
+
+A quick test: **could the engine reorder, parallelize, cache or skip a step without changing what the spec means?** If not, the spec is imperative.
+
+Three papers on agent systems in the library sharpen this distinction:
+
+- **AgentSPEX** (Wang et al. 2026, [PDF](/sources/987a0801641b20eb5023491ad849f027.bin)) is a clean example of the step-file style. An agent is a YAML file of steps, loops and variables, and the interpreter iterates through the operations in order; what the engine adds is checkpointing, logging and replay, not planning. The authors' case for explicit control flow is controllability compared with a free-running ReAct agent, which is a real benefit, but it isn't declarative in the sense of *Semantics* above.
+- **Etas** (Tan et al. 2026, [PDF](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin)) points at what such files lack besides goals. A LangGraph graph shows the order of the steps but not that one of them may send an email or needs human approval. If each step's effects were typed ([Effects And Interpreters]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}#algebraic-effects-and-effect-typing)), an engine could reorder, retry or cache exactly the steps whose effects allow it, which is the freedom the quick test asks about.
+- **Agentproof** (Xavier et al. 2026, [PDF](/sources/ec7f81db2ffcdffa5a3e856e2b83530f.bin)) shows what an explicit step graph *does* buy over opaque host code: static verification. It extracts a typed workflow graph from LangGraph, CrewAI, AutoGen and Google ADK to check topology defects (dead ends, livelocks, missing human gates) and verifies a genuinely declarative temporal safety DSL (seven LTL safety forms compiled to finite automata) across every path before the agent runs. The workflow is still imperative control flow, while the safety policy checked against it is declarative.
 
 ## Four senses of "declarative"
 
 
-The word is used in at least four senses in this note and its sources, and they're easy to mix up:
+The word is used in at least four senses in the literature, and they are easy to mix up:
 
 1. **A goal plus an engine that plans.** SQL, Prolog, a Kubernetes manifest: the specification states what must be true, and the engine chooses how. This is the sense of *Semantics* above, and the one the quick test checks.
 2. **A program as a value, run later.** A free-monad scenario or a tagless-final program describes steps without performing them, and an interpreter performs them. Granin ([PDF](/sources/1c38a03f85e649d3dcd0ebb0dbcbe9ea.bin), section 6.2.1, "Decoupling of computation and interpretation") admits such scenarios may feel imperative, since they're still a sequence of steps, and calls them declarative because they're pure values that can be interpreted in more than one way. The engine's freedom is the choice of interpretation (real, test, logging), not the order of the steps.
 3. **What separated from how, by combinators.** Ghosh's principle "publish what to do, hide how to do within combinators" ([PDF](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), section 10.2.4) and the contract combinators of Peyton Jones et al.: the domain code names the operations, and the library decides the mechanics.
-4. **Declarative steps inside an imperative program.** DSPy (Khattab et al. 2023) describes its pipelines as imperative computation graphs in which the language-model calls are declarative modules. Each call is a *signature*, a typed declaration of its inputs and outputs, and the compiler is free to choose the prompt and the demonstrations for it, but the program's control flow stays as written.
+4. **Declarative steps inside an imperative program.** DSPy (Khattab et al. 2023, [PDF](/sources/dce6a336b5540ff4b3606105310db867.bin)) describes its pipelines as imperative computation graphs in which the language-model calls are declarative modules. Each call is a *signature*, a typed declaration of its inputs and outputs, and the compiler is free to choose the prompt and the demonstrations for it, but the program's control flow stays as written.
 
 An agent workflow file can be declarative in sense 4 (each step's contract) or sense 2 (the file is data that an interpreter runs) without being declarative in sense 1. Only sense 1 gives the engine freedom over the plan, and only sense 1 passes the quick test.
-
-## Relationships
-
-
-The branch of declarative systems that uses domain models and DSLs (Domain-Specific Languages) is the intersection of:
-
-- Declarative Programming
-- Domain-Driven Design (DDD)
-- Model-Driven Engineering (MDE) ???
-- Language-Oriented Programming (LOP) ??
-- Semantic Modeling / Ontologies
-
-Both question-marked entries belong:
-
-- **MDE** makes models, not code, the primary artifacts. A metamodel defines what a valid model is, and transformations turn models into code or into other models (OMG's MDA, Eclipse EMF, the ATL language). It belongs because a metamodel is a domain model of a modeling language, and Bézivin, listed below, is MDE. Critique: the heavyweight, UML-centred wave of the early 2000s had a mixed record in industry; what survived is narrow DSLs with code generators.
-- **LOP** is Martin Ward's 1994 term: first design a language for the problem, then write the solution in it. Sergey Dmitriev's JetBrains MPS and Racket's "languages as libraries" are the main lines. It's the DSL side of the intersection, and Völter's MPS work below is LOP tooling.
-
-## Influential Contributors
-
-
-- Martin Fowler
-  - *Domain-Specific Languages* (2010, [PDF](/sources/1b9258d7e919db34a2f90d39a7d49c37.bin)): internal versus external DSLs, and the **semantic model**. The DSL is a thin syntax that populates an in-memory model, and the model is what runs, which is the specification/engine split above. He also coined "language workbench" (2005).
-- Markus Völter (JetBrains MPS);
-  - MPS is a projectional editor: you edit the syntax tree directly, so tables, diagrams and maths notation can mix with text. Völter also wrote *DSL Engineering* (2013) and worked on mbeddr, a set of C extensions for embedded software.
-- Steven Kelly & Juha-Pekka Tolvanen (Domain-Specific Modeling)
-  - *Domain-Specific Modeling: Enabling Full Code Generation* (2008), from MetaCase and its MetaEdit+ tool. Their argument is that a modeling language narrow enough for one domain can generate all of the code, not just skeletons.
-- Andrzej Wasowski & Thorsten Berger
-  - *Domain-Specific Languages: Effective Modeling, Automation, and Reuse* (2023, [PDF](/sources/c46fadbebf83334aa787c5201b0c1223.bin)): DSLs as modeling languages, from metamodel to type checker and generator.
-- Philip Wadler (embedded DSLs)
-  - Critique of the label: Wadler's link to DSLs is mostly through monads (as a way to structure interpreters) and the expression problem, which he named. The canonical name for embedded DSLs is Paul Hudak (see *Sources, to read*).
-- Simon Peyton Jones. Lead architect of Haskell. Much work on:
-  - compositional DSLs
-  - type systems
-  - executable specifications
-
-  Many modern internal DSL approaches originate from Haskell research.
-
-  The classic example is "Composing Contracts: An Adventure in Financial Engineering" (Peyton Jones, Eber and Seward, 2000, [PDF](/sources/45766fa6e9245cae1a5b0a09767640ac.bin)). Financial contracts are built from about a dozen combinators, and a compositional denotational semantics says what each contract is worth; the same semantics decides when two differently written contracts are equivalent. A formal account of how a contract evolves during its life is listed in the paper as future work. The authors' own summary is that the significant feature of their contract language is that it's declarative, not that Haskell is lazy: a domain-specific language whose meaning doesn't depend on the host. It's a declarative domain model and its valuation engine in one paper.
-- Jean Bézivin. A leading figure in Model-Driven Engineering.
-  - He argued that in MDE "everything is a model", as in object orientation everything is an object ("On the Unification Power of Models", 2005), and his group created the ATL transformation language.
-- Tom Gruber. Defined ontology as an explicit specification of a conceptualization. This is almost a declarative domain model.
-  - "Almost" because an ontology states concepts, relations and constraints without saying how to compute anything. Paired with a reasoner (OWL with a description-logic reasoner), it becomes executable: a specification with an engine again.
 
 ## Functional programming connection
 
 
 Many DSL researchers implement DSLs inside functional languages because they provide:
 
-- compositional semantics
-  - the meaning of a combined program follows from the meaning of its parts, so a DSL built from combinators can be reasoned about piece by piece
-- algebraic structures
-  - DSL operations often form monoids or monads, whose laws justify rewrites and optimizations
-- type systems
-  - the host language's types check the DSL's programs too, so an embedded DSL gets a type checker for free
-- interpreters as first-class citizens
-  - one description, several interpreters (run, print, optimize, test). This is the algebra-and-interpreter idea in [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}#modules-as-algebras).
+- **Compositional semantics:** the meaning of a combined program follows from the meaning of its parts, so a DSL built from combinators can be reasoned about piece by piece.
+- **Algebraic structures:** DSL operations often form monoids, applicatives or monads, whose laws justify rewrites and optimizations.
+- **Host type systems:** the host language's types check the DSL's programs too, so an embedded DSL gets a type checker for free.
+- **Interpreters as first-class citizens:** one description supports several interpreters (run, print, optimize, test) -- the algebra-and-interpreter idea in [Functional Domain Modeling]({{< ref "type-driven-design/04-architecture/functional-domain-modeling" >}}#modules-as-algebras).
 
-The two ways to embed a DSL, deep (the program is an AST that interpreters walk) and shallow (the program is directly its meaning, as functions), mirror the initial and final encodings of tagless final, in Carette et al.'s sense of the names; Gibbons and Wu point out that both are initial algebras, with no categorical duality between them. Both are covered, with Hudak, Carette et al. and Gibbons and Wu, in [Effects And Interpreters]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}#embedded-dsls-initial-and-final).
+The two ways to embed a DSL -- **deep** (the program is an AST that interpreters walk) and **shallow** (the program is directly its meaning, as functions) -- mirror the initial and final encodings of [Tagless Final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}), in Carette et al.'s sense of the names; Gibbons and Wu ([PDF](/sources/55e41880192e3803ac43c73f98018799.bin)) point out that both are initial algebras, with a shallow embedding being a fold over the deep one. Both are covered in [Effects And Interpreters]({{< ref "type-driven-design/04-architecture/effects-and-interpreters" >}}#embedded-dsls-initial-and-final).
 
-Some Ladder in progression:
+## Relationships
 
-- [Domain-Specific Languages (DSLs) | SE@RWTH](https://se-rwth.github.io/research/Domain-Specific-Languages/)
 
-That's the DSL research page of the Software Engineering group at RWTH Aachen, the home of the MontiCore language workbench.
+The branch of declarative systems that uses domain models and domain-specific languages (DSLs) sits at the intersection of five fields:
+
+- **Declarative programming:** stating what holds rather than how to step through state changes.
+- **Domain-Driven Design (DDD):** aligning the code's types and operations with the domain's ubiquitous language ([Domain Modeling With Types]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}})).
+- **Model-Driven Engineering (MDE):** making models, not code, the primary artifacts. A metamodel defines what a valid model is, and transformations turn models into code or into other models (OMG's MDA, Eclipse EMF, the ATL language; RWTH Aachen's [MontiCore](https://se-rwth.github.io/research/Domain-Specific-Languages/)). A metamodel is a domain model of a modeling language. Critique: the heavyweight, UML-centred wave of the early 2000s had a mixed record in industry; what survived is narrow DSLs with code generators.
+- **Language-Oriented Programming (LOP):** Martin Ward's 1994 term for designing a language tailored to the problem first and then writing the solution in it. Sergey Dmitriev's JetBrains MPS and Racket's "languages as libraries" are the main lines.
+- **Semantic modeling and ontologies:** specifying the concepts, relations and real-world commitments of a domain so independent systems agree on what terms mean.
+
+## Influential Contributors
+
+
+- **John McCarthy** created Lisp, and in "Programs with Common Sense" (1959) proposed the *Advice Taker*, a program that would deduce actions from declarative statements of facts instead of following prewritten procedures -- the root of knowledge representation.
+- **Edgar Codd**, in "A Relational Model of Data for Large Shared Data Banks" (1970, [PDF](/sources/e1fd244d89c185697c85566dfc093069.bin)), separated the logical data model from physical ordering, indexing and access paths (section 1.2) so queries could be stated in a predicate-calculus sublanguage and translated by the engine into efficient plans (sections 1.5-1.6) -- why SQL is declarative and why a query optimizer can exist.
+- **Robert Kowalski** co-founded logic programming and formulated "Algorithm = Logic + Control" (1979, [PDF](/sources/8f73baad231b68edee754fb4f0a3677f.bin)), separating what a program specifies from how an engine executes it.
+- **Paul Hudak**, in "Building Domain-Specific Embedded Languages" (1996, [PDF](/sources/8fad5eba3eb55d02bad4615c3915ef79.bin)), gave the standard case for embedding DSLs inside a typed functional host language rather than building them from scratch.
+- **Philip Wadler** connected monads to structuring interpreters and named the expression problem ([Tagless Final]({{< ref "type-driven-design/04-architecture/tagless-final" >}}#the-expression-problem)), the extensibility trade-off between deep and shallow DSL embeddings.
+- **Simon Peyton Jones** (with Jean-Marc Eber and Julian Seward) wrote the classic compositional-DSL paper "Composing Contracts: An Adventure in Financial Engineering" (2000, [PDF](/sources/45766fa6e9245cae1a5b0a09767640ac.bin)). Financial contracts are built from about a dozen combinators, and a compositional denotational semantics says what each contract is worth and decides when two differently written contracts are equivalent. The authors note that the payoff is that the contract language is *declarative*, not that Haskell is lazy: it is a declarative domain model and its valuation engine in one paper.
+- **Martin Fowler**, in *Domain-Specific Languages* (2010, [PDF](/sources/1b9258d7e919db34a2f90d39a7d49c37.bin)), popularized internal versus external DSLs, coined "language workbench" (2005), and centred DSL design on the **semantic model**: the DSL syntax is a thin layer that populates an in-memory domain model, and the semantic model is what executes or validates, mirroring the specification/engine split above.
+- **Markus Völter** (JetBrains MPS, *DSL Engineering* 2013, mbeddr) championed projectional editing, where users edit the abstract syntax tree directly so tables, diagrams and mathematical notation mix with text. Boersma's *Building User-Friendly DSLs* (2024, EPUB) builds a web-based projectional Domain IDE from scratch in JavaScript and React for non-programmer domain experts -- projecting an AST directly to HTML without a parser (chapter 4), migrating versioned ASTs (chapter 10), adding an expression type checker (chapter 13) and `When ... then ...` business rules (chapter 14), and comparing the result with a reimplementation in MPS (section 15.4.2).
+- **Steven Kelly and Juha-Pekka Tolvanen**, in *Domain-Specific Modeling: Enabling Full Code Generation* (2008, MetaCase / MetaEdit+), argued that a modeling language narrow enough for one domain can generate 100% of the target code, not just skeletons.
+- **Andrzej Wasowski and Thorsten Berger**, in *Domain-Specific Languages: Effective Modeling, Automation, and Reuse* (2023, [PDF](/sources/c46fadbebf83334aa787c5201b0c1223.bin)), treat DSLs as modeling languages end to end, from metamodel and concrete syntax to type checker, interpreter and code generator.
+- **Jean Bézivin**, a leading figure in Model-Driven Engineering, argued that in MDE "everything is a model" just as in object orientation everything is an object ("On the Unification Power of Models", 2005), and his group created the ATL model-transformation language.
+- **Tom Gruber** defined an ontology as "an explicit specification of a conceptualization" -- an almost-declarative domain model that becomes executable once paired with a reasoner (such as OWL with a description-logic reasoner). Guarino, Oberle and Staab ([PDF](/sources/454af26b66e1419abc89e9e5ceda7100.bin), sections 2-3) formalize "conceptualization" intensionally across possible worlds so an ontology constrains a vocabulary's *intended models*, and Guizzardi and Guarino ([PDF](/sources/e2b93fcc42a364423cfe6ce8c21a08cf.bin), sections 2-3) add that formal set-theoretic semantics alone still leaves *real-world* ontological commitments implicit: two systems can share a UML diagram or schema while assuming incompatible truthmakers (for example, `Treatment` as a bundle of ongoing commitments versus a past event), causing false agreement unless the model is ontologically unpacked.
 
 ## Library sources
 
 
-- [Guarino et al. 2009](/sources/454af26b66e1419abc89e9e5ceda7100.bin), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3)) -- on *Influential Contributors*
-- [Fowler 2010](/sources/1b9258d7e919db34a2f90d39a7d49c37.bin), *Domain-Specific Languages* -- on *Influential Contributors* (Martin Fowler); internal and external DSLs and the semantic model
-- [Wasowski et al. 2023](/sources/c46fadbebf83334aa787c5201b0c1223.bin), *Domain-Specific Languages: Effective Modeling, Automation, and Reuse* -- on *Influential Contributors* (Andrzej Wasowski and Thorsten Berger); DSLs as modeling languages, from meta-model to type checker and generator
+- [Kowalski 1979](/sources/8f73baad231b68edee754fb4f0a3677f.bin), *Algorithm = Logic + Control* -- the logic and control split behind the note's opening; on *Semantics* and *Influential Contributors*
+- [Codd 1970](/sources/e1fd244d89c185697c85566dfc093069.bin), *A Relational Model of Data for Large Shared Data Banks* -- section 1.2 on removing ordering, indexing and access-path dependence from the user's data model, sections 1.3-1.4 on time-varying relations and normalization, sections 1.5-1.6 on a universal predicate-calculus data sublanguage translated by the system into efficient actions on stored representations, and section 2.1.4 on the "connection trap" in path-following network models; on *Semantics* and *Influential Contributors*
+- [Hudak 1996](/sources/8fad5eba3eb55d02bad4615c3915ef79.bin), *Building Domain-Specific Embedded Languages* ([doi:10.1145/242224.242477](https://doi.org/10.1145/242224.242477)) -- the case for embedding DSLs in a host language; on *Functional programming connection* and *Influential Contributors*
+- [Burns et al. 2016](/sources/74451a26da33a5a2be9b9a3e21879578.bin), *Borg, Omega, and Kubernetes* -- "Application-Oriented Infrastructure" on separating every object's `Spec` (desired state) from `Status` (observed state) and why observation-driven reconciliation loops recover cleanly from controller crashes and perturbations, and "Configuration" on how declarative configuration languages drift into poorly tooled Turing-complete code unless data (YAML or JSON) is kept separate from programmatic generation; on *Semantics*
+- [Morris 2020](/sources/c43211da6a539df31836491ddf46d145.bin), *Infrastructure as Code, 2nd Edition* -- chapter 4, "Core Practice: Define Everything as Code", on declarative desired-state DSLs (Puppet, Terraform, CloudFormation), idempotence, and the design smell of bolting loops and conditionals onto YAML or HCL when dynamic variation belongs in a general-purpose language; on *Semantics*
 - [Mokhov et al. 2020](/sources/968bcf5644f3dbb1736d59b47f1717c1.bin), *Build Systems a la Carte: Theory and Practice* -- section 2, "Background", on Make (static dependencies, file modification times), Excel (dynamic dependencies at the cost of minimality), Shake (dynamic dependencies, early cutoff) and Bazel (cloud builds), summarised in Table 1 (2.5); sections 4, "Schedulers", and 5, "Rebuilders", which split every build system into a scheduler (topological, restarting, suspending) and a rebuilder (dirty bit, verifying traces, constructive and deep constructive traces); on the engine examples in *Semantics*
-- [Khattab et al. 2023](/sources/dce6a336b5540ff4b3606105310db867.bin), *DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714)) -- LM pipelines as imperative computation graphs whose model calls are declarative modules (typed signatures) that a compiler optimizes; on the specification critique in *Semantics* and sense 4 in *Four senses of "declarative"*
-- [Abelson et al. 2022](/sources/450d0cad1e0f327a0198de0aac294605.bin), *Structure and Interpretation of Computer Programs, JavaScript Edition* -- chapter 4, "Metalinguistic Abstraction": evaluators, and a logic-programming query language built on them; on *Functional programming connection* and the logic-programming line in *Semantics*
-- [Kowalski 1979](/sources/8f73baad231b68edee754fb4f0a3677f.bin), *Algorithm = Logic + Control* -- the logic and control split behind the note's first entry; on *Sources, to read*
-- [Hudak 1996](/sources/8fad5eba3eb55d02bad4615c3915ef79.bin), *Building Domain-Specific Embedded Languages* ([doi:10.1145/242224.242477](https://doi.org/10.1145/242224.242477)) -- the case for embedding DSLs in a host language; on *Sources, to read* and the Wadler entry in *Influential Contributors*
-- [Gibbons et al. 2014](/sources/55e41880192e3803ac43c73f98018799.bin), *Folding Domain-Specific Languages: Deep and Shallow Embeddings* -- section 2, "Embedding DSLs", on why a shallow embedding can capture only a compositional semantics, and section 4.1, "Multiple interpretations", on running several interpreters over one description by tupling folds; on the compositional-semantics and several-interpreters bullets in *Functional programming connection*
-- [Peyton Jones et al. 2000](/sources/45766fa6e9245cae1a5b0a09767640ac.bin), *Composing Contracts: An Adventure in Financial Engineering* ([doi:10.1145/351240.351267](https://doi.org/10.1145/351240.351267)) -- contracts built from combinators, with a compositional valuation semantics; on the Peyton Jones entry in *Influential Contributors*
-- Gibbons and de Moor 2003, *The Fun of Programming* -- chapter 6, Peyton Jones and Eber, "How to write a financial contract", the book version of the 2000 paper, with compositional valuation (6.4), an outline of an operational semantics in which a partly executed contract is still a contract the valuation engine can price (6.6), and the point that the payoff is the declarative description, not Haskell (6.7); on the Peyton Jones entry in *Influential Contributors*
-- [Wang et al. 2026](/sources/987a0801641b20eb5023491ad849f027.bin), *AgentSPEX: An Agent SPecification and EXecution Language* ([arXiv:2604.13346](https://arxiv.org/abs/2604.13346)) -- agents as YAML step files run by an interpreter; on the specification critique in *Semantics*
-- [Tan et al. 2026](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780)) -- effect types for model calls, tools and approvals; on the specification critique in *Semantics*
+- [Khattab et al. 2023](/sources/dce6a336b5540ff4b3606105310db867.bin), *DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines* ([arXiv:2310.03714](https://arxiv.org/abs/2310.03714)) -- LM pipelines as imperative computation graphs whose model calls are declarative modules (typed signatures) that a compiler optimizes; on *Semantics* and sense 4 in *Four senses of "declarative"*
+- [Wang et al. 2026](/sources/987a0801641b20eb5023491ad849f027.bin), *AgentSPEX: An Agent SPecification and EXecution Language* ([arXiv:2604.13346](https://arxiv.org/abs/2604.13346)) -- agents as YAML step files run by an interpreter; on *Semantics*
+- [Tan et al. 2026](/sources/3a1329f99a61c00c71bbcfc4c9d7e7f6.bin), *Etas: An Effect-Typed Language for Agent Systems* ([arXiv:2607.17780](https://arxiv.org/abs/2607.17780)) -- effect types for model calls, tools and approvals; on *Semantics*
+- [Xavier et al. 2026](/sources/ec7f81db2ffcdffa5a3e856e2b83530f.bin), *Agentproof: Static Verification of Agent Workflow Graphs* ([arXiv:2603.20356](https://arxiv.org/abs/2603.20356)) -- sections 5-6: extracts a unified typed workflow graph from LangGraph, CrewAI, AutoGen and Google ADK to check topology defects (dead ends, livelocks, missing human gates) and compiles a declarative seven-form LTL safety DSL to finite automata verified statically via graph-by-automaton product construction; on *Semantics*
+- [Abelson et al. 2022](/sources/450d0cad1e0f327a0198de0aac294605.bin), *Structure and Interpretation of Computer Programs, JavaScript Edition* -- chapter 4, "Metalinguistic Abstraction": evaluators, and a logic-programming query language built on them; on *Semantics* and *Functional programming connection*
 - [Granin 2025](/sources/1c38a03f85e649d3dcd0ebb0dbcbe9ea.bin), *Functional Design and Architecture* -- section 6.2.1 on free-monad scenarios as declarative descriptions; on sense 2 in *Four senses of "declarative"*
 - [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling* -- section 10.2.4, "Publish what to do, hide how to do within combinators"; on sense 3 in *Four senses of "declarative"*
+- [Fowler 2010](/sources/1b9258d7e919db34a2f90d39a7d49c37.bin), *Domain-Specific Languages* -- chapters 1-6 on internal versus external DSLs, chapter 9 on language workbenches (meta-models, projectional editing and code generation), chapter 11 on the Semantic Model (decoupling parsing from execution and validation, with operational versus population interfaces), and chapters 47-51 on alternative computational models (decision tables, dependency networks, production rule systems, state machines); on *Semantics* and *Influential Contributors* (Martin Fowler)
+- Boersma 2024, *Building User-Friendly DSLs* -- chapters 1-2 and 4 on building a browser-based projectional Domain IDE for non-programmer business experts by projecting an AST directly to HTML without parsing (contrasted with parser-based DSLs in 15.1), chapter 10 on recording projectional edits as AST deltas and migrating versioned ASTs, chapter 13 on expression type-checking with `"untype"` to suppress cascading errors, chapter 14 on `When ... then ...` business rules, and section 15.4 on language workbenches and a reimplementation in JetBrains MPS; on *Relationships* and *Influential Contributors* (Markus Völter)
+- [Wasowski et al. 2023](/sources/c46fadbebf83334aa787c5201b0c1223.bin), *Domain-Specific Languages: Effective Modeling, Automation, and Reuse* -- chapter 2 on DSLs as modeling languages, language workbenches and projectional versus parser-based editors, chapters 3-6 on metamodeling, concrete syntax, structural constraints and type systems, and chapters 8-10 on interpretation, code generation and internal DSLs; on *Relationships* and *Influential Contributors* (Andrzej Wasowski and Thorsten Berger)
+- [Peyton Jones et al. 2000](/sources/45766fa6e9245cae1a5b0a09767640ac.bin), *Composing Contracts: An Adventure in Financial Engineering* ([doi:10.1145/351240.351267](https://doi.org/10.1145/351240.351267)) -- contracts built from combinators, with a compositional valuation semantics; on *Influential Contributors* (Simon Peyton Jones)
+- Gibbons and de Moor 2003, *The Fun of Programming* -- chapter 6, Peyton Jones and Eber, "How to write a financial contract", the book version of the 2000 paper, with compositional valuation (6.4), an outline of an operational semantics in which a partly executed contract is still a contract the valuation engine can price (6.6), and the point that the payoff is the declarative description, not Haskell (6.7); on *Influential Contributors* (Simon Peyton Jones)
+- [Guarino et al. 2009](/sources/454af26b66e1419abc89e9e5ceda7100.bin), *What Is an Ontology?* ([doi:10.1007/978-3-540-92673-3](https://doi.org/10.1007/978-3-540-92673-3)) -- sections 2-4: refines Gruber's definition by formalizing a conceptualization as an intensional relational structure \((D, W, \mathcal{R})\) across possible worlds rather than a single extensional state, an ontological commitment as mapping a vocabulary into \(\mathcal{R}\), and an ontology as a logical theory whose models approximate the intended models; on *Influential Contributors* (Tom Gruber)
+- [Guizzardi et al. 2024](/sources/e2b93fcc42a364423cfe6ce8c21a08cf.bin), *Explanation, Semantics, and Ontology* ([doi:10.1016/j.datak.2024.102325](https://doi.org/10.1016/j.datak.2024.102325)) -- sections 2-3: distinguishes formal (operational or Tarskian set-theoretic) semantics from *real-world* (ontological) semantics, showing via *ontological unpacking* in OntoUML how a single UML model (`Person` *treated by* `Healthcare Provider`) hides incompatible truthmakers (`Treatment` as a relator of commitments versus a historical event) and risks false agreement across systems; on *Semantics* and *Influential Contributors* (Tom Gruber)
+- [Gibbons et al. 2014](/sources/55e41880192e3803ac43c73f98018799.bin), *Folding Domain-Specific Languages: Deep and Shallow Embeddings* -- section 2, "Embedding DSLs", on why a shallow embedding can capture only a compositional semantics, and section 4.1, "Multiple interpretations", on running several interpreters over one description by tupling folds; on *Functional programming connection*
 
 Further reading:
 
-- [Guizzardi 2007](/sources/cadf52a991f6bb9b720e2901cdc778b1.bin), *On Ontology, Ontologies, Conceptualizations, Modeling Languages, and (Meta)Models*
-- [Iung et al. 2020](/sources/51cee968486064b2956ada6b44769f6f.bin), *Systematic mapping study on domain-specific language development tools*
-- [Mernik et al. 2005](/sources/188bf62db5caf7a2347035642ff46b14.bin), *When and How to Develop Domain-Specific Languages*
-- [Lammel 2018](/sources/e1b011a4de1e3496be8a5df97bf11efd.bin), *Software Languages: Syntax, Semantics, and Metaprogramming*
-- [Erdweg et al. 2012](/sources/b7fe621816a8b44112afb5aa3e00572a.bin), *Language Composition Untangled*
-- [Carette et al. 2009](/sources/8438a472517b14d83c46797890285d8c.bin), *Finally Tagless, Partially Evaluated: Tagless Staged Interpreters for Simpler Typed Languages*
-- Gibbons and de Moor 2003, *The Fun of Programming* -- chapter 4, Hudak, "Describing and interpreting music in Haskell", music as data given meaning by its interpretation as a performance (4.4), from which an algebra of laws is proved (sequential and parallel composition associative, the zero rest an identity), on the algebraic-structures bullet in *Functional programming connection*; chapter 9, Spivey and Seres, "Combinators for logic programming", logic programs written inside Haskell with a combinator library rather than a new language, from lists of successes (9.2) to search monads (9.3), on the logic-programming line in *Semantics*
+- [Guizzardi 2007](/sources/cadf52a991f6bb9b720e2901cdc778b1.bin), *On Ontology, Ontologies, Conceptualizations, Modeling Languages, and (Meta)Models* -- sections 1-3 formalize domain appropriateness and comprehensibility appropriateness via four mapping properties (soundness, completeness, lucidity, laconicity) between a domain reference ontology and a modeling language's metamodel, and sections 4-5 ground general ontology languages in a foundational ontology (UFO) above ontologically neutral logic and flat classes; on *Relationships* and *Influential Contributors* (Tom Gruber)
+- [Iung et al. 2020](/sources/51cee968486064b2956ada6b44769f6f.bin), *Systematic mapping study on domain-specific language development tools* -- maps 59 DSL tools and language workbenches across 230 papers (2012-2019) along six feature groups (notation, translational versus interpretative semantics, free-form versus projectional editing, validation, testing, composability; section 2.2), finding EMF, Xtext, MPS, Sirius and MetaEdit+ most cited (section 5) and noting gaps in multi-notation sync and meta-metamodel interoperability (section 6); on *Relationships* and *Influential Contributors*
+- [Mernik et al. 2005](/sources/188bf62db5caf7a2347035642ff46b14.bin), *When and How to Develop Domain-Specific Languages* -- section 1.2 on the executability spectrum of DSLs (from non-executable data descriptions to application generators and interpreters) and section 2 on patterns across four phases: decision (notation, AVOPT -- analysis, verification, optimization, parallelization, transformation -- task automation, product lines), domain analysis (FODA, FAST), design (language exploitation by piggyback, specialization or extension versus invention), and implementation (interpreter, compiler, preprocessor, embedding, COTS); on *Semantics* and *Functional programming connection*
+- [Lammel 2018](/sources/e1b011a4de1e3496be8a5df97bf11efd.bin), *Software Languages: Syntax, Semantics, and Metaprogramming* -- chapter 2 walking one finite-state-machine DSL (FSML) through internal fluent APIs, external grammar and parser, static checks, interpreter and code generator, and chapter 11, "An Ode to Compositionality", contrasting non-compositional big-step `while` rules with compositional direct- and continuation-style denotational interpreters in Haskell; on *Semantics* and *Functional programming connection*
+- [Erdweg et al. 2012](/sources/b7fe621816a8b44112afb5aa3e00572a.bin), *Language Composition Untangled* -- section 2 defines five forms of unchanged-reuse language composition (extension, restriction, unification, self-extension -- contrasting fragile string embedding with Hudak-style pure API embedding -- and extension composition) and section 4 rates 15 tools (including MPS, Racket, Spoofax, SugarJ and JastAddJ) across syntax, validation, semantics and IDE support; on *Relationships* (LOP) and *Functional programming connection*
+- [Carette et al. 2009](/sources/8438a472517b14d83c46797890285d8c.bin), *Finally Tagless, Partially Evaluated: Tagless Staged Interpreters for Simpler Typed Languages* -- section 1.3 represents object terms as denotations in a semantic algebra ("typed folds over typed terms"), so one typed DSL term can be evaluated, measured, compiled via staging in MetaOCaml, or partially evaluated without runtime type tags; on *Functional programming connection*
+- Gibbons and de Moor 2003, *The Fun of Programming* -- chapter 4, Hudak, "Describing and interpreting music in Haskell", music as data given meaning by its interpretation as a performance (4.4), from which an algebra of laws is proved (sequential and parallel composition associative, the zero rest an identity), on *Functional programming connection*; chapter 9, Spivey and Seres, "Combinators for logic programming", logic programs written inside Haskell with a combinator library rather than a new language, from lists of successes (9.2) to search monads (9.3), on the logic-programming line in *Semantics*
+- [Hernandez 2022](/sources/89c59ed7d2c46b3a08d9fe66b628d8ca.bin), *The Path to GitOps* -- chapter 1, "What is GitOps?", setting out the four OpenGitOps principles (declarative desired state, versioned and immutable storage, automatic pull, continuous reconciliation against drift) and contrasting continuous reconciliation with event-triggered CI/CD pipelines; on *Semantics*
+- [Fong et al. 2018](/sources/1010971b412952a48f9e60bd94e02ed7.bin), *Seven Sketches in Compositionality* ([arXiv:1803.05316](https://arxiv.org/abs/1803.05316)) -- chapter 3, "Databases: Categories, functors, and universal constructions", modeling a database schema with path-equality business rules as a finitely presented category \(\mathcal{C}\), instances as functors \(\mathcal{C} \to \mathbf{Set}\), and constraint-preserving data migration via adjoint functors; on *Semantics* and *Relationships*

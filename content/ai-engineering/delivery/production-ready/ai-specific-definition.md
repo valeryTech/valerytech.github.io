@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "AI Production Readiness: Revised Definition (Draft)"
-aliases:
-  - "/ai-engineering/delivery/production-ready/ai-spec/"
 description: "Adapts production readiness to AI systems, grounding contextual sufficiency in behavioral evidence, operational capability, lifecycle support, explicit uncertainty, and accepted residual risk."
 linkTitle: "AI-Specific Definition"
 ---

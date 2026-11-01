@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Haskell Language Notes and Resources"
-aliases:
-  - "/functional-programming/haskell/"
 description: "Haskell learning path, toolchain and ecosystem, standard library alternatives and a custom Prelude, useful libraries, language notes from GHCi to constructors, practical advice, and books, courses and other resources."
 weight: "10"
 linkTitle: "Haskell"
@@ -319,7 +317,7 @@ Slogans collected from experienced users:
 
 In Haskell a type signature often tells you most of what a function can do. `a -> a` can only be the identity (or fail, or loop forever), and `(a -> b) -> [a] -> [b]` can only rearrange, drop or duplicate results of applying the function, because it knows nothing else about `a` and `b`. Reading the signature first narrows down the implementation before you read a line of it. Code is also dense, so reading slowly is normal, not a sign of being lost.
 
-The rest are the slogans of type-driven development: first model the domain as types so that invalid states can't be represented, then write functions whose types make the remaining choices obvious, and let compiler errors guide you to the implementation. See [Type-first design]({{< ref "type-driven-design/03-domain-modeling/workflows-and-states" >}}#type-first-design) and [Product and sum types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
+The rest are the slogans of type-driven development: first model the domain as types so that invalid states can't be represented, then write functions whose types make the remaining choices obvious, and let compiler errors guide you to the implementation. See [Type-first design]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}#type-first-design) and [Product and sum types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
 
 Caveat: types constrain shape, not meaning. `sum` and `product` have the same type, and so do `sort` and `reverse` on a list of `Int`s. Following the types gets you to *a* program that compiles; tests or properties are still needed to get the right one.
 
@@ -552,7 +550,7 @@ See also:
 - Functions: [Composition]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#composition) for `$` and composition, [Lambdas, closures and scope]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#lambdas-closures-and-scope), and [Returning functions and API design]({{< ref "functional-programming/01-foundations/functions-and-composition" >}}#returning-functions-and-api-design) for returning functions and argument order.
 - Recursion: [Writing recursive functions]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#writing-recursive-functions) for pattern matching and recursion, [Folds]({{< ref "functional-programming/01-foundations/recursion-and-folds" >}}#folds) for folds and `Foldable`.
 - Abstractions: [Applicative]({{< ref "functional-programming/02-abstractions/applicative" >}}), [Type classes]({{< ref "functional-programming/02-abstractions/type-classes-and-polymorphism" >}}#type-classes), [monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}}#monoid) (identity and folds), and [Why monads]({{< ref "functional-programming/02-abstractions/monads" >}}#why-monads), [Option]({{< ref "functional-programming/02-abstractions/monads" >}}#option) (`Maybe` and missing values), [Reader]({{< ref "functional-programming/02-abstractions/monads" >}}#reader) and [IO]({{< ref "functional-programming/02-abstractions/monads" >}}#io).
-- Programming in types: [Type-first design]({{< ref "type-driven-design/03-domain-modeling/workflows-and-states" >}}#type-first-design) and [Product and sum types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
+- Programming in types: [Type-first design]({{< ref "type-driven-design/03-domain-modeling/domain-modeling-with-types" >}}#type-first-design) and [Product and sum types]({{< ref "type-driven-design/03-domain-modeling/algebraic-data-types" >}}).
 
 ## Library sources
 

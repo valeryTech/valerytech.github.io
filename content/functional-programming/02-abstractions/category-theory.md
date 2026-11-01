@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Category Theory for Functional Programmers"
-aliases:
-  - "/functional-programming/category-theory/"
 description: "Why category theory is worth knowing for a programmer, how its standard constructions map onto types, functors and currying, purity and denotational semantics, natural transformations, and resources for learning it."
 weight: "80"
 linkTitle: "Category Theory"

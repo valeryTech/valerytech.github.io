@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Naming the Solution-Risk Dimensions: Early Notes"
-aliases:
-  - "/ai/product/risk-areas/risk-areas/"
 description: "Value, usability, feasibility, and viability describe areas to investigate rather than four testable claims. These arguments derive concrete risks and assumptions, define the boundaries, and identify uncertainty the four omit."
 linkTitle: "Early Naming Notes"
 ---

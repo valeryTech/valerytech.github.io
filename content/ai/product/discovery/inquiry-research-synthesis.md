@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Exploratory Design Inquiry: Research Synthesis"
-aliases:
-  - "/ai/product/discovery/discovery-rewritten/"
 description: "Inquiry can begin before a problem is defined. Reflection, sensemaking, concept expansion, and co-evolution explain how research, prototypes, and comparisons reshape understanding and support selective commitment."
 linkTitle: "Research Synthesis"
 ---

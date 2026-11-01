@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Four-Step System Design Outline"
-aliases:
-  - "/system-design/interview/frameworks/sd-algorithm/"
 description: "A four-step interview outline covering scope, high-level design, deep dives, and wrap-up, with expected artifacts and agreement checkpoints."
 linkTitle: "Four-Step Outline"
 ---

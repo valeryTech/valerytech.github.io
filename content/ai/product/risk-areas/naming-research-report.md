@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Naming SVPG's Four Product Risk Areas: Research Report"
-aliases:
-  - "/ai/product/risk-areas/res-risk-areas-corrected-v2/"
 description: "Practitioners manage uncertainty through risk categories, assumptions, design lenses, or hypotheses. This survey compares those choices and derives a chain from product-risk dimensions through tests to evidence and decisions."
 linkTitle: "Naming Research Report"
 ---

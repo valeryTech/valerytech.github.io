@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Structured AI Development: Outline of Components"
-aliases:
-  - "/ai-engineering/approach/combined-approach/"
 description: "Evaluation, observability, test layers, and product investigations reveal different parts of the same delivery system. Connecting them helps a team choose what to build, inspect, change, and release."
 linkTitle: "Development Outline"
 ---

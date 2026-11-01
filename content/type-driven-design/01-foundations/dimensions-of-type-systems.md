@@ -25,7 +25,7 @@ Kleppmann ([PDF](/sources/f639f3efb30ff1f78d5f3bec89441c6e.bin), chapter 3, "Sch
 
 **Gradual typing** mixes the two in one program. In Siek and Taha's original design ([PDF](/sources/734b74265e71583aac0d576dc5cebd93.bin)), an unknown type `?` marks the dynamic parts. A fully annotated program catches all type errors at compile time, and where typed and untyped code meet, the compiler inserts casts, so a program fails with a cast error at the boundary rather than with a type error deep inside typed code. The dynamic parts cost only where they're used ("pay-as-you-go").
 
-Krishnamurthi ("Gradual Typing") separates two schools:
+Krishnamurthi ([PDF](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), "Gradual Typing") separates two schools:
 
 - **Micro gradual typing** lets you annotate any subset of variables, as in Python and TypeScript. It's convenient, but it's unclear what soundness means once typed and untyped code mix within a single expression.
 - **Macro gradual typing** has a typed and an untyped sibling language that share a runtime, as in Typed Racket. Values are checked when they cross between modules, which gives a clear guarantee and blame for whoever broke it.
@@ -46,7 +46,7 @@ unsafe           C, C++
 
 (Pierce's table, with Python in place of Perl and PostScript.) The empty corner is empty because once a language checks some operations at run time, checking all of them costs little.
 
-"Strong typing" is usually a loose name for the safe row. Sebesta ([PDF](/sources/0d1e41edfd02fae6c9aa5352f2229b01.bin), section 6.14 "Strong Typing") gives a precise version: a language is strongly typed if type errors are always detected, at compile time or run time. By that test C and C++ aren't strongly typed, because their unions aren't checked, and implicit coercions (`"5" + 1` in JavaScript) weaken a language because they turn would-be type errors into silent conversions.
+"Strong typing" is usually a loose name for the safe row. Sebesta ([PDF](/sources/0d1e41edfd02fae6c9aa5352f2229b01.bin), section 6.14 "Strong Typing") gives a precise version: a language is strongly typed if type errors are always detected, at compile time or run time. By that test C and C++ aren't strongly typed, because their unions aren't checked, and implicit coercions (`"5" + 1` in JavaScript) weaken a language because they turn would-be type errors into silent conversions. Scott and Aldrich (PDF, section 7.1 "Overview") note why low-level code sometimes has to break type safety on purpose (an allocator like `malloc` views the same bytes as free space, metadata and user records in turn) and contrast C leaving those loopholes open everywhere with Rust and C# confining them to explicit `unsafe` blocks.
 
 ## Nominal and structural equivalence
 
@@ -69,14 +69,15 @@ static check      static duck typing              static typing
 ```
 
 
-Scala supports both, with nominal as the default; see [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping).
+Scala supports both, with nominal as the default; Scott and Aldrich (section 7.2.1, Example 7.22) point to Scala 3's `opaque type` as a clean split by visibility, using structural equivalence with the underlying representation inside the defining scope and name equivalence outside it. See [Scala Type System]({{< ref "type-driven-design/05-stronger-type-systems/scala-type-system" >}}#nominal-and-structural-subtyping) and [Newtypes And Simple Values]({{< ref "type-driven-design/03-domain-modeling/newtypes-and-simple-values" >}}#scala-value-classes-and-opaque-types).
 
 ## Library sources
 
 
-- [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- section 1.2 on language safety, with the table of safe and unsafe, statically and dynamically checked languages; section 19.3 on nominal and structural type systems; on *Safety, and what "strong" means* and *Nominal and structural equivalence*
+- [Pierce 2002](/sources/61c011d4c2037767a1b6df1b6fde20de.bin), *Types and Programming Languages* -- section 1.1 on "dynamically typed" as "dynamically checked"; section 1.2 on language safety, with the table of safe and unsafe, statically and dynamically checked languages; section 19.3 on nominal and structural type systems; on *Static, dynamic and gradual checking*, *Safety, and what "strong" means* and *Nominal and structural equivalence*
 - [Krishnamurthi 2025](/sources/175c9cb05c2ba00aa61a8b4132dd630e.bin), *Programming Languages: Application and Interpretation*, version 3 -- "Gradual Typing": micro and macro gradual typing; on *Static, dynamic and gradual checking*
 - [Sebesta 2019](/sources/0d1e41edfd02fae6c9aa5352f2229b01.bin), *Concepts of Programming Languages, 12th Edition* -- section 6.14 "Strong Typing" and section 6.15 "Type Equivalence" (name and structure equivalence, Ada derived types and subtypes); on *Safety, and what "strong" means* and *Nominal and structural equivalence*
+- Scott et al. 2025, *Programming Language Pragmatics, 5th Edition* -- section 7.1, "Overview" (Sidebar 7.1 on systems code and `unsafe` blocks, and coercions weakening strong typing) and section 7.2.1, "Type Equivalence" (Example 7.22 on Scala `opaque type` aliases switching from structural equivalence inside their defining module to name equivalence outside); on *Safety, and what "strong" means* and *Nominal and structural equivalence*
 - [Harper 2016](/sources/844b46f25205adfc27e60dec253a34fc.bin), *Practical Foundations for Programming Languages, 2nd Edition* -- section 21.4 "Untyped Means Uni-Typed" and chapter 22 "Dynamic Typing"; on *Static, dynamic and gradual checking*
 - [Siek et al. 2006](/sources/734b74265e71583aac0d576dc5cebd93.bin), *Gradual Typing for Functional Languages* -- the unknown type, consistency instead of equality, casts at the typed-untyped boundary; on *Static, dynamic and gradual checking*
 - [Ramalho 2022](/sources/c09d057b50eb8836ae7e40220e951a83.bin), *Fluent Python, 2nd Edition* -- chapter 8, "About Gradual Typing"; chapter 13, "The Typing Map"; on *Static, dynamic and gradual checking* and *Nominal and structural equivalence*

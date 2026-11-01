@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Interviewing.io System Design Framework"
-aliases:
-  - "/system-design/interview/frameworks/framework-iv/"
 description: "Interviewing.io’s three-stage framework for deriving a design from requirements, objects, access patterns, data types, APIs, scale, storage, and services."
 linkTitle: "Interviewing.io"
 ---

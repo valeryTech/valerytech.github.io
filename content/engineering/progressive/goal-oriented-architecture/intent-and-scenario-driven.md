@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Intent-Driven and Scenario-Driven Architecture"
-aliases:
-  - "/engineering/progressive/goal-oriented-architecture/flow-2/"
 description: "Compare goal-driven and scenario-driven architecture methods, from Impact Mapping and KAOS to Domain Storytelling, EventStorming, quality scenarios, and BDD."
 linkTitle: "Intent and Scenarios"
 ---

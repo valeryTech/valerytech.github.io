@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "ReAct in Context: A Critical Historical Analysis"
-aliases:
-  - "/ai-engineering/agents/react/report-react-agent/"
 description: "ReAct read as an LLM implementation of a much older agent architecture: its claims set against decades of work on planning, BDI agents, cognitive architectures, and epistemic action, and what its own and later results show."
 linkTitle: "Historical Critique"
 ---

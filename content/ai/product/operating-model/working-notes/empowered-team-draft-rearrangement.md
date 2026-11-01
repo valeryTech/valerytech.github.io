@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Rearrangement Record for the Empowered-Team Draft"
-aliases:
-  - "/ai/product/operating-model/working-notes/in-model-etc-rearrangement/"
 description: "Decisions about team accountability, discovery interfaces, and solution states shaped the operating-model split. This record maps source passages to their destinations and explains which conceptual alternatives were preserved."
 linkTitle: "Team Draft Rearrangement"
 ---

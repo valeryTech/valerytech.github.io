@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Extended System Design Framework Collection"
-aliases:
-  - "/system-design/interview/frameworks/sd-framework-old/"
 description: "An extended collection of design steps, architectural principles, staff-level considerations, follow-up questions, technical checklists, and examples."
 linkTitle: "Extended Collection"
 ---

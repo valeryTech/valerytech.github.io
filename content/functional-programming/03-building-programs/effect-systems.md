@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Effect Systems: Haskell IO, Cats Effect and ZIO"
-aliases:
-  - "/functional-programming/effect-systems/"
 description: "Effects as values kept apart from their execution, built up from a toy IO to Haskell IO, Cats Effect 3 and ZIO, with a comparison of the three and a study order for the Scala effect libraries."
 weight: "20"
 linkTitle: "Effect Systems"

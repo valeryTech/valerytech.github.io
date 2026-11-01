@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Jev Decision Model: Engineering and Evidence Assessment"
-aliases:
-  - "/ai/design-research/input/sections/jev/jev-system-one-with-references/"
 description: "A referenced review of Jev decision models, covering typed probabilistic questions, published evidence, alternatives, software integration, and evaluation practices."
 linkTitle: "Engineering Assessment"
 ---

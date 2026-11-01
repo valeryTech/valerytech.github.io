@@ -1,0 +1,10 @@
+---
+draft: false
+toc: true
+title: "Codex Approvals: On Request with Auto-Review"
+linkTitle: "On-Request Approvals"
+---
+
+`approvals_reviewer` is `auto_review`: Sandbox escalations with require_escalated will be reviewed for compliance with the policy.
+
+If a rejection happens, you can continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval.

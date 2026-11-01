@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Personal Requirements-First Framework Draft"
-aliases:
-  - "/system-design/interview/frameworks/sd-framework-v0/"
 description: "A personal framework experiment prioritizing core user value, enabling features, quality requirements, interview phrasing, and follow-up design constraints."
 linkTitle: "Requirements-First Draft"
 ---

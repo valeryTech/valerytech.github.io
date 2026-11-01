@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functional Concurrency and Parallelism"
-aliases:
-  - "/functional-programming/concurrency/"
 description: "Parallelism versus concurrency in functional code: deterministic parallelism with strategies and the Par monad, Haskell threads, MVar, async and STM, fibers in Cats Effect and ZIO, and laws that keep parallel code equivalent to sequential."
 weight: "50"
 linkTitle: "Concurrency and Parallelism"

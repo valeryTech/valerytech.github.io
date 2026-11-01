@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Reflective Agent Memory: Sources and Historical Background"
-aliases:
-  - "/ai/design/memory/memory-1/"
 description: "A preliminary reading guide for reflective agent memory, linking CoALA, Generative Agents, complementary learning systems, and Soar while distinguishing historical memory concepts from consciousness claims."
 linkTitle: "Sources and History"
 ---

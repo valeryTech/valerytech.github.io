@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Architecture and Distributed-Systems Reading Notes"
-aliases:
-  - "/system-design/to-sort/sd-to-sort/"
 description: "Architecture and distributed-systems reading excerpts on trade-offs, coupling, modularity, risk, failure detection, clocks, leader election, data models, and microservices."
 linkTitle: "Reading Notes"
 ---

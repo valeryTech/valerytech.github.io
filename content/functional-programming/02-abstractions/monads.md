@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Monads in Haskell and Scala"
-aliases:
-  - "/functional-programming/monads/"
 description: "Monads as a way to glue functions into sequential computations, map, flatMap and for expressions in Scala, and the Option, Writer, State, Reader and IO monads, including what IO does and doesn't make pure."
 weight: "50"
 linkTitle: "Monads"
@@ -310,7 +308,7 @@ See also: [Structuring effectful programs]({{< ref "functional-programming/03-bu
 ## Library sources
 
 
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 4, Handling errors without exceptions, is the source of the passages under Option; chapter 6 builds the State type, chapter 11 the Monad interface, and chapter 13 an IO type and free monads.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 4, Handling errors without exceptions, introduces `Option` with `map`, `flatMap`, `getOrElse` and `orElse` (4.3); chapter 6 builds the `State` type (6.5); chapter 11 defines the `Monad` interface with `unit` and `flatMap` (11.2), its laws and Kleisli composition `compose` (11.4), and the `Id` and `State` monads (11.5); chapter 13 builds an `IO` type and free monads.
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: section 5.3, "Monad Laws", and 5.3.1, "Kleisli Arrows", restate the three laws as identity and associativity of `<=<`, with `return` as the identity, on *Gluing functions together* and *Sequential computation*; section 2.1.2, "Comprehensions", translates a for comprehension into `flatMap` calls and a final `map`, on *`map`, `flatMap` and for expressions in Scala*; sections 6.1-6.3 build State (`get`, `put`, `modify`), Reader (`ask`, `asks`, `local`, `withReader`, and bind as a function of the environment) and Writer, which needs a `Monoid` for `return` and is recommended only for basic logging, on *State*, *Reader* and *Writer*; section 8.2 treats IO actions as descriptions that only `main` executes and covers `unsafePerformIO`, and 8.2.4 shows GHC's `IO` as a state function over a `RealWorld` token, on *IO*; chapter 11 on monad transformers, chapter 13 on final, initial and operational styles and free monads.
 - [Schwarz 2019](/sources/493522ed6da51ba8e5c22be9f5d4ffcf.bin), *State Monad*: slides following Alvin Alexander's derivation of State from explicit state passing; the `state-monad.pdf` in the State investigation task.
 - [Schwarz 2019](/sources/e08d684028ca8873968d5625f4173f0a.bin), *Monads do not Compose*: why `Future[Option[_]]` needs a transformer such as `OptionT`.
@@ -329,6 +327,5 @@ Further reading:
 
 - [Rosien 2021](/sources/26d28e80e57cc7f4abab6120e2fa075d.bin), *Essential Effects*
 - [Milewski 2019](/sources/0e04926a1bcff6dccfd4b9a974acdff4.bin), *Category Theory for Programmers (Scala edition)*
-- Chiusano et al. 2013, *Functional Programming in Scala (MEAP version 10)*
 - [Granin 2025](/sources/1c38a03f85e649d3dcd0ebb0dbcbe9ea.bin), *Functional Design and Architecture*: appendix A, "Plenty of monads": IO and `do` notation, table A.1 of common monads (State, Reader, Writer, RWS, Free, Either, Maybe, Par, ST, STM), and a factorial rewritten from argument passing to `State` with `get`, `put` and `runState`/`execState`/`evalState`; on *State* and *IO*.
 - [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling*

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Testing a Change During Review"
-aliases:
-  - "/ai-engineering/agents/ai-assisted-development/review-flow/"
 description: "A retry test can miss duplicate writes if its timeout mock never saves anything. The worked example checks a lost response after commit, then inspects request identities, saved state, and side effects."
 lastmod: "2026-04-19"
 linkTitle: "Testing During Review"

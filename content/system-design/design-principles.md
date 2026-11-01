@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "System Design Principles"
-aliases:
-  - "/system-design/02-system-design/"
 description: "Principles for making architectural choices through context, boundaries, feedback, state ownership, interactions, and explicit trade-offs."
 document_status: "canonical"
 linkTitle: "Design Principles"

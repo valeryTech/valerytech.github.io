@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "My Perspective on AI Engineering"
-aliases:
-  - "/ai-engineering/my-perspective/"
 description: "My approach to AI engineering treats behavior as a system concern, combining evaluation with architecture, team practices, and production learning so evidence can guide changes and supported scope."
 linkTitle: "My Perspective"
 ---

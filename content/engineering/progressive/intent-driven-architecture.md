@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Intent-Driven Architecture: DDD, Use Cases, and ADRs"
-aliases:
-  - "/engineering/progressive/in-intent-driven/"
 description: "Frame architecture through user needs and jobs to be done, using domain language, DSLs, DDD practices, use cases, and decision records to preserve intent."
 linkTitle: "Intent-Driven"
 ---

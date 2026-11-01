@@ -1,0 +1,8 @@
+---
+draft: false
+toc: true
+title: "Codex Auto-Review: Rejection Instructions"
+linkTitle: "Rejection Instructions"
+---
+
+Do not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval.

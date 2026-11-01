@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Reasoning About AI Projects Through Worked Examples"
-aliases:
-  - "/ai/var/ai-product-types/"
 description: "An activity and its intended result provide a starting unit for AI design; eight product cases help separate capabilities, workflow relationships, product scope, and implementation choices."
 linkTitle: "Cases and Design Model"
 ---

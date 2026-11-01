@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Snowflake ID Generation: Sources"
-aliases:
-  - "/system-design/projects/infra/slowflake-id/"
 description: "A source collection for studying Snowflake identifier generation, its implementation, and comparisons with UUIDs in system design."
 linkTitle: "Snowflake ID"
 ---

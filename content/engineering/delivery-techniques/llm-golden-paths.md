@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Golden Paths and Checkpoints for LLM Work"
-aliases:
-  - "/engineering/delivery-techniques/skeletons/"
 description: "Collected notes on golden paths for RAG, agents, and evaluation harnesses, connecting platform templates and engineering checkpoints to observable outcomes."
 linkTitle: "LLM Golden Paths"
 ---

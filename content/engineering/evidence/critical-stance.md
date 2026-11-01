@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Critical Stance and Evidence-Based Practice"
-aliases:
-  - "/ai-engineering/evaluation/theoretical-methodology/appraisal/in-critical-stance/"
 description: "Critical empirical practice combines skepticism, practical tests, and reflection. Its vocabulary distinguishes checking a claim from examining whether the measurement and interpretation support it."
 linkTitle: "Critical Stance"
 ---

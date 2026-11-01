@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "AI Inference Market Scenarios: Workloads and Prices"
-aliases:
-  - "/ai/product/strategic-analysis/in-market/"
 description: "Exploratory economic scenarios model workload migration among frontier APIs, cheaper providers, hosted open weights, and local inference, separating task quality and failure cost from provider-financing and price forecasts."
 linkTitle: "Inference Market Scenarios"
 ---

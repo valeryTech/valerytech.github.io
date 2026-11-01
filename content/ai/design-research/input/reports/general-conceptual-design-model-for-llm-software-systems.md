@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Conceptual Design Model for LLM Software Systems"
-aliases:
-  - "/ai/design-research/input/general-conceptual-design-model-with-references/"
 description: "A research report on LLM software design, connecting work contracts, authoritative state, candidate generation, validation, authorization, and controlled execution."
 linkTitle: "Conceptual Design Model"
 ---

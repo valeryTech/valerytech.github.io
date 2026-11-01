@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Applicative Functors in Haskell"
-aliases:
-  - "/functional-programming/applicative/"
 description: "Applying functions that sit inside a functor with pure and <*>, applicative style for independent computations, how it differs from a monad, the laws, and the Maybe, list and ZipList instances."
 weight: "30"
 linkTitle: "Applicative"
@@ -206,11 +204,11 @@ See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}
 - [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth*: chapter 2, section 2.3: `Applicative` between `Functor` and `Monad`, with `IO`, `Writer` and lists compared side by side (2.3.2).
 - [Gibbons et al. 2009](/sources/0887110810ff7a2b58876a95a1481907.bin), *The Essence of the Iterator Pattern*: section 3, "Applicative Functors": the four laws rewrite any applicative expression to `pure f <*> u1 <*> ... <*> un`, so the effects are fixed in advance, unlike with `>>=`; section 3.1, every monad gives an applicative; section 3.2, `Const` over a monoid is an applicative that is not a monad, and lists are applicative in three ways (cartesian, concatenating, zipping); section 3.3, applicatives are closed under product and composition, monads are not; on *Applicative versus monad*, *Laws* and *ZipLists*.
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: chapter 3, Lifting Pure Functions: section 3.1 starts from `fmap` lifting only one-argument functions and from the duplication in `lift2`, `lift3`, ..., and arrives at `ap`; section 3.2 defines `Applicative` and gives `ZipList`, with `pure` as `repeat`, as an applicative that is not a monad; section 3.3 covers applicative style, `<*` and `*>` (3.3.1) and `ApplicativeDo`, with Haxl as the reason to prefer applicative translations (3.3.2); section 3.4 shows that applicatives are monoidal functors; on *From Functor to Applicative*, *Applicative versus monad*, *ZipLists* and *Independent computations*.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 12, Applicative and traversable functors: sections 12.1-12.2 (`Applicative[F[_]]` formulated with `unit` and `map2` or equivalently with `unit` and `apply`, plus `map3`/`map4`), 12.3 (`Applicative` versus `Monad` on `Option` and on context-free versus context-sensitive `Parser`), 12.4 (`ZipList` over `LazyList` with `LazyList.continually` as `unit`, and `Validated` accumulating errors over a `Monoid` versus fail-fast `eitherMonad`), and 12.5 (the applicative laws, products and composition of applicatives); on *The `Applicative` class*, *Independent computations*, *Applicative versus monad*, *Laws* and *ZipLists*.
 
 Further reading:
 
 - [Gibbons et al. 2023](/sources/351d745643344e9ecfa3dc8b88296685.bin), *Phases in Software Architecture* ([doi:10.1145/3609025.3609479](https://doi.org/10.1145/3609025.3609479))
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*
 - [Schwarz 2019](/sources/e08d684028ca8873968d5625f4173f0a.bin), *Monads do not Compose*
 - [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional*: chapter 10, Implementation: Working with Errors, section "Monads and More", sub-heading "Composing in Parallel with Applicatives": a two-paragraph contrast of combining results in series (monads) with combining them independently (applicatives), with error-collecting validation as the use; on *Independent computations*.
 - [Serrano Mena 2022](/sources/5c1001bd2c4b75b2ff640e61358fc71a.bin), *Haskell: Almost Standard Libraries*: chapter 9, Validation and parsing, section 9.2, "Parsers": an applicative `Person <$> word <* spaces <*> ...` parser; section 9.2.1, "Monadic parsing": `Monad` is needed once a parsed count decides how many words follow (`count n`); on *Applicative versus monad*.

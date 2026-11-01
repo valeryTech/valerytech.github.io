@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Senior System Design Practice Review Rubric"
-aliases:
-  - "/system-design/interview/sd-signals-openai/"
 description: "A personal senior-level practice rubric with weighted criteria, behavioral rating scales, interview timing, scoring guidance, and capacity-estimation patterns."
 linkTitle: "Practice Review Rubric"
 ---

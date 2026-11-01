@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Walking Skeleton: Definition and Examples"
-aliases:
-  - "/engineering/delivery-techniques/delivery-skeleton-1-in/"
 description: "Define an architectural walking skeleton, its acceptance criteria and lifespan, with document-QA examples and alternative formulations of the first delivery slice."
 linkTitle: "Walking Skeleton Basics"
 ---

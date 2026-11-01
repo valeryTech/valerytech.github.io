@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Decision Records for Uncertainty"
-aliases:
-  - "/ai/product/product-model/experimentation-apparatus/"
 description: "A proposed record system for AI uncertainty preserves approach decisions, problem reformulations, and possibility judgments, linking experiment logs to durable reasons for continuing, changing, or abandoning work."
 linkTitle: "Decision Records"
 ---

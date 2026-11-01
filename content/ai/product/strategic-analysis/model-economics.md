@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Frontier-Model Economics and Architecture"
-aliases:
-  - "/ai/product/strategic-analysis/in-calculations/"
 description: "A working architecture-decision model moves from support-agent economics to workload-conditioned evaluation, comparing structures, components, and adaptive routing policies through constrained multi-objective search and Pareto trade-offs."
 linkTitle: "Architecture Economics"
 ---

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Torres and Cagan: A Comparative Analysis"
-aliases:
-  - "/ai/product/product-model/comparison/research-1-deep-res/"
 description: "A broader comparative research report places Cagan’s organizational model alongside Torres’s team discovery habits, evaluates supporting evidence and critiques, and proposes a hybrid adoption path beyond the earlier AI-focused survey."
 linkTitle: "Comparative Analysis"
 ---

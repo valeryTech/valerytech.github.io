@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Property-Based Testing with QuickCheck and ScalaCheck"
-aliases:
-  - "/functional-programming/property-based-testing/"
 description: "Testing with properties instead of examples in QuickCheck and ScalaCheck: pure generators, shrinking, where good properties come from, testing type-class laws, and why purity makes it easy."
 weight: "60"
 linkTitle: "Property-Based Testing"

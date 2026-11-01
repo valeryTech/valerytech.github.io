@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "AI Products Need Evals, Not Just Tests"
-aliases:
-  - "/ai-engineering/approach/empirical-nature-2/"
 description: "A clear product target can still leave reliability uncertain. The delivery loop combines enforceable safeguards, realistic cases, trace inspection, expert judgment, regression checks, and scoped release decisions."
 linkTitle: "Evals, Not Just Tests"
 ---

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Design Questions and Pattern Map"
-aliases:
-  - "/system-design/elements/elements/"
 description: "A map of system design building blocks organized as design questions, with the hub and pattern note format, how the questions lead into each other, and where detailed notes live."
 document_status: "canonical"
 linkTitle: "Pattern Map"

@@ -89,7 +89,7 @@ Plan comparisons around the conditions that could change their interpretation. T
 - [Exploratory design]({{< ref "engineering/eng-exp/exploratory-design" >}})
 - [AI systems require behavioral evidence]({{< ref "ai-engineering/approach/behavioral-evidence" >}})
 - [model and system behavior]({{< ref "ai-engineering/causal-stack/reference/model-and-system" >}})
-- [Why use an evaluation harness?]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}})
+- Why use an evaluation harness?
 - [Evaluation harness and workspace]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}})
 - [product behavior guide]({{< ref "ai-engineering/causal-stack" >}})
 - science method
@@ -160,7 +160,7 @@ But production experimentation may reveal:
 
 AI systems need both offline evaluation and online experimentation because the real system includes users, product flows, traffic patterns, latency budgets, and failure modes.
 
-This is why teams need a structured [evaluation harness]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}}) rather than relying only on benchmark deltas or isolated demos.
+This is why teams need a structured evaluation harness rather than relying only on benchmark deltas or isolated demos.
 
 ### 4. Data changes over time
 
@@ -252,7 +252,7 @@ AI systems improve through iteration:
 6. Deploy cautiously.
 7. Monitor production outcomes.
 
-This is the operational loop that [evaluation harnesses]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}}) and [evaluation platforms]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) are meant to support.
+This is the operational loop that evaluation harnesses and [evaluation platforms]({{< ref "ai-engineering/evaluation/framework/harness-and-platform" >}}) are meant to support.
 
 Without experimentation, AI engineering becomes guesswork.
 

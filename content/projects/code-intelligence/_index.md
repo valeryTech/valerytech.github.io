@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Code Intelligence"
-aliases:
-  - "/projects/code-assistant/"
 description: "A worked concept for an engineering assistant that combines structural code analysis, hybrid retrieval, and human verification."
 linkTitle: "Code Intelligence"
 ---

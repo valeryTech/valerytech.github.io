@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Error Handling as Values"
-aliases:
-  - "/functional-programming/error-handling/"
 description: "Errors as values instead of exceptions: totality, Option, Either and Try, fail-fast versus accumulating validation and why accumulation is applicative, typed errors in effect types, and converting at boundaries."
 weight: "10"
 linkTitle: "Error Handling"
@@ -45,11 +43,11 @@ Pilquist et al. (ch. 4.3.1) give the Scala version of the rule: throw only when 
 ### What values keep from exceptions
 
 
-Pilquist et al. (ch. 4) state the alternative and what it preserves:
+Pilquist et al. (ch. 4 and 4.1) state the alternative and what it preserves:
 
-> The functional solution, of returning errors as values, is safer and retains referential transparency, and through the use of higher-order functions, we can preserve the primary benefit of exceptions -- *consolidation of error-handling logic.*
+> The functional solution of returning errors as values is safer and retains referential transparency, and through the use of higher-order functions, we can preserve the primary benefit of exceptions: *consolidation of error-handling logic*.
 
-> But instead of using error codes, we introduce a new generic type for these "possibly defined values" and use higher-order functions to encapsulate common patterns of handling and propagating errors.
+> ... instead of using error codes, we introduce a new generic type for these *possibly defined values* and use higher-order functions to encapsulate common patterns of handling and propagating errors.
 
 "Consolidation of error-handling logic" is what a `catch` block gives you: failures anywhere in a chain are handled in one place. With `Option` the chain is a sequence of `map`/`flatMap` calls, and the single handling point is a final `getOrElse` or pattern match.
 
@@ -190,7 +188,7 @@ Plachta (ch. 6) names two strategies for parsing a list. *Best-effort* keeps the
 
 `flatMap` can't do better. In `a.flatMap(x => f(x))`, if `a` failed there is no `x` to pass to `f`, so the second step can't run. The steps are dependent, so the first error ends the computation.
 
-When the steps are *independent*, as when validating the fields of a form, nothing forces you to stop. Pilquist et al. (ch. 4.4.1 and 4.4.2) show this step by step. `map2` on `Either` reports only one error even when both arguments are `Left`. A `map2All` over `Either[List[E], A]` concatenates the errors. Naming that behaviour gives a new type, `Validated`, which is convertible to and from `Either` and differs only in `map2`. Generalising from `List[E]` to any `E` needs a way to combine two errors, which in Cats is a `Semigroup[E]` (see [Semigroup and monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}})).
+When the steps are *independent*, as when validating the fields of a form, nothing forces you to stop. Pilquist et al. (ch. 4.4.1, 4.4.2 and 12.4.1) show this step by step. `map2` on `Either` reports only one error even when both arguments are `Left`. A `map2All` over `Either[List[E], A]` concatenates the errors. Naming that behaviour gives a new type, `Validated`, which is convertible to and from `Either` and differs only in `map2`. Generalising from `List[E]` to any `E` needs a way to combine two errors: in chapter 4.4.2 `map2` takes an explicit `combineErrors: (EE, EE) => EE` parameter, and in chapter 12.4.1 `Validated` gets an `Applicative` instance over a `Monoid[E]` (or in Cats, a `Semigroup[E]`; see [Semigroup and monoid]({{< ref "functional-programming/02-abstractions/semigroup-monoid" >}})).
 
 ```scala
 import cats.data.ValidatedNel
@@ -354,7 +352,7 @@ See also: [Option]({{< ref "functional-programming/02-abstractions/monads" >}}#o
 ## Library sources
 
 
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 4, Handling errors without exceptions. The case against exceptions and sentinels, totality, `Option` and lifting with `map2`/`traverse`, `Either` and `catchNonFatal`, accumulating errors and the derivation of `Validated`, and `Try` versus `Either`. Source of the two quoted passages.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 4, Handling errors without exceptions: the case against exceptions and sentinels (4.1-4.2), totality and `Option` with `map2`/`traverse` (4.3), `Either`, `catchNonFatal` and smart constructors in listing 4.4 (4.4), accumulating errors and the derivation of `Validated` (4.4.1-4.4.2), and `Try` versus `Either` (4.4.2); chapter 12, section 12.4.1, "Validated: An Either variant that accumulates errors", contrasts fail-fast `eitherMonad` with `validatedApplicative` over a `Monoid` of errors. Source of the two quoted passages.
 - Płachta 2022, *Grokking Functional Programming*: chapter 6, Error handling. `Option` versus checked exceptions under conditional recovery, `orElse`, best-effort versus all-or-nothing strategies, refactoring to `Either`, `toRight`/`toOption`.
 - [Welsh and Gurnell 2020](/sources/08cab18bbc8a17a6885874831fe8c431.bin), *Scala with Cats*: section 4.4.4 (error ADTs versus `Throwable`), 4.5 (MonadError), chapter 6 (why `Either`'s `product` fails fast, `Parallel` and `parMapN`, `Validated`), 7.2.2.3 (traversing with `Validated`), chapter 10 (data validation case study).
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell*: chapter 8 (`catch`, `throwIO` versus `throw`, `eitherToErr`), chapter 13 (from `EitherIO` to `ExceptT`, `throwError`/`catchError`), chapter 4 (type aliases for `Either AppError`).

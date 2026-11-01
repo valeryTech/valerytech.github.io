@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Refactoring Functional Code in Haskell"
-aliases:
-  - "/functional-programming/functional-refactoring/"
 description: "Refactoring examples in Haskell: splitting a Collatz step counter into separate jobs, replacing partial functions with types that carry the guarantee, and wholemeal programming."
 weight: "20"
 linkTitle: "Refactoring Functional Code"

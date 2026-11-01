@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Product Management Reading List and Cagan Critique"
-aliases:
-  - "/ai/product/product-model/actions/"
 description: "A product-management research agenda combines reference links with a critique of Cagan’s model, emphasizing decision authority, strategic constraints, deployability, and context when adapting it to AI engineering."
 linkTitle: "Reading List and Critique"
 ---

@@ -2,15 +2,6 @@
 draft: false
 toc: true
 title: "Debugging a Failed Customer Task"
-aliases:
-  - "/ai-engineering/causal-stack/layer-2/product-fault-families/"
-  - "/ai-engineering/evaluation/causal-stack/layer-2/product-fault-families/"
-  - "/ai-engineering/causal-stack/layer-2/fault-family-index/"
-  - "/ai-engineering/evaluation/causal-stack/layer-2/fault-family-index/"
-  - "/ai-engineering/causal-stack/layer-2/semantic-fault-family-index/"
-  - "/ai-engineering/evaluation/causal-stack/layer-2/semantic-fault-family-index/"
-  - "/ai-engineering/causal-stack/layer-2/failure-operators/"
-  - "/ai-engineering/evaluation/causal-stack/layer-2/failure-operators/"
 description: "Follow a failed task through intent, evidence, meaning, state, and tool effects. The first visible mismatch guides competing explanations and focused checks before choosing a fix or changing supported scope."
 linkTitle: "Debugging a Failed Task"
 ---

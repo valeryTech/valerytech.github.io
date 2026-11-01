@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Architecture Grounded in User Goals"
-aliases:
-  - "/engineering/progressive/goal-oriented-architecture/flow-1/"
 description: "Research notes on how user goals and workflows can ground architectural responsibilities and provide context beyond structural diagrams."
 linkTitle: "Grounded in User Goals"
 ---

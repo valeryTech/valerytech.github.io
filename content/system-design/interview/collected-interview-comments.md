@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Collected System Design Interview Comments"
-aliases:
-  - "/system-design/interview/sd-interview-input/"
 description: "Collected practitioner discussions about system design interviews, seniority expectations, technical depth, trade-offs, cost, delivery constraints, and candidate evaluation."
 linkTitle: "Collected Comments"
 ---

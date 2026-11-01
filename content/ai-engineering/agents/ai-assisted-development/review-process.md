@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "A Practical Review Process"
-aliases:
-  - "/ai-engineering/agents/ai-assisted-development/review-flow-specification/"
 description: "Readiness to merge depends on more than code correctness. Eight review steps connect intended behavior and system impact to design, implementation, testing, deployment, recovery, and a recommendation grounded in evidence."
 lastmod: "2026-04-19"
 linkTitle: "Review Process"

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Deriving an Optimal Architecture"
-aliases:
-  - "/ai/product/strategic-analysis/in-design-modeling/"
 description: "A research note assembles established architecture assessment, experimental design, design-space exploration, and optimization methods into a candidate process for choosing agentic RAG architectures under uncertainty."
 linkTitle: "Optimal Architecture"
 ---

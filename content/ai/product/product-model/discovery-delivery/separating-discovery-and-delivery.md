@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Separating Discovery and Delivery"
-aliases:
-  - "/ai/product/product-model/discovery-delivery/discovery-deliery-separation/"
 description: "An earlier source-backed argument for separating learning prototypes from enduring production commitments, deriving different AI-platform needs from concurrent discovery and delivery responsibilities."
 linkTitle: "Separation"
 ---

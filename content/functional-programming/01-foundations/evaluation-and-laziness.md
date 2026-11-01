@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Evaluation and Laziness in Functional Programming"
-aliases:
-  - "/functional-programming/evaluation-and-laziness/"
 description: "How functional programs are evaluated, from reduction, the substitution model and Church-Rosser to strict and non-strict semantics, thunks and sharing, space leaks, and call-by-name in Scala."
 weight: "20"
 linkTitle: "Evaluation and Laziness"
@@ -87,9 +85,9 @@ Non-strictness is semantics: which expressions have values. Lazy evaluation (cal
 
 Pilquist et al. describe non-strictness as a property of individual functions:
 
-> Nonstrictness is a property of a function. To say that a function is nonstrict just means the function may choose not to evaluate one or more of its arguments. In contrast, a strict function always evaluates its arguments. Strict functions are the norm in most programming languages, and indeed, most languages only support functions that expect their arguments fully evaluated.
+> *Nonstrictness* is a property of a function. To say that a function is nonstrict just means the function may choose not to evaluate one or more of its arguments. In contrast, a *strict* function always evaluates its arguments. Strict functions are the norm in most programming languages, and indeed, most languages only support functions that expect their arguments fully evaluated.
 >
-> (Pilquist et al. 2023, chapter on strictness and laziness)
+> (Pilquist et al. 2023, ch. 5, section 5.1, "Strict and nonstrict functions")
 
 ### Lazy evaluation
 
@@ -314,7 +312,7 @@ See also: [Lambda calculus]({{< ref "functional-programming/01-foundations/lambd
 - [Cunningham 2022](/sources/03f5a1670784f5bcdf040f3e142fb3f3.bin), *Exploring Languages with Interpreters and Functional Programming, Chapter 8: Evaluation Model*: section 8.1 is the passage quoted under Substitution model; section 8.3, "Substitution Model", classifies redexes as leftmost or rightmost and innermost or outermost, reduces `fact1 2` one annotated step at a time, then redoes it as graph reduction, where the shared `2-1` is reduced once instead of three times; section 8.4 takes reduction steps as time and the largest expression as space; section 8.7 asks for hand reductions of `fib 4` and `fact6 2`; on *Substitution model and equational reasoning*, *Reduction* and *Working through an evaluation by hand*.
 - [Takenobu 2016](/sources/22c1dc525b3bb9e65e3f34eda868a965.bin), *Lazy evaluation illustrated for Haskell divers*: section 2, "WHNF" (slides 38-50), defines WHNF, HNF and NF with examples; section 3, "Thunk" (slides 67-71), draws a thunk as code plus free variables, and slide 158 shows it overwritten by its value; section 4, "Evaluation in Haskell (GHC)" (slides 100-104), shows pattern matching driving evaluation and stopping at WHNF, and "Controlling the evaluation" (slides 130-143) lists what forces it: primitive operations, `foldl'`, `seq` and `$!` (to WHNF), `deepseq` and `force` (to NF), bang patterns, strictness flags and `-O`; section 5 covers lazy graph reduction and the STG machine (slides 145-162); section 6 covers bottom and strict functions (slides 164-181) and GHC's strictness analysis (slides 193-200); on *Thunks, sharing and pattern matching*, *Pattern matching drives evaluation*, *Bang patterns*, *Strict and non-strict evaluation*, *Non-strict is not the same as lazy* and the STG caveat under *Reduction*.
 - [Abelson et al. 2022](/sources/450d0cad1e0f327a0198de0aac294605.bin), *Structure and Interpretation of Computer Programs, JavaScript Edition*: the substitution model, section 1.1.5.
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: the chapter on strictness and laziness, source of the nonstrictness passage.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 5, Strictness and laziness: section 5.1, "Strict and nonstrict functions", is the source of the nonstrictness passage and introduces by-name parameters (`=> A`) and `lazy val` in Scala; section 5.2 builds a memoized `LazyList` with thunks (`() => A`); on *Non-strict is not the same as lazy*, *Lazy evaluation* and *Call-by-name in Scala*.
 - [Marlow 2013](/sources/f44aab56157033a976c5cd07d5bcb688.bin), *Parallel and Concurrent Programming in Haskell*: the Part I introduction (why fully automatic parallelisation still fails, granularity, data dependencies), on the parallelism claims under *Church-Rosser*; chapter 2, "Lazy Evaluation and Weak Head Normal Form", which uses GHCi's `:sprint` to show thunks, sharing in a pair `(x, x)` and `seq` evaluating to WHNF, with a footnote that Haskell is non-strict and lazy evaluation is one implementation strategy; on *Thunks, sharing and pattern matching* and *Non-strict is not the same as lazy*.
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell*: chapter 2, Working with Lists, section "Understanding How Programs Are Evaluated", explains call by need and thunks, and steps `findFirst (> 2)` through a list whose tail is a `<thunk>`, one rewrite per line; "Hands-On with Infinite Fibonacci Numbers" does the same for `fibs = 0 : 1 : helper fibs (tail fibs)`; on *Working through an evaluation by hand*. Chapter 10, section "Dealing with Laziness and IO", finds a space leak in a small metrics program from the maximum residency in `+RTS -s` ("Understanding Space Leaks"). It draws thunks as heap objects with a header, code and payload ("Thunks and Evaluation in Haskell Programs"), and fixes the leak with `modifyIORef'`, `seq`, `$!` and bang patterns. It then shows that forcing a `FileStats` wrapper leaves the map inside it a thunk until the field itself is strict; on *The Haskell heap*, *Bang patterns* and *Detecting space leaks*. Chapter 14, section "Memoizing editDistance", memoizes edit distance with a lazy list of lists of thunks. It warns that a top-level cache is never garbage-collected and that let floating can keep a cache alive (`-fno-full-laziness`); on *Memoization through sharing*.
 - [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth*: chapter 9, Haskell data and code at run time: how thunks and closures are laid out in memory (9.1), and controlling strictness with `seq` and bang patterns on an accumulating loop (9.2.1); on Thunks and Costs of laziness. Chapter 10, Benchmarking and profiling, sections 10.2.2, "Analyzing execution time and memory allocation", and 10.2.3, "Analyzing memory usage": `+RTS -s` for allocation and maximum residency, profiling builds with `-prof` or `--enable-profiling`, and `+RTS -h` heap profiles; on *Detecting space leaks*.
@@ -326,5 +324,4 @@ See also: [Lambda calculus]({{< ref "functional-programming/01-foundations/lambd
 
 Further reading:
 
-- Chiusano et al. 2013, *Functional Programming in Scala (MEAP version 10)*
 - Płachta 2022, *Grokking Functional Programming*

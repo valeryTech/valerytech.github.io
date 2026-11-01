@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "AI Engineering Evidence Protocol"
-aliases:
-  - "/ai-engineering/evaluation/theoretical-methodology/appraisal/in-protocol/"
 description: "A productivity claim must account for supervision, review, correction, and later rework. The protocol sets evidence requirements for AI evaluations, including baselines, failure cases, and uncertainty."
 linkTitle: "Evidence Protocol"
 ---

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Empowered-Team Model Draft: Interface and Funnel"
-aliases:
-  - "/ai/product/product-model/discovery-delivery/in-model-etc/"
 description: "An evolving operating-model draft traces the shift from feature teams to outcome ownership, then refines the discovery-delivery interface around candidate solutions, supporting evidence, remaining risks, and constraints."
 linkTitle: "Empowered-Team Draft"
 ---

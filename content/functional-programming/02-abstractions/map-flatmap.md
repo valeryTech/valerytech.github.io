@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Understanding map and flatMap"
-aliases:
-  - "/functional-programming/map-flatmap/"
 description: "What map preserves in a structure such as Option, the identity and composition laws behind it, and when the next step needs flatMap instead, with Scala examples."
 weight: "10"
 linkTitle: "map and flatMap"
@@ -157,7 +155,7 @@ See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}
 ## Library sources
 
 
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 4, Handling errors without exceptions, builds `map`, `flatMap`, `filter` and `getOrElse` for `Option` as exercises and explains for-comprehensions.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 4, Handling errors without exceptions, builds `map`, `flatMap`, `filter` and `getOrElse` for `Option` as exercises (4.3.1) and explains for-comprehensions (4.3.2); chapter 11, section 11.1, "Functors: Generalizing the map function", and section 11.1.1, "Functor laws", state `x.map(a => a) == x` and `x.map(f).map(g) == x.map(f andThen g)` as structure preservation (`map` cannot throw, drop elements or turn `Some` into `None`).
 - [Welsh et al. 2020](/sources/08cab18bbc8a17a6885874831fe8c431.bin), *Scala with Cats*: the chapters on functors and monads state these laws in Scala and generalize `map` and `flatMap` beyond `Option`.
 - Płachta 2022, *Grokking Functional Programming*: chapter 5, Sequential programs: `flatten` and `flatMap` on lists, how `flatMap` can change the size of a list, nested `flatMap`s rewritten as for comprehensions, and `Option` for parsing; chapter 6 continues with `Option` and `Either`.
 - [Schwarz 2023](/sources/a8b1df01cd99fb5b51b25c76ace67da8.bin), *Kleisli composition, flatMap, join, map, unit*: slides showing how Kleisli composition, `flatMap`, `join` (`flatten` in Scala), `map` and `unit` can each be defined from the others, with Scala 3 code for `Option` and `List`.
@@ -167,5 +165,4 @@ See also: [Functor]({{< ref "functional-programming/02-abstractions/functor" >}}
 Further reading:
 
 - [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala (5th edition)*
-- Chiusano et al. 2013, *Functional Programming in Scala (MEAP version 10)*
 - [Wlaschin 2018](/sources/3165b993e939de6a47737a073d7633a4.bin), *Domain Modeling Made Functional*: chapter 10, Implementation: Working with Errors, section "Chaining Result-Generating Functions": `bind` adapts a function that can fail, and `map` adapts one that can't, so both fit a pipeline of `Result`s; the same split as `map` versus `flatMap` here, for `Result` instead of `Option`; on *`flatMap`*.

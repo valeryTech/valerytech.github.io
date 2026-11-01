@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "AI Systems Require Behavioral Evidence"
-aliases:
-  - "/ai-engineering/approach/empirical-nature/"
 description: "Learned components limit what implementation inspection can establish. An escalation example links requirements, mechanism assurance, behavioral evidence, and decisions about the scope a product can support."
 linkTitle: "Behavioral Evidence"
 ---
@@ -147,7 +145,7 @@ Engineering rule:
 
 This supports the idea that **experimentation is not outside AI engineering**. It is the base layer because the only reliable way to improve an AI system is to run controlled experiments and measure what changes. See [Disciplined AI experimentation]({{< ref "ai-engineering/approach/experimentation" >}}).
 
-The same limit applies to the instructions given to coding agents: [Why it is hard to tell whether AGENTS.md works]({{< ref "ai-engineering/agents/ade/agents-md/evaluation/agents-md-verification" >}}).
+The same limit applies to the instructions given to coding agents: [Why it is hard to tell whether AGENTS.md works]({{< ref "ai-engineering/agents/evaluation/agents-md-verification" >}}).
 
 ## Assurance System
 

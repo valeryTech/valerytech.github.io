@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Review of My Perspective on AI Engineering"
-aliases:
-  - "/ai-engineering/approach/my-perspective-comment/"
 description: "Reviews a production AI engineering statement for company alignment, identifying missing accountability, domain participation, proportional rigor, and evidence-based planning mechanisms."
 linkTitle: "Perspective Review"
 ---

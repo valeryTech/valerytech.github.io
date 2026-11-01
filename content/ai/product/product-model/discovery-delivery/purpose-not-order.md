@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Discovery and Delivery: Purpose, Not Order"
-aliases:
-  - "/ai/product/product-model/discovery-delivery/40-new-model/"
 description: "A short conceptual refinement distinguishes discovery and delivery by their purposes and obligations, using framed decisions, bounded tests, and revisable production commitments to connect action with learning."
 linkTitle: "Purpose, Not Order"
 ---

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Work Allocation and Collaborative Design: Reading Route"
-aliases:
-  - "/ai/design-research/collab-and-joint-work/build-approach/"
 description: "A route from participant capabilities to work allocation, augmentation, and tests of collaborative behavior, with links into the design-research collection beyond the published website."
 linkTitle: "Work Allocation"
 ---

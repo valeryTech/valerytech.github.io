@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Traversable and traverse in Haskell and Scala"
-aliases:
-  - "/functional-programming/traversable/"
 description: "traverse, sequenceA and traverse_, how the chosen applicative decides between short-circuiting, IO effects, parallelism and state, writing instances, the laws, and the essence of the iterator pattern."
 weight: "40"
 linkTitle: "Traversable"

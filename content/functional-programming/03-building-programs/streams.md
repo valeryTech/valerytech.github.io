@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functional Streams with fs2 and conduit"
-aliases:
-  - "/functional-programming/streams/"
 description: "From lazy lists to effectful pull-based streams: why laziness gives modularity, why lazy I/O isn't enough, fs2, conduit and pipes, resource safety, backpressure and stream fusion."
 weight: "40"
 linkTitle: "Streams"

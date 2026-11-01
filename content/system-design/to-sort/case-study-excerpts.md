@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "System Design Case-Study Excerpts"
-aliases:
-  - "/system-design/to-sort/sd-reviews/"
 description: "Collected review excerpts on URL shorteners, file storage, chat, feeds, rate limiting, search, and location-based systems, emphasizing mechanisms and trade-offs."
 linkTitle: "Case-Study Excerpts"
 ---

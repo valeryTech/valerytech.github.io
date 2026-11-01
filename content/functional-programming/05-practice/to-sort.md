@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functional Programming Links to Sort"
-aliases:
-  - "/functional-programming/to-sort/"
 description: "Unfiled functional programming links, open questions and todos, grouped by the note they should move to, from domain modelling and optics to Scala articles and the study plan."
 weight: "50"
 linkTitle: "Links to Sort"

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Lambda Calculus for Functional Programmers"
-aliases:
-  - "/functional-programming/lambda-calculus/"
 description: "The lambda calculus as a programmer needs it: terms and binding, β-reduction, currying, reduction strategies, and Church encodings of booleans and numbers."
 weight: "30"
 linkTitle: "Lambda Calculus"

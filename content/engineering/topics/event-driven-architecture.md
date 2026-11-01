@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Event-Driven Architecture Resources"
-aliases:
-  - "/engineering/topics/eda/"
 description: "Collected event-driven architecture resources, patterns, and excerpts for exploring pub/sub, events, and messaging-based system design."
 linkTitle: "Event-Driven Architecture"
 ---

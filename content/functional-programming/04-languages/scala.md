@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Scala Language Notes and Resources"
-aliases:
-  - "/functional-programming/scala/"
 description: "Scala language notes from expressions, classes, traits and variance to comprehensions, collections and implicits with their Scala 3 equivalents, plus the functional ecosystem, dependency injection, and books, talks and other resources."
 weight: "20"
 linkTitle: "Scala"
@@ -749,6 +747,7 @@ Scala material on these topics lives in the concept notes:
 ### Books
 
 
+- *Functional Programming in Scala* (2nd edition, Pilquist et al. 2023) is the core exercise-driven course on functional programming in Scala 3, building functional data structures, combinator libraries, type classes (`Monoid`, `Functor`, `Applicative`, `Monad`, `Traverse`), `IO` and pull-based streams from scratch ([PDF](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin)).
 - *Grokking Functional Programming* (Płachta 2022) teaches functional programming in Scala 3; the comprehension and parsing passages above come from it (PDF).
 - *Creative Scala*, a free book by Dave Gurnell and Noel Welsh, teaches Scala and functional programming through drawing pictures with the Doodle library. The same authors wrote *Scala with Cats* (see Library sources).
   - <https://www.creativescala.org/>
@@ -866,6 +865,7 @@ See also: [Scala type system]({{< ref "type-driven-design/05-stronger-type-syste
 - [Volpe 2021](/sources/8d99795fc4918b121b81f2e2c2630d26.bin), *Practical FP in Scala (2nd edition)*: state encapsulation with `Ref` and smart constructors, newtypes and refinement types.
 - [Suereth 2012](/sources/4e8d2d10ca6fd931719965959de39eac.bin), *Scala in Depth*: Scala 2 implicits and implicit resolution, for the Implicits section; dated (Scala 2.9).
 - Płachta 2022, *Grokking Functional Programming*: chapters 5 and 6 are the source of the passages under Comprehensions, and chapters 8 to 10 cover `IO`, streams and concurrency with Cats Effect and fs2.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 2 (functions as objects with `apply`, higher-order and polymorphic functions, currying), chapter 3 (ADTs with Scala 3 `enum`, covariance `+A`, `Nothing` and lower bounds `[B >: A]`), chapter 5 (call-by-name `=> A` and `lazy val`), section 10.5 (type classes with `given`, `using` and extension methods) and section 11.2 (the `Monad[F[_]]` trait and laws); on *Anonymous classes and function objects*, *Variances*, *Functions and functional abstractions* and *Books*.
 - [Ghosh 2017](/sources/50beef97eed4ab65bbee6a1c7ea06890.bin), *Functional and Reactive Domain Modeling*: chapter 2 (Scala for functional domain models: ADTs, modules), chapter 3 (algebraic API design, smart constructors) and chapter 5 (modularization).
 - [De Goes et al. 2025](/sources/4115845a430bc3f50ff12c191a45fd53.bin), *Zionomicon*: the ZIO book: the `ZIO[R, E, A]` type and its error channel (chapters 1 and 3), fibers (chapters 5 to 8), dependency injection with `ZLayer` (chapters 17 and 18) and ZStream (chapters 27 to 33); for the ZIO ecosystem and dependency injection.
 

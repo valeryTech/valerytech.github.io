@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Functors in Haskell"
-aliases:
-  - "/functional-programming/functor/"
 description: "A functor as a computational context: the Functor class and fmap, kinds and type constructors, lifting, the functor laws, and instances including functions."
 weight: "20"
 linkTitle: "Functor"
@@ -190,6 +188,7 @@ See also: [map and flatMap]({{< ref "functional-programming/02-abstractions/map-
 - [Bragilevsky 2021](/sources/ffe3ac8b34a3561966d61969ca73f474.bin), *Haskell in Depth*: chapter 2, section 2.3, Abstracting computations with type classes: `Functor` as mapping over a value in a computational context, the framing used under What a functor is, followed by `Applicative`, `Monad`, `Foldable` and `Traversable`.
 - [Skinner 2023](/sources/47da28f54846d377221bfd47a62316ff.bin), *Effective Haskell*: chapter 9, Introducing Monads, opens with "Mapping Functors". Its section "Using the Functor Laws" builds an `Outlaw` functor whose `fmap` increments a counter and so breaks both laws; on *Laws*. Chapter 6, section "Understanding Higher Kinded Types and Polymorphism", introduces kinds with `:kind` and `KindSignatures`; on *Kinds: `f` is a type constructor*.
 - [Serrano Mena 2021](/sources/4f6f84b5680da34841126999b31e2ed3.bin), *Book of Monads (2nd edition)*: section 1.5, "Functors", reads `fmap :: (a -> b) -> (f a -> f b)` as lifting a function into the functor, on *Lifting*; section 5.1.1, "Functor Laws", explains the laws as structure preservation and breaks them with two lawless list instances, one that returns `[]` and one that also reverses, on *Laws*; section 0.2, "Higher-kinded Abstraction", introduces abstraction over type constructors such as `[]`, `Set` and `Tree`, on *Kinds: `f` is a type constructor*.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 11, section 11.1, "Functors: Generalizing the map function" (parameterizing `Functor[F[_]]` on a type constructor `F[_]`, lifting `A => B` into `F`, and generic `distribute` and `codistribute`), and section 11.1.1, "Functor laws" (`x.map(a => a) == x` and `x.map(f).map(g) == x.map(f andThen g)` as structure preservation); on *The `Functor` class and `fmap`*, *Kinds: `f` is a type constructor*, *Lifting* and *Laws*.
 
 Further reading:
 

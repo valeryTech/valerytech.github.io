@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "A Strict Evidence Filter for Trend Claims"
-aliases:
-  - "/ai/product/strategic-analysis/sources-critical/"
 description: "Working source-selection guidance weighs AI capability claims by measurable artifacts, baselines, repeated runs, and builder/operator evidence, proposing a claim ledger that separates trend sensing from demonstrated production results."
 linkTitle: "Evidence Filter"
 ---

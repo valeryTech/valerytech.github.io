@@ -15,6 +15,6 @@ This collection follows an evaluation from the initial question to cases, record
 | Executions and recorded evidence | [Evidence model]({{< ref "ai-engineering/evaluation/framework/evidence-model" >}}) |
 | Criteria and conclusions | [Judgment and findings]({{< ref "ai-engineering/evaluation/framework/30-judgment-and-findings" >}}) |
 | Failures and possible causes | [Failure understanding]({{< ref "ai-engineering/evaluation/framework/20-error-analysis" >}}) |
-| Execution infrastructure | [Why use an evaluation harness]({{< ref "ai-engineering/evaluation/framework/why-use-evaluation-harness" >}}) |
+| Execution infrastructure | Why use an evaluation harness |
 
 The [evaluation map]({{< ref "ai-engineering/evaluation" >}}) selects entry points from this collection.

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Learning Through Real Product Use"
-aliases:
-  - "/ai-engineering/causal-stack/practical-checks/"
 description: "Start from an existing customer job, build one usable path, inspect real attempts, compare changes, and observe repeat use. Record which investigation questions improve decisions and how much effort the guide adds."
 linkTitle: "Learning from Real Use"
 ---
@@ -83,7 +81,7 @@ Use those observations to retain, qualify, merge, or remove material. If the gui
 - [Wieringa's design-science methodology](https://link.springer.com/book/10.1007/978-3-662-43839-8) ([PDF](/sources/466ae150a72883885f071398cd467286.bin)) provides the broader frame of designing an artifact and evaluating it in its intended context.
 - [Evidence-Based Software Engineering](https://ebse.webspace.durham.ac.uk/) combines appraisal of research with practical expertise and stakeholder circumstances. It informs the review of recommendations before treating them as established practice. The vault's notes on it are in [EBSE]({{< ref "engineering/evidence/ebse" >}}).
 
-The local [evaluation approach]({{< ref "ai-engineering/approach/evaluations" >}}), [experimentation note]({{< ref "ai-engineering/approach/experimentation" >}}), and [evidence protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) remain the parent methodology. The procedures here are a practical application that should itself be revised through use.
+The local [evaluation approach]({{< ref "ai-engineering/approach/evaluations" >}}), [experimentation note]({{< ref "ai-engineering/approach/experimentation" >}}), and [evidence protocol]({{< ref "ai-engineering/evaluation/theoretical-methodology/appraisal/evidence-protocol" >}}) remain the parent methodology. The procedures here are a practical application that should itself be revised through use. The Engineering Knowledge Loop describes how case records like these become reusable knowledge across projects.
 
 ## Library sources
 

@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Finding LLM Startup Opportunities: An Approach"
-aliases:
-  - "/ai/product/strategic-analysis/approach/"
 description: "A proposed opportunity-search method targets expensive, verifiable semantic workflows, combining LLM capability limits, deterministic controls, recovery, historical cases, buyer access, and a narrow automation boundary."
 linkTitle: "Opportunity Search"
 ---

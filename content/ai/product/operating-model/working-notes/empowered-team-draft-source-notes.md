@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Source Notes from the Empowered-Team Draft"
-aliases:
-  - "/ai/product/operating-model/working-notes/in-model-etc-source-notes/"
 description: "The fragments connect strategic problems to empowered teams, solution experiments, and production work. They retain planning questions about evidence strength, shared understanding, and the two-way flow between discovery and delivery."
 linkTitle: "Team Draft Source Notes"
 ---

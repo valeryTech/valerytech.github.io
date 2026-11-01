@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Pure Functions, Referential Transparency and Effects"
-aliases:
-  - "/functional-programming/pure-functions-and-effects/"
 description: "Referential transparency and where substitution breaks, side effects, immutability and persistent data structures, and the functional core with an imperative shell."
 weight: "10"
 linkTitle: "Pure Functions and Effects"
@@ -71,19 +69,20 @@ A common definition:
 
 "Observable" carries most of the weight. Mutation that nobody outside can see doesn't count: a function may build its result in a local mutable buffer, or cache results internally, and still be pure from the caller's side. Haskell's `ST` monad makes that guarantee checkable by the type system.
 
-The list leaves out throwing an exception, which breaks referential transparency too. The example from chapter 4 of *Functional Programming in Scala*:
+The list leaves out throwing an exception, which breaks referential transparency too. The example from chapter 4 (listing 4.1) of *Functional Programming in Scala*:
 
 ```scala
 def failingFn(i: Int): Int =
-  val y: Int = throw new Exception("fail!")
+  val y: Int = throw Exception("fail!")
   try
     val x = 42 + 5
     x + y
-  catch case e: Exception => 43
+  catch
+    case e: Exception => 43
 ```
 
 
-`failingFn` throws, because `y` is evaluated before the `try`. Replace `y` with its definition inside the `try`, `x + ((throw new Exception("fail!")): Int)`, and the function returns `43`.
+`failingFn` throws, because `y` is evaluated before the `try`. Replace `y` with its definition inside the `try`, `x + ((throw Exception("fail!")): Int)`, and the function returns `43`.
 
 ### A balanced attitude
 
@@ -200,7 +199,7 @@ See also: [Substitution model and equational reasoning]({{< ref "functional-prog
 ## Library sources
 
 
-- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 1 defines referential transparency and pure functions with the `StringBuilder` example; chapter 4 has the exception example; the chapters on external effects and I/O build an `IO` type step by step.
+- [Pilquist et al. 2023](/sources/075d81d6390bbb592aa1a8ba0a5f967d.bin), *Functional Programming in Scala (2nd edition)*: chapter 1 defines pure functions and referential transparency (1.2-1.3) with the `StringBuilder` example (1.3); chapter 3, section 3.3, covers data sharing in functional data structures; chapter 4, section 4.1 (listing 4.1), has the `failingFn` exception example; chapter 13 factors effects into a pure core and an `IO` shell (13.1) and builds an `IO` type step by step; chapter 14 covers local mutation hidden behind a pure signature with `ST` (14.2).
 - [Rosien 2021](/sources/26d28e80e57cc7f4abab6120e2fa075d.bin), *Essential Effects*: the effect pattern checklist and Cats Effect.
 - [Odersky et al. 2021](/sources/6d5d72f2cd796c67b467228f976d4a33.bin), *Programming in Scala (5th edition)*: source of the balanced-attitude box and the functional queue passage.
 - [Nielson and Nielson 1999](/sources/7abd708cb67eaf6c1203211adf64c6a7.bin), *Type and Effect Systems*: effect systems in the programming-language sense.

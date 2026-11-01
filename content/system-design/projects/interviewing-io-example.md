@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Interviewing.io Worked Example: Source Pointer"
-aliases:
-  - "/system-design/projects/iv4-example/"
 description: "A source pointer to an end-to-end interviewing.io example demonstrating the three-stage system design framework."
 linkTitle: "Interviewing.io Example"
 ---

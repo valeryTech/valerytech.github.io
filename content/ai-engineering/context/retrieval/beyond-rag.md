@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Beyond RAG: Context-to-Task Alignment (Draft)"
-aliases:
-  - "/ai-engineering/context/retrieval/reframing/"
 description: "RAG is one pattern in a task-centered architecture: determine what the user needs, align retrieval with source representations, and build context for decisions, actions, and verified outcomes."
 linkTitle: "Beyond RAG (Draft)"
 ---

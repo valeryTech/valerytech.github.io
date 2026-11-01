@@ -2,8 +2,6 @@
 draft: false
 toc: true
 title: "Further Research Handoff: Torres and Cagan"
-aliases:
-  - "/ai/product/product-model/comparison/research-2-handoff/"
 description: "A follow-on research brief prioritizes unresolved links between strategy and team discovery, especially problem-selection authority, prioritization, outcome causality, and judgment, with source lists and expected comparison outputs."
 linkTitle: "Research Handoff"
 ---
