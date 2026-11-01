@@ -1,0 +1,27 @@
+{{- /* Shared destinations and longest-prefix selection for desktop and mobile. */ -}}
+{{- $page := . -}}
+{{- $current := strings.TrimSuffix "/" .RelPermalink -}}
+{{- $entries := slice -}}
+{{- $selected := "" -}}
+{{- range site.Menus.main -}}
+  {{- if in (slice "search" "theme-toggle") .Params.type }}{{ continue }}{{ end -}}
+  {{- $href := .URL -}}
+  {{- with .PageRef }}{{ $href = relLangURL (strings.TrimPrefix "/" .) }}{{ end -}}
+  {{- $path := strings.TrimSuffix "/" $href -}}
+  {{- $external := strings.HasPrefix $href "http" -}}
+  {{- $entries = $entries | append (dict "item" . "href" $href "path" $path "external" $external) -}}
+  {{- if and $path (not $external) (or (eq $current $path) (strings.HasPrefix $current (printf "%s/" $path))) -}}
+    {{- if gt (len $path) (len $selected) }}{{ $selected = $path }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- range $entries -}}
+  {{- if eq .item.Params.type "language-switch" -}}
+    {{ partial "language-switch.html" (dict "context" $page "grow" false "hideLabel" (not .item.Params.label) "location" "top") }}
+  {{- else -}}
+    {{- $active := and $selected (eq .path $selected) -}}
+    <a href="{{ .href }}" title="{{ .item.Name }}"{{ if .external }} target="_blank" rel="noreferrer"{{ end }}{{ if $active }} aria-current="{{ if eq $current .path }}page{{ else }}true{{ end }}"{{ end }}>
+      {{- with .item.Params.icon }}{{ partial "utils/icon.html" (dict "name" . "attributes" `height="20" aria-hidden="true"`) }}{{ end -}}
+      <span>{{ or (T .item.Identifier) .item.Name }}</span>
+    </a>
+  {{- end -}}
+{{- end -}}

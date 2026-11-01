@@ -1,0 +1,32 @@
+{{- $src := . -}}
+{{- $load := "" -}}
+{{- $babel := false -}}
+{{- if reflect.IsMap . -}}
+  {{- $src = .src -}}
+  {{- with .load }}{{ $load = . }}{{ end -}}
+  {{- with .babel }}{{ $babel = . }}{{ end -}}
+{{- end -}}
+{{- if not $src }}{{ errorf "You must provide a JavaScript source" }}{{ end -}}
+{{- $resource := resources.Get $src -}}
+{{- if not $resource }}{{ errorf "No JavaScript resource found at /assets/%s" $src }}{{ end -}}
+
+{{- $params := dict "env" hugo.Environment -}}
+{{- if and (reflect.IsMap .) .params }}
+  {{- $params = merge $params .params -}}
+{{- end -}}
+
+{{- $jsConfig := dict "target" "es2015" "minify" true "params" $params -}}
+{{- if hugo.IsDevelopment }}
+  {{- $jsConfig = merge $jsConfig (dict "sourceMap" "inline") -}}
+{{- else if site.Params.analytics.sourcemaps }}
+  {{- $jsConfig = merge $jsConfig (dict "sourceMap" "external") -}}
+{{- end -}}
+
+{{- $js := $resource | js.Build $jsConfig -}}
+{{- if $babel }}
+  {{- $babelConfig := dict "noComments" true "minified" true "config" "config/babel.module.config.js" -}}
+  {{- $js = $js | babel $babelConfig -}}
+{{- end -}}
+{{- $js = $js | fingerprint -}}
+{{/* PostHog adds debug IDs to production bundles, so SRI cannot remain valid. */}}
+<script {{ with $load }}{{ . | safeHTMLAttr }}{{ end }} src="{{ $js.RelPermalink }}"></script>

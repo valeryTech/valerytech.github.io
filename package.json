@@ -1,0 +1,51 @@
+{
+  "name": "valery-tech",
+  "version": "0.0.1",
+  "description": "Working notes on software, AI systems, cognition, and human-agent systems",
+  "author": "Valery Judah",
+  "license": "MIT",
+  "packageManager": "npm@12.2.1",
+  "scripts": {
+    "create": "hugo new",
+    "predev": "npm run check:config && node scripts/site-map.mjs",
+    "dev": "hugo server --disableFastRender --noHTTPCache --renderToMemory --baseURL=http://localhost:1313/",
+    "format": "prettier **/** -w -c",
+    "format:styles": "prettier \"assets/css/site/**/*.css\" --write",
+    "lint:styles": "prettier \"assets/css/site/**/*.css\" --check",
+    "format:ui": "prettier \"assets/js/{custom.js,navigation/*.mjs,settings/*.mjs,preferences/*.{js,mjs},analytics/{emit,engagement,interactions}.mjs}\" \"data/{ui/*.json,callouts.json,analytics.json}\" \"scripts/{*ui-config.mjs,ui-config/*.mjs}\" --write",
+    "lint:ui": "prettier \"assets/js/{custom.js,navigation/*.mjs,settings/*.mjs,preferences/*.{js,mjs},analytics/{emit,engagement,interactions}.mjs}\" \"data/{ui/*.json,callouts.json,analytics.json}\" \"scripts/{*ui-config.mjs,ui-config/*.mjs}\" --check",
+    "check:config": "node scripts/check-ui-config.mjs",
+    "test:ui": "node --test tests/config/*.test.mjs tests/preferences/*.test.mjs",
+    "lint": "npm run lint:descriptions",
+    "lint:descriptions": "HUGOxPARAMSxSEOxDESCRIPTIONxLENGTHxERRORLEVEL=error hugo --environment production --renderToMemory --noBuildLock --logLevel error",
+    "prebuild": "npm run check:config && node scripts/site-map.mjs",
+    "build": "hugo --minify --gc --cleanDestinationDir",
+    "maps": "node scripts/site-map.mjs",
+    "build:icons": "node scripts/build-icons.mjs",
+    "test:analytics": "node --test tests/analytics/*.test.mjs",
+    "test:seo": "node --test tests/seo/*.test.mjs",
+    "test:site-map": "node --test tests/site-map/*.test.mjs",
+    "test:redirects": "node --test tests/redirects/*.test.mjs",
+    "test:theme": "node --test tests/theme/*.test.mjs",
+    "preview": "vite preview --outDir public",
+    "test:navigation": "node --test tests/navigation/*.test.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/jost": "^5.3.0",
+    "@microsoft/clarity": "^1.0.2",
+    "flexsearch": "0.8.212",
+    "js-cookie": "^3.0.8",
+    "katex": "0.18.4",
+    "posthog-js": "^1.444.0"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1",
+    "prettier": "^3.9.10",
+    "vite": "^8.3.5"
+  },
+  "engines": {
+    "node": ">=26.13.0"
+  }
+}

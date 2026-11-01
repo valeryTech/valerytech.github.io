@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "stage": 3,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Author's original Hebbia reaction extracted from the Matrix case. This manifest records the current locations of all original visual-programming dialogue text.",
+  "source": {
+    "path": "projects/input/hebbia-sem/visual-programming-env.md",
+    "originalLines": 1469,
+    "originalBytes": 32504,
+    "originalSha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+    "currentRole": "navigation stub",
+    "stubLines": 11,
+    "stubBytes": 1214,
+    "stubSha256": "52eac0a489f51800ab04a4d6bf4a87a6a1f23c447555c5aff9d88109f335805e"
+  },
+  "extraction": {
+    "source": "projects/input/hebbia-sem/matrix-interface-observations.md",
+    "sourceBefore": {
+      "lines": 191,
+      "bytes": 5760,
+      "sha256": "c8c190ea6eb1a265e92cb262323d48f1ec69582c29a3fc6fb3074f29fe220dad"
+    },
+    "selectedSourceLines": [
+      13,
+      21
+    ],
+    "destination": "ai/interactive-systems/04-design-observations-from-hebbia.md",
+    "destinationLines": [
+      13,
+      21
+    ],
+    "lines": 9,
+    "bytes": 869,
+    "sha256": "fe1eb8fc6b7a56714039b97666f1421895214e439e2b1cf84a7bd2558a705835",
+    "dryRunExitCode": 0,
+    "applyExitCode": 0,
+    "sourceBytesAfterMoveBeforeNavigationEdit": 4891,
+    "sourceAndDestinationVerified": true
+  },
+  "updatedDestinationSnapshots": [
+    {
+      "path": "ai/interactive-systems/04-design-observations-from-hebbia.md",
+      "prefixLines": 12,
+      "prefixBytes": 989,
+      "prefixSha256": "1ade126be15afc884d5789c2d46212931bd7c084a08181de758dc9eeff20ee50",
+      "wholeFileLines": 21,
+      "wholeFileBytes": 1858,
+      "wholeFileSha256": "5ee1a264158f0d58487030c7779b68426646233bbb5d47d9e7809add0e683a8a"
+    },
+    {
+      "path": "projects/input/hebbia-sem/matrix-interface-observations.md",
+      "prefixLines": 12,
+      "prefixBytes": 1170,
+      "prefixSha256": "90b57eaebc6240799c59faac39513c7c76538eab7fc0e1cfd301f0e383b8ade0",
+      "wholeFileLines": 182,
+      "wholeFileBytes": 4945,
+      "wholeFileSha256": "89f2115d7a421baeebf6483e2bd647d8f659d0ddac52fb003f8699c6d6a516b2"
+    }
+  ],
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        9
+      ],
+      "destination": "ai/interactive-systems/04-design-observations-from-hebbia.md",
+      "destinationLines": [
+        13,
+        21
+      ],
+      "description": "Author's original reaction and design proposals",
+      "lines": 9,
+      "bytes": 869,
+      "sha256": "fe1eb8fc6b7a56714039b97666f1421895214e439e2b1cf84a7bd2558a705835"
+    },
+    {
+      "sourceLines": [
+        10,
+        179
+      ],
+      "destination": "projects/input/hebbia-sem/matrix-interface-observations.md",
+      "destinationLines": [
+        13,
+        182
+      ],
+      "description": "Original separator and complete opening LLM critique",
+      "lines": 170,
+      "bytes": 3775,
+      "sha256": "25f7704b72a4fb1348203e71aae29a0f832d0284b7c91471909b5a60ea458e21"
+    },
+    {
+      "sourceLines": [
+        180,
+        408
+      ],
+      "destination": "ai/interactive-systems/01-shared-investigation-state-and-views.md",
+      "destinationLines": [
+        13,
+        241
+      ],
+      "description": "Shared state, coordinated views, and participants",
+      "lines": 229,
+      "bytes": 4063,
+      "sha256": "b55224138baf7ec87f8e68c55802fbb26daa207a6033ad9f1b4a56f35c89e8fe"
+    },
+    {
+      "sourceLines": [
+        409,
+        484
+      ],
+      "destination": "ai/interactive-systems/02-stable-interface-components.md",
+      "destinationLines": [
+        13,
+        88
+      ],
+      "description": "Stable interaction grammar and composable interface components",
+      "lines": 76,
+      "bytes": 2393,
+      "sha256": "0b3dc43627b89038e1daefde37ee9c10084783cc95c547d9a2d248c08fbbf88d"
+    },
+    {
+      "sourceLines": [
+        485,
+        1050
+      ],
+      "destination": "ai/interactive-systems/03-composable-investigation-workspaces.md",
+      "destinationLines": [
+        15,
+        580
+      ],
+      "description": "User correction, typed operations, progressive inspection, and composition",
+      "lines": 566,
+      "bytes": 11386,
+      "sha256": "3c78370aa0c8c9f384d49eb26760d8b9722f776cffc82afd8edba69c69d741d4"
+    },
+    {
+      "sourceLines": [
+        1051,
+        1469
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "destinationLines": [
+        15,
+        433
+      ],
+      "description": "Complete multi-representation retrieval dialogue and inspection projections",
+      "lines": 419,
+      "bytes": 10018,
+      "sha256": "5d2857e78449cb21a7b9da16329999afd24efad9a5c91aacffe75ff4772a723b"
+    }
+  ],
+  "verification": {
+    "reconstructedLines": 1469,
+    "reconstructedBytes": 32504,
+    "reconstructedSha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+    "byteForByteMatch": true,
+    "sourceCoverageExact": true,
+    "originalOpeningPassageReconstituted": true,
+    "originalOpeningPassageSha256": "e11888fe9791134b6eadca95b2261ab24d2ec62fd7939de283e17f11ff8d801c",
+    "originalAuthorWordingUnchanged": true,
+    "originalLLMReplyUnchanged": true,
+    "otherMappedPassageChecksumsVerified": true,
+    "omittedOrDuplicatedBytes": 0,
+    "originalSeparatorPreserved": true,
+    "semanticEngineeringNoteUnchangedByThisPass": true,
+    "navigation": {
+      "localLinksChecked": 100,
+      "headingAnchorsChecked": 4,
+      "missingLinks": 0
+    },
+    "currentMappingPointerVerified": true,
+    "stage2ProductAnalysisReconstructionAlsoVerified": true
+  },
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

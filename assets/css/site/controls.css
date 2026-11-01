@@ -1,0 +1,125 @@
+/* Filled controls and shared leading/content/action surface slots. */
+:is(.site-control, .site-surface-row) {
+  display: flex;
+  align-items: center;
+  gap: var(--site-surface-gap);
+  min-inline-size: 0;
+  block-size: var(--site-surface-height, var(--site-control-height));
+  min-height: var(--site-surface-min-height, var(--site-control-height));
+  padding-block: var(--site-surface-padding-block, var(--site-control-padding-block));
+  padding-inline: var(--site-surface-inset)
+    var(--site-surface-inset-end, var(--site-control-padding-inline));
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-control-background);
+  color: var(--site-control-foreground);
+  font-size: var(--site-navigation-text-size);
+  font-weight: var(--site-control-font-weight);
+  line-height: var(--site-line-ui);
+  text-align: start;
+  text-decoration: none;
+}
+
+.site-control[href] {
+  color: var(--site-control-foreground);
+}
+
+.site-control-label {
+  display: block;
+  flex: 1;
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-control-icon-only {
+  justify-content: center;
+  padding-inline: var(--site-control-padding-inline);
+}
+
+.site-control,
+.site-control > *,
+.site-surface-row,
+.site-surface-row > * {
+  /* Breakpoint changes and wrapped breadcrumb measurements must stay immediate. */
+  transition: none;
+}
+
+.site-context-surface {
+  --site-surface-height: auto;
+  --site-surface-min-height: var(--site-context-header-height);
+  --site-surface-padding-block: 0px;
+  --site-surface-content-padding-block: var(--site-control-padding-block);
+}
+
+:is(.site-control, .site-surface-row):is(button, a[href]) {
+  cursor: pointer;
+}
+
+:is(.site-control, .site-surface-row):is(button, a[href]):is(
+    :hover,
+    :focus-visible,
+    [aria-expanded="true"]
+  ) {
+  background: var(--site-card-hover);
+  color: var(--site-link-color);
+}
+
+:is(.site-control, .site-surface-row):is(button, a[href]):focus-visible {
+  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline-offset: var(--site-focus-offset);
+  box-shadow: none;
+}
+
+.site-control-icon,
+:is(.site-control, .site-surface-row) svg {
+  display: block;
+  flex-shrink: 0;
+  inline-size: var(--site-control-icon-size);
+  block-size: var(--site-control-icon-size);
+  stroke-width: 1.5;
+}
+
+.site-pane-heading {
+  /* Reserve the leading action column before enhancement and after restoring it. */
+  display: grid;
+  grid-template-columns: var(--site-surface-leading-size) minmax(0, 1fr);
+}
+
+.site-pane-heading > .site-pane-toggle {
+  grid-column: 1;
+  grid-row: 1;
+  width: var(--site-surface-leading-size);
+}
+
+.site-pane-heading > .site-surface-content {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.site-surface-row > .site-surface-content {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1;
+  min-inline-size: 0;
+  padding-block: var(--site-surface-content-padding-block, 0px);
+}
+
+.site-surface-leading,
+.site-surface-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.site-surface-leading {
+  inline-size: var(--site-surface-leading-size);
+  block-size: var(--site-surface-leading-size);
+}
+
+.site-surface-actions {
+  gap: var(--site-surface-gap);
+}

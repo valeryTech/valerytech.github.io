@@ -1,0 +1,6 @@
+{{- /* Keep token dependencies explicit without browser-side CSS imports. */ -}}
+{{- $tokens := slice -}}
+{{- range slice "scale" "colors" "geometry" -}}
+  {{- $tokens = $tokens | append (resources.Get (printf "css/site/tokens/%s.css" .)) -}}
+{{- end -}}
+{{- return ($tokens | resources.Concat "css/site/tokens.css") -}}

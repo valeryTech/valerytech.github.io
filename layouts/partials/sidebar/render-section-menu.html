@@ -1,0 +1,31 @@
+{{- /* Collection context stays separate from the document and topic lists. */ -}}
+{{- $currentPage := .currentPage -}}
+{{- $rootPage := .rootPage -}}
+{{- $initialBranch := "" -}}
+{{- $authoredBranch := "" -}}
+{{- range partial "sidebar/sort-nodes.html" .nodes -}}
+  {{- $page := .Page -}}
+  {{- if not (gt (len $page.Pages) 0) }}{{ continue }}{{ end -}}
+  {{- if or ($currentPage.Eq $page) (in $currentPage.Ancestors $page) -}}
+    {{- $initialBranch = $page.RelPermalink -}}
+  {{- end -}}
+  {{- with $page.Params.sidebar -}}
+    {{- if and (not $authoredBranch) (isset . "collapsed") (not .collapsed) -}}
+      {{- $authoredBranch = $page.RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $initialBranch = $initialBranch | default $authoredBranch -}}
+<nav class="section-nav docs-links" aria-label="{{ $rootPage.LinkTitle }} navigation">
+  {{- with $rootPage -}}
+    {{- $isCurrent := $currentPage.Eq . -}}
+    {{- $isAncestor := and (not $isCurrent) (in $currentPage.Ancestors .) -}}
+    <div class="sidebar-root site-surface-row site-context-surface site-pane-heading site-pinned site-pinned-first site-pinned-last{{ if $isCurrent }} active{{ end }}{{ if $isAncestor }} active-ancestor{{ end }}">
+      {{ partial "sidebar-toggle.html" . }}
+      <a class="site-surface-content{{ if $isCurrent }} hextra-sidebar-active-item{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }} href="{{ .RelPermalink }}" title="{{ .LinkTitle }}"><span class="site-sidebar-title">{{ .LinkTitle }}</span></a>
+    </div>
+  {{- end -}}
+  <ul class="sidebar-tree">
+    {{ partial "sidebar/section-items.html" (dict "nodes" .nodes "currentPage" $currentPage "depth" 1 "groupLabels" true "initialBranch" $initialBranch) }}
+  </ul>
+</nav>

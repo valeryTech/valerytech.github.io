@@ -1,0 +1,9 @@
+{
+  "engagement": {
+    "requiredActiveSeconds": 10,
+    "requiredVisiblePercent": 25,
+    "completedVisiblePercent": 90,
+    "maxInteractions": 1000,
+    "tickMilliseconds": 1000
+  }
+}

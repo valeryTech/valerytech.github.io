@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "stage": 8,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Split the language-interface architecture reply into an architecture overview, domain and operation contracts, and extensions to planning, authority, interface, cost, and ambiguity notes. Original wording, examples, diagrams, citations, and line endings remain unchanged.",
+  "source": {
+    "path": "archived source 030",
+    "absolutePath": "archived source 012",
+    "originalLines": 962,
+    "originalBytes": 28361,
+    "originalSha256": "e8073fcd06535419dcb4f0dfb652baae6a4f36ba9765cd07052967b68ee40aac",
+    "originalFinalNewline": false,
+    "currentRole": "navigation stub",
+    "stubLines": 13,
+    "stubBytes": 2476,
+    "stubFinalNewline": true
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        146
+      ],
+      "destination": "ai/interactive-systems/09-intent-environments-and-domain-boundaries.md",
+      "description": "Opening thesis, complete stack diagram, Semantic Web Services precedent, and eight-layer overview",
+      "lines": 146,
+      "bytes": 5968,
+      "sha256": "23f338ebe7f3ded184e755230601f02ae5b96574107d91fc520347e5e44e766b",
+      "finalNewline": true,
+      "fenceMarkers": 12,
+      "anchor": "<!-- Intent-environment architecture source begins below. -->",
+      "destinationLines": [
+        14,
+        159
+      ]
+    },
+    {
+      "sourceLines": [
+        147,
+        302
+      ],
+      "destination": "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts.md",
+      "description": "Business semantics and described operations, including the complete refund contract",
+      "lines": 156,
+      "bytes": 4347,
+      "sha256": "6e597b2d669353c554613d2098f63ad5b59cbd0c8ae7624dbe8fd667bc1600c1",
+      "finalNewline": true,
+      "fenceMarkers": 12,
+      "anchor": "<!-- Domain semantics and operation contracts source begins below. -->",
+      "destinationLines": [
+        14,
+        169
+      ]
+    },
+    {
+      "sourceLines": [
+        303,
+        431
+      ],
+      "destination": "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "description": "Intent IR, complete follow-up example, and restricted program synthesis",
+      "lines": 129,
+      "bytes": 3191,
+      "sha256": "4422bd7ad0d0e9604a4fc0ede0228139cbb4de069acd94ae1b17f044e9ce9b3e",
+      "finalNewline": true,
+      "fenceMarkers": 14,
+      "anchor": "<!-- Intent-compilation and bounded-program passage begins below. -->",
+      "destinationLines": [
+        635,
+        763
+      ]
+    },
+    {
+      "sourceLines": [
+        432,
+        493
+      ],
+      "destination": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "description": "Concrete action authorization, including the complete refund-denial example",
+      "lines": 62,
+      "bytes": 1641,
+      "sha256": "c2e26bc23ec4e297d427abb68766dcb91ec07e73f17123feecd0b6e19181e33a",
+      "finalNewline": true,
+      "fenceMarkers": 10,
+      "anchor": "<!-- Concrete-operation authorization passage begins below. -->",
+      "destinationLines": [
+        183,
+        244
+      ]
+    },
+    {
+      "sourceLines": [
+        494,
+        580
+      ],
+      "destination": "ai/interactive-systems/02-stable-interface-components.md",
+      "description": "Task-specific projections, hybrid interaction, and generated versus vetted controls",
+      "lines": 87,
+      "bytes": 2006,
+      "sha256": "1f854d592b956329947807dfef212bc277fb2e3cda85ba9a86a38316ac52776a",
+      "finalNewline": true,
+      "fenceMarkers": 14,
+      "anchor": "<!-- Task-projection and trusted-control passage begins below. -->",
+      "destinationLines": [
+        96,
+        182
+      ]
+    },
+    {
+      "sourceLines": [
+        581,
+        744
+      ],
+      "destination": "ai/interactive-systems/09-intent-environments-and-domain-boundaries.md",
+      "description": "Application and domain boundaries, complete split diagram, and engineering consequences",
+      "lines": 164,
+      "bytes": 3589,
+      "sha256": "03ccb4b331e1e14de32c869685ca6c89c7b7983f02cc298bfa7224237996974a",
+      "finalNewline": true,
+      "fenceMarkers": 16,
+      "anchor": "<!-- Intent-environment architecture source begins below. -->",
+      "destinationLines": [
+        160,
+        323
+      ]
+    },
+    {
+      "sourceLines": [
+        745,
+        813
+      ],
+      "destination": "ai/interactive-systems/08-generated-workspaces-and-application-composition.md",
+      "description": "Long-tail software economics and complete cost diagrams",
+      "lines": 69,
+      "bytes": 1639,
+      "sha256": "c79537dcbf5162d5261711a1c96927056f7f44c8966bb93c6e19beb5405c4498",
+      "finalNewline": true,
+      "fenceMarkers": 8,
+      "anchor": "<!-- Small-workflow economics passage begins below. -->",
+      "destinationLines": [
+        206,
+        274
+      ]
+    },
+    {
+      "sourceLines": [
+        814,
+        866
+      ],
+      "destination": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "description": "Ambiguity made visible as editable interpreted state",
+      "lines": 53,
+      "bytes": 1157,
+      "sha256": "5d84a08a4c267d53ff1ed8f87340b4c1191d65862f4e0a832de3f3a03ac0bf03",
+      "finalNewline": true,
+      "fenceMarkers": 6,
+      "anchor": "<!-- Editable-interpretation passage begins below. -->",
+      "destinationLines": [
+        452,
+        504
+      ]
+    },
+    {
+      "sourceLines": [
+        867,
+        962
+      ],
+      "destination": "ai/interactive-systems/09-intent-environments-and-domain-boundaries.md",
+      "description": "Reliability argument, full LLM/runtime division, long-term thesis, confidence levels, bibliography, and suggested experiment",
+      "lines": 96,
+      "bytes": 4823,
+      "sha256": "07c979cbc1f4e46e2d574c5cb0d97d6cc929dc8c382078be7f78dfa19b6a4bbe",
+      "finalNewline": false,
+      "fenceMarkers": 10,
+      "anchor": "<!-- Intent-environment architecture source begins below. -->",
+      "destinationLines": [
+        324,
+        419
+      ]
+    }
+  ],
+  "prefixes": {
+    "ai/interactive-systems/09-intent-environments-and-domain-boundaries.md": {
+      "lines": 13,
+      "bytes": 2153,
+      "sha256": "e3155eaf6fbb58754a0baecf5559638cac1e6e80ecd73a07547565df7089aa77",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts.md": {
+      "lines": 13,
+      "bytes": 1776,
+      "sha256": "076eb729911582a072b2913595fd00ad91c34deaff3543d2f8a2e23447b709f2",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md": {
+      "lines": 634,
+      "bytes": 13932,
+      "sha256": "b1eaebdb5cf2577ed1fcb3d53bccdfd10fe67202993358348d01c53ac475ebf5",
+      "previousLines": 627,
+      "previousBytes": 12741,
+      "previousSha256": "45723fdcddcec3a4387fc24327af480cda19f2786c6a6eb84f9ef083e96df403",
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md": {
+      "lines": 182,
+      "bytes": 19063,
+      "sha256": "47902f12286719a8666df317b4eeac657ecd6776de5fd6177b265594dd67eeb0",
+      "previousLines": 175,
+      "previousBytes": 17920,
+      "previousSha256": "ae5217504b31d081845b87863c0165e4ddf952dcdc406629a9accd4a47b4a2e7",
+      "previousContentsByteIdentical": true
+    },
+    "ai/interactive-systems/02-stable-interface-components.md": {
+      "lines": 95,
+      "bytes": 4410,
+      "sha256": "d20cc2a11fdf6be1d860d10e0198cab3d696f79b93e1278785bcb4a0bb81277e",
+      "previousLines": 88,
+      "previousBytes": 3181,
+      "previousSha256": "54898077c65cdb2b209eb9f186faf856048ca04fe3c36d013348b9c5fccaad69",
+      "previousContentsByteIdentical": true
+    },
+    "ai/interactive-systems/08-generated-workspaces-and-application-composition.md": {
+      "lines": 205,
+      "bytes": 6620,
+      "sha256": "19c47c2547fa9a9598156a321e196a4de36acc86369af33a40b8705a0dfa9913",
+      "previousLines": 198,
+      "previousBytes": 5711,
+      "previousSha256": "c9d66674ae35d4b042584762af49204a13ad5193ddbb2c05fe1316172480aa5d",
+      "previousContentsByteIdentical": true
+    },
+    "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md": {
+      "lines": 451,
+      "bytes": 18514,
+      "sha256": "14618bfc7ef1d320b813bddf58e523ed192de0c97b19307406b2ea649150ab40",
+      "previousLines": 443,
+      "previousBytes": 17378,
+      "previousSha256": "a07ac8642dd1c48765754ae0a2a86c77af9e0f5f113b92866fbaa52b694e4ec0",
+      "previousContentsByteIdentical": true
+    }
+  },
+  "existingDestinations": [
+    {
+      "path": "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "previousLines": 627,
+      "previousBytes": 12741,
+      "previousSha256": "45723fdcddcec3a4387fc24327af480cda19f2786c6a6eb84f9ef083e96df403",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "previousLines": 175,
+      "previousBytes": 17920,
+      "previousSha256": "ae5217504b31d081845b87863c0165e4ddf952dcdc406629a9accd4a47b4a2e7",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/interactive-systems/02-stable-interface-components.md",
+      "previousLines": 88,
+      "previousBytes": 3181,
+      "previousSha256": "54898077c65cdb2b209eb9f186faf856048ca04fe3c36d013348b9c5fccaad69",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/interactive-systems/08-generated-workspaces-and-application-composition.md",
+      "previousLines": 198,
+      "previousBytes": 5711,
+      "previousSha256": "c9d66674ae35d4b042584762af49204a13ad5193ddbb2c05fe1316172480aa5d",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "previousLines": 443,
+      "previousBytes": 17378,
+      "previousSha256": "a07ac8642dd1c48765754ae0a2a86c77af9e0f5f113b92866fbaa52b694e4ec0",
+      "previousContentsByteIdentical": true
+    }
+  ],
+  "destinations": [
+    {
+      "path": "ai/interactive-systems/09-intent-environments-and-domain-boundaries.md",
+      "lines": 419,
+      "bytes": 16533,
+      "sha256": "44fafb73d20f12d52ee88631bec958587c4512381655876dbbe46425db3f26d4",
+      "finalNewline": false,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts.md",
+      "lines": 169,
+      "bytes": 6123,
+      "sha256": "e2643411813e7aa17f5e17d650c564441170002c0867c49d13ea64f9b95107ac",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+      "lines": 763,
+      "bytes": 17123,
+      "sha256": "0368d0307a6a91c80a86110abeb6fe8cbf84c79d23dec67a0ab7166514110926",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+      "lines": 244,
+      "bytes": 20704,
+      "sha256": "59b265503cd6968203aab02286d878417a288a4ec41191b87c13562403c50e62",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/interactive-systems/02-stable-interface-components.md",
+      "lines": 182,
+      "bytes": 6416,
+      "sha256": "59b070ce45960cca9fee5730cb00049480d5e9f2bebdbc154bc524e2dde1849e",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/interactive-systems/08-generated-workspaces-and-application-composition.md",
+      "lines": 274,
+      "bytes": 8259,
+      "sha256": "05eb8fb2c20162cd554681b1b6ea6428c4cce7aadf33d18e25d8b0ccbf91b516",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+      "lines": 504,
+      "bytes": 19671,
+      "sha256": "5b3061aca8e9a1ca4c28e37375a38f8a4f05d5dc4ccd0aad435960e0f156806a",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    }
+  ],
+  "moveOrder": [
+    {
+      "originalSourceLines": [
+        867,
+        962
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 23538,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        814,
+        866
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 22381,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        745,
+        813
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 20742,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        581,
+        744
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 17153,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        494,
+        580
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 15147,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        432,
+        493
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 13506,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        303,
+        431
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 10315,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        147,
+        302
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 5968,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        1,
+        146
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "editorialFiles": [
+    "ai/interactive-systems/09-intent-environments-and-domain-boundaries-comments.md",
+    "ai/design-research/03-language-and-compiler/13-domain-semantics-and-operation-contracts-comments.md",
+    "ai/interactive-systems/07-language-intent-and-hybrid-interaction-comments.md",
+    "ai/interactive-systems/08-generated-workspaces-and-application-composition-comments.md",
+    "ai/interactive-systems/00-index.md",
+    "ai/interactive-systems/00-index-comments.md"
+  ],
+  "verification": {
+    "reconstructedLines": 962,
+    "reconstructedBytes": 28361,
+    "reconstructedSha256": "e8073fcd06535419dcb4f0dfb652baae6a4f36ba9765cd07052967b68ee40aac",
+    "allPassagesByteIdentical": true,
+    "sourceRangesCoverOriginalExactlyOnce": true,
+    "omittedOrDuplicatedBytes": 0,
+    "existingDestinationContentsByteIdentical": true,
+    "allCodeBlocksWhole": true,
+    "completeCodeBlocks": 51,
+    "sourceFinalNewlinePreserved": true,
+    "priorMappings": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "lines": 173,
+        "bytes": 14749,
+        "sha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/07-nlp-interface-reassembly.json",
+        "lines": 764,
+        "bytes": 23745,
+        "sha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+        "passagesVerified": 6
+      }
+    ],
+    "sourceWasEmptyAfterMoves": true,
+    "originalPathRetained": true,
+    "sourceTextRewritten": false,
+    "claimsIndependentlyVerified": false,
+    "localLinkVerification": {
+      "filesChecked": 15,
+      "localLinksChecked": 296,
+      "headingAnchorsChecked": 81,
+      "broken": []
+    },
+    "finalReconstructions": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "lines": 173,
+        "bytes": 14749,
+        "sha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+        "passagesVerified": 3
+      },
+      {
+        "manifest": "ai/interactive-systems/07-nlp-interface-reassembly.json",
+        "lines": 764,
+        "bytes": 23745,
+        "sha256": "9b1fd64b805a735e131feb43b491c3130f258d6471fd5e7e578435d0e2866a0e",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/08-intent-architecture-reassembly.json",
+        "lines": 962,
+        "bytes": 28361,
+        "sha256": "e8073fcd06535419dcb4f0dfb652baae6a4f36ba9765cd07052967b68ee40aac",
+        "passagesVerified": 9
+      }
+    ],
+    "baselineVerification": {
+      "snapshotRole": "Observed shared-workspace snapshot. Unrelated changes are reported, not reverted.",
+      "baselineFiles": 122,
+      "intendedPaths": [
+        "ai/design-research/03-language-and-compiler/10-program-authoring-and-typed-planning.md",
+        "ai/design-research/05-runtime-and-execution/05-trusted-effect-boundaries.md",
+        "ai/interactive-systems/02-stable-interface-components.md",
+        "ai/interactive-systems/08-generated-workspaces-and-application-composition.md",
+        "ai/interactive-systems/07-language-intent-and-hybrid-interaction.md",
+        "ai/interactive-systems/07-language-intent-and-hybrid-interaction-comments.md",
+        "ai/interactive-systems/08-generated-workspaces-and-application-composition-comments.md",
+        "ai/interactive-systems/00-index.md",
+        "ai/interactive-systems/00-index-comments.md",
+        "ai/interactive-systems/reassembly-map.md",
+        "archived source 030"
+      ],
+      "intendedBaselineChanges": 11,
+      "filesOutsideIntendedEdits": 111,
+      "unchangedFilesOutsideIntendedEdits": 107,
+      "externalChanges": [
+        {
+          "path": "ai/design-research/00-index.md",
+          "previousSha256": "03a58a6df114c22bbdc142d32becfee39f34e372528261a1e38afd933f1bce5c",
+          "currentSha256": "f4549ac6ab4b06d30e5209a5d8f5cc4fa95f06743d157574cc9e8ae12b22a3d4",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/01-foundations/10-complexity-and-work-structure-comments.md",
+          "previousSha256": "6d4ec9b5cc0ba1f8add784e0ce94b62bc0b1272ceaf182d418322c3e3fda0d19",
+          "currentSha256": "23dabeb8e8c1eff39c821841906b39bc8084af6ba61a496e847963d7f969e567",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/01-foundations/10-complexity-and-work-structure.md",
+          "previousSha256": "b2064b5433540bce409e70d3d143388c57889e85b73264081b4cdb6c49010645",
+          "currentSha256": "12436357e672a6c45169a5f04887c11ea03b383d81fe73d7d91e0c060f74ea50",
+          "editedOrRevertedByThisPass": false
+        },
+        {
+          "path": "ai/design-research/06-research-reports/07-investigation-evaluation-and-benchmarks.md",
+          "previousSha256": "a92525204056a7030fad072f676ddec4b63b661844feab9da2601d64ea2f01de",
+          "currentSha256": "e96ae512aa65a5c8675a7babd04286405f4aa1e36b5503a5877e9a006cabe927",
+          "editedOrRevertedByThisPass": false
+        }
+      ]
+    },
+    "scopedGitDiffChecks": {
+      "notesStandard": {
+        "exitCode": 0
+      },
+      "notesAccStandard": {
+        "exitCode": 0
+      },
+      "notesWithOriginalBlankAtEofAllowed": {
+        "exitCode": 0,
+        "configuration": "core.whitespace=-blank-at-eof"
+      },
+      "allScopedWhitespaceChecksPassed": true
+    }
+  },
+  "untouchedRelatedFiles": [
+    {
+      "path": "ai/design-research/03-language-and-compiler/07-semantic-kernel.md",
+      "sha256": "c00f902605226a6a935e8cc21caca46db6c580e06bb2358c813dfc0f87b673b5",
+      "finalNewline": false,
+      "role": "Linked rather than extended. Existing source contents and positions remain unchanged."
+    }
+  ],
+  "audit": "ai/interactive-systems/reassembly-map.md#stage-8-language-interfaces-and-architecture",
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions.",
+    "privateSourceFingerprints": "omitted"
+  }
+}

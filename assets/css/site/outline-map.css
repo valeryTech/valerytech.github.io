@@ -1,0 +1,134 @@
+.site-outline-rail {
+  height: var(--site-map-available-height, calc(100dvh - var(--hextra-navbar-height)));
+  overflow: clip;
+}
+
+.site-outline-map {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--site-space-2);
+  min-height: 0;
+  margin-block-start: var(--site-layout-gap);
+  color: var(--site-nav-foreground);
+}
+
+.site-outline-map,
+.site-outline-map * {
+  transition: none;
+}
+
+.site-outline-map[hidden],
+.site-outline-map-preview[hidden] {
+  display: none;
+}
+
+.site-outline-map-scroll {
+  min-height: 0;
+  width: var(--site-space-12);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.site-outline-map-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.site-outline-map ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-outline-map a {
+  --site-map-mark-width: var(--site-space-5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: var(--site-space-12);
+  height: var(--site-space-6);
+  border-radius: var(--site-radius);
+  color: inherit;
+}
+
+.site-outline-map a[data-map-level="2"] {
+  --site-map-mark-width: var(--site-space-4);
+}
+
+.site-outline-map a[data-map-level="3"] {
+  --site-map-mark-width: var(--site-space-3);
+}
+
+.site-outline-map a[data-map-level="4"] {
+  --site-map-mark-width: calc(var(--site-space-2) + var(--site-space-1) / 2);
+}
+
+.site-outline-map a[data-map-level="5"] {
+  --site-map-mark-width: var(--site-space-2);
+}
+
+.site-outline-map a[data-map-level="6"] {
+  --site-map-mark-width: calc(var(--site-space-1) * 1.5);
+}
+
+.site-outline-map a::before {
+  content: "";
+  width: var(--site-map-mark-width);
+  height: 2px;
+  margin-inline-end: calc((var(--site-space-12) - var(--site-space-5)) / 2);
+  border-radius: var(--site-radius);
+  background: currentColor;
+  opacity: 0.8;
+}
+
+.site-outline-map :is(.site-map-ancestor, [aria-current="location"]) {
+  color: var(--site-nav-context-foreground);
+}
+
+.site-outline-map [aria-current="location"]::before {
+  height: 3px;
+  opacity: 1;
+}
+
+.site-outline-map a:hover::before {
+  color: var(--site-nav-context-foreground);
+  opacity: 1;
+}
+
+.site-outline-map a:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+.site-outline-map-preview {
+  position: fixed;
+  inset: auto;
+  z-index: calc(var(--site-layer-stack-parent) + 2);
+  width: max-content;
+  max-width: min(20rem, calc(100vw - 2 * var(--site-space-4)));
+  max-height: calc(100dvh - var(--hextra-navbar-height) - 2 * var(--site-space-4));
+  overflow: auto;
+  padding: var(--site-space-3);
+  margin: 0;
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-context-surface);
+  color: var(--site-foreground);
+  box-shadow: var(--site-floating-shadow);
+  font-size: var(--site-navigation-text-size);
+  line-height: var(--site-line-ui);
+  overflow-wrap: anywhere;
+}
+
+.site-outline-map-preview-parent {
+  display: block;
+  margin-block-end: var(--site-space-1);
+  color: var(--site-muted);
+  font-size: var(--site-text-xs);
+}
+
+.site-outline-map-preview-parent[hidden] {
+  display: none;
+}

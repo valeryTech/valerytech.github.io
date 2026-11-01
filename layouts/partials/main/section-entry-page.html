@@ -1,0 +1,12 @@
+{{- $page := . -}}
+{{- with site.Params.sectionindexes -}}
+  {{- with index . $page.RelPermalink -}}
+    {{- $path := . -}}
+    {{- with site.GetPage $path -}}
+      {{- $page = . -}}
+    {{- else -}}
+      {{- errorf "Section entry page %q does not exist" $path -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $page -}}

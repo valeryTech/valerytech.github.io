@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}" data-alias-redirect>
+  <head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="stylesheet" href="{{ partialCached "styles/link-palette-url.html" . }}">
+  </head>
+  <body>
+    <p><a href="{{ .Permalink }}">Continue to {{ .Page.Title }}</a></p>
+  </body>
+</html>

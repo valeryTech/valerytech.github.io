@@ -1,0 +1,7 @@
+{{- $heading := cond .Page.IsHome "h3" "h4" -}}
+{{- if not .Parent }}<div class="card-nav">{{ end -}}
+<div class="hextra-card site-link-card{{ with .Get "class" }} {{ . }}{{ end }}">
+  {{ printf "<%s>" $heading | safeHTML }}<a href="{{ .Get "href" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>{{ .Get "title" }}</a>{{ printf "</%s>" $heading | safeHTML }}
+  {{ with .Get "description" }}<p>{{ . | markdownify }}</p>{{ end }}
+</div>
+{{- if not .Parent }}</div>{{ end -}}

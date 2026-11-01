@@ -1,0 +1,60 @@
+name: Validate site build
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup site toolchain
+        uses: ./.github/actions/setup-site
+
+      - name: Test analytics helpers
+        run: npm run test:analytics
+
+      - name: Test UI configuration and preferences
+        run: npm run test:ui
+
+      - name: Check frontend formatting
+        run: |
+          npm run lint:styles
+          npm run lint:ui
+
+      - name: Build production website
+        run: bash scripts/build-site.sh --host
+
+      - name: Install browser for navigation checks
+        run: npx playwright-core install --with-deps chromium
+
+      - name: Check navigation in the production preview
+        env:
+          BROWSER_CHANNEL: chromium
+          BASE_URL: http://127.0.0.1:4173
+          SCREENSHOT_DIR: .generated/navigation-review
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > "$RUNNER_TEMP/navigation-preview.log" 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid"' EXIT
+          npm run test:navigation
+
+      - name: Upload navigation screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: navigation-review
+          path: .generated/navigation-review
+          if-no-files-found: ignore
+          include-hidden-files: true

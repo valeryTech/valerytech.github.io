@@ -1,0 +1,17 @@
+{{- $root := .FirstSection }}
+{{- $sidebar := printf "sidebar_%s" .Section }}
+{{- $nodes := slice }}
+
+{{- with index site.Menus $sidebar }}
+  {{- $nodes = . }}
+{{- else }}
+  {{- with $root.Pages }}
+    {{- $nodes = . }}
+  {{- end }}
+{{- end }}
+
+{{- partial "sidebar/render-section-menu.html" (dict
+  "currentPage" .
+  "rootPage" $root
+  "nodes" $nodes
+) }}

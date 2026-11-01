@@ -1,0 +1,8 @@
+{{- /* Keep stable heading targets for imported wiki links, including H1s. */ -}}
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" data-hextra-search-id="{{ .Anchor | safeURL }}"{{ with .Attributes.class }} class="{{ . }}"{{ end }}>
+  {{- .Text | safeHTML -}}
+  {{- if and (gt .Level 1) (ne .Page.Section "agent-map") -}}
+    <a href="#{{ .Anchor | safeURL }}" class="subheading-anchor" aria-label="{{ (T "permalinkLabel") | default "Permalink for this section" }}"></a>
+  {{- end -}}
+</h{{ .Level }}>
+{{- /* Drop trailing newlines. */ -}}

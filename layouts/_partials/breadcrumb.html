@@ -1,0 +1,43 @@
+{{- $page := .page -}}
+{{- if ne $page.Params.breadcrumbs false -}}
+{{- $rootGroups := partialCached "navigation/child-groups.html" (dict "nodes" site.Home.Sections) "breadcrumb-root-sections" site.Home.RelPermalink -}}
+{{- $root := dict "page" site.Home "label" "Home" "groups" $rootGroups "id" (printf "breadcrumb-children-%s" (crypto.MD5 site.Home.RelPermalink)) -}}
+{{- $trail := slice -}}
+{{- range $page.Ancestors.Reverse | append $page -}}
+  {{- if .IsHome }}{{ continue }}{{ end -}}
+  {{- $label := .LinkTitle -}}
+  {{- $groups := slice -}}
+  {{- if .IsSection -}}
+    {{- $groups = partialCached "navigation/child-groups.html" (dict "nodes" .Pages "entryPage" (partial "main/section-entry-page.html" .)) .RelPermalink -}}
+  {{- end -}}
+  {{- $trail = $trail | append (dict "page" . "label" $label "groups" $groups "id" (printf "breadcrumb-children-%s" (crypto.MD5 .RelPermalink))) -}}
+{{- end -}}
+<div class="site-breadcrumb-sticky">
+  <nav class="breadcrumb site-surface-row site-context-surface" aria-label="Breadcrumb">
+    <div class="site-breadcrumb-root">
+      <a class="site-breadcrumb-home" href="{{ site.Home.RelPermalink }}" aria-label="Home" title="Home">{{ partial "components/control-icon.html" (dict "name" "home") }}</a>
+      {{- if $rootGroups -}}
+        <span class="site-breadcrumb-separator">
+          <button type="button" class="site-breadcrumb-trigger" data-breadcrumb-chooser popovertarget="{{ $root.id }}" aria-controls="{{ $root.id }}" aria-expanded="false" aria-label="Browse top-level sections" hidden></button>
+        </span>
+      {{- end -}}
+    </div>
+    <ol class="site-surface-content">
+      {{- range $index, $entry := $trail -}}
+        <li{{ if $page.Eq .page }} aria-current="page"{{ end }}>
+          {{- if $page.Eq .page -}}<span>{{ .label }}</span>{{- else -}}<a href="{{ .page.RelPermalink }}">{{ .label }}</a>{{- end -}}
+          {{- if or .groups (lt $index (sub (len $trail) 1)) -}}
+            <span class="site-breadcrumb-separator">
+              {{- if .groups -}}<button type="button" class="site-breadcrumb-trigger" data-breadcrumb-chooser popovertarget="{{ .id }}" aria-controls="{{ .id }}" aria-expanded="false" aria-label="Browse sections and documents in {{ .label }}" hidden></button>{{- end -}}
+            </span>
+          {{- end -}}
+        </li>
+      {{- end -}}
+    </ol>
+  </nav>
+  {{- if $rootGroups }}{{ partial "breadcrumb/chooser.html" (dict "entry" $root "currentPage" $page) }}{{ end -}}
+  {{- range $trail -}}
+    {{- if .groups }}{{ partial "breadcrumb/chooser.html" (dict "entry" . "currentPage" $page) }}{{ end -}}
+  {{- end -}}
+</div>
+{{- end -}}

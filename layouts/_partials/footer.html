@@ -1,0 +1,4 @@
+{{- $enableSwitches := .Store.Get "enableFooterSwitches" | default false -}}
+<footer class="hextra-footer hx:pb-[env(safe-area-inset-bottom)] hx:print:bg-transparent">
+  {{ partial "custom/footer.html" (dict "context" . "switchesVisible" $enableSwitches) }}
+</footer>

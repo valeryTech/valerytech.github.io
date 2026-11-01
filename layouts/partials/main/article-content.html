@@ -1,0 +1,6 @@
+{{- $page := .page -}}
+{{- $needsTitle := not (findRE `<h1\b` $page.Content 1) -}}
+<article class="article-content{{ if eq $page.Type "about" }} about-content{{ end }}" aria-label="{{ $page.Title }}">
+  {{ if $needsTitle }}<h1>{{ $page.Title }}</h1>{{ end }}
+  {{ $page.Content }}
+</article>

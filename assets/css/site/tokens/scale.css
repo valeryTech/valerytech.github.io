@@ -1,0 +1,49 @@
+/* Spacing, typography, focus and motion scales; reading preferences keep their units. */
+:root {
+  /* Four-pixel spacing rhythm at the default root font size. */
+  --site-space-1: 0.25rem;
+  --site-space-2: 0.5rem;
+  --site-space-3: 0.75rem;
+  --site-space-4: 1rem;
+  --site-space-5: 1.25rem;
+  --site-space-6: 1.5rem;
+  --site-space-7: 1.75rem;
+  --site-space-8: 2rem;
+  --site-space-10: 2.5rem;
+  --site-space-12: 3rem;
+  --site-space-16: 4rem;
+
+  --site-text-xs: 0.75rem;
+  --site-text-sm: 0.875rem;
+  --site-text-md: 0.9375rem;
+  --site-text-base: 1rem;
+  --site-text-lg: 1.125rem;
+  --site-text-xl: 1.5rem;
+  --site-line-ui: 1.5;
+  --site-navigation-font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --site-code-font-family:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --site-navigation-text-size: var(--site-text-sm);
+  --site-reading-text-size: var(--site-text-base);
+  --site-reading-line-height: 1.75;
+
+  --site-focus-width: 2px;
+  --site-focus-offset: 3px;
+  --site-motion-fast: 150ms;
+}
+
+:root[data-text-size="large"] {
+  --site-reading-text-size: var(--site-text-lg);
+}
+
+:root[data-text-size="larger"] {
+  --site-reading-text-size: 1.25rem;
+}
+
+:root[data-line-spacing="compact"] {
+  --site-reading-line-height: 1.5;
+}
+
+:root[data-line-spacing="roomy"] {
+  --site-reading-line-height: 1.95;
+}

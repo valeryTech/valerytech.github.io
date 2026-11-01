@@ -1,0 +1,17 @@
+{{- $settings := hugo.Data.ui.settings -}}
+<template id="site-settings-dialog-template">
+  <dialog id="site-settings-dialog" class="site-settings-dialog" aria-labelledby="site-settings-dialog-title" aria-describedby="site-settings-dialog-description">
+    <header class="site-settings-dialog-header">
+      <div>
+        <h2 id="site-settings-dialog-title">{{ $settings.title }}</h2>
+        <p id="site-settings-dialog-description">{{ $settings.description }}</p>
+      </div>
+      <button type="button" class="site-settings-close" data-settings-close aria-label="Close settings" autofocus>
+        {{ partial "utils/icon.html" (dict "name" "x" "attributes" "height=24") }}
+      </button>
+    </header>
+    <div class="site-settings-dialog-body">
+      {{ partial "settings/form.html" (dict "id" "site-settings-dialog-form" "prefix" "dialog-settings") }}
+    </div>
+  </dialog>
+</template>

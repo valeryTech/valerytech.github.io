@@ -1,0 +1,125 @@
+{
+  "title": "Site settings",
+  "description": "Choose how you read and navigate this site. Tap an option to cycle through its values. Changes apply immediately and are saved in this browser.",
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading",
+      "layout": "columns",
+      "help": "Text size and line spacing apply to article paragraphs and lists.",
+      "preview": true,
+      "fields": [
+        {
+          "key": "font",
+          "label": "Font",
+          "type": "cycle",
+          "source": "fonts"
+        },
+        {
+          "key": "display.textSize",
+          "label": "Article text size",
+          "type": "cycle",
+          "source": "display.textSize"
+        },
+        {
+          "key": "display.lineSpacing",
+          "label": "Line spacing",
+          "type": "cycle",
+          "source": "display.lineSpacing"
+        },
+        {
+          "key": "display.textBrightness",
+          "label": "Text brightness",
+          "type": "cycle",
+          "source": "display.textBrightness",
+          "help": "Choose softer grays or brighter text, headings, and menus in dark mode."
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "title": "Layout",
+      "layout": "columns",
+      "help": "The layout adapts to the space available, including browser zoom. Text size remains a separate reading preference.",
+      "fields": [
+        {
+          "key": "display.siteWidth",
+          "label": "Site width",
+          "type": "cycle",
+          "source": "display.siteWidth",
+          "help": "Use more space for navigation, cards, tables, and diagrams. Paragraphs retain a comfortable reading width."
+        },
+        {
+          "key": "display.density",
+          "label": "Interface density",
+          "type": "cycle",
+          "source": "display.density",
+          "help": "Compact mode tightens gaps, padding, and indentation while preserving text size."
+        },
+        {
+          "key": "display.outline",
+          "label": "Page outline",
+          "type": "cycle",
+          "source": "display.outline",
+          "help": "Prefer visible keeps the outline beside the article in smaller windows. A header button opens it when space is limited."
+        }
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "layout": "stack",
+      "help": "Saved panel widths apply when space permits. Compact layouts fit panels around the article; navigation remains available from the menu.",
+      "fields": [
+        {
+          "key": "display.headerVisible",
+          "label": "Show top bar",
+          "type": "checkbox",
+          "source": "display.headerVisible",
+          "help": "Keep the main navigation and reading controls visible. A floating button restores the bar when hidden."
+        },
+        {
+          "key": "display.breadcrumbs",
+          "label": "Breadcrumbs",
+          "type": "cycle",
+          "source": "display.breadcrumbs"
+        },
+        {
+          "key": "display.sidebarVisible",
+          "label": "Show left navigation",
+          "type": "checkbox",
+          "source": "display.sidebarVisible",
+          "help": "Show the navigation pane on larger screens. The mobile menu remains available."
+        },
+        {
+          "key": "display.pinAncestors",
+          "label": "Keep parent sections visible",
+          "type": "checkbox",
+          "source": "display.pinAncestors",
+          "help": "Pin the current path in the left navigation and page outline while scrolling."
+        },
+        {
+          "key": "widths.sidebar",
+          "label": "Left navigation width",
+          "type": "range"
+        },
+        {
+          "key": "widths.outline",
+          "label": "Page outline width",
+          "type": "range"
+        }
+      ]
+    }
+  ],
+  "previewHeading": "Reading preview",
+  "previewText": "Good explanations connect ideas, evidence, and decisions. Adjust the font, spacing, and brightness until this text feels comfortable to read.",
+  "resetLabel": "Reset to site defaults",
+  "messages": {
+    "requiresJavaScript": "Enable JavaScript to change your site settings.",
+    "ready": "Changes are saved automatically in this browser.",
+    "saved": "Settings saved.",
+    "saveFailed": "Applied to this page. Your browser could not save these settings.",
+    "reset": "Site defaults restored.",
+    "resetFailed": "Defaults applied to this page. Your browser could not save these settings."
+  }
+}

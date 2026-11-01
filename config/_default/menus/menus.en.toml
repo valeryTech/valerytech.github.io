@@ -1,0 +1,112 @@
+[[main]]
+  name = "AI Engineering"
+  pageRef = "/ai-engineering/"
+  weight = 5
+
+[[main]]
+  name = "AI"
+  pageRef = "/ai/"
+  weight = 10
+
+[[main]]
+  name = "Engineering"
+  pageRef = "/engineering/"
+  weight = 15
+
+[[main]]
+  name = "Evaluation"
+  pageRef = "/ai-engineering/evaluation/"
+  weight = 20
+
+[[main]]
+  name = "System Design"
+  pageRef = "/system-design/"
+  weight = 25
+
+[[main]]
+name = "Search"
+weight = 90
+[main.params]
+type = "search"
+
+[[footer]]
+  identifier = "collections"
+  name = "Collections"
+  weight = 10
+
+[[footer]]
+  identifier = "site"
+  name = "Site"
+  weight = 20
+
+[[footer]]
+  name = "AI Engineering"
+  parent = "collections"
+  url = "/ai-engineering/"
+  weight = 5
+
+[[footer]]
+  name = "AI"
+  parent = "collections"
+  url = "/ai/"
+  weight = 10
+
+[[footer]]
+  name = "Evaluation"
+  parent = "collections"
+  url = "/ai-engineering/evaluation/"
+  weight = 15
+
+[[footer]]
+  name = "System Design"
+  parent = "collections"
+  url = "/system-design/"
+  weight = 20
+
+[[footer]]
+  name = "AI Design Research"
+  parent = "collections"
+  url = "/ai/design-research/"
+  weight = 25
+
+[[footer]]
+  name = "Engineering"
+  parent = "collections"
+  url = "/engineering/"
+  weight = 30
+
+[[footer]]
+  name = "Projects"
+  parent = "collections"
+  url = "/projects/"
+  weight = 40
+
+[[footer]]
+  name = "About"
+  parent = "site"
+  url = "/about/"
+  weight = 50
+
+[[footer]]
+  name = "Content Use"
+  parent = "site"
+  url = "/content-use/"
+  weight = 60
+
+[[footer]]
+  name = "Privacy Policy"
+  parent = "site"
+  url = "/privacy/"
+  weight = 70
+
+[[footer]]
+  name = "Settings"
+  parent = "site"
+  url = "/settings/"
+  weight = 75
+
+[[footer]]
+  name = "Agent map"
+  parent = "site"
+  url = "/agent-map/"
+  weight = 80

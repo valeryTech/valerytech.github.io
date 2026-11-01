@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "stage": 6,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Split the complex-UI dialogue into application behavior and a reading dialogue that preserves the later request for practitioners. Original source wording, role labels, examples, citations, and line endings remain unchanged.",
+  "source": {
+    "path": "archived source 027",
+    "absolutePath": "archived source 028",
+    "originalLines": 173,
+    "originalBytes": 14749,
+    "originalSha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+    "originalFinalNewline": true,
+    "currentRole": "navigation stub",
+    "stubLines": 8,
+    "stubBytes": 1188,
+    "stubSha256": "9e115231fc3901d30eb04ae18d79d15ea71d36d4e34b742e8ac89cd4b8108daa"
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        26
+      ],
+      "destination": "ai/interactive-systems/06-complex-interface-reading-path.md",
+      "anchor": "<!-- Complex-interface reading dialogue begins below. -->",
+      "description": "Opening question, role labels, and initial resource list",
+      "lines": 26,
+      "bytes": 4506,
+      "sha256": "f0811a9296a44091363e16e710d551d161c48fa546de15f6cc57ce78b1f3e69d",
+      "finalNewline": true,
+      "fenceMarkers": 0,
+      "destinationLines": [
+        14,
+        39
+      ]
+    },
+    {
+      "sourceLines": [
+        27,
+        80
+      ],
+      "destination": "ai/interactive-systems/05-application-state-and-computation.md",
+      "anchor": "<!-- Complex-application architecture passage begins below. -->",
+      "description": "Complete architecture diagram, TypeScript example, and asynchronous-result explanation",
+      "lines": 54,
+      "bytes": 2873,
+      "sha256": "711b90e4d5efd0ce1309b565d9535f681a52ada30356bb4fd79001e035327b82",
+      "finalNewline": true,
+      "fenceMarkers": 4,
+      "destinationLines": [
+        14,
+        67
+      ]
+    },
+    {
+      "sourceLines": [
+        81,
+        173
+      ],
+      "destination": "ai/interactive-systems/06-complex-interface-reading-path.md",
+      "anchor": "<!-- Complex-interface reading dialogue begins below. -->",
+      "description": "First reading sequence, practitioner request, and complete revised reply and reading sequence",
+      "lines": 93,
+      "bytes": 7370,
+      "sha256": "48e84e14f36dbbcfcb0a6e756fab309caed9ad607100e48c6cb4ee9374c7a67c",
+      "finalNewline": true,
+      "fenceMarkers": 4,
+      "destinationLines": [
+        40,
+        132
+      ]
+    }
+  ],
+  "prefixes": {
+    "ai/interactive-systems/06-complex-interface-reading-path.md": {
+      "lines": 13,
+      "bytes": 1249,
+      "sha256": "5b4bd4eb7ad2fd853348b7b6f7df150c347ee6860b517f9c4b2f4848578e1716"
+    },
+    "ai/interactive-systems/05-application-state-and-computation.md": {
+      "lines": 13,
+      "bytes": 1298,
+      "sha256": "9064dd645752a739815a62b3e1ef4c20bf702d5613d876d0e7b953a686b88042"
+    }
+  },
+  "destinations": [
+    {
+      "path": "ai/interactive-systems/06-complex-interface-reading-path.md",
+      "lines": 132,
+      "bytes": 13125,
+      "sha256": "37f1450d931cb3fe05faa50e83b71033b20f1033fae1d434c0e002694807dcec",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Later authorized navigation or imports do not invalidate the retained passage checksums."
+    },
+    {
+      "path": "ai/interactive-systems/05-application-state-and-computation.md",
+      "lines": 67,
+      "bytes": 4171,
+      "sha256": "8b8e0ce6d30e1e8877a1c6691b1f7198a6a8b3ff9a24092d8136bcd9fd645021",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum after this import. Later authorized navigation or imports do not invalidate the retained passage checksums."
+    }
+  ],
+  "moveOrder": [
+    {
+      "originalSourceLines": [
+        81,
+        173
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 7379,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        27,
+        80
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 4506,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        1,
+        26
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "editorialFiles": [
+    "ai/interactive-systems/05-application-state-and-computation-comments.md",
+    "ai/interactive-systems/06-complex-interface-reading-path-comments.md",
+    "ai/interactive-systems/00-index.md",
+    "ai/interactive-systems/00-index-comments.md"
+  ],
+  "verification": {
+    "reconstructedLines": 173,
+    "reconstructedBytes": 14749,
+    "reconstructedSha256": "d19e366aaa9db8af6e9dd70e5432872c40c7a0ac326b5693009d29da890e1e4e",
+    "allPassagesByteIdentical": true,
+    "sourceRangesCoverOriginalExactlyOnce": true,
+    "omittedOrDuplicatedBytes": 0,
+    "allCodeBlocksWhole": true,
+    "sourceFinalNewlinePreserved": true,
+    "priorMappings": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "lines": 8,
+        "bytes": 690,
+        "sha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+        "passagesVerified": 3
+      }
+    ],
+    "sourceWasEmptyAfterMoves": true,
+    "originalPathRetained": true,
+    "existingSourceBearingNotesEdited": false,
+    "claimsIndependentlyVerified": false,
+    "localLinkVerification": {
+      "scopedMarkdownFiles": 8,
+      "localLinksChecked": 138,
+      "headingAnchorsChecked": 16,
+      "missingTargets": 0
+    },
+    "scopedGitDiffChecksPassed": true,
+    "finalReconstructions": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "stage": 2,
+        "lines": 856,
+        "bytes": 30899,
+        "exact": true
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "stage": 3,
+        "lines": 1469,
+        "bytes": 32504,
+        "exact": true
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "stage": 4,
+        "lines": 439,
+        "bytes": 17434,
+        "exact": true
+      },
+      {
+        "manifest": "ai/interactive-systems/05-context-assembly-reassembly.json",
+        "stage": 5,
+        "lines": 8,
+        "bytes": 690,
+        "exact": true
+      },
+      {
+        "manifest": "ai/interactive-systems/06-complex-ui-reassembly.json",
+        "stage": 6,
+        "lines": 173,
+        "bytes": 14749,
+        "exact": true
+      }
+    ],
+    "baselineVerification": {
+      "snapshotRole": "Shared-workspace comparison at final verification. Later work in other chats may change unrelated files.",
+      "baselineFiles": 105,
+      "intendedChangedBaselinePaths": [
+        "ai/interactive-systems/00-index-comments.md",
+        "ai/interactive-systems/00-index.md",
+        "ai/interactive-systems/reassembly-map.md",
+        "archived source 027"
+      ],
+      "unrelatedObservedChanges": [
+        {
+          "path": "ai/design-research/reassembly-map.md",
+          "previousSha256": "294f8cd41b487291306efa92182599d50e9de9a2187a0744457e6409a7e81d0d",
+          "observedSha256": "b1f645079c718c976bc51560d62dc6c824bc2941341e294affc94de22f4f0424",
+          "role": "Unrelated shared-workspace change. This pass did not edit or revert the file."
+        }
+      ],
+      "unrelatedBaselineUnchangedCount": 100
+    }
+  },
+  "audit": "ai/interactive-systems/reassembly-map.md#stage-6-complex-ui-design-dialogue",
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

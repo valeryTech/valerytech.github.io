@@ -1,0 +1,53 @@
+name: Setup site toolchain
+description: Install pinned Node.js, npm, Hugo, Dart Sass, and project dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Load pinned versions
+      shell: bash
+      run: |
+        source "$GITHUB_ACTION_PATH/../../../.infra/versions.env"
+        echo "NODE_VERSION=$NODE_VERSION" >> "$GITHUB_ENV"
+        echo "NPM_VERSION=$NPM_VERSION" >> "$GITHUB_ENV"
+        echo "HUGO_VERSION=$HUGO_VERSION" >> "$GITHUB_ENV"
+        echo "DART_SASS_VERSION=$DART_SASS_VERSION" >> "$GITHUB_ENV"
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v7
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: npm
+
+    - name: Setup npm
+      shell: bash
+      run: npm install --global "npm@${NPM_VERSION}"
+
+    - name: Install Hugo and Dart Sass
+      shell: bash
+      run: |
+        set -euo pipefail
+        case "$(uname -m)" in
+          x86_64) hugo_arch="linux-amd64"; sass_arch="linux-x64" ;;
+          aarch64|arm64) hugo_arch="linux-arm64"; sass_arch="linux-arm64" ;;
+          *)
+            echo "Unsupported architecture: $(uname -m)" >&2
+            exit 1
+            ;;
+        esac
+
+        archive="hugo_extended_${HUGO_VERSION}_${hugo_arch}.tar.gz"
+        wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${archive}"
+        tar -xzf "${archive}" hugo
+        sudo install -m 0755 hugo /usr/local/bin/hugo
+        rm -f hugo "${archive}"
+
+        archive="dart-sass-${DART_SASS_VERSION}-${sass_arch}.tar.gz"
+        wget --quiet "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/${archive}"
+        sudo tar -xzf "${archive}" -C /opt
+        sudo ln -sf /opt/dart-sass/sass /usr/local/bin/sass
+        rm -f "${archive}"
+
+    - name: Install npm dependencies
+      shell: bash
+      run: npm ci

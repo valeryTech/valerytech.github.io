@@ -1,0 +1,7 @@
+{{- $pages := slice -}}
+{{- range . -}}
+  {{- if and (not .Draft) (not .Params.agent_map_exclude) (.OutputFormats.Get "HTML") -}}
+    {{- $pages = $pages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $pages -}}

@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-05",
+  "workspace": "/Users/val/notes",
+  "description": "Whole Hebbia case folder relocated to AI inputs. Only navigation links changed; retained source passages and historical reassembly manifests remain unchanged.",
+  "pathPrefixRelocation": {
+    "from": "projects/input/hebbia-sem/",
+    "to": "ai/input/hebbia-sem/"
+  },
+  "historicalManifestPolicy": "Preserve original paths and recorded checksums. Apply pathPrefixRelocation to resolve current files. Whole-file hashes describe historical snapshots; passage hashes remain valid.",
+  "files": [
+    {
+      "from": "projects/input/hebbia-sem/analysis/01-product-and-workflow-context.md",
+      "to": "ai/input/hebbia-sem/analysis/01-product-and-workflow-context.md",
+      "beforeBytes": 6925,
+      "beforeSha256": "7da5d2f8153fc252d5db152f6be62ac2b50ca8fde8a24ebdedb406a13be82c6d",
+      "afterBytes": 6919,
+      "afterSha256": "9ec34a9b5290d51effe92198444b55fc972d5e3483aa3bb652ae78d457c29006",
+      "mode": "0o644",
+      "lines": 199,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "to": "ai/input/hebbia-sem/analysis/02-matrix-execution-and-analysis-modes.md",
+      "beforeBytes": 7403,
+      "beforeSha256": "2314e021438c3d4754b2d51f5ee605ce1ff73395bd0cd0e75c51593b7dacdf5b",
+      "afterBytes": 7379,
+      "afterSha256": "6ccd4643c8a662bcf12e21c41e095bf44b0cb1e31e1e263c759e117e0669409e",
+      "mode": "0o644",
+      "lines": 181,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/analysis/03-document-understanding-and-retrieval.md",
+      "to": "ai/input/hebbia-sem/analysis/03-document-understanding-and-retrieval.md",
+      "beforeBytes": 11433,
+      "beforeSha256": "e96ddb1d92b3d7bf236fb67c4ba177be81669d3b1fc9bc90282c0b6ecebe15c0",
+      "afterBytes": 11421,
+      "afterSha256": "05bc0eb12126b30090ccf60be73ca109902de871d90dc57553dba4781e2ba1bb",
+      "mode": "0o644",
+      "lines": 285,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/analysis/04-evidence-contracts-and-product-comparison.md",
+      "to": "ai/input/hebbia-sem/analysis/04-evidence-contracts-and-product-comparison.md",
+      "beforeBytes": 11518,
+      "beforeSha256": "8c420221c80867201285aa9d98fc79fd05bb85ab8228961a36b84dcfb15b9a98",
+      "afterBytes": 11506,
+      "afterSha256": "9ce39ceb7ae1a2ecf4d8227fa0220139f42a555ccdd459c6b8824400244aa7de",
+      "mode": "0o644",
+      "lines": 284,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "to": "ai/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "beforeBytes": 8956,
+      "beforeSha256": "b19298f0f9b017ac31dcbe4ec29413de98ec62d18d2666b2e6c77cf3f53c91c9",
+      "afterBytes": 8938,
+      "afterSha256": "bd8ecd6784a6d4b2348babec687a9c787c5a0d072c7720f4b1dc783cbe52e22f",
+      "mode": "0o644",
+      "lines": 145,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/analysis/06-regulated-quality-systems-hypothesis.md",
+      "to": "ai/input/hebbia-sem/analysis/06-regulated-quality-systems-hypothesis.md",
+      "beforeBytes": 1696,
+      "beforeSha256": "64102b7eecc0a4e1dabc2da5fa3b5230fd070085f5f8386ca70ca524ae9bc5e3",
+      "afterBytes": 1672,
+      "afterSha256": "73fd465265ed5ac6365b9b41c541d161aeb5d588d72f3596a59393ac61500d69",
+      "mode": "0o644",
+      "lines": 14,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/goodbye-rag-how-hebbia-solved-information-retrieval-for-llms.md",
+      "to": "ai/input/hebbia-sem/goodbye-rag-how-hebbia-solved-information-retrieval-for-llms.md",
+      "beforeBytes": 16347,
+      "beforeSha256": "9be02e10ecbf0c84066176adab9c05bbb2280d67185999bae4445e0914186e1d",
+      "afterBytes": 16347,
+      "afterSha256": "9be02e10ecbf0c84066176adab9c05bbb2280d67185999bae4445e0914186e1d",
+      "mode": "0o644",
+      "lines": 161,
+      "navigationLinksAdjusted": false
+    },
+    {
+      "from": "projects/input/hebbia-sem/hebbia-analysis-1-comments.md",
+      "to": "ai/input/hebbia-sem/hebbia-analysis-1-comments.md",
+      "beforeBytes": 4939,
+      "beforeSha256": "8a5ade480807dba8afc89bb9a8e9270c547426771f19c1e9872e3aef2be87a8c",
+      "afterBytes": 4915,
+      "afterSha256": "e957617519c3752b0ab2e723002fe0c0a1d07719e9ff2a18c22be157feeb9f0e",
+      "mode": "0o644",
+      "lines": 43,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/hebbia-analysis-1.md",
+      "to": "ai/input/hebbia-sem/hebbia-analysis-1.md",
+      "beforeBytes": 1726,
+      "beforeSha256": "85ceaf347aa5cca38f69b89fdcae33b73d32e8d7995264ba0dcb427af7f1e8c0",
+      "afterBytes": 1708,
+      "afterSha256": "acf8c97459d5049dc6469e88026fc5e6099042973c1bb27f0ec52538502f2ffc",
+      "mode": "0o644",
+      "lines": 12,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/matrix-interface-observations.md",
+      "to": "ai/input/hebbia-sem/matrix-interface-observations.md",
+      "beforeBytes": 4945,
+      "beforeSha256": "89f2115d7a421baeebf6483e2bd647d8f659d0ddac52fb003f8699c6d6a516b2",
+      "afterBytes": 4915,
+      "afterSha256": "bc94e1e3734fd5368fe624d8550d3d6d11f8276703601de33becfa2f821db04f",
+      "mode": "0o644",
+      "lines": 182,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/semantic-eng.md",
+      "to": "ai/input/hebbia-sem/semantic-eng.md",
+      "beforeBytes": 1655,
+      "beforeSha256": "32e19603efee285dd3e7b0adeea6fe17a1070d20896bea18bf8493451056c9dc",
+      "afterBytes": 1631,
+      "afterSha256": "67959ef9f44081c3397a6a5012c9d5062a13e5118f2bdf0c0548d9a9d90ca181",
+      "mode": "0o644",
+      "lines": 10,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/task-specific-context-assembly.md",
+      "to": "ai/input/hebbia-sem/task-specific-context-assembly.md",
+      "beforeBytes": 1280,
+      "beforeSha256": "c4152ca9ce563cff1d387984c2f189e680b0236fbf28f1b6baa6b2e123be1eca",
+      "afterBytes": 1256,
+      "afterSha256": "57ace40717e0f7574f9ae7553ab610becc6682d5be16433b4c590a3af10c5b52",
+      "mode": "0o644",
+      "lines": 9,
+      "navigationLinksAdjusted": true
+    },
+    {
+      "from": "projects/input/hebbia-sem/visual-programming-env.md",
+      "to": "ai/input/hebbia-sem/visual-programming-env.md",
+      "beforeBytes": 1214,
+      "beforeSha256": "52eac0a489f51800ab04a4d6bf4a87a6a1f23c447555c5aff9d88109f335805e",
+      "afterBytes": 1166,
+      "afterSha256": "f56e76fa67655c76e5ff5c31f9fb34b9d934e56ed220104c451faa834e00c2ea",
+      "mode": "0o644",
+      "lines": 11,
+      "navigationLinksAdjusted": true
+    }
+  ],
+  "historicalManifests": [
+    "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+    "ai/interactive-systems/05-context-assembly-reassembly.json",
+    "ai/interactive-systems/reassembly-map.json",
+    "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+    "ai/interactive-systems/03-hebbia-design-observations-reassembly.json"
+  ]
+}

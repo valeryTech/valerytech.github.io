@@ -1,0 +1,32 @@
+{{- $outline := .TableOfContents -}}
+{{- if and .IsSection (ne .Section "agent-map") -}}
+  {{- /* Section headings added by templates are absent from Hugo's Markdown TOC. */ -}}
+  {{- $content := partialCached "section-index/index.html" . .RelPermalink -}}
+  {{- $roots := slice -}}
+  {{- $ancestors := slice -}}
+  {{- range findRESubmatch `(?is)<h([1-6])\b[^>]*\bid=["']([^"']+)["'][^>]*>(.*?)</h[1-6]>` $content -}}
+    {{- $level := int (index . 1) -}}
+    {{- $node := newScratch -}}
+    {{- $node.Set "id" (index . 2 | htmlUnescape) -}}
+    {{- $node.Set "title" (index . 3 | plainify | htmlUnescape | strings.TrimSpace) -}}
+    {{- $node.Set "level" $level -}}
+    {{- $node.Set "children" slice -}}
+    {{- range seq (len $ancestors) -}}
+      {{- $parent := index $ancestors (sub (len $ancestors) 1) -}}
+      {{- if lt ($parent.Get "level") $level }}{{ break }}{{ end -}}
+      {{- $ancestors = first (sub (len $ancestors) 1) $ancestors -}}
+    {{- end -}}
+    {{- if $ancestors -}}
+      {{- $parent := index $ancestors (sub (len $ancestors) 1) -}}
+      {{- $parent.Add "children" (slice $node) -}}
+    {{- else -}}
+      {{- $roots = $roots | append $node -}}
+    {{- end -}}
+    {{- $ancestors = $ancestors | append $node -}}
+  {{- end -}}
+  {{- $outline = "" -}}
+  {{- with $roots -}}
+    {{- $outline = printf `<nav id="TableOfContents">%s</nav>` (partial "navigation/outline-list.html" .) | safeHTML -}}
+  {{- end -}}
+{{- end -}}
+{{- return $outline -}}

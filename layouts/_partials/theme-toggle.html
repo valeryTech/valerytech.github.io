@@ -1,0 +1,21 @@
+{{- /* Cycle through themes while retaining the shared icon frame. */ -}}
+{{- $hideLabel := .hideLabel | default false -}}
+{{- $extraClass := .class | default "" -}}
+{{- $changeTheme := (T "changeTheme") | default "Change theme" -}}
+{{- $choices := slice
+  (dict "value" "light" "label" ((T "light") | default "Light") "icon" "sun")
+  (dict "value" "dark" "label" ((T "dark") | default "Dark") "icon" "moon")
+  (dict "value" "system" "label" ((T "system") | default "System") "icon" "contrast")
+-}}
+<div class="site-theme-control hx:flex" data-theme="{{ site.Params.theme.default | default "system" }}">
+  <button type="button" class="hextra-theme-toggle site-control{{ if and $extraClass (ne $extraClass "site-control") }} {{ $extraClass }}{{ end }}{{ if $hideLabel }} site-control-icon-only{{ end }}" title="{{ $changeTheme }}" aria-label="{{ $changeTheme }}">
+    {{- range $choices -}}
+      {{ partial "components/control-icon.html" (dict "name" .icon "class" "site-theme-icon" "attributes" (printf `data-theme-choice="%s" data-theme-label="%s"` .value (.label | htmlEscape))) }}
+    {{- end -}}
+    {{- if not $hideLabel -}}
+      <span class="site-control-label">
+        {{- range $choices -}}<span data-theme-choice="{{ .value }}">{{ .label }}</span>{{- end -}}
+      </span>
+    {{- end -}}
+  </button>
+</div>

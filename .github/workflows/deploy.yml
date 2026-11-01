@@ -1,0 +1,79 @@
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Setup site toolchain
+        uses: ./.github/actions/setup-site
+
+      - name: Build production website
+        env:
+          HUGOxPARAMSxANALYTICSxPOSTHOGTOKEN: ${{ vars.POSTHOG_PROJECT_TOKEN }}
+          HUGOxPARAMSxANALYTICSxPOSTHOGHOST: ${{ vars.POSTHOG_HOST || 'https://us.i.posthog.com' }}
+          HUGOxPARAMSxANALYTICSxCLARITYID: ${{ vars.CLARITY_PROJECT_ID }}
+          HUGOxPARAMSxANALYTICSxRELEASE: ${{ github.sha }}
+          HUGOxPARAMSxANALYTICSxSOURCEMAPS: true
+        run: bash scripts/build-site.sh --host
+
+      - name: Upload JavaScript source maps to PostHog
+        if: ${{ vars.POSTHOG_PROJECT_ID != '' }}
+        continue-on-error: true
+        uses: PostHog/upload-source-maps@v2
+        with:
+          directory: public
+          project-id: ${{ vars.POSTHOG_PROJECT_ID }}
+          api-key: ${{ secrets.POSTHOG_CLI_API_KEY }}
+          host: https://us.posthog.com
+          release-name: valerytech.github.io
+          release-version: ${{ github.sha }}
+          delete-after-upload: true
+          cli-version: 0.19.0
+
+      - name: Remove source maps from deployment artifact
+        if: always()
+        run: if [[ -d public ]]; then find public -type f -name '*.map' -delete; fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

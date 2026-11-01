@@ -1,0 +1,1748 @@
+{
+  "report": "preventing-overreliance-on-persuasive-ai-generated-text.md",
+  "captured_on": "2026-10-25",
+  "citation_format": "Every original citation group is reconstructed from identifiable source URLs. Unresolved secondary source IDs have separate footnotes; exact original groups are retained per occurrence.",
+  "numbered_sources": {
+    "1": {
+      "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+      "url": "https://arxiv.org/html/2502.08554v1"
+    },
+    "2": {
+      "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+      "url": "https://arxiv.org/html/2502.08554v1"
+    },
+    "21": {
+      "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+      "url": "https://arxiv.org/html/2502.08554v1"
+    },
+    "29": {
+      "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+      "url": "https://arxiv.org/html/2502.08554v1"
+    },
+    "30": {
+      "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+      "url": "https://arxiv.org/html/2502.08554v1"
+    },
+    "14": {
+      "title": "Delusions and Harms Associated with AI Chatbot Use: Early Evidence from 185 Real-World Reports",
+      "url": "https://arxiv.org/abs/2609.08027"
+    },
+    "19": {
+      "title": "DelusionEval: Measuring Delusion-Linked Behaviors in AI Chatbots",
+      "url": "https://arxiv.org/abs/2608.05004"
+    },
+    "22": {
+      "title": "Observing sycophantic AI validate others reduces its appeal but not its persuasiveness",
+      "url": "https://arxiv.org/abs/2607.25166"
+    },
+    "3": {
+      "title": "Sycophantic AI decreases prosocial intentions and ...",
+      "url": "https://www.science.org/doi/10.1126/science.aec8352"
+    },
+    "4": {
+      "title": "To Trust or to Think",
+      "url": "https://www.scilit.com/publications/5009db91d3ca166f6914e826ea5b290d"
+    },
+    "5": {
+      "title": "A Case of New-onset AI-associated Psychosis - PubMed - NIH",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41635747/"
+    },
+    "11": {
+      "title": "a meta-analytic review of the truth effect",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20023210/"
+    },
+    "17": {
+      "title": "Management of Chronic Insomnia Disorder in Adults",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27136449/"
+    },
+    "20": {
+      "title": "Do metacognitive therapies for schizophrenia-spectrum ...",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38509837/"
+    },
+    "6": {
+      "title": "Strengthening ChatGPT's responses in sensitive ...",
+      "url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/"
+    },
+    "7": {
+      "title": "Patients are bringing AI to therapy",
+      "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+    },
+    "15": {
+      "title": "Patients are bringing AI to therapy",
+      "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+    },
+    "24": {
+      "title": "Patients are bringing AI to therapy",
+      "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+    },
+    "27": {
+      "title": "Patients are bringing AI to therapy",
+      "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+    },
+    "32": {
+      "title": "Patients are bringing AI to therapy",
+      "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+    },
+    "18": {
+      "title": "Psychologists say patients are turning to chatbots as ...",
+      "url": "https://www.apa.org/news/press/releases/2026/06/patients-chatbots-mental-health"
+    },
+    "26": {
+      "title": "Psychologists say patients are turning to chatbots as ...",
+      "url": "https://www.apa.org/news/press/releases/2026/06/patients-chatbots-mental-health"
+    },
+    "8": {
+      "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+      "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+    },
+    "9": {
+      "title": "To Trust or to Think: Cognitive Forcing Functions Can ...",
+      "url": "https://dl.acm.org/doi/10.1145/3449287"
+    },
+    "10": {
+      "title": "People prefer algorithmic to human judgment",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0749597818303388"
+    },
+    "12": {
+      "title": "Large Language Models Help Humans Verify Truthfulness – Except When They Are Convincingly Wrong - ACL Anthology",
+      "url": "https://aclanthology.org/2024.naacl-long.81/"
+    },
+    "28": {
+      "title": "Large Language Models Help Humans Verify Truthfulness – Except When They Are Convincingly Wrong - ACL Anthology",
+      "url": "https://aclanthology.org/2024.naacl-long.81/"
+    },
+    "13": {
+      "title": "Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report | BMC Psychiatry | Springer Nature Link",
+      "url": "https://link.springer.com/article/10.1186/s12888-026-08137-3"
+    },
+    "31": {
+      "title": "Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report | BMC Psychiatry | Springer Nature Link",
+      "url": "https://link.springer.com/article/10.1186/s12888-026-08137-3"
+    },
+    "16": {
+      "title": "Understanding Psychosis - National Institute of Mental Health ...",
+      "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+    },
+    "23": {
+      "title": "Psychosis and schizophrenia in adults: prevention and ...",
+      "url": "https://www.nice.org.uk/guidance/cg178/chapter/1-recommendations"
+    },
+    "25": {
+      "title": "Artificial intelligence-associated delusions and large ...",
+      "url": "https://www.thelancet.com/article/S2215-0366%2825%2900396-7/abstract"
+    }
+  },
+  "occurrences": [
+    {
+      "occurrence": 1,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn21view0",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 2,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn15search5",
+        "turn14search3"
+      ],
+      "exported_footnotes": [
+        2,
+        11,
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 3,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Sycophantic AI decreases prosocial intentions and ...",
+        "url": "https://www.science.org/doi/10.1126/science.aec8352"
+      },
+      "original_reference_ids": [
+        "turn19search0",
+        "turn19search4",
+        "turn19academia14"
+      ],
+      "exported_footnotes": [
+        3,
+        33,
+        34
+      ],
+      "unresolved_source_ids": [
+        "turn19search4",
+        "turn19academia14"
+      ]
+    },
+    {
+      "occurrence": 4,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "To Trust or to Think",
+        "url": "https://www.scilit.com/publications/5009db91d3ca166f6914e826ea5b290d"
+      },
+      "original_reference_ids": [
+        "turn14search5",
+        "turn15search1",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        4,
+        9,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 5,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "A Case of New-onset AI-associated Psychosis - PubMed - NIH",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41635747/"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn17search1",
+        "turn21view3"
+      ],
+      "exported_footnotes": [
+        5,
+        25,
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 6,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Strengthening ChatGPT's responses in sensitive ...",
+        "url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/"
+      },
+      "original_reference_ids": [
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 7,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4",
+        "turn19search3"
+      ],
+      "exported_footnotes": [
+        7,
+        18
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 8,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+        "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+      },
+      "original_reference_ids": [
+        "turn19search1",
+        "turn17academia27"
+      ],
+      "exported_footnotes": [
+        8,
+        35
+      ],
+      "unresolved_source_ids": [
+        "turn17academia27"
+      ]
+    },
+    {
+      "occurrence": 9,
+      "displayed_citation": 9,
+      "primary_source": {
+        "title": "To Trust or to Think: Cognitive Forcing Functions Can ...",
+        "url": "https://dl.acm.org/doi/10.1145/3449287"
+      },
+      "original_reference_ids": [
+        "turn15search1",
+        "turn18view1",
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        9,
+        12,
+        7
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 10,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 11,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn15search5"
+      ],
+      "exported_footnotes": [
+        2,
+        11
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 12,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 13,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "People prefer algorithmic to human judgment",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0749597818303388"
+      },
+      "original_reference_ids": [
+        "turn14search3",
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        10,
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 14,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Sycophantic AI decreases prosocial intentions and ...",
+        "url": "https://www.science.org/doi/10.1126/science.aec8352"
+      },
+      "original_reference_ids": [
+        "turn19search0",
+        "turn19academia14"
+      ],
+      "exported_footnotes": [
+        3,
+        34
+      ],
+      "unresolved_source_ids": [
+        "turn19academia14"
+      ]
+    },
+    {
+      "occurrence": 15,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "To Trust or to Think",
+        "url": "https://www.scilit.com/publications/5009db91d3ca166f6914e826ea5b290d"
+      },
+      "original_reference_ids": [
+        "turn14search5",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        4,
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 16,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "a meta-analytic review of the truth effect",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20023210/"
+      },
+      "original_reference_ids": [
+        "turn15search5",
+        "turn17academia24"
+      ],
+      "exported_footnotes": [
+        11,
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 17,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+        "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+      },
+      "original_reference_ids": [
+        "turn19search1"
+      ],
+      "exported_footnotes": [
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 18,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 19,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn21view0",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 20,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "Large Language Models Help Humans Verify Truthfulness – Except When They Are Convincingly Wrong - ACL Anthology",
+        "url": "https://aclanthology.org/2024.naacl-long.81/"
+      },
+      "original_reference_ids": [
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 21,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "A Case of New-onset AI-associated Psychosis - PubMed - NIH",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41635747/"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn17search1",
+        "turn17search9"
+      ],
+      "exported_footnotes": [
+        5,
+        25,
+        36
+      ],
+      "unresolved_source_ids": [
+        "turn17search9"
+      ]
+    },
+    {
+      "occurrence": 22,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report | BMC Psychiatry | Springer Nature Link",
+        "url": "https://link.springer.com/article/10.1186/s12888-026-08137-3"
+      },
+      "original_reference_ids": [
+        "turn21view3"
+      ],
+      "exported_footnotes": [
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 23,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Delusions and Harms Associated with AI Chatbot Use: Early Evidence from 185 Real-World Reports",
+        "url": "https://arxiv.org/abs/2609.08027"
+      },
+      "original_reference_ids": [
+        "turn17academia23"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 24,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Strengthening ChatGPT's responses in sensitive ...",
+        "url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/"
+      },
+      "original_reference_ids": [
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 25,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Strengthening ChatGPT's responses in sensitive ...",
+        "url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/"
+      },
+      "original_reference_ids": [
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 26,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 27,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Delusions and Harms Associated with AI Chatbot Use: Early Evidence from 185 Real-World Reports",
+        "url": "https://arxiv.org/abs/2609.08027"
+      },
+      "original_reference_ids": [
+        "turn17academia23"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 28,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 29,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Management of Chronic Insomnia Disorder in Adults",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27136449/"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        17
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 30,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 31,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 32,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "To Trust or to Think",
+        "url": "https://www.scilit.com/publications/5009db91d3ca166f6914e826ea5b290d"
+      },
+      "original_reference_ids": [
+        "turn14search5",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        4,
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 33,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "Large Language Models Help Humans Verify Truthfulness – Except When They Are Convincingly Wrong - ACL Anthology",
+        "url": "https://aclanthology.org/2024.naacl-long.81/"
+      },
+      "original_reference_ids": [
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 34,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "Sycophantic AI decreases prosocial intentions and ...",
+        "url": "https://www.science.org/doi/10.1126/science.aec8352"
+      },
+      "original_reference_ids": [
+        "turn19search0",
+        "turn19academia14"
+      ],
+      "exported_footnotes": [
+        3,
+        34
+      ],
+      "unresolved_source_ids": [
+        "turn19academia14"
+      ]
+    },
+    {
+      "occurrence": 35,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+        "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+      },
+      "original_reference_ids": [
+        "turn19search1"
+      ],
+      "exported_footnotes": [
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 36,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "Psychologists say patients are turning to chatbots as ...",
+        "url": "https://www.apa.org/news/press/releases/2026/06/patients-chatbots-mental-health"
+      },
+      "original_reference_ids": [
+        "turn19search3"
+      ],
+      "exported_footnotes": [
+        18
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 37,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "A Case of New-onset AI-associated Psychosis - PubMed - NIH",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41635747/"
+      },
+      "original_reference_ids": [
+        "turn17search0",
+        "turn21view3"
+      ],
+      "exported_footnotes": [
+        5,
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 38,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "Delusions and Harms Associated with AI Chatbot Use: Early Evidence from 185 Real-World Reports",
+        "url": "https://arxiv.org/abs/2609.08027"
+      },
+      "original_reference_ids": [
+        "turn17academia23"
+      ],
+      "exported_footnotes": [
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 39,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "DelusionEval: Measuring Delusion-Linked Behaviors in AI Chatbots",
+        "url": "https://arxiv.org/abs/2608.05004"
+      },
+      "original_reference_ids": [
+        "turn17academia24"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 40,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Do metacognitive therapies for schizophrenia-spectrum ...",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38509837/"
+      },
+      "original_reference_ids": [
+        "turn13search1"
+      ],
+      "exported_footnotes": [
+        20
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 41,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn19search0",
+        "turn13search1",
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        21,
+        3,
+        20,
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 42,
+      "displayed_citation": 22,
+      "primary_source": {
+        "title": "Observing sycophantic AI validate others reduces its appeal but not its persuasiveness",
+        "url": "https://arxiv.org/abs/2607.25166"
+      },
+      "original_reference_ids": [
+        "turn19academia19"
+      ],
+      "exported_footnotes": [
+        22
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 43,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Psychosis and schizophrenia in adults: prevention and ...",
+        "url": "https://www.nice.org.uk/guidance/cg178/chapter/1-recommendations"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        23,
+        37
+      ],
+      "unresolved_source_ids": [
+        "turn13search4"
+      ]
+    },
+    {
+      "occurrence": 44,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Do metacognitive therapies for schizophrenia-spectrum ...",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38509837/"
+      },
+      "original_reference_ids": [
+        "turn13search1"
+      ],
+      "exported_footnotes": [
+        20
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 45,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Do metacognitive therapies for schizophrenia-spectrum ...",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38509837/"
+      },
+      "original_reference_ids": [
+        "turn13search1"
+      ],
+      "exported_footnotes": [
+        20
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 46,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Do metacognitive therapies for schizophrenia-spectrum ...",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38509837/"
+      },
+      "original_reference_ids": [
+        "turn13search1",
+        "turn20view0"
+      ],
+      "exported_footnotes": [
+        20,
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 47,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn21view1",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        1,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 48,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 49,
+      "displayed_citation": 24,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4",
+        "turn16search1"
+      ],
+      "exported_footnotes": [
+        24,
+        26
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 50,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 51,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+        "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+      },
+      "original_reference_ids": [
+        "turn19search1",
+        "turn16search1"
+      ],
+      "exported_footnotes": [
+        8,
+        26
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 52,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Artificial intelligence-associated delusions and large ...",
+        "url": "https://www.thelancet.com/article/S2215-0366%2825%2900396-7/abstract"
+      },
+      "original_reference_ids": [
+        "turn17search1",
+        "turn17search17"
+      ],
+      "exported_footnotes": [
+        25,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search17"
+      ]
+    },
+    {
+      "occurrence": 53,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Management of Chronic Insomnia Disorder in Adults",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27136449/"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        17
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 54,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "To Trust or to Think",
+        "url": "https://www.scilit.com/publications/5009db91d3ca166f6914e826ea5b290d"
+      },
+      "original_reference_ids": [
+        "turn14search5",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        4,
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 55,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 56,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 57,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "Large Language Models Help Humans Verify Truthfulness – Except When They Are Convincingly Wrong - ACL Anthology",
+        "url": "https://aclanthology.org/2024.naacl-long.81/"
+      },
+      "original_reference_ids": [
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 58,
+      "displayed_citation": 26,
+      "primary_source": {
+        "title": "Psychologists say patients are turning to chatbots as ...",
+        "url": "https://www.apa.org/news/press/releases/2026/06/patients-chatbots-mental-health"
+      },
+      "original_reference_ids": [
+        "turn16search1",
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        26,
+        7
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 59,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2",
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        16,
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 60,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4",
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        27,
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 61,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2",
+        "turn21view1",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        16,
+        1,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 62,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "To Trust or to Think",
+        "url": "https://www.scilit.com/publications/5009db91d3ca166f6914e826ea5b290d"
+      },
+      "original_reference_ids": [
+        "turn14search5",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        4,
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 63,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 64,
+      "displayed_citation": 28,
+      "primary_source": {
+        "title": "Large Language Models Help Humans Verify Truthfulness – Except When They Are Convincingly Wrong - ACL Anthology",
+        "url": "https://aclanthology.org/2024.naacl-long.81/"
+      },
+      "original_reference_ids": [
+        "turn18view1",
+        "turn19search0"
+      ],
+      "exported_footnotes": [
+        28,
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 65,
+      "displayed_citation": 22,
+      "primary_source": {
+        "title": "Observing sycophantic AI validate others reduces its appeal but not its persuasiveness",
+        "url": "https://arxiv.org/abs/2607.25166"
+      },
+      "original_reference_ids": [
+        "turn19academia19"
+      ],
+      "exported_footnotes": [
+        22
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 66,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+        "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+      },
+      "original_reference_ids": [
+        "turn19search1",
+        "turn16search1"
+      ],
+      "exported_footnotes": [
+        8,
+        26
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 67,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4",
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        27,
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 68,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Artificial intelligence-associated delusions and large ...",
+        "url": "https://www.thelancet.com/article/S2215-0366%2825%2900396-7/abstract"
+      },
+      "original_reference_ids": [
+        "turn17search1",
+        "turn17search17"
+      ],
+      "exported_footnotes": [
+        25,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search17"
+      ]
+    },
+    {
+      "occurrence": 69,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Psychosis and schizophrenia in adults: prevention and ...",
+        "url": "https://www.nice.org.uk/guidance/cg178/chapter/1-recommendations"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search4"
+      ],
+      "exported_footnotes": [
+        23,
+        37
+      ],
+      "unresolved_source_ids": [
+        "turn13search4"
+      ]
+    },
+    {
+      "occurrence": 70,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Do metacognitive therapies for schizophrenia-spectrum ...",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38509837/"
+      },
+      "original_reference_ids": [
+        "turn13search1"
+      ],
+      "exported_footnotes": [
+        20
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 71,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Management of Chronic Insomnia Disorder in Adults",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27136449/"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        17
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 72,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2",
+        "turn13search0"
+      ],
+      "exported_footnotes": [
+        16,
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 73,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        29,
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 74,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn21view0"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 75,
+      "displayed_citation": 30,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn19search1",
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        30,
+        8,
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 76,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn15search1"
+      ],
+      "exported_footnotes": [
+        29,
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 77,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "How AI and Human Behaviors Shape Psychosocial Effects ...",
+        "url": "https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/"
+      },
+      "original_reference_ids": [
+        "turn19search1"
+      ],
+      "exported_footnotes": [
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 78,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 79,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Artificial intelligence-associated delusions and large ...",
+        "url": "https://www.thelancet.com/article/S2215-0366%2825%2900396-7/abstract"
+      },
+      "original_reference_ids": [
+        "turn17search1",
+        "turn17search12"
+      ],
+      "exported_footnotes": [
+        25,
+        39
+      ],
+      "unresolved_source_ids": [
+        "turn17search12"
+      ]
+    },
+    {
+      "occurrence": 80,
+      "displayed_citation": 31,
+      "primary_source": {
+        "title": "Substance-induced manic psychosis in which delusions were corroborated by a chatbot - case report | BMC Psychiatry | Springer Nature Link",
+        "url": "https://link.springer.com/article/10.1186/s12888-026-08137-3"
+      },
+      "original_reference_ids": [
+        "turn21view3",
+        "turn17search1"
+      ],
+      "exported_footnotes": [
+        31,
+        25
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 81,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 82,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "Artificial intelligence-associated delusions and large ...",
+        "url": "https://www.thelancet.com/article/S2215-0366%2825%2900396-7/abstract"
+      },
+      "original_reference_ids": [
+        "turn17search1",
+        "turn17search17"
+      ],
+      "exported_footnotes": [
+        25,
+        38
+      ],
+      "unresolved_source_ids": [
+        "turn17search17"
+      ]
+    },
+    {
+      "occurrence": 83,
+      "displayed_citation": 32,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4",
+        "turn16search4"
+      ],
+      "exported_footnotes": [
+        32,
+        40
+      ],
+      "unresolved_source_ids": [
+        "turn16search4"
+      ]
+    },
+    {
+      "occurrence": 84,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 85,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Strengthening ChatGPT's responses in sensitive ...",
+        "url": "https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/"
+      },
+      "original_reference_ids": [
+        "turn16search0"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 86,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn21view1"
+      ],
+      "exported_footnotes": [
+        1
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 87,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn21view1",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        1,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 88,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 89,
+      "displayed_citation": 26,
+      "primary_source": {
+        "title": "Psychologists say patients are turning to chatbots as ...",
+        "url": "https://www.apa.org/news/press/releases/2026/06/patients-chatbots-mental-health"
+      },
+      "original_reference_ids": [
+        "turn16search1",
+        "turn19search1"
+      ],
+      "exported_footnotes": [
+        26,
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 90,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 91,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Patients are bringing AI to therapy",
+        "url": "https://www.apa.org/pubs/reports/chatbots-mental-health-2026"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 92,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Understanding Psychosis - National Institute of Mental Health ...",
+        "url": "https://www.nimh.nih.gov/health/publications/understanding-psychosis"
+      },
+      "original_reference_ids": [
+        "turn16search2"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 93,
+      "displayed_citation": 9,
+      "primary_source": {
+        "title": "To Trust or to Think: Cognitive Forcing Functions Can ...",
+        "url": "https://dl.acm.org/doi/10.1145/3449287"
+      },
+      "original_reference_ids": [
+        "turn15search1",
+        "turn21view1",
+        "turn18view1",
+        "turn16search2",
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        9,
+        1,
+        12,
+        16,
+        7
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 94,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "Fostering Appropriate Reliance on Large Language Models:The Role of Explanations, Sources, and Inconsistencies",
+        "url": "https://arxiv.org/html/2502.08554v1"
+      },
+      "original_reference_ids": [
+        "turn20view0",
+        "turn15search1",
+        "turn18view1",
+        "turn19search0",
+        "turn19search1",
+        "turn13search1",
+        "turn13search0",
+        "turn13search2",
+        "turn16search2",
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        29,
+        9,
+        12,
+        3,
+        8,
+        20,
+        23,
+        17,
+        16,
+        7
+      ],
+      "unresolved_source_ids": []
+    }
+  ],
+  "unresolved_sources": {
+    "33": {
+      "original_reference_id": "turn19search4",
+      "url": null
+    },
+    "34": {
+      "original_reference_id": "turn19academia14",
+      "url": null
+    },
+    "35": {
+      "original_reference_id": "turn17academia27",
+      "url": null
+    },
+    "36": {
+      "original_reference_id": "turn17search9",
+      "url": null
+    },
+    "37": {
+      "original_reference_id": "turn13search4",
+      "url": null
+    },
+    "38": {
+      "original_reference_id": "turn17search17",
+      "url": null
+    },
+    "39": {
+      "original_reference_id": "turn17search12",
+      "url": null
+    },
+    "40": {
+      "original_reference_id": "turn16search4",
+      "url": null
+    }
+  }
+}

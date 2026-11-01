@@ -1,0 +1,11 @@
+{{- /* Root files also override Hextra's example icons for automatic discovery. */ -}}
+{{- $palette := unmarshal (readFile "static/branding/palette.json") -}}
+<link rel="icon" href="{{ partialCached "branding/icon-url.html" "favicon.ico" "favicon.ico" }}" sizes="16x16 32x32 48x48" type="image/x-icon">
+{{ range slice 16 32 48 -}}
+  {{- $file := printf "favicon-%dx%d.png" . . -}}
+  <link rel="icon" href="{{ partialCached "branding/icon-url.html" $file $file }}" type="image/png" sizes="{{ . }}x{{ . }}">
+{{ end -}}
+<link rel="icon" href="{{ partialCached "branding/icon-url.html" "favicon.svg" "favicon.svg" }}" type="image/svg+xml" sizes="any" id="favicon-svg">
+<link rel="apple-touch-icon" href="{{ partialCached "branding/icon-url.html" "apple-touch-icon.png" "apple-touch-icon.png" }}" sizes="180x180">
+<link rel="mask-icon" href="{{ partialCached "branding/icon-url.html" "mask-icon.svg" "mask-icon.svg" }}" color="{{ $palette.maskColor }}">
+<link rel="manifest" href="{{ partialCached "branding/icon-url.html" "site.webmanifest" "site.webmanifest" }}">

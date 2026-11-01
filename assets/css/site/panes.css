@@ -1,0 +1,163 @@
+.site-article-column {
+  position: relative;
+  flex: 1;
+}
+
+.site-pane-rail {
+  --site-pane-min-height: calc(
+    var(--site-context-header-height) + var(--site-layout-gap) + var(--site-layout-gap)
+  );
+  display: none;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: sticky;
+  top: var(--hextra-navbar-height);
+  width: var(--site-pane-rail-width);
+  height: max(var(--site-pane-available-height), var(--site-pane-min-height));
+  padding: var(--site-layout-gap) var(--site-layout-gap) var(--site-layout-gap);
+  transition: none;
+}
+
+.site-pane-rail-header {
+  --site-surface-inset: 0px;
+  --site-surface-inset-end: 0px;
+  justify-content: center;
+  background: var(--site-context-header);
+}
+
+.site-outline-rail {
+  padding-inline: var(--site-pane-gutter);
+}
+
+.site-outline-rail .site-pane-rail-header {
+  align-self: flex-start;
+  width: calc(2 * var(--site-control-padding-inline) + var(--site-surface-leading-size));
+}
+
+.site-outline-rail .site-pane-rail-header:has(> .site-header-toggle) {
+  width: auto;
+  gap: var(--site-layout-gap);
+  padding-inline-end: var(--site-space-2);
+}
+
+.site-outline-rail .site-pane-rail-header > .site-outline-toggle {
+  width: calc(2 * var(--site-control-padding-inline) + var(--site-surface-leading-size));
+}
+
+.site-pane-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--site-surface-action-size);
+  align-self: stretch;
+  min-height: var(--site-control-height);
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--site-radius);
+  background: transparent;
+  color: var(--site-nav-context-foreground);
+  cursor: pointer;
+}
+
+.site-pane-rail-header .site-pane-toggle {
+  width: 100%;
+  height: var(--site-context-header-height);
+  margin: 0;
+  background: var(--site-context-header);
+}
+
+.site-pane-toggle:hover {
+  background: var(--site-card-hover);
+  color: var(--site-link-color);
+}
+
+.site-pane-toggle:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+.site-pane-toggle [data-pane-icon="show"],
+.site-pane-toggle[aria-expanded="false"] [data-pane-icon="hide"] {
+  display: none;
+}
+
+.site-pane-toggle[aria-expanded="false"] [data-pane-icon="show"] {
+  display: inline-flex;
+}
+
+.site-pane-toggle:dir(rtl) svg {
+  transform: scaleX(-1);
+}
+
+.site-pane-resizer {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset-block: calc(var(--hextra-navbar-height) + var(--site-layout-gap)) auto;
+  height: var(--site-context-header-height);
+  width: var(--site-pane-resizer-width);
+  z-index: 1;
+  cursor: col-resize;
+  touch-action: none;
+  border-radius: var(--site-radius);
+  transition: none;
+}
+
+.site-page-layout .site-pane-resizer {
+  display: flex;
+}
+
+.site-pane-resizer-grip {
+  flex-shrink: 0;
+  width: var(--site-pane-resizer-grip-width);
+  height: var(--site-space-6);
+  border-radius: var(--site-radius);
+  background: var(--site-border);
+  transition: none;
+}
+
+.site-pane-resizer:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.site-pane-resizer:focus-visible:not([data-pointer-focus]) > .site-pane-resizer-grip {
+  background: var(--site-accent);
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+.site-sidebar-resizer {
+  /* Center the grip in the gap between the navigation heading and breadcrumbs. */
+  align-self: flex-end;
+  margin-inline-end: calc((var(--site-pane-gutter) - var(--site-pane-resizer-width)) / 2);
+}
+
+.site-outline-resizer {
+  align-self: flex-start;
+  margin-inline-start: calc((var(--site-pane-gutter) + var(--site-pane-resizer-width)) / -2);
+}
+
+.site-resizing-panes,
+.site-resizing-panes * {
+  cursor: col-resize;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media print {
+  .site-pane-resizer,
+  .site-pane-rail {
+    display: none;
+  }
+
+  .site-article-column {
+    min-width: 0;
+  }
+}

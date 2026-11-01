@@ -1,0 +1,37 @@
+{{- $field := .field -}}
+{{- $id := printf "%s-%s" .prefix (replace $field.key "." "-") -}}
+{{- $definition := hugo.Data.ui -}}
+{{- with $field.source -}}
+  {{- range split . "." -}}{{- $definition = index $definition . -}}{{- end -}}
+{{- end -}}
+{{- if eq $field.type "cycle" -}}
+  {{- $current := index (where $definition.options "value" $definition.default) 0 -}}
+  <div>
+    <label for="{{ $id }}">{{ $field.label }}</label>
+    <button type="button" id="{{ $id }}" class="site-settings-cycle site-control" data-preference="{{ $field.key }}" data-preference-label="{{ $field.label }}" value="{{ $definition.default }}" aria-label="{{ $field.label }}: {{ $current.label }}" {{ with $field.help }}aria-describedby="{{ $id }}-help"{{ end }}>
+      <span class="site-control-label">
+        {{ range $definition.options }}<span data-preference-choice="{{ .value }}"{{ if ne .value $definition.default }} hidden{{ end }}>{{ .label }}</span>{{ end }}
+      </span>
+      <span class="site-surface-actions">{{ partial "utils/icon.html" (dict "name" "refresh" "attributes" "height=20") }}</span>
+    </button>
+    {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
+  </div>
+{{- else if eq $field.type "checkbox" -}}
+  <div class="site-settings-toggle">
+    <input id="{{ $id }}" type="checkbox" data-preference="{{ $field.key }}" {{ with $field.help }}aria-describedby="{{ $id }}-help"{{ end }} {{ if $definition.default }}checked{{ end }} />
+    <div>
+      <label for="{{ $id }}">{{ $field.label }}</label>
+      {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+{{- else if eq $field.type "range" -}}
+  <div class="site-settings-width">
+    <label for="{{ $id }}">{{ $field.label }}</label>
+    <output for="{{ $id }}" data-preference-output="{{ $field.key }}"></output>
+    <input id="{{ $id }}" type="range" step="1" data-preference="{{ $field.key }}" {{ if $field.help }}aria-describedby="{{ $id }}-help"{{ else }}{{ with .groupHelp }}aria-describedby="{{ . }}"{{ end }}{{ end }} />
+    <span class="site-settings-width-reference" data-pane-size-reference="{{ $field.key }}" aria-hidden="true"></span>
+    {{ with $field.help }}<p id="{{ $id }}-help" class="site-settings-help">{{ . }}</p>{{ end }}
+  </div>
+{{- else -}}
+  {{ errorf "Unsupported settings field type: %s" $field.type }}
+{{- end -}}

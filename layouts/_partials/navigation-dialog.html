@@ -1,0 +1,11 @@
+<template id="site-navigation-drawer-template">
+  <dialog id="site-navigation-drawer" class="site-navigation-drawer" aria-labelledby="site-navigation-drawer-title">
+    <header class="site-navigation-panel-header">
+      <h2 id="site-navigation-drawer-title">Navigation</h2>
+      <button type="button" class="site-navigation-panel-close" data-navigation-close aria-label="Close navigation" autofocus>
+        {{ partial "utils/icon.html" (dict "name" "x" "attributes" "height=20") }}
+      </button>
+    </header>
+    <div class="site-navigation-drawer-body" data-navigation-body></div>
+  </dialog>
+</template>

@@ -1,0 +1,92 @@
+/* Shared control and pane geometry. Component-only values stay with their owner. */
+:root {
+  /* Layout spacing and responsive pane bounds, also consumed by navigation JS. */
+  --site-layout-gap: var(--site-layout-gap-configured);
+  /* Six 44px toolbar targets plus seven 8px gaps fit a 320px viewport. */
+  --site-compact-layout-gap-max: 8px;
+  --site-header-height: calc(var(--site-control-height) + var(--site-layout-gap));
+  --hextra-navbar-height: var(--site-header-height);
+  --site-content-gutter: var(--site-layout-gap);
+  --site-layout-frame-width: min(100vw, var(--site-layout-max-width));
+  --site-sidebar-default-width: clamp(
+    var(--site-pane-min-width),
+    calc(var(--site-layout-frame-width) * var(--site-sidebar-width-fraction)),
+    var(--site-pane-effective-max)
+  );
+  --site-outline-default-width: clamp(
+    var(--site-header-tools-min-width),
+    calc(var(--site-layout-frame-width) * var(--site-outline-width-fraction)),
+    var(--site-outline-effective-max)
+  );
+  --site-pane-gutter: var(--site-layout-gap);
+  --site-context-inline-inset: var(--site-pane-gutter);
+  /* Controls and their leading/content/action slots share these dimensions. */
+  --site-header-button-width: calc(
+    2 * var(--site-control-padding-inline) + var(--site-surface-leading-size)
+  );
+  --site-control-height: max(var(--site-context-header-min-height), var(--site-space-12));
+  --site-control-padding-block: var(--site-space-3);
+  --site-control-padding-inline: var(--site-space-3);
+  --site-control-font-weight: 500;
+  --site-control-icon-size: var(--site-space-5);
+  --site-control-icon-frame-padding: calc(var(--site-space-1) / 2);
+  --site-surface-inset: var(--site-control-padding-inline);
+  --site-surface-gap: var(--site-space-2);
+  --site-surface-leading-size: calc(
+    var(--site-control-icon-size) + 2 * var(--site-control-icon-frame-padding)
+  );
+  --site-surface-action-size: var(--site-space-8);
+  --site-breadcrumb-inset: var(--site-space-4);
+  --site-pane-controls-height: calc(var(--site-control-height) + 2 * var(--site-layout-gap));
+  --site-pane-viewport-height: calc(100dvh - var(--hextra-navbar-height));
+  --site-pane-available-height: var(--site-pane-viewport-height);
+  --site-header-icon-button-size: var(--site-control-height);
+  --site-header-tools-min-width: calc(
+    3 * var(--site-header-icon-button-size) + 2 * var(--site-layout-gap) + 2 *
+      var(--site-context-inline-inset)
+  );
+  --site-header-tools-max-width: calc(
+    (var(--site-outline-default-width) - 2 * var(--site-context-inline-inset)) * 2
+  );
+  --site-reading-fade-background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--site-page-background) calc(100% - var(--site-layout-gap))
+  );
+  --site-context-header-height: var(--site-breadcrumb-card-height, var(--site-control-height));
+  --site-pane-min-height: calc(
+    var(--site-context-header-height) + 2 * var(--site-layout-gap) +
+      var(--site-pane-controls-height)
+  );
+  --site-stack-gap: var(--site-space-1);
+  --site-stack-parents: 1;
+  --site-layer-breadcrumb: 10;
+  --site-layer-stack-parent: 100;
+
+  /* Shared tree/outline guides; these are distinct from filled top-level links. */
+  --site-nav-padding-block: 0.375rem;
+  --site-nav-padding-inline: var(--site-space-2);
+  --site-nav-indent: 0.625rem;
+  --site-nav-compact-indent: 0.375rem;
+  --site-nav-chevron-size: 0.375rem;
+  --site-nav-chevron-gap: 0.625rem;
+  --site-nav-current-marker-width: 0.1875rem;
+  --site-nav-current-marker-gap: var(--site-space-2);
+  --site-nav-label-inset: calc(
+    var(--site-nav-padding-inline) + var(--site-nav-chevron-size) + var(--site-nav-chevron-gap)
+  );
+  --site-nav-marker-inset: calc(
+    var(--site-nav-label-inset) - var(--site-nav-current-marker-width) -
+      var(--site-nav-current-marker-gap)
+  );
+  --site-pane-rail-width: calc(var(--site-control-height) + 2 * var(--site-layout-gap));
+  --site-pane-min-width: 12rem;
+  --site-pane-max-width: 28rem;
+  --site-pane-compact-max-width: 14rem;
+  --site-outline-max-width-scale: 1.6;
+  --site-outline-max-width: calc(var(--site-pane-max-width) * var(--site-outline-max-width-scale));
+  --site-navigation-overlay-width: 24rem;
+  --site-reading-min-width: 30rem;
+  --site-pane-resizer-width: var(--site-space-6);
+  --site-pane-resizer-grip-width: 2px;
+}

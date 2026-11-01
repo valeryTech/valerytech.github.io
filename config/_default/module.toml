@@ -1,0 +1,96 @@
+# Hextra is pinned by the themes/hextra Git submodule.
+[[mounts]]
+source = "content"
+target = "content"
+files = ["! **/*.assets/*.html", "! **/*.assets/*.htm"]
+
+# Preserve HTML attachments as resources, rather than standalone Hugo pages.
+[[mounts]]
+source = "content"
+target = "static"
+files = ["**/*.assets/*.html", "**/*.assets/*.htm"]
+
+[[mounts]]
+source = ".generated/redirects"
+target = "static"
+
+[[mounts]]
+source = "static"
+target = "static"
+
+[[mounts]]
+source = "layouts/partials"
+target = "layouts/_partials"
+
+[[mounts]]
+source = "layouts"
+target = "layouts"
+
+[[mounts]]
+source = "assets"
+target = "assets"
+
+# Serve search, math styles, reading fonts, and navigation fonts locally.
+[[mounts]]
+source = "node_modules/flexsearch/dist/flexsearch.bundle.min.js"
+target = "assets/vendor/flexsearch.js"
+
+[[mounts]]
+source = "node_modules/katex/dist"
+target = "static/vendor/katex"
+
+[[mounts]]
+source = "node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2"
+target = "static/fonts/jost-latin-400-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/jost/files/jost-latin-600-normal.woff2"
+target = "static/fonts/jost-latin-600-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2"
+target = "static/fonts/ibm-plex-sans-latin-400-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-500-normal.woff2"
+target = "static/fonts/ibm-plex-sans-latin-500-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2"
+target = "static/fonts/ibm-plex-sans-latin-600-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2"
+target = "static/fonts/ibm-plex-sans-latin-700-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-sans/LICENSE"
+target = "static/fonts/ibm-plex-sans-LICENSE.txt"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2"
+target = "static/fonts/ibm-plex-mono-latin-400-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2"
+target = "static/fonts/ibm-plex-mono-latin-500-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-600-normal.woff2"
+target = "static/fonts/ibm-plex-mono-latin-600-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-700-normal.woff2"
+target = "static/fonts/ibm-plex-mono-latin-700-normal.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-italic.woff2"
+target = "static/fonts/ibm-plex-mono-latin-400-italic.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-700-italic.woff2"
+target = "static/fonts/ibm-plex-mono-latin-700-italic.woff2"
+
+[[mounts]]
+source = "node_modules/@fontsource/ibm-plex-mono/LICENSE"
+target = "static/fonts/ibm-plex-mono-LICENSE.txt"

@@ -1,0 +1,260 @@
+.site-home {
+  --site-content-inset-end: var(--site-layout-gap);
+  max-width: none;
+  padding-inline: var(--site-layout-gap) var(--site-content-inset-end);
+  padding-block: var(--site-space-10) var(--site-space-8);
+}
+
+.homepage-layout {
+  display: grid;
+  gap: var(--site-space-10);
+  margin-block-start: var(--site-space-8);
+}
+
+.homepage-layout > * {
+  min-width: 0;
+}
+
+.homepage-layout > * > :first-child {
+  margin-top: 0;
+}
+
+.homepage-details {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: var(--site-space-6);
+}
+
+.homepage-detail {
+  min-width: 0;
+  padding: var(--site-space-6);
+  border-radius: var(--site-radius);
+  background: var(--site-card-surface);
+  font-size: var(--site-text-base);
+  line-height: var(--site-line-ui);
+}
+
+.homepage-detail h2 {
+  margin: 0 0 var(--site-space-4);
+  padding: 0;
+  border: 0;
+  font-size: var(--site-text-xl);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.homepage-detail p {
+  margin: 0 0 var(--site-space-4);
+  color: var(--site-muted);
+}
+
+.homepage-detail ul {
+  display: grid;
+  gap: var(--site-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homepage-detail a:not(.subheading-anchor) {
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.homepage-detail a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.homepage-detail a:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+  border-radius: var(--site-radius);
+}
+
+:is(.section-index, .section-start),
+:is(.section-index, .section-start) *,
+:is(.section-index, .section-start) ::before {
+  /* Apply theme and disclosure states together, without inherited transitions. */
+  transition: none;
+}
+
+.section-map-group {
+  margin-block: var(--site-space-7);
+}
+
+.section-map-heading a,
+.section-map-note-heading a {
+  border-radius: var(--site-radius);
+  text-decoration: none;
+}
+
+.section-map-heading a:hover,
+.section-map-note-heading a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.section-map-heading a:focus-visible,
+.section-map-note-heading a:focus-visible,
+.section-map-disclosure > summary:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+.section-map-status {
+  display: inline-block;
+  margin-inline-start: var(--site-space-2);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  padding: calc(var(--site-space-1) / 2) var(--site-space-2);
+  font-size: var(--site-text-xs);
+  font-weight: 400;
+  color: var(--site-muted);
+  vertical-align: middle;
+}
+
+.content .section-map-description {
+  margin-block: var(--site-space-2) var(--site-space-3);
+  font-size: var(--site-text-md);
+  color: var(--site-muted);
+}
+
+.section-map-disclosure {
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-panel);
+}
+
+.section-map-disclosure > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--site-nav-chevron-gap);
+  padding: var(--site-space-3) var(--site-space-4);
+  border-radius: var(--site-radius);
+  background: var(--site-card-surface);
+  list-style: none;
+  cursor: pointer;
+  color: var(--site-context-foreground);
+  font-size: var(--site-text-base);
+  font-weight: 500;
+  line-height: var(--site-line-ui);
+}
+
+.section-map-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.section-map-disclosure > summary::marker {
+  content: "";
+}
+
+.section-map-disclosure > summary::before {
+  content: "";
+  flex-shrink: 0;
+  width: var(--site-nav-chevron-size);
+  height: var(--site-nav-chevron-size);
+  border-block-start: 1.5px solid currentColor;
+  border-inline-end: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.75;
+}
+
+.section-map-disclosure[open] > summary {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.section-map-disclosure[open] > summary::before {
+  transform: rotate(135deg);
+}
+
+.section-map-disclosure > summary:dir(rtl)::before {
+  transform: rotate(-45deg);
+}
+
+.section-map-disclosure[open] > summary:dir(rtl)::before {
+  transform: rotate(-135deg);
+}
+
+.section-map-disclosure > summary:hover {
+  background: var(--site-card-hover);
+}
+
+.section-map-contents {
+  padding: var(--site-space-3) var(--site-space-4) var(--site-space-4);
+  overflow-wrap: anywhere;
+}
+
+.section-map-contents > :first-child {
+  margin-block-start: 0;
+}
+
+.section-map-contents > :last-child {
+  margin-block-end: 0;
+}
+
+.section-map-note {
+  margin-block: var(--site-space-4);
+}
+
+@media (width < 48rem) {
+  .site-home {
+    /* Reading margins are independent of the tighter toolbar button gaps. */
+    padding-inline: max(var(--site-space-5), var(--site-layout-gap), env(safe-area-inset-left))
+      max(var(--site-space-5), var(--site-layout-gap), env(safe-area-inset-right));
+    padding-block-start: var(--site-space-8);
+  }
+
+  .site-home .article-content > h1:first-child {
+    margin-block-start: 0;
+    font-size: clamp(1.75rem, 8vw, 2rem);
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .site-home .homepage-intro > p + p,
+  .site-home .site-callout p:not(.site-callout-title) + p {
+    margin-block-start: var(--site-space-6);
+  }
+
+  .site-home .site-callout {
+    display: flow-root;
+    padding: var(--site-space-5);
+  }
+
+  .site-home .site-callout > :first-child {
+    /* Keep the icon beside the title without indenting every paragraph. */
+    float: inline-start;
+    margin-inline-end: var(--site-space-3);
+  }
+}
+
+@media (48rem <= width < 64rem) {
+  .homepage-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .homepage-browse {
+    grid-column: 1 / -1;
+  }
+
+  .homepage-browse ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .homepage-layout {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+
+  .homepage-explore {
+    padding-inline-start: var(--site-space-8);
+    border-inline-start: 1px solid var(--site-border);
+  }
+
+  .homepage-details {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

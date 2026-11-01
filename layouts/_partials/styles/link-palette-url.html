@@ -1,0 +1,3 @@
+{{- /* Redirects need the shared scale/palette and link rules, without pane geometry. */ -}}
+{{- $styles := slice (resources.Get "css/site/tokens/scale.css") (resources.Get "css/site/tokens/colors.css") (partialCached "styles/configuration.html" .) (resources.Get "css/site/links.css") -}}
+{{- return (($styles | resources.Concat "css/link-palette.css").RelPermalink) -}}

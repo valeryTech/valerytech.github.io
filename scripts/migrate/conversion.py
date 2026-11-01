@@ -1,0 +1,415 @@
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass
+from pathlib import Path
+
+from scripts.migrate.attachments import AttachmentResolver
+from scripts.migrate.indexing import NoteIndex
+from scripts.migrate.models import (
+    Callout,
+    Document,
+    Embed,
+    FencedCode,
+    Heading,
+    MarkdownChunk,
+    MigrationReport,
+    PlannedNote,
+    RenderedDocument,
+)
+from scripts.migrate.paths import relative_output_from_note
+from scripts.migrate.text import humanize_slug, normalize_title, slugify_heading
+
+IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif"}
+CALLOUT_MAP = {
+    "info": ("note", "outline/info-circle"),
+    "important": ("note", "outline/info-circle"),
+    "note": ("note", "outline/info-circle"),
+    "question": ("note", "outline/help-octagon"),
+    "thumbup": ("note", "outline/thumb-up"),
+    "thumbdown": ("caution", "outline/thumb-down"),
+    "tip": ("tip", "outline/rocket"),
+    "caution": ("caution", "outline/alert-triangle"),
+    "warning": ("caution", "outline/alert-triangle"),
+    "danger": ("danger", "outline/alert-octagon"),
+}
+WIKI_LINK_RE = re.compile(r"(!)?\[\[([^\]|#]+)?(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]")
+MARKDOWN_LINK_RE = re.compile(
+    r"(!?)\[([^\]]*)\]\("
+    r"(<[^>\n]+>(?:\s+(?:\"[^\"]*\"|'[^']*'))?"
+    r"|(?:[^()\n]|\([^()\n]*\))+)\)"
+)
+ESCAPED_WIKI_LINK_RE = re.compile(r"\\\[\\\[(.*?)\\\]\\\]")
+BLOCK_MATH_RE = re.compile(r"(?<!\\)\$\$(?!\$)(.+?)(?<!\\)\$\$(?!\$)", re.DOTALL)
+BACKTICK_RUN_RE = re.compile(r"`+")
+
+
+def normalize_math_delimiters(text: str) -> str:
+    return "".join(
+        segment if is_inline_code else normalize_unprotected_math(segment)
+        for segment, is_inline_code in split_inline_code_spans(text)
+    )
+
+
+def split_inline_code_spans(text: str) -> list[tuple[str, bool]]:
+    """Split Markdown into normal text and complete backtick code spans."""
+    runs = list(BACKTICK_RUN_RE.finditer(text))
+    next_run_of_length: dict[int, int] = {}
+    matching_run: list[int | None] = [None] * len(runs)
+    for index in range(len(runs) - 1, -1, -1):
+        run_length = len(runs[index].group(0))
+        matching_run[index] = next_run_of_length.get(run_length)
+        next_run_of_length[run_length] = index
+
+    segments: list[tuple[str, bool]] = []
+    normal_start = 0
+    run_index = 0
+    while run_index < len(runs):
+        opener = runs[run_index]
+        closer_index = matching_run[run_index]
+        if is_escaped(text, opener.start()) or closer_index is None:
+            run_index += 1
+            continue
+
+        closer = runs[closer_index]
+        if normal_start < opener.start():
+            segments.append((text[normal_start : opener.start()], False))
+        segments.append((text[opener.start() : closer.end()], True))
+        normal_start = closer.end()
+        run_index = closer_index + 1
+
+    if normal_start < len(text):
+        segments.append((text[normal_start:], False))
+    return segments
+
+
+def is_escaped(text: str, position: int) -> bool:
+    backslashes = 0
+    position -= 1
+    while position >= 0 and text[position] == "\\":
+        backslashes += 1
+        position -= 1
+    return backslashes % 2 == 1
+
+
+def normalize_unprotected_math(text: str) -> str:
+    # Escaped wiki brackets are literal text, not Goldmark math delimiters.
+    text = ESCAPED_WIKI_LINK_RE.sub(r"&#91;&#91;\1&#93;&#93;", text)
+    text = BLOCK_MATH_RE.sub(rewrite_block_math, text)
+    return "".join(normalize_inline_math(line) for line in text.splitlines(keepends=True))
+
+
+def rewrite_block_math(match: re.Match[str]) -> str:
+    content = match.group(1).strip("\n")
+    if "\n" in content:
+        return f"\\[\n{content}\n\\]"
+    return f"\\[{content}\\]"
+
+
+def normalize_inline_math(line: str) -> str:
+    result: list[str] = []
+    start = 0
+    cursor = 0
+    while cursor < len(line):
+        opener = find_inline_delimiter(line, cursor)
+        if opener == -1:
+            result.append(line[start:])
+            break
+
+        closer = find_inline_delimiter(line, opener + 1)
+        if closer == -1:
+            result.append(line[start:])
+            break
+
+        result.append(line[start:opener])
+        result.append(r"\(")
+        result.append(line[opener + 1 : closer])
+        result.append(r"\)")
+        start = closer + 1
+        cursor = closer + 1
+
+    return "".join(result)
+
+
+def find_inline_delimiter(text: str, start: int) -> int:
+    cursor = start
+    while True:
+        position = text.find("$", cursor)
+        if position == -1:
+            return -1
+        if position > 0 and text[position - 1] == "\\":
+            cursor = position + 1
+            continue
+        if position + 1 < len(text) and text[position + 1] == "$":
+            cursor = position + 2
+            continue
+        return position
+
+
+@dataclass(frozen=True)
+class RenderContext:
+    note: PlannedNote
+    note_index: NoteIndex
+    attachment_resolver: AttachmentResolver
+    report: MigrationReport
+    staging_root: Path
+
+
+def escape_shortcode(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"')
+
+
+def default_note_label(note: PlannedNote) -> str:
+    stem = note.target_path.stem if note.target_path.stem != "_index" else note.target_path.parent.name
+    return humanize_slug(stem)
+
+
+def callout_presentation(kind: str) -> tuple[str, str]:
+    return CALLOUT_MAP.get(kind.lower(), ("note", "outline/info-circle"))
+
+
+def resolve_titles(document: Document, note: PlannedNote) -> tuple[str, str]:
+    title = str(document.frontmatter.get("title") or default_note_label(note))
+    link_title = str(document.frontmatter.get("linkTitle") or title)
+    return title, link_title
+
+
+def strip_duplicate_leading_title_heading(document: Document, title: str) -> list[object]:
+    blocks = list(document.blocks)
+    if blocks and isinstance(blocks[0], Heading):
+        if blocks[0].level == 1 and normalize_title(blocks[0].text) == normalize_title(title):
+            return blocks[1:]
+    return blocks
+
+
+def rewrite_inline_links(text: str, ctx: RenderContext) -> str:
+    def replace_wiki_link(match: re.Match[str]) -> str:
+        is_embed = bool(match.group(1))
+        target = (match.group(2) or "").strip()
+        heading = (match.group(3) or "").strip()
+        label = (match.group(4) or "").strip()
+
+        if is_embed:
+            ctx.report.add_warning(
+                "unsupported-inline-embed",
+                f"Inline embed is not converted: {match.group(0)}",
+                source=ctx.note.source_rel_global.as_posix(),
+            )
+            return match.group(0)
+
+        if not target and heading:
+            link_text = label or heading
+            return f"[{link_text}](#{slugify_heading(heading)})"
+
+        return render_link_target(
+            target=target,
+            heading=heading,
+            label=label,
+            original=match.group(0),
+            ctx=ctx,
+        )
+
+    def replace_markdown_link(match: re.Match[str]) -> str:
+        is_image = bool(match.group(1))
+        label = match.group(2)
+        target, heading = split_markdown_target(match.group(3))
+        if (
+            not target
+            or target.startswith("#")
+            or has_external_scheme(target)
+            or is_generated_shortcode_target(target)
+        ):
+            return match.group(0)
+        if is_image:
+            attachment = ctx.attachment_resolver.resolve(ctx.note, target)
+            if attachment is None:
+                ctx.report.add_warning(
+                    "missing-attachment",
+                    f"Could not resolve image {target}",
+                    source=ctx.note.source_rel_global.as_posix(),
+                )
+                return label or Path(target).name
+            copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1], ctx.note)
+            rel_path = relative_output_from_note(ctx.note, copied.output_rel)
+            if heading:
+                rel_path += f"#{heading}"
+            return f"![{label}]({rel_path})"
+        return render_link_target(
+            target=target,
+            heading=heading,
+            label=label,
+            fallback_label=label,
+            original=match.group(0),
+            ctx=ctx,
+        )
+
+    return WIKI_LINK_RE.sub(replace_wiki_link, MARKDOWN_LINK_RE.sub(replace_markdown_link, text))
+
+
+def render_link_target(
+    *,
+    target: str,
+    heading: str,
+    label: str,
+    fallback_label: str | None = None,
+    original: str,
+    ctx: RenderContext,
+) -> str:
+    linked_note = ctx.note_index.resolve(ctx.note, target)
+    if linked_note is not None:
+        link_text = label or humanize_slug(Path(target).stem)
+        ref = f'{{{{< ref "{linked_note.target_ref}" >}}}}'
+        if heading:
+            ref = f"{ref}#{slugify_heading(heading)}"
+        return f"[{link_text}]({ref})"
+
+    if is_local_markdown_target(target):
+        ctx.report.add_warning(
+            "unresolved-link",
+            f"Could not resolve {original}",
+            source=ctx.note.source_rel_global.as_posix(),
+        )
+        return fallback_label if fallback_label is not None else original
+
+    attachment = ctx.attachment_resolver.resolve(ctx.note, target)
+    if attachment is not None:
+        copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1], ctx.note)
+        link_text = label or Path(target).name
+        return f"[{link_text}](/{copied.output_rel.as_posix()})"
+
+    ctx.report.add_warning(
+        "unresolved-link",
+        f"Could not resolve {original}",
+        source=ctx.note.source_rel_global.as_posix(),
+    )
+    if fallback_label is not None and Path(target).suffix:
+        return fallback_label
+    return original
+
+
+def split_markdown_target(raw_target: str) -> tuple[str, str]:
+    target = raw_target.strip()
+    if not target:
+        return "", ""
+
+    if target.startswith("<") and ">" in target:
+        target = target[1 : target.index(">")].strip()
+    else:
+        title_match = re.match(r'^(?P<dest>.+?)\s+(?:"[^"]*"|\'[^\']*\')\s*$', target)
+        if title_match:
+            target = title_match.group("dest").strip()
+
+    if "#" not in target:
+        return target, ""
+
+    base, fragment = target.split("#", 1)
+    return base, fragment
+
+
+def has_external_scheme(target: str) -> bool:
+    return bool(re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target))
+
+
+def is_generated_shortcode_target(target: str) -> bool:
+    stripped = target.lstrip()
+    return stripped.startswith("{{<") or stripped.startswith("{{%")
+
+
+def is_local_markdown_target(target: str) -> bool:
+    stripped = target.strip().lower()
+    return stripped.endswith(".md")
+
+
+def rewrite_markdown_text(text: str, ctx: RenderContext) -> str:
+    return rewrite_inline_links(normalize_math_delimiters(text), ctx)
+
+
+def convert_embed(block: Embed, ctx: RenderContext) -> str:
+    target = block.target.strip()
+    if not target:
+        return ""
+
+    attachment = ctx.attachment_resolver.resolve(ctx.note, target)
+    if attachment is None:
+        ctx.report.add_warning(
+            "missing-attachment",
+            f"Could not resolve attachment {target}",
+            source=ctx.note.source_rel_global.as_posix(),
+        )
+        return f"![[{target}]]"
+
+    copied = ctx.attachment_resolver.copy(ctx.staging_root, attachment[0], attachment[1], ctx.note)
+    suffix = attachment[0].suffix.lower()
+    if suffix in IMAGE_EXTENSIONS:
+        alt = escape_shortcode(block.caption or Path(target).stem)
+        caption = escape_shortcode(block.caption or "")
+        rel_path = relative_output_from_note(ctx.note, copied.output_rel)
+        return (
+            f'{{{{< figure src="{rel_path}" alt="{alt}"'
+            + (f' caption="{caption}"' if caption else "")
+            + " >}}"
+        )
+
+    label = block.caption or Path(target).name
+    return f"[{label}](/{copied.output_rel.as_posix()})"
+
+
+def convert_block(block: object, ctx: RenderContext) -> str:
+    if isinstance(block, MarkdownChunk):
+        return rewrite_markdown_text(block.text, ctx)
+    if isinstance(block, Heading):
+        return f'{"#" * block.level} {rewrite_markdown_text(block.text, ctx)}'
+    if isinstance(block, FencedCode):
+        opener = f"{block.fence}{block.info}" if block.info else block.fence
+        return f"{opener}\n{block.text}\n{block.fence}"
+    if isinstance(block, Callout):
+        context, icon = callout_presentation(block.kind)
+        title = escape_shortcode(block.title or block.kind.title())
+        body = rewrite_markdown_text(block.body, ctx)
+        return (
+            f'{{{{< callout context="{context}" title="{title}" icon="{icon}" >}}}}\n'
+            f"{body}\n"
+            "{{< /callout >}}"
+        )
+    if isinstance(block, Embed):
+        return convert_embed(block, ctx)
+    raise TypeError(f"Unsupported block type: {type(block).__name__}")
+
+
+def convert_document(
+    document: Document,
+    ctx: RenderContext,
+    frontmatter_defaults: dict[str, object],
+) -> RenderedDocument:
+    title, link_title = resolve_titles(document, ctx.note)
+    blocks = strip_duplicate_leading_title_heading(document, title)
+    body_parts: list[str] = []
+    for block in blocks:
+        rendered = convert_block(block, ctx)
+        if rendered.strip():
+            body_parts.append(rendered)
+
+    frontmatter = dict(frontmatter_defaults)
+    for key in (
+        "title",
+        "aliases",
+        "description",
+        "document_status",
+        "agent_map_exclude",
+        "summary",
+        "date",
+        "lastmod",
+        "draft",
+        "toc",
+        "weight",
+        "contributors",
+        "showTitle",
+        "contribution_id",
+        "contribution_order",
+        "contribution_route_id",
+    ):
+        if key in document.frontmatter:
+            frontmatter[key] = document.frontmatter[key]
+    frontmatter["title"] = title
+    frontmatter["linkTitle"] = link_title
+    return RenderedDocument(frontmatter=frontmatter, body_parts=body_parts)

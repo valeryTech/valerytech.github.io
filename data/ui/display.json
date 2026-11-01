@@ -1,0 +1,129 @@
+{
+  "cookie": {
+    "name": "display-preferences",
+    "maxAgeSeconds": 31536000
+  },
+  "breadcrumbs": {
+    "default": "sticky",
+    "options": [
+      {
+        "value": "sticky",
+        "label": "Keep visible while scrolling"
+      },
+      {
+        "value": "static",
+        "label": "Show at the page start"
+      },
+      {
+        "value": "hidden",
+        "label": "Hide breadcrumbs"
+      }
+    ]
+  },
+  "textSize": {
+    "default": "standard",
+    "options": [
+      {
+        "value": "standard",
+        "label": "Standard"
+      },
+      {
+        "value": "large",
+        "label": "Large"
+      },
+      {
+        "value": "larger",
+        "label": "Larger"
+      }
+    ]
+  },
+  "textBrightness": {
+    "default": "soft",
+    "options": [
+      {
+        "value": "soft",
+        "label": "Soft"
+      },
+      {
+        "value": "bright",
+        "label": "Bright"
+      }
+    ]
+  },
+  "lineSpacing": {
+    "default": "comfortable",
+    "options": [
+      {
+        "value": "comfortable",
+        "label": "Comfortable"
+      },
+      {
+        "value": "compact",
+        "label": "Compact"
+      },
+      {
+        "value": "roomy",
+        "label": "Roomy"
+      }
+    ]
+  },
+  "pinAncestors": {
+    "default": true
+  },
+  "headerVisible": {
+    "default": true
+  },
+  "sidebarVisible": {
+    "default": true
+  },
+  "outlineVisible": {
+    "default": true
+  },
+  "siteWidth": {
+    "default": "wide",
+    "options": [
+      {
+        "value": "standard",
+        "label": "Standard"
+      },
+      {
+        "value": "wide",
+        "label": "Wide"
+      }
+    ]
+  },
+  "density": {
+    "default": "auto",
+    "options": [
+      {
+        "value": "auto",
+        "label": "Automatic"
+      },
+      {
+        "value": "comfortable",
+        "label": "Comfortable"
+      },
+      {
+        "value": "compact",
+        "label": "Compact"
+      }
+    ]
+  },
+  "outline": {
+    "default": "auto",
+    "options": [
+      {
+        "value": "auto",
+        "label": "Automatic"
+      },
+      {
+        "value": "prefer",
+        "label": "Prefer visible"
+      },
+      {
+        "value": "hidden",
+        "label": "Hidden"
+      }
+    ]
+  }
+}

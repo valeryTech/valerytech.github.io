@@ -1,0 +1,20 @@
+{{- $page := .context -}}
+{{- $disabled := .disableSidebar | default false -}}
+{{- $docs := in site.Params.mainSections $page.Section -}}
+{{- $desktopClass := "hx:md:sticky" -}}
+{{- if $disabled -}}
+  {{- $desktopClass = cond (.displayPlaceholder | default false) "hx:md:hidden hx:xl:block" "hx:md:hidden" -}}
+  {{- $page.Store.Set "enableFooterSwitches" true -}}
+{{- end -}}
+<aside id="site-navigation" {{ if $docs }}data-site-pane="sidebar"{{ else if .displayPlaceholder }}data-sidebar-placeholder{{ end }} class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $desktopClass }}" aria-label="Site navigation">
+  <div class="site-sidebar-scroll hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow">
+    <nav class="mobile-site-nav hx:md:hidden" aria-label="Collections">
+      {{- partial "navigation/section-links.html" $page -}}
+    </nav>
+    {{ if $docs }}{{ partial "sidebar/section-menu.html" $page }}{{ end }}
+  </div>
+  <div class="site-sidebar-fade-anchor" aria-hidden="true">
+    <div class="site-sidebar-fade" data-sidebar-fade hidden></div>
+  </div>
+</aside>
+{{ if $docs }}{{ partialCached "sidebar/initialize.html" . }}{{ end }}

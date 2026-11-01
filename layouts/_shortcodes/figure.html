@@ -1,0 +1,14 @@
+{{- /* Imported embeds are relative to the Markdown file, not its pretty URL. */ -}}
+{{- $src := .Get "src" -}}
+{{- $url := urls.Parse $src -}}
+{{- if and (not $url.IsAbs) (not (hasPrefix $src "/")) -}}
+  {{- $src = printf "/%s%s" .Page.File.Dir $src -}}
+{{- end -}}
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+  {{ with .Get "link" }}<a href="{{ . }}"{{ with $.Get "target" }} target="{{ . }}"{{ end }}{{ with $.Get "rel" }} rel="{{ . }}"{{ end }}>{{ end }}
+  <img src="{{ $src | safeURL }}" alt="{{ .Get "alt" | default (.Get "caption") | default "" }}" loading="{{ .Get "loading" | default "lazy" }}" decoding="async"{{ with .Get "width" }} width="{{ . }}"{{ end }}{{ with .Get "height" }} height="{{ . }}"{{ end }}>
+  {{ if .Get "link" }}</a>{{ end }}
+  {{ if or (.Get "title") (.Get "caption") }}
+    <figcaption>{{ with .Get "title" }}<strong>{{ . }}</strong>{{ end }}{{ with .Get "caption" }}{{ . | markdownify }}{{ end }}</figcaption>
+  {{ end }}
+</figure>

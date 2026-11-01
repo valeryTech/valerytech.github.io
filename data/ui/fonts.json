@@ -1,0 +1,20 @@
+{
+  "default": "system",
+  "cookie": {
+    "name": "font-preference",
+    "maxAgeSeconds": 31536000
+  },
+  "aliases": {
+    "avenir": "system"
+  },
+  "options": [
+    {
+      "value": "system",
+      "label": "System"
+    },
+    {
+      "value": "jost",
+      "label": "Jost"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+/* Search's selected-option styles also use the shared link palette. */
+a[href],
+.hextra-search-results a[href][role="option"] {
+  color: var(--site-link-color);
+}
+
+/* Panel labels stay neutral; interaction and the current item use the link accent. */
+:is(.section-nav, .mobile-site-nav, .site-page-outline) a[href] {
+  color: var(--site-nav-foreground);
+}
+
+/* Filled light-mode context rows need a darker foreground than ordinary labels. */
+.section-nav .site-pinned a[href],
+.site-page-outline a.site-pinned[href] {
+  color: var(--site-nav-context-foreground);
+}
+
+:is(.section-nav, .mobile-site-nav, .site-page-outline)
+  a[href]:is(:hover, :focus-visible, [aria-current="page"], [aria-current="location"]) {
+  color: var(--site-link-color);
+}
+
+:is(.section-nav, .mobile-site-nav, .site-page-outline) a[href]:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline-offset: calc(-1 * var(--site-focus-width));
+  box-shadow: none;
+}
+
+.subheading-anchor::after,
+.hextra-search-results
+  a
+  :is(
+    .hextra-search-crumb,
+    .hextra-search-crumb-separator,
+    .hextra-search-excerpt,
+    .hextra-search-match
+  ) {
+  color: inherit;
+}
+
+body > a[href="#content"]:focus-visible {
+  background: var(--site-breadcrumb-background);
+}
+
+/* Standalone legacy pages follow the system theme without the site scripts. */
+@media (prefers-color-scheme: dark) {
+  :root:is([data-legacy-redirect], [data-alias-redirect]) {
+    --site-link-color: var(--site-link-color-dark);
+  }
+}

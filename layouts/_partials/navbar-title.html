@@ -1,0 +1,10 @@
+{{- $mark := resources.Get "branding/v-mark.svg" -}}
+{{- $showTitle := ne .Site.Params.navbar.displayTitle false -}}
+<a class="site-brand-link{{ if not $showTitle }} site-brand-icon-only{{ end }}" href="{{ .Site.Home.RelPermalink }}" aria-label="{{ .Site.Title }} — Home" title="{{ .Site.Title }} — Home"{{ if .IsHome }} aria-current="page"{{ end }}>
+  {{- if .Site.Params.navbar.displayLogo -}}
+    {{- replace $mark.Content "<svg " `<svg class="site-brand-mark" aria-hidden="true" focusable="false" width="32" height="32" ` | safeHTML -}}
+  {{- end -}}
+  {{- if $showTitle -}}
+    <span class="site-brand-title hx:font-extrabold hx:select-none">{{ .Site.Title }}</span>
+  {{- end -}}
+</a>

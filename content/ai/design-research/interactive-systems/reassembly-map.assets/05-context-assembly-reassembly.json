@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "stage": 5,
+  "date": "2026-10-01",
+  "workspace": ".",
+  "description": "Split a short context-assembly sketch into a general evidence contract, retrieval methods, and a tentative application hypothesis. Source wording and original line endings remain unchanged.",
+  "source": {
+    "path": "projects/input/hebbia-sem/task-specific-context-assembly.md",
+    "originalLines": 8,
+    "originalBytes": 690,
+    "originalSha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+    "originalFinalNewline": false,
+    "currentRole": "navigation stub",
+    "stubLines": 9,
+    "stubBytes": 1280,
+    "stubSha256": "c4152ca9ce563cff1d387984c2f189e680b0236fbf28f1b6baa6b2e123be1eca"
+  },
+  "blocks": [
+    {
+      "sourceLines": [
+        1,
+        4
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "anchor": "<!-- Context-assembly contract sketch begins below. -->",
+      "description": "Task-specific evidence contract and related links",
+      "lines": 4,
+      "bytes": 279,
+      "sha256": "b2290868d8c35362c8cc9844df2b38d0387f05dc92c56f08c85f892e3ac31f88",
+      "finalNewline": true,
+      "destinationLines": [
+        207,
+        210
+      ]
+    },
+    {
+      "sourceLines": [
+        5,
+        7
+      ],
+      "destination": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "anchor": "<!-- Context-assembly retrieval sketch begins below. -->",
+      "description": "Domain-specific extraction, query rewriting, and multiple representations",
+      "lines": 3,
+      "bytes": 118,
+      "sha256": "d627f62882986c86b87b198d57bbd1daf82d8f36a58e7b97cf91ade4066c1cef",
+      "finalNewline": true,
+      "destinationLines": [
+        696,
+        698
+      ]
+    },
+    {
+      "sourceLines": [
+        8,
+        8
+      ],
+      "destination": "projects/input/hebbia-sem/analysis/06-regulated-quality-systems-hypothesis.md",
+      "anchor": "<!-- Context-assembly domain hypothesis begins below. -->",
+      "description": "Tentative regulated-quality-systems application hypothesis",
+      "lines": 1,
+      "bytes": 293,
+      "sha256": "bd55f9057003aa065b899948f3c431e1e965048b6ede00114d06ed2f8f489338",
+      "finalNewline": false,
+      "destinationLines": [
+        14,
+        14
+      ]
+    }
+  ],
+  "prefixes": {
+    "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md": {
+      "lines": 206,
+      "bytes": 7245,
+      "sha256": "2027f732d0efd89df0a73842eca345ac0884133a6196e690521e1ef8e5035cb7",
+      "previousLines": 199,
+      "previousBytes": 6475,
+      "previousSha256": "d15547e86f90a58eeb3f65deece89fed361e2b84e37a001c1961289861dd9368",
+      "previousContentsByteIdentical": true
+    },
+    "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md": {
+      "lines": 695,
+      "bytes": 20685,
+      "sha256": "f453670fc9813bef311a377b36b7872ac0c0d69837f1c9791313ece77fd72da0",
+      "previousLines": 688,
+      "previousBytes": 20066,
+      "previousSha256": "f6cee6b05d5ad357acb0ab0103ea4cf9e1cf2c2588f29a8a78f6a01684019ee2",
+      "previousContentsByteIdentical": true
+    },
+    "projects/input/hebbia-sem/analysis/06-regulated-quality-systems-hypothesis.md": {
+      "lines": 13,
+      "bytes": 1403,
+      "sha256": "a89fda7c7542f0c7f265ba7600bf4f1b22f837bd699630be416e989b96ad375f",
+      "previousLines": 0,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "previousContentsByteIdentical": true
+    }
+  },
+  "existingDestinations": [
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "previousLines": 199,
+      "previousBytes": 6475,
+      "previousSha256": "d15547e86f90a58eeb3f65deece89fed361e2b84e37a001c1961289861dd9368",
+      "previousContentsByteIdentical": true
+    },
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "previousLines": 688,
+      "previousBytes": 20066,
+      "previousSha256": "f6cee6b05d5ad357acb0ab0103ea4cf9e1cf2c2588f29a8a78f6a01684019ee2",
+      "previousContentsByteIdentical": true
+    }
+  ],
+  "destinations": [
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+      "lines": 210,
+      "bytes": 7524,
+      "sha256": "2c34e6065169325af14f6593f22aa08dfd9249b53b87b34f7f308cbac7c275f0",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum immediately after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+      "lines": 698,
+      "bytes": 20803,
+      "sha256": "34b3842db81ee27719080204a8902eb2c4fda9eed97200e2d2561d001ed00af9",
+      "finalNewline": true,
+      "snapshotRole": "Whole-file checksum immediately after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    },
+    {
+      "path": "projects/input/hebbia-sem/analysis/06-regulated-quality-systems-hypothesis.md",
+      "lines": 14,
+      "bytes": 1696,
+      "sha256": "64102b7eecc0a4e1dabc2da5fa3b5230fd070085f5f8386ca70ca524ae9bc5e3",
+      "finalNewline": false,
+      "snapshotRole": "Whole-file checksum immediately after this import. Retained passage ranges remain the reconstruction record after later authorized changes."
+    }
+  ],
+  "moveOrder": [
+    {
+      "originalSourceLines": [
+        8,
+        8
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 397,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        5,
+        7
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 279,
+      "sourceAndDestinationVerified": true
+    },
+    {
+      "originalSourceLines": [
+        1,
+        4
+      ],
+      "dryRunExitCode": 0,
+      "applyExitCode": 0,
+      "dryRunNonMutating": true,
+      "sourceBytesAfter": 0,
+      "sourceAndDestinationVerified": true
+    }
+  ],
+  "editorialChanges": {
+    "originalPathRetained": true,
+    "comments": "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments.md#task-specific-context-assembly",
+    "index": "ai/interactive-systems/00-index.md",
+    "relatedHypothesisLink": {
+      "path": "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "changedEditorialLine": 9,
+      "retainedSourceRangesUnchanged": true,
+      "originalFinalNewlinePreserved": true
+    },
+    "lineEndingRepair": {
+      "path": "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+      "reason": "The navigation edit added a final newline. The formatting command restored the original missing final newline before reconstruction verification."
+    }
+  },
+  "verification": {
+    "reconstructedLines": 8,
+    "reconstructedBytes": 690,
+    "reconstructedSha256": "fe390ad48532c036ce9a792909c8eca2afe2786457daf008181d129521c00697",
+    "allPassagesByteIdentical": true,
+    "omittedOrDuplicatedBytes": 0,
+    "priorMappings": [
+      {
+        "manifest": "ai/interactive-systems/02-hebbia-analysis-reassembly.json",
+        "lines": 856,
+        "bytes": 30899,
+        "sha256": "9dd7ccc02c76319dbe2e9696136cc9909e685629351a27461e9596ce8a7eb94c",
+        "passagesVerified": 9
+      },
+      {
+        "manifest": "ai/interactive-systems/03-hebbia-design-observations-reassembly.json",
+        "lines": 1469,
+        "bytes": 32504,
+        "sha256": "441741dea228316e6c7f3911b6e6d15c2e674c160a607cf3a457e69e302b8c68",
+        "passagesVerified": 6
+      },
+      {
+        "manifest": "ai/interactive-systems/04-semantic-engineering-reassembly.json",
+        "lines": 439,
+        "bytes": 17434,
+        "sha256": "798105771b8191e04ab9de78a0b0e2302212ab0381cb7623530a7557e5e7e4ee",
+        "passagesVerified": 8
+      }
+    ],
+    "productFinalNewline": false,
+    "existingDestinationContentsByteIdentical": true,
+    "sourceRangesCoverOriginalExactlyOnce": true,
+    "baselineFiles": 97,
+    "sourceTextRewritten": false,
+    "claimsIndependentlyVerified": false,
+    "localLinkVerification": {
+      "scopedMarkdownFiles": 8,
+      "localLinksChecked": 147,
+      "headingAnchorsChecked": 31,
+      "missingTargets": 0
+    },
+    "scopedGitDiffCheckPassed": true,
+    "baselineVerification": {
+      "snapshotRole": "Shared-workspace comparison at final verification. Subsequent work in other chats may change unrelated files.",
+      "baselineFiles": 97,
+      "intendedChangedBaselinePaths": [
+        "ai/design-research/04-investigation-and-epistemics/05-multirepresentation-retrieval-and-projections.md",
+        "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis-comments.md",
+        "ai/design-research/04-investigation-and-epistemics/06-bounded-corpus-evidence-synthesis.md",
+        "ai/interactive-systems/00-index.md",
+        "ai/interactive-systems/reassembly-map.md",
+        "projects/input/hebbia-sem/analysis/05-evidence-synthesis-product-hypotheses.md",
+        "projects/input/hebbia-sem/task-specific-context-assembly.md"
+      ],
+      "unrelatedObservedChanges": [
+        {
+          "path": "ai/design-research/00-index.md",
+          "previousSha256": "92c636af18e6f2f7f2d7d2ce682d05126a4b8d2ddb94a3c876981e39820c6f27",
+          "observedSha256": "06703c5c214b76d45618435960354884eba5320a1695737bc99696858502c844",
+          "role": "Unrelated shared-workspace change. This pass did not edit or revert the file."
+        },
+        {
+          "path": "ai/design-research/02-human-ai-collaboration/01-augmenting-human-work.md",
+          "previousSha256": "0eea9dc2de6691cc50382344dfaebf0216c244c1cba4ef6c113ff776a4efbe3f",
+          "observedSha256": "12ae3d56b7b4871118a547880d19b966f79f90e75ee85c31693b0b2e18a51073",
+          "role": "Unrelated shared-workspace change. This pass did not edit or revert the file."
+        }
+      ],
+      "unrelatedBaselineUnchangedCount": 88
+    }
+  },
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

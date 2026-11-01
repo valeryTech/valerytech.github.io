@@ -1,0 +1,71 @@
+/* Semantic palette shared with standalone redirects and the icon authoring tool. */
+:root {
+  /* Semantic colors: breadcrumbs, context stacks, and tables evolve independently. */
+  --site-page-background: #fff;
+  --site-foreground: #0f172a;
+  --site-body-foreground: var(--site-foreground);
+  --site-heading-foreground: var(--site-foreground);
+  --site-breadcrumb-background: var(--site-context-header);
+  --site-context-header: #ced9e6;
+  --site-context-surface: #eff2f6;
+  --site-muted: #64748b;
+  --site-nav-foreground: var(--site-muted);
+  --site-nav-context-foreground: var(--site-link-color);
+  --site-border: #e2e8f0;
+  --site-panel: #f8fafc;
+  --site-accent: #2563eb;
+  --site-link-color-light: #3c5a7c;
+  --site-link-color-dark: #8fafce;
+  --site-link-color: var(--site-link-color-light);
+  --site-nav-selected-surface: color-mix(
+    in srgb,
+    var(--site-link-color) 12%,
+    var(--site-page-background)
+  );
+  --site-nav-state-layer: color-mix(in srgb, var(--site-link-color) 8%, transparent);
+  --site-table-surface: #f5f7fa;
+  --site-table-header: #dbeafe;
+  --site-context-foreground: var(--site-link-color);
+  --site-control-background: var(--site-breadcrumb-background);
+  --site-control-foreground: var(--site-context-foreground);
+  --site-card-surface: color-mix(in srgb, var(--site-accent) 8%, var(--site-panel));
+  --site-card-hover: color-mix(in srgb, var(--site-accent) 12%, var(--site-panel));
+  --site-floating-shadow-color: rgb(15 23 42 / 20%);
+  --site-dialog-shadow-color: rgb(0 0 0 / 25%);
+  --site-dialog-backdrop: rgb(0 0 0 / 45%);
+  --site-floating-shadow: 0 var(--site-space-2) var(--site-space-8)
+    var(--site-floating-shadow-color);
+}
+
+.dark {
+  --site-floating-shadow-color: rgb(0 0 0 / 45%);
+  --site-page-background: var(--hx-color-dark, #111);
+  --site-foreground: #f3f4f6;
+  --site-body-foreground: #c7c7c7;
+  --site-heading-foreground: #ddd;
+  --site-context-header: #1e232f;
+  --site-context-surface: #141a20;
+  --site-muted: #a3a3a3;
+  --site-nav-context-foreground: var(--site-nav-foreground);
+  --site-border: #303030;
+  --site-panel: #171717;
+  --site-accent: #93c5fd;
+  --site-link-color: var(--site-link-color-dark);
+  --site-nav-selected-surface: color-mix(
+    in srgb,
+    var(--site-link-color) 26%,
+    var(--site-page-background)
+  );
+  /* Preserve selected-label contrast when the state layer brightens this fill. */
+  --site-nav-state-layer: color-mix(in srgb, var(--site-link-color) 4%, transparent);
+  --site-table-surface: #1c1c20;
+  --site-table-header: #263f60;
+}
+
+.dark[data-text-brightness="bright"] {
+  --site-body-foreground: #e5e5e5;
+  --site-heading-foreground: #fff;
+  --site-muted: #c7c7c7;
+  --site-nav-foreground: var(--site-body-foreground);
+  --site-link-color-dark: #b7d2eb;
+}

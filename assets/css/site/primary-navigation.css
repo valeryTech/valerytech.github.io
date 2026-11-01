@@ -1,0 +1,123 @@
+/* One visible set of site directions; these are page links, not in-page tabs. */
+.site-header-links {
+  display: none;
+  align-items: center;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  block-size: var(--site-control-height);
+  border-radius: var(--site-radius);
+  background: var(--site-context-header);
+  overflow-x: auto;
+}
+
+.site-header-links > a,
+.mobile-site-nav > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  min-height: var(--site-control-height);
+  gap: var(--site-surface-gap);
+  border-radius: var(--site-radius);
+  color: var(--site-nav-context-foreground);
+  font-size: var(--site-navigation-text-size);
+  font-weight: var(--site-control-font-weight);
+  line-height: var(--site-line-ui);
+  text-decoration: none;
+  transition: none;
+}
+
+.site-header-links > a {
+  flex: 1 0 0;
+  min-inline-size: max-content;
+  block-size: 100%;
+  padding-inline: var(--site-space-2);
+  white-space: nowrap;
+}
+
+.mobile-site-nav {
+  font-size: var(--site-navigation-text-size);
+  line-height: var(--site-line-ui);
+  padding-bottom: var(--site-space-4);
+  margin-bottom: var(--site-space-4);
+  border-bottom: 1px solid var(--site-border);
+}
+
+.mobile-site-nav > a {
+  display: flex;
+  justify-content: flex-start;
+  min-height: max(var(--site-control-height), var(--site-space-12));
+  padding-block: max(var(--site-nav-padding-block), var(--site-layout-gap));
+  padding-inline: calc(var(--site-layout-gap) + var(--site-space-3));
+  color: var(--site-nav-foreground);
+  overflow-wrap: anywhere;
+}
+
+/* Use the shared layout gap around the selection; keep the full link clickable. */
+.site-header-links > a::after,
+.mobile-site-nav > a::after {
+  content: "";
+  position: absolute;
+  inset: var(--site-layout-gap);
+  z-index: -1;
+  border-radius: var(--site-radius);
+  pointer-events: none;
+  transition: none;
+}
+
+.site-header-links > a::after {
+  /* Large configured gaps must still leave room for the label. */
+  inset-block: min(var(--site-layout-gap), calc((100% - 1lh) / 2));
+}
+
+.site-header-links > a + a::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  block-size: var(--site-space-4);
+  border-inline-start: 1px solid var(--site-border);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.site-header-links > a:is(:hover, :focus-visible),
+.mobile-site-nav > a:is(:hover, :focus-visible) {
+  color: var(--site-link-color);
+}
+
+.site-header-links > a:is(:hover, :focus-visible)::after,
+.mobile-site-nav > a:is(:hover, :focus-visible)::after {
+  background: var(--site-nav-state-layer);
+}
+
+.site-header-links > a:focus-visible,
+.mobile-site-nav > a[href]:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.site-header-links > a:focus-visible::after,
+.mobile-site-nav > a:focus-visible::after {
+  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline-offset: calc(-1 * var(--site-focus-width));
+}
+
+.site-header-links > a[aria-current],
+.mobile-site-nav > a[aria-current] {
+  color: var(--site-link-color);
+  font-weight: 600;
+}
+
+.site-header-links > a[aria-current]::after,
+.mobile-site-nav > a[aria-current]::after {
+  background: var(--site-nav-selected-surface);
+}
+
+.site-header-links > a[aria-current]:is(:hover, :focus-visible)::after,
+.mobile-site-nav > a[aria-current]:is(:hover, :focus-visible)::after {
+  background:
+    linear-gradient(var(--site-nav-state-layer), var(--site-nav-state-layer)),
+    var(--site-nav-selected-surface);
+}

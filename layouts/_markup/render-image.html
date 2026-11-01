@@ -1,0 +1,6 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $source := .Destination -}}
+{{- if and (not $url.IsAbs) (not (hasPrefix .Destination "/")) -}}
+  {{- $source = printf "/%s%s" .Page.File.Dir .Destination -}}
+{{- end -}}
+<img src="{{ $source | safeURL }}" alt="{{ .PlainText }}" loading="lazy" decoding="async"{{ with .Title }} title="{{ . }}"{{ end }}>

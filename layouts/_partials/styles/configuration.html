@@ -1,0 +1,4 @@
+{{- /* Build-time design settings become shared CSS custom properties. */ -}}
+{{- $style := hugo.Data.ui.style -}}
+{{- $css := printf ":root {\n  --site-radius: %gpx;\n  --site-context-header-min-height: %gpx;\n  --site-layout-gap-configured: %gpx;\n  --site-article-top-gap: %gpx;\n  --site-layout-standard-width: %grem;\n  --site-layout-wide-width: %grem;\n  --site-reading-measure: %gch;\n  --site-sidebar-width-fraction: %g;\n  --site-outline-width-fraction: %g;\n}\n" (float $style.cornerRadiusPixels) (float $style.contextHeaderMinHeightPixels) (float $style.layoutGapPixels) (float $style.articleTopGapPixels) (float $style.layout.standardWidthRem) (float $style.layout.wideWidthRem) (float $style.layout.readingWidthCh) (div (float $style.layout.sidebarWidthPercent) 100.0) (div (float $style.layout.outlineWidthPercent) 100.0) -}}
+{{- return (resources.FromString "css/site/configuration.css" $css) -}}

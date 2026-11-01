@@ -1,0 +1,1 @@
+{{- return (and (not .IsHome) (ne .Params.toc false) (gt (len (findRE `<a\b` (partialCached "navigation/page-outline.html" . .RelPermalink) 1)) 0)) -}}

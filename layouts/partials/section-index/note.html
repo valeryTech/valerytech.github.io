@@ -1,0 +1,11 @@
+<li class="section-map-note">
+  <div class="section-map-note-heading">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with partial "agent-map/status.html" . }}
+      <span class="section-map-status">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ with partial "main/navigation-description.html" . }}
+    <p class="section-map-description">{{ . }}</p>
+  {{ end }}
+</li>

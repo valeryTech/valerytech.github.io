@@ -1,0 +1,2551 @@
+{
+  "report": "reflection-in-hybrid-ai-systems.md",
+  "captured_on": "2026-10-25",
+  "citation_format": "Every original citation group is reconstructed from identifiable source URLs. Unresolved secondary source IDs have separate footnotes; exact original groups are retained per occurrence.",
+  "numbered_sources": {
+    "1": {
+      "title": "Self-Knowledge - Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/self-knowledge/"
+    },
+    "2": {
+      "title": "Concepts and experiments in computational reflection",
+      "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+    },
+    "3": {
+      "title": "[2205.00445] MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning",
+      "url": "https://arxiv.org/abs/2205.00445"
+    },
+    "11": {
+      "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2303.11366"
+    },
+    "17": {
+      "title": "Self-Evolving World Models for LLM Agent Planning - arXiv",
+      "url": "https://arxiv.org/html/2606.30639v1"
+    },
+    "27": {
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "url": "https://arxiv.org/abs/2308.03688"
+    },
+    "32": {
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "url": "https://arxiv.org/abs/2308.03688"
+    },
+    "28": {
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "url": "https://arxiv.org/abs/2306.05685"
+    },
+    "33": {
+      "title": "[2302.12173] Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "url": "https://arxiv.org/abs/2302.12173"
+    },
+    "39": {
+      "title": "[2302.12173] Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "url": "https://arxiv.org/abs/2302.12173"
+    },
+    "36": {
+      "title": "[2305.16291] Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "url": "https://arxiv.org/abs/2305.16291"
+    },
+    "37": {
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi ...",
+      "url": "https://arxiv.org/abs/2308.08155"
+    },
+    "42": {
+      "title": "[2012.13635] Logic Tensor Networks",
+      "url": "https://arxiv.org/abs/2012.13635"
+    },
+    "44": {
+      "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "url": "https://arxiv.org/abs/2307.13854"
+    },
+    "45": {
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "url": "https://arxiv.org/abs/2310.06770"
+    },
+    "4": {
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+    },
+    "5": {
+      "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+    },
+    "25": {
+      "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+    },
+    "35": {
+      "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+    },
+    "7": {
+      "title": "CriticEval: Evaluating Large-scale Language Model as Critic",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html"
+    },
+    "26": {
+      "title": "CriticEval: Evaluating Large-scale Language Model as Critic",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html"
+    },
+    "15": {
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html"
+    },
+    "21": {
+      "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+      "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+    },
+    "24": {
+      "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+      "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+    },
+    "38": {
+      "title": "LeanDojo: Theorem Proving with Retrieval-Augmented ...",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html"
+    },
+    "6": {
+      "title": "Workflows and agents - Docs by LangChain",
+      "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+    },
+    "8": {
+      "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+      "url": "https://aclanthology.org/2024.tacl-1.78/"
+    },
+    "22": {
+      "title": "Logic-LM: Empowering Large Language Models with ...",
+      "url": "https://aclanthology.org/2023.findings-emnlp.248/"
+    },
+    "29": {
+      "title": "FActScore: Fine-grained Atomic Evaluation of Factual ...",
+      "url": "https://aclanthology.org/2023.emnlp-main.741/"
+    },
+    "9": {
+      "title": "Metacognition in computation: A selected research review",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0004370205001530"
+    },
+    "10": {
+      "title": "MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9886"
+    },
+    "12": {
+      "title": "GEPA optimization - DSPy",
+      "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+    },
+    "13": {
+      "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+      "url": "https://www.w3.org/TR/owl2-syntax/"
+    },
+    "40": {
+      "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+      "url": "https://www.w3.org/TR/owl2-syntax/"
+    },
+    "41": {
+      "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+      "url": "https://www.w3.org/TR/owl2-syntax/"
+    },
+    "14": {
+      "title": "PAL: Program-aided Language Models",
+      "url": "https://proceedings.mlr.press/v202/gao23f.html"
+    },
+    "18": {
+      "title": "PAL: Program-aided Language Models",
+      "url": "https://proceedings.mlr.press/v202/gao23f.html"
+    },
+    "23": {
+      "title": "Causal Inference",
+      "url": "https://proceedings.mlr.press/v6/pearl10a.html"
+    },
+    "30": {
+      "title": "On Calibration of Modern Neural Networks",
+      "url": "https://proceedings.mlr.press/v70/guo17a.html"
+    },
+    "16": {
+      "title": "Teams — AutoGen",
+      "url": "https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/tutorial/teams.html"
+    },
+    "19": {
+      "title": "Project GraphRAG - Microsoft Research",
+      "url": "https://www.microsoft.com/en-us/research/project/graphrag/"
+    },
+    "20": {
+      "title": "Introduction to Pyro — Pyro Tutorials 1.9.1 documentation",
+      "url": "https://pyro.ai/examples/intro_long.html"
+    },
+    "31": {
+      "title": "Selective Classification for Deep Neural Networks",
+      "url": "https://papers.neurips.cc/paper/7073-selective-classification-for-deep-neural-networks"
+    },
+    "34": {
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile | NIST",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+    },
+    "43": {
+      "title": "Gen.jl",
+      "url": "https://www.gen.dev/docs/"
+    }
+  },
+  "occurrences": [
+    {
+      "occurrence": 1,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Self-Knowledge - Stanford Encyclopedia of Philosophy",
+        "url": "https://plato.stanford.edu/entries/self-knowledge/"
+      },
+      "original_reference_ids": [
+        "turn1search26",
+        "turn1search1",
+        "turn1search2",
+        "turn15view2"
+      ],
+      "exported_footnotes": [
+        1,
+        2,
+        9,
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 2,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn15view2",
+        "turn15view3"
+      ],
+      "exported_footnotes": [
+        2,
+        10,
+        11
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 3,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "[2205.00445] MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning",
+        "url": "https://arxiv.org/abs/2205.00445"
+      },
+      "original_reference_ids": [
+        "turn17view4",
+        "turn17view6",
+        "turn17view7",
+        "turn19view7"
+      ],
+      "exported_footnotes": [
+        3,
+        14,
+        5,
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 4,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view0",
+        "turn17view3"
+      ],
+      "exported_footnotes": [
+        4,
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 5,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 6,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5",
+        "turn18view6",
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        6,
+        16,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 7,
+      "displayed_citation": 7,
+      "primary_source": {
+        "title": "CriticEval: Evaluating Large-scale Language Model as Critic",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view0",
+        "turn20search3",
+        "turn20search0",
+        "turn20search1",
+        "turn20search2",
+        "turn20search21"
+      ],
+      "exported_footnotes": [
+        7,
+        29,
+        27,
+        44,
+        45,
+        46
+      ],
+      "unresolved_source_ids": [
+        "turn20search21"
+      ]
+    },
+    {
+      "occurrence": 8,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+        "url": "https://aclanthology.org/2024.tacl-1.78/"
+      },
+      "original_reference_ids": [
+        "turn17view3",
+        "turn19view4",
+        "turn19view5"
+      ],
+      "exported_footnotes": [
+        8,
+        33,
+        34
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 9,
+      "displayed_citation": 1,
+      "primary_source": {
+        "title": "Self-Knowledge - Stanford Encyclopedia of Philosophy",
+        "url": "https://plato.stanford.edu/entries/self-knowledge/"
+      },
+      "original_reference_ids": [
+        "turn1search26",
+        "turn1search7"
+      ],
+      "exported_footnotes": [
+        1,
+        47
+      ],
+      "unresolved_source_ids": [
+        "turn1search7"
+      ]
+    },
+    {
+      "occurrence": 10,
+      "displayed_citation": 9,
+      "primary_source": {
+        "title": "Metacognition in computation: A selected research review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0004370205001530"
+      },
+      "original_reference_ids": [
+        "turn1search2",
+        "turn15view2"
+      ],
+      "exported_footnotes": [
+        9,
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 11,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn1search21"
+      ],
+      "exported_footnotes": [
+        2,
+        48
+      ],
+      "unresolved_source_ids": [
+        "turn1search21"
+      ]
+    },
+    {
+      "occurrence": 12,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1"
+      ],
+      "exported_footnotes": [
+        2
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 13,
+      "displayed_citation": 9,
+      "primary_source": {
+        "title": "Metacognition in computation: A selected research review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0004370205001530"
+      },
+      "original_reference_ids": [
+        "turn1search2",
+        "turn15view2"
+      ],
+      "exported_footnotes": [
+        9,
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 14,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9886"
+      },
+      "original_reference_ids": [
+        "turn15view2"
+      ],
+      "exported_footnotes": [
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 15,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn17view0",
+        "turn18view6"
+      ],
+      "exported_footnotes": [
+        11,
+        4,
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 16,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn15view2",
+        "turn15view3",
+        "turn18view6"
+      ],
+      "exported_footnotes": [
+        2,
+        10,
+        11,
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 17,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 18,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0"
+      ],
+      "exported_footnotes": [
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 19,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 20,
+      "displayed_citation": 14,
+      "primary_source": {
+        "title": "PAL: Program-aided Language Models",
+        "url": "https://proceedings.mlr.press/v202/gao23f.html"
+      },
+      "original_reference_ids": [
+        "turn17view6",
+        "turn17view7",
+        "turn8search1"
+      ],
+      "exported_footnotes": [
+        14,
+        5,
+        22
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 21,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 22,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "[2205.00445] MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning",
+        "url": "https://arxiv.org/abs/2205.00445"
+      },
+      "original_reference_ids": [
+        "turn17view4"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 23,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view7"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 24,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn19view6"
+      ],
+      "exported_footnotes": [
+        11,
+        36
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 25,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9886"
+      },
+      "original_reference_ids": [
+        "turn15view2",
+        "turn17view4",
+        "turn18view6",
+        "turn15view3"
+      ],
+      "exported_footnotes": [
+        10,
+        3,
+        16,
+        11
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 26,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9886"
+      },
+      "original_reference_ids": [
+        "turn15view2",
+        "turn17view4",
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        10,
+        3,
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 27,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Teams — AutoGen",
+        "url": "https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/tutorial/teams.html"
+      },
+      "original_reference_ids": [
+        "turn18view6"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 28,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn19view6"
+      ],
+      "exported_footnotes": [
+        11,
+        36
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 29,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Self-Evolving World Models for LLM Agent Planning - arXiv",
+        "url": "https://arxiv.org/html/2606.30639v1"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search5"
+      ],
+      "exported_footnotes": [
+        17,
+        49
+      ],
+      "unresolved_source_ids": [
+        "turn14search5"
+      ]
+    },
+    {
+      "occurrence": 30,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "PAL: Program-aided Language Models",
+        "url": "https://proceedings.mlr.press/v202/gao23f.html"
+      },
+      "original_reference_ids": [
+        "turn17view6",
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        18,
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 31,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "Project GraphRAG - Microsoft Research",
+        "url": "https://www.microsoft.com/en-us/research/project/graphrag/"
+      },
+      "original_reference_ids": [
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 32,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0"
+      ],
+      "exported_footnotes": [
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 33,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        13,
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 34,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        13,
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 35,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Introduction to Pyro — Pyro Tutorials 1.9.1 documentation",
+        "url": "https://pyro.ai/examples/intro_long.html"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search5"
+      ],
+      "exported_footnotes": [
+        20,
+        50
+      ],
+      "unresolved_source_ids": [
+        "turn13search5"
+      ]
+    },
+    {
+      "occurrence": 36,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Introduction to Pyro — Pyro Tutorials 1.9.1 documentation",
+        "url": "https://pyro.ai/examples/intro_long.html"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search1",
+        "turn13search12"
+      ],
+      "exported_footnotes": [
+        20,
+        43,
+        51
+      ],
+      "unresolved_source_ids": [
+        "turn13search12"
+      ]
+    },
+    {
+      "occurrence": 37,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+        "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+      },
+      "original_reference_ids": [
+        "turn18view2"
+      ],
+      "exported_footnotes": [
+        21
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 38,
+      "displayed_citation": 22,
+      "primary_source": {
+        "title": "Logic-LM: Empowering Large Language Models with ...",
+        "url": "https://aclanthology.org/2023.findings-emnlp.248/"
+      },
+      "original_reference_ids": [
+        "turn8search1",
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        22,
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 39,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Causal Inference",
+        "url": "https://proceedings.mlr.press/v6/pearl10a.html"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 40,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 41,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn1search21"
+      ],
+      "exported_footnotes": [
+        2,
+        48
+      ],
+      "unresolved_source_ids": [
+        "turn1search21"
+      ]
+    },
+    {
+      "occurrence": 42,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 43,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn17view0"
+      ],
+      "exported_footnotes": [
+        11,
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 44,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+        "url": "https://aclanthology.org/2024.tacl-1.78/"
+      },
+      "original_reference_ids": [
+        "turn17view3"
+      ],
+      "exported_footnotes": [
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 45,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        13,
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 46,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Introduction to Pyro — Pyro Tutorials 1.9.1 documentation",
+        "url": "https://pyro.ai/examples/intro_long.html"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search5"
+      ],
+      "exported_footnotes": [
+        20,
+        50
+      ],
+      "unresolved_source_ids": [
+        "turn13search5"
+      ]
+    },
+    {
+      "occurrence": 47,
+      "displayed_citation": 24,
+      "primary_source": {
+        "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+        "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+      },
+      "original_reference_ids": [
+        "turn18view2",
+        "turn8search1",
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        24,
+        22,
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 48,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Causal Inference",
+        "url": "https://proceedings.mlr.press/v6/pearl10a.html"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 49,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 50,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        2,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 51,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn17view0",
+        "turn18view6"
+      ],
+      "exported_footnotes": [
+        11,
+        4,
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 52,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7",
+        "turn17view6",
+        "turn8search3"
+      ],
+      "exported_footnotes": [
+        25,
+        14,
+        38
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 53,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Self-Evolving World Models for LLM Agent Planning - arXiv",
+        "url": "https://arxiv.org/html/2606.30639v1"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search17"
+      ],
+      "exported_footnotes": [
+        17,
+        52
+      ],
+      "unresolved_source_ids": [
+        "turn14search17"
+      ]
+    },
+    {
+      "occurrence": 54,
+      "displayed_citation": 26,
+      "primary_source": {
+        "title": "CriticEval: Evaluating Large-scale Language Model as Critic",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        26
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 55,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "AgentBench: Evaluating LLMs as Agents",
+        "url": "https://arxiv.org/abs/2308.03688"
+      },
+      "original_reference_ids": [
+        "turn20search0",
+        "turn20search1",
+        "turn20search2"
+      ],
+      "exported_footnotes": [
+        27,
+        44,
+        45
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 56,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+        "url": "https://aclanthology.org/2024.tacl-1.78/"
+      },
+      "original_reference_ids": [
+        "turn17view3"
+      ],
+      "exported_footnotes": [
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 57,
+      "displayed_citation": 26,
+      "primary_source": {
+        "title": "CriticEval: Evaluating Large-scale Language Model as Critic",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        26
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 58,
+      "displayed_citation": 28,
+      "primary_source": {
+        "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+        "url": "https://arxiv.org/abs/2306.05685"
+      },
+      "original_reference_ids": [
+        "turn20search24"
+      ],
+      "exported_footnotes": [
+        28
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 59,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "FActScore: Fine-grained Atomic Evaluation of Factual ...",
+        "url": "https://aclanthology.org/2023.emnlp-main.741/"
+      },
+      "original_reference_ids": [
+        "turn20search3"
+      ],
+      "exported_footnotes": [
+        29
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 60,
+      "displayed_citation": 30,
+      "primary_source": {
+        "title": "On Calibration of Modern Neural Networks",
+        "url": "https://proceedings.mlr.press/v70/guo17a.html"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        30
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 61,
+      "displayed_citation": 31,
+      "primary_source": {
+        "title": "Selective Classification for Deep Neural Networks",
+        "url": "https://papers.neurips.cc/paper/7073-selective-classification-for-deep-neural-networks"
+      },
+      "original_reference_ids": [
+        "turn13search3"
+      ],
+      "exported_footnotes": [
+        31
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 62,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 63,
+      "displayed_citation": 17,
+      "primary_source": {
+        "title": "Self-Evolving World Models for LLM Agent Planning - arXiv",
+        "url": "https://arxiv.org/html/2606.30639v1"
+      },
+      "original_reference_ids": [
+        "turn14search2",
+        "turn14search17"
+      ],
+      "exported_footnotes": [
+        17,
+        52
+      ],
+      "unresolved_source_ids": [
+        "turn14search17"
+      ]
+    },
+    {
+      "occurrence": 64,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Causal Inference",
+        "url": "https://proceedings.mlr.press/v6/pearl10a.html"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 65,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 66,
+      "displayed_citation": 32,
+      "primary_source": {
+        "title": "AgentBench: Evaluating LLMs as Agents",
+        "url": "https://arxiv.org/abs/2308.03688"
+      },
+      "original_reference_ids": [
+        "turn20search0",
+        "turn20search14"
+      ],
+      "exported_footnotes": [
+        32,
+        53
+      ],
+      "unresolved_source_ids": [
+        "turn20search14"
+      ]
+    },
+    {
+      "occurrence": 67,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view0",
+        "turn17view3"
+      ],
+      "exported_footnotes": [
+        4,
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 68,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 69,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn19view6"
+      ],
+      "exported_footnotes": [
+        11,
+        36
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 70,
+      "displayed_citation": 33,
+      "primary_source": {
+        "title": "[2302.12173] Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+        "url": "https://arxiv.org/abs/2302.12173"
+      },
+      "original_reference_ids": [
+        "turn19view4"
+      ],
+      "exported_footnotes": [
+        33
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 71,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 72,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+        "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+      },
+      "original_reference_ids": [
+        "turn18view2",
+        "turn17view6",
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        21,
+        14,
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 73,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "AgentBench: Evaluating LLMs as Agents",
+        "url": "https://arxiv.org/abs/2308.03688"
+      },
+      "original_reference_ids": [
+        "turn20search0",
+        "turn20search1"
+      ],
+      "exported_footnotes": [
+        27,
+        44
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 74,
+      "displayed_citation": 34,
+      "primary_source": {
+        "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile | NIST",
+        "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+      },
+      "original_reference_ids": [
+        "turn19view5"
+      ],
+      "exported_footnotes": [
+        34
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 75,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn1search21"
+      ],
+      "exported_footnotes": [
+        2,
+        48
+      ],
+      "unresolved_source_ids": [
+        "turn1search21"
+      ]
+    },
+    {
+      "occurrence": 76,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9886"
+      },
+      "original_reference_ids": [
+        "turn15view2"
+      ],
+      "exported_footnotes": [
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 77,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+        "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+      },
+      "original_reference_ids": [
+        "turn18view2"
+      ],
+      "exported_footnotes": [
+        21
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 78,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "[2205.00445] MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning",
+        "url": "https://arxiv.org/abs/2205.00445"
+      },
+      "original_reference_ids": [
+        "turn17view4"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 79,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "PAL: Program-aided Language Models",
+        "url": "https://proceedings.mlr.press/v202/gao23f.html"
+      },
+      "original_reference_ids": [
+        "turn17view6"
+      ],
+      "exported_footnotes": [
+        18
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 80,
+      "displayed_citation": 35,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7",
+        "turn8search1"
+      ],
+      "exported_footnotes": [
+        35,
+        22
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 81,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view7"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 82,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3"
+      ],
+      "exported_footnotes": [
+        11
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 83,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view0",
+        "turn17view3"
+      ],
+      "exported_footnotes": [
+        4,
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 84,
+      "displayed_citation": 36,
+      "primary_source": {
+        "title": "[2305.16291] Voyager: An Open-Ended Embodied Agent with Large Language Models",
+        "url": "https://arxiv.org/abs/2305.16291"
+      },
+      "original_reference_ids": [
+        "turn19view6"
+      ],
+      "exported_footnotes": [
+        36
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 85,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "Project GraphRAG - Microsoft Research",
+        "url": "https://www.microsoft.com/en-us/research/project/graphrag/"
+      },
+      "original_reference_ids": [
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 86,
+      "displayed_citation": 37,
+      "primary_source": {
+        "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi ...",
+        "url": "https://arxiv.org/abs/2308.08155"
+      },
+      "original_reference_ids": [
+        "turn20search16",
+        "turn18view6"
+      ],
+      "exported_footnotes": [
+        37,
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 87,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 88,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 89,
+      "displayed_citation": 38,
+      "primary_source": {
+        "title": "LeanDojo: Theorem Proving with Retrieval-Augmented ...",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html"
+      },
+      "original_reference_ids": [
+        "turn8search3"
+      ],
+      "exported_footnotes": [
+        38
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 90,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn1search2",
+        "turn15view2",
+        "turn18view2",
+        "turn17view4",
+        "turn15view3",
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        2,
+        9,
+        10,
+        21,
+        3,
+        11,
+        7
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 91,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+        "url": "https://aclanthology.org/2024.tacl-1.78/"
+      },
+      "original_reference_ids": [
+        "turn17view3",
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        8,
+        7
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 92,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 93,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0",
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        13,
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 94,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "[2205.00445] MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning",
+        "url": "https://arxiv.org/abs/2205.00445"
+      },
+      "original_reference_ids": [
+        "turn17view4",
+        "turn17view6"
+      ],
+      "exported_footnotes": [
+        3,
+        14
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 95,
+      "displayed_citation": 25,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7",
+        "turn8search3"
+      ],
+      "exported_footnotes": [
+        25,
+        38
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 96,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Introduction to Pyro — Pyro Tutorials 1.9.1 documentation",
+        "url": "https://pyro.ai/examples/intro_long.html"
+      },
+      "original_reference_ids": [
+        "turn13search0",
+        "turn13search5",
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        20,
+        50,
+        30
+      ],
+      "unresolved_source_ids": [
+        "turn13search5"
+      ]
+    },
+    {
+      "occurrence": 97,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Causal Inference",
+        "url": "https://proceedings.mlr.press/v6/pearl10a.html"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 98,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Teams — AutoGen",
+        "url": "https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/tutorial/teams.html"
+      },
+      "original_reference_ids": [
+        "turn18view6",
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        16,
+        7
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 99,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn19view6"
+      ],
+      "exported_footnotes": [
+        11,
+        36
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 100,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 101,
+      "displayed_citation": 39,
+      "primary_source": {
+        "title": "[2302.12173] Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+        "url": "https://arxiv.org/abs/2302.12173"
+      },
+      "original_reference_ids": [
+        "turn19view4",
+        "turn19view5",
+        "turn13search3"
+      ],
+      "exported_footnotes": [
+        39,
+        34,
+        31
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 102,
+      "displayed_citation": 40,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0",
+        "turn13search0",
+        "turn18view4",
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        40,
+        20,
+        23,
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 103,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5",
+        "turn18view0"
+      ],
+      "exported_footnotes": [
+        6,
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 104,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+        "url": "https://aclanthology.org/2024.tacl-1.78/"
+      },
+      "original_reference_ids": [
+        "turn17view3",
+        "turn17view6",
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        8,
+        14,
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 105,
+      "displayed_citation": 41,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0",
+        "turn13search5",
+        "turn18view4",
+        "turn18view2"
+      ],
+      "exported_footnotes": [
+        41,
+        50,
+        23,
+        21
+      ],
+      "unresolved_source_ids": [
+        "turn13search5"
+      ]
+    },
+    {
+      "occurrence": 106,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3",
+        "turn19view6",
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        11,
+        36,
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 107,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1",
+        "turn19view4",
+        "turn19view5"
+      ],
+      "exported_footnotes": [
+        2,
+        33,
+        34
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 108,
+      "displayed_citation": 2,
+      "primary_source": {
+        "title": "Concepts and experiments in computational reflection",
+        "url": "https://dl.acm.org/doi/10.1145/38807.38821"
+      },
+      "original_reference_ids": [
+        "turn1search1"
+      ],
+      "exported_footnotes": [
+        2
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 109,
+      "displayed_citation": 9,
+      "primary_source": {
+        "title": "Metacognition in computation: A selected research review",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0004370205001530"
+      },
+      "original_reference_ids": [
+        "turn1search2"
+      ],
+      "exported_footnotes": [
+        9
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 110,
+      "displayed_citation": 10,
+      "primary_source": {
+        "title": "MIDCA: A Metacognitive, Integrated Dual-Cycle Architecture for Self-Regulated Autonomy | Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9886"
+      },
+      "original_reference_ids": [
+        "turn15view2"
+      ],
+      "exported_footnotes": [
+        10
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 111,
+      "displayed_citation": 3,
+      "primary_source": {
+        "title": "[2205.00445] MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning",
+        "url": "https://arxiv.org/abs/2205.00445"
+      },
+      "original_reference_ids": [
+        "turn17view4"
+      ],
+      "exported_footnotes": [
+        3
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 112,
+      "displayed_citation": 11,
+      "primary_source": {
+        "title": "[2303.11366] Reflexion: Language Agents with Verbal Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2303.11366"
+      },
+      "original_reference_ids": [
+        "turn15view3"
+      ],
+      "exported_footnotes": [
+        11
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 113,
+      "displayed_citation": 4,
+      "primary_source": {
+        "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view0"
+      ],
+      "exported_footnotes": [
+        4
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 114,
+      "displayed_citation": 8,
+      "primary_source": {
+        "title": "When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs - ACL Anthology",
+        "url": "https://aclanthology.org/2024.tacl-1.78/"
+      },
+      "original_reference_ids": [
+        "turn17view3"
+      ],
+      "exported_footnotes": [
+        8
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 115,
+      "displayed_citation": 26,
+      "primary_source": {
+        "title": "CriticEval: Evaluating Large-scale Language Model as Critic",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7b7d7985f62284060d65f532ed2ea5fa-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view0"
+      ],
+      "exported_footnotes": [
+        26
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 116,
+      "displayed_citation": 18,
+      "primary_source": {
+        "title": "PAL: Program-aided Language Models",
+        "url": "https://proceedings.mlr.press/v202/gao23f.html"
+      },
+      "original_reference_ids": [
+        "turn17view6"
+      ],
+      "exported_footnotes": [
+        18
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 117,
+      "displayed_citation": 5,
+      "primary_source": {
+        "title": "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/8e9c7d4a48bdac81a58f983a64aaf42b-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn17view7"
+      ],
+      "exported_footnotes": [
+        5
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 118,
+      "displayed_citation": 22,
+      "primary_source": {
+        "title": "Logic-LM: Empowering Large Language Models with ...",
+        "url": "https://aclanthology.org/2023.findings-emnlp.248/"
+      },
+      "original_reference_ids": [
+        "turn8search1"
+      ],
+      "exported_footnotes": [
+        22
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 119,
+      "displayed_citation": 15,
+      "primary_source": {
+        "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html"
+      },
+      "original_reference_ids": [
+        "turn19view7"
+      ],
+      "exported_footnotes": [
+        15
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 120,
+      "displayed_citation": 21,
+      "primary_source": {
+        "title": "DeepProbLog: Neural Probabilistic Logic Programming",
+        "url": "https://proceedings.neurips.cc/paper/2018/hash/dc5d637ed5e62c36ecb73b654b05ba2a-Abstract.html"
+      },
+      "original_reference_ids": [
+        "turn18view2"
+      ],
+      "exported_footnotes": [
+        21
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 121,
+      "displayed_citation": 42,
+      "primary_source": {
+        "title": "[2012.13635] Logic Tensor Networks",
+        "url": "https://arxiv.org/abs/2012.13635"
+      },
+      "original_reference_ids": [
+        "turn18view3"
+      ],
+      "exported_footnotes": [
+        42
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 122,
+      "displayed_citation": 23,
+      "primary_source": {
+        "title": "Causal Inference",
+        "url": "https://proceedings.mlr.press/v6/pearl10a.html"
+      },
+      "original_reference_ids": [
+        "turn18view4"
+      ],
+      "exported_footnotes": [
+        23
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 123,
+      "displayed_citation": 13,
+      "primary_source": {
+        "title": "OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax (Second Edition)",
+        "url": "https://www.w3.org/TR/owl2-syntax/"
+      },
+      "original_reference_ids": [
+        "turn18view0"
+      ],
+      "exported_footnotes": [
+        13
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 124,
+      "displayed_citation": 19,
+      "primary_source": {
+        "title": "Project GraphRAG - Microsoft Research",
+        "url": "https://www.microsoft.com/en-us/research/project/graphrag/"
+      },
+      "original_reference_ids": [
+        "turn18view1"
+      ],
+      "exported_footnotes": [
+        19
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 125,
+      "displayed_citation": 36,
+      "primary_source": {
+        "title": "[2305.16291] Voyager: An Open-Ended Embodied Agent with Large Language Models",
+        "url": "https://arxiv.org/abs/2305.16291"
+      },
+      "original_reference_ids": [
+        "turn19view6"
+      ],
+      "exported_footnotes": [
+        36
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 126,
+      "displayed_citation": 37,
+      "primary_source": {
+        "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi ...",
+        "url": "https://arxiv.org/abs/2308.08155"
+      },
+      "original_reference_ids": [
+        "turn20search16"
+      ],
+      "exported_footnotes": [
+        37
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 127,
+      "displayed_citation": 16,
+      "primary_source": {
+        "title": "Teams — AutoGen",
+        "url": "https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/tutorial/teams.html"
+      },
+      "original_reference_ids": [
+        "turn18view6"
+      ],
+      "exported_footnotes": [
+        16
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 128,
+      "displayed_citation": 6,
+      "primary_source": {
+        "title": "Workflows and agents - Docs by LangChain",
+        "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"
+      },
+      "original_reference_ids": [
+        "turn18view5"
+      ],
+      "exported_footnotes": [
+        6
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 129,
+      "displayed_citation": 12,
+      "primary_source": {
+        "title": "GEPA optimization - DSPy",
+        "url": "https://dspy.ai/current/getting-started/gepa-optimization/"
+      },
+      "original_reference_ids": [
+        "turn18view7"
+      ],
+      "exported_footnotes": [
+        12
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 130,
+      "displayed_citation": 20,
+      "primary_source": {
+        "title": "Introduction to Pyro — Pyro Tutorials 1.9.1 documentation",
+        "url": "https://pyro.ai/examples/intro_long.html"
+      },
+      "original_reference_ids": [
+        "turn13search0"
+      ],
+      "exported_footnotes": [
+        20
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 131,
+      "displayed_citation": 43,
+      "primary_source": {
+        "title": "Gen.jl",
+        "url": "https://www.gen.dev/docs/"
+      },
+      "original_reference_ids": [
+        "turn13search1",
+        "turn13search5"
+      ],
+      "exported_footnotes": [
+        43,
+        50
+      ],
+      "unresolved_source_ids": [
+        "turn13search5"
+      ]
+    },
+    {
+      "occurrence": 132,
+      "displayed_citation": 38,
+      "primary_source": {
+        "title": "LeanDojo: Theorem Proving with Retrieval-Augmented ...",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4441469427094f8873d0fecb0c4e1cee-Abstract-Datasets_and_Benchmarks.html"
+      },
+      "original_reference_ids": [
+        "turn8search3"
+      ],
+      "exported_footnotes": [
+        38
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 133,
+      "displayed_citation": 27,
+      "primary_source": {
+        "title": "AgentBench: Evaluating LLMs as Agents",
+        "url": "https://arxiv.org/abs/2308.03688"
+      },
+      "original_reference_ids": [
+        "turn20search0"
+      ],
+      "exported_footnotes": [
+        27
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 134,
+      "displayed_citation": 44,
+      "primary_source": {
+        "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+        "url": "https://arxiv.org/abs/2307.13854"
+      },
+      "original_reference_ids": [
+        "turn20search1"
+      ],
+      "exported_footnotes": [
+        44
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 135,
+      "displayed_citation": 45,
+      "primary_source": {
+        "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+        "url": "https://arxiv.org/abs/2310.06770"
+      },
+      "original_reference_ids": [
+        "turn20search2"
+      ],
+      "exported_footnotes": [
+        45
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 136,
+      "displayed_citation": 29,
+      "primary_source": {
+        "title": "FActScore: Fine-grained Atomic Evaluation of Factual ...",
+        "url": "https://aclanthology.org/2023.emnlp-main.741/"
+      },
+      "original_reference_ids": [
+        "turn20search3"
+      ],
+      "exported_footnotes": [
+        29
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 137,
+      "displayed_citation": 30,
+      "primary_source": {
+        "title": "On Calibration of Modern Neural Networks",
+        "url": "https://proceedings.mlr.press/v70/guo17a.html"
+      },
+      "original_reference_ids": [
+        "turn13search2"
+      ],
+      "exported_footnotes": [
+        30
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 138,
+      "displayed_citation": 31,
+      "primary_source": {
+        "title": "Selective Classification for Deep Neural Networks",
+        "url": "https://papers.neurips.cc/paper/7073-selective-classification-for-deep-neural-networks"
+      },
+      "original_reference_ids": [
+        "turn13search3"
+      ],
+      "exported_footnotes": [
+        31
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 139,
+      "displayed_citation": 33,
+      "primary_source": {
+        "title": "[2302.12173] Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+        "url": "https://arxiv.org/abs/2302.12173"
+      },
+      "original_reference_ids": [
+        "turn19view4"
+      ],
+      "exported_footnotes": [
+        33
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "occurrence": 140,
+      "displayed_citation": 34,
+      "primary_source": {
+        "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile | NIST",
+        "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+      },
+      "original_reference_ids": [
+        "turn19view5"
+      ],
+      "exported_footnotes": [
+        34
+      ],
+      "unresolved_source_ids": []
+    }
+  ],
+  "unresolved_sources": {
+    "46": {
+      "original_reference_id": "turn20search21",
+      "url": null
+    },
+    "47": {
+      "original_reference_id": "turn1search7",
+      "url": null
+    },
+    "48": {
+      "original_reference_id": "turn1search21",
+      "url": null
+    },
+    "49": {
+      "original_reference_id": "turn14search5",
+      "url": null
+    },
+    "50": {
+      "original_reference_id": "turn13search5",
+      "url": null
+    },
+    "51": {
+      "original_reference_id": "turn13search12",
+      "url": null
+    },
+    "52": {
+      "original_reference_id": "turn14search17",
+      "url": null
+    },
+    "53": {
+      "original_reference_id": "turn20search14",
+      "url": null
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/* Page shell and reading gutters; header, footer and article navigation are separate. */
+.site-frame {
+  inline-size: 100%;
+  max-inline-size: var(--site-layout-max-width);
+  margin-inline: auto;
+  transition: none;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+.site-main {
+  /* Pane padding supplies an inline gutter; exposed article edges supply it here. */
+  --site-content-gutter: calc(
+    var(--site-breadcrumb-inset) + var(--site-layout-gap) * (1 - var(--site-sidebar-inline))
+  );
+  --site-content-inset-end: calc(
+    var(--site-breadcrumb-outset-end, var(--site-breadcrumb-inset)) + var(--site-layout-gap) *
+      (1 - var(--site-outline-inline))
+  );
+  padding-inline: var(--site-content-gutter) var(--site-content-inset-end);
+  padding-block-start: var(--site-layout-gap);
+}
+
+.site-not-found {
+  margin: 5rem auto;
+  padding: var(--site-space-6);
+}

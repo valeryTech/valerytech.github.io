@@ -1,0 +1,46 @@
+{{- if hugo.IsProduction }}
+  {{- $pageKind := .Kind }}
+  {{- if .IsHome }}
+    {{- $pageKind = "home" }}
+  {{- else if eq .Kind "404" }}
+    {{- $pageKind = "404" }}
+  {{- end }}
+  {{- $pagePath := .RelPermalink }}
+  {{- if eq $pageKind "404" }}
+    {{- $pagePath = "/404.html" }}
+  {{- end }}
+  {{- $trimmedPath := strings.Trim "/" $pagePath }}
+  {{- $contentDepth := 0 }}
+  {{- if $trimmedPath }}
+    {{- $contentDepth = len (split $trimmedPath "/") }}
+  {{- end }}
+  {{- $publishedDate := "" }}
+  {{- if not .Date.IsZero }}
+    {{- $publishedDate = .Date.Format "2006-01-02" }}
+  {{- end }}
+  {{- $lastModifiedDate := "" }}
+  {{- if not .Lastmod.IsZero }}
+    {{- $lastModifiedDate = .Lastmod.Format "2006-01-02" }}
+  {{- end }}
+  {{- $tags := .Params.tags | default (slice) }}
+  {{- $context := dict
+    "schema_version" 1
+    "page_path" $pagePath
+    "page_title" .Title
+    "page_kind" $pageKind
+    "content_section" (.Section | default "home")
+    "content_type" (.Type | default $pageKind)
+    "content_depth" $contentDepth
+    "content_tags" $tags
+    "word_count" .WordCount
+    "reading_time_minutes" .ReadingTime
+    "published_date" $publishedDate
+    "last_modified_date" $lastModifiedDate
+    "site_release" (site.Params.analytics.release | default "unknown")
+  }}
+  {{- $eventBus := resources.Get "js/analytics/event-bus.mjs" | js.Build (dict "target" "es2015" "minify" true) }}
+<script>
+  window.__siteAnalyticsContext = {{ $context | jsonify | safeJS }};
+  {{ $eventBus.Content | safeJS }}
+</script>
+{{- end }}

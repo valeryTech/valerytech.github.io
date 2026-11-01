@@ -1,0 +1,48 @@
+{{- $pages := partial "sidebar/flatten-section-pages.html" . -}}
+{{- $currentIndex := -1 -}}
+{{- $currentPermalink := .RelPermalink -}}
+
+{{- range $index, $page := $pages -}}
+  {{- if eq $page.RelPermalink $currentPermalink -}}
+    {{- $currentIndex = $index -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $previous := false -}}
+{{- $next := false -}}
+
+{{- if ge $currentIndex 0 -}}
+  {{- if gt $currentIndex 0 -}}
+    {{- $previous = index $pages (sub $currentIndex 1) -}}
+  {{- end -}}
+  {{- if lt (add $currentIndex 1) (len $pages) -}}
+    {{- $next = index $pages (add $currentIndex 1) -}}
+  {{- end -}}
+{{- else -}}
+  {{- $fallbackPages := where site.RegularPages "Section" .Section -}}
+  {{- with $fallbackPages.Next . -}}
+    {{- $previous = . -}}
+  {{- end -}}
+  {{- with $fallbackPages.Prev . -}}
+    {{- $next = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if or $previous $next -}}
+<div class="site-page-nav-footer">
+<nav class="page-nav" aria-label="Previous and next notes">
+  {{ with $previous }}
+    <a class="page-nav-previous site-control" href="{{ .RelPermalink }}" title="{{ .Title }}" aria-label="Previous: {{ .Title }}" rel="prev">
+      {{ partial "components/control-icon.html" (dict "name" "chevron-left") }}
+      <span class="site-control-label page-nav-title">{{ .Title }}</span>
+    </a>
+  {{ end }}
+  {{ with $next }}
+    <a class="page-nav-next site-control" href="{{ .RelPermalink }}" title="{{ .Title }}" aria-label="Next: {{ .Title }}" rel="next">
+      {{ partial "components/control-icon.html" (dict "name" "chevron-right") }}
+      <span class="site-control-label page-nav-title">{{ .Title }}</span>
+    </a>
+  {{ end }}
+</nav>
+</div>
+{{- end -}}

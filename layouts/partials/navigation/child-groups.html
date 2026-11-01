@@ -1,0 +1,19 @@
+{{- /* Shared ordering for sidebar lists and breadcrumb branch selectors. */ -}}
+{{- $documents := slice -}}
+{{- $sections := slice -}}
+{{- $entryPage := .entryPage -}}
+{{- if and $entryPage $entryPage.IsPage -}}
+  {{- $documents = $documents | append $entryPage -}}
+{{- end -}}
+{{- range partial "sidebar/sort-nodes.html" .nodes -}}
+  {{- if or .Page.IsHome (and $entryPage (.Page.Eq $entryPage)) }}{{ continue }}{{ end -}}
+  {{- if .Page.IsSection -}}
+    {{- $sections = $sections | append . -}}
+  {{- else -}}
+    {{- $documents = $documents | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $groups := slice -}}
+{{- if $documents }}{{ $groups = $groups | append (dict "key" "documents" "nodes" $documents) }}{{ end -}}
+{{- if $sections }}{{ $groups = $groups | append (dict "key" "sections" "nodes" $sections) }}{{ end -}}
+{{- return $groups -}}

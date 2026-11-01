@@ -1,0 +1,3 @@
+{{- $labels := dict "canonical" "Canonical" "draft" "Draft" "archived" "Archived" -}}
+{{- $status := .Params.document_status | default "" | lower -}}
+{{- return (index $labels $status | default "") -}}

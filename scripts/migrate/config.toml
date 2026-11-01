@@ -1,0 +1,98 @@
+[defaults]
+include = ["**/*.md", "*.md"]
+exclude = [
+  "**/.obsidian/**",
+  "**/.DS_Store",
+  "**/templates/**",
+]
+synthesize_section_indexes = true
+attachment_mode = "referenced-only"
+
+[defaults.frontmatter]
+draft = false
+toc = true
+
+[[imports]]
+name = "system-design"
+source_root_kind = "external"
+source_subtree = "system-design"
+target_subtree = "system-design"
+include = ["**/*.md", "*.md"]
+
+[[imports]]
+name = "engineering"
+source_root_kind = "external"
+source_subtree = "topics/engineering"
+target_subtree = "engineering"
+include = ["**/*.md", "*.md"]
+
+[[imports]]
+name = "ai"
+source_root_kind = "external"
+source_subtree = "ai"
+target_subtree = "ai"
+section_title = "AI"
+root_index_source = "_index.md"
+selection_mode = "opt-in"
+selection_paths = [
+  "ai-system-design",
+  "approach",
+  "architecture-dsl-like",
+  "collab-and-joint-work",
+  "design",
+  "design-research",
+  "discovery",
+  "other/_index.md",
+  "other/methodology",
+  "other/methodology-v1.3",
+  "operating-model",
+  "risk-areas",
+  "system-evaluation",
+  "var",
+]
+include = ["**/*.md", "*.md"]
+exclude = [
+  "**/.obsidian/**",
+  "**/.DS_Store",
+  "**/templates/**",
+  "design-research/reassembly-map.md",
+  # Active research coordination files are not publication sources.
+  "ai-system-design/research-followups-2026-10-30/**",
+]
+
+# Preserve the practitioner's published URL after its source moved into 01-was/.
+[imports.rename_overrides]
+"var/01-was/practitioner_guide_seven_ai_product_types.md" = "var/practitioner-guide-seven-ai-product-types.md"
+
+[[imports]]
+name = "ai-engineering"
+source_root_kind = "external"
+source_subtree = "ai-engineering"
+target_subtree = "ai-engineering"
+selection_mode = "opt-in"
+selection_paths = ["coding-agents", "evaluation", "retrieval", "causal-stack", "working-assumptions.md", "approach"]
+include = ["**/*.md", "*.md"]
+root_index_source = "_index.md"
+
+[imports.sidebar_weights]
+"working-assumptions" = 1
+"evaluation" = 10
+"retrieval" = 20
+
+[[imports]]
+name = "projects"
+source_root_kind = "external"
+source_subtree = "projects"
+target_subtree = "projects"
+selection_mode = "opt-in"
+selection_paths = ["code-assistant.md"]
+include = ["**/*.md", "*.md"]
+root_index_source = "_index.md"
+
+[[imports]]
+name = "migration-smoke"
+source_root_kind = "repo"
+source_subtree = "tests/migrate/smoke_notes/system-design/integrated-test-pages"
+target_subtree = "system-design/integrated-test-pages"
+include = ["migration-smoke.md"]
+synthesize_section_indexes = false

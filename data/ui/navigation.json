@@ -1,0 +1,21 @@
+{
+  "resize": {
+    "cookie": {
+      "name": "navigation-widths",
+      "maxAgeSeconds": 31536000
+    },
+    "legacyStorageKey": "site-navigation-widths",
+    "keyboardStepPixels": 16
+  },
+  "swipe": {
+    "edgeWidthPixels": 32,
+    "minimumDistancePixels": 48,
+    "directionRatio": 1.5
+  },
+  "outline": {
+    "minimumReadingLinePixels": 120,
+    "readingViewportFraction": 0.35,
+    "bottomTolerancePixels": 2,
+    "targetTolerancePixels": 3
+  }
+}

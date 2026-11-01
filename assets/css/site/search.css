@@ -1,0 +1,95 @@
+.site-header-tools > .hextra-search-trigger {
+  justify-content: flex-start;
+  padding-inline-end: var(--site-control-padding-inline);
+  font-size: var(--site-navigation-text-size);
+  font-weight: var(--site-control-font-weight);
+  line-height: var(--site-line-ui);
+}
+
+.site-header-tools .hextra-search-trigger-icon {
+  opacity: 1;
+}
+
+.hextra-search-trigger .hextra-search-trigger-label {
+  display: block;
+  align-self: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hextra-search-trigger .hextra-search-trigger-kbd,
+.hextra-search-dialog .hextra-search-input-kbd {
+  flex-shrink: 0;
+  padding: calc(var(--site-space-1) / 2) var(--site-space-2);
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-context-surface);
+  color: var(--site-nav-context-foreground);
+  box-shadow: none;
+  font-size: var(--site-text-xs);
+  line-height: var(--site-line-ui);
+  white-space: nowrap;
+  transition: none;
+}
+
+.hextra-search-dialog .hextra-search-input-kbd:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline-offset: var(--site-focus-offset);
+  box-shadow: none;
+}
+
+dialog.hextra-search-dialog {
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-panel);
+  color: var(--site-foreground);
+  box-shadow: var(--site-floating-shadow);
+}
+
+dialog.hextra-search-dialog::backdrop {
+  background: var(--site-dialog-backdrop);
+}
+
+.hextra-search-dialog .hextra-search-input-wrapper {
+  border: 0;
+  background: var(--site-context-header);
+}
+
+.hextra-search-dialog .hextra-search-input-icon {
+  color: var(--site-nav-context-foreground);
+}
+
+.hextra-search-dialog .hextra-search-input {
+  color: var(--site-foreground);
+}
+
+.hextra-search-dialog .hextra-search-input::placeholder {
+  color: var(--site-nav-context-foreground);
+  opacity: 1;
+}
+
+.hextra-search-dialog .hextra-search-input-kbd:hover {
+  color: var(--site-link-color);
+}
+
+.hextra-search-dialog .hextra-search-results > li > a[role="option"] {
+  border-radius: var(--site-radius);
+  background: transparent;
+}
+
+.hextra-search-dialog .hextra-search-results > li > a[aria-selected="true"] {
+  background: var(--site-card-surface);
+}
+
+.hextra-search-dialog .hextra-search-results > li > a:hover {
+  background: var(--site-card-hover);
+}
+
+.hextra-search-dialog .hextra-search-results > li.hextra-search-child::before {
+  background: var(--site-border);
+}
+
+.hextra-search-dialog .hextra-search-empty {
+  color: var(--site-muted);
+}

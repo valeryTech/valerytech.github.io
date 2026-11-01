@@ -1,0 +1,186 @@
+.site-outline-trigger {
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: var(--site-context-header);
+  color: var(--site-nav-context-foreground);
+  cursor: pointer;
+}
+
+.site-outline-trigger:hover {
+  background: var(--site-card-hover);
+  color: var(--site-link-color);
+}
+
+.site-navigation-open {
+  overflow: hidden;
+}
+
+dialog.site-navigation-drawer {
+  --site-pane-gutter: var(--site-layout-gap);
+  --site-context-inline-inset: var(--site-layout-gap);
+  --site-context-header-height: var(--site-control-height);
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--site-navigation-overlay-width);
+  max-width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-page-background);
+  color: var(--site-foreground);
+  box-shadow: var(--site-floating-shadow);
+  overflow: hidden;
+}
+
+dialog.site-navigation-drawer[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-navigation-drawer::backdrop {
+  background: var(--site-dialog-backdrop);
+}
+
+.site-navigation-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: var(--site-space-3);
+  min-height: var(--hextra-navbar-height);
+  padding: var(--site-space-2) var(--site-space-4);
+  background: var(--site-context-header);
+  color: var(--site-nav-context-foreground);
+}
+
+.site-navigation-panel-header h2 {
+  margin: 0;
+  font-size: var(--site-navigation-text-size);
+  font-weight: 600;
+}
+
+.site-navigation-panel-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--site-header-button-width);
+  height: var(--site-control-height);
+  padding: 0;
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-context-surface);
+  color: inherit;
+  cursor: pointer;
+}
+
+.site-outline-trigger:focus-visible,
+.site-navigation-panel-close:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-link-color);
+  outline-offset: calc(-1 * var(--site-focus-width));
+  box-shadow: none;
+}
+
+.site-navigation-drawer-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.site-navigation-drawer #site-navigation {
+  display: flex;
+  position: static;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: 100%;
+  padding-top: 0;
+  transform: none;
+  contain: none;
+  transition: none;
+  will-change: auto;
+}
+
+.site-navigation-drawer .site-sidebar-scroll {
+  height: auto;
+  min-height: 0;
+}
+
+.site-navigation-drawer .mobile-site-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-navigation-drawer .site-pane-resizer {
+  display: none;
+}
+
+.site-navigation-drawer .site-sidebar-toggle {
+  display: none;
+}
+
+.site-outline-popover {
+  display: none;
+  position: fixed;
+  inset: calc(var(--hextra-navbar-height) + var(--site-layout-gap)) var(--site-layout-gap) auto auto;
+  width: var(--site-navigation-overlay-width);
+  max-width: calc(100% - 2 * var(--site-layout-gap));
+  max-height: calc(100dvh - var(--hextra-navbar-height) - 2 * var(--site-layout-gap));
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: var(--site-radius);
+  background: var(--site-panel);
+  color: var(--site-foreground);
+  box-shadow: var(--site-floating-shadow);
+  overflow: hidden;
+}
+
+.site-outline-popover:popover-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-outline-popover .site-toc-scroll {
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+  padding: var(--site-space-4);
+  padding-block-start: var(--site-layout-gap);
+  scroll-padding-block-start: var(--site-layout-gap);
+}
+
+.site-outline-popover .site-navigation-panel-header {
+  position: relative;
+}
+
+.site-outline-popover .site-navigation-panel-header::after {
+  background-color: var(--site-panel);
+}
+
+.site-outline-popover .site-toc-controls {
+  padding-inline: var(--site-layout-gap);
+}
+
+.site-outline-popover,
+.site-outline-popover * {
+  transition: none;
+}
+
+@media (width < 48rem) {
+  dialog.site-navigation-drawer {
+    width: 100%;
+  }
+}
+
+@media print {
+  .site-navigation-drawer,
+  .site-outline-popover,
+  .site-outline-trigger {
+    display: none;
+  }
+}

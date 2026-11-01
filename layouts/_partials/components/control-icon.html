@@ -1,0 +1,28 @@
+{{- /* Shared frames keep spacing consistent while artwork keeps its proportions. */ -}}
+{{- $name := .name -}}
+<span class="site-surface-leading{{ with .class }} {{ . }}{{ end }}"{{ with .attributes }} {{ . | safeHTMLAttr }}{{ end }} aria-hidden="true">
+  {{- if in (slice "chevron-left" "chevron-right" "chevron-up") $name -}}
+    {{ partial "components/chevron-icon.html" . }}
+  {{- else -}}
+  <svg class="site-control-icon{{ with .svgClass }} {{ . }}{{ end }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+    {{- if eq $name "home" -}}
+      <path d="M2.75 9.25 10 2.75l7.25 6.5v8h-5v-5.5h-4.5v5.5h-5z"/>
+    {{- else if eq $name "search" -}}
+      <circle cx="8.5" cy="8.5" r="5.75"/><path d="m12.75 12.75 4.5 4.5"/>
+    {{- else if eq $name "sun" -}}
+      <circle cx="10" cy="10" r="3.5"/><path d="M10 2.75v1.5m0 11.5v1.5m-7.25-7.25h1.5m11.5 0h1.5M4.87 4.87l1.06 1.06m8.14 8.14 1.06 1.06m-10.26 0 1.06-1.06m8.14-8.14 1.06-1.06"/>
+    {{- else if eq $name "moon" -}}
+      <path d="M17.25 11.2A7.4 7.4 0 0 1 8.8 2.75a7.3 7.3 0 1 0 8.45 8.45Z"/>
+    {{- else if eq $name "contrast" -}}
+      <circle cx="10" cy="10" r="7.25"/><path d="M10 2.75a7.25 7.25 0 0 0 0 14.5Z" fill="currentColor" stroke="none"/>
+    {{- else if eq $name "check" -}}
+      <path d="m2.75 10 4.75 7.25 9.75-14.5"/>
+    {{- else if eq $name "settings" -}}
+      {{- /* Normalize the existing Material gear's artwork bounds. */ -}}
+      <path fill="currentColor" stroke="none" transform="matrix(.84778 0 0 .83198 -.172 .337)" d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54A.488.488 0 0 0 14 2h-4c-.25 0-.45.18-.49.42l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.63 8.48c-.12.21-.08.47.12.61l2.03 1.58c-.05.31-.08.63-.08.95s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.25.42.5.42h4c.25 0 .46-.18.49-.42l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.02-1.58ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/>
+    {{- else -}}
+      {{- errorf "Unknown control icon %q" $name -}}
+    {{- end -}}
+  </svg>
+  {{- end -}}
+</span>

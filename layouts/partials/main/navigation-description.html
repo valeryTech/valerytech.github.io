@@ -1,0 +1,6 @@
+{{- $description := .Description -}}
+{{- if or (not $description) (eq $description "Default Description") -}}
+  {{- $description = .Summary -}}
+{{- end -}}
+{{- $description = $description | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- return ($description | truncate 240) -}}

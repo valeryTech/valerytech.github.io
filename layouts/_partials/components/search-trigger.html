@@ -1,0 +1,15 @@
+{{- /* Search uses the same leading/content/action slots as context surfaces. */ -}}
+{{- $placeholder := (T "searchPlaceholder") | default "Search..." -}}
+{{- $icon := .icon | default "" -}}
+{{- if $icon -}}
+  <button type="button" class="site-surface-row hx:text-current hx:cursor-pointer hx:hextra-focus-visible" data-search-open aria-haspopup="dialog" aria-controls="hextra-search-dialog" aria-label="{{ $placeholder }}" title="{{ $placeholder }}">
+    <span class="site-surface-leading">{{ partial "utils/icon.html" (dict "name" $icon "attributes" `focusable="false"`) }}</span>
+    <span class="hx:sr-only">{{ $placeholder }}</span>
+  </button>
+{{- else -}}
+  <button type="button" class="hextra-search-trigger site-surface-row" data-search-open aria-haspopup="dialog" aria-controls="hextra-search-dialog" aria-label="{{ $placeholder }}">
+    {{ partial "components/control-icon.html" (dict "name" "search" "svgClass" "hextra-search-trigger-icon") }}
+    <span class="hextra-search-trigger-label site-surface-content site-control-label">{{ $placeholder }}</span>
+    <kbd class="hextra-search-trigger-kbd site-surface-actions">CTRL K</kbd>
+  </button>
+{{- end -}}

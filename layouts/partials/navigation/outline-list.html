@@ -1,0 +1,9 @@
+<ul>
+  {{- range . -}}
+    <li><a href="#{{ .Get "id" | safeURL }}">{{ .Get "title" }}</a>
+      {{- with .Get "children" -}}
+        {{- partial "navigation/outline-list.html" . -}}
+      {{- end -}}
+    </li>
+  {{- end -}}
+</ul>

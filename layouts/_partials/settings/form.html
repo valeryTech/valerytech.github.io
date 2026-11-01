@@ -1,0 +1,26 @@
+{{- $settings := hugo.Data.ui.settings -}}
+{{- $prefix := .prefix -}}
+<form id="{{ .id }}" class="site-settings not-prose" aria-label="{{ $settings.title }}" data-site-settings>
+  <fieldset class="site-settings-controls" data-settings-controls disabled>
+    <legend class="hx:sr-only">Reading and navigation preferences</legend>
+    {{ range $settings.sections }}
+      {{ $groupHelp := "" }}
+      {{ if .help }}{{ $groupHelp = printf "%s-%s-help" $prefix .id }}{{ end }}
+      <fieldset class="site-settings-group">
+        <legend>{{ .title }}</legend>
+        <div class="site-settings-fields{{ if eq .layout "columns" }} site-settings-grid{{ end }}">
+          {{ range .fields }}{{ partial "settings/field.html" (dict "field" . "prefix" $prefix "groupHelp" $groupHelp) }}{{ end }}
+        </div>
+        {{ with .help }}<p id="{{ $groupHelp }}" class="site-settings-help">{{ . }}</p>{{ end }}
+        {{ if .preview }}
+          <div class="site-settings-preview" role="region" aria-label="Reading preview">
+            <h3 class="site-settings-preview-heading">{{ $settings.previewHeading }}</h3>
+            <p>{{ $settings.previewText }}</p>
+          </div>
+        {{ end }}
+      </fieldset>
+    {{ end }}
+    <button type="button" class="site-settings-reset" data-settings-reset>{{ $settings.resetLabel }}</button>
+  </fieldset>
+  <p class="site-settings-status" role="status" aria-label="Settings status">{{ $settings.messages.requiresJavaScript }}</p>
+</form>

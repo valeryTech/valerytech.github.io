@@ -1,0 +1,148 @@
+/* Header controls and visibility; responsive column fitting lives in layout.css. */
+.hextra-nav-container {
+  background: var(--site-page-background);
+}
+
+@media (width < 48rem) {
+  .hextra-nav-container::after {
+    /* Keep scrolling text a full layout gap away from the toolbar controls. */
+    content: "";
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    block-size: var(--site-layout-gap);
+    background: var(--site-page-background);
+    pointer-events: none;
+  }
+}
+
+:root[data-header-visible="false"] {
+  --hextra-navbar-height: 0px;
+}
+
+:root[data-header-visible="false"] .hextra-nav-container {
+  display: none;
+}
+
+.site-header-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  inline-size: var(--site-space-8);
+  block-size: var(--site-space-8);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--site-context-surface);
+  color: var(--site-control-foreground);
+  cursor: pointer;
+}
+
+.site-header-toggle:hover {
+  background: var(--site-card-hover);
+}
+
+.site-header-toggle:focus-visible {
+  outline: var(--site-focus-width) solid var(--site-accent);
+  outline-offset: var(--site-focus-offset);
+}
+
+.site-header-toggle[aria-expanded="false"] svg {
+  transform: rotate(180deg);
+}
+
+.site-toc-title:has(> .site-header-toggle) {
+  grid-template-columns: var(--site-surface-leading-size) minmax(0, 1fr) auto;
+}
+
+.site-toc-title > .site-header-toggle {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.site-header-toggle-fallback {
+  position: fixed;
+  inset-inline-end: max(var(--site-layout-gap), env(safe-area-inset-right));
+  inset-block-end: max(var(--site-layout-gap), env(safe-area-inset-bottom));
+  z-index: var(--site-layer-breadcrumb);
+}
+
+.site-header-toggle-fallback > .site-header-toggle {
+  inline-size: var(--site-control-height);
+  block-size: var(--site-control-height);
+  background: var(--site-control-background);
+  box-shadow: var(--site-floating-shadow);
+}
+
+@media (width < 48rem) {
+  :root:not([data-header-visible="false"]) .site-header-toggle-fallback {
+    /* Settings owns hiding the bar; only its restore action needs to float. */
+    display: none;
+  }
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: var(--site-layout-gap);
+  height: var(--hextra-navbar-height);
+  /* Center the first row in the full space above the context surfaces. */
+  padding-block-start: var(--site-layout-gap);
+  padding-inline: var(--site-layout-gap);
+}
+
+.site-header-brand {
+  flex-shrink: 0;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.site-header-brand > a {
+  margin: 0;
+}
+
+.site-header-brand span {
+  margin-inline: 0;
+}
+
+.site-header-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--site-layout-gap);
+  flex-shrink: 0;
+  margin-inline-start: auto;
+}
+
+.site-header-tools > button {
+  flex-shrink: 0;
+  width: var(--site-header-button-width);
+  height: var(--site-control-height);
+  min-height: var(--site-control-height);
+  justify-content: center;
+  padding: var(--site-control-padding-block) var(--site-surface-inset);
+  border-radius: var(--site-radius);
+}
+
+.site-header-tools > .hextra-hamburger-menu {
+  align-items: center;
+}
+
+.site-header-preferences {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: inherit;
+}
+
+.site-header-preferences > .site-theme-control {
+  flex-shrink: 0;
+  inline-size: var(--site-header-icon-button-size);
+}
+
+.site-header-preferences .site-header-icon-button {
+  flex-shrink: 0;
+  inline-size: var(--site-header-icon-button-size);
+  justify-content: center;
+  padding: 0;
+}

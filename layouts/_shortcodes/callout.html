@@ -1,0 +1,16 @@
+{{- /* Keep the importer's callout contract, rendered with Hextra components. */ -}}
+{{- $context := .Get "context" | default (.Get "type") | default "note" -}}
+{{- $config := hugo.Data.callouts -}}
+{{- $kind := index $config.aliases $context | default $context -}}
+{{- $style := index $config.types $kind | default $config.fallback -}}
+{{- $icon := .Get "icon" | default "" -}}
+{{- $icon = index $config.legacyIcons $icon | default $icon -}}
+{{- if not (index hugo.Data.icons $icon) -}}
+  {{- $icon = $style.icon -}}
+{{- end -}}
+{{- $class := $style.class -}}
+{{- $content := .Page.RenderString .InnerDeindent -}}
+{{- with .Get "title" -}}
+  {{- $content = printf "<p class=\"site-callout-title\"><strong>%s</strong></p>\n%s" (htmlEscape .) $content | safeHTML -}}
+{{- end -}}
+{{- partial "shortcodes/callout.html" (dict "content" $content "icon" $icon "class" (printf "site-callout %s" $class)) -}}

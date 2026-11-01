@@ -1,0 +1,8 @@
+{{- $outline := eq .pane "outline" -}}
+{{- $name := cond $outline "outline" "sidebar" -}}
+{{- $controls := cond $outline "page-outline" "site-navigation" -}}
+{{- $label := cond $outline "Hide page outline" "Hide left navigation" -}}
+<button type="button" class="site-pane-toggle site-surface-actions site-{{ $name }}-toggle" {{ if $outline }}data-outline-toggle{{ else }}data-sidebar-toggle{{ end }} data-settings-focus-fallback aria-controls="{{ $controls }}" aria-expanded="true" aria-label="{{ $label }}" title="{{ $label }}" hidden>
+  {{ partial "components/control-icon.html" (dict "name" (cond $outline "chevron-right" "chevron-left") "attributes" `data-pane-icon="hide"`) }}
+  {{ partial "components/control-icon.html" (dict "name" (cond $outline "chevron-left" "chevron-right") "attributes" `data-pane-icon="show"`) }}
+</button>

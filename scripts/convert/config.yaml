@@ -1,0 +1,13 @@
+params:
+  # source_dir: "/home/val/Documents/notes_test"
+  source_dir: "/home/val/Documents/notes"
+  end_dir: "/home/val/projects/valerytech.github.io/content"
+  middle_dir: "/home/val/Documents/buffer_temp"
+  directories:
+    - "system-design"
+    - "projects"
+    - "engineering"
+  other_dirs:
+    - "topics"
+    - "english"
+  main_file: "var/_index.md"

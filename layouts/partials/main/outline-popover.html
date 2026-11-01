@@ -1,0 +1,14 @@
+{{- if partial "navigation/has-outline.html" . -}}
+<section id="site-outline-popover" class="site-outline-popover" popover="auto" role="dialog" aria-labelledby="site-outline-popover-title">
+  <header class="site-navigation-panel-header">
+    <h2 id="site-outline-popover-title">On this page</h2>
+    <button type="button" class="site-navigation-panel-close" popovertarget="site-outline-popover" popovertargetaction="hide" aria-label="Close page outline" autofocus>
+      {{ partial "utils/icon.html" (dict "name" "x" "attributes" "height=20") }}
+    </button>
+  </header>
+  <nav class="site-page-outline site-toc-scroll" aria-label="Page headings">
+    {{ replace (partialCached "navigation/page-outline.html" . .RelPermalink) `id="TableOfContents"` `id="mobileTableOfContents"` | safeHTML }}
+  </nav>
+  {{ partial "navigation/back-to-top.html" (dict "id" "outlineBackToTop") }}
+</section>
+{{- end -}}

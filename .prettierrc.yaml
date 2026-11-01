@@ -1,0 +1,42 @@
+# Default config
+tabWidth: 4
+endOfLine: crlf
+singleQuote: true
+printWidth: 100000
+trailingComma: none
+bracketSameLine: true
+quoteProps: consistent
+experimentalTernaries: true
+
+# Overrided config
+overrides:
+  - files: ["*.md", "*.json", "*.yaml"]
+    options:
+      tabWidth: 2
+      singleQuote: false
+  - files: ["*.scss"]
+    options:
+      singleQuote: false
+  - files: ["assets/css/site/**/*.css"]
+    options:
+      tabWidth: 2
+      endOfLine: lf
+      printWidth: 100
+      singleQuote: false
+  - files:
+      - "assets/js/custom.js"
+      - "assets/js/navigation/*.mjs"
+      - "assets/js/settings/*.mjs"
+      - "assets/js/preferences/*.{js,mjs}"
+      - "assets/js/analytics/{emit,engagement,interactions}.mjs"
+      - "scripts/*ui-config.mjs"
+      - "scripts/ui-config/*.mjs"
+      - "tests/{config,preferences}/*.mjs"
+      - "tests/analytics/engagement.test.mjs"
+      - "data/{ui/*.json,callouts.json,analytics.json}"
+    options:
+      tabWidth: 2
+      endOfLine: lf
+      printWidth: 100
+      singleQuote: false
+      trailingComma: all

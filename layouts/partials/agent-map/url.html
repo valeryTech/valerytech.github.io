@@ -1,0 +1,5 @@
+{{- $route := "agent-map/" -}}
+{{- if and (not .IsHome) (.OutputFormats.Get "agentText") -}}
+  {{- $route = printf "agent-map/%s/" .Section -}}
+{{- end -}}
+{{- return ($route | relURL) -}}

@@ -1,0 +1,66 @@
+description = "Working notes on software, AI systems, cognition, and human-agent systems."
+images = ["cover.png"]
+mainSections = ["projects", "system-design", "engineering", "ai-engineering", "ai"]
+
+[sectionIndexes]
+"/ai/design-research/" = "/ai/design-research/00-index"
+
+[navbar]
+displayTitle = false
+displayLogo = true
+
+[page]
+width = "normal"
+
+[theme]
+default = "system"
+displayToggle = true
+
+[search]
+enable = true
+type = "flexsearch"
+[search.flexsearch]
+index = "content"
+tokenize = "forward"
+js = "vendor/flexsearch.js"
+
+[math]
+engine = "katex"
+[math.katex]
+base = "/vendor/katex"
+
+[footer]
+enable = true
+displayCopyright = false
+displayPoweredBy = false
+
+[analytics]
+  posthogtoken = ""
+  posthoghost = "https://us.i.posthog.com"
+  clarityid = ""
+  release = "unknown"
+  sourcemaps = false
+
+
+# Site metadata and editorial description policy
+[seo]
+  [seo.description]
+    exemptKinds = ["404", "taxonomy", "term"]
+    exemptTypes = ["legal"]
+  [seo.description.length]
+    min = 110
+    max = 250
+    errorLevel = "warning" # make lint treats scoped editorial warnings as errors
+  [seo.title]
+    separator = " | "
+    suffix = ""
+  [seo.schemas]
+    type = "Person" # Organization (default) or Person
+    logo = "icon-512.png"
+    name = "Valery Yuda" # Name of Organization or Person
+    sameAs = ["https://github.com/valery-judah"]
+    images = ["cover.png"] # ["cover.png"] (default)
+    article = [] # Article sections
+    newsArticle = [] # NewsArticle sections
+    blogPosting = ["blog"] # BlogPosting sections
+    product = [] # Product sections

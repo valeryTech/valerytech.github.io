@@ -1,0 +1,14 @@
+.hextra-theme-toggle {
+  min-inline-size: 0;
+  inline-size: 100%;
+}
+
+.hextra-theme-toggle [data-theme-choice] {
+  display: none;
+}
+
+.site-theme-control[data-theme="light"] > .hextra-theme-toggle [data-theme-choice="light"],
+.site-theme-control[data-theme="dark"] > .hextra-theme-toggle [data-theme-choice="dark"],
+.site-theme-control[data-theme="system"] > .hextra-theme-toggle [data-theme-choice="system"] {
+  display: inline-flex;
+}

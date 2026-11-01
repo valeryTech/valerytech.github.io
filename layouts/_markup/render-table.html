@@ -1,0 +1,38 @@
+{{- /* Keep native table semantics inside a keyboard-scrollable filled surface. */ -}}
+{{- $hasHeader := false -}}
+{{- range .THead -}}
+  {{- range . -}}
+    {{- if .Text | strings.TrimSpace -}}
+      {{- $hasHeader = true -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<div class="site-table-scroll hextra-scrollbar" role="region" aria-label="Table {{ add .Ordinal 1 }}" tabindex="0">
+  <table
+    {{- range $key, $value := .Attributes -}}
+      {{- if $value -}}
+        {{- printf " %s=%q" $key $value | safeHTMLAttr -}}
+      {{- end -}}
+    {{- end -}}>
+    {{- if $hasHeader }}
+    <thead>
+      {{- range .THead }}
+      <tr>
+        {{- range . }}
+        <th scope="col"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </thead>
+    {{- end }}
+    <tbody>
+      {{- range .TBody }}
+      <tr>
+        {{- range . }}
+        <td{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>

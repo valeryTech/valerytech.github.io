@@ -1,0 +1,28 @@
+{{- $currentPage := .currentPage -}}
+{{- $node := .node -}}
+{{- $depth := .depth -}}
+{{- $page := $node.Page -}}
+{{- $label := $page.LinkTitle | default $node.Name -}}
+{{- $isCurrent := $currentPage.Eq $page -}}
+{{- $isAncestor := and (not $isCurrent) (in $currentPage.Ancestors $page) -}}
+{{- $hasChildren := gt (len $page.Pages) 0 -}}
+{{- $defaultOpen := false -}}
+{{- with $page.Params.sidebar -}}
+  {{- if isset . "collapsed" }}{{ $defaultOpen = not .collapsed }}{{ end -}}
+{{- end -}}
+{{- $isOpen := or $defaultOpen $isCurrent $isAncestor -}}
+{{- if eq $depth 1 -}}
+  {{- $isOpen = eq $page.RelPermalink .initialBranch -}}
+{{- end -}}
+<li class="sidebar-item depth-{{ $depth }}{{ if $hasChildren }} sidebar-group{{ else }} sidebar-leaf{{ end }}{{ if $isCurrent }} active{{ end }}{{ if $isAncestor }} active-ancestor{{ end }}">
+  {{- if $hasChildren -}}
+    <div class="site-sidebar-section-row">
+      <a{{ if $isCurrent }} class="hextra-sidebar-active-item" aria-current="page"{{ end }} href="{{ $page.RelPermalink }}">{{ $label }}</a>
+    </div>
+    <ul class="list-nested"{{ if not $isOpen }} hidden{{ end }}>
+      {{ partial "sidebar/section-items.html" (dict "nodes" $page.Pages "entryPage" (partial "main/section-entry-page.html" $page) "currentPage" $currentPage "depth" (add $depth 1)) }}
+    </ul>
+  {{- else -}}
+    <a{{ if $isCurrent }} class="hextra-sidebar-active-item{{ if $page.IsPage }} site-sidebar-current-document{{ end }}" aria-current="page"{{ end }} href="{{ $page.RelPermalink }}">{{ $label }}</a>
+  {{- end -}}
+</li>

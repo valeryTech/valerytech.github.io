@@ -1,0 +1,13 @@
+{
+  "cornerRadiusPixels": 12,
+  "contextHeaderMinHeightPixels": 48,
+  "layoutGapPixels": 8,
+  "articleTopGapPixels": 24,
+  "layout": {
+    "standardWidthRem": 80,
+    "wideWidthRem": 90,
+    "readingWidthCh": 70,
+    "sidebarWidthPercent": 20,
+    "outlineWidthPercent": 25
+  }
+}

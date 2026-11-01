@@ -1,0 +1,13 @@
+<!-- Insert scripts NOT needed by stylesheets here -->
+{{- $agentMap := partial "agent-map/url.html" site.Home }}
+{{- if eq .Section "agent-map" }}
+  {{- $agentMap = .RelPermalink }}
+{{- else }}
+  {{- with .FirstSection }}
+    {{- $agentMap = partial "agent-map/url.html" . }}
+  {{- end }}
+{{- end }}
+<link rel="sitemap" type="text/html" title="Website map for agents" href="{{ $agentMap | absURL }}">
+{{ partialCached "head/preferences.html" . }}
+{{ partial "head/analytics-context.html" . }}
+{{ partial "head/analytics.html" . }}

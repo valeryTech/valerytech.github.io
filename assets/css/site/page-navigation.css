@@ -1,0 +1,81 @@
+/* Article-end navigation and reading fade share the pane footer geometry. */
+.site-main:has(> .site-page-nav-footer) {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main:has(> .site-page-nav-footer, > .site-breadcrumb-sticky)
+  > .content
+  .article-content
+  > :first-child {
+  /* The configured gap owns title spacing on documents and section overviews. */
+  margin-block-start: 0;
+}
+
+.site-main:has(> .site-page-nav-footer) > [data-reading-end] {
+  /* Keep the reading-end marker at the text while reserving the minimum gap. */
+  min-block-size: var(--site-space-12);
+}
+
+.site-page-nav-footer {
+  margin-block-start: auto;
+  margin-inline: calc(-1 * var(--site-content-gutter)) calc(-1 * var(--site-content-inset-end));
+  padding-block: var(--site-layout-gap);
+  padding-inline: var(--site-content-gutter) var(--site-content-inset-end);
+  background: var(--site-page-background);
+}
+
+.site-reading-fade {
+  display: none;
+}
+
+@media screen and (min-width: 48rem) and (height > 31.25rem) {
+  .site-reading-fade:not([hidden]) {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    z-index: var(--site-layer-breadcrumb);
+    height: var(--site-pane-controls-height);
+    margin-block-start: calc(-1 * var(--site-pane-controls-height));
+    margin-inline: calc(-1 * var(--site-content-gutter)) calc(-1 * var(--site-content-inset-end));
+    background: var(--site-reading-fade-background);
+    pointer-events: none;
+  }
+
+  html:has(.site-reading-fade:not([hidden])) {
+    scroll-padding-block-end: var(--site-pane-controls-height);
+  }
+}
+
+.page-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--site-layout-gap);
+  margin-inline: calc(-1 * var(--site-breadcrumb-inset))
+    calc(-1 * var(--site-breadcrumb-outset-end, var(--site-breadcrumb-inset)));
+}
+
+:is(.page-nav, .site-toc-controls),
+:is(.page-nav, .site-toc-controls) * {
+  /* Keep shared spacing and colors in sync across nested controls. */
+  transition: none;
+}
+
+.site-article-column:has(.page-nav) {
+  padding-block-end: 0;
+  min-block-size: var(--site-pane-viewport-height);
+}
+
+.page-nav-next {
+  grid-column: 2;
+}
+
+@media (width < 40rem) {
+  .page-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-nav-next {
+    grid-column: auto;
+  }
+}

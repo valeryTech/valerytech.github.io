@@ -1,0 +1,17 @@
+{{- $groups := partial "navigation/child-groups.html" (dict "nodes" .nodes "entryPage" .entryPage) -}}
+{{- $labeled := and .groupLabels (gt (len $groups) 1) -}}
+{{- $currentPage := .currentPage -}}
+{{- $depth := .depth -}}
+{{- $initialBranch := .initialBranch -}}
+{{- range $groups -}}
+  {{- $label := cond (eq .key "sections") "Topics" "Documents" -}}
+  {{- if $labeled -}}
+    <li class="site-sidebar-list-group">
+      <p class="site-sidebar-group-label" id="sidebar-{{ .key }}-label">{{ $label }}</p>
+      <ul aria-labelledby="sidebar-{{ .key }}-label">
+  {{- end -}}
+  {{- range .nodes -}}
+    {{ partial "sidebar/section-node.html" (dict "node" . "currentPage" $currentPage "depth" $depth "initialBranch" $initialBranch) }}
+  {{- end -}}
+  {{- if $labeled }}</ul></li>{{ end -}}
+{{- end -}}

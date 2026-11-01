@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-01",
+  "title": "Co-writer sketches reassembly",
+  "description": "Move the original workflow and complete examples into a writing case, and the complete meaning and collaboration passage into an existing augmentation note. Retain source wording and original line endings.",
+  "coordinates": {
+    "lineRanges": "Inclusive, one-based logical lines, with LF terminators retained.",
+    "byteRanges": "Inclusive, one-based UTF-8 byte offsets."
+  },
+  "originals": [
+    {
+      "path": "archived source 010",
+      "finalLf": false
+    },
+    {
+      "path": "archived source 032",
+      "finalLf": true
+    }
+  ],
+  "mapping": [
+    {
+      "source": "archived source 010",
+      "sourceLines": [
+        1,
+        11
+      ],
+      "sourceBytes": [
+        1,
+        753
+      ],
+      "finalLf": true,
+      "destination": "interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "destinationLines": [
+        12,
+        22
+      ],
+      "destinationBytes": [
+        1124,
+        1876
+      ]
+    },
+    {
+      "source": "archived source 010",
+      "sourceLines": [
+        12,
+        32
+      ],
+      "sourceBytes": [
+        754,
+        1608
+      ],
+      "finalLf": false,
+      "destination": "02-human-ai-collaboration/01-augmenting-human-work.md",
+      "destinationLines": [
+        471,
+        491
+      ],
+      "destinationBytes": [
+        21500,
+        22354
+      ]
+    },
+    {
+      "source": "archived source 032",
+      "sourceLines": [
+        1,
+        7
+      ],
+      "sourceBytes": [
+        1,
+        512
+      ],
+      "finalLf": true,
+      "destination": "interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "destinationLines": [
+        28,
+        34
+      ],
+      "destinationBytes": [
+        2111,
+        2622
+      ]
+    }
+  ],
+  "reconstruction": {
+    "method": "For each original source, read the recorded destination byte intervals and concatenate them in ascending source-line order.",
+    "results": [
+      {
+        "source": "archived source 010",
+        "exact": true
+      },
+      {
+        "source": "archived source 032",
+        "exact": true
+      }
+    ],
+    "totalOriginalBytes": 2120,
+    "totalOriginalLines": 39,
+    "originalBytesOmitted": 0,
+    "originalBytesDuplicated": 0
+  },
+  "existingPrefixes": [
+    {
+      "path": "02-human-ai-collaboration/01-augmenting-human-work.md",
+      "bytes": 20608,
+      "lines": 462,
+      "sha256": "b4524afa33b539da47f24ca225b14fce3c8f7519f98109fdc2a6fd72a0ad66d2",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "02-human-ai-collaboration/01-augmenting-human-work-comments.md",
+      "bytes": 2456,
+      "lines": 29,
+      "sha256": "07b6f6ee11f8fb4899ded79b561e991ded93232a9efac2a9b78a487ad8cf1ab6",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "interactive-systems/reassembly-map.md",
+      "bytes": 57142,
+      "lines": 563,
+      "sha256": "e91d2344a213f5f4d7ac83134181d11c2cce7e6dc41e180a79c243ebf95372e3",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "reassembly-map.md",
+      "bytes": 483218,
+      "lines": 3463,
+      "sha256": "21e463c3035559976f33c35a265213698c1aa65e504b9a2407b36cb0cd837ef4",
+      "mode": "644",
+      "finalLf": true
+    }
+  ],
+  "newNavigation": [
+    {
+      "path": "interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "byteRanges": [
+        [
+          1,
+          1123
+        ],
+        [
+          1877,
+          2110
+        ]
+      ],
+      "lineRanges": [
+        [
+          1,
+          11
+        ],
+        [
+          23,
+          27
+        ]
+      ],
+      "description": "New navigation separates the workflow from the retained examples."
+    },
+    {
+      "path": "02-human-ai-collaboration/01-augmenting-human-work.md",
+      "byteRanges": [
+        [
+          20609,
+          21499
+        ]
+      ],
+      "lineRanges": [
+        [
+          463,
+          470
+        ]
+      ],
+      "description": "New section heading and navigation follow the unchanged original note."
+    }
+  ],
+  "comments": {
+    "case": "interactive-systems/14-collaborative-writing-and-text-assembly-comments.md",
+    "augmentation": "02-human-ai-collaboration/01-augmenting-human-work-comments.md",
+    "augmentationAnchor": "co-writer-meaning-and-collaboration",
+    "originalTextRewritten": false
+  },
+  "sourceOverviews": [
+    "archived source 010",
+    "archived source 032"
+  ],
+  "indexes": [
+    "interactive-systems/00-index.md",
+    "00-index.md"
+  ],
+  "audit": {
+    "markdown": "interactive-systems/reassembly-map.md",
+    "anchor": "stage-10-co-writer-sketches",
+    "crossReference": "reassembly-map.md",
+    "crossReferenceAnchor": "co-writer-sketches"
+  },
+  "moves": [
+    {
+      "source": "archived source 010",
+      "destination": "02-human-ai-collaboration/01-augmenting-human-work.md",
+      "atEnd": true,
+      "dryRunExit": 0,
+      "applyExit": 0,
+      "before": {
+        "source": "273ec00d504d7b7f058fe4d15fdef7cdc32e62d74e6bf0a1a6d8d71f330e7530",
+        "destination": "8807de6efea1afd4e6022782806a1d1278e0b58885c8cba6a696ca6e174904d7",
+        "sourceMode": 436,
+        "destinationMode": 420
+      },
+      "expected": {
+        "source": "8904af00436c15bc81e03e31190f59fee50ad663dbc610ce79caba8406b5fbfa",
+        "sourceBytes": 753,
+        "destination": "7946cec4006fa25ae5ca9740ada1b5f158a87bb5b25e3be8545837e727b066fe",
+        "destinationBytes": 22354,
+        "movedSha256": "76f2695bfeb790a5dcfb5e6c6703a252f1fa1e664a01a63eaf34cec777e07859",
+        "movedBytes": 855
+      },
+      "script": "archived source 033",
+      "dryRunVerifiedNonMutating": true,
+      "appliedBytesAndModesVerified": true
+    },
+    {
+      "source": "archived source 010",
+      "destination": "interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "after": "<!-- Co-writer workflow source begins below. -->",
+      "dryRunExit": 0,
+      "applyExit": 0,
+      "before": {
+        "source": "8904af00436c15bc81e03e31190f59fee50ad663dbc610ce79caba8406b5fbfa",
+        "destination": "c2eb80b3796aec359208e8c479ecc37896e1d97e62166fed91587c547a7f9e34",
+        "sourceMode": 436,
+        "destinationMode": 420
+      },
+      "expected": {
+        "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sourceBytes": 0,
+        "destination": "a802d51e3145ed238807b1ae942103ace439d8331698c4a6166646283a401b36",
+        "destinationBytes": 2110,
+        "movedSha256": "8904af00436c15bc81e03e31190f59fee50ad663dbc610ce79caba8406b5fbfa",
+        "movedBytes": 753
+      },
+      "script": "archived source 033",
+      "dryRunVerifiedNonMutating": true,
+      "appliedBytesAndModesVerified": true
+    },
+    {
+      "source": "archived source 032",
+      "destination": "interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "atEnd": true,
+      "dryRunExit": 0,
+      "applyExit": 0,
+      "before": {
+        "source": "7ab9511c69e79da3c837d487ee7d2672ae7676d2d2a93f49a7cd93ef965f4381",
+        "destination": "a802d51e3145ed238807b1ae942103ace439d8331698c4a6166646283a401b36",
+        "sourceMode": 436,
+        "destinationMode": 420
+      },
+      "expected": {
+        "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sourceBytes": 0,
+        "destination": "a3538f1c2008e784288c2f9e01c3fa3dbd4e804a6c18db3933e27ae8df402ce2",
+        "destinationBytes": 2622,
+        "movedSha256": "7ab9511c69e79da3c837d487ee7d2672ae7676d2d2a93f49a7cd93ef965f4381",
+        "movedBytes": 512
+      },
+      "script": "archived source 033",
+      "dryRunVerifiedNonMutating": true,
+      "appliedBytesAndModesVerified": true
+    }
+  ],
+  "postSplitSnapshots": [
+    {
+      "path": "interactive-systems/14-collaborative-writing-and-text-assembly.md",
+      "bytes": 2622,
+      "lines": 34,
+      "sha256": "a3538f1c2008e784288c2f9e01c3fa3dbd4e804a6c18db3933e27ae8df402ce2",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "interactive-systems/14-collaborative-writing-and-text-assembly-comments.md",
+      "bytes": 3068,
+      "lines": 35,
+      "sha256": "34c640fef8a94af5692f605ead97ab7d63598a19d1167db7d3799cb8d2a20f99",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "02-human-ai-collaboration/01-augmenting-human-work.md",
+      "bytes": 22354,
+      "lines": 491,
+      "sha256": "7946cec4006fa25ae5ca9740ada1b5f158a87bb5b25e3be8545837e727b066fe",
+      "mode": "644",
+      "finalLf": false
+    },
+    {
+      "path": "02-human-ai-collaboration/01-augmenting-human-work-comments.md",
+      "bytes": 5048,
+      "lines": 57,
+      "sha256": "d88ffc793145d9b7fb6926481f60ff45d5e62161a20490fffe6e96dc2ebc0c9e",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "interactive-systems/00-index.md",
+      "bytes": 13341,
+      "lines": 53,
+      "sha256": "38d3a12b03e2ca06b380a73236be0603c92b697a041414cad9a5d57b800c8c2f",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "00-index.md",
+      "bytes": 37178,
+      "lines": 138,
+      "sha256": "5b1b8a18232ec2d9638d917753b13d3b812a213c2bc941d95a2684139de2ce3f",
+      "mode": "644",
+      "finalLf": true
+    },
+    {
+      "path": "archived source 010",
+      "finalLf": true
+    },
+    {
+      "path": "archived source 032",
+      "finalLf": true
+    }
+  ],
+  "checks": {
+    "exactSourceReconstruction": true,
+    "existingNoteAndCommentPrefixesUnchanged": true,
+    "indexesContainOnlyApprovedAdditions": true,
+    "originalPermissionModesPreserved": true,
+    "originalMissingFinalLfPreservedInCommunicationPassage": true,
+    "baselineCollectionFiles": 145,
+    "unrelatedBaselineFilesChecked": 139,
+    "unrelatedChangesObserved": [],
+    "gitMetadataUnchanged": true,
+    "localMarkdownReferencesChecked": 55,
+    "headingAnchorsChecked": 24,
+    "missingLocalReferences": 0,
+    "markdownSnippetsChecked": 10,
+    "newProseTrailingWhitespace": 0,
+    "sourceBearingCodeFencesClosed": true,
+    "notesScopedDiffCheckPassed": true,
+    "notesAccScopedDiffCheckPassed": true
+  },
+  "limits": [
+    "The sketches do not label speakers.",
+    "Reassembly selects no implementation, interface, publication authority, or evaluation result.",
+    "Source product references and sample claims were not independently verified.",
+    "Whole-file checksums in earlier mappings remain historical snapshots."
+  ],
+  "publicEdition": {
+    "date": "2026-10-28",
+    "note": "Private source locations, command arguments, and repository snapshots are omitted or generalized. Historical coordinates describe earlier versions."
+  }
+}

@@ -1,0 +1,117 @@
+theme = "hextra"
+title = "Systems & Engineering"
+baseurl = "https://valery.tech"
+canonifyURLs = false
+disableAliases = false
+disableHugoGeneratorInject = true
+# disableKinds = ["taxonomy", "term"]
+enableEmoji = true
+enableGitInfo = false
+enableRobotsTXT = true
+locale = "en-US"
+pagerSize = 10
+rssLimit = 10
+summarylength = 20 # 70 (default)
+
+# sectionPagesMenu = 'main'
+
+# Multilingual
+defaultContentLanguage = "en"
+disableLanguages = ["de", "nl"]
+defaultContentLanguageInSubdir = false
+
+copyRight = "Copyright (c) 2014-2023"
+
+[build.buildStats]
+  enable = true
+
+[outputs]
+  home = ["HTML", "RSS", "searchIndex", "agentMap", "agentText"]
+  section = ["HTML", "RSS", "SITEMAP"]
+
+# Keep maps only for the five main collections. Nested sections are merged in.
+[[cascade]]
+  outputs = ["HTML", "RSS", "SITEMAP", "agentMap", "agentText"]
+  [cascade.target]
+    kind = "section"
+    path = "{/ai,/ai-engineering,/engineering,/system-design,/projects}"
+
+[outputFormats.searchIndex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
+# Markdown assembly exports; keep the old text URLs as companion downloads.
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+
+[outputFormats.agentMap]
+  mediaType = "text/markdown"
+  baseName = "site-map"
+  isPlainText = true
+  notAlternative = true
+
+[outputFormats.agentText]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+# Add output format for section sitemap.xml
+[outputFormats.SITEMAP]
+  mediaType = "application/xml"
+  baseName = "sitemap"
+  isHTML = false
+  noUgly = true
+  rel  = "sitemap"
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[taxonomies]
+  contributor = "contributors"
+  category = "categories"
+  tag = "tags"
+
+[permalinks]
+  blog = "/blog/:slug/"
+  docs = "/docs/:sections[1:]/:slug/"
+# docs = "/docs/1.0/:sections[1:]/:slug/"
+
+[minify.tdewolff.html]
+  keepWhitespace = false
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = false
+    [[related.indices]]
+      name = "categories"
+      weight = 100
+    [[related.indices]]
+      name = "tags"
+      weight = 80
+    [[related.indices]]
+      name = "date"
+      weight = 10
+
+[imaging]
+  anchor = "Center"
+  bgColor = "#ffffff"
+  resampleFilter = "Lanczos"
+
+[imaging.jpeg]
+  quality = 85
+[imaging.webp]
+  hint = "photo"
+  quality = 85
+[imaging.avif]
+  hint = "photo"
+  quality = 85
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-XF1V06CDS3'

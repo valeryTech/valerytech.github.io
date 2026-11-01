@@ -1,0 +1,36 @@
+{{- $docs := in site.Params.mainSections .Section -}}
+{{- $home := .IsHome -}}
+{{- $hasOutline := partial "navigation/has-outline.html" . -}}
+{{- $outlineSpace := and $docs (not $hasOutline) -}}
+<div class="site-page-layout site-frame{{ if $docs }} site-has-sidebar{{ end }}{{ if $hasOutline }} site-has-outline{{ else if $outlineSpace }} site-has-outline-space{{ end }} hx:mx-auto hx:flex hextra-max-page-width">
+  {{ partial "sidebar.html" (dict "context" . "disableSidebar" (not $docs) "displayPlaceholder" (and (not $home) (ne .Params.sidebar.hide true))) }}
+  {{ if $docs }}
+    <aside class="site-pane-rail site-sidebar-rail hx:print:hidden" aria-label="Collapsed navigation">
+      <div class="site-pane-rail-header site-surface-row site-context-surface" data-sidebar-restore-slot></div>
+    </aside>
+  {{ end }}
+  {{ if not $home }}{{ partial "toc.html" . }}{{ end }}
+  {{ if $outlineSpace }}
+    <aside class="site-outline-placeholder hx:order-last hx:print:hidden" aria-hidden="true"></aside>
+  {{ end }}
+  {{ if $hasOutline }}{{ partial "main/outline-popover.html" . }}{{ end }}
+  <div class="site-article-column hx:w-full hx:min-w-0 hx:flex hx:justify-center hx:pb-8">
+    <main id="content" class="site-main hx:w-full hx:min-w-0 hx:pt-4 {{ if $home }}site-home{{ else }}hextra-max-content-width{{ end }}{{ if eq .Params.layout "settings" }} site-settings-page{{ end }}">
+      {{ if and (not $home) (ne .Section "agent-map") }}{{ partial "breadcrumb.html" (dict "page" . "enable" true) }}{{ end }}
+      <div class="content">
+        {{ if eq .Section "agent-map" }}
+          <article aria-label="Website navigation map">{{ .Content }}</article>
+        {{ else if .IsSection }}
+          {{ partialCached "section-index/index.html" . .RelPermalink }}
+        {{ else }}
+          {{ partial "main/article-content.html" (dict "page" .) }}
+        {{ end }}
+      </div>
+      {{ if $docs }}
+        <div data-reading-end aria-hidden="true"></div>
+        {{ if .IsPage }}{{ partial "main/docs-navigation.html" . }}{{ end }}
+        <div class="site-reading-fade" data-reading-fade aria-hidden="true" hidden></div>
+      {{ end }}
+    </main>
+  </div>
+</div>

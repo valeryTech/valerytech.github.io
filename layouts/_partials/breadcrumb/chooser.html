@@ -1,0 +1,25 @@
+{{- $entry := .entry -}}
+{{- $currentPage := .currentPage -}}
+<nav id="{{ $entry.id }}" class="site-breadcrumb-chooser" popover="auto" aria-labelledby="{{ $entry.id }}-title">
+  <p class="site-breadcrumb-chooser-title" id="{{ $entry.id }}-title">In {{ $entry.label }}</p>
+  <div class="site-breadcrumb-scroll-hint site-breadcrumb-scroll-up" aria-hidden="true">
+    {{ partial "components/chevron-icon.html" (dict "name" "chevron-up") }}
+  </div>
+  {{- range $entry.groups -}}
+    {{- $label := cond (eq .key "sections") "Sections" "Documents" -}}
+    <section aria-labelledby="{{ $entry.id }}-{{ .key }}">
+      <h2 class="site-breadcrumb-chooser-group" id="{{ $entry.id }}-{{ .key }}">{{ $label }}</h2>
+      <ul>
+        {{- range .nodes -}}
+          {{- $child := .Page -}}
+          {{- $isCurrent := $currentPage.Eq $child -}}
+          {{- $isAncestor := and (not $isCurrent) (in $currentPage.Ancestors $child) -}}
+          <li><a href="{{ $child.RelPermalink }}"{{ if $isCurrent }} aria-current="page"{{ end }}{{ if $isAncestor }} data-current-branch{{ end }}>{{ $child.LinkTitle }}</a></li>
+        {{- end -}}
+      </ul>
+    </section>
+  {{- end -}}
+  <div class="site-breadcrumb-scroll-hint site-breadcrumb-scroll-down" aria-hidden="true">
+    {{ partial "components/chevron-icon.html" (dict "name" "chevron-up") }}
+  </div>
+</nav>

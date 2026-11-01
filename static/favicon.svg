@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 100 100" fill="none"><title>Systems &amp; Engineering — V topology</title><style>.site-brand-primary{color:#f3f4f6}.site-brand-secondary{color:#8fafce}.site-brand-tile{fill:#181e23}</style><rect class="site-brand-tile" width="100" height="100" rx="20"/><g class="site-brand-primary" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+    <path d="M22 18 50 78"/>
+    <circle cx="22" cy="18" r="7.5" fill="currentColor" stroke="none"/>
+    <circle cx="50" cy="78" r="7.5" fill="currentColor" stroke="none"/>
+  </g>
+  <g class="site-brand-secondary" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M43 28 64 66 86 20"/>
+    <circle cx="86" cy="20" r="7.5" fill="currentColor" stroke="none"/>
+  </g></svg>

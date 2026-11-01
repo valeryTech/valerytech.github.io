@@ -1,0 +1,20 @@
+{{- /* Articles use Hugo's outline; section indexes include generated headings. */ -}}
+{{- $outline := partialCached "navigation/page-outline.html" . .RelPermalink -}}
+{{- if partial "navigation/has-outline.html" . -}}
+<aside id="page-outline" data-site-pane="outline" class="hextra-toc site-page-outline hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="On this page">
+  <div class="site-toc-frame">
+    <div class="hextra-scrollbar site-toc-scroll">
+      <div class="site-toc-title site-surface-row site-context-surface site-pane-heading site-pinned site-pinned-first site-pinned-last">
+        {{ partial "pane-toggle.html" (dict "pane" "outline") }}
+        <span class="site-toc-title-label site-surface-content">On this page</span>
+      </div>
+      {{ $outline }}
+    </div>
+    {{ partial "navigation/back-to-top.html" (dict "id" "backToTop") }}
+  </div>
+</aside>
+<aside class="site-pane-rail site-outline-rail hx:order-last hx:print:hidden" aria-label="Collapsed page outline">
+  <div class="site-pane-rail-header site-surface-row site-context-surface" data-outline-restore-slot></div>
+  {{ partial "navigation/outline-map.html" . }}
+</aside>
+{{- end -}}
