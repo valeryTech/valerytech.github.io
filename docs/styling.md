@@ -193,10 +193,10 @@ On phones, the homepage uses at least 1.25rem of reading margin on each side,
 including safe-area insets, independently of the toolbar's tighter gaps. Its title
 wraps with balanced lines and starts 2rem below the header. The introductory
 callout keeps its icon beside the title while paragraphs use the card's full
-inner width. An opaque layout gap below the mobile header keeps scrolling text
-away from the controls. On phones, Settings contains the top-bar visibility
-option; its floating restore button appears only while the bar is hidden so it
-does not cover the reading area during normal use.
+inner width. At every screen width, an opaque layout gap below the header keeps
+scrolling text away from the controls. On phones, Settings contains the top-bar
+visibility option; its floating restore button appears only while the bar is
+hidden so it does not cover the reading area during normal use.
 
 `shell.css` supplies `.site-frame` for shared header/page/footer bounds.
 `controls.css` supplies `.site-control` and `.site-surface-row`: filled colors, 14px medium labels,

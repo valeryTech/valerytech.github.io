@@ -3,17 +3,15 @@
   background: var(--site-page-background);
 }
 
-@media (width < 48rem) {
-  .hextra-nav-container::after {
-    /* Keep scrolling text a full layout gap away from the toolbar controls. */
-    content: "";
-    position: absolute;
-    inset-block-start: 100%;
-    inset-inline: 0;
-    block-size: var(--site-layout-gap);
-    background: var(--site-page-background);
-    pointer-events: none;
-  }
+.hextra-nav-container::after {
+  /* Keep scrolling text a full layout gap away from the toolbar controls. */
+  content: "";
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline: 0;
+  block-size: var(--site-layout-gap);
+  background: var(--site-page-background);
+  pointer-events: none;
 }
 
 :root[data-header-visible="false"] {
